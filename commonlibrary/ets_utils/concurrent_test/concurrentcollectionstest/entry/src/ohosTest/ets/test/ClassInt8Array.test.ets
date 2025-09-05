@@ -17,45 +17,32 @@ import { taskpool } from '@kit.ArkTS';
 import { collections } from '@kit.ArkTS';
 import type { BusinessError } from '@ohos.base';
 import {
-  test_int8array_constructor_with_array_buffer,
-  test_int8array_constructor_with_length,
-  test_int8array_constructor_with_iterable,
-  test_int8array_constructor_with_buffer,
-  test_int8array_static_from_array_like,
-  test_int8array_from_fixed_001,
-  test_int8array_static_from_iterable,
-  test_int8array_static_of_numbers,
-  test_int8array_toString,
-  test_int8array_toLocaleString,
-  test_int8array_copyWithin_helper,
-  test_int8array_some_001,
-  test_int8array_every_001,
-  test_int8array_fill_fixed,
-  test_int8array_filter_fixed,
-  test_int8array_find_001,
-  test_int8array_findIndex_001,
-  test_int8array_forEach_001,
-  test_int8array_indexOf_001,
-  test_int8array_lastIndexOf_001,
-  test_int8array_join_001,
-  test_int8array_map_001,
-  test_int8array_reduce_001,
-  test_int8array_reduceRight_001,
-  test_int8array_reduce_with_initial_001,
-  test_int8array_reduceRight_fixed_001,
-  test_int8array_reduce_fixed_001,
-  test_int8array_reverse_001,
-  test_int8array_set_001,
-  test_int8array_slice_001,
-  test_int8array_sort_fixed_001,
-  test_int8array_subarray_fixed_001,
-  test_int8array_at_fixed_001,
-  test_int8array_includes_fixed_001,
-  test_int8array_entries_fixed_001,
-  test_int8array_keys_fixed_001,
-  test_int8array_values_fixed_001,
-  test_int8array_index_access_fixed_001
-  } from '../testability/pages/Int8TaskPool';
+  Int8array_test_0001,
+  Int8array_test_0002,
+  Int8array_test_0003,
+  Int8array_test_0004,
+  Int8array_test_0005,
+  Int8array_test_0006,
+  Int8array_test_0007,
+  Int8array_test_0008,
+  Int8array_test_0009,
+  Int8array_test_0011,
+  Int8array_test_0012,
+  Int8array_test_0013,
+  Int8array_test_0014,
+  Int8array_test_0015,
+  Int8array_test_0016,
+  Int8array_test_006,
+  Int8array_test_007,
+  Int8array_test_008,
+  Int8array_test_009,
+  Int8array_test_011,
+  Int8array_test_012
+} from '../testability/pages/Int8TaskPool';
+
+
+let concurrentNum = 100
+let arrCount = 1000
 
 export function sleep(time: number): Promise<void> {
   return new Promise((re, je) => {
@@ -64,6 +51,7 @@ export function sleep(time: number): Promise<void> {
     }, time)
   })
 }
+
 
 export default function Int8ArrayGlobalTest() {
   describe('Int8ArrayGlobalTest', () => {
@@ -90,291 +78,262 @@ export default function Int8ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0001
-     * @tc.name      : test_int8array_constructor_length_0
-     * @tc.desc      : Test concurrent creation of Int8Array with 0 length using constructor via taskpool
+     * @tc.name      : Int8array_test_0001
+     * @tc.desc      : Test Int8array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_int8array_constructor_length_0', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+    it('Int8array_test_0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_int8array_constructor_length_0';
+        const caseName = 'Int8array_test_0001';
         console.info(`${caseName} test start`);
-
+        let array: collections.Int8Array = collections.Int8Array.from<number>(
+          { length: 1000 }, (v: Object, k: number) => k);
         try {
-          for (let i = 0; i < 100; i++) {
-            console.info(`[${caseName}] Attempt ${i + 1}: Creating Int8Array with length = 0`);
-            let int8Array: collections.Int8Array = new collections.Int8Array(0);
-            console.info(`[${caseName}] Attempt ${i + 1}: Int8Array created, length = ${int8Array.length}`);
-            expect(int8Array != null).assertTrue();
-            expect(int8Array.length === 0).assertTrue();
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Int8array_test_0001, array, caseName, i)
           }
-          console.info(`${caseName} test end: All 100 Int8Array(0) creations succeeded.`);
+          await taskpool.execute(group).then(() => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(array.length).assertEqual(arrCount)
+          expect(array).assertContain(127)
         } catch (e) {
-          console.error(`${caseName} test failed: ${e}`);
-          expect().assertFail();
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
         done();
       });
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0002
-     * @tc.name      : test_int8array_constructor_with_length
-     * @tc.desc      : Test concurrent creation of Int8Array with specified length using constructor via taskpool
+     * @tc.name      : Int8array_test_0001
+     * @tc.desc      : Test Int8array
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_int8array_constructor_with_length',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_int8array_constructor_with_lengths';
+        const caseName = 'Int8array_test_0002';
         console.info(`${caseName} test start`);
-
-        const concurrentNum = 100;
-        const length = 10;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-          for (let i = 0; i < concurrentNum; i++) {
-
-            group.addTask(
-              test_int8array_constructor_with_length,
-              length,
-              caseName,
-              i
-            );
-          }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} All tasks completed.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} TaskGroup execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
-        } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
+        let set: Set<number> = new Set<number>();
+        for (let i = 0; i <= 100; i++) {
+          set.add(i);
         }
-
+        let array: collections.Int8Array = collections.Int8Array.from(set);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Int8array_test_0001, array, caseName, i)
+          }
+          await taskpool.execute(group).then(() => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(array.length).assertEqual(101)
+          expect(array).assertContain(100)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
         done();
       });
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0003
-     * @tc.name      : test_int8array_constructor_with_array_buffer
-     * @tc.desc      : Test concurrent creation of Int8Array using ArrayLike input via taskpool
+     * @tc.name      : Int8array_test_0001
+     * @tc.desc      : Test Int8array
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_int8array_constructor_with_array_buffer',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_int8array_constructor_with_array_buffer';
+        const caseName = 'Int8array_test_0003';
         console.info(`${caseName} test start`);
-
-        const concurrentNum = 100;
-
+        let array: collections.Int8Array = collections.Int8Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         try {
-          let group = new taskpool.TaskGroup(caseName);
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-
-            group.addTask(
-              test_int8array_constructor_with_array_buffer,
-              caseName,
-              i
-            );
+            group.addTask(Int8array_test_0001, array, caseName, i)
           }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} All tasks completed.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} TaskGroup execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
+          await taskpool.execute(group).then(() => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(array.toString()).assertEqual('0,0,1,1,2,2,3,3,4,4')
         } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
         }
-
+        console.info(`${caseName} test end`);
         done();
       });
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0004
-     * @tc.name      : test_int8array_constructor_with_iterable_concurrently
-     * @tc.desc      : Test Int8Array with iterable concurrently
+     * @tc.name      : Int8array_test_0001
+     * @tc.desc      : Test Int8array
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_int8array_constructor_with_iterable_concurrently',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_int8array_constructor_with_iterable';
-        const concurrentNum = 100;
-        const fixedIterable = [1, 2, 3];
-
+        const caseName = 'Int8array_test_0004';
+        console.info(`${caseName} test start`);
+        let array: collections.Int8Array = collections.Int8Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         try {
-          let group = new taskpool.TaskGroup(caseName);
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_constructor_with_iterable, fixedIterable, caseName, i);
+            group.addTask(Int8array_test_0001, array, caseName, i)
           }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} completed.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} error: ${e.message}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
+          await taskpool.execute(group).then(() => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(array.toLocaleString()).assertEqual('0,0,1,1,2,2,3,3,4,4')
         } catch (e) {
-          console.error(`${caseName} setup error: ${e}`);
-          expect().assertFail();
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
         }
-
+        console.info(`${caseName} test end`);
         done();
       });
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0005
-     * @tc.name      : test_int8array_constructor_with_buffer
-     * @tc.desc      : Test Int8Array with buffer
-     * @tc.size      : SmallTest
+     * @tc.name      : Int8array_test_0005
+     * @tc.desc      : Test Int8array
+     * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_int8array_constructor_with_buffer',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_int8array_constructor_with_buffer';
-        const concurrentNum = 100;
-        const bufferSize = 100;
-        const buffer: collections.ArrayBuffer = new collections.ArrayBuffer(bufferSize);
-        const byteOffset = 10;
-        const length = 20;
-
+        const caseName = 'Int8array_test_0005';
+        console.info(`${caseName} test start`);
+        let array: collections.Int8Array = collections.Int8Array.from<number>(
+          { length: 1000 }, (v: Object, k: number) => k);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(
-              test_int8array_constructor_with_buffer,
-              buffer,
-              byteOffset,
-              length,
-              caseName,
-              i
-            );
+            group.addTask(Int8array_test_0002, array, caseName, i)
           }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} completed. All tasks finished.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} error: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
+          await taskpool.execute(group).then(() => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(array.length).assertEqual(arrCount)
+          expect(array).assertContain(127)
         } catch (e) {
-          console.error(`${caseName} setup error: ${e}`);
-          expect().assertFail();
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
         }
-
+        console.info(`${caseName} test end`);
         done();
       });
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0006
-     * @tc.name      : test_int8array_static_from_array_like
-     * @tc.desc      : Test int8array static from array like
+     * @tc.name      : Int8array_test_0006
+     * @tc.desc      : Test Int8array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_int8array_static_from_array_like',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_int8array_static_from_array_like';
-        const concurrentNum = 100;
-
+        const caseName = 'Int8array_test_0006';
+        console.info(`${caseName} test start`);
+        let flag:boolean = false;
+        let array: collections.Int8Array = collections.Int8Array.from<number>(
+          { length: 1000 }, (v: Object, k: number) => k);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            const arrayLike = [i];
-            group.addTask(
-              test_int8array_static_from_array_like,
-              arrayLike,
-              caseName,
-              i
-            );
+            group.addTask(Int8array_test_006, array, caseName, i)
           }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} All tasks completed successfully.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} Task execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
+          await taskpool.execute(group).then((res) => {
+            expect(res[0]).assertTrue();
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(array.length).assertEqual(arrCount)
+          expect(flag).assertTrue()
         } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
         }
-
+        console.info(`${caseName} test end`);
         done();
       });
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0007
-     * @tc.name      : test_concurrent_int8array_from_fixed_001
-     * @tc.desc      : Test Int8Array
-     * @tc.size      : SmallTest
+     * @tc.name      : Int8array_test_0007
+     * @tc.desc      : Test Int8array
+     * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int8array_from_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_from_fixed_001';
+        const caseName = 'Int8array_test_0007';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
+        let flag:boolean = false;
+        let array: collections.Int8Array = collections.Int8Array.from<number>(
+          { length: 50 }, (v: Object, k: number) => k);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_from_fixed_001, caseName, i);
+            group.addTask(Int8array_test_007, array, caseName, i)
           }
-
           await taskpool.execute(group).then((res) => {
+            expect(res[0].toString()).assertContain('40,42,44,46,48')
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(flag).assertTrue()
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -382,360 +341,239 @@ export default function Int8ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0008
-     * @tc.name      : test_int8array_static_from_iterable
-     * @tc.desc      : Test Int8Array static from iterable concurrently 100 times
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_int8array_static_from_iterable',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_int8array_static_from_iterable';
-        const concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            const arrayLike: Iterable<number> = [i];
-
-            group.addTask(
-              test_int8array_static_from_iterable,
-              arrayLike,
-              caseName,
-              i
-            );
-          }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName}  .`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} Task execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
-        } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
-        }
-
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT8ARRAY_TEST_0009
-     * @tc.name      : test_int8array_static_of_numbers_concurrently_100_times
-     * @tc.desc      : Test int8array static of numbers concurrently 100 times
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_int8array_static_of_numbers_concurrently_100_times',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_int8array_static_of_numbers_concurrently_100_times';
-        const concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            const numbers: number[] = [i];
-
-            group.addTask(
-              test_int8array_static_of_numbers,
-              numbers,
-              caseName,
-              i
-            );
-          }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} All 100 tasks completed successfully.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} Task execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
-        } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
-        }
-
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT8ARRAY_TEST_0010
-     * @tc.name      : test_int8array_concurrent_read_write
-     * @tc.desc      : Test concurrent read and write operations
+     * @tc.name      : Int8array_test_0008
+     * @tc.desc      : Test Int8array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_int8array_concurrent_read_write',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_int8array_concurrent_read_write';
-        const concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-
-            const int8Array = new collections.Int8Array([i]);
-
-            const expectedString = `${i}`;
-
-            group.addTask(
-              test_int8array_toString,
-              int8Array,
-              expectedString,
-              caseName,
-              i
-            );
-          }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} All 100 tasks completed successfully.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} Task execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
-        } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
-        }
-
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT8ARRAY_TEST_0011
-     * @tc.name      : test_int8array_toLocaleString_concurrently_100_times
-     * @tc.desc      : Test toLocaleString() method of Int8Array under concurrent conditions (100 times)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_int8array_toLocaleString_concurrently_100_times',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_int8array_toLocaleString_concurrently_100_times';
-        const concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-
-            const int8Array = new collections.Int8Array([i]); // 你也可以用 Int8Array.of(i) 或 [i, i+1]
-
-            const expectedString = `${i}`;
-
-            group.addTask(
-              test_int8array_toLocaleString,
-              int8Array,
-              expectedString,
-              caseName,
-              i
-            );
-          }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} All 100 tasks completed successfully.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} Task execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
-        } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
-        }
-
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT8ARRAY_TEST_0012
-     * @tc.name      : test_int8array_copyWithin_function
-     * @tc.desc      : Test copyWithin() method of Int8Array under concurrent conditions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_int8array_copyWithin_function',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_int8array_copyWithin_function';
-        const concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            const baseArray = [1, 2, 3, 4, 5, 6, 7, 8];
-            const int8Array = new collections.Int8Array(baseArray);
-            const target = 3;
-            const start = 1;
-            const end = 3;
-            const expectedArray = new collections.Int8Array([1, 2, 3, 2, 3, 6, 7, 8]);
-
-            group.addTask(
-              test_int8array_copyWithin_helper,
-              int8Array,
-              target,
-              start,
-              end,
-              expectedArray,
-              caseName,
-              i
-            );
-          }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} All ${concurrentNum} tasks completed successfully.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} Task execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
-        } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
-        }
-
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT8ARRAY_TEST_0013
-     * @tc.name      : test_concurrent_int8array_some
-     * @tc.desc      : Test the some() method of Int8Array under concurrent conditions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int8array_some', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_some_001';
+        const caseName = 'Int8array_test_0008';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int8ArrayCount = 10;
-        let testValue = -10;
-
+        let flag:boolean = false;
+        let array: collections.Int8Array = collections.Int8Array.from<number>(
+          { length: 100 }, (v: Object, k: number) => k);
         try {
-          let arrayLike: number[] = [];
-          for (let i = 0; i < int8ArrayCount; i++) {
-            arrayLike.push(i * 10);
-          }
-
-          arrayLike[0] = testValue;
-
-          let int8Array: collections.Int8Array = new collections.Int8Array(arrayLike);
-
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_some_001, int8Array, caseName, i, testValue);
+            group.addTask(Int8array_test_008, array, caseName, i)
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then((result) => {
+            expect(result).assertContain(31)
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-          console.info(`${caseName} all tasks completed`);
-
-          let hasNegative = int8Array.some((element: number) => element < 0);
-          console.info(`${caseName} Final verification - has negative: ${hasNegative}`);
-          expect(hasNegative).assertEqual(true);
-
-          let allNumbers = int8Array.every((element: number) => typeof element === 'number');
-          console.info(`${caseName} Final verification - all numbers: ${allNumbers}`);
-          expect(allNumbers).assertEqual(true);
-
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(flag).assertTrue()
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
       });
 
-
     /**
-     * @tc.number    : SUB_INT8ARRAY_TEST_0014
-     * @tc.name      : test_concurrent_int8array_every
-     * @tc.desc      : Test the every() method of Int8Array under concurrent conditions
+     * @tc.number    : SUB_INT8ARRAY_TEST_0009
+     * @tc.name      : Int8array_test_0009
+     * @tc.desc      : Test Int8array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int8array_every', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_every';
+        const caseName = 'Int8array_test_0009';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int8ArrayCount = 10;
-
+        let flag:boolean = false;
+        let array: collections.Int8Array = collections.Int8Array.from<number>(
+          { length: 100 }, (v: Object, k: number) => k);
         try {
-          let arrayLike: number[] = [];
-          for (let i = 0; i < int8ArrayCount; i++) {
-            arrayLike[i] = i * 10;
-          }
-
-          arrayLike[2] = -30;
-
-          let int8Array: collections.Int8Array = new collections.Int8Array(arrayLike);
-
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_every_001, int8Array, caseName, i);
+            group.addTask(Int8array_test_009, array, caseName, i)
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then((result) => {
+            expect(result).assertContain(0)
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-          let allPositive = int8Array.every((element: number) => element > 0);
-          console.info(`${caseName} Final check - all positive: ${allPositive}`);
-          expect(allPositive).assertEqual(false);
-
-          let allNumbers = int8Array.every((element: number) => typeof element === 'number');
-          console.info(`${caseName} Final check - all numbers: ${allNumbers}`);
-          expect(allNumbers).assertEqual(true);
-
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(flag).assertTrue()
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_INT8ARRAY_TEST_0010
+     * @tc.name      : Int8array_test_0010
+     * @tc.desc      : Test Int8array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Int8array_test_0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Int8array_test_0010';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        let count: number = 0;
+        let array: collections.Int8Array = collections.Int8Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Int8array_test_0003, array, caseName, i)
+            count++;
+          }
+          await taskpool.execute(group).then((res) => {
+            expect(res.toString()).assertContain('2,4,6,8,10')
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_INT8ARRAY_TEST_0011
+     * @tc.name      : Int8array_test_0011
+     * @tc.desc      : Test Int8array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Int8array_test_0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Int8array_test_0011';
+        console.info(`${caseName} test start`);
+        let flag:boolean = false;
+        let array: collections.Int8Array = collections.Int8Array.from<number>(
+          { length: 100 }, (v: Object, k: number) => k);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Int8array_test_011, array, caseName, i)
+          }
+          await taskpool.execute(group).then((res) => {
+            expect(res).assertContain(99)
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(flag).assertTrue()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_INT8ARRAY_TEST_0012
+     * @tc.name      : Int8array_test_0012
+     * @tc.desc      : Test Int8array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Int8array_test_0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Int8array_test_0012';
+        console.info(`${caseName} test start`);
+        let flag:boolean = false;
+        let array: collections.Int8Array = collections.Int8Array.from<number>(
+          { length: 100 }, (v: Object, k: number) => k);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Int8array_test_012, array, caseName, i)
+          }
+          await taskpool.execute(group).then((result) => {
+            expect(result).assertContain(90)
+            flag = true
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(flag).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_INT8ARRAY_TEST_0013
+     * @tc.name      : Int8array_test_0013
+     * @tc.desc      : Test Int8array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Int8array_test_0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Int8array_test_0013';
+        console.info(`${caseName} test start`);
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int8Array = collections.Int8Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Int8array_test_0004, array, caseName, i)
+            count++
+          }
+          await taskpool.execute(group).then((res) => {
+            expect(res.toString()).assertContain('7-8-9-10');
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -743,36 +581,40 @@ export default function Int8ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0015
-     * @tc.name      : test_concurrent_int8array_fill_basic
-     * @tc.desc      : Test the fill() method of Int8Array under concurrent conditions (basic fixed scenario)
+     * @tc.name      : Int8array_test_0015
+     * @tc.desc      : Test Int8array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int8array_fill_basic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_fill_basic';
+        const caseName = 'Int8array_test_0015';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int8Array = collections.Int8Array.from([25, 36, 49]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_fill_fixed, caseName, i);
+            group.addTask(Int8array_test_0005, array, caseName, i)
+            count++
           }
-
           await taskpool.execute(group).then((res) => {
+            expect(res.toString()).assertContain('5,6,7')
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -780,36 +622,40 @@ export default function Int8ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0016
-     * @tc.name      : test_concurrent_int8array_filter_basic
-     * @tc.desc      : Test the filter() method of Int8Array under concurrent conditions
+     * @tc.name      : Int8array_test_0016
+     * @tc.desc      : Test Int8array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int8array_filter_basic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_filter_basic';
+        const caseName = 'Int8array_test_0016';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3, 4, 5]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_filter_fixed, caseName, i);
+            group.addTask(Int8array_test_0006, array, caseName, i)
+            count++
           }
-
           await taskpool.execute(group).then((res) => {
+            expect(res).assertContain(17)
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -817,37 +663,40 @@ export default function Int8ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0017
-     * @tc.name      : test_concurrent_int8array_find_001
-     * @tc.desc      : Test the find() method of Int8Array under concurrent conditions
+     * @tc.name      : Int8array_test_0017
+     * @tc.desc      : Test Int8array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int8array_find_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_find_001';
+        const caseName = 'Int8array_test_0017';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int8ArrayCount = 20;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3, 4, 5]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_find_001, caseName, i, int8ArrayCount);
+            group.addTask(Int8array_test_0007, array, caseName, i)
+            count++
           }
-
           await taskpool.execute(group).then((res) => {
+            expect(res).assertContain(17)
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -855,37 +704,40 @@ export default function Int8ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0018
-     * @tc.name      : test_concurrent_int8array_findIndex_001
-     * @tc.desc      : Test the findIndex() method of Int8Array under concurrent conditions
+     * @tc.name      : Int8array_test_0018
+     * @tc.desc      : Test Int8array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int8array_findIndex_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_findIndex_001';
+        const caseName = 'Int8array_test_0018';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int8ArrayCount = 20;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3, 4, 5]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_findIndex_001, caseName, i, int8ArrayCount);
+            group.addTask(Int8array_test_0008, array, caseName, i)
+            count++
           }
-
           await taskpool.execute(group).then((res) => {
+            expect(res).assertContain(18)
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -893,75 +745,40 @@ export default function Int8ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0019
-     * @tc.name      : test_concurrent_int8array_forEach_001
-     * @tc.desc      : Test the forEach() method of Int8Array under concurrent conditions
+     * @tc.name      : Int8array_test_0019
+     * @tc.desc      : Test Int8array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int8array_forEach_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_forEach_001';
+        const caseName = 'Int8array_test_0019';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int8ArrayCount = 20;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3, 4, 5]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_forEach_001, caseName, i, int8ArrayCount);
+            group.addTask(Int8array_test_0009, array, caseName, i)
+            count++
           }
-
           await taskpool.execute(group).then((res) => {
+            expect(res).assertContain(16)
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT8ARRAY_TEST_0020
-     * @tc.name      : test_concurrent_int8array_indexOf_001
-     * @tc.desc      : Test concurrent read and write operations with locks
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int8array_indexOf_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_indexOf_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int8ArrayCount = 20;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_indexOf_001, caseName, i, int8ArrayCount);
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
           }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+          expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -969,37 +786,41 @@ export default function Int8ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0021
-     * @tc.name      : test_concurrent_int8array_lastIndexOf_001
-     * @tc.desc      : Test the lastIndexOf() method of Int8Array under concurrent conditions
+     * @tc.name      : Int8array_test_0021
+     * @tc.desc      : Test Int8array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int8array_lastIndexOf_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_lastIndexOf_001';
+        const caseName = 'Int8array_test_0021';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int8ArrayCount = 20;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let buffer: collections.ArrayBuffer = new collections.ArrayBuffer(8);
+        let array: collections.Int8Array = new collections.Int8Array(buffer);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_lastIndexOf_001, caseName, i, int8ArrayCount);
+            group.addTask(Int8array_test_0011, array, caseName, i)
+            count++
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then(() => {
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          expect(array.toString()).assertContain('1,2,3,0,0')
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -1007,37 +828,40 @@ export default function Int8ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0022
-     * @tc.name      : test_concurrent_int8array_join_001
-     * @tc.desc      : Test the join() method of Int8Array under concurrent conditions
+     * @tc.name      : Int8array_test_0022
+     * @tc.desc      : Test Int8array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int8array_join_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_join_001';
+        const caseName = 'Int8array_test_0022';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int8ArrayCount = 20;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3, 4, 5]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_join_001, caseName, i, int8ArrayCount);
+            group.addTask(Int8array_test_0012, array, caseName, i)
+            count++
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then(() => {
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          expect(array.toString()).assertEqual('1,3,4,4,5')
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -1045,36 +869,40 @@ export default function Int8ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0023
-     * @tc.name      : test_concurrent_int8array_map_001
-     * @tc.desc      : Test the map() method of Int8Array under concurrent conditions
+     * @tc.name      : Int8array_test_0023
+     * @tc.desc      : Test Int8array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int8array_map_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_map_001';
+        const caseName = 'Int8array_test_0023';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int8ArrayCount = 20;
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int8Array = collections.Int8Array.from([1, 3, 5, 4, 2]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_map_001, caseName, i, int8ArrayCount);
+            group.addTask(Int8array_test_0013, array, caseName, i)
+            count++
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then(() => {
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          expect(array.toString()).assertEqual('1,2,3,4,5')
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -1082,37 +910,40 @@ export default function Int8ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0024
-     * @tc.name      : test_concurrent_int8array_reduce_001
-     * @tc.desc      : Test the reduce() method of Int8Array under concurrent conditions
+     * @tc.name      : Int8array_test_0024
+     * @tc.desc      : Test Int8array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int8array_reduce_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_reduce_001';
+        const caseName = 'Int8array_test_0024';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int8ArrayCount = 20;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int8Array = collections.Int8Array.from([1, 3, 5, 4, 2, 6, 7, 8]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_reduce_001, caseName, i, int8ArrayCount);
+            group.addTask(Int8array_test_0014, array, caseName, i)
+            count++
           }
-
           await taskpool.execute(group).then((res) => {
+            expect(res).assertContain('1,3,5,4')
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -1120,37 +951,41 @@ export default function Int8ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0025
-     * @tc.name      : test_concurrent_int8array_reduceRight_001
-     * @tc.desc      : Test the reduceRight() method of Int8Array under concurrent conditions
+     * @tc.name      : Int8array_test_0025
+     * @tc.desc      : Test Int8array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int8array_reduceRight_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_reduceRight_001';
+        const caseName = 'Int8array_test_0025';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int8ArrayCount = 20;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int8Array = collections.Int8Array.from([1, 3, 5, 4, 2, 6, 7, 8]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_reduceRight_001, caseName, i, int8ArrayCount);
+            group.addTask(Int8array_test_0014, array, caseName, i)
+            count++
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then(() => {
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          let result = array.at(1)
+          expect(result).assertEqual(3)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -1158,37 +993,41 @@ export default function Int8ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0026
-     * @tc.name      : test_concurrent_int8array_reduce_with_initial_001
-     * @tc.desc      : Test the reduce() method of Int8Array with initial value under concurrent conditions
+     * @tc.name      : Int8array_test_0026
+     * @tc.desc      : Test Int8array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int8array_reduce_with_initial_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_reduce_with_initial_001';
+        const caseName = 'Int8array_test_0026';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int8ArrayCount = 20;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int8Array = collections.Int8Array.from([1, 3, 5, 4, 2, 6, 7, 8]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_reduce_with_initial_001, caseName, i, int8ArrayCount);
+            group.addTask(Int8array_test_0014, array, caseName, i)
+            count++
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then(() => {
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          let result = array.includes(8)
+          expect(result).assertTrue()
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -1196,37 +1035,41 @@ export default function Int8ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0027
-     * @tc.name      : test_concurrent_int8array_reduceRight_with_initial_001
-     * @tc.desc      : Test the reduceRight() method of Int8Array with initial value under concurrent conditions
+     * @tc.name      : Int8array_test_0027
+     * @tc.desc      : Test Int8array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int8array_reduceRight_with_initial_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_reduceRight_with_initial_001';
+        const caseName = 'Int8array_test_0027';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int8ArrayCount = 20;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int8Array = collections.Int8Array.from([1, 3, 5, 4, 2, 6, 7, 8]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_reduceRight_fixed_001, caseName, i, int8ArrayCount);
+            group.addTask(Int8array_test_0014, array, caseName, i)
+            count++
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then(() => {
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          let iterator: IterableIterator<[number, number]> = array.entries();
+          expect(iterator.next().value.toString()).assertEqual('0,1')
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -1234,37 +1077,41 @@ export default function Int8ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0028
-     * @tc.name      : test_concurrent_int8array_reduce_with_initial_string_001
-     * @tc.desc      : Test the reduce() method of Int8Array with string initial value under concurrent conditions
+     * @tc.name      : Int8array_test_0028
+     * @tc.desc      : Test Int8array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int8array_reduce_with_initial_string_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_reduce_with_initial_string_001';
+        const caseName = 'Int8array_test_0028';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int8ArrayCount = 20;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let buffer: collections.ArrayBuffer = new collections.ArrayBuffer(8);
+        let array: collections.Int8Array = new collections.Int8Array(buffer);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_reduce_fixed_001, caseName, i, int8ArrayCount);
+            group.addTask(Int8array_test_0015, array, caseName, i)
+            count++
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then(() => {
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          expect(array.toString()).assertEqual('1,2,3,1,2,3,0,0')
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -1272,411 +1119,43 @@ export default function Int8ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0029
-     * @tc.name      : test_concurrent_int8array_reverse_001
-     * @tc.desc      : Test the reverse() method of Int8Array under concurrent conditions
+     * @tc.name      : Int8array_test_0029
+     * @tc.desc      : Test Int8array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int8array_reverse_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int8array_test_0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_reverse_001';
+        const caseName = 'Int8array_test_0029';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3, 4, 5]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_reverse_001, caseName, i);
+            group.addTask(Int8array_test_0016, array, caseName, i)
+            count++
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then(() => {
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          expect(array.toString()).assertEqual('1,1,1,2,3')
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
       });
-
-    /**
-     * @tc.number    : SUB_INT8ARRAY_TEST_0030
-     * @tc.name      : test_concurrent_int8array_set_001
-     * @tc.desc      : Test the set() method of Int8Array under concurrent conditions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int8array_set_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_set_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_set_001, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT8ARRAY_TEST_0031
-     * @tc.name      : test_concurrent_int8array_slice_001
-     * @tc.desc      : Test the slice() method of Int8Array under concurrent conditions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int8array_slice_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_slice_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_slice_001, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT8ARRAY_TEST_0032
-     * @tc.name      : test_concurrent_int8array_sort_fixed_001
-     * @tc.desc      : Test the sort() method of Int8Array (fixed scenario) under concurrent conditions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int8array_sort_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_sort_fixed_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_sort_fixed_001, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT8ARRAY_TEST_0033
-     * @tc.name      : test_concurrent_int8array_subarray_fixed_001
-     * @tc.desc      : Test the subarray() method of Int8Array (fixed scenario) under concurrent conditions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int8array_subarray_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_subarray_fixed_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_subarray_fixed_001, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT8ARRAY_TEST_0034
-     * @tc.name      : test_concurrent_int8array_at_fixed_001
-     * @tc.desc      : Test the at() method of Int8Array (fixed scenario) under concurrent conditions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int8array_at_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_at_fixed_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_at_fixed_001, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT8ARRAY_TEST_0035
-     * @tc.name      : test_concurrent_int8array_includes_fixed_001
-     * @tc.desc      : Test the includes() method of Int8Array (fixed scenario) under concurrent conditions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int8array_includes_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_includes_fixed_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_includes_fixed_001, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT8ARRAY_TEST_0036
-     * @tc.name      : test_concurrent_int8array_entries_fixed_001
-     * @tc.desc      : Test the entries() method of Int8Array (fixed scenario) under concurrent conditions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int8array_entries_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_entries_fixed_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_entries_fixed_001, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT8ARRAY_TEST_0037
-     * @tc.name      : test_concurrent_int8array_keys_fixed_001
-     * @tc.desc      : Test the keys() method of Int8Array (fixed scenario) under concurrent conditions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int8array_keys_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_keys_fixed_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100; // 并发任务数，可以根据需要调整
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          // 为每个并发任务添加独立的测试任务
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_keys_fixed_001, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail(); // 标记整体测试失败
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail(); // 标记整体测试失败
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT8ARRAY_TEST_0038
-     * @tc.name      : test_concurrent_int8array_values_fixed_001
-     * @tc.desc      : Test the values() method of Int8Array (fixed scenario) under concurrent conditions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int8array_values_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_values_fixed_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_values_fixed_001, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT8ARRAY_TEST_0039
-     * @tc.name      : test_concurrent_int8array_index_access_fixed_001
-     * @tc.desc      : Test index access (read/write) of Int8Array (fixed scenario) under concurrent conditions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int8array_index_access_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int8array_index_access_fixed_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int8array_index_access_fixed_001, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
   })
 }

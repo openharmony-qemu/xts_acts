@@ -1,4 +1,4 @@
-import { ArkTSUtils, collections } from '@kit.ArkTS';
+import { ArkTSUtils, collections } from "@kit.ArkTS";
 
 @Concurrent
 export async function test_array_001(arr: collections.Array<number>, name: string, index: number) {
@@ -843,3 +843,412 @@ export async function test_cond_008(name: string, index: number) {
   await waitPromise;
   return 'timeout_success';
 }
+
+@Concurrent
+export async function test_bitvector_001(bitVector: collections.BitVector, name: string, index: number) {
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    bitVector.push(index % 2);
+  })
+}
+
+@Concurrent
+export async function test_bitvector_002(bitVector: collections.BitVector, name: string, index: number) {
+  let res = 0
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    if (bitVector.length > 0) {
+      res = bitVector.pop();
+    }
+  })
+  return res
+}
+
+@Concurrent
+export async function test_bitvector_003(bitVector: collections.BitVector, name: string, index: number) {
+  let res = false
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    if (bitVector.length >= 3) {
+      res = bitVector.has(1, 0, 2);
+    }
+  })
+  return res
+}
+
+@Concurrent
+export async function test_bitvector_004(bitVector: collections.BitVector, name: string, index: number) {
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    if (bitVector.length >= 4) {
+      bitVector.setBitsByRange(index % 2, 1, 3);
+    }
+  })
+}
+
+@Concurrent
+export async function test_bitvector_005(bitVector: collections.BitVector, name: string, index: number) {
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    bitVector.setAllBits(index % 2);
+  })
+}
+
+@Concurrent
+export async function test_bitvector_006(bitVector: collections.BitVector, name: string, index: number) {
+  let res = 0
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+      let subBitVector =  bitVector.getBitsByRange(1, 3);
+      res = subBitVector.length;
+  })
+  return res
+}
+
+@Concurrent
+export async function test_bitvector_007(bitVector: collections.BitVector, name: string, index: number) {
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    if (index === 0) {
+      bitVector.resize(8);
+    } else if (index === 1) {
+      bitVector.resize(3);
+    } else {
+      bitVector.resize(6);
+    }
+  })
+}
+
+@Concurrent
+export async function test_bitvector_008(bitVector: collections.BitVector, name: string, index: number) {
+  let res = 0
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    if (bitVector.length >= 4) {
+      res = bitVector.getBitCountByRange(1, 1, 4);
+    }
+  })
+  return res
+}
+
+@Concurrent
+export async function test_bitvector_009(bitVector: collections.BitVector, name: string, index: number) {
+  let res = -1
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    if (bitVector.length >= 4) {
+      res = bitVector.getIndexOf(0, 1, 4);
+    }
+  })
+  return res
+}
+
+@Concurrent
+export async function test_bitvector_010(bitVector: collections.BitVector, name: string, index: number) {
+  let res = -1
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    if (bitVector.length >= 4) {
+      res = bitVector.getLastIndexOf(0, 1, 4);
+    }
+  })
+  return res
+}
+
+@Concurrent
+export async function test_bitvector_011(bitVector: collections.BitVector, name: string, index: number) {
+  let res = -1
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    if (bitVector.length > 1) {
+      res = bitVector[1];
+    }
+  })
+  return res
+}
+
+@Concurrent
+export async function test_bitvector_012(bitVector: collections.BitVector, name: string, index: number) {
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    if (bitVector.length > 3) {
+      bitVector.flipBitByIndex(3);
+    }
+  })
+}
+
+@Concurrent
+export async function test_bitvector_013(bitVector: collections.BitVector, name: string, index: number) {
+  let result = 'completed'
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    try {
+      if (bitVector.length >= 4) {
+        bitVector.flipBitsByRange(1, 4);
+        if (bitVector.length < 4) {
+          result = 'failed';
+        }
+      } else {
+        result = 'failed_insufficient_length';
+      }
+    } catch (e) {
+      console.error(`test_bitvector_013 error: ${e.message}`);
+      result = 'failed_exception';
+    }
+  })
+  return result
+}
+
+@Concurrent
+export async function test_uint8Array_001(uint8Array: collections.Uint8Array, name: string, index: number) {
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    let originalLength = uint8Array.length;
+    uint8Array[originalLength] = index % 256;
+    let temp = uint8Array[0];
+    uint8Array[0] = uint8Array[1];
+    uint8Array[1] = temp;
+  })
+}
+
+@Concurrent
+export async function test_uint8Array_002(uint8Array: collections.Uint8Array, name: string, index: number) {
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    let newArray = collections.Uint8Array.from([index, index + 1, index + 2]);
+    uint8Array[uint8Array.length] = newArray[0];
+  })
+}
+
+@Concurrent
+export async function test_uint8Array_003(uint8Array: collections.Uint8Array, name: string, index: number) {
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    let newArray = collections.Uint8Array.from([index, index + 1, index + 2]);
+    uint8Array[uint8Array.length] = newArray[0];
+  })
+}
+
+@Concurrent
+export async function test_uint8Array_004(uint8Array: collections.Uint8Array, name: string, index: number) {
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    uint8Array.copyWithin(0, 1, 3);
+    let temp = uint8Array[0];
+    uint8Array[0] = uint8Array[1];
+    uint8Array[1] = temp;
+  })
+}
+
+@Concurrent
+export async function test_uint8Array_005(uint8Array: collections.Uint8Array, name: string, index: number) {
+  let res = false;
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    res = uint8Array.some((element: number) => element < 0);
+    let temp = uint8Array[0];
+    uint8Array[0] = uint8Array[1];
+    uint8Array[1] = temp;
+  })
+  return res;
+}
+
+@Concurrent
+export async function test_uint8Array_006(uint8Array: collections.Uint8Array, name: string, index: number) {
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    let newSet = new Set([index, index + 1, index + 2]);
+    let newArray = collections.Uint8Array.from(newSet);
+    uint8Array[uint8Array.length] = newArray[0];
+  })
+}
+
+@Concurrent
+export async function test_uint8Array_007(uint8Array: collections.Uint8Array, name: string, index: number) {
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    let newArray = collections.Uint8Array.from([index, index + 1, index + 2], (value, idx) => value + idx);
+    uint8Array[uint8Array.length] = newArray[0];
+  })
+}
+
+@Concurrent
+export async function test_uint8Array_008(uint8Array: collections.Uint8Array, name: string, index: number) {
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    let newArray = collections.Uint8Array.of(index, index + 1, index + 2);
+    uint8Array[uint8Array.length] = newArray[0];
+  })
+}
+
+@Concurrent
+export async function test_uint8Array_009(uint8Array: collections.Uint8Array, name: string, index: number) {
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    uint8Array.copyWithin(0, 1, 3);
+    let temp = uint8Array[0];
+    uint8Array[0] = uint8Array[1];
+    uint8Array[1] = temp;
+  })
+}
+
+@Concurrent
+export async function test_uint8Array_010(uint8Array: collections.Uint8Array, name: string, index: number) {
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    let temp = uint8Array[0];
+    uint8Array[0] = uint8Array[1];
+    uint8Array[1] = temp;
+  })
+}
+
+@Concurrent
+export async function test_uint8Array_011(uint8Array: collections.Uint8Array, name: string, index: number) {
+  let res = false;
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    let someResult = uint8Array.some((element: number) => element < 0);
+    let everyResult = uint8Array.every((element: number) => element >= 0);
+    res = someResult || !everyResult;
+  })
+  return res;
+}
+
+@Concurrent
+export async function test_uint8Array_012(uint8Array: collections.Uint8Array, name: string, index: number) {
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    uint8Array.fill(0, 1, 3);
+  })
+}
+
+@Concurrent
+export async function test_uint8Array_013(uint8Array: collections.Uint8Array, name: string, index: number) {
+  let str = '';
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    let filteredArray = uint8Array.filter((element: number) => element % 2 === 0);
+    let foundElement = uint8Array.find((element: number) => element % 2 === 0);
+    str = filteredArray.toString() + ',' + foundElement;
+  })
+  return str;
+}
+
+@Concurrent
+export async function test_uint8Array_014(uint8Array: collections.Uint8Array, name: string, index: number) {
+  let str = '';
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    let findIndexResult = uint8Array.findIndex((element: number) => element % 2 === 0);
+    let indexOfResult = uint8Array.indexOf(2);
+    str = findIndexResult + ',' + indexOfResult;
+  })
+  return str;
+}
+
+@Concurrent
+export async function test_uint8Array_015(uint8Array: collections.Uint8Array, name: string, index: number) {
+  let result = 'forEach_completed';
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    uint8Array.forEach((value: number, index: number, array: collections.Uint8Array) => {
+      if (value !== array[index]) {
+        result = 'forEach_failed';
+      }
+    });
+  })
+  return result;
+}
+
+@Concurrent
+export async function test_uint8Array_016(uint8Array: collections.Uint8Array, name: string, index: number) {
+  let str = '';
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    let lastIndexOfResult = uint8Array.lastIndexOf(2);
+    let joinResult = uint8Array.join('-');
+    str = lastIndexOfResult + ',' + joinResult;
+  })
+  return str;
+}
+
+@Concurrent
+export async function test_uint8Array_017(uint8Array: collections.Uint8Array, name: string, index: number) {
+  let str = '';
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    let mappedArray = uint8Array.map((value: number) => value * 2);
+    str = mappedArray.toString();
+  })
+  return str;
+}
+
+@Concurrent
+export async function test_uint8Array_018(uint8Array: collections.Uint8Array, name: string, index: number) {
+  let str = '';
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    let reduceResult = uint8Array.reduce((accumulator: number, value: number) => accumulator + value);
+    let reduceWithInitResult = uint8Array.reduce((accumulator: number, value: number) => accumulator + value, 6);
+    str = reduceResult + ',' + reduceWithInitResult;
+  })
+  return str;
+}
+
+@Concurrent
+export async function test_uint8Array_019(uint8Array: collections.Uint8Array, name: string, index: number) {
+  let str = '';
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    let reduceRightResult = uint8Array.reduceRight((accumulator: number, value: number) => accumulator + value);
+    let reduceRightWithInitResult = uint8Array.reduceRight((accumulator: number, value: number) => accumulator + value, 6);
+    str = reduceRightResult + ',' + reduceRightWithInitResult;
+  })
+  return str;
+}
+
+@Concurrent
+export async function test_uint8Array_020(uint8Array: collections.Uint8Array, name: string, index: number) {
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    uint8Array.reverse();
+  })
+}
+
+@Concurrent
+export async function test_uint8Array_021(uint8Array: collections.Uint8Array, name: string, index: number) {
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    let newValues = [100, 101, 102];
+    uint8Array.set(newValues, 0);
+  })
+}
+
+@Concurrent
+export async function test_uint8Array_022(uint8Array: collections.Uint8Array, name: string, index: number) {
+  let str = '';
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    let slicedArray = uint8Array.slice(1, 3);
+    str = slicedArray.toString();
+  })
+  return str;
+}
+
+@Concurrent
+export async function test_uint8Array_023(uint8Array: collections.Uint8Array, name: string, index: number) {
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    uint8Array.sort((a: number, b: number) => b - a);
+  })
+}
+
+@Concurrent
+export async function test_uint8Array_024(uint8Array: collections.Uint8Array, name: string, index: number) {
+  let str = '';
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    let subArray = uint8Array.subarray(1, 3);
+    str = subArray.toString();
+  })
+  return str;
+}
+
+@Concurrent
+export async function test_uint8Array_025(uint8Array: collections.Uint8Array, name: string, index: number) {
+  let str = '';
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    let atResult = uint8Array.at(2);
+    let includesResult = uint8Array.includes(3);
+    str = atResult + ',' + includesResult;
+  })
+  return str;
+}
+
+@Concurrent
+export async function test_uint8Array_026(uint8Array: collections.Uint8Array, name: string, index: number) {
+  let str = '';
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    let iterator = uint8Array.entries();
+    let firstEntry: [number, number] = iterator.next().value;
+    str = firstEntry[0] + ',' + firstEntry[1];
+  })
+  return str;
+}
+
+@Concurrent
+export async function test_uint8Array_027(uint8Array: collections.Uint8Array, name: string, index: number) {
+  let str = '';
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    let keysIterator = uint8Array.keys();
+    let firstKey: number = keysIterator.next().value;
+    let valuesIterator = uint8Array.values();
+    let firstValue: number = valuesIterator.next().value;
+    str = firstKey + ',' + firstValue;
+  })
+  return str;
+}
+

@@ -17,45 +17,32 @@ import { taskpool } from '@kit.ArkTS';
 import { collections } from '@kit.ArkTS';
 import type { BusinessError } from '@ohos.base';
 import {
-  test_Float32array_constructor_with_array_buffer,
-  test_float32array_constructor_with_length,
-  test_Float32array_constructor_with_iterable,
-  test_Float32array_constructor_with_buffer,
-  test_Float32array_static_from_array_like,
-  test_Float32array_from_fixed_001,
-  test_Float32array_static_from_iterable,
-  test_Float32array_static_of_numbers,
-  test_Float32array_toString,
-  test_Float32array_toLocaleString,
-  test_Float32array_copyWithin_helper,
-  test_Float32array_some_001,
-  test_Float32array_every_001,
-  test_Float32array_fill_fixed,
-  test_Float32array_filter_fixed,
-  test_Float32array_find_001,
-  test_Float32array_findIndex_001,
-  test_Float32array_forEach_001,
-  test_Float32array_indexOf_001,
-  test_Float32array_lastIndexOf_001,
-  test_Float32array_join_001,
-  test_Float32array_map_001,
-  test_Float32array_reduce_001,
-  test_Float32array_reduceRight_001,
-  test_Float32array_reduce_with_initial_001,
-  test_Float32array_reduceRight_fixed_001,
-  test_Float32array_reduce_fixed_001,
-  test_Float32array_reverse_001,
-  test_Float32array_set_001,
-  test_Float32array_slice_001,
-  test_Float32array_sort_fixed_001,
-  test_Float32array_subarray_fixed_001,
-  test_Float32array_at_fixed_001,
-  test_Float32array_includes_fixed_001,
-  test_Float32array_entries_fixed_001,
-  test_Float32array_keys_fixed_001,
-  test_Float32array_values_fixed_001,
-  test_Float32array_index_access_fixed_001
+  Float32array_test_0001,
+  Float32array_test_0002,
+  Float32array_test_0003,
+  Float32array_test_0004,
+  Float32array_test_0005,
+  Float32array_test_0006,
+  Float32array_test_0007,
+  Float32array_test_0008,
+  Float32array_test_0009,
+  Float32array_test_0011,
+  Float32array_test_0012,
+  Float32array_test_0013,
+  Float32array_test_0014,
+  Float32array_test_0015,
+  Float32array_test_0016,
+  Float32array_test_006,
+  Float32array_test_007,
+  Float32array_test_008,
+  Float32array_test_009,
+  Float32array_test_011,
+  Float32array_test_012
 } from '../testability/pages/Float32TaskPool';
+
+
+let concurrentNum = 100
+let arrCount = 1000
 
 export function sleep(time: number): Promise<void> {
   return new Promise((re, je) => {
@@ -63,6 +50,14 @@ export function sleep(time: number): Promise<void> {
       re()
     }, time)
   })
+}
+
+function getFloat32Array(): collections.Float32Array {
+  let float32Array: collections.Float32Array = new collections.Float32Array();
+  for (let i = 9999; i < 9999 + arrCount; i++) {
+    float32Array[i] = i;
+  }
+  return float32Array
 }
 
 export default function Float32ArrayGlobalTest() {
@@ -90,1593 +85,1125 @@ export default function Float32ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_FLOAT32ARRAY_TEST_0001
-     * @tc.name      : test_Float32array_constructor_length_0
-     * @tc.desc      : Test concurrent creation of Float32Array with specified length using constructor via taskpool
+     * @tc.name      : Float32array_test_0001
+     * @tc.desc      : Test Float32array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_Float32array_constructor_length_0', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+    it('Float32array_test_0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_Float32array_constructor_length_0';
+        const caseName = 'Float32array_test_0001';
         console.info(`${caseName} test start`);
-
+        let array: collections.Float32Array = collections.Float32Array.from<number>(
+          { length: 1000 }, (v: Object, k: number) => k);
         try {
-          for (let i = 0; i < 100; i++) {
-            console.info(`[${caseName}] Attempt ${i + 1}: Creating Float32Array with length = 0`);
-            let Float32Array: collections.Float32Array = new collections.Float32Array(0);
-            console.info(`[${caseName}] Attempt ${i + 1}: Float32Array created, length = ${Float32Array.length}`);
-            expect(Float32Array != null).assertTrue();
-            expect(Float32Array.length === 0).assertTrue();
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Float32array_test_0001, array, caseName, i)
           }
-          console.info(`${caseName} test end: All 100 Float32Array(0) creations succeeded.`);
+          await taskpool.execute(group).then(() => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(array.length).assertEqual(arrCount)
+          expect(array).assertContain(999)
         } catch (e) {
-          console.error(`${caseName} test failed: ${e}`);
-          expect().assertFail();
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
         done();
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0002
-     * @tc.name      : test_Float32array_constructor_with_length
-     * @tc.desc      : Test sequential creation of Float32Array with length (100 iterations, verifies instance validity and length consistency)
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0002
+     * @tc.name      : Float32array_test_0001
+     * @tc.desc      : Test Float32array
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_Float32array_constructor_with_length',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Float32array_test_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_Float32array_constructor_with_lengths';
+        const caseName = 'Float32array_test_0002';
         console.info(`${caseName} test start`);
-
-        const concurrentNum = 100;
-        const length = 10;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-          for (let i = 0; i < concurrentNum; i++) {
-
-            group.addTask(
-              test_float32array_constructor_with_length,
-              length,
-              caseName,
-              i
-            );
-          }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} All tasks completed.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} TaskGroup execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
-        } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
+        let set: Set<number> = new Set<number>();
+        for (let i = 0; i <= 100; i++) {
+          set.add(i);
         }
-
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0003
-     * @tc.name      : test_Float32array_constructor_with_array_buffer
-     * @tc.desc      : Test concurrent creation of Float32Array using ArrayBuffer as input (100 tasks via taskpool)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_Float32array_constructor_with_array_buffer',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_Float32array_constructor_with_array_buffer';
-        console.info(`${caseName} test start`);
-
-        const concurrentNum = 100;
-
+        let array: collections.Float32Array = collections.Float32Array.from(set);
         try {
-          let group = new taskpool.TaskGroup(caseName);
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-
-            group.addTask(
-              test_Float32array_constructor_with_array_buffer,
-              caseName,
-              i
-            );
+            group.addTask(Float32array_test_0001, array, caseName, i)
           }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} All tasks completed.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} TaskGroup execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
-        } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
-        }
-
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0004
-     * @tc.name      : test_Float32array_constructor_with_iterable
-     * @tc.desc      : Test concurrent creation of Float32Array using iterable input (100 tasks via taskpool, fixed iterable [1,2,3])
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_Float32array_constructor_with_iterable',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_Float32array_constructor_with_iterable';
-        const concurrentNum = 100;
-        const fixedIterable = [1, 2, 3];
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_constructor_with_iterable, fixedIterable, caseName, i);
-          }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} completed.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} error: ${e.message}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
-        } catch (e) {
-          console.error(`${caseName} setup error: ${e}`);
-          expect().assertFail();
-        }
-
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0005
-     * @tc.name      : test_Float32array_constructor_with_buffer
-     * @tc.desc      : Test concurrent creation of Float32Array with specified ArrayBuffer, byteOffset and length (100 tasks via taskpool, buffer size=100, offset=10, length=20)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_Float32array_constructor_with_buffer',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_Float32array_constructor_with_buffer';
-        const concurrentNum = 100;
-        const bufferSize = 100;
-        const buffer: collections.ArrayBuffer = new collections.ArrayBuffer(bufferSize);
-        const byteOffset = 10;
-        const length = 20;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(
-              test_Float32array_constructor_with_buffer,
-              buffer,
-              byteOffset,
-              length,
-              caseName,
-              i
-            );
-          }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} completed. All tasks finished.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} error: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
-        } catch (e) {
-          console.error(`${caseName} setup error: ${e}`);
-          expect().assertFail();
-        }
-
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0006
-     * @tc.name      : test_Float32array_static_from_array_like
-     * @tc.desc      : Test concurrent execution of Float32Array.from() with ArrayLike input (100 tasks via taskpool, ArrayLike data varies by task)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_Float32array_static_from_array_like',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_Float32array_static_from_array_like';
-        const concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            const arrayLike = [i];
-            group.addTask(
-              test_Float32array_static_from_array_like,
-              arrayLike,
-              caseName,
-              i
-            );
-          }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} All tasks completed successfully.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} Task execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
-        } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
-        }
-
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0007
-     * @tc.name      : test_concurrent_Float32array_from_fixed_001
-     * @tc.desc      : Test fixed-scenario concurrent execution of Float32Array.from() method (100 tasks via taskpool)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_Float32array_from_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_from_fixed_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_from_fixed_001, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then(() => {
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(array.length).assertEqual(101)
+          expect(array).assertContain(100)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0008
-     * @tc.name      : test_Float32array_static_from_iterable_0008
-     * @tc.desc      : Test concurrent execution of Float32Array.from() with iterable input (100 tasks via taskpool, iterable data varies by task)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_Float32array_static_from_iterable',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_Float32array_static_from_iterable_0008';
-        const concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            const arrayLike: Iterable<number> = [i];
-
-            group.addTask(
-              test_Float32array_static_from_iterable,
-              arrayLike,
-              caseName,
-              i
-            );
-          }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName}  .`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} Task execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
-        } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
-        }
-
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0009
-     * @tc.name      : test_Float32array_static_of_numbers_concurrently_100_times
-     * @tc.desc      : Test concurrent execution of Float32Array.of() with numeric input (100 tasks via taskpool, numeric data varies by task)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_Float32array_static_of_numbers_concurrently_100_times',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_Float32array_static_of_numbers_concurrently_100_times';
-        const concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            const numbers: number[] = [i];
-
-            group.addTask(
-              test_Float32array_static_of_numbers,
-              numbers,
-              caseName,
-              i
-            );
-          }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} All 100 tasks completed successfully.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} Task execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
-        } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
-        }
-
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0010(这个用例存在cpp.crash的问题，待排查)
-     * @tc.name      : test_Float32array_toString
-     * @tc.desc      : Test concurrent execution of Float32Array.toString() method (100 tasks via taskpool, verifies string output consistency)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    // it('test_Float32array_toString_concurrently_100_times',
-    //   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> => {
-    //     const caseName = 'test_Float32array_toString_concurrently_100_times';
-    //     const concurrentNum = 100;
-    //
-    //     try {
-    //       let group = new taskpool.TaskGroup(caseName);
-    //
-    //       for (let i = 0; i < concurrentNum; i++) {
-    //
-    //         const Float32Array = new collections.Float32Array([i]);
-    //
-    //         const expectedString = `${i}`;
-    //
-    //         group.addTask(
-    //           test_Float32array_toString,
-    //           Float32Array,
-    //           expectedString,
-    //           caseName,
-    //           i
-    //         );
-    //       }
-    //
-    //       await taskpool.execute(group)
-    //         .then(() => {
-    //           console.info(`${caseName} All 100 tasks completed successfully.`);
-    //         })
-    //         .catch((e: BusinessError) => {
-    //           console.error(`${caseName} Task execution failed: ${e.message}, code: ${e.code}`);
-    //           expect().assertFail();
-    //         });
-    //
-    //       console.info(`${caseName} test end`);
-    //     } catch (e) {
-    //       console.error(`${caseName} Test setup failed: ${e}`);
-    //       expect().assertFail();
-    //     }
-    //
-    //     done();
-    //   });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0011
-     * @tc.name      : test_Float32array_toLocaleString
-     * @tc.desc      : Test concurrent execution of Float32Array.toLocaleString() method (100 tasks via taskpool, verifies localized string output consistency)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_Float32array_toLocaleString_concurrently_100_times',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_Float32array_toLocaleString_concurrently_100_times';
-        const concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-
-            const Float32Array = new collections.Float32Array([i]);
-
-            const expectedString = `${i}`;
-
-            group.addTask(
-              test_Float32array_toLocaleString,
-              Float32Array,
-              expectedString,
-              caseName,
-              i
-            );
-          }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} All 100 tasks completed successfully.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} Task execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
-        } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
-        }
-
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0012
-     * @tc.name      : test_Float32array_copyWithin_function
-     * @tc.desc      : Test concurrent execution of Float32Array.copyWithin() method (100 tasks via taskpool, fixed source/target range, verifies array data consistency)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_Float32array_copyWithin_function',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_Float32array_copyWithin_function';
-        const concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            const baseArray = [1, 2, 3, 4, 5, 6, 7, 8];
-            const Float32Array = new collections.Float32Array(baseArray);
-            const target = 3;
-            const start = 1;
-            const end = 3;
-            const expectedArray = new collections.Float32Array([1, 2, 3, 2, 3, 6, 7, 8]);
-
-            group.addTask(
-              test_Float32array_copyWithin_helper,
-              Float32Array,
-              target,
-              start,
-              end,
-              expectedArray,
-              caseName,
-              i
-            );
-          }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} All ${concurrentNum} tasks completed successfully.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} Task execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
-        } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
-        }
-
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0013
-     * @tc.name      : test_concurrent_Float32array_some_001
-     * @tc.desc      : Test concurrent execution of Float32Array.some() method (100 tasks via taskpool, 10-element array, verifies existence of target value (-10))
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_Float32array_some_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_some_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let Float32ArrayCount = 10;
-        let testValue = -10;
-
-        try {
-          let arrayLike: number[] = [];
-          for (let i = 0; i < Float32ArrayCount; i++) {
-            arrayLike.push(i * 10);
-          }
-
-          arrayLike[0] = testValue;
-
-          let Float32Array: collections.Float32Array = new collections.Float32Array(arrayLike);
-
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_some_001, Float32Array, caseName, i, testValue);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-          console.info(`${caseName} all tasks completed`);
-
-          let hasNegative = Float32Array.some((element: number) => element < 0);
-          console.info(`${caseName} Final verification - has negative: ${hasNegative}`);
-          expect(hasNegative).assertEqual(true);
-
-          let allNumbers = Float32Array.every((element: number) => typeof element === 'number');
-          console.info(`${caseName} Final verification - all numbers: ${allNumbers}`);
-          expect(allNumbers).assertEqual(true);
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0014
-     * @tc.name      : test_concurrent_Float32array_every_001
-     * @tc.desc      : Test concurrent execution of Float32Array.every() method (100 tasks via taskpool, 10-element array, verifies all elements meet positive condition)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_Float32array_every_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_every_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let Float32ArrayCount = 10;
-
-        try {
-          let arrayLike: number[] = [];
-          for (let i = 0; i < Float32ArrayCount; i++) {
-            arrayLike[i] = i * 10;
-          }
-
-          arrayLike[2] = -30;
-
-          let Float32Array: collections.Float32Array = new collections.Float32Array(arrayLike);
-
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_every_001, Float32Array, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-          let allPositive = Float32Array.every((element: number) => element > 0);
-          console.info(`${caseName} Final check - all positive: ${allPositive}`);
-          expect(allPositive).assertEqual(false);
-
-          let allNumbers = Float32Array.every((element: number) => typeof element === 'number');
-          console.info(`${caseName} Final check - all numbers: ${allNumbers}`);
-          expect(allNumbers).assertEqual(true);
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0015
-     * @tc.name      : test_concurrent_Float32array_fill_basic_fixed_001
-     * @tc.desc      : Test fixed-scenario concurrent execution of Float32Array.fill() method (100 tasks via taskpool)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_Float32array_fill_basic_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_fill_basic_fixed_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_fill_fixed, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0016
-     * @tc.name      : test_concurrent_Float32array_filter_basic_fixed_001
-     * @tc.desc      : Test fixed-scenario concurrent execution of Float32Array.filter() method (100 tasks via taskpool)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_Float32array_filter_basic_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_filter_basic_fixed_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_filter_fixed, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0017
-     * @tc.name      : test_concurrent_Float32array_find_001
-     * @tc.desc      : Test concurrent execution of Float32Array.find() method (100 tasks via taskpool, 20-element array, verifies target element lookup)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_Float32array_find_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_find_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let Float32ArrayCount = 20;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_find_001, caseName, i, Float32ArrayCount);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0018
-     * @tc.name      : test_concurrent_Float32array_findIndex_001
-     * @tc.desc      : Test concurrent execution of Float32Array.findIndex() method (100 tasks via taskpool, 20-element array, verifies target element index lookup)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_Float32array_findIndex_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_findIndex_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let Float32ArrayCount = 20;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_findIndex_001, caseName, i, Float32ArrayCount);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0019
-     * @tc.name      : test_concurrent_Float32array_forEach_001
-     * @tc.desc      : Test concurrent execution of Float32Array.forEach() method (100 tasks via taskpool, 20-element array, verifies element traversal logic)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_Float32array_forEach_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_forEach_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let Float32ArrayCount = 20;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_forEach_001, caseName, i, Float32ArrayCount);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0020
-     * @tc.name      : test_concurrent_Float32array_indexOf_001
-     * @tc.desc      : Test concurrent execution of Float32Array.indexOf() method (100 tasks via taskpool, 20-element array, verifies target element index search)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_Float32array_indexOf_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_indexOf_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let Float32ArrayCount = 20;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_indexOf_001, caseName, i, Float32ArrayCount);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0021
-     * @tc.name      : test_concurrent_Float32array_lastIndexOf_001
-     * @tc.desc      : Test concurrent execution of Float32Array.lastIndexOf() method (100 tasks via taskpool, 20-element array, verifies last occurrence index of target value)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_Float32array_lastIndexOf_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_lastIndexOf_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let Float32ArrayCount = 20;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_lastIndexOf_001, caseName, i, Float32ArrayCount);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0022
-     * @tc.name      : test_concurrent_Float32array_join_001
-     * @tc.desc      : Test concurrent execution of Float32Array.join() method (100 tasks via taskpool, 20-element array, verifies array element concatenation into string)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_Float32array_join_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_join_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let Float32ArrayCount = 20;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_join_001, caseName, i, Float32ArrayCount);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0023
-     * @tc.name      : test_concurrent_Float32array_map_001
-     * @tc.desc      : Test concurrent execution of Float32Array.map() method (100 tasks via taskpool, 20-element array, verifies element transformation and new array generation)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_Float32array_map_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_map_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let Float32ArrayCount = 20;
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_map_001, caseName, i, Float32ArrayCount);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0024
-     * @tc.name      : test_concurrent_Float32array_reduce_001
-     * @tc.desc      : Test concurrent execution of Float32Array.reduce() method (100 tasks via taskpool, 20-element array, verifies sequential element accumulation logic)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_Float32array_reduce_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_reduce_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let Float32ArrayCount = 20;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_reduce_001, caseName, i, Float32ArrayCount);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0025
-     * @tc.name      : test_concurrent_Float32array_reduceRight_001
-     * @tc.desc      : Test concurrent execution of Float32Array.reduceRight() method (100 tasks via taskpool, 20-element array, verifies reverse-order element accumulation logic)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_Float32array_reduceRight_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_reduceRight_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let Float32ArrayCount = 20;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_reduceRight_001, caseName, i, Float32ArrayCount);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0026
-     * @tc.name      : test_concurrent_Float32array_reduce_with_initial_001
-     * @tc.desc      : Test concurrent execution of Float32Array.reduce() with initial value (100 tasks via taskpool, 20-element array, verifies accumulation with initial value)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_Float32array_reduce_with_initial_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_reduce_with_initial_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let Float32ArrayCount = 20;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_reduce_with_initial_001, caseName, i, Float32ArrayCount);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : GLOBAL_TEST_0027
-     * @tc.name      : test_Float32Array_from_arraybuffer
-     * @tc.desc      : Test creating Float32Array from ArrayBuffer
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0003
+     * @tc.name      : Float32array_test_0001
+     * @tc.desc      : Test Float32array
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_Float32array_reduceRight_with_initial_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Float32array_test_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_reduceRight_with_initial_001';
+        const caseName = 'Float32array_test_0003';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let Float32ArrayCount = 20;
-
+        let array: collections.Float32Array = collections.Float32Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_reduceRight_fixed_001, caseName, i, Float32ArrayCount);
+            group.addTask(Float32array_test_0001, array, caseName, i)
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then(() => {
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(array.toString()).assertEqual('0,0,1,1,2,2,3,3,4,4')
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0028
-     * @tc.name      : test_concurrent_Float32array_reduce_with_initial_string_001
-     * @tc.desc      : Test concurrent execution of Float32Array.reduce() with string initial value (100 tasks via taskpool, 20-element array, verifies string-type accumulation)
-     * @tc.size      : MediumTest
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0004
+     * @tc.name      : Float32array_test_0001
+     * @tc.desc      : Test Float32array
+     * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_Float32array_reduce_with_initial_string_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Float32array_test_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_reduce_with_initial_string_001';
+        const caseName = 'Float32array_test_0004';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let Float32ArrayCount = 20;
-
+        let array: collections.Float32Array = collections.Float32Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_reduce_fixed_001, caseName, i, Float32ArrayCount);
+            group.addTask(Float32array_test_0001, array, caseName, i)
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then(() => {
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(array.toLocaleString()).assertEqual('0,0,1,1,2,2,3,3,4,4')
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0029
-     * @tc.name      : test_concurrent_Float32array_reverse_001
-     * @tc.desc      : Test concurrent execution of Float32Array.reverse() method (100 tasks via taskpool, verifies array element order reversal)
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0005
+     * @tc.name      : Float32array_test_0005
+     * @tc.desc      : Test Float32array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_Float32array_reverse_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Float32array_test_0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_reverse_001';
+        const caseName = 'Float32array_test_0005';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
+        let array: collections.Float32Array = collections.Float32Array.from<number>(
+          { length: 1000 }, (v: Object, k: number) => k);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_reverse_001, caseName, i);
+            group.addTask(Float32array_test_0002, array, caseName, i)
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then(() => {
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(array.length).assertEqual(arrCount)
+          expect(array).assertContain(127)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0030
-     * @tc.name      : test_concurrent_Float32array_set_001
-     * @tc.desc      : Test concurrent execution of Float32Array.set() method (100 tasks via taskpool, verifies data copying from source array to target array)
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0006
+     * @tc.name      : Float32array_test_0006
+     * @tc.desc      : Test Float32array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_Float32array_set_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Float32array_test_0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_set_001';
+        const caseName = 'Float32array_test_0006';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
+        let flag:boolean = false;
+        let array: collections.Float32Array = collections.Float32Array.from<number>(
+          { length: 1000 }, (v: Object, k: number) => k);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_set_001, caseName, i);
+            group.addTask(Float32array_test_006, array, caseName, i)
           }
-
           await taskpool.execute(group).then((res) => {
+            expect(res[0]).assertTrue();
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(array.length).assertEqual(arrCount)
+          expect(flag).assertTrue()
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0031
-     * @tc.name      : test_concurrent_Float32array_slice_001
-     * @tc.desc      : Test concurrent execution of Float32Array.slice() method (100 tasks via taskpool, verifies creation of subarray slice without modifying original array)
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0007
+     * @tc.name      : Float32array_test_0007
+     * @tc.desc      : Test Float32array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_Float32array_slice_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Float32array_test_0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_slice_001';
+        const caseName = 'Float32array_test_0007';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
+        let flag:boolean = false;
+        let array: collections.Float32Array = collections.Float32Array.from<number>(
+          { length: 50 }, (v: Object, k: number) => k);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_slice_001, caseName, i);
+            group.addTask(Float32array_test_007, array, caseName, i)
           }
-
           await taskpool.execute(group).then((res) => {
+            expect(res[0].toString()).assertContain('40,42,44,46,48')
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(flag).assertTrue()
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0032
-     * @tc.name      : test_concurrent_Float32array_sort_fixed_001
-     * @tc.desc      : Test fixed-scenario concurrent execution of Float32Array.sort() method (100 tasks via taskpool, verifies array element sorting logic)
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0008
+     * @tc.name      : Float32array_test_0008
+     * @tc.desc      : Test Float32array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_Float32array_sort_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Float32array_test_0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_sort_fixed_001';
+        const caseName = 'Float32array_test_0008';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
+        let flag:boolean = false;
+        let array: collections.Float32Array = collections.Float32Array.from<number>(
+          { length: 100 }, (v: Object, k: number) => k);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_sort_fixed_001, caseName, i);
+            group.addTask(Float32array_test_008, array, caseName, i)
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then((result) => {
+            expect(result).assertContain(31)
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(flag).assertTrue()
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0033
-     * @tc.name      : test_concurrent_Float32array_subarray_fixed_001
-     * @tc.desc      : Test fixed-scenario concurrent execution of Float32Array.subarray() method (100 tasks via taskpool, verifies creation of subarray view referencing original buffer)
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0009
+     * @tc.name      : Float32array_test_0009
+     * @tc.desc      : Test Float32array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_Float32array_subarray_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Float32array_test_0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_subarray_fixed_001';
+        const caseName = 'Float32array_test_0009';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
+        let flag:boolean = false;
+        let array: collections.Float32Array = collections.Float32Array.from<number>(
+          { length: 100 }, (v: Object, k: number) => k);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_subarray_fixed_001, caseName, i);
+            group.addTask(Float32array_test_009, array, caseName, i)
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then((result) => {
+            expect(result).assertContain(0)
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(flag).assertTrue()
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0034
-     * @tc.name      : test_concurrent_Float32array_at_fixed_001
-     * @tc.desc      : Test fixed-scenario concurrent execution of Float32Array.at() method (100 tasks via taskpool, verifies element access by index (supports negative indices))
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0010
+     * @tc.name      : Float32array_test_0010
+     * @tc.desc      : Test Float32array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_Float32array_at_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Float32array_test_0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_at_fixed_001';
+        const caseName = 'Float32array_test_0010';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
+        let flag: boolean = false;
+        let count: number = 0;
+        let array: collections.Float32Array = collections.Float32Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_at_fixed_001, caseName, i);
+            group.addTask(Float32array_test_0003, array, caseName, i)
+            count++;
           }
-
           await taskpool.execute(group).then((res) => {
+            expect(res.toString()).assertContain('2,4,6,8,10')
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            console.info(`${caseName} Task execution catch ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0035
-     * @tc.name      : test_concurrent_Float32array_includes_fixed_001
-     * @tc.desc      : Test fixed-scenario concurrent execution of Float32Array.includes() method (100 tasks via taskpool, verifies existence of target value in array)
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0011
+     * @tc.name      : Float32array_test_0011
+     * @tc.desc      : Test Float32array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_Float32array_includes_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Float32array_test_0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_includes_fixed_001';
+        const caseName = 'Float32array_test_0011';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
+        let flag:boolean = false;
+        let array: collections.Float32Array = collections.Float32Array.from<number>(
+          { length: 100 }, (v: Object, k: number) => k);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_includes_fixed_001, caseName, i);
+            group.addTask(Float32array_test_011, array, caseName, i)
           }
-
           await taskpool.execute(group).then((res) => {
+            expect(res).assertContain(99)
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(flag).assertTrue()
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0036
-     * @tc.name      : test_concurrent_Float32array_entries_fixed_001
-     * @tc.desc      : Test fixed-scenario concurrent execution of Float32Array.entries() method (100 tasks via taskpool, verifies iteration of index-value pairs)
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0012
+     * @tc.name      : Float32array_test_0012
+     * @tc.desc      : Test Float32array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_Float32array_entries_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Float32array_test_0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_entries_fixed_001';
+        const caseName = 'Float32array_test_0012';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
+        let flag:boolean = false;
+        let array: collections.Float32Array = collections.Float32Array.from<number>(
+          { length: 100 }, (v: Object, k: number) => k);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_entries_fixed_001, caseName, i);
+            group.addTask(Float32array_test_012, array, caseName, i)
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then((result) => {
+            expect(result).assertContain(90)
+            flag = true
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0037
-     * @tc.name      : test_concurrent_Float32array_keys_fixed_001
-     * @tc.desc      : Test fixed-scenario concurrent execution of Float32Array.keys() method (100 tasks via taskpool, verifies iteration of array indices)
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0013
+     * @tc.name      : Float32array_test_0013
+     * @tc.desc      : Test Float32array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_Float32array_keys_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Float32array_test_0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_keys_fixed_001';
+        const caseName = 'Float32array_test_0013';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100; // 并发任务数，可以根据需要调整
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Float32Array = collections.Float32Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          // 为每个并发任务添加独立的测试任务
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_keys_fixed_001, caseName, i);
+            group.addTask(Float32array_test_0004, array, caseName, i)
+            count++
           }
-
           await taskpool.execute(group).then((res) => {
+            expect(res.toString()).assertContain('7-8-9-10');
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail(); // 标记整体测试失败
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail(); // 标记整体测试失败
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0038
-     * @tc.name      : test_concurrent_Float32array_values_fixed_001
-     * @tc.desc      : Test fixed-scenario concurrent execution of Float32Array.values() method (100 tasks via taskpool, verifies iteration of array values)
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0014
+     * @tc.name      : Float32array_test_0014
+     * @tc.desc      : Test Float32array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_Float32array_values_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Float32array_test_0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_values_fixed_001';
+        const caseName = 'Float32array_test_0014';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Float32Array = collections.Float32Array.from([25, 36, 49]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_values_fixed_001, caseName, i);
+            group.addTask(Float32array_test_0005, array, caseName, i)
+            count++
           }
-
           await taskpool.execute(group).then((res) => {
+            expect(res.toString()).assertContain('5,6,7')
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0039
-     * @tc.name      : test_concurrent_Float32array_index_access_fixed_001
-     * @tc.desc      : Test fixed-scenario concurrent index access for Float32Array (100 tasks via taskpool, verifies read/write operations via array indices)
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0015
+     * @tc.name      : Float32array_test_0015
+     * @tc.desc      : Test Float32array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_Float32array_index_access_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Float32array_test_0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_Float32array_index_access_fixed_001';
+        const caseName = 'Float32array_test_0015';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Float32Array = collections.Float32Array.from([25, 36, 49]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_Float32array_index_access_fixed_001, caseName, i);
+            group.addTask(Float32array_test_0005, array, caseName, i)
+            count++
           }
-
           await taskpool.execute(group).then((res) => {
+            expect(res.toString()).assertContain('5,6,7')
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
       });
 
+    /**
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0016
+     * @tc.name      : Float32array_test_0016
+     * @tc.desc      : Test Float32array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Float32array_test_0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Float32array_test_0016';
+        console.info(`${caseName} test start`);
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Float32Array = collections.Float32Array.from([1, 2, 3, 4, 5]);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Float32array_test_0006, array, caseName, i)
+            count++
+          }
+          await taskpool.execute(group).then((res) => {
+            expect(res).assertContain(17)
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0017
+     * @tc.name      : Float32array_test_0017
+     * @tc.desc      : Test Float32array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Float32array_test_0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Float32array_test_0017';
+        console.info(`${caseName} test start`);
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Float32Array = collections.Float32Array.from([1, 2, 3, 4, 5]);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Float32array_test_0007, array, caseName, i)
+            count++
+          }
+          await taskpool.execute(group).then((res) => {
+            expect(res).assertContain(17)
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0018
+     * @tc.name      : Float32array_test_0018
+     * @tc.desc      : Test Float32array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Float32array_test_0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Float32array_test_0018';
+        console.info(`${caseName} test start`);
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Float32Array = collections.Float32Array.from([1, 2, 3, 4, 5]);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Float32array_test_0008, array, caseName, i)
+            count++
+          }
+          await taskpool.execute(group).then((res) => {
+            expect(res).assertContain(18)
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0019
+     * @tc.name      : Float32array_test_0019
+     * @tc.desc      : Test Float32array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Float32array_test_0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Float32array_test_0019';
+        console.info(`${caseName} test start`);
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Float32Array = collections.Float32Array.from([1, 2, 3, 4, 5]);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Float32array_test_0009, array, caseName, i)
+            count++
+          }
+          await taskpool.execute(group).then((res) => {
+            expect(res).assertContain(16)
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0021
+     * @tc.name      : Float32array_test_0021
+     * @tc.desc      : Test Float32array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Float32array_test_0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Float32array_test_0021';
+        console.info(`${caseName} test start`);
+        let count: number = 0;
+        let flag: boolean = false;
+        let buffer: collections.ArrayBuffer = new collections.ArrayBuffer(100);
+        let array: collections.Float32Array = new collections.Float32Array(buffer);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Float32array_test_0011, array, caseName, i)
+            count++
+          }
+          await taskpool.execute(group).then(() => {
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          expect(array.toString()).assertContain('1,2,3,0,0')
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0022
+     * @tc.name      : Float32array_test_0022
+     * @tc.desc      : Test Float32array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Float32array_test_0022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Float32array_test_0022';
+        console.info(`${caseName} test start`);
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Float32Array = collections.Float32Array.from([1, 2, 3, 4, 5]);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Float32array_test_0012, array, caseName, i)
+            count++
+          }
+          await taskpool.execute(group).then(() => {
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          expect(array.toString()).assertEqual('1,3,4,4,5')
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0023
+     * @tc.name      : Float32array_test_0023
+     * @tc.desc      : Test Float32array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Float32array_test_0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Float32array_test_0023';
+        console.info(`${caseName} test start`);
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Float32Array = collections.Float32Array.from([1, 3, 5, 4, 2]);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Float32array_test_0013, array, caseName, i)
+            count++
+          }
+          await taskpool.execute(group).then(() => {
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          expect(array.toString()).assertEqual('1,2,3,4,5')
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0024
+     * @tc.name      : Float32array_test_0024
+     * @tc.desc      : Test Float32array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Float32array_test_0024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Float32array_test_0024';
+        console.info(`${caseName} test start`);
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Float32Array = collections.Float32Array.from([1, 3, 5, 4, 2, 6, 7, 8]);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Float32array_test_0014, array, caseName, i)
+            count++
+          }
+          await taskpool.execute(group).then((res) => {
+            expect(res).assertContain('1,3,5,4')
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0025
+     * @tc.name      : Float32array_test_0025
+     * @tc.desc      : Test Float32array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Float32array_test_0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Float32array_test_0025';
+        console.info(`${caseName} test start`);
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Float32Array = collections.Float32Array.from([1, 3, 5, 4, 2, 6, 7, 8]);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Float32array_test_0014, array, caseName, i)
+            count++
+          }
+          await taskpool.execute(group).then(() => {
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          let result = array.at(1)
+          expect(result).assertEqual(3)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0026
+     * @tc.name      : Float32array_test_0026
+     * @tc.desc      : Test Float32array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Float32array_test_0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Float32array_test_0026';
+        console.info(`${caseName} test start`);
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Float32Array = collections.Float32Array.from([1, 3, 5, 4, 2, 6, 7, 8]);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Float32array_test_0014, array, caseName, i)
+            count++
+          }
+          await taskpool.execute(group).then(() => {
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          let result = array.includes(8)
+          expect(result).assertTrue()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0027
+     * @tc.name      : Float32array_test_0027
+     * @tc.desc      : Test Float32array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Float32array_test_0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Float32array_test_0027';
+        console.info(`${caseName} test start`);
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Float32Array = collections.Float32Array.from([1, 3, 5, 4, 2, 6, 7, 8]);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Float32array_test_0014, array, caseName, i)
+            count++
+          }
+          await taskpool.execute(group).then(() => {
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          let iterator: IterableIterator<[number, number]> = array.entries();
+          expect(iterator.next().value.toString()).assertEqual('0,1')
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0028
+     * @tc.name      : Float32array_test_0028
+     * @tc.desc      : Test Float32array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Float32array_test_0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Float32array_test_0028';
+        console.info(`${caseName} test start`);
+        let count: number = 0;
+        let flag: boolean = false;
+        let buffer: collections.ArrayBuffer = new collections.ArrayBuffer(100);
+        let array: collections.Float32Array = new collections.Float32Array(buffer);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Float32array_test_0015, array, caseName, i)
+            count++
+          }
+          await taskpool.execute(group).then(() => {
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          expect(array.toString()).assertContain('1,2,3,1,2,3,0,0')
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0029
+     * @tc.name      : Float32array_test_0029
+     * @tc.desc      : Test Float32array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Float32array_test_0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Float32array_test_0029';
+        console.info(`${caseName} test start`);
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Float32Array = collections.Float32Array.from([1, 2, 3, 4, 5]);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Float32array_test_0016, array, caseName, i)
+            count++
+          }
+          await taskpool.execute(group).then(() => {
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          expect(array.toString()).assertEqual('1,1,1,2,3')
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
   })
 }

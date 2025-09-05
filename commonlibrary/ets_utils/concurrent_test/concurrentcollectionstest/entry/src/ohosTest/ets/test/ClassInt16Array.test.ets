@@ -17,45 +17,32 @@ import { taskpool } from '@kit.ArkTS';
 import { collections } from '@kit.ArkTS';
 import type { BusinessError } from '@ohos.base';
 import {
-  test_int16array_constructor_with_array_buffer,
-  test_int16array_constructor_with_length,
-  test_int16array_constructor_with_iterable,
-  test_int16array_constructor_with_buffer,
-  test_int16array_static_from_array_like,
-  test_int16array_from_fixed_001,
-  test_int16array_static_from_iterable,
-  test_int16array_static_of_numbers,
-  test_int16array_toString,
-  test_int16array_toLocaleString,
-  test_int16array_copyWithin_helper,
-  test_int16array_some_001,
-  test_int16array_every_001,
-  test_int16array_fill_fixed,
-  test_int16array_filter_fixed,
-  test_int16array_find_001,
-  test_int16array_findIndex_001,
-  test_int16array_forEach_001,
-  test_int16array_indexOf_001,
-  test_int16array_lastIndexOf_001,
-  test_int16array_join_001,
-  test_int16array_map_001,
-  test_int16array_reduce_001,
-  test_int16array_reduceRight_001,
-  test_int16array_reduce_with_initial_001,
-  test_int16array_reduceRight_fixed_001,
-  test_int16array_reduce_fixed_001,
-  test_int16array_reverse_001,
-  test_int16array_set_001,
-  test_int16array_slice_001,
-  test_int16array_sort_fixed_001,
-  test_int16array_subarray_fixed_001,
-  test_int16array_at_fixed_001,
-  test_int16array_includes_fixed_001,
-  test_int16array_entries_fixed_001,
-  test_int16array_keys_fixed_001,
-  test_int16array_values_fixed_001,
-  test_int16array_index_access_fixed_001
+  Int16array_test_0001,
+  Int16array_test_0002,
+  Int16array_test_0003,
+  Int16array_test_0004,
+  Int16array_test_0005,
+  Int16array_test_0006,
+  Int16array_test_0007,
+  Int16array_test_0008,
+  Int16array_test_0009,
+  Int16array_test_0011,
+  Int16array_test_0012,
+  Int16array_test_0013,
+  Int16array_test_0014,
+  Int16array_test_0015,
+  Int16array_test_0016,
+  Int16array_test_006,
+  Int16array_test_007,
+  Int16array_test_008,
+  Int16array_test_009,
+  Int16array_test_011,
+  Int16array_test_012
 } from '../testability/pages/Int16TaskPool';
+
+
+let concurrentNum = 100
+let arrCount = 1000
 
 export function sleep(time: number): Promise<void> {
   return new Promise((re, je) => {
@@ -89,292 +76,263 @@ export default function Int16ArrayGlobalTest() {
     })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_0001
-     * @tc.name      : test_int16array_constructor_length_0
-     * @tc.desc      : Test creation of Int16Array with length 0 via constructor (loop execution 100 times)
+     * @tc.number    : SUB_INT16ARRAY_TEST_0001
+     * @tc.name      : Int16array_test_0001
+     * @tc.desc      : Test Int16array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Int16array_test_0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Int16array_test_0001';
+        console.info(`${caseName} test start`);
+        let array: collections.Int16Array = collections.Int16Array.from<number>(
+          { length: 1000 }, (v: Object, k: number) => k);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Int16array_test_0001, array, caseName, i)
+          }
+          await taskpool.execute(group).then(() => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(array.length).assertEqual(arrCount)
+          expect(array).assertContain(999)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_INT16ARRAY_TEST_0002
+     * @tc.name      : Int16array_test_0001
+     * @tc.desc      : Test Int16array
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_int16array_constructor_length_0', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+    it('Int16array_test_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_int16array_constructor_length_0';
+        const caseName = 'Int16array_test_0002';
         console.info(`${caseName} test start`);
-
-        try {
-          for (let i = 0; i < 100; i++) {
-            console.info(`[${caseName}] Attempt ${i + 1}: Creating Int16Array with length = 0`);
-            let int16Array: collections.Int16Array = new collections.Int16Array(0);
-            console.info(`[${caseName}] Attempt ${i + 1}: Int16Array created, length = ${int16Array.length}`);
-            expect(int16Array != null).assertTrue();
-            expect(int16Array.length === 0).assertTrue();
-          }
-          console.info(`${caseName} test end: All 100 Int16Array(0) creations succeeded.`);
-        } catch (e) {
-          console.error(`${caseName} test failed: ${e}`);
-          expect().assertFail();
+        let set: Set<number> = new Set<number>();
+        for (let i = 0; i <= 100; i++) {
+          set.add(i);
         }
+        let array: collections.Int16Array = collections.Int16Array.from(set);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Int16array_test_0001, array, caseName, i)
+          }
+          await taskpool.execute(group).then(() => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(array.length).assertEqual(101)
+          expect(array).assertContain(100)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
         done();
       });
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_0002
-     * @tc.name      : test_int16array_constructor_with_length
-     * @tc.desc      : Test concurrent creation of Int16Array with specified length via constructor using taskpool
-     * @tc.size      : MediumTest
+     * @tc.number    : SUB_INT16ARRAY_TEST_0003
+     * @tc.name      : Int16array_test_0001
+     * @tc.desc      : Test Int16array
+     * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_int16array_constructor_with_length',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int16array_test_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_int16array_constructor_with_lengths';
+        const caseName = 'Int16array_test_0003';
         console.info(`${caseName} test start`);
-
-        const concurrentNum = 100;
-        const length = 10;
-
+        let array: collections.Int16Array = collections.Int16Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         try {
-          let group = new taskpool.TaskGroup(caseName);
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-
-            group.addTask(
-              test_int16array_constructor_with_length,
-              length,
-              caseName,
-              i
-            );
+            group.addTask(Int16array_test_0001, array, caseName, i)
           }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} All tasks completed.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} TaskGroup execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
+          await taskpool.execute(group).then(() => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(array.toString()).assertEqual('0,0,1,1,2,2,3,3,4,4')
         } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
         }
-
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_0003
-     * @tc.name      : test_int16array_constructor_with_array_buffer
-     * @tc.desc      : Test concurrent creation of Int16Array with ArrayBuffer via constructor using taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_int16array_constructor_with_array_buffer',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_int16array_constructor_with_array_buffer';
-        console.info(`${caseName} test start`);
-
-        const concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-          for (let i = 0; i < concurrentNum; i++) {
-
-            group.addTask(
-              test_int16array_constructor_with_array_buffer,
-              caseName,
-              i
-            );
-          }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} All tasks completed.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} TaskGroup execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
-        } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
-        }
-
+        console.info(`${caseName} test end`);
         done();
       });
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0004
-     * @tc.name      : test_int16array_constructor_with_iterable_concurrently
-     * @tc.desc      : Test concurrent creation of Int16Array with Iterable input via constructor using taskpool
-     * @tc.size      : MediumTest
+     * @tc.name      : Int16array_test_0001
+     * @tc.desc      : Test Int16array
+     * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_int16array_constructor_with_iterable_concurrently',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int16array_test_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_int16array_constructor_with_iterable';
-        const concurrentNum = 100;
-        const fixedIterable = [1, 2, 3];
-
+        const caseName = 'Int16array_test_0004';
+        console.info(`${caseName} test start`);
+        let array: collections.Int16Array = collections.Int16Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         try {
-          let group = new taskpool.TaskGroup(caseName);
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_constructor_with_iterable, fixedIterable, caseName, i);
+            group.addTask(Int16array_test_0001, array, caseName, i)
           }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} completed.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} error: ${e.message}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
+          await taskpool.execute(group).then(() => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(array.toLocaleString()).assertEqual('0,0,1,1,2,2,3,3,4,4')
         } catch (e) {
-          console.error(`${caseName} setup error: ${e}`);
-          expect().assertFail();
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
         }
-
+        console.info(`${caseName} test end`);
         done();
       });
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0005
-     * @tc.name      : test_int16array_constructor_with_buffer
-     * @tc.desc      : Test concurrent creation of Int16Array with ArrayBuffer (with byteOffset/length) via constructor using taskpool
+     * @tc.name      : Int16array_test_0005
+     * @tc.desc      : Test Int16array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_int16array_constructor_with_buffer',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int16array_test_0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_int16array_constructor_with_buffer';
-        const concurrentNum = 100;
-        const bufferSize = 100;
-        const buffer: collections.ArrayBuffer = new collections.ArrayBuffer(bufferSize);
-        const byteOffset = 10;
-        const length = 20;
-
+        const caseName = 'Int16array_test_0005';
+        console.info(`${caseName} test start`);
+        let array: collections.Int16Array = collections.Int16Array.from<number>(
+          { length: 1000 }, (v: Object, k: number) => k);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(
-              test_int16array_constructor_with_buffer,
-              buffer,
-              byteOffset,
-              length,
-              caseName,
-              i
-            );
+            group.addTask(Int16array_test_0002, array, caseName, i)
           }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} completed. All tasks finished.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} error: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
+          await taskpool.execute(group).then(() => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(array.length).assertEqual(arrCount)
+          expect(array).assertContain(127)
         } catch (e) {
-          console.error(`${caseName} setup error: ${e}`);
-          expect().assertFail();
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
         }
-
+        console.info(`${caseName} test end`);
         done();
       });
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0006
-     * @tc.name      : test_int16array_static_from_array_like
-     * @tc.desc      : Test concurrent use of Int16Array.from() with ArrayLike input using taskpool
+     * @tc.name      : Int16array_test_0006
+     * @tc.desc      : Test Int16array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_int16array_static_from_array_like',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int16array_test_0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_int16array_static_from_array_like';
-        const concurrentNum = 100;
-
+        const caseName = 'Int16array_test_0006';
+        console.info(`${caseName} test start`);
+        let flag:boolean = false;
+        let array: collections.Int16Array = collections.Int16Array.from<number>(
+          { length: 1000 }, (v: Object, k: number) => k);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            const arrayLike = [i];
-            group.addTask(
-              test_int16array_static_from_array_like,
-              arrayLike,
-              caseName,
-              i
-            );
+            group.addTask(Int16array_test_006, array, caseName, i)
           }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} All tasks completed successfully.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} Task execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
+          await taskpool.execute(group).then((res) => {
+            expect(res[0]).assertTrue();
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(array.length).assertEqual(arrCount)
+          expect(flag).assertTrue()
         } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
         }
-
+        console.info(`${caseName} test end`);
         done();
       });
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0007
-     * @tc.name      : test_concurrent_int16array_from_fixed_001
-     * @tc.desc      : Test concurrent use of Int16Array.from() (fixed scenario) using taskpool
+     * @tc.name      : Int16array_test_0007
+     * @tc.desc      : Test Int16array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int16array_from_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int16array_test_0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_from_fixed_001';
+        const caseName = 'Int16array_test_0007';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
+        let flag:boolean = false;
+        let array: collections.Int16Array = collections.Int16Array.from<number>(
+          { length: 50 }, (v: Object, k: number) => k);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_from_fixed_001, caseName, i);
+            group.addTask(Int16array_test_007, array, caseName, i)
           }
-
           await taskpool.execute(group).then((res) => {
+            expect(res[0].toString()).assertContain('40,42,44,46,48')
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(flag).assertTrue()
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -382,360 +340,279 @@ export default function Int16ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0008
-     * @tc.name      : test_int16array_static_from_iterable_concurrently_100_times
-     * @tc.desc      : Test concurrent use of Int16Array.from() with Iterable input (100 times) using taskpool
+     * @tc.name      : Int16array_test_0008
+     * @tc.desc      : Test Int16array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_int16array_static_from_iterable_concurrently_100_times',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int16array_test_0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_int16array_static_from_iterable_concurrently_100_times';
-        const concurrentNum = 100;
-
+        const caseName = 'Int16array_test_0008';
+        let flag:boolean = false;
+        let array: collections.Int16Array = collections.Int16Array.from<number>(
+          { length: 100 }, (v: Object, k: number) => k);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            const arrayLike: Iterable<number> = [i];
-
-            group.addTask(
-              test_int16array_static_from_iterable,
-              arrayLike,
-              caseName,
-              i
-            );
+            group.addTask(Int16array_test_008, array, caseName, i)
           }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName}  .`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} Task execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
-        } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
-        }
-
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT16ARRAY_TEST_0009
-     * @tc.name      : test_int16array_static_of_numbers_concurrently_100_times
-     * @tc.desc      : Test concurrent use of Int16Array.of() with number inputs (100 times) using taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_int16array_static_of_numbers_concurrently_100_times',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_int16array_static_of_numbers_concurrently_100_times';
-        const concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            const numbers: number[] = [i];
-
-            group.addTask(
-              test_int16array_static_of_numbers,
-              numbers,
-              caseName,
-              i
-            );
-          }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} All 100 tasks completed successfully.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} Task execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
-        } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
-        }
-
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT16ARRAY_TEST_0010
-     * @tc.name      : test_int16array_toString_concurrently_100_times
-     * @tc.desc      : Test concurrent use of toString() method of Int16Array (100 times) using taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_int16array_toString_concurrently_100_times',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_int16array_toString_concurrently_100_times';
-        const concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-
-            const int16Array = new collections.Int16Array([i]);
-
-            const expectedString = `${i}`;
-
-            group.addTask(
-              test_int16array_toString,
-              int16Array,
-              expectedString,
-              caseName,
-              i
-            );
-          }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} All 100 tasks completed successfully.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} Task execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
-        } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
-        }
-
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT16ARRAY_TEST_0011
-     * @tc.name      : test_int16array_toLocaleString_concurrently_100_times
-     * @tc.desc      : Test concurrent use of toLocaleString() method of Int16Array (100 times) using taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_int16array_toLocaleString_concurrently_100_times',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_int16array_toLocaleString_concurrently_100_times';
-        const concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-
-            const int16Array = new collections.Int16Array([i]);
-
-            const expectedString = `${i}`;
-
-            group.addTask(
-              test_int16array_toLocaleString,
-              int16Array,
-              expectedString,
-              caseName,
-              i
-            );
-          }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} All 100 tasks completed successfully.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} Task execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
-        } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
-        }
-
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT16ARRAY_TEST_0012
-     * @tc.name      : test_int16array_copyWithin_function
-     * @tc.desc      : Test concurrent use of copyWithin() method of Int16Array using taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_int16array_copyWithin_function',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_int16array_copyWithin_function';
-        const concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            const baseArray = [1, 2, 3, 4, 5, 6, 7, 8];
-            const int16Array = new collections.Int16Array(baseArray);
-            const target = 3;
-            const start = 1;
-            const end = 3;
-            const expectedArray = new collections.Int16Array([1, 2, 3, 2, 3, 6, 7, 8]);
-
-            group.addTask(
-              test_int16array_copyWithin_helper,
-              int16Array,
-              target,
-              start,
-              end,
-              expectedArray,
-              caseName,
-              i
-            );
-          }
-
-          await taskpool.execute(group)
-            .then(() => {
-              console.info(`${caseName} All ${concurrentNum} tasks completed successfully.`);
-            })
-            .catch((e: BusinessError) => {
-              console.error(`${caseName} Task execution failed: ${e.message}, code: ${e.code}`);
-              expect().assertFail();
-            });
-
-          console.info(`${caseName} test end`);
-        } catch (e) {
-          console.error(`${caseName} Test setup failed: ${e}`);
-          expect().assertFail();
-        }
-
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT16ARRAY_TEST_0013
-     * @tc.name      : test_concurrent_int16array_some_001
-     * @tc.desc      : Test the some() method of Int16Array under concurrent conditions using taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int16array_some_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_some_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int16ArrayCount = 10;
-        let testValue = -10;
-
-        try {
-          let arrayLike: number[] = [];
-          for (let i = 0; i < int16ArrayCount; i++) {
-            arrayLike.push(i * 10);
-          }
-
-          arrayLike[0] = testValue;
-
-          let int16Array: collections.Int16Array = new collections.Int16Array(arrayLike);
-
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_some_001, int16Array, caseName, i, testValue);
-          }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then((result) => {
+            expect(result).assertContain(31)
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-          console.info(`${caseName} all tasks completed`);
-
-          let hasNegative = int16Array.some((element: number) => element < 0);
-          console.info(`${caseName} Final verification - has negative: ${hasNegative}`);
-          expect(hasNegative).assertEqual(true);
-
-          let allNumbers = int16Array.every((element: number) => typeof element === 'number');
-          console.info(`${caseName} Final verification - all numbers: ${allNumbers}`);
-          expect(allNumbers).assertEqual(true);
-
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(flag).assertTrue()
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
       });
 
-
     /**
-     * @tc.number    : SUB_INT16ARRAY_TEST_0014
-     * @tc.name      : test_concurrent_int16array_every_001
-     * @tc.desc      : Test the every() method of Int16Array under concurrent conditions using taskpool
+     * @tc.number    : SUB_INT16ARRAY_TEST_0009
+     * @tc.name      : Int16array_test_0009
+     * @tc.desc      : Test Int16array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int16array_every_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int16array_test_0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_every_001';
+        const caseName = 'Int16array_test_0009';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int16ArrayCount = 10;
-
+        let flag:boolean = false;
+        let array: collections.Int16Array = collections.Int16Array.from<number>(
+          { length: 100 }, (v: Object, k: number) => k);
         try {
-          let arrayLike: number[] = [];
-          for (let i = 0; i < int16ArrayCount; i++) {
-            arrayLike[i] = i * 10;
-          }
-
-          arrayLike[2] = -30;
-
-          let int16Array: collections.Int16Array = new collections.Int16Array(arrayLike);
-
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_every_001, int16Array, caseName, i);
+            group.addTask(Int16array_test_009, array, caseName, i)
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then((result) => {
+            expect(result).assertContain(0)
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-          let allPositive = int16Array.every((element: number) => element > 0);
-          console.info(`${caseName} Final check - all positive: ${allPositive}`);
-          expect(allPositive).assertEqual(false);
-
-          let allNumbers = int16Array.every((element: number) => typeof element === 'number');
-          console.info(`${caseName} Final check - all numbers: ${allNumbers}`);
-          expect(allNumbers).assertEqual(true);
-
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(flag).assertTrue()
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_INT16ARRAY_TEST_0010
+     * @tc.name      : Int16array_test_0010
+     * @tc.desc      : Test Int16array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Int16array_test_0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Int16array_test_0010';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        let count: number = 0;
+        let array: collections.Int16Array = collections.Int16Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Int16array_test_0003, array, caseName, i)
+            count++;
+          }
+          await taskpool.execute(group).then((res) => {
+            expect(res.toString()).assertContain('2,4,6,8,10')
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_INT16ARRAY_TEST_0011
+     * @tc.name      : Int16array_test_0011
+     * @tc.desc      : Test Int16array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Int16array_test_0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Int16array_test_0011';
+        console.info(`${caseName} test start`);
+        let flag:boolean = false;
+        let array: collections.Int16Array = collections.Int16Array.from<number>(
+          { length: 100 }, (v: Object, k: number) => k);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Int16array_test_011, array, caseName, i)
+          }
+          await taskpool.execute(group).then((res) => {
+            expect(res).assertContain(99)
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(flag).assertTrue()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_INT16ARRAY_TEST_0012
+     * @tc.name      : Int16array_test_0012
+     * @tc.desc      : Test Int16array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Int16array_test_0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Int16array_test_0012';
+        console.info(`${caseName} test start`);
+        let flag:boolean = false;
+        let array: collections.Int16Array = collections.Int16Array.from<number>(
+          { length: 100 }, (v: Object, k: number) => k);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Int16array_test_012, array, caseName, i)
+          }
+          await taskpool.execute(group).then((result) => {
+            expect(result).assertContain(90)
+            flag = true
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${array.length}`);
+          console.info(`${caseName} Task result: ${array}`);
+          expect(flag).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_INT16ARRAY_TEST_0013
+     * @tc.name      : Int16array_test_0013
+     * @tc.desc      : Test Int16array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Int16array_test_0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Int16array_test_0013';
+        console.info(`${caseName} test start`);
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int16Array = collections.Int16Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Int16array_test_0004, array, caseName, i)
+            count++
+          }
+          await taskpool.execute(group).then((res) => {
+            expect(res.toString()).assertContain('7-8-9-10');
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_INT16ARRAY_TEST_0014
+     * @tc.name      : Int16array_test_0014
+     * @tc.desc      : Test Int16array
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('Int16array_test_0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'Int16array_test_0014';
+        console.info(`${caseName} test start`);
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int16Array = collections.Int16Array.from([25, 36, 49]);
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(Int16array_test_0005, array, caseName, i)
+            count++
+          }
+          await taskpool.execute(group).then((res) => {
+            expect(res.toString()).assertContain('5,6,7')
+            flag = true;
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -743,36 +620,40 @@ export default function Int16ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0015
-     * @tc.name      : test_concurrent_int16array_fill_basic_fixed_001
-     * @tc.desc      : Test the fill() method of Int16Array (basic fixed scenario) under concurrent conditions using taskpool
+     * @tc.name      : Int16array_test_0015
+     * @tc.desc      : Test Int16array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int16array_fill_basic_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int16array_test_0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_fill_basic_fixed_001';
+        const caseName = 'Int16array_test_0015';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int16Array = collections.Int16Array.from([25, 36, 49]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_fill_fixed, caseName, i);
+            group.addTask(Int16array_test_0005, array, caseName, i)
+            count++
           }
-
           await taskpool.execute(group).then((res) => {
+            expect(res.toString()).assertContain('5,6,7')
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -780,36 +661,40 @@ export default function Int16ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0016
-     * @tc.name      : test_concurrent_int16array_filter_basic_fixed_001
-     * @tc.desc      : Test the filter() method of Int16Array (basic fixed scenario) under concurrent conditions using taskpool
+     * @tc.name      : Int16array_test_0016
+     * @tc.desc      : Test Int16array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int16array_filter_basic_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int16array_test_0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_filter_basic_fixed_001';
+        const caseName = 'Int16array_test_0016';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int16Array = collections.Int16Array.from([1, 2, 3, 4, 5]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_filter_fixed, caseName, i);
+            group.addTask(Int16array_test_0006, array, caseName, i)
+            count++
           }
-
           await taskpool.execute(group).then((res) => {
+            expect(res).assertContain(17)
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -817,37 +702,40 @@ export default function Int16ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0017
-     * @tc.name      : test_concurrent_int16array_find_001
-     * @tc.desc      : Test the find() method of Int16Array under concurrent conditions using taskpool
+     * @tc.name      : Int16array_test_0017
+     * @tc.desc      : Test Int16array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int16array_find_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int16array_test_0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_find_001';
+        const caseName = 'Int16array_test_0017';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int16ArrayCount = 20;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int16Array = collections.Int16Array.from([1, 2, 3, 4, 5]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_find_001, caseName, i, int16ArrayCount);
+            group.addTask(Int16array_test_0007, array, caseName, i)
+            count++
           }
-
           await taskpool.execute(group).then((res) => {
+            expect(res).assertContain(17)
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -855,37 +743,40 @@ export default function Int16ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0018
-     * @tc.name      : test_concurrent_int16array_findIndex_001
-     * @tc.desc      : Test the findIndex() method of Int16Array under concurrent conditions using taskpool
+     * @tc.name      : Int16array_test_0018
+     * @tc.desc      : Test Int16array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int16array_findIndex_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int16array_test_0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_findIndex_001';
+        const caseName = 'Int16array_test_0018';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int16ArrayCount = 20;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int16Array = collections.Int16Array.from([1, 2, 3, 4, 5]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_findIndex_001, caseName, i, int16ArrayCount);
+            group.addTask(Int16array_test_0008, array, caseName, i)
+            count++
           }
-
           await taskpool.execute(group).then((res) => {
+            expect(res).assertContain(18)
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -893,113 +784,123 @@ export default function Int16ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0019
-     * @tc.name      : test_concurrent_int16array_forEach_001
-     * @tc.desc      : Test the forEach() method of Int16Array under concurrent conditions using taskpool
+     * @tc.name      : Int16array_test_0019
+     * @tc.desc      : Test Int16array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int16array_forEach_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int16array_test_0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_forEach_001';
+        const caseName = 'Int16array_test_0019';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int16ArrayCount = 20;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int16Array = collections.Int16Array.from([1, 2, 3, 4, 5]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_forEach_001, caseName, i, int16ArrayCount);
+            group.addTask(Int16array_test_0009, array, caseName, i)
+            count++
           }
-
           await taskpool.execute(group).then((res) => {
+            expect(res).assertContain(16)
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
       });
 
-    /**
-     * @tc.number    : SUB_INT16ARRAY_TEST_0020
-     * @tc.name      : test_concurrent_int16array_indexOf_001
-     * @tc.desc      : Test the indexOf() method of Int16Array under concurrent conditions using taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int16array_indexOf_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_indexOf_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int16ArrayCount = 20;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_indexOf_001, caseName, i, int16ArrayCount);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
+    // /**
+    //  * @tc.number    : SUB_INT16ARRAY_TEST_0020
+    //  * @tc.name      : Int16array_test_0020
+    //  * @tc.desc      : Test Int16array
+    //  * @tc.size      : MediumTest
+    //  * @tc.type      : Function
+    //  * @tc.level     : Level 0
+    //  */
+    // it('Int16array_test_0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+    //   async (done: () => void): Promise<void> => {
+    //     const caseName = 'Int16array_test_0020';
+    //     console.info(`${caseName} test start`);
+    //     let count: number = 0;
+    //     let flag: boolean = false;
+    //     let array: collections.Int16Array = collections.Int16Array.from([1, 2, 3, 4, 5]);
+    //     try {
+    //       let group = new taskpool.TaskGroup(caseName)
+    //       for (let i = 0; i < concurrentNum; i++) {
+    //         group.addTask(Int16array_test_0010, array, caseName, i)
+    //         count++
+    //       }
+    //       await taskpool.execute(group).then((res) => {
+    //         expect(res.toString()).assertContain('5,4,3,2,1')
+    //         flag = true;
+    //         console.info(`${caseName} Task execution success`);
+    //       }).catch((e: BusinessError) => {
+    //         console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+    //         expect().assertFail()
+    //       })
+    //       while (count < concurrentNum) {
+    //         await sleep(100)
+    //       }
+    //       expect(flag).assertTrue();
+    //     } catch (e) {
+    //       console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+    //       expect().assertFail()
+    //     }
+    //     console.info(`${caseName} test end`);
+    //     done();
+    //   });
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0021
-     * @tc.name      : test_concurrent_int16array_lastIndexOf_001
-     * @tc.desc      : Test the lastIndexOf() method of Int16Array under concurrent conditions using taskpool
+     * @tc.name      : Int16array_test_0021
+     * @tc.desc      : Test Int16array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int16array_lastIndexOf_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int16array_test_0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_lastIndexOf_001';
+        const caseName = 'Int16array_test_0021';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int16ArrayCount = 20;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let buffer: collections.ArrayBuffer = new collections.ArrayBuffer(1000);
+        let array: collections.Int16Array = new collections.Int16Array(buffer);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_lastIndexOf_001, caseName, i, int16ArrayCount);
+            group.addTask(Int16array_test_0011, array, caseName, i)
+            count++
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then(() => {
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          expect(array.toString()).assertContain('1,2,3,0,0')
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -1007,37 +908,40 @@ export default function Int16ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0022
-     * @tc.name      : test_concurrent_int16array_join_001
-     * @tc.desc      : Test the join() method of Int16Array under concurrent conditions using taskpool
+     * @tc.name      : Int16array_test_0022
+     * @tc.desc      : Test Int16array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int16array_join_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int16array_test_0022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_join_001';
+        const caseName = 'Int16array_test_0022';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int16ArrayCount = 20;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int16Array = collections.Int16Array.from([1, 2, 3, 4, 5]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_join_001, caseName, i, int16ArrayCount);
+            group.addTask(Int16array_test_0012, array, caseName, i)
+            count++
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then(() => {
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          expect(array.toString()).assertEqual('1,3,4,4,5')
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -1045,36 +949,40 @@ export default function Int16ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0023
-     * @tc.name      : test_concurrent_int16array_map_001
-     * @tc.desc      : Test the map() method of Int16Array under concurrent conditions using taskpool
+     * @tc.name      : Int16array_test_0023
+     * @tc.desc      : Test Int16array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int16array_map_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int16array_test_0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_map_001';
+        const caseName = 'Int16array_test_0023';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int16ArrayCount = 20;
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int16Array = collections.Int16Array.from([1, 3, 5, 4, 2]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_map_001, caseName, i, int16ArrayCount);
+            group.addTask(Int16array_test_0013, array, caseName, i)
+            count++
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then(() => {
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          expect(array.toString()).assertEqual('1,2,3,4,5')
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -1082,37 +990,40 @@ export default function Int16ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0024
-     * @tc.name      : test_concurrent_int16array_reduce_001
-     * @tc.desc      : Test the reduce() method of Int16Array under concurrent conditions (100 tasks) using taskpool
+     * @tc.name      : Int16array_test_0024
+     * @tc.desc      : Test Int16array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int16array_reduce_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int16array_test_0024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_reduce_001';
+        const caseName = 'Int16array_test_0024';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int16ArrayCount = 20;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int16Array = collections.Int16Array.from([1, 3, 5, 4, 2, 6, 7, 8]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_reduce_001, caseName, i, int16ArrayCount);
+            group.addTask(Int16array_test_0014, array, caseName, i)
+            count++
           }
-
           await taskpool.execute(group).then((res) => {
+            expect(res).assertContain('1,3,5,4')
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -1120,37 +1031,41 @@ export default function Int16ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0025
-     * @tc.name      : test_concurrent_int16array_reduceRight_001
-     * @tc.desc      : Test the reduceRight() method of Int16Array under concurrent conditions (100 tasks) using taskpool
+     * @tc.name      : Int16array_test_0025
+     * @tc.desc      : Test Int16array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int16array_reduceRight_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int16array_test_0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_reduceRight_001';
+        const caseName = 'Int16array_test_0025';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int16ArrayCount = 20;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int16Array = collections.Int16Array.from([1, 3, 5, 4, 2, 6, 7, 8]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_reduceRight_001, caseName, i, int16ArrayCount);
+            group.addTask(Int16array_test_0014, array, caseName, i)
+            count++
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then(() => {
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          let result = array.at(1)
+          expect(result).assertEqual(3)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -1158,37 +1073,41 @@ export default function Int16ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0026
-     * @tc.name      : test_concurrent_int16array_reduce_with_initial_001
-     * @tc.desc      : Test the reduce() method of Int16Array (with initial value) under concurrent conditions using taskpool
+     * @tc.name      : Int16array_test_0026
+     * @tc.desc      : Test Int16array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int16array_reduce_with_initial_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int16array_test_0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_reduce_with_initial_001';
+        const caseName = 'Int16array_test_0026';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int16ArrayCount = 20;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int16Array = collections.Int16Array.from([1, 3, 5, 4, 2, 6, 7, 8]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_reduce_with_initial_001, caseName, i, int16ArrayCount);
+            group.addTask(Int16array_test_0014, array, caseName, i)
+            count++
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then(() => {
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          let result = array.includes(8)
+          expect(result).assertTrue()
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -1196,37 +1115,41 @@ export default function Int16ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0027
-     * @tc.name      : test_concurrent_int16array_reduceRight_with_initial_001
-     * @tc.desc      : Test the reduceRight() method of Int16Array (with initial value) under concurrent conditions using taskpool
+     * @tc.name      : Int16array_test_0027
+     * @tc.desc      : Test Int16array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int16array_reduceRight_with_initial_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int16array_test_0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_reduceRight_with_initial_001';
+        const caseName = 'Int16array_test_0027';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int16ArrayCount = 20;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int16Array = collections.Int16Array.from([1, 3, 5, 4, 2, 6, 7, 8]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_reduceRight_fixed_001, caseName, i, int16ArrayCount);
+            group.addTask(Int16array_test_0014, array, caseName, i)
+            count++
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then(() => {
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          let iterator: IterableIterator<[number, number]> = array.entries();
+          expect(iterator.next().value.toString()).assertEqual('0,1')
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -1234,37 +1157,41 @@ export default function Int16ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0028
-     * @tc.name      : test_concurrent_int16array_reduce_with_initial_string_001
-     * @tc.desc      : Test the reduce() method of Int16Array (with string initial value) under concurrent conditions using taskpool
+     * @tc.name      : Int16array_test_0028
+     * @tc.desc      : Test Int16array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int16array_reduce_with_initial_string_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int16array_test_0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_reduce_with_initial_string_001';
+        const caseName = 'Int16array_test_0028';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-        let int16ArrayCount = 20;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let buffer: collections.ArrayBuffer = new collections.ArrayBuffer(100);
+        let array: collections.Int16Array = new collections.Int16Array(buffer);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_reduce_fixed_001, caseName, i, int16ArrayCount);
+            group.addTask(Int16array_test_0015, array, caseName, i)
+            count++
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then(() => {
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          expect(array.toString()).assertContain('1,2,3,1,2,3,0,0')
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
@@ -1272,412 +1199,43 @@ export default function Int16ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0029
-     * @tc.name      : test_concurrent_int16array_reverse_001
-     * @tc.desc      : Test the reverse() method of Int16Array under concurrent conditions (100 tasks) using taskpool
+     * @tc.name      : Int16array_test_0029
+     * @tc.desc      : Test Int16array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_int16array_reverse_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Int16array_test_0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_reverse_001';
+        const caseName = 'Int16array_test_0029';
         console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
+        let count: number = 0;
+        let flag: boolean = false;
+        let array: collections.Int16Array = collections.Int16Array.from([1, 2, 3, 4, 5]);
         try {
-          let group = new taskpool.TaskGroup(caseName);
-
+          let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_reverse_001, caseName, i);
+            group.addTask(Int16array_test_0016, array, caseName, i)
+            count++
           }
-
-          await taskpool.execute(group).then((res) => {
+          await taskpool.execute(group).then(() => {
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
+            expect().assertFail()
+          })
+          while (count < concurrentNum) {
+            await sleep(100)
+          }
+          expect(flag).assertTrue();
+          expect(array.toString()).assertEqual('1,1,1,2,3')
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
+          expect().assertFail()
         }
         console.info(`${caseName} test end`);
         done();
       });
-
-    /**
-     * @tc.number    : SUB_INT16ARRAY_TEST_0030
-     * @tc.name      : test_concurrent_int16array_set_001
-     * @tc.desc      : Test the set() method of Int16Array under concurrent conditions (100 tasks) using taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int16array_set_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_set_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_set_001, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT16ARRAY_TEST_0031
-     * @tc.name      : test_concurrent_int16array_slice_001
-     * @tc.desc      : Test the slice() method of Int16Array under concurrent conditions (100 tasks) using taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int16array_slice_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_slice_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_slice_001, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT16ARRAY_TEST_0032
-     * @tc.name      : test_concurrent_int16array_sort_fixed_001
-     * @tc.desc      : Test the sort() method of Int16Array (fixed scenario) under concurrent conditions using taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int16array_sort_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_sort_fixed_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_sort_fixed_001, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT16ARRAY_TEST_0033
-     * @tc.name      : test_concurrent_int16array_subarray_fixed_001
-     * @tc.desc      : Test subarray() method of Int16Array under concurrent conditions (100 tasks) using taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int16array_subarray_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_subarray_fixed_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_subarray_fixed_001, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT16ARRAY_TEST_0034
-     * @tc.name      : test_concurrent_int16array_at_fixed_001
-     * @tc.desc      : Test at() method of Int16Array (fixed scenario) under concurrent conditions using taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int16array_at_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_at_fixed_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_at_fixed_001, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT16ARRAY_TEST_0035
-     * @tc.name      : test_concurrent_int16array_includes_fixed_001
-     * @tc.desc      : Test includes() method of Int16Array (fixed scenario) under concurrent conditions using taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int16array_includes_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_includes_fixed_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_includes_fixed_001, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT16ARRAY_TEST_0036
-     * @tc.name      : test_concurrent_int16array_entries_fixed_001
-     * @tc.desc      : Test entries() method of Int16Array (fixed scenario) under concurrent conditions using taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int16array_entries_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_entries_fixed_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_entries_fixed_001, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT16ARRAY_TEST_0037
-     * @tc.name      : test_concurrent_int16array_keys_fixed_001
-     * @tc.desc      : Test keys() method of Int16Array (fixed scenario) under concurrent conditions using taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int16array_keys_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_keys_fixed_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100; // 并发任务数，可以根据需要调整
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          // 为每个并发任务添加独立的测试任务
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_keys_fixed_001, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail(); // 标记整体测试失败
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail(); // 标记整体测试失败
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT16ARRAY_TEST_0038
-     * @tc.name      : test_concurrent_int16array_values_fixed_001
-     * @tc.desc      : Test values() method of Int16Array (fixed scenario) under concurrent conditions using taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int16array_values_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_values_fixed_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_values_fixed_001, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT16ARRAY_TEST_0039
-     * @tc.name      : test_concurrent_int16array_index_access_fixed_001
-     * @tc.desc      : Test index access operations on Int16Array (fixed scenario) under concurrent conditions using taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('test_concurrent_int16array_index_access_fixed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_int16array_index_access_fixed_001';
-        console.info(`${caseName} test start`);
-
-        let concurrentNum = 100;
-
-        try {
-          let group = new taskpool.TaskGroup(caseName);
-
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_int16array_index_access_fixed_001, caseName, i);
-          }
-
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail();
-          });
-
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail();
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-
   })
 }
