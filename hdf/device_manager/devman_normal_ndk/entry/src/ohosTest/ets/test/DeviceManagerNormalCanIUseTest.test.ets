@@ -62,7 +62,7 @@ export default function DeviceManagerNormalCanIUseTest() {
      * @tc.desc       : verify DeviceManagerCanIUse any device
      */
     it('testDeviceManagerNormalCanIUsek001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
-        console.info(TAG, '----------------------testDeviceManagerCanIUsek001---------------------------');
+        console.info(TAG, '----------------------testDeviceManagerNormalCanIUsek001---------------------------');
         let flag = canIUse("SystemCapability.Driver.ExternalDevice");
         expect(flag).assertEqual(false);
         done();
