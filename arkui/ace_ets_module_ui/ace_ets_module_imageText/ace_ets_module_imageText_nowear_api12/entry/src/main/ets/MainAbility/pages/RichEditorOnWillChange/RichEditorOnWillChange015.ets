@@ -34,6 +34,7 @@ struct RichEditorOnWillChange015 {
       Text('onDidChange rangeBefore:' + this.onDidChangeRangeBefore).id('onDidChange_rangeBefore')
       Text('onWillChange_rangeBefore:' + this.onWillChangeRangeBefore).id('onWillChange_rangeBefore')
       Text('replacedSpans Callback:' + this.replacedSpansCallback).id('replacedSpansCallback')
+        .height('10%').clip(true)
       Text('ondid rangeAfter:' + this.onDidRangeAfter).id('ondid_rangeAfter')
 
 

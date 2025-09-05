@@ -68,7 +68,7 @@ struct TextEditMenuOptions {
             return false;
           }
         })
-        .height('20%')
+        .height('10%')
 
       TextArea({ text:this.textArea })
         .id('TextAreaEditMenuOptions')
@@ -91,7 +91,7 @@ struct TextEditMenuOptions {
             return false;
           }
         })
-        .height('20%')
+        .height('10%')
 
       TextInput({ text:this.textInput })
         .id('TextInputEditMenuOptions')
@@ -114,7 +114,7 @@ struct TextEditMenuOptions {
             return false;
           }
         })
-        .height('20%')
+        .height('10%')
     }
     .width('90%')
     .margin('5%')
