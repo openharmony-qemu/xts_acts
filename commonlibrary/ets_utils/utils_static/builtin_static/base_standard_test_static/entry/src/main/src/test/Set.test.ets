@@ -485,7 +485,7 @@ export default function SetTest() {
       (): void => {
         const TAG = "testSetPrototypeKeys0002";
         try {
-          let mySet = new Set<string>();
+          let mySet = new Set<string>([] as string[]);
           let setIter = mySet.keys();
           let value1 = setIter.next();
           expect(JSON.stringify(value1)).assertEqual('{"done":true}');

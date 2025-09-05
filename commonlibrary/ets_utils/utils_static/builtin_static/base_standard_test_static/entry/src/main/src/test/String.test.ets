@@ -505,26 +505,6 @@ export default function StringTest() {
         expect(false).assertFail();
       }
     })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CHARAT_01001
-     * @tc.name       : testCharAt0001_1
-     * @tc.desc       : Test the function of the interface testCharAt.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it('testCharAt0001_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testCharAt0001_1";
-      try {
-        const sentence = 'The quick brown fox jumps over the lazy dog.';
-        let index:number = 4;
-        let flag1: String = sentence.charAt(index);
-        expect(flag1).assertEqual("q");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
-      }
-    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CHARAT_0200
@@ -541,26 +521,6 @@ export default function StringTest() {
         let index = 3;
         let flag1 = sentence.charAt(index);
         expect(flag1).assertEqual(' ');
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
-      }
-    })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CHARAT_02001
-     * @tc.name       : testCharAt0002_1
-     * @tc.desc       : Test the function of the interface testCharAt.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it('testCharAt0002_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testCharAt0002_1";
-      try {
-        const sentence = 'The quick brown fox jumps over the lazy dog.';
-        let index:number = 3;
-        let flag1: String = sentence.charAt(index);
-        expect(flag1).assertEqual(" ");
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -591,26 +551,6 @@ export default function StringTest() {
         }
       }
     })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CHARAT_03001
-     * @tc.name       : testCharAt0003_1
-     * @tc.desc       : Test the function of the interface testCharAt.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it('testCharAt0003_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testCharAt0003_1";
-      try {
-        const sentence = 'The quick brown fox jumps over the lazy dog.';
-        let index:number = 100;
-        let flag1: String = sentence.charAt(index);
-        expect(flag1).assertEqual("");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
-      }
-    })
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CHARAT_0400
@@ -626,26 +566,6 @@ export default function StringTest() {
         const sentence = 'The quick brown fox jumps over the lazy dog.';
         let index = 0;
         let flag1 = sentence.charAt(index);
-        expect(flag1).assertEqual("T");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
-      }
-    })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CHARAT_04001
-     * @tc.name       : testCharAt0004_1
-     * @tc.desc       : Test the function of the interface testCharAt.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it('testCharAt0004_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testCharAt0004_1";
-      try {
-        const sentence = 'The quick brown fox jumps over the lazy dog.';
-        let index:number = 0;
-        let flag1: String = sentence.charAt(index);
         expect(flag1).assertEqual("T");
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -676,26 +596,6 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CHARAT_05001
-     * @tc.name       : testCharAt0005_1
-     * @tc.desc       : Test the function of the interface testCharAt.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it('testCharAt0005_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testCharAt0005_1";
-      try {
-        const sentence = 'The quick brown fox jumps over the lazy dog.';
-        let index:number = -1;
-        let flag1: String = sentence.charAt(index);
-        expect(flag1).assertEqual("");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
-      }
-    })
-    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CHARAT_0600
      * @tc.name       : testCharAt0006
      * @tc.desc       : Test the function of the interface testCharAt.
@@ -716,26 +616,6 @@ export default function StringTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
-      }
-    })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CHARAT_06001
-     * @tc.name       : testCharAt0006_1
-     * @tc.desc       : Test the function of the interface testCharAt.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it('testCharAt0006_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testCharAt0006_1";
-      try {
-        const sentence = '';
-        let index:number = 1;
-        let flag1: String = sentence.charAt(index);
-        expect(flag1).assertEqual("");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
       }
     })
 

@@ -72,7 +72,8 @@ export default function assemblyCallbackTest() {
       console.info('ArkUX_Callback_notification_0210 START');
       setTimeout(() => {
         try {
-          let listener11 = inspector.createComponentObserver("null")
+          let uiContext: UIContext = UIContext.getFocusedUIContext() as UIContext;
+          let listener11 = uiContext.getUIInspector().createComponentObserver("null") as inspector.ComponentObserver;
           console.info('ArkUX_Callback_notification_0210 START  :' + listener11);
           console.info('ArkUX_Callback_notification_0210 START  :' + typeof listener11);
           expect(typeof listener11).assertEqual("object")
@@ -96,7 +97,8 @@ export default function assemblyCallbackTest() {
       console.info('ArkUX_Callback_notification_0220 START');
       setTimeout(() => {
         try {
-          let listener12 = inspector.createComponentObserver("")
+          let uiContext: UIContext = UIContext.getFocusedUIContext() as UIContext;
+          let listener12 = uiContext.getUIInspector().createComponentObserver("") as inspector.ComponentObserver;
           console.info('ArkUX_Callback_notification_0220 START  :' + listener12);
           console.info('ArkUX_Callback_notification_0220 START  :' + typeof listener12);
           expect(typeof listener12).assertEqual("object")
@@ -120,7 +122,8 @@ export default function assemblyCallbackTest() {
       console.info('ArkUX_Callback_notification_0230 START');
       setTimeout(() => {
         try {
-          let listener13 = inspector.createComponentObserver("object")
+          let uiContext: UIContext = UIContext.getFocusedUIContext() as UIContext;
+          let listener13 = uiContext.getUIInspector().createComponentObserver("object") as inspector.ComponentObserver;
           console.info('ArkUX_Callback_notification_0230 START  :' + listener13);
           console.info('ArkUX_Callback_notification_0230 START  :' + typeof listener13);
           expect(typeof listener13).assertEqual("object")
@@ -144,7 +147,8 @@ export default function assemblyCallbackTest() {
       console.info('ArkUX_Callback_notification_0240 START');
       setTimeout(() => {
         try {
-          let listener14 = inspector.createComponentObserver("null")
+          let uiContext: UIContext = UIContext.getFocusedUIContext() as UIContext;
+          let listener14 = uiContext.getUIInspector().createComponentObserver("null") as inspector.ComponentObserver;
           console.info('ArkUX_Callback_notification_0240 START  :' + listener14);
           console.info('ArkUX_Callback_notification_0240 START  :' + typeof listener14);
           expect(typeof listener14).assertEqual("object")
@@ -168,7 +172,8 @@ export default function assemblyCallbackTest() {
       console.info('ArkUX_Callback_notification_0250 START');
       setTimeout(() => {
         try {
-          let listener15 = inspector.createComponentObserver("")
+          let uiContext: UIContext = UIContext.getFocusedUIContext() as UIContext;
+          let listener15 = uiContext.getUIInspector().createComponentObserver("") as inspector.ComponentObserver;
           console.info('ArkUX_Callback_notification_0250 START  :' + listener15);
           console.info('ArkUX_Callback_notification_0250 START  :' + typeof listener15);
           expect(typeof listener15).assertEqual("object")
@@ -192,7 +197,8 @@ export default function assemblyCallbackTest() {
       console.info('ArkUX_Callback_notification_0260 START');
       setTimeout(() => {
         try {
-          let listener16 = inspector.createComponentObserver("object")
+          let uiContext: UIContext = UIContext.getFocusedUIContext() as UIContext;
+          let listener16 = uiContext.getUIInspector().createComponentObserver("object") as inspector.ComponentObserver;
           console.info('ArkUX_Callback_notification_0260 START  :' + listener16);
           console.info('ArkUX_Callback_notification_0260 START  :' + typeof listener16);
           expect(typeof listener16).assertEqual("object")

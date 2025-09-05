@@ -42,12 +42,14 @@ import {
 @Component
 struct assemblyCallback {
   @State message: string = 'Blank';
-  listener11: inspector.ComponentObserver = inspector.createComponentObserver('11')
-  listener12: inspector.ComponentObserver = inspector.createComponentObserver('12')
-  listener13: inspector.ComponentObserver = inspector.createComponentObserver('13')
-  listener14: inspector.ComponentObserver = inspector.createComponentObserver('14')
-  listener15: inspector.ComponentObserver = inspector.createComponentObserver('15')
-  listener16: inspector.ComponentObserver = inspector.createComponentObserver('16')
+  uiContext: UIContext = UIContext.getFocusedUIContext() as UIContext;
+  
+  listener11: inspector.ComponentObserver = this.uiContext.getUIInspector().createComponentObserver('11') as inspector.ComponentObserver
+  listener12: inspector.ComponentObserver = this.uiContext.getUIInspector().createComponentObserver('12') as inspector.ComponentObserver
+  listener13: inspector.ComponentObserver = this.uiContext.getUIInspector().createComponentObserver('13') as inspector.ComponentObserver
+  listener14: inspector.ComponentObserver = this.uiContext.getUIInspector().createComponentObserver('14') as inspector.ComponentObserver
+  listener15: inspector.ComponentObserver = this.uiContext.getUIInspector().createComponentObserver('15') as inspector.ComponentObserver
+  listener16: inspector.ComponentObserver = this.uiContext.getUIInspector().createComponentObserver('16') as inspector.ComponentObserver
   private scroller: Scroller = new Scroller();
 
   build() {
