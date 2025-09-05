@@ -1,0 +1,119 @@
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the 'License');
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an 'AS IS' BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import {
+  Button,
+  ClickEvent,
+  Column,
+  Component,
+  Entry,
+  OnLoadInterceptEvent,
+  Row,
+  Text,
+  Web,
+  WebKeyboardCallbackInfo,
+  WebKeyboardOptions,
+  RenderMode
+} from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import web_webview from '@ohos.web.webview';
+import { BusinessError, Callback } from '@ohos.base';
+import emitter from '@ohos.events.emitter';
+import Utils from '../../src/test/Util.test';
+import { Driver, ON } from '@ohos.UiTest';
+import { FontWeight } from 'arkui.component.enums';
+import { AppStorage } from 'arkui.stateManagement.storage.appStorage'
+import common from '@ohos.app.ability.common';
+import window from '@ohos.window';
+import { UIContext, Router } from '@ohos.arkui.UIContext'
+
+@Entry
+@Component
+struct Index {
+  controller: web_webview.WebviewController = new web_webview.WebviewController(undefined);
+  @State str: string = 'emitGetWebId';
+  @State webId: number = 0;
+  @State webId2: number = 0;
+  @State webId3: number = 0;
+  @State webIdTol: number = 0;
+  @State javaScriptAccess: boolean = true;
+  @State fileAccess: boolean = true;
+  @State domStorageAccess: boolean = false;
+  @State imageAccess: boolean = true;
+  @State onlineImageAccess: boolean = true;
+  @State databaseAccess: boolean = true;
+
+  aboutToAppear() {
+    console.info('Entry aboutToAppear');
+    try {
+      web_webview.WebviewController.enableWholeWebPageDrawing();
+      console.info('enableWholeWebPageDrawing success');
+    } catch (error) {
+      console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+    }
+    let valueChangeEvent: emitter.InnerEvent = {
+      eventId: 10,
+      priority: emitter.EventPriority.LOW
+    }
+    emitter.on(valueChangeEvent, this.valueChangeCallBack)
+    console.info('Finish aboutToAppear ' + this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    emitter.off(10)
+  }
+
+  private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
+    console.info('web page valueChangeCallBack');
+    if (eventData != null) {
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      if (data && data['ACTION'] != null) {
+        console.info('Received ACTION value: ' + data['ACTION']);
+        let strValue: string = String(data['ACTION']);
+        console.info('strValue has been updated to: ' + strValue);
+        this.str = strValue;
+        console.info('this.str has been updated to: ' + this.str);
+      }
+    }
+  }
+
+
+  build() {
+    Column() {
+      Row() {
+        Button("wholeWebPageDrawing").key('wholeWebPageDrawingButton').onClick((e: ClickEvent) => {
+          console.info("key==>" + this.str)
+          switch (this.str) {
+            case "wholeWebPageDrawing0100": {
+              try {
+                this.controller.webPageSnapshot({ id: "hello", size: { width: 100, height: 100 } }, (error:BusinessError | undefined | null, result)  => {
+                  console.info('return id is:'+result?.id ?? '');
+                  Utils.emitEvent(result?.id ?? '', 2793);
+                });
+              } catch (error: BusinessError) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+
+          }
+        })
+      }
+      Web({ src: 'www.example.com', controller: this.controller, renderMode: RenderMode.SYNC_RENDER })
+    }
+  }
+}

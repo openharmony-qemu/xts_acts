@@ -21,6 +21,7 @@ import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-pl
 import hilog from '@ohos.hilog';
 import { Callback } from '@ohos.base';
 import emitter from '@ohos.events.emitter';
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 @Entry
 @Component
@@ -72,6 +73,13 @@ struct webOnFirstContFour {
                 hilog.info(0x0000, 'testTag',`ErrorCode: `+error);
               }
               break;
+            }
+
+            case 'emitonSwitchNextPage': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/wholeWebPageDrawing' })
+              console.log('push URL success')
             }
           }
         })
