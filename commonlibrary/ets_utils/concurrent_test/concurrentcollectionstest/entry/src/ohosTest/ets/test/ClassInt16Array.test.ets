@@ -116,7 +116,7 @@ export default function Int16ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0003
-     * @tc.name      : Int16array_test_0001
+     * @tc.name      : Int16array_test_0003
      * @tc.desc      : Test Int16array
      * @tc.size      : SmallTest
      * @tc.type      : Function
