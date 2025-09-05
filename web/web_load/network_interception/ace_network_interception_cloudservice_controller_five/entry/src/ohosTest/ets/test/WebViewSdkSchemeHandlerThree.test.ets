@@ -19,10 +19,12 @@ import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 // @ts-nocheck
-
+const  driver = Driver.create();
 export default function ActsAceWebViewSdkSchemeHandlerThree() {
   describe('ActsAceWebViewSdkSchemeHandlerThree', () => {
     beforeAll(async (done: Function) => {
@@ -41,8 +43,8 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
         } catch (err) {
             console.error("push webViewSdkSchemeHandlerThree page error:" + err);
         }
-      let driver = Driver.create();
-      await driver.waitForComponent(ON.id("webViewSdkSchemeHandlerThreeButton"),10000);
+      // let driver = Driver.create();
+      // await driver.waitForComponent(ON.id("webViewSdkSchemeHandlerThreeButton"),10000);
       console.log("waitForComponent webViewSdkSchemeHandlerThreeButton==>");
       done();
     });
@@ -56,10 +58,6 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
       console.info("webViewSdkSchemeHandlerThree beforeEach start");
       done();
     })
-    afterEach(async (done: Function) => {
-      console.info("webViewSdkSchemeHandlerThree afterEach start:" );
-      done();
-    })
 
     /*
      *@tc.number SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0100
@@ -70,12 +68,15 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
      *@tc.level Level 0
      */
     it('testSchemeHandlerDidFailCompleteIfNoResponse001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitSchemeHandlerDidFailCompleteIfNoResponse001", 123);
-      Utils.registerBaseEvent("testSchemeHandlerDidFailCompleteIfNoResponse001", -1, 2025070407, done,
+      Utils.emitEvent("emitSchemeHandlerDidFailCompleteIfNoResponse001", 142401);
+      let isReturn = false;
+      Utils.registerBaseEvent("testSchemeHandlerDidFailCompleteIfNoResponse001", -1, 142430, ()=>{isReturn = true},
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('webViewSdkSchemeHandlerThreeButton', 10, '');
+      Utils.waitAndClickComponent("webViewSdkSchemeHandlerThreeButton",driver)
+      await waitForExist(()=>isReturn, "testSchemeHandlerDidFailCompleteIfNoResponse001", true,1000);
+      done();
     })
     /*
      *@tc.number SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0200
@@ -86,12 +87,15 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
      *@tc.level Level 0
      */
     it('testSchemeHandlerDidFailCompleteIfNoResponse002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitSchemeHandlerDidFailCompleteIfNoResponse002", 123);
-      Utils.registerBaseEvent("testSchemeHandlerDidFailCompleteIfNoResponse002", -1, 2025070408, done,
+      Utils.emitEvent("emitSchemeHandlerDidFailCompleteIfNoResponse002", 142401);
+      let isReturn = false;
+      Utils.registerBaseEvent("testSchemeHandlerDidFailCompleteIfNoResponse002", -1, 142440, ()=>{isReturn = true},
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('webViewSdkSchemeHandlerThreeButton', 10, '');
+      Utils.waitAndClickComponent("webViewSdkSchemeHandlerThreeButton",driver)
+      await waitForExist(()=>isReturn, "testSchemeHandlerDidFailCompleteIfNoResponse002", true,1000);
+      done();
     })
     /*
      *@tc.number SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0300
@@ -102,12 +106,15 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
      *@tc.level Level 0
      */
     it('testSchemeHandlerDidFailCompleteIfNoResponse003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitSchemeHandlerDidFailCompleteIfNoResponse003", 123);
-      Utils.registerBaseEvent("testSchemeHandlerDidFailCompleteIfNoResponse003", 0, 2025070409, done,
+      Utils.emitEvent("emitSchemeHandlerDidFailCompleteIfNoResponse003", 142401);
+      let isReturn = false;
+      Utils.registerBaseEvent("testSchemeHandlerDidFailCompleteIfNoResponse003", 0, 142450, ()=>{isReturn = true},
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('webViewSdkSchemeHandlerThreeButton', 10, '');
+      Utils.waitAndClickComponent("webViewSdkSchemeHandlerThreeButton",driver)
+      await waitForExist(()=>isReturn, "testSchemeHandlerDidFailCompleteIfNoResponse003", true,1000);
+      done();
     })
     /*
      *@tc.number SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0400
@@ -118,12 +125,15 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
      *@tc.level Level 0
      */
     it('testSchemeHandlerDidFailCompleteIfNoResponse004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitSchemeHandlerDidFailCompleteIfNoResponse004", 123);
-      Utils.registerBaseEvent("testSchemeHandlerDidFailCompleteIfNoResponse004", 0, 2025070410, done,
+      Utils.emitEvent("emitSchemeHandlerDidFailCompleteIfNoResponse004", 142401);
+      let isReturn = false;
+      Utils.registerBaseEvent("testSchemeHandlerDidFailCompleteIfNoResponse004", 0, 142460, ()=>{isReturn = true},
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('webViewSdkSchemeHandlerThreeButton', 10, '');
+      Utils.waitAndClickComponent("webViewSdkSchemeHandlerThreeButton",driver)
+      await waitForExist(()=>isReturn, "testSchemeHandlerDidFailCompleteIfNoResponse003", true,1000);
+      done();
     })
     /*
      *@tc.number SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0500
@@ -134,12 +144,15 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
      *@tc.level Level 0
      */
     it('testSchemeHandlerDidFailCompleteIfNoResponse005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitSchemeHandlerDidFailCompleteIfNoResponse005", 123);
-      Utils.registerBaseEvent("testSchemeHandlerDidFailCompleteIfNoResponse005", "17100021", 2025070411, done,
+      Utils.emitEvent("emitSchemeHandlerDidFailCompleteIfNoResponse005", 142401);
+      let isReturn = false;
+      Utils.registerBaseEvent("testSchemeHandlerDidFailCompleteIfNoResponse005", "17100021", 142470, ()=>{isReturn = true},
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('webViewSdkSchemeHandlerThreeButton', 10, '');
+      Utils.waitAndClickComponent("webViewSdkSchemeHandlerThreeButton",driver)
+      await waitForExist(()=>isReturn, "testSchemeHandlerDidFailCompleteIfNoResponse003", true,1000);
+      done();
     })
     /*
      *@tc.number SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0600
@@ -150,12 +163,15 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
      *@tc.level Level 0
      */
     it('testSchemeHandlerDidFailCompleteIfNoResponse006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitSchemeHandlerDidFailCompleteIfNoResponse006", 123);
-      Utils.registerBaseEvent("testSchemeHandlerDidFailCompleteIfNoResponse006", "17100021", 2025070412, done,
+      Utils.emitEvent("emitSchemeHandlerDidFailCompleteIfNoResponse006", 142401);
+      let isReturn = false;
+      Utils.registerBaseEvent("testSchemeHandlerDidFailCompleteIfNoResponse006", "17100021", 142480, ()=>{isReturn = true},
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('webViewSdkSchemeHandlerThreeButton', 10, '');
+      Utils.waitAndClickComponent("webViewSdkSchemeHandlerThreeButton",driver)
+      await waitForExist(()=>isReturn, "testSchemeHandlerDidFailCompleteIfNoResponse003", true,1000);
+      done();
     })
   })
 }

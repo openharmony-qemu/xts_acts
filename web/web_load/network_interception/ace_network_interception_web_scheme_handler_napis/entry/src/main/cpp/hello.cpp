@@ -63,6 +63,8 @@ int32_t testResponseSetMimeType = -1;
 int32_t testResponseSetCharSet = -1;
 int32_t testResponseSetHost = -1;
 
+int32_t testRequestStart = -1;
+
 const int DEFAULT_TYPE = -100;
 int32_t testResourceType = DEFAULT_TYPE;
 std::string testFrameUrl("test");
@@ -201,6 +203,8 @@ void OnURLRequestStart(const ArkWeb_SchemeHandler *schemeHandler, ArkWeb_Resourc
 
     OH_LOG_INFO(LOG_APP, "OH_ArkWebResourceRequest_GetUserData %{public}d", testResourceRequestGetUserData);
     OH_LOG_INFO(LOG_APP, "OH_ArkWebResourceRequest_SetUserData %{public}d", testResourceRequestSetUserData);
+    
+    testRequestStart = 1;
 }
 
 void OnURLRequestStartForSW(const ArkWeb_SchemeHandler *schemeHandler, ArkWeb_ResourceRequest *resourceRequest,
@@ -677,7 +681,16 @@ static napi_value GetFrameUrl(napi_env env, napi_callback_info info)
     return result;
 }
 
-
+static napi_value GetRequestValue(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    if (testRequestStart == 1) {
+        napi_create_int32(env, 1, &result);
+    } else {
+        napi_create_int32(env, 0, &result);
+    }
+    return result;
+}
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
@@ -726,7 +739,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"responseSetHeaderByName", nullptr, ResponseSetHeaderByName, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"createResponse", nullptr, CreateResponse, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getResourceType", nullptr, GetResourceType, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getFrameUrl", nullptr, GetFrameUrl, nullptr, nullptr, nullptr, napi_default, nullptr}
+        {"getFrameUrl", nullptr, GetFrameUrl, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getRequestValue", nullptr, GetRequestValue, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

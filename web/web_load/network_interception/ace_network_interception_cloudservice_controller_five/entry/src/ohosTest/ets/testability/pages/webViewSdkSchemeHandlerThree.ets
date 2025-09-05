@@ -31,14 +31,14 @@ struct webViewSdkSchemeHandlerThree {
   
   onPageShow() {
       let valueChangeEvent: events_emitter.InnerEvent = {
-          eventId: 123,
+          eventId: 142401,
           priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(123)
+    events_emitter.off(142401)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -88,7 +88,7 @@ struct webViewSdkSchemeHandlerThree {
                         let check = (v1: number, v2: number): boolean => {
                           return v1 === v2;
                         }
-                        await waitForAssert(() => netErrorCode, check, -1, 2025070407, this.emitKey);
+                        await waitForAssert(() => netErrorCode, check, -1, 142430, this.emitKey);
                       } catch (error) {
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                       }
@@ -120,7 +120,7 @@ struct webViewSdkSchemeHandlerThree {
                         let check = (v1: number, v2: number): boolean => {
                           return v1 === v2;
                         }
-                        await waitForAssert(() => netErrorCode, check, -1, 2025070408, this.emitKey);
+                        await waitForAssert(() => netErrorCode, check, -1, 142440, this.emitKey);
                       } catch (error) {
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                       }
@@ -144,7 +144,7 @@ struct webViewSdkSchemeHandlerThree {
                         let check = (v1: number, v2: number): boolean => {
                           return v1 === v2;
                         }
-                        await waitForAssert(() => netErrorCode, check, 0, 2025070409, this.emitKey);
+                        await waitForAssert(() => netErrorCode, check, 0, 142450, this.emitKey);
                       } catch (error) {
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                       }
@@ -168,7 +168,7 @@ struct webViewSdkSchemeHandlerThree {
                         let check = (v1: number, v2: number): boolean => {
                           return v1 === v2;
                         }
-                        await waitForAssert(() => netErrorCode, check, 0, 2025070410, this.emitKey);
+                        await waitForAssert(() => netErrorCode, check, 0, 142460, this.emitKey);
                       } catch (error) {
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                       }
@@ -195,7 +195,7 @@ struct webViewSdkSchemeHandlerThree {
                         let check = (v1: string, v2: string): boolean => {
                           return v1 === v2;
                         }
-                        await waitForAssert(() => errorCode, check, '17100021', 2025070411, this.emitKey);
+                        await waitForAssert(() => errorCode, check, '17100021', 142470, this.emitKey);
                       } catch (error) {
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                       }
@@ -222,7 +222,7 @@ struct webViewSdkSchemeHandlerThree {
                         let check = (v1: string, v2: string): boolean => {
                           return v1 === v2;
                         }
-                        await waitForAssert(() => errorCode, check, '17100021', 2025070412, this.emitKey);
+                        await waitForAssert(() => errorCode, check, '17100021', 142480, this.emitKey);
                       } catch (error) {
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                       }

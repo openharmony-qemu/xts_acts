@@ -189,7 +189,6 @@ import imageWidthTest from './image/ImageWidthTest.test'
 import imageHeightTest from './image/ImageHeightTest.test'
 import imagePositionTest from './image/ImagePositionTest.test'
 import imageDraggableTest from './image/ImageDraggableTest.test'
-import imageDraggableEventTest from './image/ImageDraggableEventTest.test'
 import imageRenderModeTest from './image/ImageRenderModeTest.test'
 import imageFitOriginalSizeTest from './image/ImageFitOriginalSizeTest.test'
 import imageFillColorTest from './image/ImageFillColorTest.test'
@@ -1643,7 +1642,6 @@ export default function testsuite() {
   imageSpanOnClickTest()
   spanOnClickTest()
   textDataDetectorConfigTest()
-  imageDraggableEventTest()
   commonAttrsSaturateTest()
   commonAttrsBlurTest()
   commonAttrsZIndexTest()

@@ -31,14 +31,14 @@ struct webOnBeforeUnload {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 124,
+      eventId: 141411,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(124)
+    events_emitter.off(141411)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -80,11 +80,11 @@ struct webOnBeforeUnload {
                   let check = (v1: number, v2: number): boolean => {
                     return v1 === v2 ? true:false;
                   }
-                  await waitForAssert(()=>this.isReload, check, 1, 2025052810, this.emitKey);
+                  await waitForAssert(()=>this.isReload, check, 1, 141460, this.emitKey);
                 } catch (error) {
                   console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
                   if (error.code == 801) {
-                    Utils.emitEvent(true, 2025052810);
+                    Utils.emitEvent(true, 141460);
                   }
                 }
                 break;
@@ -104,11 +104,11 @@ struct webOnBeforeUnload {
                   let check = (v1: number, v2: number): boolean => {
                     return v1 === v2 ? true:false;
                   }
-                  await waitForAssert(()=>this.isReload, check, 2, 2025052811, this.emitKey);
+                  await waitForAssert(()=>this.isReload, check, 2, 141470, this.emitKey);
                 } catch (error) {
                   console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
                   if (error.code == 801) {
-                    Utils.emitEvent(false, 2025052811);
+                    Utils.emitEvent(false, 141470);
                   }
                 }
                 break;

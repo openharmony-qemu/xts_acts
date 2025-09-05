@@ -123,8 +123,9 @@ export default function lifecycleTest() {
 
     /*
      * @tc.number  Singlehap_LifeCycleTest_0100
-     * @tc.name    Register in abilitystage,listen to the lifecycle of abilityA,deregister after listening
-     * @tc.desc    Function test
+     * @tc.name    Singlehap_LifeCycleTest_0100
+     * @tc.desc:   Register in abilitystage,listen to the lifecycle of abilityA,deregister after listening
+     * @tc.type: Function
      * @tc.level   0
      */
     it("Singlehap_LifeCycleTest_0100", Level.LEVEL0, async (done: Function) => {
@@ -179,8 +180,9 @@ export default function lifecycleTest() {
 
     /*
      * @tc.number  Singlehap_LifeCycleTest_0200
-     * @tc.name    Register in abilityA,listen to the lifecycle of abilityB,deregister after listening
-     * @tc.desc    Function test
+     * @tc.name    Singlehap_LifeCycleTest_0200
+     * @tc.desc:   Register in abilityA,listen to the lifecycle of abilityB,deregister after listening
+     * @tc.type: Function
      * @tc.level   0
      */
     it("Singlehap_LifeCycleTest_0200", Level.LEVEL0, async (done: Function) => {
@@ -216,11 +218,11 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility2_onAbilityDestroy') {
+            await sleep(1000);
             console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
             console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
             let listTemp = JSON.stringify(globalThis.list1);
             console.log(TAG + " listTemp is :" + listTemp);
-
             expect(listTemp.indexOf("MainAbility1 onWindowStageCreate") !== -1).assertTrue();
             expect(listTemp.split("MainAbility1 onAbilityForeground").length - 1).assertEqual(2);
             expect(listTemp.indexOf("MainAbility1 onAbilityBackground") !== -1).assertTrue();
@@ -255,8 +257,9 @@ export default function lifecycleTest() {
 
     /*
     * @tc.number  Singlehap_LifeCycleTest_0300
-    * @tc.name    Register in abilityA,listening the lifecycle of abilityB,deregister,repeat the unregister
-    * @tc.desc    Function test
+    * @tc.name    Singlehap_LifeCycleTest_0300
+    * @tc.desc:  Register in abilityA,listening the lifecycle of abilityB,deregister,repeat the unregister
+    * @tc.type: Function
     * @tc.level   0
     */
     it("Singlehap_LifeCycleTest_0300", Level.LEVEL0, async (done: Function) => {
@@ -285,6 +288,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           if (data.event === 'MainAbility1_onForground' && count === 0) {
             count++;
+            await sleep(1000);
             await globalThis.abilityContext.startAbility(str1)
               .then((data: ESObject) => {
                 console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
@@ -292,6 +296,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility2_onAbilityDestroy' && count === 1) {
+            await sleep(1000);
             console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
             console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
             count++;
@@ -339,8 +344,9 @@ export default function lifecycleTest() {
 
     /*
      * @tc.number  Singlehap_LifeCycleTest_0400
-     * @tc.name    Register in abilityA,listening the lifecycle of abilityB,terminate abilityA,unregister
-     * @tc.desc    Function test
+     * @tc.name    Singlehap_LifeCycleTest_0400
+     * @tc.desc:   Register in abilityA,listening the lifecycle of abilityB,terminate abilityA,unregister
+     * @tc.type: Function
      * @tc.level   0
      */
     it("Singlehap_LifeCycleTest_0400", Level.LEVEL0, async (done: Function) => {
@@ -376,6 +382,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility2_onForground' && count === 1) {
+            await sleep(1000);
             count++;
             let para: ability.AbilityResult = {
               resultCode: 1,
@@ -394,6 +401,7 @@ export default function lifecycleTest() {
               });
             },500)
           } else if (data.event === 'MainAbility3_onAbilityDestroy' && count === 2) {
+            await sleep(1000);
             console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list3));
             console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid3));
             count++;
@@ -432,8 +440,9 @@ export default function lifecycleTest() {
 
     /*
      * @tc.number  Singlehap_LifeCycleTest_0500
-     * @tc.name    Register in abilityA and abilityB,unregister MainabilityB,then Register in ManinabilityC
-     * @tc.desc    Function test
+     * @tc.name    Singlehap_LifeCycleTest_0500
+     * @tc.desc:   Register in abilityA and abilityB,unregister MainabilityB,then Register in ManinabilityC
+     * @tc.type: Function
      * @tc.level   0
      */
     it("Singlehap_LifeCycleTest_0500", Level.LEVEL0, async (done: Function) => {
@@ -464,6 +473,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           if (data.event === 'MainAbility1_onForground') {
+            await sleep(1000);
             await globalThis.abilityContext.startAbility(str1)
               .then((data: ESObject) => {
                 console.info(TAG + ' startMainAbility3 successful. Data: ' + data);
@@ -471,6 +481,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility3 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility3_onForground') {
+            await sleep(1000);
             await globalThis.abilityContext.startAbility(str2)
               .then((data: ESObject) => {
                 console.info(TAG + ' startMainAbility4 successful. Data: ' + data);
@@ -478,6 +489,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility4 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility4_onForground') {
+            await sleep(1000);
             console.log(TAG + " listKey1 : " + JSON.stringify(globalThis.list1));
             console.log(TAG + " callbackid1 : " + JSON.stringify(globalThis.callbackid1));
             console.log(TAG + " listKey3 : " + JSON.stringify(globalThis.list3));
@@ -525,8 +537,9 @@ export default function lifecycleTest() {
 
     /*
      * @tc.number  Singlehap_LifeCycleTest_0600
-     * @tc.name    Register in abilityA,start abilityB、abilityC,terminate abilityB 、abilityC
-     * @tc.desc    Function test
+     * @tc.name    Singlehap_LifeCycleTest_0600
+     * @tc.desc:   Register in abilityA,start abilityB、abilityC,terminate abilityB 、abilityC
+     * @tc.type: Function
      * @tc.level   0
      */
     it("Singlehap_LifeCycleTest_0600", Level.LEVEL0, async (done: Function) => {
@@ -558,6 +571,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           if (data.event === 'MainAbility1_onForground' && count === 0) {
+            await sleep(1000);
             count++;
             await globalThis.abilityContext.startAbility(str1)
               .then((data: ESObject) => {
@@ -566,6 +580,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility5 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility5_onForground' && count === 1) {
+            await sleep(1000);
             count++;
             await globalThis.abilityContext.startAbility(str2)
               .then((data: ESObject) => {
@@ -574,6 +589,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility2_onAbilityDestroy' && count === 2) {
+            await sleep(1000);
             console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
             console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
             count++;
@@ -613,8 +629,9 @@ export default function lifecycleTest() {
 
     /*
      * @tc.number  Singlehap_LifeCycleTest_0700
-     * @tc.name    Multiple registration/unregistration
-     * @tc.desc    Function test
+     * @tc.name    Singlehap_LifeCycleTest_0700
+     * @tc.desc:   Multiple registration/unregistration
+     * @tc.type: Function
      * @tc.level   0
      */
     it("Singlehap_LifeCycleTest_0700", Level.LEVEL0, async (done: Function) => {
@@ -723,8 +740,9 @@ export default function lifecycleTest() {
 
     /*
      * @tc.number  Singlehap_LifeCycleTest_0800
-     * @tc.name    Maninability1 Register listening, Repeat starting and termination Ability2
-     * @tc.desc    Function test
+     * @tc.name    Singlehap_LifeCycleTest_0800
+     * @tc.desc:   Maninability1 Register listening, Repeat starting and termination Ability2
+     * @tc.type: Function
      * @tc.level   0
      */
     it("Singlehap_LifeCycleTest_0800", Level.LEVEL0, async (done: Function) => {
@@ -751,6 +769,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           if (data.event == 'MainAbility1_onForground') {
+            await sleep(1000);
             count++;
             if (count < 4) {
               await globalThis.abilityContext.startAbility(str1)
@@ -760,6 +779,7 @@ export default function lifecycleTest() {
                   console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
                 })
             } else {
+              await sleep(1000);
               console.info(TAG + ' count++ is: ' + count);
               console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
               console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
@@ -803,8 +823,9 @@ export default function lifecycleTest() {
 
     /*
      * @tc.number  Singlehap_LifeCycleTest_0900
-     * @tc.name    Repeat switching Ability1 between front and back
-     * @tc.desc    Function test
+     * @tc.name    Singlehap_LifeCycleTest_0900
+     * @tc.desc:   Repeat switching Ability1 between front and back
+     * @tc.type: Function
      * @tc.level   0
      */
     it("Singlehap_LifeCycleTest_0900", Level.LEVEL0, async (done: Function) => {
@@ -832,6 +853,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           if (data.event == 'MainAbility1_onForground') {
+            await sleep(1000);
             count++;
             if (count < 3) {
               await globalThis.abilityContext.startAbility(str1)
@@ -841,6 +863,7 @@ export default function lifecycleTest() {
                   console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
                 })
             } else {
+              await sleep(1000);
               console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
               console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
               let listTemp = JSON.stringify(globalThis.list1);
@@ -879,8 +902,9 @@ export default function lifecycleTest() {
 
     /*
      * @tc.number  Singlehap_LifeCycleTest_1000
-     * @tc.name    Register listening in abilityA foreground,repeat the registration
-     * @tc.desc    Function test
+     * @tc.name    Singlehap_LifeCycleTest_1000
+     * @tc.desc:   Register listening in abilityA foreground,repeat the registration
+     * @tc.type: Function
      * @tc.level   0
      */
     it("Singlehap_LifeCycleTest_1000", Level.LEVEL0, async (done: Function) => {
@@ -910,6 +934,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           if (data.event == 'MainAbility6_onForground') {
+            await sleep(1000);
             count++;
             if (count < 2) {
               console.log(TAG + " firstCallback listKey : " + JSON.stringify(globalThis.list6));
@@ -923,6 +948,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
               })
             } else {
+              await sleep(1000);
               console.log(TAG + " secondCallback listKey : " + JSON.stringify(globalThis.list6));
               console.log(TAG + " secondCallback callbackid : " + JSON.stringify(globalThis.callbackid6));
               id2 = globalThis.callbackid6;
@@ -955,8 +981,9 @@ export default function lifecycleTest() {
 
     /*
      * @tc.number  Singlehap_LifeCycleTest_1100
-     * @tc.name    Register listening in abilityA foreground,repeat the registration (singleton)
-     * @tc.desc    Function test
+     * @tc.name    Singlehap_LifeCycleTest_1100
+     * @tc.desc:   Register listening in abilityA foreground,repeat the registration (singleton)
+     * @tc.type: Function
      * @tc.level   0
      */
     it("Singlehap_LifeCycleTest_1100", Level.LEVEL0, async (done: Function) => {
@@ -1015,8 +1042,9 @@ export default function lifecycleTest() {
     });
     /*
      * @tc.number  Singlehap_LifeCycleTest_1200
-     * @tc.name    Register listening in abilityA foreground,repeat the registration (standard)
-     * @tc.desc    Function test
+     * @tc.name    Singlehap_LifeCycleTest_1200
+     * @tc.desc:   Register listening in abilityA foreground,repeat the registration (standard)
+     * @tc.type: Function
      * @tc.level   0
      */
     it("Singlehap_LifeCycleTest_1200", Level.LEVEL0, async (done: Function) => {
@@ -1042,6 +1070,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           if (data.event === 'MainAbility8_onForground' && count === 0) {
+            await sleep(1000);
             console.log(TAG + " firstCallback listKey : " + JSON.stringify(globalThis.list8));
             console.log(TAG + " firstCallback callbackid : " + JSON.stringify(globalThis.callbackid8));
             count++;
@@ -1054,6 +1083,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility8 failed. Cause: ' + JSON.stringify(error));
               })
           } else {
+            await sleep(1000);
             console.log(TAG + " secondCallback listKey : " + JSON.stringify(globalThis.list8));
             console.log(TAG + " secondCallback callbackid : " + JSON.stringify(globalThis.callbackid8));
             id2 = globalThis.callbackid8;
@@ -1074,8 +1104,9 @@ export default function lifecycleTest() {
 
     /*
     * @tc.number  Singlehap_LifeCycleTest_1300
-    * @tc.name    The ability of HAP A listens to the ability lifecycle callback of HAP B (singleton)
-    * @tc.desc    Function test
+    * @tc.name    Singlehap_LifeCycleTest_1300
+     * @tc.desc:  The ability of HAP A listens to the ability lifecycle callback of HAP B (singleton)
+    * @tc.type: Function
     * @tc.level   0
     */
     it("Singlehap_LifeCycleTest_1300", Level.LEVEL0, async (done: Function) => {
@@ -1103,6 +1134,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           if (data.event === 'MainAbility9_onForground' && count === 0) {
+            await sleep(1000);
             count++;
             await globalThis.abilityContext.startAbility(str1)
               .then((data: ESObject) => {
@@ -1111,6 +1143,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' Hap1MainAbility1 first failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'Hap1MainAbility1_onDestroy' && count === 1) {
+            await sleep(1000);
             count++;
             await globalThis.abilityContext.startAbility(str1)
               .then((data: ESObject) => {
@@ -1119,6 +1152,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' Hap1MainAbility1 second failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'Hap1MainAbility1_onForground' && count === 2) {
+            await sleep(1000);
             count++;
             let listTemp = JSON.stringify(globalThis.mainAbility9ListKey);
             console.log(TAG + "listTemp is :" + listTemp);
@@ -1152,8 +1186,9 @@ export default function lifecycleTest() {
 
     /*
      * @tc.number  Singlehap_LifeCycleTest_1400
-     * @tc.name    The ability of HAP A listens to the ability lifecycle callback of HAP B (standard)
-     * @tc.desc    Function test
+     * @tc.name    Singlehap_LifeCycleTest_1400
+     * @tc.desc:   The ability of HAP A listens to the ability lifecycle callback of HAP B (standard)
+     * @tc.type: Function
      * @tc.level   0
      */
     it("Singlehap_LifeCycleTest_1400", Level.LEVEL0, async (done: Function) => {
@@ -1181,6 +1216,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           if (data.event === 'MainAbility9_onForground' && count === 0) {
+            await sleep(1000);
             count++;
             await globalThis.abilityContext.startAbility(str1)
               .then((data: ESObject) => {
@@ -1189,6 +1225,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' Hap1MainAbility2 first failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'Hap1MainAbility2_onDestroy' && count === 1) {
+            await sleep(1000);
             count++;
             await globalThis.abilityContext.startAbility(str1)
               .then((data: ESObject) => {
@@ -1197,6 +1234,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' Hap1MainAbility2 second failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'Hap1MainAbility2_onAbilityDestroy' && count === 2) {
+            await sleep(1000);
             count++;
             let listTemp = JSON.stringify(globalThis.mainAbility9ListKey);
             console.log(TAG + "listTemp is :" + listTemp);
@@ -1229,8 +1267,9 @@ export default function lifecycleTest() {
     });
     /*
      * @tc.number  Singlehap_LifeCycleTest_1500
-     * @tc.name    Register in abilityA , starting and termination AbilityB,Repeat previous steps (standard)
-     * @tc.desc    Function test
+     * @tc.name    Singlehap_LifeCycleTest_1500
+     * @tc.desc:   Register in abilityA , starting and termination AbilityB,Repeat previous steps (standard)
+     * @tc.type: Function
      * @tc.level   0
      */
     it("Singlehap_LifeCycleTest_1500", Level.LEVEL0, async (done: Function) => {
@@ -1261,6 +1300,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           console.info(TAG + ' count. is: ' + JSON.stringify(count));
           if (data.event === 'MainAbility11_onForground' && count === 0) {
+            await sleep(1000);
             count++;
             await globalThis.abilityContext.startAbility(str1)
               .then((data: ESObject) => {
@@ -1269,6 +1309,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility2_onForground' && count === 1) {
+            await sleep(1000);
             console.log(TAG + " firstCallback listKey : " + JSON.stringify(globalThis.list11));
             console.log(TAG + " firstCallback callbackid : " + JSON.stringify(globalThis.callbackid11));
             id1 = globalThis.callbackid11;
@@ -1281,6 +1322,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility11 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility11_onForground' && count === 2) {
+            await sleep(1000);
             count++;
             await globalThis.abilityContext.startAbility(str1)
               .then((data: ESObject) => {
@@ -1289,6 +1331,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility2_onAbilityDestroy' && count === 3) {
+            await sleep(1000);
             console.log(TAG + " secondCallback listKey : " + JSON.stringify(globalThis.list11));
             console.log(TAG + " secondCallback callbackid : " + JSON.stringify(globalThis.callbackid11));
             id2 = globalThis.callbackid11;
@@ -1325,8 +1368,9 @@ export default function lifecycleTest() {
 
     /*
      * @tc.number  Singlehap_LifeCycleTest_1600
-     * @tc.name    input Nonexistent callbackid for unregisterAbilityLifecycleCallback parameter
-     * @tc.desc    Function test
+     * @tc.name    Singlehap_LifeCycleTest_1600
+     * @tc.desc:   input Nonexistent callbackid for unregisterAbilityLifecycleCallback parameter
+     * @tc.type: Function
      * @tc.level   1
      */
     it("Singlehap_LifeCycleTest_1600", Level.LEVEL0, async (done: Function) => {
@@ -1346,8 +1390,9 @@ export default function lifecycleTest() {
 
     /*
      * @tc.number  Singlehap_LifeCycleTest_1700
-     * @tc.name    input error callbackid for unregisterAbilityLifecycleCallback parameter
-     * @tc.desc    Function test
+     * @tc.name    Singlehap_LifeCycleTest_1700
+     * @tc.desc:   input error callbackid for unregisterAbilityLifecycleCallback parameter
+     * @tc.type: Function
      * @tc.level   1
      */
     it("Singlehap_LifeCycleTest_1700", Level.LEVEL0, async (done: Function) => {
@@ -1367,8 +1412,9 @@ export default function lifecycleTest() {
 
     /*
      * @tc.number  Singlehap_LifeCycleTest_1800
-     * @tc.name    input error type callbackid for unregisterAbilityLifecycleCallback parameter
-     * @tc.desc    Function test
+     * @tc.name    Singlehap_LifeCycleTest_1800
+     * @tc.desc:   input error type callbackid for unregisterAbilityLifecycleCallback parameter
+     * @tc.type: Function
      * @tc.level   1
      */
     it("Singlehap_LifeCycleTest_1800", Level.LEVEL0, async (done: Function) => {
@@ -1388,8 +1434,9 @@ export default function lifecycleTest() {
 
     /*
      * @tc.number  Singlehap_LifeCycleTest_1900
-     * @tc.name    input null callbackid for unregisterAbilityLifecycleCallback parameter
-     * @tc.desc    Function test
+     * @tc.name    Singlehap_LifeCycleTest_1900
+     * @tc.desc:   input null callbackid for unregisterAbilityLifecycleCallback parameter
+     * @tc.type: Function
      * @tc.level   1
      */
     it("Singlehap_LifeCycleTest_1900", Level.LEVEL0, async (done: Function) => {
@@ -1409,8 +1456,9 @@ export default function lifecycleTest() {
 
     /*
      * @tc.number  Singlehap_LifeCycleTest_2000
-     * @tc.name    Register in abilityA, starting and termination AbilityB, terminate abilityA, Re-register in abilityA
-     * @tc.desc    Function test
+     * @tc.name    Singlehap_LifeCycleTest_2000
+     * @tc.desc:   Register in abilityA, starting and termination AbilityB, terminate abilityA, Re-register in abilityA
+     * @tc.type: Function
      * @tc.level   0
      */
     it("Singlehap_LifeCycleTest_2000", Level.LEVEL0, async (done: Function) => {
@@ -1442,6 +1490,7 @@ export default function lifecycleTest() {
           if (data.event === 'MainAbility12_onForground') {
             count++;
             if (count === 1 || count === 3) {
+              await sleep(1000);
               await globalThis.abilityContext.startAbility(str1)
                 .then((data: ESObject) => {
                   console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
@@ -1449,6 +1498,7 @@ export default function lifecycleTest() {
                   console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
                 })
             } else if (count === 2) {
+              await sleep(1000);
               console.log(TAG + " firstCallback listKey : " + JSON.stringify(globalThis.list12));
               console.log(TAG + " firstCallback callbackid : " + JSON.stringify(globalThis.callbackid12));
               id1 = globalThis.callbackid12;
@@ -1460,6 +1510,7 @@ export default function lifecycleTest() {
                 console.log(TAG + " terminateSelfwithresult error: " + JSON.stringify(error));
               });
             } else {
+              await sleep(1000);
               console.log(TAG + " secondCallback listKey : " + JSON.stringify(globalThis.list12));
               console.log(TAG + " secondCallback callbackid : " + JSON.stringify(globalThis.callbackid12));
               id2 = globalThis.callbackid12;
@@ -1505,9 +1556,10 @@ export default function lifecycleTest() {
 
     /*
     * @tc.number  Singlehap_LifeCycleTest_2100
-    * @tc.name    Register in abilityA,register in abilityB, starting and termination abilityC,
-                  termination abilityB、abilityA, Re-register in abilityA、abilityB
-    * @tc.desc    Function test
+    * @tc.name    Singlehap_LifeCycleTest_2100
+    * @tc.desc:  Register in abilityA,register in abilityB, starting and termination abilityC,
+                termination abilityB、abilityA, Re-register in abilityA、abilityB
+    * @tc.type: Function
     * @tc.level   0
     */
     it("Singlehap_LifeCycleTest_2100", Level.LEVEL0, async (done: Function) => {
@@ -1535,6 +1587,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           if (data.event === 'MainAbility1_onForground') {
+            await sleep(1000);
             await globalThis.abilityContext.startAbility(str1)
               .then((data: ESObject) => {
                 console.info(TAG + ' MainAbility2 successful. Data: ' + data);
@@ -1542,6 +1595,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' MainAbility1 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility2_onForground') {
+            await sleep(1000);
             console.log(TAG + " firstCallback listKey1 : " + JSON.stringify(globalThis.list1));
             console.log(TAG + " firstCallback callbackid1 : " + JSON.stringify(globalThis.callbackid1));
             id1 = globalThis.callbackid1;
@@ -1561,6 +1615,7 @@ export default function lifecycleTest() {
               console.log(TAG + " terminateSelfwithresult error: " + JSON.stringify(error));
             });
           } else if (data.event === 'MainAbility1_onDestroy') {
+            await sleep(1000);
             console.log(TAG + " secondCallback callbackid1 : " + JSON.stringify(globalThis.callbackid1));
             let listTemp = JSON.stringify(globalThis.list1);
             console.log(TAG + " listTemp is :" + listTemp);

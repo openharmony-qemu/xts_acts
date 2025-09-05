@@ -1489,6 +1489,22 @@ static napi_value OHNativeImageAcquireNativeWindowBufferAbNormal05(napi_env env,
     return result;
 }
 
+static napi_value OHNativeImageReleaseNativeWindowBufferNormal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_NativeImage *image = OH_ConsumerSurface_Create();
+    InitNativeWindow *initNative = new InitNativeWindow(image);
+    int32_t ret = initNative->OH_FlushBuffer();
+    OHNativeWindowBuffer *nativeWindowBuffer = nullptr;
+    int fenceFd = -1;
+    OH_NativeImage_AcquireNativeWindowBuffer(image, &nativeWindowBuffer, &fenceFd);
+    ret = OH_NativeImage_ReleaseNativeWindowBuffer(image, nativeWindowBuffer, fenceFd);
+    napi_create_int32(env, ret, &result);
+    OH_NativeImage_Destroy(&image);
+    delete initNative;
+    return result;
+}
+
 static napi_value OHNativeImageReleaseNativeWindowBufferAbnormal(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -1505,6 +1521,33 @@ static napi_value OHNativeImageReleaseNativeWindowBufferAbnormal(napi_env env, n
     }
     OH_NativeImage_Destroy(&image);
     delete initNative;
+    return result;
+}
+
+static napi_value OHNativeImageReleaseNativeWindowBufferAbnormal01(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_NativeImage* newImage = OH_NativeImage_Create(0, 0);
+    OHNativeWindow* newNativeWindow = OH_NativeImage_AcquireNativeWindow(newImage);
+    OHNativeWindowBuffer *nativeWindowBuffer = nullptr;
+    int fenceFd = -1;
+    struct Region *region = new Region();
+    struct Region::Rect *rect = new Region::Rect();
+    rect->x = 0x100;
+    rect->y = 0x100;
+    rect->w = 0x100;
+    rect->h = 0x100;
+    region->rects = rect;
+    OH_NativeImage_AcquireNativeWindowBuffer(newImage, &nativeWindowBuffer, &fenceFd);
+    OH_NativeWindow_NativeWindowRequestBuffer(newNativeWindow, &nativeWindowBuffer, &fenceFd);
+    OH_NativeWindow_NativeWindowFlushBuffer(newNativeWindow, nativeWindowBuffer, fenceFd, *region);
+    int32_t ret = OH_NativeImage_ReleaseNativeWindowBuffer(newImage, nativeWindowBuffer, fenceFd);
+    if (ret == NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, SUCCESS, &result);
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
+    OH_NativeImage_Destroy(&newImage);
     return result;
 }
 
@@ -1967,6 +2010,10 @@ napi_value NativeImageInit(napi_env env, napi_value exports)
         {"oHNativeWindowDropBufferModeSetTrueNormal2", nullptr, OHNativeWindowDropBufferModeSetTrueNormal2,
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHNativeWindowDropBufferModeSetAbNormal", nullptr, OHNativeWindowDropBufferModeSetAbNormal,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHNativeImageReleaseNativeWindowBufferNormal", nullptr, OHNativeImageReleaseNativeWindowBufferNormal,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHNativeImageReleaseNativeWindowBufferAbnormal01", nullptr, OHNativeImageReleaseNativeWindowBufferAbnormal01,
          nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(napi_property_descriptor), desc);

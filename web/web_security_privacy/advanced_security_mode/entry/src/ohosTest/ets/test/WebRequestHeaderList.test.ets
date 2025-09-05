@@ -13,41 +13,39 @@
 * limitations under the License.
 */
 
-import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
-import { Driver } from '@kit.TestKit';
-import { webview } from '@kit.ArkWeb';
-import { LocalContext } from './GloablConfig';
-import { router } from '@kit.ArkUI';
-import { BusinessError } from '@kit.BasicServicesKit';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
+import Utils from './Utils';
+import router from '@ohos.router';
+import { waitForComponent } from './WaitTest';
 
-let driver: Driver = Driver.create();
-let flg: boolean = false
+
+// @ts-nocheck
+let emitKey = "";
 
 export default function webRequestHeaderList() {
   describe('WebRequestHeaderListTest', () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
-      webview.WebviewController.initializeWebEngine()
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
-    })
-    beforeEach(() => {
-      flg = false;
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
-    })
-    afterEach(() => {
-      flg = false;
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
-    })
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
-    })
+
+    beforeAll(async (done: Function) => {
+      let options: router.RouterOptions = {
+        url: 'testability/pages/NavigationStartTick',
+      }
+
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info("get WebComponent state success " + JSON.stringify(pages));
+        if (!("WebComponent" == pages.name)) {
+          console.info("get WebComponent state success " + JSON.stringify(pages.name));
+          let result = await router.pushUrl(options);
+          console.info("push WebComponent state success " + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error("push WebComponent page error:" + err);
+      }
+      await waitForComponent("getSecurityLevelButton");
+      done();
+    });
+
 
 
     /**
@@ -58,54 +56,26 @@ export default function webRequestHeaderList() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_getSecurityLevel0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getSecurityLevel_SDK_0001 start')
-      console.info('SUB_ACE_WEB_getSecurityLevel_SDK_0001 start')
-      await driver.delayMs(500)
-
-      try {
-        new webview.WebviewController().getSecurityLevel()
-      } catch (error) {
-        flg = true
-        console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-        expect(error.code).assertEqual("17100001")
-        expect(error.message).assertEqual("Init error. The WebviewController must be associated with a Web component")
-      }
-      await driver.delayMs(2000)
-      expect(flg).assertTrue()
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getSecurityLevel_SDK_0001 end')
-      console.info('SUB_ACE_WEB_getSecurityLevel_SDK_0001 end')
-    })
+    it('testWebView_getSecurityLevel0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      emitKey = "emitGetSecurityLevelError";
+      Utils.emitEvent(emitKey, 160000);
+      Utils.registerEvent("testWebView_getSecurityLevel0001", 'success', 160010, done);
+      sendEventByKey('getSecurityLevelButton', 10, '');
+    });
 
     /**
-     * @tc.number SUB_ACE_WEB_ ONFIRSTCONTENTFULPAINT_0001
+     * @tc.number SUB_ACE_WEB_ONFIRSTCONTENTFULPAINT_0001
      * @tc.name testWebView_onFirstContentfulPaint_navigationStartTick
      * @tc.desc test onOverrideUrlLoading
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_onFirstContentfulPaint_navigationStartTick',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_ ONFIRSTCONTENTFULPAINT_0001 start')
-      console.info('SUB_ACE_WEB_ ONFIRSTCONTENTFULPAINT_0001 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("navigationStartTick", () => {
-        flg = true
-      })
-
-      router.pushUrl({
-        url: "testability/pages/NavigationStartTick"
-      })
-      await driver.delayMs(3000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(3000)
-      expect(flg).assertTrue()
-      router.clear()
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_ ONFIRSTCONTENTFULPAINT_0001 end')
-      console.info('SUB_ACE_WEB_ ONFIRSTCONTENTFULPAINT_0001 end')
-    })
-  })
+    it('testWebView_onFirstContentfulPaint_navigationStartTick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      emitKey = "emitNavigationStartTick";
+      Utils.emitEvent(emitKey, 160000);
+      Utils.registerEvent("testWebView_onFirstContentfulPaint_navigationStartTick", 'success', 160020, done);
+      sendEventByKey('navigationStartButton', 10, '');
+    });
+  });
 }

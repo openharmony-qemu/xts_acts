@@ -50,5 +50,10 @@ export const PublishSuccess: () => number;
 export const PublishInvalidParameter: () => number;
 export const PublishWithInfoSuccess: () => number;
 export const PublishWithInfoInvalidParameter: () => number;
+export const SubscribeSuccess: () => number;
 export const SubscriberNumExceeded: () => number;
+export const SubscribeInvalidParameter: () => number;
+export const SubscriberNumExceeded1: () => number;
+export const UnSubscribeSuccess: () => number;
+export const UnSubscribeInvalidParameter: () => number;
 

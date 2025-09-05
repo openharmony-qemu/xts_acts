@@ -150,3 +150,7 @@ export const ohDrawingPathCreateCubicTo: () => number;
 export const ohDrawingPathCreateClose: () => number;
 export const ohDrawingPathCreateReset: () => number;
 export const oHDrawingCreateTypographyPaint: () => number;
+
+export const oHDrawingTextVerticalAlignmentBaseline: () => number;
+export const oHDrawingTextVerticalAlignmentCenter: () => number;
+export const oHDrawingTextVerticalAlignmentTop: () => number;

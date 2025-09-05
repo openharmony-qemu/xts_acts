@@ -17,6 +17,7 @@ import web_webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import testNapi from 'libentry.so';
 import events_emitter from '@ohos.events.emitter';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -31,6 +32,8 @@ struct OH_ArkWebRequestHeaderList_GetHeader {
   @State isRegister: number = -1;
   @State isSet: number = -1;
   @State isStringReceived: boolean = false;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   aboutToAppear() {
     testNapi.registerCustomSchemes();
@@ -42,14 +45,14 @@ struct OH_ArkWebRequestHeaderList_GetHeader {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 124631,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(124631)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -58,6 +61,7 @@ struct OH_ArkWebRequestHeaderList_GetHeader {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -67,17 +71,18 @@ struct OH_ArkWebRequestHeaderList_GetHeader {
       Button('GetMethod')
         .key('GetMethod')
         .onClick(async () => {
+          await waitForExist(() => this.isReceive, this.str, 0, 1000);
+          await waitForExist(() => testNapi.getRequestValue(), this.str, 1, 1000);
           console.info('key==>' + this.str)
           switch (this.str) {
             case 'testWebResourceRequest_GetMethod_get': {
               console.log('Execute testWebResourceRequest_GetMethod_get');
-              await Utils.sleep(1000);
               let method = testNapi.returnsMethod();
               console.log('get method test result: ' + method);
               let str = 'GET';
               if (method == str) {
                 console.log('testWebResourceRequest_GetMethod  call succeed');
-                Utils.emitEvent(method, 5126);
+                Utils.emitEvent(method, 124880);
               } else {
                 console.error('testWebResourceRequest_GetMethod call  failed');
               }

@@ -65,7 +65,7 @@ export default function codeError2() {
             let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), 1000)
             console.log(`${tag}-is need to click ` + JSON.stringify(allowed));
             if (allowed) {
-              let buttons = await driver.findComponents(ON.text('允许', MatchPattern.CONTAINS))
+              let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'))
               if (buttons && buttons.length > 0) {
                 await buttons[buttons.length - 1].click()
               }
@@ -125,7 +125,7 @@ export default function codeError2() {
             let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), 1000)
             console.log(`${tag}-is need to click ` + JSON.stringify(allowed));
             if (allowed) {
-              let buttons = await driver.findComponents(ON.text('允许', MatchPattern.CONTAINS))
+              let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'))
               if (buttons && buttons.length > 0) {
                 await buttons[buttons.length - 1].click()
               }
@@ -185,7 +185,7 @@ export default function codeError2() {
             let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), 1000)
             console.log(`${tag}-is need to click ` + JSON.stringify(allowed));
             if (allowed) {
-              let buttons = await driver.findComponents(ON.text('允许', MatchPattern.CONTAINS))
+              let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'))
               if (buttons && buttons.length > 0) {
                 await buttons[buttons.length - 1].click()
               }
@@ -244,7 +244,7 @@ export default function codeError2() {
             let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), 1000)
             console.log(`${tag}-is need to click ` + JSON.stringify(allowed));
             if (allowed) {
-              let buttons = await driver.findComponents(ON.text('允许', MatchPattern.CONTAINS))
+              let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'))
               if (buttons && buttons.length > 0) {
                 await buttons[buttons.length - 1].click()
               }
@@ -301,7 +301,7 @@ export default function codeError2() {
             let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), 1000)
             console.log(`${tag}-is need to click ` + JSON.stringify(allowed));
             if (allowed) {
-              let buttons = await driver.findComponents(ON.text('允许', MatchPattern.CONTAINS))
+              let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'))
               if (buttons && buttons.length > 0) {
                 await buttons[buttons.length - 1].click()
               }

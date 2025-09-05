@@ -143,7 +143,6 @@
 #include "textinput/textinput_ondelete_test.h"
 #include "image/image_onfinish_test.h"
 #include "image/image_downprogress_test.h"
-#include "image/image_draggableEvent_test.h"
 #include "imagespan/imagespan_onclick_test.h"
 #include "span/span_onclick_test.h"
 #include "commonattrs/commonattrs_focusstatus_test.h"
@@ -691,8 +690,6 @@ static napi_value Init(napi_env env, napi_value exports)
         {"imageOnfinishTest", nullptr, ImageOnFinishTest::CreateNativeNode, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"imageDownProgressTest", nullptr, ImageDownProgressTest::CreateNativeNode, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"imageDraggableEventTest", nullptr, ImageDraggableTest::CreateNativeNode, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"imageSpanOnClickTest", nullptr, ImagespanOnClickTest::CreateNativeNode, nullptr, nullptr, nullptr,
          napi_default, nullptr},

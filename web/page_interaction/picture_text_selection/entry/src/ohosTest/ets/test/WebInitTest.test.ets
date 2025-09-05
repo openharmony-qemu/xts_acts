@@ -16,8 +16,15 @@
 import { afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+let emitKey = "";
+let tcName = ''
+const EVENT_ID_SET_SUITE_KEY = 176201;
+const driver = Driver.create();
 
 export default function webInitTest() {
 
@@ -28,15 +35,12 @@ export default function webInitTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebInitTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebInitTest afterEach end");
+      try {
+        await driver.waitForComponent(ON.id("WebEnableDataDetectorButton"), 10000);
+      } catch (err) {
+        console.error("push WebViewControllerHitTest page error: " + err);
+      }
       done();
     })
 
@@ -46,9 +50,14 @@ export default function webInitTest() {
      *tc.desic zoom the current page
      */
     it('SearchAllAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      await Utils.emitEvent("emitSearchAllAsync", 10)
-      Utils.registerEvent("SearchAllAsync", "01", 16, done);
-      sendEventByKey('WebInitTestButton', 10, '');
+      emitKey = 'emitSearchAllAsync';
+      tcName = 'SearchAllAsync'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, "01", 176210, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebInitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_033                                                                                                                                                                  
@@ -56,9 +65,14 @@ export default function webInitTest() {
      *tc.desic Save current page
      */
     it('ContextMenuMediaType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      await Utils.emitEvent("emitContextMenuMediaType", 10)
-      Utils.registerEvent("ContextMenuMediaType", 1, 33, done);
-      sendEventByKey('WebInitTestButton', 10, '');
+      emitKey = 'emitContextMenuMediaType';
+      tcName = 'ContextMenuMediaType'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 1, 176220, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebInitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_034                                                                                                                                                                 
@@ -66,11 +80,16 @@ export default function webInitTest() {
      *tc.desic Save current page
      */
     it('ContextMenuInputFieldType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      await Utils.emitEvent("emitContextMenuInputFieldType", 10)
-      Utils.registerEvent("ContextMenuInputFieldType", 1, 34, done);
-      Utils.registerEvent("ContextMenuInputFieldType", 4, 35, done);
-      Utils.registerEvent("ContextMenuInputFieldType", 5, 36, done);
-      sendEventByKey('WebInitTestButton', 10, '');
+      emitKey = 'emitContextMenuInputFieldType';
+      tcName = 'ContextMenuInputFieldType'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 1, 176230, () => { isReturn = true });
+      Utils.registerEvent(tcName, 4, 176231, () => { isReturn = true });
+      Utils.registerEvent(tcName, 5, 176232, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebInitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_035                                                                                                                                                                 
@@ -78,13 +97,18 @@ export default function webInitTest() {
      *tc.desic Save current page
      */
     it('ContextMenuEditStateFlags', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      await Utils.emitEvent("emitContextMenuEditStateFlags", 10)
-      Utils.registerEvent("ContextMenuEditStateFlags", 0, 37, done);
-      Utils.registerEvent("ContextMenuEditStateFlags", 1, 38, done);
-      Utils.registerEvent("ContextMenuEditStateFlags", 2, 39, done);
-      Utils.registerEvent("ContextMenuEditStateFlags", 4, 40, done);
-      Utils.registerEvent("ContextMenuEditStateFlags", 8, 41, done);
-      sendEventByKey('WebInitTestButton', 10, '');
+      emitKey = 'emitContextMenuEditStateFlags';
+      tcName = 'ContextMenuEditStateFlags'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 0, 176240, () => { isReturn = true });
+      Utils.registerEvent(tcName, 1, 176241, () => { isReturn = true });
+      Utils.registerEvent(tcName, 2, 176242, () => { isReturn = true });
+      Utils.registerEvent(tcName, 4, 176243, () => { isReturn = true });
+      Utils.registerEvent(tcName, 8, 176244, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebInitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_API_0800
@@ -92,9 +116,14 @@ export default function webInitTest() {
      *tc.desc test for getFavicon
      */
     it('testGetFavicon',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      await Utils.emitEvent("emitGetFavicon", 10)  
-      Utils.registerEvent("testGetFavicon",null,114,done);
-      sendEventByKey('WebInitTestButton',10,'');
+      emitKey = 'emitGetFavicon';
+      tcName = 'testGetFavicon'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, null, 176250, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebInitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_API_0900
@@ -102,9 +131,14 @@ export default function webInitTest() {
      *tc.desc test for getFavicon again
      */
     it('testGetFaviconAgain',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      await Utils.emitEvent("emitGetFaviconAgain", 10)
-      Utils.registerEvent("testGetFaviconAgain",true,116,done);
-      sendEventByKey('WebInitTestButton',10,'');
+      emitKey = 'emitGetFaviconAgain';
+      tcName = 'testGetFaviconAgain'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 176260, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebInitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /*
     * @tc.number      : SUB_WEB_ONSEARCHRESULTRECEIVE_0100
@@ -115,9 +149,14 @@ export default function webInitTest() {
     * @tc.level       : Level 1
     */
     it('testOnSearchResultReceive001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      await Utils.emitEvent("emitOnSearchResultReceive001", 10)
-      Utils.registerEvent("testOnSearchResultReceive001", 3, 60414, done);
-      sendEventByKey('WebInitTestButton', 10, '');
+      emitKey = 'emitOnSearchResultReceive001';
+      tcName = 'testOnSearchResultReceive001'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 3, 176270, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebInitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -129,9 +168,14 @@ export default function webInitTest() {
     * @tc.level       : Level 1
     */
     it('testOnSearchResultReceive002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      await Utils.emitEvent("emitOnSearchResultReceive002", 10)
-      Utils.registerEvent("testOnSearchResultReceive002", 0, 60416, done);
-      sendEventByKey('WebInitTestButton', 10, '');
+      emitKey = 'emitOnSearchResultReceive002';
+      tcName = 'testOnSearchResultReceive002'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 0, 176280, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebInitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     

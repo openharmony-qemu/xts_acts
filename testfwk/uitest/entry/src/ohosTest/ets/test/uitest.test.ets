@@ -148,6 +148,15 @@ export default function UiTest() {
             let center = await text.getBoundsCenter()
             await text.clearText();
             await driver.delayMs(2000);
+            await exitInputMethod();
+            await driver.delayMs(2000);
+            text = await driver.findComponent(ON.type('TextInput'))
+            if (text == null) {
+                let scorll = await driver.findComponent(ON.type('Scroll'))
+                text = await scorll.scrollSearch(ON.type('TextInput'))
+            }
+            await driver.delayMs(1000);
+            center = await text.getBoundsCenter()
             await driver.inputText(center, '123', {paste:false, addition:false})
             await exitInputMethod();
             await driver.delayMs(2000);

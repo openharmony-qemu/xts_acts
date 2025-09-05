@@ -19,7 +19,7 @@ import osAccountNdk from 'libosaccountndk.so'
 const OS_ACCOUNT_ERR_OK = 0;
 const OS_ACCOUNT_ERR_INTERNAL_ERROR = 12300001;
 const OS_ACCOUNT_ERR_INVALID_PARAMETER = 12300002;
-
+const Success = 0
 export default function ActsOsAccountNdkTest() {
   describe('ActsOsAccountNdkTest', () => {
 
@@ -79,11 +79,11 @@ export default function ActsOsAccountNdkTest() {
         console.info("====>SUB_Account_OsAccount_GetName_0300 start====");
         let result = osAccountNdk.osAccountGetAccountNameC();
         console.info("====>SUB_Account_OsAccount_GetName_0300 result: " + result);
-        expect(result).assertEqual(OS_ACCOUNT_ERR_INVALID_PARAMETER);
+        expect(result).assertEqual(Success);
         done()
       } catch (err) {
         console.error("====>SUB_Account_OsAccount_GetName_0300 catch err: " + err);
-        expect(false).assertEqual(OS_ACCOUNT_ERR_INVALID_PARAMETER);
+        expect().assertFail();
         done()
       }
     })

@@ -44,14 +44,23 @@ export default function AppAccountAuthenticatorStage2Stage() {
       });
       await driver.delayMs(2000);
       try {
+        console.info("====>start to findComponent");
         let allowed = await driver.findComponent(ON.text("允许"));
         let allowed1 = await driver.findComponent(ON.text("本次允许"));
+        let allowed2 = await driver.findComponent(ON.text("打开"));
+        let allowed3 = await driver.findComponent(ON.text("本次打开"));
         if (allowed != undefined && allowed != null) {
           await allowed.click();
           console.info("====>beforeAll click allowed");
         } else if (allowed1 != undefined && allowed1 != null) {
           await allowed1.click();
           console.info("====>beforeAll click allowed1");
+        } else if (allowed2 != undefined && allowed2 != null) {
+          await allowed2.click();
+          console.info("====>beforeAll click allowed2");
+        } else if (allowed3 != undefined && allowed3 != null) {
+          await allowed3.click();
+          console.info("====>beforeAll click allowed3");
         }
       } catch (err) {
         console.info("====>click button err:" + JSON.stringify(err));

@@ -51,7 +51,7 @@ group("graphic") {
       "graphicnapidrawingtest:ActsGraphicNapiDrawingTest",
       "graphics2DTestApi20:ActsGraphics2DApi20Test",
       "graphicvulkannapitest:ActsGraphicVulkanTest",
-      "imageNdk:image_ndk_hap",
+      "graphicImageNdk:image_ndk_hap",
       "nativeColorSpaceNdk:ActsNativeColorSpaceTest",
       "nativeDisplaySoloistNdk:ActsNativeDisplaySoloistTest",
       "nativeEffectNdk:ActsNativeEffectTest",

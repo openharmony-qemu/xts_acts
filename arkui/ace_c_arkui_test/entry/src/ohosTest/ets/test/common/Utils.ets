@@ -27,7 +27,7 @@ export default class Utils {
   static rect_right: number;
   static rect_bottom: number;
   static rect_value: RectValue;
-  
+
   static sleep(time: number) {
     return new Promise<string>((resolve, reject) => {
       setTimeout(() => {
@@ -253,7 +253,29 @@ export default class Utils {
       done();
     }
   }
-  
+
+    static async replacePage(pageTag: string, done?: Function) {
+    let options: router.RouterOptions = {
+      url: `MainAbility/pages/${pageTag}`,
+    }
+    try {
+      router.clear();
+      let pages = router.getState();
+      console.info(`get ${pageTag} state success ` + JSON.stringify(pages));
+      if (pageTag.indexOf(pages.name) < 0) {
+        console.info(`get ${pageTag} state success ` + JSON.stringify(pages.name));
+        let result = await router.replace(options);
+        await Utils.sleep(2000);
+        console.info(`replace ${pageTag} page success ` + JSON.stringify(result));
+      }
+    } catch (err) {
+      console.error(`replace ${pageTag} page error: ` + err);
+    }
+    if (done) {
+      done();
+    }
+  }
+
   static getComponentRect(key: string): Rect {
     let strJson = getInspectorByKey(key);
     let obj: ComponentInfo = JSON.parse(strJson);

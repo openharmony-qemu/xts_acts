@@ -125,7 +125,7 @@ export default function securityTest() {
       }
       expect(await AbilityUtils.startAbilityImplicitly(testAssistWantInfo, abilityContext)).assertTrue()
       await driver.delayMs(2000)
-      let openButton = await driver.findComponent(ON.text('打开').inWindow('com.acts.pcs.arktstest'))
+      let openButton = await driver.findComponent(ON.within(ON.type('Dialog')).text('打开'))
       if(openButton != undefined) {
         await openButton.click()
         await driver.delayMs(2000)
@@ -138,6 +138,16 @@ export default function securityTest() {
       let allowButton2 = await driver.findComponent(ON.text('本次允许'))
       if(allowButton2 != undefined && allowButton2 != null) {
         await allowButton2.click()
+        await driver.delayMs(2000)
+      }
+      let openButton3 = await driver.findComponent(ON.within(ON.type('Dialog')).text('本次打开'))
+      if(openButton3 != undefined && openButton3 != null) {
+        await openButton3.click()
+        await driver.delayMs(2000)
+      }
+      let openButton4 = await driver.findComponent(ON.within(ON.type('Dialog')).text('始终允许打开'))
+      if(openButton4 != undefined && openButton4 != null) {
+        await openButton4.click()
         await driver.delayMs(2000)
       }
       let processInformations = await applicationContext.getRunningProcessInformation()
@@ -1316,7 +1326,7 @@ export default function securityTest() {
       }
       expect(await AbilityUtils.startAbilityImplicitly(testAssistWantInfo, abilityContext)).assertTrue()
       await driver.delayMs(5000)
-      let openButton = await driver.findComponent(ON.text('打开').inWindow('com.acts.pcs.arktstest'))
+      let openButton = await driver.findComponent(ON.within(ON.type('Dialog')).text('打开'))
       if(openButton != undefined && openButton != null) {
         await openButton.click()
         await driver.delayMs(2000)
@@ -1329,6 +1339,16 @@ export default function securityTest() {
       let allowButton2 = await driver.findComponent(ON.text('本次允许'))
       if(allowButton2 != undefined && allowButton2 != null) {
         await allowButton2.click()
+        await driver.delayMs(2000)
+      }
+      let openButton3 = await driver.findComponent(ON.within(ON.type('Dialog')).text('本次打开'))
+      if(openButton3 != undefined && openButton3 != null) {
+        await openButton3.click()
+        await driver.delayMs(2000)
+      }
+      let openButton4 = await driver.findComponent(ON.within(ON.type('Dialog')).text('始终允许打开'))
+      if(openButton4 != undefined && openButton4 != null) {
+        await openButton4.click()
         await driver.delayMs(2000)
       }
       let button = await driver.findComponent(ON.id('generateKey').inWindow('com.acts.pcs.arkts.assist'))

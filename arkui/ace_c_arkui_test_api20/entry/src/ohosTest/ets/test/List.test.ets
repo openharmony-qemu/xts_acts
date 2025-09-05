@@ -25,7 +25,14 @@ import TestInitModuleForArkTSEnv from "./arkTSEnv/TestInitModuleForArkTSEnv.test
 import RunTaskInScopeTest from "./scope/RunTaskInScopeTest.test"
 import ListTypeNodeTest from './list/ListTypeNodeTest.test'
 import ListCNodeTest from './list/ListCNodeTest.test'
+import GridTypeNodeTest from './grid/GridTypeNodeTest.test'
+import GridCNodeTest from './grid/GridCNodeTest.test'
+import SwiperTypeNodeTest from './swiper/SwiperTypeNodeTest.test'
+import SwiperCNodeTest from './swiper/SwiperCNodeTest.test'
+import WaterFlowTypeNodeTest from './waterFlow/WaterFlowTypeNodeTest.test'
+import WaterFlowCNodeTest from './waterFlow/WaterFlowCNodeTest.test'
 import BindControllerTest from './BindController/BindController.test'
+import scrollScrollBarMarginTest from './scroll/ScrollScrollBarMarginTest.test'
 
 export default function testsuite() {
   PostOnIdleTest();
@@ -41,5 +48,12 @@ export default function testsuite() {
   RunTaskInScopeTest();
   ListTypeNodeTest();
   ListCNodeTest();
+  GridTypeNodeTest();
+  GridCNodeTest();
+  SwiperTypeNodeTest();
+  SwiperCNodeTest();
+  WaterFlowTypeNodeTest();
+  WaterFlowCNodeTest();
   BindControllerTest();
+  scrollScrollBarMarginTest();
 }

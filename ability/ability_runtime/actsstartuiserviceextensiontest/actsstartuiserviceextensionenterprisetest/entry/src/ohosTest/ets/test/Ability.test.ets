@@ -189,7 +189,7 @@ export default function abilityTest() {
       })
       await sleep(1000);
       try {
-        let allowed = await driver.waitForComponent(ON.text("打开"), 2000);
+        let allowed = await driver.waitForComponent(ON.id('advanced_dialog_button_1'), 2000);
         if (allowed) {
           console.log("find button");
           let point = await allowed.getBoundsCenter();

@@ -23,7 +23,7 @@ import bundleManager from '@ohos.bundle.bundleManager';
 import { BusinessError } from '@ohos.base'
 
 const DOMAIN = 0x0000;
-const LOG_TAG = 'COMPLETION_HANDLER_TEST';
+let LOG_TAG = 'COMPLETION_HANDLER_TEST';
 const DELAY_TIME = 2000;
 
 let sleep = async (millis: number) => {
@@ -37,6 +37,7 @@ let isOpen: boolean = false;
 let driver = Driver.create();
 
 let openDialog = async (dialogKey: string, text: string) => {
+  hilog.info(DOMAIN, LOG_TAG, 'openDialog: start');
   let allowed = await driver.waitForComponent(ON.text(dialogKey, MatchPattern.CONTAINS), DELAY_TIME);
   hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
   if (allowed) {
@@ -60,9 +61,11 @@ let openDialog = async (dialogKey: string, text: string) => {
       hilog.info(DOMAIN, LOG_TAG, 'button %{public}s not found', text);
     }
   }
+  hilog.info(DOMAIN, LOG_TAG, 'openDialog: end');
 }
 
 let closeDialog = async (dialogKey: string) => {
+  hilog.info(DOMAIN, LOG_TAG, 'closeDialog: start');
   let allowed = await driver.waitForComponent(ON.text(dialogKey, MatchPattern.CONTAINS), DELAY_TIME);
   hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
   if (allowed) {
@@ -72,13 +75,15 @@ let closeDialog = async (dialogKey: string) => {
       buttonClicked = true;
     }
   }
+  hilog.info(DOMAIN, LOG_TAG, 'closeDialog: end');
 }
 
 let allowOpen = async () => {
+  hilog.info(DOMAIN, LOG_TAG, 'allowOpen: start');
   let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELAY_TIME);
   hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
   if (allowed) {
-    let buttons = await driver.findComponents(ON.text('本次允许', MatchPattern.CONTAINS));
+    let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
     if (buttons && buttons.length > 0) {
       hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
       hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', '本次允许');
@@ -87,25 +92,17 @@ let allowOpen = async () => {
       buttonClicked = true;
       return;
     }
-    buttons = await driver.findComponents(ON.text('允许', MatchPattern.CONTAINS));
-    if (buttons && buttons.length > 0) {
-      hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
-      hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', '允许');
-      await buttons[buttons.length - 1].click();
-      hilog.info(DOMAIN, LOG_TAG, '%{public}s clicked', '允许');
-      buttonClicked = true;
-      return;
-    }
-
     hilog.info(DOMAIN, LOG_TAG, 'button not found');
   }
+  hilog.info(DOMAIN, LOG_TAG, 'allowOpen: end');
 }
 
 let disallowOpen = async () => {
+  hilog.info(DOMAIN, LOG_TAG, 'disallowOpen: start');
   let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELAY_TIME);
   hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
   if (allowed) {
-    let buttons = await driver.findComponents(ON.text('不允许', MatchPattern.CONTAINS));
+    let buttons = await driver.findComponents(ON.id('advanced_dialog_button_2'));
     if (buttons && buttons.length > 0) {
       hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
       hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', '不允许');
@@ -114,7 +111,7 @@ let disallowOpen = async () => {
       buttonClicked = true;
       return;
     }
-    buttons = await driver.findComponents(ON.text('取消', MatchPattern.CONTAINS));
+    buttons = await driver.findComponents(ON.id('advanced_dialog_button_0'));
     if (buttons && buttons.length > 0) {
       hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
       hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', '取消');
@@ -126,6 +123,7 @@ let disallowOpen = async () => {
 
     hilog.info(DOMAIN, LOG_TAG, 'button not found');
   }
+  hilog.info(DOMAIN, LOG_TAG, 'disallowOpen: end');
 }
 
 export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest() {
@@ -179,6 +177,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0100', Level.LEVEL3, async(done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+      LOG_TAG = "StartAbilityForResult_0100";
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0100 begin');
       if (!supportSceneBoard) {
         hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0100 sceneboard is not supported`);
@@ -243,6 +242,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
      * @tc.level  : 3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0200', Level.LEVEL3, async(done: Function) => {
+      LOG_TAG = "StartAbilityForResult_0200";
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0200 begin');
       if (!supportSceneBoard) {
@@ -310,6 +310,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
      * @tc.level  : 3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0300', Level.LEVEL3, async(done: Function) => {
+      LOG_TAG = "StartAbilityForResult_0300";
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0300 begin');
       if (!supportSceneBoard) {
@@ -381,6 +382,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
      * @tc.level  : 3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0400', Level.LEVEL3, async(done: Function) => {
+      LOG_TAG = "StartAbilityForResult_0400";
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0400 begin');
       if (!supportSceneBoard) {
@@ -452,6 +454,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
      * @tc.level  : 3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500', Level.LEVEL3, async(done: Function) => {
+      LOG_TAG = "StartAbilityForResult_0500";
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500 begin');
       if (!supportSceneBoard) {
@@ -512,6 +515,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
      * @tc.level  : 3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0600', Level.LEVEL3, async(done: Function) => {
+      LOG_TAG = "StartAbilityForResult_0600";
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0600 begin');
       if (!supportSceneBoard) {
@@ -583,6 +587,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
      * @tc.level  : 3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0700', Level.LEVEL3, async(done: Function) => {
+      LOG_TAG = "StartAbilityForResult_0700";
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0700 begin');
       if (!supportSceneBoard) {
@@ -656,6 +661,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
      * @tc.level  : 3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0800', Level.LEVEL3, async(done: Function) => {
+      LOG_TAG = "StartAbilityForResult_0800";
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0800 begin');
       if (!supportSceneBoard) {

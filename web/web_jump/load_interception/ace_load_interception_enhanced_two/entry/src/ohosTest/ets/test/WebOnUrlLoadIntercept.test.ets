@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,6 +17,9 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { CommonConstants } from './Constant.test'
+import { waitForComponent } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -33,28 +36,27 @@ export default function webOnUrlLoadIntercept() {
         if (!("WebOnUrlLoadIntercept" == pages.name)) {
           console.info("get WebOnUrlLoadIntercept state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebOnUrlLoadIntercept page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebOnUrlLoadIntercept page error: " + err);
       }
+      await waitForComponent("WebOnUrlLoadInterceptTestButton");
       done()
     });
+
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
 
     afterEach(async (done: Function) => {
       console.info("WebOnUrlLoadInterceptTest afterEach start");
-      await Utils.sleep(1000);
       console.info("WebOnUrlLoadInterceptTest afterEach end");
       done();
     })
@@ -68,10 +70,9 @@ export default function webOnUrlLoadIntercept() {
     * @tc.level       : Level 0
     */
     it('testOnUrlLoadIntercept002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("testOnUrlLoadIntercept002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnUrlLoadIntercept002", 'https://www.openharmony.cn/', 70544, done);
-      Utils.registerEvent("testOnUrlLoadIntercept002", 'index', 70546, done);
+      Utils.emitEvent("testOnUrlLoadIntercept002", 134450)
+      Utils.registerEvent("testOnUrlLoadIntercept002", CommonConstants.EXAMPLE_URL, 134460, done);
+      Utils.registerEvent("testOnUrlLoadIntercept002", 'index', 134470, done);
       sendEventByKey('WebOnUrlLoadInterceptTestButton', 10, '');
     })
   })

@@ -29,6 +29,9 @@
                 "power-shell setmode 602",
                 "uinput -T -d 300 600 -m 300 600 300 100 -u 300 100",
                 "param set persist.sys.abilityms.support.ecologicalrulemgrservice false"
+            ],
+            "teardown-command": [
+                "param set persist.sys.abilityms.support.ecologicalrulemgrservice true"
             ]
         }
     ]

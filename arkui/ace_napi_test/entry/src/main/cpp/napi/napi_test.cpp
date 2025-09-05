@@ -4635,12 +4635,10 @@ static void CallJsFunc(napi_env env, napi_value jsCb, void *context, void *data)
 static void ExecuteWork(napi_env env, void *data)
 {
     CallbackData *callbackData = reinterpret_cast<CallbackData *>(data);
-    // 执行任务为napi_priority_idle优先级，入队方式为队列尾部入队
     napi_call_threadsafe_function_with_priority(callbackData->tsfn, nullptr, napi_priority_idle, true);
     napi_call_threadsafe_function_with_priority(callbackData->tsfn, nullptr, napi_priority_low, true);
     napi_call_threadsafe_function_with_priority(callbackData->tsfn, nullptr, napi_priority_high, true);
     napi_call_threadsafe_function_with_priority(callbackData->tsfn, nullptr, napi_priority_immediate, true);
-    // 执行任务为napi_priority_high优先级，入队方式为队列头部入队
     napi_call_threadsafe_function_with_priority(callbackData->tsfn, nullptr, napi_priority_high, false);
 }
 
@@ -10596,18 +10594,15 @@ static napi_value NapiReferenceUnrefTest(napi_env env, napi_callback_info info)
     napi_create_object(env, &obj);
     napi_value value = nullptr;
     napi_create_string_utf8(env, "CreateReference", NAPI_AUTO_LENGTH, &value);
-    // 将键值对添加到对象中
     napi_set_named_property(env, obj, "key", value);
-    // 创建对ArkTS对象的引用
+
     status = napi_create_reference(env, obj, 1, &ref);
     if (status != napi_ok) {
         napi_throw_error(env, nullptr, "napi_create_reference fail");
         return nullptr;
     }
-    // 添加终结器
     void *data = {};
     napi_add_finalizer(env, obj, data, Finalizer, nullptr, &ref);
-    // 减少传入引用的引用计数并返回生成的引用计数
     uint32_t result = 0;
 
     //value is not undefined
@@ -10642,9 +10637,8 @@ static napi_value NapiGetReferenceValueTest(napi_env env, napi_callback_info inf
     napi_create_object(env, &obj);
     napi_value value = nullptr;
     napi_create_string_utf8(env, "CreateReference", NAPI_AUTO_LENGTH, &value);
-    // 将键值对添加到对象中
+
     napi_set_named_property(env, obj, "key", value);
-    // 创建对ArkTS对象的引用
     status = napi_create_reference(env, obj, 1, &ref);
     if (status != napi_ok) {
         napi_throw_error(env, nullptr, "napi_create_reference fail");

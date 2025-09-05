@@ -17,6 +17,7 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @CustomDialog
 struct NewWebViewComp {
@@ -63,17 +64,20 @@ struct WebViewEnumAndSetWebController {
   dialogController: CustomDialogController | null = null
   popController: webView.WebviewController | null = null;
   controller: webView.WebviewController = new webView.WebviewController();
+  @State isTitle: boolean = false;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 141711,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(141711)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -82,6 +86,7 @@ struct WebViewEnumAndSetWebController {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0
       }
     }
   }
@@ -90,44 +95,54 @@ struct WebViewEnumAndSetWebController {
     Column() {
       Row() {
         Button("web clicks").key('buttonEnumAndSetWebController').onClick(async () => {
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           console.info("key==>" + this.str)
           switch (this.str) {
             case "emitCacheModeOnly": {
               this.controller.removeCache(true);
               this.cacheError = true
               this.CacheMode = CacheMode.Only
+              this.isPageEnd = -1;
               this.controller.loadUrl("https://www.openharmony.cn/mainPlay")
+              await waitForExist(() => this.isPageEnd, this.str, 0);
               break;
             }
             case "emitCacheModeDefault": {
               this.CacheMode = CacheMode.Default
-              this.controller.loadUrl("resource://rawfile/indexTwo.html")
-              await Utils.sleep(2000)
+              this.isPageEnd = -1
+              this.isTitle = false
+              this.controller.loadUrl($rawfile('indexTwo.html'))
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(()=>this.isTitle, this.str, true);
               this.controller.runJavaScript("getTitle()", (error, result) => {
                 console.log("error" + error)
-                Utils.emitEvent(result, 1402)
+                Utils.emitEvent(result, 141750)
               })
               break;
             }
             case "emitCacheModeOnline": {
               this.CacheMode = CacheMode.Online
-              this.controller.loadUrl("https://www.jd.com/")
-              await Utils.sleep(2000)
+              this.isTitle = false;
+              this.isPageEnd = -1;
+              this.controller.loadUrl("https://www.example.com/")
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(()=>this.isTitle, this.str, true);
               this.controller.getTitle()
-              await Utils.sleep(2000)
-              if ((this.controller.getTitle()).includes("京东")) {
-                Utils.emitEvent(true, 1405)
+              if ((this.controller.getTitle()).includes("Example Domain")) {
+                Utils.emitEvent(true, 141760)
                 console.log("title:" + this.controller.getTitle())
               }
-              this.controller.loadUrl("resource://rawfile/fullScreenEnter.html")
               break;
             }
             case "emitCacheModeNone": {
               this.CacheMode = CacheMode.None
-              this.controller.loadUrl("https://www.huawei.com/cn/")
-              await Utils.sleep(12000)
-              Utils.emitEvent(this.controller.getTitle(), 1406)
-              this.controller.loadUrl("resource://rawfile/fullScreenEnter.html")
+              this.isTitle = false;
+              this.isPageEnd = -1;
+              this.controller.loadUrl("https://www.example.com")
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(()=>this.isTitle, this.str, true);
+              Utils.emitEvent(this.controller.getTitle(), 141770)
               break;
             }
           }
@@ -147,6 +162,15 @@ struct WebViewEnumAndSetWebController {
         .key("WebViewEnumAndSetWebControllerWebView")
         .blockNetwork(Boolean(this.block))
         .cacheMode(this.CacheMode)
+        .onPageEnd(()=>{
+          this.isPageEnd = 0;
+        })
+        .onTitleReceive((event) => {
+          if (event) {
+            this.isTitle = true;
+            console.log('title:' + event.title);
+          }
+        })
         .onShowFileSelector((event) => {
           if (event) {
             let fileSelectorObj: FileSelectorParam = event.fileSelector
@@ -160,7 +184,7 @@ struct WebViewEnumAndSetWebController {
             console.log("CacheMode >>>> ==> getErrorInfo", event.error.getErrorInfo())
           }
           if (this.cacheError) {
-            Utils.emitEvent("cacheError", 1401)
+            Utils.emitEvent("cacheError", 141740)
             this.cacheError = false
           }
         })

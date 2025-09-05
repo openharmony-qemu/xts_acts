@@ -17,12 +17,14 @@ import web_webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import testNapi from 'libentry.so';
 import events_emitter from '@ohos.events.emitter';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
 struct OH_ArkWeb_SetSchemeHandler {
   controller: web_webview.WebviewController = new web_webview.WebviewController('scheme-handler');
   @State str: string = ''
+  @State isReceive: number = -1;
 
   aboutToAppear() {
     testNapi.registerCustomSchemes()
@@ -32,14 +34,14 @@ struct OH_ArkWeb_SetSchemeHandler {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 124643,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(124643)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -48,6 +50,7 @@ struct OH_ArkWeb_SetSchemeHandler {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -57,15 +60,18 @@ struct OH_ArkWeb_SetSchemeHandler {
       Button('Click')
         .key('Click')
         .onClick(async () => {
+          await waitForExist(() => this.isReceive, this.str, 0, 1000);
+          await waitForExist(() => testNapi.getRequestValue(), this.str, 1, 1000);
+          console.info('key==>' + this.str)
           switch (this.str) {
             case 'testWeb_SetSchemeHandler_Fail_schemeParam_IsNone': {
               let result: number = testNapi.judgment_num_2();
               if (result == 0) {
                 console.log('Failed click');
-                Utils.emitEvent(false, 5218);
+                Utils.emitEvent(false, 124500);
               } else {
                 console.log('Success OH_ArkWeb_SetSchemeHandler');
-                Utils.emitEvent(false, 5218);
+                Utils.emitEvent(false, 124500);
               }
               break;
             }

@@ -27,6 +27,7 @@ group("WebLoad") {
       "web_error_page:ActsWebErrorPageTest",
       "web_hosting:ActsWebHostingTest",
       "website_certificate:ActsWebsiteCertificateTest",
+      "ActsWebCloudServiceTestStatic:ActsWebCloudServiceStaticTest",
     ]
   }
 }

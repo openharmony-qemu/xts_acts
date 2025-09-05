@@ -25,7 +25,11 @@
 #include "uiInput/UiInputErrorCodeTest.h"
 #include "scope/RunTaskInScopeTest.h"
 #include "list/ListCrossLanguageTest.h"
+#include "grid/GridCrossLanguageTest.h"
+#include "swiper/SwiperCrossLanguageTest.h"
+#include "waterFlow/WaterFlowCrossLanguageTest.h"
 #include "BindController/BindControllerTest.h"
+#include "scroll/ScrollBarMarginTest.h"
 
 namespace ArkUICapiTest
 {
@@ -60,8 +64,16 @@ namespace ArkUICapiTest
                 napi_default, nullptr},
             {"createCrossLanguageListNode", nullptr, ListCrossLanguageTest::createCrossLanguageListNode,
              nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"createCrossLanguageGridNode", nullptr, GridCrossLanguageTest::createCrossLanguageGridNode,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"createCrossLanguageSwiperNode", nullptr, SwiperCrossLanguageTest::createCrossLanguageSwiperNode,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"createCrossLanguageWaterFlowNode", nullptr, WaterFlowCrossLanguageTest::createCrossLanguageWaterFlowNode,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
             {"testBindController001", nullptr, NodeBindControllerTest::testBindController001, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
+            {"scrollScrollBarMarginTest", nullptr, ScrollScrollBarMarginTest::CreateNativeNodeScrollBarMargin, nullptr,
+             nullptr, nullptr, napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
         {

@@ -76,7 +76,7 @@ export default function abilityTest() {
         hilog.info(DOMAIN, LOG_TAG, 'getBundleInfo failed: %{public}s', JSON.stringify(err));
       }
 
-      let isSpecifiedProcessSupported = systemParameterEnhance.getSync('persist.sys.abilityms.start_options_with_process_option', 'false');
+      let isSpecifiedProcessSupported = systemParameterEnhance.getSync('persist.sys.abilityms.start_specified_process', 'false');
       hilog.info(DOMAIN, LOG_TAG, 'isSpecifiedProcessSupported: %{public}s', isSpecifiedProcessSupported);
       if (isSpecifiedProcessSupported === 'true') {
         supportSpecifiedProcess = true;

@@ -16,9 +16,12 @@ import { beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-
+const EVENT_ID_SET_EIMIT_KEY = 142700;
+const driver = Driver.create();
 
 export default function webviewApi() {
 
@@ -30,7 +33,6 @@ export default function webviewApi() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(1000);
       console.info("web beforeEach start");
       done();
     })
@@ -49,10 +51,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testGetNativeAPI PASS');
         
-        Utils.emitEvent("emitGetNativeAPI", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testGetNativeAPI", true, 7712, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitGetNativeAPI", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testGetNativeAPI", true, 142710, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -67,10 +71,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceRequest_GetUrl PASS');
         
-        Utils.emitEvent("emitWebResourceRequest_GetUrl", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResourceRequest_GetUrl", true, 7713, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResourceRequest_GetUrl", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResourceRequest_GetUrl", true, 142720, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -85,10 +91,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceRequest_GetMethod PASS');
         
-        Utils.emitEvent("emitWebResourceRequest_GetMethod", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResourceRequest_GetMethod", true, 7714, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResourceRequest_GetMethod", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResourceRequest_GetMethod", true, 142730, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -103,10 +111,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceRequest_GetHttpBodyStream PASS');
         
-        Utils.emitEvent("emitWebResourceRequest_GetHttpBodyStream", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResourceRequest_GetHttpBodyStream", true, 7715, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResourceRequest_GetHttpBodyStream", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResourceRequest_GetHttpBodyStream", true, 142740, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -121,10 +131,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebRequestHeaderList_GetSize PASS');
         
-        Utils.emitEvent("emitWebRequestHeaderList_GetSize", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebRequestHeaderList_GetSize", true, 7716, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebRequestHeaderList_GetSize", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebRequestHeaderList_GetSize", true, 142750, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -139,10 +151,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebRequestHeaderList_GetHeader PASS');
         
-        Utils.emitEvent("emitWebRequestHeaderList_GetHeader", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebRequestHeaderList_GetHeader", true, 7717, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebRequestHeaderList_GetHeader", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebRequestHeaderList_GetHeader", true, 142760, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -157,10 +171,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebRequestHeaderList_Destroy PASS');
         
-        Utils.emitEvent("emitWebRequestHeaderList_Destroy", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebRequestHeaderList_Destroy", true, 7718, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebRequestHeaderList_Destroy", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebRequestHeaderList_Destroy", true, 142770, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -175,10 +191,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceRequest_HasGesture PASS');
         
-        Utils.emitEvent("emitWebResourceRequest_HasGesture", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResourceRequest_HasGesture", true, 7719, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResourceRequest_HasGesture", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResourceRequest_HasGesture", true, 142780, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -193,10 +211,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceRequest_IsMainFrame PASS');
         
-        Utils.emitEvent("emitWebResourceRequest_IsMainFrame", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResourceRequest_IsMainFrame", true, 7720, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResourceRequest_IsMainFrame", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResourceRequest_IsMainFrame", true, 142790, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -211,10 +231,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceRequest_IsRedirect PASS');
         
-        Utils.emitEvent("emitWebResourceRequest_IsRedirect", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResourceRequest_IsRedirect", true, 7721, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResourceRequest_IsRedirect", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResourceRequest_IsRedirect", true, 142701, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -229,10 +251,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebSchemeHandler_GetUserData PASS');
         
-        Utils.emitEvent("emitWebSchemeHandler_GetUserData", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebSchemeHandler_GetUserData", true, 7722, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebSchemeHandler_GetUserData", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebSchemeHandler_GetUserData", true, 142711, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -247,10 +271,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebSchemeHandler_SetUserData PASS');
         
-        Utils.emitEvent("emitWebSchemeHandler_SetUserData", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebSchemeHandler_SetUserData", true, 7723, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebSchemeHandler_SetUserData", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebSchemeHandler_SetUserData", true, 142721, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -265,10 +291,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceRequest_GetReferrer PASS');
         
-        Utils.emitEvent("emitWebResourceRequest_GetReferrer", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResourceRequest_GetReferrer", true, 7724, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResourceRequest_GetReferrer", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResourceRequest_GetReferrer", true, 142731, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -283,10 +311,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceRequest_SetUserData PASS');
         
-        Utils.emitEvent("emitWebResourceRequest_SetUserData", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResourceRequest_SetUserData", true, 7725, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResourceRequest_SetUserData", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResourceRequest_SetUserData", true, 142741, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -301,10 +331,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceRequest_GetUserData PASS');
         
-        Utils.emitEvent("emitWebResourceRequest_GetUserData", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResourceRequest_GetUserData", true, 7726, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResourceRequest_GetUserData", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResourceRequest_GetUserData", true, 142751, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -319,10 +351,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceRequest_Destroy PASS');
         
-        Utils.emitEvent("emitWebResourceRequest_Destroy", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResourceRequest_Destroy", true, 7727, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResourceRequest_Destroy", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResourceRequest_Destroy", true, 142761, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -337,10 +371,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_GetUrl PASS');
         
-        Utils.emitEvent("emitWebResponse_GetUrl", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResponse_GetUrl", true, 7728, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResponse_GetUrl", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResponse_GetUrl", true, 142771, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
 
 
@@ -357,10 +393,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_GetStatus PASS');
         
-        Utils.emitEvent("emitWebResponse_GetStatus", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResponse_GetStatus", true, 7730, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResponse_GetStatus", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResponse_GetStatus", true, 142781, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -375,10 +413,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_GetStatusText PASS');
         
-        Utils.emitEvent("emitWebResponse_GetStatusText", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResponse_GetStatusText", true, 7731, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResponse_GetStatusText", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResponse_GetStatusText", true, 142791, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -393,10 +433,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_GetMimeType PASS');
         
-        Utils.emitEvent("emitWebResponse_GetMimeType", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResponse_GetMimeType", true, 7732, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResponse_GetMimeType", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResponse_GetMimeType", true, 142702, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -411,10 +453,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_GetCharset PASS');
         
-        Utils.emitEvent("emitWebResponse_GetCharset", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResponse_GetCharset", true, 7733, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResponse_GetCharset", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResponse_GetCharset", true, 142712, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -429,10 +473,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_GetHeaderByName PASS');
         
-        Utils.emitEvent("emitWebResponse_GetHeaderByName", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResponse_GetHeaderByName", true, 7734, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResponse_GetHeaderByName", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResponse_GetHeaderByName", true, 142722, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -447,10 +493,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_SetUrl PASS');
         
-        Utils.emitEvent("emitWebResponse_SetUrl", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResponse_SetUrl", true, 7735, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResponse_SetUrl", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResponse_SetUrl", true, 142732, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
 
     
@@ -466,10 +514,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_SetStatus PASS');
         
-        Utils.emitEvent("emitWebResponse_SetStatus", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResponse_SetStatus", true, 7737, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResponse_SetStatus", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResponse_SetStatus", true, 142742, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -484,10 +534,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_SetStatusText PASS');
         
-        Utils.emitEvent("emitWebResponse_SetStatusText", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResponse_SetStatusText", true, 7738, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResponse_SetStatusText", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResponse_SetStatusText", true, 142752, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -502,10 +554,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_SetMimeType PASS');
         
-        Utils.emitEvent("emitWebResponse_SetMimeType", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResponse_SetMimeType", true, 7739, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResponse_SetMimeType", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResponse_SetMimeType", true, 142762, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -520,10 +574,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_SetCharset PASS');
         
-        Utils.emitEvent("emitWebResponse_SetCharset", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResponse_SetCharset", true, 7740, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResponse_SetCharset", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResponse_SetCharset", true, 142772, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -538,10 +594,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_SetHeaderByName PASS');
         
-        Utils.emitEvent("emitWebResponse_SetHeaderByName", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResponse_SetHeaderByName", true, 7741, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResponse_SetHeaderByName", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWebResponse_SetHeaderByName", true, 142782, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
     
     /*
@@ -556,10 +614,12 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_CreateResponse PASS');
         
-        Utils.emitEvent("emitWeb_CreateResponse", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWeb_CreateResponse", true, 7742, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWeb_CreateResponse", EVENT_ID_SET_EIMIT_KEY)
+        let isReturn = 0;
+        Utils.registerEvent("testWeb_CreateResponse", true, 142792, ()=> {isReturn = 1});
+        await Utils.waitAndClickComponent(driver, "webHostingButton");
+        await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+        done();
     })
 
     /*
@@ -574,10 +634,12 @@ export default function webviewApi() {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceRequest_GetResourceType PASS');
 
-      Utils.emitEvent("emitWebResourceRequest_GetResourceType", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("testWebResourceRequest_GetResourceType", true, 7743, done);
-      sendEventByKey('webHostingButton', 10, '');
+      Utils.emitEvent("emitWebResourceRequest_GetResourceType", EVENT_ID_SET_EIMIT_KEY)
+      let isReturn = 0;
+      Utils.registerEvent("testWebResourceRequest_GetResourceType", true, 142703, ()=> {isReturn = 1});
+      await Utils.waitAndClickComponent(driver, "webHostingButton");
+      await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+      done();
     })
 
     /*
@@ -592,10 +654,12 @@ export default function webviewApi() {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceRequest_GetFrameUrl PASS');
 
-      Utils.emitEvent("emitWebResourceRequest_GetFrameUrl", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("testWebResourceRequest_GetFrameUrl", true, 7744, done);
-      sendEventByKey('webHostingButton', 10, '');
+      Utils.emitEvent("emitWebResourceRequest_GetFrameUrl", EVENT_ID_SET_EIMIT_KEY)
+      let isReturn = 0;
+      Utils.registerEvent("testWebResourceRequest_GetFrameUrl", true, 142713, ()=> {isReturn = 1});
+      await Utils.waitAndClickComponent(driver, "webHostingButton");
+      await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
+      done();
     })
     
   })

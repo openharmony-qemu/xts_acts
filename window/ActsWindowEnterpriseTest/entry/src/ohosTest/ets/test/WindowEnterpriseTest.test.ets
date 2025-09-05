@@ -196,6 +196,7 @@ export default function WindowEnterpriseTest() {
       } catch (err) {
         await terminateAbility3(caseName);
         console.log(`${caseName} : failed, code: ${err.code}, msg: ${err.message}`);
+        expect(err.message!=null).assertTrue();
         if (err.code === 801) {
             console.log(`${caseName} deviceType does not supported this Capability`);
             done()
@@ -222,7 +223,6 @@ export default function WindowEnterpriseTest() {
         let windowClass = WindowStart.getMainWindowSync();
         await sleep(300);
         try {
-          await windowClass.moveWindowTo(100, 100)
           await sleep(200);
           let windowClassProperties = windowClass.getWindowProperties();
           console.log(`${caseName} : windowClassProperties: ${JSON.stringify(windowClassProperties)}`);
@@ -265,6 +265,7 @@ export default function WindowEnterpriseTest() {
         } catch (err) {
           await terminateAbility3(caseName);
           console.log(`${caseName} : failed, code: ${err.code}, msg: ${err.message}`);
+          expect(err.message!=null).assertTrue();
           if (err.code === 801) {
             console.log(`${caseName} deviceType does not supported this Capability`);
             done()

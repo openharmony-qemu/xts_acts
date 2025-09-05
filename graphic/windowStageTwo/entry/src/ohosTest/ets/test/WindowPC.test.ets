@@ -975,7 +975,6 @@ export default function windowPCTest() {
         // 获取窗口状态 - 分屏
         windowStatus = windowClass.getWindowStatus()
         console.info(`${message} windowStatus: ${windowStatus}, expect 5`);
-        await driver.click(2340, 977);
         await sleep(1000)
         expect(windowStatus).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
         done();
@@ -1074,7 +1073,6 @@ export default function windowPCTest() {
         // 获取窗口状态 - 自由窗口
         windowStatus = windowClass.getWindowStatus()
         console.info(`${message} windowStatus: ${windowStatus}, expect 5`);
-        await driver.click(2340, 977);
         await sleep(1000)
         expect(windowStatus).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
         done()
@@ -1125,7 +1123,6 @@ export default function windowPCTest() {
         // 获取窗口状态 - 自由窗口
         windowStatus = windowClass.getWindowStatus()
         console.info(`${message} windowStatus: ${windowStatus}, expect 4`);
-        await driver.click(2340, 977);
         await sleep(1000)
         expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
         done()
@@ -1232,7 +1229,6 @@ export default function windowPCTest() {
         // 获取窗口状态 - 分屏
         windowStatus = windowClass.getWindowStatus()
         console.info(`${message} windowStatus: ${windowStatus}, expect 5`);
-        await driver.click(2340, 977);
         await sleep(1000)
         expect(windowStatus).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
         done()
@@ -3448,6 +3444,7 @@ export default function windowPCTest() {
         expect().assertFail();
         done();
       } finally {
+        await sleep(1000);
         await subWindowClass.destroyWindow();
       }
     })

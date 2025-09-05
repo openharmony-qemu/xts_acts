@@ -65,7 +65,7 @@ static ArkUI_NodeHandle CreateChildNodeOnMouse(ArkUI_NativeNodeAPI_1 *nodeAPI)
     auto buttonMove = nodeAPI->createNode(ARKUI_NODE_BUTTON);
     auto column = nodeAPI->createNode(ARKUI_NODE_COLUMN);
 
-    ArkUI_NumberValue button_length_value[] = {{.f32 = SIZE_100}};
+    ArkUI_NumberValue button_length_value[] = {{.f32 = SIZE_20}};
     ArkUI_AttributeItem button_length_item = {button_length_value,
                                               sizeof(button_length_value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(buttonRight, NODE_WIDTH, &button_length_item);

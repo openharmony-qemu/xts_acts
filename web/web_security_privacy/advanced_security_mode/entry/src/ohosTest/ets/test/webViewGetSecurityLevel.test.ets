@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
-import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
-import emitter from '@ohos.events.emitter';
+import { waitForComponent } from './WaitTest';
+
 // @ts-nocheck
 let emitKey = ""
 
@@ -27,28 +27,21 @@ export default function ActsAceWebViewGetSecurityLevel() {
       let options : router.RouterOptions = {
         url: 'testability/pages/webViewGetSecurityLevel',
       }
-
       try {
-        await Utils.sleep(1000)
         router.clear();
         let pages = router.getState();
         console.info("get webViewGetSecurityLevel state success " + JSON.stringify(pages));
         if (!("webViewGetSecurityLevel" == pages.name)) {
           console.info("get webViewGetSecurityLevel state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(1000);
           console.info("push webViewGetSecurityLevel state success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webViewGetSecurityLevel page error:" + err);
       }
+      await waitForComponent("webViewGetSecurityLevelButton");
       done()
     });
-
-    beforeEach(async (done: Function) => {
-      await Utils.sleep(1000);
-      done();
-    })
 
 
     /*
@@ -61,8 +54,8 @@ export default function ActsAceWebViewGetSecurityLevel() {
      */
     it('testWebViewGetSecurityLevelNone', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewGetSecurityLevel01"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewGetSecurityLevelNone", 'success', 8008, done);
+      Utils.emitEvent(emitKey, 160030);
+      Utils.registerEvent("testWebViewGetSecurityLevelNone", 'success', 160040, done);
       sendEventByKey('webViewGetSecurityLevelButton', 10, '');
     })
 

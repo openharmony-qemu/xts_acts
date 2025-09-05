@@ -1,0 +1,55 @@
+/*
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+export const CreateBufferCopy: () => object;
+export const IsBuffer: (buffer) => boolean;
+export const GetBufferInfo: (buffer) => boolean;
+export const CreateExternalBufferTest: () => object;
+export const createBufferSizeZeroTest: () => object;
+export const CreateBufferMaxLength: () => object;
+export const CreateBufferExceedMaxLength: () => object;
+export const CreateBufferInvalidEnv: () => object;
+export const CreateBufferInvalidData: () => object;
+export const CreateBufferInvalidResult: () => object;
+export const CreateInt32Test: () => object;
+export const GetBufferInfoNonBuffer: (object) => object;
+export const TestMultipleOperations: () => object;
+export const TestExternalArrayBuffer: () => object;
+export const TestArrayBufferThreadSafety: () => boolean;
+export const TestArrayBufferComparison: () => number;
+export const NapiArrayBufferTest01: () => boolean;
+export const NapiArrayBufferTest02: () => boolean;
+export const NapiArrayBufferTest03: () => boolean;
+export const NapiArrayBufferTest04: () => boolean;
+export const NapiArrayBufferTest05: () => boolean;
+export const NapiArrayBufferTest06: () => boolean;
+export const NapiArrayBufferTest07: () => boolean;
+export const NapiBigIntTest01: () => boolean;
+export const NapiBigIntTest02: () => boolean;
+export const NapiBigIntTest03: () => boolean;
+export const NapiBigIntTest04: () => boolean;
+export const NapiBigIntTest05: () => boolean;
+export const NapiBigIntTest06: () => boolean;
+export const NapiBigIntTest07: () => boolean;
+export const NapiBigIntTest08: () => boolean;
+export const NapiBigIntTest09: () => boolean;
+export const NapiBigIntTest10: () => boolean;
+export const NapiBigIntTest11: () => boolean;
+export const NapiBigIntTest12: () => boolean;
+export const NapiBigIntTest13: () => boolean;
+export const NapiBigIntTest14: () => boolean;
+export const NapiBigIntTest15: () => boolean;
+export const NapiBigIntTest16: () => boolean;
+export const NapiBigIntTest17: () => boolean;

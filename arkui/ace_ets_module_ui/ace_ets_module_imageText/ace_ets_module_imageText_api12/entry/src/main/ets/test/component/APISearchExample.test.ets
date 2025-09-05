@@ -64,7 +64,6 @@ export default function APISearchExample() {
 	  await driver.triggerKey(2070);
       await CommonFunc.sleep(1000);
       await textComponent.inputText("DFE")
-      await driver.triggerKey(2047)
       await CommonFunc.sleep(2000);
 	  await driver.triggerKey(2070);
       await CommonFunc.sleep(1000);

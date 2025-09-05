@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,13 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 import hilog from '@ohos.hilog';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
 import wantConstant from '@ohos.app.ability.wantConstant';
+import { abilityDelegatorRegistry, Driver, MatchPattern, ON } from '@kit.TestKit';
 
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
@@ -29,11 +30,15 @@ function publishEvent(event: string) {
   commonEventManager.publish(event, options,
     (err: BusinessError) => {
       if (err) {
-        console.error('PublishCallBack err = ' + JSON.stringify(err));
+        console.error('BackDemo::EntryAbility:: PublishCallBack err = ' + JSON.stringify(err));
       } else {
-        console.info('Publish success');
+        console.info('BackDemo::EntryAbility::Publish success');
       }
     });
+}
+
+function sleep(time: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, time))
 }
 
 async function processTestcase100(context: common.UIAbilityContext) {
@@ -50,11 +55,11 @@ async function processTestcase100(context: common.UIAbilityContext) {
   try {
     await context.backToCallerAbilityWithResult(abilityResult, callerRequestCode)
       .then(() => {
-        console.info('backToCallerAbilityWithResult succeed');
-        publishEvent('BackToCallerAbilityWithResultTest_0100_Failed');
+        console.info('BackDemo::EntryAbility::backToCallerAbilityWithResult succeed');
+        publishEvent('BackDemo::EntryAbility::BackToCallerAbilityWithResultTest_0100_Failed');
       })
       .catch((err: BusinessError) => {
-        console.error(`backToCallerAbilityWithResult failed, code is ${err.code}, message is ${err.message}`);
+        console.error(`BackDemo::EntryAbility::backToCallerAbilityWithResult failed, code is ${err.code}, message is ${err.message}`);
         if (err.code === 16000074) {
           publishEvent('BackToCallerAbilityWithResultTest_0100_Success');
         } else {
@@ -64,25 +69,63 @@ async function processTestcase100(context: common.UIAbilityContext) {
   } catch (err) {
     let code = (err as BusinessError).code;
     let message = (err as BusinessError).message;
-    console.error(`backToCallerAbilityWithResult failed, code is ${code}, message is ${message}`);
+    console.error(`BackDemo::EntryAbility::backToCallerAbilityWithResult failed, code is ${code}, message is ${message}`);
     publishEvent('BackToCallerAbilityWithResultTest_0100_Failed');
   }
 }
 
+async function processTestcase200(context: common.UIAbilityContext, callerRequestCode: string) {
+  let want: Want = {};
+  let resultCode = 100;
+  let abilityResult: common.AbilityResult = {
+    want,
+    resultCode
+  };
+
+  try {
+    await context.backToCallerAbilityWithResult(abilityResult, callerRequestCode)
+      .then(() => {
+        console.info('BackDemo::EntryAbility::backToCallerAbilityWithResult succeed');
+        publishEvent('BackToCallerAbilityWithResultTest_0200_Success');
+      })
+      .catch((err: BusinessError) => {
+        console.error(`BackDemo::EntryAbility::backToCallerAbilityWithResult failed, code is ${err.code}, message is ${err.message}`);
+        publishEvent('BackToCallerAbilityWithResultTest_0200_Failed');
+      });
+  } catch (err) {
+    let code = (err as BusinessError).code;
+    let message = (err as BusinessError).message;
+    console.error(`BackDemo::EntryAbility::backToCallerAbilityWithResult failed, code is ${code}, message is ${message}`);
+    publishEvent('BackToCallerAbilityWithResultTest_0200_Failed');
+  }
+}
+
+async function processTestcase300(context: common.UIAbilityContext) {
+  console.info('BackDemo::EntryAbility::processTestcase300 called');
+  // await foreground
+  await sleep(2000)
+  let want: Want = {
+    bundleName: 'com.example.backdemo1',
+    abilityName: 'EntryAbility',
+  }
+  context.startAbilityForResult(want)
+    .then(() => {
+      console.info('BackDemo::EntryAbility::Succeeded in starting EntryAbility1.');
+      publishEvent('BackToCallerAbilityWithResultTest_0300_Success');
+    })
+    .catch((err: BusinessError) => {
+      console.info(`BackDemo::EntryAbility::Failed to start EntryAbility1. Code is ${err.code}, message is ${err.message}`);
+      publishEvent('BackToCallerAbilityWithResultTest_0300_Failed');
+    });
+  publishEvent('BackToCallerAbilityWithResultTest_CLICK_DIALOG');
+  console.info('BackDemo::EntryAbility::startAbilityForResult end');
+}
+
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    console.info('onCreate');
+    console.info('BackDemo::EntryAbility::onCreate');
     let testcase: string = want.parameters?.['testcase'] as string;
-    console.info('testcase: ' + testcase);
-    AppStorage.setOrCreate<string>('testcase', testcase);
-    let callerRequestCode: string = want?.parameters?.[wantConstant.Params.CALLER_REQUEST_CODE] as string;
-    AppStorage.setOrCreate<string>('callerRequestCode', callerRequestCode)
-  }
-
-  onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    console.info('onNewWant');
-    let testcase: string = want.parameters?.['testcase'] as string;
-    console.info('testcase: ' + testcase);
+    console.info('BackDemo::EntryAbility::testcase: ' + testcase);
     AppStorage.setOrCreate<string>('testcase', testcase);
     let callerRequestCode: string = want?.parameters?.[wantConstant.Params.CALLER_REQUEST_CODE] as string;
     AppStorage.setOrCreate<string>('callerRequestCode', callerRequestCode)
@@ -90,7 +133,7 @@ export default class EntryAbility extends UIAbility {
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
-    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+    hilog.info(0x0000, 'testTag', '%{public}s', 'BackDemo::EntryAbility::Ability onWindowStageCreate');
 
     windowStage.loadContent('pages/Index', (err) => {
       if (err.code) {
@@ -108,12 +151,18 @@ export default class EntryAbility extends UIAbility {
 
   onForeground(): void {
     // Ability has brought to foreground
-    console.info('Ability onForeground');
+    console.info('BackDemo::EntryAbility::Ability onForeground');
     let testcase: string = AppStorage.get<string>('testcase') as string;
-    console.info('aboutToAppear testcase is ' + testcase);
+    console.info('BackDemo::EntryAbility:: testcase is ' + testcase);
+    let callerRequestCode: string = AppStorage.get<string>('callerRequestCode') as string;
     if (testcase === 'BackToCallerAbilityWithResultTest_0100') {
       processTestcase100(this.context)
+    } else if (testcase === 'BackToCallerAbilityWithResultTest_0200') {
+      processTestcase200(this.context, callerRequestCode);
+    } else if (testcase === 'BackToCallerAbilityWithResultTest_0300') {
+      processTestcase300(this.context);
     }
+    AppStorage.clear();
   }
 
   onBackground(): void {

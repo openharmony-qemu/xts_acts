@@ -29,13 +29,11 @@ const TEST_CASE_NAME: string = 'SUB_ChildProcessManager_sendableContextManager_'
 let textsToMatch: Array<string> = ["打开", "允许", "本次允许"];
 let TAG = 'clickMatchingButton';
 async function clickMatchingButton(texts: Array<string>) {
-  for (const text of texts) {
-    let buttons = await driver.findComponents(ON.text(text));
-    if (buttons && buttons.length > 0) {
-      buttons[buttons.length - 1].click();
-      hilog.info(0x0000, TAG, '%{public}s', `${TEST_CASE_NAME} click last button success`);
-      return true;
-    }
+  let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
+  if (buttons && buttons.length > 0) {
+    buttons[buttons.length - 1].click();
+    hilog.info(0x0000, TAG, '%{public}s', `${TEST_CASE_NAME} click last button success`);
+    return true;
   }
   hilog.error(0x0000, TAG, '%{public}s', `${TEST_CASE_NAME} no matching button found`);
   return false;

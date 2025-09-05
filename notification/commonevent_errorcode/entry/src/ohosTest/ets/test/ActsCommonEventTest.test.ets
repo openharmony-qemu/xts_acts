@@ -36,7 +36,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_Notification_Ces_CommonEvent_InvalidParameter_0100 catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -57,7 +57,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_Notification_Ces_CommonEvent_SetPublisherPermissionSuccess_0200 catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -78,7 +78,8 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_Notification_Ces_CommonEvent_SetPublisherPermissionError_0300 catch err: " + err);
-        done()
+        expect().assertFail();
+
       }
     });
 
@@ -99,7 +100,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_Notification_Ces_CommonEvent_SetPublisherBundleNameSuccess_0400 catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -120,7 +121,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_Notification_Ces_CommonEvent_SetPublisherBundleNameError_0500 catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -141,7 +142,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetPublishInfoBundleName catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -162,7 +163,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetPublishInfoPermissionSuccess catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -183,7 +184,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetPublishInfoPermissionError catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -204,7 +205,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetPublishInfoCodeSuccess catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -225,7 +226,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetPublishInfoCodeError catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -246,7 +247,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetPublishInfoDataSuccess catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -267,7 +268,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetPublishInfoDataError catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -288,7 +289,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetPublishInfoParameterSuccess catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -309,7 +310,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetPublishInfoParameterError catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -330,7 +331,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetIntToParameterSuccess catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -351,7 +352,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetIntToParameterError catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -372,7 +373,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetIntArrayToParameterSuccess catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -393,7 +394,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetIntArrayToParameterError catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -414,7 +415,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetLongToParameterSuccess catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -435,7 +436,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetLongToParameterError catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -456,7 +457,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetLongArrayToParameterSuccess catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -477,7 +478,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetLongArrayToParameterError catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -498,7 +499,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetBoolToParameterSuccess catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -519,7 +520,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetBoolToParameterError catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -540,7 +541,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetBoolArrayToParameterSuccess catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -561,7 +562,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetBoolArrayToParameterError catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -582,7 +583,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetCharToParameterSuccess catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -603,7 +604,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetCharToParameterError catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -624,7 +625,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetCharArrayToParameterSuccess catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -645,7 +646,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetCharArrayToParameterError catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -666,7 +667,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetDoubleToParameterSuccess catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -687,7 +688,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetDoubleToParameterError catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -708,7 +709,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetDoubleArrayToParameterSuccess catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -729,7 +730,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_SetDoubleArrayToParameterError catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -750,7 +751,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_CommonEventPublishSuccess catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -771,7 +772,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_PublishInvalidParameter catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -792,7 +793,7 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_PublishWithInfoSuccess catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
@@ -813,28 +814,133 @@ export default function ActsCommonEventErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_CommonEvent_PublishWithInfoInvalidParameter catch err: " + err);
-        done()
+        expect().assertFail();
       }
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded_3900
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded_3900
+     * @tc.number  : Sub_Notification_Ces_CommonEvent_SubscribeSuccess_3900
+     * @tc.name    : Sub_Notification_Ces_CommonEvent_SubscribeSuccess_3900
+     * @tc.desc    : Test SubscribeSuccess
+     * @tc.level   : Level2
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('Sub_Notification_Ces_CommonEvent_SubscribeSuccess_3900', Level.LEVEL2, async (done: Function) => {
+      try {
+        console.info("====>Sub_Notification_Ces_CommonEvent_SubscribeSuccess_3900 start====");
+        let result: number = commoneventerror.SubscribeSuccess();
+        expect(result).assertEqual(Success);
+        console.info("====>Sub_Notification_Ces_CommonEvent_SubscribeSuccess_3900 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>Sub_Notification_Ces_CommonEvent_SubscribeSuccess_3900 catch err: " + err);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  : Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded_4000
+     * @tc.name    : Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded_4000
      * @tc.desc    : Test SubscriberNumExceeded
      * @tc.level   : Level2
      * @tc.size    : MediumTest
      * @tc.type    : Function
      */
-    it('Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded_3900', Level.LEVEL2, async (done: Function) => {
+    it('Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded_4000', Level.LEVEL2, async (done: Function) => {
       try {
-        console.info("====>Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded_3900 start====");
+        console.info("====>Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded_4000 start====");
         let result: number = commoneventerror.SubscriberNumExceeded();
         expect(result).assertEqual(Success);
-        console.info("====>Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded_3900 result: " + result);
+        console.info("====>Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded_4000 result: " + result);
         done()
       } catch (err) {
-        console.error("====>Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded_3900 catch err: " + err);
+        console.error("====>Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded_4000 catch err: " + err);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  : Sub_Notification_Ces_CommonEvent_SubscribeInvalidParameter_4100
+     * @tc.name    : Sub_Notification_Ces_CommonEvent_SubscribeInvalidParameter_4100
+     * @tc.desc    : Test SubscribeInvalidParameter
+     * @tc.level   : Level2
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('Sub_Notification_Ces_CommonEvent_SubscribeInvalidParameter_4100', Level.LEVEL2, async (done: Function) => {
+      try {
+        console.info("====>Sub_Notification_Ces_CommonEvent_SubscribeInvalidParameter_4100 start====");
+        let result: number = commoneventerror.SubscribeInvalidParameter();
+        expect(result).assertEqual(Success);
+        console.info("====>Sub_Notification_Ces_CommonEvent_SubscribeInvalidParameter_4100 result: " + result);
         done()
+      } catch (err) {
+        console.error("====>Sub_Notification_Ces_CommonEvent_SubscribeInvalidParameter_4100 catch err: " + err);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  : Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded1_4200
+     * @tc.name    : Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded1_4200
+     * @tc.desc    : Test SubscriberNumExceeded1
+     * @tc.level   : Level2
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded1_4200', Level.LEVEL2, async (done: Function) => {
+      try {
+        console.info("====>Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded1_4200 start====");
+        let result: number = commoneventerror.SubscriberNumExceeded1();
+        expect(result).assertEqual(Success);
+        console.info("====>Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded1_4200 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded1_4200 catch err: " + err);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  : Sub_Notification_Ces_CommonEvent_UnSubscribeSuccess_4300
+     * @tc.name    : Sub_Notification_Ces_CommonEvent_UnSubscribeSuccess_4300
+     * @tc.desc    : Test UnSubscribeSuccess
+     * @tc.level   : Level2
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('Sub_Notification_Ces_CommonEvent_UnSubscribeSuccess_4300', Level.LEVEL2, async (done: Function) => {
+      try {
+        console.info("====>Sub_Notification_Ces_CommonEvent_UnSubscribeSuccess_4300 start====");
+        let result: number = commoneventerror.UnSubscribeSuccess();
+        expect(result).assertEqual(Success);
+        console.info("====>Sub_Notification_Ces_CommonEvent_UnSubscribeSuccess_4300 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>Sub_Notification_Ces_CommonEvent_UnSubscribeSuccess_4300 catch err: " + err);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  : Sub_Notification_Ces_CommonEvent_UnSubscribeInvalidParameter_4400
+     * @tc.name    : Sub_Notification_Ces_CommonEvent_UnSubscribeInvalidParameter_4400
+     * @tc.desc    : Test UnSubscribeInvalidParameter
+     * @tc.level   : Level2
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('Sub_Notification_Ces_CommonEvent_UnSubscribeInvalidParameter_4400', Level.LEVEL2, async (done: Function) => {
+      try {
+        console.info("====>Sub_Notification_Ces_CommonEvent_UnSubscribeInvalidParameter_4400 start====");
+        let result: number = commoneventerror.UnSubscribeInvalidParameter();
+        expect(result).assertEqual(Success);
+        console.info("====>Sub_Notification_Ces_CommonEvent_UnSubscribeInvalidParameter_4400 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>Sub_Notification_Ces_CommonEvent_UnSubscribeInvalidParameter_4400 catch err: " + err);
+        expect().assertFail();
       }
     });
   })

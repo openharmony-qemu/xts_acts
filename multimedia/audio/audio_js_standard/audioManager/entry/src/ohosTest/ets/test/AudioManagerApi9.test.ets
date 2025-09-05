@@ -34,6 +34,7 @@ let audioMedia = 3;
 let minVol = 0;
 let maxVol = 15;
 let maxVolPc = 20;
+let maxVolDP = 100;
 let volGroupId = null;
 let volConnectType = null;
 let onMicStateChangeFlag1: boolean | null = null;
@@ -594,6 +595,9 @@ export default function audioManagerApi9() {
             } else if (data == maxVolPc) {
               console.info('audioManagerApi9Test: callback : Ringtone getMaxVolume: PASS :' + data);
               expect(true).assertTrue();
+            } else if (data == maxVolDP) {
+              console.info('audioManagerApi9Test: callback : Ringtone getMaxVolume: PASS :' + data);
+              expect(true).assertTrue();
             } else {
               console.info('audioManagerApi9Test: callback : Ringtone getMaxVolume: FAIL :' + data);
               expect(false).assertTrue();
@@ -625,6 +629,9 @@ export default function audioManagerApi9() {
           console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: PASS :' + maxVolume);
           expect(true).assertTrue();
         } else if (maxVolume == maxVolPc) {
+          console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: PASS :' + maxVolume);
+          expect(true).assertTrue();
+        } else if (maxVolume == maxVolDP) {
           console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: PASS :' + maxVolume);
           expect(true).assertTrue();
         } else {
@@ -1611,6 +1618,17 @@ export default function audioManagerApi9() {
               expect(false).assertTrue();
               console.log(`${TagFrmwk}: Promise: Is Stream Mute ALARM: isMute: Fail:${data}`);
             }
+          } else if (value == maxVolDP) {
+            let data1 = await audioManager.isMute(audio.AudioVolumeType.ALARM);
+            console.info("data1 is " + data1);
+            if (data1 == false) {
+              let MaxData = await audioManager.getMaxVolume(audio.AudioVolumeType.ALARM);
+              console.info('MaxData is ' + MaxData)
+              expect(MaxData).assertEqual(maxVolDP);
+            } else {
+              expect(false).assertTrue();
+              console.log(`${TagFrmwk}: Promise: Is Stream Mute ALARM: isMute: Fail:${data}`);
+            }
           } else {
             console.log(`${TagFrmwk}: Promise: Is Stream Mute ALARM: getVolume: Fail:${value}`);
             expect(false).assertTrue();
@@ -1668,6 +1686,17 @@ export default function audioManagerApi9() {
               expect(false).assertTrue();
               console.log(`${TagFrmwk}: Promise: Is Stream Mute ALARM: isMute: Fail:${data}`);
             }
+          } else if (value == maxVolDP) {
+            let data1 = await audioManager.isMute(audio.AudioVolumeType.ALARM);
+            console.info("data1 is " + data1);
+            if (data1 == false) {
+              let MaxData = await audioManager.getMaxVolume(audio.AudioVolumeType.ALARM);
+              console.info('MaxData is ' + MaxData)
+              expect(MaxData).assertEqual(maxVolDP);
+            } else {
+              expect(false).assertTrue();
+              console.log(`${TagFrmwk}: Promise: Is Stream Mute ALARM: isMute: Fail:${data}`);
+            }
           } else {
             console.log(`${TagFrmwk}: Promise: Is Stream Mute ALARM: getVolume: Fail:${value}`);
             expect(false).assertTrue();
@@ -1721,6 +1750,17 @@ export default function audioManagerApi9() {
               let MaxData = await audioManager.getMaxVolume(audio.AudioVolumeType.ALARM);
               console.info('MaxData is ' + MaxData)
               expect(MaxData).assertEqual(maxVolPc);
+            } else {
+              expect(false).assertTrue();
+              console.log(`${TagFrmwk}: Promise: Is Stream Mute ALARM: isMute: Fail:${data}`);
+            }
+          } else if (value == maxVolDP) {
+            let data1 = await audioManager.isMute(audio.AudioVolumeType.ALARM);
+            console.info("data1 is " + data1);
+            if (data1 == false) {
+              let MaxData = await audioManager.getMaxVolume(audio.AudioVolumeType.ALARM);
+              console.info('MaxData is ' + MaxData)
+              expect(MaxData).assertEqual(maxVolDP);
             } else {
               expect(false).assertTrue();
               console.log(`${TagFrmwk}: Promise: Is Stream Mute ALARM: isMute: Fail:${data}`);
@@ -1828,6 +1868,17 @@ export default function audioManagerApi9() {
               expect(false).assertTrue();
               console.log(`${TagFrmwk}: Promise: Is Stream Mute ACCESSIBILITY: isMute: Fail:${data}`);
             }
+          } else if (value == maxVolDP) {
+            let data1 = await audioManager.isMute(audio.AudioVolumeType.ACCESSIBILITY);
+            console.info("data1 is " + data1);
+            if (data1 == false) {
+              let MaxData = await audioManager.getMaxVolume(audio.AudioVolumeType.ACCESSIBILITY);
+              console.info('MaxData is ' + MaxData)
+              expect(MaxData).assertEqual(maxVolDP);
+            } else {
+              expect(false).assertTrue();
+              console.log(`${TagFrmwk}: Promise: Is Stream Mute ACCESSIBILITY: isMute: Fail:${data}`);
+            }
           } else {
             console.log(`${TagFrmwk}: Promise: Is Stream Mute ACCESSIBILITY: getVolume: Fail:${value}`);
             expect(false).assertTrue();
@@ -1885,6 +1936,17 @@ export default function audioManagerApi9() {
               expect(false).assertTrue();
               console.log(`${TagFrmwk}: Promise: Is Stream Mute ACCESSIBILITY: isMute: Fail:${data}`);
             }
+          } else if (value == maxVolDP) {
+            let data1 = await audioManager.isMute(audio.AudioVolumeType.ACCESSIBILITY);
+            console.info("data1 is " + data1);
+            if (data1 == false) {
+              let MaxData = await audioManager.getMaxVolume(audio.AudioVolumeType.ACCESSIBILITY);
+              console.info('MaxData is ' + MaxData)
+              expect(MaxData).assertEqual(maxVolDP);
+            } else {
+              expect(false).assertTrue();
+              console.log(`${TagFrmwk}: Promise: Is Stream Mute ACCESSIBILITY: isMute: Fail:${data}`);
+            }
           } else {
             console.log(`${TagFrmwk}: Promise: Is Stream Mute ACCESSIBILITY: getVolume: Fail:${value}`);
             expect(false).assertTrue();
@@ -1938,6 +2000,17 @@ export default function audioManagerApi9() {
               let MaxData = await audioManager.getMaxVolume(audio.AudioVolumeType.ACCESSIBILITY);
               console.info('MaxData is ' + MaxData)
               expect(MaxData).assertEqual(maxVolPc);
+            } else {
+              expect(false).assertTrue();
+              console.log(`${TagFrmwk}: Promise: Is Stream Mute ACCESSIBILITY: isMute: Fail:${data}`);
+            }
+          } else if (value == maxVolDP) {
+            let data1 = await audioManager.isMute(audio.AudioVolumeType.ACCESSIBILITY);
+            console.info("data1 is " + data1);
+            if (data1 == false) {
+              let MaxData = await audioManager.getMaxVolume(audio.AudioVolumeType.ACCESSIBILITY);
+              console.info('MaxData is ' + MaxData)
+              expect(MaxData).assertEqual(maxVolDP);
             } else {
               expect(false).assertTrue();
               console.log(`${TagFrmwk}: Promise: Is Stream Mute ACCESSIBILITY: isMute: Fail:${data}`);

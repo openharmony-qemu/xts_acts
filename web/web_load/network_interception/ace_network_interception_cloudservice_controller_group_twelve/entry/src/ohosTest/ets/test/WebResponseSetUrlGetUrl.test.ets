@@ -18,11 +18,14 @@ import Utils from './Utils';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 let emitKey = '';
-
+const  driver = Driver.create();
 export default function webviewNApi() {
 
   describe('OH_ArkWebRequestHeader', async () => {
@@ -31,13 +34,11 @@ export default function webviewNApi() {
         url: 'testability/pages/Index',
       }
       try {
-        await Utils.sleep(1000)
         router.clear();
         let pages = router.getState();
         console.info('get webviewBFCacheSuspendPlayer state success ' + JSON.stringify(pages));
         if (!('Index' == pages.name)) {
           console.info('get index state success ' + JSON.stringify(pages.name));
-          await Utils.sleep(1000);
         }
       } catch (err) {
         console.error('push index page error:' + err);
@@ -51,35 +52,7 @@ export default function webviewNApi() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(500);
       done();
-    });
-
-    afterEach(async (done: Function) => {
-      await Utils.sleep(1000);
-      console.info('web afterEach start:' + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            'ACTION': ''
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info('start send emitKey');
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info('emit emitKey  err: ' + JSON.stringify(err));
-      }
-      await Utils.sleep(1000);
-      done();
-    })
-
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     });
 
     /**
@@ -95,16 +68,13 @@ export default function webviewNApi() {
         url: 'testability/pages/SetUrlUrlIsNone'
       });
       router.clear();
-      await Utils.sleep(3000);
-      Utils.emitEvent('testWebResponse_SetUrl_Url_IsNone', 10);
-      await Utils.sleep(3000);
-      Utils.registerBaseEvent('testWebResponse_SetUrl_Url_IsNone', 17100101, 5101, done,
+      Utils.emitEvent('testWebResponse_SetUrl_Url_IsNone', 124611);
+      Utils.registerBaseEvent('testWebResponse_SetUrl_Url_IsNone', 17100101, 124680, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(3000);
-      sendEventByKey('SetUrl', 10, '');
+      Utils.waitAndClickComponent("SetUrl",driver)
     });
 
     /**
@@ -120,16 +90,13 @@ export default function webviewNApi() {
         url: 'testability/pages/SetUrlUrlNotString'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWebResponse_SetUrl_Url_NotString', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebResponse_SetUrl_Url_NotString', 17100101, 5102, done,
+      Utils.emitEvent('testWebResponse_SetUrl_Url_NotString', 124612);
+      Utils.registerBaseEvent('testWebResponse_SetUrl_Url_NotString', 17100101, 124690,done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('SetUrl', 10, '');
+      Utils.waitAndClickComponent("SetUrl",driver)
     });
 
     /**
@@ -145,16 +112,13 @@ export default function webviewNApi() {
         url: 'testability/pages/SetUrlUrlNotExist'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWebResponse_SetUrl_Url_NotExist', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebResponse_SetUrl_Url_NotExist', 17100101, 5103, done,
+      Utils.emitEvent('testWebResponse_SetUrl_Url_NotExist', 124613);
+      Utils.registerBaseEvent('testWebResponse_SetUrl_Url_NotExist', 17100101, 124700, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('SetUrl', 10, '');
+      Utils.waitAndClickComponent("SetUrl",driver)
     });
 
     /**
@@ -170,16 +134,13 @@ export default function webviewNApi() {
         url: 'testability/pages/SetUrlUrlError'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWebResponse_SetUrl_Url_Error', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebResponse_SetUrl_Url_Error', 0, 5104, done,
+      Utils.emitEvent('testWebResponse_SetUrl_Url_Error', 124614);
+      Utils.registerBaseEvent('testWebResponse_SetUrl_Url_Error', 0, 124710, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('SetUrl', 10, '');
+      Utils.waitAndClickComponent("SetUrl",driver)
     });
 
     /**
@@ -195,16 +156,13 @@ export default function webviewNApi() {
         url: 'testability/pages/GetUrlUrlIsNone'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWebResponse_GetUrl_Url_IsNone', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebResponse_GetUrl_Url_IsNone', 17100101, 5105, done,
+      Utils.emitEvent('testWebResponse_GetUrl_Url_IsNone', 124615);
+      Utils.registerBaseEvent('testWebResponse_GetUrl_Url_IsNone', 17100101, 124720, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('GetUrl', 10, '');
+      Utils.waitAndClickComponent("GetUrl",driver)
     });
 
     /**
@@ -220,16 +178,13 @@ export default function webviewNApi() {
         url: 'testability/pages/GetUrlUrlNotString'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWebResponse_GetUrl_Url_NotString', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebResponse_GetUrl_Url_NotString', 17100101, 5106, done,
+      Utils.emitEvent('testWebResponse_GetUrl_Url_NotString', 124616);
+      Utils.registerBaseEvent('testWebResponse_GetUrl_Url_NotString', 17100101, 124730, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('GetUrl', 10, '');
+      Utils.waitAndClickComponent("GetUrl",driver)
     });
 
     /**
@@ -245,16 +200,13 @@ export default function webviewNApi() {
         url: 'testability/pages/GetUrlUrlNotExist'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWebResponse_GetUrl_Url_NotExist', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebResponse_GetUrl_Url_NotExist', false, 5107, done,
+      Utils.emitEvent('testWebResponse_GetUrl_Url_NotExist', 124617);
+      Utils.registerBaseEvent('testWebResponse_GetUrl_Url_NotExist', false, 124740, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('GetUrl', 10, '');
+      Utils.waitAndClickComponent("GetUrl",driver)
     });
 
     /**
@@ -270,16 +222,13 @@ export default function webviewNApi() {
         url: 'testability/pages/GetUrlUrlError'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWebResponse_GetUrl_Url_Error', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebResponse_GetUrl_Url_Error', "https:" + "//www.baidu.com/", 5108, done,
+      Utils.emitEvent('testWebResponse_GetUrl_Url_Error', 124618);
+      Utils.registerBaseEvent('testWebResponse_GetUrl_Url_Error', "https:" + "//www.baidu.com/", 124750, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('GetUrl', 10, '');
+      Utils.waitAndClickComponent("GetUrl",driver)
     });
 
     /**
@@ -295,16 +244,13 @@ export default function webviewNApi() {
         url: 'testability/pages/SetStatusIsNone'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWebResponse_SetStatus_IsNone', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebResponse_SetStatus_IsNone', 0, 5110, done,
+      Utils.emitEvent('testWebResponse_SetStatus_IsNone', 124619);
+      Utils.registerBaseEvent('testWebResponse_SetStatus_IsNone', 0, 124760, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('SetStatus', 10, '');
+      Utils.waitAndClickComponent("SetStatus",driver)
     });
 
     /**
@@ -320,16 +266,13 @@ export default function webviewNApi() {
         url: 'testability/pages/SetStatusNotNum'
       });
       router.clear();
-      await Utils.sleep(800);
-      Utils.emitEvent('testWebResponse_SetStatus_NotNum', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebResponse_SetStatus_NotNum', 17100101, 5111, done,
+      Utils.emitEvent('testWebResponse_SetStatus_NotNum', 124620);
+      Utils.registerBaseEvent('testWebResponse_SetStatus_NotNum', 17100101, 124770, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('SetStatus', 10, '');
+      Utils.waitAndClickComponent("SetStatus", driver)
     });
 
     /**
@@ -345,16 +288,13 @@ export default function webviewNApi() {
         url: 'testability/pages/SetStatusError'
       });
       router.clear();
-      await Utils.sleep(800);
-      Utils.emitEvent('testWebResponse_SetStatus_Error', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebResponse_SetStatus_Error', 0, 5112, done,
+      Utils.emitEvent('testWebResponse_SetStatus_Error', 124621);
+      Utils.registerBaseEvent('testWebResponse_SetStatus_Error', 0, 124780, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('SetStatus', 10, '');
+      Utils.waitAndClickComponent("SetStatus", driver)
     });
 
     /**
@@ -370,16 +310,13 @@ export default function webviewNApi() {
         url: 'testability/pages/SetStatusTextIsNone'
       });
       router.clear();
-      await Utils.sleep(800);
-      Utils.emitEvent('testWebResponse_SetStatusText_IsNone', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebResponse_SetStatusText_IsNone', 17100101, 5113, done,
+      Utils.emitEvent('testWebResponse_SetStatusText_IsNone', 124622);
+      Utils.registerBaseEvent('testWebResponse_SetStatusText_IsNone', 17100101, 124790, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('SetStatusText', 10, '');
+      Utils.waitAndClickComponent("SetStatusText", driver)
     });
 
     /**
@@ -395,16 +332,13 @@ export default function webviewNApi() {
         url: 'testability/pages/SetStatusTextNotString'
       });
       router.clear();
-      await Utils.sleep(800);
-      Utils.emitEvent('testWebResponse_SetStatusText_NotString', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebResponse_SetStatusText_NotString', 17100101, 5114, done,
+      Utils.emitEvent('testWebResponse_SetStatusText_NotString', 124623);
+      Utils.registerBaseEvent('testWebResponse_SetStatusText_NotString', 17100101, 124800, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('SetStatusText', 10, '');
+      Utils.waitAndClickComponent("SetStatusText", driver)
     });
 
     /**
@@ -420,16 +354,13 @@ export default function webviewNApi() {
         url: 'testability/pages/GetStatusTextNetErr'
       });
       router.clear();
-      await Utils.sleep(800);
-      Utils.emitEvent('testWebResponse_GetStatusText_NetErr', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebResponse_GetStatusText_NetErr', false, 5115, done,
+      Utils.emitEvent('testWebResponse_GetStatusText_NetErr', 124624);
+      Utils.registerBaseEvent('testWebResponse_GetStatusText_NetErr', false, 124810, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('GetStatusText', 10, '');
+      Utils.waitAndClickComponent("GetStatusText", driver)
     });
 
     /**
@@ -445,16 +376,13 @@ export default function webviewNApi() {
         url: 'testability/pages/SetCharsetParamNone'
       });
       router.clear();
-      await Utils.sleep(800);
-      Utils.emitEvent('testWebResponse_SetCharset_Param_None', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebResponse_SetCharset_Param_None', 17100101, 5116, done,
+      Utils.emitEvent('testWebResponse_SetCharset_Param_None', 124625);
+      Utils.registerBaseEvent('testWebResponse_SetCharset_Param_None', 17100101, 124820, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('SetCharset', 10, '');
+      Utils.waitAndClickComponent("SetCharset", driver)
     });
 
     /**
@@ -470,16 +398,13 @@ export default function webviewNApi() {
         url: 'testability/pages/SetUserDataParamIsNone'
       });
       router.clear();
-      await Utils.sleep(800);
-      Utils.emitEvent('testWebSchemeHandler_SetUserData_ParamIsNone', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebSchemeHandler_SetUserData_ParamIsNone', 17100101, 5117, done,
+      Utils.emitEvent('testWebSchemeHandler_SetUserData_ParamIsNone', 124626);
+      Utils.registerBaseEvent('testWebSchemeHandler_SetUserData_ParamIsNone', 17100101, 124830, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('SetUserData', 10, '');
+      Utils.waitAndClickComponent("SetUserData", driver)
     });
 
     /**
@@ -495,16 +420,13 @@ export default function webviewNApi() {
         url: 'testability/pages/GetHeaderKeyParamNotString'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWebRequestHeaderList_GetHeader_KeyParam_NotString', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebRequestHeaderList_GetHeader_KeyParam_NotString', true, 5122, done,
+      Utils.emitEvent('testWebRequestHeaderList_GetHeader_KeyParam_NotString', 124627);
+      Utils.registerBaseEvent('testWebRequestHeaderList_GetHeader_KeyParam_NotString', true, 124840, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('GetHeader', 10, '');
+      Utils.waitAndClickComponent("GetHeader", driver)
     });
 
     /**
@@ -520,16 +442,13 @@ export default function webviewNApi() {
         url: 'testability/pages/GetHeaderKeyParamIsNone'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWebRequestHeaderList_GetHeader_KeyParam_IsNone', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebRequestHeaderList_GetHeader_KeyParam_IsNone', false, 5123, done,
+      Utils.emitEvent('testWebRequestHeaderList_GetHeader_KeyParam_IsNone', 124628);
+      Utils.registerBaseEvent('testWebRequestHeaderList_GetHeader_KeyParam_IsNone', false, 124850, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('GetHeader', 10, '');
+      Utils.waitAndClickComponent("GetHeader", driver)
     });
 
     /**
@@ -545,16 +464,13 @@ export default function webviewNApi() {
         url: 'testability/pages/GetHeaderValueParamNotString'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWebRequestHeaderList_GetHeader_ValueParam_NotString', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebRequestHeaderList_GetHeader_ValueParam_NotString', true, 5124, done,
+      Utils.emitEvent('testWebRequestHeaderList_GetHeader_ValueParam_NotString', 124629);
+      Utils.registerBaseEvent('testWebRequestHeaderList_GetHeader_ValueParam_NotString', true, 124860, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('GetHeader', 10, '');
+      Utils.waitAndClickComponent("GetHeader", driver)
     });
 
     /**
@@ -570,16 +486,13 @@ export default function webviewNApi() {
         url: 'testability/pages/GetHeaderValueParamIsNone'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWebRequestHeaderList_GetHeader_ValueParam_IsNone', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebRequestHeaderList_GetHeader_ValueParam_IsNone', false, 5125, done,
+      Utils.emitEvent('testWebRequestHeaderList_GetHeader_ValueParam_IsNone', 124630);
+      Utils.registerBaseEvent('testWebRequestHeaderList_GetHeader_ValueParam_IsNone', false, 124870, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('GetHeader', 10, '');
+      Utils.waitAndClickComponent("GetHeader", driver)
     });
 
     /**
@@ -595,16 +508,13 @@ export default function webviewNApi() {
         url: 'testability/pages/RequestGetMethodGet'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWebResourceRequest_GetMethod_get', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebResourceRequest_GetMethod_get', "GET", 5126, done,
+      Utils.emitEvent('testWebResourceRequest_GetMethod_get', 124631);
+      Utils.registerBaseEvent('testWebResourceRequest_GetMethod_get', "GET", 124880, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('GetMethod', 10, '');
+      Utils.waitAndClickComponent("GetMethod", driver)
     });
 
     /**
@@ -620,15 +530,13 @@ export default function webviewNApi() {
         url: 'testability/pages/ResourceRequestGetUrlResourceRequestNull'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWebResourceRequest_GetUrl_Fail_URL_IsNone', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebResourceRequest_GetUrl_Fail_URL_IsNone', true, 5200, done,
+      Utils.emitEvent('testWebResourceRequest_GetUrl_Fail_URL_IsNone', 124632);
+      Utils.registerBaseEvent('testWebResourceRequest_GetUrl_Fail_URL_IsNone', true, 124890, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('Click', 10, '');
+      Utils.waitAndClickComponent("Click", driver)
     });
 
     /**
@@ -644,15 +552,13 @@ export default function webviewNApi() {
         url: 'testability/pages/ResourceRequestGetUrlUrlNull'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWebResourceRequest_GetUrl_Fail_URL_NotString', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebResourceRequest_GetUrl_Fail_URL_NotString', true, 5201, done,
+      Utils.emitEvent('testWebResourceRequest_GetUrl_Fail_URL_NotString', 124633);
+      Utils.registerBaseEvent('testWebResourceRequest_GetUrl_Fail_URL_NotString', true, 124900, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('Click', 10, '');
+      Utils.waitAndClickComponent("Click", driver)
     });
 
     /**
@@ -668,15 +574,13 @@ export default function webviewNApi() {
         url: 'testability/pages/ResourceRequestGetUrlAllNull'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWebResourceRequest_GetUrl_Fail_URL_IsNotExist', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebResourceRequest_GetUrl_Fail_URL_IsNotExist', true, 5202, done,
+      Utils.emitEvent('testWebResourceRequest_GetUrl_Fail_URL_IsNotExist', 124634);
+      Utils.registerBaseEvent('testWebResourceRequest_GetUrl_Fail_URL_IsNotExist', true, 124910, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('Click', 10, '');
+      Utils.waitAndClickComponent("Click", driver)
     });
 
     /**
@@ -692,16 +596,13 @@ export default function webviewNApi() {
         url: 'testability/pages/WebReleaseStringNotNDK'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWeb_ReleaseString_Fail_Param_NotNDK', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWeb_ReleaseString_Fail_Param_NotNDK', true, 5209, done,
+      Utils.emitEvent('testWeb_ReleaseString_Fail_Param_NotNDK', 124635);
+      Utils.registerBaseEvent('testWeb_ReleaseString_Fail_Param_NotNDK', true, 124920, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('Click', 10, '');
+      Utils.waitAndClickComponent("Click", driver)
     });
 
 
@@ -718,16 +619,13 @@ export default function webviewNApi() {
         url: 'testability/pages/WebReleaseStringString'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWeb_ReleaseString_Fail_Param_IsNone', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWeb_ReleaseString_Fail_Param_IsNone', true, 5210, done,
+      Utils.emitEvent('testWeb_ReleaseString_Fail_Param_IsNone', 124636);
+      Utils.registerBaseEvent('testWeb_ReleaseString_Fail_Param_IsNone', true, 124930, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('Click', 10, '');
+      Utils.waitAndClickComponent("Click", driver)
     });
 
 
@@ -744,15 +642,13 @@ export default function webviewNApi() {
         url: 'testability/pages/WebReleaseStringStringNull'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWeb_ReleaseString_Fail_Param_NotString', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWeb_ReleaseString_Fail_Param_NotString', false, 5211, done,
+      Utils.emitEvent('testWeb_ReleaseString_Fail_Param_NotString', 124637);
+      Utils.registerBaseEvent('testWeb_ReleaseString_Fail_Param_NotString', false, 124940, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('Click', 10, '');
+      Utils.waitAndClickComponent("Click", driver)
     });
 
 
@@ -769,16 +665,13 @@ export default function webviewNApi() {
         url: 'testability/pages/WebReleaseByteArrayNotNDK'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWeb_ReleaseByteArray_Fail_Param_NotNDK', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWeb_ReleaseByteArray_Fail_Param_NotNDK', true, 5212, done,
+      Utils.emitEvent('testWeb_ReleaseByteArray_Fail_Param_NotNDK', 124638);
+      Utils.registerBaseEvent('testWeb_ReleaseByteArray_Fail_Param_NotNDK', true, 124950, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.sleep(1000);
-      sendEventByKey('Click', 10, '');
+      Utils.waitAndClickComponent("Click", driver)
     });
 
     /**
@@ -794,15 +687,13 @@ export default function webviewNApi() {
         url: 'testability/pages/WebReleaseByteArrayString'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWeb_ReleaseByteArray_Fail_Param_IsNone', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWeb_ReleaseByteArray_Fail_Param_IsNone', true, 5213, done,
+      Utils.emitEvent('testWeb_ReleaseByteArray_Fail_Param_IsNone', 124639);
+      Utils.registerBaseEvent('testWeb_ReleaseByteArray_Fail_Param_IsNone', true, 124960, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('Click', 10, '');
+      Utils.waitAndClickComponent("Click", driver)
     });
 
     /**
@@ -818,15 +709,13 @@ export default function webviewNApi() {
         url: 'testability/pages/WebReleaseByteArrayStringNull'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWeb_ReleaseByteArray_Fail_Param_NotArray', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWeb_ReleaseByteArray_Fail_Param_NotArray', false, 5214, done,
+      Utils.emitEvent('testWeb_ReleaseByteArray_Fail_Param_NotArray', 124640);
+      Utils.registerBaseEvent('testWeb_ReleaseByteArray_Fail_Param_NotArray', false, 124970, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('Click', 10, '');
+      Utils.waitAndClickComponent("Click", driver)
     });
 
     /**
@@ -842,15 +731,13 @@ export default function webviewNApi() {
         url: 'testability/pages/ResourceRequestGetReferrer'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWebResourceRequest_GetReferrer_Param_Error', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebResourceRequest_GetReferrer_Param_Error', false, 5216, done,
+      Utils.emitEvent('testWebResourceRequest_GetReferrer_Param_Error', 124641);
+      Utils.registerBaseEvent('testWebResourceRequest_GetReferrer_Param_Error', false, 124980, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('Click', 10, '');
+      Utils.waitAndClickComponent("Click", driver)
     });
 
     /**
@@ -866,15 +753,13 @@ export default function webviewNApi() {
         url: 'testability/pages/WebSetSchemeHandlerSchemeNull'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWeb_SetSchemeHandler_Fail_schemeParam_NotString', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWeb_SetSchemeHandler_Fail_schemeParam_NotString', false, 5217, done,
+      Utils.emitEvent('testWeb_SetSchemeHandler_Fail_schemeParam_NotString', 124642);
+      Utils.registerBaseEvent('testWeb_SetSchemeHandler_Fail_schemeParam_NotString', false, 124990, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('Click', 10, '');
+      Utils.waitAndClickComponent("Click", driver)
     });
 
     /**
@@ -890,15 +775,13 @@ export default function webviewNApi() {
         url: 'testability/pages/WebSetSchemeHandlerScheme'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWeb_SetSchemeHandler_Fail_schemeParam_IsNone', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWeb_SetSchemeHandler_Fail_schemeParam_IsNone', false, 5218, done,
+      Utils.emitEvent('testWeb_SetSchemeHandler_Fail_schemeParam_IsNone', 124643);
+      Utils.registerBaseEvent('testWeb_SetSchemeHandler_Fail_schemeParam_IsNone', false, 124500, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('Click', 10, '');
+      Utils.waitAndClickComponent("Click", driver)
     });
 
     /**
@@ -914,15 +797,13 @@ export default function webviewNApi() {
         url: 'testability/pages/WebSetSchemeHandlerWebTagNull'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWeb_SetSchemeHandler_Fail_webTagParam_NotString', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWeb_SetSchemeHandler_Fail_webTagParam_NotString', false, 5219, done,
+      Utils.emitEvent('testWeb_SetSchemeHandler_Fail_webTagParam_NotString', 124644);
+      Utils.registerBaseEvent('testWeb_SetSchemeHandler_Fail_webTagParam_NotString', false, 148610, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('Click', 10, '');
+      Utils.waitAndClickComponent("Click", driver)
     });
 
     /**
@@ -938,15 +819,13 @@ export default function webviewNApi() {
         url: 'testability/pages/WebSetSchemeHandlerWebTag'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWeb_SetSchemeHandler_Fail_webTagParam_IsNone', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWeb_SetSchemeHandler_Fail_webTagParam_IsNone', false, 5220, done,
+      Utils.emitEvent('testWeb_SetSchemeHandler_Fail_webTagParam_IsNone', 124645);
+      Utils.registerBaseEvent('testWeb_SetSchemeHandler_Fail_webTagParam_IsNone', false, 148620, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('Click', 10, '');
+      Utils.waitAndClickComponent("Click", driver)
     });
 
     /**
@@ -962,15 +841,13 @@ export default function webviewNApi() {
         url: 'testability/pages/WebSetSchemeHandlerSchemeHandlerNull'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWeb_SetSchemeHandler_Fail_webTagParam_NotExist', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWeb_SetSchemeHandler_Fail_webTagParam_NotExist', false, 5221, done,
+      Utils.emitEvent('testWeb_SetSchemeHandler_Fail_webTagParam_NotExist', 124646);
+      Utils.registerBaseEvent('testWeb_SetSchemeHandler_Fail_webTagParam_NotExist', false, 148630, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('Click', 10, '');
+      Utils.waitAndClickComponent("Click", driver)
     });
 
 
@@ -987,15 +864,13 @@ export default function webviewNApi() {
         url: 'testability/pages/ServiceWorkerSetSchemeHandlerScheme'
       });
       router.clear();
-      await Utils.sleep(1000);
-      Utils.emitEvent('testWebServiceWorker_SetSchemeHandler_Fail_schemeParam_IsNone', 10);
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testWebServiceWorker_SetSchemeHandler_Fail_schemeParam_IsNone', false, 5223, done,
+      Utils.emitEvent('testWebServiceWorker_SetSchemeHandler_Fail_schemeParam_IsNone', 124647);
+      Utils.registerBaseEvent('testWebServiceWorker_SetSchemeHandler_Fail_schemeParam_IsNone', false, 148640, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('Click', 10, '');
+      Utils.waitAndClickComponent("Click", driver)
     });
   });
 }
