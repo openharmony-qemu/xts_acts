@@ -338,7 +338,7 @@ export default function audioCapturerEnhanceTest() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      try { 
+      try {
         const isPlaybackCaptureAvailable = canIUse('SystemCapability.Multimedia.Audio.PlaybackCapture');
         console.info(`isPlaybackCaptureAvailable: ${isPlaybackCaptureAvailable}`)
         if (isPlaybackCaptureAvailable) {
