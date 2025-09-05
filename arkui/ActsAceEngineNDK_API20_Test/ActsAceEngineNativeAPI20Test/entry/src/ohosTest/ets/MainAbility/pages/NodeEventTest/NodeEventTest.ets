@@ -14,23 +14,21 @@
  */
 
 import render from 'libnoderenderndk.so'
-import { KeyCode } from '@kit.InputKit';
-import { CommonView } from '../../componet/CommonView';
+import { NodeContent } from '@kit.ArkUI';
 
 @Entry
 @Component
 struct NodeEventTest {
   PAGE_TAG: string = 'NodeEventTest';
-  @State isNumLockOn: boolean = false;
-
+  private nodeContent: NodeContent = new NodeContent();
+  aboutToAppear():void{
+    // 通过C-API创建节点，并添加到管理器nodeContent上
+    render.CreateNode(this.nodeContent);
+  }
   build() {
     Row() {
       Column() {
-        CommonView({
-          pageTag: this.PAGE_TAG
-        }).onAppear(()=>{
-          render.CreateNode(this.PAGE_TAG)
-        })
+        ContentSlot(this.nodeContent);
       }
       .width('100%')
     }

@@ -53,7 +53,7 @@ export const SetReturnNumberValueTest_002: () => number;
 
 export const SetReturnNumberValueTest_003: () => number;
 
-export const CreateNode: (id: string) => void;
+export const CreateNode: (Node: Content) => void;
 
 export const SetTotalNodeCountTest_001: () => number;
 
@@ -93,7 +93,7 @@ export const SetNodeIdTest_001: () => number;
 
 export const SetNodeIdTest_002: () => number;
 
-export const CreateAdapterNode: (Node: Content, Tag: string) => void;
+export const CreateAdapterNode: (Node: Content) => void;
 
 export const RegisterCallbackTest_001: () => number;
 
@@ -117,6 +117,8 @@ export const InsertNodeTest_002: () => number;
 
 export const createNode1: (Node: Content) => void;
 
+export const CreateNodeSnapshot: (Node: Content) => void;
+
 export const GetNodeSnapshotTest_001: () => number;
 
 export const GetNodeSnapshotTest_002: () => number;
@@ -125,7 +127,7 @@ export const GetNodeSnapshotTest_003: () => number;
 
 export const GetNodeSnapshotTest_004: () => number;
 
-export const testRunTaskInScope: (id: string) => number;
+export const testRunTaskInScope: (Node:Content) => void;
 
 export const RunTaskInScopeTest_001: () => number;
 
@@ -141,7 +143,7 @@ export const GetUIContext: (Node: UIContext) => void;
 
 export const CreateNodeContent: (Node: Content, Tag: string) => void;
 
-export const CreateNavigation: (Node: Content, Tag: string) => void;
+export const CreateNavigation: (Node: Content) => void;
 
 export const CreateDrawableDescriptor: (Node: DrawableDescriptor, Tag: string) => void;
 
@@ -178,8 +180,6 @@ export const GetNavigationIdTest_004: () => number;
 export const GetNavigationIdTest_005: () => number;
 
 export const GetNavigationIdTest_006: () => number;
-
-export const CreateNavDestination: (Node: Content, Tag: string) => void;
 
 export const GetNavDestinationNameTest_001: () => number;
 
@@ -435,7 +435,7 @@ export const GetCustomSpanDrawInfoTest_001: () => number;
 
 export const GetCustomSpanDrawInfoTest_002: () => number;
 
-export const CreateCustomSpanNode: (id: string) => number;
+export const CreateCustomSpanNode: (Node:Content) => void;
 
 export const CloseAllSwipeActionsTest_001: () => number;
 
@@ -490,3 +490,124 @@ export const GetNodeUniqueIdTest_001: () => number;
 export const GetNodeUniqueIdTest_002: () => number;
 
 export const GetNodeUniqueIdTest_003: () => number;
+
+export const TextInputContentTypeTest_001: () => number;
+export const TextInputContentTypeTest_002: () => number;
+export const TextInputContentTypeTest_003: () => number;
+export const TextInputContentTypeTest_004: () => number;
+export const TextInputContentTypeTest_005: () => number;
+export const TextInputContentTypeTest_006: () => number;
+export const TextInputContentTypeTest_007: () => number;
+export const TextInputContentTypeTest_008: () => number;
+export const TextInputContentTypeTest_009: () => number;
+export const TextInputContentTypeTest_010: () => number;
+export const TextInputContentTypeTest_011: () => number;
+export const TextInputContentTypeTest_012: () => number;
+export const TextVerticalAlignmentTest_001: () => number;
+export const TextVerticalAlignmentTest_002: () => number;
+export const TextVerticalAlignmentTest_003: () => number;
+export const TextVerticalAlignmentTest_004: () => number;
+export const TextInputTypeTest_001: () => number;
+export const TextAreaTypeTest_001: () => number;
+export const TextCopyOptionsTest_001: () => number;
+export const TextCopyOptionsTest_002: () => number;
+export const TextCopyOptionsTest_003: () => number;
+export const TextCopyOptionsTest_004: () => number;
+export const EffectEdgeTest_001: () => number;
+export const EffectEdgeTest_002: () => number;
+export const FocusWrapModeTest_001: () => number;
+export const FocusWrapModeTest_002: () => number;
+export const StickystyleTest_001: () => number;
+export const ContentClipModeTest_001: () => number;
+export const ContentClipModeTest_002: () => number;
+export const ContentClipModeTest_003: () => number;
+export const WaterFlowLayoutModeTest_001: () => number;
+export const WaterFlowLayoutModeTest_002: () => number;
+export const HitTestModeTest_001: () => number;
+export const HitTestModeTest_002: () => number;
+export const PageFlipModeTest_001: () => number;
+export const PageFlipModeTest_002: () => number;
+export const SwiperAnimationModeTest_001: () => number;
+export const SwiperAnimationModeTest_002: () => number;
+export const SwiperAnimationModeTest_003: () => number;
+export const ImageSpanAlignmentTest_001: () => number;
+export const ColorStrategyTest_001: () => number;
+export const ColorStrategyTest_002: () => number;
+export const ButtonTypeTest_001: () => number;
+export const KeyboardAppearanceTest_001: () => number;
+export const KeyboardAppearanceTest_002: () => number;
+export const KeyboardAppearanceTest_003: () => number;
+export const KeyboardAppearanceTest_004: () => number;
+export const SafeAreaTypeTest_001: () => number;
+export const SafeAreaEdgeTest_001: () => number;
+export const SafeAreaEdgeTest_002: () => number;
+export const BlurStyleActivePolicyTest_001: () => number;
+export const BlurStyleActivePolicyTest_002: () => number;
+export const ScrollAlignmentTest_001: () => number;
+export const ScrollAlignmentTest_002: () => number;
+export const ScrollAlignmentTest_003: () => number;
+
+export const GetScrollNode: (Node: Content) => void;
+export const ScrollStateTest_001: () => number;
+export const ScrollStateTest_002: () => number;
+export const ScrollStateTest_003: () => number;
+export const TextPickerRangeContentTest_001: () => number;
+export const TextPickerRangeContentTest_002: () => number;
+export const TextPickerRangeContentTest_003: () => number;
+export const TextPickerCascadeRangeTest_001: () => number;
+export const TextPickerCascadeRangeTest_002: () => number;
+export const TextPickerCascadeRangeTest_003: () => number;
+export const TextPickerCascadeRangeTest_004: () => number;
+
+export const ActionTypeTest_001: () => number;
+export const ActionTypeTest_002: () => number;
+export const ActionTypeTest_003: () => number;
+export const ActionTypeTest_004: () => number;
+export const ActionTypeTest_005: () => number;
+export const ActionTypeTest_006: () => number;
+export const ActionTypeTest_007: () => number;
+export const ActionTypeTest_008: () => number;
+export const ActionTypeTest_009: () => number;
+export const ActionTypeTest_010: () => number;
+export const EventTypeTest_001: () => number;
+export const EventTypeTest_002: () => number;
+export const EventTypeTest_003: () => number;
+export const EventTypeTest_004: () => number;
+export const EventTypeTest_005: () => number;
+export const EventTypeTest_006: () => number;
+export const EventTypeTest_007: () => number;
+export const EventTypeTest_008: () => number;
+export const EventTypeTest_009: () => number;
+export const EventTypeTest_010: () => number;
+export const EventTypeTest_011: () => number;
+export const EventTypeTest_012: () => number;
+export const AcessbilityErrorCodeTest_001: () => number;
+export const AcessbilityErrorCodeTest_002: () => number;
+export const CreateAccessibilityNode: (Node:Content) => void;
+export const AccessibilitySearchModeTest_001: () => number;
+
+export const CreateEventTypeNode: (Node:Content) => void;
+export const CreateEventTypeNode1: (Node:Content) => void;
+export const CreateEventTypeNode2: (Node:Content) => void;
+export const CreateEventTypeNode3: (Node:Content) => void;
+export const NodeEventTypeTest_001: () => number;
+export const NodeEventTypeTest_002: () => number;
+export const NodeEventTypeTest_003: () => number;
+export const NodeEventTypeTest_004: () => number;
+export const NodeEventTypeTest_005: () => number;
+export const NodeEventTypeTest_006: () => number;
+export const NodeEventTypeTest_007: () => number;
+export const NodeEventTypeTest_008: () => number;
+export const NodeEventTypeTest_009: () => number;
+export const NodeEventTypeTest_010: () => number;
+export const NodeEventTypeTest_011: () => number;
+export const NodeEventTypeTest_012: () => number;
+export const NodeEventTypeTest_013: () => number;
+export const NodeEventTypeTest_014: () => number;
+export const NodeEventTypeTest_015: () => number;
+
+export const InitModuleForArkTSEnvTest_001: () => number;
+export const InitModuleForArkTSEnvTest_002: () => number;
+export const NotifyArkTSEnvDestroyTest_001: () => number;
+export const GetNapiEnv: (Node:Content) => void;
+export const GetArkuiNode: (Node:Content) => void;

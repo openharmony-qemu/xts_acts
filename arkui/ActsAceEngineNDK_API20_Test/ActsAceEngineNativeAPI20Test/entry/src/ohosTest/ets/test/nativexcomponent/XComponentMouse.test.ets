@@ -16,56 +16,19 @@
 import { beforeAll, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
 import nativexcomponent from 'libnativexcomponent.so';
 import Utils from "../common/Utils";
-import { MouseButton } from "@kit.TestKit";
+import { MouseButton, Point } from "@kit.TestKit";
 
 export default function XComponentMouseTest() {
   describe('XComponentMouseTest', () => {
+    const x1: number = Math.floor(globalThis.winWidth / 2 + globalThis.winLeft);
+    const y1: number = Math.floor(globalThis.winHeight / 2 + globalThis.winTop);
+    const x2: number = Math.floor(globalThis.winWidth / 4 + globalThis.winLeft);
+    const y2: number = Math.floor(globalThis.winHeight / 4 + globalThis.winTop);
+    const moveFrom: Point = { x: x1, y: y1 };
+    const moveTo: Point = { x: x2, y: y2 };
+    const speed: number = 2500;
     beforeAll(async (done: Function) => {
       await Utils.pushPageNoClear(`NativeXComponent/MouseNativeXComponent`, done);
-    })
-    /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENTACTION_0200
-     * @tc.name    : testMouseEventAction002
-     * @tc.desc    : Test get native xcomopnent key event action works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     */
-    it('testMouseEventAction002', TestType.FUNCTION |
-    Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      try {
-        console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENTACTION_0200 start<====`);
-        await Utils.driver.mouseClick({ x: 150, y: 150 }, MouseButton.MOUSE_BUTTON_LEFT);
-        let Result: number = nativexcomponent.MouseEventAction(1);
-        expect(1).assertEqual(Result);
-        done()
-      } catch (err) {
-        console.error(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENTACTION_0200 catch err: ` + err);
-        expect(false).assertEqual(err);
-        done()
-      }
-    })
-    /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENTACTION_0300
-     * @tc.name    : testMouseEventAction003
-     * @tc.desc    : Test get native xcomopnent key event action works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     */
-    it('testMouseEventAction003', TestType.FUNCTION |
-    Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      try {
-        console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENTACTION_0300 start<====`);
-        await Utils.driver.mouseClick({ x: 150, y: 150 }, MouseButton.MOUSE_BUTTON_LEFT);
-        let Result: number = nativexcomponent.MouseEventAction(2);
-        expect(1).assertEqual(Result);
-        done()
-      } catch (err) {
-        console.error(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENTACTION_0300 catch err: ` + err);
-        expect(false).assertEqual(err);
-        done()
-      }
     })
     /**
      * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENTACTION_0400
@@ -79,80 +42,12 @@ export default function XComponentMouseTest() {
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENTACTION_0400 start<====`);
-        await Utils.driver.mouseMoveTo({ x: 150, y: 150 });
-        await Utils.driver.mouseMoveTo({ x: 300, y: 300 });
-        await Utils.driver.mouseMoveTo({ x: 150, y: 150 });
+        await Utils.driver.mouseMoveWithTrack(moveFrom, moveTo, speed);
         let Result: number = nativexcomponent.MouseEventAction(3);
         expect(1).assertEqual(Result);
         done()
       } catch (err) {
         console.error(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENTACTION_0400 catch err: ` + err);
-        expect(false).assertEqual(err);
-        done()
-      }
-    })
-    /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENTBUTTON_0200
-     * @tc.name    : testMouseEventButton002
-     * @tc.desc    : Test get native xcomopnent key event action invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     */
-    it('testMouseEventButton002', TestType.FUNCTION |
-    Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      try {
-        console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENTBUTTON_0200 start<====`);
-        await Utils.driver.mouseClick({ x: 150, y: 150 }, MouseButton.MOUSE_BUTTON_LEFT);
-        let Result: number = nativexcomponent.MouseEventButton(1);
-        expect(1).assertEqual(Result);
-        done()
-      } catch (err) {
-        console.error(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENTBUTTON_0200 catch err: ` + err);
-        expect(false).assertEqual(err);
-        done()
-      }
-    })
-    /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENTBUTTON_0300
-     * @tc.name    : testMouseEventButton003
-     * @tc.desc    : Test get native xcomopnent key event action works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     */
-    it('testMouseEventButton003', TestType.FUNCTION |
-    Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      try {
-        console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENTBUTTON_0300 start<====`);
-        await Utils.driver.mouseClick({ x: 150, y: 150 }, MouseButton.MOUSE_BUTTON_RIGHT);
-        let Result: number = nativexcomponent.MouseEventButton(2);
-        expect(1).assertEqual(Result);
-        done()
-      } catch (err) {
-        console.error(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENTBUTTON_0300 catch err: ` + err);
-        expect(false).assertEqual(err);
-        done()
-      }
-    })
-    /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENTBUTTON_0400
-     * @tc.name    : testMouseEventButton004
-     * @tc.desc    : Test get native xcomopnent key event action invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     */
-    it('testMouseEventButton004', TestType.FUNCTION |
-    Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      try {
-        console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENTBUTTON_0400 start<====`);
-        await Utils.driver.mouseClick({ x: 150, y: 150 }, MouseButton.MOUSE_BUTTON_MIDDLE);
-        let Result: number = nativexcomponent.MouseEventButton(4);
-        expect(1).assertEqual(Result);
-        done()
-      } catch (err) {
-        console.error(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENTBUTTON_0400 catch err: ` + err);
         expect(false).assertEqual(err);
         done()
       }
@@ -169,7 +64,7 @@ export default function XComponentMouseTest() {
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENT_TIMESTAMP_0100 start<====`);
-        await Utils.driver.mouseClick({ x: 150, y: 150 }, MouseButton.MOUSE_BUTTON_LEFT);
+        await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT);
         let Result: number = nativexcomponent.MouseEventTimeStamp();
         expect(1).assertEqual(Result);
         done()

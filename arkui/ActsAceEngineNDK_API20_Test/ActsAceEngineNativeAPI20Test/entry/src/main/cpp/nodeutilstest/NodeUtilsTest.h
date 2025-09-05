@@ -121,6 +121,7 @@ namespace NodeUtilsTest {
     napi_value AddSupportedUIStatesTest_002(napi_env env, napi_callback_info info);
     napi_value RemoveSupportedUIStatesTest_001(napi_env env, napi_callback_info info);
     napi_value RemoveSupportedUIStatesTest_002(napi_env env, napi_callback_info info);
+    napi_value GetArkuiNode(napi_env env, napi_callback_info info);
 }
 
 #endif // NODE_UTILS_TEST_H

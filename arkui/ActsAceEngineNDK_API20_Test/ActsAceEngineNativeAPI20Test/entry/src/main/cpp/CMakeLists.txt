@@ -18,8 +18,19 @@ add_library(nativexcomponent SHARED
     touch/TouchPointTest.cpp
     mouse/XComponentMouseTest.cpp
     node/NodeAttributeTest.cpp
+    node/NodeDetachTest.cpp
     common/CommonTest.cpp
+    componentapi/AnimateOptionFinishCallbackTest.cpp
+    componentapi/CommonAttrsAccessibilityActionTest.cpp
+    componentapi/ComponentApiTest.cpp
+    componentapi/UiStatesTest.cpp
+    componentapi/ListItemGroupAreaTest.cpp
+    componentapi/ListItemSwipeActionStateTest.cpp
 )
+
+add_library(uiinputeventndk SHARED
+    uiinputevent/UIInputEventTest.cpp
+    common/CommonTest.cpp)
 
 find_library(
     # Sets the name of the path variable.
@@ -72,18 +83,35 @@ add_library(animatendk SHARED animateoptiontest/AnimatorOptionTest.cpp
                               animateoptiontest/KeyframeAnimateOptionTest.cpp
                               animateoptiontest/AnimatorOption1Test.cpp
                               animateoptiontest/AnimatorOption2Test.cpp
-                              common/CommonTest.cpp)
+                              common/CommonTest.cpp
+                              animateoptiontest/AnimatorTest.cpp)
 target_link_libraries(animatendk PUBLIC libace_napi.z.so libhilog_ndk.z.so libos_account_ndk.so libohinput.so
                             libace_ndk.z.so)
 
-add_library(arkuikeycodendk SHARED arkuikeycode/ArkUIKeyCodeTest.cpp
-common/CommonTest.cpp)
-target_link_libraries(arkuikeycodendk PUBLIC libace_napi.z.so libhilog_ndk.z.so libos_account_ndk.so libohinput.so)
+add_library(keyeventndk SHARED arkuikeyeventtest/ArkUIKeyEventTest.cpp
+                               arkuikeyeventtest/ArkUIKeyEventTypeTest.cpp
+                               arkuikeyeventtest/ArkUIKeyIntensionTest.cpp
+                               arkuikeyeventtest/ArkUIKeySourceTypeTest.cpp
+                               common/CommonTest.cpp)
+target_link_libraries(keyeventndk PUBLIC libace_napi.z.so libhilog_ndk.z.so libos_account_ndk.so libohinput.so
+                          libace_ndk.z.so)
 
-add_library(noderenderndk SHARED NapiRenderInitTest.cpp
+add_library(nativedialog SHARED nativedialog/NativeDialogTestcaseExportTest.cpp
+                                nativedialog/NativeDialogTest.cpp
+                                common/CommonTest.cpp)
+target_link_libraries(nativedialog PUBLIC libace_napi.z.so libhilog_ndk.z.so libace_ndk.z.so)
+
+add_library(nativegesturendk SHARED nativegesture/NativeGestureTest.cpp
+                                    nativegesture/NativeGesture1Test.cpp
+                                    nativegesture/NativeGesture2Test.cpp
+                                    nativegesture/NativeGestureTypeTest.cpp
+                                    common/CommonTest.cpp)
+target_link_libraries(nativegesturendk PUBLIC libace_napi.z.so libhilog_ndk.z.so libace_ndk.z.so)
+
+add_library(noderenderndk SHARED
+    nodeevent/NapiRenderInitTest.cpp
     focuscontrol/FocusControlTest.cpp
     nodeevent/NodeEventTest.cpp
-    manager/PluginManagerTest.cpp
     keyevent/KeyEventTest.cpp
     nodeadapter/NodeAdapterTest.cpp
     nodecontent/NodeContentTest.cpp
@@ -95,13 +123,43 @@ add_library(noderenderndk SHARED NapiRenderInitTest.cpp
     nodenapi/NodeNapi3Test.cpp
     nodenapi/NodeNapi4Test.cpp
     nodenapi/NavigationTest.cpp
-    nodenapi/NavDestinationTest.cpp
-    nodenapi/GetRouterTest.cpp
     nodeutilstest/NodeUtils1Test.cpp
     nodeutilstest/NodeUtilsTest.cpp
     nodeutilstest/NodeUtils2Test.cpp
     common/CommonTest.cpp
+    textinputcontenttype/TextInputContentTypeTest.cpp
+    textinputcontenttype/ScrollStateTest.cpp
+    textinputcontenttype/AccessibilityTypeTest.cpp
+    textinputcontenttype/NodeEventTypeTest.cpp
+    nodenapi/NapiEnvTest.cpp
 )
 
 target_link_libraries(noderenderndk PUBLIC libace_napi.z.so libhilog_ndk.z.so libos_account_ndk.so libohinput.so
 libace_ndk.z.so libpixelmap.so)
+
+target_link_libraries(uiinputeventndk PUBLIC libace_napi.z.so libhilog_ndk.z.so libohinput.so libace_ndk.z.so)
+
+add_library(nativetype SHARED
+    nativetype/NativeTypeTest.cpp
+    nativetype/NativeTypeInitTest.cpp
+    common/CommonTest.cpp
+)
+
+target_link_libraries(nativetype PUBLIC
+    libace_napi.z.so
+    libhilog_ndk.z.so
+    libos_account_ndk.so
+    libohinput.so
+    libace_ndk.z.so)
+
+add_library(osaccountndk SHARED
+    ArkuiNdkTest.cpp
+    DialogTest.cpp
+    DragAndDropTest.cpp
+    DragAndDrop1Test.cpp
+    DragAndDrop2Test.cpp)
+target_link_libraries(osaccountndk PUBLIC libace_napi.z.so libhilog_ndk.z.so libos_account_ndk.so
+                      libace_ndk.z.so libace_ndk.z.so libnative_display_manager.so libace_ndk.z.so
+                      libpixelmap.so libudmf.so)
+add_library(displaymanager SHARED displaymanager/DisplayManagerTest.cpp displaymanager/DisplayTest.cpp)
+target_link_libraries(displaymanager PUBLIC libace_napi.z.so libhilog_ndk.z.so libnative_display_manager.so libace_ndk.z.so)

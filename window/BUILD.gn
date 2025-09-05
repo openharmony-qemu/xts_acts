@@ -15,6 +15,7 @@ import("//build/ohos_var.gni")
 group("window") {
   testonly = true
   deps = [
+    "ActsWindowManagerNdkApi20Test:ActsWindowManagerNdkApi20Test",
     "windowErrCode:ActsWindowErrCodeTest",
     "windowProperties:ActsWindowPropertiesTest",
     "windowStartAbility:ActsWindowStartAbilityTest",

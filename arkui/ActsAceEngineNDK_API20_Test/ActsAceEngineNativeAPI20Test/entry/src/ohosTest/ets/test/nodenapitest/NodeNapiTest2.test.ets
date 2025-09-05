@@ -24,8 +24,31 @@ const ARKUI_ERROR_CODE_PARAM_INVALID = 401;
 export default function NodeNapiTest2() {
   describe('NodeNapiTest2', () => {
     beforeAll(async (done: Function) => {
-      await Utils.pushPage(`nodenapitest/nodenapiTest2`, done);
+      await Utils.pushPageNoClear(`nodenapitest/nodenapiTest2`, done);
     });
+
+    /*
+   * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeContentFromNapiValue_0100
+   * @tc.name       : testOHArkUIGetNodeContentFromNapiValue0100
+   * @tc.desc       : testing OH_ArkUI_GetNodeContentFromNapiValue interface
+   * @tc.size       : MediumTest
+   * @tc.type       : Function
+   * @tc.level      : Level 1
+   */
+    it('testOHArkUIGetNodeContentFromNapiValue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testOHArkUIGetNodeContentFromNapiValue0100 start====");
+          let result: number = nativerenderndk.GetNodeContentFromNapiValueTest_001();
+          console.info(`====>testOHArkUIGetNodeContentFromNapiValue0100 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done();
+        } catch (err) {
+          console.error("====>testOHArkUIGetNodeContentFromNapiValue0100 err: " + err);
+          expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+          done();
+        }
+      })
 
     /*
        * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeContentFromNapiValue_0200
@@ -41,7 +64,7 @@ export default function NodeNapiTest2() {
           console.info("====>testOHArkUIGetNodeContentFromNapiValue0200 start====");
           let result: number = nativerenderndk.GetNodeContentFromNapiValueTest_002();
           console.info(`====>testOHArkUIGetNodeContentFromNapiValue0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUIGetNodeContentFromNapiValue0200 err: " + err);

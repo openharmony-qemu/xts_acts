@@ -20,6 +20,7 @@
 
 namespace SnapShotTest {
 
+    napi_value CreateNodeSnapshot(napi_env env, napi_callback_info info);
     napi_value GetNodeSnapshotTest_001(napi_env env, napi_callback_info info);
     napi_value GetNodeSnapshotTest_002(napi_env env, napi_callback_info info);
     napi_value GetNodeSnapshotTest_003(napi_env env, napi_callback_info info);

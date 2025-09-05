@@ -134,6 +134,29 @@ napi_value AnimatorOptionRegisterOnRepeatCallback0100(napi_env env, napi_callbac
 napi_value AnimatorOptionRegisterOnRepeatCallback0200(napi_env env, napi_callback_info info);
 napi_value AnimatorOptionRegisterOnRepeatCallback0300(napi_env env, napi_callback_info info);
 
+//Animator related functions
+napi_value GetArkUIContext(napi_env env, napi_callback_info info);
+napi_value AnimatorResetAnimatorOption0100(napi_env env, napi_callback_info info);
+napi_value AnimatorResetAnimatorOption0200(napi_env env, napi_callback_info info);
+napi_value AnimatorResetAnimatorOption0300(napi_env env, napi_callback_info info);
+napi_value AnimatorPlay0100(napi_env env, napi_callback_info info);
+napi_value AnimatorPlay0200(napi_env env, napi_callback_info info);
+napi_value AnimatorFinish0100(napi_env env, napi_callback_info info);
+napi_value AnimatorFinish0200(napi_env env, napi_callback_info info);
+napi_value AnimatorPause0100(napi_env env, napi_callback_info info);
+napi_value AnimatorPause0200(napi_env env, napi_callback_info info);
+napi_value AnimatorCancel0100(napi_env env, napi_callback_info info);
+napi_value AnimatorCancel0200(napi_env env, napi_callback_info info);
+napi_value AnimatorReverse0100(napi_env env, napi_callback_info info);
+napi_value AnimatorReverse0200(napi_env env, napi_callback_info info);
+
+//TransitionEffectCombine related functions
+napi_value TransitionEffectCombine0100(napi_env env, napi_callback_info info);
+napi_value TransitionEffectCombine0200(napi_env env, napi_callback_info info);
+napi_value TransitionEffectSetAnimation0100(napi_env env, napi_callback_info info);
+napi_value TransitionEffectSetAnimation0200(napi_env env, napi_callback_info info);
+napi_value disposeAnimator0100(napi_env env, napi_callback_info info);
+
 } // namespace AnimatorOptionTest
 
 #endif // TEST2_H

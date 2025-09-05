@@ -34,7 +34,7 @@ napi_value MouseEventAction(napi_env env, napi_callback_info info)
     }
     int32_t Index;
     napi_get_value_int32(env, args[0], &Index);
-    int32_t result = g_mouseEventActionMap.count(OH_NativeXComponent_MouseEventAction(Index));
+    int32_t result = g_mouseEventActionMap.count(SelectMouseEventAction(Index));
     g_mouseEventActionMap.clear();
     napi_create_int32(env, result, &args[0]);
     return args[0];
@@ -57,7 +57,7 @@ napi_value MouseEventButton(napi_env env, napi_callback_info info)
     }
     int32_t Index;
     napi_get_value_int32(env, args[0], &Index);
-    int32_t result = g_mouseEventButtonMap.count(OH_NativeXComponent_MouseEventButton(Index));
+    int32_t result = g_mouseEventButtonMap.count(SelectMouseEventButton(Index));
     g_mouseEventButtonMap.clear();
     napi_create_int32(env, result, &args[0]);
     return args[0];

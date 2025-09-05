@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 #include "nodenapi/NodeNapiTest.h"
-#include "manager/PluginManagerTest.h"
 static ArkUI_NodeEvent* event_ = nullptr;
 static ArkUI_NodeHandle rowHandle = nullptr;
 static ArkUI_NativeNodeAPI_1 *nodeAPI = nullptr;
@@ -49,16 +48,6 @@ napi_value CreateNodeContent(napi_env env, napi_callback_info info)
     
     ArkUI_NativeNodeAPI_1* nodeAPI = nullptr;
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
-    // set parent node
-    auto parentColumn = nodeAPI->createNode(ARKUI_NODE_COLUMN);
-
-    std::string id(xComponentID);
-    if (OH_NativeXComponent_AttachNativeRootNode(ArkUICapiTest::PluginManager::GetInstance()->
-                                                 GetNativeXComponent(id), parentColumn) ==INVALID_PARAM) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "HybirdGetNodeHandleTest",
-            "OH_NativeXComponent_AttachNativeRootNode failed");
-    }
-
     napi_value exports;
     if (napi_create_object(env, &exports) != napi_ok) {
         napi_throw_type_error(env, NULL, "napi_create_object failed");
@@ -71,7 +60,7 @@ napi_value CreateNodeContent(napi_env env, napi_callback_info info)
 napi_value GetNodeContentFromNapiValueTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_nodenapiresult3, &retValue);
+    napi_create_int32(env, g_nodenapiresult3 == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -81,7 +70,7 @@ napi_value GetNodeContentFromNapiValueTest_002(napi_env env, napi_callback_info 
     ArkUI_NodeContentHandle context = nullptr;
     auto ret = OH_ArkUI_GetNodeContentFromNapiValue(env, args, &context);
     napi_value retValue;
-    napi_create_int32(env, ret, &retValue);
+    napi_create_int32(env, ret == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 

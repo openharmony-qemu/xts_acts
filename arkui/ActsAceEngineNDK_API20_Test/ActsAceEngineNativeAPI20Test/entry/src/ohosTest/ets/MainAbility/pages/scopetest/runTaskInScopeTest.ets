@@ -14,25 +14,22 @@
  */
 
 import render from 'libnoderenderndk.so'
-import { KeyCode } from '@kit.InputKit';
-import { CommonView } from '../../componet/CommonView';
+import { NodeContent } from '@kit.ArkUI';
 
 @Entry
 @Component
 struct RunTaskInScopeTest {
-  PAGE_TAG: string = 'RunTaskInScopeTest';
+  private nodeContent: NodeContent = new NodeContent();
+  aboutToAppear():void{
+    // 通过C-API创建节点，并添加到管理器nodeContent上
+    render.testRunTaskInScope(this.nodeContent);
+  }
 
   build() {
-    Row() {
-      Column() {
-        CommonView({
-          pageTag: this.PAGE_TAG
-        }).onAppear(()=>{
-          render.testRunTaskInScope(this.PAGE_TAG)
-        })
-      }
-      .width('100%')
+    Column() {
+      ContentSlot(this.nodeContent);
     }
+    .width('100%')
     .height('100%')
   }
 }

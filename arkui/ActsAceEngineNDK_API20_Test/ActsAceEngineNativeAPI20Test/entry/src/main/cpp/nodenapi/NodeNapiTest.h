@@ -49,7 +49,6 @@ namespace NodeNapiTest {
     napi_value GetNavigationIdTest_005(napi_env env, napi_callback_info info);
     napi_value GetNavigationIdTest_006(napi_env env, napi_callback_info info);
 
-    napi_value CreateNavDestination(napi_env env, napi_callback_info info);
     napi_value GetNavDestinationNameTest_001(napi_env env, napi_callback_info info);
     napi_value GetNavDestinationNameTest_002(napi_env env, napi_callback_info info);
     napi_value GetNavDestinationNameTest_003(napi_env env, napi_callback_info info);
@@ -106,6 +105,11 @@ namespace NodeNapiTest {
     napi_value GetRouterPageIdTest_004(napi_env env, napi_callback_info info);
     napi_value GetRouterPageIdTest_005(napi_env env, napi_callback_info info);
     napi_value GetRouterPageIdTest_006(napi_env env, napi_callback_info info);
+
+    napi_value GetNapiEnv(napi_env env, napi_callback_info info);
+    napi_value InitModuleForArkTSEnvTest_001(napi_env env, napi_callback_info info);
+    napi_value InitModuleForArkTSEnvTest_002(napi_env env, napi_callback_info info);
+    napi_value NotifyArkTSEnvDestroyTest_001(napi_env env, napi_callback_info info);
 
 }
 

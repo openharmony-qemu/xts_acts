@@ -191,8 +191,10 @@ napi_value AttachNativeRootNode001(napi_env env, napi_callback_info info)
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, _nodeAPI);
     _nodeAPI->addChild(g_childXComponent->GetComponent(), Column.GetComponent());
     napi_value retValue = 0;
-    int32_t result = ARKUI_ERROR_CODE_PARAM_INVALID;
-    result = OH_NativeXComponent_AttachNativeRootNode(g_childXComponent->GetXComponent(), Column.GetComponent());
+    int32_t result = OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER;
+    result = OH_NativeXComponent_AttachNativeRootNode(g_childXComponent->GetXComponent(), Column.GetComponent()) ==
+             OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER ? OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER :
+             OH_NATIVEXCOMPONENT_RESULT_SUCCESS;
     OH_NativeXComponent_DetachNativeRootNode(g_childXComponent->GetXComponent(), Column.GetComponent());
     napi_create_int32(env, result, &retValue);
     return retValue;
@@ -201,11 +203,9 @@ napi_value AttachNativeRootNode001(napi_env env, napi_callback_info info)
 napi_value AttachNativeRootNode002(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    int32_t result = 0;
-    if (OH_NativeXComponent_AttachNativeRootNode(g_xComponent.GetXComponent(), nullptr) ==
-        OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER) {
-        result = ARKUI_ERROR_CODE_PARAM_INVALID;
-    }
+    int32_t result = OH_NativeXComponent_AttachNativeRootNode(g_xComponent.GetXComponent(), nullptr) ==
+                     OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER ? OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER :
+                     OH_NATIVEXCOMPONENT_RESULT_SUCCESS;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -220,9 +220,11 @@ napi_value DetachNativeRootNode001(napi_env env, napi_callback_info info)
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, _nodeAPI);
     _nodeAPI->addChild(g_childXComponent->GetComponent(), Column.GetComponent());
     napi_value retValue = 0;
-    int32_t result = ARKUI_ERROR_CODE_PARAM_INVALID;
+    int32_t result = OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER;
     OH_NativeXComponent_AttachNativeRootNode(g_childXComponent->GetXComponent(), Column.GetComponent());
-    result = OH_NativeXComponent_DetachNativeRootNode(g_childXComponent->GetXComponent(), Column.GetComponent());
+    result = OH_NativeXComponent_DetachNativeRootNode(g_childXComponent->GetXComponent(), Column.GetComponent()) ==
+             OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER ? OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER :
+             OH_NATIVEXCOMPONENT_RESULT_SUCCESS;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -230,11 +232,9 @@ napi_value DetachNativeRootNode001(napi_env env, napi_callback_info info)
 napi_value DetachNativeRootNode002(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    int32_t result = 0;
-    if (OH_NativeXComponent_DetachNativeRootNode(g_xComponent.GetXComponent(), nullptr) ==
-        OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER) {
-        result = ARKUI_ERROR_CODE_PARAM_INVALID;
-    }
+    int32_t result = OH_NativeXComponent_DetachNativeRootNode(g_xComponent.GetXComponent(), nullptr) ==
+                     OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER ? OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER :
+                     OH_NATIVEXCOMPONENT_RESULT_SUCCESS;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -271,7 +271,8 @@ napi_value SetArkUIExpectedFrameRateRange001(napi_env env, napi_callback_info in
     OH_NativeXComponent_ExpectedRateRange ExpectedRateRange = { .min = 30, .max = 60, .expected = 45 };
     int32_t result = 0;
     OH_ArkUI_XComponent_Initialize(g_childXComponent->GetComponent());
-    result = OH_ArkUI_XComponent_SetExpectedFrameRateRange(g_childXComponent->GetComponent(), ExpectedRateRange);
+    result = OH_ArkUI_XComponent_SetExpectedFrameRateRange(g_childXComponent->GetComponent(), ExpectedRateRange) ==
+             ARKUI_ERROR_CODE_PARAM_INVALID ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -280,10 +281,9 @@ napi_value SetArkUIExpectedFrameRateRange002(napi_env env, napi_callback_info in
 {
     napi_value retValue = 0;
     OH_NativeXComponent_ExpectedRateRange ExpectedRateRange = { .min = 30, .max = 60, .expected = 45 };
-    if (OH_ArkUI_XComponent_SetExpectedFrameRateRange(nullptr, ExpectedRateRange) == 0) {
-        napi_create_int32(env, 0, &retValue);
-        return retValue;
-    }
+    int32_t result = 0;
+    result= OH_ArkUI_XComponent_SetExpectedFrameRateRange(nullptr, ExpectedRateRange) ==
+             ARKUI_ERROR_CODE_PARAM_INVALID ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
     napi_create_int32(env, ARKUI_ERROR_CODE_PARAM_INVALID, &retValue);
     return retValue;
 }
@@ -292,7 +292,8 @@ napi_value RegisterOnFrameCallback001(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
     int32_t result = ARKUI_ERROR_CODE_PARAM_INVALID;
-    result = OH_NativeXComponent_RegisterOnFrameCallback(g_childXComponent->GetXComponent(), OnFrameCallback);
+    result = OH_NativeXComponent_RegisterOnFrameCallback(g_childXComponent->GetXComponent(), OnFrameCallback) ==
+             ARKUI_ERROR_CODE_PARAM_INVALID ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -301,8 +302,8 @@ napi_value RegisterOnFrameCallback002(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
     int32_t result = 0;
-    result = OH_NativeXComponent_RegisterOnFrameCallback(nullptr, OnFrameCallback) == PARAM_NEGATIVE_2 ?
-                                                         ARKUI_ERROR_CODE_PARAM_INVALID : 0;
+    result = OH_NativeXComponent_RegisterOnFrameCallback(nullptr, OnFrameCallback) ==
+             PARAM_NEGATIVE_2 ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -311,7 +312,8 @@ napi_value ArkUIRegisterOnFrameCallback001(napi_env env, napi_callback_info info
 {
     napi_value retValue = 0;
     int32_t result = ARKUI_ERROR_CODE_PARAM_INVALID;
-    result = OH_ArkUI_XComponent_RegisterOnFrameCallback(g_childXComponent->GetComponent(), OnArkUIFrameCallback);
+    result = OH_ArkUI_XComponent_RegisterOnFrameCallback(g_childXComponent->GetComponent(), OnArkUIFrameCallback) ==
+             ARKUI_ERROR_CODE_PARAM_INVALID ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -320,7 +322,8 @@ napi_value ArkUIRegisterOnFrameCallback002(napi_env env, napi_callback_info info
 {
     napi_value retValue = 0;
     int32_t result = 0;
-    result = OH_ArkUI_XComponent_RegisterOnFrameCallback(nullptr, OnArkUIFrameCallback);
+    result = OH_ArkUI_XComponent_RegisterOnFrameCallback(nullptr, OnArkUIFrameCallback) ==
+             ARKUI_ERROR_CODE_PARAM_INVALID ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -339,7 +342,8 @@ napi_value UnregisterOnFrameCallback001(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
     int32_t result = ARKUI_ERROR_CODE_PARAM_INVALID;
-    result = OH_NativeXComponent_UnregisterOnFrameCallback(g_childXComponent->GetXComponent());
+    result = OH_NativeXComponent_UnregisterOnFrameCallback(g_childXComponent->GetXComponent()) ==
+             ARKUI_ERROR_CODE_PARAM_INVALID ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -348,8 +352,8 @@ napi_value UnregisterOnFrameCallback002(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
     int32_t result = 0;
-    result = OH_NativeXComponent_UnregisterOnFrameCallback(nullptr) == PARAM_NEGATIVE_2 ?
-                                                                       ARKUI_ERROR_CODE_PARAM_INVALID : 0;
+    result = OH_NativeXComponent_UnregisterOnFrameCallback(nullptr) ==
+             PARAM_NEGATIVE_2 ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -358,7 +362,8 @@ napi_value ArkUIUnregisterOnFrameCallback001(napi_env env, napi_callback_info in
 {
     napi_value retValue = 0;
     int32_t result = ARKUI_ERROR_CODE_PARAM_INVALID;
-    result = OH_ArkUI_XComponent_UnregisterOnFrameCallback(g_childXComponent->GetComponent());
+    result = OH_ArkUI_XComponent_UnregisterOnFrameCallback(g_childXComponent->GetComponent()) ==
+             ARKUI_ERROR_CODE_PARAM_INVALID ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -367,7 +372,8 @@ napi_value ArkUIUnregisterOnFrameCallback002(napi_env env, napi_callback_info in
 {
     napi_value retValue = 0;
     int32_t result = 0;
-    result = OH_ArkUI_XComponent_UnregisterOnFrameCallback(nullptr);
+    result = OH_ArkUI_XComponent_UnregisterOnFrameCallback(nullptr) ==
+             ARKUI_ERROR_CODE_PARAM_INVALID ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -377,7 +383,8 @@ napi_value RegisterUIInputEventCallback001(napi_env env, napi_callback_info info
     napi_value retValue = 0;
     int32_t result = ARKUI_ERROR_CODE_PARAM_INVALID;
     result = OH_NativeXComponent_RegisterUIInputEventCallback(g_childXComponent->GetXComponent(),
-                                                              UIInputEventCallback, ARKUI_UIINPUTEVENT_TYPE_AXIS);
+                                                              UIInputEventCallback, ARKUI_UIINPUTEVENT_TYPE_AXIS) ==
+             ARKUI_ERROR_CODE_PARAM_INVALID ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -385,27 +392,23 @@ napi_value RegisterUIInputEventCallback001(napi_env env, napi_callback_info info
 napi_value RegisterUIInputEventCallback002(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    if (OH_NativeXComponent_RegisterUIInputEventCallback(g_childXComponent->GetXComponent(),
-                                                         UIInputEventCallback, ARKUI_UIINPUTEVENT_TYPE_KEY) == 0) {
-        napi_create_int32(env, 0, &retValue);
-        return retValue;
-    }
-    if (OH_NativeXComponent_RegisterUIInputEventCallback(g_childXComponent->GetXComponent(),
-                                                         UIInputEventCallback, ARKUI_UIINPUTEVENT_TYPE_MOUSE) == 0) {
-        napi_create_int32(env, 0, &retValue);
-        return retValue;
-    }
-    if (OH_NativeXComponent_RegisterUIInputEventCallback(g_childXComponent->GetXComponent(),
-                                                         UIInputEventCallback, ARKUI_UIINPUTEVENT_TYPE_TOUCH) == 0) {
-        napi_create_int32(env, 0, &retValue);
-        return retValue;
-    }
-    if (OH_NativeXComponent_RegisterUIInputEventCallback(g_childXComponent->GetXComponent(),
-                                                         UIInputEventCallback, ARKUI_UIINPUTEVENT_TYPE_UNKNOWN) == 0) {
-        napi_create_int32(env, 0, &retValue);
-        return retValue;
-    }
-    napi_create_int32(env, ARKUI_ERROR_CODE_PARAM_INVALID, &retValue);
+    int32_t result = OH_NativeXComponent_RegisterUIInputEventCallback(g_childXComponent->GetXComponent(),
+                                                                      UIInputEventCallback,
+                                                                      ARKUI_UIINPUTEVENT_TYPE_KEY) ==
+                     ARKUI_ERROR_CODE_PARAM_INVALID &&
+                     OH_NativeXComponent_RegisterUIInputEventCallback(g_childXComponent->GetXComponent(),
+                                                                      UIInputEventCallback,
+                                                                      ARKUI_UIINPUTEVENT_TYPE_MOUSE) ==
+                     ARKUI_ERROR_CODE_PARAM_INVALID &&
+                     OH_NativeXComponent_RegisterUIInputEventCallback(g_childXComponent->GetXComponent(),
+                                                                      UIInputEventCallback,
+                                                                      ARKUI_UIINPUTEVENT_TYPE_TOUCH) ==
+                     ARKUI_ERROR_CODE_PARAM_INVALID &&
+                     OH_NativeXComponent_RegisterUIInputEventCallback(g_childXComponent->GetXComponent(),
+                                                                      UIInputEventCallback,
+                                                                      ARKUI_UIINPUTEVENT_TYPE_UNKNOWN) ==
+                     ARKUI_ERROR_CODE_PARAM_INVALID ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
+    napi_create_int32(env, result, &retValue);
     return retValue;
 }
 
@@ -419,7 +422,8 @@ napi_value RegisterOnTouchInterceptCallback001(napi_env env, napi_callback_info 
     napi_value retValue = 0;
     int32_t result = 0;
     result = OH_NativeXComponent_RegisterOnTouchInterceptCallback(g_childXComponent->GetXComponent(),
-                                                                  OnTouchInterceptCallback);
+                                                                  OnTouchInterceptCallback) ==
+             ARKUI_ERROR_CODE_PARAM_INVALID ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -427,15 +431,12 @@ napi_value RegisterOnTouchInterceptCallback001(napi_env env, napi_callback_info 
 napi_value RegisterOnTouchInterceptCallback002(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    if (OH_NativeXComponent_RegisterOnTouchInterceptCallback(nullptr, OnTouchInterceptCallback) == 0) {
-        napi_create_int32(env, 0, &retValue);
-        return retValue;
-    }
-    if (OH_NativeXComponent_RegisterOnTouchInterceptCallback(g_childXComponent->GetXComponent(), nullptr) == 0) {
-        napi_create_int32(env, 0, &retValue);
-        return retValue;
-    }
-    napi_create_int32(env, ARKUI_ERROR_CODE_PARAM_INVALID, &retValue);
+    int32_t result = 0;
+    result = OH_NativeXComponent_RegisterOnTouchInterceptCallback(nullptr, OnTouchInterceptCallback) ==
+             ARKUI_ERROR_CODE_PARAM_INVALID &&
+             OH_NativeXComponent_RegisterOnTouchInterceptCallback(g_childXComponent->GetXComponent(), nullptr) ==
+             ARKUI_ERROR_CODE_PARAM_INVALID ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
+    napi_create_int32(env, result, &retValue);
     return retValue;
 }
 
@@ -450,7 +451,9 @@ napi_value GetNativeAccessibilityProvider001(napi_env env, napi_callback_info in
     napi_value retValue = 0;
     int32_t result = 0;
     ArkUI_AccessibilityProvider* handle;
-    result = OH_NativeXComponent_GetNativeAccessibilityProvider(g_childXComponent->GetXComponent(), &handle);
+    result = OH_NativeXComponent_GetNativeAccessibilityProvider(g_childXComponent->GetXComponent(), &handle) ==
+                     OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER ? OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER :
+                     OH_NATIVEXCOMPONENT_RESULT_SUCCESS;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -459,15 +462,11 @@ napi_value GetNativeAccessibilityProvider002(napi_env env, napi_callback_info in
 {
     napi_value retValue = 0;
     ArkUI_AccessibilityProvider* handle;
-    if (OH_NativeXComponent_GetNativeAccessibilityProvider(nullptr, &handle) == 0) {
-        napi_create_int32(env, 0, &retValue);
-        return retValue;
-    }
-    if (OH_NativeXComponent_GetNativeAccessibilityProvider(g_childXComponent->GetXComponent(), nullptr) == 0) {
-        napi_create_int32(env, 0, &retValue);
-        return retValue;
-    }
-    napi_create_int32(env, ARKUI_ERROR_CODE_PARAM_INVALID, &retValue);
+    int32_t result = 0;
+    result = OH_NativeXComponent_GetNativeAccessibilityProvider(nullptr, &handle) != PARAM_0 &&
+             OH_NativeXComponent_GetNativeAccessibilityProvider(g_childXComponent->GetXComponent(), nullptr) !=
+             PARAM_0 ? ARKUI_ERROR_CODE_PARAM_INVALID : OH_NATIVEXCOMPONENT_RESULT_SUCCESS;
+    napi_create_int32(env, result, &retValue);
     return retValue;
 }
 
@@ -477,7 +476,9 @@ napi_value RegisterKeyEventCallbackWithResult001(napi_env env, napi_callback_inf
     int32_t result = 0;
     ArkUI_AccessibilityProvider* handle;
     result = OH_NativeXComponent_RegisterKeyEventCallbackWithResult(g_childXComponent->GetXComponent(),
-                                                                    OnKeyEventCallbackWithResult);
+                                                                    OnKeyEventCallbackWithResult) ==
+             OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER ? OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER :
+             OH_NATIVEXCOMPONENT_RESULT_SUCCESS;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -486,15 +487,11 @@ napi_value RegisterKeyEventCallbackWithResult002(napi_env env, napi_callback_inf
 {
     napi_value retValue = 0;
     ArkUI_AccessibilityProvider* handle;
-    if (OH_NativeXComponent_RegisterKeyEventCallbackWithResult(nullptr, OnKeyEventCallbackWithResult) == 0) {
-        napi_create_int32(env, 0, &retValue);
-        return retValue;
-    }
-    if (OH_NativeXComponent_RegisterKeyEventCallbackWithResult(g_childXComponent->GetXComponent(), nullptr) == 0) {
-        napi_create_int32(env, 0, &retValue);
-        return retValue;
-    }
-    napi_create_int32(env, ARKUI_ERROR_CODE_PARAM_INVALID, &retValue);
+    int32_t result = 0;
+    result = OH_NativeXComponent_RegisterKeyEventCallbackWithResult(nullptr, OnKeyEventCallbackWithResult) != PARAM_0 &&
+             OH_NativeXComponent_RegisterKeyEventCallbackWithResult(g_childXComponent->GetXComponent(), nullptr) !=
+             PARAM_0 ? ARKUI_ERROR_CODE_PARAM_INVALID : OH_NATIVEXCOMPONENT_RESULT_SUCCESS;
+    napi_create_int32(env, result, &retValue);
     return retValue;
 }
 
@@ -509,7 +506,8 @@ napi_value XComponentInitialize001(napi_env env, napi_callback_info info)
     Component temp = Component(ARKUI_NODE_XCOMPONENT);
     int32_t result = 0;
     result = OH_ArkUI_XComponent_Initialize(temp.GetComponent());
-    result = OH_ArkUI_XComponent_Initialize(temp.GetComponent());
+    result = OH_ArkUI_XComponent_Initialize(temp.GetComponent()) == ARKUI_ERROR_CODE_XCOMPONENT_STATE_INVALID ?
+             ARKUI_ERROR_CODE_XCOMPONENT_STATE_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -518,15 +516,12 @@ napi_value XComponentFinalize001(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
     Component temp = Component(ARKUI_NODE_XCOMPONENT);
-    if (OH_ArkUI_XComponent_Finalize(temp.GetComponent()) == ARKUI_ERROR_CODE_XCOMPONENT_STATE_INVALID) {
-        napi_create_int32(env, ARKUI_ERROR_CODE_XCOMPONENT_STATE_INVALID, &retValue);
-        return retValue;
-    }
-    if (OH_ArkUI_XComponent_Finalize(temp.GetComponent()) == ARKUI_ERROR_CODE_XCOMPONENT_STATE_INVALID) {
-        napi_create_int32(env, ARKUI_ERROR_CODE_XCOMPONENT_STATE_INVALID, &retValue);
-        return retValue;
-    }
-    napi_create_int32(env, 0, &retValue);
+    int32_t result = 0;
+    result = OH_ArkUI_XComponent_Finalize(temp.GetComponent()) == ARKUI_ERROR_CODE_XCOMPONENT_STATE_INVALID ?
+             ARKUI_ERROR_CODE_XCOMPONENT_STATE_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
+    result = OH_ArkUI_XComponent_Finalize(temp.GetComponent()) == ARKUI_ERROR_CODE_XCOMPONENT_STATE_INVALID ?
+             ARKUI_ERROR_CODE_XCOMPONENT_STATE_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
+    napi_create_int32(env, result, &retValue);
     return retValue;
 }
 
@@ -534,7 +529,8 @@ napi_value XComponentSetNeedSoftKeyboard001(napi_env env, napi_callback_info inf
 {
     napi_value retValue = 0;
     int32_t result = 0;
-    result = OH_ArkUI_XComponent_SetNeedSoftKeyboard(g_childXComponent->GetComponent(), false);
+    result = OH_ArkUI_XComponent_SetNeedSoftKeyboard(g_childXComponent->GetComponent(), false) ==
+             ARKUI_ERROR_CODE_PARAM_INVALID ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -542,14 +538,12 @@ napi_value XComponentSetNeedSoftKeyboard001(napi_env env, napi_callback_info inf
 napi_value XComponentSetNeedSoftKeyboard002(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    if (OH_ArkUI_XComponent_SetNeedSoftKeyboard(nullptr, true) == 0) {
-        napi_create_int32(env, 0, &retValue);
-        return retValue;
-    }
-    if (OH_ArkUI_XComponent_SetNeedSoftKeyboard(nullptr, false) == 0) {
-        napi_create_int32(env, 0, &retValue);
-        return retValue;
-    }
+    int32_t result = 0;
+    result = OH_ArkUI_XComponent_SetNeedSoftKeyboard(nullptr, true) ==
+             ARKUI_ERROR_CODE_PARAM_INVALID ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
+    result = OH_ArkUI_XComponent_SetNeedSoftKeyboard(nullptr, false) ==
+             ARKUI_ERROR_CODE_PARAM_INVALID && result == ARKUI_ERROR_CODE_PARAM_INVALID ?
+             ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
     napi_create_int32(env, ARKUI_ERROR_CODE_PARAM_INVALID, &retValue);
     return retValue;
 }
@@ -559,7 +553,9 @@ napi_value GetExtraMouseEventInfo001(napi_env env, napi_callback_info info)
     napi_value retValue = 0;
     int32_t result = ARKUI_ERROR_CODE_PARAM_INVALID;
     OH_NativeXComponent_ExtraMouseEventInfo* ExtraMouseEventInfo;
-    result = OH_NativeXComponent_GetExtraMouseEventInfo(g_childXComponent->GetXComponent(), &ExtraMouseEventInfo);
+    result = OH_NativeXComponent_GetExtraMouseEventInfo(g_childXComponent->GetXComponent(), &ExtraMouseEventInfo) ==
+             ARKUI_ERROR_CODE_PARAM_INVALID && result == ARKUI_ERROR_CODE_PARAM_INVALID ?
+             ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -570,10 +566,9 @@ napi_value GetExtraMouseEventInfo002(napi_env env, napi_callback_info info)
     int32_t result = 0;
     OH_NativeXComponent_ExtraMouseEventInfo* ExtraMouseEventInfo;
     result = OH_NativeXComponent_GetExtraMouseEventInfo(nullptr, &ExtraMouseEventInfo);
-    result = OH_NativeXComponent_GetExtraMouseEventInfo(g_childXComponent->GetXComponent(),
-                                                        nullptr) == ARKUI_ERROR_CODE_PARAM_INVALID && result ==
-                                                        ARKUI_ERROR_CODE_PARAM_INVALID ?
-                                                        ARKUI_ERROR_CODE_PARAM_INVALID : 0;
+    result = OH_NativeXComponent_GetExtraMouseEventInfo(g_childXComponent->GetXComponent(), nullptr) ==
+             ARKUI_ERROR_CODE_PARAM_INVALID && result == ARKUI_ERROR_CODE_PARAM_INVALID ?
+             ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -584,8 +579,10 @@ napi_value GetMouseEventModifierKeyStates001(napi_env env, napi_callback_info in
     int32_t result = ARKUI_ERROR_CODE_PARAM_INVALID;
     OH_NativeXComponent_ExtraMouseEventInfo* ExtraMouseEventInfo;
     OH_NativeXComponent_GetExtraMouseEventInfo(g_childXComponent->GetXComponent(), &ExtraMouseEventInfo);
-    result = OH_NativeXComponent_GetMouseEventModifierKeyStates(ExtraMouseEventInfo, &g_keys);
-    napi_create_int32(env, g_result, &retValue);
+    result = OH_NativeXComponent_GetMouseEventModifierKeyStates(ExtraMouseEventInfo, &g_keys) ==
+             ARKUI_ERROR_CODE_PARAM_INVALID && result == ARKUI_ERROR_CODE_PARAM_INVALID ?
+             ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
+    napi_create_int32(env, result, &retValue);
     return retValue;
 }
 
@@ -598,7 +595,7 @@ napi_value GetMouseEventModifierKeyStates002(napi_env env, napi_callback_info in
     result = OH_NativeXComponent_GetMouseEventModifierKeyStates(nullptr, &g_keys);
     result = OH_NativeXComponent_GetMouseEventModifierKeyStates(ExtraMouseEventInfo, nullptr) ==
              ARKUI_ERROR_CODE_PARAM_INVALID && result == ARKUI_ERROR_CODE_PARAM_INVALID ?
-             ARKUI_ERROR_CODE_PARAM_INVALID : 0;
+             ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -838,68 +835,76 @@ void XComponent::GetKeyEventTimestamp001()
 {
     OH_NativeXComponent_GetKeyEventTimestamp(g_keyEvent, &g_timestamp);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventSourceType001");
+                 "KeyEventXComponent", "Choose Function GetKeyEventTimestamp001");
 }
 
 void XComponent::GetKeyEventTimestamp002()
 {
     OH_NativeXComponent_GetKeyEventTimestamp(nullptr, &g_deviceId);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventSourceType001");
+                 "KeyEventXComponent", "Choose Function GetKeyEventTimestamp002");
 }
 
 void XComponent::GetKeyEventModifierKeyStates001()
 {
-    g_result = OH_NativeXComponent_GetKeyEventModifierKeyStates(g_keyEvent, &g_keys);
+    g_result = OH_NativeXComponent_GetKeyEventModifierKeyStates(g_keyEvent, &g_keys) ==
+               ARKUI_ERROR_CODE_NO_ERROR ? ARKUI_ERROR_CODE_NO_ERROR : ARKUI_ERROR_CODE_PARAM_INVALID;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventSourceType001");
+                 "KeyEventXComponent", "Choose Function GetKeyEventModifierKeyStates001");
 }
 
 void XComponent::GetKeyEventModifierKeyStates002()
 {
-    g_result = OH_NativeXComponent_GetKeyEventModifierKeyStates(nullptr, &g_keys);
+    g_result = OH_NativeXComponent_GetKeyEventModifierKeyStates(nullptr, &g_keys) ==
+               ARKUI_ERROR_CODE_NO_ERROR ? ARKUI_ERROR_CODE_NO_ERROR : ARKUI_ERROR_CODE_PARAM_INVALID;
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventSourceType001");
+                 "KeyEventXComponent", "Choose Function GetKeyEventModifierKeyStates002");
 }
 
 void XComponent::GetKeyEventNumLockState001()
 {
-    g_result = OH_NativeXComponent_GetKeyEventNumLockState(g_keyEvent, &g_isNumLockOn);
+    g_result = OH_NativeXComponent_GetKeyEventNumLockState(g_keyEvent, &g_isNumLockOn) ==
+               ARKUI_ERROR_CODE_NO_ERROR ? ARKUI_ERROR_CODE_NO_ERROR : ARKUI_ERROR_CODE_PARAM_INVALID;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "KeyEventXComponent", "Choose Function GetKeyEventNumLockState001");
 }
 
 void XComponent::GetKeyEventNumLockState002()
 {
-    g_result = OH_NativeXComponent_GetKeyEventNumLockState(nullptr, &g_isNumLockOn);
+    g_result = OH_NativeXComponent_GetKeyEventNumLockState(nullptr, &g_isNumLockOn) ==
+               ARKUI_ERROR_CODE_NO_ERROR ? ARKUI_ERROR_CODE_NO_ERROR : ARKUI_ERROR_CODE_PARAM_INVALID;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "KeyEventXComponent", "Choose Function GetKeyEventNumLockState002");
 }
 
 void XComponent::GetKeyEventCapsLockState001()
 {
-    g_result = OH_NativeXComponent_GetKeyEventCapsLockState(g_keyEvent, &g_isCapsLockOn);
+    g_result = OH_NativeXComponent_GetKeyEventCapsLockState(g_keyEvent, &g_isCapsLockOn) ==
+               ARKUI_ERROR_CODE_NO_ERROR ? ARKUI_ERROR_CODE_NO_ERROR : ARKUI_ERROR_CODE_PARAM_INVALID;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "KeyEventXComponent", "Choose Function GetKeyEventCapsLockState001");
 }
 
 void XComponent::GetKeyEventCapsLockState002()
 {
-    g_result = OH_NativeXComponent_GetKeyEventCapsLockState(nullptr, &g_isCapsLockOn);
+    g_result = OH_NativeXComponent_GetKeyEventCapsLockState(nullptr, &g_isCapsLockOn) ==
+               ARKUI_ERROR_CODE_NO_ERROR ? ARKUI_ERROR_CODE_NO_ERROR : ARKUI_ERROR_CODE_PARAM_INVALID;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "KeyEventXComponent", "Choose Function GetKeyEventCapsLockState002");
 }
 
 void XComponent::GetKeyEventScrollLockState001()
 {
-    g_result = OH_NativeXComponent_GetKeyEventScrollLockState(g_keyEvent, &g_isScrollLockOn);
+    g_result = OH_NativeXComponent_GetKeyEventScrollLockState(g_keyEvent, &g_isScrollLockOn) ==
+               ARKUI_ERROR_CODE_NO_ERROR ? ARKUI_ERROR_CODE_NO_ERROR : ARKUI_ERROR_CODE_PARAM_INVALID;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "KeyEventXComponent", "Choose Function GetKeyEventScrollLockState001");
 }
 
 void XComponent::GetKeyEventScrollLockState002()
 {
-    g_result = OH_NativeXComponent_GetKeyEventScrollLockState(nullptr, &g_isScrollLockOn);
+    g_result = OH_NativeXComponent_GetKeyEventScrollLockState(nullptr, &g_isScrollLockOn) ==
+               ARKUI_ERROR_CODE_NO_ERROR ? ARKUI_ERROR_CODE_NO_ERROR : ARKUI_ERROR_CODE_PARAM_INVALID;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "KeyEventXComponent", "Choose Function GetKeyEventScrollLockState002");
 }

@@ -78,9 +78,9 @@ napi_value FocusControlTest_001(napi_env env, napi_callback_info info)
                      "FocusRequest returned: %{public}d", focusResult);
     }
     // 6. 返回成功码
-    napi_value result;
-    napi_create_int32(env, ARKUI_ERROR_CODE_NO_ERROR, &result);
-    return result;
+    napi_value retValue;
+    napi_create_int32(env, focusResult == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
+    return retValue;
 }
 
 napi_value FocusControlTest_002(napi_env env, napi_callback_info info)
@@ -108,7 +108,7 @@ napi_value FocusControlTest_002(napi_env env, napi_callback_info info)
     }
     // 7. 返回目标错误码
     napi_value retValue;
-    napi_create_int32(env, focusResult, &retValue); // 修正拼写错误
+    napi_create_int32(env, focusResult == ARKUI_ERROR_CODE_FOCUS_NON_FOCUSABLE ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -150,7 +150,7 @@ napi_value FocusControlTest_003(napi_env env, napi_callback_info info)
     }
     // 8. 返回结果
     napi_value retValue;
-    napi_create_int32(env, focusResult, &retValue);
+    napi_create_int32(env, focusResult == ARKUI_ERROR_CODE_FOCUS_NON_FOCUSABLE_ANCESTOR ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -159,7 +159,7 @@ napi_value FocusControlTest_004(napi_env env, napi_callback_info info)
     ArkUI_NodeHandle invalidNode = nullptr;
     int32_t focusResult = OH_ArkUI_FocusRequest(invalidNode);
     napi_value retValue;
-    napi_create_int32(env, focusResult, &retValue);
+    napi_create_int32(env, focusResult == ARKUI_ERROR_CODE_FOCUS_NON_EXISTENT ? 0 : 1, &retValue);
     return retValue;
 }
 } // namespace ArkUICapiTest
