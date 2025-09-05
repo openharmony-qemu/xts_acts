@@ -39,13 +39,13 @@ struct WebComponent{
   @State str: string = 'scrollByTo01';
 
   aboutToAppear() {
-    console.info('[boruto] Entry aboutToAppear');
+    console.info('Entry aboutToAppear');
     let valueChangeEvent: emitter.InnerEvent = {
       eventId: 10,
       priority: emitter.EventPriority.LOW
     }
     emitter.on(valueChangeEvent, this.valueChangeCallBack)
-    console.info('[boruto] Finish aboutToAppear ' + this.valueChangeCallBack);
+    console.info('Finish aboutToAppear ' + this.valueChangeCallBack);
   }
 
   private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
@@ -78,7 +78,6 @@ struct WebComponent{
             }
 
             case 'emitonSwitchNextPage1': {
-              console.log('emitonSwitchNextPage in in in')
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
               router.pushUrl({ url: 'pages/scrollEvent' })

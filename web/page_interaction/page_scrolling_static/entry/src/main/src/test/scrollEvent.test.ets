@@ -27,22 +27,6 @@ export default function webViewSrollableJsunit() {
   describe('scrollTest',  () =>{
     beforeAll(async  (): Promise<void> => {
       console.log('App start')
-      let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: 'EntryAbility',
-        moduleName:'entry',
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          testAbilityContext = abilitys.context
-          console.log('onAbilityCreate end')
-        },
-      }, (err : BusinessError | null) : void => {
-        if (err != null ) {
-          console.log('-----' + err.code)
-        }
-        console.log('BusinessError  end')
-      });
-      await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.pageInteractionTwo.test.static')
       await Utils.msSleep(2000)
       console.log('beforeAll end,%s', 'Succeed!')
     });
@@ -101,7 +85,7 @@ export default function webViewSrollableJsunit() {
       done();
     })
 
-    it('asvb1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitonSwitchNextPage2', 10)
         await Utils.msSleep(1000);
@@ -110,7 +94,7 @@ export default function webViewSrollableJsunit() {
         let button = await driver.findComponent(ON.id('scrollEvent01'));
         await Utils.msSleep(1000);
         button?.click();
-        await Utils.msSleep(2000)
+        await Utils.msSleep(5000)
         done()
       })
   })
