@@ -893,7 +893,7 @@ export default function builtinsDoubleSecondPrototypebTest() {
         const caseName = 'builtinsDoubleSecondPrototypebTest4500';
         console.info(`${caseName}, test start`);
         const a = new Double(NaN);
-        const b = new Douuble(NaN);
+        const b = new Double(NaN);
         expect(Runtime.getHashCodeByValue(a)).assertEqual(Runtime.getHashCodeByValue(b));
         console.info(`${caseName}, test end`);
         Done();

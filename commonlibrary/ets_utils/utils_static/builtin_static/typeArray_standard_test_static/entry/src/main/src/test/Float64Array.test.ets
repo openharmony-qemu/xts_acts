@@ -99,6 +99,7 @@ export default function Float64ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /**
@@ -142,6 +143,7 @@ export default function Float64ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /**
@@ -3452,7 +3454,7 @@ export default function Float64ArrayTest() {
         let bigintValue = BigInt(12345678901234567890n);
         let numberValue = Number(bigintValue);
         let array = Float64Array.from([numberValue]);
-        expect(array[0]).assertEqual(12345678901234567000);
+        expect(String(array[0])).assertEqual('12345678901234567000');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();

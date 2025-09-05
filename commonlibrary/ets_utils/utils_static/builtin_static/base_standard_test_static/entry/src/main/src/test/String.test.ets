@@ -3778,7 +3778,7 @@ export default function StringTest() {
         const str = "aabbcc";
         let str1 = str.replaceAll(new RegExp('b'), ".");
         expect(false).assertFail();
-        catch (err) {
+        } catch (err) {
           if (err instanceof Error) {
             expect(err.message).assertEqual("Global flag expected for regexp");
           }

@@ -559,7 +559,16 @@ export default function Uint8ArrayTest() {
       const TAG = "testUint8ArrayConstructor0026";
       try {
         let array = new Uint8Array(new Uint8Array([21,31]));
-
+        array[3] = 3;
+        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
+      }
     });
 
     /**
@@ -723,7 +732,16 @@ export default function Uint8ArrayTest() {
       const TAG = "testUint8ArrayConstructor0034";
       try {
         let array = new Uint8Array(new Int16Array([21,31]));
-
+        array[3] = 3;
+        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
+      }
     });
 
     /**

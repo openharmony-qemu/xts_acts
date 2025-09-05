@@ -98,6 +98,7 @@ export default function Float32ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /**
@@ -1578,6 +1579,7 @@ export default function Float32ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /**

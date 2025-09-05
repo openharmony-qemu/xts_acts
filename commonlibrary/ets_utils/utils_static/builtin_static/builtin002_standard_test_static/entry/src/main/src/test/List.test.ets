@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import builtinsStringPrototypebTest from "./LongTest.test";
+import builtinsLongPrototypebTest from "./LongTest.test";
 import builtinsLongSecondPrototypebTest from "./LongSecondTest.test";
 import builtinsBytePrototypebTest from "./ByteTest.test";
 import builtinsByteSecondPrototypebTest from "./ByteSecondTest.test";

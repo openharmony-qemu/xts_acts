@@ -591,6 +591,7 @@ export default function Uint32ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /**
@@ -651,7 +652,8 @@ export default function Uint32ArrayTest() {
         } else {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
-        }        
+        }
+      }
     });
 
     /**
@@ -676,6 +678,7 @@ export default function Uint32ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /**
@@ -737,6 +740,7 @@ export default function Uint32ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /**
@@ -761,6 +765,7 @@ export default function Uint32ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /**
@@ -821,7 +826,8 @@ export default function Uint32ArrayTest() {
         } else {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
-        }        
+        }
+      }
     });
 
     /**
@@ -846,6 +852,7 @@ export default function Uint32ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /**
@@ -907,6 +914,7 @@ export default function Uint32ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /**
@@ -931,6 +939,7 @@ export default function Uint32ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /**
@@ -992,6 +1001,7 @@ export default function Uint32ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /**
@@ -1016,6 +1026,7 @@ export default function Uint32ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /** map问题
@@ -1171,7 +1182,16 @@ export default function Uint32ArrayTest() {
       const TAG = "testUint32ArrayConstructor0054";
       try {
         let array = new Uint32Array(new Float32Array(new Array<number>(21,31)));
-        
+        array[3] = 3;
+        expect(false).assertFail();
+      } catch (err) {
+          if (err instanceof RangeError) {
+            expect(true).assertTrue();
+          } else {
+            console.error(`Unexpected error: ${err}`);
+            expect(false).assertFail();
+          }
+        }
     });
 
     /**
@@ -1196,6 +1216,7 @@ export default function Uint32ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /**
@@ -1266,6 +1287,7 @@ export default function Uint32ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /**
@@ -1292,6 +1314,7 @@ export default function Uint32ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /**
@@ -1362,6 +1385,7 @@ export default function Uint32ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /**
@@ -1389,6 +1413,7 @@ export default function Uint32ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /**
@@ -1530,6 +1555,7 @@ export default function Uint32ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /**
@@ -1553,6 +1579,7 @@ export default function Uint32ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /**
@@ -1614,6 +1641,7 @@ export default function Uint32ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /**
@@ -1637,6 +1665,7 @@ export default function Uint32ArrayTest() {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
         }
+      }
     });
 
     /**
