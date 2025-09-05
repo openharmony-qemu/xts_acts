@@ -224,7 +224,7 @@ export default function geolocationTest_GeoErr(){
                     },
                     fenceExtensionAbilityName: "MyFenceExtensionAbility",
                 };
-				
+				await geolocationm.disableLocation();
                 geolocationm.addBeaconFence(fenceRequest).then((id) => {
                     console.info("addBeaconFence0100 success, fence id:" + id);
 					except().assertFail();
