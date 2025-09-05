@@ -476,9 +476,9 @@ export default function ConnectionTest() {
         ExpectFail();
         done()
       }
-    });
-
-   /**
+    }); 
+  
+    /**
      * @tc.number : SUB_Network_Connection_findProxyForUrl_0100
      * @tc.name   : testConnectionFindProxyForUrl0100
      * @tc.desc   : The findProxyForURL interface passes in an unset pacURL address and returns an empty string.

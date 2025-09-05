@@ -19,6 +19,14 @@ import connection from '@ohos.net.connection';
 const PERMISSION_DENIED_CODE = 201
 const PARAMETER_ERROR_CODE = 401
 
+const ExpectFail: () => void = () => {
+  try {
+    expect().assertFail();
+  } catch (err) {
+    console.info(` exportFail failed err: ${JSON.stringify(err)}`);
+  }
+};
+
 const ExpectTrue: (n: boolean) => void = (n: boolean) => {
   try {
     expect(n).assertTrue();
@@ -406,7 +414,7 @@ export default function ConnectionPublicNopTest() {
       }
     })
 
-	    /**
+    /**
      * @tc.number : SUB_Network_Connection_setPacFileUrlNoP_0100
      * @tc.name   : testConnectionSetPacFileUrlNoP0100
      * @tc.desc   : Calling setPacFileURL without SET-PAC_URL permission returns error code 201.
@@ -420,7 +428,7 @@ export default function ConnectionPublicNopTest() {
       try{
         connection.setPacFileUrl('a/b.pac');
         console.info(`${caseName} setPacFileUrl success`);
-        ExpectFalse();
+        ExpectFail();
         done();
       } catch (err) {
         console.info(`${caseName} catch err is ${JSON.stringify(err)} `);
@@ -428,5 +436,9 @@ export default function ConnectionPublicNopTest() {
         done();
       }
     });
-  })
+
+    })
 }
+
+
+
