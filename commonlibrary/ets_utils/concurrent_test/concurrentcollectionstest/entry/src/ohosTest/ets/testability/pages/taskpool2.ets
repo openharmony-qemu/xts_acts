@@ -191,11 +191,17 @@ export async function test_uint16Array_019(uint16Array: collections.Uint16Array,
 }
 
 @Concurrent
-export async function test_uint16Array_020(uint16Array: collections.Uint16Array, name: string, index: number) {
+export async function test_uint16Array_020(arr: collections.Uint16Array, name: string, index: number) {
+  let numberarr:string[]=[];
+  let reversed: collections.Uint16Array = new collections.Uint16Array(5)
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
-    uint16Array.reverse();
+    reversed = arr.reverse();
+    console.info(`任务${index}翻转后：`, reversed);
   })
+  numberarr.push(reversed.toString())
+  return numberarr;
 }
+
 
 @Concurrent
 export async function test_uint16Array_021(uint16Array: collections.Uint16Array, name: string, index: number) {
@@ -458,10 +464,15 @@ export async function test_uint32Array_019(uint32Array: collections.Uint32Array,
 }
 
 @Concurrent
-export async function test_uint32Array_020(uint32Array: collections.Uint32Array, name: string, index: number) {
+export async function test_uint32Array_020(arr: collections.Uint32Array, name: string, index: number) {
+  let numberarr:string[]=[];
+  let reversed: collections.Uint32Array = new collections.Uint32Array(5)
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
-    uint32Array.reverse();
+    reversed = arr.reverse();
+    console.info(`任务${index}翻转后：`, reversed);
   })
+  numberarr.push(reversed.toString())
+  return numberarr;
 }
 
 @Concurrent
@@ -745,11 +756,15 @@ export async function test_uint8ClampedArray_019(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_020(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
-  index: number) {
+export async function test_uint8ClampedArray_020(arr: collections.Uint8ClampedArray, name: string, index: number) {
+  let numberarr:string[]=[];
+  let reversed: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(5)
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
-    uint8ClampedArray.reverse();
+    reversed = arr.reverse();
+    console.info(`任务${index}翻转后：`, reversed);
   })
+  numberarr.push(reversed.toString())
+  return numberarr;
 }
 
 @Concurrent

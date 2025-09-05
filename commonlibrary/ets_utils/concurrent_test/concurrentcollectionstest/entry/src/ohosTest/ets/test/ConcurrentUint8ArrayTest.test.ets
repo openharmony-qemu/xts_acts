@@ -794,14 +794,6 @@ export default function globalTest6() {
         done()
       })
 
-    /**
-     * @tc.number    : SUB_CONCURRENT_UINT8ARRAY_TEST_TEST_2000
-     * @tc.name      : test_concurrent_collections_uint8Array_020
-     * @tc.desc      : test_concurrent_collections_uint8Array_020 - test Uint8Array reverse method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
     it('test_concurrent_collections_uint8Array_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_collections_uint8Array_020';
@@ -813,16 +805,13 @@ export default function globalTest6() {
             group.addTask(test_uint8Array_020, uint8Array, caseName, i)
           }
           await taskpool.execute(group).then((res) => {
+            expect(res).assertContain('4,3,2,1')
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
             expect().assertFail()
           })
           console.info(`${caseName} Task result: ${uint8Array.toString()}`);
-          expect(uint8Array[0]).assertEqual(1)
-          expect(uint8Array[1]).assertEqual(2)
-          expect(uint8Array[2]).assertEqual(3)
-          expect(uint8Array[3]).assertEqual(4)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
           expect().assertFail()

@@ -1178,11 +1178,17 @@ export async function test_uint8Array_019(uint8Array: collections.Uint8Array, na
 }
 
 @Concurrent
-export async function test_uint8Array_020(uint8Array: collections.Uint8Array, name: string, index: number) {
+export async function test_uint8Array_020(arr: collections.Uint8Array, name: string, index: number) {
+  let numberarr:string[]=[];
+  let reversed: collections.Uint8Array = new collections.Uint8Array(5)
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
-    uint8Array.reverse();
+    reversed = arr.reverse();
+    console.info(`任务${index}翻转后：`, reversed);
   })
+  numberarr.push(reversed.toString())
+  return numberarr;
 }
+
 
 @Concurrent
 export async function test_uint8Array_021(uint8Array: collections.Uint8Array, name: string, index: number) {

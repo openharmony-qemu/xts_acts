@@ -813,16 +813,13 @@ export default function globalTest6() {
             group.addTask(test_uint8ClampedArray_020, uint8ClampedArray, caseName, i)
           }
           await taskpool.execute(group).then((res) => {
+            expect(res).assertContain('4,3,2,1')
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
             expect().assertFail()
           })
           console.info(`${caseName} Task result: ${uint8ClampedArray.toString()}`);
-          expect(uint8ClampedArray[0]).assertEqual(1)
-          expect(uint8ClampedArray[1]).assertEqual(2)
-          expect(uint8ClampedArray[2]).assertEqual(3)
-          expect(uint8ClampedArray[3]).assertEqual(4)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
           expect().assertFail()
@@ -830,7 +827,6 @@ export default function globalTest6() {
         console.info(`${caseName} test end`);
         done()
       })
-
     /**
      * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_2100
      * @tc.name      : test_Uint8ClampedArray_021

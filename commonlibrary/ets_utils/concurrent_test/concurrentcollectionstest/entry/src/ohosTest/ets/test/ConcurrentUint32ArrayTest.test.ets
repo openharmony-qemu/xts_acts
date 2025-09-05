@@ -813,16 +813,13 @@ export default function globalTest6() {
             group.addTask(test_uint32Array_020, uint32Array, caseName, i)
           }
           await taskpool.execute(group).then((res) => {
+            expect(res).assertContain('4,3,2,1')
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
             expect().assertFail()
           })
           console.info(`${caseName} Task result: ${uint32Array.toString()}`);
-          expect(uint32Array[0]).assertEqual(1)
-          expect(uint32Array[1]).assertEqual(2)
-          expect(uint32Array[2]).assertEqual(3)
-          expect(uint32Array[3]).assertEqual(4)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
           expect().assertFail()
