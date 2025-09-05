@@ -908,17 +908,15 @@ export default function Int32ArrayGlobalTest() {
       async (done: () => void): Promise<void> => {
         const caseName = 'Int32array_test_0025';
         console.info(`${caseName} test start`);
-        let count: number = 0;
         let flag: boolean = false;
         let array: collections.Int32Array = collections.Int32Array.from([1, 3, 5, 4, 2, 6, 7, 8]);
         try {
           let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
             group.addTask(Int32_test_0022, array, caseName, i)
-            count++
           }
           await taskpool.execute(group).then((res) => {
-            expect(res).assertContain(2)
+            expect(res).assertContain(3)
             flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {

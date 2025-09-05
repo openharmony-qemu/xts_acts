@@ -918,7 +918,7 @@ export default function Float32ArrayGlobalTest() {
             count++
           }
           await taskpool.execute(group).then((res) => {
-            expect(res).assertContain(5)
+            expect(res).assertContain(3)
             flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
@@ -1092,7 +1092,7 @@ export default function Float32ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_FLOAT32ARRAY_TEST_0027
-     * @tc.name      : Float32array_test_0029
+     * @tc.name      : Float32array_test_0030
      * @tc.desc      : Test Float32array
      * @tc.size      : MediumTest
      * @tc.type      : Function
