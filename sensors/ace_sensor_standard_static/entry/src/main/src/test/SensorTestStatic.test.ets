@@ -77,10 +77,10 @@ export default function SensorJsStaticTest() {
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, 'testTag', '---------orientating_SensorJsTest_static_005--------------');
         try {
-          sensor.on('ORIENTATION', callback, {'interval': 100000000});
+          sensor.on('orientationChange', callback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------orientating_SensorJsTest_static_005 off in--------------');
-            sensor.off('ORIENTATION');
+            sensor.off('orientationChange');
             hilog.info(0x0000, 'testTag', '---------orientating_SensorJsTest_static_005 off end--------------');
             done();
           }, 500);
@@ -101,10 +101,10 @@ export default function SensorJsStaticTest() {
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, 'testTag', '---------orientating_SensorJsTest_static_006--------------');
         try {
-          sensor.on('ORIENTATION', onSensorCallback, {'interval': 100000000});
+          sensor.on('orientationChange', onSensorCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------orientating_SensorJsTest_static_006 off in--------------');
-            sensor.off('ORIENTATION');
+            sensor.off('orientationChange');
             hilog.info(0x0000, 'testTag', '---------orientating_SensorJsTest_static_006 off end--------------');
             done();
           }, 500);
@@ -125,7 +125,7 @@ export default function SensorJsStaticTest() {
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, 'testTag', '---------orientatingParamError_SensorJsTest_static_050--------------');
         try {
-          sensor.on('ORIENTATION', onSensorCallback, {'interval': -100000000});
+          sensor.on('orientationChange', onSensorCallback, {'interval': -100000000});
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;
@@ -148,7 +148,6 @@ export default function SensorJsStaticTest() {
         let accMedium: sensor.SensorAccuracy = sensor.SensorAccuracy.ACCURACY_MEDIUM;
         let accHigh: sensor.SensorAccuracy = sensor.SensorAccuracy.ACCURACY_HIGH;
         let orientationResponseParam: sensor.OrientationResponse = {
-          accuracy: accUnreliable,
           timestamp: 100000000,
           beta: 1.0,
           gamma: 2.0,
