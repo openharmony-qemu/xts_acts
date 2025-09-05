@@ -324,12 +324,6 @@ export default function audioCapturerEnhanceTest() {
      * @tc.level     : Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-        let CapturerChangeInfo: ESObject = await audioCap.getCurrentAudioCapturerChangeInfo();
-        console.info(`getCurrentAudioCapturerChangeInfo :SUCCESS, ${getCapturerChangeInfo(CapturerChangeInfo)}`)
-        if(CapturerChangeInfo.deviceDescriptors[0].deviceType != audio.DeviceType.MIC ){
-          console.log('SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_0300 : Audio.PlaybackCapture not by this device.');
-          return;
-        }
       let AudioStreamInfo: AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
