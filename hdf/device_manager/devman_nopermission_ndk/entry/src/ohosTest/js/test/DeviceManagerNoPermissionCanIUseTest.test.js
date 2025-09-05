@@ -74,7 +74,7 @@ export default function NoPermissionCanIUseTest() {
      * @tc.desc       : verify DeviceManagerCanIUse any device
      */
     it('testDeviceManagerNoPerCanIUsek001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
-        console.info(TAG, '----------------------testDeviceManagerCanIUsek001---------------------------');
+        console.info(TAG, '----------------------testDeviceManagerNoPerCanIUsek001---------------------------');
         let flag = canIUse("SystemCapability.Driver.ExternalDevice");
         expect(flag).assertEqual(false);
     })
