@@ -187,7 +187,7 @@ struct RepeatLazyForEachString {
       }
       .cachedCount(1)
       .border({ width: 1 })
-      .layoutWeight(1)
+      .height('50%')
 
       Button('Add Data')
         .id('addButton')
