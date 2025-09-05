@@ -703,7 +703,7 @@ export default function fileIOLstat() {
 
       try {
         fs.lstat(fpath, (err: BusinessError | null, stat: fs.Stat | undefined) => {
-          expect(typeof stat?.mode == 'number').assertTrue();
+          expect(typeof stat?.mode == 'long').assertTrue();
           fs.unlinkSync(fpath);
           done();
         });
@@ -754,7 +754,7 @@ export default function fileIOLstat() {
 
       try {
         fs.lstat(fpath, (err: BusinessError | null, stat: fs.Stat | undefined) => {
-          expect(typeof stat?.uid == 'number').assertTrue();
+          expect(typeof stat?.uid == 'long').assertTrue();
           fs.unlinkSync(fpath);
           done();
         });
@@ -805,7 +805,7 @@ export default function fileIOLstat() {
 
       try {
         fs.lstat(fpath, (err: BusinessError | null, stat: fs.Stat | undefined) => {
-          expect(typeof stat?.gid == 'number').assertTrue();
+          expect(typeof stat?.gid == 'long').assertTrue();
           fs.unlinkSync(fpath);
           done();
         });
@@ -856,7 +856,7 @@ export default function fileIOLstat() {
 
       try {
         fs.lstat(fpath, (err: BusinessError | null, stat: fs.Stat | undefined) => {
-          expect(typeof stat?.size == 'number').assertTrue();
+          expect(typeof stat?.size == 'long').assertTrue();
           fs.unlinkSync(fpath);
           done();
         });
@@ -907,7 +907,7 @@ export default function fileIOLstat() {
 
       try {
         fs.lstat(fpath, (err: BusinessError | null, stat: fs.Stat | undefined) => {
-          expect(typeof stat?.atime == 'number').assertTrue();
+          expect(typeof stat?.atime == 'long').assertTrue();
           fs.unlinkSync(fpath);
           done();
         });
@@ -958,7 +958,7 @@ export default function fileIOLstat() {
 
       try {
         fs.lstat(fpath, (err: BusinessError | null, stat: fs.Stat | undefined) => {
-          expect(typeof stat?.mtime == 'number').assertTrue();
+          expect(typeof stat?.mtime == 'long').assertTrue();
           fs.unlinkSync(fpath);
           done();
         });
@@ -1009,7 +1009,7 @@ export default function fileIOLstat() {
 
       try {
         fs.lstat(fpath, (err: BusinessError | null, stat: fs.Stat | undefined) => {
-          expect(typeof stat?.ctime == 'number').assertTrue();
+          expect(typeof stat?.ctime == 'long').assertTrue();
           fs.unlinkSync(fpath);
           done();
         });

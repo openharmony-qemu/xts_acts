@@ -39,7 +39,7 @@ struct TextPickerPage {
         .enableHapticFeedback(true)
         .onChange((value: string | string[], index: int | int[]) => {
           console.info('TextPicker 多列:onChange ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
-          if (typeof index === 'number') {
+          if (typeof index === 'int') {
             this.selectedIndex = index as int;
           }
         })
@@ -57,7 +57,7 @@ struct TextPickerPage {
         .enableHapticFeedback(false)
         .onChange((value: string | string[], index: int | int[]) => {
           console.info('TextPicker 多列:onChange ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
-          if (typeof index === 'number') {
+          if (typeof index === 'int') {
             this.selectedIndex = index as int;
           }
         })
@@ -75,7 +75,7 @@ struct TextPickerPage {
         .enableHapticFeedback(undefined)
         .onChange((value: string | string[], index: int | int[]) => {
           console.info('TextPicker 多列:onChange ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
-          if (typeof index === 'number') {
+          if (typeof index === 'int') {
             this.selectedIndex = index as int;
           }
         })
@@ -92,7 +92,7 @@ struct TextPickerPage {
         .id('textPicker4')
         .onChange((value: string | string[], index: int | int[]) => {
           console.info('TextPicker 多列:onChange ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
-          if (typeof index === 'number') {
+          if (typeof index === 'int') {
             this.selectedIndex = index as int;
           }
         })

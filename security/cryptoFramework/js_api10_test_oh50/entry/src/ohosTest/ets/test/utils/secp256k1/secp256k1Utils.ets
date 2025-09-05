@@ -278,7 +278,7 @@ function showBigIntInfo(bnName: string, bnValue: bigint | string | number) {
     console.error('type is string');
     return;
   }
-  if (typeof bnValue === 'number') {
+  if (['bigint', 'number'].includes(typeof bnValue)) {
     console.error('type is number');
     return;
   }

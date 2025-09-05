@@ -1422,7 +1422,7 @@ function compareRsaPubKeyBySpec(rsaKeySpec: cryptoFramework.RSAPubKeySpec, n: bi
     console.error('type is string');
     return false;
   }
-  if (typeof n === 'number' || typeof e === 'number') {
+  if (['bigint', 'int'].includes(typeof n) || ['bigint', 'int'].includes(typeof e)) {
     console.error('type is number');
     return false;
   }

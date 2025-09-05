@@ -638,7 +638,7 @@ export default function ConnectionPublicTest() {
             blocked: true
           }
           hilog.info(domain, tag, '%{public}s', caseName +':getDefaultNet: data-'+JSON.stringify(data));
-          ExpectTrue(typeof data.netId == 'number');
+          ExpectTrue(typeof data.netId == 'int');
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         }).catch((error: Error) => {
@@ -669,7 +669,7 @@ export default function ConnectionPublicTest() {
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
         let netHandle: connection.NetHandle = connection.getDefaultNetSync();
-        ExpectTrue(typeof netHandle.netId == 'number');
+        ExpectTrue(typeof netHandle.netId == 'int');
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       } catch (err:BusinessError) {
@@ -2614,7 +2614,7 @@ export default function ConnectionPublicTest() {
               done();
             } else {
               hilog.info(domain, tag, '%{public}s', caseName +': getConnectionProperties: data->'+JSON.stringify(data));
-              ExpectTrue(typeof data?.mtu == 'number');
+              ExpectTrue(typeof data?.mtu == 'int');
               hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             }
@@ -2849,7 +2849,7 @@ export default function ConnectionPublicTest() {
         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           connection.getConnectionProperties(netHandle).then((data: connection.ConnectionProperties) => {
             hilog.info(domain, tag, '%{public}s', caseName +': getConnectionProperties: success data ->'+JSON.stringify(data));
-            ExpectTrue(typeof data.mtu == 'number');
+            ExpectTrue(typeof data.mtu == 'int');
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           }).catch((error: Error) => {
@@ -3219,7 +3219,7 @@ export default function ConnectionPublicTest() {
               done();
             } else {
               hilog.info(domain, tag, '%{public}s', caseName +': getConnectionProperties: data->'+JSON.stringify(data));
-              ExpectTrue(typeof data?.routes[0].destination.prefixLength == 'number');
+              ExpectTrue(typeof data?.routes[0].destination.prefixLength == 'int');
               hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             }
@@ -3335,7 +3335,7 @@ export default function ConnectionPublicTest() {
         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           connection.getConnectionProperties(netHandle).then((data: connection.ConnectionProperties) => {
             hilog.info(domain, tag, '%{public}s', caseName +': getConnectionProperties: success data ->'+JSON.stringify(data));
-            ExpectTrue(typeof data.routes[0].destination.prefixLength == 'number');
+            ExpectTrue(typeof data.routes[0].destination.prefixLength == 'int');
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           }).catch((error: Error) => {
@@ -3465,7 +3465,7 @@ export default function ConnectionPublicTest() {
               hilog.info(domain, tag, '%{public}s', caseName +': getConnectionProperties: data->'+JSON.stringify(data));
               let portTypeof: string = typeof data?.routes[0]?.destination?.address?.port;
               hilog.info(domain, tag, '%{public}s', caseName +': portTypeof ->'+ portTypeof);
-              ExpectTrue(portTypeof == 'number' || portTypeof == 'undefined');
+              ExpectTrue(portTypeof == 'int' || portTypeof == 'undefined');
               hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             }
@@ -3582,7 +3582,7 @@ export default function ConnectionPublicTest() {
             hilog.info(domain, tag, '%{public}s', caseName +': getConnectionProperties: success data ->'+JSON.stringify(data));
             let portTypeof: string = typeof data?.routes[0]?.destination?.address?.port;
             hilog.info(domain, tag, '%{public}s', caseName +': portTypeof ->'+ portTypeof);
-            ExpectTrue(portTypeof == 'number' || portTypeof == 'undefined');
+            ExpectTrue(portTypeof == 'int' || portTypeof == 'undefined');
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           }).catch((error: Error) => {

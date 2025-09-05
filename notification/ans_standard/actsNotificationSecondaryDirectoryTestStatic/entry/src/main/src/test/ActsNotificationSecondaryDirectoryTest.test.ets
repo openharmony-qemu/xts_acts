@@ -675,7 +675,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         }
         console.info(`${TAG} BundleOption bundle:uid = ${bundleOpt.bundle},${bundleOpt.uid}`);
         expect(typeof bundleOpt.bundle == 'string').assertTrue()
-        expect(typeof bundleOpt.uid == 'number').assertTrue()
+        expect(typeof bundleOpt.uid == 'int').assertTrue()
         expect(bundleOpt.bundle).assertEqual(bundle_name)
         expect(bundleOpt.uid).assertEqual(101001)
         done()

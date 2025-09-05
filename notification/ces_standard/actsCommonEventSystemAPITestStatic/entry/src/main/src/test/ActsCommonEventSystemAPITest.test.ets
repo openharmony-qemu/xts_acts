@@ -536,7 +536,7 @@ export default function ActsCommonEventSystemAPITest() {
         }
         console.info(`${Tag} BundleOption bundle:uid = ${BundleOption.bundle},${BundleOption.uid}`);
         expect(typeof BundleOption.bundle == 'string').assertTrue()
-        expect(typeof BundleOption.uid == 'number').assertTrue()
+        expect(typeof BundleOption.uid == 'int').assertTrue()
         expect(BundleOption.bundle).assertEqual(bundleName)
         expect(BundleOption.uid).assertEqual(20020189)
         console.info(`${Tag} Sub_Notification_Ces_Publish_CommonEvent_7900_287 END`);
