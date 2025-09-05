@@ -19,6 +19,7 @@ group("videoHosting") {
       "video_hosting_one:ActsWebVideoHostingOneTest",
       "video_hosting_three:ActsWebVideoHostingThreeTest",
       "video_hosting_two:ActsWebVideoHostingTwoTest",
+      "video_hosting_two_static:ActsWebVideoHostingTwoStaticTest",
     ]
   }
 }
