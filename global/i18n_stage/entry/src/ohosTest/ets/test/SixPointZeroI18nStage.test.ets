@@ -3908,7 +3908,7 @@ export default function SixPointZeroI18nStageTest() {
       let date = new Date(2025, 6, 17, 3, 24, 10, 123);
       let date2 = new Date(2026, 1, 1, 60, 24, 10, 123);
       let dafmt: Intl.DateTimeFormat =
-        new Intl.DateTimeFormat("zh_CN", { calendar: "chinese", fractionalSecondDigits: 3 });
+        new Intl.DateTimeFormat("zh-CN", { calendar: "chinese", fractionalSecondDigits: 3 });
       let daformat = dafmt.formatRange(date, date2);
       expect(JSON.stringify(daformat)).assertEqual('"2025年六月23 123–2025年腊月16 123"')
     })
