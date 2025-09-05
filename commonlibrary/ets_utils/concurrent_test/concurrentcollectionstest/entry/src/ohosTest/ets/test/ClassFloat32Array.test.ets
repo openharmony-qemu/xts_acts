@@ -162,7 +162,7 @@ export default function Float32ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_FLOAT32ARRAY_TEST_0004
-     * @tc.name      : Float32array_test_0001
+     * @tc.name      : Float32array_test_0004S
      * @tc.desc      : Test Float32array
      * @tc.size      : SmallTest
      * @tc.type      : Function

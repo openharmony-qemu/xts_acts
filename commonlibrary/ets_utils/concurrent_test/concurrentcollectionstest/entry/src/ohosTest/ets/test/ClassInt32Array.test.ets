@@ -162,7 +162,7 @@ export default function Int32ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT32ARRAY_TEST_0004
-     * @tc.name      : Int32array_test_0001
+     * @tc.name      : Int32array_test_0004
      * @tc.desc      : Test Int32array
      * @tc.size      : SmallTest
      * @tc.type      : Function
