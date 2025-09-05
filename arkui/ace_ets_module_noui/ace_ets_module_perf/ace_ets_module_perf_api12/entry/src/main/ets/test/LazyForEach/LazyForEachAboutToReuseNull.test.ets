@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -62,7 +62,7 @@ export default function LazyForEachAboutToReuseNull() {
      * @tc.number LazyForEachAboutToReuseNull_003
      * @tc.name LazyForEachAboutToReuseNull_003
      * @tc.desc Test LazyForEachAboutToReuseNull
-     * @tc.level: Level 2
+     * @tc.level: Level 1
      */
     it('LazyForEachAboutToReuseNull_003', Level.LEVEL1, async (done: Function) => {
       console.info('[LazyForEachAboutToReuseNull_003] START');      

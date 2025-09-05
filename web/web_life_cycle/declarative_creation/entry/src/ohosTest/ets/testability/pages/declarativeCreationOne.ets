@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
-import { Driver, ON } from '@ohos.UiTest';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @CustomDialog
 struct NewWebViewComp {
@@ -25,11 +25,11 @@ struct NewWebViewComp {
 
   build() {
     Column() {
-      Web({ src: "", controller: this.webViewController1 })
+      Web({ src: '', controller: this.webViewController1 })
         .javaScriptAccess(true)
         .multiWindowAccess(false)
         .onWindowExit(() => {
-          console.info("NewWebViewComp onWindowExit")
+          console.info('NewWebViewComp onWindowExit')
           if (this.controller) {
             this.controller.close()
           }
@@ -41,47 +41,40 @@ struct NewWebViewComp {
 @Entry
 @Component
 struct WebViewEnumAndSetWebController {
-  @State str: string = ""
+  @State str: string = ''
   @State javaScriptAccess: boolean = true
   @State mixedState: boolean = false
   @State zoomCounts: number = 200
   @State fontSize: number = 28
-  @State checkEleResult: string = "";
-  @State overviewModeAccess: boolean = true
-  @State overviewScale: string = ""
-  @State noOpenWindow: null = null
-  @State outputStr: string = ''
   @State CacheMode: CacheMode = CacheMode.None
-  @State cacheError: boolean = false
-  @State errorCode: string = '0';
   @State block: Boolean = false
-  @State FileSelectorMode: Number = 0
-  @State MediaType: Number = 0
-  @State userAgentPC:string = "";
-  @State precomposedResult:boolean =  false;
-  handler: FullScreenExitHandler | null = null
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+  @State isOpenNewWindow: number = -1;
+
   dialogController: CustomDialogController | null = null
   popController: webView.WebviewController | null = null;
   controller: webView.WebviewController = new webView.WebviewController();
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
-      priority: events_emitter.EventPriority.LOW
+      eventId: 138400,
+      priority: events_emitter.EventPriority.LOW,
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(138400)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("web page valueChangeCallBack");
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -89,56 +82,29 @@ struct WebViewEnumAndSetWebController {
   build() {
     Column() {
       Row() {
-        Button("web clicks").key('buttonEnumAndSetWebController').onClick(async () => {
-          console.info("key==>" + this.str)
+        Button('web clicks').key('buttonEnumAndSetWebController').onClick(async () => {
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
+          console.info('key==>' + this.str)
           switch (this.str) {
-            case "emitSetWebController": {
-              this.controller.loadUrl($rawfile("openNewWindow.html"));
-              await Utils.sleep(2000);
-              this.controller.runJavaScript('openWindowAll()', (error, result) => {
-                console.log('setWebController >>>: ' + result + error);
-                setTimeout(() => {
-                  this.controller.loadUrl("resource://rawfile/indexTwo.html")
-                }, 2000)
-              })
+            case 'emitSetWebController': {
+              this.isPageEnd = -1;
+              this.controller.loadUrl($rawfile('openNewWindow.html'));
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              this.controller.runJavaScript('openWindowAll()');
+              await waitForExist(() => this.isOpenNewWindow, this.str, 0);
+              Utils.emitEvent(true, 138410)
               break;
             }
           }
         })
       }
 
-      Row() {
-        Image("media/icon.png")
-          .width(110)
-          .height(110)
-          .border({ width: 1 })
-          .overlay('jpg', { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
-          .key("images")
-      }
-
-      Web({ src: $rawfile("fullScreenEnter.html"), controller: this.controller })
-        .key("WebViewEnumAndSetWebControllerWebView")
+      Web({ src: $rawfile('fullScreenEnter.html'), controller: this.controller })
+        .key('WebViewEnumAndSetWebControllerWebView')
         .blockNetwork(Boolean(this.block))
         .cacheMode(this.CacheMode)
-        .onShowFileSelector((event) => {
-          if (event) {
-            let fileSelectorObj: FileSelectorParam = event.fileSelector
-            this.FileSelectorMode = fileSelectorObj.getMode()
-          }
-          return true
-        })
-        .onScreenCaptureRequest((event) => {
-          console.log("1361 case", JSON.stringify(event))
-          return true
-        })
-        .onPermissionRequest((event) => {
-          if (event) {
-            event.request.deny()
-            console.log("request : >>>>>", event.request.getOrigin())
-            console.log("request : >>>>>", event.request.getAccessibleResource())
-            console.log("request : >>>>>", event.request.grant(["VIDEO_CAPTURE", "AUDIO_CAPTURE"]))
-          }
-        })
         .multiWindowAccess(true)
         .allowWindowOpenMethod(true)
         .onWindowNew((event) => {
@@ -147,48 +113,21 @@ struct WebViewEnumAndSetWebController {
           }
           let popController: webView.WebviewController = new webView.WebviewController()
           this.dialogController = new CustomDialogController({
-            builder: NewWebViewComp({ webViewController1: popController })
+            builder: NewWebViewComp({ webViewController1: popController }),
           })
           this.dialogController.open()
           event.handler.setWebController(popController)
-          setTimeout(() => {
-            if (popController) {
-              Utils.emitEvent(true, 1311)
-            }
-          }, 3000)
+          this.isOpenNewWindow = 0;
         })
         .onWindowExit(() => {
-          console.info("closeWindow")
-        })
-        .onDataResubmitted((event) => {
-          console.log('onDataResubmitted')
-          event.handler.resend();
-        })
-        .onFullScreenEnter((event) => {
-          this.handler = event.handler
-        })
-        .onFullScreenExit(() => {
-          if (this.handler) {
-            this.handler.exitFullScreen()
-          }
+          console.info('closeWindow')
         })
         .defaultFontSize(this.fontSize)
-        .onConsole((event) => {
-          if (event) {
-            console.log('onConsole getMessage:' + event.message?.getMessage())
-            console.log('onConsole getSourceId:' + event.message?.getSourceId())
-            console.log('onConsole getLineNumber:' + event.message?.getLineNumber())
-            console.log('onConsole getMessageLevel:' + event.message?.getMessageLevel())
-          }
-          return false
-        })
-        .onContextMenuShow((event) => {
-          if (event) {
-            this.MediaType = event.param.getMediaType()
-          }
-          return true
-        })
         .javaScriptAccess(this.javaScriptAccess)
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
     }
   }
 }

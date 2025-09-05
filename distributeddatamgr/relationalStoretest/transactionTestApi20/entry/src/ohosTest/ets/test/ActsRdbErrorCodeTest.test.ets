@@ -19,6 +19,7 @@ import testNapi from 'libentry.so'
 const RDB_ERR = -1;
 const RDB_E_INVALID_COLUMN_TYPE = 14800009;
 const RDB_E_NO_TRANSACTION_IN_SESSION = 14800016;
+const RDB_E_INVALID_OBJECT_TYPE = 14800020;
 
 export default function ActsRdbErrorCodeTest() {
   describe('ActsRdbErrorCodeTest', () => {
@@ -271,6 +272,29 @@ export default function ActsRdbErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_Rdb_ErrCode_RDB_E_STEP_RESULT_IS_AFTER_LAST_1100 catch err: " + err);
+          expect(err).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  : SUB_OH_Rdb_ErrCode_RDB_E_INVALID_OBJECT_TYPE_1200
+     * @tc.name    : SUB_OH_Rdb_ErrCode_RDB_E_INVALID_OBJECT_TYPE_1200
+     * @tc.desc    : In the fault scenario where the object type in the test error code information is illegal.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_OH_Rdb_ErrCode_RDB_E_INVALID_OBJECT_TYPE_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_OH_Rdb_ErrCode_RDB_E_INVALID_OBJECT_TYPE_1200 start====");
+          let result: number = testNapi.testInvalidObjectType();
+          console.info("====>SUB_OH_Rdb_ErrCode_RDB_E_INVALID_OBJECT_TYPE_1200 result====", result);
+          expect(result).assertEqual(RDB_E_INVALID_OBJECT_TYPE);
+          done();
+        } catch (err) {
+          console.error("====>SUB_OH_Rdb_ErrCode_RDB_E_INVALID_OBJECT_TYPE_1200 catch err: " + err);
           expect(err).assertFail();
           done();
         }

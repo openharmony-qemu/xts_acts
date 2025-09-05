@@ -88,5 +88,9 @@ napi_value TestOHRdbAttachError(napi_env env, napi_callback_info info);
 napi_value TestOHRdbDetachOk(napi_env env, napi_callback_info info);
 napi_value TestOHRdbDetachError(napi_env env, napi_callback_info info);
 napi_value TestOHRdbSubscribeDetails(napi_env env, napi_callback_info info);
+napi_value TestSetTokenizerNotSupported(napi_env env, napi_callback_info info);
+napi_value TestRollBackByTrxIdSuccess(napi_env env, napi_callback_info info);
+napi_value TestCommitByTrxIdSuccess(napi_env env, napi_callback_info info);
+napi_value TestSubscribeSuccess(napi_env env, napi_callback_info info);
 
 #endif //TRANSACTIONTESTAPI20_RELATIONALSTORETEST_H

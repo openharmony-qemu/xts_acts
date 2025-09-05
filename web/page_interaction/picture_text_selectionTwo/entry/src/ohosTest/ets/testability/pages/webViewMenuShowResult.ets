@@ -17,12 +17,12 @@
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
-import { Driver, MouseButton, UiWindow, ON, On  } from '@ohos.UiTest';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import { BusinessError } from '@ohos.base';
+import { Driver, MouseButton, UiWindow, ON, On } from '@kit.TestKit';
 
-
-
+const EVENT_ID_SET_SUITE_KEY = 183601;
+let driver = Driver.create()
 @Entry
 @Component
 struct WebViewMenuShowResult {
@@ -32,18 +32,21 @@ struct WebViewMenuShowResult {
   @State userAgentPC:string = "";
   controller: webView.WebviewController = new webView.WebviewController();
 
-  
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+  @State isPermissionCBEnd: number = -1;
+  @State isOnContextMenuShow: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -52,6 +55,7 @@ struct WebViewMenuShowResult {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -61,33 +65,31 @@ struct WebViewMenuShowResult {
       Row() {
         Button("WebViewMenuShowResultTestButton").key('WebViewMenuShowResultTestButton').onClick(async () => {
           console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
             case "emitCloseContextMenu": {
               this.menuShowState = 'CloseContextMenu'
               let webRect = Utils.getComponentRect('WebViewMenuShowResultTestWebView');
-              let driver = Driver.create();
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
               await driver.mouseClick({ x: X, y: Y - 80 }, MouseButton.MOUSE_BUTTON_RIGHT);
-              setTimeout(async () => {
-                await driver.mouseClick({ x: X, y: Y - 80 }, MouseButton.MOUSE_BUTTON_RIGHT);
-              }, 5000)
+              await Utils.waitForReleaseDriver(this.str,driver)
+              await driver.mouseClick({ x: X, y: Y - 80 }, MouseButton.MOUSE_BUTTON_RIGHT);
               break;
             }
             case "emitCopyGetEditStateFlags001": {
-              let driver: Driver = Driver.create();              
               this.menuShowState = 'SelectAll'
               this.userAgentPC = this.controller.getUserAgent();
+              this.isPageEnd = -1;
               if ((this.userAgentPC).includes("PC")) {
                 this.controller.loadUrl("resource://rawfile/MenuTestPastePC.html")
-                await Utils.sleep(2000)
                 let window: UiWindow = await driver.findWindow({actived: true});
                 await window.maximize()
-                await Utils.sleep(2000)
               } else {
                 this.controller.loadUrl("resource://rawfile/MenuTestPaste.html")
-                await Utils.sleep(4000);
               }
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               let webRect = Utils.getComponentRect('WebViewMenuShowResultTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
@@ -99,7 +101,7 @@ struct WebViewMenuShowResult {
                 let point = await buttonOne.getBoundsCenter();
                 await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
               }
-              await Utils.sleep(2000);
+              await Utils.waitForReleaseDriver(this.str,driver)
               this.menuShowState = 'Copy'
               if ((this.userAgentPC).includes("PC")) {
                 //点击第二个input框copy聚焦
@@ -109,36 +111,36 @@ struct WebViewMenuShowResult {
                 let point = await buttonOne.getBoundsCenter();
                 await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
               }
-              await Utils.sleep(2000);
+              await Utils.waitForReleaseDriver(this.str,driver)
               this.menuShowState = 'copyPastetest'
-              await Utils.sleep(2000);
               if ((this.userAgentPC).includes("PC")) {
                 await driver.mouseClick({ x: webRect.left + 120, y: Y }, MouseButton.MOUSE_BUTTON_RIGHT)
               } else {
                 //点击第一个input框粘贴
                 await driver.mouseClick({ x: webRect.left + 160, y: webRect.top + 40 }, MouseButton.MOUSE_BUTTON_RIGHT)
               }
-              await Utils.sleep(2000);
+              await Utils.waitForReleaseDriver(this.str,driver)
               break;
             }
             case "emitCopy001": {
               this.userAgentPC = this.controller.getUserAgent();
               if ((this.userAgentPC).includes("Wearable")) {
-                Utils.emitEvent(true, 3502)
+                Utils.emitEvent(true, 176630)
                 break;
               }
-              let driver: Driver = Driver.create();
               webView.WebviewController.setWebDebuggingAccess(true);
               let atManager = abilityAccessCtrl.createAtManager();
+              this.isPermissionCBEnd = -1
               atManager.requestPermissionsFromUser(getContext(this), ['ohos.permission.READ_PASTEBOARD'])
                 .then((data) => {
                   console.info('data:' + JSON.stringify(data));
                   console.info('data permissions:' + data.permissions);
                   console.info('data authResults:' + data.authResults);
+                  this.isPermissionCBEnd = 1;
                 }).catch((error: BusinessError) => {
                 console.error(`Failed to request permissions from user. Code is ${error.code}, message is ${error.message}`);
               })
-              await Utils.sleep(4000)
+              await Utils.waitForExist(()=>this.isPermissionCBEnd, this.str+' isPermissionCBEnd', 1, 500);
               let buttontwo = await driver.findComponent(ON.text('仅本次允许'));
               let buttonThree = await driver.findComponent(ON.text('始终允许'));
               if (buttontwo) {
@@ -146,15 +148,15 @@ struct WebViewMenuShowResult {
               } else if(buttonThree) {
                 await buttonThree.click();
               }
-              await Utils.sleep(4000)
+              await Utils.waitForReleaseDriver(this.str,driver)
               this.menuShowState = 'SelectAll'
+              this.isPageEnd = -1;
               if ((this.userAgentPC).includes("PC")) {
                 this.controller.loadUrl("resource://rawfile/MenuTestPastePC.html")
-                await Utils.sleep(2000)
               } else {
                 this.controller.loadUrl("resource://rawfile/MenuTestPaste.html")
               }
-              await Utils.sleep(2000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               let webRect = Utils.getComponentRect('WebViewMenuShowResultTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
@@ -162,90 +164,95 @@ struct WebViewMenuShowResult {
                 await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_RIGHT);
               } else {
                 //点击第二个input框copy聚焦
-                let buttonOne = await driver.findComponent(ON.text('1301234'));
-                let point = await buttonOne.getBoundsCenter();
-                await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+                await driver.mouseClick({ x: webRect.left + 120, y: webRect.top + 60 }, MouseButton.MOUSE_BUTTON_RIGHT);
               }
-              await Utils.sleep(2000);
+              await Utils.waitForReleaseDriver(this.str,driver)
               this.menuShowState = 'Copy'
-              if ((this.userAgentPC).includes("PC")) {
-                await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_RIGHT);
-              } else {
-                //点击第二个input框copy聚焦
-                let buttonOne = await driver.findComponent(ON.text('1301234'));
-                let point = await buttonOne.getBoundsCenter();
-                await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
-              }
-              await Utils.sleep(2000);
+              this.isOnContextMenuShow = -1
+              await driver.mouseClick({ x: webRect.left + 120, y: webRect.top + 60 }, MouseButton.MOUSE_BUTTON_RIGHT);
+              await Utils.waitForReleaseDriver(this.str,driver)
+              await Utils.waitForExist(()=>this.isOnContextMenuShow, this.str+' isOnContextMenuShow', 1, 1000);
               this.menuShowState = 'copyPaste'
-              await Utils.sleep(2000);
               if ((this.userAgentPC).includes("PC")) {
                 await driver.mouseClick({ x: webRect.left + 120, y: Y }, MouseButton.MOUSE_BUTTON_RIGHT)
               } else {
                 //点击第一个input框粘贴
                 await driver.mouseClick({ x: webRect.left + 120, y: webRect.top + 40 }, MouseButton.MOUSE_BUTTON_RIGHT)
               }
-              await Utils.sleep(2000);
+              await Utils.waitForReleaseDriver(this.str,driver)
               this.controller.runJavaScript('getInputValue()', (error, result) => {
-                  console.log("getInputValue return data >>> ", result, error)
-                  if (result == '"1301234"') {
-                    Utils.emitEvent(true, 3502)
-                  } else {
-                    Utils.emitEvent(false, 3502)
-                  }
-                })
+                console.log("getInputValue return data >>> ", result, error)
+                if (result == '"1301234"') {
+                  Utils.emitEvent(true, 176630)
+                } else {
+                  Utils.emitEvent(false, 176630)
+                }
+              })
               break;
             }
             case "emitCut001": {
+              webView.WebviewController.setWebDebuggingAccess(true);
+              let atManager = abilityAccessCtrl.createAtManager();
+              this.isPermissionCBEnd = -1
+              atManager.requestPermissionsFromUser(getContext(this), ['ohos.permission.READ_PASTEBOARD'])
+                .then((data) => {
+                  console.info('data:' + JSON.stringify(data));
+                  console.info('data permissions:' + data.permissions);
+                  console.info('data authResults:' + data.authResults);
+                  this.isPermissionCBEnd = 1;
+                }).catch((error: BusinessError) => {
+                console.error(`Failed to request permissions from user. Code is ${error.code}, message is ${error.message}`);
+              })
+              await Utils.waitForExist(()=>this.isPermissionCBEnd, this.str+' isPermissionCBEnd', 1, 500);
+              let buttontwo = await driver.findComponent(ON.text('仅本次允许'));
+              let buttonThree = await driver.findComponent(ON.text('始终允许'));
+              if (buttontwo) {
+                await buttontwo.click();
+              } else if(buttonThree) {
+                await buttonThree.click();
+              }
+              await Utils.waitForReleaseDriver(this.str,driver)
               this.menuShowState = 'SelectAll'
               this.userAgentPC = this.controller.getUserAgent();
+              this.isPageEnd = -1;
               if ((this.userAgentPC).includes("PC")) {
                 this.controller.loadUrl("resource://rawfile/MenuTestPastePC.html")
               } else {
                 this.controller.loadUrl("resource://rawfile/MenuTestPaste.html")
               }
-              await Utils.sleep(2000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               let webRect = Utils.getComponentRect('WebViewMenuShowResultTestWebView');
-              let driver = Driver.create();
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
               if ((this.userAgentPC).includes("PC")) {
                 await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_RIGHT);
               } else {
-                let buttonOne = await driver.findComponent(ON.text('1301234'));
-                let point = await buttonOne.getBoundsCenter();
-                await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+                await driver.mouseClick({ x: webRect.left + 120, y: webRect.top + 60 }, MouseButton.MOUSE_BUTTON_RIGHT);
               }
-              await Utils.sleep(2000);
+              await Utils.waitForReleaseDriver(this.str,driver)
               this.menuShowState = 'Cut'
-              if ((this.userAgentPC).includes("PC")) {
-                await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_RIGHT);
-              } else {
-                //点击第二个input框copy聚焦
-                let buttonOne = await driver.findComponent(ON.text('1301234'));
-                let point = await buttonOne.getBoundsCenter();
-                await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
-              }
-              await Utils.sleep(2000);
+              this.isOnContextMenuShow = -1
+              await driver.mouseClick({ x: webRect.left + 120, y: webRect.top + 60 }, MouseButton.MOUSE_BUTTON_RIGHT);
+              await Utils.waitForExist(()=>this.isOnContextMenuShow, this.str+' isOnContextMenuShow', 1, 1000);
+              await Utils.waitForReleaseDriver(this.str,driver)
               this.menuShowState = 'cutPaste'
-              await Utils.sleep(2000);
               if ((this.userAgentPC).includes("PC")) {
                 await driver.mouseClick({ x: webRect.left + 120, y: Y }, MouseButton.MOUSE_BUTTON_RIGHT)
               } else {
                 await driver.mouseClick({ x: webRect.left + 120, y: webRect.top + 40 }, MouseButton.MOUSE_BUTTON_RIGHT)
               }
-              await Utils.sleep(2000);
+              await Utils.waitForReleaseDriver(this.str,driver)
               this.controller.runJavaScript('getInputValue()', (error, result) => {
-                  console.log("getInputValue return data >>> ", result, error)
-                  if (result == '"1301234"') {
-                    Utils.emitEvent(true, 3504)
-                  } else {
-                    Utils.emitEvent(false, 3504)
-                  }
-                })
+                console.log("getInputValue return data >>> ", result, error)
+                if (result == '"1301234"') {
+                  Utils.emitEvent(true, 176640)
+                } else {
+                  Utils.emitEvent(false, 176640)
+                }
+              })
               let window: UiWindow = await driver.findWindow({actived: true});
               await window.resume();
-              await Utils.sleep(2000);
+              await Utils.waitForReleaseDriver(this.str,driver)
               break;
             }
 
@@ -257,10 +264,11 @@ struct WebViewMenuShowResult {
         .key("WebViewMenuShowResultTestWebView")
         .onContextMenuShow((event) => {
           if (event) {
+            console.log("==>onContextMenuShow callback getEditStateFlags:", event.param.getEditStateFlags())
             switch (this.menuShowState) {
               case 'CloseContextMenu': {
                 if (this.count == 1) {
-                  Utils.emitEvent(true, 3501)
+                  Utils.emitEvent(true, 176610)
                   this.count = 0
                 }
                 this.count++
@@ -275,6 +283,7 @@ struct WebViewMenuShowResult {
                 break
               }
               case 'copyPaste': {
+                console.log('==>case copyPaste:'+event.result)
                 event.result.paste()
                 break
               }
@@ -284,7 +293,7 @@ struct WebViewMenuShowResult {
               }
               case 'copyPastetest': {
                 console.log('getEditStateFlags:'+event.param.getEditStateFlags())
-                Utils.emitEvent(event.param.getEditStateFlags(), 20241018);
+                Utils.emitEvent(event.param.getEditStateFlags(), 176620);
                 break
               }
               case 'cutPaste': {
@@ -292,9 +301,14 @@ struct WebViewMenuShowResult {
                 break
               }
             }
+            this.isOnContextMenuShow = 1
             event.result.closeContextMenu()
           }
           return true
+        })
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
         })
     }
   }

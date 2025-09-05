@@ -100,6 +100,27 @@ let config: vpnExtension.VpnConfig = {
   blockedApplications: ["com.example.vpn_xts"]
 }
 
+let vpnConfig: vpnExtension.VpnConfig = {
+  vpnId: '123456',
+  addresses: [{
+    address: {
+      address: '10.0.0.5',
+      family: 1
+    },
+    prefixLength: 24
+  }],
+  routes: [],
+  dnsAddresses: ["114.114.114.114"],
+  searchDomains: [],
+  mtu: 1400,
+  isIPv4Accepted: true,
+  isIPv6Accepted: false,
+  isInternal: true,
+  isBlocking: false,
+  trustedApplications: [],
+  blockedApplications: ["com.example.vpn_xts"]
+}
+
 export class vpnExtAbility extends VpnExtensionAbility {
   onCreate(want: Want): void {
     let vpnConnection: vpnExtension.VpnConnection = vpnExtension.createVpnConnection(context2);
@@ -309,6 +330,34 @@ export default function NetworkManagerVpnTest() {
       try {
         let vpnInstance = vpnExtension.createVpnConnection(context2);
         vpnInstance.create(null).then(() => {
+          console.log(`${caseName} create success`);
+          expect().assertTrue();
+          done();
+        }).catch((err:BusinessError) => {
+          console.log(`${caseName} create fail ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        })
+      }
+      catch (error) {
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+        /**
+     * @tc.number: SUB_NetworkManager_VPN_create_Promise_0300
+     * @tc.name: Test create() interface
+     * @tc.desc: Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it('SUB_NetworkManager_VPN_create_Promise_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'SUB_NetworkManager_VPN_create_Promise_0300';
+      try {
+        let vpnInstance = vpnExtension.createVpnConnection(context2);
+        vpnInstance.create(vpnConfig).then(() => {
           console.log(`${caseName} create success`);
           expect().assertTrue();
           done();

@@ -13,18 +13,21 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, TestType, Size, Level } from '@ohos/hypium';
-import { stringToUint8Array, checkSoftware } from './utils/param/publicFunc';
+import { beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { checkSoftware } from './utils/param/publicFunc';
 import huks from '@ohos.security.huks';
-import Data from './utils/data.json';
-import { HuksCipherAES, HuksCipherRSA, HuksCipherSM4 } from './utils/param/cipher/publicCipherParam'
-import { HuksHmac } from './utils/param/hmac/publicHmacParam'
-import { HuksSignVerifyECC, HuksSignVerifyED25519, HuksSignVerifyRSA, HuksSignVerifySM2, HuksSignVerifyDSA } from './utils/param/signverify/publicSignverifyParam'
-import { HuksKeyAlgX25519, HuksAgreeECDH } from './utils/param/agree/publicAgreeParam'
+import { HuksCipherAES, HuksCipherRSA, HuksCipherSM4 } from './utils/param/cipher/publicCipherParam';
+import { HuksHmac } from './utils/param/hmac/publicHmacParam';
+import {
+    HuksSignVerifyDSA,
+    HuksSignVerifyECC,
+    HuksSignVerifyED25519,
+    HuksSignVerifyRSA,
+    HuksSignVerifySM2
+} from './utils/param/signVerify/publicSignVerifyParam';
+import { HuksAgreeECDH, HuksKeyAlgX25519 } from './utils/param/agree/publicAgreeParam';
+import { logger } from './utils/common/logger';
 
-let IV = '0000000000000000';
-let srcData63 = Data.Data63b;
-let srcData63Kb = stringToUint8Array(srcData63);
 let useSoftware = true;
 
 let aes128Key = new Uint8Array([
@@ -400,11 +403,11 @@ async function publicGenerateKeyFunc(keyAlias, HuksOptions) {
     await huks
         .generateKey(keyAlias, HuksOptions)
         .then((data) => {
-            console.error(`test generateKey data: ${JSON.stringify(data)}`);
+            logger.error(`test generateKey data: ${JSON.stringify(data)}`);
             expect(data.errorCode == 0).assertTrue();
         })
         .catch((err) => {
-            console.error('test generateKey err information: ' + JSON.stringify(err));
+            logger.error('test generateKey err information: ' + JSON.stringify(err));
             expect(null).assertFail();
         });
 }
@@ -412,11 +415,11 @@ async function publicGenerateKeyFunc(keyAlias, HuksOptions) {
 async function publicImportKey(keyAlias, HuksOptions) {
     await huks.importKey(keyAlias, HuksOptions)
         .then((data) => {
-            console.error(`test ImportKey data: ${JSON.stringify(data)}`);
+            logger.error(`test ImportKey data: ${JSON.stringify(data)}`);
             expect(data.errorCode == 0).assertTrue();
         })
         .catch((err) => {
-            console.error('test exportKey err information: ' + JSON.stringify(err));
+            logger.error('test exportKey err information: ' + JSON.stringify(err));
             expect(null).assertFail();
         });
 }
@@ -424,11 +427,11 @@ async function publicImportKey(keyAlias, HuksOptions) {
 async function publicDeleteKeyFunc(KeyAlias, HuksOptions) {
     await huks.deleteKey(KeyAlias, HuksOptions)
         .then((data) => {
-            console.error(`test deleteKey data: ${JSON.stringify(data)}`);
+            logger.error(`test deleteKey data: ${JSON.stringify(data)}`);
             expect(data.errorCode == 0).assertTrue();
         })
         .catch((err) => {
-            console.error('test deleteKey err information: ' + JSON.stringify(err));
+            logger.error('test deleteKey err information: ' + JSON.stringify(err));
             expect(null).assertFail();
         });
 }
@@ -440,7 +443,7 @@ export default function SecurityHuksImportJsunit() {
     });
     describe('SecurityHuksImportJsunit', function () {
         it('Security_HUKS_Import_API8_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_0100';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_0100';
             let HuksOptions = {
                 properties: new Array(
                     HuksSignVerifyECC.HuksKeyAlgECC,
@@ -454,15 +457,15 @@ export default function SecurityHuksImportJsunit() {
                 ),
                 inData: ecc256Key,
             };
-            await publicGenerateKeyFunc(srcKeyAlies, HuksOptions);
-            await publicImportKey(srcKeyAlies, HuksOptions);
-            await publicImportKey(srcKeyAlies, HuksOptions);
-            await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+            await publicGenerateKeyFunc(srcKeyAlias, HuksOptions);
+            await publicImportKey(srcKeyAlias, HuksOptions);
+            await publicImportKey(srcKeyAlias, HuksOptions);
+            await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             done();
         });
 
         it('Security_HUKS_Import_API8_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_0200';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_0200';
             let HuksOptions = {
                 properties: new Array(
                     HuksSignVerifyECC.HuksKeyAlgECC,
@@ -476,20 +479,20 @@ export default function SecurityHuksImportJsunit() {
                 ),
                 inData: dsa2048Key,
             };
-            await huks.importKey(srcKeyAlies, HuksOptions)
+            await huks.importKey(srcKeyAlias, HuksOptions)
                 .then((data) => {
-                    console.error(`test ImportKey data: ${JSON.stringify(data)}`);
+                    logger.error(`test ImportKey data: ${JSON.stringify(data)}`);
                     expect(data.errorCode == -19).assertTrue();
                 })
                 .catch((err) => {
-                    console.error('test exportKey err information: ' + JSON.stringify(err));
+                    logger.error('test exportKey err information: ' + JSON.stringify(err));
                     expect(err.code == -19).assertTrue();
                 });
             done();
         });
 
         it('Security_HUKS_Import_API8_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_0500';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_0500';
             let HuksOptions = {
                 properties: new Array(
                     HuksCipherAES.HuksKeyAlgAES,
@@ -501,13 +504,13 @@ export default function SecurityHuksImportJsunit() {
                 ),
                 inData: aes128Key,
             };
-            await publicImportKey(srcKeyAlies, HuksOptions);
-            await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+            await publicImportKey(srcKeyAlias, HuksOptions);
+            await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             done();
         });
 
         it('Security_HUKS_Import_API8_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_0600';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_0600';
             let HuksOptions = {
                 properties: new Array(
                     HuksCipherAES.HuksKeyAlgAES,
@@ -519,13 +522,13 @@ export default function SecurityHuksImportJsunit() {
                 ),
                 inData: aes192Key,
             };
-            await publicImportKey(srcKeyAlies, HuksOptions);
-            await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+            await publicImportKey(srcKeyAlias, HuksOptions);
+            await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             done();
         });
 
         it('Security_HUKS_Import_API8_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_0700';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_0700';
             let HuksOptions = {
                 properties: new Array(
                     HuksCipherAES.HuksKeyAlgAES,
@@ -537,13 +540,13 @@ export default function SecurityHuksImportJsunit() {
                 ),
                 inData: aes256Key,
             };
-            await publicImportKey(srcKeyAlies, HuksOptions);
-            await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+            await publicImportKey(srcKeyAlias, HuksOptions);
+            await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             done();
         });
 
         it('Security_HUKS_Import_API8_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_0800';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_0800';
             let HuksOptions = {
                 properties: new Array(
                     HuksCipherAES.HuksKeyAlgAES,
@@ -556,13 +559,13 @@ export default function SecurityHuksImportJsunit() {
                 inData: aes512Key,
             };
             if (useSoftware) {
-                await huks.importKey(srcKeyAlies, HuksOptions)
+                await huks.importKey(srcKeyAlias, HuksOptions)
                     .then((data) => {
-                        console.error(`test ImportKey data: ${JSON.stringify(data)}`);
+                        logger.error(`test ImportKey data: ${JSON.stringify(data)}`);
                         expect(data.errorCode == -19).assertTrue();
                     })
                     .catch((err) => {
-                        console.error('test exportKey err information: ' + JSON.stringify(err));
+                        logger.error('test exportKey err information: ' + JSON.stringify(err));
                         expect(err.code == -19).assertTrue();
                     });
             }
@@ -570,7 +573,7 @@ export default function SecurityHuksImportJsunit() {
         });
 
         it('Security_HUKS_Import_API8_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_0900';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_0900';
             let HuksOptions = {
                 properties: new Array(
                     HuksCipherRSA.HuksKeyAlgRSA,
@@ -587,14 +590,14 @@ export default function SecurityHuksImportJsunit() {
                 inData: rsa512Key,
             };
             if (useSoftware) {
-                await publicImportKey(srcKeyAlies, HuksOptions);
-                await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+                await publicImportKey(srcKeyAlias, HuksOptions);
+                await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             }
             done();
         });
 
         it('Security_HUKS_Import_API8_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_1000';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_1000';
             let HuksOptions = {
                 properties: new Array(
                     HuksCipherRSA.HuksKeyAlgRSA,
@@ -611,14 +614,14 @@ export default function SecurityHuksImportJsunit() {
                 inData: rsa768Key,
             };
             if (useSoftware) {
-                await publicImportKey(srcKeyAlies, HuksOptions);
-                await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+                await publicImportKey(srcKeyAlias, HuksOptions);
+                await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             }
             done();
         });
 
         it('Security_HUKS_Import_API8_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_1100';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_1100';
             let HuksOptions = {
                 properties: new Array(
                     HuksCipherRSA.HuksKeyAlgRSA,
@@ -632,14 +635,14 @@ export default function SecurityHuksImportJsunit() {
                 inData: rsa1024Key,
             };
             if (useSoftware) {
-                await publicImportKey(srcKeyAlies, HuksOptions);
-                await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+                await publicImportKey(srcKeyAlias, HuksOptions);
+                await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             }
             done();
         });
 
         it('Security_HUKS_Import_API8_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_1200';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_1200';
             let HuksOptions = {
                 properties: new Array(
                     HuksCipherRSA.HuksKeyAlgRSA,
@@ -652,13 +655,13 @@ export default function SecurityHuksImportJsunit() {
                 ),
                 inData: rsa2048Key,
             };
-            await publicImportKey(srcKeyAlies, HuksOptions);
-            await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+            await publicImportKey(srcKeyAlias, HuksOptions);
+            await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             done();
         });
 
         it('Security_HUKS_Import_API8_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_1300';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_1300';
             let HuksOptions = {
                 properties: new Array(
                     HuksCipherRSA.HuksKeyAlgRSA,
@@ -671,13 +674,13 @@ export default function SecurityHuksImportJsunit() {
                 ),
                 inData: rsa3072Key,
             };
-            await publicImportKey(srcKeyAlies, HuksOptions);
-            await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+            await publicImportKey(srcKeyAlias, HuksOptions);
+            await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             done();
         });
 
         it('Security_HUKS_Import_API8_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_1400';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_1400';
             let HuksOptions = {
                 properties: new Array(
                     HuksCipherRSA.HuksKeyAlgRSA,
@@ -690,13 +693,13 @@ export default function SecurityHuksImportJsunit() {
                 ),
                 inData: rsa4096Key,
             };
-            await publicImportKey(srcKeyAlies, HuksOptions);
-            await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+            await publicImportKey(srcKeyAlias, HuksOptions);
+            await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             done();
         });
 
         it('Security_HUKS_Import_API8_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_1500';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_1500';
             let HuksOptions = {
                 properties: new Array(
                     HuksHmac.HuksKeyAlg,
@@ -707,14 +710,14 @@ export default function SecurityHuksImportJsunit() {
                 inData: aes512Key,
             };
             if (useSoftware) {
-                await publicImportKey(srcKeyAlies, HuksOptions);
-                await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+                await publicImportKey(srcKeyAlias, HuksOptions);
+                await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             }
             done();
         });
 
         it('Security_HUKS_Import_API8_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_1600';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_1600';
             let HuksOptions = {
                 properties: new Array(
                     HuksSignVerifyECC.HuksKeyAlgECC,
@@ -729,14 +732,14 @@ export default function SecurityHuksImportJsunit() {
                 inData: ecc224Key,
             };
             if (useSoftware) {
-                await publicImportKey(srcKeyAlies, HuksOptions);
-                await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+                await publicImportKey(srcKeyAlias, HuksOptions);
+                await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             }
             done();
         });
 
         it('Security_HUKS_Import_API8_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_1700';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_1700';
             let HuksOptions = {
                 properties: new Array(
                     HuksSignVerifyECC.HuksKeyAlgECC,
@@ -747,13 +750,13 @@ export default function SecurityHuksImportJsunit() {
                 ),
                 inData: ecc256Key,
             };
-            await publicImportKey(srcKeyAlies, HuksOptions);
-            await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+            await publicImportKey(srcKeyAlias, HuksOptions);
+            await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             done();
         });
 
         it('Security_HUKS_Import_API8_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_1800';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_1800';
             let HuksOptions = {
                 properties: new Array(
                     HuksSignVerifyECC.HuksKeyAlgECC,
@@ -764,13 +767,13 @@ export default function SecurityHuksImportJsunit() {
                 ),
                 inData: ecc384Key,
             };
-            await publicImportKey(srcKeyAlies, HuksOptions);
-            await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+            await publicImportKey(srcKeyAlias, HuksOptions);
+            await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             done();
         });
 
         it('Security_HUKS_Import_API8_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_1900';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_1900';
             let HuksOptions = {
                 properties: new Array(
                     HuksSignVerifyECC.HuksKeyAlgECC,
@@ -781,13 +784,13 @@ export default function SecurityHuksImportJsunit() {
                 ),
                 inData: ecc521Key,
             };
-            await publicImportKey(srcKeyAlies, HuksOptions);
-            await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+            await publicImportKey(srcKeyAlias, HuksOptions);
+            await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             done();
         });
 
         it('Security_HUKS_Import_API8_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_2000';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_2000';
             if (useSoftware) {
                 let HuksOptions = {
                     properties: new Array(
@@ -801,14 +804,14 @@ export default function SecurityHuksImportJsunit() {
                     ),
                     inData: ecc224Key,
                 };
-                await publicImportKey(srcKeyAlies, HuksOptions);
-                await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+                await publicImportKey(srcKeyAlias, HuksOptions);
+                await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             }
             done();
         });
 
         it('Security_HUKS_Import_API8_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_2100';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_2100';
             let HuksOptions = {
                 properties: new Array(
                     HuksAgreeECDH.HuksKeyAlgECC,
@@ -821,13 +824,13 @@ export default function SecurityHuksImportJsunit() {
                 ),
                 inData: ecc256Key,
             };
-            await publicImportKey(srcKeyAlies, HuksOptions);
-            await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+            await publicImportKey(srcKeyAlias, HuksOptions);
+            await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             done();
         });
 
         it('Security_HUKS_Import_API8_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_2200';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_2200';
             let HuksOptions = {
                 properties: new Array(
                     HuksAgreeECDH.HuksKeyAlgECC,
@@ -840,13 +843,13 @@ export default function SecurityHuksImportJsunit() {
                 ),
                 inData: ecc384Key,
             };
-            await publicImportKey(srcKeyAlies, HuksOptions);
-            await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+            await publicImportKey(srcKeyAlias, HuksOptions);
+            await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             done();
         });
 
         it('Security_HUKS_Import_API8_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_2300';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_2300';
             let HuksOptions = {
                 properties: new Array(
                     HuksAgreeECDH.HuksKeyAlgECC,
@@ -859,13 +862,13 @@ export default function SecurityHuksImportJsunit() {
                 ),
                 inData: ecc521Key,
             };
-            await publicImportKey(srcKeyAlies, HuksOptions);
-            await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+            await publicImportKey(srcKeyAlias, HuksOptions);
+            await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             done();
         });
 
         it('Security_HUKS_Import_API8_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_2400';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_2400';
             let HuksOptions = {
                 properties: new Array(
                     HuksKeyAlgX25519.HuksKeyAlgX25519,
@@ -878,13 +881,13 @@ export default function SecurityHuksImportJsunit() {
                 ),
                 inData: x25519Key,
             };
-            await publicImportKey(srcKeyAlies, HuksOptions);
-            await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+            await publicImportKey(srcKeyAlias, HuksOptions);
+            await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             done();
         });
 
         it('Security_HUKS_Import_API8_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_2500';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_2500';
             let HuksOptions = {
                 properties: new Array(
                     HuksSignVerifyED25519.HuksKeyAlgED25519,
@@ -895,13 +898,13 @@ export default function SecurityHuksImportJsunit() {
                 ),
                 inData: ed25519Key,
             };
-            await publicImportKey(srcKeyAlies, HuksOptions);
-            await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+            await publicImportKey(srcKeyAlias, HuksOptions);
+            await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             done();
         });
 
         it('Security_HUKS_Import_API8_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_2800';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_2800';
             let HuksOptions = {
                 properties: new Array(
                     HuksSignVerifyDSA.HuksKeyAlgDSA,
@@ -913,14 +916,14 @@ export default function SecurityHuksImportJsunit() {
                 inData: dsa2048Key,
             };
             if (useSoftware) {
-                await publicImportKey(srcKeyAlies, HuksOptions);
-                await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+                await publicImportKey(srcKeyAlias, HuksOptions);
+                await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             }
             done();
         });
 
         it('Security_HUKS_Import_API8_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_2900';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_2900';
             let HuksOptions = {
                 properties: new Array(
                     HuksSignVerifySM2.HuksKeyAlgSM2,
@@ -931,13 +934,13 @@ export default function SecurityHuksImportJsunit() {
                 ),
                 inData: sm2Key,
             };
-            await publicImportKey(srcKeyAlies, HuksOptions);
-            await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+            await publicImportKey(srcKeyAlias, HuksOptions);
+            await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             done();
         });
 
         it('Security_HUKS_Import_API8_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_3000';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_3000';
             let HuksOptions = {
                 properties: new Array(
                     HuksHmac.HuksKeyAlg,
@@ -947,13 +950,13 @@ export default function SecurityHuksImportJsunit() {
                 ),
                 inData: aes512Key,
             };
-            await publicImportKey(srcKeyAlies, HuksOptions);
-            await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+            await publicImportKey(srcKeyAlias, HuksOptions);
+            await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             done();
         });
 
         it('Security_HUKS_Import_API8_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Import_API8_3100';
+            const srcKeyAlias = 'Security_HUKS_Import_API8_3100';
             let HuksOptions = {
                 properties: new Array(
                     HuksCipherSM4.HuksKeyAlgSM4,
@@ -964,8 +967,8 @@ export default function SecurityHuksImportJsunit() {
                 ),
                 inData: aes128Key,
             };
-            await publicImportKey(srcKeyAlies, HuksOptions);
-            await publicDeleteKeyFunc(srcKeyAlies, HuksOptions);
+            await publicImportKey(srcKeyAlias, HuksOptions);
+            await publicDeleteKeyFunc(srcKeyAlias, HuksOptions);
             done();
         });
     })

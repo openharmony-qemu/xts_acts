@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,17 +13,18 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver: Driver = Driver.create();
 
 export default function componentLifeCycleTestOne() {
-
   describe('componentLifeCycleTestOne', () => {
-
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'testability/pages/componentLifeCycleTestOne',
@@ -31,16 +32,16 @@ export default function componentLifeCycleTestOne() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get componentLifeCycleTestOne state success " + JSON.stringify(pages));
-        if (!("componentLifeCycleTestOne" == pages.name)) {
-          console.info("get componentLifeCycleTestOne state success " + JSON.stringify(pages.name));
+        console.info('get componentLifeCycleTestOne state success ' + JSON.stringify(pages));
+        if (!('componentLifeCycleTestOne' == pages.name)) {
+          console.info('get componentLifeCycleTestOne state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push componentLifeCycleTestOne page success " + JSON.stringify(result));
+          console.info('push componentLifeCycleTestOne page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push componentLifeCycleTestOne page error: " + err);
+        console.error('push componentLifeCycleTestOne page error: ' + err);
       }
+      await driver.waitForComponent(ON.id("HttpAuthHandlerButton"), 10000);
       done()
     });
 
@@ -50,8 +51,7 @@ export default function componentLifeCycleTestOne() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
-      console.info("componentLifeCycleTestOne beforeEach start");
+      console.info('componentLifeCycleTestOne beforeEach start');
       done();
     })
 
@@ -61,10 +61,9 @@ export default function componentLifeCycleTestOne() {
      *tc.desic Triggered when the render process exits
     */
     it('onRenderExited', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitOnRenderExited", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("onRenderExited", 2, 106, done);
-      sendEventByKey('HttpAuthHandlerButton', 10, '');
+      Utils.emitEvent('emitOnRenderExited', 138100)
+      Utils.registerEvent('onRenderExited', 2, 138110, done);
+      await Utils.waitAndClickComponent(driver, 'HttpAuthHandlerButton', 'emitOnRenderExited');
     })
 
     /* 
@@ -73,10 +72,9 @@ export default function componentLifeCycleTestOne() {
      *tc.desic make web component inactive
      */
     it('onInactive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitonInactive", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("onInactive", "baidu", 7, done);
-      sendEventByKey('HttpAuthHandlerButton', 10, '');
+      Utils.emitEvent('emitonInactive', 138100)
+      Utils.registerEvent('onInactive', 'index', 138120, done);
+      await Utils.waitAndClickComponent(driver, 'HttpAuthHandlerButton', 'emitonInactive');
     })
 
     /* 
@@ -85,10 +83,9 @@ export default function componentLifeCycleTestOne() {
      *tc.desic return whether the third party cookie is allowed
      */
     it('onActive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitonActive", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("onActive", "index", 8, done);
-      sendEventByKey('HttpAuthHandlerButton', 10, '');
+      Utils.emitEvent('emitonActive', 138100)
+      Utils.registerEvent('onActive', 'index', 138130, done);
+      await Utils.waitAndClickComponent(driver, 'HttpAuthHandlerButton', 'emitonActive');
     })
 
     /*
@@ -97,11 +94,9 @@ export default function componentLifeCycleTestOne() {
      *tc.desc test interface of onActive with not been associated with specific Web Components
      */
     it('testOnActiveInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitOnActiveInitErr", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnActiveInitErr", "17100001", 638, done);
-      Utils.registerEvent("testOnActiveInitErr", "Init error. The WebviewController must be associated with a Web component", 639, done);
-      sendEventByKey('HttpAuthHandlerButton', 10, '');
+      Utils.emitEvent('emitOnActiveInitErr', 138100)
+      Utils.registerEvent('testOnActiveInitErr', '17100001', 138140, done);
+      await Utils.waitAndClickComponent(driver, 'HttpAuthHandlerButton', 'emitOnActiveInitErr');
     })
 
     /*
@@ -110,11 +105,9 @@ export default function componentLifeCycleTestOne() {
      *tc.desc test interface of onInactive with not been associated with specific Web Components
      */
     it('testOnInactiveInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitOnInactiveInitErr", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnInactiveInitErr", "17100001", 640, done);
-      Utils.registerEvent("testOnInactiveInitErr", "Init error. The WebviewController must be associated with a Web component", 641, done);
-      sendEventByKey('HttpAuthHandlerButton', 10, '');
+      Utils.emitEvent('emitOnInactiveInitErr', 138100)
+      Utils.registerEvent('testOnInactiveInitErr', '17100001', 138150, done);
+      await Utils.waitAndClickComponent(driver, 'HttpAuthHandlerButton', 'emitOnInactiveInitErr');
     })
 
     /*
@@ -126,10 +119,9 @@ export default function componentLifeCycleTestOne() {
     * @tc.level      : Level 1
     */
     it('testOnInactive001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("testOnInactive001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnInactive001", true, 31000, done);
-      sendEventByKey('HttpAuthHandlerButton', 10, '');
+      Utils.emitEvent('testOnInactive001', 138100)
+      Utils.registerEvent('testOnInactive001', true, 138160, done);
+      await Utils.waitAndClickComponent(driver, 'HttpAuthHandlerButton', 'testOnInactive001');
     })
 
     /*
@@ -141,10 +133,9 @@ export default function componentLifeCycleTestOne() {
     * @tc.level      : Level 1
     */
     it('testOnActive001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("testOnActive001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnActive001", "resource://rawfile/webPart1index.html", 31001, done);
-      sendEventByKey('HttpAuthHandlerButton', 10, '');
+      Utils.emitEvent('testOnActive001', 138100)
+      Utils.registerEvent('testOnActive001', 'resource://rawfile/webPart1index.html', 138170, done);
+      await Utils.waitAndClickComponent(driver, 'HttpAuthHandlerButton', 'testOnActive001');
     })
 
     /*
@@ -156,10 +147,9 @@ export default function componentLifeCycleTestOne() {
     * @tc.level      : Level 1
     */
     it('testOnInactive002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("testOnInactive002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnInactive002", "second", 100077, done);
-      sendEventByKey('HttpAuthHandlerButton', 10, '');
+      Utils.emitEvent('testOnInactive002', 138100)
+      Utils.registerEvent('testOnInactive002', 'second', 138180, done);
+      await Utils.waitAndClickComponent(driver, 'HttpAuthHandlerButton', 'testOnInactive002');
     })
 
     /*
@@ -171,10 +161,9 @@ export default function componentLifeCycleTestOne() {
     * @tc.level      : Level 1
     */
     it('testOnActive002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("testOnActive002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnActive002", "second", 100078, done);
-      sendEventByKey('HttpAuthHandlerButton', 10, '');
+      Utils.emitEvent('testOnActive002', 138100)
+      Utils.registerEvent('testOnActive002', 'second', 138190, done);
+      await Utils.waitAndClickComponent(driver, 'HttpAuthHandlerButton', 'testOnActive002');
     })
 
     /*
@@ -186,10 +175,9 @@ export default function componentLifeCycleTestOne() {
     * @tc.level      : Level 1
     */
     it('testOnControllerAttached001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitOnControllerAttached", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnControllerAttached001", true, 1221, done);
-      sendEventByKey('HttpAuthHandlerButton', 10, '');
+      Utils.emitEvent('emitOnControllerAttached', 138100)
+      Utils.registerEvent('testOnControllerAttached001', true, 138200, done);
+      await Utils.waitAndClickComponent(driver, 'HttpAuthHandlerButton', 'emitOnControllerAttached');
     })
 
     /*
@@ -200,12 +188,12 @@ export default function componentLifeCycleTestOne() {
     * @tc.type       : Function
     * @tc.level      : Level 0
     */
-    it('testWebViewSetRenderProcessMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitSetRenderProcessMode", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitSetRenderProcessMode", true, 10005, done);
-      sendEventByKey('HttpAuthHandlerButton', 10, '');
-    })
+    it('testWebViewSetRenderProcessMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        Utils.emitEvent('emitSetRenderProcessMode', 138100)
+        Utils.registerEvent('emitSetRenderProcessMode', true, 138210, done);
+        await Utils.waitAndClickComponent(driver, 'HttpAuthHandlerButton', 'emitSetRenderProcessMode');
+      })
 
     /*
      *@tc.number SUB_ACE_WEB_GETAndSetRENDERPROCESSMODE_API_0001
@@ -215,11 +203,12 @@ export default function componentLifeCycleTestOne() {
      *@tc.type Function
      *@tc.level Level 1
      */
-    it('testWebViewGetAndSetRenderProcessMode01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      await Utils.emitEvent("emitWebViewGetAndSetRenderProcessMode01", 10);
-      Utils.registerEvent("testWebViewGetAndSetRenderProcessMode01", 'success', 8006, done);
-      sendEventByKey('HttpAuthHandlerButton', 10, '');
-    })
+    it('testWebViewGetAndSetRenderProcessMode01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        Utils.emitEvent('emitWebViewGetAndSetRenderProcessMode01', 138100);
+        Utils.registerEvent('testWebViewGetAndSetRenderProcessMode01', 'success', 138220, done);
+        await Utils.waitAndClickComponent(driver, 'HttpAuthHandlerButton', 'emitWebViewGetAndSetRenderProcessMode01');
+      })
     /*
      *@tc.number SUB_ACE_WEB_GETAndSetRENDERPROCESSMODE_API_0002
      *@tc.name testWebViewGetAndSetRenderProcessMode02
@@ -228,11 +217,12 @@ export default function componentLifeCycleTestOne() {
      *@tc.type Function
      *@tc.level Level 1
      */
-    it('testWebViewGetAndSetRenderProcessMode02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      await Utils.emitEvent("emitWebViewGetAndSetRenderProcessMode02", 10);
-      Utils.registerEvent("testWebViewGetAndSetRenderProcessMode02", 'success', 8007, done);
-      sendEventByKey('HttpAuthHandlerButton', 10, '');
-    })
+    it('testWebViewGetAndSetRenderProcessMode02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        Utils.emitEvent('emitWebViewGetAndSetRenderProcessMode02', 138100);
+        Utils.registerEvent('testWebViewGetAndSetRenderProcessMode02', 'success', 138230, done);
+        await Utils.waitAndClickComponent(driver, 'HttpAuthHandlerButton', 'emitWebViewGetAndSetRenderProcessMode02');
+      })
 
     /*
      *@tc.number SUB_ACE_WEB_OnRenderProcessResponding_API_0001
@@ -242,11 +232,12 @@ export default function componentLifeCycleTestOne() {
      *@tc.type Function
      *@tc.level Level 2
      */
-    it('testWebViewOnRenderProcessResponding', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      await Utils.emitEvent("emitWebViewOnRenderProcessResponding", 10);
-      Utils.registerEvent("testWebViewOnRenderProcessResponding", true, 1336, done);
-      sendEventByKey('HttpAuthHandlerButton', 10, '');
-    })
+    it('testWebViewOnRenderProcessResponding', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        Utils.emitEvent('emitWebViewOnRenderProcessResponding', 138100);
+        Utils.registerEvent('testWebViewOnRenderProcessResponding', true, 138240, done);
+        await Utils.waitAndClickComponent(driver, 'HttpAuthHandlerButton', 'emitWebViewOnRenderProcessResponding');
+      })
 
     /*
      *@tc.number SUB_ACE_WEB_NotRespondingReason_NAVIGATION_COMMIT_TIMEOUT_API_0002
@@ -256,10 +247,12 @@ export default function componentLifeCycleTestOne() {
      *@tc.type Function
      *@tc.level Level 2
      */
-    it('testWebViewNotRespondingReason_NAVIGATION_COMMIT_TIMEOUT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      await Utils.emitEvent("emitWebViewNotRespondingReason_NAVIGATION_COMMIT_TIMEOUT", 10);
-      Utils.registerEvent("testWebViewNotRespondingReason_NAVIGATION_COMMIT_TIMEOUT", true, 1338, done);
-      sendEventByKey('HttpAuthHandlerButton', 10, '');
-    })
+    it('testWebViewNotRespondingReason_NAVIGATION_COMMIT_TIMEOUT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        Utils.emitEvent('emitWebViewNotRespondingReason_NAVIGATION_COMMIT_TIMEOUT', 138100);
+        Utils.registerEvent('testWebViewNotRespondingReason_NAVIGATION_COMMIT_TIMEOUT', true, 138250, done);
+        await Utils.waitAndClickComponent(driver, 'HttpAuthHandlerButton',
+          'emitWebViewNotRespondingReason_NAVIGATION_COMMIT_TIMEOUT');
+      })
   })
 }

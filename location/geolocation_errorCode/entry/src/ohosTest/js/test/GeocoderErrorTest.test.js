@@ -221,23 +221,22 @@ export default function geolocationTest_GeoErr() {
                     beacon: beacon,
                     transitionCallback: (transition) => {
                         if (transition) {
-                            console.info("GeofenceTransition: err" + JSON.stringify(transition));
+                            console.info("SUB_HSS_Addbeaconfence_0100" + JSON.stringify(transition));
                         }
                     },
                     fenceExtensionAbilityName: "MyFenceExtensionAbility",
                 };
-                await geolocationm.disableLocation();
                 geolocationm.addBeaconFence(fenceRequest).then((id) => {
-                    console.info("addBeaconFence success, fence id:" + id);
+                    console.info("addBeaconFence0100 success, fence id:" + id);
                 }).catch((error) => {
-                    console.error('promise, addBeaconFence: error=' + JSON.stringify(error));
+                    console.error('promise, addBeaconFence0100: error=' + JSON.stringify(error));
                     expect(error.code).assertEqual(3501100);
                 });
             } catch (error) {
-                console.error("addBeaconFence: errCode" + error.code + ", errMessage" + error.message);
+                console.error("addBeaconFence0100: errCode" + error.code + ", errMessage" + error.message);
             };
         await sleep(1000);
-        await geolocationm.enablelocation();
+        
         done();
         })
 
@@ -273,27 +272,29 @@ export default function geolocationTest_GeoErr() {
                     beacon: beacon,
                     transitionCallback: (transition) => {
                         if (transition) {
-                            console.info("GeofenceTransition: err" + JSON.stringify(transition));
+                            console.info("SUB_HSS_Addbeaconfence_0200: err" + JSON.stringify(transition));
                         }
                     },
                     fenceExtensionAbilityName: "MyFenceExtensionAbility",
                 };
+                await geolocationm.enableLocation();
                 geolocationm.addBeaconFence(fenceRequest).then((id) => {
-                    console.info("addBeaconFence success, fence id:" + id);
+                    console.info("addBeaconFence0200 success, fence id:" + id);
                 }).catch((error) => {
-                    console.error('promise, addBeaconFence: error=' + JSON.stringify(error));
+                    console.error('promise, addBeaconFence0200: error=' + JSON.stringify(error));
                 });
 
                 geolocationm.addBeaconFence(fenceRequest).then((id) => {
-                    console.info("addBeaconFence success, fence id:" + id);
+                    console.info("addBeaconFence0200 success, fence id:" + id);
                 }).catch((error) => {
-                    console.error('promise, addBeaconFence: error=' + JSON.stringify(error));
+                    console.error('promise, addBeaconFence0200: error=' + JSON.stringify(error));
                     expect(error.code).assertEqual(3501603);
                 });
             } catch (error) {
-                console.error("addBeaconFence: errCode" + error.code + ", errMessage" + error.message);
+                console.error("addBeaconFence0200: errCode" + error.code + ", errMessage" + error.message);
             };
         await sleep(1000);
+        await geolocationm.disableLocation();
         done();
         })
 
@@ -324,7 +325,7 @@ export default function geolocationTest_GeoErr() {
                     beaconFenceInfoType: geolocationm.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
                     manufactureData: manufactureData
                 };
-                
+                await geolocationm.enableLocation();
                 geolocationm.removeBeaconFence(beacon).then(()=>{
                     console.info("promise,removeBeaconFence success");
                 }).catch((error)=>{
@@ -335,9 +336,11 @@ export default function geolocationTest_GeoErr() {
                 console.error("removeBeaconFence: errCode" + error.code + ", errMessage" + error.message);
             };
             await sleep(1000);
-        
+            await geolocationm.disableLocation();
         done();
         })
+
+        
 
         /**
          * @tc.number SUB_HSS_isBeaconFenceSupported_0100

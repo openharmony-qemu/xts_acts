@@ -12,355 +12,950 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
-import huks from '@ohos.security.huks';
+import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { HuksCipherAES } from './utils/param/cipher/publicCipherParam';
 import { HksTag } from './utils/param/publicParam';
-import { stringToUint8Array, uint8ArrayToString } from './utils/param/publicFunc';
+import { checkSoftware, makeOptions, stringToUint8Array, uint8ArrayToString } from './utils/param/publicFunc';
+import { logger } from './utils/common/logger';
+import * as huksCallback from './utils/param/huksCallback.js';
+
 let IV = '0000000000000000';
+let AAD = '0000000000000000';
+let NONCE = '000000000000';
+let AEAD = '0000000000000000';
 
 let defaultData = '0';
 
 let srcData63 = 'Hks_AES_Cipher_Test_000000000000000000000_string';
 let srcData63Kb = stringToUint8Array(srcData63);
+let srcData65 = 'Hks_AES_Cipher_Test_10101010101010101010101010101010101010101010101010110_string';
+let srcData65Kb = stringToUint8Array(srcData65);
 let updateResult = new Array();
 let encryptedData;
 var handle;
+let useSoftware;
+let baseHuksOptions = {};
 
 let genHuksOptions = {
-  properties: new Array(HuksCipherAES.HuksKeyAlgAES, HuksCipherAES.HuksKeyPurpose),
-  inData: new Uint8Array(defaultData),
+    properties: new Array(HuksCipherAES.HuksKeyAlgAES, HuksCipherAES.HuksKeyPurpose),
+    inData: new Uint8Array(defaultData),
 };
 
-async function publicGenerateKeyFunc(srcKeyAlies, genHuksOptionsNONECBC) {
-  await generateKey(srcKeyAlies, genHuksOptionsNONECBC)
-    .then((data) => {
-      console.log(`test generateKey data: ${JSON.stringify(data)}`);
-      expect(data.errorCode == 0).assertTrue();
-    })
-    .catch((err) => {
-      console.log('test generateKey err information: ' + JSON.stringify(err));
-      expect(null).assertFail();
-    });
+function resetOptions() {
+    baseHuksOptions = {
+        properties: new Array(
+            HuksCipherAES.HuksKeyAlgAES,
+            HuksCipherAES.HuksKeyAESSize128,
+            HuksCipherAES.HuksKeyAESDIGESTNONE,
+            { tag: HksTag.HKS_TAG_IV, value: stringToUint8Array(IV) }
+        ),
+        inData: new Array(),
+    };
 }
 
-function generateKey(srcKeyAlies, HuksOptions) {
-  return new Promise((resolve, reject) => {
-    huks.generateKey(srcKeyAlies, HuksOptions, function (err, data) {
-      console.log(`test generateKey data: ${JSON.stringify(data)}`);
-      if (err.code !== 0) {
-        console.log('test generateKey err information: ' + JSON.stringify(err));
-        reject(err);
-      } else {
-        resolve(data);
-      }
-    });
-  });
+function resetOptionsGCM() {
+    baseHuksOptions = {
+        properties: new Array(
+            HuksCipherAES.HuksKeyAlgAES,
+            HuksCipherAES.HuksKeyAESPADDINGNONE,
+            HuksCipherAES.HuksKeyAESBLOCKMODEGCM,
+            HuksCipherAES.HuksKeyAESDIGESTNONE,
+            {
+                tag: HksTag.HKS_TAG_ASSOCIATED_DATA,
+                value: stringToUint8Array(AAD),
+            },
+            { tag: HksTag.HKS_TAG_NONCE, value: stringToUint8Array(NONCE) }
+        ),
+        inData: new Array(),
+    };
 }
 
-async function publicInitFunc(srcKeyAlies, HuksOptions) {
-  await init(srcKeyAlies, HuksOptions)
-    .then((data) => {
-      console.log(`test init data: ${JSON.stringify(data)}`);
-      handle = data.handle;
-      expect(data.errorCode == 0).assertTrue();
-    })
-    .catch((err) => {
-      console.log('test init err information: ' + JSON.stringify(err));
-      expect(null).assertFail();
-    });
+async function publicGenerateKeyFunc(srcKeyAlias, genHuksOptionsNONECBC) {
+    await huksCallback.generateKey(srcKeyAlias, genHuksOptionsNONECBC)
+        .then((data) => {
+            logger.log(`test generateKey data: ${JSON.stringify(data)}`);
+            expect(data.errorCode == 0).assertTrue();
+        })
+        .catch((err) => {
+            logger.error('test generateKey err information: ' + JSON.stringify(err));
+            expect(null).assertFail();
+        });
 }
 
-function init(srcKeyAlies, HuksOptions) {
-  return new Promise((resolve, reject) => {
-    huks.init(srcKeyAlies, HuksOptions, function (err, data) {
-      if (err.code !== 0) {
-        console.log('test init err information: ' + JSON.stringify(err));
-        reject(err);
-      } else {
-        resolve(data);
-      }
-    });
-  });
+async function publicInitFunc(srcKeyAlias, HuksOptions) {
+    await huksCallback.init(srcKeyAlias, HuksOptions)
+        .then((data) => {
+            logger.log(`test init data: ${JSON.stringify(data)}`);
+            handle = data.handle;
+            expect(data.errorCode == 0).assertTrue();
+        })
+        .catch((err) => {
+            logger.error('test init err information: ' + JSON.stringify(err));
+            expect(null).assertFail();
+        });
 }
 
-async function publicUpdateFunc(HuksOptions, thirdInderfaceName, isEncrypt) {
-  let dateSize = 64;
-  let huksOptionsInData = HuksOptions.inData;
-  let inDataArray = HuksOptions.inData;
-  if (Array.from(inDataArray).length < dateSize) {
-    await update(handle, HuksOptions);
-    await publicFinishAbortFunc(HuksOptions, thirdInderfaceName, isEncrypt, 0);
-  } else {
-    let count = Math.floor(Array.from(inDataArray).length / dateSize);
-    let remainder = Array.from(inDataArray).length % dateSize;
-    for (let i = 0; i < count; i++) {
-      HuksOptions.inData = new Uint8Array(Array.from(huksOptionsInData).slice(dateSize * i, dateSize * (i + 1)));
-      await update(handle, HuksOptions);
-    }
-    HuksOptions.inData = huksOptionsInData;
-    if (remainder !== 0) {
-      HuksOptions.inData = new Uint8Array(
-        Array.from(huksOptionsInData).slice(dateSize * count, uint8ArrayToString(inDataArray).length)
-      );
-    }
-    await publicFinishAbortFunc(HuksOptions, thirdInderfaceName, isEncrypt);
-  }
-}
-
-async function update(handle, HuksOptions) {
-  await updateCallback(handle, HuksOptions)
-    .then(async (data) => {
-      console.log(`test update data ${JSON.stringify(data)}`);
-      if (updateResult.length !== 0) {
-        updateResult = updateResult.concat(Array.from(data.outData));
-      } else {
-        updateResult = Array.from(data.outData);
-      }
-      expect(data.errorCode == 0).assertTrue();
-    })
-    .catch((err) => {
-      console.log('test update err information: ' + err);
-      expect(null).assertFail();
-    });
-}
-
-function updateCallback(handle, HuksOptions) {
-  return new Promise((resolve, reject) => {
-    huks.update(handle, HuksOptions, function (err, data) {
-      if (err.code !== 0) {
-        console.log('test update err information: ' + JSON.stringify(err));
-        reject(err);
-      } else {
-        resolve(data);
-      }
-    });
-  });
-}
-
-async function publicFinishAbortFunc(HuksOptions, thirdInderfaceName, isEncrypt) {
-  if (thirdInderfaceName == 'finish') {
-    await finish(HuksOptions, isEncrypt);
-  } else if (thirdInderfaceName == 'abort') {
-    await abort(HuksOptions);
-  }
-}
-
-async function finish(HuksOptions, isEncrypt) {
-  await finishCallback(handle, HuksOptions)
-    .then((data) => {
-      console.log(`test finish data: ${JSON.stringify(data)}`);
-      let finishData;
-      if (encryptedData.length > 64) {
-        finishData = uint8ArrayToString(updateResult.concat(Array.from(data.outData)));
-        updateResult = updateResult.concat(Array.from(data.outData));
-      } else {
-        finishData = uint8ArrayToString(updateResult);
-      }
-      if (isEncrypt) {
-        if (finishData === uint8ArrayToString(encryptedData)) {
-          expect(null).assertFail();
-        } else {
-          expect(data.errorCode == 0).assertTrue();
+async function publicUpdateFunc(HuksOptions, thirdInterfaceName, isEncrypt) {
+    let dateSize = 64;
+    let huksOptionsInData = HuksOptions.inData;
+    let inDataArray = HuksOptions.inData;
+    if (Array.from(inDataArray).length < dateSize) {
+        await publicFinishAbortFunc(HuksOptions, thirdInterfaceName, isEncrypt);
+    } else {
+        let count = Math.floor(Array.from(inDataArray).length / dateSize);
+        let remainder = Array.from(inDataArray).length % dateSize;
+        for (let i = 0; i < count; i++) {
+            HuksOptions.inData = new Uint8Array(Array.from(huksOptionsInData).slice(dateSize * i, dateSize * (i + 1)));
+            await updateFunc(handle, HuksOptions);
         }
-      }
-      if (!isEncrypt) {
-        if (finishData === uint8ArrayToString(encryptedData)) {
-          expect(data.errorCode == 0).assertTrue();
+        HuksOptions.inData = huksOptionsInData;
+        if (remainder !== 0) {
+            HuksOptions.inData = new Uint8Array(
+                Array.from(huksOptionsInData).slice(dateSize * count, uint8ArrayToString(inDataArray).length)
+            );
         } else {
-          expect(null).assertFail();
+            HuksOptions.inData = new Uint8Array(new Array());
         }
-      }
-    })
-    .catch((err) => {
-      console.log('test finish err information: ' + JSON.stringify(err));
-      expect(null).assertFail();
-    });
+        await publicFinishAbortFunc(HuksOptions, thirdInterfaceName, isEncrypt);
+    }
 }
 
-function finishCallback(handle, huksOptionsFinish) {
-  return new Promise((resolve, reject) => {
-    huks.finish(handle, huksOptionsFinish, function (err, data) {
-      if (err.code !== 0) {
-        console.log('test generateKey err information: ' + JSON.stringify(err));
-        reject(err);
-      } else {
-        resolve(data);
-      }
-    });
-  });
+async function updateFunc(handle, HuksOptions) {
+    await huksCallback.update(handle, HuksOptions)
+        .then(async (data) => {
+            logger.log(`test update data ${JSON.stringify(data)}`);
+            if (updateResult.length !== 0) {
+                updateResult = updateResult.concat(Array.from(data.outData));
+            } else {
+                updateResult = Array.from(data.outData);
+            }
+            expect(data.errorCode == 0).assertTrue();
+        })
+        .catch((err) => {
+            logger.error('test update err information: ' + err);
+            expect(null).assertFail();
+        });
 }
 
-async function abort(HuksOptions) {
-  await abortCallback(handle, HuksOptions)
-    .then((data) => {
-      console.log(`test abort data: ${JSON.stringify(data)}`);
-      expect(data.errorCode == 0).assertTrue();
-    })
-    .catch((err) => {
-      console.log('test abort err information: ' + JSON.stringify(err));
-      expect(null).assertFail();
-    });
+async function publicFinishAbortFunc(HuksOptions, thirdInterfaceName, isEncrypt) {
+    if (thirdInterfaceName == 'finish') {
+        await finishFunc(HuksOptions, isEncrypt);
+    } else if (thirdInterfaceName == 'abort') {
+        await abortFunc(HuksOptions);
+    }
 }
 
-function abortCallback(handle, huksOptionsAbort) {
-  return new Promise((resolve, reject) => {
-    huks.abort(handle, huksOptionsAbort, function (err, data) {
-      if (err.code !== 0) {
-        console.log('test abort err information: ' + JSON.stringify(err));
-        reject(err);
-      } else {
-        resolve(data);
-      }
-    });
-  });
+async function finishFunc(HuksOptions, isEncrypt) {
+    await huksCallback.finish(handle, HuksOptions)
+        .then((data) => {
+            logger.log(`test finish data: ${JSON.stringify(data)}`);
+            let finishData;
+            finishData = uint8ArrayToString(updateResult.concat(Array.from(data.outData)));
+            updateResult = updateResult.concat(Array.from(data.outData));
+            if (isEncrypt) {
+                if (finishData === uint8ArrayToString(encryptedData)) {
+                    expect(null).assertFail();
+                } else {
+                    expect(data.errorCode == 0).assertTrue();
+                }
+            }
+            if (!isEncrypt) {
+                if (finishData === uint8ArrayToString(encryptedData)) {
+                    expect(data.errorCode == 0).assertTrue();
+                } else {
+                    expect(null).assertFail();
+                }
+            }
+        })
+        .catch((err) => {
+            logger.error('test finish err information: ' + JSON.stringify(err));
+            expect(null).assertFail();
+        });
 }
 
-async function publicDeleteKeyFunc(srcKeyAlies, genHuksOptionsNONECBC) {
-  await deleteKey(srcKeyAlies, genHuksOptionsNONECBC)
-    .then((data) => {
-      console.log(`test deleteKey data: ${JSON.stringify(data)}`);
-      expect(data.errorCode == 0).assertTrue();
-    })
-    .catch((err) => {
-      console.log('test deleteKey err information: ' + JSON.stringify(err));
-      expect(null).assertFail();
-    });
+async function abortFunc(HuksOptions) {
+    await huksCallback.abort(handle, HuksOptions)
+        .then((data) => {
+            logger.log(`test abort data: ${JSON.stringify(data)}`);
+            expect(data.errorCode == 0).assertTrue();
+        })
+        .catch((err) => {
+            logger.error('test abort err information: ' + JSON.stringify(err));
+            expect(null).assertFail();
+        });
 }
 
-function deleteKey(srcKeyAlies, HuksOptions) {
-  return new Promise((resolve, reject) => {
-    huks.deleteKey(srcKeyAlies, HuksOptions, function (err, data) {
-      if (err.code !== 0) {
-        console.log('test deleteKey err information: ' + JSON.stringify(err));
-        reject(err);
-      } else {
-        resolve(data);
-      }
-    });
-  });
+async function publicDeleteKeyFunc(srcKeyAlias, genHuksOptionsNONECBC) {
+    await huksCallback.deleteKey(srcKeyAlias, genHuksOptionsNONECBC)
+        .then((data) => {
+            logger.log(`test deleteKey data: ${JSON.stringify(data)}`);
+            expect(data.errorCode == 0).assertTrue();
+        })
+        .catch((err) => {
+            logger.error('test deleteKey err information: ' + JSON.stringify(err));
+            expect(null).assertFail();
+        });
 }
 
-async function publicCipherFunc(srcKeyAlies, genHuksOptionsNONECBC, HuksOptions, thirdInderfaceName, isEncrypt) {
-  try {
+async function publicCipherFunc(srcKeyAlias, genHuksOptionsNONECBC, HuksOptions, thirdInterfaceName, isEncrypt) {
     updateResult = new Array();
     if (isEncrypt) {
-      await publicGenerateKeyFunc(srcKeyAlies, genHuksOptionsNONECBC);
-      encryptedData = HuksOptions.inData;
+        await publicGenerateKeyFunc(srcKeyAlias, genHuksOptionsNONECBC);
+        encryptedData = HuksOptions.inData;
     }
-    await publicInitFunc(srcKeyAlies, HuksOptions);
-    await publicUpdateFunc(HuksOptions, thirdInderfaceName, isEncrypt);
-    if (!isEncrypt || (isEncrypt && thirdInderfaceName == 'abort')) {
-      await publicDeleteKeyFunc(srcKeyAlies, genHuksOptionsNONECBC);
+    await publicInitFunc(srcKeyAlias, HuksOptions);
+    await publicUpdateFunc(HuksOptions, thirdInterfaceName, isEncrypt);
+    if (!isEncrypt || (isEncrypt && thirdInterfaceName == 'abort')) {
+        await publicDeleteKeyFunc(srcKeyAlias, genHuksOptionsNONECBC);
     }
-  } catch (e) {
-    expect(null).assertFail();
-  }
+    return updateResult;
 }
 
 export default function SecurityHuksCipherAESCallbackJsunit() {
-  describe('SecurityHuksCipherAESCallbackJsunit', function () {
-    it('Security_HUKS_Cipher_API8_AES_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-      const srcKeyAlies = 'testCipherAESSize128PADDINGNONEMODECBCKeyAlias001';
-      genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize128);
-      genHuksOptions.properties.splice(3, 1, HuksCipherAES.HuksKeyAESBLOCKMODE);
-      genHuksOptions.properties.splice(4, 1, HuksCipherAES.HuksKeyAESPADDINGNONE);
-      let HuksOptions = {
-        properties: new Array(
-          HuksCipherAES.HuksKeyAlgAES,
-          HuksCipherAES.HuksKeyPurposeENCRYPT,
-          HuksCipherAES.HuksKeyAESSize128,
-          HuksCipherAES.HuksKeyAESPADDINGNONE,
-          HuksCipherAES.HuksKeyAESBLOCKMODE,
-          HuksCipherAES.HuksKeyAESDIGESTNONE,
-          { tag: HksTag.HKS_TAG_IV, value: stringToUint8Array(IV) }
-        ),
-        inData: srcData63Kb,
-      };
-      await publicCipherFunc(srcKeyAlies, genHuksOptions, HuksOptions, 'finish', true);
-      HuksOptions = {
-        properties: new Array(
-          HuksCipherAES.HuksKeyAlgAES,
-          HuksCipherAES.HuksKeyPurposeDECRYPT,
-          HuksCipherAES.HuksKeyAESSize128,
-          HuksCipherAES.HuksKeyAESPADDINGNONE,
-          HuksCipherAES.HuksKeyAESBLOCKMODE,
-          HuksCipherAES.HuksKeyAESDIGESTNONE,
-          { tag: HksTag.HKS_TAG_IV, value: stringToUint8Array(IV) }
-        ),
-        inData: new Uint8Array(updateResult),
-      };
-      await publicCipherFunc(srcKeyAlies, genHuksOptions, HuksOptions, 'finish', false);
-      done();
-    });
+    describe('SecurityHuksCipherAESCallbackJsunit', function () {
+        beforeAll(async function (done) {
+            useSoftware = await checkSoftware();
+            done();
+        });
+        beforeEach(function () {
+            resetOptions();
+            logger.info('test beforeEach called');
+        });
+        it('Security_HUKS_Cipher_API8_AES_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize128PADDINGNONEMODECBCKeyAlias001';
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize128);
+            genHuksOptions.properties.splice(3, 1, HuksCipherAES.HuksKeyAESBLOCKMODE);
+            genHuksOptions.properties.splice(4, 1, HuksCipherAES.HuksKeyAESPADDINGNONE);
+            let HuksOptions = {
+                properties: new Array(
+                    HuksCipherAES.HuksKeyAlgAES,
+                    HuksCipherAES.HuksKeyPurposeENCRYPT,
+                    HuksCipherAES.HuksKeyAESSize128,
+                    HuksCipherAES.HuksKeyAESPADDINGNONE,
+                    HuksCipherAES.HuksKeyAESBLOCKMODE,
+                    HuksCipherAES.HuksKeyAESDIGESTNONE,
+                    { tag: HksTag.HKS_TAG_IV, value: stringToUint8Array(IV) }
+                ),
+                inData: srcData63Kb,
+            };
+            await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', true);
+            HuksOptions = {
+                properties: new Array(
+                    HuksCipherAES.HuksKeyAlgAES,
+                    HuksCipherAES.HuksKeyPurposeDECRYPT,
+                    HuksCipherAES.HuksKeyAESSize128,
+                    HuksCipherAES.HuksKeyAESPADDINGNONE,
+                    HuksCipherAES.HuksKeyAESBLOCKMODE,
+                    HuksCipherAES.HuksKeyAESDIGESTNONE,
+                    { tag: HksTag.HKS_TAG_IV, value: stringToUint8Array(IV) }
+                ),
+                inData: new Uint8Array(updateResult),
+            };
+            await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', false);
+            done();
+        });
 
-    it('Security_HUKS_Cipher_API8_AES_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-      const srcKeyAlies = 'testCipherAESSize128PADDINGNONEMODECBCKeyAlias002';
-      let HuksOptions = {
-        properties: new Array(
-          HuksCipherAES.HuksKeyAlgAES,
-          HuksCipherAES.HuksKeyPurposeENCRYPT,
-          HuksCipherAES.HuksKeyAESSize128,
-          HuksCipherAES.HuksKeyAESPADDINGNONE,
-          HuksCipherAES.HuksKeyAESBLOCKMODE,
-          HuksCipherAES.HuksKeyAESDIGESTNONE,
-          { tag: HksTag.HKS_TAG_IV, value: stringToUint8Array(IV) }
-        ),
-        inData: new Uint8Array(updateResult),
-      };
-      await publicCipherFunc(srcKeyAlies, genHuksOptions, HuksOptions, 'abort', true);
-      done();
-    });
+        it('Security_HUKS_Cipher_API8_AES_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize128PADDINGNONEMODECBCKeyAlias002';
+            let HuksOptions = {
+                properties: new Array(
+                    HuksCipherAES.HuksKeyAlgAES,
+                    HuksCipherAES.HuksKeyPurposeENCRYPT,
+                    HuksCipherAES.HuksKeyAESSize128,
+                    HuksCipherAES.HuksKeyAESPADDINGNONE,
+                    HuksCipherAES.HuksKeyAESBLOCKMODE,
+                    HuksCipherAES.HuksKeyAESDIGESTNONE,
+                    { tag: HksTag.HKS_TAG_IV, value: stringToUint8Array(IV) }
+                ),
+                inData: new Uint8Array(updateResult),
+            };
+            await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'abort', true);
+            done();
+        });
 
-    it('Security_HUKS_Cipher_API8_AES_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-      const srcKeyAlies = 'testCipherAESSize128PADDINGNONEMODECBCKeyAlias003';
-      let HuksOptions = {
-        properties: new Array(
-          HuksCipherAES.HuksKeyAlgAES,
-          HuksCipherAES.HuksKeyPurposeENCRYPT,
-          HuksCipherAES.HuksKeyAESSize128,
-          HuksCipherAES.HuksKeyAESPADDINGNONE,
-          HuksCipherAES.HuksKeyAESBLOCKMODE,
-          HuksCipherAES.HuksKeyAESDIGESTNONE,
-          { tag: HksTag.HKS_TAG_IV, value: stringToUint8Array(IV) }
-        ),
-        inData: srcData63Kb,
-      };
-      await publicCipherFunc(srcKeyAlies, genHuksOptions, HuksOptions, 'finish', true);
-      HuksOptions = {
-        properties: new Array(
-          HuksCipherAES.HuksKeyAlgAES,
-          HuksCipherAES.HuksKeyPurposeDECRYPT,
-          HuksCipherAES.HuksKeyAESSize128,
-          HuksCipherAES.HuksKeyAESPADDINGNONE,
-          HuksCipherAES.HuksKeyAESBLOCKMODE,
-          HuksCipherAES.HuksKeyAESDIGESTNONE,
-          { tag: HksTag.HKS_TAG_IV, value: stringToUint8Array(IV) }
-        ),
-        inData: new Uint8Array(updateResult),
-      };
-      await publicCipherFunc(srcKeyAlies, genHuksOptions, HuksOptions, 'finish', false);
-      done();
-    });
+        it('Security_HUKS_Cipher_API8_AES_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize128PADDINGNONEMODECBCKeyAlias003';
+            let HuksOptions = {
+                properties: new Array(
+                    HuksCipherAES.HuksKeyAlgAES,
+                    HuksCipherAES.HuksKeyPurposeENCRYPT,
+                    HuksCipherAES.HuksKeyAESSize128,
+                    HuksCipherAES.HuksKeyAESPADDINGNONE,
+                    HuksCipherAES.HuksKeyAESBLOCKMODE,
+                    HuksCipherAES.HuksKeyAESDIGESTNONE,
+                    { tag: HksTag.HKS_TAG_IV, value: stringToUint8Array(IV) }
+                ),
+                inData: srcData63Kb,
+            };
+            await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', true);
+            HuksOptions = {
+                properties: new Array(
+                    HuksCipherAES.HuksKeyAlgAES,
+                    HuksCipherAES.HuksKeyPurposeDECRYPT,
+                    HuksCipherAES.HuksKeyAESSize128,
+                    HuksCipherAES.HuksKeyAESPADDINGNONE,
+                    HuksCipherAES.HuksKeyAESBLOCKMODE,
+                    HuksCipherAES.HuksKeyAESDIGESTNONE,
+                    { tag: HksTag.HKS_TAG_IV, value: stringToUint8Array(IV) }
+                ),
+                inData: new Uint8Array(updateResult),
+            };
+            await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', false);
+            done();
+        });
 
-    it('Security_HUKS_Cipher_API8_AES_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-      const srcKeyAlies = 'testCipherAESSize128PADDINGNONEMODECBCKeyAlias002';
-      let HuksOptions = {
-        properties: new Array(
-          HuksCipherAES.HuksKeyAlgAES,
-          HuksCipherAES.HuksKeyPurposeENCRYPT,
-          HuksCipherAES.HuksKeyAESSize128,
-          HuksCipherAES.HuksKeyAESPADDINGNONE,
-          HuksCipherAES.HuksKeyAESBLOCKMODE,
-          HuksCipherAES.HuksKeyAESDIGESTNONE,
-          { tag: HksTag.HKS_TAG_IV, value: stringToUint8Array(IV) }
-        ),
-        inData: new Uint8Array(updateResult),
-      };
-      await publicCipherFunc(srcKeyAlies, genHuksOptions, HuksOptions, 'abort', true);
-      done();
+        it('Security_HUKS_Cipher_API8_AES_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize128PADDINGNONEMODECBCKeyAlias002';
+            let HuksOptions = {
+                properties: new Array(
+                    HuksCipherAES.HuksKeyAlgAES,
+                    HuksCipherAES.HuksKeyPurposeENCRYPT,
+                    HuksCipherAES.HuksKeyAESSize128,
+                    HuksCipherAES.HuksKeyAESPADDINGNONE,
+                    HuksCipherAES.HuksKeyAESBLOCKMODE,
+                    HuksCipherAES.HuksKeyAESDIGESTNONE,
+                    { tag: HksTag.HKS_TAG_IV, value: stringToUint8Array(IV) }
+                ),
+                inData: new Uint8Array(updateResult),
+            };
+            await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'abort', true);
+            done();
+        });
+
+
+        it('Security_HUKS_Cipher_API8_AES_Size128PADDINGPKCS7MODEECB_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize128PADDINGPKCS7MODEECBKeyAlias001';
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize128);
+            genHuksOptions.properties.splice(3, 1, HuksCipherAES.HuksKeyAESPADDINGPKCS7);
+            genHuksOptions.properties.splice(4, 1, HuksCipherAES.HuksKeyAESBLOCKMODEECB);
+            let first = new Array(
+                HuksCipherAES.HuksKeyPurposeENCRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGPKCS7,
+                HuksCipherAES.HuksKeyAESBLOCKMODEECB
+            );
+
+            let HuksOptions = makeOptions(baseHuksOptions, 4, first, srcData65Kb);
+            if (useSoftware) {
+                updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', true);
+                await resetOptions();
+                let second = new Array(
+                    HuksCipherAES.HuksKeyPurposeDECRYPT,
+                    HuksCipherAES.HuksKeyAESPADDINGPKCS7,
+                    HuksCipherAES.HuksKeyAESBLOCKMODEECB
+                );
+                HuksOptions = makeOptions(baseHuksOptions, 4, second, new Uint8Array(updateResult));
+                updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', false);
+            }
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size128PADDINGPKCS7MODEECB_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize128PADDINGPKCS7MODEECBKeyAlias002';
+            let first = new Array(
+                HuksCipherAES.HuksKeyPurposeENCRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGPKCS7,
+                HuksCipherAES.HuksKeyAESBLOCKMODEECB
+            );
+            let HuksOptions = makeOptions(baseHuksOptions, 4, first, srcData65Kb);
+            if (useSoftware) {
+                updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'abort', true);
+            }
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size192PADDINGPKCS7MODEECB_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize192PADDINGPKCS7MODEECBKeyAlias001';
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize192);
+            genHuksOptions.properties.splice(3, 1, HuksCipherAES.HuksKeyAESPADDINGPKCS7);
+            genHuksOptions.properties.splice(4, 1, HuksCipherAES.HuksKeyAESBLOCKMODEECB);
+
+            let first = new Array(
+                HuksCipherAES.HuksKeyPurposeENCRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGPKCS7,
+                HuksCipherAES.HuksKeyAESBLOCKMODEECB
+            );
+
+            let HuksOptions = makeOptions(baseHuksOptions, 4, first, srcData65Kb);
+            HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize192);
+
+            if (useSoftware) {
+                updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', true);
+                await resetOptions();
+                let second = new Array(
+                    HuksCipherAES.HuksKeyPurposeDECRYPT,
+                    HuksCipherAES.HuksKeyAESPADDINGPKCS7,
+                    HuksCipherAES.HuksKeyAESBLOCKMODEECB
+                );
+                HuksOptions = makeOptions(baseHuksOptions, 4, second, new Uint8Array(updateResult));
+                HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize192);
+                updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', false);
+            }
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size192PADDINGPKCS7MODEECB_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize192PADDINGPKCS7MODEECBKeyAlias002';
+            let first = new Array(
+                HuksCipherAES.HuksKeyPurposeENCRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGPKCS7,
+                HuksCipherAES.HuksKeyAESBLOCKMODEECB
+            );
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize192);
+
+            let HuksOptions = makeOptions(baseHuksOptions, 4, first, srcData65Kb);
+            HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize192);
+
+            if (useSoftware) {
+                updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'abort', true);
+            }
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size256PADDINGPKCS7MODEECB_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize256PADDINGPKCS7MODEECBKeyAlias001';
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize256);
+            genHuksOptions.properties.splice(3, 1, HuksCipherAES.HuksKeyAESPADDINGPKCS7);
+            genHuksOptions.properties.splice(4, 1, HuksCipherAES.HuksKeyAESBLOCKMODEECB);
+
+            let first = new Array(
+                HuksCipherAES.HuksKeyPurposeENCRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGPKCS7,
+                HuksCipherAES.HuksKeyAESBLOCKMODEECB
+            );
+
+            let HuksOptions = makeOptions(baseHuksOptions, 4, first, srcData65Kb);
+            HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize256);
+            if (useSoftware) {
+                updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', true);
+                await resetOptions();
+                let second = new Array(
+                    HuksCipherAES.HuksKeyPurposeDECRYPT,
+                    HuksCipherAES.HuksKeyAESPADDINGPKCS7,
+                    HuksCipherAES.HuksKeyAESBLOCKMODEECB
+                );
+                HuksOptions = makeOptions(baseHuksOptions, 4, second, new Uint8Array(updateResult));
+                HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize256);
+                updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', false);
+            }
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size256PADDINGPKCS7MODEECB_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize256PADDINGPKCS7MODEECBKeyAlias002';
+            let first = new Array(
+                HuksCipherAES.HuksKeyPurposeENCRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGPKCS7,
+                HuksCipherAES.HuksKeyAESBLOCKMODEECB
+            );
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize256);
+            let HuksOptions = makeOptions(baseHuksOptions, 4, first, srcData65Kb);
+            HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize256);
+            if (useSoftware) {
+                updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'abort', true);
+            }
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size128PADDINGPKCS7MODEECB_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize128PADDINGPKCS7MODEECBKeyAlias003';
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize128);
+            genHuksOptions.properties.splice(3, 1, HuksCipherAES.HuksKeyAESPADDINGPKCS7);
+            genHuksOptions.properties.splice(4, 1, HuksCipherAES.HuksKeyAESBLOCKMODEECB);
+            let first = new Array(
+                HuksCipherAES.HuksKeyPurposeENCRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGPKCS7,
+                HuksCipherAES.HuksKeyAESBLOCKMODEECB
+            );
+            let HuksOptions = makeOptions(baseHuksOptions, 4, first, srcData65Kb);
+            if (useSoftware) {
+                updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', true);
+                await resetOptions();
+                let second = new Array(
+                    HuksCipherAES.HuksKeyPurposeDECRYPT,
+                    HuksCipherAES.HuksKeyAESPADDINGPKCS7,
+                    HuksCipherAES.HuksKeyAESBLOCKMODEECB
+                );
+                HuksOptions = makeOptions(baseHuksOptions, 4, second, new Uint8Array(updateResult));
+                updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', false);
+            }
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size128PADDINGPKCS7MODEECB_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize128PADDINGPKCS7MODEECBKeyAlias004';
+            let first = new Array(
+                HuksCipherAES.HuksKeyPurposeENCRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGPKCS7,
+                HuksCipherAES.HuksKeyAESBLOCKMODEECB
+            );
+            let HuksOptions = makeOptions(baseHuksOptions, 4, first, new Uint8Array(updateResult));
+            if (useSoftware) {
+                updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'abort', true);
+            }
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size192PADDINGNONEMODECBC_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize192PADDINGNONEMODECBCKeyAlias003';
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize192);
+            genHuksOptions.properties.splice(3, 1, HuksCipherAES.HuksKeyAESBLOCKMODE);
+            genHuksOptions.properties.splice(4, 1, HuksCipherAES.HuksKeyAESPADDINGNONE);
+            let first = new Array(
+                HuksCipherAES.HuksKeyPurposeENCRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGNONE,
+                HuksCipherAES.HuksKeyAESBLOCKMODE
+            );
+            let HuksOptions = makeOptions(baseHuksOptions, 4, first, srcData65Kb);
+            HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize192);
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', true);
+            await resetOptions();
+            let second = new Array(
+                HuksCipherAES.HuksKeyPurposeDECRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGNONE,
+                HuksCipherAES.HuksKeyAESBLOCKMODE
+            );
+            HuksOptions = makeOptions(baseHuksOptions, 4, second, new Uint8Array(updateResult));
+            HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize192);
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', false);
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size192PADDINGNONEMODECBC_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize192PADDINGNONEMODECBCKeyAlias004';
+            let first = new Array(
+                HuksCipherAES.HuksKeyPurposeENCRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGNONE,
+                HuksCipherAES.HuksKeyAESBLOCKMODE
+            );
+            let HuksOptions = makeOptions(baseHuksOptions, 4, first, srcData65Kb);
+            HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize192);
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize192);
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'abort', true);
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size192PADDINGPKCS7MODECBC_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize192PADDINGPKCS7MODECBCKeyAlias003';
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize192);
+            genHuksOptions.properties.splice(3, 1, HuksCipherAES.HuksKeyAESPADDINGPKCS7);
+            genHuksOptions.properties.splice(4, 1, HuksCipherAES.HuksKeyAESBLOCKMODE);
+
+            let first = new Array(
+                HuksCipherAES.HuksKeyPurposeENCRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGPKCS7,
+                HuksCipherAES.HuksKeyAESBLOCKMODE
+            );
+
+            let HuksOptions = makeOptions(baseHuksOptions, 4, first, srcData65Kb);
+            HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize192);
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', true);
+            await resetOptions();
+            let second = new Array(
+                HuksCipherAES.HuksKeyPurposeDECRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGPKCS7,
+                HuksCipherAES.HuksKeyAESBLOCKMODE
+            );
+            HuksOptions = makeOptions(baseHuksOptions, 4, second, new Uint8Array(updateResult));
+            HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize192);
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', false);
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size192PADDINGPKCS7MODECBC_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize192PADDINGPKCS7MODECBCKeyAlias004';
+            let first = new Array(
+                HuksCipherAES.HuksKeyPurposeENCRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGPKCS7,
+                HuksCipherAES.HuksKeyAESBLOCKMODE
+            );
+            let HuksOptions = makeOptions(baseHuksOptions, 4, first, srcData65Kb);
+            HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize192);
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize192);
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'abort', true);
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size192PADDINGNONEMODECTR_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize192PADDINGNONEMODECTRKeyAlias003';
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize192);
+            genHuksOptions.properties.splice(3, 1, HuksCipherAES.HuksKeyAESPADDINGNONE);
+            genHuksOptions.properties.splice(4, 1, HuksCipherAES.HuksKeyAESBLOCKMODECTR);
+
+            let first = new Array(
+                HuksCipherAES.HuksKeyPurposeENCRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGNONE,
+                HuksCipherAES.HuksKeyAESBLOCKMODECTR
+            );
+
+            let HuksOptions = makeOptions(baseHuksOptions, 4, first, srcData65Kb);
+            HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize192);
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', true);
+            await resetOptions();
+            let second = new Array(
+                HuksCipherAES.HuksKeyPurposeDECRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGNONE,
+                HuksCipherAES.HuksKeyAESBLOCKMODECTR
+            );
+            HuksOptions = makeOptions(baseHuksOptions, 4, second, new Uint8Array(updateResult));
+            HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize192);
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', false);
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size192PADDINGNONEMODECTR_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize192PADDINGNONEMODECTRKeyAlias004';
+            let first = new Array(
+                HuksCipherAES.HuksKeyPurposeENCRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGNONE,
+                HuksCipherAES.HuksKeyAESBLOCKMODECTR
+            );
+            let HuksOptions = makeOptions(baseHuksOptions, 4, first, srcData65Kb);
+            HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize192);
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize192);
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'abort', true);
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size192PADDINGNONEMODEECB_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize192PADDINGNONEMODEECBKeyAlias003';
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize192);
+            genHuksOptions.properties.splice(3, 1, HuksCipherAES.HuksKeyAESBLOCKMODEECB);
+            genHuksOptions.properties.splice(4, 1, HuksCipherAES.HuksKeyAESPADDINGNONE);
+
+            let first = new Array(
+                HuksCipherAES.HuksKeyPurposeENCRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGNONE,
+                HuksCipherAES.HuksKeyAESBLOCKMODEECB
+            );
+
+            let HuksOptions = makeOptions(baseHuksOptions, 4, first, srcData65Kb);
+            HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize192);
+            if (useSoftware) {
+                updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', true);
+                await resetOptions();
+                let second = new Array(
+                    HuksCipherAES.HuksKeyPurposeDECRYPT,
+                    HuksCipherAES.HuksKeyAESPADDINGNONE,
+                    HuksCipherAES.HuksKeyAESBLOCKMODEECB
+                );
+                HuksOptions = makeOptions(baseHuksOptions, 4, second, new Uint8Array(updateResult));
+                HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize192);
+                updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', false);
+            }
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size192PADDINGNONEMODEECB_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize192PADDINGNONEMODEECBKeyAlias004';
+            let first = new Array(
+                HuksCipherAES.HuksKeyPurposeENCRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGNONE,
+                HuksCipherAES.HuksKeyAESBLOCKMODEECB
+            );
+            let HuksOptions = makeOptions(baseHuksOptions, 4, first, srcData65Kb);
+            HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize192);
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize192);
+            if (useSoftware) {
+                updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'abort', true);
+            }
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size192PADDINGPKCS7MODEECB_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize192PADDINGPKCS7MODEECBKeyAlias003';
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize192);
+            genHuksOptions.properties.splice(3, 1, HuksCipherAES.HuksKeyAESPADDINGPKCS7);
+            genHuksOptions.properties.splice(4, 1, HuksCipherAES.HuksKeyAESBLOCKMODEECB);
+
+            let first = new Array(
+                HuksCipherAES.HuksKeyPurposeENCRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGPKCS7,
+                HuksCipherAES.HuksKeyAESBLOCKMODEECB
+            );
+
+            let HuksOptions = makeOptions(baseHuksOptions, 4, first, srcData65Kb);
+            HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize192);
+            if (useSoftware) {
+                updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', true);
+                await resetOptions();
+                let second = new Array(
+                    HuksCipherAES.HuksKeyPurposeDECRYPT,
+                    HuksCipherAES.HuksKeyAESPADDINGPKCS7,
+                    HuksCipherAES.HuksKeyAESBLOCKMODEECB
+                );
+                HuksOptions = makeOptions(baseHuksOptions, 4, second, new Uint8Array(updateResult));
+                HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize192);
+                updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', false);
+            }
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size192PADDINGPKCS7MODEECB_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize192PADDINGPKCS7MODEECBKeyAlias004';
+            let first = new Array(
+                HuksCipherAES.HuksKeyPurposeENCRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGPKCS7,
+                HuksCipherAES.HuksKeyAESBLOCKMODEECB
+            );
+            let HuksOptions = makeOptions(baseHuksOptions, 4, first, srcData65Kb);
+            HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize192);
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize192);
+            if (useSoftware) {
+                updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'abort', true);
+            }
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size256PADDINGPKCS7MODEECB_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize256PADDINGPKCS7MODEECBKeyAlias003';
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize256);
+            genHuksOptions.properties.splice(3, 1, HuksCipherAES.HuksKeyAESPADDINGPKCS7);
+            genHuksOptions.properties.splice(4, 1, HuksCipherAES.HuksKeyAESBLOCKMODEECB);
+
+            let first = new Array(
+                HuksCipherAES.HuksKeyPurposeENCRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGPKCS7,
+                HuksCipherAES.HuksKeyAESBLOCKMODEECB
+            );
+
+            let HuksOptions = makeOptions(baseHuksOptions, 4, first, srcData65Kb);
+            HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize256);
+            if (useSoftware) {
+                updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', true);
+                await resetOptions();
+                let second = new Array(
+                    HuksCipherAES.HuksKeyPurposeDECRYPT,
+                    HuksCipherAES.HuksKeyAESPADDINGPKCS7,
+                    HuksCipherAES.HuksKeyAESBLOCKMODEECB
+                );
+                HuksOptions = makeOptions(baseHuksOptions, 4, second, new Uint8Array(updateResult));
+                HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize256);
+                updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', false);
+            }
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size256PADDINGPKCS7MODEECB_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testCipherAESSize256PADDINGPKCS7MODEECBKeyAlias004';
+            let first = new Array(
+                HuksCipherAES.HuksKeyPurposeENCRYPT,
+                HuksCipherAES.HuksKeyAESPADDINGPKCS7,
+                HuksCipherAES.HuksKeyAESBLOCKMODEECB
+            );
+            let HuksOptions = makeOptions(baseHuksOptions, 4, first, srcData65Kb);
+            HuksOptions.properties.splice(1, 1, HuksCipherAES.HuksKeyAESSize256);
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize256);
+            if (useSoftware) {
+                updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'abort', true);
+            }
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size128PADDINGNONEMODEGCM_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            resetOptionsGCM();
+            const srcKeyAlias = 'testCipherAESSize128PADDINGNONEMODEGCMKeyAlias001';
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize128);
+            genHuksOptions.properties.splice(3, 1, HuksCipherAES.HuksKeyAESBLOCKMODEGCM);
+            genHuksOptions.properties.splice(4, 1, HuksCipherAES.HuksKeyAESPADDINGNONE);
+            let first = new Array(HuksCipherAES.HuksKeyPurposeENCRYPT, HuksCipherAES.HuksKeyAESSize128, {
+                tag: HksTag.HKS_TAG_AE_TAG,
+                value: stringToUint8Array(AEAD),
+            });
+            let HuksOptions = makeOptions(baseHuksOptions, 6, first, srcData63Kb);
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', true);
+            resetOptionsGCM();
+            let second = new Array(HuksCipherAES.HuksKeyPurposeDECRYPT, HuksCipherAES.HuksKeyAESSize128, {
+                tag: HksTag.HKS_TAG_AE_TAG,
+                value: new Uint8Array(updateResult.splice(updateResult.length - 16, updateResult.length)),
+            });
+            HuksOptions = makeOptions(baseHuksOptions, 6, second, new Uint8Array(updateResult));
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', false);
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size128PADDINGNONEMODEGCM_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            resetOptionsGCM();
+            const srcKeyAlias = 'testCipherAESSize128PADDINGNONEMODEGCMKeyAlias002';
+            let first = new Array(HuksCipherAES.HuksKeyPurposeENCRYPT, HuksCipherAES.HuksKeyAESSize128, {
+                tag: HksTag.HKS_TAG_AE_TAG,
+                value: stringToUint8Array(AEAD),
+            });
+
+            let HuksOptions = makeOptions(baseHuksOptions, 6, first, srcData63Kb);
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'abort', true);
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size128PADDINGNONEMODEGCM_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            resetOptionsGCM();
+            const srcKeyAlias = 'testCipherAESSize128PADDINGNONEMODEGCMKeyAlias001';
+            let first = new Array(HuksCipherAES.HuksKeyPurposeENCRYPT, HuksCipherAES.HuksKeyAESSize128, {
+                tag: HksTag.HKS_TAG_AE_TAG,
+                value: stringToUint8Array(AEAD),
+            });
+            let HuksOptions = makeOptions(baseHuksOptions, 6, first, srcData65Kb);
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', true);
+            resetOptionsGCM();
+            let second = new Array(HuksCipherAES.HuksKeyPurposeDECRYPT, HuksCipherAES.HuksKeyAESSize128, {
+                tag: HksTag.HKS_TAG_AE_TAG,
+                value: new Uint8Array(updateResult.splice(updateResult.length - 16, updateResult.length)),
+            });
+            HuksOptions = makeOptions(baseHuksOptions, 6, second, new Uint8Array(updateResult));
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', false);
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size128PADDINGNONEMODEGCM_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            resetOptionsGCM();
+            const srcKeyAlias = 'testCipherAESSize128PADDINGNONEMODEGCMKeyAlias002';
+            let first = new Array(HuksCipherAES.HuksKeyPurposeENCRYPT, HuksCipherAES.HuksKeyAESSize128, {
+                tag: HksTag.HKS_TAG_AE_TAG,
+                value: stringToUint8Array(AEAD),
+            });
+            let HuksOptions = makeOptions(baseHuksOptions, 6, first, srcData65Kb);
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'abort', true);
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size192PADDINGNONEMODEGCM_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            resetOptionsGCM();
+            const srcKeyAlias = 'testCipherAESSize192PADDINGNONEMODEGCMKeyAlias001';
+
+            let first = new Array(HuksCipherAES.HuksKeyPurposeENCRYPT, HuksCipherAES.HuksKeyAESSize192, {
+                tag: HksTag.HKS_TAG_AE_TAG,
+                value: stringToUint8Array(AEAD),
+            });
+
+            let HuksOptions = makeOptions(baseHuksOptions, 6, first, srcData63Kb);
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', true);
+            resetOptionsGCM();
+            let second = new Array(HuksCipherAES.HuksKeyPurposeDECRYPT, HuksCipherAES.HuksKeyAESSize192, {
+                tag: HksTag.HKS_TAG_AE_TAG,
+                value: new Uint8Array(updateResult.splice(updateResult.length - 16, updateResult.length)),
+            });
+            HuksOptions = makeOptions(baseHuksOptions, 6, second, new Uint8Array(updateResult));
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', false);
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size192PADDINGNONEMODEGCM_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            resetOptionsGCM();
+            const srcKeyAlias = 'testCipherAESSize192PADDINGNONEMODEGCMKeyAlias002';
+            let first = new Array(HuksCipherAES.HuksKeyPurposeENCRYPT, HuksCipherAES.HuksKeyAESSize192, {
+                tag: HksTag.HKS_TAG_AE_TAG,
+                value: stringToUint8Array(AEAD),
+            });
+            let HuksOptions = makeOptions(baseHuksOptions, 6, first, srcData63Kb);
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'abort', true);
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size192PADDINGNONEMODEGCM_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            resetOptionsGCM();
+            const srcKeyAlias = 'testCipherAESSize192PADDINGNONEMODEGCMKeyAlias001';
+
+            let first = new Array(HuksCipherAES.HuksKeyPurposeENCRYPT, HuksCipherAES.HuksKeyAESSize192, {
+                tag: HksTag.HKS_TAG_AE_TAG,
+                value: stringToUint8Array(AEAD),
+            });
+
+            let HuksOptions = makeOptions(baseHuksOptions, 6, first, srcData65Kb);
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', true);
+            resetOptionsGCM();
+            let second = new Array(HuksCipherAES.HuksKeyPurposeDECRYPT, HuksCipherAES.HuksKeyAESSize192, {
+                tag: HksTag.HKS_TAG_AE_TAG,
+                value: new Uint8Array(updateResult.splice(updateResult.length - 16, updateResult.length)),
+            });
+            HuksOptions = makeOptions(baseHuksOptions, 6, second, new Uint8Array(updateResult));
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', false);
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size192PADDINGNONEMODEGCM_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            resetOptionsGCM();
+            const srcKeyAlias = 'testCipherAESSize192PADDINGNONEMODEGCMKeyAlias002';
+            let first = new Array(HuksCipherAES.HuksKeyPurposeENCRYPT, HuksCipherAES.HuksKeyAESSize192, {
+                tag: HksTag.HKS_TAG_AE_TAG,
+                value: stringToUint8Array(AEAD),
+            });
+            let HuksOptions = makeOptions(baseHuksOptions, 6, first, srcData65Kb);
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'abort', true);
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size256PADDINGNONEMODEGCM_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            resetOptionsGCM();
+            const srcKeyAlias = 'testCipherAESSize256PADDINGNONEMODEGCMKeyAlias001';
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize256);
+            genHuksOptions.properties.splice(3, 1, HuksCipherAES.HuksKeyAESBLOCKMODEGCM);
+            genHuksOptions.properties.splice(4, 1, HuksCipherAES.HuksKeyAESPADDINGNONE);
+
+            let first = new Array(HuksCipherAES.HuksKeyPurposeENCRYPT, HuksCipherAES.HuksKeyAESSize256, {
+                tag: HksTag.HKS_TAG_AE_TAG,
+                value: stringToUint8Array(AEAD),
+            });
+
+            let HuksOptions = makeOptions(baseHuksOptions, 6, first, srcData63Kb);
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', true);
+            resetOptionsGCM();
+            let second = new Array(HuksCipherAES.HuksKeyPurposeDECRYPT, HuksCipherAES.HuksKeyAESSize256, {
+                tag: HksTag.HKS_TAG_AE_TAG,
+                value: new Uint8Array(updateResult.splice(updateResult.length - 16, updateResult.length)),
+            });
+            HuksOptions = makeOptions(baseHuksOptions, 6, second, new Uint8Array(updateResult));
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', false);
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size256PADDINGNONEMODEGCM_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            resetOptionsGCM();
+            const srcKeyAlias = 'testCipherAESSize256PADDINGNONEMODEGCMKeyAlias002';
+            let first = new Array(HuksCipherAES.HuksKeyPurposeENCRYPT, HuksCipherAES.HuksKeyAESSize256, {
+                tag: HksTag.HKS_TAG_AE_TAG,
+                value: stringToUint8Array(AEAD),
+            });
+            let HuksOptions = makeOptions(baseHuksOptions, 6, first, srcData63Kb);
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'abort', true);
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size256PADDINGNONEMODEGCM_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            resetOptionsGCM();
+            const srcKeyAlias = 'testCipherAESSize256PADDINGNONEMODEGCMKeyAlias001';
+            genHuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyAESSize256);
+            genHuksOptions.properties.splice(3, 1, HuksCipherAES.HuksKeyAESBLOCKMODEGCM);
+            genHuksOptions.properties.splice(4, 1, HuksCipherAES.HuksKeyAESPADDINGNONE);
+
+            let first = new Array(HuksCipherAES.HuksKeyPurposeENCRYPT, HuksCipherAES.HuksKeyAESSize256, {
+                tag: HksTag.HKS_TAG_AE_TAG,
+                value: stringToUint8Array(AEAD),
+            });
+
+            let HuksOptions = makeOptions(baseHuksOptions, 6, first, srcData65Kb);
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', true);
+            resetOptionsGCM();
+            let second = new Array(HuksCipherAES.HuksKeyPurposeDECRYPT, HuksCipherAES.HuksKeyAESSize256, {
+                tag: HksTag.HKS_TAG_AE_TAG,
+                value: new Uint8Array(updateResult.splice(updateResult.length - 16, updateResult.length)),
+            });
+            HuksOptions = makeOptions(baseHuksOptions, 6, second, new Uint8Array(updateResult));
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'finish', false);
+            done();
+        });
+
+        it('Security_HUKS_Cipher_API8_AES_Size256PADDINGNONEMODEGCM_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            resetOptionsGCM();
+            const srcKeyAlias = 'testCipherAESSize256PADDINGNONEMODEGCMKeyAlias002';
+            let first = new Array(HuksCipherAES.HuksKeyPurposeENCRYPT, HuksCipherAES.HuksKeyAESSize256, {
+                tag: HksTag.HKS_TAG_AE_TAG,
+                value: stringToUint8Array(AEAD),
+            });
+            let HuksOptions = makeOptions(baseHuksOptions, 6, first, srcData65Kb);
+            updateResult = await publicCipherFunc(srcKeyAlias, genHuksOptions, HuksOptions, 'abort', true);
+            done();
+        });
     });
-  });
 }
+
 export { publicCipherFunc, IV, updateResult };
 

@@ -1887,5 +1887,49 @@ export default function DeviceInfoTest() {
             expect(deviceTypes).assertEqual('car');
             console.info('testGetDeviceTypes : end');
         })
+
+        /**
+         * @tc.number    SUB_STARTUP_JS_DEVCEINFO_080
+         * @tc.name      testGetChipType
+         * @tc.desc      Get ChipType.
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 0
+         */
+        it('testGetChipType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+            console.info('device_info_test_080 start');
+            let ret = false;
+            let chipType = deviceinfo.chipType;
+            console.info('the value of the deviceinfo chipType is :' + chipType);
+            expect(chipType).assertInstanceOf('String');
+            if (chipType != "" && chipType != null && chipType != undefined) {
+                console.info('device_info_test_080 get null');
+                ret = true;
+            }
+            expect(ret).assertTrue();
+            console.info('device_info_test_080 end');
+        })
+
+        /**
+         * @tc.number    SUB_STARTUP_JS_DEVCEINFO_081
+         * @tc.name      testGetBootCount
+         * @tc.desc      Get BootCount.
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 0
+         */
+        it('testGetBootCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+            console.info('device_info_test_081 start');
+            let ret = false;
+            let bootCount = deviceinfo.bootCount;
+            console.info('the value of the deviceinfo bootCount is :' + bootCount);
+            expect(bootCount).assertInstanceOf('Number');
+            if (bootCount > -1) {
+                console.info('device_info_test_081 get null');
+                ret = true;
+            }
+            expect(ret).assertTrue();
+            console.info('device_info_test_081 end');
+        })
     })
 }

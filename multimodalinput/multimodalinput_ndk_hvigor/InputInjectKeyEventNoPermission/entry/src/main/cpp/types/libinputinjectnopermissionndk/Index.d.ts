@@ -12,8 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export const RequestInjectionFrequent: () => number;
-export const RequestInjectionAuthorized: () => number;
 export const OHInputInjectKeyEventDenied: () => number;
 export const RequestInjectionError: () => number;
 export const AddKeyEventMonitorException: () => number;
