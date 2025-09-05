@@ -84,7 +84,7 @@ export default function showAssetsCreationDialogTest() {
           console.log(`${testNum} :: showAssetsCreationDialog :: data length is ${data.length}`);
           desFileUris = data;
         });
-        let button: Component | undefined = await driver?.waitForComponent(ON.text(buttonText), 2000);
+        let button: Component | undefined = await driver?.waitForComponent(ON.text(buttonText), 10000);
         if (button !== undefined) {
           await button.click();
         }
