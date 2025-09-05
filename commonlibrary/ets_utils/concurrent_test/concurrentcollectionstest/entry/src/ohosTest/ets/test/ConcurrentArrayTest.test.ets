@@ -322,7 +322,7 @@ export default function globalTest1() {
             expect().assertFail()
           })
           console.info(`${caseName} Task result: ${arr.length}`);
-          expect(arr.length).assertEqual(4)
+          expect(arr.length).assertEqual(104)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
           expect().assertFail()

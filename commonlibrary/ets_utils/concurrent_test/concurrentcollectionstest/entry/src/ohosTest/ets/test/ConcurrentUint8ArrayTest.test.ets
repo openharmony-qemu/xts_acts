@@ -288,7 +288,7 @@ export default function globalTest6() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_uint8Array_005, uint8Array, caseName, i).then((res) => {
+            await taskpool.execute(test_uint8Array_005, uint8Array, caseName, i).then((res) => {
               expect(res as boolean)
                 .assertFalse()
               count++
@@ -501,7 +501,7 @@ export default function globalTest6() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_uint8Array_011, uint8Array, caseName, i).then((res) => {
+            await taskpool.execute(test_uint8Array_011, uint8Array, caseName, i).then((res) => {
               expect(res as boolean)
                 .assertFalse()
               count++
@@ -572,7 +572,7 @@ export default function globalTest6() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_uint8Array_013, uint8Array, caseName, i).then((res) => {
+            await taskpool.execute(test_uint8Array_013, uint8Array, caseName, i).then((res) => {
               expect(res as string)
                 .assertEqual('2,4,2')
               count++
@@ -606,7 +606,7 @@ export default function globalTest6() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_uint8Array_014, uint8Array, caseName, i).then((res) => {
+            await taskpool.execute(test_uint8Array_014, uint8Array, caseName, i).then((res) => {
               expect(res as string)
                 .assertEqual('1,1')
               count++
@@ -640,7 +640,7 @@ export default function globalTest6() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_uint8Array_015, uint8Array, caseName, i).then((res) => {
+            await taskpool.execute(test_uint8Array_015, uint8Array, caseName, i).then((res) => {
               expect(res as string)
                 .assertEqual('forEach_completed')
               count++
@@ -674,7 +674,7 @@ export default function globalTest6() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_uint8Array_016, uint8Array, caseName, i).then((res) => {
+            await taskpool.execute(test_uint8Array_016, uint8Array, caseName, i).then((res) => {
               expect(res as string)
                 .assertEqual('1,1-2-3-4')
               count++
@@ -708,7 +708,7 @@ export default function globalTest6() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_uint8Array_017, uint8Array, caseName, i).then((res) => {
+            await taskpool.execute(test_uint8Array_017, uint8Array, caseName, i).then((res) => {
               expect(res as string)
                 .assertEqual('2,4,6,8')
               count++
@@ -742,7 +742,7 @@ export default function globalTest6() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_uint8Array_018, uint8Array, caseName, i).then((res) => {
+            await taskpool.execute(test_uint8Array_018, uint8Array, caseName, i).then((res) => {
               expect(res as string)
                 .assertEqual('10,16')
               count++
@@ -776,7 +776,7 @@ export default function globalTest6() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_uint8Array_019, uint8Array, caseName, i).then((res) => {
+            await taskpool.execute(test_uint8Array_019, uint8Array, caseName, i).then((res) => {
               expect(res as string)
                 .assertEqual('10,16')
               count++
@@ -884,7 +884,7 @@ export default function globalTest6() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_uint8Array_022, uint8Array, caseName, i).then((res) => {
+            await taskpool.execute(test_uint8Array_022, uint8Array, caseName, i).then((res) => {
               expect(res as string)
                 .assertEqual('2,3')
               count++
@@ -955,7 +955,7 @@ export default function globalTest6() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_uint8Array_024, uint8Array, caseName, i).then((res) => {
+            await taskpool.execute(test_uint8Array_024, uint8Array, caseName, i).then((res) => {
               expect(res as string)
                 .assertEqual('2,3')
               count++
@@ -989,7 +989,7 @@ export default function globalTest6() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_uint8Array_025, uint8Array, caseName, i).then((res) => {
+            await taskpool.execute(test_uint8Array_025, uint8Array, caseName, i).then((res) => {
               expect(res as string)
                 .assertEqual('3,true')
               count++
@@ -1023,7 +1023,7 @@ export default function globalTest6() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_uint8Array_026, uint8Array, caseName, i).then((res) => {
+            await taskpool.execute(test_uint8Array_026, uint8Array, caseName, i).then((res) => {
               expect(res as string)
                 .assertEqual('0,1')
               count++
@@ -1057,7 +1057,7 @@ export default function globalTest6() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_uint8Array_027, uint8Array, caseName, i).then((res) => {
+            await taskpool.execute(test_uint8Array_027, uint8Array, caseName, i).then((res) => {
               expect(res as string)
                 .assertEqual('0,1')
               count++

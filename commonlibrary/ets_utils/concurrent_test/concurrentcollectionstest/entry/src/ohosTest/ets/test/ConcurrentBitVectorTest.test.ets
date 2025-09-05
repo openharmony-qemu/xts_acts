@@ -139,7 +139,7 @@ export default function globalTest5() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_bitvector_002, bitVector, caseName, i).then((res) => {
+            await taskpool.execute(test_bitvector_002, bitVector, caseName, i).then((res) => {
               res = (res === 0 || res === 1)
               expect(res as boolean)
                 .assertTrue()
@@ -149,12 +149,13 @@ export default function globalTest5() {
               expect().assertFail()
             })
           }
+          expect(bitVector.length).assertEqual(900)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
           expect().assertFail()
         }
 
-        expect(bitVector.length).assertEqual(900)
+
         console.info(`${caseName} test end`);
         done()
       })
@@ -175,7 +176,7 @@ export default function globalTest5() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_bitvector_003, bitVector, caseName, i).then((res) => {
+            await taskpool.execute(test_bitvector_003, bitVector, caseName, i).then((res) => {
               expect(res as boolean)
                 .assertTrue()
               count++
@@ -277,7 +278,7 @@ export default function globalTest5() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_bitvector_006, bitVector, caseName, i).then((res) => {
+            await taskpool.execute(test_bitvector_006, bitVector, caseName, i).then((res) => {
               expect(res as number)
                 .assertEqual(2)
               count++
@@ -345,7 +346,7 @@ export default function globalTest5() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_bitvector_008, bitVector, caseName, i).then((res) => {
+            await taskpool.execute(test_bitvector_008, bitVector, caseName, i).then((res) => {
               expect(res as number)
                 .assertEqual(2)
               count++
@@ -379,7 +380,7 @@ export default function globalTest5() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_bitvector_009, bitVector, caseName, i).then((res) => {
+            await taskpool.execute(test_bitvector_009, bitVector, caseName, i).then((res) => {
               expect(res as number)
                 .assertEqual(2)
               count++
@@ -413,7 +414,7 @@ export default function globalTest5() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_bitvector_010, bitVector, caseName, i).then((res) => {
+            await taskpool.execute(test_bitvector_010, bitVector, caseName, i).then((res) => {
               expect(res as number)
                 .assertEqual(2)
               count++
@@ -447,7 +448,7 @@ export default function globalTest5() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_bitvector_011, bitVector, caseName, i).then((res) => {
+            await taskpool.execute(test_bitvector_011, bitVector, caseName, i).then((res) => {
               expect(res as number)
                 .assertEqual(1)
               count++
@@ -515,7 +516,7 @@ export default function globalTest5() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_bitvector_013, bitVector, caseName, i).then((res) => {
+            await taskpool.execute(test_bitvector_013, bitVector, caseName, i).then((res) => {
               expect(res as string)
                 .assertEqual('completed')
               count++

@@ -69,7 +69,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_cond_001, caseName, i).then((res) => {
+            await taskpool.execute(test_cond_001, caseName, i).then((res) => {
               expect(res as string).assertEqual('constructor_success');
               count++;
             }).catch((e: BusinessError) => {
@@ -101,7 +101,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_cond_002, caseName, i).then((res) => {
+            await taskpool.execute(test_cond_002, caseName, i).then((res) => {
               expect(res as string).assertEqual('request_success');
               count++;
             }).catch((e: BusinessError) => {
@@ -133,7 +133,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_cond_003, caseName, i).then((res) => {
+            await taskpool.execute(test_cond_003, caseName, i).then((res) => {
               expect(res as string).assertEqual('wait_success');
               count++;
             }).catch((e: BusinessError) => {
@@ -165,7 +165,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_cond_004, caseName, i).then((res) => {
+            await taskpool.execute(test_cond_004, caseName, i).then((res) => {
               expect(res as string).assertEqual('waitFor_success');
               count++;
             }).catch((e: BusinessError) => {
@@ -197,7 +197,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_cond_005, caseName, i).then((res) => {
+            await taskpool.execute(test_cond_005, caseName, i).then((res) => {
               expect(res as string).assertEqual('notifyAll_success');
               count++;
             }).catch((e: BusinessError) => {
@@ -229,7 +229,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_cond_006, caseName, i).then((res) => {
+            await taskpool.execute(test_cond_006, caseName, i).then((res) => {
               expect(res as string).assertEqual('notifyOne_success');
               count++;
             }).catch((e: BusinessError) => {
@@ -261,7 +261,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_cond_007, caseName, i).then((res) => {
+            await taskpool.execute(test_cond_007, caseName, i).then((res) => {
               expect(res as string).assertEqual('wait_notifyAll_success');
               count++;
             }).catch((e: BusinessError) => {
@@ -293,7 +293,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_cond_008, caseName, i).then((res) => {
+            await taskpool.execute(test_cond_008, caseName, i).then((res) => {
               expect(res as string).assertEqual('timeout_success');
               count++;
             }).catch((e: BusinessError) => {

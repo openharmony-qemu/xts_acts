@@ -261,7 +261,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_map_005, map, caseName, i).then((res) => {
+            await taskpool.execute(test_map_005, map, caseName, i).then((res) => {
               expect(res as boolean)
                 .assertTrue()
               count++
@@ -270,12 +270,11 @@ export default function globalTest2() {
               expect().assertFail()
             })
           }
+          expect(map.size).assertEqual(100)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
           expect().assertFail()
         }
-
-        expect(map.size).assertEqual(100)
         console.info(`${caseName} test end`);
         done()
       })
