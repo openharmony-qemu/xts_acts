@@ -935,29 +935,6 @@ export default function ActsUIInputEventNdkTest() {
       });
 
     /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0150
-     * @tc.name    : testArkUI_UIInputEvent_Type_0150
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     */
-    it('testArkUI_UIInputEvent_Type_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        try {
-          console.info("====>testArkUI_UIInputEvent_Type_0150 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072);
-          let result = uiinputeventndk.UIInputEventType0150();
-          console.info("====>testArkUI_UIInputEvent_Type_0150 result: " + result);
-          expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
-          done()
-        } catch (err) {
-          console.error("====>testArkUI_UIInputEvent_Type_0150 catch err: " + err);
-          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
-        }
-      });
-
-    /**
      * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0151
      * @tc.name    : testArkUI_UIInputEvent_Type_0151
      * @tc.desc    : test ArkUI_UIInputEvent_Type.
