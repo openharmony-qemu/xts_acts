@@ -183,7 +183,8 @@ export async function test_uint16Array_019(uint16Array: collections.Uint16Array,
   let str = '';
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let reduceRightResult = uint16Array.reduceRight((accumulator: number, value: number) => accumulator + value);
-    let reduceRightWithInitResult = uint16Array.reduceRight((accumulator: number, value: number) => accumulator + value, 6);
+    let reduceRightWithInitResult =
+      uint16Array.reduceRight((accumulator: number, value: number) => accumulator + value, 6);
     str = reduceRightResult + ',' + reduceRightWithInitResult;
   })
   return str;
@@ -449,7 +450,8 @@ export async function test_uint32Array_019(uint32Array: collections.Uint32Array,
   let str = '';
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let reduceRightResult = uint32Array.reduceRight((accumulator: number, value: number) => accumulator + value);
-    let reduceRightWithInitResult = uint32Array.reduceRight((accumulator: number, value: number) => accumulator + value, 6);
+    let reduceRightWithInitResult =
+      uint32Array.reduceRight((accumulator: number, value: number) => accumulator + value, 6);
     str = reduceRightResult + ',' + reduceRightWithInitResult;
   })
   return str;
@@ -534,7 +536,8 @@ export async function test_uint32Array_027(uint32Array: collections.Uint32Array,
 
 
 @Concurrent
-export async function test_uint8ClampedArray_001(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_001(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let originalLength = uint8ClampedArray.length;
     uint8ClampedArray[originalLength] = index % 256;
@@ -545,7 +548,8 @@ export async function test_uint8ClampedArray_001(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_002(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_002(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let newArray = collections.Uint8ClampedArray.from([index, index + 1, index + 2]);
     uint8ClampedArray[uint8ClampedArray.length] = newArray[0];
@@ -553,7 +557,8 @@ export async function test_uint8ClampedArray_002(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_003(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_003(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let newArray = collections.Uint8ClampedArray.from([index, index + 1, index + 2]);
     uint8ClampedArray[uint8ClampedArray.length] = newArray[0];
@@ -561,7 +566,8 @@ export async function test_uint8ClampedArray_003(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_004(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_004(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     uint8ClampedArray.copyWithin(0, 1, 3);
     let temp = uint8ClampedArray[0];
@@ -571,7 +577,8 @@ export async function test_uint8ClampedArray_004(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_005(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_005(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   let res = false;
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     res = uint8ClampedArray.some((element: number) => element < 0);
@@ -583,7 +590,8 @@ export async function test_uint8ClampedArray_005(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_006(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_006(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let newSet = new Set([index, index + 1, index + 2]);
     let newArray = collections.Uint8ClampedArray.from(newSet);
@@ -592,7 +600,8 @@ export async function test_uint8ClampedArray_006(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_007(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_007(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let newArray = collections.Uint8ClampedArray.from([index, index + 1, index + 2], (value, idx) => value + idx);
     uint8ClampedArray[uint8ClampedArray.length] = newArray[0];
@@ -600,7 +609,8 @@ export async function test_uint8ClampedArray_007(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_008(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_008(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let newArray = collections.Uint8ClampedArray.of(index, index + 1, index + 2);
     uint8ClampedArray[uint8ClampedArray.length] = newArray[0];
@@ -608,7 +618,8 @@ export async function test_uint8ClampedArray_008(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_009(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_009(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     uint8ClampedArray.copyWithin(0, 1, 3);
     let temp = uint8ClampedArray[0];
@@ -618,7 +629,8 @@ export async function test_uint8ClampedArray_009(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_010(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_010(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let temp = uint8ClampedArray[0];
     uint8ClampedArray[0] = uint8ClampedArray[1];
@@ -627,7 +639,8 @@ export async function test_uint8ClampedArray_010(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_011(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_011(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   let res = false;
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let someResult = uint8ClampedArray.some((element: number) => element < 0);
@@ -638,14 +651,16 @@ export async function test_uint8ClampedArray_011(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_012(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_012(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     uint8ClampedArray.fill(0, 1, 3);
   })
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_013(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_013(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   let str = '';
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let filteredArray = uint8ClampedArray.filter((element: number) => element % 2 === 0);
@@ -656,7 +671,8 @@ export async function test_uint8ClampedArray_013(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_014(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_014(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   let str = '';
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let findIndexResult = uint8ClampedArray.findIndex((element: number) => element % 2 === 0);
@@ -667,7 +683,8 @@ export async function test_uint8ClampedArray_014(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_015(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_015(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   let result = 'forEach_completed';
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     uint8ClampedArray.forEach((value: number, index: number, array: collections.Uint8ClampedArray) => {
@@ -680,7 +697,8 @@ export async function test_uint8ClampedArray_015(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_016(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_016(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   let str = '';
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let lastIndexOfResult = uint8ClampedArray.lastIndexOf(2);
@@ -691,7 +709,8 @@ export async function test_uint8ClampedArray_016(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_017(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_017(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   let str = '';
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let mappedArray = uint8ClampedArray.map((value: number) => value * 2);
@@ -701,7 +720,8 @@ export async function test_uint8ClampedArray_017(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_018(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_018(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   let str = '';
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let reduceResult = uint8ClampedArray.reduce((accumulator: number, value: number) => accumulator + value);
@@ -712,25 +732,29 @@ export async function test_uint8ClampedArray_018(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_019(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_019(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   let str = '';
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let reduceRightResult = uint8ClampedArray.reduceRight((accumulator: number, value: number) => accumulator + value);
-    let reduceRightWithInitResult = uint8ClampedArray.reduceRight((accumulator: number, value: number) => accumulator + value, 6);
+    let reduceRightWithInitResult =
+      uint8ClampedArray.reduceRight((accumulator: number, value: number) => accumulator + value, 6);
     str = reduceRightResult + ',' + reduceRightWithInitResult;
   })
   return str;
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_020(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_020(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     uint8ClampedArray.reverse();
   })
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_021(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_021(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let newValues = [100, 101, 102];
     uint8ClampedArray.set(newValues, 0);
@@ -738,7 +762,8 @@ export async function test_uint8ClampedArray_021(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_022(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_022(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   let str = '';
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let slicedArray = uint8ClampedArray.slice(1, 3);
@@ -748,14 +773,16 @@ export async function test_uint8ClampedArray_022(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_023(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_023(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     uint8ClampedArray.sort((a: number, b: number) => b - a);
   })
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_024(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_024(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   let str = '';
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let subArray = uint8ClampedArray.subarray(1, 3);
@@ -765,7 +792,8 @@ export async function test_uint8ClampedArray_024(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_025(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_025(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   let str = '';
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let atResult = uint8ClampedArray.at(2);
@@ -776,7 +804,8 @@ export async function test_uint8ClampedArray_025(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_026(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_026(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   let str = '';
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let iterator = uint8ClampedArray.entries();
@@ -787,7 +816,8 @@ export async function test_uint8ClampedArray_026(uint8ClampedArray: collections.
 }
 
 @Concurrent
-export async function test_uint8ClampedArray_027(uint8ClampedArray: collections.Uint8ClampedArray, name: string, index: number) {
+export async function test_uint8ClampedArray_027(uint8ClampedArray: collections.Uint8ClampedArray, name: string,
+  index: number) {
   let str = '';
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let keysIterator = uint8ClampedArray.keys();

@@ -161,11 +161,11 @@ export async function test_array_014(arr: collections.Array<number>, name: strin
 export async function test_array_015(arr: collections.Array<number>, name: string, index: number) {
   let result = 'forEach_completed'
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
-  arr.forEach((value, index, array) => {
-    if (value !== array[index]) {
-      result = 'forEach_failed'
-    }
-  })
+    arr.forEach((value, index, array) => {
+      if (value !== array[index]) {
+        result = 'forEach_failed'
+      }
+    })
     arr.reverse();
     arr.reverse();
   })
@@ -220,7 +220,7 @@ export async function test_array_019(arr: collections.Array<number>, name: strin
     let temp = arr.shift();
     arr.unshift(temp as number);
   })
-    return res
+  return res
 }
 
 @Concurrent
@@ -239,7 +239,7 @@ export async function test_array_021(arr: collections.Array<number>, name: strin
   let str = ''
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let iterator = arr.entries();
-    let firstEntry:[number, number] = iterator.next().value;
+    let firstEntry: [number, number] = iterator.next().value;
     str = firstEntry[0] + ',' + firstEntry[1];
     let t = arr[0];
     arr.shift();
@@ -261,7 +261,7 @@ export async function test_array_022(arr: collections.Array<number>, name: strin
     arr.splice(1, 1);
     arr.splice(1, 0, temp);
   })
-    return firstKey.toString()
+  return firstKey.toString()
 }
 
 @Concurrent
@@ -368,7 +368,7 @@ export async function test_array_030(arr: collections.Array<number>, name: strin
 @Concurrent
 export async function test_array_031(arr: collections.Array<number>, name: string, index: number) {
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
-    arr.splice(arr.length-1);
+    arr.splice(arr.length - 1);
     arr.reverse();
     arr.reverse();
   })
@@ -521,7 +521,7 @@ export async function test_map_005(map: collections.Map<number, string>, name: s
   let res = false
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     res = map.has(1);
-    map.set(index,'now');
+    map.set(index, 'now');
   })
   return res
 }
@@ -663,7 +663,7 @@ export async function test_set_008(set: collections.Set<string>, name: string, i
         result = 'forEach_failed'
       }
     })
-    set.add(''+index)
+    set.add('' + index)
   })
   return result
 }
@@ -770,8 +770,9 @@ export async function test_asynclock_009(name: string, index: number) {
   let result = '';
   try {
     await lock.lockAsync(() => {
-      if(1)
-      throw new Error('模拟错误');
+      if (1) {
+        throw new Error('模拟错误');
+      }
       result = 'success';
     });
   } catch (e) {
@@ -893,8 +894,8 @@ export async function test_bitvector_005(bitVector: collections.BitVector, name:
 export async function test_bitvector_006(bitVector: collections.BitVector, name: string, index: number) {
   let res = 0
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
-      let subBitVector =  bitVector.getBitsByRange(1, 3);
-      res = subBitVector.length;
+    let subBitVector = bitVector.getBitsByRange(1, 3);
+    res = subBitVector.length;
   })
   return res
 }
@@ -1169,7 +1170,8 @@ export async function test_uint8Array_019(uint8Array: collections.Uint8Array, na
   let str = '';
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     let reduceRightResult = uint8Array.reduceRight((accumulator: number, value: number) => accumulator + value);
-    let reduceRightWithInitResult = uint8Array.reduceRight((accumulator: number, value: number) => accumulator + value, 6);
+    let reduceRightWithInitResult =
+      uint8Array.reduceRight((accumulator: number, value: number) => accumulator + value, 6);
     str = reduceRightResult + ',' + reduceRightWithInitResult;
   })
   return str;

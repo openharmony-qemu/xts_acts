@@ -137,16 +137,16 @@ export default function globalTest6() {
     })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_0100
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_001
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_001 - test uint8ClampedArray constructor and basic operations
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_0100
+     * @tc.name      : test_Uint8ClampedArray_001
+     * @tc.desc      : test_Uint8ClampedArray_001 - test uint8ClampedArray constructor and basic operations
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_001';
+        const caseName = 'test_Uint8ClampedArray_001';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray1()
         try {
@@ -171,16 +171,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_0200
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_002
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_002 - test uint8ClampedArray from method
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_0200
+     * @tc.name      : test_Uint8ClampedArray_002
+     * @tc.desc      : test_Uint8ClampedArray_002 - test uint8ClampedArray from method
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_002';
+        const caseName = 'test_Uint8ClampedArray_002';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray2()
         try {
@@ -205,16 +205,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_0300
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_003
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_003 - test uint8ClampedArray from with array parameter
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_0300
+     * @tc.name      : test_Uint8ClampedArray_003
+     * @tc.desc      : test_Uint8ClampedArray_003 - test uint8ClampedArray from with array parameter
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_003';
+        const caseName = 'test_Uint8ClampedArray_003';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray3()
         try {
@@ -239,16 +239,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_0400
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_004
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_004 - test uint8ClampedArray copyWithin method
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_0400
+     * @tc.name      : test_Uint8ClampedArray_004
+     * @tc.desc      : test_Uint8ClampedArray_004 - test uint8ClampedArray copyWithin method
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_004';
+        const caseName = 'test_Uint8ClampedArray_004';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray4()
         try {
@@ -273,16 +273,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_0500
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_005
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_005 - test uint8ClampedArray from with Array
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_0500
+     * @tc.name      : test_Uint8ClampedArray_005
+     * @tc.desc      : test_Uint8ClampedArray_005 - test uint8ClampedArray from with Array
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_005';
+        const caseName = 'test_Uint8ClampedArray_005';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray5()
         let count = 0;
@@ -309,16 +309,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_0600
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_006
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_006 - test uint8ClampedArray from with Set
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_0600
+     * @tc.name      : test_Uint8ClampedArray_006
+     * @tc.desc      : test_Uint8ClampedArray_006 - test uint8ClampedArray from with Set
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_006';
+        const caseName = 'test_Uint8ClampedArray_006';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray6()
         try {
@@ -343,16 +343,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_0700
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_007
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_007 - test uint8ClampedArray from with mapping function
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_0700
+     * @tc.name      : test_Uint8ClampedArray_007
+     * @tc.desc      : test_Uint8ClampedArray_007 - test uint8ClampedArray from with mapping function
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_007';
+        const caseName = 'test_Uint8ClampedArray_007';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray7()
         try {
@@ -380,16 +380,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_0800
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_008
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_008 - test uint8ClampedArray of method
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_0800
+     * @tc.name      : test_Uint8ClampedArray_008
+     * @tc.desc      : test_Uint8ClampedArray_008 - test uint8ClampedArray of method
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_008';
+        const caseName = 'test_Uint8ClampedArray_008';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray8()
         try {
@@ -418,16 +418,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_0900
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_009
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_009 - test uint8ClampedArray copyWithin result
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_0900
+     * @tc.name      : test_Uint8ClampedArray_009
+     * @tc.desc      : test_Uint8ClampedArray_009 - test uint8ClampedArray copyWithin result
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_009';
+        const caseName = 'test_Uint8ClampedArray_009';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray9()
         try {
@@ -452,16 +452,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_1000
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_010
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_010 - test uint8ClampedArray with ArrayBuffer
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_1000
+     * @tc.name      : test_Uint8ClampedArray_010
+     * @tc.desc      : test_Uint8ClampedArray_010 - test uint8ClampedArray with ArrayBuffer
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_010';
+        const caseName = 'test_Uint8ClampedArray_010';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray10()
         try {
@@ -488,16 +488,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_1100
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_011
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_011 - test uint8ClampedArray some and every methods
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_1100
+     * @tc.name      : test_Uint8ClampedArray_011
+     * @tc.desc      : test_Uint8ClampedArray_011 - test uint8ClampedArray some and every methods
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_011';
+        const caseName = 'test_Uint8ClampedArray_011';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray2()
         let count = 0;
@@ -524,16 +524,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_1200
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_012
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_012 - test uint8ClampedArray fill method
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_1200
+     * @tc.name      : test_Uint8ClampedArray_012
+     * @tc.desc      : test_Uint8ClampedArray_012 - test uint8ClampedArray fill method
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_012';
+        const caseName = 'test_Uint8ClampedArray_012';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray2()
         try {
@@ -561,16 +561,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_1300
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_013
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_013 - test uint8ClampedArray filter and find methods
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_1300
+     * @tc.name      : test_Uint8ClampedArray_013
+     * @tc.desc      : test_Uint8ClampedArray_013 - test uint8ClampedArray filter and find methods
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_013';
+        const caseName = 'test_Uint8ClampedArray_013';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray2()
         let count = 0;
@@ -597,16 +597,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_1400
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_014
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_014 - test uint8ClampedArray findIndex and indexOf methods
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_1400
+     * @tc.name      : test_Uint8ClampedArray_014
+     * @tc.desc      : test_Uint8ClampedArray_014 - test uint8ClampedArray findIndex and indexOf methods
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_014';
+        const caseName = 'test_Uint8ClampedArray_014';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray2()
         let count = 0;
@@ -633,16 +633,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_1500
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_015
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_015 - test uint8ClampedArray forEach method
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_1500
+     * @tc.name      : test_Uint8ClampedArray_015
+     * @tc.desc      : test_Uint8ClampedArray_015 - test uint8ClampedArray forEach method
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_015';
+        const caseName = 'test_Uint8ClampedArray_015';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray2()
         let count = 0;
@@ -669,16 +669,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_1600
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_016
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_016 - test uint8ClampedArray lastIndexOf and join methods
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_1600
+     * @tc.name      : test_Uint8ClampedArray_016
+     * @tc.desc      : test_Uint8ClampedArray_016 - test uint8ClampedArray lastIndexOf and join methods
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_016';
+        const caseName = 'test_Uint8ClampedArray_016';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray2()
         let count = 0;
@@ -705,16 +705,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_1700
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_017
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_017 - test uint8ClampedArray map method
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_1700
+     * @tc.name      : test_Uint8ClampedArray_017
+     * @tc.desc      : test_Uint8ClampedArray_017 - test uint8ClampedArray map method
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_017';
+        const caseName = 'test_Uint8ClampedArray_017';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray2()
         let count = 0;
@@ -741,16 +741,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_1800
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_018
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_018 - test uint8ClampedArray reduce methods
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_1800
+     * @tc.name      : test_Uint8ClampedArray_018
+     * @tc.desc      : test_Uint8ClampedArray_018 - test uint8ClampedArray reduce methods
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_018';
+        const caseName = 'test_Uint8ClampedArray_018';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray2()
         let count = 0;
@@ -777,16 +777,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_1900
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_019
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_019 - test uint8ClampedArray reduceRight methods
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_1900
+     * @tc.name      : test_Uint8ClampedArray_019
+     * @tc.desc      : test_Uint8ClampedArray_019 - test uint8ClampedArray reduceRight methods
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_019';
+        const caseName = 'test_Uint8ClampedArray_019';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray2()
         let count = 0;
@@ -813,16 +813,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_2000
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_020
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_020 - test uint8ClampedArray reverse method
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_2000
+     * @tc.name      : test_Uint8ClampedArray_020
+     * @tc.desc      : test_Uint8ClampedArray_020 - test uint8ClampedArray reverse method
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_020';
+        const caseName = 'test_Uint8ClampedArray_020';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray2()
         try {
@@ -850,16 +850,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_2100
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_021
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_021 - test uint8ClampedArray set method
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_2100
+     * @tc.name      : test_Uint8ClampedArray_021
+     * @tc.desc      : test_Uint8ClampedArray_021 - test uint8ClampedArray set method
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_021';
+        const caseName = 'test_Uint8ClampedArray_021';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray1()
         try {
@@ -887,16 +887,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_2200
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_022
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_022 - test uint8ClampedArray slice method
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_2200
+     * @tc.name      : test_Uint8ClampedArray_022
+     * @tc.desc      : test_Uint8ClampedArray_022 - test uint8ClampedArray slice method
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_022';
+        const caseName = 'test_Uint8ClampedArray_022';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray2()
         let count = 0;
@@ -923,16 +923,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_2300
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_023
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_023 - test uint8ClampedArray sort method
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_2300
+     * @tc.name      : test_Uint8ClampedArray_023
+     * @tc.desc      : test_Uint8ClampedArray_023 - test uint8ClampedArray sort method
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_023';
+        const caseName = 'test_Uint8ClampedArray_023';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray2()
         try {
@@ -960,16 +960,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_2400
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_024
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_024 - test uint8ClampedArray subarray method
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_2400
+     * @tc.name      : test_Uint8ClampedArray_024
+     * @tc.desc      : test_Uint8ClampedArray_024 - test uint8ClampedArray subarray method
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_024';
+        const caseName = 'test_Uint8ClampedArray_024';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray2()
         let count = 0;
@@ -996,16 +996,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_2500
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_025
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_025 - test uint8ClampedArray at and includes methods
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_2500
+     * @tc.name      : test_Uint8ClampedArray_025
+     * @tc.desc      : test_Uint8ClampedArray_025 - test uint8ClampedArray at and includes methods
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_025';
+        const caseName = 'test_Uint8ClampedArray_025';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray2()
         let count = 0;
@@ -1032,16 +1032,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_2600
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_026
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_026 - test uint8ClampedArray entries method
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_2600
+     * @tc.name      : test_Uint8ClampedArray_026
+     * @tc.desc      : test_Uint8ClampedArray_026 - test uint8ClampedArray entries method
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_026';
+        const caseName = 'test_Uint8ClampedArray_026';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray2()
         let count = 0;
@@ -1068,16 +1068,16 @@ export default function globalTest6() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_2700
-     * @tc.name      : test_concurrent_collections.Uint8ClampedArray_027
-     * @tc.desc      : test_concurrent_collections.Uint8ClampedArray_027 - test uint8ClampedArray keys and values methods
+     * @tc.number    : SUB_CONCURRENT_UINT8CLAMPED_TEST_2700
+     * @tc.name      : test_Uint8ClampedArray_027
+     * @tc.desc      : test_Uint8ClampedArray_027 - test uint8ClampedArray keys and values methods
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_collections.Uint8ClampedArray_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_Uint8ClampedArray_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_collections.Uint8ClampedArray_027';
+        const caseName = 'test_Uint8ClampedArray_027';
         console.info(`${caseName} test start`);
         let uint8ClampedArray = getInitUint8ClampedArray2()
         let count = 0;

@@ -193,7 +193,7 @@ export async function Int32array_test_0015(arr: collections.Int32Array, name: st
     }
     let iterator: IterableIterator<number> = arr.values();
     for (const value of iterator) {
-      console.info("" + value);
+      console.info('' + value);
       reversed = arr.set([1, 2, 3], value);
     }
   })
@@ -211,7 +211,7 @@ export async function Int32array_test_0016(arr: collections.Int32Array, name: st
     }
     let iterator: IterableIterator<number> = arr.keys();
     for (const keys of iterator) {
-      console.info("" + keys);
+      console.info('' + keys);
       if(keys === 1 || keys === 2){
         reversed = arr.set([1, 2, 3], keys);
       }
