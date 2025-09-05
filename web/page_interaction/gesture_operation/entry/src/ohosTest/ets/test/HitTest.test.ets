@@ -21,6 +21,9 @@ import { accessibility, config } from '@kit.AccessibilityKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
+const EVENT_ID_SET_SUITE_KEY = 181101;
+const driver = Driver.create();
+
 export default function HitTest() {
 
   describe('HitTest', () => {
@@ -35,7 +38,7 @@ export default function HitTest() {
         if (!("HitTest" == pages.name)) {
           console.info("get HitTest state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("DNSHostIP"), 10000);
           console.info("push HitTest page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -50,16 +53,9 @@ export default function HitTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
-    afterEach(async (done: Function) => {
-      await Utils.sleep(2000);
-      console.info("web afterEach finish");
-      done();
-    })
-
 
     /*
      * @tc.number     : Acts_setHostIP_0100
@@ -70,13 +66,12 @@ export default function HitTest() {
      * @tc.level      : Level 2
      */
     it('zoomAccess', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitZoomAccess", 10)
-      Utils.registerEvent("zoomAccess", false, 428, done);
-      let driver = Driver.create();
-      await Utils.sleep(1000);
-      let StartModel = await driver.findComponent(ON.id("DNSHostIP"));
-      await StartModel.click();
-      await Utils.sleep(1000);
+      Utils.emitEvent("emitZoomAccess", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("zoomAccess", false, 181110, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "DNSHostIP", "zoomAccess");
+      await Utils.waitForExist(() => isReturn, "zoomAccess" + '_returnCheck', true, 1000);
+      done();
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_012                                                                                                                                                             
@@ -84,13 +79,12 @@ export default function HitTest() {
      *tc.desic get the type of th clicked component
      */
     it('GetHitTestValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitGetHitTestValue", 10)
-      Utils.registerEvent("GetHitTestValue", "hitValue", 12, done);
-      let driver = Driver.create();
-      await Utils.sleep(1000);
-      let StartModel = await driver.findComponent(ON.id("DNSHostIP"));
-      await StartModel.click();
-      await Utils.sleep(1000);
+      Utils.emitEvent("emitGetHitTestValue", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("GetHitTestValue", "hitValue", 181120, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "DNSHostIP", "GetHitTestValue");
+      await Utils.waitForExist(() => isReturn, "GetHitTestValue" + '_returnCheck', true, 1000);
+      done();
     })
   })
 }

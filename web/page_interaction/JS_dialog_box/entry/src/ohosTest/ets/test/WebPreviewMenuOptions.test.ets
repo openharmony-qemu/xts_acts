@@ -17,8 +17,13 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 177501;
+let driver = Driver.create();
 
 export default function WebPreviewMenuOptions() {
 
@@ -35,7 +40,7 @@ export default function WebPreviewMenuOptions() {
         if (!("WebPreviewMenuOptions" == pages.name)) {
           console.info("get WebPreviewMenuOptions state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("WebHapticFeedbackButton"), 10000);
           console.info("push WebPreviewMenuOptions page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -50,15 +55,7 @@ export default function WebPreviewMenuOptions() {
       }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebPreviewMenuOptions afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebPreviewMenuOptions afterEach end");
       done();
     })
 
@@ -71,9 +68,12 @@ export default function WebPreviewMenuOptions() {
     * @tc.level      : Level 1
     */
     it('WebHapticFeedback001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebHapticFeedback001", 10)
-      Utils.registerEvent("WebHapticFeedback001", 'HapticFeedbackMode.DISABLED', 20250517, done);
-      sendEventByKey('WebHapticFeedbackButton', 10, '');
+      Utils.emitEvent("emitWebHapticFeedback001", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("bindSelectionMenuType01", 'HapticFeedbackMode.DISABLED', 177510, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, 'WebHapticFeedbackButton', "WebHapticFeedback001");
+      await Utils.waitForExist(() => isReturn, "WebHapticFeedback001" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -85,9 +85,12 @@ export default function WebPreviewMenuOptions() {
     * @tc.level      : Level 1
     */
     it('WebHapticFeedback002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebHapticFeedback002", 10)
-      Utils.registerEvent("WebHapticFeedback002", 'HapticFeedbackMode.ENABLED', 20250518, done);
-      sendEventByKey('WebHapticFeedbackButton', 10, '');
+      Utils.emitEvent("emitWebHapticFeedback002", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("WebHapticFeedback002", 'HapticFeedbackMode.ENABLED', 177520, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebHapticFeedbackButton", "WebHapticFeedback002");
+      await Utils.waitForExist(() => isReturn, "WebHapticFeedback002" + '_returnCheck', true, 1000);
+      done();
     })
 
 
@@ -100,9 +103,12 @@ export default function WebPreviewMenuOptions() {
       * @tc.level      : Level 1
       */
     it('WebHapticFeedback003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebHapticFeedback003", 10)
-      Utils.registerEvent("WebHapticFeedback003", 'HapticFeedbackMode.AUTO', 20250519, done);
-      sendEventByKey('WebHapticFeedbackButton', 10, '');
+      Utils.emitEvent("emitWebHapticFeedback003", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("WebHapticFeedback003", 'HapticFeedbackMode.AUTO', 177530, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebHapticFeedbackButton", "WebHapticFeedback003");
+      await Utils.waitForExist(() => isReturn, "WebHapticFeedback003" + '_returnCheck', true, 1000);
+      done();
     })
 
 
