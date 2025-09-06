@@ -33,6 +33,7 @@ import functionTest1 from './function/FunctionTest1.test';
 import functionTest2 from './function/FunctionTest2.test';
 import functionTest3 from './function/FunctionTest3.test';
 
+import typeArrayBigInt64ArrayTest from "./typearray/TypeArrayBigInt64Array.test";
 export default function testsuite() {
   builtinsStatementBlockTest();
   builtinsStatementForOfTest();
@@ -53,4 +54,5 @@ export default function testsuite() {
   functionTest1();
   functionTest2();
   functionTest3();
+  typeArrayBigInt64ArrayTest();
 }
