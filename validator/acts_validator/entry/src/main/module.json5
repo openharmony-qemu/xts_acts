@@ -381,15 +381,6 @@
         }
       },
       {
-        "name": "ohos.permission.HEALTH_DATA",
-        "reason": "$string:test",
-        "usedScene": {
-          "abilities": [
-            "FormAbility"
-          ]
-        }
-      },
-      {
         "name": "ohos.permission.GYROSCOPE",
         "reason": "$string:test",
         "usedScene": {
