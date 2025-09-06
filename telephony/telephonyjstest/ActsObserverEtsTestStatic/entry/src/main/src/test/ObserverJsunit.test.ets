@@ -27,14 +27,14 @@ export default function ObserverJsunit() {
     hilog.info(domain, tag, '%{public}s', '************* Observer Test start *************');
     /*
      * @tc.number    : Telephony_observer_observer_on_callStateChange_0200
-     * @tc.name      : on_callStateChange
+     * @tc.name      : Telephony_observer_observer_on_callStateChange_0200
      * @tc.desc      : call the on method of callStateChange
      */
     it('Telephony_observer_observer_on_callStateChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* Telephony_observer_observer_on_callStateChange_0200 Test start *************');
       try {
 		      let callback = (value:observer.CallStateInfo) => {
-          hilog.info(domain, tag, '%{public}s', 'on callStateChange, state:'+JSON.stringify(value.state));
+          hilog.info(domain, tag, '%{public}s', 'on callStateChange, state:'+JSON.stringify(value.state)+'number:'+JSON.stringify(value.teleNumber));
           expect(typeof value.state === undefined).assertFalse();
         }
         observer.on('callStateChange', {
@@ -52,14 +52,14 @@ export default function ObserverJsunit() {
 
     /*
      * @tc.number    : Telephony_observer_observer_off_callStateChange_0100
-     * @tc.name      : off_callStateChange
+     * @tc.name      : Telephony_observer_observer_off_callStateChange_0100
      * @tc.desc      : call the off method of callStateChange
      */
     it('Telephony_observer_observer_off_callStateChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* Telephony_observer_observer_off_callStateChange_0100 Test start *************');
       try {
         let callback = (value:observer.CallStateInfo) => {
-          hilog.info(domain, tag, '%{public}s', 'on callStateChange, state:'+JSON.stringify(value.state));
+          hilog.info(domain, tag, '%{public}s', 'on callStateChange, state:'+JSON.stringify(value.state)+'number:'+JSON.stringify(value.teleNumber));
         }
         observer.on('callStateChange', callback);
         // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
@@ -76,7 +76,7 @@ export default function ObserverJsunit() {
 
     /*
      * @tc.number    : Telephony_observer_observer_on_signalInfoChange_0200
-     * @tc.name      : on_signalInfoChange
+     * @tc.name      : Telephony_observer_observer_on_signalInfoChange_0200
      * @tc.desc      : call the on method of signalInfoChange
      */
     it('Telephony_observer_observer_on_signalInfoChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
@@ -100,7 +100,7 @@ export default function ObserverJsunit() {
 
     /*
      * @tc.number    : Telephony_observer_observer_off_signalInfoChange_0100
-     * @tc.name      : off_signalInfoChange
+     * @tc.name      : Telephony_observer_observer_off_signalInfoChange_0100
      * @tc.desc      : call the off method of signalInfoChange
      */
     it('Telephony_observer_observer_off_signalInfoChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
@@ -120,54 +120,6 @@ export default function ObserverJsunit() {
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* Telephony_observer_observer_off_signalInfoChange_0100 Test end *************');
-    })
-
-        /*
-     * @tc.number    : Telephony_observer_observer_on_signalInfoChange_0200
-     * @tc.name      : on_signalInfoChange
-     * @tc.desc      : call the on method of signalInfoChange
-     */
-    it('Telephony_observer_observer_on_signalInfoChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.log("************* Telephony_observer_observer_on_signalInfoChange_0200 Test start *************");
-      try {
-        let callback = (SignalInformation:Array<radio.SignalInformation>) => {
-          console.log("on signalInfoChange, SignalInformation:" + JSON.stringify(SignalInformation));
-          expect(typeof SignalInformation === undefined).assertFalse();
-        }
-        observer.on('signalInfoChange', {
-          slotId: 0
-        }, callback);
-        done();
-      } catch (error) {
-        expect(false).assertTrue();
-        done();
-      }
-      observer.off('signalInfoChange');
-      console.log("************* Telephony_observer_observer_on_signalInfoChange_0200 Test end *************");
-    })
-
-    /*
-     * @tc.number    : Telephony_observer_observer_off_signalInfoChange_0100
-     * @tc.name      : off_signalInfoChange
-     * @tc.desc      : call the off method of signalInfoChange
-     */
-    it('Telephony_observer_observer_off_signalInfoChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.log("************* Telephony_observer_observer_off_signalInfoChange_0100 Test start *************");
-      try {
-        let callback = (SignalInformation:Array<radio.SignalInformation>) => {
-          console.log("on signalInfoChange, SignalInformation:" + JSON.stringify(SignalInformation));
-          expect(typeof SignalInformation === undefined).assertFalse();
-        }
-        observer.on('signalInfoChange', callback);
-        // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-        observer.off('signalInfoChange', callback);
-        observer.off('signalInfoChange');
-        done();
-      } catch (error) {
-        expect(false).assertTrue();
-        done();
-      }
-      console.log("************* Telephony_observer_observer_off_signalInfoChange_0100 Test end *************");
     })
 
     hilog.info(domain, tag, '%{public}s', '************* Observer Test end *************');
