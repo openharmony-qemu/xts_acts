@@ -12,11 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium/index'
 import observer from '@ohos.telephony.observer';
 import radio from '@ohos.telephony.radio';
 import hilog from '@ohos.hilog'
+import cellular from '@ohos.telephony.data';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'ObserverTestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -34,7 +34,7 @@ export default function ObserverJsunit() {
       hilog.info(domain, tag, '%{public}s', '************* Telephony_observer_observer_on_callStateChange_0200 Test start *************');
       try {
 		      let callback = (value:observer.CallStateInfo) => {
-          hilog.info(domain, tag, '%{public}s', 'on callStateChange, state:'+JSON.stringify(value.state));
+          hilog.info(domain, tag, '%{public}s', 'on callStateChange, state:'+JSON.stringify(value.state)+'number:'+JSON.stringify(value.teleNumber));
           expect(typeof value.state === undefined).assertFalse();
         }
         observer.on('callStateChange', {
@@ -59,7 +59,7 @@ export default function ObserverJsunit() {
       hilog.info(domain, tag, '%{public}s', '************* Telephony_observer_observer_off_callStateChange_0100 Test start *************');
       try {
         let callback = (value:observer.CallStateInfo) => {
-          hilog.info(domain, tag, '%{public}s', 'on callStateChange, state:'+JSON.stringify(value.state));
+          hilog.info(domain, tag, '%{public}s', 'on callStateChange, state:'+JSON.stringify(value.state)+'number:'+JSON.stringify(value.teleNumber));
         }
         observer.on('callStateChange', callback);
         // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。

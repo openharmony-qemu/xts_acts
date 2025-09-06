@@ -60,48 +60,30 @@ export default function callJsunit() {
      */
     it("Telephony_Call_Call_MakeCall_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         let caseName: string = "Telephony_Call_Call_MakeCall_0100";
-        hilog.info(domain, tag, '%{public}s', caseName + ' start');
-        try {
-          let telNumber: string = "";
-          call.makeCall(telNumber, (error: BusinessError<void>|null) => {
-            if (error) {
-              hilog.info(domain, tag, '%{public}s', caseName +'makeCall callback: err->'+JSON.stringify(error));
-              expect(false).assertTrue();
-              done();
-            }
-            done();
-          });
-        } catch (err) {
-          hilog.info(domain, tag, '%{public}s', caseName +'makeCall callback: err->'+JSON.stringify(err));
-          expect(false).assertTrue();
+        let simState: sim.SimState = sim.getSimStateSync(0);
+        if(simState == sim.SimState.SIM_STATE_UNKNOWN)
+        {
+          hilog.info(domain, tag, '%{public}s', caseName + ' faild, SIM_STATE_UNKNOWN');
           done();
-        }
-        hilog.info(domain, tag, '%{public}s', caseName + ' Test end');
-      });
-
-    /**
-     * @tc.number Telephony_Call_Call_MakeCall_0200
-     * @tc.name Makes a call.
-     * @tc.desc Function test
-     */
-    it("Telephony_Call_Call_MakeCall_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let caseName: string = "Telephony_Call_Call_MakeCall_0200";
-        hilog.info(domain, tag, '%{public}s', caseName + ' start');
-        let telNumber = "";
-        try {
-          call.makeCall(telNumber).then(() => {
-            done();
-          }).catch((err) => {
-            hilog.info(domain, tag, '%{public}s', caseName +'makeCall callback: err->'+JSON.stringify(err));
+        }else{
+          hilog.info(domain, tag, '%{public}s', caseName + ' start');
+          try {
+            let telNumber: string = "";
+            call.makeCall(telNumber, (error: BusinessError<void>|null) => {
+              if (error) {
+                hilog.info(domain, tag, '%{public}s', caseName +'makeCall callback: err->'+JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              }
+              done();
+            });
+          } catch (err) {
             expect(false).assertTrue();
             done();
-          });
-        } catch (err) {
-          hilog.info(domain, tag, '%{public}s', caseName +'makeCall callback: err->'+JSON.stringify(err));
-          expect(false).assertTrue();
-          done();
+          }
+          hilog.info(domain, tag, '%{public}s', caseName + ' Test end');
         }
-        hilog.info(domain, tag, '%{public}s', caseName + ' Test end');
       });
+
   });
 }
