@@ -20,7 +20,8 @@
             "power-shell wakeup",
             "power-shell setmode 602",
             "cd ./storage/media/100/local/files/Documents/",
-            "touch 1.json"
+            "touch 1.json",
+            "power-shell timeout -o 864000000"
         ]
     }]
 }
