@@ -68,6 +68,17 @@ struct FocusScopeId006 {
       Navigation(this.pageInfos){
         Scroll(){
           Column({space:5}){
+            Text('焦点组6，第三个按钮设置默认获焦')
+            Column({space:5}){
+              Button('btn1').focusOnTouch(true)
+                .id('FocusScopeId006_btn1_6')
+              Button('btn2').focusOnTouch(true)
+                .id('FocusScopeId006_btn2_6')
+              Button('defaultFocus:true').focusOnTouch(true).defaultFocus(true)
+                .id('FocusScopeId006_btn3_6')
+            }
+            .focusScopeId('FocusScopeId006_focusGroup6',true)
+            .borderWidth(1)
 
             Text('焦点组1，可删除')
             if(this.flag) {
@@ -152,17 +163,6 @@ struct FocusScopeId006 {
             .borderWidth(1)
 
 
-            Text('焦点组6，第三个按钮设置默认获焦')
-            Column({space:5}){
-              Button('btn1').focusOnTouch(true)
-                .id('FocusScopeId006_btn1_6')
-              Button('btn2').focusOnTouch(true)
-                .id('FocusScopeId006_btn2_6')
-              Button('defaultFocus:true').focusOnTouch(true).defaultFocus(true)
-                .id('FocusScopeId006_btn3_6')
-            }
-            .focusScopeId('FocusScopeId006_focusGroup6',true)
-            .borderWidth(1)
 
             Divider().strokeWidth(2)
 

@@ -34,16 +34,16 @@ struct searchTest {
           if (e) {
             this.text3 += 1
           }
-        }).height('10%')
+        }).height('5%')
       Search()
         .width(150)
         .key('searchTest2')
         .onEditChange((e) => {
           this.text1 = e + ''
-        }).height('10%')
-      Text(this.text).key('searchTestText1').fontSize(10).width('100%').textAlign(TextAlign.Center).height('5%')
-      Text(this.text1).key('searchTestText2').fontSize(10).width('100%').textAlign(TextAlign.Center).height('5%')
-      Text(this.text3).key('searchTestText3').fontSize(10).width('100%').textAlign(TextAlign.Center).height('5%')
+        }).height('5%')
+      Text(this.text).key('searchTestText1').fontSize(10).width('100%').textAlign(TextAlign.Center).height('2%')
+      Text(this.text1).key('searchTestText2').fontSize(10).width('100%').textAlign(TextAlign.Center).height('2%')
+      Text(this.text3).key('searchTestText3').fontSize(10).width('100%').textAlign(TextAlign.Center).height('2%')
       Button('stop')
         .key('searchTestBt')
         .onClick((event: ClickEvent) => {

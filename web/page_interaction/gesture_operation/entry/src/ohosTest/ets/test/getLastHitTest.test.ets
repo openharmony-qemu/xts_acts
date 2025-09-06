@@ -14,14 +14,16 @@
  */
 import { beforeAll, beforeEach, describe, it, expect, afterEach, TestType, Size, Level} from '@ohos/hypium';
 import Utils from './Utils';
-import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import webView from '@ohos.web.webview';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
-
+const EVENT_ID_SET_SUITE_KEY = 181001;
+const driver = Driver.create();
 
 export default function HitTest() {
 
@@ -37,7 +39,7 @@ export default function HitTest() {
         if (!("HitTest" == pages.name)) {
           console.info("get HitTest state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("webGetLastHitTest"), 10000);
           console.info("push HitTest page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -52,16 +54,9 @@ export default function HitTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
-    afterEach(async (done: Function) => {
-      await Utils.sleep(2000);
-      console.info("web afterEach finish");
-      done();
-    })
-
 
     /*
      * @tc.number     : getLastHitTest001
@@ -72,10 +67,12 @@ export default function HitTest() {
      * @tc.level      : Level 2
      */
     it('getLastHitTest001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("getLastHitTest001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("getLastHitTest001", true, 20250313, done);
-      sendEventByKey('webGetLastHitTest', 10, '');
+      Utils.emitEvent("getLastHitTest001", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("getLastHitTest001", true, 181010, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webGetLastHitTest", "getLastHitTest001");
+      await Utils.waitForExist(() => isReturn, "webGetLastHitTest" + '_returnCheck', true, 1000);
+      done();
     })
 
   })

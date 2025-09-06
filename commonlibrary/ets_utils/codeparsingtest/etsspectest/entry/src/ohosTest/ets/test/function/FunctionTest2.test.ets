@@ -19,25 +19,38 @@ import {
   addWithDefaultHoistNested,
   calcQuartic,
   checkArgsNoPop,
+  checkArgsNoShift,
+  checkArrowNoArguments,
   checkArrowNoPrototype,
   checkExprCallAfterDefine,
   checkExprHoistAfterDefine,
+  checkInfiniteValue,
   checkInnerVarModify,
   checkInnerVarShadow,
   checkNaNValue,
+  collectRestArgsNumStr,
   collectRestArgsStr,
+  convertArgsToObj,
   convertArgsToStr,
+  createCounterClosureNegStep,
   createCounterClosureStep,
+  createCounterObjWithLimit,
   createCounterObjWithReset,
+  createFourCounterClosure,
   createThreeCounterClosure,
+  divideAllArgs,
   divideWithApply,
+  divideWithArrowRest,
   divTwoNum,
   factorialRecursiveWithBase,
   factorialRecursiveWithOffset,
   fibonacciHoisted,
   getArgByIndexLast,
+  getArgByIndexRange,
+  getArgLengthMax,
   getArgLengthZero,
   getArrMultiElemByDestruct,
+  getArrNestedElemByDestruct,
   getFixedArray,
   getFixedBool,
   getInnerVarConflictMulti,
@@ -45,6 +58,7 @@ import {
   getInnerVarOverGlobalMulti,
   getInnerVarOverGlobalShadow,
   getObjMultiPropByDestruct,
+  getObjNestedPropByDestruct,
   getOuterVarInNestedMulti,
   getOuterVarInNestedShadow,
   modTwoNum,
@@ -57,15 +71,22 @@ import {
   numFibonacci,
   numTriangular,
   popArrInClosure,
+  powDefaultAndRest,
   powTwoNum,
+  powWithDefault,
+  powWithUndefinedDefault,
+  quadWithArrow,
+  shiftArrInClosure,
   sliceArrElem,
   strPadStart,
   strRepeat,
+  sumFiveLayerClosure,
   sumFourLayerClosure,
   sumFourLayerVar as sumThreeLayerVar,
   triangularHoisted,
   tripleWithArrow,
-  unshiftArrElem
+  unshiftArrElem,
+  updateObjNestedInClosure
 } from './functionutils2';
 
 interface GeneratedTypeLiteralInterface_2 {
@@ -995,6 +1016,374 @@ export default function functionTest2() {
       const result: number = getInnerVarOverGlobalShadow(); // Innermost appVal=10
       expect(typeof globalThis.appVal === 'number').assertTrue();
       expect(result).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0124
+     * @tc.name FunctionTest0124
+     * @tc.desc Scope - Nested function modifies outer array (reference passing check)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const outerArr: number[] = [1, 2, 3];
+      const modifyArr = (arr: number[]): void => {
+        arr[0] = 10;
+      };
+      modifyArr(outerArr);
+      const isArrChanged: boolean = outerArr[0] === 10;
+      expect(isArrChanged).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0126
+     * @tc.name FunctionTest0126
+     * @tc.desc Basic closure - Negative step counter (decrement on multiple calls)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const counter: () => number = createCounterClosureNegStep(10, 2); // Initial 10, step -2
+      const firstVal: number = counter();
+      const secondVal: number = counter();
+      expect(typeof counter === 'function').assertTrue();
+      expect(firstVal).assertEqual(10);
+      expect(secondVal).assertEqual(8);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0127
+     * @tc.name FunctionTest0127
+     * @tc.desc Multi-level closure - Sum of five-layer variables (closure preservation)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const sumFunc: () => number = sumFiveLayerClosure(3, 4, 5, 6, 7);
+      const result: number = sumFunc();
+      expect(typeof sumFunc === 'function').assertTrue();
+      expect(result).assertEqual(25); //3+4+5+6+7
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0128
+     * @tc.name FunctionTest0128
+     * @tc.desc Closure encapsulation - Counter with upper limit (stop incrementing when exceeding limit)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const counter = createCounterObjWithLimit(5); // Upper limit 5
+      counter.increment();
+      counter.increment();
+      counter.increment(); // Now 3, not exceeding limit
+      counter.increment();
+      counter.increment();
+      counter.increment(); // Now 5, stop incrementing after exceeding limit
+      const count: number = counter.getCount();
+      expect(typeof counter.increment === 'function').assertTrue();
+      expect(count).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0129
+     * @tc.name FunctionTest0129
+     * @tc.desc Closure preserving array - Remove first element (reference passing)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const initArr: number[] = [10, 20, 30];
+      const shiftFunc: () => number[] = shiftArrInClosure(initArr);
+      const updatedArr: number[] = shiftFunc();
+      expect(Array.isArray(updatedArr)).assertTrue();
+      expect(updatedArr[0]).assertEqual(20); // Remove 10, result [20,30]
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0130
+     * @tc.name FunctionTest0130
+     * @tc.desc Closure preserving object - Modify nested property (reference passing)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const initObj: UserObj = { user: { age: 25 } };
+      type UpdateFuncType = (val: number) => UserObj;
+      const updateFunc: UpdateFuncType = updateObjNestedInClosure(initObj);
+      const updatedObj = updateFunc(5);
+      expect(typeof updatedObj === 'object' && updatedObj !== null).assertTrue();
+      expect(updatedObj.user.age).assertEqual(30); // 25+5
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0131
+     * @tc.name FunctionTest0131
+     * @tc.desc Multiple closure instances - Four independent counters (no interference)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const counters: FourCounters = createFourCounterClosure();
+      const val1: number = counters.counter1();
+      const val2: number = counters.counter2();
+      const val3: number = counters.counter3();
+      const val4: number = counters.counter4();
+      expect(typeof counters.counter1 === 'function').assertTrue();
+      expect(val1).assertEqual(1);
+      expect(val2).assertEqual(1);
+      expect(val3).assertEqual(1);
+      expect(val4).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0132
+     * @tc.name FunctionTest0132
+     * @tc.desc Closure handling numbers - Accumulative sum (multiple calls)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const sumFunc: (n: number) => number = (() => {
+        let total: number = 0;
+        return (n: number): number => {
+          total += n;
+          return total;
+        };
+      })();
+      const firstRes: number = sumFunc(5);
+      const secondRes: number = sumFunc(3);
+      expect(typeof sumFunc === 'function').assertTrue();
+      expect(firstRes).assertEqual(5);
+      expect(secondRes).assertEqual(8);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0134
+     * @tc.name FunctionTest0134
+     * @tc.desc arguments object - Access parameters in specified range by index (sum)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const a: number = 2, b: number = 3, c: number = 4, d: number = 5;
+      const result: number = getArgByIndexRange(a, b, c, d, 1, 3); // Take indices 1-3 (3,4,5) for sum
+      expect(typeof result === 'number').assertTrue();
+      expect(result).assertEqual(12);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0135
+     * @tc.name FunctionTest0135
+     * @tc.desc arguments object - Maximum parameter count check (length upper limit)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const args: number[] = new Array(10).fill(1); // 10 parameters
+      const length: number = getArgLengthMax(...args);
+      expect(Array.isArray(args)).assertTrue();
+      expect(length).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0136
+     * @tc.name FunctionTest0136
+     * @tc.desc arguments object - Convert to key-value pair object (result check)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const keys: string[] = ['a', 'b', 'c'];
+      const values: number[] = [10, 20, 30];
+      const result: Record<string, number> = convertArgsToObj(keys, values);
+      expect(typeof result === 'object' && result !== null).assertTrue();
+      expect(result.a).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0137
+     * @tc.name FunctionTest0137
+     * @tc.desc arguments object - Handle indefinite parameters (continuous division)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const args: number[] = [100, 2, 5, 5];
+      const result: number = divideAllArgs(...args);
+      expect(Array.isArray(args)).assertTrue();
+      expect(result).assertEqual(2); // 100/2/5/5
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0138
+     * @tc.name FunctionTest0138
+     * @tc.desc arguments object - Non-array characteristics (no shift method)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const isShiftFailed: boolean = checkArgsNoShift(1, 2, 3);
+      expect(isShiftFailed).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0139
+     * @tc.name FunctionTest0139
+     * @tc.desc Default parameters - Basic exponentiation characteristics (use default value when no parameter is passed)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const input: number = 3;
+      const result: number = powWithDefault(input); // Default exponent=2
+      expect(typeof input === 'number').assertTrue();
+      expect(result).assertEqual(9); //3^2
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0140
+     * @tc.name FunctionTest0140
+     * @tc.desc Default parameters - Pass undefined to trigger default for exponentiation (value check)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const result: number = powWithUndefinedDefault(undefined); // Default base=2, exponent=3
+      expect(typeof result === 'number').assertTrue();
+      expect(result).assertEqual(8); //2^3
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0141
+     * @tc.name FunctionTest0141
+     * @tc.desc Rest parameters - Collect mixed number and string parameters (array characteristics)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const restArr: (number | string)[] = collectRestArgsNumStr(1, 'a', 2, 'b');
+      expect(Array.isArray(restArr)).assertTrue();
+      expect(restArr.length).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0142
+     * @tc.name FunctionTest0142
+     * @tc.desc Default + rest parameters - Mixed exponentiation (result check)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const result: number = powDefaultAndRest(2, 3, 2); // Default base=1, rest=[3,2], i.e., 2^(3*2)=2^6=64
+      expect(typeof result === 'number').assertTrue();
+      expect(result).assertEqual(64);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0143
+     * @tc.name FunctionTest0143
+     * @tc.desc Parameter destructuring - Nested object property extraction (result check)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const inputObj: InputObj = {
+        data: { user: { name: 'Frank' } }
+      };
+      const result: string = getObjNestedPropByDestruct(inputObj);
+      expect(typeof inputObj === 'object' && inputObj !== null).assertTrue();
+      expect(result).assertEqual('Frank');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0144
+     * @tc.name FunctionTest0144
+     * @tc.desc Parameter destructuring - Nested array element extraction (result check)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const inputArr: number[][] = [[1, 2], [3, 4], [5, 6]];
+      const result: number = getArrNestedElemByDestruct(inputArr); // Extract [1,2][1] = 2
+      expect(Array.isArray(inputArr)).assertTrue();
+      expect(result).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0145
+     * @tc.name FunctionTest0145
+     * @tc.desc Arrow function - Fourth power calculation with single parameter (result check)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const input: number = 2;
+      const result: number = quadWithArrow(input); // x => x**4
+      expect(typeof input === 'number').assertTrue();
+      expect(result).assertEqual(16); //2^4
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0147
+     * @tc.name FunctionTest0147
+     * @tc.desc Arrow function - Use rest parameters instead of arguments (continuous division)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const result: number = divideWithArrowRest(80, 2, 4, 5); // ...rest continuous division
+      expect(typeof result === 'number').assertTrue();
+      expect(result).assertEqual(2); //80/2/4/5
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0148
+     * @tc.name FunctionTest0148
+     * @tc.desc Arrow function - No arguments object (characteristic check)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const hasNoArguments: boolean = checkArrowNoArguments(1, 2, 3);
+      expect(hasNoArguments).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0150
+     * @tc.name FunctionTest0150
+     * @tc.desc Predefined function - isFinite checks for infinite values (boundary judgment)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('FunctionTest0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const isInfinite1: boolean = checkInfiniteValue(Infinity); // Infinite value returns false
+      const isInfinite2: boolean = checkInfiniteValue(100); // Finite value returns true
+      expect(isInfinite1 === false).assertTrue();
+      expect(isInfinite2).assertTrue();
     });
   })
 }

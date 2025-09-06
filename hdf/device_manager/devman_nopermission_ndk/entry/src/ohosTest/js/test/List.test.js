@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,8 +14,15 @@
  */
 
 import NoPermissionJsTest from './DeviceManagerNoPermissionJsTest.test.js'
+import NoPermissionCanIUseTest from './DeviceManagerNoPermissionCanIUseTest.test.js'
 
 /* host test case */
 export default function testsuite() {
-    NoPermissionJsTest()
+
+    if (canIUse("SystemCapability.Driver.ExternalDevice")) {
+        NoPermissionJsTest()
+    } else {
+        NoPermissionCanIUseTest()
+    }
 }
+

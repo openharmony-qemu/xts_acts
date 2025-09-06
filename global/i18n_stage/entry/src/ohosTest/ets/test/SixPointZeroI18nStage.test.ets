@@ -3163,6 +3163,1041 @@ export default function SixPointZeroI18nStageTest() {
       }
     })
 
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_0100
+    * @tc.name      : test_IntlRelativeTimeFormat_0100
+    * @tc.desc      : RelativeTimeFormat  with zh-Hans-AF & day
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 0
+    */
+    it('test_IntlRelativeTimeFormat_0100', Level.LEVEL0, () => {
+      let rtf = new Intl.RelativeTimeFormat("zh-Hans-AF", {
+        numeric: "auto"
+      });
+      const expected = (n: number) => {
+        let expected = rtf.format(n, "day");
+        return expected;
+      }
+      expect(expected(-1)).assertEqual('昨天');
+      expect(expected(0)).assertEqual('今天');
+      expect(expected(1)).assertEqual('明天');
+      expect(expected(100)).assertEqual('100天后');
+    })
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_0200
+    * @tc.name      : test_IntlRelativeTimeFormat_0200
+    * @tc.desc      : RelativeTimeFormat  with zh-Hans-AF & numeric: "always" & day
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlRelativeTimeFormat_0200', Level.LEVEL2, () => {
+      let rtf = new Intl.RelativeTimeFormat("zh-Hans-AF", {
+        numeric: "always"
+      });
+      const expected = (n: number) => {
+        let expected = rtf.format(n, "day");
+        return expected;
+      }
+      expect(expected(-1)).assertEqual('1天前');
+      expect(expected(0)).assertEqual('0天后');
+      expect(expected(1)).assertEqual('1天后');
+      expect(expected(100)).assertEqual('100天后');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_0300
+    * @tc.name      : test_IntlRelativeTimeFormat_0300
+    * @tc.desc      : RelativeTimeFormat  with ar-AE & numeric: "auto" & day
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlRelativeTimeFormat_0300', Level.LEVEL2, () => {
+      let rtf = new Intl.RelativeTimeFormat("ar-AE", {
+        numeric: "auto"
+      });
+      const expected = (n: number) => {
+        let expected = rtf.format(n, "day");
+        return expected;
+      }
+      expect(expected(-1)).assertEqual('أمس');
+      expect(expected(0)).assertEqual('اليوم');
+      expect(expected(1)).assertEqual('غدًا');
+      expect(expected(100)).assertEqual('خلال 100 يوم');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_0400
+    * @tc.name      : test_IntlRelativeTimeFormat_0400
+    * @tc.desc      : RelativeTimeFormat  with ar-AE & numeric: "always" & day
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlRelativeTimeFormat_0400', Level.LEVEL2, () => {
+      let rtf = new Intl.RelativeTimeFormat("ar-AE", {
+        numeric: "always"
+      });
+      const expected = (n: number) => {
+        let expected = rtf.format(n, "day");
+        return expected;
+      }
+      expect(expected(-1)).assertEqual('قبل يوم واحد');
+      expect(expected(0)).assertEqual('خلال 0 يوم');
+      expect(expected(1)).assertEqual('خلال يوم واحد');
+      expect(expected(100)).assertEqual('خلال 100 يوم');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_0500
+    * @tc.name      : test_IntlRelativeTimeFormat_0500
+    * @tc.desc      : RelativeTimeFormat  with en-US & numeric: "auto" & day
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlRelativeTimeFormat_0500', Level.LEVEL2, () => {
+      let rtf = new Intl.RelativeTimeFormat("en-US", {
+        numeric: "auto"
+      });
+      const expected = (n: number) => {
+        let expected = rtf.format(n, "day");
+        return expected;
+      }
+      expect(expected(-1)).assertEqual('yesterday');
+      expect(expected(0)).assertEqual('today');
+      expect(expected(1)).assertEqual('tomorrow');
+      expect(expected(100)).assertEqual('in 100 days');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_0600
+    * @tc.name      : test_IntlRelativeTimeFormat_0600
+    * @tc.desc      : RelativeTimeFormat  with en-US & numeric: "always" & day
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlRelativeTimeFormat_0600', Level.LEVEL2, () => {
+      let rtf = new Intl.RelativeTimeFormat("en-US", {
+        numeric: "always"
+      });
+      const expected = (n: number) => {
+        let expected = rtf.format(n, "day");
+        return expected;
+      }
+      expect(expected(-1)).assertEqual('1 day ago');
+      expect(expected(0)).assertEqual('in 0 days');
+      expect(expected(1)).assertEqual('in 1 day');
+      expect(expected(100)).assertEqual('in 100 days');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_0700
+    * @tc.name      : test_IntlRelativeTimeFormat_0700
+    * @tc.desc      : RelativeTimeFormat  with en-AE-u-nu-hanidec & numeric: "auto" & day
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlRelativeTimeFormat_0700', Level.LEVEL2, () => {
+      let rtf = new Intl.RelativeTimeFormat("en-AE-u-nu-hanidec", {
+        numeric: "auto"
+      });
+      const expected = (n: number) => {
+        let expected = rtf.format(n, "day");
+        return expected;
+      }
+      expect(expected(-1)).assertEqual('yesterday');
+      expect(expected(0)).assertEqual('today');
+      expect(expected(1)).assertEqual('tomorrow');
+      expect(expected(100)).assertEqual('in 一〇〇 days');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_0800
+    * @tc.name      : test_IntlRelativeTimeFormat_0800
+    * @tc.desc      : RelativeTimeFormat  with en-AE-u-nu-hanidec & numeric: "always" & day
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlRelativeTimeFormat_0800', Level.LEVEL2, () => {
+      let rtf = new Intl.RelativeTimeFormat("en-AE-u-nu-hanidec", {
+        numeric: "always"
+      });
+      const expected = (n: number) => {
+        let expected = rtf.format(n, "day");
+        return expected;
+      }
+      expect(expected(-1)).assertEqual('一 day ago');
+      expect(expected(0)).assertEqual('in 〇 days');
+      expect(expected(1)).assertEqual('in 一 day');
+      expect(expected(100)).assertEqual('in 一〇〇 days');
+    })
+
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_1000
+    * @tc.name      : test_IntlRelativeTimeFormat_1000
+    * @tc.desc      : RelativeTimeFormat  with null & numeric: "always",style: 'narrow' & day
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlRelativeTimeFormat_1000', Level.LEVEL2, () => {
+      try {
+        new Intl.RelativeTimeFormat('', { numeric: "always", style: 'narrow' });
+      } catch (e) {
+        expect(e.message).assertEqual('invalid locale');
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_1100
+    * @tc.name      : test_IntlRelativeTimeFormat_1100
+    * @tc.desc      : RelativeTimeFormat  with abcd & numeric: "always",style: 'narrow' & day
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlRelativeTimeFormat_1100', Level.LEVEL2, () => {
+      try {
+        new Intl.RelativeTimeFormat('abcd', { numeric: "always", style: 'narrow' });
+      } catch (e) {
+        expect(e.message).assertEqual('invalid locale');
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_1200
+    * @tc.name      : test_IntlRelativeTimeFormatToParts_0100
+    * @tc.desc      : RelativeTimeFormat  with zh-hans-AF & numeric: "always" & day
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 1
+    */
+    it('test_IntlRelativeTimeFormatToParts_0100', Level.LEVEL1, () => {
+      let range: string = JSON.stringify([{ 'type': "integer", 'value': '10', 'unit': 'day' },
+        { 'type': 'group', 'value': ',', 'unit': 'day' }, { 'type': 'integer', 'value': '000', 'unit': 'day' },
+        { 'type': 'literal', 'value': '天后' }])
+
+      let rtf = new Intl.RelativeTimeFormat('zh-hans-AF', { numeric: "always" });
+      let expected = rtf.formatToParts(10000, 'day');
+      expect(JSON.stringify(expected)).assertEqual(range);
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_1300
+    * @tc.name      : test_IntlRelativeTimeFormatToParts_0200
+    * @tc.desc      : RelativeTimeFormat  with en-US & numeric: "auto" & day
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlRelativeTimeFormatToParts_0200', Level.LEVEL2, () => {
+      let range: string = JSON.stringify([{ 'type': "literal", 'value': 'yesterday' }])
+      let rtf = new Intl.RelativeTimeFormat('en-US', { numeric: "auto" });
+      let expected = rtf.formatToParts(-1, 'day');
+      expect(JSON.stringify(expected)).assertEqual(range);
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_1400
+    * @tc.name      : test_IntlRelativeTimeFormatResolvedOptions_0100
+    * @tc.desc      : resolvedOptions  with en-US
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 1
+    */
+    it('test_IntlRelativeTimeFormatResolvedOptions_0100', Level.LEVEL1, () => {
+      let range: string = JSON.stringify({
+        'locale': "en-US",
+        'style': 'long',
+        'numeric': 'always',
+        'numberingSystem': 'latn'
+      })
+      let rtf = new Intl.RelativeTimeFormat('en-US');
+      let expected = rtf.resolvedOptions();
+      expect(JSON.stringify(expected)).assertEqual(range);
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_1500
+    * @tc.name      : test_IntlRelativeTimeFormatResolvedOptions_0200
+    * @tc.desc      : resolvedOptions  with en-US-u-nu-hanidec & numeric: 'auto', localeMatcher: 'best fit'
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlRelativeTimeFormatResolvedOptions_0200', Level.LEVEL2, () => {
+      let range: string = JSON.stringify({
+        'locale': "en-US-u-nu-hanidec",
+        'style': 'long',
+        'numeric': 'auto',
+        'numberingSystem': 'hanidec'
+      })
+      let rtf = new Intl.RelativeTimeFormat('en-US-u-nu-hanidec', { numeric: 'auto', localeMatcher: 'best fit' });
+      let expected = rtf.resolvedOptions();
+      expect(JSON.stringify(expected)).assertEqual(range);
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_1600
+    * @tc.name      : test_IntlRelativeTimeFormatResolvedOptions_0300
+    * @tc.desc      : resolvedOptions  with ar & numeric: 'auto', localeMatcher: 'best fit'
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlRelativeTimeFormatResolvedOptions_0300', Level.LEVEL2, () => {
+      let range: string = JSON.stringify({
+        'locale': "ar",
+        'style': 'long',
+        'numeric': 'auto',
+        'numberingSystem': 'arab'
+      })
+      let rtf = new Intl.RelativeTimeFormat('ar', { numeric: 'auto', localeMatcher: 'best fit' });
+      let expected = rtf.resolvedOptions();
+      expect(JSON.stringify(expected)).assertEqual(range);
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_1700
+    * @tc.name      : test_IntlRelativeTimeFormatResolvedOptions_0400
+    * @tc.desc      : resolvedOptions  with null
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlRelativeTimeFormatResolvedOptions_0400', Level.LEVEL2, () => {
+      try {
+        new Intl.RelativeTimeFormat('').resolvedOptions();
+      } catch (e) {
+        expect(e.message).assertEqual('invalid locale');
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_1800
+    * @tc.name      : test_IntlRelativeTimeFormatSupportedLocalesOf_0100
+    * @tc.desc      : supportedLocalesOf  with zh-Hans-CN
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlRelativeTimeFormatSupportedLocalesOf_0100', Level.LEVEL2, () => {
+
+      let localesOf = Intl.RelativeTimeFormat.supportedLocalesOf('zh-Hans-CN');
+      expect(localesOf.toString()).assertEqual('zh-Hans-CN');
+
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_1900
+    * @tc.name      : test_IntlRelativeTimeFormatSupportedLocalesOf_0200
+    * @tc.desc      : resolvedOptions  with 'en-US','ban', 'ar-OM', 'de-DE', 'abc', 'sss'
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlRelativeTimeFormatSupportedLocalesOf_0200', Level.LEVEL2, () => {
+      const locatles = ['en-US', 'ban', 'ar-OM', 'de-DE', 'abc', 'sss']
+      let localesOf = Intl.RelativeTimeFormat.supportedLocalesOf(locatles);
+      expect(localesOf.toString()).assertEqual('en-US,ar-OM,de-DE');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_2000
+    * @tc.name      : test_IntlRelativeTimeFormatSupportedLocalesOf_0300
+    * @tc.desc      : resolvedOptions  with null
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlRelativeTimeFormatSupportedLocalesOf_0300', Level.LEVEL2, () => {
+      try {
+        Intl.RelativeTimeFormat.supportedLocalesOf('');
+      } catch (e) {
+        expect(e.message).assertEqual('invalid locale');
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_2100
+    * @tc.name      : test_IntlRelativeTimeFormatSupportedLocalesOf_0400
+    * @tc.desc      : resolvedOptions  with abcd
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlRelativeTimeFormatSupportedLocalesOf_0400', Level.LEVEL2, () => {
+      try {
+        Intl.RelativeTimeFormat.supportedLocalesOf('abcd');
+      } catch (e) {
+        expect(e.message).assertEqual('invalid locale');
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_2200
+    * @tc.name      : test_IntlRelativeTimeFormatSupportedLocalesOf_0500
+    * @tc.desc      : resolvedOptions  with 'en-US','ban', 'ar-OM', 'de-DE', 'abc', 'sss'
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlRelativeTimeFormatSupportedLocalesOf_0500', Level.LEVEL2, () => {
+      const locatles = ['en-US', 'en-US', 'ar-OM', 'de-DE', 'zh', 'zh']
+      let localesOf = Intl.RelativeTimeFormat.supportedLocalesOf(locatles);
+      expect(localesOf.toString()).assertEqual('en-US,ar-OM,de-DE,zh');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_2300
+    * @tc.name      : test_IntlRelativeTimeFormatSupportedLocalesOf_0600
+    * @tc.desc      : resolvedOptions  with 'en-US','ban', 'ar-OM', 'de-DE', 'abc', 'sss'
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlRelativeTimeFormatSupportedLocalesOf_0600', Level.LEVEL2, () => {
+      const locatles = ['null', '1', '@', '#', '-', '*', '/', '&']
+      try {
+        Intl.RelativeTimeFormat.supportedLocalesOf(locatles);
+      } catch (e) {
+        expect(e.message).assertEqual('invalid locale');
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_testsupportedLocalesOf_0100
+    * @tc.name      : SUB_GLOBAL_testsupportedLocalesOf_0100
+    * @tc.desc      : supportedLocalesOf  with 'zh-Hans-TW'
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 0
+    */
+    it('SUB_GLOBAL_testsupportedLocalesOf_0100', Level.LEVEL0, () => {
+      const locales1 = ['zh-Hans-TW'];
+      const support = Intl.Collator.supportedLocalesOf(locales1, { localeMatcher: 'lookup' });
+      expect(support.toString()).assertEqual('zh-Hans-TW')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_testsupportedLocalesOf_0200
+    * @tc.name      : SUB_GLOBAL_testsupportedLocalesOf_0200
+    * @tc.desc      : supportedLocalesOf  with 'ar','my','tr','zh','sk','ja','zh-Hans-TW-u-um-arab','en-Latn-CN', 'id-u-co-pinyin','de-ID'
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('SUB_GLOBAL_testsupportedLocalesOf_0200', Level.LEVEL2, () => {
+      const locales1 =
+        ['ar', 'my', 'tr', 'zh', 'sk', 'ja', 'zh-Hans-TW-u-um-arab', 'en-Latn-CN', 'id-u-co-pinyin', 'de-ID'];
+      const support = Intl.Collator.supportedLocalesOf(locales1, { localeMatcher: 'lookup' });
+      expect(support.toString()).assertEqual('ar,my,tr,zh,sk,ja,zh-Hans-TW-u-um-arab,en-Latn-CN,id-u-co-pinyin,de-ID')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_testsupportedLocalesOf_0300
+    * @tc.name      : SUB_GLOBAL_testsupportedLocalesOf_0300
+    * @tc.desc      : supportedLocalesOf  with 'ban', 'id-u-co-pinyin', 'de-Id'
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('SUB_GLOBAL_testsupportedLocalesOf_0300', Level.LEVEL2, () => {
+      const locales1 = ['ban', 'id-u-co-pinyin', 'de-Id'];
+      const support = Intl.Collator.supportedLocalesOf(locales1);
+      expect(support.toString()).assertEqual('id-u-co-pinyin,de-ID')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_testsupportedLocalesOf_0400
+    * @tc.name      : SUB_GLOBAL_testsupportedLocalesOf_0400
+    * @tc.desc      : supportedLocalesOf  with 'zh-Hans-TW', '123', 'aaa','%'
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('SUB_GLOBAL_testsupportedLocalesOf_0400', Level.LEVEL2, () => {
+      try {
+        const locales1 = ['zh-Hans-TW', '123', 'aaa', '%'];
+        Intl.Collator.supportedLocalesOf(locales1);
+      } catch (e) {
+        expect(e.message).assertEqual('invalid locale');
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_testsupportedLocalesOf_0500
+    * @tc.name      : SUB_GLOBAL_testsupportedLocalesOf_0500
+    * @tc.desc      : supportedLocalesOf  with []
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('SUB_GLOBAL_testsupportedLocalesOf_0500', Level.LEVEL2, () => {
+      const locales1 = [];
+      const support = Intl.Collator.supportedLocalesOf(locales1);
+      expect(support.toString()).assertEqual('')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_testsupportedLocalesOf_0600
+    * @tc.name      : SUB_GLOBAL_testsupportedLocalesOf_0600
+    * @tc.desc      : supportedLocalesOf  with 'null', '1', '@','#','-','*','/','&'
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('SUB_GLOBAL_testsupportedLocalesOf_0600', Level.LEVEL2, () => {
+      try {
+        const locales1 = ['null', '1', '@', '#', '-', '*', '/', '&'];
+        Intl.Collator.supportedLocalesOf(locales1);
+      } catch (e) {
+        expect(e.message).assertEqual('invalid locale');
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_testsupportedLocalesOf_0700
+    * @tc.name      : SUB_GLOBAL_testsupportedLocalesOf_0700
+    * @tc.desc      : supportedLocalesOf  with 'abcd'
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('SUB_GLOBAL_testsupportedLocalesOf_0700', Level.LEVEL2, () => {
+      try {
+        Intl.Collator.supportedLocalesOf('abcd');
+      } catch (e) {
+        expect(e.message).assertEqual('invalid locale');
+      }
+    })
+
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_testresolvedOptions_0100
+    * @tc.name      : SUB_GLOBAL_testresolvedOptions_0100
+    * @tc.desc      : supportedLocalesOf  with 'ar'
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 0
+    */
+    it('SUB_GLOBAL_testresolvedOptions_0100', Level.LEVEL0, () => {
+      const de = new Intl.Collator("ar");
+      const usedOptions = de.resolvedOptions().locale;
+      expect(usedOptions).assertEqual('ar')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_testresolvedOptions_0200
+    * @tc.name      : SUB_GLOBAL_testresolvedOptions_0200
+    * @tc.desc      : supportedLocalesOf  with "de",{sensitivity: 'base'}
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 0
+    */
+    it('SUB_GLOBAL_testresolvedOptions_0200', Level.LEVEL0, () => {
+      const de = new Intl.Collator("de", { sensitivity: 'base' });
+      const usedOptions = de.resolvedOptions().locale;
+      expect(usedOptions).assertEqual('de')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_testresolvedOptions_0300
+    * @tc.name      : SUB_GLOBAL_testresolvedOptions_0300
+    * @tc.desc      : supportedLocalesOf  with "abcd",{sensitivity: 'base'}
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 0
+    */
+    it('SUB_GLOBAL_testresolvedOptions_0300', Level.LEVEL0, () => {
+      try {
+        Intl.Collator("abcd", { sensitivity: 'base' }).resolvedOptions().locale;
+      } catch (e) {
+        expect(e.message).assertEqual('invalid locale');
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_testresolvedOptions_0400
+    * @tc.name      : SUB_GLOBAL_testresolvedOptions_0400
+    * @tc.desc      : supportedLocalesOf  with null
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 0
+    */
+    it('SUB_GLOBAL_testresolvedOptions_0400', Level.LEVEL0, () => {
+      const de = new Intl.Collator();
+      const usedOptions = de.resolvedOptions().locale;
+      expect(usedOptions).assertEqual('en-US')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_0100
+    * @tc.name      : test_IntlDateTimeFormat_0100
+    * @tc.desc      : DateTimeFormat  with fractionalSecondDigits: 1
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 0
+    */
+    it('test_IntlDateTimeFormat_0100', Level.LEVEL0, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 30, 769);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat('zh-CN', { calendar: 'chinese', fractionalSecondDigits: 1 });
+      let daformat: string = dafmt.format(date);
+      expect(daformat).assertEqual('2025年六月23 7')
+
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_0200
+    * @tc.name      : test_IntlDateTimeFormat_0200
+    * @tc.desc      : DateTimeFormat  with fractionalSecondDigits: 2
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormat_0200', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 30);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat('ar', { calendar: 'islamic-umalqura', fractionalSecondDigits: 2 });
+      let daformat: string = dafmt.format(date);
+      expect(daformat).assertEqual('٢٢‏/١‏/١٤٤٧ هـ، ٠٠')
+
+    })
+
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_0300
+    * @tc.name      : test_IntlDateTimeFormat_0300
+    * @tc.desc      : DateTimeFormat  with fractionalSecondDigits: 3
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormat_0300', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 30, 769);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat('en-US', { calendar: 'gregory', fractionalSecondDigits: 3 });
+      let daformat: string = dafmt.format(date);
+      expect(daformat).assertEqual('7/17/2025, 769')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_0400
+    * @tc.name      : test_IntlDateTimeFormat_0400
+    * @tc.desc      : DateTimeFormat  with fractionalSecondDigits: 3
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormat_0400', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 30, 769);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat('ja', { calendar: 'japanese', fractionalSecondDigits: 3 });
+      let daformat: string = dafmt.format(date);
+      expect(daformat).assertEqual('R7/7/17 769')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_0500
+    * @tc.name      : test_IntlDateTimeFormat_0500
+    * @tc.desc      : DateTimeFormat  with null
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormat_0500', Level.LEVEL2, () => {
+      let date = new Date(2021, 11, 17, 3, 24, 0);
+      let dafmt: Intl.DateTimeFormat = new Intl.DateTimeFormat();
+      let formattedDate = dafmt.format(date);
+      expect(formattedDate).assertEqual('12/17/2021')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_0600
+    * @tc.name      : test_IntlDateTimeFormat_0600
+    * @tc.desc      : DateTimeFormat  with 'aaaa'
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormat_0600', Level.LEVEL2, () => {
+      let date = new Date(2021, 11, 17, 3, 24, 0);
+      try {
+        Intl.DateTimeFormat('aaaa').format(date);
+      } catch (e) {
+        expect(e.message).assertEqual('invalid locale')
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_0700
+    * @tc.name      : test_IntlDateTimeFormatToParts_0100
+    * @tc.desc      : DateTimeFormat  with 'zh-CN', calendar: 'chinese', fractionalSecondDigits: 1
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatToParts_0100', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let expected: string =
+        JSON.stringify([{ "type": "relatedYear", "value": "2025" }, { "type": "literal", "value": "年" },
+          { "type": "month", "value": "六月" }, { "type": "day", "value": "23" }, { "type": "literal", "value": " " },
+          { "type": "fractionalSecond", "value": "0" }])
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat('zh-CN', { calendar: 'chinese', fractionalSecondDigits: 1 });
+      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatToParts(date);
+      expect(JSON.stringify(daformat)).assertEqual(expected)
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_0800
+    * @tc.name      : test_IntlDateTimeFormatToParts_0200
+    * @tc.desc      : DateTimeFormat  with 'en-US', { calendar: 'gregory', fractionalSecondDigits: 3 }
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatToParts_0200', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let expected: string =
+        JSON.stringify([{ "type": "month", "value": "7" }, { "type": "literal", "value": "/" },
+          { "type": "day", "value": "17" }, { "type": "literal", "value": "/" }, { "type": "year", "value": "2025" },
+          { "type": "literal", "value": ", " }, { "type": "fractionalSecond", "value": "000" }])
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat('en-US', { calendar: 'gregory', fractionalSecondDigits: 3 });
+      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatToParts(date);
+      expect(JSON.stringify(daformat)).assertEqual(expected)
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_0900
+    * @tc.name      : test_IntlDateTimeFormatToParts_0300
+    * @tc.desc      : DateTimeFormat  with 'en-US', { calendar: 'gregory', fractionalSecondDigits: 3 }
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatToParts_0300', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let expected: string =
+        JSON.stringify([{ "type": "month", "value": "7" }, { "type": "literal", "value": "/" },
+          { "type": "day", "value": "17" }, { "type": "literal", "value": "/" }, { "type": "year", "value": "2025" }])
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat();
+      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatToParts(date);
+      expect(JSON.stringify(daformat)).assertEqual(expected)
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_1000
+    * @tc.name      : test_IntlDateTimeFormatRange_0100
+    * @tc.desc      : DateTimeFormat  with "zh_CN",{calendar:"chinese", fractionalSecondDigits: 3}
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatRange_0100', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10, 123);
+      let date2 = new Date(2026, 1, 1, 60, 24, 10, 123);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat("zh-CN", { calendar: "chinese", fractionalSecondDigits: 3 });
+      let daformat = dafmt.formatRange(date, date2);
+      expect(JSON.stringify(daformat)).assertEqual('"2025年六月23 123–2025年腊月16 123"')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_1100
+    * @tc.name      : test_IntlDateTimeFormatRange_0200
+    * @tc.desc      : DateTimeFormat  with "ug-CN",{calendar:"buddhist", fractionalSecondDigits: 2}
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatRange_0200', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let date2 = new Date(2026, 1, 1, 60, 24, 10);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat("ug-CN", { calendar: "buddhist", fractionalSecondDigits: 2 });
+      let daformat = dafmt.formatRange(date, date2);
+      expect(JSON.stringify(daformat)).assertEqual('"7/17/2568 BE، 00 – 2/3/2569 BE، 00"')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_1200
+    * @tc.name      : test_IntlDateTimeFormatRange_0300
+    * @tc.desc      : DateTimeFormat  with "ru",{calendar:"gregory", fractionalSecondDigits: 1}
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatRange_0300', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let date2 = new Date(2026, 1, 1, 60, 24, 10);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat("ru", { calendar: "gregory", fractionalSecondDigits: 1 });
+      let daformat = dafmt.formatRange(date, date2);
+      expect(JSON.stringify(daformat)).assertEqual('"17.07.2025, 0 – 03.02.2026, 0"')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_1300
+    * @tc.name      : test_IntlDateTimeFormatRange_0400
+    * @tc.desc      : DateTimeFormat  with "ru",{calendar:"gregory", fractionalSecondDigits: 1}
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatRange_0400', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let date2 = new Date(2026, 1, 1, 60, 24, 10);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat("ja", { calendar: "japanese", fractionalSecondDigits: 3 });
+      let daformat = dafmt.formatRange(date, date2);
+      expect(JSON.stringify(daformat)).assertEqual('"R7/7/17 000～R8/2/3 000"')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_1400
+    * @tc.name      : test_IntlDateTimeFormatRange_0500
+    * @tc.desc      : DateTimeFormat  with null
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatRange_0500', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let date2 = new Date(2026, 1, 1, 60, 24, 10);
+      let dafmt: Intl.DateTimeFormat = new Intl.DateTimeFormat();
+      let daformat = dafmt.formatRange(date, date2);
+      expect(JSON.stringify(daformat)).assertEqual('"7/17/2025 – 2/3/2026"')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_1500
+    * @tc.name      : test_IntlDateTimeFormatRange_0600
+    * @tc.desc      : DateTimeFormat  with aaaa
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatRange_0600', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let date2 = new Date(2026, 1, 1, 60, 24, 10);
+      try {
+        Intl.DateTimeFormat('aaaa').formatRange(date, date2);
+      } catch (e) {
+        expect(e.message).assertEqual('invalid locale')
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_1600
+    * @tc.name      : test_IntlDateTimeFormatRangeToParts_0100
+    * @tc.desc      : DateTimeFormat  with 'zh-CN', { calendar: 'chinese', fractionalSecondDigits: 1 }
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatRangeToParts_0100', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let date2 = new Date(2026, 1, 1, 60, 24, 10);
+      let expected: string =
+        JSON.stringify([{ "type": "relatedYear", "value": "2025" }, { "type": "literal", "value": "年" },
+          { "type": "month", "value": "六月" }, { "type": "day", "value": "23" }, { "type": "literal", "value": " " },
+          { "type": "fractionalSecond", "value": "0" }, { "type": "literal", "value": "–" },
+          { "type": "relatedYear", "value": "2025" }, { "type": "literal", "value": "年" },
+          { "type": "month", "value": "腊月" }, { "type": "day", "value": "16" }, { "type": "literal", "value": " " },
+          { "type": "fractionalSecond", "value": "0" }]);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat('zh-CN', { calendar: 'chinese', fractionalSecondDigits: 1 });
+      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatRangeToParts(date, date2);
+      expect(JSON.stringify(daformat)).assertEqual(expected)
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_1700
+    * @tc.name      : test_IntlDateTimeFormatRangeToParts_0200
+    * @tc.desc      : DateTimeFormat  with 'ru', { calendar: 'gregory', fractionalSecondDigits: 1 }
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatRangeToParts_0200', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let date2 = new Date(2026, 1, 1, 60, 24, 10);
+      let expected: string =
+        JSON.stringify([{ "type": "day", "value": "17" }, { "type": "literal", "value": "." },
+          { "type": "month", "value": "07" }, { "type": "literal", "value": "." }, { "type": "year", "value": "2025" },
+          { "type": "literal", "value": ", " }, { "type": "fractionalSecond", "value": "0" },
+          { "type": "literal", "value": " – " }, { "type": "day", "value": "03" }, { "type": "literal", "value": "." },
+          { "type": "month", "value": "02" }, { "type": "literal", "value": "." }, { "type": "year", "value": "2026" },
+          { "type": "literal", "value": ", " }, { "type": "fractionalSecond", "value": "0" }]);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat('ru', { calendar: 'gregory', fractionalSecondDigits: 1 });
+      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatRangeToParts(date, date2);
+      expect(JSON.stringify(daformat)).assertEqual(expected)
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_1800
+    * @tc.name      : test_IntlDateTimeFormatRangeToParts_0300
+    * @tc.desc      : DateTimeFormat  with null
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatRangeToParts_0300', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let date2 = new Date(2026, 1, 1, 60, 24, 10);
+      let expected: string =
+        JSON.stringify([{ "type": "month", "value": "7" }, { "type": "literal", "value": "/" },
+          { "type": "day", "value": "17" }, { "type": "literal", "value": "/" }, { "type": "year", "value": "2025" },
+          { "type": "literal", "value": " – " }, { "type": "month", "value": "2" }, { "type": "literal", "value": "/" },
+          { "type": "day", "value": "3" }, { "type": "literal", "value": "/" }, { "type": "year", "value": "2026" }]);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat();
+      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatRangeToParts(date, date2);
+      expect(JSON.stringify(daformat)).assertEqual(expected)
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_1900
+    * @tc.name      : test_IntlDateTimeFormatResolvedOptions_0100
+    * @tc.desc      : DateTimeFormat  with "zh-CN", {calendar: "chinese", fractionalSecondDigits: 1}
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatResolvedOptions_0100', Level.LEVEL2, () => {
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat("zh-CN", { calendar: "chinese", fractionalSecondDigits: 1 });
+      let Options = dafmt.resolvedOptions();
+      let calendar = Options.calendar;
+      let fractionalSecondDingits = Options.fractionalSecondDigits;
+      expect(calendar).assertEqual("chinese")
+      expect(fractionalSecondDingits).assertEqual(1)
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_2000
+    * @tc.name      : test_IntlDateTimeFormatResolvedOptions_0200
+    * @tc.desc      : DateTimeFormat  with null
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatResolvedOptions_0200', Level.LEVEL2, () => {
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat();
+      let Options = dafmt.resolvedOptions();
+      let calendar = Options.calendar;
+      let fractionalSecondDingits = Options.fractionalSecondDigits;
+      expect(calendar).assertEqual("gregory")
+      expect(fractionalSecondDingits).assertEqual(undefined)
+    })
+
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_2100
+    * @tc.name      : test_IntlDateTimeFormatSupportedLocalesOf_0100
+    * @tc.desc      : DateTimeFormat  with "zh-CN"
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatSupportedLocalesOf_0100', Level.LEVEL2, () => {
+      let locales = "zh-CN"
+      let daf = Intl.DateTimeFormat.supportedLocalesOf(locales);
+      expect(daf.toString()).assertEqual("zh-CN")
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_2200
+    * @tc.name      : test_IntlDateTimeFormatSupportedLocalesOf_0200
+    * @tc.desc      : DateTimeFormat  with ["th-TH","zh-CN", "ja", "en-GB", "zh-TW", "zh-u-hc-h24", "ar"]
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatSupportedLocalesOf_0200', Level.LEVEL2, () => {
+      let locales = ["th-TH", "zh-CN", "ja", "en-GB", "zh-TW", "zh-u-hc-h24", "ar"]
+      let daf = Intl.DateTimeFormat.supportedLocalesOf(locales);
+      expect(daf.toString()).assertEqual("th-TH,zh-CN,ja,en-GB,zh-TW,zh-u-hc-h24,ar")
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_2300
+    * @tc.name      : test_IntlDateTimeFormatSupportedLocalesOf_0300
+    * @tc.desc      : DateTimeFormat  with null
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatSupportedLocalesOf_0300', Level.LEVEL2, () => {
+      let locales = ""
+      try {
+        Intl.DateTimeFormat.supportedLocalesOf(locales);
+      } catch (e) {
+        expect(e.message).assertEqual("invalid locale")
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_2400
+    * @tc.name      : test_IntlDateTimeFormatSupportedLocalesOf_0400
+    * @tc.desc      : DateTimeFormat  with 123
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatSupportedLocalesOf_0400', Level.LEVEL2, () => {
+      let locales = "123"
+      try {
+        Intl.DateTimeFormat.supportedLocalesOf(locales);
+      } catch (e) {
+        expect(e.message).assertEqual("invalid locale")
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_2500
+    * @tc.name      : test_IntlDateTimeFormatSupportedLocalesOf_0500
+    * @tc.desc      : DateTimeFormat  with ["zh-CN", "ar", "zh-CN", "ar", "zh-CN", "ar","zh-CN"]
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatSupportedLocalesOf_0500', Level.LEVEL2, () => {
+      let locales = ["zh-CN", "ar", "zh-CN", "ar", "zh-CN", "ar", "zh-CN"]
+      let daf = Intl.DateTimeFormat.supportedLocalesOf(locales);
+      expect(daf.toString()).assertEqual("zh-CN,ar")
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_2600
+    * @tc.name      : test_IntlDateTimeFormatSupportedLocalesOf_0600
+    * @tc.desc      : DateTimeFormat  with ["\\", "...", "----"]
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatSupportedLocalesOf_0600', Level.LEVEL2, () => {
+      let locales = ["\\", "...", "----"]
+      try {
+        Intl.DateTimeFormat.supportedLocalesOf(locales);
+      } catch (e) {
+        expect(e.message).assertEqual("invalid locale")
+      }
+    })
+
 
   })
 }

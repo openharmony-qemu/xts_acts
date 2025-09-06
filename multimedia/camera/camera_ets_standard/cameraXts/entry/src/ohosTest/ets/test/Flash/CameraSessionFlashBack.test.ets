@@ -127,9 +127,9 @@ function getOutputCapability() {
     console.info(TAG, 'The current device does not have a rear camera.');
     return;
   }
-  mCameraOutputCapModePhoto = mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[1], mSupportedModes[0]);
+  mCameraOutputCapModePhoto = mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], mSupportedModes[0]);
   console.info(TAG, 'camera, output cap: ' + JSON.stringify(mCameraOutputCapModePhoto));
-  mCameraOutputCapModeVideo = mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[1], mSupportedModes[1]);
+  mCameraOutputCapModeVideo = mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], mSupportedModes[1]);
   console.info(TAG, 'camera, output cap: ' + JSON.stringify(mCameraOutputCapModeVideo));
   mPreviewProfilesArray = mCameraOutputCapModeVideo.previewProfiles;
   mVideoProfile = mCameraOutputCapModeVideo.videoProfiles[0];

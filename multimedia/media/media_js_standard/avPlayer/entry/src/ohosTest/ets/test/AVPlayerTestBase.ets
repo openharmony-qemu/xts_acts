@@ -30,6 +30,7 @@ const RELEASED = 'released';
 const ERROR = 'error';
 const SLEEP_TIME = 200;
 
+const TAG = 'AVPlayerTestBase';
 let mediaTestBase = new MediaTestBase()
 
 export interface PlayTest {
@@ -61,11 +62,56 @@ export function setSubtitle(avPlayer: media.AVPlayer | null, src: string | media
     console.info('case src test');
     avPlayer.addSubtitleFromUrl(src);
   } else {
-    console.info('case fdsrc test');
+    console.info('setSubtitle case fdsrc test');
+    console.info('setSubtitle fdsrc.fd: ' + src.fd);
+    console.info('setSubtitle fdsrc.offset: ' + src.offset);
+    console.info('setSubtitle fdsrc.length: ' + src.length);
     avPlayer.addSubtitleFromFd(src.fd, src.offset, src.length);
   }
 }
 
+export function setSubtitle3(avPlayer: media.AVPlayer | null, src: string | media.AVFileDescriptor) {
+  if (!avPlayer) {
+    console.error(TAG, ' case avPlayer is null');
+    return;
+  }
+  if (typeof (src) === 'string') {
+    console.info('case src test');
+    avPlayer.addSubtitleFromUrl(src);
+  } else {
+    console.info('setSubtitle3 case fdsrc test');
+    console.info('setSubtitle3 fdsrc.fd: ' + src.fd);
+    avPlayer.addSubtitleFromFd(src.fd);
+  }
+}
+export function setSubtitle4(avPlayer: media.AVPlayer | null, src: string | media.AVFileDescriptor) {
+  if (!avPlayer) {
+    console.error(TAG, ' case avPlayer is null');
+    return;
+  }
+  if (typeof (src) === 'string') {
+    console.info('case src test');
+    avPlayer.addSubtitleFromUrl(src);
+  } else {
+    console.info('setSubtitle4 case fdsrc test');
+    console.info('setSubtitle4 fdsrc.length: ' + src.length);
+    avPlayer.addSubtitleFromFd(src.fd, src.length);
+  }
+}
+export function setSubtitle5(avPlayer: media.AVPlayer | null, src: string | media.AVFileDescriptor) {
+  if (!avPlayer) {
+    console.error(TAG,  ' case avPlayer is null');
+    return;
+  }
+  if (typeof (src) === 'string') {
+    console.info('case src test');
+    avPlayer.addSubtitleFromUrl(src);
+  } else {
+    console.info('setSubtitle5 case fdsrc test');
+    console.info('setSubtitle5 fdsrc.offset: ' + src.offset);
+    avPlayer.addSubtitleFromFd(src.fd, src.offset);
+  }
+}
 function checkPlayTest(avPlayer: media.AVPlayer | null, playTest: PlayTest) {
   if (avPlayer == null) {
     return;

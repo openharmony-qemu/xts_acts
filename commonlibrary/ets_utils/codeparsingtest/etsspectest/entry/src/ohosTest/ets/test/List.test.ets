@@ -31,6 +31,7 @@ import ActsStatementTest from './statement/Statement.test';
 import ActsGrammarTest from './statement/Grammar.test';
 import functionTest1 from './function/FunctionTest1.test';
 import functionTest2 from './function/FunctionTest2.test';
+import functionTest3 from './function/FunctionTest3.test';
 
 import typeArrayBigInt64ArrayTest from "./typearray/TypeArrayBigInt64Array.test";
 export default function testsuite() {
@@ -52,5 +53,6 @@ export default function testsuite() {
   dateTimeTest();
   functionTest1();
   functionTest2();
-  typeArrayBigInt64ArrayTest()
+  functionTest3();
+  typeArrayBigInt64ArrayTest();
 }

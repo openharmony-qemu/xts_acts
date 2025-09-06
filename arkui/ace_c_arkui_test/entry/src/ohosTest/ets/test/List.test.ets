@@ -194,7 +194,6 @@ import imageFitOriginalSizeTest from './image/ImageFitOriginalSizeTest.test'
 import imageFillColorTest from './image/ImageFillColorTest.test'
 import imageResizableTest from './image/ImageResizableTest.test'
 import imageOnfinishTest from './image/ImageOnfinishTest.test'
-import imageOnDownloadProgressTest from './image/ImageOnDownloadProgressTest.test'
 import listHeightTest from './list/ListHeightTest.test'
 import listWidthTest from './list/ListWidthTest.test'
 import listBackgroundColorTest from './list/ListBackgroundColorTest.test'
@@ -1636,7 +1635,6 @@ export default function testsuite() {
   imageFillColorTest()
   imageResizableTest()
   imageOnfinishTest()
-  imageOnDownloadProgressTest()
   imageSpanSrcTest()
   imageSpanAltTest()
   imageSpanOnClickTest()

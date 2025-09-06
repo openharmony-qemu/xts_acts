@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,6 +16,7 @@ import events_emitter from '@ohos.events.emitter';
 import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import business_error from '@ohos.base';
+import { waitForExist } from '../../test/WaitTest.test';
 
 class TestClass {
   constructor() {
@@ -30,23 +31,36 @@ class TestClass {
   }
 }
 
+interface MyWebOptions {
+  src: ResourceStr;
+  controller: WebviewController | WebController;
+  renderMode?: RenderMode;
+  incognitoMode?: boolean;
+  sharedRenderProcessToken?: string;
+}
+
 @Entry
 @Component
 struct WebComponent {
   controller: webview.WebviewController = new webview.WebviewController();
   @State emitKey: string = '';
   webOptions: MyWebOptions = { src: 'www.example.com', controller: this.controller, sharedRenderProcessToken: '111' }
-  webOptions2: MyWebOptions = { src: 'www.w3.org', controller: this.controller, sharedRenderProcessToken: '111' }
-  webOptions3: MyWebOptions = { src: 'www.baidu.com', controller: this.controller, sharedRenderProcessToken: '111' }
+  webOptions2: MyWebOptions = { src: 'www.gitee.com', controller: this.controller, sharedRenderProcessToken: '111' }
   @State testObj: TestClass = new TestClass();
-
+  @State isPageEnd1: number = -1;
+  @State isPageEnd2: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
-      priority: events_emitter.EventPriority.LOW
+      eventId: 138350,
+      priority: events_emitter.EventPriority.LOW,
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(138350)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -54,27 +68,29 @@ struct WebComponent {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
 
   build() {
-
     Column() {
       Row() {
         Button('web click')
           .key('webViewSharedRenderProcessToken')
           .onClick(async () => {
-            await Utils.sleep(1000);
+            await waitForExist(() => (this.isPageEnd1 || this.isPageEnd2) ? -1 : 0, this.emitKey, 0);
+            await waitForExist(() => this.isReceive, this.emitKey, 0);
+            this.isReceive = -1;
             console.info('key==>' + this.emitKey)
 
             switch (this.emitKey) {
               case 'emitWebViewSharedRenderProcessToken': {
                 try {
                   console.log(this.webOptions.sharedRenderProcessToken)
-                  Utils.emitEvent(true,1600)
+                  Utils.emitEvent(true, 138360)
                 } catch (error) {
-                  let e:business_error.BusinessError = error as business_error.BusinessError;
+                  let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 }
                 break;
@@ -84,39 +100,38 @@ struct WebComponent {
                 try {
                   this.controller.registerJavaScriptProxy(this.testObj, 'testObjName', ['test', 'toString'],
                     // 可选参数, asyncMethodList
-                    []
+                    [],
                   );
-                  Utils.emitEvent(true,1601)
+                  Utils.emitEvent(true, 138370)
                 } catch (error) {
-                  let e:business_error.BusinessError = error as business_error.BusinessError;
+                  let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent(false,1601)
-
+                  Utils.emitEvent(false, 138370)
                 }
                 break;
               }
             }
           })
       }
+
       Web(this.webOptions)
         .javaScriptProxy({
-        object: this.testObj,
-        name: 'testObjName',
-        methodList: ['test'],
-        controller: this.controller,
-        // 可选参数
-        asyncMethodList: []
-      })
+          object: this.testObj,
+          name: 'testObjName',
+          methodList: ['test'],
+          controller: this.controller,
+          // 可选参数
+          asyncMethodList: [],
+        })
+        .onPageEnd((event) => {
+          console.log('web pageEnd1==>' + event.url);
+          this.isPageEnd1 = 0;
+        })
       Web(this.webOptions2)
-      Web(this.webOptions3)
+        .onPageEnd((event) => {
+          console.log('web pageEnd2==>' + event.url);
+          this.isPageEnd2 = 0;
+        })
     }
   }
-}
-
-interface MyWebOptions {
-  src: ResourceStr;
-  controller: WebviewController | WebController;
-  renderMode?: RenderMode;
-  incognitoMode?: boolean;
-  sharedRenderProcessToken?: string;
 }

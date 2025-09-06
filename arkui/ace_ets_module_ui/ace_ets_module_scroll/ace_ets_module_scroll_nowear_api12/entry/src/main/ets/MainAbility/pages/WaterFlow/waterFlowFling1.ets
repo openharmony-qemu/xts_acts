@@ -60,6 +60,16 @@ struct WaterFlowFling1 {
 
   build() {
     Column({ space: 2 }) {
+      Text('fling: '+ this.onText)
+        .id('water_fling_1')
+        .width('90%')
+        .height('20%')
+      Button('scroll fling')
+        .id('fling_scroll_1')
+        .onClick((event: ClickEvent) => {
+          this.scroller.fling(10)
+        })
+
       WaterFlow({ scroller: this.scroller }) {
         LazyForEach(this.dataSource, (item: number) => {
           FlowItem() {
@@ -106,16 +116,6 @@ struct WaterFlowFling1 {
         console.info('waterFlow scrollFrameBegin offset: ' + offset + ' state: ' + state.toString())
         return { offsetRemain: offset }
       })
-
-      Text('fling: '+ this.onText)
-        .id('water_fling_1')
-        .width('90%')
-        .height('20%')
-      Button('scroll fling')
-        .id('fling_scroll_1')
-        .onClick((event: ClickEvent) => {
-          this.scroller.fling(10)
-        })
     }
   }
 }

@@ -7,7 +7,7 @@ import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import StartOptions from '@ohos.app.ability.StartOptions'
-import { Caller } from '@ohos.app.ability.UIAbility';
+
 import contextConstant from '@ohos.app.ability.contextConstant';
 
 let domain: number = 0x0000;

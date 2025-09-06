@@ -98,6 +98,8 @@ struct Index {
             this.isShow1=false
           }
         })
+        .margin({top: '2%'})
+
       Text(this.txt1)
         .id('text1')
 

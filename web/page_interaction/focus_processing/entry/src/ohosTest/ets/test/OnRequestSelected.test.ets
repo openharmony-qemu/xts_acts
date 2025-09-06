@@ -17,8 +17,14 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 178401;
+const driver = Driver.create();
+
 export default function OnRequestSelected() {
 
   describe('OnRequestSelected', () => {
@@ -34,8 +40,8 @@ export default function OnRequestSelected() {
         if (!("OnRequestSelected" == pages.name)) {
           console.info("get OnRequestSelected state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push OnRequestSelected page success " + JSON.stringify(result));
+          await driver.waitForComponent(ON.id("WebAttributeTestButton"), 10000);
         }
       } catch (err) {
         console.error("push OnRequestSelected page error: " + err);
@@ -53,12 +59,6 @@ export default function OnRequestSelected() {
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("OnRequestSelected afterEach start");
-      await Utils.sleep(2000);
-      console.info("OnRequestSelected afterEach end");
-      done();
-    })
 
     /*
     * @tc.number      : SUB_WEB_ONREQUESTSELECTED_0100
@@ -69,10 +69,12 @@ export default function OnRequestSelected() {
     * @tc.level       : Level 1
     */
     it('testOnRequestSelected001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnRequestSelected001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnRequestSelected001", true, 70015, done);
-      sendEventByKey('WebAttributeTestButton', 10, '');
+      Utils.emitEvent("emitOnRequestSelected001", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testOnRequestSelected001", true, 178410, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebAttributeTestButton","emitOnRequestSelected001");
+      await Utils.waitForExist(() => isReturn, "testOnRequestSelected001" + '_returnCheck', true, 1000);
+      done();
     })
   })
 }

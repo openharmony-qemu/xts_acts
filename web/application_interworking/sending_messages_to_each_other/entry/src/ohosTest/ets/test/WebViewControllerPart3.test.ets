@@ -17,6 +17,7 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -35,12 +36,12 @@ export default function webViewControllerPart3Test() {
         if (!("WebViewControllerPart3" == pages.name)) {
           console.info("get WebViewControllerPart3 state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebViewControllerPart3 page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebViewControllerPart3 page error: " + err);
       }
+      await waitForComponent("WebViewControllerTestButton");
       done()
     });
 
@@ -50,7 +51,6 @@ export default function webViewControllerPart3Test() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("WebViewControllerPart3 beforeEach start");
       done();
     })
@@ -64,9 +64,8 @@ export default function webViewControllerPart3Test() {
     * @tc.level      : Level 1
     */
     it('testOnMessageEvent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testOnMessageEvent001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnMessageEvent001", 1, 100084, done);
+      Utils.emitEvent("testOnMessageEvent001", 170380)
+      Utils.registerEvent("testOnMessageEvent001", 1, 170390, done);
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
 

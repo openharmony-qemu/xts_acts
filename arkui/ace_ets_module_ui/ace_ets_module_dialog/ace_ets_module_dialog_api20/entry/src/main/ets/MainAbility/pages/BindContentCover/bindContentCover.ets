@@ -28,6 +28,7 @@ struct SafeAreaController {
         Button("Content1")
           .fontSize(20)
           .id('area1')
+          .margin({top: '2%'})
       }
       .width('100%')
       .height('50%')

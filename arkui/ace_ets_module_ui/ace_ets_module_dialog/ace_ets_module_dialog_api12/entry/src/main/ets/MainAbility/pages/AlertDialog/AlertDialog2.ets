@@ -21,6 +21,7 @@ struct AlertDialog2Example {
     Column({ space: 5 }) {
       Button(this.text)
         .id("AlertDialog2")
+        .margin({top: '2%'})
         .onClick(() => {
           AlertDialog.show(
             {

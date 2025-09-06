@@ -110,6 +110,16 @@ export default function performanceTest() {
           await allowButton2.click()
           await driver.delayMs(2000)
         }
+        let openButton3 = await driver.findComponent(ON.within(ON.type('Dialog')).text('本次打开'))
+        if(openButton3 != undefined && openButton3 != null) {
+          await openButton3.click()
+          await driver.delayMs(2000)
+        }
+        let openButton4 = await driver.findComponent(ON.within(ON.type('Dialog')).text('始终允许打开'))
+        if(openButton4 != undefined && openButton4 != null) {
+          await openButton4.click()
+          await driver.delayMs(2000)
+        }
         expect(await AbilityUtils.startAbility('com.acts.pcs.arktstest', 'EntryAbility', abilityContext)).assertTrue()
         await driver.delayMs(2000)
         audioStateText = await scroll.scrollSearch(ON.id('AudioStateText').inWindow('com.acts.pcs.arktstest'))

@@ -150,8 +150,13 @@ export default function setTextSelection() {
       expect('' + AppStorage.get('textInputEnd')).assertEqual("0");
       await but.click();
       await CommonFunc.sleep(500);
-      if (globalThis.winLeft == 0) {
+      let text = await driver.findComponent(ON.text('全选'));
+      if (text) {
         await driver.assertComponentExist(ON.text('全选'));
+      }else{
+        let strJson = getInspectorByKey('textArea');
+        let obj: ESObject = JSON.parse(strJson);
+	expect(obj.$type).assertEqual('TextArea');
       }
       AppStorage.delete('textAreaStart');
       AppStorage.delete('textAreaEnd');

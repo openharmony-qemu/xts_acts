@@ -41,14 +41,13 @@ struct CustomAvoidPopup {
   }
 
   build() {
-    Flex({ wrap: FlexWrap.Wrap }) {
+    Column() {
       Button('handlePopup')
         .onClick(() => {
           this.handlePopup = !this.handlePopup;
         })
         .id('customPopup')
-        .width(this.maxW - 45)
-        .height(this.maxH - 150)
+        .margin({top: '2%'})
         .bindPopup(this.handlePopup, {
           builder: this.popupBuilder,
           width: 100,
