@@ -15,7 +15,7 @@
 @Entry
 @Component
 struct Index {
-  private iconStr: ResourceStr = $r('app.media.app_icon')
+  private iconStr: ResourceStr = $r('app.media.icon')
   @State listData: number[] = [0, 0, 0]
   @State rad: Length | BorderRadiuses | LocalizedBorderRadiuses = 20
   @State txt1: string = ''
@@ -49,6 +49,7 @@ struct Index {
             })
           .id('menu_1')
           .backgroundColor('#ff3df2f5')
+          .margin({top: '2%'})
         Text(this.txt1)
           .id('text1')
       }
