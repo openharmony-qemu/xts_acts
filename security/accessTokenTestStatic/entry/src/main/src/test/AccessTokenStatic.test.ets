@@ -110,6 +110,8 @@ export default function AccessTokenStaticTest() {
       hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_003 start");
       try {
         atManager.verifyAccessTokenSync(0, permissionNameUser);
+        expect(false).assertFail();
+        done();
       } catch (error: BusinessError<void>) {
         hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_003 error" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_INVALID);
@@ -131,6 +133,8 @@ export default function AccessTokenStaticTest() {
       let permissionName: Permissions = "" as Permissions;
       try {
         atManager.verifyAccessTokenSync(tokenID, permissionName);
+        expect(false).assertFail();
+        done();
       } catch (error: BusinessError<void>) {
         hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_004 error" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_INVALID);
@@ -152,6 +156,8 @@ export default function AccessTokenStaticTest() {
       let permissionName = 'a'.repeat(257) as Permissions;
       try {
         atManager.verifyAccessTokenSync(tokenID, permissionName);
+        expect(false).assertFail();
+        done();
       } catch (error: BusinessError<void>) {
         hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_005 error" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_INVALID);
@@ -259,6 +265,8 @@ export default function AccessTokenStaticTest() {
       hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_003 start");
       try {
         atManager.checkAccessTokenSync(0, permissionNameUser);
+        expect(false).assertFail();
+        done();
       } catch (error: BusinessError<void>) {
         hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_003 error" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_INVALID);
@@ -280,6 +288,8 @@ export default function AccessTokenStaticTest() {
       let permissionName: Permissions = "" as Permissions;
       try {
         atManager.checkAccessTokenSync(tokenID, permissionName);
+        expect(false).assertFail();
+        done();
       } catch (error: BusinessError<void>) {
         hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_004 error" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_INVALID);
@@ -301,6 +311,8 @@ export default function AccessTokenStaticTest() {
       let permissionName = 'a'.repeat(257) as Permissions;
       try {
         atManager.checkAccessTokenSync(tokenID, permissionName);
+        expect(false).assertFail();
+        done();
       } catch (error: BusinessError<void>) {
         hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_005 error" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_INVALID);
@@ -718,6 +730,440 @@ export default function AccessTokenStaticTest() {
       expect(value + '').assertEqual('3');
       done();
     })
+
+    /**
+     * @tc.number Test_verifyAccessToken_Promise_001
+     * @tc.name Test_verifyAccessToken_Promise_001
+     * @tc.desc After the installation, user_grant permission is not granted by default(Promise).
+     * @tc.level: Level0
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     */
+    it('Test_verifyAccessToken_Promise_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=>void): Promise<void> => {
+      hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_001 start");
+      try {
+        let status = await atManager.verifyAccessToken(tokenID, permissionNameUser);
+        expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED);
+        done();
+      } catch(error: BusinessError<void>) {
+        hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_001 error" + JSON.stringify(error));
+        expect(false).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number Test_verifyAccessToken_Promise_002
+     * @tc.name Test_verifyAccessToken_Promise_002
+     * @tc.desc After the installation, system_grant permission is granted by default(Promise).
+     * @tc.level: Level1
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     */
+    it('Test_verifyAccessToken_Promise_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
+      hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_002 start");
+      try {
+        let status = await atManager.verifyAccessToken(tokenID, permissionNameSystem);
+        expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED);
+        done();
+      } catch(error: BusinessError<void>) {
+        hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_002 error" + JSON.stringify(error));
+        expect(false).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number Test_verifyAccessToken_Promise_003
+     * @tc.name Test_verifyAccessToken_Promise_003
+     * @tc.desc Test verifyAccessToken(promise), invalid TokenID(0).
+     * @tc.level: Level2
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     */
+    it('Test_verifyAccessToken_Promise_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: ()=>void): Promise<void> => {
+      hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_003 start");
+      try {
+        let status = await atManager.verifyAccessToken(0, permissionNameUser);
+        expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED);
+        done();
+      } catch(error: BusinessError<void>) {
+        hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_003 error" + JSON.stringify(error));
+        expect(false).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number Test_verifyAccessToken_Promise_004
+     * @tc.name Test_verifyAccessToken_Promise_004
+     * @tc.desc Test verifyAccessToken(promise), permissionName is empty.
+     * @tc.level: Level3
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     */
+    it('Test_verifyAccessToken_Promise_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void): Promise<void> => {
+      hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_004 start");
+      // empty permission
+      let permissionName: Permissions = "" as Permissions;
+      try {
+        let status = await atManager.verifyAccessToken(tokenID, permissionName);
+        expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED);
+        done();
+      } catch(error: BusinessError<void>) {
+        hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_003 error" + JSON.stringify(error));
+        expect(false).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number Test_verifyAccessToken_Promise_005
+     * @tc.name Test_verifyAccessToken_Promise_005
+     * @tc.desc Test verifyAccessToken(promise), permissionName exceeds 256 characters.
+     * @tc.level: Level1
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     */
+    it('Test_verifyAccessToken_Promise_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
+      hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_005 start");
+      // length of permission is 257
+      let permissionName = 'a'.repeat(257) as Permissions;
+      try {
+        let status = await atManager.verifyAccessToken(tokenID, permissionName);
+        expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED);
+        done();
+      } catch(error: BusinessError<void>) {
+        hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_003 error" + JSON.stringify(error));
+        expect(false).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number Test_verifyAccessToken_Promise_006
+     * @tc.name Test_verifyAccessToken_Promise_006
+     * @tc.desc Test verifyAccessToken(promise), noexist tokenid.
+     * @tc.level: Level1
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     */
+    it('Test_verifyAccessToken_Promise_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
+      hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_006 start");
+      // noexist tokenid
+      let noexistId: int = 111111 as int;
+      try {
+        atManager.verifyAccessToken(noexistId, permissionNameSystem).then<void, void>((status: abilityAccessCtrl.GrantStatus): void => {
+          expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED);
+          done();
+        });
+      } catch (error: BusinessError<void>) {
+        hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_006 failed" + JSON.stringify(error));
+        expect(false).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number Test_verifyAccessToken_Promise_007
+     * @tc.name Test_verifyAccessToken_Promise_007
+     * @tc.desc Test verifyAccessToken(promise), noexist permission.
+     * @tc.level: Level2
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     */
+    it('Test_verifyAccessToken_Promise_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: ()=>void): Promise<void> => {
+      hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_007 start");
+      // noexist permission
+      let permissionName: Permissions = "ohos.test.test" as Permissions;
+      try {
+        atManager.verifyAccessToken(tokenID, permissionName).then<void, void>((status: abilityAccessCtrl.GrantStatus): void => {
+          expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED);
+          done();
+        });
+      } catch (error: BusinessError<void>) {
+        hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_007 failed" + JSON.stringify(error));
+        expect(false).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number:Test_Off_001
+     * @tc.name: Test_Off_001
+     * @tc.desc: abilityAccessCtrl Off The permission list does not exist
+     * @tc.level: Level2
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     */
+    it("Test_Off_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, 'testTag', '----------------------Test_Off_001---------------------------');
+      await Utils.msSleep(1000);
+      try {
+        let fn: (data: abilityAccessCtrl.PermissionStateChangeInfo) => void =
+          (data: abilityAccessCtrl.PermissionStateChangeInfo) => {
+            hilog.info(domain, 'testTag', 'Test_Off_001 Callback received: %{public}s', JSON.stringify(data));
+          }
+        let testpermissionName: Permissions = "ohos.permission.DISTRIBUTED_DATASYNC" as Permissions;
+        let permissionList: Array<Permissions> = [testpermissionName];
+        atManager.off('selfPermissionStateChange', permissionList, fn);
+        hilog.info(domain, 'testTag', 'Test_Off_001 success');
+        expect(false).assertFail();
+        done();
+      } catch (error: BusinessError) {
+        hilog.info(domain, 'testTag', "Test_Off_001 error" + JSON.stringify(error));
+        expect(ERR_NOT_USE_TOGETHER).assertEqual(error.code);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number:Test_Off_002
+     * @tc.name: Test_Off_002
+     * @tc.desc: abilityAccessCtrl On Off The permission list does not exist
+     * @tc.level: Level2
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     */
+    it("Test_Off_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, 'testTag', '----------------------Test_Off_002---------------------------');
+      await Utils.msSleep(1000);
+      try {
+        let testpermissionName: Permissions = "ohos.permission.DISTRIBUTED_DATASYNC" as Permissions;
+        let permissionList: Array<Permissions> = [testpermissionName];
+        atManager.on('selfPermissionStateChange', permissionList,
+          (data: abilityAccessCtrl.PermissionStateChangeInfo) => {
+            hilog.info(domain, 'testTag', `Test_Off_002 on callback data: ${JSON.stringify(data)}`);
+          });
+        atManager.off('selfPermissionStateChange', permissionList,
+          (data: abilityAccessCtrl.PermissionStateChangeInfo) => {
+            hilog.info(domain, 'testTag', `Test_Off_002 off callback data: ${JSON.stringify(data)}`);
+          });
+        hilog.info(domain, 'testTag', 'Test_Off_002 success');
+        expect(false).assertFail();
+        done();
+      } catch (error: BusinessError) {
+        hilog.info(domain, 'testTag', "Test_Off_002 error" + JSON.stringify(error));
+        expect(ERR_NOT_USE_TOGETHER).assertEqual(error.code);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number:Test_On_001
+     * @tc.name: Test_On_001
+     * @tc.desc: abilityAccessCtrl On The size of the permission list exceeds the limit of 1024
+     * @tc.level: Level2
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     */
+    it("Test_On_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, 'testTag', '----------------------Test_On_001---------------------------');
+      await Utils.msSleep(1000);
+      try {
+        let fn: (data: abilityAccessCtrl.PermissionStateChangeInfo) => void =
+          (data: abilityAccessCtrl.PermissionStateChangeInfo) => {
+            hilog.info(domain, 'testTag', 'Callback received: %{public}s', JSON.stringify(data));
+          }
+        let testpermissionName2: Permissions = 'ohos.permission.DISTRIBUTED_DATASYNC' as Permissions;
+        let permissionList: Array<Permissions> = [testpermissionName2];
+        for (let i = 0; i < 1025; i++) {
+          permissionList.push(testpermissionName2);
+        }
+        atManager.on('selfPermissionStateChange', permissionList, fn);
+        hilog.info(domain, 'testTag', 'Test_On_001 success');
+        expect(false).assertFail();
+        done();
+      } catch (error: BusinessError) {
+        hilog.info(domain, 'testTag', "Test_On_001 error" + JSON.stringify(error));
+        expect(ERR_PARAM_INVALID).assertEqual(error.code);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number:Test_On_002
+     * @tc.name: Test_On_002
+     * @tc.desc: abilityAccessCtrl On Duplicate registration
+     * @tc.level: Level2
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     */
+    it("Test_On_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, 'testTag', '----------------------Test_On_002---------------------------');
+      await Utils.msSleep(1000);
+      try {
+        let fn: (data: abilityAccessCtrl.PermissionStateChangeInfo) => void =
+          (data: abilityAccessCtrl.PermissionStateChangeInfo) => {
+            hilog.info(domain, 'testTag', 'Test_On_002 Callback received: %{public}s', JSON.stringify(data));
+          }
+        let testpermissionName: Permissions = "ohos.permission.DISTRIBUTED_DATASYNC" as Permissions;
+        let permissionList: Array<Permissions> = [testpermissionName];
+        atManager.on('selfPermissionStateChange', permissionList, fn);
+        atManager.on('selfPermissionStateChange', permissionList, fn);
+        hilog.info(domain, 'testTag', 'Test_On_002 success');
+        expect(false).assertFail();
+        done();
+
+      } catch (error: BusinessError) {
+        hilog.info(domain, 'testTag', "Test_On_002 error" + JSON.stringify(error));
+        expect(ERR_NOT_USE_TOGETHER).assertEqual(error.code);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number:Test_On_003
+     * @tc.name: Test_On_003
+     * @tc.desc: abilityAccessCtrl On The length of the permission name exceeds 256
+     * @tc.level: Level2
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     */
+    it("Test_On_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, 'testTag', '----------------------Test_On_003---------------------------');
+      await Utils.msSleep(1000);
+      try {
+        let fn: (data: abilityAccessCtrl.PermissionStateChangeInfo) => void =
+          (data: abilityAccessCtrl.PermissionStateChangeInfo) => {
+            hilog.info(domain, 'testTag', 'Callback received: %{public}s', JSON.stringify(data));
+          }
+        let testpermissionName2: Permissions = 'a'.repeat(257) as Permissions;
+        let permissionList: Array<Permissions> = [testpermissionName2];
+        atManager.on('selfPermissionStateChange', permissionList, fn);
+        hilog.info(domain, 'testTag', 'Test_On_003 success');
+        expect(false).assertFail();
+        done();
+      } catch (error: BusinessError) {
+        hilog.info(domain, 'testTag', "Test_On_003 error" + JSON.stringify(error));
+        expect(ERR_PARAM_INVALID).assertEqual(error.code);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number:Test_On_004
+     * @tc.name: Test_On_004
+     * @tc.desc: abilityAccessCtrl On The number of registered callbacks exceeds the limit of 200
+     * @tc.level: Level2
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     */
+    it("Test_On_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, 'testTag', '----------------------Test_On_004---------------------------');
+      await Utils.msSleep(1000);
+      let testpermissionName: Permissions = "ohos.permission.DISTRIBUTED_DATASYNC" as Permissions;
+      let permissionList: Array<Permissions> = [testpermissionName];
+      try {
+        for (let i = 0; i < 201; i++) {
+          atManager.on('selfPermissionStateChange', permissionList,
+            (data: abilityAccessCtrl.PermissionStateChangeInfo) => {
+              hilog.info(domain, 'testTag', `monitor#${i}trigger: ${JSON.stringify(data)}`);
+            });
+        }
+        hilog.info(domain, 'testTag', 'Test_On_004 success');
+        expect(false).assertFail();
+        done();
+      } catch (error: BusinessError) {
+        hilog.info(domain, 'testTag', "Test_On_004 error" + JSON.stringify(error));
+        expect(ERR_REGISTERS_EXCEED_LIMITATION).assertEqual(error.code);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number Test_getSelfPermissionStatus_001
+     * @tc.name Test_getSelfPermissionStatus_001
+     * @tc.desc After the installation, user_grant permission is not granted by default(Promise).
+     * @tc.level: Level0
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     */
+    it("Test_getSelfPermissionStatus_001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "Test_getSelfPermissionStatus_001 start");
+      let result = atManager.getSelfPermissionStatus(permissionNameUser);
+      hilog.info(domain, tag, "Test_getSelfPermissionStatus_001 result: " + result);
+      expect(result).assertEqual(abilityAccessCtrl.PermissionStatus.NOT_DETERMINED);
+      done();
+    })
+
+    /**
+     * @tc.number Test_getSelfPermissionStatus_002
+     * @tc.name Test_getSelfPermissionStatus_002
+     * @tc.desc After the installation, system_grant permission is granted by default(Promise).
+     * @tc.level: Level1
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     */
+    it("Test_getSelfPermissionStatus_002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "Test_getSelfPermissionStatus_002 start");
+      let result = atManager.getSelfPermissionStatus(permissionNameSystem);
+      hilog.info(domain, tag, "Test_getSelfPermissionStatus_002 result: " + result);
+      expect(result).assertEqual(abilityAccessCtrl.PermissionStatus.GRANTED);
+      done();
+    })
+
+    /**
+     * @tc.number Test_getSelfPermissionStatus_003
+     * @tc.name Test_getSelfPermissionStatus_003
+     * @tc.desc Call getSelfPermissionStatus with invalid value
+     * @tc.level: Level1
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     */
+    it("Test_getSelfPermissionStatus_003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "Test_getSelfPermissionStatus_003 start");
+      try {
+        let permissionName: Permissions = "" as Permissions;
+        let result = atManager.getSelfPermissionStatus(permissionName);
+      } catch (error: BusinessError<void>) {
+        hilog.error(domain, tag, "Test_getSelfPermissionStatus_003 error " + JSON.stringify(error));
+        expect(error.code).assertEqual(ERR_PARAM_INVALID);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number Test_getSelfPermissionStatus_004
+     * @tc.name Test_getSelfPermissionStatus_004
+     * @tc.desc Call getSelfPermissionStatus with invalid value
+     * @tc.level: Level1
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     */
+    it("Test_getSelfPermissionStatus_004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "Test_getSelfPermissionStatus_004 start");
+      try {
+        let permissionName: Permissions = 'a'.repeat(257) as Permissions;
+        let result = atManager.getSelfPermissionStatus(permissionName);
+      } catch (error: BusinessError<void>) {
+        hilog.error(domain, tag, "Test_getSelfPermissionStatus_004 error code " + JSON.stringify(error));
+        expect(error.code).assertEqual(ERR_PARAM_INVALID);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number Test_getSelfPermissionStatus_005
+     * @tc.name Test_getSelfPermissionStatus_005
+     * @tc.desc Call getSelfPermissionStatus with invalid value
+     * @tc.level: Level1
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     */
+    it("Test_getSelfPermissionStatus_005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "Test_getSelfPermissionStatus_005 start");
+      let permissionName: Permissions = "ohos.permission.INVALID_PERM" as Permissions;
+      let result = atManager.getSelfPermissionStatus(permissionName);
+      hilog.info(domain, tag, "Test_getSelfPermissionStatus_005 result: " + result);
+      expect(result).assertEqual(abilityAccessCtrl.PermissionStatus.INVALID);
+
+      let result2 = atManager.getSelfPermissionStatus("ohos.permission.LOCATION");
+      hilog.info(domain, tag, "Test_getSelfPermissionStatus_005 result2: " + result2);
+      expect(result2).assertEqual(abilityAccessCtrl.PermissionStatus.INVALID);
+      done();
+    })
+
   })
   hilog.info(domain, tag, '%{public}s', 'abilityTest end');
 
