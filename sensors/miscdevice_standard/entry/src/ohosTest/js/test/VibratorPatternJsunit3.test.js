@@ -26,22 +26,22 @@ export default function VibratorJsTest_misc_12() {
             * @tc.setup: setup invoked before all testcases
             */
             console.info('beforeAll called')
-            console.info('VibratorJsTest_misc_12 Device type = ' + deviceInfo.deviceType);
-            console.info('VibratorJsTest_misc_12 isAvailable = ' + isAvailable);
+            console.info(`VibratorJsTest_misc_12 Device type = ${deviceInfo.deviceType}`);
+            console.info(`VibratorJsTest_misc_12 isAvailable = ${isAvailable}`);
             try {
                 const vibratorsList = vibrator.getVibratorInfoSync();
                 if (ABILITYJUDGMENT === false || vibratorsList.length === 0 ||
                     (vibratorsList.length !== 0 && vibratorsList.every(vibrator => !vibrator.isLocalVibrator))) {
                     isAvailable = false;
-                    console.info('VibratorJsTest_misc_12 isAvailable ' + isAvailable);
+                    console.info(`VibratorJsTest_misc_12 isAvailable ${isAvailable}`);
                     done();
                 }else {
                     isAvailable = true;
-                    console.info('VibratorJsTest_misc_12 isAvailable ' + isAvailable);
+                    console.info(`VibratorJsTest_misc_12 isAvailable ${isAvailable}`);
                     done();
                 }
             } catch(error) {
-                console.error('VibratorJsTest_misc_12 exception :' + JSON.stringify(error));
+                console.error(`VibratorJsTest_misc_12 exception : ${JSON.stringify(error)}`);
                 done();
             }
         })
@@ -75,11 +75,11 @@ export default function VibratorJsTest_misc_12() {
                         done();
                     }, 500);
                 }, (error) => {
-                    console.info("afterEach: error in stopping vibration. error: " + JSON.stringify(error));
+                    console.info(`afterEach: error in stopping vibration. error: ${JSON.stringify(error)}`);
                     done();
                 })
             } catch(error){
-                console.info("afterEach error: " + JSON.stringify(error));
+                console.info(`afterEach error: ${JSON.stringify(error)}`);
                 done();
             }
             console.info('afterEach end');
@@ -97,161 +97,127 @@ export default function VibratorJsTest_misc_12() {
          * @tc.size:MediumTest
          */
         it("VibratorProgramticHapticTest068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-            TAG = "VibratorProgramticHapticTest068";
-            if(isAvailable){
-                let builder = new vibrator.VibratorPatternBuilder();
-                try {
-                    let pointsMe  = vibrator.VibratorCurvePoint = [
-                        {
-                            time:0,
-                            intensity:0,
-                            frequency:-7
-                        },
-                        {
-                            time:100,
-                            intensity:1,
-                            frequency:-1
-                        },
-                        {
-                            time:300,
-                            intensity:1,
-                            frequency:-4
-                        },
-                        {
-                            time:500,
-                            intensity:0.1,
-                            frequency:-4
-                        },
-                        {
-                            time:800,
-                            intensity:1,
-                            frequency:-1
-                        },
-                        {
-                            time:900,
-                            intensity:1,
-                            frequency:-4
-                        },
-                        {
-                            time:1009,
-                            intensity:1,
-                            frequency:-1
-                        },
-                        {
-                            time:1596,
-                            intensity:1,
-                            frequency:-4
-                        },
-                        {
-                            time:1830,
-                            intensity:0,
-                            frequency:-7
-                        },
-                        {
-                            time:2000,
-                            intensity:1,
-                            frequency:-1
-                        },
-                        {
-                            time:2369,
-                            intensity:1,
-                            frequency:-4
-                        },
-                        {
-                            time:2600,
-                            intensity:0.1,
-                            frequency:-4
-                        },
-                        {
-                            time:2860,
-                            intensity:1,
-                            frequency:-1
-                        },
-                        {
-                            time:3000,
-                            intensity:1,
-                            frequency:-4
-                        },
-                        {
-                            time:4000,
-                            intensity:1,
-                            frequency:-4
-                        },
-                        {
-                            time:5000,
-                            intensity:0,
-                            frequency:-4
-                        }
-                    ]
-                    let param = {
-                        intensity:97,
-                        frequency:34,
-                        points:pointsMe,
-                        index:0
+            let TAG = "====>VibratorProgramticHapticTest068";
+            let builder = new vibrator.VibratorPatternBuilder();
+            try {
+                let pointsMe  = vibrator.VibratorCurvePoint = [
+                    {
+                        time:0,
+                        intensity:0,
+                        frequency:-7
+                    },
+                    {
+                        time:100,
+                        intensity:1,
+                        frequency:-1
+                    },
+                    {
+                        time:300,
+                        intensity:1,
+                        frequency:-4
+                    },
+                    {
+                        time:500,
+                        intensity:0.1,
+                        frequency:-4
+                    },
+                    {
+                        time:800,
+                        intensity:1,
+                        frequency:-1
+                    },
+                    {
+                        time:900,
+                        intensity:1,
+                        frequency:-4
+                    },
+                    {
+                        time:1009,
+                        intensity:1,
+                        frequency:-1
+                    },
+                    {
+                        time:1596,
+                        intensity:1,
+                        frequency:-4
+                    },
+                    {
+                        time:1830,
+                        intensity:0,
+                        frequency:-7
+                    },
+                    {
+                        time:2000,
+                        intensity:1,
+                        frequency:-1
+                    },
+                    {
+                        time:2369,
+                        intensity:1,
+                        frequency:-4
+                    },
+                    {
+                        time:2600,
+                        intensity:0.1,
+                        frequency:-4
+                    },
+                    {
+                        time:2860,
+                        intensity:1,
+                        frequency:-1
+                    },
+                    {
+                        time:3000,
+                        intensity:1,
+                        frequency:-4
+                    },
+                    {
+                        time:4000,
+                        intensity:1,
+                        frequency:-4
+                    },
+                    {
+                        time:5000,
+                        intensity:0,
+                        frequency:-4
                     }
-                    builder.addContinuousEvent(60, 5000, param);
-                    console.info(TAG + " builder.build is " + JSON.stringify(builder.build()));
-                }catch (error){
-                    console.info(TAG + " addContinuousEvent error: " + JSON.stringify(error));
+                ]
+                let param = {
+                    intensity:97,
+                    frequency:34,
+                    points:pointsMe,
+                    index:0
+                }
+                builder.addContinuousEvent(60, 5000, param);
+                console.info(TAG + ` builder.build is: ${JSON.stringify(builder.build())}`);
+            }catch (error){
+                console.info(TAG + ` addContinuousEvent error: ${JSON.stringify(error)}`);
+                expect(false).assertTrue();
+            }
+            let builder1 = new vibrator.VibratorPatternBuilder();
+            try {
+                builder1.addTransientEvent(0);
+                console.info(TAG + ` builder.build1 is: ${JSON.stringify(builder1.build())}`);
+                await vibrator.startVibration({ type:"pattern", pattern:builder.build() }, { usage: "unknown" });
+                await vibrator.startVibration({ type:"pattern", pattern:builder1.build() }, { usage: "alarm" });
+                if (!isAvailable) {
+                    console.info(TAG + ' isAvailable1 is false error');
                     expect(false).assertTrue();
+                    done();
                 }
-                let builder1 = new vibrator.VibratorPatternBuilder();
-                try {
-                    builder1.addTransientEvent(0);
-                    console.info(TAG + " builder.build1 is:" + JSON.stringify(builder1.build()));
-                }catch (error){
-                    console.info(TAG + " TransientParam1 error: " + JSON.stringify(error));
+                console.info(TAG + ' startVibration success' );
+                expect(true).assertTrue();
+                done();
+            } catch (error){
+                if (error && !isAvailable) {
+                    console.info(TAG + ` isAvailable1 is false error: ${JSON.stringify(error)}`);
+                    expect(error.code).assertEqual(14600101);
+                    done();
+                } else {
+                    console.info(TAG + ` isAvailable1 is true startVibration error: ${JSON.stringify(error)}`);
                     expect(false).assertTrue();
+                    done();
                 }
-                function vibratePromise() {
-                    return new Promise((resolve, reject) => {
-                        setTimeout(() => {
-                            vibrator.startVibration({
-                                type:"pattern",
-                                pattern:builder.build()
-                            }, {
-                                usage: "unknown"
-                            }, (error)=>{
-                                if (error) {
-                                    console.info(TAG + " error: " + JSON.stringify(error));
-                                    expect(false).assertTrue();
-                                    reject();
-                                } else {
-                                    console.info(TAG + " vibrate builder success");
-                                    resolve();
-                                }
-                            });
-                        }, 1000);
-                    })
-                }
-
-                let promise = new Promise((resolve, reject) => {
-                    vibrator.startVibration({
-                        type:"pattern",
-                        pattern:builder1.build()
-                    }, {
-                        usage: "alarm"
-                    }, (error)=>{
-                        if (error) {
-                            console.info(TAG + " error1: " + JSON.stringify(error));
-                            expect(false).assertTrue();
-                            reject();
-                        } else {
-                            console.info(TAG + " vibrate builder1 success");
-                            resolve();
-                        }
-                    });
-                })
-
-                await promise.then(() =>{
-                    return vibratePromise();
-                }, ()=>{
-                    console.info(TAG + " reject");
-                })
-                done();
-            } else {
-                console.log(TAG + ' is not supported on this device.');
-                done();
             }
         })
 
@@ -264,100 +230,74 @@ export default function VibratorJsTest_misc_12() {
          * @tc.size:MediumTest
          */
         it("VibratorProgramticHapticTest069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-            TAG = "VibratorProgramticHapticTest069";
-            if(isAvailable){
-                let builder = new vibrator.VibratorPatternBuilder();
-                let builder1 = new vibrator.VibratorPatternBuilder();
-                let pointsMe  = vibrator.VibratorCurvePoint = [
-                    {
-                        time:0,
-                        intensity:0,
-                        frequency:-7
-                    },
-                    {
-                        time:142,
-                        intensity:1,
-                        frequency:-6
-                    },
-                    {
-                        time:228,
-                        intensity:1,
-                        frequency:-4
-                    },
-                    {
-                        time:317,
-                        intensity:0,
-                        frequency:-4
-                    }
-                ]
-                let param = {
-                    intensity:97,
-                    frequency:34,
-                    points:pointsMe,
-                    index:0
+            let TAG = "====>VibratorProgramticHapticTest069";
+            let builder = new vibrator.VibratorPatternBuilder();
+            let builder1 = new vibrator.VibratorPatternBuilder();
+            let pointsMe  = vibrator.VibratorCurvePoint = [
+                {
+                    time:0,
+                    intensity:0,
+                    frequency:-7
+                },
+                {
+                    time:142,
+                    intensity:1,
+                    frequency:-6
+                },
+                {
+                    time:228,
+                    intensity:1,
+                    frequency:-4
+                },
+                {
+                    time:317,
+                    intensity:0,
+                    frequency:-4
                 }
-                let param1 = {
-                    intensity:97,
-                    frequency:34,
-                    points:pointsMe,
-                    index:0
-                }
-                try {
-                    builder.addContinuousEvent(0, 317, param);
-                    console.info(TAG + " builder.build is " + JSON.stringify(builder.build()));
-                    builder1.addContinuousEvent(0, 317, param1);
-                    console.info(TAG + " builder1.build is " + JSON.stringify(builder1.build()));
-                }catch (error){
-                    console.info(TAG + " addContinuousEvent error: " + JSON.stringify(error));
+            ]
+            let param = {
+                intensity:97,
+                frequency:34,
+                points:pointsMe,
+                index:0
+            }
+            let param1 = {
+                intensity:97,
+                frequency:34,
+                points:pointsMe,
+                index:0
+            }
+            try {
+                builder.addContinuousEvent(0, 317, param);
+                console.info(TAG + ` builder.build is: ${JSON.stringify(builder.build())}`);
+                builder1.addContinuousEvent(0, 317, param1);
+                console.info(TAG + ` builder1.build is ${JSON.stringify(builder1.build())}`);
+            }catch (error){
+                console.info(TAG + ` addContinuousEvent error:: ${JSON.stringify(error)}`);
+                expect(false).assertTrue();
+            }
+
+            try {
+                await vibrator.startVibration({type:"pattern", pattern:builder.build() }, { usage: "unknown" });
+                await vibrator.startVibration({ type:"pattern",pattern:builder1.build()}, { usage: "alarm" });
+                if (!isAvailable) {
+                    console.info(TAG + ' isAvailable1 is false error');
                     expect(false).assertTrue();
+                    done();
                 }
-                function vibratePromise() {
-                    return new Promise((resolve, reject) => {
-                        vibrator.startVibration({
-                            type:"pattern",
-                            pattern:builder1.build()
-                        }, {
-                            usage: "alarm"
-                        }, (error)=>{
-                            if (error) {
-                                console.info(TAG + " error1: " + JSON.stringify(error));
-                                expect(false).assertTrue();
-                                reject();
-                            } else {
-                                console.info(TAG + " vibrate builder1 success");
-                                resolve();
-                            }
-                        });
-                    })
+                console.info(TAG + ' startVibration success' );
+                expect(true).assertTrue();
+                done();
+            } catch (error){
+                if (error && !isAvailable) {
+                    console.info(TAG + ` isAvailable1 is false error: ${JSON.stringify(error)}`);
+                    expect(error.code).assertEqual(14600101);
+                    done();
+                } else {
+                    console.info(TAG + ` isAvailable1 is true startVibration error: ${JSON.stringify(error)}`);
+                    expect(false).assertTrue();
+                    done();
                 }
-
-                let promise = new Promise((resolve, reject) => {
-                    vibrator.startVibration({
-                        type:"pattern",
-                        pattern:builder.build()
-                    }, {
-                        usage: "unknown"
-                    }, (error)=>{
-                        if (error) {
-                            console.info(TAG + " error: " + JSON.stringify(error));
-                            expect(false).assertTrue();
-                            reject();
-                        } else {
-                            console.info(TAG + " vibrate builder success");
-                            resolve();
-                        }
-                    });
-                })
-
-                await promise.then(() =>{
-                    return vibratePromise();
-                }, ()=>{
-                    console.info(TAG + " reject");
-                })
-                done();
-            } else {
-                console.log(TAG + ' is not supported on this device.');
-                done();
             }
         })
 
@@ -370,76 +310,44 @@ export default function VibratorJsTest_misc_12() {
          * @tc.size:MediumTest
          */
         it("VibratorProgramticHapticTest070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-            TAG = "VibratorProgramticHapticTest070";
-            if(isAvailable){
-                let builder = new vibrator.VibratorPatternBuilder();
-                let builder1 = new vibrator.VibratorPatternBuilder();
-                let param = {
-                    intensity:97,
-                    frequency:34,
-                    index:0
-                }
-                try {
-                    builder.addTransientEvent(0, param);
-                    console.info(TAG + " builder.build is " + JSON.stringify(builder.build()));
-                    builder1.addTransientEvent(0, param);
-                    console.info(TAG + " builder.build is " + JSON.stringify(builder.build()));
-                }catch (error){
-                    console.info(TAG + " addContinuousEvent error: " + JSON.stringify(error));
+            let TAG = "====>VibratorProgramticHapticTest070";
+            let builder = new vibrator.VibratorPatternBuilder();
+            let builder1 = new vibrator.VibratorPatternBuilder();
+            let param = {
+                intensity:97,
+                frequency:34,
+                index:0
+            }
+            try {
+                builder.addTransientEvent(0, param);
+                console.info(TAG + ` builder.build is: ${JSON.stringify(builder.build())}`);
+                builder1.addTransientEvent(0, param);
+                console.info(TAG + ` builder.build is: ${JSON.stringify(builder.build())}`);
+            }catch (error){
+                console.info(TAG + ` addContinuousEvent error:: ${JSON.stringify(error)}`);
+                expect(false).assertTrue();
+            }
+            try {
+                await vibrator.startVibration({ type:"pattern", pattern:builder.build() }, { usage: "unknown" });
+                await vibrator.startVibration({ type:"pattern", pattern:builder1.build() }, { usage: "alarm" });
+                if (!isAvailable) {
+                    console.info(TAG + ' isAvailable1 is false error');
                     expect(false).assertTrue();
+                    done();
                 }
-                function vibratePromise() {
-                    return new Promise((resolve, reject) => {
-                        vibrator.startVibration({
-                            type:"pattern",
-                            pattern:builder1.build()
-                        }, {
-                            usage: "alarm"
-                        }, (error)=>{
-                            if (error) {
-                                console.info(TAG + " error1: " + JSON.stringify(error));
-                                expect(false).assertTrue();
-                                reject();
-                            } else {
-                                console.info(TAG + " vibrate builder1 success");
-                                setTimeout(() => {
-                                }, 500);
-                                resolve();
-                            }
-                        });
-                    })
+                console.info(TAG + ' startVibration success' );
+                expect(true).assertTrue();
+                done();
+            } catch (error){
+                if (error && !isAvailable) {
+                    console.info(TAG + ` isAvailable1 is false error: ${JSON.stringify(error)}`);
+                    expect(error.code).assertEqual(14600101);
+                    done();
+                } else {
+                    console.info(TAG + ` isAvailable1 is true startVibration error: ${JSON.stringify(error)}`);
+                    expect(false).assertTrue();
+                    done();
                 }
-
-                let promise = new Promise((resolve, reject) => {
-                    vibrator.startVibration({
-                        type:"pattern",
-                        pattern:builder.build()
-                    }, {
-                        usage: "unknown"
-                    }, (error)=>{
-                        if (error) {
-                            console.info(TAG + " error: " + JSON.stringify(error));
-                            expect(false).assertTrue();
-                            reject();
-                        } else {
-                            console.info(TAG + " vibrate builder success");
-                            setTimeout(() => {
-                                done();
-                            }, 30);
-                            resolve();
-                        }
-                    });
-                })
-
-                await promise.then(() =>{
-                    return vibratePromise();
-                }, ()=>{
-                    console.info(TAG + " reject");
-                })
-                done();
-            } else {
-                console.log(TAG + ' is not supported on this device.');
-                done();
             }
         })
 
@@ -452,135 +360,127 @@ export default function VibratorJsTest_misc_12() {
          * @tc.size:MediumTest
          */
         it("VibratorProgramticHapticTest071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-            TAG = "VibratorProgramticHapticTest071";
-            if(isAvailable){
-                let builder = new vibrator.VibratorPatternBuilder();
-                try {
-                    let pointsMe  = vibrator.VibratorCurvePoint = [
-                        {
-                            time:0,
-                            intensity:0,
-                            frequency:-7
-                        },
-                        {
-                            time:62,
-                            intensity:1,
-                            frequency:-6
-                        },
-                        {
-                            time:82,
-                            intensity:1,
-                            frequency:-6
-                        },
-                        {
-                            time:102,
-                            intensity:1,
-                            frequency:-6
-                        },
-                        {
-                            time:122,
-                            intensity:1,
-                            frequency:-6
-                        },
-                        {
-                            time:142,
-                            intensity:1,
-                            frequency:-6
-                        },
-                        {
-                            time:162,
-                            intensity:1,
-                            frequency:-6
-                        },
-                        {
-                            time:182,
-                            intensity:1,
-                            frequency:-6
-                        },
-                        {
-                            time:202,
-                            intensity:1,
-                            frequency:-6
-                        },
-                        {
-                            time:222,
-                            intensity:1,
-                            frequency:-6
-                        },
-                        {
-                            time:1242,
-                            intensity:1,
-                            frequency:-6
-                        },
-                        {
-                            time:2062,
-                            intensity:1,
-                            frequency:-6
-                        },
-                        {
-                            time:2802,
-                            intensity:1,
-                            frequency:-6
-                        },
-                        {
-                            time:3002,
-                            intensity:1,
-                            frequency:-6
-                        },
-                        {
-                            time:4002,
-                            intensity:1,
-                            frequency:-6
-                        },
-                        {
-                            time:5000,
-                            intensity:0,
-                            frequency:-4
-                        }
-                    ]
-                    let param = vibrator.ContinuousParam = {
-                        intensity: 97,
-                        frequency: 34,
-                        points:pointsMe,
-                        index: 0
+            let TAG = "====>VibratorProgramticHapticTest071";
+            let builder = new vibrator.VibratorPatternBuilder();
+            try {
+                let pointsMe  = vibrator.VibratorCurvePoint = [
+                    {
+                        time:0,
+                        intensity:0,
+                        frequency:-7
+                    },
+                    {
+                        time:62,
+                        intensity:1,
+                        frequency:-6
+                    },
+                    {
+                        time:82,
+                        intensity:1,
+                        frequency:-6
+                    },
+                    {
+                        time:102,
+                        intensity:1,
+                        frequency:-6
+                    },
+                    {
+                        time:122,
+                        intensity:1,
+                        frequency:-6
+                    },
+                    {
+                        time:142,
+                        intensity:1,
+                        frequency:-6
+                    },
+                    {
+                        time:162,
+                        intensity:1,
+                        frequency:-6
+                    },
+                    {
+                        time:182,
+                        intensity:1,
+                        frequency:-6
+                    },
+                    {
+                        time:202,
+                        intensity:1,
+                        frequency:-6
+                    },
+                    {
+                        time:222,
+                        intensity:1,
+                        frequency:-6
+                    },
+                    {
+                        time:1242,
+                        intensity:1,
+                        frequency:-6
+                    },
+                    {
+                        time:2062,
+                        intensity:1,
+                        frequency:-6
+                    },
+                    {
+                        time:2802,
+                        intensity:1,
+                        frequency:-6
+                    },
+                    {
+                        time:3002,
+                        intensity:1,
+                        frequency:-6
+                    },
+                    {
+                        time:4002,
+                        intensity:1,
+                        frequency:-6
+                    },
+                    {
+                        time:5000,
+                        intensity:0,
+                        frequency:-4
                     }
-                    builder.addContinuousEvent(0, 5000, param);
-                    console.info(TAG + " builder.build is " + JSON.stringify(builder.build()));
-                }catch (error){
-                    console.info(TAG + " TransientParam error: " + JSON.stringify(error));
-                    expect(false).assertTrue();
-                    done();
+                ]
+                let param = vibrator.ContinuousParam = {
+                    intensity: 97,
+                    frequency: 34,
+                    points:pointsMe,
+                    index: 0
                 }
-
-                try {
-                    vibrator.startVibration({
-                        type:"pattern",
-                        pattern:builder.build()
-                    },{
-                        usage:"alarm",
-                        systemUsage:false
-                    },(error) => {
-                        if (error) {
-                            console.info(TAG + " vibrate fail:" + JSON.stringify(error))
-                            expect(false).assertTrue();
-                            done();
-                        } else {
-                            console.info(TAG + " vibrate success");
-                            setTimeout(() => {
-                                done();
-                            }, 5000);
-                        }
-                    })
-                } catch (error) {
-                    console.info(TAG + " Exception error:" + error);
-                    expect(false).assertTrue();
-                    done();
-                }
-            } else {
-                console.log(TAG + ' is not supported on this device.');
+                builder.addContinuousEvent(0, 5000, param);
+                console.info(TAG + ` builder.build is: ${JSON.stringify(builder.build())}`);
+            }catch (error){
+                console.info(TAG + ` TransientParam error: ${JSON.stringify(error)}`);
+                expect(false).assertTrue();
                 done();
             }
+            try {
+                await vibrator.startVibration({ type:"pattern", pattern:builder.build() },{ usage:"alarm" });
+                if (!isAvailable) {
+                    console.info(TAG + ' isAvailable1 is false error');
+                    expect(false).assertTrue();
+                    done();
+                }
+                console.info(TAG + ' startVibration success' );
+                expect(true).assertTrue();
+                done();
+            } catch (error){
+                if (error && !isAvailable) {
+                    console.info(TAG + ` isAvailable1 is false error: ${JSON.stringify(error)}`);
+                    expect(error.code).assertEqual(14600101);
+                    done();
+                } else {
+                    console.info(TAG + ` isAvailable1 is true startVibration error: ${JSON.stringify(error)}`);
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
         })
+
         /*
          * @tc.name:VibratorProgramticHapticTest072
          * @tc.desc:addContinuousEvent
@@ -590,45 +490,37 @@ export default function VibratorJsTest_misc_12() {
          * @tc.size:MediumTest
          */
         it("VibratorProgramticHapticTest072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-            TAG = "VibratorProgramticHapticTest072";
-            if(isAvailable){
-                let builder = new vibrator.VibratorPatternBuilder();
-                try {
-                    builder.addContinuousEvent(0, 272);
-                    console.info(TAG + " builder.build is " + JSON.stringify(builder.build()));
-                }catch (error){
-                    console.info(TAG + " TransientParam error: " + JSON.stringify(error));
-                    expect(false).assertTrue();
-                    done();
-                }
-
-                try {
-                    vibrator.startVibration({
-                        type:"pattern",
-                        pattern:builder.build()
-                    },{
-                        usage:"alarm",
-                        systemUsage:false
-                    },(error) => {
-                        if (error) {
-                            console.info(TAG + " vibrate fail:" + JSON.stringify(error))
-                            expect(false).assertTrue();
-                            done();
-                        } else {
-                            console.info(TAG + " vibrate success");
-                            setTimeout(() => {
-                                done();
-                            }, 500);
-                        }
-                    })
-                } catch (error) {
-                    console.info(TAG + " Exception error:" + error);
-                    expect(false).assertTrue();
-                    done();
-                }
-            } else {
-                console.log(TAG + ' is not supported on this device.');
+            let TAG = "====>VibratorProgramticHapticTest072";
+            let builder = new vibrator.VibratorPatternBuilder();
+            try {
+                builder.addContinuousEvent(0, 272);
+                console.info(TAG + ` builder.build is: ${JSON.stringify(builder.build())}`);
+            }catch (error){
+                console.info(TAG + ` TransientParam error: ${JSON.stringify(error)}`);
+                expect(false).assertTrue();
                 done();
+            }
+
+            try {
+                await vibrator.startVibration({ type:"pattern", pattern:builder.build() },{ usage:"alarm" });
+                if (!isAvailable) {
+                    console.info(TAG + ' isAvailable1 is false error');
+                    expect(false).assertTrue();
+                    done();
+                }
+                console.info(TAG + ' startVibration success' );
+                expect(true).assertTrue();
+                done();
+            } catch (error){
+                if (error && !isAvailable) {
+                    console.info(TAG + ` isAvailable1 is false error: ${JSON.stringify(error)}`);
+                    expect(error.code).assertEqual(14600101);
+                    done();
+                } else {
+                    console.info(TAG + ` isAvailable1 is true startVibration error: ${JSON.stringify(error)}`);
+                    expect(false).assertTrue();
+                    done();
+                }
             }
         })
 
@@ -641,45 +533,37 @@ export default function VibratorJsTest_misc_12() {
          * @tc.size:MediumTest
          */
         it("VibratorProgramticHapticTest073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-            TAG = "VibratorProgramticHapticTest073";
-            if(isAvailable){
-                let builder = new vibrator.VibratorPatternBuilder();
-                try {
-                    builder.addTransientEvent(0);
-                    console.info(TAG + " builder.build is:" + JSON.stringify(builder.build()));
-                }catch (error){
-                    console.info(TAG + " TransientParam error: " + JSON.stringify(error));
-                    expect(false).assertTrue();
-                    done();
-                }
-
-                try {
-                    vibrator.startVibration({
-                        type:"pattern",
-                        pattern:builder.build()
-                    },{
-                        usage:"alarm",
-                        systemUsage:false
-                    },(error) => {
-                        if (error) {
-                            console.info(TAG + " vibrate fail:" + JSON.stringify(error))
-                            expect(false).assertTrue();
-                            done();
-                        } else {
-                            console.info(TAG + " vibrate success");
-                            setTimeout(() => {
-                                done();
-                            }, 500);
-                        }
-                    })
-                } catch (error) {
-                    console.info(TAG + " Exception error:" + error);
-                    expect(false).assertTrue();
-                    done();
-                }
-            } else {
-                console.log(TAG + ' is not supported on this device.');
+            let TAG = "====>VibratorProgramticHapticTest073";
+            let builder = new vibrator.VibratorPatternBuilder();
+            try {
+                builder.addTransientEvent(0);
+                console.info(TAG + ` builder.build is: ${JSON.stringify(builder.build())}`);
+            }catch (error){
+                console.info(TAG + ` TransientParam error: ${JSON.stringify(error)}`);
+                expect(false).assertTrue();
                 done();
+            }
+
+            try {
+                await vibrator.startVibration({ type:"pattern", pattern:builder.build() },{ usage:"alarm" });
+                if (!isAvailable) {
+                    console.info(TAG + ' isAvailable1 is false error');
+                    expect(false).assertTrue();
+                    done();
+                }
+                console.info(TAG + ' startVibration success' );
+                expect(true).assertTrue();
+                done();
+            } catch (error){
+                if (error && !isAvailable) {
+                    console.info(TAG + ` isAvailable1 is false error: ${JSON.stringify(error)}`);
+                    expect(error.code).assertEqual(14600101);
+                    done();
+                } else {
+                    console.info(TAG + ` isAvailable1 is true startVibration error: ${JSON.stringify(error)}`);
+                    expect(false).assertTrue();
+                    done();
+                }
             }
         })
 
@@ -692,7 +576,7 @@ export default function VibratorJsTest_misc_12() {
          * @tc.size:MediumTest
          */
         it("VibratorProgramticHapticTest074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-            TAG = "VibratorProgramticHapticTest074";
+            let TAG = "====>VibratorProgramticHapticTest074";
             if(isAvailable){
                 let builder = new vibrator.VibratorPatternBuilder();
                 try {
@@ -702,9 +586,9 @@ export default function VibratorJsTest_misc_12() {
                         index:0
                     }
                     builder.addTransientEvent(0, param);
-                    console.info(TAG + " builder.build is:" + JSON.stringify(builder.build()));
+                    console.info(TAG + ` builder.build is: ${JSON.stringify(builder.build())}`);
                 }catch (error){
-                    console.info(TAG + " TransientParam error: " + JSON.stringify(error));
+                    console.info(TAG + ` TransientParam error: ${JSON.stringify(error)}`);
                 }
 
                 try {
@@ -714,10 +598,9 @@ export default function VibratorJsTest_misc_12() {
                             pattern:builder.build()
                         },{
                             usage:"alarm",
-                            systemUsage:false
                         },(error) => {
                             if (error) {
-                                console.info(TAG + " vibrate fail:" + JSON.stringify(error));
+                                console.info(TAG + ` vibrate fail: ${JSON.stringify(error)}`);
                             } else {
                                 console.info(TAG + " vibrate success, times is:" + times);
                             }
@@ -727,7 +610,7 @@ export default function VibratorJsTest_misc_12() {
                         done();
                     }, 500);
                 } catch (error) {
-                    console.info(TAG + " Exception error:" + error);
+                    console.info(TAG + ` Exception error: ${error}`);
                     expect(false).assertTrue();
                     done();
                 }
@@ -746,7 +629,7 @@ export default function VibratorJsTest_misc_12() {
          * @tc.size:MediumTest
          */
         it("VibratorProgramticHapticTest075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-            TAG = "VibratorProgramticHapticTest075";
+            let TAG = "====>VibratorProgramticHapticTest075";
             if(isAvailable){
                 let builder = new vibrator.VibratorPatternBuilder();
                 try {
@@ -839,9 +722,9 @@ export default function VibratorJsTest_misc_12() {
                         index: 0
                     }
                     builder.addContinuousEvent(0, 382, param);
-                    console.info(TAG + " builder.build is " + JSON.stringify(builder.build()));
+                    console.info(TAG + ` builder.build is: ${JSON.stringify(builder.build())}`);
                 }catch (error){
-                    console.info(TAG + " TransientParam error: " + JSON.stringify(error));
+                    console.info(TAG + ` TransientParam error: ${JSON.stringify(error)}`);
                     expect(false).assertTrue();
                     done();
                 }
@@ -852,12 +735,11 @@ export default function VibratorJsTest_misc_12() {
                             pattern:builder.build()
                         },{
                             usage:"alarm",
-                            systemUsage:false
                         },(error) => {
                             if (error) {
-                                console.info(TAG + " vibrate fail:" + JSON.stringify(error));
+                                console.info(TAG + ` vibrate fail: ${JSON.stringify(error)}`);
                             } else {
-                                console.info(TAG + " vibrate success, times is:" + times);
+                                console.info(TAG + ` vibrate success, times is: ${times}`);
                             }
                         })
                     }
@@ -865,7 +747,7 @@ export default function VibratorJsTest_misc_12() {
                         done();
                     }, 500);
                 } catch (error) {
-                    console.info(TAG + " Exception error:" + error);
+                    console.info(TAG + ` Exception error: ${error}`);
                     expect(false).assertTrue();
                     done();
                 }
