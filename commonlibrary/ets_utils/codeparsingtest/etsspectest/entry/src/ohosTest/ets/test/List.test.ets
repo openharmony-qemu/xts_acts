@@ -32,6 +32,7 @@ import ActsGrammarTest from './statement/Grammar.test';
 import functionTest1 from './function/FunctionTest1.test';
 import functionTest2 from './function/FunctionTest2.test';
 
+import typeArrayBigInt64ArrayTest from "./typearray/TypeArrayBigInt64Array.test";
 export default function testsuite() {
   builtinsStatementBlockTest();
   builtinsStatementForOfTest();
@@ -51,4 +52,5 @@ export default function testsuite() {
   dateTimeTest();
   functionTest1();
   functionTest2();
+  typeArrayBigInt64ArrayTest()
 }
