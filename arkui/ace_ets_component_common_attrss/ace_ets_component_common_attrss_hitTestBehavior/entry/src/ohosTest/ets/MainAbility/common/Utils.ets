@@ -49,7 +49,7 @@ export default class Utils {
               result += String.fromCharCode(data[i]);
             }
           } else {
-            reject('')
+            reject('file is null')
           }
         })
       })

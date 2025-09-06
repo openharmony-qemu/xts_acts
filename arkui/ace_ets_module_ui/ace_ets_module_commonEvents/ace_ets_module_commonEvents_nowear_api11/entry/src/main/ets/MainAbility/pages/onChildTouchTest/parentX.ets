@@ -17,24 +17,28 @@
 struct parentX {
   @State parentX: number = 0
   @State parentY: number = 0
-  @State strategy_DEFAULT: string = ''
-  @State strategy_FORWARD_COMPETITION: string = ''
-  @State strategy_FORWARD: string = ''
+  @State strategy_DEFAULT: string = '0'
+  @State strategy_FORWARD_COMPETITION: string = '0'
+  @State strategy_FORWARD: string = '0'
+
   build() {
     Row() {
-      Column() {
-        Column({ space: 20 }) {
-          Text('' + this.parentX)
-            .key('parentX')
-            .margin({ top: 30 })
-          Text('' + this.parentY)
-            .key('parentY')
-          Text(this.strategy_DEFAULT)
-            .key('strategy_DEFAULT')
-          Text(this.strategy_FORWARD_COMPETITION)
-            .key('strategy_FORWARD_COMPETITION')
-          Text(this.strategy_FORWARD)
-            .key('strategy_FORWARD')
+
+      Column({ space: 2 }) {
+        Text('' + this.parentX)
+          .key('parentX')
+          .margin({ top: 30 })
+        Text('' + this.parentY)
+          .key('parentY')
+        Text(this.strategy_DEFAULT)
+          .key('strategy_DEFAULT')
+        Text(this.strategy_FORWARD_COMPETITION)
+          .key('strategy_FORWARD_COMPETITION')
+        Text(this.strategy_FORWARD)
+          .key('strategy_FORWARD')
+        Column() {
+          Text("onChildTouchTest")
+            .key('onChildTouchTest').height(10)
         }
         .key('Column_CustomEvent')
         .width(400)

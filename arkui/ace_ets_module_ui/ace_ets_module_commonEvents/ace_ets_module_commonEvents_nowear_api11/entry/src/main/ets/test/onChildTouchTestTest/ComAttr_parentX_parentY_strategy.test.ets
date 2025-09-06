@@ -93,7 +93,7 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info('[parentX_parentY_strategy_Test_0200] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let row: Component = await driver.findComponent(ON.id('row'));
+      let row: Component = await driver.findComponent(ON.id('Column_CustomEvent'));
       let point = await row.getBoundsCenter();
       await CommonFunc.sleep(1000);
       await driver.click(Math.round(point.x), Math.round(point.y))
