@@ -61,7 +61,7 @@ struct openCustomDialogWithConOrder {
               new Params(this.message, this.dialogController));
             this.promptAction.openCustomDialogWithController(contentNode, this.dialogController, {
               levelOrder: LevelOrder.clamp(100),
-              alignment: DialogAlignment.Bottom,
+              alignment: DialogAlignment.Center,
               isModal: false
             })
               .then(() => {
@@ -79,7 +79,7 @@ struct openCustomDialogWithConOrder {
               new Params(this.message, this.dialogController));
             this.promptAction.openCustomDialogWithController(contentNode, this.dialogController, {
               levelOrder: LevelOrder.clamp(100001),
-              alignment: DialogAlignment.Bottom,
+              alignment: DialogAlignment.Center,
               isModal: false
             })
               .then(() => {
@@ -100,7 +100,7 @@ struct openCustomDialogWithConOrder {
               new Params(this.message, this.dialogController));
             this.promptAction.openCustomDialogWithController(contentNode, this.dialogController, {
               levelOrder: LevelOrder.clamp(-100001),
-              alignment: DialogAlignment.Bottom,
+              alignment: DialogAlignment.Center,
               isModal: false
             })
               .then(() => {
@@ -118,7 +118,7 @@ struct openCustomDialogWithConOrder {
               new Params(this.message, this.dialogController));
             this.promptAction.openCustomDialogWithController(contentNode, this.dialogController, {
               levelOrder: LevelOrder.clamp(undefined),
-              alignment: DialogAlignment.Bottom,
+              alignment: DialogAlignment.Center,
               isModal: false
             })
               .then(() => {
