@@ -16,6 +16,7 @@ import events_emitter from '@ohos.events.emitter';
 import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import business_error from '@ohos.base';
+import {waitForAssert, waitForExist} from '../../test/WaitTest';
 
 @Entry
 @Component
@@ -31,13 +32,19 @@ struct webViewIncognitoMode {
   @State databaseAccess: boolean = true;
   @State isPrivacy: boolean = false;
   @State geolocationAccess: boolean = true;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 160310,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(160310)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -45,6 +52,7 @@ struct webViewIncognitoMode {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -55,24 +63,29 @@ struct webViewIncognitoMode {
         Button('web click')
           .key('webViewIncognitoModeButton')
           .onClick(async () => {
+            await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+            await waitForExist(() => this.isReceive, this.emitKey, 0);
+            this.isReceive = -1;
             console.info('key==>' + this.emitKey)
             webview.WebStorage.deleteAllData(true);
             webview.WebStorage.deleteAllData();
             webview.GeolocationPermissions.deleteAllGeolocation(true);
             webview.GeolocationPermissions.deleteAllGeolocation();
+            this.isPageEnd = -1;
             this.controller.refresh()
-            await Utils.sleep(2000);
+            await waitForExist(() => this.isPageEnd, this.emitKey, 0);
             switch (this.emitKey) {
               case 'emitWebViewIncognitoMode01': {
                 try {
                   this.isPrivacy = true;
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://m.weibo.cn');
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                   let result = this.controller.isIncognitoMode();
                   if (result === true) {
-                    Utils.emitEvent('success', 8019);
+                    Utils.emitEvent('success', 160320);
                   } else {
-                    Utils.emitEvent('fail', 8019);
+                    Utils.emitEvent('fail', 160320);
                   }
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
@@ -83,13 +96,14 @@ struct webViewIncognitoMode {
               case 'emitWebViewIncognitoMode02': {
                 try {
                   this.isPrivacy = false;
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://m.baidu.com');
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                   let result = this.controller.isIncognitoMode();
                   if (result === true) {
-                    Utils.emitEvent('fail', 8020);
+                    Utils.emitEvent('fail', 160330);
                   } else {
-                    Utils.emitEvent('success', 8020);
+                    Utils.emitEvent('success', 160330);
                   }
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
@@ -101,15 +115,15 @@ struct webViewIncognitoMode {
                 try {
                   this.isPrivacy = true;
                   webview.WebCookieManager.configCookieSync('https://m.weibo.cn', 'a=b', true);
-                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://m.weibo.cn');
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                   let cookieData = webview.WebCookieManager.fetchCookieSync('https://m.weibo.cn', true);
                   let isExistCookie = webview.WebCookieManager.existCookie(true);
                   if (cookieData&&cookieData.indexOf('a=b')>-1&&isExistCookie) {
-                    Utils.emitEvent('success', 8021);
+                    Utils.emitEvent('success', 160340);
                   } else {
-                    Utils.emitEvent('fail', 8021);
+                    Utils.emitEvent('fail', 160340);
                   }
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
@@ -121,61 +135,15 @@ struct webViewIncognitoMode {
                 try {
                   this.isPrivacy = false;
                   webview.WebCookieManager.configCookieSync('https://m.baidu.com', 'a=b');
-                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://m.baidu.com');
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                   let cookieData = webview.WebCookieManager.fetchCookieSync('https://m.baidu.com');
-                  let isExistCookie = webview.WebCookieManager.existCookie(true);
+                  let isExistCookie = webview.WebCookieManager.existCookie(false);
                   if (cookieData&&cookieData.indexOf('a=b')>-1&&isExistCookie) {
-                    Utils.emitEvent('success', 8022);
+                    Utils.emitEvent('success', 160350);
                   } else {
-                    Utils.emitEvent('fail', 8022);
-                  }
-                } catch (error) {
-                  let e:business_error.BusinessError = error as business_error.BusinessError;
-                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                }
-                break;
-              }
-              case 'emitWebViewIncognitoMode05': {
-                try {
-                  this.isPrivacy = true;
-                  webview.WebCookieManager.configCookieSync('https://m.weibo.cn', 'testValue1232143', true);
-                  await Utils.sleep(2000);
-                  this.controller.loadUrl('https://m.weibo.cn');
-                  await Utils.sleep(2000);
-                  webview.WebCookieManager.clearAllCookiesSync(true);
-                  await Utils.sleep(2000);
-                  let isExistCookie = webview.WebCookieManager.existCookie(true);
-                  console.log('emitWebViewIncognitoMode05 isExistCookie===>'+isExistCookie)
-                  console.log('emitWebViewIncognitoMode05 fetchCookieSync===>'+webview.WebCookieManager.fetchCookieSync('https://m.weibo.cn',true))
-                  if (isExistCookie) {
-                    Utils.emitEvent('fail', 8023);
-                  } else {
-                    Utils.emitEvent('success', 8023);
-                  }
-                } catch (error) {
-                  let e:business_error.BusinessError = error as business_error.BusinessError;
-                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                }
-                break;
-              }
-              case 'emitWebViewIncognitoMode06': {
-                try {
-                  this.isPrivacy = false;
-                  webview.WebCookieManager.configCookieSync('https://m.baidu.com', 'testValue1232143');
-                  await Utils.sleep(2000);
-                  this.controller.loadUrl('https://m.baidu.com');
-                  await Utils.sleep(2000);
-                  webview.WebCookieManager.clearAllCookiesSync();
-                  await Utils.sleep(2000);
-                  let isExistCookie = webview.WebCookieManager.existCookie();
-                  console.log('emitWebViewIncognitoMode06 isExistCookie===>'+isExistCookie)
-                  console.log('emitWebViewIncognitoMode06 fetchCookieSync===>'+webview.WebCookieManager.fetchCookieSync('https://m.baidu.com'))
-                  if (isExistCookie) {
-                    Utils.emitEvent('fail', 8024);
-                  } else {
-                    Utils.emitEvent('success', 8024);
+                    Utils.emitEvent('fail', 160350);
                   }
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
@@ -186,28 +154,30 @@ struct webViewIncognitoMode {
               case 'emitWebViewIncognitoMode07': {
                 try {
                   this.isPrivacy = true;
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://m.weibo.cn');
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                   webview.WebStorage.deleteAllData(true);
-                  Utils.emitEvent('success', 8025);
+                  Utils.emitEvent('success', 160360);
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent('fail', 8025);
+                  Utils.emitEvent('fail', 160360);
                 }
                 break;
               }
               case 'emitWebViewIncognitoMode08': {
                 try {
                   this.isPrivacy = true;
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://m.baidu.com');
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                   webview.WebStorage.deleteAllData();
-                  Utils.emitEvent('success', 8026);
+                  Utils.emitEvent('success', 160370);
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent('fail', 8026);
+                  Utils.emitEvent('fail', 160370);
                 }
                 break;
               }
@@ -215,17 +185,17 @@ struct webViewIncognitoMode {
                 try {
                   this.isPrivacy = true;
                   webview.GeolocationPermissions.allowGeolocation('https://m.weibo.cn', true);
-                  await Utils.sleep(1000);
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://m.weibo.cn');
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                   webview.GeolocationPermissions.getAccessibleGeolocation('https://m.weibo.cn', true)
                     .then(result => {
                       console.log('getAccessibleGeolocationPromise result: ' + result);
                       if (result) {
-                        Utils.emitEvent('success', 8027);
+                        Utils.emitEvent('success', 160380);
                       }
                     }).catch(() => {
-                      Utils.emitEvent('fail', 8027);
+                      Utils.emitEvent('fail', 160380);
                     });
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
@@ -237,16 +207,16 @@ struct webViewIncognitoMode {
                 try {
                   this.isPrivacy = true;
                   webview.GeolocationPermissions.allowGeolocation('https://m.weibo.cn', true);
-                  await Utils.sleep(1000);
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://m.weibo.cn');
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                   webview.GeolocationPermissions.getAccessibleGeolocation('https://m.weibo.cn', (error, result) => {
                     if (error) {
-                      Utils.emitEvent('fail', 8028);
+                      Utils.emitEvent('fail', 160390);
                       return;
                     }
                     if (result) {
-                      Utils.emitEvent('success', 8028);
+                      Utils.emitEvent('success', 160390);
                     }
                     console.log('getAccessibleGeolocationAsync result: ' + result);
                   }, true);
@@ -260,15 +230,15 @@ struct webViewIncognitoMode {
                 try {
                   this.isPrivacy = false;
                   webview.GeolocationPermissions.allowGeolocation('https://m.weibo.cn');
-                  await Utils.sleep(1000);
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://m.weibo.cn');
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                   webview.GeolocationPermissions.getAccessibleGeolocation('https://m.weibo.cn')
                     .then(result => {
                       console.log('getAccessibleGeolocationPromise result: ' + result);
-                      Utils.emitEvent('success', 8029);
+                      Utils.emitEvent('success', 160400);
                     }).catch(() => {
-                      Utils.emitEvent('fail', 8029);
+                      Utils.emitEvent('fail', 160400);
                     });
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
@@ -280,16 +250,16 @@ struct webViewIncognitoMode {
                 try {
                   this.isPrivacy = false;
                   webview.GeolocationPermissions.allowGeolocation('https://m.weibo.cn');
-                  await Utils.sleep(1000);
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://m.weibo.cn');
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                   webview.GeolocationPermissions.getAccessibleGeolocation('https://m.weibo.cn', (error, result) => {
                     if (error) {
-                      Utils.emitEvent('fail', 8030);
+                      Utils.emitEvent('fail', 160410);
                       return;
                     }
                     if (result) {
-                      Utils.emitEvent('success', 8030);
+                      Utils.emitEvent('success', 160410);
                     }
                     console.log('getAccessibleGeolocationAsync result: ' + result);
                   });
@@ -303,17 +273,17 @@ struct webViewIncognitoMode {
                 try {
                   this.isPrivacy = true;
                   webview.GeolocationPermissions.allowGeolocation('https://m.baidu.com', true);
-                  await Utils.sleep(1000);
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://m.baidu.com');
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                   webview.GeolocationPermissions.getStoredGeolocation(true)
                     .then(origins => {
                       let originsStr: string = origins.join();
                       console.log('getStoredGeolocationPromise origins: ' + originsStr);
                       if (originsStr == 'https://m.baidu.com') {
-                        Utils.emitEvent('success', 8031);
+                        Utils.emitEvent('success', 160420);
                       } else {
-                        Utils.emitEvent('fail', 8031);
+                        Utils.emitEvent('fail', 160420);
                       }
                     }).catch(() => {
                     });
@@ -327,18 +297,18 @@ struct webViewIncognitoMode {
                 try {
                   this.isPrivacy = true;
                   webview.GeolocationPermissions.allowGeolocation('https://m.baidu.com', true);
-                  await Utils.sleep(1000);
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://m.baidu.com');
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                   webview.GeolocationPermissions.getStoredGeolocation((error, origins) => {
                     if (error) {
                       return;
                     }
                     let originsStr: string = origins.join();
                     if (originsStr == 'https://m.baidu.com') {
-                      Utils.emitEvent('success', 8032);
+                      Utils.emitEvent('success', 160430);
                     } else {
-                      Utils.emitEvent('fail', 8032);
+                      Utils.emitEvent('fail', 160430);
                     }
                     console.log('getStoredGeolocationAsync origins: ' + originsStr);
                   },true);
@@ -352,17 +322,17 @@ struct webViewIncognitoMode {
                 try {
                   this.isPrivacy = false;
                   webview.GeolocationPermissions.allowGeolocation('https://m.baidu.com');
-                  await Utils.sleep(1000);
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://m.baidu.com');
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                   webview.GeolocationPermissions.getStoredGeolocation()
                     .then(origins => {
                       let originsStr: string = origins.join();
                       console.log('getStoredGeolocationPromise origins: ' + originsStr);
                       if (originsStr == 'https://m.baidu.com') {
-                        Utils.emitEvent('success', 8033);
+                        Utils.emitEvent('success', 160440);
                       } else {
-                        Utils.emitEvent('fail', 8033);
+                        Utils.emitEvent('fail', 160440);
                       }
                     }).catch(() => {
                   });
@@ -376,18 +346,18 @@ struct webViewIncognitoMode {
                 try {
                   this.isPrivacy = false;
                   webview.GeolocationPermissions.allowGeolocation('https://m.baidu.com');
-                  await Utils.sleep(1000);
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://m.baidu.com');
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                   webview.GeolocationPermissions.getStoredGeolocation((error, origins) => {
                     if (error) {
                       return;
                     }
                     let originsStr: string = origins.join();
                     if (originsStr == 'https://m.baidu.com') {
-                      Utils.emitEvent('success', 8034);
+                      Utils.emitEvent('success', 160450);
                     } else {
-                      Utils.emitEvent('fail', 8034);
+                      Utils.emitEvent('fail', 160450);
                     }
                     console.log('getStoredGeolocationAsync origins: ' + originsStr);
                   });
@@ -401,18 +371,17 @@ struct webViewIncognitoMode {
                 try {
                   this.isPrivacy = true;
                   webview.GeolocationPermissions.allowGeolocation('https://m.weibo.cn',true);
-                  await Utils.sleep(1000);
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://m.weibo.cn');
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                   webview.GeolocationPermissions.deleteGeolocation('https://m.weibo.cn',true);
-                  await Utils.sleep(2000);
                   webview.GeolocationPermissions.getAccessibleGeolocation('https://m.weibo.cn', (error, result) => {
                     if (error) {
-                      Utils.emitEvent('success', 8035);
+                      Utils.emitEvent('success', 160460);
                       return;
                     }
                     if (result) {
-                      Utils.emitEvent('success', 8035);
+                      Utils.emitEvent('success', 160460);
                     }
                     console.log('getAccessibleGeolocationAsync result: ' + result);
                   }, true);
@@ -426,18 +395,17 @@ struct webViewIncognitoMode {
                 try {
                   this.isPrivacy = false;
                   webview.GeolocationPermissions.allowGeolocation('https://m.weibo.cn');
-                  await Utils.sleep(1000);
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://m.weibo.cn');
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                   webview.GeolocationPermissions.deleteGeolocation('https://m.weibo.cn',true);
-                  await Utils.sleep(2000);
                   webview.GeolocationPermissions.getAccessibleGeolocation('https://m.weibo.cn', (error, result) => {
                     if (error) {
-                      Utils.emitEvent('success', 8036);
+                      Utils.emitEvent('success', 160470);
                       return;
                     }
                     if (result) {
-                      Utils.emitEvent('success', 8036);
+                      Utils.emitEvent('success', 160470);
                     }
                     console.log('getAccessibleGeolocationAsync result: ' + result);
                   });
@@ -452,22 +420,22 @@ struct webViewIncognitoMode {
                   this.isPrivacy = true;
                   webview.GeolocationPermissions.allowGeolocation('https://m.baidu.com', true);
                   webview.GeolocationPermissions.allowGeolocation('https://m.weibo.cn', true);
-                  await Utils.sleep(1000);
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://m.baidu.com');
-                  await Utils.sleep(2500);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://m.weibo.cn');
-                  await Utils.sleep(2500);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                   webview.GeolocationPermissions.deleteAllGeolocation(true);
-                  await Utils.sleep(2000);
                   webview.GeolocationPermissions.getStoredGeolocation((error, origins) => {
                     if (error) {
                       return;
                     }
                     let originsStr: string = origins.join();
                     if (!originsStr) {
-                      Utils.emitEvent('success', 8037);
+                      Utils.emitEvent('success', 160480);
                     } else {
-                      Utils.emitEvent('fail', 8037);
+                      Utils.emitEvent('fail', 160480);
                     }
                     console.log('getStoredGeolocationAsync origins: ' + originsStr);
                   },true);
@@ -482,22 +450,22 @@ struct webViewIncognitoMode {
                   this.isPrivacy = true;
                   webview.GeolocationPermissions.allowGeolocation('https://m.baidu.com');
                   webview.GeolocationPermissions.allowGeolocation('https://m.weibo.cn');
-                  await Utils.sleep(1000);
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://m.baidu.com');
-                  await Utils.sleep(2500);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://m.weibo.cn');
-                  await Utils.sleep(2500);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                   webview.GeolocationPermissions.deleteAllGeolocation();
-                  await Utils.sleep(2000);
                   webview.GeolocationPermissions.getStoredGeolocation((error, origins) => {
                     if (error) {
                       return;
                     }
                     let originsStr: string = origins.join();
                     if (!originsStr) {
-                      Utils.emitEvent('success', 8038);
+                      Utils.emitEvent('success', 160490);
                     } else {
-                      Utils.emitEvent('fail', 8038);
+                      Utils.emitEvent('fail', 160490);
                     }
                     console.log('getStoredGeolocationAsync origins: ' + originsStr);
                   },true);
@@ -511,7 +479,7 @@ struct webViewIncognitoMode {
           })
       }
       if (this.isPrivacy) {
-        Web({ src: '', controller: this.controller, incognitoMode: true })
+        Web({ src:  $rawfile('index.html'), controller: this.controller, incognitoMode: true })
           .javaScriptAccess(this.javaScriptAccess)
           .fileAccess(this.fileAccess)
           .imageAccess(this.imageAccess)
@@ -519,8 +487,14 @@ struct webViewIncognitoMode {
           .onlineImageAccess(this.onlineImageAccess)
           .databaseAccess(this.databaseAccess)
           .geolocationAccess(this.geolocationAccess)
+          .onPageEnd((event) => {
+            if (event) {
+              this.isPageEnd = 0;
+              console.log('WebController onPageEnd url:' + event.url);
+            }
+          })
       } else {
-        Web({ src: '', controller: this.controller, incognitoMode: false })
+        Web({ src: $rawfile('index.html'), controller: this.controller, incognitoMode: false })
           .javaScriptAccess(this.javaScriptAccess)
           .fileAccess(this.fileAccess)
           .imageAccess(this.imageAccess)
@@ -528,6 +502,12 @@ struct webViewIncognitoMode {
           .onlineImageAccess(this.onlineImageAccess)
           .databaseAccess(this.databaseAccess)
           .geolocationAccess(this.geolocationAccess)
+          .onPageEnd((event) => {
+            if (event) {
+              this.isPageEnd = 0;
+              console.log('WebController onPageEnd url:' + event.url);
+            }
+          })
       }
     }
   }
