@@ -269,10 +269,16 @@ ani_int test_TupleValue_GetItem_Ref([[maybe_unused]] ani_env *env, [[maybe_unuse
     ani_ref result{};
     ASSERT_EQ(env->TupleValue_GetItem_Ref(tuple, 1U, &result), ANI_OK);
 
-    auto internalArr = reinterpret_cast<ani_array_double>(result);
+    auto internalArr = reinterpret_cast<ani_array>(result);
     std::vector<double> elem(expectedArrayValues.size());
-    ASSERT_EQ(env->Array_GetRegion_Double(internalArr, 0, elem.size(), elem.data()), ANI_OK);
 
+    for (size_t i = 0; i < elem.size(); ++i) {
+        ani_ref doubleRef {};
+        ani_double doubleValue {};
+        ASSERT_EQ(env->Array_Get(internalArr, i, &doubleRef), ANI_OK);
+        ASSERT_EQ(unboxDouble(env, static_cast<ani_object>(doubleRef), &doubleValue), ANI_OK);
+        elem[i] = doubleValue;
+    }
     for (size_t idx = 0; idx < expectedArrayValues.size(); ++idx) {
         ASSERT_EQ(elem[idx], expectedArrayValues[idx]);
     }
