@@ -48,6 +48,12 @@ export default function telSyncTest() {
      * @tc.desc    Function test
      */
     it('SUB_Telephony_call_getCallStateSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void): Promise<void> => {
+      let simState: sim.SimState = sim.getSimStateSync(0);
+      if(simState == sim.SimState.SIM_STATE_UNKNOWN)
+      {
+        hilog.info(domain, tag, '%{public}s', 'SUB_Telephony_call_getCallStateSync_0100' + ' faild, SIM_STATE_UNKNOWN');
+        done();
+      }else {
         try {
           console.info("SUB_Telephony_call_getCallStateSync_0100 getCallStateSync " + call.getCallStateSync());
           expect(call.getCallStateSync()).assertEqual(call.CallState.CALL_STATE_IDLE);
@@ -57,7 +63,9 @@ export default function telSyncTest() {
           expect(true).assertFalse();
           done();
         }
+      }
     });
     hilog.info(domain, tag, '%{public}s','==========> Sync Test end ==========>');
+
   });
 }
