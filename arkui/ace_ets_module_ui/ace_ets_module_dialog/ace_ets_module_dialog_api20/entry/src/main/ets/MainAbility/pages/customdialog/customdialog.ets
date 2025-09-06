@@ -79,7 +79,7 @@ struct Index {
                 this.alertDialogFlag3 = this.dialogController.getState();
               }
             })
-          })
+          }).margin({top: '2%'})
         Text(this.alertDialogFlag1+'').id('alertDialogFlag1')
         Text(this.alertDialogFlag2+'').id('alertDialogFlag2')
         Text(this.alertDialogFlag3+'').id('alertDialogFlag3')
