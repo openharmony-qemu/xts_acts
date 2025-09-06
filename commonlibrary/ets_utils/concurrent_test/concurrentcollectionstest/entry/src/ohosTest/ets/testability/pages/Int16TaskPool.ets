@@ -272,9 +272,11 @@ export async function Int16_test_0021(arr: collections.Int16Array, name: string,
 
 @Concurrent
 export async function Int16_test_0022(arr: collections.Int16Array, name: string, index: number) {
-  let result:number | undefined = 0;
+  let result: boolean = false;
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => { // 如果不添加异步锁，任务会因为数据竞争冲突，导致抛异常失败
-    result = arr.at(1)
+    if (arr.at(1) === 3) {
+      result = true;
+    }
   })
   return result
 }

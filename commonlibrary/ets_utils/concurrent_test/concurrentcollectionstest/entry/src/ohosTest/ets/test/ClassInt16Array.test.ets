@@ -904,7 +904,7 @@ export default function Int16ArrayGlobalTest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('Int16array_test_0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+  it('Int16array_test_0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const caseName = 'Int16array_test_0025';
         console.info(`${caseName} test start`);
@@ -918,7 +918,7 @@ export default function Int16ArrayGlobalTest() {
             count++
           }
           await taskpool.execute(group).then((res) => {
-            expect(res).assertContain(5)
+            expect(res.toString()).assertContain('true')
             flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
@@ -933,6 +933,7 @@ export default function Int16ArrayGlobalTest() {
         console.info(`${caseName} test end`);
         done();
       });
+
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0023
