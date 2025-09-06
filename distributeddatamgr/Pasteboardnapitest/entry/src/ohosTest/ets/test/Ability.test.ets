@@ -468,5 +468,50 @@ export default function pasteboardTestNdkTest() {
       console.info( TAG + 'OH_Pasteboard_GetData0300 data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
     })
+
+    /**
+     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2700
+     * @tc.name OH_Pasteboard_SyncDelayedDataAsyncTest0100
+     * @tc.desc OH_Pasteboard_SyncDelayedDataAsync test valid
+     * @tc.level: Level 2
+     * @tc.type: Functiontion
+     * @tc.size: MediumTest
+     */
+    it('OH_Pasteboard_SyncDelayedDataAsyncTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+      console.info( TAG + 'OH_Pasteboard_SyncDelayedDataAsyncTest0100' );
+      let data = testndk.OH_Pasteboard_SyncDelayedDataAsyncTest0100();
+      console.info( TAG + 'OH_Pasteboard_SyncDelayedDataAsyncTest0100 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2800
+     * @tc.name OH_Pasteboard_SyncDelayedDataAsyncTest0200
+     * @tc.desc OH_Pasteboard_SyncDelayedDataAsync test valid
+     * @tc.level: Level 2
+     * @tc.type: Functiontion
+     * @tc.size: MediumTest
+     */
+    it('OH_Pasteboard_SyncDelayedDataAsyncTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+      console.info( TAG + 'OH_Pasteboard_SyncDelayedDataAsyncTest0200' );
+      let data = testndk.OH_Pasteboard_SyncDelayedDataAsyncTest0200();
+      console.info( TAG + 'OH_Pasteboard_SyncDelayedDataAsyncTest0200 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2900
+     * @tc.name OH_Pasteboard_SyncDelayedDataAsyncTest0300
+     * @tc.desc OH_Pasteboard_SyncDelayedDataAsync test valid
+     * @tc.level: Level 2
+     * @tc.type: Functiontion
+     * @tc.size: MediumTest
+     */
+    it('OH_Pasteboard_SyncDelayedDataAsyncTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+      console.info( TAG + 'OH_Pasteboard_SyncDelayedDataAsyncTest0300' );
+      let data = testndk.OH_Pasteboard_SyncDelayedDataAsyncTest0300();
+      console.info( TAG + 'OH_Pasteboard_SyncDelayedDataAsyncTest0300 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    })
   })
 }
