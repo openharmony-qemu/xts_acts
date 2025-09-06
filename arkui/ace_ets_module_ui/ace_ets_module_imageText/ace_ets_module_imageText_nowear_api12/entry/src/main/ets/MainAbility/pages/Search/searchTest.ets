@@ -48,16 +48,16 @@ struct searchTest {
         .key('searchTestBt')
         .onClick((event: ClickEvent) => {
           this.controller.stopEditing()
-        }).height('5%')
+        }).height('3%')
       Button('text')
         .key('searchTestBt2')
         .onClick((event: ClickEvent) => {
           this.text2 = 'Search SearchSearchSearch SearchSearchSearch'
         })
-        .height('5%')
+        .height('3%')
     }.margin({
       left:30,
-      top:10
+      top:1
     }).height('100%')
   }
 }
