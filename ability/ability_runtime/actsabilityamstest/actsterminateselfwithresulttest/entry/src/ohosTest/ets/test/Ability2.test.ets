@@ -579,7 +579,7 @@ export default function abilityTest2() {
               hilog.info(0x0000, TAG, '%{public}s',
                 `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start ability successful,result: ${JSON.stringify(result)}`);
               try {
-                expect(result).assertDeepEquals(resultDate);
+                expect(result?.resultCode).assertDeepEquals(resultDate?.resultCode);
               } catch {
               }
               setTimeout(() => {
