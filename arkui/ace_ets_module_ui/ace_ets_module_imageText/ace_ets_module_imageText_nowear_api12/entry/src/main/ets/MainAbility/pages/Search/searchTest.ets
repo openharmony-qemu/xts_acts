@@ -34,13 +34,13 @@ struct searchTest {
           if (e) {
             this.text3 += 1
           }
-        }).height('5%')
+        }).height('5%').margin(50)
       Search()
         .width(150)
         .key('searchTest2')
         .onEditChange((e) => {
           this.text1 = e + ''
-        }).height('5%')
+        }).height('5%').margin({ top: 50 })
       Text(this.text).key('searchTestText1').fontSize(10).width('100%').textAlign(TextAlign.Center).height('2%')
       Text(this.text1).key('searchTestText2').fontSize(10).width('100%').textAlign(TextAlign.Center).height('2%')
       Text(this.text3).key('searchTestText3').fontSize(10).width('100%').textAlign(TextAlign.Center).height('2%')
@@ -57,7 +57,7 @@ struct searchTest {
         .height('5%')
     }.margin({
       left:30,
-      top:50
+      top:10
     }).height('100%')
   }
 }
