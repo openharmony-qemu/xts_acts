@@ -18,6 +18,7 @@ import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest';
 import business_error, { BusinessError } from '@ohos.base';
+import {waitForExist} from '../../test/WaitTest';
 
 class TestObj {
   constructor() {
@@ -100,17 +101,19 @@ struct WebViewEnumAndFontLibrary {
   @State PermissionRequestState: boolean = false
   @State userAgentPC:string = "";
   WebResult: WebContextMenuResult = new WebContextMenuResult;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 160930,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(160930)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -119,6 +122,7 @@ struct WebViewEnumAndFontLibrary {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -127,17 +131,20 @@ struct WebViewEnumAndFontLibrary {
     Column() {
       Row() {
         Button("web click").key('buttonEnumAndFontLibrary').onClick(async () => {
-          console.info("key==>" + this.str)
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
+          console.info('key==>' + this.str)
           switch (this.str) {
             case "emitDatabaseAccessTrue": {
                 this.databaseAccess = true
-                await Utils.sleep(2000)
+                this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/databaseAccess.html");
-                await Utils.sleep(2000)
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.runJavaScript("getDataResult()", (error, result) => {
                   console.log("error" + error)
                   console.info("getDataResult==>" + result)
-                  Utils.emitEvent(result, 1301)
+                  Utils.emitEvent(result, 160940)
                 })
                 break;
             }
@@ -189,6 +196,7 @@ struct WebViewEnumAndFontLibrary {
         .minLogicalFontSize(this.minLogicalFontSize)
         .forceDarkAccess(this.access)
         .onPageEnd(() => {
+          this.isPageEnd = 0;
           this.controller.runJavaScript("webTest()", (error, result) => {
             console.log("error" + error)
             this.webResultText = result
