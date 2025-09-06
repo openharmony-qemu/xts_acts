@@ -60,6 +60,10 @@ ohos_moduletest_suite("ActsOpenslesNdkTest") {
   external_deps = [
     "c_utils:utils",
     "hilog:libhilog",
+    "access_token:libaccesstoken_sdk",
+    "access_token:libnativetoken",
+    "access_token:libtoken_setproc",
+    "ipc:ipc_core"
   ]
 
   part_name = "audio_framework"

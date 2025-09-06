@@ -25,9 +25,13 @@
 #include "audio_info.h"
 #include "audio_log.h"
 #include "gtest/gtest.h"
+#include "accesstoken_kit.h"
+#include "token_setproc.h"
 
 using namespace std;
 using namespace testing::ext;
+using namespace OHOS::Security::AccessToken;
+using OHOS::Security::AccessToken::AccessTokenID;
 
 namespace {
 class ActsOpenslesRecoderNdkTest : public testing::Test {
@@ -37,6 +41,50 @@ public:
     void SetUp() override;
     void TearDown() override;
 };
+
+class MockNativeToken {
+public:
+    explicit MockNativeToken(const std::string& process);
+    static AccessTokenID GetNativeTokenIdFromProcess(const std::string& process);
+    ~MockNativeToken();
+private:
+    uint64_t selfToken_;
+};
+
+MockNativeToken::MockNativeToken(const std::string& process)
+{
+    selfToken_ = GetSelfTokenID();
+    uint32_t tokenId = MockNativeToken::GetNativeTokenIdFromProcess(process);
+    SetSelfTokenID(tokenId);
+}
+
+MockNativeToken::~MockNativeToken()
+{
+    SetSelfTokenID(selfToken_);
+}
+
+AccessTokenID MockNativeToken::GetNativeTokenIdFromProcess(const std::string& process)
+{
+    std::string dumpInfo;
+    AtmToolsParamInfo info;
+    info.processName = process;
+    AccessTokenKit::DumpTokenInfo(info, dumpInfo);
+    size_t pos = dumpInfo.find("\"tokenID\": ");
+    if (pos == std::string::npos) {
+        return 0;
+    }
+    pos += std::string("\"tokenID\": ").length();
+    std::string numStr;
+    while (pos < dumpInfo.length() && std::isdigit(dumpInfo[pos])) {
+        numStr += dumpInfo[pos];
+        ++pos;
+    }
+
+    std::istringstream iss(numStr);
+    AccessTokenID tokenID;
+    iss >> tokenID;
+    return tokenID;
+}
 
 void ActsOpenslesRecoderNdkTest::SetUpTestCase() {}
 void ActsOpenslesRecoderNdkTest::TearDownTestCase() {}
@@ -246,6 +294,7 @@ static SLresult CaptureStop(SLRecordItf sRecordItf)
  */
 HWTEST_F(ActsOpenslesRecoderNdkTest, SUB_MULTIMEDIA_AUDIO_OPENSELES_RECODER_FUNCTION_0100, TestSize.Level1)
 {
+    MockNativeToken mock("audio_server");
     string filePath = "/data/test.pcm";
     wavFile_ = fopen(filePath.c_str(), "wb");
     if (wavFile_ == nullptr) {
@@ -269,6 +318,7 @@ HWTEST_F(ActsOpenslesRecoderNdkTest, SUB_MULTIMEDIA_AUDIO_OPENSELES_RECODER_FUNC
  */
 HWTEST_F(ActsOpenslesRecoderNdkTest, SUB_MULTIMEDIA_AUDIO_OPENSELES_RECODER_INVALID_FUNCTION_0100, TestSize.Level1)
 {
+    MockNativeToken mock("audio_server");
     SLresult result1 = (*recordItf)->SetDurationLimit(nullptr, 0);
     EXPECT_TRUE(result1 == SL_RESULT_FEATURE_UNSUPPORTED);
 
