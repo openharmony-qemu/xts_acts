@@ -19,6 +19,7 @@ import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
+import {waitForAssert, waitForExist} from '../../test/WaitTest';
 
 @Entry
 @Component
@@ -38,13 +39,19 @@ struct webViewGetAccessibleGeolocation {
   @State invokeRetain: boolean = true;
   @State checkEleResult: boolean = false;
   origin: string = "file:///";
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 160550,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(160550)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -53,6 +60,7 @@ struct webViewGetAccessibleGeolocation {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -61,12 +69,16 @@ struct webViewGetAccessibleGeolocation {
     Column() {
       Row() {
         Button("geolocationTest").key('webViewGetAccessibleGeolocation').onClick(async () => {
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           console.info("key==>" + this.str)
           switch (this.str) {
             case "emitGetAccessAllowAndRetainAllFalse": {
               try {
+                this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('geo.html'));
-                await Utils.sleep(1000);
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 web_webview.GeolocationPermissions.deleteGeolocation(this.origin);
                 this.invokeAllow = false;
                 this.invokeRetain = false;
@@ -82,7 +94,7 @@ struct webViewGetAccessibleGeolocation {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               this.controller.runJavaScript("test()", (res) => {
-                Utils.emitEvent(this.checkEleResult, 409)
+                Utils.emitEvent(this.checkEleResult, 160560)
               })
               break;
             }
@@ -91,8 +103,9 @@ struct webViewGetAccessibleGeolocation {
                 web_webview.GeolocationPermissions.allowGeolocation(this.origin);
                 this.invokeAllow = true;
                 this.invokeRetain = true;
+                this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('geo.html'));
-                await Utils.sleep(1000);
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 web_webview.GeolocationPermissions.getAccessibleGeolocation(this.origin, (error, result) => {
                   if (error) {
                     console.log('getAccessibleGeolocationAsync error: ' + JSON.stringify(error));
@@ -105,7 +118,7 @@ struct webViewGetAccessibleGeolocation {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               this.controller.runJavaScript("test()", (res) => {
-                Utils.emitEvent(this.checkEleResult, 410)
+                Utils.emitEvent(this.checkEleResult, 160570)
               })
               break;
             }
@@ -125,6 +138,12 @@ struct webViewGetAccessibleGeolocation {
         .onGeolocationShow((event) => {
           event.geolocation.invoke(event.origin, this.invokeAllow, this.invokeRetain)
           console.log("webViewInVoke : onGeolocationShow : " + event.origin + this.invokeAllow, this.invokeRetain);
+        })
+        .onPageEnd((event) => {
+          if (event) {
+            this.isPageEnd = 0;
+            console.log('WebController onPageEnd url:' + event.url);
+          }
         })
     }
   }
