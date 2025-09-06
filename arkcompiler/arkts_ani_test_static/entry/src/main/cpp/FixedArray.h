@@ -180,8 +180,7 @@ template <typename R, typename... Args>
 R CallEtsFunction(ani_env *env, const std::string &moduleName, const std::string &fnName, Args &&...args)
 {
     std::optional<R> result;
-    auto moduleDescriptor = "L" + moduleName + ";";
-    CallEtsFunctionImpl(env, &result, moduleDescriptor, fnName, std::forward<Args>(args)...);
+    CallEtsFunctionImpl(env, &result, moduleName, fnName, std::forward<Args>(args)...);
     if constexpr (!std::is_same_v<R, void>) {
         return result.value();
     }
@@ -189,7 +188,7 @@ R CallEtsFunction(ani_env *env, const std::string &moduleName, const std::string
 
 ani_int test_FixedArray_Get_Ref([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    const char *tmpName = "entry/src/main/src/ets/FixedArray";
+    const char *tmpName = "entry.src.main.src.ets.FixedArray";
     auto array = static_cast<ani_fixedarray_ref>(CallEtsFunction<ani_ref>(env, tmpName, "getArray1"));
     const ani_size index1 = 1;
     const ani_size index2 = 2;
@@ -203,7 +202,7 @@ ani_int test_FixedArray_Get_Ref([[maybe_unused]] ani_env *env, [[maybe_unused]] 
 ani_int test_FixedArray_New_Ref([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls = nullptr;
-    ASSERT_EQ(env->FindClass("Lstd/core/String;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("std.core.String", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     // Test zero length
@@ -215,7 +214,7 @@ ani_int test_FixedArray_New_Ref([[maybe_unused]] ani_env *env, [[maybe_unused]] 
 
 ani_int test_FixedArray_Set_Ref([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    const char *tmpName = "entry/src/main/src/ets/FixedArray";
+    const char *tmpName = "entry.src.main.src.ets.FixedArray";
     auto array = static_cast<ani_fixedarray_ref>(CallEtsFunction<ani_ref>(env, tmpName, "getArray2"));
 
     auto newValue1 = static_cast<ani_ref>(CallEtsFunction<ani_ref>(env, tmpName, "getNewString1"));
