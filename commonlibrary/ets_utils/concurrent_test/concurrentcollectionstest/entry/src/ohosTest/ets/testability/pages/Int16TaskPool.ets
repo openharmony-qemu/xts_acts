@@ -274,15 +274,11 @@ export async function Int16_test_0021(arr: collections.Int16Array, name: string,
 export async function Int16_test_0022(arr: collections.Int16Array, name: string, index: number) {
   let result:number | undefined = 0;
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => { // 如果不添加异步锁，任务会因为数据竞争冲突，导致抛异常失败
-    const start = index * 2;
-    const end = start + 2;
-    if (end <= arr.length) {
-      arr.copyWithin(index, start, end);
-    }
     result = arr.at(1)
   })
   return result
 }
+
 
 @Concurrent
 export async function Int16_test_0023(arr: collections.Int16Array, name: string, index: number) {
