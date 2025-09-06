@@ -108,7 +108,7 @@ export default function ndkTest() {
           hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} current device not support.`);
           done();
         }else{
-          expect(result).assertEqual(16000001);
+          expect(result).assertEqual(16000018);
           hilog.info(0x0000, TAG, '%{public}s', `end of ${TEST_SUITE_NAME} =========`);
           done();
         }
@@ -139,7 +139,7 @@ export default function ndkTest() {
           hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} current device not support.`);
           done();
         }else{
-          expect(result).assertEqual(16000001);
+          expect(result).assertEqual(16000018);
           done();
         }
       }else if(isEnabled == "false"){
@@ -169,7 +169,7 @@ export default function ndkTest() {
           hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} current device not support.`);
           done();
         }else{
-          expect(result).assertEqual(16000001);
+          expect(result).assertEqual(16000018);
           done();
         }
       }else if(isEnabled == "false"){
@@ -229,7 +229,7 @@ export default function ndkTest() {
           hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} current device not support.`);
           done();
         }else{
-          expect(result).assertEqual(16000001);
+          expect(result).assertEqual(16000018);
           done();
         }
         done();
@@ -260,7 +260,7 @@ export default function ndkTest() {
           hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} current device not support.`);
           done();
         }else{
-          expect(result).assertEqual(16000001);
+          expect(result).assertEqual(16000018);
           done();
         }
       }else if(isEnabled == "false"){
@@ -290,7 +290,7 @@ export default function ndkTest() {
           hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} current device not support.`);
           done();
         }else{
-          expect(result).assertEqual(16000001);
+          expect(result).assertEqual(16000018);
           done();
         }
       }else if(isEnabled == "false"){
