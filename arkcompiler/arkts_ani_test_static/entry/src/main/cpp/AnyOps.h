@@ -20,7 +20,7 @@
 ani_int GetMethod([[maybe_unused]] ani_env *env_, const char *fnName, ani_module *mdResult, ani_function *fnResult)
 {
     ani_module md{};
-    ASSERT_EQ(env_->FindModule("Lentry/src/main/src/ets/AnyOps;", &md), ANI_OK);
+    ASSERT_EQ(env_->FindModule("entry.src.main.src.ets.AnyOps", &md), ANI_OK);
     ASSERT_NE(md, nullptr);
 
     ani_function fn{};
@@ -58,7 +58,7 @@ ani_int test_Any_GetByIndex([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_
 
 ani_int test_Any_GetByValue([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    const char *clsName = "Lentry/src/main/src/ets/AnyOps/Worker;";
+    const char *clsName = "entry.src.main.src.ets.AnyOps.Worker";
     ani_class cls{};
     ASSERT_EQ(env->FindClass(clsName, &cls), ANI_OK);
     ani_method ctor{};
@@ -78,7 +78,7 @@ ani_int test_Any_GetByValue([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_
 
 ani_int test_Any_GetProperty([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    const char *clsName = "Lentry/src/main/src/ets/AnyOps/Student;";
+    const char *clsName = "entry.src.main.src.ets.AnyOps.Student";
     ani_class cls{};
     ASSERT_EQ(env->FindClass(clsName, &cls), ANI_OK);
     ani_method ctor{};
@@ -148,7 +148,7 @@ ani_int test_Any_SetByIndex([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani
 
 ani_int test_Any_SetByValue([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    const char *clsName = "Lentry/src/main/src/ets/AnyOps/Student;";
+    const char *clsName = "entry.src.main.src.ets.AnyOps.Student";
     ani_class cls{};
     ASSERT_EQ(env_->FindClass(clsName, &cls), ANI_OK);
     ani_method ctor{};
@@ -178,7 +178,7 @@ ani_int test_Any_SetByValue([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani
 
 ani_int test_Any_SetProperty([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    const char *clsName = "Lentry/src/main/src/ets/AnyOps/Student;";
+    const char *clsName = "entry.src.main.src.ets.AnyOps.Student";
     ani_class cls{};
     ASSERT_EQ(env_->FindClass(clsName, &cls), ANI_OK);
     ani_method ctor{};
