@@ -15,7 +15,7 @@
 @Entry
 @Component
 struct Index {
-  private iconStr: ResourceStr = $r('app.media.icon')
+  private iconStr: ResourceStr = $r('app.media.app_icon')
   @State listData: number[] = [0, 0, 0]
   @State rad: Length | BorderRadiuses | LocalizedBorderRadiuses = 20
   @State txt1: string = ''
