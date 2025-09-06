@@ -21,17 +21,20 @@ import testsuite from '../../../test/List.test'
 @Entry
 @Component
 struct Index {
-
-  aboutToAppear(){
+  aboutToAppear() {
     console.info("start run testcase!!!!")
-        let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
-        let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
-        console.info('start run testcase!!!')
-        Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+    let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
+    console.info('start run testcase!!!')
+    try {
+      Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+    } catch (e) {
+      console.error('Hypium.hypiumTest error')
+    }
   }
 
   build() {
-    Flex({ direction:FlexDirection.Column, alignItems:ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text('Hello World')
         .fontSize(9)
         .fontWeight(FontWeight.Bold)

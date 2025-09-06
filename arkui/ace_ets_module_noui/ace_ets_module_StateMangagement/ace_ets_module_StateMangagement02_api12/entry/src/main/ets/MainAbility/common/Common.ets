@@ -43,25 +43,33 @@ export default class CommonFunc {
     CommonFunc.rect_right = JSON.parse('[' + rectInfo[1] + ']')[0];
     CommonFunc.rect_bottom = JSON.parse('[' + rectInfo[1] + ']')[1];
     CommonFunc.rect_value = {
-      "left": CommonFunc.rect_left, "top": CommonFunc.rect_top, "right": CommonFunc.rect_right, "bottom": CommonFunc.rect_bottom
+      "left": CommonFunc.rect_left,
+      "top": CommonFunc.rect_top,
+      "right": CommonFunc.rect_right,
+      "bottom": CommonFunc.rect_bottom
     };
     console.info(JSON.stringify(CommonFunc.rect_value));
     return CommonFunc.rect_value;
   }
 
   static setScreenOrientation(orientation: number) {
-    screen.getAllScreens().then(data => {
-      const screenClass = data[0];
-      console.log('Succeeded in getting all screens. Data:', data);
-      screenClass.setOrientation(orientation, (err: BusinessError) => {
-        if (err) {
-          console.error('Failed to set the vertical orientation. Code:', err);
-          return;
+    screen.getAllScreens()
+      .then(data => {
+        console.log('Succeeded in getting all screens. Data:' + JSON.stringify(data));
+        if (data) {
+          return data[0];
+        } else {
+          console.error('Failed to get all screens.')
         }
-        console.info('Succeeded in setting the vertical orientation.');
+      })
+      .then(screenClass => {
+        return screenClass.setOrientation(orientation);
+      })
+      .then(() => {
+        console.log('Succeeded in setting the vertical orientation.');
+      })
+      .catch((err: BusinessError) => {
+        console.error('Failed to set the vertical orientation. Cause: ' + err.toString());
       });
-    }).catch((err: BusinessError) => {
-      console.log('Failed to get all screens. Cause:', err);
-    });
   }
 }
