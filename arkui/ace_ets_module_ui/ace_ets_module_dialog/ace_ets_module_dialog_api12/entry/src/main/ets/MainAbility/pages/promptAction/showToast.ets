@@ -29,6 +29,7 @@ struct PromptActionShowToast {
             showMode: promptAction.ToastShowMode.DEFAULT
           })
         }).backgroundColor(0x317aff)
+        .margin({top: '2%'})
 
       Button('backgroundBlurStyle').id('backgroundBlurStyle')
         .onClick(() => {
