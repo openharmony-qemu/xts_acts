@@ -15,9 +15,11 @@
 import scrollByTo from './scrollByTo.test';
 import scrollEvent from './scrollEvent.test';
 import webResourceResponseGet from './webResourceResponseGet.test';
+import webViewController from './webViewController.test'
 
 export default function testsuite() {
     scrollByTo();
     scrollEvent();
     webResourceResponseGet();
+    webViewController();
 }

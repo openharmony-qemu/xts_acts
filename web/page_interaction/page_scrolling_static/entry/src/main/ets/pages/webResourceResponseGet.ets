@@ -21,7 +21,8 @@ import webView from '@ohos.web.webview';
 import { Callback } from '@ohos.base'
 import { BusinessError } from '@ohos.base';
 import { State } from '@ohos.arkui.stateManagement'
-import { $rawfile,Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
+import { $rawfile, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 class StringFields {
   public str: string = '';
@@ -46,7 +47,7 @@ struct webResourceResponseGet {
     '</script>' +
     '</body>\n' +
     '</html>'
-  @State str: string = 'emitOnHttpErrorReceiveByExampleWebc';
+  @State str: string = ''
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
   @State domStorageAccess: boolean = false;
@@ -70,13 +71,13 @@ struct webResourceResponseGet {
   @State getResponseCodeValue: number = 10000
 
   aboutToAppear() {
-    console.info('[boruto] Entry aboutToAppear');
+    console.info('Entry aboutToAppear');
     let valueChangeEvent: emitter.InnerEvent = {
       eventId: 10,
       priority: emitter.EventPriority.LOW
     }
     emitter.on(valueChangeEvent, this.valueChangeCallBack)
-    console.info('[boruto] Finish aboutToAppear ' + this.valueChangeCallBack);
+    console.info('Finish aboutToAppear ' + this.valueChangeCallBack);
   }
 
   private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
@@ -95,11 +96,10 @@ struct webResourceResponseGet {
   }
 
   build() {
-    Column() {
-      Row() {
+    Column(undefined) {
+      Row(undefined) {
         Button('WebResourceResponseGet click')
-          .key('WebResourceResponseGetButton')
-          .onClick((e: ClickEvent) => {
+          .key('WebResourceResponseGetButton').onClick((e: ClickEvent) => {
           console.info('key==>' + this.stringObj.str)
           switch (this.stringObj.str) {
             case 'testScrollType001': {
@@ -110,6 +110,25 @@ struct webResourceResponseGet {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
               }
               break;
+            }
+
+            case 'testscrollByWithResult001': {
+              try {
+                this.controller.loadUrl('resource://rawfile/theScrolltwo.html');
+                let result = this.controller.scrollByWithResult(200, 200);
+                console.log('original result: ' + result);
+                Utils.emitEvent(result, 37024);
+              } catch (error: BusinessError) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent('error', 37024);
+              }
+              break;
+            }
+
+            case 'emitonSwitchNextPage3': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/webViewController' })
             }
           }
         })

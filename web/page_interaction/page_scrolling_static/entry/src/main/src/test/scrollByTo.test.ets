@@ -77,8 +77,7 @@ export default function webViewSrollableJsunit(){
       done();
     })
 
-
-    it('asvb', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitonSwitchNextPage1', 10)
         await Utils.msSleep(1000);
@@ -90,8 +89,5 @@ export default function webViewSrollableJsunit(){
         await Utils.msSleep(2000)
         done()
       })
-
-
-
   })
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,27 +29,7 @@ export default function webResourceResponseGet() {
   describe('WebResourceResponseGetTestSuite', () => {
     beforeAll(async  (): Promise<void> => {
       console.log('App start')
-      let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: 'EntryAbility',
-        moduleName:'entry',
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          testAbilityContext = abilitys.context
-
-          console.log('onAbilityCreate end')
-        },
-      }, (err : BusinessError | null) : void => {
-        if (err != null ) {
-
-          console.log('-----' + err.code)
-        }
-
-        console.log('BusinessError  end')
-      });
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.pageInteractionTwo.test.static')
-      await Utils.msSleep(2000)
-
       console.log('beforeAll end,%s', 'Succeed!')
     });
 
@@ -68,17 +48,53 @@ export default function webResourceResponseGet() {
     */
     it('testScrollTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-      Utils.emitEvent('testScrollType001', 10)
-      await Utils.msSleep(1000);
-      Utils.registerEvent('testScrollType001', 0, 37023, done);
-      await Utils.msSleep(4000);
-      let driver: Driver = Driver.create();
-      await Utils.msSleep(1000);
-      let button = await driver.findComponent(ON.id('WebResourceResponseGetButton'));
-      await Utils.msSleep(1000);
-      button?.click();
-      await Utils.msSleep(1000);
-      done();
-    })
+        Utils.emitEvent('testScrollType001', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testScrollType001', 0, 37023, done);
+        await Utils.msSleep(4000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(1000);
+        let button = await driver.findComponent(ON.id('WebResourceResponseGetButton'));
+        await Utils.msSleep(1000);
+        button?.click();
+        await Utils.msSleep(1000);
+        done();
+      })
+
+    /*
+    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SCROLLBYWITHRESULT_0100
+    * @tc.name       : testscrollByWithResultStatic001
+    * @tc.desc       : test ScrollByWithResult
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 3
+    */
+    it('testscrollByWithResultStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testscrollByWithResult001', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testscrollByWithResult001', true, 37024, done);
+        await Utils.msSleep(2000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('WebResourceResponseGetButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(3000);
+        done();
+      })
+
+    it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('emitonSwitchNextPage3', 10)
+        await Utils.msSleep(1000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(1000);
+        let button = await driver.findComponent(ON.id('WebResourceResponseGetButton'));
+        await Utils.msSleep(1000);
+        button?.click();
+        await Utils.msSleep(5000)
+        done()
+      })
   })
 }

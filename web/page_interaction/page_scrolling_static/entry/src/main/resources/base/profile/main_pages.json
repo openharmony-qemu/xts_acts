@@ -2,6 +2,7 @@
   "src": [
     "pages/scrollByTo",
     "pages/scrollEvent",
-    "pages/webResourceResponseGet"
+    "pages/webResourceResponseGet",
+    "pages/webViewController"
   ]
 }

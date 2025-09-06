@@ -77,7 +77,6 @@ struct scrollEventComponent {
             }
 
             case 'emitonSwitchNextPage2': {
-              console.log('emitonSwitchNextPage in in in')
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
               router.pushUrl({ url: 'pages/webResourceResponseGet' })
