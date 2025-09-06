@@ -13,9 +13,14 @@
  * limitations under the License.
  */
 
-import { Text, Column, FormComponent, Component, Entry } from '@ohos.arkui.component';
+import { Text, Column,
+  FormComponent, FormCallbackInfo, Visibility, FormDimension,
+  Component, Entry, Button, ClickEvent } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
+import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
+import formHost from '@ohos.app.form.formHost';
+import formInfo from '@ohos.app.form.formInfo';
 
 
 const DOMAIN: int = 0x0000;
@@ -28,6 +33,7 @@ struct XtsFormComponent {
     hilog.info(DOMAIN, TAG, 'XtsFormComponent enter');
   }
   @State formId: string = '0';
+  @State deviceId: string = '0';
 
   build() {
     Column() {
@@ -36,15 +42,37 @@ struct XtsFormComponent {
       FormComponent({
         id: this.formId,
         name: 'widget',
-        bundle: 'com.example.myapplication',
+        bundle: 'com.example.actsformtest.static',
         ability: 'EntryFormAbility',
         module: 'entry',
-        temporary:false
+        dimension: FormDimension.Dimension_2_2,
+        temporary: true
       })
         .allowUpdate(true)
-        .size({width:360,height:360})
+        .visibility(Visibility.Visible)
+        .width(300)
+        .height(300)
+        .onAcquired((form: FormCallbackInfo) => {
+          hilog.info(DOMAIN, TAG, `form info: ${JSON.stringify(form)}`);
+          // Invalid form id
+          if (form.id == -1) {
+            this.formId = form.idString;
+          } else {
+            this.formId = form.id.toString();
+          }
+        })
+        .onUninstall((form: FormCallbackInfo) => {
+          hilog.info(DOMAIN, TAG, `uninstall form success : ${JSON.stringify(form)}`);
+          // Invalid form id
+          if (form.id == -1) {
+            this.formId = form.idString;
+          } else {
+            this.formId = form.id.toString();
+          }
+        })
+        .onUpdate((form: FormCallbackInfo) => {
+          hilog.info(DOMAIN, TAG, `form update done : ${JSON.stringify(form)}`);
+        })
     }
-    .width('100%')
-    .height('100%')
   }
 }

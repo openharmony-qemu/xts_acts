@@ -32,7 +32,6 @@ const TAG: string = 'testTag';
 @Component
 struct MyStateSample {
   @State stateVar: string = 'state var';
-  @State isFormLinkPage: boolean = false;
   message: string = 'var';
 
   aboutToAppear() {
@@ -56,85 +55,71 @@ struct MyStateSample {
   }
 
   changeValue() {
+    hilog.info(DOMAIN, TAG, 'changeValue enter');
     this.stateVar+='~'
-
-    // 使用callback异步回调
-    hilog.info(DOMAIN, TAG, 'formProvider enter');
-
-    let formId: string = '1671231085'; //用hap包装好的应用的卡片id
-    try {
-      formProvider.setFormNextRefreshTime(formId, 5, (error: BusinessError<void> | null) => {
-        if (error?.code) {
-          hilog.info(DOMAIN, TAG, `formProvider callback error, code:${error?.code}`);
-        }
-        hilog.info(DOMAIN, TAG, 'formProvider setFormNextRefreshTime callback success');
-      });
-      hilog.info(DOMAIN, TAG, 'formProvider setFormNextRefreshTime register success');
-    } catch (error) {
-      hilog.info(DOMAIN, TAG, 'formProvider setFormNextRefreshTime catch error' + error);
-    }
-
-    let formId2: string = '1671231085'; //用hap包装好的应用的卡片id
-    try {
-      await formProvider.setFormNextRefreshTime(formId2, 9);
-      hilog.info(DOMAIN, TAG, `formProvider setFormNextRefreshTime success`);
-    } catch (error) {
-      hilog.info(DOMAIN, TAG, `formProvider setFormNextRefreshTime catch error, code:` + error);
-    }
-
-    hilog.info(DOMAIN, TAG, 'test into index build...');
   }
 
   build() {
-    if (this.isFormLinkPage) {
-      FormLink({
-        action: 'message',
-        abilityName: 'EntryAbility',
-      }) {
-        Column(undefined) {
-          Button('Jump back').backgroundColor('#ff2fa6c8')
-            .onClick((e: ClickEvent) => {
-              hilog.info(DOMAIN, TAG, 'On Click Jump back');
-              this.isFormLinkPage = false;
-            })
-        }
-        .onAppear(() => {
-          hilog.info(DOMAIN, TAG, 'FormLinkTest001 start 002999');
+    Column(undefined) {
+      Text('Hellooooooooooooooooooo World').fontSize(20)
+
+      Button('XtsFormBindingData.router.push').backgroundColor('#ff35e288')
+        .onClick((event: ClickEvent) => {
+          hilog.info(DOMAIN, TAG, 'onClick XtsFormBindingData.router.push');
+          let aRouter = this.getUIContext().getRouter();
+          try {
+            aRouter.pushUrl({url: 'testform/pages/XtsFormBindingData'});
+          } catch (err: Error) {
+            hilog.info(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
+          }
         })
-      }
-    } else {
-      Column(undefined) {
-        Text('Hellooooooooooooooooooo World').fontSize(20)
 
-        Column(undefined) {
-          Button('Jump to test formLink-StsSetAction').backgroundColor('#ff653dd2')
-            .onClick((e: ClickEvent) => {
-              hilog.info(DOMAIN, TAG, 'On Click Jump to test formLink');
-              this.isFormLinkPage = true;
-            })
+      Button('XtsFormComponent.router.push').backgroundColor('#ff35e288')
+        .onClick((event: ClickEvent) => {
+          hilog.info(DOMAIN, TAG, 'onClick XtsFormComponent.router.push');
+          let aRouter = this.getUIContext().getRouter();
+          try {
+            aRouter.pushUrl({url: 'testform/pages/XtsFormComponent'});
+          } catch (err: Error) {
+            hilog.info(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
+          }
+        })
 
-          Button('click to test formProvider.setFormNextRefreshTime')
-            .backgroundColor('#FFFF00FF')
-            .onClick((e: ClickEvent) => {
-              hilog.info(DOMAIN, TAG, 'On Click to test');
-              this.changeValue()
-            })
+      Button('XtsFormInfo.router.push').backgroundColor('#ff35e288')
+        .onClick((event: ClickEvent) => {
+          hilog.info(DOMAIN, TAG, 'onClick XtsFormInfo.router.push');
+          let aRouter = this.getUIContext().getRouter();
+          try {
+            aRouter.pushUrl({url: 'testform/pages/XtsFormInfo'});
+          } catch (err: Error) {
+            hilog.info(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
+          }
+        })
 
-          Button('router.push').backgroundColor('#ff35e288')
-            .onClick((e: ClickEvent) => {
-              hilog.info(DOMAIN, TAG, 'onClick router.push');
-              let aRouter = this.getUIContext().getRouter();
-              try {
-                aRouter.pushUrl({url: 'testform/pages/XtsFormLink'})
-              } catch (e: Error) {
-                hilog.info(DOMAIN, TAG, 'pushUrl error:' + e.message);
-              }
-            })
+      Button('XtsFormLink.router.push').backgroundColor('#ff35e288')
+        .onClick((event: ClickEvent) => {
+          hilog.info(DOMAIN, TAG, 'onClick XtsFormLink.router.push');
+          let aRouter = this.getUIContext().getRouter();
+          try {
+            aRouter.pushUrl({url: 'testform/pages/XtsFormLink'});
+          } catch (err: Error) {
+            hilog.info(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
+          }
+        })
 
-          Text(this.stateVar).fontSize(20)
-          Child({ stateVar: this.stateVar } as __Options_Child)
-        }
-      }
+      Button('XtsFormProvider.router.push').backgroundColor('#ff35e288')
+        .onClick((event: ClickEvent) => {
+          hilog.info(DOMAIN, TAG, 'onClick XtsFormProvider.router.push');
+          let aRouter = this.getUIContext().getRouter();
+          try {
+            aRouter.pushUrl({url: 'testform/pages/XtsFormProvider'});
+          } catch (err: Error) {
+            hilog.info(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
+          }
+        })
+
+      Text(this.stateVar).fontSize(20)
+      Child({ stateVar: this.stateVar } as __Options_Child)
     }
   }
 }
