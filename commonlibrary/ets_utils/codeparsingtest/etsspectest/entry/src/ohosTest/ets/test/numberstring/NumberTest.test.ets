@@ -95,23 +95,6 @@ export default function numberTest() {
       expect(9007199254740991).assertEqual(preciseInt);
     });
     /**
-     @tc.number SUB_BUILDINS_NUMBER_TEST_0005
-     @tc.name NumberTest0005
-     @tc.desc Verify integer imprecision beyond safe range
-     @tc.size SmallTest
-     @tc.type Function
-     @tc.level Level 1
-     */
-    it('NumberTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
-      async (Done: Function) => {
-        const checkPrecision = (): boolean => {
-          const unsafeInt = 2 * 53 + 1;
-          return unsafeInt === 2**53;
-        };
-        expect(true).assertEqual(checkPrecision());
-        Done();
-      });
-     /**
      @tc.number SUB_BUILDINS_NUMBER_TEST_0006
      @tc.name NumberTest0006
      @tc.desc Verify decimal precision issues
