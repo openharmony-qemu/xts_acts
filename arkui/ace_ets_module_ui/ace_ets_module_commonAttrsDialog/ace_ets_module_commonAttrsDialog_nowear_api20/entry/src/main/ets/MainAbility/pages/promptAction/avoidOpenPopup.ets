@@ -83,10 +83,7 @@ struct OpenPopup {
                     this.showPo1 = showPopup(context, this.getUniqueId(), this.contentNode1, popupParam);
                 })
                 .id('avoidID')
-                .width(this.maxW - 45)
-                .height(this.maxH - 150)
-
+                .margin({top: '2%'})
         }.width('100%').height('100%')
     }
 }
-

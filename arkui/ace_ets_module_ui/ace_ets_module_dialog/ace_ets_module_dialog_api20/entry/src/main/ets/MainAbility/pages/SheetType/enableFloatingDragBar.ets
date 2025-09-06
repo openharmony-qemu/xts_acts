@@ -52,9 +52,6 @@ struct SheetTest {
   @Builder
   SheetBuilder() {
     Column() {
-      Text('this is Sheet')
-      TextInput({ placeholder: 'input your word...' }).backgroundColor(Color.Blue)
-        .margin({ top: 20 })
       Button("close modal 1")
       .id('close')
         .margin(10)
@@ -62,6 +59,9 @@ struct SheetTest {
         .onClick(() => {
           this.showSheet = false;
         })
+      Text('this is Sheet')
+      TextInput({ placeholder: 'input your word...' }).backgroundColor(Color.Blue)
+        .margin({ top: 20 })
     }
     .backgroundColor(Color.Pink)
     .width('100%')

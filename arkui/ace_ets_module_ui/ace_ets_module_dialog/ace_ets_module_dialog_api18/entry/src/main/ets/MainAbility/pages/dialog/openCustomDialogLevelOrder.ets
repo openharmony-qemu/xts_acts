@@ -59,7 +59,7 @@ struct openCustomDialogLevelOrder {
                 this.customDialogComponent()
               },
               levelOrder: LevelOrder.clamp(100),
-              alignment: DialogAlignment.Bottom,
+              alignment: DialogAlignment.Center,
               onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
                 console.info('reason' + JSON.stringify(dismissDialogAction.reason))
                 console.log('dialog onWillDismiss')
@@ -87,7 +87,7 @@ struct openCustomDialogLevelOrder {
                 this.customDialogComponent()
               },
               levelOrder: LevelOrder.clamp(100001),
-              alignment: DialogAlignment.Bottom,
+              alignment: DialogAlignment.Center,
               onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
                 console.info('reason' + JSON.stringify(dismissDialogAction.reason))
                 console.log('dialog onWillDismiss')
@@ -117,7 +117,7 @@ struct openCustomDialogLevelOrder {
                 this.customDialogComponent()
               },
               levelOrder: LevelOrder.clamp(-100001),
-              alignment: DialogAlignment.Bottom,
+              alignment: DialogAlignment.Center,
               onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
                 console.info('reason' + JSON.stringify(dismissDialogAction.reason))
                 console.log('dialog onWillDismiss')

@@ -112,7 +112,7 @@ struct popupKeyboardAvoidMode {
       .justifyContent(FlexAlign.End)
     }
     .width('100%')
-    .height('100%')
+    .height('90%')
     .justifyContent(FlexAlign.SpaceEvenly)
   }
 }
