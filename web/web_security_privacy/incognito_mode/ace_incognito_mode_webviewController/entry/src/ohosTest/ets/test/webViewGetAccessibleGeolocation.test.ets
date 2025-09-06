@@ -18,10 +18,10 @@ import Utils from './Utils';
 // import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 // @ts-nocheck
-let emitKey = "emitGetAccessAllowAndRetainAllFalse";
 export default function webViewGetAccessibleGeolocation() {
   describe('ActsAceWebDevWebViewGetAccessibleGeolocationTest',  () =>{
     beforeAll(async  (done: Function) =>{
@@ -35,12 +35,12 @@ export default function webViewGetAccessibleGeolocation() {
         if (!("webViewGetAccessibleGeolocation" == pages.name)) {
           console.info("get webViewGetAccessibleGeolocation state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
           console.info("push webViewGetAccessibleGeolocation page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webViewGetAccessibleGeolocation page error: " + err);
       }
+      await waitForComponent("webViewGetAccessibleGeolocation");
       done()
     });
     beforeEach(async  (done: Function) =>{
@@ -49,38 +49,18 @@ export default function webViewGetAccessibleGeolocation() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webViewGetAccessibleGeolocation beforeEach start");
       done();
     })
-    afterEach(async  (done: Function) =>{
-      console.info("webViewGetAccessibleGeolocation afterEach start:" + emitKey);
-      try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent: events_emitter.InnerEvent = {
-                eventId:10,
-                priority:events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-      } catch (err) {
-            console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
-      done();
-    })
+
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEBVIEWGETACCGEO_API_0100
      *tc.name testGetAccessibleGeolocationFalse
      *tc.desc test interface of getaccessiblegeolocation with allow and retain all False
      */
     it('testGetAccessibleGeolocationFalse',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitGetAccessAllowAndRetainAllTrue";
-      Utils.registerEvent("testGetAccessibleGeolocationFalse",false,409,done);
+      Utils.emitEvent("emitGetAccessAllowAndRetainAllFalse", 160550);
+      Utils.registerEvent("testGetAccessibleGeolocationFalse",false,160560,done);
       sendEventByKey('webViewGetAccessibleGeolocation',10,'');
     })
     /*
@@ -89,8 +69,8 @@ export default function webViewGetAccessibleGeolocation() {
      *tc.desc test interface of getaccessiblegeolocation with allow and retain all true
      */
     it('testGetAccessibleGeolocationTrue',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitGetAccessAllowAndRetainAllTrue";
-      Utils.registerEvent("testGetAccessibleGeolocationTrue",true,410,done);
+      Utils.emitEvent("emitGetAccessAllowAndRetainAllTrue", 160550);
+      Utils.registerEvent("testGetAccessibleGeolocationTrue",true,160570,done);
       sendEventByKey('webViewGetAccessibleGeolocation',10,'');
     })
   })
