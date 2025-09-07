@@ -32,6 +32,9 @@ import ActsGrammarTest from './statement/Grammar.test';
 import functionTest1 from './function/FunctionTest1.test';
 import functionTest2 from './function/FunctionTest2.test';
 import functionTest3 from './function/FunctionTest3.test';
+import looper1Test from './looper/Looper1.test';
+import looper2Test from './looper/Looper2.test';
+import looper3Test from './looper/Looper3.test';
 
 import typeArrayBigInt64ArrayTest from "./typearray/TypeArrayBigInt64Array.test";
 export default function testsuite() {
@@ -55,4 +58,7 @@ export default function testsuite() {
   functionTest2();
   functionTest3();
   typeArrayBigInt64ArrayTest();
+  looper1Test()
+  looper2Test();
+  looper3Test();
 }
