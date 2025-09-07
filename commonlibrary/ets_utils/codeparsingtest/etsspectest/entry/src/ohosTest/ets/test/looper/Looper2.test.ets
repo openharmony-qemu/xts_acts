@@ -347,7 +347,7 @@ export default function looper2Test() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_LOOPER2_0200
-     * @tc.name:
+     * @tc.name: testLoop2_002
      * @tc.desc: Test looper
      * @tc.size: MediumTest
      * @tc.type: Function
