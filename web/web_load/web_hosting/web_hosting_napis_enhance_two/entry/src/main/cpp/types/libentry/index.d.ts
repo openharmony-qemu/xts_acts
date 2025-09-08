@@ -43,3 +43,4 @@ export const getFrameUrl: () => number;
 export const getServiceWorkerFrameUrl: () => number;
 export const getLoadUrlFrameUrl: () => number;
 export const getSubFrameUrl: () => number;
+export const getRequestValue: () => number;

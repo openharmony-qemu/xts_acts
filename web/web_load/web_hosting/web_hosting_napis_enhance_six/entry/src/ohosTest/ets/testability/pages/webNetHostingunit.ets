@@ -17,7 +17,7 @@ import web_webview from '@ohos.web.webview'
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 import testsuite from '../../test/List.test';
-import {waitForAssert, waitForExist} from '../../test/WaitTest';
+import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '@ohos/hypium';
 import testNapi from 'libentry.so';
@@ -36,6 +36,8 @@ struct webRegisterCustomsComponent {
   @State isRegister: number = -1;
   @State isSet: number = -1;
   @State isComplete: number = -1;
+  @State isEnd:number = -1;
+  @State isReceive: number = -1;
 
   aboutToAppear() {
     let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
@@ -54,14 +56,14 @@ struct webRegisterCustomsComponent {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 147701,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(147701)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -70,6 +72,7 @@ struct webRegisterCustomsComponent {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -78,280 +81,162 @@ struct webRegisterCustomsComponent {
     Column() {
       Row() {
         Button('webHostingButton').key('webHostingButton').onClick(async () => {
+          await waitForExist(()=>this.isReceive, this.str, 0);
+          await waitForExist(()=>this.isComplete, this.str, 0);
           console.info('key==>' + this.str)
+          this.isEnd = -1;
+          this.controller.runJavaScript('test()', (error, result) => {
+            if (error) {
+              console.info(' run JavaScript error:' + JSON.stringify(error));
+              return;
+            }
+            if (result) {
+              this.isEnd = 0
+              console.info(' run JavaScript return value is:' + result);
+            }
+          })
+          await waitForExist(() => this.isEnd, this.str, 0, 1000)
           switch (this.str) {
             case 'emitWebHttpBodyStream_IsEof': {
               await waitForExist(()=>this.isComplete, this.str,0)
               console.log('runJavaScript test()');
-              this.controller.runJavaScript('test()', (error, result) => {
-                if (error) {
-                  console.info(' run JavaScript error:' + JSON.stringify(error));
-                  return;
-                }
-                if (result) {
-                  console.info(' run JavaScript return value is:' + result);
-                }
-              })
-              await Utils.sleep(4000);
               console.log('emitWebHttpBodyStream_IsEof ==>');
               let result: number = testNapi.httpBodyStreamIsEof();
-              await Utils.sleep(1000);
               if (result == 0) {
-                Utils.emitEvent(true, 7743);
+                Utils.emitEvent(true, 147740);
               } else {
-                Utils.emitEvent(false, 7743);
+                Utils.emitEvent(false, 147740);
               }
               break;
             }
             case 'emitWebHttpBodyStream_IsChunked': {
               console.log('runJavaScript test()');
-              this.controller.runJavaScript('test()', (error, result) => {
-                if (error) {
-                  console.info(' run JavaScript error:' + JSON.stringify(error));
-                  return;
-                }
-                if (result) {
-                  console.info(' run JavaScript return value is:' + result);
-                }
-              })
-              await Utils.sleep(1000);
               console.log('emitWebHttpBodyStream_IsChunked ==>');
               let result: number = testNapi.httpBodyStreamIsChunked();
-              await Utils.sleep(1000);
               if (result == 0) {
-                Utils.emitEvent(true, 7744);
+                Utils.emitEvent(true, 147750);
               } else {
-                Utils.emitEvent(false, 7744);
+                Utils.emitEvent(false, 147750);
               }
               break;
             }
             case 'emitWebHttpBodyStream_IsInMemory': {
               console.log('runJavaScript test()');
-              this.controller.runJavaScript('test()', (error, result) => {
-                if (error) {
-                  console.info(' run JavaScript error:' + JSON.stringify(error));
-                  return;
-                }
-                if (result) {
-                  console.info(' run JavaScript return value is:' + result);
-                }
-              })
-              await Utils.sleep(1000);
               console.log('emitWebHttpBodyStream_IsInMemory ==>');
               let result: number = testNapi.httpBodyStreamIsInMemory();
               console.log('emitWebHttpBodyStream_IsInMemory ==>' + result);
-              await Utils.sleep(1000);
               if (result == 0) {
-                Utils.emitEvent(true, 7745);
+                Utils.emitEvent(true, 147760);
               } else {
-                Utils.emitEvent(false, 7745);
+                Utils.emitEvent(false, 147760);
               }
               break;
             }
             case 'emitWebHttpBodyStream_GetPosition': {
               console.log('runJavaScript test()');
-              this.controller.runJavaScript('test()', (error, result) => {
-                if (error) {
-                  console.info(' run JavaScript error:' + JSON.stringify(error));
-                  return;
-                }
-                if (result) {
-                  console.info(' run JavaScript return value is:' + result);
-                }
-              })
-              await Utils.sleep(1000);
               console.log('emitWebHttpBodyStream_GetPosition ==>');
               let result: number = testNapi.httpBodyStreamGetPosition();
               console.log('emitWebHttpBodyStream_GetPosition ==>' + result);
-              await Utils.sleep(1000);
               if (result == 0) {
-                Utils.emitEvent(true, 7746);
+                Utils.emitEvent(true, 147770);
               } else {
-                Utils.emitEvent(false, 7746);
+                Utils.emitEvent(false, 147770);
               }
               break;
             }
             case 'emitWebHttpBodyStream_GetSize': {
               console.log('runJavaScript test()');
-              this.controller.runJavaScript('test()', (error, result) => {
-                if (error) {
-                  console.info(' run JavaScript error:' + JSON.stringify(error));
-                  return;
-                }
-                if (result) {
-                  console.info(' run JavaScript return value is:' + result);
-                }
-              })
-              await Utils.sleep(1000);
               console.log('emitWebHttpBodyStream_GetSize ==>');
               let result: number = testNapi.httpBodyStreamGetSize();
               console.log('emitWebHttpBodyStream_GetSize ==>' + result);
-              await Utils.sleep(1000);
               if (result == 0) {
-                Utils.emitEvent(true, 7747);
+                Utils.emitEvent(true, 147780);
               } else {
-                Utils.emitEvent(false, 7747);
+                Utils.emitEvent(false, 147780);
               }
               break;
             }
             case 'emitWebHttpBodyStream_SetReadCallback': {
               console.log('runJavaScript test()');
-              this.controller.runJavaScript('test()', (error, result) => {
-                if (error) {
-                  console.info(' run JavaScript error:' + JSON.stringify(error));
-                  return;
-                }
-                if (result) {
-                  console.info(' run JavaScript return value is:' + result);
-                }
-              })
-              await Utils.sleep(1000);
               console.log('emitWebHttpBodyStream_SetReadCallback ==>');
               let result: number = testNapi.httpBodyStreamSetReadCallBack();
               console.log('emitWebHttpBodyStream_SetReadCallback ==>' + result);
-              await Utils.sleep(1000);
               if (result == 0) {
-                Utils.emitEvent(true, 7748);
+                Utils.emitEvent(true, 147790);
               } else {
-                Utils.emitEvent(false, 7748);
+                Utils.emitEvent(false, 147790);
               }
               break;
             }
             case 'emitWebHttpBodyStream_SetUserData': {
               console.log('runJavaScript test()');
-              this.controller.runJavaScript('test()', (error, result) => {
-                if (error) {
-                  console.info(' run JavaScript error:' + JSON.stringify(error));
-                  return;
-                }
-                if (result) {
-                  console.info(' run JavaScript return value is:' + result);
-                }
-              })
-              await Utils.sleep(1000);
               console.log('emitWebHttpBodyStream_SetUserData ==>');
               let result: number = testNapi.httpBodyStreamSetUserData();
               console.log('emitWebHttpBodyStream_SetUserData ==>' + result);
-              await Utils.sleep(1000);
               if (result == 0) {
-                Utils.emitEvent(true, 7749);
+                Utils.emitEvent(true, 147800);
               } else {
-                Utils.emitEvent(false, 7749);
+                Utils.emitEvent(false, 147800);
               }
               break;
             }
             case 'emitWebHttpBodyStream_Init': {
               console.log('runJavaScript test()');
-              this.controller.runJavaScript('test()', (error, result) => {
-                if (error) {
-                  console.info(' run JavaScript error:' + JSON.stringify(error));
-                  return;
-                }
-                if (result) {
-                  console.info(' run JavaScript return value is:' + result);
-                }
-              })
-              await Utils.sleep(1000);
               console.log('emitWebHttpBodyStream_Init ==>');
               let result: number = testNapi.httpBodyStreamInit();
               console.log('emitWebHttpBodyStream_Init ==>' + result);
-              await Utils.sleep(1000);
               if (result == 0) {
-                Utils.emitEvent(true, 7750);
+                Utils.emitEvent(true, 147810);
               } else {
-                Utils.emitEvent(false, 7750);
+                Utils.emitEvent(false, 147810);
               }
               break;
             }
             case 'emitWebResourceHandler_Destroy': {
               console.log('runJavaScript test()');
-              this.controller.runJavaScript('test()', (error, result) => {
-                if (error) {
-                  console.info(' run JavaScript error:' + JSON.stringify(error));
-                  return;
-                }
-                if (result) {
-                  console.info(' run JavaScript return value is:' + result);
-                }
-              })
-              await Utils.sleep(1000);
               console.log('emitWebResourceHandler_Destroy ==>');
               let result: number = testNapi.resourceHandlerDestroy();
               console.log('emitWebResourceHandler_Destroy ==>' + result);
-              await Utils.sleep(1000);
               if (result == 0) {
-                Utils.emitEvent(true, 7751);
+                Utils.emitEvent(true, 147820);
               } else {
-                Utils.emitEvent(false, 7751);
+                Utils.emitEvent(false, 147820);
               }
               break;
             }
             case 'emitWebResourceHandler_DidReceiveResponse': {
               console.log('runJavaScript test()');
-              this.controller.runJavaScript('test()', (error, result) => {
-                if (error) {
-                  console.info(' run JavaScript error:' + JSON.stringify(error));
-                  return;
-                }
-                if (result) {
-                  console.info(' run JavaScript return value is:' + result);
-                }
-              })
-              await Utils.sleep(1000);
               console.log('emitWebResourceHandler_DidReceiveResponse ==>');
               let result: number = testNapi.resourceHandlerDidReceiveResponse();
               console.log('emitWebResourceHandler_DidReceiveResponse ==>' + result);
-              await Utils.sleep(1000);
               if (result == 0) {
-                Utils.emitEvent(true, 7752);
+                Utils.emitEvent(true, 147830);
               } else {
-                Utils.emitEvent(false, 7752);
+                Utils.emitEvent(false, 147830);
               }
               break;
             }
             case 'emitWebResourceHandler_DidReceiveData': {
               console.log('runJavaScript test()');
-              this.controller.runJavaScript('test()', (error, result) => {
-                if (error) {
-                  console.info(' run JavaScript error:' + JSON.stringify(error));
-                  return;
-                }
-                if (result) {
-                  console.info(' run JavaScript return value is:' + result);
-                }
-              })
-              await Utils.sleep(1000);
               console.log('emitWebResourceHandler_DidReceiveData ==>');
               let result: number = testNapi.resourceHandlerDidReceiveData();
               console.log('emitWebResourceHandler_DidReceiveData ==>' + result);
-              await Utils.sleep(1000);
               if (result == 0) {
-                Utils.emitEvent(true, 7753);
+                Utils.emitEvent(true, 147840);
               } else {
-                Utils.emitEvent(false, 7753);
+                Utils.emitEvent(false, 147840);
               }
               break;
             }
             case 'emitWebResourceHandler_DidFinish': {
               console.log('runJavaScript test()');
-              this.controller.runJavaScript('test()', (error, result) => {
-                if (error) {
-                  console.info(' run JavaScript error:' + JSON.stringify(error));
-                  return;
-                }
-                if (result) {
-                  console.info(' run JavaScript return value is:' + result);
-                }
-              })
-              await Utils.sleep(1000);
               console.log('emitWebResourceHandler_DidFinish ==>');
               let result: number = testNapi.resourceHandlerDidFinish();
               console.log('emitWebResourceHandler_DidFinish ==>' + result);
-              await Utils.sleep(1000);
               if (result == 0) {
-                Utils.emitEvent(true, 7754);
+                Utils.emitEvent(true, 147850);
               } else {
-                Utils.emitEvent(false, 7754);
+                Utils.emitEvent(false, 147850);
               }
               break;
             }

@@ -22,6 +22,7 @@ import { Hypium } from '@ohos/hypium';
 
 
 import testNapi from 'libentry.so';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -36,7 +37,9 @@ struct webRegisterCustomsComponent {
   @State consoleMsg: string = ''
   @State isRegister: number = -1;
   @State isSet: number = -1;
-
+  @State isReceive: number = -1;
+  @State isEnd:number = -1
+  @State isPageEnd:number = -1;
   aboutToAppear() {
     let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
     let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
@@ -57,13 +60,13 @@ struct webRegisterCustomsComponent {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 147801,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(147801)
   }
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     console.info("web page valueChangeCallBack");
@@ -71,6 +74,7 @@ struct webRegisterCustomsComponent {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -80,12 +84,14 @@ struct webRegisterCustomsComponent {
       Row() {
         Button("webHostingButton").key('webHostingButton').onClick(async () => {
           console.info("key==>" + this.str)
+          await waitForExist(() => this.isReceive, this.str, 0, 1000)
+          await waitForExist(() => this.isPageEnd, this.str, 0, 1000)
+          this.isReceive = -1;
           switch (this.str) {
 
             case "emitWebResourceHandler_DidFailWithError": {
               console.log("runJavaScript testError()");
-              await Utils.sleep(1000);
-
+              this.isEnd = -1;
               this.controller.runJavaScript('testError()', (error, result)=> {
                 if (error) {
                   console.info(" run JavaScript testError error:" + JSON.stringify(error));
@@ -93,20 +99,20 @@ struct webRegisterCustomsComponent {
                 }
                 if (result) {
                   console.info(" run JavaScript testError return value is:" + result);
+                  this.isEnd = 0;
+                  console.log("emitWebResourceHandler_DidFailWithError end33"+this.isEnd)
                 }
               })
-
-              await Utils.sleep(1000);
+              await waitForExist(()=>this.isEnd, this.str,0,1000)
+              await waitForExist(() => testNapi.getRequestValue(), this.str, 1, 1000);
               console.log("emitWebResourceHandler_DidFailWithError ==>");
               let result:number = testNapi.resourceHandlerDidFailWithError();
               console.log("emitWebResourceHandler_DidFailWithError ==>" + result);
 
-              await Utils.sleep(1000);
-
               if (result == 0) {
-                Utils.emitEvent(true, 7755);
+                Utils.emitEvent(true, 147850);
               } else {
-                Utils.emitEvent(false, 7755);
+                Utils.emitEvent(false, 147850);
               }
               break;
             }
@@ -122,6 +128,10 @@ struct webRegisterCustomsComponent {
         .fileAccess(false)
         .domStorageAccess(true)
         .cacheMode(CacheMode.Default)
+        .onPageEnd(()=>{
+          this.isPageEnd = 0;
+        })
+
     }
     .height('100%')
 

@@ -16,10 +16,13 @@ import { beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
-
+const driver = Driver.create();
 export default function webviewApi() {
 
   describe('webRegisterCustoms', () => {
@@ -30,7 +33,6 @@ export default function webviewApi() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(1000);
       console.info("web beforeEach start");
       done();
     })
@@ -46,12 +48,13 @@ export default function webviewApi() {
      */
     it('testRegisterCustoms', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         
-        hilog.info(0x0000, 'testTag', '%{public}s', 'testRegisterCustoms PASS');
-        
-        Utils.emitEvent("emitRegisterCustoms", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testRegisterCustoms", true, 7707, done);
-        sendEventByKey('webHostingButton', 10, '');
+      hilog.info(0x0000, 'testTag', '%{public}s', 'testRegisterCustoms PASS');
+      Utils.emitEvent("emitRegisterCustoms", 147301)
+      let isReturn = false;
+      Utils.registerEvent("testRegisterCustoms", true, 147350, ()=>{isReturn = true});
+      Utils.waitAndClickComponent('webHostingButton',driver)
+      await waitForExist(()=>isReturn, 'emitRegisterCustoms', true,1000);
+      done();
     })
     
     /*
@@ -64,12 +67,13 @@ export default function webviewApi() {
      */
     it('testSetSchemeHandler', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         
-        hilog.info(0x0000, 'testTag', '%{public}s', 'testSetSchemeHandler PASS');
-        
-        Utils.emitEvent("emitSetSchemeHandler", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testSetSchemeHandler", true, 7708, done);
-        sendEventByKey('webHostingButton', 10, '');
+      hilog.info(0x0000, 'testTag', '%{public}s', 'testSetSchemeHandler PASS');
+      Utils.emitEvent("emitSetSchemeHandler", 147301)
+      let isReturn = false;
+      Utils.registerEvent("testSetSchemeHandler", true, 147360, ()=>{isReturn = true});
+      Utils.waitAndClickComponent('webHostingButton',driver)
+      await waitForExist(()=>isReturn, 'emitSetSchemeHandler', true,1000);
+      done();
     })
 
     /*
@@ -82,12 +86,13 @@ export default function webviewApi() {
      */
     it('testClearSchemeHandlers', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         
-        hilog.info(0x0000, 'testTag', '%{public}s', 'testClearSchemeHandlers PASS');
-        
-        Utils.emitEvent("emitClearSchemeHandlers", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testClearSchemeHandlers", true, 7709, done);
-        sendEventByKey('webHostingButton', 10, '');
+      hilog.info(0x0000, 'testTag', '%{public}s', 'testClearSchemeHandlers PASS');
+      Utils.emitEvent("emitClearSchemeHandlers", 147301)
+      let isReturn = false;
+      Utils.registerEvent("testClearSchemeHandlers", true, 147370, ()=>{isReturn = true});
+      Utils.waitAndClickComponent('webHostingButton',driver)
+      await waitForExist(()=>isReturn, 'emitClearSchemeHandlers', true,1000);
+      done();
     })
     
     /*
@@ -100,12 +105,13 @@ export default function webviewApi() {
      */
     it('testServiceWorkerClearSchemeHandlers', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         
-        hilog.info(0x0000, 'testTag', '%{public}s', 'testServiceWorkerClearSchemeHandlers PASS');
-        
-        Utils.emitEvent("emitServiceWorkerClearSchemeHandlers", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testServiceWorkerClearSchemeHandlers", true, 7710, done);
-        sendEventByKey('webHostingButton', 10, '');
+      hilog.info(0x0000, 'testTag', '%{public}s', 'testServiceWorkerClearSchemeHandlers PASS');
+      Utils.emitEvent("emitServiceWorkerClearSchemeHandlers", 147301)
+      let isReturn = false;
+      Utils.registerEvent("testServiceWorkerClearSchemeHandlers", true, 147380, ()=>{isReturn = true});
+      Utils.waitAndClickComponent('webHostingButton',driver)
+      await waitForExist(()=>isReturn, 'emitServiceWorkerClearSchemeHandlers', true,1000);
+      done();
     })
     
     
@@ -119,12 +125,13 @@ export default function webviewApi() {
      */
     it('testDestroySchemeHandler', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         
-        hilog.info(0x0000, 'testTag', '%{public}s', 'testDestroySchemeHandler PASS');
-        
-        Utils.emitEvent("emitDestroySchemeHandler", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testDestroySchemeHandler", true, 7711, done);
-        sendEventByKey('webHostingButton', 10, '');
+      hilog.info(0x0000, 'testTag', '%{public}s', 'testDestroySchemeHandler PASS');
+      Utils.emitEvent("emitDestroySchemeHandler", 147301)
+      let isReturn = false;
+      Utils.registerEvent("testDestroySchemeHandler", true, 147390, ()=>{isReturn = true});
+      Utils.waitAndClickComponent('webHostingButton',driver)
+      await waitForExist(()=>isReturn, 'emitDestroySchemeHandler', true,1000);
+      done();
     })
     
 
@@ -140,10 +147,12 @@ export default function webviewApi() {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceRequest_GetFrameUrl PASS');
 
-      Utils.emitEvent("emitWebResourceRequest_GetFrameUrl", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("testWebResourceRequest_GetFrameUrl", true, 7744, done);
-      sendEventByKey('webHostingButton', 10, '');
+      Utils.emitEvent("emitWebResourceRequest_GetFrameUrl", 147301)
+      let isReturn = false;
+      Utils.registerEvent("testWebResourceRequest_GetFrameUrl", true, 147400, ()=>{isReturn = true});
+      Utils.waitAndClickComponent('webHostingButton',driver)
+      await waitForExist(()=>isReturn, 'emitWebResourceRequest_GetFrameUrl', true,1000);
+      done();
     })
     
   })
