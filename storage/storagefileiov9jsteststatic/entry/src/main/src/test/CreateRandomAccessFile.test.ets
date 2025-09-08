@@ -511,8 +511,8 @@ export default function fileIOCreateRandomAccessFile() {
           let writehash = await Hash.hash(wpath, 'sha256');
           hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_018 readhash ' + readhash + ', writehash: ' + writehash);
           expect(readhash == writehash).assertTrue();
+          done();
         });
-        done();
       } catch (err: BusinessError) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_018 has failed for ' + err);
         expect(false).assertTrue();
@@ -935,50 +935,6 @@ export default function fileIOCreateRandomAccessFile() {
         console.info('fileIO_create_randomaccessfile_async_static_016 has failed for ' + err);
         expect(false).assertTrue();
         done();
-      }
-    });
-
-    /**
-     * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_ASYNC_1700
-     * @tc.name fileIO_create_randomaccessfile_async_static_017
-     * @tc.desc Test createRandomAccessFileSync() interface. RandomAccessFileOptions
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
-     */
-    it('fileIO_create_randomaccessfile_async_static_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
-      let fpath = await Utils.nextFileName('fileIO_create_randomaccessfile_async_static_017');
-      initReadfile(fpath);
-      let size = fs.lstatSync(fpath).size;
-
-      try {
-        let randomaccessfile1 = await fs.createRandomAccessFile(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:size/2, end:size});
-        let rs = randomaccessfile1.getReadStream();
-        let randomaccessfile2 = await fs.createRandomAccessFile(wpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:size/4*3});
-        let ws = randomaccessfile2.getWriteStream();
-        rs.on('data', (emitData: buffer.Buffer|string) => {
-          let a = emitData;
-          if (a == undefined) {
-            return;
-          }
-          if(a instanceof Record){
-            return;
-          }
-          const data:string = a.toString();
-          ws.write(data);
-          hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_017 content ' + data.slice(0, 10) + ', data.length: ' + data?.length);
-        });
-        rs.on('close', async() =>{
-          let readhash = await Hash.hash(fpath, 'sha256');
-          let writehash = await Hash.hash(wpath, 'sha256');
-          hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_017 readhash ' + readhash + ', writehash: ' + writehash);
-          expect(readhash == writehash).assertTrue();
-        });
-        done();
-      } catch (err) {
-        console.info('fileIO_create_randomaccessfile_async_static_017 has failed for ' + err);
-        expect(false).assertTrue();
       }
     });
   });
