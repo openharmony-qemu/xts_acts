@@ -20,6 +20,8 @@ let context: common.UIAbilityContext;
 const TAG = '[RelationalStore_JSKITS_TEST]'
 const CREATE_TABLE_TEST = 'CREATE TABLE IF NOT EXISTS test (' + 'id INTEGER PRIMARY KEY AUTOINCREMENT, ' + 'data1 text,' + 'data2 long, ' + 'data3 double,' + 'data4 blob)';
 const CREATE_TABLE_TEST1 = "CREATE TABLE IF NOT EXISTS EMPLOYEE (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL, age INTEGER, salary REAL, blobType BLOB)";
+const DROP_TABLE_TEST = "DROP TABLE IF EXISTS test";
+const DROP_TABLE_TEST1 = "DROP TABLE IF EXISTS EMPLOYEE";
 const STORE_CONFIG = {
     name: 'Resultset.db',
     securityLevel: data_Rdb.SecurityLevel.S1
@@ -68,16 +70,17 @@ describe('relationalStoreResultSetTest', function () {
         console.info(TAG + 'beforeAll')
         context = AppStorage.Get<common.UIAbilityContext>("TestAbilityContext") as common.UIAbilityContext;
         rdbStore = await data_Rdb.getRdbStore(context, STORE_CONFIG);
-        await rdbStore.executeSql(CREATE_TABLE_TEST, null);
-        await createTest();
     })
 
     beforeEach(async function () {
         console.info(TAG + 'beforeEach')
+        await rdbStore.executeSql(CREATE_TABLE_TEST, null);
+        await createTest();
     })
 
     afterEach(function () {
         console.info(TAG + 'afterEach')
+        await rdbStore.executeSql(DROP_TABLE_TEST, null);
     })
 
     afterAll(async function () {
@@ -2119,9 +2122,11 @@ describe('relationalStoreResultSetTest', function () {
             const row = (resultSet as data_Rdb.ResultSet).getRow();
             console.info(TAG + "row.blobType:" + JSON.stringify(row.blobType));
             expect(row.blobType).assertInstanceOf("Null")
+            await rdbStore?.executeSql(DROP_TABLE_TEST1, null);
             done()
         } catch (err) {
             console.error(TAG + `Insert is failed, code is ${err.code},message is ${err.message}`);
+            await rdbStore?.executeSql(DROP_TABLE_TEST1, null);
             expect().assertFail()
         }
         console.info(TAG + "************* testRdbStoreResultSetGetValuetest0100 end *************");
