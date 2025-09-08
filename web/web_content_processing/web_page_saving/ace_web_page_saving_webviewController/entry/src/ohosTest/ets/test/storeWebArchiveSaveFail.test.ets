@@ -17,7 +17,7 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { waitAndClickComponent } from './WaitTest.test';
+import { waitForComponents } from './WaitTest.test';
 import { Driver, ON } from '@kit.TestKit';
 
 const driver = Driver.create();
@@ -43,6 +43,7 @@ export default function storeWebArchiveSaveFail() {
       } catch (err) {
         console.error("push storeWebArchiveSaveFail page error: " + err);
       }
+      await waitForComponents('webcomponent03');
       done()
     })
     beforeEach(async (done: Function) => {
@@ -72,7 +73,7 @@ export default function storeWebArchiveSaveFail() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'webcomponent03');
+      await Utils.waitAndClickComponent(driver, 'webcomponent03');
     })
 
     /*
@@ -87,7 +88,7 @@ export default function storeWebArchiveSaveFail() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'webcomponent03');
+      await Utils.waitAndClickComponent(driver, 'webcomponent03');
     })
   })
 }

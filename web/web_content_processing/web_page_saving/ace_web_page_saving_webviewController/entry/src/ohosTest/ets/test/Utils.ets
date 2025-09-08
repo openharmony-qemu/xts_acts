@@ -15,6 +15,9 @@
 
 import events_emitter from '@ohos.events.emitter';
 import { expect } from "@ohos/hypium";
+import { BusinessError } from '@kit.BasicServicesKit';
+import { Driver, ON } from '@ohos.UiTest';
+
 export default class Utils {
     static sleep(time:number){
         return new Promise((resolve: (value: string) => void,reject:(value: string) => void)=>{
@@ -192,4 +195,33 @@ export default class Utils {
         console.info(`[${testCaseName}] err:` + JSON.stringify(err));
         }
     }
+    
+  static async waitAndClickComponent(driver: Driver, componentId: string): Promise<void> {
+    let retryTimes: number = 0;
+    let retry: boolean = true;
+    while (retry && retryTimes <= 3) {
+      retry = false;
+      try {
+        const buttonComponent = await driver.waitForComponent(ON.id(componentId), 10000);
+        if (!buttonComponent) {
+          console.error(`error: buttonConmponent is null.`);
+          retry = true;
+          await Utils.sleep(500);
+          retryTimes++;
+          console.log('retryTimes = ' + retryTimes);
+          continue;
+        }
+        await buttonComponent.click();
+      } catch (e) {
+        const error = e as BusinessError;
+        console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        if (error.code === 17000002) {
+          retry = true;
+          await Utils.sleep(500);
+          retryTimes++;
+          console.log('retryTimes = ' + retryTimes);
+        }
+      }
+    }
+  }
 }

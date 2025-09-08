@@ -17,7 +17,7 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { waitAndClickComponent } from './WaitTest.test';
+import { waitForComponents } from './WaitTest.test';
 import { Driver, ON } from '@kit.TestKit';
 
 const driver = Driver.create();
@@ -43,6 +43,7 @@ export default function storeWebArchive() {
       } catch (err) {
         console.error("push storeWebArchive page error: " + err);
       }
+      await waitForComponents('webcomponent02');
       done()
     })
     beforeEach(async  (done: Function) => {
@@ -73,7 +74,7 @@ export default function storeWebArchive() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'webcomponent02');
+      await Utils.waitAndClickComponent(driver, 'webcomponent02');
     })
 
     /*
@@ -88,7 +89,7 @@ export default function storeWebArchive() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'webcomponent02');
+      await Utils.waitAndClickComponent(driver, 'webcomponent02');
     })
 
     /*
@@ -103,7 +104,7 @@ export default function storeWebArchive() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'webcomponent02');
+      await Utils.waitAndClickComponent(driver, 'webcomponent02');
     })
 
     /*
@@ -118,7 +119,7 @@ export default function storeWebArchive() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'webcomponent02');
+      await Utils.waitAndClickComponent(driver, 'webcomponent02');
     })
   })
 }
