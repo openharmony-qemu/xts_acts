@@ -807,7 +807,7 @@ export default function WindowLifeCycleTest() {
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                let data = win.isWindowShowing();
+                let data = tempWnd.isWindowShowing();
                 hilog.info(domain, tag,msgStr + 'window.isWindowShowing success');
                 expect().assertFail();
                 done()
@@ -830,28 +830,29 @@ export default function WindowLifeCycleTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
             let subWin: window.Window
-            await windowStage.createSubWindow('testOnNoInteractionDetectedErrCode1300002_static_0100')
+            windowStage.createSubWindow('testOnNoInteractionDetectedErrCode1300002_static_0100')
                 .then((data:window.Window)=>{
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await (subWin! as window.Window).destroyWindow();
+                    try {
+                        subWin!.on("noInteractionDetected", 1, () => {
+                        });
+                        hilog.error(0x0000, '[ANI]', msgStr + 'Succeeded in calling on noInteractionDetected.');
+                        expect().assertFail();
+                        done()
+                    } catch (e:BusinessError) {
+                        hilog.info(0x0000, '[ANI]', msgStr +' Failed to call on noInteractionDetected. Cause:' + JSON.stringify(e));
+                        expect(e!.code).assertEqual(1300002);
+                        done()
+                    }
                 })
                 .catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr +  `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
                     expect().assertFail();
                 });
-            await (subWin! as window.Window).destroyWindow();
-            try {
-                subWin!.on("noInteractionDetected", 1, () => {
-                });
-                hilog.error(0x0000, '[ANI]', msgStr + 'Succeeded in calling on noInteractionDetected.');
-                expect().assertFail();
-                done()
-            } catch (e:BusinessError) {
-                hilog.info(0x0000, '[ANI]', msgStr +' Failed to call on noInteractionDetected. Cause:' + JSON.stringify(e));
-                expect(e!.code).assertEqual(1300002);
-                done()
-            }
+
         })
         /**
          * @tc.number     : testOffNoInteractionDetectedErrCode1300002_0100
@@ -866,27 +867,28 @@ export default function WindowLifeCycleTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
             let subWin: window.Window
-            await windowStage.createSubWindow('testOffNoInteractionDetectedErrCode1300002_static_0200')
+            windowStage.createSubWindow('testOffNoInteractionDetectedErrCode1300002_static_0200')
                 .then((data:window.Window)=>{
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await (subWin! as window.Window).destroyWindow();
+                    try {
+                        subWin!.off("noInteractionDetected");
+                        hilog.error(0x0000, '[ANI]', msgStr + 'Succeeded in calling on noInteractionDetected.');
+                        expect().assertFail();
+                        done()
+                    } catch (e:BusinessError) {
+                        hilog.info(0x0000, '[ANI]', msgStr +' Failed to call on noInteractionDetected. Cause:' + JSON.stringify(e));
+                        expect(e!.code).assertEqual(1300002);
+                        done()
+                    }
                 })
                 .catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr +  `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
                     expect().assertFail();
                 });
-            await (subWin! as window.Window).destroyWindow();
-            try {
-                subWin!.off("noInteractionDetected");
-                hilog.error(0x0000, '[ANI]', msgStr + 'Succeeded in calling on noInteractionDetected.');
-                expect().assertFail();
-                done()
-            } catch (e:BusinessError) {
-                hilog.info(0x0000, '[ANI]', msgStr +' Failed to call on noInteractionDetected. Cause:' + JSON.stringify(e));
-                expect(e!.code).assertEqual(1300002);
-                done()
-            }
+
         })
 
         /**
@@ -969,28 +971,29 @@ export default function WindowLifeCycleTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window
-            await windowStage.createSubWindow('testOnSubWindowCloseErrCode1300002_SubWindow_Promise')
+            windowStage.createSubWindow('testOnSubWindowCloseErrCode1300002_SubWindow_Promise')
                 .then((data:window.Window)=>{
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await (subWin! as window.Window).destroyWindow();
+                    try {
+                        subWin!.on("subWindowClose", () => {
+                        });
+                        hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling on subWindowClose.');
+                        expect().assertFail();
+                        done()
+                    } catch (e:BusinessError) {
+                        hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call on subWindowClose. Cause:' + JSON.stringify(e));
+                        expect(e!.code).assertEqual(1300002);
+                        done()
+                    }
                 })
                 .catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr +  `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
                     expect().assertFail();
                 });
-            await (subWin! as window.Window).destroyWindow();
-            try {
-                subWin!.on("subWindowClose", () => {
-                });
-                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling on subWindowClose.');
-                expect().assertFail();
-                done()
-            } catch (e:BusinessError) {
-                hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call on subWindowClose. Cause:' + JSON.stringify(e));
-                expect(e!.code).assertEqual(1300002);
-                done()
-            }
+            
         })
         /**
          * @tc.number     : testOffSubWindowCloseErrCode1300002_0100
@@ -1005,28 +1008,29 @@ export default function WindowLifeCycleTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window
-            await windowStage.createSubWindow('testOffSubWindowCloseErrCode1300002_static_0200')
+            windowStage.createSubWindow('testOffSubWindowCloseErrCode1300002_static_0200')
                 .then((data:window.Window)=>{
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await (subWin! as window.Window).destroyWindow();
+                    try {
+                        subWin!.off("subWindowClose", () => {
+                        });
+                        hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling on subWindowClose.');
+                        expect().assertFail();
+                        done()
+                    } catch (e:BusinessError) {
+                        hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call on subWindowClose. Cause:' + JSON.stringify(e));
+                        expect(e!.code).assertEqual(1300002);
+                        done()
+                    }
                 })
                 .catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr +  `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
                     expect().assertFail();
                 });
-            await (subWin! as window.Window).destroyWindow();
-            try {
-                subWin!.off("subWindowClose", () => {
-                });
-                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling on subWindowClose.');
-                expect().assertFail();
-                done()
-            } catch (e:BusinessError) {
-                hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call on subWindowClose. Cause:' + JSON.stringify(e));
-                expect(e!.code).assertEqual(1300002);
-                done()
-            }
+            
         })
 
         /**
@@ -1042,7 +1046,7 @@ export default function WindowLifeCycleTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let mainWindow: window.Window
-            await windowStage.getMainWindow().then((data:window.Window) => {
+            windowStage.getMainWindow().then((data:window.Window) => {
                 mainWindow = data;
                 hilog.info(0x0000, '[ANI]',msgStr + ' ' + 'Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
             }).catch((err: BusinessError):PromiseLike<void>|undefined => {
