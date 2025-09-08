@@ -132,6 +132,38 @@ export default function atomicFileTest() {
     });
 
     /**
+     * @tc.number SUB_DF_ATOMIC_FILE_0500
+     * @tc.name fileIO_test_atomicFile_static_005
+     * @tc.desc Test the openRead() interface of class AtomicFile
+     * Open an existing file, create readStream read content
+     * @tc.size MEDIUM
+     * @tc.type Functoin
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('fileIO_test_atomicFile_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_005 start');
+      let fpath = await Utils.nextFileName('test5');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        let file = new fs.AtomicFile(fpath);
+        let readStream = file.openRead();
+        readStream.on('readable', () => {
+          let data = readStream.read();
+          hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_005 data ' + data);
+          if (data == null) {
+            return;
+          }
+          expect(data === FILE_CONTENT).assertTrue();
+        });
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_005 has failed for ' + e.message);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
      * @tc.number SUB_DF_ATOMIC_FILE_0600
      * @tc.name fileIO_test_atomicFile_static_006
      * @tc.desc Test the failedWrite() interface of class AtomicFile
