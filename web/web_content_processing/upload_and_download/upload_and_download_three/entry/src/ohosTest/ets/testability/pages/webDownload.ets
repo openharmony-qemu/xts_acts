@@ -100,17 +100,17 @@ struct Index {
       Row() {
         Button('web click').key('webcomponent').onClick(async () => {
           console.info('key==>' + this.str);
-          await waitForExist(()=>this.isPageEnd, this.str, 0);
-          await waitForExist(()=>this.isReceive, this.str, 0);
+          await waitForExist(()=>this.isPageEnd, 'isPageEnd ' + this.str, 0);
+          await waitForExist(()=>this.isReceive, 'isReceive ' + this.str, 0);
           this.isReceive = -1;
           switch (this.str) {
             case "emitOnDownloadStart": {
               this.isDownloadStart = true;
-              this.isPageEnd = -1;
+              // this.isPageEnd = -1;
               this.controller.loadUrl({
                 url: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/cn/mkt/mobileservices/2022/download/PC107f1b3947c942ffaa14334a879065d8.2107261020.exe'
               });
-              await waitForExist(()=>this.isPageEnd, this.str, 0);
+              // await waitForExist(()=>this.isPageEnd, 'loadUrl isPageEnd ' + this.str, 0);
               break;
             }
             default:
@@ -197,6 +197,7 @@ struct Index {
             this.enterPageEnd = false;
           }
           this.isPageEnd = 0;
+          console.log('this.isPageEnd==>' + this.isPageEnd);
         })
         .onConsole((event) => {
           this.console = event.message.getMessage();
@@ -244,7 +245,7 @@ struct Index {
           this.titleReceive = event.title;
         })
         .onDownloadStart(async (event) => {
-          await waitForExist(()=>this.isDownloadStart ? 1: 0, this.str, 1);
+          await waitForExist(()=>this.isDownloadStart ? 1: 0, 'isDownloadStart ' + this.str, 1);
           if (this.isDownloadStart) {
             console.info('isDownloadStart==>');
             Utils.emitEvent(event.url, 130400);

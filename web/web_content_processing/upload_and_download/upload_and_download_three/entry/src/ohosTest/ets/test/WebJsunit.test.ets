@@ -17,7 +17,7 @@ import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { waitAndClickComponent } from './WaitTest.test';
+import { waitForComponents } from './WaitTest.test';
 import { Driver, ON } from '@kit.TestKit';
 
 const driver = Driver.create();
@@ -46,6 +46,7 @@ export default function webJsunit() {
       } catch (err) {
         console.error("push webJsunit page error: " + err);
       }
+      await waitForComponents('webcomponent');
       done()
     });
 
@@ -77,7 +78,7 @@ export default function webJsunit() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, "webcomponent");
+      await Utils.waitAndClickComponent(driver, "webcomponent");
     })
 
   })

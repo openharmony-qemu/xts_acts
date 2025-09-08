@@ -72,10 +72,12 @@ struct WebComponent {
               console.log('download update Complete: ' + webDownloadItem.getPercentComplete());
               if (webDownloadItem.getPercentComplete() > 60) {
                 webDownloadItem.pause()
-                await waitForExist(() => webDownloadItem.getState(), this.emitKey, 0, 2000);
+                await waitForExist(() => webDownloadItem.getState(), this.emitKey, 0);
                 webDownloadItem.resume()
-                await waitForExist(() => webDownloadItem.getState(), this.emitKey, 0, 2000);
-                Utils.emitEvent(webDownloadItem.getState(), 130650);
+                await waitForExist(() => webDownloadItem.getState(), this.emitKey, 0);
+                let flag = webDownloadItem.getState();
+                webDownloadItem.cancel()
+                Utils.emitEvent(flag, 130650);
               }
             })
             this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {

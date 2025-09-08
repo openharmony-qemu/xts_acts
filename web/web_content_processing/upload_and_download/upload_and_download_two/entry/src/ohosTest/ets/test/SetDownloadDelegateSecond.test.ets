@@ -20,7 +20,7 @@ import { webview } from '@kit.ArkWeb';
 import { LocalContext } from './GloablConfig';
 import { router } from '@kit.ArkUI';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { waitAndClickComponent } from './WaitTest.test';
+import { waitForComponents } from './WaitTest.test';
 import Utils from './Util';
 import events_emitter from '@ohos.events.emitter';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
@@ -32,10 +32,12 @@ let flg: boolean = false
 export default function SetDownloadDelegateSecond() {
   describe('SetDownloadDelegateSecond', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async (done: Function) => {
       webview.WebviewController.initializeWebEngine()
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
+      await waitForComponents('001');
+      done();
     })
     beforeEach(() => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
@@ -76,7 +78,7 @@ export default function SetDownloadDelegateSecond() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, "001");
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
 
@@ -98,7 +100,7 @@ export default function SetDownloadDelegateSecond() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, "001");
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
 
@@ -120,7 +122,7 @@ export default function SetDownloadDelegateSecond() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, "001");
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
 
@@ -141,7 +143,7 @@ export default function SetDownloadDelegateSecond() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, "001");
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
   })

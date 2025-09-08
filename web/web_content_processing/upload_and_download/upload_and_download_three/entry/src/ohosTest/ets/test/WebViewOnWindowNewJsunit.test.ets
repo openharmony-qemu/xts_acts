@@ -19,7 +19,7 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { waitAndClickComponent } from './WaitTest.test';
+import { waitForComponents } from './WaitTest.test';
 import { Driver, ON } from '@kit.TestKit';
 
 const driver = Driver.create();
@@ -45,6 +45,7 @@ export default function webViewOnWindowNewJsunit() {
       } catch (err) {
         console.error("push onWindowNew page error: " + err);
       }
+      await waitForComponents('onWindowNew');
       done()
     });
     beforeEach(async  (done: Function) =>{
@@ -74,7 +75,7 @@ export default function webViewOnWindowNewJsunit() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, "onWindowNew");
+      await Utils.waitAndClickComponent(driver, "onWindowNew");
     })
     /*
     *tc.number SUB_ACE_BASIC_ETS_API_BLOCKNETWORK_0200
@@ -88,7 +89,7 @@ export default function webViewOnWindowNewJsunit() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, "onWindowNew");
+      await Utils.waitAndClickComponent(driver, "onWindowNew");
     })
 
   })

@@ -19,7 +19,7 @@ import Utils from './Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { waitAndClickComponent } from './WaitTest.test';
+import { waitForComponents } from './WaitTest.test';
 import { Driver, ON } from '@kit.TestKit';
 
 const driver = Driver.create();
@@ -45,6 +45,7 @@ export default function webViewControllerDownloadTest() {
       } catch (err) {
         console.error("push WebViewControllerDownloadTest page error: " + err);
       }
+      await waitForComponents('WebViewControllerDownloadTestButton');
       done()
     });
     beforeEach(async (done: Function) => {
@@ -78,7 +79,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -95,7 +96,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -112,7 +113,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -129,7 +130,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -146,7 +147,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -163,7 +164,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -180,7 +181,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
 
@@ -198,7 +199,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -215,7 +216,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -232,7 +233,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -249,7 +250,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -266,7 +267,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -283,7 +284,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -300,7 +301,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -317,7 +318,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -334,7 +335,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -351,7 +352,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -368,7 +369,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -385,7 +386,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -402,7 +403,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -419,7 +420,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -436,7 +437,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -453,7 +454,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
 
@@ -471,7 +472,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -488,7 +489,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -505,7 +506,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -522,7 +523,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
   })
 }

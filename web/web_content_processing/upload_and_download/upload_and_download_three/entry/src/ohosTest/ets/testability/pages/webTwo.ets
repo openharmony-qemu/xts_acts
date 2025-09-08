@@ -209,8 +209,8 @@ struct Second {
       Row() {
         Button("web click").key('webcomponenttwo').onClick(async () => {
           console.info('key==>' + this.str);
-          await waitForExist(()=>this.isPageEnd, this.str, 0);
-          await waitForExist(()=>this.isReceive, this.str, 0);
+          await waitForExist(()=>this.isPageEnd, 'isPageEnd ' + this.str, 0);
+          await waitForExist(()=>this.isReceive, 'isReceive ' + this.str, 0);
           this.isReceive = -1;
           switch (this.str) {
             case "emitGetCertificate": {
@@ -294,6 +294,7 @@ struct Second {
           this.outputStr = 'onPageEnd : url = ' + e.url
           console.log('web pageEnd==>' + e.url);
           this.isPageEnd = 0;
+          console.log('this.isPageEnd==>' + this.isPageEnd);
         })
         .onFirstContentfulPaint((event: ESObject) => {
           console.log("onFirstContentfulPaint:" + "[navigationStartTick]:" +

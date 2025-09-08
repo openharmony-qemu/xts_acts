@@ -18,7 +18,7 @@ import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { waitAndClickComponent } from './WaitTest.test';
+import { waitForComponents } from './WaitTest.test';
 import { Driver, ON } from '@kit.TestKit';
 
 const driver = Driver.create();
@@ -46,6 +46,7 @@ export default function webTwoJsunit() {
       } catch (err) {
         console.error("push webTwo page error: " + err);
       }
+      await waitForComponents('webcomponenttwo');
       done()
     });
     beforeEach(async (done: Function) => {
@@ -73,7 +74,7 @@ export default function webTwoJsunit() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, "webcomponenttwo");
+      await Utils.waitAndClickComponent(driver, "webcomponenttwo");
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_003                                                                                                                                                                   
@@ -86,7 +87,7 @@ export default function webTwoJsunit() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, "webcomponenttwo");
+      await Utils.waitAndClickComponent(driver, "webcomponenttwo");
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_004                                                                                                                                                                 
@@ -99,7 +100,7 @@ export default function webTwoJsunit() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent(driver, "webcomponenttwo");
+      await Utils.waitAndClickComponent(driver, "webcomponenttwo");
     })
 
   })
