@@ -573,7 +573,7 @@ struct webAdsBlockManager {
                   console.log("[TAO]Blocked advertisements:", details.adsBlocked);
                 }
               } else {
-                console.log("[TAO]details is null or  undefined");
+                console.log('[TAO]details is null or  undefined');
               }
               return false;
             })
