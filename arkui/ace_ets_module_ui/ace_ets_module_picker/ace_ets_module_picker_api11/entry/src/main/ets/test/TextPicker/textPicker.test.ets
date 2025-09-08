@@ -70,7 +70,7 @@ export default function textPickerDefaultPickerItemHeightJsunit() {
      */
     it('testtextPickerDefaultPickerItemHeight0002', Level.LEVEL1, async () => {
       console.info('textPickerDefaultPickerItemHeight testtextPickerDefaultPickerItemHeight0002 START');
-      await CommonFunc.sleep(2000);
+      await Utils.sleep(2000);
       let rotation: number = display.getDefaultDisplaySync().orientation
       console.info("[testtextPickerDefaultPickerItemHeight0002] rotation:" + rotation);
 
