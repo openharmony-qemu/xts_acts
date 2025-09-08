@@ -18618,7 +18618,7 @@ static bool TestExternalObjectWithPrototypeMethodInteraction(napi_env env) {
     // Test 1: Define a C++ structure with methods
     struct CustomData {
         int value;
-        int getValue() { return value; }
+        int GetValue() { return value; }
     };
     CustomData customData = {42};
     
