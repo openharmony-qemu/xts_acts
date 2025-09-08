@@ -139,7 +139,6 @@ export default function rdbStoreSendableTest() {
       console.info(TAG + 'beforeAll');
       try {
         rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
-        await rdbStore.executeSql(CREATE_TABLE_TEST);
       } catch (err) {
         console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
       }
@@ -148,6 +147,7 @@ export default function rdbStoreSendableTest() {
 
     beforeEach(() => {
       console.info(TAG + 'beforeEach');
+      await rdbStore.executeSql(CREATE_TABLE_TEST);
       let sendableValuesBucket1: sendableRelationalStore.ValuesBucket = sendableRelationalStore.toSendableValuesBucket(valuesBucket2);
       rdbStore.insertSync(TABLE, sendableValuesBucket);
 
