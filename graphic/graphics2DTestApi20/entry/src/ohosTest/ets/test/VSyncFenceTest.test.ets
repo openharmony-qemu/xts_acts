@@ -35,6 +35,7 @@ export default function VSyncFenceTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeVSync_RequestFrame_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -56,6 +57,7 @@ export default function VSyncFenceTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeVSync_RequestFrame_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -118,6 +120,7 @@ export default function VSyncFenceTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeFence_IsValid_0100 catch err: " + err);
+          done();
         }
       })
     /**
@@ -138,6 +141,7 @@ export default function VSyncFenceTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeFence_IsValid_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -159,6 +163,7 @@ export default function VSyncFenceTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeFence_Wait_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -180,6 +185,7 @@ export default function VSyncFenceTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeFence_Wait_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -201,6 +207,7 @@ export default function VSyncFenceTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeFence_WaitForever_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -222,6 +229,7 @@ export default function VSyncFenceTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeFence_WaitForever_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -243,6 +251,7 @@ export default function VSyncFenceTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeFence_Close_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -264,6 +273,7 @@ export default function VSyncFenceTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeFence_Close_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -285,6 +295,7 @@ export default function VSyncFenceTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeVSync_SetExpectedFrameRateRange_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -306,6 +317,7 @@ export default function VSyncFenceTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeVSync_SetExpectedFrameRateRange_0200 catch err: " + err);
+          done();
         }
       })
   })

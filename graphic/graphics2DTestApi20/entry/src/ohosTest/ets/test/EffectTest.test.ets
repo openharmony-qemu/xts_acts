@@ -35,6 +35,7 @@ export default function EffectTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_Filter_CreateEffect_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -56,6 +57,7 @@ export default function EffectTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_Filter_Release_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -77,6 +79,7 @@ export default function EffectTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_Filter_BlurWithTileMode_0100 catch err: " + err);
+          done();
         }
       })
     /**
@@ -97,6 +100,7 @@ export default function EffectTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_Filter_BlurWithTileMode_0200 catch err: " + err);
+          done();
         }
       })
     /**
@@ -117,6 +121,7 @@ export default function EffectTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_Filter_GetEffectPixelMap_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -138,6 +143,7 @@ export default function EffectTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeImage_GetTransformMatrixV2_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -159,6 +165,7 @@ export default function EffectTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeImage_AcquireNativeWindowBuffer_0100 catch err: " + err);
+          done();
         }
       })
     /**
@@ -179,6 +186,7 @@ export default function EffectTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeImage_AcquireNativeWindowBuffer_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -200,6 +208,7 @@ export default function EffectTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeImage_ReleaseNativeWindowBuffer_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -221,6 +230,7 @@ export default function EffectTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeImage_SetDropBufferMode_0100 catch err: " + err);
+          done();
         }
       })
 
