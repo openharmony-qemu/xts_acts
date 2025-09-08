@@ -472,6 +472,7 @@ export default function actslocationTest() {
                     hilog.info(domain,tag,"subLocality"+data[0]?.subLocality)
                     hilog.info(domain,tag,"subRoadName"+data[0]?.subRoadName)
                     hilog.info(domain,tag,"isFromMock"+data[0]?.isFromMock)
+                    hilog.info(domain,tag,"description"+data[0]?.descriptions)
 
                 }
                 }
@@ -688,6 +689,31 @@ export default function actslocationTest() {
             }
             done();
         })
+
+        * @tc.number    : enableLocation001
+        * @tc.name      : enableLocation001
+        * @tc.desc      : Test Report Fence Transition.
+        * @tc.size      : MediumTest
+        * @tc.type      : Function
+        * @tc.level     : Level 2
+        */
+        it('enableLocation001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: () => void): Promise<void> => {
+            try {
+            geoLocationManager.enableLocation();
+            
+            } catch (error: BusinessError) {
+            hilog.error(domain, tag, "[lbs_js] enableLocation error:" + error)
+            expect().assertFail()
+            }
+            await Utils.msSleep(1000)
+            geoLocationManager.disableLocation();
+            done();
+        })
+
+
+
+
 
 
 
