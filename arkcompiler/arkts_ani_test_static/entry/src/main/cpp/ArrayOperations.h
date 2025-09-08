@@ -17,158 +17,15 @@
 #define ARKTS_ANI_TEST_ARRAYOPERATIONS_H
 #include "Common.h"
 
-ani_boolean test_array_region_byte([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ASSERT_NE(env, nullptr);
-    const ani_size OFFSET_0 = 0;
-    const ani_size LENGTH_5 = 5;
-    ani_array_byte array = nullptr;
-    ASSERT_EQ(env->Array_New_Byte(LENGTH_5, &array), ANI_OK);
-
-    const ani_byte minByteValue = -128;
-    const ani_byte maxByteValue = 127;
-    std::array<ani_byte, LENGTH_5> nativeBuffer = {minByteValue, maxByteValue, static_cast<ani_byte>(0),
-                                                   static_cast<ani_byte>(-1), static_cast<ani_byte>(1)};
-    ASSERT_EQ(env->Array_SetRegion_Byte(array, OFFSET_0, LENGTH_5, nativeBuffer.data()), ANI_OK);
-
-    std::array<ani_byte, LENGTH_5> nativeBuffer2 = {};
-    ASSERT_EQ(env->Array_GetRegion_Byte(array, OFFSET_0, LENGTH_5, nativeBuffer2.data()), ANI_OK);
-    return ANI_TRUE;
-}
-
-ani_boolean test_array_region_char([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ASSERT_NE(env, nullptr);
-    ani_array_char array = nullptr;
-
-    const ani_size LENGTH_10 = 10;
-    const ani_size OFFSET_0 = 0;
-    ASSERT_EQ(env->Array_New_Char(LENGTH_10, &array), ANI_OK);
-
-    const std::array<ani_char, LENGTH_10> nativeBuffer = {'a', '0', '\n', '\r', '\t', '\b', '\a', '\v', '\f', '\0'};
-    ASSERT_EQ(env->Array_SetRegion_Char(array, OFFSET_0, LENGTH_10, nativeBuffer.data()), ANI_OK);
-
-    std::array<ani_char, LENGTH_10> nativeBuffer2 = {};
-    ASSERT_EQ(env->Array_GetRegion_Char(array, OFFSET_0, LENGTH_10, nativeBuffer2.data()), ANI_OK);
-    return ANI_TRUE;
-}
-
-ani_boolean test_array_region_boolean([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ASSERT_NE(env, nullptr);
-    ani_array_boolean array = nullptr;
-    const ani_size OFFSET_0 = 0;
-    const ani_size LENGTH_5 = 5;
-    ASSERT_EQ(env->Array_New_Boolean(LENGTH_5, &array), ANI_OK);
-
-    std::array<ani_boolean, LENGTH_5> nativeBuffer = {ANI_TRUE, ANI_FALSE, ANI_TRUE, ANI_FALSE, ANI_TRUE};
-    std::array<ani_boolean, LENGTH_5> nativeBuffer2 = {ANI_FALSE};
-    ASSERT_EQ(env->Array_SetRegion_Boolean(array, OFFSET_0, LENGTH_5, nativeBuffer.data()), ANI_OK);
-    ASSERT_EQ(env->Array_GetRegion_Boolean(array, OFFSET_0, LENGTH_5, nativeBuffer2.data()), ANI_OK);
-    return ANI_TRUE;
-}
-
-ani_boolean test_array_region_double([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ASSERT_NE(env, nullptr);
-    ani_array_double array = nullptr;
-    const ani_size OFFSET_0 = 0;
-    const ani_size LENGTH_5 = 5;
-    ASSERT_EQ(env->Array_New_Double(LENGTH_5, &array), ANI_OK);
-
-    std::array<ani_double, LENGTH_5> nativeBuffer = {1.0, 2.0, 3.0, 4.0, 5.0};
-    std::array<ani_double, LENGTH_5> nativeBuffer2 = {0.0};
-    ASSERT_EQ(env->Array_SetRegion_Double(array, OFFSET_0, LENGTH_5, nativeBuffer.data()), ANI_OK);
-    ASSERT_EQ(env->Array_GetRegion_Double(array, OFFSET_0, LENGTH_5, nativeBuffer2.data()), ANI_OK);
-    return ANI_TRUE;
-}
-
-ani_boolean test_array_region_float([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ASSERT_NE(env, nullptr);
-    ani_array_float array = nullptr;
-    const ani_size OFFSET_0 = 0;
-    const ani_size LENGTH_5 = 5;
-    ASSERT_EQ(env->Array_New_Float(LENGTH_5, &array), ANI_OK);
-
-    std::array<ani_float, LENGTH_5> nativeBuffer = {1.0f, 2.0f, 3.0f, 4.0f, 5.0f};
-    std::array<ani_float, LENGTH_5> nativeBuffer2 = {0.0f};
-    ASSERT_EQ(env->Array_SetRegion_Float(array, OFFSET_0, LENGTH_5, nativeBuffer.data()), ANI_OK);
-    ASSERT_EQ(env->Array_GetRegion_Float(array, OFFSET_0, LENGTH_5, nativeBuffer2.data()), ANI_OK);
-    return ANI_TRUE;
-}
-
-ani_boolean test_array_region_int([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ASSERT_NE(env, nullptr);
-    ani_array_int array = nullptr;
-    const ani_size OFFSET_0 = 0;
-    const ani_size LENGTH_5 = 5;
-    ASSERT_EQ(env->Array_New_Int(LENGTH_5, &array), ANI_OK);
-
-    std::array<ani_int, LENGTH_5> nativeBuffer = {1, 2, 3, 4, 5};
-    std::array<ani_int, LENGTH_5> nativeBuffer2 = {0};
-    ASSERT_EQ(env->Array_SetRegion_Int(array, OFFSET_0, LENGTH_5, nativeBuffer.data()), ANI_OK);
-    ASSERT_EQ(env->Array_GetRegion_Int(array, OFFSET_0, LENGTH_5, nativeBuffer2.data()), ANI_OK);
-    return ANI_TRUE;
-}
-
-ani_boolean test_array_region_long([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ASSERT_NE(env, nullptr);
-    ani_array_long array = nullptr;
-    const ani_size OFFSET_0 = 0;
-    const ani_size LENGTH_5 = 5;
-    ASSERT_EQ(env->Array_New_Long(LENGTH_5, &array), ANI_OK);
-
-    std::array<ani_long, LENGTH_5> nativeBuffer = {1, 2, 3, 4, 5};
-    std::array<ani_long, LENGTH_5> nativeBuffer2 = {0};
-    ASSERT_EQ(env->Array_SetRegion_Long(array, OFFSET_0, LENGTH_5, nativeBuffer.data()), ANI_OK);
-    ASSERT_EQ(env->Array_GetRegion_Long(array, OFFSET_0, LENGTH_5, nativeBuffer2.data()), ANI_OK);
-    return ANI_TRUE;
-}
-
-ani_boolean test_array_region_short([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ASSERT_NE(env, nullptr);
-    ani_array_short array = nullptr;
-    const ani_size OFFSET_0 = 0;
-    const ani_size LENGTH_5 = 5;
-    ASSERT_EQ(env->Array_New_Short(LENGTH_5, &array), ANI_OK);
-
-    std::array<ani_short, LENGTH_5> nativeBuffer = {1, 2, 3, 4, 5};
-    std::array<ani_short, LENGTH_5> nativeBuffer2 = {0};
-    ASSERT_EQ(env->Array_SetRegion_Short(array, OFFSET_0, LENGTH_5, nativeBuffer.data()), ANI_OK);
-    ASSERT_EQ(env->Array_GetRegion_Short(array, OFFSET_0, LENGTH_5, nativeBuffer2.data()), ANI_OK);
-    return ANI_TRUE;
-}
-
-ani_boolean test_array_set_with_get_ref([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ASSERT_NE(env, nullptr);
-
-    ani_class cls = {};
-    ani_object obj = {};
-    const ani_size OFFSET_0 = 0;
-    const ani_size LENGTH_5 = 5;
-    ASSERT_EQ(GetClsData(env, &obj, &cls), ANI_TRUE);
-
-    ani_array_ref array = nullptr;
-    ASSERT_EQ(env->Array_New_Ref(cls, LENGTH_5, nullptr, &array), ANI_OK);
-
-    ASSERT_EQ(env->Array_Set_Ref(array, OFFSET_0, obj), ANI_OK);
-    ani_ref ref1 = nullptr;
-    ASSERT_EQ(env->Array_Get_Ref(array, OFFSET_0, &ref1), ANI_OK);
-    return ANI_TRUE;
-}
-
 ani_boolean test_array_getLength([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ASSERT_NE(env, nullptr);
-    ani_array_byte array = nullptr;
+    ani_array array = nullptr;
+    ani_ref undefinedRef {};
+    ASSERT_EQ(env->GetUndefined(&undefinedRef), ANI_OK);
     const ani_size OFFSET_0 = 0;
     const ani_size LENGTH_5 = 5;
-    ASSERT_EQ(env->Array_New_Byte(LENGTH_5, &array), ANI_OK);
+    ASSERT_EQ(env->Array_New(LENGTH_5, undefinedRef, &array), ANI_OK);
     ani_size length = 0;
     ASSERT_EQ(env->Array_GetLength(array, &length), ANI_OK);
     ASSERT_EQ(length, LENGTH_5);
@@ -208,13 +65,15 @@ ani_int test_Array_New_Set_Get([[maybe_unused]] ani_env *env_, [[maybe_unused]] 
     ani_class intClass = nullptr;
     ani_method intUnbox = nullptr;
     ani_method intCtor = nullptr;
-    env_->FindClass("Lstd/core/Int;", &intClass);
-    env_->Class_FindMethod(intClass, "<ctor>", "I:V", &intCtor);
-    env_->Class_FindMethod(intClass, "unboxed", ":I", &intUnbox);
+    env_->FindClass("std.core.Int", &intClass);
+    env_->Class_FindMethod(intClass, "<ctor>", "i:", &intCtor);
+    env_->Class_FindMethod(intClass, "unboxed", ":i", &intUnbox);
     ani_size arrSize = 5U;
     ani_object boxedInt{};
     ani_array array{};
-    ASSERT_EQ(env_->Array_New(arrSize, nullptr, &array), ANI_OK);
+    ani_ref undefinedRef {};
+    ASSERT_EQ(env_->GetUndefined(&undefinedRef), ANI_OK);
+    ASSERT_EQ(env_->Array_New(arrSize, undefinedRef, &array), ANI_OK);
     ani_ref val{};
     for (ani_size it = 0; it < arrSize; ++it) {
         env_->Object_New(intClass, intCtor, &boxedInt, it);
@@ -244,12 +103,14 @@ ani_int test_Array_Push_Pop([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani
     ani_class intClass = nullptr;
     ani_method intUnbox = nullptr;
     ani_method intCtor = nullptr;
-    env_->FindClass("Lstd/core/Int;", &intClass);
-    env_->Class_FindMethod(intClass, "<ctor>", "I:V", &intCtor);
-    env_->Class_FindMethod(intClass, "unboxed", ":I", &intUnbox);
+    env_->FindClass("std.core.Int", &intClass);
+    env_->Class_FindMethod(intClass, "<ctor>", "i:", &intCtor);
+    env_->Class_FindMethod(intClass, "unboxed", ":i", &intUnbox);
     ani_size arrSize = 5U;
     ani_array array{};
-    ASSERT_EQ(env_->Array_New(0U, nullptr, &array), ANI_OK);
+    ani_ref undefinedRef {};
+    ASSERT_EQ(env_->GetUndefined(&undefinedRef), ANI_OK);
+    ASSERT_EQ(env_->Array_New(0U, undefinedRef, &array), ANI_OK);
 
     for (ani_size it = 0; it < arrSize; ++it) {
         ani_object boxedInt {};

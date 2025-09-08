@@ -19,7 +19,7 @@
 
 ani_int test_Namespace_FindVariable([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    const char *namespacePath = "Lentry/src/main/src/ets/VariableOperations/anyns;";
+    const char *namespacePath = "entry.src.main.src.ets.VariableOperations.anyns";
 
     ani_namespace ns = nullptr;
     ASSERT_EQ(env->FindNamespace(namespacePath, &ns), ANI_OK);
@@ -35,7 +35,7 @@ ani_int test_Namespace_FindVariable([[maybe_unused]] ani_env *env, [[maybe_unuse
 ani_int test_Variable_GetValue_Long([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns = nullptr;
-    ASSERT_EQ(env->FindNamespace("Lentry/src/main/src/ets/VariableOperations/anyns;", &ns), ANI_OK);
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable{};
@@ -51,7 +51,7 @@ ani_int test_Variable_GetValue_Long([[maybe_unused]] ani_env *env, [[maybe_unuse
 ani_int test_Variable_SetValue_Long([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns = nullptr;
-    ASSERT_EQ(env->FindNamespace("Lentry/src/main/src/ets/VariableOperations/anyns;", &ns), ANI_OK);
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable{};
@@ -72,7 +72,7 @@ ani_int test_Variable_SetValue_Long([[maybe_unused]] ani_env *env, [[maybe_unuse
 ani_int test_Variable_GetValue_Int([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns = nullptr;
-    ASSERT_EQ(env->FindNamespace("Lentry/src/main/src/ets/VariableOperations/anyns;", &ns), ANI_OK);
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable{};
@@ -88,7 +88,7 @@ ani_int test_Variable_GetValue_Int([[maybe_unused]] ani_env *env, [[maybe_unused
 ani_int test_Variable_SetValue_Int([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns = nullptr;
-    ASSERT_EQ(env->FindNamespace("Lentry/src/main/src/ets/VariableOperations/anyns;", &ns), ANI_OK);
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable{};
@@ -111,7 +111,7 @@ ani_int test_Variable_GetValue_Double([[maybe_unused]] ani_env *env, [[maybe_unu
 {
     const ani_double EXPECTED_DOUBLEVALUE = 3.0;
     ani_namespace ns = nullptr;
-    ASSERT_EQ(env->FindNamespace("Lentry/src/main/src/ets/VariableOperations/anyns;", &ns), ANI_OK);
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable{};
@@ -127,7 +127,7 @@ ani_int test_Variable_GetValue_Double([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_int test_Variable_SetValue_Double([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns = nullptr;
-    ASSERT_EQ(env->FindNamespace("Lentry/src/main/src/ets/VariableOperations/anyns;", &ns), ANI_OK);
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable{};
@@ -149,7 +149,7 @@ ani_int test_Variable_SetValue_Double([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_int test_Variable_GetValue_Ref([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns = nullptr;
-    ASSERT_EQ(env->FindNamespace("Lentry/src/main/src/ets/VariableOperations/anyns;", &ns), ANI_OK);
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable{};
@@ -176,7 +176,7 @@ ani_int test_Variable_GetValue_Ref([[maybe_unused]] ani_env *env, [[maybe_unused
 ani_int test_Variable_GetValue_Boolean([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns = nullptr;
-    ASSERT_EQ(env->FindNamespace("Lentry/src/main/src/ets/VariableOperations/anyns;", &ns), ANI_OK);
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable = nullptr;
@@ -191,7 +191,7 @@ ani_int test_Variable_GetValue_Boolean([[maybe_unused]] ani_env *env, [[maybe_un
 
 ani_int test_Variable_SetValue_Boolean([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    const char *namespacePath = "Lentry/src/main/src/ets/VariableOperations/anyns;";
+    const char *namespacePath = "entry.src.main.src.ets.VariableOperations.anyns";
     ani_namespace ns = nullptr;
     ASSERT_EQ(env->FindNamespace(namespacePath, &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
@@ -211,7 +211,7 @@ ani_int test_Variable_SetValue_Boolean([[maybe_unused]] ani_env *env, [[maybe_un
 
 ani_int test_Variable_SetValue_Char([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    const char *namespacePath = "Lentry/src/main/src/ets/VariableOperations/anyns;";
+    const char *namespacePath = "entry.src.main.src.ets.VariableOperations.anyns";
     ani_namespace ns = nullptr;
     ASSERT_EQ(env->FindNamespace(namespacePath, &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
@@ -232,7 +232,7 @@ ani_int test_Variable_SetValue_Char([[maybe_unused]] ani_env *env, [[maybe_unuse
 ani_int test_Variable_SetValue_Byte([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns = nullptr;
-    const char *namespacePath = "Lentry/src/main/src/ets/VariableOperations/anyns;";
+    const char *namespacePath = "entry.src.main.src.ets.VariableOperations.anyns";
     ASSERT_EQ(env->FindNamespace(namespacePath, &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
@@ -252,7 +252,7 @@ ani_int test_Variable_SetValue_Byte([[maybe_unused]] ani_env *env, [[maybe_unuse
 ani_int test_Variable_SetValue_Short([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns = nullptr;
-    ASSERT_EQ(env->FindNamespace("Lentry/src/main/src/ets/VariableOperations/anyns;", &ns), ANI_OK);
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable{};
@@ -271,7 +271,7 @@ ani_int test_Variable_SetValue_Short([[maybe_unused]] ani_env *env, [[maybe_unus
 ani_int test_Variable_SetValue_Float([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns = nullptr;
-    ASSERT_EQ(env->FindNamespace("Lentry/src/main/src/ets/VariableOperations/anyns;", &ns), ANI_OK);
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable{};
@@ -291,7 +291,7 @@ ani_int test_Variable_SetValue_Ref([[maybe_unused]] ani_env *env, [[maybe_unused
 {
     const ani_size EXPECTED_LENGTH = 7U;
     ani_namespace ns = nullptr;
-    ASSERT_EQ(env->FindNamespace("Lentry/src/main/src/ets/VariableOperations/anyns;", &ns), ANI_OK);
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable{};
@@ -317,7 +317,7 @@ ani_int test_Variable_SetValue_Ref([[maybe_unused]] ani_env *env, [[maybe_unused
 ani_int test_Variable_GetValue_Char([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns = nullptr;
-    ASSERT_EQ(env->FindNamespace("Lentry/src/main/src/ets/VariableOperations/anyns;", &ns), ANI_OK);
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable{};
@@ -335,7 +335,7 @@ ani_int test_Variable_GetValue_Char([[maybe_unused]] ani_env *env, [[maybe_unuse
 ani_int test_Variable_GetValue_Byte([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns = nullptr;
-    ASSERT_EQ(env->FindNamespace("Lentry/src/main/src/ets/VariableOperations/anyns;", &ns), ANI_OK);
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable{};
@@ -352,7 +352,7 @@ ani_int test_Variable_GetValue_Byte([[maybe_unused]] ani_env *env, [[maybe_unuse
 ani_int test_Variable_GetValue_Short([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns = nullptr;
-    ASSERT_EQ(env->FindNamespace("Lentry/src/main/src/ets/VariableOperations/anyns;", &ns), ANI_OK);
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable{};
@@ -369,7 +369,7 @@ ani_int test_Variable_GetValue_Short([[maybe_unused]] ani_env *env, [[maybe_unus
 ani_int test_Variable_GetValue_Float([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns = nullptr;
-    ASSERT_EQ(env->FindNamespace("Lentry/src/main/src/ets/VariableOperations/anyns;", &ns), ANI_OK);
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable var;
