@@ -839,7 +839,7 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        elet err : BusinessError = error as BusinessError
+        let err : BusinessError = error as BusinessError
         expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
