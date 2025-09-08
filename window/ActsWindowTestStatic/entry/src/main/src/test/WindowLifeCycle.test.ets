@@ -1049,26 +1049,27 @@ export default function WindowLifeCycleTest() {
             windowStage.getMainWindow().then((data:window.Window) => {
                 mainWindow = data;
                 hilog.info(0x0000, '[ANI]',msgStr + ' ' + 'Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
+                expect(!!mainWindow).assertTrue();
+                try {
+                    mainWindow!.on('subWindowClose', () => {
+                    });
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on_subWindowClose.');
+                    expect().assertFail();
+                    done();
+                } catch (exception:BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call on_subWindowClose. Cause:' + JSON.stringify(exception));
+                    if (exception!.code == 801) {
+                        hilog.info(0x0000, '[ANI]',msgStr + '此设备不支持on_subWindowClose能力.');
+                    } else {
+                        expect(exception!.code).assertEqual(1300004);
+                    }
+                    done();
+                }
             }).catch((err: BusinessError):PromiseLike<void>|undefined => {
                 hilog.error(0x0000, '[ANI]',msgStr+ ' ' + 'Failed in obtaining the main window. Cuase: ' + JSON.stringify(err));
                 done()
             });
-            expect(!!mainWindow).assertTrue();
-            try {
-                mainWindow!.on('subWindowClose', () => {
-                });
-                hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on_subWindowClose.');
-                expect().assertFail();
-                done();
-            } catch (exception:BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call on_subWindowClose. Cause:' + JSON.stringify(exception));
-                if (exception!.code == 801) {
-                    hilog.info(0x0000, '[ANI]',msgStr + '此设备不支持on_subWindowClose能力.');
-                } else {
-                    expect(exception!.code).assertEqual(1300004);
-                }
-                done();
-            }
+
         })
         /**
          * @tc.number     : testOnWindowWillCloseErrCode1300002_0100
