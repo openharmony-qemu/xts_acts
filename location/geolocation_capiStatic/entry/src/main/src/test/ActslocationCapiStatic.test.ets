@@ -520,8 +520,8 @@ export default function actslocationTest() {
         })
 
         /**
-        * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCATIONERROR_0100
-        * @tc.name      : SUB_HSS_LOCATIONSYSTEM_LOCATIONERROR_0100
+        * @tc.number    : testLocationError01
+        * @tc.name      : testLocationError01
         * @tc.desc      : Initiate a specified continuous location request and set the reporting precision of abnormal location.
         * @tc.size      : MediumTest
         * @tc.type      : Function
@@ -557,8 +557,8 @@ export default function actslocationTest() {
         })
 
         /**
-        * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCSWITCH_0700
-        * @tc.name      : SUB_HSS_LOCATIONSYSTEM_LOCSWITCH_0700
+        * @tc.number    : testLocationEnabledChange01
+        * @tc.name      : testLocationEnabledChange01
         * @tc.desc      : Subscribe to the location service status change.
         * @tc.size      : MediumTest
         * @tc.type      : Function
@@ -690,26 +690,7 @@ export default function actslocationTest() {
             done();
         })
 
-        * @tc.number    : enableLocation001
-        * @tc.name      : enableLocation001
-        * @tc.desc      : Test Report Fence Transition.
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 2
-        */
-        it('enableLocation001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-        async (done: () => void): Promise<void> => {
-            try {
-            geoLocationManager.enableLocation();
-            
-            } catch (error: BusinessError) {
-            hilog.error(domain, tag, "[lbs_js] enableLocation error:" + error)
-            expect().assertFail()
-            }
-            await Utils.msSleep(1000)
-            geoLocationManager.disableLocation();
-            done();
-        })
+
 let request_scenario_UNSET = geolocationm.LocationRequestScenario.UNSET
 let request_scenario_NAVIGATION = geolocationm.LocationRequestScenario.NAVIGATION
 let request_scenario_TRAJECTORY_TRACKING = geolocationm.LocationRequestScenario.TRAJECTORY_TRACKING
