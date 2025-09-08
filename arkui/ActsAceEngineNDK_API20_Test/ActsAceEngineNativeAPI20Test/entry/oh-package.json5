@@ -15,11 +15,17 @@
 {
   "license": "",
   "devDependencies": {
-    "@types/libnativexcomponent.so": "file:./src/main/cpp/types/libnativexcomponent",
-    "@types/libaccessibilityndk.so": "file:./src/main/cpp/types/libaccessibilityndk",
-    "@types/libanimatendk.so": "file:./src/main/cpp/types/libanimatendk",
-    "@types/libarkuikeycodendk.so": "file:./src/main/cpp/types/libarkuikeycodendk",
-    "@types/libnoderenderndk.so": "file:./src/main/cpp/types/libnoderenderndk"
+    "libnativexcomponent.so": "file:./src/main/cpp/types/libnativexcomponent",
+    "libaccessibilityndk.so": "file:./src/main/cpp/types/libaccessibilityndk",
+    "libanimatendk.so": "file:./src/main/cpp/types/libanimatendk",
+    "libnoderenderndk.so": "file:./src/main/cpp/types/libnoderenderndk",
+    "libkeyeventndk.so": "file:./src/main/cpp/types/libkeyeventndk",
+    "libnativedialog.so": "file:./src/main/cpp/types/libnativedialog",
+    "libnativegesturendk.so": "file:./src/main/cpp/types/libnativegesturendk",
+    "libuiinputeventndk.so": "file:./src/main/cpp/types/libuiinputeventndk",
+    "libnativetype.so": "file:./src/main/cpp/types/libnativetype",
+    "libosaccountndk.so": "file:./src/main/cpp/types/libosaccountndk",
+    "libdisplaymanager.so": "file:./src/main/cpp/types/libdisplaymanager"
   },
   "author": "",
   "name": "entry",
@@ -27,10 +33,16 @@
   "main": "",
   "version": "1.0.0",
   "dependencies": {
-    "@types/libnativexcomponent.so": "file:./src/main/cpp/types/libnativexcomponent",
-    "@types/libaccessibilityndk.so": "file:./src/main/cpp/types/libaccessibilityndk",
-    "@types/libanimatendk.so": "file:./src/main/cpp/types/libanimatendk",
-    "@types/libarkuikeycodendk.so": "file:./src/main/cpp/types/libarkuikeycodendk",
-    "@types/libnoderenderndk.so": "file:./src/main/cpp/types/libnoderenderndk"
+    "libnativexcomponent.so": "file:./src/main/cpp/types/libnativexcomponent",
+    "libaccessibilityndk.so": "file:./src/main/cpp/types/libaccessibilityndk",
+    "libanimatendk.so": "file:./src/main/cpp/types/libanimatendk",
+    "libnoderenderndk.so": "file:./src/main/cpp/types/libnoderenderndk",
+    "libkeyeventndk.so": "file:./src/main/cpp/types/libkeyeventndk",
+    "libnativedialog.so": "file:./src/main/cpp/types/libnativedialog",
+    "libnativegesturendk.so": "file:./src/main/cpp/types/libnativegesturendk",
+    "libuiinputeventndk.so": "file:./src/main/cpp/types/libuiinputeventndk",
+    "libnativetype.so": "file:./src/main/cpp/types/libnativetype",
+    "libosaccountndk.so": "file:./src/main/cpp/types/libosaccountndk",
+    "libdisplaymanager.so": "file:./src/main/cpp/types/libdisplaymanager"
   }
 }

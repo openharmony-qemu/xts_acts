@@ -14,8 +14,6 @@
  */
 
 import render from 'libnoderenderndk.so'
-import { KeyCode } from '@kit.InputKit';
-import { CommonView } from '../../componet/CommonView';
 import { NodeContent } from '@kit.ArkUI';
 
 @Entry

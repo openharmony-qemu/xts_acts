@@ -457,6 +457,31 @@ export default function AnimatorOptionTest2() {
       })
 
     /**
+     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOROPTION_REGISTERONFRAMECALLBACK_0100
+     * @tc.name    : testOHArkUIAnimatorOptionRegisterOnFrameCallback0100
+     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
+     *               are passed in.
+     * @tc.level   : LEVEL1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('testOHArkUIAnimatorOptionRegisterOnFrameCallback0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          console.info("====>testOHArkUIAnimatorOptionRegisterOnFrameCallback0100 start====");
+
+          let result: number = animatendk.AnimatorOptionRegisterOnFrameCallback0100();
+          console.info(`====>testOHArkUIAnimatorOptionRegisterOnFrameCallback0100 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done()
+        } catch (err) {
+          console.error("====>testOHArkUIAnimatorOptionRegisterOnFrameCallback0100 catch err: " + err);
+          expect(false).assertEqual(0);
+          done()
+        }
+      })
+
+    /**
      * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOROPTION_REGISTERONFRAMECALLBACK_0200
      * @tc.name    : testOHArkUIAnimatorOptionRegisterOnFrameCallback0200
      * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
@@ -501,6 +526,31 @@ export default function AnimatorOptionTest2() {
         } catch (err) {
           console.error("====>testOHArkUIAnimatorOptionRegisterOnFrameCallback0300 catch err: " + err);
           expect(false).assertEqual(0);
+        }
+      })
+
+    /**
+     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOROPTION_REGISTERONFINISHCALLBACK_0100
+     * @tc.name    : testOHArkUIAnimatorOptionRegisterOnFinishCallback0100
+     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
+     *               are passed in.
+     * @tc.level   : LEVEL1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('testOHArkUIAnimatorOptionRegisterOnFinishCallback0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          console.info("====>testOHArkUIAnimatorOptionRegisterOnFinishCallback0100 start====");
+
+          let result: number = animatendk.AnimatorOptionRegisterOnFinishCallback0100();
+          console.info(`====>testOHArkUIAnimatorOptionRegisterOnFinishCallback0100 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done()
+        } catch (err) {
+          console.error("====>testOHArkUIAnimatorOptionRegisterOnFinishCallback0100 catch err: " + err);
+          expect(false).assertEqual(0);
+          done()
         }
       })
 
@@ -553,6 +603,32 @@ export default function AnimatorOptionTest2() {
       })
 
     /**
+     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOROPTION_REGISTERONCANCELCALLBACK_0100
+     * @tc.name    : testOHArkUIAnimatorOptionRegisterOnCancelCallback0100
+     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
+     *               are passed in.
+     * @tc.level   : LEVEL1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('testOHArkUIAnimatorOptionRegisterOnCancelCallback0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          console.info("====>testOHArkUIAnimatorOptionRegisterOnCancelCallback0100 start====");
+
+          let result: number = animatendk.AnimatorOptionRegisterOnCancelCallback0100();
+          console.info(`====>testOHArkUIAnimatorOptionRegisterOnCancelCallback0100 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done()
+        } catch (err) {
+          console.error("====>testOHArkUIAnimatorOptionRegisterOnCancelCallback0100 catch err: " + err);
+          expect(false).assertEqual(0);
+          done()
+        }
+      })
+
+
+    /**
      * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOROPTION_REGISTERONCANCELCALLBACK_0200
      * @tc.name    : testOHArkUIAnimatorOptionRegisterOnCancelCallback0200
      * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
@@ -597,6 +673,31 @@ export default function AnimatorOptionTest2() {
         } catch (err) {
           console.error("====>testOHArkUIAnimatorOptionRegisterOnCancelCallback0300 catch err: " + err);
           expect(false).assertEqual(0);
+        }
+      })
+
+    /**
+     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOROPTION_REGISTERONREPEATCALLBACK_0100
+     * @tc.name    : testOHArkUIAnimatorOptionRegisterOnRepeatCallback0100
+     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
+     *               are passed in.
+     * @tc.level   : LEVEL1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('testOHArkUIAnimatorOptionRegisterOnRepeatCallback0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          console.info("====>testOHArkUIAnimatorOptionRegisterOnRepeatCallback0100 start====");
+
+          let result: number = animatendk.AnimatorOptionRegisterOnRepeatCallback0100();
+          console.info(`====>testOHArkUIAnimatorOptionRegisterOnRepeatCallback0100 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done()
+        } catch (err) {
+          console.error("====>testOHArkUIAnimatorOptionRegisterOnRepeatCallback0100 catch err: " + err);
+          expect(false).assertEqual(0);
+          done()
         }
       })
 

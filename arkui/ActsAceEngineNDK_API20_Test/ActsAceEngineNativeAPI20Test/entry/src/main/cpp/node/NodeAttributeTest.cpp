@@ -169,7 +169,7 @@ napi_value CheckNodeTextInputHalfLeading(napi_env env, napi_callback_info info)
 {
     std::random_device randomNumber; // 随机数种子生成器
     std::mt19937 mt(randomNumber()); // 随机数生成器
-    int32_t flag = mt() % PARAM_2; // 生成随机参数
+    bool flag = mt() % PARAM_2; // 生成随机参数
     napi_value retValue = 0;
     int32_t result = 0;
     XC TextComponent = XC(ARKUI_NODE_TEXT_INPUT);
@@ -292,7 +292,7 @@ napi_value CheckNodeTextAreaHalfLeading(napi_env env, napi_callback_info info)
 {
     std::random_device randomNumber; // 随机数种子生成器
     std::mt19937 mt(randomNumber()); // 随机数生成器
-    int32_t flag = mt() % PARAM_2; // 生成随机参数
+    bool flag = mt() % PARAM_2; // 生成随机参数
     napi_value retValue = 0;
     int32_t result = 0;
     XC TextComponent = XC(ARKUI_NODE_TEXT_AREA);
@@ -547,6 +547,7 @@ napi_value CheckNodeFocusBox(napi_env env, napi_callback_info info)
     } else {
         result = 0;
     }
+    ColumnComponent.RemoveChild(child);
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -969,15 +970,16 @@ napi_value CheckNodeXComponentSurfaceRect(napi_env env, napi_callback_info info)
     int32_t height = mt() % PARAM_100; // 生成随机参数
     napi_value retValue = 0;
     int32_t result = 0;
-    XC RowComponent = XC(ARKUI_NODE_XCOMPONENT);
-    RowComponent.SetXComponentType(ARKUI_XCOMPONENT_TYPE_SURFACE);
-    RowComponent.SetXComponentId("test");
+    if (ColumnComponent.GetChildren().size() == 0) {
+        std::shared_ptr<XC> ptr = std::shared_ptr<XC>(&XComponentRect);
+        ColumnComponent.AddChild(ptr);
+    }
     ArkUI_NumberValue value[] = { { .i32 = setX }, { .i32 = setY }, { .i32 = width }, { .i32 = height } };
     ArkUI_AttributeItem item = { .value = value, .size = PARAM_4 };
-    int32_t setResult = RowComponent.setAttribute(NODE_XCOMPONENT_SURFACE_RECT, &item);
-    const ArkUI_AttributeItem* itemptr = RowComponent.getAttribute(NODE_XCOMPONENT_SURFACE_RECT);
-    bool condition = itemptr->value[0].i32 == setX && itemptr->value[1].i32 == setY &&
-                     itemptr->value[2].i32 == width && itemptr->value[3].i32 == height;
+    int32_t setResult = XComponentRect.setAttribute(NODE_XCOMPONENT_SURFACE_RECT, &item);
+    auto itemptr = XComponentRect.getAttribute(NODE_XCOMPONENT_SURFACE_RECT);
+    bool condition = itemptr->value[PARAM_0].i32 == setX && itemptr->value[PARAM_1].i32 == setY &&
+                     itemptr->value[PARAM_2].i32 == width && itemptr->value[PARAM_3].i32 == height;
     if (condition && setResult == ARKUI_ERROR_CODE_NO_ERROR) {
         result = 1;
     } else if (setResult != ARKUI_ERROR_CODE_NO_ERROR) {
@@ -986,20 +988,23 @@ napi_value CheckNodeXComponentSurfaceRect(napi_env env, napi_callback_info info)
         result = PARAM_NEGATIVE_9;
     }
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "CheckAttribute",
-                 "CheckNodeXComponentSurfaceRect: %{public}s, setResult == %{public}d",
-                 setResult == ARKUI_ERROR_CODE_NO_ERROR ? "设置成功" : "设置失败", setResult);
+                 "CheckNodeXComponentSurfaceRect setResult: %{public}d", setResult);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "CheckAttribute",
-                 "CheckNodeXComponentSurfaceRect: %{public}d",
-                 itemptr->value[PARAM_0].i32);
+                 "CheckNodeXComponentSurfaceRect setX getResult: %{public}d", itemptr->value[PARAM_0].i32);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "CheckAttribute",
-                 "CheckNodeXComponentSurfaceRect: %{public}d",
-                 itemptr->value[PARAM_1].i32);
+                 "CheckNodeXComponentSurfaceRect setY getResult: %{public}d", itemptr->value[PARAM_1].i32);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "CheckAttribute",
-                 "CheckNodeXComponentSurfaceRect: %{public}d",
-                 itemptr->value[PARAM_2].i32);
+                 "CheckNodeXComponentSurfaceRect width getResult: %{public}d", itemptr->value[PARAM_2].i32);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "CheckAttribute",
-                 "CheckNodeXComponentSurfaceRect: %{public}d",
-                 itemptr->value[PARAM_3].i32);
+                 "CheckNodeXComponentSurfaceRect height getResult: %{public}d", itemptr->value[PARAM_3].i32);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "CheckAttribute",
+                 "CheckNodeXComponentSurfaceRect setX set: %{public}d", setX);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "CheckAttribute",
+                 "CheckNodeXComponentSurfaceRect setY set: %{public}d", setY);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "CheckAttribute",
+                 "CheckNodeXComponentSurfaceRect width set: %{public}d", width);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "CheckAttribute",
+                 "CheckNodeXComponentSurfaceRect height set: %{public}d", height);
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -1031,15 +1036,18 @@ napi_value CheckNodeDatePickerCanLoop(napi_env env, napi_callback_info info)
 
 napi_value CheckNodeTimePickerStart(napi_env env, napi_callback_info info)
 {
-    char* startTime = "05:20:00";
+    char* startTime = "5:20";
     napi_value retValue = 0;
     int32_t result = 0;
-    XC RowComponent = XC(ARKUI_NODE_TIME_PICKER);
-    ArkUI_AttributeItem item = { .string = startTime };
-    int32_t setResult = RowComponent.setAttribute(NODE_TIME_PICKER_START, &item);
-    const ArkUI_AttributeItem* itemptr = RowComponent.getAttribute(NODE_TIME_PICKER_START);
-    bool condition = strcmp(itemptr->string, startTime) == 0;
-    condition = condition && RowComponent.resetAttribute(NODE_TIME_PICKER_START) == ARKUI_ERROR_CODE_NO_ERROR;
+    XC TimePickerComponent = XC(ARKUI_NODE_TIME_PICKER);
+    ArkUI_NumberValue value[] = { { .i32 = true } };
+    ArkUI_AttributeItem item = { .value = value, .size = PARAM_1 };
+    TimePickerComponent.setAttribute(NODE_TIME_PICKER_USE_MILITARY_TIME, &item);
+    item = { .string = startTime };
+    int32_t setResult = TimePickerComponent.setAttribute(NODE_TIME_PICKER_START, &item);
+    const ArkUI_AttributeItem* itemptr = TimePickerComponent.getAttribute(NODE_TIME_PICKER_START);
+    bool condition = strcmp(itemptr->string, "5:20:0") == 0;
+    condition = condition && TimePickerComponent.resetAttribute(NODE_TIME_PICKER_START) == ARKUI_ERROR_CODE_NO_ERROR;
     if (condition && setResult == ARKUI_ERROR_CODE_NO_ERROR) {
         result = 1;
     } else if (setResult != ARKUI_ERROR_CODE_NO_ERROR) {
@@ -1059,15 +1067,18 @@ napi_value CheckNodeTimePickerStart(napi_env env, napi_callback_info info)
 
 napi_value CheckNodeTimePickerEnd(napi_env env, napi_callback_info info)
 {
-    char* endTime = "13:14:00";
+    char* endTime = "13:14";
     napi_value retValue = 0;
     int32_t result = 0;
-    XC RowComponent = XC(ARKUI_NODE_TIME_PICKER);
-    ArkUI_AttributeItem item = { .string = endTime };
-    int32_t setResult = RowComponent.setAttribute(NODE_TIME_PICKER_END, &item);
-    const ArkUI_AttributeItem* itemptr = RowComponent.getAttribute(NODE_TIME_PICKER_END);
-    bool condition = strcmp(itemptr->string, endTime) == 0;
-    condition = condition && RowComponent.resetAttribute(NODE_TIME_PICKER_START) == ARKUI_ERROR_CODE_NO_ERROR;
+    XC TimePickerComponent = XC(ARKUI_NODE_TIME_PICKER);
+    ArkUI_NumberValue value[] = { { .i32 = true } };
+    ArkUI_AttributeItem item = { .value = value, .size = PARAM_1 };
+    TimePickerComponent.setAttribute(NODE_TIME_PICKER_USE_MILITARY_TIME, &item);
+    item = { .string = endTime };
+    int32_t setResult = TimePickerComponent.setAttribute(NODE_TIME_PICKER_END, &item);
+    const ArkUI_AttributeItem* itemptr = TimePickerComponent.getAttribute(NODE_TIME_PICKER_END);
+    bool condition = strcmp(itemptr->string, "13:14:0") == 0;
+    condition = condition && TimePickerComponent.resetAttribute(NODE_TIME_PICKER_START) == ARKUI_ERROR_CODE_NO_ERROR;
     if (condition && setResult == ARKUI_ERROR_CODE_NO_ERROR) {
         result = 1;
     } else if (setResult != ARKUI_ERROR_CODE_NO_ERROR) {
@@ -1811,6 +1822,182 @@ napi_value CreateAttributeNativeNode(napi_env env, napi_callback_info info)
     };
     OH_ArkUI_NodeContent_RegisterCallback(nodeContentHandle, nodeContentEvent);
     return nullptr;
+}
+
+napi_value CheckNodeFocusMoveForward(napi_env env, napi_callback_info info)
+{
+    ArkUI_FocusMove focusMove = ARKUI_FOCUS_MOVE_FORWARD;
+    napi_value retValue = 0;
+    int32_t result = 0;
+    XC RowComponent = XC(ARKUI_NODE_ROW);
+    XC TextComponent = XC(ARKUI_NODE_TEXT);
+    ArkUI_NumberValue value[] = {{.i32 = focusMove}};
+    ArkUI_AttributeItem item = {.value = value, .size = PARAM_1, .object = TextComponent.GetComponent()};
+    int32_t setResult = RowComponent.setAttribute(NODE_NEXT_FOCUS, &item);
+    const ArkUI_AttributeItem *itemptr = RowComponent.getAttribute(NODE_NEXT_FOCUS);
+    if (itemptr != nullptr) {
+        bool condition = itemptr->value[0].i32 == focusMove && itemptr->object == TextComponent.GetComponent();
+        if (condition && setResult == ARKUI_ERROR_CODE_NO_ERROR) {
+            result = 1;
+        } else if (setResult != ARKUI_ERROR_CODE_NO_ERROR) {
+            result = 0;
+        } else {
+            result = PARAM_NEGATIVE_9;
+        }
+    } else if (setResult == ARKUI_ERROR_CODE_NO_ERROR) {
+        result = 1;
+    } else {
+        result = 0;
+    }
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+
+napi_value CheckNodeFocusMoveBackward(napi_env env, napi_callback_info info)
+{
+    ArkUI_FocusMove focusMove = ARKUI_FOCUS_MOVE_BACKWARD;
+    napi_value retValue = 0;
+    int32_t result = 0;
+    XC RowComponent = XC(ARKUI_NODE_ROW);
+    XC TextComponent = XC(ARKUI_NODE_TEXT);
+    ArkUI_NumberValue value[] = {{.i32 = focusMove}};
+    ArkUI_AttributeItem item = {.value = value, .size = PARAM_1, .object = TextComponent.GetComponent()};
+    int32_t setResult = RowComponent.setAttribute(NODE_NEXT_FOCUS, &item);
+    const ArkUI_AttributeItem *itemptr = RowComponent.getAttribute(NODE_NEXT_FOCUS);
+    if (itemptr != nullptr) {
+        bool condition = itemptr->value[0].i32 == focusMove && itemptr->object == TextComponent.GetComponent();
+        if (condition && setResult == ARKUI_ERROR_CODE_NO_ERROR) {
+            result = 1;
+        } else if (setResult != ARKUI_ERROR_CODE_NO_ERROR) {
+            result = 0;
+        } else {
+            result = PARAM_NEGATIVE_9;
+        }
+    } else if (setResult == ARKUI_ERROR_CODE_NO_ERROR) {
+        result = 1;
+    } else {
+        result = 0;
+    }
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+
+napi_value CheckNodeFocusMoveUp(napi_env env, napi_callback_info info)
+{
+    ArkUI_FocusMove focusMove = ARKUI_FOCUS_MOVE_UP;
+    napi_value retValue = 0;
+    int32_t result = 0;
+    XC RowComponent = XC(ARKUI_NODE_ROW);
+    XC TextComponent = XC(ARKUI_NODE_TEXT);
+    ArkUI_NumberValue value[] = {{.i32 = focusMove}};
+    ArkUI_AttributeItem item = {.value = value, .size = PARAM_1, .object = TextComponent.GetComponent()};
+    int32_t setResult = RowComponent.setAttribute(NODE_NEXT_FOCUS, &item);
+    const ArkUI_AttributeItem *itemptr = RowComponent.getAttribute(NODE_NEXT_FOCUS);
+    if (itemptr != nullptr) {
+        bool condition = itemptr->value[0].i32 == focusMove && itemptr->object == TextComponent.GetComponent();
+        if (condition && setResult == ARKUI_ERROR_CODE_NO_ERROR) {
+            result = 1;
+        } else if (setResult != ARKUI_ERROR_CODE_NO_ERROR) {
+            result = 0;
+        } else {
+            result = PARAM_NEGATIVE_9;
+        }
+    } else if (setResult == ARKUI_ERROR_CODE_NO_ERROR) {
+        result = 1;
+    } else {
+        result = 0;
+    }
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+
+napi_value CheckNodeFocusMoveDown(napi_env env, napi_callback_info info)
+{
+    ArkUI_FocusMove focusMove = ARKUI_FOCUS_MOVE_DOWN;
+    napi_value retValue = 0;
+    int32_t result = 0;
+    XC RowComponent = XC(ARKUI_NODE_ROW);
+    XC TextComponent = XC(ARKUI_NODE_TEXT);
+    ArkUI_NumberValue value[] = {{.i32 = focusMove}};
+    ArkUI_AttributeItem item = {.value = value, .size = PARAM_1, .object = TextComponent.GetComponent()};
+    int32_t setResult = RowComponent.setAttribute(NODE_NEXT_FOCUS, &item);
+    const ArkUI_AttributeItem *itemptr = RowComponent.getAttribute(NODE_NEXT_FOCUS);
+    if (itemptr != nullptr) {
+        bool condition = itemptr->value[0].i32 == focusMove && itemptr->object == TextComponent.GetComponent();
+        if (condition && setResult == ARKUI_ERROR_CODE_NO_ERROR) {
+            result = 1;
+        } else if (setResult != ARKUI_ERROR_CODE_NO_ERROR) {
+            result = 0;
+        } else {
+            result = PARAM_NEGATIVE_9;
+        }
+    } else if (setResult == ARKUI_ERROR_CODE_NO_ERROR) {
+        result = 1;
+    } else {
+        result = 0;
+    }
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+
+
+napi_value CheckNodeFocusMoveLeft(napi_env env, napi_callback_info info)
+{
+    ArkUI_FocusMove focusMove = ARKUI_FOCUS_MOVE_LEFT;
+    napi_value retValue = 0;
+    int32_t result = 0;
+    XC RowComponent = XC(ARKUI_NODE_ROW);
+    XC TextComponent = XC(ARKUI_NODE_TEXT);
+    ArkUI_NumberValue value[] = {{.i32 = focusMove}};
+    ArkUI_AttributeItem item = {.value = value, .size = PARAM_1, .object = TextComponent.GetComponent()};
+    int32_t setResult = RowComponent.setAttribute(NODE_NEXT_FOCUS, &item);
+    const ArkUI_AttributeItem *itemptr = RowComponent.getAttribute(NODE_NEXT_FOCUS);
+    if (itemptr != nullptr) {
+        bool condition = itemptr->value[0].i32 == focusMove && itemptr->object == TextComponent.GetComponent();
+        if (condition && setResult == ARKUI_ERROR_CODE_NO_ERROR) {
+            result = 1;
+        } else if (setResult != ARKUI_ERROR_CODE_NO_ERROR) {
+            result = 0;
+        } else {
+            result = PARAM_NEGATIVE_9;
+        }
+    } else if (setResult == ARKUI_ERROR_CODE_NO_ERROR) {
+        result = 1;
+    } else {
+        result = 0;
+    }
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+
+
+napi_value CheckNodeFocusMoveRight(napi_env env, napi_callback_info info)
+{
+    ArkUI_FocusMove focusMove = ARKUI_FOCUS_MOVE_RIGHT;
+    napi_value retValue = 0;
+    int32_t result = 0;
+    XC RowComponent = XC(ARKUI_NODE_ROW);
+    XC TextComponent = XC(ARKUI_NODE_TEXT);
+    ArkUI_NumberValue value[] = {{.i32 = focusMove}};
+    ArkUI_AttributeItem item = {.value = value, .size = PARAM_1, .object = TextComponent.GetComponent()};
+    int32_t setResult = RowComponent.setAttribute(NODE_NEXT_FOCUS, &item);
+    const ArkUI_AttributeItem *itemptr = RowComponent.getAttribute(NODE_NEXT_FOCUS);
+    if (itemptr != nullptr) {
+        bool condition = itemptr->value[0].i32 == focusMove && itemptr->object == TextComponent.GetComponent();
+        if (condition && setResult == ARKUI_ERROR_CODE_NO_ERROR) {
+            result = 1;
+        } else if (setResult != ARKUI_ERROR_CODE_NO_ERROR) {
+            result = 0;
+        } else {
+            result = PARAM_NEGATIVE_9;
+        }
+    } else if (setResult == ARKUI_ERROR_CODE_NO_ERROR) {
+        result = 1;
+    } else {
+        result = 0;
+    }
+    napi_create_int32(env, result, &retValue);
+    return retValue;
 }
 
 void InitNode()

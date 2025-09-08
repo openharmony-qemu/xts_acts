@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
+import { describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
 import nativexcomponent from 'libnativexcomponent.so';
 import Utils from "../common/Utils";
 
@@ -146,6 +146,27 @@ export default function NodeAttribute() {
       }
     })
     /**
+     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_INPUT_HALF_LEADING_0100
+     * @tc.name    : testCheckNodeTextInputHalfLeading
+     * @tc.desc    : Test get CheckNodeTextInputHalfLeading's result.
+     * @tc.level   : LEVEL1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('testCheckNodeTextInputHalfLeading', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_INPUT_HALF_LEADING_0100 start<====`);
+        let Result: number = nativexcomponent.CheckNodeTextInputHalfLeading();
+        expect(1).assertEqual(Result);
+        done()
+      } catch (err) {
+        console.error(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_INPUT_HALF_LEADING_0100 catch err: ` + err);
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+    /**
      * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_INPUT_KEYBOARD_APPEARANCE_0100
      * @tc.name    : testCheckNodeTextInputKeyboardAppearance
      * @tc.desc    : Test get CheckNodeTextInputKeyboardAppearance's result.
@@ -246,6 +267,27 @@ export default function NodeAttribute() {
         done()
       } catch (err) {
         console.error(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_CONTENT_TYPE_0100 catch err: ` + err);
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+    /**
+     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_HALF_LEADING_0100
+     * @tc.name    : testCheckNodeTextAreaHalfLeading
+     * @tc.desc    : Test get CheckNodeTextAreaHalfLeading's result.
+     * @tc.level   : LEVEL1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('testCheckNodeTextAreaHalfLeading', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_HALF_LEADING_0100 start<====`);
+        let Result: number = nativexcomponent.CheckNodeTextAreaHalfLeading();
+        expect(1).assertEqual(Result);
+        done()
+      } catch (err) {
+        console.error(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_HALF_LEADING_0100 catch err: ` + err);
         expect(false).assertEqual(err);
         done()
       }
@@ -719,6 +761,29 @@ export default function NodeAttribute() {
       }
     })
     /**
+     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_XCOMPONENT_SURFACE_RECT_0100
+     * @tc.name    : testCheckNodeXComponentSurfaceRect
+     * @tc.desc    : Test get CheckNodeXComponentSurfaceRect's result.
+     * @tc.level   : LEVEL1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('testCheckNodeXComponentSurfaceRect', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_XCOMPONENT_S` +
+          `URFACE_RECT_0100 start<====`);
+        let Result: number = nativexcomponent.CheckNodeXComponentSurfaceRect();
+        expect(1).assertEqual(Result);
+        done()
+      } catch (err) {
+        console.error(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_XCOMPONENT_S` +
+          `URFACE_RECT_0100 catch err: ` + err);
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+    /**
      * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_DATE_PICKER_CAN_LOOP_0100
      * @tc.name    : testCheckNodeDatePickerCanLoop
      * @tc.desc    : Test get CheckNodeDatePickerCanLoop's result.
@@ -735,6 +800,48 @@ export default function NodeAttribute() {
         done()
       } catch (err) {
         console.error(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_DATE_PICKER_CAN_LOOP_0100 catch err: ` + err);
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+    /**
+     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TIME_PICKER_START_0100
+     * @tc.name    : testCheckNodeTimePickerStart
+     * @tc.desc    : Test get CheckNodeTimePickerStart's result.
+     * @tc.level   : LEVEL1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('testCheckNodeTimePickerStart', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TIME_PICKER_START_0100 start<====`);
+        let Result: number = nativexcomponent.CheckNodeTimePickerStart();
+        expect(1).assertEqual(Result);
+        done()
+      } catch (err) {
+        console.error(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TIME_PICKER_START_0100 catch err: ` + err);
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+    /**
+     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TIME_PICKER_END_0100
+     * @tc.name    : testCheckNodeTimePickerEnd
+     * @tc.desc    : Test get CheckNodeTimePickerEnd's result.
+     * @tc.level   : LEVEL1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('testCheckNodeTimePickerEnd', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TIME_PICKER_END_0100 start<====`);
+        let Result: number = nativexcomponent.CheckNodeTimePickerEnd();
+        expect(1).assertEqual(Result);
+        done()
+      } catch (err) {
+        console.error(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TIME_PICKER_END_0100 catch err: ` + err);
         expect(false).assertEqual(err);
         done()
       }

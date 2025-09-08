@@ -16,7 +16,7 @@
 import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hypium'
 import nativerenderndk from 'libnoderenderndk.so'
 import Utils from '../common/Utils';
-import { Driver } from '@kit.TestKit';
+import { ON } from '@kit.TestKit';
 
 const ARKUI_ERROR_CODE_NO_ERROR = 0;
 const ARKUI_ERROR_CODE_ERROR = 1;
@@ -29,7 +29,55 @@ export default function NodeEventTest() {
     beforeAll(async (done: Function) => {
       await Utils.pushPage(`NodeEventTest/NodeEventTest`, done);
     });
+    /*
+       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventGetNumberValue_0100
+       * @tc.name       : testOHArkUINodeEventGetNumberValue0100
+       * @tc.desc       : testing OH_ArkUI_NodeEvent_GetNumberValue interface
+       * @tc.size       : MediumTest
+       * @tc.type       : Function
+       * @tc.level      : Level 1
+       */
+    it('testOHArkUINodeEventGetNumberValue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testOHArkUINodeEventGetNumberValue0100 start====");
+          let com = await Utils.driver.findComponent(ON.id('textinput111'))
+          await com.inputText('aa');
+          let result: number = nativerenderndk.GetNumberValueTest_001();
+          console.info(`====>testOHArkUINodeEventGetNumberValue0100 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done();
+        } catch (err) {
+          console.error("====>testOHArkUINodeEventGetNumberValue0100catch err: " + err);
+          expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+          done();
+        }
+      })
+    /*
+     * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventGetNumberValue_0200
+     * @tc.name       : testOHArkUINodeEventGetNumberValue0200
+     * @tc.desc       : testing OH_ArkUI_NodeEvent_GetNumberValue interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
 
+    it('testOHArkUINodeEventGetNumberValue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testOHArkUINodeEventGetNumberValue0200 start====");
+          let com = await Utils.driver.findComponent(ON.id('textinput111'))
+          await com.inputText('aa');
+          let result: number = nativerenderndk.GetNumberValueTest_002();
+          console.info(`====>testOHArkUINodeEventGetNumberValue0200 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done();
+        } catch (err) {
+          console.error("====>testOHArkUINodeEventGetNumberValue0200 catch err: " + err);
+          expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+          done();
+        }
+      })
     /*
         * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventGetNumberValue_0300
         * @tc.name       : testOHArkUINodeEventGetNumberValue0300
@@ -42,19 +90,40 @@ export default function NodeEventTest() {
       async (done: Function) => {
         try {
           console.info("====>testOHArkUINodeEventGetNumberValue0300 start====");
-          let driver = Driver.create();
-          await driver.triggerKey(2022);
-          Utils.sleep(1000);
           let result: number = nativerenderndk.GetNumberValueTest_003();
           console.info(`====>testOHArkUINodeEventGetNumberValue0300 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_NODE_EVENT_PARAM_INVALID);;
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeEventGetNumberValue0300 catch err: " + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+          done();
         }
       })
-
+    /*
+        * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventGetStringValue_0200
+        * @tc.name       : testOHArkUINodeEventGetStringValue0200
+        * @tc.desc       : testing OH_ArkUI_NodeEvent_GetStringValue interface
+        * @tc.size       : MediumTest
+        * @tc.type       : Function
+        * @tc.level      : Level 1
+        */
+    it('testOHArkUINodeEventGetStringValue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testOHArkUINodeEventGetStringValue0200 start====");
+          let com = await Utils.driver.findComponent(ON.id('textinput111'))
+          await com.inputText('aaa');
+          let result: number = nativerenderndk.GetStringValueTest_002();
+          console.info(`====>testOHArkUINodeEventGetStringValue0200 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done();
+        } catch (err) {
+          console.error("====>testOHArkUINodeEventGetStringValue0200 catch err: " + err);
+          expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+          done();
+        }
+      })
     /*
         * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventGetStringValue_0300
         * @tc.name       : testOHArkUINodeEventGetStringValue0300
@@ -67,16 +136,38 @@ export default function NodeEventTest() {
       async (done: Function) => {
         try {
           console.info("====>testOHArkUINodeEventGetStringValue0300 start====");
-          let driver = Driver.create();
-          await driver.triggerKey(2022);
-          Utils.sleep(1000);
           let result: number = nativerenderndk.GetStringValueTest_003();
           console.info(`====>testOHArkUINodeEventGetStringValue0300 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_NODE_EVENT_PARAM_INVALID);;
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeEventGetStringValue0300 catch err: " + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+          done();
+        }
+      })
+    /*
+     * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventSetReturnNumberValue_0100
+     * @tc.name       : testOHArkUINodeEventSetReturnNumberValue0100
+     * @tc.desc       : testing OH_ArkUI_NodeEvent_SetReturnNumberValue interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testOHArkUINodeEventSetReturnNumberValue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testOHArkUINodeEventSetReturnNumberValue0100 start====");
+          let com = await Utils.driver.findComponent(ON.id('textinput111'))
+          await com.inputText('aa');
+          let result: number = nativerenderndk.SetReturnNumberValueTest_001();
+          console.info(`====>testOHArkUINodeEventSetReturnNumberValue0100 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done();
+        } catch (err) {
+          console.error("====>testOHArkUINodeEventSetReturnNumberValue0100 catch err: " + err);
+          expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+          done();
         }
       })
 
@@ -92,16 +183,14 @@ export default function NodeEventTest() {
       async (done: Function) => {
         try {
           console.info("====>testOHArkUINodeEventSetReturnNumberValue0300 start====");
-          let driver = Driver.create();
-          await driver.triggerKey(2022);
-          Utils.sleep(1000);
           let result: number = nativerenderndk.SetReturnNumberValueTest_003();
           console.info(`====>testOHArkUINodeEventSetReturnNumberValue0300 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_NODE_EVENT_PARAM_INVALID);;
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeEventSetReturnNumberValue0300 catch err: " + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+          done();
         }
       })
 

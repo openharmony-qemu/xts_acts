@@ -14,6 +14,7 @@
  */
 import { NodeContent } from '@kit.ArkUI';
 import nativexcomponent from 'libnativexcomponent.so';
+import Utils from '../../../ohosTest/ets/test/common/Utils';
 
 @Entry
 @Component
@@ -33,7 +34,7 @@ struct Index {
     .width('100%')
     .height('100%')
     .onClick(() => {
-      nativexcomponent.CheckNodeFocusBox()
+      Utils.simulateByShell('uinput -K -d 16 -i 1000 -u 16');
     })
   }
 }

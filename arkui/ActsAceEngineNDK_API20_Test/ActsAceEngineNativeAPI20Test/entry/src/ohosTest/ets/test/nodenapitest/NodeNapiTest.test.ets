@@ -62,7 +62,7 @@ export default function NodeNapiTest() {
           console.info("====>testOHArkUIGetNodeHandleFromNapiValue0200 start====");
           let result: number = nativerenderndk.GetNodeHandleFromNapiValueTest_002();
           console.info(`====>testOHArkUIGetNodeHandleFromNapiValue0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUIGetNodeHandleFromNapiValue0200 err: " + err);

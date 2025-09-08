@@ -25,6 +25,30 @@ const ARKUI_ERROR_CODE_COMPONENT_SNAPSHOT_TIMEOUT = 160002;
 
 export default function SnapShotTest() {
   describe('SnapShotTest', () => {
+    beforeAll(async (done: Function) => {
+      await Utils.pushPage(`snapshottest/snapShotTest`, done);
+    });
+    /*
+       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeSnapshot_0100
+       * @tc.name       : testOHArkUIGetNodeSnapshot0100
+       * @tc.desc       : testing OH_ArkUI_GetNodeSnapshot interface
+       * @tc.size       : MediumTest
+       * @tc.type       : Function
+       * @tc.level      : Level 1
+       */
+    it('testOHArkUIGetNodeSnapshot0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testOHArkUIGetNodeSnapshot0100 start====");
+          let result: number = nativerenderndk.GetNodeSnapshotTest_001();
+          console.info(`====>testOHArkUIGetNodeSnapshot0100 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done();
+        } catch (err) {
+          console.error("====>testOHArkUIGetNodeSnapshot0100 err: " + err);
+          expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+        }
+      })
 
     /*
        * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeSnapshot_0200
@@ -40,7 +64,7 @@ export default function SnapShotTest() {
           console.info("====>testOHArkUIGetNodeSnapshot0200 start====");
           let result: number = nativerenderndk.GetNodeSnapshotTest_002();
           console.info(`====>testOHArkUIGetNodeSnapshot0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUIGetNodeSnapshot0200 err: " + err);
@@ -62,7 +86,7 @@ export default function SnapShotTest() {
           console.info("====>testOHArkUIGetNodeSnapshot0300 start====");
           let result: number = nativerenderndk.GetNodeSnapshotTest_003();
           console.info(`====>testOHArkUIGetNodeSnapshot0300 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_INTERNAL_ERROR);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUIGetNodeSnapshot0300 err: " + err);

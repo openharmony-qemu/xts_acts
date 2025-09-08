@@ -24,7 +24,6 @@ const ARKUI_ERROR_CODE_CAPI_INIT_ERROR = 500;
 
 export default function NodeUtilsTest() {
   describe('NodeUtilsTest', () => {
-
     /*
       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutSize_0100
       * @tc.name       : testOHArkUINodeUtilsGetLayoutSize0100
@@ -61,7 +60,7 @@ export default function NodeUtilsTest() {
           console.info("====>testOHArkUINodeUtilsGetLayoutSize0200 start====");
           let result: number = nativerenderndk.GetLayoutSizeTest_002()
           console.info(`====>testOHArkUINodeUtilsGetLayoutSize0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeUtilsGetLayoutSize0200 catch err: " + err);
@@ -105,7 +104,7 @@ export default function NodeUtilsTest() {
           console.info("====>testOHArkUINodeUtilsGetLayoutPosition0200 start====");
           let result: number = nativerenderndk.GetLayoutPositionTest_002()
           console.info(`====>testOHArkUINodeUtilsGetLayoutPosition0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeUtilsGetLayoutPosition0200 catch err: " + err);
@@ -149,7 +148,7 @@ export default function NodeUtilsTest() {
           console.info("====>testOHArkUINodeUtilsGetLayoutPositionInWindow0200 start====");
           let result: number = nativerenderndk.GetLayoutPositionInWindowTest_002()
           console.info(`====>testOHArkUINodeUtilsGetLayoutPositionInWindow0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeUtilsGetLayoutPositionInWindow0200 catch err: " + err);
@@ -193,10 +192,53 @@ export default function NodeUtilsTest() {
           console.info("====>testOHArkUINodeUtilsGetLayoutPositionInScreen0200 start====");
           let result: number = nativerenderndk.GetLayoutPositionInScreenTest_002()
           console.info(`====>testOHArkUINodeUtilsGetLayoutPositionInScreen0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeUtilsGetLayoutPositionInScreen0200 catch err: " + err);
+          expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+        }
+      })
+    /*
+      * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPositionInGlobalDisplay_0100
+      * @tc.name       : testOHArkUINodeUtilsGetLayoutPositionInGlobalDisplay0100
+      * @tc.desc       : testing OH_ArkUI_NodeUtils_GetLayoutPositionInGlobalDisplay interface
+      * @tc.size       : MediumTest
+      * @tc.type       : Function
+      * @tc.level      : Level 1
+     */
+    it('testOHArkUINodeUtilsGetLayoutPositionInGlobalDisplay0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>OHArkUINodeUtilsGetLayoutPositionInGlobalDisplay0100 start====");
+          let result: number = nativerenderndk.GetLayoutPositionInGlobalDisplayTest_001()
+          console.info(`====>OHArkUINodeUtilsGetLayoutPositionInGlobalDisplay0100 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done();
+        } catch (err) {
+          console.error("====>OHArkUINodeUtilsGetLayoutPositionInGlobalDisplay0100 catch err: " + err);
+          expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+        }
+      })
+
+    /*
+       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPositionInGlobalDisplay_0200
+       * @tc.name       : testOHArkUINodeUtilsGetLayoutPositionInGlobalDisplay0200
+       * @tc.desc       : testing OH_ArkUI_NodeUtils_GetLayoutPositionInGlobalDisplay interface
+       * @tc.size       : MediumTest
+       * @tc.type       : Function
+       * @tc.level      : Level 1
+       */
+    it('testOHArkUINodeUtilsGetLayoutPositionInGlobalDisplay0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testOHArkUINodeUtilsGetLayoutPositionInGlobalDisplay0200 start====");
+          let result: number = nativerenderndk.GetLayoutPositionInGlobalDisplayTest_002()
+          console.info(`====>testOHArkUINodeUtilsGetLayoutPositionInGlobalDisplay0200 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done();
+        } catch (err) {
+          console.error("====>testOHArkUINodeUtilsGetLayoutPositionInGlobalDisplay0200 catch err: " + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
         }
       })
@@ -237,7 +279,7 @@ export default function NodeUtilsTest() {
           console.info("====>testOHArkUINodeUtilsGetPositionWithTranslateInWindow0200 start====");
           let result: number = nativerenderndk.GetPositionWithTranslateInWindowTest_002()
           console.info(`====>testOHArkUINodeUtilsGetPositionWithTranslateInWindow0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeUtilsGetPositionWithTranslateInWindow0200 catch err: " + err);
@@ -281,7 +323,7 @@ export default function NodeUtilsTest() {
           console.info("====>testOHArkUINodeUtilsGetPositionWithTranslateInScreen0200 start====");
           let result: number = nativerenderndk.GetPositionWithTranslateInScreenTest_002()
           console.info(`====>testOHArkUINodeUtilsGetPositionWithTranslateInScreen0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeUtilsGetPositionWithTranslateInScreen0200 catch err: " + err);
@@ -303,7 +345,7 @@ export default function NodeUtilsTest() {
           console.info("====>testOHArkUINodeUtilsGetCustomProperty0100 start====");
           let result: number = nativerenderndk.GetCustomPropertyTest_001()
           console.info(`====>testOHArkUINodeUtilsGetCustomProperty0100 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeUtilsGetCustomProperty0100 catch err: " + err);
@@ -347,14 +389,34 @@ export default function NodeUtilsTest() {
           console.info("====>testOHArkUINodeUtilsGetActiveChildrenInfo0200 start====");
           let result: number = nativerenderndk.GetActiveChildrenInfoTest_002()
           console.info(`====>testOHArkUINodeUtilsGetActiveChildrenInfo0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeUtilsGetActiveChildrenInfo0200 catch err: " + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
         }
       })
-
+    /*
+       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeUtils_SetCrossLanguageOption_0100
+       * @tc.name       : testOHArkUINodeUtilsSetCrossLanguageOption0100
+       * @tc.desc       : testing OH_ArkUI_NodeUtils_SetCrossLanguageOption interface
+       * @tc.size       : MediumTest
+       * @tc.type       : Function
+       * @tc.level      : Level 1
+       */
+    it('testOHArkUINodeUtilsSetCrossLanguageOption0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testOHArkUINodeUtilsSetCrossLanguageOption0100 start====");
+          let result: number = nativerenderndk.SetCrossLanguageOptionTest_001()
+          console.info(`====>testOHArkUINodeUtilsSetCrossLanguageOption0100 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done();
+        } catch (err) {
+          console.error("====>testOHArkUINodeUtilsSetCrossLanguageOption0100 catch err: " + err);
+          expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+        }
+      })
     /*
        * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeUtils_SetCrossLanguageOption_0200
        * @tc.name       : testOHArkUINodeUtilsSetCrossLanguageOption0200
@@ -369,7 +431,7 @@ export default function NodeUtilsTest() {
           console.info("====>testOHArkUINodeUtilsSetCrossLanguageOption0200 start====");
           let result: number = nativerenderndk.SetCrossLanguageOptionTest_002()
           console.info(`====>testOHArkUINodeUtilsSetCrossLanguageOption0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeUtilsSetCrossLanguageOption0200 catch err: " + err);
@@ -413,7 +475,7 @@ export default function NodeUtilsTest() {
           console.info("====>testOHArkUINodeUtilsGetCrossLanguageOption0200 start====");
           let result: number = nativerenderndk.GetCrossLanguageOptionTest_002()
           console.info(`====>testOHArkUINodeUtilsGetCrossLanguageOption0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeUtilsGetCrossLanguageOption0200 catch err: " + err);

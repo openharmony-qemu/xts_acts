@@ -14,25 +14,22 @@
  */
 
 import render from 'libnoderenderndk.so'
-import { CommonView } from '../../componet/CommonView';
 import { NodeContent } from '@kit.ArkUI';
 
 @Entry
 @Component
 struct NodeUtilsTest {
-  PAGE_TAG: string = 'NodeUtilsTest';
+  private nodeContent: NodeContent = new NodeContent();
+  aboutToAppear():void{
+    // 通过C-API创建节点，并添加到管理器nodeContent上
+    render.CreateCustomSpanNode(this.nodeContent);
+  }
+
   build() {
-    Row() {
-      Column() {
-        Text('NodeUtilsTest')
-        CommonView({
-          pageTag: this.PAGE_TAG
-        }).onAppear(()=>{
-          render.CreateCustomSpanNode(this.PAGE_TAG)
-        })
-      }
-      .width('100%')
+    Column() {
+      ContentSlot(this.nodeContent);
     }
+    .width('100%')
     .height('100%')
   }
 }

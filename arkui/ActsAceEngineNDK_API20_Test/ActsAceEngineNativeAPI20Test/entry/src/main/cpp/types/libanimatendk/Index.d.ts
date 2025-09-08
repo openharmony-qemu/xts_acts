@@ -104,7 +104,25 @@ export const AnimatorOptionRegisterOnRepeatCallback0100: () => number;
 export const AnimatorOptionRegisterOnRepeatCallback0200: () => number;
 export const AnimatorOptionRegisterOnRepeatCallback0300: () => number;
 
-
+export const GetArkUIContext: (UIcontext: UIContext) => void;
+export const AnimatorResetAnimatorOption0100: () => number;
+export const AnimatorResetAnimatorOption0200: () => number;
+export const AnimatorResetAnimatorOption0300: () => number;
+export const AnimatorPlay0100: () => number;
+export const AnimatorPlay0200: () => number;
+export const AnimatorFinish0100: () => number;
+export const AnimatorFinish0200: () => number;
+export const AnimatorPause0100: () => number;
+export const AnimatorPause0200: () => number;
+export const AnimatorCancel0100: () => number;
+export const AnimatorCancel0200: () => number;
+export const AnimatorReverse0100: () => number;
+export const AnimatorReverse0200: () => number;
+export const TransitionEffectCombine0100: () => number;
+export const TransitionEffectCombine0200: () => number;
+export const TransitionEffectSetAnimation0100: () => number;
+export const TransitionEffectSetAnimation0200: () => number;
+export const disposeAnimator0100: () => number;
 
 
 

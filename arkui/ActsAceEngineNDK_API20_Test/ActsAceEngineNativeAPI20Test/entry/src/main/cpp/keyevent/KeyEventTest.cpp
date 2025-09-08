@@ -22,12 +22,19 @@ static bool g_scrolllockresult = false;
 static int32_t g_testresult1 = 2;
 static int32_t g_testresult2 = 2;
 static int32_t g_testresult3 = 2;
-static ArkUI_UIInputEvent* g_ArkUI_UIInputEvent = nullptr;
+
 namespace KeyEventTest {
 
 ArkUI_NativeNodeAPI_1 *nodeAPI = nullptr;
-ArkUI_NodeHandle textInputNode;
 
+void onReceiver(ArkUI_NodeEvent *event)
+{
+    const ArkUI_UIInputEvent* g_ArkUI_UIInputEvent = OH_ArkUI_NodeEvent_GetInputEvent(event);
+    g_testresult1 = OH_ArkUI_KeyEvent_IsNumLockOn(g_ArkUI_UIInputEvent, &g_numlockresult);
+    g_testresult2 = OH_ArkUI_KeyEvent_IsCapsLockOn(g_ArkUI_UIInputEvent, &g_capslockresult);
+    g_testresult3 = OH_ArkUI_KeyEvent_IsScrollLockOn(g_ArkUI_UIInputEvent, &g_scrolllockresult);
+    return;
+}
 napi_value CreateTextInputNode(napi_env env, napi_callback_info info)
 {
     if ((env == nullptr) || (info == nullptr)) {
@@ -47,22 +54,14 @@ napi_value CreateTextInputNode(napi_env env, napi_callback_info info)
     OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &nodeContentHandle);
     // 1. 获取ArkUI Native Node API接口
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
-    auto keyevent = nodeAPI->createNode(ARKUI_NODE_COLUMN);
-    static auto button = nodeAPI->createNode(ARKUI_NODE_TEXT_INPUT);
-    nodeAPI->addChild(keyevent, button);
-    nodeAPI->registerNodeEvent(button, NODE_ON_KEY_EVENT, 1, nullptr);
+    auto keyevent = nodeAPI->createNode(ARKUI_NODE_XCOMPONENT);
+    nodeAPI->registerNodeEvent(keyevent, NODE_ON_KEY_EVENT, 1, nullptr);
     ArkUI_NumberValue requestFocusValue[] = {{.i32 = 1}}; // 1表示请求焦点<br>
     ArkUI_AttributeItem requestFocusItem = {.value = requestFocusValue, .size = 1};
-    nodeAPI->setAttribute(button, NODE_FOCUSABLE, &requestFocusItem);
-    nodeAPI->setAttribute(button, NODE_DEFAULT_FOCUS, &requestFocusItem);
+    nodeAPI->setAttribute(keyevent, NODE_FOCUSABLE, &requestFocusItem);
+    nodeAPI->setAttribute(keyevent, NODE_DEFAULT_FOCUS, &requestFocusItem);
     
-    nodeAPI->registerNodeEventReceiver([](ArkUI_NodeEvent *event) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "UIInputTEvent", "Trigger");
-        g_ArkUI_UIInputEvent = OH_ArkUI_NodeEvent_GetInputEvent(event);
-        g_testresult1 = OH_ArkUI_KeyEvent_IsNumLockOn(g_ArkUI_UIInputEvent, &g_numlockresult);
-        g_testresult2 = OH_ArkUI_KeyEvent_IsCapsLockOn(g_ArkUI_UIInputEvent, &g_capslockresult);
-        g_testresult3 = OH_ArkUI_KeyEvent_IsScrollLockOn(g_ArkUI_UIInputEvent, &g_scrolllockresult);
-    });
+    nodeAPI->addNodeEventReceiver(keyevent, onReceiver);
     
     OH_ArkUI_NodeContent_AddNode(nodeContentHandle, keyevent);
     napi_value exports;
@@ -76,40 +75,40 @@ napi_value CreateTextInputNode(napi_env env, napi_callback_info info)
 napi_value IsNumLockOnTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_testresult1, &retValue);
+    napi_create_int32(env, g_testresult1 == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 napi_value IsNumLockOnTest_002(napi_env env, napi_callback_info info)
 {
     int32_t result1 = OH_ArkUI_KeyEvent_IsNumLockOn(nullptr, &g_numlockresult);
     napi_value retValue;
-    napi_create_int32(env, result1, &retValue);
+    napi_create_int32(env, result1 == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 napi_value IsCapsLockOnTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_testresult2, &retValue);
+    napi_create_int32(env, g_testresult2 == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 napi_value IsCapsLockOnTest_002(napi_env env, napi_callback_info info)
 {
     int32_t result1 = OH_ArkUI_KeyEvent_IsCapsLockOn(nullptr, &g_capslockresult);
     napi_value retValue;
-    napi_create_int32(env, result1, &retValue);
+    napi_create_int32(env, result1 == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 napi_value IsScrollLockOnTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_testresult3, &retValue);
+    napi_create_int32(env, g_testresult3 == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 napi_value IsScrollLockOnTest_002(napi_env env, napi_callback_info info)
 {
     int32_t result1 = OH_ArkUI_KeyEvent_IsScrollLockOn(nullptr, &g_scrolllockresult);
     napi_value retValue;
-    napi_create_int32(env, result1, &retValue);
+    napi_create_int32(env, result1 == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 }

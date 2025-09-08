@@ -14,7 +14,6 @@
  */
 
 import render from 'libnoderenderndk.so'
-import { CommonView } from '../../componet/CommonView';
 import { NodeContent } from '@kit.ArkUI';
 
 @Entry
@@ -25,7 +24,7 @@ struct NodeAdapterTest {
   aboutToAppear():void{
     // 通过C-API创建节点，并添加到管理器nodeContent上
     if (render) {
-      render.CreateAdapterNode(this.nodeContent, 'TestAPP');
+      render.CreateAdapterNode(this.nodeContent);
     }
   }
   build() {

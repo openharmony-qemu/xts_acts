@@ -25,17 +25,18 @@ export function NavDestinationTestBuilder() {
 struct NavDestinationTest {
   PAGE_TAG: string = 'NavDestinationTest';
   private nodeContent: NodeContent = new NodeContent();
-  @Consume pathStack: NavPathStack
+  @Consume pathStack: NavPathStack;
   aboutToAppear():void{
     // 通过C-API创建节点，并添加到管理器nodeContent上
     if (render) {
-      render.CreateNavDestination(this.nodeContent, 'TestAPP');
+      render.CreateNavigation(this.nodeContent);
     }
   }
   build() {
     Row() {
       NavDestination() {
         ContentSlot(this.nodeContent);
+        Button('NavDestination')
       }
       .title('NavDestinationTest')
       .width('100%')

@@ -34,7 +34,6 @@ export default function AccessibilityNdkTest1() {
       async (done: Function) => {
         try {
           console.info("====>testOHArkUIAccessibilityProviderRegisterCallback0100 start====");
-
           let result: number = accessibilityNdk.RegisterCallback0100();
           console.info(`====>testOHArkUIAccessibilityProviderRegisterCallback0100 result====${result}`);
           expect(result).assertEqual(RESULT_SUCCESSFUL);
@@ -58,7 +57,6 @@ export default function AccessibilityNdkTest1() {
       async (done: Function) => {
         try {
           console.info("====>testOHArkUIAccessibilityProviderRegisterCallback0200 start====");
-
           let result: number = accessibilityNdk.RegisterCallback0200();
           console.info(`====>testOHArkUIAccessibilityProviderRegisterCallback0200 result====${result}`);
           expect(result).assertEqual(RESULT_BAD_PARAMETER);
@@ -82,7 +80,6 @@ export default function AccessibilityNdkTest1() {
       async (done: Function) => {
         try {
           console.info("====>testOHArkUIAccessibilityProviderRegisterCallback0300 start====");
-
           let result: number = accessibilityNdk.RegisterCallback0300();
           console.info(`====>testOHArkUIAccessibilityProviderRegisterCallback0300 result====${result}`);
           expect(result).assertEqual(RESULT_BAD_PARAMETER);
@@ -106,7 +103,6 @@ export default function AccessibilityNdkTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testOHArkUIAccessibilityProviderRegisterCallbackWithInstance0100 start====");
-
           let result: number = accessibilityNdk.RegisterCallbackWithInstance0100();
           console.info(`====>testOHArkUIAccessibilityProviderRegisterCallbackWithInstance0100 result====${result}`);
           expect(result).assertEqual(RESULT_SUCCESSFUL);
@@ -130,7 +126,6 @@ export default function AccessibilityNdkTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testOHArkUIAccessibilityProviderRegisterCallbackWithInstance0200 start====");
-
           let result: number = accessibilityNdk.RegisterCallbackWithInstance0200();
           console.info(`====>testOHArkUIAccessibilityProviderRegisterCallbackWithInstance0200 result====${result}`);
           expect(result).assertEqual(RESULT_BAD_PARAMETER);
@@ -154,7 +149,6 @@ export default function AccessibilityNdkTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testOHArkUIAccessibilityProviderRegisterCallbackWithInstance0300 start====");
-
           let result: number = accessibilityNdk.RegisterCallbackWithInstance0300();
           console.info(`====>testOHArkUIAccessibilityProviderRegisterCallbackWithInstance0300 result====${result}`);
           expect(result).assertEqual(RESULT_BAD_PARAMETER);
