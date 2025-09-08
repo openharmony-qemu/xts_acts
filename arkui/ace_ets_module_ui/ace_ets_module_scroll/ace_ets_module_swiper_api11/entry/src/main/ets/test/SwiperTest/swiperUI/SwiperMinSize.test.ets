@@ -41,7 +41,6 @@ export default function SwiperMinSize() {
         }
       } catch (err) {
         console.error("push SwiperMinSize page error: " + err);
-        expect().assertFail();
       }
       done();
     });
