@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest';
 
 function sleep(time: number) {
