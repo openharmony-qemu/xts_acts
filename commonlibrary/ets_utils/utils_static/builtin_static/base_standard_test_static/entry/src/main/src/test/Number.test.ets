@@ -117,9 +117,13 @@ export default function numberTest() {
       try {
         const result: string = expo(123456, -1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual("fraction must be 0 to 100");
+      } catch (err) {
+        if (err instanceof ArgumentOutOfRangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -136,9 +140,13 @@ export default function numberTest() {
       try {
         const result: string = expo(123456, 101);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual("fraction must be 0 to 100");
+      } catch (err) {
+        if (err instanceof ArgumentOutOfRangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -673,7 +681,7 @@ export default function numberTest() {
     it('testNumberArabic0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testNumberArabic0003';
       try {
-        expect(eArabic1("NaN")).assertEqual("ليس رقم")
+        expect(eArabic(NaN)).assertEqual("ليس رقم")
       } catch (err: Error) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -1063,9 +1071,13 @@ export default function numberTest() {
         };
         console.log(precise(123.456));
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual("fraction must be 1 to 100");
+      } catch (err) {
+        if (err instanceof ArgumentOutOfRangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1128,9 +1140,13 @@ export default function numberTest() {
         };
         console.log(precise(123.456));
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual("fraction must be 1 to 100");
+      } catch (err) {
+        if (err instanceof ArgumentOutOfRangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 

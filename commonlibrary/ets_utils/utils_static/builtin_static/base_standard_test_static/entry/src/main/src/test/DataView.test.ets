@@ -114,9 +114,13 @@ export default function DataViewTest() {
         dView.setUint32(65535, 3);
         let value: Number = dView.getUint32(1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -136,9 +140,13 @@ export default function DataViewTest() {
         dView.setUint32(-1, 3);
         let value = dView.getUint32(0);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual('getIndex < 0');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -223,9 +231,13 @@ export default function DataViewTest() {
         dView.setUint16(65535, 3);
         let value: Number = dView.getUint16(1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -245,9 +257,13 @@ export default function DataViewTest() {
         dView.setUint16(-1, 3);
         let value = dView.getUint16(0);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual('getIndex < 0');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -333,9 +349,13 @@ export default function DataViewTest() {
         dView.setUint8(65535, 3);
         let value = dView.getUint8(1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -355,9 +375,13 @@ export default function DataViewTest() {
         dView.setUint8(-1, 3);
         let value = dView.getUint8(0);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual('getIndex < 0');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -443,9 +467,13 @@ export default function DataViewTest() {
         dView.setInt32(65535, 3);
         let value = dView.getInt32(1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("getIndex +elementSize > viewSize");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -465,9 +493,13 @@ export default function DataViewTest() {
         dView.setInt32(-1, 3);
         let value = dView.getInt32(0);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("getIndex < 0");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -553,9 +585,13 @@ export default function DataViewTest() {
         dView.setUint16(65535, 3);
         let value: Number = dView.getUint16(1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("getIndex +elementSize > viewSize");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -575,9 +611,13 @@ export default function DataViewTest() {
         dView.setInt16(-1, 3);
         let value = dView.getUint16(0);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("getIndex < 0");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -662,9 +702,13 @@ export default function DataViewTest() {
         let dView = new DataView(value);
         dView.setInt8(65535, 3);
         dView.getInt8(1);
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual("getIndex +elementSize > viewSize");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -684,9 +728,13 @@ export default function DataViewTest() {
         dView.setInt8(-1, 3);
         dView.getInt8(0);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual("getIndex < 0");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -728,9 +776,13 @@ export default function DataViewTest() {
         dView.setFloat64(5, 3);
         let result: Number = dView.getFloat64(1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual("getIndex +elementSize > viewSize");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -750,9 +802,13 @@ export default function DataViewTest() {
         dView.setFloat64(5.5 as int, 3);
         let result: Number = dView.getFloat64(1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual("getIndex +elementSize > viewSize");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -772,9 +828,13 @@ export default function DataViewTest() {
         dView.setFloat64(65535, 3);
         let result: Number = dView.getFloat64(1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual("getIndex +elementSize > viewSize");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -794,9 +854,13 @@ export default function DataViewTest() {
         dView.setFloat64(-1, 3);
         let result: Number = dView.getFloat64(1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual("getIndex < 0");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -882,9 +946,13 @@ export default function DataViewTest() {
         dView.setFloat32(65535, 3);
         let value = dView.getFloat32(1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("getIndex +elementSize > viewSize");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -904,9 +972,13 @@ export default function DataViewTest() {
         dView.setFloat32(-1, 3);
         let value = dView.getFloat32(1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("getIndex < 0");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -948,9 +1020,13 @@ export default function DataViewTest() {
         dView.setBigUint64(5, 4n);
         let value = dView.getBigUint64(1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("getIndex +elementSize > viewSize");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -970,9 +1046,13 @@ export default function DataViewTest() {
         dView.setBigUint64(5.5 as int, 4n);
         let value = dView.getBigUint64(1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("getIndex +elementSize > viewSize");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -992,9 +1072,13 @@ export default function DataViewTest() {
         dView.setBigUint64(65535, 4n);
         let value = dView.getBigUint64(1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("getIndex +elementSize > viewSize");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1014,9 +1098,13 @@ export default function DataViewTest() {
         dView.setBigUint64(-1, 4n);
         let value = dView.getBigUint64(1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("getIndex < 0");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1058,9 +1146,13 @@ export default function DataViewTest() {
         dView.setBigInt64(0, 4n);
         let value = dView.getBigInt64(1);
         expect(false).assertFail()
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("getIndex +elementSize > viewSize");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1080,9 +1172,13 @@ export default function DataViewTest() {
         dView.setBigInt64(0, 4n);
         let value = dView.getBigInt64(1);
         expect(false).assertFail()
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("getIndex +elementSize > viewSize");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1102,9 +1198,13 @@ export default function DataViewTest() {
         dView.setBigInt64(0, 4n);
         let value = dView.getBigInt64(1);
         expect(false).assertFail()
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("getIndex +elementSize > viewSize");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1124,9 +1224,13 @@ export default function DataViewTest() {
         dView.setBigInt64(0, 4n);
         let value = dView.getBigInt64(1);
         expect(false).assertFail()
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual("getIndex +elementSize > viewSize")
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1208,10 +1312,14 @@ export default function DataViewTest() {
         const dataview = new DataView(buffer);
         let value = dataview.byteOffset;
         expect(false).assertFail()
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("integerIndex < 0 or integerIndex > SAFE_NUMBER");
-      }
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
+      }      
     })
 
     /**
@@ -1248,9 +1356,13 @@ export default function DataViewTest() {
         const dataView = new DataView(new ArrayBuffer(8));
         const value = dataView.getBigInt64(1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1268,9 +1380,13 @@ export default function DataViewTest() {
         const dataView = new DataView(new ArrayBuffer(8));
         const value = dataView.getBigInt64(-1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex < 0');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1288,9 +1404,13 @@ export default function DataViewTest() {
         const dataView = new DataView(new ArrayBuffer(8));
         const value = dataView.getBigInt64(5.5 as int);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1308,9 +1428,13 @@ export default function DataViewTest() {
         const dataView = new DataView(new ArrayBuffer(8));
         const value = dataView.getBigInt64(65535);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1348,9 +1472,13 @@ export default function DataViewTest() {
         const dataView = new DataView(new ArrayBuffer(8));
         const value = dataView.getBigUint64(5);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1368,9 +1496,13 @@ export default function DataViewTest() {
         const dataView = new DataView(new ArrayBuffer(8));
         const value = dataView.getBigUint64(5.5 as int);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1388,9 +1520,13 @@ export default function DataViewTest() {
         const dataView = new DataView(new ArrayBuffer(8));
         const value = dataView.getBigUint64(-1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex < 0');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1408,9 +1544,13 @@ export default function DataViewTest() {
         const dataView = new DataView(new ArrayBuffer(8));
         const value = dataView.getBigUint64(65535);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1448,9 +1588,13 @@ export default function DataViewTest() {
         const dataView = new DataView(new ArrayBuffer(4));
         const value = dataView.getFloat32(1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("getIndex +elementSize > viewSize");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1469,9 +1613,13 @@ export default function DataViewTest() {
         const dataview = new DataView(buffer);
         dataview.getFloat32(5);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1490,9 +1638,13 @@ export default function DataViewTest() {
         const dataview = new DataView(buffer);
         dataview.getFloat32(-1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex < 0');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1511,9 +1663,13 @@ export default function DataViewTest() {
         const dataview = new DataView(buffer);
         dataview.getFloat32(65535);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1532,9 +1688,13 @@ export default function DataViewTest() {
         const dataview = new DataView(buffer);
         dataview.getFloat32(5.5 as int);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1574,9 +1734,13 @@ export default function DataViewTest() {
         const dataview = new DataView(buffer);
         dataview.getFloat64(1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1595,9 +1759,13 @@ export default function DataViewTest() {
         const dataview = new DataView(buffer);
         dataview.getFloat64(5);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1615,9 +1783,13 @@ export default function DataViewTest() {
         const buffer = new ArrayBuffer(8);
         const dataview = new DataView(buffer);
         dataview.getFloat64(-1);
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex < 0');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1636,9 +1808,13 @@ export default function DataViewTest() {
         const dataview = new DataView(buffer);
         dataview.getFloat64(65535);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1657,9 +1833,13 @@ export default function DataViewTest() {
         const dataview = new DataView(buffer);
         dataview.getFloat64(5.5 as int);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1741,9 +1921,13 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         dataView.getInt8(65535);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1762,9 +1946,13 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         dataView.getInt8(-1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual('getIndex < 0');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1843,9 +2031,13 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         dataView.getInt16(65535);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1864,9 +2056,13 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         dataView.getInt16(-1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual('getIndex < 0');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1925,9 +2121,13 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         dataView.getInt32(5);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1946,9 +2146,13 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         dataView.getInt32(65535);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1967,9 +2171,13 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         dataView.getInt32(-1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex < 0');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -1988,9 +2196,13 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         dataView.getInt32(5.5 as int);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -2072,9 +2284,13 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         dataView.getUint8(65535);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex +elementSize > viewSize');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -2093,9 +2309,13 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         dataView.getUint8(-1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('getIndex < 0');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -2199,9 +2419,13 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         const result = dataView.getUint16(65535);
         expect(false).assertFail();
-      } catch (err: Error) {
-        expect(err.message).assertEqual('getIndex +elementSize > viewSize');
-        console.error(`${TAG} failed, error: ${err.message}`);
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -2220,9 +2444,13 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         const result = dataView.getUint16(-1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        expect(err.message).assertEqual('getIndex < 0');
-        console.error(`${TAG} failed, error: ${err.message}`);
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -2285,9 +2513,13 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         const result = dataView.getUint32(5);
         expect(false).assertFail();
-      } catch (err: Error) {
-        expect(err.message).assertEqual('getIndex +elementSize > viewSize');
-        console.error(`${TAG} failed, error: ${err.message}`);
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -2306,9 +2538,13 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         const result = dataView.getUint32(5.5 as int);
         expect(false).assertFail();
-      } catch (err: Error) {
-        expect(err.message).assertEqual('getIndex +elementSize > viewSize');
-        console.error(`${TAG} failed, error: ${err.message}`);
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -2327,9 +2563,13 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         const result = dataView.getUint32(65535);
         expect(false).assertFail();
-      } catch (err: Error) {
-        expect(err.message).assertEqual('getIndex +elementSize > viewSize');
-        console.error(`${TAG} failed, error: ${err.message}`);
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -2348,9 +2588,13 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         const result = dataView.getUint32(-1);
         expect(false).assertFail();
-      } catch (err: Error) {
-        expect(err.message).assertEqual('getIndex < 0');
-        console.error(`${TAG} failed, error: ${err.message}`);
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 

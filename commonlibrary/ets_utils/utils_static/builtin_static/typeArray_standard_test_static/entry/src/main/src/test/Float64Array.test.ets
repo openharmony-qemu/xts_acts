@@ -91,10 +91,14 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(0);
         array[0] = 3;
-        expect(String(array[0])).assertEqual('undefined');
-      } catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -131,10 +135,14 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(10);
         array[10] = 3;
-        expect(String(array[10])).assertEqual('undefined');
-      } catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -189,7 +197,7 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array([21, 31]);
         expect(String(array[1])).assertEqual('31');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -207,10 +215,15 @@ export default function Float64ArrayTest() {
       const TAG = "testConstructor0010";
       try {
         let array = new Float64Array([21, 31]);
-        expect(String(array[3])).assertEqual('undefined');
-      }catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -227,10 +240,14 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Array<number>(21, 31));
         array[10] = 3;
-        expect(String(array[10])).assertEqual('undefined');
-      } catch(err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -247,7 +264,7 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Float64Array(new Array<number>(21,31)));
         expect(String(array[0])).assertEqual('21');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -265,7 +282,7 @@ export default function Float64ArrayTest() {
       const TAG = "testConstructor0013";
       try {
         let array = new Float64Array(new Float64Array(new Array<number>(21,31)));
-        expect(String(array[1])).assertEqual(31);
+        expect(array[1]).assertEqual(31);
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -284,10 +301,15 @@ export default function Float64ArrayTest() {
       const TAG = "testConstructor0014";
       try {
         let array = new Float64Array(new Float64Array(new Array<number>(21,31)));
-        expect(String(array[3])).assertEqual('undefined');
-      }catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -304,10 +326,14 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Float64Array(new Array<number>(21,31)));
         array[10] = 3;
-        expect(String(array[10])).assertEqual('undefined');
-      }catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -343,7 +369,7 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float32Array(new Array<number>(21,31));
         expect(String(array[1])).assertEqual('31');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -361,10 +387,15 @@ export default function Float64ArrayTest() {
       const TAG = "testFloat64ArrayConstructor0018";
       try {
         let array = new Float64Array(new Array<number>(21,31));
-        expect(String(array[3])).assertEqual('undefined');
-      } catch(err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -381,10 +412,14 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Float64Array([21,31]));
         array[10] = 3;
-        expect(String(array[10])).assertEqual('undefined');
-      }catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -401,7 +436,7 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Int8Array([21,31]));
         expect(String(array[0])).assertEqual('21');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -420,7 +455,7 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Int8Array(new Array<number>(21,31)));
         expect(String(array[1])).assertEqual('31');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -438,10 +473,15 @@ export default function Float64ArrayTest() {
       const TAG = "testFloat64ArrayConstructor0022";
       try {
         let array = new Float64Array(new Int8Array(new Array<number>(21,31)));
-        expect(String(array[3])).assertEqual('undefined');
-      }catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -458,10 +498,14 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Int8Array(new Array<number>(21,31)));
         array[10] = 3;
-        expect(String(array[10])).assertEqual('undefined');
-      } catch(err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -478,7 +522,7 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Uint8Array(new Array<number>(21,31)));
         expect(String(array[0])).assertEqual('21');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -497,7 +541,7 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Uint8Array(new Array<number>(21,31)));
         expect(String(array[1])).assertEqual('31');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -515,10 +559,15 @@ export default function Float64ArrayTest() {
       const TAG = "testFloat64ArrayConstructor0026";
       try {
         let array = new Float64Array(new Uint8Array(new Array<number>(21,31)));
-        expect(String(array[3])).assertEqual('undefined');
-      } catch(err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -535,10 +584,14 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Uint8Array(new Array<number>(21,31)));
         array[10] = 3;
-        expect(String(array[10])).assertEqual('undefined');
-      }catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -555,7 +608,7 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Uint8ClampedArray(new Array<number>(21,31)));
         expect(String(array[0])).assertEqual('21');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -592,10 +645,15 @@ export default function Float64ArrayTest() {
       const TAG = "testFloat64ArrayConstructor0030";
       try {
         let array = new Float64Array(new Uint8ClampedArray(new Array<number>(21,31)));
-        expect(String(array[3])).assertEqual('undefined');
-      }catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -613,10 +671,14 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Uint8ClampedArray(new Array<number>(21,31)));
         array[10] = 3;
-        expect(String(array[10])).assertEqual(undefined);
-      }catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -670,10 +732,15 @@ export default function Float64ArrayTest() {
       const TAG = "testFloat64ArrayConstructor0034";
       try {
         let array = new Float64Array(new Int16Array(new Array<number>(21,31)));
-        expect(String(array[3])).assertEqual('undefined');
-      }catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -691,10 +758,14 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Int16Array(new Array<number>(21,31)));
         array[10] = 3;
-        expect(String(array[10])).assertEqual('undefined');
-      } catch(err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -711,7 +782,7 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Uint16Array(new Array<number>(21,31)));
         expect(String(array[0])).assertEqual('21');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -730,7 +801,7 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Uint16Array(new Array<number>(21,31)));
         expect(String(array[1])).assertEqual('31');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -748,10 +819,15 @@ export default function Float64ArrayTest() {
       const TAG = "testFloat64ArrayConstructor0038";
       try {
         let array = new Float64Array(new Uint16Array(new Array<number>(21,31)));
-        expect(String(array[3])).assertEqual('undefined');
-      } catch(err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -769,10 +845,14 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Uint16Array(new Array<number>(21,31)));
         array[10] = 3;
-        expect(String(array[10])).assertEqual('undefined');
-      }catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -789,7 +869,7 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Int32Array(new Array<number>(21,31)));
         expect(String(array[0])).assertEqual('21');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -808,7 +888,7 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Int32Array(new Array<number>(21,31)));
         expect(String(array[1])).assertEqual('31');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -826,10 +906,15 @@ export default function Float64ArrayTest() {
       const TAG = "testFloat64ArrayConstructor0042";
       try {
         let array = new Float64Array(new Int32Array(new Array<number>(21,31)));
-        expect(String(array[3])).assertEqual('undefined');
-      } catch(err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -847,10 +932,14 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Int32Array(new Array<number>(21,31)));
         array[10] = 3;
-        expect(String(array[10])).assertEqual('undefined');
-      }catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -904,10 +993,15 @@ export default function Float64ArrayTest() {
       const TAG = "testFloat64ArrayConstructor0046";
       try {
         let array = new Float64Array(new Uint32Array(new Array<number>(21,31)));
-        expect(String(array[3])).assertEqual('undefined');
-      }catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -925,10 +1019,14 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Uint32Array(new Array<number>(21,31)));
         array[10] = 3;
-        expect(String(array[10])).assertEqual('undefined');
-      } catch(err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -977,7 +1075,7 @@ export default function Float64ArrayTest() {
     //     let bigInt64Array = new BigInt64Array([21n,31n]);
     //     new Float64Array(bigInt64Array);
     //     expect(false).assertFail();
-    //   }catch (err:BusinessError) {
+    //   } catch (err:BusinessError) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(err.name).assertEqual('TypeError');
     //     expect(err.message).assertContain('srcArrayContentType is not equal objContentType.');
@@ -1028,7 +1126,7 @@ export default function Float64ArrayTest() {
     //   try {
     //     let array = new Float64Array(new BigUint64Array(new Array<number>(21n,31n)));
     //     expect(false).assertFail();
-    //   }catch (err:BusinessError) {
+    //   } catch (err:BusinessError) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(err.name).assertEqual('TypeError');
     //     expect(err.message).assertContain('srcArrayContentType is not equal objContentType.');
@@ -1048,7 +1146,7 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Float32Array(new Array<number>(21,31)));
         expect(String(array[0])).assertEqual('21');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1067,7 +1165,7 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Float32Array(new Array<number>(21,31)));
         expect(String(array[1])).assertEqual('31');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1085,10 +1183,15 @@ export default function Float64ArrayTest() {
       const TAG = "testFloat64ArrayConstructor0054";
       try {
         let array = new Float64Array(new Float32Array(new Array<number>(21,31)));
-        expect(String(array[3])).assertEqual('undefined');
-      } catch(err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1106,10 +1209,14 @@ export default function Float64ArrayTest() {
       try {
         let array = new Float64Array(new Float32Array(new Array<number>(21,31)));
         array[10] = 3;
-        expect(String(array[10])).assertEqual('undefined');
-      } catch(err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1129,7 +1236,7 @@ export default function Float64ArrayTest() {
         array[0] = 21;
         array[1] = 31;
         expect(String(array[0])).assertEqual('21');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1172,10 +1279,15 @@ export default function Float64ArrayTest() {
         let array = new Float64Array(buffer);
         array[0] = 21;
         array[1] = 31;
-        expect(array[3]).assertEqual(undefined);
-      }catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1195,11 +1307,14 @@ export default function Float64ArrayTest() {
         array[0] = 21;
         array[1] = 31;
         array[10] = 5;
-        expect(array[3]).assertEqual(undefined);
-        expect(array[10]).assertEqual(undefined);
-      } catch(err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1219,7 +1334,7 @@ export default function Float64ArrayTest() {
         array[0] = 21;
         array[1] = 31;
         expect(String(array[0])).assertEqual('21');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1262,10 +1377,15 @@ export default function Float64ArrayTest() {
         let array = new Float64Array(buffer, 0, 2);
         array[0] = 21;
         array[1] = 31;
-        expect(array[3]).assertEqual(undefined);
-      }catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1286,10 +1406,14 @@ export default function Float64ArrayTest() {
         array[0] = 21;
         array[1] = 31;
         array[10] = 5;
-        expect(array[10]).assertEqual(undefined);
-      } catch(err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1306,7 +1430,7 @@ export default function Float64ArrayTest() {
       try {
         let bytes = Float64Array.BYTES_PER_ELEMENT;
         expect(String(bytes)).assertEqual('8');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1325,7 +1449,7 @@ export default function Float64ArrayTest() {
       try {
         let bytes = new Float64Array(3);
         expect(String(bytes.length)).assertEqual('3');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1384,7 +1508,7 @@ export default function Float64ArrayTest() {
         let array = Float64Array.of(10);
         array[0] = 3;
         expect(String(array[0])).assertEqual('3');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1403,11 +1527,15 @@ export default function Float64ArrayTest() {
       try {
         let array = Float64Array.of(10);
         array[10] = 3;
-        expect(array[10]).assertEqual(undefined);
-      } catch(err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
-      }
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
+      }        
     });
 
     /**
@@ -1422,11 +1550,16 @@ export default function Float64ArrayTest() {
       const TAG = "testOf0075";
       try {
         let array = Float64Array.of(10);
-        expect(array[1]).assertEqual(undefined);
-      }catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        array[1] = 3;
         expect(false).assertFail();
-      }
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
+      }           
     });
 
     /**
@@ -1442,7 +1575,7 @@ export default function Float64ArrayTest() {
       try {
         let array = Float64Array.of(21, 31);
         expect(String(array[0])).assertEqual('21');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1479,10 +1612,15 @@ export default function Float64ArrayTest() {
       const TAG = "testOf0078";
       try {
         let array = Float64Array.of(21, 31);
-        expect(String(array[3])).assertEqual('undefined');
-      }catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1499,10 +1637,14 @@ export default function Float64ArrayTest() {
       try {
         let array = Float64Array.of(21, 31);
         array[10] = 3;
-        expect(String(array[10])).assertEqual('undefined');
-      }catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1544,7 +1686,7 @@ export default function Float64ArrayTest() {
         expect(String(arrayOffSet0.byteLength)).assertEqual('32');
         const arrayOffSet8 = new Float64Array(buffer, 8);
         expect(String(arrayOffSet8.byteLength)).assertEqual('24');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1609,10 +1751,7 @@ export default function Float64ArrayTest() {
         let float64Array = new Float64Array(array);
         expect(String(float64Array[0])).assertEqual('21');
         expect(String(float64Array[1])).assertEqual('31');
-        expect(String(float64Array[3])).assertEqual('undefined');
-        float64Array[10] = 3;
-        expect(float64Array[10]).assertEqual(undefined);
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1633,10 +1772,7 @@ export default function Float64ArrayTest() {
         let float64Array = new Float64Array(array);
         expect(String(float64Array[0])).assertEqual('21');
         expect(String(float64Array[1])).assertEqual('31');
-        expect(String(float64Array[3])).assertEqual('undefined');
-        float64Array[10] = 3;
-        expect(String(float64Array[10])).assertEqual('undefined');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1657,9 +1793,6 @@ export default function Float64ArrayTest() {
         let float64Array = new Float64Array(array);
         expect(String(float64Array[0])).assertEqual('21');
         expect(String(float64Array[1])).assertEqual('31');
-        expect(String(float64Array[3])).assertEqual('undefined');
-        float64Array[10] = 3;
-        expect(String(float64Array[10])).assertEqual('undefined');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -1681,9 +1814,6 @@ export default function Float64ArrayTest() {
         let float64Array = new Float64Array(array);
         expect(String(float64Array[0])).assertEqual('21');
         expect(String(float64Array[1])).assertEqual('31');
-        expect(String(float64Array[3])).assertEqual('undefined');
-        float64Array[10] = 3;
-        expect(String(float64Array[10])).assertEqual('undefined');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -1705,9 +1835,6 @@ export default function Float64ArrayTest() {
         let float64Array = new Float64Array(array);
         expect(String(float64Array[0])).assertEqual('21');
         expect(String(float64Array[1])).assertEqual('31');
-        expect(String(float64Array[3])).assertEqual('undefined');
-        float64Array[10] = 3;
-        expect(String(float64Array[10])).assertEqual('undefined');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -1729,9 +1856,6 @@ export default function Float64ArrayTest() {
         let float64Array = new Float64Array(array);
         expect(String(float64Array[0])).assertEqual('21');
         expect(String(float64Array[1])).assertEqual('31');
-        expect(String(float64Array[3])).assertEqual('undefined');
-        float64Array[10] = 3;
-        expect(String(float64Array[10])).assertEqual('undefined');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -1753,10 +1877,7 @@ export default function Float64ArrayTest() {
         let float64Array = new Float64Array(array);
         expect(String(float64Array[0])).assertEqual('21');
         expect(String(float64Array[1])).assertEqual('31');
-        expect(String(float64Array[3])).assertEqual('undefined');
-        float64Array[10] = 3;
-        expect(String(float64Array[10])).assertEqual('undefined');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1819,9 +1940,6 @@ export default function Float64ArrayTest() {
         let float64Array = new Float64Array(array);
         expect(String(float64Array[0])).assertEqual('21');
         expect(String(float64Array[1])).assertEqual('31');
-        expect(String(float64Array[3])).assertEqual('undefined');
-        float64Array[10] = 3;
-        expect(String(float64Array[10])).assertEqual('undefined');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -1841,7 +1959,7 @@ export default function Float64ArrayTest() {
       try {
         let float64Array = new Float64Array(8);
         expect(String(float64Array.length)).assertEqual('8');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1858,15 +1976,10 @@ export default function Float64ArrayTest() {
     it('testConstructor0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testConstructor0097";
       try {
-        let array:Array<number> = new Array<number>(2);
+        let array:Array<number> = new Array<number>(21, 31);
         let float64Array = new Float64Array(array);
-        float64Array[0] = 21;
-        float64Array[1] = 31;
         expect(String(float64Array[0])).assertEqual('21');
         expect(String(float64Array[1])).assertEqual('31');
-        expect(String(float64Array[3])).assertEqual('undefined');
-        float64Array[10] = 3;
-        expect(String(float64Array[10])).assertEqual('undefined');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -1884,15 +1997,10 @@ export default function Float64ArrayTest() {
     it('testConstructor0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testConstructor0098";
       try {
-        let array:Array<number> = new Array<number>(2);
+        let array:Array<number> = new Array<number>(21, 31);
         let float64Array = new Float64Array(array);
-        float64Array[0] = 21;
-        float64Array[1] = 31;
         expect(String(float64Array[0])).assertEqual('21');
         expect(String(float64Array[1])).assertEqual('31');
-        expect(String(float64Array[3])).assertEqual('undefined');
-        float64Array[10] = 3;
-        expect(String(float64Array[10])).assertEqual('undefined');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -1916,10 +2024,7 @@ export default function Float64ArrayTest() {
         float64Array[1] = 31;
         expect(String(float64Array[0])).assertEqual('21');
         expect(String(float64Array[1])).assertEqual('31');
-        expect(String(float64Array[3])).assertEqual('undefined');
-        float64Array[10] = 3;
-        expect(String(float64Array[10])).assertEqual('undefined');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1942,10 +2047,7 @@ export default function Float64ArrayTest() {
         float64Array[1] = 31;
         expect(String(float64Array[0])).assertEqual('21');
         expect(String(float64Array[1])).assertEqual('31');
-        expect(String(float64Array[3])).assertEqual('undefined');
-        float64Array[10] = 3;
-        expect(String(float64Array[10])).assertEqual('undefined');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1986,7 +2088,7 @@ export default function Float64ArrayTest() {
     //     let MIN_VALUE = -1.8E308 ;
     //     let array = new Float32Array([MIN_VALUE]);
     //     expect(array[0]).assertEqual(-Infinity);
-    //   }catch (err:BusinessError) {
+    //   } catch (err:BusinessError) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }
@@ -2007,7 +2109,7 @@ export default function Float64ArrayTest() {
     //     let MAX_VALUE = 1.8e308;
     //     let array = new Float64Array(new Array<number>(MAX_VALUE));
     //     expect(array[0]).assertEqual(Infinity);
-    //   }catch (err:BusinessError) {
+    //   } catch (err:BusinessError) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }
@@ -2028,7 +2130,7 @@ export default function Float64ArrayTest() {
     //     let MAX_VALUE = 1.8e308 +1;
     //     let array = new Float64Array(new Array<number>(MAX_VALUE));
     //     expect(array[0]).assertEqual(Infinity);
-    //   }catch (err:BusinessError) {
+    //   } catch (err:BusinessError) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }
@@ -2046,7 +2148,7 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0114";
       try {
-        let array = new Float64Array(new Int8Array(new Array<number>(-128)));
+        let array = new Float64Array(new Int8Array([-128]));
         expect(String(array[0])).assertEqual('-128');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -2066,7 +2168,7 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0115";
       try {
-        let array = new Float64Array(new Int8Array(new Array<number>(-129)));
+        let array = new Float64Array(new Int8Array([-129]));
         expect(String(array[0])).assertEqual('127');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -2086,7 +2188,7 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0116";
       try {
-        let array = new Float64Array(new Int8Array(new Array<number>(127)));
+        let array = new Float64Array(new Int8Array([127]));
         expect(String(array[0])).assertEqual('127');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -2106,9 +2208,9 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0117";
       try {
-        let array = new Float64Array(new Int8Array(new Array<number>(126)));
+        let array = new Float64Array(new Int8Array([126]));
         expect(String(array[0])).assertEqual('126');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2126,9 +2228,9 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0118";
       try {
-        let array = new Float64Array(new Int8Array(new Array<number>(128)));
+        let array = new Float64Array(new Int8Array([128]));
         expect(String(array[0])).assertEqual('-128');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2146,9 +2248,9 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0119";
       try {
-        let array = new Float64Array(new Uint8ClampedArray(new Array<number>(0)));
+        let array = new Float64Array(new Uint8ClampedArray([0]));
         expect(String(array[0])).assertEqual('0');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2166,7 +2268,7 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0120";
       try {
-        let array = new Float64Array(new Uint8ClampedArray(new Array<number>(-1)));
+        let array = new Float64Array(new Uint8ClampedArray([-1]));
         expect(String(array[0])).assertEqual('0');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -2186,9 +2288,9 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0121";
       try {
-        let array = new Float64Array(new Uint8ClampedArray(new Array<number>(255)));
+        let array = new Float64Array(new Uint8ClampedArray([255]));
         expect(String(array[0])).assertEqual('255');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2206,7 +2308,7 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0122";
       try {
-        let array = new Float64Array(new Uint8ClampedArray(new Array<number>(256)));
+        let array = new Float64Array(new Uint8ClampedArray([256]));
         expect(String(array[0])).assertEqual('255');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -2226,9 +2328,9 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0123";
       try {
-        let array = new Float64Array(new Uint8ClampedArray(new Array<number>(254)));
+        let array = new Float64Array(new Uint8ClampedArray([254]));
         expect(String(array[0])).assertEqual('254');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2246,9 +2348,9 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0124";
       try {
-        let array = new Float64Array(new Int16Array(new Array<number>(-32768)));
+        let array = new Float64Array(new Int16Array([-32768]));
         expect(String(array[0])).assertEqual('-32768');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2266,9 +2368,9 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0125";
       try {
-        let array = new Float64Array(new Int16Array(new Array<number>(-32769)));
+        let array = new Float64Array(new Int16Array([-32769]));
         expect(String(array[0])).assertEqual('32767');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2286,7 +2388,7 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0126";
       try {
-        let array = new Float64Array(new Int16Array(new Array<number>(32767)));
+        let array = new Float64Array(new Int16Array([32767]));
         expect(String(array[0])).assertEqual('32767');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -2306,7 +2408,7 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0127";
       try {
-        let array = new Float64Array(new Int16Array(new Array<number>(32768)));
+        let array = new Float64Array(new Int16Array([32768]));
         expect(String(array[0])).assertEqual('-32768');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -2326,7 +2428,7 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0128";
       try {
-        let array = new Float64Array(new Int16Array(new Array<number>(32766)));
+        let array = new Float64Array(new Int16Array([32766]));
         expect(String(array[0])).assertEqual('32766');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -2346,9 +2448,9 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0129";
       try {
-        let array = new Float64Array(new Uint16Array(new Array<number>(0)));
+        let array = new Float64Array(new Uint16Array([0]));
         expect(String(array[0])).assertEqual('0');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2366,7 +2468,7 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0130";
       try {
-        let array = new Float64Array(new Uint16Array(new Array<number>(-1)));
+        let array = new Float64Array(new Uint16Array([-1]));
         expect(String(array[0])).assertEqual('65535');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -2386,9 +2488,9 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0131";
       try {
-        let array = new Float64Array(new Uint16Array(new Array<number>(65535)));
+        let array = new Float64Array(new Uint16Array([65535]));
         expect(String(array[0])).assertEqual('65535');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2406,9 +2508,9 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0132";
       try {
-        let array = new Float64Array(new Uint16Array(new Array<number>(65536)));
+        let array = new Float64Array(new Uint16Array([65536]));
         expect(String(array[0])).assertEqual('0');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2426,9 +2528,9 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0133";
       try {
-        let array = new Float64Array(new Uint16Array(new Array<number>(65534)));
+        let array = new Float64Array(new Uint16Array([65534]));
         expect(String(array[0])).assertEqual('65534');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2466,9 +2568,9 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0135";
       try {
-        let array = new Float64Array(new Int32Array(new Array<number>(-2147483649)));
+        let array = new Float64Array(new Int32Array([-2147483649]));
         expect(String(array[0])).assertEqual('2147483647');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2486,7 +2588,7 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0136";
       try {
-        let array = new Float64Array(new Int32Array(new Array<number>(2147483647)));
+        let array = new Float64Array(new Int32Array([2147483647]));
         expect(String(array[0])).assertEqual('2147483647');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -2506,9 +2608,9 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0137";
       try {
-        let array = new Float64Array(new Int32Array(new Array<number>(2147483648)));
+        let array = new Float64Array(new Int32Array([2147483648]));
         expect(String(array[0])).assertEqual('-2147483648');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2526,8 +2628,8 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0138";
       try {
-        let array = new Float64Array(new Int32Array(new Array<number>(2147483646)));
-        expect(String(array[0])).assertEqual('2147483646');
+        let array = new Float64Array(new Int32Array([2147483646]));
+        expect(array[0]).assertEqual(2147483646);
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -2546,9 +2648,9 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0139";
       try {
-        let array = new Float64Array(new Uint32Array(new Array<number>(0)));
-        expect(String(array[0])).assertEqual('0');
-      }catch (err:BusinessError) {
+        let array = new Float64Array(new Uint32Array([0]));
+        expect(array[0]).assertEqual(0);        
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2566,9 +2668,9 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0140";
       try {
-        let array = new Float32Array(new Uint32Array(new Array<number>(-1)));
-        expect(String(array[0])).assertEqual('4294967296');
-      }catch (err:BusinessError) {
+        let array = new Float32Array(new Uint32Array([-1]));
+        expect(array[0]).assertEqual(4294967296);        
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2586,8 +2688,8 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0141";
       try {
-        let array = new Float64Array(new Uint32Array(new Array<number>(4294967295)));
-        expect(String(array[0])).assertEqual('4294967295');
+        let array = new Float64Array(new Uint32Array([4294967295]));
+        expect(array[0]).assertEqual(4294967295);        
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -2606,9 +2708,9 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0142";
       try {
-        let array = new Float64Array(new Uint32Array(new Array<number>(4294967296)));
-        expect(String(array[0])).assertEqual('0');
-      }catch (err:BusinessError) {
+        let array = new Float64Array(new Uint32Array([4294967296]));
+        expect(array[0]).assertEqual(0);        
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2626,9 +2728,9 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0143";
       try {
-        let array = new Float64Array(new Uint32Array(new Array<number>(4294967294)));
-        expect(String(array[0])).assertEqual('4294967294');
-      }catch (err:BusinessError) {
+        let array = new Float64Array(new Uint32Array([4294967294]));
+        expect(array[0]).assertEqual(4294967294);        
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2646,8 +2748,8 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0144";
       try {
-        let array = new Float64Array(new Uint8Array(new Array<number>(0)));
-        expect(String(array[0])).assertEqual('0');
+        let array = new Float64Array(new Uint8Array([0]));
+        expect(array[0]).assertEqual(0);        
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -2666,9 +2768,9 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0145";
       try {
-        let array = new Float64Array(new Uint8Array(new Array<number>(-1)));
-        expect(String(array[0])).assertEqual('255');
-      }catch (err:BusinessError) {
+        let array = new Float64Array(new Uint8Array([-1]));
+        expect(array[0]).assertEqual(255);        
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2686,8 +2788,8 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0146";
       try {
-        let array = new Float64Array(new Uint8Array(new Array<number>(255)));
-        expect(String(array[0])).assertEqual('255');
+        let array = new Float64Array(new Uint8Array([255]));
+        expect(array[0]).assertEqual(255);        
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -2706,9 +2808,9 @@ export default function Float64ArrayTest() {
     it('testFloat64Constructor0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64Constructor0147";
       try {
-        let array = new Float64Array(new Uint8Array(new Array<number>(256)));
-        expect(String(array[0])).assertEqual('0');
-      }catch (err:BusinessError) {
+        let array = new Float64Array(new Uint8Array([256]));
+        expect(array[0]).assertEqual(0);        
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2727,8 +2829,8 @@ export default function Float64ArrayTest() {
       const TAG = "testFloat64Constructor0148";
       try {
         let MIN_VALUE = -3.4028235e38;
-        let array = new Float64Array(new Float32Array(new Array<number>(MIN_VALUE)));
-        expect(String(array[0])).assertEqual('-3.4028234663852886e38');
+        let array = new Float64Array(new Float32Array([MIN_VALUE]));
+        expect(array[0]).assertEqual(-3.4028234663852886e38);
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -2748,9 +2850,9 @@ export default function Float64ArrayTest() {
       const TAG = "testFloat64Constructor0149";
       try {
         let MIN_VALUE = -3.4028235e38 -1;
-        let array = new Float64Array(new Float32Array(new Array<number>(MIN_VALUE)));
-        expect(String(array[0])).assertEqual('-3.4028234663852886e38');
-      }catch (err:BusinessError) {
+        let array = new Float64Array(new Float32Array([MIN_VALUE]));
+        expect(array[0]).assertEqual(-3.4028234663852886e38);
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2769,9 +2871,9 @@ export default function Float64ArrayTest() {
       const TAG = "testFloat64Constructor0150";
       try {
         let MAX_VALUE = 3.4028235e38;
-        let array = new Float64Array(new Float32Array(new Array<number>(MAX_VALUE)));
-        expect(String(array[0])).assertEqual('3.4028234663852886e38');
-      }catch (err:BusinessError) {
+        let array = new Float64Array(new Float32Array([MAX_VALUE]));
+        expect(array[0]).assertEqual(3.4028234663852886e38);
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2790,9 +2892,9 @@ export default function Float64ArrayTest() {
       const TAG = "testFloat64Constructor0151";
       try {
         let MAX_VALUE = 3.4028235e38 + 1;
-        let array = new Float64Array(new Float32Array(new Array<number>(MAX_VALUE)));
-        expect(String(array[0])).assertEqual('3.4028234663852886e38');
-      }catch (err:BusinessError) {
+        let array = new Float64Array(new Float32Array([MAX_VALUE]));
+        expect(array[0]).assertEqual(3.4028234663852886e38);        
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2863,7 +2965,7 @@ export default function Float64ArrayTest() {
     //     }
     //     expect(String(float64Array[0])).assertEqual('9');
     //     expect(String(float64Array[1])).assertEqual('2');
-    //   }catch (err:BusinessError) {
+    //   } catch (err:BusinessError) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }
@@ -2897,7 +2999,7 @@ export default function Float64ArrayTest() {
     //     }
     //     expect(float64Array[0]).assertEqual(9);
     //     expect(float64Array[1]).assertEqual(2);
-    //   }catch (err:BusinessError) {
+    //   } catch (err:BusinessError) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }
@@ -2958,7 +3060,7 @@ export default function Float64ArrayTest() {
     //       offset += bytes.length;
     //     }
     //     expect(float64Array[0]).assertEqual(0);
-    //   }catch (err:BusinessError) {
+    //   } catch (err:BusinessError) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }
@@ -3069,7 +3171,6 @@ export default function Float64ArrayTest() {
         let infinity = 1 / 0.0;
         let array = Float64Array.of(infinity);
         expect(array[0]).assertEqual(Infinity);
-        expect(String(array[1])).assertEqual('undefined');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -3090,8 +3191,7 @@ export default function Float64ArrayTest() {
         let infinity = -1 / 0.0;
         let array = Float64Array.of(infinity);
         expect(array[0]).assertEqual(-Infinity);
-        expect(String(array[1])).assertEqual('undefined');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -3111,7 +3211,6 @@ export default function Float64ArrayTest() {
         let nan = 0 / 0.0;
         let array = Float64Array.of(nan);
         expect(String(array[0])).assertEqual('NaN');
-        expect(String(array[1])).assertEqual('undefined');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -3134,7 +3233,6 @@ export default function Float64ArrayTest() {
         let float64Array = Float64Array.of(numberValue);
         console.info(`${TAG} float64Array is: ${float64Array}`);
         expect(String(float64Array[0])).assertEqual('12345678901234567000');
-        expect(String(float64Array[1])).assertEqual('undefined');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -3155,7 +3253,7 @@ export default function Float64ArrayTest() {
     //     let MAX_VALUE = 1.8e308;
     //     let array = Float64Array.of(MAX_VALUE);
     //     expect(array[0]).assertEqual(Infinity);
-    //   }catch (err:BusinessError) {
+    //   } catch (err:BusinessError) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }
@@ -3175,7 +3273,7 @@ export default function Float64ArrayTest() {
     //     let MIN_VALUE = -1.8e308;
     //     let array = Float64Array.of(MIN_VALUE);
     //     expect(array[0]).assertEqual(-Infinity);
-    //   }catch (err:BusinessError) {
+    //   } catch (err:BusinessError) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }
@@ -3195,7 +3293,7 @@ export default function Float64ArrayTest() {
     //     let MIN_VALUE = -1.8e308 -1;
     //     let array = Float64Array.of(MIN_VALUE);
     //     expect(array[0]).assertEqual(-Infinity);
-    //   }catch (err:BusinessError) {
+    //   } catch (err:BusinessError) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }
@@ -3215,7 +3313,7 @@ export default function Float64ArrayTest() {
     //     let MAX_VALUE = 1.8e308 + 1;
     //     let array = Float64Array.of(MAX_VALUE);
     //     expect(array[0]).assertEqual(Infinity);
-    //   }catch (err:BusinessError) {
+    //   } catch (err:BusinessError) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }
@@ -3235,7 +3333,7 @@ export default function Float64ArrayTest() {
     //     let MAX_VALUE = 1.8e308 - 1;
     //     let array = Float64Array.of(MAX_VALUE);
     //     expect(array[0]).assertEqual(Infinity);
-    //   }catch (err:BusinessError) {
+    //   } catch (err:BusinessError) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }
@@ -3253,10 +3351,9 @@ export default function Float64ArrayTest() {
       const TAG = "testFloat64ArrayFrom0170";
       try {
         let infinity = 1/0.0;
-        const array: Float64Array = Float64Array.from(new Array<number>(infinity));
+        let array = Float64Array.from([infinity]);
         expect(array[0]).assertEqual(Infinity);
-        expect(array[1]).assertEqual(undefined);
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -3274,9 +3371,8 @@ export default function Float64ArrayTest() {
       const TAG = "testFloat64ArrayFrom0171";
       try {
         let infinity = -1/0.0;
-        let array = Float64Array.from(new Array<number>(infinity));
+        let array = Float64Array.from([infinity]);
         expect(array[0]).assertEqual(-Infinity);
-        expect(array[1]).assertEqual(undefined);
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -3295,10 +3391,9 @@ export default function Float64ArrayTest() {
       const TAG = "testFloat64ArrayFrom0172";
       try {
         let nan = 0/0.0;
-        let array = Float64Array.from(new Array<number>(nan));
+        let array = Float64Array.from([nan]);
         expect(String(array[0])).assertEqual('NaN');
-        expect(String(array[1])).assertEqual('undefined');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -3319,7 +3414,7 @@ export default function Float64ArrayTest() {
         expect(String(array[0])).assertEqual('1');
         expect(String(array[1])).assertEqual('2');
         expect(String(array[2])).assertEqual('3');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -3336,11 +3431,10 @@ export default function Float64ArrayTest() {
     it('testFloat64ArrayFrom0174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>{
       const TAG = "testFloat64ArrayFrom0174";
       try {
-        const array: Float64Array = Float64Array.from(new Array<number>(1.1, 2.83));
+        let array = Float64Array.from([1.1,2.83]);
         expect(String(array[0])).assertEqual('1.1');
         expect(String(array[1])).assertEqual('2.83');
-        expect(String(array[2])).assertEqual('undefined');
-      }catch (err:BusinessError) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -3359,9 +3453,8 @@ export default function Float64ArrayTest() {
       try {
         let bigintValue = BigInt(12345678901234567890n);
         let numberValue = Number(bigintValue);
-        let array = Float64Array.from(new Array<number>(numberValue));
+        let array = Float64Array.from([numberValue]);
         expect(String(array[0])).assertEqual('12345678901234567000');
-        expect(String(array[1])).assertEqual('undefined');
       } catch(err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();

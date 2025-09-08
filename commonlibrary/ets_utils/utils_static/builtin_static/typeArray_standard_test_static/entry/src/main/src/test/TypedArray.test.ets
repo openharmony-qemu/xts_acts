@@ -3186,7 +3186,7 @@ export default function typedArray() {
           (accumulator: string, currentValue: number) => `${accumulator},${currentValue}`, // 去掉空格
           ''
         );
-        const finalResult = result.replace(new RegExp('\\^,\\', ''), '').trim();
+        const finalResult = result.replace(new RegExp('^,'), '').trim();
         // const finalResult = result.replace(/^,/, '').trim();
         expect(finalResult).assertEqual("30,20,10");
       } catch (err: BusinessError) {
@@ -3647,7 +3647,7 @@ export default function typedArray() {
         let index = 0;
         let isEqual = true;
         for (const value of iterator1) {
-          expect(String(value)).assertEqual(uint8[index]);
+          expect(value).assertEqual(uint8[index]);
           if (value !== uint8[index]) {
             isEqual = false;
           }
@@ -3672,7 +3672,7 @@ export default function typedArray() {
       const TAG = "testTypedArrayPrototypeSymbolIterator0002";
       try {
         const arr = new Uint8Array([10, 20, 30, 40, 50]);
-        expect(String(arr)).assertDeepEquals(new Uint8Array([10, 20, 30, 40, 50]));
+        expect(arr).assertDeepEquals(new Uint8Array([10, 20, 30, 40, 50]));
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();

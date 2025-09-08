@@ -811,7 +811,7 @@ export default function builtinsDoubleSecondPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_DOUBLE_SECOND_PROTOTYPEB_TEST_4100
      * @tc.name builtinsDoubleSecondPrototypebTest4100
-     * @tc.desc test $_hashCode(): 正整数
+     * @tc.desc test getHashCodeByValue(): 正整数
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -821,7 +821,7 @@ export default function builtinsDoubleSecondPrototypebTest() {
         const caseName = 'builtinsDoubleSecondPrototypebTest4100';
         console.info(`${caseName}, test start`);
         const a = new Double(123.456);
-        expect(a.$_hashCode()).assertEqual(a.toInt());
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(a.toInt());
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -829,7 +829,7 @@ export default function builtinsDoubleSecondPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_DOUBLE_SECOND_PROTOTYPEB_TEST_4200
      * @tc.name builtinsDoubleSecondPrototypebTest4200
-     * @tc.desc test $_hashCode(): 负整数
+     * @tc.desc test getHashCodeByValue(): 负整数
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -839,7 +839,7 @@ export default function builtinsDoubleSecondPrototypebTest() {
         const caseName = 'builtinsDoubleSecondPrototypebTest4200';
         console.info(`${caseName}, test start`);
         const a = new Double(-789.123);
-        expect(a.$_hashCode()).assertEqual(a.toInt());
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(a.toInt());
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -847,7 +847,7 @@ export default function builtinsDoubleSecondPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_DOUBLE_SECOND_PROTOTYPEB_TEST_4300
      * @tc.name builtinsDoubleSecondPrototypebTest4300
-     * @tc.desc test $_hashCode(): 0.0
+     * @tc.desc test getHashCodeByValue(): 0.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -857,7 +857,7 @@ export default function builtinsDoubleSecondPrototypebTest() {
         const caseName = 'builtinsDoubleSecondPrototypebTest4300';
         console.info(`${caseName}, test start`);
         const a = new Double(0.0);
-        expect(a.$_hashCode()).assertEqual(a.toInt());
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(a.toInt());
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -865,7 +865,7 @@ export default function builtinsDoubleSecondPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_DOUBLE_SECOND_PROTOTYPEB_TEST_4400
      * @tc.name builtinsDoubleSecondPrototypebTest4400
-     * @tc.desc test $_hashCode(): -0.0
+     * @tc.desc test getHashCodeByValue(): -0.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -875,7 +875,7 @@ export default function builtinsDoubleSecondPrototypebTest() {
         const caseName = 'builtinsDoubleSecondPrototypebTest4400';
         console.info(`${caseName}, test start`);
         const a = new Double(-0.0);
-        expect(a.$_hashCode()).assertEqual(a.toInt());
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(a.toInt());
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -883,7 +883,7 @@ export default function builtinsDoubleSecondPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_DOUBLE_SECOND_PROTOTYPEB_TEST_4500
      * @tc.name builtinsDoubleSecondPrototypebTest4500
-     * @tc.desc test $_hashCode(): NaN
+     * @tc.desc test getHashCodeByValue(): NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -893,7 +893,8 @@ export default function builtinsDoubleSecondPrototypebTest() {
         const caseName = 'builtinsDoubleSecondPrototypebTest4500';
         console.info(`${caseName}, test start`);
         const a = new Double(NaN);
-        expect(a.$_hashCode()).assertEqual(a.toInt());
+        const b = new Double(NaN);
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(Runtime.getHashCodeByValue(b));
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -901,7 +902,7 @@ export default function builtinsDoubleSecondPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_DOUBLE_SECOND_PROTOTYPEB_TEST_4600
      * @tc.name builtinsDoubleSecondPrototypebTest4600
-     * @tc.desc test $_hashCode(): Infinity
+     * @tc.desc test getHashCodeByValue(): Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -912,8 +913,8 @@ export default function builtinsDoubleSecondPrototypebTest() {
         console.info(`${caseName}, test start`);
         const a = new Double(Number.POSITIVE_INFINITY);
         const b = new Double(Number.NEGATIVE_INFINITY);
-        expect(a.$_hashCode()).assertEqual(a.toInt());
-        expect(b.$_hashCode()).assertEqual(b.toInt());
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(a.toInt());
+        expect(Runtime.getHashCodeByValue(b)).assertEqual(b.toInt());
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -921,7 +922,7 @@ export default function builtinsDoubleSecondPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_DOUBLE_SECOND_PROTOTYPEB_TEST_4700
      * @tc.name builtinsDoubleSecondPrototypebTest4700
-     * @tc.desc test $_hashCode(): 极大值
+     * @tc.desc test getHashCodeByValue(): 极大值
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -931,7 +932,7 @@ export default function builtinsDoubleSecondPrototypebTest() {
         const caseName = 'builtinsDoubleSecondPrototypebTest4700';
         console.info(`${caseName}, test start`);
         const a = new Double(Number.MAX_VALUE);
-        expect(a.$_hashCode()).assertEqual(a.toInt());
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(a.toInt());
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -939,7 +940,7 @@ export default function builtinsDoubleSecondPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_DOUBLE_SECOND_PROTOTYPEB_TEST_4800
      * @tc.name builtinsDoubleSecondPrototypebTest4800
-     * @tc.desc test $_hashCode(): 极小值
+     * @tc.desc test getHashCodeByValue(): 极小值
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -949,7 +950,7 @@ export default function builtinsDoubleSecondPrototypebTest() {
         const caseName = 'builtinsDoubleSecondPrototypebTest4800';
         console.info(`${caseName}, test start`);
         const a = new Double(Number.MIN_VALUE);
-        expect(a.$_hashCode()).assertEqual(a.toInt());
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(a.toInt());
         console.info(`${caseName}, test end`);
         Done();
       })

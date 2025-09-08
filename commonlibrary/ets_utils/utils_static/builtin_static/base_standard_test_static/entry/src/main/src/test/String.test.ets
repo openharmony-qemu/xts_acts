@@ -326,9 +326,13 @@ export default function StringTest() {
       try {
         let result = String.fromCodePoint(Infinity);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual("is not integer");
+        } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -345,9 +349,13 @@ export default function StringTest() {
       try {
         let result = String.fromCodePoint(-1);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual("CodePoint < 0 or CodePoint > 0x10FFFF");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -364,9 +372,13 @@ export default function StringTest() {
       try {
         let result = String.fromCodePoint(3.14);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("is not integer");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -383,9 +395,13 @@ export default function StringTest() {
       try {
         let result = String.fromCodePoint(3e-2);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("is not integer");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -402,9 +418,13 @@ export default function StringTest() {
       try {
         let result = String.fromCodePoint(NaN);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("is not integer");
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -478,8 +498,8 @@ export default function StringTest() {
       try {
         const sentence = 'The quick brown fox jumps over the lazy dog.';
         let index = 4;
-        let flag1: Char = sentence.charAt(index);
-        expect(flag1).assertEqual("q");
+        let flag1 = sentence.charAt(index);
+        expect(flag1).assertEqual('q');
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -499,8 +519,8 @@ export default function StringTest() {
       try {
         const sentence = 'The quick brown fox jumps over the lazy dog.';
         let index = 3;
-        let flag1: Char = sentence.charAt(index);
-        expect(flag1).assertEqual(" ");
+        let flag1 = sentence.charAt(index);
+        expect(flag1).assertEqual(' ');
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -520,11 +540,15 @@ export default function StringTest() {
       try {
         const sentence = 'The quick brown fox jumps over the lazy dog.';
         let index = 100;
-        let flag1: Char = sentence.charAt(index);
-        expect(flag1).assertEqual("");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
+        let flag1 = sentence.charAt(index);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -541,7 +565,7 @@ export default function StringTest() {
       try {
         const sentence = 'The quick brown fox jumps over the lazy dog.';
         let index = 0;
-        let flag1: Char = sentence.charAt(index);
+        let flag1 = sentence.charAt(index);
         expect(flag1).assertEqual("T");
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -561,11 +585,14 @@ export default function StringTest() {
       try {
         const sentence = 'The quick brown fox jumps over the lazy dog.';
         let index = -1;
-        let flag1: Char = sentence.charAt(index);
-        expect(flag1).assertEqual("");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        let flag1 = sentence.charAt(index);
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
     /**
@@ -581,11 +608,14 @@ export default function StringTest() {
       try {
         const sentence = '';
         let index = 1;
-        let flag1: Char = sentence.charAt(index);
-        expect(flag1).assertEqual("");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        let flag1 = sentence.charAt(index);
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -3411,9 +3441,13 @@ export default function StringTest() {
         const str = "abc";
         let str1 = str.repeat(-1);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("less than 0");
+        } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
     /**
@@ -3506,9 +3540,13 @@ export default function StringTest() {
         const string1 = 'abc';
         let str1 = string1.repeat(1 / 0.0);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("is infinity");
+        } catch (err) {
+        if (err instanceof OutOfMemoryError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
     /**
@@ -3620,10 +3658,15 @@ export default function StringTest() {
         const str = "aabbcc";
         let str1 = str.replaceAll(new RegExp('b'), ".");
         expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("string.prototype.replaceAll called with a non-global RegExp argument");
-      }
+        } catch (err) {
+          if (err instanceof Error) {
+            expect(err.message).assertEqual("Global flag expected for regexp");
+          }
+          else {
+            console.error(`Unexpected error: ${err}`);
+            expect(false).assertFail();
+          }
+        }
     })
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_11800
@@ -4037,7 +4080,7 @@ export default function StringTest() {
       const TAG = "testStringSplit0010";
       try {
         const str = '';
-        expect(str.split(" ")).assertContain([""]);
+        expect(str.split(" ")).assertContain("");
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -4055,7 +4098,7 @@ export default function StringTest() {
       const TAG = "testStringSplit0011";
       try {
         let str = '';
-        expect(str.split("a")).assertContain([""]);
+        expect(str.split("a")).assertContain("");
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();

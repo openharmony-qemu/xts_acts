@@ -371,8 +371,7 @@ export default function builtinsBytePrototypebTest() {
         const caseName = 'builtinsBytePrototypebTest1200'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte();
-        const result = byte1.$_hashCode();
-        expect(result).assertEqual(0);
+        expect(Runtime.getHashCodeByValue(byte1)).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1676,7 +1675,7 @@ export default function builtinsBytePrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_8000
      * @tc.name builtinsBytePrototypebTest8000
-     * @tc.desc test $_hashCode
+     * @tc.desc test getHashCodeByValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1686,8 +1685,7 @@ export default function builtinsBytePrototypebTest() {
         const caseName = 'builtinsBytePrototypebTest8000'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(1);
-        const result = byte1.$_hashCode();
-        expect(result).assertEqual(1);
+        expect(Runtime.getHashCodeByValue(byte1)).assertEqual(1);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1695,7 +1693,7 @@ export default function builtinsBytePrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_8001
      * @tc.name builtinsBytePrototypebTest8001
-     * @tc.desc test $_hashCode
+     * @tc.desc test getHashCodeByValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1705,8 +1703,7 @@ export default function builtinsBytePrototypebTest() {
         const caseName = 'builtinsBytePrototypebTest8001'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(0);
-        const result = byte1.$_hashCode();
-        expect(result).assertEqual(0);
+        expect(Runtime.getHashCodeByValue(byte1)).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1714,7 +1711,7 @@ export default function builtinsBytePrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_8100
      * @tc.name builtinsBytePrototypebTest8100
-     * @tc.desc test $_hashCode
+     * @tc.desc test getHashCodeByValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1724,8 +1721,7 @@ export default function builtinsBytePrototypebTest() {
         const caseName = 'builtinsBytePrototypebTest8100'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(-1);
-        const result = byte1.$_hashCode();
-        expect(result).assertEqual(-1);
+        expect(Runtime.getHashCodeByValue(byte1)).assertEqual(-1);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1733,7 +1729,7 @@ export default function builtinsBytePrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_8200
      * @tc.name builtinsBytePrototypebTest8200
-     * @tc.desc test $_hashCode
+     * @tc.desc test getHashCodeByValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1743,8 +1739,7 @@ export default function builtinsBytePrototypebTest() {
         const caseName = 'builtinsBytePrototypebTest8200'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(Byte.MAX_VALUE);
-        const result = byte1.$_hashCode();
-        expect(result).assertEqual(Byte.MAX_VALUE);
+        expect(Runtime.getHashCodeByValue(byte1)).assertEqual(Byte.MAX_VALUE);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1752,7 +1747,7 @@ export default function builtinsBytePrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_8300
      * @tc.name builtinsBytePrototypebTest8300
-     * @tc.desc test $_hashCode
+     * @tc.desc test getHashCodeByValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1762,8 +1757,7 @@ export default function builtinsBytePrototypebTest() {
         const caseName = 'builtinsBytePrototypebTest8300'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(Byte.MIN_VALUE);
-        const result = byte1.$_hashCode();
-        expect(result).assertEqual(Byte.MIN_VALUE);
+        expect(Runtime.getHashCodeByValue(byte1)).assertEqual(Byte.MIN_VALUE);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1771,7 +1765,7 @@ export default function builtinsBytePrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_8400
      * @tc.name builtinsBytePrototypebTest8400
-     * @tc.desc test $_hashCode
+     * @tc.desc test getHashCodeByValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1782,8 +1776,7 @@ export default function builtinsBytePrototypebTest() {
         console.info(`${caseName}, test start`);
         const testValue = 42;
         const byte1 = new Byte(testValue);
-        const result = byte1.$_hashCode();
-        expect(result).assertEqual(testValue);
+        expect(Runtime.getHashCodeByValue(byte1)).assertEqual(testValue);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1791,7 +1784,7 @@ export default function builtinsBytePrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_8500
      * @tc.name builtinsBytePrototypebTest8500
-     * @tc.desc test $_hashCode
+     * @tc.desc test getHashCodeByValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1802,8 +1795,7 @@ export default function builtinsBytePrototypebTest() {
         console.info(`${caseName}, test start`);
         const testValue = -42;
         const byte1 = new Byte(testValue);
-        const result = byte1.$_hashCode();
-        expect(result).assertEqual(testValue);
+        expect(Runtime.getHashCodeByValue(byte1)).assertEqual(testValue);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1811,7 +1803,7 @@ export default function builtinsBytePrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_8600
      * @tc.name builtinsBytePrototypebTest8600
-     * @tc.desc test $_hashCode
+     * @tc.desc test getHashCodeByValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1822,8 +1814,7 @@ export default function builtinsBytePrototypebTest() {
         console.info(`${caseName}, test start`);
         const testValue = -42;
         const byte1 = new Byte(testValue);
-        const result = byte1.$_hashCode();
-        expect(result).assertEqual(testValue);
+        expect(Runtime.getHashCodeByValue(byte1)).assertEqual(testValue);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1831,7 +1822,7 @@ export default function builtinsBytePrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_8601
      * @tc.name builtinsBytePrototypebTest8601
-     * @tc.desc test $_hashCode
+     * @tc.desc test getHashCodeByValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1842,7 +1833,7 @@ export default function builtinsBytePrototypebTest() {
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(5);
         const byte2 = new Byte(5);
-        expect(byte1.$_hashCode()).assertEqual(byte2.$_hashCode());
+        expect(Runtime.getHashCodeByValue(byte1)).assertEqual(Runtime.getHashCodeByValue(byte2));
         console.info(`${caseName}, test end`);
         Done();
       })
