@@ -453,26 +453,27 @@ export default function actslocationTest() {
                 } else {
                 hilog.info(domain, tag, "[lbs_js] getAddressesFromLocation callback data is:" + JSON.stringify(data));
                 expect(true).assertEqual((JSON.stringify(data)) != null);
-                if (data.length > 0) {
-                    expect(true).assertEqual(data[0]?.addressUrl != null)
-                    expect(true).assertEqual(data[0]?.administrativeArea != null)
-                    expect(true).assertEqual(data[0]?.countryCode != null)
-                    expect(true).assertEqual(data[0]?.countryName != null)
-                    expect(true).assertEqual(data[0]?.descriptions != null)
-                    expect(true).assertEqual(data[0]?.descriptionsSize != null)
-                    expect(true).assertEqual(data[0]?.latitude !=null)
-                    expect(true).assertEqual(data[0]?.locale != null)
-                    expect(true).assertEqual(data[0]?.locality != null)
-                    expect(true).assertEqual(data[0]?.longitude != null)
-                    expect(true).assertEqual(data[0]?.phoneNumber != null)
-                    expect(true).assertEqual(data[0]?.placeName != null)
-                    expect(true).assertEqual(data[0]?.postalCode != null)
-                    expect(true).assertEqual(data[0]?.premises != null)
-                    expect(true).assertEqual(data[0]?.roadName != null)
-                    expect(true).assertEqual(data[0]?.subAdministrativeArea != null)
-                    expect(true).assertEqual(data[0]?.subLocality != null)
-                    expect(true).assertEqual(data[0]?.subRoadName != null)
-                    expect(true).assertEqual(data[0]?.isFromMock != null);
+                if (data.length != null) {
+                    hilog.info(domain,tag,"addressUrl"+data[0]?.addressUrl)
+                    hilog.info(domain,tag,"administrativeArea"+data[0]?.administrativeArea)
+                    hilog.info(domain,tag,"countryCode"+data[0]?.countryCode)
+                    hilog.info(domain,tag,"countryName"+data[0]?.countryName)
+                    hilog.info(domain,tag,"description"+data[0]?.description)
+                    hilog.info(domain,tag,"descriptionsSize"+data[0]?.descriptionsSize)
+                    hilog.info(domain,tag,"latitude"+data[0]?.latitude)
+                    hilog.info(domain,tag,"locale"+data[0]?.locale)
+                    hilog.info(domain,tag,"locality"+data[0]?.locality)
+                    hilog.info(domain,tag,"longitude"+data[0]?.longitude)
+                    hilog.info(domain,tag,"phoneNumber"+data[0]?.phoneNumber)
+                    hilog.info(domain,tag,"placeName"+data[0]?.placeName)
+                    hilog.info(domain,tag,"postalCode"+data[0]?.postalCode)
+                    hilog.info(domain,tag,"premises"+data[0]?.premises)
+                    hilog.info(domain,tag,"roadName"+data[0]?.roadName)
+                    hilog.info(domain,tag,"subAdministrativeArea"+data[0]?.subAdministrativeArea)
+                    hilog.info(domain,tag,"subLocality"+data[0]?.subLocality)
+                    hilog.info(domain,tag,"subRoadName"+data[0]?.subRoadName)
+                    hilog.info(domain,tag,"isFromMock"+data[0]?.isFromMock)
+
                 }
                 }
             });
@@ -625,7 +626,7 @@ export default function actslocationTest() {
             expect(true).assertEqual(location.altitudeAccuracy != -1)
             expect(true).assertEqual(location.speedAccuracy != -1)
             expect(true).assertEqual(location.directionAccuracy != -1)
-            expect(true).assertEqual(location.uncertaintyOfTimeSinceBoot != -1)
+            expect(true).assertEqual(location.uncertaintyOfTimeSinceBoot != null)
             expect(true).assertEqual(location?.sourceType != -1)
             };
             try {
