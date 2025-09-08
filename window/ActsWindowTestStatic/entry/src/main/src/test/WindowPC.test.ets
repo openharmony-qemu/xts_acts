@@ -298,29 +298,30 @@ export default function WindowPCTest() {
             try {
                 win = await window.createWindow(windowConfig);
                 expect(!!win).assertTrue();
+                try {
+                    win!.maximize(window.MaximizePresentation.EXIT_IMMERSIVE).then(() => {
+                        hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling maximize.');
+                        await (win! as window.Window).destroyWindow();
+                        expect().assertFail();
+                        done()
+                    }).catch((err: BusinessError) :PromiseLike<void>|undefined => {
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call maximize. Cause: ' + JSON.stringify(err));
+                        await (win! as window.Window).destroyWindow();
+                        expect().assertFail();
+                        done()
+                    });
+                } catch (exception: BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call maximize. Cause:' + JSON.stringify(exception));
+                    expect(exception!.code).assertEqual(1300004);
+                    await (win! as window.Window).destroyWindow();
+                    done()
+                }
             } catch (err: BusinessError) {
                 hilog.info(0x0000, '[ANI]',msgStr + 'window.createWindow ' + 'catched, err: ' + JSON.stringify(err));
                 expect().assertFail();
                 done()
             }
-            try {
-                win!.maximize(window.MaximizePresentation.EXIT_IMMERSIVE).then(() => {
-                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling maximize.');
-                    await (win! as window.Window).destroyWindow();
-                    expect().assertFail();
-                    done()
-                }).catch((err: BusinessError) :PromiseLike<void>|undefined => {
-                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call maximize. Cause: ' + JSON.stringify(err));
-                    await (win! as window.Window).destroyWindow();
-                    expect().assertFail();
-                    done()
-                });
-            } catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call maximize. Cause:' + JSON.stringify(exception));
-                expect(exception!.code).assertEqual(1300004);
-                await (win! as window.Window).destroyWindow();
-                done()
-            }
+            
         })
 
 
