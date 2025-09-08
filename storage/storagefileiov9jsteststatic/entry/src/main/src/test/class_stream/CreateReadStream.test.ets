@@ -19,6 +19,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import Utils from '../Util.test';
 import fs from '@ohos.file.fs';
 import { BusinessError } from '@ohos.base';
+import { WriteStreamOptions } from '@ohos.file.fs';
 
 let domain: int = 0x0000 //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -186,7 +187,7 @@ export default function fscreateReadStream() {
         try {
           let WriteStream = fs.createWriteStream(fpath);
           let curOff = WriteStream.seek(5, fs.WhenceType.SEEK_SET);
-          hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_013 has failed for ' + curOff);
+          hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_013 curOff: ' + curOff);
           expect(true).assertTrue();
           fs.unlinkSync(fpath);
         } catch (e: BusinessError) {
@@ -216,10 +217,131 @@ export default function fscreateReadStream() {
         expect(curOff == 5).assertTrue();
         fs.unlinkSync(fpath);
       } catch (e: BusinessError) {
-        hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_013 has failed for ' + e.message + ', code: ' + e.code);
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_014 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
     });
+
+    /**
+     * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1500
+     * @tc.name fileIO_test_create_ReadStream_static_015
+     * @tc.desc Test the createReadStream() interface of class Stream.
+     * Copy files on Stream and use close to release resources at the end, start=0.
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 3
+     * @tc.require
+     */
+    it('fileIO_test_create_ReadStream_static_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_test_create_ReadStream_static_015');
+      let wpath = await Utils.nextFileName('fileIO_test_create_ReadStream_static_015_01');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(wpath, '')).assertTrue();
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_015 fpath :' + fpath);
+
+
+      try {
+        let rs = fs.createReadStream(fpath);
+        let writestreamoptions : WriteStreamOptions = {
+          start : 0
+        }
+        let ws = fs.createWriteStream(wpath, writestreamoptions);
+        rs.on('readable', () => {
+          const data = rs.read();
+          if (data == null) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_015 null');
+            return;
+          }
+          let contest = data.toString();
+          let callbackCalled = false;
+          ws.on('error', (): void => {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_015 writable event test', callbackCalled.toString());
+          });
+          ws.write(contest, 'utf8', () => {
+            let wb = ws.bytesWritten;
+            expect(wb == FILE_CONTENT.length).assertTrue();
+          })
+          rs.close();
+          ws.close();
+        });
+        fs.unlinkSync(fpath);
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_015 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1600
+     * @tc.name fileIO_test_create_ReadStream_static_016
+     * @tc.desc Test the createReadStream() interface of class Stream.
+     * Copy files on Stream and use close to release resources at the end, mode=0.
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 3
+     * @tc.require
+     */
+    it('fileIO_test_create_ReadStream_static_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_test_create_ReadStream_static_016');
+      let wpath = await Utils.nextFileName('fileIO_test_create_ReadStream_static_016_01');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(wpath, '')).assertTrue();
+
+      try {
+        let rs = fs.createReadStream(fpath);
+        let writestreamoptions : WriteStreamOptions = {
+          mode :  fs.OpenMode.READ_WRITE
+        }
+        let ws = fs.createWriteStream(wpath, writestreamoptions);
+        rs.on('readable', () => {
+          const data = rs.read();
+          if (data == null) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_016 null');
+            return;
+          }
+          let contest = data.toString();
+          let callbackCalled = false;
+          ws.on('error', (): void => {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_016 writable event test', callbackCalled.toString());
+          });
+          ws.write(contest, 'utf8', () => {
+            let wb = ws.bytesWritten;
+            expect(wb == FILE_CONTENT.length).assertTrue();
+          })
+          rs.close();
+          ws.close();
+        });
+        fs.unlinkSync(fpath);
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_016 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1700
+     * @tc.name fileIO_test_create_ReadStream_static_017
+     * @tc.desc Test the createReadStream() interface of class Stream.
+     * ReadStream reads files.Seek
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 3
+     * @tc.require
+     */
+    it('fileIO_test_create_ReadStream_static_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_test_create_ReadStream_static_017');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        let ReadStream = fs.createReadStream(fpath);
+        let offset = 5;
+        let curoff = ReadStream.seek(offset);
+        expect(offset == curoff).assertTrue();
+        fs.unlinkSync(fpath);
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_017 has failed for' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    })
     hilog.info(domain, tag, '%{public}s', 'fileIO_fs_create_stream end');
   })
 }
