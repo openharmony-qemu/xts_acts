@@ -17,6 +17,7 @@ import { beforeAll, beforeEach,afterEach, describe, it , TestType, Size, Level }
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -31,16 +32,16 @@ export default function ActsWebRunJavaScriptOnDocumentEndTest() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get WebRunJavaScriptOnDocumentEndTest state success " + JSON.stringify(pages));
+        console.info('get WebRunJavaScriptOnDocumentEndTest state success ' + JSON.stringify(pages));
         if (!("WebRunJavaScriptOnDocumentEndTest" == pages.name)) {
-          console.info("get WebRunJavaScriptOnDocumentEndTest state success " + JSON.stringify(pages.name));
+          console.info('get WebRunJavaScriptOnDocumentEndTest state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push WebRunJavaScriptOnDocumentEndTest page success " + JSON.stringify(result));
+          console.info('push WebRunJavaScriptOnDocumentEndTest page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push WebRunJavaScriptOnDocumentEndTest page error: " + err);
+        console.error('push WebRunJavaScriptOnDocumentEndTest page error: ' + err);
       }
+      await waitForComponent("WebRunJavaScriptOnDocumentEndTestButton");
       done()
     });
 
@@ -50,15 +51,13 @@ export default function ActsWebRunJavaScriptOnDocumentEndTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
-      console.info("WebRunJavaScriptOnDocumentEndTest beforeEach start");
+      console.info('WebRunJavaScriptOnDocumentEndTest beforeEach start');
       done();
     })
 
     afterEach(async (done: Function) => {
-      console.info("WebRunJavaScriptOnDocumentEndTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebRunJavaScriptOnDocumentEndTest afterEach end");
+      console.info('WebRunJavaScriptOnDocumentEndTest afterEach start');
+      console.info('WebRunJavaScriptOnDocumentEndTest afterEach end');
       done();
     })
 
@@ -71,9 +70,8 @@ export default function ActsWebRunJavaScriptOnDocumentEndTest() {
     * @tc.level      : Level 1
     */
     it('testWebRunJavaScriptOnDocumentEnd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebRunJavaScriptOnDocumentEnd001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebRunJavaScriptOnDocumentEnd001", '"runJavaScriptOnDocumentEnd"', 2025022101, done);
+      Utils.emitEvent("emitWebRunJavaScriptOnDocumentEnd001", 173090)
+      Utils.registerEvent("testWebRunJavaScriptOnDocumentEnd001", '"runJavaScriptOnDocumentEnd"', 173100, done);
       sendEventByKey('WebRunJavaScriptOnDocumentEndTestButton', 10, '');
     })
 
@@ -86,9 +84,8 @@ export default function ActsWebRunJavaScriptOnDocumentEndTest() {
     * @tc.level      : Level 1
     */
     it('testWebRunJavaScriptOnDocumentEnd002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebRunJavaScriptOnDocumentEnd002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebRunJavaScriptOnDocumentEnd002", '"msg2"', 2025022102, done);
+      Utils.emitEvent("emitWebRunJavaScriptOnDocumentEnd002", 173090)
+      Utils.registerEvent("testWebRunJavaScriptOnDocumentEnd002", '"msg2"', 173110, done);
       sendEventByKey('WebRunJavaScriptOnDocumentEndTestButton', 10, '');
     })
 
@@ -101,9 +98,8 @@ export default function ActsWebRunJavaScriptOnDocumentEndTest() {
     * @tc.level      : Level 2
     */
     it('testWebRunJavaScriptOnDocumentEnd003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitWebRunJavaScriptOnDocumentEnd003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebRunJavaScriptOnDocumentEnd003", true, 2025040802, done);
+      Utils.emitEvent("emitWebRunJavaScriptOnDocumentEnd003", 173090)
+      Utils.registerEvent("testWebRunJavaScriptOnDocumentEnd003", true, 173120, done);
       sendEventByKey('WebRunJavaScriptOnDocumentEndTestButton', 10, '');
     })
 

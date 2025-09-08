@@ -18,6 +18,7 @@ import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 // @ts-nocheck
@@ -32,19 +33,18 @@ export default function ActsAceWebviewJavaScriptPermission() {
       }
 
       try {
-        await Utils.sleep(1000)
         router.clear();
         let pages = router.getState();
-        console.info("get webViewJavaScriptPermission state success " + JSON.stringify(pages));
+        console.info('get webViewJavaScriptPermission state success ' + JSON.stringify(pages));
         if (!("webViewJavaScriptPermission" == pages.name)) {
-          console.info("get webViewJavaScriptPermission state success " + JSON.stringify(pages.name));
+          console.info('get webViewJavaScriptPermission state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(1000);
-          console.info("push webViewJavaScriptPermission state success " + JSON.stringify(result));
+          console.info('push webViewJavaScriptPermission state success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push webViewJavaScriptPermission page error:" + err);
+        console.error('push webViewJavaScriptPermission page error:' + err);
       }
+      await waitForComponent("webviewJavaScriptPermissionButton");
       done()
     });
 
@@ -54,29 +54,9 @@ export default function ActsAceWebviewJavaScriptPermission() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       done();
     })
 
-    afterEach(async (done: Function) => {
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent : events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.error("emit emitKey error:" + JSON.stringify(err));
-      }
-      await Utils.sleep(1000);
-      done();
-    })
 
     /*
     *@tc.number SUB_ACE_WEBVIEW_JAVASCRIPTPERMISSION_API_0001
@@ -88,8 +68,8 @@ export default function ActsAceWebviewJavaScriptPermission() {
     */
     it('testWebViewJavaScriptPermission', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewJavaScriptPermission"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebViewJavaScriptPermission", "success", 20003,
+      Utils.emitEvent(emitKey, 172350);
+      Utils.registerBaseEvent("testWebViewJavaScriptPermission", "success", 172360,
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });

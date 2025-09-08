@@ -17,6 +17,7 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -31,16 +32,16 @@ export default function webAttribute() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get webAttribute state success " + JSON.stringify(pages));
+        console.info('get webAttribute state success ' + JSON.stringify(pages));
         if (!("webAttribute" == pages.name)) {
-          console.info("get webAttribute state success " + JSON.stringify(pages.name));
+          console.info('get webAttribute state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push webAttribute page success " + JSON.stringify(result));
+          console.info('push webAttribute page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push webAttribute page error: " + err);
+        console.error('push webAttribute page error: ' + err);
       }
+      await waitForComponent("WebAttributeButton");
       done()
     });
 
@@ -50,8 +51,7 @@ export default function webAttribute() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
-      console.info("webAttribute beforeEach start");
+      console.info('webAttribute beforeEach start');
       done();
     })
     /*
@@ -63,9 +63,8 @@ export default function webAttribute() {
     * @tc.level      : Level 1
     */
     it('testJavaScriptAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testJavaScriptAccess001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJavaScriptAccess001", true, 32019, done);
+      Utils.emitEvent("testJavaScriptAccess001", 172160)
+      Utils.registerEvent("testJavaScriptAccess001", true, 172170, done);
       sendEventByKey('WebAttributeButton', 10, '');
     })
   })

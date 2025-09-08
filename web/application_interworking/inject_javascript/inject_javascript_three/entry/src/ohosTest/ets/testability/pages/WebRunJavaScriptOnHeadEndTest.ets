@@ -31,17 +31,19 @@ struct WebRunJavaScriptOnHeadEndTest {
   @State isComplete: number = -1;
   private jsHead: string =
     'console.log("push new js on head called")';
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 173160,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(173160)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -50,6 +52,7 @@ struct WebRunJavaScriptOnHeadEndTest {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -60,7 +63,9 @@ struct WebRunJavaScriptOnHeadEndTest {
         Button('WebRunJavaScriptOnHeadEndTestButton click')
           .key('WebRunJavaScriptOnHeadEndTestButton')
           .onClick(async () => {
-            await Utils.sleep(2000);
+          await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+          await waitForExist(() => this.isReceive, this.emitKey, 0);
+          this.isReceive = -1;
             console.info('key==>' + this.emitKey)
             switch (this.emitKey) {
               case 'emitWebRunJavaScriptOnHeadEnd001': {
@@ -74,12 +79,12 @@ struct WebRunJavaScriptOnHeadEndTest {
                       console.info('emitWebRunJavaScriptOnHeadEnd001 getTestValue() return result: ' + result)
                       resultData = result;
                     }
-                  })
+                  });
+                   resultData = await waitForExist(() => resultData, 'emitWebRunJavaScriptOnHeadEnd001', null);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
-                await Utils.sleep(2000);
-                Utils.emitEvent(resultData,2025022103);
+                Utils.emitEvent(resultData,173170);
                 break;
               }
               case 'emitWebRunJavaScriptOnHeadEnd002': {
@@ -88,10 +93,10 @@ struct WebRunJavaScriptOnHeadEndTest {
                  this.scripts = [
                        { script: jsString, scriptRules: ['*'] }
                     ];
-                 await Utils.sleep(2000);
                  try {
+                  this.isPageEnd = -1;
                    this.controller.loadUrl($rawfile('runJavaScriptOnHeadEnd.html'));
-                   await Utils.sleep(2000);
+                   await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                    this.controller.runJavaScript('getResult()', (error, result) => {
                      if (error) {
                        console.info('emitWebRunJavaScriptOnHeadEnd002 getResult() return error: ' + error)
@@ -100,12 +105,12 @@ struct WebRunJavaScriptOnHeadEndTest {
                        console.info('emitWebRunJavaScriptOnHeadEnd002 getResult() return result: ' + result)
                        resultData = result;
                      }
-                   })
+                   });
+                   resultData = await waitForExist(() => resultData, 'emitWebRunJavaScriptOnHeadEnd002', null);
                  } catch (error) {
                    console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                  }
-                 await Utils.sleep(2000);
-                 Utils.emitEvent(resultData,2025022104);
+                 Utils.emitEvent(resultData,173180);
                  break;
               }
               case 'emitWebRunJavaScriptOnHeadEnd003': {
@@ -114,10 +119,13 @@ struct WebRunJavaScriptOnHeadEndTest {
                          { script: "testValue = 'testValue2'", scriptRules: ['*'] },
                          { script: "testValue = 'testValue1'", scriptRules: ['*'] }
                       ];
-                   await Utils.sleep(2000);
                    try {
+                     this.isPageEnd = -1;
                      this.controller.loadUrl($rawfile('runJavaScriptOnHeadEnd.html'));
-                     await Utils.sleep(2000);
+                     await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+                      this.isPageEnd = -1;
+                      this.controller.refresh();
+                      await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                      this.controller.runJavaScript('getTestValue()', (error, result) => {
                        if (error) {
                          console.info('emitWebRunJavaScriptOnHeadEnd003 getTestValue() return error: ' + error)
@@ -126,12 +134,12 @@ struct WebRunJavaScriptOnHeadEndTest {
                          console.info('emitWebRunJavaScriptOnHeadEnd003 getTestValue() return result: ' + result)
                          resultData = result;
                        }
-                     })
+                     });
+                     resultData = await waitForExist(() => resultData, 'emitWebRunJavaScriptOnHeadEnd003', null);
                    } catch (error) {
                      console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                    }
-                   await Utils.sleep(2000);
-                   Utils.emitEvent(resultData,2025022105);
+                   Utils.emitEvent(resultData,173190);
                    break;
               }
               case 'emitWebRunJavaScriptOnHeadEnd004': {
@@ -140,7 +148,7 @@ struct WebRunJavaScriptOnHeadEndTest {
                   let check = (v1:Array<string>, v2:boolean): boolean => {
                     return v1.includes('push new js on head called')
                   }
-                  await waitForAssert(()=>this.message, check, true, 2025040803, this.emitKey);
+                  await waitForAssert(()=>this.message, check, true, 173200, this.emitKey);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -159,6 +167,7 @@ struct WebRunJavaScriptOnHeadEndTest {
         })
         .onPageEnd((event) => {
           if (event) {
+           this.isPageEnd = 0;
            this.isComplete = 0;
            console.log('runJavaScriptOnHeadEnd isComplete==>'+this.isComplete);
            console.log('runJavaScriptOnHeadEnd onPageEnd url:' + event.url);

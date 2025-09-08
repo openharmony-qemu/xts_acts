@@ -17,6 +17,7 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
+import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -25,21 +26,29 @@ struct Index {
   @State str: string = "emitRegisterJavaScriptProxy";
   @State console: string = "";
   @State javaScriptAccess: boolean = true;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+
   
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 172240,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
   }
 
+  onPageHide() {
+    events_emitter.off(172240);
+  }
+
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("web page valueChangeCallBack");
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -48,10 +57,10 @@ struct Index {
       Utils.emitEvent(res, 102);
     },
     toString: (str: ESObject) => {
-      console.info("ets toString:" + String(str));
+      console.info('ets toString:' + String(str));
     },
     register: (res: ESObject) => {
-      Utils.emitEvent(res, 86);
+      Utils.emitEvent(res, 172250);
       return "web222";
     }
   }
@@ -67,7 +76,10 @@ struct Index {
     Column() {
       Row() {
         Button("web click").key('webcomponent').onClick(async () => {
-          console.info("key==>" + this.str);
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
+          console.info('key==>' + this.str);
           switch (this.str) {
             case "emitRegisterJavaScriptProxy": {
               this.controller.registerJavaScriptProxy({
@@ -75,31 +87,42 @@ struct Index {
                 name: "objName",
                 methodList: ["test", "toString", "register"]
               });
+              this.isPageEnd = -1;
               this.controller.refresh();
-              setTimeout(() => {
+              await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.runJavaScript({ script: "proxy()" });
-              }, 3000);
+
               break;
             }
             case "emitDeleteJavaScriptRegister": {
               this.controller.deleteJavaScriptRegister("objName");
               this.controller.runJavaScript({ script: "registerTest()" });
-              setTimeout(() => {
-                if (this.console !== "web222") {
+              await waitForExist(() => this.console,"jsResult",null);
+              const result = await waitForExist(
+                () => this.console !== "web222" ? "ready" : null,
+                this.str,
+                "ready"
+              );
+              if (result === "ready") {
                   let deleteEntireCookieCalled = true;
-                  Utils.emitEvent(deleteEntireCookieCalled, 87);
+                  Utils.emitEvent(deleteEntireCookieCalled, 172260);
                 }
-              }, 3000);
               break;
             }
             default:
-              console.info("can not match case");
+              console.info('can not match case');
           }
         })
       }
 
       Web({ src: $rawfile('index.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
+        .onPageEnd((event) => {
+          if (event) {
+            this.isPageEnd = 0;
+            console.log('web onPageEnd url:' + event.url);
+          }
+        })
     }
   }
 }
