@@ -78,7 +78,8 @@ struct WebOnPermissionRequest {
             switch (this.str) {
               case 'emitPermissionRequestDeny001': {
                 if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
-                  if ( Utils.isPC(this.controller) ) {
+                  if ( Utils.isPC(this.controller)||Utils.isWearable(this.controller) ) {
+                    console.info('[TAO]PC or Wearable');
                     Utils.emitEvent('"deny"', 160870)
                     break;
                   }
@@ -111,7 +112,8 @@ struct WebOnPermissionRequest {
               }
               case 'emitPermissionRequestGrant001': {
                 if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
-                  if (Utils.isPC(this.controller)) {
+                  if (Utils.isPC(this.controller)||Utils.isWearable(this.controller)) {
+                    console.info('[TAO]PC or Wearable');
                     Utils.emitEvent('"grant"', 160880)
                     break;
                   }
