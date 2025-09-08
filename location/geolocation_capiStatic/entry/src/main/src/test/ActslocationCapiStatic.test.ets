@@ -200,7 +200,7 @@ export default function actslocationTest() {
             async (done: () => void): Promise<void> => {
             const TEST_CASE_NAME = 'Sub_Location_GetCurrentLocation_0300'
             let request: geoLocationManager.SingleLocationRequest = {
-                locatingPriority: geoLocationManager.qihLocatingPriority.PRIORITY_ACCURACY,
+                locatingPriority: geoLocationManager.LocatingPriority.PRIORITY_ACCURACY,
                 locatingTimeoutMs: 1000
             };
             try {
@@ -454,25 +454,25 @@ export default function actslocationTest() {
                 hilog.info(domain, tag, "[lbs_js] getAddressesFromLocation callback data is:" + JSON.stringify(data));
                 expect(true).assertEqual((JSON.stringify(data)) != null);
                 if (data.length > 0) {
-                    expect(true).assertEqual(data[0].addressUrl != 'NA')
-                    expect(true).assertEqual(data[0].administrativeArea != 'NA')
-                    expect(true).assertEqual(data[0].countryCode != 'NA')
-                    expect(true).assertEqual(data[0].countryName != 'NA')
-                    expect(true).assertEqual(data[0].descriptions != null)
-                    expect(true).assertEqual(data[0].descriptionsSize != -1)
-                    expect(true).assertEqual(data[0].latitude != -1)
-                    expect(true).assertEqual(data[0].locale != 'NA')
-                    expect(true).assertEqual(data[0].locality != 'NA')
-                    expect(true).assertEqual(data[0].longitude != -1)
-                    expect(true).assertEqual(data[0].phoneNumber != 'NA')
-                    expect(true).assertEqual(data[0].placeName != 'NA')
-                    expect(true).assertEqual(data[0].postalCode != 'NA')
-                    expect(true).assertEqual(data[0].premises != 'NA')
-                    expect(true).assertEqual(data[0].roadName != 'NA')
-                    expect(true).assertEqual(data[0].subAdministrativeArea != 'NA')
-                    expect(true).assertEqual(data[0].subLocality != 'NA')
-                    expect(true).assertEqual(data[0].subRoadName != 'NA')
-                    expect(true).assertEqual(data[0].isFromMock != null);
+                    expect(true).assertEqual(data[0]?.addressUrl != null)
+                    expect(true).assertEqual(data[0]?.administrativeArea != null)
+                    expect(true).assertEqual(data[0]?.countryCode != null)
+                    expect(true).assertEqual(data[0]?.countryName != null)
+                    expect(true).assertEqual(data[0]?.descriptions != null)
+                    expect(true).assertEqual(data[0]?.descriptionsSize != null)
+                    expect(true).assertEqual(data[0]?.latitude !=null)
+                    expect(true).assertEqual(data[0]?.locale != null)
+                    expect(true).assertEqual(data[0]?.locality != null)
+                    expect(true).assertEqual(data[0]?.longitude != null)
+                    expect(true).assertEqual(data[0]?.phoneNumber != null)
+                    expect(true).assertEqual(data[0]?.placeName != null)
+                    expect(true).assertEqual(data[0]?.postalCode != null)
+                    expect(true).assertEqual(data[0]?.premises != null)
+                    expect(true).assertEqual(data[0]?.roadName != null)
+                    expect(true).assertEqual(data[0]?.subAdministrativeArea != null)
+                    expect(true).assertEqual(data[0]?.subLocality != null)
+                    expect(true).assertEqual(data[0]?.subRoadName != null)
+                    expect(true).assertEqual(data[0]?.isFromMock != null);
                 }
                 }
             });
@@ -571,7 +571,7 @@ export default function actslocationTest() {
             try {
             geoLocationManager.on('locationEnabledChange', locationServiceState);
             } catch (error: BusinessError) {
-            hilog.error(domain, TAG, "[lbs_js] locationServiceStateOn try err." + JSON.stringify(error));
+            hilog.error(domain, tag, "[lbs_js] locationServiceStateOn try err." + JSON.stringify(error));
             expect().assertFail();
             }
             await Utils.msSleep(1000)
@@ -626,7 +626,7 @@ export default function actslocationTest() {
             expect(true).assertEqual(location.speedAccuracy != -1)
             expect(true).assertEqual(location.directionAccuracy != -1)
             expect(true).assertEqual(location.uncertaintyOfTimeSinceBoot != -1)
-            expect(true).assertEqual(location.sourceType != -1)
+            expect(true).assertEqual(location?.sourceType != -1)
             };
             try {
             geoLocationManager.on('locationChange', requestInfo, locationChange);
@@ -671,19 +671,19 @@ export default function actslocationTest() {
             try {
             geoLocationManager.on('bluetoothScanResultChange', bluetoothScanResult)
             } catch (error: BusinessError) {
-            hilog.info(domain, TAG, "[lbs_js] testBlueToothScan01 on err" + JSON.stringify(error));
+            hilog.info(domain, tag, "[lbs_js] testBlueToothScan01 on err" + JSON.stringify(error));
             expect(true).assertFalse();
             }
             try {
             geoLocationManager.off('bluetoothScanResultChange')
             } catch (error: BusinessError) {
-            hilog.info(domain, TAG, "[lbs_js] testBlueToothScan01 off err" + JSON.stringify(error));
+            hilog.info(domain, tag, "[lbs_js] testBlueToothScan01 off err" + JSON.stringify(error));
             expect(true).assertFalse();
             }
             try {
             geoLocationManager.off('bluetoothScanResultChange', bluetoothScanResult)
             } catch (error: BusinessError) {
-            hilog.info(domain, TAG, "[lbs_js] testBlueToothScan01 off all err" + JSON.stringify(error));
+            hilog.info(domain, tag, "[lbs_js] testBlueToothScan01 off all err" + JSON.stringify(error));
             expect(true).assertFalse();
             }
             done();
