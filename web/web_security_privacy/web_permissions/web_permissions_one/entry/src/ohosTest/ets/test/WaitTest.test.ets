@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import events_emitter from '@ohos.events.emitter';
+import { Driver, ON } from '@ohos.UiTest';
 
 function sleep(time: number) {
   return new Promise<string>((resolve, reject) => {
@@ -83,14 +83,13 @@ export async function waitForAssert<T,U>(
 export async function waitForExist<T> (
   stateGetter: () => T,
   testsuite: string,
-  expectValue: string | number | null = null,
+  expectValue: string | number | boolean | null = null,
   interval=3000,
   tryTime=20
 ):Promise<T>{
   let nums = 0;
   let isSuccess = false;
   while (nums < tryTime) {
-    await sleep(interval);
     const currentValue = await new Promise<T>((done) => {
       setTimeout(()=>done(stateGetter()), 0);
     })
@@ -111,6 +110,7 @@ export async function waitForExist<T> (
       }
     }
     nums++;
+    await sleep(interval);
   }
   if (!isSuccess) {
     console.log(testsuite + ' debug wait for failed')
@@ -120,4 +120,10 @@ export async function waitForExist<T> (
   });
   console.log(testsuite + ' debug wait for failed exist ' + currentValue);
   return currentValue;
+}
+
+export async function waitForComponent(componentName:string) {
+  let driver = Driver.create();
+  await driver.waitForComponent(ON.id(componentName), 10000);
+  console.info("waitForComponent", componentName, '==>');
 }
