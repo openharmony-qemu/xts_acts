@@ -894,6 +894,14 @@ export default function expressionTest1() {
       expect(str).assertEqual(expected);
     });
 
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0055
+     * @tc.name ExpressionTest0055
+     * @tc.desc Test array index validation using string key conversion
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
     it('ExpressionTest0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let arr: string[] = ["a", "b", "c"];
       let key: string = "1";
