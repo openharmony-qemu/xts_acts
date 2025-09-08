@@ -188,6 +188,475 @@ export default function actslocationTest() {
                     done();
                 })
 
+        /**
+            * @tc.number : Sub_Location_GetCurrentLocation_0300
+            * @tc.name   : Sub_Location_GetCurrentLocation_0300
+            * @tc.desc   : current positioning promise version and callback version
+            * @tc.size   : MediumTest
+            * @tc.type   : Function
+            * @tc.level  : Level 1
+            */
+        it('Sub_Location_GetCurrentLocation_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+            async (done: () => void): Promise<void> => {
+            const TEST_CASE_NAME = 'Sub_Location_GetCurrentLocation_0300'
+            let request: geoLocationManager.SingleLocationRequest = {
+                locatingPriority: geoLocationManager.qihLocatingPriority.PRIORITY_ACCURACY,
+                locatingTimeoutMs: 1000
+            };
+            try {
+                geoLocationManager.getCurrentLocation(request)
+                .then((value: geoLocationManager.Location) => {
+                    hilog.info(domain, TAG, '[lbs_js] getAddressesFromLocation promise: ' + JSON.stringify(value));
+                }).catch((error) => {
+                });
+            } catch (error: BusinessError) {
+                hilog.error(domain, TAG, "[lbs_js] getCurrentLocation try err." + JSON.stringify(error));
+                expect(false).assertTrue();
+            }
+            await Utils.msSleep(1000)
+            done();
+            })
+    /**
+        * @tc.number    : testGeolocationManagerCachedGnssLocation001
+        * @tc.name      : testGeolocationManagerCachedGnssLocation001
+        * @tc.desc      : Test Config value.
+        * @tc.size      : MediumTest
+        * @tc.type      : Function
+        * @tc.level     : Level 2
+        */
+        it('testGeolocationManagerCachedGnssLocation001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: () => void): Promise<void> => {
+            let cachedLocationsCallback = (locations: Array<geoLocationManager.Location>) => {
+            hilog.info(domain, TAG, '[lbs_js] cachedGnssLocationsChange locations:' + JSON.stringify(locations));
+            expect(true).assertEqual(locations != null);
+            }
+            let cachedGnssLocationsRequest: geoLocationManager.CachedGnssLocationsRequest =
+            { 'reportingPeriodSec': 5, 'wakeUpCacheQueueFull': true };
+            try {
+            geoLocationManager.on('cachedGnssLocationsChange', cachedGnssLocationsRequest, cachedLocationsCallback);
+            } catch (error: BusinessError) {
+            if (!geoLocationManager.isLocationEnabled()) {
+                expect(error.code).assertEqual(3301100)
+            } else {
+                hilog.error(domain, TAG, "[lbs_js] cachedGnssLocationsChange on try err." + JSON.stringify(error));
+                hilog.error(domain, TAG, '[lbs_js] not support now');
+                expect(error.code).assertEqual("801");
+            }
+            }
+            await Utils.msSleep(1000)
+
+            try {
+            geoLocationManager.off('cachedGnssLocationsChange', cachedLocationsCallback);
+            } catch (error: BusinessError) {
+            hilog.error(domain, TAG,
+                "[lbs_js] cachedGnssLocationsChange off single callback try err." + JSON.stringify(error));
+            hilog.error(domain, TAG, '[lbs_js] not support now');
+            expect(error.code).assertEqual("801");
+            }
+
+            try {
+            geoLocationManager.off('cachedGnssLocationsChange');
+            } catch (error: BusinessError) {
+            hilog.error(domain, TAG,
+                "[lbs_js] cachedGnssLocationsChange off all callbacks try err." + JSON.stringify(error));
+            hilog.error(domain, TAG, '[lbs_js] not support now');
+            expect(error.code).assertEqual("801");
+            }
+            await Utils.msSleep(1000)
+            done();
+        })
+
+        /**
+        * @tc.number    : testGeolocationManagerCountryCode001
+        * @tc.name      : testGeolocationManagerCountryCode001
+        * @tc.desc      : Test Config value.
+        * @tc.size      : MediumTest
+        * @tc.type      : Function
+        * @tc.level     : Level 2
+        */
+        it('testGeolocationManagerCountryCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: () => void): Promise<void> => {
+            let countryCallback = (result: geoLocationManager.CountryCode) => {
+            console.info('[lbs_js] countryCodeChange' + JSON.stringify(result));
+            }
+
+            try {
+            geoLocationManager.on('countryCodeChange', countryCallback);
+            } catch (error: BusinessError) {
+            hilog.error(domain, TAG, "[lbs_js] countryCodeChangeOn try err." + JSON.stringify(error));
+            if (!geoLocationManager.isLocationEnabled()) {
+                expect(error.code).assertEqual("3301100")
+            } else {
+                expect(false).assertTrue();
+            }
+            }
+            await Utils.msSleep(1000)
+            try {
+            geoLocationManager.off('countryCodeChange', countryCallback);
+            } catch (error: BusinessError) {
+            hilog.error(domain, TAG, "[lbs_js] countryCodeChangeOff single callback try err." + JSON.stringify(error));
+            expect(false).assertTrue();
+            }
+
+            try {
+            geoLocationManager.off('countryCodeChange');
+            } catch (error: BusinessError) {
+            hilog.error(domain, TAG, "[lbs_js] countryCodeChangeOff all callbacks try err." + JSON.stringify(error));
+            expect(false).assertTrue();
+            }
+            await Utils.msSleep(1000)
+            done();
+        })
+
+        /**
+        * @tc.number    : testGeolocationManagerSatelliteStatus001
+        * @tc.name      : testGeolocationManagerSatelliteStatus001
+        * @tc.desc      : Test Config value.
+        * @tc.size      : MediumTest
+        * @tc.type      : Function
+        * @tc.level     : Level 2
+        */
+        it('testGeolocationManagerSatelliteStatus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: () => void): Promise<void> => {
+            let satelliteCallback = (satelliteStatusInfo: geoLocationManager.SatelliteStatusInfo) => {
+            console.info('[lbs_js] gnssStatusChange1: ' + satelliteStatusInfo);
+            expect(true).assertEqual(satelliteStatusInfo != null)
+            if (satelliteStatusInfo != null) {
+                expect(true).assertEqual(satelliteStatusInfo.satellitesNumber != -1)
+                if (satelliteStatusInfo.satellitesNumber > 0) {
+                expect(true).assertEqual(satelliteStatusInfo.satelliteIds[0] != -1)
+                expect(true).assertEqual(satelliteStatusInfo.carrierToNoiseDensitys[0] != -1)
+                expect(true).assertEqual(satelliteStatusInfo.altitudes[0] != -1)
+                expect(true).assertEqual(satelliteStatusInfo.azimuths[0] != -1)
+                expect(true).assertEqual(satelliteStatusInfo.carrierFrequencies[0] != -1)
+                expect(true).assertEqual(satelliteStatusInfo.satelliteAdditionalInfo != null)
+                expect(true).assertEqual(satelliteStatusInfo.satelliteConstellation != null)
+                }
+            }
+            }
+            try {
+            geoLocationManager.on('satelliteStatusChange', satelliteCallback)
+            } catch (error: BusinessError) {
+            hilog.error(domain, TAG, "[lbs_js] satelliteStatusOn1 try err." + JSON.stringify(error));
+            if (!geoLocationManager.isLocationEnabled()) {
+                expect(error.code).assertEqual("3301100")
+            } else {
+                expect(false).assertTrue();
+            }
+            }
+            await Utils.msSleep(1000)
+            try {
+            geoLocationManager.off('satelliteStatusChange', satelliteCallback);
+            } catch (error: BusinessError) {
+            hilog.error(domain, TAG, "[lbs_js] satelliteStatusOff1 single try err." + JSON.stringify(error));
+            expect(true).assertFalse();
+            }
+
+            try {
+            geoLocationManager.off('satelliteStatusChange');
+            } catch (error: BusinessError) {
+            hilog.error(domain, TAG, "[lbs_js] satelliteStatusOff1 all try err." + JSON.stringify(error));
+            expect(true).assertFalse();
+            }
+            await Utils.msSleep(1000)
+            done();
+        })
+    //
+        /**
+        * @tc.number    : testGeolocationManagerNmea001
+        * @tc.name      : testGeolocationManagerNmea001
+        * @tc.desc      : Test Config value.
+        * @tc.size      : MediumTest
+        * @tc.type      : Function
+        * @tc.level     : Level 2
+        */
+        it('testGeolocationManagerNmea001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: () => void): Promise<void> => {
+            let nmeaMessageCallback = (nmeaString: string) => {
+            hilog.info(domain, TAG, '[lbs_js] nmeaMessage1:' + nmeaString);
+            }
+            try {
+            geoLocationManager.on('nmeaMessage', nmeaMessageCallback);
+            } catch (error: BusinessError) {
+            hilog.error(domain, TAG, "[lbs_js] nmeaMessage try err." + JSON.stringify(error));
+            if (!geoLocationManager.isLocationEnabled()) {
+                expect(error.code).assertEqual("3301100")
+            } else {
+                expect(false).assertTrue();
+            }
+            }
+            await Utils.msSleep(1000)
+            try {
+            geoLocationManager.off('nmeaMessage', nmeaMessageCallback);
+            } catch (error: BusinessError) {
+            hilog.error(domain, TAG, "[lbs_js] nmeaMessage off single try err." + JSON.stringify(error));
+            expect(false).assertTrue();
+            }
+
+            try {
+            geoLocationManager.off('nmeaMessage');
+            } catch (error: BusinessError) {
+            hilog.error(domain, TAG, "[lbs_js] nmeaMessage off all try err." + JSON.stringify(error));
+            expect(false).assertTrue();
+            }
+            await Utils.msSleep(1000)
+            done();
+        })
+
+        /**
+        /* @tc.number   : testGeolocationManagerGetLastlocation001
+        * @tc.name      : testGeolocationManagerGetLastlocation001
+        * @tc.desc      : Test Config value.
+        * @tc.size      : MediumTest
+        * @tc.type      : Function
+        * @tc.level     : Level 2
+        */
+        it('testGeolocationManagerGetLastlocation001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: () => void): Promise<void> => {
+            try {
+            let last: geoLocationManager.Location = geoLocationManager.getLastLocation();
+            expect(true).assertEqual(JSON.stringify(last) != null);
+            } catch (error: BusinessError) {
+            hilog.error(domain, TAG, "[lbs_js] getLastLocation error:" + error)
+            if (!geoLocationManager.isLocationEnabled()) {
+                expect(error.code).assertEqual("3301100")
+            } else {
+                expect(error.code).assertEqual("3301200");
+            }
+            }
+            await Utils.msSleep(1000)
+            done();
+        })
+
+        /**
+        /* @tc.number SUB_HSS_LocationSystem_Geo_0001
+        * @tc.name SUB_HSS_LocationSystem_Geo_0001
+        * @tc.desc Address Resolution Test.
+        * @tc.size MEDIUM
+        * @tc.type Function
+        * @tc.level Level 2
+        */
+        it('SUB_HSS_LocationSystem_Geo_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: () => void): Promise<void> => {
+            let reverseGeocodeRequest: geoLocationManager.ReverseGeoCodeRequest = {
+            "latitude": 31.265496,
+            "longitude": 121.62771,
+            "maxItems": 1,
+            "locale": "zh",
+            "country": "CN"
+            };
+            try {
+            geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
+                if (err) {
+                hilog.info(domain, TAG, '[lbs_js] getAddressesFromLocation callback err is:' + JSON.stringify(err));
+                expect(err.code).assertEqual(3301300);
+                } else {
+                hilog.info(domain, TAG, "[lbs_js] getAddressesFromLocation callback data is:" + JSON.stringify(data));
+                expect(true).assertEqual((JSON.stringify(data)) != null);
+                if (data.length > 0) {
+                    expect(true).assertEqual(data[0].addressUrl != 'NA')
+                    expect(true).assertEqual(data[0].administrativeArea != 'NA')
+                    expect(true).assertEqual(data[0].countryCode != 'NA')
+                    expect(true).assertEqual(data[0].countryName != 'NA')
+                    expect(true).assertEqual(data[0].descriptions != null)
+                    expect(true).assertEqual(data[0].descriptionsSize != -1)
+                    expect(true).assertEqual(data[0].latitude != -1)
+                    expect(true).assertEqual(data[0].locale != 'NA')
+                    expect(true).assertEqual(data[0].locality != 'NA')
+                    expect(true).assertEqual(data[0].longitude != -1)
+                    expect(true).assertEqual(data[0].phoneNumber != 'NA')
+                    expect(true).assertEqual(data[0].placeName != 'NA')
+                    expect(true).assertEqual(data[0].postalCode != 'NA')
+                    expect(true).assertEqual(data[0].premises != 'NA')
+                    expect(true).assertEqual(data[0].roadName != 'NA')
+                    expect(true).assertEqual(data[0].subAdministrativeArea != 'NA')
+                    expect(true).assertEqual(data[0].subLocality != 'NA')
+                    expect(true).assertEqual(data[0].subRoadName != 'NA')
+                    expect(true).assertEqual(data[0].isFromMock != null);
+                }
+                }
+            });
+            } catch (error: BusinessError) {
+            hilog.error(domain, TAG, "[lbs_js] getAddressesFromLocation callback try error:" + error);
+            expect(true).assertFalse();
+            }
+            await Utils.msSleep(1000)
+            done();
+        })
+    //
+        /**
+        * @tc.number SUB_HSS_LocationSystem_Geo_0002
+        * @tc.name SUB_HSS_LocationSystem_Geo_0002
+        * @tc.desc Address Resolution Test.
+        * @tc.size MEDIUM
+        * @tc.type Function
+        * @tc.level Level 2
+        */
+        it('SUB_HSS_LocationSystem_Geo_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: () => void): Promise<void> => {
+            let reverseGeocodeRequest: geoLocationManager.ReverseGeoCodeRequest = {
+            "latitude": 31.265496,
+            "longitude": 121.62771,
+            "maxItems": 1,
+            "locale": "zh",
+            "country": "CN"
+            };
+            try {
+            await geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest)
+                .then((value: Array<geoLocationManager.GeoAddress>) => {
+                hilog.info(domain, TAG, '[lbs_js] getAddressesFromLocation promise: ' + JSON.stringify(value));
+                })
+                .catch((error) => {
+                // hilog.error(domain, TAG, "[lbs_js] getAddressesFromLocation1 promise then error." + JSON.stringify(error));
+                // expect(error.code).assertEqual(3301300);
+                });
+            } catch (error: BusinessError) {
+            hilog.error(domain, TAG, "[lbs_js] getAddressesFromLocation promise try err." + JSON.stringify(error));
+            expect(true).assertFalse();
+            }
+            await Utils.msSleep(1000)
+            done();
+        })
+
+        /**
+        * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCATIONERROR_0100
+        * @tc.name      : SUB_HSS_LOCATIONSYSTEM_LOCATIONERROR_0100
+        * @tc.desc      : Initiate a specified continuous location request and set the reporting precision of abnormal location.
+        * @tc.size      : MediumTest
+        * @tc.type      : Function
+        * @tc.level     : Level 2
+        */
+        it('testLocationError01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: () => void): Promise<void> => {
+            let locationError1 = (errcode: geoLocationManager.LocationError) => {
+            hilog.info(domain, TAG, '[lbs_js] locationError data:' + JSON.stringify(errcode));
+            expect(true).assertEqual(errcode != null);
+            };
+            try {
+            geoLocationManager.on('locationError', locationError1);
+            } catch (error: BusinessError) {
+            hilog.error(domain, TAG, "[lbs_js] locationError on try err." + JSON.stringify(error));
+            expect(true).assertFalse();
+            }
+            await Utils.msSleep(1000)
+            try {
+            geoLocationManager.off('locationError', locationError1);
+            } catch (error: BusinessError) {
+            hilog.error(domain, TAG, "[lbs_js] locationError off single err." + JSON.stringify(error));
+            expect(true).assertFalse();
+            }
+            try {
+            geoLocationManager.off('locationError');
+            } catch (error: BusinessError) {
+            hilog.error(domain, TAG, "[lbs_js] locationError off all err." + JSON.stringify(error));
+            expect(true).assertFalse();
+            }
+            await Utils.msSleep(1000)
+            done();
+        })
+
+        /**
+        * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCSWITCH_0700
+        * @tc.name      : SUB_HSS_LOCATIONSYSTEM_LOCSWITCH_0700
+        * @tc.desc      : Subscribe to the location service status change.
+        * @tc.size      : MediumTest
+        * @tc.type      : Function
+        * @tc.level     : Level 2
+        */
+        it('testLocationEnabledChange01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: () => void): Promise<void> => {
+            let locationServiceState = (state: boolean) => {
+            hilog.info(domain, TAG, '[lbs_js] locationServiceState: state: ' + JSON.stringify(state));
+            }
+            try {
+            geoLocationManager.on('locationEnabledChange', locationServiceState);
+            } catch (error: BusinessError) {
+            hilog.error(domain, TAG, "[lbs_js] locationServiceStateOn try err." + JSON.stringify(error));
+            expect().assertFail();
+            }
+            await Utils.msSleep(1000)
+            try {
+            geoLocationManager.off('locationEnabledChange', locationServiceState);
+            } catch (error: BusinessError) {
+            hilog.error(domain, TAG, "[lbs_js] locationServiceStateOff try err." + JSON.stringify(error));
+            expect().assertFail();
+            }
+            try {
+            geoLocationManager.off('locationEnabledChange');
+            } catch (error: BusinessError) {
+            hilog.error(domain, TAG, "[lbs_js] locationServiceStateOff all try err." + JSON.stringify(error));
+            expect().assertFail();
+            }
+            await Utils.msSleep(1000)
+            done();
+        })
+
+
+        /**
+        * @tc.number    : testLocationChange01
+        * @tc.name      : testLocationChange01
+        * @tc.desc      : Initiate a request for continuous positioning in a specified scenario and set the navigation scenario.
+        * @tc.size      : MediumTest
+        * @tc.type      : Function
+        * @tc.level     : Level 2
+        */
+        it('testLocationChange01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: () => void): Promise<void> => {
+            let requestInfo: geoLocationManager.LocationRequest = {
+            "priority": geoLocationManager.LocationRequestPriority.ACCURACY,
+            "scenario": geoLocationManager.LocationRequestScenario.UNSET,
+            "timeInterval": 5,
+            "distanceInterval": 0,
+            "maxAccuracy": 0
+            };
+            let locationChange = (location: geoLocationManager.Location) => {
+            hilog.info(domain, TAG, '[lbs_js] locationChange1 data:' + JSON.stringify(location));
+            expect(true).assertEqual(location != null);
+            expect(true).assertEqual(location.latitude != -1)
+            expect(true).assertEqual(location.longitude != -1)
+            expect(true).assertEqual(location.altitude != -1)
+            expect(true).assertEqual(location.accuracy != -1)
+            expect(true).assertEqual(location.speed != -1)
+            expect(true).assertEqual(location.timeStamp != -1)
+            expect(true).assertEqual(location.direction != -1)
+            expect(true).assertEqual(location.timeSinceBoot != -1)
+            expect(true).assertEqual(location.additions != null)
+            expect(true).assertEqual(location.additionsMap != null)
+            expect(true).assertEqual(location.altitudeAccuracy != -1)
+            expect(true).assertEqual(location.speedAccuracy != -1)
+            expect(true).assertEqual(location.directionAccuracy != -1)
+            expect(true).assertEqual(location.uncertaintyOfTimeSinceBoot != -1)
+            expect(true).assertEqual(location.sourceType != -1)
+            };
+            try {
+            geoLocationManager.on('locationChange', requestInfo, locationChange);
+            } catch (error: BusinessError) {
+            hilog.info(domain, TAG, "[lbs_js] locationChangeOn1 try err." + JSON.stringify(error));
+            expect(true).assertFalse();
+            }
+            await Utils.msSleep(2000)
+            try {
+            geoLocationManager.off('locationChange', locationChange);
+            } catch (error: BusinessError) {
+            hilog.info(domain, TAG, "[lbs_js] locationChangeOff1 try err." + JSON.stringify(error));
+            expect(true).assertFalse();
+            }
+            try {
+            geoLocationManager.off('locationChange');
+            } catch (error: BusinessError) {
+            hilog.info(domain, TAG, "[lbs_js] locationChangeOff1 all try err." + JSON.stringify(error));
+            expect(true).assertFalse();
+            }
+            await Utils.msSleep(1000)
+            done();
+        })
+
+
+
+
+
+
+
 
 
     })
