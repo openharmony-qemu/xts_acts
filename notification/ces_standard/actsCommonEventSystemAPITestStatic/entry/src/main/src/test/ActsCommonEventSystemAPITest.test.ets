@@ -40,7 +40,7 @@ export default function ActsCommonEventSystemAPITest() {
 
     beforeAll(() => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
-      
+
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundleName )
@@ -153,78 +153,6 @@ export default function ActsCommonEventSystemAPITest() {
         console.info(`${Tag} Sub_Notification_Ces_StaticEvent_Config_1300 END`);
       })
 
-    
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278
-     * @tc.desc: test function publishAsUser
-     */
-    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>  {
-    //   let Tag :string ='Sub_Notification_Ces_StaticEvent_Config_Static_1300'
-    //   //构造commonEventManager.publish401错误码
-    //   try {
-    //     commonEventManager.publish("EVENT01", null);
-    //     expect(false).assertTrue()
-    //     done()
-    //   } catch (err) {
-    //     hilog.info(0x0000, 'testTag', `publish1 err: ${JSON.stringify(err)}`);
-    //     expect(err?.code).assertEqual(401)
-    //     done()
-    //   }
-    //
-    //   let options: commonEventManager.CommonEventPublishData = {
-    //     code: 0,
-    //     data: "initial data",
-    //     isOrdered: true
-    //   }
-    //   try {
-    //     commonEventManager.publish("EVENT01", options, null);
-    //     expect(false).assertTrue()
-    //     done()
-    //   } catch (err) {
-    //     hilog.info(0x0000, 'testTag', `publish2 err: ${JSON.stringify(err)}`);
-    //     expect(err?.code).assertEqual(401)
-    //     done()
-    //   }
-    //   ;
-    //
-    //   //构造commonEventManager.createSubscriberSync401错误码
-    //   try {
-    //     commonEventManager.createSubscriberSync(null);
-    //     expect(false).assertTrue()
-    //     done()
-    //   } catch (err) {
-    //     hilog.info(0x0000, 'testTag', `createSubscriberSync err: ${JSON.stringify(err)}`);
-    //     expect(err?.code).assertEqual(401)
-    //     done()
-    //   }
-    //
-    //   //构造commonEventManager.subscribe 401错误码
-    //   let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-    //     events: ["event05"]
-    //   }
-    //   let subscriber = commonEventManager.createSubscriberSync(subscribeInfo)
-    //   try {
-    //     commonEventManager.subscribe(subscriber, null);
-    //     expect(false).assertTrue()
-    //     done()
-    //   } catch (err) {
-    //     hilog.info(0x0000, 'testTag', `createSubscriberSync err: ${JSON.stringify(err)}`);
-    //     expect(err?.code).assertEqual(401)
-    //     done()
-    //   }
-    //
-    //   //构造commonEventManager.subscribe 401错误码
-    //   try {
-    //     commonEventManager.unsubscribe(null, null);
-    //     expect(false).assertTrue()
-    //     done()
-    //   } catch (err) {
-    //     hilog.info(0x0000, 'testTag', `createSubscriberSync err: ${JSON.stringify(err)}`);
-    //     expect(err?.code).assertEqual(401)
-    //     done()
-    //   }
-    // })
 
     /*
      * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_279
@@ -398,318 +326,40 @@ export default function ActsCommonEventSystemAPITest() {
         });
       })
 
-    
+
     /*
      * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280
      * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280
      * @tc.desc: test function publishAsUser
      */
-    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
-    //   let TAG :string ='Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280'
-    //   let id :int = 1
-    //   let label:string = "label"
-    //   try {
-    //     notificationManager.cancel(null, (err: BusinessError | null) => {
-    //       if (err) {
-    //         console.info(`${TAG} cancel id err: ${err.code}, errMes: ${err.message}`)
-    //         expect(true).assertTrue()
-    //         done()
-    //       } else {
-    //         console.info(`${TAG} cancel id success`)
-    //         expect(false).assertTrue()
-    //         done()
-    //       }
-    //     })
-    //   } catch (err) {
-    //     console.info(`${TAG} cancel1 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(401)
-    //   }
-    //
-    //   notificationManager.cancel(id, (err: BusinessError | null) => {
-    //     console.info(`${TAG} cancel2 AsyncCallback err: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(1600007)
-    //   })
-    //
-    //   try {
-    //     notificationManager.cancel(null, label, (err: BusinessError | null) => {
-    //       console.info(`${TAG} cancel id success`)
-    //       expect(false).assertTrue()
-    //       done()
-    //     })
-    //   } catch (err) {
-    //     console.info(`${TAG} cancel3 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(401)
-    //   }
-    //
-    //   notificationManager.cancel(id, label, (err: BusinessError | null) => {
-    //     console.info(`${TAG} cancel4 AsyncCallback err: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(1600007)
-    //   })
-    //
-    //   await notificationManager.cancel(id, label).then(() => {
-    //     console.info(`${TAG} cancel Promise success`)
-    //     expect(false).assertTrue()
-    //     done()
-    //   }).catch((err: BusinessError) => {
-    //     console.info(`${TAG} cancel5 Promise err: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(1600007)
-    //     done()
-    //   })
-    //
-    // })
+    it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let TAG :string ='Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280'
+      let id :int = 1
+      let label:string = "label"
 
+      notificationManager.cancel(id, (err: BusinessError | null) => {
+        console.info(`${TAG} cancel2 AsyncCallback err: ${err.code}, errMes: ${err.message}`)
+        expect(err?.code).assertEqual(1600007)
+      })
+      
+      notificationManager.cancel(id, label, (err: BusinessError | null) => {
+        console.info(`${TAG} cancel4 AsyncCallback err: ${err.code}, errMes: ${err.message}`)
+        expect(err?.code).assertEqual(1600007)
+      })
+
+      await notificationManager.cancel(id, label).then(() => {
+        console.info(`${TAG} cancel Promise success`)
+        expect(false).assertTrue()
+        done()
+      }).catch((err: BusinessError) => {
+        console.info(`${TAG} cancel5 Promise err: ${err.code}, errMes: ${err.message}`)
+        expect(err?.code).assertEqual(1600007)
+        done()
+      })
+
+    })
     
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281
-     * @tc.desc: test function publishAsUser
-     */
-    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
-    // let TAG :string ='Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281'
-    //   try {
-    //     notificationManager.addSlot(null, (err: BusinessError | null) => {
-    //       console.info(`addSlot SOCIAL_COMMUNICATION success`);
-    //       expect(false).assertTrue();
-    //       done();
-    //     })
-    //   } catch (err) {
-    //     console.info(`${TAG} addSlot1 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(401)
-    //   }
-    //
-    //   try {
-    //     await notificationManager.addSlot(15).then(() => {
-    //       console.info(`${TAG} addSlot Promise success`)
-    //       expect(false).assertTrue()
-    //       done()
-    //     }).catch((err: BusinessError) => {
-    //       console.info(`${TAG} addSlot Promise errCode: ${err.code}, errMes: ${err.message}`)
-    //       expect(err?.code).assertEqual(401)
-    //       done()
-    //     })
-    //   } catch (err) {
-    //     console.info(`${TAG} addSlot2 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(401)
-    //   }
-    //
-    //   try {
-    //     notificationManager.getSlot(null, (err: BusinessError | null, NotificationSlot) => {
-    //       console.info(`${TAG} getSlot AsyncCallback err: ${err.code}`);
-    //       expect(false).assertTrue();
-    //       done();
-    //     })
-    //   }catch (err) {
-    //     console.info(`${TAG} getSlot1 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(401)
-    //   }
-    //
-    //   try {
-    //     notificationManager.removeSlot(null, (err: BusinessError | null) => {
-    //       console.info(`${TAG} removeSlot_1 errCode: ${err.code}, errMes: ${err.message}`)
-    //       expect(false).assertTrue()
-    //       done()
-    //     })
-    //   } catch (err) {
-    //     console.info(`${TAG} removeSlot_1 errCode: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(401)
-    //   }
-    //
-    //   try {
-    //     notificationManager.cancelGroup(null, (err: BusinessError | null) => {
-    //       console.info(`${TAG} cancelGroup AsyncCallback err: ${err.code}, errMes: ${err.message}`)
-    //       expect(false).assertTrue()
-    //       done()
-    //     })
-    //   } catch (err) {
-    //     console.info(`${TAG} cancelGroup AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(401)
-    //
-    //   }
-    //
-    //   try {
-    //     notificationManager.isSupportTemplate(null, (err: BusinessError | null) => {
-    //       console.info(`${TAG} isSupportTemplate AsyncCallback err: ${err.code}, errMes: ${err.message}`)
-    //       expect(false).assertTrue()
-    //       done()
-    //     })
-    //   } catch (err) {
-    //     console.info(`${TAG} isSupportTemplate AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(401)
-    //     done()
-    //   }
-    //
-    // })
-
     
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284
-     * @tc.desc: test function publishAsUser
-     */
-    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284',  TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
-    //   let Tag :string ='Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284'
-    //   try {
-    //     notificationManager.setBadgeNumber(null, (err: BusinessError | null) => {
-    //       console.log(Tag+`setBadgeNumber failed, error code: ${err.code}, message: ${err.message}`)
-    //       if (err.code == 801) {
-    //         expect(true).assertTrue()
-    //         done()
-    //       } else {
-    //         expect(false).assertTrue()
-    //         done()
-    //       }
-    //     })
-    //   } catch (err) {
-    //     console.log(Tag+`setBadgeNumber failed, catch error code: ${err.code}, message: ${err.message}`)
-    //     if (err.code == 801) {
-    //       expect(true).assertTrue()
-    //       done()
-    //     } else {
-    //       expect(err?.code).assertEqual(401)
-    //       done()
-    //     }
-    //   }
-    //
-    //
-    //   // 定义订阅者，用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
-    //   let subscriber: commonEventManager.CommonEventSubscriber|undefined;
-    //   // 订阅者信息
-    //   let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-    //     events: ["event284"],
-    //     publisherBundleName: 'com.example.myapplication'
-    //   };
-    //
-    //   commonEventManager.createSubscriber(subscribeInfo, async (err: BusinessError | null, commonEventSubscriber: commonEventManager.CommonEventSubscriber|undefined) => {
-    //     if (err) {
-    //       console.info(`Sub_Notification_Ces_Publish_CommonEvent_7900_284 err, error code: ${err.code}, message: ${err.message}`)
-    //       expect(false).assertTrue()
-    //       done()
-    //     } else {
-    //       console.info(`Sub_Notification_Ces_Publish_CommonEvent_7900_284 success ${commonEventSubscriber}`)
-    //       subscriber = commonEventSubscriber
-    //
-    //       try {
-    //         subscriber.getCode(null)
-    //       }catch (err) {
-    //         console.info(`${TAG} getCode err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.setCode(null, (err: BusinessError | null) => {
-    //           console.info(`${TAG} setCode id success`)
-    //           expect(false).assertTrue()
-    //           done()
-    //         })
-    //       } catch (err) {
-    //         console.info(`${TAG} setCode err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.getData(null)
-    //       }catch (err) {
-    //         console.info(`${TAG} getData err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.setData(null, (err: BusinessError | null) => {
-    //           console.info(`setData_1 err, error code: ${err.code}, message: ${err.message}`)
-    //           expect(false).assertTrue()
-    //           done()
-    //         })
-    //       } catch (err) {
-    //         console.info(`${TAG} setData err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.clearAbortCommonEvent(null)
-    //       }catch (err) {
-    //         console.info(`${TAG} clearAbortCommonEvent err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //
-    //       try {
-    //         subscriber.setCodeAndData(null, 'data02', (err: BusinessError | null) => {
-    //           console.info(`${TAG} setCodeAndData id success`)
-    //           expect(false).assertTrue()
-    //           done()
-    //         })
-    //       } catch (err) {
-    //         console.info(`${TAG} setCodeAndData err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.isOrderedCommonEvent(null)
-    //       }catch (err) {
-    //         console.info(`${TAG} isOrderedCommonEvent err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.isStickyCommonEvent(null)
-    //       }catch (err) {
-    //         console.info(`${TAG} isStickyCommonEvent err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.abortCommonEvent(null)
-    //       }catch (err) {
-    //         console.info(`${TAG} abortCommonEvent err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.clearAbortCommonEvent(null)
-    //       }catch (err) {
-    //         console.info(`${TAG} clearAbortCommonEvent err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.getAbortCommonEvent(null)
-    //       }catch (err) {
-    //         console.info(`${TAG} getAbortCommonEvent err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.getSubscribeInfo(null)
-    //       }catch (err) {
-    //         console.info(`${TAG} getSubscribeInfo err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.finishCommonEvent(null)
-    //       }catch (err) {
-    //         console.info(`${TAG} finishCommonEvent err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //     }
-    //   })
-    // })
-
-
     /*
      * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
      * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282

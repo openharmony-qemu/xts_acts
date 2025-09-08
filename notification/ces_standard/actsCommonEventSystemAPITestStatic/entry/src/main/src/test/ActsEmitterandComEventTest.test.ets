@@ -139,10 +139,10 @@ export default function ActsEmitterandComEventTest() {
         //调用commonEventManager.subscribe接口，以回调形式订阅公共事件
         //创建订阅者
         try {
-          commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber: commonEventManager.CommonEventSubscriber|undefined) => {
+          commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber) => {
             if (!err) {
               console.info(Tag + " createSubscriber success");
-              if(commonEventSubscriber !== undefined){
+              if(commonEventSubscriber !== undefined && commonEventSubscriber !== null){
                 subscriber = commonEventSubscriber
               }else{
                 expect(false).assertTrue()
@@ -237,10 +237,10 @@ export default function ActsEmitterandComEventTest() {
           priority: 1
         };
         try {
-          commonEventManager.createSubscriber(subscribeInfo_a, (err: BusinessError | null, commonEventSubscriber: commonEventManager.CommonEventSubscriber|undefined) => {
+          commonEventManager.createSubscriber(subscribeInfo_a, (err: BusinessError | null, commonEventSubscriber) => {
             if (!err) {
               console.info(Tag + "订阅者a createSubscriber success");
-              if(commonEventSubscriber !== undefined){
+              if(commonEventSubscriber !== undefined && commonEventSubscriber !== null){
                 subscriber_a = commonEventSubscriber
               }else{
                 expect(false).assertTrue()
@@ -326,10 +326,10 @@ export default function ActsEmitterandComEventTest() {
           priority: 2
         };
         try {
-          commonEventManager.createSubscriber(subscribeInfo_b, (err: BusinessError | null, commonEventSubscriber: commonEventManager.CommonEventSubscriber|undefined) => {
+          commonEventManager.createSubscriber(subscribeInfo_b, (err: BusinessError | null, commonEventSubscriber) => {
             if (!err) {
               console.info(Tag + "订阅者b createSubscriber success");
-              if(commonEventSubscriber !== undefined){
+              if(commonEventSubscriber !== undefined && commonEventSubscriber !== null){
                 subscriber_b = commonEventSubscriber
               }else{
                 expect(false).assertTrue()
