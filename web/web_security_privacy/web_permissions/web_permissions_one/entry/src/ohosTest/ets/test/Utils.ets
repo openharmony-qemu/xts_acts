@@ -47,6 +47,20 @@ export default class Utils {
     }
   }
 
+  static isWearable(controller: webview.WebviewController) {
+    let userAgent: string = controller.getUserAgent();
+    console.info("userAgent" + userAgent);
+
+    try {
+      let isWearable: boolean = userAgent.includes('Wearable') || userAgent.toLowerCase().includes('wearable')
+      console.log('device is Wearable:' + isWearable)
+      return isWearable
+    } catch (error) {
+      console.info("userAgent error:" + error);
+      return true
+    }
+  }
+
   static copyRawFileToSandbox(rawFileName: string): string {
     let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
     let context = abilityDelegator.getAppContext();
