@@ -33,14 +33,21 @@ export default class Utils {
     let strJson = getInspectorByKey(key);
     let obj: Record<string, Object> = JSON.parse(strJson);
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo = JSON.parse('[' + obj.$rect + ']')
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    this.rect_left = JSON.parse('[' + rectInfo[0] + ']')[0]
-    this.rect_top = JSON.parse('[' + rectInfo[0] + ']')[1]
-    this.rect_right = JSON.parse('[' + rectInfo[1] + ']')[0]
-    this.rect_bottom = JSON.parse('[' + rectInfo[1] + ']')[1]
-    return this.rect_value = {
-      "left": this.rect_left, "top": this.rect_top, "right": this.rect_right, "bottom": this.rect_bottom
+    try {
+      let rectInfo = JSON.parse('[' + obj.$rect + ']')
+      console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
+      this.rect_left = JSON.parse('[' + rectInfo[0] + ']')[0]
+      this.rect_top = JSON.parse('[' + rectInfo[0] + ']')[1]
+      this.rect_right = JSON.parse('[' + rectInfo[1] + ']')[0]
+      this.rect_bottom = JSON.parse('[' + rectInfo[1] + ']')[1]
+      return this.rect_value = {
+        "left": this.rect_left,
+        "top": this.rect_top,
+        "right": this.rect_right,
+        "bottom": this.rect_bottom
+      }
+    } catch (err) {
+      console.error(`getComponentRect error`)
     }
   }
 
@@ -81,7 +88,7 @@ export default class Utils {
     if (drag) {
       await this.sleep(500)
     }
-    for (var i = 1;i <= swipeSteps; i++) {
+    for (var i = 1; i <= swipeSteps; i++) {
       var movePoint: TouchObject = {
         id: 1,
         x: downX + (xStep * i),
@@ -91,6 +98,7 @@ export default class Utils {
       console.info('move touch started: ' + JSON.stringify(movePoint))
       ret = sendTouchEvent(movePoint)
       if (ret == false) {
+        console.error('sendTouchEvent move failed')
         break;
       }
       await this.sleep(5)
@@ -110,7 +118,3 @@ export default class Utils {
     await this.sleep(500)
   }
 }
-
-
-
-

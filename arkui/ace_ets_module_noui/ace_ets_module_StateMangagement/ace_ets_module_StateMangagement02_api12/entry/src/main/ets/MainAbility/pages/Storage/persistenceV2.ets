@@ -60,7 +60,11 @@ struct PersistenceV2Page1 {
         .onClick(() => {
           // 在PersistenceV2中创建一个key为PerSample的键值对（如果存在，则返回PersistenceV2中的数据），并且和prop关联
           // 不建议对prop属性换connect的对象
-          this.prop = PersistenceV2.connect(PerSample, 'PerSample', () => new PerSample())!;
+          try {
+            this.prop = PersistenceV2.connect(PerSample, 'PerSample', () => new PerSample())!;
+          } catch (err) {
+            console.error('PersistenceV2Page1 PersistenceV2.connect error')
+          }
         })
 
       Button('remove the key PerSample')
@@ -70,7 +74,11 @@ struct PersistenceV2Page1 {
         .fontSize(9)
         .onClick(() => {
           // 从PersistenceV2中删除后，prop将不会再与key为PerSample的值关联
-          PersistenceV2.remove(PerSample);
+          try {
+            PersistenceV2.remove(PerSample);
+          } catch (err) {
+            console.error('PersistenceV2Page1 PersistenceV2.remove error')
+          }
         })
 
       Button('Clear Create keys')
@@ -79,8 +87,12 @@ struct PersistenceV2Page1 {
         .height('3%')
         .fontSize(9)
         .onClick(() => {
-          if (PersistenceV2.keys().includes('PerSample')) {
-            PersistenceV2.remove('PerSample')
+          try {
+            if (PersistenceV2.keys().includes('PerSample')) {
+              PersistenceV2.remove('PerSample')
+            }
+          } catch (err) {
+            console.error('PersistenceV2Page1 PersistenceV2 error')
           }
         })
 
@@ -91,7 +103,11 @@ struct PersistenceV2Page1 {
         .fontSize(9)
         .onClick(() => {
           // 如果处于connect状态，持久化key为PerSample的键值对
-          PersistenceV2.save(PerSample);
+          try {
+            PersistenceV2.save(PerSample);
+          } catch (err) {
+            console.error('PersistenceV2Page1 PersistenceV2.save error')
+          }
         })
 
       Text(`prop.p1: ${this.prop.f.p1}`)
@@ -109,7 +125,11 @@ struct PersistenceV2Page1 {
         .onClick(() => {
           //p2不是观察对象，它的变化需要save保存
           this.prop.f.p2++;
-          PersistenceV2.save(PerSample);
+          try {
+            PersistenceV2.save(PerSample);
+          } catch (err) {
+            console.error('PersistenceV2Page1 PersistenceV2.save error')
+          }
           this.a += 2
         })
 
