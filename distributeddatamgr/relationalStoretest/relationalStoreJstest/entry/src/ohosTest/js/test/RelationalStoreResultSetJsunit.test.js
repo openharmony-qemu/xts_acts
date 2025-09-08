@@ -19,7 +19,7 @@ var context = ability_featureAbility.getContext();
 
 const TAG = '[RelationalStore_JSKITS_TEST]'
 const CREATE_TABLE_TEST = 'CREATE TABLE IF NOT EXISTS test (' + 'id INTEGER PRIMARY KEY AUTOINCREMENT, ' + 'data1 text,' + 'data2 long, ' + 'data3 double,' + 'data4 blob)';
-
+const DROP_TABLE_TEST = "DROP TABLE IF EXISTS test"
 const STORE_CONFIG = {
     name: 'Resultset.db',
     securityLevel: data_Rdb.SecurityLevel.S1
@@ -67,16 +67,18 @@ describe('relationalStoreResultSetTest', function () {
     beforeAll(async function () {
         console.info(TAG + 'beforeAll')
         rdbStore = await data_Rdb.getRdbStore(context, STORE_CONFIG);
-        await rdbStore.executeSql(CREATE_TABLE_TEST, null);
-        await createTest();
+
     })
 
     beforeEach(async function () {
         console.info(TAG + 'beforeEach')
+        await rdbStore.executeSql(CREATE_TABLE_TEST, null);
+        await createTest();
     })
 
     afterEach(function () {
         console.info(TAG + 'afterEach')
+        await rdbStore.executeSql(DROP_TABLE_TEST, null);
     })
 
     afterAll(async function () {
