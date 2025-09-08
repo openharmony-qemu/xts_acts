@@ -63,7 +63,7 @@ struct WebComponent {
           await waitForExist(() => this.isPageEnd, this.emitKey, 0);
           await waitForExist(() => this.isReceive, this.emitKey, 0);
           this.isReceive = -1;
-          console.info('key==>' + this.emitKey)
+          console.info('[TAO]key==>' + this.emitKey)
            try {
              this.controller.enableSafeBrowsing(true);
              console.log('enableSafeBrowsing: true');
