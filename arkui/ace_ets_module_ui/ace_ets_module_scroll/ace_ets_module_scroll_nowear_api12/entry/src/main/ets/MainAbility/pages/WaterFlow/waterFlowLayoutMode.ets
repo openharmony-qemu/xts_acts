@@ -66,7 +66,7 @@ struct layoutModeWaterFlow {
             this.scroller.scrollTo({ xOffset: 0, yOffset: 100 })
             this.num = this.scroller.currentOffset().yOffset
           })
-      }.height('20%')
+      }
 
       WaterFlow({scroller: this.scroller, layoutMode: this.layoutMode1 }) {
         LazyForEach(this.dataSource, (item: number) => {
