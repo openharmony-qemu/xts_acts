@@ -18,12 +18,16 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../test/List.test';
+import webView from '@ohos.web.webview';
 
 export default class TestAbility extends UIAbility {
     onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
         hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility onCreate');
         hilog.info(0x0000, 'testTag', '%{public}s', 'want param:' + JSON.stringify(want) ?? '');
         hilog.info(0x0000, 'testTag', '%{public}s', 'launchParam:'+ JSON.stringify(launchParam) ?? '');
+        webView.WebviewController.setActiveWebEngineVersion(webView.ArkWebEngineVersion.M114);
+        webView.WebviewController.setActiveWebEngineVersion(webView.ArkWebEngineVersion.SYSTEM_DEFAULT);
+        webView.WebviewController.setActiveWebEngineVersion(webView.ArkWebEngineVersion.M132);
     }
 
     onDestroy() {

@@ -263,5 +263,246 @@ export default function HttpRequestGmssl() {
         console.info(`${caseName} test End`);
       });   
 
-    })
+    /* *
+    * @tc.number:  SUB_NetworkMgr_HttpRequestGmssl_HttpRequestOptions_0300
+    * @tc.name:    testNetworkMgrHttpRequestGmsslHttpRequestOptions0300
+    * @tc.desc:    test performanceTiming
+    * @tc.size:    SmallTest
+    * @tc.type:    Function
+    * @tc.level:   level 3
+    */
+    it('testNetworkMgrHttpRequestGmsslHttpRequestOptions0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrHttpRequestGmsslHttpRequestOptions0300";
+      console.info(`${caseName} test Start`);
+      let context: Context = GlobalContext.getContext().getObject('context') as Context;
+      console.info(`context================: ${JSON.stringify(context)}`);
+
+      let certConfig = initCertConfig(context);
+      console.info(`certConfig: ${JSON.stringify(certConfig)}`);
+
+      let clientCert: http.ClientCert = {
+        certPath: certConfig.sigCertPath,
+        keyPath: certConfig.sigKeyPath,
+        certType: http.CertType.PEM,
+        keyPassword: ''
+      };
+      let clientEncCert: http.ClientCert = {
+        certPath: certConfig.encCertPath,
+        keyPath: certConfig.encKeyPath,
+        certType: http.CertType.PEM,
+        keyPassword: ''
+      };
+      let sslType: http.SslType = 'TLCP';
+      let options: http.HttpRequestOptions = {
+        sslType,
+        caPath: '',
+        clientCert,
+        clientEncCert,
+      };
+      try {
+        let httpRequest: http.HttpRequest = http.createHttp();
+        httpRequest.request(TLCP_TARGET_URL, options, (err: BusinessError, res: http.HttpResponse) => {
+          if (err) {
+            console.info(`${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
+            httpRequest.destroy();
+            ExpectTrue(err.code == 2300999);
+            done();
+          } else {
+            console.info(`${caseName} res.performanceTiming:${JSON.stringify(res.performanceTiming)}`);
+            ExpectTrue(res.responseCode == 200);
+            httpRequest.destroy();
+            done();
+          }
+        });
+      } catch (error) {
+        const err: BusinessError = error as BusinessError;
+        console.info(`${caseName} catch ERROR-->:${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test End`);
+    });
+
+    /* *
+    * @tc.number:  SUB_NetworkMgr_HttpRequestGmssl_HttpRequestOptions_0400
+    * @tc.name:    testNetworkMgrHttpRequestGmsslHttpRequestOptions0400
+    * @tc.desc:    test performanceTiming
+    * @tc.size:    SmallTest
+    * @tc.type:    Function
+    * @tc.level:   level 3
+    */
+    it('testNetworkMgrHttpRequestGmsslHttpRequestOptions0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrHttpRequestGmsslHttpRequestOptions0400";
+      console.info(`${caseName} test Start`);
+      let context: Context = GlobalContext.getContext().getObject('context') as Context;
+      console.info(`context================: ${JSON.stringify(context)}`);
+
+      let certConfig = initCertConfig(context);
+      console.info(`certConfig: ${JSON.stringify(certConfig)}`);
+
+      let clientCert: http.ClientCert = {
+        certPath: '',
+        keyPath: '',
+        certType: http.CertType.PEM,
+        keyPassword: ''
+      };
+      let clientEncCert: http.ClientCert = {
+        certPath: certConfig.encCertPath,
+        keyPath: certConfig.encKeyPath,
+        certType: http.CertType.PEM,
+        keyPassword: ''
+      };
+      let sslType: http.SslType = 'TLCP';
+      let options: http.HttpRequestOptions = {
+        sslType,
+        caPath: certConfig.caPath,
+        clientCert,
+        clientEncCert,
+      };
+      try {
+        let httpRequest: http.HttpRequest = http.createHttp();
+        httpRequest.request(TLCP_TARGET_URL, options, (err: BusinessError, res: http.HttpResponse) => {
+          if (err) {
+            console.info(`${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
+            httpRequest.destroy();
+            ExpectTrue(err.code == 2300999);
+            done();
+          } else {
+            console.info(`${caseName} res.performanceTiming:${JSON.stringify(res.performanceTiming)}`);
+            console.info(`${caseName} res.responseCode:${res.responseCode}`);
+            ExpectTrue(res.responseCode == 200);
+            httpRequest.destroy();
+            done();
+          }
+        });
+      } catch (error) {
+        const err: BusinessError = error as BusinessError;
+        console.info(`${caseName} catch ERROR-->:${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test End`);
+    });
+
+    /* *
+    * @tc.number:  SUB_NetworkMgr_HttpRequestGmssl_HttpRequestOptions_0500
+    * @tc.name:    testNetworkMgrHttpRequestGmsslHttpRequestOptions0500
+    * @tc.desc:    test performanceTiming
+    * @tc.size:    SmallTest
+    * @tc.type:    Function
+    * @tc.level:   level 3
+    */
+    it('testNetworkMgrHttpRequestGmsslHttpRequestOptions0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrHttpRequestGmsslHttpRequestOptions0500";
+      console.info(`${caseName} test Start`);
+      let context: Context = GlobalContext.getContext().getObject('context') as Context;
+      console.info(`context================: ${JSON.stringify(context)}`);
+
+      let certConfig = initCertConfig(context);
+      console.info(`certConfig: ${JSON.stringify(certConfig)}`);
+
+      let clientCert: http.ClientCert = {
+        certPath: certConfig.sigCertPath,
+        keyPath: certConfig.sigKeyPath,
+        certType: http.CertType.PEM,
+        keyPassword: ''
+      };
+      let clientEncCert: http.ClientCert = {
+        certPath: '',
+        keyPath: '',
+        certType: http.CertType.PEM,
+        keyPassword: ''
+      };
+      let sslType: http.SslType = 'TLCP';
+      let options: http.HttpRequestOptions = {
+        sslType,
+        caPath: certConfig.caPath,
+        clientCert,
+        clientEncCert,
+      };
+      try {
+        let httpRequest: http.HttpRequest = http.createHttp();
+        httpRequest.request(TLCP_TARGET_URL, options, (err: BusinessError, res: http.HttpResponse) => {
+          if (err) {
+            console.info(`${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
+            httpRequest.destroy();
+            ExpectTrue(err.code == 2300999);
+            done();
+          } else {
+            console.info(`${caseName} res.performanceTiming:${JSON.stringify(res.performanceTiming)}`);
+            console.info(`${caseName} res.responseCode:${res.responseCode}`);
+            ExpectTrue(res.responseCode == 200);
+            httpRequest.destroy();
+            done();
+          }
+        });
+      } catch (error) {
+        const err: BusinessError = error as BusinessError;
+        console.info(`${caseName} catch ERROR-->:${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test End`);
+    });
+
+    /* *
+    * @tc.number:  SUB_NetworkMgr_HttpRequestGmssl_HttpRequestOptions_0600
+    * @tc.name:    testNetworkMgrHttpRequestGmsslHttpRequestOptions0600
+    * @tc.desc:    test performanceTiming
+    * @tc.size:    SmallTest
+    * @tc.type:    Function
+    * @tc.level:   level 3
+    */
+    it('testNetworkMgrHttpRequestGmsslHttpRequestOptions0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrHttpRequestGmsslHttpRequestOptions0600";
+      console.info(`${caseName} test Start`);
+      let context: Context = GlobalContext.getContext().getObject('context') as Context;
+      console.info(`context================: ${JSON.stringify(context)}`);
+
+      let certConfig = initCertConfig(context);
+      console.info(`certConfig: ${JSON.stringify(certConfig)}`);
+
+      let clientCert: http.ClientCert = {
+        certPath: certConfig.sigCertPath,
+        keyPath: certConfig.sigKeyPath,
+        certType: http.CertType.PEM,
+        keyPassword: ''
+      };
+      let clientEncCert: http.ClientCert = {
+        certPath: certConfig.encCertPath,
+        keyPath: certConfig.encKeyPath,
+        certType: http.CertType.PEM,
+        keyPassword: ''
+      };
+      let sslType: http.SslType = 'TLS';
+      let options: http.HttpRequestOptions = {
+        sslType,
+        caPath: certConfig.caPath,
+        clientCert,
+        clientEncCert,
+      };
+      try {
+        let httpRequest: http.HttpRequest = http.createHttp();
+        httpRequest.request(TLCP_TARGET_URL, options, (err: BusinessError, res: http.HttpResponse) => {
+          if (err) {
+            console.info(`${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
+            httpRequest.destroy();
+            ExpectTrue(err.code == 2300058);
+            done();
+          } else {
+            console.info(`${caseName} res.performanceTiming:${JSON.stringify(res.performanceTiming)}`);
+            ExpectTrue(res.responseCode == 200);
+            httpRequest.destroy();
+            done();
+          }
+        });
+      } catch (error) {
+        const err: BusinessError = error as BusinessError;
+        console.info(`${caseName} catch ERROR-->:${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test End`);
+    });
+  })
 }
