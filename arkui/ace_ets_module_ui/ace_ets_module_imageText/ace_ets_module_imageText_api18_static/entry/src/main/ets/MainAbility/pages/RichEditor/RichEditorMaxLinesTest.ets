@@ -31,7 +31,7 @@ struct RichEditorMaxLinesTest {
     'it casts a warm,' +
     'golden hue that spreads like liquid amber across the vast expanse of the sky.' +
     'The once-blue heavens gradually transform, '
-  @State maxLineList: (int | undefined)[] = [-1, 2, 6, undefined]
+  @State maxLineList: (Double | undefined)[] = [-1.0,2.5, 6.0, undefined]
   @State maxLineIndex: number = 0
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
   controller2: TextInputController = new TextInputController()
