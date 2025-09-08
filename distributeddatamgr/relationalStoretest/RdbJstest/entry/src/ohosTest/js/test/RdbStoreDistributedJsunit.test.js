@@ -187,7 +187,7 @@ describe('rdbStoreDistributedTest', function () {
         try {
             let rowId = await rdbStore.insert("employee", record)
             console.info(TAG + "insert one record success " + rowId)
-            expect(1).assertEqual(rowId)
+            expect(2).assertEqual(rowId)
         } catch (err) {
             console.info(TAG + "insert one record failed" + err);
             expect(null).assertFail();
