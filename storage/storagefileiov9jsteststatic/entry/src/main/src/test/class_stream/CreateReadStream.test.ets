@@ -16,7 +16,7 @@
 import { describe, it, expect, TestType, Size, Level } from "../../../../hypium/index";
 import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import Utils from './Util.test';
+import Utils from '../Util.test';
 import fs from '@ohos.file.fs';
 import { BusinessError } from '@ohos.base';
 import { WriteStreamOptions } from '@ohos.file.fs';
