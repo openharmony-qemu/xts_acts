@@ -453,7 +453,7 @@ export default function actslocationTest() {
                 } else {
                 hilog.info(domain, tag, "[lbs_js] getAddressesFromLocation callback data is:" + JSON.stringify(data));
                 expect(true).assertEqual((JSON.stringify(data)) != null);
-                if (data.?length != null) {
+                if (data != null) {
                     hilog.info(domain,tag,"addressUrl"+data[0]?.addressUrl)
                     hilog.info(domain,tag,"administrativeArea"+data[0]?.administrativeArea)
                     hilog.info(domain,tag,"countryCode"+data[0]?.countryCode)
