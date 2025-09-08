@@ -650,6 +650,44 @@ export default function actslocationTest() {
             await Utils.msSleep(1000)
             done();
         })
+        /**
+        * @tc.number    : testBlueToothScan01
+        * @tc.name      : testBlueToothScan01
+        * @tc.desc      : Test Report Fence Transition.
+        * @tc.size      : MediumTest
+        * @tc.type      : Function
+        * @tc.level     : Level 2
+        */
+        it('testBlueToothScan01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: () => void): Promise<void> => {
+            let bluetoothScanResult = (result: geoLocationManager.BluetoothScanResult) => {
+            console.info("[lbs_js] testBlueToothScan01 bluetoothScanResult" + JSON.stringify(result));
+            expect(true).assertEqual(result.deviceId != 'NA')
+            expect(true).assertEqual(result.rssi != -1)
+            expect(true).assertEqual(result.data != undefined)
+            expect(true).assertEqual(result.deviceName != 'NA')
+            expect(true).assertEqual(result.connectable == true || result.connectable == false)
+            }
+            try {
+            geoLocationManager.on('bluetoothScanResultChange', bluetoothScanResult)
+            } catch (error: BusinessError) {
+            hilog.info(domain, TAG, "[lbs_js] testBlueToothScan01 on err" + JSON.stringify(error));
+            expect(true).assertFalse();
+            }
+            try {
+            geoLocationManager.off('bluetoothScanResultChange')
+            } catch (error: BusinessError) {
+            hilog.info(domain, TAG, "[lbs_js] testBlueToothScan01 off err" + JSON.stringify(error));
+            expect(true).assertFalse();
+            }
+            try {
+            geoLocationManager.off('bluetoothScanResultChange', bluetoothScanResult)
+            } catch (error: BusinessError) {
+            hilog.info(domain, TAG, "[lbs_js] testBlueToothScan01 off all err" + JSON.stringify(error));
+            expect(true).assertFalse();
+            }
+            done();
+        })
 
 
 
