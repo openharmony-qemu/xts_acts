@@ -66,7 +66,7 @@ export default function looper1Test() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER_0100
+     * @tc.number: SUB_COMMONLIBRARY_LOOPERR_100
      * @tc.name: testLoop001
      * @tc.desc: Test the difference in iteration behavior between for...in and for...of loops on arrays; verify that for...in iterates over array indices and custom properties, while for...of only iterates over array element values
      * @tc.size: MediumTest
