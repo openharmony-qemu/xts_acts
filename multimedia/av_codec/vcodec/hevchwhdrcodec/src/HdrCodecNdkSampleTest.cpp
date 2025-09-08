@@ -191,17 +191,17 @@ void HDRCodecNdkSample::ProcessInitialSearch(uint32_t &bufferSize, void *&pBuffe
     const auto bufferEnd = prereadBuffer_.get() + prereadBufferSize_;
 
     const auto frameHeadPos = std::search(bufferStart + START_CODE_SIZE, bufferEnd,
-                                        std::begin(MPEG4_FRAME_HEAD), std::end(MPEG4_FRAME_HEAD));
+                                          std::begin(MPEG4_FRAME_HEAD), std::end(MPEG4_FRAME_HEAD));
     const uint32_t frameHeadDistance = std::distance(bufferStart, frameHeadPos);
 
     const auto seqHeadPos = std::search(bufferStart, frameHeadPos,
-                                    std::begin(MPEG4_SEQUENCE_HEAD), std::end(MPEG4_SEQUENCE_HEAD));
+                                        std::begin(MPEG4_SEQUENCE_HEAD), std::end(MPEG4_SEQUENCE_HEAD));
     const uint32_t seqHeadDistance = std::distance(bufferStart, seqHeadPos);
     
     uint32_t copySize = 0;
     if (seqHeadDistance == 0) {
-        const auto nextFrameHeadPos = std::search(frameHeadPos + START_CODE_SIZE, bufferEnd,
-                                                std::begin(MPEG4_FRAME_HEAD), std::end(MPEG4_FRAME_HEAD));
+    const auto nextFrameHeadPos = std::search(frameHeadPos + START_CODE_SIZE, bufferEnd,
+                                              std::begin(MPEG4_FRAME_HEAD), std::end(MPEG4_FRAME_HEAD));
         copySize = std::distance(bufferStart, nextFrameHeadPos);
     } else if (frameHeadDistance > seqHeadDistance) {
         copySize = seqHeadDistance;
@@ -230,9 +230,9 @@ void HDRCodecNdkSample::ProcessAdditionalRead(uint32_t &bufferSize, void *&pBuff
     inFile_->read(reinterpret_cast<char*>(prereadBuffer_.get() + START_CODE_SIZE), readSize);
     prereadBufferSize_ = static_cast<uint32_t>(inFile_->gcount()) + START_CODE_SIZE;
     pPrereadBuffer_ = START_CODE_SIZE;
-    
-    if (memcpy_s(prereadBuffer_.get(), START_CODE_SIZE, 
-             currentBuffer - START_CODE_SIZE, START_CODE_SIZE) != EOK) {
+
+    if (memcpy_s(prereadBuffer_.get(), START_CODE_SIZE,
+                 currentBuffer - START_CODE_SIZE, START_CODE_SIZE) != EOK) {
         bufferSize = 0;
         pBuffer = nullptr;
         mpegUnit_->resize(0);
