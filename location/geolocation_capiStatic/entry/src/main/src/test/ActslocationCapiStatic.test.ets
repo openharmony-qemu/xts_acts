@@ -458,7 +458,6 @@ export default function actslocationTest() {
                     hilog.info(domain,tag,"administrativeArea"+data[0]?.administrativeArea)
                     hilog.info(domain,tag,"countryCode"+data[0]?.countryCode)
                     hilog.info(domain,tag,"countryName"+data[0]?.countryName)
-                    hilog.info(domain,tag,"description"+data[0]?.description)
                     hilog.info(domain,tag,"descriptionsSize"+data[0]?.descriptionsSize)
                     hilog.info(domain,tag,"latitude"+data[0]?.latitude)
                     hilog.info(domain,tag,"locale"+data[0]?.locale)
