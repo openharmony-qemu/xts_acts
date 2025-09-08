@@ -16,6 +16,8 @@
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium"
 import hilog from '@ohos.hilog'
 import napitestex from 'libnapitestex.so'
+import napitest from 'libnapitest.so'
+import worker, { MessageEvents } from '@ohos.worker';
 
 async function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
@@ -318,6 +320,477 @@ export default function napiCheckExTest() {
         expect().assertFail();
       }
       done();
+    });
+
+    // ==================== NAPI Number Tests ====================
+    
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_NUMBER_0001
+     * @tc.name      testNumberCreationAndRetrieval
+     * @tc.desc      Test number creation and retrieval using NAPI functions to ensure correctness
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testNumberCreationAndRetrieval', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('testNumberCreationAndRetrieval START');
+      
+      try {
+        // 调用C++测试函数进行数值创建和获取测试
+        let result = napitest.NapiNumberTest001();
+        expect(result).assertTrue();
+        
+        console.info('testNumberCreationAndRetrieval PASS');
+      } catch (err) {
+        console.error('testNumberCreationAndRetrieval err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_NUMBER_0002
+     * @tc.name      testCrossTypeConversion
+     * @tc.desc      Test cross-type conversion between different numeric types using NAPI functions
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testCrossTypeConversion', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('testCrossTypeConversion START');
+      
+      try {
+        // 调用C++测试函数进行跨类型转换测试
+        let result = napitest.NapiNumberTest002();
+        expect(result).assertTrue();
+        
+        console.info('testCrossTypeConversion PASS');
+      } catch (err) {
+        console.error('testCrossTypeConversion err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_NUMBER_0003
+     * @tc.name      testBoundaryValues
+     * @tc.desc      Test boundary values for different numeric types
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testBoundaryValues', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('testBoundaryValues START');
+      
+      try {
+        // 调用C++测试函数进行边界值测试
+        let result = napitest.NapiNumberTest003();
+        expect(result).assertTrue();
+        
+        console.info('testBoundaryValues PASS');
+      } catch (err) {
+        console.error('testBoundaryValues err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_NUMBER_0004
+     * @tc.name      testCombinedOperations
+     * @tc.desc      Test combined operations of multiple create and get operations
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testCombinedOperations', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('testCombinedOperations START');
+      
+      try {
+        // 调用C++测试函数进行组合操作测试
+        let result = napitest.NapiNumberTest004();
+        expect(result).assertTrue();
+        
+        console.info('testCombinedOperations PASS');
+      } catch (err) {
+        console.error('testCombinedOperations err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_NUMBER_0005
+     * @tc.name      testTypeConversionAndOverflow
+     * @tc.desc      Test type conversion and overflow handling
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testTypeConversionAndOverflow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('testTypeConversionAndOverflow START');
+      
+      try {
+        // 调用C++测试函数进行类型转换和溢出测试
+        let result = napitest.NapiNumberTest005();
+        expect(result).assertTrue();
+        
+        console.info('testTypeConversionAndOverflow PASS');
+      } catch (err) {
+        console.error('testTypeConversionAndOverflow err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_NUMBER_0006
+     * @tc.name      testLargeNumbersAndPrecision
+     * @tc.desc      Test large numbers and precision handling
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLargeNumbersAndPrecision', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('testLargeNumbersAndPrecision START');
+      
+      try {
+        // 调用C++测试函数进行大数值和精度测试
+        let result = napitest.NapiNumberTest006();
+        expect(result).assertTrue();
+        
+        console.info('testLargeNumbersAndPrecision PASS');
+      } catch (err) {
+        console.error('testLargeNumbersAndPrecision err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_NUMBER_0007
+     * @tc.name      testBooleanValueHandling
+     * @tc.desc      Test boolean value creation and retrieval
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testBooleanValueHandling', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('testBooleanValueHandling START');
+      
+      try {
+        // 调用C++测试函数进行布尔值处理测试
+        let result = napitest.NapiNumberTest007();
+        expect(result).assertTrue();
+        
+        console.info('testBooleanValueHandling PASS');
+      } catch (err) {
+        console.error('testBooleanValueHandling err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_NUMBER_0008
+     * @tc.name      testThreadSafety
+     * @tc.desc      Test thread safety of NAPI value creation and retrieval
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testThreadSafety', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('testThreadSafety START');
+      
+      try {
+        // 调用C++测试函数进行线程安全性测试
+        let result = napitest.NapiNumberTest008();
+        expect(result).assertTrue();
+        
+        console.info('testThreadSafety PASS');
+      } catch (err) {
+        console.error('testThreadSafety err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    // ==================== NAPI Object Tests ====================
+    
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_OBJECT_0001
+     * @tc.name      testObjectCreationPrototypeFreezeAndTypeCheck
+     * @tc.desc      Test object creation, prototype retrieval, freezing and type checking functionality
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testObjectCreationPrototypeFreezeAndTypeCheck', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('testObjectCreationPrototypeFreezeAndTypeCheck START');
+      
+      try {
+        // 调用C++测试函数进行对象创建、原型获取、冻结和类型检查测试
+        let result = napitest.NapiObjectTest001();
+        expect(result).assertTrue();
+        
+        console.info('testObjectCreationPrototypeFreezeAndTypeCheck PASS');
+      } catch (err) {
+        console.error('testObjectCreationPrototypeFreezeAndTypeCheck err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_OBJECT_0002
+     * @tc.name      testObjectTypeTagCreationAndVerification
+     * @tc.desc      Test object type tag creation and verification functionality
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testObjectTypeTagCreationAndVerification', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('testObjectTypeTagCreationAndVerification START');
+      
+      try {
+        // 调用C++测试函数进行对象类型标签创建和验证测试
+        let result = napitest.NapiObjectTest002();
+        expect(result).assertTrue();
+        
+        console.info('testObjectTypeTagCreationAndVerification PASS');
+      } catch (err) {
+        console.error('testObjectTypeTagCreationAndVerification err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_OBJECT_0003
+     * @tc.name      testExternalObjectCreationAndValueRetrieval
+     * @tc.desc      Test external object creation and value retrieval functionality
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testExternalObjectCreationAndValueRetrieval', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('testExternalObjectCreationAndValueRetrieval START');
+      
+      try {
+        // 调用C++测试函数进行外部对象创建和值获取测试
+        let result = napitest.NapiObjectTest003();
+        expect(result).assertTrue();
+        
+        console.info('testExternalObjectCreationAndValueRetrieval PASS');
+      } catch (err) {
+        console.error('testExternalObjectCreationAndValueRetrieval err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_OBJECT_0004
+     * @tc.name      testObjectPropertyOperationsUnderDifferentProtectionLevels
+     * @tc.desc      Test object property operations under different protection levels
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testObjectPropertyOperationsUnderDifferentProtectionLevels', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('testObjectPropertyOperationsUnderDifferentProtectionLevels START');
+      
+      try {
+        // 调用C++测试函数进行不同保护级别下的对象属性操作测试
+        let result = napitest.NapiObjectTest004();
+        expect(result).assertTrue();
+        
+        console.info('testObjectPropertyOperationsUnderDifferentProtectionLevels PASS');
+      } catch (err) {
+        console.error('testObjectPropertyOperationsUnderDifferentProtectionLevels err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_OBJECT_0005
+     * @tc.name      testSymbolCreationAndTypeCheck
+     * @tc.desc      Test Symbol creation and type checking functionality
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testSymbolCreationAndTypeCheck', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('testSymbolCreationAndTypeCheck START');
+      
+      try {
+        // 调用C++测试函数进行Symbol创建和类型检查测试
+        let result = napitest.NapiObjectTest005();
+        expect(result).assertTrue();
+        
+        console.info('testSymbolCreationAndTypeCheck PASS');
+      } catch (err) {
+        console.error('testSymbolCreationAndTypeCheck err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_OBJECT_0006
+     * @tc.name      testTypeTagWithExternalObjectCombination
+     * @tc.desc      Test type tag with external object combination usage
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testTypeTagWithExternalObjectCombination', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('testTypeTagWithExternalObjectCombination START');
+      
+      try {
+        // 调用C++测试函数进行类型标签与外部对象组合使用测试
+        let result = napitest.NapiObjectTest006();
+        
+        if (result) {
+          console.info('[TestTypeTagWithExternalObjectCombination] SUCCESS - Type tag and external object operations completed');
+        } else {
+          console.error('[TestTypeTagWithExternalObjectCombination] FAILED - Test returned false');
+        }
+        
+        expect(result).assertTrue();
+        
+        console.info('testTypeTagWithExternalObjectCombination PASS');
+      } catch (err) {
+        console.error('testTypeTagWithExternalObjectCombination err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_OBJECT_0007
+     * @tc.name      testSymbolAsObjectPropertyKeyUnderDifferentProtectionLevels
+     * @tc.desc      Test Symbol as object property key under different protection levels
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testSymbolAsObjectPropertyKeyUnderDifferentProtectionLevels', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('testSymbolAsObjectPropertyKeyUnderDifferentProtectionLevels START');
+      
+      try {
+        // 调用C++测试函数进行Symbol作为对象属性键在不同保护级别下的行为测试
+        let result = napitest.NapiObjectTest007();
+        expect(result).assertTrue();
+        
+        console.info('testSymbolAsObjectPropertyKeyUnderDifferentProtectionLevels PASS');
+      } catch (err) {
+        console.error('testSymbolAsObjectPropertyKeyUnderDifferentProtectionLevels err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_OBJECT_0008
+     * @tc.name      testTypeTagBehaviorInPrototypeChain
+     * @tc.desc      Test type tag behavior in prototype chain
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testTypeTagBehaviorInPrototypeChain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('testTypeTagBehaviorInPrototypeChain START');
+      
+      try {
+        // 调用C++测试函数进行类型标签在原型链中的行为测试
+        let result = napitest.NapiObjectTest008();
+        expect(result).assertTrue();
+        
+        console.info('testTypeTagBehaviorInPrototypeChain PASS');
+      } catch (err) {
+        console.error('testTypeTagBehaviorInPrototypeChain err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_OBJECT_0009
+     * @tc.name      testExternalObjectWithPrototypeMethodInteraction
+     * @tc.desc      Test external object interaction with prototype methods
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExternalObjectWithPrototypeMethodInteraction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('testExternalObjectWithPrototypeMethodInteraction START');
+      
+      try {
+        // 调用C++测试函数进行外部对象与原型方法交互测试
+        let result = napitest.NapiObjectTest009();
+        expect(result).assertTrue();
+        
+        console.info('testExternalObjectWithPrototypeMethodInteraction PASS');
+      } catch (err) {
+        console.error('testExternalObjectWithPrototypeMethodInteraction err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_OBJECT_0010
+     * @tc.name      testObjectThreadSafety
+     * @tc.desc      Test thread safety of object-related NAPI functions
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testObjectThreadSafety', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('testObjectThreadSafety START');
+      
+      try {
+        // 调用C++测试函数进行对象相关函数的线程安全性测试
+        let result = napitest.NapiObjectTest010();
+        expect(result).assertTrue();
+        
+        console.info('testObjectThreadSafety PASS');
+      } catch (err) {
+        console.error('testObjectThreadSafety err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_OBJECT_0011
+     * @tc.name      testExternalObjectThreadSafety
+     * @tc.desc      Test thread safety of external object NAPI functions
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExternalObjectThreadSafety', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('testExternalObjectThreadSafety START');
+      
+      try {
+        // 调用C++测试函数进行外部对象函数的线程安全性测试
+        let result = napitest.NapiObjectTest011();
+        expect(result).assertTrue();
+        
+        console.info('testExternalObjectThreadSafety PASS');
+      } catch (err) {
+        console.error('testExternalObjectThreadSafety err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_OBJECT_0012
+     * @tc.name      testSymbolThreadSafety
+     * @tc.desc      Test thread safety of Symbol NAPI functions
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testSymbolThreadSafety', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('testSymbolThreadSafety START');
+      
+      try {
+        // 调用C++测试函数进行Symbol函数的线程安全性测试
+        let result = napitest.NapiObjectTest012();
+        expect(result).assertTrue();
+        
+        console.info('testSymbolThreadSafety PASS');
+      } catch (err) {
+        console.error('testSymbolThreadSafety err msg: ' + err.message);
+        expect().assertFail();
+      }
     });
   })
 

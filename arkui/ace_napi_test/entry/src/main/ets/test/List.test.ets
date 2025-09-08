@@ -21,8 +21,6 @@ import napiTaskApiTest from './NapiTask.test';
 import napiSendableTaskTest from './NapiSendableTask.test';
 import napiWorkerTest from './NapiWorker.test';
 import napiWorkerGCTest from './NapiWorkerGC.test';
-import NapiApiNumberTest from './NapiApiNumber.test';
-import NapiApiObjectTest from './NapiApiObject.test';
 
 export default function testsuite() {
   napiStringTest();
@@ -34,6 +32,4 @@ export default function testsuite() {
   napiWorkerTest();
   napiWorkerGCTest();
   napiCheckExTest();
-  NapiApiNumberTest();
-  NapiApiObjectTest();
 }
