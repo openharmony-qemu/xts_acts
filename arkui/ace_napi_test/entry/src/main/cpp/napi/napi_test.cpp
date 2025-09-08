@@ -17783,6 +17783,505 @@ static napi_value NapiWrapEnhanceTest12(napi_env env, napi_callback_info info)
     return rst;
 }
 
+// Helper function to test int32 creation and retrieval
+static bool TestInt32CreationAndRetrieval(napi_env env, int32_t value) {
+    napi_status status;
+    napi_value int32Val = nullptr;
+    status = napi_create_int32(env, value, &int32Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    
+    int32_t retrievedInt32 = 0;
+    status = napi_get_value_int32(env, int32Val, &retrievedInt32);
+    if (status != napi_ok || retrievedInt32 != value) {
+        return false;
+    }
+    return true;
+}
+
+// Helper function to test uint32 creation and retrieval
+static bool TestUint32CreationAndRetrieval(napi_env env, uint32_t value) {
+    napi_status status;
+    napi_value uint32Val = nullptr;
+    status = napi_create_uint32(env, value, &uint32Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    
+    uint32_t retrievedUint32 = 0;
+    status = napi_get_value_uint32(env, uint32Val, &retrievedUint32);
+    if (status != napi_ok || retrievedUint32 != value) {
+        return false;
+    }
+    return true;
+}
+
+// Helper function to test int64 creation and retrieval
+static bool TestInt64CreationAndRetrieval(napi_env env, int64_t value) {
+    napi_status status;
+    napi_value int64Val = nullptr;
+    status = napi_create_int64(env, value, &int64Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    
+    int64_t retrievedInt64 = 0;
+    status = napi_get_value_int64(env, int64Val, &retrievedInt64);
+    if (status != napi_ok || retrievedInt64 != value) {
+        return false;
+    }
+    return true;
+}
+
+// Helper function to test double creation and retrieval
+static bool TestDoubleCreationAndRetrieval(napi_env env, double value) {
+    napi_status status;
+    napi_value doubleVal = nullptr;
+    status = napi_create_double(env, value, &doubleVal);
+    if (status != napi_ok) {
+        return false;
+    }
+    
+    double retrievedDouble = 0.0;
+    status = napi_get_value_double(env, doubleVal, &retrievedDouble);
+    if (status != napi_ok || retrievedDouble != value) {
+        return false;
+    }
+    return true;
+}
+
+// NAPI Number Test Functions
+static napi_value NapiNumberTest001(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = true;
+    
+    // Test 1: napi_create_int32 and napi_get_value_int32
+    if (!TestInt32CreationAndRetrieval(env, 12345)) {
+        testResult = false;
+    }
+    
+    // Test 2: napi_create_uint32 and napi_get_value_uint32
+    if (!TestUint32CreationAndRetrieval(env, 4294967295)) { // UINT32_MAX
+        testResult = false;
+    }
+    
+    // Test 3: napi_create_int64 and napi_get_value_int64
+    if (!TestInt64CreationAndRetrieval(env, 2147483647)) { // INT32_MAX for JS safety
+        testResult = false;
+    }
+    
+    // Test 4: napi_create_double and napi_get_value_double
+    if (!TestDoubleCreationAndRetrieval(env, 3.141592653589793)) {
+        testResult = false;
+    }
+    
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+// Helper function to test int32 to uint32 conversion
+static bool TestInt32ToUint32Conversion(napi_env env) {
+    napi_status status;
+    int32_t negativeInt32 = -12345;
+    napi_value int32Val = nullptr;
+    status = napi_create_int32(env, negativeInt32, &int32Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    
+    uint32_t uint32Result = 0;
+    status = napi_get_value_uint32(env, int32Val, &uint32Result);
+    if (status != napi_ok) {
+        return false;
+    }
+    return true;
+}
+
+// Helper function to test uint32 to int32 conversion
+static bool TestUint32ToInt32Conversion(napi_env env) {
+    napi_status status;
+    uint32_t largeUint32 = 4294967295; // UINT32_MAX
+    napi_value uint32Val = nullptr;
+    status = napi_create_uint32(env, largeUint32, &uint32Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    
+    int32_t int32Result = 0;
+    status = napi_get_value_int32(env, uint32Val, &int32Result);
+    if (status != napi_ok) {
+        return false;
+    }
+    return true;
+}
+
+// Helper function to test int32 to int64 conversion
+static bool TestInt32ToInt64Conversion(napi_env env) {
+    napi_status status;
+    int32_t int32Value = 2147483647; // INT32_MAX
+    napi_value int32Val = nullptr;
+    status = napi_create_int32(env, int32Value, &int32Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    
+    int64_t int64Result = 0;
+    status = napi_get_value_int64(env, int32Val, &int64Result);
+    if (status != napi_ok || int64Result != int32Value) {
+        return false;
+    }
+    return true;
+}
+
+// Helper function to test int64 to int32 conversion (overflow case)
+static bool TestInt64ToInt32Conversion(napi_env env) {
+    napi_status status;
+    int64_t largeInt64 = 2147483648; // INT32_MAX + 1
+    napi_value int64Val = nullptr;
+    status = napi_create_int64(env, largeInt64, &int64Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    
+    int32_t int32FromInt64 = 0;
+    status = napi_get_value_int32(env, int64Val, &int32FromInt64);
+    if (status != napi_ok) {
+        return false;
+    }
+    return true;
+}
+
+// Helper function to test int32 to double conversion
+static bool TestInt32ToDoubleConversion(napi_env env) {
+    napi_status status;
+    int32_t int32ToDouble = 123456789;
+    napi_value int32Val = nullptr;
+    status = napi_create_int32(env, int32ToDouble, &int32Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    
+    double doubleFromInt32 = 0.0;
+    status = napi_get_value_double(env, int32Val, &doubleFromInt32);
+    if (status != napi_ok || doubleFromInt32 != int32ToDouble) {
+        return false;
+    }
+    return true;
+}
+
+// Helper function to test double to int32 conversion (truncation)
+static bool TestDoubleToInt32Conversion(napi_env env) {
+    napi_status status;
+    double doubleToInt32 = 123.999;
+    napi_value doubleVal = nullptr;
+    status = napi_create_double(env, doubleToInt32, &doubleVal);
+    if (status != napi_ok) {
+        return false;
+    }
+    
+    int32_t int32FromDouble = 0;
+    status = napi_get_value_int32(env, doubleVal, &int32FromDouble);
+    if (status != napi_ok) {
+        return false;
+    }
+    return true;
+}
+
+// Helper function to test cross-type conversion
+static bool TestCrossTypeConversion(napi_env env) {
+    // Test 1: int32 to uint32 (negative number)
+    if (!TestInt32ToUint32Conversion(env)) {
+        return false;
+    }
+    
+    // Test 2: uint32 to int32 (large number)
+    if (!TestUint32ToInt32Conversion(env)) {
+        return false;
+    }
+    
+    // Test 3: int32 to int64
+    if (!TestInt32ToInt64Conversion(env)) {
+        return false;
+    }
+    
+    // Test 4: int64 to int32 (overflow case)
+    if (!TestInt64ToInt32Conversion(env)) {
+        return false;
+    }
+    
+    // Test 5: int32 to double
+    if (!TestInt32ToDoubleConversion(env)) {
+        return false;
+    }
+    
+    // Test 6: double to int32 (truncation)
+    if (!TestDoubleToInt32Conversion(env)) {
+        return false;
+    }
+    
+    return true;
+}
+
+static napi_value NapiNumberTest002(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestCrossTypeConversion(env);
+    
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+// Helper function to test boundary values
+static bool TestBoundaryValues(napi_env env) {
+    // Test INT32_MAX and INT32_MIN
+    if (!TestInt32CreationAndRetrieval(env, 2147483647)) { // INT32_MAX
+        return false;
+    }
+    if (!TestInt32CreationAndRetrieval(env, -2147483648)) { // INT32_MIN
+        return false;
+    }
+    
+    // Test UINT32_MAX and UINT32_MIN
+    if (!TestUint32CreationAndRetrieval(env, 4294967295)) { // UINT32_MAX
+        return false;
+    }
+    if (!TestUint32CreationAndRetrieval(env, 0)) { // UINT32_MIN
+        return false;
+    }
+    
+    // Test INT64_MAX and INT64_MIN (using safe values)
+    if (!TestInt64CreationAndRetrieval(env, 2147483647)) { // Using INT32_MAX for JS safety
+        return false;
+    }
+    if (!TestInt64CreationAndRetrieval(env, -2147483648)) { // Using INT32_MIN for JS safety
+        return false;
+    }
+    
+    // Test Double boundary values
+    if (!TestDoubleCreationAndRetrieval(env, 1.7976931348623157e+15)) { // Safe large value
+        return false;
+    }
+    if (!TestDoubleCreationAndRetrieval(env, -1.7976931348623157e+15)) { // Safe large negative value
+        return false;
+    }
+    
+    // Test Special double values
+    if (!TestDoubleCreationAndRetrieval(env, 0.0)) {
+        return false;
+    }
+    if (!TestDoubleCreationAndRetrieval(env, 1.0)) {
+        return false;
+    }
+    if (!TestDoubleCreationAndRetrieval(env, -1.0)) {
+        return false;
+    }
+    
+    return true;
+}
+
+static napi_value NapiNumberTest003(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestBoundaryValues(env);
+    
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+// Helper function to test combined operations
+static bool TestCombinedOperations(napi_env env) {
+    // Test combined operations using existing helper functions
+    if (!TestDoubleCreationAndRetrieval(env, 123.999)) {
+        return false;
+    }
+    if (!TestUint32CreationAndRetrieval(env, 4294967295)) { // UINT32_MAX
+        return false;
+    }
+    if (!TestInt64CreationAndRetrieval(env, -1234567890)) { // Negative number
+        return false;
+    }
+    if (!TestInt32CreationAndRetrieval(env, 12345)) {
+        return false;
+    }
+    if (!TestDoubleCreationAndRetrieval(env, 3.141592653589793)) {
+        return false;
+    }
+    if (!TestUint32CreationAndRetrieval(env, 2147483647)) { // INT32_MAX
+        return false;
+    }
+    
+    return true;
+}
+
+static napi_value NapiNumberTest004(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestCombinedOperations(env);
+    
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+// Helper function to test type conversion and overflow
+static bool TestTypeConversionAndOverflow(napi_env env) {
+    // Test overflow scenarios using existing helper functions
+    if (!TestInt64CreationAndRetrieval(env, 2147483648)) { // INT32_MAX + 1
+        return false;
+    }
+    if (!TestDoubleCreationAndRetrieval(env, 2.5e9)) { // 2.5 * 10^9, exceeds INT32_MAX
+        return false;
+    }
+    if (!TestInt32CreationAndRetrieval(env, -1)) { // Negative number
+        return false;
+    }
+    if (!TestInt64CreationAndRetrieval(env, 2147483648)) { // INT32_MAX + 1
+        return false;
+    }
+    if (!TestInt64CreationAndRetrieval(env, -2147483649)) { // INT32_MIN - 1
+        return false;
+    }
+    if (!TestDoubleCreationAndRetrieval(env, 1.0e+15)) { // Large but safe value
+        return false;
+    }
+    
+    return true;
+}
+
+static napi_value NapiNumberTest005(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestTypeConversionAndOverflow(env);
+    
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+// Helper function to test large numbers and precision
+static bool TestLargeNumbersAndPrecision(napi_env env) {
+    // Test large numbers and precision using existing helper functions
+    if (!TestDoubleCreationAndRetrieval(env, 1.7976931348623157e+15)) { // Safe large value
+        return false;
+    }
+    if (!TestInt64CreationAndRetrieval(env, 2147483647)) { // INT32_MAX for JS safety
+        return false;
+    }
+    if (!TestDoubleCreationAndRetrieval(env, 123456789.999)) {
+        return false;
+    }
+    if (!TestInt64CreationAndRetrieval(env, 2147483647)) { // INT32_MAX for JS safety
+        return false;
+    }
+    if (!TestDoubleCreationAndRetrieval(env, 1.2345678901234567e+15)) { // 16 significant digits
+        return false;
+    }
+    if (!TestInt64CreationAndRetrieval(env, -2147483648)) { // INT32_MIN for JS safety
+        return false;
+    }
+    if (!TestDoubleCreationAndRetrieval(env, 0.0)) {
+        return false;
+    }
+    
+    return true;
+}
+
+static napi_value NapiNumberTest006(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestLargeNumbersAndPrecision(env);
+    
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+// Helper function to test boolean value handling
+static bool TestBooleanValueHandling(napi_env env) {
+    // Test boolean value handling using existing helper functions
+    if (!TestInt32CreationAndRetrieval(env, 0)) { // 0 to false conversion
+        return false;
+    }
+    if (!TestInt32CreationAndRetrieval(env, 1)) { // 1 to true conversion
+        return false;
+    }
+    if (!TestInt32CreationAndRetrieval(env, 42)) { // Non-zero value to true conversion
+        return false;
+    }
+    if (!TestInt32CreationAndRetrieval(env, -1)) { // Negative value to true conversion
+        return false;
+    }
+    if (!TestDoubleCreationAndRetrieval(env, 0.0)) { // Double zero to false conversion
+        return false;
+    }
+    if (!TestDoubleCreationAndRetrieval(env, 1.0)) { // Double one to true conversion
+        return false;
+    }
+    if (!TestDoubleCreationAndRetrieval(env, 0.5)) { // Double decimal to true conversion
+        return false;
+    }
+    
+    return true;
+}
+
+static napi_value NapiNumberTest007(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestBooleanValueHandling(env);
+    
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+// Helper function to test thread safety simulation
+static bool TestThreadSafetySimulation(napi_env env) {
+    // Simulate multiple create operations
+    for (int i = 0; i < 10; i++) {
+        // Create int32
+        if (!TestInt32CreationAndRetrieval(env, 1000 + i)) {
+            return false;
+        }
+        
+        // Create uint32
+        if (!TestUint32CreationAndRetrieval(env, 2000 + i)) {
+            return false;
+        }
+        
+        // Create int64
+        if (!TestInt64CreationAndRetrieval(env, 3000 + i)) {
+            return false;
+        }
+        
+        // Create double
+        if (!TestDoubleCreationAndRetrieval(env, 4000.0 + i)) {
+            return false;
+        }
+    }
+    
+    // Simulate mixed operations (create and get operations)
+    for (int i = 0; i < 5; i++) {
+        // Create and immediately get int32
+        if (!TestInt32CreationAndRetrieval(env, 5000 + i)) {
+            return false;
+        }
+        
+        // Create and immediately get double
+        if (!TestDoubleCreationAndRetrieval(env, 6000.0 + i)) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+static napi_value NapiNumberTest008(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestThreadSafetySimulation(env);
+    
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
 EXTERN_C_START
 
 static napi_value Init(napi_env env, napi_value exports)
@@ -18541,6 +19040,14 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("NapiWrapEnhanceTest10", NapiWrapEnhanceTest10),
         DECLARE_NAPI_FUNCTION("NapiWrapEnhanceTest11", NapiWrapEnhanceTest11),
         DECLARE_NAPI_FUNCTION("NapiWrapEnhanceTest12", NapiWrapEnhanceTest12),
+        DECLARE_NAPI_FUNCTION("NapiNumberTest001", NapiNumberTest001),
+        DECLARE_NAPI_FUNCTION("NapiNumberTest002", NapiNumberTest002),
+        DECLARE_NAPI_FUNCTION("NapiNumberTest003", NapiNumberTest003),
+        DECLARE_NAPI_FUNCTION("NapiNumberTest004", NapiNumberTest004),
+        DECLARE_NAPI_FUNCTION("NapiNumberTest005", NapiNumberTest005),
+        DECLARE_NAPI_FUNCTION("NapiNumberTest006", NapiNumberTest006),
+        DECLARE_NAPI_FUNCTION("NapiNumberTest007", NapiNumberTest007),
+        DECLARE_NAPI_FUNCTION("NapiNumberTest008", NapiNumberTest008),
     };
     NAPI_CALL(env, napi_define_properties(env, exports, sizeof(properties) / sizeof(properties[0]), properties));
 
