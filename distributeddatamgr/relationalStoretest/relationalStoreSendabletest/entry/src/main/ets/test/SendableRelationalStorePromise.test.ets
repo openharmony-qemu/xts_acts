@@ -34,6 +34,7 @@ const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS " + TABLE + " (" +
   "bigValue UNLIMITED INT, " +
   "data1 ASSET, " +
   "data2 ASSETS)";
+const DROP_TABLE_TEST = "DROP TABLE IF EXISTS test";
 const asset1: relationalStore.Asset = {
   name: 'hangman',
   uri: '//path/example',
@@ -147,10 +148,14 @@ export default function rdbStoreSendableTest() {
 
     beforeEach(() => {
       console.info(TAG + 'beforeEach');
+      let sendableValuesBucket1: sendableRelationalStore.ValuesBucket = sendableRelationalStore.toSendableValuesBucket(valuesBucket2);
+      rdbStore.insertSync(TABLE, sendableValuesBucket);
+
     });
 
     afterEach(() => {
       console.info(TAG + 'afterEach');
+      await rdbStore.executeSql(DROP_TABLE_TEST);
     });
 
     afterAll(async () => {
