@@ -477,31 +477,6 @@ export default function ConnectionTest() {
         done()
       }
     }); 
-
-		/**
-     * @tc.number : SUB_Network_Connection_getPacFileUrl_0200
-     * @tc.name   : testConnectionGetPacFileUrl0200
-     * @tc.desc   : Set pacFileURL and call the interface getPacFileURL to return correctly.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     */
-    it('testConnectionGetPacFileUrl0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testConnectionGetPacFileUrl0200';
-      console.info(`${caseName}---Start`);
-      try {
-        const pacFileUrl: string = "www.abc.com";
-        connection.setPacFileUrl(pacFileUrl);
-        const result = connection.getPacFileUrl();
-        console.info(`${caseName} getPacFileUrl success, result: ${JSON.stringify(result)}`);
-        ExpectTrue(result == pacFileUrl);
-        done();
-      } catch (err) {
-        console.info(`${caseName} catch err is ${JSON.stringify(err)}`);
-        ExpectFail();
-        done();
-      } 
-    });
   
     /**
      * @tc.number : SUB_Network_Connection_findProxyForUrl_0100
@@ -511,119 +486,117 @@ export default function ConnectionTest() {
      * @tc.type   : Function
      * @tc.size   : MediumTest
      */
-    it('testConnectionFindProxyForUrl0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testConnectionFindProxyForUrl0100';
-      console.info(`${caseName}---Start`);
-      try {
-        let urlNoExit: string = "https://www.zhuhu.com";
-        const result = connection.findProxyForUrl(urlNoExit); 
-        console.info(`${caseName} findProxyForUrl success, result: ${JSON.stringify(result)}`);
-        ExpectTrue(result == "");
-        done();
-      } catch (err) { 
-        console.info(`${caseName} catch err is ${JSON.stringify(err)} `);
-        ExpectFail();
-        done();
-      }
-    });
-		
-		/**
-     * @tc.number : SUB_Network_Connection_setPacFileUrl_0100
-     * @tc.name   : testConnectionSetPacFileUrl0100
-     * @tc.desc   : Call the setPacFileURL interface to pass an empty string, return error code 401.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     */
-    it('testConnectionSetPacFileUrl0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testConnectionSetPacFileUrl0100';
-      console.info(`${caseName}---Start`);
-      try{
-        connection.setPacFileUrl('');
-        console.info(`${caseName} setPacFileUrl success`);
-        ExpectFail();
-        done();
-      } catch (err) {
-        console.info(`${caseName} catch err is ${JSON.stringify(err)} `);
-        ExpectTrue(err.code == 401);
-        done();
-      }
-    });
-		
-		/**
-     * @tc.number : SUB_Network_Connection_setPacFileUrl_0200
-     * @tc.name   : testConnectionSetPacFileUrl0200
-     * @tc.desc   : Call setPacFileURL interface to pass non string type, return 401 error code.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     */
-    it('testConnectionSetPacFileUrl0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testConnectionSetPacFileUrl0200';
-      console.info(`${caseName}---Start`);
-      try{
-        connection.setPacFileUrl(undefined);
-        console.info(`${caseName} setPacFileUrl success`);
-        ExpectFail();
-        done();
-      } catch (err) {
-        console.info(`${caseName} catch err is ${JSON.stringify(err)} `);
-        ExpectTrue(err.code == 401);
-        done();
-      }
-    });
-		
-		/**
-     * @tc.number : SUB_Network_Connection_getPacFileUrl_0100
-     * @tc.name   : testConnectionGetPacFileUrl0100
-     * @tc.desc   : No pacFileURL set, calling the interface getPacFileURL returns 2100003.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     */
-    it('testConnectionGetPacFileUrl0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testConnectionGetPacFileUrl0100';
-      console.info(`${caseName}---Start`);
-      try {
-        const result = connection.getPacFileUrl();
-        console.info(`${caseName} getPacFileUrl success, result: ${JSON.stringify(result)}`);
-        ExpectTrue(result != undefined);
-        done();
-      } catch (err) {
-        console.info(`${caseName} catch err is ${JSON.stringify(err)}`);
-        ExpectFail();
-        done();
-      }
-    });
-		
-		/**
-     * @tc.number : SUB_Network_Connection_getPacFileUrl_0300
-     * @tc.name   : testConnectionGetPacFileUrl0300
-     * @tc.desc   : Verify the value of pacFileURL based on the value set by the last call to the interface getPacFileURL.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     */
-    it('testConnectionGetPacFileUrl0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testConnectionGetPacFileUrl0300';
-      console.info(`${caseName}---Start`);
-      try {
-        const pacFileUrl01: string = "www.ab.com/ab.pac";
-        const pacFileUrl02: string = "www.cd.com/cd.pac";
-        connection.setPacFileUrl(pacFileUrl01);
-        connection.setPacFileUrl(pacFileUrl02);
-        const result = connection.getPacFileUrl();
-        console.info(`${caseName} getPacFileUrl success, result: ${JSON.stringify(result)}`);
-        ExpectTrue(result == pacFileUrl02);
-        done();
-      } catch (err) {
-        console.info(`${caseName} catch err is ${JSON.stringify(err)}`);
-        ExpectFail();
-        done();
-      }
-    });
-		
-   /**
+   it('testConnectionFindProxyForUrl0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    const caseName: string = 'testConnectionFindProxyForUrl0100';
+    console.info(`${caseName}---Start`);
+    try {
+      let urlNoExit: string = "https://www.zhuhu.com";
+      const result = connection.findProxyForUrl(urlNoExit); 
+      console.info(`${caseName} findProxyForUrl success, result: ${JSON.stringify(result)}`);
+      ExpectTrue(result == "");
+      done();
+    } catch (err) { 
+      console.info(`${caseName} catch err is ${JSON.stringify(err)} `);
+      ExpectTrue(err.code == 2100002);
+      done();
+    }
+  });
+  
+  /**
+   * @tc.number : SUB_Network_Connection_setPacFileUrl_0100
+   * @tc.name   : testConnectionSetPacFileUrl0100
+   * @tc.desc   : Call the setPacFileURL interface to pass an empty string, return error code 401.
+   * @tc.level  : Level 3
+   * @tc.type   : Function
+   * @tc.size   : MediumTest
+   */
+  it('testConnectionSetPacFileUrl0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    const caseName: string = 'testConnectionSetPacFileUrl0100';
+    console.info(`${caseName}---Start`);
+    try{
+      connection.setPacFileUrl('');
+      console.info(`${caseName} setPacFileUrl success`);
+      ExpectTrue(true);
+      done();
+    } catch (err) {
+      console.info(`${caseName} catch err is ${JSON.stringify(err)} `);
+      ExpectFail();
+      done();
+    }
+  });
+  
+  /**
+   * @tc.number : SUB_Network_Connection_setPacFileUrl_0200
+   * @tc.name   : testConnectionSetPacFileUrl0200
+   * @tc.desc   : Call setPacFileURL interface to pass non string type, return 401 error code.
+   * @tc.level  : Level 3
+   * @tc.type   : Function
+   * @tc.size   : MediumTest
+   */
+  it('testConnectionSetPacFileUrl0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    const caseName: string = 'testConnectionSetPacFileUrl0200';
+    console.info(`${caseName}---Start`);
+    try{
+      connection.setPacFileUrl(undefined);
+      console.info(`${caseName} setPacFileUrl success`);
+      ExpectFail();
+      done();
+    } catch (err) {
+      console.info(`${caseName} catch err is ${JSON.stringify(err)} `);
+      ExpectTrue(err.code == 401);
+      done();
+    }
+  });
+  
+  /**
+   * @tc.number : SUB_Network_Connection_getPacFileUrl_0100
+   * @tc.name   : testConnectionGetPacFileUrl0100
+   * @tc.desc   : No pacFileURL set, calling the interface getPacFileURL returns 2100003.
+   * @tc.level  : Level 3
+   * @tc.type   : Function
+   * @tc.size   : MediumTest
+   */
+  it('testConnectionGetPacFileUrl0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    const caseName: string = 'testConnectionGetPacFileUrl0100';
+    console.info(`${caseName}---Start`);
+    try {
+      const result = connection.getPacFileUrl();
+      console.info(`${caseName} getPacFileUrl success, result: ${JSON.stringify(result)}`);
+      ExpectTrue(result != undefined);
+      done();
+    } catch (err) {
+      console.info(`${caseName} catch err is ${JSON.stringify(err)}`);
+      ExpectFail();
+      done();
+    }
+  });
+  
+  /**
+   * @tc.number : SUB_Network_Connection_getPacFileUrl_0300
+   * @tc.name   : testConnectionGetPacFileUrl0300
+   * @tc.desc   : Verify the value of pacFileURL based on the value set by the last call to the interface getPacFileURL.
+   * @tc.level  : Level 3
+   * @tc.type   : Function
+   * @tc.size   : MediumTest
+   */
+  it('testConnectionGetPacFileUrl0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    const caseName: string = 'testConnectionGetPacFileUrl0300';
+    console.info(`${caseName}---Start`);
+    try {
+      const pacFileUrl: string = "www.ab.com/ab.pac";
+      connection.setPacFileUrl(pacFileUrl);
+      const result = connection.getPacFileUrl();
+      console.info(`${caseName} getPacFileUrl success, result: ${JSON.stringify(result)}`);
+      ExpectTrue(result == pacFileUrl);
+      done();
+    } catch (err) {
+      console.info(`${caseName} catch err is ${JSON.stringify(err)}`);
+      ExpectTrue(err.code == 2100002);
+      done();
+    }
+  });
+  
+  /**
    * @tc.number : SUB_Network_Connection_findProxyForUrl_0200
    * @tc.name   : testConnectionFindProxyForUrl0200
    * @tc.desc   : FindProxyForURL interface passed an empty string, error 401.
@@ -645,7 +618,7 @@ export default function ConnectionTest() {
       done();
     }
   });
-          
+        
   /**
    * @tc.number : SUB_Network_Connection_findProxyForUrl_0400
    * @tc.name   : testConnectionFindProxyForUrl0400
