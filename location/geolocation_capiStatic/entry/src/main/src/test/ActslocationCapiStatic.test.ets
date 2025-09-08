@@ -453,7 +453,7 @@ export default function actslocationTest() {
                 } else {
                 hilog.info(domain, tag, "[lbs_js] getAddressesFromLocation callback data is:" + JSON.stringify(data));
                 expect(true).assertEqual((JSON.stringify(data)) != null);
-                if (data.length != null) {
+                if (data.?length != null) {
                     hilog.info(domain,tag,"addressUrl"+data[0]?.addressUrl)
                     hilog.info(domain,tag,"administrativeArea"+data[0]?.administrativeArea)
                     hilog.info(domain,tag,"countryCode"+data[0]?.countryCode)
@@ -627,7 +627,7 @@ export default function actslocationTest() {
             expect(true).assertEqual(location.speedAccuracy != -1)
             expect(true).assertEqual(location.directionAccuracy != -1)
             expect(true).assertEqual(location.uncertaintyOfTimeSinceBoot != null)
-            expect(true).assertEqual(location?.sourceType != -1)
+            expect(true).assertEqual(location?.sourceType != null)
             };
             try {
             geoLocationManager.on('locationChange', requestInfo, locationChange);
