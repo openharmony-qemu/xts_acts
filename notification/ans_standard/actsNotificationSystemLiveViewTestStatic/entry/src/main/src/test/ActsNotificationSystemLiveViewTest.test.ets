@@ -227,7 +227,8 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(error.code).assertEqual(401);
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
@@ -290,7 +291,8 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`+JSON.stringify(error));
-        expect(error.code).assertEqual(401);
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
@@ -353,7 +355,8 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(error.code).assertEqual(401);
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
@@ -418,7 +421,8 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(error.code).assertEqual(401);
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
@@ -483,7 +487,8 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(error.code).assertEqual(401);
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
@@ -550,7 +555,8 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(error.code).assertEqual(401);
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
@@ -617,7 +623,8 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(error.code).assertEqual(401);
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
@@ -688,7 +695,8 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(error.code).assertEqual(401);
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
@@ -759,7 +767,8 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(error.code).assertEqual(401);
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
@@ -830,7 +839,8 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(error.code).assertEqual(401);
+        elet err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
@@ -957,7 +967,8 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error:BusinessError) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`+JSON.stringify(error));
-        expect(error.code).assertEqual(401);
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
@@ -1094,9 +1105,10 @@ export default function ActsNotificationSystemLiveViewTest() {
             done();
           }
         })
-      } catch (error : BusinessError) {
+      } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,JSON.stringify(error));
-        expect(error.code).assertEqual(401);
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
@@ -1104,13 +1116,13 @@ export default function ActsNotificationSystemLiveViewTest() {
 
 
     /*
- * @tc.number: Sub_Notification_Ans_Live_Publish_Static_7700
- * @tc.name: Sub_Notification_Ans_Live_Publish_Static_7700
- * @tc.desc: test publish interface success
- * @tc.size: LargeTest
- * @tc.type: Function
- * @tc.level Level 3
- */
+      * @tc.number: Sub_Notification_Ans_Live_Publish_Static_7700
+      * @tc.name: Sub_Notification_Ans_Live_Publish_Static_7700
+      * @tc.desc: test publish interface success
+      * @tc.size: LargeTest
+      * @tc.type: Function
+      * @tc.level Level 3
+      */
 
     it('Sub_Notification_Ans_Live_Publish_Static_7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForUndefined'
@@ -1236,9 +1248,10 @@ export default function ActsNotificationSystemLiveViewTest() {
             done();
           }
         })
-      } catch (error:BusinessError) {
+      } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,JSON.stringify(error));
-        expect(error.code).assertEqual(401);
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
         done();
       }

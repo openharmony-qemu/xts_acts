@@ -475,7 +475,7 @@ export default function ActsNotificationManagerPublishTest() {
       async (done: () => void): Promise<void> => {
       let TAG:string = 'SUB_NOTIFICATION_ANS_MANAGER_COUNT_TEST_Static_0500'
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_COUNT_TEST_Static_0500 START`)
-      notificationManager.getActiveNotificationCount().then((data:number) => {
+      notificationManager.getActiveNotificationCount().then((data:long) => {
         console.info(`${TAG} getActiveNotificationCount Promise success :${JSON.stringify(data)}`)
         expect(true).assertTrue()
         done()
@@ -497,7 +497,7 @@ export default function ActsNotificationManagerPublishTest() {
       async (done: () => void): Promise<void> => {
       let TAG:string = 'SUB_NOTIFICATION_ANS_MANAGER_COUNT_TEST_Static_0600'
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_COUNT_TEST_Static_0600 START`)
-      notificationManager.getActiveNotifications().then((data:number) => {
+      notificationManager.getActiveNotifications().then((data) => {
         console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
         expect(true).assertTrue()
         done()

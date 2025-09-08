@@ -338,12 +338,12 @@ export default function ActsCommonEventSystemAPITest() {
       let label:string = "label"
 
       notificationManager.cancel(id, (err: BusinessError | null) => {
-        console.info(`${TAG} cancel2 AsyncCallback err: ${err.code}, errMes: ${err.message}`)
+        console.info(`${TAG} cancel2 AsyncCallback err: ${err}`)
         expect(err?.code).assertEqual(1600007)
       })
       
       notificationManager.cancel(id, label, (err: BusinessError | null) => {
-        console.info(`${TAG} cancel4 AsyncCallback err: ${err.code}, errMes: ${err.message}`)
+        console.info(`${TAG} cancel4 AsyncCallback err: ${err}`)
         expect(err?.code).assertEqual(1600007)
       })
 
@@ -351,9 +351,10 @@ export default function ActsCommonEventSystemAPITest() {
         console.info(`${TAG} cancel Promise success`)
         expect(false).assertTrue()
         done()
-      }).catch((err: BusinessError) => {
-        console.info(`${TAG} cancel5 Promise err: ${err.code}, errMes: ${err.message}`)
-        expect(err?.code).assertEqual(1600007)
+      }).catch((err) => {
+        let error : BusinessError = err as BusinessError
+        console.info(`${TAG} cancel5 Promise error: ${error.code}, errMes: ${error.message}`)
+        expect(error?.code).assertEqual(1600007)
         done()
       })
 
