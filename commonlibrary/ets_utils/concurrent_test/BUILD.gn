@@ -21,6 +21,7 @@ group("concurrent_test") {
       "atomicstest:ActsAtomicsTest",
       "collectionstaskpooltest:ActsCollectionsTaskPoolTest",
       "collectionstest:ActsCollectionsTest",
+      "concurrentcollectionstest:ActsConcurrentCollectionsTest",
       "concurrenterrormessagetest:ActsConcurrentErrMessageTest",
       "concurrentlibtest:ActsConcurrentLibTest",
       "concurrentmoduletest:ActsConcurrentModuleTest",
