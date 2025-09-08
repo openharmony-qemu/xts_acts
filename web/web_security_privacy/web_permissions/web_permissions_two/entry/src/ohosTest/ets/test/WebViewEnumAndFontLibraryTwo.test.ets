@@ -17,6 +17,9 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function WebViewEnumAndFontLibraryTwo() {
@@ -34,12 +37,13 @@ export default function WebViewEnumAndFontLibraryTwo() {
         if (!("WebViewEnumAndFontLibraryTwo" == pages.name)) {
           console.info("get WebViewEnumAndFontLibraryTwo state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebViewEnumAndFontLibraryTwo page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebViewEnumAndFontLibraryTwo page error: " + err);
       }
+      await driver.waitForComponent(ON.id("buttonEnumAndFontLibrary"), 10000);
+      console.log("waitForComponent buttonEnumAndFontLibrary");
       done()
     });
 
@@ -49,17 +53,10 @@ export default function WebViewEnumAndFontLibraryTwo() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("WebViewControllerDownloadTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebViewControllerDownloadTest afterEach end");
-      done();
-    })
 
     /*
     * @tc.number     : SUB_WEB_PROTECTEDRESOURCETYPE_0100
@@ -70,10 +67,9 @@ export default function WebViewEnumAndFontLibraryTwo() {
     * @tc.level      : Level 1
     */
     it('testProtectedResourceType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitProtectedResourceType", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testProtectedResourceType001", 'TYPE_VIDEO_CAPTURE,TYPE_AUDIO_CAPTURE', 1101, done);
-      sendEventByKey('buttonEnumAndFontLibrary', 10, '');
+      Utils.emitEvent("emitProtectedResourceType", 160890)
+      Utils.registerEvent("testProtectedResourceType001", 'TYPE_VIDEO_CAPTURE,TYPE_AUDIO_CAPTURE', 160900, done);
+      await Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary");
     })
 
     /*
@@ -85,10 +81,9 @@ export default function WebViewEnumAndFontLibraryTwo() {
     * @tc.level      : Level 1
     */
     it('testPermissionRequestGetOrigin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnPermissionRequestGetOrigin", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("PermissionRequestGetOrigin", 'resource://rawfile/', 1102, done);
-      sendEventByKey('buttonEnumAndFontLibrary', 10, '');
+      Utils.emitEvent("emitOnPermissionRequestGetOrigin", 160890)
+      Utils.registerEvent("PermissionRequestGetOrigin", 'resource://rawfile/', 160910, done);
+      await Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary");
     })
 
     /*
@@ -100,10 +95,9 @@ export default function WebViewEnumAndFontLibraryTwo() {
     * @tc.level      : Level 1
     */
     it('testPermissionRequest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnPermissionRequest", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testPermissionRequest001", true, 1103, done);
-      sendEventByKey('buttonEnumAndFontLibrary', 10, '');
+      Utils.emitEvent("emitOnPermissionRequest", 160890)
+      Utils.registerEvent("testPermissionRequest001", true, 160920, done);
+      await Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary");
     })
   })
 }
