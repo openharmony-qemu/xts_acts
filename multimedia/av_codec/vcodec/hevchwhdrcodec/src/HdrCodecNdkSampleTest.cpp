@@ -190,12 +190,12 @@ void HDRCodecNdkSample::ProcessInitialSearch(uint32_t &bufferSize, void *&pBuffe
     const auto bufferStart = prereadBuffer_.get() + pPrereadBuffer_;
     const auto bufferEnd = prereadBuffer_.get() + prereadBufferSize_;
 
-    const auto frameHeadPos = std::search(bufferStart + START_CODE_SIZE, bufferEnd, 
+    const auto frameHeadPos = std::search(bufferStart + START_CODE_SIZE, bufferEnd,
                                         std::begin(MPEG4_FRAME_HEAD), std::end(MPEG4_FRAME_HEAD));
     const uint32_t frameHeadDistance = std::distance(bufferStart, frameHeadPos);
 
-    const auto seqHeadPos = std::search(bufferStart, frameHeadPos, 
-                                      std::begin(MPEG4_SEQUENCE_HEAD), std::end(MPEG4_SEQUENCE_HEAD));
+    const auto seqHeadPos = std::search(bufferStart, frameHeadPos,
+                                    std::begin(MPEG4_SEQUENCE_HEAD), std::end(MPEG4_SEQUENCE_HEAD));
     const uint32_t seqHeadDistance = std::distance(bufferStart, seqHeadPos);
     
     uint32_t copySize = 0;
@@ -232,13 +232,12 @@ void HDRCodecNdkSample::ProcessAdditionalRead(uint32_t &bufferSize, void *&pBuff
     pPrereadBuffer_ = START_CODE_SIZE;
     
     if (memcpy_s(prereadBuffer_.get(), START_CODE_SIZE, 
-                currentBuffer - START_CODE_SIZE, START_CODE_SIZE) != EOK) {
+             currentBuffer - START_CODE_SIZE, START_CODE_SIZE) != EOK) {
         bufferSize = 0;
         pBuffer = nullptr;
         mpegUnit_->resize(0);
         return;
     }
-    
     PtrStepExtraRead(bufferSize, &currentBuffer);
     pBuffer = currentBuffer;
 }
@@ -472,7 +471,6 @@ int32_t HDRCodecNdkSample::SendDataAvc(OH_AVCodec *codec, uint32_t index, OH_AVM
     
     (void)inFile_->read((char *)fileBuffer + START_CODE_SIZE, bufferSize);
     if (inFile_->fail()) {
-        cout << "Fatal: file read failed" << endl;
         delete[] fileBuffer;
         fileBuffer = nullptr;
         return -1;
@@ -998,8 +996,7 @@ void HDRCodecNdkSample::WriteAudioTrack()
             audioWrite = false;
             break;
         }
-        OH_AVCodecBufferAttr info;
-        memset(&info, 0, sizeof(OH_AVCodecBufferAttr));
+        OH_AVCodecBufferAttr info = {};
         int32_t result = OH_AVDemuxer_ReadSample(demuxer, audioTrackID, buffer, &info);
         if (result != AV_ERR_OK) {
             cout << "Fatal: Failed to read audio sample, error: " << result << endl;
