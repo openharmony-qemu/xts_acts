@@ -47,7 +47,7 @@ struct SXsymbolSpanStyle {
             {
               style:
               {
-                fontSize: 30.0,
+                fontSize: 30,
               }
             })
         })

@@ -77,10 +77,10 @@ export const defaultTheme: SelectionMenuTheme = {
 @Component
 struct RichEditorMenuType1 {
   @State message: string = 'Hello World'
-  @State textSize: double = 40.0
+  @State textSize: number = 40
   @State sliderShow: boolean = false
-  @State start: int = -1
-  @State end: int = -1
+  @State start: number = -1
+  @State end: number = -1
   @State colorTransparent: Color = Color.Transparent
   controller: RichEditorController = new RichEditorController();
   options: RichEditorOptions = { controller: this.controller } as RichEditorOptions
@@ -125,7 +125,7 @@ struct RichEditorMenuType1 {
           Column(){
             RichEditor(this.options)
              .onReady(():void => {
-                this.controller.addTextSpan(this.message, { style: { fontColor: Color.Orange, fontSize: 30.0 } })
+                this.controller.addTextSpan(this.message, { style: { fontColor: Color.Orange, fontSize: 30 } })
               })
               .onSelect((value: RichEditorSelection):void => {
                 if (value.selection[0] == -1 && value.selection[1] == -1) {
@@ -150,7 +150,7 @@ struct RichEditorMenuType1 {
           Column(){
             RichEditor(this.options)
              .onReady(():void => {
-                this.controller.addTextSpan(this.message, { style: { fontColor: Color.Orange, fontSize: 30.0 } })
+                this.controller.addTextSpan(this.message, { style: { fontColor: Color.Orange, fontSize: 30 } })
               })
               .onSelect((value: RichEditorSelection):void => {
                 if (value.selection[0] == -1 && value.selection[1] == -1) {

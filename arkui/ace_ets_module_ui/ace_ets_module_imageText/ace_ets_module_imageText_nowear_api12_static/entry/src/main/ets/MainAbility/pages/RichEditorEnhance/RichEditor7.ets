@@ -27,10 +27,10 @@ struct RichEditor7 {
   @State enterKey: string = this.enterTypeALl[this.enterType.toInt()].toString()
   @State IsShowCustomKeyboard: boolean = false
   @State IsCallKeepEditableState: boolean = false
-  @State start: int = -1
-  @State end: int = -1
+  @State start: number = -1
+  @State end: number = -1
   @State content: string = ''
-  @State selectCaret: int = 0
+  @State selectCaret: number = 0
   @State counter: string = ''
   @State isSetEnterKeyType: boolean = false
   @State isEditing1: boolean = false

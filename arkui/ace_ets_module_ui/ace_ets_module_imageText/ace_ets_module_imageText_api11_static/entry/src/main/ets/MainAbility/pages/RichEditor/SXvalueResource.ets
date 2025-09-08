@@ -51,7 +51,7 @@ struct SXvalueResource {
             {
               style:
               {
-                fontSize: 30.0,
+                fontSize: 30,
               } as RichEditorSymbolSpanStyle
             })
         })

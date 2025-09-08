@@ -65,7 +65,7 @@ struct RichEditorModifier1 {
               style:
               {
                 fontColor: Color.Green,
-                fontSize: 20.0
+                fontSize: 20
               }
             })
         })

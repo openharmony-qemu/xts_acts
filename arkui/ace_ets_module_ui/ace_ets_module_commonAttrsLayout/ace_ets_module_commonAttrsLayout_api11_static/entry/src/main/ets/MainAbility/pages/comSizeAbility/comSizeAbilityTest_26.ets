@@ -104,8 +104,8 @@ struct comSizeAbilityTest_26 {
   @State message: string = "[-1, -1]"
   @State content: string = ""
   @State span: string = "文本组件"
-  private start: int = -1;
-  private end: int = -1;
+  private start: number = -1;
+  private end: number = -1;
 
   build() {
     Scroll() {
@@ -151,7 +151,7 @@ struct comSizeAbilityTest_26 {
                   style:
                   {
                     fontColor: Color.Orange,
-                    fontSize: 12.0
+                    fontSize: 12
                   }
                 })
             })
