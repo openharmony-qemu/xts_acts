@@ -447,28 +447,29 @@ export default function WindowLayoutTest() {
             let msgStr :string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window;
-            await windowStage.createSubWindow('testGetGlobalRectErrCode1300002_static_0100')
+            windowStage.createSubWindow('testGetGlobalRectErrCode1300002_static_0100')
                 .then((data:window.Window) => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await (subWin! as window.Window).destroyWindow();
+                    try {
+                        subWin!.getGlobalRect();
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling getGlobalRect.');
+                        expect().assertFail();
+                        done()
+                    } catch (e: BusinessError) {
+                        hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call getGlobalRect. Cause:' + JSON.stringify(e));
+                        expect(e!.code).assertEqual(1300002);
+                        done()
+                    }
                 })
                 .catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect().assertFail();
                     done()
                 });
-            await (subWin! as window.Window).destroyWindow();
-            try {
-                subWin!.getGlobalRect();
-                hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling getGlobalRect.');
-                expect().assertFail();
-                done()
-            } catch (e: BusinessError) {
-                hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call getGlobalRect. Cause:' + JSON.stringify(e));
-                expect(e!.code).assertEqual(1300002);
-                done()
-            }
+            
         })
         /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_DET_GLOBAL_RECT_0100
