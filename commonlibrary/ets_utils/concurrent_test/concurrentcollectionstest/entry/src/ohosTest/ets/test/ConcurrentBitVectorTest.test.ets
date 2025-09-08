@@ -66,8 +66,8 @@ export function sleep(time: number): Promise<void> {
   })
 }
 
-export default function globalTest5() {
-  describe('globalTest5', () => {
+export default function BitVectorTest() {
+  describe('BitVectorTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.

@@ -35,8 +35,8 @@ export function sleep(time: number): Promise<void> {
   })
 }
 
-export default function globalTest2() {
-  describe('globalTest3', () => {
+export default function AsyncLockTest() {
+  describe('AsyncLockTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.

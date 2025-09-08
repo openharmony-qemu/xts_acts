@@ -150,3 +150,17 @@ export async function test_sendable_1700(pro: collections.Map<string, string>, n
     pro.set(`${a}`, `${a}`);
   })
 }
+
+@Concurrent
+export async function test_sendable_1800(pro: collections.Map<string, string>, name: string, index: number) {
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
+    pro.set('send','a');
+    pro.set('able','b');
+    pro.set('map','c');
+    let a: number = index
+    pro.set(`${a}`, `${a}`);
+    let jsonString: string = ArkTSUtils.ASON.stringify(pro);
+    console.info(`${pro} Serialized JSON: ${jsonString}`);
+    let parsedSendable: lang.ISendable | null = ArkTSUtils.ASON.parse(jsonString)
+  })
+}

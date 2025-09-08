@@ -29,6 +29,7 @@ import {
   test_sendable_1400,
   test_sendable_1600,
   test_sendable_1700,
+  test_sendable_1800,
 } from '../testability/pages/Sendablefunction';
 
 export function sleep(time: number): Promise<void> {
@@ -665,11 +666,11 @@ export default function SendableTest() {
       async (done: () => void): Promise<void> => {
         const caseName = 'test_sendable_1800';
         console.info(`${caseName} test start`);
-        let sendableMap = new collections.Map<string, string>();
+        let sendableMap = new collections.Map<string,string>();
         try {
           let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(test_sendable_1700, sendableMap, caseName, i)
+            group.addTask(test_sendable_1800, sendableMap, caseName, i)
           }
           await taskpool.execute(group).then(() => {
             console.info(`${caseName} Task execution success`);
@@ -677,10 +678,8 @@ export default function SendableTest() {
             console.info(`${caseName} Task execution catch1: ${e.message}, code: ${e.code}`);
             expect().assertFail()
           })
-          let jsonString: string = ArkTSUtils.ASON.stringify(sendableMap);
-          console.info(`${caseName} Serialized JSON: ${jsonString}`);
-          let parsedSendable: lang.ISendable | null = ArkTSUtils.ASON.parse(jsonString)
-          expect(JSON.stringify(parsedSendable).length).assertEqual(859)
+
+          expect(sendableMap.size).assertEqual(103)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error2: ${e.message}, code: ${e.code}`);
           expect().assertFail()

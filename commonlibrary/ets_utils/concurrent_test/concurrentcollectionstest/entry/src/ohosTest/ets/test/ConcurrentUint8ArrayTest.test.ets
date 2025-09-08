@@ -113,8 +113,8 @@ export function sleep(time: number): Promise<void> {
   })
 }
 
-export default function globalTest6() {
-  describe('globalTest6', () => {
+export default function Uint8ArrayTest() {
+  describe('Uint8ArrayTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
