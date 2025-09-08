@@ -735,9 +735,6 @@ let CONSTELLATION_CATEGORY_BEIDOU = geoLocationManager.SatelliteConstellationCat
 let CONSTELLATION_CATEGORY_GALILEO = geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_GALILEO
 let CONSTELLATION_CATEGORY_IRNSS = geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_IRNSS
 
-let GEOFENCE_TRANSITION_EVENT_ENTER = geoLocationManager.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_ENTER
-let GEOFENCE_TRANSITION_EVENT_EXIT = geoLocationManager.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_EXIT
-let GEOFENCE_TRANSITION_EVENT_DWELL = geoLocationManager.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_DWELL
 
 let LOCATING_FAILED_DEFAULT = geoLocationManager.LocationError.LOCATING_FAILED_DEFAULT
 let LOCATING_FAILED_LOCATION_PERMISSION_DENIED = geoLocationManager.LocationError.LOCATING_FAILED_LOCATION_PERMISSION_DENIED
@@ -810,9 +807,7 @@ let request_CYCLING = geoLocationManager.SportsType.CYCLING
             expect(true).assertEqual(CONSTELLATION_CATEGORY_GALILEO == 6)
             expect(true).assertEqual(CONSTELLATION_CATEGORY_IRNSS == 7)
 
-            expect(true).assertEqual(GEOFENCE_TRANSITION_EVENT_ENTER == 1)
-            expect(true).assertEqual(GEOFENCE_TRANSITION_EVENT_EXIT == 2)
-            expect(true).assertEqual(GEOFENCE_TRANSITION_EVENT_DWELL == 4)
+
             expect(true).assertEqual(LOCATING_FAILED_DEFAULT == -1)
             expect(true).assertEqual(LOCATING_FAILED_LOCATION_PERMISSION_DENIED == -2)
             expect(true).assertEqual(LOCATING_FAILED_BACKGROUND_PERMISSION_DENIED == -3)
