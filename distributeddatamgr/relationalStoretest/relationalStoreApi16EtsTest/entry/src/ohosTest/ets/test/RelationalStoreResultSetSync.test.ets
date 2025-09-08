@@ -24,6 +24,7 @@ const context = delegator.getAppContext().getApplicationContext();
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
   "data1 text," + "data2 long, " + "data3 double," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
   "data7 floatvector(128)," + "data8 UNLIMITED INT" + ")";
+const DROP_TABLE_TEST = "DROP TABLE IF EXISTS test";
 const STORE_CONFIG:data_relationalStore.StoreConfig = {
   name: "Resultset.db",
   securityLevel: data_relationalStore.SecurityLevel.S1,
@@ -71,14 +72,16 @@ export default function rdbResultSetSyncTest() {
     beforeAll(async () => {
       console.info(TAG + 'beforeAll');
       rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
-      await rdbStore.executeSql(CREATE_TABLE_TEST, null);
-      await createTest();
+
     });
     beforeEach(async () => {
       console.info(TAG + 'beforeEach');
+      await rdbStore.executeSql(CREATE_TABLE_TEST, null);
+      await createTest();
     });
     afterEach(() => {
       console.info(TAG + 'afterEach');
+      await rdbStore.executeSql(DROP_TABLE_TEST, null);
     });
     afterAll(async () => {
       console.info(TAG + 'afterAll');
