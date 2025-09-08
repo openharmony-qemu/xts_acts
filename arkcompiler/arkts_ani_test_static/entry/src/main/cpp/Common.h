@@ -48,7 +48,7 @@ const ani_int TEST_INT_VAL2 = 6;
 ani_boolean GetClsData(ani_env *env, ani_object *objectResult, ani_class *outCls)
 {
     ani_class cls {};
-    if (env->FindClass("Lentry/src/main/src/ets/Index/Foo;", &cls) != ANI_OK) {
+    if (env->FindClass("entry.src.main.src.ets.Index.Foo", &cls) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, " FindClass Failed");
         return ANI_FALSE;
     }
@@ -58,7 +58,7 @@ ani_boolean GetClsData(ani_env *env, ani_object *objectResult, ani_class *outCls
     }
 
     ani_static_method newMethod;
-    if (env->Class_FindStaticMethod(cls, "new_Foo", ":Lentry/src/main/src/ets/Index/Foo;", &newMethod) != ANI_OK) {
+    if (env->Class_FindStaticMethod(cls, "new_Foo", ":C{entry.src.main.src.ets.Index.Foo}", &newMethod) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, " Class_FindStaticMethod Failed");
         return ANI_FALSE;
     }
@@ -76,7 +76,7 @@ ani_boolean GetClsData(ani_env *env, ani_object *objectResult, ani_class *outCls
 
 ani_boolean GetClsByClassCallingName(ani_env *env, const char *class_descriptor, ani_class *cls)
 {
-    std::string classDescriptor = "Lentry/src/main/src/ets/ClassCallingStaticMethods/";
+    std::string classDescriptor = "entry.src.main.src.ets.ClassCallingStaticMethods.";
     std::string classDesc = classDescriptor.append(class_descriptor);
     OH_LOG_INFO(LOG_APP, "GetClsByClassCallingName classDesc %{public}s", classDesc.c_str());
     auto status = env->FindClass(classDesc.c_str(), cls);
