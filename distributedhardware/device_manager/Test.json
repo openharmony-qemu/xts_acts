@@ -10,8 +10,8 @@
     },
     "kits": [{
         "test-file-name": [
-            "ActsdeviceManagerTest.hap",
-            "ActsdeviceManagerMainTest.hap"
+            "ActsdeviceManager20Test.hap",
+            "ActsdeviceManagerMain20Test.hap"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true

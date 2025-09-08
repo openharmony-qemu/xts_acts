@@ -66,6 +66,7 @@ export struct MyComponent {
       .backgroundColor(0x0000ff)
       .fontColor(0xffffff)
       .padding(5)
+      .margin({top: '2%'})
       .onClick(this.func)
       .stateStyles({ pressed: this.pressedStyle, normal: this.normalStyles })
   }

@@ -18,8 +18,11 @@ import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import webView from '@ohos.web.webview';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 export default function DNSHostIP() {
 
@@ -35,7 +38,6 @@ export default function DNSHostIP() {
         if (!("DNSHostIP" == pages.name)) {
           console.info("get DNSHostIP state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push DNSHostIP page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -50,13 +52,7 @@ export default function DNSHostIP() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-    afterEach(async (done: Function) => {
-      await Utils.sleep(60000);
-      console.info("web afterEach finish");
       done();
     })
 
@@ -70,14 +66,9 @@ export default function DNSHostIP() {
      * @tc.level      : Level 0
      */
     it('setHostIP0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("setHostIP0100", 10)
-      await Utils.sleep(5000);
-      Utils.registerEvent("setHostIP0100", true, 8770, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("DNSHostIP"));
-      await StartModel.click();
-      await driver.delayMs(5000);
+      Utils.emitEvent("setHostIP0100", 148002)
+      Utils.registerEvent("setHostIP0100", true, 148012, done);
+      Utils.waitAndClickComponent('DNSHostIP', driver)
     })
 
     /*
@@ -89,14 +80,9 @@ export default function DNSHostIP() {
      * @tc.level      : Level 2
      */
     it('setHostIP1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("setHostIP1200", 10)
-      await Utils.sleep(5000);
-      Utils.registerEvent("setHostIP1200", true, 8771, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("DNSHostIP"));
-      await StartModel.click();
-      await driver.delayMs(5000);
+      Utils.emitEvent("setHostIP1200", 148002)
+      Utils.registerEvent("setHostIP1200", true, 148022, done);
+      Utils.waitAndClickComponent('DNSHostIP', driver)
     })
 
 
@@ -109,14 +95,9 @@ export default function DNSHostIP() {
      * @tc.level      : Level 2
      */
     it('setHostIP1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("setHostIP1300", 10)
-      await Utils.sleep(5000);
-      Utils.registerEvent("setHostIP1300", true, 8772, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("DNSHostIP"));
-      await StartModel.click();
-      await driver.delayMs(5000);
+      Utils.emitEvent("setHostIP1300", 148002)
+      Utils.registerEvent("setHostIP1300", true, 148032, done);
+      Utils.waitAndClickComponent('DNSHostIP', driver)
     })
     /*
      * @tc.number     : Acts_clearHostIP_0800
@@ -127,14 +108,9 @@ export default function DNSHostIP() {
      * @tc.level      : Level 2
      */
     it('setHostIP1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("setHostIP1500", 10)
-      await Utils.sleep(5000);
-      Utils.registerEvent("setHostIP1500", true, 8773, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("DNSHostIP"));
-      await StartModel.click();
-      await driver.delayMs(5000);
+      Utils.emitEvent("setHostIP1500", 148002)
+      Utils.registerEvent("setHostIP1500", true, 148042, done);
+      Utils.waitAndClickComponent('DNSHostIP', driver)
     })
   })
 }

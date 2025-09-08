@@ -20,7 +20,7 @@ static napi_value ArkUIKeycodeInit(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
         XL("CreateArkUINode", ArkUICapiTest::CreateArkUINode),
-        XL("InitTextComponent", ArkUICapiTest::InitTextComponent)
+        XL("GetKeyCodeResult", ArkUICapiTest::GetKeyCodeResult)
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

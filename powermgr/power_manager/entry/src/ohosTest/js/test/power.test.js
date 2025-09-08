@@ -595,5 +595,71 @@ export default function PowerTest() {
         done();
       }
     })
+
+    /**
+     * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0190
+     * @tc.name testSystem_API_Test_Power_Manager_1300
+     * @tc.desc Test the third-party application call setPowerKeyFilteringStrategy will be blocked
+     * @tc.level: Level 3
+     * @tc.type: Function
+     * @tc.size: MediumTest
+     */
+    it('testSystem_API_Test_Power_Manager_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async function (done) {
+        let TAG = 'testSystem_API_Test_Power_Manager_1300';
+        try {
+          power.setPowerKeyFilteringStrategy(power.PowerKeyFilteringStrategy.DISABLE_LONG_PRESS_FILTERING);
+        } catch (error) {
+          console.error(`${TAG} error: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(202);
+          done();
+        }
+      })
+
+    /**
+     * @tc.number SUB_PowerSystem_PowerTest_JSTest_0200
+     * @tc.name PowerKeyFilteringStrategy_DISABLE_LONG_PRESS_FILTERING_Test
+     * @tc.desc Power Key Filtering Strategy
+     * @tc.level: Level 3
+     * @tc.type: Function
+     * @tc.size: MediumTest
+     */
+    it('PowerKeyFilteringStrategy_DISABLE_LONG_PRESS_FILTERING_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async function (done) {
+        let TAG = 'PowerKeyFilteringStrategy_DISABLE_LONG_PRESS_FILTERING_Test';
+        try {
+          let filteringStrategy = power.PowerKeyFilteringStrategy.DISABLE_LONG_PRESS_FILTERING;
+          console.info(`${TAG} filteringStrategy: ${filteringStrategy}`);
+          expect(filteringStrategy).assertEqual(0);
+          done();
+        } catch (error) {
+          console.error(`${TAG} error: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.number SUB_PowerSystem_PowerTest_JSTest_0210
+     * @tc.name PowerKeyFilteringStrategy_LONG_PRESS_FILTERING_ONCE_Test
+     * @tc.desc Power Key Filtering Strategy
+     * @tc.level: Level 3
+     * @tc.type: Function
+     * @tc.size: MediumTest
+     */
+    it('PowerKeyFilteringStrategy_LONG_PRESS_FILTERING_ONCE_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async function (done) {
+        let TAG = 'PowerKeyFilteringStrategy_LONG_PRESS_FILTERING_ONCE_Test';
+        try {
+          let filteringStrategy = power.PowerKeyFilteringStrategy.LONG_PRESS_FILTERING_ONCE;
+          console.info(`${TAG} filteringStrategy: ${filteringStrategy}`);
+          expect(filteringStrategy).assertEqual(1);
+          done();
+        } catch (error) {
+          console.error(`${TAG} error: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        }
+      })
   })
 }

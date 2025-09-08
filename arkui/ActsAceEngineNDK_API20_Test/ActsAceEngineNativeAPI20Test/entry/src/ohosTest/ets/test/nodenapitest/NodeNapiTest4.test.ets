@@ -24,7 +24,7 @@ const ARKUI_ERROR_CODE_PARAM_INVALID = 401;
 export default function NodeNapiTest4() {
   describe('NodeNapiTest4', () => {
     beforeAll(async (done: Function) => {
-      await Utils.pushPage(`nodenapitest/nodenapiTest4`, done);
+      await Utils.pushPageNoClear(`nodenapitest/nodenapiTest4`, done);
     });
     /*
        * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetDrawableDescriptorFromResourceNapiValue_0100
@@ -45,6 +45,7 @@ export default function NodeNapiTest4() {
         } catch (err) {
           console.error("====>testOHArkUIGetDrawableDescriptorFromResourceNapiValue0100 err: " + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+          done();
         }
       })
 

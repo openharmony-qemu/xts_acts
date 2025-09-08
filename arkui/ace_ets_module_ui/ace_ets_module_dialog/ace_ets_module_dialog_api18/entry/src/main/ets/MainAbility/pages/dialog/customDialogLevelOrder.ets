@@ -63,7 +63,7 @@ struct customDialogLevelOrder {
           this.dialogController = new CustomDialogController({
             builder: CustomDialogExample(),
             levelOrder: LevelOrder.clamp(100),
-            alignment: DialogAlignment.Bottom,
+            alignment: DialogAlignment.Center,
           })
           if (this.dialogController != null) {
             this.dialogController.open()
@@ -76,7 +76,7 @@ struct customDialogLevelOrder {
           this.dialogController = new CustomDialogController({
             builder: CustomDialogExample(),
             levelOrder: LevelOrder.clamp(100001),
-            alignment: DialogAlignment.Bottom
+            alignment: DialogAlignment.Center
           })
           if ( this.dialogController != null) {
             this.dialogController.open()
@@ -89,7 +89,7 @@ struct customDialogLevelOrder {
           this.dialogController = new CustomDialogController({
             builder: CustomDialogExample(),
             levelOrder: LevelOrder.clamp(-100001),
-            alignment: DialogAlignment.Bottom
+            alignment: DialogAlignment.Center
           })
           if ( this.dialogController != null) {
             this.dialogController.open()
@@ -102,7 +102,7 @@ struct customDialogLevelOrder {
           this.dialogController= new CustomDialogController({
             builder: CustomDialogExample(),
             levelOrder: LevelOrder.clamp(undefined),
-            alignment: DialogAlignment.Bottom
+            alignment: DialogAlignment.Center
           })
           if ( this.dialogController != null) {
             this.dialogController.open()

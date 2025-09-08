@@ -27,13 +27,11 @@ struct alertDialogLevelOrder {
           .height('8%')
           .onClick(() => {
             this.uiContext.showAlertDialog({
-              title: 'title',
               message: 'text',
               autoCancel: true,
               isModal: false,
               levelOrder: LevelOrder.clamp(100),
-              alignment: DialogAlignment.Bottom,
-              gridCount: 3,
+              alignment: DialogAlignment.Center,
               confirm: {
                 value: 'button',
                 action: () => {
@@ -50,13 +48,11 @@ struct alertDialogLevelOrder {
           .height('8%')
           .onClick(() => {
             this.uiContext.showAlertDialog({
-              title: 'title',
               message: 'text',
               autoCancel: true,
               isModal: false,
               levelOrder: LevelOrder.clamp(undefined),
-              alignment: DialogAlignment.Bottom,
-              gridCount: 3,
+              alignment: DialogAlignment.Center,
               confirm: {
                 value: 'button',
                 action: () => {
@@ -73,16 +69,14 @@ struct alertDialogLevelOrder {
       Row({ space: 5 }) {
         Button('100001')
           .id('100001')
-          .height('8%')
+          .height('5%')
           .onClick(() => {
             this.uiContext.showAlertDialog({
-              title: 'title',
               message: 'text',
               autoCancel: true,
               isModal: false,
               levelOrder: LevelOrder.clamp(100001),
-              alignment: DialogAlignment.Bottom,
-              gridCount: 3,
+              alignment: DialogAlignment.Center,
               confirm: {
                 value: 'button',
                 action: () => {
@@ -96,16 +90,14 @@ struct alertDialogLevelOrder {
           })
         Button('-100001')
           .id('-100001')
-          .height('8%')
+          .height('5%')
           .onClick(() => {
             this.uiContext.showAlertDialog({
-              title: 'title',
               message: 'text',
               autoCancel: true,
               isModal: false,
               levelOrder: LevelOrder.clamp(-100001),
-              alignment: DialogAlignment.Bottom,
-              gridCount: 3,
+              alignment: DialogAlignment.Center,
               confirm: {
                 value: 'button',
                 action: () => {
@@ -121,6 +113,7 @@ struct alertDialogLevelOrder {
 
       Button('get showAlertDialogOrder')
         .id('myOrder')
+        .height('5%')
         .onClick(() => {
           let alertDialogOrder = this.getUIContext().getPromptAction().getTopOrder()
           if (alertDialogOrder !== undefined) {

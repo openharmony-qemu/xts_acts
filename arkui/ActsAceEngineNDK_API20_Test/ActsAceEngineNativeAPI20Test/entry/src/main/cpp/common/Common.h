@@ -32,11 +32,17 @@
 #include <cstddef>
 #include <ace/xcomponent/native_xcomponent_key_event.h>
 #include <AbilityKit/ability_base/want.h>
+#include <arkui/native_key_event.h>
 
+#define PARMA_0_POINT_0001 0.0001
 #define PARAM_0_POINT_5 0.5
 #define PARAM_1_POINT_5 1.5
 #define PARAM_0_POINT_6 0.6
+#define PARAM_0_POINT_7 0.7
+#define PARAM_0_POINT_9 0.9
 #define PARAM_1_POINT_1 1.1
+#define PARAM_1_POINT_0 1.0
+#define PARMA_NEGATIVE_0_POINT_0001 (-0.0001)
 #define PARAM_NEGATIVE_0_POINT_1 (-0.1)
 #define PARAM_NEGATIVE_0_POINT_8 (-0.8)
 #define PARAM_0 0
@@ -61,8 +67,10 @@
 #define PARAM_19 19
 #define PARAM_20 20
 #define PARAM_21 21
+#define PARAM_24 24
 #define PARAM_30 30
 #define PARAM_33 33
+#define PARAM_50 50
 #define PARAM_80 80
 #define PARAM_50_POINT_5 50.5
 #define PARAM_80_POINT_5 80.5
@@ -71,16 +79,26 @@
 #define PARAM_96 96
 #define PARAM_100 100
 #define PARAM_101 101
+#define PARAM_120 120
 #define PARAM_200 200
+#define PARAM_240 240
 #define PARAM_255 255
+#define PARAM_401 401
+#define PARAM_500 500
 #define PARAM_501 501
+#define PARAM_800 800
 #define PARAM_1000 1000
 #define PARAM_1001 1001
+#define PARAM_1024 1024
 #define PARAM_3600 3600
 #define PARAM_10000 10000
+#define PARAM_180001 180001
+#define PARAM_180002 180002
+#define PARAM_180102 180102
 #define PARAM_4294967296 4294967296
 #define PARAM_NEGATIVE_1 (-1)
 #define PARAM_NEGATIVE_2 (-2)
+#define PARAM_NEGATIVE_5 (-5)
 #define PARAM_NEGATIVE_9 (-9)
 #define PARAM_NEGATIVE_10 (-10)
 #define PARAM_NEGATIVE_30 (-30)
@@ -108,6 +126,7 @@
 #define SIZE_180 180
 #define SIZE_150 150
 #define SIZE_200 200
+#define SIZE_240 240
 #define SIZE_250 250
 #define SIZE_300 300
 #define SIZE_350 350
@@ -154,9 +173,7 @@
 #define ON_CUSTOM_EVENT_14_ID 9014
 #define ON_CUSTOM_EVENT_15_ID 9015
 #define ON_CUSTOM_EVENT_16_ID 9016
-#define PARAM_NEGATIVE_1 (-1)
 #define PARAM_NEGATIVE_100 (-100)
-#define PARAM_NEGATIVE_5 (-5)
 #define COLUMN_WIDTH_AND_HEIGHT 210
 
 /**

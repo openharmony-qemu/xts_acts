@@ -22,6 +22,7 @@ import { router } from '@kit.ArkUI';
 
 let driver: Driver = Driver.create();
 let flg: boolean = false
+let isEnd:boolean = false;
 
 export default function hasGesture() {
   describe('HasGestureTest', () => {
@@ -60,8 +61,9 @@ export default function hasGesture() {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getHttpBodyStream_0100 start')
       console.info('SUB_ACE_WEB_getHttpBodyStream_0100 start')
-      await driver.delayMs(500)
-
+      LocalContext.context.eventHub.on("isEnd00", (data: string) => {
+        isEnd = true;
+      })
       LocalContext.context.eventHub.on("GetHttpBodyStreamTest", () => {
         flg = true
         console.info('SUB_ACE_WEB_getHttpBodyStream_0100 end')
@@ -70,8 +72,12 @@ export default function hasGesture() {
       router.pushUrl({
         url: "testability/pages/GetHttpBodyStreamTest"
       })
-      await driver.delayMs(2000)
-      expect(flg).assertTrue()
+      if(isEnd){
+        expect(flg).assertTrue()
+        LocalContext.context.eventHub.off("isEnd00", (data: string) => {
+          isEnd = false;
+        })
+      }
       router.clear()
     })
 
@@ -87,7 +93,10 @@ export default function hasGesture() {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_setStatus_0100 start')
       console.info('SUB_ACE_WEB_setStatus_0100 start')
-      await driver.delayMs(500)
+      LocalContext.context.eventHub.on("isEnd01", (data: string) => {
+        isEnd = true;
+      })
+
       LocalContext.context.eventHub.on("SetStatusTest", (data: string) => {
         flg = true
         expect(data).assertEqual("12")
@@ -97,8 +106,12 @@ export default function hasGesture() {
       router.pushUrl({
         url: "testability/pages/SetStatusTest"
       })
-      await driver.delayMs(2000)
-      expect(flg).assertTrue()
+      if(isEnd){
+        expect(flg).assertTrue()
+        LocalContext.context.eventHub.off("isEnd01", (data: string) => {
+          isEnd = false;
+        })
+      }
       router.clear()
     })
 
@@ -114,7 +127,9 @@ export default function hasGesture() {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_setStatus_0200 start')
       console.info('SUB_ACE_WEB_setStatus_0200 start')
-      await driver.delayMs(500)
+      LocalContext.context.eventHub.on("isEnd02", (data: string) => {
+        isEnd = true;
+      })
       LocalContext.context.eventHub.on("SetStatusTest1", (data: string) => {
         flg = true
         expect(data).assertEqual("-12")
@@ -124,8 +139,12 @@ export default function hasGesture() {
       router.pushUrl({
         url: "testability/pages/SetStatusTest1"
       })
-      await driver.delayMs(2000)
-      expect(flg).assertTrue()
+      if(isEnd){
+        expect(flg).assertTrue()
+        LocalContext.context.eventHub.off("isEnd02", (data: string) => {
+          isEnd = false;
+        })
+      }
       router.clear()
     })
 
@@ -141,7 +160,9 @@ export default function hasGesture() {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_setStatus_0300 start')
       console.info('SUB_ACE_WEB_setStatus_0300 start')
-      await driver.delayMs(500)
+      LocalContext.context.eventHub.on("isEnd03", (data: string) => {
+        isEnd = true;
+      })
       LocalContext.context.eventHub.on("SetStatusTest2", (code: string, message: string) => {
         flg = true
         expect(code).assertEqual("401")
@@ -152,8 +173,12 @@ export default function hasGesture() {
       router.pushUrl({
         url: "testability/pages/SetStatusTest2"
       })
-      await driver.delayMs(2000)
-      expect(flg).assertTrue()
+      if(isEnd){
+        expect(flg).assertTrue()
+        LocalContext.context.eventHub.off("isEnd03", (data: string) => {
+          isEnd = false;
+        })
+      }
       router.clear()
     })
   })

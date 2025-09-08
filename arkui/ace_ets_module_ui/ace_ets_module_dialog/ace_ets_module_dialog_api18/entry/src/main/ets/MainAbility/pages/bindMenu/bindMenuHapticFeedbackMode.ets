@@ -98,7 +98,7 @@ struct BindMenuExample {
           Text(this.txt3)
             .id('text3')
         }
-      }.margin({top:5})
+      }.margin({top:'5%'})
       Row() {
         Column() {
           Button('4')

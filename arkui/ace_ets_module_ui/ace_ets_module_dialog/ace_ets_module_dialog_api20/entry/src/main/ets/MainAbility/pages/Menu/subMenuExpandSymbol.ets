@@ -201,7 +201,7 @@ struct Index {
               this.text6 = 'sys.symbol.chevron_down'
             }
           })
-      }
+      }.margin({top: '5%'})
       Column(){
         Text(''+ this.text1).id('text1').fontSize(5)
         Text(''+ this.text2).id('text2').fontSize(5)

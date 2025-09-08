@@ -23,6 +23,7 @@
         "MainAbility/pages/Swiper/stateChange",
         "MainAbility/pages/Scroll/zoomScaleScroll",
         "MainAbility/pages/Scroll/zoomScaleNull",
-        "MainAbility/pages/Tabs/animationCurve"
+        "MainAbility/pages/Tabs/animationCurve",
+        "MainAbility/pages/List/groupStickyBoth"
     ]
 }

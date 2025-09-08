@@ -37,6 +37,7 @@ struct WebComponent {
               console.log('[schemeHandler] onRequestStart');
 
               let response = new webview.WebSchemeHandlerResponse();
+              LocalContext.context.eventHub.emit('isEnd03')
               try {
                 response.setNetErrorCode(WebNetErrorList.NET_OK);
                 response.setStatus(null);

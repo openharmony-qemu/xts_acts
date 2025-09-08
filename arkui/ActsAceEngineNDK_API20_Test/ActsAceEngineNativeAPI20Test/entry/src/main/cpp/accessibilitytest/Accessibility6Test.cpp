@@ -30,7 +30,7 @@ napi_value SetBlur0100(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetBlur(elementInfo, blur);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL ? 0 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -40,7 +40,8 @@ napi_value SetBlur0200(napi_env env, napi_callback_info info)
     const char* blur = "10.0px";
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetBlur(elementInfo, blur);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -51,7 +52,8 @@ napi_value SetBlur0300(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetBlur(elementInfo, blur);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -67,7 +69,7 @@ napi_value SetHitTestBehavior0100(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetHitTestBehavior(elementInfo, hitTestBehavior);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL ? 0 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -77,7 +79,8 @@ napi_value SetHitTestBehavior0200(napi_env env, napi_callback_info info)
     const char* hitTestBehavior = "clickable";
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetHitTestBehavior(elementInfo, hitTestBehavior);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -88,7 +91,8 @@ napi_value SetHitTestBehavior0300(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetHitTestBehavior(elementInfo, hitTestBehavior);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -104,7 +108,7 @@ napi_value SetEventType0100(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityEventSetEventType(eventInfo, eventType);
     OH_ArkUI_DestoryAccessibilityEventInfo(eventInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL ? 0 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -114,7 +118,8 @@ napi_value SetEventType0200(napi_env env, napi_callback_info info)
     ArkUI_AccessibilityEventType eventType = ArkUI_AccessibilityEventType(0x00000001);
     int32_t result = OH_ArkUI_AccessibilityEventSetEventType(eventInfo, eventType);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -131,7 +136,7 @@ napi_value SetTextAnnouncedForAccessibility0100(napi_env env, napi_callback_info
         textAnnouncedForAccessibility);
     OH_ArkUI_DestoryAccessibilityEventInfo(eventInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL ? 0 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -142,7 +147,8 @@ napi_value SetTextAnnouncedForAccessibility0200(napi_env env, napi_callback_info
     int32_t result = OH_ArkUI_AccessibilityEventSetTextAnnouncedForAccessibility(eventInfo,
                                                                                  textAnnouncedForAccessibility);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -158,7 +164,7 @@ napi_value SetRequestFocusId0100(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityEventSetRequestFocusId(eventInfo, requestFocusId);
     OH_ArkUI_DestoryAccessibilityEventInfo(eventInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL ? 0 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -168,7 +174,8 @@ napi_value SetRequestFocusId0200(napi_env env, napi_callback_info info)
     int32_t requestFocusId = 0;
     int32_t result = OH_ArkUI_AccessibilityEventSetRequestFocusId(eventInfo, requestFocusId);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -190,7 +197,7 @@ napi_value SetElementInfo0100(napi_env env, napi_callback_info info)
     OH_ArkUI_DestoryAccessibilityEventInfo(eventInfo);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL ? 0 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -201,7 +208,8 @@ napi_value SetElementInfo0200(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityEventSetElementInfo(eventInfo, elementInfo);
         OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -212,7 +220,8 @@ napi_value SetElementInfo0300(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityEventSetElementInfo(eventInfo, elementInfo);
     OH_ArkUI_DestoryAccessibilityEventInfo(eventInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -225,7 +234,7 @@ napi_value ActionArgumentByKey0100(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_FindAccessibilityActionArgumentByKey(arguments, searchKey, &resultValue);
 
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL ? 0 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -236,7 +245,8 @@ napi_value ActionArgumentByKey0200(napi_env env, napi_callback_info info)
     char* resultValue = nullptr;
     int32_t result = OH_ArkUI_FindAccessibilityActionArgumentByKey(arguments, searchKey, &resultValue);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 }

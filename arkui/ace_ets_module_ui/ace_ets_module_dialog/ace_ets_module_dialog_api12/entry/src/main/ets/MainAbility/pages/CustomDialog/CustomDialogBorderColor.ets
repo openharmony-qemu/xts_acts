@@ -90,7 +90,7 @@ struct CustomDialogBorderColor {
             this.dialogController.open();
           }
         }).backgroundColor(0x317aff)
-
+        .margin({top: '2%'})
       Button('click1')
         .id('color1')
         .onClick(() => {

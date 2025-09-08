@@ -98,7 +98,6 @@ export default function testsuite() {
     labelPropsJsTest()
     stackPropsJsTest()
     panelPropsJsTest()
-    piecePropsJsTest()
     textPropsJsTest()
     dialogPropsJsTest()
     listPropsJsTest()

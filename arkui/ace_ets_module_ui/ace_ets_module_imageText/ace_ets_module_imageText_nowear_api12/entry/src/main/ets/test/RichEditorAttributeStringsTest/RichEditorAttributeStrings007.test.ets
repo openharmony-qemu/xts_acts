@@ -138,7 +138,7 @@ export default function RichEditorAttributeStrings007() {
       let str = 'spans:012345678901234567890123456789012345678901234567890123456789012345678901234567890123' +
         '4567890123456789abcdefghigklmnopqrstuvwxyzabcdefghigklmnopqrstuvwxyzabcdefghigklmnopqrstuvwx' +
         'yzabcdefghigklmnopqrstuvwxyzabcdefghigklmnopqrstuvwxyzabcdefghigklmnopqrstuvwxyzabcdefghigklm' +
-        'nopqrstuvwxyzabcdefghigklmnopqrstuvwxyz    ';
+        'nopqrstuvwxyzabcdefghigklmnopqrstuvwxyz          ';
       console.log('000000000:'+ spansText);
       console.log('000000000:'+ str);
       expect(spansText).assertEqual(str);
@@ -165,7 +165,7 @@ export default function RichEditorAttributeStrings007() {
       let str = 'spans:012345678901234567890123456789012345678901234567890123456789012345678901234567890123' +
         '4567890123456789abcdefghigklmnopqrstuvwxyzabcdefghigklmnopqrstuvwxyzabcdefghigklmnopqrstuvwx' +
         'yzabcdefghigklmnopqrstuvwxyzabcdefghigklmnopqrstuvwxyzabcdefghigklmnopqrstuvwxyzabcdefghigklm' +
-        'nopqrstuvwxyzabcdefghigklmnopqrstuvwxyz    ';
+        'nopqrstuvwxyzabcdefghigklmnopqrstuvwxyz          ';
       console.log('000000000:'+ spansText);
       console.log('000000000:'+ str);
       expect(spansText).assertEqual(str);

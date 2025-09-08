@@ -15,6 +15,7 @@
 import { taskpool } from '@kit.ArkTS';
 import { SendableData } from './SendableData';
 import { UIUtils } from '@kit.ArkUI';
+import { BusinessError } from '@ohos.base';
 
 @Concurrent
 function threadGetData(param: string): SendableData {
@@ -45,6 +46,8 @@ struct makeObserved0070 {
         taskpool.execute(threadGetData, this.send.name).then(val => {
           // 和@Local一起使用，可以观察this.send的变化
           this.send = UIUtils.makeObserved(val as SendableData);
+        }).catch((e: BusinessError) => {
+          console.error(`taskpool execute: Code: ${e.code}, message: ${e.message}`);
         })
       }).id('makeObserved0070buttonB')
     }

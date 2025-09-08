@@ -384,6 +384,32 @@ export default function KeyframeAnimateTest() {
       })
 
     /**
+     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETCURVE_0100
+     * @tc.name    : testOHArkUIKeyframeAnimateOptionSetCurve0100
+     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
+     *               are passed in.
+     * @tc.level   : LEVEL1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('testOHArkUIKeyframeAnimateOptionSetCurve0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          console.info("====>testOHArkUIKeyframeAnimateOptionSetCurve0100 start====");
+
+          let result: number = animatendk.KeyframeSetCurve0100();
+          console.info(`====>testOHArkUIKeyframeAnimateOptionSetCurve0100 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done()
+        } catch (err) {
+          console.error("====>testOHArkUIKeyframeAnimateOptionSetCurve0100 catch err: " + err);
+          expect(false).assertEqual(0);
+          done()
+        }
+      })
+
+
+    /**
      * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETCURVE_0200
      * @tc.name    : testOHArkUIKeyframeAnimateOptionSetCurve0200
      * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters

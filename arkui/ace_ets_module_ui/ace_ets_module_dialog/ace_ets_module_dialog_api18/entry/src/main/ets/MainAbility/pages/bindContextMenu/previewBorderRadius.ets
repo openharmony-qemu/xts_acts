@@ -49,6 +49,7 @@ struct Index {
             })
           .id('menu_1')
           .backgroundColor('#ff3df2f5')
+          .margin({top: '2%'})
         Text(this.txt1)
           .id('text1')
       }

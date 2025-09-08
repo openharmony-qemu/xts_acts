@@ -37,6 +37,7 @@ function ParseX509CertInfo(x509CertArray: Array<cert.X509Cert>) {
   }
   return res
 }
+const EVENT_ID_SET_SUITE_KEY = 177101;
 
 @Entry
 @Component
@@ -74,16 +75,20 @@ struct WebAttributeTest {
   @State onRequestSelectedCalled: boolean = false
   @State testConsole: boolean = false
 
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+  @State isRunJSEnd: number = -1;
+
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -92,6 +97,7 @@ struct WebAttributeTest {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
         try {
           this.controller.loadUrl("resource://rawfile/index.html");
         } catch (error) {
@@ -116,14 +122,22 @@ struct WebAttributeTest {
           })
           .onClick(async () => {
             console.info("key==>" + this.str)
+            await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
             switch (this.str) {
               case "emitOnAlert001": {
                   try {
+                    this.isPageEnd = -1
                     this.controller.loadUrl("resource://rawfile/alert.html");
-                    await Utils.sleep(2000)
-                    this.controller.runJavaScript("alertTest()")
-                    await Utils.sleep(2000)
-                    Utils.emitEvent(this.alert, 70017)
+                    await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                    this.isRunJSEnd = -1
+                    this.controller.runJavaScript("alertTest()").then((result) => {
+                      console.log('wait for JS end, result: ' + result);
+                      this.isRunJSEnd = 1
+                    })
+                    // await Utils.sleep(2000)
+                    await Utils.waitForExist(()=>this.isRunJSEnd, this.str+' isRunJSEnd', 1, 1000);
+                    Utils.emitEvent(this.alert, 177110)
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   }
@@ -131,11 +145,16 @@ struct WebAttributeTest {
               }
               case "emitOnConfirm001": {
                   try {
+                    this.isPageEnd = -1
                     this.controller.loadUrl("resource://rawfile/confirm.html");
-                    await Utils.sleep(2000)
-                    this.controller.runJavaScript("confirmTest()")
-                    await Utils.sleep(2000)
-                    Utils.emitEvent(this.confirm, 70018)
+                    await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                    this.isRunJSEnd = -1
+                    this.controller.runJavaScript("confirmTest()").then((result) => {
+                      console.log('wait for JS end, result: ' + result);
+                      this.isRunJSEnd = 1
+                    })
+                    await Utils.waitForExist(()=>this.isRunJSEnd, this.str+' isRunJSEnd', 1, 1000);
+                    Utils.emitEvent(this.confirm, 177120)
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   }
@@ -143,11 +162,16 @@ struct WebAttributeTest {
               }
               case "emitOnPrompt001": {
                   try {
+                    this.isPageEnd = -1
                     this.controller.loadUrl("resource://rawfile/prompt.html");
-                    await Utils.sleep(2000)
-                    this.controller.runJavaScript("promptTest()")
-                    await Utils.sleep(2000)
-                    Utils.emitEvent(this.prompt, 70019)
+                    await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                    this.isRunJSEnd = -1
+                    this.controller.runJavaScript("promptTest()").then((result) => {
+                      console.log('wait for JS end, result: ' + result);
+                      this.isRunJSEnd = 1
+                    })
+                    await Utils.waitForExist(()=>this.isRunJSEnd, this.str+' isRunJSEnd', 1, 1000);
+                    Utils.emitEvent(this.prompt, 177130)
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   }
@@ -157,15 +181,16 @@ struct WebAttributeTest {
               case "emitJsResultHandleCancel001": {
                   try {
                     this.handleCancel = true
+                    this.isPageEnd = -1
                     this.controller.loadUrl("resource://rawfile/confirm.html");
-                    await Utils.sleep(2000)
+                    await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                     this.controller.runJavaScript("confirmTest()", (error, result) => {
                       if (error) {
                         console.info('confirmTest() return error: ' + error)
                       }
                       if (result) {
                         console.info('confirmTest() return result: ' + result)
-                        Utils.emitEvent(result, 70021)
+                        Utils.emitEvent(result, 177140)
                       }
                     })
                   } catch (error) {
@@ -176,15 +201,16 @@ struct WebAttributeTest {
               case "emitJsResultHandleConfirm001": {
                   try {
                     this.handleCancel = false
+                    this.isPageEnd = -1
                     this.controller.loadUrl("resource://rawfile/confirm.html");
-                    await Utils.sleep(2000)
+                    await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                     this.controller.runJavaScript("confirmTest()", (error, result) => {
                       if (error) {
                         console.info('confirmTest() return error: ' + error)
                       }
                       if (result) {
                         console.info('confirmTest() return result: ' + result)
-                        Utils.emitEvent(result, 70023)
+                        Utils.emitEvent(result, 177150)
                       }
                     })
                   } catch (error) {
@@ -194,15 +220,16 @@ struct WebAttributeTest {
               }
               case "emitJsResultHandlePromptConfirm001": {
                   try {
+                    this.isPageEnd = -1
                     this.controller.loadUrl("resource://rawfile/prompt.html");
-                    await Utils.sleep(2000)
+                    await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                     this.controller.runJavaScript("promptTest()", (error, result) => {
                       if (error) {
                         console.info('promptTest() return error: ' + error)
                       }
                       if (result) {
                         console.info('promptTest() return result: ' + result)
-                        Utils.emitEvent(result, 70025)
+                        Utils.emitEvent(result, 177160)
                       }
                     })
                   } catch (error) {
@@ -259,6 +286,7 @@ struct WebAttributeTest {
           })
           .onPageEnd((event) => {
             if (event) {
+              this.isPageEnd = 1;
               this.pageEnd = event.url
               console.log("onPageEnd==> event.url:" + event.url)
               console.log("onPageEnd==> this.pageEnd:" + this.pageEnd)

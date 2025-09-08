@@ -13,7 +13,14 @@
  * limitations under the License.
  */
 
+#include "componentapi/AnimateOptionFinishCallbackTest.h"
+#include "componentapi/CommonAttrsAccessibilityActionTest.h"
+#include "componentapi/ComponentApiTest.h"
+#include "componentapi/ListItemGroupAreaTest.h"
+#include "componentapi/ListItemSwipeActionStateTest.h"
+#include "componentapi/UiStatesTest.h"
 #include "mouse/XComponentMouse.h"
+#include "node/NodeDetachTest.h"
 #include "touch/TouchPoint.h"
 #include "node/NodeAttribute.h"
 
@@ -121,6 +128,7 @@ static void InitPushTouchPoint(napi_property_descriptor* desc)
         XL("TouchEventForce", TouchPoint::TouchEventForce),
         XL("TouchEventDeviceId", TouchPoint::TouchEventDeviceId),
         XL("TouchEventTimeStamp", TouchPoint::TouchEventTimeStamp),
+        XL("TouchPointTypeEnum", TouchPoint::TouchPointTypeEnum),
     };
     for (size_t index = 0; index < sizeof(descTemp) / sizeof(descTemp[0]); index++) {
         desc[index + offset] = descTemp[index];
@@ -129,7 +137,7 @@ static void InitPushTouchPoint(napi_property_descriptor* desc)
 
 static void InitPushXComponentMouse(napi_property_descriptor* desc)
 {
-    int offset = 78;
+    int offset = 79;
     napi_property_descriptor descTemp[] = {
         XL("CreateMouseNativeNode", XComponentMouse::CreateMouseNativeNode),
         XL("MouseEventAction", XComponentMouse::MouseEventAction),
@@ -143,7 +151,7 @@ static void InitPushXComponentMouse(napi_property_descriptor* desc)
 
 static void InitPushNodeAttribute(napi_property_descriptor* desc)
 {
-    int offset = 82;
+    int offset = 83;
     napi_property_descriptor descTemp[] = {
         XL("CreateAttributeNativeNode", NodeAttribute::CreateAttributeNativeNode),
         XL("CheckNodeTextHalfLeading", NodeAttribute::CheckNodeTextHalfLeading),
@@ -189,7 +197,7 @@ static void InitPushNodeAttribute(napi_property_descriptor* desc)
 
 static void InitPushNodeAttribute2(napi_property_descriptor* desc)
 {
-    int offset = 118;
+    int offset = 119;
     napi_property_descriptor descTemp[] = {
         XL("CheckNodeXComponentSurfaceSize", NodeAttribute::CheckNodeXComponentSurfaceSize),
         XL("CheckNodeXComponentSurfaceRect", NodeAttribute::CheckNodeXComponentSurfaceRect),
@@ -228,6 +236,44 @@ static void InitPushNodeAttribute2(napi_property_descriptor* desc)
     }
 }
 
+static void InitPushNodeAttribute3(napi_property_descriptor* desc)
+{
+    int offset = 149;
+    napi_property_descriptor descTemp[] = {
+        XL("CheckNodeFocusMoveForward", NodeAttribute::CheckNodeFocusMoveForward),
+        XL("CheckNodeFocusMoveBackward", NodeAttribute::CheckNodeFocusMoveBackward),
+        XL("CheckNodeFocusMoveUp", NodeAttribute::CheckNodeFocusMoveUp),
+        XL("CheckNodeFocusMoveDown", NodeAttribute::CheckNodeFocusMoveDown),
+        XL("CheckNodeFocusMoveLeft", NodeAttribute::CheckNodeFocusMoveLeft),
+        XL("CheckNodeFocusMoveRight", NodeAttribute::CheckNodeFocusMoveRight),
+        XL("TestAnimateOption", AnimateOptionFinishCallbackTest::TestAnimateOption),
+        XL("NodeDetachTest", NodeDetachTest::NodeDetachTest),
+        XL("createNodeComponent", NodeDetachTest::createNodeComponent),
+        XL("TestAccessibilityActions001", CommonAttrsAccessibilityActionTest::TestAccessibilityActions001),
+        XL("TestAccessibilityActions002", CommonAttrsAccessibilityActionTest::TestAccessibilityActions002),
+        XL("RegisterLayoutCallbackOnNodeTest_001", ComponentApiTest::RegisterLayoutCallbackOnNodeTest_001),
+        XL("RegisterLayoutCallbackOnNodeTest_002", ComponentApiTest::RegisterLayoutCallbackOnNodeTest_002),
+        XL("TestCustomDialogHoverModeArea", ComponentApiTest::TestCustomDialogHoverModeArea),
+        XL("TestCustomDialogKeyboardAvoidMode", ComponentApiTest::TestCustomDialogKeyboardAvoidMode),
+        XL("TestUIState001", UiStatesTest::TestUIState001),
+        XL("TestUIState002", UiStatesTest::TestUIState002),
+        XL("TestUIState003", UiStatesTest::TestUIState003),
+        XL("TestUIState004", UiStatesTest::TestUIState004),
+        XL("CreateRegionTestList", ListItemGroupAreaTest::CreateRegionTestList),
+        XL("TestAreaOutside", ListItemGroupAreaTest::TestAreaOutside),
+        XL("TestAreaNone", ListItemGroupAreaTest::TestAreaNone),
+        XL("TestAreaItem", ListItemGroupAreaTest::TestAreaItem),
+        XL("TestAreaHeader", ListItemGroupAreaTest::TestAreaHeader),
+        XL("TestAreaFooter", ListItemGroupAreaTest::TestAreaFooter),
+        XL("testListSwipeActionItem001", ListItemSwipeActionStateTest::testListSwipeActionItem001),
+        XL("testListSwipeActionItem002", ListItemSwipeActionStateTest::testListSwipeActionItem002),
+        XL("testListSwipeActionItem003", ListItemSwipeActionStateTest::testListSwipeActionItem003),
+    };
+    for (size_t index = 0; index < sizeof(descTemp) / sizeof(descTemp[0]); index++) {
+        desc[index + offset] = descTemp[index];
+    }
+}
+
 static napi_value Init(napi_env env, napi_value exports)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Init", "Init begins");
@@ -235,13 +281,14 @@ static napi_value Init(napi_env env, napi_value exports)
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "env or exports is null");
         return nullptr;
     }
-    napi_property_descriptor desc[148] = {};
+    napi_property_descriptor desc[177] = {};
     InitPushXComponent1(desc);
     InitPushXComponent2(desc);
     InitPushTouchPoint(desc);
     InitPushXComponentMouse(desc);
     InitPushNodeAttribute(desc);
     InitPushNodeAttribute2(desc);
+    InitPushNodeAttribute3(desc);
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
         return nullptr;

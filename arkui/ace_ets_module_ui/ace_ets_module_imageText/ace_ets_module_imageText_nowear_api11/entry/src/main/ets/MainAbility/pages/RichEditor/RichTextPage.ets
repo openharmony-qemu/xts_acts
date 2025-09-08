@@ -38,8 +38,8 @@ struct RichTextPage {
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center,
-      justifyContent: FlexAlign.Center }) {
-      RichText(this.data).key('richText')
+      justifyContent: FlexAlign.Start }) {
+      RichText(this.data).key('richText').height('30%')
         .onStart(() => {
           this.startRun = 'startOn'
           console.info('RichText onStart');

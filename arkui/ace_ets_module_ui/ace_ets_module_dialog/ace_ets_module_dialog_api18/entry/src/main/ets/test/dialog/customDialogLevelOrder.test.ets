@@ -76,16 +76,16 @@ export default function customDialogLevelOrder() {
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('100'));
       await button.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let button1 = await driver.findComponent(ON.id('myOrder'));
       await button1.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let top = AppStorage.get('customLevel') as number
       expect(top).assertEqual(100)
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let button2 = await driver.findComponent(ON.id('close'));
       await button2.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       console.info('customDialogLevelOrder_0100 END');
       done();
     });
@@ -104,16 +104,16 @@ export default function customDialogLevelOrder() {
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('100001'));
       await button.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let button1 = await driver.findComponent(ON.id('myOrder'));
       await button1.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let top = AppStorage.get('customLevel') as number
       expect(top).assertEqual(100000)
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let button2 = await driver.findComponent(ON.id('close'));
       await button2.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       console.info('customDialogLevelOrder_0200 END');
       done();
     });
@@ -132,16 +132,16 @@ export default function customDialogLevelOrder() {
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('-100001'));
       await button.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let button1 = await driver.findComponent(ON.id('myOrder'));
       await button1.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let top = AppStorage.get('customLevel') as number
       expect(top).assertEqual(-100000)
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let button2 = await driver.findComponent(ON.id('close'));
       await button2.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       console.info('customDialogLevelOrder_0300 END');
       done();
     });
@@ -159,16 +159,16 @@ export default function customDialogLevelOrder() {
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('undefined'));
       await button.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let button1 = await driver.findComponent(ON.id('myOrder'));
       await button1.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let top = AppStorage.get('customLevel') as number
       expect(top).assertEqual(0)
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let button2 = await driver.findComponent(ON.id('close'));
       await button2.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       console.info('customDialogLevelOrder_0400 END');
       done();
     });

@@ -15,4 +15,4 @@ import { Content } from "@kit.ArkUI";
  * limitations under the License.
  */
 export const CreateArkUINode: (Node: Content) => void;
-export const InitTextComponent: () => void;
+export const GetKeyCodeResult: () => number;

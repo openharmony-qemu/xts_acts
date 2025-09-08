@@ -16,9 +16,12 @@ import { beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-
+let driver = Driver.create();
 
 export default function webviewApi() {
 
@@ -30,7 +33,6 @@ export default function webviewApi() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(1000);
       console.info("web beforeEach start");
       done();
     })
@@ -46,12 +48,13 @@ export default function webviewApi() {
      */
     it('testWebServiceWorker_SetSchemeHandler', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         
-        hilog.info(0x0000, 'testTag', '%{public}s', 'testWebServiceWorker_SetSchemeHandler PASS');
-        
-        Utils.emitEvent("emitWebServiceWorker_SetSchemeHandler", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebServiceWorker_SetSchemeHandler", true, 7756, done);
-        sendEventByKey('webHostingButton', 10, '');
+      hilog.info(0x0000, 'testTag', '%{public}s', 'testWebServiceWorker_SetSchemeHandler PASS');
+      Utils.emitEvent("emitWebServiceWorker_SetSchemeHandler", 147401)
+      let isReturn = false;
+      Utils.registerEvent("testWebServiceWorker_SetSchemeHandler", true, 147410, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webHostingButton",driver)
+      await waitForExist(()=>isReturn, 'testWebServiceWorker_SetSchemeHandler', true,1000);
+      done();
     })
     
 

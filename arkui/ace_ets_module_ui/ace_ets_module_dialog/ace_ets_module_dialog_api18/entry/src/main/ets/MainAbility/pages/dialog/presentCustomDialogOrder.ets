@@ -53,7 +53,7 @@ struct presentCustomDialogOrder {
             }, this.dialogController, {
               levelOrder: LevelOrder.clamp(100),
               isModal: false,
-              alignment: DialogAlignment.Bottom
+              alignment: DialogAlignment.Center
             })
               .then((dialogId: number) => {
                 this.customDialogComponentId = dialogId
@@ -72,7 +72,7 @@ struct presentCustomDialogOrder {
             }, this.dialogController, {
               levelOrder: LevelOrder.clamp(100001),
               isModal: false,
-              alignment: DialogAlignment.Bottom
+              alignment: DialogAlignment.Center
             })
               .then((dialogId: number) => {
                 this.customDialogComponentId = dialogId
@@ -93,7 +93,7 @@ struct presentCustomDialogOrder {
             }, this.dialogController, {
               levelOrder: LevelOrder.clamp(-100001),
               isModal: false,
-              alignment: DialogAlignment.Bottom
+              alignment: DialogAlignment.Center
             })
               .then((dialogId: number) => {
                 this.customDialogComponentId = dialogId
@@ -112,7 +112,7 @@ struct presentCustomDialogOrder {
             }, this.dialogController, {
               levelOrder: LevelOrder.clamp(undefined),
               isModal: false,
-              alignment: DialogAlignment.Bottom
+              alignment: DialogAlignment.Center
             })
               .then((dialogId: number) => {
                 this.customDialogComponentId = dialogId
@@ -125,6 +125,7 @@ struct presentCustomDialogOrder {
 
       Button('set levelOrder')
         .id('myOrder')
+        .height('5%')
         .onClick(() => {
           let presentCustomDialogOrder = this.getUIContext().getPromptAction().getTopOrder()
           if (presentCustomDialogOrder !== undefined) {

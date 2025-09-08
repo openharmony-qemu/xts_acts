@@ -37,3 +37,5 @@ export const createCrossLanguageSwiperNode: (content: NodeContent, tag: string) 
 export const createCrossLanguageWaterFlowNode: (content: NodeContent, tag: string) => void;
 
 export const testBindController001: (a: string) => void;
+
+export const scrollScrollBarMarginTest: (a: string, b: string) => void;

@@ -14,110 +14,95 @@
  */
 import { expect } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
-import * as paramPublic from './publicDeriveParam.js';
-import { HksTag, HksKeyStorageType } from '../publicParam.js';
-let handle;
-async function publicDeriveGenFunc(srcKeyAlies, HuksOptions) {
-  await huks
-    .generateKey(srcKeyAlies, HuksOptions)
-    .then((data) => {
-      console.log(`test generateKey data: ${JSON.stringify(data)}`);
-      expect(data.errorCode == 0).assertTrue();
-    })
-    .catch((err) => {
-      console.log('test generateKey err information: ' + JSON.stringify(err));
-      expect(null).assertFail();
-    });
+import { logger } from '../../common/logger.js';
+
+let handle = 0;
+
+export async function publicDeriveGenFunc(srcKeyAlias, HuksOptions, expectValue) {
+    await huks.generateKey(srcKeyAlias, HuksOptions)
+        .then((data) => {
+            logger.log(`test generateKey data: ${JSON.stringify(data)}`);
+            expect(data.errorCode).assertEqual(expectValue);
+        })
+        .catch((err) => {
+            logger.error('test generateKey err information: ' + JSON.stringify(err));
+            expect(null).assertFail();
+        });
 }
 
-async function publicDeriveInitFunc(srcKeyAlies, HuksOptions) {
-  await huks
-    .init(srcKeyAlies, HuksOptions)
-    .then((data) => {
-      console.log(`test init data ${JSON.stringify(data)}`);
-      handle = data.handle;
-      expect(data.errorCode == 0).assertTrue();
-    })
-    .catch((err) => {
-      console.log('test init err information: ' + JSON.stringify(err));
-      expect(null).assertFail();
-    });
+export async function publicDeriveInitFunc(srcKeyAlias, HuksOptions, expectValue) {
+    await huks.init(srcKeyAlias, HuksOptions)
+        .then((data) => {
+            logger.log(`test init data ${JSON.stringify(data)}`);
+            expect(data.errorCode).assertEqual(expectValue);
+            if (expectValue == 0) {
+                handle = data.handle;
+            }
+        })
+        .catch((err) => {
+            logger.error('test init err information: ' + JSON.stringify(err));
+            expect(null).assertFail();
+        });
 }
 
-async function publicDeriveUpdateFunc(HuksOptions) {
-  await huks
-    .update(handle, HuksOptions)
-    .then((data) => {
-      console.log(`test update data ${JSON.stringify(data)}`);
-      expect(data.errorCode == 0).assertTrue();
-    })
-    .catch((err) => {
-      console.log('test update err information: ' + JSON.stringify(err));
-      expect(null).assertFail();
-    });
+export async function publicDeriveUpdateFunc(HuksOptions, expectValue) {
+    await huks.update(handle, HuksOptions)
+        .then((data) => {
+            logger.log(`test update data ${JSON.stringify(data)}`);
+            expect(data.errorCode).assertEqual(expectValue);
+        })
+        .catch((err) => {
+            logger.error('test update err information: ' + JSON.stringify(err));
+            expect(null).assertFail();
+        });
 }
 
-async function publicDeriveFinishAbortFunc(huksOptionsFinish, thirdInderfaceName) {
-  if (thirdInderfaceName == 'finish') {
-    await huks
-      .finish(handle, huksOptionsFinish)
-      .then((data) => {
-        console.log(`test finish data ${JSON.stringify(data)}`);
-        expect(data.errorCode == 0).assertTrue();
-      })
-      .catch((err) => {
-        console.log('test finish err information: ' + JSON.stringify(err));
-        expect(null).assertFail();
-      });
-  } else {
-    let huksOptionsAbort = new Array({
-      tag: HksTag.HKS_TAG_KEY_STORAGE_FLAG,
-      value: HksKeyStorageType.HKS_STORAGE_TEMP,
-    });
-    await huks
-      .abort(handle, huksOptionsAbort)
-      .then((data) => {
-        console.log(`test abort data ${JSON.stringify(data)}`);
-        expect(data.errorCode == 0).assertTrue();
-      })
-      .catch((err) => {
-        console.log('test abort err information: ' + JSON.stringify(err));
-        expect(null).assertFail();
-      });
-  }
+export async function publicDeriveFinishAbortFunc(huksOptionsFinish, thirdInterfaceName, expectValue) {
+    if (thirdInterfaceName == 'finish') {
+        await huks.finish(handle, huksOptionsFinish)
+            .then((data) => {
+                logger.log(`test finish data ${JSON.stringify(data)}`);
+                expect(data.errorCode).assertEqual(expectValue);
+            })
+            .catch((err) => {
+                logger.error('test finish err information: ' + JSON.stringify(err));
+                expect(null).assertFail();
+            });
+    } else {
+        await huks.abort(handle, huksOptionsFinish)
+            .then((data) => {
+                logger.log(`test abort data ${JSON.stringify(data)}`);
+                expect(data.errorCode).assertEqual(expectValue);
+            })
+            .catch((err) => {
+                logger.error('test abort err information: ' + JSON.stringify(err));
+                expect(null).assertFail();
+            });
+    }
 }
 
-async function publicDeriveDeleteFunc(srcKeyAlies, HuksOptions) {
-  await huks
-    .deleteKey(srcKeyAlies, HuksOptions)
-    .then((data) => {
-      console.log(`test deleteKey data ${JSON.stringify(data)}`);
-      expect(data.errorCode == 0).assertTrue();
-    })
-    .catch((err) => {
-      console.log('test deleteKey err information: ' + JSON.stringify(err));
-      expect(null).assertFail();
-    });
+export async function publicDeriveDeleteFunc(srcKeyAlias, HuksOptions, expectValue) {
+    await huks.deleteKey(srcKeyAlias, HuksOptions)
+        .then((data) => {
+            logger.log(`test deleteKey data ${JSON.stringify(data)}`);
+            expect(data.errorCode).assertEqual(expectValue);
+        })
+        .catch((err) => {
+            logger.error('test deleteKey err information: ' + JSON.stringify(err));
+            expect(null).assertFail();
+        });
 }
 
-async function publicDeriveFunc(srcKeyAlies, HuksOptions, huksOptionsFinish, deriveArray, thirdInderfaceName) {
-  try {
-    await publicDeriveGenFunc(srcKeyAlies, HuksOptions);
+export async function publicDeriveFunc(srcKeyAlias, HuksOptions, huksOptionsFinish, deriveArray, thirdInterfaceName) {
+    await publicDeriveGenFunc(srcKeyAlias, HuksOptions, 0);
     let deriveArrAlg = HuksOptions.properties[0];
     let deriveArrLen = HuksOptions.properties[3];
     HuksOptions.properties.splice(0, 1, deriveArray[0]);
     HuksOptions.properties.splice(3, 1, deriveArray[1]);
-
-    await publicDeriveInitFunc(srcKeyAlies, HuksOptions);
-    await publicDeriveUpdateFunc(HuksOptions);
-    await publicDeriveFinishAbortFunc(huksOptionsFinish, thirdInderfaceName);
-
+    await publicDeriveInitFunc(srcKeyAlias, HuksOptions, 0);
+    await publicDeriveUpdateFunc(HuksOptions, 0);
+    await publicDeriveFinishAbortFunc(huksOptionsFinish, thirdInterfaceName, 0);
     HuksOptions.properties.splice(0, 1, deriveArrAlg);
     HuksOptions.properties.splice(3, 1, deriveArrLen);
-    await publicDeriveDeleteFunc(srcKeyAlies, HuksOptions);
-  } catch (e) {
-    expect(null).assertFail();
-  }
+    await publicDeriveDeleteFunc(srcKeyAlias, HuksOptions, 0);
 }
-
-export { publicDeriveFunc };

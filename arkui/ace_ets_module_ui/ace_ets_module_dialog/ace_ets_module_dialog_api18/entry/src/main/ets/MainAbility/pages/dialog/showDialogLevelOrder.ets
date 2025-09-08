@@ -28,10 +28,9 @@ struct showDialogLevelOrder {
           .height('8%')
           .onClick(() => {
             this.promptAction.showDialog({
-              title: 'showDialog Title Info',
-              message: 'showDialog',
+              title: 'showDialog',
               levelOrder: LevelOrder.clamp(100),
-              alignment: DialogAlignment.Bottom,
+              alignment: DialogAlignment.Center,
               isModal: false,
               buttons: [
                 {
@@ -46,10 +45,9 @@ struct showDialogLevelOrder {
           .height('8%')
           .onClick(() => {
             this.promptAction.showDialog({
-              title: 'showDialog Title Info',
-              message: 'showDialog',
+              title: 'showDialog',
               levelOrder: LevelOrder.clamp(undefined),
-              alignment: DialogAlignment.Bottom,
+              alignment: DialogAlignment.Center,
               isModal: false,
               buttons: [
                 {
@@ -65,13 +63,12 @@ struct showDialogLevelOrder {
       Row({ space: 5 }) {
         Button('100001')
           .id('100001')
-          .height('8%')
+          .height('5%')
           .onClick(() => {
             this.promptAction.showDialog({
-              title: 'showDialog Title Info',
-              message: 'showDialog',
+              title: 'showDialog',
               levelOrder: LevelOrder.clamp(100001),
-              alignment: DialogAlignment.Bottom,
+              alignment: DialogAlignment.Center,
               isModal: false,
               buttons: [
                 {
@@ -83,13 +80,12 @@ struct showDialogLevelOrder {
           })
         Button('-100001')
           .id('-100001')
-          .height('8%')
+          .height('5%')
           .onClick(() => {
             this.promptAction.showDialog({
-              title: 'showDialog Title Info',
-              message: 'showDialog',
+              title: 'showDialog',
               levelOrder: LevelOrder.clamp(-100001),
-              alignment: DialogAlignment.Bottom,
+              alignment: DialogAlignment.Center,
               isModal: false,
               buttons: [
                 {
@@ -104,6 +100,7 @@ struct showDialogLevelOrder {
 
       Button('get showDialogOrder')
         .id('myOrder')
+        .height('5%')
         .onClick(() => {
           let showDialogOrder = this.getUIContext().getPromptAction().getTopOrder()
           if (showDialogOrder !== undefined) {

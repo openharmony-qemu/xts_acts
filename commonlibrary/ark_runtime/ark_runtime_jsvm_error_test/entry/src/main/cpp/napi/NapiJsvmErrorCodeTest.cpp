@@ -18,7 +18,6 @@
 #include "napi/native_api.h"
 #include "native_common.h"
 #include "securec.h"
-#include <ark_runtime/jsvm.h>
 #include "cstdint"
 #include "cstdio"
 
@@ -63,7 +62,35 @@ JSVM_Status CreateVMInstance(JSVM_VM* vm)
     return OH_JSVM_CreateVM(&options, vm);
 }
 
-napi_value testCreateVMJSOK(napi_env env1, napi_callback_info info)
+JSVM_Status CreateVMWithCreateSnapshot(JSVM_VM *vm, JSVM_VMScope *vmScope, JSVM_Env *env)
+{
+    JSVM_InitOptions init_options;
+    if (memset_s(&init_options, sizeof(init_options), 0, sizeof(init_options)) != EOK) {
+        printf("memset_s failed\n");
+        return JSVM_INVALID_ARG;
+    }
+    init_options.externalReferences = g_externals;
+    if (g_aa == 0) {
+        OH_JSVM_Init(&init_options);
+        g_aa++;
+    }
+
+    JSVM_CreateVMOptions options;
+    if (memset_s(&options, sizeof(options), 0, sizeof(options)) != EOK) {
+        printf("memset_s failed\n");
+        return JSVM_INVALID_ARG;
+    }
+    options.isForSnapshotting = true;
+    OH_JSVM_CreateVM(&options, vm);
+    OH_JSVM_OpenVMScope(*vm, vmScope);
+    JSVM_PropertyDescriptor descriptor[] = {
+        {"hello", nullptr, &hello_cb, nullptr, nullptr, nullptr, JSVM_DEFAULT},
+    };
+    return OH_JSVM_CreateEnv(*vm, 1, descriptor, env);
+}
+
+
+napi_value TestCreateVMJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     JSVM_Status status = CreateVMInstance(&vm);
@@ -76,7 +103,7 @@ napi_value testCreateVMJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testCreateProxyJSOK(napi_env env1, napi_callback_info info)
+napi_value TestCreateProxyJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -117,7 +144,7 @@ napi_value testCreateProxyJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testCreateProxyPending(napi_env env1, napi_callback_info info)
+napi_value TestCreateProxyPending(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -159,7 +186,7 @@ napi_value testCreateProxyPending(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testCreateProxyInvalid(napi_env env1, napi_callback_info info)
+napi_value TestCreateProxyInvalid(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -200,7 +227,7 @@ napi_value testCreateProxyInvalid(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testCreateProxyObejct(napi_env env1, napi_callback_info info)
+napi_value TestCreateProxyObejct(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -241,7 +268,7 @@ napi_value testCreateProxyObejct(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testIsProxyJSOK(napi_env env1, napi_callback_info info)
+napi_value TestIsProxyJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -282,7 +309,7 @@ napi_value testIsProxyJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testIsProxyInvalid(napi_env env1, napi_callback_info info)
+napi_value TestIsProxyInvalid(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -310,7 +337,7 @@ napi_value testIsProxyInvalid(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testProxyGetTargetJSOK(napi_env env1, napi_callback_info info)
+napi_value TestProxyGetTargetJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -352,7 +379,7 @@ napi_value testProxyGetTargetJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testProxyGetTargetInvalid(napi_env env1, napi_callback_info info)
+napi_value TestProxyGetTargetInvalid(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -386,7 +413,7 @@ napi_value testProxyGetTargetInvalid(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testProxyGetTargetInvalidType(napi_env env1, napi_callback_info info)
+napi_value TestProxyGetTargetInvalidType(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -422,7 +449,7 @@ napi_value testProxyGetTargetInvalidType(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testOpenVMScopeJSOK(napi_env env1, napi_callback_info info)
+napi_value TestOpenVMScopeJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -442,7 +469,7 @@ napi_value testOpenVMScopeJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testCloseVMScopeJSOK(napi_env env1, napi_callback_info info)
+napi_value TestCloseVMScopeJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -463,7 +490,7 @@ napi_value testCloseVMScopeJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testCreateEnvJSOK(napi_env env1, napi_callback_info info)
+napi_value TestCreateEnvJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -488,7 +515,7 @@ napi_value testCreateEnvJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testCreateEnvFromSnapshotJSOK(napi_env env1, napi_callback_info info)
+napi_value TestCreateEnvFromSnapshotJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -511,7 +538,7 @@ napi_value testCreateEnvFromSnapshotJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testDestroyEnvJSOK(napi_env env1, napi_callback_info info)
+napi_value TestDestroyEnvJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -536,19 +563,21 @@ napi_value testDestroyEnvJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testOpenEnvScopeJSOK(napi_env env1, napi_callback_info info)
+napi_value TestOpenEnvScopeJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
     JSVM_VMScope vm_scope;
-    JSVM_Status status = OH_JSVM_OpenVMScope(vm, &vm_scope);
-    int32_t resValue;
-    if (status == JSVM_OK) {
-        resValue = 0;
-    } else {
-        resValue = 1;
-        printf("Status: %d\n", status);
-    }
+    OH_JSVM_OpenVMScope(vm, &vm_scope);
+    JSVM_Env env;
+    OH_JSVM_CreateEnv(vm, 0, nullptr, &env);
+    
+    JSVM_EnvScope envScope;
+    JSVM_Status status = OH_JSVM_OpenEnvScope(env, &envScope);
+    int32_t resValue = (status == JSVM_OK) ? 0 : 1;
+
+    OH_JSVM_CloseEnvScope(env, envScope);
+    OH_JSVM_DestroyEnv(env);
     OH_JSVM_CloseVMScope(vm, vm_scope);
     OH_JSVM_DestroyVM(vm);
 
@@ -557,27 +586,29 @@ napi_value testOpenEnvScopeJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testCloseEnvScopeJSOK(napi_env env1, napi_callback_info info)
+napi_value TestCloseEnvScopeJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
     JSVM_VMScope vm_scope;
     OH_JSVM_OpenVMScope(vm, &vm_scope);
-    JSVM_Status status = OH_JSVM_CloseVMScope(vm, vm_scope);
+    JSVM_Env env;
+    OH_JSVM_CreateEnv(vm, 0, nullptr, &env);
+    JSVM_EnvScope envScope;
+    OH_JSVM_OpenEnvScope(env, &envScope);
+
+    JSVM_Status status = OH_JSVM_CloseEnvScope(env, envScope);
+    int32_t resValue = (status == JSVM_OK) ? 0 : 1;
+
+    OH_JSVM_DestroyEnv(env);
+    OH_JSVM_CloseVMScope(vm, vm_scope);
     OH_JSVM_DestroyVM(vm);
-    int32_t resValue;
-    if (status == JSVM_OK) {
-        resValue = 0;
-    } else {
-        resValue = 1;
-        printf("Status: %d\n", status);
-    }
     napi_value result;
     NAPI_CALL(env1, napi_create_int32(env1, resValue, &result));
     return result;
 }
 
-napi_value testGetVMJSOK(napi_env env1, napi_callback_info info)
+napi_value TestGetVMJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -604,7 +635,7 @@ napi_value testGetVMJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testCompileScriptJSOK(napi_env env1, napi_callback_info info)
+napi_value TestCompileScriptJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -625,7 +656,6 @@ napi_value testCompileScriptJSOK(napi_env env1, napi_callback_info info)
     JSVM_Script script;
     JSVM_Value jsFunctionStr;
     OH_JSVM_CreateStringUtf8(env, jsFunction, JSVM_AUTO_LENGTH, &jsFunctionStr);
-    
     JSVM_Status status = OH_JSVM_CompileScript(env, jsFunctionStr, nullptr, 0, false, nullptr, &script);
     int32_t resValue;
     if (status == JSVM_OK) {
@@ -646,7 +676,7 @@ napi_value testCompileScriptJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testCreateCodeCacheJSOK(napi_env env1, napi_callback_info info)
+napi_value TestCreateCodeCacheJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -684,7 +714,7 @@ napi_value testCreateCodeCacheJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testThrowJSOK(napi_env env1, napi_callback_info info)
+napi_value TestThrowJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -723,7 +753,7 @@ napi_value testThrowJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testOpenHandleScopeJSOK(napi_env env1, napi_callback_info info)
+napi_value TestOpenHandleScopeJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -755,7 +785,7 @@ napi_value testOpenHandleScopeJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testOpenEscapableHandleScopeJSOK(napi_env env1, napi_callback_info info)
+napi_value TestOpenEscapableHandleScopeJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -789,7 +819,7 @@ napi_value testOpenEscapableHandleScopeJSOK(napi_env env1, napi_callback_info in
     return result;
 }
 
-napi_value testCloseEscapableHandleScopeJSOK(napi_env env1, napi_callback_info info)
+napi_value TestCloseEscapableHandleScopeJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -824,7 +854,7 @@ napi_value testCloseEscapableHandleScopeJSOK(napi_env env1, napi_callback_info i
     return result;
 }
 
-napi_value testGetReferenceValueJSOK(napi_env env1, napi_callback_info info)
+napi_value TestGetReferenceValueJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -862,7 +892,7 @@ napi_value testGetReferenceValueJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testCreateArrayJSOK(napi_env env1, napi_callback_info info)
+napi_value TestCreateArrayJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -896,7 +926,7 @@ napi_value testCreateArrayJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testAllocateArrayBufferBackingStoreDataInvalid(napi_env env1, napi_callback_info info)
+napi_value TestAllocateArrayBufferBackingStoreDataInvalid(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -925,7 +955,7 @@ napi_value testAllocateArrayBufferBackingStoreDataInvalid(napi_env env1, napi_ca
     return result;
 }
 
-napi_value testAllocateArrayBufferBackingStoreDataGenericFailure(napi_env env1, napi_callback_info info)
+napi_value TestAllocateArrayBufferBackingStoreDataGenericFailure(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -954,7 +984,7 @@ napi_value testAllocateArrayBufferBackingStoreDataGenericFailure(napi_env env1, 
     return result;
 }
 
-napi_value testFreeArrayBufferBackingStoreDataInvalid(napi_env env1, napi_callback_info info)
+napi_value TestFreeArrayBufferBackingStoreDataInvalid(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -981,7 +1011,7 @@ napi_value testFreeArrayBufferBackingStoreDataInvalid(napi_env env1, napi_callba
     return result;
 }
 
-napi_value testCreateArrayBufferFromBackingStoreDataInvalid(napi_env env1, napi_callback_info info)
+napi_value TestCreateArrayBufferFromBackingStoreDataInvalid(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1011,7 +1041,7 @@ napi_value testCreateArrayBufferFromBackingStoreDataInvalid(napi_env env1, napi_
     return result;
 }
 
-napi_value testCreateDateJSOK(napi_env env1, napi_callback_info info)
+napi_value TestCreateDateJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1045,7 +1075,7 @@ napi_value testCreateDateJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testCreateExternalJSOK(napi_env env1, napi_callback_info info)
+napi_value TestCreateExternalJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1079,7 +1109,7 @@ napi_value testCreateExternalJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testCreateSymbolJSOK(napi_env env1, napi_callback_info info)
+napi_value TestCreateSymbolJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1109,7 +1139,7 @@ napi_value testCreateSymbolJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testCreateBigintInt64JSOK(napi_env env1, napi_callback_info info)
+napi_value TestCreateBigintInt64JSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1137,7 +1167,7 @@ napi_value testCreateBigintInt64JSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testGetArrayLengthJSOK(napi_env env1, napi_callback_info info)
+napi_value TestGetArrayLengthJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1155,7 +1185,7 @@ napi_value testGetArrayLengthJSOK(napi_env env1, napi_callback_info info)
     bool isArray = false;
     OH_JSVM_IsArray(env, ret, &isArray);
     if (!isArray) {
-        OH_JSVM_ThrowError(env, nullptr, "TestGetArrayLength_01: CreateArray Failed");
+        OH_JSVM_ThrowError(env, nullptr, "TestGetArrayLengthJSOK: OH_JSVM_GetArrayLength Failed");
         return nullptr;
     }
     uint32_t length;
@@ -1172,7 +1202,7 @@ napi_value testGetArrayLengthJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testGetPrototypeJSOK(napi_env env1, napi_callback_info info)
+napi_value TestGetPrototypeJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1208,7 +1238,7 @@ napi_value testGetPrototypeJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testGetDateValueJSOK(napi_env env1, napi_callback_info info)
+napi_value TestGetDateValueJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1238,7 +1268,7 @@ napi_value testGetDateValueJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testGetDateValueExpected(napi_env env1, napi_callback_info info)
+napi_value TestGetDateValueExpected(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1267,7 +1297,7 @@ napi_value testGetDateValueExpected(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testGetValueBoolJSOK(napi_env env1, napi_callback_info info)
+napi_value TestGetValueBoolJSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1297,7 +1327,7 @@ napi_value testGetValueBoolJSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testGetValueDoubleExpected(napi_env env1, napi_callback_info info)
+napi_value TestGetValueDoubleExpected(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1327,7 +1357,7 @@ napi_value testGetValueDoubleExpected(napi_env env1, napi_callback_info info)
 }
 
 
-napi_value testGetValueBigintInt64Expected(napi_env env1, napi_callback_info info)
+napi_value TestGetValueBigintInt64Expected(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1357,7 +1387,7 @@ napi_value testGetValueBigintInt64Expected(napi_env env1, napi_callback_info inf
     return result;
 }
 
-napi_value testGetValueBigintUint64JSOK(napi_env env1, napi_callback_info info)
+napi_value TestGetValueBigintUint64JSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1388,7 +1418,7 @@ napi_value testGetValueBigintUint64JSOK(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testGetValueBigintUint64Expected(napi_env env1, napi_callback_info info)
+napi_value TestGetValueBigintUint64Expected(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1419,7 +1449,7 @@ napi_value testGetValueBigintUint64Expected(napi_env env1, napi_callback_info in
 }
 
 
-napi_value testGetValueExternalInvalid(napi_env env1, napi_callback_info info)
+napi_value TestGetValueExternalInvalid(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1446,7 +1476,7 @@ napi_value testGetValueExternalInvalid(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testGetValueInt32Expected(napi_env env1, napi_callback_info info)
+napi_value TestGetValueInt32Expected(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1475,7 +1505,7 @@ napi_value testGetValueInt32Expected(napi_env env1, napi_callback_info info)
     return result;
 }
 
-napi_value testGetValueInt64Expected(napi_env env1, napi_callback_info info)
+napi_value TestGetValueInt64Expected(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1503,7 +1533,7 @@ napi_value testGetValueInt64Expected(napi_env env1, napi_callback_info info)
     NAPI_CALL(env1, napi_create_int32(env1, resValue, &result));
     return result;
 }
-napi_value testGetValueStringLatin1JSOK(napi_env env1, napi_callback_info info)
+napi_value TestGetValueStringLatin1JSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1533,7 +1563,7 @@ napi_value testGetValueStringLatin1JSOK(napi_env env1, napi_callback_info info)
     NAPI_CALL(env1, napi_create_int32(env1, resValue, &result));
     return result;
 }
-napi_value testGetValueStringLatin1Expected(napi_env env1, napi_callback_info info)
+napi_value TestGetValueStringLatin1Expected(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1564,7 +1594,7 @@ napi_value testGetValueStringLatin1Expected(napi_env env1, napi_callback_info in
     return result;
 }
 
-napi_value testGetValueStringUtf8JSOK(napi_env env1, napi_callback_info info)
+napi_value TestGetValueStringUtf8JSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1594,7 +1624,7 @@ napi_value testGetValueStringUtf8JSOK(napi_env env1, napi_callback_info info)
     NAPI_CALL(env1, napi_create_int32(env1, resValue, &result));
     return result;
 }
-napi_value testGetValueStringUtf8Expected(napi_env env1, napi_callback_info info)
+napi_value TestGetValueStringUtf8Expected(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1625,7 +1655,7 @@ napi_value testGetValueStringUtf8Expected(napi_env env1, napi_callback_info info
     return result;
 }
 
-napi_value testGetValueStringUtf16JSOK(napi_env env1, napi_callback_info info)
+napi_value TestGetValueStringUtf16JSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1656,7 +1686,7 @@ napi_value testGetValueStringUtf16JSOK(napi_env env1, napi_callback_info info)
     NAPI_CALL(env1, napi_create_int32(env1, resValue, &result));
     return result;
 }
-napi_value testGetValueStringUtf16Expected(napi_env env1, napi_callback_info info)
+napi_value TestGetValueStringUtf16Expected(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1687,7 +1717,7 @@ napi_value testGetValueStringUtf16Expected(napi_env env1, napi_callback_info inf
     return result;
 }
 
-napi_value testGetValueUint32JSOK(napi_env env1, napi_callback_info info)
+napi_value TestGetValueUint32JSOK(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1715,7 +1745,7 @@ napi_value testGetValueUint32JSOK(napi_env env1, napi_callback_info info)
     NAPI_CALL(env1, napi_create_int32(env1, resValue, &result));
     return result;
 }
-napi_value testGetValueUint32Expected(napi_env env1, napi_callback_info info)
+napi_value TestGetValueUint32Expected(napi_env env1, napi_callback_info info)
 {
     JSVM_VM vm;
     CreateVMInstance(&vm);
@@ -1733,6 +1763,203 @@ napi_value testGetValueUint32Expected(napi_env env1, napi_callback_info info)
     uint32_t value2;
     JSVM_Status status = OH_JSVM_GetValueUint32(env, value, &value2);
     int32_t resValue = (status == JSVM_NUMBER_EXPECTED) ? 0 : 1;
+
+    OH_JSVM_CloseHandleScope(env, handlescope);
+    OH_JSVM_CloseEnvScope(env, envScope);
+    OH_JSVM_DestroyEnv(env);
+    OH_JSVM_CloseVMScope(vm, vm_scope);
+    OH_JSVM_DestroyVM(vm);
+    napi_value result;
+    NAPI_CALL(env1, napi_create_int32(env1, resValue, &result));
+    return result;
+}
+napi_value TestGetBooleanJSOK(napi_env env1, napi_callback_info info)
+{
+    JSVM_VM vm;
+    CreateVMInstance(&vm);
+    JSVM_VMScope vm_scope;
+    OH_JSVM_OpenVMScope(vm, &vm_scope);
+    JSVM_Env env;
+    OH_JSVM_CreateEnv(vm, 0, nullptr, &env);
+    JSVM_EnvScope envScope;
+    OH_JSVM_OpenEnvScope(env, &envScope);
+    JSVM_HandleScope handlescope;
+    OH_JSVM_OpenHandleScope(env, &handlescope);
+
+    JSVM_Value rhs = nullptr;
+    bool value = true;
+    JSVM_Status status = OH_JSVM_GetBoolean(env, value, &rhs);
+    int32_t resValue = (status == JSVM_OK) ? 0 : 1;
+
+    OH_JSVM_CloseHandleScope(env, handlescope);
+    OH_JSVM_CloseEnvScope(env, envScope);
+    OH_JSVM_DestroyEnv(env);
+    OH_JSVM_CloseVMScope(vm, vm_scope);
+    OH_JSVM_DestroyVM(vm);
+    napi_value result;
+    NAPI_CALL(env1, napi_create_int32(env1, resValue, &result));
+    return result;
+}
+
+napi_value TestGetNullJSOK(napi_env env1, napi_callback_info info)
+{
+    JSVM_VM vm;
+    CreateVMInstance(&vm);
+    JSVM_VMScope vm_scope;
+    OH_JSVM_OpenVMScope(vm, &vm_scope);
+    JSVM_Env env;
+    OH_JSVM_CreateEnv(vm, 0, nullptr, &env);
+    JSVM_EnvScope envScope;
+    OH_JSVM_OpenEnvScope(env, &envScope);
+    JSVM_HandleScope handlescope;
+    OH_JSVM_OpenHandleScope(env, &handlescope);
+
+    JSVM_Value lhs = nullptr;
+    JSVM_Status status = OH_JSVM_GetNull(env, &lhs);
+    int32_t resValue = (status == JSVM_OK) ? 0 : 1;
+
+    OH_JSVM_CloseHandleScope(env, handlescope);
+    OH_JSVM_CloseEnvScope(env, envScope);
+    OH_JSVM_DestroyEnv(env);
+    OH_JSVM_CloseVMScope(vm, vm_scope);
+    OH_JSVM_DestroyVM(vm);
+    napi_value result;
+    NAPI_CALL(env1, napi_create_int32(env1, resValue, &result));
+    return result;
+}
+
+napi_value TestGetUndefinedJSOK(napi_env env1, napi_callback_info info)
+{
+    JSVM_VM vm;
+    CreateVMInstance(&vm);
+    JSVM_VMScope vm_scope;
+    OH_JSVM_OpenVMScope(vm, &vm_scope);
+    JSVM_Env env;
+    OH_JSVM_CreateEnv(vm, 0, nullptr, &env);
+    JSVM_EnvScope envScope;
+    OH_JSVM_OpenEnvScope(env, &envScope);
+    JSVM_HandleScope handlescope;
+    OH_JSVM_OpenHandleScope(env, &handlescope);
+
+    JSVM_Value rhs = nullptr;
+    JSVM_Status status = OH_JSVM_GetUndefined(env, &rhs);
+    int32_t resValue = (status == JSVM_OK) ? 0 : 1;
+
+    OH_JSVM_CloseHandleScope(env, handlescope);
+    OH_JSVM_CloseEnvScope(env, envScope);
+    OH_JSVM_DestroyEnv(env);
+    OH_JSVM_CloseVMScope(vm, vm_scope);
+    OH_JSVM_DestroyVM(vm);
+    napi_value result;
+    NAPI_CALL(env1, napi_create_int32(env1, resValue, &result));
+    return result;
+}
+
+napi_value TestCoerceToBoolJSOK(napi_env env1, napi_callback_info info)
+{
+    JSVM_VM vm;
+    CreateVMInstance(&vm);
+    JSVM_VMScope vm_scope;
+    OH_JSVM_OpenVMScope(vm, &vm_scope);
+    JSVM_Env env;
+    OH_JSVM_CreateEnv(vm, 0, nullptr, &env);
+    JSVM_EnvScope envScope;
+    OH_JSVM_OpenEnvScope(env, &envScope);
+    JSVM_HandleScope handlescope;
+    OH_JSVM_OpenHandleScope(env, &handlescope);
+
+    JSVM_Value value1;
+    OH_JSVM_CreateInt32(env, 0, &value1);
+    JSVM_Value value2;
+    JSVM_Status status = OH_JSVM_CoerceToBool(env, value1, &value2);
+    int32_t resValue = (status == JSVM_OK) ? 0 : 1;
+
+    OH_JSVM_CloseHandleScope(env, handlescope);
+    OH_JSVM_CloseEnvScope(env, envScope);
+    OH_JSVM_DestroyEnv(env);
+    OH_JSVM_CloseVMScope(vm, vm_scope);
+    OH_JSVM_DestroyVM(vm);
+    napi_value result;
+    NAPI_CALL(env1, napi_create_int32(env1, resValue, &result));
+    return result;
+}
+
+napi_value TestCoerceToNumberJSOK(napi_env env1, napi_callback_info info)
+{
+    JSVM_VM vm;
+    CreateVMInstance(&vm);
+    JSVM_VMScope vm_scope;
+    OH_JSVM_OpenVMScope(vm, &vm_scope);
+    JSVM_Env env;
+    OH_JSVM_CreateEnv(vm, 0, nullptr, &env);
+    JSVM_EnvScope envScope;
+    OH_JSVM_OpenEnvScope(env, &envScope);
+    JSVM_HandleScope handlescope;
+    OH_JSVM_OpenHandleScope(env, &handlescope);
+
+    JSVM_Value value3;
+    OH_JSVM_CreateStringUtf8(env, "12", TWO, &value3);
+    JSVM_Value value4;
+    JSVM_Status status = OH_JSVM_CoerceToNumber(env, value3, &value4);
+    int32_t resValue = (status == JSVM_OK) ? 0 : 1;
+
+    OH_JSVM_CloseHandleScope(env, handlescope);
+    OH_JSVM_CloseEnvScope(env, envScope);
+    OH_JSVM_DestroyEnv(env);
+    OH_JSVM_CloseVMScope(vm, vm_scope);
+    OH_JSVM_DestroyVM(vm);
+    napi_value result;
+    NAPI_CALL(env1, napi_create_int32(env1, resValue, &result));
+    return result;
+}
+
+napi_value TestCoerceToObjectJSOK(napi_env env1, napi_callback_info info)
+{
+    JSVM_VM vm;
+    CreateVMInstance(&vm);
+    JSVM_VMScope vm_scope;
+    OH_JSVM_OpenVMScope(vm, &vm_scope);
+    JSVM_Env env;
+    OH_JSVM_CreateEnv(vm, 0, nullptr, &env);
+    JSVM_EnvScope envScope;
+    OH_JSVM_OpenEnvScope(env, &envScope);
+    JSVM_HandleScope handlescope;
+    OH_JSVM_OpenHandleScope(env, &handlescope);
+
+    JSVM_Value ret;
+    OH_JSVM_CreateArray(env, &ret);
+    JSVM_Value value5;
+    JSVM_Status status = OH_JSVM_CoerceToObject(env, ret, &value5);
+    int32_t resValue = (status == JSVM_OK) ? 0 : 1;
+
+    OH_JSVM_CloseHandleScope(env, handlescope);
+    OH_JSVM_CloseEnvScope(env, envScope);
+    OH_JSVM_DestroyEnv(env);
+    OH_JSVM_CloseVMScope(vm, vm_scope);
+    OH_JSVM_DestroyVM(vm);
+    napi_value result;
+    NAPI_CALL(env1, napi_create_int32(env1, resValue, &result));
+    return result;
+}
+
+napi_value TestCoerceToStringJSOK(napi_env env1, napi_callback_info info)
+{
+    JSVM_VM vm;
+    CreateVMInstance(&vm);
+    JSVM_VMScope vm_scope;
+    OH_JSVM_OpenVMScope(vm, &vm_scope);
+    JSVM_Env env;
+    OH_JSVM_CreateEnv(vm, 0, nullptr, &env);
+    JSVM_EnvScope envScope;
+    OH_JSVM_OpenEnvScope(env, &envScope);
+    JSVM_HandleScope handlescope;
+    OH_JSVM_OpenHandleScope(env, &handlescope);
+
+    JSVM_Value value1;
+    OH_JSVM_CreateInt32(env, 0, &value1);
+    JSVM_Value value6;
+    JSVM_Status status = OH_JSVM_CoerceToString(env, value1, &value6);
+    int32_t resValue = (status == JSVM_OK) ? 0 : 1;
 
     OH_JSVM_CloseHandleScope(env, handlescope);
     OH_JSVM_CloseEnvScope(env, envScope);

@@ -53,6 +53,7 @@ struct Index {
           .id('btn')
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
+          .margin({top: '2%'})
       }
       .bindMenu(this.MyMenu)
       .width('100%')

@@ -13,21 +13,27 @@
 * limitations under the License.
 */
 
-import builtinsStatementBlockTest from "./statement/BuiltinsStatementBlockTest.test";
-import BuiltinsStatementBreakTest from "./statement/BuiltinsStatementBreakTest.test";
-import BuiltinsStatementContinueTest from "./statement/BuiltinsStatementContinueTest.test";
-import builtinsStatementForOfTest from "./statement/BuiltinsStatementForOfTest.test";
-import builtinsStatementForTest from "./statement/BuiltinsStatementForTest.test";
-import builtinsStatementIfTest from "./statement/BuiltinsStatementIfTest.test";
-import builtinsStatementThrowTest from "./statement/BuiltinsStatementThrowTest.test";
-import builtinsStatementTry from "./statement/BuiltinsStatementTryTest.test";
-import builtinsStatementWhileTest from "./statement/BuiltinsStatementWhile.test";
-import builtinsStatementReturnTest from "./statement/StatementReturnTest.test";
-import builtinsStatementSwitchTest from "./statement/StatementSwitchTest.test";
-import numberTest from "./numberstring/NumberTest.test";
-import stringTest from "./numberstring/StringTest.test";
-import dateTimeTest from "./datetime/DateTimeTest.test";
+import builtinsStatementBlockTest from './statement/BuiltinsStatementBlockTest.test';
+import BuiltinsStatementBreakTest from './statement/BuiltinsStatementBreakTest.test';
+import BuiltinsStatementContinueTest from './statement/BuiltinsStatementContinueTest.test';
+import builtinsStatementForOfTest from './statement/BuiltinsStatementForOfTest.test';
+import builtinsStatementForTest from './statement/BuiltinsStatementForTest.test';
+import builtinsStatementIfTest from './statement/BuiltinsStatementIfTest.test';
+import builtinsStatementThrowTest from './statement/BuiltinsStatementThrowTest.test';
+import builtinsStatementTry from './statement/BuiltinsStatementTryTest.test';
+import builtinsStatementWhileTest from './statement/BuiltinsStatementWhile.test';
+import builtinsStatementReturnTest from './statement/StatementReturnTest.test';
+import builtinsStatementSwitchTest from './statement/StatementSwitchTest.test';
+import numberTest from './numberstring/NumberTest.test';
+import stringTest from './numberstring/StringTest.test';
+import dateTimeTest from './datetime/DateTimeTest.test';
+import ActsStatementTest from './statement/Statement.test';
+import ActsGrammarTest from './statement/Grammar.test';
+import functionTest1 from './function/FunctionTest1.test';
+import functionTest2 from './function/FunctionTest2.test';
+import functionTest3 from './function/FunctionTest3.test';
 
+import typeArrayBigInt64ArrayTest from "./typearray/TypeArrayBigInt64Array.test";
 export default function testsuite() {
   builtinsStatementBlockTest();
   builtinsStatementForOfTest();
@@ -39,8 +45,14 @@ export default function testsuite() {
   builtinsStatementForTest();
   builtinsStatementReturnTest();
   builtinsStatementSwitchTest();
-  builtinsStatementWhileTest();  
+  builtinsStatementWhileTest();
+  ActsStatementTest();
+  ActsGrammarTest();
   numberTest();
   stringTest();
   dateTimeTest();
+  functionTest1();
+  functionTest2();
+  functionTest3();
+  typeArrayBigInt64ArrayTest();
 }

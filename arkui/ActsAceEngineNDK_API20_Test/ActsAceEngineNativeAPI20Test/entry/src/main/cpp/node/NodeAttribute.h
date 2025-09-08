@@ -23,6 +23,7 @@
 namespace NodeAttribute {
 
 static XC ColumnComponent = XC(ARKUI_NODE_COLUMN);
+static XC XComponentRect = XC(ARKUI_NODE_XCOMPONENT);
 void InitNode();
 
 napi_value CreateAttributeNativeNode(napi_env env, napi_callback_info info);
@@ -91,6 +92,12 @@ napi_value CheckNodeRelativeContainerGuideLine(napi_env env, napi_callback_info 
 napi_value CheckNodeRelativeContainerBarrier(napi_env env, napi_callback_info info);
 napi_value CheckNodeGridSyncLoad(napi_env env, napi_callback_info info);
 napi_value CheckNodeEmbeddedComponentWant(napi_env env, napi_callback_info info);
+napi_value CheckNodeFocusMoveForward(napi_env env, napi_callback_info info);
+napi_value CheckNodeFocusMoveBackward(napi_env env, napi_callback_info info);
+napi_value CheckNodeFocusMoveUp(napi_env env, napi_callback_info info);
+napi_value CheckNodeFocusMoveDown(napi_env env, napi_callback_info info);
+napi_value CheckNodeFocusMoveLeft(napi_env env, napi_callback_info info);
+napi_value CheckNodeFocusMoveRight(napi_env env, napi_callback_info info);
 };
 
 #endif //NDKXCOMPONENT_ATTRIBUTE_H

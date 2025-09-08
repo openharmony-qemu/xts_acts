@@ -31,7 +31,7 @@ struct onSelectionChange1 {
         })
         .id('onSelectionChange_RichEditor')
         .width('100%')
-        .height('30%')
+        .height('10%')
       Text('' + this.text1).key("onSelectionChange1_text1")
       Text('' + this.text2).key("onSelectionChange1_text2")
       Text('' + this.text3).key("onSelectionChange1_text3")

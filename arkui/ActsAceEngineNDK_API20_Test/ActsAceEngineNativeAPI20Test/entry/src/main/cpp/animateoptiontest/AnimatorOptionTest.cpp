@@ -114,11 +114,35 @@ static void InitPush2(std::vector<napi_property_descriptor>& desc)
                       AnimatorOptionTest::AnimatorOptionRegisterOnRepeatCallback0300));
 }
 
+static void InitPush3(std::vector<napi_property_descriptor>& desc)
+{
+    desc.push_back(XL("GetArkUIContext", AnimatorOptionTest::GetArkUIContext));
+    desc.push_back(XL("AnimatorResetAnimatorOption0100", AnimatorOptionTest::AnimatorResetAnimatorOption0100));
+    desc.push_back(XL("AnimatorResetAnimatorOption0200", AnimatorOptionTest::AnimatorResetAnimatorOption0200));
+    desc.push_back(XL("AnimatorResetAnimatorOption0300", AnimatorOptionTest::AnimatorResetAnimatorOption0300));
+    desc.push_back(XL("AnimatorPlay0100", AnimatorOptionTest::AnimatorPlay0100));
+    desc.push_back(XL("AnimatorPlay0200", AnimatorOptionTest::AnimatorPlay0200));
+    desc.push_back(XL("AnimatorFinish0100", AnimatorOptionTest::AnimatorFinish0100));
+    desc.push_back(XL("AnimatorFinish0200", AnimatorOptionTest::AnimatorFinish0200));
+    desc.push_back(XL("AnimatorPause0100", AnimatorOptionTest::AnimatorPause0100));
+    desc.push_back(XL("AnimatorPause0200", AnimatorOptionTest::AnimatorPause0200));
+    desc.push_back(XL("AnimatorCancel0100", AnimatorOptionTest::AnimatorCancel0100));
+    desc.push_back(XL("AnimatorCancel0200", AnimatorOptionTest::AnimatorCancel0200));
+    desc.push_back(XL("AnimatorReverse0100", AnimatorOptionTest::AnimatorReverse0100));
+    desc.push_back(XL("AnimatorReverse0200", AnimatorOptionTest::AnimatorReverse0200));
+    desc.push_back(XL("TransitionEffectCombine0100", AnimatorOptionTest::TransitionEffectCombine0100));
+    desc.push_back(XL("TransitionEffectCombine0200", AnimatorOptionTest::TransitionEffectCombine0200));
+    desc.push_back(XL("TransitionEffectSetAnimation0100", AnimatorOptionTest::TransitionEffectSetAnimation0100));
+    desc.push_back(XL("TransitionEffectSetAnimation0200", AnimatorOptionTest::TransitionEffectSetAnimation0200));
+    desc.push_back(XL("disposeAnimator0100", AnimatorOptionTest::disposeAnimator0100));
+}
+
 static napi_value Init(napi_env env, napi_value exports)
 {
     std::vector<napi_property_descriptor> desc;
     InitPush1(desc);
     InitPush2(desc);
+    InitPush3(desc);
     napi_define_properties(env, exports, desc.size(), desc.data());
     return exports;
 }

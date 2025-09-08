@@ -131,6 +131,7 @@ struct DialogOptions0 {
               })
           })
       }
+      .margin({top: '5%'})
       Row(){
         Button('click3')
           .id('click3')

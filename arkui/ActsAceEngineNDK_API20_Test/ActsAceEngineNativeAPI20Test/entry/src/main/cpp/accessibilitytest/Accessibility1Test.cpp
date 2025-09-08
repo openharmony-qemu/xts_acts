@@ -170,7 +170,7 @@ napi_value RegisterCallback0100(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityProviderRegisterCallback(provider, &callbacks);
     OH_ArkUI_AccessibilityProvider_Dispose(provider);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL ? 0 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -188,7 +188,8 @@ napi_value RegisterCallback0200(napi_env env, napi_callback_info info)
     ArkUI_AccessibilityProvider *provider = nullptr;
     int32_t result = OH_ArkUI_AccessibilityProviderRegisterCallback(provider, &callbacks);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -211,7 +212,8 @@ napi_value RegisterCallback0300(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityProviderRegisterCallback(provider, nullptr);
     OH_ArkUI_AccessibilityProvider_Dispose(provider);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -245,7 +247,7 @@ napi_value RegisterCallbackWithInstance0100(napi_env env, napi_callback_info inf
     int32_t result = OH_ArkUI_AccessibilityProviderRegisterCallbackWithInstance(instanceId, provider, &callbacks);
     OH_ArkUI_AccessibilityProvider_Dispose(provider);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL ? 0 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -264,7 +266,8 @@ napi_value RegisterCallbackWithInstance0200(napi_env env, napi_callback_info inf
     ArkUI_AccessibilityProvider *provider = nullptr;
     int32_t result = OH_ArkUI_AccessibilityProviderRegisterCallbackWithInstance(instanceId, provider, &callbacks);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -288,7 +291,8 @@ napi_value RegisterCallbackWithInstance0300(napi_env env, napi_callback_info inf
     int32_t result = OH_ArkUI_AccessibilityProviderRegisterCallbackWithInstance(instanceId, provider, nullptr);
     OH_ArkUI_AccessibilityProvider_Dispose(provider);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 

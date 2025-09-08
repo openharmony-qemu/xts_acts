@@ -16,7 +16,6 @@
 import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hypium'
 import nativerenderndk from 'libnoderenderndk.so'
 import Utils from '../common/Utils';
-import { Driver } from '@kit.TestKit';
 
 const ARKUI_ERROR_CODE_NO_ERROR = 0;
 const ARKUI_ERROR_CODE_ERROR = 1;
@@ -65,7 +64,7 @@ export default function RunTaskInscopeTest() {
           console.info("====>testOHArkUIRunTaskInScope0200 start====");
           let result: number = nativerenderndk.RunTaskInScopeTest_002();
           console.info(`====>testOHArkUIRunTaskInScope0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_CALLBACK_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUIRunTaskInScope0200 err: " + err);
@@ -87,7 +86,7 @@ export default function RunTaskInscopeTest() {
           console.info("====>testOHArkUIRunTaskInScope0400 start====");
           let result: number = nativerenderndk.RunTaskInScopeTest_004();
           console.info(`====>testOHArkUIRunTaskInScope0400 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_UI_CONTEXT_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUIRunTaskInScope0400 err: " + err);

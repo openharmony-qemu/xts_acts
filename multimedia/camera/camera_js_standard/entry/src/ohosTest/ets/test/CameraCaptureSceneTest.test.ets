@@ -99,18 +99,28 @@ let createInput = async (index: number) => {
 }
 
 // 创建Output参数为cameraDevice的下标、相机模式
-let createOutput = (index: number, mode: number) => {
+let createOutput = (index: number, mode: number, testNum: string) => {
     let cameraOutputCap = cameraManager.getSupportedOutputCapability(cameraDevicesArray[index], mode);
-    previewOutput = cameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[0], surfaceIds);
-    let photoProfile = cameraOutputCap.photoProfiles.find((photoProfile: cameraObj.Profile) => {
-        return Math.abs((photoProfile.size.width / photoProfile.size.height) - (cameraOutputCap.previewProfiles[0].size.width / cameraOutputCap.previewProfiles[0].size.height)) < Number.EPSILON;
+    let previewProfile = cameraOutputCap.previewProfiles[0];
+    let photoProfile = cameraOutputCap.photoProfiles[0];
+    for (const mPreviewProfile of cameraOutputCap.previewProfiles) {
+      let foundProfile = cameraOutputCap.photoProfiles.find((photoProfile: cameraObj.Profile) => {
+        console.log(TAG + ` find photoProfile: w: ${photoProfile.size.width} h: ${photoProfile.size.height} `);
+        console.log(TAG + ` find previewProfile: w: ${mPreviewProfile.size.width} h: ${mPreviewProfile.size.height} `);
+        return Math.abs((photoProfile.size.width * mPreviewProfile.size.height) -
+          (mPreviewProfile.size.width * photoProfile.size.height)) < Number.EPSILON;
       });
-    if (isEmpty(photoProfile)) {
-        console.error("Can not find photoProfile match the previewProfile")
-        return
+      if (foundProfile) {
+        photoProfile = foundProfile
+        previewProfile = mPreviewProfile
+        break;
+      }
     }
+    console.log(testNum + ` photoProfile: w: ${photoProfile.size.width} h: ${photoProfile.size.height} `);
+    console.log(testNum + ` previewProfile: w: ${previewProfile.size.width} h: ${previewProfile.size.height} `);
+    previewOutput = cameraManager.createPreviewOutput(previewProfile, surfaceIds);
     photoOutput = cameraManager.createPhotoOutput(photoProfile);
-    console.log(TAG + `createPhotoOutput ok: ${JSON.stringify(photoOutput)}`)
+    console.log(TAG + ` createPhotoOutput ok: ${JSON.stringify(photoOutput)} `)
 }
 
 // 创建Session对象参数为相机模式
@@ -138,17 +148,22 @@ let stopCameraSession = async () => {;
 }
 
 // 添加相机流参数为cameraDevice的下标、相机模式
-let addCommit = async (i: number, mode: number) => {
+let addCommit = async (i: number, mode: number, testNum: string) => {
+  console.log(`${testNum} createInput`);
   await createInput(i);
-  createOutput(i, mode);
+  console.log(`${testNum} createOutput`);
+  createOutput(i, mode, testNum);
   if (cameraInput) {
     cameraSession.addInput(cameraInput);
+    console.log(`${testNum} successed add input`);
   }
   if (previewOutput) {
     cameraSession.addOutput(previewOutput);
+    console.log(`${testNum} successed add output`);
   }
   if (photoOutput) {
     cameraSession.addOutput(photoOutput);
+    console.log(`${testNum} successed add output`);
   }
 }
 
@@ -162,33 +177,35 @@ let getCameraDevices = () => {
   console.log(`supportedSceneModes:  + ${JSON.stringify(sceneModes)}`)
 }
 
-let startCameraSession = async (index: number, mode: number) => {
+let startCameraSession = async (index: number, mode: number, testNum: string) => {
     getCameraDevices()
     createPhotoSession(mode)
-    await addCommit(index, mode)
+    await addCommit(index, mode, testNum)
     await cameraSession.commitConfig();
     await cameraSession.start().then(() => {
         console.info('Promise returned to indicate the session start success.');
     });
 }
 
-let getAssetFromCapture = async () => {
-  let asset: photoAccessHelper.PhotoAsset | undefined = undefined;
-  let photoAssetAvailableCallback = (err: BusinessError, photoAsset: photoAccessHelper.PhotoAsset) => {
+let getAssetFromCapture = async (testNum: string) => {
+  return new Promise<photoAccessHelper.PhotoAsset | undefined>((resolve, reject) => {
+    let photoAssetAvailableCallback = (err: BusinessError, photoAsset: photoAccessHelper.PhotoAsset) => {
       if (err) {
-          console.error(`photoAssetAvailable error: ${JSON.stringify(err)}.`);
+        console.error(`${testNum} photoAssetAvailable error: ${JSON.stringify(err)}.`);
+        reject(err);
+        return;
       }
-      asset = photoAsset
-      console.info("get photoAsset success: " + asset)
-  }
-  
-  photoOutput.on('photoAssetAvailable', photoAssetAvailableCallback);
+      console.info(testNum + " get photoAsset success: " + photoAsset);
+      resolve(photoAsset);
+    };
 
-  // 使用当前拍照设置进行拍照, 触发回调
-  await photoOutput.capture(captureSetting);
-  await sleep(3000)
-  return asset
-}
+    photoOutput.on('photoAssetAvailable', photoAssetAvailableCallback);
+
+    // 使用当前拍照设置进行拍照, 触发回调
+    console.info(testNum + " start capture ");
+    photoOutput.capture(captureSetting);
+  });
+};
 
 export default function cameraCaptureSceneTest() {
 
@@ -201,24 +218,25 @@ export default function cameraCaptureSceneTest() {
   let testSegmentedCapture = async (context: common.UIAbilityContext, 
                                     asset: photoAccessHelper.PhotoAsset | undefined, 
                                     requestOptions:photoAccessHelper.RequestOptions | undefined, 
-                                    handler: MediaDataHandler | undefined) => {
+                                    handler: MediaDataHandler | undefined, testNum:string) => {
         // --------------------------------set up---------------------------------------
         let isSuccess = false
-        await startCameraSession(0, cameraObj.SceneMode.NORMAL_PHOTO)
-
+        await startCameraSession(0, cameraObj.SceneMode.NORMAL_PHOTO, testNum)
+        await sleep(2000);
+        console.info(testNum + ' start get asset ');
         // --------------------------------process---------------------------------------
-        asset = await getAssetFromCapture()
+        asset = await getAssetFromCapture(testNum)
         // save asset
         try {
-            console.info('context: ' + JSON.stringify(context));
-            console.info('asset: ' + asset);
-            console.info('requestOptions: ' + JSON.stringify(requestOptions));
-            console.info('handler: ' + handler);
+            console.info(testNum + ' context: ' + JSON.stringify(context));
+            console.info(testNum + ' asset: ' + asset);
+            console.info(testNum + ' requestOptions: ' + JSON.stringify(requestOptions));
+            console.info(testNum + ' handler: ' + handler);
             await photoAccessHelper.MediaAssetManager.requestImageData(context, asset, requestOptions, handler);
-            console.info('requestImageData successfully');
+            console.info(testNum + ' requestImageData successfully');
             isSuccess = true
         } catch (err) {
-            console.info('mediaLibRequestBuffer failed to save photoAsset: ' + err.code)
+            console.info(testNum + ' mediaLibRequestBuffer failed to save photoAsset: ' + err.code)
         }
 
         // --------------------------------tear down---------------------------------------
@@ -231,7 +249,7 @@ export default function cameraCaptureSceneTest() {
     let dr = Driver.create();
     beforeAll(async () => {
       await sleep(2000);
-      console.info('beforeAll case');
+      console.info(TAG + ' beforeAll case ');
       await ability();
       context = AppStorage.get('thisContext') as common.UIAbilityContext;
       await sleep(500);
@@ -245,15 +263,15 @@ export default function cameraCaptureSceneTest() {
 
     beforeEach(async () => {
       await sleep(1000);
-      console.info('beforeEach case');
+      console.info(TAG + ' beforeEach case ');
     })
 
     afterEach(async () => {
-      console.info('afterEach case');
+      console.info(TAG + ' afterEach case ');
     })
 
     afterAll(() => {
-      console.info('afterAll case');
+      console.info(TAG + ' afterAll case ');
     })
 
     /**
@@ -265,25 +283,28 @@ export default function cameraCaptureSceneTest() {
      * @tc.level     : Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0200', Level.LEVEL2, async (done: Function) => {
+        let testNum: string = 'SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0200';
         console.info(TAG + " --------------Enter SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0200--------------");
         // 启动会话
-        await startCameraSession(0, cameraObj.SceneMode.NORMAL_PHOTO)
+        await startCameraSession(0, cameraObj.SceneMode.NORMAL_PHOTO, testNum)
+        await sleep(2000)
+        console.info(testNum + ' start get asset ');
         // 获取asset
-        let asset = await getAssetFromCapture()
-        await sleep(3000)
+        let asset = await getAssetFromCapture(testNum)
+        await sleep(2000)
         // 保存asset
         let requestOptions: photoAccessHelper.RequestOptions = {
             deliveryMode: photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
         }
         const handler = new MediaDataHandler();
         try {
-            console.info('begin to save photoAsset: ' + asset);
-            console.info('testContext: ' + JSON.stringify(testContext));
+            console.info(testNum + ' begin to save photoAsset: ' + asset);
+            console.info(testNum + ' testContext: ' + JSON.stringify(testContext));
             await photoAccessHelper.MediaAssetManager.requestImageData(testContext, asset, requestOptions, handler);
-            console.info('requestImageData successfully');
+            console.info(testNum + ' requestImageData successfully ');
             expect().assertFail()
         } catch (err) {
-            console.info('mediaLibRequestBuffer to save photoAsset failed, error: ' + err.code)
+            console.info(testNum + ' mediaLibRequestBuffer to save photoAsset failed, error: ' + err.code)
             expect(err.code == 14000011).assertTrue()
         }
         // 释放会话
@@ -301,21 +322,22 @@ export default function cameraCaptureSceneTest() {
      * @tc.level     : Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0300', Level.LEVEL2, async (done: Function) => {
+        let testNum: string = 'SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0300';
         console.info(TAG + " --------------Enter SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0300--------------");
         // 启动会话
-        await startCameraSession(0, cameraObj.SceneMode.NORMAL_PHOTO)
+        await startCameraSession(0, cameraObj.SceneMode.NORMAL_PHOTO, testNum)
         // 保存
         let requestOptions: photoAccessHelper.RequestOptions = {
             deliveryMode: photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
         }
         const handler = new MediaDataHandler();
         try {
-            console.info('context: ' + JSON.stringify(context));
+            console.info(testNum + ' context: ' + JSON.stringify(context));
             await photoAccessHelper.MediaAssetManager.requestImageData(context, null, requestOptions, handler);
-            console.info('requestImageData successfully');
+            console.info(testNum + ' requestImageData successfully ');
             expect().assertFail()
         } catch (err) {
-            console.info('mediaLibRequestBuffer to save photoAsset failed, error: ' + err.code)
+            console.info(testNum + ' mediaLibRequestBuffer to save photoAsset failed, error: ' + err.code)
             expect(err.code == 401).assertTrue()
         }
         // 释放会话
@@ -333,13 +355,14 @@ export default function cameraCaptureSceneTest() {
      * @tc.level     : Level 1
      */
     it('SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0100', Level.LEVEL1, async (done: Function) => {
+        let testNum: string = 'SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0100'
         console.info(TAG + " --------------Enter SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0100--------------");
         let asset: photoAccessHelper.PhotoAsset | undefined = undefined;
         let requestOptions: photoAccessHelper.RequestOptions = {
             deliveryMode: photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
         }
         const handler = new MediaDataHandler();
-        let result = await testSegmentedCapture(context, asset, requestOptions, handler)
+        let result = await testSegmentedCapture(context, asset, requestOptions, handler, testNum)
         expect(result).assertTrue()
         console.info(TAG + " --------------Exit SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0100--------------");
         done()
@@ -354,13 +377,14 @@ export default function cameraCaptureSceneTest() {
      * @tc.level     : Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0400', Level.LEVEL2, async (done: Function) => {
+        let testNum: string = 'SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0400'
         console.info(TAG + " --------------Enter SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0400--------------");
         let asset: photoAccessHelper.PhotoAsset | undefined = undefined;
         let requestOptions: photoAccessHelper.RequestOptions = {
             deliveryMode: photoAccessHelper.DeliveryMode.FAST_MODE,
         }
         const handler = new MediaDataHandler();
-        let result = await testSegmentedCapture(context, asset, requestOptions, handler)
+        let result = await testSegmentedCapture(context, asset, requestOptions, handler, testNum)
         expect(result).assertTrue()
         console.info(TAG + " --------------Exit SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0400--------------");
         done()
@@ -375,13 +399,14 @@ export default function cameraCaptureSceneTest() {
      * @tc.level     : Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0500', Level.LEVEL2, async (done: Function) => {
+        let testNum: string = 'SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0500'
         console.info(TAG + " --------------Enter SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0500--------------");
         let asset: photoAccessHelper.PhotoAsset | undefined = undefined;
         let requestOptions: photoAccessHelper.RequestOptions = {
             deliveryMode: photoAccessHelper.DeliveryMode.BALANCE_MODE,
         }
         const handler = new MediaDataHandler();
-        let result = await testSegmentedCapture(context, asset, requestOptions, handler)
+        let result = await testSegmentedCapture(context, asset, requestOptions, handler, testNum)
         expect(result).assertTrue()
         console.info(TAG + " --------------Exit SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0500--------------");
         done()
@@ -396,13 +421,14 @@ export default function cameraCaptureSceneTest() {
      * @tc.level     : Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0600', Level.LEVEL2, async (done: Function) => {
+        let testNum: string = 'SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0600'
         console.info(TAG + " --------------Enter SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0600--------------");
         let asset: photoAccessHelper.PhotoAsset | undefined = undefined;
         let requestOptions: photoAccessHelper.RequestOptions = {
             deliveryMode: -1,
         }
         const handler = new MediaDataHandler();
-        let result = await testSegmentedCapture(context, asset, requestOptions, handler)
+        let result = await testSegmentedCapture(context, asset, requestOptions, handler, testNum)
         expect(result).assertFalse()
         console.info(TAG + " --------------Exit SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0600--------------");
         done()
@@ -417,10 +443,11 @@ export default function cameraCaptureSceneTest() {
      * @tc.level     : Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0700', Level.LEVEL2, async (done: Function) => {
+        let testNum: string = 'SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0700'
         console.info(TAG + " --------------Enter SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0700--------------");
         let asset: photoAccessHelper.PhotoAsset | undefined = undefined;
         const handler = new MediaDataHandler();
-        let result = await testSegmentedCapture(context, asset, undefined, handler)
+        let result = await testSegmentedCapture(context, asset, undefined, handler, testNum)
         expect(result).assertFalse()
         console.info(TAG + " --------------Exit SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0700--------------");
         done()
@@ -435,12 +462,13 @@ export default function cameraCaptureSceneTest() {
      * @tc.level     : Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0800', Level.LEVEL2, async (done: Function) => {
+        let testNum: string = 'SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0800'
         console.info(TAG + " --------------Enter SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0800--------------");
         let asset: photoAccessHelper.PhotoAsset | undefined = undefined;
         let requestOptions: photoAccessHelper.RequestOptions = {
             deliveryMode: photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
         }
-        let result = await testSegmentedCapture(context, asset, requestOptions, undefined)
+        let result = await testSegmentedCapture(context, asset, requestOptions, undefined, testNum)
         expect(result).assertFalse()
         console.info(TAG + " --------------Exit SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0800--------------");
         done()
@@ -455,12 +483,14 @@ export default function cameraCaptureSceneTest() {
      * @tc.level     : Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0900', Level.LEVEL2, async (done: Function) => {
+        let testNum: string = 'SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0900'
         console.info(TAG + " --------------Enter SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0900--------------");
         // 启动会话
-        await startCameraSession(0, cameraObj.SceneMode.NORMAL_PHOTO)
+        await startCameraSession(0, cameraObj.SceneMode.NORMAL_PHOTO, testNum)
+        await sleep(2000)
         // 获取asset
-        let asset = await getAssetFromCapture()
-        await sleep(3000)
+        let asset = await getAssetFromCapture(testNum)
+        await sleep(2000)
         // 保存asset
         let requestOptions: photoAccessHelper.RequestOptions = {
             deliveryMode: photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
@@ -468,13 +498,13 @@ export default function cameraCaptureSceneTest() {
         const handler = new MediaDataHandler();
 
         await photoAccessHelper.MediaAssetManager.requestImageData(context, asset, requestOptions, handler).then((id: string) => {
-            console.info("get id success: " + id);
+            console.info(testNum + " get id success: " + id);
             let requestId = id;
             try {
                 photoAccessHelper.MediaAssetManager.cancelRequest(context, requestId);
-                console.info("request cancelled successfully");
+                console.info(testNum + " request cancelled successfully ");
               } catch (err) {
-                console.error(`cancelRequest failed with error: ${err.code}, ${err.message}`);
+                console.error(testNum + ` cancelRequest failed with error: ${err.code}, ${err.message} `);
                 expect().assertFail()
             }
         })

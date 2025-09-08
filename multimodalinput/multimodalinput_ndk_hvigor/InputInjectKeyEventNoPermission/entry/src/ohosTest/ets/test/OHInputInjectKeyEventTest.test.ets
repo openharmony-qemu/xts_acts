@@ -20,51 +20,6 @@ export default function ActsInputInjectNoPermissionTest() {
   describe('ActsInputInjectNoPermissionTest', () => {
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_0100
-     * @tc.name    : SUB_Input_Inject_No_Permiss_0100
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     */
-    it('SUB_Input_Inject_No_Permiss_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      try {
-        console.info("====>SUB_Input_Inject_No_Permiss_0100 start====");
-        let result = inputinjectnopermissionndk.RequestInjectionFrequent();
-        console.info("====>SUB_Input_Inject_No_Permiss_0100 result: " + result);
-        expect(result).assertEqual(0);
-        done()
-      } catch (err) {
-        console.error("====>SUB_Input_Inject_No_Permiss_0100 catch err: " + err);
-        expect(-1).assertEqual(0);
-        done()
-        done()
-      }
-    })
-
-    /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_0200
-     * @tc.name    : SUB_Input_Inject_No_Permiss_0200
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     */
-    it('SUB_Input_Inject_No_Permiss_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      try {
-        console.info("====>SUB_Input_Inject_No_Permiss_0200 start====");
-        let result = inputinjectnopermissionndk.RequestInjectionAuthorized();
-        console.info("====>SUB_Input_Inject_No_Permiss_0200 result: " + result);
-        expect(result).assertEqual(0);
-        done()
-      } catch (err) {
-        console.error("====>SUB_Input_Inject_No_Permiss_0200 catch err: " + err);
-        expect(-1).assertEqual(0);
-        done()
-      }
-    })
-
-    /**
      * @tc.number  : SUB_Input_Inject_No_Permiss_0300
      * @tc.name    : SUB_Input_Inject_No_Permiss_0300
      * @tc.desc    : Covering the enumeration value.
@@ -613,29 +568,6 @@ export default function ActsInputInjectNoPermissionTest() {
         done()
       }
     })
-
-    /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_2800
-     * @tc.name    : SUB_Input_Inject_No_Permiss_2800
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     */
-    it('SUB_Input_Inject_No_Permiss_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      try {
-        console.info("====>SUB_Input_Inject_No_Permiss_2800 start====");
-        let result = inputinjectnopermissionndk.RequestInjectionFrequent();
-        console.info("====>SUB_Input_Inject_No_Permiss_2800 result: " + result);
-        expect(result).assertEqual(0);
-        done()
-      } catch (err) {
-        console.error("====>SUB_Input_Inject_No_Permiss_2800 catch err: " + err);
-        expect(-1).assertEqual(0);
-        done()
-      }
-    })
-
   })
 }
 

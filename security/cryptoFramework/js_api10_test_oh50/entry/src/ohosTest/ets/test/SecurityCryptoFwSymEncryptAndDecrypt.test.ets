@@ -1380,7 +1380,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let symKey: cryptoFramework.SymKey = await syncSymEncAndDecUtils.createSymKeyPromise(algName);
         let cipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         cipher1.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramSpec);
-        cipher1.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
+        cipher1.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
         await cipher1.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramSpec);
         let cipherData: cryptoFramework.DataBlob = await cipher1.update(data);
         try {

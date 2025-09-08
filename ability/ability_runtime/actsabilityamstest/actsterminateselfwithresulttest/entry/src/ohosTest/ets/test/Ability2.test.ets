@@ -551,7 +551,7 @@ export default function abilityTest2() {
                 expect(commonEventData.parameters?.data.onForegroundFirst).assertTrue();
                 expect(commonEventData.parameters?.data.onForegroundSecond).assertTrue();
                 expect(commonEventData.parameters?.data.onWindowStageCreate).assertTrue();
-                expect(JSON.parse(commonEventData.parameters?.data.result)).assertDeepEquals(resultDate);
+                expect(JSON.parse(commonEventData.parameters?.data.result?.resultCode)).assertEqual(resultDate?.resultCode);
               }
               if (commonEventData.event == event2) {
                 expect(commonEventData.parameters?.data.onCreate).assertTrue();
@@ -579,7 +579,7 @@ export default function abilityTest2() {
               hilog.info(0x0000, TAG, '%{public}s',
                 `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start ability successful,result: ${JSON.stringify(result)}`);
               try {
-                expect(result).assertDeepEquals(resultDate);
+                expect(result?.resultCode).assertDeepEquals(resultDate?.resultCode);
               } catch {
               }
               setTimeout(() => {

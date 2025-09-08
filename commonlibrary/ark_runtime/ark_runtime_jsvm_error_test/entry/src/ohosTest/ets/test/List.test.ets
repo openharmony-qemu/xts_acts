@@ -13,10 +13,14 @@
  * limitations under the License.
  */
 import JsvmErrorCodeTest from './JsvmErrorCodeTest.test';
+import JsvmErrorCode1Test from './JsvmErrorCode1Test.test';
+import JsvmEnumTest from './JsvmEnumTest.test';
 
 
 export default function testsuite() {
   if (canIUse("SystemCapability.ArkCompiler.JSVM")) {
     JsvmErrorCodeTest();
+    JsvmErrorCode1Test();
+    JsvmEnumTest();
   }
 }

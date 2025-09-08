@@ -23,25 +23,24 @@ struct NavigationTest {
   PAGE_TAG: string = 'NavigationTest';
   private nodeContent: NodeContent = new NodeContent();
   @Provide pathStack: NavPathStack = new NavPathStack()
-  aboutToAppear():void{
-    // 通过C-API创建节点，并添加到管理器nodeContent上
-    if (render) {
-      render.CreateNodeContent(this.nodeContent, 'TestAPP');
-    }
-  }
+
   @Builder
   pageMap(pageName: string) {
     if (pageName === 'NavDestinationTest') {
       NavDestinationTestBuilder()
     }
   }
-
+  aboutToAppear(): void {
+    this.pathStack.pushPath({ name: 'NavDestinationTest' });
+  }
   build() {
     Row() {
       Navigation(this.pathStack) {
         ContentSlot(this.nodeContent);
+        Button('NavigationTest页面')
       }.title('Main')
       .navDestination(this.pageMap)
+      .id('11111')
       .width('100%')
     }
     .height('100%')

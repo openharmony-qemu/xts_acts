@@ -86,6 +86,12 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         console.info("[camera] [videoProfiles.random_int=]" + random_int);
         videoFrameWidth = cameraVideoProfileType[random_int].size.width;
         videoFrameHeight = cameraVideoProfileType[random_int].size.height;
+        while (!avRecorderNdkTestBase.checkAndSetVideoFrameSize(videoFrameWidth, videoFrameHeight)) {
+          random_int = Math.floor(Math.random() * cameraVideoProfileType.length)
+          console.info("[camera] [videoProfiles.random_int=]" + random_int);
+          videoFrameWidth = cameraVideoProfileType[random_int].size.width;
+          videoFrameHeight = cameraVideoProfileType[random_int].size.height;
+        }
         console.info("[camera] [videoFrameWidth[0]=]" + JSON.stringify(videoFrameWidth));
         console.info("[camera] [videoFrameHeight[0]=]" + JSON.stringify(videoFrameHeight));
 

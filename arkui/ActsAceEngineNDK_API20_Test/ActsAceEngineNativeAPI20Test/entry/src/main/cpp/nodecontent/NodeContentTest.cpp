@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 #include "NodeContentTest.h"
-#include "manager/PluginManagerTest.h"
 static ArkUI_NodeContentHandle g_nodeContentHandle_ = nullptr;
 static ArkUI_NativeNodeAPI_1 *g_NodeAPI = nullptr;
 namespace NodeContentTest {
@@ -55,7 +54,7 @@ napi_value RegisterCallbackTest_001(napi_env env, napi_callback_info info)
 {
     int result = OH_ArkUI_NodeContent_RegisterCallback(g_nodeContentHandle_, ContentEventCallback);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -64,7 +63,7 @@ napi_value RegisterCallbackTest_002(napi_env env, napi_callback_info info)
     ArkUI_NodeContentHandle content = OH_ArkUI_NodeContentEvent_GetNodeContentHandle(nullptr);
     int result = OH_ArkUI_NodeContent_RegisterCallback(content, ArkUI_NodeContentCallback());
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -72,7 +71,7 @@ napi_value SetUserDataTest_001(napi_env env, napi_callback_info info)
 {
     int result = OH_ArkUI_NodeContent_SetUserData(g_nodeContentHandle_, new std::string("test"));
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -81,7 +80,7 @@ napi_value SetUserDataTest_002(napi_env env, napi_callback_info info)
     ArkUI_NodeContentHandle content = OH_ArkUI_NodeContentEvent_GetNodeContentHandle(nullptr);
     int result = OH_ArkUI_NodeContent_SetUserData(content, new std::string("test"));
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -93,7 +92,7 @@ napi_value AddNodeTest_001(napi_env env, napi_callback_info info)
     auto g_handle = g_NodeAPI->createNode(ARKUI_NODE_CUSTOM);
     int result = OH_ArkUI_NodeContent_AddNode(g_nodeContentHandle_, g_handle);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -101,7 +100,7 @@ napi_value AddNodeTest_002(napi_env env, napi_callback_info info)
 {
     int result = OH_ArkUI_NodeContent_AddNode(g_nodeContentHandle_, nullptr);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -113,14 +112,14 @@ napi_value RemoveNodeTest_001(napi_env env, napi_callback_info info)
     auto g_handle = g_NodeAPI->createNode(ARKUI_NODE_CUSTOM);
     int result = OH_ArkUI_NodeContent_RemoveNode(g_nodeContentHandle_, g_handle);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 napi_value RemoveNodeTest_002(napi_env env, napi_callback_info info)
 {
     int result = OH_ArkUI_NodeContent_RemoveNode(g_nodeContentHandle_, nullptr);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 napi_value InsertNodeTest_001(napi_env env, napi_callback_info info)
@@ -131,14 +130,14 @@ napi_value InsertNodeTest_001(napi_env env, napi_callback_info info)
     auto g_handle = g_NodeAPI->createNode(ARKUI_NODE_CUSTOM);
     int result = OH_ArkUI_NodeContent_InsertNode(g_nodeContentHandle_, g_handle, 1);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 napi_value InsertNodeTest_002(napi_env env, napi_callback_info info)
 {
     int result = OH_ArkUI_NodeContent_InsertNode(g_nodeContentHandle_, nullptr, 1);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 }
