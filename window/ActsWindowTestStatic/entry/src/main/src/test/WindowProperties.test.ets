@@ -536,24 +536,25 @@ export default function WindowPropertiesTest() {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await (subWin! as window.Window).destroyWindow();
+                    try {
+                        subWin!.on("windowVisibilityChange", (res: boolean) => {
+                        });
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on windowVisibilityChange.');
+                        expect().assertFail();
+                        done()
+                    } catch (e:BusinessError) {
+                        hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call on windowVisibilityChange. Cause:' + JSON.stringify(e));
+                        expect(e!.code).assertEqual(1300002);
+                        done()
+                    }
                 })
                 .catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect().assertFail();
                     done()
                 });
-            await (subWin! as window.Window).destroyWindow();
-            try {
-                subWin!.on("windowVisibilityChange", (res: boolean) => {
-                });
-                hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on windowVisibilityChange.');
-                expect().assertFail();
-                done()
-            } catch (e:BusinessError) {
-                hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call on windowVisibilityChange. Cause:' + JSON.stringify(e));
-                expect(e!.code).assertEqual(1300002);
-                done()
-            }
+            
         })
         /**
          * @tc.number     : testOffWindowVisibilityChangeErrCode1300002_static_0100
@@ -607,11 +608,23 @@ export default function WindowPropertiesTest() {
                 let msgStr: string = 'jsUnittest ' + caseName + ' ';
                 hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
                 let win: window.Window
-                await windowStage.createSubWindow('testWindowOffWindowVisibilityChange_UnregisteredOff_static_0100')
+                windowStage.createSubWindow('testWindowOffWindowVisibilityChange_UnregisteredOff_static_0100')
                     .then((data:window.Window)=>{
                         win = data;
                         expect(!!win).assertTrue();
                         hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                        try {
+                            (win as window.Window).off('windowVisibilityChange');
+                            await (win as window.Window).destroyWindow();
+                            expect(true).assertTrue();
+                            done();
+                        } catch (exception:BusinessError) {
+                            await (win as window.Window).destroyWindow();
+                            hilog.error(0x0000, '[ANI]',msgStr + 'Failed to disable the listener for system avoid area changes. Cause: ' +
+                            JSON.stringify(exception));
+                            expect().assertFail();
+                            done();
+                        }
                     })
                     .catch((err: BusinessError):PromiseLike<void>|undefined => {
                         hilog.info(0x0000, '[ANI]',
@@ -619,18 +632,7 @@ export default function WindowPropertiesTest() {
                         expect().assertFail();
                         done();
                     });
-                try {
-                    (win as window.Window).off('windowVisibilityChange');
-                    await (win as window.Window).destroyWindow();
-                    expect(true).assertTrue();
-                    done();
-                } catch (exception:BusinessError) {
-                    await (win as window.Window).destroyWindow();
-                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to disable the listener for system avoid area changes. Cause: ' +
-                    JSON.stringify(exception));
-                    expect().assertFail();
-                    done();
-                }
+                
             });
         /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0200
@@ -645,11 +647,51 @@ export default function WindowPropertiesTest() {
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
             let win: window.Window
-            await windowStage.createSubWindow('testWindowOffWindowVisibilityChange_RepeatOff_static_0200')
+            windowStage.createSubWindow('testWindowOffWindowVisibilityChange_RepeatOff_static_0200')
                 .then((data:window.Window)=>{
                     win = data;
                     expect(!!win).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    try {
+                        (win as window.Window).on('windowVisibilityChange', (flag:boolean) => {
+                            hilog.info(0x0000, '[ANI]', msgStr + 'Window visibility changed, isVisible=' + flag);
+                        });
+                    } catch (exception:BusinessError) {
+                        if (exception!.code != 801) {
+                            hilog.error(0x0000, '[ANI]','Failed to register callback. Cause: ' + JSON.stringify(exception));
+                            expect().assertFail();
+                            done();
+                        } else {
+                            hilog.info(0x0000, '[ANI]','Failed to register callback. Cause: ' + JSON.stringify(exception));
+                            hilog.info(0x0000, '[ANI]',msgStr + 'The device not support SystemCapability.Window.SessionManager');
+                            expect(exception.code).assertEqual(801);
+                            // done();
+                        }
+                    }
+                    try {
+                        (win as window.Window).off('windowVisibilityChange');
+                    } catch (exception:BusinessError) {
+                        if (exception!.code != 801) {
+                            hilog.error(0x0000, '[ANI]','Failed to unregister callback. Cause: ' + JSON.stringify(exception));
+                            expect().assertFail();
+                            done();
+                        } else {
+                            hilog.info(0x0000, '[ANI]','Failed to unregister callback. Cause: ' + JSON.stringify(exception));
+                            hilog.info(0x0000, '[ANI]',msgStr + 'The device not support SystemCapability.Window.SessionManager');
+                            expect(exception!.code).assertEqual(801);
+                            // done();
+                        }
+                    }
+                    try {
+                        (win as window.Window).off('windowVisibilityChange');
+                        await (win as window.Window).destroyWindow();
+                        done();
+                    } catch (exception:BusinessError) {
+                        await (win as window.Window).destroyWindow();
+                        console.error(msgStr + 'Failed to unregister callback Cause: ' + JSON.stringify(exception));
+                        expect().assertFail();
+                        done();
+                    }
                 })
                 .catch((err:BusinessError):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',
@@ -657,46 +699,7 @@ export default function WindowPropertiesTest() {
                     expect().assertFail();
                     done();
                 });
-            try {
-                (win as window.Window).on('windowVisibilityChange', (flag:boolean) => {
-                    hilog.info(0x0000, '[ANI]', msgStr + 'Window visibility changed, isVisible=' + flag);
-                });
-            } catch (exception:BusinessError) {
-                if (exception!.code != 801) {
-                    hilog.error(0x0000, '[ANI]','Failed to register callback. Cause: ' + JSON.stringify(exception));
-                    expect().assertFail();
-                    done();
-                } else {
-                    hilog.info(0x0000, '[ANI]','Failed to register callback. Cause: ' + JSON.stringify(exception));
-                    hilog.info(0x0000, '[ANI]',msgStr + 'The device not support SystemCapability.Window.SessionManager');
-                    expect(exception.code).assertEqual(801);
-                    // done();
-                }
-            }
-            try {
-                (win as window.Window).off('windowVisibilityChange');
-            } catch (exception:BusinessError) {
-                if (exception!.code != 801) {
-                    hilog.error(0x0000, '[ANI]','Failed to unregister callback. Cause: ' + JSON.stringify(exception));
-                    expect().assertFail();
-                    done();
-                } else {
-                    hilog.info(0x0000, '[ANI]','Failed to unregister callback. Cause: ' + JSON.stringify(exception));
-                    hilog.info(0x0000, '[ANI]',msgStr + 'The device not support SystemCapability.Window.SessionManager');
-                    expect(exception!.code).assertEqual(801);
-                    // done();
-                }
-            }
-            try {
-                (win as window.Window).off('windowVisibilityChange');
-                await (win as window.Window).destroyWindow();
-                done();
-            } catch (exception:BusinessError) {
-                await (win as window.Window).destroyWindow();
-                console.error(msgStr + 'Failed to unregister callback Cause: ' + JSON.stringify(exception));
-                expect().assertFail();
-                done();
-            }
+            
         });
         /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0300
@@ -777,29 +780,30 @@ export default function WindowPropertiesTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
             let subWin: window.Window
-            await windowStage.createSubWindow('testOnSystemDensityChangeErrCode1300002_static_0100')
+            windowStage.createSubWindow('testOnSystemDensityChangeErrCode1300002_static_0100')
                 .then((data:window.Window) => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await (subWin! as window.Window).destroyWindow();
+                    try {
+                        subWin!.on("systemDensityChange", (res: number) => {
+                        });
+                        hilog.error(0x0000, '[ANI]',msgStr +'Succeeded in calling on systemDensityChange.');
+                        expect().assertFail();
+                        done()
+                    } catch (e:BusinessError) {
+                        hilog.info(0x0000, '[ANI]',msgStr +'Failed to call on systemDensityChange. Cause:' + JSON.stringify(e));
+                        expect(e!.code).assertEqual(1300002);
+                        done()
+                    }
                 })
                 .catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect().assertFail();
                     done()
                 });
-            await (subWin! as window.Window).destroyWindow();
-            try {
-                subWin!.on("systemDensityChange", (res: number) => {
-                });
-                hilog.error(0x0000, '[ANI]',msgStr +'Succeeded in calling on systemDensityChange.');
-                expect().assertFail();
-                done()
-            } catch (e:BusinessError) {
-                hilog.info(0x0000, '[ANI]',msgStr +'Failed to call on systemDensityChange. Cause:' + JSON.stringify(e));
-                expect(e!.code).assertEqual(1300002);
-                done()
-            }
+            
         })
         /**
          * @tc.number     : testOffSystemDensityChangeErrCode1300002_0100
@@ -814,29 +818,30 @@ export default function WindowPropertiesTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
             let subWin: window.Window
-            await windowStage.createSubWindow('testOffSystemDensityChangeErrCode1300002_static_0100')
+            windowStage.createSubWindow('testOffSystemDensityChangeErrCode1300002_static_0100')
                 .then((data:window.Window) => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await (subWin! as window.Window).destroyWindow();
+                    try {
+                        subWin!.off("systemDensityChange", (res: number) => {
+                        });
+                        hilog.error(0x0000, '[ANI]',msgStr +'Succeeded in calling off systemDensityChange.');
+                        expect().assertFail();
+                        done()
+                    } catch (e:BusinessError) {
+                        hilog.info(0x0000, '[ANI]',msgStr +'Failed to call off systemDensityChange. Cause:' + JSON.stringify(e));
+                        expect(e!.code).assertEqual(1300002);
+                        done()
+                    }
                 })
                 .catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect().assertFail();
                     done()
                 });
-            await (subWin! as window.Window).destroyWindow();
-            try {
-                subWin!.off("systemDensityChange", (res: number) => {
-                });
-                hilog.error(0x0000, '[ANI]',msgStr +'Succeeded in calling off systemDensityChange.');
-                expect().assertFail();
-                done()
-            } catch (e:BusinessError) {
-                hilog.info(0x0000, '[ANI]',msgStr +'Failed to call off systemDensityChange. Cause:' + JSON.stringify(e));
-                expect(e!.code).assertEqual(1300002);
-                done()
-            }
+            
         })
 
         /**
