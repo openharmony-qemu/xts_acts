@@ -16,6 +16,7 @@
 import router from '@ohos.router';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import Utils from '../../MainAbility/common/Utils'
+import { display } from '@kit.ArkUI'
 
 export default function textPickerDefaultPickerItemHeightJsunit() {
   describe('textPickerDefaultPickerItemHeightTest', () => {
@@ -66,19 +67,36 @@ export default function textPickerDefaultPickerItemHeightJsunit() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0002
      * @tc.name         testtextPickerDefaultPickerItemHeight0002
-     * @tc.desic         acetextPickerDefaultPickerItemHeightEtsTest0002
+     * @tc.desic        acetextPickerDefaultPickerItemHeightEtsTest0002
      */
     it('testtextPickerDefaultPickerItemHeight0002', Level.LEVEL1, async () => {
       console.info('textPickerDefaultPickerItemHeight testtextPickerDefaultPickerItemHeight0002 START');
       await Utils.sleep(2000);
+      let rotation: number = display.getDefaultDisplaySync().orientation
+      console.info("[testtextPickerDefaultPickerItemHeight0002] rotation:" + rotation);
+
       let strJson = getInspectorByKey('defaultPickerItemHeightText');
       console.info("[testtextPickerDefaultPickerItemHeight0002] component height strJson:" + strJson);
-      let obj: Record<string, Object> = JSON.parse(strJson);
-      expect(obj.$type).assertEqual('TextPicker');
-      let numberValue = vp2px(parseFloat(JSON.parse(strJson).$attrs.height)) - parseFloat(JSON.parse(strJson).$attrs.defaultPickerItemHeight) * 5
-      expect(Math.abs(numberValue) <= 1).assertTrue();
-      console.info("[testtextPickerDefaultPickerItemHeight0002] height value :" + JSON.parse(strJson).$attrs.height);
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("[testtextPickerDefaultPickerItemHeight0002] defaultPickerItemHeight value :" + obj.$attrs.defaultPickerItemHeight);
 
+      let strJson1 = getInspectorByKey('landscape');
+      let obj1: ESObject = JSON.parse(strJson1);
+      let textCount:number = parseInt(obj1.$attrs.content);
+      console.info("[testtextPickerDefaultPickerItemHeight0002] text value :" + textCount)
+      console.info("[testtextPickerDefaultPickerItemHeight0002] vp2px(height) value :" + vp2px(parseFloat(JSON.parse(strJson).$attrs.height)));
+
+      expect(obj.$type).assertEqual('TextPicker');
+      console.info("[testtextPickerDefaultPickerItemHeight0002] height value :" + JSON.parse(strJson).$attrs.height);
+      if (rotation == 0) {
+        // 0 竖屏        
+        let numberValue = vp2px(parseFloat(JSON.parse(strJson).$attrs.height)) - parseFloat(JSON.parse(strJson).$attrs.defaultPickerItemHeight) * 5
+        expect(Math.abs(numberValue) <= 1).assertTrue();
+      } else {
+        // 1 横屏
+        let numberValue = vp2px(parseFloat(JSON.parse(strJson).$attrs.height)) - parseFloat(JSON.parse(strJson).$attrs.defaultPickerItemHeight) * textCount
+        expect(Math.abs(numberValue) <= 1).assertTrue();
+      }
     });
 
     /*
