@@ -15,7 +15,7 @@
 import webDefaultTextEncodingFormat from './WebDefaultTextEncodingFormat.test';
 import EmbedVisibilityChange from './EmbedVisibilityChange.test';
 import webViewControllerPart2 from './WebViewControllerPart2.test';
-import webViewRegisterNativeEmbedRule from './webViewRegisterNativeEmbedRule.test';
+import webViewRegisterNativeEmbedRule from './WebViewRegisterNativeEmbedRule.test';
 import webViewObjectEmbed from './webViewObjectEmbed.test';
 import webViewObjectEmbed2 from './webViewObjectEmbed2.test';
 import webViewObjectEmbed3 from './webViewObjectEmbed3.test';
@@ -24,6 +24,7 @@ import webViewAvoidArea from './webViewAvoidArea.test';
 import webViewObjectPositionReport from './webViewObjectPositionReport.test';
 import WebViewSupportCssDisplayChange from './WebViewSupportCssDisplayChange.test'
 import WebOnNativeEmbedMouseEvent from './WebOnNativeEmbedMouseEvent.test'
+
 
 export default function testsuite() {
   webDefaultTextEncodingFormat();

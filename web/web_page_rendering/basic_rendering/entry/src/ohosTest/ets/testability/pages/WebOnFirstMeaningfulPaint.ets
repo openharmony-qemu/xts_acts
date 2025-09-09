@@ -16,12 +16,14 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
+import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
 
 @Entry
 @Component
 struct WebOnFirstMeaningfulPaint {
   @State str: string = ""
   @State text: number[] | undefined[] =[0, 0]
+
   controller: webView.WebviewController = new webView.WebviewController();
 
   onPageShow() {
@@ -61,7 +63,6 @@ struct WebOnFirstMeaningfulPaint {
                 await Utils.sleep(5000);
                 if (this.text[0] != 0 && this.text[1] != 0) {
                   value = true;
-
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
@@ -75,17 +76,25 @@ struct WebOnFirstMeaningfulPaint {
 
             case "OnFirstMeaningfulPaint0200": {
               let value: boolean = false;
+              let nums=1;
+              let tryTime=20
               this.text = [0, 0]
               try {
                 this.controller.loadUrl('https://www.iana.org/help/example-domains');
-                await Utils.sleep(5000);
-                if (this.text[0] != 0 && this.text[1] != 0) {
-                  value = true;
+                while(nums < tryTime) {
+                  await Utils.sleep(1000);
+                  if (this.text[0] != 0 && this.text[1] != 0) {
+                    value = true;
+                    console.log('WebOnFirstMeaningfulPaint---' + value)
+                    break;
+                  }
+                  console.log('WebOnFirstMeaningfulPaintpbb---' + nums)
+                  nums++;
                 }
+
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
-
               setTimeout(() => {
                 console.log("value: " + value);
                 Utils.emitEvent(value, 702)
