@@ -44,6 +44,7 @@
 #include <string>
 #include <random>
 #include <chrono>
+#define SLEEP_CALLBACK (2000000)
 
 
 const char *TAG = "testLog";
@@ -52,6 +53,7 @@ static constexpr char PLAINTEXT_CONTENT[] = "PLAINTEXT_CONTENT";
 static void* GetDataCallback(void* context, const char* type);
 static int g_callbackValue;
 static constexpr int UPDATE_VALUE = 1;
+static int g_asyncErrCode = 0;
 
 void FinalizeFunc(void* context) {};
 void ContextFinalizeFunc(void* context) {};
@@ -81,6 +83,11 @@ void* GetDataCallback(void* context, const char* type)
         return link;
     }
     return nullptr;
+}
+
+static void AsyncCallback(int errCode)
+{
+    g_asyncErrCode = errCode;
 }
 
 static napi_value OH_PasteboardSubscriber_Create0100(napi_env env, napi_callback_info info)
@@ -554,6 +561,114 @@ static napi_value OH_Pasteboard_GetData0300(napi_env env, napi_callback_info inf
     return result;
 }
 
+static napi_value OH_Pasteboard_SyncDelayedDataAsyncTest0100(napi_env env, napi_callback_info info)
+{
+    g_asyncErrCode = -1;
+    napi_value result = nullptr;
+    OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    OH_Pasteboard_SyncDelayedDataAsync(nullptr, nullptr);
+    NAPI_ASSERT(env, g_asyncErrCode == -1, "OH_Pasteboard_SyncDelayedDataAsyncTest is fail.");
+
+    OH_Pasteboard_SyncDelayedDataAsync(pasteboard, nullptr);
+    NAPI_ASSERT(env, g_asyncErrCode == -1, "OH_Pasteboard_SyncDelayedDataAsyncTest is fail.");
+    
+    OH_Pasteboard_SyncDelayedDataAsync(pasteboard, AsyncCallback);
+    usleep(SLEEP_CALLBACK);
+    NAPI_ASSERT(env, g_asyncErrCode == ERR_INNER_ERROR, "OH_Pasteboard_SyncDelayedDataAsyncTest is fail.");
+
+    napi_create_int32(env, g_asyncErrCode == ERR_INNER_ERROR, &result);
+    OH_Pasteboard_Destroy(pasteboard);
+    return result;
+}
+
+static napi_value OH_Pasteboard_SyncDelayedDataAsyncTest0200(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    OH_UdmfData* setData = OH_UdmfData_Create();
+    OH_UdmfRecord* record = OH_UdmfRecord_Create();
+    OH_UdmfRecordProvider* provider = OH_UdmfRecordProvider_Create();
+    OH_UdmfRecordProvider_SetData(provider, nullptr, GetDataCallback, ContextFinalizeFunc);
+    const char* types[3] = { "general.plain-text", "general.hyperlink", "general.html" };
+    OH_UdmfRecord_SetProvider(record, types, sizeof(types) / sizeof(types[0]), provider);
+    OH_UdmfData_AddRecord(setData, record);
+    int ret = OH_Pasteboard_SetData(pasteboard, setData);
+    NAPI_ASSERT(env, ret == ERR_OK, "OH_Pasteboard_SyncDelayedDataAsyncTest is fail.");
+
+    int status = -1;
+    OH_UdmfData* getData = OH_Pasteboard_GetData(pasteboard, &status);
+    NAPI_ASSERT(env, status == ERR_OK, "OH_GetData is fail");
+    NAPI_ASSERT(env, getData != nullptr, "OH_GetData is fail");
+
+    unsigned int getrecordCount = 0;
+    OH_UdmfRecord **getRecords = OH_UdmfData_GetRecords(getData, &getrecordCount);
+    NAPI_ASSERT(env, getrecordCount == 1, "OH_getRecords is fail");
+
+    OH_UdsPlainText *getPlainText = OH_UdsPlainText_Create();
+    OH_UdmfRecord_GetPlainText(getRecords[0], getPlainText);
+    const char *getContent = OH_UdsPlainText_GetContent(getPlainText);
+    NAPI_ASSERT(env, strcmp(getContent, PLAINTEXT_CONTENT) == 0, "OH_UdsPlainText_GetContent is fail.");
+
+    napi_create_int32(env, ret == ERR_OK, &result);
+    OH_UdmfRecordProvider_Destroy(provider);
+    OH_UdmfRecord_Destroy(record);
+    OH_UdmfData_Destroy(setData);
+    OH_Pasteboard_Destroy(pasteboard);
+    return result;
+}
+
+static napi_value OH_Pasteboard_SyncDelayedDataAsyncTest0300(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    OH_UdmfData* setData = OH_UdmfData_Create();
+    OH_UdmfRecord* record = OH_UdmfRecord_Create();
+    OH_UdmfRecordProvider* provider = OH_UdmfRecordProvider_Create();
+    OH_UdmfRecordProvider_SetData(provider, nullptr, GetDataCallback, ContextFinalizeFunc);
+    const char* types[] = { "general.plain-text", "general.hyperlink", "general.html", "customType"};
+    OH_UdmfRecord_SetProvider(record, types, sizeof(types) / sizeof(types[0]), provider);
+    OH_UdmfData_AddRecord(setData, record);
+    int ret = OH_Pasteboard_SetData(pasteboard, setData);
+    NAPI_ASSERT(env, ret == ERR_OK, "OH_Pasteboard_SetData is fail.");
+
+    int status = -1;
+    OH_UdmfData* getData = OH_Pasteboard_GetData(pasteboard, &status);
+    NAPI_ASSERT(env, status == ERR_OK, "OH_Pasteboard_GetData is fail.");
+
+    char type[] = "customType";
+    bool exist = OH_UdmfData_HasType(getData, type);
+    NAPI_ASSERT(env, exist == true, "OH_UdmfData_HasType is fail.");
+
+    g_asyncErrCode = -1;
+    OH_Pasteboard_SyncDelayedDataAsync(pasteboard, AsyncCallback);
+    usleep(SLEEP_CALLBACK);
+    NAPI_ASSERT(env, g_asyncErrCode == ERR_OK, "OH_Pasteboard_SyncDelayedDataAsync is fail.");
+
+    int status1 = -1;
+    OH_UdmfData* getData1 = OH_Pasteboard_GetData(pasteboard, &status1);
+    NAPI_ASSERT(env, status1 == ERR_OK, "OH_Pasteboard_GetData is fail.");
+
+    char type1[] = "customType";
+    bool exist1 = OH_UdmfData_HasType(getData1, type1);
+    NAPI_ASSERT(env, exist1 == false, "OH_UdmfData_HasType is fail.");
+
+    unsigned int getrecordCount = 0;
+    OH_UdmfRecord **getRecords = OH_UdmfData_GetRecords(getData1, &getrecordCount);
+    NAPI_ASSERT(env, getrecordCount == 1, "OH_UdmfData_GetRecords is fail");
+
+    OH_UdsPlainText *getPlainText = OH_UdsPlainText_Create();
+    status1 = OH_UdmfRecord_GetPlainText(getRecords[0], getPlainText);
+    const char *getContent = OH_UdsPlainText_GetContent(getPlainText);
+    NAPI_ASSERT(env, strcmp(getContent, PLAINTEXT_CONTENT) == 0, "OH_UdsPlainText_GetContent is fail.");
+
+    napi_create_int32(env, status1 == ERR_OK, &result);
+    OH_UdmfRecordProvider_Destroy(provider);
+    OH_UdmfRecord_Destroy(record);
+    OH_UdmfData_Destroy(setData);
+    OH_Pasteboard_Destroy(pasteboard);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -609,6 +724,12 @@ static napi_value Init(napi_env env, napi_value exports)
         {"OH_Pasteboard_GetData0200", nullptr, OH_Pasteboard_GetData0200, nullptr,
          nullptr, nullptr, napi_default, nullptr},
         {"OH_Pasteboard_GetData0300", nullptr, OH_Pasteboard_GetData0300, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"OH_Pasteboard_SyncDelayedDataAsyncTest0100", nullptr, OH_Pasteboard_SyncDelayedDataAsyncTest0100, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"OH_Pasteboard_SyncDelayedDataAsyncTest0200", nullptr, OH_Pasteboard_SyncDelayedDataAsyncTest0200, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"OH_Pasteboard_SyncDelayedDataAsyncTest0300", nullptr, OH_Pasteboard_SyncDelayedDataAsyncTest0300, nullptr,
          nullptr, nullptr, napi_default, nullptr}
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
