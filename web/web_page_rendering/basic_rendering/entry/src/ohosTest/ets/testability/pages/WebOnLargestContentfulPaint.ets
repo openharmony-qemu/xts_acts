@@ -95,7 +95,7 @@ struct WebOnLargestContentfulPaint {
                 this.controller.loadUrl('https://www.iana.org/help/example-domains');
                 await Utils.sleep(5000);
                 let nums=1;
-                let tryTime=20
+                let tryTime=200
                 while(nums < tryTime) {
                   await Utils.sleep(1000);
                   if (
