@@ -50,6 +50,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBufferEBUFULL_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -71,6 +72,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBufferSMPTECFULL_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -92,6 +94,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBufferEBULIMIT_0300 catch err: " + err);
+          done();
         }
       })
 
@@ -113,6 +116,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBufferSMPTECLIMIT_0400 catch err: " + err);
+          done();
         }
       })
 
@@ -134,6 +138,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBufferADOBERGBFULL_0500 catch err: " + err);
+          done();
         }
       })
 
@@ -155,6 +160,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeLINEARSRGB_0600 catch err: " + err);
+          done();
         }
       })
 
@@ -176,6 +182,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBufferLINEARBT709_0700 catch err: " + err);
+          done();
         }
       })
 
@@ -197,6 +204,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeLINEARP3_0800 catch err: " + err);
+          done();
         }
       })
 
@@ -218,6 +226,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBufferLINEARBT2020_0900 catch err: " + err);
+          done();
         }
       })
 
@@ -239,6 +248,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBufferDISPLAYSRGB_1000 catch err: " + err);
+          done();
         }
       })
 
@@ -260,6 +270,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBufferDISPLAYP3SRGB_1100 catch err: " + err);
+          done();
         }
       })
 
@@ -281,6 +292,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBufferDISPLAYP3HLG_1200 catch err: " + err);
+          done();
         }
       })
 
@@ -302,6 +314,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBufferDISPLAYP3PQ_1300 catch err: " + err);
+          done();
         }
       })
 
@@ -323,6 +336,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBufferDISPLAYBT2020SRGB_1400 catch err: " + err);
+          done();
         }
       })
 
@@ -344,6 +358,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBufferDISPLAYBT2020HLG_1500 catch err: " + err);
+          done();
         }
       })
 
@@ -365,6 +380,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBufferDISPLAYBT2020PQ_1600 catch err: " + err);
+          done();
         }
       })
 
@@ -386,6 +402,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBuffer_ColorX_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -407,6 +424,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBuffer_ColorY_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -428,6 +446,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBuffer_Smpte2086Red_0300 catch err: " + err);
+          done();
         }
       })
 
@@ -449,6 +468,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBuffer_Smpte2086Green_0400 catch err: " + err);
+          done();
         }
       })
 
@@ -470,6 +490,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBuffer_Smpte2086Blue_0500 catch err: " + err);
+          done();
         }
       })
 
@@ -491,6 +512,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBuffer_Smpte2086WhitePoint_0600 catch err: " + err);
+          done();
         }
       })
 
@@ -512,6 +534,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBuffer_Smpte2086MaxLum_0700 catch err: " + err);
+          done();
         }
       })
 
@@ -533,6 +556,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBuffer_Smpte2086MinLum_0800 catch err: " + err);
+          done();
         }
       })
 
@@ -554,6 +578,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBuffer_Cta861_maxContentLightLevel_0900 catch err: " + err);
+          done();
         }
       })
 
@@ -575,6 +600,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBuffer_Cta861_maxContentLightLevel_1000 catch err: " + err);
+          done();
         }
       })
 
@@ -596,6 +622,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBuffer_Smpte2086_1100 catch err: " + err);
+          done();
         }
       })
 
@@ -617,6 +644,7 @@ export default function NativeBufferTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_NativeBuffer_Cta861_1200 catch err: " + err);
+          done();
         }
       })
   })

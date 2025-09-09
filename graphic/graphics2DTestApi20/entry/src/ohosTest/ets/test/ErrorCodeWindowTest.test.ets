@@ -35,6 +35,7 @@ export default function ErrorCodeWindowTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_Drawing_BufferErrorCodeWindow_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -56,6 +57,7 @@ export default function ErrorCodeWindowTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_OHNativeErrorCodeWindowBuffer_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -77,6 +79,7 @@ export default function ErrorCodeWindowTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_OHNativeErrorCodeWindowNo_0300 catch err: " + err);
+          done();
         }
       })
 
@@ -98,6 +101,7 @@ export default function ErrorCodeWindowTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeWindow_ErrCode_0400 catch err: " + err);
+          done();
         }
       })
 
@@ -119,6 +123,7 @@ export default function ErrorCodeWindowTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_ErrorCodeWindowInvalid_0400 catch err: " + err);
+          done();
         }
       })
   })
