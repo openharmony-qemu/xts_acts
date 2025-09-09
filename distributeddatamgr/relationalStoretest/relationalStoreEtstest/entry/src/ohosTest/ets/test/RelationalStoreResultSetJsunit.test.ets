@@ -78,7 +78,7 @@ describe('relationalStoreResultSetTest', function () {
         await createTest();
     })
 
-    afterEach(function () {
+    afterEach(async function () {
         console.info(TAG + 'afterEach')
         await rdbStore.executeSql(DROP_TABLE_TEST, null);
     })
