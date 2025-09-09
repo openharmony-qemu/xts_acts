@@ -76,7 +76,7 @@ struct WebOnFirstMeaningfulPaint {
             case "OnFirstMeaningfulPaint0200": {
               let value: boolean = false;
               let nums=1;
-              let tryTime=20
+              let tryTime=200
               this.text = [0, 0]
               try {
                 this.controller.loadUrl('https://www.iana.org/help/example-domains');
