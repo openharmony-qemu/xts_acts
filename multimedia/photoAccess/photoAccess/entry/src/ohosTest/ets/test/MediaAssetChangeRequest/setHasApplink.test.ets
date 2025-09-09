@@ -63,7 +63,7 @@ export default function setHasApplinkChangeRequestTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_SET_HAS_APPLINK_CHANGE_REQUEST_1000
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_SET_HAS_APPLINK_CHANGE_REQUEST_1001
      * @tc.name      : set_has_applink_change_request_001
      * @tc.desc      : set has applink
      * @tc.size      : MEDIUM
@@ -97,7 +97,7 @@ export default function setHasApplinkChangeRequestTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_SET_HAS_APPLINK_CHANGE_REQUEST_1000
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_SET_HAS_APPLINK_CHANGE_REQUEST_1002
      * @tc.name      : set_has_applink_change_request_002
      * @tc.desc      : set has applink
      * @tc.size      : MEDIUM
