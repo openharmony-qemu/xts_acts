@@ -33,14 +33,12 @@ export default function ActsAceWebViewOnPdfLoadResult() {
       }
 
       try {
-        await Utils.sleep(1000)
         router.clear();
         let pages = router.getState();
         console.info("get WebViewOnPdfLoadResult state success " + JSON.stringify(pages));
         if (!("WebViewOnPdfLoadResult" == pages.name)) {
           console.info("get WebViewOnPdfLoadResult state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(1000);
           console.info("push WebViewOnPdfLoadResult state success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -57,30 +55,8 @@ export default function ActsAceWebViewOnPdfLoadResult() {
       }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       done();
     })
-
-    afterEach(async (done: Function) => {
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent : events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.error("emit emitKey error:" + JSON.stringify(err));
-      }
-      await Utils.sleep(1000);
-      done();
-    })
-
 
     /*
       * @tc.number      : SUB_ACE_WEB_WEBVIEWONPDFLOADRESULT_API_0001
@@ -91,8 +67,8 @@ export default function ActsAceWebViewOnPdfLoadResult() {
       * @tc.level       : Level 0
       */
     it('emitWebViewOnPdfLoadResult001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitWebViewOnPdfLoadResult001", 10)
-      Utils.registerEvent("emitWebViewOnPdfLoadResult001", PdfLoadResult.LOAD_SUCCESS, 20250825, done);
+      Utils.emitEvent("emitWebViewOnPdfLoadResult001", 300650)
+      Utils.registerEvent("emitWebViewOnPdfLoadResult001", PdfLoadResult.LOAD_SUCCESS, 300660, done);
       sendEventByKey('WebViewOnPdfScrollAtBottomKey', 10, '');
     })
 
@@ -105,8 +81,8 @@ export default function ActsAceWebViewOnPdfLoadResult() {
        * @tc.level       : Level 0
        */
     it('emitWebViewOnPdfLoadResult002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitWebViewOnPdfLoadResult002", 10)
-      Utils.registerEvent("emitWebViewOnPdfLoadResult002", PdfLoadResult.PARSE_ERROR_FILE, 20250826, done);
+      Utils.emitEvent("emitWebViewOnPdfLoadResult002", 300650)
+      Utils.registerEvent("emitWebViewOnPdfLoadResult002", PdfLoadResult.PARSE_ERROR_FILE, 300670, done);
       sendEventByKey('WebViewOnPdfScrollAtBottomKey', 10, '');
     })
 
@@ -119,8 +95,8 @@ export default function ActsAceWebViewOnPdfLoadResult() {
        * @tc.level       : Level 0
        */
     it('emitWebViewOnPdfLoadResult003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitWebViewOnPdfLoadResult003", 10)
-      Utils.registerEvent("emitWebViewOnPdfLoadResult003", PdfLoadResult.PARSE_ERROR_FORMAT, 20250827, done);
+      Utils.emitEvent("emitWebViewOnPdfLoadResult003", 300650)
+      Utils.registerEvent("emitWebViewOnPdfLoadResult003", PdfLoadResult.PARSE_ERROR_FORMAT, 300680, done);
       sendEventByKey('WebViewOnPdfScrollAtBottomKey', 10, '');
     })
 
@@ -133,8 +109,8 @@ export default function ActsAceWebViewOnPdfLoadResult() {
      * @tc.level       : Level 0
      */
     it('emitWebViewOnPdfLoadResult004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitWebViewOnPdfLoadResult004", 10)
-      Utils.registerEvent("emitWebViewOnPdfLoadResult004", PdfLoadResult.PARSE_ERROR_PASSWORD, 20250828, done);
+      Utils.emitEvent("emitWebViewOnPdfLoadResult004", 300650)
+      Utils.registerEvent("emitWebViewOnPdfLoadResult004", PdfLoadResult.PARSE_ERROR_PASSWORD, 300690, done);
       sendEventByKey('WebViewOnPdfScrollAtBottomKey', 10, '');
     })
 
@@ -147,8 +123,8 @@ export default function ActsAceWebViewOnPdfLoadResult() {
      * @tc.level       : Level 0
      */
     it('emitWebViewOnPdfLoadResult005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitWebViewOnPdfLoadResult005", 10)
-      Utils.registerEvent("emitWebViewOnPdfLoadResult005", PdfLoadResult.PARSE_ERROR_HANDLER, 20250829, done);
+      Utils.emitEvent("emitWebViewOnPdfLoadResult005", 300650)
+      Utils.registerEvent("emitWebViewOnPdfLoadResult005", PdfLoadResult.PARSE_ERROR_HANDLER, 300700, done);
       sendEventByKey('WebViewOnPdfScrollAtBottomKey', 10, '');
     })
 

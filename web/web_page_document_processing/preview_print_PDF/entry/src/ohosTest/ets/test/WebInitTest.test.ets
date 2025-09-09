@@ -33,8 +33,6 @@ export default function webInitTest() {
 
     afterEach(async (done: Function) => {
       console.info("WebInitTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebInitTest afterEach end");
       done();
     })
     /*
@@ -43,9 +41,8 @@ export default function webInitTest() {
      * tc.desc Support printing background colors
    */
     it('testSetPrintBackgroundOne',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      Utils.emitEvent("emitSetPrintBackgroundOne", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testSetPrintBackgroundOne",false,214,done);
+      Utils.emitEvent("emitSetPrintBackgroundOne", 300530)
+      Utils.registerEvent("testSetPrintBackgroundOne",false,300540,done);
       sendEventByKey('WebInitTestButton',10,'');
     })
 

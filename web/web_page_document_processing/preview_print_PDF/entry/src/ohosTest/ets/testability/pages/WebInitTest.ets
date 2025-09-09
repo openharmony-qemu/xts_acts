@@ -21,6 +21,7 @@ import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import image from "@ohos.multimedia.image"
 import business_error from '@ohos.base';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -36,16 +37,19 @@ struct WebInitTest {
   @State searchResultCount: number = -1
   @State consoleCorsError: boolean = false
   @State flag: boolean = false
+  @State isEnd: number = -1;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 300530,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(300530)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -62,6 +66,7 @@ struct WebInitTest {
         this.interceptUrl = ''
         this.consoleMsg = ''
         this.consoleCorsError = false
+        this.isReceive = 0;
       }
     }
   }
@@ -79,24 +84,30 @@ struct WebInitTest {
         Button('WebInitTestButton')
           .key('WebInitTestButton')
           .onClick(async () => {
-            console.info("key==>" + this.str)
+            console.info("isPageEnd :" + this.isPageEnd);
+            console.info("isReceive :" + this.isReceive);
+            await waitForExist(()=>this.isPageEnd, this.str + 'IsPageEnd', 0);
+            await waitForExist(()=>this.isReceive, this.str + 'IsReceive', 0);
+            console.info("key==>" + this.str);
+            this.isReceive = -1;
             switch (this.str) {
               case "emitSetPrintBackgroundOne": {
+                this.isEnd = -1;
                 this.controller.runJavaScript("tryPrint()", (error, result) => {
                   if (error) {
                     console.info(`emitSetPrintBackgroundOne runJavaScript error: ` + JSON.stringify(error))
                     return;
                   } else {
+                    this.isEnd = 0;
                     console.log("emitSetPrintBackgroundOne runJavaScript.result: " + result);
                   }
                 })
-                await Utils.sleep(2000);
+                await waitForExist(()=>this.isEnd, this.str + 'IsEnd',0,1000);
                 try {
                   this.controller.setPrintBackground(false);
-                  await Utils.sleep(2000);
                   let enable = this.controller.getPrintBackground();
                   console.info("getPrintBackground: " + enable);
-                  Utils.emitEvent(enable, 214)
+                  Utils.emitEvent(enable, 300540)
                   console.info("emitSetPrintBackgroundOne  res: " + enable);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -112,6 +123,9 @@ struct WebInitTest {
           .javaScriptAccess(true)
           .geolocationAccess(true)
           .databaseAccess(true)
+          .onPageEnd(()=>{
+            this.isPageEnd = 0;
+          })
           .onSearchResultReceive(ret => {
             console.log("on search result receive:" + "[cur]" + ret.activeMatchOrdinal +
               "[total]" + ret.numberOfMatches + "[isDone]" + ret.isDoneCounting);
@@ -121,7 +135,7 @@ struct WebInitTest {
             console.log("searchResult" + searchResult);
             if(this.flag){
               setTimeout(() => {
-                Utils.emitEvent(searchResult, 16);
+                Utils.emitEvent(searchResult, 300550);
                 this.controller.clearMatches();
                 this.flag=false
               }, 3000)
