@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { Vec4, SceneResource, Animation, EnvironmentBackgroundType, Environment, Scene,Vec2, Rect} from '@ohos.graphics.scene'
-import { $rawfile } from '@ohos.arkui.component'
+import { $rawfile, Resource } from '@ohos.arkui.component'
 import { describe, it, expect, TestType, Size, Level } from '../../../hypium/index'
 
 export default function sceneResourcesTest() {
@@ -30,7 +30,9 @@ export default function sceneResourcesTest() {
       let msg = "============================testAnimationStart";
       console.info(msg + ' begin ');
       try {
-        let scene = await Scene.load($rawfile("gltf/BrainStem/glTF/BrainStem.glb"));
+        let resource: Resource = $rawfile("gltf/BrainStem/glTF/BrainStem.glb")
+        let scene = await Scene.load(resource);
+        console.info(msg + " Succeed in  sceneLoad ");
         let anim: Animation = scene.animations[0];
         expect(anim != null).assertTrue();
         console.info(msg + " Succeed in scene.animations[0] ");
@@ -57,7 +59,8 @@ export default function sceneResourcesTest() {
       let msg = "============================testAnimationStop";
       console.info(msg + ' begin ');
       try {
-        let scene = await Scene.load($rawfile("gltf/BrainStem/glTF/BrainStem.glb"));
+        let resource: Resource = $rawfile("gltf/BrainStem/glTF/BrainStem.glb")
+        let scene = await Scene.load(resource);
         let anim: Animation = scene.animations[0];
         anim.start();
         expect(anim.running).assertTrue();
@@ -84,7 +87,8 @@ export default function sceneResourcesTest() {
       let msg = "============================testAnimationFinished";
       console.info(msg + ' begin ');
       try {
-        let scene = await Scene.load($rawfile("gltf/BrainStem/glTF/BrainStem.glb"));
+        let resource: Resource = $rawfile("gltf/BrainStem/glTF/BrainStem.glb")
+        let scene = await Scene.load(resource);
         let anim: Animation = scene.animations[0];
         let finishFlag = false;
         anim.onFinished(() => {
@@ -117,7 +121,8 @@ export default function sceneResourcesTest() {
       let msg = "============================testEnvironmentIndirectDiffuseFactor";
       console.info(msg + ' begin ');
       try {
-        let scene = await Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"));
+        let resource: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb")
+        let scene = await Scene.load(resource);
         expect(scene != undefined).assertTrue();
         console.info(msg + " get scene success ");
         let env: Environment = scene.environment;
@@ -144,7 +149,8 @@ export default function sceneResourcesTest() {
       let msg = "============================testEnvironmentIndirectSpecularFactor";
       console.info(msg + ' begin ');
       try {
-        let scene = await Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"));
+        let resource: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb")
+        let scene = await Scene.load(resource);
         let env: Environment = scene.environment;
         let vec4: Vec4 = {x:1, y:40, z:1, w:1}
         env.indirectSpecularFactor = vec4;
@@ -169,7 +175,8 @@ export default function sceneResourcesTest() {
       let msg = "============================testEnvironmentBackgroundType";
       console.info(msg + ' begin ');
       try {
-        let scene = await Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"));
+        let resource: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb")
+        let scene = await Scene.load(resource);
         let env: Environment = scene.environment;
         let scr: SceneResource;
         env.backgroundType = EnvironmentBackgroundType.BACKGROUND_NONE;
