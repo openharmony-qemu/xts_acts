@@ -116,6 +116,9 @@ struct Index {
             case "emitGeolocationAccessFalse": {
               this.geolocationAccess = false
               this.isPageEnd = -1;
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              this.isPageEnd = -1;
               this.controller.loadUrl({ url: "resource://rawfile/geo.html" });
               await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.runJavaScript({
@@ -129,6 +132,9 @@ struct Index {
             }
             case "emitOnGeolocationShow": {
               this.geolocationAccess = true;
+              this.isPageEnd = -1;
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
               this.geoShow = true;
               this.isPageEnd = -1;
               this.controller.loadUrl({ url: "resource://rawfile/geo.html" });
@@ -141,6 +147,9 @@ struct Index {
             }
             case "emitDomStorageAccessFalse": {
               this.domStorageAccess = false;
+              this.isPageEnd = -1;
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
               this.isPageEnd = -1;
               this.controller.loadUrl({ url: "resource://rawfile/domApi.html" });
               await waitForExist(() => this.isPageEnd, this.str, 0);
@@ -156,6 +165,9 @@ struct Index {
             case "emitDomStorageAccessTrue": {
               this.domStorageAccess = true;
               this.isPageEnd = -1;
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              this.isPageEnd = -1;
               this.controller.loadUrl({ url: "resource://rawfile/domApi.html" });
               await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.runJavaScript({
@@ -168,6 +180,9 @@ struct Index {
             }
             case "emitDatabaseAccessTrue": {
               this.databaseAccess = true;
+              this.isPageEnd = -1;
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
               this.isPageEnd = -1;
               this.controller.loadUrl({ url: "resource://rawfile/databaseAccess.html" });
               await waitForExist(() => this.isPageEnd, this.str, 0);
