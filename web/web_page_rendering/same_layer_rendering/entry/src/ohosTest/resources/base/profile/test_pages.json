@@ -3,7 +3,7 @@
         "testability/pages/WebDefaultTextEncodingFormat",
         "testability/pages/EmbedVisibilityChange",
         "testability/pages/webViewControllerPart2",
-        "testability/pages/WebViewRegisterNativeEmbedRule",
+        "testability/pages/webViewRegisterNativeEmbedRule",
         "testability/pages/webViewObjectEmbed",
         "testability/pages/webViewObjectEmbed2",
         "testability/pages/webViewObjectEmbed3",
