@@ -15,6 +15,7 @@
 import { Vec4, SceneResource, Animation, EnvironmentBackgroundType, Environment, Scene,Vec2, Rect} from '@ohos.graphics.scene'
 import { $rawfile, Resource } from '@ohos.arkui.component'
 import { describe, it, expect, TestType, Size, Level } from '../../../hypium/index'
+import {SceneResourceType} from 'graphics3d.SceneResources';
 
 export default function sceneResourcesTest() {
   describe('sceneResourcesTest', ()=> {
@@ -216,6 +217,16 @@ export default function sceneResourcesTest() {
         let rect: Rect  = { x: 1.1, y: 1.1 };
         expect(vec2.x).assertEqual(1.1);
         expect(rect.x).assertEqual(1.1);
+        expect(SceneResourceType.UNKNOWN).assertEqual(0);
+        expect(SceneResourceType.NODE).assertEqual(1);
+        expect(SceneResourceType.ENVIRONMENT).assertEqual(2);
+        expect(SceneResourceType.MATERIAL).assertEqual(3);
+        expect(SceneResourceType.MESH).assertEqual(4);
+        expect(SceneResourceType.ANIMATION).assertEqual(5);
+        expect(SceneResourceType.SHADER).assertEqual(6);
+        expect(SceneResourceType.IMAGE).assertEqual(7);
+        expect(SceneResourceType.MESH_RESOURCE).assertEqual(8);
+        console.info(msg + " Succeed in SceneResourceType ");
         done();
       } catch (err) {
         console.info(msg + " Failed in testSceneResourceType " + JSON.stringify(err));
