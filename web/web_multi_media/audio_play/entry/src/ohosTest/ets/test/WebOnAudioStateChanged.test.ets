@@ -18,10 +18,13 @@ import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import events_emitter from '@ohos.events.emitter';
-import { waitAndClickComponent } from './WaitTest.test';
+import { waitForComponents } from './WaitTest.test';
+import { Driver } from '@kit.TestKit';
 
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const driver = Driver.create();
 
 export default function webOnAudioStateChanged() {
   describe('WebOnAudioStateChangedTest', () => {
@@ -41,6 +44,7 @@ export default function webOnAudioStateChanged() {
       } catch (err) {
         console.error("push WebOnAudioStateChanged page error: " + err);
       }
+      await waitForComponents('WebOnAudioStateChangedTestButton');
       done()
     });
     beforeEach(async (done: Function) => {
@@ -73,7 +77,7 @@ export default function webOnAudioStateChanged() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent('WebOnAudioStateChangedTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebOnAudioStateChangedTestButton');
     })
 
     /*
@@ -90,7 +94,7 @@ export default function webOnAudioStateChanged() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent('WebOnAudioStateChangedTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebOnAudioStateChangedTestButton');
     })
   })
 }

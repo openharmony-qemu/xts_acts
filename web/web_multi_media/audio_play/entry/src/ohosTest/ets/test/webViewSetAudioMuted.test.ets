@@ -17,11 +17,14 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { waitAndClickComponent } from './WaitTest.test';
+import { waitForComponents } from './WaitTest.test';
+import { Driver } from '@kit.TestKit';
 
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 // @ts-nocheck
+
+const driver = Driver.create();
 
 export default function webViewSetAudioMuted() {
   describe('ActsAceWebDevWebViewSetAudioMutedTest',  () => {
@@ -41,6 +44,7 @@ export default function webViewSetAudioMuted() {
       } catch (err) {
         console.error("push webViewSetAudioMuted page error: " + err);
       }
+      await waitForComponents('webViewSetAudioMuted');
       done()
     });
     beforeEach(async  (done: Function) =>{
@@ -67,7 +71,7 @@ export default function webViewSetAudioMuted() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent('webViewSetAudioMuted');
+      await Utils.waitAndClickComponent(driver, 'webViewSetAudioMuted');
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEBVIEWMUTED_API_0200
@@ -80,7 +84,7 @@ export default function webViewSetAudioMuted() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent('webViewSetAudioMuted');
+      await Utils.waitAndClickComponent(driver, 'webViewSetAudioMuted');
     })
   })
 }
