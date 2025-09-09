@@ -16,7 +16,6 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium"
 import hilog from '@ohos.hilog'
 import napitestex from 'libnapitestex.so'
-import napitest from 'libnapitest.so'
 import worker, { MessageEvents } from '@ohos.worker';
 
 async function sleep(time: number) {
@@ -337,7 +336,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行数值创建和获取测试
-        let result = napitest.NapiNumberTest001();
+        let result = napitestex.NapiNumberTest001();
         expect(result).assertTrue();
 
         console.info('testNumberCreationAndRetrieval PASS');
@@ -360,7 +359,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行跨类型转换测试
-        let result = napitest.NapiNumberTest002();
+        let result = napitestex.NapiNumberTest002();
         expect(result).assertTrue();
 
         console.info('testCrossTypeConversion PASS');
@@ -383,7 +382,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行边界值测试
-        let result = napitest.NapiNumberTest003();
+        let result = napitestex.NapiNumberTest003();
         expect(result).assertTrue();
 
         console.info('testBoundaryValues PASS');
@@ -406,7 +405,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行组合操作测试
-        let result = napitest.NapiNumberTest004();
+        let result = napitestex.NapiNumberTest004();
         expect(result).assertTrue();
 
         console.info('testCombinedOperations PASS');
@@ -429,7 +428,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行类型转换和溢出测试
-        let result = napitest.NapiNumberTest005();
+        let result = napitestex.NapiNumberTest005();
         expect(result).assertTrue();
 
         console.info('testTypeConversionAndOverflow PASS');
@@ -452,7 +451,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行大数值和精度测试
-        let result = napitest.NapiNumberTest006();
+        let result = napitestex.NapiNumberTest006();
         expect(result).assertTrue();
 
         console.info('testLargeNumbersAndPrecision PASS');
@@ -475,7 +474,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行布尔值处理测试
-        let result = napitest.NapiNumberTest007();
+        let result = napitestex.NapiNumberTest007();
         expect(result).assertTrue();
 
         console.info('testBooleanValueHandling PASS');
@@ -498,7 +497,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行线程安全性测试
-        let result = napitest.NapiNumberTest008();
+        let result = napitestex.NapiNumberTest008();
         expect(result).assertTrue();
 
         console.info('testThreadSafety PASS');
@@ -523,7 +522,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行对象创建、原型获取、冻结和类型检查测试
-        let result = napitest.NapiObjectTest001();
+        let result = napitestex.NapiObjectTest001();
         expect(result).assertTrue();
 
         console.info('testObjectCreationPrototypeFreezeAndTypeCheck PASS');
@@ -546,7 +545,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行对象类型标签创建和验证测试
-        let result = napitest.NapiObjectTest002();
+        let result = napitestex.NapiObjectTest002();
         expect(result).assertTrue();
 
         console.info('testObjectTypeTagCreationAndVerification PASS');
@@ -569,7 +568,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行外部对象创建和值获取测试
-        let result = napitest.NapiObjectTest003();
+        let result = napitestex.NapiObjectTest003();
         expect(result).assertTrue();
 
         console.info('testExternalObjectCreationAndValueRetrieval PASS');
@@ -593,7 +592,7 @@ export default function napiCheckExTest() {
 
         try {
           // 调用C++测试函数进行不同保护级别下的对象属性操作测试
-          let result = napitest.NapiObjectTest004();
+          let result = napitestex.NapiObjectTest004();
           expect(result).assertTrue();
 
           console.info('testObjectPropertyOperationsUnderDifferentProtectionLevels PASS');
@@ -616,7 +615,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行Symbol创建和类型检查测试
-        let result = napitest.NapiObjectTest005();
+        let result = napitestex.NapiObjectTest005();
         expect(result).assertTrue();
 
         console.info('testSymbolCreationAndTypeCheck PASS');
@@ -639,7 +638,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行类型标签与外部对象组合使用测试
-        let result = napitest.NapiObjectTest006();
+        let result = napitestex.NapiObjectTest006();
 
         if (result) {
           console.info('[TestTypeTagWithExternalObjectCombination] SUCCESS - Type tag and external object operations completed');
@@ -670,7 +669,7 @@ export default function napiCheckExTest() {
 
         try {
           // 调用C++测试函数进行Symbol作为对象属性键在不同保护级别下的行为测试
-          let result = napitest.NapiObjectTest007();
+          let result = napitestex.NapiObjectTest007();
           expect(result).assertTrue();
 
           console.info('testSymbolAsObjectPropertyKeyUnderDifferentProtectionLevels PASS');
@@ -693,7 +692,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行类型标签在原型链中的行为测试
-        let result = napitest.NapiObjectTest008();
+        let result = napitestex.NapiObjectTest008();
         expect(result).assertTrue();
 
         console.info('testTypeTagBehaviorInPrototypeChain PASS');
@@ -716,7 +715,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行外部对象与原型方法交互测试
-        let result = napitest.NapiObjectTest009();
+        let result = napitestex.NapiObjectTest009();
         expect(result).assertTrue();
 
         console.info('testExternalObjectWithPrototypeMethodInteraction PASS');
@@ -739,7 +738,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行对象相关函数的线程安全性测试
-        let result = napitest.NapiObjectTest010();
+        let result = napitestex.NapiObjectTest010();
         expect(result).assertTrue();
 
         console.info('testObjectThreadSafety PASS');
@@ -762,7 +761,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行外部对象函数的线程安全性测试
-        let result = napitest.NapiObjectTest011();
+        let result = napitestex.NapiObjectTest011();
         expect(result).assertTrue();
 
         console.info('testExternalObjectThreadSafety PASS');
@@ -785,7 +784,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行Symbol函数的线程安全性测试
-        let result = napitest.NapiObjectTest012();
+        let result = napitestex.NapiObjectTest012();
         expect(result).assertTrue();
 
         console.info('testSymbolThreadSafety PASS');

@@ -53,3 +53,25 @@ export const NapiBigIntTest14: () => boolean;
 export const NapiBigIntTest15: () => boolean;
 export const NapiBigIntTest16: () => boolean;
 export const NapiBigIntTest17: () => boolean;
+// NAPI Number Test Functions
+export const NapiNumberTest001: () => boolean;
+export const NapiNumberTest002: () => boolean;
+export const NapiNumberTest003: () => boolean;
+export const NapiNumberTest004: () => boolean;
+export const NapiNumberTest005: () => boolean;
+export const NapiNumberTest006: () => boolean;
+export const NapiNumberTest007: () => boolean;
+export const NapiNumberTest008: () => boolean;
+// NAPI Object Test Functions
+export const NapiObjectTest001: () => boolean;
+export const NapiObjectTest002: () => boolean;
+export const NapiObjectTest003: () => boolean;
+export const NapiObjectTest004: () => boolean;
+export const NapiObjectTest005: () => boolean;
+export const NapiObjectTest006: () => boolean;
+export const NapiObjectTest007: () => boolean;
+export const NapiObjectTest008: () => boolean;
+export const NapiObjectTest009: () => boolean;
+export const NapiObjectTest010: () => boolean;
+export const NapiObjectTest011: () => boolean;
+export const NapiObjectTest012: () => boolean;
