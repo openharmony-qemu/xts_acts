@@ -181,54 +181,81 @@ void HDRCodecNdkSample::PtrStepExtraRead(uint32_t &bufferSize, unsigned char **p
     pPrereadBuffer_ = 0;
 }
 
+void HDRCodecNdkSample::ProcessInitialSearch(uint32_t &bufferSize, void *&pBuffer)
+{
+    const uint32_t savedBufferSize = bufferSize;
+    void* const savedPBuffer = pBuffer;
+    unsigned char* currentBuffer = static_cast<unsigned char*>(pBuffer);
+    
+    const auto bufferStart = prereadBuffer_.get() + pPrereadBuffer_;
+    const auto bufferEnd = prereadBuffer_.get() + prereadBufferSize_;
+
+    const auto frameHeadPos = std::search(bufferStart + START_CODE_SIZE, bufferEnd,
+                                          std::begin(MPEG4_FRAME_HEAD), std::end(MPEG4_FRAME_HEAD));
+    const uint32_t frameHeadDistance = std::distance(bufferStart, frameHeadPos);
+
+    const auto seqHeadPos = std::search(bufferStart, frameHeadPos,
+                                        std::begin(MPEG4_SEQUENCE_HEAD), std::end(MPEG4_SEQUENCE_HEAD));
+    const uint32_t seqHeadDistance = std::distance(bufferStart, seqHeadPos);
+    
+    uint32_t copySize = 0;
+    if (seqHeadDistance == 0) {
+    const auto nextFrameHeadPos = std::search(frameHeadPos + START_CODE_SIZE, bufferEnd,
+                                              std::begin(MPEG4_FRAME_HEAD), std::end(MPEG4_FRAME_HEAD));
+        copySize = std::distance(bufferStart, nextFrameHeadPos);
+    } else if (frameHeadDistance > seqHeadDistance) {
+        copySize = seqHeadDistance;
+    } else {
+        copySize = frameHeadDistance;
+    }
+    if (memcpy_s(currentBuffer, copySize, bufferStart, copySize) != EOK) {
+        bufferSize = savedBufferSize;
+        pBuffer = savedPBuffer;
+        mpegUnit_->resize(0);
+        return;
+    }
+    PtrStep(bufferSize, &currentBuffer, copySize);
+    pBuffer = currentBuffer;
+    const bool shouldContinue = (pPrereadBuffer_ == prereadBufferSize_) && !inFile_->eof();
+    if (!shouldContinue) {
+        return;
+    }
+}
+
+void HDRCodecNdkSample::ProcessAdditionalRead(uint32_t &bufferSize, void *&pBuffer)
+{
+    unsigned char* currentBuffer = static_cast<unsigned char*>(pBuffer);
+    
+    const uint32_t readSize = PREREAD_BUFFER_SIZE;
+    inFile_->read(reinterpret_cast<char*>(prereadBuffer_.get() + START_CODE_SIZE), readSize);
+    prereadBufferSize_ = static_cast<uint32_t>(inFile_->gcount()) + START_CODE_SIZE;
+    pPrereadBuffer_ = START_CODE_SIZE;
+
+    if (memcpy_s(prereadBuffer_.get(), START_CODE_SIZE,
+                 currentBuffer - START_CODE_SIZE, START_CODE_SIZE) != EOK) {
+        bufferSize = 0;
+        pBuffer = nullptr;
+        mpegUnit_->resize(0);
+        return;
+    }
+    PtrStepExtraRead(bufferSize, &currentBuffer);
+    pBuffer = currentBuffer;
+}
+
 void HDRCodecNdkSample::GetMpeg4BufferSize()
 {
-    auto pBuffer = mpegUnit_->data();
+    unsigned char* pBuffer = reinterpret_cast<unsigned char*>(mpegUnit_->data());
     uint32_t bufferSize = 0;
     mpegUnit_->resize(MAX_NALU_SIZE);
+    
+    void* voidBuffer = pBuffer;
     do {
-        auto pos1 = std::search(prereadBuffer_.get() + pPrereadBuffer_ + START_CODE_SIZE,
-            prereadBuffer_.get() + prereadBufferSize_, std::begin(MPEG4_FRAME_HEAD), std::end(MPEG4_FRAME_HEAD));
-        uint32_t size1 = std::distance(prereadBuffer_.get() + pPrereadBuffer_, pos1);
-        auto pos2 = std::search(prereadBuffer_.get() + pPrereadBuffer_, prereadBuffer_.get() +
-            pPrereadBuffer_ + size1, std::begin(MPEG4_SEQUENCE_HEAD), std::end(MPEG4_SEQUENCE_HEAD));
-        uint32_t size = std::distance(prereadBuffer_.get() + pPrereadBuffer_, pos2);
-        if (size == 0) {
-            auto pos3 = std::search(prereadBuffer_.get() + pPrereadBuffer_ + size1 + START_CODE_SIZE,
-            prereadBuffer_.get() + prereadBufferSize_, std::begin(MPEG4_FRAME_HEAD), std::end(MPEG4_FRAME_HEAD));
-            uint32_t size2 = std::distance(prereadBuffer_.get() + pPrereadBuffer_, pos3);
-            if (memcpy_s(pBuffer, size2, prereadBuffer_.get() + pPrereadBuffer_, size2) != EOK) {
-                return;
-            }
-            PtrStep(bufferSize, &pBuffer, size2);
-            if (!((pPrereadBuffer_ == prereadBufferSize_) && !inFile_->eof())) {
-                break;
-            }
-        } else if (size1 > size) {
-            if (memcpy_s(pBuffer, size, prereadBuffer_.get() + pPrereadBuffer_, size) != EOK) {
-                return;
-            }
-            PtrStep(bufferSize, &pBuffer, size);
-            if (!((pPrereadBuffer_ == prereadBufferSize_) && !inFile_->eof())) {
-                break;
-            }
-        } else {
-            if (memcpy_s(pBuffer, size1, prereadBuffer_.get() + pPrereadBuffer_, size1) != EOK) {
-                return;
-            }
-            PtrStep(bufferSize, &pBuffer, size1);
-            if (!((pPrereadBuffer_ == prereadBufferSize_) && !inFile_->eof())) {
-                break;
-            }
-        }
-        inFile_->read(reinterpret_cast<char *>(prereadBuffer_.get() + START_CODE_SIZE), PREREAD_BUFFER_SIZE);
-        prereadBufferSize_ = inFile_->gcount() + START_CODE_SIZE;
-        pPrereadBuffer_ = START_CODE_SIZE;
-        if (memcpy_s(prereadBuffer_.get(), START_CODE_SIZE, pBuffer - START_CODE_SIZE, START_CODE_SIZE) != EOK) {
-            return;
-        }
-        PtrStepExtraRead(bufferSize, &pBuffer);
-    } while (pPrereadBuffer_ != prereadBufferSize_);
+        ProcessInitialSearch(bufferSize, voidBuffer);
+        pBuffer = static_cast<unsigned char*>(voidBuffer);
+        ProcessAdditionalRead(bufferSize, voidBuffer);
+        pBuffer = static_cast<unsigned char*>(voidBuffer);
+    } while (pPrereadBuffer_ != prereadBufferSize_ && !inFile_->eof());
+    
     mpegUnit_->resize(bufferSize);
 }
 
@@ -402,6 +429,10 @@ int32_t DecAvcPushData(OH_AVMemory *data, uint32_t bufferSize, uint8_t *fileBuff
         fileBuffer = nullptr;
         return 1;
     }
+    if (fileBuffer == nullptr) {
+        cout << "error: fileBuffer is null" << endl;
+        return 1;
+    }
     if (memcpy_s(avBuffer, size, fileBuffer, bufferSize + START_CODE_SIZE) != EOK) {
         delete[] fileBuffer;
         fileBuffer = nullptr;
@@ -409,6 +440,7 @@ int32_t DecAvcPushData(OH_AVMemory *data, uint32_t bufferSize, uint8_t *fileBuff
         return 1;
     }
     delete[] fileBuffer;
+    fileBuffer = nullptr;
     return 0;
 }
 
@@ -427,29 +459,38 @@ int32_t HDRCodecNdkSample::SendDataAvc(OH_AVCodec *codec, uint32_t index, OH_AVM
                                      ((ch[0] & 0xFF) << TWENTY_FOUR));
     uint8_t *fileBuffer = new uint8_t[bufferSize + START_CODE_SIZE];
     if (fileBuffer == nullptr) {
-        delete[] fileBuffer;
-        fileBuffer = nullptr;
-        return 0;
+        cout << "Fatal: memory allocation failed" << endl;
+        return -1;
     }
     if (memcpy_s(fileBuffer, bufferSize + START_CODE_SIZE, START_CODE, START_CODE_SIZE) != EOK) {
-        cout << "Fatal: memory copy failed" << endl;
+        cout << "Fatal: memory copy failed for START_CODE" << endl;
+        delete[] fileBuffer;
+        fileBuffer = nullptr;
+        return -1;
     }
+    
     (void)inFile_->read((char *)fileBuffer + START_CODE_SIZE, bufferSize);
+    if (inFile_->fail()) {
+        delete[] fileBuffer;
+        fileBuffer = nullptr;
+        return -1;
+    }
     if ((fileBuffer[START_CODE_SIZE] & H264_NALU_TYPE) == SPS ||
         (fileBuffer[START_CODE_SIZE] & H264_NALU_TYPE) == PPS) {
         attr.flags = AVCODEC_BUFFER_FLAGS_CODEC_DATA;
     } else {
         attr.flags = AVCODEC_BUFFER_FLAGS_NONE;
     }
-    if (DecAvcPushData(data, bufferSize, fileBuffer)) {
-        return 0;
+    if (DecAvcPushData(data, bufferSize, fileBuffer) != 0) {
+        return -1;
     }
     attr.pts = GetSystemTimeUs();
     attr.size = bufferSize + START_CODE_SIZE;
     attr.offset = 0;
     int32_t result = OH_VideoDecoder_PushInputData(codec, index, attr);
     if (result != AV_ERR_OK) {
-        cout << "push input data failed,error:" << result << endl;
+        cout << "push input data failed, error:" << result << endl;
+        return -1;
     } else {
         inputNum++;
     }
@@ -945,21 +986,41 @@ void HDRCodecNdkSample::WriteAudioTrack()
 {
     OH_AVMemory *buffer = nullptr;
     buffer = OH_AVMemory_Create(AUDIO_BUFFER_SIZE);
+    if (buffer == nullptr) {
+        cout << "Fatal: Failed to create audio buffer" << endl;
+        return;
+    }
     bool audioWrite = true;
     while (audioWrite) {
         if (!g_isRunning.load()) {
             audioWrite = false;
             break;
         }
-        OH_AVCodecBufferAttr info;
-        OH_AVDemuxer_ReadSample(demuxer, audioTrackID, buffer, &info);
-        if (info.flags & AVCODEC_BUFFER_FLAGS_EOS) {
+        OH_AVCodecBufferAttr info = {};
+        int32_t result = OH_AVDemuxer_ReadSample(demuxer, audioTrackID, buffer, &info);
+        if (result != AV_ERR_OK) {
+            cout << "Fatal: Failed to read audio sample, error: " << result << endl;
             audioWrite = false;
             break;
         }
-        OH_AVMuxer_WriteSample(muxer, audioTrackID, buffer, info);
+        if (info.flags & AVCODEC_BUFFER_FLAGS_EOS) {
+            cout << "Audio track reached end of stream" << endl;
+            audioWrite = false;
+            break;
+        }
+        if (info.size <= 0 || info.size > AUDIO_BUFFER_SIZE) {
+            cout << "Warning: Invalid audio sample size: " << info.size << ", skipping" << endl;
+            continue;
+        }
+        result = OH_AVMuxer_WriteSample(muxer, audioTrackID, buffer, info);
+        if (result != AV_ERR_OK) {
+            cout << "Warning: Failed to write audio sample, error: " << result << endl;
+        }
     }
-    OH_AVMemory_Destroy(buffer);
+    if (buffer != nullptr) {
+        OH_AVMemory_Destroy(buffer);
+        buffer = nullptr;
+    }
 }
 
 int32_t HDRCodecNdkSample::StartDemuxer()
