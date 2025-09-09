@@ -53,7 +53,8 @@ interface AudioCapturerOptions {
 const Tag: string = 'AudioCpaturerEnhanceTest: ';
 let audioCap: ESObject;
 let testContext: common.UIAbilityContext;
-let audioManager: audio.AudioManager
+let audioManager : audio.AudioManager
+
 export default function audioCapturerEnhanceTest() {
   describe('getCurrentAudioCapturerChangeInfo', () => {
 
@@ -77,11 +78,11 @@ export default function audioCapturerEnhanceTest() {
         })
     }
 
-    let getAudioManager = async() =>{
-      audioManager =audio.getAudioManager();
-      if(audioManager != null){
+    let getAudioManager = async() => {
+      audioManager = audio.getAudioManager();
+      if (audioManager != null) {
         console.info(`GetCurrentAudioCapturerChangeInfo : getAudioManager : PASS`)
-      }else{
+      } else {
         console.info(`GetCurrentAudioCapturerChangeInfo : getAudioManager : FAIL`)
       }
     }
@@ -349,7 +350,7 @@ export default function audioCapturerEnhanceTest() {
         capturerInfo: AudioCapturerInfo
       }
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
-      console.info(`SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_0300 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${Tag} outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`Determine if this is a default device`)
       const detecteDevice = outputDeviceDescription.some(device => 
             device.deviceType === audio.DeviceType.DISPLAY_PORT
