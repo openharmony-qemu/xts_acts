@@ -53,6 +53,7 @@ static void* GetDataCallback(void* context, const char* type);
 static int g_callbackValue;
 static constexpr int UPDATE_VALUE = 1;
 static int g_asyncErrCode = 0;
+const std::chrono::seconds delayTime(2);
 
 void FinalizeFunc(void* context) {};
 void ContextFinalizeFunc(void* context) {};
@@ -572,7 +573,7 @@ static napi_value OH_Pasteboard_SyncDelayedDataAsyncTest0100(napi_env env, napi_
     NAPI_ASSERT(env, g_asyncErrCode == -1, "OH_Pasteboard_SyncDelayedDataAsyncTest is fail.");
     
     OH_Pasteboard_SyncDelayedDataAsync(pasteboard, AsyncCallback);
-    std::this_thread::sleep_for(std::chrono::seconds(2));
+    std::this_thread::sleep_for(delayTime);
     NAPI_ASSERT(env, g_asyncErrCode == ERR_INNER_ERROR, "OH_Pasteboard_SyncDelayedDataAsyncTest is fail.");
 
     napi_create_int32(env, g_asyncErrCode == ERR_INNER_ERROR, &result);
@@ -640,7 +641,7 @@ static napi_value OH_Pasteboard_SyncDelayedDataAsyncTest0300(napi_env env, napi_
 
     g_asyncErrCode = -1;
     OH_Pasteboard_SyncDelayedDataAsync(pasteboard, AsyncCallback);
-    std::this_thread::sleep_for(std::chrono::seconds(2));
+    std::this_thread::sleep_for(delayTime);
     NAPI_ASSERT(env, g_asyncErrCode == ERR_OK, "OH_Pasteboard_SyncDelayedDataAsync is fail.");
 
     int status1 = -1;
