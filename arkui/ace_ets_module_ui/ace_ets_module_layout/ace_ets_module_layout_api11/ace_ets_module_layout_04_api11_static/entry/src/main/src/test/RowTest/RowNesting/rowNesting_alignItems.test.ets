@@ -93,27 +93,27 @@ it('SUB_ACE_rowNesting_alignItems_TEST_static_0100', Level.LEVEL0, async (done: 
         .assertTrue();
       const uiContext = new UIContext();
       console.log('assert space')
-      expect(Math.abs(Math.round(rowNesting_alignItems_012.left - rowNesting_alignItems_011.right) - Math.round(uiContext.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(rowNesting_alignItems_012.left - rowNesting_alignItems_011.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(rowNesting_alignItems_013.left - rowNesting_alignItems_012.right) - Math.round(uiContext.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(rowNesting_alignItems_013.left - rowNesting_alignItems_012.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
       console.log('rowNesting_alignItems_012.left - rowNesting_alignItems_011.right', rowNesting_alignItems_012.left - rowNesting_alignItems_011.right)
       console.log('rowNesting_alignItems_013.left - rowNesting_alignItems_012.right', rowNesting_alignItems_013.left - rowNesting_alignItems_012.right)
 
 
       console.log('assert height')
-      expect(Math.abs((Math.round(rowNesting_alignItems_011.bottom - rowNesting_alignItems_011.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(rowNesting_alignItems_011.bottom - rowNesting_alignItems_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(rowNesting_alignItems_012.bottom - rowNesting_alignItems_012.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(rowNesting_alignItems_012.bottom - rowNesting_alignItems_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(rowNesting_alignItems_013.bottom - rowNesting_alignItems_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(rowNesting_alignItems_013.bottom - rowNesting_alignItems_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.log('assert weight')
-      expect(Math.abs((Math.round(rowNesting_alignItems_011.right - rowNesting_alignItems_011.left)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(rowNesting_alignItems_011.right - rowNesting_alignItems_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(rowNesting_alignItems_012.right - rowNesting_alignItems_012.left)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(rowNesting_alignItems_012.right - rowNesting_alignItems_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(rowNesting_alignItems_013.right - rowNesting_alignItems_013.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(rowNesting_alignItems_013.right - rowNesting_alignItems_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.info('[SUB_ACE_rowNesting_alignItems_TEST_static_0100] END');
       done();

@@ -1245,9 +1245,9 @@ it('ArkUI_Stage_Search_SearchIcon_static_0200', Level.LEVEL1, async (done: () =>
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('searchIcon').getElement('size')));
       let result: number = 26;
       const uiContext = new UIContext();
-      console.info("[ArkUI_Stage_Search_SearchIcon_0200]: " + uiContext.vp2px(result).toFixed(2));
+      console.info("[ArkUI_Stage_Search_SearchIcon_0200]: " + UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2));
       expect(obj.getElement('$attrs').getElement('searchIcon').getElement('size'))
-        .assertEqual(uiContext.vp2px(result).toFixed(2) + "px");
+        .assertEqual(UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2) + "px");
       console.info("[ArkUI_Stage_Search_SearchIcon_0200] end");
       done();
     });
@@ -1290,7 +1290,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_0300', Level.LEVEL1, async (done: () =>
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('searchIcon')));
       console.info("[ArkUI_Stage_Search_SearchIcon_0300]: " +
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('searchIcon').getElement('size')));
-      let result: string = uiContext.px2vp(50) > 32 ? uiContext.vp2px(32).toFixed(2) + "px" : '50.00px';
+      let result: string = UIContext.getFocusedUIContext()!.px2vp(50) > 32 ? UIContext.getFocusedUIContext()!.vp2px(32).toFixed(2) + "px" : '50.00px';
       console.info("[ArkUI_Stage_Search_SearchIcon_0300]: " + result);
       expect(obj.getElement('$attrs').getElement('searchIcon').getElement('size')).assertEqual(result);
       console.info("[ArkUI_Stage_Search_SearchIcon_0300] end");
@@ -1382,7 +1382,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_0500', Level.LEVEL1, async (done: () =>
       console.info("[ArkUI_Stage_Search_SearchIcon_0500]: " +
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('searchIcon').getElement('size')));
       let result =
-        uiContext.px2vp(uiContext.lpx2px(50)) > 32 ? uiContext.vp2px(32).toFixed(2) : uiContext.lpx2px(50).toFixed(2);
+        UIContext.getFocusedUIContext()!.px2vp(uiContext.lpx2px(50)) > 32 ? UIContext.getFocusedUIContext()!.vp2px(32).toFixed(2) : uiContext.lpx2px(50).toFixed(2);
       console.info("[ArkUI_Stage_Search_SearchIcon_0500]: " + result);
       expect(Math.abs(Number((obj.getElement('$attrs').getElement('searchIcon').getString('size')).slice(0, -3)) -
       Number(result)) <= 1).assertTrue();
@@ -1430,9 +1430,9 @@ it('ArkUI_Stage_Search_SearchIcon_static_0600', Level.LEVEL1, async (done: () =>
       console.info("[ArkUI_Stage_Search_SearchIcon_0600]: " +
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('searchIcon').getElement('size')));
       let result: number = 16;
-      console.info("[ArkUI_Stage_Search_SearchIcon_0600]: " + uiContext.vp2px(result).toFixed(2));
+      console.info("[ArkUI_Stage_Search_SearchIcon_0600]: " + UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2));
       expect(obj.getElement('$attrs').getElement('searchIcon').getElement('size'))
-        .assertEqual(uiContext.vp2px(result).toFixed(2) + "px");
+        .assertEqual(UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2) + "px");
       console.info("[ArkUI_Stage_Search_SearchIcon_0600] end");
       done();
     });
@@ -1476,9 +1476,9 @@ it('ArkUI_Stage_Search_SearchIcon_static_0700', Level.LEVEL1, async (done: () =>
       console.info("[ArkUI_Stage_Search_SearchIcon_0700]: " +
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('searchIcon').getElement('size')));
       let result: number = 32;
-      console.info("[ArkUI_Stage_Search_SearchIcon_0700]: " + uiContext.vp2px(result).toFixed(2));
+      console.info("[ArkUI_Stage_Search_SearchIcon_0700]: " + UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2));
       expect(obj.getElement('$attrs').getElement('searchIcon').getElement('size'))
-        .assertEqual(uiContext.vp2px(result).toFixed(2) + "px");
+        .assertEqual(UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2) + "px");
       console.info("[ArkUI_Stage_Search_SearchIcon_0700] end");
       done();
     });
@@ -1522,9 +1522,9 @@ it('ArkUI_Stage_Search_SearchIcon_static_0800', Level.LEVEL1, async (done: () =>
       console.info("[ArkUI_Stage_Search_SearchIcon_0800]: " +
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('searchIcon').getElement('size')));
       let result: number = 0;
-      console.info("[ArkUI_Stage_Search_SearchIcon_0800]: " + uiContext.vp2px(result).toFixed(2));
+      console.info("[ArkUI_Stage_Search_SearchIcon_0800]: " + UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2));
       expect(obj.getElement('$attrs').getElement('searchIcon').getElement('size'))
-        .assertEqual(uiContext.vp2px(result).toFixed(2) + "px");
+        .assertEqual(UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2) + "px");
       console.info("[ArkUI_Stage_Search_SearchIcon_0800] end");
       done();
     });
@@ -1613,9 +1613,9 @@ it('ArkUI_Stage_Search_SearchIcon_static_1000', Level.LEVEL1, async (done: () =>
       console.info("[ArkUI_Stage_Search_SearchIcon_1000]: " +
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('searchIcon').getElement('size')));
       let result: number = 32;
-      console.info("[ArkUI_Stage_Search_SearchIcon_1000]: " + uiContext.vp2px(result).toFixed(2));
+      console.info("[ArkUI_Stage_Search_SearchIcon_1000]: " + UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2));
       expect(obj.getElement('$attrs').getElement('searchIcon').getElement('size'))
-        .assertEqual(uiContext.vp2px(result).toFixed(2) + "px");
+        .assertEqual(UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2) + "px");
       console.info("[ArkUI_Stage_Search_SearchIcon_1000] end");
       done();
     });
@@ -2071,9 +2071,9 @@ it('ArkUI_Stage_Search_SearchIcon_static_2100', Level.LEVEL1, async (done: () =>
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('searchIcon').getElement('size')));
       let result: number = 26;
       const uiContext = new UIContext();
-      console.info("[ArkUI_Stage_Search_SearchIcon_2100]: " + uiContext.vp2px(result).toFixed(2));
+      console.info("[ArkUI_Stage_Search_SearchIcon_2100]: " + UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2));
       expect(obj.getElement('$attrs').getElement('searchIcon').getElement('size'))
-        .assertEqual(uiContext.vp2px(result).toFixed(2) + "px");
+        .assertEqual(UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2) + "px");
       console.info("[ArkUI_Stage_Search_SearchIcon_2100]: " +
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('searchIcon')));
       console.info("[ArkUI_Stage_Search_SearchIcon_2100]: " +
@@ -2697,9 +2697,9 @@ it('ArkUI_Stage_Search_CancelButton_static_0700', Level.LEVEL1, async (done: () 
         .getElement('size')));
       let result: number = 26;
       const uiContext = new UIContext();
-      console.info("[ArkUI_Stage_Search_CancelButton_0700]: " + uiContext.vp2px(result).toFixed(2));
+      console.info("[ArkUI_Stage_Search_CancelButton_0700]: " + UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2));
       expect(obj.getElement('$attrs').getElement('cancelButton').getElement('icon').getElement('size'))
-        .assertEqual(uiContext.vp2px(result).toFixed(2) + "px");
+        .assertEqual(UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2) + "px");
       console.info("[ArkUI_Stage_Search_CancelButton_0700] end");
       done();
     });
@@ -2744,7 +2744,7 @@ it('ArkUI_Stage_Search_CancelButton_static_0800', Level.LEVEL1, async (done: () 
         .getElement('icon')
         .getElement('size')));
       const uiContext = new UIContext();
-      let result: string = uiContext.px2vp(50) > 32 ? uiContext.vp2px(32).toFixed(2) + "px" : '50.00px';
+      let result: string = UIContext.getFocusedUIContext()!.px2vp(50) > 32 ? UIContext.getFocusedUIContext()!.vp2px(32).toFixed(2) + "px" : '50.00px';
       console.info("[ArkUI_Stage_Search_CancelButton_0800]: " + result);
       expect(obj.getElement('$attrs').getElement('cancelButton').getElement('icon').getElement('size'))
         .assertEqual(result);
@@ -2841,7 +2841,7 @@ it('ArkUI_Stage_Search_CancelButton_static_1000', Level.LEVEL1, async (done: () 
         .getElement('icon')
         .getElement('size')));
       let result =
-        uiContext.px2vp(uiContext.lpx2px(50)) > 32 ? uiContext.vp2px(32).toFixed(2) : uiContext.lpx2px(50).toFixed(2);
+        UIContext.getFocusedUIContext()!.px2vp(uiContext.lpx2px(50)) > 32 ? UIContext.getFocusedUIContext()!.vp2px(32).toFixed(2) : uiContext.lpx2px(50).toFixed(2);
       console.info("[ArkUI_Stage_Search_CancelButton_1000]: " + result);
       expect(Math.abs(Number((obj.getElement('$attrs')
         .getElement('cancelButton')
@@ -2894,9 +2894,9 @@ it('ArkUI_Stage_Search_CancelButton_static_1100', Level.LEVEL1, async (done: () 
         .getElement('size')));
       let result: number = 16;
       const uiContext = new UIContext();
-      console.info("[ArkUI_Stage_Search_CancelButton_1100]: " + uiContext.vp2px(result).toFixed(2));
+      console.info("[ArkUI_Stage_Search_CancelButton_1100]: " + UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2));
       expect(obj.getElement('$attrs').getElement('cancelButton').getElement('icon').getElement('size'))
-        .assertEqual(uiContext.vp2px(result).toFixed(2) + "px");
+        .assertEqual(UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2) + "px");
       console.info("[ArkUI_Stage_Search_CancelButton_1100] end");
       done();
     });
@@ -2942,9 +2942,9 @@ it('ArkUI_Stage_Search_CancelButton_static_1200', Level.LEVEL1, async (done: () 
         .getElement('size')));
       let result: number = 32;
       const uiContext = new UIContext();
-      console.info("[ArkUI_Stage_Search_CancelButton_1200]: " + uiContext.vp2px(result).toFixed(2));
+      console.info("[ArkUI_Stage_Search_CancelButton_1200]: " + UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2));
       expect(obj.getElement('$attrs').getElement('cancelButton').getElement('icon').getElement('size'))
-        .assertEqual(uiContext.vp2px(result).toFixed(2) + "px");
+        .assertEqual(UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2) + "px");
       console.info("[ArkUI_Stage_Search_CancelButton_1200] end");
       done();
     });
@@ -3084,9 +3084,9 @@ it('ArkUI_Stage_Search_CancelButton_static_1500', Level.LEVEL1, async (done: () 
         .getElement('size')));
       let result: number = 32;
       const uiContext = new UIContext();
-      console.info("[ArkUI_Stage_Search_CancelButton_1500]: " + uiContext.vp2px(result).toFixed(2));
+      console.info("[ArkUI_Stage_Search_CancelButton_1500]: " + UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2));
       expect(obj.getElement('$attrs').getElement('cancelButton').getElement('icon').getElement('size'))
-        .assertEqual(uiContext.vp2px(result).toFixed(2) + "px");
+        .assertEqual(UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2) + "px");
       console.info("[ArkUI_Stage_Search_CancelButton_1500] end");
       done();
     });
@@ -3567,9 +3567,9 @@ it('ArkUI_Stage_Search_CancelButton_static_2600', Level.LEVEL1, async (done: () 
         .getElement('size')));
       let result: number = 26;
       const uiContext = new UIContext();
-      console.info("[ArkUI_Stage_Search_CancelButton_2600]: " + uiContext.vp2px(result).toFixed(2));
+      console.info("[ArkUI_Stage_Search_CancelButton_2600]: " + UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2));
       expect(obj.getElement('$attrs').getElement('cancelButton').getElement('icon').getElement('size'))
-        .assertEqual(uiContext.vp2px(result).toFixed(2) + "px");
+        .assertEqual(UIContext.getFocusedUIContext()!.vp2px(result).toFixed(2) + "px");
       console.info("[ArkUI_Stage_Search_CancelButton_2600]: " +
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('cancelButton')));
       console.info("[ArkUI_Stage_Search_CancelButton_2600]: " + JSON.stringifyJsonElement(obj.getElement('$attrs')

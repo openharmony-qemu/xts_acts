@@ -101,7 +101,7 @@ export default function headerStartOffset() {
       console.info('[headerStartOffset_static_0100] list.top: ' + list.top);
       await CommonFunc.sleep(1000);
       expect(Math.abs(listItem.top - groupHeader.bottom) <= 1).assertTrue();
-      expect(Math.abs(Math.round(groupHeader.top - list.top) - Math.round((new UIContext).vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(groupHeader.top - list.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
       console.info('[headerStartOffset_static_0100] END');
       done();

@@ -95,8 +95,8 @@ struct SetShapeClip {
             rect: {
               left: 0,
               top: 0,
-              right: vp2px(150),
-              bottom: vp2px(150)
+              right: UIContext.getFocusedUIContext()!.vp2px(150),
+              bottom: UIContext.getFocusedUIContext()!.vp2px(150)
             },
             corners: {
               topLeft: { x: 32, y: 32 },
@@ -117,9 +117,9 @@ struct SetShapeClip {
         .onClick((e: ClickEvent) => {
           renderNode.shapeClip.setOvalShape({
             left: 0,
-            right: vp2px(150),
+            right: UIContext.getFocusedUIContext()!.vp2px(150),
             top: 0,
-            bottom: vp2px(100)
+            bottom: UIContext.getFocusedUIContext()!.vp2px(100)
           });
           renderNode.shapeClip = renderNode.shapeClip;
         })

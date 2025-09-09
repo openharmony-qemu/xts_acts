@@ -40,7 +40,6 @@ import {
   Margin,
   MenuAlignType,
   PickerTextStyle,
-  px2vp,
   Row,
   Select,
   Swiper,

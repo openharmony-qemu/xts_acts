@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { vp2px } from '@ohos.arkui.component'
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../../ets/MainAbility/common/Rect';
@@ -97,20 +97,20 @@ it('testListListDirectionAxisVertical_static', Level.LEVEL0, async (done: () => 
       expect(Math.abs(List_ListDirection_014.left - List_ListDirection_01.left) <= 1).assertTrue();
       expect(Math.abs(List_ListDirection_011.top - List_ListDirection_01.top) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(List_ListDirection_012.top - List_ListDirection_011.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(List_ListDirection_013.top - List_ListDirection_012.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(List_ListDirection_014.top - List_ListDirection_013.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(List_ListDirection_01.bottom - List_ListDirection_014.bottom) - Math.round(vp2px(60))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(List_ListDirection_012.top - List_ListDirection_011.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(List_ListDirection_013.top - List_ListDirection_012.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(List_ListDirection_014.top - List_ListDirection_013.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(List_ListDirection_01.bottom - List_ListDirection_014.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(List_ListDirection_011.right - List_ListDirection_011.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(List_ListDirection_012.right - List_ListDirection_012.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(List_ListDirection_013.right - List_ListDirection_013.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(List_ListDirection_014.right - List_ListDirection_014.left) - Math.round(vp2px(300))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(List_ListDirection_011.right - List_ListDirection_011.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(List_ListDirection_012.right - List_ListDirection_012.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(List_ListDirection_013.right - List_ListDirection_013.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(List_ListDirection_014.right - List_ListDirection_014.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(List_ListDirection_011.bottom - List_ListDirection_011.top) - Math.round(vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(List_ListDirection_012.bottom - List_ListDirection_012.top) - Math.round(vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(List_ListDirection_013.bottom - List_ListDirection_013.top) - Math.round(vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(List_ListDirection_014.bottom - List_ListDirection_014.top) - Math.round(vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(List_ListDirection_011.bottom - List_ListDirection_011.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(List_ListDirection_012.bottom - List_ListDirection_012.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(List_ListDirection_013.bottom - List_ListDirection_013.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(List_ListDirection_014.bottom - List_ListDirection_014.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
       driver.swipe(
@@ -120,7 +120,7 @@ it('testListListDirectionAxisVertical_static', Level.LEVEL0, async (done: () => 
         (Math.round(List_ListDirection_012.bottom)).toInt());
       await CommonFunc.sleep(1000);
       let List_ListDirection_024: RectValue = CommonFunc.getComponentRect('List_ListDirection_014');
-      expect(Math.abs(List_ListDirection_01.bottom - List_ListDirection_024.bottom - Math.round(vp2px(60))) <= 1).assertTrue();
+      expect(Math.abs(List_ListDirection_01.bottom - List_ListDirection_024.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
       console.info('testListListDirectionAxisVertical END');
       done();
     });

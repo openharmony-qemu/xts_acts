@@ -33,7 +33,7 @@ import {
   Axis,AlertDialogParamWithButtons,DialogAlignment,DialogButtonStyle,DialogAlignment,DismissPopupAction,
   Margin,TransitionEffect,FlexAlign,TransitionEdge,AlertDialogParamWithConfirm,PopupStateChangeParam,
   PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
-  ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,px2vp,
+  ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,
 } from '@ohos.arkui.component';
 import {
   State,

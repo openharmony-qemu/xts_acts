@@ -161,41 +161,41 @@ export default function Tabs_barWidHei() {
 
 
       expect(Math.abs(Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_013.bottom - Tabs_barWidHei_013.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
 
-      expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
 
       console.info(`[testTabsBarWidToNegative_static_01]Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top
         ${Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top)}`);
       expect(Math.abs(Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_002.bottom - Tabs_barWidHei_002.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_003.bottom - Tabs_barWidHei_003.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
 
       expect(Math.abs(Math.round(Tabs_barWidHei_001.right - Tabs_barWidHei_001.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(330))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_002.right - Tabs_barWidHei_002.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(330))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_003.right - Tabs_barWidHei_003.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(330))) <= 1).assertTrue();
 
       console.info(`[testTabsBarWidToNegative_static_01]subGreen.bottom - subGreen.top
         ${Math.round(subGreen.bottom - subGreen.top)}`);
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
+      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1)
         .assertTrue();
 
 
@@ -287,41 +287,41 @@ export default function Tabs_barWidHei() {
         ${Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top)}`);
 
       expect(Math.abs(Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_013.bottom - Tabs_barWidHei_013.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
 
-      expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
 
       console.info(`[testTabsBarWidExceedTabsWid_static_02]Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top=
         ${Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top)}`);
       expect(Math.abs(Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_002.bottom - Tabs_barWidHei_002.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_003.bottom - Tabs_barWidHei_003.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
 
       expect(Math.abs(Math.round(Tabs_barWidHei_001.right - Tabs_barWidHei_001.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(330))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_002.right - Tabs_barWidHei_002.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(330))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_003.right - Tabs_barWidHei_003.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(330))) <= 1).assertTrue();
 
       console.info(`[testTabsBarWidExceedTabsWid_static_02]subGreen.bottom - subGreen.top=
         ${Math.round(subGreen.bottom - subGreen.top)}`);
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
+      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1)
         .assertTrue();
 
 
@@ -410,42 +410,42 @@ export default function Tabs_barWidHei() {
       console.info(`[testTabsBarWidWithinTabsWid_static_03]Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top=
         ${Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top)}`);
       expect(Math.abs(Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_013.bottom - Tabs_barWidHei_013.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
 
-      expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
 
       console.info(`[testTabsBarWidWithinTabsWid_static_03]Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top=
       ${Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top)}`)
 
       expect(Math.abs(Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_002.bottom - Tabs_barWidHei_002.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_003.bottom - Tabs_barWidHei_003.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
 
       expect(Math.abs(Math.round(Tabs_barWidHei_001.right - Tabs_barWidHei_001.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(330))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_002.right - Tabs_barWidHei_002.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(330))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_003.right - Tabs_barWidHei_003.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(330))) <= 1).assertTrue();
 
       console.info(`[testTabsBarWidWithinTabsWid_static_03]subGreen.bottom - subGreen.top=
         ${Math.round(subGreen.bottom - subGreen.top)}`);
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
 
 
@@ -538,41 +538,41 @@ export default function Tabs_barWidHei() {
       console.info(`[testTabsBarHeiExceedTabsHei_static_04]Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top=
         ${Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top)}`);
       expect(Math.abs(Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_013.bottom - Tabs_barWidHei_013.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
 
-      expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
 
       console.info(`[testTabsBarHeiExceedTabsHei_static_04]Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top=
         ${Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top)}`);
       expect(Math.abs(Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_002.bottom - Tabs_barWidHei_002.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_003.bottom - Tabs_barWidHei_003.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
 
       expect(Math.abs(Math.round(Tabs_barWidHei_001.right - Tabs_barWidHei_001.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(330))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_002.right - Tabs_barWidHei_002.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(330))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_003.right - Tabs_barWidHei_003.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(330))) <= 1).assertTrue();
 
       console.info(`[testTabsBarHeiExceedTabsHei_static_04]subGreen.bottom - subGreen.top=
         ${Math.round(subGreen.bottom - subGreen.top)}`);
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
+      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1)
         .assertTrue();
 
 
@@ -662,41 +662,41 @@ export default function Tabs_barWidHei() {
       console.info(`[testTabsBarHeiWithinTabsHei_static_05]Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top=
         ${Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top)}`);
       expect(Math.abs(Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) -
-      Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) -
-      Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_013.bottom - Tabs_barWidHei_013.top) -
-      Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1).assertTrue();
 
-      expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
 
       console.info(`[testTabsBarHeiWithinTabsHei_static_05]Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top=
         ${Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top)}`);
       expect(Math.abs(Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top) -
-      Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_002.bottom - Tabs_barWidHei_002.top) -
-      Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_003.bottom - Tabs_barWidHei_003.top) -
-      Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1).assertTrue();
 
       expect(Math.abs(Math.round(Tabs_barWidHei_001.right - Tabs_barWidHei_001.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(330))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_002.right - Tabs_barWidHei_002.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(330))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_003.right - Tabs_barWidHei_003.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(330))) <= 1).assertTrue();
 
       console.info(`[testTabsBarHeiWithinTabsHei_static_05]subGreen.bottom - subGreen.top=
         ${Math.round(subGreen.bottom - subGreen.top)}`);
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
+      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1)
         .assertTrue();
 
       console.info('[testTabsBarHeiWithinTabsHei_static_05] END');
@@ -781,41 +781,41 @@ export default function Tabs_barWidHei() {
       console.info(`[testTabsBarHeiToNegative_static_06]Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top=
         ${Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top)}`);
       expect(Math.abs(Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_013.bottom - Tabs_barWidHei_013.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
 
-      expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
 
       console.info(`[testTabsBarHeiToNegative_static_06]Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top=
         ${Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top)}`);
       expect(Math.abs(Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_002.bottom - Tabs_barWidHei_002.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_003.bottom - Tabs_barWidHei_003.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
 
       expect(Math.abs(Math.round(Tabs_barWidHei_001.right - Tabs_barWidHei_001.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(330))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_002.right - Tabs_barWidHei_002.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(330))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_barWidHei_003.right - Tabs_barWidHei_003.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(330))) <= 1).assertTrue();
 
       console.info(`[testTabsBarHeiToNegative_static_06]subGreen.bottom - subGreen.top=
         ${Math.round(subGreen.bottom - subGreen.top)}`);
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
+      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1)
         .assertTrue();
 
       console.info('[testTabsBarHeiToNegative_static_06] END');

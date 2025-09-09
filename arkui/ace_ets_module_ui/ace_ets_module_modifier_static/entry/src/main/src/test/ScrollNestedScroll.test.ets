@@ -26,7 +26,6 @@ import common from '@ohos.app.ability.common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector'
 import { BusinessError } from '@ohos.base';
-import { vp2px } from '@ohos.arkui.component';
 import { startAbility, UtilsTest } from './Util.test';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 

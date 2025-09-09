@@ -44,7 +44,6 @@ import {
   Padding,
   PanGesture,
   Position,
-  px2vp,
   Row,
   RowOptions,
   Select,
@@ -271,8 +270,8 @@ export struct ModifierPage {
     let mainWindow = AppStorage.get<window.Window>('mainWindow');
     let windowProp = mainWindow?.getWindowProperties();
     const uiContext = new UIContext()
-    this.displayWidth = uiContext.px2vp(windowProp?.windowRect?.width ?? 0) ?? 0.0;
-    this.displayHeight = uiContext.px2vp(windowProp?.windowRect?.height ?? 0) ?? 0.0;
+    this.displayWidth = UIContext.getFocusedUIContext()!.px2vp(windowProp?.windowRect?.width ?? 0) ?? 0.0;
+    this.displayHeight = UIContext.getFocusedUIContext()!.px2vp(windowProp?.windowRect?.height ?? 0) ?? 0.0;
   }
 
   private getVoidModeText(mode?: AvoidanceMode): string {

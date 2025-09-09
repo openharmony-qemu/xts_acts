@@ -118,17 +118,17 @@ it('testFlexAlignCenterTextLayoutWeight01_static', Level.LEVEL0, async () : Prom
       expect(Math.abs(Center_AddLayoutWeight_012.right - Center_AddLayoutWeight_013.left) <= 1).assertTrue();
       expect(Math.abs(Center_AddLayoutWeight_011.left - Center_AddLayoutWeight_01.left) <= 1).assertTrue();
       expect(Math.abs(Center_AddLayoutWeight_013.right - Center_AddLayoutWeight_01.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Center_AddLayoutWeight_011.right - Center_AddLayoutWeight_011.left)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddLayoutWeight_011.right - Center_AddLayoutWeight_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddLayoutWeight_012.right - Center_AddLayoutWeight_012.left)) - (Math.round(uiContext.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddLayoutWeight_012.right - Center_AddLayoutWeight_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddLayoutWeight_013.right - Center_AddLayoutWeight_013.left)) - (Math.round(uiContext.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddLayoutWeight_013.right - Center_AddLayoutWeight_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddLayoutWeight_011.bottom - Center_AddLayoutWeight_011.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddLayoutWeight_011.bottom - Center_AddLayoutWeight_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddLayoutWeight_012.bottom - Center_AddLayoutWeight_012.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddLayoutWeight_012.bottom - Center_AddLayoutWeight_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddLayoutWeight_013.bottom - Center_AddLayoutWeight_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddLayoutWeight_013.bottom - Center_AddLayoutWeight_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignCenterTextLayoutWeight01] END');
 
@@ -177,14 +177,14 @@ it('testFlexAlignCenterTextLayoutWeight02_static', Level.LEVEL0, async () : Prom
       let oneWidth = Math.round(Center_AddLayoutWeight_011.right - Center_AddLayoutWeight_011.left);
       let twoWidth = Math.round(Center_AddLayoutWeight_012.right - Center_AddLayoutWeight_012.left);
       expect(Math.abs((Math.round(twoWidth / oneWidth)) - (2)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(twoWidth + oneWidth) - Math.round(uiContext.vp2px(350))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Center_AddLayoutWeight_013.right - Center_AddLayoutWeight_013.left) - Math.round(uiContext.vp2px(150))) <= 1)
+      expect(Math.abs(Math.round(twoWidth + oneWidth) - Math.round(UIContext.getFocusedUIContext()!.vp2px(350))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(Center_AddLayoutWeight_013.right - Center_AddLayoutWeight_013.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Center_AddLayoutWeight_011.bottom - Center_AddLayoutWeight_011.top) - Math.round(uiContext.vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(Center_AddLayoutWeight_011.bottom - Center_AddLayoutWeight_011.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Center_AddLayoutWeight_012.bottom - Center_AddLayoutWeight_012.top) - Math.round(uiContext.vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(Center_AddLayoutWeight_012.bottom - Center_AddLayoutWeight_012.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Center_AddLayoutWeight_013.bottom - Center_AddLayoutWeight_013.top) - Math.round(uiContext.vp2px(150))) <= 1)
+      expect(Math.abs(Math.round(Center_AddLayoutWeight_013.bottom - Center_AddLayoutWeight_013.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignCenterTextLayoutWeight02] END');
 

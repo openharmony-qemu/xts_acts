@@ -96,13 +96,13 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate5_static_0400', Level.LEVEL0, async (done: (
       let GridItem_02: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
       const uiContext = new UIContext();
       console.log('assert space')
-      expect(Math.abs(GridItem_02.left - GridItem_01.right - uiContext.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(GridItem_02.left - GridItem_01.right - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
       console.log('GridItem_02.left - GridItem_01.right' + (GridItem_02.left - GridItem_01.right))
 
       console.log('assert size')
-      expect(Math.abs(GridItem_01.right - GridItem_01.left - uiContext.vp2px(52)) <= 1).assertTrue();
+      expect(Math.abs(GridItem_01.right - GridItem_01.left - UIContext.getFocusedUIContext()!.vp2px(52)) <= 1).assertTrue();
       console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
-      expect(Math.abs(GridItem_01.bottom - GridItem_01.top - uiContext.vp2px(50)) <= 1).assertTrue();
+      expect(Math.abs(GridItem_01.bottom - GridItem_01.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
       console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
 
       await CommonFunc.sleep(1000);

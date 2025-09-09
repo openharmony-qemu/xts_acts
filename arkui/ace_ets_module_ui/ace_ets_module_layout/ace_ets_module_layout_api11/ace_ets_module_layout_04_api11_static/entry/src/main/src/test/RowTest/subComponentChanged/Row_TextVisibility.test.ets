@@ -94,10 +94,10 @@ it('testRowTextVisibilityNone_static_01', Level.LEVEL0, async (done: () => void)
         let secondTextStrJson = inspector.getInspectorByKey('Row_TextVisibility2');
        expect(JSON.parseJsonElement(secondTextStrJson).getElement('$attrs').getString('visibility')).assertEqual("Visibility.None");
         const uiContext = new UIContext();
-        expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(uiContext.vp2px(50)))) <= 1).assertTrue();
-        expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(uiContext.vp2px(150)))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
 
-        expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(uiContext.vp2px(100)))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
         expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(thirdText.right - thirdText.left))) <= 1)
           .assertTrue();
 
@@ -107,9 +107,9 @@ it('testRowTextVisibilityNone_static_01', Level.LEVEL0, async (done: () => void)
           .assertTrue();
 
         expect(Math.abs((firstText.left) - (rowContainer.left)) <= 1).assertTrue();
-        expect(Math.abs((Math.round(thirdText.left - firstText.right)) - (Math.round(uiContext.vp2px(10)))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(thirdText.left - firstText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
 
-        expect(Math.abs((Math.round(rowContainer.right - thirdText.right)) - (Math.round(uiContext.vp2px(140)))) <= 1)
+        expect(Math.abs((Math.round(rowContainer.right - thirdText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(140)))) <= 1)
           .assertTrue();
       } catch (err) {
         console.error('[testRowTextVisibilityNone_static_01] failed');
@@ -145,10 +145,10 @@ it('testRowTextVisibilityHidden_static_02', Level.LEVEL0, async (done: () => voi
 
         let secondTextStrJson = inspector.getInspectorByKey('Row_TextVisibility2');
        expect(JSON.parseJsonElement(secondTextStrJson).getElement('$attrs').getString('visibility')).assertEqual("Visibility.Hidden");
-        expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(uiContext.vp2px(50)))) <= 1).assertTrue();
-        expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(uiContext.vp2px(150)))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
 
-        expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(uiContext.vp2px(100)))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
         expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(thirdText.right - thirdText.left))) <= 1)
           .assertTrue();
 
@@ -158,9 +158,9 @@ it('testRowTextVisibilityHidden_static_02', Level.LEVEL0, async (done: () => voi
           .assertTrue();
 
         expect(Math.abs((firstText.left) - (rowContainer.left)) <= 1).assertTrue();
-        expect(Math.abs((Math.round(thirdText.left - firstText.right)) - (Math.round(uiContext.vp2px(120)))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(thirdText.left - firstText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(120)))) <= 1).assertTrue();
 
-        expect(Math.abs((Math.round(rowContainer.right - thirdText.right)) - (Math.round(uiContext.vp2px(30)))) <= 1)
+        expect(Math.abs((Math.round(rowContainer.right - thirdText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
           .assertTrue();
       } catch (err) {
         console.error('[testRowTextVisibilityHidden_static_02] failed');
@@ -197,11 +197,11 @@ it('testRowTextVisibilityVisible_static_03', Level.LEVEL0, async (done: () => vo
         let secondTextStrJson = inspector.getInspectorByKey('Row_TextVisibility2');
        expect(JSON.parseJsonElement(secondTextStrJson).getElement('$attrs').getString('visibility')).assertEqual("Visibility.Visible");
         const uiContext = new UIContext();
-        expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(uiContext.vp2px(50)))) <= 1).assertTrue();
-        expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(uiContext.vp2px(100)))) <= 1).assertTrue();
-        expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(uiContext.vp2px(150)))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
 
-        expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(uiContext.vp2px(100)))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
         expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(secondText.right - secondText.left))) <= 1)
           .assertTrue();
         expect(Math.abs((Math.round(secondText.right - secondText.left)) - (Math.round(thirdText.right - thirdText.left))) <= 1)
@@ -216,11 +216,11 @@ it('testRowTextVisibilityVisible_static_03', Level.LEVEL0, async (done: () => vo
           .assertTrue();
 
         expect(Math.abs((firstText.left) - (rowContainer.left)) <= 1).assertTrue();
-        expect(Math.abs((Math.round(secondText.left - firstText.right)) - (Math.round(uiContext.vp2px(10)))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(secondText.left - firstText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
         expect(Math.abs((Math.round(secondText.left - firstText.right)) - (Math.round(thirdText.left - secondText.right))) <= 1)
           .assertTrue();
 
-        expect(Math.abs((Math.round(rowContainer.right - thirdText.right)) - (Math.round(uiContext.vp2px(30)))) <= 1)
+        expect(Math.abs((Math.round(rowContainer.right - thirdText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
           .assertTrue();
       } catch (err) {
         console.error('[testRowTextVisibilityVisible_static_03] failed');

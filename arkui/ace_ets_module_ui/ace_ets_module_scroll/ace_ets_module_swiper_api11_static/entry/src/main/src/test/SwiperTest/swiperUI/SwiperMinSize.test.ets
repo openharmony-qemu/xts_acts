@@ -99,7 +99,7 @@ export default function SwiperMinSize() {
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(uiContext.vp2px(160)));
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(160)));
 
       console.info('[SwiperMinSize_static_001] END');
       done();
@@ -120,7 +120,7 @@ export default function SwiperMinSize() {
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(uiContext.vp2px(160)));
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(160)));
 
       console.info('[SwiperMinSize_static_101] END');
       done();
@@ -149,7 +149,7 @@ export default function SwiperMinSize() {
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(uiContext.vp2px(40)));
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(40)));
 
       console.info('[SwiperMinSize_static_002] END');
       done();
@@ -178,7 +178,7 @@ export default function SwiperMinSize() {
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(uiContext.vp2px(40)));
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(40)));
 
       console.info('[SwiperMinSize_static_102] END');
       done();
@@ -207,7 +207,7 @@ export default function SwiperMinSize() {
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(uiContext.vp2px(40)));
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(40)));
 
       console.info('[SwiperMinSize_static_202] END');
       done();
@@ -236,7 +236,7 @@ export default function SwiperMinSize() {
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(uiContext.vp2px(40)));
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(40)));
 
       console.info('[SwiperMinSize_static_302] END');
       done();
@@ -265,7 +265,7 @@ export default function SwiperMinSize() {
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(uiContext.vp2px(40)));
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(40)));
 
       console.info('[SwiperMinSize_static_402] END');
       done();
@@ -297,7 +297,7 @@ export default function SwiperMinSize() {
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(uiContext.vp2px(40)));
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(40)));
 
       console.info('[SwiperMinSize_static_003] END');
       done();
@@ -329,7 +329,7 @@ export default function SwiperMinSize() {
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(uiContext.vp2px(40)));
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(40)));
 
       console.info('[SwiperMinSize_static_004] END');
       done();
@@ -362,7 +362,7 @@ export default function SwiperMinSize() {
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(swiperText1.top - swiper.top) - Math.round(uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(swiperText1.top - swiper.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[SwiperMinSize_static_005] END');
       done();
@@ -398,7 +398,7 @@ export default function SwiperMinSize() {
       let swiperText2 = CommonFunc.getComponentRect('swiperText2');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(swiperText2.left - swiperText1.right) - Math.round(uiContext.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(swiperText2.left - swiperText1.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
       console.info('[SwiperMinSize_static_006] END');
@@ -432,7 +432,7 @@ export default function SwiperMinSize() {
       let swiperText2 = CommonFunc.getComponentRect('swiperText2');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(swiperText2.left - swiperText1.right) - Math.round(uiContext.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(swiperText2.left - swiperText1.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
       console.info('[SwiperMinSize_static_007] END');

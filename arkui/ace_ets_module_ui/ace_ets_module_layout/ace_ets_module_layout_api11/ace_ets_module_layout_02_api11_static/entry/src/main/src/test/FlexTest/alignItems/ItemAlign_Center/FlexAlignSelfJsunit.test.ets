@@ -94,12 +94,12 @@ it('testFlexItemAlignCenterSetAlignSelf_static', Level.LEVEL0, async () : Promis
       let flexAlignSelf01: RectValue = CommonFunc.getComponentRect('ItemAlign_Center_flexAlignSelf');
       const uiContext = new UIContext();
       expect(Math.abs(alignSelf01.bottom - flexAlignSelf01.bottom) <= 1).assertTrue()
-      expect(Math.abs(alignSelf01.bottom - alignSelf01.top - Math.round(uiContext.vp2px(50))) <= 1).assertTrue()
-      expect(Math.abs(alignSelf01.right - alignSelf01.left - Math.round(uiContext.vp2px(150))) <= 1).assertTrue()
-      expect(Math.abs(alignSelf02.bottom - alignSelf02.top - Math.round(uiContext.vp2px(100))) <= 1).assertTrue()
-      expect(Math.abs(alignSelf02.right - alignSelf02.left - Math.round(uiContext.vp2px(150))) <= 1).assertTrue()
-      expect(Math.abs(alignSelf03.bottom - alignSelf03.top - Math.round(uiContext.vp2px(150))) <= 1).assertTrue()
-      expect(Math.abs(alignSelf03.right - alignSelf03.left - Math.round(uiContext.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(alignSelf01.bottom - alignSelf01.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(alignSelf01.right - alignSelf01.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(alignSelf02.bottom - alignSelf02.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue()
+      expect(Math.abs(alignSelf02.right - alignSelf02.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(alignSelf03.bottom - alignSelf03.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(alignSelf03.right - alignSelf03.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
       expect(Math.abs(alignSelf02.top - flexAlignSelf01.top - (flexAlignSelf01.bottom - alignSelf02.bottom)) <= 1)
         .assertTrue()
       expect(Math.abs(alignSelf03.top - flexAlignSelf01.top - (flexAlignSelf01.bottom - alignSelf03.bottom)) <= 1)
@@ -107,9 +107,9 @@ it('testFlexItemAlignCenterSetAlignSelf_static', Level.LEVEL0, async () : Promis
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Center')
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('alignSelf')).assertEqual("ItemAlign.End");
-      expect(Math.abs(alignSelf03.right - alignSelf03.left - Math.round(uiContext.vp2px(150))) <= 1).assertTrue()
-      expect(Math.abs(alignSelf02.right - alignSelf02.left - Math.round(uiContext.vp2px(150))) <= 1).assertTrue()
-      expect(Math.abs(flexAlignSelf01.right - alignSelf03.right - Math.round(uiContext.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(alignSelf03.right - alignSelf03.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(alignSelf02.right - alignSelf02.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(flexAlignSelf01.right - alignSelf03.right - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue()
       console.info('new testFlexItemAlignCenterSetAlignSelf_static END');
 
     });

@@ -97,8 +97,8 @@ export default function SwiperImplicitanimation0020() {
         let swiperArrow = await driver.findComponent(ON.id("implicitanimation_static_0020"));
         let point2 = await (swiperArrow?.getBoundsCenter() as Promise<Point>);
         const uiContext = new UIContext();
-        let x: number = parseInt(uiContext.vp2px(120).toString());
-        let x1: number = parseInt(uiContext.vp2px(90).toString());
+        let x: number = parseInt(UIContext.getFocusedUIContext()!.vp2px(120).toString());
+        let x1: number = parseInt(UIContext.getFocusedUIContext()!.vp2px(90).toString());
         await driver.drag((point2.x + x).toInt(), (point2.y).toInt(), (point2.x - x1).toInt(), (point2.y).toInt(), 3000)
         await CommonFunc.sleep(1000);
         let strIndex4: string = inspector.getInspectorByKey('implicitanimation_static_0020_1')

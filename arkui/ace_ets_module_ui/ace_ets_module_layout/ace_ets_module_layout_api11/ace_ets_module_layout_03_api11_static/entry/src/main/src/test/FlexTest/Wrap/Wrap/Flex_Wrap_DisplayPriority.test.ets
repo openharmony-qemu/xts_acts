@@ -104,17 +104,17 @@ it('testWrapWrapTextDisplayPriority_static', Level.LEVEL0, async () => {
       expect(Math.abs(firstText.top - secondText.top) <= 1).assertTrue();
       expect(Math.abs(firstText.top - flexContainer.top) <= 1).assertTrue();
 
-      expect(Math.abs((firstText.bottom - firstText.top) - uiContext.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs((secondText.bottom - secondText.top) - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((thirdText.bottom - thirdText.top) - uiContext.vp2px(200)) <= 1).assertTrue();
-      expect(Math.abs((firstText.right - firstText.left) - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((secondText.right - secondText.left) - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((thirdText.right - thirdText.left) - uiContext.vp2px(300)) <= 1).assertTrue();
+      expect(Math.abs((firstText.bottom - firstText.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs((secondText.bottom - secondText.top) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs((thirdText.bottom - thirdText.top) - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue();
+      expect(Math.abs((firstText.right - firstText.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs((secondText.right - secondText.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs((thirdText.right - thirdText.left) - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
 
-      expect(Math.abs((flexContainer.right - secondText.right) - uiContext.vp2px(200)) <= 1).assertTrue();
+      expect(Math.abs((flexContainer.right - secondText.right) - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue();
       expect(Math.abs(thirdText.left - flexContainer.left) <= 1).assertTrue()
       expect(Math.abs(thirdText.top - secondText.bottom) <= 1).assertTrue()
-      expect(Math.abs((flexContainer.bottom - thirdText.bottom) - uiContext.vp2px(50)) <= 1).assertTrue();
+      expect(Math.abs((flexContainer.bottom - thirdText.bottom) - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
       console.info('[testWrapWrapTextDisplayPriority] END');
 
     });

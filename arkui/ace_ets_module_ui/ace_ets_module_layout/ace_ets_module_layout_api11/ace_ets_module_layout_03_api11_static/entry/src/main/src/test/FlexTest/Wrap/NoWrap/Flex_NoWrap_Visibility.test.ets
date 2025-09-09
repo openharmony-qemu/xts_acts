@@ -119,12 +119,12 @@ it('testWrapNoWrapTextVisibilityNoneOverflow_static', Level.LEVEL0, async () => 
         expect(Math.abs((secondText.top) - (flexContainer.top)) <= 1).assertTrue();
         expect(Math.abs((secondText.top) - (thirdText.top)) <= 1).assertTrue();
 
-        expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(uiContext.vp2px(150)))) <= 1).assertTrue();
-        expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(uiContext.vp2px(200)))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1).assertTrue();
         expect(Math.abs((Math.round(secondText.right - secondText.left)) - (Math.round(thirdText.right - thirdText.left))) <= 1)
           .assertTrue();
 
-        expect(Math.abs((Math.round(thirdText.right - thirdText.left)) - (Math.round(uiContext.vp2px(250)))) <= 1).assertTrue();
+        expect(Math.abs((Math.round(thirdText.right - thirdText.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(250)))) <= 1).assertTrue();
         expect(Math.abs((Math.round(thirdText.right - thirdText.left)) - (Math.round(secondText.right - secondText.left))) <= 1)
           .assertTrue();
 
@@ -189,13 +189,13 @@ it('testWrapNoWrapTextVisibilityNoneMeet_static', Level.LEVEL0, async () => {
         expect(Math.abs(secondText.top - thirdText.top) <= 1).assertTrue();
         expect(Math.abs(flexContainer.top - thirdText.top) <= 1).assertTrue();
 
-        expect(Math.abs(secondText.bottom - secondText.top - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
-        expect(Math.abs(thirdText.bottom - thirdText.top - Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
+        expect(Math.abs(secondText.bottom - secondText.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+        expect(Math.abs(thirdText.bottom - thirdText.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1).assertTrue();
 
-        expect(Math.abs(secondText.right - secondText.left - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
-        expect(Math.abs(thirdText.right - thirdText.left - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
+        expect(Math.abs(secondText.right - secondText.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+        expect(Math.abs(thirdText.right - thirdText.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
 
-        expect(Math.abs(flexContainer.right - thirdText.right - Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
+        expect(Math.abs(flexContainer.right - thirdText.right - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1).assertTrue();
         expect(Math.abs(thirdText.bottom - flexContainer.bottom) <= 1).assertTrue();
       } catch (err) {
         console.error('[testWrapNoWrapTextVisibilityNoneMeet] failed');
@@ -253,15 +253,15 @@ it('testWrapNoWrapTextVisibilityHidden_static', Level.LEVEL0, async () => {
         expect(Math.abs(secondText.top - thirdText.top) <= 1).assertTrue();
         expect(Math.abs(flexContainer.top - thirdText.top) <= 1).assertTrue();
 
-        expect(Math.abs(secondText.bottom - secondText.top - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
-        expect(Math.abs(thirdText.bottom - thirdText.top - Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
+        expect(Math.abs(secondText.bottom - secondText.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+        expect(Math.abs(thirdText.bottom - thirdText.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1).assertTrue();
 
-        expect(Math.abs(secondText.right - secondText.left - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
-        expect(Math.abs(thirdText.right - thirdText.left - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
+        expect(Math.abs(secondText.right - secondText.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+        expect(Math.abs(thirdText.right - thirdText.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
 
         expect(Math.abs(thirdText.bottom - flexContainer.bottom) <= 1).assertTrue();
-        expect(Math.abs(flexContainer.right - thirdText.right - Math.round(uiContext.vp2px(50))) <= 1).assertTrue();
-        expect(Math.abs(secondText.left - flexContainer.left - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
+        expect(Math.abs(flexContainer.right - thirdText.right - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+        expect(Math.abs(secondText.left - flexContainer.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
       } catch (err) {
         console.error('[testWrapNoWrapTextVisibilityHidden] failed');
         expect().assertFail();

@@ -91,7 +91,7 @@ it('SUB_ACE_GridRowSizeOption_static_0100', Level.LEVEL0, async (done: () => voi
       let seventhSizeOption: RectValue = CommonFunc.getComponentRect('Grid_Row_SizeOption6');
 
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(secondSizeOption.top - firstSizeOption.bottom) - Math.round(uiContext.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(secondSizeOption.top - firstSizeOption.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
 
       console.info('SUB_ACE_GridRowSizeOption_static_0100 END');
@@ -123,9 +123,9 @@ it('SUB_ACE_GridRowSizeOption_static_0200', Level.LEVEL0, async (done: () => voi
       let sixthSizeOption: RectValue = CommonFunc.getComponentRect('Grid_Row_SizeOption5');
       let seventhSizeOption: RectValue = CommonFunc.getComponentRect('Grid_Row_SizeOption6');
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(secondSizeOption.left - firstSizeOption.right) - Math.round(uiContext.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(secondSizeOption.left - firstSizeOption.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(thirdSizeOption.top - firstSizeOption.bottom) - Math.round(uiContext.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(thirdSizeOption.top - firstSizeOption.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
 
       console.info('SUB_ACE_GridRowSizeOption_static_0200 END');
@@ -158,9 +158,9 @@ it('SUB_ACE_GridRowSizeOption_static_0300', Level.LEVEL0, async (done: () => voi
       let seventhSizeOption: RectValue = CommonFunc.getComponentRect('Grid_Row_SizeOption6');
 
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(secondSizeOption.left - firstSizeOption.right) - Math.round(uiContext.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(secondSizeOption.left - firstSizeOption.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(fourthSizeOption.top - firstSizeOption.bottom) - Math.round(uiContext.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(fourthSizeOption.top - firstSizeOption.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
 
       console.info('SUB_ACE_GridRowSizeOption_static_0300 END');
@@ -192,9 +192,9 @@ it('SUB_ACE_GridRowSizeOption_static_0400', Level.LEVEL0, async (done: () => voi
       let seventhSizeOption: RectValue = CommonFunc.getComponentRect('Grid_Row_SizeOption6');
 
       const uiContext = new UIContext();
-      expect(Math.abs((Math.round(secondSizeOption.left - firstSizeOption.right)) - (Math.round(uiContext.vp2px(5)))) <= 1)
+      expect(Math.abs((Math.round(secondSizeOption.left - firstSizeOption.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(5)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(fifthSizeOption.top - firstSizeOption.bottom)) - (Math.round(uiContext.vp2px(5)))) <= 1)
+      expect(Math.abs((Math.round(fifthSizeOption.top - firstSizeOption.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(5)))) <= 1)
         .assertTrue();
 
       console.info('SUB_ACE_GridRowSizeOption_static_0400 END');
@@ -225,9 +225,9 @@ it('SUB_ACE_GridRowSizeOption_static_0500', Level.LEVEL0, async (done: () => voi
       let sixthSizeOption: RectValue = CommonFunc.getComponentRect('Grid_Row_SizeOption5');
       let seventhSizeOption: RectValue = CommonFunc.getComponentRect('Grid_Row_SizeOption6');
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(secondSizeOption.left - firstSizeOption.right) - Math.round(uiContext.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(secondSizeOption.left - firstSizeOption.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(sixthSizeOption.top - firstSizeOption.bottom) - Math.round(uiContext.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(sixthSizeOption.top - firstSizeOption.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
 
       console.info('SUB_ACE_GridRowSizeOption_static_0500 END');
@@ -259,9 +259,9 @@ it('SUB_ACE_GridRowSizeOption_static_0600', Level.LEVEL0, async (done: () => voi
       let seventhSizeOption: RectValue = CommonFunc.getComponentRect('Grid_Row_SizeOption6');
 
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(secondSizeOption.left - firstSizeOption.right) - Math.round(uiContext.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(secondSizeOption.left - firstSizeOption.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(seventhSizeOption.top - firstSizeOption.bottom) - Math.round(uiContext.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(seventhSizeOption.top - firstSizeOption.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
 
       console.info('SUB_ACE_GridRowSizeOption_static_0600 END');

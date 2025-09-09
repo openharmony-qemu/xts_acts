@@ -87,10 +87,10 @@ export default function ScrollTest() {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      await driver.swipe(((AppStorage.get<number>("winLeft") ?? 0) + Math.round(uiContext.vp2px(67))).toInt(),
-        (Math.round((AppStorage.get<number>("winTop") ?? 0) + uiContext.vp2px(200))).toInt(),
-        (Math.round((AppStorage.get<number>("winLeft") ?? 0) + uiContext.vp2px(67))).toInt(),
-        (Math.round((AppStorage.get<number>("winTop") ?? 0) + uiContext.vp2px(133))).toInt());
+      await driver.swipe(((AppStorage.get<number>("winLeft") ?? 0) + Math.round(UIContext.getFocusedUIContext()!.vp2px(67))).toInt(),
+        (Math.round((AppStorage.get<number>("winTop") ?? 0) + UIContext.getFocusedUIContext()!.vp2px(200))).toInt(),
+        (Math.round((AppStorage.get<number>("winLeft") ?? 0) + UIContext.getFocusedUIContext()!.vp2px(67))).toInt(),
+        (Math.round((AppStorage.get<number>("winTop") ?? 0) + UIContext.getFocusedUIContext()!.vp2px(133))).toInt());
       await CommonFunc.sleep(1000);
       console.info("[ScrollTest_static_001] swipe success");
       let strJson1 = inspector.getInspectorByKey('scrollText');

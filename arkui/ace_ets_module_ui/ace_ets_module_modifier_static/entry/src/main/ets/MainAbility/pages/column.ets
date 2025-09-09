@@ -44,7 +44,6 @@ import {
   MarkStyle,
   MenuAlignType,
   PickerTextStyle,
-  px2vp,
   ResourceColor,
   Row,
   Select,

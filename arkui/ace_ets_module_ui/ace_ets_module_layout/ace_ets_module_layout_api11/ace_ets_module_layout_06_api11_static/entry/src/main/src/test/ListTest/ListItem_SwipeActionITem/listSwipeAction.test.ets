@@ -16,7 +16,7 @@
 
 
 
-import { vp2px } from '@ohos.arkui.component'
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../ets/MainAbility/common/Rect';
@@ -100,9 +100,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0010', Level.LEVEL0,
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0010 value is" + left + " --" + right + "--" + top + "--" + bottom);
       
       driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + vp2px(50))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(50))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + vp2px(53))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(53))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
       await CommonFunc.sleep(5000);
@@ -143,9 +143,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0020', Level.LEVEL0,
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0020 value is" + left + " --" + right + "--" + top + "--" + bottom);
       
       driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + vp2px(20))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(20))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + vp2px(120))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(120))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
       await CommonFunc.sleep(4000);
@@ -187,9 +187,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0030', Level.LEVEL0,
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0030 value is" + left + " --" + right + "--" + top + "--" + bottom);
       
       driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + vp2px(10))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + vp2px(230))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(230))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
       await CommonFunc.sleep(4000);

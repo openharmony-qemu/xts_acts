@@ -103,22 +103,22 @@ it('testWrapNoWrapFlexPaddingOverflow_static', Level.LEVEL0, async () => {
       const uiContext = new UIContext();
       expect(Math.abs((firstText.right) - (secondText.left)) <= 1).assertTrue();
       expect(Math.abs((secondText.right) - (thirdText.left)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(firstText.left - flexContainer.left)) - (Math.round(uiContext.vp2px(60)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.left - flexContainer.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(60)))) <= 1).assertTrue();
       expect(Math.abs((firstText.top) - (secondText.top)) <= 1).assertTrue();
       expect(Math.abs((secondText.top) - (thirdText.top)) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(uiContext.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(uiContext.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(uiContext.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(uiContext.vp2px(380) / 3))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(380) / 3))) <= 1).assertTrue();
       expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(secondText.right - secondText.left))) <= 1)
         .assertTrue();
       expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(thirdText.right - thirdText.left))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(flexContainer.right - thirdText.right)) - (Math.round(uiContext.vp2px(60)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(thirdText.bottom - flexContainer.bottom)) - (Math.round(uiContext.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(flexContainer.right - thirdText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(60)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(thirdText.bottom - flexContainer.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
         .assertTrue();
       console.info('[testWrapNoWrapFlexPaddingOverflow] END');
 
@@ -148,24 +148,24 @@ it('testWrapNoWrapFlexPaddingMeet_static', Level.LEVEL0, async () => {
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row');
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('warp')).assertEqual('FlexWrap.NoWrap');
       const uiContext = new UIContext();
-      expect(Math.abs((Math.round(firstText.left - flexContainer.left)) - (Math.round(uiContext.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.left - flexContainer.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
       expect(Math.abs((firstText.right) - (secondText.left)) <= 1).assertTrue();
       expect(Math.abs((secondText.right) - (thirdText.left)) <= 1).assertTrue();
       expect(Math.abs((firstText.top) - (secondText.top)) <= 1).assertTrue();
       expect(Math.abs((secondText.top) - (thirdText.top)) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(uiContext.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(uiContext.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(uiContext.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(uiContext.vp2px(450) / 3))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(450) / 3))) <= 1).assertTrue();
       expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(secondText.right - secondText.left))) <= 1)
         .assertTrue();
       expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(thirdText.right - thirdText.left))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(flexContainer.right - thirdText.right)) - (Math.round(uiContext.vp2px(40)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(flexContainer.bottom - thirdText.bottom)) - (Math.round(uiContext.vp2px(40)))) <= 1)
+      expect(Math.abs((Math.round(flexContainer.right - thirdText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(40)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(flexContainer.bottom - thirdText.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(40)))) <= 1)
         .assertTrue();
       console.info('[testWrapNoWrapFlexPaddingMeet] END');
 
@@ -203,23 +203,23 @@ it('testWrapNoWrapFlexMargin_static', Level.LEVEL0, async () => {
       expect(Math.abs((firstText.top) - (secondText.top)) <= 1).assertTrue();
       expect(Math.abs((secondText.top) - (thirdText.top)) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(uiContext.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(uiContext.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(uiContext.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(flexContainer.top - columnContainer.top)) - (Math.round(uiContext.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(flexContainer.top - columnContainer.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
         .assertTrue();
       expect(Math.abs((Math.round(flexContainer.top - columnContainer.top)) - (Math.round(firstText.top - columnContainer.top))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(uiContext.vp2px(450) / 3))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(450) / 3))) <= 1).assertTrue();
       expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(secondText.right - secondText.left))) <= 1)
         .assertTrue();
       expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(thirdText.right - thirdText.left))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(flexContainer.right - thirdText.right)) - (Math.round(uiContext.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(flexContainer.bottom - thirdText.bottom)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(flexContainer.right - thirdText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(flexContainer.bottom - thirdText.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
       console.info('[testWrapNoWrapFlexMargin] END');
 
@@ -256,22 +256,22 @@ it('testWrapNoWrapFlexMarPad_static', Level.LEVEL0, async () => {
       expect(Math.abs((firstText.right) - (secondText.left)) <= 1).assertTrue();
       expect(Math.abs((secondText.right) - (thirdText.left)) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(uiContext.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(uiContext.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(uiContext.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(flexContainer.top - columnContainer.top)) - (Math.round(uiContext.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(flexContainer.top - columnContainer.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(firstText.top - columnContainer.top)) - (Math.round(uiContext.vp2px(40)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.top - columnContainer.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(40)))) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(uiContext.vp2px(440) / 3))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(440) / 3))) <= 1).assertTrue();
       expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(secondText.right - secondText.left))) <= 1)
         .assertTrue();
       expect(Math.abs((Math.round(secondText.right - secondText.left)) - (Math.round(thirdText.right - thirdText.left))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(flexContainer.right - thirdText.right)) - (Math.round(uiContext.vp2px(30)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(flexContainer.bottom - thirdText.bottom)) - (Math.round(uiContext.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(flexContainer.right - thirdText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(flexContainer.bottom - thirdText.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
         .assertTrue();
       console.info('[testWrapNoWrapFlexMarPad] END');
 

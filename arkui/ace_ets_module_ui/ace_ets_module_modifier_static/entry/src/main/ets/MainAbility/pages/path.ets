@@ -86,7 +86,6 @@ import {
   Padding,
   Path,
   PickerTextStyle,
-  px2vp,
   RepeatMode,
   ResourceColor,
   Row,

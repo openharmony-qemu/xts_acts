@@ -46,7 +46,7 @@ const searchIconLeftSpace = 12;
 const searchIconRightSpace = 8;
 const defaultSearchIconWidth = 16;
 const relativeContentRectLeftWidth =
-  parseInt(Number(uiContext.vp2px(searchIconLeftSpace + searchIconRightSpace + defaultSearchIconWidth)).toFixed(2));
+  parseInt(Number(UIContext.getFocusedUIContext()!.vp2px(searchIconLeftSpace + searchIconRightSpace + defaultSearchIconWidth)).toFixed(2));
 
 export default function search_gesture() {
   describe('search_gesture', () => {
@@ -174,7 +174,7 @@ it('SUB_ACE_UI_SEARCH_GESTURE_static_0200', Level.LEVEL0, async (done: () => voi
         console.info(`[search_gesture_002] caretOffsetX is:${obj.getElement('$attrs').getString('content')}`);
         let caretRelativeX = parseInt(obj.getElement('$attrs').getString('content'));
         let searchRect = CommonFunc.getComponentRectOnScreen('SearchGesture');
-        let clickX = Math.round(searchRect.left + caretRelativeX + relativeContentRectLeftWidth - uiContext.vp2px(10)) as int;
+        let clickX = Math.round(searchRect.left + caretRelativeX + relativeContentRectLeftWidth - UIContext.getFocusedUIContext()!.vp2px(10)) as int;
         let clickY = Math.round((searchRect.bottom + searchRect.top) / 2) as int;
         await (driver.longClick(clickX, clickY) as Promise<void>);
         await CommonFunc.sleep(1000);
@@ -189,7 +189,7 @@ it('SUB_ACE_UI_SEARCH_GESTURE_static_0200', Level.LEVEL0, async (done: () => voi
         console.info(`[search_gesture_002] first step Search selectOverlay obj2 is:${strJson2}`);
         
         
-        let clickX2 = Math.round(searchRect.left + caretRelativeX + relativeContentRectLeftWidth + uiContext.vp2px(2)) as int;
+        let clickX2 = Math.round(searchRect.left + caretRelativeX + relativeContentRectLeftWidth + UIContext.getFocusedUIContext()!.vp2px(2)) as int;
         await (driver.longClick(clickX2, clickY) as Promise<void>);
         await CommonFunc.sleep(1000);
         let strJson3 = inspector.getInspectorByKey('SearchGesture');
@@ -292,7 +292,7 @@ it('SUB_ACE_UI_SEARCH_GESTURE_static_0400', Level.LEVEL2, async (done: () => voi
         
         let searchRect = await searchComponent.getBounds();
         await driver.mouseMoveTo({
-          x: (point.x as int), y: Math.round(searchRect.bottom + uiContext.vp2px(2)) as int
+          x: (point.x as int), y: Math.round(searchRect.bottom + UIContext.getFocusedUIContext()!.vp2px(2)) as int
         });
         await CommonFunc.sleep(300);
         let focusState2 = await (searchComponent.isFocused() as Promise<boolean>);

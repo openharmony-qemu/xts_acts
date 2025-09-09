@@ -156,9 +156,9 @@ export default function Tabs_itemPadMar() {
         ${Math.round(Tabs_itemPadMar_001.left - Tabs_itemPadMar_011.left)}`);
 
       expect(Math.abs(Math.round(Tabs_itemPadMar_001.left - Tabs_itemPadMar_011.left) -
-      Math.round(uiContext.vp2px(20))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_itemPadMar_001.top - Tabs_itemPadMar_011.top) -
-      Math.round(uiContext.vp2px(20))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
 
 
       expect(Math.abs(Tabs_itemPadMar_002.left - Tabs_itemPadMar_012.left) <= 1).assertTrue();
@@ -170,44 +170,44 @@ export default function Tabs_itemPadMar() {
       console.info(`[testTabsItemPad_static_01] Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top=
         ${Math.round(Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top)}`);
       expect(Math.abs(Math.round(Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_itemPadMar_012.bottom - Tabs_itemPadMar_012.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_itemPadMar_013.bottom - Tabs_itemPadMar_013.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
 
 
-      expect(Math.abs(Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_itemPadMar_013.right - Tabs_itemPadMar_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_itemPadMar_013.right - Tabs_itemPadMar_013.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
 
       console.info(`[testTabsItemPad_static_01] Tabs_itemPadMar_001.bottom - Tabs_itemPadMar_001.top=
         ${Math.round(Tabs_itemPadMar_001.bottom - Tabs_itemPadMar_001.top)}`);
       expect(Math.abs(Math.round(Tabs_itemPadMar_001.bottom - Tabs_itemPadMar_001.top) -
-      Math.round(uiContext.vp2px(204))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(204))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_itemPadMar_002.bottom - Tabs_itemPadMar_002.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_itemPadMar_003.bottom - Tabs_itemPadMar_003.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
 
 
       expect(Math.abs(Math.round(Tabs_itemPadMar_001.right - Tabs_itemPadMar_001.left) -
-      Math.round(uiContext.vp2px(290))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(290))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_itemPadMar_002.right - Tabs_itemPadMar_002.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(330))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_itemPadMar_003.right - Tabs_itemPadMar_003.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(330))) <= 1).assertTrue();
 
       console.info(`[testTabsItemPad_static_01] subGreen.bottom - subGreen.top=${Math.round(subGreen.bottom -
       subGreen.top)}`);
 
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
+      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1)
         .assertTrue();
 
 
@@ -277,8 +277,8 @@ export default function Tabs_itemPadMar() {
 
 
       expect(Math.abs(Math.round(Tabs_itemPadMar_011.left - Tabs_itemPadMar_01.left) -
-      Math.round(uiContext.vp2px(20))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_itemPadMar_011.top - subGreen.bottom) - Math.round(uiContext.vp2px(20))) <= 1)
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(Tabs_itemPadMar_011.top - subGreen.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
       expect(Math.abs(Tabs_itemPadMar_012.left - Tabs_itemPadMar_01.left) <= 1).assertTrue();
       expect(Math.abs(Tabs_itemPadMar_012.top - subBlue.bottom) <= 1).assertTrue();
@@ -302,43 +302,43 @@ export default function Tabs_itemPadMar() {
 
 
       expect(Math.abs(Math.round(Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top) -
-      Math.round(uiContext.vp2px(204))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(204))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_itemPadMar_012.bottom - Tabs_itemPadMar_012.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_itemPadMar_013.bottom - Tabs_itemPadMar_013.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
 
 
       expect(Math.abs(Math.round(Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left) -
-      Math.round(uiContext.vp2px(290))) <= 1).assertTrue();
-      expect(Math.abs(Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_itemPadMar_013.right - Tabs_itemPadMar_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(290))) <= 1).assertTrue();
+      expect(Math.abs(Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_itemPadMar_013.right - Tabs_itemPadMar_013.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
 
       console.info(`[testTabsItemMar_static_02] Tabs_itemPadMar_001.bottom - Tabs_itemPadMar_001.top=
         ${Math.round(Tabs_itemPadMar_001.bottom - Tabs_itemPadMar_001.top)}`);
 
       expect(Math.abs(Math.round(Tabs_itemPadMar_001.bottom - Tabs_itemPadMar_001.top) -
-      Math.round(uiContext.vp2px(204))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(204))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_itemPadMar_002.bottom - Tabs_itemPadMar_002.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_itemPadMar_003.bottom - Tabs_itemPadMar_003.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
 
 
       expect(Math.abs(Math.round(Tabs_itemPadMar_001.right - Tabs_itemPadMar_001.left) -
-      Math.round(uiContext.vp2px(290))) <= 1).assertTrue();
-      expect(Math.abs(Tabs_itemPadMar_002.right - Tabs_itemPadMar_002.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_itemPadMar_003.right - Tabs_itemPadMar_003.left - uiContext.vp2px(330)) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(290))) <= 1).assertTrue();
+      expect(Math.abs(Tabs_itemPadMar_002.right - Tabs_itemPadMar_002.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_itemPadMar_003.right - Tabs_itemPadMar_003.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
 
       console.info(`[testTabsItemMar_static_02] subGreen.bottom - subGreen.top=
         ${Math.round(subGreen.bottom - subGreen.top)}`);
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
+      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1)
         .assertTrue();
 
 
@@ -407,8 +407,8 @@ export default function Tabs_itemPadMar() {
         ${Math.round(Tabs_itemPadMar_011.left - Tabs_itemPadMar_01.left)}`);
 
       expect(Math.abs(Math.round(Tabs_itemPadMar_011.left - Tabs_itemPadMar_01.left) -
-      Math.round(uiContext.vp2px(20))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_itemPadMar_011.top - subGreen.bottom) - Math.round(uiContext.vp2px(20))) <= 1)
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(Tabs_itemPadMar_011.top - subGreen.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
       expect(Math.abs(Tabs_itemPadMar_012.left - Tabs_itemPadMar_01.left) <= 1).assertTrue();
       expect(Math.abs(Tabs_itemPadMar_012.top - subBlue.bottom) <= 1).assertTrue();
@@ -419,9 +419,9 @@ export default function Tabs_itemPadMar() {
         ${Math.round(Tabs_itemPadMar_001.left - Tabs_itemPadMar_011.left)}`);
 
       expect(Math.abs(Math.round(Tabs_itemPadMar_001.left - Tabs_itemPadMar_011.left) -
-      Math.round(uiContext.vp2px(20))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_itemPadMar_001.top - Tabs_itemPadMar_011.top) -
-      Math.round(uiContext.vp2px(20))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
       expect(Math.abs(Tabs_itemPadMar_002.left - Tabs_itemPadMar_012.left) <= 1).assertTrue();
       expect(Math.abs(Tabs_itemPadMar_002.top - Tabs_itemPadMar_012.top) <= 1).assertTrue();
       expect(Math.abs(Tabs_itemPadMar_003.left - Tabs_itemPadMar_013.left) <= 1).assertTrue();
@@ -430,16 +430,16 @@ export default function Tabs_itemPadMar() {
       console.info(`[testTabsItemPadMar_static_03] Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top=
         ${Math.round(Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top)}`);
       expect(Math.abs(Math.round(Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top) -
-      Math.round(uiContext.vp2px(204))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(204))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_itemPadMar_012.bottom - Tabs_itemPadMar_012.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_itemPadMar_013.bottom - Tabs_itemPadMar_013.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
 
       expect(Math.abs(Math.round(Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left) -
-      Math.round(uiContext.vp2px(290))) <= 1).assertTrue();
-      expect(Math.abs(Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_itemPadMar_013.right - Tabs_itemPadMar_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(290))) <= 1).assertTrue();
+      expect(Math.abs(Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_itemPadMar_013.right - Tabs_itemPadMar_013.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
 
       console.info(`[testTabsItemPadMar_static_03] Tabs_itemPadMar_001.bottom - Tabs_itemPadMar_001.top=
         ${Math.round(Tabs_itemPadMar_001.bottom - Tabs_itemPadMar_001.top)}`);
@@ -448,28 +448,28 @@ export default function Tabs_itemPadMar() {
         ${(Tabs_itemPadMar_001.top - Tabs_itemPadMar_011.top)}`);
 
       expect(Math.abs(Math.floor((Tabs_itemPadMar_001.bottom - Tabs_itemPadMar_001.top) -
-        (uiContext.vp2px(300 - 56) - 4 * padMar))) <= 1).assertTrue();
+        (UIContext.getFocusedUIContext()!.vp2px(300 - 56) - 4 * padMar))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_itemPadMar_002.bottom - Tabs_itemPadMar_002.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_itemPadMar_003.bottom - Tabs_itemPadMar_003.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
 
 
       expect(Math.abs(Math.floor((Tabs_itemPadMar_001.right - Tabs_itemPadMar_001.left) -
-        (uiContext.vp2px(330) - 4 * padMar))) <= 1).assertTrue();
-      expect(Math.abs(Tabs_itemPadMar_002.right - Tabs_itemPadMar_002.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_itemPadMar_003.right - Tabs_itemPadMar_003.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        (UIContext.getFocusedUIContext()!.vp2px(330) - 4 * padMar))) <= 1).assertTrue();
+      expect(Math.abs(Tabs_itemPadMar_002.right - Tabs_itemPadMar_002.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_itemPadMar_003.right - Tabs_itemPadMar_003.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
 
       console.info(`[testTabsItemPadMar_static_03] subGreen.bottom - subGreen.top=
         ${Math.round(subGreen.bottom - subGreen.top)}`);
 
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
+      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1)
         .assertTrue();
 
 

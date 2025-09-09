@@ -96,7 +96,7 @@ export default function textPickerDefaultPickerItemHeightJsunit() {
       console.info("[testtextPickerDefaultPickerItemHeight_static_0002] component height strJson:" + strJson);
       let obj= JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('TextPicker');
-      let numberValue = uiContext!.vp2px(Number.parseFloat(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height'))) - Number.parseFloat(JSON.parseJsonElement(strJson).getElement('$attrs').getString('getdefaultPickerItemHeight')) * 5
+      let numberValue = UIContext.getFocusedUIContext()!.vp2px(Number.parseFloat(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height'))) - Number.parseFloat(JSON.parseJsonElement(strJson).getElement('$attrs').getString('getdefaultPickerItemHeight')) * 5
       expect(Math.abs(numberValue) <= 1).assertTrue();
       console.info("[testtextPickerDefaultPickerItemHeight_static_0002] height value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('height'));
 

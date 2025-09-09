@@ -57,7 +57,7 @@ class MyCustomSpan extends CustomSpan {
     canvas.attachBrush(brush);
     canvas.drawRect({
       left: options.x + 10,
-      right: options.x + gUIContext.vp2px(this.width) - 10,
+      right: options.x + UIContext.getFocusedUIContext()!.vp2px(this.width) - 10,
       top: options.lineTop + 10,
       bottom: options.lineBottom - 10
     });

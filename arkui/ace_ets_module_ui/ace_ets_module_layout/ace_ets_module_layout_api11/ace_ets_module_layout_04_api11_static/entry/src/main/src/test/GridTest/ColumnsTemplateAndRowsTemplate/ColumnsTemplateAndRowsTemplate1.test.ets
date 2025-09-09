@@ -93,16 +93,16 @@ export default function ColumnsTemplateAndRowsTemplate1() {
         console.log('GridItem_01.left' + GridItem_01.left)
         console.log('Grid_1.left' + Grid_1.left)
         const uiContext = new UIContext();
-        expect(Math.round(GridItem_01.left - Grid_1.left)).assertEqual(Math.round(uiContext.vp2px(0)));
+        expect(Math.round(GridItem_01.left - Grid_1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(0)));
         console.log('GridItem_01.left - Grid_1.left' + (GridItem_01.left - Grid_1.left))
-        expect(Math.round(GridItem_01.top - Grid_1.top)).assertEqual(Math.round(uiContext.vp2px(60)));
+        expect(Math.round(GridItem_01.top - Grid_1.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(60)));
         console.log('GridItem_01.left - Grid_1.left' + (GridItem_01.left - Grid_1.left))
 
         console.log('assert size')
 
-        expect(Math.round(GridItem_01.right - GridItem_01.left)).assertEqual(Math.round(uiContext.vp2px(180)));
+        expect(Math.round(GridItem_01.right - GridItem_01.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(180)));
         console.log('GridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
-        expect(Math.round(GridItem_01.bottom - GridItem_01.top)).assertEqual(Math.round(uiContext.vp2px(60)));
+        expect(Math.round(GridItem_01.bottom - GridItem_01.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(60)));
         console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
 
 
@@ -133,9 +133,9 @@ export default function ColumnsTemplateAndRowsTemplate1() {
           console.log('assert position')
           const uiContext = new UIContext();
           console.log('assert size')
-          expect(Math.round(GridItem_01.right - GridItem_01.left)).assertEqual(Math.round(uiContext.vp2px(60)));
+          expect(Math.round(GridItem_01.right - GridItem_01.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(60)));
           console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
-          expect(Math.round(GridItem_01.bottom - GridItem_01.top)).assertEqual(Math.round(uiContext.vp2px(60)));
+          expect(Math.round(GridItem_01.bottom - GridItem_01.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(60)));
           console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
 
           console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0200] END');
@@ -169,15 +169,15 @@ export default function ColumnsTemplateAndRowsTemplate1() {
         console.log('GridItem_01.left' + GridItem_01.left)
         console.log('Grid_1.left' + Grid_1.left)
         const uiContext = new UIContext();
-        expect(Math.round(GridItem_01.left - Grid_1.left)).assertEqual(Math.round(uiContext.vp2px(0)));
+        expect(Math.round(GridItem_01.left - Grid_1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(0)));
         console.log('GridItem_01.left - Grid_1.left' + (GridItem_01.left - Grid_1.left))
-        expect(Math.round(GridItem_01.top - Grid_1.top)).assertEqual(Math.round(uiContext.vp2px(0)));
+        expect(Math.round(GridItem_01.top - Grid_1.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(0)));
         console.log('GridItem_01.left - Grid_1.left' + (GridItem_01.left - Grid_1.left))
 
         console.log('assert size')
-        expect(Math.round(GridItem_01.right - GridItem_01.left)).assertEqual(Math.round(uiContext.vp2px(60)));
+        expect(Math.round(GridItem_01.right - GridItem_01.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(60)));
         console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
-        expect(Math.round(GridItem_01.bottom - GridItem_01.top)).assertEqual(Math.round(uiContext.vp2px(60)));
+        expect(Math.round(GridItem_01.bottom - GridItem_01.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(60)));
         console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
 
         console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0400] END');
@@ -208,15 +208,15 @@ export default function ColumnsTemplateAndRowsTemplate1() {
         console.log('GridItem_01.left' + GridItem_01.left)
         console.log('Grid_1.left' + Grid_1.left)
         const uiContext = new UIContext();
-        expect(Math.round(GridItem_01.left - Grid_1.left)).assertEqual(Math.round(uiContext.vp2px(0)));
+        expect(Math.round(GridItem_01.left - Grid_1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(0)));
         console.log('GridItem_01.left - Grid_1.left' + (GridItem_01.left - Grid_1.left))
-        expect(Math.round(GridItem_01.top - Grid_1.top)).assertEqual(Math.round(uiContext.vp2px(0)));
+        expect(Math.round(GridItem_01.top - Grid_1.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(0)));
         console.log('GridItem_01.left - Grid_1.left' + (GridItem_01.left - Grid_1.left))
 
         console.log('assert size')
-        expect(Math.round(GridItem_01.right - GridItem_01.left)).assertEqual(Math.round(uiContext.vp2px(120)));
+        expect(Math.round(GridItem_01.right - GridItem_01.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(120)));
         console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
-        expect(Math.round(GridItem_01.bottom - GridItem_01.top)).assertEqual(Math.round(uiContext.vp2px(120)));
+        expect(Math.round(GridItem_01.bottom - GridItem_01.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(120)));
         console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
 
         console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0500] END');
@@ -247,14 +247,14 @@ export default function ColumnsTemplateAndRowsTemplate1() {
         console.log('GridItem_01.left' + GridItem_01.left)
         console.log('Grid_1.left' + Grid_1.left)
         const uiContext = new UIContext();
-        expect(Math.round(GridItem_01.left - Grid_1.left)).assertEqual(Math.round(uiContext.vp2px(0)));
+        expect(Math.round(GridItem_01.left - Grid_1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(0)));
         console.log('GridItem_01.left - Grid_1.left' + (GridItem_01.left - Grid_1.left))
 
 
         console.log('assert size')
-        expect(Math.round(GridItem_01.right - GridItem_01.left)).assertEqual(Math.round(uiContext.vp2px(120)));
+        expect(Math.round(GridItem_01.right - GridItem_01.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(120)));
         console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
-        expect(Math.round(GridItem_01.bottom - GridItem_01.top)).assertEqual(Math.round(uiContext.vp2px(60)));
+        expect(Math.round(GridItem_01.bottom - GridItem_01.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(60)));
         console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
 
         console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0600] END');
@@ -282,9 +282,9 @@ export default function ColumnsTemplateAndRowsTemplate1() {
 
         const uiContext = new UIContext();
         console.log('assert size')
-        expect(Math.round(GridItem_01.right - GridItem_01.left)).assertEqual(Math.round(uiContext.vp2px(120)));
+        expect(Math.round(GridItem_01.right - GridItem_01.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(120)));
         console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
-        expect(Math.round(GridItem_01.bottom - GridItem_01.top)).assertEqual(Math.round(uiContext.vp2px(60)));
+        expect(Math.round(GridItem_01.bottom - GridItem_01.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(60)));
         console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
 
         console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0700] END');

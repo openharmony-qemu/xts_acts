@@ -114,18 +114,18 @@ export default function SwiperAttribute_2() {
         expect(Math.abs(Math.round(columnRect.bottom - rect.bottom)) <= 1).assertTrue();
         const uiContext = new UIContext();
         console.info("SwiperAttribute_static_0090 abs rect top vp is " +
-        uiContext.vp2px(Math.abs(Math.round(parentColumnRectTop - columnRect.top))));
+        UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(parentColumnRectTop - columnRect.top))));
         console.info("SwiperAttribute_static_0090 abs rect right vp is " +
-        uiContext.vp2px(Math.abs(Math.round(parentColumnRectRight - columnRect.right))));
+        UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(parentColumnRectRight - columnRect.right))));
         console.info("SwiperAttribute_static_0090 abs rect left vp is " +
-        uiContext.vp2px(Math.abs(Math.round(parentColumnRectLeft - columnRect.left))));
+        UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(parentColumnRectLeft - columnRect.left))));
         console.info("SwiperAttribute_static_0090 abs rect bottom vp is " +
-        uiContext.vp2px(Math.abs(Math.round(parentColumnRectBottom - columnRect.bottom))));
+        UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(parentColumnRectBottom - columnRect.bottom))));
 
-        expect(uiContext.vp2px(Math.abs(Math.round(parentColumnRectTop - columnRect.top))) - 20 <= 1).assertTrue();
-        expect(uiContext.vp2px(Math.abs(Math.round(parentColumnRectRight - columnRect.right))) - 20 <= 1).assertTrue();
-        expect(uiContext.vp2px(Math.abs(Math.round(parentColumnRectLeft - columnRect.left))) - 20 <= 1).assertTrue();
-        expect(uiContext.vp2px(Math.abs(Math.round(parentColumnRectBottom - columnRect.bottom))) - 20 <= 1)
+        expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(parentColumnRectTop - columnRect.top))) - 20 <= 1).assertTrue();
+        expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(parentColumnRectRight - columnRect.right))) - 20 <= 1).assertTrue();
+        expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(parentColumnRectLeft - columnRect.left))) - 20 <= 1).assertTrue();
+        expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(parentColumnRectBottom - columnRect.bottom))) - 20 <= 1)
           .assertTrue();
       }
 

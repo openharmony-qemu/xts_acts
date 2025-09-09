@@ -97,8 +97,8 @@ it('testGridRowColItemMargin_static_01', Level.LEVEL0, async (done: () => void):
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
       const uiContext = new UIContext();
-      expect(Math.abs(secondGridItem.left - firstGridItem.right - uiContext.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs(secondGridItem.top - gridContainer.top - uiContext.vp2px(10)) <= 1).assertTrue(); 
+      expect(Math.abs(secondGridItem.left - firstGridItem.right - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(secondGridItem.top - gridContainer.top - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue(); 
 
       expect(Math.abs(secondGridItem.left - secondText.left) <= 1).assertTrue();
       expect(Math.abs(secondGridItem.top - secondText.top) <= 1).assertTrue();
@@ -115,8 +115,8 @@ it('testGridRowColItemMargin_static_01', Level.LEVEL0, async (done: () => void):
       expect(Math.abs(fourthGridItem.left - thirdGridItem.right) <= 1).assertTrue();
       expect(Math.abs(fourthGridItem.top - thirdGridItem.top) <= 1).assertTrue();
 
-      expect(Math.abs(firstGridItem.right - firstGridItem.left - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(firstGridItem.bottom - firstGridItem.top - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(firstGridItem.right - firstGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(firstGridItem.bottom - firstGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
 
       let mar: number = secondGridItem.left - firstGridItem.right
       let marWid: number = fourthGridItem.right - fourthGridItem.left
@@ -128,13 +128,13 @@ it('testGridRowColItemMargin_static_01', Level.LEVEL0, async (done: () => void):
         ${(fourthGridItem.right - fourthGridItem.left)}`);
       expect(Math.floor(Math.abs((secondGridItem.right - secondGridItem.left) - (marWid - 2*mar))) <= 1).assertTrue();
       expect(Math.abs(Math.round(secondGridItem.bottom - secondGridItem.top) -
-        Math.round(uiContext.vp2px(130))) <= 1).assertTrue();
+        Math.round(UIContext.getFocusedUIContext()!.vp2px(130))) <= 1).assertTrue();
 
-      expect(Math.abs(thirdGridItem.right - thirdGridItem.left - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(thirdGridItem.bottom - thirdGridItem.top - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(thirdGridItem.right - thirdGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(thirdGridItem.bottom - thirdGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
 
-      expect(Math.abs(fourthGridItem.right - fourthGridItem.left - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(fourthGridItem.bottom - fourthGridItem.top - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(fourthGridItem.right - fourthGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(fourthGridItem.bottom - fourthGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
 
       console.info('[testGridRowColItemMargin_static_01] END');
       done();
@@ -164,10 +164,10 @@ it('testGridRowColItemPadding_static_02', Level.LEVEL0, async (done: () => void)
       let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemPadMar_Container01');
       const uiContext = new UIContext();
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
-      expect(Math.abs(secondText.left - secondGridItem.left - uiContext.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs(secondText.top - secondGridItem.top - uiContext.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs(secondGridItem.right - secondText.right - uiContext.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs(secondGridItem.bottom - secondText.bottom - uiContext.vp2px(10)) <= 1).assertTrue(); 
+      expect(Math.abs(secondText.left - secondGridItem.left - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(secondText.top - secondGridItem.top - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(secondGridItem.right - secondText.right - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(secondGridItem.bottom - secondText.bottom - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue(); 
 
       expect(Math.abs(firstGridItem.left - gridContainer.left) <= 1).assertTrue();
       expect(Math.abs(firstGridItem.top - gridContainer.top) <= 1).assertTrue();
@@ -178,17 +178,17 @@ it('testGridRowColItemPadding_static_02', Level.LEVEL0, async (done: () => void)
       expect(Math.abs(fourthGridItem.left - thirdGridItem.right) <= 1).assertTrue();
       expect(Math.abs(fourthGridItem.top - thirdGridItem.top) <= 1).assertTrue();
 
-      expect(Math.abs(firstGridItem.right - firstGridItem.left - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(firstGridItem.bottom - firstGridItem.top - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(firstGridItem.right - firstGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(firstGridItem.bottom - firstGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
 
-      expect(Math.abs(secondGridItem.right - secondGridItem.left - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(secondGridItem.bottom - secondGridItem.top - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(secondGridItem.right - secondGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(secondGridItem.bottom - secondGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
 
-      expect(Math.abs(thirdGridItem.right - thirdGridItem.left - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(thirdGridItem.bottom - thirdGridItem.top - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(thirdGridItem.right - thirdGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(thirdGridItem.bottom - thirdGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
 
-      expect(Math.abs(fourthGridItem.right - fourthGridItem.left - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(fourthGridItem.bottom - fourthGridItem.top - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(fourthGridItem.right - fourthGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(fourthGridItem.bottom - fourthGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
       console.info('[testGridRowColItemPadding_static_02] END');
       done();
     });
@@ -221,13 +221,13 @@ it('testGridRowColItemMarPad_static_03', Level.LEVEL0, async (done: () => void):
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
       const uiContext = new UIContext();
-      expect(Math.abs(secondGridItem.left - firstGridItem.right - uiContext.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs(secondGridItem.top - gridContainer.top - uiContext.vp2px(10)) <= 1).assertTrue(); 
+      expect(Math.abs(secondGridItem.left - firstGridItem.right - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(secondGridItem.top - gridContainer.top - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue(); 
 
-      expect(Math.abs(secondText.left - secondGridItem.left - uiContext.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs(secondText.top - secondGridItem.top - uiContext.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs(secondGridItem.right - secondText.right - uiContext.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs(secondGridItem.bottom - secondText.bottom - uiContext.vp2px(10)) <= 1).assertTrue(); 
+      expect(Math.abs(secondText.left - secondGridItem.left - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(secondText.top - secondGridItem.top - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(secondGridItem.right - secondText.right - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(secondGridItem.bottom - secondText.bottom - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue(); 
 
       expect(Math.abs(firstGridItem.left - gridContainer.left) <= 1).assertTrue();
       expect(Math.abs(firstGridItem.top - gridContainer.top) <= 1).assertTrue();
@@ -236,8 +236,8 @@ it('testGridRowColItemMarPad_static_03', Level.LEVEL0, async (done: () => void):
       expect(Math.abs(fourthGridItem.left - thirdGridItem.right) <= 1).assertTrue();
       expect(Math.abs(fourthGridItem.top - thirdGridItem.top) <= 1).assertTrue();
 
-      expect(Math.abs(firstGridItem.right - firstGridItem.left - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(firstGridItem.bottom - firstGridItem.top - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(firstGridItem.right - firstGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(firstGridItem.bottom - firstGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
 
       let mar: number = secondGridItem.left - firstGridItem.right
       let marWid: number = fourthGridItem.right - fourthGridItem.left
@@ -249,13 +249,13 @@ it('testGridRowColItemMarPad_static_03', Level.LEVEL0, async (done: () => void):
         ${(fourthGridItem.right - fourthGridItem.left)}`);
       expect(Math.floor(Math.abs((secondGridItem.right - secondGridItem.left) - (marWid - 2*mar))) <= 1).assertTrue();
       expect(Math.abs(Math.round(secondGridItem.bottom - secondGridItem.top) -
-        Math.round(uiContext.vp2px(130))) <= 1).assertTrue();
+        Math.round(UIContext.getFocusedUIContext()!.vp2px(130))) <= 1).assertTrue();
 
-      expect(Math.abs(thirdGridItem.right - thirdGridItem.left - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(thirdGridItem.bottom - thirdGridItem.top - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(thirdGridItem.right - thirdGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(thirdGridItem.bottom - thirdGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
 
-      expect(Math.abs(fourthGridItem.right - fourthGridItem.left - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(fourthGridItem.bottom - fourthGridItem.top - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(fourthGridItem.right - fourthGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(fourthGridItem.bottom - fourthGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
 
       console.info('[testGridRowColItemMarPad_static_03] END');
       done();

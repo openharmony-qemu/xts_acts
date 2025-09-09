@@ -111,7 +111,7 @@ export default function offsetEdgeBtm() {
       console.info('[offsetEdgeBtm_static_0100] list.bottom: ' + list.bottom);
       console.info('[offsetEdgeBtm_static_0100] listItem.bottom: ' + listItem.bottom);
       await CommonFunc.sleep(1000);
-      expect(Math.abs(Math.round(list.bottom - listItem.bottom) - Math.round((new UIContext).vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(list.bottom - listItem.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
       console.info('[offsetEdgeBtm_static_0100] END');
       done();

@@ -109,9 +109,9 @@ export default function swiperGroupTest() {
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipe(Math.round(winLeft + Math.round(btRight) - Math.round(uiContext.vp2px(20))) as Int,
+      await driver.swipe(Math.round(winLeft + Math.round(btRight) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) as Int,
         Math.round(winTop + Math.round(btBottom / 2)) as Int,
-        Math.round(winLeft + Math.round(btLeft) as Int + Math.round(uiContext.vp2px(10))) as Int,
+        Math.round(winLeft + Math.round(btLeft) as Int + Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) as Int,
         Math.round(winTop + Math.round(btBottom / 2)) as Int);
       await CommonFunc.sleep(4800);
       

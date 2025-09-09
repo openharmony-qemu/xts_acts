@@ -95,11 +95,11 @@ it('testRowTextLayoutWeight_static_01', Level.LEVEL0, async (done: () => void): 
       let obj: Record<string, Object> = JSON.parse<Object>(rowContainerStrJson, Type.of(new String() as Object)) as Record<string, Object>;
       expect(obj['$type']).assertEqual('Row');
       const uiContext = new UIContext();
-      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(uiContext.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(uiContext.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(uiContext.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(uiContext.vp2px(110)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(110)))) <= 1).assertTrue();
       expect(Math.abs(Math.round(secondText.right - secondText.left) - Math.round(firstText.right - firstText.left)) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(thirdText.right - thirdText.left) - Math.round(secondText.right - secondText.left)) <= 1)
@@ -113,7 +113,7 @@ it('testRowTextLayoutWeight_static_01', Level.LEVEL0, async (done: () => void): 
         .assertTrue();
 
       expect(Math.abs(firstText.left - rowContainer.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(secondText.left - firstText.right)) - (Math.round(uiContext.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(secondText.left - firstText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
       expect(Math.abs(Math.round(secondText.left - firstText.right) - Math.round(thirdText.left - secondText.right)) <= 1)
         .assertTrue();
 

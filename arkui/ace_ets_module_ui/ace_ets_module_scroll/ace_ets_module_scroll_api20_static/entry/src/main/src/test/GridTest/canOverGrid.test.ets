@@ -91,9 +91,9 @@ export default function canOverGrid() {
       console.info(`[canOverGrid_static_0100] gridItem0.top=
         ${gridItem0.top}`);
       const uiContext = new UIContext()
-      console.info(`[canOverGrid_static_0100] gridItem0.top - vp2px(30)=
-        ${gridItem0.top - uiContext.vp2px(30)}`);
-      expect(Math.floor(Math.abs(gridItem0.top - uiContext.vp2px(30) - grid.top)) <= 1).assertTrue();
+      console.info(`[canOverGrid_static_0100] gridItem0.top - UIContext.getFocusedUIContext()!.vp2px(30)=
+        ${gridItem0.top - UIContext.getFocusedUIContext()!.vp2px(30)}`);
+      expect(Math.floor(Math.abs(gridItem0.top - UIContext.getFocusedUIContext()!.vp2px(30) - grid.top)) <= 1).assertTrue();
       console.info('[canOverGrid_static_0100] END');
       done();
     });

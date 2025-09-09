@@ -102,20 +102,20 @@ it('SUB_ACE_Column_Space_Default_TEST_static_0200', Level.LEVEL0, async () => {
       expect(Math.abs(Column_Space_Default_012.top - Column_Space_Default_011.bottom - (Column_Space_Default_013.top - Column_Space_Default_012.bottom)) <= 1)
         .assertTrue();
       console.log('assert space')
-      expect(Math.abs(Column_Space_Default_012.top - Column_Space_Default_011.bottom - uiContext.vp2px(0)) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_013.top - Column_Space_Default_012.bottom - uiContext.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_012.top - Column_Space_Default_011.bottom - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_013.top - Column_Space_Default_012.bottom - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
       console.log('Column_Space_Default_012.top - Column_Space_Default_011.bottom', +(Column_Space_Default_012.top - Column_Space_Default_011.bottom))
       console.log('Column_Space_Default_013.top - Column_Space_Default_012.bottom', +(Column_Space_Default_013.top - Column_Space_Default_012.bottom))
       expect(Math.abs(Column_Space_Default_01.top - Column_Space_Default_011.top) <= 1).assertTrue();
       expect(Column_Space_Default_013.bottom).assertLess(Column_Space_Default_01.bottom);
       console.log('assert height')
-      expect(Math.abs(Column_Space_Default_011.bottom - Column_Space_Default_011.top - uiContext.vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_012.bottom - Column_Space_Default_012.top - uiContext.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_013.bottom - Column_Space_Default_013.top - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_011.bottom - Column_Space_Default_011.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_012.bottom - Column_Space_Default_012.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_013.bottom - Column_Space_Default_013.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
       console.log('assert weight')
-      expect(Math.abs(Column_Space_Default_011.right - Column_Space_Default_011.left - uiContext.vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_012.right - Column_Space_Default_012.left - uiContext.vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_013.right - Column_Space_Default_013.left - uiContext.vp2px(300)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_011.right - Column_Space_Default_011.left - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_012.right - Column_Space_Default_012.left - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_013.right - Column_Space_Default_013.left - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
       console.info('[SUB_ACE_Column_Space_Default_TEST_static_0200] END');
     });
     
@@ -149,20 +149,20 @@ it('SUB_ACE_Column_Space_Default_TEST_static_0300', Level.LEVEL0, async () => {
         .assertTrue();
       expect(Math.abs(Column_Space_Default_012.top - Column_Space_Default_011.bottom - (Column_Space_Default_013.top - Column_Space_Default_012.bottom)) <= 1)
         .assertTrue();
-      expect(Math.abs(Column_Space_Default_012.top - Column_Space_Default_011.bottom - uiContext.vp2px(0)) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_013.top - Column_Space_Default_012.bottom - uiContext.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_012.top - Column_Space_Default_011.bottom - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_013.top - Column_Space_Default_012.bottom - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
       console.log('Column_Space_Default_012.top - Column_Space_Default_011.bottom', +(Column_Space_Default_012.top - Column_Space_Default_011.bottom))
       console.log('Column_Space_Default_013.top - Column_Space_Default_012.bottom', +(Column_Space_Default_013.top - Column_Space_Default_012.bottom))
       expect(Math.abs(Column_Space_Default_01.top - Column_Space_Default_011.top) <= 1).assertTrue();
       expect(Column_Space_Default_013.bottom).assertLess(Column_Space_Default_01.bottom);
       console.log('assert height')
-      expect(Math.abs(Column_Space_Default_011.bottom - Column_Space_Default_011.top - uiContext.vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_012.bottom - Column_Space_Default_012.top - uiContext.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_013.bottom - Column_Space_Default_013.top - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_011.bottom - Column_Space_Default_011.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_012.bottom - Column_Space_Default_012.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_013.bottom - Column_Space_Default_013.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
       console.log('assert weight')
-      expect(Math.abs(Column_Space_Default_011.right - Column_Space_Default_011.left - uiContext.vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_012.right - Column_Space_Default_012.left - uiContext.vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_013.right - Column_Space_Default_013.left - uiContext.vp2px(300)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_011.right - Column_Space_Default_011.left - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_012.right - Column_Space_Default_012.left - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_013.right - Column_Space_Default_013.left - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
       console.info('[SUB_ACE_Column_Space_Default_TEST_static_0300] END');
     });
     
@@ -197,20 +197,20 @@ it('SUB_ACE_Column_Space_Default_TEST_static_0400', Level.LEVEL0, async () => {
       expect(Math.abs(Column_Space_Default_022.top - Column_Space_Default_021.bottom - (Column_Space_Default_023.top - Column_Space_Default_022.bottom)) <= 1)
         .assertTrue();
       console.log('assert space')
-      expect(Math.abs(Column_Space_Default_022.top - Column_Space_Default_021.bottom - uiContext.vp2px(0)) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_023.top - Column_Space_Default_022.bottom - uiContext.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_022.top - Column_Space_Default_021.bottom - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_023.top - Column_Space_Default_022.bottom - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
       console.log('Column_Space_Default_022.top - Column_Space_Default_021.bottom', +(Column_Space_Default_022.top - Column_Space_Default_021.bottom))
       console.log('Column_Space_Default_023.top - Column_Space_Default_022.bottom', +(Column_Space_Default_023.top - Column_Space_Default_022.bottom))
       expect(Math.abs(Column_Space_Default_02.top - Column_Space_Default_021.top) <= 1).assertTrue();
       expect(Column_Space_Default_023.bottom).assertLess(Column_Space_Default_02.bottom);
       console.log('assert height')
-      expect(Math.abs(Column_Space_Default_021.bottom - Column_Space_Default_021.top - uiContext.vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_022.bottom - Column_Space_Default_022.top - uiContext.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_023.bottom - Column_Space_Default_023.top - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_021.bottom - Column_Space_Default_021.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_022.bottom - Column_Space_Default_022.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_023.bottom - Column_Space_Default_023.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
       console.log('assert weight')
-      expect(Math.abs(Column_Space_Default_021.right - Column_Space_Default_021.left - uiContext.vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_022.right - Column_Space_Default_022.left - uiContext.vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_023.right - Column_Space_Default_023.left - uiContext.vp2px(300)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_021.right - Column_Space_Default_021.left - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_022.right - Column_Space_Default_022.left - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_023.right - Column_Space_Default_023.left - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
       console.info('[SUB_ACE_Column_Space_Default_TEST_static_0400] END');
     });
     
@@ -245,20 +245,20 @@ it('SUB_ACE_Column_Space_Default_TEST_static_0500', Level.LEVEL0, async () => {
       expect(Math.abs(Column_Space_Default_022.top - Column_Space_Default_021.bottom - (Column_Space_Default_023.top - Column_Space_Default_022.bottom)) <= 1)
         .assertTrue();
       console.log('assert space')
-      expect(Math.abs(Column_Space_Default_022.top - Column_Space_Default_021.bottom - uiContext.vp2px(0)) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_023.top - Column_Space_Default_022.bottom - uiContext.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_022.top - Column_Space_Default_021.bottom - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_023.top - Column_Space_Default_022.bottom - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
       console.log('Column_Space_Default_022.top - Column_Space_Default_021.bottom', +(Column_Space_Default_022.top - Column_Space_Default_021.bottom))
       console.log('Column_Space_Default_023.top - Column_Space_Default_022.bottom', +(Column_Space_Default_023.top - Column_Space_Default_022.bottom))
       expect(Math.abs(Column_Space_Default_02.top - Column_Space_Default_021.top) <= 1).assertTrue();
       expect(Column_Space_Default_023.bottom).assertLess(Column_Space_Default_02.bottom);
       console.log('assert height')
-      expect(Math.abs(Column_Space_Default_021.bottom - Column_Space_Default_021.top - uiContext.vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_022.bottom - Column_Space_Default_022.top - uiContext.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_023.bottom - Column_Space_Default_023.top - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_021.bottom - Column_Space_Default_021.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_022.bottom - Column_Space_Default_022.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_023.bottom - Column_Space_Default_023.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
       console.log('assert weight')
-      expect(Math.abs(Column_Space_Default_021.right - Column_Space_Default_021.left - (uiContext.vp2px(300))) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_022.right - Column_Space_Default_022.left - (uiContext.vp2px(300))) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_023.right - Column_Space_Default_023.left - (uiContext.vp2px(300))) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_021.right - Column_Space_Default_021.left - (UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_022.right - Column_Space_Default_022.left - (UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_023.right - Column_Space_Default_023.left - (UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
       console.info('[SUB_ACE_Column_Space_Default_TEST_static_0500] END');
     });
     
@@ -293,20 +293,20 @@ it('SUB_ACE_Column_Space_Default_TEST_static_0100', Level.LEVEL0, async () => {
       expect(Math.abs(Column_Space_Default_012.top - Column_Space_Default_011.bottom - (Column_Space_Default_013.top - Column_Space_Default_012.bottom)) <= 1)
         .assertTrue();
       console.log('assert space')
-      expect(Math.abs(Column_Space_Default_012.top - Column_Space_Default_011.bottom - uiContext.vp2px(0)) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_013.top - Column_Space_Default_012.bottom - uiContext.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_012.top - Column_Space_Default_011.bottom - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_013.top - Column_Space_Default_012.bottom - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
       console.log('Column_Space_Default_012.top - Column_Space_Default_011.bottom', +(Column_Space_Default_012.top - Column_Space_Default_011.bottom))
       console.log('Column_Space_Default_013.top - Column_Space_Default_012.bottom', +(Column_Space_Default_013.top - Column_Space_Default_012.bottom))
       expect(Math.abs(Column_Space_Default_01.top - Column_Space_Default_011.top) <= 1).assertTrue();
       expect(Column_Space_Default_013.bottom).assertLess(Column_Space_Default_01.bottom);
       console.log('assert height')
-      expect(Math.round(Column_Space_Default_011.bottom - Column_Space_Default_011.top - uiContext.vp2px(50)) <= 1).assertTrue();
-      expect(Math.round(Column_Space_Default_012.bottom - Column_Space_Default_012.top - uiContext.vp2px(100)) <= 1).assertTrue();
-      expect(Math.round(Column_Space_Default_013.bottom - Column_Space_Default_013.top - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.round(Column_Space_Default_011.bottom - Column_Space_Default_011.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
+      expect(Math.round(Column_Space_Default_012.bottom - Column_Space_Default_012.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.round(Column_Space_Default_013.bottom - Column_Space_Default_013.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
       console.log('assert weight')
-      expect(Math.abs(Column_Space_Default_011.right - Column_Space_Default_011.left - uiContext.vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_012.right - Column_Space_Default_012.left - uiContext.vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs(Column_Space_Default_013.right - Column_Space_Default_013.left - uiContext.vp2px(300)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_011.right - Column_Space_Default_011.left - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_012.right - Column_Space_Default_012.left - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
+      expect(Math.abs(Column_Space_Default_013.right - Column_Space_Default_013.left - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
       console.info('[SUB_ACE_Column_Space_Default_TEST_static_0100] END');
     });
   })

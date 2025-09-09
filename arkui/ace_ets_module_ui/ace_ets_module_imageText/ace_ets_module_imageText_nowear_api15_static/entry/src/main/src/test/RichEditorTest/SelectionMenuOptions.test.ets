@@ -93,9 +93,9 @@ it('SelectionMenuOptions_static_0003', Level.LEVEL1, async (done: () => void) =>
         await CommonFunc.sleep(500);
         let uiContext = new UIContext();
         await driver.mouseDrag({
-          x: Math.round(point.x - uiContext.vp2px(20)) as int, y: Math.round(point.y) as int
+          x: Math.round(point.x - UIContext.getFocusedUIContext()!.vp2px(20)) as int, y: Math.round(point.y) as int
         }, {
-          x: Math.round(point.x + uiContext.vp2px(20)) as int, y: Math.round(point.y) as int
+          x: Math.round(point.x + UIContext.getFocusedUIContext()!.vp2px(20)) as int, y: Math.round(point.y) as int
         }, 600);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('自定义菜单'));
@@ -130,9 +130,9 @@ it('SelectionMenuOptions_static_0006', Level.LEVEL1, async (done: () => void) =>
         await CommonFunc.sleep(500);
         let uiContext = new UIContext();
         await driver.mouseDrag({
-          x: Math.round(point.x + uiContext.vp2px(24)) as int, y: Math.round(point.y) as int
+          x: Math.round(point.x + UIContext.getFocusedUIContext()!.vp2px(24)) as int, y: Math.round(point.y) as int
         }, {
-          x: Math.round(point.x - uiContext.vp2px(26)) as int, y: Math.round(point.y) as int
+          x: Math.round(point.x - UIContext.getFocusedUIContext()!.vp2px(26)) as int, y: Math.round(point.y) as int
         }, 600);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('自定义菜单'));
@@ -167,9 +167,9 @@ it('SelectionMenuOptions_static_0009', Level.LEVEL1, async (done: () => void) =>
         await CommonFunc.sleep(500);
         let uiContext = new UIContext();
         await driver.mouseDrag({
-          x: Math.round(point.x - uiContext.vp2px(20)) as int, y: Math.round(point.y) as int
+          x: Math.round(point.x - UIContext.getFocusedUIContext()!.vp2px(20)) as int, y: Math.round(point.y) as int
         }, {
-          x: Math.round(point.x + uiContext.vp2px(50)) as int, y: Math.round(point.y) as int
+          x: Math.round(point.x + UIContext.getFocusedUIContext()!.vp2px(50)) as int, y: Math.round(point.y) as int
         }, 600);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('自定义菜单'));

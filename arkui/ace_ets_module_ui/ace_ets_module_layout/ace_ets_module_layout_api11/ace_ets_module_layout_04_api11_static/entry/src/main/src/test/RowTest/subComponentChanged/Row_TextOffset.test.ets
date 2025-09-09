@@ -98,18 +98,18 @@ it('testRowTextOffset_static_01', Level.LEVEL0, async (done: () => void): Promis
       let obj: Record<string, Object> = JSON.parse<Object>(rowContainerStrJson, Type.of(new String() as Object)) as Record<string, Object>;
       expect(obj['$type']).assertEqual('Row');
       const uiContext = new UIContext();
-      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(uiContext.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(uiContext.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(uiContext.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(uiContext.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
       expect(Math.abs(Math.round(firstText.right - firstText.left) - Math.round(secondText.right - secondText.left)) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(secondText.right - secondText.left) - Math.round(thirdText.right - thirdText.left)) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(firstText.left - firstTextLeft)) - (Math.round(uiContext.vp2px(10)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(firstText.top - firstTextTop)) - (Math.round(uiContext.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.left - firstTextLeft)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.top - firstTextTop)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
 
       expect(Math.abs(secondText.top - secondTextTop) <= 1).assertTrue();
       expect(Math.abs(secondText.left - secondTextLeft) <= 1).assertTrue();
@@ -119,9 +119,9 @@ it('testRowTextOffset_static_01', Level.LEVEL0, async (done: () => void): Promis
       expect(Math.abs(Math.round(thirdText.top - rowContainer.top) - Math.round(rowContainer.bottom - thirdText.bottom)) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(thirdText.left - secondText.right)) - (Math.round(uiContext.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(thirdText.left - secondText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(rowContainer.right - thirdText.right)) - (Math.round(uiContext.vp2px(30)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(rowContainer.right - thirdText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1).assertTrue();
       console.info('[testRowTextOffset_static_01] END');
       done();
     });

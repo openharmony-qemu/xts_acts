@@ -50,7 +50,7 @@ class MyNodeController extends NodeController {
     if (rootRenderNode !== null) {
       const mask = new ShapeMask();
       const vp2px = uiContext.vp2px
-      mask.setCircleShape({ centerY: vp2px(75), centerX: vp2px(75), radius: vp2px(75) });
+      mask.setCircleShape({ centerY: UIContext.getFocusedUIContext()!.vp2px(75), centerX: UIContext.getFocusedUIContext()!.vp2px(75), radius: UIContext.getFocusedUIContext()!.vp2px(75) });
       storage.set('PropSetCircleShape', 'setCircleShape succ');
       mask.fillColor = 0X55FF0000;
 

@@ -81,7 +81,6 @@ import {
   MenuItemOptions,
   Padding,
   PickerTextStyle,
-  px2vp,
   RepeatMode,
   ResourceColor,
   Row,

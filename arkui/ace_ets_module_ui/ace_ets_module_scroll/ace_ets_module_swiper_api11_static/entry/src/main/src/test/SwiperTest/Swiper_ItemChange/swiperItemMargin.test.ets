@@ -122,10 +122,10 @@ export default function swiperItemMargin() {
       console.info("Before page turningsizepmkey01.left - swiperItemMargin.left value is " +
       JSON.stringify(swiperItemMargin01.left - swiperItemMargin.left));
       const uiContext = new UIContext();
-      expect(Math.round(swiperItemMargin01.left - swiperItemMargin.left)).assertEqual(uiContext.vp2px(20));
-      expect(Math.round(swiperItemMargin.right - swiperItemMargin01.right)).assertEqual(uiContext.vp2px(20));
-      expect(Math.round(swiperItemMargin01.top - swiperItemMargin.top)).assertEqual(uiContext.vp2px(20));
-      expect(Math.round(swiperItemMargin.bottom - swiperItemMargin01.bottom)).assertEqual(uiContext.vp2px(20));
+      expect(Math.round(swiperItemMargin01.left - swiperItemMargin.left)).assertEqual(UIContext.getFocusedUIContext()!.vp2px(20));
+      expect(Math.round(swiperItemMargin.right - swiperItemMargin01.right)).assertEqual(UIContext.getFocusedUIContext()!.vp2px(20));
+      expect(Math.round(swiperItemMargin01.top - swiperItemMargin.top)).assertEqual(UIContext.getFocusedUIContext()!.vp2px(20));
+      expect(Math.round(swiperItemMargin.bottom - swiperItemMargin01.bottom)).assertEqual(UIContext.getFocusedUIContext()!.vp2px(20));
       
       let driver = Driver.create();
       

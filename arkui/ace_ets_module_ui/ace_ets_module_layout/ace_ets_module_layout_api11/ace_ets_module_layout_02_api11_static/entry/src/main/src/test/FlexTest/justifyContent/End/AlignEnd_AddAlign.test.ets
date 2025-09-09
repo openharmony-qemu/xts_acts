@@ -113,19 +113,19 @@ it('testFlexAlignEndAlignBottomEnd_static', Level.LEVEL0, async () : Promise<voi
       expect(Math.abs((End_AddAlign_012.left) - (End_AddAlign_011.right)) <= 1).assertTrue();
       expect(Math.abs((End_AddAlign_013.left) - (End_AddAlign_012.right)) <= 1).assertTrue();
       expect(Math.abs((End_AddAlign_013.right) - (End_AddAlign_01.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(End_AddAlign_011.left - End_AddAlign_01.left)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(End_AddAlign_011.left - End_AddAlign_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddAlign_011.right - End_AddAlign_011.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_AddAlign_011.right - End_AddAlign_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddAlign_012.right - End_AddAlign_012.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_AddAlign_012.right - End_AddAlign_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddAlign_013.right - End_AddAlign_013.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_AddAlign_013.right - End_AddAlign_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddAlign_011.bottom - End_AddAlign_011.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(End_AddAlign_011.bottom - End_AddAlign_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddAlign_012.bottom - End_AddAlign_012.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(End_AddAlign_012.bottom - End_AddAlign_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddAlign_013.bottom - End_AddAlign_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_AddAlign_013.bottom - End_AddAlign_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignEndAlignBottomEnd] END');
 

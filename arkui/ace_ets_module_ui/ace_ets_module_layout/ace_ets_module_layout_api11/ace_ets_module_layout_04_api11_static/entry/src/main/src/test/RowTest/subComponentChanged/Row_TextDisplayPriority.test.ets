@@ -94,14 +94,14 @@ it('testRowTextDisplayPriority01_static_01', Level.LEVEL0, async (done: () => vo
       let obj: Record<string, Object> = JSON.parse<Object>(rowContainerStrJson, Type.of(new String() as Object)) as Record<string, Object>;
       expect(obj['$type']).assertEqual('Row');
       const uiContext = new UIContext();
-      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(uiContext.vp2px(150)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(thirdText.right - thirdText.left)) - (Math.round(uiContext.vp2px(200)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(thirdText.right - thirdText.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(thirdText.left - rowContainer.left)) - (uiContext.vp2px(0))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(thirdText.left - rowContainer.left)) - (UIContext.getFocusedUIContext()!.vp2px(0))) <= 1).assertTrue();
       expect(Math.abs((Math.round(thirdText.top - rowContainer.top)) - (Math.round(rowContainer.bottom - thirdText.bottom))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(rowContainer.right - thirdText.right)) - (Math.round(uiContext.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(rowContainer.right - thirdText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
       console.info('[testRowTextDisplayPriority01_static_01] END');
       done();
     });
@@ -136,11 +136,11 @@ it('testRowTextDisplayPriority02_static_02', Level.LEVEL0, async (done: () => vo
       let obj: Record<string, Object> = JSON.parse<Object>(rowContainerStrJson, Type.of(new String() as Object)) as Record<string, Object>;
       expect(obj['$type']).assertEqual('Row');
       const uiContext = new UIContext();
-      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(uiContext.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(uiContext.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(uiContext.vp2px(100)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(thirdText.right - thirdText.left)) - (Math.round(uiContext.vp2px(200)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(thirdText.right - thirdText.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1).assertTrue();
 
 
       expect(Math.abs(Math.round(firstText.top - rowContainer.top) - Math.round(rowContainer.bottom - firstText.bottom)) <= 1)
@@ -149,9 +149,9 @@ it('testRowTextDisplayPriority02_static_02', Level.LEVEL0, async (done: () => vo
         .assertTrue();
 
       expect(Math.abs(firstText.left - rowContainer.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(thirdText.left - firstText.right)) - (Math.round(uiContext.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(thirdText.left - firstText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(rowContainer.right - thirdText.right)) - (Math.round(uiContext.vp2px(40)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(rowContainer.right - thirdText.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(40)))) <= 1).assertTrue();
       console.info('[testRowTextDisplayPriority02_static_02] END');
       done();
     });

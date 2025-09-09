@@ -88,8 +88,8 @@ it('testGridColGap_static_01', Level.LEVEL0, async (done: () => void): Promise<v
       expect(Math.abs(Grid_RowCol_Gap_011.left - Grid_RowCol_Gap_01.left) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_Gap_013.left - Grid_RowCol_Gap_01.left) <= 1).assertTrue();
       const uiContext = new UIContext();
-      expect(Math.abs(Grid_RowCol_Gap_012.left - Grid_RowCol_Gap_011.right - uiContext.vp2px(5)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_Gap_014.left - Grid_RowCol_Gap_013.right - uiContext.vp2px(5)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_Gap_012.left - Grid_RowCol_Gap_011.right - UIContext.getFocusedUIContext()!.vp2px(5)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_Gap_014.left - Grid_RowCol_Gap_013.right - UIContext.getFocusedUIContext()!.vp2px(5)) <= 1).assertTrue();
 
       expect(Math.abs(Grid_RowCol_Gap_012.right - Grid_RowCol_Gap_01.right) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_Gap_014.right - Grid_RowCol_Gap_01.right) <= 1).assertTrue();
@@ -107,18 +107,18 @@ it('testGridColGap_static_01', Level.LEVEL0, async (done: () => void): Promise<v
       expect(Math.abs(Grid_RowCol_Gap_012.right - Grid_RowCol_Gap_014.right) <= 1).assertTrue();
 
       expect(Math.abs((Grid_RowCol_Gap_011.right - Grid_RowCol_Gap_011.left -
-      uiContext.vp2px(147.5)) * 100 / 100) <= 1).assertTrue();
+      UIContext.getFocusedUIContext()!.vp2px(147.5)) * 100 / 100) <= 1).assertTrue();
       expect(Math.abs((Grid_RowCol_Gap_012.right - Grid_RowCol_Gap_012.left -
-      uiContext.vp2px(147.5))) * 100 / 100 <= 1).assertTrue();
+      UIContext.getFocusedUIContext()!.vp2px(147.5))) * 100 / 100 <= 1).assertTrue();
       expect(Math.abs((Grid_RowCol_Gap_013.right - Grid_RowCol_Gap_013.left -
-      uiContext.vp2px(147.5))) * 100 / 100 <= 1).assertTrue();
+      UIContext.getFocusedUIContext()!.vp2px(147.5))) * 100 / 100 <= 1).assertTrue();
       expect(Math.abs((Grid_RowCol_Gap_014.right - Grid_RowCol_Gap_014.left -
-      uiContext.vp2px(147.5))) * 100 / 100 <= 1).assertTrue();
+      UIContext.getFocusedUIContext()!.vp2px(147.5))) * 100 / 100 <= 1).assertTrue();
 
-      expect(Math.abs(Grid_RowCol_Gap_011.bottom - Grid_RowCol_Gap_011.top - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_Gap_012.bottom - Grid_RowCol_Gap_012.top - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_Gap_013.bottom - Grid_RowCol_Gap_013.top - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_Gap_014.bottom - Grid_RowCol_Gap_014.top - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_Gap_011.bottom - Grid_RowCol_Gap_011.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_Gap_012.bottom - Grid_RowCol_Gap_012.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_Gap_013.bottom - Grid_RowCol_Gap_013.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_Gap_014.bottom - Grid_RowCol_Gap_014.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
       console.info('[testGridColGap_static_01] END');
       done();
     });
@@ -167,18 +167,18 @@ it('testGridRowGap_static_02', Level.LEVEL0, async (done: () => void): Promise<v
       expect(Math.abs(Grid_RowCol_Gap_013.top - Grid_RowCol_Gap_014.top) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_Gap_011.bottom - Grid_RowCol_Gap_012.bottom) <= 1).assertTrue();
       const uiContext = new UIContext();
-      expect(Math.abs(Grid_RowCol_Gap_013.top - Grid_RowCol_Gap_011.bottom - uiContext.vp2px(5)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_Gap_014.top - Grid_RowCol_Gap_012.bottom - uiContext.vp2px(5)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_Gap_013.top - Grid_RowCol_Gap_011.bottom - UIContext.getFocusedUIContext()!.vp2px(5)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_Gap_014.top - Grid_RowCol_Gap_012.bottom - UIContext.getFocusedUIContext()!.vp2px(5)) <= 1).assertTrue();
 
-      expect(Math.abs(Grid_RowCol_Gap_011.right - Grid_RowCol_Gap_011.left - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_Gap_012.right - Grid_RowCol_Gap_012.left - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_Gap_013.right - Grid_RowCol_Gap_013.left - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_Gap_014.right - Grid_RowCol_Gap_014.left - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_Gap_011.right - Grid_RowCol_Gap_011.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_Gap_012.right - Grid_RowCol_Gap_012.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_Gap_013.right - Grid_RowCol_Gap_013.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_Gap_014.right - Grid_RowCol_Gap_014.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
 
-      expect(Math.abs(Grid_RowCol_Gap_011.bottom - Grid_RowCol_Gap_011.top - uiContext.vp2px(147.5)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_Gap_012.bottom - Grid_RowCol_Gap_012.top - uiContext.vp2px(147.5)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_Gap_013.bottom - Grid_RowCol_Gap_013.top - uiContext.vp2px(147.5)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_Gap_014.bottom - Grid_RowCol_Gap_014.top - uiContext.vp2px(147.5)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_Gap_011.bottom - Grid_RowCol_Gap_011.top - UIContext.getFocusedUIContext()!.vp2px(147.5)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_Gap_012.bottom - Grid_RowCol_Gap_012.top - UIContext.getFocusedUIContext()!.vp2px(147.5)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_Gap_013.bottom - Grid_RowCol_Gap_013.top - UIContext.getFocusedUIContext()!.vp2px(147.5)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_Gap_014.bottom - Grid_RowCol_Gap_014.top - UIContext.getFocusedUIContext()!.vp2px(147.5)) <= 1).assertTrue();
       console.info('[testGridRowGap_static_02] END');
       done();
     });
@@ -224,29 +224,29 @@ it('testGridRowColGap_static_03', Level.LEVEL0, async (done: () => void): Promis
       expect(Math.abs(Grid_RowCol_Gap_013.top - Grid_RowCol_Gap_014.top) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_Gap_011.bottom - Grid_RowCol_Gap_012.bottom) <= 1).assertTrue();
       const uiContext = new UIContext();
-      expect(Math.abs(Grid_RowCol_Gap_013.top - Grid_RowCol_Gap_011.bottom - uiContext.vp2px(5)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_Gap_014.top - Grid_RowCol_Gap_012.bottom - uiContext.vp2px(5)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_Gap_013.top - Grid_RowCol_Gap_011.bottom - UIContext.getFocusedUIContext()!.vp2px(5)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_Gap_014.top - Grid_RowCol_Gap_012.bottom - UIContext.getFocusedUIContext()!.vp2px(5)) <= 1).assertTrue();
 
-      expect(Math.abs(Grid_RowCol_Gap_012.left - Grid_RowCol_Gap_011.right - uiContext.vp2px(5)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_Gap_014.left - Grid_RowCol_Gap_013.right - uiContext.vp2px(5)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_Gap_012.left - Grid_RowCol_Gap_011.right - UIContext.getFocusedUIContext()!.vp2px(5)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_Gap_014.left - Grid_RowCol_Gap_013.right - UIContext.getFocusedUIContext()!.vp2px(5)) <= 1).assertTrue();
 
       expect(Math.abs((Grid_RowCol_Gap_011.right - Grid_RowCol_Gap_011.left -
-      uiContext.vp2px(147.5)) * 100 / 100) <= 1).assertTrue();
+      UIContext.getFocusedUIContext()!.vp2px(147.5)) * 100 / 100) <= 1).assertTrue();
       expect(Math.abs((Grid_RowCol_Gap_012.right - Grid_RowCol_Gap_012.left -
-      uiContext.vp2px(147.5))) * 100 / 100 <= 1).assertTrue();
+      UIContext.getFocusedUIContext()!.vp2px(147.5))) * 100 / 100 <= 1).assertTrue();
       expect(Math.abs((Grid_RowCol_Gap_013.right - Grid_RowCol_Gap_013.left -
-      uiContext.vp2px(147.5))) * 100 / 100 <= 1).assertTrue();
+      UIContext.getFocusedUIContext()!.vp2px(147.5))) * 100 / 100 <= 1).assertTrue();
       expect(Math.abs((Grid_RowCol_Gap_014.right - Grid_RowCol_Gap_014.left -
-      uiContext.vp2px(147.5))) * 100 / 100 <= 1).assertTrue();
+      UIContext.getFocusedUIContext()!.vp2px(147.5))) * 100 / 100 <= 1).assertTrue();
 
       expect(Math.abs((Grid_RowCol_Gap_011.bottom - Grid_RowCol_Gap_011.top -
-      uiContext.vp2px(147.5)) * 100 / 100) <= 1).assertTrue();
+      UIContext.getFocusedUIContext()!.vp2px(147.5)) * 100 / 100) <= 1).assertTrue();
       expect(Math.abs((Grid_RowCol_Gap_012.bottom - Grid_RowCol_Gap_012.top -
-      uiContext.vp2px(147.5))) * 100 / 100 <= 1).assertTrue();
+      UIContext.getFocusedUIContext()!.vp2px(147.5))) * 100 / 100 <= 1).assertTrue();
       expect(Math.abs((Grid_RowCol_Gap_013.bottom - Grid_RowCol_Gap_013.top -
-      uiContext.vp2px(147.5))) * 100 / 100 <= 1).assertTrue();
+      UIContext.getFocusedUIContext()!.vp2px(147.5))) * 100 / 100 <= 1).assertTrue();
       expect(Math.abs((Grid_RowCol_Gap_014.bottom - Grid_RowCol_Gap_014.top -
-      uiContext.vp2px(147.5))) * 100 / 100 <= 1).assertTrue();
+      UIContext.getFocusedUIContext()!.vp2px(147.5))) * 100 / 100 <= 1).assertTrue();
       console.info('[testGridRowColGap_static_03] END');
       done();
     });

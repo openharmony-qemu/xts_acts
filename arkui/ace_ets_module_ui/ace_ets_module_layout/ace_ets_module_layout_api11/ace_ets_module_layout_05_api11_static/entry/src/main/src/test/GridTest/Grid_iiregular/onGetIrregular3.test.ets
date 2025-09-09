@@ -91,8 +91,8 @@ it('onGetIrregular3Jsunit_static_0001', Level.LEVEL0, async (done: () => void): 
 
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.round(uiContext.px2vp(GridItem0.right - GridItem0.left))).assertEqual(236);
-      expect(Math.round(uiContext.px2vp(GridItem4.right - GridItem4.left))).assertEqual(236);
+      expect(Math.round(UIContext.getFocusedUIContext()!.px2vp(GridItem0.right - GridItem0.left))).assertEqual(236);
+      expect(Math.round(UIContext.getFocusedUIContext()!.px2vp(GridItem4.right - GridItem4.left))).assertEqual(236);
       console.info('[onGetIrregular3Jsunit_static_0001] END');
       done();
     });

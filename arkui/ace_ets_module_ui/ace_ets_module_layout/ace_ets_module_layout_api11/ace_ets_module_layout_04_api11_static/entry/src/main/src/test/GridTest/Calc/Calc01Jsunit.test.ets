@@ -98,15 +98,15 @@ it('CalcJsunit01_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       console.log('88888', calc9.right, calc9.left, calc9.right - calc9.left)
       console.log('99999', calc10.top, calc10.bottom, calc10.top - calc10.bottom)
       const uiContext = new UIContext();
-      expect(Math.abs(calc2.right - calc2.left - uiContext.vp2px(270)) <= 1).assertTrue();
-      expect(Math.abs(calc3.bottom - calc3.top - uiContext.vp2px(18)) <= 1).assertTrue();
-      expect(Math.abs(calc4.right - calc4.left - uiContext.vp2px(90)) <= 1).assertTrue();
-      expect(Math.abs(calc5.bottom - calc5.top - uiContext.vp2px(18)) <= 1).assertTrue();
-      expect(Math.abs(calc6.right - calc6.left - uiContext.vp2px(90)) <= 1).assertTrue();
-      expect(Math.abs(calc7.right - calc7.left - uiContext.vp2px(270)) <= 1).assertTrue();
-      expect(Math.abs(calc8.right - calc8.left - uiContext.vp2px(270)) <= 1).assertTrue();
-      expect(Math.abs(calc9.right - calc9.left - uiContext.vp2px(270)) <= 1).assertTrue();
-      expect(Math.abs(calc10.bottom - calc10.top - uiContext.vp2px(54)) <= 1).assertTrue();
+      expect(Math.abs(calc2.right - calc2.left - UIContext.getFocusedUIContext()!.vp2px(270)) <= 1).assertTrue();
+      expect(Math.abs(calc3.bottom - calc3.top - UIContext.getFocusedUIContext()!.vp2px(18)) <= 1).assertTrue();
+      expect(Math.abs(calc4.right - calc4.left - UIContext.getFocusedUIContext()!.vp2px(90)) <= 1).assertTrue();
+      expect(Math.abs(calc5.bottom - calc5.top - UIContext.getFocusedUIContext()!.vp2px(18)) <= 1).assertTrue();
+      expect(Math.abs(calc6.right - calc6.left - UIContext.getFocusedUIContext()!.vp2px(90)) <= 1).assertTrue();
+      expect(Math.abs(calc7.right - calc7.left - UIContext.getFocusedUIContext()!.vp2px(270)) <= 1).assertTrue();
+      expect(Math.abs(calc8.right - calc8.left - UIContext.getFocusedUIContext()!.vp2px(270)) <= 1).assertTrue();
+      expect(Math.abs(calc9.right - calc9.left - UIContext.getFocusedUIContext()!.vp2px(270)) <= 1).assertTrue();
+      expect(Math.abs(calc10.bottom - calc10.top - UIContext.getFocusedUIContext()!.vp2px(54)) <= 1).assertTrue();
       done();
     });
   })

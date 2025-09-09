@@ -94,7 +94,6 @@ import {
   Position,
   Progress,
   ProgressType,
-  px2vp,
   RepeatMode,
   ResourceColor,
   RichEditorController,

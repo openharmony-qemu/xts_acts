@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import {vp2px,Color,$r} from '@ohos.arkui.component'
+import {Color,$r} from '@ohos.arkui.component'
 
 import Utils, {CurrentRatio, BasePageConfig, PageConfig, TestValue, RectValue,SetValue,StrJsonObj } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';

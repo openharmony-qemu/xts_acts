@@ -261,10 +261,10 @@ export default function responseRegionTest() {
       let secondOffsetHeight:number = 0;
       
       if ('SetNumber' == data.testValue.describe) {
-        offsetX = uiContext.vp2px(data.testValue.setValue[0].x as number);
-        offsetY = uiContext.vp2px(data.testValue.setValue[0].y as number);
-        offsetWidth = uiContext.vp2px(data.testValue.setValue[0].width as number);
-        offsetHeight = uiContext.vp2px(data.testValue.setValue[0].height as number);
+        offsetX = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].x as number);
+        offsetY = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].y as number);
+        offsetWidth = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].width as number);
+        offsetHeight = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].height as number);
       } else if ('SetStringPx' == data.testValue.describe) {
         offsetX = (data.testValue.setValue[0].numberPxX as number);
         offsetY = (data.testValue.setValue[0].numberPxY as number);
@@ -276,23 +276,23 @@ export default function responseRegionTest() {
         offsetWidth = rectWidth * (data.testValue.setValue[0].ratioWidth as number);
         offsetHeight = rectHeight * (data.testValue.setValue[0].ratioHeight as number);
       } else if ('SetResource' == data.testValue.describe) {
-        offsetX = uiContext.vp2px(data.testValue.setValue[0].numberX as number);
-        offsetY = uiContext.vp2px(data.testValue.setValue[0].numberY as number);
-        offsetWidth = uiContext.vp2px(data.testValue.setValue[0].numberWidth as number);
-        offsetHeight = uiContext.vp2px(data.testValue.setValue[0].numberHeight as number);
+        offsetX = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].numberX as number);
+        offsetY = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].numberY as number);
+        offsetWidth = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].numberWidth as number);
+        offsetHeight = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].numberHeight as number);
       } else if (('SetIntraArea' == data.testValue.describe) ||
         ('SetOutsideArea' == data.testValue.describe)) {
-        offsetX = uiContext.vp2px(data.testValue.setValue[0].x as number);
-        offsetY = uiContext.vp2px(data.testValue.setValue[0].y as number);
+        offsetX = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].x as number);
+        offsetY = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].y as number);
         offsetWidth = rectWidth * (data.testValue.setValue[0].ratioWidth as number);
         offsetHeight = rectHeight * (data.testValue.setValue[0].ratioHeight as number);
       } else if ('SetMultiArea' == data.testValue.describe) {
-        firstOffsetX = uiContext.vp2px(data.testValue.setValue[0].x as number);
-        firstOffsetY = uiContext.vp2px(data.testValue.setValue[0].y as number);
+        firstOffsetX = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].x as number);
+        firstOffsetY = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[0].y as number);
         firstOffsetWidth = rectWidth * (data.testValue.setValue[0].ratioWidth as number);
         firstOffsetHeight = rectHeight * (data.testValue.setValue[0].ratioHeight as number);
-        secondOffsetX = uiContext.vp2px(data.testValue.setValue[1].x as number);
-        secondOffsetY = uiContext.vp2px(data.testValue.setValue[1].y as number);
+        secondOffsetX = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[1].x as number);
+        secondOffsetY = UIContext.getFocusedUIContext()!.vp2px(data.testValue.setValue[1].y as number);
         secondOffsetWidth = rectWidth * (data.testValue.setValue[1].ratioWidth as number);
         secondOffsetHeight = rectHeight * (data.testValue.setValue[1].ratioHeight as number);
       } else {
@@ -313,11 +313,11 @@ export default function responseRegionTest() {
         await clickPoint(data, xPoint, yPoint);
         
         if ((rect.left + firstOffsetX + firstOffsetWidth) >= (rect.left + secondOffsetX + secondOffsetY)) {
-          xPoint = Number(Number(rect.left + firstOffsetX + firstOffsetWidth + uiContext.vp2px(10)).toFixed(0));
-          yPoint = Number(Number(rect.top + firstOffsetY + firstOffsetHeight + uiContext.vp2px(10)).toFixed(0));
+          xPoint = Number(Number(rect.left + firstOffsetX + firstOffsetWidth + UIContext.getFocusedUIContext()!.vp2px(10)).toFixed(0));
+          yPoint = Number(Number(rect.top + firstOffsetY + firstOffsetHeight + UIContext.getFocusedUIContext()!.vp2px(10)).toFixed(0));
         } else {
-          xPoint = Number(Number(rect.left + secondOffsetX + secondOffsetWidth + uiContext.vp2px(10)).toFixed(0));
-          yPoint = Number(Number(rect.top + secondOffsetY + secondOffsetHeight + uiContext.vp2px(10)).toFixed(0));
+          xPoint = Number(Number(rect.left + secondOffsetX + secondOffsetWidth + UIContext.getFocusedUIContext()!.vp2px(10)).toFixed(0));
+          yPoint = Number(Number(rect.top + secondOffsetY + secondOffsetHeight + UIContext.getFocusedUIContext()!.vp2px(10)).toFixed(0));
         }
         console.info('[' + data.caseTag + ']' + 'xPoint is:' + xPoint);
         console.info('[' + data.caseTag + ']' + 'yPoint is:' + yPoint);
@@ -337,8 +337,8 @@ export default function responseRegionTest() {
         console.info('[' + data.caseTag + ']' + 'yPoint is:' + yPoint);
         await clickPoint(data, xPoint, yPoint);
         
-        xPoint = Number(Number(rect.left + offsetX + offsetWidth + uiContext.vp2px(10)).toFixed(0));
-        yPoint = Number(Number(rect.top + offsetY + offsetHeight + uiContext.vp2px(10)).toFixed(0));
+        xPoint = Number(Number(rect.left + offsetX + offsetWidth + UIContext.getFocusedUIContext()!.vp2px(10)).toFixed(0));
+        yPoint = Number(Number(rect.top + offsetY + offsetHeight + UIContext.getFocusedUIContext()!.vp2px(10)).toFixed(0));
         console.info('[' + data.caseTag + ']' + 'xPoint is:' + xPoint);
         console.info('[' + data.caseTag + ']' + 'yPoint is:' + yPoint);
         await Utils.performClickPoint(xPoint, yPoint);

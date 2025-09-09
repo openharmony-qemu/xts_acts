@@ -96,10 +96,10 @@ it('testColumnSubcomponentSetPosition_static', Level.LEVEL0, async () => {
       let columnPosition_3: RectValue = CommonFunc.getComponentRect('columnPosition_3');
       let columnPosition: RectValue = CommonFunc.getComponentRect('columnPosition');
 
-      expect(Math.abs(columnPosition_1.top - columnPosition.top - Math.round(uiContext.vp2px(10))) <= 1).assertTrue()
-      expect(Math.abs(columnPosition_1.left - columnPosition.left - Math.round(uiContext.vp2px(10))) <= 1).assertTrue()
+      expect(Math.abs(columnPosition_1.top - columnPosition.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue()
+      expect(Math.abs(columnPosition_1.left - columnPosition.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue()
       expect(Math.abs(columnPosition_2.top - columnPosition.top) <= 1).assertTrue()
-      expect(Math.abs(columnPosition_3.top - columnPosition_2.bottom - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnPosition_3.top - columnPosition_2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
       expect(columnPosition_3.bottom).assertLess(columnPosition.bottom)
       console.info('new testColumnSubcomponentSetPosition_static END');
     });

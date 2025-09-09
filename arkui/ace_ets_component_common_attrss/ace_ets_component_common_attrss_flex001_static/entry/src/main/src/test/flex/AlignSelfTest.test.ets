@@ -218,11 +218,11 @@ export default function alignSelfTest() {
           } else if (data.testValue.describe == 'SetStretch') {
 
             console.info('[' + data.caseTag + '] rect.bottom - rect.top: ' + (rect.bottom - rect.top));
-            console.info('[' + data.caseTag + '] uiContext.vp2px(parentHeight): ' + uiContext.vp2px(parentHeight));
+            console.info('[' + data.caseTag + '] UIContext.getFocusedUIContext()!.vp2px(parentHeight): ' + UIContext.getFocusedUIContext()!.vp2px(parentHeight));
             if ((data.pageConfig.componentKey as string) == 'TextInput' || data.pageConfig.componentKey == 'TextArea') {
-              expect(Math.floor(Math.abs((rect.bottom - rect.top) - uiContext.vp2px(parentHeight))) <= 2).assertTrue();
+              expect(Math.floor(Math.abs((rect.bottom - rect.top) - UIContext.getFocusedUIContext()!.vp2px(parentHeight))) <= 2).assertTrue();
             } else {
-              expect(Math.floor(Math.abs((rect.bottom - rect.top) - uiContext.vp2px(parentHeight))) <= 1).assertTrue();
+              expect(Math.floor(Math.abs((rect.bottom - rect.top) - UIContext.getFocusedUIContext()!.vp2px(parentHeight))) <= 1).assertTrue();
             }
           }
         } else if (data.pageConfig.containerView == 'Column' || data.pageConfig.containerView == 'FlexColumn') {
@@ -245,11 +245,11 @@ export default function alignSelfTest() {
           } else if (data.testValue.describe == 'SetStretch') {
 
             console.info('[' + data.caseTag + '] rect.right - rect.left: ' + (rect.right - rect.left));
-            console.info('[' + data.caseTag + '] uiContext.vp2px(parentWidth): ' + uiContext.vp2px(parentWidth));
+            console.info('[' + data.caseTag + '] UIContext.getFocusedUIContext()!.vp2px(parentWidth): ' + UIContext.getFocusedUIContext()!.vp2px(parentWidth));
             if ((data.pageConfig.componentKey as string) == 'TextInput' || data.pageConfig.componentKey == 'TextArea') {
-              expect(Math.floor(Math.abs((rect.right - rect.left) - uiContext.vp2px(parentWidth))) <= 2).assertTrue();
+              expect(Math.floor(Math.abs((rect.right - rect.left) - UIContext.getFocusedUIContext()!.vp2px(parentWidth))) <= 2).assertTrue();
             } else {
-              expect(Math.floor(Math.abs((rect.right - rect.left) - uiContext.vp2px(parentWidth))) <= 1).assertTrue();
+              expect(Math.floor(Math.abs((rect.right - rect.left) - UIContext.getFocusedUIContext()!.vp2px(parentWidth))) <= 1).assertTrue();
             }
           }
         } else if (data.pageConfig.containerView == 'FlexRowReverse') {
@@ -273,11 +273,11 @@ export default function alignSelfTest() {
           } else if (data.testValue.describe == 'SetStretch') {
 
             console.info('[' + data.caseTag + '] rect.bottom - rect.top: ' + (rect.bottom - rect.top));
-            console.info('[' + data.caseTag + '] uiContext.vp2px(parentHeight): ' + uiContext.vp2px(parentHeight));
+            console.info('[' + data.caseTag + '] UIContext.getFocusedUIContext()!.vp2px(parentHeight): ' + UIContext.getFocusedUIContext()!.vp2px(parentHeight));
             if ((data.pageConfig.componentKey as string) == 'TextInput' || data.pageConfig.componentKey == 'TextArea') {
-              expect(Math.floor(Math.abs((rect.bottom - rect.top) - uiContext.vp2px(parentHeight))) <= 2).assertTrue();
+              expect(Math.floor(Math.abs((rect.bottom - rect.top) - UIContext.getFocusedUIContext()!.vp2px(parentHeight))) <= 2).assertTrue();
             } else {
-              expect(Math.floor(Math.abs((rect.bottom - rect.top) - uiContext.vp2px(parentHeight))) <= 1).assertTrue();
+              expect(Math.floor(Math.abs((rect.bottom - rect.top) - UIContext.getFocusedUIContext()!.vp2px(parentHeight))) <= 1).assertTrue();
             }
           }
         } else if (data.pageConfig.containerView == 'FlexColumnReverse') {
@@ -301,11 +301,11 @@ export default function alignSelfTest() {
           } else if (data.testValue.describe == 'SetStretch') {
 
             console.info('[' + data.caseTag + '] rect.right - rect.left: ' + (rect.right - rect.left));
-            console.info('[' + data.caseTag + '] uiContext.vp2px(parentWidth): ' + uiContext.vp2px(parentWidth));
+            console.info('[' + data.caseTag + '] UIContext.getFocusedUIContext()!.vp2px(parentWidth): ' + UIContext.getFocusedUIContext()!.vp2px(parentWidth));
             if ((data.pageConfig.componentKey as string) == 'TextInput' || data.pageConfig.componentKey == 'TextArea') {
-              expect(Math.floor(Math.abs((rect.right - rect.left) - uiContext.vp2px(parentWidth))) <= 2).assertTrue();
+              expect(Math.floor(Math.abs((rect.right - rect.left) - UIContext.getFocusedUIContext()!.vp2px(parentWidth))) <= 2).assertTrue();
             } else {
-              expect(Math.floor(Math.abs((rect.right - rect.left) - uiContext.vp2px(parentWidth))) <= 1).assertTrue();
+              expect(Math.floor(Math.abs((rect.right - rect.left) - UIContext.getFocusedUIContext()!.vp2px(parentWidth))) <= 1).assertTrue();
             }
           }
         }

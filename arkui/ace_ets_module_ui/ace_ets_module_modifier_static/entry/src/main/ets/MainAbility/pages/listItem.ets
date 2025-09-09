@@ -72,7 +72,6 @@ import {
   MenuAlignType,
   Padding,
   PickerTextStyle,
-  px2vp,
   RepeatMode,
   ResourceColor,
   Row,

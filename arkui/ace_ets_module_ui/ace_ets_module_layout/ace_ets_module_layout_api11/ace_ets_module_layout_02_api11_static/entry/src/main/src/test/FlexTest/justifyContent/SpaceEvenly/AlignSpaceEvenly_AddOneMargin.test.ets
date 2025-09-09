@@ -105,29 +105,29 @@ it('testFlexAlignSpaceEvenlyTextMarginMeet_static', Level.LEVEL0, async () : Pro
       let SpaceEvenly_AddOneMargin_013: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddOneMargin_013');
       let SpaceEvenly_AddOneMargin_01: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddOneMargin_01');
       const uiContext = new UIContext();
-      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_011.top - SpaceEvenly_AddOneMargin_01.top)) - (Math.round(uiContext.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_011.top - SpaceEvenly_AddOneMargin_01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Math.round((SpaceEvenly_AddOneMargin_011.left - SpaceEvenly_AddOneMargin_01.left) * 100) / 100)) - (Math.round(Math.round(uiContext.vp2px(22.5) * 100) / 100))) <= 1)
+      expect(Math.abs((Math.round(Math.round((SpaceEvenly_AddOneMargin_011.left - SpaceEvenly_AddOneMargin_01.left) * 100) / 100)) - (Math.round(Math.round(UIContext.getFocusedUIContext()!.vp2px(22.5) * 100) / 100))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Math.round((SpaceEvenly_AddOneMargin_013.left - SpaceEvenly_AddOneMargin_012.right) * 100) / 100)) - (Math.round(Math.round(uiContext.vp2px(2.5) * 100) / 100))) <= 1)
+      expect(Math.abs((Math.round(Math.round((SpaceEvenly_AddOneMargin_013.left - SpaceEvenly_AddOneMargin_012.right) * 100) / 100)) - (Math.round(Math.round(UIContext.getFocusedUIContext()!.vp2px(2.5) * 100) / 100))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(SpaceEvenly_AddOneMargin_012.left - SpaceEvenly_AddOneMargin_011.right - uiContext.vp2px(20)) - Math.round(SpaceEvenly_AddOneMargin_013.left - SpaceEvenly_AddOneMargin_012.right)) <= 1)
+      expect(Math.abs(Math.round(SpaceEvenly_AddOneMargin_012.left - SpaceEvenly_AddOneMargin_011.right - UIContext.getFocusedUIContext()!.vp2px(20)) - Math.round(SpaceEvenly_AddOneMargin_013.left - SpaceEvenly_AddOneMargin_012.right)) <= 1)
         .assertTrue();
       expect(Math.abs(SpaceEvenly_AddOneMargin_013.top - SpaceEvenly_AddOneMargin_012.top) <= 1).assertTrue();
       expect(Math.abs(SpaceEvenly_AddOneMargin_012.top - SpaceEvenly_AddOneMargin_01.top) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Math.round((SpaceEvenly_AddOneMargin_01.right - SpaceEvenly_AddOneMargin_013.right) * 100) / 100) - Math.round(Math.round(uiContext.vp2px(2.5) * 100) / 100)) <= 1)
+      expect(Math.abs(Math.round(Math.round((SpaceEvenly_AddOneMargin_01.right - SpaceEvenly_AddOneMargin_013.right) * 100) / 100) - Math.round(Math.round(UIContext.getFocusedUIContext()!.vp2px(2.5) * 100) / 100)) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_011.bottom - SpaceEvenly_AddOneMargin_011.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_011.bottom - SpaceEvenly_AddOneMargin_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_012.bottom - SpaceEvenly_AddOneMargin_012.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_012.bottom - SpaceEvenly_AddOneMargin_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_013.bottom - SpaceEvenly_AddOneMargin_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_013.bottom - SpaceEvenly_AddOneMargin_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_011.right - SpaceEvenly_AddOneMargin_011.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_011.right - SpaceEvenly_AddOneMargin_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_012.right - SpaceEvenly_AddOneMargin_012.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_012.right - SpaceEvenly_AddOneMargin_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_013.right - SpaceEvenly_AddOneMargin_013.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_013.right - SpaceEvenly_AddOneMargin_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignSpaceEvenlyTextMarginMeet] END');
 
@@ -161,9 +161,9 @@ it('testFlexAlignSpaceEvenlyTextMarginOverflow_static', Level.LEVEL0, async () :
       let SpaceEvenly_AddOneMargin_013: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddOneMargin_013');
       let SpaceEvenly_AddOneMargin_01: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddOneMargin_01');
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(SpaceEvenly_AddOneMargin_011.top - SpaceEvenly_AddOneMargin_01.top) - Math.round(uiContext.vp2px(30))) <= 1)
+      expect(Math.abs(Math.round(SpaceEvenly_AddOneMargin_011.top - SpaceEvenly_AddOneMargin_01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(SpaceEvenly_AddOneMargin_011.left - SpaceEvenly_AddOneMargin_01.left) - Math.round(uiContext.vp2px(30))) <= 1)
+      expect(Math.abs(Math.round(SpaceEvenly_AddOneMargin_011.left - SpaceEvenly_AddOneMargin_01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(SpaceEvenly_AddOneMargin_012.left - SpaceEvenly_AddOneMargin_011.right) - Math.round(SpaceEvenly_AddOneMargin_011.left - SpaceEvenly_AddOneMargin_01.left)) <= 1)
         .assertTrue();
@@ -171,17 +171,17 @@ it('testFlexAlignSpaceEvenlyTextMarginOverflow_static', Level.LEVEL0, async () :
       expect(Math.abs(SpaceEvenly_AddOneMargin_013.top - SpaceEvenly_AddOneMargin_012.top) <= 1).assertTrue();
       expect(Math.abs(SpaceEvenly_AddOneMargin_012.top - SpaceEvenly_AddOneMargin_01.top) <= 1).assertTrue();
       expect(Math.abs(SpaceEvenly_AddOneMargin_012.right - SpaceEvenly_AddOneMargin_013.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_011.bottom - SpaceEvenly_AddOneMargin_011.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_011.bottom - SpaceEvenly_AddOneMargin_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_012.bottom - SpaceEvenly_AddOneMargin_012.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_012.bottom - SpaceEvenly_AddOneMargin_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_013.bottom - SpaceEvenly_AddOneMargin_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_013.bottom - SpaceEvenly_AddOneMargin_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_011.right - SpaceEvenly_AddOneMargin_011.left)) - (Math.round(uiContext.vp2px(440 / 3)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_011.right - SpaceEvenly_AddOneMargin_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(440 / 3)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_012.right - SpaceEvenly_AddOneMargin_012.left)) - (Math.round(uiContext.vp2px(440 / 3)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_012.right - SpaceEvenly_AddOneMargin_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(440 / 3)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_013.right - SpaceEvenly_AddOneMargin_013.left)) - (Math.round(uiContext.vp2px(440 / 3)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddOneMargin_013.right - SpaceEvenly_AddOneMargin_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(440 / 3)))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignSpaceEvenlyTextMarginOverflow] END');
 

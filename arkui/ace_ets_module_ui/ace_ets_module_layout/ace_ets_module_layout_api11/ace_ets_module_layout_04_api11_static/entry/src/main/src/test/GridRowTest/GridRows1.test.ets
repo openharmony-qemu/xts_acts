@@ -146,7 +146,7 @@ it('GridRows1_static_003', Level.LEVEL0, async (done: () => void): Promise<void>
       await CommonFunc.sleep(2000);
       const uiContext = new UIContext();
       console.info("[GridRows1_static_003] GridRows1_1 is: " + JSON.stringify(row1) + 'GridRows1_5:' + JSON.stringify(row2) );
-      expect(Math.abs(Math.round(row2.top - row1.bottom) - Math.round(uiContext.vp2px(5))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(row2.top - row1.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1).assertTrue();
 
       console.info('[GridRows1_static_003] END');
       done();

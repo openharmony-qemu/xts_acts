@@ -99,8 +99,8 @@ export default function btnDragStart() {
       CommonFunc.rect_top = Number(Number(rectInfo[0][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      await driver.drag(Math.round(CommonFunc.rect_left + uiContext.vp2px(33.33)) as Int,
-        Math.round(CommonFunc.rect_top + uiContext.vp2px(26.66)) as Int, 200, 200, 600);
+      await driver.drag(Math.round(CommonFunc.rect_left + UIContext.getFocusedUIContext()!.vp2px(33.33)) as Int,
+        Math.round(CommonFunc.rect_top + UIContext.getFocusedUIContext()!.vp2px(26.66)) as Int, 200, 200, 600);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey("buttonDrag_2");
       await CommonFunc.sleep(200);

@@ -165,7 +165,7 @@ export default function onAreaChangeTest() {
     },
     expectValue: {
       x: '50.00vp', y: '50.00vp',
-      // left: uiContext.vp2px(50), top: uiContext.vp2px(50)
+      // left: UIContext.getFocusedUIContext()!.vp2px(50), top: UIContext.getFocusedUIContext()!.vp2px(50)
     }
   }]
 
@@ -225,30 +225,30 @@ export default function onAreaChangeTest() {
         let compareButtonRectAfter: RectValue = Utils.getComponentRect(data.pageConfig.compareButtonKey);
         console.info('[' + data.caseTag + '] compareButtonRectAfter: ' + JSON.stringify(compareButtonRectAfter));
         console.info('[' + data.caseTag + '] data.testValue.describe: ' + data.testValue.describe);
-        expect(Math.abs(uiContext.px2vp(compareButtonRectAfter.right - compareButtonRectAfter.left) -
+        expect(Math.abs(UIContext.getFocusedUIContext()!.px2vp(compareButtonRectAfter.right - compareButtonRectAfter.left) -
         data.testValue.expectValue.compareButtonWidth!) <= 2).assertTrue();
-        expect(Math.abs(uiContext.px2vp(compareButtonRectAfter.bottom - compareButtonRectAfter.top) -
+        expect(Math.abs(UIContext.getFocusedUIContext()!.px2vp(compareButtonRectAfter.bottom - compareButtonRectAfter.top) -
         data.testValue.expectValue.compareButtonHeight!) <= 2).assertTrue();
         await checkResults(data, compareOldTextComponent, compareNewTextComponent, targetRectBefore,
           targetRectAfter, parentRectBefore, parentRectAfter);
       } else if (data.testValue.describe == 'SetWidthHeight') {
         console.info('[' + data.caseTag + '] data.testValue.describe: ' + data.testValue.describe);
         if ((data.pageConfig.componentKey == 'GridCol') || (data.pageConfig.componentKey == 'ListItemGroup')) {
-          expect(Math.abs(uiContext.px2vp(targetRectAfter.bottom - targetRectAfter.top) -
+          expect(Math.abs(UIContext.getFocusedUIContext()!.px2vp(targetRectAfter.bottom - targetRectAfter.top) -
           data.testValue.expectValue.height!) <= 1).assertTrue();
           await checkResults(data, compareOldTextComponent, compareNewTextComponent, targetRectBefore,
             targetRectAfter, parentRectBefore, parentRectAfter);
         } else if ((data.pageConfig.componentKey == 'TabContent') || (data.pageConfig.componentKey == 'StepperItem')) {
-          expect(Math.abs(uiContext.px2vp(RectAfter.right - RectAfter.left) - data.testValue.expectValue.width!) <= 2)
+          expect(Math.abs(UIContext.getFocusedUIContext()!.px2vp(RectAfter.right - RectAfter.left) - data.testValue.expectValue.width!) <= 2)
             .assertTrue();
-          expect(Math.abs(uiContext.px2vp(RectAfter.bottom - RectAfter.top) - data.testValue.expectValue.height!) <= 2)
+          expect(Math.abs(UIContext.getFocusedUIContext()!.px2vp(RectAfter.bottom - RectAfter.top) - data.testValue.expectValue.height!) <= 2)
             .assertTrue();
           await checkResults(data, compareOldTextComponent, compareNewTextComponent, targetRectBefore,
             targetRectAfter, parentRectBefore, parentRectAfter);
         } else {
-          expect(Math.abs(uiContext.px2vp(targetRectAfter.right - targetRectAfter.left) - data.testValue.expectValue.width!) <= 2)
+          expect(Math.abs(UIContext.getFocusedUIContext()!.px2vp(targetRectAfter.right - targetRectAfter.left) - data.testValue.expectValue.width!) <= 2)
             .assertTrue();
-          expect(Math.abs(uiContext.px2vp(targetRectAfter.bottom - targetRectAfter.top) - data.testValue.expectValue.height!) <= 2)
+          expect(Math.abs(UIContext.getFocusedUIContext()!.px2vp(targetRectAfter.bottom - targetRectAfter.top) - data.testValue.expectValue.height!) <= 2)
             .assertTrue();
           await checkResults(data, compareOldTextComponent, compareNewTextComponent, targetRectBefore,
             targetRectAfter, parentRectBefore, parentRectAfter);
@@ -279,34 +279,34 @@ async function checkResults(data: BasePageConfig, compareOldTextComponent: Attrs
   let compareOldTextObj = JSON.parseJsonElement(compareOldTextComponent.$attrs.content??'');
   let compareNewTextObj = JSON.parseJsonElement(compareNewTextComponent.$attrs.content??'');
   console.info('[' + data.caseTag + '] compareOldTextObj width: ' + compareOldTextObj.getInteger('width'));
-  expect(Math.abs(compareOldTextObj.getInteger('width') - uiContext.px2vp(targetRectBefore.right - targetRectBefore.left)) <= 2).assertTrue();
+  expect(Math.abs(compareOldTextObj.getInteger('width') - UIContext.getFocusedUIContext()!.px2vp(targetRectBefore.right - targetRectBefore.left)) <= 2).assertTrue();
   console.info('[' + data.caseTag + '] compareOldTextObj height: ' + compareOldTextObj.getInteger('height'));
-  expect(Math.abs(compareOldTextObj.getInteger('height') - uiContext.px2vp(targetRectBefore.bottom - targetRectBefore.top)) <= 2)
+  expect(Math.abs(compareOldTextObj.getInteger('height') - UIContext.getFocusedUIContext()!.px2vp(targetRectBefore.bottom - targetRectBefore.top)) <= 2)
     .assertTrue();
   console.info('[' + data.caseTag + '] compareOldTextObj.position.x: ' + compareOldTextObj.getElement('position').getInteger('x'));
-  expect(Math.abs(compareOldTextObj.getElement('position').getInteger('x') - uiContext.px2vp(targetRectBefore.left - parentRectBefore.left)) <= 2)
+  expect(Math.abs(compareOldTextObj.getElement('position').getInteger('x') - UIContext.getFocusedUIContext()!.px2vp(targetRectBefore.left - parentRectBefore.left)) <= 2)
     .assertTrue();
   console.info('[' + data.caseTag + '] compareOldTextObj.position.y: ' + compareOldTextObj.getElement('position').getInteger('y'));
-  expect(Math.abs(compareOldTextObj.getElement('position').getInteger('y') - uiContext.px2vp(targetRectBefore.top - parentRectBefore.top)) <= 2)
+  expect(Math.abs(compareOldTextObj.getElement('position').getInteger('y') - UIContext.getFocusedUIContext()!.px2vp(targetRectBefore.top - parentRectBefore.top)) <= 2)
     .assertTrue();
   console.info('[' + data.caseTag + '] compareOldTextObj.globalPosition.x: ' + compareOldTextObj.getElement('globalPosition').getInteger('x'));
-  expect(Math.abs(compareOldTextObj.getElement('globalPosition').getInteger('x') - uiContext.px2vp(targetRectBefore.left)) <= 2).assertTrue();
+  expect(Math.abs(compareOldTextObj.getElement('globalPosition').getInteger('x') - UIContext.getFocusedUIContext()!.px2vp(targetRectBefore.left)) <= 2).assertTrue();
   console.info('[' + data.caseTag + '] compareOldTextObj.globalPosition.y: ' + compareOldTextObj.getElement('globalPosition').getInteger('y'));
-  expect(Math.abs(compareOldTextObj.getElement('globalPosition').getInteger('y') - uiContext.px2vp(targetRectBefore.top)) <= 2).assertTrue();
+  expect(Math.abs(compareOldTextObj.getElement('globalPosition').getInteger('y') - UIContext.getFocusedUIContext()!.px2vp(targetRectBefore.top)) <= 2).assertTrue();
 
   //Check whether the changed position information is correct
   console.info('[' + data.caseTag + '] compareOldTextObj.width: ' + compareOldTextObj.getInteger('width'));
-  expect(Math.abs(compareOldTextObj.getInteger('width') - uiContext.px2vp(targetRectAfter.right - targetRectAfter.left)) <= 2).assertTrue();
+  expect(Math.abs(compareOldTextObj.getInteger('width') - UIContext.getFocusedUIContext()!.px2vp(targetRectAfter.right - targetRectAfter.left)) <= 2).assertTrue();
   console.info('[' + data.caseTag + '] compareOldTextObj.height: ' + compareOldTextObj.getInteger('height'));
-  expect(Math.abs(compareOldTextObj.getInteger('height') - uiContext.px2vp(targetRectAfter.bottom - targetRectAfter.top)) <= 2).assertTrue();
+  expect(Math.abs(compareOldTextObj.getInteger('height') - UIContext.getFocusedUIContext()!.px2vp(targetRectAfter.bottom - targetRectAfter.top)) <= 2).assertTrue();
   console.info('[' + data.caseTag + '] compareOldTextObj.position.x: ' + compareOldTextObj.getElement('position').getInteger('x'));
-  expect(Math.abs(compareOldTextObj.getElement('position').getInteger('x') - uiContext.px2vp(targetRectAfter.left - parentRectAfter.left)) <= 2)
+  expect(Math.abs(compareOldTextObj.getElement('position').getInteger('x') - UIContext.getFocusedUIContext()!.px2vp(targetRectAfter.left - parentRectAfter.left)) <= 2)
     .assertTrue();
   console.info('[' + data.caseTag + '] compareOldTextObj.position.y: ' + compareOldTextObj.getElement('position').getInteger('y'));
-  expect(Math.abs(compareOldTextObj.getElement('position').getInteger('y') - uiContext.px2vp(targetRectAfter.top - parentRectAfter.top)) <= 2).assertTrue();
+  expect(Math.abs(compareOldTextObj.getElement('position').getInteger('y') - UIContext.getFocusedUIContext()!.px2vp(targetRectAfter.top - parentRectAfter.top)) <= 2).assertTrue();
   console.info('[' + data.caseTag + '] compareNewTextObj.globalPosition.x: ' + compareNewTextObj.getElement('globalPosition').getInteger('x'));
-  expect(Math.abs(compareNewTextObj.getElement('globalPosition').getInteger('x') - uiContext.px2vp(targetRectAfter.left)) <= 2).assertTrue();
+  expect(Math.abs(compareNewTextObj.getElement('globalPosition').getInteger('x') - UIContext.getFocusedUIContext()!.px2vp(targetRectAfter.left)) <= 2).assertTrue();
   console.info('[' + data.caseTag + '] compareNewTextObj.globalPosition.y: ' + compareNewTextObj.getElement('globalPosition').getInteger('y'));
-  expect(Math.abs(compareNewTextObj.getElement('globalPosition').getInteger('y') - uiContext.px2vp(targetRectAfter.top)) <= 2).assertTrue();
+  expect(Math.abs(compareNewTextObj.getElement('globalPosition').getInteger('y') - UIContext.getFocusedUIContext()!.px2vp(targetRectAfter.top)) <= 2).assertTrue();
 }
 

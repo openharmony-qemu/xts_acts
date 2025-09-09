@@ -167,7 +167,7 @@ export default function alignSelfGridRowTest() {
       } else if (data.testValue.describe == 'SetStretch') {
         
         const uiContext = new UIContext();
-        expect(rect.bottom - rect.top).assertEqual(uiContext.vp2px(parentHeight));
+        expect(rect.bottom - rect.top).assertEqual(UIContext.getFocusedUIContext()!.vp2px(parentHeight));
       }
     })
   })

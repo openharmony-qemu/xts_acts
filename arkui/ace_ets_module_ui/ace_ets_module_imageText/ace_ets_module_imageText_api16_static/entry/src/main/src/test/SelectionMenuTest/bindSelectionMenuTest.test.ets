@@ -27,7 +27,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import {UtilsTest, startAbility, stopApplication} from "../Util.test"
-import { vp2px } from '@ohos.arkui.component'
+
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -137,7 +137,7 @@ it('bindSelectionMenuTest_static_0003', Level.LEVEL1, async (done: () => void): 
           await CommonFunc.sleep(500);
           let point = await (Text?.getBoundsCenter() as Promise<Point>);
           await CommonFunc.sleep(500);
-          await driver.mouseDrag({x:Math.round(point.x-vp2px(20)) as int, y:Math.round(point.y) as int },{x:Math.round(point.x+vp2px(20)) as int , y:Math.round(point.y) as int},600);
+          await driver.mouseDrag({x:Math.round(point.x-UIContext.getFocusedUIContext()!.vp2px(20)) as int, y:Math.round(point.y) as int },{x:Math.round(point.x+UIContext.getFocusedUIContext()!.vp2px(20)) as int , y:Math.round(point.y) as int},600);
           await CommonFunc.sleep(500);
           await driver.assertComponentExist(ON.text('自定义菜单'));
         }catch(error) {
@@ -217,7 +217,7 @@ it('bindSelectionMenuTest_static_0006', Level.LEVEL1, async (done: () => void): 
           await CommonFunc.sleep(500);
           let point = await (image?.getBoundsCenter() as Promise<Point>);
           await CommonFunc.sleep(500);
-          await driver.mouseDrag({x:Math.round(point.x-vp2px(24)) as int, y:Math.round(point.y) as int},{x:Math.round(point.x+vp2px(24)) as int, y:Math.round(point.y) as int},600);
+          await driver.mouseDrag({x:Math.round(point.x-UIContext.getFocusedUIContext()!.vp2px(24)) as int, y:Math.round(point.y) as int},{x:Math.round(point.x+UIContext.getFocusedUIContext()!.vp2px(24)) as int, y:Math.round(point.y) as int},600);
           await CommonFunc.sleep(500);
           await driver.assertComponentExist(ON.text('自定义菜单'));
         }catch(error) {
@@ -298,7 +298,7 @@ it('bindSelectionMenuTest_static_0009', Level.LEVEL1, async (done: () => void): 
           await CommonFunc.sleep(500);
           let point = await (mixed?.getBoundsCenter() as Promise<Point>);
           await CommonFunc.sleep(500);
-          await driver.mouseDrag({x:Math.round(point.x-vp2px(20)) as int, y:Math.round(point.y) as int},{x:Math.round(point.x+vp2px(50)) as int, y:Math.round(point.y) as int},600);
+          await driver.mouseDrag({x:Math.round(point.x-UIContext.getFocusedUIContext()!.vp2px(20)) as int, y:Math.round(point.y) as int},{x:Math.round(point.x+UIContext.getFocusedUIContext()!.vp2px(50)) as int, y:Math.round(point.y) as int},600);
           await CommonFunc.sleep(500);
           await driver.assertComponentExist(ON.text('自定义菜单'));
         }catch(error) {
