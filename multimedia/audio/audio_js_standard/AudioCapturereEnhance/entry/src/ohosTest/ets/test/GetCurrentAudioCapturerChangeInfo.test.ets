@@ -53,7 +53,7 @@ interface AudioCapturerOptions {
 const Tag: string = 'AudioCpaturerEnhanceTest: ';
 let audioCap: ESObject;
 let testContext: common.UIAbilityContext;
-
+let audioManager: audio.AudioManager
 export default function audioCapturerEnhanceTest() {
   describe('getCurrentAudioCapturerChangeInfo', () => {
 
@@ -77,11 +77,21 @@ export default function audioCapturerEnhanceTest() {
         })
     }
 
+    let getAudioManager = async() =>{
+      audioManager =audio.getAudioManager();
+      if(audioManager != null){
+        console.info(`GetCurrentAudioCapturerChangeInfo : getAudioManager : PASS`)
+      }else{
+        console.info(`GetCurrentAudioCapturerChangeInfo : getAudioManager : FAIL`)
+      }
+    }
+
     beforeAll(async () => {
       testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
       await getPermission();
       await driveFn();
       console.info('TestLog: Start Testing AudioCpaturerEnhanceTest Interfaces');
+      await getAudioManager();
     });
 
     beforeEach(async () => {
@@ -337,6 +347,17 @@ export default function audioCapturerEnhanceTest() {
       let AudioCapturerOptions: AudioCapturerOptions = {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
+      }
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_0300 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device => 
+            device.deviceType === audio.DeviceType.DISPLAY_PORT
+        );
+      if (detecteDevice) {
+          console.info(`this device has external device`)
+          done();
+          return;
       }
       try {
         const isPlaybackCaptureAvailable = canIUse('SystemCapability.Multimedia.Audio.PlaybackCapture');
