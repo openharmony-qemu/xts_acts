@@ -95,8 +95,8 @@ export default function springBack() {
       console.log("bindSheetButton-X " + point.x + " bindSheetButton-Y " + point.y)
       let x1 = Math.round(point.x) as Int
       let y1 = Math.round(point.y) as Int
-      let y2 = Math.round(point.y + uiContext.vp2px(150)) as Int
-      let stepLen = Math.round(uiContext.vp2px(30)) as Int
+      let y2 = Math.round(point.y + UIContext.getFocusedUIContext()!.vp2px(150)) as Int
+      let stepLen = Math.round(UIContext.getFocusedUIContext()!.vp2px(30)) as Int
       await (driver.fling({ x: x1, y: y1 }, { x: x1, y: y2 }, stepLen, 3000) as Promise<void>);
       await CommonFunc.sleep(2000);
 

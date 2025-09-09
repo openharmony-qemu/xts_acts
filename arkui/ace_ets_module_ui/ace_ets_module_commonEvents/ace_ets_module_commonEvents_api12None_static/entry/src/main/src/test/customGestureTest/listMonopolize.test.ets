@@ -84,8 +84,8 @@ export default function ListMonopolize() {
 
       await (column?.click() as Promise<void>);
       await driver.mouseScroll({
-        x: Math.round(AppStorage.get<number>("winLeft") as number + uiContext.vp2px(200)) as Int,
-        y: Math.round(AppStorage.get<number>("winTop") as number + uiContext.vp2px(200)) as Int
+        x: Math.round(AppStorage.get<number>("winLeft") as number + UIContext.getFocusedUIContext()!.vp2px(200)) as Int,
+        y: Math.round(AppStorage.get<number>("winTop") as number + UIContext.getFocusedUIContext()!.vp2px(200)) as Int
       }, true, 30, 2072, 20);
       await CommonFunc.sleep(200);
       let strJson = inspector.getInspectorByKey('listText');

@@ -120,9 +120,9 @@ export default function swiperPageTest() {
       let ttContent = await text3.getText();
       expect(ttContent).assertEqual("5")
       
-      await driver.swipe(Math.round(winLeft + Math.round(btRight) - Math.round(uiContext.vp2px(20))) as Int,
+      await driver.swipe(Math.round(winLeft + Math.round(btRight) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) as Int,
         Math.round(winTop + Math.round(btBottom / 2)) as Int,
-        Math.round(winLeft + Math.round(btLeft) + Math.round(uiContext.vp2px(10))) as Int,
+        Math.round(winLeft + Math.round(btLeft) + Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) as Int,
         Math.round(winTop + Math.round(btBottom / 2)) as Int);
       await CommonFunc.sleep(5000);
       let text7: Component = await driver.findComponent(ON.text('8')) as Component;

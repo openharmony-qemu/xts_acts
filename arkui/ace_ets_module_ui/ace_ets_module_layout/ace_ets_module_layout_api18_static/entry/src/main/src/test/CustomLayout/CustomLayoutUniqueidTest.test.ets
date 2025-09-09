@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
-import { vp2px } from '@ohos.arkui.component';
+
 import {
   Driver,
   Component,
@@ -139,10 +139,10 @@ export default function CustomLayoutUniqueidTest() {
       console.log('[CustomLayoutUniqueidTest_static_0200] Child_0_height is:' + Child_0_height);
       console.log('[CustomLayoutUniqueidTest_static_0200] Child_1_width is:' + Child_1_width);
       console.log('[CustomLayoutUniqueidTest_static_0200] Child_1_height is:' + Child_1_height);
-      expect(Math.floor(Math.abs(Child_0_width - vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Child_0_height - vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Child_1_width - vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Child_1_height - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Child_0_width - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Child_0_height - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Child_1_width - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Child_1_height - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
 
       console.info('[CustomLayoutUniqueidTest_static_0200] END');
       done();

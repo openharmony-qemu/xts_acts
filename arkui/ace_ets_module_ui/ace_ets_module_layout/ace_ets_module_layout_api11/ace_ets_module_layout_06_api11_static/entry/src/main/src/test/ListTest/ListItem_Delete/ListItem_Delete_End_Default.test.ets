@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { vp2px } from '@ohos.arkui.component'
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../ets/MainAbility/common/Rect';
@@ -95,10 +95,10 @@ it('SUB_ACE_ListItem_Delete_End_Default_static_0200', Level.LEVEL0, async (done:
       let width = right - left;
       console.info("SUB_ACE_ListItem_Delete_End_Default_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
       driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + right - vp2px(10))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + vp2px(50))).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + vp2px(10))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + vp2px(50))).toInt()
+        (Math.round((AppStorage.get<number>('winLeft')) as number + right - UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.getFocusedUIContext()!.vp2px(50))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number  + top + UIContext.getFocusedUIContext()!.vp2px(50))).toInt()
       );
       await CommonFunc.sleep(2000);
 
@@ -145,10 +145,10 @@ it('SUB_ACE_ListItem_Delete_End_Default_static_0300', Level.LEVEL0, async (done:
 
       console.log('slide ')
       driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + vp2px(80))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + vp2px(50))).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + vp2px(30))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + vp2px(50))).toInt()
+        (Math.round((AppStorage.get<number>('winLeft')) as number + UIContext.getFocusedUIContext()!.vp2px(80))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number + UIContext.getFocusedUIContext()!.vp2px(50))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + UIContext.getFocusedUIContext()!.vp2px(30))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number + UIContext.getFocusedUIContext()!.vp2px(50))).toInt()
       );
       await CommonFunc.sleep(2000);
 

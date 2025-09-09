@@ -91,9 +91,9 @@ it('testColumnSetFlexShinkNone_static', Level.LEVEL0, async () => {
 
       expect(Math.abs(columnSetFlexShinkNone.top - columnSetFlexShinkNone_1.top) <= 1).assertTrue()
       expect(Math.abs(columnSetFlexShinkNone.bottom - columnSetFlexShinkNone_3.bottom) <= 1).assertTrue()
-      expect(Math.abs(columnSetFlexShinkNone_2.top - columnSetFlexShinkNone_1.bottom - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(columnSetFlexShinkNone_3.top - columnSetFlexShinkNone_2.bottom - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(columnSetFlexShinkNone_3.bottom - columnSetFlexShinkNone_3.top - Math.round(uiContext.vp2px(190))) <= 1).assertTrue()
+      expect(Math.abs(columnSetFlexShinkNone_2.top - columnSetFlexShinkNone_1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnSetFlexShinkNone_3.top - columnSetFlexShinkNone_2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnSetFlexShinkNone_3.bottom - columnSetFlexShinkNone_3.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(190))) <= 1).assertTrue()
       console.info('new testColumnSetFlexShinkNone_static END');
     });
   })

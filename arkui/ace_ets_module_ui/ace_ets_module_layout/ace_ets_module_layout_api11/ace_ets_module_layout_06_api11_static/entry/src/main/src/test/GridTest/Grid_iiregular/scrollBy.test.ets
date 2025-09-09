@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { vp2px } from '@ohos.arkui.component'
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
@@ -209,7 +209,7 @@ it('scrollByJsunit_static_0004', Level.LEVEL0, async (done: () => void): Promise
       await CommonFunc.sleep(1000);
       let context = AppStorage.get<UIContext>("context")
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'distance', value: context!.px2vp(150)
+        name: 'distance', value: UIContext.getFocusedUIContext()!.px2vp(150)
       })
 
       let driver = Driver.create();

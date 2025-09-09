@@ -95,27 +95,27 @@ it('SUB_ACE_Row_Space_Default_TEST_static_0200', Level.LEVEL0, async (done: () =
         .assertTrue();
       const uiContext = new UIContext();
       console.log('assert space')
-      expect(Math.abs((Math.round(Row_Space_Default_012.left - Row_Space_Default_011.right)) - (uiContext.vp2px(0))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_012.left - Row_Space_Default_011.right)) - (UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_013.left - Row_Space_Default_012.right)) - (uiContext.vp2px(0))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_013.left - Row_Space_Default_012.right)) - (UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
       console.log('Row_Space_Default_012.left - Row_Space_Default_011.right', Row_Space_Default_012.left - Row_Space_Default_011.right)
       console.log('Row_Space_Default_013.left - Row_Space_Default_012.right', Row_Space_Default_013.left - Row_Space_Default_012.right)
 
 
       console.log('assert height')
-      expect(Math.abs((Math.round(Row_Space_Default_011.bottom - Row_Space_Default_011.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_011.bottom - Row_Space_Default_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_012.bottom - Row_Space_Default_012.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_012.bottom - Row_Space_Default_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_013.bottom - Row_Space_Default_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_013.bottom - Row_Space_Default_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.log('assert weight')
-      expect(Math.abs((Math.round(Row_Space_Default_011.right - Row_Space_Default_011.left)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_011.right - Row_Space_Default_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_012.right - Row_Space_Default_012.left)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_012.right - Row_Space_Default_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_013.right - Row_Space_Default_013.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_013.right - Row_Space_Default_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.info('[SUB_ACE_Row_Space_Default_TEST_static_0200] END');
       done();
@@ -150,26 +150,26 @@ it('SUB_ACE_Row_Space_Default_TEST_static_0300', Level.LEVEL0, async (done: () =
         .assertTrue();
       const uiContext = new UIContext();
       console.log('assert space')
-      expect(Math.abs((Math.round(Row_Space_Default_012.left - Row_Space_Default_011.right)) - (uiContext.vp2px(0))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_012.left - Row_Space_Default_011.right)) - (UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_013.left - Row_Space_Default_012.right)) - (uiContext.vp2px(0))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_013.left - Row_Space_Default_012.right)) - (UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
       console.log('Row_Space_Default_012.left - Row_Space_Default_011.right', Row_Space_Default_012.left - Row_Space_Default_011.right)
       console.log('Row_Space_Default_013.left - Row_Space_Default_012.right', Row_Space_Default_013.left - Row_Space_Default_012.right)
 
       console.log('assert height')
-      expect(Math.abs((Math.round(Row_Space_Default_011.bottom - Row_Space_Default_011.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_011.bottom - Row_Space_Default_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_012.bottom - Row_Space_Default_012.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_012.bottom - Row_Space_Default_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_013.bottom - Row_Space_Default_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_013.bottom - Row_Space_Default_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.log('assert weight')
-      expect(Math.abs((Math.round(Row_Space_Default_011.right - Row_Space_Default_011.left)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_011.right - Row_Space_Default_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_012.right - Row_Space_Default_012.left)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_012.right - Row_Space_Default_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_013.right - Row_Space_Default_013.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_013.right - Row_Space_Default_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.info('[SUB_ACE_Row_Space_Default_TEST_static_0200] END');
       done();
@@ -205,26 +205,26 @@ it('SUB_ACE_Row_Space_Default_TEST_static_0400', Level.LEVEL0, async (done: () =
 
       console.log('assert space')
       const uiContext = new UIContext();
-      expect(Math.abs((Math.round(Row_Space_Default_022.left - Row_Space_Default_021.right)) - (uiContext.vp2px(0))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_022.left - Row_Space_Default_021.right)) - (UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_023.left - Row_Space_Default_022.right)) - (uiContext.vp2px(0))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_023.left - Row_Space_Default_022.right)) - (UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
       console.log('Row_Space_Default_022.left - Row_Space_Default_021.right', Row_Space_Default_022.left - Row_Space_Default_021.right)
       console.log('Row_Space_Default_023.left - Row_Space_Default_022.right', Row_Space_Default_023.left - Row_Space_Default_022.right)
 
       console.log('assert height')
-      expect(Math.abs((Math.round(Row_Space_Default_021.bottom - Row_Space_Default_021.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_021.bottom - Row_Space_Default_021.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_022.bottom - Row_Space_Default_022.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_022.bottom - Row_Space_Default_022.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_023.bottom - Row_Space_Default_023.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_023.bottom - Row_Space_Default_023.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.log('assert weight')
-      expect(Math.abs((Math.round(Row_Space_Default_021.right - Row_Space_Default_021.left)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_021.right - Row_Space_Default_021.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_022.right - Row_Space_Default_022.left)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_022.right - Row_Space_Default_022.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_023.right - Row_Space_Default_023.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_023.right - Row_Space_Default_023.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.info('[SUB_ACE_Row_Space_Default_TEST_static_0400] END');
       done();
@@ -260,26 +260,26 @@ it('SUB_ACE_Row_Space_Default_TEST_static_0500', Level.LEVEL0, async (done: () =
 
       console.log('assert space')
       const uiContext = new UIContext();
-      expect(Math.abs((Math.round(Row_Space_Default_022.left - Row_Space_Default_021.right)) - (uiContext.vp2px(0))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_022.left - Row_Space_Default_021.right)) - (UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_023.left - Row_Space_Default_022.right)) - (uiContext.vp2px(0))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_023.left - Row_Space_Default_022.right)) - (UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
       console.log('Row_Space_Default_022.left - Row_Space_Default_021.right', Row_Space_Default_022.left - Row_Space_Default_021.right)
       console.log('Row_Space_Default_023.left - Row_Space_Default_022.right', Row_Space_Default_023.left - Row_Space_Default_022.right)
 
       console.log('assert height')
-      expect(Math.abs((Math.round(Row_Space_Default_021.bottom - Row_Space_Default_021.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_021.bottom - Row_Space_Default_021.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_022.bottom - Row_Space_Default_022.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_022.bottom - Row_Space_Default_022.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_023.bottom - Row_Space_Default_023.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_023.bottom - Row_Space_Default_023.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.log('assert weight')
-      expect(Math.abs((Math.round(Row_Space_Default_021.right - Row_Space_Default_021.left)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_021.right - Row_Space_Default_021.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_022.right - Row_Space_Default_022.left)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_022.right - Row_Space_Default_022.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_023.right - Row_Space_Default_023.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_023.right - Row_Space_Default_023.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.info('[SUB_ACE_Row_Space_Default_TEST_static_0400] END');
       done();
@@ -314,26 +314,26 @@ it('SUB_ACE_Row_Space_Default_TEST_static_0100', Level.LEVEL0, async (done: () =
         .assertTrue();
       const uiContext = new UIContext();
       console.log('assert space')
-      expect(Math.abs((Math.round(Row_Space_Default_012.left - Row_Space_Default_011.right)) - (uiContext.vp2px(0))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_012.left - Row_Space_Default_011.right)) - (UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_013.left - Row_Space_Default_012.right)) - (uiContext.vp2px(0))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_013.left - Row_Space_Default_012.right)) - (UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
       console.log('Row_Space_Default_012.left - Row_Space_Default_011.right', Row_Space_Default_012.left - Row_Space_Default_011.right)
       console.log('Row_Space_Default_013.left - Row_Space_Default_012.right', Row_Space_Default_013.left - Row_Space_Default_012.right)
 
       console.log('assert height')
-      expect(Math.abs((Math.round(Row_Space_Default_011.bottom - Row_Space_Default_011.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_011.bottom - Row_Space_Default_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_012.bottom - Row_Space_Default_012.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_012.bottom - Row_Space_Default_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_013.bottom - Row_Space_Default_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_013.bottom - Row_Space_Default_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.log('assert weight')
-      expect(Math.abs((Math.round(Row_Space_Default_011.right - Row_Space_Default_011.left)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_011.right - Row_Space_Default_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_012.right - Row_Space_Default_012.left)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_012.right - Row_Space_Default_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_Default_013.right - Row_Space_Default_013.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_Default_013.right - Row_Space_Default_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.info('[SUB_ACE_Row_Space_Default_TEST_static_0200] END');
       done();

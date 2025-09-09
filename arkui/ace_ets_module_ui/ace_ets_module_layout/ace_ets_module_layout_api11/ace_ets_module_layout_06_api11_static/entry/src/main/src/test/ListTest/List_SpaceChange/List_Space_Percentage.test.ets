@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { vp2px } from '@ohos.arkui.component'
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../ets/MainAbility/common/Rect';
@@ -95,20 +95,20 @@ it('SUB_ACE_List_Space_Percentage_static_0100', Level.LEVEL0, async (done: () =>
       let ListItem03: RectValue = CommonFunc.getComponentRect('List_Space_Percentage_ListItem_03');
       let ListItem04: RectValue = CommonFunc.getComponentRect('List_Space_Percentage_ListItem_04');
 
-	  expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - vp2px(300)) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(vp2px(50))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
 
-	  expect(Math.abs(Math.round(ListItem02.top - ListItem01.bottom) - Math.round(vp2px(52))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(ListItem02.right - ListItem02.left) - vp2px(300)) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(ListItem02.bottom - ListItem02.top) - Math.round(vp2px(50))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem02.top - ListItem01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(52))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem02.right - ListItem02.left) - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem02.bottom - ListItem02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(ListItem03.top - ListItem02.bottom) - Math.round(vp2px(52))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(ListItem03.right - ListItem03.left) - vp2px(300)) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(ListItem03.bottom - ListItem03.top) - Math.round(vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem03.top - ListItem02.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(52))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem03.right - ListItem03.left) - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem03.bottom - ListItem03.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(ListItem04.top - ListItem03.bottom) - Math.round(vp2px(52))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(ListItem04.right - ListItem04.left) - vp2px(300)) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(ListItem04.bottom - ListItem04.top) - Math.round(vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem04.top - ListItem03.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(52))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem04.right - ListItem04.left) - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem04.bottom - ListItem04.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_List_Space_Percentage_0100] END');
       done();
@@ -137,12 +137,12 @@ it('SUB_ACE_List_Space_Percentage_static_0200', Level.LEVEL0, async (done: () =>
       let ListItem03: RectValue = CommonFunc.getComponentRect('List_Space_Percentage_ListItem_03');
       let ListItem04: RectValue = CommonFunc.getComponentRect('List_Space_Percentage_ListItem_04');
 
-	  expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - vp2px(300)) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(vp2px(50))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
 
-	  expect(Math.abs(Math.round(ListItem02.top - ListItem01.bottom) - Math.round(vp2px(260))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(ListItem02.right - ListItem02.left) - vp2px(300)) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(ListItem02.bottom - ListItem02.top) - Math.round(vp2px(50))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem02.top - ListItem01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(260))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem02.right - ListItem02.left) - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem02.bottom - ListItem02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_List_Space_Percentage_0200] END');
       done();
@@ -170,12 +170,12 @@ it('SUB_ACE_List_Space_Percentage_static_0300', Level.LEVEL0, async (done: () =>
       let ListItem03: RectValue = CommonFunc.getComponentRect('List_Space_Percentage_ListItem_03');
       let ListItem04: RectValue = CommonFunc.getComponentRect('List_Space_Percentage_ListItem_04');
 
-	  expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - vp2px(300)) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(vp2px(50))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
 
-	  expect(Math.abs(Math.round(ListItem02.top - ListItem01.bottom) - Math.round(vp2px(0))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(ListItem02.right - ListItem02.left) - vp2px(300)) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(ListItem02.bottom - ListItem02.top) - Math.round(vp2px(50))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem02.top - ListItem01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem02.right - ListItem02.left) - UIContext.getFocusedUIContext()!.vp2px(300)) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem02.bottom - ListItem02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_List_Space_Percentage_0300] END');
       done();

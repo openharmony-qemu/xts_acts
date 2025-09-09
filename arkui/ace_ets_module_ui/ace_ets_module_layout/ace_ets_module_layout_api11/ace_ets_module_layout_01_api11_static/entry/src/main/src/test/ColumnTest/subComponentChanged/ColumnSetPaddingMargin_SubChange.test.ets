@@ -88,13 +88,13 @@ it('testColumnParentMarPadSubMarPad_static', Level.LEVEL0, async () => {
       let setPaddingMargin02: RectValue = CommonFunc.getComponentRect('setPaddingMargin02');
       let setPaddingMargin03: RectValue = CommonFunc.getComponentRect('setPaddingMargin03');
       let setPaddingMargin: RectValue = CommonFunc.getComponentRect('setPaddingMargin');
-      expect(Math.floor(Math.abs((setPaddingMargin01.top - setPaddingMargin.top) - uiContext.vp2px(40))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((setPaddingMargin02.top - setPaddingMargin01.bottom) - uiContext.vp2px(50))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((setPaddingMargin03.top - setPaddingMargin02.bottom) - uiContext.vp2px(30))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((setPaddingMargin03.bottom - setPaddingMargin.bottom) - uiContext.vp2px(20))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((setPaddingMargin01.right - setPaddingMargin01.left) - uiContext.vp2px(300))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((setPaddingMargin02.right - setPaddingMargin02.left) - uiContext.vp2px(300))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((setPaddingMargin03.right - setPaddingMargin03.left) - uiContext.vp2px(300))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((setPaddingMargin01.top - setPaddingMargin.top) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((setPaddingMargin02.top - setPaddingMargin01.bottom) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((setPaddingMargin03.top - setPaddingMargin02.bottom) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((setPaddingMargin03.bottom - setPaddingMargin.bottom) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((setPaddingMargin01.right - setPaddingMargin01.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((setPaddingMargin02.right - setPaddingMargin02.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((setPaddingMargin03.right - setPaddingMargin03.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
       console.info('new testColumnParentMarPadSubMarPad_static END');
     });
   })

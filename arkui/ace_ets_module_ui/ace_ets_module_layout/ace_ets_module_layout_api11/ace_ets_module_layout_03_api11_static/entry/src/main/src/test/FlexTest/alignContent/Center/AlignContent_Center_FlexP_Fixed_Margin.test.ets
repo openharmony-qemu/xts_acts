@@ -115,14 +115,14 @@ it('testAlignContentCenterFlexfixedMarginSatisfy_static', Level.LEVEL0, async ()
       console.log('AlignContentFlexCenter_4 rect_value is:' +
       JSON.stringify(AlignContentFlexCenter_4));
       const uiContext = new UIContext();
-      expect(Math.abs(AlignContentFlexCenter_1.bottom - AlignContentFlexCenter_1.top - uiContext.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(AlignContentFlexCenter_2.bottom - AlignContentFlexCenter_2.top - uiContext.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(AlignContentFlexCenter_3.bottom - AlignContentFlexCenter_3.top - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(AlignContentFlexCenter_4.bottom - AlignContentFlexCenter_4.top - uiContext.vp2px(200)) <= 1).assertTrue()
-      expect(Math.abs(AlignContentFlexCenter_1.right - AlignContentFlexCenter_1.left - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(AlignContentFlexCenter_2.right - AlignContentFlexCenter_2.left - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(AlignContentFlexCenter_3.right - AlignContentFlexCenter_3.left - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(AlignContentFlexCenter_4.right - AlignContentFlexCenter_4.left - uiContext.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(AlignContentFlexCenter_1.bottom - AlignContentFlexCenter_1.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
+      expect(Math.abs(AlignContentFlexCenter_2.bottom - AlignContentFlexCenter_2.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
+      expect(Math.abs(AlignContentFlexCenter_3.bottom - AlignContentFlexCenter_3.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(AlignContentFlexCenter_4.bottom - AlignContentFlexCenter_4.top - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue()
+      expect(Math.abs(AlignContentFlexCenter_1.right - AlignContentFlexCenter_1.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(AlignContentFlexCenter_2.right - AlignContentFlexCenter_2.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(AlignContentFlexCenter_3.right - AlignContentFlexCenter_3.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(AlignContentFlexCenter_4.right - AlignContentFlexCenter_4.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
 
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual("FlexDirection.Row");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual("FlexAlign.Center");
@@ -130,10 +130,10 @@ it('testAlignContentCenterFlexfixedMarginSatisfy_static', Level.LEVEL0, async ()
       expect(Math.abs(AlignContentFlexCenter_flex001.bottom - AlignContentFlexCenter_4.bottom - AlignContentFlexCenter_2.top + AlignContentFlexCenter_flex001.top) <= 1)
         .assertTrue()
 
-      expect(Math.abs(AlignContentFlexCenter_1.top - AlignContentFlexCenter_2.top - uiContext.vp2px(10)) <= 1).assertTrue()
-      expect(Math.abs(AlignContentFlexCenter_2.left - AlignContentFlexCenter_1.right - uiContext.vp2px(10)) <= 1).assertTrue()
+      expect(Math.abs(AlignContentFlexCenter_1.top - AlignContentFlexCenter_2.top - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue()
+      expect(Math.abs(AlignContentFlexCenter_2.left - AlignContentFlexCenter_1.right - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue()
 
-      expect(Math.abs(Math.round(AlignContentFlexCenter_flex001.bottom - AlignContentFlexCenter_4.bottom) - Math.round(uiContext.vp2px(25))) <= 1)
+      expect(Math.abs(Math.round(AlignContentFlexCenter_flex001.bottom - AlignContentFlexCenter_4.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(25))) <= 1)
         .assertTrue();
 
       expect(Math.abs(AlignContentFlexCenter_4.top - AlignContentFlexCenter_3.bottom) <= 1).assertTrue();
@@ -179,34 +179,34 @@ it('testAlignContentCenterFlexfixedMarginNoSatisfy_static', Level.LEVEL0, async 
       console.log('AlignContentFlexCenter_4 rect_value is:' +
       JSON.stringify(AlignContentFlexCenter_4));
       const uiContext = new UIContext();
-      expect(Math.abs(AlignContentFlexCenter_1.bottom - AlignContentFlexCenter_1.top - uiContext.vp2px(50)) <= 1)
+      expect(Math.abs(AlignContentFlexCenter_1.bottom - AlignContentFlexCenter_1.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1)
         .assertTrue();
-      expect(Math.abs(AlignContentFlexCenter_2.bottom - AlignContentFlexCenter_2.top - uiContext.vp2px(100)) <= 1)
+      expect(Math.abs(AlignContentFlexCenter_2.bottom - AlignContentFlexCenter_2.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1)
         .assertTrue();
-      expect(Math.abs(AlignContentFlexCenter_3.bottom - AlignContentFlexCenter_3.top - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs(AlignContentFlexCenter_3.bottom - AlignContentFlexCenter_3.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
-      expect(Math.abs(AlignContentFlexCenter_4.bottom - AlignContentFlexCenter_4.top - uiContext.vp2px(200)) <= 1)
+      expect(Math.abs(AlignContentFlexCenter_4.bottom - AlignContentFlexCenter_4.top - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1)
         .assertTrue();
-      expect(Math.abs(AlignContentFlexCenter_1.right - AlignContentFlexCenter_1.left - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs(AlignContentFlexCenter_1.right - AlignContentFlexCenter_1.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
-      expect(Math.abs(AlignContentFlexCenter_2.right - AlignContentFlexCenter_2.left - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs(AlignContentFlexCenter_2.right - AlignContentFlexCenter_2.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
-      expect(Math.abs(AlignContentFlexCenter_3.right - AlignContentFlexCenter_3.left - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs(AlignContentFlexCenter_3.right - AlignContentFlexCenter_3.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
-      expect(Math.abs(AlignContentFlexCenter_4.right - AlignContentFlexCenter_4.left - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs(AlignContentFlexCenter_4.right - AlignContentFlexCenter_4.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
 
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual("FlexDirection.Row");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual("FlexAlign.Center");
 
-      expect(Math.abs(AlignContentFlexCenter_1.top - AlignContentFlexCenter_flex002.top - uiContext.vp2px(100)) <= 1)
+      expect(Math.abs(AlignContentFlexCenter_1.top - AlignContentFlexCenter_flex002.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1)
         .assertTrue();
-      expect(Math.abs(AlignContentFlexCenter_1.left - AlignContentFlexCenter_flex002.left - uiContext.vp2px(100)) <= 1)
+      expect(Math.abs(AlignContentFlexCenter_1.left - AlignContentFlexCenter_flex002.left - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1)
         .assertTrue();
 
       expect(Math.round(AlignContentFlexCenter_4.bottom)).assertLarger(Math.round(AlignContentFlexCenter_flex002.bottom));
 
-      expect(Math.abs(AlignContentFlexCenter_3.top - AlignContentFlexCenter_1.bottom - uiContext.vp2px(100)) <= 1)
+      expect(Math.abs(AlignContentFlexCenter_3.top - AlignContentFlexCenter_1.bottom - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1)
         .assertTrue();
       console.info('testAlignContentCenterFlexfixedMarginNoSatisfy END');
 

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { vp2px } from '@ohos.arkui.component'
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../ets/MainAbility/common/Rect';
@@ -96,9 +96,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0080', Level.LEVEL0,
       
       
       driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + vp2px(100))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(100))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + vp2px(90))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(90))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
       await CommonFunc.sleep(5000);
@@ -140,9 +140,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0090', Level.LEVEL0,
       let height = bottom -top;
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0090 value is" + left + " --" + right + "--" + top + "--" + bottom);
       driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + vp2px(150))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(150))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + vp2px(50))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(50))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
       await CommonFunc.sleep(4000);
@@ -184,9 +184,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0100', Level.LEVEL0,
       let height = bottom -top;
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
       driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + right - vp2px(20))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + right - UIContext.getFocusedUIContext()!.vp2px(20))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + vp2px(2))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(2))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
       await CommonFunc.sleep(5000);

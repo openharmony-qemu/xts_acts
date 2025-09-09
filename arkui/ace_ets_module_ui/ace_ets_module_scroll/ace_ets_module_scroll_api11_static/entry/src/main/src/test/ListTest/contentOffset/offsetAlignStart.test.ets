@@ -97,7 +97,7 @@ export default function offsetAlignStart() {
       console.info('[offsetAlignStart_static_0100] list.top: ' + list.top);
       console.info('[offsetAlignStart_static_0100] listItem.top: ' + listItem.top);
       await CommonFunc.sleep(1000);
-      expect(Math.abs(Math.round(listItem.top - list.top) - Math.round((new UIContext).vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(listItem.top - list.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       console.info('[offsetAlignStart_static_0100] END');
       done();
     });

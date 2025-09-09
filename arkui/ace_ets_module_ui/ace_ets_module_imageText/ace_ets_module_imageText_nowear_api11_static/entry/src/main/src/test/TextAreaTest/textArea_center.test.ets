@@ -131,7 +131,7 @@ it('textArea_center_static_002', Level.LEVEL2, async (done: ()=>void ) => {
         let driver =  Driver.create();
         await CommonFunc.sleep(500);
         await (driver.click(
-          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2) as int),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /2 + uiContext.vp2px(20)) as int)
+          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2) as int),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /2 + UIContext.getFocusedUIContext()!.vp2px(20)) as int)
         ) as Promise<void>);
         await CommonFunc.sleep(1000);
 

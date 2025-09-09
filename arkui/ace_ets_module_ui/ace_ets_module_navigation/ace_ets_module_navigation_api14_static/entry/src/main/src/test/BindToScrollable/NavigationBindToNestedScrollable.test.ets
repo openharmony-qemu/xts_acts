@@ -27,7 +27,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import {UtilsTest, startAbility, stopApplication} from "../Util.test"
-import { vp2px } from '@ohos.arkui.component'
+
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -103,7 +103,7 @@ it('NavigationBindToNestedScrollable_static_0100', Level.LEVEL0, async (done: ()
       let right = scrollBarRect.right;
       let bottom = scrollBarRect.bottom;
       
-      await driver.swipe(Math.round(right - vp2px(11)) as int, Math.round(top + vp2px(12)) as int, Math.round(right - vp2px(11)) as int, Math.round(bottom) as int);
+      await driver.swipe(Math.round(right - UIContext.getFocusedUIContext()!.vp2px(11)) as int, Math.round(top + UIContext.getFocusedUIContext()!.vp2px(12)) as int, Math.round(right - UIContext.getFocusedUIContext()!.vp2px(11)) as int, Math.round(bottom) as int);
       await driver.delayMs(500)
 
       await driver.assertComponentExist(ON.type('TitleBar'));
@@ -119,7 +119,7 @@ it('NavigationBindToNestedScrollable_static_0100', Level.LEVEL0, async (done: ()
       console.info('NavigationBindToNestedScrollable_0100 tooBarTop1: ', tooBarTop1);
       console.info('NavigationBindToNestedScrollable_0100 tooBarBottom1: ', tooBarBottom1);
 
-      await driver.swipe(Math.round(right - vp2px(11)) as int, Math.round(bottom - vp2px(12)) as int, Math.round(right - vp2px(11)) as int, Math.round(top) as int);
+      await driver.swipe(Math.round(right - UIContext.getFocusedUIContext()!.vp2px(11)) as int, Math.round(bottom - UIContext.getFocusedUIContext()!.vp2px(12)) as int, Math.round(right - UIContext.getFocusedUIContext()!.vp2px(11)) as int, Math.round(top) as int);
       await driver.delayMs(500)
       let list = await driver.findComponent(ON.type('List'));
       
@@ -128,7 +128,7 @@ it('NavigationBindToNestedScrollable_static_0100', Level.LEVEL0, async (done: ()
       let listRight = listRect.right;
       let listBottom = listRect.bottom;
 
-      await driver.swipe(Math.round(listRight - vp2px(11)) as int, Math.round(listTop + vp2px(12)) as int, Math.round(listRight - vp2px(11)) as int, Math.round(listBottom) as int);
+      await driver.swipe(Math.round(listRight - UIContext.getFocusedUIContext()!.vp2px(11)) as int, Math.round(listTop + UIContext.getFocusedUIContext()!.vp2px(12)) as int, Math.round(listRight - UIContext.getFocusedUIContext()!.vp2px(11)) as int, Math.round(listBottom) as int);
       await driver.delayMs(500)
 
       let component1 = await driver.findComponent(ON.type('TitleBar').text('pageOne'));

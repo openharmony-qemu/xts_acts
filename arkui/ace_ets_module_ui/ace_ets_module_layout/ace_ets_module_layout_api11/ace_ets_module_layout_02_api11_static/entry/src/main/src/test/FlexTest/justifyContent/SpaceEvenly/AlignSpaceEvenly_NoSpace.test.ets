@@ -112,17 +112,17 @@ it('testFlexAlignSpaceEvenlyFlexWidthOverflow_static', Level.LEVEL0, async () : 
       expect(Math.abs(SpaceEvenly_NoSpace_01.right - SpaceEvenly_NoSpace_013.right) <= 1).assertTrue();
       expect(Math.abs(SpaceEvenly_NoSpace_012.left - SpaceEvenly_NoSpace_011.right) <= 2).assertTrue();
       expect(Math.abs(SpaceEvenly_NoSpace_013.left - SpaceEvenly_NoSpace_012.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_NoSpace_011.right - SpaceEvenly_NoSpace_011.left)) - (Math.round(uiContext.vp2px(400 / 3)))) <= 2)
+      expect(Math.abs((Math.round(SpaceEvenly_NoSpace_011.right - SpaceEvenly_NoSpace_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(400 / 3)))) <= 2)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_NoSpace_012.right - SpaceEvenly_NoSpace_012.left)) - (Math.round(uiContext.vp2px(400 / 3)))) <= 2)
+      expect(Math.abs((Math.round(SpaceEvenly_NoSpace_012.right - SpaceEvenly_NoSpace_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(400 / 3)))) <= 2)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_NoSpace_013.right - SpaceEvenly_NoSpace_013.left)) - (Math.round(uiContext.vp2px(400 / 3)))) <= 2)
+      expect(Math.abs((Math.round(SpaceEvenly_NoSpace_013.right - SpaceEvenly_NoSpace_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(400 / 3)))) <= 2)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_NoSpace_011.bottom - SpaceEvenly_NoSpace_011.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_NoSpace_011.bottom - SpaceEvenly_NoSpace_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_NoSpace_012.bottom - SpaceEvenly_NoSpace_012.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_NoSpace_012.bottom - SpaceEvenly_NoSpace_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_NoSpace_013.bottom - SpaceEvenly_NoSpace_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_NoSpace_013.bottom - SpaceEvenly_NoSpace_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.info('[SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEEVENLY_TEST_0100] END');
 
@@ -159,27 +159,27 @@ it('testFlexAlignSpaceEvenlyFlexWidthMeet_static', Level.LEVEL0, async () : Prom
       expect(Math.abs(SpaceEvenly_NoSpace_011.top - SpaceEvenly_NoSpace_012.top) <= 1).assertTrue();
       expect(Math.abs(SpaceEvenly_NoSpace_012.top - SpaceEvenly_NoSpace_013.top) <= 1).assertTrue();
       expect(Math.abs(SpaceEvenly_NoSpace_011.top - SpaceEvenly_NoSpace_01.top) <= 1).assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_NoSpace_012.left - SpaceEvenly_NoSpace_011.right)) - (Math.round(uiContext.vp2px(12.5)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_NoSpace_012.left - SpaceEvenly_NoSpace_011.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(12.5)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_NoSpace_011.left - SpaceEvenly_NoSpace_01.left)) - (Math.round(uiContext.vp2px(12.5)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_NoSpace_011.left - SpaceEvenly_NoSpace_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(12.5)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_NoSpace_013.left - SpaceEvenly_NoSpace_012.right)) - (Math.round(uiContext.vp2px(12.5)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_NoSpace_013.left - SpaceEvenly_NoSpace_012.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(12.5)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_NoSpace_01.right - SpaceEvenly_NoSpace_013.right)) - (Math.round(uiContext.vp2px(12.5)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_NoSpace_01.right - SpaceEvenly_NoSpace_013.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(12.5)))) <= 1)
         .assertTrue();
 
 
-      expect(Math.abs(Math.round(SpaceEvenly_NoSpace_011.right - SpaceEvenly_NoSpace_011.left) - Math.round(uiContext.vp2px(150))) <= 1)
+      expect(Math.abs(Math.round(SpaceEvenly_NoSpace_011.right - SpaceEvenly_NoSpace_011.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(SpaceEvenly_NoSpace_012.right - SpaceEvenly_NoSpace_012.left) - Math.round(uiContext.vp2px(150))) <= 1)
+      expect(Math.abs(Math.round(SpaceEvenly_NoSpace_012.right - SpaceEvenly_NoSpace_012.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(SpaceEvenly_NoSpace_013.right - SpaceEvenly_NoSpace_013.left) - Math.round(uiContext.vp2px(150))) <= 1)
+      expect(Math.abs(Math.round(SpaceEvenly_NoSpace_013.right - SpaceEvenly_NoSpace_013.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(SpaceEvenly_NoSpace_011.bottom - SpaceEvenly_NoSpace_011.top) - Math.round(uiContext.vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(SpaceEvenly_NoSpace_011.bottom - SpaceEvenly_NoSpace_011.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(SpaceEvenly_NoSpace_012.bottom - SpaceEvenly_NoSpace_012.top) - Math.round(uiContext.vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(SpaceEvenly_NoSpace_012.bottom - SpaceEvenly_NoSpace_012.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(SpaceEvenly_NoSpace_013.bottom - SpaceEvenly_NoSpace_013.top) - Math.round(uiContext.vp2px(150))) <= 1)
+      expect(Math.abs(Math.round(SpaceEvenly_NoSpace_013.bottom - SpaceEvenly_NoSpace_013.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignSpaceEvenlyFlexWidthMeet] END');
 

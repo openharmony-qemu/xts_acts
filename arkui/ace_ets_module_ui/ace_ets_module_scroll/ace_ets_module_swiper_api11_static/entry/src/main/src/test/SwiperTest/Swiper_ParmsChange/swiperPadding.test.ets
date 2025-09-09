@@ -111,13 +111,13 @@ export default function swiperPadding() {
       const uiContext = new UIContext();
       console.info("Before page turning , swiperPadding01.left - swiperPadding.left value is " +
       JSON.stringify(swiperPadding01.left - swiperPadding.left));
-      expect(Math.abs(Math.round(swiperPadding01.left - swiperPadding.left) - Math.round(uiContext.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperPadding01.left - swiperPadding.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(swiperPadding.right - swiperPadding01.right) - Math.round(uiContext.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperPadding.right - swiperPadding01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(swiperPadding01.top - swiperPadding.top) - Math.round(uiContext.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperPadding01.top - swiperPadding.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(swiperPadding.bottom - swiperPadding01.bottom) - Math.round(uiContext.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperPadding.bottom - swiperPadding01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
       
       let driver = Driver.create();
@@ -143,13 +143,13 @@ export default function swiperPadding() {
       
       console.info("After page turning, swiperPadding02.left - swiperPadding.left value is " +
       JSON.stringify(swiperPadding02.left - swiperPadding.left));
-      expect(Math.abs(Math.round(swiperPadding02.left - swiperPadding.left) - Math.round(uiContext.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperPadding02.left - swiperPadding.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(swiperPadding.right - swiperPadding02.right) - Math.round(uiContext.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperPadding.right - swiperPadding02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(swiperPadding02.top - swiperPadding.top) - Math.round(uiContext.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperPadding02.top - swiperPadding.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(swiperPadding.bottom - swiperPadding02.bottom) - Math.round(uiContext.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperPadding.bottom - swiperPadding02.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
       console.info("The type value is " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$type')));

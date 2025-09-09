@@ -29,10 +29,10 @@ import {
   CanvasPattern,
   ColumnOptions,
   Canvas,
-  px2vp,
   Margin,
   Canvas
 } from '@ohos.arkui.component';
+import { UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -244,48 +244,56 @@ struct CanvasShader {
   clamp1() {
     let pattern = this.context1.createPattern(this.img, 'clamp')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, px2vp(276 * 2), px2vp(183))
+    this.context1.fillRect(0, 0, UIContext.getFocusedUIContext()!.px2vp(276 * 2),
+      UIContext.getFocusedUIContext()!.px2vp(183))
   }
 
   clamp2() {
     let pattern = this.context1.createPattern(this.img, 'clamp')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, px2vp(276), px2vp(183 * 2))
+    this.context1.fillRect(0, 0, UIContext.getFocusedUIContext()!.px2vp(276),
+      UIContext.getFocusedUIContext()!.px2vp(183 * 2))
   }
 
   clamp3() {
     let pattern = this.context1.createPattern(this.img, 'clamp')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, px2vp(276 * 2), px2vp(183 * 2))
+    this.context1.fillRect(0, 0, UIContext.getFocusedUIContext()!.px2vp(276 * 2),
+      UIContext.getFocusedUIContext()!.px2vp(183 * 2))
   }
 
   clamp4() {
     let pattern = this.context1.createPattern(this.img, 'clamp')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, px2vp(276), px2vp(183))
+    this.context1.fillRect(0, 0, UIContext.getFocusedUIContext()!.px2vp(276),
+      UIContext.getFocusedUIContext()!.px2vp(183))
   }
 
   mirror1() {
     let pattern = this.context1.createPattern(this.img, 'mirror')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, px2vp(150 * 2), px2vp(150))
+    this.context1.fillRect(0, 0, UIContext.getFocusedUIContext()!.px2vp(150 * 2),
+      UIContext.getFocusedUIContext()!.px2vp(150))
   }
 
   mirror2() {
     let pattern = this.context1.createPattern(this.img, 'mirror')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, px2vp(150), px2vp(150 * 2))
+    this.context1.fillRect(0, 0, UIContext.getFocusedUIContext()!.px2vp(150),
+      UIContext.getFocusedUIContext()!.px2vp(150 * 2))
   }
 
   mirror3() {
     let pattern = this.context1.createPattern(this.img, 'mirror')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, px2vp(150 * 2), px2vp(150 * 2))
+    this.context1.fillRect(0, 0, UIContext.getFocusedUIContext()!.px2vp(150 * 2),
+      UIContext.getFocusedUIContext()!.px2vp(150 * 2))
   }
 
   mirror4() {
     let pattern = this.context1.createPattern(this.img, 'mirror')
     this.context1.fillStyle = pattern as CanvasPattern
-    this.context1.fillRect(0, 0, px2vp(150), px2vp(150))
+    this.context1.fillRect(0, 0, UIContext.getFocusedUIContext()!.px2vp(150),
+      UIContext.getFocusedUIContext()!.px2vp(150))
   }
 }

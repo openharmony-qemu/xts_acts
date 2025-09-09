@@ -93,12 +93,12 @@ it('testColumnSetLayoutWeightWithRateThreeTwoZero_static', Level.LEVEL0, async (
       let setLayoutWeightNone: RectValue = CommonFunc.getComponentRect('setLayoutWeightNone');
 
       expect(Math.abs(setLayoutWeightNone1.top - setLayoutWeightNone.top) <= 1).assertTrue()
-      expect(Math.abs(setLayoutWeightNone2.top - setLayoutWeightNone1.bottom - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(setLayoutWeightNone3.top - setLayoutWeightNone2.bottom - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(setLayoutWeightNone2.top - setLayoutWeightNone1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(setLayoutWeightNone3.top - setLayoutWeightNone2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
 
-      expect(Math.abs(setLayoutWeightNone1.bottom - setLayoutWeightNone1.top - Math.round(uiContext.vp2px(layoutExpectHeight1))) <= 1).assertTrue()
-      expect(Math.abs(setLayoutWeightNone2.bottom - setLayoutWeightNone2.top - Math.round(uiContext.vp2px(layoutExpectHeight2))) <= 1).assertTrue()
-      expect(Math.abs(setLayoutWeightNone3.bottom - setLayoutWeightNone3.top - Math.round(uiContext.vp2px(layoutExpectHeight3))) <= 1).assertTrue()
+      expect(Math.abs(setLayoutWeightNone1.bottom - setLayoutWeightNone1.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(layoutExpectHeight1))) <= 1).assertTrue()
+      expect(Math.abs(setLayoutWeightNone2.bottom - setLayoutWeightNone2.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(layoutExpectHeight2))) <= 1).assertTrue()
+      expect(Math.abs(setLayoutWeightNone3.bottom - setLayoutWeightNone3.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(layoutExpectHeight3))) <= 1).assertTrue()
       console.info('new testColumnSetLayoutWeightWithRateThreeTwoZero_static END');
     });
   })

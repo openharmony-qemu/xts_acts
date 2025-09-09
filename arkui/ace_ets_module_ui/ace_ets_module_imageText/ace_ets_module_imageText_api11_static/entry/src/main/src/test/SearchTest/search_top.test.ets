@@ -101,7 +101,7 @@ it('search_top_static_001', Level.LEVEL2, async (done: () => void): Promise<void
         let driver = Driver.create();
         await CommonFunc.sleep(500);
         const uiContext = new UIContext();
-        await (driver.click(Math.round(uiContext.vp2px(200)) as int, Math.round(uiContext.vp2px(20)) as int) as Promise<void>);
+        await (driver.click(Math.round(UIContext.getFocusedUIContext()!.vp2px(200)) as int, Math.round(UIContext.getFocusedUIContext()!.vp2px(20)) as int) as Promise<void>);
         await CommonFunc.sleep(1000);
 
         expect(search_01.top).assertEqual(Column_1.top);

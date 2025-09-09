@@ -121,7 +121,7 @@ export default function swiperItemSpace() {
       expect(Math.abs(itemspacekey.top - itemspacekey02.top) <= 1).assertTrue();
       expect(Math.abs(itemspacekey.bottom - itemspacekey02.bottom) <= 1).assertTrue();
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(itemspacekey02.left - itemspacekey01.right) - Math.round(uiContext.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(itemspacekey02.left - itemspacekey01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
       expect(Math.abs(itemspacekey.right - itemspacekey02.right) <= 1).assertTrue();
 
@@ -158,7 +158,7 @@ export default function swiperItemSpace() {
 
       expect(Math.abs(itemspacekey.top - itemspacekey03.top) <= 1).assertTrue();
       expect(Math.abs(itemspacekey.bottom - itemspacekey03.bottom) <= 1).assertTrue();
-      expect(Math.abs(Math.round(itemspacekey03.left - itemspacekey02.right) - Math.round(uiContext.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(itemspacekey03.left - itemspacekey02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
       expect(Math.abs(itemspacekey.right - itemspacekey03.right) <= 1).assertTrue();
       console.info("The type value is " +

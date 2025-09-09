@@ -14,7 +14,7 @@
  */
 
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import {vp2px,Color,$r} from '@ohos.arkui.component'
+import {Color,$r} from '@ohos.arkui.component'
 import Utils, {CurrentRatio, BasePageConfig, PageConfig, TestValue, RectValue,SetValue,StrJsonObj } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import { describe, expect,beforeAll } from '../../../../hypium/index';
@@ -70,7 +70,7 @@ export default function aspectRatioWidthTest() {
     },
     expectValue: {
       width: '100.00vp',
-      // widthValue: vp2px(100),
+      // widthValue: UIContext.getFocusedUIContext()!.vp2px(100),
       aspectRatio: 2.0
     }
   }, {
@@ -81,7 +81,7 @@ export default function aspectRatioWidthTest() {
     },
     expectValue: {
       width: '100.00vp',
-      // widthValue: vp2px(100),
+      // widthValue: UIContext.getFocusedUIContext()!.vp2px(100),
       aspectRatio: 0.5
     }
   }]

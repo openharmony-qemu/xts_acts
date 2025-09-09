@@ -104,7 +104,7 @@ export default function RelativeContainerLocalizedDirectionStartTest() {
       console.info("[RelativeContainerLocalizedDirectionStart_static_0100] RelativeContainer is: " +
       JSON.stringify(rel) + 'row1:' + JSON.stringify(row1) + 'row2:' + JSON.stringify(row2) + 'row3:' +
       JSON.stringify(row3));
-      expect(Math.abs(Math.round(rel.right - row3.right) - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(rel.right - row3.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
       console.info('RelativeContainerLocalizedDirectionStart_static_0100 END');
     });
   })

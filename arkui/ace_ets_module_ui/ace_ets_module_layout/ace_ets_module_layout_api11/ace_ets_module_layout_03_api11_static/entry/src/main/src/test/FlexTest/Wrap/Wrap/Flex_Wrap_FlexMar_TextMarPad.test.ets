@@ -124,9 +124,9 @@ it('testWrapWrapFlexMarTextPad_static', Level.LEVEL0, async () => {
       expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('warp')).assertEqual('FlexWrap.Wrap');
       const uiContext = new UIContext();
-      expect(Math.floor(Math.abs((flexContainer.top - columnContainer.top) - uiContext.vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((flexContainer.top - columnContainer.top) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((flexContainer.left - columnContainer.left) - uiContext.vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((flexContainer.left - columnContainer.left) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
       expect(Math.floor(Math.abs(firstText.left - flexContainer.left)) <= 1).assertTrue();
@@ -136,19 +136,19 @@ it('testWrapWrapFlexMarTextPad_static', Level.LEVEL0, async () => {
       expect(Math.floor(Math.abs(firstText.top - secondText.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(secondText.top - thirdText.top)) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs((firstText.bottom - firstText.top) - uiContext.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((secondText.bottom - secondText.top) - uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((thirdText.bottom - thirdText.top) - uiContext.vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.bottom - firstText.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((secondText.bottom - secondText.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((thirdText.bottom - thirdText.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs((firstText.right - firstText.left) - uiContext.vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.right - firstText.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((firstText.right - firstText.left) - (secondText.right - secondText.left))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((secondText.right - secondText.left) - (thirdText.right - thirdText.left))) <= 1)
         .assertTrue();
 
-      expect(Math.floor(Math.abs((flexContainer.bottom - thirdText.bottom) - uiContext.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((flexContainer.bottom - thirdText.bottom) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((flexContainer.right - thirdText.right) - uiContext.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((flexContainer.right - thirdText.right) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
       console.info('[testWrapWrapFlexMarTextPad] END');
 
     });
@@ -179,33 +179,33 @@ it('testWrapWrapFlexMarTextMar_static', Level.LEVEL0, async () => {
       expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('warp')).assertEqual('FlexWrap.Wrap');
       const uiContext = new UIContext();
-      expect(Math.floor(Math.abs((flexContainer.left - columnContainer.left) - uiContext.vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((flexContainer.left - columnContainer.left) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((flexContainer.top - columnContainer.top) - uiContext.vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((flexContainer.top - columnContainer.top) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
-      expect(Math.floor(Math.abs((firstText.top - flexContainer.top) - uiContext.vp2px(30))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((firstText.left - flexContainer.left) - uiContext.vp2px(30))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.top - flexContainer.top) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.left - flexContainer.left) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs((secondText.left - firstText.right) - uiContext.vp2px(30))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((secondText.left - firstText.right) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(secondText.top - flexContainer.top)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((thirdText.top - firstText.bottom) - uiContext.vp2px(30))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((thirdText.top - firstText.bottom) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(thirdText.left - flexContainer.left)) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs((firstText.bottom - firstText.top) - uiContext.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((secondText.bottom - secondText.top) - uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((firstText.right - firstText.left) - uiContext.vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.bottom - firstText.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((secondText.bottom - secondText.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.right - firstText.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
 
       expect(Math.floor(Math.abs((firstText.right - firstText.left) - (secondText.right - secondText.left))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((secondText.right - secondText.left) - (thirdText.right - thirdText.left))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((thirdText.bottom - thirdText.top) - uiContext.vp2px(150))) <= 1).assertTrue();
-      console.info('[testWrapWrapFlexMarTextMar] ((flexContainer.right - secondText.right) - uiContext.vp2px(140)):' + ((flexContainer.right - secondText.right) - uiContext.vp2px(140)));
-      console.info('[testWrapWrapFlexMarTextMar] ((flexContainer.bottom - thirdText.bottom) - uiContext.vp2px(40)):' + ((flexContainer.bottom - thirdText.bottom) - uiContext.vp2px(40)));
-      expect(Math.floor(Math.abs((flexContainer.right - secondText.right) - uiContext.vp2px(140))) <= 1)
+      expect(Math.floor(Math.abs((thirdText.bottom - thirdText.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+      console.info('[testWrapWrapFlexMarTextMar] ((flexContainer.right - secondText.right) - UIContext.getFocusedUIContext()!.vp2px(140)):' + ((flexContainer.right - secondText.right) - UIContext.getFocusedUIContext()!.vp2px(140)));
+      console.info('[testWrapWrapFlexMarTextMar] ((flexContainer.bottom - thirdText.bottom) - UIContext.getFocusedUIContext()!.vp2px(40)):' + ((flexContainer.bottom - thirdText.bottom) - UIContext.getFocusedUIContext()!.vp2px(40)));
+      expect(Math.floor(Math.abs((flexContainer.right - secondText.right) - UIContext.getFocusedUIContext()!.vp2px(140))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((flexContainer.bottom - thirdText.bottom) - uiContext.vp2px(40))) <= 2)
+      expect(Math.floor(Math.abs((flexContainer.bottom - thirdText.bottom) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 2)
         .assertTrue();
       console.info('[testWrapWrapFlexMarTextMar] END');
 
@@ -252,34 +252,34 @@ it('testWrapWrapFlexMarTextMarPad_static', Level.LEVEL0, async () => {
       expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('warp')).assertEqual('FlexWrap.Wrap');
       const uiContext = new UIContext();
-      expect(Math.floor(Math.abs((flexContainer.left - columnContainer.left) - uiContext.vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((flexContainer.left - columnContainer.left) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((flexContainer.top - columnContainer.top) - uiContext.vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((flexContainer.top - columnContainer.top) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
-      expect(Math.floor(Math.abs((firstText.left - flexContainer.left) - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((firstText.top - flexContainer.top) - uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.left - flexContainer.left) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.top - flexContainer.top) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       expect(Math.floor(Math.abs(firstText.top - secondText.top)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((secondText.left - firstText.right) - uiContext.vp2px(20))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((secondText.left - firstText.right) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(thirdText.left - firstText.left)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((thirdText.top - secondText.bottom) - uiContext.vp2px(20))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((thirdText.top - secondText.bottom) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs((firstText.bottom - firstText.top) - uiContext.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((secondText.bottom - secondText.top) - uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((thirdText.bottom - thirdText.top) - uiContext.vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.bottom - firstText.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((secondText.bottom - secondText.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((thirdText.bottom - thirdText.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs((firstText.right - firstText.left) - uiContext.vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.right - firstText.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((firstText.right - firstText.left) - (secondText.right - secondText.left))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((secondText.right - secondText.left) - (thirdText.right - thirdText.left))) <= 1)
         .assertTrue();
 
-      console.info('[testWrapWrapFlexMarTextMarPad] ((flexContainer.right - secondText.right) - uiContext.vp2px(170)):' + ((flexContainer.right - secondText.right) - uiContext.vp2px(170)));
-      console.info('[testWrapWrapFlexMarTextMarPad] ((flexContainer.bottom - thirdText.bottom) - uiContext.vp2px(20)):' + ((flexContainer.bottom - thirdText.bottom) - uiContext.vp2px(20)));
-      expect(Math.floor(Math.abs((flexContainer.right - secondText.right) - uiContext.vp2px(170))) <= 2)
+      console.info('[testWrapWrapFlexMarTextMarPad] ((flexContainer.right - secondText.right) - UIContext.getFocusedUIContext()!.vp2px(170)):' + ((flexContainer.right - secondText.right) - UIContext.getFocusedUIContext()!.vp2px(170)));
+      console.info('[testWrapWrapFlexMarTextMarPad] ((flexContainer.bottom - thirdText.bottom) - UIContext.getFocusedUIContext()!.vp2px(20)):' + ((flexContainer.bottom - thirdText.bottom) - UIContext.getFocusedUIContext()!.vp2px(20)));
+      expect(Math.floor(Math.abs((flexContainer.right - secondText.right) - UIContext.getFocusedUIContext()!.vp2px(170))) <= 2)
         .assertTrue();
-      expect(Math.floor(Math.abs((flexContainer.bottom - thirdText.bottom) - uiContext.vp2px(20))) <= 2)
+      expect(Math.floor(Math.abs((flexContainer.bottom - thirdText.bottom) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 2)
         .assertTrue();
       console.info('[testWrapWrapFlexMarTextMarPad] END');
 

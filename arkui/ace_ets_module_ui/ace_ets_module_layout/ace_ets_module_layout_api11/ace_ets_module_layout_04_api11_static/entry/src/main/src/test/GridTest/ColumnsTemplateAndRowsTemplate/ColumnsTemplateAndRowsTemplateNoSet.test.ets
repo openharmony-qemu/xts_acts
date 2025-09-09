@@ -90,15 +90,15 @@ it('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplateNoSet_static_0100', Level.LEVEL0,
       console.log('GridItem_01.left' + GridItem_01.left)
       console.log('Grid_1.left' + Grid_1.left)
       const uiContext = new UIContext();
-      expect(Math.round(GridItem_01.left - Grid_1.left)).assertEqual(Math.round(uiContext.vp2px(0)));
+      expect(Math.round(GridItem_01.left - Grid_1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(0)));
       console.log('GridItem_01.left - Grid_1.left' + (GridItem_01.left - Grid_1.left))
-      expect(Math.round(GridItem_01.top - Grid_1.top)).assertEqual(Math.round(uiContext.vp2px(0)));
+      expect(Math.round(GridItem_01.top - Grid_1.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(0)));
       console.log('GridItem_01.left - Grid_1.left' + (GridItem_01.left - Grid_1.left))
 
       console.log('assert size')
-      expect(Math.round(GridItem_01.right - GridItem_01.left)).assertEqual(Math.round(uiContext.vp2px(100)));
+      expect(Math.round(GridItem_01.right - GridItem_01.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(100)));
       console.log('GridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
-      expect(Math.round(GridItem_01.bottom - GridItem_01.top)).assertEqual(Math.round(uiContext.vp2px(100)));
+      expect(Math.round(GridItem_01.bottom - GridItem_01.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(100)));
       console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
 
 

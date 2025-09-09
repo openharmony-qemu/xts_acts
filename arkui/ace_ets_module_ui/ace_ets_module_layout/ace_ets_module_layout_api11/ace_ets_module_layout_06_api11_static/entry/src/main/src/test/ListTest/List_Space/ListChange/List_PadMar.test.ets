@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { vp2px } from '@ohos.arkui.component'
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../../ets/MainAbility/common/Rect';
@@ -94,47 +94,47 @@ it('testListPadMar_static', Level.LEVEL0, async (done: () => void): Promise<void
       let List_PadMar_01: RectValue = CommonFunc.getComponentRect('List_PadMar_01');
       let List_PadMar_01_Box: RectValue = CommonFunc.getComponentRect('List_PadMar_01_Box');
 
-      expect(Math.abs(Math.round(List_PadMar_011.left - List_PadMar_01.left) - Math.round(vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(List_PadMar_011.left - List_PadMar_01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(List_PadMar_012.left - List_PadMar_01.left) - Math.round(vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(List_PadMar_012.left - List_PadMar_01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(List_PadMar_013.left - List_PadMar_01.left) - Math.round(vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(List_PadMar_013.left - List_PadMar_01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(List_PadMar_014.left - List_PadMar_01.left) - Math.round(vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(List_PadMar_014.left - List_PadMar_01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(List_PadMar_011.top - List_PadMar_01.top) - Math.round(vp2px(10))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(List_PadMar_012.top - List_PadMar_011.bottom) - Math.round(vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(List_PadMar_011.top - List_PadMar_01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(List_PadMar_012.top - List_PadMar_011.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(List_PadMar_013.top - List_PadMar_012.bottom) - Math.round(vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(List_PadMar_013.top - List_PadMar_012.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(List_PadMar_014.top - List_PadMar_013.bottom) - Math.round(vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(List_PadMar_014.top - List_PadMar_013.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round((List_PadMar_01.top - List_PadMar_01_Box.top) * 10) / 10 - Math.round(vp2px(5) * 10) / 10) <= 1)
+      expect(Math.abs(Math.round((List_PadMar_01.top - List_PadMar_01_Box.top) * 10) / 10 - Math.round(UIContext.getFocusedUIContext()!.vp2px(5) * 10) / 10) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round((List_PadMar_01.left - List_PadMar_01_Box.left) * 10) / 10 - Math.round(vp2px(5) * 10) / 10) <= 1)
-        .assertTrue();
-
-      expect(Math.abs(Math.round(List_PadMar_011.right - List_PadMar_011.left) - Math.round(vp2px(300))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(List_PadMar_012.right - List_PadMar_012.left) - Math.round(vp2px(300))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(List_PadMar_013.right - List_PadMar_013.left) - Math.round(vp2px(300))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(List_PadMar_014.right - List_PadMar_014.left) - Math.round(vp2px(300))) <= 1)
+      expect(Math.abs(Math.round((List_PadMar_01.left - List_PadMar_01_Box.left) * 10) / 10 - Math.round(UIContext.getFocusedUIContext()!.vp2px(5) * 10) / 10) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(List_PadMar_011.bottom - List_PadMar_011.top) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(List_PadMar_011.right - List_PadMar_011.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(List_PadMar_012.bottom - List_PadMar_012.top) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(List_PadMar_012.right - List_PadMar_012.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(List_PadMar_013.bottom - List_PadMar_013.top) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(List_PadMar_013.right - List_PadMar_013.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(List_PadMar_014.bottom - List_PadMar_014.top) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(List_PadMar_014.right - List_PadMar_014.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(List_PadMar_01.bottom - List_PadMar_01.top) - Math.round(vp2px(520))) <= 1)
+      expect(Math.abs(Math.round(List_PadMar_011.bottom - List_PadMar_011.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(List_PadMar_01.right - List_PadMar_01.left) - Math.round(vp2px(350))) <= 1)
+      expect(Math.abs(Math.round(List_PadMar_012.bottom - List_PadMar_012.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(List_PadMar_013.bottom - List_PadMar_013.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(List_PadMar_014.bottom - List_PadMar_014.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs(Math.round(List_PadMar_01.bottom - List_PadMar_01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(520))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(List_PadMar_01.right - List_PadMar_01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(350))) <= 1)
         .assertTrue();
       let driver = Driver.create();
       driver.swipe(360, 690, 360, 30);

@@ -15,7 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
 import router from '@ohos.router';
-import {vp2px,FlexAlign} from '@ohos.arkui.component'
+import {FlexAlign} from '@ohos.arkui.component'
 
 import  RectValue from '../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../ets/MainAbility/common/Common';

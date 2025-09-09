@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { vp2px,$r,Resource } from '@ohos.arkui.component'
+import { $r,Resource } from '@ohos.arkui.component'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../ets/MainAbility/common/Rect';
@@ -101,7 +101,7 @@ it('SUB_ACE_List_divider_resource_static_0100', Level.LEVEL0, async (done: () =>
       let List_01: RectValue = CommonFunc.getComponentRect('List_divider_resource_list_01');
 
       console.log('get divider width')
-      expect(Math.round(ListItem_02.top - ListItem_01.bottom)).assertEqual(Math.round(vp2px(20)));
+      expect(Math.round(ListItem_02.top - ListItem_01.bottom)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(20)));
 
       console.info('[SUB_ACE_List_divider_resource_0100] END');
       done();
@@ -129,7 +129,7 @@ it('SUB_ACE_List_divider_resource_static_0200', Level.LEVEL0, async (done: () =>
       let List_01: RectValue = CommonFunc.getComponentRect('List_divider_resource_list_01');
 
       console.log('get divider width')
-      expect(Math.round(ListItem_02.top - ListItem_01.bottom)).assertEqual(Math.round(vp2px(20)));
+      expect(Math.round(ListItem_02.top - ListItem_01.bottom)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(20)));
 
       console.info('[SUB_ACE_List_divider_resource_0200] END');
       done();

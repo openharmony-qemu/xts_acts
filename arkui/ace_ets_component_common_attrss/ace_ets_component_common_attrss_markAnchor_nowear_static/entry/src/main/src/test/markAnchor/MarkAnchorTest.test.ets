@@ -64,7 +64,7 @@ export default function MarkAnchorTest() {
     },
     expectValue: {
       x: '50.00vp', y: '50.00vp',
-      left: uiContext.vp2px(50), top: uiContext.vp2px(50)
+      left: UIContext.getFocusedUIContext()!.vp2px(50), top: UIContext.getFocusedUIContext()!.vp2px(50)
     }
   }, {
     describe: 'StringPx',

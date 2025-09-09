@@ -106,7 +106,7 @@ export default function swiperRightScrollTest() {
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipe((winLeft + Math.round(btLeft) as Int + Math.round(uiContext.vp2px(27) as Int)) as Int,
+      await driver.swipe((winLeft + Math.round(btLeft) as Int + Math.round(UIContext.getFocusedUIContext()!.vp2px(27) as Int)) as Int,
         (winTop as Int + Math.round(btBottom / 2)) as Int, (winTop as Int + Math.round(btBottom / 2)) as Int,
         (winTop as Int + Math.round(btBottom / 2)) as Int);
       await CommonFunc.sleep(3000);

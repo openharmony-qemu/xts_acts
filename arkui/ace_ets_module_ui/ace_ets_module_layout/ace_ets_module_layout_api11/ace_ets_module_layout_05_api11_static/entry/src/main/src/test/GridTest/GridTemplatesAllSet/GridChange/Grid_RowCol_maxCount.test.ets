@@ -104,15 +104,15 @@ it('testGridRowColGridMaxCount_static_01', Level.LEVEL0, async (done: () => void
       expect(Math.abs(Grid_RowCol_maxCount_014.bottom - Grid_RowCol_maxCount_01.bottom) <= 1).assertTrue();
 
       const uiContext = new UIContext();
-      expect(Math.abs(Grid_RowCol_maxCount_011.right - Grid_RowCol_maxCount_011.left - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_maxCount_012.right - Grid_RowCol_maxCount_012.left - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_maxCount_013.right - Grid_RowCol_maxCount_013.left - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_maxCount_014.right - Grid_RowCol_maxCount_014.left - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_maxCount_011.right - Grid_RowCol_maxCount_011.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_maxCount_012.right - Grid_RowCol_maxCount_012.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_maxCount_013.right - Grid_RowCol_maxCount_013.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_maxCount_014.right - Grid_RowCol_maxCount_014.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
 
-      expect(Math.abs(Grid_RowCol_maxCount_011.bottom - Grid_RowCol_maxCount_011.top - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_maxCount_012.bottom - Grid_RowCol_maxCount_012.top - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_maxCount_013.bottom - Grid_RowCol_maxCount_013.top - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_maxCount_014.bottom - Grid_RowCol_maxCount_014.top - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_maxCount_011.bottom - Grid_RowCol_maxCount_011.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_maxCount_012.bottom - Grid_RowCol_maxCount_012.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_maxCount_013.bottom - Grid_RowCol_maxCount_013.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_maxCount_014.bottom - Grid_RowCol_maxCount_014.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
       console.info('[testGridRowColGridMaxCount_static_01] END');
       done();
     });

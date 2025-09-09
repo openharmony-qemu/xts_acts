@@ -60,7 +60,7 @@ struct onScrollIndexFlow3 {
           .onClick((e: ClickEvent) => { 
             const yOffset: number = this.scroller.currentOffset().yOffset;
             const uiContext = new UIContext();
-            this.scroller.scrollTo({ xOffset: 0, yOffset: yOffset + uiContext.vp2px(200) })
+            this.scroller.scrollTo({ xOffset: 0, yOffset: yOffset + UIContext.getFocusedUIContext()!.vp2px(200) })
           })
       }.height('20%')
 

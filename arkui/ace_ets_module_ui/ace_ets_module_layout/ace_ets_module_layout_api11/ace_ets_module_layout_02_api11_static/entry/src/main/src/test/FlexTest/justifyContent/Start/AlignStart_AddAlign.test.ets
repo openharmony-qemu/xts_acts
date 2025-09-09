@@ -112,13 +112,13 @@ it('textFlexAlignStartAlignBottomEnd_static', Level.LEVEL0, async () : Promise<v
       expect(Math.abs(Start_AddAlign_012.left - Start_AddAlign_011.right) <= 1).assertTrue()
       expect(Math.abs(Start_AddAlign_013.left - Start_AddAlign_012.right) <= 1).assertTrue()
       expect(Math.abs(Start_AddAlign_01.left - Start_AddAlign_011.left) <= 1).assertTrue()
-      expect(Math.abs(Start_AddAlign_011.right - Start_AddAlign_011.left - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddAlign_012.right - Start_AddAlign_012.left - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddAlign_013.right - Start_AddAlign_013.left - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddAlign_011.bottom - Start_AddAlign_011.top - uiContext.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddAlign_012.bottom - Start_AddAlign_012.top - uiContext.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddAlign_013.bottom - Start_AddAlign_013.top - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddAlign_01.right - Start_AddAlign_013.right - uiContext.vp2px(50)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddAlign_011.right - Start_AddAlign_011.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddAlign_012.right - Start_AddAlign_012.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddAlign_013.right - Start_AddAlign_013.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddAlign_011.bottom - Start_AddAlign_011.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddAlign_012.bottom - Start_AddAlign_012.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddAlign_013.bottom - Start_AddAlign_013.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddAlign_01.right - Start_AddAlign_013.right - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
       console.info('[textFlexAlignStartAlignBottomEnd] END');
 
     });

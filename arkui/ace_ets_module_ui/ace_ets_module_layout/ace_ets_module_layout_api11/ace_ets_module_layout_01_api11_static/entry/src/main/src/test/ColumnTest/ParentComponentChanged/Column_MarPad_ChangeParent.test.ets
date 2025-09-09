@@ -100,7 +100,7 @@ it('testColumnMarPadChangeParentInRange_static', Level.LEVEL0, async () => {
       let locationText2 : RectValue = CommonFunc.getComponentRect('MarPad_Test2');
       let locationText3 : RectValue = CommonFunc.getComponentRect('MarPad_Test3');
       let locationColumn : RectValue = CommonFunc.getComponentRect('ColumnMarPadChange1');
-      expect(Math.abs((Math.round((locationText1.left - locationColumn.left) * 10) / 10) - (Math.round(uiContext.vp2px(25) * 10) / 10)) <= 1)
+      expect(Math.abs((Math.round((locationText1.left - locationColumn.left) * 10) / 10) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(25) * 10) / 10)) <= 1)
         .assertTrue();
       expect(Math.abs((Math.round(locationText1.left - locationColumn.left)) - (Math.round(locationColumn.right - locationText1.right))) <= 1)
         .assertTrue();
@@ -108,27 +108,27 @@ it('testColumnMarPadChangeParentInRange_static', Level.LEVEL0, async () => {
         .assertTrue();
       expect(Math.abs((Math.round(locationText3.left - locationColumn.left)) - (Math.round(locationColumn.right - locationText3.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round((locationColumn.right - locationText1.right) * 10) / 10) - (Math.round(uiContext.vp2px(25) * 10) / 10)) <= 1)
+      expect(Math.abs((Math.round((locationColumn.right - locationText1.right) * 10) / 10) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(25) * 10) / 10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText1.top - locationColumn.top)) - (Math.round(uiContext.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(locationText1.top - locationColumn.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationColumn.bottom - locationText3.bottom)) - (Math.round(uiContext.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(locationColumn.bottom - locationText3.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
         .assertTrue();
       expect(Math.abs((Math.round(locationText2.top - locationText1.bottom)) - (Math.round(locationText3.top - locationText2.bottom))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.top - locationText1.bottom)) - (Math.round(uiContext.vp2px(30)))) <= 1)
+      expect(Math.abs((Math.round(locationText2.top - locationText1.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText1.right - locationText1.left)) - (Math.round(uiContext.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(locationText1.right - locationText1.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.right - locationText2.left)) - (Math.round(uiContext.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(locationText2.right - locationText2.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText3.right - locationText3.left)) - (Math.round(uiContext.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(locationText3.right - locationText3.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText1.bottom - locationText1.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(locationText1.bottom - locationText1.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.bottom - locationText2.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(locationText2.bottom - locationText2.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText3.bottom - locationText3.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(locationText3.bottom - locationText3.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.info('new testColumnMarPadChangeParentInRange_static END');
     });
@@ -160,7 +160,7 @@ it('testColumnMarPadChangeParentOutRange_static', Level.LEVEL0, async () => {
       let locationText2 : RectValue = CommonFunc.getComponentRect('MarPad_Test2');
       let locationText3 : RectValue = CommonFunc.getComponentRect('MarPad_Test3');
       let locationColumn : RectValue = CommonFunc.getComponentRect('ColumnMarPadChange1');
-      expect(Math.abs((Math.round((locationText1.left - locationColumn.left) * 10) / 10) - (Math.round(uiContext.vp2px(25) * 10) / 10)) <= 1)
+      expect(Math.abs((Math.round((locationText1.left - locationColumn.left) * 10) / 10) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(25) * 10) / 10)) <= 1)
         .assertTrue();
       expect(Math.abs((Math.round(locationText1.left - locationColumn.left)) - (Math.round(locationColumn.right - locationText1.right))) <= 1)
         .assertTrue();
@@ -168,27 +168,27 @@ it('testColumnMarPadChangeParentOutRange_static', Level.LEVEL0, async () => {
         .assertTrue();
       expect(Math.abs((Math.round(locationText3.left - locationColumn.left)) - (Math.round(locationColumn.right - locationText3.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round((locationColumn.right - locationText1.right) * 10) / 10) - (Math.round(uiContext.vp2px(25) * 10) / 10)) <= 1)
+      expect(Math.abs((Math.round((locationColumn.right - locationText1.right) * 10) / 10) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(25) * 10) / 10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText1.top - locationColumn.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(locationText1.top - locationColumn.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText3.bottom - locationColumn.bottom)) - (Math.round(uiContext.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(locationText3.bottom - locationColumn.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
         .assertTrue();
       expect(Math.abs((Math.round(locationText2.top - locationText1.bottom)) - (Math.round(locationText3.top - locationText2.bottom))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.top - locationText1.bottom)) - (Math.round(uiContext.vp2px(30)))) <= 1)
+      expect(Math.abs((Math.round(locationText2.top - locationText1.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText1.right - locationText1.left)) - (Math.round(uiContext.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(locationText1.right - locationText1.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.right - locationText2.left)) - (Math.round(uiContext.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(locationText2.right - locationText2.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText3.right - locationText3.left)) - (Math.round(uiContext.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(locationText3.right - locationText3.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText1.bottom - locationText1.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(locationText1.bottom - locationText1.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.bottom - locationText2.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(locationText2.bottom - locationText2.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText3.bottom - locationText3.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(locationText3.bottom - locationText3.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.info('new testColumnMarPadChangeParentOutRange END');
     });

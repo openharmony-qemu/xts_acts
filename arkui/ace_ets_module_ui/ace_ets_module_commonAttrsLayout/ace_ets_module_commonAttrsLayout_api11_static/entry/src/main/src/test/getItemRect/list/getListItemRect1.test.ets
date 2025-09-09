@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { vp2px } from '@ohos.arkui.component';
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
@@ -124,9 +124,9 @@ export default function getListItemRect1() {
 
       console.log('assert size')
       console.log('listItem_1.right - listItem_1.left' + (listItem_1.right - listItem_1.left))
-      expect(Math.abs(vp2px(Math.round(width)) - Math.round(listItem_1.right - listItem_1.left)) <= 1).assertTrue();
+      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Math.round(width)) - Math.round(listItem_1.right - listItem_1.left)) <= 1).assertTrue();
       console.log('listItem_1.bottom - listItem_1.top' + (listItem_1.bottom - listItem_1.top))
-      expect(Math.abs(vp2px(Math.round(height)) - Math.round(listItem_1.bottom - listItem_1.top)) <= 1).assertTrue();
+      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Math.round(height)) - Math.round(listItem_1.bottom - listItem_1.top)) <= 1).assertTrue();
 
       done();
     });
@@ -185,9 +185,9 @@ export default function getListItemRect1() {
 
       console.log('assert size')
       console.log('listItem_2.right - listItem_2.left' + (listItem_2.right - listItem_2.left))
-      expect(Math.abs(vp2px(Math.round(width)) - Math.round(listItem_2.right - listItem_2.left)) <= 1).assertTrue();
+      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Math.round(width)) - Math.round(listItem_2.right - listItem_2.left)) <= 1).assertTrue();
       console.log('listItem_2.bottom - listItem_2.top' + (listItem_2.bottom - listItem_2.top))
-      expect(Math.abs(vp2px(Math.round(height)) - Math.round(listItem_2.bottom - listItem_2.top)) <= 1).assertTrue();
+      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Math.round(height)) - Math.round(listItem_2.bottom - listItem_2.top)) <= 1).assertTrue();
 
       done();
     });
@@ -419,9 +419,9 @@ export default function getListItemRect1() {
 
       console.log('assert size')
       console.log('listItem_1.right - listItem_1.left' + (listItem_1.right - listItem_1.left))
-      expect(Math.floor(Math.abs(vp2px(width) - (listItem_1.right - listItem_1.left))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(UIContext.getFocusedUIContext()!.vp2px(width) - (listItem_1.right - listItem_1.left))) <= 1).assertTrue();
       console.log('listItem_1.bottom - listItem_1.top' + (listItem_1.bottom - listItem_1.top))
-      expect(Math.floor(Math.abs(vp2px(height) - (listItem_1.bottom - listItem_1.top))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(UIContext.getFocusedUIContext()!.vp2px(height) - (listItem_1.bottom - listItem_1.top))) <= 1).assertTrue();
 
       done();
     });
@@ -478,8 +478,8 @@ export default function getListItemRect1() {
       expect(Math.abs(Math.round(y) - Math.round(20)) <= 1).assertTrue();
 
       console.log('assert size')
-      expect(Math.abs(vp2px(Math.round(width)) - Math.round(listItem_1.right - listItem_1.left)) <= 1).assertTrue();
-      expect(Math.abs(vp2px(Math.round(height)) - Math.round(listItem_1.bottom - listItem_1.top)) <= 1).assertTrue();
+      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Math.round(width)) - Math.round(listItem_1.right - listItem_1.left)) <= 1).assertTrue();
+      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Math.round(height)) - Math.round(listItem_1.bottom - listItem_1.top)) <= 1).assertTrue();
 
       done();
     });

@@ -14,7 +14,7 @@
  */
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
 import router from '@ohos.router';
-import {Alignment,vp2px} from '@ohos.arkui.component'
+import {Alignment} from '@ohos.arkui.component'
 import events_emitter from '@ohos.events.emitter'
 import { UtilsTest,startAbility } from '../Util.test'
 import { AppStorage } from '@ohos.arkui.stateManagement';

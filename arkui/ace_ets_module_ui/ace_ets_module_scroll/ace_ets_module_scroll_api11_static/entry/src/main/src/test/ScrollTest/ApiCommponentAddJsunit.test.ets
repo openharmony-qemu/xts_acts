@@ -156,10 +156,10 @@ export default function ApiCommponentAddJsunit() {
       let left = gridRight.left;
       let driver = Driver.create();
       const uiContext = new UIContext();
-      await driver.swipe((Math.round(left + Math.round(uiContext.vp2px(30)))).toInt(),
-        (Math.round(top + Math.round(uiContext.vp2px(30)))).toInt(),
-        (Math.round(left + Math.round(uiContext.vp2px(20)))).toInt(),
-        (Math.round(top + Math.round(uiContext.vp2px(30)))).toInt());
+      await driver.swipe((Math.round(left + Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))).toInt(),
+        (Math.round(top + Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))).toInt(),
+        (Math.round(left + Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))).toInt(),
+        (Math.round(top + Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))).toInt());
       await CommonFunc.sleep(1000);
       
       let onScrollStartText = await driver.findComponent(ON.id('4'));

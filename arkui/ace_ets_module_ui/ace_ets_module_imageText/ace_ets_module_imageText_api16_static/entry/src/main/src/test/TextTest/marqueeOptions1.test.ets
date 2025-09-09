@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index.ets"
-import { vp2px } from '@ohos.arkui.component';
+
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Component, Driver, MouseButton, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
@@ -86,7 +86,7 @@ it('marqueeOptionsTest1_static_001', Level.LEVEL3, async (done: () => void): Pro
       await CommonFunc.sleep(2000);
       console.info('marqueeOptionsTest1_static_001 -----22' + marq.getElement('start'));
       expect(marq.getBoolean('start')).assertTrue();
-      expect(Math.abs(marq.getInteger('step') - vp2px(6)) <= 1).assertTrue();
+      expect(Math.abs(marq.getInteger('step') - UIContext.getFocusedUIContext()!.vp2px(6)) <= 1).assertTrue();
       expect(marq.getInteger('loop') == -1).assertTrue();
       expect(marq.getInteger('delay') == 0).assertTrue();
       expect(marq.getBoolean('fadeout')).assertFalse();

@@ -95,13 +95,13 @@ it('SUB_ACE_Grid_Col_Span_Number_TEST_static_0100', Level.LEVEL0, async (done: (
 
       const uiContext = new UIContext();
       console.log('assert space')
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_01.left - Grid_Col_Span_Number_00.right) - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_02.left - Grid_Col_Span_Number_01.right) - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_03.left - Grid_Col_Span_Number_02.right) - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_04.left - Grid_Col_Span_Number_03.right) - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_05.left - Grid_Col_Span_Number_04.right) - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_06.top - Grid_Col_Span_Number_00.bottom) - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_07.top - Grid_Col_Span_Number_01.bottom) - uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_01.left - Grid_Col_Span_Number_00.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_02.left - Grid_Col_Span_Number_01.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_03.left - Grid_Col_Span_Number_02.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_04.left - Grid_Col_Span_Number_03.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_05.left - Grid_Col_Span_Number_04.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_06.top - Grid_Col_Span_Number_00.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_07.top - Grid_Col_Span_Number_01.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_Grid_Col_Span_Number_TEST_static_0100] END');
       done();
@@ -175,19 +175,19 @@ it('SUB_ACE_Grid_Col_Span_Number_TEST_static_0300', Level.LEVEL0, async (done: (
 
       const uiContext = new UIContext();
       console.log('assert space')
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_01.left - Grid_Col_Span_Number_00.right) - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_02.left - Grid_Col_Span_Number_01.right) - uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_01.left - Grid_Col_Span_Number_00.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_02.left - Grid_Col_Span_Number_01.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_04.left - Grid_Col_Span_Number_03.right) - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_05.left - Grid_Col_Span_Number_04.right) - uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_04.left - Grid_Col_Span_Number_03.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_05.left - Grid_Col_Span_Number_04.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_07.left - Grid_Col_Span_Number_06.right) - uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_07.left - Grid_Col_Span_Number_06.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_03.top - Grid_Col_Span_Number_00.bottom) - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_04.top - Grid_Col_Span_Number_01.bottom) - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_05.top - Grid_Col_Span_Number_02.bottom) - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_06.top - Grid_Col_Span_Number_03.bottom) - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_07.top - Grid_Col_Span_Number_04.bottom) - uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_03.top - Grid_Col_Span_Number_00.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_04.top - Grid_Col_Span_Number_01.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_05.top - Grid_Col_Span_Number_02.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_06.top - Grid_Col_Span_Number_03.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_07.top - Grid_Col_Span_Number_04.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_Grid_Col_Span_Number_TEST_static_0300] END');
       done();
@@ -222,13 +222,13 @@ it('SUB_ACE_Grid_Col_Span_Number_TEST_static_0400', Level.LEVEL0, async (done: (
       let Grid_Col_Span_Number_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_Number_07');
       const uiContext = new UIContext();
       console.log('assert space')
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_01.top - Grid_Col_Span_Number_00.bottom) - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_02.top - Grid_Col_Span_Number_01.bottom) - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_03.top - Grid_Col_Span_Number_02.bottom) - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_04.top - Grid_Col_Span_Number_03.bottom) - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_05.top - Grid_Col_Span_Number_04.bottom) - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_06.top - Grid_Col_Span_Number_05.bottom) - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Number_07.top - Grid_Col_Span_Number_06.bottom) - uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_01.top - Grid_Col_Span_Number_00.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_02.top - Grid_Col_Span_Number_01.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_03.top - Grid_Col_Span_Number_02.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_04.top - Grid_Col_Span_Number_03.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_05.top - Grid_Col_Span_Number_04.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_06.top - Grid_Col_Span_Number_05.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Number_07.top - Grid_Col_Span_Number_06.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_Grid_Col_Span_Number_TEST_static_0400] END');
       done();

@@ -110,9 +110,9 @@ export default function swiperWidthTest() {
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipe((winLeft + Math.round(btRight) - Math.round(uiContext.vp2px(10))) as Int,
+      await driver.swipe((winLeft + Math.round(btRight) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) as Int,
         Math.round(btBottom / 2) + winTop as Int as Int,
-        (winLeft + Math.round(btLeft) as Int + Math.round(uiContext.vp2px(10))) as Int,
+        (winLeft + Math.round(btLeft) as Int + Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) as Int,
         Math.round(btBottom / 2) + winTop as Int as Int);
       await CommonFunc.sleep(5000);
       

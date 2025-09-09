@@ -107,9 +107,9 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate4_static_0300', Level.LEVEL0, async (done: (
 
       const uiContext = new UIContext();
       console.log('assert size')
-	  expect(Math.abs(Math.round(GridItem_011.right - GridItem_011.left) - Math.round(uiContext.vp2px(52))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(GridItem_011.right - GridItem_011.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(52))) <= 1).assertTrue();
       console.log('GridItem_011.right - GridItem_011.left' + (GridItem_011.right - GridItem_011.left))
-	  expect(Math.abs(Math.round(GridItem_011.bottom - GridItem_011.top) - Math.round(uiContext.vp2px(50))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(GridItem_011.bottom - GridItem_011.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
       console.log('GridItem_011.bottom - GridItem_011.top' + (GridItem_011.bottom - GridItem_011.top))
 
       console.info('[SUB_ACE_GRID_OnlyColumnsTemplate4_static_0300] END');
@@ -157,9 +157,9 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate4_static_0500', Level.LEVEL0, async (done: (
 
       const uiContext = new UIContext();
       console.log('assert size')
-	  expect(Math.abs(Math.round(GridItem_011.right - GridItem_011.left) - Math.round(uiContext.vp2px(52))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(GridItem_011.right - GridItem_011.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(52))) <= 1).assertTrue();
       console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_011.right - GridItem_011.left))
-	  expect(Math.abs(Math.round(GridItem_011.bottom - GridItem_011.top) - Math.round(uiContext.vp2px(50))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(GridItem_011.bottom - GridItem_011.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
       console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_011.bottom - GridItem_011.top))
 
       console.info('[SUB_ACE_GRID_OnlyColumnsTemplate4_static_0500] END');

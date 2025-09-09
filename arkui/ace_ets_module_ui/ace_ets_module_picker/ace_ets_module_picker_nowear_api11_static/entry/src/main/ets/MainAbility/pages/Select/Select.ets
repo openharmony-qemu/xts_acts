@@ -39,10 +39,10 @@ import {
   BlurStyle,
   MenuAlignType,
   TextInputController,
-  px2vp,
   MenuAlignType
 } from '@ohos.arkui.component';
 import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import { UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -63,8 +63,8 @@ struct Index {
         ])
           .value('TTTT')
           .key("ArkUX_Select_Visual_0030")
-          .optionWidth(px2vp(300))
-          .optionHeight(px2vp(300))
+          .optionWidth(UIContext.getFocusedUIContext()!.px2vp(300))
+          .optionHeight(UIContext.getFocusedUIContext()!.px2vp(300))
 
         Select([{ value: 'aaa' },
           { value: 'bbb' },
@@ -78,8 +78,8 @@ struct Index {
           .backgroundColor(Color.Blue)
           .value('TTTT')
           .optionBgColor(Color.Blue)
-          .optionWidth(px2vp(600))
-          .optionHeight(px2vp(600))
+          .optionWidth(UIContext.getFocusedUIContext()!.px2vp(600))
+          .optionHeight(UIContext.getFocusedUIContext()!.px2vp(600))
 
         Select([{ value: 'aaa' },
           { value: 'bbb' },
@@ -91,8 +91,8 @@ struct Index {
         ])
           .key("ArkUX_Select_Visual_0050")
           .value('TTTT')
-          .optionWidth(px2vp(900))
-          .optionHeight(px2vp(900))
+          .optionWidth(UIContext.getFocusedUIContext()!.px2vp(900))
+          .optionHeight(UIContext.getFocusedUIContext()!.px2vp(900))
 
         Select([{ value: 'aaa' },
           { value: 'bbb' },
@@ -104,8 +104,8 @@ struct Index {
         ])
           .key("ArkUX_Select_Visual_0060")
           .value('TTTT')
-          .optionWidth(px2vp(1200))
-          .optionHeight(px2vp(1200))
+          .optionWidth(UIContext.getFocusedUIContext()!.px2vp(1200))
+          .optionHeight(UIContext.getFocusedUIContext()!.px2vp(1200))
 
         Select([{ value: 'aaa' },
           { value: 'bbb' },
@@ -117,8 +117,8 @@ struct Index {
         ])
           .key("ArkUX_Select_Visual_0070")
           .value('TTTT')
-          .optionWidth(px2vp(1500))
-          .optionHeight(px2vp(1500))
+          .optionWidth(UIContext.getFocusedUIContext()!.px2vp(1500))
+          .optionHeight(UIContext.getFocusedUIContext()!.px2vp(1500))
 
       }.width('100%')
     }.height('100%')

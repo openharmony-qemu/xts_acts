@@ -1238,7 +1238,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       let right = subcomponment.right;
       let left = subcomponment.left;
       const uiContex = new UIContext();
-      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (right - left + uiContext.vp2px(4 + 2 + 2 * 10)))) <= 1)
+      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (right - left + UIContext.getFocusedUIContext()!.vp2px(4 + 2 + 2 * 10)))) <= 1)
         .assertTrue();
       done();
     });
@@ -1288,7 +1288,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       let right = subcomponment.right;
       let left = subcomponment.left;
       const uiContext = new UIContext()
-      expect(Math.abs(Math.floor((right - left + uiContext.vp2px(4 + 2 + 2 * 10)) - (swiperRight - swiperLeft))) <= 1)
+      expect(Math.abs(Math.floor((right - left + UIContext.getFocusedUIContext()!.vp2px(4 + 2 + 2 * 10)) - (swiperRight - swiperLeft))) <= 1)
         .assertTrue();
       done();
     });
@@ -1347,7 +1347,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       let right = subcomponment.right;
       let left = subcomponment.left;
 
-      expect(Math.floor(Math.abs((2 * (right - left) + uiContext.vp2px(4 + 2 + 2 * 10)) -
+      expect(Math.floor(Math.abs((2 * (right - left) + UIContext.getFocusedUIContext()!.vp2px(4 + 2 + 2 * 10)) -
         (swiperRight - swiperLeft))) <= 1)
         .assertTrue();
       done();
@@ -1400,7 +1400,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       let right = subcomponment.right;
       let left = subcomponment.left;
 
-      expect(Math.abs(Math.floor((right - left + uiContext.vp2px(4 + 2 + 2 * 10)) - (swiperRight - swiperLeft))) <= 1)
+      expect(Math.abs(Math.floor((right - left + UIContext.getFocusedUIContext()!.vp2px(4 + 2 + 2 * 10)) - (swiperRight - swiperLeft))) <= 1)
         .assertTrue();
       done();
     });
@@ -1459,7 +1459,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       expect(nextMargin).assertEqual("4.00vp");
       expect(prevMargin).assertEqual("2.00vp");
 
-      expect(Math.abs(Math.floor((2 * (right - left) + uiContext.vp2px(4 + 2 + 2 * 10)) -
+      expect(Math.abs(Math.floor((2 * (right - left) + UIContext.getFocusedUIContext()!.vp2px(4 + 2 + 2 * 10)) -
         (swiperRight - swiperLeft))) <= 1)
         .assertTrue();
       done();
@@ -1514,7 +1514,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       expect(nextMargin).assertEqual("4.00vp");
       expect(prevMargin).assertEqual("2.00vp");
 
-      expect(Math.abs(Math.floor((right - left) - (swiperRight - swiperLeft - uiContext.vp2px(2 * 10 + 2 + 4)))) <= 1)
+      expect(Math.abs(Math.floor((right - left) - (swiperRight - swiperLeft - UIContext.getFocusedUIContext()!.vp2px(2 * 10 + 2 + 4)))) <= 1)
         .assertTrue();
       done();
     });
@@ -1567,7 +1567,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
 
 
       expect(padding).assertEqual('10.00vp');
-      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + uiContext.vp2px(20 + 40)))) <= 1)
+      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + UIContext.getFocusedUIContext()!.vp2px(20 + 40)))) <= 1)
         .assertTrue();
       done();
     });
@@ -1621,7 +1621,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       expect(nextMargin).assertEqual("30.00vp");
       expect(prevMargin).assertEqual("30.00vp");
 
-      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (right - left + uiContext.vp2px(2 * 3 + 2 * 30)))) <= 1)
+      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (right - left + UIContext.getFocusedUIContext()!.vp2px(2 * 3 + 2 * 30)))) <= 1)
         .assertTrue();
       done();
     });
@@ -1773,7 +1773,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
 
       expect(nextMargin).assertEqual("15.00vp");
       expect(prevMargin).assertEqual("6.00vp");
-      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + uiContext.vp2px(15 + 6)))) <= 1)
+      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + UIContext.getFocusedUIContext()!.vp2px(15 + 6)))) <= 1)
         .assertTrue();
       done();
     });
@@ -1826,7 +1826,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       let prevMargin: string = obj.getElement('$attrs').getString('prevMargin');
       expect(nextMargin).assertEqual("15.00vp");
       expect(prevMargin).assertEqual("6.00vp");
-      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - uiContext.vp2px(15 + 6)))) <= 1)
+      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - UIContext.getFocusedUIContext()!.vp2px(15 + 6)))) <= 1)
         .assertTrue();
       done();
     });
@@ -1877,7 +1877,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       let prevMargin: string = obj.getElement('$attrs').getString('prevMargin');
       expect(nextMargin).assertEqual("15.00vp");
       expect(prevMargin).assertEqual("6.00vp");
-      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (3 * (right - left) + uiContext.vp2px(15 + 6)))) <= 1)
+      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (3 * (right - left) + UIContext.getFocusedUIContext()!.vp2px(15 + 6)))) <= 1)
         .assertTrue();
       done();
     });
@@ -1934,10 +1934,10 @@ export default function SwiperNextPrevMarginAddJsunit() {
       let bottom3 = subcomponment3.bottom;
       console.info(`[SwiperNextPrevMarginAddJsunit_static_0060] swiperTop - swiperbottom=
       ${(swiperTop - swiperbottom)}`);
-      console.info(`[SwiperNextPrevMarginAddJsunit_static_0060] ((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - uiContext.vp2px(15 + 6))=
-      ${((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - uiContext.vp2px(15 + 6))}`);
+      console.info(`[SwiperNextPrevMarginAddJsunit_static_0060] ((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - UIContext.getFocusedUIContext()!.vp2px(15 + 6))=
+      ${((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - UIContext.getFocusedUIContext()!.vp2px(15 + 6))}`);
       expect(Math.abs(Math.floor((swiperTop - swiperbottom) -
-        ((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - uiContext.vp2px(15 + 6)))) <= 1).assertTrue();
+        ((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - UIContext.getFocusedUIContext()!.vp2px(15 + 6)))) <= 1).assertTrue();
       done();
     });
 
@@ -1994,7 +1994,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       expect(prevMargin).assertEqual("6.00vp");
       expect(itemspace).assertEqual("10.00vp");
 
-      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + uiContext.vp2px(15 + 6 + 2 * 10)))) <= 1)
+      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + UIContext.getFocusedUIContext()!.vp2px(15 + 6 + 2 * 10)))) <= 1)
         .assertTrue();
       done();
     });
@@ -2051,7 +2051,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       expect(prevMargin).assertEqual("6.00vp");
       expect(itemspace).assertEqual("10.00vp");
 
-      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - uiContext.vp2px(2 * 10 + 15 + 6)))) <= 1)
+      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - UIContext.getFocusedUIContext()!.vp2px(2 * 10 + 15 + 6)))) <= 1)
         .assertTrue();
       done();
     });
@@ -2110,7 +2110,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       expect(itemspace).assertEqual("10.00vp");
 
       expect(Math.abs(Math.round((swiperRight - swiperLeft) -
-        (3 * (right - left) + uiContext.vp2px(15 + 6 + 4 * 10)))) <= 1)
+        (3 * (right - left) + UIContext.getFocusedUIContext()!.vp2px(15 + 6 + 4 * 10)))) <= 1)
         .assertTrue();
       done();
     });
@@ -2168,7 +2168,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       expect(itemspace).assertEqual("10.00vp");
 
       expect(Math.abs(Math.round(swiperTop - swiperbottom) -
-      Math.round(3 * (top - bottom) - uiContext.vp2px(4 * 10 + 15 + 6))) <= 1).assertTrue();
+      Math.round(3 * (top - bottom) - UIContext.getFocusedUIContext()!.vp2px(4 * 10 + 15 + 6))) <= 1).assertTrue();
       done();
     });
 
@@ -2224,7 +2224,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       expect(prevMargin).assertEqual("6.00vp");
       expect(itemspace).assertEqual("0.00vp");
 
-      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + uiContext.vp2px(15 + 6)))) <= 1)
+      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + UIContext.getFocusedUIContext()!.vp2px(15 + 6)))) <= 1)
         .assertTrue();
       done();
     });
@@ -2279,7 +2279,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       expect(nextMargin).assertEqual("15.00vp");
       expect(prevMargin).assertEqual("6.00vp");
 
-      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - uiContext.vp2px(15 + 6)))) <= 1)
+      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - UIContext.getFocusedUIContext()!.vp2px(15 + 6)))) <= 1)
         .assertTrue();
       done();
     });
@@ -2334,7 +2334,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       expect(nextMargin).assertEqual("15.00vp");
       expect(prevMargin).assertEqual("6.00vp");
 
-      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (3 * (right - left) + uiContext.vp2px(15 + 6)))) <= 1)
+      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (3 * (right - left) + UIContext.getFocusedUIContext()!.vp2px(15 + 6)))) <= 1)
         .assertTrue();
       done();
     });
@@ -2396,10 +2396,10 @@ export default function SwiperNextPrevMarginAddJsunit() {
 
       console.info(`[SwiperNextPrevMarginAddJsunit_static_0052] swiperTop - swiperbottom=
       ${(swiperTop - swiperbottom)}`);
-      console.info(`[SwiperNextPrevMarginAddJsunit_static_0052] ((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - uiContext.vp2px(15 + 6))=
-      ${((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - uiContext.vp2px(15 + 6))}`);
+      console.info(`[SwiperNextPrevMarginAddJsunit_static_0052] ((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - UIContext.getFocusedUIContext()!.vp2px(15 + 6))=
+      ${((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - UIContext.getFocusedUIContext()!.vp2px(15 + 6))}`);
       expect(Math.abs(Math.floor((swiperTop - swiperbottom) -
-        ((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - uiContext.vp2px(15 + 6)))) <= 1).assertTrue();
+        ((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - UIContext.getFocusedUIContext()!.vp2px(15 + 6)))) <= 1).assertTrue();
       done();
     });
 
@@ -2456,7 +2456,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       expect(prevMargin).assertEqual("6.00vp");
       expect(itemspace).assertEqual("10.00vp");
 
-      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + uiContext.vp2px(15 + 6 + 2 * 10)))) <= 1)
+      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + UIContext.getFocusedUIContext()!.vp2px(15 + 6 + 2 * 10)))) <= 1)
         .assertTrue();
       done();
     });
@@ -2513,7 +2513,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       expect(prevMargin).assertEqual("6.00vp");
       expect(itemspace).assertEqual("10.00vp");
 
-      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - uiContext.vp2px(15 + 6 + 2 * 10)))) <= 1)
+      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - UIContext.getFocusedUIContext()!.vp2px(15 + 6 + 2 * 10)))) <= 1)
         .assertTrue();
       done();
     });
@@ -2572,7 +2572,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       expect(itemspace).assertEqual("10.00vp");
 
       expect(Math.abs(Math.round((swiperRight - swiperLeft) -
-        (3 * (right - left) + uiContext.vp2px(15 + 6 + 4 * 10)))) <= 1)
+        (3 * (right - left) + UIContext.getFocusedUIContext()!.vp2px(15 + 6 + 4 * 10)))) <= 1)
         .assertTrue();
       done();
     });
@@ -2630,7 +2630,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       expect(itemspace).assertEqual("10.00vp");
 
       expect(Math.abs(Math.round(swiperTop - swiperbottom) -
-      Math.round(3 * (top - bottom) - uiContext.vp2px(15 + 6 + 4 * 10))) <= 1).assertTrue();
+      Math.round(3 * (top - bottom) - UIContext.getFocusedUIContext()!.vp2px(15 + 6 + 4 * 10))) <= 1).assertTrue();
       done();
     });
 
@@ -3228,7 +3228,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       let itemspace: string = obj.getElement('$attrs').getString('itemSpace');
       expect(itemspace).assertEqual('10.00vp');
 
-      expect(Math.abs(Math.floor((swiperRight - swiperLeft) - (3 * (right - left) + uiContext.vp2px(2 * 10)))) <= 1)
+      expect(Math.abs(Math.floor((swiperRight - swiperLeft) - (3 * (right - left) + UIContext.getFocusedUIContext()!.vp2px(2 * 10)))) <= 1)
         .assertTrue();
       done();
     });
@@ -3373,7 +3373,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       let nextMargin: string = obj.getElement('$attrs').getString('nextMargin');
       expect(nextMargin).assertEqual('5.00vp');
 
-      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + uiContext.vp2px(5)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + UIContext.getFocusedUIContext()!.vp2px(5)))) <= 1).assertTrue();
       done();
     });
 
@@ -3446,7 +3446,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       let obj = JSON.parseJsonElement(strJson);
       let nextMargin: string = obj.getElement('$attrs').getString('nextMargin');
       expect(nextMargin).assertEqual('5.00vp');
-      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - uiContext.vp2px(5)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - UIContext.getFocusedUIContext()!.vp2px(5)))) <= 1).assertTrue();
       done();
     });
 
@@ -3519,7 +3519,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       let obj = JSON.parseJsonElement(strJson);
       let nextMargin: string = obj.getElement('$attrs').getString('nextMargin');
       expect(nextMargin).assertEqual('5.00vp');
-      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + uiContext.vp2px(5)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + UIContext.getFocusedUIContext()!.vp2px(5)))) <= 1).assertTrue();
       done();
     });
 
@@ -3593,7 +3593,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       let nextMargin: string = obj.getElement('$attrs').getString('nextMargin');
       expect(nextMargin).assertEqual('5.00vp');
 
-      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - uiContext.vp2px(5)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - UIContext.getFocusedUIContext()!.vp2px(5)))) <= 1).assertTrue();
       done();
     });
 
@@ -3667,7 +3667,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       let nextMargin: string = obj.getElement('$attrs').getString('nextMargin');
       expect(nextMargin).assertEqual('5.00vp');
 
-      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (3 * (right - left) + uiContext.vp2px(5)))) <= 1)
+      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (3 * (right - left) + UIContext.getFocusedUIContext()!.vp2px(5)))) <= 1)
         .assertTrue();
       done();
     });
@@ -3742,7 +3742,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       let nextMargin: string = obj.getElement('$attrs').getString('nextMargin');
       expect(nextMargin).assertEqual('5.00vp');
 
-      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - uiContext.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
       done();
     });
@@ -3817,7 +3817,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       let nextMargin: string = obj.getElement('$attrs').getString('nextMargin');
       expect(nextMargin).assertEqual('5.00vp');
 
-      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (3 * (right - left) + uiContext.vp2px(5)))) <= 1)
+      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (3 * (right - left) + UIContext.getFocusedUIContext()!.vp2px(5)))) <= 1)
         .assertTrue();
       done();
     });
@@ -3891,7 +3891,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getElement('nextMargin')).assertEqual('5.00vp');
 
-      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - uiContext.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
       done();
     });
@@ -3963,12 +3963,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
       let strJson = inspector.getInspectorByKey('swiperNextPrevMargin50');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getElement('nextMargin')).assertEqual('5.00vp');
-      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - uiContext.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
 
       
       await CommonFunc.sleep(3000);
-      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - uiContext.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
       await CommonFunc.sleep(3000);
       done();
@@ -4042,12 +4042,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
       let obj = JSON.parseJsonElement(strJson);
       const uiContext = new UIContext();
       expect(obj.getElement('$attrs').getElement('nextMargin')).assertEqual('5.00vp');
-      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - uiContext.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
 
       
       await CommonFunc.sleep(3000);
-      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - uiContext.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
       await CommonFunc.sleep(3000);
       done();

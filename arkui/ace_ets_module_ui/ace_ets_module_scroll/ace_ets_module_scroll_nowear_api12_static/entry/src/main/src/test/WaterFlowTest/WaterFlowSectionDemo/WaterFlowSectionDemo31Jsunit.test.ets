@@ -65,7 +65,7 @@ it('WaterFlowSectionDemo31Jsunit_static_0100', Level.LEVEL0, async (done: () => 
       console.log('WaterFlowSectionDemo31Jsunit_1111',str0.bottom,str1.top)
       console.log('WaterFlowSectionDemo31Jsunit_2222',str1.top - str0.bottom)
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(str1.top - str0.bottom) - Math.round(uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(str1.top - str0.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       console.info('WaterFlowSectionDemo31Jsunit_static_0100 END')
       done();
     });

@@ -97,7 +97,7 @@ export default function offsetAlignEnd() {
       console.info('[offsetAlignEnd_static_0100] list.bottom: ' + list.bottom);
       console.info('[offsetAlignEnd_static_0100] listItem.bottom: ' + listItem.bottom);
       await CommonFunc.sleep(1000);
-      expect(Math.abs(Math.round(list.bottom - listItem.bottom) - Math.round((new UIContext).vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(list.bottom - listItem.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
       console.info('[offsetAlignEnd_static_0100] END');
       done();

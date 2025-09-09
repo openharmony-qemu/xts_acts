@@ -88,13 +88,13 @@ it('testColumnParentMarPadSubMargin_static', Level.LEVEL0, async () => {
       let setPadMar02: RectValue = CommonFunc.getComponentRect('setPadMar02');
       let setPadMar03: RectValue = CommonFunc.getComponentRect('setPadMar03');
       let setPadMar: RectValue = CommonFunc.getComponentRect('setPadMar');
-      expect(Math.abs(Math.round(setPadMar01.top - setPadMar.top) - Math.round(uiContext.vp2px(40))) <= 1).assertTrue()
-      expect(Math.abs(Math.round(setPadMar02.top - setPadMar01.bottom) - Math.round(uiContext.vp2px(50))) <= 1).assertTrue()
-      expect(Math.abs(Math.round(setPadMar03.top - setPadMar02.bottom) - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(Math.round(setPadMar01.top - setPadMar.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue()
+      expect(Math.abs(Math.round(setPadMar02.top - setPadMar01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(Math.round(setPadMar03.top - setPadMar02.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
       expect(setPadMar.bottom).assertLess(setPadMar03.bottom)
-      expect(Math.abs(Math.round(setPadMar01.right - setPadMar01.left) - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(Math.round(setPadMar02.right - setPadMar02.left) - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(Math.round(setPadMar03.right - setPadMar03.left) - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(Math.round(setPadMar01.right - setPadMar01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(Math.round(setPadMar02.right - setPadMar02.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(Math.round(setPadMar03.right - setPadMar03.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
       console.info('new testColumnParentMarPadSubMargin_static END');
     });
   })

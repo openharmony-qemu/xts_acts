@@ -100,15 +100,15 @@ it('testColumnSetDisplayPriorityWithRateOneTwoThree_static_static', Level.LEVEL0
       let setDisplayPriority: RectValue = CommonFunc.getComponentRect('setDisplayPriority');
       expect(Math.abs(setDisplayPriority.top - setDisplayPriority1.top) <= 1).assertTrue()
       expect(Math.abs(setDisplayPriority1.top - setDisplayPriority2.top) <= 1).assertTrue()
-      expect(Math.abs(setDisplayPriority3.top - setDisplayPriority2.bottom - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(setDisplayPriority.bottom - setDisplayPriority3.bottom - Math.round(uiContext.vp2px(20))) <= 1).assertTrue()
+      expect(Math.abs(setDisplayPriority3.top - setDisplayPriority2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(setDisplayPriority.bottom - setDisplayPriority3.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue()
 
-      expect(Math.abs(setDisplayPriority1.right - setDisplayPriority1.left - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(setDisplayPriority2.right - setDisplayPriority2.left - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(setDisplayPriority3.right - setDisplayPriority3.left - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(setDisplayPriority1.bottom - setDisplayPriority1.top - Math.round(uiContext.vp2px(100))) <= 1).assertTrue()
-      expect(Math.abs(setDisplayPriority2.bottom - setDisplayPriority2.top - Math.round(uiContext.vp2px(200))) <= 1).assertTrue()
-      expect(Math.abs(setDisplayPriority3.bottom - setDisplayPriority3.top - Math.round(uiContext.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(setDisplayPriority1.right - setDisplayPriority1.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(setDisplayPriority2.right - setDisplayPriority2.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(setDisplayPriority3.right - setDisplayPriority3.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(setDisplayPriority1.bottom - setDisplayPriority1.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue()
+      expect(Math.abs(setDisplayPriority2.bottom - setDisplayPriority2.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1).assertTrue()
+      expect(Math.abs(setDisplayPriority3.bottom - setDisplayPriority3.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
       console.info('new testColumnSetDisplayPriorityWithRateOneTwoThree_static END');
     });
 
@@ -141,15 +141,15 @@ it('testColumnSetDisplayPriorityWithRateTwoOneTwo_static', Level.LEVEL0, async (
       let setDisplayPriority: RectValue = CommonFunc.getComponentRect('setDisplayPriority');
       expect(Math.abs(setDisplayPriority.top - setDisplayPriority1.top) <= 1).assertTrue()
       expect(Math.abs(setDisplayPriority1.top - setDisplayPriority2.top) <= 1).assertTrue()
-      expect(Math.abs(setDisplayPriority3.top - setDisplayPriority2.bottom - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(setDisplayPriority.bottom - setDisplayPriority3.bottom - Math.round(uiContext.vp2px(20))) <= 1).assertTrue()
+      expect(Math.abs(setDisplayPriority3.top - setDisplayPriority2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(setDisplayPriority.bottom - setDisplayPriority3.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue()
 
-      expect(Math.abs(setDisplayPriority1.right - setDisplayPriority1.left - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(setDisplayPriority2.right - setDisplayPriority2.left - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(setDisplayPriority3.right - setDisplayPriority3.left - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(setDisplayPriority1.bottom - setDisplayPriority1.top - Math.round(uiContext.vp2px(100))) <= 1).assertTrue()
-      expect(Math.abs(setDisplayPriority2.bottom - setDisplayPriority2.top - Math.round(uiContext.vp2px(200))) <= 1).assertTrue()
-      expect(Math.abs(setDisplayPriority3.bottom - setDisplayPriority3.top - Math.round(uiContext.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(setDisplayPriority1.right - setDisplayPriority1.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(setDisplayPriority2.right - setDisplayPriority2.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(setDisplayPriority3.right - setDisplayPriority3.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(setDisplayPriority1.bottom - setDisplayPriority1.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue()
+      expect(Math.abs(setDisplayPriority2.bottom - setDisplayPriority2.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1).assertTrue()
+      expect(Math.abs(setDisplayPriority3.bottom - setDisplayPriority3.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
       console.info('new testColumnSetDisplayPriorityWithRateTwoOneTwo END');
     });
   })

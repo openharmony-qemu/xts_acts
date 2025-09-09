@@ -99,20 +99,20 @@ it('testFlexItemAlignCenterParentSetPadding_static', Level.LEVEL0, async () : Pr
       let textFlexPadding03: RectValue = CommonFunc.getComponentRect('ItemAlign_Center_textFlexPadding03');
       let flexPadding01: RectValue = CommonFunc.getComponentRect('ItemAlign_Center_flexPadding01');
       const uiContext = new UIContext();
-      expect(Math.abs(textFlexPadding01.left - flexPadding01.left - Math.round(uiContext.vp2px(10))) <= 1).assertTrue()
-      expect(Math.abs(flexPadding01.right - textFlexPadding03.right - Math.round(uiContext.vp2px(40))) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding01.left - flexPadding01.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue()
+      expect(Math.abs(flexPadding01.right - textFlexPadding03.right - Math.round(UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue()
       expect(Math.abs(textFlexPadding01.top - flexPadding01.top - (flexPadding01.bottom - textFlexPadding01.bottom)) <= 1)
         .assertTrue()
       expect(Math.abs(textFlexPadding02.top - flexPadding01.top - (flexPadding01.bottom - textFlexPadding02.bottom)) <= 1)
         .assertTrue()
       expect(Math.abs(textFlexPadding03.top - flexPadding01.top - (flexPadding01.bottom - textFlexPadding03.bottom)) <= 1)
         .assertTrue()
-      expect(Math.abs(textFlexPadding01.bottom - textFlexPadding01.top - Math.round(uiContext.vp2px(50))) <= 1).assertTrue()
-      expect(Math.abs(textFlexPadding02.bottom - textFlexPadding02.top - Math.round(uiContext.vp2px(100))) <= 1).assertTrue()
-      expect(Math.abs(textFlexPadding03.bottom - textFlexPadding03.top - Math.round(uiContext.vp2px(150))) <= 1).assertTrue()
-      expect(Math.abs(textFlexPadding01.right - textFlexPadding01.left - Math.round(uiContext.vp2px(150))) <= 1).assertTrue()
-      expect(Math.abs(textFlexPadding02.right - textFlexPadding02.left - Math.round(uiContext.vp2px(150))) <= 1).assertTrue()
-      expect(Math.abs(textFlexPadding03.right - textFlexPadding03.left - Math.round(uiContext.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding01.bottom - textFlexPadding01.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding02.bottom - textFlexPadding02.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding03.bottom - textFlexPadding03.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding01.right - textFlexPadding01.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding02.right - textFlexPadding02.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding03.right - textFlexPadding03.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Center')
       console.info('new testFlexItemAlignCenterParentSetPadding END');

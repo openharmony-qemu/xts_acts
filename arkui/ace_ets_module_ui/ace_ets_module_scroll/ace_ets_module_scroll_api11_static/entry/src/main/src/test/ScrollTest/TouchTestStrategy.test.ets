@@ -89,10 +89,10 @@ export default function TouchTestStrategy() {
       let bottom = gridBottom.bottom
       let driver = Driver.create()
       const uiContext = new UIContext();
-      await driver.swipe((Math.round((AppStorage.get<number>("winLeft") ?? 0) + uiContext.vp2px(100))).toInt(),
-        (Math.round((AppStorage.get<number>("winTop") ?? 0) + top + uiContext.vp2px(80))).toInt(),
-        (Math.round((AppStorage.get<number>("winLeft") ?? 0) + uiContext.vp2px(100))).toInt(),
-        (Math.round((AppStorage.get<number>("winTop") ?? 0) + top + uiContext.vp2px(10))).toInt());
+      await driver.swipe((Math.round((AppStorage.get<number>("winLeft") ?? 0) + UIContext.getFocusedUIContext()!.vp2px(100))).toInt(),
+        (Math.round((AppStorage.get<number>("winTop") ?? 0) + top + UIContext.getFocusedUIContext()!.vp2px(80))).toInt(),
+        (Math.round((AppStorage.get<number>("winLeft") ?? 0) + UIContext.getFocusedUIContext()!.vp2px(100))).toInt(),
+        (Math.round((AppStorage.get<number>("winTop") ?? 0) + top + UIContext.getFocusedUIContext()!.vp2px(10))).toInt());
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('listText_TouchStrategy');
       let obj = JSON.parseJsonElement(strJson);

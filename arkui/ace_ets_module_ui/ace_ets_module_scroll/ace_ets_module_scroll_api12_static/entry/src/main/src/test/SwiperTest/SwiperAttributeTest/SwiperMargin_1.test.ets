@@ -93,7 +93,7 @@ export default function SwiperMargin_1() {
       let spaceMargin = swiperLeft - textLeft;
       console.info("[SwiperMargin_static_0070] The spaceMargin value is " + spaceMargin);
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(swiperLeft - textLeft)) - uiContext.vp2px(10) <= 1).assertTrue();
+      expect(Math.abs(Math.round(swiperLeft - textLeft)) - UIContext.getFocusedUIContext()!.vp2px(10) <= 1).assertTrue();
       console.info('[SwiperMargin_static_0070] END');
       done();
     });
@@ -130,7 +130,7 @@ export default function SwiperMargin_1() {
       let spaceMargin = swiperRight - columnLeft;
       console.info("[SwiperMargin_static_0200] The spaceMargin value is " + JSON.stringify(spaceMargin));
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(spaceMargin)) - uiContext.vp2px(20) <= 1).assertTrue();
+      expect(Math.abs(Math.round(spaceMargin)) - UIContext.getFocusedUIContext()!.vp2px(20) <= 1).assertTrue();
 
       console.info('[SwiperMargin_static_0200] END');
       done();

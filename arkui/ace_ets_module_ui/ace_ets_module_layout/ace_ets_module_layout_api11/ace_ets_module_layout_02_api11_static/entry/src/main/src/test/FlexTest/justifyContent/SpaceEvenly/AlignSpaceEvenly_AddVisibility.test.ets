@@ -126,21 +126,21 @@ it('textFlexAlignSpaceEvenlyTextVisibilityNone_static', Level.LEVEL0, async () :
         expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.top) - Math.round(SpaceEvenly_AddVisibility_01.top)) <= 2)
           .assertTrue();
 
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.left - SpaceEvenly_AddVisibility_01.left) - Math.round(uiContext.vp2px(200 / 3))) <= 2)
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.left - SpaceEvenly_AddVisibility_01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200 / 3))) <= 2)
           .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_01.right - SpaceEvenly_AddVisibility_013.right) - Math.round(uiContext.vp2px(200 / 3))) <= 2)
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_01.right - SpaceEvenly_AddVisibility_013.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200 / 3))) <= 2)
           .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.left - SpaceEvenly_AddVisibility_012.right) - Math.round(uiContext.vp2px(200 / 3))) <= 2)
-          .assertTrue();
-
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.right - SpaceEvenly_AddVisibility_012.left) - Math.round(uiContext.vp2px(150))) <= 2)
-          .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.right - SpaceEvenly_AddVisibility_013.left) - Math.round(uiContext.vp2px(150))) <= 2)
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.left - SpaceEvenly_AddVisibility_012.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200 / 3))) <= 2)
           .assertTrue();
 
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.bottom - SpaceEvenly_AddVisibility_012.top) - Math.round(uiContext.vp2px(100))) <= 2)
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.right - SpaceEvenly_AddVisibility_012.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
           .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.bottom - SpaceEvenly_AddVisibility_013.top) - Math.round(uiContext.vp2px(150))) <= 2)
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.right - SpaceEvenly_AddVisibility_013.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
+          .assertTrue();
+
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.bottom - SpaceEvenly_AddVisibility_012.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 2)
+          .assertTrue();
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.bottom - SpaceEvenly_AddVisibility_013.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
           .assertTrue();
 
 
@@ -197,29 +197,29 @@ it('textFlexAlignSpaceEvenlyTextVisibilityHidden_static', Level.LEVEL0, async ()
         expect(Math.abs(Math.round(Math.round(SpaceEvenly_AddVisibility_012.top)) - Math.round(SpaceEvenly_AddVisibility_011.top)) <= 2)
           .assertTrue();
 
-        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_011.left - SpaceEvenly_AddVisibility_01.left) * 100) / 100 - Math.round(uiContext.vp2px(12.5) * 100) / 100) <= 2)
+        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_011.left - SpaceEvenly_AddVisibility_01.left) * 100) / 100 - Math.round(UIContext.getFocusedUIContext()!.vp2px(12.5) * 100) / 100) <= 2)
           .assertTrue();
-        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_01.right - SpaceEvenly_AddVisibility_013.right) * 100) / 100 - Math.round(uiContext.vp2px(12.5) * 100) / 100) <= 2)
-          .assertTrue();
-
-
-        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_012.left - SpaceEvenly_AddVisibility_011.right) * 100) / 100 - Math.round(uiContext.vp2px(12.5) * 100) / 100) <= 2)
-          .assertTrue();
-        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_013.left - SpaceEvenly_AddVisibility_012.right) * 100) / 100 - Math.round(uiContext.vp2px(12.5) * 100) / 100) <= 2)
-          .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_011.right - SpaceEvenly_AddVisibility_011.left) - Math.round(uiContext.vp2px(150))) <= 2)
-          .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.right - SpaceEvenly_AddVisibility_012.left) - Math.round(uiContext.vp2px(150))) <= 2)
-          .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.right - SpaceEvenly_AddVisibility_013.left) - Math.round(uiContext.vp2px(150))) <= 2)
+        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_01.right - SpaceEvenly_AddVisibility_013.right) * 100) / 100 - Math.round(UIContext.getFocusedUIContext()!.vp2px(12.5) * 100) / 100) <= 2)
           .assertTrue();
 
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_011.bottom - SpaceEvenly_AddVisibility_011.top) - Math.round(uiContext.vp2px(50))) <= 2)
+
+        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_012.left - SpaceEvenly_AddVisibility_011.right) * 100) / 100 - Math.round(UIContext.getFocusedUIContext()!.vp2px(12.5) * 100) / 100) <= 2)
           .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.bottom - SpaceEvenly_AddVisibility_012.top) - Math.round(uiContext.vp2px(100))) <= 2)
+        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_013.left - SpaceEvenly_AddVisibility_012.right) * 100) / 100 - Math.round(UIContext.getFocusedUIContext()!.vp2px(12.5) * 100) / 100) <= 2)
+          .assertTrue();
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_011.right - SpaceEvenly_AddVisibility_011.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
+          .assertTrue();
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.right - SpaceEvenly_AddVisibility_012.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
+          .assertTrue();
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.right - SpaceEvenly_AddVisibility_013.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
           .assertTrue();
 
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.bottom - SpaceEvenly_AddVisibility_013.top) - Math.round(uiContext.vp2px(150))) <= 2)
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_011.bottom - SpaceEvenly_AddVisibility_011.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 2)
+          .assertTrue();
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.bottom - SpaceEvenly_AddVisibility_012.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 2)
+          .assertTrue();
+
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.bottom - SpaceEvenly_AddVisibility_013.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
           .assertTrue();
 
       } catch (err:Error) {
@@ -275,28 +275,28 @@ it('textFlexAlignSpaceEvenlyTextVisibilityVisible_static', Level.LEVEL0, async (
           .assertTrue();
         expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.top) - Math.round(SpaceEvenly_AddVisibility_011.top)) <= 2)
           .assertTrue();
-        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_011.left - SpaceEvenly_AddVisibility_01.left) * 100) / 100 - Math.round(uiContext.vp2px(12.5) * 100) / 100) <= 2)
+        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_011.left - SpaceEvenly_AddVisibility_01.left) * 100) / 100 - Math.round(UIContext.getFocusedUIContext()!.vp2px(12.5) * 100) / 100) <= 2)
           .assertTrue();
-        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_01.right - SpaceEvenly_AddVisibility_013.right) * 100) / 100 - Math.round(uiContext.vp2px(12.5) * 100) / 100) <= 2)
+        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_01.right - SpaceEvenly_AddVisibility_013.right) * 100) / 100 - Math.round(UIContext.getFocusedUIContext()!.vp2px(12.5) * 100) / 100) <= 2)
           .assertTrue();
-        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_012.left - SpaceEvenly_AddVisibility_011.right) * 100) / 100 - Math.round(uiContext.vp2px(12.5) * 100) / 100) <= 2)
+        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_012.left - SpaceEvenly_AddVisibility_011.right) * 100) / 100 - Math.round(UIContext.getFocusedUIContext()!.vp2px(12.5) * 100) / 100) <= 2)
           .assertTrue();
-        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_013.left - SpaceEvenly_AddVisibility_012.right) * 100) / 100 - Math.round(uiContext.vp2px(12.5) * 100) / 100) <= 2)
-          .assertTrue();
-
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_011.right - SpaceEvenly_AddVisibility_011.left) - Math.round(uiContext.vp2px(150))) <= 2)
-          .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.right - SpaceEvenly_AddVisibility_012.left) - Math.round(uiContext.vp2px(150))) <= 2)
+        expect(Math.abs(Math.round((SpaceEvenly_AddVisibility_013.left - SpaceEvenly_AddVisibility_012.right) * 100) / 100 - Math.round(UIContext.getFocusedUIContext()!.vp2px(12.5) * 100) / 100) <= 2)
           .assertTrue();
 
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.right - SpaceEvenly_AddVisibility_013.left) - Math.round(uiContext.vp2px(150))) <= 2)
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_011.right - SpaceEvenly_AddVisibility_011.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
           .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_011.bottom - SpaceEvenly_AddVisibility_011.top) - Math.round(uiContext.vp2px(50))) <= 2)
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.right - SpaceEvenly_AddVisibility_012.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
           .assertTrue();
 
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.bottom - SpaceEvenly_AddVisibility_012.top) - Math.round(uiContext.vp2px(100))) <= 2)
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.right - SpaceEvenly_AddVisibility_013.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
           .assertTrue();
-        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.bottom - SpaceEvenly_AddVisibility_013.top) - Math.round(uiContext.vp2px(150))) <= 2)
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_011.bottom - SpaceEvenly_AddVisibility_011.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 2)
+          .assertTrue();
+
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_012.bottom - SpaceEvenly_AddVisibility_012.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 2)
+          .assertTrue();
+        expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.bottom - SpaceEvenly_AddVisibility_013.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
           .assertTrue();
 
       } catch (err:Error) {
