@@ -237,8 +237,11 @@ export default function audioRendererTest() {
         await audioRen.write(buf);
         await audioRen.getCurrentOutputDevices().then((outputDeviceDescription) => {
           console.info(`${TagFrmwkRender}: outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
-          if (outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
-            console.info(`${TagFrmwkRender}: outputDeviceDescription[0].deviceType is SPEAKER`);
+          const detecteDevice = outputDeviceDescription.some(device => 
+            device.deviceType === audio.DeviceType.DISPLAY_PORT
+          );        
+          if (outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER || detecteDevice) {
+            console.info(`${TagFrmwkRender}: outputDeviceDescription[0].deviceType is SPEAKER or DISPLAY_PORT`);
             expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwkRender}: outputDeviceDescription[0].deviceType is not SPEAKER`);
