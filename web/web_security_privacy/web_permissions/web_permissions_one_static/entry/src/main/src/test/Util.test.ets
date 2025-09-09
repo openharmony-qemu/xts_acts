@@ -60,6 +60,7 @@ class Utils{
       console.info(`[${testCaseName}] err:` + JSON.stringify(err));
     }
   }
+}
 
 async function startAbility(bundleName: string, abilityName: string): Promise<boolean> {
   try {
