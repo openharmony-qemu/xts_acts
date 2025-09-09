@@ -951,7 +951,7 @@ export default function BigUint64ArrayTest() {
         array[0] = 21;
         array[1] = 31;
         //let bigIntArray = array.map(num => BigInt(num));
-        let bigIntArray = array.map((value: number, index: number, arr: Array<number>) => {
+        let bigIntArray = array.map((value: number) => {
           return BigInt(value)
         });
         let bigInt64Array = new BigUint64Array(bigIntArray);
@@ -978,7 +978,7 @@ export default function BigUint64ArrayTest() {
         array[0] = 21;
         array[1] = 31;
         //let bigIntArray = array.map(num => BigInt(num));
-        let bigIntArray = array.map((value: number, index: number, arr: Array<number>) => {
+        let bigIntArray = array.map((value: number) => {
           return BigInt(value)
         });
         let buffer = new ArrayBuffer(bigIntArray.length * 8);
