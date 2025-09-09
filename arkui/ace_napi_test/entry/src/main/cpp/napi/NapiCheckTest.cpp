@@ -29,6 +29,14 @@
 
 #include "hilog/log.h"
 
+#define LOG_DOMAIN 0x0001  // 全局domain宏，标识业务领域
+#define LOG_TAG "MY_TAG"
+
+#define THREAD_COUNT 4
+#define NUM_100 100
+#define NUM_1000 1000
+#define NUM_11 11
+
 #define NUM_1 1
 #define NUM_2 2
 #define NUM_3 3
@@ -53,6 +61,13 @@ struct ThreadData {
     napi_value arraybuffer;
     int threadId;
     bool testPassed;
+    
+    double timestamp;
+    napi_value dateObj;
+    napi_status createStatus;
+    bool isDate;
+    double retrievedTimestamp;
+    napi_status getStatus;
 };
 
 struct BigIntThreadData {
