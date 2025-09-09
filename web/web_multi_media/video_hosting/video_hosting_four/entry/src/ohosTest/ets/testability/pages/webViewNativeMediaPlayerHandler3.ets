@@ -1289,7 +1289,7 @@ struct WebComponent {
                             console.log(`The buttonPlay() return value is: ${result}`);
                             str = result;
                         })
-                        await waitForExist(() => str, this.emitKey, null);
+                        await Utils.sleep(1000)
                         console.log(`The isRelease: ${isRelease}`);
                         console.log(`The mediaErrorTypeList: ${mediaErrorTypeList}`);
                         console.log(`The isError: ${isError}`);
@@ -1308,7 +1308,7 @@ struct WebComponent {
                             console.log(`The buttonPlay() return value is: ${result}`);
                             str = result;
                         })
-                        await waitForExist(() => str, this.emitKey, null);
+                        await Utils.sleep(1000)
                         console.log(`The isRelease: ${isRelease}`);
                         console.log(`The mediaErrorTypeList: ${mediaErrorTypeList}`);
                         console.log(`The isError: ${isError}`);
@@ -1327,7 +1327,7 @@ struct WebComponent {
                             console.log(`The buttonPlay() return value is: ${result}`);
                             str = result;
                         })
-                        await waitForExist(() => str, this.emitKey, null);
+                        await Utils.sleep(1000)
                         console.log(`The isRelease: ${isRelease}`);
                         console.log(`The mediaErrorTypeList: ${mediaErrorTypeList}`);
                         console.log(`The isError: ${isError}`);
