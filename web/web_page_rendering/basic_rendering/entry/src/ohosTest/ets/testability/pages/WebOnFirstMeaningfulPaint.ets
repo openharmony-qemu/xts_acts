@@ -16,7 +16,6 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
-import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
 
 @Entry
 @Component
