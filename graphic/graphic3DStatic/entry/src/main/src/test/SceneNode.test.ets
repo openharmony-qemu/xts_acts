@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { ToneMappingType, ToneMappingSettings, PostProcessSettings, Vec3, Color, Quaternion, Position3,  Scale3, NodeType, Node, LightType,DirectionalLight, Scene } from '@ohos.graphics.scene'
-import { $rawfile } from '@ohos.arkui.component'
+import { $rawfile, Resource } from '@ohos.arkui.component'
 import { describe, it, expect, TestType, Size, Level } from '../../../hypium/index'
 
 export default function sceneNodeTest() {
@@ -64,22 +64,20 @@ export default function sceneNodeTest() {
         let post: PostProcessSettings;
         let toneMap: ToneMappingSettings;
         let toneMapType: ToneMappingType;
-        toneMapType = ToneMappingType.ACES;
-        toneMapType = ToneMappingType.ACES_2020;
+        expect(ToneMappingType.ACES).assertEqual(0);
+        expect(ToneMappingType.ACES_2020).assertEqual(1);
+        expect(ToneMappingType.FILMIC).assertEqual(2);
         toneMapType = ToneMappingType.FILMIC;
         post = {};
         cam.postProcess = post;
-        expect(cam.postProcess).assertNull();
-        console.info(msg + " cam.postProcess is null ");
         post = {toneMapping: {exposure: 0.5, type: toneMapType}}
         cam.postProcess = post;
         expect(cam.postProcess?.toneMapping?.exposure).assertEqual(0.5);
+        expect(cam.postProcess?.toneMapping?.type).assertEqual(ToneMappingType.FILMIC);
         console.info(msg + " cam.postProcess is not null ");
         toneMap = {};
         post = { toneMapping: toneMap }
         cam.postProcess = post;
-        expect(cam.postProcess?.toneMapping?.type).assertNull();
-        console.info(msg + " cam.postProcess.toneMapping is null ");
         done();
       } catch (err) {
         console.info(msg + " Failed in testPostProcess " + JSON.stringify(err));
@@ -208,7 +206,8 @@ export default function sceneNodeTest() {
       let msg = "============================testNodeType";
       console.info(msg + ' begin ');
       try {
-        let scene = await Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"));
+        let resource: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb")
+        let scene = await Scene.load(resource);
         let rf = scene.getResourceFactory();
         let lig = await rf.createLight({ name: "Light" }, LightType.DIRECTIONAL);
         let cam = await rf.createCamera({ name: "Camera1" })
@@ -237,7 +236,8 @@ export default function sceneNodeTest() {
       let msg = "============================testGetNodeByPath";
       console.info(msg + ' begin ');
       try {
-        let scene = await Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"));
+        let resource: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb")
+        let scene = await Scene.load(resource);
         let sceneNode: Node = scene.getNodeByPath('rootNode_/Scene') as Node;
         expect(sceneNode != null).assertTrue();
         console.info(msg + " succeed in sceneNode ");

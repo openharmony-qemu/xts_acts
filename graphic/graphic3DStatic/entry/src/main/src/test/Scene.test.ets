@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { NodeType, Scene, SceneNodeParameters, SceneResourceFactory, SceneResourceParameters, RenderParameters, Camera, Light, LightType} from '@ohos.graphics.scene'
-import { $rawfile } from '@ohos.arkui.component'
+import { $rawfile, Resource } from '@ohos.arkui.component'
 import { describe, it, expect, TestType, Size, Level } from '../../../hypium/index'
 
 export default function sceneTest() {
@@ -33,7 +33,8 @@ export default function sceneTest() {
         let scene: Scene = await Scene.load();
         expect(scene != undefined).assertTrue();
         console.info(msg + " succeed in Scene.load() ");
-        scene= await Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"));
+        let resource: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb")
+        scene= await Scene.load(resource);
         expect(scene != undefined).assertTrue();
         console.info(msg + " succeed in Scene.load(uri) ");
         done();
@@ -55,7 +56,8 @@ export default function sceneTest() {
       let msg = "============================testGetNodeByPath";
       console.info(msg + ' begin ');
       try {
-        let scene = await Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"));
+        let resource: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb")
+        let scene = await Scene.load(resource);
         let node = scene.getNodeByPath('rootNode_/Scene/node_damagedHelmet_-6514');
         console.info(msg + " succeed in getNodeByPath " + JSON.stringify(node));
         expect(node != null).assertTrue();
@@ -84,7 +86,8 @@ export default function sceneTest() {
       let msg = "============================testGetResourceFactory";
       console.info(msg + ' begin ');
       try {
-        let scene = await Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"));
+        let resource: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb")
+        let scene = await Scene.load(resource);
         let rf: SceneResourceFactory = scene.getResourceFactory();
         expect(rf != undefined).assertTrue();
         console.info(msg + " Succeed in scene.getResourceFactory() ");
@@ -107,7 +110,8 @@ export default function sceneTest() {
       let msg = "============================testDestroy";
       console.info(msg + ' begin ');
       try {
-        let scene = await Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"));
+        let resource: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb")
+        let scene = await Scene.load(resource);
         scene?.destroy();
         console.info(msg + " Succeed in scene.destroy() ");
         done();
@@ -171,7 +175,8 @@ export default function sceneTest() {
       let msg = "============================testSceneRenderFrame";
       console.info(msg + ' begin ');
       try {
-        let scene = await Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"));
+        let resource: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb")
+        let scene = await Scene.load(resource);
         expect(scene.renderFrame()).assertTrue();
         scene.renderFrame({ alwaysRender: true });
         expect(scene.renderFrame()).assertTrue();
