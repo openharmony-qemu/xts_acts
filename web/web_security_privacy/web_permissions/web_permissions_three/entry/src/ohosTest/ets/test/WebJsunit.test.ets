@@ -49,7 +49,8 @@ export default function webJsunit() {
     it('geolocationAccessFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGeolocationAccessFalse", 160950)
       Utils.registerContainEvent("geolocationAccessFalse", "位置服务被拒绝", 160960, done);
-      await Utils.waitAndClickComponent(driver, "webcomponent");
+      let component = await driver.findComponent(ON.id("webcomponent"));
+      await component.click();
     })
 
     /*
@@ -60,7 +61,8 @@ export default function webJsunit() {
     it('onGeolocationShow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnGeolocationShow", 160950)
       Utils.registerContainEvent("onGeolocationShow", "onGeolocationShow", 160970, done);
-      await Utils.waitAndClickComponent(driver, "webcomponent");
+      let component = await driver.findComponent(ON.id("webcomponent"));
+      await component.click();
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_025
@@ -70,7 +72,8 @@ export default function webJsunit() {
     it('domStorageAccessFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitDomStorageAccessFalse", 160950)
       Utils.registerContainEvent("domStorageAccessFalse", "sorry", 160980, done);
-      await Utils.waitAndClickComponent(driver, "webcomponent");
+      let component = await driver.findComponent(ON.id("webcomponent"));
+      await component.click();
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_026
@@ -80,7 +83,8 @@ export default function webJsunit() {
     it('domStorageAccessTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitDomStorageAccessTrue", 160950)
       Utils.registerContainEvent("domStorageAccessTrue", "domapi", 160990, done);
-      await Utils.waitAndClickComponent(driver, "webcomponent");
+      let component = await driver.findComponent(ON.id("webcomponent"));
+      await component.click();
     })
 
     /*
@@ -91,7 +95,8 @@ export default function webJsunit() {
     it('databaseAccessTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitDatabaseAccessTrue", 160950)
       Utils.registerContainEvent("databaseAccessTrue", "openDatabase", 161000, done);
-      await Utils.waitAndClickComponent(driver, "webcomponent");
+      let component = await driver.findComponent(ON.id("webcomponent"));
+      await component.click();
     })
 
   })
