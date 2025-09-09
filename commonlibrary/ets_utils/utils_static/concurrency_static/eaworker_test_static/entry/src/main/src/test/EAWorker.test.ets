@@ -847,7 +847,7 @@ export default function EAWorkerTest() {
               });
             });
           }).Await();
-        } catch (err: Exception) {
+        } catch (err: Error) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
