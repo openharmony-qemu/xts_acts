@@ -52,14 +52,11 @@ struct ImageAnalyzerErrorCode {
                 const isLocationAvailable = canIUse('SystemCapability.AI.VisionImageAnalyzer')
                 if(isLocationAvailable != true ){
                   this.str='110003'
-                }
-                else if(this.aiController.getImageAnalyzerSupportTypes() == null){
+                } else if(this.aiController.getImageAnalyzerSupportTypes() == null){
+                  this.str='110003'
+                } else if(this.aiController.getImageAnalyzerSupportTypes().toString() != '0,1,2'){
                   this.str='110003'
                 }
-                else if(this.aiController.getImageAnalyzerSupportTypes().toString() != '0,1,2'){
-                  this.str='110003'
-                }
-                console.log("imageAI: "+ this.aiController.getImageAnalyzerSupportTypes())
               })
             this.context.stopImageAnalyzer()
           })
