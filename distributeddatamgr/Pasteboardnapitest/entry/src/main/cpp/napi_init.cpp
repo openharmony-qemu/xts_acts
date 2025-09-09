@@ -44,6 +44,7 @@
 #include <string>
 #include <random>
 #include <chrono>
+#define SLEEP_CALLBACK (2000000)
 
 
 const char *TAG = "testLog";
@@ -572,7 +573,7 @@ static napi_value OH_Pasteboard_SyncDelayedDataAsyncTest0100(napi_env env, napi_
     NAPI_ASSERT(env, g_asyncErrCode == -1, "OH_Pasteboard_SyncDelayedDataAsyncTest is fail.");
     
     OH_Pasteboard_SyncDelayedDataAsync(pasteboard, AsyncCallback);
-    usleep(2000000);
+    usleep(SLEEP_CALLBACK);
     NAPI_ASSERT(env, g_asyncErrCode == ERR_INNER_ERROR, "OH_Pasteboard_SyncDelayedDataAsyncTest is fail.");
 
     napi_create_int32(env, g_asyncErrCode == ERR_INNER_ERROR, &result);
@@ -640,7 +641,7 @@ static napi_value OH_Pasteboard_SyncDelayedDataAsyncTest0300(napi_env env, napi_
 
     g_asyncErrCode = -1;
     OH_Pasteboard_SyncDelayedDataAsync(pasteboard, AsyncCallback);
-    usleep(2000000);
+    usleep(SLEEP_CALLBACK);
     NAPI_ASSERT(env, g_asyncErrCode == ERR_OK, "OH_Pasteboard_SyncDelayedDataAsync is fail.");
 
     int status1 = -1;
