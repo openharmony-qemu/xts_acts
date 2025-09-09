@@ -16,8 +16,8 @@ import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType,
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Router } from '@ohos.arkui.UIContext';
-import { vp2px } from '@ohos.arkui.component';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
+
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -101,7 +101,7 @@ it('CustomDialogKeyboardAvoidDistance_static_0100', TestType.FUNCTION | Size.MED
       console.info('[CustomDialog_001_keyboard] left: ' + rect1.left + ', top: ' + rect1.top +
         ', right:' + rect1.right + ', bottom:' + rect1.bottom );
       let keyboardAvoidDistance = top1 - bottom;
-      let str = vp2px(20);
+      let str = UIContext.getFocusedUIContext()!.vp2px(20);
       let str1 = Math.ceil(str)
       let cancelButton1: Component = ( await driver.findComponent(ON.text('取消')) ) as Component;
        CommonFunc.sleep(300);
@@ -146,7 +146,7 @@ it('CustomDialogKeyboardAvoidDistance_static_0200', TestType.FUNCTION | Size.MED
       console.info('[CustomDialog_004_keyboard] left: ' + rect1.left + ', top: ' + rect1.top +
         ', right:' + rect1.right + ', bottom:' + rect1.bottom );
       let keyboardAvoidDistance = top1 - bottom;
-      let str = vp2px(16);
+      let str = UIContext.getFocusedUIContext()!.vp2px(16);
       let str1 = Math.ceil(str)
       let cancelButton1: Component = ( await driver.findComponent(ON.text('取消')) ) as Component;
        CommonFunc.sleep(300);

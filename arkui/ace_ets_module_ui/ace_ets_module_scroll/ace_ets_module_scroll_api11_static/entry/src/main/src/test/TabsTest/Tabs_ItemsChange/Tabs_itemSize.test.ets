@@ -159,38 +159,38 @@ export default function Tabs_itemSize() {
         ${Math.round(Tabs_itemSize_011.bottom - Tabs_itemSize_011.top)}`);
 
       expect(Math.abs(Math.round(Tabs_itemSize_011.bottom - Tabs_itemSize_011.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_itemSize_012.bottom - Tabs_itemSize_012.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_itemSize_013.bottom - Tabs_itemSize_013.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Tabs_itemSize_011.right - Tabs_itemSize_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_itemSize_012.right - Tabs_itemSize_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_itemSize_013.right - Tabs_itemSize_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
+      expect(Math.abs(Tabs_itemSize_011.right - Tabs_itemSize_011.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_itemSize_012.right - Tabs_itemSize_012.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_itemSize_013.right - Tabs_itemSize_013.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
 
       console.info(`[testTabsItemSize_static_01]Tabs_itemSize_001.bottom - Tabs_itemSize_001.top=
         ${Math.round(Tabs_itemSize_001.bottom - Tabs_itemSize_001.top)}`);
 
       expect(Math.abs(Math.round(Tabs_itemSize_001.bottom - Tabs_itemSize_001.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_itemSize_002.bottom - Tabs_itemSize_002.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_itemSize_003.bottom - Tabs_itemSize_003.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Tabs_itemSize_001.right - Tabs_itemSize_001.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_itemSize_002.right - Tabs_itemSize_002.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_itemSize_003.right - Tabs_itemSize_003.left - uiContext.vp2px(330)) <= 1).assertTrue();
+      Math.round(UIContext.getFocusedUIContext()!.vp2px(244))) <= 1).assertTrue();
+      expect(Math.abs(Tabs_itemSize_001.right - Tabs_itemSize_001.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_itemSize_002.right - Tabs_itemSize_002.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
+      expect(Math.abs(Tabs_itemSize_003.right - Tabs_itemSize_003.left - UIContext.getFocusedUIContext()!.vp2px(330)) <= 1).assertTrue();
 
       console.info(`[testTabsItemSize_static_01]subGreen.bottom - subGreen.top = ${Math.round(subGreen.bottom -
       subGreen.top)}`);
 
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
+      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(110))) <= 1)
         .assertTrue();
 
       console.info('[testTabsItemSize_static_01] END');

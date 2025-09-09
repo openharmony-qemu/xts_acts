@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { vp2px } from '@ohos.arkui.component';
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -80,35 +80,35 @@ export default function onMeasureSize1() {
       let Column_1 = CommonFunc.getComponentRect('onMeasureSize1_Column_1');
 
       console.log('assert position')
-      expect(Math.abs(Math.round(text_01.left - Column_1.left) - Math.round(vp2px(200))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(text_01.top - Column_1.top) - Math.round(vp2px(200))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(text_01.left - Column_1.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(text_01.top - Column_1.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1).assertTrue();
       console.log('text_01.left' + text_01.left)
       console.log('text_01.top' + text_01.top)
-      expect(Math.abs(Math.round(text_02.left - Column_1.left) - Math.round(vp2px(150))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(text_02.top - Column_1.top) - Math.round(vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(text_02.left - Column_1.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(text_02.top - Column_1.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
       console.log('text_02.left' + text_01.left)
       console.log('text_02.top' + text_01.top)
-      expect(Math.abs(Math.round(text_03.left - Column_1.left) - Math.round(vp2px(75))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(text_03.top - Column_1.top) - Math.round(vp2px(75))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(text_03.left - Column_1.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(75))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(text_03.top - Column_1.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(75))) <= 1).assertTrue();
       console.log('text_03.left' + text_01.left)
       console.log('text_03.top' + text_01.top)
       console.log('Column_1.left' + Column_1.left)
       console.log('Column_1.top' + Column_1.top)
 
       console.log('assert size')
-      expect(Math.abs(Math.round(text_01.right - text_01.left) - Math.round(vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(text_01.right - text_01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
       console.log('text_01.right - text_01.left' + (text_01.right - text_01.left))
-      expect(Math.abs(Math.round(text_01.bottom - text_01.top) - Math.round(vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(text_01.bottom - text_01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
       console.log('text_01.bottom - text_01.top' + (text_01.bottom - text_01.top))
 
-      expect(Math.abs(Math.round(text_02.right - text_02.left) - Math.round(vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(text_02.right - text_02.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
       console.log('text_02.right - text_02.left' + (text_02.right - text_02.left))
-      expect(Math.abs(Math.round(text_02.bottom - text_02.top) - Math.round(vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(text_02.bottom - text_02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
       console.log('text_02.bottom - text_02.top' + (text_02.bottom - text_02.top))
 
-      expect(Math.abs(Math.round(text_03.right - text_03.left) - Math.round(vp2px(225))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(text_03.right - text_03.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(225))) <= 1).assertTrue();
       console.log('text_03.right - text_03.left' + (text_03.right - text_03.left))
-      expect(Math.abs(Math.round(text_03.bottom - text_03.top) - Math.round(vp2px(225))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(text_03.bottom - text_03.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(225))) <= 1).assertTrue();
       console.log('text_03.bottom - text_03.top' + (text_03.bottom - text_03.top))
 
       done();

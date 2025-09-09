@@ -17,7 +17,7 @@ import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "..
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -27,7 +27,6 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import Utils  from "../../../ets/MainAbility/common/Utils";
-import { vp2px } from "@ohos.arkui.component";
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -111,7 +110,7 @@ export default function textPickerDefaultPickerItemHeightJsunit() {
       console.info("[testtextPickerDefaultPickerItemHeight0002_static] component height strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$type')).assertEqual('TextPicker');
-      let numberValue = vp2px(parseFloat(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height'))) -
+      let numberValue = UIContext.getFocusedUIContext()!.vp2px(parseFloat(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height'))) -
         parseFloat(JSON.parseJsonElement(strJson).getElement('$attrs').getString('defaultPickerItemHeight')) * 5
       expect(Math.abs(numberValue) <= 1).assertTrue();
       console.info("[testtextPickerDefaultPickerItemHeight0002_static] height value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('height'));

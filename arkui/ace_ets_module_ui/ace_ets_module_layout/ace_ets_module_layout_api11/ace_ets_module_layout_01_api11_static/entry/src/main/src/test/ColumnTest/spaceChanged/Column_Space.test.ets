@@ -96,13 +96,13 @@ it('testColumnSpaceToThirty_static', Level.LEVEL0, async () => {
       expect(Math.floor(Math.abs((Column_Space_012.top - Column_Space_011.bottom) - (Column_Space_013.top - Column_Space_012.bottom))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Column_Space_01.top - Column_Space_011.top)) <= 1).assertTrue();
       expect(Column_Space_013.bottom).assertLess(Column_Space_01.bottom);
-      expect(Math.floor(Math.abs((Column_Space_012.top - Column_Space_011.bottom) - uiContext.vp2px(30))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_011.bottom - Column_Space_011.top) - uiContext.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_012.bottom - Column_Space_012.top) - uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_013.bottom - Column_Space_013.top) - uiContext.vp2px(150))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_011.right - Column_Space_011.left) - uiContext.vp2px(300))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_012.right - Column_Space_012.left) - uiContext.vp2px(300))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_013.right - Column_Space_013.left) - uiContext.vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_012.top - Column_Space_011.bottom) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_011.bottom - Column_Space_011.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_012.bottom - Column_Space_012.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_013.bottom - Column_Space_013.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_011.right - Column_Space_011.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_012.right - Column_Space_012.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_013.right - Column_Space_013.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
 
       console.info('[testColumnSpaceToThirty_static] END');
     });
@@ -135,14 +135,14 @@ it('testColumnSpaceToFifty_static', Level.LEVEL0, async () => {
       expect(Math.floor(Math.abs((Column_Space_012.top - Column_Space_011.bottom) - (Column_Space_013.top - Column_Space_012.bottom))) <= 2).assertTrue();
       expect(Math.floor(Math.abs(Column_Space_01.top - Column_Space_011.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Column_Space_013.bottom - Column_Space_01.bottom)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_012.top - Column_Space_011.bottom) - uiContext.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_013.top - Column_Space_012.bottom) - uiContext.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_011.bottom - Column_Space_011.top) - uiContext.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_012.bottom - Column_Space_012.top) - uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_013.bottom - Column_Space_013.top) - uiContext.vp2px(150))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_011.right - Column_Space_011.left) - uiContext.vp2px(300))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_012.right - Column_Space_012.left) - uiContext.vp2px(300))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_013.right - Column_Space_013.left) - uiContext.vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_012.top - Column_Space_011.bottom) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_013.top - Column_Space_012.bottom) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_011.bottom - Column_Space_011.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_012.bottom - Column_Space_012.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_013.bottom - Column_Space_013.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_011.right - Column_Space_011.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_012.right - Column_Space_012.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_013.right - Column_Space_013.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
 
       console.info('[testColumnSpaceToFifty] END');
     });
@@ -177,13 +177,13 @@ it('testColumnSpaceToSeventy_static', Level.LEVEL0, async () => {
         .assertTrue();
       expect(Math.floor(Math.abs((Column_Space_012.top - Column_Space_011.bottom) - (Column_Space_013.top - Column_Space_012.bottom))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_012.top - Column_Space_011.bottom) - uiContext.vp2px(70))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_011.bottom - Column_Space_011.top) - uiContext.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_012.bottom - Column_Space_012.top) - uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_013.bottom - Column_Space_013.top) - uiContext.vp2px(150))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_011.right - Column_Space_011.left) - uiContext.vp2px(300))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_012.right - Column_Space_012.left) - uiContext.vp2px(300))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Column_Space_013.right - Column_Space_013.left) - uiContext.vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_012.top - Column_Space_011.bottom) - UIContext.getFocusedUIContext()!.vp2px(70))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_011.bottom - Column_Space_011.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_012.bottom - Column_Space_012.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_013.bottom - Column_Space_013.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_011.right - Column_Space_011.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_012.right - Column_Space_012.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_Space_013.right - Column_Space_013.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
 
       console.info('[testColumnSpaceToSeventy] END');
     });

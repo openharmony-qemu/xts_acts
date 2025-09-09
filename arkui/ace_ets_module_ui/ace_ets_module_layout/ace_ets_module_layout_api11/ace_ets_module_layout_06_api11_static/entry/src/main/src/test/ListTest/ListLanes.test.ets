@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { vp2px,Dimension } from '@ohos.arkui.component'
+import { Dimension } from '@ohos.arkui.component'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../hypium/index';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../ets/MainAbility/common/Rect';
@@ -85,7 +85,7 @@ it('ListLanes_static_001', Level.LEVEL0, async (done: () => void): Promise<void>
       let ListItem0 = CommonFunc.getComponentRect('ListItem0');
       let ListItem1 = CommonFunc.getComponentRect('ListItem1');
       await CommonFunc.sleep(1000);
-      expect(Math.round(ListItem1.left - ListItem0.right)).assertEqual(Math.round(vp2px(0)));
+      expect(Math.round(ListItem1.left - ListItem0.right)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(0)));
 
       console.info('[ListLanes_static_001] END');
       done();
@@ -111,7 +111,7 @@ it('ListLanes_static_002', Level.LEVEL0, async (done: () => void): Promise<void>
       let ListItem0 = CommonFunc.getComponentRect('ListItem0');
       let ListItem2 = CommonFunc.getComponentRect('ListItem2');
       await CommonFunc.sleep(1000);
-	  expect(Math.abs(Math.round(ListItem2.top - ListItem0.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem2.top - ListItem0.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
 
       console.info('[ListLanes_002] END');
       done();
@@ -167,7 +167,7 @@ it('ListLanes_static_008', Level.LEVEL0, async (done: () => void): Promise<void>
       let ListItem0 = CommonFunc.getComponentRect('ListItem0');
       let ListItem1 = CommonFunc.getComponentRect('ListItem1');
       await CommonFunc.sleep(1000);
-	  expect(Math.abs(Math.round(ListItem1.left - ListItem0.right) - Math.round(vp2px(10))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem1.left - ListItem0.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[ListLanes_008] END');
       done();
@@ -191,8 +191,8 @@ it('ListLanes_static_009', Level.LEVEL0, async (done: () => void): Promise<void>
       let ListItem0 = CommonFunc.getComponentRect('ListItem0');
       let ListItem1 = CommonFunc.getComponentRect('ListItem1');
       await CommonFunc.sleep(1000);
-	  expect(Math.abs(Math.round(ListItem1.left - ListItem0.right) - Math.round(vp2px(10))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(ListItem0.left - ListLanes.left) - Math.round(vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem1.left - ListItem0.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem0.left - ListLanes.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
 
       console.info('[ListLanes_008] END');
       done();
@@ -217,13 +217,13 @@ it('ListLanes_static_010', Level.LEVEL0, async (done: () => void): Promise<void>
       let ListItem1 = CommonFunc.getComponentRect('ListItem1');
       let ColumnKey = CommonFunc.getComponentRect('ColumnKey');
       await CommonFunc.sleep(1000);
-      console.log('vp2px(10) is:' +vp2px(10));
+      console.log('UIContext.getFocusedUIContext()!.vp2px(10) is:' +UIContext.getFocusedUIContext()!.vp2px(10));
       console.log('ListItem0 rect_value is:' +JSON.stringify(ListItem0));
       console.log('ListItem1 rect_value is:' +JSON.stringify(ListItem1));
-	  expect(Math.abs(Math.round(ListItem1.left - ListItem0.right) - Math.round(vp2px(10))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListItem1.left - ListItem0.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       console.log('ListLanes rect_value is:' +JSON.stringify(ListLanes));
       console.log('ColumnKey rect_value is:' +JSON.stringify(ColumnKey));
-	  expect(Math.abs(Math.round(ListLanes.top - ColumnKey.top) - Math.round(vp2px(10))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(ListLanes.top - ColumnKey.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[ListLanes_010] END');
       done();

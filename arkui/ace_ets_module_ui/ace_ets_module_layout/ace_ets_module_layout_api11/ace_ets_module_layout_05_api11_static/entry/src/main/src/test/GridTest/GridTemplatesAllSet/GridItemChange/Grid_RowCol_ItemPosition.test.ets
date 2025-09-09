@@ -93,8 +93,8 @@ it('testGridRowColItemPosition_static_01', Level.LEVEL0, async (done: () => void
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
       const uiContext = new UIContext();
-      expect(Math.round(secondGridItem.left - gridContainer.left) - Math.round(uiContext.vp2px(20)) <= 1).assertTrue();
-      expect(Math.round(secondGridItem.top - gridContainer.top) - Math.round(uiContext.vp2px(20)) <= 1)
+      expect(Math.round(secondGridItem.left - gridContainer.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20)) <= 1).assertTrue();
+      expect(Math.round(secondGridItem.top - gridContainer.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20)) <= 1)
         .assertTrue(); 
 
       expect(firstGridItem.left - gridContainer.left <= 1).assertTrue();
@@ -104,17 +104,17 @@ it('testGridRowColItemPosition_static_01', Level.LEVEL0, async (done: () => void
       expect(fourthGridItem.left - thirdGridItem.right <= 1).assertTrue();
       expect(fourthGridItem.top - thirdGridItem.top <= 1).assertTrue();
 
-      expect(Math.round(firstGridItem.right - firstGridItem.left) - Math.round(uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.round(firstGridItem.bottom - firstGridItem.top) - Math.round(uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.round(firstGridItem.right - firstGridItem.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.round(firstGridItem.bottom - firstGridItem.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
 
-      expect(Math.round(secondGridItem.right - secondGridItem.left) - Math.round(uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.round(secondGridItem.bottom - secondGridItem.top) - Math.round(uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.round(secondGridItem.right - secondGridItem.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.round(secondGridItem.bottom - secondGridItem.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
 
-      expect(Math.round(thirdGridItem.right - thirdGridItem.left) - Math.round(uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.round(thirdGridItem.bottom - thirdGridItem.top) - Math.round(uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.round(thirdGridItem.right - thirdGridItem.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.round(thirdGridItem.bottom - thirdGridItem.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
 
-      expect(Math.round(fourthGridItem.right - fourthGridItem.left) - Math.round(uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.round(fourthGridItem.bottom - fourthGridItem.top) - Math.round(uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.round(fourthGridItem.right - fourthGridItem.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.round(fourthGridItem.bottom - fourthGridItem.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
       console.info('[testGridRowColItemPosition_static_01] END');
       done();
     });

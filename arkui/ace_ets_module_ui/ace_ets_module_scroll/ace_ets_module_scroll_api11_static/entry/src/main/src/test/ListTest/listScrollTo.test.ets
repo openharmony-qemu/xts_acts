@@ -99,7 +99,7 @@ export default function listScrollTo() {
       console.info('[listScrollTo_static_0100] listItem2.bottom: ' + listItem2.bottom);
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext()
-      expect(Math.abs(Math.round(listItem1.bottom - listItem2.bottom) - Math.round(uiContext.vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(listItem1.bottom - listItem2.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
       console.info('[listScrollTo_static_0100] END');
       done();

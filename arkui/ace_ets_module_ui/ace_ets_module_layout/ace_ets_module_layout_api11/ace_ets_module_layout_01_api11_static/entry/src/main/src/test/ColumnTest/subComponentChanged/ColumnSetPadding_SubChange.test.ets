@@ -87,13 +87,13 @@ it('testColumnParentPaddingSubMarPad_static', Level.LEVEL0, async () => {
       let columnSetPadding_2: RectValue = CommonFunc.getComponentRect('columnSetPadding_2');
       let columnSetPadding_3: RectValue = CommonFunc.getComponentRect('columnSetPadding_3');
       let columnSetPadding: RectValue = CommonFunc.getComponentRect('columnSetPadding');
-      expect(Math.abs(columnSetPadding_1.top - columnSetPadding.top - Math.round(uiContext.vp2px(40))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPadding_2.top - columnSetPadding_1.bottom - Math.round(uiContext.vp2px(50))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPadding_3.top - columnSetPadding_2.bottom - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPadding_1.top - columnSetPadding.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPadding_2.top - columnSetPadding_1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPadding_3.top - columnSetPadding_2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
       expect(columnSetPadding.bottom).assertLess(columnSetPadding_3.bottom)
-      expect(Math.abs(columnSetPadding_1.right - columnSetPadding_1.left - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPadding_2.right - columnSetPadding_2.left - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPadding_3.right - columnSetPadding_3.left - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPadding_1.right - columnSetPadding_1.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPadding_2.right - columnSetPadding_2.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPadding_3.right - columnSetPadding_3.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
       console.info('new testColumnParentPaddingSubMarPad_static END');
     });
   })

@@ -21,7 +21,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { Message, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
 import RectValue from '../../../ets/MainAbility/common/Rect'
-import { vp2px } from '@ohos.arkui.component'
+
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -134,44 +134,44 @@ export default function gestureInterceptionEnhancementCallbackTest() {
         console.info("gestureInterceptionEnhancementCallbackTest_static_0010" + "actualGlobalX " + actualGlobalX +
           "actualGlobalY = " + actualGlobalY);
         console.info("gestureInterceptionEnhancementCallbackTest_static_0010_fingerList " +
-        Math.floor(vp2px(obj2.getArray("fingerList")[0].getInteger('globalX'))) + " ** " +
-        Math.floor(vp2px(obj2.getArray("fingerList")[0].getInteger('globalY'))) +
-          "**" + Math.floor(vp2px(obj2.getArray("fingerList")[0].getInteger('localX'))) + "** " +
-        Math.floor(vp2px(obj2.getArray("fingerList")[0].getInteger('localY'))) + "**" +
-        Math.floor(vp2px(obj2.getArray("fingerList")[0].getInteger('displayX'))) + "**" +
-        Math.floor((vp2px(obj2.getArray("fingerList")[0].getInteger('displayY')))));
+        Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('globalX'))) + " ** " +
+        Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('globalY'))) +
+          "**" + Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('localX'))) + "** " +
+        Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('localY'))) + "**" +
+        Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('displayX'))) + "**" +
+        Math.floor((UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('displayY')))));
 
-        expect(Math.floor(vp2px(obj2.getArray("fingerList")[0].getInteger('globalX'))) <= actualGlobalX).assertTrue();
-        expect(Math.floor(vp2px(obj2.getArray("fingerList")[0].getInteger('globalY'))) <= actualGlobalY).assertTrue();
-        expect(Math.floor(vp2px(obj2.getArray("fingerList")[0].getInteger('localX'))) <= actualGlobalX).assertTrue();
-        expect(Math.floor(vp2px(obj2.getArray("fingerList")[0].getInteger('localY'))) <= actualGlobalY).assertTrue();
-        expect(Math.floor(vp2px(obj2.getArray("fingerList")[0].getInteger('displayX'))) <= actualGlobalX).assertTrue();
-        expect(Math.floor(vp2px(obj2.getArray("fingerList")[0].getInteger('displayY'))) <= actualGlobalY).assertTrue();
+        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('globalX'))) <= actualGlobalX).assertTrue();
+        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('globalY'))) <= actualGlobalY).assertTrue();
+        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('localX'))) <= actualGlobalX).assertTrue();
+        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('localY'))) <= actualGlobalY).assertTrue();
+        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('displayX'))) <= actualGlobalX).assertTrue();
+        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('displayY'))) <= actualGlobalY).assertTrue();
         console.info("gestureInterceptionEnhancementCallbackTest_static_0010_target " +
-        Math.floor(vp2px(obj2.getElement('target').getElement('area').getElement('globalPosition').getInteger('x'))) +
+        Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target').getElement('area').getElement('globalPosition').getInteger('x'))) +
           "--" +
-        Math.floor(vp2px(obj2.getElement('target').getElement('area').getElement('globalPosition').getInteger('y')))
-          + Math.floor(vp2px(obj2.getElement('target').getElement('area').getElement('position').getInteger('x'))) +
+        Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target').getElement('area').getElement('globalPosition').getInteger('y')))
+          + Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target').getElement('area').getElement('position').getInteger('x'))) +
           "..." +
-        Math.floor(vp2px(obj2.getElement('target').getElement('area').getElement('position').getInteger('y'))) + "..." +
-        Math.floor(vp2px(obj2.getElement('target').getElement('area').getInteger('width'))) + ".." +
-        vp2px(obj2.getElement('target').getElement('area').getInteger('height')));
+        Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target').getElement('area').getElement('position').getInteger('y'))) + "..." +
+        Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target').getElement('area').getInteger('width'))) + ".." +
+        UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target').getElement('area').getInteger('height')));
 
-        expect(Math.floor(vp2px(obj2.getElement('target')
+        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target')
           .getElement('area')
           .getElement('globalPosition')
           .getInteger('x'))) <= actualGlobalX).assertTrue();
-        expect(Math.floor(vp2px(obj2.getElement('target')
+        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target')
           .getElement('area')
           .getElement('globalPosition')
           .getInteger('y'))) <= actualGlobalY).assertTrue();
-        expect(Math.floor(vp2px(obj2.getElement('target').getElement('area').getElement('position').getInteger('x'))) <=
+        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target').getElement('area').getElement('position').getInteger('x'))) <=
           actualGlobalX).assertTrue();
-        expect(Math.floor(vp2px(obj2.getElement('target').getElement('area').getElement('position').getInteger('y'))) <=
+        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target').getElement('area').getElement('position').getInteger('y'))) <=
           actualGlobalY).assertTrue();
-        expect(Math.floor(vp2px(obj2.getElement('target').getElement('area').getInteger('width'))) <= width)
+        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target').getElement('area').getInteger('width'))) <= width)
           .assertTrue();
-        expect(Math.floor(vp2px(obj2.getElement('target').getElement('area').getInteger('height'))) <= height)
+        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target').getElement('area').getInteger('height'))) <= height)
           .assertTrue();
         done();
       });

@@ -228,7 +228,7 @@ struct getPositionExample {
           let  promise = window.getLastWindow(AppStorage.get<common.UIAbilityContext>('abilityContext')!);
           promise.then((mainWindow:window.Window) => {
             let windowRect:window.Rect = mainWindow.getWindowProperties().windowRect;
-            this.windowLeftVP = uiContext.px2vp(windowRect.left).toString().split('.')[0];
+            this.windowLeftVP = UIContext.getFocusedUIContext()!.px2vp(windowRect.left).toString().split('.')[0];
           })
         })
 

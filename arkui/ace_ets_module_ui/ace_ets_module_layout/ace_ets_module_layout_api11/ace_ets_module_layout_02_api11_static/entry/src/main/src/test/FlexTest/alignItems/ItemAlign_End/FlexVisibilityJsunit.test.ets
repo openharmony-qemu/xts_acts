@@ -119,10 +119,10 @@ it('testFlexItemAlignEndSubSetVisibilityNone_static', Level.LEVEL0, async () : P
         expect(Math.abs(textVisible02.bottom - textVisible03.bottom) <= 1).assertTrue()
         expect(Math.abs(textVisible03.bottom - flexVisible.bottom) <= 1).assertTrue()
 
-        expect(Math.abs(textVisible02.bottom - textVisible02.top - uiContext.vp2px(100)) <= 1).assertTrue()
-        expect(Math.abs(textVisible03.bottom - textVisible03.top - uiContext.vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible02.right - textVisible02.left - uiContext.vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible03.right - textVisible03.left - uiContext.vp2px(150)) <= 1).assertTrue()
+        expect(Math.abs(textVisible02.bottom - textVisible02.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
+        expect(Math.abs(textVisible03.bottom - textVisible03.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+        expect(Math.abs(textVisible02.right - textVisible02.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+        expect(Math.abs(textVisible03.right - textVisible03.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('visibility')).assertEqual("Visibility.Visible");
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.End')
@@ -175,12 +175,12 @@ it('testFlexItemAlignEndSubSetVisibilityHidden_static', Level.LEVEL0, async () :
         expect(Math.abs(textVisible02.bottom - textVisible03.bottom) <= 1).assertTrue()
         expect(Math.abs(textVisible03.bottom - flexVisible.bottom) <= 1).assertTrue()
 
-        expect(Math.abs(textVisible01.bottom - textVisible01.top - uiContext.vp2px(50)) <= 1).assertTrue()
-        expect(Math.abs(textVisible02.bottom - textVisible02.top - uiContext.vp2px(100)) <= 1).assertTrue()
-        expect(Math.abs(textVisible03.bottom - textVisible03.top - uiContext.vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible01.right - textVisible01.left - uiContext.vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible02.right - textVisible02.left - uiContext.vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible03.right - textVisible03.left - uiContext.vp2px(150)) <= 1).assertTrue()
+        expect(Math.abs(textVisible01.bottom - textVisible01.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
+        expect(Math.abs(textVisible02.bottom - textVisible02.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
+        expect(Math.abs(textVisible03.bottom - textVisible03.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+        expect(Math.abs(textVisible01.right - textVisible01.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+        expect(Math.abs(textVisible02.right - textVisible02.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+        expect(Math.abs(textVisible03.right - textVisible03.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.End')
       } catch (err:Error) {

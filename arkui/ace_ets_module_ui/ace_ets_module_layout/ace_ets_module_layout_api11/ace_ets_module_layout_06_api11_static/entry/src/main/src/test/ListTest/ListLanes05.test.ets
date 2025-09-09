@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { vp2px } from '@ohos.arkui.component'
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../hypium/index';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue from '../../../ets/MainAbility/common/Rect';
@@ -139,7 +139,7 @@ it('ListLanes05_static_003', Level.LEVEL0, async (done: () => void): Promise<voi
       let ListItem0 = CommonFunc.getComponentRect('ListItem03_0');
       let ListItem1 = CommonFunc.getComponentRect('ListItem03_1');
       await CommonFunc.sleep(1000);
-      expect(Math.abs(Math.round(ListItem1.top - ListItem0.bottom) - Math.round(vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem1.top - ListItem0.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[ListLanes05_003] END');
       done();
@@ -161,7 +161,7 @@ it('ListLanes05_static_004', Level.LEVEL0, async (done: () => void): Promise<voi
       let ListItem0 = CommonFunc.getComponentRect('ListItem04_0');
       let ListItem1 = CommonFunc.getComponentRect('ListItem04_1');
       await CommonFunc.sleep(1000);
-      expect(Math.abs(Math.round(ListItem1.top - ListItem0.bottom) - Math.round(vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem1.top - ListItem0.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       console.info('[ListLanes05_004] END');
       done();
     });

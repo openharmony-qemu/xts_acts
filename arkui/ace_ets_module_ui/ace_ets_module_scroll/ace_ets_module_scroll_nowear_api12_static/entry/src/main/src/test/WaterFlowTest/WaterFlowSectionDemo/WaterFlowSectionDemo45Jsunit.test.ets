@@ -71,10 +71,10 @@ it('WaterFlowSectionDemo45Jsunit_static_0100', Level.LEVEL0, async (done: () => 
       console.log('WaterFlowSectionDemo45Jsunit_right',strColumn.right - str2.right)
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(str2.top - strColumn.top) - Math.round(uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(str5.top - str3.bottom) - Math.floor(uiContext.vp2px(20))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(str3.left - strColumn.left) - Math.round(uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(strColumn.right - str2.right) - Math.round(uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(str2.top - strColumn.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(str5.top - str3.bottom) - Math.floor(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(str3.left - strColumn.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(strColumn.right - str2.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       await CommonFunc.sleep(1000);
       console.info('WaterFlowSectionDemo45Jsunit_static_0100 END')
       done();

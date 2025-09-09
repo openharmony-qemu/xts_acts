@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { vp2px } from '@ohos.arkui.component';
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
@@ -125,10 +125,10 @@ export default function getListItemGroupRect1() {
 
       console.log('assert size')
       console.log('listItemGroup_0.right - listItemGroup_0.left' + (listItemGroup_0.right - listItemGroup_0.left))
-      expect(Math.abs(vp2px(Math.round(width)) - Math.round(listItemGroup_0.right - listItemGroup_0.left)) <= 1)
+      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Math.round(width)) - Math.round(listItemGroup_0.right - listItemGroup_0.left)) <= 1)
         .assertTrue();
       console.log('listItemGroup_0.bottom - listItemGroup_0.top' + (listItemGroup_0.bottom - listItemGroup_0.top))
-      expect(Math.abs(vp2px(Math.round(height)) - Math.round(listItemGroup_0.bottom - listItemGroup_0.top)) <= 1)
+      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Math.round(height)) - Math.round(listItemGroup_0.bottom - listItemGroup_0.top)) <= 1)
         .assertTrue();
 
       done();
@@ -188,10 +188,10 @@ export default function getListItemGroupRect1() {
 
       console.log('assert size')
       console.log('listItemGroup_1.right - listItemGroup_1.left' + (listItemGroup_1.right - listItemGroup_1.left))
-      expect(Math.abs(vp2px(Math.round(width)) - Math.round(listItemGroup_1.right - listItemGroup_1.left)) <= 1)
+      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Math.round(width)) - Math.round(listItemGroup_1.right - listItemGroup_1.left)) <= 1)
         .assertTrue();
       console.log('listItemGroup_1.bottom - listItemGroup_1.top' + (listItemGroup_1.bottom - listItemGroup_1.top))
-      expect(Math.abs(vp2px(Math.round(height)) - Math.round(listItemGroup_1.bottom - listItemGroup_1.top)) <= 1)
+      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Math.round(height)) - Math.round(listItemGroup_1.bottom - listItemGroup_1.top)) <= 1)
         .assertTrue();
 
       done();

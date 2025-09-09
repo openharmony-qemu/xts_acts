@@ -89,9 +89,9 @@ export default function canOverScroll() {
         ${scroll.top}`);
       console.info(`[canOverScroll_static_0100] scrollItem0.top=
         ${scrollItem0.top}`);
-      console.info(`[canOverList_0100] vp2px(30)=
-        ${(new UIContext()).vp2px(30)}`);
-      expect(Math.floor(Math.abs(scrollItem0.top - (new UIContext()).vp2px(30) - scroll.top)) <= 1).assertTrue();
+      console.info(`[canOverList_0100] UIContext.getFocusedUIContext()!.vp2px(30)=
+        ${UIContext.getFocusedUIContext()!.vp2px(30)}`);
+      expect(Math.floor(Math.abs(scrollItem0.top - UIContext.getFocusedUIContext()!.vp2px(30) - scroll.top)) <= 1).assertTrue();
       console.info('[canOverScroll_static_0100] END');
       done();
     });

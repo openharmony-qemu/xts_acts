@@ -99,17 +99,17 @@ it('testFlexItemAlignAutoFlexMargin_static', Level.LEVEL0, async (): Promise<voi
       expect(Math.abs(textFlexMargin02.right - textFlexMargin03.left) <= 1).assertTrue();
 
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(textFlexMargin01.bottom - textFlexMargin01.top) - Math.round(uiContext.vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(textFlexMargin01.bottom - textFlexMargin01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(textFlexMargin02.bottom - textFlexMargin02.top) - Math.round(uiContext.vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(textFlexMargin02.bottom - textFlexMargin02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(textFlexMargin03.bottom - textFlexMargin03.top) - Math.round(uiContext.vp2px(150))) <= 1)
+      expect(Math.abs(Math.round(textFlexMargin03.bottom - textFlexMargin03.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(textFlexMargin01.right - textFlexMargin01.left) - Math.round(uiContext.vp2px(150))) <= 1)
+      expect(Math.abs(Math.round(textFlexMargin01.right - textFlexMargin01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(textFlexMargin02.right - textFlexMargin02.left) - Math.round(uiContext.vp2px(150))) <= 1)
+      expect(Math.abs(Math.round(textFlexMargin02.right - textFlexMargin02.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(textFlexMargin03.right - textFlexMargin03.left) - Math.round(uiContext.vp2px(150))) <= 1)
+      expect(Math.abs(Math.round(textFlexMargin03.right - textFlexMargin03.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row');
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Auto');

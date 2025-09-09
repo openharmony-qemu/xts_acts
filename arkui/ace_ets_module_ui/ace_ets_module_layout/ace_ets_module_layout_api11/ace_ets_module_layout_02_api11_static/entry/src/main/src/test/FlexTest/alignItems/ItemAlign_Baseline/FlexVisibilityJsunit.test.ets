@@ -117,11 +117,11 @@ it('testFlexItemAlignBaselineSubSetVisibilityNone_static', Level.LEVEL0, async (
         expect(Math.abs(textVisible01.right - textVisible02.left) <= 1).assertTrue()
         expect(Math.abs(textVisible02.right - textVisible03.left) <= 1).assertTrue()
 
-        expect(Math.abs(textVisible02.bottom - textVisible02.top - uiContext.vp2px(100)) <= 1).assertTrue()
-        expect(Math.abs(textVisible03.bottom - textVisible03.top - uiContext.vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible02.right - textVisible02.left - uiContext.vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible03.right - textVisible03.left - uiContext.vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(flexVisible.right - textVisible03.right - uiContext.vp2px(200)) <= 1).assertTrue()
+        expect(Math.abs(textVisible02.bottom - textVisible02.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
+        expect(Math.abs(textVisible03.bottom - textVisible03.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+        expect(Math.abs(textVisible02.right - textVisible02.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+        expect(Math.abs(textVisible03.right - textVisible03.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+        expect(Math.abs(flexVisible.right - textVisible03.right - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue()
 
         expect(Math.abs(textVisible02.top - textVisible03.top - textVisible03.bottom + textVisible02.bottom) <= 1)
           .assertTrue()
@@ -176,12 +176,12 @@ it('testFlexItemAlignBaselineSubSetVisibilityHidden_static', Level.LEVEL0, async
         expect(Math.abs(textVisible01.right - textVisible02.left) <= 1).assertTrue()
         expect(Math.abs(textVisible02.right - textVisible03.left) <= 1).assertTrue()
 
-        expect(Math.abs(textVisible01.bottom - textVisible01.top - uiContext.vp2px(50)) <= 1).assertTrue()
-        expect(Math.abs(textVisible01.right - textVisible01.left - uiContext.vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible02.bottom - textVisible02.top - uiContext.vp2px(100)) <= 1).assertTrue()
-        expect(Math.abs(textVisible02.right - textVisible02.left - uiContext.vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible03.bottom - textVisible03.top - uiContext.vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible03.right - textVisible03.left - uiContext.vp2px(150)) <= 1).assertTrue()
+        expect(Math.abs(textVisible01.bottom - textVisible01.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
+        expect(Math.abs(textVisible01.right - textVisible01.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+        expect(Math.abs(textVisible02.bottom - textVisible02.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
+        expect(Math.abs(textVisible02.right - textVisible02.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+        expect(Math.abs(textVisible03.bottom - textVisible03.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+        expect(Math.abs(textVisible03.right - textVisible03.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
 
         expect(Math.abs(textVisible01.top - textVisible03.top - textVisible03.bottom + textVisible01.bottom) <= 1)
           .assertTrue()
@@ -190,7 +190,7 @@ it('testFlexItemAlignBaselineSubSetVisibilityHidden_static', Level.LEVEL0, async
 
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Baseline')
-        expect(Math.abs(flexVisible.right - textVisible03.right - uiContext.vp2px(50)) <= 1).assertTrue()
+        expect(Math.abs(flexVisible.right - textVisible03.right - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
       } catch (err) {
         console.error('[testFlexItemAlignBaselineSubSetVisibilityHidden_static] failed');
         expect().assertFail();

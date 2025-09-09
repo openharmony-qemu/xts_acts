@@ -95,10 +95,10 @@ it('testFlexAlignContentSpaceAroundTextSizeMeet_static', Level.LEVEL0, async () 
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('warp')).assertEqual('FlexWrap.Wrap');
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual('FlexAlign.SpaceAround');
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(firstText.bottom - firstText.top) - uiContext.vp2px(70)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(secondText.bottom - secondText.top) - uiContext.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(thirdText.bottom - thirdText.top) - uiContext.vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(fourthText.bottom - fourthText.top) - uiContext.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(firstText.bottom - firstText.top) - UIContext.getFocusedUIContext()!.vp2px(70)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(secondText.bottom - secondText.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(thirdText.bottom - thirdText.top) - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(fourthText.bottom - fourthText.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
 
       expect(Math.abs(firstText.left - secondText.left) <= 1).assertTrue();
       expect(Math.abs(secondText.left - thirdText.left) <= 1).assertTrue();
@@ -141,10 +141,10 @@ it('testFlexAlignContentSpaceAroundTextSizeOverflow_static', Level.LEVEL0, async
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('warp')).assertEqual('FlexWrap.Wrap');
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual('FlexAlign.SpaceAround');
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(firstText.bottom - firstText.top) - uiContext.vp2px(200)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(secondText.bottom - secondText.top) - uiContext.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(thirdText.bottom - thirdText.top) - uiContext.vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(fourthText.bottom - fourthText.top) - uiContext.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(firstText.bottom - firstText.top) - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(secondText.bottom - secondText.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(thirdText.bottom - thirdText.top) - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(fourthText.bottom - fourthText.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
 
       expect(Math.abs(firstText.bottom - secondText.top) <= 1).assertTrue();
       expect(Math.abs(secondText.bottom - thirdText.top) <= 1).assertTrue();
@@ -156,7 +156,7 @@ it('testFlexAlignContentSpaceAroundTextSizeOverflow_static', Level.LEVEL0, async
       expect(Math.abs(fourthText.left - flexContainer.left) <= 1).assertTrue();
 
       expect(Math.abs(firstText.top - flexContainer.top) <= 1).assertTrue();
-      expect(Math.abs(Math.round(fourthText.bottom - flexContainer.bottom) - uiContext.vp2px(50)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(fourthText.bottom - flexContainer.bottom) - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
       console.info('[testFlexAlignContentSpaceAroundTextSizeOverflow] END');
 
     });

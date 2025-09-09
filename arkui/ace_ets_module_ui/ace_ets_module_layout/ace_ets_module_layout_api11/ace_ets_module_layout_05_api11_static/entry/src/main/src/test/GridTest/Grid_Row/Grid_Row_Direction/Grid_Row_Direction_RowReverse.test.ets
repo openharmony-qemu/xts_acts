@@ -89,8 +89,8 @@ it('SUB_ACE_GridRowDirection_RowReverse_static_0100', Level.LEVEL0, async (done:
       expect(Math.abs(firstDirectionRowReverse.top - DirectionRowReverse_1.top) <= 1).assertTrue();
       expect(Math.abs(firstDirectionRowReverse.right - DirectionRowReverse_1.right) <= 1).assertTrue();
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(firstDirectionRowReverse.left - secondDirectionRowReverse.right) - Math.round(uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(thirdDirectionRowReverse.top - firstDirectionRowReverse.bottom) - Math.round(uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(firstDirectionRowReverse.left - secondDirectionRowReverse.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(thirdDirectionRowReverse.top - firstDirectionRowReverse.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('SUB_ACE_GridRowDirection_RowReverse_static_0100 END');
       done();

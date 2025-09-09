@@ -91,21 +91,21 @@ it('testFlexItemAlignEndSetOffset_static', Level.LEVEL0, async () : Promise<void
       let textOffset03: RectValue = CommonFunc.getComponentRect('ItemAlign_End_textOffset03');
       let flexOffset: RectValue = CommonFunc.getComponentRect('ItemAlign_End_flexOffset');
       const uiContext = new UIContext();
-      expect(Math.abs(((textOffset01.right - textOffset02.left) * 10) / 10 - Math.round(uiContext.vp2px(15) * 10) / 10) <= 1)
+      expect(Math.abs(((textOffset01.right - textOffset02.left) * 10) / 10 - Math.round(UIContext.getFocusedUIContext()!.vp2px(15) * 10) / 10) <= 1)
         .assertTrue()
-      expect(Math.abs(textOffset01.bottom - flexOffset.bottom - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(((textOffset01.left - flexOffset.left) * 10) / 10 - Math.round(uiContext.vp2px(15) * 10) / 10) <= 1)
+      expect(Math.abs(textOffset01.bottom - flexOffset.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(((textOffset01.left - flexOffset.left) * 10) / 10 - Math.round(UIContext.getFocusedUIContext()!.vp2px(15) * 10) / 10) <= 1)
         .assertTrue()
       expect(Math.abs(textOffset03.left - textOffset02.right) <= 1).assertTrue()
       expect(Math.abs(textOffset02.bottom - textOffset03.bottom) <= 1).assertTrue()
       expect(Math.abs(textOffset03.bottom - flexOffset.bottom) <= 1).assertTrue()
 
-      expect(Math.abs(textOffset01.bottom - textOffset01.top - Math.round(uiContext.vp2px(50))) <= 1).assertTrue()
-      expect(Math.abs(textOffset02.bottom - textOffset02.top - Math.round(uiContext.vp2px(100))) <= 1).assertTrue()
-      expect(Math.abs(textOffset03.bottom - textOffset03.top - Math.round(uiContext.vp2px(150))) <= 1).assertTrue()
-      expect(Math.abs(textOffset01.right - textOffset01.left - Math.round(uiContext.vp2px(150))) <= 1).assertTrue()
-      expect(Math.abs(textOffset02.right - textOffset02.left - Math.round(uiContext.vp2px(150))) <= 1).assertTrue()
-      expect(Math.abs(textOffset03.right - textOffset03.left - Math.round(uiContext.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(textOffset01.bottom - textOffset01.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(textOffset02.bottom - textOffset02.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue()
+      expect(Math.abs(textOffset03.bottom - textOffset03.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(textOffset01.right - textOffset01.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(textOffset02.right - textOffset02.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(textOffset03.right - textOffset03.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.End')
       console.info('new testFlexItemAlignEndSetOffset END');

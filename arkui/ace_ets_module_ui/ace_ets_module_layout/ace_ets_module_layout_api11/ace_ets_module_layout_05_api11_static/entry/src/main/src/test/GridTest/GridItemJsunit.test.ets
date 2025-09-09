@@ -199,7 +199,7 @@ it('GridItemJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise
       let bottom_y = Math.round(grid1.bottom / 2)
       let driver = Driver.create()
       const uiContext = new UIContext();
-      driver.swipe((Math.round((AppStorage.get<number>("winLeft") ?? 0) + left_x + uiContext.vp2px(100))).toInt(), (bottom_y).toInt(), (Math.round((AppStorage.get<number>("winLeft") ?? 0) + left_x + uiContext.vp2px(120))).toInt(), (bottom_y).toInt());
+      driver.swipe((Math.round((AppStorage.get<number>("winLeft") ?? 0) + left_x + UIContext.getFocusedUIContext()!.vp2px(100))).toInt(), (bottom_y).toInt(), (Math.round((AppStorage.get<number>("winLeft") ?? 0) + left_x + UIContext.getFocusedUIContext()!.vp2px(120))).toInt(), (bottom_y).toInt());
       await CommonFunc.sleep(500);
       let textComponent = await driver.findComponent(ON.id('onSelect'));
       let text = await (textComponent?.getText() as Promise<string>);
@@ -227,7 +227,7 @@ it('GridItemJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise
       let gridItem3 = CommonFunc.getComponentRect('1');
       let left3 = gridItem3.left;
       const uiContext = new UIContext();
-      expect(Math.abs(Math.ceil(left3 - right1) - Math.ceil(uiContext.vp2px(4))) <= 1).assertTrue();
+      expect(Math.abs(Math.ceil(left3 - right1) - Math.ceil(UIContext.getFocusedUIContext()!.vp2px(4))) <= 1).assertTrue();
       console.info('[GridItemJsunit_static_0500] END');
       done();
     });
@@ -250,7 +250,7 @@ it('GridItemJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise
       let gridItem3 = CommonFunc.getComponentRect('4');
       let top3 = gridItem3.top;
       const uiContext = new UIContext();
-      expect(Math.abs((top3 - bottom1) - uiContext.vp2px(5)) <= 1).assertTrue();
+      expect(Math.abs((top3 - bottom1) - UIContext.getFocusedUIContext()!.vp2px(5)) <= 1).assertTrue();
       console.info('[GridItemJsunit_static_0600] END');
       done();
     });
@@ -274,7 +274,7 @@ it('GridItemJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise
       let gridItem2 = CommonFunc.getComponentRect('0');
       let left1 = gridItem2.left;
       const uiContext = new UIContext();
-	  expect(Math.abs((left1 - right1) - uiContext.vp2px(4)) <= 1).assertTrue();
+	  expect(Math.abs((left1 - right1) - UIContext.getFocusedUIContext()!.vp2px(4)) <= 1).assertTrue();
       console.info('[GridItemJsunit_static_0700] END');
       done();
     });
@@ -301,7 +301,7 @@ it('GridItemJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise
       let gridItem2 = CommonFunc.getComponentRect('gridItem3');
       let top1 = gridItem2.top;
       const uiContext = new UIContext();
-      expect(Math.abs((top1 - bottom1) - uiContext.vp2px(5)) <= 1).assertTrue();
+      expect(Math.abs((top1 - bottom1) - UIContext.getFocusedUIContext()!.vp2px(5)) <= 1).assertTrue();
       console.info('[GridItemJsunit_static_0800] END');
       done();
     });

@@ -110,23 +110,23 @@ it('testFlexAlignEndFlexPadOverflow_static', Level.LEVEL0, async () : Promise<vo
       expect(Math.abs(End_AddPadding_012.top - End_AddPadding_013.top) <= 1).assertTrue();
       expect(Math.abs(End_AddPadding_012.left - End_AddPadding_011.right) <= 1).assertTrue();
       expect(Math.abs(End_AddPadding_013.left - End_AddPadding_012.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(End_AddPadding_011.top - End_AddPadding_01.top)) - (Math.round(uiContext.vp2px(30)))) <= 1)
+      expect(Math.abs((Math.round(End_AddPadding_011.top - End_AddPadding_01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddPadding_011.left - End_AddPadding_01.left)) - (Math.round(uiContext.vp2px(30)))) <= 1)
+      expect(Math.abs((Math.round(End_AddPadding_011.left - End_AddPadding_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddPadding_01.right - End_AddPadding_013.right)) - (Math.round(uiContext.vp2px(30)))) <= 1)
+      expect(Math.abs((Math.round(End_AddPadding_01.right - End_AddPadding_013.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddPadding_011.bottom - End_AddPadding_011.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(End_AddPadding_011.bottom - End_AddPadding_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddPadding_012.bottom - End_AddPadding_012.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(End_AddPadding_012.bottom - End_AddPadding_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddPadding_013.bottom - End_AddPadding_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_AddPadding_013.bottom - End_AddPadding_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddPadding_011.right - End_AddPadding_011.left)) - (Math.round(uiContext.vp2px(440 / 3)))) <= 1)
+      expect(Math.abs((Math.round(End_AddPadding_011.right - End_AddPadding_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(440 / 3)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddPadding_012.right - End_AddPadding_012.left)) - (Math.round(uiContext.vp2px(440 / 3)))) <= 1)
+      expect(Math.abs((Math.round(End_AddPadding_012.right - End_AddPadding_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(440 / 3)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddPadding_013.right - End_AddPadding_013.left)) - (Math.round(uiContext.vp2px(440 / 3)))) <= 1)
+      expect(Math.abs((Math.round(End_AddPadding_013.right - End_AddPadding_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(440 / 3)))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignEndFlexPadOverflow] END');
 
@@ -163,23 +163,23 @@ it('testFlexAlignEndFlexPadMeet_static', Level.LEVEL0, async () : Promise<void> 
       expect(Math.abs(End_AddPadding_012.top - End_AddPadding_013.top) <= 1).assertTrue();
       expect(Math.abs(End_AddPadding_011.right - End_AddPadding_012.left) <= 1).assertTrue();
       expect(Math.abs(End_AddPadding_012.right - End_AddPadding_013.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(End_AddPadding_011.top - End_AddPadding_01.top)) - (Math.round(uiContext.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(End_AddPadding_011.top - End_AddPadding_01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddPadding_011.left - End_AddPadding_01.left)) - (Math.round(uiContext.vp2px(30)))) <= 1)
+      expect(Math.abs((Math.round(End_AddPadding_011.left - End_AddPadding_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddPadding_01.right - End_AddPadding_013.right)) - (Math.round(uiContext.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(End_AddPadding_01.right - End_AddPadding_013.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddPadding_011.right - End_AddPadding_011.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_AddPadding_011.right - End_AddPadding_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddPadding_012.right - End_AddPadding_012.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_AddPadding_012.right - End_AddPadding_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddPadding_013.right - End_AddPadding_013.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_AddPadding_013.right - End_AddPadding_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddPadding_011.bottom - End_AddPadding_011.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(End_AddPadding_011.bottom - End_AddPadding_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddPadding_012.bottom - End_AddPadding_012.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(End_AddPadding_012.bottom - End_AddPadding_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddPadding_013.bottom - End_AddPadding_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_AddPadding_013.bottom - End_AddPadding_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignEndFlexPadMeet] END');
 

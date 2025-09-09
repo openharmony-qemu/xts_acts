@@ -103,10 +103,10 @@ export default function SwiperAttribute_6() {
         console.info("SwiperAttribute_static_0100 column rect is " + columnRect.left + " --" + columnRect.right + "--" +
         columnRect.top + "--" + columnRect.bottom);
         const uiContext = new UIContext();
-        expect(uiContext.vp2px(Math.abs(Math.round(rect.top - columnRect.top))) - 20 <= 1).assertTrue();
-        expect(uiContext.vp2px(Math.abs(Math.round(rect.right - columnRect.right))) - 20 <= 1).assertTrue();
-        expect(uiContext.vp2px(Math.abs(Math.round(rect.left - columnRect.left))) - 20 <= 1).assertTrue();
-        expect(uiContext.vp2px(Math.abs(Math.round(rect.bottom - columnRect.bottom))) - 20 <= 1).assertTrue();
+        expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(rect.top - columnRect.top))) - 20 <= 1).assertTrue();
+        expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(rect.right - columnRect.right))) - 20 <= 1).assertTrue();
+        expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(rect.left - columnRect.left))) - 20 <= 1).assertTrue();
+        expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(rect.bottom - columnRect.bottom))) - 20 <= 1).assertTrue();
       }
 
       console.info('[SwiperAttribute_static_0100] END');

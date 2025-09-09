@@ -73,8 +73,8 @@ export default function positionTest() {
     } as SetValue,
     expectValue: {
       x: '200.00vp', y: '100.00vp',
-      left: uiContext.vp2px(200),
-      top: uiContext.vp2px(100)
+      left: UIContext.getFocusedUIContext()!.vp2px(200),
+      top: UIContext.getFocusedUIContext()!.vp2px(100)
     }
   }, {
     describe: 'SetStringPx',
@@ -91,8 +91,8 @@ export default function positionTest() {
     } as SetValue,
     expectValue: {
       x: '20.00%', y: '10.00%',
-      left: uiContext.vp2px(parentWidth) * 0.2,
-      top: uiContext.vp2px(parentHeight) * 0.1
+      left: UIContext.getFocusedUIContext()!.vp2px(parentWidth) * 0.2,
+      top: UIContext.getFocusedUIContext()!.vp2px(parentHeight) * 0.1
     }
   }, {
     describe: 'SetResource',
@@ -101,8 +101,8 @@ export default function positionTest() {
     } as SetValue,
     expectValue: {
       x: '200.00vp', y: '100.00vp',
-      left: uiContext.vp2px(200),
-      top: uiContext.vp2px(100)
+      left: UIContext.getFocusedUIContext()!.vp2px(200),
+      top: UIContext.getFocusedUIContext()!.vp2px(100)
     }
   })
 

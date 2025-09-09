@@ -18,7 +18,7 @@ import router from '@ohos.router';
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
-import { HorizontalAlign,vp2px } from '@ohos.arkui.component'
+import { HorizontalAlign } from '@ohos.arkui.component'
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -91,7 +91,7 @@ it('SUB_ACE_RelativeContainer_AnchorPoint_Offset_TEST_static_0100', Level.LEVEL0
         .assertTrue();
       expect(Math.abs(RelativeContainer_AnchorPoint_Offset_tx2.bottom - RelativeContainer_AnchorPoint_Offset_r1.bottom) <= 1)
         .assertTrue();
-      expect(Math.abs(RelativeContainer_AnchorPoint_Offset_tx2.right - ((RelativeContainer_AnchorPoint_Offset_bt1.right - RelativeContainer_AnchorPoint_Offset_bt1.left) / 2 + RelativeContainer_AnchorPoint_Offset_bt1.left + vp2px(50))) <= 1)
+      expect(Math.abs(RelativeContainer_AnchorPoint_Offset_tx2.right - ((RelativeContainer_AnchorPoint_Offset_bt1.right - RelativeContainer_AnchorPoint_Offset_bt1.left) / 2 + RelativeContainer_AnchorPoint_Offset_bt1.left + UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
 
       console.info('[SUB_ACE_RelativeContainer_AnchorPoint_Offset_TEST_0100] END');

@@ -106,10 +106,10 @@ export default function SwiperAttribute_8() {
         "--" +
         ftBottom);
       const uiContext = new UIContext();
-      expect(uiContext.vp2px(Math.abs(Math.round(ftTop - fTop))) - 20 <= 1).assertTrue();
-      expect(uiContext.vp2px(Math.abs(Math.round(ftRight - fRight))) - 20 <= 1).assertTrue();
-      expect(uiContext.vp2px(Math.abs(Math.round(ftLeft - fLeft))) - 20 <= 1).assertTrue();
-      expect(uiContext.vp2px(Math.abs(Math.round(ftBottom - fBottom))) - 20 <= 1).assertTrue();
+      expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(ftTop - fTop))) - 20 <= 1).assertTrue();
+      expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(ftRight - fRight))) - 20 <= 1).assertTrue();
+      expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(ftLeft - fLeft))) - 20 <= 1).assertTrue();
+      expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(ftBottom - fBottom))) - 20 <= 1).assertTrue();
 
       let driver = Driver.create()
       for (let i = 2; i <= 6; i++) {

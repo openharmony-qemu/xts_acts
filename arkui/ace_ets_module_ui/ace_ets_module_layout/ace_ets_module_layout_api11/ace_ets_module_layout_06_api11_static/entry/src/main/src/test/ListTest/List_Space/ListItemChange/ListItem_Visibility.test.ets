@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { vp2px,Visibility } from '@ohos.arkui.component'
+import { Visibility } from '@ohos.arkui.component'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../../ets/MainAbility/common/Rect';
@@ -111,23 +111,23 @@ it('testListItemVisibilityFirstNone_static', Level.LEVEL0, async (done: () => vo
       expect(locationText1.left).assertEqual(locationText1.right);
       expect(locationText1.top).assertEqual(locationText1.bottom);
 
-	  expect(Math.abs(Math.round(locationText1.right - locationText1.left) - Math.round(vp2px(0))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText1.bottom - locationText1.top) - Math.round(vp2px(0))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText2.right - locationText2.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText2.bottom - locationText2.top) - Math.round(vp2px(120))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText3.right - locationText3.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText3.bottom - locationText3.top) - Math.round(vp2px(120))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText4.right - locationText4.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText4.bottom - locationText4.top) - Math.round(vp2px(120))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText1.right - locationText1.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText1.bottom - locationText1.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText2.right - locationText2.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText2.bottom - locationText2.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(120))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText3.right - locationText3.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText3.bottom - locationText3.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(120))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText4.right - locationText4.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText4.bottom - locationText4.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(120))) <= 1).assertTrue();
 
-	  expect(Math.abs(Math.round(locationText1.top - locationList.top) - Math.round(vp2px(0))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText2.top - locationText1.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText3.top - locationText2.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText4.top - locationText3.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText1.top - locationList.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText2.top - locationText1.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText3.top - locationText2.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText4.top - locationText3.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
 	  
-	  expect(Math.abs(Math.round(locationList.bottom - locationText4.bottom) - Math.round(vp2px(80))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(vp2px(350))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationList.bottom - locationText4.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(80))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(350))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(500))) <= 1).assertTrue();
       let driver = Driver.create();
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + (bottom-top)/2 + top )).toInt(),
@@ -180,23 +180,23 @@ it('testListItemVisibilitySecondNone_static', Level.LEVEL0, async (done: () => v
       expect(locationText2.left).assertEqual(locationText2.right);
       expect(locationText2.top).assertEqual(locationText2.bottom);
 
-	  expect(Math.abs(Math.round(locationText1.right - locationText1.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText1.bottom - locationText1.top) - Math.round(vp2px(120))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText2.right - locationText2.left) - Math.round(vp2px(0))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText2.bottom - locationText2.top) - Math.round(vp2px(0))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText3.right - locationText3.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText3.bottom - locationText3.top) - Math.round(vp2px(120))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText4.right - locationText4.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText4.bottom - locationText4.top) - Math.round(vp2px(120))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText1.right - locationText1.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText1.bottom - locationText1.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(120))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText2.right - locationText2.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText2.bottom - locationText2.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText3.right - locationText3.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText3.bottom - locationText3.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(120))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText4.right - locationText4.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText4.bottom - locationText4.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(120))) <= 1).assertTrue();
 
-	  expect(Math.abs(Math.round(locationText1.top - locationList.top) - Math.round(vp2px(0))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText2.top - locationText1.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText3.top - locationText2.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText4.top - locationText3.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationList.bottom - locationText4.bottom) - Math.round(vp2px(80))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText1.top - locationList.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText2.top - locationText1.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText3.top - locationText2.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText4.top - locationText3.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationList.bottom - locationText4.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(80))) <= 1).assertTrue();
 
-	  expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(vp2px(350))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(350))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(500))) <= 1).assertTrue();
       let driver = Driver.create();
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number) + (bottom-top)/2 + top).toInt(),
@@ -248,23 +248,23 @@ it('testListItemVisibilityFirstHidden_static', Level.LEVEL0, async (done: () => 
       expect(locationText4.left).assertEqual(locationList.left);
       expect(locationText1.top).assertEqual(locationList.top);
 
-	  expect(Math.abs(Math.round(locationText1.right - locationText1.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText1.bottom - locationText1.top) - Math.round(vp2px(120))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText2.right - locationText2.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText2.bottom - locationText2.top) - Math.round(vp2px(120))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText3.right - locationText3.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText3.bottom - locationText3.top) - Math.round(vp2px(120))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText4.right - locationText4.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText4.bottom - locationText4.top) - Math.round(vp2px(120))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText1.right - locationText1.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText1.bottom - locationText1.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(120))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText2.right - locationText2.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText2.bottom - locationText2.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(120))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText3.right - locationText3.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText3.bottom - locationText3.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(120))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText4.right - locationText4.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText4.bottom - locationText4.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(120))) <= 1).assertTrue();
 
-	  expect(Math.abs(Math.round(locationText2.top - locationList.top) - Math.round(vp2px(140))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText2.top - locationText1.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText3.top - locationText2.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText4.top - locationText3.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText4.bottom - locationList.bottom) - Math.round(vp2px(40))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText2.top - locationList.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText2.top - locationText1.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText3.top - locationText2.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText4.top - locationText3.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText4.bottom - locationList.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
 
-	  expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(vp2px(350))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(350))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(500))) <= 1).assertTrue();
       let driver = Driver.create();
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + (bottom-top)/2 + top)).toInt(),
@@ -274,7 +274,7 @@ it('testListItemVisibilityFirstHidden_static', Level.LEVEL0, async (done: () => 
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest44');
       expect(locationText4Again.bottom).assertEqual(locationList.bottom);
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + vp2px(50))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.getFocusedUIContext()!.vp2px(50))).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + (bottom-top)/2 + top )).toInt());
       await CommonFunc.sleep(2000);
@@ -321,22 +321,22 @@ it('testListItemVisibilityFirstVisibile_static', Level.LEVEL0, async (done: () =
       expect(locationText4.left).assertEqual(locationList.left);
       expect(locationText1.top).assertEqual(locationList.top);
 
-	  expect(Math.abs(Math.round(locationText1.right - locationText1.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText1.bottom - locationText1.top) - Math.round(vp2px(120))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText2.right - locationText2.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText2.bottom - locationText2.top) - Math.round(vp2px(120))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText3.right - locationText3.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText3.bottom - locationText3.top) - Math.round(vp2px(120))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText4.right - locationText4.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText4.bottom - locationText4.top) - Math.round(vp2px(120))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText1.right - locationText1.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText1.bottom - locationText1.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(120))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText2.right - locationText2.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText2.bottom - locationText2.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(120))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText3.right - locationText3.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText3.bottom - locationText3.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(120))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText4.right - locationText4.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText4.bottom - locationText4.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(120))) <= 1).assertTrue();
 
-	  expect(Math.abs(Math.round(locationText2.top - locationText1.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText3.top - locationText2.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText4.top - locationText3.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationText4.bottom - locationList.bottom) - Math.round(vp2px(40))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText2.top - locationText1.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText3.top - locationText2.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText4.top - locationText3.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationText4.bottom - locationList.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
 
-	  expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(vp2px(350))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(350))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(500))) <= 1).assertTrue();
       let driver = Driver.create();
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + (bottom-top)/2 + top )).toInt(),
@@ -346,7 +346,7 @@ it('testListItemVisibilityFirstVisibile_static', Level.LEVEL0, async (done: () =
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest44');
       expect(locationText4Again.bottom).assertEqual(locationList.bottom);
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + vp2px(50))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.getFocusedUIContext()!.vp2px(50))).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + (bottom-top)/2 + top )).toInt());
       await CommonFunc.sleep(1000);

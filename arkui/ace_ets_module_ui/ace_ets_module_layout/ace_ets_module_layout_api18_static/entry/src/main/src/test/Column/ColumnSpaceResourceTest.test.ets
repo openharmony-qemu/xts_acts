@@ -108,11 +108,11 @@ export default function ColumnSpaceResourceTest() {
       let Column1_03 = CommonFunc.getComponentRect('ColumnSpaceResource_Column1_03');
 
       console.info('[ColumnSpaceResourceTest_0100] Column1.top - Column1_01.top');
-      console.info('[ColumnSpaceResourceTest_0100] Column1_02.top - Column1_01.bottom - vp2px(10)');
-      console.info('[ColumnSpaceResourceTest_0100] Column1_03.top - Column1_02.bottom - vp2px(10)');
+      console.info('[ColumnSpaceResourceTest_0100] Column1_02.top - Column1_01.bottom - UIContext.getFocusedUIContext()!.vp2px(10)');
+      console.info('[ColumnSpaceResourceTest_0100] Column1_03.top - Column1_02.bottom - UIContext.getFocusedUIContext()!.vp2px(10)');
       expect(Math.floor(Math.abs(Column1.top - Column1_01.top)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Column1_02.top - Column1_01.bottom - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Column1_03.top - Column1_02.bottom - uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Column1_02.top - Column1_01.bottom - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Column1_03.top - Column1_02.bottom - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[ColumnSpaceResourceTest_0100] END');
       done();
@@ -139,11 +139,11 @@ export default function ColumnSpaceResourceTest() {
       let Column2_03 = CommonFunc.getComponentRect('ColumnSpaceResource_Column2_03');
 
       console.info('[ColumnSpaceResourceTest_0200] Column2.top - Column2_01.top');
-      console.info('[ColumnSpaceResourceTest_0200] Column2_02.top - Column2_01.bottom - vp2px(10)');
-      console.info('[ColumnSpaceResourceTest_0200] Column2_03.top - Column2_02.bottom - vp2px(10)');
+      console.info('[ColumnSpaceResourceTest_0200] Column2_02.top - Column2_01.bottom - UIContext.getFocusedUIContext()!.vp2px(10)');
+      console.info('[ColumnSpaceResourceTest_0200] Column2_03.top - Column2_02.bottom - UIContext.getFocusedUIContext()!.vp2px(10)');
       expect(Math.floor(Math.abs(Column2.top - Column2_01.top)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Column2_02.top - Column2_01.bottom - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Column2_03.top - Column2_02.bottom - uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Column2_02.top - Column2_01.bottom - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Column2_03.top - Column2_02.bottom - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[ColumnSpaceResourceTest_0200] END');
       done();
@@ -170,11 +170,11 @@ export default function ColumnSpaceResourceTest() {
       let Column3_03 = CommonFunc.getComponentRect('ColumnSpaceResource_Column3_03');
 
       console.info('[ColumnSpaceResourceTest_0300] Column3.top - Column3_01.top');
-      console.info('[ColumnSpaceResourceTest_0300] Column3_02.top - Column3_01.bottom - vp2px(10.9)');
-      console.info('[ColumnSpaceResourceTest_0300] Column3_03.top - Column3_02.bottom - vp2px(10.9)');
+      console.info('[ColumnSpaceResourceTest_0300] Column3_02.top - Column3_01.bottom - UIContext.getFocusedUIContext()!.vp2px(10.9)');
+      console.info('[ColumnSpaceResourceTest_0300] Column3_03.top - Column3_02.bottom - UIContext.getFocusedUIContext()!.vp2px(10.9)');
       expect(Math.floor(Math.abs(Column3.top - Column3_01.top)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Column3_02.top - Column3_01.bottom - uiContext.vp2px(10.9))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Column3_03.top - Column3_02.bottom - uiContext.vp2px(10.9))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Column3_02.top - Column3_01.bottom - UIContext.getFocusedUIContext()!.vp2px(10.9))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Column3_03.top - Column3_02.bottom - UIContext.getFocusedUIContext()!.vp2px(10.9))) <= 1).assertTrue();
 
       console.info('[ColumnSpaceResourceTest_0300] END');
       done();

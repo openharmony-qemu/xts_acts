@@ -27,7 +27,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import {UtilsTest, startAbility, stopApplication} from "../Util.test"
-import { vp2px } from '@ohos.arkui.component'
+
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -81,7 +81,7 @@ it('SafeAreaPadding_static_0100', Level.LEVEL0, async (done: () => void): Promis
       console.info('navRect.top is' + navRect.top)
       let navContentRect = CommonFunc.getComponentRect('NavigationBarStyle_content2');
       console.info('navContentRect.top is' + navContentRect.top)
-      expect(Math.abs(Math.round(navRect.top - navContentRect.top) as int)- vp2px(112) <= 1).assertTrue();
+      expect(Math.abs(Math.round(navRect.top - navContentRect.top) as int)- UIContext.getFocusedUIContext()!.vp2px(112) <= 1).assertTrue();
       console.info('SafeAreaPadding_0100 END');
       done();
     });

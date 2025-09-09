@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { vp2px,ListItemAlign,StickyStyle,Axis,EdgeEffect,BarState,Color } from '@ohos.arkui.component'
+import { ListItemAlign,StickyStyle,Axis,EdgeEffect,BarState,Color } from '@ohos.arkui.component'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../hypium/index';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue from '../../../ets/MainAbility/common/Rect';
@@ -165,7 +165,7 @@ it('ListJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
         (right - left) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right - left) / 2 -
-        vp2px(4))).toInt(),
+        UIContext.getFocusedUIContext()!.vp2px(4))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt());
       await CommonFunc.sleep(1000);
 
@@ -207,32 +207,32 @@ it('ListJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
         (right - left) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right - left) / 2 -
-        vp2px(4))).toInt(),
+        UIContext.getFocusedUIContext()!.vp2px(4))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt());
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left +
         (right - left) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right - left) / 2 -
-        vp2px(4))).toInt(),
+        UIContext.getFocusedUIContext()!.vp2px(4))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt());
       await CommonFunc.sleep(1000);
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left +
         (right - left) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right - left) / 2 -
-        vp2px(4))).toInt(),
+        UIContext.getFocusedUIContext()!.vp2px(4))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt());
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left +
         (right - left) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right - left) / 2 -
-        vp2px(4))).toInt(),
+        UIContext.getFocusedUIContext()!.vp2px(4))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt());
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left +
         (right - left) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right - left) / 2 -
-        vp2px(4))).toInt(),
+        UIContext.getFocusedUIContext()!.vp2px(4))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt());
       await CommonFunc.sleep(1000);
       let onReachEndText = await driver.findComponent(ON.id('onReachEndText'));

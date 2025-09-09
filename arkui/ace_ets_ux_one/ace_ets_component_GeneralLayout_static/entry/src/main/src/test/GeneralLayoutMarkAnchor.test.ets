@@ -172,14 +172,14 @@ export default function GeneralLayoutMarkAnchorTest() {
       let width = right - left;
       expect(mirror_rect_left - left).assertLargerOrEqual(width - (original_rect_right - left) - 1);
       expect(mirror_rect_left - left).assertLessOrEqual(width - (original_rect_right - left) + 1);
-      expect(original_rect_top - top - 30).assertLargerOrEqual(uiContext.vp2px(120) - 1);
-      expect(original_rect_top - top - 30).assertLessOrEqual(uiContext.vp2px(120) + 1);
-      expect(mirror_rect_top - top - 30).assertLargerOrEqual(uiContext.vp2px(120) - 1);
-      expect(mirror_rect_top - top - 30).assertLessOrEqual(uiContext.vp2px(120) + 1);
+      expect(original_rect_top - top - 30).assertLargerOrEqual(UIContext.getFocusedUIContext()!.vp2px(120) - 1);
+      expect(original_rect_top - top - 30).assertLessOrEqual(UIContext.getFocusedUIContext()!.vp2px(120) + 1);
+      expect(mirror_rect_top - top - 30).assertLargerOrEqual(UIContext.getFocusedUIContext()!.vp2px(120) - 1);
+      expect(mirror_rect_top - top - 30).assertLessOrEqual(UIContext.getFocusedUIContext()!.vp2px(120) + 1);
       expect(((mirror_rect_left - left) + (mirror_rect_right - left)) / 2 - width / 2)
-        .assertLargerOrEqual(uiContext.vp2px(100) - 1);
+        .assertLargerOrEqual(UIContext.getFocusedUIContext()!.vp2px(100) - 1);
       expect(((mirror_rect_left - left) + (mirror_rect_right - left)) / 2 - width / 2)
-        .assertLessOrEqual(uiContext.vp2px(100) + 1);
+        .assertLessOrEqual(UIContext.getFocusedUIContext()!.vp2px(100) + 1);
       console.info('ArkUIHDS_General_Layout_static_1100 END');
       done();
     });

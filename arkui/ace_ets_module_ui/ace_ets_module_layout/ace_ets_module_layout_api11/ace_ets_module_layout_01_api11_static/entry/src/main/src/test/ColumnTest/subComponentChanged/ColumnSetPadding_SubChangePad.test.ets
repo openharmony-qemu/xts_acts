@@ -88,13 +88,13 @@ it('testColumnParentPaddingSubPadding_static', Level.LEVEL0, async () => {
       let columnSetPadding_SubPad2: RectValue = CommonFunc.getComponentRect('columnSetPadding_SubPad2');
       let columnSetPadding_SubPad3: RectValue = CommonFunc.getComponentRect('columnSetPadding_SubPad3');
       let columnSetPadding_SubPad: RectValue = CommonFunc.getComponentRect('columnSetPadding_SubPad');
-      expect(Math.abs(columnSetPadding_SubPad1.top - columnSetPadding_SubPad.top - Math.round(uiContext.vp2px(20))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPadding_SubPad.bottom - columnSetPadding_SubPad3.bottom - Math.round(uiContext.vp2px(20))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPadding_SubPad2.top - columnSetPadding_SubPad1.bottom - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPadding_SubPad3.top - columnSetPadding_SubPad2.bottom - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPadding_SubPad1.right - columnSetPadding_SubPad1.left - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPadding_SubPad2.right - columnSetPadding_SubPad2.left - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPadding_SubPad3.right - columnSetPadding_SubPad3.left - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPadding_SubPad1.top - columnSetPadding_SubPad.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPadding_SubPad.bottom - columnSetPadding_SubPad3.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPadding_SubPad2.top - columnSetPadding_SubPad1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPadding_SubPad3.top - columnSetPadding_SubPad2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPadding_SubPad1.right - columnSetPadding_SubPad1.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPadding_SubPad2.right - columnSetPadding_SubPad2.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPadding_SubPad3.right - columnSetPadding_SubPad3.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
       console.info('new testColumnParentPaddingSubPadding_static END');
     });
   })

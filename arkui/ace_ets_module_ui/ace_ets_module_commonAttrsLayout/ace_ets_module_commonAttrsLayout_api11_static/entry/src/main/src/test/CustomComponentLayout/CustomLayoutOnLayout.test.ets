@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { vp2px } from '@ohos.arkui.component';
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -81,10 +81,10 @@ export default function CustomLayoutOnLayoutTest() {
       let text_2 = CommonFunc.getComponentRect('CustomLayoutOnLayoutText_2');
       let text_3 = CommonFunc.getComponentRect('CustomLayoutOnLayoutText_3');
 
-      expect(Math.abs(text_2.left - text_1.left - vp2px(20)) <= 1).assertTrue();
-      expect(Math.abs(text_3.left - text_2.left - vp2px(20)) <= 1).assertTrue();
-      expect(Math.abs(text_2.top - text_1.top - vp2px(20)) <= 1).assertTrue();
-      expect(Math.abs(text_3.top - text_2.top - vp2px(20)) <= 1).assertTrue();
+      expect(Math.abs(text_2.left - text_1.left - UIContext.getFocusedUIContext()!.vp2px(20)) <= 1).assertTrue();
+      expect(Math.abs(text_3.left - text_2.left - UIContext.getFocusedUIContext()!.vp2px(20)) <= 1).assertTrue();
+      expect(Math.abs(text_2.top - text_1.top - UIContext.getFocusedUIContext()!.vp2px(20)) <= 1).assertTrue();
+      expect(Math.abs(text_3.top - text_2.top - UIContext.getFocusedUIContext()!.vp2px(20)) <= 1).assertTrue();
 
       console.info('[CustomLayoutOnLayoutTest_0010] END');
       done();

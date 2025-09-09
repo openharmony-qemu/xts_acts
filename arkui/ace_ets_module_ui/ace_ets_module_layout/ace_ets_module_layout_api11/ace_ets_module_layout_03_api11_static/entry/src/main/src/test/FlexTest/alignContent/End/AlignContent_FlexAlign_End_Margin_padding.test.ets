@@ -130,22 +130,22 @@ it('testAlignContentEndFlexMarginPaddingNOSatisfy_static', Level.LEVEL0, async (
       console.log('AlignContentFlexEnd_4_width is:' + AlignContentFlexEnd_4_width);
       console.log('AlignContentFlexEnd_4_height is:' + AlignContentFlexEnd_4_height);
       const uiContext = new UIContext();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_1_height - uiContext.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_2_height - uiContext.vp2px(60))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_3_height - uiContext.vp2px(80))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_4_height - uiContext.vp2px(90))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_1_width - uiContext.vp2px(60))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_2_width - uiContext.vp2px(60))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_3_width - uiContext.vp2px(60))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_4_width - uiContext.vp2px(60))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_1_height - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_2_height - UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_3_height - UIContext.getFocusedUIContext()!.vp2px(80))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_4_height - UIContext.getFocusedUIContext()!.vp2px(90))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_1_width - UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_2_width - UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_3_width - UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_4_width - UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
 
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual("FlexDirection.Row");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual("FlexAlign.End");
 
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_flex001.top - End_Margin_Column_1.top) - uiContext.vp2px(5))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((End_Margin_Column_1.bottom - AlignContentFlexEnd_4.bottom) - uiContext.vp2px(15))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_1.top - AlignContentFlexEnd_flex001.top) - uiContext.vp2px(40))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_flex001.bottom - AlignContentFlexEnd_4.bottom) - uiContext.vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_flex001.top - End_Margin_Column_1.top) - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((End_Margin_Column_1.bottom - AlignContentFlexEnd_4.bottom) - UIContext.getFocusedUIContext()!.vp2px(15))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_1.top - AlignContentFlexEnd_flex001.top) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_flex001.bottom - AlignContentFlexEnd_4.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs(AlignContentFlexEnd_4.top - AlignContentFlexEnd_2.bottom)) <= 1).assertTrue();
 
@@ -210,24 +210,24 @@ it('testAlignContentEndFlexMarginPaddingSatisfy_static', Level.LEVEL0, async () 
       console.log('AlignContentFlexEnd_4_width is:' + AlignContentFlexEnd_4_width);
       console.log('AlignContentFlexEnd_4_height is:' + AlignContentFlexEnd_4_height);
       const uiContext = new UIContext();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_1_height - uiContext.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_2_height - uiContext.vp2px(60))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_3_height - uiContext.vp2px(80))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_4_height - uiContext.vp2px(90))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_1_width - uiContext.vp2px(60))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_2_width - uiContext.vp2px(60))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_3_width - uiContext.vp2px(60))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_4_width - uiContext.vp2px(60))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_1_height - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_2_height - UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_3_height - UIContext.getFocusedUIContext()!.vp2px(80))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_4_height - UIContext.getFocusedUIContext()!.vp2px(90))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_1_width - UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_2_width - UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_3_width - UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_4_width - UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
 
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual("FlexDirection.Row");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual("FlexAlign.End");
 
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_flex002.top - End_Margin_Column_2.top) - uiContext.vp2px(5))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((End_Margin_Column_2.bottom - AlignContentFlexEnd_4.bottom) - uiContext.vp2px(20))) <= 2).assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_flex002.bottom - AlignContentFlexEnd_4.bottom) - uiContext.vp2px(15))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_flex002.top - End_Margin_Column_2.top) - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((End_Margin_Column_2.bottom - AlignContentFlexEnd_4.bottom) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 2).assertTrue();
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_flex002.bottom - AlignContentFlexEnd_4.bottom) - UIContext.getFocusedUIContext()!.vp2px(15))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs(AlignContentFlexEnd_4.top - AlignContentFlexEnd_2.bottom)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexEnd_2.top - AlignContentFlexEnd_flex002.top) - uiContext.vp2px(35))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((AlignContentFlexEnd_2.top - AlignContentFlexEnd_flex002.top) - UIContext.getFocusedUIContext()!.vp2px(35))) <= 1).assertTrue();
 
       console.info('testAlignContentEndFlexMarginPaddingSatisfy END')
 

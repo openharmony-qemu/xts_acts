@@ -96,8 +96,8 @@ export default function tapGestureAddInterfaceTest() {
       console.info('tapGestureAddInterfaceTest_0010 column1 width = ' + width + ",height = " + height);
       let driver: Driver = Driver.create();
       let button: Component | null = await driver.findComponent(ON.id('interfaceTestKey'));
-      await driver.doubleClick(Math.round(column1.left + uiContext.vp2px(10)) as Int,
-        Math.round(column1.top + uiContext.vp2px(10)) as Int);
+      await driver.doubleClick(Math.round(column1.left + UIContext.getFocusedUIContext()!.vp2px(10)) as Int,
+        Math.round(column1.top + UIContext.getFocusedUIContext()!.vp2px(10)) as Int);
       await CommonFunc.sleep(3000)
       let tt1 = inspector.getInspectorByKey('valueKey');
       let obj = JSON.parseJsonElement(tt1);
@@ -109,8 +109,8 @@ export default function tapGestureAddInterfaceTest() {
       expect(Math.abs(dataE.getInteger('localY') - 10) <= 1).assertTrue();
 
 
-      await driver.doubleClick(Math.round(column1.left + width / 2 - uiContext.vp2px(10)) as Int,
-        Math.round(column1.top + uiContext.vp2px(10)) as Int);
+      await driver.doubleClick(Math.round(column1.left + width / 2 - UIContext.getFocusedUIContext()!.vp2px(10)) as Int,
+        Math.round(column1.top + UIContext.getFocusedUIContext()!.vp2px(10)) as Int);
       await CommonFunc.sleep(4000)
       let tt2 = inspector.getInspectorByKey('valueKey');
       let obj2 = JSON.parseJsonElement(tt2);
@@ -141,8 +141,8 @@ export default function tapGestureAddInterfaceTest() {
       console.info('tapGestureAddInterfaceTest_0010 column1 width = ' + width + ",height = " + height);
       let driver: Driver = Driver.create();
       let button: Component | null = await driver.findComponent(ON.id('interfaceTestKey'));
-      await driver.doubleClick(Math.round(column1.left + uiContext.vp2px(10)) as Int,
-        Math.round(column1.top + uiContext.vp2px(10)) as Int);
+      await driver.doubleClick(Math.round(column1.left + UIContext.getFocusedUIContext()!.vp2px(10)) as Int,
+        Math.round(column1.top + UIContext.getFocusedUIContext()!.vp2px(10)) as Int);
       await CommonFunc.sleep(3000)
       let tt1 = inspector.getInspectorByKey('valueKey');
       let obj = JSON.parseJsonElement(tt1);
@@ -154,9 +154,9 @@ export default function tapGestureAddInterfaceTest() {
       expect(Math.abs(dataE.getInteger('localY') - 10) <= 1).assertTrue();
 
 
-      await driver.swipe(Math.round(column1.left + uiContext.vp2px(10)) as Int,
-        Math.round(column1.top + uiContext.vp2px(10)) as Int, Math.round(column1.left + uiContext.vp2px(80)) as Int,
-        Math.round(column1.top + uiContext.vp2px(10)) as Int);
+      await driver.swipe(Math.round(column1.left + UIContext.getFocusedUIContext()!.vp2px(10)) as Int,
+        Math.round(column1.top + UIContext.getFocusedUIContext()!.vp2px(10)) as Int, Math.round(column1.left + UIContext.getFocusedUIContext()!.vp2px(80)) as Int,
+        Math.round(column1.top + UIContext.getFocusedUIContext()!.vp2px(10)) as Int);
       await CommonFunc.sleep(3000)
       let tt2 = inspector.getInspectorByKey('valueKey');
       let obj2 = JSON.parseJsonElement(tt2);
@@ -168,9 +168,9 @@ export default function tapGestureAddInterfaceTest() {
       expect(Math.abs(dataE2.getInteger('localY') - 10) <= 1).assertTrue();
 
 
-      await driver.swipe(Math.round(column1.left + uiContext.vp2px(10)) as Int,
-        Math.round(column1.top + uiContext.vp2px(10)) as Int, Math.round(column1.left + uiContext.vp2px(130)) as Int,
-        Math.round(column1.top + uiContext.vp2px(10)) as Int);
+      await driver.swipe(Math.round(column1.left + UIContext.getFocusedUIContext()!.vp2px(10)) as Int,
+        Math.round(column1.top + UIContext.getFocusedUIContext()!.vp2px(10)) as Int, Math.round(column1.left + UIContext.getFocusedUIContext()!.vp2px(130)) as Int,
+        Math.round(column1.top + UIContext.getFocusedUIContext()!.vp2px(10)) as Int);
       await CommonFunc.sleep(3000)
       let tt3 = inspector.getInspectorByKey('valueKey');
       let obj3 = JSON.parseJsonElement(tt3);
@@ -203,8 +203,8 @@ export default function tapGestureAddInterfaceTest() {
       console.info('tapGestureAddInterfaceTest_0010 column1 width = ' + width + ",height = " + height);
       let driver: Driver = Driver.create();
       let button: Component | null = await driver.findComponent(ON.id('interfaceTestKey'));
-      await driver.click(Math.round(column1.left + uiContext.vp2px(10)) as Int,
-        Math.round(column1.top + uiContext.vp2px(10)) as Int);
+      await driver.click(Math.round(column1.left + UIContext.getFocusedUIContext()!.vp2px(10)) as Int,
+        Math.round(column1.top + UIContext.getFocusedUIContext()!.vp2px(10)) as Int);
       await CommonFunc.sleep(3000)
       let tt1 = inspector.getInspectorByKey('valueKey');
       let obj = JSON.parseJsonElement(tt1);
@@ -216,8 +216,8 @@ export default function tapGestureAddInterfaceTest() {
       expect(Math.abs(dataE.getInteger('localY') - 10) <= 1).assertTrue();
 
 
-      await driver.click(Math.round(column1.left + width / 2 - uiContext.vp2px(10)) as Int,
-        Math.round(column1.top + uiContext.vp2px(10)) as Int);
+      await driver.click(Math.round(column1.left + width / 2 - UIContext.getFocusedUIContext()!.vp2px(10)) as Int,
+        Math.round(column1.top + UIContext.getFocusedUIContext()!.vp2px(10)) as Int);
       await CommonFunc.sleep(4000)
       let tt2 = inspector.getInspectorByKey('valueKey');
       let obj2 = JSON.parseJsonElement(tt2);
@@ -248,8 +248,8 @@ export default function tapGestureAddInterfaceTest() {
       console.info('tapGestureAddInterfaceTest_0010 column1 width = ' + width + ",height = " + height);
       let driver: Driver = Driver.create();
       let button: Component | null = await driver.findComponent(ON.id('interfaceTestKey'));
-      await driver.click(Math.round(column1.left + uiContext.vp2px(10)) as Int,
-        Math.round(column1.top + uiContext.vp2px(10)) as Int);
+      await driver.click(Math.round(column1.left + UIContext.getFocusedUIContext()!.vp2px(10)) as Int,
+        Math.round(column1.top + UIContext.getFocusedUIContext()!.vp2px(10)) as Int);
       await CommonFunc.sleep(3000)
       let tt1 = inspector.getInspectorByKey('valueKey');
       let obj = JSON.parseJsonElement(tt1);
@@ -261,9 +261,9 @@ export default function tapGestureAddInterfaceTest() {
       expect(Math.abs(dataE.getInteger('localY') - 10) <= 1).assertTrue();
 
 
-      await driver.swipe(Math.round(column1.left + uiContext.vp2px(10)) as Int,
-        Math.round(column1.top + uiContext.vp2px(10)) as Int, Math.round(column1.left + uiContext.vp2px(80)) as Int,
-        Math.round(column1.top + uiContext.vp2px(10)) as Int);
+      await driver.swipe(Math.round(column1.left + UIContext.getFocusedUIContext()!.vp2px(10)) as Int,
+        Math.round(column1.top + UIContext.getFocusedUIContext()!.vp2px(10)) as Int, Math.round(column1.left + UIContext.getFocusedUIContext()!.vp2px(80)) as Int,
+        Math.round(column1.top + UIContext.getFocusedUIContext()!.vp2px(10)) as Int);
       await CommonFunc.sleep(3000)
       let tt2 = inspector.getInspectorByKey('valueKey');
       let obj2 = JSON.parseJsonElement(tt2);
@@ -275,9 +275,9 @@ export default function tapGestureAddInterfaceTest() {
       expect(Math.abs(dataE2.getInteger('localY') - 10) <= 1).assertTrue();
 
 
-      await driver.swipe(Math.round(column1.left + uiContext.vp2px(10)) as Int,
-        Math.round(column1.top + uiContext.vp2px(10)) as Int, Math.round(column1.left + uiContext.vp2px(130)) as Int,
-        Math.round(column1.top + uiContext.vp2px(10)) as Int);
+      await driver.swipe(Math.round(column1.left + UIContext.getFocusedUIContext()!.vp2px(10)) as Int,
+        Math.round(column1.top + UIContext.getFocusedUIContext()!.vp2px(10)) as Int, Math.round(column1.left + UIContext.getFocusedUIContext()!.vp2px(130)) as Int,
+        Math.round(column1.top + UIContext.getFocusedUIContext()!.vp2px(10)) as Int);
       await CommonFunc.sleep(3000)
       let tt3 = inspector.getInspectorByKey('valueKey');
       let obj3 = JSON.parseJsonElement(tt3);

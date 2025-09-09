@@ -244,19 +244,19 @@ it('GridJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
       let right = grid2.right
       let driver = Driver.create()
       const uiContext = new UIContext();
-      (driver.swipe((Math.round((right - left) / 2)).toInt(), (Math.round(bottom - uiContext.vp2px(10))).toInt(),
-        (Math.round((right - left) / 2)).toInt(), (Math.round(top + uiContext.vp2px(10))).toInt()) as Promise<void>);
-      (driver.swipe((Math.round((right - left) / 2)).toInt(), (Math.round(bottom - uiContext.vp2px(10))).toInt(),
-        (Math.round((right - left) / 2)).toInt(), (Math.round(top + uiContext.vp2px(10))).toInt()) as Promise<void>);
+      (driver.swipe((Math.round((right - left) / 2)).toInt(), (Math.round(bottom - UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
+        (Math.round((right - left) / 2)).toInt(), (Math.round(top + UIContext.getFocusedUIContext()!.vp2px(10))).toInt()) as Promise<void>);
+      (driver.swipe((Math.round((right - left) / 2)).toInt(), (Math.round(bottom - UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
+        (Math.round((right - left) / 2)).toInt(), (Math.round(top + UIContext.getFocusedUIContext()!.vp2px(10))).toInt()) as Promise<void>);
       let onScrollIndex1 = await driver.findComponent(ON.id('onScrollIndex'));
       let text1 = await (onScrollIndex1?.getText() as Promise<string>);
       expect(text1).assertEqual('onScrollIndex:2');
       await CommonFunc.sleep(1000);
 
-      (driver.swipe((Math.round((right - left) / 2)).toInt(), (Math.round(bottom - uiContext.vp2px(10))).toInt(),
-        (Math.round((right - left) / 2)).toInt(), (Math.round(top + uiContext.vp2px(10))).toInt()) as Promise<void>);
-      (driver.swipe((Math.round((right - left) / 2)).toInt(), (Math.round(bottom - uiContext.vp2px(10))).toInt(),
-        (Math.round((right - left) / 2)).toInt(), (Math.round(top + uiContext.vp2px(10))).toInt()) as Promise<void>);
+      (driver.swipe((Math.round((right - left) / 2)).toInt(), (Math.round(bottom - UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
+        (Math.round((right - left) / 2)).toInt(), (Math.round(top + UIContext.getFocusedUIContext()!.vp2px(10))).toInt()) as Promise<void>);
+      (driver.swipe((Math.round((right - left) / 2)).toInt(), (Math.round(bottom - UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
+        (Math.round((right - left) / 2)).toInt(), (Math.round(top + UIContext.getFocusedUIContext()!.vp2px(10))).toInt()) as Promise<void>);
       let onScrollIndex2 = await driver.findComponent(ON.id('onScrollIndex'));
       let text2 = await (onScrollIndex2?.getText() as Promise<string>);
       expect(text2).assertEqual('onScrollIndex:2');

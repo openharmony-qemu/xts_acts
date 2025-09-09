@@ -91,10 +91,10 @@ it('onGetIrregular8Jsunit_static_0001', Level.LEVEL0, async (done: () => void): 
 
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.round(uiContext.px2vp(GridItem0.right - GridItem0.left))).assertEqual(80);
-      expect(Math.round(uiContext.px2vp(GridItem2.right - GridItem2.left))).assertEqual(80);
-      expect(Math.round(uiContext.px2vp(GridItem0.bottom - GridItem0.top))).assertEqual(114);
-      expect(Math.round(uiContext.px2vp(GridItem2.bottom - GridItem2.top))).assertEqual(114);
+      expect(Math.round(UIContext.getFocusedUIContext()!.px2vp(GridItem0.right - GridItem0.left))).assertEqual(80);
+      expect(Math.round(UIContext.getFocusedUIContext()!.px2vp(GridItem2.right - GridItem2.left))).assertEqual(80);
+      expect(Math.round(UIContext.getFocusedUIContext()!.px2vp(GridItem0.bottom - GridItem0.top))).assertEqual(114);
+      expect(Math.round(UIContext.getFocusedUIContext()!.px2vp(GridItem2.bottom - GridItem2.top))).assertEqual(114);
       console.info('[onGetIrregular8Jsunit_static_0001] END');
       done();
     });

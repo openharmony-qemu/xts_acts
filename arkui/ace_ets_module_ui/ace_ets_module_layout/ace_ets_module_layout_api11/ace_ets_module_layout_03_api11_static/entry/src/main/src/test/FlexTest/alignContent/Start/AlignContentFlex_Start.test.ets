@@ -110,21 +110,21 @@ it('testAlignContentStartFlexHeightSatisfy_static', Level.LEVEL0, async () => {
       console.log('AlignContentFlexStart_4 rect_value is:' +
       JSON.stringify(AlignContentFlexStart_4));
       const uiContext = new UIContext();
-	  expect(Math.abs(Math.round(AlignContentFlexStart_1.bottom - AlignContentFlexStart_1.top) - Math.round(uiContext.vp2px(50))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(AlignContentFlexStart_2.bottom - AlignContentFlexStart_2.top) - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(AlignContentFlexStart_3.bottom - AlignContentFlexStart_3.top) - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(AlignContentFlexStart_4.bottom - AlignContentFlexStart_4.top) - Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(AlignContentFlexStart_1.right - AlignContentFlexStart_1.left) - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(AlignContentFlexStart_2.right - AlignContentFlexStart_2.left) - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(AlignContentFlexStart_3.right - AlignContentFlexStart_3.left) - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(AlignContentFlexStart_4.right - AlignContentFlexStart_4.left) - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(AlignContentFlexStart_1.bottom - AlignContentFlexStart_1.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(AlignContentFlexStart_2.bottom - AlignContentFlexStart_2.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(AlignContentFlexStart_3.bottom - AlignContentFlexStart_3.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(AlignContentFlexStart_4.bottom - AlignContentFlexStart_4.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(AlignContentFlexStart_1.right - AlignContentFlexStart_1.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(AlignContentFlexStart_2.right - AlignContentFlexStart_2.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(AlignContentFlexStart_3.right - AlignContentFlexStart_3.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(AlignContentFlexStart_4.right - AlignContentFlexStart_4.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
 
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual("FlexDirection.Row");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual("FlexAlign.Start");
 
       expect(AlignContentFlexStart_2.top).assertEqual(AlignContentFlexStart_flex001.top);
       expect(AlignContentFlexStart_4.top).assertEqual(AlignContentFlexStart_2.bottom);
-	  expect(Math.abs(Math.round(AlignContentFlexStart_flex001.bottom - AlignContentFlexStart_4.bottom) - Math.round(uiContext.vp2px(60))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(AlignContentFlexStart_flex001.bottom - AlignContentFlexStart_4.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
 
       console.info('testAlignContentStartFlexHeightSatisfy END');
 
@@ -164,14 +164,14 @@ it('testAlignContentStartFlexHeightNoSatisfy_static', Level.LEVEL0, async () => 
       console.log('AlignContentFlexStart_4 rect_value is:' +
       JSON.stringify(AlignContentFlexStart_4));
       const uiContext = new UIContext();
-	  expect(Math.abs(Math.round(AlignContentFlexStart_1.bottom - AlignContentFlexStart_1.top) - Math.round(uiContext.vp2px(50))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(AlignContentFlexStart_2.bottom - AlignContentFlexStart_2.top) - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(AlignContentFlexStart_3.bottom - AlignContentFlexStart_3.top) - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(AlignContentFlexStart_4.bottom - AlignContentFlexStart_4.top) - Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(AlignContentFlexStart_1.right - AlignContentFlexStart_1.left) - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(AlignContentFlexStart_2.right - AlignContentFlexStart_2.left) - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(AlignContentFlexStart_3.right - AlignContentFlexStart_3.left) - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(AlignContentFlexStart_4.right - AlignContentFlexStart_4.left) - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(AlignContentFlexStart_1.bottom - AlignContentFlexStart_1.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(AlignContentFlexStart_2.bottom - AlignContentFlexStart_2.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(AlignContentFlexStart_3.bottom - AlignContentFlexStart_3.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(AlignContentFlexStart_4.bottom - AlignContentFlexStart_4.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(AlignContentFlexStart_1.right - AlignContentFlexStart_1.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(AlignContentFlexStart_2.right - AlignContentFlexStart_2.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(AlignContentFlexStart_3.right - AlignContentFlexStart_3.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(AlignContentFlexStart_4.right - AlignContentFlexStart_4.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
 
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual("FlexDirection.Row");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual("FlexAlign.Start");

@@ -100,8 +100,8 @@ export default function dragIsSystem() {
       console.info("rect_left = " + CommonFunc.rect_left + "CommonFunc.rect_top = " + CommonFunc.rect_top);
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      await driver.drag(Math.round(CommonFunc.rect_left + uiContext.vp2px(66.66)) as Int,
-        Math.round(CommonFunc.rect_top + uiContext.vp2px(53.33)) as Int, 200, 200, 600);
+      await driver.drag(Math.round(CommonFunc.rect_left + UIContext.getFocusedUIContext()!.vp2px(66.66)) as Int,
+        Math.round(CommonFunc.rect_top + UIContext.getFocusedUIContext()!.vp2px(53.33)) as Int, 200, 200, 600);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey("dragIsSystemBtn2");
       await CommonFunc.sleep(200);

@@ -88,13 +88,13 @@ it('testColumnParentMarginPadSubMarPad_static', Level.LEVEL0, async () => {
       let columnSetMargin_2: RectValue = CommonFunc.getComponentRect('columnSetMargin_2');
       let columnSetMargin_3: RectValue = CommonFunc.getComponentRect('columnSetMargin_3');
       let columnSetMargin: RectValue = CommonFunc.getComponentRect('columnSetMargin');
-      expect(Math.abs(Math.round(columnSetMargin_1.top - columnSetMargin.top) - Math.round(uiContext.vp2px(20))) <= 1).assertTrue()
-      expect(Math.abs(Math.round(columnSetMargin_2.top - columnSetMargin_1.bottom) - Math.round(uiContext.vp2px(50))) <= 1).assertTrue()
-      expect(Math.abs(Math.round(columnSetMargin_3.top - columnSetMargin_2.bottom) - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(Math.round(columnSetMargin_1.top - columnSetMargin.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue()
+      expect(Math.abs(Math.round(columnSetMargin_2.top - columnSetMargin_1.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(Math.round(columnSetMargin_3.top - columnSetMargin_2.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
       expect(Math.round(columnSetMargin.bottom - columnSetMargin_3.bottom) <= 1).assertTrue()
-      expect(Math.abs(Math.round(columnSetMargin_1.right - columnSetMargin_1.left) - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(Math.round(columnSetMargin_2.right - columnSetMargin_2.left) - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(Math.round(columnSetMargin_3.right - columnSetMargin_3.left) - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(Math.round(columnSetMargin_1.right - columnSetMargin_1.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(Math.round(columnSetMargin_2.right - columnSetMargin_2.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(Math.round(columnSetMargin_3.right - columnSetMargin_3.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
       console.info('new testColumnParentMarginPadSubMarPad_static END');
     });
   })

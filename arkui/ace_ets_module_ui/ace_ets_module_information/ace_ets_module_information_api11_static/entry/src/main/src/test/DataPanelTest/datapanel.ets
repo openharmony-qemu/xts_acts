@@ -27,7 +27,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import accessibility from '@ohos.accessibility';
-import { Resource, px2vp, $r, ResourceStr} from '@ohos.arkui.component'
+import { Resource,  $r, ResourceStr} from '@ohos.arkui.component'
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';

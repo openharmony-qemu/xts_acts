@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { vp2px } from '@ohos.arkui.component'
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../ets/MainAbility/common/Rect';
@@ -162,7 +162,7 @@ it('List_scrollToIndex2_static_0400', Level.LEVEL0, async (done: () => void): Pr
       let List: RectValue = CommonFunc.getComponentRect('List_scrollToIndex2_List');
       let ListItem: RectValue = CommonFunc.getComponentRect('List_scrollToIndex2_ListItem9');
       expect(Math.abs(ListItem.bottom - List.bottom) <= 1).assertTrue();
-      expect(Math.abs(Math.round(ListItem.top) - Math.round(List.bottom - vp2px(40))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem.top) - Math.round(List.bottom - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
       console.info('[List_scrollToIndex2_0400] END');
       done();
     });
@@ -187,7 +187,7 @@ it('List_scrollToIndex2_static_0500', Level.LEVEL0, async (done: () => void): Pr
       let List: RectValue = CommonFunc.getComponentRect('List_scrollToIndex2_List');
       let ListItem: RectValue = CommonFunc.getComponentRect('List_scrollToIndex2_ListItem5');
       expect(Math.abs(ListItem.bottom - List.bottom) <= 1).assertTrue();
-      expect(Math.abs(Math.round(ListItem.top) - Math.round(List.bottom - vp2px(40))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem.top) - Math.round(List.bottom - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
       console.info('[List_scrollToIndex2_0500] END');
       done();
     });
@@ -212,7 +212,7 @@ it('List_scrollToIndex2_static_0600', Level.LEVEL0, async (done: () => void): Pr
       let List: RectValue = CommonFunc.getComponentRect('List_scrollToIndex2_List');
       let ListItem: RectValue = CommonFunc.getComponentRect('List_scrollToIndex2_ListItem4');
       expect(Math.abs(ListItem.bottom - List.bottom) <= 1).assertTrue();
-      expect(Math.abs(Math.round(ListItem.top) - Math.round(List.bottom - vp2px(40))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem.top) - Math.round(List.bottom - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
       console.info('[List_scrollToIndex2_0600] END');
       done();
     });
@@ -286,7 +286,7 @@ it('List_scrollToIndex2_static_0900', Level.LEVEL0, async (done: () => void): Pr
       let List: RectValue = CommonFunc.getComponentRect('List_scrollToIndex2_List');
       let ListItem: RectValue = CommonFunc.getComponentRect('List_scrollToIndex2_ListItem5');
       expect(Math.abs(ListItem.bottom - List.bottom) <= 1).assertTrue();
-      expect(Math.abs(Math.round(ListItem.top) - Math.round(List.bottom - vp2px(40))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem.top) - Math.round(List.bottom - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
       console.info('[List_scrollToIndex2_0900] END');
       done();
     });
@@ -312,7 +312,7 @@ it('List_scrollToIndex2_static_1000', Level.LEVEL0, async (done: () => void): Pr
       let ListItem: RectValue = CommonFunc.getComponentRect('List_scrollToIndex2_ListItem5');
       expect(Math.abs(ListItem.top - List.top) <= 1).assertTrue();
 	  console.info('value1000' + ListItem.bottom +  List.top)
-      expect(Math.abs(Math.round(ListItem.bottom) - Math.round(List.top + vp2px(40))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem.bottom) - Math.round(List.top + UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
       console.info('[List_scrollToIndex2_1000] END');
       done();
     });

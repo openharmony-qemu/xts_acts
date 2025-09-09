@@ -208,8 +208,8 @@ export default function TapGestureBasicClickTest() {
       let text17 = inspector.getInspectorByKey('TapGestureBasicClick_target_area_height');
       let obj17 = JSON.parseJsonElement(text17);
       console.log('TapGestureBasicClickTest_0010 obj17 $attrs content', obj17.getElement('$attrs').getString('content'),
-        uiContext.vp2px(Number(obj17.getElement('$attrs').getString('content'))), uiContext.vp2px(80))
-      expect(Math.abs(uiContext.vp2px(Number(obj17.getElement('$attrs').getString('content'))) - uiContext.vp2px(80)) <=
+        UIContext.getFocusedUIContext()!.vp2px(Number(obj17.getElement('$attrs').getString('content'))), UIContext.getFocusedUIContext()!.vp2px(80))
+      expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(Number(obj17.getElement('$attrs').getString('content'))) - UIContext.getFocusedUIContext()!.vp2px(80)) <=
         1).assertTrue();
 
       await CommonFunc.sleep(200);
@@ -217,7 +217,7 @@ export default function TapGestureBasicClickTest() {
       let obj18 = JSON.parseJsonElement(text18);
       console.log('TapGestureBasicClickTest_0010 obj18 $attrs content', obj18.getElement('$attrs').getString('content'),
         obj18)
-      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj18.getElement('$attrs').getString('content')))) -
+      expect(Math.abs(Math.round((UIContext.getFocusedUIContext()!.vp2px(Number(obj18.getElement('$attrs').getString('content')))) -
         (areaObj.left - FatherObj.left))) <= 1).assertTrue();
 
       await CommonFunc.sleep(200);
@@ -225,7 +225,7 @@ export default function TapGestureBasicClickTest() {
       let obj19 = JSON.parseJsonElement(text19);
       console.log('TapGestureBasicClickTest_0010 obj19 $attrs content', obj19.getElement('$attrs').getString('content'),
         obj19)
-      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj19.getElement('$attrs').getString('content')))) -
+      expect(Math.abs(Math.round((UIContext.getFocusedUIContext()!.vp2px(Number(obj19.getElement('$attrs').getString('content')))) -
         (areaObj.top - FatherObj.top))) <= 1).assertTrue();
 
       await CommonFunc.sleep(200);
@@ -233,7 +233,7 @@ export default function TapGestureBasicClickTest() {
       let obj20 = JSON.parseJsonElement(text20);
       console.log('TapGestureBasicClickTest_0010 obj20 $attrs content', obj20.getElement('$attrs').getString('content'),
         areaObj.left - windowOffsetX)
-      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj20.getElement('$attrs').getString('content')))) -
+      expect(Math.abs(Math.round((UIContext.getFocusedUIContext()!.vp2px(Number(obj20.getElement('$attrs').getString('content')))) -
         (areaObj.left - windowOffsetX))) <= 1).assertTrue();
 
       await CommonFunc.sleep(200);
@@ -241,7 +241,7 @@ export default function TapGestureBasicClickTest() {
       let obj21 = JSON.parseJsonElement(text21);
       console.log('TapGestureBasicClickTest_0010 obj21 $attrs content', obj21.getElement('$attrs').getString('content'),
         areaObj.top - windowOffsetY)
-      expect(Math.abs(Math.round((uiContext.vp2px(Number(obj21.getElement('$attrs').getString('content')))) -
+      expect(Math.abs(Math.round((UIContext.getFocusedUIContext()!.vp2px(Number(obj21.getElement('$attrs').getString('content')))) -
         (areaObj.top - windowOffsetY))) <= 1).assertTrue();
 
       await CommonFunc.sleep(200);

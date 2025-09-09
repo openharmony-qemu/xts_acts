@@ -90,13 +90,13 @@ it('SUB_ACE_GRID_OnlyRowsTemplate1_static_0100', Level.LEVEL0, async (done: () =
       console.log('GridItem_02.top' + GridItem_02.top)
       const uiContext = new UIContext();
       console.log('assert space')
-      expect(Math.abs(GridItem_02.left - GridItem_01.right - uiContext.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(GridItem_02.left - GridItem_01.right - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
       console.log('GridItem_02.left - GridItem_01.right' + (GridItem_02.left - GridItem_01.right))
 
       console.log('assert size')
-      expect(Math.abs(GridItem_01.right - GridItem_01.left - uiContext.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(GridItem_01.right - GridItem_01.left - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
       console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
-      expect(Math.abs(GridItem_01.bottom - GridItem_01.top - uiContext.vp2px(154)) <= 1).assertTrue();
+      expect(Math.abs(GridItem_01.bottom - GridItem_01.top - UIContext.getFocusedUIContext()!.vp2px(154)) <= 1).assertTrue();
       console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
 
       await CommonFunc.sleep(1000);
@@ -138,9 +138,9 @@ it('SUB_ACE_GRID_OnlyRowsTemplate1_static_0200', Level.LEVEL0, async (done: () =
       let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyRowsTemplate1_GridItem_01');
       const uiContext = new UIContext();
       console.log('assert size')
-      expect(Math.abs(GridItem_01.right - GridItem_01.left - uiContext.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(GridItem_01.right - GridItem_01.left - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
       console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
-      expect(Math.abs(GridItem_01.bottom - GridItem_01.top - uiContext.vp2px(154)) <= 1).assertTrue();
+      expect(Math.abs(GridItem_01.bottom - GridItem_01.top - UIContext.getFocusedUIContext()!.vp2px(154)) <= 1).assertTrue();
       console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
 
       await CommonFunc.sleep(1000);

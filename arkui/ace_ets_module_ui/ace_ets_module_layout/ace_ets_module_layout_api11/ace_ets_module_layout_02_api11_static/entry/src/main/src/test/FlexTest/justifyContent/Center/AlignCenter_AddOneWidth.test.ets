@@ -112,21 +112,21 @@ it('testFlexAlignCenterTextWidth_static', Level.LEVEL0, async () : Promise<void>
       expect(Math.abs(Center_AddOneWidth_011.right - Center_AddOneWidth_012.left) <= 1).assertTrue();
       expect(Math.abs(Center_AddOneWidth_012.right - Center_AddOneWidth_013.left) <= 1).assertTrue();
 
-      expect(Math.abs(Center_AddOneWidth_011.left - Center_AddOneWidth_01.left - Math.round(uiContext.vp2px(20))) <= 1)
+      expect(Math.abs(Center_AddOneWidth_011.left - Center_AddOneWidth_01.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Center_AddOneWidth_01.right - Center_AddOneWidth_013.right - Math.round(uiContext.vp2px(20))) <= 1)
+      expect(Math.abs(Center_AddOneWidth_01.right - Center_AddOneWidth_013.right - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Center_AddOneWidth_011.right - Center_AddOneWidth_011.left - Math.round(uiContext.vp2px(160))) <= 1)
+      expect(Math.abs(Center_AddOneWidth_011.right - Center_AddOneWidth_011.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(160))) <= 1)
         .assertTrue();
-      expect(Math.abs(Center_AddOneWidth_012.right - Center_AddOneWidth_012.left - Math.round(uiContext.vp2px(150))) <= 1)
+      expect(Math.abs(Center_AddOneWidth_012.right - Center_AddOneWidth_012.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.abs(Center_AddOneWidth_013.right - Center_AddOneWidth_013.left - Math.round(uiContext.vp2px(150))) <= 1)
+      expect(Math.abs(Center_AddOneWidth_013.right - Center_AddOneWidth_013.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.abs(Center_AddOneWidth_011.bottom - Center_AddOneWidth_011.top - Math.round(uiContext.vp2px(50))) <= 1)
+      expect(Math.abs(Center_AddOneWidth_011.bottom - Center_AddOneWidth_011.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Center_AddOneWidth_012.bottom - Center_AddOneWidth_012.top - Math.round(uiContext.vp2px(100))) <= 1)
+      expect(Math.abs(Center_AddOneWidth_012.bottom - Center_AddOneWidth_012.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
-      expect(Math.abs(Center_AddOneWidth_013.bottom - Center_AddOneWidth_013.top - Math.round(uiContext.vp2px(150))) <= 1)
+      expect(Math.abs(Center_AddOneWidth_013.bottom - Center_AddOneWidth_013.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
 
       console.info('[testFlexAlignCenterTextWidth] END');

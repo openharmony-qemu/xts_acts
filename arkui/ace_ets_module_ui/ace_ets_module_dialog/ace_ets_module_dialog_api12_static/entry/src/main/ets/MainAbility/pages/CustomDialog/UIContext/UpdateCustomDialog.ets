@@ -33,7 +33,7 @@ import {
   Axis,
   Margin,DialogAlignment,
   PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
-  ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,px2vp,DialogAlignment
+  ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,DialogAlignment
 } from '@ohos.arkui.component';
 import {
   State,

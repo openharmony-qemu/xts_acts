@@ -114,17 +114,17 @@ it('testAlignContentSpaceEvenlyFlexfixedVisibilityHidden_static', Level.LEVEL0, 
       console.log('AlignContentFlexSpaceEvenly_4 rect_value is:' +
       JSON.stringify(AlignContentFlexSpaceEvenly_4));
       const uiContext = new UIContext();
-      expect(Math.abs((AlignContentFlexSpaceEvenly_2.bottom - AlignContentFlexSpaceEvenly_2.top) - uiContext.vp2px(100)) <= 1)
+      expect(Math.abs((AlignContentFlexSpaceEvenly_2.bottom - AlignContentFlexSpaceEvenly_2.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1)
         .assertTrue();
-      expect(Math.abs((AlignContentFlexSpaceEvenly_3.bottom - AlignContentFlexSpaceEvenly_3.top) - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs((AlignContentFlexSpaceEvenly_3.bottom - AlignContentFlexSpaceEvenly_3.top) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
-      expect(Math.abs((AlignContentFlexSpaceEvenly_4.bottom - AlignContentFlexSpaceEvenly_4.top) - uiContext.vp2px(200)) <= 1)
+      expect(Math.abs((AlignContentFlexSpaceEvenly_4.bottom - AlignContentFlexSpaceEvenly_4.top) - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1)
         .assertTrue();
-      expect(Math.abs((AlignContentFlexSpaceEvenly_2.right - AlignContentFlexSpaceEvenly_2.left) - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs((AlignContentFlexSpaceEvenly_2.right - AlignContentFlexSpaceEvenly_2.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
-      expect(Math.abs((AlignContentFlexSpaceEvenly_3.right - AlignContentFlexSpaceEvenly_3.left) - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs((AlignContentFlexSpaceEvenly_3.right - AlignContentFlexSpaceEvenly_3.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
-      expect(Math.abs((AlignContentFlexSpaceEvenly_4.right - AlignContentFlexSpaceEvenly_4.left) - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs((AlignContentFlexSpaceEvenly_4.right - AlignContentFlexSpaceEvenly_4.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
 
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual("FlexDirection.Row");
@@ -135,7 +135,7 @@ it('testAlignContentSpaceEvenlyFlexfixedVisibilityHidden_static', Level.LEVEL0, 
         .assertTrue();
       expect(Math.abs((AlignContentFlexSpaceEvenly_4.top - AlignContentFlexSpaceEvenly_3.bottom) - (AlignContentFlexSpaceEvenly_3.top - AlignContentFlexSpaceEvenly_flex001.top)) <= 1)
         .assertTrue();
-      expect(Math.abs((AlignContentFlexSpaceEvenly_2.left - AlignContentFlexSpaceEvenly_flex001.left) - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs((AlignContentFlexSpaceEvenly_2.left - AlignContentFlexSpaceEvenly_flex001.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
 
       console.info('testAlignContentSpaceEvenlyFlexfixedVisibilityHidden END');
@@ -179,17 +179,17 @@ it('testAlignContentSpaceEvenlyFlexfixedVisibilityNone_static', Level.LEVEL0, as
       console.log('AlignContentFlexSpaceEvenly_4 rect_value is:' +
       JSON.stringify(AlignContentFlexSpaceEvenly_4));
       const uiContext = new UIContext();
-      expect(Math.abs((AlignContentFlexSpaceEvenly_2.bottom - AlignContentFlexSpaceEvenly_2.top) - uiContext.vp2px(100)) <= 1)
+      expect(Math.abs((AlignContentFlexSpaceEvenly_2.bottom - AlignContentFlexSpaceEvenly_2.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1)
         .assertTrue();
-      expect(Math.abs((AlignContentFlexSpaceEvenly_3.bottom - AlignContentFlexSpaceEvenly_3.top) - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs((AlignContentFlexSpaceEvenly_3.bottom - AlignContentFlexSpaceEvenly_3.top) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
-      expect(Math.abs((AlignContentFlexSpaceEvenly_4.bottom - AlignContentFlexSpaceEvenly_4.top) - uiContext.vp2px(200)) <= 1)
+      expect(Math.abs((AlignContentFlexSpaceEvenly_4.bottom - AlignContentFlexSpaceEvenly_4.top) - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1)
         .assertTrue();
-      expect(Math.abs((AlignContentFlexSpaceEvenly_2.right - AlignContentFlexSpaceEvenly_2.left) - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs((AlignContentFlexSpaceEvenly_2.right - AlignContentFlexSpaceEvenly_2.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
-      expect(Math.abs((AlignContentFlexSpaceEvenly_3.right - AlignContentFlexSpaceEvenly_3.left) - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs((AlignContentFlexSpaceEvenly_3.right - AlignContentFlexSpaceEvenly_3.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
-      expect(Math.abs((AlignContentFlexSpaceEvenly_4.right - AlignContentFlexSpaceEvenly_4.left) - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs((AlignContentFlexSpaceEvenly_4.right - AlignContentFlexSpaceEvenly_4.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
       expect(Math.abs(AlignContentFlexSpaceEvenly_2.top - AlignContentFlexSpaceEvenly_3.top) <= 1).assertTrue();
       expect(Math.abs(AlignContentFlexSpaceEvenly_4.top - AlignContentFlexSpaceEvenly_3.top) <= 1).assertTrue();

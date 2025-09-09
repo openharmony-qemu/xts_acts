@@ -88,12 +88,12 @@ it('testColumnParentMarginSubMargin_static', Level.LEVEL0, async () => {
       let columnSetMar_2: RectValue = CommonFunc.getComponentRect('columnSetMar_2');
       let columnSetMar_3: RectValue = CommonFunc.getComponentRect('columnSetMar_3');
       let columnSetMar: RectValue = CommonFunc.getComponentRect('columnSetMar');
-      expect(Math.abs(columnSetMar_1.top - columnSetMar.top - Math.round(uiContext.vp2px(20))) <= 1).assertTrue()
-      expect(Math.abs(columnSetMar_2.top - columnSetMar_1.bottom - Math.round(uiContext.vp2px(50))) <= 1).assertTrue()
-      expect(Math.abs(columnSetMar_3.top - columnSetMar_2.bottom - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(columnSetMar_1.right - columnSetMar_1.left - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(columnSetMar_2.right - columnSetMar_2.left - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(columnSetMar_3.right - columnSetMar_3.left - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(columnSetMar_1.top - columnSetMar.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue()
+      expect(Math.abs(columnSetMar_2.top - columnSetMar_1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(columnSetMar_3.top - columnSetMar_2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnSetMar_1.right - columnSetMar_1.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(columnSetMar_2.right - columnSetMar_2.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(columnSetMar_3.right - columnSetMar_3.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
       expect(Math.abs(columnSetMar.bottom - columnSetMar_3.bottom) <= 1).assertTrue()
       console.info('new testColumnParentMarginSubMargin_static END');
     });

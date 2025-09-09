@@ -115,7 +115,7 @@ export default function layoutWeightTest() {
     },
     expectValue: {
       layoutWeight: 2,
-      // height: vp2px(400)
+      // height: UIContext.getFocusedUIContext()!.vp2px(400)
       height: 400
     }
   }, {
@@ -125,7 +125,7 @@ export default function layoutWeightTest() {
     },
     expectValue: {
       layoutWeight: 1.5,
-      // height: vp2px(360)
+      // height: UIContext.getFocusedUIContext()!.vp2px(360)
       height: 360
     }
   }, {
@@ -135,7 +135,7 @@ export default function layoutWeightTest() {
     },
     expectValue: {
       layoutWeight: 2,
-      // height: vp2px(400)
+      // height: UIContext.getFocusedUIContext()!.vp2px(400)
       height: 400
     }
   }]

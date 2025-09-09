@@ -88,13 +88,13 @@ it('testColumnParentPaddingSubMargin_static', Level.LEVEL0, async () => {
       let columnSetPad_2: RectValue = CommonFunc.getComponentRect('columnSetPad_2');
       let columnSetPad_3: RectValue = CommonFunc.getComponentRect('columnSetPad_3');
       let columnSetPad: RectValue = CommonFunc.getComponentRect('columnSetPad');
-      expect(Math.abs(columnSetPad_1.top - columnSetPad.top - Math.round(uiContext.vp2px(40))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPad_2.top - columnSetPad_1.bottom - Math.round(uiContext.vp2px(50))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPad_3.top - columnSetPad_2.bottom - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPad_1.top - columnSetPad.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPad_2.top - columnSetPad_1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPad_3.top - columnSetPad_2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
       expect(columnSetPad.bottom).assertLess(columnSetPad_3.bottom)
-      expect(Math.abs(columnSetPad_1.right - columnSetPad_1.left - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPad_2.right - columnSetPad_2.left - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPad_3.right - columnSetPad_3.left - Math.round(uiContext.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPad_1.right - columnSetPad_1.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPad_2.right - columnSetPad_2.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
+      expect(Math.abs(columnSetPad_3.right - columnSetPad_3.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue()
       console.info('new testColumnParentPaddingSubMargin_static END');
     });
   })

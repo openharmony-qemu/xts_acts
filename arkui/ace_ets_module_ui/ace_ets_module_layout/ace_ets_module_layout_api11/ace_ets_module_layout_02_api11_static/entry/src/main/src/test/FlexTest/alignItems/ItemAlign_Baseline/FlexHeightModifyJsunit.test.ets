@@ -100,15 +100,15 @@ it('testFlexItemAlignBaselineDefaultSize_static', Level.LEVEL0, async () : Promi
       expect(Math.abs(textHeightModify02.top - textHeightModify03.top - textHeightModify03.bottom + textHeightModify02.bottom) <= 1)
         .assertTrue()
 
-      expect(Math.abs(textHeightModify01.top - flexHeightModify.top - uiContext.vp2px(50)) <= 1).assertTrue()
+      expect(Math.abs(textHeightModify01.top - flexHeightModify.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
       expect(Math.abs(textHeightModify03.top - flexHeightModify.top) <= 1).assertTrue()
 
-      expect(Math.abs(textHeightModify01.bottom - textHeightModify01.top - uiContext.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(textHeightModify02.bottom - textHeightModify02.top - uiContext.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(textHeightModify03.bottom - textHeightModify03.top - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(textHeightModify01.right - textHeightModify01.left - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(textHeightModify02.right - textHeightModify02.left - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(textHeightModify03.right - textHeightModify03.left - uiContext.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(textHeightModify01.bottom - textHeightModify01.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
+      expect(Math.abs(textHeightModify02.bottom - textHeightModify02.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
+      expect(Math.abs(textHeightModify03.bottom - textHeightModify03.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(textHeightModify01.right - textHeightModify01.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(textHeightModify02.right - textHeightModify02.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(textHeightModify03.right - textHeightModify03.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
       
       
       console.info('new testFlexItemAlignBaselineDefaultSize_static END');
@@ -150,13 +150,13 @@ it('testFlexItemAlignBaselineHeightModify_static', Level.LEVEL0, async () : Prom
       expect(Math.abs(textHeightModify02.top - textHeightModify03.top - textHeightModify03.bottom + textHeightModify02.bottom) <= 1)
         .assertTrue()
 
-      expect(Math.abs(textHeightModify01.top - flexHeightModify.top - uiContext.vp2px(35)) <= 1).assertTrue()
-      expect(Math.abs(textHeightModify01.bottom - textHeightModify01.top - uiContext.vp2px(80)) <= 1).assertTrue()
-      expect(Math.abs(textHeightModify02.bottom - textHeightModify02.top - uiContext.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(textHeightModify03.bottom - textHeightModify03.top - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(textHeightModify01.right - textHeightModify01.left - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(textHeightModify02.right - textHeightModify02.left - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(textHeightModify03.right - textHeightModify03.left - uiContext.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(textHeightModify01.top - flexHeightModify.top - UIContext.getFocusedUIContext()!.vp2px(35)) <= 1).assertTrue()
+      expect(Math.abs(textHeightModify01.bottom - textHeightModify01.top - UIContext.getFocusedUIContext()!.vp2px(80)) <= 1).assertTrue()
+      expect(Math.abs(textHeightModify02.bottom - textHeightModify02.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
+      expect(Math.abs(textHeightModify03.bottom - textHeightModify03.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(textHeightModify01.right - textHeightModify01.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(textHeightModify02.right - textHeightModify02.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(textHeightModify03.right - textHeightModify03.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Baseline')
       console.info('new testFlexItemAlignBaselineHeightModify_static END');
