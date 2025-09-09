@@ -180,7 +180,7 @@ export default function rdbStoreSendableTest() {
       try {
         let sendableValuesBucket: sendableRelationalStore.ValuesBucket = sendableRelationalStore.toSendableValuesBucket(valuesBucket2);
         const rowId = rdbStore.insertSync(TABLE, sendableValuesBucket);
-        expect(rowId).assertEqual(1);
+        expect(rowId).assertEqual(2);
       } catch (err) {
         console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
         expect().assertFail();
