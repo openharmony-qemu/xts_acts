@@ -28,7 +28,6 @@ const TAG: string = 'NotificationActs';
 const TEST_SUITE_NAME: string = 'testemitterNotification';
 let bundle_name: string = "com.example.badgeemitter.static"
 let domain: int = 0x000
-let testAbilityContext: common.UIAbilityContext;
 
 export default function ActsNotificationEmitterTest() {
   describe('testemitterNotification', () => {
@@ -39,7 +38,6 @@ export default function ActsNotificationEmitterTest() {
       await Utils.msSleep(1000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name)
       await Utils.msSleep(1000)
-      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })
 
