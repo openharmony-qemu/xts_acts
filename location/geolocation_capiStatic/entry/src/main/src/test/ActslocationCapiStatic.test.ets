@@ -472,6 +472,7 @@ export default function actslocationTest() {
                     hilog.info(domain,tag,"subLocality"+data[0]?.subLocality)
                     hilog.info(domain,tag,"subRoadName"+data[0]?.subRoadName)
                     hilog.info(domain,tag,"isFromMock"+data[0]?.isFromMock)
+                    hilog.info(domain,tag,"description"+data[0]?.descriptions)
 
                 }
                 }
@@ -519,8 +520,8 @@ export default function actslocationTest() {
         })
 
         /**
-        * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCATIONERROR_0100
-        * @tc.name      : SUB_HSS_LOCATIONSYSTEM_LOCATIONERROR_0100
+        * @tc.number    : testLocationError01
+        * @tc.name      : testLocationError01
         * @tc.desc      : Initiate a specified continuous location request and set the reporting precision of abnormal location.
         * @tc.size      : MediumTest
         * @tc.type      : Function
@@ -556,8 +557,8 @@ export default function actslocationTest() {
         })
 
         /**
-        * @tc.number    : SUB_HSS_LOCATIONSYSTEM_LOCSWITCH_0700
-        * @tc.name      : SUB_HSS_LOCATIONSYSTEM_LOCSWITCH_0700
+        * @tc.number    : testLocationEnabledChange01
+        * @tc.name      : testLocationEnabledChange01
         * @tc.desc      : Subscribe to the location service status change.
         * @tc.size      : MediumTest
         * @tc.type      : Function
@@ -688,6 +689,144 @@ export default function actslocationTest() {
             }
             done();
         })
+
+
+let request_scenario_UNSET = geoLocationManager.LocationRequestScenario.UNSET
+let request_scenario_NAVIGATION = geoLocationManager.LocationRequestScenario.NAVIGATION
+let request_scenario_TRAJECTORY_TRACKING = geoLocationManager.LocationRequestScenario.TRAJECTORY_TRACKING
+let request_scenario_CAR_HAILING = geoLocationManager.LocationRequestScenario.CAR_HAILING
+let request_scenario_DAILY_LIFE_SERVICE = geoLocationManager.LocationRequestScenario.DAILY_LIFE_SERVICE
+let request_scenario_NO_POWER = geoLocationManager.LocationRequestScenario.NO_POWER
+
+let request_priority_UNSET = geoLocationManager.LocationRequestPriority.UNSET
+let request_priority_ACCURACY = geoLocationManager.LocationRequestPriority.ACCURACY
+let request_priority_LOW_POWER = geoLocationManager.LocationRequestPriority.LOW_POWER
+let request_priority_FIRST_FIX = geoLocationManager.LocationRequestPriority.FIRST_FIX
+
+let user_scenario_NAVIGATION = geoLocationManager.UserActivityScenario.NAVIGATION
+let user_scenario_SPORT = geoLocationManager.UserActivityScenario.SPORT
+let user_scenario_TRANSPORT = geoLocationManager.UserActivityScenario.TRANSPORT
+let user_scenario_DAILY_LIFE_SERVICE = geoLocationManager.UserActivityScenario.DAILY_LIFE_SERVICE
+
+let locating_priority_ACCURACY = geoLocationManager.LocatingPriority.PRIORITY_ACCURACY
+let locating_priority_SPEED = geoLocationManager.LocatingPriority.PRIORITY_LOCATING_SPEED
+
+let priority_HIGH_POWER = geoLocationManager.PowerConsumptionScenario.HIGH_POWER_CONSUMPTION
+let priority_LOW_POWER = geoLocationManager.PowerConsumptionScenario.LOW_POWER_CONSUMPTION
+let priority_NO_POWER = geoLocationManager.PowerConsumptionScenario.NO_POWER_CONSUMPTION
+
+let country_source_LOCALE = geoLocationManager.CountryCodeType.COUNTRY_CODE_FROM_LOCALE
+let country_source_SIM = geoLocationManager.CountryCodeType.COUNTRY_CODE_FROM_SIM
+let country_source_LOCATION = geoLocationManager.CountryCodeType.COUNTRY_CODE_FROM_LOCATION
+let country_source_NETWORK = geoLocationManager.CountryCodeType.COUNTRY_CODE_FROM_NETWORK
+
+let SATELLITES_ADD_INFO_NULL = geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_NULL
+let SATELLITES_ADD_INFO_EPHEMERIS_DATA_EXIST = geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_EPHEMERIS_DATA_EXIST
+let SATELLITES_ADD_INFO_ALMANAC_DATA_EXIST = geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_ALMANAC_DATA_EXIST
+let SATELLITES_ADD_INFO_USED_IN_FIX = geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_USED_IN_FIX
+let SATELLITES_ADD_INFO_CARRIER_FREQ_EXIST = geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_CARRIER_FREQUENCY_EXIST
+
+let CONSTELLATION_CATEGORY_UNKNOWN = geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_UNKNOWN
+let CONSTELLATION_CATEGORY_GPS = geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_GPS
+let CONSTELLATION_CATEGORY_SBAS = geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_SBAS
+let CONSTELLATION_CATEGORY_GLONASS = geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_GLONASS
+let CONSTELLATION_CATEGORY_QZSS = geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_QZSS
+let CONSTELLATION_CATEGORY_BEIDOU = geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_BEIDOU
+let CONSTELLATION_CATEGORY_GALILEO = geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_GALILEO
+let CONSTELLATION_CATEGORY_IRNSS = geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_IRNSS
+
+
+let LOCATING_FAILED_DEFAULT = geoLocationManager.LocationError.LOCATING_FAILED_DEFAULT
+let LOCATING_FAILED_LOCATION_PERMISSION_DENIED = geoLocationManager.LocationError.LOCATING_FAILED_LOCATION_PERMISSION_DENIED
+let LOCATING_FAILED_BACKGROUND_PERMISSION_DENIED = geoLocationManager.LocationError.LOCATING_FAILED_BACKGROUND_PERMISSION_DENIED
+let LOCATING_FAILED_LOCATION_SWITCH_OFF = geoLocationManager.LocationError.LOCATING_FAILED_LOCATION_SWITCH_OFF
+let LOCATING_FAILED_INTERNET_ACCESS_FAILURE = geoLocationManager.LocationError.LOCATING_FAILED_INTERNET_ACCESS_FAILURE
+
+let source_type_GNSS = geoLocationManager.LocationSourceType.GNSS
+let source_type_NETWORK = geoLocationManager.LocationSourceType.NETWORK
+let source_type_INDOOR = geoLocationManager.LocationSourceType.INDOOR
+let source_type_RTK = geoLocationManager.LocationSourceType.RTK
+
+let coordinate_WGS84 = geoLocationManager.CoordinateSystemType.WGS84
+let coordinate_GCJ02 = geoLocationManager.CoordinateSystemType.GCJ02
+
+let request_RUNNING = geoLocationManager.SportsType.RUNNING
+let request_WALKING = geoLocationManager.SportsType.WALKING
+let request_CYCLING = geoLocationManager.SportsType.CYCLING
+
+        /**
+        * @tc.number    : SUB_HSS_LOCATIONSYSTEM_Config_0001
+        * @tc.name      : testGeolocationManagerConfig001
+        * @tc.desc      : Test Config value.
+        * @tc.size      : MediumTest
+        * @tc.type      : Function
+        * @tc.level     : Level 2
+        */
+        it('testGeolocationManagerConfig001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
+            async()=>{
+                expect(true).assertEqual(request_scenario_UNSET == 0x300)
+                expect(true).assertEqual(request_scenario_NAVIGATION == 0x301)
+                expect(true).assertEqual(request_scenario_TRAJECTORY_TRACKING == 0x302)
+                expect(true).assertEqual(request_scenario_CAR_HAILING == 0x303)
+                expect(true).assertEqual(request_scenario_DAILY_LIFE_SERVICE == 0x304)
+                expect(true).assertEqual(request_scenario_NO_POWER == 0x305)
+
+                expect(true).assertEqual(request_priority_UNSET == 0x200)
+                expect(true).assertEqual(request_priority_ACCURACY == 0x201)
+                expect(true).assertEqual(request_priority_LOW_POWER == 0x202)
+                expect(true).assertEqual(request_priority_FIRST_FIX == 0x203)
+
+                expect(true).assertEqual(user_scenario_NAVIGATION == 0x401)
+                expect(true).assertEqual(user_scenario_SPORT == 0x402)
+                expect(true).assertEqual(user_scenario_TRANSPORT == 0x403)
+                expect(true).assertEqual(user_scenario_DAILY_LIFE_SERVICE == 0x404)
+
+                expect(true).assertEqual(locating_priority_ACCURACY == 0x501)
+                expect(true).assertEqual(locating_priority_SPEED == 0x502)
+
+                expect(true).assertEqual(priority_HIGH_POWER == 0x601)
+                expect(true).assertEqual(priority_LOW_POWER == 0x602)
+                expect(true).assertEqual(priority_NO_POWER == 0x603)
+
+                expect(true).assertEqual(country_source_LOCALE == 1)
+                expect(true).assertEqual(country_source_SIM == 2)
+                expect(true).assertEqual(country_source_LOCATION == 3)
+                expect(true).assertEqual(country_source_NETWORK == 4)
+
+                expect(true).assertEqual(SATELLITES_ADD_INFO_NULL == 0)
+                expect(true).assertEqual(SATELLITES_ADD_INFO_EPHEMERIS_DATA_EXIST == 1)
+                expect(true).assertEqual(SATELLITES_ADD_INFO_ALMANAC_DATA_EXIST == 2)
+                expect(true).assertEqual(SATELLITES_ADD_INFO_USED_IN_FIX == 4)
+                expect(true).assertEqual(SATELLITES_ADD_INFO_CARRIER_FREQ_EXIST == 8)
+
+                expect(true).assertEqual(CONSTELLATION_CATEGORY_UNKNOWN == 0)
+                expect(true).assertEqual(CONSTELLATION_CATEGORY_GPS == 1)
+                expect(true).assertEqual(CONSTELLATION_CATEGORY_SBAS == 2)
+                expect(true).assertEqual(CONSTELLATION_CATEGORY_GLONASS == 3)
+                expect(true).assertEqual(CONSTELLATION_CATEGORY_QZSS == 4)
+                expect(true).assertEqual(CONSTELLATION_CATEGORY_BEIDOU == 5)
+                expect(true).assertEqual(CONSTELLATION_CATEGORY_GALILEO == 6)
+                expect(true).assertEqual(CONSTELLATION_CATEGORY_IRNSS == 7)
+
+
+                expect(true).assertEqual(LOCATING_FAILED_DEFAULT == -1)
+                expect(true).assertEqual(LOCATING_FAILED_LOCATION_PERMISSION_DENIED == -2)
+                expect(true).assertEqual(LOCATING_FAILED_BACKGROUND_PERMISSION_DENIED == -3)
+                expect(true).assertEqual(LOCATING_FAILED_LOCATION_SWITCH_OFF == -4)
+                expect(true).assertEqual(LOCATING_FAILED_INTERNET_ACCESS_FAILURE == -5)
+                expect(true).assertEqual(source_type_GNSS == 1)
+                expect(true).assertEqual(source_type_NETWORK == 2)
+                expect(true).assertEqual(source_type_INDOOR == 3)
+                expect(true).assertEqual(source_type_RTK == 4)
+                expect(true).assertEqual(coordinate_WGS84 == 1)
+                expect(true).assertEqual(coordinate_GCJ02 == 2)
+                expect(true).assertEqual(request_RUNNING == 1)
+                expect(true).assertEqual(request_WALKING == 2)
+                expect(true).assertEqual(request_CYCLING == 3)
+        })
+
+
+
 
 
 
