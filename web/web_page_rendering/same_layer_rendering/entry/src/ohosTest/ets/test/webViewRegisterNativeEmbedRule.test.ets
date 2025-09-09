@@ -25,7 +25,7 @@ export default function WebViewRegisterNativeEmbedRule() {
 
     beforeAll(async (done: Function) => {
       let options : router.RouterOptions = {
-        url: 'testability/pages/WebViewRegisterNativeEmbedRule',
+        url: 'testability/pages/webViewRegisterNativeEmbedRule',
       }
 
       try {
