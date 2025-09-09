@@ -98,7 +98,7 @@ export default function rdbResultSetSJsTest() {
       await rdbStore.executeSql(CREATE_TABLE_TEST, null);
       await createTest();
     });
-    afterEach(() => {
+    afterEach(async () => {
       console.info(TAG + 'afterEach');
       await rdbStore.executeSql(DROP_TABLE_TEST, null);
     });
