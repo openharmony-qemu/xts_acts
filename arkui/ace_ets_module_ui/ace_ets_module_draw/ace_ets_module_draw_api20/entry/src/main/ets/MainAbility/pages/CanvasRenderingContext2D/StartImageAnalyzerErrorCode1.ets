@@ -19,7 +19,6 @@ import { BusinessError } from '@kit.BasicServicesKit';
 @Component
 struct ImageAnalyzerErrorCode {
   @State str : string = '0'
-  @State str1 : string = '0'
   private settings: RenderingContextSettings = new RenderingContextSettings(true)
   private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings)
   private config: ImageAnalyzerConfig = {
@@ -34,7 +33,7 @@ struct ImageAnalyzerErrorCode {
 
   build() {
     Column({ space:5 }) {
-      Row(){
+      Column(){
         Text(this.str).id('ErrorCodeStopImageAnalyzer').height(25)
       }
       Row({ space:2 }){
@@ -51,9 +50,16 @@ struct ImageAnalyzerErrorCode {
                 console.log('error code: ' + error.code)
                 this.str = error.code.toString()
                 const isLocationAvailable = canIUse('SystemCapability.AI.VisionImageAnalyzer')
-                if(isLocationAvailable != true){
+                if(isLocationAvailable != true ){
                   this.str='110003'
-            }
+                }
+                else if(this.aiController.getImageAnalyzerSupportTypes() == null){
+                  this.str='110003'
+                }
+                else if(this.aiController.getImageAnalyzerSupportTypes().toString() != '0,1,2'){
+                  this.str='110003'
+                }
+                console.log("imageAI: "+ this.aiController.getImageAnalyzerSupportTypes())
               })
             this.context.stopImageAnalyzer()
           })
