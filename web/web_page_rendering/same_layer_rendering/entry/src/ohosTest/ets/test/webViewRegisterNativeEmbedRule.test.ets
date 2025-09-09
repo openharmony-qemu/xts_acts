@@ -51,14 +51,14 @@ export default function WebViewRegisterNativeEmbedRule() {
     })
 
 
-    /*
-        * @tc.number     : SUB_WEB_EMBEDVISIBILITYCHANGE_0100
-        * @tc.name       : emitEmbedVisibilityChange001
-        * @tc.desc       : test EmbedVisibilityChange
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 1
-        */
+/*
+    * @tc.number     : SUB_ACE_WEB_WEBVIEWREGISTERNATIVEEMBEDRULE_API_0100
+    * @tc.name       : emitWebViewRegisterNativeEmbedRule0100
+    * @tc.desc       : emitWebViewRegisterNativeEmbedRule0100
+    * @tc.size_t     : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 0
+    */
     it('emitWebViewRegisterNativeEmbedRule0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewRegisterNativeEmbedRule0100"
       Utils.emitEvent(emitKey, 10);
