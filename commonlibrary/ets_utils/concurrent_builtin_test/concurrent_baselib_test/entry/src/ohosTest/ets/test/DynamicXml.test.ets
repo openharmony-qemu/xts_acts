@@ -1208,7 +1208,7 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_3300
+     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_3301
      * @tc.name      : testParseInfo_getAttributeCount
      * @tc.desc      : Test
      * @tc.size      : MediumTest

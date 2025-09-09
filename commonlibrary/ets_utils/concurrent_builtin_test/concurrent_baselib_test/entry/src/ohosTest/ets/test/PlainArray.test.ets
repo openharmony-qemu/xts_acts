@@ -68,7 +68,7 @@ export default function PlainArraydTest() {
     })
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_0100
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_0100
      * @tc.name      : testPlainArrayConstructor001
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -102,7 +102,7 @@ export default function PlainArraydTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_0200
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_0200
      * @tc.name      : testPlainArrayIsEmpty002
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -136,7 +136,7 @@ export default function PlainArraydTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_0300
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_0300
      * @tc.name      : testPlainArrayHas003
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -170,7 +170,7 @@ export default function PlainArraydTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_0400
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_0400
      * @tc.name      : testPlainArrayGet004
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -205,7 +205,7 @@ export default function PlainArraydTest() {
 
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_0600
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_0600
      * @tc.name      : testPlainArrayGetIndexOfKey005
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -239,7 +239,7 @@ export default function PlainArraydTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_0700
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_0700
      * @tc.name      : testPlainArrayGetIndexOfValue006
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -273,7 +273,7 @@ export default function PlainArraydTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_0900
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_0900
      * @tc.name      : testPlainArrayGetKeyAt007
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -307,7 +307,7 @@ export default function PlainArraydTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_1000
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_1000
      * @tc.name      : testPlainArrayGetValueAt008
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -341,7 +341,7 @@ export default function PlainArraydTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_1100
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_1100
      * @tc.name      : testPlainArrayClone009
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -375,7 +375,7 @@ export default function PlainArraydTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_1200
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_1200
      * @tc.name      : testPlainArrayAdd010
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -409,7 +409,7 @@ export default function PlainArraydTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_1400
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_1400
      * @tc.name      : testPlainArrayRemove011
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -443,7 +443,7 @@ export default function PlainArraydTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_1500
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_1500
      * @tc.name      : testPlainArrayRemoveAt012
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -478,7 +478,7 @@ export default function PlainArraydTest() {
 
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_1600
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_1600
      * @tc.name      : testPlainArrayRemoveRangeFrom013
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -512,7 +512,7 @@ export default function PlainArraydTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_1700
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_1700
      * @tc.name      : testPlainArraySetValueAt014
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -546,7 +546,7 @@ export default function PlainArraydTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_1800
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_1800
      * @tc.name      : testPlainArrayClear016
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -580,7 +580,7 @@ export default function PlainArraydTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_1900
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_1900
      * @tc.name      : testPlainArrayForEach017
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -614,7 +614,7 @@ export default function PlainArraydTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_2000
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_2000
      * @tc.name      : testPlainArraySymbolIterator018
      * @tc.desc      : Test
      * @tc.size      : MediumTest

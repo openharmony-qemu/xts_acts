@@ -335,7 +335,7 @@ export default function BuiltinsCharLiteralTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_CHAR_0900
-     * @tc.name      : testDataViewSetBigUint64_4100
+     * @tc.name      : testCharConcat
      * @tc.desc      : Test
      * @tc.size      : MediumTest
      * @tc.type      : Function

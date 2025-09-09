@@ -61,7 +61,7 @@ export default function QueueTest() {
     })
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_0100
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_0100
      * @tc.name      : testQueueAddNumber
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -95,7 +95,7 @@ export default function QueueTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_0200
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_0200
      * @tc.name      : testQueueAddString
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -129,7 +129,7 @@ export default function QueueTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_0300
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_0300
      * @tc.name      : testQueueAddUndefined
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -163,7 +163,7 @@ export default function QueueTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_0400
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_0400
      * @tc.name      : testQueuePop
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -198,7 +198,7 @@ export default function QueueTest() {
 
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_0600
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_0600
      * @tc.name      : testQueuePopEmpty
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -232,7 +232,7 @@ export default function QueueTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_0700
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_0700
      * @tc.name      : testQueueGetFirst
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -266,7 +266,7 @@ export default function QueueTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_0900
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_0900
      * @tc.name      : testQueueGetFirstEmpty
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -300,7 +300,7 @@ export default function QueueTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_1000
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_1000
      * @tc.name      : testQueueForEach
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -334,7 +334,7 @@ export default function QueueTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_1100
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_1100
      * @tc.name      : testQueueSymbolIterator
      * @tc.desc      : Test
      * @tc.size      : MediumTest

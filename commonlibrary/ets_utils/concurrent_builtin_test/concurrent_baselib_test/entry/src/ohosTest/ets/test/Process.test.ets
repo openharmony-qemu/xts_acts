@@ -70,7 +70,7 @@ export default function processTest() {
     })
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_0100
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_0100
      * @tc.name      : testProcessUid001
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -104,7 +104,7 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_0200
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_0200
      * @tc.name      : testProcessPid002
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -138,7 +138,7 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_0300
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_0300
      * @tc.name      : testProcessTid003
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -172,7 +172,7 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_0400
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_0400
      * @tc.name      : testProcessIsIsolated004
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -207,7 +207,7 @@ export default function processTest() {
 
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_0600
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_0600
      * @tc.name      : testProcessIs64Bit005
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -241,7 +241,7 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_0700
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_0700
      * @tc.name      : testProcessGetStartRealtime006
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -275,7 +275,7 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_0900
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_0900
      * @tc.name      : testProcessGetPastCpuTime007
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -309,7 +309,7 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_1000
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1000
      * @tc.name      : testProcessUptime008
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -343,7 +343,7 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_1100
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1100
      * @tc.name      : testProcessGetUidForName009
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -377,7 +377,7 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_1200
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1200
      * @tc.name      : testProcessManagerKill010
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -411,7 +411,7 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_1400
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1400
      * @tc.name      : testProcessManagerGetThreadPriority011
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -445,7 +445,7 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_1500
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1500
      * @tc.name      : testProcessIsAppUid012
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -480,7 +480,7 @@ export default function processTest() {
 
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_1600
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1600
      * @tc.name      : testProcessGetSystemConfig013
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -514,7 +514,7 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_1700
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1700
      * @tc.name      : testProcessGetEnvironmentVar014
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -548,7 +548,7 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_1800
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1800
      * @tc.name      : testProcessExit015
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -582,7 +582,7 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_1900
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1900
      * @tc.name      : testProcessManagerGetUidForName016
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -616,7 +616,7 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_2000
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_2000
      * @tc.name      : testProcessManagerGetSystemConfig018
      * @tc.desc      : Test
      * @tc.size      : MediumTest
@@ -651,7 +651,7 @@ export default function processTest() {
 
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_LINKED_2100
+     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_2100
      * @tc.name      : testProcessManagerGetEnvironmentVar019
      * @tc.desc      : Test
      * @tc.size      : MediumTest
