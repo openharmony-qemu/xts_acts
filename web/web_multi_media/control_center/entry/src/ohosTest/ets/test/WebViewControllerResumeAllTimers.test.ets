@@ -17,10 +17,14 @@ import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import events_emitter from '@ohos.events.emitter';
-import { waitAndClickComponent } from './WaitTest.test';
+import { waitForComponents } from './WaitTest.test';
+import { Driver } from '@kit.TestKit';
 
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const driver = Driver.create();
+
 export default function webViewControllerResumeAllTimers() {
 
  describe('webViewControllerResumeAllTimers', () => {
@@ -40,6 +44,7 @@ export default function webViewControllerResumeAllTimers() {
       } catch (err) {
         console.error("push WebViewControllerResumeAllTimers page error: " + err);
       }
+      await waitForComponents('WebViewControllerResumeAllTimers');
       done()
     });
     beforeEach(async (done: Function) => {
@@ -66,7 +71,7 @@ export default function webViewControllerResumeAllTimers() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent('WebViewControllerResumeAllTimers');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerResumeAllTimers');
     })
 
     /*
@@ -83,7 +88,7 @@ export default function webViewControllerResumeAllTimers() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent('WebViewControllerResumeAllTimers');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerResumeAllTimers');
     })
 
     /*
@@ -100,7 +105,7 @@ export default function webViewControllerResumeAllTimers() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent('WebViewControllerResumeAllTimers');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerResumeAllTimers');
     })
 
     /*
@@ -117,7 +122,7 @@ export default function webViewControllerResumeAllTimers() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent('WebViewControllerResumeAllTimers');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerResumeAllTimers');
     })
 
     /*
@@ -134,7 +139,7 @@ export default function webViewControllerResumeAllTimers() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent('WebViewControllerResumeAllTimers');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerResumeAllTimers');
     })
 
     /*
@@ -151,7 +156,7 @@ export default function webViewControllerResumeAllTimers() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent('WebViewControllerResumeAllTimers');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerResumeAllTimers');
     })
 
     /*
@@ -168,7 +173,7 @@ export default function webViewControllerResumeAllTimers() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent('WebViewControllerResumeAllTimers');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerResumeAllTimers');
     })
   })
 }

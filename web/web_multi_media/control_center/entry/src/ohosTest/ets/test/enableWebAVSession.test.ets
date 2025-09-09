@@ -18,10 +18,13 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { waitAndClickComponent } from './WaitTest.test';
+import { waitForComponents } from './WaitTest.test';
+import { Driver } from '@kit.TestKit';
 
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const driver = Driver.create();
 
 export default function webenableSmoothDragResizeTestJsunit() {
   describe('enableWebAVSessionTest',  () =>{
@@ -41,6 +44,7 @@ export default function webenableSmoothDragResizeTestJsunit() {
       } catch (err) {
         console.error("push enableWebAVSession page error: " + err);
       }
+      await waitForComponents('enableWebAVSessionButton');
       done()
     });
     beforeEach(async  (done: Function) =>{
@@ -67,7 +71,7 @@ export default function webenableSmoothDragResizeTestJsunit() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent('enableWebAVSessionButton');
+      await Utils.waitAndClickComponent(driver, 'enableWebAVSessionButton');
     })
 
 

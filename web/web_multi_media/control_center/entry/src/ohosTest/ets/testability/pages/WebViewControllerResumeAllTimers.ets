@@ -122,12 +122,8 @@ struct WebViewControllerResumeAllTimers {
                 let num1: number = -1;
                 let num2: number = -1;
                 let flag: boolean = false;
-                this.controller.runJavaScript("resetTimer()", () => {
-                  flag = true;
-                })
-                await waitForExist(() => flag ? 1 : 0, this.str, 1);
+                this.controller.runJavaScript("resetTimer()");
                 web_webview.WebviewController.pauseAllTimers();
-                flag = false;
                 this.controller.runJavaScript("changeTime()", () => {
                   flag = true;
                 })
@@ -145,8 +141,7 @@ struct WebViewControllerResumeAllTimers {
                     num2 = Number.parseInt(res);
                   })
                   return num2;
-                }
-                , this.str, 1);
+                } , this.str, 1);
                 if (num1 == 0) {
                   isPause = true;
                 }
@@ -172,11 +167,7 @@ struct WebViewControllerResumeAllTimers {
                   flag = true;
                 })
                 await waitForExist(() => flag ? 1 : 0, this.str, 1);
-                flag = false;
-                this.controller.runJavaScript("changeTime()", () => {
-                  flag = true;
-                })
-                await waitForExist(() => flag ? 1 : 0, this.str, 1);
+                this.controller.runJavaScript("changeTime()");
                 web_webview.WebviewController.pauseAllTimers();
                 this.controller.runJavaScript("getNum()", (err, res) => {
                   console.info('key==>getNum7 res :' + JSON.stringify(res))
@@ -211,11 +202,7 @@ struct WebViewControllerResumeAllTimers {
                 let num1: number = 0;
                 let num2: number = 0;
                 let flag: boolean = false;
-                this.controller.runJavaScript("resetTimer()", () => {
-                  flag = true;
-                });
-                await waitForExist(() => flag ? 1 : 0, this.str, 1);
-                flag = false;
+                this.controller.runJavaScript("resetTimer()");
                 this.controller.runJavaScript("startTimer()", () => {
                   flag = true;
                 });
@@ -267,10 +254,7 @@ struct WebViewControllerResumeAllTimers {
               try {
                 let num1: number = -1;
                 let flag: boolean = false;
-                this.controller.runJavaScript("resetTimer()", () => {
-                  flag = true;
-                })
-                await waitForExist(() => flag ? 1 : 0, this.str, 1);
+                this.controller.runJavaScript("resetTimer()");
                 web_webview.WebviewController.pauseAllTimers();
                 flag = false;
                 this.controller.runJavaScript("startTimer()", () => {
@@ -300,10 +284,7 @@ struct WebViewControllerResumeAllTimers {
               try {
                 let num1: number = -1;
                 let flag: boolean = false;
-                this.controller.runJavaScript("resetTimer()", () => {
-                  flag = true;
-                })
-                await waitForExist(() => flag ? 1 : 0, this.str, 1);
+                this.controller.runJavaScript("resetTimer()");
                 web_webview.WebviewController.pauseAllTimers();
                 flag = false;
                 this.controller.runJavaScript("changeTime()", () => {
@@ -337,21 +318,9 @@ struct WebViewControllerResumeAllTimers {
                 let num3: number = 0;
                 let num4: number = 0;
                 let flag: boolean = false;
-                this.controller.runJavaScript("resetTimer()", () => {
-                  flag = true;
-                })
-                await waitForExist(() => flag ? 1 : 0, this.str, 1);
-                flag = false;
-                this.controller1.runJavaScript("resetTimer()", () => {
-                  flag = true;
-                })
-                await waitForExist(() => flag ? 1 : 0, this.str, 1);
-                flag = false;
-                this.controller.runJavaScript("startTimer()", () => {
-                  flag = true;
-                })
-                await waitForExist(() => flag ? 1 : 0, this.str, 1);
-                flag = false;
+                this.controller.runJavaScript("resetTimer()");
+                this.controller1.runJavaScript("resetTimer()");
+                this.controller.runJavaScript("startTimer()");
                 this.controller1.runJavaScript("startTimer()", () => {
                   flag = true;
                 })
@@ -365,13 +334,7 @@ struct WebViewControllerResumeAllTimers {
                   console.info('key==>getNum16 res :' + JSON.stringify(res))
                   num2 = Number.parseInt(res);
                 })
-
-                flag = false;
-                this.controller.runJavaScript("startTimer()", () => {
-                  flag = true;
-                })
-                await waitForExist(() => flag ? 1 : 0, this.str, 1);
-
+                this.controller.runJavaScript("startTimer()");
                 flag = false;
                 this.controller1.runJavaScript("startTimer()", () => {
                   flag = true;
@@ -392,21 +355,9 @@ struct WebViewControllerResumeAllTimers {
                 }
                 await waitForExist(() => isPause ? 1 : 0, this.str, 1);
                 web_webview.WebviewController.resumeAllTimers();
-                flag = false;
-                this.controller.runJavaScript("resetTimer()", () => {
-                  flag = true;
-                })
-                await waitForExist(() => flag ? 1 : 0, this.str, 1);
-                flag = false;
-                this.controller1.runJavaScript("resetTimer()", () => {
-                  flag = true;
-                })
-                await waitForExist(() => flag ? 1 : 0, this.str, 1);
-                flag = false;
-                this.controller.runJavaScript("startTimer()", () => {
-                  flag = true;
-                })
-                await waitForExist(() => flag ? 1 : 0, this.str, 1);
+                this.controller.runJavaScript("resetTimer()");
+                this.controller1.runJavaScript("resetTimer()");
+                this.controller.runJavaScript("startTimer()");
                 flag = false;
                 this.controller1.runJavaScript("startTimer()", () => {
                   flag = true;
