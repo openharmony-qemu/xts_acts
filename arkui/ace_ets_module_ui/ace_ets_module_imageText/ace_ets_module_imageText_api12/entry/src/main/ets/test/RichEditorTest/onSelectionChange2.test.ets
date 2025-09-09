@@ -64,7 +64,6 @@ export default function onSelectionChange2() {
       await CommonFunc.sleep(1000);
 
       await driver.triggerKey(2017);
-	  await driver.triggerKey(2047)
       await CommonFunc.sleep(1000);
       let text1 = getInspectorByKey('onSelectionChange2_text1');
       let Obj1: ESObject = JSON.parse(text1);
