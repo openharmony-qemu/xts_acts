@@ -111,5 +111,86 @@ export default function formExtensionAbilityTest() {
             done();
             hilog.info(DOMAIN, TAG, 'onConfigurationUpdateStaticTest001 end');
         })
+
+        /**
+         * @tc.number: OnShareFormStaticTest001
+         * @tc.name: OnShareFormStaticTest001
+         * @tc.desc: check OnShareForm
+         */
+        it("OnShareFormStaticTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            hilog.info(DOMAIN, TAG, 'OnShareFormStaticTest001 start');
+
+            let FormExtensionAbilityOnShareFormTest_Event: CommonEventManager.CommonEventSubscribeInfo = {
+                events: ["XTS_FormExtensionAbilityOnShareForm_commonEvent"],
+            };
+            let isChecked: boolean = false;
+            subscriberForm = CommonEventManager.createSubscriberSync(FormExtensionAbilityOnShareFormTest_Event);
+            let OnShareFormCallback = (_: BusinessError | null, data: CommonEventManager.CommonEventData | undefined) => {
+                isChecked = true;
+                hilog.info(DOMAIN, TAG, "OnShareFormStaticTest001 OnShareFormCallBack");
+                expect(data?.event).assertEqual("XTS_FormExtensionAbilityOnShareForm_commonEvent");
+                CommonEventManager.unsubscribe(subscriberForm, () => unsubscribeCallback("OnShareFormStaticTest001"));
+            }
+            CommonEventManager.subscribe(subscriberForm, OnShareFormCallback);
+
+            expect(true).assertTrue();
+
+            done();
+            hilog.info(DOMAIN, TAG, 'OnShareFormStaticTest001 end');
+        })
+
+        /**
+         * @tc.number: OnAcquireFormDataStaticTest001
+         * @tc.name: OnAcquireFormDataStaticTest001
+         * @tc.desc: check OnAcquireFormData
+         */
+        it("OnAcquireFormDataStaticTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            hilog.info(DOMAIN, TAG, 'OnAcquireFormDataStaticTest001 start');
+
+            let FormExtensionAbilityOnAcquireFormDataTest_Event: CommonEventManager.CommonEventSubscribeInfo = {
+                events: ["XTS_FormExtensionAbilityOnAcquireFormData_commonEvent"],
+            };
+            let isChecked: boolean = false;
+            subscriberForm = CommonEventManager.createSubscriberSync(FormExtensionAbilityOnAcquireFormDataTest_Event);
+            let OnAcquireFormDataCallback = (_: BusinessError | null, data: CommonEventManager.CommonEventData | undefined) => {
+                isChecked = true;
+                hilog.info(DOMAIN, TAG, "OnAcquireFormDataStaticTest001 OnAcquireFormDataCallBack");
+                expect(data?.event).assertEqual("XTS_FormExtensionAbilityOnAcquireFormData_commonEvent");
+                CommonEventManager.unsubscribe(subscriberForm, () => unsubscribeCallback("OnAcquireFormDataStaticTest001"));
+            }
+            CommonEventManager.subscribe(subscriberForm, OnAcquireFormDataCallback);
+
+            expect(true).assertTrue();
+
+            done();
+            hilog.info(DOMAIN, TAG, 'OnAcquireFormDataStaticTest001 end');
+        })
+
+        /**
+         * @tc.number: onFormLocationChangedStaticTest001
+         * @tc.name: onFormLocationChangedStaticTest001
+         * @tc.desc: check onFormLocationChanged
+         */
+        it("onFormLocationChangedStaticTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            hilog.info(DOMAIN, TAG, 'onFormLocationChangedStaticTest001 start');
+
+            let FormExtensionAbilityonFormLocationChangedTest_Event: CommonEventManager.CommonEventSubscribeInfo = {
+                events: ["XTS_FormExtensionAbilityonFormLocationChanged_commonEvent"],
+            };
+            let isChecked: boolean = false;
+            subscriberForm = CommonEventManager.createSubscriberSync(FormExtensionAbilityonFormLocationChangedTest_Event);
+            let onFormLocationChangedCallback = (_: BusinessError | null, data: CommonEventManager.CommonEventData | undefined) => {
+                isChecked = true;
+                hilog.info(DOMAIN, TAG, "onFormLocationChangedStaticTest001 onFormLocationChangedCallBack");
+                expect(data?.event).assertEqual("XTS_FormExtensionAbilityonFormLocationChanged_commonEvent");
+                CommonEventManager.unsubscribe(subscriberForm, () => unsubscribeCallback("onFormLocationChangedStaticTest001"));
+            }
+            CommonEventManager.subscribe(subscriberForm, onFormLocationChangedCallback);
+
+            expect(true).assertTrue();
+
+            done();
+            hilog.info(DOMAIN, TAG, 'onFormLocationChangedStaticTest001 end');
+        })
     })
 }
