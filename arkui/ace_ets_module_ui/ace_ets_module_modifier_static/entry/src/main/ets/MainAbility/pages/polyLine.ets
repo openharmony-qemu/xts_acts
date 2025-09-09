@@ -88,7 +88,6 @@ import {
   PickerTextStyle,
   Polygon,
   Polyline,
-  px2vp,
   RepeatMode,
   ResourceColor,
   Row,

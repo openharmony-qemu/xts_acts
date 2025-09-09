@@ -93,9 +93,9 @@ it('SUB_ACE_Grid_Col_Order_Number_TEST_static_0100', Level.LEVEL0, async (done: 
 
       const uiContext = new UIContext();
       console.log('assert space')
-      expect(Math.abs((Grid_Col_Order_Number_02.top - Grid_Col_Order_Number_01.bottom) - uiContext.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Grid_Col_Order_Number_03.top - Grid_Col_Order_Number_02.bottom) - uiContext.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Grid_Col_Order_Number_04.top - Grid_Col_Order_Number_03.bottom) - uiContext.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs((Grid_Col_Order_Number_02.top - Grid_Col_Order_Number_01.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs((Grid_Col_Order_Number_03.top - Grid_Col_Order_Number_02.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs((Grid_Col_Order_Number_04.top - Grid_Col_Order_Number_03.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
 
       console.info('[SUB_ACE_Grid_Col_Order_Number_TEST_static_0100] END');
       done();
@@ -126,9 +126,9 @@ it('SUB_ACE_Grid_Col_Order_Number_TEST_static_0200', Level.LEVEL0, async (done: 
 
       const uiContext = new UIContext();
       console.log('assert space')
-      expect(Math.abs((Grid_Col_Order_Number_02.top - Grid_Col_Order_Number_01.bottom) - uiContext.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Grid_Col_Order_Number_03.top - Grid_Col_Order_Number_02.bottom) - uiContext.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Grid_Col_Order_Number_04.top - Grid_Col_Order_Number_03.bottom) - uiContext.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs((Grid_Col_Order_Number_02.top - Grid_Col_Order_Number_01.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs((Grid_Col_Order_Number_03.top - Grid_Col_Order_Number_02.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs((Grid_Col_Order_Number_04.top - Grid_Col_Order_Number_03.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
 
       console.info('[SUB_ACE_Grid_Col_Order_Number_TEST_static_0200] END');
       done();
@@ -163,9 +163,9 @@ it('SUB_ACE_Grid_Col_Order_Number_TEST_static_0300', Level.LEVEL0, async (done: 
 
       const uiContext = new UIContext();
       console.log('assert space')
-      expect(Math.abs((Grid_Col_Order_Number_03.top - Grid_Col_Order_Number_02.bottom) - uiContext.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Grid_Col_Order_Number_04.top - Grid_Col_Order_Number_03.bottom) - uiContext.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Grid_Col_Order_Number_01.top - Grid_Col_Order_Number_04.bottom) - uiContext.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs((Grid_Col_Order_Number_03.top - Grid_Col_Order_Number_02.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs((Grid_Col_Order_Number_04.top - Grid_Col_Order_Number_03.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs((Grid_Col_Order_Number_01.top - Grid_Col_Order_Number_04.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
 
       console.info('[SUB_ACE_Grid_Col_Order_Number_TEST_static_0200] END');
       done();

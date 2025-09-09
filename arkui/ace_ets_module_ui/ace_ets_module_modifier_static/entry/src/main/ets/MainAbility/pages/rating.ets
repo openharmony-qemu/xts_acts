@@ -90,7 +90,6 @@ import {
   Polyline,
   Progress,
   ProgressType,
-  px2vp,
   QRCode,
   Rating,
   RepeatMode,

@@ -15,7 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium';
 import router from '@ohos.router';
-import {vp2px,FlexAlign,HorizontalAlign} from '@ohos.arkui.component'
+import {FlexAlign,HorizontalAlign} from '@ohos.arkui.component'
 
 import  RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
@@ -101,26 +101,26 @@ it('testColumnAlignItemsChangeParentHorizontalAlignStart_static', Level.LEVEL0, 
       expect(Math.abs((locationText1.left) - (locationColumn.left)) <= 1).assertTrue();
       expect(Math.abs((locationText1.left) - (locationText2.left)) <= 1).assertTrue();
       expect(Math.abs((locationText2.left) - (locationText3.left)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(locationColumn.right - locationText1.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(locationColumn.right - locationText1.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
       expect(Math.abs((locationText1.top) - (locationColumn.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(locationColumn.bottom - locationText3.bottom)) - (Math.round(vp2px(40)))) <= 1)
+      expect(Math.abs((Math.round(locationColumn.bottom - locationText3.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(40)))) <= 1)
         .assertTrue();
       expect(Math.abs((Math.round(locationText2.top - locationText1.bottom)) - (Math.round(locationText3.top - locationText2.bottom))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.top - locationText1.bottom)) - (Math.round(vp2px(30)))) <= 1)
+      expect(Math.abs((Math.round(locationText2.top - locationText1.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText1.right - locationText1.left)) - (Math.round(vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(locationText1.right - locationText1.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.right - locationText2.left)) - (Math.round(vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(locationText2.right - locationText2.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText3.right - locationText3.left)) - (Math.round(vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(locationText3.right - locationText3.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText1.bottom - locationText1.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(locationText1.bottom - locationText1.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.bottom - locationText2.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(locationText2.bottom - locationText2.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText3.bottom - locationText3.top)) - (Math.round(vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(locationText3.bottom - locationText3.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.info('new testColumnAlignItemsChangeParentHorizontalAlignStart_static END');
     });
@@ -154,26 +154,26 @@ it('testColumnAlignItemsChangeParentHorizontalAlignEnd_static', Level.LEVEL0, as
       expect(Math.abs((locationText1.right) - (locationColumn.right)) <= 1).assertTrue();
       expect(Math.abs((locationText1.right) - (locationText2.right)) <= 1).assertTrue();
       expect(Math.abs((locationText2.right) - (locationText3.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(locationText1.left - locationColumn.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(locationText1.left - locationColumn.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
       expect(Math.abs((locationText1.top) - (locationColumn.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(locationColumn.bottom - locationText3.bottom)) - (Math.round(vp2px(40)))) <= 1)
+      expect(Math.abs((Math.round(locationColumn.bottom - locationText3.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(40)))) <= 1)
         .assertTrue();
       expect(Math.abs((Math.round(locationText2.top - locationText1.bottom)) - (Math.round(locationText3.top - locationText2.bottom))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.top - locationText1.bottom)) - (Math.round(vp2px(30)))) <= 1)
+      expect(Math.abs((Math.round(locationText2.top - locationText1.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText1.right - locationText1.left)) - (Math.round(vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(locationText1.right - locationText1.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.right - locationText2.left)) - (Math.round(vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(locationText2.right - locationText2.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText3.right - locationText3.left)) - (Math.round(vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(locationText3.right - locationText3.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText1.bottom - locationText1.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(locationText1.bottom - locationText1.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.bottom - locationText2.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(locationText2.bottom - locationText2.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText3.bottom - locationText3.top)) - (Math.round(vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(locationText3.bottom - locationText3.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.info('new testColumnAlignItemsChangeParentHorizontalAlignEnd END');
     });

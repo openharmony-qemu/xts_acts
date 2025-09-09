@@ -83,7 +83,6 @@ import {
   NavDestination,
   Padding,
   PickerTextStyle,
-  px2vp,
   RepeatMode,
   ResourceColor,
   Row,

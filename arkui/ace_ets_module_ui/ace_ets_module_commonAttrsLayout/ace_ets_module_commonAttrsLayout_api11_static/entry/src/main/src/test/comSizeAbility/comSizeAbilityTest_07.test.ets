@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { vp2px } from '@ohos.arkui.component';
+
 import componentUtils from '@ohos.arkui.componentUtils';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
@@ -141,8 +141,8 @@ export default function comSizeAbilityTest_07() {
 
 
           await CommonFunc.sleep(1000);
-          await (driver?.click(Math.round(AppStorage.get<number>("winLeft") as number + vp2px(200)) as Int,
-            Math.round(AppStorage.get<number>("winTop") as number + vp2px(200)) as Int) as Promise<void>);
+          await (driver?.click(Math.round(AppStorage.get<number>("winLeft") as number + UIContext.getFocusedUIContext()!.vp2px(200)) as Int,
+            Math.round(AppStorage.get<number>("winTop") as number + UIContext.getFocusedUIContext()!.vp2px(200)) as Int) as Promise<void>);
           await CommonFunc.sleep(1000);
         }
         console.info('[comSizeAbilityTestJsunit_static_22] END')

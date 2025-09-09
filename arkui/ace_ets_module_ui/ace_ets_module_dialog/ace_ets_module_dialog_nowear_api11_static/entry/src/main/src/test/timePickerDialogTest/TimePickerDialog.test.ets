@@ -37,7 +37,7 @@ import deviceInfo from '@ohos.deviceInfo'
 import { BusinessError } from '@ohos.base';
 import window from '@ohos.window';
 import { startAbility, stopApplication, UtilsTest } from '../Util.test';
-import { Error, vp2px } from '@ohos.arkui.component'
+import { Error } from '@ohos.arkui.component'
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';

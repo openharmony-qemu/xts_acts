@@ -78,7 +78,7 @@ export default function TimePickerAddApi() {
       let driver = Driver.create();
       let pos = CommonFunc.getComponentRectOnScreen('TimePickerAddApi')
       await CommonFunc.sleep(500);
-      await driver.swipe(Math.round(pos.right - uiContext!.vp2px(100)) as int,Math.round(pos.bottom - uiContext!.vp2px(10)) as int,Math.round(pos.right - uiContext!.vp2px(100))as int,Math.round(pos.top) as int);
+      await driver.swipe(Math.round(pos.right - UIContext.getFocusedUIContext()!.vp2px(100)) as int,Math.round(pos.bottom - UIContext.getFocusedUIContext()!.vp2px(10)) as int,Math.round(pos.right - UIContext.getFocusedUIContext()!.vp2px(100))as int,Math.round(pos.top) as int);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('TimePickerAddApiText');
       await CommonFunc.sleep(200);

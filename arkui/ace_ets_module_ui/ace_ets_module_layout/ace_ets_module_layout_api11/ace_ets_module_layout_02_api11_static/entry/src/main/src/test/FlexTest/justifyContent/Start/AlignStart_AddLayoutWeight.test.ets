@@ -117,12 +117,12 @@ it('testFlexAlignStartTextLayoutWeight01_static', Level.LEVEL0, async () : Promi
       expect(Math.abs(Start_AddLayoutWeight_012.right - Start_AddLayoutWeight_013.left) <= 1).assertTrue()
       expect(Math.abs(Start_AddLayoutWeight_01.left - Start_AddLayoutWeight_011.left) <= 1).assertTrue()
       expect(Math.abs(Start_AddLayoutWeight_013.right - Start_AddLayoutWeight_01.right) <= 1).assertTrue()
-      expect(Math.abs(Start_AddLayoutWeight_011.right - Start_AddLayoutWeight_011.left - uiContext.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddLayoutWeight_012.right - Start_AddLayoutWeight_012.left - uiContext.vp2px(200)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddLayoutWeight_013.right - Start_AddLayoutWeight_013.left - uiContext.vp2px(200)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddLayoutWeight_011.bottom - Start_AddLayoutWeight_011.top - uiContext.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddLayoutWeight_012.bottom - Start_AddLayoutWeight_012.top - uiContext.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddLayoutWeight_013.bottom - Start_AddLayoutWeight_013.top - uiContext.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddLayoutWeight_011.right - Start_AddLayoutWeight_011.left - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddLayoutWeight_012.right - Start_AddLayoutWeight_012.left - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddLayoutWeight_013.right - Start_AddLayoutWeight_013.left - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddLayoutWeight_011.bottom - Start_AddLayoutWeight_011.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddLayoutWeight_012.bottom - Start_AddLayoutWeight_012.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddLayoutWeight_013.bottom - Start_AddLayoutWeight_013.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
       console.info('[testFlexAlignStartTextLayoutWeight01] END');
 
     });
@@ -170,14 +170,14 @@ it('testFlexAlignStartTextLayoutWeight02_static', Level.LEVEL0, async () : Promi
       let oneWidth = Math.round(Start_AddLayoutWeight_011.right - Start_AddLayoutWeight_011.left);
       let twoWidth = Math.round(Start_AddLayoutWeight_012.right - Start_AddLayoutWeight_012.left);
       expect(Math.abs(twoWidth / oneWidth - 2) <= 1).assertTrue()
-      expect(Math.abs(Math.round(twoWidth + oneWidth) - Math.round(uiContext.vp2px(350))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Start_AddLayoutWeight_013.right - Start_AddLayoutWeight_013.left) - Math.round(uiContext.vp2px(150))) <= 1)
+      expect(Math.abs(Math.round(twoWidth + oneWidth) - Math.round(UIContext.getFocusedUIContext()!.vp2px(350))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(Start_AddLayoutWeight_013.right - Start_AddLayoutWeight_013.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Start_AddLayoutWeight_011.bottom - Start_AddLayoutWeight_011.top) - Math.round(uiContext.vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(Start_AddLayoutWeight_011.bottom - Start_AddLayoutWeight_011.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Start_AddLayoutWeight_012.bottom - Start_AddLayoutWeight_012.top) - Math.round(uiContext.vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(Start_AddLayoutWeight_012.bottom - Start_AddLayoutWeight_012.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Start_AddLayoutWeight_013.bottom - Start_AddLayoutWeight_013.top) - Math.round(uiContext.vp2px(150))) <= 1)
+      expect(Math.abs(Math.round(Start_AddLayoutWeight_013.bottom - Start_AddLayoutWeight_013.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignStartTextLayoutWeight02] END');
 

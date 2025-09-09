@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { vp2px } from '@ohos.arkui.component'
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../hypium/index';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue from '../../../ets/MainAbility/common/Rect';
@@ -93,7 +93,7 @@ it('ListLanes03_static_001', Level.LEVEL0, async (done: () => void): Promise<voi
       let ListItem0 = CommonFunc.getComponentRect('ListLanes31_0');
       let ListItem1 = CommonFunc.getComponentRect('ListLanes31_1');
       await CommonFunc.sleep(1000);
-      expect(Math.abs(Math.round(ListItem1.left - ListItem0.right) - Math.round(vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem1.left - ListItem0.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[ListLanes03_static_001] END');
       done();

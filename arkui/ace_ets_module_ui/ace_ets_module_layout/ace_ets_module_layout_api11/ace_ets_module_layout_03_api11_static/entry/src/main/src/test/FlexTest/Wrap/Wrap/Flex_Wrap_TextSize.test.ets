@@ -100,18 +100,18 @@ it('testWrapWrapTextSizeMeet_static', Level.LEVEL0, async () => {
       expect(Math.abs(firstText.top - secondText.top) <= 1).assertTrue();
       expect(Math.abs(secondText.top - thirdText.top) <= 1).assertTrue();
 
-      expect(Math.abs(firstText.bottom - firstText.top - Math.round(uiContext.vp2px(50))) <= 1).assertTrue();
-      expect(Math.abs(secondText.bottom - secondText.top - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(thirdText.bottom - thirdText.top - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(firstText.bottom - firstText.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(secondText.bottom - secondText.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(thirdText.bottom - thirdText.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
 
-      expect(Math.abs(firstText.right - firstText.left - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(firstText.right - firstText.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
       expect(Math.abs(firstText.right - firstText.left - Math.round(secondText.right - secondText.left)) <= 1)
         .assertTrue();
       expect(Math.abs(firstText.right - firstText.left - Math.round(thirdText.right - thirdText.left)) <= 1)
         .assertTrue();
 
-      expect(Math.abs(flexContainer.right - thirdText.right - Math.round(uiContext.vp2px(50))) <= 1).assertTrue();
-      expect(Math.abs(flexContainer.bottom - thirdText.bottom - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(flexContainer.right - thirdText.right - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(flexContainer.bottom - thirdText.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
       console.info('[testWrapWrapTextSizeMeet] END');
 
     });
@@ -138,11 +138,11 @@ it('testWrapWrapTextSizeOverflow_static', Level.LEVEL0, async () => {
       expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('warp')).assertEqual('FlexWrap.Wrap');
 
-      expect(Math.abs(firstText.bottom - firstText.top - Math.round(uiContext.vp2px(50))) <= 1).assertTrue();
-      expect(Math.abs(secondText.bottom - secondText.top - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(thirdText.bottom - thirdText.top - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(firstText.bottom - firstText.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(secondText.bottom - secondText.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(thirdText.bottom - thirdText.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
 
-      expect(Math.abs(firstText.right - firstText.left - Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
+      expect(Math.abs(firstText.right - firstText.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1).assertTrue();
       expect(Math.abs(firstText.right - firstText.left - Math.round(secondText.right - secondText.left)) <= 1)
         .assertTrue();
       expect(Math.abs(firstText.right - firstText.left - Math.round(thirdText.right - thirdText.left)) <= 1)
@@ -155,8 +155,8 @@ it('testWrapWrapTextSizeOverflow_static', Level.LEVEL0, async () => {
       expect(Math.abs(secondText.left - thirdText.right) <= 1).assertTrue();
       expect(Math.abs(secondText.bottom - thirdText.top) <= 1).assertTrue();
 
-      expect(Math.abs(flexContainer.right - secondText.right - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(flexContainer.bottom - thirdText.bottom - Math.round(uiContext.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(flexContainer.right - secondText.right - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(flexContainer.bottom - thirdText.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
       console.info('[testWrapWrapTextSizeOverflow] END');
 
     });

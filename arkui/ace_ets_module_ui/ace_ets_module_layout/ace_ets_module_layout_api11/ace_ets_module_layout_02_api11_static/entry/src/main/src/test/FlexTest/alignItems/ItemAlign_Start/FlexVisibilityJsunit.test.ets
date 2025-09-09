@@ -116,13 +116,13 @@ it('testFlexItemAlignStartSubSetVisibilityNone_static', Level.LEVEL0, async () :
         expect(Math.abs(textVisible01.right - flexVisible.left) <= 1).assertTrue();
         expect(Math.abs(textVisible02.top - textVisible03.top) <= 1).assertTrue();
         expect(Math.abs(textVisible03.top - flexVisible.top) <= 1).assertTrue();
-        expect(Math.abs(Math.round(textVisible02.bottom - textVisible02.top) - Math.round(uiContext.vp2px(100))) <= 1)
+        expect(Math.abs(Math.round(textVisible02.bottom - textVisible02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
           .assertTrue();
-        expect(Math.abs(Math.round(textVisible03.bottom - textVisible03.top) - Math.round(uiContext.vp2px(150))) <= 1)
+        expect(Math.abs(Math.round(textVisible03.bottom - textVisible03.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
           .assertTrue();
-        expect(Math.abs(Math.round(textVisible02.right - textVisible02.left) - Math.round(uiContext.vp2px(150))) <= 1)
+        expect(Math.abs(Math.round(textVisible02.right - textVisible02.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
           .assertTrue();
-        expect(Math.abs(Math.round(textVisible03.right - textVisible03.left) - Math.round(uiContext.vp2px(150))) <= 1)
+        expect(Math.abs(Math.round(textVisible03.right - textVisible03.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
           .assertTrue();
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('visibility')).assertEqual("Visibility.Visible");
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
@@ -175,17 +175,17 @@ it('testFlexItemAlignStartSubSetVisibilityHidden_static', Level.LEVEL0, async ()
         expect(Math.abs(textVisible02.top - textVisible03.top) <= 1).assertTrue();
         expect(Math.abs(textVisible03.top - flexVisible.top) <= 1).assertTrue();
 
-        expect(Math.abs(Math.round(textVisible01.bottom - textVisible01.top) - Math.round(uiContext.vp2px(50))) <= 1)
+        expect(Math.abs(Math.round(textVisible01.bottom - textVisible01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
           .assertTrue();
-        expect(Math.abs(Math.round(textVisible02.bottom - textVisible02.top) - Math.round(uiContext.vp2px(100))) <= 1)
+        expect(Math.abs(Math.round(textVisible02.bottom - textVisible02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
           .assertTrue();
-        expect(Math.abs(Math.round(textVisible03.bottom - textVisible03.top) - Math.round(uiContext.vp2px(150))) <= 1)
+        expect(Math.abs(Math.round(textVisible03.bottom - textVisible03.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
           .assertTrue();
-        expect(Math.abs(Math.round(textVisible01.right - textVisible01.left) - Math.round(uiContext.vp2px(150))) <= 1)
+        expect(Math.abs(Math.round(textVisible01.right - textVisible01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
           .assertTrue();
-        expect(Math.abs(Math.round(textVisible02.right - textVisible02.left) - Math.round(uiContext.vp2px(150))) <= 1)
+        expect(Math.abs(Math.round(textVisible02.right - textVisible02.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
           .assertTrue();
-        expect(Math.abs(Math.round(textVisible03.right - textVisible03.left) - Math.round(uiContext.vp2px(150))) <= 1)
+        expect(Math.abs(Math.round(textVisible03.right - textVisible03.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
           .assertTrue();
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Start')

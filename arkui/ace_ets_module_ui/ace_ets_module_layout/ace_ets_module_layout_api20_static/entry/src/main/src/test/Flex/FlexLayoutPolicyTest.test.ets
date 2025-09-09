@@ -101,8 +101,8 @@ it('FlexLayoutPolicyTest_static_0100', Level.LEVEL1, async (done: () => void): P
       console.log('[FlexLayoutPolicyTest_static_0100] flex_child_height is:' + flex_child_height);
 
       
-      expect(Math.floor(Math.abs(flex_parent_width - flex_child_width - uiContext.vp2px(70))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(flex_parent_height - flex_child_height - uiContext.vp2px(70))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(flex_parent_width - flex_child_width - UIContext.getFocusedUIContext()!.vp2px(70))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(flex_parent_height - flex_child_height - UIContext.getFocusedUIContext()!.vp2px(70))) <= 1).assertTrue();
 
       console.info('[FlexLayoutPolicyTest_static_0100] END');
       done();

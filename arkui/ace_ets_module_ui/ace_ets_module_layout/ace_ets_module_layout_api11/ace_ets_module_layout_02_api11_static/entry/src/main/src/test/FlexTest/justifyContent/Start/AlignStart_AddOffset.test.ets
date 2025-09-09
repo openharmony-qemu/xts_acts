@@ -109,17 +109,17 @@ it('testFlexAlignStartTextOffset_static', Level.LEVEL0, async () : Promise<void>
       let Start_AddOffset_013: RectValue = CommonFunc.getComponentRect('Start_AddOffset_013');
       let Start_AddOffset_01: RectValue = CommonFunc.getComponentRect('Start_AddOffset_01');
       const uiContext = new UIContext();
-      expect(Math.abs(Start_AddOffset_011.top - Start_AddOffset_01.top - uiContext.vp2px(15)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOffset_011.left - Start_AddOffset_01.left - uiContext.vp2px(10)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddOffset_011.top - Start_AddOffset_01.top - UIContext.getFocusedUIContext()!.vp2px(15)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddOffset_011.left - Start_AddOffset_01.left - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue()
       expect(Math.abs(Start_AddOffset_012.top - Start_AddOffset_013.top) <= 1).assertTrue()
       expect(Math.abs(Start_AddOffset_013.left - Start_AddOffset_012.right) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOffset_01.right - Start_AddOffset_013.right - uiContext.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOffset_011.right - Start_AddOffset_011.left - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOffset_012.right - Start_AddOffset_012.left - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOffset_013.right - Start_AddOffset_013.left - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOffset_011.bottom - Start_AddOffset_011.top - uiContext.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOffset_012.bottom - Start_AddOffset_012.top - uiContext.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOffset_013.bottom - Start_AddOffset_013.top - uiContext.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddOffset_01.right - Start_AddOffset_013.right - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddOffset_011.right - Start_AddOffset_011.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddOffset_012.right - Start_AddOffset_012.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddOffset_013.right - Start_AddOffset_013.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddOffset_011.bottom - Start_AddOffset_011.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddOffset_012.bottom - Start_AddOffset_012.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddOffset_013.bottom - Start_AddOffset_013.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
       console.info('[testFlexAlignStartTextOffset] END');
 
     });

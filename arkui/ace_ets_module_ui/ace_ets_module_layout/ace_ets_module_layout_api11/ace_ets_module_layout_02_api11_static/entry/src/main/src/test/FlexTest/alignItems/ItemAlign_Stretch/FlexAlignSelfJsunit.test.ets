@@ -99,12 +99,12 @@ it('testFlexItemAlignStretchSetAlignSelf_static', Level.LEVEL0, async () : Promi
       expect(Math.abs(textAlignSelf01.right - textAlignSelf02.left) <= 1).assertTrue()
       expect(Math.abs(textAlignSelf02.bottom - textAlignSelf03.bottom) <= 1).assertTrue()
 
-      expect(Math.abs((textAlignSelf01.bottom - textAlignSelf01.top) - uiContext.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs((textAlignSelf01.right - textAlignSelf01.left) - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs((textAlignSelf02.bottom - textAlignSelf02.top) - uiContext.vp2px(200)) <= 1).assertTrue()
-      expect(Math.abs((textAlignSelf02.right - textAlignSelf02.left) - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs((textAlignSelf03.bottom - textAlignSelf03.top) - uiContext.vp2px(200)) <= 1).assertTrue()
-      expect(Math.abs((textAlignSelf03.right - textAlignSelf03.left) - uiContext.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs((textAlignSelf01.bottom - textAlignSelf01.top) - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
+      expect(Math.abs((textAlignSelf01.right - textAlignSelf01.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs((textAlignSelf02.bottom - textAlignSelf02.top) - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue()
+      expect(Math.abs((textAlignSelf02.right - textAlignSelf02.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs((textAlignSelf03.bottom - textAlignSelf03.top) - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue()
+      expect(Math.abs((textAlignSelf03.right - textAlignSelf03.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
 
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Stretch')

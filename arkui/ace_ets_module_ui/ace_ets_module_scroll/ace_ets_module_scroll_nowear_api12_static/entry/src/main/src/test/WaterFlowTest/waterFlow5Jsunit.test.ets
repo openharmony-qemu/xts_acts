@@ -72,7 +72,7 @@ it('waterFlow5Jsunit_static_001', Level.LEVEL0, async (done: () => void): Promis
 	    let heightStr:string = obj.getElement('$attrs').getString('height').slice(0,6)
       console.info("[waterFlow5Jsunit_static_001] heightStr: " + heightStr);
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(Number(heightStr)) - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(Number(heightStr)) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
       console.info('[waterFlow5Jsunit_static_001] END');
       done();
     });

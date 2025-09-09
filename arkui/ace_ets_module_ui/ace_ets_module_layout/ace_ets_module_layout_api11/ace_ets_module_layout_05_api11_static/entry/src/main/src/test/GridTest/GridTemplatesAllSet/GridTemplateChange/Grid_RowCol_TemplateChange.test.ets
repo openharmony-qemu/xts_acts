@@ -103,22 +103,22 @@ it('testGridRowColTemplateChange01_static_01', Level.LEVEL0, async (done: () => 
       expect(Math.abs(GridTemplateChange_Grid_013.bottom - GridTemplateChange_Grid_01.bottom) <= 1).assertTrue();
       expect(Math.abs(GridTemplateChange_Grid_014.bottom - GridTemplateChange_Grid_01.bottom) <= 1).assertTrue();
       const uiContext = new UIContext();
-      expect(Math.abs(GridTemplateChange_Grid_011.right - GridTemplateChange_Grid_011.left - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs(GridTemplateChange_Grid_011.right - GridTemplateChange_Grid_011.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
-      expect(Math.abs(GridTemplateChange_Grid_012.right - GridTemplateChange_Grid_012.left - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs(GridTemplateChange_Grid_012.right - GridTemplateChange_Grid_012.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
-      expect(Math.abs(GridTemplateChange_Grid_013.right - GridTemplateChange_Grid_013.left - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs(GridTemplateChange_Grid_013.right - GridTemplateChange_Grid_013.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
-      expect(Math.abs(GridTemplateChange_Grid_014.right - GridTemplateChange_Grid_014.left - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs(GridTemplateChange_Grid_014.right - GridTemplateChange_Grid_014.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
 
-      expect(Math.abs(GridTemplateChange_Grid_011.bottom - GridTemplateChange_Grid_011.top - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs(GridTemplateChange_Grid_011.bottom - GridTemplateChange_Grid_011.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
-      expect(Math.abs(GridTemplateChange_Grid_012.bottom - GridTemplateChange_Grid_012.top - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs(GridTemplateChange_Grid_012.bottom - GridTemplateChange_Grid_012.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
-      expect(Math.abs(GridTemplateChange_Grid_013.bottom - GridTemplateChange_Grid_013.top - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs(GridTemplateChange_Grid_013.bottom - GridTemplateChange_Grid_013.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
-      expect(Math.abs(GridTemplateChange_Grid_014.bottom - GridTemplateChange_Grid_014.top - uiContext.vp2px(150)) <= 1)
+      expect(Math.abs(GridTemplateChange_Grid_014.bottom - GridTemplateChange_Grid_014.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
         .assertTrue();
       console.info('[testGridRowColTemplateChange01_static_01] END');
       done();
@@ -166,22 +166,22 @@ it('testGridRowColTemplateChange02_static_02', Level.LEVEL0, async (done: () => 
       expect(Math.abs(GridTemplateChange_Grid_011.bottom - GridTemplateChange_Grid_012.bottom) <= 1).assertTrue();
       expect(Math.abs(GridTemplateChange_Grid_011.bottom - GridTemplateChange_Grid_013.bottom) <= 1).assertTrue();
       const uiContext = new UIContext();
-      expect(Math.abs(GridTemplateChange_Grid_011.right - GridTemplateChange_Grid_011.left - uiContext.vp2px(100)) <= 1)
+      expect(Math.abs(GridTemplateChange_Grid_011.right - GridTemplateChange_Grid_011.left - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1)
         .assertTrue();
-      expect(Math.abs(GridTemplateChange_Grid_012.right - GridTemplateChange_Grid_012.left - uiContext.vp2px(100)) <= 1)
+      expect(Math.abs(GridTemplateChange_Grid_012.right - GridTemplateChange_Grid_012.left - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1)
         .assertTrue();
-      expect(Math.abs(GridTemplateChange_Grid_013.right - GridTemplateChange_Grid_013.left - uiContext.vp2px(100)) <= 1)
+      expect(Math.abs(GridTemplateChange_Grid_013.right - GridTemplateChange_Grid_013.left - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1)
         .assertTrue();
-      expect(Math.abs(GridTemplateChange_Grid_014.right - GridTemplateChange_Grid_014.left - uiContext.vp2px(100)) <= 1)
+      expect(Math.abs(GridTemplateChange_Grid_014.right - GridTemplateChange_Grid_014.left - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1)
         .assertTrue();
 
-      expect(Math.abs(GridTemplateChange_Grid_011.bottom - GridTemplateChange_Grid_011.top - uiContext.vp2px(100)) <= 1)
+      expect(Math.abs(GridTemplateChange_Grid_011.bottom - GridTemplateChange_Grid_011.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1)
         .assertTrue();
-      expect(Math.abs(GridTemplateChange_Grid_012.bottom - GridTemplateChange_Grid_012.top - uiContext.vp2px(100)) <= 1)
+      expect(Math.abs(GridTemplateChange_Grid_012.bottom - GridTemplateChange_Grid_012.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1)
         .assertTrue();
-      expect(Math.abs(GridTemplateChange_Grid_013.bottom - GridTemplateChange_Grid_013.top - uiContext.vp2px(100)) <= 1)
+      expect(Math.abs(GridTemplateChange_Grid_013.bottom - GridTemplateChange_Grid_013.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1)
         .assertTrue();
-      expect(Math.abs(GridTemplateChange_Grid_014.bottom - GridTemplateChange_Grid_014.top - uiContext.vp2px(100)) <= 1)
+      expect(Math.abs(GridTemplateChange_Grid_014.bottom - GridTemplateChange_Grid_014.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1)
         .assertTrue();
       console.info('[testGridRowColTemplateChange02_static_02] END');
       done();

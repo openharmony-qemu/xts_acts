@@ -129,7 +129,7 @@ it('textArea_top_static_002', Level.LEVEL2, async (done: ()=>void) => {
 
         let driver = Driver.create();
         await driver.click(
-          Math.round(uiContext.vp2px(100)) as int,Math.round(uiContext.vp2px(200) ) as int
+          Math.round(UIContext.getFocusedUIContext()!.vp2px(100)) as int,Math.round(UIContext.getFocusedUIContext()!.vp2px(200) ) as int
         );
         await CommonFunc.sleep(1000);
 

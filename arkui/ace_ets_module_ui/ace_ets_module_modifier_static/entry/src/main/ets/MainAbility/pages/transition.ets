@@ -45,7 +45,6 @@ import {
   Padding,
   PickerTextStyle,
   PlaybackSpeed,
-  px2vp,
   Resource,
   Row,
   Select,

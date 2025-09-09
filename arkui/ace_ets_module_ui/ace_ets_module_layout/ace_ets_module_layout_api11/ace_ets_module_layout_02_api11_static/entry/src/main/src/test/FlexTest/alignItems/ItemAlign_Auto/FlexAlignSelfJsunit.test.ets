@@ -95,17 +95,17 @@ it('testFlexItemAlignAutoAlignSelfEnd_static', Level.LEVEL0, async (): Promise<v
       expect(Math.abs(textAlignSelf02.top - textAlignSelf03.top) <= 1).assertTrue();
       expect(Math.abs(textAlignSelf01.bottom - flexAlignSelf01.bottom) <= 1).assertTrue();
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(textAlignSelf01.bottom - textAlignSelf01.top) - Math.round(uiContext.vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(textAlignSelf01.bottom - textAlignSelf01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(textAlignSelf01.right - textAlignSelf01.left) - Math.round(uiContext.vp2px(150))) <= 1)
+      expect(Math.abs(Math.round(textAlignSelf01.right - textAlignSelf01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(textAlignSelf02.bottom - textAlignSelf02.top) - Math.round(uiContext.vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(textAlignSelf02.bottom - textAlignSelf02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(textAlignSelf02.right - textAlignSelf02.left) - Math.round(uiContext.vp2px(150))) <= 1)
+      expect(Math.abs(Math.round(textAlignSelf02.right - textAlignSelf02.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(textAlignSelf03.bottom - textAlignSelf03.top) - Math.round(uiContext.vp2px(150))) <= 1)
+      expect(Math.abs(Math.round(textAlignSelf03.bottom - textAlignSelf03.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(textAlignSelf03.right - textAlignSelf03.left) - Math.round(uiContext.vp2px(150))) <= 1)
+      expect(Math.abs(Math.round(textAlignSelf03.right - textAlignSelf03.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
 
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row');

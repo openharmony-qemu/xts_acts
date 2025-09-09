@@ -110,28 +110,28 @@ it('SUB_ACE_layoutWeight_All_TEST_static_0100', Level.LEVEL0, async () => {
       expect(Math.abs((Math.round(Column_layoutWeight_All_022.top - Column_layoutWeight_All_021.bottom)) - (Math.round(Column_layoutWeight_All_023.top - Column_layoutWeight_All_022.bottom))) <= 1)
         .assertTrue();
       console.log('assert space')
-      expect(Math.abs((Math.round(Column_layoutWeight_All_022.top - Column_layoutWeight_All_021.bottom)) - (Math.round(uiContext.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_All_022.top - Column_layoutWeight_All_021.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Column_layoutWeight_All_023.top - Column_layoutWeight_All_022.bottom)) - (Math.round(uiContext.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_All_023.top - Column_layoutWeight_All_022.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
         .assertTrue();
       expect(Math.abs((Column_layoutWeight_All_02.top) - (Column_layoutWeight_All_021.top)) <= 1).assertTrue();
       expect(Math.abs((Column_layoutWeight_All_023.bottom) - (Column_layoutWeight_All_02.bottom)) <= 1).assertTrue();
       console.log('assert height')
-      expect(Math.abs((Math.round(Column_layoutWeight_All_021.bottom - Column_layoutWeight_All_021.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_All_021.bottom - Column_layoutWeight_All_021.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.log('Column_layoutWeight_All_021.bottom - Column_layoutWeight_All_021.top', +(Column_layoutWeight_All_021.bottom - Column_layoutWeight_All_021.top))
-      expect(Math.abs((Math.round(Column_layoutWeight_All_022.bottom - Column_layoutWeight_All_022.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_All_022.bottom - Column_layoutWeight_All_022.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.log('Column_layoutWeight_All_022.bottom - Column_layoutWeight_All_022.top', +(Column_layoutWeight_All_022.bottom - Column_layoutWeight_All_022.top))
-      expect(Math.abs((Math.round(Column_layoutWeight_All_023.bottom - Column_layoutWeight_All_023.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_All_023.bottom - Column_layoutWeight_All_023.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.log('Column_layoutWeight_All_023.bottom - Column_layoutWeight_All_023.top', +(Column_layoutWeight_All_023.bottom - Column_layoutWeight_All_023.top))
       console.log('assert weight')
-      expect(Math.abs((Math.round(Column_layoutWeight_All_021.right - Column_layoutWeight_All_021.left)) - (Math.round(uiContext.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_All_021.right - Column_layoutWeight_All_021.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Column_layoutWeight_All_022.right - Column_layoutWeight_All_022.left)) - (Math.round(uiContext.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_All_022.right - Column_layoutWeight_All_022.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Column_layoutWeight_All_023.right - Column_layoutWeight_All_023.left)) - (Math.round(uiContext.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_All_023.right - Column_layoutWeight_All_023.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
       console.info('[SUB_ACE_layoutWeight_All_TEST_static_0100] END');
     });
@@ -173,28 +173,28 @@ it('SUB_ACE_layoutWeight_All_TEST_static_0200', Level.LEVEL0, async () => {
       expect(Math.abs((Math.round(Column_layoutWeight_All_022.top - Column_layoutWeight_All_021.bottom)) - (Math.round(Column_layoutWeight_All_023.top - Column_layoutWeight_All_022.bottom))) <= 1)
         .assertTrue();
       console.log('assert space')
-      expect(Math.abs((Math.round(Column_layoutWeight_All_022.top - Column_layoutWeight_All_021.bottom)) - (Math.round(uiContext.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_All_022.top - Column_layoutWeight_All_021.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Column_layoutWeight_All_023.top - Column_layoutWeight_All_022.bottom)) - (Math.round(uiContext.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_All_023.top - Column_layoutWeight_All_022.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
         .assertTrue();
       expect(Math.abs((Column_layoutWeight_All_02.top) - (Column_layoutWeight_All_021.top)) <= 1).assertTrue();
       expect(Math.abs((Column_layoutWeight_All_023.bottom) - (Column_layoutWeight_All_02.bottom)) <= 1).assertTrue();
       console.log('assert height')
-      expect(Math.abs((Math.round(Column_layoutWeight_All_021.bottom - Column_layoutWeight_All_021.top)) - (Math.round(uiContext.vp2px(225)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_All_021.bottom - Column_layoutWeight_All_021.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(225)))) <= 1)
         .assertTrue();
       console.log('Column_layoutWeight_All_021.bottom - Column_layoutWeight_All_021.top', +(Column_layoutWeight_All_021.bottom - Column_layoutWeight_All_021.top))
-      expect(Math.abs((Math.round(Column_layoutWeight_All_022.bottom - Column_layoutWeight_All_022.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_All_022.bottom - Column_layoutWeight_All_022.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.log('Column_layoutWeight_All_022.bottom - Column_layoutWeight_All_022.top', +(Column_layoutWeight_All_022.bottom - Column_layoutWeight_All_022.top))
-      expect(Math.abs((Math.round(Column_layoutWeight_All_023.bottom - Column_layoutWeight_All_023.top)) - (Math.round(uiContext.vp2px(75)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_All_023.bottom - Column_layoutWeight_All_023.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(75)))) <= 1)
         .assertTrue();
       console.log('Column_layoutWeight_All_023.bottom - Column_layoutWeight_All_023.top', +(Column_layoutWeight_All_023.bottom - Column_layoutWeight_All_023.top))
       console.log('assert weight')
-      expect(Math.abs((Math.round(Column_layoutWeight_All_021.right - Column_layoutWeight_All_021.left)) - (Math.round(uiContext.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_All_021.right - Column_layoutWeight_All_021.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Column_layoutWeight_All_022.right - Column_layoutWeight_All_022.left)) - (Math.round(uiContext.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_All_022.right - Column_layoutWeight_All_022.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Column_layoutWeight_All_023.right - Column_layoutWeight_All_023.left)) - (Math.round(uiContext.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_All_023.right - Column_layoutWeight_All_023.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
       console.info('[SUB_ACE_layoutWeight_All_TEST_static_0200] END');
     });

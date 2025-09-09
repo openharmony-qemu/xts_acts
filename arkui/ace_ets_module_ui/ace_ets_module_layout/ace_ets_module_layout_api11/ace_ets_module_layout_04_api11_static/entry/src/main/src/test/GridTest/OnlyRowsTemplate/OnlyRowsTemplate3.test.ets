@@ -96,9 +96,9 @@ it('SUB_ACE_GRID_OnlyRowsTemplate3_static_0300', Level.LEVEL0, async (done: () =
       let GridItem_011: RectValue = CommonFunc.getComponentRect('OnlyRowsTemplate1_GridItem_01');
       const uiContext = new UIContext();
       console.log('assert size')
-      expect(Math.round(GridItem_011.right - GridItem_011.left)).assertEqual(Math.round(uiContext.vp2px(100)));
+      expect(Math.round(GridItem_011.right - GridItem_011.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(100)));
       console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_011.right - GridItem_011.left))
-      expect(Math.round(GridItem_011.bottom - GridItem_011.top)).assertEqual(Math.round(uiContext.vp2px(72)));
+      expect(Math.round(GridItem_011.bottom - GridItem_011.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(72)));
       console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_011.bottom - GridItem_011.top))
 
       await CommonFunc.sleep(2000);

@@ -16,9 +16,9 @@ import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType,
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { vp2px } from '@ohos.arkui.component';
+
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -101,7 +101,7 @@ export default function promptActionKeyboardAvoidDistance() {
       console.info('[PromptAction_001_keyboard] left: ' + rect1.left + ', top: ' + rect1.top +
         ', right:' + rect1.right + ', bottom:' + rect1.bottom );
       let keyboardAvoidDistance = top1 - bottom;
-      let str = vp2px(20);
+      let str = UIContext.getFocusedUIContext()!.vp2px(20);
       let str1 = Math.ceil(str)
       let cancelButton1: Component = ( await driver.findComponent(ON.text('取消')) ) as Component;
        CommonFunc.sleep(300) ;
@@ -146,7 +146,7 @@ export default function promptActionKeyboardAvoidDistance() {
       console.info('[PromptAction_004_keyboard] left: ' + rect1.left + ', top: ' + rect1.top +
         ', right:' + rect1.right + ', bottom:' + rect1.bottom );
       let keyboardAvoidDistance = top1 - bottom;
-      let str2 = vp2px(16);
+      let str2 = UIContext.getFocusedUIContext()!.vp2px(16);
       let str3 = Math.ceil(str2)
       let cancelButton1: Component = ( await driver.findComponent(ON.text('取消')) ) as Component;
        CommonFunc.sleep(300);
@@ -191,7 +191,7 @@ export default function promptActionKeyboardAvoidDistance() {
       console.info('[PromptAction_006_keyboard] left: ' + rect1.left + ', top: ' + rect1.top +
         ', right:' + rect1.right + ', bottom:' + rect1.bottom );
       let keyboardAvoidDistance = top1 - bottom;
-      let str4 = vp2px(16);
+      let str4 = UIContext.getFocusedUIContext()!.vp2px(16);
       let str5 = Math.ceil(str4)
       let cancelButton1: Component = ( await driver.findComponent(ON.text('取消')) ) as Component;
        CommonFunc.sleep(300);

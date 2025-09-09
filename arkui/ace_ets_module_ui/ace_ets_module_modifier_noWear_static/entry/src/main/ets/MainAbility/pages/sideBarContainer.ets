@@ -44,7 +44,6 @@ import {
   MenuAlignType,
   PickerTextStyle,
   Position,
-  px2vp,
   Resource,
   Row,
   RowSplit,

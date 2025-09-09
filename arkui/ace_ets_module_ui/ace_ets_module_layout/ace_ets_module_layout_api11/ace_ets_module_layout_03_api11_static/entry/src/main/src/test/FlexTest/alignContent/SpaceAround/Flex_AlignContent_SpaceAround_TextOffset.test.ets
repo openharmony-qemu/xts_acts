@@ -104,13 +104,13 @@ it('testFlexAlignContentSpaceAroundTextOffset_static', Level.LEVEL0, async () =>
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('warp')).assertEqual('FlexWrap.Wrap');
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual('FlexAlign.SpaceAround');
       const uiContext = new UIContext();
-      expect(Math.floor(Math.abs(firstText.bottom - firstText.top - uiContext.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(secondText.bottom - secondText.top - uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(thirdText.bottom - thirdText.top - uiContext.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(fourthText.bottom - fourthText.top - uiContext.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(firstText.bottom - firstText.top - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(secondText.bottom - secondText.top - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(thirdText.bottom - thirdText.top - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(fourthText.bottom - fourthText.top - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs(firstText.top - firstTextTop - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(firstText.left - firstTextLeft - uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(firstText.top - firstTextTop - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(firstText.left - firstTextLeft - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       expect(Math.floor(Math.abs(secondText.top - secondTextTop)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(flexContainer.left - secondText.left)) <= 1).assertTrue();

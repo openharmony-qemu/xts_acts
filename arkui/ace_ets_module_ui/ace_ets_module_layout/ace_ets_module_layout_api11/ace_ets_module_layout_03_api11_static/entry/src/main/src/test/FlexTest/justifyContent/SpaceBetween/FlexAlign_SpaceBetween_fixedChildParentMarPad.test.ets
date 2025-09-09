@@ -103,20 +103,20 @@ it('testAlignSpaceBetweenRowNoWrapMarPadOutRange_static', Level.LEVEL0, async ()
       const uiContext = new UIContext();
       expect(Math.floor(Math.abs(locationText1.top - locationText2.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(locationText2.top - locationText3.top)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((locationText1.top - locationFlex.top) - uiContext.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((locationText1.bottom - locationText1.top) - uiContext.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((locationText2.bottom - locationText2.top) - uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - uiContext.vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText1.top - locationFlex.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText1.bottom - locationText1.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText2.bottom - locationText2.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(locationFlex.bottom - locationText3.bottom)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((locationText1.left - locationFlex.left) - uiContext.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText1.left - locationFlex.left) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(locationText1.right - locationText2.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(locationText2.right - locationText3.left)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(locationText3.right - (locationFlex.right - uiContext.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(locationText3.right - (locationFlex.right - UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((locationText1.right - locationText1.left) - (locationText2.right - locationText2.left))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((locationText3.right - locationText3.left) - (locationText2.right - locationText2.left))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText2.right - locationText2.left) - uiContext.vp2px(400 / 3))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText2.right - locationText2.left) - UIContext.getFocusedUIContext()!.vp2px(400 / 3))) <= 1).assertTrue();
       console.info('new testAlignSpaceBetweenRowNoWrapMarPadOutRange END');
 
     });
@@ -151,25 +151,25 @@ it('testAlignSpaceBetweenRowNoWrapMarPadInRange_static', Level.LEVEL0, async () 
       const uiContext = new UIContext();
       expect(Math.floor(Math.abs(locationText1.top - locationText2.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(locationText2.top - locationText3.top)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Math.round((locationText1.top - locationFlex.top) * 10) / 10) - (Math.round(uiContext.vp2px(5) * 10) / 10))) <= 1)
+      expect(Math.floor(Math.abs((Math.round((locationText1.top - locationFlex.top) * 10) / 10) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(5) * 10) / 10))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText1.bottom - locationText1.top) - uiContext.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((locationText2.bottom - locationText2.top) - uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - uiContext.vp2px(150))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Math.round((locationFlex.bottom - locationText3.bottom) * 10) / 10) - (Math.round(uiContext.vp2px(45) * 10) / 10))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.bottom - locationText1.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText2.bottom - locationText2.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Math.round((locationFlex.bottom - locationText3.bottom) * 10) / 10) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(45) * 10) / 10))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((Math.round((locationText1.left - locationFlex.left) * 10) / 10) - (Math.round(uiContext.vp2px(5) * 10) / 10))) <= 1)
+      expect(Math.floor(Math.abs((Math.round((locationText1.left - locationFlex.left) * 10) / 10) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(5) * 10) / 10))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((Math.round((locationText3.right) * 10) / 10) - (Math.round((locationFlex.right - uiContext.vp2px(5)) * 10) / 10))) <= 1)
+      expect(Math.floor(Math.abs((Math.round((locationText3.right) * 10) / 10) - (Math.round((locationFlex.right - UIContext.getFocusedUIContext()!.vp2px(5)) * 10) / 10))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((locationText1.right - locationText1.left) - (locationText2.right - locationText2.left))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((locationText3.right - locationText3.left) - (locationText2.right - locationText2.left))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText2.right - locationText2.left) - uiContext.vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText2.right - locationText2.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((locationText2.left - locationText1.right) - (locationText3.left - locationText2.right))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText2.left - locationText1.right) - uiContext.vp2px(20))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText2.left - locationText1.right) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
       console.info('new testAlignSpaceBetweenRowNoWrapMarPadInRange END');
 
     });

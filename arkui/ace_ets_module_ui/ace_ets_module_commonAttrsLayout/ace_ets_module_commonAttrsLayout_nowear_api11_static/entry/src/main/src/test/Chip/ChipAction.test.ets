@@ -19,7 +19,7 @@ import { Driver, MouseButton, ON } from '@ohos.UiTest';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { vp2px } from '@ohos.arkui.component';
+
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -73,8 +73,8 @@ export default function ChipAction() {
       console.info('ChipAction_static_001 START');
       let ChipActionCol = CommonFunc.getComponentRect('ChipActionCol');
       await CommonFunc.sleep(200);
-      let right: number = ChipActionCol.right - vp2px(22) + Number(AppStorage.get<number>("winLeft") ?? 0);
-      let top: number = ChipActionCol.top + vp2px(18) + Number(AppStorage.get<number>("winTop") ?? 0);
+      let right: number = ChipActionCol.right - UIContext.getFocusedUIContext()!.vp2px(22) + Number(AppStorage.get<number>("winLeft") ?? 0);
+      let top: number = ChipActionCol.top + UIContext.getFocusedUIContext()!.vp2px(18) + Number(AppStorage.get<number>("winTop") ?? 0);
       await CommonFunc.sleep(200);
       console.info('ChipAction_static_001 right：' + right + 'top:' + top);
       let driver = Driver.create();

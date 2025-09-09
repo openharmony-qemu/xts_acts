@@ -102,9 +102,9 @@ it('testColumnSubcomponentModifyHeight_static', Level.LEVEL0, async () => {
       let columnWidthHeight_3: RectValue = CommonFunc.getComponentRect('columnWidthHeight_3');
       let columnWidthHeight: RectValue = CommonFunc.getComponentRect('columnWidthHeight');
       expect(Math.abs(columnWidthHeight.top - columnWidthHeight_1.top) <= 1).assertTrue()
-      expect(Math.abs(columnWidthHeight_2.top - columnWidthHeight_1.bottom - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(columnWidthHeight_3.top - columnWidthHeight_2.bottom - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(columnWidthHeight.bottom - columnWidthHeight_3.bottom - Math.round(uiContext.vp2px(10))) <= 1).assertTrue()
+      expect(Math.abs(columnWidthHeight_2.top - columnWidthHeight_1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnWidthHeight_3.top - columnWidthHeight_2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnWidthHeight.bottom - columnWidthHeight_3.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue()
       console.info('new testColumnSubcomponentModifyHeight END');
     });
 
@@ -133,9 +133,9 @@ it('testColumnSubcomponentModifyWidth_static', Level.LEVEL0, async () => {
       let columnWidthHeight_3: RectValue = CommonFunc.getComponentRect('columnWidthHeight_3');
       let columnWidthHeight: RectValue = CommonFunc.getComponentRect('columnWidthHeight');
       expect(Math.abs(columnWidthHeight.top - columnWidthHeight_1.top) <= 1).assertTrue()
-      expect(Math.abs(columnWidthHeight_2.top - columnWidthHeight_1.bottom - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(columnWidthHeight_3.top - columnWidthHeight_2.bottom - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(columnWidthHeight.bottom - columnWidthHeight_3.bottom - Math.round(uiContext.vp2px(40))) <= 1).assertTrue()
+      expect(Math.abs(columnWidthHeight_2.top - columnWidthHeight_1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnWidthHeight_3.top - columnWidthHeight_2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnWidthHeight.bottom - columnWidthHeight_3.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue()
       console.info('new testColumnSubcomponentModifyWidth_static END');
     });
   })

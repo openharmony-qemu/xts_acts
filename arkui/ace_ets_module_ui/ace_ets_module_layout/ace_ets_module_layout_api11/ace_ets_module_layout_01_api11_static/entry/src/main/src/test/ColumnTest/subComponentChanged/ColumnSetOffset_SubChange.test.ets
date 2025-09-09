@@ -95,11 +95,11 @@ it('testColumnSubcomponentSetOffset_static', Level.LEVEL0, async () => {
       let columnOffset_2: RectValue = CommonFunc.getComponentRect('columnOffset_2');
       let columnOffset_3: RectValue = CommonFunc.getComponentRect('columnOffset_3');
       let columnOffset: RectValue = CommonFunc.getComponentRect('columnOffset');
-      expect(Math.abs(columnOffset_1.left - columnOffset_2.left - Math.round(uiContext.vp2px(10))) <= 1).assertTrue()
-      expect(Math.abs(columnOffset_1.top - columnOffset.top - Math.round(uiContext.vp2px(10))) <= 1).assertTrue()
-      expect(Math.abs(columnOffset_2.top - columnOffset_1.bottom - Math.round(uiContext.vp2px(20))) <= 1).assertTrue()
-      expect(Math.abs(columnOffset_3.top - columnOffset_2.bottom - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(columnOffset.bottom - columnOffset_3.bottom - Math.round(uiContext.vp2px(40))) <= 1).assertTrue()
+      expect(Math.abs(columnOffset_1.left - columnOffset_2.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue()
+      expect(Math.abs(columnOffset_1.top - columnOffset.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue()
+      expect(Math.abs(columnOffset_2.top - columnOffset_1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue()
+      expect(Math.abs(columnOffset_3.top - columnOffset_2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnOffset.bottom - columnOffset_3.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue()
       console.info('new testColumnSubcomponentSetOffset_static END');
     });
   })

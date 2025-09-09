@@ -112,17 +112,17 @@ it('testFlexAlignStartFlexWidthOverflow_static', Level.LEVEL0, async () : Promis
       expect(Math.abs(Start_NoSpace_013.left - Start_NoSpace_012.right) <= 1).assertTrue();
       expect(Math.abs(Start_NoSpace_01.left - Start_NoSpace_011.left) <= 1).assertTrue();
       expect(Math.abs(Start_NoSpace_01.right - Start_NoSpace_013.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_011.right - Start_NoSpace_011.left)) - (Math.round(uiContext.vp2px(400 / 3)))) <= 1)
+      expect(Math.abs((Math.round(Start_NoSpace_011.right - Start_NoSpace_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(400 / 3)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_012.right - Start_NoSpace_012.left)) - (Math.round(uiContext.vp2px(400 / 3)))) <= 1)
+      expect(Math.abs((Math.round(Start_NoSpace_012.right - Start_NoSpace_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(400 / 3)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_013.right - Start_NoSpace_013.left)) - (Math.round(uiContext.vp2px(400 / 3)))) <= 1)
+      expect(Math.abs((Math.round(Start_NoSpace_013.right - Start_NoSpace_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(400 / 3)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_011.bottom - Start_NoSpace_011.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Start_NoSpace_011.bottom - Start_NoSpace_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_012.bottom - Start_NoSpace_012.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Start_NoSpace_012.bottom - Start_NoSpace_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_013.bottom - Start_NoSpace_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Start_NoSpace_013.bottom - Start_NoSpace_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignStartFlexWidthOverflow] END');
 
@@ -162,19 +162,19 @@ it('testFlexAlignStartFlexWidthMeet_static', Level.LEVEL0, async () : Promise<vo
       expect(Math.abs(Start_NoSpace_01.left - Start_NoSpace_011.left) <= 1).assertTrue();
       expect(Math.abs(Start_NoSpace_012.left - Start_NoSpace_011.right) <= 1).assertTrue();
       expect(Math.abs(Start_NoSpace_013.left - Start_NoSpace_012.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_01.right - Start_NoSpace_013.right)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Start_NoSpace_01.right - Start_NoSpace_013.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_011.right - Start_NoSpace_011.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Start_NoSpace_011.right - Start_NoSpace_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_012.right - Start_NoSpace_012.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Start_NoSpace_012.right - Start_NoSpace_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_013.right - Start_NoSpace_013.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Start_NoSpace_013.right - Start_NoSpace_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_011.bottom - Start_NoSpace_011.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Start_NoSpace_011.bottom - Start_NoSpace_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_012.bottom - Start_NoSpace_012.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Start_NoSpace_012.bottom - Start_NoSpace_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_013.bottom - Start_NoSpace_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Start_NoSpace_013.bottom - Start_NoSpace_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignStartFlexWidthMeet] END');
 

@@ -87,7 +87,6 @@ import {
   Path,
   PatternLock,
   PickerTextStyle,
-  px2vp,
   RepeatMode,
   ResourceColor,
   Row,

@@ -93,7 +93,6 @@ import {
   Position,
   Progress,
   ProgressType,
-  px2vp,
   Rect,
   RepeatMode,
   ResourceColor,

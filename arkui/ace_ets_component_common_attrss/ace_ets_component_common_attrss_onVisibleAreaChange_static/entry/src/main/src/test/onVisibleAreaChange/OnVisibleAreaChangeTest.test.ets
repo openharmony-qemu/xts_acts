@@ -14,7 +14,7 @@
  */
 
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import {vp2px,Color} from '@ohos.arkui.component'
+import {Color} from '@ohos.arkui.component'
 import Utils, {CurrentRatio, BasePageConfig, PageConfig, TestValue, RectValue,SetValue,StrJsonObj } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import inspector from '@ohos.arkui.inspector';
@@ -168,8 +168,8 @@ CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageCo
       console.info('[' + data.caseTag + '] targetRectBefore.bottom: ' + targetRectBefore.bottom);
       console.info('[' + data.caseTag + '] targetRectLeave.bottom: ' + targetRectLeave.bottom);
       console.info('[' + data.caseTag + '] targetRectEnter.bottom: ' + targetRectEnter.bottom);
-      expect(Math.abs((targetRectBefore.bottom - targetRectLeave.bottom) - vp2px(data.testValue.expectValue.yOffSetMoveLength)) <= 1).assertTrue();
-      expect(Math.abs(((targetRectEnter.bottom - targetRectLeave.bottom)) - vp2px(data.testValue.expectValue.yOffSetMoveLength)) <= 1).assertTrue();
+      expect(Math.abs((targetRectBefore.bottom - targetRectLeave.bottom) - UIContext.getFocusedUIContext()!.vp2px(data.testValue.expectValue.yOffSetMoveLength)) <= 1).assertTrue();
+      expect(Math.abs(((targetRectEnter.bottom - targetRectLeave.bottom)) - UIContext.getFocusedUIContext()!.vp2px(data.testValue.expectValue.yOffSetMoveLength)) <= 1).assertTrue();
       let ratiosRightNum: number = data.testValue.setValue.leave.ratiosRight as number;
       let ratiosLeftNum: number = data.testValue.setValue.leave.ratiosLeft as number;
 

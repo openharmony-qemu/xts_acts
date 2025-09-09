@@ -230,9 +230,9 @@ function getRectCenterVp(rect: string) {
   let rtn: string[] = rect.replace(regexp, '').replace(regexp, '').split(',')
   const uiContext = new UIContext()
   return [
-    uiContext.px2vp(Number.parseFloat(rtn[0].trim()) +
+    UIContext.getFocusedUIContext()!.px2vp(Number.parseFloat(rtn[0].trim()) +
       (Number.parseFloat(rtn[2].trim()) - Number.parseFloat(rtn[0].trim())) / 2),
-    uiContext.px2vp(Number.parseFloat(rtn[1].trim()) +
+    UIContext.getFocusedUIContext()!.px2vp(Number.parseFloat(rtn[1].trim()) +
       (Number.parseFloat(rtn[3].trim()) - Number.parseFloat(rtn[1].trim())) / 2),
   ]
 }

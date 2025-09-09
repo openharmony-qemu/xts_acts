@@ -130,7 +130,7 @@ it('GridRows2_static_002', Level.LEVEL0, async (done: () => void): Promise<void>
 
       let rel = CommonFunc.getComponentRect('GridRows2');
       const uiContext = new UIContext();
-      await driver.mouseClick({x: Math.round(rel.left + uiContext.vp2px(50)) as Int, y: Math.round(rel.top + uiContext.vp2px(50)) as Int}, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({x: Math.round(rel.left + UIContext.getFocusedUIContext()!.vp2px(50)) as Int, y: Math.round(rel.top + UIContext.getFocusedUIContext()!.vp2px(50)) as Int}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('GridRows2Text');
       await CommonFunc.sleep(200);

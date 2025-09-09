@@ -134,8 +134,8 @@ it('testAlignContentEndFlexMarginSatisfy_static', Level.LEVEL0, async () => {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual("FlexDirection.Row");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual("FlexAlign.End");
       const uiContext = new UIContext();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_flex001.top - End_Margin_Column.top - uiContext.vp2px(5))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(End_Margin_Column.bottom - AlignContentFlexEnd_4.bottom - uiContext.vp2px(5))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_flex001.top - End_Margin_Column.top - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(End_Margin_Column.bottom - AlignContentFlexEnd_4.bottom - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(AlignContentFlexEnd_flex001.bottom - AlignContentFlexEnd_4.bottom)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(AlignContentFlexEnd_4.top - AlignContentFlexEnd_2.bottom)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(AlignContentFlexEnd_2.top - AlignContentFlexEnd_flex001.top - AlignContentFlexEnd_flex001_height*0.1)) <= 1).assertTrue();

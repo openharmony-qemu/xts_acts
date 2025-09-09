@@ -91,11 +91,11 @@ it('SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_static_0100', Level.LEVEL0, 
 
       const uiContext = new UIContext();
       console.log('assert space')
-      expect(Math.abs((Grid_Col_Order_GridColColumnOption_02.top - Grid_Col_Order_GridColColumnOption_01.bottom) - uiContext.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_GridColColumnOption_02.top - Grid_Col_Order_GridColColumnOption_01.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Order_GridColColumnOption_03.top - Grid_Col_Order_GridColColumnOption_02.bottom) - uiContext.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_GridColColumnOption_03.top - Grid_Col_Order_GridColColumnOption_02.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Order_GridColColumnOption_04.top - Grid_Col_Order_GridColColumnOption_03.bottom) - uiContext.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_GridColColumnOption_04.top - Grid_Col_Order_GridColColumnOption_03.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
 
       console.info('[SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_static_0100] END');
@@ -128,11 +128,11 @@ it('SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_static_0200', Level.LEVEL0, 
 
       const uiContext = new UIContext();
       console.log('assert space')
-      expect(Math.abs((Grid_Col_Order_GridColColumnOption_01.top - Grid_Col_Order_GridColColumnOption_03.bottom) - uiContext.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_GridColColumnOption_01.top - Grid_Col_Order_GridColColumnOption_03.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Order_GridColColumnOption_02.top - Grid_Col_Order_GridColColumnOption_01.bottom) - uiContext.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_GridColColumnOption_02.top - Grid_Col_Order_GridColColumnOption_01.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Order_GridColColumnOption_04.top - Grid_Col_Order_GridColColumnOption_02.bottom) - uiContext.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_GridColColumnOption_04.top - Grid_Col_Order_GridColColumnOption_02.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
 
       console.info('[SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_static_0200] END');
@@ -164,11 +164,11 @@ it('SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_static_0300', Level.LEVEL0, 
       let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_04');
       const uiContext = new UIContext();
       console.log('assert space')
-      expect(Math.abs((Grid_Col_Order_GridColColumnOption_04.top - Grid_Col_Order_GridColColumnOption_01.bottom) - uiContext.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_GridColColumnOption_04.top - Grid_Col_Order_GridColColumnOption_01.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Order_GridColColumnOption_02.top - Grid_Col_Order_GridColColumnOption_04.bottom) - uiContext.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_GridColColumnOption_02.top - Grid_Col_Order_GridColColumnOption_04.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Order_GridColColumnOption_03.top - Grid_Col_Order_GridColColumnOption_02.bottom) - uiContext.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_GridColColumnOption_03.top - Grid_Col_Order_GridColColumnOption_02.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
 
       console.info('[SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_static_0300] END');
@@ -200,11 +200,11 @@ it('SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_static_0400', Level.LEVEL0, 
       let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_04');
       const uiContext = new UIContext();
       console.log('assert space')
-      expect(Math.abs((Grid_Col_Order_GridColColumnOption_01.top - Grid_Col_Order_GridColColumnOption_04.bottom) - uiContext.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_GridColColumnOption_01.top - Grid_Col_Order_GridColColumnOption_04.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Order_GridColColumnOption_02.top - Grid_Col_Order_GridColColumnOption_01.bottom) - uiContext.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_GridColColumnOption_02.top - Grid_Col_Order_GridColColumnOption_01.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Order_GridColColumnOption_03.top - Grid_Col_Order_GridColColumnOption_02.bottom) - uiContext.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_GridColColumnOption_03.top - Grid_Col_Order_GridColColumnOption_02.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
 
       console.info('[SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_static_0400] END');
@@ -236,11 +236,11 @@ it('SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_static_0500', Level.LEVEL0, 
       let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_04');
       const uiContext = new UIContext();
       console.log('assert space')
-      expect(Math.abs((Grid_Col_Order_GridColColumnOption_03.top - Grid_Col_Order_GridColColumnOption_02.bottom) - uiContext.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_GridColColumnOption_03.top - Grid_Col_Order_GridColColumnOption_02.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Order_GridColColumnOption_01.top - Grid_Col_Order_GridColColumnOption_03.bottom) - uiContext.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_GridColColumnOption_01.top - Grid_Col_Order_GridColColumnOption_03.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Order_GridColColumnOption_04.top - Grid_Col_Order_GridColColumnOption_01.bottom) - uiContext.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_GridColColumnOption_04.top - Grid_Col_Order_GridColColumnOption_01.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
 
       console.info('[SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_static_0500] END');
@@ -272,11 +272,11 @@ it('SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_static_0600', Level.LEVEL0, 
       let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_04');
       const uiContext = new UIContext();
       console.log('assert space')
-      expect(Math.abs((Grid_Col_Order_GridColColumnOption_03.top - Grid_Col_Order_GridColColumnOption_02.bottom) - uiContext.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_GridColColumnOption_03.top - Grid_Col_Order_GridColColumnOption_02.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Order_GridColColumnOption_04.top - Grid_Col_Order_GridColColumnOption_03.bottom) - uiContext.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_GridColColumnOption_04.top - Grid_Col_Order_GridColColumnOption_03.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Order_GridColColumnOption_01.top - Grid_Col_Order_GridColColumnOption_04.bottom) - uiContext.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_GridColColumnOption_01.top - Grid_Col_Order_GridColColumnOption_04.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
 
       console.info('[SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_static_0600] END');

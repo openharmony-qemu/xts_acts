@@ -43,7 +43,6 @@ import {
   MenuAlignType,
   PickerTextStyle,
   Position,
-  px2vp,
   Row,
   RowSplit,
   Select,

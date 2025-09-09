@@ -15,7 +15,7 @@
 
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium';
 import router from '@ohos.router';
-import {Alignment,vp2px} from '@ohos.arkui.component'
+import {Alignment} from '@ohos.arkui.component'
 import events_emitter from '@ohos.events.emitter'
 import { UtilsTest,startAbility } from '../../Util.test'
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -97,11 +97,11 @@ it('testStackMarginAlignContentTopStart_static', Level.LEVEL0, async (done: () =
       let stackMarginKey01: RectValue = CommonFunc.getComponentRect('stackMarginKey01');
       expect(Math.abs((stackMarginKey01.left) - (stackMarginKey.left)) <= 1).assertTrue();
       expect(Math.abs((stackMarginKey01.top) - (stackMarginKey.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.TopStart')
@@ -138,14 +138,14 @@ it('testStackMarginAlignContentTop_static', Level.LEVEL0, async (done: () => voi
 
       let stackMarginKey: RectValue = CommonFunc.getComponentRect('stackMarginKey');
       let stackMarginKey01: RectValue = CommonFunc.getComponentRect('stackMarginKey01');
-      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackMarginKey01.top) - (stackMarginKey.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Top')
@@ -182,13 +182,13 @@ it('testStackMarginAlignContentTopEnd_static', Level.LEVEL0, async (done: () => 
 
       let stackMarginKey: RectValue = CommonFunc.getComponentRect('stackMarginKey');
       let stackMarginKey01: RectValue = CommonFunc.getComponentRect('stackMarginKey01');
-      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackMarginKey01.right) - (stackMarginKey.right)) <= 1).assertTrue();
       expect(Math.abs((stackMarginKey01.top) - (stackMarginKey.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.TopEnd')
@@ -226,13 +226,13 @@ it('testStackMarginAlignContentStart_static', Level.LEVEL0, async (done: () => v
       let stackMarginKey: RectValue = CommonFunc.getComponentRect('stackMarginKey');
       let stackMarginKey01: RectValue = CommonFunc.getComponentRect('stackMarginKey01');
       expect(Math.abs((stackMarginKey01.left) - (stackMarginKey.left)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Start')
@@ -269,15 +269,15 @@ it('testStackMarginAlignContentCenter_static', Level.LEVEL0, async (done: () => 
 
       let stackMarginKey: RectValue = CommonFunc.getComponentRect('stackMarginKey');
       let stackMarginKey01: RectValue = CommonFunc.getComponentRect('stackMarginKey01');
-      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Center')
@@ -314,14 +314,14 @@ it('testStackMarginAlignContentEnd_static', Level.LEVEL0, async (done: () => voi
 
       let stackMarginKey: RectValue = CommonFunc.getComponentRect('stackMarginKey');
       let stackMarginKey01: RectValue = CommonFunc.getComponentRect('stackMarginKey01');
-      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackMarginKey01.right) - (stackMarginKey.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.bottom - stackMarginKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.End')
@@ -359,12 +359,12 @@ it('testStackMarginAlignContentBottomStart_static', Level.LEVEL0, async (done: (
       let stackMarginKey: RectValue = CommonFunc.getComponentRect('stackMarginKey');
       let stackMarginKey01: RectValue = CommonFunc.getComponentRect('stackMarginKey01');
       expect(Math.abs((stackMarginKey01.left) - (stackMarginKey.left)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackMarginKey01.bottom) - (stackMarginKey.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.BottomStart')
@@ -401,14 +401,14 @@ it('testStackMarginAlignContentBottom_static', Level.LEVEL0, async (done: () => 
 
       let stackMarginKey: RectValue = CommonFunc.getComponentRect('stackMarginKey');
       let stackMarginKey01: RectValue = CommonFunc.getComponentRect('stackMarginKey01');
-      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey.right - stackMarginKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackMarginKey01.bottom) - (stackMarginKey.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Bottom')
@@ -445,13 +445,13 @@ it('testStackMarginAlignContentBottomEnd_static', Level.LEVEL0, async (done: () 
 
       let stackMarginKey: RectValue = CommonFunc.getComponentRect('stackMarginKey');
       let stackMarginKey01: RectValue = CommonFunc.getComponentRect('stackMarginKey01');
-      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.left - stackMarginKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackMarginKey01.right) - (stackMarginKey.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.top - stackMarginKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackMarginKey01.bottom) - (stackMarginKey.bottom)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackMarginKey01.right - stackMarginKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.BottomEnd')

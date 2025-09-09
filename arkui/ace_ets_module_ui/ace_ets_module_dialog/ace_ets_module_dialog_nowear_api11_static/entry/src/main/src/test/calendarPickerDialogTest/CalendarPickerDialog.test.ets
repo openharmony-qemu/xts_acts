@@ -26,7 +26,7 @@ import {
   WindowMode
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -37,7 +37,7 @@ import deviceInfo from '@ohos.deviceInfo'
 import { BusinessError } from '@ohos.base';
 import window from '@ohos.window';
 import { UtilsTest } from '../Util.test';
-import { vp2px } from '@ohos.arkui.component'
+
 
 
 export default function CalendarPickerDialog() {
@@ -93,8 +93,8 @@ export default function CalendarPickerDialog() {
       expect(properties.type).assertEqual(1) //1表示系统告警窗口TYPE_SYSTEM_ALERT
 
       await CommonFunc.sleep(1000);
-      driver!.click(Math.round(AppStorage.get<number>("winLeft") as number + vp2px(100)) as Int,
-        Math.round(AppStorage.get<number>("winTop") as number + vp2px(100)) as Int);
+      driver!.click(Math.round(AppStorage.get<number>("winLeft") as number + UIContext.getFocusedUIContext()!.vp2px(100)) as Int,
+        Math.round(AppStorage.get<number>("winTop") as number + UIContext.getFocusedUIContext()!.vp2px(100)) as Int);
       await CommonFunc.sleep(1000);
       console.info('[CalendarPickerDialog_static_0100] END');
       done();

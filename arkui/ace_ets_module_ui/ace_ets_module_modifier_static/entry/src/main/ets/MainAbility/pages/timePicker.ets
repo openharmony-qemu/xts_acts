@@ -41,7 +41,6 @@ import {
   MenuAlignType,
   PickerTextStyle,
   PlaybackSpeed,
-  px2vp,
   Row,
   Select,
   Swiper,

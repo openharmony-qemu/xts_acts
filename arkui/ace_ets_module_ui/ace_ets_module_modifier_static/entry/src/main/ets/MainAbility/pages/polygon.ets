@@ -87,7 +87,6 @@ import {
   Path,
   PickerTextStyle,
   Polygon,
-  px2vp,
   RepeatMode,
   ResourceColor,
   Row,

@@ -109,15 +109,15 @@ it('testFlexAlignContentSpaceAroundTextVisibilityHidden_static', Level.LEVEL0, a
         expect(JSON.parseJsonElement(firstTextStrJson).getElement('$attrs').getString('visibility')).assertEqual("Visibility.Hidden");
 
         const uiContext = new UIContext();
-        expect(Math.abs(Math.round(secondText.bottom - secondText.top) - Math.round(uiContext.vp2px(100))) <= 2).assertTrue();
-        expect(Math.abs(Math.round(thirdText.bottom - thirdText.top) - Math.round(uiContext.vp2px(50))) <= 2).assertTrue();
-        expect(Math.abs(Math.round(fourthText.bottom - fourthText.top) - Math.round(uiContext.vp2px(100))) <= 2).assertTrue();
+        expect(Math.abs(Math.round(secondText.bottom - secondText.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 2).assertTrue();
+        expect(Math.abs(Math.round(thirdText.bottom - thirdText.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 2).assertTrue();
+        expect(Math.abs(Math.round(fourthText.bottom - fourthText.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 2).assertTrue();
 
         expect(Math.abs(Math.round(secondText.left) - Math.round(thirdText.left)) <= 2).assertTrue();
         expect(Math.abs(Math.round(thirdText.left) - Math.round(fourthText.left)) <= 2).assertTrue();
 
         expect(Math.abs(Math.round(fourthText.left) - Math.round(flexContainer.left)) <= 2).assertTrue();
-        expect(Math.abs(Math.round((secondText.top - flexContainer.top) * 100) / 100 - Math.round((distanceBefore * 1.5 + uiContext.vp2px(50)) * 100) / 100) <= 2)
+        expect(Math.abs(Math.round((secondText.top - flexContainer.top) * 100) / 100 - Math.round((distanceBefore * 1.5 + UIContext.getFocusedUIContext()!.vp2px(50)) * 100) / 100) <= 2)
           .assertTrue();
 
         expect(Math.abs(Math.round(thirdText.top - secondText.bottom) - Math.round(fourthText.top - thirdText.bottom)) <= 2)
@@ -169,9 +169,9 @@ it('testFlexAlignContentSpaceAroundTextVisibilityNone_static', Level.LEVEL0, asy
         let firstTextStrJson = inspector.getInspectorByKey('AlignContent_SpaceAround_TextVisibility01');
         expect(JSON.parseJsonElement(firstTextStrJson).getElement('$attrs').getString('visibility')).assertEqual("Visibility.None");
         const uiContext = new UIContext();
-        expect(Math.abs(secondText.bottom - secondText.top) - uiContext.vp2px(100) <= 1).assertTrue();
-        expect(Math.abs(thirdText.bottom - thirdText.top) - uiContext.vp2px(50) <= 1).assertTrue();
-        expect(Math.abs(fourthText.bottom - fourthText.top) - uiContext.vp2px(100) <= 1).assertTrue();
+        expect(Math.abs(secondText.bottom - secondText.top) - UIContext.getFocusedUIContext()!.vp2px(100) <= 1).assertTrue();
+        expect(Math.abs(thirdText.bottom - thirdText.top) - UIContext.getFocusedUIContext()!.vp2px(50) <= 1).assertTrue();
+        expect(Math.abs(fourthText.bottom - fourthText.top) - UIContext.getFocusedUIContext()!.vp2px(100) <= 1).assertTrue();
 
         expect(Math.abs(Math.round(secondText.left) - Math.round(thirdText.left)) <= 1).assertTrue();
         expect(Math.abs(Math.round(thirdText.left) - Math.round(fourthText.left)) <= 1).assertTrue();

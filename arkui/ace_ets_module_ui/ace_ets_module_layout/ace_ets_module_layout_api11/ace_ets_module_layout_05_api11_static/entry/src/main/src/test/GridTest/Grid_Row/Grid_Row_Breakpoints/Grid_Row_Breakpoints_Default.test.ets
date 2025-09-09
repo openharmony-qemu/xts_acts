@@ -86,7 +86,7 @@ it('SUB_ACE_GridRowBreakpoints_Default_static_0100', Level.LEVEL0, async (done: 
       let secondBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Default1');
       let thirdBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Default2');
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(secondBreakpoints.top - firstBreakpoints.bottom) - Math.round(uiContext.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(secondBreakpoints.top - firstBreakpoints.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
 
       console.info('SUB_ACE_GridRowBreakpoints_Default_static_0100 END');
@@ -114,8 +114,8 @@ it('SUB_ACE_GridRowBreakpoints_Default_static_0200', Level.LEVEL0, async (done: 
       let secondBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Default1');
       let thirdBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Default2');
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(secondBreakpoints.left - firstBreakpoints.right) - Math.round(uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(thirdBreakpoints.top - firstBreakpoints.bottom) - Math.round(uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(secondBreakpoints.left - firstBreakpoints.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(thirdBreakpoints.top - firstBreakpoints.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('SUB_ACE_GridRowBreakpoints_Default_static_0200 END');
       done();

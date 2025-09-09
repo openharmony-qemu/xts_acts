@@ -99,12 +99,12 @@ it('testItemAlignStartParentSetMargin_static', Level.LEVEL0, async () : Promise<
       expect(Math.abs(textFlexMargin01.right - textFlexMargin02.left) <= 1).assertTrue();
       expect(Math.abs(textFlexMargin02.right - textFlexMargin03.left) <= 1).assertTrue();
 
-      expect(Math.abs((textFlexMargin01.bottom - textFlexMargin01.top) - uiContext.vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs((textFlexMargin02.bottom - textFlexMargin02.top) - uiContext.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs((textFlexMargin03.bottom - textFlexMargin03.top) - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((textFlexMargin01.right - textFlexMargin01.left) - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((textFlexMargin02.right - textFlexMargin02.left) - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((textFlexMargin03.right - textFlexMargin03.left) - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs((textFlexMargin01.bottom - textFlexMargin01.top) - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
+      expect(Math.abs((textFlexMargin02.bottom - textFlexMargin02.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs((textFlexMargin03.bottom - textFlexMargin03.top) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs((textFlexMargin01.right - textFlexMargin01.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs((textFlexMargin02.right - textFlexMargin02.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs((textFlexMargin03.right - textFlexMargin03.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
 
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Start')

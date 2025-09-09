@@ -54,9 +54,9 @@ const vp2px = uiContext.vp2px
 const mask = new ShapeMask();
 mask.setRectShape({
   left: 0,
-  right: vp2px(150),
+  right: UIContext.getFocusedUIContext()!.vp2px(150),
   top: 0,
-  bottom: vp2px(150)
+  bottom: UIContext.getFocusedUIContext()!.vp2px(150)
 });
 mask.fillColor = 0X55FF0000;
 

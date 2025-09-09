@@ -41,7 +41,7 @@ import inspector from '@ohos.arkui.inspector';
       let properties = windowClass.getWindowProperties();
       console.info('Succeeded in obtaining the window properties. Data: ' + properties.windowRect.top);
       theWinTop = properties.windowRect.top + top
-      theWinLeft = properties.windowRect.left + left + vp2px(10)
+      theWinLeft = properties.windowRect.left + left + UIContext.getFocusedUIContext()!.vp2px(10)
       console.info('theWinTop:' + theWinTop + 'theWinLeft:' + theWinLeft);
     }).catch((err: BusinessError) => {
       console.error('Failed to obtain the top window. Cause: ' + err);

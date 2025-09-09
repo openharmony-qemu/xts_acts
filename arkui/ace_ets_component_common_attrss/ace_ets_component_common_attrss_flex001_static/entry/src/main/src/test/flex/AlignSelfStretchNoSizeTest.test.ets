@@ -262,28 +262,28 @@ export default function alignSelfStretchNoSizeTest() {
 
             expect(rect.left).assertEqual(parentRect.left);
             expect(rect.top).assertEqual(parentRect.top);
-            expect(rect.bottom - rect.top).assertEqual(uiContext.vp2px(parentHeight));
+            expect(rect.bottom - rect.top).assertEqual(UIContext.getFocusedUIContext()!.vp2px(parentHeight));
           } else if ((data.testValue.describe == 'SetStretchRowReverseWrap')
             || (data.testValue.describe == 'SetStretchRowWrapReverse')) {
 
 
             expect(rect.right).assertEqual(parentRect.right);
             expect(rect.top).assertEqual(parentRect.top);
-            expect(rect.bottom - rect.top).assertEqual(uiContext.vp2px(parentHeight));
+            expect(rect.bottom - rect.top).assertEqual(UIContext.getFocusedUIContext()!.vp2px(parentHeight));
           } else if ((data.testValue.describe == 'SetStretchColumnWrap')
             || (data.testValue.describe == 'SetStretchColumnReverseWrapReverse')) {
 
 
             expect(rect.left).assertEqual(parentRect.left);
             expect(rect.top).assertEqual(parentRect.top);
-            expect(rect.right - rect.left).assertEqual(uiContext.vp2px(parentWidth));
+            expect(rect.right - rect.left).assertEqual(UIContext.getFocusedUIContext()!.vp2px(parentWidth));
           } else if ((data.testValue.describe == 'SetStretchColumnReverseWrap')
             || (data.testValue.describe == 'SetStretchColumnWrapReverse')) {
 
 
             expect(rect.bottom).assertEqual(parentRect.bottom);
             expect(rect.left).assertEqual(parentRect.left);
-            expect(rect.right - rect.left).assertEqual(uiContext.vp2px(parentWidth));
+            expect(rect.right - rect.left).assertEqual(UIContext.getFocusedUIContext()!.vp2px(parentWidth));
           }
         }
       })

@@ -15,7 +15,7 @@
 
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium';
 import router from '@ohos.router';
-import {Alignment,vp2px} from '@ohos.arkui.component'
+import {Alignment} from '@ohos.arkui.component'
 import events_emitter from '@ohos.events.emitter'
 import { UtilsTest,startAbility } from '../../Util.test'
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -95,17 +95,17 @@ it('testStackAlignPaddingAlignTopStart_static', Level.LEVEL0, async (done: () =>
 
       let stackPaddingKey: RectValue = CommonFunc.getComponentRect('stackPaddingKey');
       let stackPaddingKey01: RectValue = CommonFunc.getComponentRect('stackPaddingKey01');
-      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - vp2px(40))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - vp2px(40))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - vp2px(250))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - UIContext.getFocusedUIContext()!.vp2px(250))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.TopStart')
@@ -142,14 +142,14 @@ it('testStackAlignPaddingAlignTop_static', Level.LEVEL0, async (done: () => void
 
       let stackPaddingKey: RectValue = CommonFunc.getComponentRect('stackPaddingKey');
       let stackPaddingKey01: RectValue = CommonFunc.getComponentRect('stackPaddingKey01');
-      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - vp2px(40))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - vp2px(250))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - UIContext.getFocusedUIContext()!.vp2px(250))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Top')
@@ -186,17 +186,17 @@ it('testStackAlignPaddingAlignTopEnd_static', Level.LEVEL0, async (done: () => v
 
       let stackPaddingKey: RectValue = CommonFunc.getComponentRect('stackPaddingKey');
       let stackPaddingKey01: RectValue = CommonFunc.getComponentRect('stackPaddingKey01');
-      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - vp2px(40))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - vp2px(40))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - vp2px(250))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - UIContext.getFocusedUIContext()!.vp2px(250))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.TopEnd')
@@ -233,15 +233,15 @@ it('testStackAlignPaddingAlignStart_static', Level.LEVEL0, async (done: () => vo
 
       let stackPaddingKey: RectValue = CommonFunc.getComponentRect('stackPaddingKey');
       let stackPaddingKey01: RectValue = CommonFunc.getComponentRect('stackPaddingKey01');
-      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - vp2px(40))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - vp2px(250))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - UIContext.getFocusedUIContext()!.vp2px(250))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Start')
@@ -278,12 +278,12 @@ it('testStackAlignPaddingAlignCenter_static', Level.LEVEL0, async (done: () => v
 
       let stackPaddingKey: RectValue = CommonFunc.getComponentRect('stackPaddingKey');
       let stackPaddingKey01: RectValue = CommonFunc.getComponentRect('stackPaddingKey01');
-      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - vp2px(250))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - UIContext.getFocusedUIContext()!.vp2px(250))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Center')
       console.info('new testStackAlignPaddingAlignCenter_static END');
@@ -319,12 +319,12 @@ it('testStackAlignPaddingAlignEnd_static', Level.LEVEL0, async (done: () => void
 
       let stackPaddingKey: RectValue = CommonFunc.getComponentRect('stackPaddingKey');
       let stackPaddingKey01: RectValue = CommonFunc.getComponentRect('stackPaddingKey01');
-      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - vp2px(40))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - vp2px(250))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - UIContext.getFocusedUIContext()!.vp2px(250))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.End')
       console.info('new testStackAlignPaddingAlignEnd_static END');
@@ -360,17 +360,17 @@ it('testStackAlignPaddingAlignBottomStart_static', Level.LEVEL0, async (done: ()
 
       let stackPaddingKey: RectValue = CommonFunc.getComponentRect('stackPaddingKey');
       let stackPaddingKey01: RectValue = CommonFunc.getComponentRect('stackPaddingKey01');
-      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - vp2px(40))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - vp2px(40))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - vp2px(250))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - UIContext.getFocusedUIContext()!.vp2px(250))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.BottomStart')
@@ -407,15 +407,15 @@ it('testStackAlignPaddingAlignBottom_static', Level.LEVEL0, async (done: () => v
 
       let stackPaddingKey: RectValue = CommonFunc.getComponentRect('stackPaddingKey');
       let stackPaddingKey01: RectValue = CommonFunc.getComponentRect('stackPaddingKey01');
-      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - vp2px(40))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - vp2px(250))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - UIContext.getFocusedUIContext()!.vp2px(250))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Bottom')
@@ -452,17 +452,17 @@ it('testStackAlignPaddingAlignBottomEnd_static', Level.LEVEL0, async (done: () =
 
       let stackPaddingKey: RectValue = CommonFunc.getComponentRect('stackPaddingKey');
       let stackPaddingKey01: RectValue = CommonFunc.getComponentRect('stackPaddingKey01');
-      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - vp2px(40))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - vp2px(40))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - vp2px(250))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - UIContext.getFocusedUIContext()!.vp2px(250))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.BottomEnd')
@@ -499,17 +499,17 @@ it('testStackAlignPaddingExceedAlignTopStart_static', Level.LEVEL0, async (done:
 
       let stackPaddingKey: RectValue = CommonFunc.getComponentRect('stackPaddingKey');
       let stackPaddingKey01: RectValue = CommonFunc.getComponentRect('stackPaddingKey01');
-      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - vp2px(30))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - vp2px(20))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - vp2px(30))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - vp2px(20))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - vp2px(250))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - UIContext.getFocusedUIContext()!.vp2px(250))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.TopStart')
@@ -546,15 +546,15 @@ it('testStackAlignPaddingExceedAlignTop_static', Level.LEVEL0, async (done: () =
 
       let stackPaddingKey: RectValue = CommonFunc.getComponentRect('stackPaddingKey');
       let stackPaddingKey01: RectValue = CommonFunc.getComponentRect('stackPaddingKey01');
-      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - vp2px(30))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - vp2px(20))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - vp2px(250))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - UIContext.getFocusedUIContext()!.vp2px(250))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Top')
@@ -591,17 +591,17 @@ it('testStackAlignPaddingExceedAlignTopEnd_static', Level.LEVEL0, async (done: (
 
       let stackPaddingKey: RectValue = CommonFunc.getComponentRect('stackPaddingKey');
       let stackPaddingKey01: RectValue = CommonFunc.getComponentRect('stackPaddingKey01');
-      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - vp2px(20))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - vp2px(30))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - vp2px(30))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - vp2px(20))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - vp2px(250))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - UIContext.getFocusedUIContext()!.vp2px(250))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.TopEnd')
@@ -638,15 +638,15 @@ it('testStackAlignPaddingExceedAlignStart_static', Level.LEVEL0, async (done: ()
 
       let stackPaddingKey: RectValue = CommonFunc.getComponentRect('stackPaddingKey');
       let stackPaddingKey01: RectValue = CommonFunc.getComponentRect('stackPaddingKey01');
-      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - vp2px(30))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - vp2px(20))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - vp2px(250))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - UIContext.getFocusedUIContext()!.vp2px(250))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Start')
@@ -683,13 +683,13 @@ it('testStackAlignPaddingExceedAlignCenter_static', Level.LEVEL0, async (done: (
 
       let stackPaddingKey: RectValue = CommonFunc.getComponentRect('stackPaddingKey');
       let stackPaddingKey01: RectValue = CommonFunc.getComponentRect('stackPaddingKey01');
-      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - vp2px(250))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - UIContext.getFocusedUIContext()!.vp2px(250))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Center')
@@ -726,15 +726,15 @@ it('testStackAlignPaddingExceedAlignEnd_static', Level.LEVEL0, async (done: () =
 
       let stackPaddingKey: RectValue = CommonFunc.getComponentRect('stackPaddingKey');
       let stackPaddingKey01: RectValue = CommonFunc.getComponentRect('stackPaddingKey01');
-      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - vp2px(20))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - vp2px(30))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - vp2px(250))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - UIContext.getFocusedUIContext()!.vp2px(250))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.End')
@@ -771,17 +771,17 @@ it('testStackAlignPaddingExceedAlignBottomStart_static', Level.LEVEL0, async (do
 
       let stackPaddingKey: RectValue = CommonFunc.getComponentRect('stackPaddingKey');
       let stackPaddingKey01: RectValue = CommonFunc.getComponentRect('stackPaddingKey01');
-      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - vp2px(30))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - vp2px(20))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - vp2px(20))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - vp2px(30))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - vp2px(250))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - UIContext.getFocusedUIContext()!.vp2px(250))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.BottomStart')
@@ -818,16 +818,16 @@ it('testStackAlignPaddingExceedAlignBottom_static', Level.LEVEL0, async (done: (
 
       let stackPaddingKey: RectValue = CommonFunc.getComponentRect('stackPaddingKey');
       let stackPaddingKey01: RectValue = CommonFunc.getComponentRect('stackPaddingKey01');
-      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left)- vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - vp2px(25))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - vp2px(20))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left)- UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - vp2px(30))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - vp2px(250))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - UIContext.getFocusedUIContext()!.vp2px(250))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Bottom')
@@ -864,17 +864,17 @@ it('testStackAlignPaddingExceedAlignBottomEnd_static', Level.LEVEL0, async (done
 
       let stackPaddingKey: RectValue = CommonFunc.getComponentRect('stackPaddingKey');
       let stackPaddingKey01: RectValue = CommonFunc.getComponentRect('stackPaddingKey01');
-      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - vp2px(20))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.left - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - vp2px(30))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey01.right) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - vp2px(20))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.top - stackPaddingKey.top) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - vp2px(30))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.bottom - stackPaddingKey01.bottom) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - vp2px(250))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey01.right - stackPaddingKey01.left) - UIContext.getFocusedUIContext()!.vp2px(250))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs((stackPaddingKey.right - stackPaddingKey.left) - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignContent')).assertEqual('Alignment.BottomEnd')

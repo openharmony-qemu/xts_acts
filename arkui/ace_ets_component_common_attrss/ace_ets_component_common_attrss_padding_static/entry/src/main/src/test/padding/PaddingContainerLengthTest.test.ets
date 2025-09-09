@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { vp2px } from '@ohos.arkui.component';
+
 import { AttrsManager, EN } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
@@ -25,6 +25,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { UIContext } from "@ohos.arkui.UIContext";
 import {UtilsTest} from '../Util.test'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -99,10 +100,10 @@ export default function paddingTest() {
     },
     expectValue: {
       padding: '10.00vp',
-      // top: vp2px(10),
-      // right: vp2px(10),
-      // bottom: vp2px(10),
-      // left: vp2px(10),
+      // top: UIContext.getFocusedUIContext()!.vp2px(10),
+      // right: UIContext.getFocusedUIContext()!.vp2px(10),
+      // bottom: UIContext.getFocusedUIContext()!.vp2px(10),
+      // left: UIContext.getFocusedUIContext()!.vp2px(10),
       top: 0,
       right: 0,
       bottom: 0,
@@ -129,10 +130,10 @@ export default function paddingTest() {
     },
     expectValue: {
       padding: '10.00vp',
-      // top: vp2px(10),
-      // right: vp2px(10),
-      // bottom: vp2px(10),
-      // left: vp2px(10)
+      // top: UIContext.getFocusedUIContext()!.vp2px(10),
+      // right: UIContext.getFocusedUIContext()!.vp2px(10),
+      // bottom: UIContext.getFocusedUIContext()!.vp2px(10),
+      // left: UIContext.getFocusedUIContext()!.vp2px(10)
       top: 0,
       right: 0,
       bottom: 0,
@@ -151,7 +152,7 @@ export default function paddingTest() {
       bottom: 0,
       left: 0,
       parentWidthAfter: 0
-      // parentWidthAfter: vp2px(parentWidth) * 0.1
+      // parentWidthAfter: UIContext.getFocusedUIContext()!.vp2px(parentWidth) * 0.1
     }
   }] as TestValue[]
 
@@ -222,7 +223,7 @@ export default function paddingTest() {
 
           //Panel component need special adapter ,the reason is the top of Panel has a own size
           if (data.pageConfig.componentKey == 'Panel') {
-            expect(Math.abs(referenceRect.top - targetRectAfter.top - (data.testValue.expectValue.bottom + vp2px(8))) <= 1)
+            expect(Math.abs(referenceRect.top - targetRectAfter.top - (data.testValue.expectValue.bottom + UIContext.getFocusedUIContext()!.vp2px(8))) <= 1)
               .assertTrue();
           } else {
             expect(Math.abs(referenceRect.top - targetRectAfter.top - (data.testValue.expectValue.top)) <= 1)
@@ -247,7 +248,7 @@ export default function paddingTest() {
 
           //Panel component need special adapter ,the reason is the top of Panel has a own size
           if (data.pageConfig.componentKey == 'Panel') {
-            expect(Math.abs(referenceRect.top - targetRectAfter.top - (data.testValue.expectValue.parentWidthAfter + vp2px(8))) <= 1)
+            expect(Math.abs(referenceRect.top - targetRectAfter.top - (data.testValue.expectValue.parentWidthAfter + UIContext.getFocusedUIContext()!.vp2px(8))) <= 1)
               .assertTrue();
           } else {
             expect(Math.abs(referenceRect.top - targetRectAfter.top - data.testValue.expectValue.parentWidthAfter) <= 1)

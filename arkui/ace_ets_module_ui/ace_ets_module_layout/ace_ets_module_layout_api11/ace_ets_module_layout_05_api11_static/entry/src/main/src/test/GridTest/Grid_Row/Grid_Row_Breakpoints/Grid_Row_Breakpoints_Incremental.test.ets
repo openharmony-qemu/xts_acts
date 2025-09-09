@@ -84,10 +84,10 @@ it('SUB_ACE_GridRowBreakpoints_static_0100', Level.LEVEL0, async (done: () => vo
       let fourthBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Incremental3');
       let fifthBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Incremental4');
       const uiContext = new UIContext();
-      expect(Math.floor(Math.abs((secondBreakpoints.left - firstBreakpoints.right) - uiContext.vp2px(20))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((thirdBreakpoints.left - secondBreakpoints.right) - uiContext.vp2px(20))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((fourthBreakpoints.left - thirdBreakpoints.right) - uiContext.vp2px(20))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((fifthBreakpoints.top - firstBreakpoints.bottom) - uiContext.vp2px(20))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((secondBreakpoints.left - firstBreakpoints.right) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((thirdBreakpoints.left - secondBreakpoints.right) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((fourthBreakpoints.left - thirdBreakpoints.right) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((fifthBreakpoints.top - firstBreakpoints.bottom) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
       console.info('SUB_ACE_GridRowBreakpoints_static_0100 END');
       done();
     });

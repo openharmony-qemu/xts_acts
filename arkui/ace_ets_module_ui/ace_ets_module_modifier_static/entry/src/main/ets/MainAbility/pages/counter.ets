@@ -52,7 +52,6 @@ import {
   MarkStyle,
   MenuAlignType,
   PickerTextStyle,
-  px2vp,
   RepeatMode,
   ResourceColor,
   Row,

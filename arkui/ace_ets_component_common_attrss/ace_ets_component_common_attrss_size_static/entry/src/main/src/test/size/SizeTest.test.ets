@@ -148,7 +148,7 @@ export default function sizeTest() {
           },
           expectValue: {
             widthCompare: '200.00vp', heightCompare: '200.00vp',
-            //width: uiContext?.vp2px(200)!, height: uiContext?.vp2px(200)!
+            //width: UIContext.getFocusedUIContext()!.vp2px(200)!, height: UIContext.getFocusedUIContext()!.vp2px(200)!
             width: 200, height: 200
           } as ExpectValue
         }, {
@@ -158,7 +158,7 @@ export default function sizeTest() {
           },
           expectValue: {
             widthCompare: '50.00%', heightCompare: '50.00%',
-            //width: uiContext?.vp2px(parentWidth)! * 0.5, height: uiContext?.vp2px(parentHeight)! * 0.5
+            //width: UIContext.getFocusedUIContext()!.vp2px(parentWidth)! * 0.5, height: UIContext.getFocusedUIContext()!.vp2px(parentHeight)! * 0.5
             width: parentWidth, height: parentHeight
           } as ExpectValue
         }, {
@@ -169,9 +169,9 @@ export default function sizeTest() {
           },
           expectValue: {
             widthCompare: '200.00vp', heightCompare: '100.00vp',
-            //width: uiContext?.vp2px(200)!,
+            //width: UIContext.getFocusedUIContext()!.vp2px(200)!,
             width: 200,
-            //height: uiContext?.vp2px(100)!
+            //height: UIContext.getFocusedUIContext()!.vp2px(100)!
             height: 100
           } as ExpectValue
         }, {

@@ -102,14 +102,14 @@ export default function bindSheetType() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[bindSheetType_0100] component obj is: " + JSON.stringify(obj));
       console.info("[bindSheetType_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      if (uiContext.px2vp(colWidth) - 840 >= 0) {
+      if (UIContext.getFocusedUIContext()!.px2vp(colWidth) - 840 >= 0) {
         expect(obj.getElement('$attrs').getString('content')).assertEqual("value SheetType:2");
         let button2 = await driver.findComponent(ON.id('close'));
         await ((button2?.click()) as Promise<void>)
         await CommonFunc.sleep(1000);
         console.info('[bindSheetType_0100] END');
         done();
-      } else if (uiContext.px2vp(colWidth) - 840 < 0 && uiContext.px2vp(colWidth) - 600 >= 0 && display.isFoldable() &&
+      } else if (UIContext.getFocusedUIContext()!.px2vp(colWidth) - 840 < 0 && UIContext.getFocusedUIContext()!.px2vp(colWidth) - 600 >= 0 && display.isFoldable() &&
         (display.getFoldStatus() == 3 || display.getFoldStatus() == 1)) {
         expect(obj.getElement('$attrs').getString('content')).assertEqual("value SheetType:2");
         let button2 = await driver.findComponent(ON.id('close'));

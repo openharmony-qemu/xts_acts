@@ -108,7 +108,7 @@ export default function BindSheetTest() {
       let date1 = JSON.stringify(obj1.getElement('$children')[1].getElement('$children')[0])
       console.info("[bindSheetTest_0100] date1 is: " + date1);
       console.info("[bindSheetTest_0100] topLeft is: " +
-      Math.trunc(uiContext.vp2px(parseInt(JSON.parseJsonElement(date1)
+      Math.trunc(UIContext.getFocusedUIContext()!.vp2px(parseInt(JSON.parseJsonElement(date1)
         .getElement('$attrs')
         .getElement('borderRadius')
         .getString('topLeft')))));
@@ -118,11 +118,11 @@ export default function BindSheetTest() {
       console.info("[bindSheetTest_0100] windowRadiusSmall is: " + windowRadiusSmall)
       console.info("[bindSheetTest_0100] radius is: " + radius)
       console.info("[bindSheetTest_0100] is: " + JSON.stringify($r('sys.float.window_radius_small')))
-      expect(Math.trunc(uiContext.vp2px(parseInt(JSON.parseJsonElement(date1)
+      expect(Math.trunc(UIContext.getFocusedUIContext()!.vp2px(parseInt(JSON.parseJsonElement(date1)
         .getElement('$attrs')
         .getElement('borderRadius')
         .getString('topLeft'))))).assertEqual(parseInt(radius));
-      expect(Math.trunc(uiContext.vp2px(parseInt(JSON.parseJsonElement(date1)
+      expect(Math.trunc(UIContext.getFocusedUIContext()!.vp2px(parseInt(JSON.parseJsonElement(date1)
         .getElement('$attrs')
         .getElement('borderRadius')
         .getString('topRight'))))).assertEqual(parseInt(radius));
@@ -193,7 +193,7 @@ export default function BindSheetTest() {
       console.info("[bindSheetTest_0300] topLeft is: " +
       JSON.parseJsonElement(date1).getElement('$attrs').getElement('borderRadius').getString('topLeft'));
       console.info("[bindSheetTest_0300] topRight is: " +
-      Math.trunc(uiContext.vp2px(parseInt(JSON.parseJsonElement(date1)
+      Math.trunc(UIContext.getFocusedUIContext()!.vp2px(parseInt(JSON.parseJsonElement(date1)
         .getElement('$attrs')
         .getElement('borderRadius')
         .getString('topRight')))));
@@ -205,7 +205,7 @@ export default function BindSheetTest() {
       console.info("[bindSheetTest_0300] is: " + JSON.stringify($r('sys.float.window_radius_small')))
       expect(JSON.parseJsonElement(date1).getElement('$attrs').getElement('borderRadius').getString('topLeft'))
         .assertEqual("100.00vp");
-      expect(Math.trunc(uiContext.vp2px(parseInt(JSON.parseJsonElement(date1)
+      expect(Math.trunc(UIContext.getFocusedUIContext()!.vp2px(parseInt(JSON.parseJsonElement(date1)
         .getElement('$attrs')
         .getElement('borderRadius')
         .getString('topRight'))))).assertEqual(parseInt(radius));
@@ -238,7 +238,7 @@ export default function BindSheetTest() {
       let date1 = JSON.stringify(obj1.getElement('$children')[1].getElement('$children')[0])
       console.info("[bindSheetTest_0400] date1 is: " + date1);
       console.info("[bindSheetTest_0400] topLeft is: " +
-      Math.trunc(uiContext.vp2px(parseInt(JSON.parseJsonElement(date1)
+      Math.trunc(UIContext.getFocusedUIContext()!.vp2px(parseInt(JSON.parseJsonElement(date1)
         .getElement('$attrs')
         .getElement('borderRadius')
         .getString('topLeft')))));
@@ -248,11 +248,11 @@ export default function BindSheetTest() {
       console.info("[bindSheetTest_0400] windowRadiusSmall is: " + windowRadiusSmall)
       console.info("[bindSheetTest_0400] radius is: " + radius)
       console.info("[bindSheetTest_0400] is: " + JSON.stringify($r('sys.float.window_radius_small')))
-      expect(Math.trunc(uiContext.vp2px(parseInt(JSON.parseJsonElement(date1)
+      expect(Math.trunc(UIContext.getFocusedUIContext()!.vp2px(parseInt(JSON.parseJsonElement(date1)
         .getElement('$attrs')
         .getElement('borderRadius')
         .getString('topLeft'))))).assertEqual(parseInt(radius));
-      expect(Math.trunc(uiContext.vp2px(parseInt(JSON.parseJsonElement(date1)
+      expect(Math.trunc(UIContext.getFocusedUIContext()!.vp2px(parseInt(JSON.parseJsonElement(date1)
         .getElement('$attrs')
         .getElement('borderRadius')
         .getString('topRight'))))).assertEqual(parseInt(radius));

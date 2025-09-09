@@ -49,7 +49,6 @@ import {
   MenuAlignType,
   PickerTextStyle,
   PlaybackSpeed,
-  px2vp,
   Resource,
   Row,
   Scroll,

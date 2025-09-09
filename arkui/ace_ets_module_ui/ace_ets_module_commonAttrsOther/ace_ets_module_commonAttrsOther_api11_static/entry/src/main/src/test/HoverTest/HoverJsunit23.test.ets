@@ -122,8 +122,8 @@ export default function HoverJsunit23() {
       await CommonFunc.sleep(500);
       let point = await (buttonCl?.getBoundsCenter() as Promise<Point>);
       await driver.mouseMoveTo({
-        x: Math.round(point.x + uiContext.vp2px(100)) as Int,
-        y: Math.round(point.y + uiContext.vp2px(100)) as Int
+        x: Math.round(point.x + UIContext.getFocusedUIContext()!.vp2px(100)) as Int,
+        y: Math.round(point.y + UIContext.getFocusedUIContext()!.vp2px(100)) as Int
       })
       await CommonFunc.sleep(1000);
       let strJsonA = inspector.getInspectorByKey('hoverA23');
@@ -157,8 +157,8 @@ export default function HoverJsunit23() {
       await CommonFunc.sleep(500);
       let point = await (buttonCl?.getBoundsCenter() as Promise<Point>);
       await driver.mouseMoveTo({
-        x: Math.round(point.x + uiContext.vp2px(100)) as Int,
-        y: Math.round(point.y + uiContext.vp2px(100)) as Int
+        x: Math.round(point.x + UIContext.getFocusedUIContext()!.vp2px(100)) as Int,
+        y: Math.round(point.y + UIContext.getFocusedUIContext()!.vp2px(100)) as Int
       })
       await CommonFunc.sleep(1000);
       let strJsonA = inspector.getInspectorByKey('hoverA23');

@@ -108,11 +108,11 @@ export default function RowSpaceResourceTest() {
       let Row1_03 = CommonFunc.getComponentRect('RowSpaceResource_Row1_03');
 
       console.info('[RowSpaceResourceTest_0100] Row1.left - Row1_01.left');
-      console.info('[RowSpaceResourceTest_0100] Row1_02.left - Row1_01.right - uiContext.vp2px(10)');
-      console.info('[RowSpaceResourceTest_0100] Row1_03.left - Row1_02.right - uiContext.vp2px(10)');
+      console.info('[RowSpaceResourceTest_0100] Row1_02.left - Row1_01.right - UIContext.getFocusedUIContext()!.vp2px(10)');
+      console.info('[RowSpaceResourceTest_0100] Row1_03.left - Row1_02.right - UIContext.getFocusedUIContext()!.vp2px(10)');
       expect(Math.floor(Math.abs(Row1.left - Row1_01.left)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Row1_02.left - Row1_01.right - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Row1_03.left - Row1_02.right - uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Row1_02.left - Row1_01.right - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Row1_03.left - Row1_02.right - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[RowSpaceResourceTest_0100] END');
       done();
@@ -139,11 +139,11 @@ export default function RowSpaceResourceTest() {
       let Row2_03 = CommonFunc.getComponentRect('RowSpaceResource_Row2_03');
 
       console.info('[RowSpaceResourceTest_0200] Row2.left - Row2_01.left');
-      console.info('[RowSpaceResourceTest_0200] Row2_02.left - Row2_01.right - uiContext.vp2px(10)');
-      console.info('[RowSpaceResourceTest_0200] Row2_03.left - Row2_02.right - uiContext.vp2px(10)');
+      console.info('[RowSpaceResourceTest_0200] Row2_02.left - Row2_01.right - UIContext.getFocusedUIContext()!.vp2px(10)');
+      console.info('[RowSpaceResourceTest_0200] Row2_03.left - Row2_02.right - UIContext.getFocusedUIContext()!.vp2px(10)');
       expect(Math.floor(Math.abs(Row2.left - Row2_01.left)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Row2_02.left - Row2_01.right - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Row2_03.left - Row2_02.right - uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Row2_02.left - Row2_01.right - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Row2_03.left - Row2_02.right - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[RowSpaceResourceTest_0200] END');
       done();
@@ -170,11 +170,11 @@ export default function RowSpaceResourceTest() {
       let Row3_03 = CommonFunc.getComponentRect('RowSpaceResource_Row3_03');
 
       console.info('[RowSpaceResourceTest_0300] Row3.left - Row3_01.left');
-      console.info('[RowSpaceResourceTest_0300] Row3_02.left - Row3_01.right - uiContext.vp2px(10.9)');
-      console.info('[RowSpaceResourceTest_0300] Row3_03.left - Row3_02.right - uiContext.vp2px(10.9)');
+      console.info('[RowSpaceResourceTest_0300] Row3_02.left - Row3_01.right - UIContext.getFocusedUIContext()!.vp2px(10.9)');
+      console.info('[RowSpaceResourceTest_0300] Row3_03.left - Row3_02.right - UIContext.getFocusedUIContext()!.vp2px(10.9)');
       expect(Math.floor(Math.abs(Row3.left - Row3_01.left)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Row3_02.left - Row3_01.right - uiContext.vp2px(10.9))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Row3_03.left - Row3_02.right - uiContext.vp2px(10.9))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Row3_02.left - Row3_01.right - UIContext.getFocusedUIContext()!.vp2px(10.9))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Row3_03.left - Row3_02.right - UIContext.getFocusedUIContext()!.vp2px(10.9))) <= 1).assertTrue();
 
       console.info('[RowSpaceResourceTest_0300] END');
       done();

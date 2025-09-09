@@ -102,13 +102,13 @@ it('testFlexAlignContentSpaceAroundTextOffset_static', Level.LEVEL0, async () =>
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('warp')).assertEqual('FlexWrap.Wrap');
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual('FlexAlign.SpaceBetween');
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(firstText.bottom - firstText.top) - uiContext.vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(secondText.bottom - secondText.top) - uiContext.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(thirdText.bottom - thirdText.top) - uiContext.vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(fourthText.bottom - fourthText.top) - uiContext.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(firstText.bottom - firstText.top) - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(secondText.bottom - secondText.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(thirdText.bottom - thirdText.top) - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(fourthText.bottom - fourthText.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
 
-      expect(Math.abs(firstText.top - flexContainer.top - uiContext.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs(firstText.left - flexContainer.left - uiContext.vp2px(10)) <= 1).assertTrue(); 
+      expect(Math.abs(firstText.top - flexContainer.top - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(firstText.left - flexContainer.left - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue(); 
       expect(Math.abs(flexContainer.left - secondText.left) <= 1).assertTrue();
       expect(Math.abs(secondText.left - thirdText.left) <= 1).assertTrue();
       expect(Math.abs(thirdText.left - fourthText.left) <= 1).assertTrue();

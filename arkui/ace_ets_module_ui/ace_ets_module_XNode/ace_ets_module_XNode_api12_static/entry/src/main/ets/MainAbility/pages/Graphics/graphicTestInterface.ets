@@ -42,9 +42,9 @@ const mask = new ShapeMask();
 
 mask.setOvalShape({
   left: 0,
-  right: vp2px(150),
+  right: UIContext.getFocusedUIContext()!.vp2px(150),
   top: 0,
-  bottom: vp2px(100)
+  bottom: UIContext.getFocusedUIContext()!.vp2px(100)
 });
 mask.setCommandPath({ commands: "M100 0 L0 100 L50 200 L150 200 L200 100 Z" });
 mask.fillColor = 0X55FF0000;
