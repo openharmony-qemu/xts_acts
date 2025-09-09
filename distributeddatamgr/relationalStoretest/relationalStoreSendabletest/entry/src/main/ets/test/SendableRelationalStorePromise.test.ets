@@ -145,7 +145,7 @@ export default function rdbStoreSendableTest() {
       done();
     });
 
-    beforeEach(() => {
+    beforeEach(async() => {
       console.info(TAG + 'beforeEach');
       await rdbStore.executeSql(CREATE_TABLE_TEST);
       let sendableValuesBucket1: sendableRelationalStore.ValuesBucket = sendableRelationalStore.toSendableValuesBucket(valuesBucket2);
@@ -153,7 +153,7 @@ export default function rdbStoreSendableTest() {
 
     });
 
-    afterEach(() => {
+    afterEach(async() => {
       console.info(TAG + 'afterEach');
       await rdbStore.executeSql(DROP_TABLE_TEST);
     });
