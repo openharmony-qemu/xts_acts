@@ -1151,4 +1151,567 @@ export default function napiCheckExTest() {
     }
     done();
   });
+
+  // ==================== NAPI Extension Test Cases ====================
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0001
+   * @tc.name      : testAsyncTaskSchedulingPriority
+   * @tc.desc      : Testing async task scheduling priority.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testAsyncTaskSchedulingPriority', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest001();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0002
+   * @tc.name      : testCallThreadSafeFunctionWithPriority
+   * @tc.desc      : Testing thread safe function call with priority.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testCallThreadSafeFunctionWithPriority', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest002();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0003
+   * @tc.name      : testHighPriorityCallToTail
+   * @tc.desc      : Testing high priority call to tail.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testHighPriorityCallToTail', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest003();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0004
+   * @tc.name      : testNormalPriorityCallToHead
+   * @tc.desc      : Testing normal priority call to head.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testNormalPriorityCallToHead', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest004();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0005
+   * @tc.name      : testLowPriorityCall
+   * @tc.desc      : Testing low priority call.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testLowPriorityCall', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest005();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0006
+   * @tc.name      : testMixedPriorityExecutionOrder
+   * @tc.desc      : Testing mixed priority execution order.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testMixedPriorityExecutionOrder', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest006();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0007
+   * @tc.name      : testSamePriorityIsTailEffect
+   * @tc.desc      : Testing same priority isTail effect.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testSamePriorityIsTailEffect', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest007();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0008
+   * @tc.name      : testSerializeSimpleObject
+   * @tc.desc      : Testing serialize simple object.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testSerializeSimpleObject', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest008();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0009
+   * @tc.name      : testSerializeWithTransferList
+   * @tc.desc      : Testing serialize with transfer list.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testSerializeWithTransferList', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest009();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0010
+   * @tc.name      : testSerializeWithCloneList
+   * @tc.desc      : Testing serialize with clone list.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testSerializeWithCloneList', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest010();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0011
+   * @tc.name      : testSerializeComplexNestedObject
+   * @tc.desc      : Testing serialize complex nested object.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testSerializeComplexNestedObject', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest011();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0012
+   * @tc.name      : testDeserializeSimpleObject
+   * @tc.desc      : Testing deserialize simple object.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testDeserializeSimpleObject', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest012();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0013
+   * @tc.name      : testDeserializeWithTransferData
+   * @tc.desc      : Testing deserialize with transfer data.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testDeserializeWithTransferData', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest013();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0014
+   * @tc.name      : testDeserializeWithCloneData
+   * @tc.desc      : Testing deserialize with clone data.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testDeserializeWithCloneData', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest014();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0015
+   * @tc.name      : testDeleteValidSerializationData
+   * @tc.desc      : Testing delete valid serialization data.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testDeleteValidSerializationData', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest015();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0016
+   * @tc.name      : testDeleteSerializationDataTwice
+   * @tc.desc      : Testing delete serialization data twice.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testDeleteSerializationDataTwice', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest016();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0017
+   * @tc.name      : testSerializeDeserializeDeleteFlow
+   * @tc.desc      : Testing serialize deserialize delete flow.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testSerializeDeserializeDeleteFlow', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest017();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0018
+   * @tc.name      : testMultiThreadSerialization
+   * @tc.desc      : Testing multi thread serialization.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testMultiThreadSerialization', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest018();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0019
+   * @tc.name      : testCrossThreadSerialization
+   * @tc.desc      : Testing cross thread serialization.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testCrossThreadSerialization', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest019();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0020
+   * @tc.name      : testAsyncEventLoopRunAndStop
+   * @tc.desc      : Testing async event loop run and stop.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testAsyncEventLoopRunAndStop', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest020();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0021
+   * @tc.name      : testCreateArkTSRuntime
+   * @tc.desc      : Testing create ArkTS runtime.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testCreateArkTSRuntime', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest021();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0022
+   * @tc.name      : testCreateAndDestroyRuntime
+   * @tc.desc      : Testing create and destroy runtime.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testCreateAndDestroyRuntime', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest022();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0023
+   * @tc.name      : testCreateMultipleRuntimes
+   * @tc.desc      : Testing create multiple runtimes.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testCreateMultipleRuntimes', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest023();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0024
+   * @tc.name      : testBasicEventLoopOperations
+   * @tc.desc      : Testing basic event loop operations.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testBasicEventLoopOperations', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest024();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0025
+   * @tc.name      : testDifferentEventLoopModes
+   * @tc.desc      : Testing different event loop modes.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testDifferentEventLoopModes', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest025();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0026
+   * @tc.name      : testFullLifecycle
+   * @tc.desc      : Testing full lifecycle.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testFullLifecycle', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest026();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0027
+   * @tc.name      : testAsyncWorkWithQoS
+   * @tc.desc      : Testing async work with QoS.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testAsyncWorkWithQoS', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest027();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0028
+   * @tc.name      : testRunScriptPath
+   * @tc.desc      : Testing run script path.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testRunScriptPath', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest028();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0029
+   * @tc.name      : testLoadModule
+   * @tc.desc      : Testing load module.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testLoadModule', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest029();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0030
+   * @tc.name      : testLoadModuleWithInfo
+   * @tc.desc      : Testing load module with info.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testLoadModuleWithInfo', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest030();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0032
+   * @tc.name      : testCreateObjectWithProperties
+   * @tc.desc      : Testing create object with properties.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testCreateObjectWithProperties', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest032();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0033
+   * @tc.name      : testCreateObjectWithNamedProperties
+   * @tc.desc      : Testing create object with named properties.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testCreateObjectWithNamedProperties', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest033();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0034
+   * @tc.name      : testCoerceToNativeBindingObject
+   * @tc.desc      : Testing coerce to native binding object.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testCoerceToNativeBindingObject', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest034();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0035
+   * @tc.name      : testJSObjectNativeBindingAndUnwrapping
+   * @tc.desc      : Testing JS object native binding and unwrapping.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testJSObjectNativeBindingAndUnwrapping', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest035();
+    expect(result).assertTrue();
+  });
+
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0036
+   * @tc.name      : testAsyncTaskWithPromise
+   * @tc.desc      : Testing async task with promise.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testAsyncTaskWithPromise', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest036();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0037
+   * @tc.name      : testAsyncTaskWithCallback
+   * @tc.desc      : Testing async task with callback.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testAsyncTaskWithCallback', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest037();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0038
+   * @tc.name      : testThreadSafetyDevelopment
+   * @tc.desc      : Testing thread safety development.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testThreadSafetyDevelopment', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest038();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0039
+   * @tc.name      : testNativeArkTSObjectBinding
+   * @tc.desc      : Testing native ArkTS object binding.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testNativeArkTSObjectBinding', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest039();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0040
+   * @tc.name      : testNativeSendableArkTSObjectBinding
+   * @tc.desc      : Testing native sendable ArkTS object binding.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testNativeSendableArkTSObjectBinding', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest040();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0041
+   * @tc.name      : testMainThreadModuleLoading
+   * @tc.desc      : Testing main thread module loading.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testMainThreadModuleLoading', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest041();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0042
+   * @tc.name      : testAsyncThreadEventLoop
+   * @tc.desc      : Testing async thread event loop.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testAsyncThreadEventLoop', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest042();
+    expect(result).assertTrue();
+  });
+
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0044
+   * @tc.name      : testAsyncThreadTaskSubmission
+   * @tc.desc      : Testing async thread task submission.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testAsyncThreadTaskSubmission', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest044();
+    expect(result).assertTrue();
+  });
+
+  /**
+   * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0045
+   * @tc.name      : testNAPIExceptionLoggingAndCrashAnalysis
+   * @tc.desc      : Testing NAPI exception logging and crash analysis.
+   * @tc.size      : SmallTest
+   * @tc.type      : Function
+   * @tc.level     : Level 1
+   */
+  it('testNAPIExceptionLoggingAndCrashAnalysis', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    let result = napitestex.NapiExtensionTest045();
+    expect(result).assertTrue();
+  });
 }
