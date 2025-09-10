@@ -14,11 +14,9 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
-import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
-import UIAbility from '@ohos.app.ability.UIAbility';
+
+const EVENT_ID_SET_EMIT_KEY = 201560;
 
 @Entry
 @Component
@@ -33,13 +31,19 @@ struct webONHttpErrorReceiveIframe {
   @State databaseAccess: boolean = true;
   @State userAgent: string = "Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.88 Mobile Safari/537.36";
   @State title: string = "test";
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: ESObject) => {
@@ -48,6 +52,7 @@ struct webONHttpErrorReceiveIframe {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -55,8 +60,11 @@ struct webONHttpErrorReceiveIframe {
   build() {
     Column() {
       Row() {
-        Button("onHttpErrorTest").key('webONHttpErrorReceiveIframe').onClick(() => {
+        Button("onHttpErrorTest").key('webONHttpErrorReceiveIframe').onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, 'webONHttpErrorReceiveIframeIsReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, 'webONHttpErrorReceiveIframeIsPageEnd', 1, 1000);
           console.info("key==>" + this.str)
+          this.isReceive = -1;
           switch (this.str) {
             case "emitOnHttpErrorReceiveByIframeHtmlWebc": {
               try {
@@ -64,16 +72,12 @@ struct webONHttpErrorReceiveIframe {
                   script: "gettitle()", callback: (result) => {
                     this.title = JSON.parse(result)
                     console.log(`The gettitle() return value is: ${result}`);
+                    Utils.emitEvent(this.title, 201580);
                   }
                 })
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
-              this.controller.runJavaScript({
-                script: "test()", callback: (res) => {
-                  Utils.emitEvent(this.title, 498);
-                }
-              })
               break;
             }
           }
@@ -91,7 +95,7 @@ struct webONHttpErrorReceiveIframe {
         .onHttpErrorReceive((event) => {
           console.log('url:' + event.request.getRequestUrl());
           console.log('isMainFrame:' + event.request.isMainFrame());
-          Utils.emitEvent(event.request.isMainFrame(), 496);
+          Utils.emitEvent(event.request.isMainFrame(), 201570);
           console.log('isRedirect:' + event.request.isRedirect());
           console.log('isRequestGesture:' + event.request.isRequestGesture());
           console.log('getRequestMethod:' + event.request.getRequestMethod());
@@ -110,6 +114,10 @@ struct webONHttpErrorReceiveIframe {
           for (let i of resph) {
             console.log('The response header key is : ' + i.headerKey + ' , value is : ' + i.headerValue);
           }
+        })
+        .onPageEnd((event) => {
+          console.log('onPageEnd ==>' + event.url);
+          this.isPageEnd = 1;
         })
     }
   }

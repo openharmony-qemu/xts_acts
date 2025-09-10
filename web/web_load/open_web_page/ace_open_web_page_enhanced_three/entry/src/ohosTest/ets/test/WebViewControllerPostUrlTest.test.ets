@@ -13,10 +13,14 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 200960;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function webViewControllerPostUrlTest() {
@@ -33,13 +37,14 @@ export default function webViewControllerPostUrlTest() {
         console.info("get WebViewControllerPostUrlTest state success " + JSON.stringify(pages));
         if (!("WebViewControllerPostUrlTest" == pages.name)) {
           console.info("get WebViewControllerPostUrlTest state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push WebViewControllerPostUrlTest page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info("push WebViewControllerPostUrlTest page success");
         }
       } catch (err) {
         console.error("push WebViewControllerPostUrlTest page error: " + err);
       }
+      await driver.waitForComponent(ON.id("WebViewControllerPostUrlTestButton"), 10000);
+      console.log("waitForComponent WebViewControllerPostUrlTestButton");
       done()
     });
 
@@ -49,7 +54,6 @@ export default function webViewControllerPostUrlTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("WebViewControllerPostUrlTest beforeEach start");
       done();
     })
@@ -63,10 +67,12 @@ export default function webViewControllerPostUrlTest() {
     * @tc.level      : Level 1
     */
     it('testWebViewControllerPostUrl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebViewControllerPostUrl001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebViewControllerPostUrl001", 'http://www.example.com/', 4001, done);
-      sendEventByKey('WebViewControllerPostUrlTestButton', 10, '');
+      Utils.emitEvent("testWebViewControllerPostUrl001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewControllerPostUrl001", "http://www.example.com/", 200970, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebViewControllerPostUrlTestButton");
+      await Utils.waitForExist(() => isReturn, 'testWebViewControllerPostUrl001' + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -78,10 +84,12 @@ export default function webViewControllerPostUrlTest() {
     * @tc.level      : Level 1
     */
     it('testWebViewControllerPostUrl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebViewControllerPostUrl002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebViewControllerPostUrl002", 'resource://rawfile/second.html', 4002, done);
-      sendEventByKey('WebViewControllerPostUrlTestButton', 10, '');
+      Utils.emitEvent("testWebViewControllerPostUrl002", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewControllerPostUrl002", "resource://rawfile/second.html", 200980, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebViewControllerPostUrlTestButton");
+      await Utils.waitForExist(() => isReturn, 'testWebViewControllerPostUrl002' + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -93,10 +101,12 @@ export default function webViewControllerPostUrlTest() {
     * @tc.level      : Level 1
     */
     it('testWebViewControllerPostUrl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebViewControllerPostUrl003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebViewControllerPostUrl003", 'file:///data/storage/el2/base/files/index.html', 4003, done);
-      sendEventByKey('WebViewControllerPostUrlTestButton', 10, '');
+      Utils.emitEvent("testWebViewControllerPostUrl003", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewControllerPostUrl003", "file:///data/storage/el2/base/files/index.html", 200990, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebViewControllerPostUrlTestButton");
+      await Utils.waitForExist(() => isReturn, 'testWebViewControllerPostUrl003' + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -108,10 +118,12 @@ export default function webViewControllerPostUrlTest() {
     * @tc.level      : Level 1
     */
     it('testWebViewControllerPostUrl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebViewControllerPostUrl004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebViewControllerPostUrl004", 'http://www.example.com/', 4004, done);
-      sendEventByKey('WebViewControllerPostUrlTestButton', 10, '');
+      Utils.emitEvent("testWebViewControllerPostUrl004", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewControllerPostUrl004", "http://www.example.com/", 201000, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebViewControllerPostUrlTestButton");
+      await Utils.waitForExist(() => isReturn, 'testWebViewControllerPostUrl004' + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -123,10 +135,12 @@ export default function webViewControllerPostUrlTest() {
     * @tc.level      : Level 1
     */
     it('testWebViewControllerPostUrl005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebViewControllerPostUrl005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebViewControllerPostUrl005", 'resource://rawfile/second.html', 4005, done);
-      sendEventByKey('WebViewControllerPostUrlTestButton', 10, '');
+      Utils.emitEvent("testWebViewControllerPostUrl005", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewControllerPostUrl005", "resource://rawfile/second.html", 201010, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebViewControllerPostUrlTestButton");
+      await Utils.waitForExist(() => isReturn, 'testWebViewControllerPostUrl005' + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -138,11 +152,12 @@ export default function webViewControllerPostUrlTest() {
     * @tc.level      : Level 1
     */
     it('testWebViewControllerPostUrl006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebViewControllerPostUrl006", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebViewControllerPostUrl006", 'file:///data/storage/el2/base/files/index.html', 4006, done);
-      sendEventByKey('WebViewControllerPostUrlTestButton', 10, '');
+        Utils.emitEvent("testWebViewControllerPostUrl006", EVENT_ID_SET_EMIT_KEY);
+        let isReturn = false;
+        Utils.registerEvent("testWebViewControllerPostUrl006", "file:///data/storage/el2/base/files/index.html", 201020, () => { isReturn = true });
+        await Utils.waitAndClickComponent(driver, "WebViewControllerPostUrlTestButton");
+        await Utils.waitForExist(() => isReturn, 'testWebViewControllerPostUrl006' + '_returnCheck', true, 1000);
+        done();
     })
-
   })
 }

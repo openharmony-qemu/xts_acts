@@ -16,88 +16,38 @@
 import webView from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
-import cert from '@ohos.security.cert';
 
-function Uint8ArrayToString(dataArray: Uint8Array) {
-  let dataString = ''
-  for (let i = 0; i < dataArray.length; i++) {
-    dataString += String.fromCharCode(dataArray[i])
-  }
-  return dataString
-}
-
-function ParseX509CertInfo(x509CertArray: Array<cert.X509Cert>) {
-  let res: string = 'getCertificate success: len = ' + x509CertArray.length;
-  for (let i = 0; i < x509CertArray.length; i++) {
-    res += ', index = ' + i + ', issuer name = '
-      + Uint8ArrayToString(x509CertArray[i].getIssuerName().data) + ', subject name = '
-      + Uint8ArrayToString(x509CertArray[i].getSubjectName().data) + ', valid start = '
-      + x509CertArray[i].getNotBeforeTime()
-      + ', valid end = ' + x509CertArray[i].getNotAfterTime()
-  }
-  return res
-}
+const EVENT_ID_SET_EMIT_KEY = 200620;
 
 @Entry
 @Component
 struct WebAttributeTest {
   controller: webView.WebviewController = new webView.WebviewController();
   @State str: string = ""
-  @State initialScale: number = 100
-  @State newScale: number = 0
-  @State oldScale: number = 0
-  @State geolocationAccess: boolean = true
-  @State blockNetwork: boolean = false
-  @State progress: string = ""
-  @State geoShow: boolean = false
-  @State pageBegin: string = ""
-  @State pageEnd: string = ""
-  @State alert: string = ""
-  @State confirm: string = ""
-  @State prompt: string = ""
-  @State errorReceive: string = ""
-  @State isHttpErrorReceive: boolean = false
-  @State isLargeThan: boolean = false
-  @State httpErrorReceive: number = 0
-  @State isDownloadStart: boolean = false
-  @State newUrl: string = ""
-  @State isRefreshed: boolean = false
-  @State loadedUrl: string = ""
-  @State webInit: boolean = false
-  @State webCreated: boolean = false
-  @State searchResultCount: number = -1
-  @State onInterceptKeyEventCode: number = 0;
-  @State onFaviconReceivedCalled: boolean = false
-  @State outputStr: string = ''
-  @State handleCancel: boolean = false;
   @State title: string = ''
-  @State onRequestSelectedCalled: boolean = false
-  @State testConsole: boolean = false
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("web page valueChangeCallBack");
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
-        try {
-          this.controller.loadUrl("resource://rawfile/index.html");
-        } catch (error) {
-          console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-        }
-        this.errorReceive = ''
+        this.isReceive = 1;
       }
     }
   }
@@ -107,21 +57,18 @@ struct WebAttributeTest {
       Column() {
         Button("web click")
           .key('WebAttributeTestButton')
-          .focusable(true)
-          .onFocus(() => {
-            console.log("onFocus==>")
-          })
-          .onBlur(() => {
-            console.log("onBlur==>")
-          })
           .onClick(async () => {
-            console.info("key==>" + this.str)
+            await Utils.waitForExist(()=>this.isReceive, 'WebAttributeTestButtonIsReceive', 1, 1000);
+            await Utils.waitForExist(()=>this.isPageEnd, 'WebAttributeTestButtonIsPageEnd', 1, 1000);
+            console.info("key==>" + this.str);
+            this.isReceive = -1;
             switch (this.str) {
               case "emitOnTitleReceive001": {
                 try {
+                  this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/changeTitle.html");
-                  await Utils.sleep(2000)
-                  Utils.emitEvent(this.title, 70014)
+                  await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
+                  Utils.emitEvent(this.title, 200630);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -129,11 +76,12 @@ struct WebAttributeTest {
               }
               case "emitOnTitleReceive002": {
                 try {
+                  this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/changeTitle.html");
-                  await Utils.sleep(2000)
-                  this.controller.runJavaScript("changeTitle(123)")
-                  await Utils.sleep(2000)
-                  Utils.emitEvent(this.title, 70016)
+                  await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
+                  this.controller.runJavaScript("changeTitle(123)");
+                  const realVal = await Utils.waitForExist(()=>this.title, 'loadUrlIsPageEnd', '123', 500);
+                  Utils.emitEvent(realVal, 200640);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -141,7 +89,7 @@ struct WebAttributeTest {
               }
               case "emitUserAgent001": {
                 try {
-                  Utils.emitEvent(this.controller.getCustomUserAgent(), 60063)
+                  Utils.emitEvent(this.controller.getCustomUserAgent(), 200650)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -155,199 +103,22 @@ struct WebAttributeTest {
           .height('50%')
           .fileAccess(true)
           .width('100%')
-          .javaScriptAccess(true)
-          .horizontalScrollBarAccess(true)
-          .verticalScrollBarAccess(true)
-          .initialScale(this.initialScale)
-          .geolocationAccess(this.geolocationAccess)
-          .databaseAccess(true)
-          .blockNetwork(this.blockNetwork)
           .userAgent('Mozilla/5.0 (Windows NT 10.0; WOW64)')
-          .onRenderExited((event) => {
-            if (event) {
-              console.info("onRenderExited==>" + event.renderExitReason)
-              Utils.emitEvent(event.renderExitReason, 60106)
-            }
-          })
-          .onUrlLoadIntercept((event) => {
-            if (event) {
-              console.info("onUrlLoadIntercept==>" + event.data)
-              this.loadedUrl = String(event.data)
-            }
-            return false
-          })
-          .onRefreshAccessedHistory((event) => {
-            console.info("onRefreshAccessedHistory==>")
-            if (event) {
-              this.newUrl = event.url
-              this.isRefreshed = event.isRefreshed
-            }
-          })
-          .onScaleChange((event) => {
-            console.log('onScaleChange called oldScale :' + event.oldScale)
-            console.log('onScaleChange called newScale :' + event.newScale)
-            this.oldScale = event.oldScale
-            this.newScale = event.newScale
-          })
-          .onErrorReceive((event) => {
-            console.log("onErrorReceive==>")
-            if (event) {
-              this.errorReceive = event.request.getRequestUrl()
-              console.log('getErrorInfo:' + event.error.getErrorInfo())
-              console.log('getErrorCode:' + event.error.getErrorCode())
-              console.log('url:' + event.request.getRequestUrl())
-              console.log('isMainFrame:' + event.request.isMainFrame())
-              console.log('isRedirect:' + event.request.isRedirect())
-              console.log('isRequestGesture:' + event.request.isRequestGesture())
-              console.log('getRequestHeader_headerKey:' + event.request.getRequestHeader().toString())
-              let result = event.request.getRequestHeader()
-              console.log('The request header result size is ' + result.length)
-              for (let i of result) {
-                console.log('The request header key is : ' + i.headerKey + ', value is : ' + i.headerValue)
-                if (i.headerKey == 'customHeaderKey' && i.headerValue == 'customHeaderValue') {
-                  Utils.emitEvent(true, 412);
-                }
-              }
-            }
-          })
-          .onDownloadStart((event) => {
-            console.info("onDownloadStart==>")
-            if (event) {
-              if (this.isDownloadStart) {
-                console.info("isDownloadStart==>")
-                Utils.emitEvent(event.url, 60068)
-                this.isDownloadStart = false
-              }
-            }
-          })
-          .onHttpErrorReceive((event) => {
-            console.info("isHttpErrorReceive==>")
-            if (event) {
-              this.httpErrorReceive = event.response.getResponseCode()
-              if (this.isHttpErrorReceive) {
-                if (this.httpErrorReceive > 400) {
-                  this.isLargeThan = true
-                  Utils.emitEvent(this.isLargeThan, 60067)
-                }
-                this.isLargeThan = false
-                this.isHttpErrorReceive = false
-              }
-            }
-          })
-          .onGeolocationShow((event) => {
-            console.log("onGeolocationShow==>")
-            if (this.geoShow) {
-              Utils.emitEvent("onGeolocationShow", 70011)
-              this.geoShow = false
-            }
-            if (event) {
-              console.log("onGeolocationShow : " + event.origin);
-              event.geolocation.invoke(event.origin, false, false)
-            }
-          })
-          .onPageBegin((event) => {
-            if (event) {
-              this.pageBegin = event.url
-              console.log("onPageBegin==> event.url:" + event.url)
-            }
-          })
-          .onProgressChange((event) => {
-            if (event) {
-              this.progress = event.newProgress + ""
-            }
-          })
-          .onPageEnd((event) => {
-            if (event) {
-              this.pageEnd = event.url
-              console.log("onPageEnd==> event.url:" + event.url)
-              console.log("onPageEnd==> this.pageEnd:" + this.pageEnd)
-            }
-          })
-          .onRequestSelected(() => {
-            console.log("onRequestSelected==>")
-            this.onRequestSelectedCalled = true
-          })
-          .onFocus(() => {
-            console.log("WebOnFocus==>")
-          })
-          .onAlert((event) => {
-            if (event) {
-              console.log("event.url:" + event.url)
-              console.log("event.message:" + event.message)
-              this.alert = event.message
-            }
-            return false
-          })
-          .onConfirm((event) => {
-            if (event) {
-              console.log("event.url:" + event.url)
-              console.log("event.message:" + event.message)
-              this.confirm = event.message;
-              if (this.handleCancel) {
-                event.result.handleCancel()
-              } else {
-                event.result.handleConfirm()
-              }
-            }
-            return true
-          })
-          .onPrompt((event) => {
-            if (event) {
-              console.log("event.url:" + event.url)
-              console.log("event.message:" + event.message)
-              console.log("event.value:" + event.value)
-              this.prompt = event.message;
-              event.result.handlePromptConfirm('handlePromptConfirm')
-            }
-            return true
-          })
-          .onSearchResultReceive(ret => {
-            if (ret) {
-              console.log("on search result receive:" + "[cur]" + ret.activeMatchOrdinal +
-                "[total]" + ret.numberOfMatches + "[isDone]" + ret.isDoneCounting);
-              this.searchResultCount = ret.numberOfMatches
-            }
-          })
-          .onInterceptKeyEvent((event) => {
-            console.log("onInterceptKeyEvent==>")
-            if (event) {
-              this.onInterceptKeyEventCode = event.keyCode
-            }
-            return false;
-          })
-          .onTouchIconUrlReceived((event) => {
-            if (event) {
-              console.log('onTouchIconUrlReceived:' + JSON.stringify(event))
-            }
-          })
-          .onFaviconReceived((event) => {
-            this.onFaviconReceivedCalled = true
-            if (event) {
-              console.log('onFaviconReceived' + JSON.stringify(event));
-            }
-          })
           .onTitleReceive((event) => {
             if (event) {
               console.log('onTitleReceive title:' + event.title)
               this.title = event.title
             }
           })
-          .onConsole((event) => {
+          .onPageEnd((event) => {
             if (event) {
-              if (this.testConsole) {
-                Utils.emitEvent(event.message.getMessage(), 70040)
-                Utils.emitEvent(event.message.getLineNumber(), 70042)
-                Utils.emitEvent(event.message.getSourceId(), 70044)
-                Utils.emitEvent(event.message.getMessageLevel(), 70046)
-                this.testConsole = false
-              }
+              this.isPageEnd = 1;
+              console.log('onPageEnd==> event.url:' + event.url);
             }
-            return false
           })
       }
       .width('100%')
     }
-
     .height('100%')
   }
 }

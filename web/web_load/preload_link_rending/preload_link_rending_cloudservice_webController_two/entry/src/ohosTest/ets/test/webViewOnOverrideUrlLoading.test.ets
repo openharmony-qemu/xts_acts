@@ -12,16 +12,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
-import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 201350;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-// @ts-nocheck
-let emitKey = "emitWebViewOnOverrideUrlLoading"
 
 export default function webViewOnOverrideUrlLoading() {
   describe('ActsAceWebViewOnOverrideUrlLoading', () => {
@@ -32,19 +33,19 @@ export default function webViewOnOverrideUrlLoading() {
         }
         
         try {
-            await Utils.sleep(1000)
             router.clear();
             let pages = router.getState();
             console.info("get webViewOnOverrideUrlLoading state success " + JSON.stringify(pages));
             if (!("webViewOnOverrideUrlLoading" == pages.name)) {
                 console.info("get webViewOnOverrideUrlLoading state success " + JSON.stringify(pages.name));
-                let result = await router.pushUrl(options);
-                await Utils.sleep(1000);
-                console.info("push webViewOnOverrideUrlLoading page success " + JSON.stringify(result));
+                await router.pushUrl(options);
+                console.info("push webViewOnOverrideUrlLoading page success");
             }
         } catch (err) {
             console.error("push webViewOnOverrideUrlLoading page error:" + err);
         }
+        await driver.waitForComponent(ON.id("webViewOnOverrideUrlLoading"), 10000);
+        console.log("waitForComponent webViewOnOverrideUrlLoading");
         done()
     });
     
@@ -54,31 +55,8 @@ export default function webViewOnOverrideUrlLoading() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-        await Utils.sleep(1000);
       done();
     })
-    
-    afterEach(async (done: Function) => {
-        try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent : events_emitter.InnerEvent = {
-                eventId: 10,
-                priority: events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-        } catch (err) {
-            console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
-      done();
-    })
-    
-
 
     /*
     * @tc.number      : SUB_ACE_SUB_ONOVERRIDEURLLOADING_API_GROUP_0600
@@ -89,11 +67,15 @@ export default function webViewOnOverrideUrlLoading() {
     * @tc.level       : Level 0
     */
     it('testWebViewwebViewOnOverrideUrlLoadingGroup', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        Utils.registerBaseEvent("emitWebViewwebViewOnOverrideUrlLoading", "true", 10007,
-          done, (backData: events_emitter.EventData, expected: Object) => {
-            expect(backData?.data?.ACTION).assertEqual(expected);
-          });
-        sendEventByKey('webViewOnOverrideUrlLoading', 10, '');
+      Utils.emitEvent("emitWebViewOnOverrideUrlLoading", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerBaseEvent("emitWebViewwebViewOnOverrideUrlLoading", 'true', 201360, () => { isReturn = true }, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      await Utils.waitAndClickComponent(driver, "webViewOnOverrideUrlLoading");
+      if (await Utils.waitForExist(() => isReturn, 'testWebViewwebViewOnOverrideUrlLoadingGroup' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
   })
 }

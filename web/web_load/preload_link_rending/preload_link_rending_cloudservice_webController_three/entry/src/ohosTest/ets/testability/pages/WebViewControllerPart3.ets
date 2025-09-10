@@ -18,16 +18,14 @@ import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import image from '@ohos.multimedia.image';
 import { JsProxyObject } from '../../test/Interfaces';
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
-import testsuite from '../../test/List.test';
 import { URL } from '../../test/Config.test';
+
+const EVENT_ID_SET_EMIT_KEY = 201330;
 
 @Entry
 @Component
 struct WebViewControllerPart3 {
   controller: webView.WebviewController = new webView.WebviewController();
-  controllerTwo: webView.WebviewController = new webView.WebviewController();
   nativePort: webView.WebMessagePort | null = null;
   message: webView.WebMessageExt = new webView.WebMessageExt();
   @State str: string = ""
@@ -47,17 +45,19 @@ struct WebViewControllerPart3 {
   @State onMessageEventCallBack: boolean = false
   @State ports: webView.WebMessagePort[] = [];
   @State userAgentPC:string = "";
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -65,52 +65,37 @@ struct WebViewControllerPart3 {
     if (eventData != null) {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
+        this.isReceive = 1;
         this.str = eventData.data.ACTION;
-        if (this.controller) {
-          this.controller.loadUrl("resource://rawfile/index.html");
-          this.controller.clearHistory()
-        }
       }
     }
   }
-  private jsObj: JsProxyObject = {
-    test: (res: object) => {
-      console.info("ets toString:" + String(res));
-    },
-    toString: (str: string) => {
-      console.info("ets toString:" + String(str));
-    },
-    register: (res: object) => {
-      if (this.registerJavaScriptProxyFlag == true) {
-        Utils.emitEvent(String(res), 100075);
-      }
-      return "web222"
-    }
-  }
-
 
   build() {
     Column() {
       Row() {
         Button("WebViewController click").key('WebViewControllerTestButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isPageEnd, 'WebViewControllerTestButtonIsPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isReceive, 'WebViewControllerTestButtonIsReceive', 1, 1000);
+          console.info("key==>" + this.str);
           switch (this.str) {
             case "testPrefetchPage001": {
               try {
                 this.arrTime = []
                 this.controller.removeCache(true)
+                console.log('======first load')
                 this.controller.loadUrl(URL)
-                await Utils.sleep(3000)
+                await Utils.waitForExist(()=>this.arrTime.length, 'pushArrTimeCheckOne', 1, 1000);
+
                 this.controller.removeCache(true);
-                await Utils.sleep(3000)
                 this.controller.prefetchPage(URL);
-                await Utils.sleep(3000)
+                console.log('======second load')
                 this.controller.loadUrl(URL)
-                await Utils.sleep(3000)
+                await Utils.waitForExist(()=>this.arrTime.length, 'pushArrTimeCheckTwo', 2, 1000);
                 if (this.arrTime[1] - this.arrTime[0] < 0) {
-                  Utils.emitEvent(true, 100079)
+                  Utils.emitEvent(true, 201340)
                 } else {
-                  Utils.emitEvent(false, 100079)
+                  Utils.emitEvent(false, 201340)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -140,8 +125,7 @@ struct WebViewControllerPart3 {
             console.log("onFirstContentfulPaint:" + "[navigationStartTick]:" +
             event.navigationStartTick + ", [firstContentfulPaintMs]:" +
             event.firstContentfulPaintMs)
-            this.time = event.firstContentfulPaintMs - event.navigationStartTick / 1000
-            this.arrTime.push(this.time)
+            this.arrTime.push(event.firstContentfulPaintMs);
           }
         })
         .onScroll((event) => {
@@ -163,18 +147,10 @@ struct WebViewControllerPart3 {
                 }
               });
             }
+            this.isPageEnd = 1;
             console.log('url:' + event.url)
           }
         })
-      Web({ src: $rawfile('indexTwo.html'), controller: this.controllerTwo })
-        .id('2')
-        .key('web2')
-        .javaScriptAccess(this.javaScriptAccess)
-        .fileAccess(this.fileAccess)
-        .imageAccess(this.imageAccess)
-        .domStorageAccess(this.domStorageAccess)
-        .onlineImageAccess(this.onlineImageAccess)
-        .databaseAccess(this.databaseAccess)
     }
   }
 }

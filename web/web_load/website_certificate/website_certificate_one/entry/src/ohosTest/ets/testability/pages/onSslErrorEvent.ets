@@ -17,7 +17,8 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import { image } from '@kit.ImageKit';
-import { Driver, MouseButton, UiWindow, ON, On  } from '@ohos.UiTest';
+
+const EVENT_ID_SET_EMIT_KEY = 202520;
 
 @Entry
 @Component
@@ -34,18 +35,19 @@ struct onCreateNativeMediaPlayer {
   @State mediaPlayGestureAccess: boolean = true;
   @State statusResult: string = '';
   @State url: string = ''
+  @State isReceive: number = -1;
   mode: WebLayoutMode = WebLayoutMode.FIT_CONTENT;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -54,6 +56,7 @@ struct onCreateNativeMediaPlayer {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -62,12 +65,13 @@ struct onCreateNativeMediaPlayer {
     Column() {
       Row() {
         Button("onCreateNativeMediaPlayerTest").key('WebonSslErrorEventButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, 'WebonSslErrorEventButtonIsReceive', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitonSslErrorEvent": {
               try {
-                await Utils.sleep(1000);
-                Utils.emitEvent(WebLayoutMode.FIT_CONTENT, 2025321)
+                Utils.emitEvent(WebLayoutMode.FIT_CONTENT, 202530)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }

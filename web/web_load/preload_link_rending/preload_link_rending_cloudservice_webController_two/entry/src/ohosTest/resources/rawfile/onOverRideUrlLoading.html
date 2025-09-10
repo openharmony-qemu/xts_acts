@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>onOverrideUrlLoading Demo</h1>
-    <a id="jumpHref" href="https://www.baidu.com/">跳转</a>
+    <a id="jumpHref" href="https://www.example.com/">跳转</a>
 </body>
 </html>
 <script type="text/javascript">
@@ -18,7 +18,7 @@ function jump(){
  function isOnOverrideUrlLoading () {
     let hostname = document.location.hostname
     console.log(">>>hostname:"+hostname)
-    return hostname !== 'www.baidu.com'
+    return hostname !== 'www.example.com'
   }
 </script>
 <style>

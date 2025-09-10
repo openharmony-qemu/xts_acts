@@ -13,10 +13,14 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 202360;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function WebViewEnumAndSetWebController() {
@@ -32,34 +36,26 @@ export default function WebViewEnumAndSetWebController() {
         console.info("get WebViewEnumAndSetWebController state success " + JSON.stringify(pages));
         if (!("webTwo" == pages.name)) {
           console.info("get WebViewEnumAndSetWebController state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push WebViewEnumAndSetWebController page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info("push WebViewEnumAndSetWebController page success");
         }
       } catch (err) {
         console.error("push WebViewEnumAndSetWebController page error: " + err);
       }
+      await driver.waitForComponent(ON.id("buttonEnumAndSetWebController"), 10000);
+      console.log("waitForComponent buttonEnumAndSetWebController");
       done()
     });
+
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
-
-    afterEach(async (done: Function) => {
-      console.info("WebViewControllerDownloadTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebViewControllerDownloadTest afterEach end");
-      done();
-    })
-
-
 
     /*
     * @tc.number     : SUB_WEB_ONTOUCHICONURLRECEIVED_0100
@@ -70,12 +66,13 @@ export default function WebViewEnumAndSetWebController() {
     * @tc.level      : Level 0
     */
     it('testOnTouchIconUrlReceived001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitOnTouchIconUrlReceived", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnTouchIconUrlReceived001", 'resource://rawfile/icon.png', 1371, done);
-      sendEventByKey('buttonEnumAndSetWebController', 10, '');
+      Utils.emitEvent("emitOnTouchIconUrlReceived", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testOnTouchIconUrlReceived001", 'resource://rawfile/icon.png', 202370, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "buttonEnumAndSetWebController");
+      if (await Utils.waitForExist(() => isReturn, 'testOnTouchIconUrlReceived001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
-
-
   })
 }

@@ -13,15 +13,17 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, beforeAll , TestType, Size, Level } from "@ohos/hypium";
-import events_emitter from '@ohos.events.emitter';
+import { describe, beforeEach, it, beforeAll, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
-// import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 201250;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-let emitKey = "optimizeParserBudget01";
+
 export default function webenableSmoothDragResizeTestJsunit() {
   describe('optimizeParserBudgetTest',  () =>{
     beforeAll(async  (done: Function) =>{
@@ -35,55 +37,39 @@ export default function webenableSmoothDragResizeTestJsunit() {
         if (!("optimizeParserBudget" == pages.name)) {
           console.info("get optimizeParserBudget state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
           console.info("push optimizeParserBudget page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push optimizeParserBudget page error: " + err);
       }
+      await driver.waitForComponent(ON.id("optimizeParserBudgetButton"), 10000);
+      console.log("waitForComponent optimizeParserBudgetButton");
       done()
     });
+
     beforeEach(async  (done: Function) =>{
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("optimizeParserBudget beforeEach start");
       done();
     })
-    afterEach(async  (done: Function) =>{
-      console.info("optimizeParserBudget afterEach start:"+emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId:10,
-          priority:events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
-      done();
-    })
+
     /*
      *tc.number SUB_ACE_BASIC_ETS_ENABLESMOOTHDRAGRESIZE_API_001
      *tc.name enableSmoothDragResize01
      *tc.desic test enableSmoothDragResize01 interface when choose callback mode.
      */
     it('optimizeParserBudget01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="optimizeParserBudget01";
-      Utils.registerEvent("optimizeParserBudget01",'optimizeParserBudget',20250218,done);
-      sendEventByKey('optimizeParserBudgetButton',10,'');
+      Utils.emitEvent("optimizeParserBudget01", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("optimizeParserBudget01", "optimizeParserBudget", 201260, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "optimizeParserBudgetButton");
+      if (await Utils.waitForExist(() => isReturn, 'optimizeParserBudget01' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
-
-
   })
 }

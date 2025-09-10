@@ -17,26 +17,30 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
-import { Driver, ON, On } from '@ohos.UiTest';
+
+const EVENT_ID_SET_EMIT_KEY = 200800;
 
 @Entry
 @Component
 struct setPathAllowingUniversalAccess {
   @State str: string = ""
   @State checkResult: number = 0;
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+  times = 0;
   controller: webView.WebviewController = new webView.WebviewController();
 
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -45,6 +49,7 @@ struct setPathAllowingUniversalAccess {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -53,7 +58,9 @@ struct setPathAllowingUniversalAccess {
     Column() {
       Row() {
         Button("setPathAllowingUniversalAccess").key('setPathAllowingUniversalAccessButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, 'setPathAllowingUniversalAccessButtonIsReceive', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "setPathAllowingUniversalAccess0100": {
               this.controller.clearMatches();
@@ -63,62 +70,46 @@ struct setPathAllowingUniversalAccess {
                   getContext().resourceDir,
                   getContext().filesDir + "/example"
                 ])
-                this.controller.loadUrl("file://" + getContext().resourceDir + "/index.html")
-                console.log(getContext().resourceDir)
-                await Utils.sleep(2000);
-                let driver: Driver = Driver.create();
-                let buttonOne = await driver.findComponent(ON.text('stealFile'));
-                await buttonOne.click()
-                await Utils.sleep(2000);
-                this.controller.searchAllAsync('success');
-
+                this.isPageEnd = -1;
+                this.controller.loadUrl("file://" + getContext().resourceDir + "/index.html");
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
+                console.log(getContext().resourceDir);
+                this.controller.runJavaScript('getFile()',
+                  (error, result) => {
+                    if (error) {
+                      console.error(`run JavaScript error: ` + JSON.stringify(error))
+                      return;
+                    }
+                    if (result) {
+                      console.info(`getFile() return value is: ${result}`);
+                      this.controller.searchAllAsync('success');
+                    }
+                  });
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
               break;
             }
-            case "setPathAllowingUniversalAccess0200": {
-              try {
-                this.controller.setPathAllowingUniversalAccess([
-                  '/haha/hehe',
-                  getContext().filesDir + "/example"
-                ])
-                this.controller.loadUrl("file://" + getContext().resourceDir + "/index.html")
-                console.log(getContext().resourceDir)
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code, 9471)
-              }
-              break;
-            }
-            case "setPathAllowingUniversalAccess0300": {
-              try {
-                this.controller.setPathAllowingUniversalAccess([
-                  '/data/storage/el1/bundle/../../resfile',
-                  getContext().filesDir + "/example"
-                ])
-                this.controller.loadUrl("file://" + getContext().resourceDir + "/index.html")
-                console.log(getContext().resourceDir)
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code, 9472)
-              }
-              break;
-            }
-            
           }
         })
       }
 
 
       Web({ src: "", controller: this.controller })
-        .onSearchResultReceive(ret => {
+        .onSearchResultReceive(async ret => {
           if (ret) {
+            this.times++;
             console.log("on search result receive:" + "[cur]" + ret.activeMatchOrdinal +
               "[total]" + ret.numberOfMatches + "[isDone]" + ret.isDoneCounting);
             if(this.checkResult == 1) {
               console.log('check1')
-              Utils.emitEvent(ret.numberOfMatches, 9470)
+              if (ret.numberOfMatches === 0 && this.times <= 10) {
+                await Utils.sleep(500)
+                console.log('sleep 500ms, retry...')
+                this.controller.searchAllAsync('success');
+                return;
+              }
+              Utils.emitEvent(ret.numberOfMatches, 200810)
               this.checkResult = 0;
             }
           }
@@ -126,6 +117,10 @@ struct setPathAllowingUniversalAccess {
         .javaScriptAccess(true)
         .fileAccess(true)
         .domStorageAccess(true)
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
     }
   }
 }

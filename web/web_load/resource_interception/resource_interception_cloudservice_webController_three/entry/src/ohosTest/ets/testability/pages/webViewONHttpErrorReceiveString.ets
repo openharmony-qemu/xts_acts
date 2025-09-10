@@ -14,12 +14,10 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
-import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import web_webview from '@ohos.web.webview';
+
+const EVENT_ID_SET_EMIT_KEY = 202310;
 
 @Entry
 @Component
@@ -28,7 +26,7 @@ struct webViewONHttpErrorReceiveString {
   responseweb: WebResourceResponse = new WebResourceResponse()
   heads: Header[] = new Array()
   @State webdata: string = "onHttpErrorReceiveTest"
-  @State str: string = "emitOnHttpErrorReceiveByString";
+  @State str: string = "";
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
   @State domStorageAccess: boolean = false;
@@ -37,13 +35,19 @@ struct webViewONHttpErrorReceiveString {
   @State databaseAccess: boolean = true;
   @State userAgent: string = "Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.88 Mobile Safari/537.36";
   @State searchString: string = "onHttpErrorReceive";
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -52,6 +56,7 @@ struct webViewONHttpErrorReceiveString {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -59,8 +64,11 @@ struct webViewONHttpErrorReceiveString {
   build() {
     Column() {
       Row() {
-        Button("onHttpErrorTest").key('webViewONHttpErrorReceiveString').onClick(() => {
+        Button("onHttpErrorTest").key('webViewONHttpErrorReceiveString').onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, 'webViewONHttpErrorReceiveStringIsReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, 'webViewONHttpErrorReceiveStringIsPageEnd', 1, 1000);
           console.info("key==>" + this.str)
+          this.isReceive = -1;
           switch (this.str) {
             case "emitOnHttpErrorReceiveByString": {
               try {
@@ -113,7 +121,7 @@ struct webViewONHttpErrorReceiveString {
           console.log('getResponseEncoding:' + event.response.getResponseEncoding());
           console.log('getResponseMimeType:' + event.response.getResponseMimeType());
           console.log('getResponseCode:' + event.response.getResponseCode());
-          Utils.emitEvent(event.response.getResponseCode(), 399);
+          Utils.emitEvent(event.response.getResponseCode(), 202320);
           console.log('getReasonMessage:' + event.response.getReasonMessage());
           let result = event.request.getRequestHeader()
           console.log('The request header result size is ' + result.length)
@@ -129,7 +137,11 @@ struct webViewONHttpErrorReceiveString {
         .onSearchResultReceive(ret => {
           console.log("on search result receive:" + "[cur]" + ret.activeMatchOrdinal +
             "[total]" + ret.numberOfMatches + "[isDone]" + ret.isDoneCounting);
-          Utils.emitEvent(ret.numberOfMatches, 400)
+          Utils.emitEvent(ret.numberOfMatches, 202330)
+        })
+        .onPageEnd((event) => {
+          console.log('onPageEnd ==>' + event.url);
+          this.isPageEnd = 1
         })
     }
   }

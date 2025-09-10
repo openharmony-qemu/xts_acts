@@ -16,12 +16,8 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
-import buffer from '@ohos.buffer'
-import { WebNetErrorList } from '@ohos.web.netErrorList'
-import common from '@ohos.app.ability.common';
-import abilityAccessCtrl, { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
-import business_error, { BusinessError } from '@ohos.base';
 
+const EVENT_ID_SET_EMIT_KEY = 202440;
 
 @Entry
 @Component
@@ -31,19 +27,21 @@ struct webViewOnSslErrorEvent {
   @State OnSslErrorEventFlagTwo: boolean = false
   @State OnSslErrorEventFlagThree: boolean = false
   @State OnSslErrorEventFlagFour: boolean = false
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
   controller: web_webview.WebviewController = new web_webview.WebviewController()
   controllerTwo: web_webview.WebviewController = new web_webview.WebviewController()
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -52,6 +50,7 @@ struct webViewOnSslErrorEvent {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -60,42 +59,37 @@ struct webViewOnSslErrorEvent {
     Column() {
       Row() {
         Button("webViewOnSslErrorEvent").id('webViewOnSslErrorEvent').onClick(async () => {
-          console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, 'certChainDataWebIsReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, 'certChainDataWebIsPageEnd', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "OnSslErrorEvent0100": {
               this.OnSslErrorEventFlagOne = true;
               this.controller.clearClientAuthenticationCache();
               this.controller.clearSslCache();
-              await Utils.sleep(2000)
               this.controller.loadUrl('https://expired.badssl.com');
-              await Utils.sleep(4000);
               break;
             }
             case "OnSslErrorEvent0200": {
               this.OnSslErrorEventFlagTwo = true;
               this.controller.clearClientAuthenticationCache();
               this.controller.clearSslCache();
-              await Utils.sleep(2000)
               this.controller.loadUrl('https://untrusted-root.badssl.com/');
-              await Utils.sleep(4000);
               break;
             }
             case "OnSslErrorEvent0300": {
               this.OnSslErrorEventFlagThree = true;
               this.controller.clearClientAuthenticationCache();
               this.controller.clearSslCache();
-              await Utils.sleep(2000)
               this.controller.loadUrl("resource://rawfile/iframe.html")
-              await Utils.sleep(4000);
               break;
             }
             case "OnSslErrorEvent0400": {
               this.OnSslErrorEventFlagFour = true;
               this.controller.clearClientAuthenticationCache();
               this.controller.clearSslCache();
-              await Utils.sleep(2000)
               this.controller.loadUrl("resource://rawfile/iframe.html")
-              await Utils.sleep(4000);
               break;
             }
           }
@@ -112,19 +106,25 @@ struct webViewOnSslErrorEvent {
           console.log("onSslErrorEvent isMainFrame: " + event.isMainFrame)
           if(this.OnSslErrorEventFlagOne){
             this.OnSslErrorEventFlagOne = false;
-            Utils.emitEvent(event.error, 400)
+            Utils.emitEvent(event.error, 202450)
           }
           if(this.OnSslErrorEventFlagTwo){
             this.OnSslErrorEventFlagTwo = false;
-            Utils.emitEvent(event.error, 401)
+            Utils.emitEvent(event.error, 202460)
           }
           if(this.OnSslErrorEventFlagThree){
             this.OnSslErrorEventFlagThree = false;
-            Utils.emitEvent(event.isMainFrame, 402)
+            Utils.emitEvent(event.isMainFrame, 202470)
           }
           if(this.OnSslErrorEventFlagFour){
             this.OnSslErrorEventFlagFour = false;
-            Utils.emitEvent(event.error, 403)
+            Utils.emitEvent(event.error, 202480)
+          }
+        })
+        .onPageEnd((event) => {
+          if (event) {
+            this.isPageEnd = 1;
+            console.log("onPageEnd==>")
           }
         })
     }
