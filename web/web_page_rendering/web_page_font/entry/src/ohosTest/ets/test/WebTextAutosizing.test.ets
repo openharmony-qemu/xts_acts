@@ -17,6 +17,8 @@ import Utils from './Utils';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function webTextAutosizing() {
@@ -33,12 +35,13 @@ export default function webTextAutosizing() {
         if (!("WebTextAutosizing" == pages.name)) {
           console.info("get WebTextAutosizing state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebTextAutosizing page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebTextAutosizing page error: " + err);
       }
+      await driver.waitForComponent(ON.id("WebTextAutosizing"), 10000);
+      console.log("waitForComponent WebTextAutosizing");
       done()
     });
     beforeEach(async (done: Function) => {
@@ -47,7 +50,6 @@ export default function webTextAutosizing() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
@@ -61,14 +63,11 @@ export default function webTextAutosizing() {
     * @tc.level      : Level 1
     */
     it('TextAutosizing0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("TextAutosizing0100", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("TextAutosizing0100", true, 4350, done);
+      Utils.emitEvent("TextAutosizing0100", 150200)
+      Utils.registerEvent("TextAutosizing0100", true, 150210, done);
       let driver = Driver.create();
-      await driver.delayMs(1000);
       let StartModel = await driver.findComponent(ON.id("WebTextAutosizing"));
       await StartModel.click();
-      await driver.delayMs(1000);
     })
 
     /*
@@ -80,14 +79,11 @@ export default function webTextAutosizing() {
     * @tc.level      : Level 2
     */
     it('TextAutosizing0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("TextAutosizing0200", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("TextAutosizing0200", true, 4352, done);
+      Utils.emitEvent("TextAutosizing0200", 150200)
+      Utils.registerEvent("TextAutosizing0200", true, 150220, done);
       let driver = Driver.create();
-      await driver.delayMs(1000);
       let StartModel = await driver.findComponent(ON.id("WebTextAutosizing"));
       await StartModel.click();
-      await driver.delayMs(1000);
     })
 
       /*
@@ -99,14 +95,11 @@ export default function webTextAutosizing() {
     * @tc.level      : Level 2
     */
     it('TextAutosizing0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("TextAutosizing0300", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("TextAutosizing0300", true, 4354, done);
+      Utils.emitEvent("TextAutosizing0300", 150200)
+      Utils.registerEvent("TextAutosizing0300", true, 150230, done);
       let driver = Driver.create();
-      await driver.delayMs(1000);
       let StartModel = await driver.findComponent(ON.id("WebTextAutosizing"));
       await StartModel.click();
-      await driver.delayMs(1000);
     })
 
     /*
@@ -118,14 +111,11 @@ export default function webTextAutosizing() {
     * @tc.level      : Level 2
     */
     it('TextAutosizing0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("TextAutosizing0400", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("TextAutosizing0400", true, 4356, done);
+      Utils.emitEvent("TextAutosizing0400", 150200)
+      Utils.registerEvent("TextAutosizing0400", true, 150240, done);
       let driver = Driver.create();
-      await driver.delayMs(1000);
       let StartModel = await driver.findComponent(ON.id("WebTextAutosizing"));
       await StartModel.click();
-      await driver.delayMs(1000);
     })
   })
 }

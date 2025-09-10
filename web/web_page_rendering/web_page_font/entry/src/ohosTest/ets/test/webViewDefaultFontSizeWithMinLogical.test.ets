@@ -17,6 +17,9 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@ohos.UiTest';
+
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 // @ts-nocheck
@@ -34,12 +37,13 @@ export default function webViewDefaultFontSizeWithMinLogical() {
         if (!("webViewDefaultFontSizeWithMinLogical" == pages.name)) {
           console.info("get webViewDefaultFontSizeWithMinLogical state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
           console.info("push webViewDefaultFontSizeWithMinLogical page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webViewDefaultFontSizeWithMinLogical page error: " + err);
       }
+      await driver.waitForComponent(ON.id("webViewDefaultFontSizeWithMinLogical"), 10000);
+      console.log("waitForComponent webViewDefaultFontSizeWithMinLogical");
       done()
     });
     beforeEach(async (done: Function) =>{
@@ -48,39 +52,20 @@ export default function webViewDefaultFontSizeWithMinLogical() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webViewDefaultFontSizeWithMinLogical beforeEach start");
       done();
     })
-    afterEach(async  (done: Function) => {
-      console.info("webViewDefaultFontSizeWithMinLogical afterEach start:" + emitKey);
-      try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent: events_emitter.InnerEvent = {
-                eventId:10,
-                priority:events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-      } catch (err) {
-            console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
-      done();
-    })
+   
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR6_API_0100
      *tc.name testDefaultFontSizeHalfAndMinFontSizeHalf
      *tc.desc test with defaultfontsize 0.5 , minfontsize 0.5 and minLogicalFontSize 0.5
      */
     it('testDefaultFontSizeHalfAndMinFontSizeHalf',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitdefaultFontSizeHalfAndminFontSizeHalf";
-      Utils.registerEvent("testDefaultFontSizeHalfAndMinFontSizeHalf","1px",330,done);
-      sendEventByKey('webViewDefaultFontSizeWithMinLogical',10,'');
+      Utils.emitEvent("emitdefaultFontSizeHalfAndminFontSizeHalf", 150330);
+      Utils.registerEvent("testDefaultFontSizeHalfAndMinFontSizeHalf","1px",150340,done);
+      let StartModel = await driver.findComponent(ON.id("webViewDefaultFontSizeWithMinLogical"));
+      await StartModel.click();
     })
   })
 }

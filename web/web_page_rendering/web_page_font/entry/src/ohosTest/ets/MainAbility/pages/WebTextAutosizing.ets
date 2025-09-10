@@ -19,6 +19,7 @@ import { BusinessError } from '@ohos.base';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
+import {waitForExist} from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -34,17 +35,31 @@ struct WebTextAutosizing {
   @State userAgentPC:string = "";
   @State isTextAutosizing: boolean | undefined | null= false;
   @State flag:boolean = false
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 150200,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(150200)
+  }
+
+    private valueChangeCallBack = (eventData: events_emitter.EventData) => {
+    console.info("web page valueChangeCallBack");
+    if (eventData != null) {
+      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      if (eventData.data != null && eventData.data.ACTION != null) {
+        this.str = eventData.data.ACTION;
+        this.isReceive = 0;
+      }
+    }
   }
 
   aboutToAppear() {
@@ -58,16 +73,19 @@ struct WebTextAutosizing {
     Column() {
       Row() {
         Button("WebTextAutosizing").id('WebTextAutosizing').onClick(async () => {
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           console.info("key==>" + this.str)
           switch (this.str) {
 
             case "TextAutosizing0100": {
               this.userAgentPC = this.webviewController.getUserAgent();
               if ((this.userAgentPC).includes("PC")) {
-                Utils.emitEvent(true, 4350)
+                Utils.emitEvent(true, 150210)
                 break;
               }else if((this.userAgentPC).includes("Tablet")){
-                Utils.emitEvent(true, 4350)
+                Utils.emitEvent(true, 150210)
                 break;
               }
               this.webviewController.runJavaScript("getClientWidth()", (err, res) => {
@@ -85,11 +103,14 @@ struct WebTextAutosizing {
               this.text = 0
               this.text1 = 0
               try {
-                this.webviewController.loadUrl($rawfile("text.html"));
-                await Utils.sleep(2000);
+                 this.isPageEnd = -1;
+                 this.webviewController.loadUrl($rawfile("text.html"));
+                 await waitForExist(() => this.isPageEnd, this.str, 0);
      
                 this.de = 100;
-                await Utils.sleep(2000);
+                this.isPageEnd = -1;
+                this.webviewController.refresh();
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.webviewController.runJavaScript("getSize()", (err, res) => {
                   console.info("key==>getNum1 res :" + JSON.stringify(res))
                   this.text = Number(res)
@@ -100,8 +121,7 @@ struct WebTextAutosizing {
                   console.info("key==>getNum1 res :" + JSON.stringify(res))
                   this.text1 = Number(res)
                 })
-                this.webviewController.refresh()
-                await Utils.sleep(4355);
+                await Utils.sleep(2000);
                 if (this.text1 < this.text) {
                   value = true;
                 }
@@ -114,9 +134,9 @@ struct WebTextAutosizing {
                 console.log("value01: " + value);
                 // 判断是否是智慧屏
                 if(this.flag == true) {
-                    Utils.emitEvent(true, 4350)
+                    Utils.emitEvent(true, 150210)
                 } else {
-                   Utils.emitEvent(value, 4350)
+                   Utils.emitEvent(value, 150210)
                 }
                 
               }, 3000)
@@ -127,10 +147,10 @@ struct WebTextAutosizing {
             case "TextAutosizing0200": {
               this.userAgentPC = this.webviewController.getUserAgent();
               if ((this.userAgentPC).includes("PC")) {
-                Utils.emitEvent(true, 4352)
+                Utils.emitEvent(true, 150220)
                 break;
               }else if((this.userAgentPC).includes("Tablet")){
-                Utils.emitEvent(true, 4352)
+                Utils.emitEvent(true, 150220)
                 break;
               }
               let value: boolean = false;
@@ -138,12 +158,14 @@ struct WebTextAutosizing {
               this.de = 1
               this.text = 0
               this.text1 = 0
-              await Utils.sleep(2000);
               try {
-                this.webviewController.loadUrl($rawfile("text.html"));
-                await Utils.sleep(2000);
+                this.isPageEnd = -1;
+                 this.webviewController.loadUrl($rawfile("text.html"));
+                 await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.de = 100;
-                await Utils.sleep(2000);
+                this.isPageEnd = -1;
+                this.webviewController.refresh();
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.webviewController.runJavaScript("getSize()", (err, res) => {
                   console.info("key==>getNum2 res :" + JSON.stringify(res))
                   this.text = Number(res)
@@ -154,7 +176,7 @@ struct WebTextAutosizing {
                   console.info("key==>getNum2 res :" + JSON.stringify(res))
                   this.text1 = Number(res)
                 })
-                await Utils.sleep(4355);
+                await Utils.sleep(2000);
                 if (this.text1 == this.text) {
                   value = true;
                 }
@@ -164,7 +186,7 @@ struct WebTextAutosizing {
 
               setTimeout(() => {
                 console.log("value02: " + value);
-                Utils.emitEvent(value, 4352)
+                Utils.emitEvent(value, 150220)
               }, 3000)
               break;
             }
@@ -172,10 +194,10 @@ struct WebTextAutosizing {
             case "TextAutosizing0300": {
               this.userAgentPC = this.webviewController.getUserAgent();
               if ((this.userAgentPC).includes("PC")) {
-                Utils.emitEvent(true, 4354)
+                Utils.emitEvent(true, 150230)
                 break;
               }else if((this.userAgentPC).includes("Tablet")){
-                Utils.emitEvent(true, 4354)
+                Utils.emitEvent(true, 150230)
                 break;
               }
               let value: boolean = false;
@@ -183,12 +205,14 @@ struct WebTextAutosizing {
               this.de = 1
               this.text = 0
               this.text1 = 0
-              await Utils.sleep(2000);
               try {
-                this.webviewController.loadUrl($rawfile("text.html"));
-                await Utils.sleep(2000);
+                this.isPageEnd = -1;
+                 this.webviewController.loadUrl($rawfile("text.html"));
+                 await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.de = 100;
-                await Utils.sleep(2000);
+                this.isPageEnd = -1;
+                this.webviewController.refresh();
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.webviewController.runJavaScript("getSize()", (err, res) => {
                   console.info("key==>getNum3 res :" + JSON.stringify(res))
                   this.text = Number(res)
@@ -199,7 +223,7 @@ struct WebTextAutosizing {
                   console.info("key==>getNum3 res :" + JSON.stringify(res))
                   this.text1 = Number(res)
                 })
-                await Utils.sleep(4355);
+                await Utils.sleep(2000);
                 if (this.text1 == this.text) {
                   value = true;
                 }
@@ -209,17 +233,17 @@ struct WebTextAutosizing {
 
               setTimeout(() => {
                 console.log("value03: " + value);
-                Utils.emitEvent(value, 4354)
+                Utils.emitEvent(value, 150230)
               }, 3000)
               break;
             }
             case "TextAutosizing0400": {
               this.userAgentPC = this.webviewController.getUserAgent();
               if ((this.userAgentPC).includes("PC")) {
-                Utils.emitEvent(true, 4356)
+                Utils.emitEvent(true, 150240)
                 break;
               }else if((this.userAgentPC).includes("Tablet")){
-                Utils.emitEvent(true, 4356)
+                Utils.emitEvent(true, 150240)
                 break;
               }
               let value: boolean = false;
@@ -227,12 +251,14 @@ struct WebTextAutosizing {
               this.de = 1
               this.text = 0
               this.text1 = 0
-              await Utils.sleep(2000);
               try {
-                this.webviewController.loadUrl($rawfile("text.html"));
-                await Utils.sleep(2000);
+                this.isPageEnd = -1;
+                 this.webviewController.loadUrl($rawfile("text.html"));
+                 await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.de = 100;
-                await Utils.sleep(2000);
+                this.isPageEnd = -1;
+                this.webviewController.refresh();
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.webviewController.runJavaScript("getSize()", (err, res) => {
                   console.info("key==>getNum4 res :" + JSON.stringify(res))
                   this.text = Number(res)
@@ -243,7 +269,7 @@ struct WebTextAutosizing {
                   console.info("key==>getNum4 res :" + JSON.stringify(res))
                   this.text1 = Number(res)
                 })
-                await Utils.sleep(4355);
+                await Utils.sleep(2000);
                 if (this.text1 == this.text) {
                   value = true;
                 }
@@ -253,7 +279,7 @@ struct WebTextAutosizing {
 
               setTimeout(() => {
                 console.log("value04: " + value);
-                Utils.emitEvent(value, 4356)
+                Utils.emitEvent(value, 150240)
               }, 3000)
               break;
             }
@@ -272,16 +298,14 @@ struct WebTextAutosizing {
         .minLogicalFontSize(this.qa)
         .defaultFixedFontSize(this.det)
         .textAutosizing(this.isTextAutosizing)
+        .onPageEnd((event) => {
+            if (event) {
+              this.isPageEnd = 0;
+              console.log('onPageEnd url:' + event.url);
+            }
+          })
     }
   }
 
-  private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("web page valueChangeCallBack");
-    if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
-      if (eventData.data != null && eventData.data.ACTION != null) {
-        this.str = eventData.data.ACTION;
-      }
-    }
-  }
+
 }
