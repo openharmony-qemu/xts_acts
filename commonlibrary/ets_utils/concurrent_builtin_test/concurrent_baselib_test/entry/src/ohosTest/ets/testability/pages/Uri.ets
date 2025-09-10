@@ -1,5 +1,5 @@
-import { uri } from "@kit.ArkTS";
-import { str2, str2Decode, str3, str3Decode } from "./Testxml";
+import { uri } from '@kit.ArkTS';
+import { str2, str2Decode, str3, str3Decode } from './Testxml';
 
 @Concurrent
 export function testUriEqualsTo() {
@@ -84,7 +84,8 @@ export function testUriCreateFromParts() {
     const result1 = uriInstance.toString();
     const expected = 'mailto-+.test0002:no%20body#top';
     if (result1 !== expected) {
-      throw new Error(`${caseName} createFromParts result mismatch`);    }
+      throw new Error(`${caseName} createFromParts result mismatch`);
+    }
     console.log(`${caseName} test end`);
   } catch (err) {
     console.error(`${caseName} failed: ${err.message}`);
@@ -116,7 +117,8 @@ export function testUriFragmentPercentEncoded() {
   try {
     console.log(`${caseName} test start`);
     const uri1 = 'https://username:my+name@host:8080/directory/my+file?foo=1&bar=2#frag%3Dment';
-    const uriInstance = new uri.URI(uri1);;
+    const uriInstance = new uri.URI(uri1);
+    ;
     const result = uriInstance.fragment;
     if (result !== 'frag=ment') {
       throw new Error(`${caseName} fragment mismatch`);
@@ -136,7 +138,7 @@ export function testUriAuthorityWithDoubleAt() {
     const uri1 = 'https://username:password@@host:8080/directory/file?foo=1&bar=2#fragment';
     const uriInstance = new uri.URI(uri1);
     const result = uriInstance.authority;
-    if (result !== 'username:password@@host:8080'){
+    if (result !== 'username:password@@host:8080') {
       throw new Error(`${caseName} authority mismatch`);
     }
     console.log(`${caseName} test end`);
@@ -151,7 +153,7 @@ export function testUriSSPWithLeadingSlashes() {
   const caseName = 'testSsp0001';
   try {
     console.log(`${caseName} test start`);
-    const Uri = 'www.abc.com:::8080/directory/file?ab=pppppp#qwer=da';
+    const uri = 'www.abc.com:::8080/directory/file?ab=pppppp#qwer=da';
     const uriInstance = new uri.URI(Uri);
     const result = uriInstance.ssp;
     if (result !== '::8080/directory/file?ab=pppppp') {
@@ -169,8 +171,8 @@ export function testUriEncodedUserInfoWithDoubleColon() {
   const caseName = 'testEncodedUserInfo0001';
   try {
     console.log(`${caseName} test start`);
-    const Uri = 'https://username::my+name@host:8080/directory/my+file?foo=1&bar=2#fragment';
-    const uriInstance = new uri.URI(Uri);
+    const uri1 = 'https://username::my+name@host:8080/directory/my+file?foo=1&bar=2#fragment';
+    const uriInstance = new uri.URI(uri1);
     const result = uriInstance.encodedUserInfo;
     if (result !== 'username::my+name') {
       throw new Error(`${caseName} encodedUserInfo mismatch`);
@@ -187,8 +189,8 @@ export function testUriEncodedPathWithMultipleSlashes() {
   const caseName = 'testEncodedPath0002';
   try {
     console.log(`${caseName} test start`);
-    const Uri = 'https://username:my+name@host:8080/directory///my+file?foo=1&bar=2#fragment';
-    const uriInstance = new uri.URI(Uri);
+    const uri1 = 'https://username:my+name@host:8080/directory///my+file?foo=1&bar=2#fragment';
+    const uriInstance = new uri.URI(uri1);
     const result = uriInstance.encodedPath;
     if (result !== '/directory///my+file') {
       throw new Error(`${caseName} encodedPath mismatch`);
@@ -205,8 +207,8 @@ export function testUriEncodedQueryWithDoubleQuestion() {
   const caseName = 'testEncodedQuery0001';
   try {
     console.log(`${caseName} test start`);
-    const Uri = 'https://username:my+name@host:8080/directory/my+file??foo=1&bar=2#fragment';
-    const uriInstance = new uri.URI(Uri);
+    const uri1 = 'https://username:my+name@host:8080/directory/my+file??foo=1&bar=2#fragment';
+    const uriInstance = new uri.URI(uri1);
     const result = uriInstance.encodedQuery;
     if (result !== '?foo=1&bar=2') {
       throw new Error(`${caseName} encodedQuery mismatch`);

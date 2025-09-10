@@ -1,4 +1,4 @@
-import { add, TAG, waitForSeconds } from "./Testxml";
+import { add, TAG, waitForSeconds } from './Testxml';
 
 
 @Concurrent
@@ -197,7 +197,9 @@ export async function testSetInterval003() {
     }
     clearInterval(result1);
     clearInterval(result2);
-    if (count !== 12) throw new Error(`${TAG} count !== 12`);
+    if (count !== 12) {
+      throw new Error(`${TAG} count !== 12`);
+    }
     console.log(`${caseName} test end`);
   } catch (err) {
     console.error(`${TAG} failed: ${err.message}`);
@@ -283,9 +285,9 @@ export function testCanIUse001() {
   const caseName = 'testCanIUse001';
   try {
     console.log(`${caseName} test start`);
-    const flag = canIUse("a");
+    const flag = canIUse('a');
     if (flag !== false) {
-      throw new Error(`${TAG} canIUse("a") !== false`);
+      throw new Error(`${TAG} canIUse('a') !== false`);
     }
     console.log(`${caseName} test end`);
   } catch (err) {

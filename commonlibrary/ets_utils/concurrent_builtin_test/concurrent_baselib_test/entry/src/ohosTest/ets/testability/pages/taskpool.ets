@@ -840,7 +840,7 @@ export function testConsoleDir1() {
   let TAG = 'testConsoleDir1'
   try {
     class bar {
-      a: number = 1;
+     public a: number = 1;
     }
     let a: bar = new bar();
     console.dir(a);

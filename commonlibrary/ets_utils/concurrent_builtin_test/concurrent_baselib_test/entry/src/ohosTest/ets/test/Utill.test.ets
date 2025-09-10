@@ -1174,7 +1174,7 @@ export default function utilTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_UTILL_3300
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_UTILL_3301
      * @tc.name      : testGetHash_Stack
      * @tc.desc      : Test
      * @tc.size      : MediumTest

@@ -651,7 +651,7 @@ export async function stringPrototypeSubstring() {
   try {
     try {
       const result = specChars.substring(1, 3);
-       if (result !== "！\"") {
+       if (result !== '！\"') {
         throw new Error(`${TAG} value.toString() invalid: ${result.toString()}`)
       }
     } catch (err) {
@@ -888,7 +888,7 @@ export async function jsonHas() {
       let specChars =
         ' ！"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
       let util1: GeneratedObjectLiteralInterface_1 = {
-        ' ！"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~': "123"
+        ' ！"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~': '123'
       };
       let util = JSON.has(util1, specChars);
 
@@ -911,7 +911,7 @@ export async function jsonRemove() {
   try {
     try {
       let util1: GeneratedObjectLiteralInterface_1 = {
-        ' ！"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~': "123"
+        ' ！"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~': '123'
       };
       let specChars =
         ' ！"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';

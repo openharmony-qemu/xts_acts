@@ -363,8 +363,8 @@ export function testLinkedListConvertToArray015() {
     console.log(`${caseName} test start`);
 
     class Temp1 {
-      age: number = 0;
-      name: string = '';
+     public age: number = 0;
+     public name: string = '';
 
       constructor(age: number, name: string) {
         this.age = age;

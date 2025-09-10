@@ -48,7 +48,7 @@ export function stackPeek() {
     try {
       let stack: Stack<number | string | object> = new Stack();
       let a: C1 = {
-        name: "Dylon", age: "13"
+        name: 'Dylon', age: '13'
       };
       let b = 'a'
       let c = 1
@@ -76,7 +76,7 @@ export function stackLocate() {
     try {
       let stack: Stack<number | string | object> = new Stack();
       let a: C1 = {
-        name: "Dylon", age: "13"
+        name: 'Dylon', age: '13'
       };
       let b = 'a'
       let c = 1

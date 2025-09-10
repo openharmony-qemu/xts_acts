@@ -324,13 +324,11 @@ export function streamDuplex() {
     try {
       let x = new stream.Duplex();
       console.error(`${TAG} catch error: ${x.writableObjectMode}`);
-      // expect(x.writableObjectMode).assertEqual(false);
       if (x.writableObjectMode !==false) {
         throw new Error(`${TAG} value.toString() invalid: ${x.writableObjectMode.toString()}`)
       }
     } catch (err) {
       console.error(`${TAG} failed, error: ${err.message}`);
-      // expect().assertFail();
     }
   } catch (err) {
     console.error(`${TAG} failed, error: ${err.message}`);

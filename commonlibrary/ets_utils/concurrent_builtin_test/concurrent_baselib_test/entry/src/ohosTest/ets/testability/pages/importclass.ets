@@ -44,6 +44,6 @@ export class TestDuplex extends stream.Duplex {
 }
 
 export class C1 {
-  name: string = ''
-  age: string = ''
+  public name: string = ''
+  public age: string = ''
 }

@@ -46,8 +46,8 @@ export function testQueueAddUndefined() {
   }
 }
 class C1 {
-  name: string = ''
-  age: string = ''
+  public name: string = ''
+  public age: string = ''
 }
 @Concurrent
 export function testQueuePop() {
