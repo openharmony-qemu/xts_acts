@@ -33,14 +33,16 @@ export default function RouterPageStateTest() {
     it('testArkUIACERouterPageState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          Utils.pushPageNoClear("NativeType/RouterPage");
+          await Utils.pushPageNoClear("NativeType/RouterPage");
           console.info("====>SUB_ArkUI_ACE_RouterPageState_0300 start====");
           let com = await Utils.driver.findComponent(ON.id("goPageTwo"));
           await com.click();
-          await Utils.sleep(200);
+          await Utils.sleep(900);
           Utils.triggerKey(2);
-          await Utils.sleep(200);
+          await Utils.sleep(900);
           let result: number = libnativetype.GetRouterPageNodeStateResult(2);
+          await Utils.triggerKey(2);
+          await Utils.sleep(900);
           console.info("====>SUB_ArkUI_ACE_RouterPageState_0300 result: " + result);
           expect(result).assertEqual(1);
           done()
@@ -61,14 +63,16 @@ export default function RouterPageStateTest() {
     it('testArkUIACERouterPageState0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          Utils.pushPageNoClear("NativeType/RouterPage");
+          await Utils.pushPageNoClear("NativeType/RouterPage");
           console.info("====>SUB_ArkUI_ACE_RouterPageState_0400 start====");
           let com = await Utils.driver.findComponent(ON.id("goPageTwo"));
           await com.click();
-          await Utils.sleep(300);
+          await Utils.sleep(900);
           Utils.triggerKey(2);
-          await Utils.sleep(300);
+          await Utils.sleep(900);
           let result: number = libnativetype.GetRouterPageNodeStateResult(3);
+          await Utils.triggerKey(2);
+          await Utils.sleep(900);
           console.info("====>SUB_ArkUI_ACE_RouterPageState_0400 result: " + result);
           expect(result).assertEqual(1);
           done()
@@ -89,14 +93,16 @@ export default function RouterPageStateTest() {
     it('testArkUIACERouterPageState0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          Utils.pushPageNoClear("NativeType/RouterPage");
+          await Utils.pushPageNoClear("NativeType/RouterPage");
           console.info("====>SUB_ArkUI_ACE_RouterPageState_0500 start====");
           let com = await Utils.driver.findComponent(ON.id("goPageTwo"));
           await com.click();
-          await Utils.sleep(300);
+          await Utils.sleep(900);
           Utils.triggerKey(2);
-          await Utils.sleep(300);
+          await Utils.sleep(900);
           let result: number = libnativetype.GetRouterPageNodeStateResult(4);
+          await Utils.triggerKey(2);
+          await Utils.sleep(900);
           console.info("====>SUB_ArkUI_ACE_RouterPageState_0500 result: " + result);
           expect(result).assertEqual(1);
           done()
