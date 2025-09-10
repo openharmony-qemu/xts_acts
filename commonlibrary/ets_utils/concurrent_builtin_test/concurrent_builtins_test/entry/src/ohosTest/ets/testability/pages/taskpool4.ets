@@ -1,5 +1,5 @@
-import { main1 } from "./Reflex";
-import { regExpSymbolMatch, regExpSymbolReplace, regExpSymbolSearch, regExpSymbolSplit } from "./RegexpUtil";
+import { main1 } from './Reflex';
+import { regExpSymbolMatch, regExpSymbolReplace, regExpSymbolSearch, regExpSymbolSplit } from './RegexpUtil';
 
 @Concurrent
 export function testRegExpToString1() {

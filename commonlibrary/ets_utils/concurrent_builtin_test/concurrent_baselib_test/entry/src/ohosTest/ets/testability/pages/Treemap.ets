@@ -1,4 +1,4 @@
-import { TreeMap } from "@kit.ArkTS";
+import { TreeMap } from '@kit.ArkTS';
 
 @Concurrent
 export function testTreeMapConstructorDefault() {
@@ -29,9 +29,9 @@ export function testTreeMapConstructorWithComparator() {
       new TreeMap<string, string>((firstValue: string, secondValue: string): boolean => {
         return firstValue > secondValue;
       });
-    treeMap.set("AAA", "111");
-    treeMap.set("BBB", "222");
-    treeMap.set("CCC", "333");
+    treeMap.set('AAA', '111');
+    treeMap.set('BBB', '222');
+    treeMap.set('CCC', '333');
     let length = treeMap.length;
     if (length !== 3) {
       throw new Error(`${caseName} length mismatch`);
@@ -66,8 +66,8 @@ export function testTreeMapHasKey() {
   try {
     console.log(`${caseName} test start`);
     let treeMap: TreeMap<string, number> = new TreeMap();
-    treeMap.set("squirrel", 123);
-    let result = treeMap.hasKey("squirrel");
+    treeMap.set('squirrel', 123);
+    let result = treeMap.hasKey('squirrel');
     if (result !== true) {
       throw new Error(`${caseName} hasKey mismatch`);
     }
@@ -84,10 +84,10 @@ export function testTreeMapGetFirstKey() {
   try {
     console.log(`${caseName} test start`);
     let treeMap: TreeMap<string, number> = new TreeMap();
-    treeMap.set("DEF", 123);
-    treeMap.set("ABC", 356);
+    treeMap.set('DEF', 123);
+    treeMap.set('ABC', 356);
     let result = treeMap.getFirstKey();
-    if (result !== "ABC") {
+    if (result !== 'ABC') {
       throw new Error(`${caseName} getFirstKey mismatch`);
     }
     console.log(`${caseName} test end`);

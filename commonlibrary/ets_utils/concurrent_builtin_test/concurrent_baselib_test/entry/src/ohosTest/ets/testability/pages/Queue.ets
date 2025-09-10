@@ -46,8 +46,8 @@ export function testQueueAddUndefined() {
   }
 }
 class C1 {
-  name: string = ""
-  age: string = ""
+  name: string = ''
+  age: string = ''
 }
 @Concurrent
 export function testQueuePop() {
@@ -56,7 +56,7 @@ export function testQueuePop() {
     console.log(`${caseName} test start`);
     const queue: Queue<number | string | object> = new Queue();
     let a: C1 = {
-      name: "Dylon", age: "13"
+      name: 'Dylon', age: '13'
     };
     queue.add(a);
     queue.add('a');
@@ -147,7 +147,7 @@ export function testQueueSymbolIterator() {
   try {
     let queue: Queue<number | string | object> = new Queue();
     let a: C1 = {
-      name: "Dylon", age: "13"
+      name: 'Dylon', age: '13'
     };
     let b = 'a';
     let c = 1;

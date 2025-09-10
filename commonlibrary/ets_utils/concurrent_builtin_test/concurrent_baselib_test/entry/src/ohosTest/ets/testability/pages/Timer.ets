@@ -217,7 +217,9 @@ export async function testSetInterval004() {
     if (result1 === undefined) {
       throw new Error(`${TAG} result1 === undefined`);
     }
-    if (flag !== 'b') throw new Error(`${TAG} flag !== 'b'`);
+    if (flag !== 'b') {
+      throw new Error(`${TAG} flag !== 'b'`);
+    }
     console.log(`${caseName} test end`);
   } catch (err) {
     console.error(`${TAG} failed: ${err.message}`);
@@ -234,7 +236,9 @@ export async function testSetInterval005() {
     const result1 = setInterval(() => { flag = 'b'; }, 70);
     await waitForSeconds(100);
     clearInterval(result1);
-    if (flag !== 'b') throw new Error(`${TAG} flag !== 'b'`);
+    if (flag !== 'b') {
+      throw new Error(`${TAG} flag !== 'b'`);
+    }
     const result2 = setInterval(() => { flag = 'c'; }, 250);
     await waitForSeconds(400);
     if (result1 === undefined) {

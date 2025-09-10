@@ -38,12 +38,12 @@ export class TestDuplex extends stream.Duplex {
 
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     writeSuccess = true;
-    console.info("duplexStream chunk is", chunk);
+    console.info('duplexStream chunk is', chunk);
     callback();
   }
 }
 
 export class C1 {
-  name: string = ""
-  age: string = ""
+  name: string = ''
+  age: string = ''
 }

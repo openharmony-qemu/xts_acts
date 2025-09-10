@@ -41,7 +41,7 @@ export function regExpSymbolSplit(pattern: RegExp, str: string): string[] {
   return pattern[Symbol.split](str);
 }
 
-export function regExp$str(pattern: RegExp, str: string): any {
+export function regExp$str(pattern: RegExp, str: string) {
   return RegExp[str];
 }
 

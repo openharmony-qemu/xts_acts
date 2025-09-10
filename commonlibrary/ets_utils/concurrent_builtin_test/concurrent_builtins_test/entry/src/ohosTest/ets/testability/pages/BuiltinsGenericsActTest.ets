@@ -151,8 +151,12 @@ export function testMultiGeneric() {
     }
 
     const pair = new Pair<number, string>(100, 'World');
-    if (pair.getValue1() !== 100) throw new Error(`${TAG} v1`);
-    if (pair.getValue2() !== 'World') throw new Error(`${TAG} v2`);
+    if (pair.getValue1() !== 100) {
+      throw new Error(`${TAG} v1`);
+    }
+    if (pair.getValue2() !== 'World'){
+      throw new Error(`${TAG} v2`);
+    }
     console.info(`${caseName} test end`);
   } catch (err) {
     console.error(`${TAG} failed: ${err.message}`);
@@ -180,7 +184,9 @@ export function testGenericConstraint() {
     }
 
     const dogBox = new Box(new Dog('Buddy'));
-    if (dogBox.getValue().name !== 'Buddy') throw new Error(`${TAG} name`);
+    if (dogBox.getValue().name !== 'Buddy') {
+      throw new Error(`${TAG} name`);
+    }
     console.info(`${caseName} test end`);
   } catch (err) {
     console.error(`${TAG} failed: ${err.message}`);

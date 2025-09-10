@@ -12,11 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-{
-  "modelVersion": "5.0.0",
-  "dependencies": {
-  }
-}
+
 export function createProxy(target) {
   try {
     return new Proxy(target, {

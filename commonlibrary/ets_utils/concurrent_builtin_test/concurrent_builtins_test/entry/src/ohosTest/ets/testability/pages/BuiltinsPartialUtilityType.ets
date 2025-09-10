@@ -1,4 +1,4 @@
-import { createProxy } from "./Proxy";
+import { createProxy } from './Proxy';
 
 @Concurrent
 export function BuiltinsPartialUtilityTypeTest0100() {
@@ -66,11 +66,11 @@ export function BuiltinsPrivateFieldsUtilityTypeTest0100() {
       }
     }
 
-    const person = new Person("Alice", 25);
+    const person = new Person('Alice', 25);
     console.log(`Initial Name: ${person.getName()}`);
     console.log(`Initial Age: ${person.getAge()}`);
     const partialInfo: Partial<PersonInfo> = {
-      name: "Bob",
+      name: 'Bob',
       age: 30
     };
     person.updateInfo(partialInfo);
@@ -130,27 +130,27 @@ export function BuiltinsRecordUtilityTypeTest0100() {
   let TAG = 'BuiltinsRecordUtilityTypeTest0100'
   try {
     const numberRecord: Record<string, number> = {
-      "one": 1,
-      "two": 2,
-      "three": 3
+      'one': 1,
+      'two': 2,
+      'three': 3
     };
     const stringRecord: Record<number, string> = {
-      1: "apple",
-      2: "banana",
-      3: "cherry"
+      1: 'apple',
+      2: 'banana',
+      3: 'cherry'
     };
     console.log(JSON.stringify(numberRecord));
     console.log(JSON.stringify(stringRecord));
     type KeyType = 'name' | 'age' | 'email';
     const userRecord: Record<KeyType, string> = {} as Record<KeyType, string>;
-    userRecord.name = "John Doe";
-    userRecord.age = "30";
-    userRecord.email = "johndoe@example.com";
+    userRecord.name = 'John Doe';
+    userRecord.age = '30';
+    userRecord.email = 'johndoe@example.com';
     console.log(JSON.stringify(userRecord));
-    if (JSON.stringify({"one":1,"two":2,"three":3}) !== JSON.stringify(numberRecord)) {
+    if (JSON.stringify({'one':1,'two':2,'three':3}) !== JSON.stringify(numberRecord)) {
       throw new Error(`${TAG} value.toString() invalid: ${JSON.stringify(numberRecord)}`)
     }
-    if (JSON.stringify({"1":"apple","2":"banana","3":"cherry"}) !== JSON.stringify(stringRecord)) {
+    if (JSON.stringify({'1':'apple','2':'banana','3':'cherry'}) !== JSON.stringify(stringRecord)) {
       throw new Error(`${TAG} value.toString() invalid: ${JSON.stringify(stringRecord)}`)
     }
   } catch (err) {

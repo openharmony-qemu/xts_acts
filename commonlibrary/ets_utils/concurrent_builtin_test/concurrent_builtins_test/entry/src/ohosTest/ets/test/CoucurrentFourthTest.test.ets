@@ -499,7 +499,7 @@ export default function supplyTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_1300
+     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_1301
      * @tc.name      : test_concurrent_builtins_bigint_tolocalestring_001
      * @tc.desc      : 并发验证 BigInt.prototype.toLocaleString 基本用例（en-US）
      * @tc.size      : MediumTest

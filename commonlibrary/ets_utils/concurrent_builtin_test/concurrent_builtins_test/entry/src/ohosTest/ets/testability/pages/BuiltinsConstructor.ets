@@ -9,7 +9,7 @@ export function testBigIntPositive() {
     let resultValue: boolean;
 
     class BigIntConverter {
-      value: bigint;
+      public value: bigint;
       constructor(input: number) {
         if (input < 0 || !Number.isInteger(input)) {
           throw new Error('Input must be a positive integer');

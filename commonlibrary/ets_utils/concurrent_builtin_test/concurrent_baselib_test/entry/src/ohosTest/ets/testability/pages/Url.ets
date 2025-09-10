@@ -248,9 +248,9 @@ export function testURL_parseURL_withBase() {
   const caseName = 'DynamicURLConcurrentTest_parseURL_withBase';
   try {
     console.log(`${caseName} test start`);
-    const url1 = Url.URL.parseURL('path2/path3', 'https://www.example.com/test/test1 ');
+    const url1 = Url.URL.parseURL('path2/path3', 'https://.com/test/test1 ');
     if (url1.toString() !==
-      'https://www.example.com/test/path2/path3') {
+      'https://.com/test/path2/path3') {
       throw new Error(`${caseName} parseURL withBase mismatch`);
     }
     console.log(`${caseName} test end`);

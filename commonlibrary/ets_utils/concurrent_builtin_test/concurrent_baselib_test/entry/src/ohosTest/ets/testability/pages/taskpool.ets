@@ -845,10 +845,9 @@ export function testConsoleDir1() {
     let a: bar = new bar();
     console.dir(a);
 
-    const Buffer = buffer.from('Hello World');
-    console.dir(Buffer);
-
-    let arrayList: Array<number> = [1, 2, 3];
+    const buffer1 = buffer.from('Hello World');
+    console.dir(buffer1);
+    let arrayList: number[] = [1, 2, 3];
     console.dir(arrayList);
   } catch (err) {
     console.error(`${TAG} failed, error: ${err.message}`);
