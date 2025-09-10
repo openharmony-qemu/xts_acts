@@ -16,11 +16,11 @@
 #include "RdbErrorCodeTest.h"
 #include "napi/native_api.h"
 #include <cstddef>
+#include <database/rdb/oh_values_bucket.h>
 #include <database/rdb/relational_store.h>
+#include <database/rdb/relational_store_error_code.h>
 #include <js_native_api_types.h>
 #include <napi/native_api.h>
-#include <database/rdb/oh_values_bucket.h>
-#include <database/rdb/relational_store_error_code.h>
 
 int g_rEmptyTableNameCode = 14800005;
 int g_rInvalidColumnTypeCode = 14800009;
@@ -29,12 +29,12 @@ int g_rNoRowInQueryCode = 14800018;
 int g_rInvalidObjectTypeCode = 14800020;
 
 namespace RdbErrorCodeTest {
-    const char* RDB_TEST = "/data/storage/el2/database/com.acts.acttransactiontest/entry";
-    char g_storeName[20] = "rdb_store_test.db";
-    char g_bundleName[100] = "com.acts.acttransactiontest";
-    char g_moduleName[100] = "";
-    OH_Rdb_Config RDB_CONFIG;
-}
+const char *RDB_TEST = "/data/storage/el2/database/com.acts.acttransactiontest/entry";
+char g_storeName[20] = "rdb_store_test.db";
+char g_bundleName[100] = "com.acts.acttransactiontest";
+char g_moduleName[100] = "";
+OH_Rdb_Config RDB_CONFIG;
+} // namespace RdbErrorCodeTest
 
 void InitRdbErrorCodeConfig()
 {
@@ -95,17 +95,17 @@ void AddRdbErrorCodeTest(std::vector<napi_property_descriptor> &descData)
                         napi_default, nullptr});
     descData.push_back({"testGoToNextRowAfterLast", nullptr, TestGoToNextRowAfterLast, nullptr, nullptr, nullptr,
                         napi_default, nullptr});
-    descData.push_back({"testInvalidObjectType", nullptr, TestInvalidObjectType, nullptr, nullptr, nullptr,
-                        napi_default, nullptr});
+    descData.push_back(
+        {"testInvalidObjectType", nullptr, TestInvalidObjectType, nullptr, nullptr, nullptr, napi_default, nullptr});
 }
 
 napi_value TestRdbError(napi_env env, napi_callback_info info)
 {
     napi_value result;
     InitRdbErrorCodeConfig();
-    
+
     OH_Rdb_Store *testRdbStore = nullptr;
-    
+
     int errCode = 0;
     char table[] = "test";
 
@@ -118,7 +118,7 @@ napi_value TestRdbError(napi_env env, napi_callback_info info)
     valueBucket->putInt64(valueBucket, "data2", data2Value);
     double data3Value = 12.15;
     valueBucket->putReal(valueBucket, "data3", data3Value);
-    
+
     int ret = OH_Rdb_Insert(testRdbStore, table, valueBucket);
 
     napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_ERR ? -1 : 1, &result);
@@ -170,25 +170,21 @@ napi_value TestEmptyTableName(napi_env env, napi_callback_info info)
 napi_value TestInvalidColumnType(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    int numType = 0;
+    OH_Rdb_GetSupportedDbType(&numType);
+    if (numType != 2) {
+        napi_create_int32(env, g_rInvalidColumnTypeCode, &result);
+        return result;
+    }
     OH_Rdb_ConfigV2 *configV2 = OH_Rdb_CreateConfig();
     InitRdbErrorCodeConfigV2(configV2);
     OH_Rdb_Store *store = nullptr;
     int errCode = 0;
     store = OH_Rdb_CreateOrOpen(configV2, &errCode);
-    const char* createTableSql = "CREATE TABLE IF NOT EXISTS test ("
-                                 "id INT64 PRIMARY KEY, "
-                                 "data1 TEXT, "
-                                 "data2 INT64, "
-                                 "data3 REAL)";
-    OH_Rdb_Execute(store, createTableSql);
-    OH_VBucket *valueBucket = OH_Rdb_CreateValuesBucket();
-    valueBucket->putInt64(valueBucket, "id", 1);
-    valueBucket->putText(valueBucket, "data1", "ZhangSan");
-    int64_t data2Value = 12800;
-    valueBucket->putInt64(valueBucket, "data2", data2Value);
-    double data3Value = 128.0;
-    valueBucket->putReal(valueBucket, "data3", data3Value);
-    OH_Rdb_Insert(store, "test", valueBucket);
+    char createTableSql[] =
+        "CREATE TABLE test (id INTEGER PRIMARY KEY AUTOINCREMENT, data1 floatvector(2), data2 REAL);";
+    OH_Rdb_ExecuteByTrxId(store, 0, createTableSql);
+    OH_Rdb_ExecuteV2(store, "INSERT INTO test (id, data1, data2) VALUES (0, '[3.4, 4.5]', 128.0);", nullptr, nullptr);
     const char *sql = "SELECT * FROM test;";
     OH_Data_Values *values = OH_Values_Create();
     OH_Cursor *cursor = OH_Rdb_ExecuteQueryV2(store, sql, values);
@@ -198,7 +194,7 @@ napi_value TestInvalidColumnType(napi_env env, napi_callback_info info)
     int rowCnt = 0;
     cursor->getRowCount(cursor, &rowCnt);
     int columnIndex = 0;
-    const char *name = "data3";
+    const char *name = "data2";
     cursor->getColumnIndex(cursor, name, &columnIndex);
     OH_ColumnType type;
     cursor->getColumnType(cursor, columnIndex, &type);
@@ -206,7 +202,6 @@ napi_value TestInvalidColumnType(napi_env env, napi_callback_info info)
     int ret = cursor->getSize(cursor, columnIndex, &size);
     OH_Rdb_CloseStore(store);
     OH_Rdb_DeleteStoreV2(configV2);
-    valueBucket->destroy(valueBucket);
     OH_Values_Destroy(values);
     cursor->destroy(cursor);
     napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_COLUMN_TYPE ? g_rInvalidColumnTypeCode : 1, &result);
@@ -216,9 +211,9 @@ napi_value TestInvalidColumnType(napi_env env, napi_callback_info info)
 napi_value TestNoRowInQuery(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    
+
     OH_Rdb_ConfigV2 *configV2 = OH_Rdb_CreateConfig();
-    
+
     OH_Rdb_SetDatabaseDir(configV2, RdbErrorCodeTest::RDB_TEST);
     OH_Rdb_SetStoreName(configV2, RdbErrorCodeTest::g_storeName);
     OH_Rdb_SetBundleName(configV2, RdbErrorCodeTest::g_bundleName);
@@ -227,19 +222,19 @@ napi_value TestNoRowInQuery(napi_env env, napi_callback_info info)
     OH_Rdb_SetSecurityLevel(configV2, OH_Rdb_SecurityLevel::S1);
     OH_Rdb_SetArea(configV2, RDB_SECURITY_AREA_EL1);
     OH_Rdb_SetDbType(configV2, RDB_CAYLEY);
-    
+
     OH_Rdb_Store *store = nullptr;
     int errCode = 0;
     store = OH_Rdb_CreateOrOpen(configV2, &errCode);
-    
-    const char* createTableSql = "CREATE TABLE IF NOT EXISTS test ("
+
+    const char *createTableSql = "CREATE TABLE IF NOT EXISTS test ("
                                  "id INT64 PRIMARY KEY, "
                                  "data1 TEXT, "
                                  "data2 INT64, "
                                  "data3 REAL)";
 
     OH_Rdb_Execute(store, createTableSql);
-    
+
     OH_Predicates *predicates = OH_Rdb_CreatePredicates("test");
     int ret = OH_Rdb_LockRow(store, predicates);
     OH_Rdb_CloseStore(store);
@@ -265,13 +260,13 @@ napi_value TestNoTransactionInSession(napi_env env, napi_callback_info info)
     OH_Rdb_SetSecurityLevel(configV2, OH_Rdb_SecurityLevel::S1);
     OH_Rdb_SetArea(configV2, RDB_SECURITY_AREA_EL1);
     OH_Rdb_SetDbType(configV2, RDB_SQLITE);
-    
+
     OH_Rdb_Store *testRdbStore = nullptr;
     int errCode = 0;
     testRdbStore = OH_Rdb_CreateOrOpen(configV2, &errCode);
-    
+
     int ret = OH_Rdb_RollBack(testRdbStore);
-    
+
     OH_Rdb_CloseStore(testRdbStore);
     OH_Rdb_DeleteStoreV2(configV2);
     OH_Rdb_DestroyConfig(configV2);
@@ -284,43 +279,37 @@ napi_value TestNoTransactionInSession(napi_env env, napi_callback_info info)
 napi_value TestInvalidColumnIndex(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    int numType = 0;
+    OH_Rdb_GetSupportedDbType(&numType);
+    if (numType != 2) {
+        napi_create_int32(env, 0, &result);
+        return result;
+    }
     OH_Rdb_ConfigV2 *configV2 = OH_Rdb_CreateConfig();
     InitRdbErrorCodeConfigV2(configV2);
     OH_Rdb_Store *store = nullptr;
     int errCode = 0;
     store = OH_Rdb_CreateOrOpen(configV2, &errCode);
-    const char* createTableSql = "CREATE TABLE IF NOT EXISTS test ("
-                                 "id INT64 PRIMARY KEY, "
-                                 "data1 TEXT, "
-                                 "data2 INT64, "
-                                 "data3 REAL)";
-    OH_Rdb_Execute(store, createTableSql);
-    OH_VBucket *valueBucket = OH_Rdb_CreateValuesBucket();
-    valueBucket->putInt64(valueBucket, "id", 1);
-    valueBucket->putText(valueBucket, "data1", "ZhangSan");
-    int64_t data2Value = 12800;
-    valueBucket->putInt64(valueBucket, "data2", data2Value);
-    double data3Value = 128.0;
-    valueBucket->putReal(valueBucket, "data3", data3Value);
-    OH_Rdb_Insert(store, "test", valueBucket);
-    const char *querySql = "SELECT * FROM test;";
+    char createTableSql[] =
+        "CREATE TABLE test (id INTEGER PRIMARY KEY AUTOINCREMENT, data1 floatvector(2), data2 REAL);";
+    OH_Rdb_ExecuteByTrxId(store, 0, createTableSql);
+    OH_Rdb_ExecuteV2(store, "INSERT INTO test (id, data1, data2) VALUES (0, '[3.4, 4.5]', 128.0);", nullptr, nullptr);
+    const char *sql = "SELECT * FROM test;";
     OH_Data_Values *values = OH_Values_Create();
-    OH_Cursor *cursor = OH_Rdb_ExecuteQueryV2(store, querySql, values);
-    int rowCount = 0;
-    cursor->getRowCount(cursor, &rowCount);
-    cursor = OH_Rdb_ExecuteQueryV2(store, querySql, values);
-    cursor->getRowCount(cursor, &rowCount);
-    int moveResult = cursor->goToNextRow(cursor);
+    OH_Cursor *cursor = OH_Rdb_ExecuteQueryV2(store, sql, values);
+    cursor->goToNextRow(cursor);
+    int cnt = 0;
+    cursor->getColumnCount(cursor, &cnt);
+    int rowCnt = 0;
+    cursor->getRowCount(cursor, &rowCnt);
+    int columnIndex = 10;
     size_t size = 0;
-    int32_t columnIndex = 10;
-    moveResult = cursor->getSize(cursor, columnIndex, &size);
-    valueBucket->destroy(valueBucket);
-    OH_Values_Destroy(values);
-    cursor->destroy(cursor);
+    int ret = cursor->getSize(cursor, columnIndex, &size);
     OH_Rdb_CloseStore(store);
     OH_Rdb_DeleteStoreV2(configV2);
-    OH_Rdb_DestroyConfig(configV2);
-    napi_create_int32(env, moveResult == RDB_E_INVALID_COLUMN_INDEX ? 0 : -1, &result);
+    OH_Values_Destroy(values);
+    cursor->destroy(cursor);
+    napi_create_int32(env, ret == RDB_E_INVALID_COLUMN_INDEX ? 0 : -1, &result);
     return result;
 }
 
@@ -345,7 +334,7 @@ napi_value TestAlreadyClosed(napi_env env, napi_callback_info info)
     OH_RDB_TransOptions *options = OH_RdbTrans_CreateOptions();
     OH_Rdb_CreateTransaction(testRdbStore, options, &trans);
     OH_RdbTrans_DestroyOptions(options);
-    const char* createTableSql = "CREATE TABLE IF NOT EXISTS test ("
+    const char *createTableSql = "CREATE TABLE IF NOT EXISTS test ("
                                  "id INT64 PRIMARY KEY, "
                                  "name TEXT, "
                                  "score INT64)";
@@ -365,7 +354,7 @@ napi_value TestAlreadyClosed(napi_env env, napi_callback_info info)
     char table[] = "test";
     int64_t rowId = -1;
     int ret = OH_RdbTrans_Insert(trans, table, valueBucket, &rowId);
-    
+
     OH_Value_Destroy(res);
     OH_RdbTrans_Destroy(trans);
     OH_RdbTrans_DestroyOptions(options);
@@ -381,15 +370,12 @@ napi_value TestNotSupportedAttachInWalMode(napi_env env, napi_callback_info info
 {
     napi_value result;
     OH_Rdb_ConfigV2 *configV2 = OH_Rdb_CreateConfig();
-    InitRdbErrorCodeConfigV2(configV2);
-    OH_Rdb_Store *testRdbStore = nullptr;
+    InitRdbSqliteConfigV2(configV2);
+    OH_Rdb_Store *store = nullptr;
     int errCode = 0;
-    testRdbStore = OH_Rdb_CreateOrOpen(configV2, &errCode);
-    OH_Rdb_Execute(testRdbStore, "PRAGMA journal_mode=WAL;");
-    errCode = OH_Rdb_Execute(testRdbStore, "ATTACH DATABASE '/data/storage/el1/database/aux.db' AS aux;");
-    OH_Rdb_CloseStore(testRdbStore);
-    OH_Rdb_DeleteStoreV2(configV2);
-    OH_Rdb_DestroyConfig(configV2);
+    store = OH_Rdb_CreateOrOpen(configV2, &errCode);
+    OH_Rdb_Execute(store, "PRAGMA journal_mode=WAL;");
+    errCode = OH_Rdb_Execute(store, "ATTACH DATABASE '/data/storage/el1/database/aux.db' AS aux;");
     napi_create_int32(env, errCode == RDB_E_NOT_SUPPORTED_ATTACH_IN_WAL_MODE ? 0 : -1, &result);
     return result;
 }
@@ -470,7 +456,7 @@ napi_value TestGoToNextRowAfterLast(napi_env env, napi_callback_info info)
     InitRdbErrorCodeConfig();
     int errCode1 = 0;
     OH_Rdb_Store *testStore = OH_Rdb_GetOrOpen(&RdbErrorCodeTest::RDB_CONFIG, &errCode1);
-    const char* createTableSql = "CREATE TABLE IF NOT EXISTS test ("
+    const char *createTableSql = "CREATE TABLE IF NOT EXISTS test ("
                                  "id INT64 PRIMARY KEY, "
                                  "data1 TEXT, "
                                  "data2 INT64, "
@@ -490,7 +476,7 @@ napi_value TestGoToNextRowAfterLast(napi_env env, napi_callback_info info)
     OH_Cursor *cursor = OH_Rdb_ExecuteQueryV2(testStore, querySql, values);
     int rowCount = 0;
     cursor->getRowCount(cursor, &rowCount);
-    float test[2] = { 5.5f, 6.6f };
+    float test[2] = {5.5f, 6.6f};
     OH_Data_Values *values1 = OH_Values_Create();
     size_t length = 2;
     OH_Values_PutFloatVector(values1, test, length);
