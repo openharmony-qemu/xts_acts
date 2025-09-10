@@ -3496,6 +3496,792 @@ static napi_value TestThreadSafetyErrorHandling(napi_env env, napi_callback_info
     return BuildThreadSafetyErrorMainResult(env, params);
 }
 
+// Helper function for basic UTF-16 string creation and verification
+static bool CreateAndVerifyUtf16String(napi_env env,
+                                       const char16_t* utf16String,
+                                       napi* utf16Val,
+                                       size_t* requiredLength)
+{
+    napi_status status = napi_create_string_utf16(env, utf16String, NAPI_AUTO_LENGTH, utf16Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    status = napi_get_value_string_utf16(env, *utf16Val, nullptr, 0, requiredLength);
+    if (status != napi_ok) {
+        return false;
+    }
+
+    // Verify content by reading and comparing
+    char16_t *buffer = new char16_t[*requiredLength + 1];
+    if (!buffer) {
+        return false;
+    }
+    size_t actualLength = 0;
+    status = napi_get_value_string_utf16(env, *utf16Val, buffer, *requiredLength + 1, &actualLength);
+    if (status != napi_ok || actualLength != *requiredLength) {
+        delete[] buffer;
+        return false;
+    }
+
+    // Character-by-character verification
+    size_t originalLength = std::char_traits<char16_t>::length(utf16String);
+    bool contentValid = true;
+    for (size_t i = 0; i < actualLength && i < originalLength; i++) {
+        if (buffer[i] != utf16String[i]) {
+            contentValid = false;
+            break;
+        }
+    }
+    delete[] buffer;
+    return contentValid;
+}
+
+// Helper function for UTF-16 truncation testing
+static bool TestUtf16Truncation(napi_env env,
+                                napi_value utf6Val,
+                                const char16_tString,
+                                size_t requiredLength)
+{
+    const size_t minTruncationSize = 5;
+    if (requiredLength <= minTruncationSize) {
+        return true;
+    }
+    char16_t smallBuffer[minTruncationSize];
+    size_t truncatedLength = 0;
+    napi_status status = napi_get_value_string_utf16(env, utf16Val, smallBuffer, minTruncationSize, &truncatedLength);
+    if (status != napi_ok || truncatedLength >= requiredLength) {
+        return false;
+    }
+
+    // Verify truncated content
+    size_t originalLength = std::char_traits<char16_t>::length(originalString);
+    for (size_t i = 0; i < truncatedLength && i < originalLength; i++) {
+        if (smallBuffer[i] != originalString[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+static bool TestUtf16StringCreationAndRetrieval(napi_env env)
+{
+    const char16_t utf16String[] = u"Hello世界🌟";
+    napi_value utf16Val = nullptr;
+    size_t requiredLength = 0;
+
+    // Test basic creation and verification
+    if (!CreateAndVerifyUtf16String(env, utf16String, &utf16Val, &requiredLength)) {
+        return false;
+    }
+
+    // Test truncation scenarios
+    if (!TestUtf16Truncation(env, utf16Val, utf16String, requiredLength)) {
+        return false;
+    }
+
+    // Test explicit length creation
+    const char16_t explicitString[] = u"Explicit测试";
+    const size_t explicitLength = 11;
+    napi_value explicitVal = nullptr;
+    napi_status status = napi_create_string_utf16(env, explicitString, explicitLength, &explicitVal);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t explicitActualLength = 0;
+    status = napi_get_value_string_utf16(env, explicitVal, nullptr, 0, &explicitActualLength);
+    return (status == napi_ok && explicitActualLength == explicitLength);
+}
+// Helper function to test UTF-8 to UTF-16 conversion
+static bool TestUtf8ToUtf16Conversion(napi_env env)
+{
+    const char utf8String[] = "cafe 123";
+    napi_value utf8Val = nullptr;
+    napi_status status = napi_create_string_utf8(env, utf8String, strlen(utf8String), &utf8Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t utf16RequiredLength = 0;
+    status = napi_get_value_string_utf16(env, utf8Val, nullptr, 0, &utf16RequiredLength);
+    if (status != napi_ok) {
+        return false;
+    }
+    char16_t *utf16Buffer = new char16_t[utf16RequiredLength + 1];
+    if (!utf16Buffer) {
+        return false;
+    }
+    size_t utf16ActualLength = 0;
+    status = napi_get_value_string_utf16(env, utf8Val, utf16Buffer, utf16RequiredLength + 1, &utf16ActualLength);
+    if (status != napi_ok || utf16ActualLength != utf16RequiredLength) {
+        delete[] utf16Buffer;
+        return false;
+    }
+
+    // Verify content
+    bool contentValid = true;
+    for (size_t i = 0; i < utf16ActualLength && i < strlen(utf8String); i++) {
+        if (utf16Buffer[i] != static_cast<char16_t>(utf8String[i])) {
+            contentValid = false;
+            break;
+        }
+    }
+    delete[] utf16Buffer;
+    return contentValid;
+}
+
+// Helper function to test Latin1 to UTF-8 conversion
+static bool TestLatin1ToUtf8Conversion(napi_env env)
+{
+    const char latin1String[] = "Hello World ABC 123";
+    napi_value latin1Val = nullptr;
+    napi_status status = napi_create_string_latin1(env, latin1String, NAPI_AUTO_LENGTH, &latin1Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t utf8RequiredLength = 0;
+    status = napi_get_value_string_utf8(env, latin1Val, nullptr, 0, &utf8RequiredLength);
+    if (status != napi_ok) {
+        return false;
+    }
+    char *utf8Buffer = new char[utf8RequiredLength + 1];
+    if (!utf8Buffer) {
+        return false;
+    }
+    size_t utf8ActualLength = 0;
+    status = napi_get_value_string_utf8(env, latin1Val, utf8Buffer, utf8RequiredLength + 1, &utf8ActualLength);
+    if (status != napi_ok || utf8ActualLength != utf8RequiredLength) {
+        delete[] utf8Buffer;
+        return false;
+    }
+    bool contentMatches = (utf8ActualLength == strlen(latin1String)) &&
+                         (strncmp(latin1String, utf8Buffer, utf8ActualLength) == 0);
+    delete[] utf8Buffer;
+    return contentMatches;
+}
+
+// Helper function to test round-trip conversion
+static bool TestRoundTripConversion(napi_env env)
+{
+    const char asciiOnlyString[] = "ASCII Test 789";
+    napi_value asciiVal = nullptr;
+    napi_status status = napi_create_string_utf8(env, asciiOnlyString, strlen(asciiOnlyString), &asciiVal);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t latin1RequiredLength = 0;
+    status = napi_get_value_string_latin1(env, asciiVal, nullptr, 0, &latin1RequiredLength);
+    if (status != napi_ok) {
+        return false;
+    }
+    char *latin1Buffer = new char[latin1RequiredLength + 1];
+    if (!latin1Buffer) {
+        return false;
+    }
+    size_t latin1ActualLength = 0;
+    status = napi_get_value_string_latin1(env, asciiVal, latin1Buffer, latin1RequiredLength + 1, &latin1ActualLength);
+    bool success = (status == napi_ok) && (latin1ActualLength == strlen(asciiOnlyString)) &&
+                   (strncmp(asciiOnlyString, latin1Buffer, latin1ActualLength) == 0);
+    delete[] latin1Buffer;
+    return success;
+}
+
+static bool TestCrossEncodingConversion(napi_env env)
+{
+    return TestUtf8ToUtf16Conversion(env) &&
+           TestLatin1ToUtf8Conversion(env) &&
+           TestRoundTripConversion(env);
+}
+
+// Helper function to test empty and single character strings
+static bool TestEmptyAndSingleCharStrings(napi_env env)
+{
+    napi_status status;
+
+    // Test empty string
+    napi_value emptyVal = nullptr;
+    status = napi_create_string_utf8(env, "", 0, &emptyVal);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t emptyLength = 0;
+    status = napi_get_value_string_utf8(env, emptyVal, nullptr, 0, &emptyLength);
+    if (status != napi_ok || emptyLength != 0) {
+        return false;
+    }
+
+    // Test single character string
+    const char singleChar[] = "A";
+    napi_value singleCharVal = nullptr;
+    status = napi_create_string_utf8(env, singleChar, 1, &singleCharVal);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t singleLength = 0;
+    status = napi_get_value_string_utf8(env, singleCharVal, nullptr, 0, &singleLength);
+    return (status == napi_ok && singleLength == 1);
+}
+
+// Helper function to test long string creation
+static bool TestLongStringCreation(napi_env env)
+{
+    const int longStringSize = 512;
+    const int alphabetSize = 26;
+    const char alphabetStart = 'A';
+    char *longString = new char[longStringSize + 1];
+    if (!longString) {
+        return false;
+    }
+    for (int i = 0; i < longStringSize; i++) {
+        longString[i] = alphabetStart + (i % alphabetSize);
+    }
+    longString[longStringSize] = '\0';
+    napi_value longVal = nullptr;
+    napi_status status = napi_create_string_utf8(env, longString, longStringSize, &longVal);
+    bool success = (status == napi_ok);
+    if (success) {
+        size_t longLength = 0;
+        status = napi_get_value_string_utf8(env, longVal, nullptr, 0, &longLength);
+        success = (status == napi_ok) && (longLength == longStringSize);
+    }
+    delete[] longString;
+    return success;
+}
+
+// Helper function to test embedded null strings
+static bool TestEmbeddedNullStrings(napi_env env)
+{
+    const char nullString[] = {'H', 'e', 'l', 'l', 'o', '\0', 'W', 'o', 'r', 'l', 'd'};
+    const size_t nullStringLen = sizeof(nullString);
+    napi_value nullVal = nullptr;
+    napi_status status = napi_create_string_utf8(env, nullString, nullStringLen, &nullVal);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t retrievedLength = 0;
+    status = napi_get_value_string_utf8(env, nullVal, nullptr, 0, &retrievedLength);
+    return (status == napi_ok && retrievedLength == nullStringLen);
+}
+
+static bool TestBoundaryLengthCases(napi_env env)
+{
+    return TestEmptyAndSingleCharStrings(env) &&
+           TestLongStringCreation(env) &&
+           TestEmbeddedNullStrings(env);
+}
+
+// Helper function to test UTF-16 encoding operations
+static bool TestUtf16EncodingOperations(napi_env env)
+{
+    const char16_t utf16String[] = u"ABC123";
+    napi_value utf16Val = nullptr;
+    napi_status status = napi_create_string_utf16(env, utf16String, NAPI_AUTO_LENGTH, &utf16Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t utf16RequiredLength = 0;
+    status = napi_get_value_string_utf16(env, utf16Val, nullptr, 0, &utf16RequiredLength);
+    if (status != napi_ok) {
+        return false;
+    }
+    char16_t *utf16Buffer = new char16_t[utf16RequiredLength + 1];
+    if (!utf16Buffer) {
+        return false;
+    }
+    size_t utf16ActualLength = 0;
+    status = napi_get_value_string_utf16(env, utf16Val, utf16Buffer, utf16RequiredLength + 1, &utf16ActualLength);
+    if (status != napi_ok || utf16ActualLength != utf16RequiredLength) {
+        delete[] utf16Buffer;
+        return false;
+    }
+
+    // Verify content
+    bool contentValid = true;
+    for (size_t i = 0; i < utf16ActualLength && i < (sizeof(utf16String) / sizeof(char16_t) - 1); i++) {
+        if (utf16Buffer[i] != utf16String[i]) {
+            contentValid = false;
+            break;
+        }
+    }
+    delete[] utf16Buffer;
+    return contentValid;
+}
+
+// Helper function to test Latin1 encoding operations
+static bool TestLatin1EncodingOperations(napi_env env)
+{
+    const char latin1String[] = "ABC123";
+    napi_value latin1Val = nullptr;
+    napi_status status = napi_create_string_latin1(env, latin1String, NAPI_AUTO_LENGTH, &latin1Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t latin1RequiredLength = 0;
+    status = napi_get_value_string_latin1(env, latin1Val, nullptr, 0, &latin1RequiredLength);
+    if (status != napi_ok) {
+        return false;
+    }
+    char *latin1Buffer = new char[latin1RequiredLength + 1];
+    if (!latin1Buffer) {
+        return false;
+    }
+    size_t latin1ActualLength = 0;
+    status = napi_get_value_string_latin1(env, latin1Val, latin1Buffer, latin1RequiredLength + 1, &latin1ActualLength);
+    if (status != napi_ok || latin1ActualLength != latin1RequiredLength) {
+        delete[] latin1Buffer;
+        return false;
+    }
+    bool contentValid = (latin1ActualLength == strlen(latin1String)) &&
+                       (strncmp(latin1String, latin1Buffer, latin1ActualLength) == 0);
+    delete[] latin1Buffer;
+    return contentValid;
+}
+
+// Helper function to test UTF-8 encoding operations
+static bool TestUtf8EncodingOperations(napi_env env)
+{
+    const char utf8String[] = "ABC123";
+    napi_value utf8Val = nullptr;
+    napi_status status = napi_create_string_utf8(env, utf8String, NAPI_AUTO_LENGTH, &utf8Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t utf8RequiredLength = 0;
+    status = napi_get_value_string_utf8(env, utf8Val, nullptr, 0, &utf8RequiredLength);
+    if (status != napi_ok) {
+        return false;
+    }
+    char *utf8Buffer = new char[utf8RequiredLength + 1];
+    if (!utf8Buffer) {
+        return false;
+    }
+    size_t utf8ActualLength = 0;
+    status = napi_get_value_string_utf8(env, utf8Val, utf8Buffer, utf8RequiredLength + 1, &utf8ActualLength);
+    if (status != napi_ok || utf8ActualLength != utf8RequiredLength) {
+        delete[] utf8Buffer;
+        return false;
+    }
+    bool contentValid = (utf8ActualLength == strlen(utf8String)) &&
+                       (strncmp(utf8String, utf8Buffer, utf8ActualLength) == 0);
+    delete[] utf8Buffer;
+    return contentValid;
+}
+
+// Helper function to test extended character handling
+static bool TestExtendedCharacterHandling(napi_env env)
+{
+    const char extendedUtf8String[] = "ñó€";
+    napi_value extendedUtf8Val = nullptr;
+    napi_status status = napi_create_string_utf8(env, extendedUtf8String, NAPI_AUTO_LENGTH, &extendedUtf8Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    // Test UTF-8 handling
+    size_t utf8Length = 0;
+    status = napi_get_value_string_utf8(env, extendedUtf8Val, nullptr, 0, &utf8Length);
+    if (status != napi_ok) {
+        return false;
+    }
+    // Test UTF-16 handling
+    size_t utf16Length = 0;
+    status = napi_get_value_string_utf16(env, extendedUtf8Val, nullptr, 0, &utf16Length);
+    if (status != napi_ok) {
+        return false;
+    }
+    
+    // Test Latin1 data loss (expected behavior)
+    size_t latin1Length = 0;
+    status = napi_get_value_string_latin1(env, extendedUtf8Val, nullptr, 0, &latin1Length);
+    // Latin1 may fail or return incomplete data for extended characters
+    return (utf8Length > 0 && utf16Length > 0);
+}
+
+static bool TestEncodingCompatibility(napi_env env)
+{
+    if (env == nullptr) {
+        return false;
+    }
+    return TestUtf16EncodingOperations(env) &&
+           TestLatin1EncodingOperations(env) &&
+           TestUtf8EncodingOperations(env) &&
+           TestExtendedCharacterHandling(env);
+}
+
+// Helper function to test basic buffer operations
+static bool TestBasicBufferOperations(napi_env env, const char* testString, napi_value* stringVal)
+{
+    napi_status status = napi_create_string_utf8(env, testString, NAPI_AUTO_LENGTH, stringVal);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t requiredLength = 0;
+    status = napi_get_value_string_utf8(env, *stringVal, nullptr, 0, &requiredLength);
+    return (status == napi_ok && requiredLength == strlen(testString));
+}
+
+// Helper function to test buffer size variations
+static bool TestBufferSizeVariations(napi_env env, napi_value stringVal, size_t expectedLength)
+{
+    napi_status status;
+    // Test exact buffer size
+    char *exactBuffer = new char[expectedLength + 1];
+    if (!exactBuffer) {
+        return false;
+    }
+    size_t actualLength = 0;
+    status = napi_get_value_string_utf8(env, stringVal, exactBuffer, expectedLength + 1, &actualLength);
+    bool exactSuccess = (status == napi_ok && actualLength == expectedLength);
+    delete[] exactBuffer;
+    if (!exactSuccess) {
+        return false;
+    }
+
+    // Test smaller buffer
+    const size_t smallerSize = expectedLength / 2;
+    char *smallerBuffer = new char[smallerSize];
+    if (!smallerBuffer) {
+        return false;
+    }
+    size_t smallerActualLength = 0;
+    status = napi_get_value_string_utf8(env, stringVal, smallerBuffer, smallerSize, &smallerActualLength);
+    bool smallerSuccess = (status == napi_ok && smallerActualLength < expectedLength);
+    delete[] smallerBuffer;
+    return smallerSuccess;
+}
+
+static bool TestBufferSizeEdgeCases(napi_env env)
+{
+    if (env == nullptr) {
+        return false;
+    }
+    const char longTestString[] =
+        "This is a long string for comprehensive buffer size testing with various edge cases and scenarios";
+    napi_value longStringVal = nullptr;
+    // Test basic operations
+    if (!TestBasicBufferOperations(env, longTestString, &longStringVal)) {
+        return false;
+    }
+    size_t expectedLength = strlen(longTestString);
+    // Test buffer size variations
+    if (!TestBufferSizeVariations(env, longStringVal, expectedLength)) {
+        return false;
+    }
+
+    // Test tiny buffer (edge case)
+    char tinyBuffer[1];
+    size_t tinyLength = 0;
+    napi_status status = napi_get_value_string_utf8(env, longStringVal, tinyBuffer, sizeof(tinyBuffer), &tinyLength);
+    if (status != napi_ok || tinyLength != 0 || tinyBuffer[0] != '\0') {
+        return false;
+    }
+    return true;
+}
+
+// Helper function to test invalid input handling
+static bool TestInvalidInputHandling(napi_env env)
+{
+    const int32_t testIntegerValue = 123;
+    napi_value numberVal = nullptr;
+    napi_status status = napi_create_int32(env, testIntegerValue, &numberVal);
+    if (status != napi_ok) {
+        return false;
+    }
+    const size_t bufferSize = 256;
+    char buffer[bufferSize];
+    size_t length = 0;
+
+    // This should return napi_string_expected
+    status = napi_get_value_string_utf8(env, numberVal, buffer, sizeof(buffer), &length);
+    return (status == napi_string_expected);
+}
+
+// Helper function to test valid string operations
+static bool TestValidStringOperations(napi_env env)
+{
+    const char testString[] = u8"Valid test string 测试";
+    napi_value testVal = nullptr;
+    napi_status status = napi_create_string_utf8(env, testString, NAPI_AUTO_LENGTH, &testVal);
+    if (status != napi_ok) {
+        return false;
+    }
+
+    // Get length
+    size_t requiredLength = 0;
+    status = napi_get_value_string_utf8(env, testVal, nullptr, 0, &requiredLength);
+    if (status != napi_ok) {
+        return false;
+    }
+
+    // Test with proper buffer
+    char *properBuffer = new char[requiredLength + 1];
+    if (!properBuffer) {
+        return false;
+    }
+    memset_s(properBuffer, requiredLength + 1, 0, requiredLength + 1);
+    size_t finalLength = 0;
+    status = napi_get_value_string_utf8(env, testVal, properBuffer, requiredLength + 1, &finalLength);
+    bool success = (status == napi_ok) && (finalLength == requiredLength) &&
+                   (strcmp(properBuffer, testString) == 0);
+    delete[] properBuffer;
+    return success;
+}
+
+static bool TestErrorHandlingRobustness(napi_env env)
+{
+    return TestInvalidInputHandling(env) && TestValidStringOperations(env);
+}
+
+// Helper function to test multi-encoding compatibility operations
+static bool TestMultiEncodingCompatibilityOperations(napi_env env)
+{
+    napi_status status;
+    // Test 1: Create using napi_create_string_utf8
+    napi_value utf8Val = nullptr;
+    status = napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &utf8Val);
+    if (status != napi_ok) {
+        return false;
+    }
+
+    // Test 2: Create using napi_get_value_string_utf16
+    const size_t utf16BufferSize = 256;
+    char16_t utf16Buffer[utf16BufferSize];
+    size_t utf16Length = 0;
+    status =
+        napi_get_value_string_utf16(env, utf8Val, utf16Buffer, sizeof(utf16Buffer) / sizeof(char16_t), &utf16Length);
+    if (status != napi_ok) {
+        return false;
+    }
+
+    // Test 3: Use result to create new string via napi_create_string_latin1
+    const char latin1Test[] = "test";
+    napi_value latin1Val = nullptr;
+    status = napi_create_string_latin1(env, latin1Test, NAPI_AUTO_LENGTH, &latin1Val);
+    if (status != napi_ok) {
+        return false;
+    }
+
+    // Test 4: Get using napi_get_value_string_utf8
+    const size_t utf8BufferSize = 256;
+    char utf8Buffer[utf8BufferSize];
+    size_t utf8Length = 0;
+    status = napi_get_value_string_utf8(env, latin1Val, utf8Buffer, sizeof(utf8Buffer), &utf8Length);
+    if (status != napi_ok) {
+        return false;
+    }
+
+    // Test 5: Verify cross-conversion consistency
+    if (strcmp(utf8Buffer, "test") != 0) {
+        return false;
+    }
+    return true;
+}
+
+// Helper function to test BOM and mixed strings
+static bool TestBomAndMixedStrings(napi_env env)
+{
+    napi_status status;
+
+    // Test UTF-8 BOM + text
+    const char bomString[] = u8"\uFEFFHello World";
+    napi_value bomVal = nullptr;
+    status = napi_create_string_utf8(env, bomString, NAPI_AUTO_LENGTH, &bomVal);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t bomLength = 0;
+    status = napi_get_value_string_utf8(env, bomVal, nullptr, 0, &bomLength);
+    if (status != napi_ok || bomLength == 0) {
+        return false;
+    }
+
+    // Test multi-language string
+    const char mixedString[] = u8"English中文العربية🌟";
+    napi_value mixedVal = nullptr;
+    status = napi_create_string_utf8(env, mixedString, strlen(mixedString), &mixedVal);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t mixedLength = 0;
+    status = napi_get_value_string_utf8(env, mixedVal, nullptr, 0, &mixedLength);
+    return (status == napi_ok && mixedLength > 0);
+}
+
+// Helper function to test various encoding strings
+static bool TestVariousEncodingStrings(napi_env env)
+{
+    napi_status status;
+
+    // Test embedded NULL
+    const char nullString[] = {'H', 'e', 'l', 'l', 'o', '\0', 'W', 'o', 'r', 'l', 'd', '\0'};
+    const size_t nullStringLength = 12;
+    napi_value nullVal = nullptr;
+    status = napi_create_string_utf8(env, nullString, nullStringLength, &nullVal);
+    if (status != napi_ok) {
+        return false;
+    }
+
+    // Test Chinese UTF-8
+    const char pureUtf8[] = u8"你好世界测试字符串";
+    napi_value pureUtf8Val = nullptr;
+    status = napi_create_string_utf8(env, pureUtf8, NAPI_AUTO_LENGTH, &pureUtf8Val);
+    if (status != napi_ok) {
+        return false;
+    }
+
+    // Test Latin1 compatible
+    const char latin1Compatible[] = "Hello ABC éçñ 123";
+    napi_value latin1Val = nullptr;
+    status = napi_create_string_latin1(env, latin1Compatible, NAPI_AUTO_LENGTH, &latin1Val);
+    return (status == napi_ok);
+}
+
+static bool TestSpecialCharacterHandling(napi_env env)
+{
+    return TestBomAndMixedStrings(env) && TestVariousEncodingStrings(env);
+}
+
+// Helper function to test string operations in loop
+static bool TestStringOperationsInLoop(napi_env env)
+{
+    const int simulationLoopCount = 10;
+    const size_t loopBufferSize = 64;
+    for (int i = 0; i < simulationLoopCount; i++) {
+        char tempBuffer[loopBufferSize];
+        int result = sprintf_s(tempBuffer, sizeof(tempBuffer), "String_%d", i);
+        if (result < 0) {
+            return false;
+        }
+
+        // Test UTF-16 creation
+        char16_t utf16Buffer[loopBufferSize];
+        for (int j = 0; j < loopBufferSize && tempBuffer[j] != '\0'; j++) {
+            utf16Buffer[j] = static_cast<char16_t>(tempBuffer[j]);
+        }
+        utf16Buffer[strlen(tempBuffer)] = 0;
+        napi_value utf16Val = nullptr;
+        napi_status status = napi_create_string_utf16(env, utf16Buffer, NAPI_AUTO_LENGTH, &utf16Val);
+        if (status != napi_ok) {
+            return false;
+        }
+
+        // Test Latin1 creation
+        napi_value latin1Val = nullptr;
+        status = napi_create_string_latin1(env, tempBuffer, NAPI_AUTO_LENGTH, &latin1Val);
+        if (status != napi_ok) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// Helper function to test mixed operations
+static bool TestMixedOperations(napi_env env)
+{
+    const int mixedOperationsCount = 5;
+    const size_t testStringsCount = 5;
+    const char *testStrings[testStringsCount] = {
+        "ASCII_Test",
+        "UTF8_测试",
+        "Mixed_测试🌟العربية",
+        "Special_\xEF\xBB\xBF" "BOM",
+        "Null_\0_Test"
+    };
+    for (int i = 0; i < mixedOperationsCount; i++) {
+        const size_t nullStringLength = 12;
+        const size_t nullStringIndex = 4;
+        size_t len = (i == nullStringIndex) ? nullStringLength : NAPI_AUTO_LENGTH;
+        napi_value testVal = nullptr;
+        napi_status status = napi_create_string_utf8(env, testStrings[i % testStringsCount], len, &testVal);
+        if (status != napi_ok) {
+            return false;
+        }
+    }
+    return true;
+}
+
+static bool TestStringSafetySimulation(napi_env env)
+{
+    return TestStringOperationsInLoop(env) && TestMixedOperations(env);
+}
+static napi_value NapiStringTest001(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestUtf16StringCreationAndRetrieval(env);
+
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiStringTest002(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestCrossEncodingConversion(env);
+
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiStringTest003(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestBoundaryLengthCases(env);
+
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiStringTest004(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestEncodingCompatibility(env);
+
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiStringTest005(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestBufferSizeEdgeCases(env);
+
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiStringTest006(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestErrorHandlingRobustness(env);
+
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiStringTest007(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestMultiEncodingCompatibilityOperations(env);
+
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiStringTest008(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestSpecialCharacterHandling(env);
+
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiStringTest009(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestStringSafetySimulation(env);
+
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -3555,6 +4341,15 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("testHighConcurrencyDateStress", TestHighConcurrencyDateStress),
         DECLARE_NAPI_FUNCTION("testCrossThreadDatePassing", TestCrossThreadDatePassing),
         DECLARE_NAPI_FUNCTION("testThreadSafetyErrorHandling", TestThreadSafetyErrorHandling),
+        DECLARE_NAPI_FUNCTION("NapiStringTest001", NapiStringTest001),
+        DECLARE_NAPI_FUNCTION("NapiStringTest002", NapiStringTest002),
+        DECLARE_NAPI_FUNCTION("NapiStringTest003", NapiStringTest003),
+        DECLARE_NAPI_FUNCTION("NapiStringTest004", NapiStringTest004),
+        DECLARE_NAPI_FUNCTION("NapiStringTest005", NapiStringTest005),
+        DECLARE_NAPI_FUNCTION("NapiStringTest006", NapiStringTest006),
+        DECLARE_NAPI_FUNCTION("NapiStringTest007", NapiStringTest007),
+        DECLARE_NAPI_FUNCTION("NapiStringTest008", NapiStringTest008),
+        DECLARE_NAPI_FUNCTION("NapiStringTest009", NapiStringTest009),
     };
 
     NAPI_CALL(env, napi_define_properties(env, exports, sizeof(properties) / sizeof(*properties), properties));
