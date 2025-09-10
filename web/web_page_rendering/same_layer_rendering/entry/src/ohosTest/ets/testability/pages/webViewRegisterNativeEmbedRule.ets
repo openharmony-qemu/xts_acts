@@ -207,7 +207,7 @@ struct webViewRegisterNativeEmbedRule {
 
   private checkNativeEmbedInfos = () => {
     let isSame: boolean = false;
-    if(this.nativeEmbedInfos.length == 1) {
+    if(this.nativeEmbedInfos.length == 1 || this.nativeEmbedInfos.length == 0) {
       isSame = true;
     }
     this.nativeEmbedInfos.forEach(element => {
