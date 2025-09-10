@@ -86,7 +86,7 @@ export default function WindowKeyBoardTest() {
                     hilog.info(domain, tag,msgStr +  'keyboard show animation completion. keyboardInfo beginRect: ' + JSON.stringify(keyboardInfo.endRect));
                 });
                 hilog.info(domain, tag,msgStr + 'window.isWindowShowing success');
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             } catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
@@ -125,7 +125,7 @@ export default function WindowKeyBoardTest() {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(keyboardInfo));
                 });
                 hilog.info(domain, tag,msgStr + 'window.off_keyboardDidShow success');
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             } catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
@@ -165,7 +165,7 @@ export default function WindowKeyBoardTest() {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(keyboardInfo));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             } catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
@@ -204,7 +204,7 @@ export default function WindowKeyBoardTest() {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(keyboardInfo));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             } catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
@@ -246,7 +246,7 @@ export default function WindowKeyBoardTest() {
                 done()
             } catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
         })
@@ -277,7 +277,7 @@ export default function WindowKeyBoardTest() {
                 done()
             } catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
         })
