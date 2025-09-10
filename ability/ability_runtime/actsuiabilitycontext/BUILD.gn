@@ -18,7 +18,8 @@ group("actsuiabilitycontext") {
   if (is_standard_system) {
     deps = [ 
       "actsmoveabilitytobackgroundtest:ActsMoveAbilityToBackgroundTest",
-      "actsmoveabilitytobackgroundteststatic:ActsMoveAbilityToBackgroundStaticTest"
+      "actsmoveabilitytobackgroundteststatic:ActsMoveAbilityToBackgroundStaticTest",
+      "actsstartabilityteststatic:ActsStartAbilityStaticTest"
     ]
   }
 }
