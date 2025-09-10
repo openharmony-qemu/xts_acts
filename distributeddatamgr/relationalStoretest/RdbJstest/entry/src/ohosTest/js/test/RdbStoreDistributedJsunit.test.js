@@ -85,7 +85,7 @@ describe('rdbStoreDistributedTest', function () {
         await executeSql2()
         const record = {
             "name": "Jim",
-            "age": 30,
+            "age": 20,
         }
         await rdbStore.insert("employee", record);
     })
@@ -251,7 +251,7 @@ describe('rdbStoreDistributedTest', function () {
 
                 await expect(1).assertEqual(id);
                 await expect("Jim").assertEqual(name);
-                await expect(30).assertEqual(age);
+                await expect(20).assertEqual(age);
                 resultSet.close();
                 expect(true).assertEqual(resultSet.isClosed)
             } catch (e) {
