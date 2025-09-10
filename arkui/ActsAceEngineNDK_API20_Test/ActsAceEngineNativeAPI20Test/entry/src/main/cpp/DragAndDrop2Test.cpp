@@ -594,7 +594,8 @@ napi_value DragAndDropTest225(napi_env env, napi_callback_info info)
     nodeAPI->setAttribute(text, NODE_FONT_SIZE, &valueItem);
     auto *dragAction = OH_ArkUI_CreateDragActionWithNode(text);
     auto *previewOptions = OH_ArkUI_CreateDragPreviewOption();
-    auto returnValue = OH_ArkUI_DragAction_SetDragPreviewOption(dragAction, previewOptions) == ARKUI_ERROR_CODE_NO_ERROR;
+    auto returnValue = OH_ArkUI_DragAction_SetDragPreviewOption(dragAction, previewOptions) ==
+                       ARKUI_ERROR_CODE_NO_ERROR;
     if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);

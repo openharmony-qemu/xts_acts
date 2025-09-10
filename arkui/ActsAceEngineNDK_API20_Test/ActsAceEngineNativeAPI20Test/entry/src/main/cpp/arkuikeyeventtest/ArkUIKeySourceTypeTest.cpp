@@ -63,7 +63,8 @@ napi_value CreateNativeNode3(napi_env env, napi_callback_info info)
     return nullptr;
 }
 
-ArkUI_KeySourceType CheckKeySourceType(int32_t KeySourceType) {
+ArkUI_KeySourceType CheckKeySourceType(int32_t KeySourceType)
+{
     if (KeySourceType == ARKUI_KEY_SOURCE_UNKNOWN) {
         return ARKUI_KEY_SOURCE_UNKNOWN;
     } else if (KeySourceType == ARKUI_KEY_SOURCE_TYPE_MOUSE) {

@@ -64,7 +64,8 @@ napi_value CreateNativeNode(napi_env env, napi_callback_info info)
     return nullptr;
 }
 
-ArkUI_KeyEventType CheckKeyEventType(int32_t KeyEventType) {
+ArkUI_KeyEventType CheckKeyEventType(int32_t KeyEventType)
+{
     if (KeyEventType == ARKUI_KEY_EVENT_UNKNOWN) {
         return ARKUI_KEY_EVENT_UNKNOWN;
     } else if (KeyEventType == ARKUI_KEY_EVENT_DOWN) {

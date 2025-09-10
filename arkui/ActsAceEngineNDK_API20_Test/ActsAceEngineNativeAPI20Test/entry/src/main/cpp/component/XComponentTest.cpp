@@ -468,7 +468,7 @@ napi_value GetNativeAccessibilityProvider002(napi_env env, napi_callback_info in
     napi_value retValue = 0;
     ArkUI_AccessibilityProvider* handle;
     int32_t result = 0;
-    result = OH_NativeXComponent_GetNativeAccessibilityProvider(nullptr, &handle) == 
+    result = OH_NativeXComponent_GetNativeAccessibilityProvider(nullptr, &handle) ==
              OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER ? PARAM_401 : OH_NATIVEXCOMPONENT_RESULT_SUCCESS;
     result = OH_NativeXComponent_GetNativeAccessibilityProvider(g_childXComponent->GetXComponent(), nullptr) ==
              OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER && result == PARAM_401 ?
@@ -495,7 +495,7 @@ napi_value RegisterKeyEventCallbackWithResult002(napi_env env, napi_callback_inf
     napi_value retValue = 0;
     ArkUI_AccessibilityProvider* handle;
     int32_t result = 0;
-    result = OH_NativeXComponent_RegisterKeyEventCallbackWithResult(nullptr, OnKeyEventCallbackWithResult) == 
+    result = OH_NativeXComponent_RegisterKeyEventCallbackWithResult(nullptr, OnKeyEventCallbackWithResult) ==
              OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER ? PARAM_401 : OH_NATIVEXCOMPONENT_RESULT_SUCCESS;
     result = OH_NativeXComponent_RegisterKeyEventCallbackWithResult(g_childXComponent->GetXComponent(), nullptr) ==
              OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER && result == PARAM_401 ?
