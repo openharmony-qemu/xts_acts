@@ -506,10 +506,12 @@ export default function WindowImmersiveTest() {
                 }).catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the system bar properties. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(1300002)
+                    done();
                 });
             } catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the system bar properties. Cause: ' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002)
+                done();
             }
         })
         /**
