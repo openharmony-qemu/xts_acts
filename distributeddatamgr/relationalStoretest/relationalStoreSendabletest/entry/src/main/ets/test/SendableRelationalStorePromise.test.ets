@@ -149,7 +149,7 @@ export default function rdbStoreSendableTest() {
       console.info(TAG + 'beforeEach');
       await rdbStore.executeSql(CREATE_TABLE_TEST,null);
       let sendableValuesBucket1: sendableRelationalStore.ValuesBucket = sendableRelationalStore.toSendableValuesBucket(valuesBucket2);
-      rdbStore.insertSync(TABLE, sendableValuesBucket);
+      rdbStore.insertSync(TABLE, sendableValuesBucket1);
 
     });
 
