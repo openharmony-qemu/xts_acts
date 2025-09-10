@@ -85,7 +85,7 @@ describe('rdbStoreDistributedTest', function () {
         await executeSql2()
         const record = {
             "name": "Jim",
-            "age": 20,
+            "age": 30,
         }
         await rdbStore.insert("employee", record);
     })
