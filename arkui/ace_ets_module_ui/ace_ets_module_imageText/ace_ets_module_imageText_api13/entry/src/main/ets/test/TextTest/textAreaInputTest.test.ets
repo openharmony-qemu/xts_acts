@@ -51,8 +51,8 @@ export default function textAreaInputTest() {
      * @tc.desic        textAreaInputTest0001
      */
     it('textAreaInputTest0001', Level.LEVEL0, async () => {
+      let driver = Driver.create();
       if (globalThis.winLeft == 0) {
-        let driver = Driver.create();
         console.info('textAreaInputTest textAreaInputTest0001 START');
         await CommonFunc.sleep(1000);
         let textArea1 = await driver.findComponent(ON.id('textArea1'));
@@ -107,6 +107,17 @@ export default function textAreaInputTest() {
         }
         await CommonFunc.sleep(500);
         console.info('textAreaInputTest0001 2 Button success');
+      }else {
+        //切换HAD 输入法
+        let textArea2 = await driver.findComponent(ON.id('textArea2'));
+        await CommonFunc.sleep(500);
+        await textArea2.inputText('aaa');
+        await CommonFunc.sleep(500);
+        let areaText = await textArea2.getText();
+        await CommonFunc.sleep(500);
+        if(areaText != 'aaa'){
+          await driver.triggerKey(2047)
+        }
       }
       
       expect("").assertEqual("");
