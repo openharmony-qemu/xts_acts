@@ -17,6 +17,9 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@ohos.UiTest';
+
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function WebViewJavaScriptProxyAndOnPageVisible() {
@@ -33,12 +36,13 @@ export default function WebViewJavaScriptProxyAndOnPageVisible() {
         if (!("WebViewJavaScriptProxyAndOnPageVisible" == pages.name)) {
           console.info("get WebViewJavaScriptProxyAndOnPageVisible state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebViewJavaScriptProxyAndOnPageVisible page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebViewJavaScriptProxyAndOnPageVisible page error: " + err);
       }
+      await driver.waitForComponent(ON.id("buttonJavaScriptProxyAndPageVisible"), 10000);
+      console.log("waitForComponent buttonJavaScriptProxyAndPageVisible");
       done()
     });
     beforeEach(async (done: Function) => {
@@ -47,7 +51,6 @@ export default function WebViewJavaScriptProxyAndOnPageVisible() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
@@ -61,10 +64,10 @@ export default function WebViewJavaScriptProxyAndOnPageVisible() {
     * @tc.level      : Level 1
     */
     it('testZoomCount001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitZoomCount", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testZoomCount001", true, 1403, done);
-      sendEventByKey('buttonJavaScriptProxyAndPageVisible', 10, '');
+      Utils.emitEvent("emitZoomCount", 150400)
+      Utils.registerEvent("testZoomCount001", true, 150410, done);
+      let StartModel = await driver.findComponent(ON.id("buttonJavaScriptProxyAndPageVisible"));
+      await StartModel.click();
     })
   })
 }

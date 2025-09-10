@@ -16,6 +16,9 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function webFantasyFont() {
@@ -32,12 +35,13 @@ export default function webFantasyFont() {
         if (!("webTwo" == pages.name)) {
           console.info("get webFantasyFont state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push webFantasyFont page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webFantasyFont page error: " + err);
       }
+      await driver.waitForComponent(ON.id("WebFantasyFontButton"), 10000);
+      console.log("waitForComponent WebFantasyFontButton");
       done()
     });
     beforeEach(async (done: Function) => {
@@ -46,7 +50,6 @@ export default function webFantasyFont() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
@@ -60,10 +63,10 @@ export default function webFantasyFont() {
     * @tc.level      : Level 1
     */
     it('emitWebFantasyFont001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebFantasyFont001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitWebFantasyFont001", 0, 20253322, done);
-      sendEventByKey('WebFantasyFontButton', 10, '');
+      Utils.emitEvent("emitWebFantasyFont001", 150120)
+      Utils.registerEvent("emitWebFantasyFont001", 0, 150130, done);
+      let component = await driver.findComponent(ON.id("WebFantasyFontButton"));
+      await component.click();
     })
 
 
