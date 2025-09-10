@@ -988,7 +988,7 @@ export default function abilityTest() {
             session!.destroy();
             drmsys!.destroy();
             done();
-            expect(false).assertEqual(true);
+            expect((err as BusinessError).code).assertEqual(24700201);
           });
         }).catch((err:Error) =>{
           console.info("XX DRM_AVPLAYER_0200 generateMediaKeyRequest err end", err.code);
@@ -1463,7 +1463,7 @@ export default function abilityTest() {
                 session!.destroy();
                 drmsys!.destroy();
                 done();
-                expect(false).assertEqual(true);
+                expect((err as BusinessError).code).assertEqual(24700201);
               });
             })
             .catch((err:Error) => {
@@ -1551,7 +1551,7 @@ export default function abilityTest() {
               session!.destroy();
               drmsys!.destroy();
               done();
-              expect(false).assertEqual(true);
+              expect((err as BusinessError).code).assertEqual(24700201);
             });
           }).catch((err:Error) => {
           console.log("XX DRM_AVPLAYER_1000 processMediaKeyResponse err end", err.code);
@@ -3278,7 +3278,7 @@ export default function abilityTest() {
             keySession!.destroy();
             mediaKeySystem!.destroy();
             done();
-            expect(false).assertEqual(true);
+            expect((err as BusinessError).code).assertEqual(24700201);
           });
         }).catch((err:Error) =>{
           console.info("XX SESSION_ON_OFF_0100 generateMediaKeyRequest err end", err.code);
@@ -3365,7 +3365,7 @@ export default function abilityTest() {
             keySession!.destroy();
             mediaKeySystem!.destroy();
             done();
-            expect(false).assertEqual(true);
+            expect((err as BusinessError).code).assertEqual(24700201);
           });
         }).catch((err:Error) =>{
           console.info("XX SESSION_ON_OFF_0200 generateMediaKeyRequest err end", err.code);
@@ -3700,7 +3700,7 @@ export default function abilityTest() {
               keySession!.destroy();
               mediaKeySystem!.destroy();
               done();
-              expect(false).assertEqual(true);
+              expect((err as BusinessError).code).assertEqual(24700201);
             });
           }).catch((err:Error) =>{
             console.info("XX SESSION_ON_OFF_0500 generateMediaKeyRequest err end", err.code);
@@ -3856,7 +3856,7 @@ export default function abilityTest() {
               keySession!.destroy();
               mediaKeySystem!.destroy();
               done();
-              expect(false).assertEqual(true);
+              expect((err as BusinessError).code).assertEqual(24700201);
             });
           }).catch((err:Error) =>{
             console.info("XX SESSION_ON_OFF_0600 generateMediaKeyRequest err end", err.code);
@@ -3964,7 +3964,7 @@ export default function abilityTest() {
               keySession!.destroy();
               mediaKeySystem!.destroy();
               done();
-              expect(false).assertEqual(true);
+              expect((err as BusinessError).code).assertEqual(24700201);
             });
           }).catch((err:Error) => {
           console.log("XX SESSION_ON_OFF_0700 processMediaKeyResponse err end", err);
@@ -4072,7 +4072,7 @@ export default function abilityTest() {
               keySession!.destroy();
               mediaKeySystem!.destroy();
               done();
-              expect(false).assertEqual(true);
+              expect((err as BusinessError).code).assertEqual(24700201);
             });
           }).catch((err:Error) => {
           console.log("XX SESSION_ON_OFF_0700 processMediaKeyResponse err end", err);
@@ -4353,7 +4353,7 @@ export default function abilityTest() {
               keySession!.destroy();
               mediaKeySystem!.destroy();
               done();
-              expect(false).assertEqual(true);
+              expect((err as BusinessError).code).assertEqual(24700201);
             });
           }).catch((err:Error) =>{
             console.info("XX SESSION_ON_OFF_0600 generateMediaKeyRequest err end", err.code);
