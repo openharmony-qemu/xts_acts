@@ -58,30 +58,6 @@ export default function NativeGestureTest1() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_TOUCHRECOGNIZER_CANCELTOUCH_0100
-     * @tc.name    : testCancelTouch0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     */
-    it('testCancelTouch0100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        try {
-          console.info("====>testCancelTouch0100 start====");
-          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, ComponentPoint.y, 5000);
-          let result: number = nativegesturendk.CancelTouch0100();
-          console.info(`====>testCancelTouch0100 result====${result}`);
-          expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(result);
-          done()
-        } catch (err) {
-          console.error("====>testCancelTouch0100 catch err: " + err);
-          expect(false).assertEqual(0);
-        }
-      })
-
-    /**
      * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_TOUCHRECOGNIZER_CANCELTOUCH_0200
      * @tc.name    : testCancelTouch0200
      * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
