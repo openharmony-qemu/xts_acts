@@ -29,6 +29,7 @@ struct WebViewControllerVideoMedia {
   @State backStateArr:string[] = ['MediaPlaybackState.NONE','MediaPlaybackState.PLAYING','MediaPlaybackState.PAUSED','MediaPlaybackState.STOPPED']
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
+  @State isFullScreen: number = 0;
   res: webView.MediaPlaybackState = -1;
 
   onPageShow() {
@@ -69,16 +70,10 @@ struct WebViewControllerVideoMedia {
                 this.controller.loadUrl($rawfile("video1.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo()");
-                await Utils.sleep(5000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.stopAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("StopAllMedia0100 res: " + this.res);
               } catch (error) {
@@ -109,7 +104,7 @@ struct WebViewControllerVideoMedia {
                 await driver.click(size.x / 2, size.y / 2);
 
                 this.controller.stopAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 0);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("StopAllMedia0200 res: " + this.res);
               } catch (error) {
@@ -140,11 +135,11 @@ struct WebViewControllerVideoMedia {
                 await driver.click(size.x / 2, size.y / 2);
 
                 this.controller.runJavaScript("playVideo()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.stopAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
                 this.controller.stopAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("StopAllMedia0300 res: " + this.res);
               } catch (error) {
@@ -167,19 +162,12 @@ struct WebViewControllerVideoMedia {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.runJavaScript("pauseVideo()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.controller.stopAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("StopAllMedia0400 res: " + this.res);
               } catch (error) {
@@ -203,18 +191,12 @@ struct WebViewControllerVideoMedia {
                 this.controller.loadUrl($rawfile("video1.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.pauseAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.controller.stopAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("StopAllMedia0500 res: " + this.res);
               } catch (error) {
@@ -232,23 +214,17 @@ struct WebViewControllerVideoMedia {
               }
               break;
             }
-            case "StopAllMedia0600": {              
+            case "StopAllMedia0600": {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video2.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo1()");
                 this.controller.runJavaScript("playVideo2()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.stopAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("StopAllMedia0600 res: " + this.res);
               } catch (error) {
@@ -266,25 +242,19 @@ struct WebViewControllerVideoMedia {
               }
               break;
             }
-            case "StopAllMedia0700": {              
+            case "StopAllMedia0700": {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video2.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo1()");
-                this.controller.runJavaScript("playVideo2()");
-                await Utils.sleep(2000);
+                this.controller.runJavaScript("playVideo2()")
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.runJavaScript("pauseVideo2()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.stopAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("StopAllMedia0700 res: " + this.res);
               } catch (error) {
@@ -308,18 +278,12 @@ struct WebViewControllerVideoMedia {
                 this.controller.loadUrl($rawfile("video3.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo1()");
                 this.controller.runJavaScript("playVideo2()");
                 this.controller.runJavaScript("playAudio()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.stopAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("StopAllMedia0800 res: " + this.res);
               } catch (error) {
@@ -337,24 +301,18 @@ struct WebViewControllerVideoMedia {
               }
               break;
             }
-            case "ResumeAllMedia0100": {              
+            case "ResumeAllMedia0100": {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.pauseAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.controller.resumeAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("ResumeAllMedia0100 res: " + this.res);
               } catch (error) {
@@ -372,20 +330,14 @@ struct WebViewControllerVideoMedia {
               }
               break;
             }
-            case "ResumeAllMedia0200": {              
+            case "ResumeAllMedia0200": {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.resumeAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 0);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("ResumeAllMedia0200 res: " + this.res);
               } catch (error) {
@@ -403,22 +355,16 @@ struct WebViewControllerVideoMedia {
               }
               break;
             }
-            case "ResumeAllMedia0300": {              
+            case "ResumeAllMedia0300": {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.resumeAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("ResumeAllMedia0300 res: " + this.res);
               } catch (error) {
@@ -442,18 +388,12 @@ struct WebViewControllerVideoMedia {
                 this.controller.loadUrl($rawfile("video1.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.runJavaScript("pauseVideo()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.controller.resumeAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("ResumeAllMedia0400 res: " + this.res);
               } catch (error) {
@@ -477,18 +417,12 @@ struct WebViewControllerVideoMedia {
                 this.controller.loadUrl($rawfile("video1.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.stopAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
                 this.controller.resumeAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("ResumeAllMedia0500 res: " + this.res);
               } catch (error) {
@@ -512,19 +446,13 @@ struct WebViewControllerVideoMedia {
                 this.controller.loadUrl($rawfile("video2.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo1()");
                 this.controller.runJavaScript("playVideo2()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.pauseAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.controller.resumeAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("ResumeAllMedia0600 res: " + this.res);
               } catch (error) {
@@ -548,20 +476,14 @@ struct WebViewControllerVideoMedia {
                 this.controller.loadUrl($rawfile("video3.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo1()");
                 this.controller.runJavaScript("playVideo2()");
                 this.controller.runJavaScript("playAudio()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.pauseAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.controller.resumeAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("ResumeAllMedia0700 res: " + this.res);
               } catch (error) {
@@ -585,16 +507,10 @@ struct WebViewControllerVideoMedia {
                 this.controller.loadUrl($rawfile("video1.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.pauseAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("PauseAllMedia0100 res: " + this.res);
               } catch (error) {
@@ -618,14 +534,8 @@ struct WebViewControllerVideoMedia {
                 this.controller.loadUrl($rawfile("video1.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.pauseAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("PauseAllMedia0200 res: " + this.res);
               } catch (error) {
@@ -649,18 +559,12 @@ struct WebViewControllerVideoMedia {
                 this.controller.loadUrl($rawfile("video1.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.stopAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
                 this.controller.pauseAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("PauseAllMedia0300 res: " + this.res);
               } catch (error) {
@@ -684,18 +588,12 @@ struct WebViewControllerVideoMedia {
                 this.controller.loadUrl($rawfile("video1.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.runJavaScript("pauseVideo()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.controller.pauseAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("PauseAllMedia0400 res: " + this.res);
               } catch (error) {
@@ -719,18 +617,12 @@ struct WebViewControllerVideoMedia {
                 this.controller.loadUrl($rawfile("video1.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.pauseAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.controller.pauseAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("PauseAllMedia0500 res: " + this.res);
               } catch (error) {
@@ -754,17 +646,11 @@ struct WebViewControllerVideoMedia {
                 this.controller.loadUrl($rawfile("video2.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo1()");
                 this.controller.runJavaScript("playVideo2()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.pauseAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("PauseAllMedia0600 res: " + this.res);
               } catch (error) {
@@ -788,19 +674,13 @@ struct WebViewControllerVideoMedia {
                 this.controller.loadUrl($rawfile("video2.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo1()");
                 this.controller.runJavaScript("playVideo2()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.runJavaScript("pauseVideo2()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.pauseAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("PauseAllMedia0700 res: " + this.res);
               } catch (error) {
@@ -824,18 +704,12 @@ struct WebViewControllerVideoMedia {
                 this.controller.loadUrl($rawfile("video3.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo1()");
                 this.controller.runJavaScript("playVideo2()");
                 this.controller.runJavaScript("playAudio()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.pauseAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("PauseAllMedia0800 res: " + this.res);
               } catch (error) {
@@ -858,12 +732,6 @@ struct WebViewControllerVideoMedia {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
 
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("GetMediaPlaybackState0100 res: " + this.res);
@@ -888,14 +756,8 @@ struct WebViewControllerVideoMedia {
                 this.controller.loadUrl($rawfile("video1.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("GetMediaPlaybackState0200 res: " + this.res);
               } catch (error) {
@@ -919,16 +781,10 @@ struct WebViewControllerVideoMedia {
                 this.controller.loadUrl($rawfile("video1.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.pauseAllMedia()
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("GetMediaPlaybackState0300 res: " + this.res);
               } catch (error) {
@@ -952,16 +808,10 @@ struct WebViewControllerVideoMedia {
                 this.controller.loadUrl($rawfile("video1.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.runJavaScript("pauseVideo()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("GetMediaPlaybackState0400 res: " + this.res);
               } catch (error) {
@@ -985,16 +835,10 @@ struct WebViewControllerVideoMedia {
                 this.controller.loadUrl($rawfile("video1.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.stopAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("GetMediaPlaybackState0500 res: " + this.res);
               } catch (error) {
@@ -1019,19 +863,13 @@ struct WebViewControllerVideoMedia {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("enterFullScreen()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.isFullScreen, 'isFullScreen'+ this.str, 1);
+                
                 this.controller.runJavaScript("playVideo()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.closeAllMediaPresentations();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("GetMediaPlaybackState0600 res: " + this.res);
                 const intervalId = setInterval(() => {
@@ -1044,7 +882,7 @@ struct WebViewControllerVideoMedia {
                     }
                   })
                 }, 100);
-                await waitForExist(()=> ''+back_res, this.str, 'true');
+                await waitForExist(()=> back_res ? 1 : 0, this.str, 1);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -1065,12 +903,6 @@ struct WebViewControllerVideoMedia {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video2.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
 
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("GetMediaPlaybackState0700 res: " + this.res);
@@ -1095,14 +927,8 @@ struct WebViewControllerVideoMedia {
                 this.controller.loadUrl($rawfile("video2.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo1()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("GetMediaPlaybackState0800 res: " + this.res);
               } catch (error) {
@@ -1120,21 +946,15 @@ struct WebViewControllerVideoMedia {
               }
               break;
             }
-            case "GetMediaPlaybackState0900": {              
+            case "GetMediaPlaybackState0900": {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video2.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo1()");
                 this.controller.runJavaScript("playVideo2()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("GetMediaPlaybackState0900 res: " + this.res);
               } catch (error) {
@@ -1152,23 +972,17 @@ struct WebViewControllerVideoMedia {
               }
               break;
             }
-            case "GetMediaPlaybackState1000": {              
+            case "GetMediaPlaybackState1000": {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video2.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo1()");
                 this.controller.runJavaScript("playVideo2()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.runJavaScript("pauseVideo1()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("GetMediaPlaybackState1000 res: " + this.res);
               } catch (error) {
@@ -1186,24 +1000,18 @@ struct WebViewControllerVideoMedia {
               }
               break;
             }
-            case "GetMediaPlaybackState1100": {              
+            case "GetMediaPlaybackState1100": {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video2.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo1()");
                 this.controller.runJavaScript("playVideo2()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.runJavaScript("pauseVideo1()");
                 this.controller.runJavaScript("pauseVideo2()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("GetMediaPlaybackState1100 res: " + this.res);
               } catch (error) {
@@ -1221,23 +1029,17 @@ struct WebViewControllerVideoMedia {
               }
               break;
             }
-            case "GetMediaPlaybackState1200": {              
+            case "GetMediaPlaybackState1200": {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video2.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
 
-                let driver:Driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.click(size.x / 2, size.y / 2);
-
                 this.controller.runJavaScript("playVideo1()");
                 this.controller.runJavaScript("playVideo2()");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
                 this.controller.pauseAllMedia();
-                await Utils.sleep(2000);
+                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 2);
                 this.res = this.controller.getMediaPlaybackState();
                 console.log("GetMediaPlaybackState1200 res: " + this.res);
               } catch (error) {
@@ -1263,6 +1065,12 @@ struct WebViewControllerVideoMedia {
         .onPageEnd((event) => {
           console.log('web pageEnd==>' + event.url);
           this.isPageEnd = 0;
+        })
+        .mediaPlayGestureAccess(false)
+        .javaScriptAccess(true)
+        .onFullScreenEnter(() => {
+          console.log('isFullScreen==>');
+          this.isFullScreen = 1;
         })
     }
   }
