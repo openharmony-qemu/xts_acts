@@ -212,7 +212,7 @@ export function testURLParams_forEach() {
   const caseName = 'DynamicURLParamsConcurrentTest_forEach';
   try {
     console.log(`${caseName} test start`);
-    const myURLObject = Url.URL.parseURL('https://developer.exampleUrl/?fod=1&bard=2');
+    const myURLObject = Url.URL.parseURL('https:///?fod=1&bard=2');
     let fod = myURLObject.params.get('fod');
     let bard = myURLObject.params.get('bard');
     if (fod !== '1' || bard !== '2') {
