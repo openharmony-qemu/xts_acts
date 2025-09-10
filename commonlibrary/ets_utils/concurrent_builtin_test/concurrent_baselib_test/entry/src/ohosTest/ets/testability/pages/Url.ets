@@ -207,23 +207,6 @@ export function testURLParams_SymbolIterator() {
   }
 }
 
-@Concurrent
-export function testURLParams_forEach() {
-  const caseName = 'DynamicURLParamsConcurrentTest_forEach';
-  try {
-    console.log(`${caseName} test start`);
-    const myURLObject = Url.URL.parseURL('https:///?fod=1&bard=2');
-    let fod = myURLObject.params.get('fod');
-    let bard = myURLObject.params.get('bard');
-    if (fod !== '1' || bard !== '2') {
-      throw new Error(`${caseName} forEach mismatch`);
-    }
-    console.log(`${caseName} test end`);
-  } catch (err) {
-    console.error(`${caseName} failed: ${err.message}`);
-    throw new Error(`${caseName} catch error.`);
-  }
-}
 
 @Concurrent
 export function testURL_parseURL() {

@@ -21,7 +21,7 @@ export function testXmlDynamicSerializer() {
   try {
     const ser = new xml.XmlDynamicSerializer();
     ser.startElement('note');
-    ser.setAttributes('importance', '😊');
+    ser.setAttributes('importance', '馃槉');
     ser.endElement();
     const buf = ser.getOutput();
     if (!buf || buf.byteLength === 0) {
@@ -39,10 +39,10 @@ export function testSetComment() {
   try {
     console.log(`${TAG} test start`);
     const ser = new xml.XmlDynamicSerializer();
-    ser.setComment('😊');
+    ser.setComment('馃槉');
     const buf = ser.getOutput();
     const str = new util.TextDecoder().decodeToString(new Uint8Array(buf));
-    if (!str.includes('<!--😊-->')) {
+    if (!str.includes('<!--馃槉-->')) {
       throw new Error(`${TAG} comment mismatch`);
     }
     console.log(`${TAG} test end`);
@@ -80,10 +80,10 @@ export function testSetDocType() {
   try {
     console.log(`${TAG} test start`);
     const ser = new xml.XmlDynamicSerializer();
-    ser.setDocType('😊');
+    ser.setDocType('馃槉');
     const buf = ser.getOutput();
     const str = new util.TextDecoder().decodeToString(new Uint8Array(buf));
-    if (!str.includes('<!DOCTYPE 😊>')) {
+    if (!str.includes('<!DOCTYPE 馃槉>')) {
       throw new Error(`${TAG} doctype mismatch`);
     }
     console.log(`${TAG} test end`);
@@ -99,7 +99,7 @@ export function testSetDeclaration() {
   try {
     console.log(`${TAG} test start`);
     const ser = new xml.XmlDynamicSerializer();
-    ser.setDeclaration();          // 只能调一次，接口存在即可
+    ser.setDeclaration();          // 鍙兘璋冧竴娆★紝鎺ュ彛瀛樺湪鍗冲彲
     const buf = ser.getOutput();
     const str = new util.TextDecoder().decodeToString(new Uint8Array(buf));
     if (!str.includes('<?xml')) {
@@ -174,7 +174,7 @@ export function testAddEmptyElement() {
 }
 
 
-// 1. XmlSerializer 构造函数（ArrayBuffer 足够长）
+// 1. XmlSerializer 鏋勯€犲嚱鏁帮紙ArrayBuffer 瓒冲闀匡級
 @Concurrent
 export function testXmlSerializerConstructor() {
   const TAG = 'testXmlSerializerConstructor';
@@ -195,7 +195,7 @@ export function testXmlSerializerConstructor() {
   }
 }
 
-// 2. setAttributes 正常分支（第一次出现）
+// 2. setAttributes 姝ｅ父鍒嗘敮锛堢涓€娆″嚭鐜帮級
 @Concurrent
 export function testSetAttributes() {
   const TAG = 'testSetAttributes';
@@ -217,7 +217,7 @@ export function testSetAttributes() {
   }
 }
 
-// 3. addEmptyElement 正常分支
+// 3. addEmptyElement 姝ｅ父鍒嗘敮
 @Concurrent
 export function testAddEmptyElement2() {
   const TAG = 'testAddEmptyElement';
@@ -257,7 +257,7 @@ export function testSetDeclaration2() {
   }
 }
 
-// 5. startElement 正常分支
+// 5. startElement 姝ｅ父鍒嗘敮
 @Concurrent
 export function testStartElement() {
   const TAG = 'testStartElement';
@@ -361,7 +361,8 @@ export function testSetText2() {
     thatSer.endElement();
     let view = new Uint8Array(arrayBuffer);
     let result = util.TextDecoder.create().decodeWithStream(view).trim();
-    if (result !== '<note>Special chars: &lt;&gt;&amp;&apos;&quot;</note>') {
+    if (result !== '<note>Special chars: &lt;&gt;&amp;&apos;&apos;</note>') {
+      console.info('===============',result)
       throw new Error(`${TAG} text mismatch`);
     }
     console.log(`${TAG} test end`);

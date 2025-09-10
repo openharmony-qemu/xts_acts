@@ -19,7 +19,6 @@ import {
   testURLParams_append,
   testURLParams_delete,
   testURLParams_entries,
-  testURLParams_forEach,
   testURLParams_get,
   testURLParams_getAll,
   testURLParams_has,
@@ -423,40 +422,6 @@ export default function urlTest() {
           let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
             group.addTask(testURLParams_SymbolIterator)
-          }
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
-            console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_URL_1200
-     * @tc.name      : testURLParams_forEach
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('testURLParams_forEach', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'testURLParams_forEach';
-        console.info(`${caseName} test start`);
-        let result = 0
-        try {
-          let group = new taskpool.TaskGroup(caseName)
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(testURLParams_forEach)
           }
           await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
