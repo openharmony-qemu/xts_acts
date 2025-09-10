@@ -138,9 +138,9 @@ struct webAdsBlockManager {
                     case 'emitSetAdsBlockRules': {
                       try {
                         let isBlockedCurPageBefore: boolean = this.controller.isAdsBlockEnabledForCurPage();
-                        console.log("[TAO]Start setting up advertising rules...");
+                        console.log('Start setting up advertising rules...');
                         let rulePath: string = Utils.copyRawFileToSandbox('custom_easylist.txt');
-                        console.log("[TAO]Rule file path:", rulePath);
+                        console.log('Rule file path:', rulePath);
 
                         
                         try {
@@ -148,15 +148,15 @@ struct webAdsBlockManager {
                           let content = context.resourceManager.getRawFileContentSync('custom_easylist.txt');
                           let text = buffer.from(content).toString('utf8');
                           let lines = text.split('\n');
-                          console.log("[TAO]The total number of lines of the rule file:", lines.length);
+                          console.log('The total number of lines of the rule file:', lines.length);
                         } catch (e) {
-                          console.error("[TAO]Failed to read the rule file:", e);
+                          console.error('Failed to read the rule file:', e);
                         }
                         
                         this.isSetAdsBlockRules = -1;
                         webview.AdsBlockManager.setAdsBlockRules(rulePath, true);
                         await waitForExist(() => this.isSetAdsBlockRules, this.emitKey, 0);
-                        console.log("[TAO]The advertising rules have been set up");
+                        console.log('The advertising rules have been set up');
                        
                         Utils.deleteFile(rulePath);
                         this.isPageEnd = -1;
@@ -392,14 +392,14 @@ struct webAdsBlockManager {
                     }
 
                     case 'emitOnAdsBlocked': {
-                      if( this.isEnableAdsBlock == -1) {
+                      try{
                         this.controller.enableAdsBlock(true);
                         console.log(' enableAdsBlock:  true');
 
                         let isBlockedCurPageBefore: boolean = this.controller.isAdsBlockEnabledForCurPage();
-                        console.log("[TAO]Start setting up advertising rules...");
+                        console.log('Start setting up advertising rules...');
                         let rulePath: string = Utils.copyRawFileToSandbox('custom_easylist.txt');
-                        console.log("[TAO]Rule file path:", rulePath);
+                        console.log('Rule file path:', rulePath);
 
                     
                         try {
@@ -407,9 +407,9 @@ struct webAdsBlockManager {
                           let content = context.resourceManager.getRawFileContentSync('custom_easylist.txt');
                           let text = buffer.from(content).toString('utf8');
                           let lines = text.split('\n');
-                          console.log("[TAO]The total number of lines of the rule file:", lines.length);
+                          console.log('The total number of lines of the rule file:', lines.length);
                         } catch (e) {
-                          console.error("[TAO]Failed to read the rule file:", e);
+                          console.error('Failed to read the rule file:', e);
                         }
 
                         this.isSetAdsBlockRules = -1;
@@ -426,41 +426,51 @@ struct webAdsBlockManager {
                         console.log('[TAO]isBlockedCurPageBefore :  ' + isBlockedCurPageBefore);
                         console.log('[TAO]isBlockedCurPageAfter :  ' + isBlockedCurPageAfter);
 
-                      }
 
-                      console.log("[TAO]emitOnAdsBlocked case started - Start testing the ad-blocking callback");
+                      console.log('emitOnAdsBlocked case started - Start testing the ad-blocking callback');
 
-                      console.log("[TAO]Start loading the test URLs...");
+                      console.log('Start loading the test URLs...');
                       this.isPageEnd = -1;
                       this.controller.loadUrl(CommonConstants.ADS_URL1);
                       await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                 
-                      console.log("[TAO]URL1 Loading completed");
+                      console.log('URL1 Loading completed');
 
                       this.isPageEnd = -1;
                       this.controller.loadUrl(CommonConstants.ADS_URL2);
                       await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                       
-                      console.log("[TAO]URL2 Loading completed");
+                      console.log('URL2 Loading completed');
 
                       this.isPageEnd = -1;
                       this.controller.loadUrl(CommonConstants.ADS_URL3);
                       await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                       
-                      console.log("[TAO]URL3 Loading completed");
+                      console.log('URL3 Loading completed');
 
                 
 
-                      console.log("[TAO]All urls have been loaded successfully,testIsOnAdsBlocked:", this.testIsOnAdsBlocked);
-                      console.log("[TAO]testOnAdsBlockedDetails:", this.testOnAdsBlockedDetails);
-                      console.log("[TAO]errorCode:", this.errorCode);
+                      console.log('All urls have been loaded successfully,testIsOnAdsBlocked:', this.testIsOnAdsBlocked);
+                      console.log('testOnAdsBlockedDetails:', this.testOnAdsBlockedDetails);
+                      console.log('errorCode:', this.errorCode);
 
                       if (this.testIsOnAdsBlocked || this.errorCode == 801) {
-                        console.log("[TAO]emitOnAdsBlocked: Test successful");
+                        console.log('emitOnAdsBlocked: Test successful');
                         Utils.emitEvent(true, 161170)
                       } else {
-                        console.log("[TAO]emitOnAdsBlocked: Test failed - The callback was not triggered");
+                        console.log('emitOnAdsBlocked: Test failed - The callback was not triggered');
                         Utils.emitEvent(false, 161170)
+                      }
+		      }catch (error) {
+                        let e:business_error.BusinessError = error as business_error.BusinessError;
+                        console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                        if(e.code == 801) {
+                          console.log(`emitIsAdsBlockEnabledCheck The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
+                          this.errorCode = 801
+                          Utils.emitEvent(true, 161190)
+                        } else {
+                          Utils.emitEvent(false, 161190)
+                        }
                       }
 
                       break;
@@ -509,14 +519,14 @@ struct webAdsBlockManager {
                     }
 
                     case 'emitOnAdsBlockedTest': {
-                      if( this.isEnableAdsBlock == -1) {
+                      try{
                         this.controller.enableAdsBlock(true);
                         console.log(' enableAdsBlock:  true');
 
                         let isBlockedCurPageBefore: boolean = this.controller.isAdsBlockEnabledForCurPage();
-                        console.log("[TAO]Start setting up advertising rules...");
+                        console.log('Start setting up advertising rules...');
                         let rulePath: string = Utils.copyRawFileToSandbox('custom_easylist.txt');
-                        console.log("[TAO]Rule file path:", rulePath);
+                        console.log('Rule file path:', rulePath);
 
                 
                         try {
@@ -524,14 +534,14 @@ struct webAdsBlockManager {
                           let content = context.resourceManager.getRawFileContentSync('custom_easylist.txt');
                           let text = buffer.from(content).toString('utf8');
                           let lines = text.split('\n');
-                          console.log("[TAO]The total number of lines of the rule file:", lines.length);
+                          console.log('The total number of lines of the rule file:', lines.length);
                         } catch (e) {
-                          console.error("[TAO]Failed to read the rule file:", e);
+                          console.error('Failed to read the rule file:', e);
                         }
                         this.isSetAdsBlockRules = -1;
                         webview.AdsBlockManager.setAdsBlockRules(rulePath, true);
                         await waitForExist(() => this.isSetAdsBlockRules, this.emitKey, 0);
-                        console.log("[TAO]The advertising rules have been set up");
+                        console.log('The advertising rules have been set up');
                         Utils.deleteFile(rulePath);
                         this.isPageEnd = -1;
                         this.controller.refresh()
@@ -546,14 +556,25 @@ struct webAdsBlockManager {
                         this.controller.loadUrl(CommonConstants.ADS_URL1);
                         await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                         
-                        console.log("[TAO]URL1 Loading completed");
-                      }
+                        console.log('URL1 Loading completed');
+              
                       if (this.testOnAdsBlockedDetails || this.errorCode == 801) {
                         Utils.emitEvent(true, 161200)
                       } else {
                         Utils.emitEvent(false, 161200)
                       }
-
+                    }catch (error) {
+                        let e:business_error.BusinessError = error as business_error.BusinessError;
+                        console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                        if(e.code == 801) {
+                          console.log(`emitIsAdsBlockEnabledCheck The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
+                          this.errorCode = 801
+                          Utils.emitEvent(true, 161190)
+                        } else {
+                          Utils.emitEvent(false, 161190)
+                        }
+                      }
+                      console.log("[TAO]###########emitOnAdsBlockedTest end... ");
                       break;
                     }
                   }
@@ -561,8 +582,8 @@ struct webAdsBlockManager {
           }
           Web({ src: this.src_url, controller: this.controller })
             .onAdsBlocked(( details: AdsBlockedDetails) => {
-              console.log("[TAO]onAdsBlocked The callback was triggered!");
-              console.log("[TAO]Callback details:", JSON.stringify(details));
+              console.log('onAdsBlocked The callback was triggered!');
+              console.log('Callback details:', JSON.stringify(details));
               this.isSetAdsBlockRules = 0;
 
               this.testIsOnAdsBlocked = true;
@@ -570,7 +591,7 @@ struct webAdsBlockManager {
                 this.testOnAdsBlockedDetails = true;
                 console.log('[TAO]Intercepted ' + details.adsBlocked.length + ' An advertisement,URL: ' + details.url);
                 if (details.adsBlocked.length > 0) {
-                  console.log("[TAO]Blocked advertisements:", details.adsBlocked);
+                  console.log('Blocked advertisements:', details.adsBlocked);
                 }
               } else {
                 console.log('[TAO]details is null or  undefined');
