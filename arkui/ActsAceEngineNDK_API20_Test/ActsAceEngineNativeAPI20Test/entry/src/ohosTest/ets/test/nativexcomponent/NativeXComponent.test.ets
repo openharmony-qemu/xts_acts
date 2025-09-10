@@ -485,13 +485,13 @@ export default function NativeXComponent() {
     })
     /**
      * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_XCOMPONENT_SETEXPECTEDFRAMERATERANGE_0200
-     * @tc.name    : testSetArkUIExpectedFrameRateRange001
+     * @tc.name    : testSetArkUIExpectedFrameRateRange002
      * @tc.desc    : Test native xcomopnent set expected frame rate range invalid.
      * @tc.level   : LEVEL1
      * @tc.size    : MediumTest
      * @tc.type    : Function
      */
-    it('testSetArkUIExpectedFrameRateRange001', TestType.FUNCTION |
+    it('testSetArkUIExpectedFrameRateRange002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_ARKUI_XCOMPONENT_SETEXPECTEDFRAMERATERANGE_0200 start<====`);

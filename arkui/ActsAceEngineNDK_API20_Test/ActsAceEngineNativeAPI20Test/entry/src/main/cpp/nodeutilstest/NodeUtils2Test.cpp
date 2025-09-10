@@ -60,11 +60,14 @@ napi_value SetForceDarkConfigTest_003(napi_env env, napi_callback_info info)
 void onReceiver1(ArkUI_NodeCustomEvent* event)
 {
     ArkUI_CustomSpanMeasureInfo *measureInfo = OH_ArkUI_CustomSpanMeasureInfo_Create();
-    g_nodeutilsresult1 = OH_ArkUI_NodeCustomEvent_GetCustomSpanMeasureInfo(event, measureInfo);
+    g_nodeutilsresult1 = OH_ArkUI_NodeCustomEvent_GetCustomSpanMeasureInfo(event, measureInfo) ==
+                         ARKUI_ERROR_CODE_NO_ERROR;
     ArkUI_CustomSpanMetrics *customSpanMetrics = OH_ArkUI_CustomSpanMetrics_Create();
-    g_nodeutilsresult2 = OH_ArkUI_NodeCustomEvent_SetCustomSpanMetrics(event, customSpanMetrics);
+    g_nodeutilsresult2 = OH_ArkUI_NodeCustomEvent_SetCustomSpanMetrics(event, customSpanMetrics) ==
+                         ARKUI_ERROR_CODE_NO_ERROR;
     ArkUI_CustomSpanDrawInfo *customSpanDrawInfo = OH_ArkUI_CustomSpanDrawInfo_Create();
-    g_nodeutilsresult3 = OH_ArkUI_NodeCustomEvent_GetCustomSpanDrawInfo(event, customSpanDrawInfo);
+    g_nodeutilsresult3 = OH_ArkUI_NodeCustomEvent_GetCustomSpanDrawInfo(event, customSpanDrawInfo) ==
+                         ARKUI_ERROR_CODE_NO_ERROR;
     return;
 }
 
@@ -117,7 +120,7 @@ napi_value CreateCustomSpanNode(napi_env env, napi_callback_info info)
 napi_value GetCustomSpanMeasureInfoTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_nodeutilsresult1 == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
+    napi_create_int32(env, g_nodeutilsresult1 ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -137,7 +140,7 @@ napi_value GetCustomSpanMeasureInfoTest_002(napi_env env, napi_callback_info inf
 napi_value SetCustomSpanMetricsTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_nodeutilsresult2 == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
+    napi_create_int32(env, g_nodeutilsresult2 ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -157,7 +160,7 @@ napi_value SetCustomSpanMetricsTest_002(napi_env env, napi_callback_info info)
 napi_value GetCustomSpanDrawInfoTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_nodeutilsresult3 == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
+    napi_create_int32(env, g_nodeutilsresult3 ? 0 : 1, &retValue);
     return retValue;
 }
 

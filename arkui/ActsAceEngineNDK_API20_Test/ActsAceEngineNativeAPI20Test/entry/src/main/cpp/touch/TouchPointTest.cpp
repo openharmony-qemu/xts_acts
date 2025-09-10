@@ -43,7 +43,8 @@ napi_value GetTouchPointWindowX(napi_env env, napi_callback_info info)
         result = OH_NativeXComponent_GetTouchPointWindowX(XComponent.GetXComponent(), 0, nullptr) ==
                  OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER && result == OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER ?
                  OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER : OH_NATIVEXCOMPONENT_RESULT_SUCCESS;
-    } else {
+    }
+    if (!isNullptr) {
         result = OH_NativeXComponent_GetTouchPointWindowX(XComponent.GetXComponent(), 0, &point) ==
                  OH_NATIVEXCOMPONENT_RESULT_SUCCESS ? OH_NATIVEXCOMPONENT_RESULT_SUCCESS :
                  OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER;
@@ -78,7 +79,8 @@ napi_value GetTouchPointWindowY(napi_env env, napi_callback_info info)
         result = OH_NativeXComponent_GetTouchPointWindowY(XComponent.GetXComponent(), 0, nullptr) ==
                  OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER && result == OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER ?
                  OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER : OH_NATIVEXCOMPONENT_RESULT_SUCCESS;
-    } else {
+    }
+    if (!isNullptr) {
         result = OH_NativeXComponent_GetTouchPointWindowY(XComponent.GetXComponent(), 0, &point) ==
                  OH_NATIVEXCOMPONENT_RESULT_SUCCESS ? OH_NATIVEXCOMPONENT_RESULT_SUCCESS :
                  OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER;
@@ -113,7 +115,8 @@ napi_value GetTouchPointDisplayX(napi_env env, napi_callback_info info)
         result = OH_NativeXComponent_GetTouchPointDisplayX(XComponent.GetXComponent(), 0, nullptr) ==
                  OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER && result == OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER ?
                  OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER : OH_NATIVEXCOMPONENT_RESULT_SUCCESS;
-    } else {
+    }
+    if (!isNullptr) {
         result = OH_NativeXComponent_GetTouchPointDisplayX(XComponent.GetXComponent(), 0, &point) ==
                  OH_NATIVEXCOMPONENT_RESULT_SUCCESS ? OH_NATIVEXCOMPONENT_RESULT_SUCCESS :
                  OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER;

@@ -30,9 +30,11 @@ ArkUI_NativeNodeAPI_1 *nodeAPI = nullptr;
 void onReceiver(ArkUI_NodeEvent *event)
 {
     const ArkUI_UIInputEvent* g_ArkUI_UIInputEvent = OH_ArkUI_NodeEvent_GetInputEvent(event);
-    g_testresult1 = OH_ArkUI_KeyEvent_IsNumLockOn(g_ArkUI_UIInputEvent, &g_numlockresult);
-    g_testresult2 = OH_ArkUI_KeyEvent_IsCapsLockOn(g_ArkUI_UIInputEvent, &g_capslockresult);
-    g_testresult3 = OH_ArkUI_KeyEvent_IsScrollLockOn(g_ArkUI_UIInputEvent, &g_scrolllockresult);
+    g_testresult1 = OH_ArkUI_KeyEvent_IsNumLockOn(g_ArkUI_UIInputEvent, &g_numlockresult) == ARKUI_ERROR_CODE_NO_ERROR;
+    g_testresult2 = OH_ArkUI_KeyEvent_IsCapsLockOn(g_ArkUI_UIInputEvent, &g_capslockresult) ==
+                    ARKUI_ERROR_CODE_NO_ERROR;
+    g_testresult3 = OH_ArkUI_KeyEvent_IsScrollLockOn(g_ArkUI_UIInputEvent, &g_scrolllockresult) ==
+                    ARKUI_ERROR_CODE_NO_ERROR;
     return;
 }
 napi_value CreateTextInputNode(napi_env env, napi_callback_info info)
@@ -75,7 +77,7 @@ napi_value CreateTextInputNode(napi_env env, napi_callback_info info)
 napi_value IsNumLockOnTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_testresult1 == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
+    napi_create_int32(env, g_testresult1 ? 0 : 1, &retValue);
     return retValue;
 }
 napi_value IsNumLockOnTest_002(napi_env env, napi_callback_info info)
@@ -88,7 +90,7 @@ napi_value IsNumLockOnTest_002(napi_env env, napi_callback_info info)
 napi_value IsCapsLockOnTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_testresult2 == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
+    napi_create_int32(env, g_testresult2 ? 0 : 1, &retValue);
     return retValue;
 }
 napi_value IsCapsLockOnTest_002(napi_env env, napi_callback_info info)
@@ -101,7 +103,7 @@ napi_value IsCapsLockOnTest_002(napi_env env, napi_callback_info info)
 napi_value IsScrollLockOnTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_testresult3 == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
+    napi_create_int32(env, g_testresult3 ? 0 : 1, &retValue);
     return retValue;
 }
 napi_value IsScrollLockOnTest_002(napi_env env, napi_callback_info info)

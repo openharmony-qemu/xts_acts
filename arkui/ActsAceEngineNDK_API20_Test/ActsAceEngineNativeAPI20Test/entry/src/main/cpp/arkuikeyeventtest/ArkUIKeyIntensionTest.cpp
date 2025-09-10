@@ -62,6 +62,62 @@ napi_value CreateNativeNode2(napi_env env, napi_callback_info info)
     return nullptr;
 }
 
+ArkUI_KeyIntension CheckKeyIntension(int32_t KeyIntension) {
+    if (KeyIntension == ARKUI_KEY_INTENSION_UNKNOWN) {
+        return ARKUI_KEY_INTENSION_UNKNOWN;
+    } else if (KeyIntension == ARKUI_KEY_INTENSION_UP) {
+        return ARKUI_KEY_INTENSION_UP;
+    } else if (KeyIntension == ARKUI_KEY_INTENSION_DOWN) {
+        return ARKUI_KEY_INTENSION_DOWN;
+    } else if (KeyIntension == ARKUI_KEY_INTENSION_LEFT) {
+        return ARKUI_KEY_INTENSION_LEFT;
+    } else if (KeyIntension == ARKUI_KEY_INTENSION_RIGHT) {
+        return ARKUI_KEY_INTENSION_RIGHT;
+    } else if (KeyIntension == ARKUI_KEY_INTENSION_SELECT) {
+        return ARKUI_KEY_INTENSION_SELECT;
+    } else if (KeyIntension == ARKUI_KEY_INTENSION_ESCAPE) {
+        return ARKUI_KEY_INTENSION_ESCAPE;
+    } else if (KeyIntension == ARKUI_KEY_INTENSION_BACK) {
+        return ARKUI_KEY_INTENSION_BACK;
+    } else if (KeyIntension == ARKUI_KEY_INTENSION_FORWARD) {
+        return ARKUI_KEY_INTENSION_FORWARD;
+    } else if (KeyIntension == ARKUI_KEY_INTENSION_MENU) {
+        return ARKUI_KEY_INTENSION_MENU;
+    } else if (KeyIntension == ARKUI_KEY_INTENSION_HOME) {
+        return ARKUI_KEY_INTENSION_HOME;
+    } else if (KeyIntension == ARKUI_KEY_INTENSION_PAGE_UP) {
+        return ARKUI_KEY_INTENSION_PAGE_UP;
+    } else if (KeyIntension == ARKUI_KEY_INTENSION_PAGE_DOWN) {
+        return ARKUI_KEY_INTENSION_PAGE_DOWN;
+    } else if (KeyIntension == ARKUI_KEY_INTENSION_ZOOM_OUT) {
+        return ARKUI_KEY_INTENSION_ZOOM_OUT;
+    } else if (KeyIntension == ARKUI_KEY_INTENSION_ZOOM_IN) {
+        return ARKUI_KEY_INTENSION_ZOOM_IN;
+    } else if (KeyIntension == ARKUI_KEY_INTENTION_MEDIA_PLAY_PAUSE) {
+        return ARKUI_KEY_INTENTION_MEDIA_PLAY_PAUSE;
+    } else if (KeyIntension == ARKUI_KEY_INTENTION_MEDIA_FAST_FORWARD) {
+        return ARKUI_KEY_INTENTION_MEDIA_FAST_FORWARD;
+    } else if (KeyIntension == ARKUI_KEY_INTENTION_MEDIA_FAST_PLAYBACK) {
+        return ARKUI_KEY_INTENTION_MEDIA_FAST_PLAYBACK;
+    } else if (KeyIntension == ARKUI_KEY_INTENTION_MEDIA_NEXT) {
+        return ARKUI_KEY_INTENTION_MEDIA_NEXT;
+    } else if (KeyIntension == ARKUI_KEY_INTENTION_MEDIA_PREVIOUS) {
+        return ARKUI_KEY_INTENTION_MEDIA_PREVIOUS;
+    } else if (KeyIntension == ARKUI_KEY_INTENTION_MEDIA_MUTE) {
+        return ARKUI_KEY_INTENTION_MEDIA_MUTE;
+    } else if (KeyIntension == ARKUI_KEY_INTENTION_VOLUME_UP) {
+        return ARKUI_KEY_INTENTION_VOLUME_UP;
+    } else if (KeyIntension == ARKUI_KEY_INTENTION_VOLUME_DOWN) {
+        return ARKUI_KEY_INTENTION_VOLUME_DOWN;
+    } else if (KeyIntension == ARKUI_KEY_INTENTION_CALL) {
+        return ARKUI_KEY_INTENTION_CALL;
+    } else if (KeyIntension == ARKUI_KEY_INTENTION_CAMERA) {
+        return ARKUI_KEY_INTENTION_CAMERA;
+    } else {
+        return ArkUI_KeyIntension(PARAM_NEGATIVE_2);
+    }
+}
+
 napi_value GetKeyIntensionType(napi_env env, napi_callback_info info)
 {
     if ((env == nullptr) || (info == nullptr)) {
@@ -79,7 +135,7 @@ napi_value GetKeyIntensionType(napi_env env, napi_callback_info info)
     }
     int32_t getParam;
     napi_get_value_int32(env, args[0], &getParam);
-    ArkUI_KeyIntension KeyIntensionType = ArkUI_KeyIntension(getParam);
+    ArkUI_KeyIntension KeyIntensionType = CheckKeyIntension(getParam);
     if (g_keyIntensionMap.count(KeyIntensionType) == 1) {
         napi_create_int32(env, 1, &args[0]);
     } else {

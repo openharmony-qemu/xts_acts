@@ -34,8 +34,8 @@ napi_value DragAndDropTest201(napi_env env, napi_callback_info info)
     nodeAPI->setAttribute(text, NODE_FONT_SIZE, &valueItem);
     auto *previewOptions = OH_ArkUI_CreateDragPreviewOption();
     auto returnValue = OH_ArkUI_DragPreviewOption_SetScaleMode(
-        previewOptions, ArkUI_DragPreviewScaleMode::ARKUI_DRAG_PREVIEW_SCALE_DISABLED);
-    if ((returnValue) != (SUCCESS)) {
+        previewOptions, ArkUI_DragPreviewScaleMode::ARKUI_DRAG_PREVIEW_SCALE_DISABLED) == ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());
@@ -78,8 +78,9 @@ napi_value DragAndDropTest203(napi_env env, napi_callback_info info)
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(text, NODE_FONT_SIZE, &valueItem);
     auto *previewOptions = OH_ArkUI_CreateDragPreviewOption();
-    auto returnValue = OH_ArkUI_DragPreviewOption_SetDefaultShadowEnabled(previewOptions, true);
-    if ((returnValue) != (SUCCESS)) {
+    auto returnValue = OH_ArkUI_DragPreviewOption_SetDefaultShadowEnabled(previewOptions, true) ==
+                       ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());
@@ -122,8 +123,9 @@ napi_value DragAndDropTest205(napi_env env, napi_callback_info info)
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(text, NODE_FONT_SIZE, &valueItem);
     auto *previewOptions = OH_ArkUI_CreateDragPreviewOption();
-    auto returnValue = OH_ArkUI_DragPreviewOption_SetDefaultRadiusEnabled(previewOptions, true);
-    if ((returnValue) != (SUCCESS)) {
+    auto returnValue = OH_ArkUI_DragPreviewOption_SetDefaultRadiusEnabled(previewOptions, true) ==
+                       ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());
@@ -166,8 +168,9 @@ napi_value DragAndDropTest207(napi_env env, napi_callback_info info)
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(text, NODE_FONT_SIZE, &valueItem);
     auto *previewOptions = OH_ArkUI_CreateDragPreviewOption();
-    auto returnValue = OH_ArkUI_DragPreviewOption_SetNumberBadgeEnabled(previewOptions, true);
-    if ((returnValue) != (SUCCESS)) {
+    auto returnValue = OH_ArkUI_DragPreviewOption_SetNumberBadgeEnabled(previewOptions, true) ==
+                       ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());
@@ -210,8 +213,9 @@ napi_value DragAndDropTest209(napi_env env, napi_callback_info info)
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(text, NODE_FONT_SIZE, &valueItem);
     auto *previewOptions = OH_ArkUI_CreateDragPreviewOption();
-    auto returnValue = OH_ArkUI_DragPreviewOption_SetBadgeNumber(previewOptions, 2147483647);
-    if ((returnValue) != (SUCCESS)) {
+    auto returnValue = OH_ArkUI_DragPreviewOption_SetBadgeNumber(previewOptions, 2147483647) ==
+                       ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());
@@ -254,8 +258,9 @@ napi_value DragAndDropTest211(napi_env env, napi_callback_info info)
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(text, NODE_FONT_SIZE, &valueItem);
     auto *previewOptions = OH_ArkUI_CreateDragPreviewOption();
-    auto returnValue = OH_ArkUI_DragPreviewOption_SetDefaultAnimationBeforeLiftingEnabled(previewOptions, true);
-    if ((returnValue) != (SUCCESS)) {
+    auto returnValue = OH_ArkUI_DragPreviewOption_SetDefaultAnimationBeforeLiftingEnabled(previewOptions, true) ==
+                       ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());
@@ -298,8 +303,8 @@ napi_value DragAndDropTest213(napi_env env, napi_callback_info info)
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(text, NODE_FONT_SIZE, &valueItem);
     auto *previewOptions = OH_ArkUI_CreateDragPreviewOption();
-    auto returnValue = OH_ArkUI_SetNodeDragPreviewOption(text, previewOptions);
-    if ((returnValue) != (SUCCESS)) {
+    auto returnValue = OH_ArkUI_SetNodeDragPreviewOption(text, previewOptions) == ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());
@@ -342,8 +347,8 @@ napi_value DragAndDropTest215(napi_env env, napi_callback_info info)
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(text, NODE_FONT_SIZE, &valueItem);
     auto *dragAction = OH_ArkUI_CreateDragActionWithNode(text);
-    auto returnValue = OH_ArkUI_DragAction_SetPointerId(dragAction, 1);
-    if ((returnValue) != (SUCCESS)) {
+    auto returnValue = OH_ArkUI_DragAction_SetPointerId(dragAction, 1) == ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());
@@ -401,8 +406,9 @@ napi_value DragAndDropTest217(napi_env env, napi_callback_info info)
     std::vector<OH_PixelmapNative *> pixelVector;
     pixelVector.push_back(pixelmap);
     auto *dragAction = OH_ArkUI_CreateDragActionWithNode(text);
-    auto returnValue = OH_ArkUI_DragAction_SetPixelMaps(dragAction, pixelVector.data(), pixelVector.size());
-    if ((returnValue) != (SUCCESS)) {
+    auto returnValue = OH_ArkUI_DragAction_SetPixelMaps(dragAction, pixelVector.data(), pixelVector.size()) ==
+                       ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());
@@ -445,8 +451,8 @@ napi_value DragAndDropTest219(napi_env env, napi_callback_info info)
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(text, NODE_FONT_SIZE, &valueItem);
     auto *dragAction = OH_ArkUI_CreateDragActionWithNode(text);
-    auto returnValue = OH_ArkUI_DragAction_SetTouchPointX(dragAction, TOUCHPOINTXY);
-    if ((returnValue) != (SUCCESS)) {
+    auto returnValue = OH_ArkUI_DragAction_SetTouchPointX(dragAction, TOUCHPOINTXY) == ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());
@@ -489,8 +495,8 @@ napi_value DragAndDropTest221(napi_env env, napi_callback_info info)
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(text, NODE_FONT_SIZE, &valueItem);
     auto *dragAction = OH_ArkUI_CreateDragActionWithNode(text);
-    auto returnValue = OH_ArkUI_DragAction_SetTouchPointY(dragAction, TOUCHPOINTXY);
-    if ((returnValue) != (SUCCESS)) {
+    auto returnValue = OH_ArkUI_DragAction_SetTouchPointY(dragAction, TOUCHPOINTXY) == ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());
@@ -542,8 +548,8 @@ napi_value DragAndDropTest223(napi_env env, napi_callback_info info)
     OH_UdmfData *data = OH_UdmfData_Create();
     OH_UdmfData_AddRecord(data, record);
 
-    auto returnValue = OH_ArkUI_DragAction_SetData(dragAction, data);
-    if ((returnValue) != (SUCCESS)) {
+    auto returnValue = OH_ArkUI_DragAction_SetData(dragAction, data) == ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());
@@ -588,8 +594,8 @@ napi_value DragAndDropTest225(napi_env env, napi_callback_info info)
     nodeAPI->setAttribute(text, NODE_FONT_SIZE, &valueItem);
     auto *dragAction = OH_ArkUI_CreateDragActionWithNode(text);
     auto *previewOptions = OH_ArkUI_CreateDragPreviewOption();
-    auto returnValue = OH_ArkUI_DragAction_SetDragPreviewOption(dragAction, previewOptions);
-    if ((returnValue) != (SUCCESS)) {
+    auto returnValue = OH_ArkUI_DragAction_SetDragPreviewOption(dragAction, previewOptions) == ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());
@@ -634,9 +640,10 @@ napi_value DragAndDropTest227(napi_env env, napi_callback_info info)
     nodeAPI->setAttribute(text, NODE_FONT_SIZE, &valueItem);
     ArkUI_ContextHandle context = OH_ArkUI_GetContextByNode(text);
     auto *dragAction = OH_ArkUI_CreateDragActionWithContext(context);
-    auto returnValue = OH_ArkUI_DragAction_RegisterStatusListener(
-        dragAction, nullptr, [](ArkUI_DragAndDropInfo *dragAndDropInfo, void *userData) -> void {});
-    if ((returnValue) != (SUCCESS)) {
+    auto callback = [](ArkUI_DragAndDropInfo *dragAndDropInfo, void *userData) -> void {};
+    auto returnValue = OH_ArkUI_DragAction_RegisterStatusListener(dragAction, nullptr, callback) ==
+                       ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());
@@ -680,8 +687,8 @@ napi_value DragAndDropTest229(napi_env env, napi_callback_info info)
     nodeAPI->setAttribute(text, NODE_FONT_SIZE, &valueItem);
     ArkUI_ContextHandle context = OH_ArkUI_GetContextByNode(text);
     auto *dragAction = OH_ArkUI_CreateDragActionWithContext(context);
-    auto returnValue = OH_ArkUI_StartDrag(dragAction);
-    if ((returnValue) != (SUCCESS)) {
+    auto returnValue = OH_ArkUI_StartDrag(dragAction) == ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());
@@ -723,8 +730,8 @@ napi_value DragAndDropTest231(napi_env env, napi_callback_info info)
     ArkUI_NumberValue value[] = {{.f32 = size}};
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(text, NODE_FONT_SIZE, &valueItem);
-    auto returnValue = OH_ArkUI_SetDragEventStrictReportWithNode(text, true);
-    if ((returnValue) != (SUCCESS)) {
+    auto returnValue = OH_ArkUI_SetDragEventStrictReportWithNode(text, true) == ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());
@@ -766,8 +773,8 @@ napi_value DragAndDropTest233(napi_env env, napi_callback_info info)
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(text, NODE_FONT_SIZE, &valueItem);
     ArkUI_ContextHandle context = OH_ArkUI_GetContextByNode(text);
-    auto returnValue = OH_ArkUI_SetDragEventStrictReportWithContext(context, false);
-    if ((returnValue) != (SUCCESS)) {
+    auto returnValue = OH_ArkUI_SetDragEventStrictReportWithContext(context, false) == ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());
@@ -810,8 +817,9 @@ napi_value DragAndDropTest235(napi_env env, napi_callback_info info)
     nodeAPI->setAttribute(text, NODE_FONT_SIZE, &valueItem);
     std::vector<const char *> strlist;
     strlist.push_back("general.plain-text");
-    auto returnValue = OH_ArkUI_SetNodeAllowedDropDataTypes(text, strlist.data(), strlist.size());
-    if ((returnValue) != (SUCCESS)) {
+    auto returnValue = OH_ArkUI_SetNodeAllowedDropDataTypes(text, strlist.data(), strlist.size()) ==
+                       ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());
@@ -852,8 +860,8 @@ napi_value DragAndDropTest237(napi_env env, napi_callback_info info)
     ArkUI_NumberValue value[] = {{.f32 = size}};
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(text, NODE_FONT_SIZE, &valueItem);
-    auto returnValue = OH_ArkUI_DisallowNodeAnyDropDataTypes(text);
-    if ((returnValue) != (SUCCESS)) {
+    auto returnValue = OH_ArkUI_DisallowNodeAnyDropDataTypes(text) == ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());
@@ -894,8 +902,8 @@ napi_value DragAndDropTest239(napi_env env, napi_callback_info info)
     ArkUI_NumberValue value[] = {{.f32 = size}};
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(text, NODE_FONT_SIZE, &valueItem);
-    auto returnValue = OH_ArkUI_AllowNodeAllDropDataTypes(text);
-    if ((returnValue) != (SUCCESS)) {
+    auto returnValue = OH_ArkUI_AllowNodeAllDropDataTypes(text) == ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());
@@ -991,8 +999,9 @@ napi_value DragAndDropTest243(napi_env env, napi_callback_info info)
                                                {.u32 = 300},        {.i32 = 1}, {.u32 = 0x00FF0000}};
     ArkUI_AttributeItem dialog_Effect_item = {dialog_Effect_value,
                                               sizeof(dialog_Effect_value) / sizeof(ArkUI_NumberValue)};
-    auto returnValue = OH_ArkUI_CustomDialog_SetBackgroundEffect(dialog, &dialog_Effect_item);
-    if ((returnValue) != (SUCCESS)) {
+    auto returnValue = OH_ArkUI_CustomDialog_SetBackgroundEffect(dialog, &dialog_Effect_item) ==
+                       ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());

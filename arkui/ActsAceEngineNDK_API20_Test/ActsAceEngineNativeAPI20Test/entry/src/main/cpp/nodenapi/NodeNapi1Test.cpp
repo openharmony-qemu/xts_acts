@@ -38,7 +38,7 @@ napi_value GetUIContext(napi_env env, napi_callback_info info)
     }
     //获取context
     ArkUI_ContextHandle context = nullptr;
-    g_nodenapiresult2 = OH_ArkUI_GetContextFromNapiValue(env, args[0], &context);
+    g_nodenapiresult2 = OH_ArkUI_GetContextFromNapiValue(env, args[0], &context) == ARKUI_ERROR_CODE_NO_ERROR;
     napi_value exports;
     if (napi_create_object(env, &exports) != napi_ok) {
         napi_throw_type_error(env, NULL, "napi_create_object failed");
@@ -51,7 +51,7 @@ napi_value GetUIContext(napi_env env, napi_callback_info info)
 napi_value GetContextFromNapiValueTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_nodenapiresult2 == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
+    napi_create_int32(env, g_nodenapiresult2 ? 0 : 1, &retValue);
     return retValue;
 }
 
