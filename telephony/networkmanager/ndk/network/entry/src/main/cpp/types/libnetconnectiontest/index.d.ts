@@ -46,3 +46,7 @@ export const Unregister_DnsResolver: (a: number) => number;
 export const Register_DetCallback: (a: number) => number;
 export const NetCon_QueryProResult: (a: number, b: string) => number;
 export const NetConn_QueryTrRout: (a: number, b: string) => number;
+export const NetConn_FreeDnsResult: (a : number) => number;
+export const NetConn_BindSocket: (a : number) => number;
+export const CertVerification: (a : string, b: string) => number;
+export const GetCertificatesHost: (a : string) => number;

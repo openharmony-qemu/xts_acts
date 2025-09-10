@@ -1016,9 +1016,11 @@ function testAddAllowedWifiList() {
     try {
       let wifiAccessInfos: Array<wifiManager.WifiAccessInfo> = [{ssid: "wifi1"}]
       wifiManager.addAllowedWifiList(SELFWANT, wifiAccessInfos);
-      expect(false).assertTrue();
+      let ret: Array<wifiManager.WifiAccessInfo> = wifiManager.getAllowedWifiList(SELFWANT);
+      expect(ret.length == 1).assertTrue();
+      wifiManager.removeAllowedWifiList(SELFWANT, ret);
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1169,6 +1171,36 @@ function testAddAllowedWifiList() {
     done();
   });
 
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_00013
+   * @tc.name      : test_add_allowed_wifi_list_00013
+   * @tc.desc      : test wifiManager addAllowedWifiList without bssid
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_add_allowed_wifi_list_00013", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let wifiAccessInfos1: Array<wifiManager.WifiAccessInfo> = [
+        {ssid: "wifi1", bssid: "68:77:24:77:A6:D6"}
+      ]
+      let wifiAccessInfos2: Array<wifiManager.WifiAccessInfo> = [
+        {ssid: "wifi1"}
+      ]
+      wifiManager.addAllowedWifiList(SELFWANT, wifiAccessInfos1);
+      wifiManager.addAllowedWifiList(SELFWANT, wifiAccessInfos2);
+      let ret: Array<wifiManager.WifiAccessInfo> = wifiManager.getAllowedWifiList(SELFWANT);
+      expect(ret.length == 2).assertTrue();
+      wifiManager.removeAllowedWifiList(SELFWANT, ret);
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
 }
 
 function testRemoveAllowedWifiList() {
@@ -1230,11 +1262,22 @@ function testRemoveAllowedWifiList() {
   it("test_remove_allowed_wifi_list_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      let wifiAccessInfos: Array<wifiManager.WifiAccessInfo> = [{ssid: "wifi1"}]
-      wifiManager.removeAllowedWifiList(SELFWANT, wifiAccessInfos);
-      expect(false).assertTrue();
+      let wifiAccessInfos1: Array<wifiManager.WifiAccessInfo> = [
+        {ssid: "wifi1", bssid: "68:77:24:77:A6:D6"}
+      ]
+      let wifiAccessInfos2: Array<wifiManager.WifiAccessInfo> = [
+        {ssid: "wifi1"}
+      ]
+      wifiManager.addAllowedWifiList(SELFWANT, wifiAccessInfos1);
+      wifiManager.addAllowedWifiList(SELFWANT, wifiAccessInfos2);
+      let ret: Array<wifiManager.WifiAccessInfo> = wifiManager.getAllowedWifiList(SELFWANT);
+      expect(ret.length == 2).assertTrue();
+      wifiManager.removeAllowedWifiList(SELFWANT, wifiAccessInfos2);
+      let ret1: Array<wifiManager.WifiAccessInfo> = wifiManager.getAllowedWifiList(SELFWANT);
+      expect(ret1.length == 1).assertTrue();
+      wifiManager.removeAllowedWifiList(SELFWANT, ret1);
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1755,10 +1798,11 @@ function testRemoveDisallowedWifiList() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let wifiAccessInfos: Array<wifiManager.WifiAccessInfo> = [{ssid: "wifi1"}]
-      wifiManager.removeAllowedWifiList(SELFWANT, wifiAccessInfos);
-      expect(false).assertTrue();
+      wifiManager.removeDisallowedWifiList(SELFWANT, wifiAccessInfos);
+      let ret: Array<wifiManager.WifiAccessInfo> = wifiManager.getDisallowedWifiList(SELFWANT);
+      expect(ret.length == 0).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }

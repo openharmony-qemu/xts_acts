@@ -17,11 +17,13 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import { router } from '@kit.ArkUI';
+import nativexcomponent from 'libnativexcomponent.so';
 
 @Entry
 @Component
 struct XTSIndex {
   aboutToAppear() {
+    nativexcomponent.CheckNodeXComponentSurfaceRect();
     let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
     let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
     console.info('start run testcase!!!')

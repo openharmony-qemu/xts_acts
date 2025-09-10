@@ -59,6 +59,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameBT601EBU_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -80,6 +81,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameBT601SMPTEC_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -101,6 +103,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameBT2020HLG_0300 catch err: " + err);
+          done();
         }
     })
 
@@ -122,6 +125,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameBT2020PQ_0400 catch err: " + err);
+          done();
         }
     })
 
@@ -143,6 +147,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameP3HLG_0500 catch err: " + err);
+          done();
         }
     })
 
@@ -164,6 +169,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameP3PQ_0600 catch err: " + err);
+          done();
         }
     })
 
@@ -185,6 +191,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameADOBERGBLIMIT_0700 catch err: " + err);
+          done();
         }
     })
 
@@ -206,6 +213,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameDISPLAYP3LIMIT_0800 catch err: " + err);
+          done();
         }
     })
 
@@ -227,6 +235,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameSRGBLIMIT_0900 catch err: " + err);
+          done();
         }
     })
 
@@ -248,6 +257,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameSRGBLIMIT_1000 catch err: " + err);
+          done();
         }
     })
 
@@ -269,6 +279,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameBT601EBULIMIT_1100 catch err: " + err);
+          done();
         }
     })
 
@@ -290,6 +301,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameBT601SMPTECLIMIT_1200 catch err: " + err);
+          done();
         }
     })
 
@@ -311,6 +323,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameBT2020HLGLIMIT_1300 catch err: " + err);
+          done();
         }
     })
 
@@ -332,6 +345,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameBT2020PQLIMIT_1400 catch err: " + err);
+          done();
         }
     })
 
@@ -353,6 +367,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameP3HLGLIMIT_1500 catch err: " + err);
+          done();
         }
     })
 
@@ -374,6 +389,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameP3PQLIMIT_1600 catch err: " + err);
+          done();
         }
     })
 
@@ -395,6 +411,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameLINEARP3_1700 catch err: " + err);
+          done();
         }
     })
 
@@ -416,6 +433,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameLINEARSRGB_1800 catch err: " + err);
+          done();
         }
     })
 
@@ -437,6 +455,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameLINEARBT709_1900 catch err: " + err);
+          done();
         }
     })
 
@@ -458,6 +477,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_OHCreateColorSpaceFromNameLINEARBT2020_2000 catch err: " + err);
+          done();
         }
       })
 
@@ -479,6 +499,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameDCIP3_2100 catch err: " + err);
+          done();
         }
     })
 
@@ -500,6 +521,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameDISPLAYP3_2200 catch err: " + err);
+          done();
         }
     })
 
@@ -521,6 +543,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameBT709_2300 catch err: " + err);
+          done();
         }
     })
 
@@ -542,6 +565,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameDISPLAYSRGB_2400 catch err: " + err);
+          done();
         }
       })
 
@@ -563,6 +587,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameDISPLAYP3SRGB_2500 catch err: " + err);
+          done();
         }
       })
 
@@ -584,6 +609,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameDISPLAYP3HLG_2600 catch err: " + err);
+          done();
         }
       })
 
@@ -605,6 +631,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameDISPLAYP3PQ_2700 catch err: " + err);
+          done();
         }
       })
 
@@ -626,6 +653,7 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameCUSTOM_2800 catch err: " + err);
+          done();
         }
       })
   })

@@ -33,7 +33,7 @@ struct TextPickerDefaultPickerItemHeight {
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-
+      Text($r('sys.float.ohos_id_picker_show_count_landscape')).margin({ bottom: 10 }).id('landscape')
       TextPicker({ range: this.fruits, selected: this.select })
         .onChange((value: string|string[], index: number|number[]) => {
           console.info('Picker item changed, value: ' + value + ', index: ' + index)

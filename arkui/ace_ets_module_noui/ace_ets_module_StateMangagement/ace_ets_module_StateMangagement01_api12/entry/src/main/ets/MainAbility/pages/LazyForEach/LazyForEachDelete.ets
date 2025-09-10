@@ -182,7 +182,7 @@ struct RepeatLazyForEachString {
 
       .cachedCount(1)
       .border({ width: 1 })
-      .layoutWeight(1)
+      .height('50%')
 
       Button('Delete Data')
         .id('deleteButton')

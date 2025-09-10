@@ -982,5 +982,36 @@ export default function nativeImageTest() {
         expect(result).assertEqual(0);
         done();
       });
+
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_2800
+     * @tc.name       : testNativeImageReleaseNativeWindowBufferNormal
+     * @tc.desc       : test OH_NativeImage_ReleaseNativeWindowBuffer
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeImageReleaseNativeWindowBufferNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativeimage.oHNativeImageReleaseNativeWindowBufferNormal();
+        expect(result).assertEqual(0);
+        done();
+    });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_2900
+     * @tc.name       : testNativeImageReleaseNativeWindowBufferAbnormal01
+     * @tc.desc       : test OH_NativeImage_ReleaseNativeWindowBuffer
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeImageReleaseNativeWindowBufferAbnormal01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativeimage.oHNativeImageReleaseNativeWindowBufferAbnormal01();
+        expect(result).assertEqual(0);
+        done();
+    });
   })
 }

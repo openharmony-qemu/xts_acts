@@ -16,10 +16,12 @@
 #include "napi/native_api.h"
 #include <LocationKit/oh_location.h>
 #include <LocationKit/oh_location_type.h>
+#include <cstdlib>
 #include <js_native_api_types.h>
 #include <unistd.h>
 
 namespace {
+auto g_sleepTime = 3;
 static const Location_RequestConfig *requestConfig = OH_Location_CreateRequestConfig();
 }
 
@@ -48,13 +50,23 @@ static napi_value OH_Location_IsLocatingEnabled2(napi_env env, napi_callback_inf
     napi_create_int32(env, startCode, &result);
     return result;
 }
+void LocationInfoCallback(Location_Info *location, void *userData)
+{
+    size_t infoLen = 512;
+    char *additionalInfo = (char *)malloc(infoLen);
+    Location_ResultCode ResultCode = OH_LocationInfo_GetAdditionalInfo(location, additionalInfo, infoLen);
+};
 
 static napi_value OH_Location_StartLocating1(napi_env env, napi_callback_info info)
 {
     Location_RequestConfig *config = OH_Location_CreateRequestConfig();
-    Location_ResultCode startCode1 = OH_Location_StartLocating(config);
+    OH_LocationRequestConfig_SetCallback(config, LocationInfoCallback, nullptr);
+    OH_LocationRequestConfig_SetInterval(config, 1);
+    Location_ResultCode startCode = OH_Location_StartLocating(config);
+    sleep(g_sleepTime);
+    Location_ResultCode qaz = OH_Location_StopLocating(config);
     napi_value result = nullptr;
-    napi_create_int32(env, startCode1, &result);
+    napi_create_int32(env, startCode, &result);
     return result;
 }
 static napi_value OH_Location_StartLocating2(napi_env env, napi_callback_info info)
@@ -62,6 +74,17 @@ static napi_value OH_Location_StartLocating2(napi_env env, napi_callback_info in
     Location_ResultCode startCode = OH_Location_StartLocating(nullptr);
     napi_value result = nullptr;
     napi_create_int32(env, startCode, &result);
+    return result;
+}
+static napi_value OH_Location_StopLocating1(napi_env env, napi_callback_info info)
+{
+    sleep(g_sleepTime);
+    Location_RequestConfig *config = OH_Location_CreateRequestConfig();
+    OH_Location_StartLocating(config);
+    sleep(g_sleepTime);
+    Location_ResultCode stopCode = OH_Location_StopLocating(config);
+    napi_value result = nullptr;
+    napi_create_int32(env, stopCode, &result);
     return result;
 }
 static napi_value OH_Location_StopLocating2(napi_env env, napi_callback_info info)
@@ -174,6 +197,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"OH_Location_StartLocating1", nullptr, OH_Location_StartLocating1, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"OH_Location_StartLocating2", nullptr, OH_Location_StartLocating2, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"OH_Location_StopLocating1", nullptr, OH_Location_StopLocating1, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"OH_Location_StopLocating2", nullptr, OH_Location_StopLocating2, nullptr, nullptr, nullptr, napi_default,
          nullptr},

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -52,14 +52,16 @@ export default class CommonFunc {
   static setScreenOrientation(orientation: number) {
     screen.getAllScreens().then(data => {
       const screenClass = data[0];
-      console.log('Succeeded in getting all screens. Data:', data);
-      screenClass.setOrientation(orientation, (err: BusinessError) => {
-        if (err) {
-          console.error('Failed to set the vertical orientation. Code:', err);
-          return;
-        }
-        console.info('Succeeded in setting the vertical orientation.');
-      });
+      if (screenClass != undefined){
+        console.log('Succeeded in getting all screens. Data:', data);
+        let promise: Promise<void> = screenClass.setOrientation(screen.Orientation.VERTICAL);
+        promise.then(() => {
+          console.info('Succeeded in setting the vertical orientation.');
+        }).catch((err: BusinessError) => {
+          console.error(`Failed to set the vertical orientation. Code:${err.code},message is ${err.message}`);
+        });
+      }
+      
     }).catch((err: BusinessError) => {
       console.log('Failed to get all screens. Cause:', err);
     });

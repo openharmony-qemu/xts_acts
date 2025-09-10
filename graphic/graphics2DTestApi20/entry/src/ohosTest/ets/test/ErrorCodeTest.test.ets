@@ -35,6 +35,7 @@ export default function ErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_OHNativeErrorCode_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -56,6 +57,7 @@ export default function ErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_OHNativeErrorCode_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -77,6 +79,7 @@ export default function ErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_Drawing_BufferErrorCodeOK_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -98,6 +101,7 @@ export default function ErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_OHNativeErrorCodeBuffer_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -119,6 +123,7 @@ export default function ErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_OHNativeErrorCodeBufferSupport_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -141,6 +146,7 @@ export default function ErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_Drawing_BufferHDIError_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -162,6 +168,7 @@ export default function ErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_OHNativeErrorCodeBufferImage_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -183,6 +190,7 @@ export default function ErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_OHNativeErrorCodeImageNoBuffer_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -204,6 +212,7 @@ export default function ErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeImage_ErrCodeBUFFER_STATE_INVALID catch err: " + err);
+          done();
         }
       })
 
@@ -225,6 +234,7 @@ export default function ErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeImage_ErrCodeBUFFER_NOT_IN_CACHE catch err: " + err);
+          done();
         }
       })
 
@@ -246,6 +256,7 @@ export default function ErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_OHNativeErrorCodeVSync_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -267,6 +278,7 @@ export default function ErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_OHNativeErrorCodeVSync_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -288,6 +300,7 @@ export default function ErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_OHNativeErrorCodeWindow_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -309,6 +322,7 @@ export default function ErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_OHNativeErrorCodeWindowInvalid_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -330,6 +344,7 @@ export default function ErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeErrorCodeWindowUNKNOW_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -351,6 +366,7 @@ export default function ErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_Drawing_DrawingErrorCode_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -416,6 +432,7 @@ export default function ErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_EffectTileModeREPEATSuccess_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -437,6 +454,7 @@ export default function ErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_EffectTileModeMIRROR_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -458,6 +476,7 @@ export default function ErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_EffectTileModeDECAL_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -479,6 +498,7 @@ export default function ErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_Drawing_SamplingOptionsCopy_0100 catch err: " + err);
+          done();
         }
       })
     /**
@@ -499,6 +519,7 @@ export default function ErrorCodeTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_Drawing_SamplingOptionsCopy_0200 catch err: " + err);
+          done();
         }
       })
   })

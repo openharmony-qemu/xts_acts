@@ -35,5 +35,6 @@ struct stepperInterface005 {
         this.currentIndex = pendingIndex
       })
     }
+    .height('90%')
   }
 }

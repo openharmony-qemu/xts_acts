@@ -36,6 +36,7 @@ export default function EffectShareTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_Drawing_ShaderEffectCreatePixelMapShader_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -57,6 +58,7 @@ export default function EffectShareTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_Drawing_ShaderEffectCreatePixelMapShader_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -78,6 +80,7 @@ export default function EffectShareTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_Drawing_ImageFilterCreateBlurWithCrop_0100 catch err: " + err);
+          done();
         }
       })
   })

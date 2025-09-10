@@ -23,6 +23,7 @@ group("DFXTest") {
       "log_dotting_one:ActsWebLogDottingOneTest",
       "log_dotting_seven:ActsWebLogDottingSevenTest",
       "log_dotting_six:ActsWebLogDottingSixTest",
+      "log_dotting_ten:ActsWebLogDottingTenTest",
       "log_dotting_three:ActsWebLogDottingThreeTest",
       "log_dotting_two:ActsWebLogDottingTwoTest",
       "performance_maintenance:ActsWebPerformanceMaintenanceTest",

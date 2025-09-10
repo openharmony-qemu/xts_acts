@@ -318,7 +318,6 @@
     "MainAbility/pages/scroll/ScrollScrollEdge003Test",
     "MainAbility/pages/image/ImageOnfinishTest",
     "MainAbility/pages/image/ImageOnDownloadProgressTest",
-    "MainAbility/pages/image/ImageDraggableTest",
     "MainAbility/pages/imagespan/ImageSpanOnClickTest",
     "MainAbility/pages/span/SpanOnClickTest",
     "MainAbility/pages/waterflow/WaterFlowOnReachEndTest",

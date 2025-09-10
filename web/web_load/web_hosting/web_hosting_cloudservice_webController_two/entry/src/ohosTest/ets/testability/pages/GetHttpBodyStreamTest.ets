@@ -31,6 +31,7 @@ struct WebComponent {
             this.schemeHandler.onRequestStart((request: webview.WebSchemeHandlerRequest,
               resourceHandler: webview.WebResourceHandler) => {
               console.log('[schemeHandler] onRequestStart', request.hasGesture());
+              LocalContext.context.eventHub.emit('isEnd00')
               let stream = request.getHttpBodyStream();
               if (!stream) {
                 LocalContext.context.eventHub.emit('GetHttpBodyStreamTest')

@@ -87,6 +87,8 @@ import setTest from './PhotoAsset/set.test.ets';
 import mediaAssetChangeRequestErrorTest from './MediaAssetChangeRequest/mediaAssetChangeRequestError.test.ets';
 import positionTypeTest from './PhotoAccessHelper/positionType.test'
 import registerPhotoChangeTest from './PhotoAccessHelper/registerPhotoChange.test'
+import setHasApplinkChangeRequestTest from './MediaAssetChangeRequest/setHasApplink.test';
+import setApplinkInfoChangeRequestTest from './MediaAssetChangeRequest/setApplinkInfo.test';
 
 export default function testsuite() {
   provisionResourcesTest();
@@ -164,4 +166,6 @@ export default function testsuite() {
   setTest();
   positionTypeTest();
   registerPhotoChangeTest();
+  setApplinkInfoChangeRequestTest();
+  setHasApplinkChangeRequestTest();
 }

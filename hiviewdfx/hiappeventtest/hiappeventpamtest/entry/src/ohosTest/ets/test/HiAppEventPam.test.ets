@@ -206,7 +206,7 @@ export default function HiAppEventPamTest() {
             {domain: hiAppEvent.domain.OS,
               names: [hiAppEvent.event.APP_LAUNCH, hiAppEvent.event.SCROLL_JANK, hiAppEvent.event.CPU_USAGE_HIGH,
                 hiAppEvent.event.BATTERY_USAGE, hiAppEvent.event.RESOURCE_OVERLIMIT, hiAppEvent.event.ADDRESS_SANITIZER,
-                hiAppEvent.event.MAIN_THREAD_JANK]}
+                hiAppEvent.event.MAIN_THREAD_JANK, hiAppEvent.event.APP_HICOLLIE, hiAppEvent.event.AUDIO_JANK_FRAME]}
           ],
           onTrigger: (curRow, curSize, holder) => {
             expect(holder != null).assertTrue();

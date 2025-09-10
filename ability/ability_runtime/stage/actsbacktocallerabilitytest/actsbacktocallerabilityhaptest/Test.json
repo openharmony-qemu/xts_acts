@@ -12,7 +12,8 @@
         {
             "test-file-name": [
                 "ActsBackToCallerAbilityHapTest.hap",
-                "ActsBackDemoHap.hap"
+                "ActsBackDemoHap.hap",
+                "ActsBackDemoHap1.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
@@ -22,12 +23,9 @@
           "run-command": [
               "power-shell wakeup",
               "power-shell setmode 602",
-              "param set persist.sys.abilityms.support.ecologicalrulemgrservice false",
               "uinput -T -d 300 600 -m 300 600 300 100 -u 300 100"
           ],
-          "teardown-command": [
-              "param set persist.sys.abilityms.support.ecologicalrulemgrservice true"
-          ]
+          "teardown-command": []
       }
     ] 
 }

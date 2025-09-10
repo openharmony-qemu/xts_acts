@@ -44,6 +44,8 @@ export default function ActsTransactionTest() {
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_DestroyOptions_0100 catch err: " +
             err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -68,6 +70,8 @@ export default function ActsTransactionTest() {
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_DestroyOptions_0200 catch err: " +
             err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -89,6 +93,8 @@ export default function ActsTransactionTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Commit_0300 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -110,6 +116,8 @@ export default function ActsTransactionTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Commit_0400 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -131,6 +139,8 @@ export default function ActsTransactionTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Rollback_0500 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -152,6 +162,8 @@ export default function ActsTransactionTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Rollback_0600 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -173,6 +185,8 @@ export default function ActsTransactionTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Insert_0700 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -194,6 +208,8 @@ export default function ActsTransactionTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Insert_0800 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -215,6 +231,8 @@ export default function ActsTransactionTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Insert_0900 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -239,6 +257,8 @@ export default function ActsTransactionTest() {
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_InsertWithConflictResolution_1000 catch err: " +
             err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -263,6 +283,8 @@ export default function ActsTransactionTest() {
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_InsertWithConflictResolution_1100 catch err: " +
             err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -287,6 +309,8 @@ export default function ActsTransactionTest() {
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_InsertWithConflictResolution_1200 catch err: " +
             err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -309,6 +333,8 @@ export default function ActsTransactionTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_BatchInsert_1300 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -331,6 +357,8 @@ export default function ActsTransactionTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_BatchInsert_1400 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -353,6 +381,8 @@ export default function ActsTransactionTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_BatchInsert_1500 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -374,6 +404,8 @@ export default function ActsTransactionTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Update_1600 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -395,6 +427,8 @@ export default function ActsTransactionTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Update_1700 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -416,6 +450,8 @@ export default function ActsTransactionTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Update_1800 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -440,6 +476,8 @@ export default function ActsTransactionTest() {
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_UpdateWithConflictResolution_1900 catch err: " +
             err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -464,6 +502,8 @@ export default function ActsTransactionTest() {
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_UpdateWithConflictResolution_2000 catch err: " +
             err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -488,6 +528,8 @@ export default function ActsTransactionTest() {
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_UpdateWithConflictResolution_2100 catch err: " +
             err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -501,16 +543,18 @@ export default function ActsTransactionTest() {
      */
     it('SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Delete_2200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      try {
-        console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Delete_2200 start====");
-        let result: number = testNapi.testTransDeleteInvalidParam();
-        console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Delete_2200 result====", result);
-        expect(result).assertEqual(RDB_E_INVALID_ARGS);
-        done();
-      } catch (err) {
-        console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Delete_2200 catch err: " + err);
-      }
-    })
+        try {
+          console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Delete_2200 start====");
+          let result: number = testNapi.testTransDeleteInvalidParam();
+          console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Delete_2200 result====", result);
+          expect(result).assertEqual(RDB_E_INVALID_ARGS);
+          done();
+        } catch (err) {
+          console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Delete_2200 catch err: " + err);
+          expect(err).assertFail();
+          done();
+        }
+      })
 
     /**
      * @tc.number  : SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Delete_2300
@@ -530,6 +574,8 @@ export default function ActsTransactionTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Delete_2300 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -551,6 +597,8 @@ export default function ActsTransactionTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Delete_2400 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -572,6 +620,8 @@ export default function ActsTransactionTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Execute_2500 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -593,6 +643,8 @@ export default function ActsTransactionTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Execute_2600 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -614,6 +666,8 @@ export default function ActsTransactionTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Execute_2700 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -635,6 +689,54 @@ export default function ActsTransactionTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_RdbTrans_Destroy_2800 catch err: " + err);
+          expect(err).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  : SUB_DistributedData_RelationalStore_SDK_RDB_TRANS_IMMEDIATE_2900
+     * @tc.name    : SUB_DistributedData_RelationalStore_SDK_RDB_TRANS_IMMEDIATE_2900
+     * @tc.desc    : Test the scenario of enumeration value RDB_TRANS_IMMEDIATE.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_RDB_TRANS_IMMEDIATE_2900',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          console.info("====>SUB_DistributedData_RelationalStore_SDK_RDB_TRANS_IMMEDIATE_2900 start====");
+          let result = testNapi.testOHRdbTransOptionSetTypeImmediate();
+          expect(result).assertEqual(0);
+          console.info("====>SUB_DistributedData_RelationalStore_SDK_RDB_TRANS_IMMEDIATE_2900 result: " + result);
+          done();
+        } catch (err) {
+          console.error("====>SUB_DistributedData_RelationalStore_SDK_RDB_TRANS_IMMEDIATE_2900 catch err: " + err);
+          expect(err).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  : SUB_DistributedData_RelationalStore_SDK_RDB_TRANS_EXCLUSIVE_3000
+     * @tc.name    : SUB_DistributedData_RelationalStore_SDK_RDB_TRANS_EXCLUSIVE_3000
+     * @tc.desc    : Test the scenario of enumeration value RDB_TRANS_EXCLUSIVE.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_RDB_TRANS_EXCLUSIVE_3000',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          console.info("====>SUB_DistributedData_RelationalStore_SDK_RDB_TRANS_EXCLUSIVE_3000 start====");
+          let result = testNapi.testOHRdbTransOptionSetTypeExclusive();
+          expect(result).assertEqual(0);
+          console.info("====>SUB_DistributedData_RelationalStore_SDK_RDB_TRANS_EXCLUSIVE_3000 result: " + result);
+          done();
+        } catch (err) {
+          console.error("====>SUB_DistributedData_RelationalStore_SDK_RDB_TRANS_EXCLUSIVE_3000 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
   })

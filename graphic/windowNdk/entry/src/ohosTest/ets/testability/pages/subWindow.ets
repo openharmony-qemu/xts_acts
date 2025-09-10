@@ -48,7 +48,7 @@ struct subWindow {
               this.outSetValueOne = value;
               console.info('value:' + value + 'mode:' + mode.toString());
             })
-          // toFixed(0)将滑动条返回值处理为整数精度
+          // toFixed(0)
           Text(this.outSetValueOne.toFixed(0))
             .fontSize(12)
             .id('sliderTextId')

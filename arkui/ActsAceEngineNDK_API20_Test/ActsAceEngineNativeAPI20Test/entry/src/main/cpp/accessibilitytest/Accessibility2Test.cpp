@@ -31,7 +31,7 @@ napi_value SetElementId0100(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetElementId(elementInfo, elementId);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL ? 0 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -41,7 +41,8 @@ napi_value SetElementId0200(napi_env env, napi_callback_info info)
     int32_t elementId = 1234;
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetElementId(elementInfo, elementId);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -57,7 +58,7 @@ napi_value SetParentId0100(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetParentId(elementInfo, elementId);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL ? 0 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -67,7 +68,8 @@ napi_value SetParentId0200(napi_env env, napi_callback_info info)
     int32_t parentId = 1234;
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetParentId(elementInfo, parentId);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -83,7 +85,7 @@ napi_value SetComponentType0100(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetComponentType(elementInfo, componentType);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL ? 0 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -93,7 +95,8 @@ napi_value SetComponentType0200(napi_env env, napi_callback_info info)
     const char* componentType = "ComponentType";
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetComponentType(elementInfo, componentType);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -104,7 +107,8 @@ napi_value SetComponentType0300(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetComponentType(elementInfo, componentType);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -120,7 +124,7 @@ napi_value SetContents0100(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetContents(elementInfo, contents);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL ? 0 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -130,7 +134,8 @@ napi_value SetContents0200(napi_env env, napi_callback_info info)
     const char* contents = "Contents";
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetContents(elementInfo, contents);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -141,7 +146,8 @@ napi_value SetContents0300(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetContents(elementInfo, contents);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -157,7 +163,7 @@ napi_value SetHintText0100(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetHintText(elementInfo, hintText);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL ? 0 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -167,7 +173,8 @@ napi_value SetHintText0200(napi_env env, napi_callback_info info)
     const char* hintText = "辅助文本";
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetHintText(elementInfo, hintText);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -178,7 +185,8 @@ napi_value SetHintText0300(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetHintText(elementInfo, hintText);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -194,7 +202,7 @@ napi_value SetAccessibilityText0100(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetAccessibilityText(elementInfo, accessibilityText);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL ? 0 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -204,7 +212,8 @@ napi_value SetAccessibilityText0200(napi_env env, napi_callback_info info)
     const char* accessibilityText = nullptr;
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetAccessibilityText(elementInfo, accessibilityText);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -215,7 +224,8 @@ napi_value SetAccessibilityText0300(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetAccessibilityText(elementInfo, accessibilityText);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -232,7 +242,7 @@ napi_value SetAccessibilityDescription0100(napi_env env, napi_callback_info info
         accessibilityDescription);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL ? 0 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -243,7 +253,8 @@ napi_value SetAccessibilityDescription0200(napi_env env, napi_callback_info info
     int32_t result =
     OH_ArkUI_AccessibilityElementInfoSetAccessibilityDescription(elementInfo, accessibilityDescription);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -260,7 +271,8 @@ napi_value SetAccessibilityDescription0300(napi_env env, napi_callback_info info
     OH_ArkUI_AccessibilityElementInfoSetAccessibilityDescription(elementInfo, accessibilityDescription);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -277,7 +289,7 @@ napi_value SetChildNodeIds0100(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetChildNodeIds(elementInfo, childCount, childNodeIds);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL ? 0 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -288,7 +300,8 @@ napi_value SetChildNodeIds0200(napi_env env, napi_callback_info info)
     int64_t childNodeIds[3] =  {1, 2, 3};
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetChildNodeIds(elementInfo, childCount, childNodeIds);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -300,7 +313,8 @@ napi_value SetChildNodeIds0300(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetChildNodeIds(elementInfo, childCount, childNodeIds);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -312,7 +326,8 @@ napi_value SetChildNodeIds0400(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetChildNodeIds(elementInfo, childCount, childNodeIds);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -333,7 +348,7 @@ napi_value SetOperationActions0100(napi_env env, napi_callback_info info)
                                                                           operationCount, operationActions);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL ? 0 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -348,7 +363,8 @@ napi_value SetOperationActions0200(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetOperationActions(elementInfo,
                                                                           operationCount, operationActions);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -364,7 +380,8 @@ napi_value SetOperationActions0300(napi_env env, napi_callback_info info)
                                                                           operationCount, operationActions);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -377,7 +394,8 @@ napi_value SetOperationActions0400(napi_env env, napi_callback_info info)
                                                                           operationCount, operationActions);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -399,7 +417,7 @@ napi_value SetScreenRect0100(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetScreenRect(elementInfo, screenRect);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL ? 0 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -415,7 +433,8 @@ napi_value SetScreenRect0200(napi_env env, napi_callback_info info)
     ArkUI_AccessibleRect* screenRect = reinterpret_cast<ArkUI_AccessibleRect*>(&rect);
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetScreenRect(elementInfo, screenRect);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
@@ -426,7 +445,8 @@ napi_value SetScreenRect0300(napi_env env, napi_callback_info info)
     int32_t result = OH_ArkUI_AccessibilityElementInfoSetScreenRect(elementInfo, screenRect);
     OH_ArkUI_DestoryAccessibilityElementInfo(elementInfo);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER ?
+                      PARAM_NEGATIVE_2 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 

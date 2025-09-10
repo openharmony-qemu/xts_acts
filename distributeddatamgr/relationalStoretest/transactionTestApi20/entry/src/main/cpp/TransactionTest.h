@@ -41,6 +41,7 @@ extern int g_tSAlreadyClosedCode;
 extern int g_tSErrorCode;
 
 void InitRdbTransConfigV2(OH_Rdb_ConfigV2 *configV2);
+void InitRdbTransConfig();
 
 void AddTransactionTest(std::vector<napi_property_descriptor> &descData);
 
@@ -48,37 +49,31 @@ napi_value TestDestroyOptionsInvalidParam(napi_env env, napi_callback_info info)
 napi_value TestDestroyOptionsSuccess(napi_env env, napi_callback_info info);
 napi_value TestTransCommitInvalidParam(napi_env env, napi_callback_info info);
 napi_value TestCommitTransDatabaseClosed(napi_env env, napi_callback_info info);
-
 napi_value TestTransRollbackInvalidParam(napi_env env, napi_callback_info info);
 napi_value TestTransRollbackDatabaseClosed(napi_env env, napi_callback_info info);
-
 napi_value TestInsertInvalidParam(napi_env env, napi_callback_info info);
 napi_value TestInsertDatabaseClosed(napi_env env, napi_callback_info info);
 napi_value TestTransInsertError(napi_env env, napi_callback_info info);
-
 napi_value TestTransInsertWithConflictResolutionSuccess(napi_env env, napi_callback_info info);
 napi_value TestInsertWithConflictResolutionError(napi_env env, napi_callback_info info);
 napi_value TestInsertWithConflictResolutionDatabaseClosed(napi_env env, napi_callback_info info);
-
 napi_value TestTransBatchInsertInvalidParam(napi_env env, napi_callback_info info);
 napi_value TestTransBatchInsertError(napi_env env, napi_callback_info info);
 napi_value TestTransBatchInsertDatabaseClosed(napi_env env, napi_callback_info info);
-
 napi_value TestUpdateInvalidParam(napi_env env, napi_callback_info info);
 napi_value TestTransUpdateError(napi_env env, napi_callback_info info);
 napi_value TestTransUpdateDatabaseClosed(napi_env env, napi_callback_info info);
-
 napi_value TestUpdateWithConflictResolutionInvalidParam(napi_env env, napi_callback_info info);
 napi_value TestTransUpdateWithConflictResolutionError(napi_env env, napi_callback_info info);
 napi_value TestTransUpdateWithConflictResolutionDatabaseClosed(napi_env env, napi_callback_info info);
-
 napi_value TestTransDeleteInvalidParam(napi_env env, napi_callback_info info);
 napi_value TestTransDeleteError(napi_env env, napi_callback_info info);
 napi_value TestTransDeleteDatabaseClosed(napi_env env, napi_callback_info info);
-
 napi_value TestTransExecuteInvalidParam(napi_env env, napi_callback_info info);
 napi_value TestTransExecuteError(napi_env env, napi_callback_info info);
 napi_value TestTransExecuteDatabaseClosed(napi_env env, napi_callback_info info);
 napi_value TestDestroyInvalidParam(napi_env env, napi_callback_info info);
+napi_value TestOHRdbTransOptionSetTypeImmediate(napi_env env, napi_callback_info info);
+napi_value TestOHRdbTransOptionSetTypeExclusive(napi_env env, napi_callback_info info);
 
 #endif //TRANSACTIONTESTAPI20_TRANSACTIONTEST_H

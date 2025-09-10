@@ -14,7 +14,9 @@
  */
 
 import webOnPermissionRequest from './WebOnPermissionRequestTest.test'
+import WebDoubleInnerNucleus from './WebDoubleInnerNucleus.test'
 
 export default function testsuite() {
   webOnPermissionRequest()
+  WebDoubleInnerNucleus()
 }

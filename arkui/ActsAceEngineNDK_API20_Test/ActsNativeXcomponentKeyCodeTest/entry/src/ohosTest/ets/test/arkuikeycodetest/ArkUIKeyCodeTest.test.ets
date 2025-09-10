@@ -23,12 +23,9 @@ const KEY_CODE_ERROR = 1;
 
 export default function ArkUIKeyCodeNdkTest() {
   describe('ArkUIKeyCodeNdkTest', () => {
-    let text: Component;
     let button: Component;
-    let title: string;
     beforeAll(async (done: Function) => {
       await Utils.pushPageNoClear(`ArkUIKeyCodeTest/ArkUIKeyCodeTest`, () => {});
-      text = await Utils.driver.findComponent(ON.id("NativeXComponentKeyCodeText"));
       button = await Utils.driver.findComponent(ON.id("send"));
       done();
     })
@@ -46,11 +43,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testGetArkUIKeyCodeEventUnknown0100 start====");
           globalThis.keyCode = -1;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == -1);
           done();
         } catch (err) {
@@ -73,11 +67,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEFN0100 start====");
           globalThis.keyCode = 0;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 0);
           done();
         } catch (err) {
@@ -100,11 +91,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeycodeVolumeUp0100 start====");
           globalThis.keyCode = 16;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 16);
           done();
         } catch (err) {
@@ -128,11 +116,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeVolumeDown0100 start====");
           globalThis.keyCode = 17;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 17);
           done();
         } catch (err) {
@@ -155,11 +140,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodePower0100 start====");
           globalThis.keyCode = 18;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 18);
           done();
         } catch (err) {
@@ -182,11 +164,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeCamera0100 start====");
           globalThis.keyCode = 19;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 19);
           done();
         } catch (err) {
@@ -209,11 +188,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeVolumeMute0100 start====");
           globalThis.keyCode = 22;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 22);
           done();
         } catch (err) {
@@ -236,11 +212,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeMute0100 start====");
           globalThis.keyCode = 23;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 23);
           done();
         } catch (err) {
@@ -263,11 +236,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeBrightnessUp0100 start====");
           globalThis.keyCode = 40;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 40);
           done();
         } catch (err) {
@@ -290,11 +260,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeBrightnessDown0100 start====");
           globalThis.keyCode = 41;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 41);
           done();
         } catch (err) {
@@ -317,11 +284,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCode0_0100 start====");
           globalThis.keyCode = 2000;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2000);
           done();
         } catch (err) {
@@ -344,11 +308,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCode1_0100 start====");
           globalThis.keyCode = 2001;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2001);
           done();
         } catch (err) {
@@ -371,11 +332,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCode2_0100 start====");
           globalThis.keyCode = 2002;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2002);
           done();
         } catch (err) {
@@ -398,11 +356,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCode3_0100 start====");
           globalThis.keyCode = 2003;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2003);
           done();
         } catch (err) {
@@ -425,11 +380,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCode4_0100 start====");
           globalThis.keyCode = 2004;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2004);
           done();
         } catch (err) {
@@ -452,11 +404,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCode5_0100 start====");
           globalThis.keyCode = 2005;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2005);
           done();
         } catch (err) {
@@ -479,11 +428,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCode6_0100 start====");
           globalThis.keyCode = 2006;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2006);
           done();
         } catch (err) {
@@ -506,11 +452,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCode7_0100 start====");
           globalThis.keyCode = 2007;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2007);
           done();
         } catch (err) {
@@ -533,11 +476,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCode8_0100 start====");
           globalThis.keyCode = 2008;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2008);
           done();
         } catch (err) {
@@ -560,11 +500,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCode9_0100 start====");
           globalThis.keyCode = 2009;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2009);
           done();
         } catch (err) {
@@ -587,11 +524,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeStar0100 start====");
           globalThis.keyCode = 2010;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2010);
           done();
         } catch (err) {
@@ -614,11 +548,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodePound0100 start====");
           globalThis.keyCode = 2011;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2011);
           done();
         } catch (err) {
@@ -641,11 +572,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeDpadUp0100 start====");
           globalThis.keyCode = 2012;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2012);
           done();
         } catch (err) {
@@ -668,11 +596,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeDpadDown0100 start====");
           globalThis.keyCode = 2013;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2013);
           done();
         } catch (err) {
@@ -695,11 +620,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeDpadLeft0100 start====");
           globalThis.keyCode = 2014;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2014);
           done();
         } catch (err) {
@@ -722,11 +644,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeDpadRight0100 start====");
           globalThis.keyCode = 2015;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2015);
           done();
         } catch (err) {
@@ -749,11 +668,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeDpadCenter0100 start====");
           globalThis.keyCode = 2016;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2016);
           done();
         } catch (err) {
@@ -776,11 +692,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeycodeA0100 start====");
           globalThis.keyCode = 2017;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2017);
           done();
         } catch (err) {
@@ -803,11 +716,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeycodeB0100 start====");
           globalThis.keyCode = 2018;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2018);
           done();
         } catch (err) {
@@ -830,11 +740,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeycodeC0100 start====");
           globalThis.keyCode = 2019;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2019);
           done();
         } catch (err) {
@@ -857,11 +764,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeycodeD0100 start====");
           globalThis.keyCode = 2020;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2020);
           done();
         } catch (err) {
@@ -884,11 +788,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeycodeE0100 start====");
           globalThis.keyCode = 2021;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2021);
           done();
         } catch (err) {
@@ -911,11 +812,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeycodeF0100 start====");
           globalThis.keyCode = 2022;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2022);
           done();
         } catch (err) {
@@ -938,11 +836,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeycodeG0100 start====");
           globalThis.keyCode = 2023;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2023);
           done();
         } catch (err) {
@@ -965,11 +860,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeycodeH0100 start====");
           globalThis.keyCode = 2024;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2024);
           done();
         } catch (err) {
@@ -992,11 +884,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeycodeI0100 start====");
           globalThis.keyCode = 2025;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2025);
           done();
         } catch (err) {
@@ -1019,11 +908,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeJ0100 start====");
           globalThis.keyCode = 2026;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2026);
           done();
         } catch (err) {
@@ -1047,11 +933,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeK0100 start====");
           globalThis.keyCode = 2027;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2027);
           done();
         } catch (err) {
@@ -1074,11 +957,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeL0100 start====");
           globalThis.keyCode = 2028;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2028);
           done();
         } catch (err) {
@@ -1101,11 +981,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeM0100 start====");
           globalThis.keyCode = 2029;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2029);
           done();
         } catch (err) {
@@ -1128,11 +1005,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeN0100 start====");
           globalThis.keyCode = 2030;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2030);
           done();
         } catch (err) {
@@ -1155,11 +1029,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeO0100 start====");
           globalThis.keyCode = 2031;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2031);
           done();
         } catch (err) {
@@ -1182,11 +1053,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeP0100 start====");
           globalThis.keyCode = 2032;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2032);
           done();
         } catch (err) {
@@ -1209,11 +1077,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeQ0100 start====");
           globalThis.keyCode = 2033;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2033);
           done();
         } catch (err) {
@@ -1236,11 +1101,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeR0100 start====");
           globalThis.keyCode = 2034;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2034);
           done();
         } catch (err) {
@@ -1263,11 +1125,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeS0100 start====");
           globalThis.keyCode = 2035;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2035);
           done();
         } catch (err) {
@@ -1290,11 +1149,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeT0100 start====");
           globalThis.keyCode = 2036;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2036);
           done();
         } catch (err) {
@@ -1317,11 +1173,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeU0100 start====");
           globalThis.keyCode = 2037;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2037);
           done();
         } catch (err) {
@@ -1344,11 +1197,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeV0100 start====");
           globalThis.keyCode = 2038;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2038);
           done();
         } catch (err) {
@@ -1371,11 +1221,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeW0100 start====");
           globalThis.keyCode = 2039;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2039);
           done();
         } catch (err) {
@@ -1398,11 +1245,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeX0100 start====");
           globalThis.keyCode = 2040;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2040);
           done();
         } catch (err) {
@@ -1425,11 +1269,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeY0100 start====");
           globalThis.keyCode = 2041;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2041);
           done();
         } catch (err) {
@@ -1452,11 +1293,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeZ0100 start====");
           globalThis.keyCode = 2042;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2042);
           done();
         } catch (err) {
@@ -1479,11 +1317,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeComma0100 start====");
           globalThis.keyCode = 2043;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2043);
           done();
         } catch (err) {
@@ -1506,11 +1341,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodePeriod0100 start====");
           globalThis.keyCode = 2044;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2044);
           done();
         } catch (err) {
@@ -1533,11 +1365,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeAltLeft0100 start====");
           globalThis.keyCode = 2045;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2045);
           done();
         } catch (err) {
@@ -1560,11 +1389,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeAltRight0100 start====");
           globalThis.keyCode = 2046;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2046);
           done();
         } catch (err) {
@@ -1587,11 +1413,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeShiftLeft0100 start====");
           globalThis.keyCode = 2047;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2047);
           done();
         } catch (err) {
@@ -1614,11 +1437,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeShiftRight0100 start====");
           globalThis.keyCode = 2048;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2048);
           done();
         } catch (err) {
@@ -1641,11 +1461,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeTab0100 start====");
           globalThis.keyCode = 2049;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2049);
           done();
         } catch (err) {
@@ -1668,11 +1485,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeSpace0100 start====");
           globalThis.keyCode = 2050;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2050);
           done();
         } catch (err) {
@@ -1695,11 +1509,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeSym0100 start====");
           globalThis.keyCode = 2051;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2051);
           done();
         } catch (err) {
@@ -1722,11 +1533,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeExplorer0100 start====");
           globalThis.keyCode = 2052;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2052);
           done();
         } catch (err) {
@@ -1749,11 +1557,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeEnvelope0100 start====");
           globalThis.keyCode = 2053;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2053);
           done();
         } catch (err) {
@@ -1776,11 +1581,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeEnter0100 start====");
           globalThis.keyCode = 2054;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2054);
           done();
         } catch (err) {
@@ -1803,11 +1605,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeDel0100 start====");
           globalThis.keyCode = 2055;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2055);
           done();
         } catch (err) {
@@ -1830,11 +1629,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeGrave0100 start====");
           globalThis.keyCode = 2056;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2056);
           done();
         } catch (err) {
@@ -1857,11 +1653,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeMinus0100 start====");
           globalThis.keyCode = 2057;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2057);
           done();
         } catch (err) {
@@ -1884,11 +1677,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeEquals0100 start====");
           globalThis.keyCode = 2058;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2058);
           done();
         } catch (err) {
@@ -1911,11 +1701,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeLeftBracket0100 start====");
           globalThis.keyCode = 2059;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2059);
           done();
         } catch (err) {
@@ -1938,11 +1725,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeRightBracket0100 start====");
           globalThis.keyCode = 2060;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2060);
           done();
         } catch (err) {
@@ -1965,11 +1749,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkuiKeycodeBacksLash0100 start====");
           globalThis.keyCode = 2061;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2061);
           done();
         } catch (err) {
@@ -1992,11 +1773,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODESEMICOLON_0100 start====");
           globalThis.keyCode = 2062;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2062);
           done();
         } catch (err) {
@@ -2019,11 +1797,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEAPOSTROPHE_0100 start====");
           globalThis.keyCode = 2063;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2063);
           done();
         } catch (err) {
@@ -2046,11 +1821,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODESLASH_0100 start====");
           globalThis.keyCode = 2064;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2064);
           done();
         } catch (err) {
@@ -2073,11 +1845,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEAT_0100 start====");
           globalThis.keyCode = 2065;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2065);
           done();
         } catch (err) {
@@ -2100,11 +1869,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEPLUS_0100 start====");
           globalThis.keyCode = 2066;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2066);
           done();
         } catch (err) {
@@ -2127,11 +1893,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEMENU_0100 start====");
           globalThis.keyCode = 2067;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2067);
           done();
         } catch (err) {
@@ -2154,11 +1917,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEPAGEUP_0100 start====");
           globalThis.keyCode = 2068;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2068);
           done();
         } catch (err) {
@@ -2181,11 +1941,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEPAGEDOWN_0100 start====");
           globalThis.keyCode = 2069;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2069);
           done();
         } catch (err) {
@@ -2208,11 +1965,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEESCAPE_0100 start====");
           globalThis.keyCode = 2070;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2070);
           done();
         } catch (err) {
@@ -2235,11 +1989,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEFORWARDDEL_0100 start====");
           globalThis.keyCode = 2071;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2071);
           done();
         } catch (err) {
@@ -2262,11 +2013,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODECTRLLEFT_0100 start====");
           globalThis.keyCode = 2072;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2072);
           done();
         } catch (err) {
@@ -2289,11 +2037,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODECTRLRIGHT_0100 start====");
           globalThis.keyCode = 2073;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2073);
           done();
         } catch (err) {
@@ -2316,11 +2061,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODECAPSLOCK_0100 start====");
           globalThis.keyCode = 2074;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2074);
           done();
         } catch (err) {
@@ -2343,11 +2085,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODESCROLLLOCK_0100 start====");
           globalThis.keyCode = 2075;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2075);
           done();
         } catch (err) {
@@ -2370,11 +2109,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEMETALEFT_0100 start====");
           globalThis.keyCode = 2076;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2076);
           done();
         } catch (err) {
@@ -2397,11 +2133,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEMETARIGHT_0100 start====");
           globalThis.keyCode = 2077;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2077);
           done();
         } catch (err) {
@@ -2424,11 +2157,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEFUNCTION_0100 start====");
           globalThis.keyCode = 2078;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2078);
           done();
         } catch (err) {
@@ -2451,11 +2181,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODESYSRQ_0100 start====");
           globalThis.keyCode = 2079;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2079);
           done();
         } catch (err) {
@@ -2478,11 +2205,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEBREAK_0100 start====");
           globalThis.keyCode = 2080;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2080);
           done();
         } catch (err) {
@@ -2505,11 +2229,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEMOVEHOME_0100 start====");
           globalThis.keyCode = 2081;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2081);
           done();
         } catch (err) {
@@ -2532,11 +2253,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEMOVEEND_0100 start====");
           globalThis.keyCode = 2082;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2082);
           done();
         } catch (err) {
@@ -2559,11 +2277,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEINSERT_0100 start====");
           globalThis.keyCode = 2083;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2083);
           done();
         } catch (err) {
@@ -2586,11 +2301,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEFORWARD_0100 start====");
           globalThis.keyCode = 2084;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2084);
           done();
         } catch (err) {
@@ -2613,11 +2325,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEMEDIAPLAY_0100 start====");
           globalThis.keyCode = 2085;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2085);
           done();
         } catch (err) {
@@ -2640,11 +2349,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEMEDIAPAUSE_0100 start====");
           globalThis.keyCode = 2086;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2086);
           done();
         } catch (err) {
@@ -2667,11 +2373,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEMEDIACLOSE_0100 start====");
           globalThis.keyCode = 2087;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2087);
           done();
         } catch (err) {
@@ -2694,11 +2397,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEMEDIAEJECT_0100 start====");
           globalThis.keyCode = 2088;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2088);
           done();
         } catch (err) {
@@ -2721,11 +2421,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEMEDIARECORD_0100 start====");
           globalThis.keyCode = 2089;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2089);
           done();
         } catch (err) {
@@ -2748,11 +2445,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEF1_0100 start====");
           globalThis.keyCode = 2090;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2090);
           done();
         } catch (err) {
@@ -2775,11 +2469,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEF2_0100 start====");
           globalThis.keyCode = 2091;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2091);
           done();
         } catch (err) {
@@ -2802,11 +2493,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEF3_0100 start====");
           globalThis.keyCode = 2092;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2092);
           done();
         } catch (err) {
@@ -2829,11 +2517,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEF4_0100 start====");
           globalThis.keyCode = 2093;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2093);
           done();
         } catch (err) {
@@ -2856,11 +2541,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEF5_0100 start====");
           globalThis.keyCode = 2094;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2094);
           done();
         } catch (err) {
@@ -2883,11 +2565,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEF6_0100 start====");
           globalThis.keyCode = 2095;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2095);
           done();
         } catch (err) {
@@ -2910,11 +2589,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEF7_0100 start====");
           globalThis.keyCode = 2096;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2096);
           done();
         } catch (err) {
@@ -2937,11 +2613,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEF8_0100 start====");
           globalThis.keyCode = 2097;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2097);
           done();
         } catch (err) {
@@ -2964,11 +2637,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testARKUIKEYCODEF9_0100 start====");
           globalThis.keyCode = 2098;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2098);
           done();
         } catch (err) {
@@ -2991,11 +2661,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("testArkuiKeyCodeF100100 start====");
           globalThis.keyCode = 2099;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2099);
           done();
         } catch (err) {
@@ -3019,11 +2686,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeF110100 start====");
           globalThis.keyCode = 2100;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2100);
           done();
         } catch (err) {
@@ -3047,11 +2711,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeF120100 start====");
           globalThis.keyCode = 2101;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2101);
           done();
         } catch (err) {
@@ -3075,11 +2736,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeNumLock0100 start====");
           globalThis.keyCode = 2102;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2102);
           done();
         } catch (err) {
@@ -3103,11 +2761,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeNumpad00100 start====");
           globalThis.keyCode = 2103;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2103);
           done();
         } catch (err) {
@@ -3131,11 +2786,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeNumpad10100 start====");
           globalThis.keyCode = 2104;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2104);
           done();
         } catch (err) {
@@ -3159,11 +2811,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeNumpad20100 start====");
           globalThis.keyCode = 2105;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2105);
           done();
         } catch (err) {
@@ -3187,11 +2836,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeNumpad30100 start====");
           globalThis.keyCode = 2106;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2106);
           done();
         } catch (err) {
@@ -3215,11 +2861,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeNumpad40100 start====");
           globalThis.keyCode = 2107;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2107);
           done();
         } catch (err) {
@@ -3243,11 +2886,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeNumpad50100 start====");
           globalThis.keyCode = 2108;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2108);
           done();
         } catch (err) {
@@ -3271,11 +2911,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeNumpad60100 start====");
           globalThis.keyCode = 2109;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2109);
           done();
         } catch (err) {
@@ -3299,11 +2936,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeNumpad70100 start====");
           globalThis.keyCode = 2110;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2110);
           done();
         } catch (err) {
@@ -3327,11 +2961,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeNumpad80100 start====");
           globalThis.keyCode = 2111;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2111);
           done();
         } catch (err) {
@@ -3355,11 +2986,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeNumpad90100 start====");
           globalThis.keyCode = 2112;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2112);
           done();
         } catch (err) {
@@ -3383,11 +3011,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeNumpadDivide0100 start====");
           globalThis.keyCode = 2113;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2113);
           done();
         } catch (err) {
@@ -3411,11 +3036,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeNumpadMultiply0100 start====");
           globalThis.keyCode = 2114;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2114);
           done();
         } catch (err) {
@@ -3439,11 +3061,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeNumpadSubtract0100 start====");
           globalThis.keyCode = 2115;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2115);
           done();
         } catch (err) {
@@ -3467,11 +3086,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeNumpadAdd0100 start====");
           globalThis.keyCode = 2116;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2116);
           done();
         } catch (err) {
@@ -3495,11 +3111,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeNumpadDot0100 start====");
           globalThis.keyCode = 2117;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2117);
           done();
         } catch (err) {
@@ -3523,11 +3136,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeNumpadComma0100 start====");
           globalThis.keyCode = 2118;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2118);
           done();
         } catch (err) {
@@ -3551,11 +3161,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeNumpadEnter0100 start====");
           globalThis.keyCode = 2119;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2119);
           done();
         } catch (err) {
@@ -3579,11 +3186,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeNumpadEquals0100 start====");
           globalThis.keyCode = 2120;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2120);
           done();
         } catch (err) {
@@ -3607,11 +3211,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeNumpadLeftParen0100 start====");
           globalThis.keyCode = 2121;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2121);
           done();
         } catch (err) {
@@ -3635,11 +3236,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeNumpadRightParen0100 start====");
           globalThis.keyCode = 2122;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2122);
           done();
         } catch (err) {
@@ -3663,11 +3261,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeButtonA0100 start====");
           globalThis.keyCode = 2301;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2301);
           done();
         } catch (err) {
@@ -3691,11 +3286,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeButtonB0100 start====");
           globalThis.keyCode = 2302;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2302);
           done();
         } catch (err) {
@@ -3719,11 +3311,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeButtonX0100 start====");
           globalThis.keyCode = 2304;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2304);
           done();
         } catch (err) {
@@ -3747,11 +3336,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeButtonY0100 start====");
           globalThis.keyCode = 2305;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2305);
           done();
         } catch (err) {
@@ -3775,11 +3361,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeButtonL10100 start====");
           globalThis.keyCode = 2307;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2307);
           done();
         } catch (err) {
@@ -3803,11 +3386,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeButtonR10100 start====");
           globalThis.keyCode = 2308;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2308);
           done();
         } catch (err) {
@@ -3831,11 +3411,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeButtonL20100 start====");
           globalThis.keyCode = 2309;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2309);
           done();
         } catch (err) {
@@ -3859,11 +3436,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeButtonR20100 start====");
           globalThis.keyCode = 2310;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2310);
           done();
         } catch (err) {
@@ -3887,11 +3461,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeButtonSelect0100 start====");
           globalThis.keyCode = 2311;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2311);
           done();
         } catch (err) {
@@ -3915,11 +3486,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeButtonStart0100 start====");
           globalThis.keyCode = 2312;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2312);
           done();
         } catch (err) {
@@ -3943,11 +3511,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeButtonMode0100 start====");
           globalThis.keyCode = 2313;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2313);
           done();
         } catch (err) {
@@ -3971,11 +3536,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeButtonThumbl0100 start====");
           globalThis.keyCode = 2314;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2314);
           done();
         } catch (err) {
@@ -3999,11 +3561,8 @@ export default function ArkUIKeyCodeNdkTest() {
           console.info("====>testArkUIKeyCodeButtonThumbr0100 start====");
           globalThis.keyCode = 2315;
           await button.click();
-          do {
-            title = await text.getText();
-          } while (title == "init");
-          let KeyResult: number = Number(await text.getText());
-          arkuikeycodendk.InitTextComponent();
+          await Utils.sleep(10);
+        let KeyResult: number = arkuikeycodendk.GetKeyCodeResult();
           expect(KEY_CODE_SAME).assertEqual(KeyResult == 2315);
           done();
         } catch (err) {

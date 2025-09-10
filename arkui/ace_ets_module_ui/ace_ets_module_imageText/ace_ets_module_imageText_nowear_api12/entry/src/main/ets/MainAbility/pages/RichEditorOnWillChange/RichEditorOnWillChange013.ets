@@ -35,7 +35,7 @@ struct RichEditorOnWillChange013 {
       Text('onDidChange_callback:' + this.onDidChangeCallback).id('onDidChange_callback')
       Text('onDidChange rangeBefore:' + this.onDidChangeRangeBefore).id('onDidChange_rangeBefore')
       Text('onWillChange_rangeBefore:' + this.onWillChangeRangeBefore).id('onWillChange_rangeBefore')
-      Text('replacedSpans Callback:' + this.replacedSpansCallbackInfo).id('replacedSpansCallback')
+      Text('replacedSpans Callback:' + this.replacedSpansCallbackInfo).id('replacedSpansCallback').height('10%').clip(true)
       Text('ondid rangeAfter:' + this.onDidRangeAfter).id('ondid_rangeAfter')
 
       Button('删除span内容').onClick(() => {

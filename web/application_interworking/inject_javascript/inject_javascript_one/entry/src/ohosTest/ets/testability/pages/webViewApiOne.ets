@@ -15,6 +15,7 @@
 import events_emitter from '@ohos.events.emitter';
 import web_webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
+import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
 
 class DataTrans {
     constructor() {
@@ -33,13 +34,19 @@ struct webViewJsBridgeLastJsProxyCallingFrameUrl {
   @State webUrl: string = 'loading_func_page.html';
   @State check: string = 'null';
   @State getUrlStr: string = '';
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
   
   onPageShow() {
       let valueChangeEvent: events_emitter.InnerEvent = {
-          eventId: 10,
+          eventId: 172290,
           priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(172290);
   }
   
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -48,6 +55,7 @@ struct webViewJsBridgeLastJsProxyCallingFrameUrl {
           console.info('valueChangeCallBack:' + JSON.stringify(eventData));
           if (eventData.data != null && eventData.data.ACTION != null) {
               this.str = eventData.data.ACTION;
+              this.isReceive = 0;
           }
       }
   }
@@ -58,16 +66,19 @@ struct webViewJsBridgeLastJsProxyCallingFrameUrl {
               Button('获取url')
               .key('webViewJsBridgeLastJsProxyCallingFrameUrl')
               .onClick(async () => {
-                  console.info('key==>' + this.str)
-                await Utils.sleep(1000)
+                await waitForExist(() => this.isPageEnd, this.str, 0);
+                await waitForExist(() => this.isReceive, this.str, 0);
+                this.isReceive = -1;
+                console.info('key==>' + this.str)
                 switch (this.str) {
                     case 'emitJsBridgeGetLastJavascriptProxyCallingFrameUrl': {
                         let transObj_02 = new DataTrans()
                         this.controller.registerJavaScriptProxy(transObj_02, 'dataTrans', ['trans'])
                         this.controller.refresh()
+                        this.isPageEnd = -1;
                         this.controller.loadUrl($rawfile(this.webUrl))
-                        await Utils.sleep(2000)
-                        Utils.emitEvent('success', 1277)
+                        await waitForExist(() => this.isPageEnd, this.str, 0);
+                        Utils.emitEvent('success', 172300)
                         break;
                     }
                 }
@@ -81,6 +92,7 @@ struct webViewJsBridgeLastJsProxyCallingFrameUrl {
                 .onlineImageAccess(true)
                 .databaseAccess(true)
                 .onPageEnd(async () => {
+                  this.isPageEnd = 0;
                 try{
                     this.getUrlStr = this.controller.getLastJavascriptProxyCallingFrameUrl()
                     if (this.getUrlStr == this.webUrl) {
@@ -89,10 +101,10 @@ struct webViewJsBridgeLastJsProxyCallingFrameUrl {
                         this.check = 'fail'
                     }
                     console.log('=====>getLastJavascriptProxyCallingFrameUrl | result {' + this.getUrlStr + '}')
-                    Utils.emitEvent('success', 1277)
+                    Utils.emitEvent('success', 172300)
                 }catch (error) {
                     console.log('getLastJavascriptProxyCallingFrameUrl ' + error)
-                    Utils.emitEvent('error', 1277)
+                    Utils.emitEvent('error', 172300)
                 }     
             })
         }

@@ -24,8 +24,31 @@ const ARKUI_ERROR_CODE_PARAM_INVALID = 401;
 export default function NodeNapiTest3() {
   describe('NodeNapiTest3', () => {
     beforeAll(async (done: Function) => {
-      await Utils.pushPage(`nodenapitest/nodenapiTest3`, done);
+      await Utils.pushPageNoClear(`nodenapitest/nodenapiTest3`, done);
     });
+
+    /*
+   * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetDrawableDescriptorFromNapiValue_0100
+   * @tc.name       : testOH_ArkUI_GetDrawableDescriptorFromNapiValue0100
+   * @tc.desc       : testing OH_ArkUI_GetDrawableDescriptorFromNapiValue interface
+   * @tc.size       : MediumTest
+   * @tc.type       : Function
+   * @tc.level      : Level 1
+   */
+    it('testOH_ArkUI_GetDrawableDescriptorFromNapiValue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testOH_ArkUI_GetDrawableDescriptorFromNapiValue0100 start====");
+          let result: number = nativerenderndk.GetDrawableDescriptorFromNapiValueTest_001();
+          console.info(`====>testOH_ArkUI_GetDrawableDescriptorFromNapiValue0100 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done();
+        } catch (err) {
+          console.error("====>testOH_ArkUI_GetDrawableDescriptorFromNapiValue0100 err: " + err);
+          expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+          done();
+        }
+      })
 
     /*
        * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetDrawableDescriptorFromNapiValue_0200
@@ -41,7 +64,7 @@ export default function NodeNapiTest3() {
           console.info("====>testOHArkUIGetDrawableDescriptorFromNapiValue0200 start====");
           let result: number = nativerenderndk.GetDrawableDescriptorFromNapiValueTest_002();
           console.info(`====>testOHArkUIGetDrawableDescriptorFromNapiValue0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUIGetDrawableDescriptorFromNapiValue0200 err: " + err);

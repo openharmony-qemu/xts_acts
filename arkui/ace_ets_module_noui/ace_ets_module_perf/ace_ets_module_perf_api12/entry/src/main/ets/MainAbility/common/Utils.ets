@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,15 +33,22 @@ export default class Utils {
     let strJson = getInspectorByKey(key);
     let obj: Record<string, Object> = JSON.parse(strJson);
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo = JSON.parse('[' + obj.$rect + ']')
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    this.rect_left = JSON.parse('[' + rectInfo[0] + ']')[0]
-    this.rect_top = JSON.parse('[' + rectInfo[0] + ']')[1]
-    this.rect_right = JSON.parse('[' + rectInfo[1] + ']')[0]
-    this.rect_bottom = JSON.parse('[' + rectInfo[1] + ']')[1]
-    return this.rect_value = {
-      "left": this.rect_left, "top": this.rect_top, "right": this.rect_right, "bottom": this.rect_bottom
+    try {
+      let rectInfo = JSON.parse('[' + obj.$rect + ']')
+      console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
+      this.rect_left = JSON.parse('[' + rectInfo[0] + ']')[0]
+      this.rect_top = JSON.parse('[' + rectInfo[0] + ']')[1]
+      this.rect_right = JSON.parse('[' + rectInfo[1] + ']')[0]
+      this.rect_bottom = JSON.parse('[' + rectInfo[1] + ']')[1]
+      return this.rect_value = {
+        "left": this.rect_left, "top": this.rect_top, "right": this.rect_right, "bottom": this.rect_bottom
+      }
+    } catch (error) {
+      return this.rect_value = {
+        "left": 0, "top": 0, "right": 0, "bottom": 0
+      }
     }
+    
   }
 
   static async swipe(downX, downY, upX, upY, steps) {

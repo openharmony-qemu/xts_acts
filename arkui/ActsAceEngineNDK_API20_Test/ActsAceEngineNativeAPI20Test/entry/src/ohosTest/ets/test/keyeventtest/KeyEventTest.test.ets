@@ -16,7 +16,6 @@
 import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hypium'
 import nativerenderndk from 'libnoderenderndk.so'
 import Utils from '../common/Utils';
-import { Driver } from '@kit.TestKit';
 
 const ARKUI_ERROR_CODE_NO_ERROR = 0;
 const ARKUI_ERROR_CODE_PARAM_INVALID = 401;
@@ -29,6 +28,30 @@ export default function KeyEventTest() {
     });
 
     /*
+     * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUIKeyEventIsNumLockOn_0100
+     * @tc.name       : testOHArkUIKeyEventIsNumLockOn0100
+     * @tc.desc       : testing OH_ArkUI_KeyEvent_IsNumLockOn interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+
+    it('testOHArkUIKeyEventIsNumLockOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testOHArkUIKeyEventIsNumLockOn0100 start====");
+          await Utils.driver.triggerKey(2022);
+          let result: number = nativerenderndk.IsNumLockOnTest_001()
+          console.info(`====>testOHArkUIKeyEventIsNumLockOn0100 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);;
+          done();
+        } catch (err) {
+          console.error("====>testOHArkUIKeyEventIsNumLockOn0100 catch err: " + err);
+          expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+        }
+      })
+
+    /*
      * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUIKeyEventIsNumLockOn_0200
      * @tc.name       : testOHArkUIKeyEventIsNumLockOn0200
      * @tc.desc       : testing OH_ArkUI_KeyEvent_IsNumLockOn interface
@@ -36,20 +59,40 @@ export default function KeyEventTest() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-
     it('testOHArkUIKeyEventIsNumLockOn0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
           console.info("====>testOHArkUIKeyEventIsNumLockOn0200 start====");
-          let driver = Driver.create();
-          await driver.triggerKey(2022);
-          Utils.sleep(1000);
+          await Utils.driver.triggerKey(2022);
           let result: number = nativerenderndk.IsNumLockOnTest_002()
           console.info(`====>testOHArkUIKeyEventIsNumLockOn0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);;
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);;
           done();
         } catch (err) {
           console.error("====>testOHArkUIKeyEventIsNumLockOn0200 catch err: " + err);
+          expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+        }
+      })
+
+    /*
+       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUIKeyEventIsCapsLockOn_0100
+       * @tc.name       : testOHArkUIKeyEventIsCapsLockOn0100
+       * @tc.desc       : testing OH_ArkUI_KeyEvent_IsCapsLockOn interface
+       * @tc.size       : MediumTest
+       * @tc.type       : Function
+       * @tc.level      : Level 1
+       */
+    it('testOHArkUIKeyEventIsCapsLockOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testOHArkUIKeyEventIsCapsLockOn0100 start====");
+          await Utils.driver.triggerKey(2022);
+          let result: number = nativerenderndk.IsCapsLockOnTest_001()
+          console.info(`====>testOHArkUIKeyEventIsCapsLockOn0100 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done();
+        } catch (err) {
+          console.error("====>testOHArkUIKeyEventIsCapsLockOn0100 catch err: " + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
         }
       })
@@ -66,16 +109,38 @@ export default function KeyEventTest() {
       async (done: Function) => {
         try {
           console.info("====>testOHArkUIKeyEventIsCapsLockOn0200 start====");
-          let driver = Driver.create();
-          await driver.triggerKey(2022);
-          Utils.sleep(1000);
+          await Utils.driver.triggerKey(2022);
           let result: number = nativerenderndk.IsCapsLockOnTest_002()
           console.info(`====>testOHArkUIKeyEventIsCapsLockOn0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUIKeyEventIsCapsLockOn0200 catch err: " + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+        }
+      })
+
+    /*
+    * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUIKeyEventIsScrollLockOn_0100
+    * @tc.name       : testOHArkUIKeyEventIsScrollLockOn0100
+    * @tc.desc       : testing OH_ArkUI_KeyEvent_IsScrollLockOn interface
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 1
+    */
+    it('testOHArkUIKeyEventIsScrollLockOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testOHArkUIKeyEventIsScrollLockOn0100 start====");
+          await Utils.driver.triggerKey(2022);
+          let result: number = nativerenderndk.IsScrollLockOnTest_001()
+          console.info(`====>testOHArkUIKeyEventIsScrollLockOn0100 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done();
+        } catch (err) {
+          console.error("====>testOHArkUIKeyEventIsScrollLockOn0100 catch err: " + err);
+          expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+          done();
         }
       })
 
@@ -89,21 +154,19 @@ export default function KeyEventTest() {
     */
     it('testOHArkUIKeyEventIsScrollLockOn0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-      try {
-        console.info("====>testOHArkUIKeyEventIsScrollLockOn0200 start====");
-        let driver = Driver.create();
-        await driver.triggerKey(2022);
-        Utils.sleep(1000);
-        let result: number = nativerenderndk.IsScrollLockOnTest_002()
-        console.info(`====>testOHArkUIKeyEventIsScrollLockOn0200 result====${result}`);
-        expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
-        done();
-      } catch (err) {
-        console.error("====>testOHArkUIKeyEventIsScrollLockOn0200 catch err: " + err);
-        expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
-        done();
-      }
-    })
+        try {
+          console.info("====>testOHArkUIKeyEventIsScrollLockOn0200 start====");
+          await Utils.driver.triggerKey(2022);
+          let result: number = nativerenderndk.IsScrollLockOnTest_002()
+          console.info(`====>testOHArkUIKeyEventIsScrollLockOn0200 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done();
+        } catch (err) {
+          console.error("====>testOHArkUIKeyEventIsScrollLockOn0200 catch err: " + err);
+          expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+          done();
+        }
+      })
 
   })
 }

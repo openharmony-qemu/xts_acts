@@ -62,7 +62,7 @@ export default function NodeContentTest() {
           console.info("====>testOHArkUINodeContentRegisterCallback0200 start====");
           let result: number = nativerenderndk.RegisterCallbackTest_002()
           console.info(`====>testOHArkUINodeContentRegisterCallback0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeContentRegisterCallback0200 catch err: " + err);
@@ -105,7 +105,7 @@ export default function NodeContentTest() {
           console.info("====>testOHArkUINodeContentSetUserData0200 start====");
           let result: number = nativerenderndk.SetUserDataTest_002()
           console.info(`====>testOHArkUINodeContentSetUserData0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeContentSetUserData0200 catch err: " + err);
@@ -148,7 +148,7 @@ export default function NodeContentTest() {
           console.info("====>testOHArkUINodeContentAddNode0200 start====");
           let result: number = nativerenderndk.AddNodeTest_002()
           console.info(`====>testOHArkUINodeContentAddNode0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeContentAddNode0200 catch err: " + err);
@@ -191,7 +191,7 @@ export default function NodeContentTest() {
           console.info("====>testOHArkUINodeContentRemoveNode0200 start====");
           let result: number = nativerenderndk.RemoveNodeTest_002()
           console.info(`====>testOHArkUINodeContentRemoveNode0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeContentRemoveNode0200 catch err: " + err);
@@ -234,7 +234,7 @@ export default function NodeContentTest() {
           console.info("====>testOHArkUINodeContentInsertNode0200 start====");
           let result: number = nativerenderndk.InsertNodeTest_002()
           console.info(`====>testOHArkUINodeContentInsertNode0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeContentInsertNode0200 catch err: " + err);

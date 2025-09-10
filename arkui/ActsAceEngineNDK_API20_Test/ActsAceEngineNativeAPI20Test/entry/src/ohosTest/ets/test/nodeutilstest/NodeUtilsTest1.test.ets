@@ -22,7 +22,6 @@ const ARKUI_ERROR_CODE_ERROR = 1;
 
 export default function NodeUtilsTest1() {
   describe('NodeUtilsTest1', () => {
-
     /*
     * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_0100
     * @tc.name       : testOHArkUINodeUtilsGetActiveChildrenInfo0100

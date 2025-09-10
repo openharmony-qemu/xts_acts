@@ -1241,7 +1241,7 @@ export default function TaskPoolTest() {
       let sab: SharedArrayBuffer = new SharedArrayBuffer(20);
       let int32 = new Uint32Array(sab);
       let task: taskpool.Task = new taskpool.Task(transferArrayBuffer, int32);
-      taskpool.execute(task).then(()=> {
+      await taskpool.execute(task).then(()=> {
         let result = int32[0] + int32[1] + int32[2] + int32[3];
         expect(result).assertEqual(1000);
       });
@@ -1410,12 +1410,7 @@ export default function TaskPoolTest() {
 
         taskpool.execute(task1);
         taskpool.execute(task2);
-        taskpool.execute(task3);
-
-        let start: number = new Date().getTime();
-        while (new Date().getTime() - start < 1000) {
-          continue;
-        }
+        await taskpool.execute(task3);
 
         taskpool.cancel(task1);
       }
@@ -1466,14 +1461,8 @@ export default function TaskPoolTest() {
 
         taskpool.execute(task1);
         taskpool.execute(task2);
-        taskpool.execute(task3);
+        await taskpool.execute(task3);
 
-        let start: number = new Date().getTime();
-        while (new Date().getTime() - start < 1000) {
-          continue;
-        }
-
-        taskpool.cancel(task3);
         taskpool.cancel(task3);
       }
       catch(e) {
@@ -1663,7 +1652,7 @@ export default function TaskPoolTest() {
       }
       let task: taskpool.Task = new taskpool.Task(setCloneListTest, arrayInt);
       task.setCloneList([arrayBuffer]);
-      taskpool.execute(task).then(() => {
+      await taskpool.execute(task).then(() => {
         expect(arrayInt[0]).assertEqual(1);
       })
       done();
@@ -2488,7 +2477,7 @@ export default function TaskPoolTest() {
         expect((e as BusinessError).toString()).assertContain("Error: An exception occurred during serialization, taskpool: failed to serialize result.");
       })
 
-      taskpool.execute(task).then((res)=>{
+      await taskpool.execute(task).then((res)=>{
       }).catch((e:BusinessError)=>{
         expect((e as BusinessError).toString()).assertContain("Error: An exception occurred during serialization, taskpool: failed to serialize result.");
       })
@@ -2750,9 +2739,9 @@ export default function TaskPoolTest() {
       } catch (e) {
         expect(e.toString()).assertEqual("BusinessError: Parameter error. The input parameters are invalid, " +
             "taskpool:: executed taskGroup cannot addTask");
-        expect(task1.totalDuration < 5).assertTrue();
-        expect(task1.cpuDuration < 5).assertTrue();
-        expect(task1.ioDuration < 5).assertTrue();
+        expect(task2.totalDuration < 5).assertTrue();
+        expect(task2.cpuDuration < 5).assertTrue();
+        expect(task2.ioDuration < 5).assertTrue();
       }
       done();
     })
@@ -3119,7 +3108,7 @@ export default function TaskPoolTest() {
      */
     it('TaskPoolTestClass140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(errorTest)
-      taskpool.execute(task).then((res)=>{
+      await taskpool.execute(task).then((res)=>{
         console.info("errTest res " + res)
       }).catch((e:BusinessError)=>{
         expect(e.message).assertContain("this is an error");
@@ -4075,7 +4064,7 @@ export default function TaskPoolTest() {
       hashMap.set("b", 234);
       let task: taskpool.Task = new taskpool.Task(dealHashMapTest, hashMap);
       try {
-        taskpool.executeDelayed(500, task)
+        await taskpool.executeDelayed(500, task)
       } catch (e) {
         expect((e as BusinessError).toString()).assertContain("BusinessError: An exception occurred during serialization, taskpool: failed to serialize arguments.");
       }

@@ -18,8 +18,15 @@ import router from '@ohos.router';
 import Utils from './Utils';
 import webView from '@ohos.web.webview';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+let emitKey = "";
+let tcName = ''
+const EVENT_ID_SET_SUITE_KEY = 176301;
+const driver = Driver.create();
 
 export default function webViewControllerHitTest() {
 
@@ -35,7 +42,7 @@ export default function webViewControllerHitTest() {
         if (!("WebViewControllerHitTest" == pages.name)) {
           console.info("get WebViewControllerHitTest state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("WebViewControllerHitTestButton"), 10000);
           console.info("push WebViewControllerHitTest page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -50,15 +57,7 @@ export default function webViewControllerHitTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebViewControllerHitTest afterEach start");
-      await Utils.sleep(1000);
-      console.info("WebViewControllerHitTest afterEach end");
       done();
     })
 
@@ -71,10 +70,14 @@ export default function webViewControllerHitTest() {
     * @tc.level       : Level 1
     */
     it('testGetHitTestValue001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitGetHitTestValue001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetHitTestValue001", webView.WebHitTestType.EditText, 70101, done);
-      sendEventByKey('WebViewControllerHitTestButton', 10, '');
+      emitKey = 'emitGetHitTestValue001';
+      tcName = 'testGetHitTestValue001'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, webView.WebHitTestType.EditText, 176310, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -86,10 +89,14 @@ export default function webViewControllerHitTest() {
     * @tc.level       : Level 1
     */
     it('testGetHitTestValue002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitGetHitTestValue002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetHitTestValue002", webView.WebHitTestType.Email, 70103, done);
-      sendEventByKey('WebViewControllerHitTestButton', 10, '');
+      emitKey = 'emitGetHitTestValue002';
+      tcName = 'testGetHitTestValue002'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, webView.WebHitTestType.Email, 176320, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -101,10 +108,14 @@ export default function webViewControllerHitTest() {
     * @tc.level       : Level 1
     */
     it('testGetHitTestValue003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitGetHitTestValue003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetHitTestValue003", webView.WebHitTestType.HttpAnchor, 70105, done);
-      sendEventByKey('WebViewControllerHitTestButton', 10, '');
+      emitKey = 'emitGetHitTestValue003';
+      tcName = 'testGetHitTestValue003'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, webView.WebHitTestType.HttpAnchor, 176330, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -116,10 +127,14 @@ export default function webViewControllerHitTest() {
     * @tc.level       : Level 1
     */
     it('testGetHitTestValue004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitGetHitTestValue004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetHitTestValue004", webView.WebHitTestType.HttpAnchorImg, 70107, done);
-      sendEventByKey('WebViewControllerHitTestButton', 10, '');
+      emitKey = 'emitGetHitTestValue004';
+      tcName = 'testGetHitTestValue004'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, webView.WebHitTestType.HttpAnchorImg, 176340, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -131,10 +146,14 @@ export default function webViewControllerHitTest() {
     * @tc.level       : Level 1
     */
     it('testGetHitTestValue005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitGetHitTestValue005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetHitTestValue005", webView.WebHitTestType.Img, 70109, done);
-      sendEventByKey('WebViewControllerHitTestButton', 10, '');
+      emitKey = 'emitGetHitTestValue005';
+      tcName = 'testGetHitTestValue005'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, webView.WebHitTestType.Img, 176350, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -146,10 +165,14 @@ export default function webViewControllerHitTest() {
     * @tc.level       : Level 1
     */
     it('testGetHitTestValue007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitGetHitTestValue007", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetHitTestValue007", webView.WebHitTestType.Phone, 70113, done);
-      sendEventByKey('WebViewControllerHitTestButton', 10, '');
+      emitKey = 'emitGetHitTestValue007';
+      tcName = 'testGetHitTestValue007'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, webView.WebHitTestType.Phone, 176370, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -161,10 +184,14 @@ export default function webViewControllerHitTest() {
     * @tc.level       : Level 1
     */
     it('testGetHitTestValue008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitGetHitTestValue008", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetHitTestValue008", webView.WebHitTestType.Unknown, 70115, done);
-      sendEventByKey('WebViewControllerHitTestButton', 10, '');
+      emitKey = 'emitGetHitTestValue008';
+      tcName = 'testGetHitTestValue008'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, webView.WebHitTestType.Unknown, 176380, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -176,10 +203,14 @@ export default function webViewControllerHitTest() {
     * @tc.level       : Level 1
     */
     it('testGetHitTestValue009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitGetHitTestValue009", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetHitTestValue009", '123@123.com', 70117, done);
-      sendEventByKey('WebViewControllerHitTestButton', 10, '');
+      emitKey = 'emitGetHitTestValue009';
+      tcName = 'testGetHitTestValue009'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, '123@123.com', 176390, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -191,10 +222,14 @@ export default function webViewControllerHitTest() {
     * @tc.level       : Level 1
     */
     it('testGetHitTestValue010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitGetHitTestValue010", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetHitTestValue010", 'https://openharmony.cn/', 70119, done);
-      sendEventByKey('WebViewControllerHitTestButton', 10, '');
+      emitKey = 'emitGetHitTestValue010';
+      tcName = 'testGetHitTestValue010'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'https://openharmony.cn/', 176400, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -206,10 +241,14 @@ export default function webViewControllerHitTest() {
     * @tc.level       : Level 1
     */
     it('testGetHitTestValue011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitGetHitTestValue011", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetHitTestValue011", 'resource://rawfile/icon.png', 70121, done);
-      sendEventByKey('WebViewControllerHitTestButton', 10, '');
+      emitKey = 'emitGetHitTestValue011';
+      tcName = 'testGetHitTestValue011'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'resource://rawfile/icon.png', 176410, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -221,10 +260,14 @@ export default function webViewControllerHitTest() {
     * @tc.level       : Level 1
     */
     it('testGetHitTestValue012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitGetHitTestValue012", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetHitTestValue012", 'resource://rawfile/icon.png', 70123, done);
-      sendEventByKey('WebViewControllerHitTestButton', 10, '');
+      emitKey = 'emitGetHitTestValue012';
+      tcName = 'testGetHitTestValue012'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'resource://rawfile/icon.png', 176420, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -236,10 +279,14 @@ export default function webViewControllerHitTest() {
     * @tc.level       : Level 1
     */
     it('testGetHitTestValue013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitGetHitTestValue013", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetHitTestValue013", '123456789', 70125, done);
-      sendEventByKey('WebViewControllerHitTestButton', 10, '');
+      emitKey = 'emitGetHitTestValue013';
+      tcName = 'testGetHitTestValue013'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, '123456789', 176430, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -251,10 +298,14 @@ export default function webViewControllerHitTest() {
     * @tc.level       : Level 1
     */
     it('testGetHitTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitGetHitTest001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetHitTest001", webView.WebHitTestType.EditText, 70127, done);
-      sendEventByKey('WebViewControllerHitTestButton', 10, '');
+      emitKey = 'emitGetHitTest001';
+      tcName = 'testGetHitTest001'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, webView.WebHitTestType.EditText, 176440, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -266,10 +317,14 @@ export default function webViewControllerHitTest() {
     * @tc.level       : Level 1
     */
     it('testGetHitTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitGetHitTest002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetHitTest002", webView.WebHitTestType.Email, 70129, done);
-      sendEventByKey('WebViewControllerHitTestButton', 10, '');
+      emitKey = 'emitGetHitTest002';
+      tcName = 'testGetHitTest002'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, webView.WebHitTestType.Email, 176450, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -281,10 +336,14 @@ export default function webViewControllerHitTest() {
     * @tc.level       : Level 1
     */
     it('testGetHitTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitGetHitTest003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetHitTest003", webView.WebHitTestType.HttpAnchor, 70131, done);
-      sendEventByKey('WebViewControllerHitTestButton', 10, '');
+      emitKey = 'emitGetHitTest003';
+      tcName = 'testGetHitTest003'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, webView.WebHitTestType.HttpAnchor, 176460, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -296,10 +355,14 @@ export default function webViewControllerHitTest() {
     * @tc.level       : Level 1
     */
     it('testGetHitTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitGetHitTest004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetHitTest004", webView.WebHitTestType.HttpAnchorImg, 70133, done);
-      sendEventByKey('WebViewControllerHitTestButton', 10, '');
+      emitKey = 'emitGetHitTest004';
+      tcName = 'testGetHitTest004'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, webView.WebHitTestType.HttpAnchorImg, 176470, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -311,10 +374,14 @@ export default function webViewControllerHitTest() {
     * @tc.level       : Level 1
     */
     it('testGetHitTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitGetHitTest005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetHitTest005", webView.WebHitTestType.Img, 70135, done);
-      sendEventByKey('WebViewControllerHitTestButton', 10, '');
+      emitKey = 'emitGetHitTest005';
+      tcName = 'testGetHitTest005'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, webView.WebHitTestType.Img, 176480, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -326,10 +393,14 @@ export default function webViewControllerHitTest() {
     * @tc.level       : Level 1
     */
     it('testGetHitTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitGetHitTest007", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetHitTest007", webView.WebHitTestType.Phone, 70139, done);
-      sendEventByKey('WebViewControllerHitTestButton', 10, '');
+      emitKey = 'emitGetHitTest007';
+      tcName = 'testGetHitTest007'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, webView.WebHitTestType.Phone, 176500, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -341,10 +412,14 @@ export default function webViewControllerHitTest() {
     * @tc.level       : Level 1
     */
     it('testGetHitTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitGetHitTest008", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetHitTest008", webView.WebHitTestType.Unknown, 70141, done);
-      sendEventByKey('WebViewControllerHitTestButton', 10, '');
+      emitKey = 'emitGetHitTest008';
+      tcName = 'testGetHitTest008'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, webView.WebHitTestType.Unknown, 176510, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
   })
 }

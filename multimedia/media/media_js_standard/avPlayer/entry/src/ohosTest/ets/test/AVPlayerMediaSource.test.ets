@@ -18,6 +18,7 @@ import media from '@ohos.multimedia.media';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
 import HashMap from '@ohos.util.HashMap';
 import MediaTestBase from './MediaTestBase';
+import { sleep } from './AVPlayerTestBase';
 
 
 export default function AVPlayerMediaSource() {
@@ -30,19 +31,65 @@ export default function AVPlayerMediaSource() {
   const url_flv = "http://live-xxx.flv"
   describe('AVPlayerMediaSource', () => {
     beforeAll(async () => {
-      player = await media.createAVPlayer();
       header = {
         "User-Agent": "User-Agent-Value"
       };
     });
     beforeEach(async () => {
       console.info('beforeEach case');
+      player = await media.createAVPlayer();
     });
     afterEach(async () => {
       console.info('afterEach case');
+      player.release();
     });
     afterAll(async () => {
       console.info('afterAll case');
+    });
+    /* *
+      * @tc.number    : SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0101
+      * @tc.name      : 001.testMediaSource
+      * @tc.desc      : Local Video playback control test
+      * @tc.size      : MediumTest
+      * @tc.type      : Function Test
+      * @tc.level     : Level0
+    */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0101', Level.LEVEL0, async (done: Function) => {
+      console.info('AVPlayerMediaSource success');
+      player.on('error', (error: BusinessError) => {
+        console.info('error happened,and error message is :' + error.message);
+        console.info('error happened,and error code is :' + error.code);
+        expect(true).assertFalse();
+      });
+      try{
+        let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4);
+        player.setMediaSource(mediaSource);
+      } catch (error) {
+        console.info('error happened,and error code is :' + error.message);
+        expect(true).assertFalse();
+      }
+      await sleep(1000);
+      done();
+    });
+    /* *
+      * @tc.number    : SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0102
+      * @tc.name      : 001.testMediaSource
+      * @tc.desc      : Local Video playback control test
+      * @tc.size      : MediumTest
+      * @tc.type      : Function Test
+      * @tc.level     : Level0
+    */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0102', Level.LEVEL0, async (done: Function) => {
+      console.info('AVPlayerMediaSource success');
+      player.on('error', (error: BusinessError) => {
+        console.info('error happened,and error message is :' + error.message);
+        console.info('error happened,and error code is :' + error.code);
+        expect(true).assertFalse();
+      });
+      let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
+      player.setMediaSource(mediaSource);
+      await sleep(1000);
+      done();
     });
     /* *
       * @tc.number    : SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0100
@@ -53,6 +100,11 @@ export default function AVPlayerMediaSource() {
       * @tc.level     : Level0
     */
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0100', Level.LEVEL0, async (done: Function) => {
+      player.on('error', (error: BusinessError) => {
+        console.info('error happened,and error message is :' + error.message);
+        console.info('error happened,and error code is :' + error.code);
+        expect(true).assertFalse();
+      });
       console.info('AVPlayerMediaSource success');
       let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
       let playStrategy: media.PlaybackStrategy = {
@@ -75,6 +127,11 @@ export default function AVPlayerMediaSource() {
       * @tc.level     : Level0
     */
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0200', Level.LEVEL0, async (done: Function) => {
+      player.on('error', (error: BusinessError) => {
+        console.info('error happened,and error message is :' + error.message);
+        console.info('error happened,and error code is :' + error.code);
+        expect(true).assertFalse();
+      });
       let header: Record<string, string> = {
         "User-Agent": "User-Agent-Value"
       };
@@ -95,7 +152,7 @@ export default function AVPlayerMediaSource() {
       let streams : Array<media.MediaStream> = [];
       for (let i = 0; i < 5; i++) {
         streams.push({url:
-          url_flv,
+        url_flv,
           width: 100 * (i + 1),
           height: 120 * (i + 1),
           bitrate: 1000000 * (i + 1)});
@@ -117,7 +174,7 @@ export default function AVPlayerMediaSource() {
       const maxStreamNum = 10;
       for (let i = 0; i < maxStreamNum + 1; i++) {
         streams.push({url:
-          url_flv,
+        url_flv,
           width: 100 * (i + 1),
           height: 120 * (i + 1),
           bitrate: 1000000 * (i + 1)});
@@ -141,14 +198,14 @@ export default function AVPlayerMediaSource() {
       done();
     });
 
-  /* *
-    * @tc.number    : SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0600
-    * @tc.name      : 006.testMediaSource
-    * @tc.desc      : Local Video playback control test
-    * @tc.size      : MediumTest
-    * @tc.type      : Function Test
-    * @tc.level     : Level0
-  */
+    /* *
+      * @tc.number    : SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0600
+      * @tc.name      : 006.testMediaSource
+      * @tc.desc      : Local Video playback control test
+      * @tc.size      : MediumTest
+      * @tc.type      : Function Test
+      * @tc.level     : Level0
+    */
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0600', Level.LEVEL0, async (done: Function) => {
       console.info('AVPlayerMediaSource success');
       let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
@@ -160,9 +217,9 @@ export default function AVPlayerMediaSource() {
       };
       try {
         player.on('error', (err: BusinessError) => {
-        console.info('error happened,and error message is :' + err.message)
-        console.info('error happened,and error code is :' + err.code)
-        expect(err.code).assertEqual(401)
+          console.info('error happened,and error message is :' + err.message)
+          console.info('error happened,and error code is :' + err.code)
+          expect(err.code).assertEqual(401)
         });
         await player.reset();
         player.setMediaSource(undefined, playStrategy);
@@ -197,7 +254,7 @@ export default function AVPlayerMediaSource() {
       player.setMediaSource(mediaSource, playStrategy);
       done();
     });
-      
+
     /* *
       * @tc.number    : SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0800
       * @tc.name      : 008.testMediaSource
@@ -212,11 +269,13 @@ export default function AVPlayerMediaSource() {
       };
       try{
         let mediaSource = media.createMediaSourceWithUrl(undefined, header);
-        console.info('success createMediaSourceWithUrl')
+        expect(mediaSource).assertUndefined()
+        console.info(' createMediaSourceWithUrl is Undefined')
         let mimeType = media.AVMimeTypes.APPLICATION_M3U8;
         mediaSource.setMimeType(mimeType);
       }catch(err){
         console.info('case media.createMediaSourceWithUr error code is' + err.code)
+        expect(err.code).assertUndefined();
       }
       done();
     });

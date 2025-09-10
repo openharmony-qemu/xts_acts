@@ -60,7 +60,7 @@ struct RichEditor7 {
 
       Button('x').onClick(() => {
         this.controller.stopEditing()
-      }).id('StopEditing').margin({bottom:30})
+      }).id('StopEditing').margin({bottom:100})
     }.backgroundColor(Color.White)
   }
 
@@ -78,7 +78,7 @@ struct RichEditor7 {
 
         RichEditor({ controller: this.controller})
           .width('100%')
-          .height('10%')
+          .height('5%')
           .border({ width: 1 })
           .borderWidth(1)
           .borderColor(Color.Red)
@@ -114,19 +114,19 @@ struct RichEditor7 {
               if (this.enterType > (this.enterTypeALl.length - 1)) {
                 this.enterType = 0
               }
-            }).height('5%')
+            }).height('3%')
 
           Button('stopEditing')
             .onClick(() => {
               this.controller2.stopEditing()
-            }).key('stopEditing').height('5%')
+            }).key('stopEditing').height('3%')
         }
 
         Button('isCallKeepEditableState: ' + this.IsCallKeepEditableState)
           .onClick(()=>{
             this.IsCallKeepEditableState = !this.IsCallKeepEditableState
           }).key('isCallKeepEditableState').key('isCallKeepEditableState')
-          .id('IsCallKeepEditableState').height('5%')
+          .id('IsCallKeepEditableState').height('3%')
 
         Text('onSubmit参数 enterKey：' + this.enterKey)
           .width('100%')
@@ -140,7 +140,7 @@ struct RichEditor7 {
 
         RichEditor({ controller: this.controller2 })
           .width('100%')
-          .height('10%')
+          .height('5%')
           .border({ width: 1 })
           .borderWidth(1)
           .borderColor(Color.Red)
@@ -162,7 +162,7 @@ struct RichEditor7 {
             console.log('Juan this.controller.isEditable():' + this.controller.isEditing())
           })
           .id('RichEditor02')
-      }.margin(10)
+      }.margin(1)
     }.height('100%')
   }
 }

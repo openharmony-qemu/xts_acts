@@ -21,28 +21,9 @@ import web_webview from '@ohos.web.webview';
 import fileio from '@ohos.fileio';
 import prompt from '@system.prompt';
 import cert from '@ohos.security.cert';
+import {waitForAssert, waitForExist} from '../../test/WaitTest';
 
 let loadedUrl: string;
-
-function Uint8ArrayToString(dataArray: Uint8Array) {
-  let dataString = '';
-  for (let i = 0; i < dataArray.length; i++) {
-    dataString += String.fromCharCode(dataArray[i]);
-  }
-  return dataString;
-}
-
-function ParseX509CertInfo(x509CertArray: Array<cert.X509Cert>) {
-  let res: string = 'getCertificate success: len = ' + x509CertArray.length;
-  for (let i = 0; i < x509CertArray.length; i++) {
-    res += ', index = ' + i + ', issuer name = '
-      + Uint8ArrayToString(x509CertArray[i].getIssuerName().data) + ', subject name = '
-      + Uint8ArrayToString(x509CertArray[i].getSubjectName().data) + ', valid start = '
-      + x509CertArray[i].getNotBeforeTime()
-      + ', valid end = ' + x509CertArray[i].getNotAfterTime();
-  }
-  return res;
-}
 
 @Entry
 @Component
@@ -84,13 +65,19 @@ struct Index {
       console.log('Web Component toString');
     }
   };
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 100,
+      eventId: 160580,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(160580)
   }
 
   private valueChangeCallBack = (eventData: ESObject) => {
@@ -99,6 +86,7 @@ struct Index {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -124,6 +112,9 @@ struct Index {
     Column() {
       Row() {
         Button("web click").key('webcomponent').onClick(async () => {
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           console.info("key==>" + this.str);
           switch (this.str) {
             case "emitGetStoredGeolocation": {
@@ -137,7 +128,7 @@ struct Index {
                   if (origins) {
                     let origins_str: string = origins.join()
                     console.log('getStoredGeolocationAsync origins: ' + origins_str);
-                    Utils.emitEvent(origins_str, 120);
+                    Utils.emitEvent(origins_str, 160590);
                   }
                 });
               } catch (error) {
@@ -149,8 +140,11 @@ struct Index {
               try {
                 web_webview.WebviewController.setHttpDns(web_webview.SecureDnsMode.SECURE_ONLY,
                   "https://httpdns-browser.platform.dbankcloud.cn/dns-query{?dns}")
+                this.isPageEnd = -1;
                 this.controller.loadUrl("https://www.example.com/");
-                this.enterPageEnd = true;
+                await waitForExist(() => this.isPageEnd, this.str, 0);
+                Utils.emitEvent(1, 160600);
+
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -166,7 +160,7 @@ struct Index {
                   }
                   if (result) {
                     console.log('getAccessibleGeolocationAsync result: ' + result);
-                    Utils.emitEvent(result, 451);
+                    Utils.emitEvent(result, 160610);
                   }
                 });
               } catch (error) {
@@ -176,10 +170,11 @@ struct Index {
             }
             case "emitGetAccessibleGeolocationPromise": {
               try {
+                 web_webview.GeolocationPermissions.allowGeolocation("file:///");
                 web_webview.GeolocationPermissions.getAccessibleGeolocation("file:///")
                   .then(result => {
                     console.log('getAccessibleGeolocationPromise result: ' + result);
-                    Utils.emitEvent(result, 517);
+                    Utils.emitEvent(result, 160620);
                   }).catch((error: ESObject) => {
                   console.log('getAccessibleGeolocationPromise error: ' + JSON.stringify(error));
                 });
@@ -195,7 +190,7 @@ struct Index {
                   .then(origins => {
                     let origins_str: string = origins.join();
                     console.log('getStoredGeolocationPromise origins: ' + origins_str);
-                    Utils.emitEvent(origins_str, 521);
+                    Utils.emitEvent(origins_str, 160630);
                   }).catch((error: ESObject) => {
                   console.log('getStoredGeolocationPromise error: ' + JSON.stringify(error));
                 });
@@ -218,14 +213,6 @@ struct Index {
           console.log('onDataResubmitted');
           event.handler.resend();
         })
-        .onSearchResultReceive(ret => {
-          let searchResult = ret.activeMatchOrdinal.toString() +
-          ret.numberOfMatches.toString();
-          console.log("searchResult" + searchResult);
-          setTimeout(() => {
-            Utils.emitEvent(searchResult, 16);
-          }, 3000)
-        })
         .onContextMenuShow((event) => {
           console.info(event.param.getMediaType() + event.param.getSelectionText() + event.param.getSourceType());
           console.info(event.param.getInputFieldType().toString());
@@ -239,10 +226,8 @@ struct Index {
           event.response.setResponseIsReady(true);
         })
         .onPageEnd((event) => {
-          if (this.enterPageEnd) {
-            Utils.emitEvent(1, 446);
-            this.enterPageEnd = false;
-          }
+          this.isPageEnd = 0;
+
         })
         .darkMode(this.mode)
         .forceDarkAccess(false)

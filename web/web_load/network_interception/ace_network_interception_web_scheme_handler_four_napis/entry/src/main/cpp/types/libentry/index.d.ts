@@ -24,3 +24,4 @@ export const destroyResponse: () => number;
 export const createSchemeHandler: () => number;
 export const resourceRequestGetRequestHeaders: () => number;
 export const httpBodyStreamGetUserData: () => number;
+export const getRequestValue: () => number;

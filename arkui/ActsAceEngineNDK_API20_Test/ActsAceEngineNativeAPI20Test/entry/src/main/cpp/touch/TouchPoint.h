@@ -43,6 +43,7 @@ static OH_NativeXComponent_HistoricalPoint g_historicalPoint = {
 static std::unordered_map<OH_NativeXComponent_TouchEvent_SourceTool,
                           OH_NativeXComponent_HistoricalPoint> g_historicalPointMap;
 static std::unordered_map<bool, OH_NativeXComponent_TouchPoint> g_touchPointMap;
+static std::unordered_map<OH_NativeXComponent_TouchEventType, OH_NativeXComponent_TouchPoint> g_touchPointTypeMap;
 static std::unordered_map<OH_NativeXComponent_TouchPointToolType, int32_t> g_touchPointToolMap;
 static std::unordered_map<OH_NativeXComponent_EventSourceType, int32_t> g_touchEventSourceMap;
 static OH_NativeXComponent_TouchEvent g_touchEvent = {
@@ -92,6 +93,7 @@ napi_value TouchEventSize(napi_env env, napi_callback_info info);
 napi_value TouchEventForce(napi_env env, napi_callback_info info);
 napi_value TouchEventDeviceId(napi_env env, napi_callback_info info);
 napi_value TouchEventTimeStamp(napi_env env, napi_callback_info info);
+napi_value TouchPointTypeEnum(napi_env env, napi_callback_info info);
 }
 
 #endif //NDKXCOMPONENT_TOUCHPOINT_H

@@ -1031,16 +1031,30 @@ static napi_value TestInjectTouchEventwithSubWindowSlide(napi_env env, napi_call
     
     Input_TouchEvent *touchEvent1 = OH_Input_CreateTouchEvent();
     OH_Input_SetTouchEventAction(touchEvent1, 1);
-    OH_Input_SetTouchEventFingerId(touchEvent1, 1);
-    OH_Input_SetTouchEventDisplayX(touchEvent1, 0);
+    OH_Input_SetTouchEventFingerId(touchEvent1, 0);
+    OH_Input_SetTouchEventDisplayX(touchEvent1, windowX);
     OH_Input_SetTouchEventDisplayY(touchEvent1, 0);
     OH_Input_SetTouchEventActionTime(touchEvent1, 0);
     OH_Input_SetTouchEventWindowId(touchEvent1, windowId);
     auto res = OH_WindowManager_InjectTouchEvent(windowId, touchEvent1, windowX, windowY);
-    OH_Input_SetTouchEventAction(touchEvent1, TWO);
-    res = OH_WindowManager_InjectTouchEvent(windowId, touchEvent1, windowX, windowY);
-    OH_Input_SetTouchEventAction(touchEvent1, THREE);
-    res = OH_WindowManager_InjectTouchEvent(windowId, touchEvent1, windowX, windowY);
+
+    Input_TouchEvent *touchEvent2 = OH_Input_CreateTouchEvent();
+    OH_Input_SetTouchEventAction(touchEvent2, 2);
+    OH_Input_SetTouchEventFingerId(touchEvent2, 0);
+    OH_Input_SetTouchEventDisplayX(touchEvent2, windowX+20);
+    OH_Input_SetTouchEventDisplayY(touchEvent2, 0);
+    OH_Input_SetTouchEventActionTime(touchEvent2, 0);
+    OH_Input_SetTouchEventWindowId(touchEvent2, windowId);
+    res = OH_WindowManager_InjectTouchEvent(windowId, touchEvent2, windowX+20, windowY);
+
+    Input_TouchEvent *touchEvent3 = OH_Input_CreateTouchEvent();
+    OH_Input_SetTouchEventAction(touchEvent3, 3);
+    OH_Input_SetTouchEventFingerId(touchEvent3, 0);
+    OH_Input_SetTouchEventDisplayX(touchEvent3, windowX+30);
+    OH_Input_SetTouchEventDisplayY(touchEvent3, 0);
+    OH_Input_SetTouchEventActionTime(touchEvent3, 0);
+    OH_Input_SetTouchEventWindowId(touchEvent3, windowId);
+    res = OH_WindowManager_InjectTouchEvent(windowId, touchEvent3, windowX+30, windowY);
     napi_value resultValue;
     napi_create_int32(env, res, &resultValue);
     return resultValue;
@@ -1076,35 +1090,6 @@ static napi_value TestInjectTouchEventwithSubWindowEdgeSlide(napi_env env, napi_
     return resultValue;
 }
 
-static napi_value TestInjectTouchEventwithSubWindowSlideCancle(napi_env env, napi_callback_info info)
-{
-    size_t argc = THREE;
-    napi_value args[THREE] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    int32_t windowId;
-    napi_get_value_int32(env, args[0], &windowId);
-    double windowX = 0;
-    double windowY = 0;
-    napi_get_value_double(env, args[1], &windowX);
-    napi_get_value_double(env, args[TWO], &windowY);
-    
-    Input_TouchEvent *touchEvent1 = OH_Input_CreateTouchEvent();
-    OH_Input_SetTouchEventAction(touchEvent1, 1);
-    OH_Input_SetTouchEventFingerId(touchEvent1, 1);
-    OH_Input_SetTouchEventDisplayX(touchEvent1, 0);
-    OH_Input_SetTouchEventDisplayY(touchEvent1, 0);
-    OH_Input_SetTouchEventActionTime(touchEvent1, 0);
-    OH_Input_SetTouchEventWindowId(touchEvent1, windowId);
-    auto res = OH_WindowManager_InjectTouchEvent(windowId, touchEvent1, windowX, windowY);
-    OH_Input_SetTouchEventAction(touchEvent1, TWO);
-    res = OH_WindowManager_InjectTouchEvent(windowId, touchEvent1, windowX, windowY);
-    OH_Input_SetTouchEventAction(touchEvent1, 0);
-    res = OH_WindowManager_InjectTouchEvent(windowId, touchEvent1, windowX, windowY);
-    napi_value resultValue;
-    napi_create_int32(env, res, &resultValue);
-    return resultValue;
-}
 
 static napi_value TestInjectTouchEventwithSubWindowButtonDownCancle(napi_env env, napi_callback_info info)
 {
@@ -1220,8 +1205,6 @@ static napi_value injectTouchEventInit(napi_env env, napi_value exports)
         {"testInjectTouchEventwithSubWindowSlide", nullptr, TestInjectTouchEventwithSubWindowSlide,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testInjectTouchEventwithSubWindowEdgeSlide", nullptr, TestInjectTouchEventwithSubWindowEdgeSlide,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"testInjectTouchEventwithSubWindowSlideCancle", nullptr, TestInjectTouchEventwithSubWindowSlideCancle,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testInjectTouchEventwithSubWindowButtonDownCancle", nullptr,
             TestInjectTouchEventwithSubWindowButtonDownCancle, nullptr, nullptr, nullptr, napi_default, nullptr},

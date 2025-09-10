@@ -18,13 +18,62 @@ import pasteboard from "libpasteboard.so"
 import udmf from "libudmf.so"
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium";
 import batteryInfo from '@ohos.batteryInfo';
+import { BusinessError } from '@ohos.base';
+import { abilityAccessCtrl, common, PermissionRequestResult} from '@kit.AbilityKit';
+import { Driver, ON } from '@kit.TestKit';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+
+const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
+const context = delegator.getAppContext().getApplicationContext();
+let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+let getPermission = async () => {
+  console.info('getPermission is start');
+  let context:common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext;
+  atManager.requestPermissionsFromUser(context, ['ohos.permission.READ_PASTEBOARD'], (err:BusinessError, data:PermissionRequestResult) => {
+    console.info('requestPermissionsFromUser success data is' + JSON.stringify(data));
+    console.info('requestPermissionsFromUser failed err is' + JSON.stringify(err));
+  })
+}
+
+let sleep = (ms:number) => {
+  return new Promise<ESObject>(resolve => setTimeout(resolve, ms));
+}
+
+let drivenFn = async () => {
+  try {
+    let driver: Driver = Driver.create();
+    console.info('come in driveFn');
+    console.info('driver is ${JSON.stringify(driver)}');
+    await sleep(1000);
+    let button = await driver.findComponent(ON.text('始终允许'));
+    if (button) {
+      console.info('button is $ {JSON.stringify(button)}');
+      await sleep(1000);
+      await button.click();
+      await  sleep(1000);
+    } else {
+      let button1 = await driver.findComponent(ON.text('仅本次允许'));
+      console.info('button is $ {JSON.stringify(button)}');
+      await sleep(1000);
+      await button1.click();
+      await  sleep(1000);
+    }
+  } catch (err) {
+    console.info('err is' + err);
+    return
+  }
+}
 
 let TAG = '[testLog-ets]';
 export default function pasteboardTestNdkTest() {
   describe('pasteboardTestNdkTest', async (done: Function) => {
-
-
-
+    beforeAll(async (done:Function) => {
+      await getPermission();
+      await sleep(1000);
+      await drivenFn();
+      await sleep(1000);
+      done();
+    })
 
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0100
@@ -42,11 +91,6 @@ export default function pasteboardTestNdkTest() {
       done();
     });
 
-
-
-
-
-
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
      * @tc.name OH_PasteboardObserver_SetData0100
@@ -61,8 +105,6 @@ export default function pasteboardTestNdkTest() {
       console.info( TAG + 'OH_PasteboardObserver_SetData0100 data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
     })
-
-
 
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0300
@@ -79,8 +121,6 @@ export default function pasteboardTestNdkTest() {
       expect(data).assertEqual(1);
     })
 
-
-
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0400
      * @tc.name OH_PasteboardObserver_SetData0300
@@ -95,8 +135,6 @@ export default function pasteboardTestNdkTest() {
       console.info( TAG + 'OH_PasteboardObserver_SetData0300 data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
     })
-
-
 
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0500
@@ -113,8 +151,6 @@ export default function pasteboardTestNdkTest() {
       expect(data).assertEqual(1);
     })
 
-
-
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0600
      * @tc.name OH_Pasteboard_Create0100
@@ -129,9 +165,6 @@ export default function pasteboardTestNdkTest() {
       console.info( TAG + 'OH_Pasteboard_Create0100 data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
     })
-
-
-
 
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0700
@@ -148,9 +181,6 @@ export default function pasteboardTestNdkTest() {
       expect(data).assertEqual(1);
     })
 
-
-
-
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0800
      * @tc.name OH_Pasteboard_Subscribe0200
@@ -165,10 +195,6 @@ export default function pasteboardTestNdkTest() {
       console.info( TAG + 'OH_Pasteboard_Subscribe0200 data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
     })
-
-
-
-
 
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0900
@@ -185,9 +211,6 @@ export default function pasteboardTestNdkTest() {
       expect(data).assertEqual(1);
     })
 
-
-
-
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_1000
      * @tc.name OH_Pasteboard_Subscribe0400
@@ -202,9 +225,6 @@ export default function pasteboardTestNdkTest() {
       console.info( TAG + 'OH_Pasteboard_Subscribe0400 data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
     })
-
-
-
 
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_1100
@@ -221,9 +241,6 @@ export default function pasteboardTestNdkTest() {
       expect(data).assertEqual(1);
     })
 
-
-
-
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_1200
      * @tc.name OH_Pasteboard_Subscribe0600
@@ -238,9 +255,6 @@ export default function pasteboardTestNdkTest() {
       console.info( TAG + 'OH_Pasteboard_Subscribe0600 data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
     })
-
-
-
 
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_1300
@@ -257,9 +271,6 @@ export default function pasteboardTestNdkTest() {
       expect(data).assertEqual(1);
     })
 
-
-
-
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_1400
      * @tc.name OH_Pasteboard_Unsubcribe0200
@@ -274,9 +285,6 @@ export default function pasteboardTestNdkTest() {
       console.info( TAG + 'OH_Pasteboard_Unsubcribe0200 data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
     })
-
-
-
 
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_1500
@@ -293,8 +301,6 @@ export default function pasteboardTestNdkTest() {
       expect(data).assertEqual(1);
     })
 
-
-
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_1600
      * @tc.name OH_Pasteboard_Unsubcribe0400
@@ -310,9 +316,6 @@ export default function pasteboardTestNdkTest() {
       expect(data).assertEqual(1);
     })
 
-
-
-
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_1700
      * @tc.name OH_Pasteboard_Unsubcribe0500
@@ -327,9 +330,6 @@ export default function pasteboardTestNdkTest() {
       console.info( TAG + 'OH_Pasteboard_Unsubcribe0500 data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
     })
-
-
-
 
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_1800
@@ -364,9 +364,6 @@ export default function pasteboardTestNdkTest() {
       expect(data).assertEqual(1);
     })
 
-
-
-
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2000
      * @tc.name OH_Pasteboard_HasType0100
@@ -381,10 +378,6 @@ export default function pasteboardTestNdkTest() {
       console.info( TAG + 'OH_Pasteboard_HasType0100 data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
     })
-
-
-
-
 
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2100
@@ -401,10 +394,6 @@ export default function pasteboardTestNdkTest() {
       expect(data).assertEqual(1);
     })
 
-
-
-
-
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2200
      * @tc.name OH_Pasteboard_ClearData0100
@@ -419,10 +408,6 @@ export default function pasteboardTestNdkTest() {
       console.info( TAG + 'OH_Pasteboard_ClearData0100 data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
     })
-
-
-
-
 
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2300
@@ -439,10 +424,6 @@ export default function pasteboardTestNdkTest() {
       expect(data).assertEqual(1);
     })
 
-
-
-
-
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2400
      * @tc.name OH_Pasteboard_GetData0100
@@ -457,9 +438,6 @@ export default function pasteboardTestNdkTest() {
       console.info( TAG + 'OH_Pasteboard_GetData0100 data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
     })
-
-
-
 
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2500
@@ -476,10 +454,6 @@ export default function pasteboardTestNdkTest() {
       expect(data).assertEqual(1);
     })
 
-
-
-
-
     /**
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2600
      * @tc.name OH_Pasteboard_GetData0300
@@ -492,6 +466,51 @@ export default function pasteboardTestNdkTest() {
       console.info( TAG + 'OH_Pasteboard_GetData0300' );
       let data = testndk.OH_Pasteboard_GetData0300();
       console.info( TAG + 'OH_Pasteboard_GetData0300 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2700
+     * @tc.name OH_Pasteboard_SyncDelayedDataAsyncTest0100
+     * @tc.desc OH_Pasteboard_SyncDelayedDataAsync test valid
+     * @tc.level: Level 2
+     * @tc.type: Functiontion
+     * @tc.size: MediumTest
+     */
+    it('OH_Pasteboard_SyncDelayedDataAsyncTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+      console.info( TAG + 'OH_Pasteboard_SyncDelayedDataAsyncTest0100' );
+      let data = testndk.OH_Pasteboard_SyncDelayedDataAsyncTest0100();
+      console.info( TAG + 'OH_Pasteboard_SyncDelayedDataAsyncTest0100 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2800
+     * @tc.name OH_Pasteboard_SyncDelayedDataAsyncTest0200
+     * @tc.desc OH_Pasteboard_SyncDelayedDataAsync test valid
+     * @tc.level: Level 2
+     * @tc.type: Functiontion
+     * @tc.size: MediumTest
+     */
+    it('OH_Pasteboard_SyncDelayedDataAsyncTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+      console.info( TAG + 'OH_Pasteboard_SyncDelayedDataAsyncTest0200' );
+      let data = testndk.OH_Pasteboard_SyncDelayedDataAsyncTest0200();
+      console.info( TAG + 'OH_Pasteboard_SyncDelayedDataAsyncTest0200 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2900
+     * @tc.name OH_Pasteboard_SyncDelayedDataAsyncTest0300
+     * @tc.desc OH_Pasteboard_SyncDelayedDataAsync test valid
+     * @tc.level: Level 2
+     * @tc.type: Functiontion
+     * @tc.size: MediumTest
+     */
+    it('OH_Pasteboard_SyncDelayedDataAsyncTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+      console.info( TAG + 'OH_Pasteboard_SyncDelayedDataAsyncTest0300' );
+      let data = testndk.OH_Pasteboard_SyncDelayedDataAsyncTest0300();
+      console.info( TAG + 'OH_Pasteboard_SyncDelayedDataAsyncTest0300 data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
     })
   })

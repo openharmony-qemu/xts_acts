@@ -804,36 +804,55 @@ export default function CameraPhotoSessionTest() {
      * @tc.level     : Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_REGISTER_MACRO_STATUS_0100', Level.LEVEL0, async (done: Function) => {
-        console.info("--------------SUB_MULTIMEDIA_CAMERA_REGISTER_MACRO_STATUS_0100--------------");
-        if (mCameraNum == 0) {
-          console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_REGISTER_MACRO_STATUS_0100 FAILED with NoCamera");
-          expect(true).assertFail();
-          done();
-          return;
-        }
-        createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
-        try {
-            mCameraSession.on('macroStatusChanged', (err: BusinessError, status: boolean): void => {
-              done();
-            });
-            mCameraSession.off('macroStatusChanged');
-        } catch (err) {
-            console.info(TAG + " SUB_MULTIMEDIA_CAMERA_REGISTER_MACRO_STATUS_0100 FAILED" + err.code);
-            expect(true).assertFalse();
-        }
-        createCameraSessionInstance(camera.SceneMode.NORMAL_VIDEO);
-        try {
-            mCameraSession.on('macroStatusChanged', (err: BusinessError, status: boolean): void => {
-              done();
-            });
-            mCameraSession.off('macroStatusChanged');
-            console.info(TAG + " SUB_MULTIMEDIA_CAMERA_REGISTER_MACRO_STATUS_0100 Success ");
-            expect(true).assertTrue();
-        } catch (err) {
-            console.info(TAG + " SUB_MULTIMEDIA_CAMERA_REGISTER_MACRO_STATUS_0100 FAILED" + err.code);
-            expect(true).assertFalse();
-        }
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_REGISTER_MACRO_STATUS_0100--------------");
+      if (mCameraNum == 0) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_REGISTER_MACRO_STATUS_0100 FAILED with NoCamera");
+        expect(true).assertFail();
         done();
+        return;
+      }
+      createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
+      try {
+          mCameraSession.on('macroStatusChanged', (err: BusinessError, status: boolean): void => {
+            done();
+          });
+          mCameraSession.off('macroStatusChanged');
+      } catch (err) {
+          console.info(TAG + " SUB_MULTIMEDIA_CAMERA_REGISTER_MACRO_STATUS_0100 FAILED" + err.code);
+          expect(true).assertFalse();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_CAMERA_REGISTER_MACRO_STATUS_0200
+     * @tc.name      : SUB_MULTIMEDIA_CAMERA_REGISTER_MACRO_STATUS_0200
+     * @tc.desc      : Test register macro status callback
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_REGISTER_MACRO_STATUS_0200', Level.LEVEL0, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_REGISTER_MACRO_STATUS_0200--------------");
+      if (mCameraNum == 0) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_REGISTER_MACRO_STATUS_0200 FAILED with NoCamera");
+        expect(true).assertFail();
+        done();
+        return;
+      }
+      createCameraSessionInstance(camera.SceneMode.NORMAL_VIDEO);
+      try {
+          mCameraSession.on('macroStatusChanged', (err: BusinessError, status: boolean): void => {
+            done();
+          });
+          mCameraSession.off('macroStatusChanged');
+          console.info(TAG + " SUB_MULTIMEDIA_CAMERA_REGISTER_MACRO_STATUS_0200 Success ");
+          expect(true).assertTrue();
+      } catch (err) {
+          console.info(TAG + " SUB_MULTIMEDIA_CAMERA_REGISTER_MACRO_STATUS_0200 FAILED" + err.code);
+          expect(true).assertFalse();
+      }
+      done();
     })
   })
 }

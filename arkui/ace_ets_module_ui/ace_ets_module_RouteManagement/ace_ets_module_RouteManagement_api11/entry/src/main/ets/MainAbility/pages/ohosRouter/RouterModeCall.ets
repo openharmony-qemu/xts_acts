@@ -56,8 +56,12 @@ struct RouterModeCall {
                 }
               })
             } catch (err) {
-              console.error(`pushUrl1 failed, code is ${err.code}, message is ${err.message}`)
-              AppStorage.setOrCreate('401Code', err.code);
+              if (err && err?.code) {
+                console.error(`pushUrl1 failed, code is ${err?.code}, message is ${err?.message}`)
+                AppStorage.setOrCreate('401Code', err?.code);
+              } else {
+                console.error(`pushUrl1 failed, err is ${err}`)
+              }
             }
           })
 
@@ -70,11 +74,13 @@ struct RouterModeCall {
             params: new routerParams('message', [123, 456, 789]),
             recoverable: false
           }, router.RouterMode.Standard, (err) => {
-            if (err) {
-              console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
-              AppStorage.setOrCreate('100002Code', err.code);
-              return;
-            }
+            if (err && err?.code) {
+                console.error(`pushUrl failed, code is ${err?.code}, message is ${err?.message}`);
+                AppStorage.setOrCreate('100002Code', err?.code);
+                return;
+              } else {
+                console.error(`pushUrl1 failed, err is ${err}`)
+              }
           })
         })
 
@@ -87,11 +93,14 @@ struct RouterModeCall {
                 url: 'MainAbility/pages/ohosRouter/router',
                 params: new routerParams('message', [123, 456, 789])
               }, router.RouterMode.Standard, (err) => {
-                if (err) {
-                  console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
-                  AppStorage.setOrCreate('100003Code', err.code);
+                if (err && err?.code) {
+                  console.error(`pushUrl failed, code is ${err?.code}, message is ${err?.message}`);
+                  AppStorage.setOrCreate('100003Code', err?.code);
                   return;
-                }})
+                } else {
+                  console.error(`pushUrl1 failed, err is ${err}`)
+                }
+              })
             }
           })
       }

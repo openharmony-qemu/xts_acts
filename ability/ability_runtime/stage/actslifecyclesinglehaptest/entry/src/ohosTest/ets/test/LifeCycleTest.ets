@@ -218,11 +218,11 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility2_onAbilityDestroy') {
+            await sleep(1000);
             console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
             console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
             let listTemp = JSON.stringify(globalThis.list1);
             console.log(TAG + " listTemp is :" + listTemp);
-            await sleep(1000);
             expect(listTemp.indexOf("MainAbility1 onWindowStageCreate") !== -1).assertTrue();
             expect(listTemp.split("MainAbility1 onAbilityForeground").length - 1).assertEqual(2);
             expect(listTemp.indexOf("MainAbility1 onAbilityBackground") !== -1).assertTrue();
@@ -288,6 +288,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           if (data.event === 'MainAbility1_onForground' && count === 0) {
             count++;
+            await sleep(1000);
             await globalThis.abilityContext.startAbility(str1)
               .then((data: ESObject) => {
                 console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
@@ -295,6 +296,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility2_onAbilityDestroy' && count === 1) {
+            await sleep(1000);
             console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
             console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
             count++;
@@ -380,6 +382,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility2_onForground' && count === 1) {
+            await sleep(1000);
             count++;
             let para: ability.AbilityResult = {
               resultCode: 1,
@@ -398,6 +401,7 @@ export default function lifecycleTest() {
               });
             },500)
           } else if (data.event === 'MainAbility3_onAbilityDestroy' && count === 2) {
+            await sleep(1000);
             console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list3));
             console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid3));
             count++;
@@ -469,6 +473,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           if (data.event === 'MainAbility1_onForground') {
+            await sleep(1000);
             await globalThis.abilityContext.startAbility(str1)
               .then((data: ESObject) => {
                 console.info(TAG + ' startMainAbility3 successful. Data: ' + data);
@@ -476,6 +481,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility3 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility3_onForground') {
+            await sleep(1000);
             await globalThis.abilityContext.startAbility(str2)
               .then((data: ESObject) => {
                 console.info(TAG + ' startMainAbility4 successful. Data: ' + data);
@@ -483,6 +489,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility4 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility4_onForground') {
+            await sleep(1000);
             console.log(TAG + " listKey1 : " + JSON.stringify(globalThis.list1));
             console.log(TAG + " callbackid1 : " + JSON.stringify(globalThis.callbackid1));
             console.log(TAG + " listKey3 : " + JSON.stringify(globalThis.list3));
@@ -564,6 +571,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           if (data.event === 'MainAbility1_onForground' && count === 0) {
+            await sleep(1000);
             count++;
             await globalThis.abilityContext.startAbility(str1)
               .then((data: ESObject) => {
@@ -572,6 +580,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility5 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility5_onForground' && count === 1) {
+            await sleep(1000);
             count++;
             await globalThis.abilityContext.startAbility(str2)
               .then((data: ESObject) => {
@@ -580,6 +589,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility2_onAbilityDestroy' && count === 2) {
+            await sleep(1000);
             console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
             console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
             count++;
@@ -759,6 +769,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           if (data.event == 'MainAbility1_onForground') {
+            await sleep(1000);
             count++;
             if (count < 4) {
               await globalThis.abilityContext.startAbility(str1)
@@ -768,6 +779,7 @@ export default function lifecycleTest() {
                   console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
                 })
             } else {
+              await sleep(1000);
               console.info(TAG + ' count++ is: ' + count);
               console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
               console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
@@ -841,6 +853,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           if (data.event == 'MainAbility1_onForground') {
+            await sleep(1000);
             count++;
             if (count < 3) {
               await globalThis.abilityContext.startAbility(str1)
@@ -850,6 +863,7 @@ export default function lifecycleTest() {
                   console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
                 })
             } else {
+              await sleep(1000);
               console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
               console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
               let listTemp = JSON.stringify(globalThis.list1);
@@ -920,6 +934,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           if (data.event == 'MainAbility6_onForground') {
+            await sleep(1000);
             count++;
             if (count < 2) {
               console.log(TAG + " firstCallback listKey : " + JSON.stringify(globalThis.list6));
@@ -933,6 +948,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
               })
             } else {
+              await sleep(1000);
               console.log(TAG + " secondCallback listKey : " + JSON.stringify(globalThis.list6));
               console.log(TAG + " secondCallback callbackid : " + JSON.stringify(globalThis.callbackid6));
               id2 = globalThis.callbackid6;
@@ -1054,6 +1070,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           if (data.event === 'MainAbility8_onForground' && count === 0) {
+            await sleep(1000);
             console.log(TAG + " firstCallback listKey : " + JSON.stringify(globalThis.list8));
             console.log(TAG + " firstCallback callbackid : " + JSON.stringify(globalThis.callbackid8));
             count++;
@@ -1066,6 +1083,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility8 failed. Cause: ' + JSON.stringify(error));
               })
           } else {
+            await sleep(1000);
             console.log(TAG + " secondCallback listKey : " + JSON.stringify(globalThis.list8));
             console.log(TAG + " secondCallback callbackid : " + JSON.stringify(globalThis.callbackid8));
             id2 = globalThis.callbackid8;
@@ -1116,6 +1134,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           if (data.event === 'MainAbility9_onForground' && count === 0) {
+            await sleep(1000);
             count++;
             await globalThis.abilityContext.startAbility(str1)
               .then((data: ESObject) => {
@@ -1124,6 +1143,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' Hap1MainAbility1 first failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'Hap1MainAbility1_onDestroy' && count === 1) {
+            await sleep(1000);
             count++;
             await globalThis.abilityContext.startAbility(str1)
               .then((data: ESObject) => {
@@ -1132,6 +1152,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' Hap1MainAbility1 second failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'Hap1MainAbility1_onForground' && count === 2) {
+            await sleep(1000);
             count++;
             let listTemp = JSON.stringify(globalThis.mainAbility9ListKey);
             console.log(TAG + "listTemp is :" + listTemp);
@@ -1195,6 +1216,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           if (data.event === 'MainAbility9_onForground' && count === 0) {
+            await sleep(1000);
             count++;
             await globalThis.abilityContext.startAbility(str1)
               .then((data: ESObject) => {
@@ -1203,6 +1225,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' Hap1MainAbility2 first failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'Hap1MainAbility2_onDestroy' && count === 1) {
+            await sleep(1000);
             count++;
             await globalThis.abilityContext.startAbility(str1)
               .then((data: ESObject) => {
@@ -1211,6 +1234,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' Hap1MainAbility2 second failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'Hap1MainAbility2_onAbilityDestroy' && count === 2) {
+            await sleep(1000);
             count++;
             let listTemp = JSON.stringify(globalThis.mainAbility9ListKey);
             console.log(TAG + "listTemp is :" + listTemp);
@@ -1276,6 +1300,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           console.info(TAG + ' count. is: ' + JSON.stringify(count));
           if (data.event === 'MainAbility11_onForground' && count === 0) {
+            await sleep(1000);
             count++;
             await globalThis.abilityContext.startAbility(str1)
               .then((data: ESObject) => {
@@ -1284,6 +1309,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility2_onForground' && count === 1) {
+            await sleep(1000);
             console.log(TAG + " firstCallback listKey : " + JSON.stringify(globalThis.list11));
             console.log(TAG + " firstCallback callbackid : " + JSON.stringify(globalThis.callbackid11));
             id1 = globalThis.callbackid11;
@@ -1296,6 +1322,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility11 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility11_onForground' && count === 2) {
+            await sleep(1000);
             count++;
             await globalThis.abilityContext.startAbility(str1)
               .then((data: ESObject) => {
@@ -1304,6 +1331,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility2_onAbilityDestroy' && count === 3) {
+            await sleep(1000);
             console.log(TAG + " secondCallback listKey : " + JSON.stringify(globalThis.list11));
             console.log(TAG + " secondCallback callbackid : " + JSON.stringify(globalThis.callbackid11));
             id2 = globalThis.callbackid11;
@@ -1462,6 +1490,7 @@ export default function lifecycleTest() {
           if (data.event === 'MainAbility12_onForground') {
             count++;
             if (count === 1 || count === 3) {
+              await sleep(1000);
               await globalThis.abilityContext.startAbility(str1)
                 .then((data: ESObject) => {
                   console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
@@ -1469,6 +1498,7 @@ export default function lifecycleTest() {
                   console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
                 })
             } else if (count === 2) {
+              await sleep(1000);
               console.log(TAG + " firstCallback listKey : " + JSON.stringify(globalThis.list12));
               console.log(TAG + " firstCallback callbackid : " + JSON.stringify(globalThis.callbackid12));
               id1 = globalThis.callbackid12;
@@ -1480,6 +1510,7 @@ export default function lifecycleTest() {
                 console.log(TAG + " terminateSelfwithresult error: " + JSON.stringify(error));
               });
             } else {
+              await sleep(1000);
               console.log(TAG + " secondCallback listKey : " + JSON.stringify(globalThis.list12));
               console.log(TAG + " secondCallback callbackid : " + JSON.stringify(globalThis.callbackid12));
               id2 = globalThis.callbackid12;
@@ -1556,6 +1587,7 @@ export default function lifecycleTest() {
           console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
           console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
           if (data.event === 'MainAbility1_onForground') {
+            await sleep(1000);
             await globalThis.abilityContext.startAbility(str1)
               .then((data: ESObject) => {
                 console.info(TAG + ' MainAbility2 successful. Data: ' + data);
@@ -1563,6 +1595,7 @@ export default function lifecycleTest() {
                 console.error(TAG + ' MainAbility1 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility2_onForground') {
+            await sleep(1000);
             console.log(TAG + " firstCallback listKey1 : " + JSON.stringify(globalThis.list1));
             console.log(TAG + " firstCallback callbackid1 : " + JSON.stringify(globalThis.callbackid1));
             id1 = globalThis.callbackid1;
@@ -1582,6 +1615,7 @@ export default function lifecycleTest() {
               console.log(TAG + " terminateSelfwithresult error: " + JSON.stringify(error));
             });
           } else if (data.event === 'MainAbility1_onDestroy') {
+            await sleep(1000);
             console.log(TAG + " secondCallback callbackid1 : " + JSON.stringify(globalThis.callbackid1));
             let listTemp = JSON.stringify(globalThis.list1);
             console.log(TAG + " listTemp is :" + listTemp);

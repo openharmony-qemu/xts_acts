@@ -23,10 +23,8 @@ const ARKUI_ERROR_CODE_PARAM_INVALID = 401;
 const ARKUI_ERROR_CODE_XCOMPONENT_STATE_INVALID = 103501;
 
 export default function NativeXComponent() {
-  let driver: Driver;
   describe('NativeXComponent', () => {
     beforeAll(async (done: Function) => {
-      driver = Driver.create();
       Utils.pushPageNoClear('NativeXComponent/NativeXComponent',done);
     })
     /**
@@ -42,7 +40,7 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(0);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTACTION_0100 start<====`);
-        await driver.triggerKey(40);
+        await Utils.driver.triggerKey(40);
         let Result: number = nativexcomponent.GetKeyEventAction();
         expect(1).assertEqual(Result);
         done()
@@ -65,7 +63,7 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(1);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTACTION_0200 start<====`);
-        await driver.triggerKey(40);
+        await Utils.driver.triggerKey(40);
         let Result: number = nativexcomponent.GetKeyEventAction();
         expect(-1).assertEqual(Result);
         done()
@@ -88,7 +86,7 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(2);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTSOURCETYPE_0100 start<====`);
-        await driver.triggerKey(40);
+        await Utils.driver.triggerKey(40);
         let Result: number = nativexcomponent.GetKeyEventSourceType();
         expect(true).assertEqual(Result <= 5);
         done()
@@ -111,7 +109,7 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(3);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTSOURCETYPE_0200 start<====`);
-        await driver.triggerKey(40);
+        await Utils.driver.triggerKey(40);
         let Result: number = nativexcomponent.GetKeyEventSourceType();
         expect(0).assertEqual(Result);
         done()
@@ -134,7 +132,7 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(4);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTDEVICEID_0100 start<====`);
-        await driver.triggerKey(40);
+        await Utils.driver.triggerKey(40);
         let Result: number = nativexcomponent.GetKeyEventDeviceId();
         expect(1).assertEqual(Result);
         done()
@@ -157,7 +155,7 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(5);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTDEVICEID_0200 start<====`);
-        await driver.triggerKey(40);
+        await Utils.driver.triggerKey(40);
         let Result: number = nativexcomponent.GetKeyEventDeviceId();
         expect(0).assertEqual(Result);
         done()
@@ -180,7 +178,7 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(6);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTTIMESTAMP_0100 start<====`);
-        await driver.triggerKey(40);
+        await Utils.driver.triggerKey(40);
         let Result: number = nativexcomponent.GetKeyEventTimestamp();
         expect(1).assertEqual(Result);
         done()
@@ -203,7 +201,7 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(7);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTTIMESTAMP_0200 start<====`);
-        await driver.triggerKey(40);
+        await Utils.driver.triggerKey(40);
         let Result: number = nativexcomponent.GetKeyEventTimestamp();
         expect(0).assertEqual(Result);
         done()
@@ -226,7 +224,7 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(8);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTMODIFIERKEYSTATES_0100 start<====`);
-        await driver.triggerKey(40);
+        await Utils.driver.triggerKey(40);
         let Result: number = nativexcomponent.GetKeyEventModifierKeyStates();
         expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(Result);
         done()
@@ -249,7 +247,7 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(9);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTMODIFIERKEYSTATES_0200 start<====`);
-        await driver.triggerKey(40);
+        await Utils.driver.triggerKey(40);
         let Result: number = nativexcomponent.GetKeyEventModifierKeyStates();
         expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(Result);
         done()
@@ -272,7 +270,7 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(10);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTNUMLOCKSTATE_0100 start<====`);
-        await driver.triggerKey(40);
+        await Utils.driver.triggerKey(40);
         let Result: number = nativexcomponent.GetKeyEventNumLockState();
         expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(Result);
         done()
@@ -295,7 +293,7 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(11);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTNUMLOCKSTATE_0200 start<====`);
-        await driver.triggerKey(40);
+        await Utils.driver.triggerKey(40);
         let Result: number = nativexcomponent.GetKeyEventNumLockState();
         expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(Result);
         done()
@@ -318,7 +316,7 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(12);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTCAPSLOCKSTATE_0100 start<====`);
-        await driver.triggerKey(40);
+        await Utils.driver.triggerKey(40);
         let Result: number = nativexcomponent.GetKeyEventCapsLockState();
         expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(Result);
         done()
@@ -341,7 +339,7 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(13);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTCAPSLOCKSTATE_0200 start<====`);
-        await driver.triggerKey(40);
+        await Utils.driver.triggerKey(40);
         let Result: number = nativexcomponent.GetKeyEventCapsLockState();
         expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(Result);
         done()
@@ -364,7 +362,7 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(14);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTSCROLLLOCKSTATE_0100 start<====`);
-        await driver.triggerKey(40);
+        await Utils.driver.triggerKey(40);
         let Result: number = nativexcomponent.GetKeyEventScrollLockState();
         expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(Result);
         done()
@@ -387,7 +385,7 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(15);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTSCROLLLOCKSTATE_0200 start<====`);
-        await driver.triggerKey(40);
+        await Utils.driver.triggerKey(40);
         let Result: number = nativexcomponent.GetKeyEventScrollLockState();
         expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(Result);
         done()
@@ -410,7 +408,7 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(16);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTACTIONENUM_0100 start<====`);
-        await driver.triggerKey(40);
+        await Utils.simulateByShell('uinput -K -d 2000 -i 1000 -u 2000 -D');
         let Result: number = nativexcomponent.GetKeyEventActionEnum();
         expect(1).assertEqual(Result);
         done()
@@ -433,7 +431,7 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(17);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTACTIONENUM_0200 start<====`);
-        await driver.triggerKey(40);
+        await Utils.simulateByShell('uinput -K -d 2000 -i 1000 -u 2000 -D');
         let Result: number = nativexcomponent.GetKeyEventActionEnum();
         expect(1).assertEqual(Result);
         done()
@@ -876,8 +874,9 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(0);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETEXTRAMOUSEEVENTINFO_0100 start<====`);
-        await driver.mouseMoveTo({ x: 100, y: 100 });
-        await driver.mouseMoveTo({ x: 0, y: 0 });
+        await Utils.driver.mouseMoveTo({ x: globalThis.winLeft + globalThis.winWidth / 2, y: globalThis.winTop +
+                                                                                       globalThis.winHeight / 2 });
+        await Utils.driver.mouseMoveTo({ x: globalThis.winLeft, y: globalThis.winTop });
         let Result: number = nativexcomponent.GetExtraMouseEventInfo001();
         expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(Result);
         done()
@@ -900,8 +899,9 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(1);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETEXTRAMOUSEEVENTINFO_0200 start<====`);
-        await driver.mouseMoveTo({ x: 100, y: 100 });
-        await driver.mouseMoveTo({ x: 0, y: 0 });
+        await Utils.driver.mouseMoveTo({ x: globalThis.winLeft + globalThis.winWidth / 2, y: globalThis.winTop +
+                                                                                       globalThis.winHeight / 2 });
+        await Utils.driver.mouseMoveTo({ x: globalThis.winLeft, y: globalThis.winTop });
         let Result: number = nativexcomponent.GetExtraMouseEventInfo002();
         expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(Result);
         done()
@@ -924,8 +924,9 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(1);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETMOUSEEVENTMODIFIERKEYSTATES_0200 start<====`);
-        driver.mouseMoveTo({ x: 100, y: 100 });
-        driver.mouseMoveTo({ x: 0, y: 0 });
+        await Utils.driver.mouseMoveTo({ x: globalThis.winLeft + globalThis.winWidth / 2, y: globalThis.winTop +
+                                                                                       globalThis.winHeight / 2 });
+        await Utils.driver.mouseMoveTo({ x: globalThis.winLeft, y: globalThis.winTop });
         let Result: number = nativexcomponent.GetMouseEventModifierKeyStates002();
         expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(Result);
         done()

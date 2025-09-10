@@ -12,97 +12,158 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, TestType, Size, Level } from '@ohos/hypium';
-import Data from './utils/data.json';
-import { HuksSignVerifyED25519 } from './utils/param/signverify/publicSignverifyParam.js';
-import { stringToUint8Array } from './utils/param/publicFunc.js';
-import { publicSignVerifyFunc } from './utils/param/signverify/publicSignverifyPromise.js';
-let srcData63 = Data.Data63b;
+import { beforeEach, describe, it, Level, Size, TestType } from '@ohos/hypium';
+import Data from './utils/common/data';
+import { HuksSignVerifyED25519 } from './utils/param/signVerify/publicSignVerifyParam';
+import { makeOptions, stringToUint8Array } from './utils/param/publicFunc.js';
+import { publicSignVerifyFunc } from './utils/param/signVerify/publicSignVerifyPromise';
+
+let srcData63 = Data.Data_63KB;
 let srcData63Kb = stringToUint8Array(srcData63);
-let srcData65 = Data.Data65b;
+let srcData65 = Data.Data_65KB;
 let srcData65Kb = stringToUint8Array(srcData65);
 let finishOutData;
+let srcData63B = Data.data63B;
+let srcData63Byte = stringToUint8Array(srcData63B);
+let srcData65B = Data.data65B;
+let srcData65Byte = stringToUint8Array(srcData65B);
+let baseHuksOptions1 = {};
+let baseHuksOptions2 = {};
+
+async function resetOptions() {
+    baseHuksOptions1 = {
+        properties: new Array(
+            HuksSignVerifyED25519.HuksKeyAlgED25519,
+            HuksSignVerifyED25519.HuksKeyED25519PurposeSIGN,
+            HuksSignVerifyED25519.HuksKeyED25519Size256,
+            HuksSignVerifyED25519.HuksTagDigestSHA1
+        ),
+    };
+    baseHuksOptions2 = {
+        properties: new Array(
+            HuksSignVerifyED25519.HuksKeyAlgED25519,
+            HuksSignVerifyED25519.HuksKeyED25519PurposeVERIFY,
+            HuksSignVerifyED25519.HuksKeyED25519Size256,
+            HuksSignVerifyED25519.HuksTagDigestSHA1
+        ),
+    };
+}
+
 export default function SecurityHuksSignVerifyED25519PromiseJsunit() {
-  describe('SecurityHuksSignVerifyED25519PromiseJsunit', function () {
-    it('Security_HUKS_SignVerify_API8_ED_25519101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-      const srcKeyAlies = 'testSignVerifyED25519Size256SIGNKeyAlias101';
-      let HuksOptions = {
-        properties: new Array(
-          HuksSignVerifyED25519.HuksKeyAlgED25519,
-          HuksSignVerifyED25519.HuksKeyED25519PurposeSIGN,
-          HuksSignVerifyED25519.HuksKeyED25519Size256,
-          HuksSignVerifyED25519.HuksTagDigestSHA1
-        ),
-        inData: srcData63Kb,
-      };
-      finishOutData = await publicSignVerifyFunc(srcKeyAlies, HuksOptions, 'finish', true, srcData63Kb);
+    describe('SecurityHuksSignVerifyED25519PromiseJsunit', function () {
+        beforeEach(function () {
+            resetOptions();
+        });
+        it('Security_HUKS_SignVerify_API8_ED_25519101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testSignVerifyED25519Size256SIGNKeyAlias101';
+            let HuksOptions = {
+                properties: new Array(
+                    HuksSignVerifyED25519.HuksKeyAlgED25519,
+                    HuksSignVerifyED25519.HuksKeyED25519PurposeSIGN,
+                    HuksSignVerifyED25519.HuksKeyED25519Size256,
+                    HuksSignVerifyED25519.HuksTagDigestSHA1
+                ),
+                inData: srcData63Kb,
+            };
+            finishOutData = await publicSignVerifyFunc(srcKeyAlias, HuksOptions, 'finish', true, true, srcData63Kb);
+            HuksOptions = {
+                properties: new Array(
+                    HuksSignVerifyED25519.HuksKeyAlgED25519,
+                    HuksSignVerifyED25519.HuksKeyED25519PurposeVERIFY,
+                    HuksSignVerifyED25519.HuksKeyED25519Size256,
+                    HuksSignVerifyED25519.HuksTagDigestSHA1
+                ),
+                inData: finishOutData,
+            };
+            await publicSignVerifyFunc(srcKeyAlias, HuksOptions, 'finish', false, true, srcData63Kb);
+            done();
+        });
 
-      HuksOptions = {
-        properties: new Array(
-          HuksSignVerifyED25519.HuksKeyAlgED25519,
-          HuksSignVerifyED25519.HuksKeyED25519PurposeVERIFY,
-          HuksSignVerifyED25519.HuksKeyED25519Size256,
-          HuksSignVerifyED25519.HuksTagDigestSHA1
-        ),
-        inData: finishOutData,
-      };
-      await publicSignVerifyFunc(srcKeyAlies, HuksOptions, 'finish', false, srcData63Kb);
-      done();
-    });
+        it('Security_HUKS_SignVerify_API8_ED_25519102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testSignVerifyED25519Size256SIGNKeyAlias102';
+            let HuksOptions = {
+                properties: new Array(
+                    HuksSignVerifyED25519.HuksKeyAlgED25519,
+                    HuksSignVerifyED25519.HuksKeyED25519PurposeSIGN,
+                    HuksSignVerifyED25519.HuksKeyED25519Size256,
+                    HuksSignVerifyED25519.HuksTagDigestSHA1
+                ),
+                inData: srcData63Kb,
+            };
+            await publicSignVerifyFunc(srcKeyAlias, HuksOptions, 'abort', true, true, srcData63Kb);
+            done();
+        });
 
-    it('Security_HUKS_SignVerify_API8_ED_25519102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-      const srcKeyAlies = 'testSignVerifyED25519Size256SIGNKeyAlias102';
-      let HuksOptions = {
-        properties: new Array(
-          HuksSignVerifyED25519.HuksKeyAlgED25519,
-          HuksSignVerifyED25519.HuksKeyED25519PurposeSIGN,
-          HuksSignVerifyED25519.HuksKeyED25519Size256,
-          HuksSignVerifyED25519.HuksTagDigestSHA1
-        ),
-        inData: srcData63Kb,
-      };
-      await publicSignVerifyFunc(srcKeyAlies, HuksOptions, 'abort', true, srcData63Kb);
-      done();
-    });
+        it('Security_HUKS_SignVerify_API8_ED_25519103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testSignVerifyED25519Size256SIGNKeyAlias103';
+            let HuksOptions = {
+                properties: new Array(
+                    HuksSignVerifyED25519.HuksKeyAlgED25519,
+                    HuksSignVerifyED25519.HuksKeyED25519PurposeSIGN,
+                    HuksSignVerifyED25519.HuksKeyED25519Size256,
+                    HuksSignVerifyED25519.HuksTagDigestSHA1
+                ),
+                inData: srcData65Kb,
+            };
+            finishOutData = await publicSignVerifyFunc(srcKeyAlias, HuksOptions, 'finish', true, true, srcData65Kb);
+            HuksOptions = {
+                properties: new Array(
+                    HuksSignVerifyED25519.HuksKeyAlgED25519,
+                    HuksSignVerifyED25519.HuksKeyED25519PurposeVERIFY,
+                    HuksSignVerifyED25519.HuksKeyED25519Size256,
+                    HuksSignVerifyED25519.HuksTagDigestSHA1
+                ),
+                inData: finishOutData,
+            };
+            await publicSignVerifyFunc(srcKeyAlias, HuksOptions, 'finish', false, true, srcData65Kb);
+            done();
+        });
 
-    it('Security_HUKS_SignVerify_API8_ED_25519103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-      const srcKeyAlies = 'testSignVerifyED25519Size256SIGNKeyAlias103';
-      let HuksOptions = {
-        properties: new Array(
-          HuksSignVerifyED25519.HuksKeyAlgED25519,
-          HuksSignVerifyED25519.HuksKeyED25519PurposeSIGN,
-          HuksSignVerifyED25519.HuksKeyED25519Size256,
-          HuksSignVerifyED25519.HuksTagDigestSHA1
-        ),
-        inData: srcData65Kb,
-      };
-      finishOutData = await publicSignVerifyFunc(srcKeyAlies, HuksOptions, 'finish', true, srcData65Kb);
-      HuksOptions = {
-        properties: new Array(
-          HuksSignVerifyED25519.HuksKeyAlgED25519,
-          HuksSignVerifyED25519.HuksKeyED25519PurposeVERIFY,
-          HuksSignVerifyED25519.HuksKeyED25519Size256,
-          HuksSignVerifyED25519.HuksTagDigestSHA1
-        ),
-        inData: finishOutData,
-      };
-      await publicSignVerifyFunc(srcKeyAlies, HuksOptions, 'finish', false, srcData65Kb);
-      done();
-    });
+        it('Security_HUKS_SignVerify_API8_ED_25519104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testSignVerifyED25519Size256SIGNKeyAlias104';
+            let HuksOptions = {
+                properties: new Array(
+                    HuksSignVerifyED25519.HuksKeyAlgED25519,
+                    HuksSignVerifyED25519.HuksKeyED25519PurposeSIGN,
+                    HuksSignVerifyED25519.HuksKeyED25519Size256,
+                    HuksSignVerifyED25519.HuksTagDigestSHA1
+                ),
+                inData: srcData65Kb,
+            };
+            await publicSignVerifyFunc(srcKeyAlias, HuksOptions, 'abort', true, true, srcData65Kb);
+            done();
+        });
 
-    it('Security_HUKS_SignVerify_API8_ED_25519104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-      const srcKeyAlies = 'testSignVerifyED25519Size256SIGNKeyAlias104';
-      let HuksOptions = {
-        properties: new Array(
-          HuksSignVerifyED25519.HuksKeyAlgED25519,
-          HuksSignVerifyED25519.HuksKeyED25519PurposeSIGN,
-          HuksSignVerifyED25519.HuksKeyED25519Size256,
-          HuksSignVerifyED25519.HuksTagDigestSHA1
-        ),
-        inData: srcData65Kb,
-      };
-      await publicSignVerifyFunc(srcKeyAlies, HuksOptions, 'abort', true, srcData65Kb);
-      done();
+        it('Security_HUKS_SignVerify_API8_ED25519_Size256SIGN_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testSignVerifyED25519Size256SIGNKeyAlias101';
+            let HuksOptions = makeOptions(baseHuksOptions1, 4, [], srcData63Kb);
+            finishOutData = await publicSignVerifyFunc(srcKeyAlias, HuksOptions, 'finish', true, true, srcData63Kb);
+            HuksOptions = makeOptions(baseHuksOptions2, 4, [], finishOutData);
+            await publicSignVerifyFunc(srcKeyAlias, HuksOptions, 'finish', false, true, srcData63Kb);
+            done();
+        });
+
+        it('Security_HUKS_SignVerify_API8_ED25519_Size256SIGN_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testSignVerifyED25519Size256SIGNKeyAlias102';
+            let HuksOptions = makeOptions(baseHuksOptions1, 4, [], srcData63Byte);
+            await publicSignVerifyFunc(srcKeyAlias, HuksOptions, 'abort', true, false, srcData63Byte);
+            done();
+        });
+
+        it('Security_HUKS_SignVerify_API8_ED25519_Size256SIGN_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testSignVerifyED25519Size256SIGNKeyAlias103';
+            let HuksOptions = makeOptions(baseHuksOptions1, 4, [], srcData65Byte);
+            finishOutData = await publicSignVerifyFunc(srcKeyAlias, HuksOptions, 'finish', true, false, srcData65Byte);
+            HuksOptions = makeOptions(baseHuksOptions2, 4, [], finishOutData);
+            await publicSignVerifyFunc(srcKeyAlias, HuksOptions, 'finish', false, false, srcData65Byte);
+            done();
+        });
+
+        it('Security_HUKS_SignVerify_API8_ED25519_Size256SIGN_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            const srcKeyAlias = 'testSignVerifyED25519Size256SIGNKeyAlias104';
+            let HuksOptions = makeOptions(baseHuksOptions1, 4, [], srcData65Byte);
+            await publicSignVerifyFunc(srcKeyAlias, HuksOptions, 'abort', true, false, srcData65Byte);
+            done();
+        });
     });
-  });
 }

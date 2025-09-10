@@ -437,7 +437,8 @@ napi_value GaiStrerror(napi_env env, napi_callback_info info)
 }
 napi_value Freeaddrinfo(napi_env env, napi_callback_info info)
 {
-    struct addrinfo *ai, hint;
+    struct addrinfo *ai;
+    struct addrinfo hint = { 0 };
     hint.ai_flags = AI_PASSIVE;
     hint.ai_family = AF_UNSPEC;
     getaddrinfo("127.0.0.1", nullptr, &hint, &ai);
@@ -456,7 +457,8 @@ napi_value Freeaddrinfo(napi_env env, napi_callback_info info)
 
 napi_value Getaddrinfo(napi_env env, napi_callback_info info)
 {
-    struct addrinfo hint, *ai;
+    struct addrinfo hint = { 0 };
+    struct addrinfo *ai;
     hint.ai_flags = AI_PASSIVE;
     hint.ai_family = AF_UNSPEC;
     int ret = getaddrinfo("127.0.0.1", nullptr, &hint, &ai);

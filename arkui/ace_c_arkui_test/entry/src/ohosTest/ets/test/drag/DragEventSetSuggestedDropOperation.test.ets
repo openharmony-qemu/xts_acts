@@ -47,7 +47,7 @@ export default function DragEventSetSuggestedDropOperationTest() {
       let upX = Math.round(globalThis.winLeft + rectOne.left + (rectOne.right - rectOne.left) / 2);
       let upY = Math.round(globalThis.winTop + rectOne.top + (rectOne.bottom - rectOne.top) / 2);
       let driver: Driver = Driver.create();
-      await driver.drag(downX, downY, upX, upY, 10);
+      await driver.drag(downX, downY, upX, upY, 400);
       await Utils.sleep(2000);
       expect(Utils.getComponentInfoByKey('textDragTest1').$attrs.backgroundColor).assertEqual('#FF00FF00');
       done();

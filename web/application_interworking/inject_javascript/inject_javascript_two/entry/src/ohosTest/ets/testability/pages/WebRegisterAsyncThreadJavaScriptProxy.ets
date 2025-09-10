@@ -34,14 +34,14 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 611,
+      eventId: 172850,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(611)
+    events_emitter.off(172850)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -83,21 +83,21 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
                     this.controller.runJavaScript('testNdkProxyObjMethod1()',(error, result) => {
                       if (error) {
                         console.log(`runJavaScript error:` + JSON.stringify(error))
-                        Utils.emitEvent(false,2025061101)
+                        Utils.emitEvent(false,172860)
                         return
                       }
                       if (result) {
                         console.log(`The  testNdkProxyObjMethod1() return value is: + ${result}`)
                         if (result === '"objName undefined"') {
-                          Utils.emitEvent(true,2025061101)
+                          Utils.emitEvent(true,172860)
                         } else {
-                          Utils.emitEvent(false,2025061101)
+                          Utils.emitEvent(false,172860)
                         }
                       }
                     })
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${(error as BusinessError).message}`);
-                    Utils.emitEvent(false,2025061101)
+                    Utils.emitEvent(false,172860)
                   }
                   break
                 }
@@ -115,21 +115,21 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
                     this.controller.runJavaScript('testNdkProxyObjMethod1()',(error, result) => {
                       if (error) {
                         console.log(`runJavaScript error:` + JSON.stringify(error))
-                        Utils.emitEvent(false,2025061102)
+                        Utils.emitEvent(false,172870)
                         return
                       }
                       if (result) {
                         console.log(`The  testNdkProxyObjMethod1() return value is: + ${result}`)
                         if (result === '"objName undefined"') {
-                          Utils.emitEvent(true,2025061102)
+                          Utils.emitEvent(true,172870)
                         } else {
-                          Utils.emitEvent(false,2025061102)
+                          Utils.emitEvent(false,172870)
                         }
                       }
                     })
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${(error as BusinessError).message}`);
-                    Utils.emitEvent(false,2025061102)
+                    Utils.emitEvent(false,172870)
                   }
                   break
                 }
@@ -147,21 +147,21 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
                     this.controller.runJavaScript('testNdkProxyObjMethod1()',(error, result) => {
                       if (error) {
                         console.log(`runJavaScript error:` + JSON.stringify(error))
-                        Utils.emitEvent(false,2025061103)
+                        Utils.emitEvent(false,172880)
                         return
                       }
                       if (result) {
                         console.log(`The  testNdkProxyObjMethod1() return value is: + ${result}`)
                         if (result === '"method1"') {
-                          Utils.emitEvent(true,2025061103)
+                          Utils.emitEvent(true,172880)
                         } else {
-                          Utils.emitEvent(false,2025061103)
+                          Utils.emitEvent(false,172880)
                         }
                       }
                     })
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${(error as BusinessError).message}`);
-                    Utils.emitEvent(false,2025061103)
+                    Utils.emitEvent(false,172880)
                   }
                   break
                 }
@@ -178,21 +178,21 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
                     this.controller.runJavaScript('testNdkProxyObjMethod2()',(error, result) => {
                       if (error) {
                         console.log(`runJavaScript error:` + JSON.stringify(error))
-                        Utils.emitEvent(false,2025061104)
+                        Utils.emitEvent(false,172890)
                         return
                       }
                       if (result) {
                         console.log(`The  testNdkProxyObjMethod2() return value is: + ${result}`)
                         if (result === 'true') {
-                          Utils.emitEvent(true,2025061104)
+                          Utils.emitEvent(true,172890)
                         } else {
-                          Utils.emitEvent(false,2025061104)
+                          Utils.emitEvent(false,172890)
                         }
                       }
                     })
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${(error as BusinessError).message}`);
-                    Utils.emitEvent(false,2025061104)
+                    Utils.emitEvent(false,172890)
                   }
                   break
                 }
@@ -209,21 +209,21 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
                     this.controller.runJavaScript('window.ndkProxy.method3("hello", 1.23456, 123789, true, false, 0 , undefined )',(error, result) => {
                       if (error) {
                         console.log(`runJavaScript error:` + JSON.stringify(error))
-                        Utils.emitEvent(false,2025061105)
+                        Utils.emitEvent(false,172900)
                         return
                       }
                       if (result) {
                         console.log(`The  window.ndkProxy.method3() return value is: + ${result}`)
                         if (result === 'null') {
-                          Utils.emitEvent(true,2025061105)
+                          Utils.emitEvent(true,172900)
                         } else {
-                          Utils.emitEvent(false,2025061105)
+                          Utils.emitEvent(false,172900)
                         }
                       }
                     })
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${(error as BusinessError).message}`);
-                    Utils.emitEvent(false,2025061105)
+                    Utils.emitEvent(false,172900)
                   }
                   break
                 }
@@ -264,14 +264,14 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
                     let pidResult = testNapi.getPidResult()
                     console.log('emitRegisterAsyncThreadJavaScriptProxy006 pidResult:' + pidResult)
                     if (pidResult === 1) {
-                      Utils.emitEvent(true, 2025061106)
+                      Utils.emitEvent(true, 172910)
                     } else {
-                      Utils.emitEvent(false, 2025061106)
+                      Utils.emitEvent(false, 172910)
                     }
 
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${(error as BusinessError).message}`);
-                    Utils.emitEvent(false,2025061106)
+                    Utils.emitEvent(false,172910)
                   }
                   break
                 }
@@ -289,21 +289,21 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
                     this.controller.runJavaScript('window.ndkProxy.method1("hello", 1.23456, 123789, true, false, 0 , undefined )',(error, result) => {
                       if (error) {
                         console.log(`runJavaScript error:` + JSON.stringify(error))
-                        Utils.emitEvent(false,2025061107)
+                        Utils.emitEvent(false,172920)
                         return
                       }
                       if (result) {
                         console.log(`The  window.ndkProxy.method1() return value is: + ${result}`)
                         if (result === '"method1"') {
-                          Utils.emitEvent(true,2025061107)
+                          Utils.emitEvent(true,172920)
                         } else {
-                          Utils.emitEvent(false,2025061107)
+                          Utils.emitEvent(false,172920)
                         }
                       }
                     })
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${(error as BusinessError).message}`);
-                    Utils.emitEvent(false,2025061107)
+                    Utils.emitEvent(false,172920)
                   }
                   break
                 }
@@ -321,21 +321,21 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
                     this.controller.runJavaScript('window.ndkProxy.method1("hello", 1.23456, 123789, true, false, 0 , undefined )',(error, result) => {
                       if (error) {
                         console.log(`runJavaScript error:` + JSON.stringify(error))
-                        Utils.emitEvent(false,2025061108)
+                        Utils.emitEvent(false,172930)
                         return
                       }
                       if (result) {
                         console.log(`The  window.ndkProxy.method1() return value is: + ${result}`)
                         if (result === 'null') {
-                          Utils.emitEvent(true,2025061108)
+                          Utils.emitEvent(true,172930)
                         } else {
-                          Utils.emitEvent(false,2025061108)
+                          Utils.emitEvent(false,172930)
                         }
                       }
                     })
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${(error as BusinessError).message}`);
-                    Utils.emitEvent(false,2025061108)
+                    Utils.emitEvent(false,172930)
                   }
                   break
                 }
@@ -368,21 +368,21 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
                     this.controller.runJavaScript('window.ndkProxy.method1("hello", 1.23456, 123789, true, false, 0 , undefined )',(error, result) => {
                       if (error) {
                         console.log(`runJavaScript error:` + JSON.stringify(error))
-                        Utils.emitEvent(false,2025061109)
+                        Utils.emitEvent(false,172940)
                         return
                       }
                       if (result) {
                         console.log(`The  window.ndkProxy.method1() return value is: + ${result}`)
                         if (result === '"method1"' && methodResultOne === 'null') {
-                          Utils.emitEvent(true,2025061109)
+                          Utils.emitEvent(true,172940)
                         } else {
-                          Utils.emitEvent(false,2025061109)
+                          Utils.emitEvent(false,172940)
                         }
                       }
                     })
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${(error as BusinessError).message}`);
-                    Utils.emitEvent(false,2025061109)
+                    Utils.emitEvent(false,172940)
                   }
                   break
                 }

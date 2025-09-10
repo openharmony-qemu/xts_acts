@@ -15,6 +15,7 @@
 
 {
   "module": {
+    "routerMap": "$profile:router_map",
     "name": "entry_test",
     "type": "feature",
     "description": "$string:module_test_desc",

@@ -19,6 +19,7 @@ import webview from '@ohos.web.webview';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -62,17 +63,19 @@ struct webResourceResponsePage {
   @State responseDataResource: Resource = $rawfile('index.html')
   @State getResponseDataExValue: string = ''
   @State getResponseIsReady: boolean = false
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 124601,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(124601)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -81,6 +84,7 @@ struct webResourceResponsePage {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0
       }
     }
   }
@@ -92,7 +96,8 @@ struct webResourceResponsePage {
         Button('WebResourceResponse click').key('WebResourceResponseButton').onClick(async () => {
           console.info('key==>' + this.emitKey)
           this.responseWeb = new WebResourceResponse()
-          await Utils.sleep(3000)
+          await waitForExist(()=>this.isReceive, this.emitKey, 0);
+          this.isReceive = -1;
           switch (this.emitKey) {
 
             case 'testGetResponseDataExReturnString': {
@@ -101,16 +106,16 @@ struct webResourceResponsePage {
                 this.responseDataType = 'string'
                 this.responseDataString = this.webdata
                 this.setResponseCode = 200
-                await Utils.sleep(2000) 
+                this.isPageEnd  = -1;
                 this.controller.loadUrl('www.example.com');
+                await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
                 let result: boolean = false;
-                await Utils.sleep(2000);
                 console.log('testGetResponseDataExReturnString getResponseDataEx:' + this.responseWeb.getResponseDataEx())
                 if (this.responseWeb.getResponseDataEx() === this.responseDataString) {
                   result = true
                 }
                 console.log('testGetResponseDataExReturnString:' + result)
-                Utils.emitEvent(true, 36010);
+                Utils.emitEvent(true, 124660);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -122,16 +127,16 @@ struct webResourceResponsePage {
                 this.setResponseIsReady = true
                 this.setResponseCode = 403
                 this.getResponseIsReady = false
-                await Utils.sleep(2000)
+                this.isPageEnd  = -1;
                 this.controller.loadUrl('www.example.com');
-                await Utils.sleep(2000)
+                await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
                 console.log('testGetResponseIsReadyReturnTrue getResponseIsReady:' + this.responseWeb.getResponseIsReady())
                 let result: boolean = false;
                 if(this.responseWeb.getResponseIsReady() && this.getResponseIsReady){
                   result = true
                 }
                 console.log('testGetResponseIsReadyReturnTrue:' + result)
-                Utils.emitEvent(result, 36015);
+                Utils.emitEvent(result, 124670);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -146,6 +151,7 @@ struct webResourceResponsePage {
 
       Web({ src: 'www.example.com', controller: this.controller })
         .onInterceptRequest((event) => {
+          this.isPageEnd = 0;
           if (event) {
             console.log('url:' + event.request.getRequestUrl())
             let head1: Header = {

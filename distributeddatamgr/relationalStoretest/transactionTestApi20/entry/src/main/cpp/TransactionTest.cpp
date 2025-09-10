@@ -49,6 +49,17 @@ void InitRdbTransConfigV2(OH_Rdb_ConfigV2 *configV2)
     OH_Rdb_SetDbType(configV2, RDB_SQLITE);
 }
 
+void InitRdbTransConfig()
+{
+    TransactionTest::RDB_CONFIG.dataBaseDir = TransactionTest::RDB_TEST;
+    TransactionTest::RDB_CONFIG.storeName = TransactionTest::g_storeName;
+    TransactionTest::RDB_CONFIG.bundleName = TransactionTest::g_bundleName;
+    TransactionTest::RDB_CONFIG.moduleName = TransactionTest::g_moduleName;
+    TransactionTest::RDB_CONFIG.securityLevel = OH_Rdb_SecurityLevel::S1;
+    TransactionTest::RDB_CONFIG.isEncrypt = false;
+    TransactionTest::RDB_CONFIG.selfSize = sizeof(OH_Rdb_Config);
+}
+
 void AddTransactionTest1(std::vector<napi_property_descriptor> &descData)
 {
     descData.push_back({"testDestroyOptionsInvalidParam", nullptr, TestDestroyOptionsInvalidParam, nullptr, nullptr,
@@ -115,12 +126,60 @@ void AddTransactionTest2(std::vector<napi_property_descriptor> &descData)
                         nullptr, napi_default, nullptr});
     descData.push_back({"testDestroyInvalidParam", nullptr, TestDestroyInvalidParam, nullptr, nullptr, nullptr,
                         napi_default, nullptr});
+    descData.push_back({"testOHRdbTransOptionSetTypeImmediate", nullptr, TestOHRdbTransOptionSetTypeImmediate, nullptr,
+                        nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"testOHRdbTransOptionSetTypeExclusive", nullptr, TestOHRdbTransOptionSetTypeExclusive, nullptr,
+                        nullptr, nullptr, napi_default, nullptr});
 }
 
 void AddTransactionTest(std::vector<napi_property_descriptor> &descData)
 {
     AddTransactionTest1(descData);
     AddTransactionTest2(descData);
+}
+
+void InsertOneData(OH_Rdb_Store *transStore, const char* table, OH_VBucket *valueBucket)
+{
+    valueBucket->clear(valueBucket);
+    valueBucket->putInt64(valueBucket, "id", 1);
+    valueBucket->putText(valueBucket, "data1", "zhangSan");
+    int64_t int64Value = 12800;
+    valueBucket->putInt64(valueBucket, "data2", int64Value);
+    double doubleValue = 100.1;
+    valueBucket->putReal(valueBucket, "data3", doubleValue);
+    uint8_t arr[] = { 1, 2, 3, 4, 5 };
+    int len = sizeof(arr) / sizeof(arr[0]);
+    valueBucket->putBlob(valueBucket, "data4", arr, len);
+    valueBucket->putText(valueBucket, "data5", "ABCDEFG");
+    OH_Rdb_Insert(transStore, table, valueBucket);
+}
+
+void InsertTwoData(OH_Rdb_Store *transStore, const char* table, OH_VBucket *valueBucket)
+{
+    valueBucket->clear(valueBucket);
+    const int id = 2;
+    const int phoneNumber = 13800;
+    const double height = 200.1;
+    valueBucket->putInt64(valueBucket, "id", id);
+    valueBucket->putText(valueBucket, "data1", "liSi");
+    valueBucket->putInt64(valueBucket, "data2", phoneNumber);
+    valueBucket->putReal(valueBucket, "data3", height);
+    valueBucket->putText(valueBucket, "data5", "ABCDEFGH");
+    OH_Rdb_Insert(transStore, table, valueBucket);
+}
+
+void InsertThreeData(OH_Rdb_Store *transStore, const char* table, OH_VBucket *valueBucket)
+{
+    valueBucket->clear(valueBucket);
+    int64_t int64Value1 = 3;
+    valueBucket->putInt64(valueBucket, "id", int64Value1);
+    valueBucket->putText(valueBucket, "data1", "wangWu");
+    const int datA2Value = 14800;
+    valueBucket->putInt64(valueBucket, "data2", datA2Value);
+    const double heightData = 300.1;
+    valueBucket->putReal(valueBucket, "data3", heightData);
+    valueBucket->putText(valueBucket, "data5", "ABCDEFGHI");
+    OH_Rdb_Insert(transStore, table, valueBucket);
 }
 
 napi_value TestDestroyOptionsInvalidParam(napi_env env, napi_callback_info info)
@@ -1168,6 +1227,7 @@ napi_value TestTransExecuteInvalidParam(napi_env env, napi_callback_info info)
 
     napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_ARGS ? g_tSInvalidParamCode : -1, &result);
     OH_Values_Destroy(values);
+    OH_Value_Destroy(outValue);
     return result;
 }
 
@@ -1231,7 +1291,7 @@ napi_value TestTransExecuteError(napi_env env, napi_callback_info info)
     OH_RdbTrans_DestroyOptions(options);
     valueBucket->destroy(valueBucket);
     OH_Values_Destroy(values);
-
+    OH_Value_Destroy(outValue);
     napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_E_ERROR ? g_tSErrorCode : -1, &result);
     return result;
 }
@@ -1297,6 +1357,7 @@ napi_value TestTransExecuteDatabaseClosed(napi_env env, napi_callback_info info)
     OH_RdbTrans_DestroyOptions(options);
     valueBucket->destroy(valueBucket);
     OH_Values_Destroy(values);
+    OH_Value_Destroy(outValue);
 
     napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_E_ALREADY_CLOSED ? g_tSAlreadyClosedCode : -1, &result);
     return result;
@@ -1310,5 +1371,59 @@ napi_value TestDestroyInvalidParam(napi_env env, napi_callback_info info)
     int ret = OH_RdbTrans_Destroy(trans);
 
     napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_ARGS ? g_tSInvalidParamCode : -1, &result);
+    return result;
+}
+
+napi_value TestOHRdbTransOptionSetTypeImmediate(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    InitRdbTransConfig();
+    int chmodValue = 0770;
+    mkdir(TransactionTest::RDB_CONFIG.dataBaseDir, chmodValue);
+    int errCode = 0;
+    char table[] = "test";
+    OH_Rdb_Store *transStore = nullptr;
+    transStore = OH_Rdb_GetOrOpen(&TransactionTest::RDB_CONFIG, &errCode);
+    char createTableSql[] = "CREATE TABLE test (id INTEGER PRIMARY KEY AUTOINCREMENT, data1 TEXT, data2 INTEGER, "
+                            "data3 FLOAT, data4 BLOB, data5 TEXT);";
+    errCode = OH_Rdb_Execute(transStore, createTableSql);
+    OH_VBucket *valueBucket = OH_Rdb_CreateValuesBucket();
+    InsertOneData(transStore, table, valueBucket);
+    InsertTwoData(transStore, table, valueBucket);
+    InsertThreeData(transStore, table, valueBucket);
+    valueBucket->destroy(valueBucket);
+    OH_RDB_TransOptions *options = OH_RdbTrans_CreateOptions();
+    int ret = OH_RdbTransOption_SetType(options, RDB_TRANS_IMMEDIATE);
+    OH_RdbTrans_DestroyOptions(options);
+    OH_Rdb_CloseStore(transStore);
+    OH_Rdb_DeleteStore(&TransactionTest::RDB_CONFIG);
+    napi_create_int32(env, ret == RDB_OK ? 0 : -1, &result);
+    return result;
+}
+
+napi_value TestOHRdbTransOptionSetTypeExclusive(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    InitRdbTransConfig();
+    int chmodValue = 0770;
+    mkdir(TransactionTest::RDB_CONFIG.dataBaseDir, chmodValue);
+    int errCode = 0;
+    char table[] = "test";
+    OH_Rdb_Store *transStore = nullptr;
+    transStore = OH_Rdb_GetOrOpen(&TransactionTest::RDB_CONFIG, &errCode);
+    char createTableSql[] = "CREATE TABLE test (id INTEGER PRIMARY KEY AUTOINCREMENT, data1 TEXT, data2 INTEGER, "
+                            "data3 FLOAT, data4 BLOB, data5 TEXT);";
+    errCode = OH_Rdb_Execute(transStore, createTableSql);
+    OH_VBucket *valueBucket = OH_Rdb_CreateValuesBucket();
+    InsertOneData(transStore, table, valueBucket);
+    InsertTwoData(transStore, table, valueBucket);
+    InsertThreeData(transStore, table, valueBucket);
+    valueBucket->destroy(valueBucket);
+    OH_RDB_TransOptions *options = OH_RdbTrans_CreateOptions();
+    int ret = OH_RdbTransOption_SetType(options, RDB_TRANS_EXCLUSIVE);
+    OH_RdbTrans_DestroyOptions(options);
+    OH_Rdb_CloseStore(transStore);
+    OH_Rdb_DeleteStore(&TransactionTest::RDB_CONFIG);
+    napi_create_int32(env, ret == RDB_OK ? 0 : -1, &result);
     return result;
 }

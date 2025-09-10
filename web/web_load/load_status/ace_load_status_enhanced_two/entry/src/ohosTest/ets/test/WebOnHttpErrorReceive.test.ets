@@ -17,9 +17,12 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-
+const driver = Driver.create();
 export default function webOnHttpErrorReceiveTest() {
   describe('WebOnHttpErrorReceiveTest', () => {
     beforeAll(async (done: Function) => {
@@ -33,7 +36,6 @@ export default function webOnHttpErrorReceiveTest() {
         if (!("WebOnHttpErrorReceive" == pages.name)) {
           console.info("get WebOnHttpErrorReceive state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebOnHttpErrorReceive page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -47,15 +49,7 @@ export default function webOnHttpErrorReceiveTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebOnHttpErrorReceiveTest afterEach start");
-      await Utils.sleep(1000);
-      console.info("WebOnHttpErrorReceiveTest afterEach end");
       done();
     })
 
@@ -68,10 +62,12 @@ export default function webOnHttpErrorReceiveTest() {
     * @tc.level       : Level 2
     */
     it('testOnHttpErrorReceive002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testOnHttpErrorReceive002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnHttpErrorReceive002", 0, 60600, done);
-      sendEventByKey('WebOnHttpErrorReceiveTestButton', 10, '');
+      Utils.emitEvent("testOnHttpErrorReceive002", 141701)
+      let isReturn = false;
+      Utils.registerEvent("testOnHttpErrorReceive002", 0, 141710, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebOnHttpErrorReceiveTestButton",driver)
+      await waitForExist(()=>isReturn, "testOnHttpErrorReceive002", true,1000);
+      done();
     })
 
     /*
@@ -83,10 +79,12 @@ export default function webOnHttpErrorReceiveTest() {
     * @tc.level       : Level 2
     */
     it('testOnHttpErrorReceive003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testOnHttpErrorReceive003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnHttpErrorReceive003", 0, 60602, done);
-      sendEventByKey('WebOnHttpErrorReceiveTestButton', 10, '');
+      Utils.emitEvent("testOnHttpErrorReceive003", 141701)
+      let isReturn = false;
+      Utils.registerEvent("testOnHttpErrorReceive003", 0, 141720, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebOnHttpErrorReceiveTestButton",driver)
+      await waitForExist(()=>isReturn, "testOnHttpErrorReceive003", true,1000);
+      done();
     })
 
     /*
@@ -98,10 +96,12 @@ export default function webOnHttpErrorReceiveTest() {
     * @tc.level       : Level 1
     */
     it('testOnHttpErrorReceive004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testOnHttpErrorReceive004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnHttpErrorReceive004", 500, 60604, done);
-      sendEventByKey('WebOnHttpErrorReceiveTestButton', 10, '');
+      Utils.emitEvent("testOnHttpErrorReceive004", 141701)
+      let isReturn = false;
+      Utils.registerEvent("testOnHttpErrorReceive004", 500, 141730, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebOnHttpErrorReceiveTestButton",driver)
+      await waitForExist(()=>isReturn, "testOnHttpErrorReceive004", true,1000);
+      done();
     })
   })
 }

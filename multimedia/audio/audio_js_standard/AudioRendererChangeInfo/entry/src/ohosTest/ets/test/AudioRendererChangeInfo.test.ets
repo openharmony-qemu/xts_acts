@@ -82,8 +82,8 @@ export default function audioRendererChange() {
       testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
       await getPermission();
       await driveFn();
-      audioStreamManager = AUDIOMANAGER.getStreamManager();
-      audioStreamManagerCB = AUDIOMANAGER.getStreamManager();
+      audioStreamManager =await  AUDIOMANAGER.getStreamManager();
+      audioStreamManagerCB =await  AUDIOMANAGER.getStreamManager();
       await sleep(1000);
       console.info(`${Tag} : beforeAll: Prerequisites at the test suite level`);
     })

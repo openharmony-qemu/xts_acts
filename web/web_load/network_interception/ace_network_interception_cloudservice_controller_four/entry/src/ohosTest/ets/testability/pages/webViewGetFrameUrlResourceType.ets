@@ -16,6 +16,7 @@ import events_emitter from '@ohos.events.emitter';
 import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import business_error from '@ohos.base';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -32,13 +33,18 @@ struct webViewGetFrameUrlResourceType {
   @State userAgent: string = "Mozilla/5.0 (Window NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" +
          "Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.27";
   @State isFrameResourceType: boolean = false
-  
+  @State isReceive:number = -1;
+  @State isEnd:number = -1;
+
   onPageShow() {
       let valueChangeEvent: events_emitter.InnerEvent = {
-          eventId: 10,
+          eventId: 124501,
           priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+  onPageHide() {
+    events_emitter.off(124501)
   }
   
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -46,6 +52,7 @@ struct webViewGetFrameUrlResourceType {
           console.info("valueChangeCallBack:" + JSON.stringify(eventData));
           if (eventData.data != null && eventData.data.ACTION != null) {
               this.emitKey = eventData.data.ACTION;
+              this.isReceive = 0
           }
       }
   }
@@ -56,12 +63,14 @@ struct webViewGetFrameUrlResourceType {
               Button("web click")
               .key('webViewGetFrameUrlResourceType')
               .onClick(async () => {
-                  console.info("key==>" + this.emitKey)
+                console.info('key==>' + this.emitKey)
+                await waitForExist(()=>this.isReceive, this.emitKey, 0);
+                this.isReceive  = -1;
                   switch (this.emitKey) {
                     case "emitWebViewGetFrameUrlResourceType": {
-                        await Utils.sleep(2000)
+                      await waitForExist(()=>this.isEnd, this.emitKey, 0);
                         if(this.isFrameResourceType){
-                          Utils.emitEvent(true,1330)
+                          Utils.emitEvent(true,124490)
                         }
                         break;
                     }
@@ -76,6 +85,7 @@ struct webViewGetFrameUrlResourceType {
                 .onlineImageAccess(this.onlineImageAccess)
                 .databaseAccess(this.databaseAccess)
             .onControllerAttached(() => {
+              this.isEnd = 0;
               try {
                 this.schemeHandler.onRequestStart((request: webview.WebSchemeHandlerRequest, resourceHandler: webview.WebResourceHandler) => {
                   console.log("[schemeHandler] onRequestStart")

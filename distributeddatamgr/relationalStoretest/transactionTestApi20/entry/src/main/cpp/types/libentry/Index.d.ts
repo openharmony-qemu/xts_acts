@@ -48,6 +48,8 @@ export const testTransExecuteError: () => number;
 export const testTransExecuteDatabaseClosed: () => number;
 export const testTransExecuteDatabaseLocked: () => number;
 export const testDestroyInvalidParam: () => number;
+export const testOHRdbTransOptionSetTypeImmediate: () => number;
+export const testOHRdbTransOptionSetTypeExclusive: () => number;
 //database/rdb/oh_values_bucket.h
 export const testPutAssetInvalidParam: () => number;
 export const testPutAssetSuccess: () => number;
@@ -90,6 +92,7 @@ export const testCommitInvalidParam: () => number;
 export const testCommitDatabaseClosed: () => number;
 export const testCommitSuccess: () => number;
 export const testRollBackByTrxIdSuccess: () => number;
+export const testCommitByTrxIdSuccess: () => number;
 export const testBackupInvalidParam: () => number;
 export const testBackupSuccess: () => number;
 export const testRestoreInvalidParam: () => number;
@@ -99,7 +102,6 @@ export const testGetVersionSuccess: () => number;
 export const testSetVersionInvalidParam: () => number;
 export const testSetVersionSuccess: () => number;
 export const testSetDistributedTablesSuccess: () => number;
-
 export const testLockRowInvalidParam: () => number;
 export const testLockRowSuccess: () => number;
 export const testUnlockRowInvalidParam: () => number;
@@ -107,20 +109,41 @@ export const testUnlockRowSuccess: () => number;
 export const testCreateTransactionInvalidParam: () => number;
 export const testCreateTransactionError: () => number;
 export const testSetLocaleSuccess: () => number;
+export const testOHRdbAttachBusy: () => number;
+export const testOHRdbAttachError: () => number;
+export const testOHRdbDetachOk: () => number;
+export const testOHRdbDetachError: () => number;
+export const testOHRdbSubscribeDetails: () => number;
+export const testSetTokenizerNotSupported: () => number;
+export const testSubscribeSuccess: () => number;
 
 //database/rdb/relational_store_error_code.h
 export const testRdbError: () => number;
-export const testUpdateReadonly: () => number;
-export const testRemoveFileError: () => number;
 export const testEmptyTableName: () => number;
 export const testInvalidColumnType: () => number;
-export const testExecuteInStepQuery: () => number;
 export const testNoRowInQuery: () => number;
 export const testNoTransactionInSession: () => number;
-export const testSqliteBusy: () => number;
-export const testInvalidFilePath: () => number;
-export const testMoreStepQueryInOneSession: () => number;
-export const testNotSupport: () => number;
-
-
+export const testInvalidColumnIndex: () => number;
+export const testAlreadyClosed: () => number;
+export const testNotSupportedAttachInWalMode: () => number;
+export const testAttachDatabaseBusy: () => number;
+export const testGoToNextRowResultClosed: () => number;
+export const testGoToNextRowAfterLast: () => number;
+export const testInvalidObjectType: () => number;
+//database/rdb/oh_rdb_crypto_param.h
+export const testOHCryptoSetHmacAlgoSha1: () => number;
+export const testOHCryptoSetHmacAlgoSha256: () => number;
+export const testOHCryptoSetEncryptionAlgo256Gcm: () => number;
+export const testOHCryptoSetKdfAlgoKdfSha1: () => number;
+export const testOHCryptoSetKdfAlgoKdgShs256: () => number;
+//database/rdb/oh_predicates.h
+export const testOHPredicatesGlobOk: () => number;
+export const testOHPredicatesNotGlobOk: () => number;
+export const testOHPredicatesNotLikeOk: () => number;
+export const testOHPredicatesHavingOk: () => number;
+//database/rdb/oh_cursor.h
+export const testOHCursorGetFloatVectorCountArgs: () => number;
+export const testOHCursorGetFloatVectorCountError: () => number;
+export const testOHCursorGetFloatVectorArgs: () => number;
+export const testOHCursorGetFloatVectorError: () => number;
 

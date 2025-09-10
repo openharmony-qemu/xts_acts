@@ -73,7 +73,7 @@ export default function LifeCycle0120TestJsunit() {
           console.info('UIElementInfo bundleName:'+ UiElementInfo.bundleName)
           console.info('UIElementInfo text:'+ UiElementInfo.text)
           console.info('UIElementInfo type:'+ UiElementInfo.type)
-          expect(UiElementInfo.bundleName == 'com.arkui.ace.StateMangagement.api12').assertTrue()
+          expect(UiElementInfo.bundleName == 'com.arkui.ace.StateMangagement02.api12').assertTrue()
           expect(UiElementInfo.text == 'onPageHide').assertTrue()
           expect(UiElementInfo.type == 'Toast').assertTrue()
         } catch (err) {

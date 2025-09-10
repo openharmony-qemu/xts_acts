@@ -84,6 +84,7 @@ struct EnableToolBarAdaptation {
       {value: 'e', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus'))},
     ], {hideItemValue: this.showText})
     .mode(NavigationMode.Stack)
+    .height('90%')
   }
 }
 

@@ -11447,7 +11447,7 @@ export default function imageExifGetModifyTest() {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_01300';
       const key = image.PropertyKey.F_NUMBER
       const modifyData: string = `1/30`;
-      const compareData: string = `f/0.0`;
+      const compareData: string = `f/0.03`;
       try {
         let result: boolean = true
         for(let i=0; i<modfiyFileSuffixs.length; i++){
@@ -15925,10 +15925,10 @@ export default function imageExifGetModifyTest() {
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_ERROR_01300';
       const key = image.PropertyKey.F_NUMBER
       const values:Array<picTypeValue> = [
-        {name: "jpeg", fileName: "test_exif_v2.jpg", errorData: "1/0", value: "f/0.0"},
-        {name: "webp", fileName: "test_exif_v2.webp", errorData: "1/0", value: "f/0.0"},
-        {name: "png", fileName: "test_exif_v2.png", errorData: "1/0", value: "f/0.0"},
-        {name: "heif", fileName: "test_exif_v2.heic", errorData: "1/0", value: "f/0.0"}]
+        {name: "jpeg", fileName: "test_exif_v2.jpg", errorData: "1/0", value: "f/0.03"},
+        {name: "webp", fileName: "test_exif_v2.webp", errorData: "1/0", value: "f/0.03"},
+        {name: "png", fileName: "test_exif_v2.png", errorData: "1/0", value: "f/0.03"},
+        {name: "heif", fileName: "test_exif_v2.heic", errorData: "1/0", value: "f/0.03"}]
       const expectedModifyErrorCode = 62980135
       try {
         let result: boolean = true

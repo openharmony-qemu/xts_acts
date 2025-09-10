@@ -202,7 +202,7 @@ export default function OnAndOffScreenTest() {
         done();
       })
       await driver.delayMs(2000);
-      let allowed = await driver.findComponent(ON.text("打开"));
+      let allowed = await driver.findComponent(ON.id('advanced_dialog_button_1'));
       if (allowed) {
         console.log("find button");
         let point = await allowed.getBoundsCenter();
@@ -292,7 +292,7 @@ export default function OnAndOffScreenTest() {
         done();
       })
       await driver.delayMs(2000);
-      let allowed = await driver.findComponent(ON.text("打开"));
+      let allowed = await driver.findComponent(ON.id('advanced_dialog_button_1'));
       if (allowed) {
         console.log("find button");
         let point = await allowed.getBoundsCenter();
@@ -388,7 +388,7 @@ export default function OnAndOffScreenTest() {
         done();
       })
       await driver.delayMs(2000);
-      let allowed = await driver.findComponent(ON.text("打开"));
+      let allowed = await driver.findComponent(ON.id('advanced_dialog_button_1'));
       if (allowed) {
         console.log("find button");
         let point = await allowed.getBoundsCenter();
@@ -509,7 +509,7 @@ export default function OnAndOffScreenTest() {
         done();
       })
       await driver.delayMs(2000);
-      let allowed = await driver.findComponent(ON.text("打开"));
+      let allowed = await driver.findComponent(ON.id('advanced_dialog_button_1'));
       if (allowed) {
         console.log("find button");
         let point = await allowed.getBoundsCenter();
@@ -640,7 +640,7 @@ export default function OnAndOffScreenTest() {
         done();
       })
       await driver.delayMs(2000);
-      let allowed = await driver.findComponent(ON.text("打开"));
+      let allowed = await driver.findComponent(ON.id('advanced_dialog_button_1'));
       if (allowed) {
         console.log("find button");
         let point = await allowed.getBoundsCenter();

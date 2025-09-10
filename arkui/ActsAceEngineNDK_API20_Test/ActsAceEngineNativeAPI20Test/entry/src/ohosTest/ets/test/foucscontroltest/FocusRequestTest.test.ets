@@ -59,7 +59,7 @@ export default function FocusControlTest() {
           console.info("====>testOHArkUIFocusRequest0200 start====");
           let result: number = nativerenderndk.FocusControlTest_002()
           console.info(`====>testOHArkUIFocusRequest0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_FOCUS_NON_FOCUSABLE);;
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUIFocusRequest0200 catch err: " + err);
@@ -81,7 +81,7 @@ export default function FocusControlTest() {
           console.info("====>testOHArkUIFocusRequest0300 start====");
           let result: number = nativerenderndk.FocusControlTest_003()
           console.info(`====>testOHArkUIFocusRequest0300 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_FOCUS_NON_FOCUSABLE_ANCESTOR);;
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUIFocusRequest0300 catch err: " + err);
@@ -99,17 +99,17 @@ export default function FocusControlTest() {
     */
     it('testOHArkUIFocusRequest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-      try {
-        console.info("====>testOHArkUIFocusRequest0400 start====");
-        let result: number = nativerenderndk.FocusControlTest_004()
-        console.info(`====>testOHArkUIFocusRequest0400 result====${result}`);
-        expect(result).assertEqual(ARKUI_ERROR_CODE_FOCUS_NON_EXISTENT);;
-        done();
-      } catch (err) {
-        console.error("====>testOHArkUIFocusRequest0400 catch err: " + err);
-        expect(false).assertEqual(1);
-      }
-    })
+        try {
+          console.info("====>testOHArkUIFocusRequest0400 start====");
+          let result: number = nativerenderndk.FocusControlTest_004()
+          console.info(`====>testOHArkUIFocusRequest0400 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done();
+        } catch (err) {
+          console.error("====>testOHArkUIFocusRequest0400 catch err: " + err);
+          expect(false).assertEqual(1);
+        }
+      })
 
   })
 }

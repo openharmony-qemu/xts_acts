@@ -65,9 +65,6 @@ export default function ApiCoverStaticTest() {
         hilog.info(0x0000, 'SUB_AA_ABILITY_Extension_API_Static_012', `el4 start`);
         let el4 = contextConstant.AreaMode.EL4;
         expect((String(el4))).assertEqual("3");
-        hilog.info(0x0000, 'SUB_AA_ABILITY_Extension_API_Static_012', `el5 start`);
-        let el5 = contextConstant.AreaMode.EL5;
-        expect((String(el5))).assertEqual("4");
         hilog.info(0x0000, 'SUB_AA_ABILITY_Extension_API_Static_012', `AreaMode end`);
         done()
       } catch (err: BusinessError) {

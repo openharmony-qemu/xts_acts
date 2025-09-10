@@ -18,6 +18,9 @@ import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
+import { Driver,ON } from '@ohos.UiTest'
+let driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -32,47 +35,29 @@ export default function webJsunitTwo() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get webtwo state success " + JSON.stringify(pages));
+        console.info('get webtwo state success ' + JSON.stringify(pages));
         if (!("webtwo" == pages.name)) {
-          console.info("get webtwo state success " + JSON.stringify(pages.name));
+          console.info('get webtwo state success ' + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
-          console.info("push webtwo page success " + JSON.stringify(result));
+          console.info('push webtwo page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push webtwo error: " + err);
+        console.error('push webtwo error: ' + err);
       }
+      await waitForComponent("webcomponent");
       done()
     });
-    afterEach(async (done: Function) => {
-      console.info("web afterEach start:" + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        };
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 100,
-          priority: events_emitter.EventPriority.LOW
-        };
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
-      done();
-    })
+
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_013                                                                                                                                                           
      *tc.name RegisterJavaScriptProxy                                                                                                                                                                                                               
      *tc.desic register proxy with a specific name
      */
     it('RegisterJavaScriptProxy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitDeleteJavaScriptRegister";
-      Utils.registerEvent("RegisterJavaScriptProxy", 'Web', 13, done);
-      sendEventByKey('webcomponent', 10, '');
+      Utils.emitEvent("emitRegisterJavaScriptProxy", 172610);
+      Utils.registerEvent("RegisterJavaScriptProxy", 'Web', 172620, done);
+      let component = await driver.findComponent(ON.id("webcomponent"));
+      await component.click();
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_014                                                                                                                                                           
@@ -80,8 +65,8 @@ export default function webJsunitTwo() {
      *tc.desic delet specific proxy
      */
     it('DeleteJavaScriptRegister', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitJsMessExtGetString";
-      Utils.registerEvent("DeleteJavaScriptRegister", "17100008", 14, done);
+      Utils.emitEvent("emitDeleteJavaScriptRegister", 172610);
+      Utils.registerEvent("DeleteJavaScriptRegister", "17100008", 172630, done);
       sendEventByKey('webcomponent', 10, '');
     })
     /* 
@@ -90,8 +75,8 @@ export default function webJsunitTwo() {
      *tc.desic Save current page
      */
     it('JsMessExtGetString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitJsMessExtGetNum";
-      Utils.registerEvent("JsMessExtGetString", "result type:string", 500, done);
+      Utils.emitEvent("emitJsMessExtGetString", 172610);
+      Utils.registerEvent("JsMessExtGetString", "result type:string", 172640, done);
       sendEventByKey('webcomponent', 10, '');
     })
     /* 
@@ -100,8 +85,8 @@ export default function webJsunitTwo() {
      *tc.desic Save current page
      */
     it('JsMessExtGetNum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitJsMessExtGetBoo";
-      Utils.registerEvent("JsMessExtGetNum", "result type:number", 501, done);
+      Utils.emitEvent("emitJsMessExtGetNum", 172610);
+      Utils.registerEvent("JsMessExtGetNum", "result type:number", 172650, done);
       sendEventByKey('webcomponent', 10, '');
     })
     /* 
@@ -110,8 +95,8 @@ export default function webJsunitTwo() {
      *tc.desic Save current page
      */
     it('JsMessExtGetBoo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitJsMessExtGetArrayBuffer";
-      Utils.registerEvent("JsMessExtGetBoo", "result type:boolean", 502, done);
+      Utils.emitEvent("emitJsMessExtGetBoo", 172610);
+      Utils.registerEvent("JsMessExtGetBoo", "result type:boolean", 172660, done);
       sendEventByKey('webcomponent', 10, '');
     })
     /* 
@@ -120,8 +105,8 @@ export default function webJsunitTwo() {
      *tc.desic Save current page
      */
     it('JsMessExtGetArrayBuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitJsMessExtGetArray";
-      Utils.registerEvent("JsMessExtGetArrayBuffer", "result type:object", 503, done);
+      Utils.emitEvent("emitJsMessExtGetArrayBuffer", 172610);
+      Utils.registerEvent("JsMessExtGetArrayBuffer", "result type:object", 172670, done);
       sendEventByKey('webcomponent', 10, '');
     })
     /* 
@@ -130,8 +115,8 @@ export default function webJsunitTwo() {
      *tc.desic Save current page
      */
     it('JsMessExtGetArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitWebMessExtSetString";
-      Utils.registerEvent("JsMessExtGetArray", "result type:object0", 504, done);
+      Utils.emitEvent("emitJsMessExtGetArray", 172610);
+      Utils.registerEvent("JsMessExtGetArray", "result type:object0", 172680, done);
       sendEventByKey('webcomponent', 10, '');
     })
     /* 
@@ -140,9 +125,9 @@ export default function webJsunitTwo() {
      *tc.desic Save current page
      */
     it('WebMessExtSetString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitWebMessExtGetString";
+      Utils.emitEvent("emitWebMessExtSetString", 172610);
       let result = "String:helloFromEts";
-      Utils.registerEvent("WebMessExtSetString", JSON.stringify(result), 506, done);
+      Utils.registerEvent("WebMessExtSetString", JSON.stringify(result), 172700, done);
       sendEventByKey('webcomponent', 10, '');
     })
     /* 
@@ -151,8 +136,8 @@ export default function webJsunitTwo() {
      *tc.desic Save current page
      */
     it('WebMessExtGetString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitWebMessExtSetNumber";
-      Utils.registerEvent("WebMessExtGetString", "result type:string", 505, done);
+      Utils.emitEvent("emitWebMessExtGetString", 172610);
+      Utils.registerEvent("WebMessExtGetString", "result type:string", 172690, done);
       sendEventByKey('webcomponent', 10, '');
     })
     /* 
@@ -161,9 +146,9 @@ export default function webJsunitTwo() {
      *tc.desic Save current page
      */
     it('WebMessExtSetNumber', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitWebMessExtGetNumber";
+      Utils.emitEvent("emitWebMessExtSetNumber", 172610);
       let result = "Number:1";
-      Utils.registerEvent("WebMessExtSetNumber", JSON.stringify(result), 507, done);
+      Utils.registerEvent("WebMessExtSetNumber", JSON.stringify(result), 172710, done);
       sendEventByKey('webcomponent', 10, '');
     })
     /* 
@@ -172,8 +157,8 @@ export default function webJsunitTwo() {
      *tc.desic Save current page
      */
     it('WebMessExtGetNumber', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitWebMessExtSetBoolean";
-      Utils.registerEvent("WebMessExtGetNumber", "result type:number0", 508, done);
+      Utils.emitEvent("emitWebMessExtGetNumber", 172610);
+      Utils.registerEvent("WebMessExtGetNumber", "result type:number0", 172720, done);
       sendEventByKey('webcomponent', 10, '');
     })
     /* 
@@ -182,9 +167,9 @@ export default function webJsunitTwo() {
      *tc.desic Save current page
      */
     it('WebMessExtSetBoolean', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitWebMessExtGetBoolean";
+      Utils.emitEvent("emitWebMessExtSetBoolean", 172610);
       let result = "Boolean:true";
-      Utils.registerEvent("WebMessExtSetBoolean", JSON.stringify(result), 509, done);
+      Utils.registerEvent("WebMessExtSetBoolean", JSON.stringify(result), 172730, done);
       sendEventByKey('webcomponent', 10, '');
     })
     /* 
@@ -193,8 +178,8 @@ export default function webJsunitTwo() {
      *tc.desic Save current page
      */
     it('WebMessExtGetBoolean', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitWebMessExtSetArray";
-      Utils.registerEvent("WebMessExtGetBoolean", "result type:boolean", 510, done);
+      Utils.emitEvent("emitWebMessExtGetBoolean", 172610);
+      Utils.registerEvent("WebMessExtGetBoolean", "result type:boolean", 172740, done);
       sendEventByKey('webcomponent', 10, '');
     })
     /* 
@@ -203,9 +188,9 @@ export default function webJsunitTwo() {
      *tc.desic Save current page
      */
     it('WebMessExtSetArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitWebMessExtGetArray";
+      Utils.emitEvent("emitWebMessExtSetArray", 172610);
       let result = "Array len:1, value:apple";
-      Utils.registerEvent("WebMessExtSetArray", JSON.stringify(result), 511, done);
+      Utils.registerEvent("WebMessExtSetArray", JSON.stringify(result), 172750, done);
       sendEventByKey('webcomponent', 10, '');
     })
     /* 
@@ -214,8 +199,8 @@ export default function webJsunitTwo() {
      *tc.desic Save current page
      */
     it('WebMessExtGetArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitWebMessExtSetArrayBuffer";
-      Utils.registerEvent("WebMessExtGetArray", "result type:object", 512, done);
+      Utils.emitEvent("emitWebMessExtGetArray", 172610);
+      Utils.registerEvent("WebMessExtGetArray", "result type:object", 172760, done);
       sendEventByKey('webcomponent', 10, '');
     })
     /* 
@@ -224,9 +209,9 @@ export default function webJsunitTwo() {
      *tc.desic Save current page
      */
     it('WebMessExtSetArrayBuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitWebMessExtGetArrayBuffer";
+      Utils.emitEvent("emitWebMessExtSetArrayBuffer", 172610);
       let result = "ArrayBuffer:8";
-      Utils.registerEvent("WebMessExtSetArrayBuffer", JSON.stringify(result), 513, done);
+      Utils.registerEvent("WebMessExtSetArrayBuffer", JSON.stringify(result), 172770, done);
       sendEventByKey('webcomponent', 10, '');
     })
     /* 
@@ -235,8 +220,8 @@ export default function webJsunitTwo() {
      *tc.desic Save current page
      */
     it('WebMessExtGetArrayBuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitWebMessExtSetError";
-      Utils.registerEvent("WebMessExtGetArrayBuffer", "result getArrayBuffer byteLength:8", 514, done);
+      Utils.emitEvent("emitWebMessExtGetArrayBuffer", 172610);
+      Utils.registerEvent("WebMessExtGetArrayBuffer", "result getArrayBuffer byteLength:8", 172780, done);
       sendEventByKey('webcomponent', 10, '');
     })
     /* 
@@ -245,9 +230,9 @@ export default function webJsunitTwo() {
      *tc.desic Save current page
      */
     it('WebMessExtSetError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitWebMessExtGetError";
+      Utils.emitEvent("emitWebMessExtSetError", 172610);
       let result = "Error:SyntaxError, msg:";
-      Utils.registerEvent("WebMessExtSetError", JSON.stringify(result), 515, done);
+      Utils.registerEvent("WebMessExtSetError", JSON.stringify(result), 172790, done);
       sendEventByKey('webcomponent', 10, '');
     })
     /* 
@@ -256,8 +241,8 @@ export default function webJsunitTwo() {
      *tc.desic Save current page
      */
     it('WebMessExtGetError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitGetAccessibleGeolocationPromise";
-      Utils.registerEvent("WebMessExtGetError", "result type:object", 516, done);
+      Utils.emitEvent("emitWebMessExtGetError", 172610);
+      Utils.registerEvent("WebMessExtGetError", "result type:object", 172800, done);
       sendEventByKey('webcomponent', 10, '');
     })
   })

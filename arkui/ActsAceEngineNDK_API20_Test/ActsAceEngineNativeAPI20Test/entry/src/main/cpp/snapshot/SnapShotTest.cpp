@@ -22,62 +22,67 @@ static OH_PixelmapNative *g_pixelMap = nullptr;
 static ArkUI_NodeHandle g_image;
 static ArkUI_NativeNodeAPI_1 *g_nodeAPi = nullptr;
 static ArkUI_AttributeItem g_NODE_IMAGE_SRC_Item;
-
 namespace SnapShotTest {
-static auto CreateColumn(bool dropDataPrefetchOnNode)
+ArkUI_NodeHandle snapshotcolumn = nullptr;
+napi_value CreateNodeSnapshot(napi_env env, napi_callback_info info)
 {
+    if ((env == nullptr) || (info == nullptr)) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "PluginManager", "CreateNativeNode env or info is null");
+        return nullptr;
+    }
+    size_t argCnt = 1;
+    napi_value args[1] = { nullptr };
+    if (napi_get_cb_info(env, info, &argCnt, args, nullptr, nullptr) != napi_ok) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "PluginManager", "CreateNativeNode napi_get_cb_info failed");
+    }
+    if (argCnt != PARAM_1) {
+        napi_throw_type_error(env, NULL, "Wrong number of arguments");
+        return nullptr;
+    }
     ArkUI_NativeNodeAPI_1 *nodeAPI = nullptr;
+    ArkUI_NodeContentHandle nodeContentHandle = nullptr;
+    OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &nodeContentHandle);
+    // 1. 获取ArkUI Native Node API接口
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
-    auto column = nodeAPI->createNode(ARKUI_NODE_COLUMN);
-    g_image = nodeAPI->createNode(ARKUI_NODE_IMAGE);
-    ArkUI_AttributeItem NODE_IMAGE_SRC_Item = {.string = "./resources/base/media/icon.png"};
-    ArkUI_NumberValue imageWidthValue[] = {100};
-    ArkUI_AttributeItem imageWidthItem = {imageWidthValue, 1};
-    ArkUI_NumberValue imageHeightValue[] = {100};
-    ArkUI_AttributeItem imageHeightItem = {imageHeightValue, 1};
-    ArkUI_NumberValue marginValue[] = {20};
-    ArkUI_AttributeItem marginItem = {marginValue, 1};
-    nodeAPI->setAttribute(g_image, NODE_WIDTH, &imageWidthItem);
-    nodeAPI->setAttribute(g_image, NODE_HEIGHT, &imageHeightItem);
-    nodeAPI->setAttribute(g_image, NODE_IMAGE_SRC, &NODE_IMAGE_SRC_Item);
-    nodeAPI->setAttribute(g_image, NODE_MARGIN, &marginItem);
-    auto dragArea = nodeAPI->createNode(ARKUI_NODE_COLUMN);
-    ArkUI_NumberValue heightValue1[] = {150};
-    ArkUI_AttributeItem heightItem = {heightValue1, 1};
-    ArkUI_NumberValue widthValue[] = {200};
-    ArkUI_AttributeItem widthItem = {widthValue, 1};
-    ArkUI_NumberValue borderValue[] = {1};
-    ArkUI_AttributeItem borderItem = {borderValue, 1};
-    nodeAPI->setAttribute(dragArea, NODE_WIDTH, &widthItem);
-    nodeAPI->setAttribute(dragArea, NODE_HEIGHT, &heightItem);
-    nodeAPI->setAttribute(dragArea, NODE_BORDER_WIDTH, &borderItem);
-    nodeAPI->registerNodeEvent(g_image, NODE_ON_CLICK, ON_CLICK_EVENT_ID, nullptr);
-    OH_ArkUI_AllowNodeAllDropDataTypes(dragArea);
-    OH_ArkUI_DisableDropDataPrefetchOnNode(dragArea, dropDataPrefetchOnNode);
-    ArkUI_AttributeItem id_item = {};
-    id_item.string = "g_image";
-    nodeAPI->setAttribute(g_image, NODE_ID, &id_item);
-    id_item.string = "dragArea";
-    nodeAPI->setAttribute(dragArea, NODE_ID, &id_item);
-    nodeAPI->addChild(column, g_image);
-    nodeAPI->addChild(column, dragArea);
-    return column;
+    snapshotcolumn = nodeAPI->createNode(ARKUI_NODE_COLUMN);
+    ArkUI_NumberValue value[] = {{ .u32 = 0xFFFF0000 }};
+    ArkUI_AttributeItem coloritem = {.value = value, .size = PARAM_1};
+    nodeAPI->setAttribute(snapshotcolumn, NODE_BACKGROUND_COLOR, &coloritem);
+    ArkUI_NumberValue width[] = {{ .f32 = 1.0 }};
+    ArkUI_AttributeItem item1 = {.value = width, .size = PARAM_1};
+    nodeAPI->setAttribute(snapshotcolumn, NODE_WIDTH_PERCENT, &item1);
+    nodeAPI->setAttribute(snapshotcolumn, NODE_HEIGHT_PERCENT, &item1);
+    OH_ArkUI_NodeContent_AddNode(nodeContentHandle, snapshotcolumn);
+    napi_value exports;
+    if (napi_create_object(env, &exports) != napi_ok) {
+        napi_throw_type_error(env, NULL, "napi_create_object failed");
+        return nullptr;
+    }
+    return exports;
 }
 
 napi_value GetNodeSnapshotTest_001(napi_env env, napi_callback_info info)
 {
-    auto column = CreateColumn(true);
+    OH_PixelmapNative *g_pixelMap = nullptr;
     auto g_options = OH_ArkUI_CreateSnapshotOptions();
-    uint8_t data[PARAM_96];
-    for (auto i = 0; i < PARAM_96; i = i + PARAM_4) {
-        data[i] = uint8_t(0);
-        data[i + PARAM_1] = uint8_t(0);
-        data[i + PARAM_2] = uint8_t(0);
-        data[i + PARAM_3] = uint8_t(PARAM_255);
-    };
-    int result = OH_ArkUI_GetNodeSnapshot(column, g_options, &g_pixelMap);
+    OH_Pixelmap_InitializationOptions *createOpts;
+    OH_PixelmapInitializationOptions_Create(&createOpts);
+    int width = PARAM_20;
+    OH_PixelmapInitializationOptions_SetWidth(createOpts, width);
+    int height = PARAM_20;
+    OH_PixelmapInitializationOptions_SetHeight(createOpts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOpts, PIXEL_FORMAT_RGBA_8888);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOpts, PIXELMAP_ALPHA_TYPE_UNKNOWN);
+    uint8_t data [PARAM_500];
+    int dataSize = PARAM_500;
+    for (int i = 0; i < dataSize; i++) {
+        data[i] = i + 1;
+    }
+    OH_PixelmapNative_CreatePixelmap(data, dataSize, createOpts, &g_pixelMap);
+    int result = OH_ArkUI_GetNodeSnapshot(snapshotcolumn, g_options, &g_pixelMap);
+    OH_PixelmapNative_Release(g_pixelMap);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -86,11 +91,11 @@ napi_value GetNodeSnapshotTest_002(napi_env env, napi_callback_info info)
     // 获取ArkUI Native Node API接口
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, g_nodeAPi);
     // 创建指定类型的节点
-    auto column = nullptr;
+    auto column1 = nullptr;
     auto options = OH_ArkUI_CreateSnapshotOptions();
-    int result = OH_ArkUI_GetNodeSnapshot(column, options, &g_pixelMap);
+    int result = OH_ArkUI_GetNodeSnapshot(column1, options, &g_pixelMap);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -99,11 +104,11 @@ napi_value GetNodeSnapshotTest_003(napi_env env, napi_callback_info info)
     // 获取ArkUI Native Node API接口
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, g_nodeAPi);
     // 创建指定类型的节点
-    auto column = g_nodeAPi->createNode(ARKUI_NODE_COLUMN);
+    auto column2 = g_nodeAPi->createNode(ARKUI_NODE_COLUMN);
     auto options = OH_ArkUI_CreateSnapshotOptions();
-    int result = OH_ArkUI_GetNodeSnapshot(column, options, &g_pixelMap);
+    int result = OH_ArkUI_GetNodeSnapshot(column2, options, &g_pixelMap);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_INTERNAL_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -112,9 +117,9 @@ napi_value GetNodeSnapshotTest_004(napi_env env, napi_callback_info info)
     // 获取ArkUI Native Node API接口
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, g_nodeAPi);
     // 创建指定类型的节点
-    auto column = nullptr;
+    auto column3 = nullptr;
     auto options = OH_ArkUI_CreateSnapshotOptions();
-    int result = OH_ArkUI_GetNodeSnapshot(column, options, &g_pixelMap);
+    int result = OH_ArkUI_GetNodeSnapshot(column3, options, &g_pixelMap);
     napi_value retValue;
     napi_create_int32(env, result, &retValue);
     return retValue;

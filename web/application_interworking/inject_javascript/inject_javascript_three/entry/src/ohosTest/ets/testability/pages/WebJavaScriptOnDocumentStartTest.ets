@@ -32,17 +32,19 @@ struct WebJavaScriptOnDocumentStartTest {
   @State isComplete: number = -1;
   private jsStart: string =
     'console.log("push new js on start called")';
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 173070,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(173070)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -51,6 +53,7 @@ struct WebJavaScriptOnDocumentStartTest {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -61,7 +64,9 @@ struct WebJavaScriptOnDocumentStartTest {
         Button('WebJavaScriptOnDocumentStartTestButton click')
           .key('WebJavaScriptOnDocumentStartTestButton')
           .onClick(async () => {
-            await Utils.sleep(2000);
+          await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+          await waitForExist(() => this.isReceive, this.emitKey, 0);
+          this.isReceive = -1;
             console.info('key==>' + this.emitKey)
             switch (this.emitKey) {
               case 'emitWebJavaScriptOnDocumentStart001': {
@@ -70,7 +75,7 @@ struct WebJavaScriptOnDocumentStartTest {
                   let check = (v1:Array<string>, v2:boolean): boolean => {
                     return v1.includes('push new js on start called')
                   }
-                  await waitForAssert(()=>this.message, check, true, 2025040804, this.emitKey);
+                  await waitForAssert(()=>this.message, check, true, 173080, this.emitKey);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -89,6 +94,7 @@ struct WebJavaScriptOnDocumentStartTest {
         })
         .onPageEnd((event) => {
           if (event) {
+            this.isPageEnd = 0;
             this.isComplete = 0;
             console.log('javaScriptOnDocumentStart isComplete==>'+this.isComplete);
             console.log('javaScriptOnDocumentStart onPageEnd url:' + event.url);

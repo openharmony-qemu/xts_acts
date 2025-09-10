@@ -103,6 +103,7 @@ struct Index {
               this.placementIndex = this.placementIndex + 1;
             }
           })
+          .margin({top: '2%'})
 
         Button("002、width=" + this.widthArray[this.widthIndex] + ", index=" + this.widthIndex)
           .id("width")

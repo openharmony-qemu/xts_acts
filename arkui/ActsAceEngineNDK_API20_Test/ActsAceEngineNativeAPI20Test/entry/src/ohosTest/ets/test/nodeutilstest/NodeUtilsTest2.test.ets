@@ -33,6 +33,50 @@ export default function NodeUtilsTest2() {
     });
 
     /*
+    * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_SetForceDarkConfig_0100
+    * @tc.name       : testOHArkUISetForceDarkConfig0100
+    * @tc.desc       : testing OH_ArkUI_SetForceDarkConfig interface
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 1
+    */
+    it('testOHArkUISetForceDarkConfig0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testOHArkUISetForceDarkConfig0100 start====");
+          let result: number = nativerenderndk.SetForceDarkConfigTest_001()
+          console.info(`====>testOHArkUISetForceDarkConfig0100 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done();
+        } catch (err) {
+          console.error("====>testOHArkUISetForceDarkConfig0100 catch err: " + err);
+          expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+        }
+      })
+
+    /*
+      * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_SetForceDarkConfig_0200
+      * @tc.name       : testOHArkUISetForceDarkConfig0200
+      * @tc.desc       : testing OH_ArkUI_SetForceDarkConfig interface
+      * @tc.size       : MediumTest
+      * @tc.type       : Function
+      * @tc.level      : Level 1
+    */
+    it('testOHArkUISetForceDarkConfig0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testOHArkUISetForceDarkConfig0200 start====");
+          let result: number = nativerenderndk.SetForceDarkConfigTest_002()
+          console.info(`====>testOHArkUISetForceDarkConfig0200 result====${result}`);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          done();
+        } catch (err) {
+          console.error("====>testOHArkUISetForceDarkConfig0200 catch err: " + err);
+          expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+        }
+      })
+
+    /*
      * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeCustomEvent_GetCustomSpanMeasureInfo_0100
      * @tc.name       : testOHArkUINodeCustomEventGetCustomSpanMeasureInfo0100
      * @tc.desc       : testing OH_ArkUI_NodeCustomEvent_GetCustomSpanMeasureInfo interface
@@ -68,7 +112,7 @@ export default function NodeUtilsTest2() {
           console.info("====>testOHArkUINodeCustomEventGetCustomSpanMeasureInfo0200 start====");
           let result: number = nativerenderndk.GetCustomSpanMeasureInfoTest_002()
           console.info(`====>testOHArkUINodeCustomEventGetCustomSpanMeasureInfo0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeCustomEventGetCustomSpanMeasureInfo0200 catch err: " + err);
@@ -112,7 +156,7 @@ export default function NodeUtilsTest2() {
           console.info("====>testOHArkUINodeCustomEventSetCustomSpanMetrics0200 start====");
           let result: number = nativerenderndk.SetCustomSpanMetricsTest_002()
           console.info(`====>testOHArkUINodeCustomEventSetCustomSpanMetrics0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeCustomEventSetCustomSpanMetrics0200 catch err: " + err);
@@ -156,7 +200,7 @@ export default function NodeUtilsTest2() {
           console.info("====>testOHArkUINodeCustomEventGetCustomSpanDrawInfo0200 start====");
           let result: number = nativerenderndk.GetCustomSpanDrawInfoTest_002()
           console.info(`====>testOHArkUINodeCustomEventGetCustomSpanDrawInfo0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeCustomEventGetCustomSpanDrawInfo0200 catch err: " + err);
@@ -200,7 +244,7 @@ export default function NodeUtilsTest2() {
           console.info("====>testOHArkUIListCloseAllSwipeActions0200 start====");
           let result: number = nativerenderndk.CloseAllSwipeActionsTest_002()
           console.info(`====>testOHArkUIListCloseAllSwipeActions0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_ATTRIBUTE_OR_EVENT_NOT_SUPPORTED);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUIListCloseAllSwipeActions0200 catch err: " + err);
@@ -222,7 +266,7 @@ export default function NodeUtilsTest2() {
           console.info("====>testOHArkUIListCloseAllSwipeActions0300 start====");
           let result: number = nativerenderndk.CloseAllSwipeActionsTest_003()
           console.info(`====>testOHArkUIListCloseAllSwipeActions0300 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUIListCloseAllSwipeActions0300 catch err: " + err);
@@ -244,7 +288,7 @@ export default function NodeUtilsTest2() {
           console.info("====>testOHArkUIRegisterSystemColorModeChangeEvent0200 start====");
           let result: number = nativerenderndk.RegisterSystemColorModeChangeTest_002()
           console.info(`====>testOHArkUIRegisterSystemColorModeChangeEvent0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUIRegisterSystemColorModeChangeEvent0200 catch err: " + err);
@@ -267,7 +311,7 @@ export default function NodeUtilsTest2() {
           console.info("====>testOHArkUIRegisterSystemFontStyleChangeEvent0200 start====");
           let result: number = nativerenderndk.RegisterSystemFontStyleChangeTest_002()
           console.info(`====>testOHArkUIRegisterSystemFontStyleChangeEvent0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUIRegisterSystemFontStyleChangeEvent0200 catch err: " + err);
@@ -289,7 +333,7 @@ export default function NodeUtilsTest2() {
           console.info("====>testOHArkUIRegisterLayoutCallbackOnNodeHandle0100 start====");
           let result: number = nativerenderndk.RegisterLayoutCallbackOnNodeTest_001()
           console.info(`====>testOHArkUIRegisterLayoutCallbackOnNodeHandle0100 result====${result}`);
-          expect(result).assertEqual(ARKUI_INSPECTOR_NATIVE_RESULT_SUCCESSFUL);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUIRegisterLayoutCallbackOnNodeHandle0100 catch err: " + err);
@@ -311,7 +355,7 @@ export default function NodeUtilsTest2() {
           console.info("====>testOHArkUIRegisterDrawCallbackOnNodeHandle0100 start====");
           let result: number = nativerenderndk.RegisterDrawCallbackOnNodeTest_001()
           console.info(`====>testOHArkUIRegisterDrawCallbackOnNodeHandle0100 result====${result}`);
-          expect(result).assertEqual(ARKUI_INSPECTOR_NATIVE_RESULT_SUCCESSFUL);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUIRegisterDrawCallbackOnNodeHandle0100 catch err: " + err);
@@ -333,7 +377,7 @@ export default function NodeUtilsTest2() {
           console.info("====>testOHArkUIUnregisterLayoutCallbackOnNodeHandle0100 start====");
           let result: number = nativerenderndk.UnregisterLayoutCallbackOnNodeTest_001()
           console.info(`====>testOHArkUIUnregisterLayoutCallbackOnNodeHandle0100 result====${result}`);
-          expect(result).assertEqual(ARKUI_INSPECTOR_NATIVE_RESULT_SUCCESSFUL);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUIUnregisterLayoutCallbackOnNodeHandle0100 catch err: " + err);
@@ -355,7 +399,7 @@ export default function NodeUtilsTest2() {
           console.info("====>testOHArkUIUnregisterDrawCallbackOnNodeHandle0100 start====");
           let result: number = nativerenderndk.UnregisterDrawCallbackOnNodeTest_001()
           console.info(`====>testOHArkUIUnregisterDrawCallbackOnNodeHandle0100 result====${result}`);
-          expect(result).assertEqual(ARKUI_INSPECTOR_NATIVE_RESULT_SUCCESSFUL);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUIUnregisterDrawCallbackOnNodeHandle0100 catch err: " + err);
@@ -399,7 +443,7 @@ export default function NodeUtilsTest2() {
           console.info("====>testOHArkUINodeUtilsGetPositionToParent0200 start====");
           let result: number = nativerenderndk.GetPositionToParentTest_002()
           console.info(`====>testOHArkUINodeUtilsGetPositionToParent0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeUtilsGetPositionToParent0200 catch err: " + err);
@@ -443,7 +487,7 @@ export default function NodeUtilsTest2() {
           console.info("====>testOHArkUINodeUtilsGetNodeHandleByUniqueId0200 start====");
           let result: number = nativerenderndk.GetNodeHandleByUniqueIdTest_002()
           console.info(`====>testOHArkUINodeUtilsGetNodeHandleByUniqueId0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeUtilsGetNodeHandleByUniqueId0200 catch err: " + err);
@@ -487,7 +531,7 @@ export default function NodeUtilsTest2() {
           console.info("====>testOHArkUINodeUtilsGetNodeUniqueId0200 start====");
           let result: number = nativerenderndk.GetNodeUniqueIdTest_002()
           console.info(`====>testOHArkUINodeUtilsGetNodeUniqueId0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUINodeUtilsGetNodeUniqueId0200 catch err: " + err);
@@ -531,7 +575,7 @@ export default function NodeUtilsTest2() {
           console.info("====>testOHArkUIAddSupportedUIStates0200 start====");
           let result: number = nativerenderndk.AddSupportedUIStatesTest_002()
           console.info(`====>testOHArkUIAddSupportedUIStates0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUIAddSupportedUIStates0200 catch err: " + err);
@@ -575,7 +619,7 @@ export default function NodeUtilsTest2() {
           console.info("====>testOHArkUIRemoveSupportedUIStates0200 start====");
           let result: number = nativerenderndk.RemoveSupportedUIStatesTest_002()
           console.info(`====>testOHArkUIRemoveSupportedUIStates0200 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
+          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
           console.error("====>testOHArkUIRemoveSupportedUIStates0200 catch err: " + err);

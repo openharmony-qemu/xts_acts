@@ -97,7 +97,8 @@ static napi_value RequestInjection1(napi_env env, napi_callback_info info)
     OH_LOG_INFO(LOG_APP, "SUB_MMI_Input_Api_RequestInjection_0100 retResult:%{public}d", retResult);
     napi_create_int32(env,
         (retResult == 801 || retResult == INPUT_SUCCESS || retResult == INPUT_SERVICE_EXCEPTION ||
-        retResult == INPUT_INJECTION_AUTHORIZING || retResult == INPUT_INJECTION_AUTHORIZED_OTHERS) ? 1 : 0, &result);
+        retResult == INPUT_INJECTION_AUTHORIZING || retResult == INPUT_INJECTION_AUTHORIZED_OTHERS ||
+        retResult == INPUT_INJECTION_OPERATION_FREQUENT || retResult == INPUT_INJECTION_AUTHORIZED) ? 1 : 0, &result);
     return result;
 }
 

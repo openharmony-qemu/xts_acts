@@ -31,7 +31,7 @@ napi_value GetLayoutSizeTest_001(napi_env env, napi_callback_info info)
     auto component = g_nodeAPI->createNode(ARKUI_NODE_XCOMPONENT);
     int result = OH_ArkUI_NodeUtils_GetLayoutSize(component, &size);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -39,7 +39,7 @@ napi_value GetLayoutSizeTest_002(napi_env env, napi_callback_info info)
 {
     int result = OH_ArkUI_NodeUtils_GetLayoutSize(g_handle, nullptr);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -52,7 +52,7 @@ napi_value GetLayoutPositionTest_001(napi_env env, napi_callback_info info)
     ArkUI_IntOffset localOffset;
     int result = OH_ArkUI_NodeUtils_GetLayoutPosition(g_handle, &localOffset);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -61,7 +61,7 @@ napi_value GetLayoutPositionTest_002(napi_env env, napi_callback_info info)
     ArkUI_IntOffset localOffset;
     int result = OH_ArkUI_NodeUtils_GetLayoutPosition(g_handle, &localOffset);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -74,7 +74,7 @@ napi_value GetLayoutPositionInWindowTest_001(napi_env env, napi_callback_info in
     ArkUI_IntOffset globalOffset;
     int result = OH_ArkUI_NodeUtils_GetLayoutPositionInWindow(g_handle, &globalOffset);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -83,7 +83,7 @@ napi_value GetLayoutPositionInWindowTest_002(napi_env env, napi_callback_info in
     ArkUI_IntOffset globalOffset;
     int result = OH_ArkUI_NodeUtils_GetLayoutPositionInWindow(g_handle, &globalOffset);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -96,7 +96,7 @@ napi_value GetLayoutPositionInScreenTest_001(napi_env env, napi_callback_info in
     ArkUI_IntOffset screenOffset;
     int result = OH_ArkUI_NodeUtils_GetLayoutPositionInScreen(g_handle, &screenOffset);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -105,7 +105,7 @@ napi_value GetLayoutPositionInScreenTest_002(napi_env env, napi_callback_info in
     ArkUI_IntOffset screenOffset;
     int result = OH_ArkUI_NodeUtils_GetLayoutPositionInScreen(g_handle, &screenOffset);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 napi_value GetLayoutPositionInGlobalDisplayTest_001(napi_env env, napi_callback_info info)
@@ -114,15 +114,19 @@ napi_value GetLayoutPositionInGlobalDisplayTest_001(napi_env env, napi_callback_
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, g_nodeAPI);
     // 创建指定类型的节点
     auto g_handle = g_nodeAPI->createNode(ARKUI_NODE_BUTTON);
+    ArkUI_IntOffset offset;
+    int result = OH_ArkUI_NodeUtils_GetLayoutPositionInGlobalDisplay(g_handle, &offset);
     napi_value retValue;
-    napi_create_int32(env, g_nodeutilsresult1, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 
 napi_value GetLayoutPositionInGlobalDisplayTest_002(napi_env env, napi_callback_info info)
 {
+    ArkUI_IntOffset offset;
+    int result = OH_ArkUI_NodeUtils_GetLayoutPositionInGlobalDisplay(nullptr, &offset);
     napi_value retValue;
-    napi_create_int32(env, g_nodeutilsresult1, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 napi_value GetPositionWithTranslateInWindowTest_001(napi_env env, napi_callback_info info)
@@ -134,7 +138,7 @@ napi_value GetPositionWithTranslateInWindowTest_001(napi_env env, napi_callback_
     ArkUI_IntOffset translateOffset;
     int result = OH_ArkUI_NodeUtils_GetPositionWithTranslateInWindow(g_handle, &translateOffset);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -143,7 +147,7 @@ napi_value GetPositionWithTranslateInWindowTest_002(napi_env env, napi_callback_
     ArkUI_IntOffset translateOffset;
     int result = OH_ArkUI_NodeUtils_GetPositionWithTranslateInWindow(g_handle, &translateOffset);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -156,7 +160,7 @@ napi_value GetPositionWithTranslateInScreenTest_001(napi_env env, napi_callback_
     ArkUI_IntOffset translateOffset;
     int result = OH_ArkUI_NodeUtils_GetPositionWithTranslateInScreen(g_handle, &translateOffset);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -165,7 +169,7 @@ napi_value GetPositionWithTranslateInScreenTest_002(napi_env env, napi_callback_
     ArkUI_IntOffset translateOffset;
     int result = OH_ArkUI_NodeUtils_GetPositionWithTranslateInScreen(g_handle, &translateOffset);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -175,7 +179,7 @@ napi_value GetCustomPropertyTest_001(napi_env env, napi_callback_info info)
     ArkUI_CustomProperty* handle;
     int result = OH_ArkUI_NodeUtils_GetCustomProperty(g_handle, button, &handle);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -190,7 +194,7 @@ napi_value GetActiveChildrenInfoTest_001(napi_env env, napi_callback_info info)
     ArkUI_ActiveChildrenInfo* handle;
     int result = OH_ArkUI_NodeUtils_GetActiveChildrenInfo(g_handle, &handle);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -199,7 +203,7 @@ napi_value GetActiveChildrenInfoTest_002(napi_env env, napi_callback_info info)
     ArkUI_ActiveChildrenInfo* handle;
     int result = OH_ArkUI_NodeUtils_GetActiveChildrenInfo(g_handle, &handle);
     napi_value retValue;
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -223,12 +227,12 @@ napi_value SetCrossLanguageOptionTest_001(napi_env env, napi_callback_info info)
      // 获取ArkUI Native Node API接口
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, g_nodeAPI);
     // 创建指定类型的节点
-    auto g_handle = g_nodeAPI->createNode(ARKUI_NODE_XCOMPONENT);
-    g_nodeAPI->removeAllChildren(g_handle);
+    auto g_handle = g_nodeAPI->createNode(ARKUI_NODE_TEXT);
+    g_nodeAPI->disposeNode(g_handle);
     auto g_option = OH_ArkUI_CrossLanguageOption_Create();
-    OH_ArkUI_CrossLanguageOption_SetAttributeSettingStatus(g_option, false);
+    OH_ArkUI_CrossLanguageOption_SetAttributeSettingStatus(g_option, true);
     int result = OH_ArkUI_NodeUtils_SetCrossLanguageOption(g_handle, g_option);
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -239,7 +243,7 @@ napi_value SetCrossLanguageOptionTest_002(napi_env env, napi_callback_info info)
     auto g_option = OH_ArkUI_CrossLanguageOption_Create();
     OH_ArkUI_CrossLanguageOption_SetAttributeSettingStatus(g_option, true);
     int result = OH_ArkUI_NodeUtils_SetCrossLanguageOption(g_handle, g_option);
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -254,7 +258,7 @@ napi_value GetCrossLanguageOptionTest_001(napi_env env, napi_callback_info info)
     auto g_option = OH_ArkUI_CrossLanguageOption_Create();
     OH_ArkUI_CrossLanguageOption_SetAttributeSettingStatus(g_option, true);
     int result = OH_ArkUI_NodeUtils_GetCrossLanguageOption(g_handle, g_option);
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -265,7 +269,7 @@ napi_value GetCrossLanguageOptionTest_002(napi_env env, napi_callback_info info)
     auto g_option = OH_ArkUI_CrossLanguageOption_Create();
     OH_ArkUI_CrossLanguageOption_SetAttributeSettingStatus(g_option, true);
     int result = OH_ArkUI_NodeUtils_GetCrossLanguageOption(g_handle, g_option);
-    napi_create_int32(env, result, &retValue);
+    napi_create_int32(env, result == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 }

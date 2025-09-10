@@ -50,6 +50,9 @@ export default function audioInterrupt() {
       if (button == null || button == undefined) {
         button = await dr?.waitForComponent(ON.text('打开', MatchPattern.EQUALS), 500);
       }
+      if (button == null || button == undefined) {
+        button = await dr?.waitForComponent(ON.text('本次打开', MatchPattern.EQUALS), 500);
+      }
       await button?.click();
       await sleep(3000);
     }

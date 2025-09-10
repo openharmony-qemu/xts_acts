@@ -365,5 +365,24 @@ export default function PowerManagerServiceTest() {
         done();
       }
     });
+
+    /**
+     * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0170
+     * @tc.name testPowerManagerServiceTest_1700
+     * @tc.desc PowerManagerService stop test
+     * @tc.level: Level 3
+     * @tc.type: Function
+     * @tc.size: MediumTest
+     */
+    it('testPowerManagerServiceTest_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let TAG = 'testPowerManagerServiceTest_1700';
+      try {
+        power.setPowerKeyFilteringStrategy(power.PowerKeyFilteringStrategy.DISABLE_LONG_PRESS_FILTERING);
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(4900101);
+        done();
+      }
+    });
   });
 }

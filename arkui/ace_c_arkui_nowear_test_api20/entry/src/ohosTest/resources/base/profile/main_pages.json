@@ -10,6 +10,7 @@
     "MainAbility/pages/dragEvent/dragEventGetDragSource",
     "MainAbility/pages/dragEvent/dragEventGetGlobalDisplay",
     "MainAbility/pages/dropBadge/enableDropDisallowedBadge",
-    "MainAbility/pages/dialog/DialogGetStateTest"
+    "MainAbility/pages/dialog/DialogGetStateTest",
+    "MainAbility/pages/image/ImageDraggableEventTest"
   ]
 }

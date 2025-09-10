@@ -72,8 +72,12 @@ struct RouterMode {
               console.error(`pushUrl finish`);
             })
             .catch((err: ESObject) => {
-              console.error(`pushUrl failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError).message}`);
-              AppStorage.setOrCreate('100002Code', (err as BusinessError).code);
+              if (err && err?.code) {
+                console.error(`pushUrl failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError).message}`);
+                AppStorage.setOrCreate('100002Code', (err as BusinessError).code);
+                } else {
+                  console.error(`pushUrl1 failed, err is ${err}`)
+              }
             })
         })
 
@@ -91,8 +95,12 @@ struct RouterMode {
                 console.error(`pushUrl finish`);
               })
               .catch((err: ESObject) => {
-                console.error(`pushUrl failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError).message}`);
-                AppStorage.setOrCreate('100003Code', (err as BusinessError).code);
+                if (err && err?.code) {
+                  console.error(`pushUrl failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError)?.message}`);
+                  AppStorage.setOrCreate('100003Code', (err as BusinessError).code);
+                } else {
+                  console.error(`pushUrl1 failed, err is ${err}`)
+                }
               })
           }
         })
@@ -104,11 +112,14 @@ struct RouterMode {
                 url: 'MainAbility/pages/ohosRouter/router',
                 params: new routerParams('message', [123, 456, 789])
               }, router.RouterMode.Standard, (err) => {
-                if (err) {
-                  console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
+                if (err && err?.code) {
+                  console.error(`pushUrl failed, code is ${err?.code}, message is ${err?.message}`);
                   AppStorage.setOrCreate('100003Code', err.code);
                   return;
-                }})
+                } else {
+                  console.error(`pushUrl1 failed, err is ${err}`)
+                }
+              })
             }
           })
       }

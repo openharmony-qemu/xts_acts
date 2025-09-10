@@ -4,7 +4,7 @@ import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 import { waitForExist} from '../../test/WaitTest.test';
 import { Driver, ON } from '@ohos.UiTest';
-
+import { BusinessError } from '@kit.BasicServicesKit';
 
 // 在同一page页有两个Web组件。在WebComponent新开窗口时，会跳转到NewWebViewComp。
 @CustomDialog
@@ -26,7 +26,7 @@ struct NewWebViewComp {
           }
         })
         .onActivateContent(()=>{
-          Utils.emitEvent(true, 20250619);
+          Utils.emitEvent(true, 141310);
           // 执行切换标签
           console.log("NEU-onActivateContent");
         })
@@ -44,14 +44,14 @@ struct WebComponent {
   @State offsetY: number = 0;
   @State isReceive: number = -1;
   @State str:string = 'emitOnActivateContent'
-
+  @State isEnd: boolean = false;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 141301,
       priority: events_emitter.EventPriority.LOW
     };
-    events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+    events_emitter.once(valueChangeEvent, this.valueChangeCallBack);
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -65,6 +65,10 @@ struct WebComponent {
     }
   }
 
+  onPageHide(){
+    events_emitter.off(141300)
+  }
+
 
 
   build() {
@@ -73,17 +77,12 @@ struct WebComponent {
         Button('web click').key('onActivateContentButton').onClick(async () => {
           console.info('key==>' + this.str);
           await waitForExist(()=>this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case 'emitOnActivateContent': {
-              await Utils.sleep(500);
               let driver = Driver.create();
-              let ButtonOne = await driver.findComponent(ON.text('第一次调用'));
-              await ButtonOne.click();
-              await Utils.sleep(1000);
-              await ButtonOne.click();
-              await Utils.sleep(1000);
-              await ButtonOne.click();
-              await Utils.sleep(500);
+              await waitForExist(()=>this.isEnd, this.str, true);
+              Utils.findAndClickComponent('第一次调用',driver)
               break;
             }
 
@@ -96,6 +95,9 @@ struct WebComponent {
         .allowWindowOpenMethod(true)
         // 需要使能multiWindowAccess
         .multiWindowAccess(true)
+        .onPageEnd(()=>{
+          this.isEnd = true;
+        })
         .onWindowNew((event) => {
           console.log("NEU-onWindowNew");
           if (this.dialogController) {

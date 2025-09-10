@@ -228,6 +228,28 @@ export default function ActsPrintErrorTest() {
       }
     })
 
+        /**
+     * @tc.number  : SUB_Oh_Print_StartPrintJob1_1001
+     * @tc.name    : SUB_Oh_Print_StartPrintJob1_1001
+     * @tc.desc    : Test OH_Print_StartPrintJob1.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Oh_Print_StartPrintJob1_1001', Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>SUB_Oh_Print_StartPrintJob1_1001 start====");
+        let result = printerror.OH_Print_StartPrintJob2();
+        expect(result).assertEqual(Success);
+        console.info("====>SUB_Oh_Print_StartPrintJob1_1001 result: " + result);
+        done();
+      } catch (err) {
+        console.error("====>SUB_Oh_Print_StartPrintJob1_1001 catch err: " + err);
+        expect(1).assertEqual(Success);
+        done()
+      }
+    })
+
     /**
      * @tc.number  : SUB_Oh_Print_RegisterPrinterChangeListener1_1100
      * @tc.name    : SUB_Oh_Print_RegisterPrinterChangeListener1_1100

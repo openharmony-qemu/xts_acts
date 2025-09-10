@@ -35,6 +35,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_Drawing_RectGetArraySize_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -56,6 +57,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_Drawing_RectGetArraySize_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -77,6 +79,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_Drawing_RectGetArrayElement_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -98,6 +101,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_Drawing_RectGetArrayElement_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -119,6 +123,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_Drawing_RectDestroyArray_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -140,6 +145,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_Drawing_RectDestroyArray_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -161,6 +167,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_RoundRectOffset_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -182,6 +189,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_RoundRectOffset_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -203,6 +211,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_FontMeasureSingleCharacterWithFeatures_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -224,6 +233,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_FontMeasureSingleCharacterWithFeatures_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -245,6 +255,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_FontMeasureText_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -266,6 +277,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_FontMeasureText_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -287,6 +299,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_FontMeasureTextWithBrushOrPen_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -308,6 +321,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_FontGetWidthsBounds_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -329,6 +343,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_FontGetPos_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -350,6 +365,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_FontGetPos_0200 catch err: " + err);
+          done();
         }
       })
     /**
@@ -370,6 +386,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_FontGetBounds_0100 catch err: " + err);
+          done();
         }
       })
     /**
@@ -390,6 +407,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_FontGetSpacing_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -411,6 +429,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_FontGetSpacing_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -433,6 +452,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_FontGetPathForGlyph_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -454,6 +474,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_FontGetPathForGlyph_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -475,6 +496,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_FontGetTextPath_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -496,6 +518,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_FontGetTextPath_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -517,6 +540,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_FontFeaturesCreate_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -538,6 +562,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_FontFeaturesAddFeature_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -559,6 +584,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_FontFeaturesAddFeature_0200 catch err: " + err);
+          done();
         }
       })
 
@@ -580,6 +606,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_FontFeaturesDestroy_0100 catch err: " + err);
+          done();
         }
       })
 
@@ -601,6 +628,7 @@ export default function RectFontTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_Drawing_FontFeaturesDestroy_0200 catch err: " + err);
+          done();
         }
       })
 

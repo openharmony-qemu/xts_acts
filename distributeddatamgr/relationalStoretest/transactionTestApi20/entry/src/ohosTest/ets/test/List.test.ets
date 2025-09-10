@@ -17,10 +17,16 @@ import ActsTransactionTest from './ActsTransactionTest.test'
 import ActsValuesBucketTest from './ActsValuesBucketTest.test'
 import ActsRelationalStoreTest from './ActsRelationalStoreTest.test'
 import ActsRdbErrorCodeTest from './ActsRdbErrorCodeTest.test'
+import ActsCryptoParamTest from './ActsCryptoParamTest.test'
+import ActsPredicatesTest from  './ActsPredicatesTest.test'
+import ActsCursorTest from './ActsCursorTest.test'
 
 export default function testsuite() {
   ActsTransactionTest()
   ActsValuesBucketTest()
   ActsRelationalStoreTest()
   ActsRdbErrorCodeTest()
+  ActsCryptoParamTest()
+  ActsPredicatesTest()
+  ActsCursorTest()
 }

@@ -27,7 +27,7 @@ export default class Utils {
   static rect_right: number;
   static rect_bottom: number;
   static rect_value: RectValue;
-  
+
   static sleep(time: number) {
     return new Promise<string>((resolve, reject) => {
       setTimeout(() => {
@@ -71,13 +71,15 @@ export default class Utils {
 
   static async flingComponent(key: string, isHorizontal: boolean, isForward: boolean) {
     let driver = Driver.create();
-    let rect = Utils.getComponentRect(key);
-    let centerX = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect))
-    let centerY = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect))
-    let X1 =  Math.round(centerX - vp2px(66.67));
-    let X2 =  Math.round(centerX + vp2px(66.67));
-    let Y1 = Math.round(centerY - vp2px(66.67));
-    let Y2 = Math.round(centerY + vp2px(66.67));
+    let Picker = await driver.findComponent(ON.id(key));
+    let rect = await Picker.getBounds();
+    let centerX = Math.round(Utils.getRectHorizontalCenterX(rect))
+    let centerY = Math.round(Utils.getRectVerticalCenterY(rect))
+    let X1 =  Math.round(centerX - Math.round((centerX-rect.left)/2));
+    let X2 =  Math.round(centerX + Math.round((centerX-rect.left)/2));
+    let Y1 = Math.round(centerY - Math.round((centerY-rect.top)/2));
+    let Y2 = Math.round(centerY + Math.round((centerY-rect.top)/2));
+
     let stepLen = 20;
     let speed = 10000;
     if (isHorizontal) {
@@ -253,7 +255,29 @@ export default class Utils {
       done();
     }
   }
-  
+
+    static async replacePage(pageTag: string, done?: Function) {
+    let options: router.RouterOptions = {
+      url: `MainAbility/pages/${pageTag}`,
+    }
+    try {
+      router.clear();
+      let pages = router.getState();
+      console.info(`get ${pageTag} state success ` + JSON.stringify(pages));
+      if (pageTag.indexOf(pages.name) < 0) {
+        console.info(`get ${pageTag} state success ` + JSON.stringify(pages.name));
+        let result = await router.replace(options);
+        await Utils.sleep(2000);
+        console.info(`replace ${pageTag} page success ` + JSON.stringify(result));
+      }
+    } catch (err) {
+      console.error(`replace ${pageTag} page error: ` + err);
+    }
+    if (done) {
+      done();
+    }
+  }
+
   static getComponentRect(key: string): Rect {
     let strJson = getInspectorByKey(key);
     let obj: ComponentInfo = JSON.parse(strJson);

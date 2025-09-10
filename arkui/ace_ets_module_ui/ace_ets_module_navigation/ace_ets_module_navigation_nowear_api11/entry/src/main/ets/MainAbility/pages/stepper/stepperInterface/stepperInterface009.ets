@@ -32,5 +32,6 @@ struct stepperInterface009 {
         this.currentIndex = index
       })
     }
+    .height('90%')
   }
 }

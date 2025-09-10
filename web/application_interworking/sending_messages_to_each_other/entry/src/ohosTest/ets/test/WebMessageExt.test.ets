@@ -17,19 +17,23 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 export default function webMessageExt() {
 
   describe('webMessageExtTestSuite', () => {
+    beforeAll(async (done: Function) => {
+      await waitForComponent("WebMessageExtButton");
+      done()
+    });
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webMessageExt beforeEach start");
       done();
     })
@@ -43,9 +47,8 @@ export default function webMessageExt() {
     * @tc.level      : Level 0
     */
     it('testWebMessageExGetType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("testWebMessageExGetType001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExGetType001", 1, 20260, done);
+      Utils.emitEvent("testWebMessageExGetType001", 170010)
+      Utils.registerEvent("testWebMessageExGetType001", 1, 170020, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -58,9 +61,8 @@ export default function webMessageExt() {
     * @tc.level      : Level 1
     */
     it('testWebMessageExGetType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebMessageExGetType002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExGetType002", 2, 20261, done);
+      Utils.emitEvent("testWebMessageExGetType002", 170010)
+      Utils.registerEvent("testWebMessageExGetType002", 2, 170030, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -73,9 +75,8 @@ export default function webMessageExt() {
     * @tc.level      : Level 1
     */
     it('testWebMessageExGetType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebMessageExGetType003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExGetType003", 3, 20262, done);
+      Utils.emitEvent("testWebMessageExGetType003", 170010)
+      Utils.registerEvent("testWebMessageExGetType003", 3, 170040, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -88,9 +89,8 @@ export default function webMessageExt() {
     * @tc.level      : Level 1
     */
     it('testWebMessageExGetType004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebMessageExGetType004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExGetType004", 4, 20263, done);
+      Utils.emitEvent("testWebMessageExGetType004", 170010)
+      Utils.registerEvent("testWebMessageExGetType004", 4, 170050, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -103,9 +103,8 @@ export default function webMessageExt() {
     * @tc.level      : Level 1
     */
     it('testWebMessageExGetType005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebMessageExGetType005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExGetType005", 5, 20264, done);
+      Utils.emitEvent("testWebMessageExGetType005", 170010)
+      Utils.registerEvent("testWebMessageExGetType005", 5, 170060, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -118,9 +117,8 @@ export default function webMessageExt() {
     * @tc.level      : Level 1
     */
     it('testWebMessageExGetType006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebMessageExGetType006", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExGetType006", 6, 20265, done);
+      Utils.emitEvent("testWebMessageExGetType006", 170010)
+      Utils.registerEvent("testWebMessageExGetType006", 6, 170070, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -133,9 +131,8 @@ export default function webMessageExt() {
     * @tc.level      : Level 1
     */
     it('testWebMessageExtWebMessageType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebMessageExtWebMessageType001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExtWebMessageType001", 0, 30000, done);
+      Utils.emitEvent("testWebMessageExtWebMessageType001", 170010)
+      Utils.registerEvent("testWebMessageExtWebMessageType001", 0, 170080, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -148,9 +145,8 @@ export default function webMessageExt() {
     * @tc.level      : Level 1
     */
     it('testWebMessageExtWebMessageType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebMessageExtWebMessageType002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExtWebMessageType002", 1, 30001, done);
+      Utils.emitEvent("testWebMessageExtWebMessageType002", 170010)
+      Utils.registerEvent("testWebMessageExtWebMessageType002", 1, 170090, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -163,9 +159,8 @@ export default function webMessageExt() {
     * @tc.level      : Level 1
     */
     it('testWebMessageExtWebMessageType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebMessageExtWebMessageType003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExtWebMessageType003", 2, 30002, done);
+      Utils.emitEvent("testWebMessageExtWebMessageType003", 170010)
+      Utils.registerEvent("testWebMessageExtWebMessageType003", 2, 170100, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -178,9 +173,8 @@ export default function webMessageExt() {
     * @tc.level      : Level 1
     */
     it('testWebMessageExtWebMessageType004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebMessageExtWebMessageType004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExtWebMessageType004", 3, 30003, done);
+      Utils.emitEvent("testWebMessageExtWebMessageType004", 170010)
+      Utils.registerEvent("testWebMessageExtWebMessageType004", 3, 170110, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -193,9 +187,8 @@ export default function webMessageExt() {
     * @tc.level      : Level 1
     */
     it('testWebMessageExtWebMessageType005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebMessageExtWebMessageType005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExtWebMessageType005", 4, 30004, done);
+      Utils.emitEvent("testWebMessageExtWebMessageType005", 170010)
+      Utils.registerEvent("testWebMessageExtWebMessageType005", 4, 170120, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -208,9 +201,8 @@ export default function webMessageExt() {
     * @tc.level      : Level 1
     */
     it('testWebMessageExtWebMessageType006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebMessageExtWebMessageType006", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExtWebMessageType006", 5, 30005, done);
+      Utils.emitEvent("testWebMessageExtWebMessageType006", 170010)
+      Utils.registerEvent("testWebMessageExtWebMessageType006", 5, 170130, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -223,9 +215,8 @@ export default function webMessageExt() {
     * @tc.level      : Level 1
     */
     it('testWebMessageExtWebMessageType007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebMessageExtWebMessageType007", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExtWebMessageType007", 6, 30006, done);
+      Utils.emitEvent("testWebMessageExtWebMessageType007", 170010)
+      Utils.registerEvent("testWebMessageExtWebMessageType007", 6, 170140, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -238,9 +229,8 @@ export default function webMessageExt() {
     * @tc.level      : Level 1
     */
     it('testWebMessageExtGetString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebMessageExtGetString001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExtGetString001", 'hello', 100020, done);
+      Utils.emitEvent("testWebMessageExtGetString001", 170010)
+      Utils.registerEvent("testWebMessageExtGetString001", 'hello', 170150, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -253,9 +243,8 @@ export default function webMessageExt() {
     * @tc.level      : Level 1
     */
     it('testWebMessageExtGetNumber001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebMessageExtGetNumber001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExtGetNumber001", 1, 100021, done);
+      Utils.emitEvent("testWebMessageExtGetNumber001", 170010)
+      Utils.registerEvent("testWebMessageExtGetNumber001", 1, 170160, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -268,9 +257,8 @@ export default function webMessageExt() {
     * @tc.level      : Level 1
     */
     it('testWebMessageExtGetBoolean001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebMessageExtGetBoolean001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExtGetBoolean001", true, 100022, done);
+      Utils.emitEvent("testWebMessageExtGetBoolean001", 170010)
+      Utils.registerEvent("testWebMessageExtGetBoolean001", true, 170170, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -283,9 +271,8 @@ export default function webMessageExt() {
     * @tc.level      : Level 1
     */
     it('testWebMessageExtGetBoolean002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebMessageExtGetBoolean002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExtGetBoolean002", false, 100023, done);
+      Utils.emitEvent("testWebMessageExtGetBoolean002", 170010)
+      Utils.registerEvent("testWebMessageExtGetBoolean002", false, 170180, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -298,9 +285,8 @@ export default function webMessageExt() {
     * @tc.level      : Level 1
     */
     it('testWebMessageExtGetArrayBuffer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebMessageExtGetArrayBuffer001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExtGetArrayBuffer001", 'result getArrayBuffer byteLength:8', 100024, done);
+      Utils.emitEvent("testWebMessageExtGetArrayBuffer001", 170010)
+      Utils.registerEvent("testWebMessageExtGetArrayBuffer001", 'result getArrayBuffer byteLength:8', 170190, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -313,9 +299,8 @@ export default function webMessageExt() {
     * @tc.level      : Level 1
     */
     it('testWebMessageExtGetArray001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebMessageExtGetArray001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExtGetArray001", 'apple', 100025, done);
+      Utils.emitEvent("testWebMessageExtGetArray001", 170010)
+      Utils.registerEvent("testWebMessageExtGetArray001", 'apple', 170200, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -328,9 +313,8 @@ export default function webMessageExt() {
     * @tc.level      : Level 1
     */
     it('testWebMessageExtGetError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebMessageExtGetError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExtGetError001", 'URIError: URI seq 0222', 100026, done);
+      Utils.emitEvent("testWebMessageExtGetError001", 170010)
+      Utils.registerEvent("testWebMessageExtGetError001", 'URIError: URI seq 0222', 170210, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -344,9 +328,8 @@ export default function webMessageExt() {
     */
     it('testWebMessageExtSetString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = "String:helloFromEts"
-      Utils.emitEvent("testWebMessageExtSetString001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExtSetString001", JSON.stringify(result), 100027, done);
+      Utils.emitEvent("testWebMessageExtSetString001", 170010)
+      Utils.registerEvent("testWebMessageExtSetString001", JSON.stringify(result), 170220, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -360,9 +343,8 @@ export default function webMessageExt() {
     */
     it('testWebMessageExtSetNumber001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = "Number:1"
-      Utils.emitEvent("testWebMessageExtSetNumber001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExtSetNumber001", JSON.stringify(result), 100028, done);
+      Utils.emitEvent("testWebMessageExtSetNumber001", 170010)
+      Utils.registerEvent("testWebMessageExtSetNumber001", JSON.stringify(result), 170230, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -376,9 +358,8 @@ export default function webMessageExt() {
     */
     it('testWebMessageExtSetBoolean001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = "Boolean:true"
-      Utils.emitEvent("testWebMessageExtSetBoolean001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExtSetBoolean001", JSON.stringify(result), 100029, done);
+      Utils.emitEvent("testWebMessageExtSetBoolean001", 170010)
+      Utils.registerEvent("testWebMessageExtSetBoolean001", JSON.stringify(result), 170240, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -392,9 +373,8 @@ export default function webMessageExt() {
     */
     it('testWebMessageExtSetBoolean002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = "Boolean:false"
-      Utils.emitEvent("testWebMessageExtSetBoolean002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExtSetBoolean002", JSON.stringify(result), 100030, done);
+      Utils.emitEvent("testWebMessageExtSetBoolean002", 170010)
+      Utils.registerEvent("testWebMessageExtSetBoolean002", JSON.stringify(result), 170250, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -408,9 +388,8 @@ export default function webMessageExt() {
     */
     it('testWebMessageExtSetArrayBuffer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = "ArrayBuffer:8"
-      Utils.emitEvent("testWebMessageExtSetArrayBuffer001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExtSetArrayBuffer001", JSON.stringify(result), 100031, done);
+      Utils.emitEvent("testWebMessageExtSetArrayBuffer001", 170010)
+      Utils.registerEvent("testWebMessageExtSetArrayBuffer001", JSON.stringify(result), 170260, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -424,9 +403,8 @@ export default function webMessageExt() {
     */
     it('testWebMessageExtSetArray001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = "Array len:1, value:apple"
-      Utils.emitEvent("testWebMessageExtSetArray001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExtSetArray001", JSON.stringify(result), 100032, done);
+      Utils.emitEvent("testWebMessageExtSetArray001", 170010)
+      Utils.registerEvent("testWebMessageExtSetArray001", JSON.stringify(result), 170270, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
@@ -440,9 +418,8 @@ export default function webMessageExt() {
     */
     it('testWebMessageExtSetError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = "Error:URIError, msg:URI seq"
-      Utils.emitEvent("testWebMessageExtSetError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebMessageExtSetError001", JSON.stringify(result), 100033, done);
+      Utils.emitEvent("testWebMessageExtSetError001", 170010)
+      Utils.registerEvent("testWebMessageExtSetError001", JSON.stringify(result), 170280, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 

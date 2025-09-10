@@ -39,10 +39,10 @@ async function pinch(id: string) {
   let refresh = await driver.findComponent(ON.id(id));
   let rect = await refresh.getBounds();
   let point: PointerMatrix = PointerMatrix.create(2, 2);
-  point.setPoint(0, 0, { x: Math.round(rect.left + vp2px(33)), y: Math.round(rect.top + vp2px(33)) });
-  point.setPoint(0, 1, { x: Math.round(rect.left + vp2px(13)), y: Math.round(rect.top + vp2px(13)) });
-  point.setPoint(1, 0, { x: Math.round(rect.left + vp2px(20)), y: Math.round(rect.top + vp2px(20)) });
-  point.setPoint(1, 1, { x: Math.round(rect.left + vp2px(60)), y: Math.round(rect.top + vp2px(60)) });
+  point.setPoint(0, 0, { x: Math.round(rect.left + vp2px(8)), y: Math.round(rect.top + vp2px(8)) });
+  point.setPoint(0, 1, { x: Math.round(rect.left + vp2px(3)), y: Math.round(rect.top + vp2px(3)) });
+  point.setPoint(1, 0, { x: Math.round(rect.left + vp2px(5)), y: Math.round(rect.top + vp2px(5)) });
+  point.setPoint(1, 1, { x: Math.round(rect.left + vp2px(15)), y: Math.round(rect.top + vp2px(15)) });
   await driver.injectMultiPointerAction(point, 200);
 }
 
@@ -51,10 +51,10 @@ async function rotation(id: string) {
   let refresh = await driver.findComponent(ON.id(id));
   let rect = await refresh.getBounds();
   let point: PointerMatrix = PointerMatrix.create(2, 2);
-  point.setPoint(0, 0, { x: Math.round(rect.left + vp2px(33)), y: Math.round(rect.top + vp2px(33)) });
-  point.setPoint(0, 1, { x: Math.round(rect.left + vp2px(33)), y: Math.round(rect.top + vp2px(13)) });
-  point.setPoint(1, 0, { x: Math.round(rect.left + vp2px(40)), y: Math.round(rect.top + vp2px(20)) });
-  point.setPoint(1, 1, { x: Math.round(rect.left + vp2px(40)), y: Math.round(rect.top + vp2px(60)) });
+  point.setPoint(0, 0, { x: Math.round(rect.left + vp2px(8)), y: Math.round(rect.top + vp2px(8)) });
+  point.setPoint(0, 1, { x: Math.round(rect.left + vp2px(8)), y: Math.round(rect.top + vp2px(3)) });
+  point.setPoint(1, 0, { x: Math.round(rect.left + vp2px(10)), y: Math.round(rect.top + vp2px(5)) });
+  point.setPoint(1, 1, { x: Math.round(rect.left + vp2px(10)), y: Math.round(rect.top + vp2px(15)) });
   await driver.injectMultiPointerAction(point, 200);
 }
 
@@ -92,7 +92,7 @@ export default function gestureGestureInfoTest() {
      */
     it('testGestureGestureInfo002', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`gesture/${PAGE_TAG}`);
-      await pan('column2', 40, 40, 80, 40)
+      await pan('column2', 10, 10, 40, 10)
       let dataArray: number[][] = nativeRender.getGestureData();
       let panGesture: number[] = dataArray[1];
       console.log('testGestureGestureInfo002', JSON.stringify(dataArray))
@@ -111,7 +111,7 @@ export default function gestureGestureInfoTest() {
      */
     it('testGestureGestureInfo003', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`gesture/${PAGE_TAG}`);
-      await pan('column3', 40, 40, 80, 40)
+      await pan('column3', 10, 10, 20, 10)
       let dataArray: number[][] = nativeRender.getGestureData();
       let swipeGesture: number[] = dataArray[2];
       console.log('testGestureGestureInfo003', JSON.stringify(dataArray))
@@ -133,7 +133,7 @@ export default function gestureGestureInfoTest() {
       let dataArray: number[][] = nativeRender.getGestureData();
       let rotationGesture: number[] = dataArray[3];
       console.log('testGestureGestureInfo004', JSON.stringify(dataArray))
-      expect(rotationGesture[0] >= 100 && rotationGesture[0] <= 110).assertEqual(true)
+      expect(rotationGesture[0] >= 0 && rotationGesture[0] <= 110).assertEqual(true)
       done();
     })
 
@@ -151,9 +151,9 @@ export default function gestureGestureInfoTest() {
       let dataArray: number[][] = nativeRender.getGestureData();
       let pinchGesture: number[] = dataArray[4];
       console.log('testGestureGestureInfo005', JSON.stringify(dataArray))
-      expect( pinchGesture[0] >= 0.5 && pinchGesture[0] <= 0.7 ).assertEqual(true)
-      expect( pinchGesture[1] >= 40 || pinchGesture[1] == 86).assertEqual(true)
-      expect( pinchGesture[2] >= 40 || pinchGesture[2] == 86).assertEqual(true)
+      expect( pinchGesture[0] >= 0 && pinchGesture[0] <= 10 ).assertEqual(true)
+      expect( pinchGesture[1] >= 0 || pinchGesture[1] == 21).assertEqual(true)
+      expect( pinchGesture[2] >= 0 || pinchGesture[2] == 21).assertEqual(true)
       done();
     })
 

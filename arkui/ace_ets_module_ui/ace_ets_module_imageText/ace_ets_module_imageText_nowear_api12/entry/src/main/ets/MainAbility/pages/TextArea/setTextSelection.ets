@@ -37,7 +37,7 @@ struct setTextSelectionTest {
         .height('5%')
         .margin({top:60})
 
-      Button('setTextSelection -1 -1')
+      Button('setTextSelection -1 -1').height('3%')
         .onClick(() => {
           this.controller.setTextSelection(-1, -1, {menuPolicy: MenuPolicy.HIDE})
           this.controller2.setTextSelection(-1, -1, {menuPolicy: MenuPolicy.HIDE})
@@ -47,7 +47,7 @@ struct setTextSelectionTest {
           AppStorage.setOrCreate('textInputEnd', this.controller2.getSelection().end)
         }).id('but1')
 
-      Button('setTextSelection 0 3')
+      Button('setTextSelection 0 3').height('3%')
         .onClick(() => {
           this.controller.setTextSelection(0, 3, {menuPolicy: MenuPolicy.DEFAULT})
           this.controller2.setTextSelection(0, 3, {menuPolicy: MenuPolicy.DEFAULT})
@@ -57,7 +57,7 @@ struct setTextSelectionTest {
           AppStorage.setOrCreate('textInputEnd', this.controller2.getSelection().end)
         }).id('but2')
 
-      Button('setTextSelection null null')
+      Button('setTextSelection null null').height('3%')
         .onClick(() => {
           this.controller.setTextSelection(null, null, {menuPolicy: MenuPolicy.SHOW})
           this.controller2.setTextSelection(null, null, {menuPolicy: MenuPolicy.SHOW})
@@ -67,7 +67,7 @@ struct setTextSelectionTest {
           AppStorage.setOrCreate('textInputEnd', this.controller2.getSelection().end)
         }).id('but3')
 
-      Button('setTextSelection undefined undefined')
+      Button('setTextSelection undefined undefined').height('3%')
         .onClick(() => {
           this.controller.setTextSelection(undefined, undefined, {menuPolicy: MenuPolicy.HIDE})
           this.controller2.setTextSelection(undefined, undefined, {menuPolicy: MenuPolicy.HIDE})
@@ -77,7 +77,7 @@ struct setTextSelectionTest {
           AppStorage.setOrCreate('textInputEnd', this.controller2.getSelection().end)
         }).id('but4')
 
-      Button('setTextSelection 0.5 4.3')
+      Button('setTextSelection 0.5 4.3').height('3%')
         .onClick(() => {
           this.controller.setTextSelection(0.5, 4.3, {menuPolicy: MenuPolicy.HIDE})
           this.controller2.setTextSelection(0.5, 4.3, {menuPolicy: MenuPolicy.HIDE})

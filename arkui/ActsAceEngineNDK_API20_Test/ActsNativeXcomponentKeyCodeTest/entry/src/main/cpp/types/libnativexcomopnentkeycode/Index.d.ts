@@ -13,4 +13,4 @@
  * limitations under the License.
  */
 export const XComponentCreate: (Node: Content) => void;
-export const InitTextComponent: () => void;
+export const GetKeyCodeResult: () => number;

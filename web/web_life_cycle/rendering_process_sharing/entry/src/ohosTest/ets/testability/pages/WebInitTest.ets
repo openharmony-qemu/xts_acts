@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -20,33 +20,41 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import business_error from '@ohos.base';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
 struct WebInitTest {
   controller: webView.WebviewController = new webView.WebviewController();
-  @State str: string = ""
+  @State str: string = ''
   @State webInit: boolean = false
   @State webCreated: boolean = false
   @State interceptUrl: string = ''
   @State consoleMsg: string = ''
   @State consoleCorsError: boolean = false
   @State flag: boolean = false
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
-      priority: events_emitter.EventPriority.LOW
+      eventId: 138500,
+      priority: events_emitter.EventPriority.LOW,
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
+  onPageHide() {
+    events_emitter.off(138500)
+  }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("web page valueChangeCallBack");
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -64,80 +72,60 @@ struct WebInitTest {
         Button('WebInitTestButton')
           .key('WebInitTestButton')
           .onClick(async () => {
-            console.info("key==>" + this.str)
+            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
+            console.info('key==>' + this.str)
             webView.WebviewController.setRenderProcessMode(webView.RenderProcessMode.SINGLE);
-            this.controller.refresh();
-            await Utils.sleep(2000);
             switch (this.str) {
               case 'emitWebViewGetAndSetRenderProcessMode03': {
                 try {
-                  webView.WebviewController.setRenderProcessMode(webView.RenderProcessMode.SINGLE);
-                  this.controller.refresh();
-                  await Utils.sleep(2000);
                   let oldMode = webView.WebviewController.getRenderProcessMode();
-                  console.log('oldMode===>'+oldMode)
+                  console.log('oldMode===>' + oldMode)
                   webView.WebviewController.setRenderProcessMode(webView.RenderProcessMode.MULTIPLE);
-                  await Utils.sleep(2000);
                   let newMode = webView.WebviewController.getRenderProcessMode();
-                  console.log('newMode===>'+newMode)
-                  if (oldMode===0&&newMode === 1) {
-                    Utils.emitEvent('success', 62904);
+                  console.log('newMode===>' + newMode)
+                  if (oldMode === 0 && newMode === 1) {
+                    Utils.emitEvent('success', 138510);
                   } else {
-                    Utils.emitEvent('fail', 62904);
+                    Utils.emitEvent('fail', 138510);
                   }
                 } catch (error) {
-                  let e:business_error.BusinessError = error as business_error.BusinessError;
+                  let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 }
                 break;
               }
               case 'emitWebViewGetAndSetRenderProcessMode04': {
                 try {
-                  webView.WebviewController.setRenderProcessMode(webView.RenderProcessMode.SINGLE);
-                  this.controller.refresh();
-                  await Utils.sleep(2000);
-                  let oldMode = webView.WebviewController.getRenderProcessMode();
-                  console.log('oldMode===>'+oldMode)
                   webView.WebviewController.setRenderProcessMode(null);
-                  await Utils.sleep(2000);
                   let newMode = webView.WebviewController.getRenderProcessMode();
-                  console.log('newMode===>'+newMode)
+                  console.log('newMode===>' + newMode)
                 } catch (error) {
-                  let e:business_error.BusinessError = error as business_error.BusinessError;
+                  let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                   if (e.code == 401) {
-                    Utils.emitEvent('success', 62905);
+                    Utils.emitEvent('success', 138520);
                   }
                 }
                 break;
               }
               case 'emitWebViewOnRenderProcessResponding': {
-                this.flag = true
-                this.controller.refresh()
-                this.controller.loadUrl($rawfile('common_index.html'))
-                await Utils.sleep(1000)
                 this.controller.runJavaScript('jumpPageCaton()', (error, result) => {
                   console.error(`The jumpPageCaton() return error is: ${error}`);
                   console.log(`The jumpPageCaton() return value is: ${result}`);
                 })
-                await Utils.sleep(15000)
-                Utils.emitEvent(true,1336)
+                Utils.emitEvent(true, 138530)
                 break;
               }
               case 'emitWebViewNotRespondingReason_NAVIGATION_COMMIT_TIMEOUT': {
-                this.flag = true
-                this.controller.refresh()
-                this.controller.loadUrl($rawfile('common_index.html'))
-                await Utils.sleep(1000)
                 this.controller.runJavaScript('jumpPageCaton()', (error, result) => {
                   console.error(`The jumpPageCaton() return error is: ${error}`);
                   console.log(`The jumpPageCaton() return value is: ${result}`);
                 })
-                await Utils.sleep(15000)
-                Utils.emitEvent(true,1338)
+                Utils.emitEvent(true, 138540)
                 break;
               }
-              
             }
           })
 
@@ -149,26 +137,22 @@ struct WebInitTest {
           .databaseAccess(true)
           .onRenderProcessResponding(() => {
             console.log('onRenderProcessResponding again');
-            if (this.flag){
-              Utils.emitEvent(true,1336)
-              this.flag = false
-            }
+            Utils.emitEvent(true, 138530)
           })
           .onRenderProcessNotResponding(async (data) => {
-            if(this.flag){
-              console.log('onRenderProcessNotResponding: [jsStack]= ' + data.jsStack +
+            console.log('onRenderProcessNotResponding: [jsStack]= ' + data.jsStack +
               ', [process]=' + data.pid + ', [reason]=' + data.reason);
-
-              await Utils.sleep(1000)
-              this.controller.runJavaScript('stopBlockJs()', (error, result) => {
-                console.error(`The stopBlockJs() return error is: ${error}`);
-                console.log(`The stopBlockJs() return value is: ${result}`);
-              })
-              if(RenderProcessNotRespondingReason.NAVIGATION_COMMIT_TIMEOUT.toString() === '1'){
-                Utils.emitEvent(true,1338)
-              }
-              this.flag = false
+            this.controller.runJavaScript('stopBlockJs()', (error, result) => {
+              console.error(`The stopBlockJs() return error is: ${error}`);
+              console.log(`The stopBlockJs() return value is: ${result}`);
+            })
+            if (RenderProcessNotRespondingReason.NAVIGATION_COMMIT_TIMEOUT.toString() === '1') {
+              Utils.emitEvent(true, 138540)
             }
+          })
+          .onPageEnd((event) => {
+            console.log('web pageEnd==>' + event.url);
+            this.isPageEnd = 0;
           })
       }
       .width('100%')

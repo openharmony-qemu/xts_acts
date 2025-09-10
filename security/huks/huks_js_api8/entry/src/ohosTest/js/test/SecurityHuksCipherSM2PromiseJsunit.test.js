@@ -13,27 +13,24 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
-import { HuksCipherRSA } from './utils/param/cipher/publicCipherParam';
-import { stringToUint8Array, uint8ArrayToString, arrayEqual } from './utils/param/publicFunc';
+import { arrayEqual, stringToUint8Array } from './utils/param/publicFunc';
+import { logger } from './utils/common/logger';
 
 let gInData64 =
     'RSA_64_ttttttttttttttttttttttttttttttttttttttttttttttttttttttttt' +
-    'RSA_64_ttttttttttttttttttttttttttttttttttttttttttttttttttttttttt' +
-    'RSA_64_ttttttttttttttttttttttttttttttttttttttttttttttttttttttttt' +
-    'RSA_64_ttttttttttttttttttttttttttttttttttttttttttttttttttttttttt' +
-    'RSA_64_ttttttttttttttttttttttttttttttttttttttttttttttttttttttttt' +
-    'RSA_64_ttttttttttttttttttttttttttttttttttttttttttttttttttttttttt' +
-    'RSA_64_ttttttttttttttttttttttttttttttttttttttttttttttttttttttttt' +
-    'RSA_64_ttttttttttttttttttttttttttttttttttttttttttttttttttttttttt';
+        'RSA_64_ttttttttttttttttttttttttttttttttttttttttttttttttttttttttt' +
+        'RSA_64_ttttttttttttttttttttttttttttttttttttttttttttttttttttttttt' +
+        'RSA_64_ttttttttttttttttttttttttttttttttttttttttttttttttttttttttt' +
+        'RSA_64_ttttttttttttttttttttttttttttttttttttttttttttttttttttttttt' +
+        'RSA_64_ttttttttttttttttttttttttttttttttttttttttttttttttttttttttt' +
+        'RSA_64_ttttttttttttttttttttttttttttttttttttttttttttttttttttttttt' +
+        'RSA_64_ttttttttttttttttttttttttttttttttttttttttttttttttttttttttt';
 
-let defaultData = '0';
 
 let gInData64Array = stringToUint8Array(gInData64);
 
-let encryptedData;
-let inputInData;
 var handle;
 let encryptedResult = new Array();
 let decryptedResult = new Array();
@@ -41,113 +38,80 @@ let exportKey;
 let plainData;
 
 
-async function publicGenerateKeyFunc(srcKeyAlies, genHuksOptionsNONC) {
+async function publicGenerateKeyFunc(srcKeyAlias, genHuksOptionsNONC) {
     await huks
-        .generateKey(srcKeyAlies, genHuksOptionsNONC)
+        .generateKey(srcKeyAlias, genHuksOptionsNONC)
         .then((data) => {
-            console.log(`test generateKey data: ${JSON.stringify(data)}`);
+            logger.log(`test generateKey data: ${JSON.stringify(data)}`);
             expect(data.errorCode == 0).assertTrue();
         })
         .catch((err) => {
-            console.log('test generateKey err information: ' + JSON.stringify(err));
+            logger.error('test generateKey err information: ' + JSON.stringify(err));
             expect(null).assertFail();
         });
 }
 
-async function publicExportKeyFunc(srcKeyAlies, genHuksOptionsNONC) {
+async function publicExportKeyFunc(srcKeyAlias, genHuksOptionsNONC) {
     await huks
-        .exportKey(srcKeyAlies, genHuksOptionsNONC)
+        .exportKey(srcKeyAlias, genHuksOptionsNONC)
         .then((data) => {
-            console.log(`test ExportKey data: ${JSON.stringify(data)}`);
+            logger.log(`test ExportKey data: ${JSON.stringify(data)}`);
             exportKey = data.outData;
             expect(data.errorCode == 0).assertTrue();
         })
         .catch((err) => {
-            console.log('test ImportKey err information: ' + JSON.stringify(err));
+            logger.error('test ImportKey err information: ' + JSON.stringify(err));
             expect(null).assertFail();
         });
 }
 
-async function publicImportKeyFunc(srcKeyAlies, HuksOptions) {
+async function publicImportKeyFunc(srcKeyAlias, HuksOptions) {
     let temp;
     if (HuksOptions.hasOwnProperty('inData')) {
         temp = HuksOptions.inData;
     }
     HuksOptions.inData = exportKey;
     await huks
-        .importKey(srcKeyAlies, HuksOptions)
+        .importKey(srcKeyAlias, HuksOptions)
         .then((data) => {
             if (HuksOptions.hasOwnProperty('inData')) {
                 HuksOptions.inData = temp;
             }
-            console.log(`test ImportKey data: ${JSON.stringify(data)}`);
+            logger.log(`test ImportKey data: ${JSON.stringify(data)}`);
             expect(data.errorCode == 0).assertTrue();
         })
         .catch((err) => {
-            console.log('test ImportKey err information: ' + JSON.stringify(err));
+            logger.error('test ImportKey err information: ' + JSON.stringify(err));
             expect(null).assertFail();
         });
 }
 
-async function publicInitFunc(srcKeyAlies, HuksOptions) {
-    console.log(`test init HuksOptions: ${JSON.stringify(HuksOptions)}`);
+async function publicInitFunc(srcKeyAlias, HuksOptions) {
+    logger.log(`test init HuksOptions: ${JSON.stringify(HuksOptions)}`);
     await huks
-        .init(srcKeyAlies, HuksOptions)
+        .init(srcKeyAlias, HuksOptions)
         .then((data) => {
-            console.log(`test init data: ${JSON.stringify(data)}`);
+            logger.log(`test init data: ${JSON.stringify(data)}`);
             handle = data.handle;
             expect(data.errorCode == 0).assertTrue();
         })
         .catch((err) => {
-            console.log('test init err information: ' + JSON.stringify(err));
+            logger.error('test init err information: ' + JSON.stringify(err));
             expect(null).assertFail();
         });
 }
 
-async function publicUpdateFunc(HuksOptions) {
-    let dateSize = 64;
-    let huksOptionsInData = HuksOptions.inData;
-    let inDataArray = HuksOptions.inData;
-    if (Array.from(inDataArray).length < dateSize) {
-        await update(handle, HuksOptions);
-        HuksOptions.inData = stringToUint8Array('0');
-    } else {
-        let count = Math.floor(Array.from(inDataArray).length / dateSize);
-        let remainder = Array.from(inDataArray).length % dateSize;
-        for (let i = 0; i < count; i++) {
-            HuksOptions.inData = new Uint8Array(Array.from(huksOptionsInData).slice(dateSize * i, dateSize * (i + 1)));
-            await update(handle, HuksOptions);
-            HuksOptions.inData = huksOptionsInData;
-        }
-        if (remainder !== 0) {
-            HuksOptions.inData = new Uint8Array(
-                Array.from(huksOptionsInData).slice(dateSize * count, uint8ArrayToString(inDataArray).length)
-            );
-            await update(handle, HuksOptions);
-        }
-    }
-}
 
 async function update(handle, HuksOptions) {
-    await huks
-        .update(handle, HuksOptions)
+    await huks.update(handle, HuksOptions)
         .then(async (data) => {
-            console.log(`test update data ${JSON.stringify(data)}`);
+            logger.log(`test update data ${JSON.stringify(data)}`);
             expect(data.errorCode == 0).assertTrue();
         })
         .catch((err) => {
-            console.log('test update err information: ' + err);
+            logger.error('test update err information: ' + err);
             expect(null).assertFail();
         });
-}
-
-async function publicFinishAbortFunc(HuksOptions, thirdInderfaceName, isEncrypt) {
-    if (thirdInderfaceName == 'finish') {
-        HuksOptions.inData = new Uint8Array(new Array());
-        await finish(HuksOptions, isEncrypt);
-    } else if (thirdInderfaceName == 'abort') {
-        await abort(HuksOptions);
-    }
 }
 
 async function finish(HuksOptions, isEncrypt) {
@@ -155,80 +119,35 @@ async function finish(HuksOptions, isEncrypt) {
         await huks
             .finish(handle, HuksOptions)
             .then((data) => {
-                console.log(`test finish data: ${JSON.stringify(data)}`);
+                logger.log(`test finish data: ${JSON.stringify(data)}`);
                 if (isEncrypt) {
                     encryptedResult = Array.from(data.outData);
-                    console.info(`promise: doFinish success, data2 = ` + encryptedResult);
+                    logger.info(`promise: doFinish success, data2 = ` + encryptedResult);
                 } else {
                     decryptedResult = Array.from(data.outData);
                 }
             })
             .catch(error => {
-                console.error(`promise: doFinish failed, code: ${error.code}, msg: ${error.message}`);
+                logger.error(`promise: doFinish failed, code: ${error.code}, msg: ${error.message}`);
                 expect(null).assertFail();
             });
     } catch (error) {
-        console.error(`promise: doFinish input arg invalid, code: ${error.code}, msg: ${error.message}`);
+        logger.error(`promise: doFinish input arg invalid, code: ${error.code}, msg: ${error.message}`);
         expect(null).assertFail();
     }
 }
 
-async function abort(HuksOptions) {
+async function publicDeleteKeyFunc(srcKeyAlias, genHuksOptionsNONC) {
     await huks
-        .abort(handle, HuksOptions)
+        .deleteKey(srcKeyAlias, genHuksOptionsNONC)
         .then((data) => {
-            console.log(`test abort data: ${JSON.stringify(data)}`);
+            logger.log(`test deleteKey data: ${JSON.stringify(data)}`);
             expect(data.errorCode == 0).assertTrue();
         })
         .catch((err) => {
-            console.log('test abort err information: ' + JSON.stringify(err));
+            logger.error('test deleteKey err information: ' + JSON.stringify(err));
             expect(null).assertFail();
         });
-}
-
-async function publicDeleteKeyFunc(srcKeyAlies, genHuksOptionsNONC) {
-    await huks
-        .deleteKey(srcKeyAlies, genHuksOptionsNONC)
-        .then((data) => {
-            console.log(`test deleteKey data: ${JSON.stringify(data)}`);
-            expect(data.errorCode == 0).assertTrue();
-        })
-        .catch((err) => {
-            console.log('test deleteKey err information: ' + JSON.stringify(err));
-            expect(null).assertFail();
-        });
-}
-
-async function publicCipherFunc(
-    srcKeyAlies,
-    newSrcKeyAlies,
-    genHuksOptionsNONC,
-    HuksOptions,
-    thirdInderfaceName,
-    isEncrypt
-) {
-    inputInData = HuksOptions.inData;
-    try {
-        encryptedResult = new Array();
-        let KeyAlias = srcKeyAlies;
-        if (isEncrypt) {
-            await publicGenerateKeyFunc(srcKeyAlies, genHuksOptionsNONC);
-            encryptedData = HuksOptions.inData;
-            await publicExportKeyFunc(srcKeyAlies, genHuksOptionsNONC);
-            await publicImportKeyFunc(newSrcKeyAlies, HuksOptions);
-            KeyAlias = newSrcKeyAlies;
-        }
-        HuksOptions.inData = inputInData;
-        await publicInitFunc(KeyAlias, HuksOptions);
-        await publicUpdateFunc(HuksOptions);
-        await publicFinishAbortFunc(HuksOptions, thirdInderfaceName, isEncrypt);
-        if (!isEncrypt || (isEncrypt && thirdInderfaceName == 'abort')) {
-            await publicDeleteKeyFunc(srcKeyAlies, genHuksOptionsNONC);
-            await publicDeleteKeyFunc(newSrcKeyAlies, genHuksOptionsNONC);
-        }
-    } catch (e) {
-        expect(null).assertFail();
-    }
 }
 
 let genHuksOptions = {
@@ -252,8 +171,8 @@ export default function SecurityHuksCipherSM2PromiseJsunit() {
     describe('SecurityHuksCipherSM2PromiseJsunit', function () {
 
         it('Security_HUKS_Cipher_API8_SM2_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Cipher_API8_SM2_101A';
-            const newSrcKeyAlies = 'Security_HUKS_Cipher_API8_SM2_101B';
+            const srcKeyAlias = 'Security_HUKS_Cipher_API8_SM2_101A';
+            const newSrcKeyAlias = 'Security_HUKS_Cipher_API8_SM2_101B';
 
             let HuksOptions = {
                 properties: new Array(
@@ -282,13 +201,13 @@ export default function SecurityHuksCipherSM2PromiseJsunit() {
             decryptedResult = new Array();
             plainData = HuksOptions.inData;
 
-            await publicGenerateKeyFunc(srcKeyAlies, genHuksOptions);
-            await publicExportKeyFunc(srcKeyAlies, genHuksOptions);
-            //public Key, purpose should change, cause there is noly one key
-            await publicImportKeyFunc(newSrcKeyAlies, HuksOptions); //这里修改了huksOptions的.indata
+            await publicGenerateKeyFunc(srcKeyAlias, genHuksOptions);
+            await publicExportKeyFunc(srcKeyAlias, genHuksOptions);
+            //public Key, purpose should change, cause there is only one key
+            await publicImportKeyFunc(newSrcKeyAlias, HuksOptions); //这里修改了huksOptions的.indata
 
             //Encrypt
-            await publicInitFunc(newSrcKeyAlies, HuksOptions);
+            await publicInitFunc(newSrcKeyAlias, HuksOptions);
             await update(handle, HuksOptions)
             HuksOptions.inData = stringToUint8Array(new Array());
             await finish(HuksOptions, true);
@@ -300,7 +219,7 @@ export default function SecurityHuksCipherSM2PromiseJsunit() {
                     value: huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT
                 },);
             HuksOptions.inData = new Uint8Array(encryptedResult);
-            await publicInitFunc(srcKeyAlies, HuksOptions);
+            await publicInitFunc(srcKeyAlias, HuksOptions);
             await update(handle, HuksOptions)
             HuksOptions.inData = stringToUint8Array(new Array());
             await finish(HuksOptions, false);
@@ -309,15 +228,15 @@ export default function SecurityHuksCipherSM2PromiseJsunit() {
             expect(arrayEqual(plainData, decryptedResult)).assertTrue();
 
             //delete
-            publicDeleteKeyFunc(srcKeyAlies, genHuksOptions);
-            publicDeleteKeyFunc(newSrcKeyAlies, genHuksOptions);
+            publicDeleteKeyFunc(srcKeyAlias, genHuksOptions);
+            publicDeleteKeyFunc(newSrcKeyAlias, genHuksOptions);
             done();
 
         });
 
         it('Security_HUKS_Cipher_API8_SM2_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'Security_HUKS_Cipher_API8_SM2_101A';
-            const newSrcKeyAlies = 'Security_HUKS_Cipher_API8_SM2_101B';
+            const srcKeyAlias = 'Security_HUKS_Cipher_API8_SM2_101A';
+            const newSrcKeyAlias = 'Security_HUKS_Cipher_API8_SM2_101B';
 
             let HuksOptions = {
                 properties: new Array(
@@ -346,13 +265,13 @@ export default function SecurityHuksCipherSM2PromiseJsunit() {
             decryptedResult = new Array();
             plainData = HuksOptions.inData;
 
-            await publicGenerateKeyFunc(srcKeyAlies, genHuksOptions);
-            await publicExportKeyFunc(srcKeyAlies, genHuksOptions);
-            //public Key, purpose should change, cause there is noly one key
-            await publicImportKeyFunc(newSrcKeyAlies, HuksOptions); //这里修改了huksOptions的.indata
+            await publicGenerateKeyFunc(srcKeyAlias, genHuksOptions);
+            await publicExportKeyFunc(srcKeyAlias, genHuksOptions);
+            //public Key, purpose should change, cause there is only one key
+            await publicImportKeyFunc(newSrcKeyAlias, HuksOptions); //这里修改了huksOptions的.indata
 
             //Encrypt
-            await publicInitFunc(newSrcKeyAlies, HuksOptions);
+            await publicInitFunc(newSrcKeyAlias, HuksOptions);
             await finish(HuksOptions, true);
 
             //Decrypt
@@ -362,15 +281,15 @@ export default function SecurityHuksCipherSM2PromiseJsunit() {
                     value: huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT
                 },);
             HuksOptions.inData = new Uint8Array(encryptedResult);
-            await publicInitFunc(srcKeyAlies, HuksOptions);
+            await publicInitFunc(srcKeyAlias, HuksOptions);
             await finish(HuksOptions, false);
 
             //check
             expect(arrayEqual(plainData, decryptedResult)).assertTrue();
 
             //delete
-            publicDeleteKeyFunc(srcKeyAlies, genHuksOptions);
-            publicDeleteKeyFunc(newSrcKeyAlies, genHuksOptions);
+            publicDeleteKeyFunc(srcKeyAlias, genHuksOptions);
+            publicDeleteKeyFunc(newSrcKeyAlias, genHuksOptions);
             done();
         });
 
@@ -406,13 +325,13 @@ export default function SecurityHuksCipherSM2PromiseJsunit() {
             }
             try {
                 await huks.generateKeyItem(srcKeyAlias, HuksOptions);
-                console.error(srcKeyAlias + `: generateKeyItem success, expect fail`);
+                logger.error(srcKeyAlias + `: generateKeyItem success, expect fail`);
                 expect(null).assertFail();
             } catch (err) {
-                console.log(srcKeyAlias + `: catch error ${JSON.stringify(err)}`);
+                logger.error(srcKeyAlias + `: catch error ${JSON.stringify(err)}`);
                 expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT);
             }
-            console.log(srcKeyAlias + `: success.`);
+            logger.log(srcKeyAlias + `: success.`);
             done();
         });
     }

@@ -17,6 +17,7 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
+import { waitForComponent } from './WaitTest';
 // @ts-nocheck
 let emitKey = ''
 
@@ -29,44 +30,18 @@ export default function ActsAcewebViewCookieTrackEnhance() {
         }
         
         try {
-            await Utils.sleep(1000)
             router.clear();
             let pages = router.getState();
             if (!("webViewCookieTrackEnhance" == pages.name)) {
                 let result = await router.pushUrl(options);
-                await Utils.sleep(1000);
             }
         } catch (err) {
             console.error("push ActsAcewebViewCookieTrackEnhance page error:" + err);
         }
+        await waitForComponent("webViewCookieTrackTriggerFeiButton");
         done()
     });
-    
-    beforeEach(async (done: Function) => {
-        await Utils.sleep(2000);
-      done();
-    })
-    
-    afterEach(async (done: Function) => {
-        try {
-            let backData: emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent : events_emitter.InnerEvent = {
-                eventId: 10,
-                priority: events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-        } catch (err) {
-            console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
-      done();
-    })
-    
+
 
     /*
     * @tc.number      : SUB_ACE_WEB_enableIntelligentTrackingPrevention_API_0003
@@ -78,8 +53,8 @@ export default function ActsAcewebViewCookieTrackEnhance() {
     */
     it('testWebViewCookieTrackEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let emitKey = "emitWebViewCookieTrackEnableTrue";
-      Utils.emitEvent(emitKey, 10)
-      Utils.registerEvent("testWebViewCookieTrackEnableTrue", true, 3001, done);
+      Utils.emitEvent(emitKey, 160100)
+      Utils.registerEvent("testWebViewCookieTrackEnableTrue", true, 160110, done);
       sendEventByKey('webViewCookieTrackTriggerFeiButton', 10, '');
     })
     
@@ -94,8 +69,8 @@ export default function ActsAcewebViewCookieTrackEnhance() {
     */
     it('testWebViewCookieTrackEnableFalseGroup', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let emitKey = "emitWebViewCookieTrackEnableFalse";
-      Utils.emitEvent(emitKey, 10)
-      Utils.registerEvent("testWebViewCookieTrackEnableFalse", true, 3002, done);
+      Utils.emitEvent(emitKey, 160100)
+      Utils.registerEvent("testWebViewCookieTrackEnableFalse", true, 160120, done);
       sendEventByKey('webViewCookieTrackTriggerFeiButton', 10, '');
     })
 
@@ -110,8 +85,8 @@ export default function ActsAcewebViewCookieTrackEnhance() {
     */
     it('testWebViewCookieTrackEnabledGroup', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let emitKey = "emitWebViewCookieTrackEnabled";
-      Utils.emitEvent(emitKey, 10)
-      Utils.registerEvent("testWebViewCookieTrackEnabled", true, 3003, done);
+      Utils.emitEvent(emitKey, 160100)
+      Utils.registerEvent("testWebViewCookieTrackEnabled", true, 160130, done);
       sendEventByKey('webViewCookieTrackTriggerFeiButton', 10, '');
     })
 
@@ -126,8 +101,8 @@ export default function ActsAcewebViewCookieTrackEnhance() {
     */
     it('testNoCookieTrackingPrevention', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let emitKey = "emitNoCookieTrackingPrevention";
-      Utils.emitEvent(emitKey, 10)
-      Utils.registerEvent("testNoCookieTrackingPrevention", true, 3008, done);
+      Utils.emitEvent(emitKey, 160100)
+      Utils.registerEvent("testNoCookieTrackingPrevention", true, 160140, done);
       sendEventByKey('webViewCookieTrackTriggerFeiButton', 10, '');
     })
 

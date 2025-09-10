@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 #include "nodenapi/NodeNapiTest.h"
-#include "manager/PluginManagerTest.h"
 static ArkUI_NodeEvent* event_ = nullptr;
 static ArkUI_NodeHandle rowHandle = nullptr;
 static ArkUI_NativeNodeAPI_1 *nodeAPI = nullptr;
@@ -52,7 +51,7 @@ napi_value GetUIContext(napi_env env, napi_callback_info info)
 napi_value GetContextFromNapiValueTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_nodenapiresult2, &retValue);
+    napi_create_int32(env, g_nodenapiresult2 == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -62,7 +61,7 @@ napi_value GetContextFromNapiValueTest_002(napi_env env, napi_callback_info info
     ArkUI_ContextHandle context = nullptr;
     auto ret = OH_ArkUI_GetContextFromNapiValue(env, args, &context);
     napi_value retValue;
-    napi_create_int32(env, ret, &retValue);
+    napi_create_int32(env, ret == ARKUI_ERROR_CODE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
 

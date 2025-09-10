@@ -34,11 +34,9 @@ struct Page2 {
   }
   build() {
     Column() {
-      Flex({ wrap: FlexWrap.Wrap }) {
         Button('handlePopup')
           .id('popup')
-          .width(this.maxW-45)
-          .height(this.maxH-150)
+          .margin({top: '2%'})
           .onClick(() => {
             this.handlePopup = !this.handlePopup;
           })
@@ -48,7 +46,6 @@ struct Page2 {
             message: this.message,
             avoidTarget: AvoidanceMode.AVOID_AROUND_TARGET
           })
-      }
     }.width('100%').height('100%')
   }
 }

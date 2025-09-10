@@ -6,7 +6,6 @@
     "MainAbility/pages/textarea/TextAreaOnPasteTest",
     "MainAbility/pages/textinput/TextInputOnCutTest",
     "MainAbility/pages/textinput/TextInputOnPasteTest",
-    "MainAbility/pages/textinput/TextInputMethodTest",
-    "MainAbility/pages/image/ImageDraggableTest"
+    "MainAbility/pages/textinput/TextInputMethodTest"
   ]
 }

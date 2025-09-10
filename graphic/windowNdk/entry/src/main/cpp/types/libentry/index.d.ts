@@ -78,7 +78,6 @@ export const testInjectTouchEventwithSubWindowClick: (windowId: number, width: n
 export const testInjectTouchEventwithDialogWindowClick: (windowId: number, width: number, height: number) => number;
 export const testInjectTouchEventwithSubWindowSlide: (windowId: number, width: number, height: number) => number;
 export const testInjectTouchEventwithSubWindowEdgeSlide: (windowId: number, width: number, height: number) => number;
-export const testInjectTouchEventwithSubWindowSlideCancle: (windowId: number, width: number, height: number) => number;
 export const testInjectTouchEventwithSubWindowButtonDownCancle: (windowId: number, width: number, height: number) => number;
 export const testInjectTouchEventwithSubWindowSlideDownCancle: (windowId: number, width: number, height: number) => number;
 export const testInjectTouchEventwithHideSubWindowDown: (windowId: number, width: number, height: number) => number;

@@ -110,8 +110,8 @@ static std::shared_ptr<ButtonComponent> CreateButtonLongPressGestureNode(ArkUI_N
     const std::string& id, int32_t fingersNum, bool repeatResult, int32_t durationNum)
 {
     auto button = std::make_shared<ButtonComponent>();
-    button->SetWidth(SIZE_150);
-    button->SetHeight(SIZE_100);
+    button->SetWidth(SIZE_40);
+    button->SetHeight(SIZE_20);
     button->SetBackgroundColor(COLOR_RED);
     button->SetId(id);
     button->SetMargin(SIZE_10);
@@ -125,8 +125,8 @@ static std::shared_ptr<ColumnComponent> CreateColumnPanGestureNode(ArkUI_NativeG
     const std::string& id, int32_t fingersNum, ArkUI_GestureDirectionMask directions, double distanceNum)
 {
     auto column = std::make_shared<ColumnComponent>();
-    column->SetWidth(SIZE_150);
-    column->SetHeight(SIZE_100);
+    column->SetWidth(SIZE_40);
+    column->SetHeight(SIZE_20);
     column->SetBackgroundColor(COLOR_RED);
     column->SetId(id);
     column->SetMargin(SIZE_10);
@@ -140,8 +140,8 @@ static std::shared_ptr<ColumnComponent> CreateColumnPinchGestureNode(
     ArkUI_NativeGestureAPI_1* gestureAPI, const std::string& id, int32_t fingersNum, double durationNum)
 {
     auto column = std::make_shared<ColumnComponent>();
-    column->SetWidth(SIZE_150);
-    column->SetHeight(SIZE_100);
+    column->SetWidth(SIZE_40);
+    column->SetHeight(SIZE_20);
     column->SetBackgroundColor(COLOR_RED);
     column->SetId(id);
     column->SetMargin(SIZE_10);
@@ -155,8 +155,8 @@ static std::shared_ptr<ColumnComponent> CreateColumnRotationGestureNode(
     ArkUI_NativeGestureAPI_1* gestureAPI, const std::string& id, int32_t fingersNum, double angleNum)
 {
     auto column = std::make_shared<ColumnComponent>();
-    column->SetWidth(SIZE_150);
-    column->SetHeight(SIZE_100);
+    column->SetWidth(SIZE_40);
+    column->SetHeight(SIZE_20);
     column->SetBackgroundColor(COLOR_RED);
     column->SetId(id);
     column->SetMargin(SIZE_10);
@@ -170,8 +170,8 @@ static std::shared_ptr<ColumnComponent> CreateColumnSwipeGestureNode(ArkUI_Nativ
     const std::string& id, int32_t fingersNum, ArkUI_GestureDirectionMask directions, double speedNum)
 {
     auto column = std::make_shared<ColumnComponent>();
-    column->SetWidth(SIZE_150);
-    column->SetHeight(SIZE_100);
+    column->SetWidth(SIZE_40);
+    column->SetHeight(SIZE_20);
     column->SetBackgroundColor(COLOR_RED);
     column->SetId(id);
     column->SetMargin(SIZE_10);
