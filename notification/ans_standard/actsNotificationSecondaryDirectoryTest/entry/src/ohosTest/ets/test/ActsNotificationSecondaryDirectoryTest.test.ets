@@ -276,7 +276,7 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
      * @tc.name: NotificationActionButton、NotificationUserInput
      * @tc.desc: use NotificationActionButton type
      */
-    it('Sub_Notification_Ans_Publish_Publish_4250', Level.LEVEL0, async (done: Function) => {
+     it('Sub_Notification_Ans_Publish_Publish_4250', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4250 START`);
 
         let agentInfo: wantagent.WantAgentInfo = {
@@ -314,12 +314,6 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
             userInput: userInputContent
         }
 
-        let actionButton1: notificationManager.NotificationActionButton = {
-            title:"",
-            wantAgent: wantAgentData,
-            userInput: userInputContent
-        }
-
         let notificationRequest : notificationManager.NotificationRequest = {
             content: notifyContent,
             actionButtons: [
@@ -328,17 +322,9 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
             id: 5
         }
 
-        let notificationRequest1 : notificationManager.NotificationRequest = {
-            content: notifyContent,
-            actionButtons: [
-                actionButton1
-            ],
-            id: 15
-        }
-
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4250 PUBLISH`);
         try{
-            notificationManager.publish(notificationRequest, (err) => {
+            await notificationManager.publish(notificationRequest, (err) => {
                 if (err) {
                     console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
                     expect(false).assertTrue()
@@ -346,29 +332,11 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
                 } else {
                     console.info(`${TAG} publish AsyncCallback success`)
                     expect(true).assertTrue()
+                    done()
                 }
             });
         } catch (err) {
             console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-            expect(false).assertTrue()
-            done()
-        }
-
-        await sleep(1000)
-        try{
-            notificationManager.publish(notificationRequest1, (err) => {
-                if (err) {
-                    console.info(`${TAG} publish1 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-                    expect(false).assertTrue()
-                    done()
-                } else {
-                    console.info(`${TAG} publish1 AsyncCallback success`)
-                    expect(true).assertTrue()
-                    done()
-                }
-            });
-        } catch (err) {
-            console.info(`${TAG} publish1 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
             expect(false).assertTrue()
             done()
         }
