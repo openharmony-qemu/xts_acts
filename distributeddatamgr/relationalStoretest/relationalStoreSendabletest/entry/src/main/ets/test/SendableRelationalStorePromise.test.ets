@@ -129,7 +129,7 @@ const STORE_CONFIG: relationalStore.StoreConfig = {
   name: "SendableTest.db",
   securityLevel: relationalStore.SecurityLevel.S1,
 };
-let rdbStore: relationalStore.RdbStore | undefined = undefined;
+let rdbStore: relationalStore.RdbStore | undefined;
 const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
 const context = delegator.getAppContext().getApplicationContext();
 
@@ -147,7 +147,7 @@ export default function rdbStoreSendableTest() {
 
     beforeEach(async() => {
       console.info(TAG + 'beforeEach');
-      await rdbStore.executeSql(CREATE_TABLE_TEST);
+      await rdbStore.executeSql(CREATE_TABLE_TEST,null);
       let sendableValuesBucket1: sendableRelationalStore.ValuesBucket = sendableRelationalStore.toSendableValuesBucket(valuesBucket2);
       rdbStore.insertSync(TABLE, sendableValuesBucket);
 
@@ -155,7 +155,7 @@ export default function rdbStoreSendableTest() {
 
     afterEach(async() => {
       console.info(TAG + 'afterEach');
-      await rdbStore.executeSql(DROP_TABLE_TEST);
+      await rdbStore.executeSql(DROP_TABLE_TEST,null);
     });
 
     afterAll(async () => {
