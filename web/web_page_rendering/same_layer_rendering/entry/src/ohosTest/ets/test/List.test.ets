@@ -25,7 +25,6 @@ import webViewObjectPositionReport from './webViewObjectPositionReport.test';
 import WebViewSupportCssDisplayChange from './WebViewSupportCssDisplayChange.test'
 import WebOnNativeEmbedMouseEvent from './WebOnNativeEmbedMouseEvent.test'
 
-
 export default function testsuite() {
   webDefaultTextEncodingFormat();
   EmbedVisibilityChange();
