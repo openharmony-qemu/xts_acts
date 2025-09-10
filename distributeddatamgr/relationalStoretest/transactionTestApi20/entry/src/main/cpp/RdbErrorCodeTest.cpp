@@ -27,6 +27,7 @@ int g_rInvalidColumnTypeCode = 14800009;
 int g_rNoTransInSessionCode = 14800016;
 int g_rNoRowInQueryCode = 14800018;
 int g_rInvalidObjectTypeCode = 14800020;
+int g_rType = 2;
 
 namespace RdbErrorCodeTest {
 const char *RDB_TEST = "/data/storage/el2/database/com.acts.acttransactiontest/entry";
@@ -172,7 +173,7 @@ napi_value TestInvalidColumnType(napi_env env, napi_callback_info info)
     napi_value result;
     int numType = 0;
     OH_Rdb_GetSupportedDbType(&numType);
-    if (numType != 2) {
+    if (numType != g_rType) {
         napi_create_int32(env, g_rInvalidColumnTypeCode, &result);
         return result;
     }
@@ -281,7 +282,7 @@ napi_value TestInvalidColumnIndex(napi_env env, napi_callback_info info)
     napi_value result;
     int numType = 0;
     OH_Rdb_GetSupportedDbType(&numType);
-    if (numType != 2) {
+    if (numType != g_rType) {
         napi_create_int32(env, 0, &result);
         return result;
     }
