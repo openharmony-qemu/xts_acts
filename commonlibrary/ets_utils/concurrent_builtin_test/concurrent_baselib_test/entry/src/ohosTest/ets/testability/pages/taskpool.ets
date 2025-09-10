@@ -842,7 +842,7 @@ export function testConsoleDir1() {
     class Bar {
      public a: number = 1;
     }
-    let a: bar = new Bar();
+    let a: Bar = new Bar();
     console.dir(a);
 
     const buffer1 = buffer.from('Hello World');

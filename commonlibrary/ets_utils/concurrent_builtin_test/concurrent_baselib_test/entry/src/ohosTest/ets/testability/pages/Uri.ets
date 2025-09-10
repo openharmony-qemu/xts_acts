@@ -153,8 +153,8 @@ export function testUriSSPWithLeadingSlashes() {
   const caseName = 'testSsp0001';
   try {
     console.log(`${caseName} test start`);
-    const uri = 'www.abc.com:::8080/directory/file?ab=pppppp#qwer=da';
-    const uriInstance = new uri.URI(Uri);
+    const uri1 = 'www.abc.com:::8080/directory/file?ab=pppppp#qwer=da';
+    const uriInstance = new uri.URI(uri1);
     const result = uriInstance.ssp;
     if (result !== '::8080/directory/file?ab=pppppp') {
       throw new Error(`${caseName} ssp mismatch`);

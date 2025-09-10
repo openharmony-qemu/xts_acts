@@ -788,7 +788,6 @@ export function testParseInfo_isEmptyElementTag() {
     console.error(`${caseName} failed: ${err.message}`);
     throw new Error(`${caseName} catch error.`);
   }
-  }
 }
 
 @Concurrent
