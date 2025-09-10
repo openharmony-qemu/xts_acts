@@ -374,7 +374,7 @@ napi_value StartPipPipCreateFailed(napi_env env, napi_callback_info info)
     OH_PictureInPicture_DestroyPipConfig(&pipConfig);
     result = result != WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED ?
                        OH_PictureInPicture_StartPip(controllerId) : result;
-    result = result == WINDOW_MANAGER_ERRORCODE_PIP_CREATE_FAILED ? WINDOW_MANAGER_ERRORCODE_PIP_CREATE_FAILED : OK;
+    result = result == WINDOW_MANAGER_ERRORCODE_PIP_CREATE_FAILED ? WINDOW_MANAGER_ERRORCODE_PIP_CREATE_FAILED : result;
     OH_PictureInPicture_DeletePip(controllerId);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
                  "StartPipPipCreateFailed: %{public}d", result);
