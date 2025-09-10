@@ -70,7 +70,9 @@ export function testArraySum() {
     const arr = [1.5, 2.7, 3.2, 0.8, 4.1];
     let sum = 0;
     for (const v of arr) {
-      if (v > 2) sum += v;
+      if (v > 2) {
+        sum += v;
+      }
     }
     if (sum !== 10) {
       throw new Error(`${TAG} expect 10, got ${sum}`);

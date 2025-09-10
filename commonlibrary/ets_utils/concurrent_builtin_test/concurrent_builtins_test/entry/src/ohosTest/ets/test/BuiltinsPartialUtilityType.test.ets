@@ -91,7 +91,7 @@ export default function BuiltinsPartialUtilityType() {
       });
 
     /**
-     * @tc.number    : SUB_PARTIAL_UTILITYTYPE_TEST_0100
+     * @tc.number    : SUB_PARTIAL_UTILITYTYPE_TEST_0101
      * @tc.name      : builtinsProxyTest0100
      * @tc.desc      : Test
      * @tc.size      : MediumTest

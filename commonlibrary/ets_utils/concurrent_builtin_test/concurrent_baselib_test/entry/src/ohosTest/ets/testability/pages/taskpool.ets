@@ -839,10 +839,10 @@ export function testConsoleCountReset1() {
 export function testConsoleDir1() {
   let TAG = 'testConsoleDir1'
   try {
-    class bar {
+    class Bar {
      public a: number = 1;
     }
-    let a: bar = new bar();
+    let a: bar = new Bar();
     console.dir(a);
 
     const buffer1 = buffer.from('Hello World');

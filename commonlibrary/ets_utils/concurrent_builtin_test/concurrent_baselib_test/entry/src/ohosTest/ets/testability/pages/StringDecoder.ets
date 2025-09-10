@@ -80,7 +80,7 @@ export function textDecoder() {
     let uint8Array = new Uint8Array([0, 0, 0, 0, 0, 72, 101, 108, 108, 111, 87, 111, 114, 108, 100, 49, 50, 51, 63])
 
     encodingArr.forEach(item => {
-      console.log(TAG + "encoding", item)
+      console.log(TAG + 'encoding', item)
       let textDecoder = util.TextDecoder.create(item, {
         ignoreBOM: false
       })

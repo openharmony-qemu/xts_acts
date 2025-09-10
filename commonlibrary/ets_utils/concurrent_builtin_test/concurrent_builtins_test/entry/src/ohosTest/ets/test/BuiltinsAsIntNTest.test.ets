@@ -366,7 +366,7 @@ export default function BuiltinsAsIntNTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0900
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0901
      * @tc.name      : testBigIntIsEven
      * @tc.desc      : Test
      * @tc.size      : MediumTest

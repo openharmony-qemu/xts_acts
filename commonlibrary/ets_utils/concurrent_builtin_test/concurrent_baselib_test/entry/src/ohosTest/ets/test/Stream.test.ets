@@ -342,7 +342,7 @@ export default function Stream() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0900
-     * @tc.name      : testpipe0009
+     * @tc.name      : testUnpipe0009
      * @tc.desc      : Connect a readable stream with a writable stream to achieve automatic data transmission.
      * @tc.size      : MediumTest
      * @tc.type      : Function
