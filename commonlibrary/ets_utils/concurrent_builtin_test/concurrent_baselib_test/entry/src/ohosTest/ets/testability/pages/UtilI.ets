@@ -1,4 +1,4 @@
-import { ArrayList, buffer, Deque, HashMap, LinkedList, TreeSet, url, util, Stack } from "@kit.ArkTS";
+import { ArrayList, buffer, Deque, HashMap, LinkedList, TreeSet, url, util, Stack } from '@kit.ArkTS';
 
 interface GeneratedObjectLiteralInterface_1 {
   name: string;
@@ -98,7 +98,7 @@ export function testUtil_getHash() {
   const caseName = 'DynamicUtilConcurrentTest_getHash';
   try {
     console.log(`${caseName} test start`);
-    let person: GeneratedObjectLiteralInterface_1 = { name: "Alice", age: 30 };
+    let person: GeneratedObjectLiteralInterface_1 = { name: 'Alice', age: 30 };
     let result1 = util.getHash(person);
     let result2 = util.getHash(person);
     if (result1 !== result2) {
@@ -238,7 +238,7 @@ export function testTextEncoder_encode() {
   try {
     console.log(`${caseName} test start`);
     let textEncoder = new util.TextEncoder();
-    let result = textEncoder.encode("\uD800¥¥");
+    let result = textEncoder.encode('\uD800¥¥');
     let expectStr = '{"0":237,"1":160,"2":128,"3":194,"4":165,"5":194,"6":165}';
     if (JSON.stringify(result) !== expectStr) {
       throw new Error(`${caseName} TextEncoder encode mismatch`);
@@ -256,7 +256,7 @@ export function testTextEncoder_encodeInto() {
   try {
     console.log(`${caseName} test start`);
     let textEncoder = new util.TextEncoder();
-    let result = textEncoder.encodeInto("\uD800¥¥");
+    let result = textEncoder.encodeInto('\uD800¥¥');
     if (result.toString() !== '237,160,128,194,165,194,165') {
       throw new Error(`${caseName} TextEncoder encodeInto mismatch`);
     }
@@ -527,10 +527,10 @@ export function testGetHash_URLParams() {
   const caseName = 'DynamicGetHashConcurrentTest_URLParams';
   try {
     console.log(`${caseName} test start`);
-    let a = new url.URLParams("www.baidu.com");
-    a.append("1", "kuku");
+    let a = new url.URLParams('www.baidu.com');
+    a.append('1', 'kuku');
     let result1 = util.getHash(a);
-    a.append("2", "kuku");
+    a.append('2', 'kuku');
     let result2 = util.getHash(a);
     if (result1 !== result2) {
       throw new Error(`${caseName} getHash URLParams mismatch`);
@@ -568,9 +568,9 @@ export function testGetHash_HashMap() {
   try {
     console.log(`${caseName} test start`);
     let a = new HashMap<string, number>();
-    a.set("1", 7);
+    a.set('1', 7);
     let result1 = util.getHash(a);
-    a.set("3", 7);
+    a.set('3', 7);
     let result2 = util.getHash(a);
     if (result1 !== result2) {
       throw new Error(`${caseName} getHash HashMap mismatch`);
@@ -588,9 +588,9 @@ export function testGetHash_TreeSet() {
   try {
     console.log(`${caseName} test start`);
     let a = new TreeSet<string>();
-    a.add("1");
+    a.add('1');
     let result1 = util.getHash(a);
-    a.add("3");
+    a.add('3');
     let result2 = util.getHash(a);
     if (result1 !== result2) {
       throw new Error(`${caseName} getHash TreeSet mismatch`);
@@ -608,9 +608,9 @@ export function testGetHash_Stack() {
   try {
     console.log(`${caseName} test start`);
     let a = new Stack<string>();
-    a.push("1");
+    a.push('1');
     let result1 = util.getHash(a);
-    a.push("3");
+    a.push('3');
     let result2 = util.getHash(a);
     if (result1 !== result2) {
       throw new Error(`${caseName} getHash Stack mismatch`);

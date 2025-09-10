@@ -42,7 +42,7 @@ export function testPlainArrayHas003() {
   try {
     console.log(`${TAG} test start`);
     let plainArray: PlainArray<string> = new PlainArray();
-    plainArray.add(1, "squirrel");
+    plainArray.add(1, 'squirrel');
     let result = plainArray.has(1);
     if (result !== true) {
       throw new Error(`${TAG} has mismatch`);
@@ -61,10 +61,10 @@ export function testPlainArrayGet004() {
   try {
     console.log(`${TAG} test start`);
     let plainArray: PlainArray<string> = new PlainArray();
-    plainArray.add(1, "squirrel");
-    plainArray.add(2, "sparrow");
+    plainArray.add(1, 'squirrel');
+    plainArray.add(2, 'sparrow');
     let result = plainArray.get(1);
-    if (result !== "squirrel") {
+    if (result !== 'squirrel') {
       throw new Error(`${TAG} get mismatch`);
     }
     console.log(`${TAG} test end`);
@@ -81,8 +81,8 @@ export function testPlainArrayGetIndexOfKey005() {
   try {
     console.log(`${TAG} test start`);
     let plainArray: PlainArray<string> = new PlainArray();
-    plainArray.add(1, "squirrel");
-    plainArray.add(2, "");
+    plainArray.add(1, 'squirrel');
+    plainArray.add(2, '');
     let result = plainArray.getIndexOfKey(2);
     if (result !== 1) {
       throw new Error(`${TAG} getIndexOfKey mismatch`);
@@ -101,9 +101,9 @@ export function testPlainArrayGetIndexOfValue006() {
   try {
     console.log(`${TAG} test start`);
     let plainArray: PlainArray<string> = new PlainArray();
-    plainArray.add(1, "squirrel");
-    plainArray.add(2, "");
-    let result = plainArray.getIndexOfValue("");
+    plainArray.add(1, 'squirrel');
+    plainArray.add(2, '');
+    let result = plainArray.getIndexOfValue('');
     if (result !== 1) {
       throw new Error(`${TAG} getIndexOfValue mismatch`);
     }
@@ -121,8 +121,8 @@ export function testPlainArrayGetKeyAt007() {
   try {
     console.log(`${TAG} test start`);
     let plainArray: PlainArray<string> = new PlainArray();
-    plainArray.add(1, "squirrel");
-    plainArray.add(2, "sparrow");
+    plainArray.add(1, 'squirrel');
+    plainArray.add(2, 'sparrow');
     let result = plainArray.getKeyAt(3);
     if (result !== undefined) {
       throw new Error(`${TAG} getKeyAt out of bounds mismatch`);
@@ -141,8 +141,8 @@ export function testPlainArrayGetValueAt008() {
   try {
     console.log(`${TAG} test start`);
     let plainArray: PlainArray<string> = new PlainArray();
-    plainArray.add(1, "squirrel");
-    plainArray.add(2, "sparrow");
+    plainArray.add(1, 'squirrel');
+    plainArray.add(2, 'sparrow');
     try {
       plainArray.getValueAt(2);
     } catch (err) {
@@ -164,8 +164,8 @@ export function testPlainArrayClone009() {
   try {
     console.log(`${TAG} test start`);
     let plainArray: PlainArray<string> = new PlainArray();
-    plainArray.add(1, "squirrel");
-    plainArray.add(2, "sparrow");
+    plainArray.add(1, 'squirrel');
+    plainArray.add(2, 'sparrow');
     let newPlainArray = plainArray.clone();
     if (newPlainArray.length !== plainArray.length) {
       throw new Error(`${TAG} clone length mismatch`);
@@ -184,7 +184,7 @@ export function testPlainArrayAdd010() {
   try {
     console.log(`${TAG} test start`);
     let plainArray: PlainArray<string> = new PlainArray();
-    let param = "a".repeat(5120);
+    let param = 'a'.repeat(5120);
     plainArray.add(1, param);
     if (plainArray.length !== 1) {
       throw new Error(`${TAG} add length mismatch`);
@@ -203,10 +203,10 @@ export function testPlainArrayRemove011() {
   try {
     console.log(`${TAG} test start`);
     let plainArray: PlainArray<string> = new PlainArray();
-    plainArray.add(1, "squirrel");
-    plainArray.add(2, "sparrow");
+    plainArray.add(1, 'squirrel');
+    plainArray.add(2, 'sparrow');
     let result = plainArray.remove(2);
-    if (result !== "sparrow") {
+    if (result !== 'sparrow') {
       throw new Error(`${TAG} remove return mismatch`);
     }
     console.log(`${TAG} test end`);
@@ -223,10 +223,10 @@ export function testPlainArrayRemoveAt012() {
   try {
     console.log(`${TAG} test start`);
     let plainArray: PlainArray<string> = new PlainArray();
-    plainArray.add(1, "squirrel");
-    plainArray.add(2, "sparrow");
+    plainArray.add(1, 'squirrel');
+    plainArray.add(2, 'sparrow');
     let result = plainArray.removeAt(1);
-    if (result !== "sparrow") {
+    if (result !== 'sparrow') {
       throw new Error(`${TAG} removeAt return mismatch`);
     }
     console.log(`${TAG} test end`);
@@ -243,8 +243,8 @@ export function testPlainArrayRemoveRangeFrom013() {
   try {
     console.log(`${TAG} test start`);
     let plainArray: PlainArray<string> = new PlainArray();
-    plainArray.add(1, "squirrel");
-    plainArray.add(2, "sparrow");
+    plainArray.add(1, 'squirrel');
+    plainArray.add(2, 'sparrow');
     let result = plainArray.removeRangeFrom(1, 3);
     if (result !== 1) {
       throw new Error(`${TAG} removeRangeFrom return mismatch`);
@@ -263,8 +263,8 @@ export function testPlainArraySetValueAt014() {
   try {
     console.log(`${TAG} test start`);
     let plainArray: PlainArray<string | number> = new PlainArray();
-    plainArray.add(1, "squirrel");
-    plainArray.add(2, "sparrow");
+    plainArray.add(1, 'squirrel');
+    plainArray.add(2, 'sparrow');
     plainArray.setValueAt(1, 3546);
     if (plainArray.getValueAt(1) !== 3546) {
       throw new Error(`${TAG} setValueAt mismatch`);
@@ -283,8 +283,8 @@ export function testPlainArrayToString015() {
   try {
     console.log(`${TAG} test start`);
     let plainArray: PlainArray<string | number> = new PlainArray();
-    plainArray.add(1, "squirrel");
-    plainArray.add(2, "sparrow");
+    plainArray.add(1, 'squirrel');
+    plainArray.add(2, 'sparrow');
     let result = plainArray.toString();
     if (result !== '1:squirrel,2:sparrow') {
       throw new Error(`${TAG} toString mismatch`);
@@ -303,8 +303,8 @@ export function testPlainArrayClear016() {
   try {
     console.log(`${TAG} test start`);
     let plainArray: PlainArray<string | number | boolean> = new PlainArray();
-    plainArray.add(1, "squirrel");
-    plainArray.add(2, "sparrow");
+    plainArray.add(1, 'squirrel');
+    plainArray.add(2, 'sparrow');
     plainArray.clear();
     if (plainArray.length !== 0) {
       throw new Error(`${TAG} clear length mismatch`);
@@ -323,8 +323,8 @@ export function testPlainArrayForEach017() {
   try {
     console.log(`${TAG} test start`);
     let plainArray: PlainArray<string> = new PlainArray();
-    plainArray.add(1, "squirrel");
-    plainArray.add(2, "sparrow");
+    plainArray.add(1, 'squirrel');
+    plainArray.add(2, 'sparrow');
     plainArray.forEach((value: string, index?: number) => {
       if (plainArray.get(index) !== value) {
         throw new Error(`${TAG} forEach mismatch at index ${index}`);
@@ -344,8 +344,8 @@ export function testPlainArraySymbolIterator018() {
   try {
     console.log(`${TAG} test start`);
     let plainArray: PlainArray<string> = new PlainArray();
-    plainArray.add(1, "squirrel");
-    plainArray.add(2, "sparrow");
+    plainArray.add(1, 'squirrel');
+    plainArray.add(2, 'sparrow');
     let iter = plainArray[Symbol.iterator]();
     let temp: IteratorResult<Object[]> = iter.next();
     while (!temp.done) {

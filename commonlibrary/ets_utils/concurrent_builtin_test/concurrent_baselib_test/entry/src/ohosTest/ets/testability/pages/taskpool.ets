@@ -350,8 +350,8 @@ export function testListSet1() {
     let list: List<number> = new List<number>();
     list.add(1);
     list.add(2);
-    let Value: number | undefined = list.set(0, 3);
-    if (Value !== 3 || list.get(0) !== 3) {
+    let value: number | undefined = list.set(0, 3);
+    if (value !== 3 || list.get(0) !== 3) {
       throw new Error(`${TAG} List set method failed`)
     }
   } catch (err) {

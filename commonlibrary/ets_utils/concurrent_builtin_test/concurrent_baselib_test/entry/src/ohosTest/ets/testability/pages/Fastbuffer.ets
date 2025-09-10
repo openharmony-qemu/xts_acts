@@ -985,7 +985,8 @@ export function testEntriesNormal() {
     console.log(`${caseName} test start`);
     let buf = buffer.from('1234');
     let entries = buf.entries();
-    let va = 49, index = 0;
+    let va :number= 49;
+    let index :number= 0;
     for (const entry of entries) {
       if (entry[0] !== index){
         throw new Error(`${TAG} entry[0] !== index`);

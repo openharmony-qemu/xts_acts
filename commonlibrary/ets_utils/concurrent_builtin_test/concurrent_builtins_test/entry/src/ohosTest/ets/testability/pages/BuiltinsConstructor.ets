@@ -53,7 +53,9 @@ export function testBigIntString() {
 
     const result = tryCreateBigInt('789');
     console.log(`Result: ${result ? result.toString() + 'n' : result}`);
-    if (result !== 789n) throw new Error(`${TAG} expect 789n`);
+    if (result !== 789n) {
+      throw new Error(`${TAG} expect 789n`);
+    }
     console.info(`${caseName} test end`);
   } catch (err) {
     console.error(`${TAG} failed: ${err.message}`);

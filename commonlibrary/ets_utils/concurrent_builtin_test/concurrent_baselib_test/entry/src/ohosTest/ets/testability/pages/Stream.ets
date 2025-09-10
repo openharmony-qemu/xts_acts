@@ -1,5 +1,5 @@
-import { stream } from "@kit.ArkTS";
-import { TestReadable, TestWritable, writeSuccess } from "./importclass";
+import { stream } from '@kit.ArkTS';
+import { TestReadable, TestWritable, writeSuccess } from './importclass';
 
 
 @Concurrent
@@ -9,10 +9,8 @@ export function writableStreamWrite() {
     try {
       let writableStream = new TestWritable();
       writableStream.write();
-      // expect().assertFail();
     } catch (err) {
       console.error(`${TAG} failed, error: ${err.message}`);
-      // expect(err.message).assertEqual('Parameter error. The type of undefined must be string or UintArray');
       if (err.message !=='Parameter error. The type of undefined must be string or UintArray' ) {
         throw new Error(`${TAG} value.toString() invalid: ${err.message.toString()}`)
       }
@@ -30,17 +28,14 @@ export function writableStreamEnd() {
     try {
       let writableStream = new TestWritable();
       let res = writableStream.end('finish');
-      // expect(res.writable).assertEqual(false);
-      if (res.writable !== false) {
+     if (res.writable !== false) {
         throw new Error(`${TAG} value.toString() invalid: ${res.writable.toString()}`)
       }
-      // expect(writeSuccess).assertEqual(true);
-      if (writeSuccess !== true) {
+     if (writeSuccess !== true) {
         throw new Error(`${TAG} value.toString() invalid: ${writeSuccess.toString()}`)
       }
     } catch (err) {
       console.error(`${TAG} failed, error: ${err.message}`);
-      // expect().assertFail();
     }
   } catch (err) {
     console.error(`${TAG} failed, error: ${err.message}`);
@@ -55,13 +50,11 @@ export function setDefaultEncoding() {
   try {
     try {
       const x = new stream.Writable;
-      // expect(x.setDefaultEncoding()).assertFalse();
-      if (x.setDefaultEncoding() !== false) {
+     if (x.setDefaultEncoding() !== false) {
         throw new Error(`${TAG} value.toString() invalid: ${x.setDefaultEncoding().toString()}`)
       }
     } catch (err) {
       console.error(`${TAG} failed, error: ${err.message}`);
-      // expect().assertFail();
     }
   } catch (err) {
     console.error(`${TAG} failed, error: ${err.message}`);
@@ -76,13 +69,11 @@ export function readableStreamResume() {
     try {
       let readableStream = new TestReadable();
       readableStream.resume();
-      // expect(readableStream.isPaused()).assertEqual(false);
       if (readableStream.isPaused() !== false) {
         throw new Error(`${TAG} value.toString() invalid: ${readableStream.isPaused().toString()}`)
       }
     } catch (err) {
       console.error(`${TAG} failed, error: ${err.message}`);
-      // expect().assertFail();
     }
   } catch (err) {
     console.error(`${TAG} failed, error: ${err.message}`);
@@ -97,13 +88,11 @@ export function readableStreamRead() {
     try {
       let readableStream = new TestReadable();
       let dataChunk = readableStream.read();
-      // expect(dataChunk).assertEqual(null)
       if (dataChunk !== null) {
         throw new Error(`${TAG} value.toString() invalid: ${dataChunk.toString()}`)
       }
     } catch (err) {
       console.error(`${TAG} failed, error: ${err.message}`);
-      // expect().assertFail();
     }
   } catch (err) {
     console.error(`${TAG} failed, error: ${err.message}`);
@@ -118,14 +107,12 @@ export function readableStreamPause() {
     try {
       let readableStream = new TestReadable();
       readableStream.pause();
-      // expect(readableStream.isPaused()).assertEqual(true);
       if (readableStream.isPaused() !== false) {
         throw new Error(`${TAG} value.toString() invalid: ${readableStream.isPaused().toString()}`)
       }
     } catch (err) {
       console.error(`${TAG} failed, error: ${err.message}`);
-      // expect().assertFail();
-    }
+     }
   } catch (err) {
     console.error(`${TAG} failed, error: ${err.message}`);
     throw new Error(`${TAG} catch error.`)
@@ -139,23 +126,19 @@ export function readableStreamIsPaused() {
   try {
     try {
       let readableStream = new TestReadable();
-      // expect(readableStream.isPaused()).assertEqual(false);
-      if (readableStream.isPaused() !== false) {
+       if (readableStream.isPaused() !== false) {
         throw new Error(`${TAG} value.toString() invalid: ${readableStream.isPaused().toString()}`)
       }
       readableStream.pause();
-      // expect(readableStream.isPaused()).assertEqual(true);
       if (readableStream.isPaused() !== true) {
         throw new Error(`${TAG} value.toString() invalid: ${readableStream.isPaused().toString()}`)
       }
       readableStream.resume();
-      // expect(readableStream.isPaused()).assertEqual(false);
       if (readableStream.isPaused() !== false) {
         throw new Error(`${TAG} value.toString() invalid: ${readableStream.isPaused().toString()}`)
       }
     } catch (err) {
       console.error(`${TAG} failed, error: ${err.message}`);
-      // expect().assertFail();
     }
   } catch (err) {
     console.error(`${TAG} failed, error: ${err.message}`);
@@ -182,19 +165,16 @@ export function writableStreamOn() {
       let callbackwriteSuccess = false;
       let writable = new TestWritable();
       writable.on('error', () => {
-        console.info("Writable event test", callbackwriteSuccess.toString());
+        console.info('Writable event test', callbackwriteSuccess.toString());
       })
       writable.write('hello', 'utf8', () => {
       })
-      // expect(writable.write('hello', 'utf8', () => {
-      // })).assertFalse();
-      if (writable.write('hello', 'utf8', () => {}).toString() !== "false") {
+      if (writable.write('hello', 'utf8', () => {}).toString() !== 'false') {
         throw new Error(`${TAG} value.toString() invalid: ${writable.write('hello', 'utf8', () => {}).toString()}`)
       }
     } catch (err) {
       console.error(`${TAG} failed, error: ${err.message}`);
-      // expect().assertFail();
-    }
+     }
   } catch (err) {
     console.error(`${TAG} failed, error: ${err.message}`);
     throw new Error(`${TAG} catch error.`)
@@ -223,11 +203,10 @@ export function readAblePipe() {
         }
 
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
-          // expect(chunk).assertEqual('test');
           if (chunk !== 'test') {
             throw new Error(`${TAG} value.toString() invalid: ${chunk.toString()}`)
           }
-          console.info("Readable test pipe", chunk);
+          console.info('Readable test pipe', chunk);
           callback();
         }
       }
@@ -237,7 +216,6 @@ export function readAblePipe() {
       readable.pipe(writable);
     } catch (err) {
       console.error(`${TAG} failed, error: ${err.message}`);
-      // expect().assertFail();
     }
   } catch (err) {
     console.error(`${TAG} failed, error: ${err.message}`);
@@ -268,12 +246,11 @@ export function readAbleUnpipe() {
         }
 
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
-          // expect(chunk).assertEqual('test');
           if (chunk !== 'test') {
             throw new Error(`${TAG} value.toString() invalid: ${chunk.toString()}`)
           }
           aaa = true;
-          console.info("Readable test pipe", chunk);
+          console.info('Readable test pipe', chunk);
           callback();
         }
       }
@@ -284,10 +261,9 @@ export function readAbleUnpipe() {
       readable.pipe(writable);
       readable.unpipe(writable);
       readable.on('data', () => {
-        console.info("Readable test unpipe data event writeSuccess");
+        console.info('Readable test unpipe data event writeSuccess');
       })
       setTimeout(() => {
-        // expect(aaa).assertEqual(false);
         if (aaa !== false) {
           throw new Error(`${TAG} value.toString() invalid: ${aaa.toString()}`)
         }
@@ -296,8 +272,7 @@ export function readAbleUnpipe() {
       });
     } catch (err) {
       console.error(`${TAG} failed, error: ${err.message}`);
-      // expect().assertFail();
-    }
+       }
   } catch (err) {
     console.error(`${TAG} failed, error: ${err.message}`);
     throw new Error(`${TAG} catch error.`)
@@ -328,14 +303,12 @@ export function readAbleOff() {
       });
       readable.off('close');
       setTimeout(() => {
-        // expect(writeSuccess).assertEqual(false);
         if (writeSuccess !== false) {
           throw new Error(`${TAG} value.toString() invalid: ${writeSuccess.toString()}`)
         }
       });
     } catch (err) {
       console.error(`${TAG} failed, error: ${err.message}`);
-      // expect().assertFail();
     }
   } catch (err) {
     console.error(`${TAG} failed, error: ${err.message}`);

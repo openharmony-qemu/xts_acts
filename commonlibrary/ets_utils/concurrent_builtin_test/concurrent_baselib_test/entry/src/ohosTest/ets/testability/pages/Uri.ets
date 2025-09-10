@@ -133,8 +133,8 @@ export function testUriAuthorityWithDoubleAt() {
   const caseName = 'testAuthority0001';
   try {
     console.log(`${caseName} test start`);
-    const Uri = "https://username:password@@host:8080/directory/file?foo=1&bar=2#fragment";
-    const uriInstance = new uri.URI(Uri);
+    const uri1 = "https://username:password@@host:8080/directory/file?foo=1&bar=2#fragment";
+    const uriInstance = new uri.URI(uri1);
     const result = uriInstance.authority;
     if (result !== "username:password@@host:8080"){
       throw new Error(`${caseName} authority mismatch`);

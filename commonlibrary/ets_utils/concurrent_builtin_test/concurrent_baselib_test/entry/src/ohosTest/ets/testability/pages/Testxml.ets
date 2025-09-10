@@ -13,22 +13,22 @@
 * limitations under the License.
 */
 export let testXml =
-  "<?xml version='1.0' encoding='UTF-8'?><!DOCTYPE example [<!ENTITY exampleEntity '这是一个实体引用事件。'>]><!-- XML注释事件：这是一个示例注释 --><example><!-- 启动文件事件 --><startDocument><startTag><element><!-- 启动标签事件 --><tagName>示例标签</tagName><!-- 文本事件 --><content>这是一些文本内容。</content>" +
-    "<!-- CDATA事件 -->" +
-    "<cdata><![CDATA[这是一些不需要解析的内容]]></cdata>" +
-    "<!-- 处理指令事件 -->" +
-    "<?processingInstruction example='处理指令内容'?>" +
-    "<!-- 实体引用事件 -->" +
-    "<entityReference>&exampleEntity;</entityReference>" +
-    "<!-- 空白事件 -->" +
-    "<whitespace>     </whitespace>" +
-    "</element>" +
-    "<!-- 结束标签事件 -->" +
-    "</startTag>" +
-    "</startDocument>" +
-    "<!-- 结束文件事件 -->" +
-    "<endDocument/>" +
-    "</example>";
+  '<?xml version=\'1.0\' encoding=\'UTF-8\'?><!DOCTYPE example [<!ENTITY exampleEntity \'这是一个实体引用事件。\'>]><!-- XML注释事件：这是一个示例注释 --><example><!-- 启动文件事件 --><startDocument><startTag><element><!-- 启动标签事件 --><tagName>示例标签</tagName><!-- 文本事件 --><content>这是一些文本内容。</content>' +
+    '<!-- CDATA事件 -->' +
+    '<cdata><![CDATA[这是一些不需要解析的内容]]></cdata>' +
+    '<!-- 处理指令事件 -->' +
+    '<?processingInstruction example=\'处理指令内容\'?>' +
+    '<!-- 实体引用事件 -->' +
+    '<entityReference>&exampleEntity;</entityReference>' +
+    '<!-- 空白事件 -->' +
+    '<whitespace>     </whitespace>' +
+    '</element>' +
+    '<!-- 结束标签事件 -->' +
+    '</startTag>' +
+    '</startDocument>' +
+    '<!-- 结束文件事件 -->' +
+    '<endDocument/>' +
+    '</example>';
 
 
 export let str2 =

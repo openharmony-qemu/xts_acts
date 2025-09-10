@@ -171,7 +171,7 @@ export function testGenericConstraint() {
     console.info(`${caseName} test start`);
 
     interface Animal { name: string; }
-    class Dog implements Animal { name: string; constructor(n: string) { this.name = n; } }
+    class Dog implements Animal { public name: string; constructor(n: string) { this.name = n; } }
 
     class Box<T extends Animal> {
       private value: T;
@@ -233,7 +233,7 @@ export function builtinsGenericsFormatTest() {
   try {
     const caseName = 'builtinsGenericsFormatTest';
     class G<T = string[]> {
-      value: T;
+      public value: T;
 
       constructor(value: T) {
         this.value = value;

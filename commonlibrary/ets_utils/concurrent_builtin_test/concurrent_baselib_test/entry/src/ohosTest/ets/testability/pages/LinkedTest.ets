@@ -1,8 +1,8 @@
 import { LinkedList } from '@kit.ArkTS';
 
 class Temp {
-  age: number = 0
-  name: string = ''
+  public age: number = 0
+  public name: string = ''
 }
 
 // 01: add

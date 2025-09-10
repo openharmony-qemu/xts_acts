@@ -1,4 +1,4 @@
-import { TreeSet } from "@kit.ArkTS";
+import { TreeSet } from '@kit.ArkTS';
 
 @Concurrent
 export function testTreeSetConstructorDefault() {
@@ -63,8 +63,8 @@ export function testTreeSetHas() {
   try {
     console.log(`${caseName} test start`);
     let treeSet: TreeSet<string> = new TreeSet();
-    treeSet.add("squirrel");
-    const result = treeSet.has("squirrel");
+    treeSet.add('squirrel');
+    const result = treeSet.has('squirrel');
     if (result !== true) {
       throw new Error(`${caseName} has mismatch`);
     }
@@ -81,10 +81,10 @@ export function testTreeSetGetFirstValue() {
   try {
     console.log(`${caseName} test start`);
     let treeSet: TreeSet<string> = new TreeSet();
-    treeSet.add("squirrel");
-    treeSet.add("sparrow");
+    treeSet.add('squirrel');
+    treeSet.add('sparrow');
     const result = treeSet.getFirstValue();
-    if (result !== "sparrow") {
+    if (result !== 'sparrow') {
       throw new Error(`${caseName} getFirstValue mismatch`);
     }
     console.log(`${caseName} test end`);
@@ -100,10 +100,10 @@ export function testTreeSetPopFirst() {
   try {
     console.log(`${caseName} test start`);
     let treeSet: TreeSet<string> = new TreeSet();
-    treeSet.add("squirrel");
-    treeSet.add("sparrow");
+    treeSet.add('squirrel');
+    treeSet.add('sparrow');
     treeSet.popFirst();
-    const result = treeSet.has("sparrow");
+    const result = treeSet.has('sparrow');
     if (result !== false) {
       throw new Error(`${caseName} popFirst mismatch`);
     }

@@ -7,12 +7,12 @@ export function testURLParams_entries() {
   const caseName = 'DynamicURLParamsConcurrentTest_entries';
   try {
     console.log(`${caseName} test start`);
-    const params = new Url.URLParams("key1=value1&key2=value2");
+    const params = new Url.URLParams('key1=value1&key2=value2');
     const entries: string[] = [];
     for (const pair of params.entries()) {
       entries.push(pair[0], pair[1]);
     }
-    if (entries[1] !== "value1") {
+    if (entries[1] !== 'value1') {
       throw new Error(`${caseName} entries mismatch`);
     }
     console.log(`${caseName} test end`);
@@ -27,11 +27,11 @@ export function testURLParams_append() {
   const caseName = 'DynamicURLParamsConcurrentTest_append';
   try {
     console.log(`${caseName} test start`);
-    const params = new Url.URLParams("key1=value1&key2=value2");
-    params.append("ma 大", "jk￥");
+    const params = new Url.URLParams('key1=value1&key2=value2');
+    params.append('ma 大', 'jk￥');
     const paramsResult = params.toString();
     if (paramsResult !==
-      "key1=value1&key2=value2&ma+%E5%A4%A7=jk%EF%BF%A5") {
+      'key1=value1&key2=value2&ma+%E5%A4%A7=jk%EF%BF%A5') {
       throw new Error(`${caseName} append mismatch`);
     }
     console.log(`${caseName} test end`);
@@ -46,10 +46,10 @@ export function testURLParams_delete() {
   const caseName = 'DynamicURLParamsConcurrentTest_delete';
   try {
     console.log(`${caseName} test start`);
-    const params = new Url.URLParams("key1=value1&key2=value2");
-    params.delete("key2");
+    const params = new Url.URLParams('key1=value1&key2=value2');
+    params.delete('key2');
     const paramsResult = params.toString();
-    if (paramsResult !== "key1=value1") {
+    if (paramsResult !== 'key1=value1') {
       throw new Error(`${caseName} delete mismatch`);
     }
     console.log(`${caseName} test end`);
@@ -64,9 +64,9 @@ export function testURLParams_getAll() {
   const caseName = 'DynamicURLParamsConcurrentTest_getAll';
   try {
     console.log(`${caseName} test start`);
-    const params = new Url.URLParams("b=1&b=2&b=3&b=4&c=5");
-    const valuesForKeyB = params.getAll("b");
-    const expectedValuesForKeyB = ["1", "2", "3", "4"];
+    const params = new Url.URLParams('b=1&b=2&b=3&b=4&c=5');
+    const valuesForKeyB = params.getAll('b');
+    const expectedValuesForKeyB = ['1', '2', '3', '4'];
     if (valuesForKeyB.length !== expectedValuesForKeyB.length) {
       throw new Error(`${caseName} getAll length mismatch`);
     }
@@ -87,9 +87,9 @@ export function testURLParams_get() {
   const caseName = 'DynamicURLParamsConcurrentTest_get';
   try {
     console.log(`${caseName} test start`);
-    const params = new Url.URLParams("b=1&b=2&b=3&b=4&c=5");
-    const valueForKeyB = params.get("b");
-    if (valueForKeyB !== "1") {
+    const params = new Url.URLParams('b=1&b=2&b=3&b=4&c=5');
+    const valueForKeyB = params.get('b');
+    if (valueForKeyB !== '1') {
       throw new Error(`${caseName} get mismatch`);
     }
     console.log(`${caseName} test end`);
@@ -104,8 +104,8 @@ export function testURLParams_has() {
   const caseName = 'DynamicURLParamsConcurrentTest_has';
   try {
     console.log(`${caseName} test start`);
-    const params = new Url.URLParams("a=1&a=2&b=3&b=4&c=5");
-    const hasKey = params.has("b");
+    const params = new Url.URLParams('a=1&a=2&b=3&b=4&c=5');
+    const hasKey = params.has('b');
     if (!hasKey) {
       throw new Error(`${caseName} has mismatch`);
     }
@@ -124,7 +124,7 @@ export function testURLParams_set() {
     const params = new Url.URLParams('name=Jonathan&name=YH&name=DKH');
     params.set('name', 'zhuDi');
     const paramsResult = params.toString();
-    if (paramsResult !== "name=zhuDi") {
+    if (paramsResult !== 'name=zhuDi') {
       throw new Error(`${caseName} set mismatch`);
     }
     console.log(`${caseName} test end`);

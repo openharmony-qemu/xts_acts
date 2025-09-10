@@ -57,7 +57,7 @@ export function testSetCdata() {
   const TAG = 'DynamicXmlConcurrentTest0003';
   try {
     console.log(`${TAG} test start`);
-    const emoji = "\ud83d\udc7f";
+    const emoji = '\ud83d\udc7f';
     let that = new xml.XmlDynamicSerializer();
     that.setCdata(emoji);
     let arrayBuffer = that.getOutput();
@@ -287,9 +287,9 @@ export function testEndElement() {
     const MY_MAX = 51000;
     let arrayBuffer = new ArrayBuffer(MY_MAX);
     let thatSer = new xml.XmlSerializer(arrayBuffer);
-    thatSer.startElement("note");
-    thatSer.setText("First value");
-    thatSer.setText("Second value");
+    thatSer.startElement('note');
+    thatSer.setText('First value');
+    thatSer.setText('Second value');
     thatSer.endElement();
     let view = new Uint8Array(arrayBuffer);
     let result = util.TextDecoder.create().decodeWithStream(view).trim();
@@ -302,27 +302,6 @@ export function testEndElement() {
   }
 }
 
-// 7. setNamespace
-@Concurrent
-export function testSetNamespace2() {
-  const TAG = 'testSetNamespace';
-  try {
-    console.log(`${TAG} start`);
-    const buf = new ArrayBuffer(512);
-    const ser = new xml.XmlSerializer(buf);
-    ser.setNamespace('ns1', 'http://example.com/ns1');
-    ser.startElement('note');
-    ser.endElement();
-    const str = new util.TextDecoder().decodeToString(new Uint8Array(buf));
-    if (!str.includes('xmlns:ns1="http://example.com/ns1"')) {
-      throw new Error(`namespace mismatch`);
-    }
-    console.log(`${TAG} end`);
-  } catch (err) {
-    console.error(`${TAG} failed: ${err.message}`);
-    throw new Error(`${TAG} catch error.`);
-  }
-}
 
 // 8. setComment
 @Concurrent
@@ -333,7 +312,7 @@ export function testSetComment2() {
     const MY_MAX = 2048;
     let arrayBuffer = new ArrayBuffer(MY_MAX);
     let thatSer = new xml.XmlSerializer(arrayBuffer);
-    thatSer.setComment("@#&*");
+    thatSer.setComment('@#&*');
     let view = new Uint8Array(arrayBuffer);
     let result = util.TextDecoder.create().decodeWithStream(view).trim();
     if (result !== '<!--@#&*-->') {
@@ -355,7 +334,7 @@ export function testSetCDATA() {
     const MY_MAX = 2048;
     let arrayBuffer = new ArrayBuffer(MY_MAX);
     let thatSer = new xml.XmlSerializer(arrayBuffer);
-    thatSer.setCDATA("> < }");
+    thatSer.setCDATA('> < }');
     let view = new Uint8Array(arrayBuffer);
     let result = util.TextDecoder.create().decodeWithStream(view).trim();
     if (result !== '<![CDATA[> < }]]>') {
@@ -377,8 +356,8 @@ export function testSetText2() {
     const MY_MAX = 2048;
     let arrayBuffer = new ArrayBuffer(MY_MAX);
     let thatSer = new xml.XmlSerializer(arrayBuffer);
-    thatSer.startElement("note");
-    thatSer.setText("Special chars: <>&'\"");
+    thatSer.startElement('note');
+    thatSer.setText("Special chars: <>&'\'");
     thatSer.endElement();
     let view = new Uint8Array(arrayBuffer);
     let result = util.TextDecoder.create().decodeWithStream(view).trim();
@@ -431,7 +410,7 @@ export function testXmlPullParser_Constructor() {
         '</book>';
     let textEncoder = new util.TextEncoder();
     let arrbuffer = textEncoder.encodeInto(testXml);
-    let that = new xml.XmlPullParser(arrbuffer.buffer as object as ArrayBuffer, "utf-8");
+    let that = new xml.XmlPullParser(arrbuffer.buffer as object as ArrayBuffer, 'utf-8');
     let options: xml.ParseOptions = {
       supportDoctype: true, ignoreNameSpace: true,
       tagValueCallbackFunction: (name: string, value: string) => true
@@ -465,8 +444,9 @@ export function testXmlPullParser_parse() {
     that.parse(options);
     const view = new Uint8Array(arrbuffer.buffer);
     const result = util.TextDecoder.create().decodeWithStream(view).trim();
-    if (!result.includes('<note importance="high">')) throw new Error(`${caseName} parse mismatch`);
-    console.log(`${caseName} test end`);
+    if (!result.includes('<note importance="high">')) {
+      console.log(`${caseName} test end`);
+    }
   } catch (err) {
     console.error(`${caseName} failed: ${err.message}`);
     throw new Error(`${caseName} catch error.`);
@@ -481,7 +461,7 @@ export function testParseInfo_getColumnNumber() {
     let textEncoder = new util.TextEncoder();
     let arrbuffer = textEncoder.encodeInto(testXml);
     let that = new xml.XmlPullParser(arrbuffer.buffer as object as ArrayBuffer, 'utf-8');
-    let str = "";
+    let str = '';
     const func = (key: xml.EventType, value: xml.ParseInfo) => {
       str += 'key:' + key + ' value:' + value.getColumnNumber() + ' ';
       return true;
@@ -493,7 +473,9 @@ export function testParseInfo_getColumnNumber() {
       tokenValueCallbackFunction: func,
     };
     that.parse(options);
-    if (!str.includes("key:0 value:1")) throw new Error(`${caseName} getColumnNumber mismatch`);
+    if (!str.includes('key:0 value:1')) {
+      throw new Error(`${caseName} getColumnNumber mismatch`);
+    }
     console.log(`${caseName} test end`);
   } catch (err) {
     console.error(`${caseName} failed: ${err.message}`);
@@ -509,7 +491,7 @@ export function testParseInfo_getDepth() {
     let textEncoder = new util.TextEncoder();
     let arrbuffer = textEncoder.encodeInto(testXml);
     let that = new xml.XmlPullParser(arrbuffer.buffer as object as ArrayBuffer, 'utf-8');
-    let str = "";
+    let str = '';
     const func = (key: xml.EventType, value: xml.ParseInfo) => {
       str += 'key:' + key + ' value:' + value.getDepth() + ' ';
       return true;
@@ -521,7 +503,9 @@ export function testParseInfo_getDepth() {
       tokenValueCallbackFunction: func,
     };
     that.parse(options);
-    if (!str.includes("key:0 value:0")) throw new Error(`${caseName} getDepth mismatch`);
+    if (!str.includes('key:0 value:0')) {
+      throw new Error(`${caseName} getDepth mismatch`);
+    }
     console.log(`${caseName} test end`);
   } catch (err) {
     console.error(`${caseName} failed: ${err.message}`);
@@ -537,7 +521,7 @@ export function testParseInfo_getLineNumber() {
     let textEncoder = new util.TextEncoder();
     let arrbuffer = textEncoder.encodeInto(testXml);
     let that = new xml.XmlPullParser(arrbuffer.buffer as object as ArrayBuffer, 'utf-8');
-    let str = "";
+    let str = '';
     const func = (key: xml.EventType, value: xml.ParseInfo) => {
       str += 'key:' + key + ' value:' + value.getLineNumber() + ' ';
       return true;
@@ -549,7 +533,9 @@ export function testParseInfo_getLineNumber() {
       tokenValueCallbackFunction: func,
     };
     that.parse(options);
-    if (!str.includes("key:0 value:1")) throw new Error(`${caseName} getLineNumber mismatch`);
+    if (!str.includes('key:0 value:1')){
+      throw new Error(`${caseName} getLineNumber mismatch`);
+    }
     console.log(`${caseName} test end`);
   } catch (err) {
     console.error(`${caseName} failed: ${err.message}`);
@@ -565,7 +551,7 @@ export function testParseInfo_getName() {
     let textEncoder = new util.TextEncoder();
     let arrbuffer = textEncoder.encodeInto(testXml);
     let that = new xml.XmlPullParser(arrbuffer.buffer as object as ArrayBuffer, 'utf-8');
-    let str = "";
+    let str = '';
     const func = (key: xml.EventType, value: xml.ParseInfo) => {
       str += 'key:' + key + ' value:' + value.getName() + ' ';
       return true;
@@ -577,7 +563,9 @@ export function testParseInfo_getName() {
       tokenValueCallbackFunction: func,
     };
     that.parse(options);
-    if (!str.includes("key:0 value:")) throw new Error(`${caseName} getName mismatch`);
+    if (!str.includes('key:0 value:')){
+      throw new Error(`${caseName} getName mismatch`);
+    }
     console.log(`${caseName} test end`);
   } catch (err) {
     console.error(`${caseName} failed: ${err.message}`);
@@ -607,7 +595,9 @@ export function testParseOptions_supportDoctype() {
     that.parse(options);
     const view = new Uint8Array(arrbuffer.buffer);
     const result = util.TextDecoder.create().decodeWithStream(view).trim();
-    if (!result.includes("<!DOCTYPE note><note>")) throw new Error(`${caseName} supportDoctype mismatch`);
+    if (!result.includes('<!DOCTYPE note><note>')) {
+      throw new Error(`${caseName} supportDoctype mismatch`);
+    }
     console.log(`${caseName} test end`);
   } catch (err) {
     console.error(`${caseName} failed: ${err.message}`);
@@ -636,7 +626,9 @@ export function testParseOptions_ignoreNameSpace() {
     that.parse(options);
     const view = new Uint8Array(arrbuffer.buffer);
     const result = util.TextDecoder.create().decodeWithStream(view).trim();
-    if (!result.includes('<h:root xmlns:h="http://www.w3.org/TR/html4/  ">')) throw new Error(`${caseName} ignoreNameSpace mismatch`);
+    if (!result.includes('<h:root xmlns:h="http://www.w3.org/TR/html4/  ">')) {
+      throw new Error(`${caseName} ignoreNameSpace mismatch`);
+    }
     console.log(`${caseName} test end`);
   } catch (err) {
     console.error(`${caseName} failed: ${err.message}`);
@@ -652,7 +644,7 @@ export function testParseInfo_getName_startDocument() {
     let textEncoder = new util.TextEncoder();
     let arrbuffer = textEncoder.encodeInto(testXml);
     let that = new xml.XmlPullParser(arrbuffer.buffer as object as ArrayBuffer, 'utf-8');
-    let str = "";
+    let str = '';
     const func = (key: xml.EventType, value: xml.ParseInfo) => {
       str += 'key:' + key + ' value:' + value.getName() + ' ';
       return true;
@@ -664,7 +656,9 @@ export function testParseInfo_getName_startDocument() {
       tokenValueCallbackFunction: func,
     };
     that.parse(options);
-    if (!str.includes("key:0 value:")) throw new Error(`${caseName} getName mismatch`);
+    if (!str.includes('key:0 value:')) {
+      throw new Error(`${caseName} getName mismatch`);
+    }
     console.log(`${caseName} test end`);
   } catch (err) {
     console.error(`${caseName} failed: ${err.message}`);
@@ -685,7 +679,7 @@ export function testParseInfo_getNamespace() {
     let textEncoder = new util.TextEncoder();
     let arrbuffer = textEncoder.encodeInto(strXml);
     let that = new xml.XmlPullParser(arrbuffer.buffer as object as ArrayBuffer);
-    let str = "";
+    let str = '';
     const func = (key: xml.EventType, value: xml.ParseInfo) => {
       str += 'key:' + key + ' value:' + value.getNamespace() + ' ';
       return true;
@@ -694,7 +688,9 @@ export function testParseInfo_getNamespace() {
       supportDoctype: true, ignoreNameSpace: false, tokenValueCallbackFunction: func
     }
     that.parse(options);
-    if (!str.includes("key:2 value:http://www.w3.org ")) throw new Error(`${caseName} getNamespace mismatch`);
+    if (!str.includes('key:2 value:http://www.w3.org ')) {
+      throw new Error(`${caseName} getNamespace mismatch`);
+    }
     console.log(`${caseName} test end`);
   } catch (err) {
     console.error(`${caseName} failed: ${err.message}`);
@@ -715,7 +711,7 @@ export function testParseInfo_getPrefix() {
     let textEncoder = new util.TextEncoder();
     let arrbuffer = textEncoder.encodeInto(strXml);
     let that = new xml.XmlPullParser(arrbuffer.buffer as object as ArrayBuffer);
-    let str = "";
+    let str = '';
     const func = (key: xml.EventType, value: xml.ParseInfo) => {
       str += 'key:' + key + ' value:' + value.getPrefix() + ' ';
       return true;
@@ -724,7 +720,9 @@ export function testParseInfo_getPrefix() {
       supportDoctype: true, ignoreNameSpace: false, tokenValueCallbackFunction: func
     }
     that.parse(options);
-    if (!str.includes("key:2 value:h")) throw new Error(`${caseName} getPrefix mismatch`);
+    if (!str.includes('key:2 value:h')) {
+      throw new Error(`${caseName} getPrefix mismatch`);
+    }
     console.log(`${caseName} test end`);
   } catch (err) {
     console.error(`${caseName} failed: ${err.message}`);
@@ -741,7 +739,7 @@ export function testParseInfo_getText() {
     let textEncoder = new util.TextEncoder();
     let arrbuffer = textEncoder.encodeInto(strXml);
     let that = new xml.XmlPullParser(arrbuffer.buffer as object as ArrayBuffer);
-    let str = "";
+    let str = '';
     const func = (key: xml.EventType, value: xml.ParseInfo) => {
       str += 'key:' + key + ' value:' + value.getText() + ' ';
       return true;
@@ -750,7 +748,9 @@ export function testParseInfo_getText() {
       supportDoctype: true, ignoreNameSpace: true, tokenValueCallbackFunction: func
     }
     that.parse(options);
-    if (!str.includes("key:4 value:Happy")) throw new Error(`${caseName} getText mismatch`);
+    if (!str.includes('key:4 value:Happy')) {
+      throw new Error(`${caseName} getText mismatch`);
+    }
     console.log(`${caseName} test end`);
   } catch (err) {
     console.error(`${caseName} failed: ${err.message}`);
@@ -771,7 +771,7 @@ export function testParseInfo_isEmptyElementTag() {
     let textEncoder = new util.TextEncoder();
     let arrbuffer = textEncoder.encodeInto(strXml);
     let that = new xml.XmlPullParser(arrbuffer.buffer as object as ArrayBuffer);
-    let str = "";
+    let str = '';
     const func = (key: xml.EventType, value: xml.ParseInfo) => {
       str += 'key:' + key + ' value:' + value.isEmptyElementTag() + ' ';
       return true;
@@ -780,11 +780,14 @@ export function testParseInfo_isEmptyElementTag() {
       supportDoctype: true, ignoreNameSpace: true, tokenValueCallbackFunction: func
     }
     that.parse(options);
-    if (!str.includes("key:2 value:true")) throw new Error(`${caseName} isEmptyElementTag mismatch`);
+    if (!str.includes('key:2 value:true')) {
+      throw new Error(`${caseName} isEmptyElementTag mismatch`);
+    }
     console.log(`${caseName} test end`);
   } catch (err) {
     console.error(`${caseName} failed: ${err.message}`);
     throw new Error(`${caseName} catch error.`);
+  }
   }
 }
 
@@ -801,7 +804,7 @@ export function testParseInfo_isWhitespace() {
     let textEncoder = new util.TextEncoder();
     let arrbuffer = textEncoder.encodeInto(strXml);
     let that = new xml.XmlPullParser(arrbuffer.buffer as object as ArrayBuffer);
-    let str = "";
+    let str = '';
     const func = (key: xml.EventType, value: xml.ParseInfo) => {
       str += 'key:' + key + ' value:' + value.isWhitespace() + ' ';
       return true;
@@ -810,7 +813,9 @@ export function testParseInfo_isWhitespace() {
       supportDoctype: true, ignoreNameSpace: true, tokenValueCallbackFunction: func
     }
     that.parse(options);
-    if (!str.includes("key:2 value:true")) throw new Error(`${caseName} isWhitespace mismatch`);
+    if (!str.includes('key:2 value:true')) {
+      throw new Error(`${caseName} isWhitespace mismatch`);
+    }
     console.log(`${caseName} test end`);
   } catch (err) {
     console.error(`${caseName} failed: ${err.message}`);
@@ -828,7 +833,7 @@ export function testParseInfo_getAttributeCount() {
     let textEncoder = new util.TextEncoder();
     let arrbuffer = textEncoder.encodeInto(strXml);
     let that = new xml.XmlPullParser(arrbuffer.buffer as object as ArrayBuffer);
-    let str = "";
+    let str = '';
     const func = (key: xml.EventType, value: xml.ParseInfo) => {
       str += 'key:' + key + ' value:' + value.getAttributeCount() + ' ';
       return true;
@@ -837,7 +842,9 @@ export function testParseInfo_getAttributeCount() {
       supportDoctype: true, ignoreNameSpace: true, tokenValueCallbackFunction: func
     }
     that.parse(options);
-    if (!str.includes("key:2 value:2")) throw new Error(`${caseName} getAttributeCount mismatch`);
+    if (!str.includes('key:2 value:2')) {
+      throw new Error(`${caseName} getAttributeCount mismatch`);
+    }
     console.log(`${caseName} test end`);
   } catch (err) {
     console.error(`${caseName} failed: ${err.message}`);

@@ -1,5 +1,5 @@
 import fastbuffer from '@ohos.fastbuffer';
-import { buffer } from "@kit.ArkTS";
+import { buffer } from '@kit.ArkTS';
 
 @Concurrent
 export function testBufferAllocZeroWithZero() {
@@ -46,8 +46,8 @@ export function testBufferConcatTwoBuf() {
   const caseName = 'BufferConcatTwoBuf';
   try {
     console.log(`${caseName} test start`);
-    let buf1 = buffer.from("1234");
-    let buf2 = buffer.from("abcd");
+    let buf1 = buffer.from('1234');
+    let buf2 = buffer.from('abcd');
     let buf = buffer.concat([buf1, buf2]);
     if (buf.length !== 8) {
       throw new Error(`${caseName} length mismatch`);
@@ -513,7 +513,7 @@ export function testWrite() {
   try {
     try {
       const buf = buffer.alloc(10);
-      const res = buf.write("abc", -Infinity, -Infinity, 'utf8');
+      const res = buf.write('abc', -Infinity, -Infinity, 'utf8');
     } catch (err) {
       if (err.code !== 10200001) {
         throw new Error(`${caseName} code mismatch`);
@@ -1232,9 +1232,11 @@ export function testFastBufferWriteSecondUIntLE() {
 @Concurrent
 export function testFill001() {
   try {
-    let buf = fastbuffer.alloc(3).fill("$*$");
+    let buf = fastbuffer.alloc(3).fill('$*$');
     let str = buf.toString();
-    if (str !== "$*$") throw new Error(`fill mismatch`);
+    if (str !== '$*$') {
+      throw new Error(`fill mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1245,8 +1247,10 @@ export function testFill001() {
 export function testWrite002() {
   try {
     let buf = fastbuffer.alloc(8);
-    let offset = buf.write("abcde", 1);
-    if (offset !== 5) throw new Error(`write offset mismatch`);
+    let offset = buf.write('abcde', 1);
+    if (offset !== 5) {
+      throw new Error(`write offset mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1256,10 +1260,12 @@ export function testWrite002() {
 @Concurrent
 export function testCompare003() {
   try {
-    let buf1 = fastbuffer.from("1236");
-    let buf2 = fastbuffer.from("1235");
+    let buf1 = fastbuffer.from('1236');
+    let buf2 = fastbuffer.from('1235');
     let res = buf1.compare(buf2);
-    if (res !== 1) throw new Error(`compare mismatch`);
+    if (res !== 1) {
+      throw new Error(`compare mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1269,10 +1275,12 @@ export function testCompare003() {
 @Concurrent
 export function testEquals004() {
   try {
-    let buf1 = fastbuffer.from("1236");
-    let buf2 = fastbuffer.from("1235");
+    let buf1 = fastbuffer.from('1236');
+    let buf2 = fastbuffer.from('1235');
     let res = buf1.equals(buf2);
-    if (res !== false) throw new Error(`equals mismatch`);
+    if (res !== false) {
+      throw new Error(`equals mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1282,10 +1290,12 @@ export function testEquals004() {
 @Concurrent
 export function testSubarray005() {
   try {
-    let buf1 = fastbuffer.from("1236");
+    let buf1 = fastbuffer.from('1236');
     let buf = buf1.subarray(0, 3);
     let str = buf.toString();
-    if (str !== "123") throw new Error(`subarray mismatch`);
+    if (str !== '123') {
+      throw new Error(`subarray mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1295,12 +1305,16 @@ export function testSubarray005() {
 @Concurrent
 export function testCopy006() {
   try {
-    let buf1 = fastbuffer.from("1236");
-    let buf2 = fastbuffer.from("1235");
+    let buf1 = fastbuffer.from('1236');
+    let buf2 = fastbuffer.from('1235');
     let num = buf1.copy(buf2);
-    if (num !== 4) throw new Error(`copy length mismatch`);
+    if (num !== 4) {
+      throw new Error(`copy length mismatch`);
+    }
     let str = buf2.toString();
-    if (str !== "1236") throw new Error(`copy content mismatch`);
+    if (str !== '1236') {
+      throw new Error(`copy content mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1310,9 +1324,11 @@ export function testCopy006() {
 @Concurrent
 export function testToString007() {
   try {
-    let buf1 = fastbuffer.from("abc");
-    let str = buf1.toString("base64");
-    if (str !== "YWJj") throw new Error(`toString base64 mismatch`);
+    let buf1 = fastbuffer.from('abc');
+    let str = buf1.toString('base64');
+    if (str !== 'YWJj') {
+      throw new Error(`toString base64 mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1322,9 +1338,11 @@ export function testToString007() {
 @Concurrent
 export function testIndexOf008() {
   try {
-    let buf1 = fastbuffer.from("13236");
-    let index = buf1.indexOf("3");
-    if (index !== 1) throw new Error(`indexOf mismatch`);
+    let buf1 = fastbuffer.from('13236');
+    let index = buf1.indexOf('3');
+    if (index !== 1) {
+      throw new Error(`indexOf mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1334,9 +1352,11 @@ export function testIndexOf008() {
 @Concurrent
 export function testLastIndexOf009() {
   try {
-    let buf1 = fastbuffer.from("13236");
-    let index = buf1.lastIndexOf("3");
-    if (index !== 3) throw new Error(`lastIndexOf mismatch`);
+    let buf1 = fastbuffer.from('13236');
+    let index = buf1.lastIndexOf('3');
+    if (index !== 3) {
+      throw new Error(`lastIndexOf mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1346,9 +1366,11 @@ export function testLastIndexOf009() {
 @Concurrent
 export function testIncludes010() {
   try {
-    let buf1 = fastbuffer.from("13236");
-    let flag = buf1.includes("3");
-    if (flag !== true) throw new Error(`includes mismatch`);
+    let buf1 = fastbuffer.from('13236');
+    let flag = buf1.includes('3');
+    if (flag !== true) {
+      throw new Error(`includes mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1358,11 +1380,11 @@ export function testIncludes010() {
 @Concurrent
 export function testSwap16011() {
   try {
-    let buf1 = fastbuffer.from("1234567");
+    let buf1 = fastbuffer.from('1234567');
     try {
       buf1.swap64();
     } catch (err) {
-      if(err.message !== 'The buffer size must be a multiple of 64-bits'){
+      if (err.message !== 'The buffer size must be a multiple of 64-bits') {
         throw new Error(`catch error: ${err.message}`);
       }
     }
@@ -1375,11 +1397,11 @@ export function testSwap16011() {
 @Concurrent
 export function testSwap32012() {
   try {
-    let buf1 = fastbuffer.from("1234567");
+    let buf1 = fastbuffer.from('1234567');
     try {
       buf1.swap32();
     } catch (err) {
-      if(err.message !== 'The buffer size must be a multiple of 32-bits'){
+      if (err.message !== 'The buffer size must be a multiple of 32-bits') {
         throw new Error(`catch error: ${err.message}`);
       }
     }
@@ -1392,11 +1414,13 @@ export function testSwap32012() {
 @Concurrent
 export function testKeys013() {
   try {
-    let buf1 = fastbuffer.from("1234");
+    let buf1 = fastbuffer.from('1234');
     let keys = buf1.keys();
     let index = 0;
     for (const key of keys) {
-      if (key !== index) throw new Error(`keys mismatch`);
+      if (key !== index) {
+        throw new Error(`keys mismatch`);
+      }
       index++;
     }
   } catch (err) {
@@ -1408,11 +1432,13 @@ export function testKeys013() {
 @Concurrent
 export function testValues014() {
   try {
-    let buf1 = fastbuffer.from("1234");
+    let buf1 = fastbuffer.from('1234');
     let vals = buf1.values();
     let va = 49;
     for (const value of vals) {
-      if (value !== va) throw new Error(`values mismatch`);
+      if (value !== va) {
+        throw new Error(`values mismatch`);
+      }
       va++;
     }
   } catch (err) {
@@ -1426,7 +1452,9 @@ export function testFrom015() {
   try {
     const buf = fastbuffer.from('this is a test');
     let str = buf.toString();
-    if (str !== "this is a test") throw new Error(`from string mismatch`);
+    if (str !== 'this is a test') {
+      throw new Error(`from string mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1438,7 +1466,9 @@ export function testWriteInt32BE016() {
   try {
     let buf = fastbuffer.alloc(4);
     let ref = buf.writeInt32BE(0x12345678, 0);
-    if (ref !== 4) throw new Error(`writeInt32BE mismatch`);
+    if (ref !== 4) {
+      throw new Error(`writeInt32BE mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1450,7 +1480,9 @@ export function testWriteInt32LE017() {
   try {
     let buf = fastbuffer.alloc(4);
     let ref = buf.writeInt32LE(0x12345678, 0);
-    if (ref !== 4) throw new Error(`writeInt32LE mismatch`);
+    if (ref !== 4) {
+      throw new Error(`writeInt32LE mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1462,7 +1494,9 @@ export function testWriteUInt16BE018() {
   try {
     let buf = fastbuffer.allocUninitializedFromPool(4);
     let ref = buf.writeUInt16BE(0xdead, 0);
-    if (ref !== 2) throw new Error(`writeUInt16BE mismatch`);
+    if (ref !== 2) {
+      throw new Error(`writeUInt16BE mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1474,7 +1508,9 @@ export function testWriteUInt32BE019() {
   try {
     let buf = fastbuffer.allocUninitializedFromPool(4);
     let ref = buf.writeUInt32BE(0xfeedface, 0);
-    if (ref !== 4) throw new Error(`writeUInt32BE mismatch`);
+    if (ref !== 4) {
+      throw new Error(`writeUInt32BE mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1487,7 +1523,9 @@ export function testReadInt32BE020() {
     let buf = fastbuffer.alloc(4);
     buf.writeInt32BE(0x12345678, 0);
     let ref = buf.readInt32BE(0).toString(16);
-    if (ref !== "12345678") throw new Error(`readInt32BE mismatch`);
+    if (ref !== '12345678') {
+      throw new Error(`readInt32BE mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1500,7 +1538,9 @@ export function testReadUInt32LE021() {
     let buf = fastbuffer.allocUninitializedFromPool(4);
     buf.writeUInt32LE(0x12345678, 0);
     let ref = buf.readUInt32LE(0).toString(16);
-    if (ref !== "12345678") throw new Error(`readUInt32LE mismatch`);
+    if (ref !== '12345678') {
+      throw new Error(`readUInt32LE mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1513,7 +1553,9 @@ export function testReadDoubleBE022() {
     let buf = fastbuffer.allocUninitializedFromPool(8);
     buf.writeDoubleBE(123.456, 0);
     let ref = buf.readDoubleBE();
-    if (ref !== 123.456) throw new Error(`readDoubleBE mismatch`);
+    if (ref !== 123.456) {
+      throw new Error(`readDoubleBE mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1526,7 +1568,9 @@ export function testReadFloatLE023() {
     let buf = fastbuffer.allocUninitializedFromPool(4);
     buf.writeFloatLE(0xcabcbcbc, 0);
     let ref = buf.readFloatLE(0).toString(16);
-    if (ref !== "cabcbd00") throw new Error(`readFloatLE mismatch`);
+    if (ref !== 'cabcbd00') {
+      throw new Error(`readFloatLE mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1539,7 +1583,9 @@ export function testReadBigUInt64BE024() {
     let buf = fastbuffer.allocUninitializedFromPool(8);
     buf.writeBigUInt64BE(0xdecafafecacefaden, 0);
     let ref = buf.readBigUInt64BE(0).toString(16);
-    if (ref !== "decafafecacefade") throw new Error(`readBigUInt64BE mismatch`);
+    if (ref !== 'decafafecacefade') {
+      throw new Error(`readBigUInt64BE mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1549,9 +1595,11 @@ export function testReadBigUInt64BE024() {
 @Concurrent
 export function testBufferLength025() {
   try {
-    let buf = fastbuffer.from("1236");
+    let buf = fastbuffer.from('1236');
     let len = buf.length;
-    if (len !== 4) throw new Error(`buffer length mismatch`);
+    if (len !== 4) {
+      throw new Error(`buffer length mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1561,9 +1609,11 @@ export function testBufferLength025() {
 @Concurrent
 export function testBufferByteOffset026() {
   try {
-    let buf = fastbuffer.from("1236");
+    let buf = fastbuffer.from('1236');
     let offset = buf.byteOffset;
-    if (offset < 0) throw new Error(`byteOffset mismatch`);
+    if (offset < 0) {
+      throw new Error(`byteOffset mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1574,7 +1624,9 @@ export function testBufferByteOffset026() {
 export function testAllocUninitialized027() {
   try {
     let buf = fastbuffer.allocUninitialized(10);
-    if (buf.length !== 10) throw new Error(`allocUninitialized mismatch`);
+    if (buf.length !== 10) {
+      throw new Error(`allocUninitialized mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }
@@ -1584,9 +1636,11 @@ export function testAllocUninitialized027() {
 @Concurrent
 export function testByteLength028() {
   try {
-    let buf1 = fastbuffer.from("abc");
+    let buf1 = fastbuffer.from('abc');
     let byteLen = fastbuffer.byteLength(buf1);
-    if (byteLen !== 3) throw new Error(`byteLength mismatch`);
+    if (byteLen !== 3) {
+      throw new Error(`byteLength mismatch`);
+    }
   } catch (err) {
     throw new Error(`catch error: ${err.message}`);
   }

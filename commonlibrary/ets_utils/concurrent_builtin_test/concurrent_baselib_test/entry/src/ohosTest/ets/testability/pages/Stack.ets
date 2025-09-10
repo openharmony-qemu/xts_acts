@@ -9,13 +9,11 @@ export function stackPush() {
     try {
       let stack: Stack<number> = new Stack();
       let result = stack.push(1)
-      // expect(result).assertEqual(1);
     if (result !== 1){
       throw new Error(`${TAG} value.toString() invalid: ${result.toString()}`)
     }
     } catch (err) {
       console.error(`${TAG} failed, error: ${err}`);
-      // expect().assertFail();
     }
   } catch (err) {
     console.error(`${TAG} failed, error: ${err.message}`);
@@ -31,13 +29,11 @@ export function stackPop() {
       let stack: Stack<number | string | object> = new Stack();
       stack.push(undefined)
       let result = stack.pop()
-      // expect(result).assertEqual(undefined);
       if (result !== undefined){
         throw new Error(`${TAG} value.toString() invalid: ${result.toString()}`)
       }
     } catch (err) {
       console.error(`${TAG} failed, error: ${err}`);
-      // expect().assertFail();
     }
   } catch (err) {
     console.error(`${TAG} failed, error: ${err.message}`);
@@ -60,13 +56,11 @@ export function stackPeek() {
       stack.push(b)
       stack.push(c)
       let result = stack.peek();
-      // expect(result).assertEqual(c);
       if (result !== c ) {
         throw new Error(`${TAG} value.toString() invalid: ${result.toString()}`)
       }
     } catch (err) {
       console.error(`${TAG} failed, error: ${err}`);
-      // expect().assertFail();
     }
   } catch (err) {
     console.error(`${TAG} failed, error: ${err.message}`);
@@ -90,13 +84,11 @@ export function stackLocate() {
       stack.push(b)
       stack.push(c)
       let result = stack.locate(a);
-      // expect(result).assertEqual(0);
       if (result !== 0 ) {
         throw new Error(`${TAG} value.toString() invalid: ${result.toString()}`)
       }
     } catch (err) {
       console.error(`${TAG} failed, error: ${err}`);
-      // expect().assertFail();
     }
 
   } catch (err) {
@@ -119,18 +111,16 @@ export function stackForEach() {
       stack.forEach((item, index) => {
         let result1 = item
         let result2 = index
-        // expect(result1).assertEqual(item);
         if (result1 !==item) {
           throw new Error(`${TAG} value.toString() invalid: ${result1.toString()}`)
         }
-        // expect(result2).assertEqual(index);
         if (result2 !==index) {
           throw new Error(`${TAG} value.toString() invalid: ${result2}`)
         }
       })
     } catch (err) {
       console.error(`${TAG} failed, error: ${err}`);
-      // expect().assertFail();
+
     }
   } catch (err) {
     console.error(`${TAG} failed, error: ${err.message}`);
@@ -149,13 +139,13 @@ export function stackIsEmpty() {
       stack.push(3)
       stack.push(3)
       let result = stack.isEmpty()
-      // expect(result).assertEqual(false);
+
       if (result !==false) {
         throw new Error(`${TAG} value.toString() invalid: ${result.toString()}`)
       }
     } catch (err) {
       console.error(`${TAG} failed, error: ${err}`);
-      // expect().assertFail();
+
     }
   } catch (err) {
     console.error(`${TAG} failed, error: ${err.message}`);
@@ -174,13 +164,13 @@ export function stackLength() {
       stack.push(3);
       stack.push(3);
       let result = stack.length;
-      // expect(result).assertEqual(4);
+
       if (result !==4) {
         throw new Error(`${TAG} value.toString() invalid: ${result.toString()}`)
       }
     } catch (err) {
       console.error(`${TAG} failed, error: ${err}`);
-      // expect().assertFail();
+
     }
   } catch (err) {
     console.error(`${TAG} failed, error: ${err.message}`);

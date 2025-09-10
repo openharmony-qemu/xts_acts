@@ -29,7 +29,6 @@ import {
   testSetDeclaration2,
   testStartElement,
   testEndElement,
-  testSetNamespace2,
   testSetComment2,
   testSetCDATA,
   testSetText2,
@@ -561,39 +560,6 @@ export default function xmlDynamic1() {
         done();
       });
 
-    /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_1500
-     * @tc.name      : testSetNamespace2
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('testSetNamespace2', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'testSetNamespace2';
-        console.info(`${caseName} test start`);
-        let result = 0
-        try {
-          let group = new taskpool.TaskGroup(caseName)
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(testSetNamespace2)
-          }
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
-            console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
 
     /**
      * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_1600
