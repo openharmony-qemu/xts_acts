@@ -25,21 +25,7 @@
         "runtimeOS": "OpenHarmony"
       }
     ],
-    "signingConfigs": [
-      {
-        "name": "default",
-        "type": "HarmonyOS",
-        "material": {
-          "certpath": "C:\\Users\\Hitcode\\.ohos\\config\\default_graphics2DTestApi20_5J5GQZL_f9JU4uB-sES6DB1kc4DbL0yDV2NxwT3iT1s=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001BCAF0A07FEFFF0BFA0259A8C611244437B7093DE513A5052744B7F0943CCBA7DD6C686A1C391462",
-          "profile": "C:\\Users\\Hitcode\\.ohos\\config\\default_graphics2DTestApi20_5J5GQZL_f9JU4uB-sES6DB1kc4DbL0yDV2NxwT3iT1s=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\Hitcode\\.ohos\\config\\default_graphics2DTestApi20_5J5GQZL_f9JU4uB-sES6DB1kc4DbL0yDV2NxwT3iT1s=.p12",
-          "storePassword": "0000001B08121244347FE62BE9AB290C1DF52B1EEA75E55F49A94B1081E2BA9C13A738737429138119677D"
-        }
-      }
-    ]
+    "signingConfigs": []
   },
   "modules": [
     {
