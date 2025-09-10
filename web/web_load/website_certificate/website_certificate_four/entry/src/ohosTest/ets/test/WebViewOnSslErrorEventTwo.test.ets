@@ -12,13 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, beforeEach, expect, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { Driver, ON } from '@ohos.UiTest';
-import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
-import { WebNetErrorList } from '@ohos.web.netErrorList'
 import { accessibility, config } from '@kit.AccessibilityKit';
+
+const EVENT_ID_SET_EMIT_KEY = 202490;
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let driver = Driver.create();
@@ -36,8 +37,8 @@ export default function webViewOnSslErrorEventTwo() {
         console.info('get webViewOnSslErrorEventTwo state success ' + JSON.stringify(pages));
         if (!('webViewOnSslErrorEventTwo' == pages.name)) {
           console.info('get webViewOnSslErrorEventTwo state success ' + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          console.info('push webViewOnSslErrorEventTwo page success ' + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info('push webViewOnSslErrorEventTwo page success');
         }
       } catch (err) {
         console.error('push webViewOnSslErrorEventTwo page error: ' + err);
@@ -46,6 +47,7 @@ export default function webViewOnSslErrorEventTwo() {
       console.log('waitForComponent onSslErrorEventCertChainDataButton==>');
       done()
     });
+
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
@@ -65,12 +67,15 @@ export default function webViewOnSslErrorEventTwo() {
      * @tc.level      : Level 0
      */
     it('testOnSslErrorEventCertChainData0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('emitOnSslErrorEventCertChainData0100', 126);
-      Utils.registerBaseEvent('testOnSslErrorEventCertChainData0100', 1, 2025071601, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
-      sendEventByKey('onSslErrorEventCertChainDataButton', 10, '');
+      Utils.emitEvent("emitOnSslErrorEventCertChainData0100", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerBaseEvent("testOnSslErrorEventCertChainData0100", 1, 202500, () => { isReturn = 1 }, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      await Utils.waitAndClickComponent(driver, "onSslErrorEventCertChainDataButton");
+      if (await Utils.waitForExist(() => isReturn, 'testOnSslErrorEventCertChainData0100' + '_returnCheck', 1, 3000)) {
+        done();
+      }
     })
     /*
      * @tc.number     : SUB_WEB_ONSSLERROREVENT_CERTCHAINDATA_0200
@@ -81,13 +86,15 @@ export default function webViewOnSslErrorEventTwo() {
      * @tc.level      : Level 0
      */
     it('testOnSslErrorEventCertChainData0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('emitOnSslErrorEventCertChainData0200', 126);
-      Utils.registerBaseEvent('testOnSslErrorEventCertChainData0200', 1, 2025071602, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
-      sendEventByKey('onSslErrorEventCertChainDataButton', 10, '');
+      Utils.emitEvent("emitOnSslErrorEventCertChainData0200", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerBaseEvent("testOnSslErrorEventCertChainData0200", 1, 202510, () => { isReturn = 1 }, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      await Utils.waitAndClickComponent(driver, "onSslErrorEventCertChainDataButton");
+      if (await Utils.waitForExist(() => isReturn, 'testOnSslErrorEventCertChainData0200' + '_returnCheck', 1, 3000)) {
+        done();
+      }
     })
-
   })
 }

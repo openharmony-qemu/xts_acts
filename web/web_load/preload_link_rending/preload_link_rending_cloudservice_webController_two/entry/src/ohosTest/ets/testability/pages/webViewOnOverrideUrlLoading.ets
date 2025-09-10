@@ -13,9 +13,10 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { Hypium } from '@ohos/hypium'
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview'
+
+const EVENT_ID_SET_EMIT_KEY = 201350;
 
 @Entry
 @Component
@@ -30,13 +31,19 @@ struct webViewOnMetaOnOverriderUrlLoading {
   @State onlineImageAccess: boolean = true;
   @State databaseAccess: boolean = true;
   @State checkEleResult: string = "";
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
   
   onPageShow() {
       let valueChangeEvent: events_emitter.InnerEvent = {
-          eventId: 10,
+          eventId: EVENT_ID_SET_EMIT_KEY,
           priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
   
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -44,6 +51,7 @@ struct webViewOnMetaOnOverriderUrlLoading {
           console.info("valueChangeCallBack:" + JSON.stringify(eventData));
           if (eventData.data != null && eventData.data.ACTION != null) {
               this.str = eventData.data.ACTION;
+              this.isReceive = 1;
           }
       }
   }
@@ -54,16 +62,17 @@ struct webViewOnMetaOnOverriderUrlLoading {
               Button("web click")
               .key('webViewOnOverrideUrlLoading')
               .onClick(async () => {
-                  console.info("key==>" + this.str)
-                  await Utils.sleep(3000)
+                  await Utils.waitForExist(()=>this.isPageEnd, 'webViewOnOverrideUrlLoadingIsPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isReceive, 'webViewOnOverrideUrlLoadingIsReceive', 1, 1000);
+                  console.info("key==>" + this.str);
+                  this.isReceive = -1;
                   switch (this.str) {
                     case "emitWebViewOnOverrideUrlLoading": {
                         this.controller.runJavaScript("jump()", (error, result) => {
                         })
-                        await Utils.sleep(1000);
                         this.controller.runJavaScript("isOnOverrideUrlLoading()", (error, result) => {
                             console.log('>>>>>isOnOverrideUrlLoading:' + result)
-                            Utils.emitEvent(result, 10007)
+                            Utils.emitEvent(result, 201360)
                         })
                         break;
                     }
@@ -79,11 +88,16 @@ struct webViewOnMetaOnOverriderUrlLoading {
                 .databaseAccess(this.databaseAccess)
                 
                 .onOverrideUrlLoading((webResourceRequest: WebResourceRequest) => {
-                    if (webResourceRequest && webResourceRequest.getRequestUrl() == "https://www.baidu.com/") {
+                    if (webResourceRequest && webResourceRequest.getRequestUrl() == "https://www.example.com/") {
+                        console.log('== abort')
                         return true;
                     }
                     return false;
                 })
+                .onPageEnd((event) => {
+                  console.log('onPageEnd url:' + event.url);
+                  this.isPageEnd = 1;
+               })
       }
   }
 }

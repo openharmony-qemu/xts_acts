@@ -13,10 +13,14 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 201110;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -34,13 +38,14 @@ export default function webViewControllerLoadUrlTest() {
         console.info("get WebViewControllerLoadUrlTest state success " + JSON.stringify(pages));
         if (!("WebViewControllerLoadUrlTest" == pages.name)) {
           console.info("get WebViewControllerLoadUrlTest state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push WebViewControllerLoadUrlTest page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info("push WebViewControllerLoadUrlTest page success");
         }
       } catch (err) {
         console.error("push WebViewControllerLoadUrlTest page error: " + err);
       }
+      await driver.waitForComponent(ON.id("WebViewControllerLoadUrlTestButton"), 10000);
+      console.log("waitForComponent WebViewControllerLoadUrlTestButton");
       done()
     });
 
@@ -50,7 +55,6 @@ export default function webViewControllerLoadUrlTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("WebViewControllerLoadUrlTest beforeEach start");
       done();
     })
@@ -64,10 +68,13 @@ export default function webViewControllerLoadUrlTest() {
     * @tc.level      : Level 0
     */
     it('testLoadUrl005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("testLoadUrl005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testLoadUrl005", 'second', 77004, done);
-      sendEventByKey('WebViewControllerLoadUrlTestButton', 10, '');
+      Utils.emitEvent("testLoadUrl005", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testLoadUrl005", "second", 201120, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebViewControllerLoadUrlTestButton");
+      if (await Utils.waitForExist(() => isReturn, 'testLoadUrl005' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -79,10 +86,13 @@ export default function webViewControllerLoadUrlTest() {
     * @tc.level      : Level 1
     */
     it('testLoadUrl006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testLoadUrl006", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testLoadUrl006", 'OpenAtom OpenHarmony', 77006, done);
-      sendEventByKey('WebViewControllerLoadUrlTestButton', 10, '');
+      Utils.emitEvent("testLoadUrl006", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testLoadUrl006", "Example Domain", 201130, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebViewControllerLoadUrlTestButton");
+      if (await Utils.waitForExist(() => isReturn, 'testLoadUrl006' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -94,10 +104,13 @@ export default function webViewControllerLoadUrlTest() {
     * @tc.level      : Level 1
     */
     it('testLoadUrl007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testLoadUrl007", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testLoadUrl007", 'second', 77008, done);
-      sendEventByKey('WebViewControllerLoadUrlTestButton', 10, '');
+      Utils.emitEvent("testLoadUrl007", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testLoadUrl007", "second", 201140, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebViewControllerLoadUrlTestButton");
+      if (await Utils.waitForExist(() => isReturn, 'testLoadUrl007' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -109,10 +122,13 @@ export default function webViewControllerLoadUrlTest() {
     * @tc.level      : Level 1
     */
     it('testLoadUrl008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testLoadUrl008", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testLoadUrl008", 'second', 77010, done);
-      sendEventByKey('WebViewControllerLoadUrlTestButton', 10, '');
+      Utils.emitEvent("testLoadUrl008", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testLoadUrl008", "second", 201150, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebViewControllerLoadUrlTestButton");
+      if (await Utils.waitForExist(() => isReturn, 'testLoadUrl008' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
   })
 }

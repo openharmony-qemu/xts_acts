@@ -12,10 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 200800;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function setPathAllowingUniversalAccess() {
@@ -31,22 +35,23 @@ export default function setPathAllowingUniversalAccess() {
         console.info("get setPathAllowingUniversalAccess state success " + JSON.stringify(pages));
         if (!("webTwo" == pages.name)) {
           console.info("get setPathAllowingUniversalAccess state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push setPathAllowingUniversalAccess page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info("push setPathAllowingUniversalAccess page success");
         }
       } catch (err) {
         console.error("push setPathAllowingUniversalAccess page error: " + err);
       }
+      await driver.waitForComponent(ON.id("setPathAllowingUniversalAccessButton"), 10000);
+      console.log("waitForComponent setPathAllowingUniversalAccessButton");
       done()
     });
+
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
@@ -60,11 +65,9 @@ export default function setPathAllowingUniversalAccess() {
     * @tc.level      : Level 0
     */
     it('setPathAllowingUniversalAccess0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("setPathAllowingUniversalAccess0100", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("setPathAllowingUniversalAccess0100", 1, 9470, done);
-      sendEventByKey('setPathAllowingUniversalAccessButton', 10, '');
+      Utils.emitEvent("setPathAllowingUniversalAccess0100", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("setPathAllowingUniversalAccess0100", 1, 200810, done);
+      await Utils.waitAndClickComponent(driver, "setPathAllowingUniversalAccessButton");
     })
-
   })
 }

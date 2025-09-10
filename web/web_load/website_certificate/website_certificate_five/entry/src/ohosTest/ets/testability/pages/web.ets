@@ -22,6 +22,7 @@ import web_webview from '@ohos.web.webview';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 
+const EVENT_ID_SET_EMIT_KEY = 202400;
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
@@ -43,6 +44,7 @@ struct Index {
   @State text: string = "";
   @State textRatio: number = 100;
   @State zoomAccessValue: boolean = true;
+  @State isReceive: number = -1;
   host: string = "www.spincast.org";
   realm: string = "protected example";
   username_password: string[] = [];
@@ -50,10 +52,14 @@ struct Index {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: ESObject) => {
@@ -62,19 +68,8 @@ struct Index {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
-    }
-  }
-  private jsObj: ESObject = {
-    test: (res: ESObject) => {
-      Utils.emitEvent(res, 102);
-    },
-    toString: (str: ESObject) => {
-      console.info("ets toString:" + String(str));
-    },
-    register: (res: ESObject) => {
-      Utils.emitEvent(res, 86);
-      return "web222";
     }
   }
 
@@ -89,30 +84,28 @@ struct Index {
     Column() {
       Row() {
         Button("web click").key('webcomponent').onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, 'webcomponentIsReceive', 1, 1000);
           console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitSaveHttpAuthCredentials": {
               web_webview.WebDataBase.saveHttpAuthCredentials(this.host, this.realm, "Stromgol", "Laroche");
-              setTimeout(() => {
-                let result = web_webview.WebDataBase.existHttpAuthCredentials();
-                Utils.emitEvent(result, 442);
-              }, 3000);
+              let result = web_webview.WebDataBase.existHttpAuthCredentials();
+              Utils.emitEvent(result, 202410);
               break;
             }
             case "emitGetHttpAuthCredentials": {
+              web_webview.WebDataBase.deleteHttpAuthCredentials();
+              web_webview.WebDataBase.saveHttpAuthCredentials(this.host, this.realm, "Stromgol", "Laroche");
               this.username_password = web_webview.WebDataBase.getHttpAuthCredentials(this.host, this.realm);
-              setTimeout(() => {
-                let result = this.username_password[0];
-                Utils.emitEvent(result, 444);
-              }, 5000);
+              let result = this.username_password[0];
+              Utils.emitEvent(result, 202420);
               break;
             }
             case "emitDeleteHttpAuthCredentials": {
               web_webview.WebDataBase.deleteHttpAuthCredentials();
-              setTimeout(() => {
-                let result = web_webview.WebDataBase.existHttpAuthCredentials();
-                Utils.emitEvent(result, 446);
-              }, 3000);
+              let result = web_webview.WebDataBase.existHttpAuthCredentials();
+              Utils.emitEvent(result, 202430);
               break;
             }
             default:
@@ -131,12 +124,6 @@ struct Index {
           let lineNumber = event.message.getLineNumber().toString();
           let sourceId = event.message.getSourceId();
           console.log("lineNumber:" + lineNumber);
-          setTimeout(() => {
-
-          }, 3000);
-          setTimeout(() => {
-
-          }, 3000);
           return false;
         })
     }

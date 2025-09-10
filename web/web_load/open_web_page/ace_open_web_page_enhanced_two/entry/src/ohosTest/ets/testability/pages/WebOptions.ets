@@ -17,6 +17,8 @@ import events_emitter from '@ohos.events.emitter';
 import webView from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 
+const EVENT_ID_SET_EMIT_KEY = 201070;
+
 @Entry
 @Component
 struct WebOptions {
@@ -27,17 +29,21 @@ struct WebOptions {
   @State title: string = '';
   @State titleResource: string = '';
   @State titleUrl: string = '';
+  @State isOnePageEnd: number = -1;
+  @State isTwoPageEnd: number = -1;
+  @State isThreePageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -46,6 +52,7 @@ struct WebOptions {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -58,12 +65,14 @@ struct WebOptions {
         });
 
         Button("web click").key('WebOptionsTestButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, 'WebOptionsTestButtonIsReceive', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitWebOptions001": {
               try {
-                await Utils.sleep(3000)
-                Utils.emitEvent(this.title, 430);
+                await Utils.waitForExist(()=>this.isOnePageEnd, 'WebOptionsTestButtonIsPageEnd', 1, 1000);
+                Utils.emitEvent(this.title, 201080);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -71,8 +80,8 @@ struct WebOptions {
             }
             case "emitWebOptions002": {
               try {
-                await Utils.sleep(3000)
-                Utils.emitEvent(this.titleResource, 432);
+                await Utils.waitForExist(()=>this.isTwoPageEnd, 'WebOptionsTestButtonIsPageEnd', 1, 1000);
+                Utils.emitEvent(this.titleResource, 201090);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -80,8 +89,8 @@ struct WebOptions {
             }
             case "emitWebOptions003": {
               try {
-                await Utils.sleep(3000)
-                Utils.emitEvent(this.titleUrl, 434);
+                await Utils.waitForExist(()=>this.isThreePageEnd, 'WebOptionsTestButtonIsPageEnd', 1, 1000);
+                Utils.emitEvent(this.titleUrl, 201100);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -99,6 +108,10 @@ struct WebOptions {
             this.title = event.title
           }
         })
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isOnePageEnd = 1;
+        })
 
       Web({ src: "resource://rawfile/second.html", controller: this.controllerResource })
         .javaScriptAccess(true)
@@ -108,14 +121,23 @@ struct WebOptions {
             this.titleResource = event.title
           }
         })
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isTwoPageEnd = 1;
+        })
 
-      Web({ src: 'https://openharmony.cn', controller: this.controllerUrl })
+
+      Web({ src: 'www' + '.example.' + 'com', controller: this.controllerUrl })
         .javaScriptAccess(true)
         .onTitleReceive((event) => {
           if (event) {
             console.log('controllerUrl onTitleReceive title:' + event.title)
             this.titleUrl = event.title
           }
+        })
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isThreePageEnd = 1;
         })
     }
   }

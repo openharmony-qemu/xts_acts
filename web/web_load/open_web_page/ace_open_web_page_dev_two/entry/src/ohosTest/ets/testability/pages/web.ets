@@ -12,48 +12,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import UIAbility from '@ohos.app.ability.UIAbility';
+
 import events_emitter from '@ohos.events.emitter';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
-import web_webview from '@ohos.web.webview';
-import Want from '@ohos.app.ability.Want';
-import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 
-
-export default class EntryAbility extends UIAbility {
-  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-    console.log("EntryAbility onCreate");
-    web_webview.WebviewController.initializeWebEngine();
-    AppStorage.setOrCreate("abilityWant", want);
-    console.log("EntryAbility onCreate done");
-  }
-}
-
-let loadedUrl: string;
+const EVENT_ID_SET_EMIT_KEY = 200300;
 
 @Entry
 @Component
 struct Index {
   controller: WebController = new WebController()
-  responseweb: WebResourceResponse = new WebResourceResponse();
-  @State str: string = "emitLoaData";
-  @State text: string = "";
-  @State textRatio: number = 100;
-  @State zoomAccessValue: boolean = true;
-  host: string = "www.spincast.org";
-  realm: string = "protected example";
-  username_password: string[] = [];
-  origin: string = "resource://rawfile/";
+  @State str: string = "";
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: ESObject) => {
@@ -62,19 +47,8 @@ struct Index {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
-    }
-  }
-  private jsObj: ESObject = {
-    test: (res: ESObject) => {
-      Utils.emitEvent(res, 102);
-    },
-    toString: (str: ESObject) => {
-      console.info("ets toString:" + String(str));
-    },
-    register: (res: ESObject) => {
-      Utils.emitEvent(res, 86);
-      return "web222";
     }
   }
 
@@ -89,24 +63,26 @@ struct Index {
     Column() {
       Row() {
         Button("web click").key('webcomponent').onClick(async () => {
+          await Utils.waitForExist(()=>this.isPageEnd, 'webcomponentIsPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isReceive, 'webcomponentIsReceive', 1, 1000);
           console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitLoaData": {
-              this.controller.loadUrl({ url: "resource://rawfile/index.html" });
-              setTimeout(() => {
-                this.controller.loadData({
-                  data: "<html><head><title>index</title></head><body bgcolor=\"white\">Source:<pre>source</pre</body><script>function getTitle(){return document.title}</script></html>",
-                  mimeType: "text/html",
-                  encoding: "UTF-8"
-                });
-              }, 3000)
-              setTimeout(() => {
+              this.isPageEnd = -1;
+              this.controller.loadData({
+                data: "<html><head><title>index</title></head><body bgcolor=\"white\">Source:<pre>source</pre</body><script>function getTitle(){return document.title}</script></html>",
+                mimeType: "text/html",
+                encoding: "UTF-8"
+              });
+              const realVal = await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
+              if (realVal === 1) {
                 this.controller.runJavaScript({
                   script: "getTitle()", callback: (res) => {
-                    Utils.emitEvent(res, 424);
+                    Utils.emitEvent(res, 200310);
                   }
                 });
-              }, 4000);
+              }
               break;
             }
             default:
@@ -116,22 +92,9 @@ struct Index {
       }
 
       Web({ src: $rawfile('index.html'), controller: this.controller })
-        .databaseAccess(true)
-        .zoomAccess(this.zoomAccessValue)
-        .textZoomRatio(this.textRatio)
-        .onConsole((event) => {
-          let level = event.message.getMessageLevel();
-          let msg = event.message.getMessage();
-          let lineNumber = event.message.getLineNumber().toString();
-          let sourceId = event.message.getSourceId();
-          console.log("lineNumber:" + lineNumber);
-          setTimeout(() => {
-            Utils.emitEvent(lineNumber, 420);
-          }, 3000);
-          setTimeout(() => {
-            Utils.emitEvent(sourceId, 422);
-          }, 3000);
-          return false;
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
         })
     }
   }

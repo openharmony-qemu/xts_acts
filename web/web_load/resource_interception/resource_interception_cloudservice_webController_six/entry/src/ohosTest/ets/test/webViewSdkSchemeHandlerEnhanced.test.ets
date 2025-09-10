@@ -12,16 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
-import events_emitter from '@ohos.events.emitter';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import router from '@ohos.router';
-import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 201940;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-// @ts-nocheck
-let emitKey = ''
 
 export default function ActsAceWebViewSdkSchemeHandlerEnhanced() {
   describe('ActsAceWebViewSdkSchemeHandlerEnhanced', () => {
@@ -32,19 +32,19 @@ export default function ActsAceWebViewSdkSchemeHandlerEnhanced() {
         }
         
         try {
-            await Utils.sleep(1000)
             router.clear();
             let pages = router.getState();
             console.info("get webViewSdkSchemeHandlerEnhanced state success " + JSON.stringify(pages));
             if (!("webViewSdkSchemeHandlerEnhanced" == pages.name)) {
                 console.info("get webViewSdkSchemeHandlerEnhanced state success " + JSON.stringify(pages.name));
-                let result = await router.pushUrl(options);
-                await Utils.sleep(1000);
-                console.info("push webViewSdkSchemeHandlerEnhanced state success " + JSON.stringify(result));
+                await router.pushUrl(options);
+                console.info("push webViewSdkSchemeHandlerEnhanced state success");
             }
         } catch (err) {
             console.error("push webViewSdkSchemeHandlerEnhanced page error:" + err);
         }
+        await driver.waitForComponent(ON.id("webViewSdkSchemeHandlerEnhanced"), 10000);
+        console.log("waitForComponent webViewSdkSchemeHandlerEnhanced");
         done()
     });
     
@@ -54,28 +54,7 @@ export default function ActsAceWebViewSdkSchemeHandlerEnhanced() {
           }).catch((err: object) => {
           console.error(`failed to enable, ${err}`);
         })
-        await Utils.sleep(2000);
         done();
-    })
-
-      afterEach(async (done: Function) => {
-        try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent : events_emitter.InnerEvent = {
-                eventId: 10,
-                priority: events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-        } catch (err) {
-            console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
-      done();
     })
 
     /*
@@ -87,10 +66,13 @@ export default function ActsAceWebViewSdkSchemeHandlerEnhanced() {
      * @tc.level       : Level 0
      */
     it('testWebViewSdkSchemeHandler_isChunked_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitWebViewSdkSchemeHandler_isChunked_false"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandler_isChunked_false", true, 1536, done);
-      sendEventByKey('webViewSdkSchemeHandlerEnhanced', 10, '');
+      Utils.emitEvent("emitWebViewSdkSchemeHandler_isChunked_false", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testWebViewSdkSchemeHandler_isChunked_false",  true, 201950, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerEnhanced");
+      if (await Utils.waitForExist(() => isReturn, 'testWebViewSdkSchemeHandler_isChunked_false' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
 
@@ -103,10 +85,13 @@ export default function ActsAceWebViewSdkSchemeHandlerEnhanced() {
      * @tc.level       : Level 0
      */
     it('testWebViewSdkSchemeHandler_isEof_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitWebViewSdkSchemeHandler_isEof_false"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandler_isEof_false", true, 1537, done);
-      sendEventByKey('webViewSdkSchemeHandlerEnhanced', 10, '');
+      Utils.emitEvent("emitWebViewSdkSchemeHandler_isEof_false", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testWebViewSdkSchemeHandler_isEof_false",  true, 201960, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerEnhanced");
+      if (await Utils.waitForExist(() => isReturn, 'testWebViewSdkSchemeHandler_isEof_false' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
     /*
      *@tc.number SUB_ACE_WEB_SdkSchemeHandler_isInMemory_false_API_0001
@@ -125,10 +110,13 @@ export default function ActsAceWebViewSdkSchemeHandlerEnhanced() {
      * @tc.level       : Level 0
      */
     it('testWebViewSdkSchemeHandler_isInMemory_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitWebViewSdkSchemeHandler_isInMemory_false"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandler_isInMemory_false", true, 1538, done);
-      sendEventByKey('webViewSdkSchemeHandlerEnhanced', 10, '');
+      Utils.emitEvent("emitWebViewSdkSchemeHandler_isInMemory_false", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testWebViewSdkSchemeHandler_isInMemory_false",  true, 201970, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerEnhanced");
+      if (await Utils.waitForExist(() => isReturn, 'testWebViewSdkSchemeHandler_isInMemory_false' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
     /*
      *@tc.number SUB_ACE_WEB_SdkSchemeHandler_mainFrame_false_API_0001
@@ -147,11 +135,13 @@ export default function ActsAceWebViewSdkSchemeHandlerEnhanced() {
      * @tc.level       : Level 0
      */
     it('testWebViewSdkSchemeHandler_isMainFrame_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitWebViewSdkSchemeHandler_isMainFrame_false"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandler_isMainFrame_false", true, 1541, done);
-      sendEventByKey('webViewSdkSchemeHandlerEnhanced', 10, '');
+      Utils.emitEvent("emitWebViewSdkSchemeHandler_isMainFrame_false", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testWebViewSdkSchemeHandler_isMainFrame_false",  true, 201980, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerEnhanced");
+      if (await Utils.waitForExist(() => isReturn, 'testWebViewSdkSchemeHandler_isMainFrame_false' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
-
   })
 }

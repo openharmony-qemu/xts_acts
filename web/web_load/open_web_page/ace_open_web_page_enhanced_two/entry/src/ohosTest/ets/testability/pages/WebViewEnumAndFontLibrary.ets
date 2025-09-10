@@ -17,7 +17,9 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest';
-import business_error, { BusinessError } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
+
+const EVENT_ID_SET_EMIT_KEY = 201200;
 
 class TestObj {
   constructor() {
@@ -36,6 +38,8 @@ class TestObj {
 @Component
 struct WebViewEnumAndFontLibrary {
   @State listData: number[] = [0, 0, 0]
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   @Builder
   MenuBuilder() {
@@ -103,14 +107,14 @@ struct WebViewEnumAndFontLibrary {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -119,6 +123,7 @@ struct WebViewEnumAndFontLibrary {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -127,24 +132,24 @@ struct WebViewEnumAndFontLibrary {
     Column() {
       Row() {
         Button("web click").key('buttonEnumAndFontLibrary').onClick(async () => {
-          console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, 'buttonEnumAndFontLibraryIsReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, 'buttonEnumAndFontLibraryIsPageEnd', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitMixedModeNone": {
+              this.isPageEnd = -1;
               this.javaScriptAccess = true
-              await Utils.sleep(2000)
               this.mixedSwitch = true
               this.mode = MixedMode.None
-              await Utils.sleep(2000)
               this.controller.loadUrl("https://mixed-script.badssl.com/")
-              await Utils.sleep(2000)
               break;
             }
             case "emitMixedModeAll": {
+              this.isReceive = -1;
               this.mixedAllSwitch = true
               this.mode = MixedMode.All
-              await Utils.sleep(2000)
               this.controller.loadUrl("https://mixed-script.badssl.com/")
-              await Utils.sleep(2000)
               break;
             }
           }
@@ -195,10 +200,7 @@ struct WebViewEnumAndFontLibrary {
         .minLogicalFontSize(this.minLogicalFontSize)
         .forceDarkAccess(this.access)
         .onPageEnd(() => {
-          this.controller.runJavaScript("webTest()", (error, result) => {
-            console.log("error" + error)
-            this.webResultText = result
-          })
+          this.isPageEnd = 1;
         })
         .onShowFileSelector((event) => {
           if (event) {
@@ -206,12 +208,6 @@ struct WebViewEnumAndFontLibrary {
             this.FileSelectorMode = fileSelectorObj.getMode()
           }
           return true
-        })
-        .onRenderExited((event) => {
-          if (event) {
-            this.controller.loadUrl("resource://rawfile/indexJru.html")
-            Utils.emitEvent(event.renderExitReason, 901)
-          }
         })
         .onErrorReceive((event) => {
           console.log("error", event)
@@ -236,14 +232,12 @@ struct WebViewEnumAndFontLibrary {
             console.log('getSourceId:' + event.message?.getSourceId())
             console.log('getLineNumber:' + event.message?.getLineNumber())
             console.log('getMessageLevel:' + event.message?.getMessageLevel())
-            this.count = event.message.getMessageLevel().toString()
-            console.log("mixed>>>:", event.message.getMessage(), event.message.getMessageLevel())
             if (this.mixedSwitch) {
-              Utils.emitEvent(event.message.getMessageLevel(), 186)
+              Utils.emitEvent(event.message.getMessageLevel(), 201210)
               this.controller.loadUrl("resource://rawfile/indexJru.html")
               this.mixedSwitch = false
             } else if (this.mixedAllSwitch) {
-              Utils.emitEvent(event.message.getMessageLevel(), 188)
+              Utils.emitEvent(event.message.getMessageLevel(), 201220)
               this.controller.loadUrl("resource://rawfile/indexJru.html")
               this.mixedAllSwitch = false
             }

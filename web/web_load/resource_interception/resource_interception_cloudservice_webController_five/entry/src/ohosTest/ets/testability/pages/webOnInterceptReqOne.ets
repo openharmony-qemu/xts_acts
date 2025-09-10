@@ -14,11 +14,9 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
-import testsuite from '../../test/List.test';
-import { waitForExist } from '../../test/WaitTest.test';
 import Utils from '../../test/Utils';
+
+const EVENT_ID_SET_EMIT_KEY = 201620;
 
 @Entry
 @Component
@@ -39,13 +37,19 @@ struct webOnInterceptReqOne {
   @State title: string = 'test';
   @State isComplete: number = -1;
   @State isOnInterceptRequestWebC: boolean = false;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: ESObject) => {
@@ -54,6 +58,7 @@ struct webOnInterceptReqOne {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -62,13 +67,17 @@ struct webOnInterceptReqOne {
     Column() {
       Row() {
         Button('web click').key('webOnInterceptReqOne').onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, 'webOnInterceptReqOneIsReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, 'webOnInterceptReqOneIsPageEnd', 1, 1000);
           console.info('key==>' + this.str)
+          this.isReceive = -1;
           switch (this.str) {
             case 'emitOnInterceptRequestWebC': {
               try {
-                this.isOnInterceptRequestWebC = true
+                this.isComplete = -1;
+                this.isOnInterceptRequestWebC = true;
                 this.controller.loadUrl({ url: 'resource://rawfile/indexCopy.html' });
-                await waitForExist(()=>this.isComplete, 'emitOnInterceptRequestWebC',0)
+                await Utils.waitForExist(()=>this.isComplete, 'loadUrlIsPageEnd', 1, 1000);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -77,7 +86,7 @@ struct webOnInterceptReqOne {
                   if ((this.title).includes('indexCopy')) {
                     this.title = 'success'
                   }
-                  Utils.emitEvent(this.title, 406);
+                  Utils.emitEvent(this.title, 201630);
                 }
               })
               break;
@@ -109,15 +118,15 @@ struct webOnInterceptReqOne {
         .onTitleReceive((event) => {
           console.log('title:' + event.title);
           this.title = event.title;
-          Utils.emitEvent(this.title, 492);
         })
         .onPageBegin((event) => {
             console.log('onPageBegin ==>' + event.url);
         })
         .onPageEnd((event) => {
             console.log('onPageEnd ==>' + event.url);
+            this.isPageEnd = 1;
             if(this.isOnInterceptRequestWebC) {
-              this.isComplete = 0
+              this.isComplete = 1
             }
         })
     }

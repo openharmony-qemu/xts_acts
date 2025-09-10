@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,37 +13,44 @@
  * limitations under the License.
  */
 
-import hilog from '@ohos.hilog';
+import router from '@ohos.router';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { Hypium } from '@ohos/hypium';
+import testsuite from '../../test/List.test';
 
 @Entry
 @Component
 struct Index {
   aboutToAppear() {
-    hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility index aboutToAppear');
+    let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
+    abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+    let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs;
+    abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments();
+    console.info('start run testcase in index!!!');
+    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
   }
- @State message: string = 'Hello World'
-   build() {
-         Row() {
-           Column() {
-             Text(this.message)
-               .fontSize(50)
-               .fontWeight(FontWeight.Bold)
-             Button() {
-               Text('next page')
-                 .fontSize(20)
-                 .fontWeight(FontWeight.Bold)
-             }.type(ButtonType.Capsule)
-             .margin({
-               top: 20
-             })
-             .backgroundColor('#0D9FFB')
-             .width('35%')
-             .height('5%')
-             .onClick(()=>{
-             })
-           }
-             .width('100%')
-         }
-             .height('100%')
-   }
- }
+    
+    build() {
+      Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+          Text('Hello World')
+            .fontSize(50)
+            .fontWeight(FontWeight.Bold)
+          Button() {
+              Text('next page')
+                .fontSize(25)
+                .fontWeight(FontWeight.Bold)
+          }.type(ButtonType.Capsule)
+          .margin({
+              top: 20
+          })
+          .backgroundColor('#0D9FFB')
+          .onClick(() => {
+          })
+      }
+      .width('100%')
+      .height('100%')
+  }
+}
+      
+                    
+   
