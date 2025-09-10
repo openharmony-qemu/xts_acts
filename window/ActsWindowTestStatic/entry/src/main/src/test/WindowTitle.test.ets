@@ -87,7 +87,7 @@ export default function WindowTitleTest() {
                     expect(true).assertTrue()
                     done()
                 } else {
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done();
                 }
             }
@@ -114,7 +114,7 @@ export default function WindowTitleTest() {
                     try {
                         subWin!.setWindowDecorVisible(true);
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowDecorVisible.');
-                        expect().assertFail();
+                        expect(false).assertTrue();
                         done()
                     } catch (e: BusinessError) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setWindowDecorVisible. Cause:' + JSON.stringify(e));
@@ -123,14 +123,14 @@ export default function WindowTitleTest() {
                         }else if(e!.code == 801){
                             done();
                         }else {
-                            expect().assertFail();
+                            expect(false).assertTrue();
                             done();
                         }
                     }
                 })
                 .catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done()
                 });
             
@@ -157,7 +157,7 @@ export default function WindowTitleTest() {
                     try {
                         subWin!.setWindowDecorHeight(1);
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowDecorHeight.');
-                        expect().assertFail();
+                        expect(false).assertTrue();
                         done()
                     } catch (e: BusinessError) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setWindowDecorHeight. Cause:' + JSON.stringify(e));
@@ -167,7 +167,7 @@ export default function WindowTitleTest() {
                 })
                 .catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done()
                 });
             

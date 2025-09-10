@@ -85,7 +85,7 @@ export default function WindowLayoutTest() {
             } catch (exception: BusinessError) {
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
-                    expect().assertFail();
+                    expect(false).assertTrue();
                 } else {
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
@@ -98,7 +98,7 @@ export default function WindowLayoutTest() {
             } catch (exception: BusinessError) {
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
-                    expect().assertFail();
+                    expect(false).assertTrue();
                 } else {
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
@@ -111,7 +111,7 @@ export default function WindowLayoutTest() {
             } catch (exception: BusinessError) {
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
-                    expect().assertFail();
+                    expect(false).assertTrue();
                 } else {
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
@@ -144,7 +144,7 @@ export default function WindowLayoutTest() {
             } catch (exception: BusinessError) {
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
-                    expect().assertFail();
+                    expect(false).assertTrue();
                 } else {
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
@@ -157,7 +157,7 @@ export default function WindowLayoutTest() {
             } catch (exception: BusinessError) {
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
-                    expect().assertFail();
+                    expect(false).assertTrue();
                 } else {
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
@@ -170,7 +170,7 @@ export default function WindowLayoutTest() {
             } catch (exception: BusinessError) {
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
-                    expect().assertFail();
+                    expect(false).assertTrue();
                 } else {
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
@@ -206,7 +206,7 @@ export default function WindowLayoutTest() {
                     return;
                 }
                 hilog.info(0x0000, '[ANI]','Succeeded in showing the window.');
-                expect().assertFail();
+                expect(false).assertTrue();
                 done();
             });
         })
@@ -230,7 +230,7 @@ export default function WindowLayoutTest() {
             let promise = win.showWindow();
             promise.then(() => {
                 hilog.info(0x0000, '[ANI]', caseName +' Succeeded in showing the window.');
-                expect().assertFail();
+                expect(false).assertTrue();
                 done();
             }).catch((err: BusinessError):PromiseLike<void>|undefined => {
                 hilog.error(0x0000, '[ANI]', caseName +` Failed to show the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -257,7 +257,7 @@ export default function WindowLayoutTest() {
             await (win as window.Window).destroyWindow();
             (win as window.Window).destroyWindow().then(() => {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in destroying the window.');
-                expect().assertFail();
+                expect(false).assertTrue();
                 done();
             }).catch((err: BusinessError):PromiseLike<void>|undefined => {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to destroy the window. Cause: ' + JSON.stringify(err));
@@ -291,7 +291,7 @@ export default function WindowLayoutTest() {
                     return;
                 }
                 hilog.info(0x0000, '[ANI]','Succeeded in destroying the window.');
-                expect().assertFail();
+                expect(false).assertTrue();
                 done();
             });
         })
@@ -315,7 +315,7 @@ export default function WindowLayoutTest() {
             try {
                 (win as window.Window).moveWindowTo(300, 300).then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done();
                 }).catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause: ' + JSON.stringify(err));
@@ -356,7 +356,7 @@ export default function WindowLayoutTest() {
                         return;
                     }
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done();
                 });
             } catch (exception: BusinessError) {
@@ -385,7 +385,7 @@ export default function WindowLayoutTest() {
             try {
                 (win as window.Window).resize(500, 1000).then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in changing the window size.');
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done();
                 }).catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause: ' + JSON.stringify(err));
@@ -425,7 +425,7 @@ export default function WindowLayoutTest() {
                         return;
                     }
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in changing the window size.');
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done();
                 });
             } catch (exception: BusinessError) {
@@ -456,7 +456,7 @@ export default function WindowLayoutTest() {
                     try {
                         subWin!.getGlobalRect();
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling getGlobalRect.');
-                        expect().assertFail();
+                        expect(false).assertTrue();
                         done()
                     } catch (e: BusinessError) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call getGlobalRect. Cause:' + JSON.stringify(e));
@@ -466,7 +466,7 @@ export default function WindowLayoutTest() {
                 })
                 .catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done()
                 });
             
@@ -496,7 +496,7 @@ export default function WindowLayoutTest() {
                     done();
                 } else {
                     hilog.error(0x0000, '[ANI]',`${caseName} Error. Cause code: ${exception!.code}, message: ${exception!.message}`);
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done();
                 }
             }
@@ -525,7 +525,7 @@ export default function WindowLayoutTest() {
                     console.info(msgStr +  'on windowHighlightChange callback' + JSON.stringify(data));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_windowHighlightChange success');
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             } catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
@@ -563,7 +563,7 @@ export default function WindowLayoutTest() {
                     console.info(msgStr +  'on windowHighlightChange callback' + JSON.stringify(data));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_windowHighlightChange success');
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             } catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
@@ -612,7 +612,7 @@ export default function WindowLayoutTest() {
                     done();
                 } else {
                     hilog.error(0x0000, '[ANI]',`${caseName}: Error: ${JSON.stringify(error)}`);
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done();
                 }
             }
@@ -645,7 +645,7 @@ export default function WindowLayoutTest() {
                 hilog.info(0x0000, '[ANI]',`${caseName} Succeeded in changing the sub window size.`);
             } catch (error: BusinessError) {
                 hilog.error(0x0000, '[ANI]',`${caseName}: Error: ${JSON.stringify(error)}`);
-                expect().assertFail();
+                expect(false).assertTrue();
                 done();
             }
         })
