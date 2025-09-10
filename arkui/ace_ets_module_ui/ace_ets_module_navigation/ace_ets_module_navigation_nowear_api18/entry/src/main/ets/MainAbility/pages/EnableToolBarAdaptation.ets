@@ -37,6 +37,8 @@ struct EnableToolBarAdaptation {
     window.getLastWindow(context).then((lastWindow) => {
       console.log('[EnableToolBarAdaptation_changeOrientation] clicked')
       lastWindow.setPreferredOrientation(isLandscape ? window.Orientation.LANDSCAPE : window.Orientation.PORTRAIT)
+    }).catch((err: Error) => {
+        console.log('error: ' + err)
     });
   }
 
