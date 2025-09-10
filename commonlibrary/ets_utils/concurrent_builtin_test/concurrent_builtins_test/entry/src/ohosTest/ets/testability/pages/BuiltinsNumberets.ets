@@ -46,7 +46,7 @@ export function builtinsNumberIsIntegerTest0100() {
 export function builtinsNumberIsNaNTest0100() {
   let TAG='builtinsNumberIsNaNTest0100'
   try {
-    const num = Number.isNaN("NaN");
+    const num = Number.isNaN('NaN');
     console.log(`${num}`);
     if(num.toString() !== 'false'){
       throw new Error(`${TAG} value.toString() invalid: ${num.toString()}`)
@@ -74,7 +74,7 @@ export function builtinsNumberIsSafeIntegerTest0100() {
 export function builtinsNumberParseTest0100() {
   let TAG='builtinsNumberParseTest0100'
   try {
-    const num = Number.parseFloat("3");
+    const num = Number.parseFloat('3');
     console.log(`${num}`);
     if(num.toString() !== '3'){
       throw new Error(`${TAG} value.toString() invalid: ${num.toString()}`)
