@@ -964,658 +964,659 @@ struct WebComponent {
     }
 
     build() {
-        Column() {
-            Row() {
-                Button('NativeMediaPlayerRateHandler3').key('webViewNativeMediaPlayerRateHandler3').onClick(async () => {
-                    console.info('key==>' + this.emitKey)
-                    await waitForExist(() => this.isReceive, 'isReceive '+this.emitKey, 0);
-                    this.isReceive = -1;
-                    isPlaying = false
-                    isError = false
-                    videoTime = 0
-                    readyState = 0
-                    this.isShouldOverlay = true
-                    this.isCallback = false
-                    if (Utils.isPC(this.controller) ) {
-                      Utils.emitEvent(true, 132870)
-                      Utils.emitEvent(true, 132820)
-                      Utils.emitEvent(true, 132830)
-                      Utils.emitEvent(true, 132850)
-                      Utils.emitEvent(true, 132860)
-                      Utils.emitEvent(true, 132810)
-                      Utils.emitEvent(true, 132880)
-                      Utils.emitEvent(true, 132890)
-                      Utils.emitEvent(true, 132900)
-                      Utils.emitEvent(true, 132910)
-                      Utils.emitEvent(true, 132920)
-                      Utils.emitEvent(true, 132930)
-                      Utils.emitEvent(true, 132940)
-                      Utils.emitEvent(true, 132960)
-                      Utils.emitEvent(true, 132950)
-                      Utils.emitEvent(true, 132970)
-                      Utils.emitEvent(true, 132790)
-                      Utils.emitEvent(true, 132800)
-                      Utils.emitEvent(true, 132991)
-                      Utils.emitEvent(true, 132993)
-                      Utils.emitEvent(true, 132994)
-                      Utils.emitEvent(true, 132980)
-                      Utils.emitEvent(true, 132990)
-                      Utils.emitEvent(true, 132992)
-                        return
-                    }
-                    switch (this.emitKey) {
-                      case 'emitWebViewNativeMediaPlayerSetPlayRateNegative1': {
-                        let str = '';
-                        this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
-                        await waitForExist(() => this.isPageEnd, 'isPageEnd '+this.emitKey, 0);
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"play"');
-                        this.controller.runJavaScript('setPlaybackRate(3)', (error, result) => {
-                            console.error(`The setPlaybackRate(3) return error is: ${error}`);
-                            console.log(`The setPlaybackRate(3) return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"setPlaybackRate: 3"');
-                        this.controller.runJavaScript('setPlaybackRate(1.2)', (error, result) => {
-                            console.log(`The setPlaybackRate() return value is: ${result}`);
-                            console.error(`The setPlaybackRate() return error is: ${error}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"setPlaybackRate: 1.2"');
-                        await this.retryPlayingGen(this.emitKey)()
-                        this.controller.runJavaScript('setPlaybackRate(-1)', (error, result) => {
-                            console.log(`The setPlaybackRate() return value is: ${result}`);
-                            console.error(`The setPlaybackRate() return error is: ${error}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, null);
-                        console.log('video is playing:' + isPlaying)
-                        if(rateList.indexOf(-1)>-1){
-                            Utils.emitEvent(false, 132810)
-                        }else{
-                            Utils.emitEvent(true, 132810)
-                        }
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerSetPlayRate10': {
-                          let str = '';
-                          this.isPageEnd = -1;
-                          this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
-                          await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
-                          this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                              console.error(`The buttonPlay() return error is: ${error}`);
-                              console.log(`The buttonPlay() return value is: ${result}`);
-                              str = result;
-                          })
-                          await waitForExist(() => str, this.emitKey, '"play"');
-                          await this.retryPlayingGen(this.emitKey)()
-                          this.controller.runJavaScript('setPlaybackRate(3)', (error, result) => {
-                              console.error(`The setPlaybackRate(3) return error is: ${error}`);
-                              console.log(`The setPlaybackRate(3) return value is: ${result}`);
-                              str = result;
-                          })
-                          await waitForExist(() => str, this.emitKey, '"setPlaybackRate: 3"');
-                          this.controller.runJavaScript('setPlaybackRate(2)', (error, result) => {
-                              console.error(`The setPlaybackRate(2) return error is: ${error}`);
-                              console.log(`The setPlaybackRate(2) return value is: ${result}`);
-                              str = result;
-                          })
-                          await waitForExist(() => str, this.emitKey, '"setPlaybackRate: 2"');
-                          this.controller.runJavaScript('setPlaybackRate(10)', (error, result) => {
-                              console.error(`The setPlaybackRate(10) return error is: ${error}`);
-                              console.log(`The setPlaybackRate(10) return value is: ${result}`);
-                              str = result;
-                          })
-                          await waitForExist(() => str, this.emitKey, '"setPlaybackRate: 10"');
-                          console.log('video is playing:' + isPlaying);
-                          if(handleRateList.indexOf(10)>-1){
-                              Utils.emitEvent(true, 132870)
-                          }else{
-                              Utils.emitEvent(false, 132870)
-                          }
-                          break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerSetPlayRate2':
-                      case 'emitWebViewNativeMediaPlayerSetPlayRate2_handleRateChange': {
-                        let str = '';
-                        this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
-                        await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"play"');
-                        await this.retryPlayingGen(this.emitKey)()
-                        this.controller.runJavaScript('setPlaybackRate(3)', (error, result) => {
-                            console.error(`The setPlaybackRate(3) return error is: ${error}`);
-                            console.log(`The setPlaybackRate(3) return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"setPlaybackRate: 3"');
-                        this.controller.runJavaScript('setPlaybackRate(2)', (error, result) => {
-                            console.error(`The setPlaybackRate(2) return error is: ${error}`);
-                            console.log(`The setPlaybackRate(2) return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"setPlaybackRate: 2"');
-                        console.log('video is playing:' + isPlaying)
-                        if(rateList.indexOf(2)>-1){
-                            Utils.emitEvent(true, 132820)
-                        }
-                        if(handleRateList.indexOf(2)>-1){
-                            Utils.emitEvent(true, 132830)
-                        }
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerSetPlayRate3':
-                      case 'emitWebViewNativeMediaPlayerSetPlayRate3_handleRateChange': {
-                        let str = '';
-                        this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
-                        await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"play"');
-                        await this.retryPlayingGen(this.emitKey)()
-                        this.controller.runJavaScript('setPlaybackRate(1.2)', (error, result) => {
-                            console.log(`The setPlaybackRate(1.2) return value is: ${result}`);
-                            console.error(`The setPlaybackRate() return error is: ${error}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"setPlaybackRate: 1.2"');
-                        this.controller.runJavaScript('setPlaybackRate(3)', (error, result) => {
-                            console.log(`The setPlaybackRate(3) return value is: ${result}`);
-                            console.error(`The setPlaybackRate() return error is: ${error}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"setPlaybackRate: 3"');
-                        console.log('video is playing:' + isPlaying)
-                        if(rateList.indexOf(3)>-1){
-                            Utils.emitEvent(true, 132850)
-                        }
-                        if(handleRateList.indexOf(3)>-1){
-                            Utils.emitEvent(true, 132860)
-                        }
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerSetPlayRate1_point_2':
-                      case 'emitWebViewNativeMediaPlayerSetPlayRate1_point_2_handleRateChange': {
-                        let str = '';
-                        this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
-                        await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"play"');
-                        await this.retryPlayingGen(this.emitKey)()
-                        this.controller.runJavaScript('setPlaybackRate(1.2)', (error, result) => {
-                            console.error(`The setPlaybackRate() return error is: ${error}`);
-                            console.log(`The setPlaybackRate() return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"setPlaybackRate: 1.2"');
-                        console.log('video is playing:' + isPlaying)
-                        if(rateList.indexOf(1.2)>-1){
-                            Utils.emitEvent(true, 132880)
-                        }
-                        if(handleRateList.indexOf(1.2)>-1){
-                            Utils.emitEvent(true, 132890)
-                        }
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerHandleVideoSizeChange': {
-                        let str = '';
-                        this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
-                        await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"play"');
-                        await this.retryPlayingGen(this.emitKey)()
-                        this.controller.runJavaScript('resize()', (error, result) => {
-                            console.error(`The resize() return error is: ${error}`);
-                            console.log(`The resize() return value is: ${result}`)
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"resizeDom"');
-                        console.log('video is playing:' + isPlaying)
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerSeekNegative1': {
-                        let str = '';
-                        this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('multi_source_video_seek.html'))
-                        await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"play"');
-                        await this.retryPlayingGen(this.emitKey)()
-                        this.controller.runJavaScript('setSeek(20)', (error, result) => {
-                            console.error(`The setSeek(20) return error is: ${error}`);
-                            console.log(`The setSeek(20) return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"setSeek"');
-                        this.controller.runJavaScript('setSeek(-1)', (error, result) => {
-                            console.error(`The setSeek(-1) return error is: ${error}`);
-                            console.log(`The setSeek(-1) return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"setSeek"');
-                        console.log('video is playing:' + isPlaying)
-                        if (seekList.indexOf(-1) > -1){
-                            Utils.emitEvent(false, 132997)
-                        }else {
-                            Utils.emitEvent(true, 132997)
-                        }
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerPreloadAuto': {
-                        let str = '';
-                        this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerPreloadAuto.html'))
-                        await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"play"');
-                        await this.retryPlayingGen(this.emitKey)()
-                        await waitForExist(() => (durationList.length > 0) ? 1 : 0, this.emitKey, 1);
-                        console.log('video is playing:' + isPlaying)
-                        if (durationList.length > 0) {
-                            Utils.emitEvent(true, 132900)
-                        }
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerTimeUpdate': {
-                        let str = '';
-                        this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
-                        await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"play"');
-                        await this.retryPlayingGen(this.emitKey)()
-                        await waitForExist(() => (timeUpdateList.length > 0) ? 1 : 0, this.emitKey, 1);
-                        if (timeUpdateList.length > 0) {
-                            Utils.emitEvent(true, 132910)
-                        }
-                        console.log('video is playing:' + isPlaying)
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerBufferedEndTime': {
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
-                        await Utils.sleep(8000)
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                        })
-                        await this.retryPlayingGen(this.emitKey)()
-                        await Utils.sleep(1000)
-                        console.log('video is playing:' + isPlaying)
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerFormatError': {
-                        mediaErrorState = 2
-                        let str = '';
-                        this.controller.loadUrl($rawfile('nativeMediaError.html'))
-                        await Utils.sleep(2000)
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                            str = result;
-                        })
-                        await Utils.sleep(1000)
-                        console.log(`The isRelease: ${isRelease}`);
-                        console.log(`The mediaErrorTypeList: ${mediaErrorTypeList}`);
-                        console.log(`The isError: ${isError}`);
-                        if (isError && isRelease && mediaErrorTypeList.indexOf(2) > -1) {
-                            Utils.emitEvent(true, 132920)
-                        }
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerNetError': {
-                        mediaErrorState = 1
-                        let str = '';
-                        this.controller.loadUrl($rawfile('nativeMediaError.html'))
-                        await Utils.sleep(2000)
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                            str = result;
-                        })
-                        await Utils.sleep(1000)
-                        console.log(`The isRelease: ${isRelease}`);
-                        console.log(`The mediaErrorTypeList: ${mediaErrorTypeList}`);
-                        console.log(`The isError: ${isError}`);
-                        if (isError && isRelease && mediaErrorTypeList.indexOf(1) > -1) {
-                            Utils.emitEvent(true, 132930)
-                        }
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerDecodeError': {
-                        mediaErrorState = 3
-                        let str = '';
-                        this.controller.loadUrl($rawfile('nativeMediaError.html'))
-                        await Utils.sleep(2000)
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                            str = result;
-                        })
-                        await Utils.sleep(1000)
-                        console.log(`The isRelease: ${isRelease}`);
-                        console.log(`The mediaErrorTypeList: ${mediaErrorTypeList}`);
-                        console.log(`The isError: ${isError}`);
-                        if (isError && isRelease && mediaErrorTypeList.indexOf(3) > -1) {
-                            Utils.emitEvent(true, 132940)
-                        }
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerNetworkStateLoading': {
-                        networkState = 2
-                        let str = '';
-                        this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
-                        await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"play"');
-                        await this.retryPlayingGen(this.emitKey)()
-                        console.info('Loading networkStateList.indexOf(2) is: ' + networkStateList.indexOf(2))
-                        console.log('video is playing:' + isPlaying)
-                        console.log('video is playing:' + isPlaying)
-                        if (networkStateList.indexOf(2) > -1){
-                            Utils.emitEvent(true, 132960)
-                        }else {
-                            Utils.emitEvent(false, 132960)
-                        }
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerNetworkStateIdle': {
-                        networkState = 1
-                        let str = '';
-                        this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
-                        await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"play"');
-                        await this.retryPlayingGen(this.emitKey)()
-                        await waitForExist(() => (networkStateList.indexOf(1) > -1) ? 1 : 0, this.emitKey, 1);
-                        console.log('video is playing:' + isPlaying)
-                        console.info('Idle networkStateList.indexOf(1) is: ' + networkStateList.indexOf(1))
-                        if (networkStateList.indexOf(1) > -1){
-                            Utils.emitEvent(true, 132950)
-                        }else {
-                            Utils.emitEvent(false, 132950)
-                        }
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerNetworkStateError': {
-                        networkState = 3
-                        let str = '';
-                        this.controller.loadUrl($rawfile('nativeMediaError.html'))
-                        await Utils.sleep(2000)
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, null);
-                        console.info('Error networkStateList.indexOf(3) is: ' + networkStateList.indexOf(3))
-                        if (networkStateList.indexOf(3) > -1){
-                            Utils.emitEvent(true, 132970)
-                        }else {
-                            Utils.emitEvent(false, 132970)
-                        }
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerUpdateRect_1':
-                      case 'emitWebViewNativeMediaPlayerUpdateRect_2':
-                      case 'emitWebViewNativeMediaPlayerUpdateRect_3':
-                      case 'emitWebViewNativeMediaPlayerUpdateRect_4': {
-                        let str = '';
-                        this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerUpdateRect.html'))
-                        await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"play"');
-                        await this.retryPlayingGen(this.emitKey)()
-                        this.controller.runJavaScript('setPlaybackRate(10)', (error, result) => {
-                            console.error(`The setPlaybackRate() return error is: ${error}`);
-                            console.log(`The setPlaybackRate() return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, null);
-                        this.controller.runJavaScript('setPlaybackRate(2)', (error, result) => {
-                            console.error(`The setPlaybackRate() return error is: ${error}`);
-                            console.log(`The setPlaybackRate() return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, null);
-                        console.log('video is playing:' + isPlaying)
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerReadyState_1': {
-                        readyState = 1
-                        let str = '';
-                        this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerPreloadAuto.html'))
-                        await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"play"');
-                        await this.retryPlayingGen(this.emitKey)()
-                        await waitForExist(() => (readyStateList.indexOf(1) > -1) ? 1 : 0, this.emitKey, 1);
-                        console.log('emitWebViewNativeMediaPlayerReadyState_1 video is playing:' + isPlaying)
-                        if (readyStateList.indexOf(1) > -1){
-                            Utils.emitEvent(true, 132994)
-                        }else {
-                            Utils.emitEvent(false, 132994)
-                        }
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerReadyState_2': {
-                        readyState = 2
-                        let str = '';
-                        this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerPreloadAuto.html'))
-                        await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"play"');
-                        await this.retryPlayingGen(this.emitKey)()
-                        await waitForExist(() => (readyStateList.indexOf(2) > -1) ? 1 : 0, this.emitKey, 1);
-                        if (readyStateList.indexOf(2) > -1){
-                            Utils.emitEvent(true, 132980)
-                        }else {
-                            Utils.emitEvent(false, 132980)
-                        }
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerReadyState_3': {
-                        readyState = 3
-                        let str = '';
-                        this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerPreloadAuto.html'))
-                        await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"play"');
-                        await this.retryPlayingGen(this.emitKey)()
-                        await waitForExist(() => (readyStateList.indexOf(3) > -1) ? 1 : 0, this.emitKey, 1);
-                        if (readyStateList.indexOf(3) > -1){
-                            Utils.emitEvent(true, 132990)
-                        }else {
-                            Utils.emitEvent(false, 132990)
-                        }
-                        break;
-                      }
-                      case 'emitWebViewNativeMediaPlayerReadyState_4': {
-                        readyState = 4
-                        let str = '';
-                        this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerPreloadAuto.html'))
-                        await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
-                        this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                            console.error(`The buttonPlay() return error is: ${error}`);
-                            console.log(`The buttonPlay() return value is: ${result}`);
-                            str = result;
-                        })
-                        await waitForExist(() => str, this.emitKey, '"play"');
-                        await this.retryPlayingGen(this.emitKey)()
-                        await waitForExist(() => (readyStateList.indexOf(4) > -1) ? 1 : 0, this.emitKey, 1);
-                        console.log(`The readyStateList.indexOf(4) is: ${readyStateList.indexOf(4)}`);
-                        if (readyStateList.indexOf(4) > -1){
-                            Utils.emitEvent(true, 132992)
-                        }else {
-                            Utils.emitEvent(false, 132992)
-                        }
-                        break;
-                      }
-                    }
+      Column() {
+        Row() {
+          Button('NativeMediaPlayerRateHandler3').key('webViewNativeMediaPlayerRateHandler3').onClick(async () => {
+            console.info('key==>' + this.emitKey)
+            await waitForExist(() => this.isReceive, 'isReceive '+this.emitKey, 0);
+            this.isReceive = -1;
+            isPlaying = false
+            isError = false
+            videoTime = 0
+            readyState = 0
+            this.isShouldOverlay = true
+            this.isCallback = false
+            if (Utils.isPC(this.controller) ) {
+              Utils.emitEvent(true, 132870)
+              Utils.emitEvent(true, 132820)
+              Utils.emitEvent(true, 132830)
+              Utils.emitEvent(true, 132850)
+              Utils.emitEvent(true, 132860)
+              Utils.emitEvent(true, 132810)
+              Utils.emitEvent(true, 132880)
+              Utils.emitEvent(true, 132890)
+              Utils.emitEvent(true, 132900)
+              Utils.emitEvent(true, 132910)
+              Utils.emitEvent(true, 132920)
+              Utils.emitEvent(true, 132930)
+              Utils.emitEvent(true, 132940)
+              Utils.emitEvent(true, 132960)
+              Utils.emitEvent(true, 132950)
+              Utils.emitEvent(true, 132970)
+              Utils.emitEvent(true, 132790)
+              Utils.emitEvent(true, 132800)
+              Utils.emitEvent(true, 132991)
+              Utils.emitEvent(true, 132993)
+              Utils.emitEvent(true, 132994)
+              Utils.emitEvent(true, 132980)
+              Utils.emitEvent(true, 132990)
+              Utils.emitEvent(true, 132992)
+              return
+            }
+            switch (this.emitKey) {
+              case 'emitWebViewNativeMediaPlayerSetPlayRateNegative1': {
+                let str = '';
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
+                await waitForExist(() => this.isPageEnd, 'isPageEnd '+this.emitKey, 0);
+                this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                  console.error(`The buttonPlay() return error is: ${error}`);
+                  console.log(`The buttonPlay() return value is: ${result}`);
+                  str = result;
                 })
-            }
-            Stack() {
-                Web({ src: '', controller: this.controller })
-                    .enableNativeMediaPlayer({ enable: true, shouldOverlay: this.isShouldOverlay })
-                    .onPageBegin(async (event: PageBeginParam) => {
-                        console.error(this.emitKey + ' enter onPageBegin, url:' + event.url);
-                        if (this.controller.onCreateNativeMediaPlayer) {
-                            let callback: webview.CreateNativeMediaPlayerCallback =
-                                (handler: webview.NativeMediaPlayerHandler, mediaInfo: webview.MediaInfo) => {
-                                    this.nativeMediaPlayerHandlerImpl = new NativeMediaPlayerHandlerImpl(handler)
-                                    console.log('mediaInfo' + JSON.stringify(mediaInfo))
-                                    this.isCallback = true
-                                    if (mediaInfo.preload === webview.Preload.AUTO){
-                                        Utils.emitEvent(true, 132900)
-                                    }
-                                    this.nativePlayer = new NativeMediaPlayerImpl(this,
-                                        this.nativeMediaPlayerHandlerImpl, mediaInfo);
-                                    console.info('onPageBegin key==>' + this.emitKey)
-                                    switch (this.emitKey) {
-                                        case 'emitWebViewNativeMediaPlayerUpdateRect_1':{
-                                            this.nativePlayer.updateRect(-1, 1, 1200, 800);
-                                            console.info('UpdateRect -1, 1, 1200, 800')
-                                            Utils.emitEvent(true, 132790)
-                                            break;
-                                        }
-                                        case 'emitWebViewNativeMediaPlayerUpdateRect_2':{
-                                            this.nativePlayer.updateRect(4, -2, 1200, 800);
-                                            console.info('UpdateRect 4, -2, 1200, 800')
-                                            Utils.emitEvent(true, 132800)
-                                            break;
-                                        }
-                                        case 'emitWebViewNativeMediaPlayerUpdateRect_3':{
-                                            this.nativePlayer.updateRect(8, 9, -5.2, 800);
-                                            console.info('UpdateRect 8, 9, -5.2, 800')
-                                            Utils.emitEvent(true, 132991)
-                                            break;
-                                        }
-                                        case 'emitWebViewNativeMediaPlayerUpdateRect_4':{
-                                            this.nativePlayer.updateRect(88, 12, 1200, -6);
-                                            console.info('UpdateRect 88, 12, 1200, -6')
-                                            Utils.emitEvent(true, 132993)
-                                            break;
-                                        }
-
-
-                                    }
-
-                                    return this.nativePlayer;
-                                }
-
-                            this.controller.onCreateNativeMediaPlayer(callback);
-                        }
-                        switch (this.emitKey) {
-                          case 'emitWebViewNativeMediaPlayerSetPlayRate10':{
-                            await Utils.sleep(5000)
-                            this.nativeMediaPlayerHandlerImpl!.handlePlaybackRateChanged(10)
-                          }
-                          case 'emitWebViewNativeMediaPlayerSetPlayRate2_handleRateChange':
-                          case 'emitWebViewNativeMediaPlayerSetPlayRate2':{
-                            await Utils.sleep(5000)
-                            this.nativeMediaPlayerHandlerImpl!.handlePlaybackRateChanged(2)
-                          }
-                          case 'emitWebViewNativeMediaPlayerSetPlayRate1_point_2_handleRateChange':
-                          case 'emitWebViewNativeMediaPlayerSetPlayRate1_point_2':{
-                            await Utils.sleep(5000)
-                            this.nativeMediaPlayerHandlerImpl!.handlePlaybackRateChanged(1.2)
-                          }
-                          case 'emitWebViewNativeMediaPlayerSetPlayRate3_handleRateChange':
-                          case 'emitWebViewNativeMediaPlayerSetPlayRate3':{
-                            await Utils.sleep(5000)
-                            this.nativeMediaPlayerHandlerImpl!.handlePlaybackRateChanged(3)
-                          }
-                        }
-                        this.controller.pauseAllMedia();
-                        console.error('exit onPageBegin');
-                    })
-                    .onPageEnd(async (event) => {
-                        console.log(this.emitKey + ' web pageEnd==>' + event.url);
-                        this.isPageEnd = 0;
-                    })
-                    .width('100%')
-                    .height('100%')
-                    .onAreaChange((oldValue: Area, newValue: Area) => {
-                        oldValue;
-                        this.area = newValue;
-                    })
-
-                if (this.showNativeMediaPlayer) {
-                    NodeContainer(this.nodeController)
-                        .width(this.nodeWidth + 'px')
-                        .height(this.nodeHeight + 'px')
-                        .backgroundColor(Color.Transparent)
-                        .border({ width: 2, color: Color.Orange })
+                await waitForExist(() => str, this.emitKey, '"play"');
+                this.controller.runJavaScript('setPlaybackRate(3)', (error, result) => {
+                  console.error(`The setPlaybackRate(3) return error is: ${error}`);
+                  console.log(`The setPlaybackRate(3) return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"setPlaybackRate: 3"');
+                this.controller.runJavaScript('setPlaybackRate(1.2)', (error, result) => {
+                  console.log(`The setPlaybackRate() return value is: ${result}`);
+                  console.error(`The setPlaybackRate() return error is: ${error}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"setPlaybackRate: 1.2"');
+                await this.retryPlayingGen(this.emitKey)()
+                this.controller.runJavaScript('setPlaybackRate(-1)', (error, result) => {
+                  console.log(`The setPlaybackRate() return value is: ${result}`);
+                  console.error(`The setPlaybackRate() return error is: ${error}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, null);
+                console.log('video is playing:' + isPlaying)
+                if(rateList.indexOf(-1)>-1){
+                  Utils.emitEvent(false, 132810)
+                }else{
+                  Utils.emitEvent(true, 132810)
                 }
+                break;
+              }
+              case 'emitWebViewNativeMediaPlayerSetPlayRate10': {
+                  let str = '';
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
+                  await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
+                  this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                    console.error(`The buttonPlay() return error is: ${error}`);
+                    console.log(`The buttonPlay() return value is: ${result}`);
+                    str = result;
+                  })
+                  await waitForExist(() => str, this.emitKey, '"play"');
+                  await this.retryPlayingGen(this.emitKey)()
+                  this.controller.runJavaScript('setPlaybackRate(3)', (error, result) => {
+                    console.error(`The setPlaybackRate(3) return error is: ${error}`);
+                    console.log(`The setPlaybackRate(3) return value is: ${result}`);
+                    str = result;
+                  })
+                  await waitForExist(() => str, this.emitKey, '"setPlaybackRate: 3"');
+                  this.controller.runJavaScript('setPlaybackRate(2)', (error, result) => {
+                    console.error(`The setPlaybackRate(2) return error is: ${error}`);
+                    console.log(`The setPlaybackRate(2) return value is: ${result}`);
+                    str = result;
+                  })
+                  await waitForExist(() => str, this.emitKey, '"setPlaybackRate: 2"');
+                  this.controller.runJavaScript('setPlaybackRate(10)', (error, result) => {
+                    console.error(`The setPlaybackRate(10) return error is: ${error}`);
+                    console.log(`The setPlaybackRate(10) return value is: ${result}`);
+                    str = result;
+                  })
+                  await waitForExist(() => str, this.emitKey, '"setPlaybackRate: 10"');
+                  console.log('video is playing:' + isPlaying);
+                  if(handleRateList.indexOf(10)>-1){
+                    Utils.emitEvent(true, 132870)
+                  }else{
+                    Utils.emitEvent(false, 132870)
+                  }
+                  break;
+              }
+              case 'emitWebViewNativeMediaPlayerSetPlayRate2':
+              case 'emitWebViewNativeMediaPlayerSetPlayRate2_handleRateChange': {
+                let str = '';
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
+                await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
+                this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                  console.error(`The buttonPlay() return error is: ${error}`);
+                  console.log(`The buttonPlay() return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"play"');
+                await this.retryPlayingGen(this.emitKey)()
+                this.controller.runJavaScript('setPlaybackRate(3)', (error, result) => {
+                  console.error(`The setPlaybackRate(3) return error is: ${error}`);
+                  console.log(`The setPlaybackRate(3) return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"setPlaybackRate: 3"');
+                this.controller.runJavaScript('setPlaybackRate(2)', (error, result) => {
+                  console.error(`The setPlaybackRate(2) return error is: ${error}`);
+                  console.log(`The setPlaybackRate(2) return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"setPlaybackRate: 2"');
+                console.log('video is playing:' + isPlaying)
+                if(rateList.indexOf(2)>-1){
+                  Utils.emitEvent(true, 132820)
+                }
+                if(handleRateList.indexOf(2)>-1){
+                  Utils.emitEvent(true, 132830)
+                }
+                break;
+              }
+              case 'emitWebViewNativeMediaPlayerSetPlayRate3':
+              case 'emitWebViewNativeMediaPlayerSetPlayRate3_handleRateChange': {
+                let str = '';
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
+                await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
+                this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                  console.error(`The buttonPlay() return error is: ${error}`);
+                  console.log(`The buttonPlay() return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"play"');
+                await this.retryPlayingGen(this.emitKey)()
+                this.controller.runJavaScript('setPlaybackRate(1.2)', (error, result) => {
+                  console.log(`The setPlaybackRate(1.2) return value is: ${result}`);
+                  console.error(`The setPlaybackRate() return error is: ${error}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"setPlaybackRate: 1.2"');
+                this.controller.runJavaScript('setPlaybackRate(3)', (error, result) => {
+                  console.log(`The setPlaybackRate(3) return value is: ${result}`);
+                  console.error(`The setPlaybackRate() return error is: ${error}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"setPlaybackRate: 3"');
+                console.log('video is playing:' + isPlaying)
+                if(rateList.indexOf(3)>-1){
+                  Utils.emitEvent(true, 132850)
+                }
+                if(handleRateList.indexOf(3)>-1){
+                  Utils.emitEvent(true, 132860)
+                }
+                break;
+              }
+              case 'emitWebViewNativeMediaPlayerSetPlayRate1_point_2':
+              case 'emitWebViewNativeMediaPlayerSetPlayRate1_point_2_handleRateChange': {
+                let str = '';
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
+                await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
+                this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                  console.error(`The buttonPlay() return error is: ${error}`);
+                  console.log(`The buttonPlay() return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"play"');
+                await this.retryPlayingGen(this.emitKey)()
+                this.controller.runJavaScript('setPlaybackRate(1.2)', (error, result) => {
+                  console.error(`The setPlaybackRate() return error is: ${error}`);
+                  console.log(`The setPlaybackRate() return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"setPlaybackRate: 1.2"');
+                console.log('video is playing:' + isPlaying)
+                if(rateList.indexOf(1.2)>-1){
+                  Utils.emitEvent(true, 132880)
+                }
+                if(handleRateList.indexOf(1.2)>-1){
+                  Utils.emitEvent(true, 132890)
+                }
+                break;
+              }
+              case 'emitWebViewNativeMediaPlayerHandleVideoSizeChange': {
+                let str = '';
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
+                await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
+                this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                  console.error(`The buttonPlay() return error is: ${error}`);
+                  console.log(`The buttonPlay() return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"play"');
+                await this.retryPlayingGen(this.emitKey)()
+                this.controller.runJavaScript('resize()', (error, result) => {
+                  console.error(`The resize() return error is: ${error}`);
+                  console.log(`The resize() return value is: ${result}`)
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"resizeDom"');
+                console.log('video is playing:' + isPlaying)
+                break;
+              }
+              case 'emitWebViewNativeMediaPlayerSeekNegative1': {
+                let str = '';
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile('multi_source_video_seek.html'))
+                await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
+                this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                  console.error(`The buttonPlay() return error is: ${error}`);
+                  console.log(`The buttonPlay() return value is: ${result}`);
+                  str = result;
+              })
+                await waitForExist(() => str, this.emitKey, '"play"');
+                await this.retryPlayingGen(this.emitKey)()
+                this.controller.runJavaScript('setSeek(20)', (error, result) => {
+                  console.error(`The setSeek(20) return error is: ${error}`);
+                  console.log(`The setSeek(20) return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"setSeek"');
+                this.controller.runJavaScript('setSeek(-1)', (error, result) => {
+                  console.error(`The setSeek(-1) return error is: ${error}`);
+                  console.log(`The setSeek(-1) return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"setSeek"');
+                console.log('video is playing:' + isPlaying)
+                if (seekList.indexOf(-1) > -1){
+                  Utils.emitEvent(false, 132997)
+                }else {
+                  Utils.emitEvent(true, 132997)
+                }
+                break;
+              }
+              case 'emitWebViewNativeMediaPlayerPreloadAuto': {
+                let str = '';
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerPreloadAuto.html'))
+                await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
+                this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                  console.error(`The buttonPlay() return error is: ${error}`);
+                  console.log(`The buttonPlay() return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"play"');
+                await this.retryPlayingGen(this.emitKey)()
+                await waitForExist(() => (durationList.length > 0) ? 1 : 0, this.emitKey, 1);
+                console.log('video is playing:' + isPlaying)
+                if (durationList.length > 0) {
+                  Utils.emitEvent(true, 132900)
+                }
+                break;
+              }
+              case 'emitWebViewNativeMediaPlayerTimeUpdate': {
+                let str = '';
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
+                await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
+                this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                  console.error(`The buttonPlay() return error is: ${error}`);
+                  console.log(`The buttonPlay() return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"play"');
+                await this.retryPlayingGen(this.emitKey)()
+                await waitForExist(() => (timeUpdateList.length > 0) ? 1 : 0, this.emitKey, 1);
+                if (timeUpdateList.length > 0) {
+                  Utils.emitEvent(true, 132910)
+                }
+                console.log('video is playing:' + isPlaying)
+                break;
+              }
+              case 'emitWebViewNativeMediaPlayerBufferedEndTime': {
+                this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
+                await Utils.sleep(8000)
+                this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                  console.error(`The buttonPlay() return error is: ${error}`);
+                  console.log(`The buttonPlay() return value is: ${result}`);
+                })
+                await this.retryPlayingGen(this.emitKey)()
+                await Utils.sleep(1000)
+                console.log('video is playing:' + isPlaying)
+                break;
+              }
+              case 'emitWebViewNativeMediaPlayerFormatError': {
+                mediaErrorState = 2
+                let str = '';
+                this.controller.loadUrl($rawfile('nativeMediaError.html'))
+                await Utils.sleep(2000)
+                this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                  console.error(`The buttonPlay() return error is: ${error}`);
+                  console.log(`The buttonPlay() return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => (isError && isRelease &&
+                  mediaErrorTypeList.indexOf(2) > -1) ? 1 : 0, this.emitKey, 1);
+                console.log(`The isRelease: ${isRelease}`);
+                console.log(`The mediaErrorTypeList: ${mediaErrorTypeList}`);
+                console.log(`The isError: ${isError}`);
+                if (isError && isRelease && mediaErrorTypeList.indexOf(2) > -1) {
+                  Utils.emitEvent(true, 132920)
+                }
+                break;
+              }
+              case 'emitWebViewNativeMediaPlayerNetError': {
+                mediaErrorState = 1
+                let str = '';
+                this.controller.loadUrl($rawfile('nativeMediaError.html'))
+                await Utils.sleep(2000)
+                this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                  console.error(`The buttonPlay() return error is: ${error}`);
+                  console.log(`The buttonPlay() return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => (isError && isRelease &&
+                  mediaErrorTypeList.indexOf(1) > -1) ? 1 : 0, this.emitKey, 1);
+                console.log(`The isRelease: ${isRelease}`);
+                console.log(`The mediaErrorTypeList: ${mediaErrorTypeList}`);
+                console.log(`The isError: ${isError}`);
+                if (isError && isRelease && mediaErrorTypeList.indexOf(1) > -1) {
+                  Utils.emitEvent(true, 132930)
+                }
+                break;
+              }
+              case 'emitWebViewNativeMediaPlayerDecodeError': {
+                mediaErrorState = 3
+                let str = '';
+                this.controller.loadUrl($rawfile('nativeMediaError.html'))
+                await Utils.sleep(2000)
+                this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                  console.error(`The buttonPlay() return error is: ${error}`);
+                  console.log(`The buttonPlay() return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => (isError && isRelease &&
+                  mediaErrorTypeList.indexOf(3) > -1) ? 1 : 0, this.emitKey, 1);
+                console.log(`The isRelease: ${isRelease}`);
+                console.log(`The mediaErrorTypeList: ${mediaErrorTypeList}`);
+                console.log(`The isError: ${isError}`);
+                if (isError && isRelease && mediaErrorTypeList.indexOf(3) > -1) {
+                  Utils.emitEvent(true, 132940)
+                }
+                break;
+              }
+              case 'emitWebViewNativeMediaPlayerNetworkStateLoading': {
+                networkState = 2
+                let str = '';
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
+                await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
+                this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                  console.error(`The buttonPlay() return error is: ${error}`);
+                  console.log(`The buttonPlay() return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"play"');
+                await this.retryPlayingGen(this.emitKey)()
+                console.info('Loading networkStateList.indexOf(2) is: ' + networkStateList.indexOf(2))
+                console.log('video is playing:' + isPlaying)
+                console.log('video is playing:' + isPlaying)
+                if (networkStateList.indexOf(2) > -1){
+                  Utils.emitEvent(true, 132960)
+                }else {
+                  Utils.emitEvent(false, 132960)
+                }
+                break;
+              }
+              case 'emitWebViewNativeMediaPlayerNetworkStateIdle': {
+                networkState = 1
+                let str = '';
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
+                await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
+                this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                  console.error(`The buttonPlay() return error is: ${error}`);
+                  console.log(`The buttonPlay() return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"play"');
+                await this.retryPlayingGen(this.emitKey)()
+                await waitForExist(() => (networkStateList.indexOf(1) > -1) ? 1 : 0, this.emitKey, 1);
+                console.log('video is playing:' + isPlaying)
+                console.info('Idle networkStateList.indexOf(1) is: ' + networkStateList.indexOf(1))
+                if (networkStateList.indexOf(1) > -1){
+                  Utils.emitEvent(true, 132950)
+                }else {
+                  Utils.emitEvent(false, 132950)
+                }
+                break;
+              }
+              case 'emitWebViewNativeMediaPlayerNetworkStateError': {
+                networkState = 3
+                let str = '';
+                this.controller.loadUrl($rawfile('nativeMediaError.html'))
+                await Utils.sleep(2000)
+                this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                  console.error(`The buttonPlay() return error is: ${error}`);
+                  console.log(`The buttonPlay() return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => networkStateList.indexOf(3) > -1 ? 1 : 0, this.emitKey, 1);
+                console.info('Error networkStateList.indexOf(3) is: ' + networkStateList.indexOf(3))
+                if (networkStateList.indexOf(3) > -1){
+                  Utils.emitEvent(true, 132970)
+                }else {
+                  Utils.emitEvent(false, 132970)
+                }
+                break;
+              }
+              case 'emitWebViewNativeMediaPlayerUpdateRect_1':
+              case 'emitWebViewNativeMediaPlayerUpdateRect_2':
+              case 'emitWebViewNativeMediaPlayerUpdateRect_3':
+              case 'emitWebViewNativeMediaPlayerUpdateRect_4': {
+                let str = '';
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerUpdateRect.html'))
+                await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
+                this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                  console.error(`The buttonPlay() return error is: ${error}`);
+                  console.log(`The buttonPlay() return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"play"');
+                await this.retryPlayingGen(this.emitKey)()
+                this.controller.runJavaScript('setPlaybackRate(10)', (error, result) => {
+                  console.error(`The setPlaybackRate() return error is: ${error}`);
+                  console.log(`The setPlaybackRate() return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, null);
+                this.controller.runJavaScript('setPlaybackRate(2)', (error, result) => {
+                  console.error(`The setPlaybackRate() return error is: ${error}`);
+                  console.log(`The setPlaybackRate() return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, null);
+                console.log('video is playing:' + isPlaying)
+                break;
+              }
+              case 'emitWebViewNativeMediaPlayerReadyState_1': {
+                readyState = 1
+                let str = '';
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerPreloadAuto.html'))
+                await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
+                this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                  console.error(`The buttonPlay() return error is: ${error}`);
+                  console.log(`The buttonPlay() return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"play"');
+                await this.retryPlayingGen(this.emitKey)()
+                await waitForExist(() => (readyStateList.indexOf(1) > -1) ? 1 : 0, this.emitKey, 1);
+                console.log('emitWebViewNativeMediaPlayerReadyState_1 video is playing:' + isPlaying)
+                if (readyStateList.indexOf(1) > -1){
+                  Utils.emitEvent(true, 132994)
+                }else {
+                  Utils.emitEvent(false, 132994)
+                }
+                break;
+              }
+              case 'emitWebViewNativeMediaPlayerReadyState_2': {
+                readyState = 2
+                let str = '';
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerPreloadAuto.html'))
+                await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
+                this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                  console.error(`The buttonPlay() return error is: ${error}`);
+                  console.log(`The buttonPlay() return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"play"');
+                await this.retryPlayingGen(this.emitKey)()
+                await waitForExist(() => (readyStateList.indexOf(2) > -1) ? 1 : 0, this.emitKey, 1);
+                if (readyStateList.indexOf(2) > -1){
+                  Utils.emitEvent(true, 132980)
+                }else {
+                  Utils.emitEvent(false, 132980)
+                }
+                break;
+              }
+              case 'emitWebViewNativeMediaPlayerReadyState_3': {
+                readyState = 3
+                let str = '';
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerPreloadAuto.html'))
+                await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
+                this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                  console.error(`The buttonPlay() return error is: ${error}`);
+                  console.log(`The buttonPlay() return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"play"');
+                await this.retryPlayingGen(this.emitKey)()
+                await waitForExist(() => (readyStateList.indexOf(3) > -1) ? 1 : 0, this.emitKey, 1);
+                if (readyStateList.indexOf(3) > -1){
+                  Utils.emitEvent(true, 132990)
+                }else {
+                  Utils.emitEvent(false, 132990)
+                }
+                break;
+              }
+              case 'emitWebViewNativeMediaPlayerReadyState_4': {
+                readyState = 4
+                let str = '';
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerPreloadAuto.html'))
+                await waitForExist(() => this.isPageEnd, 'isPageEnd ' + this.emitKey, 0);
+                this.controller.runJavaScript('buttonPlay()', (error, result) => {
+                  console.error(`The buttonPlay() return error is: ${error}`);
+                  console.log(`The buttonPlay() return value is: ${result}`);
+                  str = result;
+                })
+                await waitForExist(() => str, this.emitKey, '"play"');
+                await this.retryPlayingGen(this.emitKey)()
+                await waitForExist(() => (readyStateList.indexOf(4) > -1) ? 1 : 0, this.emitKey, 1);
+                console.log(`The readyStateList.indexOf(4) is: ${readyStateList.indexOf(4)}`);
+                if (readyStateList.indexOf(4) > -1){
+                  Utils.emitEvent(true, 132992)
+                }else {
+                  Utils.emitEvent(false, 132992)
+                }
+                break;
+              }
             }
+          })
         }
+        Stack() {
+          Web({ src: '', controller: this.controller })
+            .enableNativeMediaPlayer({ enable: true, shouldOverlay: this.isShouldOverlay })
+            .onPageBegin(async (event: PageBeginParam) => {
+              console.error(this.emitKey + ' enter onPageBegin, url:' + event.url);
+              if (this.controller.onCreateNativeMediaPlayer) {
+                let callback: webview.CreateNativeMediaPlayerCallback =
+                  (handler: webview.NativeMediaPlayerHandler, mediaInfo: webview.MediaInfo) => {
+                    this.nativeMediaPlayerHandlerImpl = new NativeMediaPlayerHandlerImpl(handler)
+                    console.log('mediaInfo' + JSON.stringify(mediaInfo))
+                    this.isCallback = true
+                    if (mediaInfo.preload === webview.Preload.AUTO){
+                        Utils.emitEvent(true, 132900)
+                    }
+                    this.nativePlayer = new NativeMediaPlayerImpl(this,
+                        this.nativeMediaPlayerHandlerImpl, mediaInfo);
+                    console.info('onPageBegin key==>' + this.emitKey)
+                    switch (this.emitKey) {
+                      case 'emitWebViewNativeMediaPlayerUpdateRect_1':{
+                        this.nativePlayer.updateRect(-1, 1, 1200, 800);
+                        console.info('UpdateRect -1, 1, 1200, 800')
+                        Utils.emitEvent(true, 132790)
+                        break;
+                      }
+                      case 'emitWebViewNativeMediaPlayerUpdateRect_2':{
+                        this.nativePlayer.updateRect(4, -2, 1200, 800);
+                        console.info('UpdateRect 4, -2, 1200, 800')
+                        Utils.emitEvent(true, 132800)
+                        break;
+                      }
+                      case 'emitWebViewNativeMediaPlayerUpdateRect_3':{
+                        this.nativePlayer.updateRect(8, 9, -5.2, 800);
+                        console.info('UpdateRect 8, 9, -5.2, 800')
+                        Utils.emitEvent(true, 132991)
+                        break;
+                      }
+                      case 'emitWebViewNativeMediaPlayerUpdateRect_4':{
+                        this.nativePlayer.updateRect(88, 12, 1200, -6);
+                        console.info('UpdateRect 88, 12, 1200, -6')
+                        Utils.emitEvent(true, 132993)
+                        break;
+                      }
+
+
+                    }
+
+                      return this.nativePlayer;
+                  }
+
+                this.controller.onCreateNativeMediaPlayer(callback);
+              }
+              switch (this.emitKey) {
+                case 'emitWebViewNativeMediaPlayerSetPlayRate10':{
+                  await Utils.sleep(5000)
+                  this.nativeMediaPlayerHandlerImpl!.handlePlaybackRateChanged(10)
+                }
+                case 'emitWebViewNativeMediaPlayerSetPlayRate2_handleRateChange':
+                case 'emitWebViewNativeMediaPlayerSetPlayRate2':{
+                  await Utils.sleep(5000)
+                  this.nativeMediaPlayerHandlerImpl!.handlePlaybackRateChanged(2)
+                }
+                case 'emitWebViewNativeMediaPlayerSetPlayRate1_point_2_handleRateChange':
+                case 'emitWebViewNativeMediaPlayerSetPlayRate1_point_2':{
+                  await Utils.sleep(5000)
+                  this.nativeMediaPlayerHandlerImpl!.handlePlaybackRateChanged(1.2)
+                }
+                case 'emitWebViewNativeMediaPlayerSetPlayRate3_handleRateChange':
+                case 'emitWebViewNativeMediaPlayerSetPlayRate3':{
+                  await Utils.sleep(5000)
+                  this.nativeMediaPlayerHandlerImpl!.handlePlaybackRateChanged(3)
+                }
+              }
+              this.controller.pauseAllMedia();
+              console.error('exit onPageBegin');
+            })  
+            .onPageEnd(async (event) => {
+                console.log(this.emitKey + ' web pageEnd==>' + event.url);
+                this.isPageEnd = 0;
+            })
+            .width('100%')
+            .height('100%')
+            .onAreaChange((oldValue: Area, newValue: Area) => {
+              oldValue;
+              this.area = newValue;
+            })
+
+          if (this.showNativeMediaPlayer) {
+            NodeContainer(this.nodeController)
+              .width(this.nodeWidth + 'px')
+              .height(this.nodeHeight + 'px')
+              .backgroundColor(Color.Transparent)
+              .border({ width: 2, color: Color.Orange })
+          }
+        }
+      }
     }
 }
-                    
-   
