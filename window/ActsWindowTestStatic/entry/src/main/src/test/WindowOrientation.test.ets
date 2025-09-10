@@ -93,7 +93,7 @@ export default function WindowOrientationTest() {
                 done();
             } catch (err: BusinessError) {
                 hilog.info(0x0000, '[ANI]',msgStr + 'test enum value of windowStageEventType error ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done();
             }
         })
@@ -126,7 +126,7 @@ export default function WindowOrientationTest() {
                 done();
             } catch (error: BusinessError) {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Failed to testRectChangeReason_enum' + JSON.stringify(error));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done();
             }
         })
@@ -152,7 +152,7 @@ export default function WindowOrientationTest() {
             try {
                 (win as window.Window).setPreferredOrientation(orientation).then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in setting the window orientation.');
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done();
                 }).catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the window orientation. Cause: ' + JSON.stringify(err));
@@ -193,7 +193,7 @@ export default function WindowOrientationTest() {
                         return;
                     }
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in setting window orientation.');
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done()
                 });
             } catch (exception: BusinessError) {
@@ -216,7 +216,7 @@ export default function WindowOrientationTest() {
             let caseName: string = 'test_RotationChange_static_0100';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let subWindowClass:window.Window = await windowStage.createSubWindow('test_RotationChange_0200');
+            let subWindowClass:window.Window = await windowStage.createSubWindow('test_RotationChange_static_0100');
             await subWindowClass.destroyWindow();
             try {
                 let rotationCallback = (rotationInfo: window.RotationChangeInfo): window.RotationChangeResult => {}
@@ -240,7 +240,7 @@ export default function WindowOrientationTest() {
             let caseName: string = 'test_RotationChange_static_0200';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let subWindowClass:window.Window = await windowStage.createSubWindow('test_RotationChange_0200');
+            let subWindowClass:window.Window = await windowStage.createSubWindow('test_RotationChange_static_0200');
             await subWindowClass.destroyWindow();
             try {
                 let rotationCallback = (rotationInfo: window.RotationChangeInfo): window.RotationChangeResult => {
@@ -336,7 +336,7 @@ export default function WindowOrientationTest() {
                 subWindowClass.off('rotationChange', rotationCallback);
                 hilog.info(0x0000, '[ANI]',`${caseName} :on rotationChange success. `);
                 await subWindowClass.destroyWindow()
-                expect().assertTrue();
+                expect(true).assertTrue();
                 done();
             } catch (err:BusinessError) {
                 hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err!.code}, message: ${err!.message}`);
@@ -344,7 +344,7 @@ export default function WindowOrientationTest() {
                 if (err!.code === 801) {
                     done()
                 } else {
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done();
                 }
             }
@@ -380,7 +380,7 @@ export default function WindowOrientationTest() {
                 if (err!.code === 801) {
                     done()
                 } else {
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done();
                 }
             }
