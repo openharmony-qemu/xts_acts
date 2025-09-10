@@ -27,7 +27,7 @@ namespace NodeEventTest {
 napi_value GetNumberValueTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_test1ret1 == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
+    napi_create_int32(env, g_test1ret1 ? 0 : 1, &retValue);
     return retValue;
 }
 

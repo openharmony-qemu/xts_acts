@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach } from '@ohos/hypium'
 import nativerenderndk from 'libnoderenderndk.so'
 import Utils from '../common/Utils';
 import { ON } from '@kit.TestKit';
@@ -26,7 +26,7 @@ const ARKUI_ERROR_CODE_NODE_EVENT_NO_RETURN = 106109;
 
 export default function NodeEventTest() {
   describe('NodeEventTest', () => {
-    beforeAll(async (done: Function) => {
+    beforeEach(async (done: Function) => {
       await Utils.pushPage(`NodeEventTest/NodeEventTest`, done);
     });
     /*

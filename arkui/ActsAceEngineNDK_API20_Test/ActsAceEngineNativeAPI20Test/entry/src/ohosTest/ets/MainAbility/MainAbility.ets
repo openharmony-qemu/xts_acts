@@ -17,11 +17,12 @@ import Ability from '@ohos.app.ability.UIAbility';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import { BusinessError } from '@ohos.base';
+import { AbilityConstant, Want } from '@kit.AbilityKit';
 
 const TAG: string = '[createWindow]'
 
 export default class MainAbility extends Ability {
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     // Ability is creating, initialize resources for this ability
     console.log(`${TAG} MainAbility onCreate`);
     globalThis.abilityWant = want;
@@ -33,12 +34,12 @@ export default class MainAbility extends Ability {
     console.log(`${TAG} MainAbility onDestroy`);
   }
 
-  onWindowStageCreate(windowStage) {
+  onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
     console.log(`${TAG} MainAbility onWindowStageCreate windowStage=` + windowStage);
     globalThis.windowStage = windowStage;
     globalThis.context = this.context;
-    windowStage.setUIContent(this.context, 'MainAbility/pages/XTSIndex', null);
+    windowStage.loadContent('MainAbility/pages/XTSIndex', null);
     let windowClass: window.Window | undefined = undefined;
     windowStage.getMainWindow((err: BusinessError, data) => {
       let errCode: number = err.code;
