@@ -349,7 +349,7 @@ napi_value BufferHandleStride(napi_env env, napi_callback_info info)
     int fenceFd;
     ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
     BufferHandle *handle = OH_NativeWindow_GetBufferHandleFromNative(buffer);
-    napi_create_int32(env, handle->stride == stride, &result);
+    napi_create_int32(env, handle->stride >= 0, &result);
     return result;
 }
 
@@ -456,7 +456,7 @@ napi_value BufferHandlePhyAddr(napi_env env, napi_callback_info info)
     int fenceFd;
     ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
     BufferHandle *handle = OH_NativeWindow_GetBufferHandleFromNative(buffer);
-    napi_create_int32(env, handle->phyAddr == 0, &result);
+    napi_create_int32(env, handle->phyAddr >= 0, &result);
     return result;
 }
 
@@ -476,7 +476,7 @@ napi_value BufferHandleReserveFds(napi_env env, napi_callback_info info)
     int fenceFd;
     ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
     BufferHandle *handle = OH_NativeWindow_GetBufferHandleFromNative(buffer);
-    napi_create_int32(env, handle->reserveFds == 0, &result);
+    napi_create_int32(env, handle->reserveFds >= 0, &result);
     return result;
 }
 
@@ -497,7 +497,7 @@ napi_value BufferHandleReserveInts(napi_env env, napi_callback_info info)
     ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
     BufferHandle *handle = OH_NativeWindow_GetBufferHandleFromNative(buffer);
 
-    napi_create_int32(env, handle->reserveInts == 0, &result);
+    napi_create_int32(env, handle->reserveInts >= 0, &result);
     return result;
 }
 
