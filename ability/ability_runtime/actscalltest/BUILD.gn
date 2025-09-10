@@ -25,6 +25,8 @@ group("actscalltest") {
       "systemcallfeature:ActsCallTestFeatureRelyHap",
       "thirdappa:ActsThirdAppARelyHap",
       "thirdcalltest:ActsThirdCallTest",
+      "systemcallentrytestrelystatic:ActsCallTestEntryRelyStaticTest",
+      "systemcallentryteststatic:ActsCallTestEntryStaticTest",
     ]
   }
 }
