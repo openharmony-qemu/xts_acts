@@ -3497,10 +3497,8 @@ static napi_value TestThreadSafetyErrorHandling(napi_env env, napi_callback_info
 }
 
 // Helper function for basic UTF-16 string creation and verification
-static bool CreateAndVerifyUtf16String(napi_env env,
-                                       const char16_t* utf16String,
-                                       napi* utf16Val,
-                                       size_t* requiredLength)
+static bool CreateAndVerifyUtf16String(napi_env env, const char16_t* utf16String,
+                                       napi_value* utf16Val, size_t* requiredLength)
 {
     napi_status status = napi_create_string_utf16(env, utf16String, NAPI_AUTO_LENGTH, utf16Val);
     if (status != napi_ok) {
@@ -3537,10 +3535,8 @@ static bool CreateAndVerifyUtf16String(napi_env env,
 }
 
 // Helper function for UTF-16 truncation testing
-static bool TestUtf16Truncation(napi_env env,
-                                napi_value utf6Val,
-                                const char16_tString,
-                                size_t requiredLength)
+static bool TestUtf16Truncation(napi_env env, napi_value utf16Val,
+                                const char16_t* originalString, size_t requiredLength)
 {
     const size_t minTruncationSize = 5;
     if (requiredLength <= minTruncationSize) {
@@ -4281,6 +4277,7 @@ static napi_value NapiStringTest009(napi_env env, napi_callback_info info)
     napi_get_boolean(env, testResult, &result);
     return result;
 }
+
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
