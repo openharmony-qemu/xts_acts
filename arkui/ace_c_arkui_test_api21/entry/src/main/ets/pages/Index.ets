@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,8 +13,6 @@
  * limitations under the License.
  */
 
-import nativerender from 'libnativerender.so'
-
 @Entry
 @Component
 struct Index {
@@ -25,17 +23,6 @@ struct Index {
           .fontSize('32fp')
           .fontWeight(500)
           .margin({ bottom: 24 })
-
-        XComponent({
-          id: 'xComponentId',
-          type: XComponentType.NODE,
-          libraryname: 'nativerender'
-        }).onDestroy(() => {
-          console.log('onDestroy');
-        }).onAppear(() => {
-
-        }).width('100%')
-          .height('100%')
       }.margin({
         top: 27,
         left: 12,
