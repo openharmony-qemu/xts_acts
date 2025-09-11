@@ -25,10 +25,10 @@ struct AccessibilityOptions {
   @State FillColor: string = '#FF000000';
   @State name: string = 'AccessibilityOptions';
   @State StepTips: string = '设备支持屏幕朗读时\n' + '操作步骤:\n' + '1、从上到下依次滑动观察屏幕朗读情况\n' + '\n' +
-    '预期结果：1、绿框绘制在组件上，屏幕朗读朗读”有accessibility有text优先读accessibility，accessibility无text 读accessibility，无accessibility有text 读text，有accessibility有text btn123，btn123“\n' +
-    '2、绿框绘制在组件上，屏幕朗读朗读“有accessibility有text优先读accessibility”\n' +
-    '3、绿框绘制在组件上，屏幕朗读朗读“accessibility无text 读accessibility按钮”\n' +
-    '4、绿框绘制在组件上，屏幕朗读朗读“无accessibility有text 读text按钮”\n' +
+    '预期结果：1、绿框绘制在组件上，屏幕朗读朗读“有accessibility有text优先读accessibility”\n' +
+    '2、绿框绘制在组件上，屏幕朗读朗读“accessibility无text 读accessibility按钮”\n' +
+    '3、绿框绘制在组件上，屏幕朗读朗读“无accessibility有text 读text按钮”\n' +
+    '4、绿框绘制在组件上，屏幕朗读朗读”有accessibility有text优先读accessibility，accessibility无text 读accessibility，无accessibility有text 读text，有accessibility有text btn123，btn123“\n' +
     '5、绿框绘制在组件上，屏幕朗读朗读“有accessibility有text btn123按钮”\n' +
     '6、绿框绘制在组件上，屏幕朗读朗读“btn123按钮”';
   @State Vue: boolean = false;
