@@ -465,6 +465,7 @@ export default function audioRendererTest() {
             rendererInfo: AudioRendererInfo
           }
           try {
+            () => {
             try {
               let data = await audio.createAudioRenderer(AudioRendererOptions);
               audioRender = data;
@@ -473,6 +474,7 @@ export default function audioRendererTest() {
             } catch (err: BusinessError) {
               console.info(`${TagFrmwkRender}:  AudioRender Created : ERROR : ` + err.message);
             }
+            }()
           } catch (error: BusinessError) {
             console.info(`${TagFrmwkRender}:  AudioRender Created : catch ERROR : ` + error.code + error.message);
           }
