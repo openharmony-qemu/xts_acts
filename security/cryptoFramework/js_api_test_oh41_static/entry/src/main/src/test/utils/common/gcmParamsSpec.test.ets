@@ -128,7 +128,7 @@ function genGcmParamsSpecWithoutAAD(): crypto.GcmParamsSpec {
 
 
 function createGcmParam(paramType: string, aadLength: number = 0, ivLength: number = 0): crypto.GcmParamsSpec {
-  let params: crypto.GcmParamsSpec = {} as crypto.GcmParamsSpec;
+  let params: crypto.GcmParamsSpec;
   try {
     switch (paramType) {
       case 'genGcmParamsSpecNullAAD':
