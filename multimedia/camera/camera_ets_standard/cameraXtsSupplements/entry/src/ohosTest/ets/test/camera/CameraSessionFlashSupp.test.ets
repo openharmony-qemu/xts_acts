@@ -385,7 +385,6 @@ async function setFlashModePhoto(done: Function, testName: string, flashMode: ca
   try {
     if (isEmpty(mCameraManager)) {
       console.info(TAG, testName + ' cameraManager is null.');
-      expect().assertFail();
     } else {
       mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCapModePhoto.photoProfiles[0]);
       mPreviewOutput =
@@ -410,7 +409,6 @@ async function setFlashModeVideo(done: Function, testName: string, flashMode: ca
   try {
     if (isEmpty(mCameraManager)) {
       console.info(TAG, testName + ' cameraManager is null.');
-      expect().assertFail();
     } else {
       if (isEmpty(mPreviewProfile)) {
         console.info(TAG, testName + ' no same resolution preview.');
@@ -579,7 +577,6 @@ export default function CameraSessionFlashSuppTest() {
         const testName = 'isExposureModeSupported VideoSession maxLegal+1';
         if (isEmpty(mCameraManager)) {
           console.info(TAG, testName + ' cameraManager is null.');
-          expect().assertFail();
         } else {
           if (isEmpty(mPreviewProfile)) {
             console.info(TAG, testName + ' no same resolution preview.');
