@@ -52,7 +52,7 @@ export default function InputDeviceTest() {
     it("SUB_MMI_Input_Api_IptDev_getDeviceInfo_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       let caseName = "SUB_MMI_Input_Api_IptDev_getDeviceInfo_0100";
       try {
-        inputDevice.getDeviceInfo(1, (error: BusinessError | Object | undefined, deviceData: inputDevice.InputDeviceData):void => {
+        inputDevice.getDeviceInfo(1, (error: BusinessError<void> | null, deviceData: inputDevice.InputDeviceData | undefined): void => {
           if (error) {
             hilog.info(domain, tag, `${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectFalse(true);
@@ -105,15 +105,17 @@ export default function InputDeviceTest() {
     it("SUB_MMI_Input_Api_IptDev_getDeviceList_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       let caseName = "SUB_MMI_Input_Api_IptDev_getDeviceList_0100";
       try {
-        inputDevice.getDeviceList((error: BusinessError | Object | undefined, ids: Array<Number>):void => {
+        inputDevice.getDeviceInfo(1, (error: BusinessError<void> | null, deviceData: inputDevice.InputDeviceData | undefined): void => {
           if (error) {
             hilog.info(domain, tag, `${caseName} Failed to get device id list, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectFalse(true);
             done();
           } else {
-            hilog.info(domain, tag, `${caseName} Device id list: ${JSON.stringify(ids)}`);
-            ExpectTrue(Array.isArray(ids));
-            done();
+            inputDevice.getDeviceList().then((ids: Array<Number>) => {
+              hilog.info(domain, tag, `${caseName} Device id list: ${JSON.stringify(ids)}`);
+              ExpectTrue(Array.isArray(ids));
+              done();
+            });
           }
         });
       } catch (error) {

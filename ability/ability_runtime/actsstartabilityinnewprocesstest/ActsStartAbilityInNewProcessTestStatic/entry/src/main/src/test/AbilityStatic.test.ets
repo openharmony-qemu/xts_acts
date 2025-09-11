@@ -167,7 +167,7 @@ export default function abilitystaticTest() {
           hilog.info(domain, testTag, '%{public}s', 'onAbilityCreate end');
 
         },
-      }, (err: BusinessError) : void => {
+      }, (err: BusinessError | null) : void => {
         if (err != null ) {
           hilog.info(domain, testTag, '%{public}s', '-----'+ err.code);
         }
