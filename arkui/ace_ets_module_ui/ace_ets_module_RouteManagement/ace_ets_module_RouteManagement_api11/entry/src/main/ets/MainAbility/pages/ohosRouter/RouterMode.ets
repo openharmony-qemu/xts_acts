@@ -54,8 +54,10 @@ struct RouterMode {
                   console.error(`pushUrl failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError).message}`);
                 })
             } catch (err) {
-              console.error(`pushUrl1 failed, code is ${err.code}, message is ${err.message}`)
-              AppStorage.setOrCreate('401Code', err.code);
+              if (err && err?.code) {
+                console.error(`pushUrl1 failed, code is ${err?.code}, message is ${err?.message}`)
+                AppStorage.setOrCreate('401Code', err.code);
+              }
             }
           })
 

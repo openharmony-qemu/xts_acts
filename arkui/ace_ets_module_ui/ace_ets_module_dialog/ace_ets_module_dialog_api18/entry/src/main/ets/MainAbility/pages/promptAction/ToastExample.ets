@@ -44,6 +44,7 @@ struct ToastExample {
           try {
             this.promptAction.closeToast(5555);
           } catch (error) {
+            const e = error as BusinessError
             let message = (error as BusinessError).message;
             let code = (error as BusinessError).code;
             console.error(`CloseToast error code is ${code}, message is ${message}`);
@@ -56,6 +57,7 @@ struct ToastExample {
           try {
             this.promptAction.closeToast(this.toastId);
           } catch (error) {
+            const e = error as BusinessError
             let message = (error as BusinessError).message;
             let code = (error as BusinessError).code;
             console.error(`CloseToast error code is ${code}, message is ${message}`);
