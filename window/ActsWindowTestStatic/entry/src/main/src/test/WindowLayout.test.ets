@@ -599,7 +599,7 @@ export default function WindowLayoutTest() {
                     expect(data.width).assertEqual(500);
                     expect(data.height).assertEqual(500);
                     subWindowClass.off('windowSizeChange');
-                    await subWindowClass.destroyWindow();
+                    subWindowClass.destroyWindow();
                     done();
                 });
                 await subWindowClass.resize(500, 500);
