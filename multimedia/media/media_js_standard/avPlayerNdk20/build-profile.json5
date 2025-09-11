@@ -15,19 +15,6 @@
 {
   "app": {
     "signingConfigs": [
-      {
-        "name": "default",
-        "type": "HarmonyOS",
-        "material": {
-          "certpath": "C:\\Users\\lenovo\\.ohos\\config\\default_avPlayerNdk_hYU9jCNUGPzmzU2Nsy4qaPm3dJXJKfnD34FiAz5L7Es=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001BCD849BDA9CDB4C7B99DB30B61E59978A5B9806D2FE0AD519FFF625DA5AFC6DEBDC31179AA6C5EC",
-          "profile": "C:\\Users\\lenovo\\.ohos\\config\\default_avPlayerNdk_hYU9jCNUGPzmzU2Nsy4qaPm3dJXJKfnD34FiAz5L7Es=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\lenovo\\.ohos\\config\\default_avPlayerNdk_hYU9jCNUGPzmzU2Nsy4qaPm3dJXJKfnD34FiAz5L7Es=.p12",
-          "storePassword": "0000001B579E9E76462F6F8BE60A3FF3AAA40C0AC5B20371DC474B5404D5393F6560689E06FEC0C730531C"
-        }
-      }
     ],
     "products": [
       {

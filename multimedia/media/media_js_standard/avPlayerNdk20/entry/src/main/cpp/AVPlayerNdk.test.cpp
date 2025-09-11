@@ -328,7 +328,7 @@ static napi_value OH_AVPlayer_SetPlayerCallback0100(napi_env env, napi_callback_
 static napi_value OH_AVPlayer_GetCurrentTrack0100(napi_env env, napi_callback_info info)
 {
     int32_t trackType = 0;
-    int32_t *index = 0;
+    int32_t *index = nullptr;
     OH_AVErrCode errcode = OH_AVPlayer_GetCurrentTrack(nullptr, trackType, index);
     int32_t res = 1;
     if (errcode == AV_ERR_INVALID_VAL) {
