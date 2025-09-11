@@ -487,7 +487,6 @@ export default function SensorJsStaticTest() {
           } else {
             expect(false).assertTrue();
           }
-          expect(sensor.SensorId.COLOR == sensor.SensorId.COLOR).assertTrue();
           done();
         }
       })
@@ -495,7 +494,7 @@ export default function SensorJsStaticTest() {
      /*
      * @tc.name:getRotationMatrix_SensorJsTest_static_002
      * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorsSystem_static_JsTest_0020
+     * @tc.number:SUB_SensorsSystem_static_JsTest_0021
      */
     it("getRotationMatrix_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -515,7 +514,6 @@ export default function SensorJsStaticTest() {
           } else {
             expect(false).assertTrue();
           }
-          expect(sensor.SensorId.COLOR == sensor.SensorId.COLOR).assertTrue();
           done();
         }
       })
@@ -566,7 +564,7 @@ export default function SensorJsStaticTest() {
     /*
      * @tc.name:getRotationMatrixSync_SensorJsTest_static_003
      * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorsSystem_static_JsTest_0030
+     * @tc.number:SUB_SensorsSystem_static_JsTest_0031
      */
     it("getRotationMatrixSync_SensorJsTest_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -588,7 +586,7 @@ export default function SensorJsStaticTest() {
       /*
      * @tc.name:getRotationMatrixSync_SensorJsTest_static_004
      * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorsSystem_static_JsTest_0040
+     * @tc.number:SUB_SensorsSystem_static_JsTest_0041
      */
     it("getRotationMatrixSync_SensorJsTest_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -630,7 +628,7 @@ export default function SensorJsStaticTest() {
     /*
      * @tc.name:getSensorList_SensorJsTest_static_005
      * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorsSystem_static_JsTest_0050
+     * @tc.number:SUB_SensorsSystem_static_JsTest_0051
      */
     it("getSensorList_SensorJsTest_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
