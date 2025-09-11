@@ -18,6 +18,8 @@ import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest';
+import { Driver, ON } from '@kit.TestKit';
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -74,7 +76,9 @@ export default function webMessageExtErrorCode() {
     it('testWebMessageExtSetStringErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetStringErrorCode001", 170290)
       Utils.registerEvent("testWebMessageExtSetStringErrorCode001", "17100014", 170300, done);
-      sendEventByKey('WebMessageExtButton', 10, '');
+      let component = await driver.findComponent(ON.id("WebMessageExtButton"));
+      await component.click();
+
     })
 
     /*
