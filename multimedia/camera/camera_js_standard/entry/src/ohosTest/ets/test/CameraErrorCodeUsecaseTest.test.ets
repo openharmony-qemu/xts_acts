@@ -143,6 +143,9 @@ export default function CameraErrorCodeUsecaseTest() {
     }
     mCameraNum = mCameraDevicesArray.length;
     console.info(TAG + "getCameraSupportDevicesArray is: " + mCameraNum);
+    for (let i = 0; i < mCameraNum; i++) {
+      console.info(TAG + " CameraDevicesconnectionType is : " + mCameraDevicesArray[i].connectionType);
+    }
     console.info(TAG + 'Exit getCameraSupportDevicesArray');
     return true;
   }
@@ -3066,6 +3069,7 @@ export default function CameraErrorCodeUsecaseTest() {
      * @tc.level     : Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_CAMERA_INPUT_0500', Level.LEVEL0, async (done: Function) => {
+      let testNum: string = 'SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_CAMERA_INPUT_0500';
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_CAMERA_INPUT_0500--------------");
       if (isEmpty(mCameraManager)) {
         console.info(TAG +
@@ -3080,10 +3084,13 @@ export default function CameraErrorCodeUsecaseTest() {
           createOutput(0);
           mCameraSession.addOutput(mPreviewOutput);
           mCameraSession.addOutput(mPhotoOutput);
-          if (mCameraNum > 1) {
+          if (mCameraNum > 1 && mCameraDevicesArray[1].connectionType == cameraObj.ConnectionType.CAMERA_CONNECTION_BUILT_IN) {
             let cameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[1]);
-            await cameraInput.open(false).then(() => {
-              console.info('Promise returned with camera opened.');
+            await cameraInput.open(false).then(async () => {
+              console.info(testNum + 'Promise returned with camera opened.');
+              await sleep(2000)
+              console.info(`SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_CAMERA_INPUT_0500 start close camera 1`);
+              await cameraInput.close();
             }).catch((error: BusinessError) => {
               console.info(`SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_CAMERA_INPUT_0500, error code: ${error.code}.`);
               expect(error.code == 7400102).assertTrue();
