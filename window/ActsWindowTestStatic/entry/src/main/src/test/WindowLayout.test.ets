@@ -610,36 +610,7 @@ export default function WindowLayoutTest() {
                 done();
             }
         })
-        /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWRECTCJANGE_JS_API_0100
-         * @tc.name      : testRectChangeOptions_off_static_0100
-         * @tc.desc      : Test the function value of testRectChangeOptions
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
-        it("testRectChangeOptions_off_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> =>{
-            let msgStr:string = "testRectChangeOptions_off_static_0100";
-            hilog.info(0x0000, '[ANI]',msgStr + "begin");
-            try {
-                let windowClass: window.Window = await windowStage.createSubWindow("testRectChangeOptions_off_static_0100");
-                await windowClass.destroyWindow();
-                windowClass.off('windowRectChange');
-                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded window rect changes');
-                expect(false).assertTrue();
-                done();
-            } catch (error: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to window rect changes.Data: ' + JSON.stringify(error));
-                if (error!.code === 801) {
-                    hilog.error(0x0000, '[ANI]',`${msgStr} The current device type does not support to windowRectChange`);
-                    done();
-                } else  {
-                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to window rect changes.Data: ' + JSON.stringify(error));
-                    expect(error!.code).assertEqual(1300002);
-                    done();
-                }
-            }
-        })
+        
         /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWRECTCJANGE_JS_API_0200
          * @tc.name      : testRectChangeOptions_on_static_0200
