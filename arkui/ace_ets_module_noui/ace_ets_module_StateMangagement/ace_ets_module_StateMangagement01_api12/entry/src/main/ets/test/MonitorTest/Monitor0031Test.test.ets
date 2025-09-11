@@ -68,7 +68,7 @@ export default function Monitor0031Test() {
           console.info('UIElementInfo bundleName:'+ UiElementInfo.bundleName)
           console.info('UIElementInfo text:'+ UiElementInfo.text)
           console.info('UIElementInfo type:'+ UiElementInfo.type)
-          expect(UiElementInfo.bundleName == 'com.arkui.ace.StateMangagement.api12').assertTrue()
+          expect(UiElementInfo.bundleName == 'com.arkui.ace.StateMangagement01.api12').assertTrue()
           expect(UiElementInfo.text == 'name: Jack').assertTrue()
           expect(UiElementInfo.type == 'Toast').assertTrue()
         } catch (err) {

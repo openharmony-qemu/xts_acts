@@ -66,10 +66,12 @@ export default function LazyForEachInterface() {
      */
     it('LazyForEachInterface_001', Level.LEVEL1, async (done: Function) => {
       console.info('[LazyForEachInterface_001] START');      
-      await CommonFunc.sleep(100);
+      await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       let switch_btn = await driver.findComponent(ON.id('switch'))
+      await CommonFunc.sleep(1000);
       await switch_btn.click();
+      await CommonFunc.sleep(1000);
       let info = await driver.findComponent(ON.id('interfaceInfo'));
       expect(await info.getText()).assertEqual('aboutToRecycle');
       console.info('[LazyForEachInterface_001] END');
@@ -84,10 +86,12 @@ export default function LazyForEachInterface() {
      */
     it('LazyForEachInterface_002', Level.LEVEL1, async (done: Function) => {
       console.info('[LazyForEachInterface_002] START');      
-      await CommonFunc.sleep(100);
+      await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
-      let switch_btn = await driver.findComponent(ON.id('switch'))
+      let switch_btn = await driver.findComponent(ON.id('switch'));
+      await CommonFunc.sleep(1000);
       await switch_btn.click();
+      await CommonFunc.sleep(1000);
       let info = await driver.findComponent(ON.id('interfaceInfo'));
       expect(await info.getText()).assertEqual('aboutToReuse');
       console.info('[LazyForEachInterface_002] END');
