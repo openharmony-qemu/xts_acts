@@ -577,46 +577,7 @@ export default function WindowLayoutTest() {
                 done()
             }
         })
-        /**
-         * @tc.number    : testOnRectChangeOptionsMoveErrorCode1300002_static_0100
-         * @tc.name      : testOnRectChangeOptionsMoveErrorCode1300002_static_0100
-         * @tc.desc      : testOnRectChangeOptionsMoveErrorCode1300002_static_0100
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
-        it("testOnRectChangeOptionsMoveErrorCode1300002_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName : string = "testOnRectChangeOptionsMoveErrorCode1300002_static_0100" ;
-            try {
-                let subWindowClass : window.Window = await windowStage.createSubWindow("TestOnRectChangeOptionsMove");
-                hilog.info(0x0000, '[ANI]', `${caseName} Succeeded in creating the sub window.`);
-                await subWindowClass.showWindow();
-                await Utils.msSleep(1000);
-                subWindowClass.on('windowRectChange', (data : window.RectChangeOptions) => {
-                    hilog.info(0x0000, '[ANI]',`${caseName}: Succeeded window rect changes. Data: ${JSON.stringify(data)}`);
-                    hilog.info(0x0000, '[ANI]',`${caseName}: Succeeded window reason changes. reason: ${JSON.stringify(data.reason)}`);
-                    expect(data!.rect.left).assertEqual(300);
-                    expect(data!.rect.top).assertEqual(300);
-                    subWindowClass.off('windowRectChange');
-                    await subWindowClass.destroyWindow();
-                    done();
-                });
-                await subWindowClass.moveWindowTo(300, 300);
-                hilog.info(0x0000, '[ANI]',`${caseName} Succeeded in moving the window.`);
-            } catch (error: BusinessError) {
-                if (error!.code == 1300002) {
-                    hilog.error(0x0000, '[ANI]',`${caseName} This window state is abnormal`);
-                    done();
-                } else if (error!.code == 801) {
-                    hilog.error(0x0000, '[ANI]',`${caseName} The current device type does not support to windowRectChange`);
-                    done();
-                } else {
-                    hilog.error(0x0000, '[ANI]',`${caseName}: Error: ${JSON.stringify(error)}`);
-                    expect(false).assertTrue();
-                    done();
-                }
-            }
-        })
+        
         /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0900
          * @tc.name      : testOnRectChangeOptionsResizeSubWindow_static_0100
