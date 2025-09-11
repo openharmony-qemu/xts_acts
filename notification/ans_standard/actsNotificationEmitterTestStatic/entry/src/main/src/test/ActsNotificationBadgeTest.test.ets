@@ -207,7 +207,7 @@ export default function ActsNotificationEmitterTest() {
       }
       let num: number = emitter.getListenerCount(eventId20)
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' getListenerCount success,data is %{public}s', JSON.stringify(num));
-      expect(num).assertEqual(undefined);
+      expect(num).assertEqual(0);
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
@@ -1529,7 +1529,7 @@ export default function ActsNotificationEmitterTest() {
       }
       let num: number = emitter.getListenerCount(eventId08)
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' getListenerCount success,data is %{public}s', JSON.stringify(num));
-      expect(num).assertEqual(undefined);
+      expect(num).assertEqual(0);
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
