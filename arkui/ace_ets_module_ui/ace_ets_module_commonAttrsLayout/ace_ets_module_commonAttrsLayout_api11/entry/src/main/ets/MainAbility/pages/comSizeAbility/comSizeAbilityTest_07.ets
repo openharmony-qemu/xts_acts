@@ -125,21 +125,26 @@ struct comSizeAbilityTest_07 {
           Button(`ShowSize： MenuItemGroup`)
             .fontSize(16)
             .margin(5)
-            .bindMenu(this.MyMenu1)
             .key('btn_MenuItemGroup')
-            .bindMenu(this.MyMenu1)
+            .bindMenu(this.MyMenu1, {
+              showInSubWindow: false
+            })
         }
 
         Column() {
           Button(`ShowSize: MenuItem`).fontSize(16).margin(5)
             .key('btn_MenuItem')
-            .bindMenu(this.MyMenu2)
+            .bindMenu(this.MyMenu2, {
+              showInSubWindow: false
+            })
         }
 
         Column() {
           Button(`ShowSize: Menu`).fontSize(16).margin(5)
             .key('btn_Menu')
-            .bindMenu(this.MyMenu3)
+            .bindMenu(this.MyMenu3, {
+              showInSubWindow: false
+            })
         }
       }.width('100%')
     }.height('100%')
