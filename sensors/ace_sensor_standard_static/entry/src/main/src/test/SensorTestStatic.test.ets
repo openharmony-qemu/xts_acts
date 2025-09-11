@@ -516,7 +516,6 @@ export default function SensorJsStaticTest() {
           } else {
             expect(false).assertTrue();
           }
-          expect(sensor.SensorId.COLOR == sensor.SensorId.COLOR).assertTrue();
           done();
         }
       })
@@ -544,7 +543,6 @@ export default function SensorJsStaticTest() {
           } else {
             expect(false).assertTrue();
           }
-          expect(sensor.SensorId.COLOR == sensor.SensorId.COLOR).assertTrue();
           done();
         }
       })
