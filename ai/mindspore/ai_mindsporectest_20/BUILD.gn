@@ -13,20 +13,20 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_app_assist_suite("MindSporec20MainTest") {
+ohos_app_assist_suite("ActsMindSporec20MainTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "MindSporec20MainTest"
+  hap_name = "ActsMindSporec20MainTest"
   part_name = "mindspore"
   subsystem_name = "ai"
 }
 
-ohos_js_app_suite("MindSporec20Test") {
+ohos_js_app_suite("ActsMindSporec20Test") {
   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "MindSporec20Test"
+  hap_name = "ActsMindSporec20Test"
   subsystem_name = "ai"
   part_name = "mindspore"
-  deps = [ ":MindSporec20MainTest" ]
+  deps = [ ":ActsMindSporec20MainTest" ]
 }

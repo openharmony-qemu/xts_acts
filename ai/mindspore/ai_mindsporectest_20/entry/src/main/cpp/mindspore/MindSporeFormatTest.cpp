@@ -27,7 +27,6 @@ napi_value FormatTest_001(napi_env env, napi_callback_info info)
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("data", datatype, create_shape, create_shape_num, nullptr, 0);
     OH_AI_TensorSetFormat(tensor, OH_AI_FORMAT_NCHW);
     auto ret = OH_AI_TensorGetFormat(tensor);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
     napi_create_int32(env, ret == OH_AI_FORMAT_NCHW ? 0 : 1, &retValue);
     OH_AI_TensorDestroy(&tensor);
     return retValue;
@@ -42,7 +41,7 @@ napi_value FormatTest_002(napi_env env, napi_callback_info info)
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("data", datatype, create_shape, create_shape_num, nullptr, 0);
     OH_AI_TensorSetFormat(tensor, OH_AI_FORMAT_NHWC4);
     auto ret = OH_AI_TensorGetFormat(tensor);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
     napi_create_int32(env, ret == OH_AI_FORMAT_NHWC4 ? 0 : 1, &retValue);
     OH_AI_TensorDestroy(&tensor);
     return retValue;
@@ -57,7 +56,7 @@ napi_value FormatTest_003(napi_env env, napi_callback_info info)
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("data", datatype, create_shape, create_shape_num, nullptr, 0);
     OH_AI_TensorSetFormat(tensor, OH_AI_FORMAT_HWCK);
     auto ret = OH_AI_TensorGetFormat(tensor);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
     napi_create_int32(env, ret == OH_AI_FORMAT_HWCK ? 0 : 1, &retValue);
     OH_AI_TensorDestroy(&tensor);
     return retValue;
@@ -72,7 +71,7 @@ napi_value FormatTest_004(napi_env env, napi_callback_info info)
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("data", datatype, create_shape, create_shape_num, nullptr, 0);
     OH_AI_TensorSetFormat(tensor, OH_AI_FORMAT_KCHW);
     auto ret = OH_AI_TensorGetFormat(tensor);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
     napi_create_int32(env, ret == OH_AI_FORMAT_KCHW ? 0 : 1, &retValue);
     OH_AI_TensorDestroy(&tensor);
     return retValue;
@@ -87,7 +86,7 @@ napi_value FormatTest_005(napi_env env, napi_callback_info info)
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("data", datatype, create_shape, create_shape_num, nullptr, 0);
     OH_AI_TensorSetFormat(tensor, OH_AI_FORMAT_CKHW);
     auto ret = OH_AI_TensorGetFormat(tensor);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
     napi_create_int32(env, ret == OH_AI_FORMAT_CKHW ? 0 : 1, &retValue);
     OH_AI_TensorDestroy(&tensor);
     return retValue;
@@ -102,7 +101,7 @@ napi_value FormatTest_006(napi_env env, napi_callback_info info)
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("data", datatype, create_shape, create_shape_num, nullptr, 0);
     OH_AI_TensorSetFormat(tensor, OH_AI_FORMAT_KHWC);
     auto ret = OH_AI_TensorGetFormat(tensor);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
     napi_create_int32(env, ret == OH_AI_FORMAT_KHWC ? 0 : 1, &retValue);
     OH_AI_TensorDestroy(&tensor);
     return retValue;
@@ -117,7 +116,7 @@ napi_value FormatTest_007(napi_env env, napi_callback_info info)
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("data", datatype, create_shape, create_shape_num, nullptr, 0);
     OH_AI_TensorSetFormat(tensor, OH_AI_FORMAT_CHWK);
     auto ret = OH_AI_TensorGetFormat(tensor);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
     napi_create_int32(env, ret == OH_AI_FORMAT_CHWK ? 0 : 1, &retValue);
     OH_AI_TensorDestroy(&tensor);
     return retValue;
@@ -132,7 +131,7 @@ napi_value FormatTest_008(napi_env env, napi_callback_info info)
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("data", datatype, create_shape, create_shape_num, nullptr, 0);
     OH_AI_TensorSetFormat(tensor, OH_AI_FORMAT_HW);
     auto ret = OH_AI_TensorGetFormat(tensor);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
     napi_create_int32(env, ret == OH_AI_FORMAT_HW ? 0 : 1, &retValue);
     OH_AI_TensorDestroy(&tensor);
     return retValue;
@@ -147,7 +146,7 @@ napi_value FormatTest_009(napi_env env, napi_callback_info info)
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("data", datatype, create_shape, create_shape_num, nullptr, 0);
     OH_AI_TensorSetFormat(tensor, OH_AI_FORMAT_HW4);
     auto ret = OH_AI_TensorGetFormat(tensor);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
     napi_create_int32(env, ret == OH_AI_FORMAT_HW4 ? 0 : 1, &retValue);
     OH_AI_TensorDestroy(&tensor);
     return retValue;
@@ -162,7 +161,7 @@ napi_value FormatTest_010(napi_env env, napi_callback_info info)
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("data", datatype, create_shape, create_shape_num, nullptr, 0);
     OH_AI_TensorSetFormat(tensor, OH_AI_FORMAT_NC);
     auto ret = OH_AI_TensorGetFormat(tensor);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
     napi_create_int32(env, ret == OH_AI_FORMAT_NC ? 0 : 1, &retValue);
     OH_AI_TensorDestroy(&tensor);
     return retValue;
@@ -177,7 +176,7 @@ napi_value FormatTest_011(napi_env env, napi_callback_info info)
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("data", datatype, create_shape, create_shape_num, nullptr, 0);
     OH_AI_TensorSetFormat(tensor, OH_AI_FORMAT_NC4);
     auto ret = OH_AI_TensorGetFormat(tensor);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
     napi_create_int32(env, ret == OH_AI_FORMAT_NC4 ? 0 : 1, &retValue);
     OH_AI_TensorDestroy(&tensor);
     return retValue;
@@ -192,7 +191,7 @@ napi_value FormatTest_012(napi_env env, napi_callback_info info)
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("data", datatype, create_shape, create_shape_num, nullptr, 0);
     OH_AI_TensorSetFormat(tensor, OH_AI_FORMAT_NC4HW4);
     auto ret = OH_AI_TensorGetFormat(tensor);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
     napi_create_int32(env, ret == OH_AI_FORMAT_NC4HW4 ? 0 : 1, &retValue);
     OH_AI_TensorDestroy(&tensor);
     return retValue;
@@ -207,7 +206,7 @@ napi_value FormatTest_013(napi_env env, napi_callback_info info)
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("data", datatype, create_shape, create_shape_num, nullptr, 0);
     OH_AI_TensorSetFormat(tensor, OH_AI_FORMAT_NCDHW);
     auto ret = OH_AI_TensorGetFormat(tensor);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
     napi_create_int32(env, ret == OH_AI_FORMAT_NCDHW ? 0 : 1, &retValue);
     OH_AI_TensorDestroy(&tensor);
     return retValue;
@@ -222,7 +221,7 @@ napi_value FormatTest_014(napi_env env, napi_callback_info info)
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("data", datatype, create_shape, create_shape_num, nullptr, 0);
     OH_AI_TensorSetFormat(tensor, OH_AI_FORMAT_NWC);
     auto ret = OH_AI_TensorGetFormat(tensor);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
     napi_create_int32(env, ret == OH_AI_FORMAT_NWC ? 0 : 1, &retValue);
     OH_AI_TensorDestroy(&tensor);
     return retValue;
@@ -237,7 +236,7 @@ napi_value FormatTest_015(napi_env env, napi_callback_info info)
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("data", datatype, create_shape, create_shape_num, nullptr, 0);
     OH_AI_TensorSetFormat(tensor, OH_AI_FORMAT_NCW);
     auto ret = OH_AI_TensorGetFormat(tensor);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "datatype", "OH_AI_DATATYPE_UNKNOWN: %{public}d", ret);
     napi_create_int32(env, ret == OH_AI_FORMAT_NCW? 0 : 1, &retValue);
     OH_AI_TensorDestroy(&tensor);
     return retValue;

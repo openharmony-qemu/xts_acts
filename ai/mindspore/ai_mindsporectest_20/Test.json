@@ -10,8 +10,8 @@
     },
     "kits": [{
         "test-file-name": [
-            "MindSporec20Test.hap",
-            "MindSporec20MainTest.hap"
+            "ActsMindSporec20Test.hap",
+            "ActsMindSporec20MainTest.hap"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true
