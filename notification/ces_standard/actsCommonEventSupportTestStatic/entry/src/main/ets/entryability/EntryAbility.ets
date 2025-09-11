@@ -4,7 +4,7 @@ import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
-import { MyCallback } from '../models/MyCallback';
+
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
 
@@ -15,20 +15,15 @@ class EntryAbility extends UIAbility {
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onWindowStageCreate');
-    try {
-      windowStage.loadContent('pages/Index', (err: BusinessError<void> | null): void => {
-        hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent entering');
-        MyCallback.runCasesOfCallback();
+    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onWindowStageCreate');
+    windowStage.loadContent('pages/Index', (err: BusinessError<void> | null): void => {
+        hilog.info(0x0000, 'testTag EntryAbility', 'loadContent entering');
         if (err?.code) {
-          hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent error');
+          hilog.info(0x0000, 'testTag EntryAbility', 'loadContent error');
           return;
         }
-        hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent ok');
+        hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok');
       });
-    } catch (e: Error) {
-      hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent catch error：-----------' + e.message);
-    }
   }
 
   onDestroy() {

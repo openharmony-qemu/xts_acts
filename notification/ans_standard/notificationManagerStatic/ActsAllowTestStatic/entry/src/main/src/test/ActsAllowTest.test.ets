@@ -179,11 +179,11 @@ export default function ActsAllowTest() {
         // 创建订阅者
         try {
           commonEventManager.createSubscriber(subscribeInfo,
-            (err: BusinessError | null, commonEventSubscriber: commonEventManager.CommonEventSubscriber|undefined) => {
+            (err: BusinessError | null, commonEventSubscriber) => {
               if (!err) {
                 console.info(`Succeeded in creating subscriber.`);
 
-                if(commonEventSubscriber !== undefined){
+                if(commonEventSubscriber !== undefined && commonEventSubscriber !== null){
                   subscriber = commonEventSubscriber
                 }else{
                   expect(false).assertTrue()
@@ -213,10 +213,16 @@ export default function ActsAllowTest() {
         }
         await Utils.msSleep(1500)
 
-        subscriber.getSubscribeInfo().then((subscribeInfo: commonEventManager.CommonEventSubscribeInfo) => {
+        subscriber.getSubscribeInfo().then((subscribeInfo) => {
           console.info(`${TAG} Succeeded in getting subscribe info, subscribe info is ` + JSON.stringify(subscribeInfo));
-          expect(subscribeInfo.publisherBundleName).assertEqual('com.example.myapplication')
-          done();
+          if (subscribeInfo !== null) {
+            let info = subscribeInfo as commonEventManager.CommonEventSubscribeInfo;
+            expect(info.publisherBundleName).assertEqual('com.example.myapplication')
+            done();
+          } else {
+            expect(false).assertTrue()
+            done();
+          }
         }).catch((err: BusinessError):void => {
           console.error(`${TAG} Failed to get subscribe info. Code is ${err.code}, message is ${err.message}`);
           expect(false).assertTrue()
@@ -225,8 +231,3 @@ export default function ActsAllowTest() {
       })
   })
 }
-
-
-
-
-

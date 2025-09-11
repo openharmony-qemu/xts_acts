@@ -26,93 +26,7 @@ const TAG = 'NotificationActs'
 const TEST_SUITE_NAME = 'testNotificationLiveNotification'
 export default function ActsNotificationSystemLiveViewTest() {
   describe('ActsNotificationSystemLiveViewTest', () => {
-    ///*
-    // * @tc.number: Sub_Notification_Ans_Live_Publish_Static_2200
-    // * @tc.name: Sub_Notification_Ans_Live_Publish_Static_2200
-    // * @tc.desc: test publish interface fail
-    // * @tc.size: LargeTest
-    // * @tc.type: Function
-    // * @tc.level Level 3
-    // */
-    
-    // it(' Sub_Notification_Ans_Live_Publish_Static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-    //   const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForNull'
-    //   const color : ArrayBuffer = new ArrayBuffer(96);  //96为需要创建的像素buffer大小，取值为：height * width *4
-    //   let opts : image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
-    //
-    //   let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
-    //
-    //   await pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
-    //     console.info(`${TAG}  Sub_Notification_Ans_Live_Publish_2200 pixelMap: ${pixelMap}`);
-    //     console.log('Succeeded in creating pixelmap.');
-    //   })
-    //     let notificationRequest : notificationManager.NotificationRequest = {
-    //       id : 1,
-    //       notificationSlotType : notificationManager.SlotType.LIVE_VIEW,
-    //       content : {
-    //         notificationContentType : notificationManager.ContentType.NOTIFICATION_CONTENT_SYSTEM_LIVE_VIEW,
-    //         systemLiveView : {
-    //           title : 'title',
-    //           text : 'text',
-    //           typeCode : 1,
-    //           capsule : {
-    //             title :null,
-    //             backgroundColor : 'back',
-    //             icon : pixelMap
-    //           }as notificationManager.NotificationCapsule,
-    //           button : {
-    //             names : ['name1','name2'],
-    //             icons : [pixelMap,pixelMap],
-    //             iconsResource : [{bundleName:'iconsResource1',moduleName:'iconsResource1',id:1},
-    //               {bundleName:'iconsResource2',moduleName:'iconsResource2',id:2}]
-    //           }as notificationManager.NotificationButton,
-    //           time : {
-    //             initialTime : 100,
-    //             isCountDown : true,
-    //             isPaused : true,
-    //             isInTitle : true,
-    //           }as notificationManager.NotificationTime,
-    //           progress : {
-    //             maxValue : 100,
-    //             currentValue : 200,
-    //             isPercentage : true
-    //           }as notificationManager.NotificationProgress,
-    //         }as notificationManager.NotificationSystemLiveViewContent,
-    //       }as notificationManager.NotificationContent,
-    //       creatorBundleName: "creatorBundleName",
-    //       creatorUid: 100,
-    //       creatorPid: 101,
-    //       creatorUserId: 100,
-    //       hashCode: "hashCode",
-    //       source: 0,
-    //       deviceId: undefined,
-    //       notificationFlags: undefined,
-    //       agentBundle: undefined,
-    //       appInstanceKey: undefined,
-    //     }
-    //     try {
-    //       hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case start`);
-    //       notificationManager.publish(notificationRequest,(err: BusinessError | null) => {
-    //         if (err) {
-    //           hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,JSON.stringify(err));
-    //           expect(true).assertTrue();
-    //           hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //           done();
-    //         }else{
-    //           hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish success,data is %{public}s`);
-    //           expect(false).assertTrue();
-    //           hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //           done();
-    //         }
-    //       })
-    //     } catch (error:BusinessError) {
-    //       hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,JSON.stringify(error));
-    //       expect(error.code).assertEqual(401);
-    //       hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //       done();
-    //     }
-    //
-    // })
+
 
     /*
      * @tc.number: Sub_Notification_Ans_Live_Publish_Static_2300
@@ -122,7 +36,7 @@ export default function ActsNotificationSystemLiveViewTest() {
      * @tc.type: Function
      * @tc.level Level 2
      */
-    
+
     it('Sub_Notification_Ans_Live_Publish_Static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForUndefined'
       const color : ArrayBuffer = new ArrayBuffer(96);  //96为需要创建的像素buffer大小，取值为：height * width *4
@@ -199,64 +113,6 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    ///*
-    // * @tc.number: Sub_Notification_Ans_Live_Publish_Static_2600
-    // * @tc.name: Sub_Notification_Ans_Live_Publish_Static_2600
-    // * @tc.desc: test publish interface fail
-    // * @tc.size: LargeTest
-    // * @tc.type: Function
-    // * @tc.level Level 2
-    // */
-    
-    // it('Sub_Notification_Ans_Live_Publish_Static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
-    //   const TEST_CASE_NAME = 'testLiveNotificationCapsuleIconForNull'
-    //   let notificationRequest : notificationManager.NotificationRequest = {
-    //     id : 1,
-    //     content : {
-    //       notificationContentType : notificationManager.ContentType.NOTIFICATION_CONTENT_SYSTEM_LIVE_VIEW,
-    //       systemLiveView : {
-    //         title : 'title',
-    //         text : 'text',
-    //         typeCode : 0,
-    //         capsule : {
-    //           title : 'text',
-    //           icon : null
-    //         }as notificationManager.NotificationCapsule,
-    //       }as notificationManager.NotificationSystemLiveViewContent,
-    //     }as notificationManager.NotificationContent,
-    //     creatorBundleName: "creatorBundleName",
-    //     creatorUid: 100,
-    //     creatorPid: 101,
-    //     creatorUserId: 100,
-    //     hashCode: "hashCode",
-    //     source: 0,
-    //     deviceId: undefined,
-    //     notificationFlags: undefined,
-    //     agentBundle: undefined,
-    //     appInstanceKey: undefined,
-    //   }
-    //   try {
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case start`)
-    //     notificationManager.publish(notificationRequest,(err: BusinessError | null) => {
-    //       if (err) {
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,JSON.stringify(err));
-    //         expect(false).assertTrue();
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //         done();
-    //       }else{
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish success,data is %{public}s`);
-    //         expect(false).assertTrue();
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //         done();
-    //       }
-    //     })
-    //   } catch (error) {
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     expect(true).assertTrue();
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     done();
-    //   }
-    // })
 
     /*
      * @tc.number: Sub_Notification_Ans_Live_Publish_Static_2700
@@ -266,7 +122,7 @@ export default function ActsNotificationSystemLiveViewTest() {
      * @tc.type: Function
      * @tc.level Level 3
      */
-    
+
     it('Sub_Notification_Ans_Live_Publish_Static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleIconForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -311,72 +167,12 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error:BusinessError) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(true).assertTrue();
+        expect(error.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
 
     })
-
-    /*
-     * @tc.number: Sub_Notification_Ans_Live_Publish_Static_3100
-     * @tc.name: Sub_Notification_Ans_Live_Publish_Static_3100
-     * @tc.desc: test publish interface fail
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level Level 3
-     */
-    
-    // it('Sub_Notification_Ans_Live_Publish_Static_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-    //   const TEST_CASE_NAME = 'testLiveNotificationCapsuleBackgroundColorForNull'
-    //   let notificationRequest : notificationManager.NotificationRequest = {
-    //     id : 1,
-    //     content : {
-    //       notificationContentType : notificationManager.ContentType.NOTIFICATION_CONTENT_SYSTEM_LIVE_VIEW,
-    //       systemLiveView : {
-    //         title : 'title',
-    //         text : 'text',
-    //         typeCode : 0,
-    //         capsule : {
-    //           title : 'text',
-    //           backgroundColor : null
-    //         }as notificationManager.NotificationCapsule,
-    //       }as notificationManager.NotificationSystemLiveViewContent,
-    //     }as notificationManager.NotificationContent,
-    //     creatorBundleName: "creatorBundleName",
-    //     creatorUid: 100,
-    //     creatorPid: 101,
-    //     creatorUserId: 100,
-    //     hashCode: "hashCode",
-    //     source: 0,
-    //     deviceId: undefined,
-    //     notificationFlags: undefined,
-    //     agentBundle: undefined,
-    //     appInstanceKey: undefined,
-    //   }
-    //   try {
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case start`)
-    //     notificationManager.publish(notificationRequest,(err: BusinessError | null) => {
-    //       if (err) {
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,JSON.stringify(err));
-    //         expect(false).assertTrue();
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //         done();
-    //       }else{
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish success,data is %{public}s`);
-    //         expect(false).assertTrue();
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //         done();
-    //       }
-    //     })
-    //   } catch (error) {
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     expect(true).assertTrue();
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     done();
-    //   }
-    //
-    // })
 
     /*
       * @tc.number: Sub_Notification_Ans_Live_Publish_Static_3200
@@ -386,7 +182,7 @@ export default function ActsNotificationSystemLiveViewTest() {
       * @tc.type: Function
       * @tc.level Level 3
       */
-    
+
     it('Sub_Notification_Ans_Live_Publish_Static_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleBackgroundColorForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -431,73 +227,14 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(true).assertTrue();
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
 
     })
-
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_3900
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_3900
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
-    * @tc.level Level 3
-    */
     
-    // it('Sub_Notification_Ans_Live_Publish_Static_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-    //   const TEST_CASE_NAME = 'testLiveNotificationButtonNamesForNull'
-    //   let notificationRequest : notificationManager.NotificationRequest = {
-    //     id : 1,
-    //     content : {
-    //       notificationContentType : notificationManager.ContentType.NOTIFICATION_CONTENT_SYSTEM_LIVE_VIEW,
-    //       systemLiveView : {
-    //         title : 'title',
-    //         text : 'text',
-    //         typeCode : 0,
-    //         capsule : {
-    //           title : 'text',
-    //         }as notificationManager.NotificationCapsule,
-    //         button : {
-    //           names : null
-    //         }as notificationManager.NotificationButton,
-    //       }as notificationManager.NotificationSystemLiveViewContent,
-    //     }as notificationManager.NotificationContent,
-    //     creatorBundleName: "creatorBundleName",
-    //     creatorUid: 100,
-    //     creatorPid: 101,
-    //     creatorUserId: 100,
-    //     hashCode: "hashCode",
-    //     source: 0,
-    //     deviceId: undefined,
-    //     notificationFlags: undefined,
-    //     agentBundle: undefined,
-    //     appInstanceKey: undefined,
-    //   }
-    //   try {
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case start`)
-    //     notificationManager.publish(notificationRequest,(err: BusinessError | null) => {
-    //       if (err) {
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,JSON.stringify(err));
-    //         expect(false).assertTrue();
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //         done();
-    //       }else{
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish success,data is %{public}s`);
-    //         expect(false).assertTrue();
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //         done();
-    //       }
-    //     })
-    //   } catch (error) {
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,JSON.stringify(error));
-    //     expect(true).assertTrue();
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     done();
-    //   }
-    // })
 
     /*
     * @tc.number: Sub_Notification_Ans_Live_Publish_Static_4000
@@ -507,7 +244,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    
+
     it('Sub_Notification_Ans_Live_Publish_Static_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleIconForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -554,73 +291,14 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`+JSON.stringify(error));
-        expect(true).assertTrue();
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
 
     })
-
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_4300
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_4300
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
-    * @tc.level Level 3
-    */
     
-    // it('Sub_Notification_Ans_Live_Publish_Static_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-    //   const TEST_CASE_NAME = 'testLiveNotificationButtonIconsForNull'
-    //   let notificationRequest : notificationManager.NotificationRequest = {
-    //     id : 1,
-    //     content : {
-    //       notificationContentType : notificationManager.ContentType.NOTIFICATION_CONTENT_SYSTEM_LIVE_VIEW,
-    //       systemLiveView : {
-    //         title : 'title',
-    //         text : 'text',
-    //         typeCode : 0,
-    //         capsule : {
-    //           title : 'title'
-    //         }as notificationManager.NotificationCapsule,
-    //         button : {
-    //           icons : null
-    //         }as notificationManager.NotificationButton,
-    //       }as notificationManager.NotificationSystemLiveViewContent,
-    //     }as notificationManager.NotificationContent,
-    //     creatorBundleName: "creatorBundleName",
-    //     creatorUid: 100,
-    //     creatorPid: 101,
-    //     creatorUserId: 100,
-    //     hashCode: "hashCode",
-    //     source: 0,
-    //     deviceId: undefined,
-    //     notificationFlags: undefined,
-    //     agentBundle: undefined,
-    //     appInstanceKey: undefined,
-    //   }
-    //   try {
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case start`)
-    //     notificationManager.publish(notificationRequest,(err: BusinessError | null) => {
-    //       if (err) {
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,JSON.stringify(err));
-    //         expect(false).assertTrue();
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //         done();
-    //       }else{
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish success,data is %{public}s`);
-    //         expect(false).assertTrue();
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`)
-    //         done();
-    //       }
-    //     })
-    //   } catch (error) {
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     expect(true).assertTrue();
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     done();
-    //   }
-    // })
 
     /*
     * @tc.number: Sub_Notification_Ans_Live_Publish_Static_4400
@@ -630,7 +308,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    
+
     it('Sub_Notification_Ans_Live_Publish_Static_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationButtonIconsForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -677,75 +355,13 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(true).assertTrue();
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
     })
-
-    // /*
-    // * @tc.number: Sub_Notification_Ans_Live_Publish_Static_5000
-    // * @tc.name: Sub_Notification_Ans_Live_Publish_Static_5000
-    // * @tc.desc: test publish interface fail
-    // * @tc.size: LargeTest
-    // * @tc.type: Function
-    // * @tc.level Level 3
-    // */
     
-    // it('Sub_Notification_Ans_Live_Publish_Static_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-    //   const TEST_CASE_NAME = 'testLiveNotificationTimeinitialTimeForNull'
-    //   let notificationRequest : notificationManager.NotificationRequest = {
-    //     id : 1,
-    //     content : {
-    //       notificationContentType : notificationManager.ContentType.NOTIFICATION_CONTENT_SYSTEM_LIVE_VIEW,
-    //       systemLiveView : {
-    //         title : 'title',
-    //         text : 'text',
-    //         typeCode : 0,
-    //         capsule : {
-    //           title : 'title'
-    //         }as notificationManager.NotificationCapsule,
-    //         button : {
-    //           names : ["button1"]
-    //         }as notificationManager.NotificationButton,
-    //         time : {
-    //           initialTime : null
-    //         }as notificationManager.NotificationTime,
-    //       }as notificationManager.NotificationSystemLiveViewContent,
-    //   }as notificationManager.NotificationContent,
-    //     creatorBundleName: "creatorBundleName",
-    //     creatorUid: 100,
-    //     creatorPid: 101,
-    //     creatorUserId: 100,
-    //     hashCode: "hashCode",
-    //     source: 0,
-    //     deviceId: undefined,
-    //     notificationFlags: undefined,
-    //     agentBundle: undefined,
-    //     appInstanceKey: undefined,
-    //   }
-    //   try {
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case start`)
-    //     notificationManager.publish(notificationRequest,(err: BusinessError | null) => {
-    //       if (err) {
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,JSON.stringify(err));
-    //         expect(false).assertTrue();
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //         done();
-    //       }else{
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish success,data is %{public}s`);
-    //         expect(false).assertTrue();
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`)
-    //         done();
-    //       }
-    //     })
-    //   } catch (error) {
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     expect(true).assertTrue();
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     done();
-    //   }
-    // })
 
     /*
     * @tc.number: Sub_Notification_Ans_Live_Publish_Static_5100
@@ -755,7 +371,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    
+
     it('Sub_Notification_Ans_Live_Publish_Static_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
       const TEST_CASE_NAME = 'testLiveNotificationTimeinitialTimeForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -805,75 +421,13 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(true).assertTrue();
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
     })
-
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_5300
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_5300
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
-    * @tc.level Level 3
-    */
     
-    // it('Sub_Notification_Ans_Live_Publish_Static_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-    //   const TEST_CASE_NAME = 'testLiveNotificationTimeisCountdownForNull'
-    //   let notificationRequest : notificationManager.NotificationRequest = {
-    //     id : 1,
-    //     content : {
-    //       notificationContentType : notificationManager.ContentType.NOTIFICATION_CONTENT_SYSTEM_LIVE_VIEW,
-    //       systemLiveView : {
-    //         title : 'title',
-    //         text : 'text',
-    //         typeCode : 0,
-    //         capsule : {
-    //           title : 'title'
-    //         }as notificationManager.NotificationCapsule,
-    //         button : {
-    //           names : ["button1"]
-    //         }as notificationManager.NotificationButton,
-    //         time : {
-    //           isCountDown : null
-    //         }as notificationManager.NotificationTime,
-    //       }as notificationManager.NotificationSystemLiveViewContent,
-    //     }as notificationManager.NotificationContent,
-    //     creatorBundleName: "creatorBundleName",
-    //     creatorUid: 100,
-    //     creatorPid: 101,
-    //     creatorUserId: 100,
-    //     hashCode: "hashCode",
-    //     source: 0,
-    //     deviceId: undefined,
-    //     notificationFlags: undefined,
-    //     agentBundle: undefined,
-    //     appInstanceKey: undefined,
-    //   }
-    //   try {
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case start`)
-    //     notificationManager.publish(notificationRequest,(err: BusinessError | null) => {
-    //       if (err) {
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,JSON.stringify(err));
-    //         expect(false).assertTrue();
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //         done();
-    //       }else{
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish success,data is %{public}s`);
-    //         expect(false).assertTrue();
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`)
-    //         done();
-    //       }
-    //     })
-    //   } catch (error) {
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     expect(true).assertTrue();
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     done();
-    //   }
-    // })
 
     /*
     * @tc.number: Sub_Notification_Ans_Live_Publish_Static_5400
@@ -883,7 +437,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    
+
     it('Sub_Notification_Ans_Live_Publish_Static_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationTimeisCountdownForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -933,76 +487,14 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(true).assertTrue();
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_5600
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_5600
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
-    * @tc.level Level 3
-    */
     
-    // it('Sub_Notification_Ans_Live_Publish_Static_5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-    //   const TEST_CASE_NAME = 'testLiveNotificationTimeisPausedForNull'
-    //   let notificationRequest : notificationManager.NotificationRequest = {
-    //     id : 1,
-    //     content : {
-    //       notificationContentType : notificationManager.ContentType.NOTIFICATION_CONTENT_SYSTEM_LIVE_VIEW,
-    //       systemLiveView : {
-    //         title : 'title',
-    //         text : 'text',
-    //         typeCode : 0,
-    //         capsule : {
-    //           title : 'title'
-    //         }as notificationManager.NotificationCapsule,
-    //         button : {
-    //           names : ["button1"]
-    //         }as notificationManager.NotificationButton,
-    //         time : {
-    //           isCountDown : true,
-    //           isPaused : null
-    //         }as notificationManager.NotificationTime,
-    //       }as notificationManager.NotificationSystemLiveViewContent,
-    //   }as notificationManager.NotificationContent,
-    //     creatorBundleName: "creatorBundleName",
-    //     creatorUid: 100,
-    //     creatorPid: 101,
-    //     creatorUserId: 100,
-    //     hashCode: "hashCode",
-    //     source: 0,
-    //     deviceId: undefined,
-    //     notificationFlags: undefined,
-    //     agentBundle: undefined,
-    //     appInstanceKey: undefined,
-    //   }
-    //   try {
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case start`)
-    //     notificationManager.publish(notificationRequest,(err: BusinessError | null) => {
-    //       if (err) {
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,JSON.stringify(err));
-    //         expect(false).assertTrue();
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //         done();
-    //       }else{
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish success,data is %{public}s`);
-    //         expect(false).assertTrue();
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`)
-    //         done();
-    //       }
-    //     })
-    //   } catch (error) {
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     expect(true).assertTrue();
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     done();
-    //   }
-    // })
 
     /*
     * @tc.number: Sub_Notification_Ans_Live_Publish_Static_5700
@@ -1012,7 +504,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    
+
     it('Sub_Notification_Ans_Live_Publish_Static_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationTimeisPausedForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -1063,76 +555,14 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(true).assertTrue();
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_5900
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_5900
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
-    * @tc.level Level 3
-    */
-    
-    // it('Sub_Notification_Ans_Live_Publish_Static_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>  {
-    //   const TEST_CASE_NAME = 'testLiveNotificationTimeisInTitleForNull'
-    //   let notificationRequest : notificationManager.NotificationRequest = {
-    //     id : 1,
-    //     content : {
-    //       notificationContentType : notificationManager.ContentType.NOTIFICATION_CONTENT_SYSTEM_LIVE_VIEW,
-    //       systemLiveView : {
-    //         title : 'title',
-    //         text : 'text',
-    //         typeCode : 0,
-    //         capsule : {
-    //           title : 'title'
-    //         }as notificationManager.NotificationCapsule,
-    //         button : {
-    //           names : ["button1"]
-    //         }as notificationManager.NotificationButton,
-    //         time : {
-    //           isCountDown : true,
-    //           isInTitle : null
-    //         }as notificationManager.NotificationTime,
-    //       }as notificationManager.NotificationSystemLiveViewContent,
-    //     }as notificationManager.NotificationContent,
-    //     creatorBundleName: "creatorBundleName",
-    //     creatorUid: 100,
-    //     creatorPid: 101,
-    //     creatorUserId: 100,
-    //     hashCode: "hashCode",
-    //     source: 0,
-    //     deviceId: undefined,
-    //     notificationFlags: undefined,
-    //     agentBundle: undefined,
-    //     appInstanceKey: undefined,
-    //   }
-    //   try {
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case start`)
-    //     notificationManager.publish(notificationRequest,(err: BusinessError | null) => {
-    //       if (err) {
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,JSON.stringify(err));
-    //         expect(false).assertTrue();
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //         done();
-    //       }else{
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish success,data is %{public}s`);
-    //         expect(false).assertTrue();
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`)
-    //         done();
-    //       }
-    //     })
-    //   } catch (error) {
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     expect(true).assertTrue();
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     done();
-    //   }
-    // })
+   
 
     /*
     * @tc.number: Sub_Notification_Ans_Live_Publish_Static_6000
@@ -1142,7 +572,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    
+
     it('Sub_Notification_Ans_Live_Publish_Static_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationTimeisInTitleForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -1193,70 +623,14 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(true).assertTrue();
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_6500
-    * @tc.name: Sub_Notification_Ans_Live_Publish_6500
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
-    * @tc.level Level 3
-    */
-    
-    // it('testLiveNotificationProgressMaxvalueForNull', Level.LEVEL2, async (done : Function) => {
-    //   const TEST_CASE_NAME = 'testLiveNotificationProgressMaxvalueForNull'
-    //   let notificationRequest : notificationManager.NotificationRequest = {
-    //     id : 1,
-    //     content : {
-    //       notificationContentType : notificationManager.ContentType.NOTIFICATION_CONTENT_SYSTEM_LIVE_VIEW,
-    //       systemLiveView : {
-    //         title : 'title',
-    //         text : 'text',
-    //         typeCode : 0,
-    //         capsule : {
-    //           title : 'title'
-    //         },
-    //         button : {
-    //           names : ["button1"]
-    //         },
-    //         time : {
-    //           isCountDown : true,
-    //           isInTitle : true,
-    //           isPaused : true
-    //         },
-    //         progress : {
-    //           maxValue : null
-    //         }
-    //       }
-    //     }
-    //   }
-    //   try {
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case start`)
-    //     notificationManager.publish(notificationRequest,(err: BusinessError | null,data) => {
-    //       if (err) {
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,JSON.stringify(err));
-    //         expect(false).assertTrue();
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //         done();
-    //       }else{
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish success,data is %{public}s`,JSON.stringify(data));
-    //         expect(false).assertTrue();
-    //         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`)
-    //         done();
-    //       }
-    //     })
-    //   } catch (error) {
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     expect(true).assertTrue();
-    //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     done();
-    //   }
-    // })
+   
 
     /*
     * @tc.number: Sub_Notification_Ans_Live_Publish_Static_6600
@@ -1266,7 +640,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    
+
     it('Sub_Notification_Ans_Live_Publish_Static_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
       const TEST_CASE_NAME = 'testLiveNotificationProgressMaxvalueForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -1321,71 +695,13 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(true).assertTrue();
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
     })
-
-    ///*
-    //* @tc.number: Sub_Notification_Ans_Live_Publish_Static_6900
-    //* @tc.name: Sub_Notification_Ans_Live_Publish_Static_6900
-    //* @tc.desc: test publish interface fail
-    //* @tc.size: LargeTest
-    //* @tc.type: Function
-    //* @tc.level Level 3
-    //*/
     
-    //  it('Sub_Notification_Ans_Live_Publish_Static_6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
-    //    const TEST_CASE_NAME = 'testLiveNotificationProgressCurrentValueForNull'
-    //    let notificationRequest : notificationManager.NotificationRequest = {
-    //      id : 1,
-    //      content : {
-    //        notificationContentType : notificationManager.ContentType.NOTIFICATION_CONTENT_SYSTEM_LIVE_VIEW,
-    //        systemLiveView : {
-    //          title : 'title',
-    //          text : 'text',
-    //          typeCode : 0,
-    //          capsule : {
-    //            title : 'title'
-    //          },
-    //          button : {
-    //            names : ["button1"]
-    //          },
-    //          time : {
-    //            isCountDown : true,
-    //            isInTitle : true,
-    //            isPaused : true
-    //          },
-    //          progress : {
-    //            maxValue : 50,
-    //            currentValue : null
-    //          }
-    //        }
-    //      }
-    //    }
-    //    try {
-    //      hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case start`)
-    //      notificationManager.publish(notificationRequest,(err: BusinessError | null,data) => {
-    //        if (err) {
-    //          hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`+JSON.stringify(err));
-    //          expect(false).assertTrue();
-    //          hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-    //          done();
-    //        }else{
-    //          hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `publish success,data is %{public}s`+JSON.stringify(data));
-    //          expect(false).assertTrue();
-    //          hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`)
-    //          done();
-    //        }
-    //      })
-    //    } catch (error) {
-    //      hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-    //      expect(true).assertTrue();
-    //      hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-    //      done();
-    //    }
-    //  })
 
     /*
    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_7000
@@ -1395,7 +711,7 @@ export default function ActsNotificationSystemLiveViewTest() {
    * @tc.type: Function
    * @tc.level Level 3
    */
-    
+
     it('Sub_Notification_Ans_Live_Publish_Static_7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
       const TEST_CASE_NAME = 'testLiveNotificationProgressCurrentValueForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -1451,71 +767,12 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(true).assertTrue();
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
     })
-
-    /*
-  * @tc.number: Sub_Notification_Ans_Live_Publish_Static_7300
-  * @tc.name: Sub_Notification_Ans_Live_Publish_Static_7300
-  * @tc.desc: test publish interface fail
-  * @tc.size: LargeTest
-  * @tc.type: Function
-  * @tc.level Level 3
-  */
-    
-    //   it('testLiveNotificationProgressisPercentageForNull', Level.LEVEL2, async (done : Function) => {
-    //     const TEST_CASE_NAME = 'testLiveNotificationProgressisPercentageForNull'
-    //     let notificationRequest : notificationManager.NotificationRequest = {
-    //       id : 1,
-    //       content : {
-    //         notificationContentType : notificationManager.ContentType.NOTIFICATION_CONTENT_SYSTEM_LIVE_VIEW,
-    //         systemLiveView : {
-    //           title : 'title',
-    //           text : 'text',
-    //           typeCode : 0,
-    //           capsule : {
-    //             title : 'title'
-    //           },
-    //           button : {
-    //             names : ["button1"]
-    //           },
-    //           time : {
-    //             isCountDown : true,
-    //             isInTitle : true,
-    //             isPaused : true
-    //           },
-    //           progress : {
-    //             maxValue : 50,
-    //             isPercentage : null
-    //           }
-    //         }
-    //       }
-    //     }
-    //     try {
-    //       hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case start`);
-    //       notificationManager.publish(notificationRequest,(err: BusinessError | null,data) => {
-    //         if (err) {
-    //           hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,JSON.stringify(err));
-    //           expect(false).assertTrue();
-    //           hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //           done();
-    //         }else{
-    //           hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish success,data is %{public}s`,JSON.stringify(data));
-    //           expect(false).assertTrue();
-    //           hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`)
-    //           done();
-    //         }
-    //       })
-    //     } catch (error) {
-    //       hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //       expect(true).assertTrue();
-    //       hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //       done();
-    //     }
-    //   })
 
 
     /*
@@ -1526,7 +783,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    
+
     it('Sub_Notification_Ans_Live_Publish_Static_7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationProgressisPercentageForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -1582,7 +839,8 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(true).assertTrue();
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
@@ -1709,7 +967,8 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error:BusinessError) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`+JSON.stringify(error));
-        expect(error.code).assertEqual(401);
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
@@ -1723,7 +982,7 @@ export default function ActsNotificationSystemLiveViewTest() {
       * @tc.type: Function
       * @tc.level Level 3
       */
-    
+
     it('Sub_Notification_Ans_Live_Publish_Static_7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForUndefined'
       const color : ArrayBuffer = new ArrayBuffer(96);  //96为需要创建的像素buffer大小，取值为：height * width *4
@@ -1846,9 +1105,10 @@ export default function ActsNotificationSystemLiveViewTest() {
             done();
           }
         })
-      } catch (error : BusinessError) {
+      } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,JSON.stringify(error));
-        expect(error.code).assertEqual(401);
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
@@ -1856,14 +1116,14 @@ export default function ActsNotificationSystemLiveViewTest() {
 
 
     /*
- * @tc.number: Sub_Notification_Ans_Live_Publish_Static_7700
- * @tc.name: Sub_Notification_Ans_Live_Publish_Static_7700
- * @tc.desc: test publish interface success
- * @tc.size: LargeTest
- * @tc.type: Function
- * @tc.level Level 3
- */
-    
+      * @tc.number: Sub_Notification_Ans_Live_Publish_Static_7700
+      * @tc.name: Sub_Notification_Ans_Live_Publish_Static_7700
+      * @tc.desc: test publish interface success
+      * @tc.size: LargeTest
+      * @tc.type: Function
+      * @tc.level Level 3
+      */
+
     it('Sub_Notification_Ans_Live_Publish_Static_7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForUndefined'
       const color : ArrayBuffer = new ArrayBuffer(96);  //96为需要创建的像素buffer大小，取值为：height * width *4
@@ -1988,9 +1248,10 @@ export default function ActsNotificationSystemLiveViewTest() {
             done();
           }
         })
-      } catch (error:BusinessError) {
+      } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,JSON.stringify(error));
-        expect(error.code).assertEqual(401);
+        let err : BusinessError = error as BusinessError
+        expect(err.code).assertEqual(401);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
         done();
       }

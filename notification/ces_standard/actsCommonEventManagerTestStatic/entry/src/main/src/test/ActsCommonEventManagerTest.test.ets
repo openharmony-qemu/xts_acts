@@ -115,14 +115,14 @@ export default function ActsCommonEventManagerTest() {
         events: new Array<string>('event03')
       }
       try {
-        commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber: commonEventManager.CommonEventSubscriber|undefined) => {
+        commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber) => {
           if (err) {
             hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Subscribe_Static_1500 err,`)
             expect(false).assertTrue()
             done()
           } else {
             hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Subscribe_Static_1500 success `)
-            if(commonEventSubscriber !== undefined){
+            if(commonEventSubscriber !== undefined && commonEventSubscriber !== null){
               subscriber = commonEventSubscriber
             }else{
               expect(false).assertTrue()
@@ -178,14 +178,14 @@ export default function ActsCommonEventManagerTest() {
       }
 
       try {
-        commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber: commonEventManager.CommonEventSubscriber|undefined) => {
+        commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber) => {
           if (err) {
             console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_0400 err, error code: ${err.code}, message: ${err.message}`)
             expect(false).assertTrue()
             done()
           } else {
             console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_0400 success `+commonEventSubscriber)
-            if(commonEventSubscriber !== undefined){
+            if(commonEventSubscriber !== undefined && commonEventSubscriber !== null){
               subscriber = commonEventSubscriber
             }else{
               expect(false).assertTrue()
@@ -238,16 +238,15 @@ export default function ActsCommonEventManagerTest() {
       }
 
       try {
-          commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber: commonEventManager.CommonEventSubscriber|undefined) => {
+          commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber) => {
           if (err) {
             console.error(`Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401 err, error code: ${err.code}, message: ${err.message}`)
             expect(false).assertTrue()
             done()
           } else {
             console.info(`Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401 success ${commonEventSubscriber}`)
-            if(commonEventSubscriber !== undefined){
-              subscriber = commonEventSubscriber as commonEventManager.CommonEventSubscriber
-
+            if(commonEventSubscriber !== undefined && commonEventSubscriber !== null){
+              subscriber = commonEventSubscriber;
               try {
                 commonEventManager.subscribeToEvent(subscriber, (data:commonEventManager.CommonEventData) => {
                   console.info(`Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401 subscribe_1 OnReceive event success`)
@@ -300,14 +299,14 @@ export default function ActsCommonEventManagerTest() {
       }
 
       try {
-        commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber: commonEventManager.CommonEventSubscriber|undefined) => {
+        commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber) => {
           if (err) {
             hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 err, error code: ${err.code}, message: ${err.message}`)
             expect(false).assertTrue()
             done()
           } else {
             hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 success1`)
-            if(commonEventSubscriber !== undefined){
+            if(commonEventSubscriber !== undefined && commonEventSubscriber !== null){
               subscriber = commonEventSubscriber
             }else{
               expect(false).assertTrue()
@@ -360,14 +359,14 @@ export default function ActsCommonEventManagerTest() {
       }
 
       try {
-        commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber: commonEventManager.CommonEventSubscriber|undefined) => {
+        commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber) => {
           if (err) {
             hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 err, error code: ${err.code}, message: ${err.message}`)
             expect(false).assertTrue()
             done()
           } else {
             hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 success2 ${commonEventSubscriber}`)
-            if(commonEventSubscriber !== undefined){
+            if(commonEventSubscriber !== undefined && commonEventSubscriber !== null){
               subscriber = commonEventSubscriber
             }else{
               expect(false).assertTrue()
@@ -444,14 +443,14 @@ export default function ActsCommonEventManagerTest() {
       }
 
       try {
-        commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber: commonEventManager.CommonEventSubscriber|undefined) => {
+        commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber) => {
           if (err) {
             console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_1700 err, error code: ${err.code}, message: ${err.message}`)
             expect(false).assertTrue()
             done()
           } else {
             console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_1700 success`)
-            if(commonEventSubscriber !== undefined){
+            if(commonEventSubscriber !== undefined && commonEventSubscriber !== null){
               subscriber = commonEventSubscriber
             }else{
               expect(false).assertTrue()
@@ -515,7 +514,7 @@ export default function ActsCommonEventManagerTest() {
                   }
                 })
 
-                subscriber.getSubscribeInfo((err: BusinessError | null, CommonEventSubscribeInfo:commonEventManager.CommonEventSubscribeInfo|undefined) => {
+                subscriber.getSubscribeInfo((err: BusinessError | null, CommonEventSubscribeInfo) => {
                   if (err) {
                     console.info(TAG+`getSubscribeInfo_1 err, error code: ${err.code}, message: ${err.message}`)
                     expect(false).assertTrue()
@@ -602,14 +601,14 @@ export default function ActsCommonEventManagerTest() {
       }
 
       try {
-        commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber: commonEventManager.CommonEventSubscriber|undefined) => {
+        commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber) => {
           if (err) {
             console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_1800 err, error code: ${err.code}, message: ${err.message}`)
             expect(false).assertTrue()
             done()
           } else {
             console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_1800 success ${commonEventSubscriber}`)
-            if(commonEventSubscriber !== undefined){
+            if(commonEventSubscriber !== undefined && commonEventSubscriber !== null){
               subscriber = commonEventSubscriber
             }else{
               expect(false).assertTrue()
@@ -666,7 +665,7 @@ export default function ActsCommonEventManagerTest() {
                   done()
                 })
 
-                await subscriber.getSubscribeInfo().then((CommonEventSubscribeInfo:commonEventManager.CommonEventSubscribeInfo) => {
+                await subscriber.getSubscribeInfo().then((CommonEventSubscribeInfo) => {
                   console.info(TAG+`getSubscribeInfo_2 success `)
                   expect(true).assertTrue()
                 }).catch((err:BusinessError):void => {
