@@ -29,7 +29,7 @@ export default function ActsUIInputEventNdkTest() {
     const moveFrom: Point = { x: x1, y: y1 };
     const moveTo: Point = { x: x2, y: y2 };
     const speed: number = 2500;
-    beforeAll(async (done: Function) => {
+    beforeEach(async (done: Function) => {
       Utils.pushPageNoClear('UIInputEvent/UIInputEvent', done);
     })
 
@@ -91,7 +91,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0103 start====");
-          await Utils.driver.mouseClick(moveFrom, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+          await Utils.driver.mouseClick(moveFrom, MouseButton.MOUSE_BUTTON_LEFT);
           let result = uiinputeventndk.UIInputEventType0103();
           console.info("====>testArkUI_UIInputEvent_Type_0103 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -183,7 +183,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0108 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_MIDDLE, 2072);
+          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_MIDDLE);
           let result = uiinputeventndk.UIInputEventType0108();
           console.info("====>testArkUI_UIInputEvent_Type_0108 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -206,7 +206,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0109 start====");
-          await Utils.driver.mouseClick(moveFrom, MouseButton.MOUSE_BUTTON_MIDDLE, 2072);
+          await Utils.driver.mouseClick(moveFrom, MouseButton.MOUSE_BUTTON_MIDDLE);
           let result = uiinputeventndk.UIInputEventType0109();
           console.info("====>testArkUI_UIInputEvent_Type_0109 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -229,7 +229,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0110 start====");
-          await Utils.driver.mouseClick(moveFrom, MouseButton.MOUSE_BUTTON_RIGHT, 2072);
+          await Utils.driver.mouseClick(moveFrom, MouseButton.MOUSE_BUTTON_RIGHT);
           let result = uiinputeventndk.UIInputEventType0110();
           console.info("====>testArkUI_UIInputEvent_Type_0110 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -253,7 +253,7 @@ export default function ActsUIInputEventNdkTest() {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0111 start====");
 
-          await Utils.driver.mouseClick(moveFrom, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+          await Utils.driver.mouseClick(moveFrom, MouseButton.MOUSE_BUTTON_LEFT);
           let result = uiinputeventndk.UIInputEventType0111();
           console.info("====>testArkUI_UIInputEvent_Type_0111 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -367,7 +367,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0119 start====");
-          await Utils.driver.swipe(x1, y1, x2, y2);
+          await Utils.driver.swipe(x1, y1, x2, y2, speed);
           let result = uiinputeventndk.UIInputEventType0119();
           console.info("====>testArkUI_UIInputEvent_Type_0119 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -831,7 +831,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0144 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072, 2001);
+          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2001);
           let result = uiinputeventndk.UIInputEventType0144();
           console.info("====>testArkUI_UIInputEvent_Type_0144 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -854,7 +854,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0146 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT);
           let result = uiinputeventndk.UIInputEventType0146();
           console.info("====>testArkUI_UIInputEvent_Type_0146 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -877,7 +877,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0147 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT);
           let result = uiinputeventndk.UIInputEventType0147();
           console.info("====>testArkUI_UIInputEvent_Type_0147 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -900,7 +900,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0148 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT);
           let result = uiinputeventndk.UIInputEventType0148();
           console.info("====>testArkUI_UIInputEvent_Type_0148 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -923,7 +923,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0149 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT);
           let result = uiinputeventndk.UIInputEventType0149();
           console.info("====>testArkUI_UIInputEvent_Type_0149 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -946,7 +946,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0151 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT);
           let result = uiinputeventndk.UIInputEventType0151();
           console.info("====>testArkUI_UIInputEvent_Type_0151 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -969,7 +969,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0152 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT);
           let result = uiinputeventndk.UIInputEventType0152();
           console.info("====>testArkUI_UIInputEvent_Type_0152 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -992,7 +992,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0154 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT);
           let result = uiinputeventndk.UIInputEventType0154();
           console.info("====>testArkUI_UIInputEvent_Type_0154 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -1015,7 +1015,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0155 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT);
           let result = uiinputeventndk.UIInputEventType0155();
           console.info("====>testArkUI_UIInputEvent_Type_0155 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -1038,7 +1038,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0157 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT);
           let result = uiinputeventndk.UIInputEventType0157();
           console.info("====>testArkUI_UIInputEvent_Type_0157 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -1061,36 +1061,13 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0158 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT);
           let result = uiinputeventndk.UIInputEventType0158();
           console.info("====>testArkUI_UIInputEvent_Type_0158 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
           done()
         } catch (err) {
           console.error("====>testArkUI_UIInputEvent_Type_0158 catch err: " + err);
-          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
-        }
-      });
-
-    /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0159
-     * @tc.name    : testArkUI_UIInputEvent_Type_0159
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     */
-    it('testArkUI_UIInputEvent_Type_0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        try {
-          console.info("====>testArkUI_UIInputEvent_Type_0159 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072);
-          let result = uiinputeventndk.UIInputEventType0159();
-          console.info("====>testArkUI_UIInputEvent_Type_0159 result: " + result);
-          expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
-          done()
-        } catch (err) {
-          console.error("====>testArkUI_UIInputEvent_Type_0159 catch err: " + err);
           expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
         }
       });
@@ -1107,7 +1084,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0160 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT);
           let result = uiinputeventndk.UIInputEventType0160();
           console.info("====>testArkUI_UIInputEvent_Type_0160 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -1130,7 +1107,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0161 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT);
           let result = uiinputeventndk.UIInputEventType0161();
           console.info("====>testArkUI_UIInputEvent_Type_0161 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -1153,7 +1130,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0164 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT);
           let result = uiinputeventndk.UIInputEventType0164();
           console.info("====>testArkUI_UIInputEvent_Type_0164 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -1176,7 +1153,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0166 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT);
           let result = uiinputeventndk.UIInputEventType0166();
           console.info("====>testArkUI_UIInputEvent_Type_0166 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -1199,7 +1176,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0167 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT);
           let result = uiinputeventndk.UIInputEventType0167();
           console.info("====>testArkUI_UIInputEvent_Type_0167 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -1244,7 +1221,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0169 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT);
           let result = uiinputeventndk.UIInputEventType0169();
           console.info("====>testArkUI_UIInputEvent_Type_0169 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -1267,7 +1244,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0170 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT);
           let result = uiinputeventndk.UIInputEventType0170();
           console.info("====>testArkUI_UIInputEvent_Type_0170 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);

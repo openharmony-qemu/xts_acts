@@ -257,7 +257,8 @@ napi_value RegisterAvailableAreaChangeListener(napi_env env, napi_callback_info 
     uint32_t listenerIndex = 0;
     NativeDisplayManager_ErrorCode errCode = OH_NativeDisplayManager_RegisterAvailableAreaChangeListener(
         AvailableAreaChangeCallback, NULL);
-    napi_create_int32(env, errCode == DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM ? 0 : -1, &result);
+    napi_create_int32(env, errCode == DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM ||
+                      errCode == DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED ? 0 : -1, &result);
     return result;
 }
 
@@ -267,7 +268,8 @@ napi_value DestroyAvailableArea(napi_env env, napi_callback_info info)
     NativeDisplayManager_Rect *availableAreaInfo;
     OH_NativeDisplayManager_CreateAvailableArea(0, &availableAreaInfo);
     NativeDisplayManager_ErrorCode errCode = OH_NativeDisplayManager_DestroyAvailableArea(NULL);
-    napi_create_int32(env, errCode == DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM ? 0 : -1, &result);
+    napi_create_int32(env, errCode == DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM ||
+                      errCode == DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED ? 0 : -1, &result);
     return result;
 }
 
@@ -283,7 +285,8 @@ napi_value RegisterDisplayAddListener(napi_env env, napi_callback_info info) // 
     NativeDisplayManager_ErrorCode errCode = OH_NativeDisplayManager_RegisterDisplayAddListener(nullptr,
         &listenerIndex);
     OH_NativeDisplayManager_UnregisterDisplayAddListener(listenerIndex);
-    napi_create_int32(env, errCode == DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM ? 0 : -1, &result);
+    napi_create_int32(env, errCode == DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM ||
+                      errCode == DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED ? 0 : -1, &result);
     return result;
 }
 
@@ -298,7 +301,8 @@ napi_value RegisterDisplayRemoveListener(napi_env env, napi_callback_info info)
     uint32_t listenerIndex = 0;
     NativeDisplayManager_ErrorCode errCode =
         OH_NativeDisplayManager_RegisterDisplayRemoveListener(NULL, &listenerIndex);
-    napi_create_int32(env, errCode == DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM ? 0 : -1, &result);
+    napi_create_int32(env, errCode == DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM ||
+                      errCode == DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED ? 0 : -1, &result);
     return result;
 }
 

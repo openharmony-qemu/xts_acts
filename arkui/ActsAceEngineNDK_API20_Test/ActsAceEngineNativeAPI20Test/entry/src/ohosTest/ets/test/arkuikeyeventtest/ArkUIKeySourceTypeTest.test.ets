@@ -40,7 +40,7 @@ export default function ArkUIKeySourceTypeTest() {
             type: KeyType.Down,
             keyCode: 1,
             keyText: 'tab',
-            keySource: -1,
+            keySource: 0,
             deviceId: 0,
             metaKey: 0,
             timestamp: 0,
@@ -50,7 +50,7 @@ export default function ArkUIKeySourceTypeTest() {
           };
           sendKeyEvent(keyEvent);
           await Utils.sleep(1000);
-          let result: number = keyeventndk.GetKeySourceType(-1);
+          let result: number = keyeventndk.GetKeySourceType(0);
           console.info(`====>testArkUIKeySourceUnknown0100 result====${result}`);
           expect(1).assertEqual(result);
           done()

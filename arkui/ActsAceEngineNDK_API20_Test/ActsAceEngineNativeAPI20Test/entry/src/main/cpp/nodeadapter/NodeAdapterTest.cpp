@@ -27,9 +27,9 @@ int32_t g_ret1 = 2;
 int32_t g_ret2 = 2;
 void receiver(ArkUI_NodeAdapterEvent *event)
 {
-    g_ret1 = OH_ArkUI_NodeAdapterEvent_SetItem(event, text);
+    g_ret1 = OH_ArkUI_NodeAdapterEvent_SetItem(event, text) == ARKUI_ERROR_CODE_NO_ERROR;
     int32_t nodeId = 'text1';
-    g_ret2 = OH_ArkUI_NodeAdapterEvent_SetNodeId(event, nodeId);
+    g_ret2 = OH_ArkUI_NodeAdapterEvent_SetNodeId(event, nodeId) == ARKUI_ERROR_CODE_NO_ERROR;
 }
 napi_value CreateAdapterNode(napi_env env, napi_callback_info info)
 {
@@ -198,7 +198,7 @@ napi_value GetAllItemsTest_002(napi_env env, napi_callback_info info)
 napi_value SetItemTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_ret1 == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
+    napi_create_int32(env, g_ret1 ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -213,7 +213,7 @@ napi_value SetItemTest_002(napi_env env, napi_callback_info info)
 napi_value SetNodeIdTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_ret2 == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
+    napi_create_int32(env, g_ret2 ? 0 : 1, &retValue);
     return retValue;
 }
 

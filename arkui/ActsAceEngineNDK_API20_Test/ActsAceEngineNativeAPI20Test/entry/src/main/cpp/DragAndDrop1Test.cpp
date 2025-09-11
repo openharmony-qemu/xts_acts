@@ -44,8 +44,8 @@ napi_value DragAndDropTest101(napi_env env, napi_callback_info info)
     OH_PixelmapInitializationOptions_SetAlphaType(createOpts, PIXELMAP_ALPHA_TYPE_UNKNOWN);
     OH_PixelmapNative *pixelmap = nullptr;
     OH_PixelmapNative_CreatePixelmap(data, dataSize, createOpts, &pixelmap);
-    auto returnValue = OH_ArkUI_SetNodeDragPreview(text, pixelmap);
-    if ((returnValue) != (SUCCESS)) {
+    auto returnValue = OH_ArkUI_SetNodeDragPreview(text, pixelmap) == ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());

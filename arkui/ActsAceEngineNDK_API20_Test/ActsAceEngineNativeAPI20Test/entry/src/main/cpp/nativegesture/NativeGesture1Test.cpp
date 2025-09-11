@@ -28,6 +28,8 @@ static ArkUI_GestureRecognizer* g_recognizer2;
 static ArkUI_GestureInterruptInfo* g_event;
 static ArkUI_GestureEventTargetInfo* g_event1;
 static ArkUI_GestureEventTargetInfo* g_event2;
+static ArkUI_TouchRecognizerHandleArray g_touchHandles;
+static int32_t g_touchHandlesSize;
 
 napi_value CreateGestureNode1(napi_env env, napi_callback_info info)
 {
@@ -61,11 +63,12 @@ napi_value CreateGestureNode1(napi_env env, napi_callback_info info)
     ArkUI_NativeGestureAPI_1 *gestureApi = nullptr;
     gestureApi = reinterpret_cast<ArkUI_NativeGestureAPI_1 *>(
         OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_GESTURE, "ArkUI_NativeGestureAPI_1"));
-    auto PanGesture = gestureApi->createPanGesture(1, GESTURE_DIRECTION_LEFT, PARAM_5);
+    auto PanGesture = gestureApi->createPanGesture(1, GESTURE_DIRECTION_ALL, PARAM_5);
     auto onInterruptCallback = [](ArkUI_GestureInterruptInfo *info) -> ArkUI_GestureInterruptResult {
         g_event = info;
         g_recognizer = OH_ArkUI_GestureInterruptInfo_GetRecognizer(g_event);
         OH_ArkUI_GetGestureEventTargetInfo(g_recognizer, &g_event1);
+        OH_ArkUI_GestureInterruptInfo_GetTouchRecognizers(g_event, &g_touchHandles, &g_touchHandlesSize);
         return GESTURE_INTERRUPT_RESULT_CONTINUE;
     };
     gestureApi->addGestureToNode(column, PanGesture, PARALLEL, NORMAL_GESTURE_MASK);
@@ -102,9 +105,12 @@ napi_value GetTouchRecognizers0200(napi_env env, napi_callback_info info)
 
 napi_value CancelTouch0100(napi_env env, napi_callback_info info)
 {
-    double distance = 5;
-    int32_t result = OH_ArkUI_GetGestureParam_distance(g_recognizer, &distance);
     napi_value retValue;
+    if (g_touchHandlesSize == 0) {
+        napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
+        return retValue;
+    }
+    int32_t result = OH_ArkUI_TouchRecognizer_CancelTouch(g_touchHandles[0], g_event);
     napi_create_int32(env, result == ARKUI_ERROR_CODE_NO_ERROR ? 0 : PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }

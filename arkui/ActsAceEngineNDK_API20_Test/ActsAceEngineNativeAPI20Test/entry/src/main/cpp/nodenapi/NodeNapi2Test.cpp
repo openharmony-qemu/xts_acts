@@ -44,7 +44,7 @@ napi_value CreateNodeContent(napi_env env, napi_callback_info info)
   
      // 获取NodeContent
     ArkUI_NodeContentHandle contentHandle;
-    g_nodenapiresult3 = OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle);
+    g_nodenapiresult3 = OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle) == ARKUI_ERROR_CODE_NO_ERROR;
     
     ArkUI_NativeNodeAPI_1* nodeAPI = nullptr;
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
@@ -60,7 +60,7 @@ napi_value CreateNodeContent(napi_env env, napi_callback_info info)
 napi_value GetNodeContentFromNapiValueTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_nodenapiresult3 == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
+    napi_create_int32(env, g_nodenapiresult3 ? 0 : 1, &retValue);
     return retValue;
 }
 

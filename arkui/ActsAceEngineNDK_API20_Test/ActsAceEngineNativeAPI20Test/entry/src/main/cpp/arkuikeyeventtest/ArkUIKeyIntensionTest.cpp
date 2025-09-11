@@ -62,6 +62,47 @@ napi_value CreateNativeNode2(napi_env env, napi_callback_info info)
     return nullptr;
 }
 
+ArkUI_KeyIntension CheckKeyIntension2(int32_t KeyIntension)
+{
+    if (KeyIntension == ARKUI_KEY_INTENSION_PAGE_DOWN ||
+        KeyIntension == ARKUI_KEY_INTENSION_ZOOM_OUT ||
+        KeyIntension == ARKUI_KEY_INTENSION_ZOOM_IN ||
+        KeyIntension == ARKUI_KEY_INTENTION_MEDIA_PLAY_PAUSE ||
+        KeyIntension == ARKUI_KEY_INTENTION_MEDIA_FAST_FORWARD ||
+        KeyIntension == ARKUI_KEY_INTENTION_MEDIA_FAST_PLAYBACK ||
+        KeyIntension == ARKUI_KEY_INTENTION_MEDIA_NEXT ||
+        KeyIntension == ARKUI_KEY_INTENTION_MEDIA_PREVIOUS ||
+        KeyIntension == ARKUI_KEY_INTENTION_MEDIA_MUTE ||
+        KeyIntension == ARKUI_KEY_INTENTION_VOLUME_UP ||
+        KeyIntension == ARKUI_KEY_INTENTION_VOLUME_DOWN ||
+        KeyIntension == ARKUI_KEY_INTENTION_CALL ||
+        KeyIntension == ARKUI_KEY_INTENTION_CAMERA) {
+        return ArkUI_KeyIntension(KeyIntension);
+    } else {
+        return ArkUI_KeyIntension(PARAM_NEGATIVE_2);
+    }
+}
+
+ArkUI_KeyIntension CheckKeyIntension1(int32_t KeyIntension)
+{
+    if (KeyIntension == ARKUI_KEY_INTENSION_UNKNOWN ||
+        KeyIntension == ARKUI_KEY_INTENSION_UP ||
+        KeyIntension == ARKUI_KEY_INTENSION_DOWN ||
+        KeyIntension == ARKUI_KEY_INTENSION_LEFT ||
+        KeyIntension == ARKUI_KEY_INTENSION_RIGHT ||
+        KeyIntension == ARKUI_KEY_INTENSION_SELECT ||
+        KeyIntension == ARKUI_KEY_INTENSION_ESCAPE ||
+        KeyIntension == ARKUI_KEY_INTENSION_BACK ||
+        KeyIntension == ARKUI_KEY_INTENSION_FORWARD ||
+        KeyIntension == ARKUI_KEY_INTENSION_MENU ||
+        KeyIntension == ARKUI_KEY_INTENSION_HOME ||
+        KeyIntension == ARKUI_KEY_INTENSION_PAGE_UP) {
+        return ArkUI_KeyIntension(KeyIntension);
+    } else {
+        return CheckKeyIntension2(KeyIntension);
+    }
+}
+
 napi_value GetKeyIntensionType(napi_env env, napi_callback_info info)
 {
     if ((env == nullptr) || (info == nullptr)) {
@@ -79,7 +120,7 @@ napi_value GetKeyIntensionType(napi_env env, napi_callback_info info)
     }
     int32_t getParam;
     napi_get_value_int32(env, args[0], &getParam);
-    ArkUI_KeyIntension KeyIntensionType = ArkUI_KeyIntension(getParam);
+    ArkUI_KeyIntension KeyIntensionType = CheckKeyIntension1(getParam);
     if (g_keyIntensionMap.count(KeyIntensionType) == 1) {
         napi_create_int32(env, 1, &args[0]);
     } else {

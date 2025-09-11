@@ -437,7 +437,7 @@ static napi_value UIInputEventType0130(napi_env env, napi_callback_info info)
 static napi_value UIInputEventType0131(napi_env env, napi_callback_info info)
 {
     int32_t errcode = 1;
-    if (g_getChangedPointerId == ARKUI_ERROR_CODE_NO_ERROR) {
+    if (g_getChangedPointerId) {
         errcode = 0;
     }
     napi_value result = nullptr;
@@ -504,7 +504,7 @@ static napi_value UIInputEventType0136(napi_env env, napi_callback_info info)
 static napi_value UIInputEventType0137(napi_env env, napi_callback_info info)
 {
     int32_t errcode = 1;
-    if (g_getRollAngle == ARKUI_ERROR_CODE_NO_ERROR) {
+    if (g_getRollAngle) {
         errcode = 0;
     }
     napi_value result = nullptr;
@@ -931,15 +931,22 @@ void eventReceiver(ArkUI_NodeEvent *event)
     g_uiInputEventSourceMouse = OH_ArkUI_UIInputEvent_GetSourceType(UIInputEvent);
     g_axisAction.push_back(OH_ArkUI_AxisEvent_GetAxisAction(UIInputEvent));
     auto qaz = OH_ArkUI_PointerEvent_GetInteractionHand(UIInputEvent, &g_hand);
-    g_getChangedPointerId = OH_ArkUI_PointerEvent_GetChangedPointerId(UIInputEvent, &g_pointerIndex);
+    g_getChangedPointerId = OH_ArkUI_PointerEvent_GetChangedPointerId(UIInputEvent, &g_pointerIndex) ==
+                            ARKUI_ERROR_CODE_NO_ERROR;
     g_getDisplayX = OH_ArkUI_PointerEvent_GetGlobalDisplayX(UIInputEvent);
     g_getDisplayXByIndex = OH_ArkUI_PointerEvent_GetGlobalDisplayXByIndex(UIInputEvent, g_pointerIndex);
     g_getDisplayY = OH_ArkUI_PointerEvent_GetGlobalDisplayY(UIInputEvent);
     g_getDisplayYByIndex = OH_ArkUI_PointerEvent_GetGlobalDisplayYByIndex(UIInputEvent, g_pointerIndex);
     g_createClonedEvent = OH_ArkUI_PointerEvent_CreateClonedEvent(UIInputEvent, &clonedEvent);
+    g_createClonedEvent = g_createClonedEvent == ARKUI_ERROR_CODE_NO_ERROR ?
+                          ARKUI_ERROR_CODE_NO_ERROR : g_createClonedEvent;
     int32_t length = 1;
     int32_t *pressButton = (int32_t *)malloc(length * sizeof(int32_t));
     g_getPressedButtons = OH_ArkUI_MouseEvent_GetPressedButtons(UIInputEvent, pressButton, &length);
+    g_getPressedButtons = g_getPressedButtons == ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR ?
+                          ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR : g_getPressedButtons;
+    g_getPressedButtons = g_getPressedButtons == ARKUI_ERROR_CODE_NO_ERROR ?
+                          ARKUI_ERROR_CODE_NO_ERROR : g_getPressedButtons;
     if (OH_ArkUI_PointerEvent_GetHistoryGlobalDisplayX(UIInputEvent, g_pointerIndex, g_historyIndex)) {
         g_getHistoryDisplayXByIndex =
             OH_ArkUI_PointerEvent_GetHistoryGlobalDisplayX(UIInputEvent, g_pointerIndex, g_historyIndex);
@@ -948,7 +955,7 @@ void eventReceiver(ArkUI_NodeEvent *event)
         g_getHistoryDisplayYByIndex =
             OH_ArkUI_PointerEvent_GetHistoryGlobalDisplayY(UIInputEvent, g_pointerIndex, g_historyIndex);
     }
-    g_getRollAngle = OH_ArkUI_PointerEvent_GetRollAngle(UIInputEvent, &g_rollAngle);
+    g_getRollAngle = OH_ArkUI_PointerEvent_GetRollAngle(UIInputEvent, &g_rollAngle) == ARKUI_ERROR_CODE_NO_ERROR;
     g_setHitTestMode.push_back(OH_ArkUI_PointerEvent_SetInterceptHitTestMode(UIInputEvent, HTM_BLOCK_HIERARCHY));
     g_setHitTestMode.push_back(OH_ArkUI_PointerEvent_SetInterceptHitTestMode(UIInputEvent, HTM_BLOCK_DESCENDANTS));
     if (qaz == 0) {
@@ -969,10 +976,14 @@ void eventReceiver1(ArkUI_NodeEvent *event)
     ArkUI_UIInputEvent *UIInputEvent = OH_ArkUI_NodeEvent_GetInputEvent(event);
     g_uiInputEventKey = OH_ArkUI_UIInputEvent_GetType(UIInputEvent);
     g_uiInputEventSourceUnknown = OH_ArkUI_UIInputEvent_GetSourceType(UIInputEvent);
-    g_getModifierKey = OH_ArkUI_UIInputEvent_GetModifierKeyStates(UIInputEvent, &g_modifierKey);
+    g_getModifierKey = OH_ArkUI_UIInputEvent_GetModifierKeyStates(UIInputEvent, &g_modifierKey) ==
+                       ARKUI_ERROR_CODE_NO_ERROR ? ARKUI_ERROR_CODE_NO_ERROR : PARAM_NEGATIVE_2;
     int32_t length = 10;
     int32_t *pressedKeys = (int32_t *)malloc(length * sizeof(int32_t));
     g_getPressedKeys2 = OH_ArkUI_UIInputEvent_GetPressedKeys(UIInputEvent, pressedKeys, &length);
+    g_getPressedKeys2 = g_getPressedKeys2 == ARKUI_ERROR_CODE_BUFFER_SIZE_NOT_ENOUGH ?
+                        ARKUI_ERROR_CODE_BUFFER_SIZE_NOT_ENOUGH : g_getPressedKeys2;
+    g_getPressedKeys2 = g_getPressedKeys2 == ARKUI_ERROR_CODE_NO_ERROR ? ARKUI_ERROR_CODE_NO_ERROR : g_getPressedKeys2;
     return;
 }
 
