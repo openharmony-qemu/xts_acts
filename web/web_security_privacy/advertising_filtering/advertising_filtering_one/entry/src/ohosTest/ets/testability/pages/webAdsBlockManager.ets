@@ -392,6 +392,11 @@ struct webAdsBlockManager {
                     }
 
                     case 'emitOnAdsBlocked': {
+		      if (Utils.isWearable(this.controller) ) {
+                        console.info('[TAO] Wearable');
+                        Utils.emitEvent(true, 161170)
+                        break;
+                      }
                       try{
                         this.controller.enableAdsBlock(true);
                         console.log(' enableAdsBlock:  true');
@@ -415,7 +420,7 @@ struct webAdsBlockManager {
                         this.isSetAdsBlockRules = -1;
                         webview.AdsBlockManager.setAdsBlockRules(rulePath, true);
                         await waitForExist(() => this.isSetAdsBlockRules, this.emitKey, 0);
-                        console.log("[TAO]The advertising rules have been set up");
+                        console.log('[TAO]The advertising rules have been set up');
 
                         Utils.deleteFile(rulePath);
                         this.isPageEnd = -1;
@@ -467,9 +472,9 @@ struct webAdsBlockManager {
                         if(e.code == 801) {
                           console.log(`emitIsAdsBlockEnabledCheck The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
                           this.errorCode = 801
-                          Utils.emitEvent(true, 161190)
+                          Utils.emitEvent(true, 161170)
                         } else {
-                          Utils.emitEvent(false, 161190)
+                          Utils.emitEvent(false, 161170)
                         }
                       }
 
@@ -519,6 +524,11 @@ struct webAdsBlockManager {
                     }
 
                     case 'emitOnAdsBlockedTest': {
+		                  if (Utils.isWearable(this.controller) ) {
+                        console.info('[TAO] Wearable');
+                        Utils.emitEvent(true, 161200)
+                        break;
+                      }
                       try{
                         this.controller.enableAdsBlock(true);
                         console.log(' enableAdsBlock:  true');
@@ -551,7 +561,7 @@ struct webAdsBlockManager {
                         console.log('[TAO]isBlockedCurPageBefore :  ' + isBlockedCurPageBefore);
                         console.log('[TAO]isBlockedCurPageAfter :  ' + isBlockedCurPageAfter);
 
-                        console.log("[TAO]Start loading the test URLs...");
+                        console.log('[TAO]Start loading the test URLs...');
                         this.isPageEnd = -1;
                         this.controller.loadUrl(CommonConstants.ADS_URL1);
                         await waitForExist(() => this.isPageEnd, this.emitKey, 0);
@@ -569,12 +579,12 @@ struct webAdsBlockManager {
                         if(e.code == 801) {
                           console.log(`emitIsAdsBlockEnabledCheck The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
                           this.errorCode = 801
-                          Utils.emitEvent(true, 161190)
+                          Utils.emitEvent(true, 161200)
                         } else {
-                          Utils.emitEvent(false, 161190)
-                        }
+                          Utils.emitEvent(false, 161200)                       
+			   }
                       }
-                      console.log("[TAO]###########emitOnAdsBlockedTest end... ");
+
                       break;
                     }
                   }
