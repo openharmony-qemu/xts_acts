@@ -29,7 +29,7 @@ export default function ActsNotificationSystemAPITest() {
      * @tc.name: publish
      * @tc.desc: test function publish takes userId
      */
-    it('Sub_Notification_Ans_Publish_Publish_4100', Level.LEVEL3, async (done: Function) => {
+    it('Sub_Notification_Ans_Publish_Publish_4100', Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4100 START`);
 
       let notificationRequest: notificationManager.NotificationRequest = {
@@ -71,7 +71,7 @@ export default function ActsNotificationSystemAPITest() {
      * @tc.name: publishAsBundle 
      * @tc.desc: test function publishAsBundle
      */
-    it('Sub_Notification_Ans_Publish_Publish_4200', Level.LEVEL3, async (done: Function) => {
+    it('Sub_Notification_Ans_Publish_Publish_4200', Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4200 START`);
 
       let notificationRequest: notificationManager.NotificationRequest = {
@@ -106,7 +106,7 @@ export default function ActsNotificationSystemAPITest() {
      * @tc.name: publishAsBundle
      * @tc.desc: test function publishAsBundle
      */
-    it('Sub_Notification_Ans_Publish_Publish_4300', Level.LEVEL2, async (done: Function) => {
+    it('Sub_Notification_Ans_Publish_Publish_4300', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4300 START`);
 
         let bundleOpt : notificationManager.BundleOption = {
@@ -143,7 +143,7 @@ export default function ActsNotificationSystemAPITest() {
      * @tc.name: cancelAsBundle
      * @tc.desc: test function cancelAsBundle
      */
-    it('Sub_Notification_Ans_Publish_Cancel_0150', Level.LEVEL3, async (done: Function) => {
+    it('Sub_Notification_Ans_Publish_Cancel_0150', Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_0150 START`);
 
       notificationManager.cancelAsBundle(1, "example.bundleName", 0 , (err) => {
@@ -166,7 +166,7 @@ export default function ActsNotificationSystemAPITest() {
      * @tc.name: cancelAsBundle
      * @tc.desc: test function cancelAsBundle
      */
-    it('Sub_Notification_Ans_Publish_Cancel_0160', Level.LEVEL2, async (done: Function) => {
+    it('Sub_Notification_Ans_Publish_Cancel_0160', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_0160 START`);
 
         let bundleOpt : notificationManager.BundleOption = {
@@ -196,7 +196,7 @@ export default function ActsNotificationSystemAPITest() {
 
       let slot: notificationManager.NotificationSlot = {
         type: notification.SlotType.SOCIAL_COMMUNICATION,
-        level: notificationManager.SlotLevel.LEVEL_HIGH,
+        notificationLevel: notificationManager.SlotLevel.LEVEL_HIGH,
         desc: 'xts test'
       }
       notificationManager.addSlot(slot, (err) => {
