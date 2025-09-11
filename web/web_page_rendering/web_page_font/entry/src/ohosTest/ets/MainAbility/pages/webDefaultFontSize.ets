@@ -93,6 +93,9 @@ struct webDefaultFontSize {
               try {
                 this.defaultFontSize = 73;
                 this.minFontSize = 73;
+                 this.isPageEnd = -1;
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
                 console.log("fonsize of emitdefaultFontSize73AndminFontSize73WebC is :" + this.defaultFontSize + this.minFontSize);
                 this.controller.runJavaScript({
                   script: "getPageFontsize()", callback: (result) => {

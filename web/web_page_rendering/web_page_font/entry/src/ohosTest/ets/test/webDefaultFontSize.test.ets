@@ -78,7 +78,8 @@ export default function webDefaultFontSize() {
       emitKey = "emitdefaultFontSize73AndminFontSize73WebC";
       Utils.emitEvent(emitKey, 150020)
       Utils.registerEvent("testDefaultFontSize73AndMinFontSize73WebC", "72px", 150040, done);
-      await Utils.waitAndClickComponent(driver, "webDefaultFontSize");
+      let component = await driver.findComponent(ON.id("webDefaultFontSize"));
+      await component.click();
     })
   })
 }
