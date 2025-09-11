@@ -20,6 +20,7 @@ import PermissionsUtils from '../../test/PermissionsUtils';
 import { Driver, ON } from '@ohos.UiTest';
 import common from '@ohos.app.ability.common';
 import deviceInfo from '@ohos.deviceInfo';
+import {waitForExist} from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -29,17 +30,19 @@ struct WebOnPermissionRequest {
   @State deny: boolean = false
   @State userAgentPC:string = '';
   permissionRequest: PermissionRequest | null = null
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 160860,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(160860)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -48,6 +51,7 @@ struct WebOnPermissionRequest {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -67,12 +71,16 @@ struct WebOnPermissionRequest {
           .onClick(async () => {
             let deviceProductModel: string = deviceInfo.productModel
             console.log('the value of the deviceInfo productModel is : ' + deviceProductModel)
+            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
             console.info('key==>' + this.str)
             switch (this.str) {
               case 'emitPermissionRequestDeny001': {
                 if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
-                  if ( Utils.isPC(this.controller) ) {
-                    Utils.emitEvent('"deny"', 70320)
+                  if ( Utils.isPC(this.controller)||Utils.isWearable(this.controller) ) {
+                    console.info('[TAO]PC or Wearable');
+                    Utils.emitEvent('"deny"', 160870)
                     break;
                   }
                   try {
@@ -82,7 +90,7 @@ struct WebOnPermissionRequest {
                         console.info('getMedia() return error: ' + error)
                       }
                     })
-                    await Utils.sleep(2000)
+         
                     this.controller.runJavaScript('getResult()', (error, result) => {
                       if (error) {
                         console.info('getResult() return error: ' + error)
@@ -90,29 +98,28 @@ struct WebOnPermissionRequest {
                       if (result) {
                         console.info('getResult() return result: ' + result)
                         if (result === '"deny"' || result === '""') {
-                          Utils.emitEvent('"deny"', 70320)
+                          Utils.emitEvent('"deny"', 160870)
                         }
                       }
                     })
-
-
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
                 } else {
-                  Utils.emitEvent('"deny"', 70320)
+                  Utils.emitEvent('"deny"', 160870)
                 }
               }
               case 'emitPermissionRequestGrant001': {
                 if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
-                  if (Utils.isPC(this.controller)) {
-                    Utils.emitEvent('"grant"', 70322)
+                  if (Utils.isPC(this.controller)||Utils.isWearable(this.controller)) {
+                    console.info('[TAO]PC or Wearable');
+                    Utils.emitEvent('"grant"', 160880)
                     break;
                   }
 
                   if (deviceProductModel === 'emulator') {
-                    Utils.emitEvent('"grant"', 70322)
+                    Utils.emitEvent('"grant"', 160880)
                     break;
                   }
                   try {
@@ -122,7 +129,7 @@ struct WebOnPermissionRequest {
                         console.info('getMedia() return error: ' + error)
                       }
                     })
-                    await Utils.sleep(2000)
+
                     PermissionsUtils.reqPermissionCamera(getContext(this) as common.UIAbilityContext,
                       (success: boolean) => {
                         if (success) {
@@ -134,27 +141,46 @@ struct WebOnPermissionRequest {
                           }
                         }
                       })
-                    await Utils.sleep(3000);
+
                     let driver = Driver.create();
-                    let component = await driver.findComponent(ON.text('允许'));
+ 
+                    await waitForExist(async () => {
+                      try {
+                        const component = await driver.findComponent(ON.text('允许'));
+                        return component !== null;
+                      } catch {
+                        return false;
+                      }
+                    }, "allowButton", true)
+
+                    const component = await driver.findComponent(ON.text('允许'));
                     await component.click();
-                    await Utils.sleep(3000);
-                    this.controller.runJavaScript('getResult()', (error, result) => {
-                      if (error) {
-                        console.info('getResult() return error: ' + error)
-                      }
-                      if (result) {
-                        console.info('getResult() return result: ' + result)
-                        Utils.emitEvent(result, 70322)
-                      }
-                    })
+
+           
+                    const result = await waitForExist(async () => {
+                      return new Promise<string>((resolve) => {
+                        this.controller.runJavaScript('getResult()', (error, result) => {
+                          if (error) {
+                            console.info('getResult() return error: ' + error)
+                            resolve('')
+                          } else if (result) {
+                            console.info('getResult() return result: ' + result)
+                            resolve(result)
+                          } else {
+                            resolve('')
+                          }
+                        })
+                      })
+                    }, "getResult", '"grant"')
+
+                    Utils.emitEvent(result, 160880)
 
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   }
                   break;
                 } else {
-                  Utils.emitEvent('"grant"', 70322)
+                  Utils.emitEvent('"grant"', 160880)
                 }
               }
             }
@@ -180,6 +206,12 @@ struct WebOnPermissionRequest {
               console.info('onConsole ====>' + event.message.getMessage())
             }
             return false
+          })
+          .onPageEnd((event) => {
+            if (event) {
+              this.isPageEnd = 0;
+              console.log('onPageEnd url:' + event.url);
+            }
           })
       }
       .width('100%')
