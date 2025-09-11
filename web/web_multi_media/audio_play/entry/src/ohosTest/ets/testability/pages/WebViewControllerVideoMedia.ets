@@ -863,6 +863,15 @@ struct WebViewControllerVideoMedia {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                let driver = Driver.create();
+                let size = await driver.getDisplaySize();
+                console.log("size x:" + size.x)
+                console.log("size y:" + size.y)
+                await driver.delayMs(1000);
+                await driver.click(size.x / 2, size.y / 2);
+                await driver.delayMs(1000);
+
                 this.controller.runJavaScript("enterFullScreen()");
                 await waitForExist(() => this.isFullScreen, 'isFullScreen'+ this.str, 1);
                 
