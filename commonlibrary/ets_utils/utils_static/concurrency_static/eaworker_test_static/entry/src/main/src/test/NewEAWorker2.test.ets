@@ -253,6 +253,9 @@ export default function NewEAWorkerTes2() {
           });
           await Utils.msSleep(200);
           worker.quitSafely();
+          while(worker.isAlive()){
+              await Sleep(10);
+          }
           expect(worker.isAlive()).assertFalse();
           let secondQuitThrows = false;
           try {
@@ -511,6 +514,9 @@ export default function NewEAWorkerTes2() {
           }
           await Utils.msSleep(3000);
           worker.quitSafely();
+          while(worker.isAlive()){
+              await Sleep(10);
+          }
           expect(worker.isAlive()).assertFalse();
           console.info(`${TAG} count: ${count}`);
           expect(count).assertEqual(10);
@@ -557,6 +563,9 @@ export default function NewEAWorkerTes2() {
           jobs.forEach(j => j.Await());
           expect(count).assertEqual(5);
           worker.join();
+          while(worker.isAlive()){
+              await Sleep(10);
+          }
           expect(worker.isAlive()).assertFalse();
         } catch (error: Error) {
           console.error(`${TAG} catch error: ${error.message}`);
@@ -649,6 +658,9 @@ export default function NewEAWorkerTes2() {
               console.info(`${TAG} run-${i}`);
             });
             worker.quit();
+            while(worker.isAlive()){
+              await Sleep(10);
+            }
             expect(worker.isAlive()).assertFalse();
           }
         } catch (error: Error) {

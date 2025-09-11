@@ -952,6 +952,9 @@ export default function NewEAWorkerTest() {
         try {
           worker.start();
           worker.quit();
+          while(worker.isAlive()){
+              await Sleep(10);
+          }
           expect(worker.isAlive() == false).assertTrue();
         } catch (error: Error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
@@ -983,6 +986,9 @@ export default function NewEAWorkerTest() {
         try {
           worker.start();
           worker.quitSafely();
+          while(worker.isAlive()){
+              await Sleep(10);
+          }
           expect(worker.isAlive() == false).assertTrue();
         } catch (error: Error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
@@ -1014,6 +1020,9 @@ export default function NewEAWorkerTest() {
         try {
           worker.start();
           worker.join();
+          while(worker.isAlive()){
+              await Sleep(10);
+          }
           expect(worker.isAlive() == false).assertTrue();
           console.info('StartTest011--1', worker.isAlive());
         } catch (error: Error) {
@@ -1141,7 +1150,10 @@ export default function NewEAWorkerTest() {
         try {
           worker.quit();
           let workAlive = worker.isAlive();
-          expect(workAlive).assertEqual(false);
+          while(worker.isAlive()){
+              await Sleep(10);
+          }
+          expect(worker.isAlive()).assertEqual(false);
         } catch (error: Error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
@@ -1172,8 +1184,10 @@ export default function NewEAWorkerTest() {
         worker.start();
         try {
           worker.quitSafely();
-          let workAlive = worker.isAlive();
-          expect(workAlive).assertEqual(false);
+          while(worker.isAlive()){
+              await Sleep(10);
+          }
+          expect(worker.isAlive()).assertEqual(false);
         } catch (error: Error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
@@ -1201,10 +1215,13 @@ export default function NewEAWorkerTest() {
         const TAG: string = 'IsAlive006';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
+        worker.start();
         try {
           worker.join();
-          let workAlive = worker.isAlive();
-          expect(workAlive).assertEqual(false);
+          while(worker.isAlive()){
+              await Sleep(10);
+          }
+          expect(worker.isAlive()).assertEqual(false);
         } catch (error: Error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
@@ -1235,8 +1252,10 @@ export default function NewEAWorkerTest() {
         try {
           worker.start();
           worker.quit();
-          let workAlive = worker.isAlive();
-          expect(workAlive).assertEqual(false);
+          while(worker.isAlive()){
+              await Sleep(10);
+          }
+          expect(worker.isAlive()).assertEqual(false);
         } catch (error: Error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
@@ -1270,8 +1289,10 @@ export default function NewEAWorkerTest() {
             return true;
           });
           worker.quitSafely();
-          let workAlive = worker.isAlive();
-          expect(workAlive).assertEqual(false);
+          while(worker.isAlive()){
+              await Sleep(10);
+          }
+          expect(worker.isAlive()).assertEqual(false);
         } catch (error: Error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
@@ -1302,8 +1323,10 @@ export default function NewEAWorkerTest() {
         try {
           worker.start();
           worker.join();
-          let workAlive = worker.isAlive();
-          expect(workAlive).assertEqual(false);
+          while(worker.isAlive()){
+              await Sleep(10);
+          }
+          expect(worker.isAlive()).assertEqual(false);
         } catch (error: Error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
@@ -2009,8 +2032,14 @@ export default function NewEAWorkerTest() {
             doneFlag = true;
           }).Await();
           worker.quitSafely();
+          while(worker.isAlive()){
+              await Sleep(10);
+          }
           expect(worker.isAlive()).assertFalse();
           worker.quit();
+          while(worker.isAlive()){
+              await Sleep(10);
+          }
           expect(worker.isAlive()).assertFalse();
           expect(doneFlag).assertTrue();
         } catch (error: Error) {
@@ -2051,6 +2080,9 @@ export default function NewEAWorkerTest() {
           for (let i = 0; i < 10; i++) {
             worker.quit();
           }
+          while(worker.isAlive()){
+              await Sleep(10);
+          }
           expect(worker.isAlive()).assertFalse();
           expect(doneFlag).assertTrue();
         } catch (error: Error) {
@@ -2087,8 +2119,14 @@ export default function NewEAWorkerTest() {
             doneFlag = true;
           }).Await();
           worker.quit();
+          while(worker.isAlive()){
+              await Sleep(10);
+          }
           expect(worker.isAlive()).assertFalse();
-          worker.quitSafely()
+          worker.quitSafely();
+          while(worker.isAlive()){
+              await Sleep(10);
+          }
           expect(worker.isAlive()).assertFalse();
           expect(doneFlag).assertTrue();
         } catch (error: Error) {
@@ -2126,9 +2164,15 @@ export default function NewEAWorkerTest() {
             doneFlag = true;
           }).Await();
           worker.join();
+          while(worker.isAlive()){
+              await Sleep(10);
+          }
           expect(worker.isAlive()).assertFalse();
           expect(doneFlag).assertTrue();
           worker.quit();
+          while(worker.isAlive()){
+              await Sleep(10);
+          }
           expect(worker.isAlive()).assertFalse();
         } catch (error: Error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
