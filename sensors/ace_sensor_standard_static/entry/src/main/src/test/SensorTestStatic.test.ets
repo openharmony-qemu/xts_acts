@@ -78,6 +78,8 @@ function onAmbientLightCallback(data: sensor.LightResponse) {
     expect(false).assertTrue();
   }
   expect(typeof(data.intensity)).assertEqual("number");
+  expect(typeof(data.colorTemperature)).assertEqual("number");
+  expect(typeof(data.infraredLuminance)).assertEqual("number");
 }
 
 function onProximityCallback(data: sensor.ProximityResponse) {
@@ -379,11 +381,15 @@ export default function SensorJsStaticTest() {
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, 'testTag', '---------orientating_SensorJsTest_static_005--------------');
         await isAvailable(sensor.SensorId.ORIENTATION);
+        let InfoParam: sensor.SensorInfoParam = {
+          deviceId: -1,
+          sensorIndex: 0
+        }
         try {
           sensor.on('orientationChange', callback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------orientating_SensorJsTest_static_005 off in--------------');
-            sensor.off('orientationChange');
+            sensor.off('orientationChange', InfoParam);
             hilog.info(0x0000, 'testTag', '---------orientating_SensorJsTest_static_005 off end--------------');
             done();
           }, 500);
@@ -453,35 +459,6 @@ export default function SensorJsStaticTest() {
         }
       })
 
-     /*
-      * @tc.name:paramTest_SensorJsTest_static_073
-      * @tc.desc:Verification results of the incorrect parameters of the test interface.
-      * @tc.number:SUB_SensorsSystem_static_JsTest_0730
-      */
-    it("paramTest_SensorJsTest_static_073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        hilog.info(0x0000, 'testTag', '---------paramTest_SensorJsTest_static_073--------------');
-        try {
-          let accUnreliable: sensor.SensorAccuracy = sensor.SensorAccuracy.ACCURACY_UNRELIABLE;
-          let accLow: sensor.SensorAccuracy = sensor.SensorAccuracy.ACCURACY_LOW;
-          let accMedium: sensor.SensorAccuracy = sensor.SensorAccuracy.ACCURACY_MEDIUM;
-          let accHigh: sensor.SensorAccuracy = sensor.SensorAccuracy.ACCURACY_HIGH;
-          let orientationResponseParam: sensor.OrientationResponse = {
-            timestamp: 100000000,
-            beta: 1.0,
-            gamma: 2.0,
-            alpha: 3.0,
-          };
-          expect(true).assertTrue();
-          done();
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(0x0000, 'testTag', `orientatingParamError_SensorJsTest_static_050 failed error.code: ${e.code} , error.message: ${e.message}`);
-          expect(false).assertTrue();
-          done();
-        }  
-      })
-
       /*
      * @tc.name:getRotationMatrix_SensorJsTest_static_001
      * @tc.desc:Verification results of the incorrect parameters of the test interface.
@@ -495,9 +472,41 @@ export default function SensorJsStaticTest() {
           let geomagnetic: double[] = [210.87253, -78.6096, -111.44444];
           sensor.getRotationMatrix(gravity, geomagnetic, (err: BusinessError<void> | null, data: sensor.RotationMatrixResponse | undefined) => {
             hilog.info(0x0000, 'testTag', ' Succeeded in getting rotationMatrix: ' + JSON.stringify(data) + '.err:' + err);
+            if (data != undefined) {
+              expect(data?.rotation != null).assertTrue();
+              expect(data?.inclination != null).assertTrue();
+            }
             expect(err == null).assertTrue();
             done();
           });
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;  
+          hilog.info(0x0000, 'testTag', ' getRotationMatrix_SensorJsTest_static_001 fail, errCode:' + e.code);
+          if (e.code == 401) {
+            expect(e.code == 401).assertTrue();
+          } else {
+            expect(false).assertTrue();
+          }
+          expect(sensor.SensorId.COLOR == sensor.SensorId.COLOR).assertTrue();
+          done();
+        }
+      })
+
+     /*
+     * @tc.name:getRotationMatrix_SensorJsTest_static_002
+     * @tc.desc:Verification results of the incorrect parameters of the test interface.
+     * @tc.number:SUB_SensorsSystem_static_JsTest_0020
+     */
+    it("getRotationMatrix_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, 'testTag', '---------getRotationMatrix_SensorJsTest_static_002--------------');
+        try {
+          let gravity: double[] = [-0.27775216, 0.5351276, 9.788099];
+          let geomagnetic: double[] = [210.87253, -78.6096, -111.44444];
+          const promise = await sensor.getRotationMatrix(gravity, geomagnetic);
+          hilog.info(0x0000, 'testTag', ` GetOrientation success, promise: {JSON.stringify(promise)}`);
+          expect(promise != null).assertTrue();
+          done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;  
           hilog.info(0x0000, 'testTag', ' getRotationMatrix_SensorJsTest_static_001 fail, errCode:' + e.code);
@@ -533,6 +542,27 @@ export default function SensorJsStaticTest() {
         }
       })
 
+      /*
+     * @tc.name:getOrientation_SensorJsTest_static_003
+     * @tc.desc:Verification results of the incorrect parameters of the test interface.
+     * @tc.number:SUB_SensorsSystem_static_JsTest_0030
+     */
+    it("getOrientation_SensorJsTest_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, 'testTag', '---------getOrientation_SensorJsTest_static_003--------------');
+        try {
+          let preRotationMatrix: double[] = [1, 0, 0, 0, 0.87, -0.50, 0, 0.50, 0.87];
+          const promise = await sensor.getOrientation(preRotationMatrix);
+          hilog.info(0x0000, 'testTag', ` GetOrientation success, promise: {JSON.stringify(promise)}`);
+          expect(promise != null).assertTrue();
+          done();
+        } catch (error) {
+          hilog.info(0x0000, 'testTag', ' GetOrientation fail, errCode:' + error);
+          expect(false).assertTrue();
+          done();
+        }
+      })
+
     /*
      * @tc.name:getRotationMatrixSync_SensorJsTest_static_003
      * @tc.desc:Verification results of the incorrect parameters of the test interface.
@@ -554,6 +584,27 @@ export default function SensorJsStaticTest() {
           done();
         }
       })
+
+      /*
+     * @tc.name:getRotationMatrixSync_SensorJsTest_static_004
+     * @tc.desc:Verification results of the incorrect parameters of the test interface.
+     * @tc.number:SUB_SensorsSystem_static_JsTest_0040
+     */
+    it("getRotationMatrixSync_SensorJsTest_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, 'testTag', '---------getRotationMatrixSync_SensorJsTest_static_004--------------');
+        try {
+          let rotationVector: double[] = [0.20046076, 0.21907, 0.73978853, 0.60376877];
+          const promise = await sensor.getRotationMatrix(rotationVector);
+          hilog.info(0x0000, 'testTag', ` getRotationMatrix success, promise: {JSON.stringify(promise)}`);
+          expect(promise != null).assertTrue();
+          done();
+        } catch (error) {
+          hilog.info(0x0000, 'testTag', ' GetRotationMatrixSync fail, errCode:' + error);
+          expect(false).assertTrue();
+          done();
+        }
+      })
     
     /*
      * @tc.name:getSensorList_SensorJsTest_static_004
@@ -569,6 +620,35 @@ export default function SensorJsStaticTest() {
             expect(err == null).assertTrue();
             done();
           });
+        } catch (error) {
+          hilog.info(0x0000, 'testTag', ' GetSensorList fail, errCode:' + error);
+          expect(false).assertTrue();
+          done();
+        }
+      })
+
+    /*
+     * @tc.name:getSensorList_SensorJsTest_static_005
+     * @tc.desc:Verification results of the incorrect parameters of the test interface.
+     * @tc.number:SUB_SensorsSystem_static_JsTest_0050
+     */
+    it("getSensorList_SensorJsTest_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, 'testTag', '---------getSensorList_SensorJsTest_static_005--------------');
+        try {
+          let data: Array<sensor.Sensor> = await sensor.getSensorList();
+          hilog.info(0x0000, 'testTag', ' Succeeded in getting GetSensorList: ' + JSON.stringify(data));
+          expect(typeof(data[0].sensorName) == 'string').assertTrue();
+          expect(typeof(data[0].vendorName) == 'string').assertTrue();
+          expect(typeof(data[0].firmwareVersion) == 'string').assertTrue();
+          expect(typeof(data[0].hardwareVersion) == 'string').assertTrue();
+          expect(typeof(data[0].sensorId) == 'number').assertTrue();
+          expect(typeof(data[0].maxRange) == 'number').assertTrue();
+          expect(typeof(data[0].minSamplePeriod	) == 'number').assertTrue();
+          expect(typeof(data[0].maxSamplePeriod) == 'number').assertTrue();
+          expect(typeof(data[0].precision	) == 'number').assertTrue();
+          expect(typeof(data[0].power) == 'number').assertTrue();
+          done();
         } catch (error) {
           hilog.info(0x0000, 'testTag', ' GetSensorList fail, errCode:' + error);
           expect(false).assertTrue();
@@ -942,13 +1022,14 @@ export default function SensorJsStaticTest() {
             hilog.info(0x0000, 'testTag', '---------heartRate_SensorJsTest_static_019 off in--------------');
             sensor.off('heartRateChange');
             hilog.info(0x0000, 'testTag', '---------heartRate_SensorJsTest_static_019 off end--------------');
+            expect(false).assertTrue();
             done();
           }, 500);
         } catch (error) {
           let e: BusinessError = error as BusinessError;  
           hilog.info(0x0000, 'testTag', `heartRate_SensorJsTest_static_019 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
-            expect(false).assertTrue();
+            expect(e.code == 201).assertTrue();
           } else {
             expect(e.code == 401).assertTrue();
           }
@@ -1489,12 +1570,13 @@ export default function SensorJsStaticTest() {
         await isAvailable(sensor.SensorId.HEART_RATE);
         try {
           sensor.once('heartRateChange', onHeartRateCallback);
+          expect(false).assertTrue();
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;  
           hilog.info(0x0000, 'testTag', `heartRateOnce_SensorJsTest_static_042 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
-            expect(false).assertTrue();
+            expect(e.code == 201).assertTrue();
           } else {
             expect(e.code == 401).assertTrue();
           }
