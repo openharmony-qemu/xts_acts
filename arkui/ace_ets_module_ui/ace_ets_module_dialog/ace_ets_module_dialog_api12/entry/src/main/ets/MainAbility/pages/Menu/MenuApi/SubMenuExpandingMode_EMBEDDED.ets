@@ -55,7 +55,9 @@ struct SubMenuExpandingMode_EMBEDDED_Index {
           .fontWeight(FontWeight.Bold)
       }
       .id('btn')
-      .bindMenu(this.MyMenu)
+      .bindMenu(this.MyMenu, {
+        showInSubWindow: false
+      })
       .width('100%')
     }
     .height('100%')
