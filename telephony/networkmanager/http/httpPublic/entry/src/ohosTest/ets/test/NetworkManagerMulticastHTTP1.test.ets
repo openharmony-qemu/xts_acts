@@ -17,7 +17,7 @@ import { describe, expect, it, afterEach, afterAll, Level, Size, TestType } from
 import http from '@ohos.net.http';
 
 let httpRequest = http.createHttp();
-let url = "http://httpbin.org/anything";
+let url = "https://www.baidu.com";
 
 let httpRequestOptions_http3:http.HttpRequestOptions = {
     method: http.RequestMethod.POST,
