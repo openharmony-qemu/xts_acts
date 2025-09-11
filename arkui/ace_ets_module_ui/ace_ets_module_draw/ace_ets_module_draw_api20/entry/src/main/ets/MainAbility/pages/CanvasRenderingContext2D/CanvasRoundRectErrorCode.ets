@@ -43,7 +43,11 @@ struct CanvasRoundRectErrorCode {
             } catch(e) {
               let error = e as BusinessError;
               console.info(`Failed message: ${error.message}, code: ${error.code}`);
+              if(typeof(e === 'BusinessError')) {
               this.str = error.code.toString()
+            } else{
+              console.info('error code is error');
+            }
             }
           })
       }
