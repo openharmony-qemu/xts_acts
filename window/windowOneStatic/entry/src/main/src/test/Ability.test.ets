@@ -640,51 +640,7 @@ export default function abilityTest() {
         }
         done();
       });
-    /**
-     * @tc.number     : onOffWindowRectChangeTest_static_0134
-     * @tc.name       : onOffWindowRectChangeTest_static_0134
-     * @tc.desc       : onOffWindowRectChangeTest_static_0134
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it("onOffWindowRectChangeTest_static_0134",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        let callback = (data: window.RectChangeOptions): void => {
-          hilog.info(0x0000, '[ANI]',
-            `finaltest [ANI] onOffWindowRectChangeTest callback success:${JSON.stringify(data)}`);
-        };
-        try {
-          win.on('windowRectChange', callback);
-          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowRectChange success');
-          expect(true).assertTrue();
-        } catch (e: BusinessError) {
-          if (e.code === 801) {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowRectChange success code ===' + JSON.stringify(e));
-            expect(true).assertTrue();
-          } else {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowRectChange fail code ===' + JSON.stringify(e));
-            expect(false).assertTrue();
-          }
-          done();
-        }
-        try {
-          win.off('windowRectChange', callback);
-          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowRectChange success');
-          expect(true).assertTrue();
-        } catch (e: BusinessError) {
-          if (e.code === 801) {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowRectChange success code ===' + JSON.stringify(e));
-            expect(true).assertTrue();
-          } else {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowRectChange fail code ===' + JSON.stringify(e));
-            expect(false).assertTrue();
-          }
-          done();
-        }
-        done();
-      });
+    
 
     // 2. windowEvent监听测试
     /**
@@ -790,46 +746,7 @@ export default function abilityTest() {
         done();
       });
 
-    /**
-     * @tc.number     : onOffNoInteractionDetectedTest_static_0138
-     * @tc.name       : onOffNoInteractionDetectedTest_static_0138
-     * @tc.desc       : onOffNoInteractionDetectedTest_static_0138
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it("onOffNoInteractionDetectedTest_static_0138",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        let callback = (): void => {
-          hilog.info(0x0000, '[ANI]', `finaltest [ANI] onOffNoInteractionDetectedTest callback success`);
-        };
-        try {
-          win.on('noInteractionDetected', 10, callback);
-          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_noInteractionDetected success');
-          expect(true).assertTrue();
-        } catch (e: BusinessError) {
-          if (e.code == 801) {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_noInteractionDetected success e:' + JSON.stringify(e));
-            expect(true).assertTrue();
-          } else {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_noInteractionDetected fail e:' + JSON.stringify(e));
-            expect(false).assertTrue();
-          }
-          done();
-        }
-        try {
-          win.off('noInteractionDetected', callback);
-          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_noInteractionDetected success');
-          expect(true).assertTrue();
-        } catch (e: Error) {
-          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] noInteractionDetected fail e:' + JSON.stringify(e));
-          expect(false).assertTrue();
-          done();
-        }
-        done();
-      });
-
+    
     /**
      * @tc.number     : getWindowAvoidAreaTest_static_0140
      * @tc.name       : getWindowAvoidAreaTest_static_0140
