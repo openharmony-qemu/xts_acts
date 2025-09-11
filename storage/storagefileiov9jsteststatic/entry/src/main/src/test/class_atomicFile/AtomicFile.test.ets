@@ -141,7 +141,7 @@ export default function atomicFileTest() {
      * @tc.level Level 0
      * @tc.require
      */
-   it('fileIO_test_atomicFile_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('fileIO_test_atomicFile_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_005 start');
       let fpath = await Utils.nextFileName('test5');
       expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
