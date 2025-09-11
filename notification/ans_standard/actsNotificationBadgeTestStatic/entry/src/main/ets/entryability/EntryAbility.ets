@@ -4,12 +4,11 @@ import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
-import { MyCallback } from '../models/MyCallback';
 
 
 class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onCreate');
+    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onCreate');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -25,18 +24,18 @@ class EntryAbility extends UIAbility {
   }
 
   onDestroy() {
-    hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onDestroy');
+    hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onDestroy');
   }
 
   onWindowStageDestroy() {
-    hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onWindowStageDestroy');
+    hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onWindowStageDestroy');
   }
 
   onForeground() {
-    hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onForeground');
+    hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onForeground');
   }
 
   onBackground() {
-    hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onBackground');
+    hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onBackground');
   }
 }
