@@ -166,7 +166,7 @@ async function doAgreementByDigestSpecStub(algName: string): Promise<boolean> {
   return ret;
 }
 
-async function doSignVerifyWithUpdateByDigestSpecCallbackStub(algName: string, dataLen: int, blockSize: number): Promise<boolean> {
+async function doSignVerifyWithUpdateByDigestSpecCallbackStub(algName: string, dataLen: int, blockSize: int): Promise<boolean> {
   let timeFlag: boolean = false;
   let timeoutId: int = 0;
   let intervalTime = 1000;
@@ -183,9 +183,9 @@ async function doSignVerifyWithUpdateByDigestSpecCallbackStub(algName: string, d
         let signAlgName: string = algName + "|" + digestAlgName;
         let sign: cryptoFramework.Sign = cryptoFramework.createSign(signAlgName);
         await doSignInitCallback(sign, keyPair);
-        let msgLen: number = msg.data.byteLength;
-        let iterate: number = msgLen / blockSize;
-        let rem: number = msgLen % blockSize;
+        let msgLen: int = msg.data.byteLength;
+        let iterate: int = msgLen / blockSize;
+        let rem: int = msgLen % blockSize;
         if (rem != 0) {
           iterate = (msgLen - rem) / blockSize;
         }
@@ -256,7 +256,7 @@ async function doSignVerifyByDigestSpec(algName: string, msgData: cryptoFramewor
 }
 
 async function doSignVerifyWithUpdateByDigestSpec(algName: string,
-  msg: cryptoFramework.DataBlob, blockSize: number): Promise<boolean> {
+  msg: cryptoFramework.DataBlob, blockSize: int): Promise<boolean> {
   try {
     let ret: boolean = true;
     let keyPair: cryptoFramework.KeyPair = await createAsyKeyPromise(algName);
@@ -264,9 +264,9 @@ async function doSignVerifyWithUpdateByDigestSpec(algName: string,
       let signAlgName: string = algName + "|" + digestAlgName;
       let sign: cryptoFramework.Sign = cryptoFramework.createSign(signAlgName);
       await sign.init(keyPair.priKey);
-      let msgLen: number = msg.data.byteLength;
-      let iterate: number = msgLen / blockSize;
-      let rem: number = msgLen % blockSize;
+      let msgLen: int = msg.data.byteLength;
+      let iterate: int = msgLen / blockSize;
+      let rem: int = msgLen % blockSize;
       if (rem != 0) {
         iterate = (msgLen - rem) / blockSize;
       }
@@ -324,7 +324,7 @@ function doSignVerifyByDigestSpecSync(algName: string, msgData: cryptoFramework.
 }
 
 function doSignVerifyWithUpdateByDigestSpecSync(algName: string,
-  msg: cryptoFramework.DataBlob, blockSize: number): boolean {
+  msg: cryptoFramework.DataBlob, blockSize: int): boolean {
   try {
     let ret: boolean = true;
     let keyPair: cryptoFramework.KeyPair = createAsyKeySync(algName);
@@ -332,9 +332,9 @@ function doSignVerifyWithUpdateByDigestSpecSync(algName: string,
       let signAlgName: string = algName + "|" + digestAlgName;
       let sign: cryptoFramework.Sign = cryptoFramework.createSign(signAlgName);
       sign.initSync(keyPair.priKey);
-      let msgLen: number = msg.data.byteLength;
-      let iterate: number = msgLen / blockSize;
-      let rem: number = msgLen % blockSize;
+      let msgLen: int = msg.data.byteLength;
+      let iterate: int = msgLen / blockSize;
+      let rem: int = msgLen % blockSize;
       if (rem != 0) {
         iterate = (msgLen - rem) / blockSize;
       }
@@ -393,7 +393,7 @@ async function doSignVerifyByDigestSpecCallback(algName: string, msgData: crypto
 }
 
 async function doSignVerifyWithUpdateByDigestSpecCallback(algName: string,
-  msg: cryptoFramework.DataBlob, blockSize: number): Promise<boolean> {
+  msg: cryptoFramework.DataBlob, blockSize: int): Promise<boolean> {
   try {
     let ret: boolean = true;
     let keyPair: cryptoFramework.KeyPair = await createAsyKeyPromise(algName);
@@ -401,9 +401,9 @@ async function doSignVerifyWithUpdateByDigestSpecCallback(algName: string,
       let signAlgName: string = algName + "|" + digestAlgName;
       let sign: cryptoFramework.Sign = cryptoFramework.createSign(signAlgName);
       await doSignInitCallback(sign, keyPair);
-      let msgLen: number = msg.data.byteLength;
-      let iterate: number = msgLen / blockSize;
-      let rem: number = msgLen % blockSize;
+      let msgLen: int = msg.data.byteLength;
+      let iterate: int = msgLen / blockSize;
+      let rem: int = msgLen % blockSize;
       if (rem != 0) {
         iterate = (msgLen - rem) / blockSize;
       }
@@ -885,7 +885,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let algName: string = "ECC_Secp256k1";
         let dataLen: int = 60;
         let msgBlob: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
-        let blockSize: number = 8;
+        let blockSize: int = 8;
         let ret: boolean = (await taskpool.execute(doSignVerifyWithUpdateByDigestSpec, algName, msgBlob, blockSize)) as boolean;
         expect(ret).assertTrue();
       } catch (error: BusinessError) {
@@ -908,7 +908,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let algName: string = "ECC_Secp256k1";
         let dataLen: int = 60;
         let msgBlob: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
-        let blockSize: number = 8;
+        let blockSize: int = 8;
         let ret: boolean = (await taskpool.execute(doSignVerifyWithUpdateByDigestSpecSync, algName, msgBlob, blockSize)) as boolean;
         expect(ret).assertTrue();
       } catch (error: BusinessError) {
@@ -1440,7 +1440,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let algName: string = "ECC_Secp256k1";
         let dataLen: int = 60;
         let msgBlob: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
-        let blockSize: number = 8;
+        let blockSize: int = 8;
         let ret: boolean = (await taskpool.execute(doSignVerifyWithUpdateByDigestSpecCallback, algName, msgBlob, blockSize)) as boolean;
         expect(ret).assertTrue();
       } catch (error: BusinessError) {

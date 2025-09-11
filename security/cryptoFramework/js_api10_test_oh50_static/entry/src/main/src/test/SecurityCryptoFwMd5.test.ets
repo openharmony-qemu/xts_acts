@@ -70,7 +70,7 @@ export default function SecurityCryptoFwMd5TestUnit() {
         let symKeyAlgName: string = "AES128";
         let msgLen: int = 64;
         let macAlgName:string = "MD5";
-        let blockSize: number = 64;
+        let blockSize: int = 64;
         let message: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
         let key: cryptoFramework.SymKey = await md5Utils.genSymKey(symKeyAlgName);
         let macResult1: cryptoFramework.DataBlob = await md5Utils.doHmacWithSplit(macAlgName, key, message, blockSize);

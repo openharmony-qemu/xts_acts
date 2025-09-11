@@ -157,15 +157,15 @@ async function doSignPromise(algName: string, priKey: cryptoFramework.PriKey, ms
 }
 
 function doSignWithUpdateSync(algName: string, priKey: cryptoFramework.PriKey, msg: cryptoFramework.DataBlob,
-                              blockSize: number): cryptoFramework.DataBlob {
+                              blockSize: int): cryptoFramework.DataBlob {
   try {
     let sign: cryptoFramework.Sign = cryptoFramework.createSign(algName);
     sign.initSync(priKey);
-    let msgLen:number = msg.data.byteLength;
-    let iterate: number = msgLen / blockSize;
-    let rem: number = msgLen % blockSize;
+    let msgLen: int = msg.data.byteLength;
+    let iterate: int = (msgLen / blockSize).toInt();
+    let rem: int = msgLen % blockSize;
     if (rem != 0) {
-      iterate = (msgLen - rem) / blockSize;
+      iterate = ((msgLen - rem) / blockSize).toInt();
     }
     for(let index = 0; index < iterate; index++) {
       let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));
@@ -187,15 +187,15 @@ function doSignWithUpdateSync(algName: string, priKey: cryptoFramework.PriKey, m
 }
 
 async function doSignWithUpdatePromise(algName: string, priKey: cryptoFramework.PriKey, msg: cryptoFramework.DataBlob,
-                              blockSize: number): Promise<cryptoFramework.DataBlob> {
+                              blockSize: int): Promise<cryptoFramework.DataBlob> {
   try {
     let sign: cryptoFramework.Sign = cryptoFramework.createSign(algName);
     await sign.init(priKey);
-    let msgLen:number = msg.data.byteLength;
-    let iterate: number = msgLen / blockSize;
-    let rem: number = msgLen % blockSize;
+    let msgLen: int = msg.data.byteLength;
+    let iterate: int = (msgLen / blockSize).toInt();
+    let rem: int = msgLen % blockSize;
     if (rem != 0) {
-      iterate = (msgLen - rem) / blockSize;
+      iterate = ((msgLen - rem) / blockSize).toInt();
     }
     for(let index = 0; index < iterate; index++) {
       let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));
@@ -245,15 +245,15 @@ async function doVerifyPromise(algName: string, pubKey: cryptoFramework.PubKey, 
 }
 
 function doVerifyWithUpdateSync(algName: string, pubKey: cryptoFramework.PubKey, msg: cryptoFramework.DataBlob,
-                                dataSign: cryptoFramework.DataBlob, blockSize: number): boolean {
+                                dataSign: cryptoFramework.DataBlob, blockSize: int): boolean {
   try {
     let verify: cryptoFramework.Verify = cryptoFramework.createVerify(algName);
     verify.initSync(pubKey);
-    let msgLen:number = msg.data.byteLength;
-    let iterate: number = msgLen / blockSize;
-    let rem: number = msgLen % blockSize;
+    let msgLen: int = msg.data.byteLength;
+    let iterate: int = (msgLen / blockSize).toInt();
+    let rem: int = msgLen % blockSize;
     if (rem != 0) {
-      iterate = (msgLen - rem) / blockSize;
+      iterate = ((msgLen - rem) / blockSize).toInt();
     }
     for(let index = 0; index < iterate; index++) {
       let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));
@@ -275,15 +275,15 @@ function doVerifyWithUpdateSync(algName: string, pubKey: cryptoFramework.PubKey,
 }
 
 async function doVerifyWithUpdatePromise(algName: string, pubKey: cryptoFramework.PubKey, msg: cryptoFramework.DataBlob,
-                                dataSign: cryptoFramework.DataBlob, blockSize: number): Promise<boolean> {
+                                dataSign: cryptoFramework.DataBlob, blockSize: int): Promise<boolean> {
   try {
     let verify: cryptoFramework.Verify = cryptoFramework.createVerify(algName);
     await verify.init(pubKey);
-    let msgLen:number = msg.data.byteLength;
-    let iterate: number = msgLen / blockSize;
-    let rem: number = msgLen % blockSize;
+    let msgLen: int = msg.data.byteLength;
+    let iterate: int = (msgLen / blockSize).toInt();
+    let rem: int = msgLen % blockSize;
     if (rem != 0) {
-      iterate = (msgLen - rem) / blockSize;
+      iterate = ((msgLen - rem) / blockSize).toInt();
     }
     for(let index = 0; index < iterate; index++) {
       let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));

@@ -549,7 +549,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
         let algName: string = "Ed25519";
         let signAlgName: string = "Ed25519";
-        let blockSize: number = 20;
+        let blockSize: int = 20;
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         signVerifySyncUtils.doSignWithUpdateSync(signAlgName, keyPair.priKey, msg, blockSize);
         expect(null).assertFail();
@@ -574,7 +574,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
         let algName: string = "Ed25519";
         let signAlgName: string = "Ed25519";
-        let blockSize: number = 20;
+        let blockSize: int = 20;
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         await signVerifySyncUtils.doSignWithUpdatePromise(signAlgName, keyPair.priKey, msg, blockSize);
         expect(null).assertFail();
@@ -599,7 +599,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
         let algName: string = "RSA512";
         let signAlgName: string = "RSA512|PKCS1|MD5";
-        let blockSize: number = 20;
+        let blockSize: int = 20;
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         let dataSign = signVerifySyncUtils.doSignWithUpdateSync(signAlgName, keyPair.priKey, msg, blockSize);
         let ret: boolean = signVerifySyncUtils.doVerifyWithUpdateSync(signAlgName, keyPair.pubKey, msg, dataSign, blockSize);
@@ -625,7 +625,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
         let algName: string = "RSA768";
         let signAlgName: string = "RSA768|PSS|MD5|MGF1_SHA1";
-        let blockSize: number = 20;
+        let blockSize: int = 20;
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         let dataSign = signVerifySyncUtils.doSignWithUpdateSync(signAlgName, keyPair.priKey, msg, blockSize);
         let ret: boolean = signVerifySyncUtils.doVerifyWithUpdateSync(signAlgName, keyPair.pubKey, msg, dataSign, blockSize);
@@ -651,7 +651,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
         let algName: string = "ECC256";
         let signAlgName: string = "ECC256|SHA256";
-        let blockSize: number = 20;
+        let blockSize: int = 20;
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         let dataSign = signVerifySyncUtils.doSignWithUpdateSync(signAlgName, keyPair.priKey, msg, blockSize);
         let ret: boolean = signVerifySyncUtils.doVerifyWithUpdateSync(signAlgName, keyPair.pubKey, msg, dataSign, blockSize);
@@ -677,7 +677,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
         let algName: string = "DSA1024";
         let signAlgName: string = "DSA1024|SHA256";
-        let blockSize: number = 20;
+        let blockSize: int = 20;
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         let dataSign = signVerifySyncUtils.doSignWithUpdateSync(signAlgName, keyPair.priKey, msg, blockSize);
         let ret: boolean = signVerifySyncUtils.doVerifyWithUpdateSync(signAlgName, keyPair.pubKey, msg, dataSign, blockSize);
@@ -703,7 +703,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
         let algName: string = "DSA2048";
         let signAlgName: string = "DSA2048|NoHash";
-        let blockSize: number = 20;
+        let blockSize: int = 20;
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         signVerifySyncUtils.doSignWithUpdateSync(signAlgName, keyPair.priKey, msg, blockSize);
         expect(null).assertFail();
@@ -728,7 +728,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
         let algName: string = "DSA2048";
         let signAlgName: string = "DSA2048|NoHash";
-        let blockSize: number = 20;
+        let blockSize: int = 20;
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         await signVerifySyncUtils.doSignWithUpdatePromise(signAlgName, keyPair.priKey, msg, blockSize);
         expect(null).assertFail();
@@ -753,7 +753,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
         let algName: string = "SM2_256";
         let signAlgName: string = "SM2_256|SM3";
-        let blockSize: number = 20;
+        let blockSize: int = 20;
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         let dataSign = signVerifySyncUtils.doSignWithUpdateSync(signAlgName, keyPair.priKey, msg, blockSize);
         let ret: boolean = signVerifySyncUtils.doVerifyWithUpdateSync(signAlgName, keyPair.pubKey, msg, dataSign, blockSize);

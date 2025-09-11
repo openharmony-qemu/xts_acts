@@ -81,15 +81,15 @@ function doMacSync(spec: cryptoFramework.MacSpec,
 }
 
 function doCmacSyncSpilt(spec: cryptoFramework.MacSpec, message: cryptoFramework.DataBlob,
-  key: cryptoFramework.SymKey, blockSize: number): macInfo {
+  key: cryptoFramework.SymKey, blockSize: int): macInfo {
   try {
     let mac: cryptoFramework.Mac = cryptoFramework.createMac(spec);
     mac.initSync(key);
-    let msgLen:number = message.data.byteLength;
-    let iterate: number = msgLen / blockSize;
-    let rem: number = msgLen % blockSize;
+    let msgLen: int = message.data.byteLength;
+    let iterate: int = (msgLen / blockSize).toInt();
+    let rem: int = msgLen % blockSize;
     if (rem != 0) {
-      iterate = (msgLen - rem) / blockSize;
+      iterate = ((msgLen - rem) / blockSize).toInt();
     }
     for(let index = 0; index < iterate; index++) {
       let tmp = message.data.subarray(blockSize * index, blockSize * (index + 1));
@@ -111,13 +111,13 @@ function doCmacSyncSpilt(spec: cryptoFramework.MacSpec, message: cryptoFramework
 }
 
 async function doCmacPromiseSpilt(spec: cryptoFramework.MacSpec, message: cryptoFramework.DataBlob,
-  key: cryptoFramework.SymKey, blockSize: number): Promise<macInfo> {
+  key: cryptoFramework.SymKey, blockSize: int): Promise<macInfo> {
   try {
     let mac: cryptoFramework.Mac = cryptoFramework.createMac(spec);
     await mac.init(key);
-    let msgLen:number = message.data.byteLength;
-    let iterate: number = msgLen / blockSize;
-    let rem: number = msgLen % blockSize;
+    let msgLen: int = message.data.byteLength;
+    let iterate: int = msgLen / blockSize;
+    let rem: int = msgLen % blockSize;
     if (rem != 0) {
       iterate = (msgLen - rem) / blockSize;
     }

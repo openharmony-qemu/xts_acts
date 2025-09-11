@@ -117,15 +117,15 @@ function doHmacNoMessageSync(algName: string, key: cryptoFramework.SymKey): macI
   }
 }
 
-function doHmacSyncSpilt(algName: string, message: cryptoFramework.DataBlob, key: cryptoFramework.SymKey, blockSize: number): macInfo {
+function doHmacSyncSpilt(algName: string, message: cryptoFramework.DataBlob, key: cryptoFramework.SymKey, blockSize: int): macInfo {
   try {
     let mac: cryptoFramework.Mac = cryptoFramework.createMac(algName);
     mac.initSync(key);
-    let msgLen:number = message.data.byteLength;
-    let iterate: number = msgLen / blockSize;
-    let rem: number = msgLen % blockSize;
+    let msgLen: int = message.data.byteLength;
+    let iterate: int = (msgLen / blockSize).toInt();
+    let rem: int = msgLen % blockSize;
     if (rem != 0) {
-      iterate = (msgLen - rem) / blockSize;
+      iterate = ((msgLen - rem) / blockSize).toInt();
     }
     for(let index = 0; index < iterate; index++) {
       let tmp = message.data.subarray(blockSize * index, blockSize * (index + 1));

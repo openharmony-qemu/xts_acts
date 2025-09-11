@@ -141,7 +141,7 @@ async function doUpdateEncryptDes64Stub(mode: string, type: asyncType): Promise<
   while (!timeFlag) {
     try {
       let msgLen: int = 20;
-      let blockSize: number = 21;
+      let blockSize: int = 21;
       let spec: cryptoFramework.IvParamsSpec = {
         iv: {data: new Uint8Array(8)},
         algName: "IvParamsSpec"
@@ -1044,7 +1044,7 @@ export default function SecurityCryptoFwDESTestUnit() {
             iv: {data: new Uint8Array(8)},
             algName: "IvParamsSpec"
           };
-          let blockSize: number = 20;
+          let blockSize: int = 20;
           let initSpec: cryptoFramework.IvParamsSpec|null = spec;
           let symKey: cryptoFramework.SymKey = await generateSymKey(algName, asyncType.TYPE_IS_PROMISE);
           for (let mode of DES64_MODE) {
@@ -1087,7 +1087,7 @@ export default function SecurityCryptoFwDESTestUnit() {
             iv: {data: new Uint8Array(8)},
             algName: "IvParamsSpec"
           };
-          let blockSize: number = 20;
+          let blockSize: int = 20;
           let initSpec: cryptoFramework.IvParamsSpec|null = spec;
           let symKey: cryptoFramework.SymKey = await generateSymKey(algName, asyncType.TYPE_IS_PROMISE);
           for (let mode of DES64_MODE) {

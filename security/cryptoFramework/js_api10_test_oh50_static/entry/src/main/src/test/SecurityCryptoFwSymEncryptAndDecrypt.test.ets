@@ -1221,10 +1221,10 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let cipherText2 = new Uint8Array();
         let decText1 = new Uint8Array();
         let decText2 = new Uint8Array();
-        let encCipherIndex1: number[] = [];
-        let encCipherIndex2: number[] = [];
-        let encTotal1: number = 0;
-        let encTotal2: number = 0;
+        let encCipherIndex1: int[] = [];
+        let encCipherIndex2: int[] = [];
+        let encTotal1: int = 0;
+        let encTotal2: int = 0;
         let encCipher1 = cryptoFramework.createCipher(encAlgName);
         encCipher1.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, keyPair.pubKey, null);
         let encCipher2 = cryptoFramework.createCipher(encAlgName);

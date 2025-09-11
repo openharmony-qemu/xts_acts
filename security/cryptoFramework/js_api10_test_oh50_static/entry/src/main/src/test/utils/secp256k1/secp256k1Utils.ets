@@ -520,15 +520,15 @@ async function doVerifyUpdateCallback(verify: cryptoFramework.Verify, msg: crypt
 }
 
 async function doSignUpdatePromise(algName: string, priKey: cryptoFramework.PriKey, msg: cryptoFramework.DataBlob,
-  blockSize: number): Promise<cryptoFramework.DataBlob> {
+  blockSize: int): Promise<cryptoFramework.DataBlob> {
   try {
     let sign: cryptoFramework.Sign = cryptoFramework.createSign(algName);
     await sign.init(priKey);
-    let msgLen:number = msg.data.byteLength;
-    let iterate: number = msgLen / blockSize;
-    let rem: number = msgLen % blockSize;
+    let msgLen: int = msg.data.byteLength;
+    let iterate: int = (msgLen / blockSize).toInt();
+    let rem: int = msgLen % blockSize;
     if (rem != 0) {
-      iterate = (msgLen - rem) / blockSize;
+      iterate = ((msgLen - rem) / blockSize).toInt();
     }
     for(let index = 0; index < iterate; index++) {
       let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));
@@ -562,15 +562,15 @@ async function doSignUpdateCallback(sign: cryptoFramework.Sign, msg: cryptoFrame
 }
 
 function doSignUpdateSync(algName: string, priKey: cryptoFramework.PriKey, msg: cryptoFramework.DataBlob,
-  blockSize: number): cryptoFramework.DataBlob {
+  blockSize: int): cryptoFramework.DataBlob {
   try {
     let sign: cryptoFramework.Sign = cryptoFramework.createSign(algName);
     sign.initSync(priKey);
-    let msgLen:number = msg.data.byteLength;
-    let iterate: number = msgLen / blockSize;
-    let rem: number = msgLen % blockSize;
+    let msgLen: int = msg.data.byteLength;
+    let iterate: int = (msgLen / blockSize).toInt();
+    let rem: int = msgLen % blockSize;
     if (rem != 0) {
-      iterate = (msgLen - rem) / blockSize;
+      iterate = ((msgLen - rem) / blockSize).toInt();
     }
     for(let index = 0; index < iterate; index++) {
       let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));

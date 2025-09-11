@@ -69,7 +69,7 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
     it("SUB_Security_CryptoFramework_DigestSync_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let messageLen: int = 128;
-        let blockSize: number = 20;
+        let blockSize: int = 20;
         let message: cryptoFramework.DataBlob = await commonUtils.createData(messageLen);
         for(let algName of digestSyncUtils.DIGEST_SPEC) {
           let dataResSpilt: digestSyncUtils.mdInfo = digestSyncUtils.doMdSyncSplit(algName, message, blockSize);
@@ -151,7 +151,7 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
      */
     it("SUB_Security_CryptoFramework_DigestSync_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let algName: string = "SHA3-256";
+        let algName: string = "SHA3-224";
         cryptoFramework.createMd(algName);
         expect(null).assertTrue();
       } catch (error: BusinessError) {

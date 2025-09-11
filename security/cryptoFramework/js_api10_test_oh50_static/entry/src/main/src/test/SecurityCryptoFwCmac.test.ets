@@ -46,7 +46,7 @@ let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 let testAbilityContext:common.UIAbilityContext;
 
 
-async function doCmacPromiseSplitStub(algName: string, msgLen: int, blockSize: number): Promise<boolean> {
+async function doCmacPromiseSplitStub(algName: string, msgLen: int, blockSize: int): Promise<boolean> {
   let ret: boolean = true;
   let timeFlag: boolean = false;
   let timeoutId:int = 0;
@@ -110,7 +110,7 @@ async function doCmacPromiseStub(algName: string, msgLen: int): Promise<boolean>
   return ret;
 }
 
-async function doCmacSyncSplitStub(algName: string, msgLen: int, blockSize: number): Promise<boolean> {
+async function doCmacSyncSplitStub(algName: string, msgLen: int, blockSize: int): Promise<boolean> {
   let ret: boolean = true;
   let timeFlag: boolean = false;
   let timeoutId:int = 0;
@@ -287,7 +287,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
           }
           let symAlg: string = cipherName;
           let msgLen: int = 120;
-          let blockSize: number = 25;
+          let blockSize: int = 25;
           let macSize: number = 16;
           let msg: cryptoFramework.DataBlob = await createFullData(msgLen);
           let symKey: cryptoFramework.SymKey = await genSymKey(symAlg);
@@ -319,7 +319,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
           }
           let symAlg: string = cipherName;
           let msgLen: int = 120;
-          let blockSize: number = 14;
+          let blockSize: int = 14;
           let macSize: number = 16;
           let msg: cryptoFramework.DataBlob = await createFullData(msgLen);
           let symKey: cryptoFramework.SymKey = await genSymKey(symAlg);

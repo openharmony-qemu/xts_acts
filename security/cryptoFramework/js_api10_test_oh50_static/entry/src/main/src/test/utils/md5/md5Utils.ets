@@ -73,7 +73,7 @@ async function doHmacNoUpdate(symKeyName: string, macAlgName: string): Promise<c
 }
 
 async function doHmacWithSplit(macAlgName: string, key: cryptoFramework.SymKey,
-                               message: cryptoFramework.DataBlob, blockSize: number): Promise<cryptoFramework.DataBlob> {
+                               message: cryptoFramework.DataBlob, blockSize: int): Promise<cryptoFramework.DataBlob> {
   try {
     let mac: cryptoFramework.Mac = cryptoFramework.createMac(macAlgName);
     await mac.init(key);

@@ -222,7 +222,7 @@ function encryptDecryptAsymOAaepMessageSync(algName: string, keyPair: cryptoFram
   }
 }
 
-function gcmEncOrDecMessageSync(algName: string, isEnc: boolean, symKey: cryptoFramework.SymKey, blockSize: number, dataLen: number,
+function gcmEncOrDecMessageSync(algName: string, isEnc: boolean, symKey: cryptoFramework.SymKey, blockSize: int, dataLen: number,
                                 data: cryptoFramework.DataBlob, paramSpec: cryptoFramework.GcmParamsSpec): dataGcmOrCCMSpec {
   try {
     let cipherText1 = new Uint8Array();
@@ -258,7 +258,7 @@ function gcmEncOrDecMessageSync(algName: string, isEnc: boolean, symKey: cryptoF
   }
 }
 
-async function gcmEncOrDecMessagePromise(algName: string, isEnc: boolean, symKey: cryptoFramework.SymKey, blockSize: number, dataLen: number,
+async function gcmEncOrDecMessagePromise(algName: string, isEnc: boolean, symKey: cryptoFramework.SymKey, blockSize: int, dataLen: number,
                                 data: cryptoFramework.DataBlob, paramSpec: cryptoFramework.GcmParamsSpec): Promise<dataGcmOrCCMSpec> {
   try {
     let cipherText1 = new Uint8Array();
