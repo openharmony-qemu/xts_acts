@@ -155,7 +155,8 @@ export default function atomicFileTest() {
           if (data == null) {
             return;
           }
-          expect(data === FILE_CONTENT).assertTrue();
+          let context = data.toString();
+          expect(context === FILE_CONTENT).assertTrue();
         });
       } catch (e: BusinessError) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_005 has failed for ' + e.message);
