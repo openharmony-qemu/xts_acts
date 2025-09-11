@@ -2246,7 +2246,7 @@ export default function typedArray() {
     it("testPrototypeFind0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testPrototypeFind0002"
       try {
-        const isPrime = (element: number, index: number, array: Uint8Array): boolean => {
+        const isPrime = (element: number, index: int, array: Uint8Array): boolean => {
           let start = 2;
           while (start <= Math.sqrt(element)) {
             if (element % start++ < 1) {
@@ -2358,7 +2358,7 @@ export default function typedArray() {
     it("testPrototypeFindIndex0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testPrototypeFindIndex0002"
       try {
-        const isPrime = (element: number, index: number, array: Uint8Array): boolean => {
+        const isPrime = (element: number, index: int, array: Uint8Array): boolean => {
           let start = 2;
           while (start <= Math.sqrt(element)) {
             if (element % start++ < 1) {
@@ -3379,7 +3379,7 @@ export default function typedArray() {
     it("testPrototypeSome0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testPrototypeSome0001"
       try {
-        const isNegative = (element: number, index: number, array: Int8Array): boolean => {
+        const isNegative = (element: number, index: int, array: Int8Array): boolean => {
           return element < 0;
         };
         const int8 = new Int8Array([-10, 20, -30, 40, -50]);
@@ -3400,7 +3400,7 @@ export default function typedArray() {
     it("testPrototypeSome0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testPrototypeSome0002"
       try {
-        const isNegative = (element: number, index: number, array: Int8Array): boolean => {
+        const isNegative = (element: number, index: int, array: Int8Array): boolean => {
           return element < 0;
         };
         const positives = new Int8Array([10, 20, 30, 40, 50]);
