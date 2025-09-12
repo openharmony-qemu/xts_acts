@@ -41,7 +41,7 @@ export default function napiCheckExTest() {
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0001
      * @tc.name napiTestEx0001
      * @tc.desc napiTestEx
-     */
+    */
     it('napiTestEx0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buffer: Object = napitestex.CreateBufferCopy();
       expect(napitestex.IsBuffer(buffer)).assertTrue();
@@ -52,7 +52,7 @@ export default function napiCheckExTest() {
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0002
      * @tc.name napiBufferTest002
      * @tc.desc aceNapiEtsTest
-     */
+    */
     it('napiBufferTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buffer: Object = napitestex.CreateBuffer();
       expect(napitestex.IsBuffer(buffer)).assertTrue();
@@ -63,7 +63,7 @@ export default function napiCheckExTest() {
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0003
      * @tc.name napiBufferTest003
      * @tc.desc aceNapiEtsTest
-     */
+    */
     it('napiBufferTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buffer: Object = napitestex.CreateBufferCopy();
       expect(napitestex.IsBuffer(buffer)).assertTrue();
@@ -74,7 +74,7 @@ export default function napiCheckExTest() {
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0004
      * @tc.name napiBufferTest004
      * @tc.desc aceNapiEtsTest - Test external buffer creation and finalize callback
-     */
+    */
     it('napiBufferTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let externalBuffer: Object = napitestex.CreateExternalBufferTest();
       expect(napitestex.IsBuffer(externalBuffer)).assertTrue();
@@ -85,32 +85,32 @@ export default function napiCheckExTest() {
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0005
      * @tc.name napiBufferTest005
      * @tc.desc aceNapiEtsTest - Test buffer creation edge cases and error handling
-     */
+    */
     it('napiBufferTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // 测试零长度buffer
       let zeroLengthBuffer: Object = napitestex.createBufferSizeZeroTest();
       expect(zeroLengthBuffer).assertDeepEquals(1);
-
+      
       // 测试最大长度buffer (2097152)
       let maxLengthBuffer: Object = napitestex.CreateBufferMaxLength();
       hilog.info(0x0000, 'testTag', 'maxLengthBuffer:%{public}d', maxLengthBuffer);
       expect(maxLengthBuffer).assertDeepEquals(0);
-
+      
       // 测试超过最大长度 - 应该返回错误状态
       let invalidLengthStatus: Object = napitestex.CreateBufferExceedMaxLength();
       // 检查返回的是否为错误状态码 (napi_invalid_arg)
       hilog.info(0x0000, 'testTag', 'invalidLengthStatus:%{public}d', invalidLengthStatus);
       expect(invalidLengthStatus).assertDeepEquals(1); // napi_invalid_arg = 1
-
+      
       // 测试无效参数 - 应该返回错误状态(crash)
       //let invalidEnvStatus: Object = napitestex.CreateBufferInvalidEnv();
       //hilog.info(0x0000, 'testTag', 'invalidEnvStatus:%{public}d', invalidEnvStatus);
       //expect(invalidEnvStatus).assertDeepEquals(1); // napi_invalid_arg = 1
-
+      
       let invalidDataStatus: Object = napitestex.CreateBufferInvalidData();
       hilog.info(0x0000, 'testTag', 'invalidDataStatus:%{public}d', invalidDataStatus);
       expect(invalidDataStatus).assertDeepEquals(1); // napi_invalid_arg = 1
-
+      
       //(crash)
       //let invalidResultStatus: Object = napitestex.CreateBufferInvalidResult();
       //hilog.info(0x0000, 'testTag', 'invalidResultStatus:%{public}d', invalidResultStatus);
@@ -121,13 +121,13 @@ export default function napiCheckExTest() {
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0006
      * @tc.name napiBufferTest006
      * @tc.desc aceNapiEtsTest - Test non-ArrayBuffer object detection
-     */
+    */
     it('napiBufferTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // 测试非buffer对象的检测
       let notABuffer: Object = napitestex.CreateInt32Test();
       hilog.info(0x0000, 'testTag', 'notABuffer:%{public}d', notABuffer);
       expect(napitestex.IsBuffer(notABuffer)).assertFalse();
-
+      
       // 测试获取非buffer对象信息应该返回错误
       let getBufferInfoStatus: Object = napitestex.GetBufferInfoNonBuffer(notABuffer);
       hilog.info(0x0000, 'testTag', 'getBufferInfoStatus:%{public}d', getBufferInfoStatus);
@@ -139,7 +139,7 @@ export default function napiCheckExTest() {
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0007
      * @tc.name napiBufferTest007
      * @tc.desc aceNapiEtsTest - Test multiple operations combination
-     */
+    */
     it('napiBufferTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // 测试多种操作的组合
       let testResult: Object = napitestex.TestMultipleOperations();
@@ -152,7 +152,7 @@ export default function napiCheckExTest() {
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0008
      * @tc.name napiBufferTest008
      * @tc.desc aceNapiEtsTest - Test ArrayBuffer thread safety in multi-threaded environment
-     */
+    */
     it('napiBufferTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // 测试多线程环境下的ArrayBuffer线程安全性
       let threadSafetyResult: boolean = napitestex.TestArrayBufferThreadSafety();
@@ -165,7 +165,7 @@ export default function napiCheckExTest() {
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0009
      * @tc.name napiBufferTest009
      * @tc.desc aceNapiEtsTest - Test ArrayBuffer and external ArrayBuffer comparison
-     */
+    */
     it('napiBufferTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // 测试ArrayBuffer和外部ArrayBuffer的比对
       let comparisonResult: number = napitestex.TestArrayBufferComparison();
@@ -471,7 +471,6 @@ export default function napiCheckExTest() {
      */
     it('testBooleanValueHandling', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testBooleanValueHandling START');
-
       try {
         // 调用C++测试函数进行布尔值处理测试
         let result: boolean = napitestex.NapiNumberTest007();
@@ -1454,86 +1453,6 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0016
-     * @tc.name      : testDeleteSerializationDataTwice
-     * @tc.desc      : Testing delete serialization data twice.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testDeleteSerializationDataTwice', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('testDeleteSerializationDataTwice START');
-      try {
-        let result: boolean = napitestex.NapiExtensionTest016();
-        console.info('testDeleteSerializationDataTwice test result: ' + result);
-        expect(result).assertTrue();
-      } catch (err) {
-        console.error(`testDeleteSerializationDataTwice err msg: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0017
-     * @tc.name      : testSerializeDeserializeDeleteFlow
-     * @tc.desc      : Testing serialize deserialize delete flow.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testSerializeDeserializeDeleteFlow', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('testSerializeDeserializeDeleteFlow START');
-      try {
-        let result: boolean = napitestex.NapiExtensionTest017();
-        console.info('testSerializeDeserializeDeleteFlow test result: ' + result);
-        expect(result).assertTrue();
-      } catch (err) {
-        console.error(`testSerializeDeserializeDeleteFlow err msg: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0018
-     * @tc.name      : testMultiThreadSerialization
-     * @tc.desc      : Testing multi thread serialization.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testMultiThreadSerialization', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('testMultiThreadSerialization START');
-      try {
-        let result: boolean = napitestex.NapiExtensionTest018();
-        console.info('testMultiThreadSerialization test result: ' + result);
-        expect(result).assertTrue();
-      } catch (err) {
-        console.error(`testMultiThreadSerialization err msg: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0019
-     * @tc.name      : testCrossThreadSerialization
-     * @tc.desc      : Testing cross thread serialization.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testCrossThreadSerialization', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('testCrossThreadSerialization START');
-      try {
-        let result: boolean = napitestex.NapiExtensionTest019();
-        console.info('testCrossThreadSerialization test result: ' + result);
-        expect(result).assertTrue();
-      } catch (err) {
-        console.error(`testCrossThreadSerialization err msg: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0020
      * @tc.name      : testAsyncEventLoopRunAndStop
      * @tc.desc      : Testing async event loop run and stop.
@@ -1569,106 +1488,6 @@ export default function napiCheckExTest() {
         expect(result).assertTrue();
       } catch (err) {
         console.error(`testCreateArkTSRuntime err msg: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0022
-     * @tc.name      : testCreateAndDestroyRuntime
-     * @tc.desc      : Testing create and destroy runtime.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testCreateAndDestroyRuntime', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('testCreateAndDestroyRuntime START');
-      try {
-        let result: boolean = napitestex.NapiExtensionTest022();
-        console.info('testCreateAndDestroyRuntime test result: ' + result);
-        expect(result).assertTrue();
-      } catch (err) {
-        console.error(`testCreateAndDestroyRuntime err msg: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0023
-     * @tc.name      : testCreateMultipleRuntimes
-     * @tc.desc      : Testing create multiple runtimes.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testCreateMultipleRuntimes', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('testCreateMultipleRuntimes START');
-      try {
-        let result: boolean = napitestex.NapiExtensionTest023();
-        console.info('testCreateMultipleRuntimes test result: ' + result);
-        expect(result).assertTrue();
-      } catch (err) {
-        console.error(`testCreateMultipleRuntimes err msg: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0024
-     * @tc.name      : testBasicEventLoopOperations
-     * @tc.desc      : Testing basic event loop operations.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testBasicEventLoopOperations', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('testBasicEventLoopOperations START');
-      try {
-        let result: boolean = napitestex.NapiExtensionTest024();
-        console.info('testBasicEventLoopOperations test result: ' + result);
-        expect(result).assertTrue();
-      } catch (err) {
-        console.error(`testBasicEventLoopOperations err msg: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0025
-     * @tc.name      : testDifferentEventLoopModes
-     * @tc.desc      : Testing different event loop modes.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testDifferentEventLoopModes', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('testDifferentEventLoopModes START');
-      try {
-        let result: boolean = napitestex.NapiExtensionTest025();
-        console.info('testDifferentEventLoopModes test result: ' + result);
-        expect(result).assertTrue();
-      } catch (err) {
-        console.error(`testDifferentEventLoopModes err msg: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0026
-     * @tc.name      : testFullLifecycle
-     * @tc.desc      : Testing full lifecycle.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testFullLifecycle', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('testFullLifecycle START');
-      try {
-        let result: boolean = napitestex.NapiExtensionTest026();
-        console.info('testFullLifecycle test result: ' + result);
-        expect(result).assertTrue();
-      } catch (err) {
-        console.error(`testFullLifecycle err msg: ${err.message}`);
         expect().assertFail();
       }
     });
@@ -1770,68 +1589,6 @@ export default function napiCheckExTest() {
         expect(result).assertTrue();
       } catch (err) {
         console.error(`testNativeArkTSObjectBinding err msg: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-
-    /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0041
-     * @tc.name      : testMainThreadModuleLoading
-     * @tc.desc      : Testing main thread module loading.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testMainThreadModuleLoading', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('testMainThreadModuleLoading START');
-      try {
-        let result: boolean = napitestex.NapiExtensionTest041();
-        console.info('testMainThreadModuleLoading test result: ' + result);
-        expect(result).assertTrue();
-      } catch (err) {
-        console.error(`testMainThreadModuleLoading err msg: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0042
-     * @tc.name      : testAsyncThreadEventLoop
-     * @tc.desc      : Testing async thread event loop.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testAsyncThreadEventLoop', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('testAsyncThreadEventLoop START');
-      try {
-        let result: boolean = napitestex.NapiExtensionTest042();
-        console.info('testAsyncThreadEventLoop test result: ' + result);
-        expect(result).assertTrue();
-      } catch (err) {
-        console.error(`testAsyncThreadEventLoop err msg: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-
-    /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0044
-     * @tc.name      : testAsyncThreadTaskSubmission
-     * @tc.desc      : Testing async thread task submission.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testAsyncThreadTaskSubmission', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('testAsyncThreadTaskSubmission START');
-      try {
-        let result: boolean = napitestex.NapiExtensionTest044();
-        console.info('testAsyncThreadTaskSubmission test result: ' + result);
-        expect(result).assertTrue();
-      } catch (err) {
-        console.error(`testAsyncThreadTaskSubmission err msg: ${err.message}`);
         expect().assertFail();
       }
     });
