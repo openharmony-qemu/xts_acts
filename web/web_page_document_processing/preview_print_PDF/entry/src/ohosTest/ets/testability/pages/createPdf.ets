@@ -18,12 +18,15 @@ import { BusinessError } from '@ohos.base';
 import Utils from '../../test/Utils';
 import fs from '@ohos.file.fs';
 import events_emitter from '@ohos.events.emitter';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
 struct WebComponent {
   controller: webview.WebviewController = new webview.WebviewController();
     @State str: string = "emitSavePDF";
+    @State isReceive: number = -1;
+    @State isPageEnd: number = -1;
   pdfConfig: webview.PdfConfiguration = {
     width: 8.27,
     height: 11.69,
@@ -37,16 +40,20 @@ struct WebComponent {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 300500,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+  onPageHide(): void {
+    events_emitter.off(300500)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -55,7 +62,12 @@ struct WebComponent {
 
       Row() {
         Button("SavePDF").key('webSavePDF').onClick(async () => {
-          console.info("key==>" + this.str)
+          console.info("isPageEnd :" + this.isPageEnd);
+          console.info("isReceive :" + this.isReceive);
+          await waitForExist(()=>this.isPageEnd, this.str + 'IsPageEnd', 0);
+          await waitForExist(()=>this.isReceive, this.str + 'IsReceive', 0);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitSavePDF": {
                 this.controller.createPdf(
@@ -70,7 +82,7 @@ struct WebComponent {
                           fs.write(file.fd, result.pdfArrayBuffer().buffer).then((writeLen: number) => {
                             console.info("createPDF write data to file succeed and size is:" + writeLen);
                             if(writeLen>0) {
-                               Utils.emitEvent(true, 20241127);
+                               Utils.emitEvent(true, 300510);
                                console.info('suceess111')
                             }       
                           }).catch((err: BusinessError) => {
@@ -98,7 +110,7 @@ struct WebComponent {
                     fs.write(file.fd, result.pdfArrayBuffer().buffer).then((writeLen: number) => {
                       console.info("pdfResult" + writeLen );
                       if(writeLen > 0) {
-                        Utils.emitEvent(true, 20241128);
+                        Utils.emitEvent(true, 300520);
                       }
                     }).catch((err: BusinessError) => {
                       console.error("createPDF write data to file failed with error message: " + err.message +
@@ -119,6 +131,9 @@ struct WebComponent {
 
 
      Web({ src: "www.example.com", controller: this.controller })
+       .onPageEnd(()=>{
+         this.isPageEnd = 0;
+       })
    
     }
   }
