@@ -1616,7 +1616,6 @@ export default function napiCheckExTest() {
         expect().assertFail();
       }
     });
-  })
 
     /**
       * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0001
