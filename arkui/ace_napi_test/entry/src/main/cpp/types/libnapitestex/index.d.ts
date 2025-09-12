@@ -232,3 +232,12 @@ export const testCrossThreadDatePassing: () => CrossThreadDatePassingResult;
 
 // Thread safety error handling test
 export const testThreadSafetyErrorHandling: () => ThreadSafetyErrorHandlingResult;
+export const NapiStringTest001: () => boolean;
+export const NapiStringTest002: () => boolean;
+export const NapiStringTest003: () => boolean;
+export const NapiStringTest004: () => boolean;
+export const NapiStringTest005: () => boolean;
+export const NapiStringTest006: () => boolean;
+export const NapiStringTest007: () => boolean;
+export const NapiStringTest008: () => boolean;
+export const NapiStringTest009: () => boolean;

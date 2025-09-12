@@ -22,9 +22,8 @@ napi_value CaptureScreenPixelmapInvalidParamOrDeviceNotSupported(napi_env env, n
 {
     napi_value retValue = 0;
     int32_t result = OH_NativeDisplayManager_CaptureScreenPixelmap(0, nullptr);
-    result = result != DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED ? result == DISPLAY_MANAGER_ERROR_INVALID_PARAM ?
-             DISPLAY_MANAGER_ERROR_INVALID_PARAM : DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED : result ==
-             DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED ? DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED : OK;
+    result = result == DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED ? DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED : result;
+    result = result == DISPLAY_MANAGER_ERROR_INVALID_PARAM ? DISPLAY_MANAGER_ERROR_INVALID_PARAM : result;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Display",
                  "CaptureScreenPixelmapInvalidParamOrDeviceNotSupported: %{public}d", result);
     napi_create_int32(env, result, &retValue);

@@ -63,6 +63,21 @@ napi_value CreateNativeNode3(napi_env env, napi_callback_info info)
     return nullptr;
 }
 
+ArkUI_KeySourceType CheckKeySourceType(int32_t KeySourceType)
+{
+    if (KeySourceType == ARKUI_KEY_SOURCE_UNKNOWN) {
+        return ARKUI_KEY_SOURCE_UNKNOWN;
+    } else if (KeySourceType == ARKUI_KEY_SOURCE_TYPE_MOUSE) {
+        return ARKUI_KEY_SOURCE_TYPE_MOUSE;
+    } else if (KeySourceType == ARKUI_KEY_SOURCE_TYPE_KEYBOARD) {
+        return ARKUI_KEY_SOURCE_TYPE_KEYBOARD;
+    } else if (KeySourceType == ARKUI_KEY_SOURCE_TYPE_JOYSTICK) {
+        return ARKUI_KEY_SOURCE_TYPE_JOYSTICK;
+    } else {
+        return ArkUI_KeySourceType(PARAM_NEGATIVE_2);
+    }
+}
+
 napi_value GetKeySourceType(napi_env env, napi_callback_info info)
 {
     if ((env == nullptr) || (info == nullptr)) {
@@ -80,7 +95,7 @@ napi_value GetKeySourceType(napi_env env, napi_callback_info info)
     }
     int32_t getParam;
     napi_get_value_int32(env, args[0], &getParam);
-    ArkUI_KeySourceType KeySourceType = ArkUI_KeySourceType(getParam);
+    ArkUI_KeySourceType KeySourceType = CheckKeySourceType(getParam);
     if (g_keySourceMap.count(KeySourceType) == 1) {
         napi_create_int32(env, 1, &args[0]);
     } else {

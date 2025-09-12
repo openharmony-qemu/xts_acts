@@ -454,6 +454,15 @@
         "srcEntrance": "./ets/FormAbility/FormAbility.ts",
         "type": "liveForm",
         "visible": true
+    },
+    {
+        "description": "$string:form_description",
+        "icon": "$media:icon",
+        "label": "$string:entry_label",
+        "name": "webNativeMessaging",
+        "srcEntrance": "./ets/FormAbility/FormAbility.ts",
+        "type": "webNativeMessaging",
+        "visible": true
     }
   ],
   "requestPermissions": [

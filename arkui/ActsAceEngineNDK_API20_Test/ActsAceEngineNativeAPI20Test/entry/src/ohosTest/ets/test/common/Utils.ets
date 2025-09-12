@@ -224,7 +224,7 @@ export default class Utils {
       console.info(`get ${pageTag} state success ` + JSON.stringify(pages));
       if (pageTag.indexOf(pages.name) < 0) {
         console.info(`get ${pageTag} state success ` + JSON.stringify(pages.name));
-        let result = await router.pushUrl(options);
+        let result = await router.pushUrl(options, router.RouterMode.Standard);
         await Utils.sleep(2000);
         console.info(`push ${pageTag} page success ` + JSON.stringify(result));
       }
@@ -241,7 +241,7 @@ export default class Utils {
       url: `MainAbility/pages/${pageTag}`,
     }
     try {
-      router.pushUrl(options);
+      await router.pushUrl(options, router.RouterMode.Standard);
     } catch (err) {
       console.error(`push ${pageTag} page error: ` + err);
     }

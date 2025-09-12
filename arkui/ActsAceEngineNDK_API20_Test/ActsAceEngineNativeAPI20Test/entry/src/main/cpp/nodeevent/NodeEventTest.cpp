@@ -27,14 +27,14 @@ namespace NodeEventTest {
 napi_value GetNumberValueTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_test1ret1 == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
+    napi_create_int32(env, g_test1ret1 ? 0 : 1, &retValue);
     return retValue;
 }
 
 napi_value GetNumberValueTest_002(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_test1ret2 == ARKUI_ERROR_CODE_NODE_EVENT_PARAM_INDEX_OUT_OF_RANGE ? 0 : 1, &retValue);
+    napi_create_int32(env, g_test1ret2 ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -51,14 +51,14 @@ napi_value GetNumberValueTest_003(napi_env env, napi_callback_info info)
 napi_value GetStringValueTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_test2ret1 == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
+    napi_create_int32(env, g_test2ret1 ? 0 : 1, &retValue);
     return retValue;
 }
 
 napi_value GetStringValueTest_002(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_test2ret2 == ARKUI_ERROR_CODE_NODE_EVENT_PARAM_INDEX_OUT_OF_RANGE ? 0 : 1, &retValue);
+    napi_create_int32(env, g_test2ret2 ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -76,7 +76,7 @@ napi_value GetStringValueTest_003(napi_env env, napi_callback_info info)
 napi_value SetReturnNumberValueTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_test1ret1 == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
+    napi_create_int32(env, g_test1ret1 ? 0 : 1, &retValue);
     return retValue;
 }
 
@@ -95,17 +95,20 @@ napi_value SetReturnNumberValueTest_003(napi_env env, napi_callback_info info)
     napi_create_int32(env, result == ARKUI_ERROR_CODE_NODE_EVENT_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
+
 void onReceiver1(ArkUI_NodeEvent *event)
 {
     ArkUI_NumberValue value[] = {{.f32 = 10.0f}};
     int32_t index = 0;
-    g_test1ret1 = OH_ArkUI_NodeEvent_GetNumberValue(event, index, value);
-    g_test1ret2 = OH_ArkUI_NodeEvent_GetNumberValue(event, -1, value);
+    g_test1ret1 = OH_ArkUI_NodeEvent_GetNumberValue(event, index, value) == ARKUI_ERROR_CODE_NO_ERROR;
+    g_test1ret2 = OH_ArkUI_NodeEvent_GetNumberValue(event, -1, value) ==
+                  ARKUI_ERROR_CODE_NODE_EVENT_PARAM_INDEX_OUT_OF_RANGE;
     char insert[PARAM_64];
     char* insertValue[PARAM_1] = { insert };
     int32_t bufSize[PARAM_1] = { PARAM_64 };
-    g_test2ret1 = OH_ArkUI_NodeEvent_GetStringValue(event, 0, insertValue, bufSize);
-    g_test2ret2 = OH_ArkUI_NodeEvent_GetStringValue(event, PARAM_1000, insertValue, bufSize);
+    g_test2ret1 = OH_ArkUI_NodeEvent_GetStringValue(event, 0, insertValue, bufSize) == ARKUI_ERROR_CODE_NO_ERROR;
+    g_test2ret2 = OH_ArkUI_NodeEvent_GetStringValue(event, PARAM_1000, insertValue, bufSize) ==
+                  ARKUI_ERROR_CODE_NODE_EVENT_PARAM_INDEX_OUT_OF_RANGE;
     int32_t size3 = 1;
     ArkUI_NumberValue value3[] = {{.i32 = 10}};
     g_test3ret1 = OH_ArkUI_NodeEvent_SetReturnNumberValue(event, value3, size3);

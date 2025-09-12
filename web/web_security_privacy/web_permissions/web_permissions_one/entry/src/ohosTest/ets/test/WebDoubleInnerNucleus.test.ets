@@ -30,14 +30,12 @@ export default function webOnPermissionRequest() {
         url: 'testability/pages/WebDoubleInnerNucleus',
       }
       try {
-        await Utils.sleep(1000);
         router.clear();
         let pages = router.getState();
         console.info("get WebDoubleInnerNucleus state success " + JSON.stringify(pages));
         if (!("WebDoubleInnerNucleus" == pages.name)) {
           console.info("get WebDoubleInnerNucleus state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebDoubleInnerNucleus page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -53,17 +51,10 @@ export default function webOnPermissionRequest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("WebDoubleInnerNucleus afterEach start");
-      await Utils.sleep(1000);
-      console.info("WebDoubleInnerNucleus afterEach end");
-      done();
-    })
 
     // /*
     //   * @tc.number      : SUB_ACE_WEB_EMITWEBDOUBLEINNERNUCLEUS_API_0001
@@ -88,8 +79,8 @@ export default function webOnPermissionRequest() {
        * @tc.level       : Level 0
        */
     it('emitWebDoubleInnerNucleus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitWebDoubleInnerNucleus001", 10)
-      Utils.registerEvent("emitWebDoubleInnerNucleus001", webview.ArkWebEngineVersion.M132, 20250902, done);
+      Utils.emitEvent("emitWebDoubleInnerNucleus001", 162000)
+      Utils.registerEvent("emitWebDoubleInnerNucleus001", webview.ArkWebEngineVersion.M132, 162010, done);
       sendEventByKey('WebviewDoubleInnerNucleus', 10, '');
     })
 

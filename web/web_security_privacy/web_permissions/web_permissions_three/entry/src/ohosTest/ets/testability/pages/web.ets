@@ -17,6 +17,7 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
+import {waitForExist} from '../../test/WaitTest';
 
 let loadedUrl: string;
 
@@ -58,13 +59,19 @@ struct Index {
   @State isProgressFinish: boolean = false;
   @State isHttpErrorReceive: boolean = false;
   @State isLargeThan: boolean = false;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 160950,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(160950)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -73,6 +80,7 @@ struct Index {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -100,69 +108,90 @@ struct Index {
     Column() {
       Row() {
         Button("web click").key('webcomponent').onClick(async () => {
-          console.info("key==>" + this.str);
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
+          console.info('key==>' + this.str)
           switch (this.str) {
             case "emitGeolocationAccessFalse": {
               this.geolocationAccess = false
-              await Utils.sleep(2000)
+              this.isPageEnd = -1;
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              this.isPageEnd = -1;
               this.controller.loadUrl({ url: "resource://rawfile/geo.html" });
-              setTimeout(() => {
+              await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.runJavaScript({
                   script: "getGeoResult()", callback: (res) => {
                     console.info("getGeoResult==>" + res);
-                    Utils.emitEvent(res, 96);
+                    Utils.emitEvent(res, 160960);
                   }
                 })
-              }, 3000);
+
               break;
             }
             case "emitOnGeolocationShow": {
               this.geolocationAccess = true;
+              this.isPageEnd = -1;
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
               this.geoShow = true;
-              await Utils.sleep(2000);
+              this.isPageEnd = -1;
               this.controller.loadUrl({ url: "resource://rawfile/geo.html" });
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              if (this.geoShow) {
+                Utils.emitEvent("onGeolocationShow", 160970);
+                this.geoShow = false;
+              }
               break;
             }
             case "emitDomStorageAccessFalse": {
               this.domStorageAccess = false;
-              await Utils.sleep(2000);
+              this.isPageEnd = -1;
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              this.isPageEnd = -1;
               this.controller.loadUrl({ url: "resource://rawfile/domApi.html" });
-              setTimeout(() => {
+              await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.runJavaScript({
                   script: "getDomResult()", callback: (res) => {
                     console.info("getDomResult==>" + res);
-                    Utils.emitEvent(res, 144);
+                    Utils.emitEvent(res, 160980);
                   }
                 });
-              }, 3000);
+
               break;
             }
             case "emitDomStorageAccessTrue": {
               this.domStorageAccess = true;
-              await Utils.sleep(2000);
+              this.isPageEnd = -1;
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              this.isPageEnd = -1;
               this.controller.loadUrl({ url: "resource://rawfile/domApi.html" });
-              setTimeout(() => {
+              await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.runJavaScript({
                   script: "getDomResult()", callback: (res) => {
                     console.info("getDomResult==>" + res);
-                    Utils.emitEvent(res, 146);
+                    Utils.emitEvent(res, 160990);
                   }
                 })
-              }, 3000);
               break;
             }
             case "emitDatabaseAccessTrue": {
               this.databaseAccess = true;
-              await Utils.sleep(2000);
+              this.isPageEnd = -1;
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              this.isPageEnd = -1;
               this.controller.loadUrl({ url: "resource://rawfile/databaseAccess.html" });
-              setTimeout(() => {
+              await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.runJavaScript({
                   script: "getDataResult()", callback: (res) => {
                     console.info("getDataResult==>" + res);
-                    Utils.emitEvent(res, 164);
+                    Utils.emitEvent(res, 161000);
                   }
                 })
-              }, 3000);
               break;
             }
 
@@ -243,6 +272,7 @@ struct Index {
           this.pageBegin = event.url;
         })
         .onPageEnd((event) => {
+          this.isPageEnd = 0;
           this.pageEnd = event.url;
           console.log("onPageEnd==>");
           if (this.enterPageEnd) {
@@ -314,13 +344,6 @@ struct Index {
           event.result.handlePromptConfirm("onPrompt ok");
           Utils.emitEvent(event.message, 178);
           return true;
-        })
-        .onGeolocationShow(() => {
-          console.log("onGeolocationShow==>")
-          if (this.geoShow) {
-            Utils.emitEvent("onGeolocationShow", 99);
-            this.geoShow = false;
-          }
         })
         .onBlur(() => {
           console.info("onBlur==>");

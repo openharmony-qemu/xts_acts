@@ -40,6 +40,7 @@ extern int g_rInvalidColumnTypeCode;
 extern int g_rNoRowInQueryCode;
 extern int g_rNoTransInSessionCode;
 extern int g_rInvalidObjectTypeCode;
+extern int g_rType;
 
 void InitRdbErrorCodeConfig();
 void InitRdbErrorCodeConfigV2(OH_Rdb_ConfigV2 *configV2);

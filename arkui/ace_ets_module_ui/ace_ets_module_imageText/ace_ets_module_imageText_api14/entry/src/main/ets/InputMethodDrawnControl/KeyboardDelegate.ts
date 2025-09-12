@@ -57,7 +57,9 @@ export class KeyboardDelegate {
           subscriber = data;
           commoneventmanager.subscribe(subscriber, subscriberCallback)
           console.info(TAG + '====>scene subscribe finish====');
-        })
+        }).catch((error)=>{
+            console.error(TAG + '====>Failed to createSubscriber in KeyboardDelegate:', error);
+          })
       }catch(err){
         console.info(TAG + '====>createSubscriber err:' + JSON.stringify(err.message));
       }
@@ -68,9 +70,11 @@ export class KeyboardDelegate {
         console.log('====>inputMethodEngine delete inputStop notification.');
       });
       try {
-        that.mContext.destroy((err) => {
+        that.mContext.destroy().then((err) => {
           console.info(TAG + '====>inputMethodAbility destroy err:' + JSON.stringify(err));
-        });
+        }).catch((error)=>{
+            console.error(TAG + '====>Failed to destroy in KeyboardDelegate:', error);
+          });
       } catch (err) {
         console.info(TAG + '====>inputMethodAbility destroy catch err:' + JSON.stringify(err));
         console.info(TAG + '====>inputMethodAbility destroy catch err:' + err);

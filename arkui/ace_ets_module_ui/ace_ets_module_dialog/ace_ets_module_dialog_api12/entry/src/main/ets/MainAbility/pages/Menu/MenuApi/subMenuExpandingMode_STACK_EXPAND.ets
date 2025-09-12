@@ -55,7 +55,9 @@ struct Index {
           .fontWeight(FontWeight.Bold)
           .margin({top: '2%'})
       }
-      .bindMenu(this.MyMenu)
+      .bindMenu(this.MyMenu, {
+          showInSubWindow: false
+       })
       .width('100%')
     }
     .height('100%')

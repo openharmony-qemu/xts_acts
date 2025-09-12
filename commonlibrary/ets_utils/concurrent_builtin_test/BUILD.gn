@@ -17,6 +17,7 @@ group("concurrent_builtin_test") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "concurrent_baselib_test:ActsConcurrentBaselibTest",
       "concurrent_global_test:ActsConcurrentGlobalTest",
       "concurrent_builtins_test:ActsConcurrentBuiltinsTest",
     ]

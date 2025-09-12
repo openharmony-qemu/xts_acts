@@ -20,6 +20,7 @@ import systemDateTime from '@ohos.systemDateTime';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import fs from '@ohos.file.fs';
 import webview from '@ohos.web.webview';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default class Utils {
   static sleep(time: number) {
@@ -40,6 +41,20 @@ export default class Utils {
       let isPc: boolean = userAgent.includes('PC') || userAgent.toLowerCase().includes('pc') || userAgent.includes("2in1")
       console.log('device is pc:' + isPc)
       return isPc
+    } catch (error) {
+      console.info("userAgent error:" + error);
+      return true
+    }
+  }
+
+  static isWearable(controller: webview.WebviewController) {
+    let userAgent: string = controller.getUserAgent();
+    console.info("userAgent" + userAgent);
+
+    try {
+      let isWearable: boolean = userAgent.includes('Wearable') || userAgent.toLowerCase().includes('wearable')
+      console.log('device is Wearable:' + isWearable)
+      return isWearable
     } catch (error) {
       console.info("userAgent error:" + error);
       return true
@@ -201,7 +216,7 @@ export default class Utils {
         eventId: eventId,
         priority: events_emitter.EventPriority.LOW
       }
-      events_emitter.on(innerEvent, callBack)
+      events_emitter.once(innerEvent, callBack)
     } catch (err) {
       console.info(`[${testCaseName}] err:` + JSON.stringify(err));
     }
@@ -263,5 +278,30 @@ export default class Utils {
 
   static getRectVerticalCenterY(rect: RectInfo): number {
     return Number.parseInt(Number((rect.bottom - rect.top) / 2 + rect.top).toFixed(0));
+  }
+
+  static async waitAndClickComponent(driver: Driver, componentId: string): Promise<void> {
+    let retryTimes: number = 0;
+    let retry: boolean = true;
+    while (retry && retryTimes <= 3) {
+      retry = false;
+      try {
+        const buttonComponent = await driver.waitForComponent(ON.id(componentId), 10000);
+        if (!buttonComponent) {
+          console.error(`error: buttonConmponent is null.`);
+          return;
+        }
+        await buttonComponent.click();
+      } catch (e) {
+        const error = e as BusinessError;
+        console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        if (error.code === 17000002) {
+          retry = true;
+          await Utils.sleep(500);
+          retryTimes++;
+          console.log('retryTimes = ' + retryTimes);
+        }
+      }
+    }
   }
 }
