@@ -21,8 +21,8 @@ namespace ArkUICapiTest {
 static napi_value TestInvalidateAttributes(napi_env env, napi_callback_info info)
 {
     NAPI_START(column, ARKUI_NODE_COLUMN);
-    auto ret1 =OH_ArkUI_NativeModule_InvalidateAttributes(column);
-    auto ret2 =OH_ArkUI_NativeModule_InvalidateAttributes(nullptr);
+    auto ret1 = OH_ArkUI_NativeModule_InvalidateAttributes(column);
+    auto ret2 = OH_ArkUI_NativeModule_InvalidateAttributes(nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_NativeModule_InvalidateAttributes ret1=%{public}d", ret1);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
