@@ -21,8 +21,8 @@
             "type": "ShellKit",
             "run-command": [
                 "remount",
-                "mkdir -p /data/app/el2/100/base/com.avplayer.napitest/haps/com.avplayer.napitest/files",
-                "chmod 777 -R /data/app/el2/100/base/com.avplayer.napitest/haps/com.avplayer.napitest"
+                "mkdir -p /data/app/el2/100/base/com.avplayer.napi20test/haps/com.avplayer.napi20test/files",
+                "chmod 777 -R /data/app/el2/100/base/com.avplayer.napi20test/haps/com.avplayer.napi20test"
             ]
         },
         {

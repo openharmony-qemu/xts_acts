@@ -15,18 +15,6 @@
 
 import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium'
 import avplayer from 'libavplayerndk.so'
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import fs from '@ohos.file.fs'
-import { BusinessError } from '@ohos.base';
-import Utils from './Utils';
-
-function getContext(): Context {
-  let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-  let context = abilityDelegator.getAppContext();
-  return context;
-}
-const PATH_DEMO =  "demo_video_audio_10s.mp4"
-const g_currentPathId = 1;
 
 export default function AVPlayerNdkTest() {
   describe('AVPlayerTest', () => {

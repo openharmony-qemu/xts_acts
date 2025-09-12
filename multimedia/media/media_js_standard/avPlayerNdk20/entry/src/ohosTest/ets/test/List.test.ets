@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import AVPlayerNdkTest from './AVPlayerNdk.test';
+import AVPlayerNdkTest from '';
 
 export default function testsuite() {
   AVPlayerNdkTest();
