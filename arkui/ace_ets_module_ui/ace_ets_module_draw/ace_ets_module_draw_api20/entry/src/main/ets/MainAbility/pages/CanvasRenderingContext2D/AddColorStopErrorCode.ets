@@ -53,7 +53,7 @@ struct AddColorStopErrorCode {
               console.info('error code is error');
             }
           }
-          if(this.str = '103701'){
+          if(this.str == '103701'){
             this.str = 'hello'
           } else {
             console.info('error code is error');
