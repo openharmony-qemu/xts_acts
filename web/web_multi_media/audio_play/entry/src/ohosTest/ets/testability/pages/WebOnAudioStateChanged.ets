@@ -71,10 +71,10 @@ struct WebOnAudioStateChanged {
                 this.statusResult = ''
                 this.controller.runJavaScript("play()", (error, result) => {
                   if (error) {
-                    console.log(`The controller.play() return error is: ${error}`);
+                    console.log(`The controller.play1() return error is: ${error}`);
                   }
                   if (result) {
-                    console.log(`The controller.play() emitAudioStatePlay return value is: ${result}`);
+                    console.log(`The controller.play1() emitAudioStatePlay return value is: ${result}`);
                   }
                 })
                 await waitForExist(() => this.statusResult, this.str, 'true_');
@@ -84,22 +84,24 @@ struct WebOnAudioStateChanged {
                   }
                   if (result) {
                     this.statusResult += (result + '_')
-                    console.log(`The controller.isPlaying1() return value is: ${result}`);
+                    console.log(`The controller.isPlaying1() emitAudioStatePlay return value is: ${result}`);
                   }
                 })
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               await waitForExist(() => this.statusResult, this.str, 'true_true_');
-              Utils.emitEvent(this.statusResult, 132660)
+              let flag = this.statusResult;
               this.controller.runJavaScript("pause()", (error, result) => {
                 if (error) {
                   console.log(`The controller.pause1() return error is: ${error}`);
                 }
                 if (result) {
-                  console.log(`The controller.pause1() emitAudioStatePause2 return value is: ${result}`);
+                  console.log(`The controller.pause1() emitAudioStatePlay return value is: ${result}`);
                 }
               })
+              await waitForExist(() => this.statusResult, this.str, 'true_true_false_');
+              Utils.emitEvent(flag, 132660)
               break;
             }
             case "emitAudioStatePause": {
@@ -119,7 +121,7 @@ struct WebOnAudioStateChanged {
                     console.log(`The controller.pause() return error is: ${error}`);
                   }
                   if (result) {
-                    console.log(`The controller.pause() emitAudioStatePause2 return value is: ${result}`);
+                    console.log(`The controller.pause() emitAudioStatePause return value is: ${result}`);
                   }
                 })
                 await waitForExist(() => this.statusResult, this.str, 'true_false_');
@@ -129,7 +131,7 @@ struct WebOnAudioStateChanged {
                   }
                   if (result) {
                     this.statusResult += (result + '_')
-                    console.log(`The controller.isPlaying() return value is: ${result}`);
+                    console.log(`The controller.isPlaying() emitAudioStatePause return value is: ${result}`);
                   }
                 })
               } catch (error) {

@@ -860,47 +860,47 @@ struct WebViewControllerVideoMedia {
               let back_res: boolean = false;
               let num1: number = -1;
               try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("video1.html"))
-                await waitForExist(() => this.isPageEnd, this.str, 0);
-
-                let driver = Driver.create();
-                let size = await driver.getDisplaySize();
-                console.log("size x:" + size.x)
-                console.log("size y:" + size.y)
-                await driver.delayMs(1000);
-                await driver.click(size.x / 2, size.y / 2);
-                await driver.delayMs(1000);
-
-                this.controller.runJavaScript("enterFullScreen()");
-                await waitForExist(() => this.isFullScreen, 'isFullScreen'+ this.str, 1);
-                
-                this.controller.runJavaScript("playVideo()");
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
-                this.controller.closeAllMediaPresentations();
-                await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
-                this.res = this.controller.getMediaPlaybackState();
-                console.log("GetMediaPlaybackState0600 res: " + this.res);
-                const intervalId = setInterval(() => {
-                  this.controller.runJavaScript("isVideoFullScreen()", (err, isFull) => {
-                    num1 = Number.parseInt(isFull);
-                    console.info("key==>isFull_132550):" + isFull)
-                    if ((num1 == 0) && (this.res == 3)) {
-                      back_res = true;
-                      clearInterval(intervalId)
-                    }
-                  })
-                }, 100);
-                await waitForExist(()=> back_res ? 1 : 0, this.str, 1);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
-              try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 132550)
                 } else {
-                  Utils.emitEvent(back_res, 132550)
+                  try {
+                    this.isPageEnd = -1;
+                    this.controller.loadUrl($rawfile("video1.html"))
+                    await waitForExist(() => this.isPageEnd, this.str, 0);
+
+                    let driver = Driver.create();
+                    let size = await driver.getDisplaySize();
+                    console.log("size x:" + size.x)
+                    console.log("size y:" + size.y)
+                    await driver.delayMs(1000);
+                    await driver.click(size.x / 2, size.y / 2);
+                    await driver.delayMs(1000);
+
+                    this.controller.runJavaScript("enterFullScreen()");
+                    await waitForExist(() => this.isFullScreen, 'isFullScreen'+ this.str, 1);
+                    
+                    this.controller.runJavaScript("playVideo()");
+                    await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 1);
+                    this.controller.closeAllMediaPresentations();
+                    await waitForExist(() => this.controller.getMediaPlaybackState(), this.str, 3);
+                    this.res = this.controller.getMediaPlaybackState();
+                    console.log("GetMediaPlaybackState0600 res: " + this.res);
+                    const intervalId = setInterval(() => {
+                      this.controller.runJavaScript("isVideoFullScreen()", (err, isFull) => {
+                        num1 = Number.parseInt(isFull);
+                        console.info("key==>isFull_132550):" + isFull)
+                        if ((num1 == 0) && (this.res == 3)) {
+                          back_res = true;
+                          clearInterval(intervalId)
+                        }
+                      })
+                    }, 100);
+                    await waitForExist(()=> back_res ? 1 : 0, this.str, 1);
+                    Utils.emitEvent(back_res, 132550)
+                  } catch (error) {
+                    console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  }
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
