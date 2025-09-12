@@ -35,7 +35,7 @@ export default function timePickerOnChangeTest() {
     * @tc.level      : Level 1
     */
     it('testTimePickerOnChange001', Level.LEVEL1, async (done: Function) => {
-      await Utils.flingComponent('timePickerOnChangeTest', false, true);
+      await Utils.pickerFlingComponent('timePickerOnChangeTest', false, true);
       await Utils.sleep(2000)
       expect(Utils.getComponentInfoByKey('timePickerOnChangeTest').$attrs.backgroundColor).assertEqual('#FF00FF00')
       done()
