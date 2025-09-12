@@ -58,7 +58,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_0100
      * @tc.desc      : This commonEvent means the device state
      */
-    it('Sub_Notification_Ces_Publish_Support_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('Sub_Notification_Ces_Publish_Support_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `Sub_Notification_Ces_Publish_Support_Static_0100 START`)
         expect(commonEventManager.Support.COMMON_EVENT_BOOT_COMPLETED as string)
@@ -79,7 +79,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_0200
      * @tc.desc      : This commonEvent means the device battery state
      */
-    it('Sub_Notification_Ces_Publish_Support_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('Sub_Notification_Ces_Publish_Support_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `Sub_Notification_Ces_Publish_Support_Static_0200 START`)
         expect(commonEventManager.Support.COMMON_EVENT_BATTERY_LOW as string).assertEqual('usual.event.BATTERY_LOW')
@@ -99,7 +99,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_0300
      * @tc.desc      : This commonEvent means the screen,the thermal state level
      */
-    it('Sub_Notification_Ces_Publish_Support_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('Sub_Notification_Ces_Publish_Support_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `Sub_Notification_Ces_Publish_Support_Static_0300 START`)
         expect(commonEventManager.Support.COMMON_EVENT_SCREEN_OFF as string).assertEqual('usual.event.SCREEN_OFF')
@@ -117,7 +117,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_0400
      * @tc.desc      : This commonEvent means the time changed , the dialog to dismiss
      */
-    it('Sub_Notification_Ces_Publish_Support_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('Sub_Notification_Ces_Publish_Support_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `Sub_Notification_Ces_Publish_Support_Static_0400 START`)
         expect(commonEventManager.Support.COMMON_EVENT_TIME_TICK as string).assertEqual('usual.event.TIME_TICK')
@@ -136,7 +136,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_0500
      * @tc.desc      : This commonEvent means when a new version application package
      */
-    it('Sub_Notification_Ces_Publish_Support_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('Sub_Notification_Ces_Publish_Support_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `Sub_Notification_Ces_Publish_Support_Static_0500 START`)
         expect(commonEventManager.Support.COMMON_EVENT_PACKAGE_ADDED as string).assertEqual('usual.event.PACKAGE_ADDED')
@@ -163,7 +163,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_0600
      * @tc.desc      : This commonEvent of package
      */
-    it('Sub_Notification_Ces_Publish_Support_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('Sub_Notification_Ces_Publish_Support_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `Sub_Notification_Ces_Publish_Support_Static_0600 START`)
         expect(commonEventManager.Support.COMMON_EVENT_PACKAGE_RESTARTED as string)
@@ -192,7 +192,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_0700
      * @tc.desc      : Sent by system package verifier
      */
-    it('Sub_Notification_Ces_Publish_Support_Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('Sub_Notification_Ces_Publish_Support_Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `Sub_Notification_Ces_Publish_Support_Static_0700 START`)
         expect(commonEventManager.Support.COMMON_EVENT_PACKAGE_NEEDS_VERIFICATION as string)
@@ -214,7 +214,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_0800
      * @tc.desc      : Send by the smart function when the system in mode
      */
-    it('Sub_Notification_Ces_Publish_Support_Static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('Sub_Notification_Ces_Publish_Support_Static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `Sub_Notification_Ces_Publish_Support_Static_0800 START`)
         expect(commonEventManager.Support.COMMON_EVENT_LOCALE_CHANGED as string)
@@ -233,7 +233,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_0900
      * @tc.desc      : Remind previous user of that the service
      */
-    it('Sub_Notification_Ces_Publish_Support_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('Sub_Notification_Ces_Publish_Support_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `Sub_Notification_Ces_Publish_Support_Static_0900 START`)
         expect(commonEventManager.Support.COMMON_EVENT_USER_STARTED as string).assertEqual('usual.event.USER_STARTED')
@@ -255,7 +255,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_1000
      * @tc.desc      : Distributed account, privacy
      */
-    it('Sub_Notification_Ces_Publish_Support_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('Sub_Notification_Ces_Publish_Support_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `Sub_Notification_Ces_Publish_Support_Static_1000 START`)
         expect(commonEventManager.Support.COMMON_EVENT_DISTRIBUTED_ACCOUNT_LOGIN as string)
@@ -277,7 +277,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_1100
      * @tc.desc      : WIFI state
      */
-    it('Sub_Notification_Ces_Publish_Support_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('Sub_Notification_Ces_Publish_Support_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `Sub_Notification_Ces_Publish_Support_Static_1100 START`)
         expect(commonEventManager.Support.COMMON_EVENT_WIFI_POWER_STATE as string)
@@ -318,7 +318,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_1500
      * @tc.desc      : Bluetooth.a2dp,Nfc
      */
-    it('Sub_Notification_Ces_Publish_Support_Static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('Sub_Notification_Ces_Publish_Support_Static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `Sub_Notification_Ces_Publish_Support_Static_1500 START`)
         expect(commonEventManager.Support.COMMON_EVENT_NFC_ACTION_ADAPTER_STATE_CHANGED as string)
@@ -336,7 +336,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_1600
      * @tc.desc      : charging battery,device's ,User,ability,Gps
      */
-    it('Sub_Notification_Ces_Publish_Support_Static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('Sub_Notification_Ces_Publish_Support_Static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `Sub_Notification_Ces_Publish_Support_Static_1600 START`)
         expect(commonEventManager.Support.COMMON_EVENT_DISCHARGING as string).assertEqual('usual.event.DISCHARGING')
@@ -368,7 +368,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_1700
      * @tc.desc      : ivi
      */
-    it('Sub_Notification_Ces_Publish_Support_Static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('Sub_Notification_Ces_Publish_Support_Static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `Sub_Notification_Ces_Publish_Support_Static_1700 START`)
         expect(commonEventManager.Support.COMMON_EVENT_IVI_SLEEP as string).assertEqual('common.event.IVI_SLEEP')
@@ -398,7 +398,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_1800
      * @tc.desc      : USB
      */
-    it('Sub_Notification_Ces_Publish_Support_Static_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('Sub_Notification_Ces_Publish_Support_Static_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `Sub_Notification_Ces_Publish_Support_Static_1800 START`)
         expect(commonEventManager.Support.COMMON_EVENT_USB_STATE as string)
@@ -422,7 +422,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_1900
      * @tc.desc      : protected common event
      */
-    it('Sub_Notification_Ces_Publish_Support_Static_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('Sub_Notification_Ces_Publish_Support_Static_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `Sub_Notification_Ces_Publish_Support_Static_1900 START`)
         expect(commonEventManager.Support.COMMON_EVENT_DISK_REMOVED as string)
@@ -459,7 +459,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_2000
      * @tc.desc      : protected common event
      */
-    it('Sub_Notification_Ces_Publish_Support_Static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('Sub_Notification_Ces_Publish_Support_Static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `Sub_Notification_Ces_Publish_Support_Static_2000 START`)
         expect(commonEventManager.Support.COMMON_EVENT_FOUNDATION_READY as string)
@@ -489,7 +489,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2100
      * @tc.desc      : SIM common event
      */
-    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2100 START`)
         expect(commonEventManager.Support.COMMON_EVENT_SIM_STATE_CHANGED as string)
@@ -529,7 +529,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2200
      * @tc.desc      : STK common event
      */
-    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2200 START`)
         expect(commonEventManager.Support.COMMON_EVENT_STK_COMMAND as string).assertEqual('usual.event.STK_COMMAND')
@@ -553,7 +553,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2300
      * @tc.desc      : HWID common event
      */
-    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2300 START`)
         expect(commonEventManager.Support.COMMON_EVENT_MINORSMODE_ON as string).assertEqual('usual.event.MINORSMODE_ON')
@@ -571,7 +571,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2400 START`)
         expect(commonEventManager.Support.COMMON_EVENT_DATA_SHARE_READY as string)
@@ -585,7 +585,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2500
      * @tc.desc      : enter/exit force sleep common event
      */
-    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2500 START`)
         expect(commonEventManager.Support.COMMON_EVENT_ENTER_FORCE_SLEEP as string)
@@ -601,7 +601,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2600
      * @tc.desc      : start restore common event
      */
-    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2600 START`)
         expect(commonEventManager.Support.COMMON_EVENT_RESTORE_START as string).assertEqual('usual.event.RESTORE_START')
@@ -614,7 +614,7 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2700
      * @tc.desc      : managed browser policy changed common event
      */
-    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2700 START`)
         expect(commonEventManager.Support.COMMON_EVENT_MANAGED_BROWSER_POLICY_CHANGED as string)
@@ -625,22 +625,130 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
+      /*
+     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3100
+     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3100
+     * @tc.desc      : bluetooth handsfree ag connection state change common event
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3100 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_HANDSFREE_AG_CONNECT_STATE_CHANGE)
+        .assertEqual('usual.event.bluetooth.handsfree.ag.CONNECT_STATE_CHANGE')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3100 END`)
+      done()
+    })
+
+    /*
+     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3200
+     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3200
+     * @tc.desc      : bluetooth a2dp source connection state change common event
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3200 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_A2DPSOURCE_CONNECT_STATE_CHANGE)
+        .assertEqual('usual.event.bluetooth.a2dpsource.CONNECT_STATE_CHANGE')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3200 END`)
+      done()
+    })
+
+    /*
+     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3300
+     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3300
+     * @tc.desc      : bluetooth avrcp connection state change common event
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3300 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_A2DPSOURCE_AVRCP_CONNECT_STATE_CHANGE)
+        .assertEqual('usual.event.bluetooth.a2dpsource.AVRCP_CONNECT_STATE_CHANGE')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3300 END`)
+      done()
+    })
+
+    /*
+     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3400
+     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3400
+     * @tc.desc      : bluetooth codec change common event
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3400 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_A2DPSOURCE_CODEC_VALUE_CHANGE)
+        .assertEqual('usual.event.bluetooth.a2dpsource.CODEC_VALUE_CHANGE')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3400 END`)
+      done()
+    })
+
+    /*
+     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3500
+     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3500
+     * @tc.desc      : bluetooth remote device acl state change common event
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3500 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_REMOTEDEVICE_ACL_STATE_CHANGE)
+        .assertEqual('usual.event.bluetooth.remotedevice.ACL_STATE_CHANGE')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3500 END`)
+      done()
+    })
+
+    /*
+     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3600
+     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3600
+     * @tc.desc      : bluetooth pair state change common event
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3600 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_REMOTEDEVICE_PAIR_STATE_CHANGE)
+        .assertEqual('usual.event.bluetooth.remotedevice.PAIR_STATE_CHANGE')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3600 END`)
+      done()
+    })
 
     /*
      * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3000
      * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3000
+     * @tc.desc      : start/stop screen capture
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3000 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_SCREEN_SHARE).assertEqual('usual.event.SCREEN_SHARE')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3000 END`)
+      done()
+    })
+
+
+    /*
+     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3800
+     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3800
      * @tc.desc      : enter/exit force sleep common event
      */
-    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3000',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2700 START`)
-        expect(commonEventManager.Support.COMMON_EVENT_ENTER_HIBERNATE as string)
-          .assertEqual('usual.event.ENTER_HIBERNATE')
-        expect(commonEventManager.Support.COMMON_EVENT_EXIT_HIBERNATE as string)
-          .assertEqual('usual.event.EXIT_HIBERNATE')
-        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2700 END`)
-        done()
-      })
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3800 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_ENTER_HIBERNATE).assertEqual('usual.event.ENTER_HIBERNATE')
+      expect(commonEventManager.Support.COMMON_EVENT_EXIT_HIBERNATE).assertEqual('usual.event.EXIT_HIBERNATE')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3800 END`)
+      done()
+    })
+
+    /*
+     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4000
+     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4000
+     * @tc.desc      : restore end common event
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4000 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_RESTORE_END).assertEqual('usual.event.RESTORE_END')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4000 END`)
+      done()
+    })
 
   })
 }

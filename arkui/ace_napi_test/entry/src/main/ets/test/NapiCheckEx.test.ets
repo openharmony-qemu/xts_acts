@@ -28,6 +28,10 @@ async function sleep(time: number) {
   })
 }
 
+interface TestObject {
+  test: string;
+}
+
 export default function napiCheckExTest() {
   describe('napiCheckExTest', () => {
     /**
@@ -41,7 +45,7 @@ export default function napiCheckExTest() {
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0001
      * @tc.name napiTestEx0001
      * @tc.desc napiTestEx
-    */
+     */
     it('napiTestEx0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buffer: Object = napitestex.CreateBufferCopy();
       expect(napitestex.IsBuffer(buffer)).assertTrue();
@@ -52,7 +56,7 @@ export default function napiCheckExTest() {
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0002
      * @tc.name napiBufferTest002
      * @tc.desc aceNapiEtsTest
-    */
+     */
     it('napiBufferTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buffer: Object = napitestex.CreateBuffer();
       expect(napitestex.IsBuffer(buffer)).assertTrue();
@@ -63,7 +67,7 @@ export default function napiCheckExTest() {
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0003
      * @tc.name napiBufferTest003
      * @tc.desc aceNapiEtsTest
-    */
+     */
     it('napiBufferTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buffer: Object = napitestex.CreateBufferCopy();
       expect(napitestex.IsBuffer(buffer)).assertTrue();
@@ -74,7 +78,7 @@ export default function napiCheckExTest() {
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0004
      * @tc.name napiBufferTest004
      * @tc.desc aceNapiEtsTest - Test external buffer creation and finalize callback
-    */
+     */
     it('napiBufferTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let externalBuffer: Object = napitestex.CreateExternalBufferTest();
       expect(napitestex.IsBuffer(externalBuffer)).assertTrue();
@@ -85,32 +89,32 @@ export default function napiCheckExTest() {
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0005
      * @tc.name napiBufferTest005
      * @tc.desc aceNapiEtsTest - Test buffer creation edge cases and error handling
-    */
+     */
     it('napiBufferTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // 测试零长度buffer
       let zeroLengthBuffer: Object = napitestex.createBufferSizeZeroTest();
       expect(zeroLengthBuffer).assertDeepEquals(1);
-      
+
       // 测试最大长度buffer (2097152)
       let maxLengthBuffer: Object = napitestex.CreateBufferMaxLength();
       hilog.info(0x0000, 'testTag', 'maxLengthBuffer:%{public}d', maxLengthBuffer);
       expect(maxLengthBuffer).assertDeepEquals(0);
-      
+
       // 测试超过最大长度 - 应该返回错误状态
       let invalidLengthStatus: Object = napitestex.CreateBufferExceedMaxLength();
       // 检查返回的是否为错误状态码 (napi_invalid_arg)
       hilog.info(0x0000, 'testTag', 'invalidLengthStatus:%{public}d', invalidLengthStatus);
       expect(invalidLengthStatus).assertDeepEquals(1); // napi_invalid_arg = 1
-      
+
       // 测试无效参数 - 应该返回错误状态(crash)
       //let invalidEnvStatus: Object = napitestex.CreateBufferInvalidEnv();
       //hilog.info(0x0000, 'testTag', 'invalidEnvStatus:%{public}d', invalidEnvStatus);
       //expect(invalidEnvStatus).assertDeepEquals(1); // napi_invalid_arg = 1
-      
+
       let invalidDataStatus: Object = napitestex.CreateBufferInvalidData();
       hilog.info(0x0000, 'testTag', 'invalidDataStatus:%{public}d', invalidDataStatus);
       expect(invalidDataStatus).assertDeepEquals(1); // napi_invalid_arg = 1
-      
+
       //(crash)
       //let invalidResultStatus: Object = napitestex.CreateBufferInvalidResult();
       //hilog.info(0x0000, 'testTag', 'invalidResultStatus:%{public}d', invalidResultStatus);
@@ -121,13 +125,13 @@ export default function napiCheckExTest() {
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0006
      * @tc.name napiBufferTest006
      * @tc.desc aceNapiEtsTest - Test non-ArrayBuffer object detection
-    */
+     */
     it('napiBufferTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // 测试非buffer对象的检测
       let notABuffer: Object = napitestex.CreateInt32Test();
       hilog.info(0x0000, 'testTag', 'notABuffer:%{public}d', notABuffer);
       expect(napitestex.IsBuffer(notABuffer)).assertFalse();
-      
+
       // 测试获取非buffer对象信息应该返回错误
       let getBufferInfoStatus: Object = napitestex.GetBufferInfoNonBuffer(notABuffer);
       hilog.info(0x0000, 'testTag', 'getBufferInfoStatus:%{public}d', getBufferInfoStatus);
@@ -139,7 +143,7 @@ export default function napiCheckExTest() {
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0007
      * @tc.name napiBufferTest007
      * @tc.desc aceNapiEtsTest - Test multiple operations combination
-    */
+     */
     it('napiBufferTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // 测试多种操作的组合
       let testResult: Object = napitestex.TestMultipleOperations();
@@ -152,7 +156,7 @@ export default function napiCheckExTest() {
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0008
      * @tc.name napiBufferTest008
      * @tc.desc aceNapiEtsTest - Test ArrayBuffer thread safety in multi-threaded environment
-    */
+     */
     it('napiBufferTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // 测试多线程环境下的ArrayBuffer线程安全性
       let threadSafetyResult: boolean = napitestex.TestArrayBufferThreadSafety();
@@ -165,7 +169,7 @@ export default function napiCheckExTest() {
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_BUFFER_0009
      * @tc.name napiBufferTest009
      * @tc.desc aceNapiEtsTest - Test ArrayBuffer and external ArrayBuffer comparison
-    */
+     */
     it('napiBufferTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // 测试ArrayBuffer和外部ArrayBuffer的比对
       let comparisonResult: number = napitestex.TestArrayBufferComparison();
@@ -794,202 +798,202 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0001
-     * @tc.name      : testBigIntTest01
-     * @tc.desc      : Testing BigInt creation from int64 value.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testBigIntTest01', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('testBigIntTest01 START');
+    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0001
+    * @tc.name      : testBigIntTest0001
+    * @tc.desc      : Testing BigInt creation from int64 value.
+    * @tc.size      : SmallTest
+    * @tc.type      : Function
+    * @tc.level     : Level 1
+    */
+    it('testBigIntTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0001 START');
       try {
         let result: boolean = napitestex.NapiBigIntTest01();
-        console.info('testBigIntTest01 test result: ' + result);
+        console.info('testBigIntTest0001 test result: ' + result);
         expect(result).assertEqual(true);
       } catch (err) {
-        console.error(`testBigIntTest01 err msg: ${err.message}`);
+        console.error(`testBigIntTest0001 err msg: ${err.message}`);
         expect().assertFail();
       }
       done();
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0002
-     * @tc.name      : testBigIntTest02
-     * @tc.desc      : Testing BigInt creation from uint64 value.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testBigIntTest02', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('testBigIntTest02 START');
+    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0002
+    * @tc.name      : testBigIntTest0002
+    * @tc.desc      : Testing BigInt creation from uint64 value.
+    * @tc.size      : SmallTest
+    * @tc.type      : Function
+    * @tc.level     : Level 1
+    */
+    it('testBigIntTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0002 START');
       try {
         const result: boolean = napitestex.NapiBigIntTest02();
-        console.info('testBigIntTest02 test result: ' + result);
+        console.info('testBigIntTest0002 test result: ' + result);
         expect(result).assertEqual(true);
       } catch (err) {
-        console.error(`testBigIntTest02 err msg: ${err.message}`);
+        console.error(`testBigIntTest0002 err msg: ${err.message}`);
         expect().assertFail();
       }
       done();
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0003
-     * @tc.name      : testBigIntTest03
-     * @tc.desc      : Testing BigInt creation and retrieval using words interface (positive and negative).
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testBigIntTest03', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('testBigIntTest03 START');
+    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0003
+    * @tc.name      : testBigIntTest0003
+    * @tc.desc      : Testing BigInt creation and retrieval using words interface (positive and negative).
+    * @tc.size      : SmallTest
+    * @tc.type      : Function
+    * @tc.level     : Level 1
+    */
+    it('testBigIntTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0003 START');
       try {
         const result: boolean = napitestex.NapiBigIntTest03();
-        console.info('testBigIntTest03 test result: ' + result);
+        console.info('testBigIntTest0003 test result: ' + result);
         expect(result).assertEqual(true);
       } catch (err) {
-        console.error(`testBigIntTest03 err msg: ${err.message}`);
+        console.error(`testBigIntTest0003 err msg: ${err.message}`);
         expect().assertFail();
       }
       done();
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0004
-     * @tc.name      : testBigIntTest04
-     * @tc.desc      : Testing BigInt boundary values (INT64_MAX, INT64_MIN, UINT64_MAX).
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testBigIntTest04', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('testBigIntTest04 START');
+    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0004
+    * @tc.name      : testBigIntTest0004
+    * @tc.desc      : Testing BigInt boundary values (INT64_MAX, INT64_MIN, UINT64_MAX).
+    * @tc.size      : SmallTest
+    * @tc.type      : Function
+    * @tc.level     : Level 1
+    */
+    it('testBigIntTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0004 START');
       try {
         const result: boolean = napitestex.NapiBigIntTest04();
-        console.info('testBigIntTest04 test result: ' + result);
+        console.info('testBigIntTest0004 test result: ' + result);
         expect(result).assertEqual(true);
       } catch (err) {
-        console.error(`testBigIntTest04 err msg: ${err.message}`);
+        console.error(`testBigIntTest0004 err msg: ${err.message}`);
         expect().assertFail();
       }
       done();
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0005
-     * @tc.name      : testBigIntTest05
-     * @tc.desc      : Testing BigInt error handling (nullptr parameters, non-BigInt values).
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testBigIntTest05', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('testBigIntTest05 START');
+    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0005
+    * @tc.name      : testBigIntTest0005
+    * @tc.desc      : Testing BigInt error handling (nullptr parameters, non-BigInt values).
+    * @tc.size      : SmallTest
+    * @tc.type      : Function
+    * @tc.level     : Level 1
+    */
+    it('testBigIntTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0005 START');
       try {
         const result: boolean = napitestex.NapiBigIntTest05();
-        console.info('testBigIntTest05 test result: ' + result);
+        console.info('testBigIntTest0005 test result: ' + result);
         expect(result).assertEqual(true);
       } catch (err) {
-        console.error(`testBigIntTest05 err msg: ${err.message}`);
+        console.error(`testBigIntTest0005 err msg: ${err.message}`);
         expect().assertFail();
       }
       done();
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0006
-     * @tc.name      : testBigIntTest06
-     * @tc.desc      : Testing BigInt conversion precision (lossless flag verification).
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testBigIntTest06', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('testBigIntTest06 START');
+    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0006
+    * @tc.name      : testBigIntTest0006
+    * @tc.desc      : Testing BigInt conversion precision (lossless flag verification).
+    * @tc.size      : SmallTest
+    * @tc.type      : Function
+    * @tc.level     : Level 1
+    */
+    it('testBigIntTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0006 START');
       try {
         const result: boolean = napitestex.NapiBigIntTest06();
-        console.info('testBigIntTest06 test result: ' + result);
+        console.info('testBigIntTest0006 test result: ' + result);
         expect(result).assertEqual(true);
       } catch (err) {
-        console.error(`testBigIntTest06 err msg: ${err.message}`);
+        console.error(`testBigIntTest0006 err msg: ${err.message}`);
         expect().assertFail();
       }
       done();
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0007
-     * @tc.name      : testBigIntTest07
-     * @tc.desc      : Testing BigInt int64 round-trip correctness verification.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testBigIntTest07', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('testBigIntTest07 START');
+    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0007
+    * @tc.name      : testBigIntTest0007
+    * @tc.desc      : Testing BigInt int64 round-trip correctness verification.
+    * @tc.size      : SmallTest
+    * @tc.type      : Function
+    * @tc.level     : Level 1
+    */
+    it('testBigIntTest0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0007 START');
       try {
         const result: boolean = napitestex.NapiBigIntTest07();
-        console.info('testBigIntTest07 test result: ' + result);
+        console.info('testBigIntTest0007 test result: ' + result);
         expect(result).assertEqual(true);
       } catch (err) {
-        console.error(`testBigIntTest07 err msg: ${err.message}`);
+        console.error(`testBigIntTest0007 err msg: ${err.message}`);
         expect().assertFail();
       }
       done();
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0008
-     * @tc.name      : testBigIntTest08
-     * @tc.desc      : Testing BigInt uint64 round-trip correctness verification.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testBigIntTest08', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('testBigIntTest08 START');
+    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0008
+    * @tc.name      : testBigIntTest0008
+    * @tc.desc      : Testing BigInt uint64 round-trip correctness verification.
+    * @tc.size      : SmallTest
+    * @tc.type      : Function
+    * @tc.level     : Level 1
+    */
+    it('testBigIntTest0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0008 START');
       try {
         const result: boolean = napitestex.NapiBigIntTest08();
-        console.info('testBigIntTest08 test result: ' + result);
+        console.info('testBigIntTest0008 test result: ' + result);
         expect(result).assertEqual(true);
       } catch (err) {
-        console.error(`testBigIntTest08 err msg: ${err.message}`);
+        console.error(`testBigIntTest0008 err msg: ${err.message}`);
         expect().assertFail();
       }
       done();
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0009
-     * @tc.name      : testBigIntTest09
-     * @tc.desc      : Testing BigInt uint64 array words round-trip correctness verification.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testBigIntTest09', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('testBigIntTest09 START');
+    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0009
+    * @tc.name      : testBigIntTest0009
+    * @tc.desc      : Testing BigInt uint64 array words round-trip correctness verification.
+    * @tc.size      : SmallTest
+    * @tc.type      : Function
+    * @tc.level     : Level 1
+    */
+    it('testBigIntTest0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0009 START');
       try {
         const result: boolean = napitestex.NapiBigIntTest09();
-        console.info('testBigIntTest09 test result: ' + result);
+        console.info('testBigIntTest0009 test result: ' + result);
         expect(result).assertEqual(true);
       } catch (err) {
-        console.error(`testBigIntTest09 err msg: ${err.message}`);
+        console.error(`testBigIntTest0009 err msg: ${err.message}`);
         expect().assertFail();
       }
       done();
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0010
-     * @tc.name      : testBigIntTest0010
-     * @tc.desc      : Testing BigInt with negative value.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0010
+    * @tc.name      : testBigIntTest0010
+    * @tc.desc      : Testing BigInt with negative value.
+    * @tc.size      : SmallTest
+    * @tc.type      : Function
+    * @tc.level     : Level 1
+    */
     it('testBigIntTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testBigIntTest0010 START');
       try {
@@ -1004,13 +1008,13 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0011
-     * @tc.name      : testBigIntTest0011
-     * @tc.desc      : Testing BigInt with maximum int64 value.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0011
+    * @tc.name      : testBigIntTest0011
+    * @tc.desc      : Testing BigInt with maximum int64 value.
+    * @tc.size      : SmallTest
+    * @tc.type      : Function
+    * @tc.level     : Level 1
+    */
     it('testBigIntTest0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testBigIntTest0011 START');
       try {
@@ -1025,13 +1029,13 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0012
-     * @tc.name      : testBigIntTest0012
-     * @tc.desc      : Testing BigInt with zero value verification.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0012
+    * @tc.name      : testBigIntTest0012
+    * @tc.desc      : Testing BigInt with zero value verification.
+    * @tc.size      : SmallTest
+    * @tc.type      : Function
+    * @tc.level     : Level 1
+    */
     it('testBigIntTest0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testBigIntTest0012 START');
       try {
@@ -1046,13 +1050,13 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0013
-     * @tc.name      : testBigIntTest0013
-     * @tc.desc      : Testing BigInt multi-thread concurrent creation.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0013
+    * @tc.name      : testBigIntTest0013
+    * @tc.desc      : Testing BigInt multi-thread concurrent creation.
+    * @tc.size      : SmallTest
+    * @tc.type      : Function
+    * @tc.level     : Level 1
+    */
     it('testBigIntTest0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testBigIntTest0013 START');
       try {
@@ -1067,13 +1071,13 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0014
-     * @tc.name      : testBigIntTest0014
-     * @tc.desc      : Testing BigInt multi-thread shared object reading.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0014
+    * @tc.name      : testBigIntTest0014
+    * @tc.desc      : Testing BigInt multi-thread shared object reading.
+    * @tc.size      : SmallTest
+    * @tc.type      : Function
+    * @tc.level     : Level 1
+    */
     it('testBigIntTest0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testBigIntTest0014 START');
       try {
@@ -1088,13 +1092,13 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0015
-     * @tc.name      : testBigIntTest0015
-     * @tc.desc      : Testing BigInt inter-thread object passing.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0015
+    * @tc.name      : testBigIntTest0015
+    * @tc.desc      : Testing BigInt inter-thread object passing.
+    * @tc.size      : SmallTest
+    * @tc.type      : Function
+    * @tc.level     : Level 1
+    */
     it('testBigIntTest0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testBigIntTest0015 START');
       try {
@@ -1109,13 +1113,13 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0016
-     * @tc.name      : testBigIntTest0016
-     * @tc.desc      : Testing BigInt multi-thread exception handling.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0016
+    * @tc.name      : testBigIntTest0016
+    * @tc.desc      : Testing BigInt multi-thread exception handling.
+    * @tc.size      : SmallTest
+    * @tc.type      : Function
+    * @tc.level     : Level 1
+    */
     it('testBigIntTest0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testBigIntTest0016 START');
       try {
@@ -1129,26 +1133,26 @@ export default function napiCheckExTest() {
       done();
     });
 
-    /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0017
-     * @tc.name      : testBigIntTest0017
-     * @tc.desc      : Testing BigInt thread safety with ArkTS exception interaction.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testBigIntTest0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('testBigIntTest0017 START');
-      try {
-        const result: boolean = napitestex.NapiBigIntTest17();
-        console.info('testBigIntTest0017 test result: ' + result);
-        expect(result).assertEqual(true);
-      } catch (err) {
-        console.error(`testBigIntTest0017 err msg: ${err.message}`);
-        expect().assertFail();
-      }
-      done();
-    });
+      /**
+      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0017
+      * @tc.name      : testBigIntTest0017
+      * @tc.desc      : Testing BigInt thread safety with ArkTS exception interaction.
+      * @tc.size      : SmallTest
+      * @tc.type      : Function
+      * @tc.level     : Level 1
+      */
+      it('testBigIntTest0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+        console.info('testBigIntTest0017 START');
+        try {
+          const result: boolean = napitestex.NapiBigIntTest17();
+          console.info('testBigIntTest0017 test result: ' + result);
+          expect(result).assertEqual(true);
+        } catch (err) {
+          console.error(`testBigIntTest0017 err msg: ${err.message}`);
+          expect().assertFail();
+        }
+        done();
+      });
 
     // ==================== NAPI Extension Test Cases ====================
 
@@ -1612,5 +1616,936 @@ export default function napiCheckExTest() {
         expect().assertFail();
       }
     });
+  })
+
+    /**
+      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0001
+      * @tc.name      : napiDateTest001
+      * @tc.desc      : Testing Date object creation and retrieval with timestamp.
+      * @tc.size      : SmallTest
+      * @tc.type      : Function
+      * @tc.level     : Level 1
+      */
+    it('napiDateTest001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      // Test Date creation and retrieval
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest001 begin');
+      
+      // Define test timestamp (2024-01-01 00:00:00 UTC)
+      const TEST_TIMESTAMP = 1704067200000;
+      
+      // Test creating Date object
+      let dateObj: Date = napitestex.testCreateDate(TEST_TIMESTAMP);
+      expect(dateObj instanceof Date).assertEqual(true);
+      
+      // Test getting Date timestamp value
+      let retrievedTimestamp: number = napitestex.testGetDateValue(dateObj);
+      expect(retrievedTimestamp).assertEqual(TEST_TIMESTAMP);
+      
+      // Verify the Date object works correctly in JavaScript
+      expect(dateObj.getTime()).assertEqual(TEST_TIMESTAMP);
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest001 completed successfully');
+    })
+
+    /**
+      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0002
+      * @tc.name      : napiDateTest002
+      * @tc.desc      : Testing invalid Date object timestamp acquisition with non-Date objects.
+      * @tc.size      : SmallTest
+      * @tc.type      : Function
+      * @tc.level     : Level 1
+      */
+    it('napiDateTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      // Test Date object type verification
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest002 begin');
+      
+      // Define test timestamp (2024-01-01 00:00:00 UTC)
+      const TEST_TIMESTAMP = 1704067200000;
+      
+      // Test creating Date object using napi_create_date
+      let dateObj: Date = napitestex.testCreateDate(TEST_TIMESTAMP);
+      expect(dateObj instanceof Date).assertEqual(true);
+      
+      // Test using napi_is_date to check if object is Date type
+      let isDateResult: boolean = napitestex.testIsDate(dateObj);
+      expect(isDateResult).assertEqual(true);
+      
+      // Test with non-Date objects to ensure napi_is_date returns false
+      let nonDateObj: TestObject = { test: "not a date" };
+      let isNotDateResult: boolean = napitestex.testIsDate(nonDateObj);
+      expect(isNotDateResult).assertEqual(false);
+      
+      // Test with number to ensure napi_is_date returns false
+      let numberObj = 123;
+      let isNumberDateResult: boolean = napitestex.testIsDate(numberObj);
+      expect(isNumberDateResult).assertEqual(false);
+      
+      // Test with string to ensure napi_is_date returns false
+      let stringObj = "2024-01-01";
+      let isStringDateResult: boolean = napitestex.testIsDate(stringObj);
+      expect(isStringDateResult).assertEqual(false);
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest002 completed successfully');
+    })
+
+    /**
+      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0003
+      * @tc.name      : napiDateTest003
+      * @tc.desc      : Testing invalid Date object timestamp acquisition with non-Date objects.
+      * @tc.size      : SmallTest
+      * @tc.type      : Function
+      * @tc.level     : Level 1
+      */
+    it('napiDateTest003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      // Test passing non-Date objects to Date functions
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest003 begin');
+      
+      // Test with string object
+      let stringObj = "2024-01-01";
+      let stringResult: napitestex.DateValueWithErrorResult = napitestex.testGetDateValueWithError(stringObj);
+      hilog.info(0x0000, 'testTag', '%{public}s%{public}s', 'napiDateTest003:', JSON.stringify(stringResult));
+      
+      // Verify napi_is_date returns napi_ok and is_date is false
+      expect(stringResult.isDateStatus).assertEqual(0); // napi_ok = 0
+      expect(stringResult.isDate).assertEqual(false);
+      
+      // Verify napi_get_date_value returns error (napi_date_expected = 18)
+      expect(stringResult.getDateStatus).assertEqual(18); // napi_date_expected
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest003 completed successfully');
+    })
+
+    /**
+      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0004
+      * @tc.name      : napiDateTest004
+      * @tc.desc      : Testing invalid Date object timestamp acquisition with various non-Date types.
+      * @tc.size      : SmallTest
+      * @tc.type      : Function
+      * @tc.level     : Level 1
+      */
+    it('napiDateTest004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      // Test invalid Date object timestamp retrieval
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest004 begin');
+      
+      // Test with string object (non-Date type)
+      let stringObj = "2024-01-01";
+      let stringResult: napitestex.DateValueOnlyResult = napitestex.testGetDateValueOnly(stringObj);
+      
+      // Verify napi_get_date_value returns napi_date_expected (18)
+      expect(stringResult.status).assertEqual(18); // napi_date_expected
+      
+      // Test with number object (non-Date type)
+      let numberObj = 123;
+      let numberResult: napitestex.DateValueOnlyResult = napitestex.testGetDateValueOnly(numberObj);
+      
+      // Verify napi_get_date_value returns napi_date_expected (18)
+      expect(numberResult.status).assertEqual(18); // napi_date_expected
+      
+      // Test with plain object (non-Date type)
+      let plainObj: TestObject = { test: "not a date" };
+      let plainResult: napitestex.DateValueOnlyResult = napitestex.testGetDateValueOnly(plainObj);
+      
+      // Verify napi_get_date_value returns napi_date_expected (18)
+      expect(plainResult.status).assertEqual(18); // napi_date_expected
+      
+      // Test with boolean (non-Date type)
+      let booleanObj: boolean = true;
+      let booleanResult: napitestex.DateValueOnlyResult = napitestex.testGetDateValueOnly(booleanObj);
+      
+      // Verify napi_get_date_value returns napi_date_expected (18)
+      expect(booleanResult.status).assertEqual(18); // napi_date_expected
+      
+      // Test with array (non-Date type)
+      let arrayObj = [1, 2, 3];
+      let arrayResult: napitestex.DateValueOnlyResult = napitestex.testGetDateValueOnly(arrayObj);
+      
+      // Verify napi_get_date_value returns napi_date_expected (18)
+      expect(arrayResult.status).assertEqual(18); // napi_date_expected
+      
+      // Test with actual Date object for comparison (should succeed)
+      let dateObj: Date = napitestex.testCreateDate(1704067200000);
+      let dateResult: napitestex.DateValueOnlyResult = napitestex.testGetDateValueOnly(dateObj);
+      
+      // Verify napi_get_date_value returns napi_ok (0)
+      expect(dateResult.status).assertEqual(0); // napi_ok
+      expect(dateResult.value).assertEqual(1704067200000);
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest004 completed successfully');
+    })
+
+    /**
+      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0005
+      * @tc.name      : napiDateTest005
+      * @tc.desc      : Testing minimum valid timestamp (0) for Date object creation and retrieval.
+      * @tc.size      : SmallTest
+      * @tc.type      : Function
+      * @tc.level     : Level 1
+      */
+    it('napiDateTest005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      // Test minimum valid timestamp (0)
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest005 begin');
+      
+      // Test creating Date object with timestamp 0 and getting its value
+      let result: napitestex.DateMinTimestampResult = napitestex.testCreateDateWithMinTimestamp();
+      
+      // Verify napi_create_date returns napi_ok
+      expect(result.createStatus).assertEqual(0); // napi_ok = 0
+      
+      // Verify napi_get_date_value returns napi_ok
+      expect(result.getStatus).assertEqual(0); // napi_ok = 0
+      
+      // Verify timestamp is 0
+      expect(result.timestamp).assertEqual(0);
+      
+      // Additional verification: test with JavaScript Date object
+      let jsDate = new Date(0);
+      expect(jsDate.getTime()).assertEqual(0);
+      
+      // Verify the Date object represents Unix epoch (1970-01-01 00:00:00 UTC)
+      expect(jsDate.getUTCFullYear()).assertEqual(1970);
+      expect(jsDate.getUTCMonth()).assertEqual(0); // January (0-based)
+      expect(jsDate.getUTCDate()).assertEqual(1);
+      expect(jsDate.getUTCHours()).assertEqual(0);
+      expect(jsDate.getUTCMinutes()).assertEqual(0);
+      expect(jsDate.getUTCSeconds()).assertEqual(0);
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest005 completed successfully');
+    })
+
+    /**
+      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0006
+      * @tc.name      : napiDateTest006
+      * @tc.desc      : Testing maximum valid timestamp for Date object creation and retrieval.
+      * @tc.size      : SmallTest
+      * @tc.type      : Function
+      * @tc.level     : Level 1
+      */
+    it('napiDateTest006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      // Test maximum valid timestamp
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest006 begin');
+      
+      // Test creating Date object with maximum timestamp and getting its value
+      let result: napitestex.DateMaxTimestampResult = napitestex.testCreateDateWithMaxTimestamp();
+      
+      // Verify napi_create_date returns napi_ok
+      expect(result.createStatus).assertEqual(0); // napi_ok = 0
+      
+      // Verify napi_get_date_value returns napi_ok
+      expect(result.getStatus).assertEqual(0); // napi_ok = 0
+      
+      // Verify timestamp is the maximum safe timestamp value
+      const MAX_SAFE_TIMESTAMP = 8640000000000000.0;
+      expect(result.timestamp).assertEqual(MAX_SAFE_TIMESTAMP);
+      
+      // Additional verification: test with JavaScript Date object
+      let jsDate = new Date(MAX_SAFE_TIMESTAMP);
+      expect(jsDate.getTime()).assertEqual(MAX_SAFE_TIMESTAMP);
+      
+      // Verify the Date object represents a very far future date
+      // This timestamp represents approximately year 275759
+      expect(jsDate.getTime()).assertLarger(1000000000000000); // Should be much larger than current time
+      
+      // Test that we can create and retrieve the same timestamp
+      let testDate: Date = napitestex.testCreateDate(MAX_SAFE_TIMESTAMP);
+      let retrievedTimestamp: number = napitestex.testGetDateValue(testDate);
+      expect(retrievedTimestamp).assertEqual(MAX_SAFE_TIMESTAMP);
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest006 completed successfully');
+    })
+
+    /**
+      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0007
+      * @tc.name      : napiDateTest007
+      * @tc.desc      : Testing multiple Date object creations and retrievals with different timestamps.
+      * @tc.size      : SmallTest
+      * @tc.type      : Function
+      * @tc.level     : Level 1
+      */
+    it('napiDateTest007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      // Test multiple Date object creations and retrievals
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest007 begin');
+      
+      // Test multiple Date operations
+      let result: napitestex.MultipleDateOperationsResult = napitestex.testMultipleDateOperations();
+      
+      // Verify both objects are Date instances
+      expect(result.dateA instanceof Date).assertEqual(true);
+      expect(result.dateB instanceof Date).assertEqual(true);
+      
+      // Verify timestamps
+      expect(result.timestampA).assertEqual(1000);
+      expect(result.timestampB).assertEqual(2000);
+      
+      // Verify modified timestamp A
+      expect(result.modifiedTimestampA).assertEqual(3000);
+      
+      // Additional verification using JavaScript Date methods
+      let dateA: Date = result.dateA;
+      let dateB: Date = result.dateB;
+      
+      // Verify Date A properties
+      expect(dateA.getTime()).assertEqual(1000);
+      expect(dateA.getFullYear()).assertEqual(1970);
+      expect(dateA.getMonth()).assertEqual(0); // January
+      expect(dateA.getDate()).assertEqual(1);
+      expect(dateA.getHours()).assertEqual(8);
+      expect(dateA.getMinutes()).assertEqual(0);
+      expect(dateA.getSeconds()).assertEqual(1);
+      
+      // Verify Date B properties
+      expect(dateB.getTime()).assertEqual(2000);
+      expect(dateB.getFullYear()).assertEqual(1970);
+      expect(dateB.getMonth()).assertEqual(0); // January
+      expect(dateB.getDate()).assertEqual(1);
+      expect(dateB.getHours()).assertEqual(8);
+      expect(dateB.getMinutes()).assertEqual(0);
+      expect(dateB.getSeconds()).assertEqual(2);
+      
+      // Test creating additional Date objects to verify consistency
+      hilog.info(0x0000, 'testTag', '%{public}s', 'Testing additional Date object creation...');
+      
+      // Create a new Date object with timestamp 5000
+      let newDate: Date = napitestex.testCreateDate(5000);
+      expect(newDate instanceof Date).assertEqual(true);
+      expect(newDate.getTime()).assertEqual(5000);
+      
+      // Get timestamp using NAPI function
+      let newTimestamp: number = napitestex.testGetDateValue(newDate);
+      expect(newTimestamp).assertEqual(5000);
+      
+      // Verify Date type using NAPI function
+      let isDate: boolean = napitestex.testIsDate(newDate);
+      expect(isDate).assertEqual(true);
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest007 completed successfully');
+    })
+
+    /**
+      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0008
+      * @tc.name      : napiDateTest008
+      * @tc.desc      : Testing bulk Date object creation and verification with large numbers of objects.
+      * @tc.size      : SmallTest
+      * @tc.type      : Function
+      * @tc.level     : Level 1
+      */
+    it('napiDateTest008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      // Test bulk Date object creation and verification
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest008 begin');
+      
+      // Test with 10000 Date objects
+      const TEST_COUNT = 10000;
+      hilog.info(0x0000, 'testTag', '%{public}s', `Creating and verifying ${TEST_COUNT} Date objects...`);
+      
+      let result: napitestex.BulkDateCreationResult = napitestex.testBulkDateCreation(TEST_COUNT);
+      
+      // Verify all operations were successful
+      expect(result.success).assertEqual(true);
+      
+      // Verify all objects were created
+      expect(result.totalCreated).assertEqual(TEST_COUNT);
+      
+      // Verify all objects were type-verified
+      expect(result.totalVerified).assertEqual(TEST_COUNT);
+      
+      // Verify all timestamps were retrieved and verified
+      expect(result.totalTimestamps).assertEqual(TEST_COUNT);
+      
+      // Verify execution time is reasonable (should be under 10 seconds for 10000 objects)
+      expect(result.executionTime).assertLess(10000); // 10 seconds in milliseconds
+      
+      // Log performance metrics
+      hilog.info(0x0000, 'testTag', '%{public}s',
+        `Performance: ${result.executionTime}ms for ${TEST_COUNT} objects`);
+      hilog.info(0x0000, 'testTag', '%{public}s',
+        `Average: ${(result.executionTime / TEST_COUNT).toFixed(3)}ms per object`);
+      
+      // Test with smaller count for quick verification
+      const SMALL_COUNT = 100;
+      hilog.info(0x0000, 'testTag', '%{public}s', `Quick test with ${SMALL_COUNT} objects...`);
+      
+      let smallResult: napitestex.BulkDateCreationResult = napitestex.testBulkDateCreation(SMALL_COUNT);
+      
+      // Verify small batch also succeeds
+      expect(smallResult.success).assertEqual(true);
+      expect(smallResult.totalCreated).assertEqual(SMALL_COUNT);
+      expect(smallResult.totalVerified).assertEqual(SMALL_COUNT);
+      expect(smallResult.totalTimestamps).assertEqual(SMALL_COUNT);
+      
+      // Test edge case: 0 objects
+      let zeroResult: napitestex.BulkDateCreationResult = napitestex.testBulkDateCreation(0);
+      expect(zeroResult.success).assertEqual(true);
+      expect(zeroResult.totalCreated).assertEqual(0);
+      expect(zeroResult.totalVerified).assertEqual(0);
+      expect(zeroResult.totalTimestamps).assertEqual(0);
+      
+      // Test edge case: 1 object
+      let oneResult: napitestex.BulkDateCreationResult = napitestex.testBulkDateCreation(1);
+      expect(oneResult.success).assertEqual(true);
+      expect(oneResult.totalCreated).assertEqual(1);
+      expect(oneResult.totalVerified).assertEqual(1);
+      expect(oneResult.totalTimestamps).assertEqual(1);
+      
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest008 completed successfully');
+    })
+
+    /**
+      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0009
+      * @tc.name      : napiDateTest009
+      * @tc.desc      : Testing concurrent Date object creation using multiple threads.
+      * @tc.size      : SmallTest
+      * @tc.type      : Function
+      * @tc.level     : Level 1
+      */
+    it('napiDateTest009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      // Test concurrent Date object creation in multiple threads
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest009 begin');
+
+      // Test concurrent Date creation with 5 threads
+      let result: napitestex.ConcurrentDateCreationResult = napitestex.testConcurrentDateCreation();
+
+      // Verify overall success
+      expect(result.success).assertEqual(true);
+
+      // Verify total number of threads
+      expect(result.totalThreads).assertEqual(5);
+
+      // Verify thread results array
+      expect(result.threadResults.length).assertEqual(5);
+
+      // Expected timestamps for each thread
+      const expectedTimestamps = [1000, 2000, 3000, 4000, 5000];
+
+      // Verify each thread's results
+      for (let i = 0; i < result.threadResults.length; i++) {
+        let threadResult: napitestex.ConcurrentDateThreadResult = result.threadResults[i];
+
+        // Verify thread ID
+        expect(threadResult.threadId).assertEqual(i);
+
+        // Verify create status is napi_ok (0)
+        expect(threadResult.createStatus).assertEqual(0);
+
+        // Verify Date type check passed
+        expect(threadResult.isDate).assertEqual(true);
+
+        // Verify timestamp retrieval was successful
+        expect(threadResult.timestamp).assertEqual(expectedTimestamps[i]);
+
+        // Verify original timestamp matches retrieved timestamp
+        expect(threadResult.originalTimestamp).assertEqual(expectedTimestamps[i]);
+
+        hilog.info(0x0000, 'testTag', '%{public}s',
+          `Thread ${i}: createStatus=${threadResult.createStatus}, isDate=${threadResult.isDate}, ` +
+          `timestamp=${threadResult.timestamp}`);
+      }
+
+      // Test multiple runs to ensure consistency
+      hilog.info(0x0000, 'testTag', '%{public}s', 
+        'Running concurrent test multiple times for consistency...');
+
+      for (let run = 0; run < 3; run++) {
+        let runResult: napitestex.ConcurrentDateCreationResult = napitestex.testConcurrentDateCreation();
+        expect(runResult.success).assertEqual(true);
+        expect(runResult.totalThreads).assertEqual(5);
+        expect(runResult.threadResults.length).assertEqual(5);
+
+        // Verify all threads succeeded in this run
+        for (let i = 0; i < runResult.threadResults.length; i++) {
+          let threadResult: napitestex.ConcurrentDateThreadResult = runResult.threadResults[i];
+          expect(threadResult.createStatus).assertEqual(0);
+          expect(threadResult.isDate).assertEqual(true);
+          expect(threadResult.timestamp).assertEqual(expectedTimestamps[i]);
+        }
+
+        hilog.info(0x0000, 'testTag', '%{public}s', `Run ${run + 1} completed successfully`);
+      }
+
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest009 completed successfully');
+    })
+
+    /**
+      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0010
+      * @tc.name      : napiDateTest010
+      * @tc.desc      : Testing multi-threaded shared Date object reading for consistency.
+      * @tc.size      : SmallTest
+      * @tc.type      : Function
+      * @tc.level     : Level 1
+      */
+    it('napiDateTest010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      // Test multiple threads reading from a shared Date object
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest010 begin');
+
+      // Test shared Date object read with 3 threads
+      let result: napitestex.SharedDateObjectReadResult = napitestex.testSharedDateObjectRead();
+
+      // Verify overall success
+      expect(result.success).assertEqual(true);
+
+      // Verify total number of threads
+      expect(result.totalThreads).assertEqual(3);
+
+      // Verify original timestamp
+      expect(result.originalTimestamp).assertEqual(1234567890000);
+
+      // Verify thread results array
+      expect(result.threadResults.length).assertEqual(3);
+
+      // Verify each thread's results
+      for (let i = 0; i < result.threadResults.length; i++) {
+        let threadResult: napitestex.SharedDateReadThreadResult = result.threadResults[i];
+
+        // Verify thread ID
+        expect(threadResult.threadId).assertEqual(i);
+
+        // Verify napi_is_date returned napi_ok (0)
+        expect(threadResult.isDateStatus).assertEqual(0);
+
+        // Verify is_date is true
+        expect(threadResult.isDate).assertEqual(true);
+
+        // Verify napi_get_date_value returned napi_ok (0)
+        expect(threadResult.getDateStatus).assertEqual(0);
+
+        // Verify timestamp matches the original shared timestamp
+        expect(threadResult.timestamp).assertEqual(1234567890000);
+
+        hilog.info(0x0000, 'testTag', '%{public}s',
+          `Thread ${i}: isDateStatus=${threadResult.isDateStatus}, isDate=${threadResult.isDate}, ` +
+          `getDateStatus=${threadResult.getDateStatus}, timestamp=${threadResult.timestamp}`);
+      }
+
+      // Test multiple runs to ensure consistency and no data races
+      hilog.info(0x0000, 'testTag', '%{public}s', 
+        'Running shared read test multiple times for consistency...');
+
+      for (let run = 0; run < 5; run++) {
+        let runResult: napitestex.SharedDateObjectReadResult = napitestex.testSharedDateObjectRead();
+        expect(runResult.success).assertEqual(true);
+        expect(runResult.totalThreads).assertEqual(3);
+        expect(runResult.originalTimestamp).assertEqual(1234567890000);
+
+        // Verify all threads succeeded in this run
+        for (let i = 0; i < runResult.threadResults.length; i++) {
+          let threadResult: napitestex.SharedDateReadThreadResult = runResult.threadResults[i];
+          expect(threadResult.isDateStatus).assertEqual(0);
+          expect(threadResult.isDate).assertEqual(true);
+          expect(threadResult.getDateStatus).assertEqual(0);
+          expect(threadResult.timestamp).assertEqual(1234567890000);
+        }
+
+        hilog.info(0x0000, 'testTag', '%{public}s', `Run ${run + 1} completed successfully`);
+      }
+
+      // Test with different thread counts to verify scalability
+      hilog.info(0x0000, 'testTag', '%{public}s', 'Testing with different thread counts...');
+
+      // Note: The C++ implementation uses a fixed number of threads (3),
+      // but we can verify the behavior is consistent
+      let consistencyResult: napitestex.SharedDateObjectReadResult = napitestex.testSharedDateObjectRead();
+      expect(consistencyResult.success).assertEqual(true);
+
+      // Verify all timestamps are exactly the same (no data corruption)
+              let allTimestamps: number[] = consistencyResult.threadResults.map(
+          (r: napitestex.SharedDateReadThreadResult): number => r.timestamp);
+      let firstTimestamp: number = allTimestamps[0];
+
+      for (let timestamp of allTimestamps) {
+        expect(timestamp).assertEqual(firstTimestamp);
+        expect(timestamp).assertEqual(1234567890000);
+      }
+
+              hilog.info(0x0000, 'testTag', '%{public}s', 
+          'All timestamps are consistent: ' + allTimestamps.join(', '));
+
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest010 completed successfully');
+    })
+
+    /**
+      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0011
+      * @tc.name      : napiDateTest011
+      * @tc.desc      : Testing high concurrency Date operations stress test with multiple threads.
+      * @tc.size      : LargeTest
+      * @tc.type      : Function
+      * @tc.level     : Level 1
+      */
+    it('napiDateTest011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      // Test high concurrency Date operations stress testing
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest011 begin');
+
+      // Test high concurrency stress with 2 threads, 1 operations each
+      let result: napitestex.HighConcurrencyDateStressResult = napitestex.testHighConcurrencyDateStress();
+      hilog.info(0x0000, 'testTag', '%{public}s%{public}s', 'napiDateTest011 result', JSON.stringify(result));
+
+      // Verify overall success
+      expect(result.success).assertEqual(true);
+
+      // Verify total number of threads
+      expect(result.totalThreads).assertEqual(2);
+
+      // Verify total operations
+      expect(result.totalOperations).assertEqual(20); // 2 threads * 10 operations
+
+      // Verify thread results array
+      expect(result.threadResults.length).assertEqual(2);
+
+      // Verify each thread's results
+      for (let i = 0; i < result.threadResults.length; i++) {
+        let threadResult: napitestex.StressTestThreadResult = result.threadResults[i];
+
+        // Verify thread ID
+        expect(threadResult.threadId).assertEqual(i);
+
+        // Verify total operations per thread
+        expect(threadResult.totalOperations).assertEqual(10);
+
+        // Verify all operations in this thread were successful
+        expect(threadResult.successfulOperations).assertEqual(10);
+        expect(threadResult.failedOperations).assertEqual(0);
+
+        // Verify execution time is reasonable (should be > 0 and < 60 seconds)
+        expect(threadResult.executionTime).assertLarger(0);
+        expect(threadResult.executionTime).assertLess(60000);
+
+        // Verify memory usage is reasonable (should be > 0 and < 100 MB)
+        expect(threadResult.memoryUsage).assertLarger(0);
+        expect(threadResult.memoryUsage).assertLess(100000);
+
+        hilog.info(0x0000, 'testTag', '%{public}s',
+          `Thread ${i}: ops=${threadResult.totalOperations}, success=${threadResult.successfulOperations}, ` +
+          `failed=${threadResult.failedOperations}, time=${threadResult.executionTime}ms, ` +
+          `memory=${threadResult.memoryUsage}KB`);
+      }
+
+      // Verify overall performance metrics
+      expect(result.totalExecutionTime).assertLarger(0);
+      expect(result.totalMemory).assertLarger(0);
+
+      // Verify performance variation is reasonable (should be < 50%)
+      expect(result.performanceVariation).assertLess(50);
+
+      // Verify memory increase percentage is reasonable (should be < 100%)
+      expect(result.memoryIncreasePercent).assertLess(100);
+
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest011 completed successfully');
+    })
+
+    /**
+      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0012
+      * @tc.name      : napiDateTest012
+      * @tc.desc      : Testing cross-thread Date object passing between multiple threads.
+      * @tc.size      : SmallTest
+      * @tc.type      : Function
+      * @tc.level     : Level 1
+      */
+    it('napiDateTest012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      // Test cross-thread Date object passing
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest012 begin');
+
+      // Test cross-thread Date object passing with 3 threads
+      let result: napitestex.CrossThreadDatePassingResult = napitestex.testCrossThreadDatePassing();
+      hilog.info(0x0000, 'testTag', '%{public}s%{public}s', 'napiDateTest012 result', JSON.stringify(result));
+
+      // Verify overall success
+      expect(result.success).assertEqual(true);
+
+      // Verify total number of threads
+      expect(result.totalThreads).assertEqual(3);
+
+      // Verify original timestamp
+      expect(result.originalTimestamp).assertEqual(987654321000);
+
+      // Verify all threads were successful
+      expect(result.allThreadsSuccessful).assertEqual(true);
+
+      // Verify thread results array
+      expect(result.threadResults.length).assertEqual(3);
+
+      // Expected operations for each thread
+      const expectedOperations = [
+        "Create Date",
+        "Receive from A and validate",
+        "Receive from B and validate"
+      ];
+
+      // Verify each thread's results
+      for (let i = 0; i < result.threadResults.length; i++) {
+        let threadResult: napitestex.CrossThreadThreadResult = result.threadResults[i];
+
+        // Verify thread ID
+        expect(threadResult.threadId).assertEqual(i);
+
+        // Verify operation description
+        expect(threadResult.operation).assertEqual(expectedOperations[i]);
+
+        // Verify Date type check passed
+        expect(threadResult.isDate).assertEqual(true);
+
+        // Verify timestamp retrieval was successful
+        expect(threadResult.timestamp).assertEqual(987654321000);
+
+        // Verify original timestamp matches
+        expect(threadResult.originalTimestamp).assertEqual(987654321000);
+
+        // Verify thread success
+        expect(threadResult.success).assertEqual(true);
+      }
+    
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest012 completed successfully');
+    })
+
+    /**
+      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_DATE_0013
+      * @tc.name      : napiDateTest013
+      * @tc.desc      : Testing thread safety with error parameter combinations in multi-threaded environment.
+      * @tc.size      : SmallTest
+      * @tc.type      : Function
+      * @tc.level     : Level 1
+      */
+    it('napiDateTest013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      // Test thread safety with error parameter combinations
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest013 begin');
+
+      // Test thread safety error handling with 4 threads
+      let result: napitestex.ThreadSafetyErrorHandlingResult = napitestex.testThreadSafetyErrorHandling();
+      hilog.info(0x0000, 'testTag', '%{public}s%{public}s', 'napiDateTest013 result', JSON.stringify(result));
+
+      // Verify overall success
+      expect(result.success).assertEqual(true);
+
+      // Verify total number of threads
+      expect(result.totalThreads).assertEqual(4);
+
+      // Verify summary statistics
+      expect(result.totalSuccessful).assertEqual(4);
+      expect(result.totalFailed).assertEqual(0);
+
+      // Verify thread results array
+      expect(result.threadResults.length).assertEqual(4);
+
+      // Expected operations and statuses for each thread
+      const expectedOperations = [
+        "create_date_nullptr",
+        "get_date_value_nullptr",
+        "is_date_nullptr",
+        "normal_operations"
+      ];
+
+      const expectedStatuses = [1, 1, 1, 0]; // napi_invalid_arg, napi_invalid_arg, napi_invalid_arg, napi_ok
+
+      // Verify each thread's results
+      for (let i = 0; i < result.threadResults.length; i++) {
+        let threadResult: napitestex.ThreadSafetyErrorHandlingThreadResult = result.threadResults[i];
+
+        // Verify thread ID
+        expect(threadResult.threadId).assertEqual(i);
+
+        // Verify operation description
+        expect(threadResult.operation).assertEqual(expectedOperations[i]);
+
+        // Verify expected status
+        expect(threadResult.expectedStatus).assertEqual(expectedStatuses[i]);
+
+        // Verify thread success
+        expect(threadResult.isSuccess).assertEqual(true);
+
+        hilog.info(0x0000, 'testTag', '%{public}s',
+          `Thread ${i}: operation=${threadResult.operation}, ` +
+          `apiStatus=${threadResult.apiStatus}, expectedStatus=${threadResult.expectedStatus}, ` +
+          `success=${threadResult.isSuccess}, errorDesc=${threadResult.errorDescription}`);
+      }
+
+      hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest013 completed successfully');
+    })
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0001
+     * @tc.name      testStringTest001
+     * @tc.desc      Test UTF-16 string creation and retrieval using napi_create_string_utf16
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testStringTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('testUtf16StringCreationAndRetrieval START');
+      try {
+        // 调用C++测试函数进行UTF-16字符串创建和获取测试
+        let result: boolean = napitestex.NapiStringTest001();
+        expect(result).assertTrue();
+        console.info('testUtf16StringCreationAndRetrieval PASS');
+      } catch (err) {
+        console.error('testUtf16StringCreationAndRetrieval err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0002
+     * @tc.name      testStringTest002
+     * @tc.desc      Test cross-encoding conversion between UTF-8, UTF-16, and Latin1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testStringTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('testCrossEncodingConversion START');
+      try {
+        // 调用C++测试函数进行跨编码转换测试
+        let result: boolean = napitestex.NapiStringTest002();
+        expect(result).assertTrue();
+        console.info('testCrossEncodingConversion PASS');
+      } catch (err) {
+        console.error('testCrossEncodingConversion err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0003
+     * @tc.name      testStringTest003
+     * @tc.desc      Test boundary length cases including empty strings and very long strings
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testStringTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('testBoundaryLengthCases START');
+      try {
+        // 调用C++测试函数进行边界长度测试
+        let result: boolean = napitestex.NapiStringTest003();
+        expect(result).assertTrue();
+        console.info('testBoundaryLengthCases PASS');
+      } catch (err) {
+        console.error('testBoundaryLengthCases err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0004
+     * @tc.name      testStringTest004
+     * @tc.desc      Test encoding compatibility between different string types
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testStringTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('testEncodingCompatibility START');
+      try {
+        // 调用C++测试函数进行编码兼容性测试
+        let result: boolean = napitestex.NapiStringTest004();
+        expect(result).assertTrue();
+        console.info('testEncodingCompatibility PASS');
+      } catch (err) {
+        console.error('testEncodingCompatibility err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0005
+     * @tc.name      testStringTest005
+     * @tc.desc      Test buffer size edge cases and boundary conditions
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testStringTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('testBufferSizeEdgeCases START');
+
+      try {
+        // 调用C++测试函数进行缓冲区边界测试
+        let result: boolean = napitestex.NapiStringTest005();
+        expect(result).assertTrue();
+        console.info('testBufferSizeEdgeCases PASS');
+      } catch (err) {
+        console.error('testBufferSizeEdgeCases err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0006
+     * @tc.name      testStringTest006
+     * @tc.desc      Test error handling robustness with invalid parameters
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testStringTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('testErrorHandlingRobustness START');
+      try {
+        // 调用C++测试函数进行错误处理健全性测试
+        let result: boolean = napitestex.NapiStringTest006();
+        expect(result).assertTrue();
+
+        console.info('testErrorHandlingRobustness PASS');
+      } catch (err) {
+        console.error('testErrorHandlingRobustness err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0007
+     * @tc.name      testStringTest007
+     * @tc.desc      Test multi-encoding compatibility operations with mixed API usage
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testStringTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('testMultiEncodingCompatibilityOperations START');
+      try {
+        // 调用C++测试函数进行多编码兼容操作测试
+        let result: boolean = napitestex.NapiStringTest007();
+        expect(result).assertTrue();
+        console.info('testMultiEncodingCompatibilityOperations PASS');
+      } catch (err) {
+        console.error('testMultiEncodingCompatibilityOperations err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0008
+     * @tc.name      testStringTest008
+     * @tc.desc      Test special character handling including BOM, NULL, and multi-byte characters
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testStringTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('testSpecialCharacterHandling START');
+      try {
+        // 调用C++测试函数进行特殊字符处理测试
+        let result: boolean = napitestex.NapiStringTest008();
+        expect(result).assertTrue();
+        console.info('testSpecialCharacterHandling PASS');
+      } catch (err) {
+        console.error('testSpecialCharacterHandling err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0009
+     * @tc.name      testStringTest009
+     * @tc.desc      Test thread safety simulation of NAPI string operations
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it('testStringTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      console.info('testStringSafetySimulation START');
+      try {
+        // 调用C++测试函数进行线程安全性模拟测试
+        let result: boolean = napitestex.NapiStringTest009();
+        expect(result).assertTrue();
+        console.info('testStringSafetySimulation PASS');
+      } catch (err) {
+        console.error('testStringSafetySimulation err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });    
   })
 }

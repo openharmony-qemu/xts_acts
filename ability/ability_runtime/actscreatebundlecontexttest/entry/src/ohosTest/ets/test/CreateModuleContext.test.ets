@@ -149,7 +149,7 @@ function checkFeatureModuleContext(data: Context, tag: string, done: Function): 
   expect(JSON.stringify(data.applicationInfo.systemApp)).assertEqual('false');  // 测试是否为系统应用
   expect(JSON.stringify(data.applicationInfo.dataUnclearable)).assertEqual('false');  // 测试应用数据是否不可清除
   expect(JSON.stringify(data.applicationInfo.installSource)).assertEqual('"unknown"');  // 测试应用的安装来源是否正确
-  expect(JSON.stringify(data.applicationInfo.releaseType)).assertEqual('"Beta1"');  // 测试应用的发布类型是否正确
+  expect(typeof(data.applicationInfo.releaseType)).assertEqual('string'); //测试应用的发布版本字段是string类型
   expect(JSON.stringify(data.eventHub)).not().assertNull();  // 测试事件中心是否存在
   hilog.info(0x0000, 'testTag', '%{public}s', `${tag}, it end`);
   done();

@@ -63,7 +63,7 @@ export default function listScrollerBar() {
       let left = swiperBar.left;
       let widthBar = right - left;
       console.info("listScrollerBar_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      await driver.swipe(Math.round(left + widthBar/2),Math.round(top + vp2px(10)),Math.round(left + widthBar/2),Math.round(bottom - vp2px(10)));
+      await driver.swipe(Math.round(left + widthBar/2),Math.round(top + vp2px(10)),Math.round(left + widthBar/2),Math.round(bottom - vp2px(10)),1000);
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('list_scrollBar_onText');
       console.info("[listScrollerBar_0100] component obj is: " + JSON.stringify(JSON.parse(strJson)));

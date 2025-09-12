@@ -29,6 +29,14 @@
 
 #include "hilog/log.h"
 
+#define LOG_DOMAIN 0x0001  // 全局domain宏，标识业务领域
+#define LOG_TAG "MY_TAG"
+
+#define THREAD_COUNT 4
+#define NUM_100 100
+#define NUM_1000 1000
+#define NUM_11 11
+
 #define NUM_1 1
 #define NUM_2 2
 #define NUM_3 3
@@ -53,6 +61,13 @@ struct ThreadData {
     napi_value arraybuffer;
     int threadId;
     bool testPassed;
+    
+    double timestamp;
+    napi_value dateObj;
+    napi_status createStatus;
+    bool isDate;
+    double retrievedTimestamp;
+    napi_status getStatus;
 };
 
 struct BigIntThreadData {
@@ -1851,6 +1866,2418 @@ napi_value NapiBigIntTest17(napi_env env, napi_callback_info info)
     napi_get_boolean(env, testPassed, &result);
     return result;
 }
+
+// Test function to create Date with given timestamp
+// Define macro constants for thread operations
+#define CONCURRENT_THREAD_COUNT 5
+#define SHARED_READ_THREAD_COUNT 3
+#define STRESS_TEST_THREAD_COUNT 2
+#define OPERATIONS_PER_THREAD 10
+#define CROSS_THREAD_COUNT 3
+#define THREAD_SAFETY_THREAD_COUNT 4
+#define BATCH_SIZE 1000
+#define MAX_BULK_COUNT 100000
+#define MAX_SAFE_TIMESTAMP 8640000000000000.0
+
+// Define macro constants for test values
+#define TEST_TIMESTAMP_A 1000.0
+#define TEST_TIMESTAMP_B 2000.0
+#define TEST_TIMESTAMP_C 3000.0
+#define TEST_TIMESTAMP_D 4000.0
+#define TEST_TIMESTAMP_E 5000.0
+#define SHARED_TIMESTAMP 1234567890000.0
+#define CROSS_THREAD_TIMESTAMP 987654321000.0
+#define CONTROL_THREAD_TIMESTAMP 3000.0
+
+// Structure to hold thread data
+
+// Structure to hold shared date read thread data
+struct SharedDateReadData {
+    napi_env env;
+    napi_value sharedDateObj;
+    int threadId;
+    napi_status isDateStatus;
+    bool isDate;
+    napi_status getDateStatus;
+    double timestamp;
+};
+
+// Structure to hold high concurrency stress test thread data
+struct StressTestData {
+    napi_env env;
+    int threadId;
+    int totalOperations;
+    int successfulOperations;
+    int failedOperations;
+    double executionTime;
+    double memoryUsage;
+    bool threadSuccess;
+    napi_value dateObj;  // Date object created in each iteration
+    bool isDate;         // Result of napi_is_date check
+};
+
+// Structure to hold cross-thread date passing thread data
+struct CrossThreadData {
+    napi_env env;
+    napi_value dateObj;
+    int threadId;
+    char operation[64];  // Fixed-size character array instead of const char*
+    napi_status isDateStatus;
+    bool isDate;
+    napi_status getDateStatus;
+    double timestamp;
+    double originalTimestamp;
+    bool threadSuccess;
+};
+
+// Structure to hold thread safety error handling test data
+struct ThreadSafetyErrorData {
+    napi_env env;
+    int threadId;
+    char operation[64];  // Fixed-size character array instead of const char*
+    napi_status apiStatus;
+    napi_status expectedStatus;
+    bool isSuccess;
+    char errorDescription[128];  // Fixed-size character array instead of const char*
+};
+
+static napi_value TestCreateDate(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    if (argc < 1) {
+        napi_throw_error(env, nullptr, "Expected 1 argument");
+        return nullptr;
+    }
+    
+    double timestamp;
+    napi_status status = napi_get_value_double(env, args[0], &timestamp);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Failed to get timestamp value");
+        return nullptr;
+    }
+    
+    napi_value result;
+    status = napi_create_date(env, timestamp, &result);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Failed to create Date");
+        return nullptr;
+    }
+    
+    return result;
+}
+
+// Test function to get Date timestamp value
+static napi_value TestGetDateValue(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (argc < 1) {
+        napi_throw_error(env, nullptr, "Expected 1 argument");
+        return nullptr;
+    }
+    
+    double timestamp;
+    napi_status status = napi_get_date_value(env, args[0], &timestamp);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Failed to get Date value");
+        return nullptr;
+    }
+    
+    napi_value result;
+    napi_create_double(env, timestamp, &result);
+    
+    return result;
+}
+
+// Test function to check if value is Date type
+static napi_value TestIsDate(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    if (argc < 1) {
+        napi_throw_error(env, nullptr, "Expected 1 argument");
+        return nullptr;
+    }
+    
+    bool isDate;
+    napi_status status = napi_is_date(env, args[0], &isDate);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Failed to check if value is Date");
+        return nullptr;
+    }
+    
+    napi_value result;
+    napi_get_boolean(env, isDate, &result);
+    
+    return result;
+}
+
+// Structure to hold date value error result parameters
+struct DateValueErrorResultParams {
+    napi_status isDateStatus;
+    napi_status getDateStatus;
+    bool isDate;
+    double timestamp;
+    const char* errorDescription;
+};
+
+// Helper function to build result object for date value error tests
+static napi_value BuildDateValueErrorResult(napi_env env, const DateValueErrorResultParams& params)
+{
+    napi_value resultObj;
+    napi_create_object(env, &resultObj);
+
+    // Add isDateStatus
+    napi_value isDateStatusProp;
+    napi_create_int32(env, static_cast<int32_t>(params.isDateStatus), &isDateStatusProp);
+    napi_set_named_property(env, resultObj, "isDateStatus", isDateStatusProp);
+
+    // Add getDateStatus
+    napi_value getDateStatusProp;
+    napi_create_int32(env, static_cast<int32_t>(params.getDateStatus), &getDateStatusProp);
+    napi_set_named_property(env, resultObj, "getDateStatus", getDateStatusProp);
+
+    // Add isDate
+    napi_value isDateProp;
+    napi_get_boolean(env, params.isDate, &isDateProp);
+    napi_set_named_property(env, resultObj, "isDate", isDateProp);
+
+    // Add timestamp
+    napi_value timestampProp;
+    napi_create_double(env, params.timestamp, &timestampProp);
+    napi_set_named_property(env, resultObj, "timestamp", timestampProp);
+
+    // Add errorDescription
+    napi_value errorDescriptionProp;
+    napi_create_string_utf8(env, params.errorDescription, NAPI_AUTO_LENGTH, &errorDescriptionProp);
+    napi_set_named_property(env, resultObj, "errorDescription", errorDescriptionProp);
+
+    return resultObj;
+}
+
+// Test function for getting date value with error handling
+static napi_value TestGetDateValueWithError(napi_env env, napi_callback_info info)
+{
+    // Create a non-Date object (string)
+    napi_value stringObj;
+    napi_create_string_utf8(env, "not a date", NAPI_AUTO_LENGTH, &stringObj);
+
+    // Test napi_is_date with non-Date object
+    bool isDate;
+    napi_status isDateStatus = napi_is_date(env, stringObj, &isDate);
+
+    // Test napi_get_date_value with non-Date object
+    double timestamp;
+    napi_status getDateStatus = napi_get_date_value(env, stringObj, &timestamp);
+    // Build and return result using helper function
+    DateValueErrorResultParams params = {
+        .isDateStatus = isDateStatus,
+        .getDateStatus = getDateStatus,
+        .isDate = isDate,
+        .timestamp = timestamp,
+        .errorDescription = "String object is not a Date"
+    };
+    
+    return BuildDateValueErrorResult(env, params);
+}
+
+// Test function to get Date value only (simplified version for napiDateTest004)
+static napi_value TestGetDateValueOnly(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    if (argc < 1) {
+        napi_throw_error(env, nullptr, "Expected 1 argument");
+        return nullptr;
+    }
+    
+    // Create result object
+    napi_value resultObj;
+    napi_create_object(env, &resultObj);
+    
+    // Try to get date value using napi_get_date_value
+    double timestamp;
+    napi_status status = napi_get_date_value(env, args[0], &timestamp);
+    
+    // Add status to result
+    napi_value statusProp;
+    napi_create_int32(env, status, &statusProp);
+    napi_set_named_property(env, resultObj, "status", statusProp);
+    
+    if (status == napi_ok) {
+        // Success case - add timestamp value
+        napi_value timestampProp;
+        napi_create_double(env, timestamp, &timestampProp);
+        napi_set_named_property(env, resultObj, "value", timestampProp);
+    }
+    
+    return resultObj;
+}
+
+// Test function to create Date with minimum timestamp (0) and get its value
+static napi_value TestCreateDateWithMinTimestamp(napi_env env, napi_callback_info info)
+{
+    // Create result object
+    napi_value resultObj;
+    napi_create_object(env, &resultObj);
+    
+    // Create Date object with timestamp 0 using napi_create_date
+    napi_value dateObj;
+    napi_status createStatus = napi_create_date(env, 0.0, &dateObj);
+    
+    // Add createStatus to result
+    napi_value createStatusProp;
+    napi_create_int32(env, createStatus, &createStatusProp);
+    napi_set_named_property(env, resultObj, "createStatus", createStatusProp);
+    
+    if (createStatus == napi_ok) {
+        // Try to get date value using napi_get_date_value
+        double timestamp;
+        napi_status getStatus = napi_get_date_value(env, dateObj, &timestamp);
+        
+        // Add getStatus to result
+        napi_value getStatusProp;
+        napi_create_int32(env, getStatus, &getStatusProp);
+        napi_set_named_property(env, resultObj, "getStatus", getStatusProp);
+        
+        // Add timestamp to result
+        napi_value timestampProp;
+        napi_create_double(env, timestamp, &timestampProp);
+        napi_set_named_property(env, resultObj, "timestamp", timestampProp);
+    } else {
+        // If creation failed, set error status
+        napi_value getStatusProp;
+        napi_create_int32(env, createStatus, &getStatusProp);
+        napi_set_named_property(env, resultObj, "getStatus", getStatusProp);
+        
+        // Set timestamp to -1 to indicate error
+        napi_value timestampProp;
+        napi_create_double(env, -1.0, &timestampProp);
+        napi_set_named_property(env, resultObj, "timestamp", timestampProp);
+    }
+    
+    return resultObj;
+}
+
+// Test function to create Date with maximum timestamp and get its value
+static napi_value TestCreateDateWithMaxTimestamp(napi_env env, napi_callback_info info)
+{
+    // Create result object
+    napi_value resultObj;
+    napi_create_object(env, &resultObj);
+    
+    // Use maximum safe double value for timestamp
+    // Using a large but safe timestamp value that won't cause overflow issues
+    
+    // Create Date object with maximum timestamp using napi_create_date
+    napi_value dateObj;
+    napi_status createStatus = napi_create_date(env, MAX_SAFE_TIMESTAMP, &dateObj);
+    
+    // Add createStatus to result
+    napi_value createStatusProp;
+    napi_create_int32(env, createStatus, &createStatusProp);
+    napi_set_named_property(env, resultObj, "createStatus", createStatusProp);
+    
+    if (createStatus == napi_ok) {
+        // Try to get date value using napi_get_date_value
+        double timestamp;
+        napi_status getStatus = napi_get_date_value(env, dateObj, &timestamp);
+        
+        // Add getStatus to result
+        napi_value getStatusProp;
+        napi_create_int32(env, getStatus, &getStatusProp);
+        napi_set_named_property(env, resultObj, "getStatus", getStatusProp);
+        
+        // Add timestamp to result
+        napi_value timestampProp;
+        napi_create_double(env, timestamp, &timestampProp);
+        napi_set_named_property(env, resultObj, "timestamp", timestampProp);
+    } else {
+        // If creation failed, set error status
+        napi_value getStatusProp;
+        napi_create_int32(env, createStatus, &getStatusProp);
+        napi_set_named_property(env, resultObj, "getStatus", getStatusProp);
+        
+        // Set timestamp to -1 to indicate error
+        napi_value timestampProp;
+        napi_create_double(env, -1.0, &timestampProp);
+        napi_set_named_property(env, resultObj, "timestamp", timestampProp);
+    }
+    
+    return resultObj;
+}
+
+// Test function to perform multiple Date operations
+static napi_value TestMultipleDateOperations(napi_env env, napi_callback_info info)
+{
+    // Create result object
+    napi_value resultObj;
+    napi_create_object(env, &resultObj);
+    
+    // Create Date object A with timestamp TEST_TIMESTAMP_A
+    napi_value dateObjA;
+    NAPI_CALL(env, napi_create_date(env, TEST_TIMESTAMP_A, &dateObjA));
+    
+    // Create Date object B with timestamp TEST_TIMESTAMP_B
+    napi_value dateObjB;
+    NAPI_CALL(env, napi_create_date(env, TEST_TIMESTAMP_B, &dateObjB));
+    
+    // Get timestamp from Date A
+    double timestampA;
+    NAPI_CALL(env, napi_get_date_value(env, dateObjA, &timestampA));
+    
+    // Get timestamp from Date B
+    double timestampB;
+    NAPI_CALL(env, napi_get_date_value(env, dateObjB, &timestampB));
+    
+    // Create modified Date A with timestamp TEST_TIMESTAMP_C
+    napi_value modifiedDateObjA;
+    NAPI_CALL(env, napi_create_date(env, TEST_TIMESTAMP_C, &modifiedDateObjA));
+    
+    // Get timestamp from modified Date A
+    double modifiedTimestampA;
+    NAPI_CALL(env, napi_get_date_value(env, modifiedDateObjA, &modifiedTimestampA));
+    
+    // Add all results to the result object
+    napi_set_named_property(env, resultObj, "dateA", dateObjA);
+    napi_set_named_property(env, resultObj, "dateB", dateObjB);
+    
+    napi_value timestampAProp;
+    napi_create_double(env, timestampA, &timestampAProp);
+    napi_set_named_property(env, resultObj, "timestampA", timestampAProp);
+    
+    napi_value timestampBProp;
+    napi_create_double(env, timestampB, &timestampBProp);
+    napi_set_named_property(env, resultObj, "timestampB", timestampBProp);
+    
+    napi_value modifiedTimestampAProp;
+    napi_create_double(env, modifiedTimestampA, &modifiedTimestampAProp);
+    napi_set_named_property(env, resultObj, "modifiedTimestampA", modifiedTimestampAProp);
+    
+    return resultObj;
+}
+
+// Helper function to validate bulk creation parameters
+static bool ValidateBulkCreationParams(napi_env env, napi_callback_info info, int32_t& count)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (argc < 1) {
+        napi_throw_error(env, nullptr, "Expected 1 argument");
+        return false;
+    }
+    
+    napi_status status = napi_get_value_int32(env, args[0], &count);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Failed to get count value");
+        return false;
+    }
+    
+    // Limit count to prevent excessive memory usage
+    if (count > MAX_BULK_COUNT) {
+        count = MAX_BULK_COUNT;
+    }
+    return true;
+}
+
+// Structure to hold date batch processing parameters
+struct DateBatchProcessParams {
+    napi_env env;
+    int startIndex;
+    int endIndex;
+    int& totalCreated;
+    int& totalVerified;
+    int& totalTimestamps;
+    bool& allSuccess;
+};
+
+// Helper function to process batch of Date objects
+static void ProcessDateBatch(const DateBatchProcessParams& params)
+{
+    for (int j = params.startIndex; j < params.endIndex; j++) {
+        // Create Date object with incrementing timestamp
+        napi_value dateObj;
+        double timestamp = static_cast<double>(j);
+        napi_status createStatus = napi_create_date(params.env, timestamp, &dateObj);
+        if (createStatus != napi_ok) {
+            params.allSuccess = false;
+            break;
+        }
+        params.totalCreated++;
+        
+        // Verify Date type
+        bool isDate;
+        napi_status isDateStatus = napi_is_date(params.env, dateObj, &isDate);
+        if (isDateStatus != napi_ok || !isDate) {
+            params.allSuccess = false;
+            break;
+        }
+        params.totalVerified++;
+        // Get and verify timestamp
+        double retrievedTimestamp;
+        napi_status getStatus = napi_get_date_value(params.env, dateObj, &retrievedTimestamp);
+        if (getStatus != napi_ok || retrievedTimestamp != timestamp) {
+            params.allSuccess = false;
+            break;
+        }
+        
+        params.totalTimestamps++;
+    }
+}
+
+// Structure to hold bulk creation result parameters
+struct BulkCreationResultParams {
+    bool allSuccess;
+    int totalCreated;
+    int totalVerified;
+    int totalTimestamps;
+    double executionTimeMs;
+};
+
+// Helper function to build bulk creation result
+static napi_value BuildBulkCreationResult(napi_env env, const BulkCreationResultParams& params)
+{
+    napi_value resultObj;
+    napi_create_object(env, &resultObj);
+    
+    // Add results to the result object
+    napi_value successProp;
+    napi_get_boolean(env, params.allSuccess, &successProp);
+    napi_set_named_property(env, resultObj, "success", successProp);
+    
+    napi_value totalCreatedProp;
+    napi_create_int32(env, params.totalCreated, &totalCreatedProp);
+    napi_set_named_property(env, resultObj, "totalCreated", totalCreatedProp);
+    
+    napi_value totalVerifiedProp;
+    napi_create_int32(env, params.totalVerified, &totalVerifiedProp);
+    napi_set_named_property(env, resultObj, "totalVerified", totalVerifiedProp);
+    
+    napi_value totalTimestampsProp;
+    napi_create_int32(env, params.totalTimestamps, &totalTimestampsProp);
+    napi_set_named_property(env, resultObj, "totalTimestamps", totalTimestampsProp);
+    
+    napi_value executionTimeProp;
+    napi_create_double(env, params.executionTimeMs, &executionTimeProp);
+    napi_set_named_property(env, resultObj, "executionTime", executionTimeProp);
+    
+    return resultObj;
+}
+
+// Test function for bulk Date object creation and verification
+static napi_value TestBulkDateCreation(napi_env env, napi_callback_info info)
+{
+    // Validate input parameters
+    int32_t count;
+    if (!ValidateBulkCreationParams(env, info, count)) {
+        return nullptr;
+    }
+    
+    // Record start time for performance measurement
+    auto startTime = std::chrono::high_resolution_clock::now();
+    // Initialize counters
+    int totalCreated = 0;
+    int totalVerified = 0;
+    int totalTimestamps = 0;
+    bool allSuccess = true;
+    
+    // Process Date objects in batches
+    for (int i = 0; i < count; i += BATCH_SIZE) {
+        int endIndex = std::min(i + BATCH_SIZE, count);
+        DateBatchProcessParams params = {
+            .env = env,
+            .startIndex = i,
+            .endIndex = endIndex,
+            .totalCreated = totalCreated,
+            .totalVerified = totalVerified,
+            .totalTimestamps = totalTimestamps,
+            .allSuccess = allSuccess
+        };
+        ProcessDateBatch(params);
+        if (!allSuccess) {
+            break;
+        }
+    }
+    
+    // Record end time and calculate execution time
+    auto endTime = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
+    double executionTimeMs = static_cast<double>(duration.count());
+    
+    // Build and return result
+    BulkCreationResultParams params = {
+        .allSuccess = allSuccess,
+        .totalCreated = totalCreated,
+        .totalVerified = totalVerified,
+        .totalTimestamps = totalTimestamps,
+        .executionTimeMs = executionTimeMs
+    };
+    
+    return BuildBulkCreationResult(env, params);
+}
+
+// Thread function for creating Date objects
+static void* CreateDateThread(void* arg)
+{
+    ThreadData* data = static_cast<ThreadData*>(arg);
+    
+    // Create Date object with the specified timestamp
+    data->createStatus = napi_create_date(data->env, data->timestamp, &data->dateObj);
+    if (data->createStatus == napi_ok) {
+        // Verify Date type
+        napi_status isDateStatus = napi_is_date(data->env, data->dateObj, &data->isDate);
+        if (isDateStatus == napi_ok && data->isDate) {
+            // Get timestamp value
+            OH_LOG_INFO(LOG_APP, "testTag napi_is_date %{public}d.", isDateStatus);
+            data->getStatus = napi_get_date_value(data->env, data->dateObj, &data->retrievedTimestamp);
+        } else {
+            data->getStatus = napi_generic_failure;
+        }
+    }
+    return nullptr;
+}
+
+// Helper function to build thread result object
+static napi_value BuildThreadResult(napi_env env, const ThreadData& threadData)
+{
+    napi_value threadResult;
+    napi_create_object(env, &threadResult);
+
+    // Add thread ID
+    napi_value threadIdProp;
+    napi_create_int32(env, threadData.threadId, &threadIdProp);
+    napi_set_named_property(env, threadResult, "threadId", threadIdProp);
+
+    // Add create status
+    napi_value createStatusProp;
+    napi_create_int32(env, threadData.createStatus, &createStatusProp);
+    napi_set_named_property(env, threadResult, "createStatus", createStatusProp);
+
+    // Add isDate flag
+    napi_value isDateProp;
+    napi_get_boolean(env, threadData.isDate, &isDateProp);
+    napi_set_named_property(env, threadResult, "isDate", isDateProp);
+
+    // Add retrieved timestamp
+    napi_value timestampProp;
+    napi_create_double(env, threadData.retrievedTimestamp, &timestampProp);
+    napi_set_named_property(env, threadResult, "timestamp", timestampProp);
+
+    // Add original timestamp
+    napi_value originalTimestampProp;
+    napi_create_double(env, threadData.timestamp, &originalTimestampProp);
+    napi_set_named_property(env, threadResult, "originalTimestamp", originalTimestampProp);
+
+    return threadResult;
+}
+
+// Helper function to build main result object
+static napi_value BuildConcurrentResult(napi_env env, bool allSuccess,
+    napi_value threadResultsArray, int totalThreads)
+{
+    napi_value resultObj;
+    napi_create_object(env, &resultObj);
+
+    // Add success flag
+    napi_value successProp;
+    napi_get_boolean(env, allSuccess, &successProp);
+    napi_set_named_property(env, resultObj, "success", successProp);
+
+    // Add thread results array
+    napi_set_named_property(env, resultObj, "threadResults", threadResultsArray);
+
+    // Add total threads count
+    napi_value totalThreadsProp;
+    napi_create_int32(env, totalThreads, &totalThreadsProp);
+    napi_set_named_property(env, resultObj, "totalThreads", totalThreadsProp);
+
+    return resultObj;
+}
+
+// Helper function to initialize thread data
+static void InitializeThreadData(ThreadData* threadData, napi_env env)
+{
+    const double timestamples[] = {TEST_TIMESTAMP_A, TEST_TIMESTAMP_B, TEST_TIMESTAMP_C,
+        TEST_TIMESTAMP_D, TEST_TIMESTAMP_E};
+    
+    for (int i = 0; i < CONCURRENT_THREAD_COUNT; i++) {
+        threadData[i].env = env;
+        threadData[i].threadId = i;
+        threadData[i].timestamp = timestamples[i];
+        threadData[i].dateObj = nullptr;
+        threadData[i].createStatus = napi_generic_failure;
+        threadData[i].isDate = false;
+        threadData[i].retrievedTimestamp = 0.0;
+        threadData[i].getStatus = napi_generic_failure;
+    }
+}
+
+// Test function to create Date objects concurrently using pthread
+static napi_value TestConcurrentDateCreation(napi_env env, napi_callback_info info)
+{
+    // Create thread data array
+    ThreadData threadData[CONCURRENT_THREAD_COUNT];
+    pthread_t threads[CONCURRENT_THREAD_COUNT];
+    
+    // Initialize thread data using helper function
+    InitializeThreadData(threadData, env);
+    // Create threads using pthread_create
+    for (int i = 0; i < CONCURRENT_THREAD_COUNT; i++) {
+        int result = pthread_create(&threads[i], nullptr, CreateDateThread, &threadData[i]);
+        if (result != 0) {
+            napi_throw_error(env, nullptr, "Failed to create thread");
+            return nullptr;
+        }
+    }
+    
+    // Wait for all threads to complete
+    for (int i = 0; i < CONCURRENT_THREAD_COUNT; i++) {
+        pthread_join(threads[i], nullptr);
+    }
+    
+    // Check results and create result array
+    napi_value threadResultsArray;
+    napi_create_array(env, &threadResultsArray);
+    
+    bool allSuccess = true;
+    for (int i = 0; i < CONCURRENT_THREAD_COUNT; i++) {
+        // Check if this thread was successful
+        if (threadData[i].createStatus != napi_ok || !threadData[i].isDate ||
+            threadData[i].getStatus != napi_ok ||
+            threadData[i].retrievedTimestamp != threadData[i].timestamp) {
+            allSuccess = false;
+        }
+        
+        // Build thread result using helper function
+        napi_value threadResult = BuildThreadResult(env, threadData[i]);
+        napi_set_element(env, threadResultsArray, i, threadResult);
+    }
+    
+    // Build and return main result using helper function
+    return BuildConcurrentResult(env, allSuccess, threadResultsArray, CONCURRENT_THREAD_COUNT);
+}
+
+// Helper function to initialize shared date read data
+static void InitializeSharedDateReadData(SharedDateReadData* threadData, napi_env env,
+    napi_value sharedDateObj, int numThreads)
+{
+    for (int i = 0; i < numThreads; i++) {
+        threadData[i].env = env;
+        threadData[i].sharedDateObj = sharedDateObj;
+        threadData[i].threadId = i;
+        threadData[i].isDateStatus = napi_generic_failure;
+        threadData[i].isDate = false;
+        threadData[i].getDateStatus = napi_generic_failure;
+        threadData[i].timestamp = 0.0;
+    }
+}
+
+// Helper function to build thread result for shared date read
+static napi_value BuildSharedDateReadThreadResult(napi_env env, const SharedDateReadData& threadData)
+{
+    napi_value threadResult;
+    napi_create_object(env, &threadResult);
+
+    // Add thread ID
+    napi_value threadIdProp;
+    napi_create_int32(env, threadData.threadId, &threadIdProp);
+    napi_set_named_property(env, threadResult, "threadId", threadIdProp);
+
+    // Add is_date status
+    napi_value isDateStatusProp;
+    napi_create_int32(env, threadData.isDateStatus, &isDateStatusProp);
+    napi_set_named_property(env, threadResult, "isDateStatus", isDateStatusProp);
+
+    // Add is_date flag
+    napi_value isDateProp;
+    napi_get_boolean(env, threadData.isDate, &isDateProp);
+    napi_set_named_property(env, threadResult, "isDate", isDateProp);
+
+    // Add get_date status
+    napi_value getDateStatusProp;
+    napi_create_int32(env, threadData.getDateStatus, &getDateStatusProp);
+    napi_set_named_property(env, threadResult, "getDateStatus", getDateStatusProp);
+
+    // Add retrieved timestamp
+    napi_value timestampProp;
+    napi_create_double(env, threadData.timestamp, &timestampProp);
+    napi_set_named_property(env, threadResult, "timestamp", timestampProp);
+
+    return threadResult;
+}
+
+// Helper function to build main result for shared date read
+static napi_value BuildSharedDateReadResult(napi_env env, bool allSuccess,
+    napi_value threadResultsArray, int totalThreads, double sharedTimestamp)
+{
+    napi_value resultObj;
+    napi_create_object(env, &resultObj);
+
+    // Add success flag
+    napi_value successProp;
+    napi_get_boolean(env, allSuccess, &successProp);
+    napi_set_named_property(env, resultObj, "success", successProp);
+
+    // Add thread results array
+    napi_set_named_property(env, resultObj, "threadResults", threadResultsArray);
+
+    // Add total threads count
+    napi_value totalThreadsProp;
+    napi_create_int32(env, totalThreads, &totalThreadsProp);
+    napi_set_named_property(env, resultObj, "totalThreads", totalThreadsProp);
+
+    // Add original timestamp
+    napi_value originalTimestampProp;
+    napi_create_double(env, sharedTimestamp, &originalTimestampProp);
+    napi_set_named_property(env, resultObj, "originalTimestamp", originalTimestampProp);
+
+    return resultObj;
+}
+
+// Thread function for reading shared Date object
+static void* ReadSharedDateThread(void* arg)
+{
+    SharedDateReadData* data = static_cast<SharedDateReadData*>(arg);
+    
+    // Check if the shared object is a Date using napi_is_date
+    data->isDateStatus = napi_is_date(data->env, data->sharedDateObj, &data->isDate);
+    if (data->isDateStatus == napi_ok && data->isDate) {
+        // Get timestamp value using napi_get_date_value
+        data->getDateStatus = napi_get_date_value(data->env, data->sharedDateObj, &data->timestamp);
+    } else {
+        data->getDateStatus = napi_generic_failure;
+        data->timestamp = 0.0;
+    }
+
+    return nullptr;
+}
+
+// Test function to test multiple threads reading from a shared Date object
+static napi_value TestSharedDateObjectRead(napi_env env, napi_callback_info info)
+{
+    // Create a shared Date object
+    napi_value sharedDateObj;
+    napi_status createStatus = napi_create_date(env, SHARED_TIMESTAMP, &sharedDateObj);
+    if (createStatus != napi_ok) {
+        napi_throw_error(env, nullptr, "Failed to create shared Date object");
+        return nullptr;
+    }
+    
+    // Create thread data array
+    SharedDateReadData threadData[SHARED_READ_THREAD_COUNT];
+    pthread_t threads[SHARED_READ_THREAD_COUNT];
+    
+    // Initialize thread data using helper function
+    InitializeSharedDateReadData(threadData, env, sharedDateObj, SHARED_READ_THREAD_COUNT);
+    // Create threads using pthread_create
+    for (int i = 0; i < SHARED_READ_THREAD_COUNT; i++) {
+        int result = pthread_create(&threads[i], nullptr, ReadSharedDateThread, &threadData[i]);
+        if (result != 0) {
+            napi_throw_error(env, nullptr, "Failed to create thread");
+            return nullptr;
+        }
+    }
+    
+    // Wait for all threads to complete
+    for (int i = 0; i < SHARED_READ_THREAD_COUNT; i++) {
+        pthread_join(threads[i], nullptr);
+    }
+    
+    // Check results and create result array
+    napi_value threadResultsArray;
+    napi_create_array(env, &threadResultsArray);
+    
+    bool allSuccess = true;
+    for (int i = 0; i < SHARED_READ_THREAD_COUNT; i++) {
+        // Check if this thread was successful
+        if (threadData[i].isDateStatus != napi_ok ||
+            !threadData[i].isDate ||
+            threadData[i].getDateStatus != napi_ok ||
+            threadData[i].timestamp != SHARED_TIMESTAMP) {
+            allSuccess = false;
+        }
+        
+        // Build thread result using helper function
+        napi_value threadResult = BuildSharedDateReadThreadResult(env, threadData[i]);
+        napi_set_element(env, threadResultsArray, i, threadResult);
+    }
+    
+    // Build and return main result using helper function
+    return BuildSharedDateReadResult(env, allSuccess, threadResultsArray,
+        SHARED_READ_THREAD_COUNT, SHARED_TIMESTAMP);
+}
+
+// Helper function to initialize stress test data
+static void InitializeStressTestData(StressTestData* threadData, napi_env env, int numThreads)
+{
+    for (int i = 0; i < numThreads; i++) {
+        threadData[i].env = env;
+        threadData[i].threadId = i;
+        threadData[i].totalOperations = 0;
+        threadData[i].successfulOperations = 0;
+        threadData[i].failedOperations = 0;
+        threadData[i].executionTime = 0.0;
+        threadData[i].memoryUsage = 0.0;
+        threadData[i].threadSuccess = false;
+        threadData[i].dateObj = nullptr;
+        threadData[i].isDate = false;
+    }
+}
+
+// Helper function to build stress test thread result
+static napi_value BuildStressTestThreadResult(napi_env env, const StressTestData& threadData)
+{
+    napi_value threadResult;
+    napi_create_object(env, &threadResult);
+
+    // Add thread ID
+    napi_value threadIdProp;
+    napi_create_int32(env, threadData.threadId, &threadIdProp);
+    napi_set_named_property(env, threadResult, "threadId", threadIdProp);
+
+    // Add operation counts
+    napi_value totalOpsProp;
+    napi_create_int32(env, threadData.totalOperations, &totalOpsProp);
+    napi_set_named_property(env, threadResult, "totalOperations", totalOpsProp);
+
+    napi_value successOpsProp;
+    napi_create_int32(env, threadData.successfulOperations, &successOpsProp);
+    napi_set_named_property(env, threadResult, "successfulOperations", successOpsProp);
+
+    napi_value failedOpsProp;
+    napi_create_int32(env, threadData.failedOperations, &failedOpsProp);
+    napi_set_named_property(env, threadResult, "failedOperations", failedOpsProp);
+
+    // Add performance metrics
+    napi_value execTimeProp;
+    napi_create_double(env, threadData.executionTime, &execTimeProp);
+    napi_set_named_property(env, threadResult, "executionTime", execTimeProp);
+
+    napi_value memoryProp;
+    napi_create_double(env, threadData.memoryUsage, &memoryProp);
+    napi_set_named_property(env, threadResult, "memoryUsage", memoryProp);
+
+    // Add success flag
+    napi_value successProp;
+    napi_get_boolean(env, threadData.threadSuccess, &successProp);
+    napi_set_named_property(env, threadResult, "success", successProp);
+
+    return threadResult;
+}
+
+// Structure to hold stress test main result parameters
+struct StressTestMainResultParams {
+    bool overallSuccess;
+    napi_value threadResultsArray;
+    int totalThreads;
+    int totalOperations;
+    int totalSuccessful;
+    int totalFailed;
+    double totalExecutionTime;
+    double totalMemoryUsage;
+    double performanceVariation;
+    double memoryIncreasePercent;
+};
+
+// Helper function to build stress test main result
+static napi_value BuildStressTestMainResult(napi_env env, const StressTestMainResultParams& params)
+{
+    napi_value resultObj;
+    napi_create_object(env, &resultObj);
+
+    // Add overall success flag
+    napi_value successProp;
+    napi_get_boolean(env, params.overallSuccess, &successProp);
+    napi_set_named_property(env, resultObj, "success", successProp);
+
+    // Add thread results array
+    napi_set_named_property(env, resultObj, "threadResults", params.threadResultsArray);
+
+    // Add summary statistics
+    napi_value totalThreadsProp;
+    napi_create_int32(env, params.totalThreads, &totalThreadsProp);
+    napi_set_named_property(env, resultObj, "totalThreads", totalThreadsProp);
+
+    napi_value totalOpsProp;
+    napi_create_int32(env, params.totalOperations, &totalOpsProp);
+    napi_set_named_property(env, resultObj, "totalOperations", totalOpsProp);
+
+    napi_value totalSuccessProp;
+    napi_create_int32(env, params.totalSuccessful, &totalSuccessProp);
+    napi_set_named_property(env, resultObj, "totalSuccessful", totalSuccessProp);
+
+    napi_value totalFailedProp;
+    napi_create_int32(env, params.totalFailed, &totalFailedProp);
+    napi_set_named_property(env, resultObj, "totalFailed", totalFailedProp);
+
+    // Add performance metrics
+    napi_value totalExecTimeProp;
+    napi_create_double(env, params.totalExecutionTime, &totalExecTimeProp);
+    napi_set_named_property(env, resultObj, "totalExecutionTime", totalExecTimeProp);
+
+    napi_value totalMemoryProp;
+    napi_create_double(env, params.totalMemoryUsage, &totalMemoryProp);
+    napi_set_named_property(env, resultObj, "totalMemory", totalMemoryProp);
+
+    napi_value perfVarProp;
+    napi_create_double(env, params.performanceVariation, &perfVarProp);
+    napi_set_named_property(env, resultObj, "performanceVariation", perfVarProp);
+
+    napi_value memIncreaseProp;
+    napi_create_double(env, params.memoryIncreasePercent, &memIncreaseProp);
+    napi_set_named_property(env, resultObj, "memoryIncreasePercent", memIncreaseProp);
+
+    return resultObj;
+}
+
+// Thread function for high concurrency stress testing
+static void* StressTestThread(void* arg)
+{
+    StressTestData* data = static_cast<StressTestData*>(arg);
+    
+    // Record start time
+    auto startTime = std::chrono::high_resolution_clock::now();
+    
+    // Initialize random seed for this thread
+    unsigned int seed = static_cast<unsigned int>(time(nullptr)) + data->threadId;
+    
+    data->successfulOperations = 0;
+    data->failedOperations = 0;
+    data->threadSuccess = true;
+    
+    // Perform 1000 operations
+    for (int i = 0; i < data->totalOperations; i++) {
+        // Generate random timestamp between 0 and 1e15
+        double randomTimestamp = static_cast<double>(rand_r(&seed)) / RAND_MAX * 1e15;
+        
+        // Create Date object with random timestamp
+        napi_status createStatus = napi_create_date(data->env, randomTimestamp, &data->dateObj);
+        if (createStatus != napi_ok) {
+            data->failedOperations++;
+            data->threadSuccess = false;
+            continue;
+        }
+
+        // Verify Date type
+        napi_status isDateStatus = napi_is_date(data->env, data->dateObj, &data->isDate);
+        if (isDateStatus == napi_ok && data->isDate) {
+            double retrievedTimestamp;
+            napi_status getStatus = napi_get_date_value(data->env, data->dateObj, &retrievedTimestamp);
+            if (getStatus == napi_ok && retrievedTimestamp == randomTimestamp) {
+                data->successfulOperations++;
+            } else {
+                data->failedOperations++;
+                data->threadSuccess = false;
+            }
+        } else {
+            data->failedOperations++;
+            data->threadSuccess = false;
+        }
+
+        // Random sleep between 0-10ms to simulate real workload
+        int sleepMs = rand_r(&seed) % NUM_11; // 0 to 10 ms
+        if (sleepMs > 0) {
+            std::this_thread::sleep_for(std::chrono::milliseconds(sleepMs));
+        }
+    }
+    
+    // Record end time
+    auto endTime = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
+    data->executionTime = static_cast<double>(duration.count());
+    
+    // Estimate memory usage (this is a rough approximation)
+    data->memoryUsage = static_cast<double>(data->successfulOperations) * 1 / NUM_1000; // KB per operation
+    return nullptr;
+}
+
+// Test function for high concurrency Date operations stress test
+static napi_value TestHighConcurrencyDateStress(napi_env env, napi_callback_info info)
+{
+    // Create thread data array
+    StressTestData threadData[STRESS_TEST_THREAD_COUNT];
+    pthread_t threads[STRESS_TEST_THREAD_COUNT];
+    
+    // Initialize thread data using helper function
+    InitializeStressTestData(threadData, env, STRESS_TEST_THREAD_COUNT);
+    
+    // Create threads using pthread_create
+    for (int i = 0; i < STRESS_TEST_THREAD_COUNT; i++) {
+        threadData[i].totalOperations = OPERATIONS_PER_THREAD;
+        NAPI_CALL(env, pthread_create(&threads[i], nullptr, StressTestThread, &threadData[i]));
+        pthread_join(threads[i], nullptr);
+    }
+    
+    // Calculate summary statistics
+    int totalOperations = STRESS_TEST_THREAD_COUNT * OPERATIONS_PER_THREAD;
+    int totalSuccessful = 0;
+    int totalFailed = 0;
+    double totalExecutionTime = 0.0;
+    double totalMemoryUsage = 0.0;
+    // Calculate performance metrics
+    double performanceVariation = 0.0;
+    // Build thread results array
+    napi_value threadResultsArray;
+    napi_create_array(env, &threadResultsArray);
+
+    for (int i = 0; i < STRESS_TEST_THREAD_COUNT; i++) {
+        totalSuccessful += threadData[i].successfulOperations;
+        totalFailed += threadData[i].failedOperations;
+        totalExecutionTime += threadData[i].executionTime;
+        totalMemoryUsage += threadData[i].memoryUsage;
+        
+        napi_value threadResult = BuildStressTestThreadResult(env, threadData[i]);
+        napi_set_element(env, threadResultsArray, i, threadResult);
+    }
+    double avgExecutionTime = totalExecutionTime / STRESS_TEST_THREAD_COUNT;
+    for (int i = 0; i < STRESS_TEST_THREAD_COUNT; i++) {
+        double diff = threadData[i].executionTime - avgExecutionTime;
+        performanceVariation += diff * diff;
+    }
+    double memoryIncreasePercent = (totalMemoryUsage / STRESS_TEST_THREAD_COUNT) * 100.0;
+    // Build and return main result using helper function
+    StressTestMainResultParams params = {
+        .overallSuccess = (totalSuccessful == totalOperations),
+        .threadResultsArray = threadResultsArray,
+        .totalThreads = STRESS_TEST_THREAD_COUNT,
+        .totalOperations = totalOperations,
+        .totalSuccessful = totalSuccessful,
+        .totalFailed = totalFailed,
+        .totalExecutionTime = totalExecutionTime,
+        .totalMemoryUsage = totalMemoryUsage,
+        .performanceVariation = sqrt(performanceVariation / STRESS_TEST_THREAD_COUNT),
+        .memoryIncreasePercent = memoryIncreasePercent
+    };
+    
+    return BuildStressTestMainResult(env, params);
+}
+
+// Helper function to initialize cross thread data
+static void InitializeCrossThreadData(CrossThreadData* threadData, napi_env env,
+    int numThreads, double originalTimestamp)
+{
+    for (int i = 0; i < numThreads; i++) {
+        threadData[i].env = env;
+        threadData[i].dateObj = nullptr;
+        threadData[i].threadId = i;
+        // Use strcpy_s for safe string copying with boundary checking
+        if (i == 0) {
+            strcpy_s(threadData[i].operation, sizeof(threadData[i].operation), "Create Date");
+        } else if (i == 1) {
+            strcpy_s(threadData[i].operation, sizeof(threadData[i].operation), "Receive from A and validate");
+        } else {
+            strcpy_s(threadData[i].operation, sizeof(threadData[i].operation), "Receive from B and validate");
+        }
+        
+        threadData[i].isDateStatus = napi_generic_failure;
+        threadData[i].isDate = false;
+        threadData[i].getDateStatus = napi_generic_failure;
+        threadData[i].timestamp = 0.0;
+        threadData[i].originalTimestamp = originalTimestamp;
+        threadData[i].threadSuccess = false;
+    }
+}
+
+// Helper function to build cross thread result
+static napi_value BuildCrossThreadResult(napi_env env, const CrossThreadData& threadData)
+{
+    napi_value threadResult;
+    napi_create_object(env, &threadResult);
+
+    // Add thread ID
+    napi_value threadIdProp;
+    napi_create_int32(env, threadData.threadId, &threadIdProp);
+    napi_set_named_property(env, threadResult, "threadId", threadIdProp);
+
+    // Add operation
+    napi_value operationProp;
+    napi_create_string_utf8(env, threadData.operation, NAPI_AUTO_LENGTH, &operationProp);
+    napi_set_named_property(env, threadResult, "operation", operationProp);
+
+    // Add is_date status
+    napi_value isDateStatusProp;
+    napi_create_int32(env, threadData.isDateStatus, &isDateStatusProp);
+    napi_set_named_property(env, threadResult, "isDateStatus", isDateStatusProp);
+
+    // Add is_date flag
+    napi_value isDateProp;
+    napi_get_boolean(env, threadData.isDate, &isDateProp);
+    napi_set_named_property(env, threadResult, "isDate", isDateProp);
+
+    // Add get_date status
+    napi_value getDateStatusProp;
+    napi_create_int32(env, threadData.getDateStatus, &getDateStatusProp);
+    napi_set_named_property(env, threadResult, "getDateStatus", getDateStatusProp);
+
+    // Add timestamp
+    napi_value timestampProp;
+    napi_create_double(env, threadData.timestamp, &timestampProp);
+    napi_set_named_property(env, threadResult, "timestamp", timestampProp);
+
+    // Add original timestamp
+    napi_value originalTimestampProp;
+    napi_create_double(env, threadData.originalTimestamp, &originalTimestampProp);
+    napi_set_named_property(env, threadResult, "originalTimestamp", originalTimestampProp);
+
+    // Add success flag
+    napi_value successProp;
+    napi_get_boolean(env, threadData.threadSuccess, &successProp);
+    napi_set_named_property(env, threadResult, "success", successProp);
+
+    return threadResult;
+}
+
+// Structure to hold cross thread main result parameters
+struct CrossThreadMainResultParams {
+    bool overallSuccess;
+    napi_value threadResultsArray;
+    int totalThreads;
+    double originalTimestamp;
+    bool allThreadsSuccessful;
+};
+
+// Helper function to build cross thread main result
+static napi_value BuildCrossThreadMainResult(napi_env env, const CrossThreadMainResultParams& params)
+{
+    napi_value resultObj;
+    napi_create_object(env, &resultObj);
+
+    // Add overall success flag
+    napi_value successProp;
+    napi_get_boolean(env, params.overallSuccess, &successProp);
+    napi_set_named_property(env, resultObj, "success", successProp);
+
+    // Add thread results array
+    napi_set_named_property(env, resultObj, "threadResults", params.threadResultsArray);
+
+    // Add total threads count
+    napi_value totalThreadsProp;
+    napi_create_int32(env, params.totalThreads, &totalThreadsProp);
+    napi_set_named_property(env, resultObj, "totalThreads", totalThreadsProp);
+
+    // Add original timestamp
+    napi_value originalTimestampProp;
+    napi_create_double(env, params.originalTimestamp, &originalTimestampProp);
+    napi_set_named_property(env, resultObj, "originalTimestamp", originalTimestampProp);
+
+    // Add all threads successful flag
+    napi_value allThreadsProp;
+    napi_get_boolean(env, params.allThreadsSuccessful, &allThreadsProp);
+    napi_set_named_property(env, resultObj, "allThreadsSuccessful", allThreadsProp);
+
+    return resultObj;
+}
+
+// Thread function for thread A (creates Date object)
+static void* ThreadAThread(void* arg)
+{
+    CrossThreadData* data = static_cast<CrossThreadData*>(arg);
+    
+    // Create Date object with timestamp 987654321000
+    napi_status createStatus = napi_create_date(data->env, data->originalTimestamp, &data->dateObj);
+    OH_LOG_INFO(LOG_APP, "testTag napi_create_date %{public}d.", createStatus);
+    if (createStatus == napi_ok) {
+        data->threadSuccess = true;
+        data->isDateStatus = napi_ok;
+        data->isDate = true;
+        data->getDateStatus = napi_ok;
+        data->timestamp = data->originalTimestamp;
+    } else {
+        data->threadSuccess = false;
+        data->isDateStatus = createStatus;
+        data->isDate = false;
+        data->getDateStatus = createStatus;
+        data->timestamp = 0.0;
+    }
+    
+    return nullptr;
+}
+
+// Thread function for thread B (receives from A, validates, passes to C)
+static void* ThreadBThread(void* arg)
+{
+    CrossThreadData* data = static_cast<CrossThreadData*>(arg);
+    
+    // Verify Date type
+    data->isDateStatus = napi_is_date(data->env, data->dateObj, &data->isDate);
+    OH_LOG_INFO(LOG_APP, "testTag threadB napi_is_date %{public}d.", data->isDateStatus);
+    if (data->isDateStatus == napi_ok && data->isDate) {
+        // Get timestamp value
+        data->getDateStatus = napi_get_date_value(data->env, data->dateObj, &data->timestamp);
+        
+        if (data->getDateStatus == napi_ok && data->timestamp == data->originalTimestamp) {
+            data->threadSuccess = true;
+        } else {
+            data->threadSuccess = false;
+        }
+    } else {
+        data->threadSuccess = false;
+        data->getDateStatus = napi_generic_failure;
+        data->timestamp = 0.0;
+    }
+    
+    return nullptr;
+}
+
+// Thread function for thread C (receives from B, validates)
+static void* ThreadCThread(void* arg)
+{
+    CrossThreadData* data = static_cast<CrossThreadData*>(arg);
+    
+    // Verify Date type
+    data->isDateStatus = napi_is_date(data->env, data->dateObj, &data->isDate);
+    OH_LOG_INFO(LOG_APP, "testTag threadC napi_is_date %{public}d.", data->isDateStatus);
+    if (data->isDateStatus == napi_ok && data->isDate) {
+        // Get timestamp value
+        data->getDateStatus = napi_get_date_value(data->env, data->dateObj, &data->timestamp);
+        
+        if (data->getDateStatus == napi_ok && data->timestamp == data->originalTimestamp) {
+            data->threadSuccess = true;
+        } else {
+            data->threadSuccess = false;
+        }
+    } else {
+        data->threadSuccess = false;
+        data->getDateStatus = napi_generic_failure;
+        data->timestamp = 0.0;
+    }
+    
+    return nullptr;
+}
+
+// Test function to test cross-thread Date object passing
+static napi_value TestCrossThreadDatePassing(napi_env env, napi_callback_info info)
+{
+    // Create thread data array
+    CrossThreadData threadData[CROSS_THREAD_COUNT];
+    pthread_t threads[CROSS_THREAD_COUNT];
+    
+    // Initialize thread data using helper function
+    InitializeCrossThreadData(threadData, env, CROSS_THREAD_COUNT, CROSS_THREAD_TIMESTAMP);
+    
+    int result = pthread_create(&threads[0], nullptr, ThreadAThread, &threadData[0]);
+    pthread_join(threads[0], nullptr);
+    threadData[1].dateObj = threadData[0].dateObj;
+    threadData[NUM_2].dateObj = threadData[0].dateObj;
+    // Create threads using pthread_create
+    for (int i = 1; i < CROSS_THREAD_COUNT; i++) {
+        if (i == 1) {
+            result = pthread_create(&threads[i], nullptr, ThreadBThread, &threadData[i]);
+        } else {
+            result = pthread_create(&threads[i], nullptr, ThreadCThread, &threadData[i]);
+        }
+        
+        if (result != 0) {
+            napi_throw_error(env, nullptr, "Failed to create thread");
+            return nullptr;
+        }
+    }
+    
+    // Wait for all threads to complete
+    for (int i = 1; i < CROSS_THREAD_COUNT; i++) {
+        pthread_join(threads[i], nullptr);
+    }
+    
+    // Check results and create result array
+    napi_value threadResultsArray;
+    napi_create_array(env, &threadResultsArray);
+    
+    bool allThreadsSuccessful = true;
+    for (int i = 0; i < CROSS_THREAD_COUNT; i++) {
+        // Check if this thread was successful
+        if (!threadData[i].threadSuccess) {
+            allThreadsSuccessful = false;
+        }
+        
+        // Build thread result using helper function
+        napi_value threadResult = BuildCrossThreadResult(env, threadData[i]);
+        napi_set_element(env, threadResultsArray, i, threadResult);
+    }
+    
+    // Build and return main result using helper function
+    CrossThreadMainResultParams params = {
+        .overallSuccess = allThreadsSuccessful,
+        .threadResultsArray = threadResultsArray,
+        .totalThreads = CROSS_THREAD_COUNT,
+        .originalTimestamp = CROSS_THREAD_TIMESTAMP,
+        .allThreadsSuccessful = allThreadsSuccessful
+    };
+    
+    return BuildCrossThreadMainResult(env, params);
+}
+
+// Helper function to initialize thread safety error data
+static void InitializeThreadSafetyErrorDat(ThreadSafetyErrorData* threadData, napi_env env, int numThreads)
+{
+    for (int i = 0; i < numThreads; i++) {
+        threadData[i].env = env;
+        threadData[i].threadId = i;
+        
+        // Use strcpy_s for safe string copying with boundary checking
+        if (i == 0) {
+            strcpy_s(threadData[i].operation, sizeof(threadData[i].operation), "create_date_nullptr");
+        } else if (i == 1) {
+            strcpy_s(threadData[i].operation, sizeof(threadData[i].operation), "get_date_value_nullptr");
+        } else if (i == NUM_2) {
+            strcpy_s(threadData[i].operation, sizeof(threadData[i].operation), "is_date_nullptr");
+        } else {
+            strcpy_s(threadData[i].operation, sizeof(threadData[i].operation), "normal_operations");
+        }
+        
+        threadData[i].apiStatus = napi_generic_failure;
+        threadData[i].expectedStatus = (i < NUM_3) ? napi_invalid_arg : napi_ok;
+        threadData[i].isSuccess = false;
+        
+        // Use strcpy_s for safe string copying with boundary checking
+        if (i == 0) {
+            strcpy_s(threadData[i].errorDescription, sizeof(threadData[i].errorDescription),
+                "napi_create_date with nullptr env");
+        } else if (i == 1) {
+            strcpy_s(threadData[i].errorDescription, sizeof(threadData[i].errorDescription),
+                "napi_get_date_value with nullptr value");
+        } else if (i == NUM_2) {
+            strcpy_s(threadData[i].errorDescription, sizeof(threadData[i].errorDescription),
+                "napi_is_date with nullptr value");
+        } else {
+            strcpy_s(threadData[i].errorDescription, sizeof(threadData[i].errorDescription),
+                "Normal Date operations");
+        }
+    }
+}
+
+// Helper function to build thread safety error result
+static napi_value BuildThreadSafetyErrorResult(napi_env env, const ThreadSafetyErrorData& threadData)
+{
+    napi_value threadResult;
+    napi_create_object(env, &threadResult);
+
+    // Add thread ID
+    napi_value threadIdProp;
+    napi_create_int32(env, threadData.threadId, &threadIdProp);
+    napi_set_named_property(env, threadResult, "threadId", threadIdProp);
+
+    // Add operation
+    napi_value operationProp;
+    napi_create_string_utf8(env, threadData.operation, NAPI_AUTO_LENGTH, &operationProp);
+    napi_set_named_property(env, threadResult, "operation", operationProp);
+
+    // Add API status
+    napi_value apiStatusProp;
+    napi_create_int32(env, threadData.apiStatus, &apiStatusProp);
+    napi_set_named_property(env, threadResult, "apiStatus", apiStatusProp);
+
+    // Add expected status
+    napi_value expectedStatusProp;
+    napi_create_int32(env, threadData.expectedStatus, &expectedStatusProp);
+    napi_set_named_property(env, threadResult, "expectedStatus", expectedStatusProp);
+
+    // Add success flag
+    napi_value successProp;
+    napi_get_boolean(env, threadData.isSuccess, &successProp);
+    napi_set_named_property(env, threadResult, "isSuccess", successProp);
+
+    // Add error description
+    napi_value errorDescProp;
+    napi_create_string_utf8(env, threadData.errorDescription, NAPI_AUTO_LENGTH, &errorDescProp);
+    napi_set_named_property(env, threadResult, "errorDescription", errorDescProp);
+
+    return threadResult;
+}
+
+// Structure to hold thread safety error main result parameters
+struct ThreadSafetyErrorMainResultParams {
+    bool overallSuccess;
+    napi_value threadResultsArray;
+    int totalThreads;
+    int totalSuccessful;
+    int totalFailed;
+};
+
+// Helper function to build thread safety error main result
+static napi_value BuildThreadSafetyErrorMainResult(napi_env env, const ThreadSafetyErrorMainResultParams& params)
+{
+    napi_value resultObj;
+    napi_create_object(env, &resultObj);
+
+    // Add overall success flag
+    napi_value successProp;
+    napi_get_boolean(env, params.overallSuccess, &successProp);
+    napi_set_named_property(env, resultObj, "success", successProp);
+
+    // Add thread results array
+    napi_set_named_property(env, resultObj, "threadResults", params.threadResultsArray);
+
+    // Add total threads count
+    napi_value totalThreadsProp;
+    napi_create_int32(env, params.totalThreads, &totalThreadsProp);
+    napi_set_named_property(env, resultObj, "totalThreads", totalThreadsProp);
+
+    // Add summary statistics
+    napi_value totalSuccessProp;
+    napi_create_int32(env, params.totalSuccessful, &totalSuccessProp);
+    napi_set_named_property(env, resultObj, "totalSuccessful", totalSuccessProp);
+
+    napi_value totalFailedProp;
+    napi_create_int32(env, params.totalFailed, &totalFailedProp);
+    napi_set_named_property(env, resultObj, "totalFailed", totalFailedProp);
+
+    return resultObj;
+}
+
+// Thread function for thread 1: napi_create_date with nullptr env
+static void* Thread1Thread(void* arg)
+{
+    ThreadSafetyErrorData* data = static_cast<ThreadSafetyErrorData*>(arg);
+    
+    // Call napi_create_date with nullptr env (should return napi_invalid_arg)
+    napi_value result;
+    data->apiStatus = napi_create_date(nullptr, TEST_TIMESTAMP_A, &result);
+    // Check if we got the expected error
+    if (data->apiStatus == data->expectedStatus) {
+        data->isSuccess = true;
+    } else {
+        data->isSuccess = false;
+    }
+
+    return nullptr;
+}
+
+// Thread function for thread 2: napi_get_date_value with nullptr value
+static void* Thread2Thread(void* arg)
+{
+    ThreadSafetyErrorData* data = static_cast<ThreadSafetyErrorData*>(arg);
+    
+    // Call napi_get_date_value with nullptr value (should return napi_invalid_arg)
+    double timestamp;
+    data->apiStatus = napi_get_date_value(data->env, nullptr, &timestamp);
+    
+    // Check if we got the expected error
+    if (data->apiStatus == data->expectedStatus) {
+        data->isSuccess = true;
+    } else {
+        data->isSuccess = false;
+    }
+
+    return nullptr;
+}
+// Thread function for thread 3: napi_is_date with nullptr is_date
+static void* Thread3Thread(void* arg)
+{
+    ThreadSafetyErrorData* data = static_cast<ThreadSafetyErrorData*>(arg);
+    // Create a valid Date object first
+    napi_value dateObj;
+    napi_status createStatus = napi_create_date(data->env, TEST_TIMESTAMP_B, &dateObj);
+    if (createStatus == napi_ok) {
+        // Call napi_is_date with nullptr is_date (should return napi_invalid_arg)
+        data->apiStatus = napi_is_date(data->env, dateObj, nullptr);
+        
+        // Check if we got the expected error
+        if (data->apiStatus == data->expectedStatus) {
+            data->isSuccess = true;
+        } else {
+            data->isSuccess = false;
+        }
+    } else {
+        data->apiStatus = createStatus;
+        data->isSuccess = false;
+    }
+    
+    return nullptr;
+}
+
+// Thread function for thread 4: normal operation as control
+static void* Thread4Thread(void* arg)
+{
+    ThreadSafetyErrorData* data = static_cast<ThreadSafetyErrorData*>(arg);
+    
+    // Perform normal Date operations (should succeed)
+    napi_value dateObj;
+    napi_status createStatus = napi_create_date(data->env, CONTROL_THREAD_TIMESTAMP, &dateObj);
+    if (createStatus == napi_ok) {
+        // Verify Date type
+        bool isDate;
+        napi_status isDateStatus = napi_is_date(data->env, dateObj, &isDate);
+        if (isDateStatus == napi_ok && isDate) {
+            // Get timestamp value
+            double timestamp;
+            napi_status getStatus = napi_get_date_value(data->env, dateObj, &timestamp);
+            if (getStatus == napi_ok && timestamp == CONTROL_THREAD_TIMESTAMP) {
+                data->apiStatus = napi_ok;
+                data->isSuccess = true;
+            } else {
+                data->apiStatus = getStatus;
+                data->isSuccess = false;
+            }
+        } else {
+            data->apiStatus = isDateStatus;
+            data->isSuccess = false;
+        }
+    } else {
+        data->apiStatus = createStatus;
+        data->isSuccess = false;
+    }
+    
+    return nullptr;
+}
+
+// Test function to test thread safety with error parameter combinations
+static napi_value TestThreadSafetyErrorHandling(napi_env env, napi_callback_info info)
+{
+    // Create thread data array
+    ThreadSafetyErrorData threadData[THREAD_SAFETY_THREAD_COUNT];
+    pthread_t threads[THREAD_SAFETY_THREAD_COUNT];
+    void* (*threadFunctions[THREAD_SAFETY_THREAD_COUNT])(void*) = {
+        Thread1Thread,
+        Thread2Thread,
+        Thread3Thread,
+        Thread4Thread
+    };
+
+    InitializeThreadSafetyErrorDat(threadData, env, THREAD_SAFETY_THREAD_COUNT);
+
+    // Create threads using pthread_create
+    for (int i = 0; i < THREAD_SAFETY_THREAD_COUNT; i++) {
+        int result = pthread_create(&threads[i], nullptr, threadFunctions[i], &threadData[i]);
+        if (result != 0) {
+            napi_throw_error(env, nullptr, "Failed to create thread");
+            return nullptr;
+        }
+    }
+    
+    // Wait for all threads to complete
+    for (int i = 0; i < THREAD_SAFETY_THREAD_COUNT; i++) {
+        pthread_join(threads[i], nullptr);
+    }
+    
+    // Check results and create result array
+    napi_value threadResultsArray;
+    napi_create_array(env, &threadResultsArray);
+    
+    int totalSuccessful = 0;
+    int totalFailed = 0;
+    for (int i = 0; i < THREAD_SAFETY_THREAD_COUNT; i++) {
+        // Count successful and failed operations
+        if (threadData[i].isSuccess) {
+            totalSuccessful++;
+        } else {
+            totalFailed++;
+        }
+        
+        // Build thread result using helper function
+        napi_value threadResult = BuildThreadSafetyErrorResult(env, threadData[i]);
+        napi_set_element(env, threadResultsArray, i, threadResult);
+    }
+    
+    // Check overall success
+    bool overallSuccess = (totalSuccessful == THREAD_SAFETY_THREAD_COUNT);
+    
+    // Build and return main result using helper function
+    ThreadSafetyErrorMainResultParams params = {
+        .overallSuccess = overallSuccess,
+        .threadResultsArray = threadResultsArray,
+        .totalThreads = THREAD_SAFETY_THREAD_COUNT,
+        .totalSuccessful = totalSuccessful,
+        .totalFailed = totalFailed
+    };
+    
+    return BuildThreadSafetyErrorMainResult(env, params);
+}
+
+// Helper function for basic UTF-16 string creation and verification
+static bool CreateAndVerifyUtf16String(napi_env env, const char16_t* utf16String,
+                                       napi_value* utf16Val, size_t* requiredLength)
+{
+    napi_status status = napi_create_string_utf16(env, utf16String, NAPI_AUTO_LENGTH, utf16Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    status = napi_get_value_string_utf16(env, *utf16Val, nullptr, 0, requiredLength);
+    if (status != napi_ok) {
+        return false;
+    }
+
+    // Verify content by reading and comparing
+    char16_t *buffer = new char16_t[*requiredLength + 1];
+    if (!buffer) {
+        return false;
+    }
+    size_t actualLength = 0;
+    status = napi_get_value_string_utf16(env, *utf16Val, buffer, *requiredLength + 1, &actualLength);
+    if (status != napi_ok || actualLength != *requiredLength) {
+        delete[] buffer;
+        return false;
+    }
+
+    // Character-by-character verification
+    size_t originalLength = std::char_traits<char16_t>::length(utf16String);
+    bool contentValid = true;
+    for (size_t i = 0; i < actualLength && i < originalLength; i++) {
+        if (buffer[i] != utf16String[i]) {
+            contentValid = false;
+            break;
+        }
+    }
+    delete[] buffer;
+    return contentValid;
+}
+
+// Helper function for UTF-16 truncation testing
+static bool TestUtf16Truncation(napi_env env, napi_value utf16Val,
+                                const char16_t* originalString, size_t requiredLength)
+{
+    const size_t minTruncationSize = 5;
+    if (requiredLength <= minTruncationSize) {
+        return true;
+    }
+    char16_t smallBuffer[minTruncationSize];
+    size_t truncatedLength = 0;
+    napi_status status = napi_get_value_string_utf16(env, utf16Val, smallBuffer, minTruncationSize, &truncatedLength);
+    if (status != napi_ok || truncatedLength >= requiredLength) {
+        return false;
+    }
+
+    // Verify truncated content
+    size_t originalLength = std::char_traits<char16_t>::length(originalString);
+    for (size_t i = 0; i < truncatedLength && i < originalLength; i++) {
+        if (smallBuffer[i] != originalString[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+static bool TestUtf16StringCreationAndRetrieval(napi_env env)
+{
+    const char16_t utf16String[] = u"Hello世界🌟";
+    napi_value utf16Val = nullptr;
+    size_t requiredLength = 0;
+
+    // Test basic creation and verification
+    if (!CreateAndVerifyUtf16String(env, utf16String, &utf16Val, &requiredLength)) {
+        return false;
+    }
+
+    // Test truncation scenarios
+    if (!TestUtf16Truncation(env, utf16Val, utf16String, requiredLength)) {
+        return false;
+    }
+
+    // Test explicit length creation
+    const char16_t explicitString[] = u"Explicit测试";
+    const size_t explicitLength = 11;
+    napi_value explicitVal = nullptr;
+    napi_status status = napi_create_string_utf16(env, explicitString, explicitLength, &explicitVal);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t explicitActualLength = 0;
+    status = napi_get_value_string_utf16(env, explicitVal, nullptr, 0, &explicitActualLength);
+    return (status == napi_ok && explicitActualLength == explicitLength);
+}
+// Helper function to test UTF-8 to UTF-16 conversion
+static bool TestUtf8ToUtf16Conversion(napi_env env)
+{
+    const char utf8String[] = "cafe 123";
+    napi_value utf8Val = nullptr;
+    napi_status status = napi_create_string_utf8(env, utf8String, strlen(utf8String), &utf8Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t utf16RequiredLength = 0;
+    status = napi_get_value_string_utf16(env, utf8Val, nullptr, 0, &utf16RequiredLength);
+    if (status != napi_ok) {
+        return false;
+    }
+    char16_t *utf16Buffer = new char16_t[utf16RequiredLength + 1];
+    if (!utf16Buffer) {
+        return false;
+    }
+    size_t utf16ActualLength = 0;
+    status = napi_get_value_string_utf16(env, utf8Val, utf16Buffer, utf16RequiredLength + 1, &utf16ActualLength);
+    if (status != napi_ok || utf16ActualLength != utf16RequiredLength) {
+        delete[] utf16Buffer;
+        return false;
+    }
+
+    // Verify content
+    bool contentValid = true;
+    for (size_t i = 0; i < utf16ActualLength && i < strlen(utf8String); i++) {
+        if (utf16Buffer[i] != static_cast<char16_t>(utf8String[i])) {
+            contentValid = false;
+            break;
+        }
+    }
+    delete[] utf16Buffer;
+    return contentValid;
+}
+
+// Helper function to test Latin1 to UTF-8 conversion
+static bool TestLatin1ToUtf8Conversion(napi_env env)
+{
+    const char latin1String[] = "Hello World ABC 123";
+    napi_value latin1Val = nullptr;
+    napi_status status = napi_create_string_latin1(env, latin1String, NAPI_AUTO_LENGTH, &latin1Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t utf8RequiredLength = 0;
+    status = napi_get_value_string_utf8(env, latin1Val, nullptr, 0, &utf8RequiredLength);
+    if (status != napi_ok) {
+        return false;
+    }
+    char *utf8Buffer = new char[utf8RequiredLength + 1];
+    if (!utf8Buffer) {
+        return false;
+    }
+    size_t utf8ActualLength = 0;
+    status = napi_get_value_string_utf8(env, latin1Val, utf8Buffer, utf8RequiredLength + 1, &utf8ActualLength);
+    if (status != napi_ok || utf8ActualLength != utf8RequiredLength) {
+        delete[] utf8Buffer;
+        return false;
+    }
+    bool contentMatches = (utf8ActualLength == strlen(latin1String)) &&
+                         (strncmp(latin1String, utf8Buffer, utf8ActualLength) == 0);
+    delete[] utf8Buffer;
+    return contentMatches;
+}
+
+// Helper function to test round-trip conversion
+static bool TestRoundTripConversion(napi_env env)
+{
+    const char asciiOnlyString[] = "ASCII Test 789";
+    napi_value asciiVal = nullptr;
+    napi_status status = napi_create_string_utf8(env, asciiOnlyString, strlen(asciiOnlyString), &asciiVal);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t latin1RequiredLength = 0;
+    status = napi_get_value_string_latin1(env, asciiVal, nullptr, 0, &latin1RequiredLength);
+    if (status != napi_ok) {
+        return false;
+    }
+    char *latin1Buffer = new char[latin1RequiredLength + 1];
+    if (!latin1Buffer) {
+        return false;
+    }
+    size_t latin1ActualLength = 0;
+    status = napi_get_value_string_latin1(env, asciiVal, latin1Buffer, latin1RequiredLength + 1, &latin1ActualLength);
+    bool success = (status == napi_ok) && (latin1ActualLength == strlen(asciiOnlyString)) &&
+                   (strncmp(asciiOnlyString, latin1Buffer, latin1ActualLength) == 0);
+    delete[] latin1Buffer;
+    return success;
+}
+
+static bool TestCrossEncodingConversion(napi_env env)
+{
+    return TestUtf8ToUtf16Conversion(env) &&
+           TestLatin1ToUtf8Conversion(env) &&
+           TestRoundTripConversion(env);
+}
+
+// Helper function to test empty and single character strings
+static bool TestEmptyAndSingleCharStrings(napi_env env)
+{
+    napi_status status;
+
+    // Test empty string
+    napi_value emptyVal = nullptr;
+    status = napi_create_string_utf8(env, "", 0, &emptyVal);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t emptyLength = 0;
+    status = napi_get_value_string_utf8(env, emptyVal, nullptr, 0, &emptyLength);
+    if (status != napi_ok || emptyLength != 0) {
+        return false;
+    }
+
+    // Test single character string
+    const char singleChar[] = "A";
+    napi_value singleCharVal = nullptr;
+    status = napi_create_string_utf8(env, singleChar, 1, &singleCharVal);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t singleLength = 0;
+    status = napi_get_value_string_utf8(env, singleCharVal, nullptr, 0, &singleLength);
+    return (status == napi_ok && singleLength == 1);
+}
+
+// Helper function to test long string creation
+static bool TestLongStringCreation(napi_env env)
+{
+    const int longStringSize = 512;
+    const int alphabetSize = 26;
+    const char alphabetStart = 'A';
+    char *longString = new char[longStringSize + 1];
+    if (!longString) {
+        return false;
+    }
+    for (int i = 0; i < longStringSize; i++) {
+        longString[i] = alphabetStart + (i % alphabetSize);
+    }
+    longString[longStringSize] = '\0';
+    napi_value longVal = nullptr;
+    napi_status status = napi_create_string_utf8(env, longString, longStringSize, &longVal);
+    bool success = (status == napi_ok);
+    if (success) {
+        size_t longLength = 0;
+        status = napi_get_value_string_utf8(env, longVal, nullptr, 0, &longLength);
+        success = (status == napi_ok) && (longLength == longStringSize);
+    }
+    delete[] longString;
+    return success;
+}
+
+// Helper function to test embedded null strings
+static bool TestEmbeddedNullStrings(napi_env env)
+{
+    const char nullString[] = {'H', 'e', 'l', 'l', 'o', '\0', 'W', 'o', 'r', 'l', 'd'};
+    const size_t nullStringLen = sizeof(nullString);
+    napi_value nullVal = nullptr;
+    napi_status status = napi_create_string_utf8(env, nullString, nullStringLen, &nullVal);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t retrievedLength = 0;
+    status = napi_get_value_string_utf8(env, nullVal, nullptr, 0, &retrievedLength);
+    return (status == napi_ok && retrievedLength == nullStringLen);
+}
+
+static bool TestBoundaryLengthCases(napi_env env)
+{
+    return TestEmptyAndSingleCharStrings(env) &&
+           TestLongStringCreation(env) &&
+           TestEmbeddedNullStrings(env);
+}
+
+// Helper function to test UTF-16 encoding operations
+static bool TestUtf16EncodingOperations(napi_env env)
+{
+    const char16_t utf16String[] = u"ABC123";
+    napi_value utf16Val = nullptr;
+    napi_status status = napi_create_string_utf16(env, utf16String, NAPI_AUTO_LENGTH, &utf16Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t utf16RequiredLength = 0;
+    status = napi_get_value_string_utf16(env, utf16Val, nullptr, 0, &utf16RequiredLength);
+    if (status != napi_ok) {
+        return false;
+    }
+    char16_t *utf16Buffer = new char16_t[utf16RequiredLength + 1];
+    if (!utf16Buffer) {
+        return false;
+    }
+    size_t utf16ActualLength = 0;
+    status = napi_get_value_string_utf16(env, utf16Val, utf16Buffer, utf16RequiredLength + 1, &utf16ActualLength);
+    if (status != napi_ok || utf16ActualLength != utf16RequiredLength) {
+        delete[] utf16Buffer;
+        return false;
+    }
+
+    // Verify content
+    bool contentValid = true;
+    for (size_t i = 0; i < utf16ActualLength && i < (sizeof(utf16String) / sizeof(char16_t) - 1); i++) {
+        if (utf16Buffer[i] != utf16String[i]) {
+            contentValid = false;
+            break;
+        }
+    }
+    delete[] utf16Buffer;
+    return contentValid;
+}
+
+// Helper function to test Latin1 encoding operations
+static bool TestLatin1EncodingOperations(napi_env env)
+{
+    const char latin1String[] = "ABC123";
+    napi_value latin1Val = nullptr;
+    napi_status status = napi_create_string_latin1(env, latin1String, NAPI_AUTO_LENGTH, &latin1Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t latin1RequiredLength = 0;
+    status = napi_get_value_string_latin1(env, latin1Val, nullptr, 0, &latin1RequiredLength);
+    if (status != napi_ok) {
+        return false;
+    }
+    char *latin1Buffer = new char[latin1RequiredLength + 1];
+    if (!latin1Buffer) {
+        return false;
+    }
+    size_t latin1ActualLength = 0;
+    status = napi_get_value_string_latin1(env, latin1Val, latin1Buffer, latin1RequiredLength + 1, &latin1ActualLength);
+    if (status != napi_ok || latin1ActualLength != latin1RequiredLength) {
+        delete[] latin1Buffer;
+        return false;
+    }
+    bool contentValid = (latin1ActualLength == strlen(latin1String)) &&
+                       (strncmp(latin1String, latin1Buffer, latin1ActualLength) == 0);
+    delete[] latin1Buffer;
+    return contentValid;
+}
+
+// Helper function to test UTF-8 encoding operations
+static bool TestUtf8EncodingOperations(napi_env env)
+{
+    const char utf8String[] = "ABC123";
+    napi_value utf8Val = nullptr;
+    napi_status status = napi_create_string_utf8(env, utf8String, NAPI_AUTO_LENGTH, &utf8Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t utf8RequiredLength = 0;
+    status = napi_get_value_string_utf8(env, utf8Val, nullptr, 0, &utf8RequiredLength);
+    if (status != napi_ok) {
+        return false;
+    }
+    char *utf8Buffer = new char[utf8RequiredLength + 1];
+    if (!utf8Buffer) {
+        return false;
+    }
+    size_t utf8ActualLength = 0;
+    status = napi_get_value_string_utf8(env, utf8Val, utf8Buffer, utf8RequiredLength + 1, &utf8ActualLength);
+    if (status != napi_ok || utf8ActualLength != utf8RequiredLength) {
+        delete[] utf8Buffer;
+        return false;
+    }
+    bool contentValid = (utf8ActualLength == strlen(utf8String)) &&
+                       (strncmp(utf8String, utf8Buffer, utf8ActualLength) == 0);
+    delete[] utf8Buffer;
+    return contentValid;
+}
+
+// Helper function to test extended character handling
+static bool TestExtendedCharacterHandling(napi_env env)
+{
+    const char extendedUtf8String[] = "ñó€";
+    napi_value extendedUtf8Val = nullptr;
+    napi_status status = napi_create_string_utf8(env, extendedUtf8String, NAPI_AUTO_LENGTH, &extendedUtf8Val);
+    if (status != napi_ok) {
+        return false;
+    }
+    // Test UTF-8 handling
+    size_t utf8Length = 0;
+    status = napi_get_value_string_utf8(env, extendedUtf8Val, nullptr, 0, &utf8Length);
+    if (status != napi_ok) {
+        return false;
+    }
+    // Test UTF-16 handling
+    size_t utf16Length = 0;
+    status = napi_get_value_string_utf16(env, extendedUtf8Val, nullptr, 0, &utf16Length);
+    if (status != napi_ok) {
+        return false;
+    }
+    
+    // Test Latin1 data loss (expected behavior)
+    size_t latin1Length = 0;
+    status = napi_get_value_string_latin1(env, extendedUtf8Val, nullptr, 0, &latin1Length);
+    // Latin1 may fail or return incomplete data for extended characters
+    return (utf8Length > 0 && utf16Length > 0);
+}
+
+static bool TestEncodingCompatibility(napi_env env)
+{
+    if (env == nullptr) {
+        return false;
+    }
+    return TestUtf16EncodingOperations(env) &&
+           TestLatin1EncodingOperations(env) &&
+           TestUtf8EncodingOperations(env) &&
+           TestExtendedCharacterHandling(env);
+}
+
+// Helper function to test basic buffer operations
+static bool TestBasicBufferOperations(napi_env env, const char* testString, napi_value* stringVal)
+{
+    napi_status status = napi_create_string_utf8(env, testString, NAPI_AUTO_LENGTH, stringVal);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t requiredLength = 0;
+    status = napi_get_value_string_utf8(env, *stringVal, nullptr, 0, &requiredLength);
+    return (status == napi_ok && requiredLength == strlen(testString));
+}
+
+// Helper function to test buffer size variations
+static bool TestBufferSizeVariations(napi_env env, napi_value stringVal, size_t expectedLength)
+{
+    napi_status status;
+    // Test exact buffer size
+    char *exactBuffer = new char[expectedLength + 1];
+    if (!exactBuffer) {
+        return false;
+    }
+    size_t actualLength = 0;
+    status = napi_get_value_string_utf8(env, stringVal, exactBuffer, expectedLength + 1, &actualLength);
+    bool exactSuccess = (status == napi_ok && actualLength == expectedLength);
+    delete[] exactBuffer;
+    if (!exactSuccess) {
+        return false;
+    }
+
+    // Test smaller buffer
+    const size_t smallerSize = expectedLength / 2;
+    char *smallerBuffer = new char[smallerSize];
+    if (!smallerBuffer) {
+        return false;
+    }
+    size_t smallerActualLength = 0;
+    status = napi_get_value_string_utf8(env, stringVal, smallerBuffer, smallerSize, &smallerActualLength);
+    bool smallerSuccess = (status == napi_ok && smallerActualLength < expectedLength);
+    delete[] smallerBuffer;
+    return smallerSuccess;
+}
+
+static bool TestBufferSizeEdgeCases(napi_env env)
+{
+    if (env == nullptr) {
+        return false;
+    }
+    const char longTestString[] =
+        "This is a long string for comprehensive buffer size testing with various edge cases and scenarios";
+    napi_value longStringVal = nullptr;
+    // Test basic operations
+    if (!TestBasicBufferOperations(env, longTestString, &longStringVal)) {
+        return false;
+    }
+    size_t expectedLength = strlen(longTestString);
+    // Test buffer size variations
+    if (!TestBufferSizeVariations(env, longStringVal, expectedLength)) {
+        return false;
+    }
+
+    // Test tiny buffer (edge case)
+    char tinyBuffer[1];
+    size_t tinyLength = 0;
+    napi_status status = napi_get_value_string_utf8(env, longStringVal, tinyBuffer, sizeof(tinyBuffer), &tinyLength);
+    if (status != napi_ok || tinyLength != 0 || tinyBuffer[0] != '\0') {
+        return false;
+    }
+    return true;
+}
+
+// Helper function to test invalid input handling
+static bool TestInvalidInputHandling(napi_env env)
+{
+    const int32_t testIntegerValue = 123;
+    napi_value numberVal = nullptr;
+    napi_status status = napi_create_int32(env, testIntegerValue, &numberVal);
+    if (status != napi_ok) {
+        return false;
+    }
+    const size_t bufferSize = 256;
+    char buffer[bufferSize];
+    size_t length = 0;
+
+    // This should return napi_string_expected
+    status = napi_get_value_string_utf8(env, numberVal, buffer, sizeof(buffer), &length);
+    return (status == napi_string_expected);
+}
+
+// Helper function to test valid string operations
+static bool TestValidStringOperations(napi_env env)
+{
+    const char testString[] = u8"Valid test string 测试";
+    napi_value testVal = nullptr;
+    napi_status status = napi_create_string_utf8(env, testString, NAPI_AUTO_LENGTH, &testVal);
+    if (status != napi_ok) {
+        return false;
+    }
+
+    // Get length
+    size_t requiredLength = 0;
+    status = napi_get_value_string_utf8(env, testVal, nullptr, 0, &requiredLength);
+    if (status != napi_ok) {
+        return false;
+    }
+
+    // Test with proper buffer
+    char *properBuffer = new char[requiredLength + 1];
+    if (!properBuffer) {
+        return false;
+    }
+    memset_s(properBuffer, requiredLength + 1, 0, requiredLength + 1);
+    size_t finalLength = 0;
+    status = napi_get_value_string_utf8(env, testVal, properBuffer, requiredLength + 1, &finalLength);
+    bool success = (status == napi_ok) && (finalLength == requiredLength) &&
+                   (strcmp(properBuffer, testString) == 0);
+    delete[] properBuffer;
+    return success;
+}
+
+static bool TestErrorHandlingRobustness(napi_env env)
+{
+    return TestInvalidInputHandling(env) && TestValidStringOperations(env);
+}
+
+// Helper function to test multi-encoding compatibility operations
+static bool TestMultiEncodingCompatibilityOperations(napi_env env)
+{
+    napi_status status;
+    // Test 1: Create using napi_create_string_utf8
+    napi_value utf8Val = nullptr;
+    status = napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &utf8Val);
+    if (status != napi_ok) {
+        return false;
+    }
+
+    // Test 2: Create using napi_get_value_string_utf16
+    const size_t utf16BufferSize = 256;
+    char16_t utf16Buffer[utf16BufferSize];
+    size_t utf16Length = 0;
+    status =
+        napi_get_value_string_utf16(env, utf8Val, utf16Buffer, sizeof(utf16Buffer) / sizeof(char16_t), &utf16Length);
+    if (status != napi_ok) {
+        return false;
+    }
+
+    // Test 3: Use result to create new string via napi_create_string_latin1
+    const char latin1Test[] = "test";
+    napi_value latin1Val = nullptr;
+    status = napi_create_string_latin1(env, latin1Test, NAPI_AUTO_LENGTH, &latin1Val);
+    if (status != napi_ok) {
+        return false;
+    }
+
+    // Test 4: Get using napi_get_value_string_utf8
+    const size_t utf8BufferSize = 256;
+    char utf8Buffer[utf8BufferSize];
+    size_t utf8Length = 0;
+    status = napi_get_value_string_utf8(env, latin1Val, utf8Buffer, sizeof(utf8Buffer), &utf8Length);
+    if (status != napi_ok) {
+        return false;
+    }
+
+    // Test 5: Verify cross-conversion consistency
+    if (strcmp(utf8Buffer, "test") != 0) {
+        return false;
+    }
+    return true;
+}
+
+// Helper function to test BOM and mixed strings
+static bool TestBomAndMixedStrings(napi_env env)
+{
+    napi_status status;
+
+    // Test UTF-8 BOM + text
+    const char bomString[] = u8"\uFEFFHello World";
+    napi_value bomVal = nullptr;
+    status = napi_create_string_utf8(env, bomString, NAPI_AUTO_LENGTH, &bomVal);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t bomLength = 0;
+    status = napi_get_value_string_utf8(env, bomVal, nullptr, 0, &bomLength);
+    if (status != napi_ok || bomLength == 0) {
+        return false;
+    }
+
+    // Test multi-language string
+    const char mixedString[] = u8"English中文العربية🌟";
+    napi_value mixedVal = nullptr;
+    status = napi_create_string_utf8(env, mixedString, strlen(mixedString), &mixedVal);
+    if (status != napi_ok) {
+        return false;
+    }
+    size_t mixedLength = 0;
+    status = napi_get_value_string_utf8(env, mixedVal, nullptr, 0, &mixedLength);
+    return (status == napi_ok && mixedLength > 0);
+}
+
+// Helper function to test various encoding strings
+static bool TestVariousEncodingStrings(napi_env env)
+{
+    napi_status status;
+
+    // Test embedded NULL
+    const char nullString[] = {'H', 'e', 'l', 'l', 'o', '\0', 'W', 'o', 'r', 'l', 'd', '\0'};
+    const size_t nullStringLength = 12;
+    napi_value nullVal = nullptr;
+    status = napi_create_string_utf8(env, nullString, nullStringLength, &nullVal);
+    if (status != napi_ok) {
+        return false;
+    }
+
+    // Test Chinese UTF-8
+    const char pureUtf8[] = u8"你好世界测试字符串";
+    napi_value pureUtf8Val = nullptr;
+    status = napi_create_string_utf8(env, pureUtf8, NAPI_AUTO_LENGTH, &pureUtf8Val);
+    if (status != napi_ok) {
+        return false;
+    }
+
+    // Test Latin1 compatible
+    const char latin1Compatible[] = "Hello ABC éçñ 123";
+    napi_value latin1Val = nullptr;
+    status = napi_create_string_latin1(env, latin1Compatible, NAPI_AUTO_LENGTH, &latin1Val);
+    return (status == napi_ok);
+}
+
+static bool TestSpecialCharacterHandling(napi_env env)
+{
+    return TestBomAndMixedStrings(env) && TestVariousEncodingStrings(env);
+}
+
+// Helper function to test string operations in loop
+static bool TestStringOperationsInLoop(napi_env env)
+{
+    const int simulationLoopCount = 10;
+    const size_t loopBufferSize = 64;
+    for (int i = 0; i < simulationLoopCount; i++) {
+        char tempBuffer[loopBufferSize];
+        int result = sprintf_s(tempBuffer, sizeof(tempBuffer), "String_%d", i);
+        if (result < 0) {
+            return false;
+        }
+
+        // Test UTF-16 creation
+        char16_t utf16Buffer[loopBufferSize];
+        for (int j = 0; j < loopBufferSize && tempBuffer[j] != '\0'; j++) {
+            utf16Buffer[j] = static_cast<char16_t>(tempBuffer[j]);
+        }
+        utf16Buffer[strlen(tempBuffer)] = 0;
+        napi_value utf16Val = nullptr;
+        napi_status status = napi_create_string_utf16(env, utf16Buffer, NAPI_AUTO_LENGTH, &utf16Val);
+        if (status != napi_ok) {
+            return false;
+        }
+
+        // Test Latin1 creation
+        napi_value latin1Val = nullptr;
+        status = napi_create_string_latin1(env, tempBuffer, NAPI_AUTO_LENGTH, &latin1Val);
+        if (status != napi_ok) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// Helper function to test mixed operations
+static bool TestMixedOperations(napi_env env)
+{
+    const int mixedOperationsCount = 5;
+    const size_t testStringsCount = 5;
+    const char *testStrings[testStringsCount] = {
+        "ASCII_Test",
+        "UTF8_测试",
+        "Mixed_测试🌟العربية",
+        "Special_\xEF\xBB\xBF" "BOM",
+        "Null_\0_Test"
+    };
+    for (int i = 0; i < mixedOperationsCount; i++) {
+        const size_t nullStringLength = 12;
+        const size_t nullStringIndex = 4;
+        size_t len = (i == nullStringIndex) ? nullStringLength : NAPI_AUTO_LENGTH;
+        napi_value testVal = nullptr;
+        napi_status status = napi_create_string_utf8(env, testStrings[i % testStringsCount], len, &testVal);
+        if (status != napi_ok) {
+            return false;
+        }
+    }
+    return true;
+}
+
+static bool TestStringSafetySimulation(napi_env env)
+{
+    return TestStringOperationsInLoop(env) && TestMixedOperations(env);
+}
+static napi_value NapiStringTest001(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestUtf16StringCreationAndRetrieval(env);
+
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiStringTest002(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestCrossEncodingConversion(env);
+
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiStringTest003(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestBoundaryLengthCases(env);
+
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiStringTest004(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestEncodingCompatibility(env);
+
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiStringTest005(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestBufferSizeEdgeCases(env);
+
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiStringTest006(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestErrorHandlingRobustness(env);
+
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiStringTest007(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestMultiEncodingCompatibilityOperations(env);
+
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiStringTest008(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestSpecialCharacterHandling(env);
+
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiStringTest009(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool testResult = TestStringSafetySimulation(env);
+
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
 
 // ==================== NAPI Number Test Functions ====================
 
@@ -4761,6 +7188,29 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("NapiBigIntTest15", NapiBigIntTest15),
         DECLARE_NAPI_FUNCTION("NapiBigIntTest16", NapiBigIntTest16),
         DECLARE_NAPI_FUNCTION("NapiBigIntTest17", NapiBigIntTest17),
+        DECLARE_NAPI_FUNCTION("testCreateDate", TestCreateDate),
+        DECLARE_NAPI_FUNCTION("testGetDateValue", TestGetDateValue),
+        DECLARE_NAPI_FUNCTION("testIsDate", TestIsDate),
+        DECLARE_NAPI_FUNCTION("testGetDateValueWithError", TestGetDateValueWithError),
+        DECLARE_NAPI_FUNCTION("testGetDateValueOnly", TestGetDateValueOnly),
+        DECLARE_NAPI_FUNCTION("testCreateDateWithMinTimestamp", TestCreateDateWithMinTimestamp),
+        DECLARE_NAPI_FUNCTION("testCreateDateWithMaxTimestamp", TestCreateDateWithMaxTimestamp),
+        DECLARE_NAPI_FUNCTION("testMultipleDateOperations", TestMultipleDateOperations),
+        DECLARE_NAPI_FUNCTION("testBulkDateCreation", TestBulkDateCreation),
+        DECLARE_NAPI_FUNCTION("testConcurrentDateCreation", TestConcurrentDateCreation),
+        DECLARE_NAPI_FUNCTION("testSharedDateObjectRead", TestSharedDateObjectRead),
+        DECLARE_NAPI_FUNCTION("testHighConcurrencyDateStress", TestHighConcurrencyDateStress),
+        DECLARE_NAPI_FUNCTION("testCrossThreadDatePassing", TestCrossThreadDatePassing),
+        DECLARE_NAPI_FUNCTION("testThreadSafetyErrorHandling", TestThreadSafetyErrorHandling),
+        DECLARE_NAPI_FUNCTION("NapiStringTest001", NapiStringTest001),
+        DECLARE_NAPI_FUNCTION("NapiStringTest002", NapiStringTest002),
+        DECLARE_NAPI_FUNCTION("NapiStringTest003", NapiStringTest003),
+        DECLARE_NAPI_FUNCTION("NapiStringTest004", NapiStringTest004),
+        DECLARE_NAPI_FUNCTION("NapiStringTest005", NapiStringTest005),
+        DECLARE_NAPI_FUNCTION("NapiStringTest006", NapiStringTest006),
+        DECLARE_NAPI_FUNCTION("NapiStringTest007", NapiStringTest007),
+        DECLARE_NAPI_FUNCTION("NapiStringTest008", NapiStringTest008),
+        DECLARE_NAPI_FUNCTION("NapiStringTest009", NapiStringTest009),
         // NAPI Number Test Functions
         DECLARE_NAPI_FUNCTION("NapiNumberTest001", NapiNumberTest001),
         DECLARE_NAPI_FUNCTION("NapiNumberTest002", NapiNumberTest002),

@@ -63,26 +63,6 @@ export default function editMeunOptionsTest() {
     });
 
     /**
-     * @tc.number    editMeunOptionsTest_0200
-     * @tc.name      editMeunOptionsTest_0200
-     * @tc.desc      TextArea: editMeunOptions
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
-    it('editMeunOptionsTest_0200', Level.LEVEL2, async (done: Function) => {
-      console.info('editMeunOptionsTest_0200 START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('TextAreaEditMenuOptions'));
-      await button.longClick();
-      await CommonFunc.sleep(2000);
-      await driver.assertComponentExist(ON.text('Custom 2'));
-      console.info('editMeunOptionsTest_0200 END');
-      done();
-    });
-
-    /**
      * @tc.number    editMeunOptionsTest_0300
      * @tc.name      editMeunOptionsTest_0300
      * @tc.desc      TextInput: editMeunOptions
@@ -99,6 +79,26 @@ export default function editMeunOptionsTest() {
       await CommonFunc.sleep(2000);
       await driver.assertComponentExist(ON.text('Custom 2'));
       console.info('editMeunOptionsTest_0300 END');
+      done();
+    });
+
+    /**
+     * @tc.number    editMeunOptionsTest_0200
+     * @tc.name      editMeunOptionsTest_0200
+     * @tc.desc      TextArea: editMeunOptions
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
+     */
+    it('editMeunOptionsTest_0200', Level.LEVEL2, async (done: Function) => {
+      console.info('editMeunOptionsTest_0200 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
+      let button = await driver.findComponent(ON.id('TextAreaEditMenuOptions'));
+      await button.longClick();
+      await CommonFunc.sleep(2000);
+      await driver.assertComponentExist(ON.text('Custom 2'));
+      console.info('editMeunOptionsTest_0200 END');
       done();
     });
 

@@ -18,10 +18,13 @@ import Utils from './Utils';
 // import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 // @ts-nocheck
-let emitKey = "emitGetCertificateCallback";
+
 export default function webViewGetCertificate() {
   describe('ActsAceWebDevWebViewGetCertificateTest',  () =>{
     beforeAll(async  (done: Function) =>{
@@ -35,12 +38,13 @@ export default function webViewGetCertificate() {
         if (!("webViewGetCertificate" == pages.name)) {
           console.info("get webViewGetCertificate state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
           console.info("push webViewGetCertificate page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webViewGetCertificate page error: " + err);
       }
+      await driver.waitForComponent(ON.id("webViewGetCertificate"), 10000);
+      console.log("waitForComponent webViewGetCertificate");
       done()
     });
     beforeEach(async  (done: Function) =>{
@@ -49,39 +53,19 @@ export default function webViewGetCertificate() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webViewGetCertificate beforeEach start");
       done();
     })
-    afterEach(async  (done: Function) =>{
-      console.info("webViewGetCertificate afterEach start:" + emitKey);
-      try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent: events_emitter.InnerEvent = {
-                eventId:10,
-                priority:events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-      } catch (err) {
-            console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
-      done();
-    })
+
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_0100
      *tc.name testGetCertificateCallback
      *tc.desc test interface of getCertificate with callback
      */
     it('testGetCertificateCallback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
-      emitKey="emitGetCertificatePromise";
-      Utils.registerEvent("testGetCertificateCallback",true,403,done);
-      sendEventByKey('webViewGetCertificate',10,'');
+      Utils.emitEvent("emitGetCertificateCallback", 161010)
+      Utils.registerEvent("testGetCertificateCallback",true,161020,done);
+      await Utils.waitAndClickComponent(driver, "webViewGetCertificate");
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_0200
@@ -89,9 +73,9 @@ export default function webViewGetCertificate() {
      *tc.desc test interface of getCertificate with promise
      */
     it('testGetCertificatePromise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
-      emitKey="emitGetCertificatePromise";
-      Utils.registerEvent("testGetCertificatePromise",true,404,done);
-      sendEventByKey('webViewGetCertificate',10,'');
+      Utils.emitEvent("emitGetCertificatePromise", 161010)
+      Utils.registerEvent("testGetCertificatePromise",true,161030,done);
+      await Utils.waitAndClickComponent(driver, "webViewGetCertificate");
     })
   })
 }

@@ -25,6 +25,10 @@ sqlStatement = "CREATE TABLE IF NOT EXISTS product (" +
 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
 "name TEXT NOT NULL," +"price REAL," +
 "vendor INTEGER," +"describe TEXT)"
+
+const DROP_TABLE_TEST = "DROP TABLE IF EXISTS employee";
+const DROP_TABLE_TEST1 = "DROP TABLE IF EXISTS product";
+
 const TAG = "[RDB_JSKITS_TEST_Distributed]"
 const STORE_NAME = "distributed_rdb.db"
 var rdbStore = undefined;
@@ -72,16 +76,25 @@ describe('rdbStoreDistributedTest', function () {
         console.info(TAG + 'beforeAll')
         rdbStore = await dataRdb.getRdbStore(config, 1);
         console.info(TAG + "create rdb store success")
-        await executeSql1()
-        await executeSql2()
+
     })
 
     beforeEach(async function () {
         console.info(TAG + 'beforeEach')
+        await executeSql1()
+        await executeSql2()
+        const record = {
+            "name": "Jim",
+            "age": 20,
+        }
+        await rdbStore.insert("employee", record);
     })
 
     afterEach(async function () {
         console.info(TAG + 'afterEach')
+        await rdbStore.executeSql(DROP_TABLE_TEST, null);
+        await rdbStore.executeSql(DROP_TABLE_TEST1, null);
+
     })
 
     afterAll(async function () {
@@ -174,7 +187,7 @@ describe('rdbStoreDistributedTest', function () {
         try {
             let rowId = await rdbStore.insert("employee", record)
             console.info(TAG + "insert one record success " + rowId)
-            expect(1).assertEqual(rowId)
+            expect(2).assertEqual(rowId)
         } catch (err) {
             console.info(TAG + "insert one record failed" + err);
             expect(null).assertFail();
@@ -238,7 +251,7 @@ describe('rdbStoreDistributedTest', function () {
 
                 await expect(1).assertEqual(id);
                 await expect("Jim").assertEqual(name);
-                await expect(30).assertEqual(age);
+                await expect(20).assertEqual(age);
                 resultSet.close();
                 expect(true).assertEqual(resultSet.isClosed)
             } catch (e) {

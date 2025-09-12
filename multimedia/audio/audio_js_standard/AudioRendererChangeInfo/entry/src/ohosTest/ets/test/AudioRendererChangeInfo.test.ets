@@ -59,6 +59,11 @@ export default function audioRendererChange() {
     let Tag = 'AFRenLog';
     const AUDIOMANAGER = audio.getAudioManager();
     console.info(`${Tag} : Create AudioManger Object JS Framework`);
+    let sleepForPermissions = async () => {
+      console.info('getPermission sleep start: 10000ms')
+      await sleep(10000)
+      console.info('getPermission sleep end: 10000ms')
+    }
 
     let driveFn = async () => {
       let dr = Driver.create();
@@ -80,8 +85,6 @@ export default function audioRendererChange() {
 
     beforeAll(async () => {
       testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
-      await getPermission();
-      await driveFn();
       audioStreamManager =await  AUDIOMANAGER.getStreamManager();
       audioStreamManagerCB =await  AUDIOMANAGER.getStreamManager();
       await sleep(1000);

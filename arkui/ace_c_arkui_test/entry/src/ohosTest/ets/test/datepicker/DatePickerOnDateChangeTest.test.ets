@@ -35,7 +35,7 @@ export default function datePickerOnDateChangeTest() {
     * @tc.level      : Level 1
     */
     it('testDatePickerOnDateChange001', Level.LEVEL1, async (done: Function) => {
-      await Utils.flingComponent('datePickerOnDateChangeTest', false, true);
+      await Utils.pickerFlingComponent('datePickerOnDateChangeTest', false, true);
       await Utils.sleep(2000)
       expect(Utils.getComponentInfoByKey('datePickerOnDateChangeTest').$attrs.backgroundColor).assertEqual('#FF00FF00')
       done()

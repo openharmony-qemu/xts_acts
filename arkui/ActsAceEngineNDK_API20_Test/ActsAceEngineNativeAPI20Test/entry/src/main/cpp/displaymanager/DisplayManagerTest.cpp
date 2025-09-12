@@ -35,9 +35,12 @@ ArkUI_NativeNodeAPI_1* InitArkUI(napi_env env, napi_callback_info info)
 }
 
 void AiAnalysisFinish(ArkUI_NodeHandle node,
-                      ArkUI_XComponent_ImageAnalyzerState statusCode = ARKUI_XCOMPONENT_AI_ANALYSIS_FINISHED,
+                      ArkUI_XComponent_ImageAnalyzerState statusCode,
                       void *userData = nullptr)
 {
+    if (statusCode == ARKUI_XCOMPONENT_AI_ANALYSIS_FINISHED) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AiAnalysisFinish", "ARKUI_XCOMPONENT_AI_ANALYSIS_FINISHED");
+    }
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "StartImageAnalyzer_func", "StartImageAnalyzer_func");
     return;
 }

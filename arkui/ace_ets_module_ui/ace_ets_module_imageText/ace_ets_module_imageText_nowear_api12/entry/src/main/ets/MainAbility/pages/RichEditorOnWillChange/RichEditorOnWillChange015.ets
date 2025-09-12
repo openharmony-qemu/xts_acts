@@ -55,16 +55,20 @@ struct RichEditorOnWillChange015 {
         })
         .onWillChange((value: RichEditorChangeValue) => {
           console.log('RichEditorController：onWillChange');
-          console.log('RichEditorController：value' + JSON.stringify(value));
-          this.onWillChangeRangeBefore = JSON.stringify(value.rangeBefore);
-          this.replacedSpansCallback = JSON.stringify(value.replacedSpans);
-          value.replacedSpans.forEach((item: RichEditorTextSpanResult) => {
-            console.log('RichEditorController：replacedSpans');
-            console.log('RichEditorController item:' + JSON.stringify(item));
-            console.log('RichEditorController spanPosition spanIndex:' + JSON.stringify(item.spanPosition.spanIndex));
-            console.log('RichEditorController replacedSpans value:' + item.value);
-            console.log('RichEditorController replacedSpans value length:' + item.value.length);
-          })
+          try{
+            console.log('RichEditorController：value' + JSON.stringify(value));
+            this.onWillChangeRangeBefore = JSON.stringify(value.rangeBefore);
+            this.replacedSpansCallback = JSON.stringify(value.replacedSpans);
+            value.replacedSpans.forEach((item: RichEditorTextSpanResult) => {
+              console.log('RichEditorController：replacedSpans');
+              console.log('RichEditorController item:' + JSON.stringify(item));
+              console.log('RichEditorController spanPosition spanIndex:' + JSON.stringify(item.spanPosition.spanIndex));
+              console.log('RichEditorController replacedSpans value:' + item.value);
+              console.log('RichEditorController replacedSpans value length:' + item.value.length);
+            })
+          }catch(error){
+            console.error('Error in RichEditorOnWillChange015 onWillChange:', error);
+          }
           return true;
         })
         .aboutToDelete((value: RichEditorDeleteValue) => {
@@ -75,10 +79,14 @@ struct RichEditorOnWillChange015 {
         })
         .onDidChange((rangeBefore: TextRange, rangeAfter: TextRange) => {
           this.onDidChangeCallback = true;
-          console.log('RichEditorController onDidChange rangeBefore:' + JSON.stringify(rangeBefore));
-          this.onDidChangeRangeBefore = JSON.stringify(rangeBefore);
-          console.log('RichEditorController onDidChange rangeAfter:' + JSON.stringify(rangeAfter));
-          this.onDidRangeAfter = JSON.stringify(rangeAfter);
+          try{
+            console.log('RichEditorController onDidChange rangeBefore:' + JSON.stringify(rangeBefore));
+            this.onDidChangeRangeBefore = JSON.stringify(rangeBefore);
+            console.log('RichEditorController onDidChange rangeAfter:' + JSON.stringify(rangeAfter));
+            this.onDidRangeAfter = JSON.stringify(rangeAfter);
+          }catch(error){
+            console.error('Error in RichEditorOnWillChange015 onDidChange:', error);
+          }
         })
         .onCut((event: CutEvent) => {
           this.onCutCallback = true;

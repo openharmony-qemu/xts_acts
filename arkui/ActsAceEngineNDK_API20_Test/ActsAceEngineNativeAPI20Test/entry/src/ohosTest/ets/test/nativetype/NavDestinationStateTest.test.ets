@@ -39,10 +39,12 @@ export default function NavDestinationStateTest() {
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0100 start====");
           let com = await Utils.driver.findComponent(ON.id("goto"));
           await com.click();
-          await Utils.sleep(100);
+          await Utils.sleep(900);
           await Utils.triggerKey(2);
-          await Utils.sleep(100);
+          await Utils.sleep(900);
           let result: number = libnativetype.GetNavDestinationStateResult(0);
+          await Utils.triggerKey(2);
+          await Utils.sleep(900);
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0100 result: " + result);
           expect(result).assertEqual(1);
           done()
@@ -66,10 +68,12 @@ export default function NavDestinationStateTest() {
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0200 start====");
           let com = await Utils.driver.findComponent(ON.id("goto"));
           await com.click();
-          await Utils.sleep(100);
+          await Utils.sleep(900);
           await Utils.triggerKey(2);
-          await Utils.sleep(100);
+          await Utils.sleep(900);
           let result: number = libnativetype.GetNavDestinationStateResult(1);
+          await Utils.triggerKey(2);
+          await Utils.sleep(900);
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0200 result: " + result);
           expect(result).assertEqual(1);
           done()
@@ -93,10 +97,12 @@ export default function NavDestinationStateTest() {
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0300 start====");
           let com = await Utils.driver.findComponent(ON.id("goto"));
           await com.click();
-          await Utils.sleep(100);
+          await Utils.sleep(900);
           await Utils.triggerKey(2);
-          await Utils.sleep(100);
+          await Utils.sleep(900);
           let result: number = libnativetype.GetNavDestinationStateResult(2);
+          await Utils.triggerKey(2);
+          await Utils.sleep(900);
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0300 result: " + result);
           expect(result).assertEqual(1);
           done()
@@ -120,10 +126,12 @@ export default function NavDestinationStateTest() {
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0500 start====");
           let com = await Utils.driver.findComponent(ON.id("goto"));
           await com.click();
-          await Utils.sleep(100);
+          await Utils.sleep(900);
           await Utils.triggerKey(2);
-          await Utils.sleep(100);
+          await Utils.sleep(900);
           let result: number = libnativetype.GetNavDestinationStateResult(4);
+          await Utils.triggerKey(2);
+          await Utils.sleep(900);
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0500 result: " + result);
           expect(result).assertEqual(1);
           done()
@@ -147,10 +155,12 @@ export default function NavDestinationStateTest() {
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0900 start====");
           let com = await Utils.driver.findComponent(ON.id("goto"));
           await com.click();
-          await Utils.sleep(100);
+          await Utils.sleep(900);
           await Utils.triggerKey(2);
-          await Utils.sleep(100);
+          await Utils.sleep(900);
           let result: number = libnativetype.GetNavDestinationStateResult(100);
+          await Utils.triggerKey(2);
+          await Utils.sleep(900);
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0900 result: " + result);
           expect(result).assertEqual(1);
           done()

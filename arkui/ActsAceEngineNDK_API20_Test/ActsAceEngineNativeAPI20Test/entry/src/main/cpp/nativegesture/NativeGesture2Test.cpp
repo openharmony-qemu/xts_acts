@@ -347,9 +347,13 @@ napi_value GetDistanceByToolType0200(napi_env env, napi_callback_info info)
 napi_value GetDistanceByToolType0300(napi_env env, napi_callback_info info)
 {
     double distance = PARAM_0;
-    int32_t result = PARAM_1;
-    result = OH_ArkUI_PanGesture_GetDistanceByToolType(g_PanGesture2, UI_INPUT_EVENT_TOOL_TYPE_UNKNOWN, &distance);
+    int32_t result = PARAM_0;
+    result = OH_ArkUI_PanGesture_GetDistanceByToolType(g_PanGesture2, UI_INPUT_EVENT_TOOL_TYPE_UNKNOWN, &distance) ==
+             ARKUI_ERROR_CODE_NO_ERROR;
     napi_value retValue;
+    if (!result) {
+        napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
+    }
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "drag", "drag failed: %{public}d", result);
     napi_create_int32(env, distance - PARAM_1_POINT_5 <= PARMA_0_POINT_0001 &&
                       distance - PARAM_1_POINT_5 >= PARMA_NEGATIVE_0_POINT_0001 ?
@@ -437,11 +441,11 @@ napi_value createTapGestureWithDistanceThreshold0100(napi_env env, napi_callback
 
 napi_value gestureApi10100(napi_env env, napi_callback_info info)
 {
-    ArkUI_NativeGestureAPI_1 *gestureApi1 = nullptr;
-    gestureApi1 = reinterpret_cast<ArkUI_NativeGestureAPI_1 *>(
-        OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_GESTURE, "ArkUI_NativeGestureAPI_1"));
+    ArkUI_NativeGestureAPI_2 *gestureApi2 = nullptr;
+    gestureApi2 = reinterpret_cast<ArkUI_NativeGestureAPI_2 *>(
+        OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_GESTURE, "ArkUI_NativeGestureAPI_2"));
     napi_value retValue;
-    napi_create_int32(env, !(gestureApi1 != nullptr), &retValue);
+    napi_create_int32(env, !(gestureApi2->gestureApi1 != nullptr), &retValue);
     return retValue;
 }
 

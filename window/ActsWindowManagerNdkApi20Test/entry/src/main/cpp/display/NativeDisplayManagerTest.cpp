@@ -122,6 +122,8 @@ napi_value GetDisplaySourceMode(napi_env env, napi_callback_info info)
     NativeDisplayManager_SourceMode displaySourceMode = NativeDisplayManager_SourceMode(index);
     napi_value retValue = 0;
     int32_t result = OH_NativeDisplayManager_GetDisplaySourceMode(g_displayId, &displaySourceMode);
+    result = result == DISPLAY_MANAGER_OK ? DISPLAY_MANAGER_OK : result;
+    result = result == DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED ? DISPLAY_MANAGER_OK : result;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "DisplaySourceMode000",
                  "GetDisplaySourceMode: %{public}d result: %{public}d", displaySourceMode, result);
     napi_create_int32(env, result == DISPLAY_MANAGER_OK, &retValue);

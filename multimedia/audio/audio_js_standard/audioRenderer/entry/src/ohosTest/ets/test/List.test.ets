@@ -27,6 +27,7 @@ import audioLoudnessGainTest from  './AudioLoudnessGain.test'
 let voice = call.hasVoiceCapability()
 export default function testsuite() {
     if (voice){
+        audioLoudnessGainTest()
         audioSessionManagerTest()
         audioRendererTest()
         AudioRendererInterruptUnitTest()
@@ -36,7 +37,4 @@ export default function testsuite() {
     }else{
         audioRendererTestPc();
     }
-    audioLoudnessGainTest()
-        
-    
 }

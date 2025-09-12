@@ -49,7 +49,9 @@ struct MenuApi1 {
   build() {
     Column({ space: 20 }) {
       Button('bindMenu')
-        .bindMenu(this.MyMenu)
+        .bindMenu(this.MyMenu, {
+          showInSubWindow: false
+        })
         .width('100%')
         .id('MenuApi1_btn1')
     }

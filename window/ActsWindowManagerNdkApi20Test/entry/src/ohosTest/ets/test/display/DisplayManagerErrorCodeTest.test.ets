@@ -32,7 +32,7 @@ export default function DisplayManagerErrorCodeTest() {
     it('testNativeDisplayManagerErrorCode0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_ERROR_0300';
       try{
-        let result  = windowndkapi20.DisplayManagerErrorCode401();
+        let result = windowndkapi20.DisplayManagerErrorCode401();
         console.log(`${caseName} result: ${JSON.stringify(result)}`);
         expect(result).assertEqual(401);
         done();
@@ -92,7 +92,7 @@ export default function DisplayManagerErrorCodeTest() {
     it('testNativeDisplayManagerErrorCode0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_ERROR_0800';
       try{
-        let result  = windowndkapi20.DisplayManagerErrorCode1400004();
+        let result = windowndkapi20.DisplayManagerErrorCode1400004();
         console.log(`${caseName} result: ${JSON.stringify(result)}`);
         expect(result).assertEqual(1400004);
         done();

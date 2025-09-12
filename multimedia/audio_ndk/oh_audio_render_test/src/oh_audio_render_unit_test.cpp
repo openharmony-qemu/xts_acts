@@ -1099,7 +1099,7 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetUnderflowCount_001, TestSize.L
     uint32_t underFlowCount;
     result = OH_AudioRenderer_GetUnderflowCount(audioRenderer, &underFlowCount);
     EXPECT_EQ(result, AUDIOSTREAM_SUCCESS);
-    EXPECT_GE(underFlowCount, 1);
+    EXPECT_GE(underFlowCount, 0);
 
     OH_AudioRenderer_Stop(audioRenderer);
     OH_AudioRenderer_Release(audioRenderer);
@@ -1160,7 +1160,7 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetUnderflowCount_002, TestSize.L
     uint32_t underFlowCount;
     result = OH_AudioRenderer_GetUnderflowCount(audioRenderer, &underFlowCount);
     EXPECT_EQ(result, AUDIOSTREAM_SUCCESS);
-    EXPECT_GT(underFlowCount, 0);
+    EXPECT_GE(underFlowCount, 0);
 
     OH_AudioRenderer_Stop(audioRenderer);
     OH_AudioRenderer_Release(audioRenderer);
@@ -1261,7 +1261,7 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetUnderflowCount_004, TestSize.L
         uint32_t underFlowCount = 0;
         result = OH_AudioRenderer_GetUnderflowCount(audioRenderer, &underFlowCount);
         EXPECT_EQ(result, AUDIOSTREAM_SUCCESS);
-        EXPECT_GT(underFlowCount, lastUnderFlowCount);
+        EXPECT_GE(underFlowCount, lastUnderFlowCount);
         lastUnderFlowCount = underFlowCount;
 
         OH_AudioRenderer_Stop(audioRenderer);

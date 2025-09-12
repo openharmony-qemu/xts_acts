@@ -15,12 +15,16 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level } from '@ohos/hypium';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
-// import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponents } from './WaitTest.test';
+import { Driver, ON } from '@kit.TestKit';
+
+const driver = Driver.create();
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-let emitKey = "emitStoreWebArchiveCallbackSaveFail";
+
 export default function storeWebArchiveSaveFail() {
   describe('ActsAceWebControllerTest', () =>{
     beforeAll(async  (done: Function) => {
@@ -34,13 +38,12 @@ export default function storeWebArchiveSaveFail() {
         if (!("storeWebArchiveSaveFail" == pages.name)) {
           console.info("get storeWebArchiveSaveFail state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
           console.info("push storeWebArchiveSaveFail page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push storeWebArchiveSaveFail page error: " + err);
       }
-      await Utils.sleep(2000);
+      await waitForComponents('webcomponent03');
       done()
     })
     beforeEach(async (done: Function) => {
@@ -53,23 +56,7 @@ export default function storeWebArchiveSaveFail() {
       done();
     })
     afterEach(async (done: Function) =>{
-      console.info("ActsAceWebControllerTest afterEach start:"+emitKey);
-      try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent: events_emitter.InnerEvent = {
-                eventId:10,
-                priority:events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-      } catch (err) {
-            console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
+      console.info("ActsAceWebControllerTest afterEach start");
       console.info("ActsAceWebControllerTest afterEach end");
       done();
     })
@@ -80,9 +67,13 @@ export default function storeWebArchiveSaveFail() {
      *tc.desic test storeWebArchiveCallback interface when save file failed.
      */
     it('testStoreWebArchiveCallback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
-      emitKey="emitStoreWebArchivePromiseSaveFail";
-      Utils.registerEvent("testStoreWebArchiveCallback","/data/storage/el2/base/index.html-1.mht",138,done);
-      sendEventByKey('webcomponent03',10,'');
+      Utils.emitEvent("emitStoreWebArchiveCallbackSaveFail", 132230);
+      Utils.registerBaseEvent("testStoreWebArchiveCallback","17100003Invalid resource path or file type",
+        132240, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'webcomponent03');
     })
 
     /*
@@ -91,9 +82,13 @@ export default function storeWebArchiveSaveFail() {
      *tc.desic test storeWebArchivePromise interface when save file failed.
      */
     it('testStoreWebArchivePromise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-
-      Utils.registerEvent("testStoreWebArchivePromise","/data/storage/el2/base/index.html-3.mht",140,done);
-      sendEventByKey('webcomponent03',10,'');
+      Utils.emitEvent("emitStoreWebArchivePromiseSaveFail", 132230);
+      Utils.registerBaseEvent("testStoreWebArchivePromise","17100003Invalid resource path or file type",
+        132250, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'webcomponent03');
     })
   })
 }

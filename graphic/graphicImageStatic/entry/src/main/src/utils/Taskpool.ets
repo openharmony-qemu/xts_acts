@@ -20,7 +20,7 @@ import image from '@ohos.multimedia.image';
     let task = new taskpool.Task(pixelTest, pixelMap);
     taskpool.execute(task) as Object;
   } catch (err) {
-    console.error('www data execute error');
+    console.info('www data execute error' + err);
   }
  }
 

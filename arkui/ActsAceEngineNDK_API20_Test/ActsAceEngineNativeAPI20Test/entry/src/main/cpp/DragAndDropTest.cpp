@@ -31,8 +31,8 @@ napi_value DragAndDropTest01(napi_env env, napi_callback_info info)
     ArkUI_NumberValue value[] = {{.f32 = size}};
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(text, NODE_FONT_SIZE, &valueItem);
-    auto returnValue = OH_ArkUI_SetNodeDraggable(text, true);
-    if ((returnValue) != (SUCCESS)) {
+    auto returnValue = OH_ArkUI_SetNodeDraggable(text, true) == ARKUI_ERROR_CODE_NO_ERROR;
+    if (!returnValue) {
         std::string assertStr = "assert equal failed, expect is " + std::to_string(SUCCESS) + " and result is " +
                                 std::to_string(returnValue);
         napi_throw_error((env), nullptr, assertStr.c_str());

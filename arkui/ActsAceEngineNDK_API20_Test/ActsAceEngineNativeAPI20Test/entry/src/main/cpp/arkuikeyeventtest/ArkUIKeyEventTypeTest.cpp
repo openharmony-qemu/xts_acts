@@ -64,6 +64,23 @@ napi_value CreateNativeNode(napi_env env, napi_callback_info info)
     return nullptr;
 }
 
+ArkUI_KeyEventType CheckKeyEventType(int32_t KeyEventType)
+{
+    if (KeyEventType == ARKUI_KEY_EVENT_UNKNOWN) {
+        return ARKUI_KEY_EVENT_UNKNOWN;
+    } else if (KeyEventType == ARKUI_KEY_EVENT_DOWN) {
+        return ARKUI_KEY_EVENT_DOWN;
+    } else if (KeyEventType == ARKUI_KEY_EVENT_UP) {
+        return ARKUI_KEY_EVENT_UP;
+    } else if (KeyEventType == ARKUI_KEY_EVENT_LONG_PRESS) {
+        return ARKUI_KEY_EVENT_LONG_PRESS;
+    } else if (KeyEventType == ARKUI_KEY_EVENT_CLICK) {
+        return ARKUI_KEY_EVENT_CLICK;
+    } else {
+        return ArkUI_KeyEventType(PARAM_NEGATIVE_2);
+    }
+}
+
 napi_value GetArkuiKeyEventType(napi_env env, napi_callback_info info)
 {
     if ((env == nullptr) || (info == nullptr)) {
@@ -81,7 +98,7 @@ napi_value GetArkuiKeyEventType(napi_env env, napi_callback_info info)
     }
     int32_t getParam;
     napi_get_value_int32(env, args[0], &getParam);
-    ArkUI_KeyEventType KeyEventType = ArkUI_KeyEventType(getParam);
+    ArkUI_KeyEventType KeyEventType = CheckKeyEventType(getParam);
     if (g_keyEventMap.count(KeyEventType) == 1) {
         napi_create_int32(env, 1, &args[0]);
     } else {

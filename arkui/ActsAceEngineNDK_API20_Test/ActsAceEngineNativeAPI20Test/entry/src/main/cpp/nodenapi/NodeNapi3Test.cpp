@@ -44,8 +44,8 @@ napi_value CreateDrawableDescriptor(napi_env env, napi_callback_info info)
   
      // 获取drawableDescriptor
     ArkUI_DrawableDescriptor *drawableDescriptor;
-    g_nodenapiresult4 = OH_ArkUI_GetDrawableDescriptorFromNapiValue(env, args[0], &drawableDescriptor);
-    
+    g_nodenapiresult4 = OH_ArkUI_GetDrawableDescriptorFromNapiValue(env, args[0], &drawableDescriptor) ==
+                        ARKUI_ERROR_CODE_NO_ERROR;
     ArkUI_NativeNodeAPI_1* nodeAPI = nullptr;
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
     // set parent node
@@ -62,7 +62,7 @@ napi_value CreateDrawableDescriptor(napi_env env, napi_callback_info info)
 napi_value GetDrawableDescriptorFromNapiValueTest_001(napi_env env, napi_callback_info info)
 {
     napi_value retValue;
-    napi_create_int32(env, g_nodenapiresult4 == ARKUI_ERROR_CODE_NO_ERROR ? 0 : 1, &retValue);
+    napi_create_int32(env, g_nodenapiresult4 ? 0 : 1, &retValue);
     return retValue;
 }
 

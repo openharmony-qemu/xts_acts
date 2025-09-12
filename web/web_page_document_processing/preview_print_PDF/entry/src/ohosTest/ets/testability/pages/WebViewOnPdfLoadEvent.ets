@@ -34,10 +34,14 @@ struct WebComponent {
   @State Scrollresult:number = 0;
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 300620,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide(): void {
+    events_emitter.off(300620)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -55,6 +59,7 @@ struct WebComponent {
         Button('web click')
           .key('WebViewOnPdfLoadEventKey')
           .onClick(async () => {
+            console.info("***************")
             await waitForExist(()=>this.isReceive, this.emitKey, 0);
             console.info('key==>' + this.emitKey);
             this.isReceive = -1;
@@ -63,25 +68,27 @@ struct WebComponent {
             let Y = Utils.getRectVerticalCenterY(webRect)
             switch (this.emitKey) {
               case 'emitwebViewWebViewOnPdfLoadEvent001': {
+                console.info('emitwebViewWebViewOnPdfLoadEvent001*************')
                 await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
                 console.log('eventInfoUrl' + this.eventInfoUrl)
                 if(canIUse('SystemCapability.Security.DiaService')) {
-                   Utils.emitEvent(this.eventInfoUrl,20250822)
+                   Utils.emitEvent(this.eventInfoUrl,300630)
                    console.log('emitwebViewWebViewOnPdfLoadEvent001'+this.eventInfoUrl)
                 } else {
-                    Utils.emitEvent('resource://rawfile/printTemplate.pdf',20250822)
+                    Utils.emitEvent('resource://rawfile/printTemplate.pdf',300630)
                 }
                 break;
               }
 
               case 'emitwebViewWebViewOnPdfLoadEvent002': {
+                console.info('emitwebViewWebViewOnPdfLoadEvent002*************')
                 await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
                 console.log('result' + this.result)
                  if(canIUse('SystemCapability.Security.DiaService')) {
-                     Utils.emitEvent(this.result,20250823)
+                     Utils.emitEvent(this.result,300640)
                      console.log('emitwebViewWebViewOnPdfLoadEvent002'+this.eventInfoUrl)
                  } else {
-                     Utils.emitEvent(0,20250823)
+                     Utils.emitEvent(0,300640)
                  }
                 break;
               }

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
+import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
 import nativexcomponent from 'libnativexcomponent.so';
 import Utils from "../common/Utils";
 import { ON, Component, Point } from '@kit.TestKit';
@@ -22,7 +22,7 @@ export default function ListItemGroupAreaTest() {
   describe('ListItemGroupAreaTest', () => {
     let Component: Component;
     let ComponentPoint: Point;
-    beforeAll(async (done: Function) => {
+    beforeEach(async (done: Function) => {
       await Utils.pushPageNoClear(`componentapi/ListItemGroupArea`);
       Component = await Utils.driver.findComponent(ON.id('SwiperList'));
       ComponentPoint = await Component.getBoundsCenter();

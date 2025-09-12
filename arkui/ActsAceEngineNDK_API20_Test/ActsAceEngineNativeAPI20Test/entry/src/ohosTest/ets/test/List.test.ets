@@ -84,6 +84,8 @@ import ErrorCodeTest1 from './nativetype/ErrorCodeTest1.test'
 import NavigationErrorCodeTest from './nativetype/NavigationErrorCodeTest.test'
 
 export default function testsuite() {
+  NavDestinationStateTest()
+  RouterPageStateTest()
   NavigationTest()
   NativeXComponent()
   TouchPointTest()
@@ -132,8 +134,6 @@ export default function testsuite() {
   NativeGestureTypeTest()
   ActsUIInputEventNdkTest()
   NativeTypeTest()
-  NavDestinationStateTest()
-  RouterPageStateTest()
   SwiperMaxDisplayCountTest()
   CustomSpanMetricsTest()
   SnapshotOptionsSetScaleTest()

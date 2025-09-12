@@ -15,12 +15,16 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level } from '@ohos/hypium';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
-// import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponents } from './WaitTest.test';
+import { Driver, ON } from '@kit.TestKit';
+
+const driver = Driver.create();
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-let emitKey = "emitStoreWebArchiveCallback";  
+
 export default function storeWebArchive() {
   describe('ActsAceWebControllerTest1',  () =>{
     beforeAll(async  (done: Function) => {
@@ -34,67 +38,58 @@ export default function storeWebArchive() {
         if (!("storeWebArchive" == pages.name)) {
           console.info("get storeWebArchive state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
           console.info("push storeWebArchive page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push storeWebArchive page error: " + err);
       }
-      await Utils.sleep(2000);
+      await waitForComponents('webcomponent02');
       done()
     })
     beforeEach(async  (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
       console.info("web beforeEach start");
       done();
     })
     afterEach(async (done: Function) =>{
-      console.info("ActsAceWebControllerTest afterEach start:"+emitKey);
-      try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent: events_emitter.InnerEvent = {
-                eventId:10,
-                priority:events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-      } catch (err) {
-            console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
+      console.info("ActsAceWebControllerTest afterEach start");
       console.info("ActsAceWebViewOnWindowNewJsunitTest afterEach end");
       done();
     })
 
 
-      /*
-     *tc.number SUB_ACE_BASIC_ETS_STOREWEBARCHIVE_API_003
-     *tc.name testStoreWebArchiveCallback
-     *tc.desic test storeWebArchive interface when choose Callback mode and autoName parameter is ture.
-     */
+    /*
+   *tc.number SUB_ACE_BASIC_ETS_STOREWEBARCHIVE_API_003
+   *tc.name testStoreWebArchiveCallback
+   *tc.desic test storeWebArchive interface when choose Callback mode and autoName parameter is ture.
+   */
     it('testStoreWebArchiveCallback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitStoreWebArchiveCallbackFalse";
-      Utils.registerEvent("testStoreWebArchiveCallback","/data/storage/el2/base/index.html.mht",130,done);
-      sendEventByKey('webcomponent02',10,'');
+      Utils.emitEvent("emitStoreWebArchiveCallback", 132180);
+      Utils.registerBaseEvent("testStoreWebArchiveCallback","/data/storage/el3/base/index.html.mht",
+        132190, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'webcomponent02');
     })
 
-      /*
-     *tc.number SUB_ACE_BASIC_ETS_STOREWEBARCHIVE_API_004
-     *tc.name testStoreWebArchiveCallbackFalse
-     *tc.desic test storeWebArchive interface when choose Callback mode and autoName parameter is false.
-     */
+    /*
+   *tc.number SUB_ACE_BASIC_ETS_STOREWEBARCHIVE_API_004
+   *tc.name testStoreWebArchiveCallbackFalse
+   *tc.desic test storeWebArchive interface when choose Callback mode and autoName parameter is false.
+   */
     it('testStoreWebArchiveCallbackFalse',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitStoreWebArchivePromise";
-      Utils.registerEvent("testStoreWebArchiveCallbackFalse","/data/storage/el2/base/index.html.mht",132,done);
-      sendEventByKey('webcomponent02',10,'');
+      Utils.emitEvent("emitStoreWebArchiveCallbackFalse", 132180);
+      Utils.registerBaseEvent("testStoreWebArchiveCallbackFalse","/data/storage/el3/base/index.html.mht",
+        132200, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'webcomponent02');
     })
 
     /*
@@ -103,9 +98,13 @@ export default function storeWebArchive() {
      *tc.desic test storeWebArchive interface when choose Promise mode and autoName parameter is ture.
      */
     it('testStoreWebArchivePromise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitStoreWebArchivePromiseFlase";
-      Utils.registerEvent("testStoreWebArchivePromise","/data/storage/el2/base/index.html-0.mht",134,done);
-      sendEventByKey('webcomponent02',10,'');
+      Utils.emitEvent("emitStoreWebArchivePromise", 132180);
+      Utils.registerBaseEvent("testStoreWebArchivePromise","/data/storage/el1/base/index.html.mht",
+        132210, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'webcomponent02');
     })
 
     /*
@@ -114,8 +113,13 @@ export default function storeWebArchive() {
      *tc.desic test storeWebArchive interface when choose Promise mode and autoName parameter is false.
      */
     it('testStoreWebArchivePromiseFalse',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      Utils.registerEvent("testStoreWebArchivePromiseFalse","/data/storage/el2/base/index.html-2.mht",136,done);
-      sendEventByKey('webcomponent02',10,'');
+      Utils.emitEvent('emitStoreWebArchivePromiseFlase', 132180);
+      Utils.registerBaseEvent("testStoreWebArchivePromiseFalse","/data/storage/el1/base/index.html-2.mht",
+        132220, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'webcomponent02');
     })
   })
 }

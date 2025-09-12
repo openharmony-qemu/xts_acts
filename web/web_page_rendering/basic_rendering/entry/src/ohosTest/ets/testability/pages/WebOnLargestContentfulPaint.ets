@@ -94,16 +94,26 @@ struct WebOnLargestContentfulPaint {
                 await Utils.sleep(2000);
                 this.controller.loadUrl('https://www.iana.org/help/example-domains');
                 await Utils.sleep(5000);
-                if (
-                  this.text[0] != 0
-                    && this.text[1] != 0
-                    && this.text[2] != 0
-                    && this.text[3] != 0
-                    && this.text[4] != 0
-                    && this.text[5] != 0
-                ) {
-                  value = true;
+                let nums=1;
+                let tryTime=200
+                while(nums < tryTime) {
+                  await Utils.sleep(1000);
+                  if (
+                    this.text[0] != 0
+                      && this.text[1] != 0
+                      && this.text[2] != 0
+                      && this.text[3] != 0
+                      && this.text[4] != 0
+                      && this.text[5] != 0
+                  ) {
+                    value = true;
+                    console.log('OnLargestContentfulPaint0200---' + value)
+                    break;
+                  }
+                  console.log('OnLargestContentfulPaint0200pbb--' + nums)
+                  nums++;
                 }
+
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }

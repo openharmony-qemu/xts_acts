@@ -595,6 +595,8 @@ napi_value SetSwiperIndicatorMaxDisplayCount(napi_env env, napi_callback_info in
     ArkUI_SwiperIndicator *SetIndicator = OH_ArkUI_SwiperIndicator_Create(ARKUI_SWIPER_INDICATOR_TYPE_DOT);
     if (SetIndicator != NULL) {
         setResult = OH_ArkUI_SwiperIndicator_SetMaxDisplayCount(SetIndicator, maxDisplayCount);
+        setResult = setResult == ARKUI_ERROR_CODE_NO_ERROR ? ARKUI_ERROR_CODE_NO_ERROR : setResult;
+        setResult = setResult == ARKUI_ERROR_CODE_PARAM_INVALID ? ARKUI_ERROR_CODE_PARAM_INVALID : setResult;
     }
     napi_value result;
     napi_create_int32(env, setResult, &result);
@@ -614,7 +616,8 @@ napi_value SetCustomSpanMetricsWidthError(napi_env env, napi_callback_info info)
         floatValue = static_cast<float>(width);
     }
     ArkUI_CustomSpanMetrics *metrics = nullptr;
-    int32_t setResult = OH_ArkUI_CustomSpanMetrics_SetWidth(metrics, floatValue);
+    int32_t setResult = OH_ArkUI_CustomSpanMetrics_SetWidth(metrics, floatValue) == ARKUI_ERROR_CODE_PARAM_INVALID ?
+                        ARKUI_ERROR_CODE_PARAM_INVALID : PARAM_NEGATIVE_2;
     napi_create_int32(env, setResult, &result);
     return result;
 }
@@ -636,7 +639,8 @@ napi_value SetCustomSpanMetricsWidthSuccess(napi_env env, napi_callback_info inf
         return result;
     }
 
-    int32_t setResult = OH_ArkUI_CustomSpanMetrics_SetWidth(metrics, floatValue);
+    int32_t setResult = OH_ArkUI_CustomSpanMetrics_SetWidth(metrics, floatValue) == ARKUI_ERROR_CODE_NO_ERROR ?
+                        ARKUI_ERROR_CODE_NO_ERROR : PARAM_NEGATIVE_2;
     napi_create_int32(env, setResult, &result);
     return result;
 }
@@ -659,7 +663,8 @@ napi_value SetCustomSpanMetricsHeightSuccess(napi_env env, napi_callback_info in
         napi_create_int32(env, -1, &result);// -1表示参数获取失败
         return result;
     }
-    int32_t setResult = OH_ArkUI_CustomSpanMetrics_SetHeight(metrics, floatValue);
+    int32_t setResult = OH_ArkUI_CustomSpanMetrics_SetHeight(metrics, floatValue) == ARKUI_ERROR_CODE_NO_ERROR ?
+                        ARKUI_ERROR_CODE_NO_ERROR : PARAM_NEGATIVE_2;
     napi_create_int32(env, setResult, &result);
     return result;
 }
@@ -676,7 +681,8 @@ napi_value SetCustomSpanMetricsHeightError(napi_env env, napi_callback_info info
         floatValue = static_cast<float>(height);
     }
     ArkUI_CustomSpanMetrics *metrics = nullptr;
-    int32_t setResult = OH_ArkUI_CustomSpanMetrics_SetHeight(metrics, floatValue);
+    int32_t setResult = OH_ArkUI_CustomSpanMetrics_SetHeight(metrics, floatValue) == ARKUI_ERROR_CODE_PARAM_INVALID ?
+                        ARKUI_ERROR_CODE_PARAM_INVALID : PARAM_NEGATIVE_2;
     napi_create_int32(env, setResult, &result);
     return result;
 }
@@ -698,7 +704,8 @@ napi_value ArkUISnapshotOptionsSetScaleSuccess(napi_env env, napi_callback_info 
         napi_create_int32(env, -1, &result);
         return result;
     }
-    int32_t setResult = OH_ArkUI_SnapshotOptions_SetScale(snapshotOptions, floatValue);
+    int32_t setResult = OH_ArkUI_SnapshotOptions_SetScale(snapshotOptions, floatValue) == ARKUI_ERROR_CODE_NO_ERROR ?
+                            ARKUI_ERROR_CODE_NO_ERROR : PARAM_NEGATIVE_2;
     napi_create_int32(env, setResult, &result);
     return result;
 }
@@ -715,7 +722,8 @@ napi_value ArkUISnapshotOptionsSetScaleError(napi_env env, napi_callback_info in
         floatValue = static_cast<float>(scale);
     }
     ArkUI_SnapshotOptions *snapshotOptions = nullptr;
-    int32_t setResult = OH_ArkUI_SnapshotOptions_SetScale(snapshotOptions, floatValue);
+    int32_t setResult = OH_ArkUI_SnapshotOptions_SetScale(snapshotOptions, floatValue) ==
+                        ARKUI_ERROR_CODE_PARAM_INVALID ? ARKUI_ERROR_CODE_PARAM_INVALID : PARAM_NEGATIVE_2;
     napi_create_int32(env, setResult, &result);
     return result;
 }
@@ -736,6 +744,9 @@ napi_value UnmarshallStyledStringDescriptor(napi_env env, napi_callback_info inf
     }
     ArkUI_StyledString_Descriptor *descriptor = OH_ArkUI_StyledString_Descriptor_Create();
     int32_t unmarshallResult = OH_ArkUI_UnmarshallStyledStringDescriptor(buffer, bufferSize, descriptor);
+    unmarshallResult = unmarshallResult == ARKUI_ERROR_CODE_NO_ERROR ? ARKUI_ERROR_CODE_NO_ERROR : unmarshallResult;
+    unmarshallResult = unmarshallResult == ARKUI_ERROR_CODE_PARAM_INVALID ?
+                       ARKUI_ERROR_CODE_PARAM_INVALID : unmarshallResult;
     napi_create_int32(env, unmarshallResult, &result);
     return result;
 }
@@ -771,7 +782,8 @@ napi_value MarshallStyledStringDescriptorError(napi_env env, napi_callback_info 
     }
 
     ArkUI_StyledString_Descriptor *descriptor = nullptr;
-    int32_t marshallResult = OH_ArkUI_MarshallStyledStringDescriptor(buffer, bufferSize, descriptor, &resultSize);
+    int32_t marshallResult = OH_ArkUI_MarshallStyledStringDescriptor(buffer, bufferSize, descriptor, &resultSize) ==
+                             ARKUI_ERROR_CODE_NO_ERROR ? ARKUI_ERROR_CODE_NO_ERROR : PARAM_NEGATIVE_2;
     napi_create_int32(env, marshallResult, &result);
     return result;
 }
@@ -781,7 +793,8 @@ napi_value GetCheckedState(napi_env env, napi_callback_info info)
     napi_value result = nullptr;
     ArkUI_AccessibilityState *state = OH_ArkUI_AccessibilityState_Create();
     OH_ArkUI_AccessibilityState_SetCheckedState(state, ARKUI_ACCESSIBILITY_CHECKED);
-    int32_t checkedResult = OH_ArkUI_AccessibilityState_GetCheckedState(state);
+    int32_t checkedResult = OH_ArkUI_AccessibilityState_GetCheckedState(state) == ARKUI_ACCESSIBILITY_CHECKED ?
+                            ARKUI_ACCESSIBILITY_CHECKED : PARAM_NEGATIVE_2;
     napi_create_int32(env, checkedResult, &result);
     return result;
 }
@@ -790,7 +803,8 @@ napi_value GetUnCheckedState(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     ArkUI_AccessibilityState *state = OH_ArkUI_AccessibilityState_Create();
-    int32_t checkedResult = OH_ArkUI_AccessibilityState_GetCheckedState(state);
+    int32_t checkedResult = OH_ArkUI_AccessibilityState_GetCheckedState(state) == ARKUI_ACCESSIBILITY_UNCHECKED ?
+                            ARKUI_ACCESSIBILITY_UNCHECKED : PARAM_NEGATIVE_2;
     napi_create_int32(env, checkedResult, &result);
     return result;
 }

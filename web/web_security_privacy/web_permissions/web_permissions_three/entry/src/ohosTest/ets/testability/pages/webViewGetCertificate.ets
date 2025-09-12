@@ -21,6 +21,7 @@ import Utils from '../../test/Utils';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import web_webview from '@ohos.web.webview';
 import cert from '@ohos.security.cert';
+import {waitForExist} from '../../test/WaitTest';
 
 function Uint8ArrayToString(dataArray: Uint8Array) {
   let dataString = ''
@@ -56,14 +57,21 @@ struct webViewGetCertificate {
   @State userAgent: string = "Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.88 Mobile Safari/537.36";
   @State outputStr: string = ''
   @State certificateResult: boolean = false;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 161010,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
+
+  onPageHide() {
+    events_emitter.off(161010)
+  }
+
 
   private valueChangeCallBack = (eventData:events_emitter.EventData) => {
     console.info("webViewGetCertificate page valueChangeCallBack");
@@ -71,6 +79,7 @@ struct webViewGetCertificate {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -79,12 +88,15 @@ struct webViewGetCertificate {
     Column() {
       Row() {
         Button("getCertTest").key('webViewGetCertificate').onClick(async () => {
-          console.info("key==>" + this.str)
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
+          console.info('key==>' + this.str)
           switch (this.str) {
             case "emitGetCertificateCallback": {
               try {
+                this.isPageEnd = -1;
                 this.controller.loadUrl('https://expired.badssl.com');
-                await Utils.sleep(2000);
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.getCertificate((error, x509CertArray) => {
                   if (error) {
                     this.outputStr = 'getCertificate failed: ' + error.code + ", errMsg: " + error.message;
@@ -103,15 +115,16 @@ struct webViewGetCertificate {
                 this.certificateResult = true
               }
               this.controller.runJavaScript("test()", (res) => {
-                Utils.emitEvent(this.certificateResult, 403)
+                Utils.emitEvent(this.certificateResult, 161020)
               })
               break;
             }
             case "emitGetCertificatePromise": {
               try {
                 this.controller.clearHistory();
+                this.isPageEnd = -1;
                 this.controller.loadUrl('https://expired.badssl.com');
-                await Utils.sleep(2000);
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.getCertificate().then(x509CertArray => {
                   this.outputStr = ParseX509CertInfo(x509CertArray);
                 })
@@ -126,7 +139,7 @@ struct webViewGetCertificate {
                 this.certificateResult = true
               }
               this.controller.runJavaScript("test()", (res) => {
-                Utils.emitEvent(this.certificateResult, 404)
+                Utils.emitEvent(this.certificateResult, 161030 )
               })
               break;
             }
@@ -143,6 +156,7 @@ struct webViewGetCertificate {
         .databaseAccess(this.databaseAccess)
         .userAgent(this.userAgent)
         .onPageEnd((e) => {
+          this.isPageEnd = 0;
           this.outputStr = 'onPageEnd : url = ' + e.url
         })
         .onSslErrorEventReceive((e) => {

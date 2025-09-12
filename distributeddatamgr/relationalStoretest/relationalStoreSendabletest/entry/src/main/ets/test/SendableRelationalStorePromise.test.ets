@@ -34,6 +34,7 @@ const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS " + TABLE + " (" +
   "bigValue UNLIMITED INT, " +
   "data1 ASSET, " +
   "data2 ASSETS)";
+const DROP_TABLE_TEST = "DROP TABLE IF EXISTS test";
 const asset1: relationalStore.Asset = {
   name: 'hangman',
   uri: '//path/example',
@@ -138,19 +139,23 @@ export default function rdbStoreSendableTest() {
       console.info(TAG + 'beforeAll');
       try {
         rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
-        await rdbStore.executeSql(CREATE_TABLE_TEST);
       } catch (err) {
         console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
       }
       done();
     });
 
-    beforeEach(() => {
+    beforeEach(async() => {
       console.info(TAG + 'beforeEach');
+      await rdbStore?.executeSql(CREATE_TABLE_TEST,null);
+      let sendableValuesBucket1: sendableRelationalStore.ValuesBucket = sendableRelationalStore.toSendableValuesBucket(valuesBucket2);
+      rdbStore?.insertSync(TABLE, sendableValuesBucket1);
+
     });
 
-    afterEach(() => {
+    afterEach(async() => {
       console.info(TAG + 'afterEach');
+      await rdbStore?.executeSql(DROP_TABLE_TEST,null);
     });
 
     afterAll(async () => {
@@ -175,7 +180,7 @@ export default function rdbStoreSendableTest() {
       try {
         let sendableValuesBucket: sendableRelationalStore.ValuesBucket = sendableRelationalStore.toSendableValuesBucket(valuesBucket2);
         const rowId = rdbStore.insertSync(TABLE, sendableValuesBucket);
-        expect(rowId).assertEqual(1);
+        expect(rowId).assertEqual(2);
       } catch (err) {
         console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
         expect().assertFail();

@@ -40,6 +40,7 @@ struct toastExample {
               console.error(`openToast error code is ${(error as BusinessError).code}, message is ${error.message}`);
             });
           } catch (e) {
+            const error = e as BusinessError
             this.code = e.code
             console.error(`openToast error code is ${(e as BusinessError).code}, message is ${e.message}`);
           }
