@@ -17,46 +17,34 @@ import { common } from '@kit.AbilityKit';
 import { camera } from '@kit.CameraKit';
 import {
   cameraErrorCode,
-  cameraFlashMode,
-  cameraPreconfigRatio,
-  cameraPreconfigType,
   closeFd,
-  COMMON_WAIT_DURATION,
   driveFn,
   getFd,
   getPermission,
   isEmpty,
   resourceName,
-  sceneMode,
   sleep
 } from '../common';
 import { indexSurfaceId } from '../../testability/pages/Index';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { media } from '@kit.MediaKit';
-import { tag } from '@kit.ConnectivityKit';
+import json from '@ohos.util.json';
 
 const TAG = "CameraXts.CameraSessionFlashSuppTest";
-const abnormalValue = -1;
 let mCameraManager: camera.CameraManager;
 let mCameraDeviceArray: Array<camera.CameraDevice>;
 let mSupportedModes: Array<camera.SceneMode>;
 let mCameraInput: camera.CameraInput;
-let mCameraOutputCapModePhoto: camera.CameraOutputCapability;
-let mCameraOutputCapModeVideo: camera.CameraOutputCapability;
-let mPreviewProfilesArray: Array<camera.Profile>;
-let mPreviewProfile: camera.Profile | undefined;
 let mPreviewOutput: camera.PreviewOutput;
 let mPhotoOutput: camera.PhotoOutput;
 let mVideoOutput: camera.VideoOutput;
 let mVideoSurfaceId: string;
-let mVideoProfile: camera.VideoProfile;
 let mPhotoSession: camera.PhotoSession;
 let mVideoSession: camera.VideoSession;
 let mAVRecorder: media.AVRecorder;
 let fdNumber: number;
 let fdPath: string;
 let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-let mCameraNum: number;
 
 let CameraVideoProfile: media.AVRecorderProfile = {
   audioBitrate: 48000,
@@ -78,154 +66,6 @@ let videoConfig: media.AVRecorderConfig = {
   location: { latitude: 30, longitude: 130 } as camera.Location,
   rotation: 0
 };
-let photoSessionSetMeteringPoint = async (testName: string, point: camera.Point | undefined | null, callback: (res?: camera.Point, errCode?: number) => void) => {
-  console.info(TAG,testName);
-  if (isEmpty(mCameraManager)) {
-    console.info(TAG, testName + ' cameraManager is null.');
-  } else {
-    mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCapModePhoto.photoProfiles[0]);
-    mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCapModePhoto.previewProfiles[0], indexSurfaceId);
-    await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-    try {
-      mPhotoSession.setMeteringPoint(point);
-      let meteringPoint = mPhotoSession.getMeteringPoint()
-      console.info(TAG + testName + JSON.stringify(meteringPoint) );
-      callback(meteringPoint,undefined)
-      await releasePhotoSession();
-    } catch(err) {
-      console.info(TAG ,testName + err.code);
-      callback(undefined,err.code)
-      await releasePhotoSession();
-    }
-  }
-}
-let videoSessionSetMeteringPoint = async (testName: string, point: camera.Point | undefined | null, callback: (res?: camera.Point, errCode?: number) => void) => {
-  console.info(TAG, testName);
-  if (isEmpty(mCameraManager)) {
-    console.info(TAG, testName + ' cameraManager is null.');
-  } else {
-    if (isEmpty(mPreviewProfile)) {
-      console.info(TAG, testName + ' no same resolution preview.');
-    } else {
-      await getVideoSurfaceId();
-      mPreviewOutput = mCameraManager.createPreviewOutput(mPreviewProfile, indexSurfaceId);
-      mVideoOutput = mCameraManager.createVideoOutput(mVideoProfile, mVideoSurfaceId);
-      await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
-      try {
-        mVideoSession.setMeteringPoint(point);
-        let meteringPoint = mVideoSession.getMeteringPoint()
-        console.info(TAG + " SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_NEGATIVE_ERRORCODE_0100 Success MeteringPoint " + meteringPoint );
-        callback(meteringPoint, undefined)
-        await releaseVideoSession();
-      } catch (err) {
-        console.info(TAG, testName + err.code);
-        callback(undefined, err.code)
-        await releaseVideoSession();
-      }
-    }
-  }
-}
-let photoSessionIsFlashModeSupported = async (testName: string, flashMode: camera.FlashMode | undefined | null, callback: (res?: boolean, errCode?: number) => void) => {
-  console.info(TAG,testName);
-  if (isEmpty(mCameraManager)) {
-    console.info(TAG, testName + ' cameraManager is null.');
-  } else {
-    mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCapModePhoto.photoProfiles[0]);
-    mPreviewOutput =
-      mCameraManager.createPreviewOutput(mCameraOutputCapModePhoto.previewProfiles[0], indexSurfaceId);
-    await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-    try {
-      let isFlashModeSupported: boolean = mPhotoSession.isFlashModeSupported(flashMode);
-      console.info(TAG,testName +isFlashModeSupported );
-      callback(isFlashModeSupported,undefined)
-      await releasePhotoSession();
-    } catch(err) {
-      console.info(TAG ,testName + err.code);
-      callback(undefined,err.code)
-      await releasePhotoSession();
-    }
-  }
-}
-
-let videoSessionIsFlashModeSupported = async (testName: string, flashMode: camera.FlashMode | undefined | null, callback: (res?: boolean, errCode?: number) => void) => {
-  console.info(TAG, testName);
-  if (isEmpty(mCameraManager)) {
-    console.info(TAG, testName + ' cameraManager is null.');
-  } else {
-    if (isEmpty(mPreviewProfile)) {
-      console.info(TAG, testName + ' no same resolution preview.');
-    } else {
-      await getVideoSurfaceId();
-      mPreviewOutput = mCameraManager.createPreviewOutput(mPreviewProfile, indexSurfaceId);
-      mVideoOutput = mCameraManager.createVideoOutput(mVideoProfile, mVideoSurfaceId);
-      await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
-      try {
-        let isFlashModeSupported: boolean = mVideoSession.isFlashModeSupported(flashMode);
-        console.info(TAG, testName + isFlashModeSupported);
-        callback(isFlashModeSupported, undefined)
-        await releaseVideoSession();
-      } catch (err) {
-        console.info(TAG, testName + err.code);
-        callback(undefined, err.code)
-        await releaseVideoSession();
-      }
-    }
-  }
-}
-
-
-let photoSessionsetExposureMode = async (testName: string, exposureMode: camera.ExposureMode | undefined | null, callback: (res?: number, errCode?: number) => void) => {
-  console.info(TAG,testName);
-  if (isEmpty(mCameraManager)) {
-    console.info(TAG, testName + ' cameraManager is null.');
-  } else {
-    mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCapModePhoto.photoProfiles[0]);
-    mPreviewOutput =
-      mCameraManager.createPreviewOutput(mCameraOutputCapModePhoto.previewProfiles[0], indexSurfaceId);
-    await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-    try {
-      console.info(TAG, testName + mPhotoSession);
-      mPhotoSession.setExposureMode(exposureMode);
-      let ExposureMode = mPhotoSession.getExposureMode();
-      console.info(TAG, testName + ExposureMode);
-      callback(ExposureMode,undefined)
-      await releasePhotoSession();
-    } catch(err) {
-      console.info(TAG ,testName + err.code);
-      callback(undefined,err.code)
-      await releasePhotoSession();
-    }
-  }
-}
-
-let videoSessionsetExposureMode = async (testName: string, exposureMode: camera.ExposureMode | undefined | null, callback: (res?: number, errCode?: number) => void) => {
-  console.info(TAG, testName);
-  if (isEmpty(mCameraManager)) {
-    console.info(TAG, testName + ' cameraManager is null.');
-  } else {
-    if (isEmpty(mPreviewProfile)) {
-      console.info(TAG, testName + ' no same resolution preview.');
-    } else {
-      await getVideoSurfaceId();
-      mPreviewOutput = mCameraManager.createPreviewOutput(mPreviewProfile, indexSurfaceId);
-      mVideoOutput = mCameraManager.createVideoOutput(mVideoProfile, mVideoSurfaceId);
-      await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
-      try {
-        mVideoSession.setExposureMode(exposureMode)
-        let ExposureMode = mVideoSession.getExposureMode();
-        console.info(TAG, testName + ExposureMode);
-        callback(ExposureMode, undefined)
-        await releaseVideoSession();
-      } catch (err) {
-        console.info(TAG, testName + err.code);
-        callback(undefined, err.code)
-        await releaseVideoSession();
-      }
-    }
-  }
-}
-
-
 
 function getCameraManager() {
   console.info(TAG, 'getCameraManager.');
@@ -249,45 +89,17 @@ function getSupportedCameraDeviceArray() {
 
 function getCameraInput() {
   console.info(TAG, 'getCameraInput.');
-  mCameraInput = mCameraManager.createCameraInput(mCameraDeviceArray[0]);
-  if (isEmpty(mCameraInput)) {
-    return false;
-  }
-  console.info(TAG, 'cameraInput created successfully.');
-  return true;
-}
-
-function getSupportedModes() {
-  console.info(TAG, 'getSupportedModes.');
-  for (let i = 0; i < mCameraDeviceArray.length; i++) {
-    mSupportedModes = mCameraManager.getSupportedSceneModes(mCameraDeviceArray[i]);
-    if (isEmpty(mSupportedModes)) {
+  if (mCameraDeviceArray.length) {
+    mCameraInput = mCameraManager.createCameraInput(mCameraDeviceArray[0]);
+    if (isEmpty(mCameraInput)) {
       return false;
     }
-    console.info(TAG, 'mSupportedModes: ' + JSON.stringify(mSupportedModes));
+    return true;
   }
-  return true;
+  console.info(TAG, 'cameraInput created successfully.');
+  return false;
 }
 
-function getOutputCapability() {
-  console.info(TAG, 'getOutputCapability.');
-  mCameraOutputCapModePhoto = mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], mSupportedModes[0]);
-  console.info(TAG, 'camera, output cap: ' + JSON.stringify(mCameraOutputCapModePhoto));
-  mCameraOutputCapModeVideo = mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], mSupportedModes[1]);
-  console.info(TAG, 'camera, output cap: ' + JSON.stringify(mCameraOutputCapModeVideo));
-  mPreviewProfilesArray = mCameraOutputCapModeVideo.previewProfiles;
-  mVideoProfile = mCameraOutputCapModeVideo.videoProfiles[0];
-  expect(isEmpty(mVideoProfile)).assertFalse();
-  CameraVideoProfile.videoFrameWidth = mVideoProfile.size.width;
-  CameraVideoProfile.videoFrameHeight = mVideoProfile.size.height;
-}
-
-function getPreviewProfile() {
-  mPreviewProfile = mPreviewProfilesArray.find((previewProfile: camera.Profile) => {
-    return Math.abs((previewProfile.size.width / previewProfile.size.height) -
-      (mVideoProfile.size.width / mVideoProfile.size.height)) < Number.EPSILON;
-  });
-}
 
 async function getVideoSurfaceId() {
   console.info(TAG, 'getVideoSurfaceId begin.');
@@ -310,44 +122,88 @@ async function getVideoSurfaceId() {
   console.info(TAG, 'mVideoSurfaceId: ' + mVideoSurfaceId);
 }
 
-async function getCreateVideoSession(testName: string, previewOutput: camera.PreviewOutput,
-  videoOutput: camera.VideoOutput) {
-  console.info(TAG, 'getCreateVideoSession.');
-  mVideoSession = mCameraManager.createSession(mSupportedModes[1]);
-  mVideoSession.beginConfig();
-  console.info(TAG, testName + ' beginConfig passed.');
-  mVideoSession.addInput(mCameraInput);
-  console.info(TAG, testName + ' addInput passed.');
-  await mCameraInput.open();
-  console.info(TAG, testName + ' camera open passed.');
-  mVideoSession.addOutput(previewOutput);
-  console.info(TAG, testName + ' addOutput previewOutput passed.');
-  mVideoSession.addOutput(videoOutput);
-  console.info(TAG, testName + ' addOutput videoOutput passed.');
-  await mVideoSession.commitConfig();
-  console.info(TAG, testName + ' session commitConfig successfully.');
+function createPhotoOutput() {
+  let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
+  let haveValidDevice = false;
+  for (const device of mCameraDeviceArray) {
+    mSupportedModes = mCameraManager.getSupportedSceneModes(mCameraDeviceArray[0]);
+    if (mSupportedModes.includes(camera.SceneMode.NORMAL_PHOTO)) {
+      useDevice = device;
+      haveValidDevice = true;
+      break;
+    }
+  }
+  if (!haveValidDevice) {
+    return;
+  }
+  let cameraOutputCap = mCameraManager.getSupportedOutputCapability(useDevice, camera.SceneMode.NORMAL_PHOTO);
+  let previewProfile = cameraOutputCap.previewProfiles[0];
+  let photoProfile = cameraOutputCap.photoProfiles[0];
+  for (const indexPreviewProfiles of cameraOutputCap.previewProfiles) {
+    let foundProfile = cameraOutputCap.photoProfiles.find((indexPhotoProfile: camera.Profile) => {
+      console.log(TAG, 'find photoProfile: w: ' + indexPhotoProfile.size.width + 'h: ' + indexPhotoProfile.size.height);
+      console.log(TAG,
+        'find previewProfile: w: ' + indexPreviewProfiles.size.width + 'h: ' + indexPreviewProfiles.size.height);
+      return Math.abs((indexPhotoProfile.size.width * indexPreviewProfiles.size.height) -
+        (indexPreviewProfiles.size.width * indexPhotoProfile.size.height)) < Number.EPSILON;
+    })
+    if (foundProfile) {
+      photoProfile = foundProfile;
+      previewProfile = indexPreviewProfiles;
+      break;
+    }
+  }
+  console.log(TAG, 'photoProfile: w: ' + photoProfile.size.width + 'h: ' + photoProfile.size.height);
+  console.log(TAG, 'previewProfile: w: ' + previewProfile.size.width + 'h: ' + previewProfile.size.height);
+  mPreviewOutput = mCameraManager.createPreviewOutput(previewProfile, indexSurfaceId);
+  mPhotoOutput = mCameraManager.createPhotoOutput(photoProfile);
 }
 
-async function getPreConfigVideoSession(testName: string, previewOutput: camera.PreviewOutput,
-  videoOutput: camera.VideoOutput) {
-  console.info(TAG, 'getPreConfigVideoSession.');
-  mVideoSession.beginConfig();
-  console.info(TAG, testName + ' beginConfig passed.');
-  mVideoSession.addInput(mCameraInput);
-  console.info(TAG, testName + ' addInput passed.');
-  await mCameraInput.open();
-  console.info(TAG, testName + ' camera open passed.');
-  mVideoSession.addOutput(previewOutput);
-  console.info(TAG, testName + ' addOutput previewOutput passed.');
-  mVideoSession.addOutput(videoOutput);
-  console.info(TAG, testName + ' addOutput videoOutput passed.');
-  await mVideoSession.commitConfig();
-  console.info(TAG, testName + ' session commitConfig successfully.');
+async function createVideoOutput() {
+  await getVideoSurfaceId();
+  let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
+  let haveValidDevice = false;
+  for (const device of mCameraDeviceArray) {
+    mSupportedModes = mCameraManager.getSupportedSceneModes(mCameraDeviceArray[0]);
+    if (mSupportedModes.includes(camera.SceneMode.NORMAL_VIDEO)) {
+      useDevice = device;
+      haveValidDevice = true;
+      break;
+    }
+  }
+  if (!haveValidDevice) {
+    return;
+  }
+  let cameraOutputCap = mCameraManager.getSupportedOutputCapability(useDevice, camera.SceneMode.NORMAL_VIDEO);
+  let previewProfile = cameraOutputCap.previewProfiles[0];
+  let videoProfile = cameraOutputCap.videoProfiles[0];
+  for (const indexPreviewProfiles of cameraOutputCap.previewProfiles) {
+    let foundProfile = cameraOutputCap.videoProfiles.find((indexVideoProfile: camera.Profile) => {
+      console.log(TAG, 'find videoProfile: w: ' + indexVideoProfile.size.width + 'h: ' + indexVideoProfile.size.height);
+      console.log(TAG,
+        'find previewProfile: w: ' + indexPreviewProfiles.size.width + 'h: ' + indexPreviewProfiles.size.height);
+      return Math.abs((indexVideoProfile.size.width * indexPreviewProfiles.size.height) -
+        (indexPreviewProfiles.size.width * indexVideoProfile.size.height)) < Number.EPSILON;
+    })
+    if (foundProfile) {
+      videoProfile = foundProfile;
+      previewProfile = indexPreviewProfiles;
+      break;
+    }
+  }
+  console.log(TAG, 'videoProfile: w: ' + videoProfile.size.width + 'h: ' + videoProfile.size.height);
+  console.log(TAG, 'previewProfile: w: ' + previewProfile.size.width + 'h: ' + previewProfile.size.height);
+  CameraVideoProfile.videoFrameWidth = videoProfile.size.width;
+  CameraVideoProfile.videoFrameHeight = videoProfile.size.height;
+  mPreviewOutput = mCameraManager.createPreviewOutput(previewProfile, indexSurfaceId);
+  console.log(TAG, 'createVideoOutput' + videoProfile,'surfaceID', mVideoSurfaceId);
+  mVideoOutput = mCameraManager.createVideoOutput(videoProfile, mVideoSurfaceId);
+  console.log(TAG, 'create preview output' + mPreviewOutput,'createVideoOutput', mVideoOutput);
 }
 
 async function getCreatePhotoSession(previewOutput: camera.PreviewOutput, photoOutput: camera.PhotoOutput) {
   console.info(TAG, 'getCreatePhotoSession.');
-  mPhotoSession = mCameraManager.createSession(mSupportedModes[0]);
+  mPhotoSession = mCameraManager.createSession(camera.SceneMode.NORMAL_PHOTO);
   mPhotoSession.beginConfig();
   mPhotoSession.addInput(mCameraInput);
   await mCameraInput.open();
@@ -356,14 +212,22 @@ async function getCreatePhotoSession(previewOutput: camera.PreviewOutput, photoO
   await mPhotoSession.commitConfig();
 }
 
-async function getPreConfigPhotoSession(previewOutput: camera.PreviewOutput, photoOutput: camera.PhotoOutput) {
-  console.info(TAG, 'getPreConfigPhotoSession.');
-  mPhotoSession.beginConfig();
-  mPhotoSession.addInput(mCameraInput);
+async function getCreateVideoSession(testName: string, previewOutput: camera.PreviewOutput,
+  videoOutput: camera.VideoOutput) {
+  console.info(TAG, 'getCreateVideoSession.');
+  mVideoSession = mCameraManager.createSession(camera.SceneMode.NORMAL_VIDEO);
+  mVideoSession.beginConfig();
+  console.info(TAG, testName + ' beginConfig passed.');
+  mVideoSession.addInput(mCameraInput);
+  console.info(TAG, testName + ' addInput passed.');
   await mCameraInput.open();
-  mPhotoSession.addOutput(previewOutput);
-  mPhotoSession.addOutput(photoOutput);
-  await mPhotoSession.commitConfig();
+  console.info(TAG, testName + ' camera open passed.');
+  mVideoSession.addOutput(previewOutput);
+  console.info(TAG, testName + ' addOutput previewOutput passed.');
+  mVideoSession.addOutput(videoOutput);
+  console.info(TAG, testName + ' addOutput videoOutput passed.');
+  await mVideoSession.commitConfig();
+  console.info(TAG, testName + ' session commitConfig successfully.');
 }
 
 async function releasePhotoSession() {
@@ -381,25 +245,153 @@ async function releaseVideoSession() {
   await mVideoSession?.release();
 }
 
+function getEnumMaxValue<T extends Record<string, number | string>>(enumeration: T): number {
+  const values = Object.values(enumeration);
+  const numberValues = values.filter(v => typeof v === 'number') as number[];
+  let maxValue = Math.max(...numberValues);
+  console.info(TAG,'getEnumMaxValue : ' + maxValue);
+  return maxValue;
+}
+
+async function photoSessionSetMeteringPoint(testName: string, point: camera.Point | undefined | null, callback: (res?: camera.Point, errCode?: number) => void) {
+  console.info(TAG, testName);
+  if (isEmpty(mCameraDeviceArray)) {
+    console.info(TAG, testName, ' mCameraDeviceArray is null.');
+  } else {
+    createPhotoOutput();
+    await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+    try {
+      mPhotoSession.setMeteringPoint(point);
+      let meteringPoint = mPhotoSession.getMeteringPoint()
+      console.info(TAG, testName, JSON.stringify(meteringPoint));
+      callback(meteringPoint, undefined)
+      await releasePhotoSession();
+    } catch (err) {
+      console.info(TAG, testName, err.message, err.code);
+      callback(undefined, err.code)
+      await releasePhotoSession();
+    }
+  }
+}
+async function videoSessionSetMeteringPoint(testName: string, point: camera.Point | undefined | null, callback: (res?: camera.Point, errCode?: number) => void) {
+  console.info(TAG, testName);
+  if (isEmpty(mCameraDeviceArray)) {
+    console.info(TAG, testName, ' mCameraDeviceArray is null.');
+  } else {
+    await createVideoOutput();
+    await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
+    try {
+      mVideoSession.setMeteringPoint(point);
+      let meteringPoint = mVideoSession.getMeteringPoint()
+      console.info(TAG,testName, 'Success MeteringPoint:', meteringPoint);
+      callback(meteringPoint, undefined)
+      await releaseVideoSession();
+    } catch (err) {
+      console.info(TAG, testName, err.message, err.code);
+      callback(undefined, err.code)
+      await releaseVideoSession();
+    }
+  }
+}
+async function photoSessionIsFlashModeSupported(testName: string, flashMode: camera.FlashMode | undefined | null, callback: (res?: boolean, errCode?: number) => void) {
+  console.info(TAG,testName);
+  if (isEmpty(mCameraDeviceArray)) {
+    console.info(TAG, testName, ' mCameraDeviceArray is null.');
+  } else {
+    createPhotoOutput();
+    await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+    try {
+      let isFlashModeSupported: boolean = mPhotoSession.isFlashModeSupported(flashMode);
+      console.info(TAG, testName,'isFlashModeSupported', isFlashModeSupported);
+      callback(isFlashModeSupported,undefined);
+      await releasePhotoSession();
+    } catch(err) {
+      console.info(TAG ,testName,err.message, err.code);
+      callback(undefined,err.code);
+      await releasePhotoSession();
+    }
+  }
+}
+
+async function videoSessionIsFlashModeSupported(testName: string, flashMode: camera.FlashMode | undefined | null, callback: (res?: boolean, errCode?: number) => void) {
+  console.info(TAG, testName);
+  if (isEmpty(mCameraDeviceArray)) {
+    console.info(TAG, testName, ' mCameraDeviceArray is null.');
+  } else {
+    await createVideoOutput();
+    await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
+    try {
+      let isFlashModeSupported: boolean = mVideoSession.isFlashModeSupported(flashMode);
+      console.info(TAG, testName,'isFlashModeSupported', isFlashModeSupported);
+      callback(isFlashModeSupported, undefined);
+      await releaseVideoSession();
+    } catch (err) {
+      console.info(TAG ,testName,err.message, err.code);
+      callback(undefined, err.code);
+      await releaseVideoSession();
+    }
+  }
+}
+
+
+async function photoSessionsetExposureMode(testName: string, exposureMode: camera.ExposureMode | undefined | null, callback: (res?: number, errCode?: number) => void) {
+  console.info(TAG,testName);
+  if (isEmpty(mCameraDeviceArray)) {
+    console.info(TAG, testName, ' mCameraDeviceArray is null.');
+  } else {
+    createPhotoOutput();
+    await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+    try {
+      mPhotoSession.setExposureMode(exposureMode);
+      let ExposureMode = mPhotoSession.getExposureMode();
+      console.info(TAG, testName,'getExposureMode', ExposureMode);
+      callback(ExposureMode,undefined)
+      await releasePhotoSession();
+    } catch(err) {
+      console.info(TAG ,testName, err.message, err.code);
+      callback(undefined,err.code)
+      await releasePhotoSession();
+    }
+  }
+}
+
+async function videoSessionsetExposureMode(testName: string, exposureMode: camera.ExposureMode | undefined | null, callback: (res?: number, errCode?: number) => void) {
+  console.info(TAG, testName);
+  if (isEmpty(mCameraDeviceArray)) {
+    console.info(TAG, testName, ' mCameraDeviceArray is null.');
+  } else {
+    await createVideoOutput();
+    await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
+    try {
+      mVideoSession.setExposureMode(exposureMode)
+      let ExposureMode = mVideoSession.getExposureMode();
+      console.info(TAG, testName,'getExposureMode', ExposureMode);
+      callback(ExposureMode, undefined)
+      await releaseVideoSession();
+    } catch (err) {
+      console.info(TAG ,testName, err.message, err.code);
+      callback(undefined, err.code);
+      await releaseVideoSession();
+    }
+  }
+}
+
 async function setFlashModePhoto(done: Function, testName: string, flashMode: camera.FlashMode | null | undefined, callback: (mode?: camera.FlashMode,errcode?: number) => void) {
   try {
-    if (isEmpty(mCameraManager)) {
-      console.info(TAG, testName + ' cameraManager is null.');
-      expect().assertFail();
+    if (isEmpty(mCameraDeviceArray)) {
+      console.info(TAG, testName, ' mCameraDeviceArray is null.');
     } else {
-      mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCapModePhoto.photoProfiles[0]);
-      mPreviewOutput =
-        mCameraManager.createPreviewOutput(mCameraOutputCapModePhoto.previewProfiles[0], indexSurfaceId);
+      createPhotoOutput();
       await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
       mPhotoSession.setFlashMode(flashMode as camera.FlashMode);
-      console.info(TAG, testName + ' photo set flash mode, status: ' + flashMode);
+      console.info(TAG, testName, ' photo set flash mode, status: ', flashMode);
       let mode = mPhotoSession.getFlashMode();
       callback(mode, undefined);
       await releasePhotoSession();
     }
     done();
   } catch (error) {
-    console.error(TAG, testName + ' session setFlashMode failed. code: ' + error.code + ', msg: ' + error.message);
+    console.info(TAG ,testName, error.message, error.code);
     callback(undefined,error.code);
     await releasePhotoSession();
     done();
@@ -408,28 +400,20 @@ async function setFlashModePhoto(done: Function, testName: string, flashMode: ca
 
 async function setFlashModeVideo(done: Function, testName: string, flashMode: camera.FlashMode | null | undefined, callback: (mode?: camera.FlashMode,errcode?: number) => void) {
   try {
-    if (isEmpty(mCameraManager)) {
-      console.info(TAG, testName + ' cameraManager is null.');
-      expect().assertFail();
+    if (isEmpty(mCameraDeviceArray)) {
+      console.info(TAG, testName, ' mCameraDeviceArray is null.');
     } else {
-      if (isEmpty(mPreviewProfile)) {
-        console.info(TAG, testName + ' no same resolution preview.');
-        expect(isEmpty(mPreviewProfile)).assertTrue();
-      } else {
-        await getVideoSurfaceId();
-        mPreviewOutput = mCameraManager.createPreviewOutput(mPreviewProfile, indexSurfaceId);
-        mVideoOutput = mCameraManager.createVideoOutput(mVideoProfile, mVideoSurfaceId);
-        await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
-        mVideoSession.setFlashMode(flashMode as camera.FlashMode);
-        console.info(TAG, testName + ' photo set flash mode, status: ' + flashMode);
-        let mode = mVideoSession.getFlashMode();
-        callback(mode, undefined);
-        await releaseVideoSession();
-      }
+      await createVideoOutput();
+      await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
+      mVideoSession.setFlashMode(flashMode as camera.FlashMode);
+      console.info(TAG, testName, ' photo set flash mode, status: ', flashMode);
+      let mode = mVideoSession.getFlashMode();
+      callback(mode, undefined);
+      await releaseVideoSession();
     }
     done();
   } catch (error) {
-    console.error(TAG, testName + ' session setFlashMode failed. code: ' + error.code + ', msg: ' + error.message);
+    console.info(TAG ,testName, error.message, error.code);
     callback(undefined,error.code);
     await releaseVideoSession();
     done();
@@ -440,14 +424,12 @@ export default function CameraSessionFlashSuppTest() {
   describe('CameraSessionFlashSuppTest', () => {
     beforeAll(async () => {
       console.info('beforeAll case');
-      getCameraManager();
-      getSupportedCameraDeviceArray();
-      getSupportedModes();
       await getPermission();
       await driveFn();
+      getCameraManager();
+      getSupportedCameraDeviceArray();
       getCameraInput();
-      getOutputCapability();
-      getPreviewProfile();
+      await getVideoSurfaceId();
     });
 
     beforeEach(() => {
@@ -456,7 +438,7 @@ export default function CameraSessionFlashSuppTest() {
 
     afterEach(async () => {
       console.info('afterEach case');
-      await sleep(COMMON_WAIT_DURATION);
+      await sleep(2000);
     });
 
     afterAll(async () => {
@@ -465,30 +447,29 @@ export default function CameraSessionFlashSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0100
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0100
+     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0100
+     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0100
      * @tc.desc      : test camera session isExposureModeSupported PhotoSession maxLegal+1
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0100', Level.LEVEL2, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0100--------------");
-      if (isEmpty(mCameraManager)) {
-        const testName = 'isExposureModeSupported PhotoSession maxLegal+1';
-        console.info(TAG, testName + ' cameraManager is null.');
+    it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0100', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0100--------------");
+      const testName = 'SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0100';
+      if (isEmpty(mCameraDeviceArray)) {
+        console.info(TAG, testName, ' mCameraDeviceArray is null.');
       } else {
-        mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCapModePhoto.photoProfiles[0]);
-        mPreviewOutput =
-          mCameraManager.createPreviewOutput(mCameraOutputCapModePhoto.previewProfiles[0], indexSurfaceId);
+        createPhotoOutput();
         await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
         try {
-          let isExposureModeSupported = mPhotoSession.isExposureModeSupported(3);
-          console.info(TAG + " SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0100 Success isExposureModeSupported " +isExposureModeSupported );
+          let maxEnum = getEnumMaxValue(camera.ExposureMode);
+          let isExposureModeSupported = mPhotoSession.isExposureModeSupported(maxEnum + 1);
+          console.info(TAG, "Success isExposureModeSupported ", isExposureModeSupported );
           expect(isExposureModeSupported).assertFalse()
           await releasePhotoSession();
         } catch(err) {
-          console.info(TAG + " SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0100 FAILED" + err.code);
+          console.info(TAG ,testName, err.message, err.code);
           expect().assertFail();
           await releasePhotoSession();
         }
@@ -497,68 +478,59 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0200
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0200
+     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0200
+     * @tc.name      : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0200
      * @tc.desc      : test camera session isExposureModeSupported VideoSession maxLegal+1
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0200', Level.LEVEL2, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0200--------------");
-      const testName = 'isExposureModeSupported VideoSession maxLegal+1';
-      if (isEmpty(mCameraManager)) {
-        console.info(TAG, testName + ' cameraManager is null.');
+    it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0200', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0200--------------");
+      const testName = 'SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0200';
+      if (isEmpty(mCameraDeviceArray)) {
+        console.info(TAG, testName, ' mCameraDeviceArray is null.');
       } else {
-        if (isEmpty(mPreviewProfile)) {
-          console.info(TAG, testName + ' no same resolution preview.');
-          expect(isEmpty(mPreviewProfile)).assertTrue();
-        } else {
-          await getVideoSurfaceId();
-          mPreviewOutput = mCameraManager.createPreviewOutput(mPreviewProfile, indexSurfaceId);
-          mVideoOutput = mCameraManager.createVideoOutput(mVideoProfile, mVideoSurfaceId);
-          await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
-          try {
-            let isExposureModeSupported = mVideoSession.isExposureModeSupported(3);
-            console.info(TAG +
-              "SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0200 Success isExposureModeSupported " + isExposureModeSupported);
-            await releaseVideoSession();
-            expect(isExposureModeSupported).assertFalse()
-          } catch (err) {
-            console.info(TAG + " SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0200 FAILED" + err.code);
-            expect().assertFail();
-            await releaseVideoSession();
-          }
+        await createVideoOutput();
+        await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
+        try {
+          let maxEnum = getEnumMaxValue(camera.ExposureMode);
+          let isExposureModeSupported = mVideoSession.isExposureModeSupported(maxEnum + 1);
+          console.info(TAG, testName, " Success isExposureModeSupported ", isExposureModeSupported);
+          await releaseVideoSession();
+          expect(isExposureModeSupported).assertFalse()
+        } catch (err) {
+          console.info(TAG ,testName, err.message, err.code);
+          expect().assertFail();
+          await releaseVideoSession();
         }
       }
       done()
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0300
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0300
+     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0300
+     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0300
      * @tc.desc      : test camera session isExposureModeSupported PhotoOutput negative code -1
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0300', Level.LEVEL2, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0300--------------");
-      if (isEmpty(mCameraManager)) {
-        const testName = 'isExposureModeSupported PhotoSession negative code -1';
-        console.info(TAG, testName + ' cameraManager is null.');
+    it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0300', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0300--------------");
+      const testName = 'SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0300';
+      if (isEmpty(mCameraDeviceArray)) {
+        console.info(TAG, testName, ' mCameraDeviceArray is null.');
       } else {
-        mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCapModePhoto.photoProfiles[0]);
-        mPreviewOutput =
-          mCameraManager.createPreviewOutput(mCameraOutputCapModePhoto.previewProfiles[0], indexSurfaceId);
+        createPhotoOutput();
         await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
         try {
           let isExposureModeSupported = mPhotoSession.isExposureModeSupported(-1);
-          console.info(TAG + " SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0300 Success isExposureModeSupported " +isExposureModeSupported );
+          console.info(TAG,testName,"  Success isExposureModeSupported ", isExposureModeSupported );
           expect(isExposureModeSupported).assertFalse()
           await releasePhotoSession();
         } catch(err) {
-          console.info(TAG + " SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0300 FAILED" + err.code);
+          console.info(TAG ,testName, err.message, err.code);
           expect().assertFail();
           await releasePhotoSession();
         }
@@ -566,68 +538,58 @@ export default function CameraSessionFlashSuppTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0400
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0400
-     * @tc.desc      : test camera session isExposureModeSupported VideoSession maxLegal+1
+     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0400
+     * @tc.name      : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0400
+     * @tc.desc      : test camera session isExposureModeSupported VideoSession maxLegal -1
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0400', Level.LEVEL2, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0400--------------");
-      try {
-        const testName = 'isExposureModeSupported VideoSession maxLegal+1';
-        if (isEmpty(mCameraManager)) {
-          console.info(TAG, testName + ' cameraManager is null.');
+    it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0400', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0400--------------");
+      const testName = 'SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0400';
+      if (isEmpty(mCameraDeviceArray)) {
+        console.info(TAG, testName, ' mCameraDeviceArray is null.');
+      } else {
+        try {
+          await createVideoOutput();
+          await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
+          let isExposureModeSupported = mVideoSession.isExposureModeSupported(-1);
+          console.info(TAG, "Success isExposureModeSupported ", isExposureModeSupported);
+          expect(isExposureModeSupported).assertFalse();
+          await releaseVideoSession();
+        } catch (err) {
+          console.info(TAG, testName, err.message, err.code);
           expect().assertFail();
-        } else {
-          if (isEmpty(mPreviewProfile)) {
-            console.info(TAG, testName + ' no same resolution preview.');
-            expect(isEmpty(mPreviewProfile)).assertTrue();
-          } else {
-            await getVideoSurfaceId();
-            mPreviewOutput = mCameraManager.createPreviewOutput(mPreviewProfile, indexSurfaceId);
-            mVideoOutput = mCameraManager.createVideoOutput(mVideoProfile, mVideoSurfaceId);
-            await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
-            let isExposureModeSupported = mVideoSession.isExposureModeSupported(-1);
-            console.info(TAG + " SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0400 Success isExposureModeSupported " +isExposureModeSupported );
-            expect(isExposureModeSupported).assertFalse()
-            await releaseVideoSession();
-          }
+          await releaseVideoSession();
         }
-      } catch(err) {
-        console.info(TAG + " SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0400 FAILED" + err.code);
-        expect().assertFail();
-        await releaseVideoSession();
       }
       done();
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0500
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0500
+     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0500
+     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0500
      * @tc.desc      : test camera session isExposureModeSupported PhotoSession negative code -100
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0500', Level.LEVEL2, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0500--------------");
-      if (isEmpty(mCameraManager)) {
-        const testName = 'isExposureModeSupported PhotoSession negative code -100';
-        console.info(TAG, testName + ' cameraManager is null.');
+    it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0500', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0500--------------");
+      const testName = 'SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0500';
+      if (isEmpty(mCameraDeviceArray)) {
+        console.info(TAG, testName, ' mCameraDeviceArray is null.');
       } else {
-        mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCapModePhoto.photoProfiles[0]);
-        mPreviewOutput =
-          mCameraManager.createPreviewOutput(mCameraOutputCapModePhoto.previewProfiles[0], indexSurfaceId);
+        createPhotoOutput();
         await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
         try {
           let isExposureModeSupported = mPhotoSession.isExposureModeSupported(-100);
-          console.info(TAG + " SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0500 Success isExposureModeSupported " +isExposureModeSupported );
+          console.info(TAG ,testName,"  Success isExposureModeSupported ", isExposureModeSupported);
           expect(isExposureModeSupported).assertFalse()
           await releasePhotoSession();
         } catch(err) {
-          console.info(TAG + " SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0500 FAILED" + err.code);
+          console.info(TAG ,testName, err.message, err.code);
           expect().assertFail();
           await releasePhotoSession();
         }
@@ -636,36 +598,29 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0600
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0600
+     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0600
+     * @tc.name      : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0600
      * @tc.desc      : test camera session isExposureModeSupported VideoSession -100
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0600', Level.LEVEL2, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0600--------------");
+    it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0600', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0600--------------");
+      const testName = 'SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERROR_0600';
       try {
-        const testName = 'isExposureModeSupported VideoSession -100';
-        if (isEmpty(mCameraManager)) {
-          console.info(TAG, testName + ' cameraManager is null.');
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
         } else {
-          if (isEmpty(mPreviewProfile)) {
-            console.info(TAG, testName + ' no same resolution preview.');
-            expect(isEmpty(mPreviewProfile)).assertTrue();
-          } else {
-            await getVideoSurfaceId();
-            mPreviewOutput = mCameraManager.createPreviewOutput(mPreviewProfile, indexSurfaceId);
-            mVideoOutput = mCameraManager.createVideoOutput(mVideoProfile, mVideoSurfaceId);
-            await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
-            let isExposureModeSupported = mVideoSession.isExposureModeSupported(-100);
-            console.info(TAG + " SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0600 Success isExposureModeSupported " +isExposureModeSupported );
-            expect(isExposureModeSupported).assertFalse()
-            await releaseVideoSession();
-          }
+          await createVideoOutput();
+          await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
+          let isExposureModeSupported = mVideoSession.isExposureModeSupported(-100);
+          console.info(TAG,"  Success isExposureModeSupported ", isExposureModeSupported);
+          expect(isExposureModeSupported).assertFalse()
+          await releaseVideoSession();
         }
       } catch(err) {
-        console.info(TAG + " SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_ERRORCODE_0600 FAILED" + err.code);
+        console.info(TAG ,testName, err.message, err.code);
         expect().assertFail();
         await releaseVideoSession();
       }
@@ -802,7 +757,8 @@ export default function CameraSessionFlashSuppTest() {
      * @tc.level     : Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0100', Level.LEVEL2, async (done: Function) => {
-      photoSessionsetExposureMode('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0100', 3, (res?: number, errCode?: number) => {
+      let maxEnum = getEnumMaxValue(camera.ExposureMode);
+      photoSessionsetExposureMode('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETEXPOSUREMODE_ERRORCODE_0100', maxEnum + 1, (res?: number, errCode?: number) => {
         if (res != undefined) {
           expect().assertFail();
         }
@@ -822,7 +778,8 @@ export default function CameraSessionFlashSuppTest() {
      * @tc.level     : Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0100', Level.LEVEL2, async (done: Function) => {
-      videoSessionsetExposureMode('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0100', 3, (res?: number, errCode?: number) => {
+      let maxEnum = getEnumMaxValue(camera.ExposureMode);
+      videoSessionsetExposureMode('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETEXPOSUREMODE_ERRORCODE_0100', maxEnum + 1, (res?: number, errCode?: number) => {
         if (res != undefined) {
           expect().assertFail();
         }
@@ -1342,7 +1299,8 @@ export default function CameraSessionFlashSuppTest() {
      * @tc.level     : Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0500', Level.LEVEL2, async (done: Function) => {
-      photoSessionIsFlashModeSupported('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0500',4,(res?: boolean, errCode?: number) => {
+      let maxEnum = getEnumMaxValue(camera.FlashMode);
+      photoSessionIsFlashModeSupported('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0500',maxEnum + 1,(res?: boolean, errCode?: number) => {
         if (res != undefined) {
           expect(res).assertFalse()
         }
@@ -1361,7 +1319,8 @@ export default function CameraSessionFlashSuppTest() {
      * @tc.level     : Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0600', Level.LEVEL2, async (done: Function) => {
-      videoSessionIsFlashModeSupported('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0600',4,(res?: boolean, errCode?: number) => {
+      let maxEnum = getEnumMaxValue(camera.FlashMode);
+      videoSessionIsFlashModeSupported('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFLASHMODESUPPORTED_ERRORCODE_0600',maxEnum + 1,(res?: boolean, errCode?: number) => {
         if (res != undefined) {
           expect(res).assertFalse()
         }
