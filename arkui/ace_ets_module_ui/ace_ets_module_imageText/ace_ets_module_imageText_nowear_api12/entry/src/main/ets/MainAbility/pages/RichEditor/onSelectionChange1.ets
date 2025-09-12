@@ -26,8 +26,8 @@ struct onSelectionChange1 {
       RichEditor(this.options)
         .onSelectionChange((event:RichEditorRange) => {
           this.text1 += 1
-          this.text2 = '' +  event?.start
-          this.text3 = '' +  event?.end
+          this.text2 = event?.start !== undefined ? String(event.start) : ''
+          this.text3 = event?.end !== undefined ? String(event.end) : ''
         })
         .id('onSelectionChange_RichEditor')
         .width('100%')
