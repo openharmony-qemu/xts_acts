@@ -32,13 +32,13 @@ import router from '@ohos.router'
 @Component
 struct PositionPage {
   @State _position: Position = { x: 0, y: 0 };
-  @State targetView: string = router.getParams() ? (router.getParams() as ESObject)['view']['targetView'] : ''
-  @State componentKey: string = router.getParams() ? (router.getParams() as ESObject)['view']['componentKey'] : ''
-  @State parentWidth: number = router.getParams() ? (router.getParams() as ESObject)['view']['parentWidth'] : 0
-  @State parentHeight: number = router.getParams() ? (router.getParams() as ESObject)['view']['parentHeight'] : 0
-  @State parentComponentKey: string = router.getParams() ? (router.getParams() as ESObject)['view']['parentComponentKey'] : ''
+  @State targetView: string = router.getParams() ? (router.getParams() as ESObject)?.['view']?.['targetView'] : ''
+  @State componentKey: string = router.getParams() ? (router.getParams() as ESObject)?.['view']?.['componentKey'] : ''
+  @State parentWidth: number = router.getParams() ? (router.getParams() as ESObject)?.['view']?.['parentWidth'] : 0
+  @State parentHeight: number = router.getParams() ? (router.getParams() as ESObject)?.['view']?.['parentHeight'] : 0
+  @State parentComponentKey: string = router.getParams() ? (router.getParams() as ESObject)?.['view']?.['parentComponentKey'] : ''
   @State referenceComponentKey: string =
-    router.getParams() ? (router.getParams() as ESObject)['view']['referenceComponentKey'] : ''
+    router.getParams() ? (router.getParams() as ESObject)?.['view']?.['referenceComponentKey'] : ''
 
   onPageShow() {
     console.info('[PositionPage] page show called ')
