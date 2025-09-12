@@ -9,3 +9,22 @@ export default class Utils{
     })
   }
 }
+/**
+ * @param obj
+ * @returns
+ * In TypeScript, the keys of an enum include both the key names and the enum values,
+ * so you can count the number of key names to determine the quantity.
+ */
+export function getEnumCount(obj: Object): number {
+  let count = 0;
+  Object.values(obj).forEach((v: string | number) => {
+    if (typeof v === 'string') {
+      count++;
+    }
+  });
+  return count;
+}
+
+export function getRandomNumber(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
