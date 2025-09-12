@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,17 +18,12 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 // import router from '@system.router';
 import router from '@ohos.router';
+import { Driver, ON, MouseButton } from '@ohos.UiTest';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { Driver, ON } from "@kit.TestKit";
-
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = "";
-
-const EVENT_ID_SET_SUITE_KEY = 178201;
-const driver = Driver.create();
-
-export default function blurModeTest() {
+export default function webViewblurOnKeyboardHideModeTestJsunit() {
   describe('blurOnKeyboardHideModeTest',  () =>{
     beforeAll(async  (done: Function) =>{
       let options: router.RouterOptions = {
@@ -37,41 +32,61 @@ export default function blurModeTest() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get blurOnKeyboardHideMode state success " + JSON.stringify(pages));
+        console.info("get blurMode state success " + JSON.stringify(pages));
         if (!("blurMode" == pages.name)) {
           console.info("get blurMode state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
+          await Utils.sleep(2000);
           console.info("push blurMode page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push blurMode page error: " + err);
       }
+      let driver: Driver = Driver.create();
+      await driver.waitForComponent(ON.id("blurOnKeyboardHideMode01"),10000);
       done()
     });
     beforeEach(async  (done: Function) =>{
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
+      await Utils.sleep(2000);
       console.info("blurMode beforeEach start");
-      await driver.waitForComponent(ON.id("blurOnKeyboardHideMode01"), 10000);
+      done();
+    })
+    afterEach(async  (done: Function) =>{
+      console.info("blurMode afterEach start:"+emitKey);
+      try {
+        let backData: events_emitter.EventData = {
+          data: {
+            "ACTION": emitKey
+          }
+        }
+        let backEvent: events_emitter.InnerEvent = {
+          eventId:10,
+          priority:events_emitter.EventPriority.LOW
+        }
+        console.info("start send emitKey");
+        events_emitter.emit(backEvent, backData);
+      } catch (err) {
+        console.info("emit emitKey  err: " + JSON.stringify(err));
+      }
+      await Utils.sleep(2000);
       done();
     })
 
     /*
-     *tc.number SUB_ACE_BASIC_ETS_BLURONKEYBOARDHIDEMODE_API_001
-     *tc.name blurMode01
-     *tc.desic test blurMode01 interface when choose callback mode.
-     */
+  *tc.number SUB_ACE_BASIC_ETS_BLURONKEYBOARDHIDEMODE_API_001
+  *tc.name blurMode01
+  *tc.desic test blurMode01 interface when choose callback mode.
+  */
     it('blurMode01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       emitKey="blurMode01";
-      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
-      let isReturn = false;
-      Utils.registerEvent("blurMode01", true, 178210, () => { isReturn = true });
-      Utils.waitAndClickComponent(driver, "blurOnKeyboardHideMode01",emitKey);
-      await Utils.waitForExist(() => isReturn, "blurMode01" + '_returnCheck', true, 1000);
-      done();
+      Utils.emitEvent(emitKey, 10);
+      Utils.registerEvent("blurMode01",true,20241133,done);
+      sendEventByKey('blurOnKeyboardHideMode01',10,'');
     })
 
     /*
@@ -81,13 +96,14 @@ export default function blurModeTest() {
    */
     it('blurMode02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       emitKey="blurMode02";
-      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
-      let isReturn = false;
-      Utils.registerEvent("blurMode02", true, 178220, () => { isReturn = true });
-      Utils.waitAndClickComponent(driver, "blurOnKeyboardHideMode01",emitKey);
-      await Utils.waitForExist(() => isReturn, "blurMode02" + '_returnCheck', true, 1000);
-      done();
+      Utils.emitEvent(emitKey, 10);
+      Utils.registerEvent("blurMode02",true,20241134,done);
+      sendEventByKey('blurOnKeyboardHideMode01',10,'');
     })
+
+
 
   })
 }
+
+
