@@ -1894,5 +1894,196 @@ export default function napiCheckExTest() {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'napiDateTest013 completed successfully');
     })
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0001
+     * @tc.name      testStringTest001
+     * @tc.desc      Test UTF-16 string creation and retrieval using napi_create_string_utf16
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testStringTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('testUtf16StringCreationAndRetrieval START');
+      try {
+        // 调用C++测试函数进行UTF-16字符串创建和获取测试
+        let result: boolean = napitestex.NapiStringTest001();
+        expect(result).assertTrue();
+        console.info('testUtf16StringCreationAndRetrieval PASS');
+      } catch (err) {
+        console.error('testUtf16StringCreationAndRetrieval err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0002
+     * @tc.name      testStringTest002
+     * @tc.desc      Test cross-encoding conversion between UTF-8, UTF-16, and Latin1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testStringTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('testCrossEncodingConversion START');
+      try {
+        // 调用C++测试函数进行跨编码转换测试
+        let result: boolean = napitestex.NapiStringTest002();
+        expect(result).assertTrue();
+        console.info('testCrossEncodingConversion PASS');
+      } catch (err) {
+        console.error('testCrossEncodingConversion err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0003
+     * @tc.name      testStringTest003
+     * @tc.desc      Test boundary length cases including empty strings and very long strings
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testStringTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('testBoundaryLengthCases START');
+      try {
+        // 调用C++测试函数进行边界长度测试
+        let result: boolean = napitestex.NapiStringTest003();
+        expect(result).assertTrue();
+        console.info('testBoundaryLengthCases PASS');
+      } catch (err) {
+        console.error('testBoundaryLengthCases err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0004
+     * @tc.name      testStringTest004
+     * @tc.desc      Test encoding compatibility between different string types
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testStringTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('testEncodingCompatibility START');
+      try {
+        // 调用C++测试函数进行编码兼容性测试
+        let result: boolean = napitestex.NapiStringTest004();
+        expect(result).assertTrue();
+        console.info('testEncodingCompatibility PASS');
+      } catch (err) {
+        console.error('testEncodingCompatibility err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0005
+     * @tc.name      testStringTest005
+     * @tc.desc      Test buffer size edge cases and boundary conditions
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testStringTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('testBufferSizeEdgeCases START');
+
+      try {
+        // 调用C++测试函数进行缓冲区边界测试
+        let result: boolean = napitestex.NapiStringTest005();
+        expect(result).assertTrue();
+        console.info('testBufferSizeEdgeCases PASS');
+      } catch (err) {
+        console.error('testBufferSizeEdgeCases err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0006
+     * @tc.name      testStringTest006
+     * @tc.desc      Test error handling robustness with invalid parameters
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testStringTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('testErrorHandlingRobustness START');
+      try {
+        // 调用C++测试函数进行错误处理健全性测试
+        let result: boolean = napitestex.NapiStringTest006();
+        expect(result).assertTrue();
+
+        console.info('testErrorHandlingRobustness PASS');
+      } catch (err) {
+        console.error('testErrorHandlingRobustness err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0007
+     * @tc.name      testStringTest007
+     * @tc.desc      Test multi-encoding compatibility operations with mixed API usage
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testStringTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('testMultiEncodingCompatibilityOperations START');
+      try {
+        // 调用C++测试函数进行多编码兼容操作测试
+        let result: boolean = napitestex.NapiStringTest007();
+        expect(result).assertTrue();
+        console.info('testMultiEncodingCompatibilityOperations PASS');
+      } catch (err) {
+        console.error('testMultiEncodingCompatibilityOperations err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0008
+     * @tc.name      testStringTest008
+     * @tc.desc      Test special character handling including BOM, NULL, and multi-byte characters
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testStringTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('testSpecialCharacterHandling START');
+      try {
+        // 调用C++测试函数进行特殊字符处理测试
+        let result: boolean = napitestex.NapiStringTest008();
+        expect(result).assertTrue();
+        console.info('testSpecialCharacterHandling PASS');
+      } catch (err) {
+        console.error('testSpecialCharacterHandling err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_STRING_0009
+     * @tc.name      testStringTest009
+     * @tc.desc      Test thread safety simulation of NAPI string operations
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it('testStringTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      console.info('testStringSafetySimulation START');
+      try {
+        // 调用C++测试函数进行线程安全性模拟测试
+        let result: boolean = napitestex.NapiStringTest009();
+        expect(result).assertTrue();
+        console.info('testStringSafetySimulation PASS');
+      } catch (err) {
+        console.error('testStringSafetySimulation err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });    
   })
 }
