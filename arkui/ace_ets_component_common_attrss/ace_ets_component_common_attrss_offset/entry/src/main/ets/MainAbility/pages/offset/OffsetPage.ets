@@ -31,15 +31,15 @@ struct Offset {
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] //For Scroll
   @State show: boolean = false //For Panel
   @State _offset: Position = { x: 0, y: 0 };
-  @State targetView: string = router.getParams() ? (router.getParams() as ESObject)['view']['targetView'] : ''
-  @State componentKey: string = router.getParams() ? (router.getParams() as ESObject)['view']['componentKey'] : ''
-  @State parentWidth: number = router.getParams() ? (router.getParams() as ESObject)['view']['parentWidth'] : 0
-  @State parentHeight: number = router.getParams() ? (router.getParams() as ESObject)['view']['parentHeight'] : 0
-  @State subassemblyWidth: number = router.getParams() ? (router.getParams() as ESObject)['view']['subassemblyWidth'] : 0
-  @State subassemblyHeight: number = router.getParams() ? (router.getParams() as ESObject)['view']['subassemblyHeight'] : 0
-  @State parentComponentKey: string = router.getParams() ? (router.getParams() as ESObject)['view']['parentComponentKey'] : ''
+  @State targetView: string = router.getParams() ? (router.getParams() as ESObject)?.['view']?.['targetView'] : ''
+  @State componentKey: string = router.getParams() ? (router.getParams() as ESObject)?.['view']?.['componentKey'] : ''
+  @State parentWidth: number = router.getParams() ? (router.getParams() as ESObject)?.['view']?.['parentWidth'] : 0
+  @State parentHeight: number = router.getParams() ? (router.getParams() as ESObject)?.['view']?.['parentHeight'] : 0
+  @State subassemblyWidth: number = router.getParams() ? (router.getParams() as ESObject)?.['view']?.['subassemblyWidth'] : 0
+  @State subassemblyHeight: number = router.getParams() ? (router.getParams() as ESObject)?.['view']?.['subassemblyHeight'] : 0
+  @State parentComponentKey: string = router.getParams() ? (router.getParams() as ESObject)?.['view']?.['parentComponentKey'] : ''
   @State referenceComponentKey: string =
-    router.getParams() ? (router.getParams() as ESObject)['view']['referenceComponentKey'] : ''
+    router.getParams() ? (router.getParams() as ESObject)?.['view']?.['referenceComponentKey'] : ''
 
   onPageShow() {
     console.info('[Offset] page show called ')
