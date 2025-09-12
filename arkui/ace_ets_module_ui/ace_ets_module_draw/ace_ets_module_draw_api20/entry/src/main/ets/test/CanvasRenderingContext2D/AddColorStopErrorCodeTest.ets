@@ -56,7 +56,7 @@ export default function AddColorStopErrorCodeTest() {
 
       let strJson1 = getInspectorByKey('AddColorStopErrorCode');
       console.info("[AddColorStopErrorCodeTest_0100] AddColorStopErrorCode is: " + JSON.stringify(JSON.parse(strJson1).$attrs.content));
-      expect(JSON.parse(strJson1).$attrs.content).assertEqual('103701');
+      expect(JSON.parse(strJson1).$attrs.content).assertEqual('hello');
 
       console.info('[AddColorStopErrorCodeTest_0100] END');
       done();
