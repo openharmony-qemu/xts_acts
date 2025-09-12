@@ -644,6 +644,77 @@ export default function WindowLayoutTest() {
             }
         })
 
+        /**
+         * @tc.number    : testOnRectChangeOptionsMoveErrorCode1300002_static_0100
+         * @tc.name      : testOnRectChangeOptionsMoveErrorCode1300002_static_0100
+         * @tc.desc      : testOnRectChangeOptionsMoveErrorCode1300002_static_0100
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it("testOnRectChangeOptionsMoveErrorCode1300002_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testOnRectChangeOptionsMoveErrorCode1300002_static_0100" ;
+            try {
+                let subWindowClass : window.Window = await windowStage.createSubWindow("testOnRectChangeOptionsMoveErrorCode1300002_static_0100");
+                hilog.info(0x0000, '[ANI]', `${caseName} Succeeded in creating the sub window.`);
+                await subWindowClass.showWindow();
+                await Utils.msSleep(1000);
+                subWindowClass.on('windowRectChange', (data : window.RectChangeOptions) => {
+                    hilog.info(0x0000, '[ANI]',`${caseName}: Succeeded window rect changes. Data: ${JSON.stringify(data)}`);
+                    hilog.info(0x0000, '[ANI]',`${caseName}: Succeeded window reason changes. reason: ${JSON.stringify(data.reason)}`);
+                    expect(data!.rect.left).assertEqual(300);
+                    expect(data!.rect.top).assertEqual(300);
+                    subWindowClass.off('windowRectChange');
+                    subWindowClass.destroyWindow();
+                    done();
+                });
+                await subWindowClass.moveWindowTo(300, 300);
+                hilog.info(0x0000, '[ANI]',`${caseName} Succeeded in moving the window.`);
+            } catch (error: BusinessError) {
+                if (error!.code == 1300002) {
+                    hilog.error(0x0000, '[ANI]',`${caseName} This window state is abnormal`);
+                    done();
+                } else if (error!.code == 801) {
+                    hilog.error(0x0000, '[ANI]',`${caseName} The current device type does not support to windowRectChange`);
+                    done();
+                } else {
+                    hilog.error(0x0000, '[ANI]',`${caseName}: Error: ${JSON.stringify(error)}`);
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWRECTCJANGE_JS_API_0100
+         * @tc.name      : testRectChangeOptions_off_static_0100
+         * @tc.desc      : Test the function value of testRectChangeOptions
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it("testRectChangeOptions_off_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> =>{
+            let msgStr:string = "testRectChangeOptions_off_static_0100";
+            hilog.info(0x0000, '[ANI]',msgStr + "begin");
+            try {
+                let windowClass: window.Window = await windowStage.createSubWindow("testRectChangeOptions_off_static_0100");
+                await windowClass.destroyWindow();
+                windowClass.off('windowRectChange');
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded window rect changes');
+                expect(false).assertTrue();
+                done();
+            } catch (error: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to window rect changes.Data: ' + JSON.stringify(error));
+                if (error!.code === 801) {
+                    hilog.error(0x0000, '[ANI]',`${msgStr} The current device type does not support to windowRectChange`);
+                    done();
+                } else  {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to window rect changes.Data: ' + JSON.stringify(error));
+                    expect(error!.code).assertEqual(1300002);
+                    done();
+                }
+            }
+        })
+
 
 
     })
