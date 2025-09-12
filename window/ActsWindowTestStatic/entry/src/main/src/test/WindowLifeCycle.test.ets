@@ -892,7 +892,104 @@ export default function WindowLifeCycleTest() {
         })
 
         
-
+/**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0090
+         * @tc.name      : testNoInteractionDetected_OnMainWindow_static_0100
+         * @tc.desc      : Enables this window to not listen for interactive events within a specified timeout period
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level2
+         */
+        it('testNoInteractionDetected_OnMainWindow_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testNoInteractionDetected_OnMainWindow_static_0100';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let mainWin:window.Window = windowStage.getMainWindowSync();
+            expect(!!mainWin).assertTrue();
+            try {
+                mainWin.on('noInteractionDetected', 1, () => {
+                    hilog.info(0x0000, '[ANI]', msgStr + 'no interaction in 10s');
+                    mainWin.off('noInteractionDetected');
+                    done();
+                });
+                hilog.info(0x0000, '[ANI]', msgStr +  ' register noInteractionDetected successed');
+            } catch (exception:BusinessError) {
+                if (exception!.code != 801) {
+                    hilog.error(0x0000, '[ANI]', msgStr + `Failed to register callback. Cause code: ${exception.code}, message: ${exception.message}`);
+                    expect(false).assertTrue();
+                    done();
+                } else {
+                    hilog.info(0x0000, '[ANI]', msgStr + JSON.stringify(exception));
+                    hilog.info(0x0000, '[ANI]', msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager');
+                    expect(exception!.code).assertEqual(801);
+                    done();
+                }
+            }
+            await  Utils.msSleep(800)
+            await  Utils.msSleep(800)
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3980
+         * @tc.name      : testNoInteractionDetected_on_Function_Callback_static_0300
+         * @tc.desc      : window type noInteractionDetected
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it("testNoInteractionDetected_on_Function_Callback_static_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3,  async (done: () => void): Promise<void>  =>{
+            let msgStr:string = "testNoInteractionDetected_on_Function_Callback_static_0300";
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            try{
+                hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
+                let windowClass: window.Window = await window.getLastWindow(context);
+                windowClass.on('noInteractionDetected', 60, () => {
+                    hilog.info(0x0000, '[ANI]', msgStr +  'no interaction in 60s');
+                });
+                expect(true).assertTrue();
+                done();
+            } catch (error:BusinessError) {
+                hilog.info(0x0000, '[ANI]', msgStr +  'Failed to register callback. Cause: ' + JSON.stringify(error));
+                if (error!.code != 801) {
+                    hilog.info(0x0000, '[ANI]', msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(error));
+                    expect(false).assertTrue();
+                    done();
+                } else {
+                    hilog.info(0x0000, '[ANI]', msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager');
+                    expect(error!.code).assertEqual(801);
+                    done();
+                }
+            }
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3990
+         * @tc.name      : tetestNoInteractionDetected_off_Function_Callback_static_0400
+         * @tc.desc      : window type noInteractionDetected
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it("tetestNoInteractionDetected_off_Function_Callback_static_0400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void>  =>{
+            let msgStr:string = "tetestNoInteractionDetected_off_Function_Callback_static_0400";
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            try{
+                hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
+                let windowClass: window.Window = await window.getLastWindow(context);
+                windowClass.off('noInteractionDetected');
+                expect(true).assertTrue();
+                done();
+            } catch (error:BusinessError) {
+                hilog.info(0x0000, '[ANI]', msgStr +  'Failed to unregister callback. Cause: ' + JSON.stringify(error));
+                if (error!.code != 801) {
+                    hilog.info(0x0000, '[ANI]', msgStr + 'Failed to unregister callback. Cause: ' + JSON.stringify(error));
+                    expect(false).assertTrue();
+                    done();
+                } else {
+                    hilog.info(0x0000, '[ANI]', msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager');
+                    expect(error!.code).assertEqual(801);
+                    done();
+                }
+            }
+        })
         
 
 
