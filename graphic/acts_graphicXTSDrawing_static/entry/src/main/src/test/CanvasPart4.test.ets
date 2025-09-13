@@ -17,7 +17,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestT
 import image from '@ohos.multimedia.image';
 import drawing from '@ohos.graphics.drawing';
 import common2D from '@ohos.graphics.common2D';
-import { getEnumCount } from './utils';
+import { getEnumCount } from './Util.test';
 import { BusinessError } from '@ohos.base';
 
 export default function drawingTsCanvasPart4Test() {

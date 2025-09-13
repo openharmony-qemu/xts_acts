@@ -15,7 +15,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from "../../../hypium/index";
 import drawing from '@ohos.graphics.drawing';
-import { getEnumCount } from './utils';
+import { getEnumCount } from './Util.test';
 import { BusinessError } from '@ohos.base';
 
 export default function samplingOptionsTest() {
