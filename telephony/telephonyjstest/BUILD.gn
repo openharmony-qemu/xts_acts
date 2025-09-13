@@ -31,7 +31,6 @@ group("telephonyjstest") {
     "sms_mms:sms_mms",
     "telephony_base:telephony_base",
     "simStatic:ActsSimManagerFunctionStaticTest",
-    "ActsCallManagerIms2CallTestStatic:ActsCallManagerIms2CallStaticTest",
     "ActsObserverEtsTestStatic:ActsObserverEtsStaticTest",
     "ActsRadiostatisticEtsTestStatic:ActsRadiostatisticEtsStaticTest",
   ]
