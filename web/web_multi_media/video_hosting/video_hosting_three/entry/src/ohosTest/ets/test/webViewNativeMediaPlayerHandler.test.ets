@@ -77,8 +77,8 @@ export default function webViewNativeMediaPlayerHandler() {
     /*
     * @tc.number     : SUB_ACE_WEB_handleTimeUpdate_API_0002
     * @tc.name       : testWebViewNativeMediaPlayerHandleTimeUpdate
-    * @ @tc.level      : Level 1
-    tc.desc       : test handleTimeUpdate
+    * @tc.level      : Level 1
+    * @tc.desc       : test handleTimeUpdate
     * @tc.size_t     : MediumTest
     * @tc.type       : Function
     **/
