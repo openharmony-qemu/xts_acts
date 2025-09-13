@@ -16,6 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -30,17 +31,22 @@ struct WebMediaPlayGestureAccess {
   @State databaseAccess: boolean = true;
   @State mediaPlayGestureAccess: boolean = true;
   @State statusResult: string = '';
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+  @State isEnd: number = -1;
+  @State isMediaConfigReady: number = -1; // -1：未生效，0：已生效
+  @State isAudioChanged:number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 300710,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(300710)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -49,6 +55,7 @@ struct WebMediaPlayGestureAccess {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -57,13 +64,18 @@ struct WebMediaPlayGestureAccess {
     Column() {
       Row() {
         Button("audioStateTest").key('WebMediaPlayGestureAccessTestButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str)
+          await waitForExist(()=>this.isReceive,  this.str + 'IsReceive', 0);
+          await waitForExist(()=>this.isPageEnd, this.str + 'IsPageEnd', 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitMediaPlayGestureAccessTrue": {
               try {
                 this.statusResult = ''
                 this.mediaPlayGestureAccess = true;
-                await Utils.sleep(1000)
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
                 this.controller.requestFocus();
                 this.controller.runJavaScript("play()")
                 await Utils.sleep(1000)
@@ -82,7 +94,7 @@ struct WebMediaPlayGestureAccess {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               this.controller.runJavaScript("test()", () => {
-                Utils.emitEvent(this.statusResult, 60504)
+                Utils.emitEvent(this.statusResult, 300720)
               })
               break;
             }
@@ -90,10 +102,12 @@ struct WebMediaPlayGestureAccess {
               try {
                 this.statusResult = ''
                 this.mediaPlayGestureAccess = false;
-                await Utils.sleep(1000)
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(()=>this.isPageEnd, this.str + 'IsPageEnd', 0);
                 this.controller.requestFocus();
                 this.controller.runJavaScript("play()")
-                await Utils.sleep(1000)
+                await waitForExist(()=>this.statusResult, this.str, 'true_');
                 this.controller.runJavaScript("isPlaying()", (error, result) => {
                   if (error) {
                     console.log(`The controller.isPlaying() return error is: ${error}`);
@@ -106,22 +120,34 @@ struct WebMediaPlayGestureAccess {
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
-              this.controller.runJavaScript("test()", () => {
-                Utils.emitEvent(this.statusResult, 60506)
+              await waitForExist(()=>this.statusResult, this.str, 'true_true_');
+              let flag = this.statusResult;
+              this.controller.runJavaScript("pause()", (error, result) => {
+                if (error) {
+                  console.log(`The controller.pause() return error is: ${error}`);
+                }
+                if (result) {
+                  console.log(`The controller.pause() return value is: ${result}`);
+                }
               })
-              this.controller.runJavaScript("pause()")
+              await waitForExist(()=>this.statusResult, this.str, 'true_true_false_');
+              this.controller.runJavaScript("test()", () => {
+                Utils.emitEvent(flag, 300730)
+              })
               break;
             }
             case "emitMediaPlayGestureAccessFalsePause": {
               try {
                 this.statusResult = ''
                 this.mediaPlayGestureAccess = false;
-                await Utils.sleep(1000)
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(()=>this.isPageEnd, this.str + 'IsPageEnd', 0);
                 this.controller.requestFocus();
                 this.controller.runJavaScript("play()")
-                await Utils.sleep(1000)
+                await waitForExist(()=>this.statusResult, this.str, 'true_');
                 this.controller.runJavaScript("pause()")
-                await Utils.sleep(1000)
+                await waitForExist(()=>this.statusResult, this.str, 'true_false_');
                 this.controller.runJavaScript("isPlaying()", (error, result) => {
                   if (error) {
                     console.log(`The controller.isPlaying() return error is: ${error}`);
@@ -131,11 +157,12 @@ struct WebMediaPlayGestureAccess {
                     console.log(`The controller.isPlaying() return value is: ${result}`);
                   }
                 })
+                await waitForExist(()=>this.statusResult, this.str, 'true_false_false_');
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               this.controller.runJavaScript("test()", () => {
-                Utils.emitEvent(this.statusResult, 60508)
+                Utils.emitEvent(this.statusResult, 300740)
               })
               break;
             }
@@ -155,6 +182,9 @@ struct WebMediaPlayGestureAccess {
         .onAudioStateChanged(event => {
           this.statusResult += (event.playing + "_")
           console.log('onAudioStateChanged playing: ' + event.playing);
+        })
+        .onPageEnd(()=>{
+          this.isPageEnd = 0;
         })
     }
   }
