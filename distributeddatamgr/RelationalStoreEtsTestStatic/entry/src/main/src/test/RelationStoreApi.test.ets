@@ -2375,6 +2375,57 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0101 end *************');
     })
 
+    /**
+     * @tc.name       : testTransaction0102
+     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7800
+     * @tc.desc       : Transaction insertSync normal test
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
+     */
+    it('testTransaction0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* testTransaction0102 start *************');
+      try{
+        let rdbTrans = await rdbStore.createTransaction(options);
+        let rows: long = rdbTrans.insertSync("test", valueBucket0);
+        await rdbTrans.commit();
+        expect(rows == 1).assertTrue();
+        done();
+      }catch(err){
+        hilog.info(domain, tag, '%{public}s', '************* testTransaction0102 end *************' + err);
+        expect(err != null ).assertFail();
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', '************* testTransaction0102 end *************');
+    })
+
+    /**
+     * @tc.name       : testTransaction0103
+     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7800
+     * @tc.desc       : Transaction updatetSync normal test
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
+     */
+    it('testTransaction0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* testTransaction0103 start *************');
+      try{
+        let rdbTrans = await rdbStore.createTransaction(options);
+        let rows: long = rdbTrans.insertSync("test", valueBucket0);
+        expect(rows == 1).assertTrue();
+        let predicates = new data_relationalStore.RdbPredicates("test");
+        predicates.equalTo("data1", "hello");
+        rows = rdbTrans.updateSync(valueBucket1, predicates);
+        expect(rows == 1).assertTrue();
+        await rdbTrans.commit();
+        done();
+      }catch(err){
+        hilog.info(domain, tag, '%{public}s', '************* testTransaction0103 end *************' + err);
+        expect(err != null ).assertFail();
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', '************* testTransaction0103 end *************');
+    })
 
     /**
      * @tc.name       : testTransaction0002
