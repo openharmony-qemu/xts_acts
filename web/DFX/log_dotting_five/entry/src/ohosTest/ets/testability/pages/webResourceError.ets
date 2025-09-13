@@ -69,6 +69,10 @@ struct webResourceError {
                 this.isPageEnd = -1;
                 this.controller.loadUrl('https://wrong.host.badssl.com');
                 await waitForExist(()=>this.isPageEnd, 'WebResourceErrorButtonIsPageEnd', 0);
+
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(()=>this.isPageEnd, 'WebResourceErrorButtonIsPageEnd', 0);
                 Utils.emitEvent(this.errorCode, 120020)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
