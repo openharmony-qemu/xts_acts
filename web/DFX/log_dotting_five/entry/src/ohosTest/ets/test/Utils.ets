@@ -12,8 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import { Driver, ON } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import { expect } from '@ohos/hypium';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default class Utils {
   static sleep(time: number) {
@@ -44,7 +47,7 @@ export default class Utils {
         eventId: eventId,
         priority: events_emitter.EventPriority.LOW
       }
-      events_emitter.on(innerEvent, callBack)
+      events_emitter.once(innerEvent, callBack)
     } catch (err) {
       console.info(`[${testCaseName}] err:` + JSON.stringify(err));
     }
@@ -77,6 +80,33 @@ export default class Utils {
       events_emitter.emit(backEvent, backData);
     } catch (err) {
       console.info("webFlag emit action state err: " + JSON.stringify(err));
+    }
+  }
+  static async waitAndClickComponent(driver: Driver, componentId: string, logFlag: string): Promise<void> {
+    let retryTimes: number = 0;
+    let retry: boolean = true;
+    while (retry && retryTimes <= 3) {
+      retry = false;
+      try {
+        const buttonComponent = await driver.waitForComponent(ON.id(componentId), 10000);
+        if (!buttonComponent) {
+          console.error(`${logFlag} error: buttonConmponent is null.`);
+          retry = true;
+          await Utils.sleep(1000);
+          retryTimes++;
+          console.log(logFlag + ' retryTimes = ' + retryTimes);
+        }
+        await buttonComponent.click();
+      } catch (e) {
+        const error = e as BusinessError;
+        console.error(`${logFlag} ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        if (error.code === 17000002) {
+          retry = true;
+          await Utils.sleep(1000);
+          retryTimes++;
+          console.log(logFlag + ' retryTimes = ' + retryTimes);
+        }
+      }
     }
   }
 }

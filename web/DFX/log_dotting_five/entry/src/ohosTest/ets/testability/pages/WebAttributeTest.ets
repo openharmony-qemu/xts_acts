@@ -16,6 +16,7 @@
 import webView from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
+import {waitForExist} from '../../test/WaitTest';
 
 @Entry
 @Component
@@ -23,17 +24,19 @@ struct WebAttributeTest {
   controller: webView.WebviewController = new webView.WebviewController();
   @State str: string = ""
   @State testConsole: boolean = false
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 119060,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(119060)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -47,6 +50,7 @@ struct WebAttributeTest {
         } catch (error) {
           console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
         }
+        this.isReceive = 0;
       }
     }
   }
@@ -58,13 +62,17 @@ struct WebAttributeTest {
           .key('WebAttributeTestButton')
           .focusable(true)
           .onClick(async () => {
-            console.info("key==>" + this.str)
+            await waitForExist(()=>this.isReceive, 'WebAttributeTestButtonIsReceive', 0);
+            await waitForExist(()=>this.isPageEnd, 'WebAttributeTestButtonIsPageEnd', 0);
+            console.info('key==>' + this.str);
+            this.isReceive = -1;
             switch (this.str) {
               case "emitOnConsole001": {
                 try {
                   this.testConsole = true
+                  this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/index.html");
-                  await Utils.sleep(2000)
+                  await waitForExist(()=>this.isPageEnd, 'WebAttributeTestButtonIsPageEnd', 0);
                   this.controller.runJavaScript("consoleTest()")
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -74,8 +82,9 @@ struct WebAttributeTest {
               case "emitConsoleMessage001": {
                 try {
                   this.testConsole = true
+                  this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/index.html");
-                  await Utils.sleep(2000)
+                  await waitForExist(()=>this.isPageEnd, 'WebAttributeTestButtonIsPageEnd', 0);
                   this.controller.runJavaScript("consoleTest()")
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -98,14 +107,17 @@ struct WebAttributeTest {
           .onConsole((event) => {
             if (event) {
               if (this.testConsole) {
-                Utils.emitEvent(event.message.getMessage(), 70040)
-                Utils.emitEvent(event.message.getLineNumber(), 70042)
-                Utils.emitEvent(event.message.getSourceId(), 70044)
-                Utils.emitEvent(event.message.getMessageLevel(), 70046)
+                Utils.emitEvent(event.message.getMessage(), 119070)
+                Utils.emitEvent(event.message.getLineNumber(), 119080)
+                Utils.emitEvent(event.message.getSourceId(), 119090)
+                Utils.emitEvent(event.message.getMessageLevel(), 119100)
                 this.testConsole = false
               }
             }
             return false
+          })
+          .onPageEnd(()=>{
+            this.isPageEnd = 0;
           })
       }
       .width('100%')

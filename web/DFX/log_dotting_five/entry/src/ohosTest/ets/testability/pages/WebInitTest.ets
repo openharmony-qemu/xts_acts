@@ -17,6 +17,7 @@ import webView from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 import business_error from '@ohos.base';
+import {waitForExist} from '../../test/WaitTest';
 
 @Entry
 @Component
@@ -47,17 +48,19 @@ struct WebInitTest {
     isSupportCORS: true,
     isSupportFetch: true
   }]
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
  
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 119760,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(119760)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -71,6 +74,7 @@ struct WebInitTest {
         } catch (error) {
           console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
         }
+        this.isReceive = 0;
       }
     }
   }
@@ -90,7 +94,10 @@ struct WebInitTest {
         Button('WebInitTestButton')
           .key('WebInitTestButton')
           .onClick(async () => {
-            console.info("key==>" + this.str)
+            await waitForExist(()=>this.isReceive, 'WebInitTestButtonIsReceive', 0);
+            await waitForExist(()=>this.isPageEnd, 'WebInitTestButtonIsPageEnd', 0);
+            console.info('key==>' + this.str);
+            this.isReceive = -1;
             switch (this.str) {
               case "testSchemeName001": {
                 try {
@@ -98,7 +105,7 @@ struct WebInitTest {
                 } catch (error) {
                   let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent(e.code, 300);
+                  Utils.emitEvent(e.code, 119770);
                 }
                 break;
               }
@@ -108,7 +115,7 @@ struct WebInitTest {
                 } catch (error) {
                   let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent(e.code, 302);
+                  Utils.emitEvent(e.code, 119780);
                 }
                 break;
               }
@@ -121,6 +128,9 @@ struct WebInitTest {
           .javaScriptAccess(true)
           .geolocationAccess(true)
           .databaseAccess(true)
+          .onPageEnd(()=>{
+            this.isPageEnd = 0;
+          })
       }
       .width('100%')
     }

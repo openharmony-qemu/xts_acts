@@ -21,6 +21,7 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 
 import testNapi from 'libentry.so';
+import {waitForExist} from '../../test/WaitTest';
 
 @Entry
 @Component
@@ -35,6 +36,8 @@ struct webRegisterCustomsComponent {
     @State consoleMsg: string = ''
     @State isRegister: number = -1;
     @State isSet: number = -1;
+    @State isReceive: number = -1;
+    @State isPageEnd: number = -1;
     
     aboutToAppear() {
         let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
@@ -53,13 +56,13 @@ struct webRegisterCustomsComponent {
     
     onPageShow(){
         let valueChangeEvent: events_emitter.InnerEvent = {
-            eventId: 10,
+            eventId: 118010,
             priority: events_emitter.EventPriority.LOW
         }
         events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
     }
     onPageHide() {
-        events_emitter.off(10)
+        events_emitter.off(118010)
     }
     private valueChangeCallBack = (eventData: events_emitter.EventData) => {
         console.info("web page valueChangeCallBack");
@@ -67,6 +70,7 @@ struct webRegisterCustomsComponent {
             console.info("valueChangeCallBack:" + JSON.stringify(eventData));
             if (eventData.data != null && eventData.data.ACTION != null) {
                 this.str = eventData.data.ACTION;
+                this.isReceive = 0;
             }
         }
     }
@@ -76,35 +80,36 @@ struct webRegisterCustomsComponent {
         Column() {
             Row() {
                 Button("webHostingButton123").key('webHostingButton').onClick(async () => {
-                    console.info("key==>" + this.str)
+                    await waitForExist(()=>this.isPageEnd, 'webHostingButtonIsPageEnd', 0);
+                    await waitForExist(()=>this.isReceive, 'webHostingButtonIsReceive', 0);
+                    console.info('key==>' + this.str);
+                    this.isReceive = -1;
                     switch (this.str) {
                         case "emitWebResponse_GetError": {
-                            await Utils.sleep(1000);  
                             console.log("emitWebResponse_GetError ==>");
                             
-                            let result:number = testNapi.responseGetError();                            
-                            await Utils.sleep(1000);                            
+                            let result:number = testNapi.responseGetError();
+                            await waitForExist(() => result, 'responseGetErrorResult', 0, 300, 10);
                             console.log("emitWebResponse_GetError ==>" + result);
                             
                             if (result == 0) {
-                                Utils.emitEvent(true, 7729);
+                                Utils.emitEvent(true, 118020);
                             } else {
-                                Utils.emitEvent(false, 7729);
+                                Utils.emitEvent(false, 118020);
                             }
                             break;
                         }
                         case "emitWebResponse_SetError": {
-                            await Utils.sleep(1000);  
                             console.log("emitWebResponse_SetError ==>");
                             
-                            let result:number = testNapi.responseSetError();                            
-                            await Utils.sleep(1000);                            
+                            let result:number = testNapi.responseSetError();
+                            await waitForExist(() => result, 'responseGetErrorResult', 0, 300, 10);
                             console.log("emitWebResponse_SetError ==>" + result);
                             
                             if (result == 0) {
-                                Utils.emitEvent(true, 7736);
+                                Utils.emitEvent(true, 118030);
                             } else {
-                                Utils.emitEvent(false, 7736);
+                                Utils.emitEvent(false, 118030);
                             }
                             break;
                         }
@@ -116,6 +121,9 @@ struct webRegisterCustomsComponent {
                 .width('100%')
                 .javaScriptAccess(true)
                 .fileAccess(true)
+                .onPageEnd(()=>{
+                    this.isPageEnd = 0;
+                })
         }
         .height('100%')
     }    

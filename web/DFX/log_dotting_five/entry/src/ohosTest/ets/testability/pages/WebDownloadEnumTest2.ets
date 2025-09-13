@@ -16,23 +16,26 @@
 import webView from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
+import {waitForExist} from '../../test/WaitTest';
 
 @Entry
 @Component
 struct WebDownloadEnumTest {
   controller: webView.WebviewController = new webView.WebviewController();
   @State str: string = ''
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 119470,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(119470)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -41,6 +44,7 @@ struct WebDownloadEnumTest {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -50,11 +54,14 @@ struct WebDownloadEnumTest {
       Column() {
         Button('WebDownloadEnumTestButton').key('WebDownloadEnumTestButton')
           .onClick(async () => {
-            console.info('key==>' + this.str)
+            await waitForExist(()=>this.isReceive, 'WebDownloadEnumTestButtonIsReceive', 0);
+            await waitForExist(()=>this.isPageEnd, 'WebDownloadEnumTestButtonIsPageEnd', 0);
+            console.info('key==>' + this.str);
+            this.isReceive = -1;
             switch (this.str) {
               case 'testWebDownloadEnum001': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.ERROR_UNKNOWN, 70250)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.ERROR_UNKNOWN, 119480)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -62,7 +69,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum002': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.FILE_FAILED, 70251)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.FILE_FAILED, 119490)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -70,7 +77,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum003': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.FILE_ACCESS_DENIED, 70252)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.FILE_ACCESS_DENIED, 119500)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -78,7 +85,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum004': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.FILE_NO_SPACE, 70253)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.FILE_NO_SPACE, 119510)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -86,7 +93,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum005': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.FILE_NAME_TOO_LONG, 70254)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.FILE_NAME_TOO_LONG, 119520)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -94,7 +101,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum006': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.FILE_TOO_LARGE, 70255)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.FILE_TOO_LARGE, 119530)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -102,7 +109,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum007': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.FILE_TRANSIENT_ERROR, 70256)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.FILE_TRANSIENT_ERROR, 119540)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -110,7 +117,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum008': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.FILE_BLOCKED, 70257)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.FILE_BLOCKED, 119550)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -118,7 +125,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum009': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.FILE_TOO_SHORT, 70258)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.FILE_TOO_SHORT, 119560)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -126,7 +133,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum010': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.FILE_HASH_MISMATCH, 70259)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.FILE_HASH_MISMATCH, 119570)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -134,7 +141,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum011': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.FILE_SAME_AS_SOURCE, 70260)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.FILE_SAME_AS_SOURCE, 119580)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -142,7 +149,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum012': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.NETWORK_FAILED, 70261)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.NETWORK_FAILED, 119590)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -150,7 +157,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum013': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.NETWORK_TIMEOUT, 70262)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.NETWORK_TIMEOUT, 119600)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -158,7 +165,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum014': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.NETWORK_DISCONNECTED, 70263)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.NETWORK_DISCONNECTED, 119610)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -166,7 +173,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum015': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.NETWORK_SERVER_DOWN, 70264)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.NETWORK_SERVER_DOWN, 119620)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -174,7 +181,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum016': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.NETWORK_INVALID_REQUEST, 70265)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.NETWORK_INVALID_REQUEST, 119630)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -182,7 +189,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum017': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.SERVER_FAILED, 70266)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.SERVER_FAILED, 119640)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -190,7 +197,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum018': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.SERVER_NO_RANGE, 70267)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.SERVER_NO_RANGE, 119650)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -198,7 +205,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum019': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.SERVER_BAD_CONTENT, 70268)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.SERVER_BAD_CONTENT, 119660)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -206,7 +213,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum020': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.SERVER_UNAUTHORIZED, 70269)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.SERVER_UNAUTHORIZED, 119670)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -214,7 +221,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum021': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.SERVER_CERT_PROBLEM, 70270)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.SERVER_CERT_PROBLEM, 119680)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -222,7 +229,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum022': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.SERVER_FORBIDDEN, 70271)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.SERVER_FORBIDDEN, 119690)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -230,7 +237,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum023': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.SERVER_UNREACHABLE, 70272)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.SERVER_UNREACHABLE, 119700)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -238,7 +245,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum024': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.SERVER_CONTENT_LENGTH_MISMATCH, 70273)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.SERVER_CONTENT_LENGTH_MISMATCH, 119710)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -246,7 +253,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum025': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.SERVER_CROSS_ORIGIN_REDIRECT, 70274)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.SERVER_CROSS_ORIGIN_REDIRECT, 119720)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -254,7 +261,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum026': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.USER_CANCELED, 70275)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.USER_CANCELED, 119730)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -262,7 +269,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum027': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.USER_SHUTDOWN, 70276)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.USER_SHUTDOWN, 119740)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -270,7 +277,7 @@ struct WebDownloadEnumTest {
               }
               case 'testWebDownloadEnum028': {
                 try {
-                  Utils.emitEvent(webView.WebDownloadErrorCode.CRASH, 70277)
+                  Utils.emitEvent(webView.WebDownloadErrorCode.CRASH, 119750)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -287,6 +294,9 @@ struct WebDownloadEnumTest {
           .verticalScrollBarAccess(true)
           .geolocationAccess(true)
           .databaseAccess(true)
+          .onPageEnd(()=>{
+            this.isPageEnd = 0;
+          })
       }
       .width('100%')
     }

@@ -18,6 +18,7 @@ import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 // @ts-nocheck
@@ -32,19 +33,18 @@ export default function ActsAceWebViewSdkSchemeHandler() {
         }
         
         try {
-            await Utils.sleep(1000)
             router.clear();
             let pages = router.getState();
             console.info("get webViewSdkSchemeHandler state success " + JSON.stringify(pages));
             if (!("webViewSdkSchemeHandler" == pages.name)) {
                 console.info("get webViewSdkSchemeHandler state success " + JSON.stringify(pages.name));
                 let result = await router.replaceUrl(options);
-                await Utils.sleep(1000);
                 console.info("push webViewSdkSchemeHandler state success " + JSON.stringify(result));
             }
         } catch (err) {
             console.error("push webViewSdkSchemeHandler page error:" + err);
         }
+      await waitForComponent("webViewSdkSchemeHandler");
         done()
     });
     
@@ -54,7 +54,6 @@ export default function ActsAceWebViewSdkSchemeHandler() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-        await Utils.sleep(2000);
         done();
     })
     /*
@@ -66,9 +65,8 @@ export default function ActsAceWebViewSdkSchemeHandler() {
      *@tc.level Level 1
      */
     it('testWebViewSdkSchemeHandler_setNetErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      emitKey = "emitWebViewSdkSchemeHandler_setNetErrorCode"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandler_setNetErrorCode", true, 1516, done);
+      Utils.emitEvent("emitWebViewSdkSchemeHandler_setNetErrorCode", 120030)
+      Utils.registerEvent("testWebViewSdkSchemeHandler_setNetErrorCode", true, 120040, done);
       sendEventByKey('webViewSdkSchemeHandler', 10, '');
     })
 
@@ -81,9 +79,8 @@ export default function ActsAceWebViewSdkSchemeHandler() {
      *@tc.level Level 1
      */
     it('testWebViewSdkSchemeHandler_getNetErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      emitKey = "emitWebViewSdkSchemeHandler_getNetErrorCode"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandler_getNetErrorCode", true, 1517, done);
+      Utils.emitEvent("emitWebViewSdkSchemeHandler_getNetErrorCode", 120030)
+      Utils.registerEvent("testWebViewSdkSchemeHandler_getNetErrorCode", true, 120050, done);
       sendEventByKey('webViewSdkSchemeHandler', 10, '');
     })
   })
