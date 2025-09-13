@@ -16,7 +16,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from "../../../hypium/index";
 import drawing from '@ohos.graphics.drawing';
 import common2D from '@ohos.graphics.common2D';
-import { getRandomNumber } from './Utils.test';
+import { getRandomNumber } from './Util.test';
 import { BusinessError } from '@ohos.base';
 
 export default function penTest() {
