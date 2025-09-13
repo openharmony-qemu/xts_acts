@@ -35,7 +35,7 @@ export default function textPickerOnChangeTest() {
     * @tc.level      : Level 1
     */
     it('testTextPickerOnChange001', Level.LEVEL1, async (done: Function) => {
-      await Utils.flingComponent('textPickerOnChangeTest', false, true);
+      await Utils.pickerFlingComponent('textPickerOnChangeTest', false, true);
       await Utils.sleep(2000)
       expect(Utils.getComponentInfoByKey('textPickerOnChangeTest').$attrs.backgroundColor).assertEqual('#FF00FF00')
       done()

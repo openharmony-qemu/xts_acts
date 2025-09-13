@@ -13,10 +13,16 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponents } from './WaitTest.test';
+import events_emitter from '@ohos.events.emitter';
+import { Driver, ON } from '@kit.TestKit';
+
+const driver = Driver.create();
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -35,12 +41,12 @@ export default function webController() {
         if (!("webController" == pages.name)) {
           console.info("get webController state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push webController page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webController page error: " + err);
       }
+      await waitForComponents('WebControllerButton');
       done()
     });
 
@@ -50,7 +56,6 @@ export default function webController() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webController beforeEach start");
       done();
     })
@@ -66,10 +71,12 @@ export default function webController() {
     * @tc.level      : Level 0
     */
     it('testDomStorageAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("testDomStorageAccess001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testDomStorageAccess001", "\"sorry\"", 33025, done);
-      sendEventByKey('WebControllerButton', 10, '');
+      Utils.emitEvent("testDomStorageAccess001", 132000)
+      Utils.registerBaseEvent("testDomStorageAccess001", "\"sorry\"", 132010, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebControllerButton');
     })
 
     /*
@@ -81,11 +88,12 @@ export default function webController() {
     * @tc.level      : Level 1
     */
     it('testDomStorageAccess002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testDomStorageAccess002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testDomStorageAccess002", "\"domapi\"", 33026, done);
-      sendEventByKey('WebControllerButton', 10, '');
+      Utils.emitEvent("testDomStorageAccess002", 132000)
+      Utils.registerBaseEvent("testDomStorageAccess002", "\"domapi\"", 132020, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebControllerButton');
     })
-
   })
 }

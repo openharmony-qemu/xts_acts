@@ -20,6 +20,9 @@ import { webview } from '@kit.ArkWeb';
 import { LocalContext } from './GloablConfig';
 import { router } from '@kit.ArkUI';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponents } from './WaitTest.test';
+import events_emitter from '@ohos.events.emitter';
+import Utils from './Util';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -29,10 +32,12 @@ let flg: boolean = false
 export default function SetDownloadDelegate() {
   describe('SetDownloadDelegate', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async (done: Function) => {
       webview.WebviewController.initializeWebEngine()
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
+      await waitForComponents('001');
+      done();
     })
     beforeEach(() => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
@@ -47,13 +52,11 @@ export default function SetDownloadDelegate() {
     })
     afterEach(async () => {
       flg = false;
-      await driver.delayMs(500)
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
     })
     afterAll(async () => {
-      await driver.delayMs(500)
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
@@ -67,24 +70,15 @@ export default function SetDownloadDelegate() {
      * @tc.level Level 0
      */
     it('testWebView_onDownloadFinish1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_onDownloadFinish_1003 start')
-      console.info('SUB_ACE_WEB_onDownloadFinish_1003 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("SetDownloadDelegate1", (data: number) => {
-        expect(data).assertEqual(webview.WebDownloadState.CANCELED)
-        console.info('SUB_ACE_WEB_onDownloadFinish_1003 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_onDownloadFinish_1003 end')
-        done()
-      })
       router.pushUrl({
         url: "testability/pages/SetDownloadDelegate1"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
+      Utils.emitEvent("SetDownloadDelegate1", 130620);
+      Utils.registerBaseEvent("SetDownloadDelegate1", webview.WebDownloadState.CANCELED, 130630, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
 
@@ -97,24 +91,15 @@ export default function SetDownloadDelegate() {
      * @tc.level Level 2
      */
     it('testWebView_onDownloadFinish1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_onDownloadFinish_1004 start')
-      console.info('SUB_ACE_WEB_onDownloadFinish_1004 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("SetDownloadDelegate2", (data: number) => {
-        expect(data).assertEqual(webview.WebDownloadState.CANCELED)
-        console.info('SUB_ACE_WEB_onDownloadFinish_1004 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_onDownloadFinish_1004 end')
-        done()
-      })
       router.pushUrl({
         url: "testability/pages/SetDownloadDelegate2"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
+      Utils.emitEvent("SetDownloadDelegate2", 130620);
+      Utils.registerBaseEvent("SetDownloadDelegate2", webview.WebDownloadState.CANCELED, 130640, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
 
@@ -127,24 +112,15 @@ export default function SetDownloadDelegate() {
      * @tc.level Level 2
      */
     it('testWebView_onDownloadFinish1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_onDownloadFinish_1005 start')
-      console.info('SUB_ACE_WEB_onDownloadFinish_1005 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("SetDownloadDelegate3", (data: number) => {
-        expect(data).assertEqual(webview.WebDownloadState.IN_PROGRESS)
-        console.info('SUB_ACE_WEB_onDownloadFinish_1005 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_onDownloadFinish_1005 end')
-        done()
-      })
       router.pushUrl({
         url: "testability/pages/SetDownloadDelegate3"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
+      Utils.emitEvent("SetDownloadDelegate3", 130620);
+      Utils.registerBaseEvent("SetDownloadDelegate3", webview.WebDownloadState.IN_PROGRESS, 130650, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
   })

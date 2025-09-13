@@ -18,7 +18,7 @@ import http from '@ohos.net.http';
 import { BusinessError } from '@ohos.base';
 
 let httpRequest = http.createHttp();
-let url = "http://www.baidu.com";
+let url = "https://www.baidu.com";
 
 let httpRequestOptions_http3:http.HttpRequestOptions = {
     method: http.RequestMethod.POST,
