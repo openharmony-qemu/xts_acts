@@ -16,7 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, UIElementInfo} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
-import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
+
 
 export default function Monitor0290Test() {
   describe('Monitor0290Test', () => {

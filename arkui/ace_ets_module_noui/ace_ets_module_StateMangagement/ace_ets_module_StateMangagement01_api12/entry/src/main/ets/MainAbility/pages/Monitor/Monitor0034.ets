@@ -32,7 +32,7 @@ class Monitor0034Class {
 class Monitor0034ChildClass extends Monitor0034Class {
   @Monitor('name')
   onNameChange(monitor: IMonitor) {
-    prompt.showToast({ message: `name: ${monitor.value()?.now}`, duration: 2000 })
+    prompt.showToast({ message: `name: ${monitor.value()?.now ?? 'Toast error' }`, duration: 2000 })
   }
 }
 

@@ -29,7 +29,7 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
-import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
+
 
 export default function makeObserved0110Test() {
   describe('makeObserved0110Test', () => {
