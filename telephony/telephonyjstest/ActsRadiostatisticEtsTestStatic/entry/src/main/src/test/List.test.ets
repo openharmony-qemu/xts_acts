@@ -27,6 +27,8 @@ export default function testsuite() {
     callJsunit();
     telSyncTest();
   }else{
+    radioJsunit();
+    radioSecondJsunit();
     callJsunit();
     telSyncTest();
   }
