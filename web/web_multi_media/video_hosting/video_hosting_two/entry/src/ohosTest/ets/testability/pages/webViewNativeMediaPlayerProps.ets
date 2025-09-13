@@ -738,8 +738,6 @@ struct WebComponent {
                   return
               }
               if(!isPlaying) {
-                  // this.controller.refresh()
-                  // await Utils.sleep(3000)
                   this.isPageEnd = -1;
                   this.controller.loadUrl('www.example.com')
                   await waitForExist(() => this.isPageEnd, "webViewNativeMediaPlayerPropsIsPageEndexamplecom", 0);
