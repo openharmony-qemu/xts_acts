@@ -19,9 +19,14 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponents } from './WaitTest.test';
+import { Driver, ON } from '@kit.TestKit';
+
+const driver = Driver.create();
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-let emitKey = "emitBlockNetWorkTrue";
+
 export default function webViewOnWindowNewJsunit() {
   describe('ActsAceWebViewOnWindowNewJsunitTest',  () =>{
     beforeAll(async  (done: Function) => {
@@ -35,13 +40,12 @@ export default function webViewOnWindowNewJsunit() {
         if (!("onWindowNew" == pages.name)) {
           console.info("get onWindowNew state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
           console.info("push onWindowNew page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push onWindowNew page error: " + err);
       }
-      await Utils.sleep(2000);
+      await waitForComponents('onWindowNew');
       done()
     });
     beforeEach(async  (done: Function) =>{
@@ -54,23 +58,7 @@ export default function webViewOnWindowNewJsunit() {
       done();
     })
     afterEach(async  (done: Function) =>{
-      console.info("ActsAceWebViewOnWindowNewJsunitTest afterEach start:"+emitKey);
-      try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent: events_emitter.InnerEvent = {
-                eventId:10,
-                priority:events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-      } catch (err) {
-            console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
+      console.info("ActsAceWebViewOnWindowNewJsunitTest afterEach start");
       console.info("ActsAceWebViewOnWindowNewJsunitTest afterEach end");
       done();
     })
@@ -81,10 +69,13 @@ export default function webViewOnWindowNewJsunit() {
     *tc.desc test api blockNetWork set to true by load online website
     */
     it('testBlockNetWorkTrue',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitBlockNetWorkFalse";
-      let url = "http://www.weibo.com/";
-      Utils.registerEvent("testBlockNetWorkTrue", url, 7112, done);
-      sendEventByKey('onWindowNew', 10, '');
+      Utils.emitEvent("emitBlockNetWorkTrue", 130590);
+      let url = "http://www.example.com/";
+      Utils.registerBaseEvent("testBlockNetWorkTrue", url, 130600,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "onWindowNew");
     })
     /*
     *tc.number SUB_ACE_BASIC_ETS_API_BLOCKNETWORK_0200
@@ -92,10 +83,13 @@ export default function webViewOnWindowNewJsunit() {
     *tc.desc test api blockNetWork set to false by load online website
     */
    it('testBlockNetWorkFalse',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-     emitKey="emitGetOriginsPromiseLoadLocalHtml01";
-     let title = "weibo.com";
-      Utils.registerEvent("testBlockNetWorkFalse", title, 7114, done);
-      sendEventByKey('onWindowNew', 10, '');
+      Utils.emitEvent("emitBlockNetWorkFalse", 130590);
+      let title = "Example Domain";
+      Utils.registerBaseEvent("testBlockNetWorkFalse", title, 130610,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "onWindowNew");
     })
 
   })
