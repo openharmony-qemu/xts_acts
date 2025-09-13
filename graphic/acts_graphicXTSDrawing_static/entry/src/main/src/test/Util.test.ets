@@ -8,7 +8,7 @@
  */
 export function getEnumCount(obj: Object): int {
   let count = 0;
-  Object.values(obj).forEach((v: : string | int| Any | Array<Any>) => {
+  Object.values(obj).forEach((v: string | int| Any | Array<Any>) => {
     if (typeof v === 'string') {
       count++;
     }
