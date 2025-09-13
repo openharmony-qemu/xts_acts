@@ -23,6 +23,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 import Utils from '../../test/Utils';
 import JSON from '@ohos.util.json';
 import connection from '@ohos.net.connection';
+import {waitForExist} from '../../test/WaitTest.test';
 let isCreateNativeMediaPlayerCallback: Boolean = false
 let isMediaPlaybackStatePlaying: Boolean = false
 let isMediaTypeVideo: Boolean = false
@@ -249,21 +250,21 @@ class NativeMediaPlayerHandlerImpl implements webview.NativeMediaPlayerHandler{
         console.log('mediaPlayerProps:' + webview.NetworkState.IDLE)
         console.log('mediaPlayerProps:' + webview.NetworkState.NETWORK_ERROR)
         if(webview.NetworkState.EMPTY.toString() == '0') {
-            Utils.emitEvent(true,1304)
+          Utils.emitEvent(true,300060)
         } else {
-            Utils.emitEvent(false,1304)
+          Utils.emitEvent(false,300060)
         }
         
         if(webview.NetworkState.IDLE.toString() == '1') {
-            Utils.emitEvent(true, 1305)
+          Utils.emitEvent(true, 300070)
         } else {
-            Utils.emitEvent(false,1305)
+          Utils.emitEvent(false,300070)
         }
         
         if(webview.NetworkState.NETWORK_ERROR.toString() == '3') {
-            Utils.emitEvent(true, 1306)
+          Utils.emitEvent(true, 300100)
         } else {
-            Utils.emitEvent(false,1306)
+          Utils.emitEvent(false,300100)
         }
         this.rawHandler.handleNetworkStateChanged(state)
     }
@@ -276,19 +277,19 @@ class NativeMediaPlayerHandlerImpl implements webview.NativeMediaPlayerHandler{
         console.log('mediaPlayerProps:' + webview.ReadyState.HAVE_FUTURE_DATA)
         console.log('mediaPlayerProps:' + webview.ReadyState.HAVE_ENOUGH_DATA)
         if(webview.ReadyState.HAVE_NOTHING.toString() == '0') {
-            Utils.emitEvent(true, 1308)
+            Utils.emitEvent(true, 300080)
         }
         if(webview.ReadyState.HAVE_METADATA.toString() == '1') {
-            Utils.emitEvent(true, 1309)
+            Utils.emitEvent(true, 300130)
         } 
         if(webview.ReadyState.HAVE_CURRENT_DATA.toString() == '2') {
-            Utils.emitEvent(true, 1310)
+            Utils.emitEvent(true, 300140)
         } 
         if(webview.ReadyState.HAVE_FUTURE_DATA.toString() == '3') {
-            Utils.emitEvent(true, 1311)
+            Utils.emitEvent(true, 300150)
         } 
         if(webview.ReadyState.HAVE_ENOUGH_DATA.toString() == '4') {
-            Utils.emitEvent(true, 1312)
+            Utils.emitEvent(true, 300160)
         } 
         this.rawHandler.handleReadyStateChanged(state)
     }
@@ -406,9 +407,9 @@ class AVPlayerListenerImpl implements AVPlayerListener {
         console.log('[BrowserShell] onPlaying, handler[' + this.handler + ']')
         console.log('mediaPlayerProps:' + webview.PlaybackStatus.PLAYING)
         if(webview.PlaybackStatus.PLAYING.toString() == '1') {
-            Utils.emitEvent(true, 1307)
+            Utils.emitEvent(true, 300170)
         } else {
-            Utils.emitEvent(false,1307)
+            Utils.emitEvent(false,300170)
         }
         this.handler.handleStatusChanged(webview.PlaybackStatus.PLAYING);
     }
@@ -460,19 +461,19 @@ class AVPlayerListenerImpl implements AVPlayerListener {
         console.log('mediaPlayerProps:' + webview.MediaError.FORMAT_ERROR)
         console.log('mediaPlayerProps:' + webview.MediaError.DECODE_ERROR)
         if(webview.MediaError.NETWORK_ERROR.toString() == '1') {
-            Utils.emitEvent(true, 1300)
+            Utils.emitEvent(true, 300020)
         } else {
-            Utils.emitEvent(false,1300)
+            Utils.emitEvent(false,300020)
         }
         if(webview.MediaError.FORMAT_ERROR.toString() == '2') {
-            Utils.emitEvent(true, 1301)
+            Utils.emitEvent(true, 300030)
         } else {
-            Utils.emitEvent(false,1301)
+            Utils.emitEvent(false,300030)
         }
         if(webview.MediaError.DECODE_ERROR.toString() == '3') {
-            Utils.emitEvent(true, 1302)
+            Utils.emitEvent(true, 300040)
         } else {
-            Utils.emitEvent(false,1302)
+            Utils.emitEvent(false,300040)
         }
         this.handler.handleError(1, "Oops!");
     }
@@ -703,20 +704,27 @@ struct WebComponent {
   
   area?: Area
   @State emitKey: string = "emitWebViewNativeMediaPlayerHandleTimeUpdate";
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
   
   onPageShow() {
       let valueChangeEvent: events_emitter.InnerEvent = {
-          eventId: 10,
+          eventId: 300010,
           priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
   
+  onPageHide(): void {
+    events_emitter.off(300010)
+  }
+
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
       if (eventData != null) {
           console.info("valueChangeCallBack:" + JSON.stringify(eventData));
           if (eventData.data != null && eventData.data.ACTION != null) {
               this.emitKey = eventData.data.ACTION;
+              this.isReceive = 0;
           }
       }
   }
@@ -730,8 +738,14 @@ struct WebComponent {
                   return
               }
               if(!isPlaying) {
-                  this.controller.refresh()
-                  await Utils.sleep(3000)
+                  // this.controller.refresh()
+                  // await Utils.sleep(3000)
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl('www.example.com')
+                  await waitForExist(() => this.isPageEnd, "webViewNativeMediaPlayerPropsIsPageEndexamplecom", 0);
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl(this.page_url)
+                  await waitForExist(() => this.isPageEnd, "webViewNativeMediaPlayerPropsIsPagepage_url", 0);
                   this.controller.runJavaScript("buttonPlay()", (error, result) => {
                       console.error('The play() return error is: ${error}');
                       console.log('The play() return value is: ${result}');
@@ -745,10 +759,13 @@ struct WebComponent {
       Column() {
           Row() {
               Button("web click").key('webViewNativeMediaPlayerProps').onClick(async () => {
-                console.info("key==>" + this.emitKey)
+                console.info('key==>' + this.emitKey)
+                await waitForExist(()=>this.isReceive, this.emitKey, 0);
+                this.isReceive = -1;
                 isPlaying = false
+                this.isPageEnd = -1;
                 this.controller.refresh()
-                await Utils.sleep(2000)
+                await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
                 this.controller.runJavaScript("buttonPlay()", (error, result) => {
                     console.error('The play() return error is: ${error}');
                     console.log('The play() return value is: ${result}');
@@ -759,18 +776,18 @@ struct WebComponent {
                         try {
                             this.controller.loadUrl($rawfile('nativeMediaError.html'))
                             await Utils.sleep(1500)
-                            Utils.emitEvent(true,1300)
+                            Utils.emitEvent(true,300020)
                         } catch (error) {
-                            Utils.emitEvent('error',1300)
+                            Utils.emitEvent('error',300020)
                         }
                         break;
                     }
                     case "emitWebViewNativeMediaPlayerReadyStateHAVENOTHING": {
                         try {
                             await Utils.sleep(1500)
-                            Utils.emitEvent(true,1308)
+                            Utils.emitEvent(true,300080)
                         } catch (error) {
-                            Utils.emitEvent('error',1308)
+                            Utils.emitEvent('error',300080)
                         }
                         break;
                     }
@@ -778,9 +795,9 @@ struct WebComponent {
                         try {
                             this.controller.loadUrl($rawfile('nativeMediaError.html'))
                             await Utils.sleep(1500)
-                            Utils.emitEvent(true,1301)
+                            Utils.emitEvent(true,300030)
                         } catch (error) {
-                            Utils.emitEvent('error',1301)
+                            Utils.emitEvent('error',300030)
                         }
                         break;
                     }
@@ -788,46 +805,47 @@ struct WebComponent {
                         try {
                             this.controller.loadUrl($rawfile('nativeMediaError.html'))
                             await Utils.sleep(1500)
-                            Utils.emitEvent(true,1302)
+                            Utils.emitEvent(true,300040)
                         } catch (error) {
-                            Utils.emitEvent('error',1302)
+                            Utils.emitEvent('error',300040)
                         }
                         break;
                     }
                     case "emitWebViewNativeMediaPlayerCreateNativeMediaPlayerCallback": {
                         try {
                             await Utils.sleep(1000)
-                            Utils.emitEvent(isCreateNativeMediaPlayerCallback,1303)
+                            Utils.emitEvent(isCreateNativeMediaPlayerCallback,300050)
                         } catch (error) {
-                            Utils.emitEvent('error',1303)
+                            Utils.emitEvent('error',300050)
                         }
                         break;
                     }
                     case "emitWebViewNativeMediaPlayerNetworkStateEmpty":
                     case "emitWebViewNativeMediaPlayerNetworkStateIDLE":
                     case "emitWebViewNativeMediaPlayerNetworkStateNETWORKERROR":{
-                        await Utils.sleep(1000)
+                        this.isPageEnd = -1;
                         this.controller.loadUrl($rawfile('nativeMediaPlayerHandler.html'))
-                        await Utils.sleep(1500)
-                        Utils.emitEvent(true,1304)
-                        Utils.emitEvent(true,1305)
-                        Utils.emitEvent(true,1306)
+                        await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+                        Utils.emitEvent(true,300060)
+                        Utils.emitEvent(true,300070)
+                        Utils.emitEvent(true,3000100)
                         try {
                         } catch (error) {
-                            Utils.emitEvent('error',1304)
-                            Utils.emitEvent('error',1305)
-                            Utils.emitEvent('error',1306)
+                            Utils.emitEvent('error',300060)
+                            Utils.emitEvent('error',300070)
+                            Utils.emitEvent('error',300100)
                         }
                         break;
                     }
                     case "emitWebViewNativeMediaPlayerPreloadMetaData":{
                         try {
+                            this.isPageEnd = -1;
                             this.controller.loadUrl($rawfile('nativeMediaPlayerHandler.html'))
-                            await Utils.sleep(1000)
+                            await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                             console.log("isPreloadMeta" + isPreloadMeta)
-                            Utils.emitEvent(isPreloadMeta,1353)
+                            Utils.emitEvent(isPreloadMeta,300110)
                         } catch (error) {
-                            Utils.emitEvent('error',1353)
+                            Utils.emitEvent('error',300110)
                         }
                         break;
                     }
@@ -843,21 +861,22 @@ struct WebComponent {
                                 console.log('The jumpToEnd() return value is: ${result}');
                             })
                             await Utils.sleep(1500)
-                            Utils.emitEvent(true,1356)
+                            Utils.emitEvent(true,300120)
                         } catch (error) {
-                            Utils.emitEvent('error',1356)
+                            Utils.emitEvent('error',300120)
                         }
                         break;
                     }
                     case "emitWebViewNativeMediaPlayerProps2": {
                         try {
+                            this.isPageEnd = -1;
                             this.controller.loadUrl($rawfile('nativeMediaPlayerHandler.html'))
-                            await Utils.sleep(2000)
+                            await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                             if(!isPreloadMeta) {
-                                Utils.emitEvent(true, 1355)
+                                Utils.emitEvent(true, 300090)
                             }
                         } catch (error) {
-                            Utils.emitEvent('error', 1355)
+                            Utils.emitEvent('error', 300090)
                         }
                         break;
                     }
@@ -886,7 +905,7 @@ struct WebComponent {
                             console.log('mediaPlayerProps:' + webview.Preload.METADATA)
                             console.log('mediaPlayerProps:' + webview.Preload.AUTO)
                             if(mediaInfo.preload.toString() == webview.Preload.NONE.toString()) {
-                                Utils.emitEvent(true, 1355)
+                              Utils.emitEvent(true, 300090)
                             }
                             this.nativePlayer = new NativeMediaPlayerImpl(this, new NativeMediaPlayerHandlerImpl(handler), mediaInfo);
                             return this.nativePlayer;
@@ -900,7 +919,11 @@ struct WebComponent {
                     this.controller.pauseAllMedia();
                     console.error('exit onPageBegin');
                 })
-                .onPageEnd(async () => {
+                .onPageEnd((event) => {
+                  if(event) {
+                    this.isPageEnd = 0;
+                    console.log('onPageEnd url:' + event.url);
+                  }
                 })
                 .width('100%')
                 .height('100%')
