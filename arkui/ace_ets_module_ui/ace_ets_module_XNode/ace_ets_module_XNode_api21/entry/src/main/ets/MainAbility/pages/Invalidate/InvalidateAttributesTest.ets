@@ -56,19 +56,20 @@ struct ListNodeTest {
     Column() {
       if (this.flag) {
         NodeContainer(this.adapterController)
-          .width(300).height(300)
+          .width('50%').height('30%')
           .borderWidth(1).borderColor(Color.Black)
       } else {
         NodeContainer(this.adapterController)
-          .width(300).height(300)
+          .width('50%').height('30%')
           .borderWidth(1).borderColor(Color.Black)
       }
       Button('change').id('change_id')
+        .height('5%')
         .onClick(() => {
           this.flag = !this.flag;
           this.testMessage = this.adapterController.result2 + '';
         })
-      Text(this.testMessage).id('testMessage_id')
+      Text(this.testMessage).id('testMessage_id').height('5%')
     }.borderWidth(1)
     .width('100%')
   }
