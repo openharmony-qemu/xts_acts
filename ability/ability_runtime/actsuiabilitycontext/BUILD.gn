@@ -19,7 +19,8 @@ group("actsuiabilitycontext") {
     deps = [ 
       "actsmoveabilitytobackgroundtest:ActsMoveAbilityToBackgroundTest",
       "actsmoveabilitytobackgroundteststatic:ActsMoveAbilityToBackgroundStaticTest",
-      "actsstartabilityteststatic:ActsStartAbilityStaticTest"
+      "actsstartabilityforsultteststatic:ActsStartAbilityForResultStaticTest",
+      "actsstartabilityteststatic:ActsStartAbilityStaticTest",
     ]
   }
 }

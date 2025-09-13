@@ -19,7 +19,7 @@ import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import StartOptions from '@ohos.app.ability.StartOptions'
 import contextConstant from "@ohos.app.ability.contextConstant";
@@ -135,7 +135,7 @@ export default function startAbilityTestStatic() {
         type: '',
         parameters: {
           'keyFd': { 'type': 'FD', 'value': fd } as Record<string, Object>
-        } as Record<string, undefined|null|Object>,
+        } as Record<string, RecordData>,
         flags: 1,
       };
 
