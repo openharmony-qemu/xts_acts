@@ -16,6 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
+import {waitForExist} from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -32,10 +33,12 @@ struct webViewDefaultFontSizeNoMinFontSize {
     " CHrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.27";
   @State defaultFontSize: number = 13;
   @State checkEleResult: string = "";
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 150300,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
@@ -47,6 +50,7 @@ struct webViewDefaultFontSizeNoMinFontSize {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -55,18 +59,23 @@ struct webViewDefaultFontSizeNoMinFontSize {
     Column() {
       Row() {
         Button("web click").key('webViewDefaultFontSizeNoMinFontSize').onClick(async () => {
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           console.info("key==>" + this.str)
           switch (this.str) {
             case "emitdefaultFontSize7AndNominFontSize": {
               try {
                 this.defaultFontSize = 7;
-                await Utils.sleep(2000);
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 console.log("fonsize of emitdefaultFontSize7AndNominFontSize is :" + this.defaultFontSize);
                 this.controller.runJavaScript("getPageFontsize()", (error, result) => {
                   this.checkEleResult = JSON.parse(result)
                   Utils.sleep(2000)
                   console.log(`The getPageFontsize() return value is: ${result}`);
-                  Utils.emitEvent(this.checkEleResult[1], 336)
+                  Utils.emitEvent(this.checkEleResult[1], 150310)
                 })
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -76,13 +85,15 @@ struct webViewDefaultFontSizeNoMinFontSize {
             case "emitdefaultFontSize17AndCssFontSize9": {
               try {
                 this.defaultFontSize = 17;
-                await Utils.sleep(2000);
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 console.log("fonsize of emitdefaultFontSize17AndCssFontSize9 is :" + this.defaultFontSize);
                 this.controller.runJavaScript("getTestPageFontsize()", (error, result) => {
                   this.checkEleResult = JSON.parse(result)
                   Utils.sleep(2000)
                   console.log(`The getTestPageFontsize() return value is: ${result}`);
-                  Utils.emitEvent(this.checkEleResult[1], 338)
+                  Utils.emitEvent(this.checkEleResult[1], 150320)
                 })
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -102,6 +113,12 @@ struct webViewDefaultFontSizeNoMinFontSize {
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
         .userAgent(this.userAgent)
+        .onPageEnd((event) => {
+            if (event) {
+              this.isPageEnd = 0;
+              console.log('onPageEnd url:' + event.url);
+            }
+          })
     }
   }
 }

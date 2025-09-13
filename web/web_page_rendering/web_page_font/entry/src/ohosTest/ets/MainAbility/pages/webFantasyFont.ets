@@ -17,6 +17,7 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import business_error, { BusinessError } from '@ohos.base';
+import {waitForExist} from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -28,17 +29,19 @@ struct webFantasyFont {
   controller: webView.WebviewController = new webView.WebviewController();
   @State family: string = "fantasy";
   @State family2: string = "cursive";
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 150120,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(150120)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -47,6 +50,7 @@ struct webFantasyFont {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -63,11 +67,16 @@ struct webFantasyFont {
     Column() {
       Row() {
         Button("WebViewWebFantasyFontButton").key('WebFantasyFontButton').onClick(async () => {
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           console.info("key==>" + this.str)
           switch (this.str) {
             case "emitWebFantasyFont001": {
-              await Utils.sleep(1000);
-              Utils.emitEvent(CopyOptions.None, 20253322)
+              this.isPageEnd = -1;
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              Utils.emitEvent(CopyOptions.None, 150130)
               break;
             }
 
@@ -79,6 +88,12 @@ struct webFantasyFont {
         .webFantasyFont(this.family)
         .webCursiveFont(this.family2)
         .copyOptions(CopyOptions.None)
+        .onPageEnd((event) => {
+            if (event) {
+              this.isPageEnd = 0;
+              console.log('onPageEnd url:' + event.url);
+            }
+          })
 
     }
   }

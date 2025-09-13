@@ -17,6 +17,9 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@ohos.UiTest';
+
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 // @ts-nocheck
@@ -34,12 +37,13 @@ export default function webViewDefaultFontSizeNoMinFontSize() {
         if (!("webViewDefaultFontSizeNoMinFontSize" == pages.name)) {
           console.info("get webViewDefaultFontSizeNoMinFontSize state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
           console.info("push webViewDefaultFontSizeNoMinFontSize page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webViewDefaultFontSizeNoMinFontSize page error: " + err);
       }
+      await driver.waitForComponent(ON.id("webViewDefaultFontSizeNoMinFontSize"), 10000);
+      console.log("waitForComponent webViewDefaultFontSizeNoMinFontSize");
       done()
     });
     beforeEach(async  (done: Function) =>{
@@ -48,39 +52,20 @@ export default function webViewDefaultFontSizeNoMinFontSize() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webViewDefaultFontSizeNoMinFontSize beforeEach start");
       done();
     })
-    afterEach(async (done: Function) =>{
-      console.info("webViewDefaultFontSizeNoMinFontSize afterEach start:" + emitKey);
-      try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent: events_emitter.InnerEvent = {
-                eventId:10,
-                priority:events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-      } catch (err) {
-            console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
-      done();
-    })
+   
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR6_API_0400
      *tc.name testDefaultFontSize7AndNoMinFontSize
      *tc.desc test with defaultfontsize 7 and no set minfontsize
      */
     it('testDefaultFontSize7AndNoMinFontSize',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
-      emitKey="emitdefaultFontSize17AndCssFontSize9";
-      Utils.registerEvent("testDefaultFontSize7AndNoMinFontSize","8px",336,done);
-      sendEventByKey('webViewDefaultFontSizeNoMinFontSize',10,'');
+      Utils.emitEvent("emitdefaultFontSize7AndNominFontSize", 150300);
+      Utils.registerEvent("testDefaultFontSize7AndNoMinFontSize","8px",150310,done);
+      let StartModel = await driver.findComponent(ON.id("webViewDefaultFontSizeNoMinFontSize"));
+      await StartModel.click();
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR6_API_0500
@@ -88,9 +73,10 @@ export default function webViewDefaultFontSizeNoMinFontSize() {
      *tc.desc test with defaultfontsize 17 and css font-size 9
      */
     it('testDefaultFontSize17AndCssFontSize9',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
-      emitKey="emitdefaultFontSize17AndCssFontSize9";
-      Utils.registerEvent("testDefaultFontSize17AndCssFontSize9","9px",338,done);
-      sendEventByKey('webViewDefaultFontSizeNoMinFontSize',10,'');
+      Utils.emitEvent("emitdefaultFontSize17AndCssFontSize9", 150300);
+      Utils.registerEvent("testDefaultFontSize17AndCssFontSize9","9px",150320,done);
+      let StartModel = await driver.findComponent(ON.id("webViewDefaultFontSizeNoMinFontSize"));
+      await StartModel.click();
     })
   })
 }
