@@ -30,7 +30,7 @@ const valueBucket2m: relationalStore.ValuesBucket = {
 };
 const sendableValusBucket = sendableRelationalStore.toSendableValuesBucket(valueBucket2m);
 const STORE_CONFIG : relationalStore.StoreConfig= {
-  name: "rdbStoreTest.db",
+  name: "rdbStore.db",
   securityLevel: relationalStore.SecurityLevel.S1,
 }
 let rdbStore:relationalStore.RdbStore;
@@ -57,7 +57,7 @@ export default function relationalStoreInterfaceTest() {
 
     afterEach(async ()=> {
       console.info(TAG + 'afterEach');
-      await relationalStore.deleteRdbStore(context,"rdbStoreTest.db")
+      await relationalStore.deleteRdbStore(context,"rdbStore.db")
     })
 
     afterAll(async ()=> {
@@ -2218,6 +2218,8 @@ export default function relationalStoreInterfaceTest() {
     rdbStore?.off('perfStat', storeObserver3);
     rdbStore?.off('perfStat', storeObserver4);
     rdbStore?.off('perfStat', storeObserver5);
+    rdbStore2 = await relationalStore.getRdbStore(context, STORE_CONFIG);
+    rdbStore2?.off('perfStat');
     console.log(TAG + "************* testPerfStat002 end *************");
     done();
     })
