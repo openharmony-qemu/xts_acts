@@ -151,6 +151,12 @@ export const listScrollPageTest: (a: string) => void;
 
 export const listGetScrollPageData: () => number[][];
 
+export const listScrollBarColor001Test: (a: string) => void;
+
+export const listScrollBarColor002Test: (a: string) => void;
+
+export const listScrollBarColor003Test: (a: string) => void;
+
 export const listScrollBy001Test: (a: string) => void;
 
 export const listScrollBy002Test: (a: string) => void;
