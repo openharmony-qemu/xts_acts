@@ -17,8 +17,8 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import business_error from '@ohos.base';
-import deviceInfo from '@ohos.deviceInfo';
-import {waitForAssert, waitForExist} from '../../test/WaitTest';
+
+const EVENT_ID_SET_EMIT_KEY = 115550;
 
 @Entry
 @Component
@@ -31,19 +31,20 @@ struct Index {
   @State str: string = '';
   @State javaScriptAccess: boolean = true;
   @State databaseAccess: boolean = true;
-  @State message: string = '123';
-  @State errorCode: string = '0';
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -52,6 +53,7 @@ struct Index {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -61,8 +63,10 @@ struct Index {
     Column() {
       Row() {
         Button('click').key('WebViewControllerErrorCodeSecondButton').onClick(async () => {
+          await Utils.waitForExist(()=>this.isPageEnd, 'WebViewControllerErrorCodeSecondButtonIsPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isReceive, 'WebViewControllerErrorCodeSecondButtonIsReceive', 1, 1000);
           console.info('key==>' + this.str);
-          this.errorCode = '0';
+          this.isReceive = -1;
           switch (this.str) {
 
             case 'testLoadDataFullParamsError001': {
@@ -76,11 +80,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`testLoadDataFullParamsError001 ErrorCode: ${e.code},  Message: ${e.message}`);
-                let check = (v1: string, v2: string): boolean => {
-                  return v1 == v2 ? true: false;
-                }
-                this.errorCode = String(e.code)
-                await waitForAssert(()=>this.errorCode, check, '17100001', 202503201, this.str);
+                Utils.emitEvent(e.code, 115560);
               }
               break;
             }
@@ -91,11 +91,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`testIsIncognitoModeError001 ErrorCode: ${e.code},  Message: ${e.message}`);
-                let check = (v1: string, v2: string): boolean => {
-                  return v1 == v2 ? true: false;
-                }
-                this.errorCode = String(e.code)
-                await waitForAssert(()=>this.errorCode, check, '17100001', 202503202, this.str);
+                Utils.emitEvent(e.code, 115570);
               }
               break;
             }
@@ -106,11 +102,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`testGetLastJavascriptProxyCallingFrameUrlError001 ErrorCode: ${e.code}`);
-                let check = (v1: string, v2: string): boolean => {
-                  return v1 == v2 ? true: false;
-                }
-                this.errorCode = String(e.code)
-                await waitForAssert(()=>this.errorCode, check, '17100001', 202503203, this.str);
+                Utils.emitEvent(e.code, 115580);
               }
               break;
             }
@@ -121,11 +113,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`testSetWebSchemeHandlerError001 ErrorCode: ${e.code},  Message: ${e.message}`);
-                let check = (v1: string, v2: string): boolean => {
-                  return v1 == v2 ? true: false;
-                }
-                this.errorCode = String(e.code)
-                await waitForAssert(()=>this.errorCode, check, '17100001', 202503204, this.str);
+                Utils.emitEvent(e.code, 115590);
               }
               break;
             }
@@ -136,11 +124,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`testClearWebSchemeHandlerError001 ErrorCode: ${e.code},  Message: ${e.message}`);
-                let check = (v1: string, v2: string): boolean => {
-                  return v1 == v2 ? true: false;
-                }
-                this.errorCode = String(e.code)
-                await waitForAssert(()=>this.errorCode, check, '17100001', 202503205, this.str);
+                Utils.emitEvent(e.code, 115600);
               }
               break;
             }
@@ -151,16 +135,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`testEnableIntelligentTrackingPreventionError001 ErrorCode: ${e.code}`);
-                let check = (v1: string, v2: string): boolean => {
-                  return v1 == v2 ? true: false;
-                }
-                this.errorCode = String(e.code)
-                if(e.code == 801) {
-                  console.log(`testEnableIntelligentTrackingPreventionError001 The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
-                  Utils.emitEvent('17100001', 202503206)
-                } else {
-                  await waitForAssert(()=>this.errorCode, check, '17100001', 202503206, this.str);
-                }
+                Utils.emitEvent((e.code == 801) ? '17100001' : e.code, 115610);
               }
               break;
             }
@@ -171,16 +146,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`testIsIntelligentTrackingPreventionEnabled001 ErrorCode: ${e.code}`);
-                let check = (v1: string, v2: string): boolean => {
-                  return v1 == v2 ? true: false;
-                }
-                this.errorCode = String(e.code)
-                if(e.code == 801) {
-                  console.log(`testIsIntelligentTrackingPreventionEnabled001 The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
-                  Utils.emitEvent('17100001', 202503207)
-                } else {
-                  await waitForAssert(()=>this.errorCode, check, '17100001', 202503207, this.str);
-                }
+                Utils.emitEvent((e.code == 801) ? '17100001' : e.code, 115620);
               }
               break;
             }
@@ -191,36 +157,20 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`testRemoveIntelligentTrackingPreventionBypassingListError001 ErrorCode: ${e.code}`);
-                let check = (v1: string, v2: string): boolean => {
-                  return v1 == v2 ? true: false;
-                }
-                this.errorCode = String(e.code)
-                if(e.code == 801) {
-                  console.log(`testRemoveIntelligentTrackingPreventionBypassingListError001 The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
-                  Utils.emitEvent('401', 202503208)
-                } else {
-                  await waitForAssert(()=>this.errorCode, check, '401', 202503208, this.str);
-                }
+                Utils.emitEvent((e.code == 801) ? '401' : e.code, 115630);
               }
               break;
             }
 
             case 'testGetDefaultUserAgent001': {
               try {
-                let isGetDefaultUserAgent = false;
                 let userAgent = webView.WebviewController.getDefaultUserAgent();
-                console.log('getDefaultUserAgent userAgent===>' + userAgent)
-                if (userAgent.includes('Mozilla')) {
-                  isGetDefaultUserAgent = true
-                }
-                let check = (v1: boolean, v2: boolean): boolean => {
-                  return v1 === v2 ? true: false;
-                }
-                await waitForAssert(()=>isGetDefaultUserAgent, check, true, 202503209, this.str);
+                console.log('getDefaultUserAgent userAgent===>' + userAgent);
+                Utils.emitEvent(userAgent.includes('Mozilla') ? true : false, 115640);
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`testGetDefaultUserAgentError001 ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 202503209);
+                Utils.emitEvent(String(e.code), 115640);
               }
               break;
             }
@@ -231,16 +181,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`testEnableAdsBlockError001 ErrorCode: ${e.code},  Message: ${e.message}`);
-                let check = (v1: string, v2: string): boolean => {
-                  return v1 == v2 ? true: false;
-                }
-                this.errorCode = String(e.code)
-                if(e.code == 801) {
-                  console.log(`testEnableAdsBlockError001 The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
-                  Utils.emitEvent('17100001', 202503210)
-                } else {
-                  await waitForAssert(()=>this.errorCode, check, '17100001', 202503210, this.str);
-                }
+                Utils.emitEvent((e.code == 801) ? '17100001' : e.code, 115650);
               }
               break;
             }
@@ -251,40 +192,22 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`testLoadUrlError001 ErrorCode: ${e.code},  Message: ${e.message}`);
-                let check = (v1: string, v2: string): boolean => {
-                  return v1 == v2 ? true: false;
-                }
-                this.errorCode = String(e.code)
-                await waitForAssert(()=>this.errorCode, check, '17100002', 202503211, this.str);
+                Utils.emitEvent(e.code, 115660);
               }
               break;
             }
-
-
           }
         })
       }
 
       Web({ src: $rawfile('index.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
-        .onErrorReceive((event) => {
-          if (event) {
-            console.log('getErrorInfo:' + event.error.getErrorInfo())
-            console.log('getErrorCode:' + event.error.getErrorCode())
-            console.log('url:' + event.request.getRequestUrl())
-            console.log('isMainFrame:' + event.request.isMainFrame())
-            console.log('isRedirect:' + event.request.isRedirect())
-            console.log('isRequestGesture:' + event.request.isRequestGesture())
-            console.log('getRequestHeader_headerKey:' + event.request.getRequestHeader().toString())
-            let result = event.request.getRequestHeader()
-            console.log('The request header result size is ' + result.length)
-            for (let i of result) {
-              console.log('The request header key is : ' + i.headerKey + ', value is : ' + i.headerValue)
-            }
-          }
-        })
         .zoomAccess(false)
         .databaseAccess(this.databaseAccess)
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
     }
   }
 }

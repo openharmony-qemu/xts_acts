@@ -245,7 +245,11 @@ export default class Utils {
         const buttonComponent = await driver.waitForComponent(ON.id(componentId), 10000);
         if (!buttonComponent) {
           console.error(`error: buttonConmponent is null.`);
-          return;
+          retry = true;
+          await Utils.sleep(500);
+          retryTimes++;
+          console.log('retryTimes = ' + retryTimes);
+          continue;
         }
         await buttonComponent.click();
       } catch (e) {
