@@ -16,6 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import relationalStore from '@ohos.data.relationalStore';
 import { BusinessError } from '@kit.BasicServicesKit';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { sendableRelationalStore } from '@kit.ArkData';
 
 const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
 const context = delegator.getAppContext().getApplicationContext();
@@ -26,7 +27,7 @@ const valueBucket2m: relationalStore.ValuesBucket = {
   'name': num,
   'age': 122341465656,
 };
-const sendableValusBucket = sendableRelationalStore.toSendableValuesBucket(valueBucket2m)
+const sendableValusBucket = sendableRelationalStore.toSendableValuesBucket(valueBucket2m);
 const STORE_CONFIG : relationalStore.StoreConfig= {
   name: "rdbStore.db",
   securityLevel: relationalStore.SecurityLevel.S1,
