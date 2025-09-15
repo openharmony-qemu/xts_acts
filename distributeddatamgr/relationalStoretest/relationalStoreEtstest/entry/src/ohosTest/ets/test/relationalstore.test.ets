@@ -1232,43 +1232,43 @@ export default function relationalStoreInterfaceTest() {
     let status9 = 0;
     let status10 = 0;
     let storeObserver1 = (devices: Array<string>) => {
-      console.info(TAG + " storeObserver1 into");
+      console.info(TAG + " dataChange storeObserver1 into");
       status1 = 1;
     };
     let storeObserver2 = (devices: Array<string>) => {
-      console.info(TAG + " storeObserver2 into");
+      console.info(TAG + " dataChange storeObserver2 into");
       status2 = 1;
     };
     let storeObserver3 = (devices: Array<string>) => {
-      console.info(TAG + " storeObserver3 into");
+      console.info(TAG + " dataChange storeObserver3 into");
       status3 = 1;
     };
     let storeObserver4 = (devices: Array<string>) => {
-      console.info(TAG + " storeObserver4 into");
+      console.info(TAG + " dataChange storeObserver4 into");
       status4 = 1;
     };
     let storeObserver5 = (devices: Array<string>) => {
-      console.info(TAG + " storeObserver5 into");
+      console.info(TAG + " dataChange storeObserver5 into");
       status5 = 1;
     };
     let storeObserver6 = (devices: Array<string>) => {
-      console.info(TAG + " storeObserver6 into");
+      console.info(TAG + " dataChange storeObserver6 into");
       status6 = 1;
     };
     let storeObserver7 = (devices: Array<string>) => {
-      console.info(TAG + " storeObserver7 into");
+      console.info(TAG + " dataChange storeObserver7 into");
       status7 = 1;
     };
     let storeObserver8 = (devices: Array<string>) => {
-      console.info(TAG + " storeObserver8 into");
+      console.info(TAG + " dataChange storeObserver8 into");
       status8 = 1;
     };
     let storeObserver9 = (devices: Array<string>) => {
-      console.info(TAG + " storeObserver9 into");
+      console.info(TAG + " dataChange storeObserver9 into");
       status9 = 1;
     };
     let storeObserver10 = (devices: Array<string>) => {
-      console.info(TAG + " storeObserver10 into");
+      console.info(TAG + " dataChange storeObserver10 into");
       status10 = 1;
     };
     let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
@@ -1337,43 +1337,43 @@ export default function relationalStoreInterfaceTest() {
     let status9 = 0;
     let status10 = 0;
     let storeObserver1 = (devices: Array<string>) => {
-      console.info(TAG + " storeObserver1 into");
+      console.info(TAG + " dataChange1 storeObserver1 into");
       status1 = 1;
     };
     let storeObserver2 = (devices: Array<string>) => {
-      console.info(TAG + " storeObserver2 into");
+      console.info(TAG + " dataChange1 storeObserver2 into");
       status2 = 1;
     };
     let storeObserver3 = (devices: Array<string>) => {
-      console.info(TAG + " storeObserver3 into");
+      console.info(TAG + " dataChange1 storeObserver3 into");
       status3 = 1;
     };
     let storeObserver4 = (devices: Array<string>) => {
-      console.info(TAG + " storeObserver4 into");
+      console.info(TAG + " dataChange1 storeObserver4 into");
       status4 = 1;
     };
     let storeObserver5 = (devices: Array<string>) => {
-      console.info(TAG + " storeObserver5 into");
+      console.info(TAG + " dataChange1 storeObserver5 into");
       status5 = 1;
     };
     let storeObserver6 = (devices: Array<string>) => {
-      console.info(TAG + " storeObserver6 into");
+      console.info(TAG + " dataChange1 storeObserver6 into");
       status6 = 1;
     };
     let storeObserver7 = (devices: Array<string>) => {
-      console.info(TAG + " storeObserver7 into");
+      console.info(TAG + " dataChange1 storeObserver7 into");
       status7 = 1;
     };
     let storeObserver8 = (devices: Array<string>) => {
-      console.info(TAG + " storeObserver8 into");
+      console.info(TAG + " dataChange1 storeObserver8 into");
       status8 = 1;
     };
     let storeObserver9 = (devices: Array<string>) => {
-      console.info(TAG + " storeObserver9 into");
+      console.info(TAG + " dataChange1 storeObserver9 into");
       status9 = 1;
     };
     let storeObserver10 = (devices: Array<string>) => {
-      console.info(TAG + " storeObserver10 into");
+      console.info(TAG + " dataChange1 storeObserver10 into");
       status10 = 1;
     };
     let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
@@ -1437,43 +1437,43 @@ export default function relationalStoreInterfaceTest() {
     let status9 = 0;
     let status10 = 0;
     let storeObserver1 = () => {
-      console.info(TAG + " storeObserver1 into");
+      console.info(TAG + " event storeObserver1 into");
       status1 = 1;
     };
     let storeObserver2 = () => {
-      console.info(TAG + " storeObserver2 into");
+      console.info(TAG + " event storeObserver2 into");
       status2 = 1;
     };
     let storeObserver3 = () => {
-      console.info(TAG + " storeObserver3 into");
+      console.info(TAG + " event storeObserver3 into");
       status3 = 1;
     };
     let storeObserver4 = () => {
-      console.info(TAG + " storeObserver4 into");
+      console.info(TAG + " event storeObserver4 into");
       status4 = 1;
     };
     let storeObserver5 = () => {
-      console.info(TAG + " storeObserver5 into");
+      console.info(TAG + " event storeObserver5 into");
       status5 = 1;
     };
     let storeObserver6 = () => {
-      console.info(TAG + " storeObserver6 into");
+      console.info(TAG + " event storeObserver6 into");
       status6 = 1;
     };
     let storeObserver7 = () => {
-      console.info(TAG + " storeObserver7 into");
+      console.info(TAG + " event storeObserver7 into");
       status7 = 1;
     };
     let storeObserver8 = () => {
-      console.info(TAG + " storeObserver8 into");
+      console.info(TAG + " event storeObserver8 into");
       status8 = 1;
     };
     let storeObserver9 = () => {
-      console.info(TAG + " storeObserver9 into");
+      console.info(TAG + " event storeObserver9 into");
       status9 = 1;
     };
     let storeObserver10 = () => {
-      console.info(TAG + " storeObserver10 into");
+      console.info(TAG + " event storeObserver10 into");
       status10 = 1;
     };
     let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
@@ -1535,43 +1535,43 @@ export default function relationalStoreInterfaceTest() {
     let status9 = 0;
     let status10 = 0;
     let storeObserver1 = () => {
-      console.info(TAG + " storeObserver1 into");
+      console.info(TAG + " event1 storeObserver1 into");
       status1 = 1;
     };
     let storeObserver2 = () => {
-      console.info(TAG + " storeObserver2 into");
+      console.info(TAG + " event1 storeObserver2 into");
       status2 = 1;
     };
     let storeObserver3 = () => {
-      console.info(TAG + " storeObserver3 into");
+      console.info(TAG + " event1 storeObserver3 into");
       status3 = 1;
     };
     let storeObserver4 = () => {
-      console.info(TAG + " storeObserver4 into");
+      console.info(TAG + " event1 storeObserver4 into");
       status4 = 1;
     };
     let storeObserver5 = () => {
-      console.info(TAG + " storeObserver5 into");
+      console.info(TAG + " event1 storeObserver5 into");
       status5 = 1;
     };
     let storeObserver6 = () => {
-      console.info(TAG + " storeObserver6 into");
+      console.info(TAG + " event1 storeObserver6 into");
       status6 = 1;
     };
     let storeObserver7 = () => {
-      console.info(TAG + " storeObserver7 into");
+      console.info(TAG + " event1 storeObserver7 into");
       status7 = 1;
     };
     let storeObserver8 = () => {
-      console.info(TAG + " storeObserver8 into");
+      console.info(TAG + " event1 storeObserver8 into");
       status8 = 1;
     };
     let storeObserver9 = () => {
-      console.info(TAG + " storeObserver9 into");
+      console.info(TAG + " event1 storeObserver9 into");
       status9 = 1;
     };
     let storeObserver10 = () => {
-      console.info(TAG + " storeObserver10 into");
+      console.info(TAG + " event1 storeObserver10 into");
       status10 = 1;
     };
     let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
@@ -1629,43 +1629,43 @@ export default function relationalStoreInterfaceTest() {
     let status9 = 0;
     let status10 = 0;
     let storeObserver1 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
-      console.info(TAG + " storeObserver1 into");
+      console.info(TAG + " statistics storeObserver1 into");
       status1 = 1;
     };
     let storeObserver2 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
-      console.info(TAG + " storeObserver2 into");
+      console.info(TAG + " statistics storeObserver2 into");
       status2 = 1;
     };
     let storeObserver3 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
-      console.info(TAG + " storeObserver3 into");
+      console.info(TAG + " statistics storeObserver3 into");
       status3 = 1;
     };
     let storeObserver4 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
-      console.info(TAG + " storeObserver4 into");
+      console.info(TAG + " statistics storeObserver4 into");
       status4 = 1;
     };
     let storeObserver5 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
-      console.info(TAG + " storeObserver5 into");
+      console.info(TAG + " statistics storeObserver5 into");
       status5 = 1;
     };
     let storeObserver6 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
-      console.info(TAG + " storeObserver6 into");
+      console.info(TAG + " statistics storeObserver6 into");
       status6 = 1;
     };
     let storeObserver7 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
-      console.info(TAG + " storeObserver7 into");
+      console.info(TAG + " statistics storeObserver7 into");
       status7 = 1;
     };
     let storeObserver8 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
-      console.info(TAG + " storeObserver8 into");
+      console.info(TAG + " statistics storeObserver8 into");
       status8 = 1;
     };
     let storeObserver9 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
-      console.info(TAG + " storeObserver9 into");
+      console.info(TAG + " statistics storeObserver9 into");
       status9 = 1;
     };
     let storeObserver10 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
-      console.info(TAG + " storeObserver10 into");
+      console.info(TAG + " statistics storeObserver10 into");
       status10 = 1;
     };
 
@@ -1733,43 +1733,43 @@ export default function relationalStoreInterfaceTest() {
     let status9 = 0;
     let status10 = 0;
     let storeObserver1 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
-      console.info(TAG + " storeObserver1 into");
+      console.info(TAG + " statistics1 storeObserver1 into");
       status1 = 1;
     };
     let storeObserver2 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
-      console.info(TAG + " storeObserver2 into");
+      console.info(TAG + " statistics1 storeObserver2 into");
       status2 = 1;
     };
     let storeObserver3 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
-      console.info(TAG + " storeObserver3 into");
+      console.info(TAG + " statistics1 storeObserver3 into");
       status3 = 1;
     };
     let storeObserver4 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
-      console.info(TAG + " storeObserver4 into");
+      console.info(TAG + " statistics1 storeObserver4 into");
       status4 = 1;
     };
     let storeObserver5 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
-      console.info(TAG + " storeObserver5 into");
+      console.info(TAG + " statistics1 storeObserver5 into");
       status5 = 1;
     };
     let storeObserver6 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
-      console.info(TAG + " storeObserver6 into");
+      console.info(TAG + " statistics1 storeObserver6 into");
       status6 = 1;
     };
     let storeObserver7 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
-      console.info(TAG + " storeObserver7 into");
+      console.info(TAG + " statistics1 storeObserver7 into");
       status7 = 1;
     };
     let storeObserver8 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
-      console.info(TAG + " storeObserver8 into");
+      console.info(TAG + " statistics1 storeObserver8 into");
       status8 = 1;
     };
     let storeObserver9 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
-      console.info(TAG + " storeObserver9 into");
+      console.info(TAG + " statistics1 storeObserver9 into");
       status9 = 1;
     };
     let storeObserver10 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
-      console.info(TAG + " storeObserver10 into");
+      console.info(TAG + " statistics1 storeObserver10 into");
       status10 = 1;
     };
     let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
@@ -1832,43 +1832,43 @@ export default function relationalStoreInterfaceTest() {
     let status9 = 0;
     let status10 = 0;
     let storeObserver1 = (exceptionMessage: relationalStore.ExceptionMessage) => {
-      console.info(TAG + " storeObserver1 into");
+      console.info(TAG + " sqliteErrorOccurred storeObserver1 into");
       status1 = 1;
     };
     let storeObserver2 = (exceptionMessage: relationalStore.ExceptionMessage) => {
-      console.info(TAG + " storeObserver2 into");
+      console.info(TAG + " sqliteErrorOccurred storeObserver2 into");
       status2 = 1;
     };
     let storeObserver3 = (exceptionMessage: relationalStore.ExceptionMessage) => {
-      console.info(TAG + " storeObserver3 into");
+      console.info(TAG + " sqliteErrorOccurred storeObserver3 into");
       status3 = 1;
     };
     let storeObserver4 = (exceptionMessage: relationalStore.ExceptionMessage) => {
-      console.info(TAG + " storeObserver4 into");
+      console.info(TAG + " sqliteErrorOccurred storeObserver4 into");
       status4 = 1;
     };
     let storeObserver5 = (exceptionMessage: relationalStore.ExceptionMessage) => {
-      console.info(TAG + " storeObserver5 into");
+      console.info(TAG + " sqliteErrorOccurred storeObserver5 into");
       status5 = 1;
     };
     let storeObserver6 = (exceptionMessage: relationalStore.ExceptionMessage) => {
-      console.info(TAG + " storeObserver6 into");
+      console.info(TAG + " sqliteErrorOccurred storeObserver6 into");
       status6 = 1;
     };
     let storeObserver7 = (exceptionMessage: relationalStore.ExceptionMessage) => {
-      console.info(TAG + " storeObserver7 into");
+      console.info(TAG + " sqliteErrorOccurred storeObserver7 into");
       status7 = 1;
     };
     let storeObserver8 = (exceptionMessage: relationalStore.ExceptionMessage) => {
-      console.info(TAG + " storeObserver8 into");
+      console.info(TAG + " sqliteErrorOccurred storeObserver8 into");
       status8 = 1;
     };
     let storeObserver9 = (exceptionMessage: relationalStore.ExceptionMessage) => {
-      console.info(TAG + " storeObserver9 into");
+      console.info(TAG + " sqliteErrorOccurred storeObserver9 into");
       status9 = 1;
     };
     let storeObserver10 = (exceptionMessage: relationalStore.ExceptionMessage) => {
-      console.info(TAG + " storeObserver10 into");
+      console.info(TAG + " sqliteErrorOccurred storeObserver10 into");
       status10 = 1;
     };
     let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
