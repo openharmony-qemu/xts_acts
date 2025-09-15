@@ -235,7 +235,6 @@ export default function abilityTest() {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_PasteDataRecord_Static_0060----------");
         })
 
-
         /**
          * @tc.name      : SUB_PasteBoard_ETS_PasteData_Static_0010
          * @tc.number    : SUB_Pasteboard_Local_SDK_PasteboardVariety_Static_0100
