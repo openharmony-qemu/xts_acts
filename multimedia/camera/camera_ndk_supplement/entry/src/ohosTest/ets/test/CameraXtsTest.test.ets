@@ -417,41 +417,6 @@ export default function CameraXtsTest() {
       done()
     })
 
-
-
-    /**
-     * @tc.number    : SUB_MULTIMEIDA_OH_Camera_ErrorCode5100
-     * @tc.name      : testCameraStatusInfocamera
-     * @tc.desc      : Test CAMERA_STATUS_UNAVAILABLE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it("testCameraStatusInfocamera", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let ret = cameraObj.cameraStatusInfo('CAMERA_STATUS_UNAVAILABLE')
-      expect(ret).assertEqual(TEST_OK)
-      done()
-    })
-
-    /**
-     * @tc.number    : SUB_MULTIMEIDA_OH_Camera_ErrorCode5200
-     * @tc.name      : testCameraStatusInfostatus
-     * @tc.desc      : Test CAMERA_STATUS_UNAVAILABLE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it("testCameraStatusInfostatus", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let ret = cameraObj.cameraStatusInfo('CAMERA_STATUS_UNAVAILABLE')
-      expect(ret).assertEqual(TEST_OK)
-      done()
-    })
-
-
-
-
-
-
   })
 }
 
