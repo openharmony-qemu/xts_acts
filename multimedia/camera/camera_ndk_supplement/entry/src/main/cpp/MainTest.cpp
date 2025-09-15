@@ -109,7 +109,8 @@ static napi_value OHCameraDeviceSettingLocked(napi_env env, napi_callback_info i
     return result;
 }
 
-static napi_value OHCameraConflictCamera(napi_env env, napi_callback_info info) {
+static napi_value OHCameraConflictCamera(napi_env env, napi_callback_info info)
+{
     napi_value result;
     int ret = TEST_FAILED;
     Camera_ErrorCode expect = CAMERA_CONFLICT_CAMERA;
@@ -120,7 +121,8 @@ static napi_value OHCameraConflictCamera(napi_env env, napi_callback_info info) 
     return result;
 }
 
-static napi_value OHCameraDeviceDisabled(napi_env env, napi_callback_info info) {
+static napi_value OHCameraDeviceDisabled(napi_env env, napi_callback_info info)
+{
     napi_value result;
     int ret = TEST_FAILED;
     Camera_ErrorCode expect = CAMERA_DEVICE_DISABLED;
@@ -131,7 +133,8 @@ static napi_value OHCameraDeviceDisabled(napi_env env, napi_callback_info info) 
     return result;
 }
 
-static napi_value OHCameraDevicePreempted(napi_env env, napi_callback_info info) {
+static napi_value OHCameraDevicePreempted(napi_env env, napi_callback_info info)
+{
     napi_value result;
     int ret = TEST_FAILED;
     Camera_ErrorCode expect = CAMERA_DEVICE_PREEMPTED;
@@ -142,7 +145,8 @@ static napi_value OHCameraDevicePreempted(napi_env env, napi_callback_info info)
     return result;
 }
 
-static napi_value OHCameraUnresolvedConflictsWithCurrentConfigurations(napi_env env, napi_callback_info info) {
+static napi_value OHCameraUnresolvedConflictsWithCurrentConfigurations(napi_env env, napi_callback_info info)
+{
     napi_value result;
     int ret = TEST_FAILED;
     Camera_ErrorCode expect = CAMERA_UNRESOLVED_CONFLICTS_WITH_CURRENT_CONFIGURATIONS;
@@ -200,7 +204,7 @@ static napi_value CameraStatusInfo(napi_env env, napi_callback_info info)
     napi_get_value_string_utf8(env, args[0], charStatus, typeLen + 1, &typeLen);
 
     int ret = TEST_FAILED;
-    if (TEST_OK == g_ndkCamera->SetCameraStatus(std::string(charStatus))) {
+    if (g_ndkCamera->SetCameraStatus(std::string(charStatus)) == TEST_OK) {
         ret = TEST_OK;
     }
 

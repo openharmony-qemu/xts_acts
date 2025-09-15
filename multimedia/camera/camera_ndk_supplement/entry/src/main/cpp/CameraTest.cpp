@@ -241,16 +241,16 @@ Camera_ErrorCode NDKCamera::FrameworkToNdkCameraError(int ret)
     return err;
 }
 
-void MyStatusCallback(Camera_Manager *cameraManager, Camera_StatusInfo *status) 
+void MyStatusCallback(Camera_Manager *cameraManager, Camera_StatusInfo *status)
 {
     Camera_StatusInfo checkStatus;
     checkStatus.camera->cameraId = "001";
     checkStatus.status = CAMERA_STATUS_APPEAR;
 
     if (status->camera->cameraId == checkStatus.camera->cameraId) {
-        LogD("camera is OK.");    
+        LogD("camera is OK.");
     }
-    
+
     if (status->status == checkStatus.status) {
         LogD("camera status is OK.");
     }
@@ -260,19 +260,19 @@ Camera_ErrorCode NDKCamera::SetCameraStatus(std::string info)
 {
     Camera_Status status = CAMERA_STATUS_APPEAR;
     Camera_Connection conType = CAMERA_CONNECTION_REMOTE;
-    if("CAMERA_STATUS_APPEAR" == info) {
+    if ("CAMERA_STATUS_APPEAR" == info) {
         status = CAMERA_STATUS_APPEAR;
-    } else if("CAMERA_STATUS_DISAPPEAR" == info) {
+    } else if ("CAMERA_STATUS_DISAPPEAR" == info) {
         status = CAMERA_STATUS_DISAPPEAR;
-    } else if("CAMERA_STATUS_AVAILABLE" == info) {
+    } else if ("CAMERA_STATUS_AVAILABLE" == info) {
         status = CAMERA_STATUS_AVAILABLE;
-    } else if("CAMERA_STATUS_UNAVAILABLE" == info) {
+    } else if ("CAMERA_STATUS_UNAVAILABLE" == info) {
         status = CAMERA_STATUS_UNAVAILABLE;
-    } else if("CAMERA_CONNECTION_BUILT_IN" == info) {
+    } else if ("CAMERA_CONNECTION_BUILT_IN" == info) {
         conType = CAMERA_CONNECTION_BUILT_IN;
-    } else if("CAMERA_CONNECTION_USB_PLUGIN" == info) {
+    } else if ("CAMERA_CONNECTION_USB_PLUGIN" == info) {
         conType = CAMERA_CONNECTION_USB_PLUGIN;
-    } else if("CAMERA_CONNECTION_REMOTE" == info) {
+    } else if ("CAMERA_CONNECTION_REMOTE" == info) {
         conType = CAMERA_CONNECTION_REMOTE;
     }
     
@@ -341,9 +341,9 @@ Camera_ErrorCode NDKCamera::HasFlashMode(int index)
 
     if (!hasFlash) {
         return CAMERA_OK;
-    } 
+    }
 
     bool isSupported = false;
     ret = OH_CaptureSession_IsFlashModeSupported(captureSession_, flashMode, &isSupported);
-    return ret;    
+    return ret;
 }
