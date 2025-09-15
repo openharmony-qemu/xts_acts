@@ -17,7 +17,7 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
-
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -26,22 +26,27 @@ struct Index {
   @State str: string = "emitGetWebId";
   @State titleReceive: string = "";
   @State webVisibility: Visibility = Visibility.Visible;
+  @State isReceive: number = -1;
+  @State isComplete: number = -1;
 
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 151290,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
   }
-
+  onPageHide() {
+    events_emitter.off(151290)
+  }
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     console.info("web page valueChangeCallBack");
     if (eventData != null) {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -58,27 +63,28 @@ struct Index {
       Row() {
         Button("web click").key('webcomponent').onClick(async () => {
           console.info("key==>" + this.str);
+          await waitForExist(() => this.isComplete, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitGetWebId": {
-              Utils.emitEvent("webId", 120);
+              this.isComplete = -1;
+              Utils.emitEvent("webId", 151300);
+              await waitForExist(() => this.isComplete, this.str, 0);
               break;
             }
             case "emitOnTitleReceive": {
+              this.isComplete = -1;
               this.controller.loadUrl({ url: "resource://rawfile/index.html" });
-              setTimeout(() => {
-                Utils.emitEvent(this.titleReceive, 67);
-              }, 3000);
+              await waitForExist(() => this.isComplete, this.str, 0);
+                Utils.emitEvent(this.titleReceive, 151310);
               break;
             }
             case "emitWebVisibility": {
               this.webVisibility = Visibility.Hidden;
-              setTimeout(() => {
                 this.webVisibility = Visibility.None;
-                setTimeout(() => {
                   this.webVisibility = Visibility.Visible;
-                  Utils.emitEvent(0, 90);
-                }, 3000)
-              }, 3000);
+                  Utils.emitEvent(0, 151320);
               break;
             }
             default:
@@ -91,6 +97,10 @@ struct Index {
         .visibility(this.webVisibility)
         .onTitleReceive((event) => {
           this.titleReceive = event.title;
+        })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isComplete = 0;
         })
     }
   }
