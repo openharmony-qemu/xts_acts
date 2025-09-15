@@ -17,6 +17,9 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent ,waitAndClickComponent  } from './WaitTest.test';
+import { Driver, ON } from '@kit.TestKit';
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -34,12 +37,12 @@ export default function WebViewEnumAndSetWebController() {
         if (!("WebViewEnumAndSetWebController" == pages.name)) {
           console.info("get WebViewEnumAndSetWebController state success " + JSON.stringify(pages.name));
           let result = await router.replaceUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebViewEnumAndSetWebController page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebViewEnumAndSetWebController page error: " + err);
       }
+      await waitForComponent("buttonEnumAndFontLibrary");
       done()
     });
     beforeEach(async (done: Function) => {
@@ -48,15 +51,7 @@ export default function WebViewEnumAndSetWebController() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebViewControllerDownloadTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebViewControllerDownloadTest afterEach end");
       done();
     })
 
@@ -69,10 +64,9 @@ export default function WebViewEnumAndSetWebController() {
     * @tc.level      : Level 1
     */
     it('testOverviewModeAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOverviewModeAccessTrue", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOverviewModeAccess001", '0.25', 1291, done);
-      sendEventByKey('buttonEnumAndSetWebController', 10, '');
+      Utils.emitEvent("emitOverviewModeAccessTrue", 153250)
+      Utils.registerEvent("testOverviewModeAccess001", '0.25', 153260, done);
+      waitAndClickComponent("buttonEnumAndSetWebController",driver);
     })
   })
 }
