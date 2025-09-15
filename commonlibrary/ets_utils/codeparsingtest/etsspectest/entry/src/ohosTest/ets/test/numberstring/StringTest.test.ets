@@ -678,7 +678,7 @@ line2`;
     it('StringTest0049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
         const result = 'apple'.localeCompare('banana');
-        expect(result).assertLess(0); // apple comes before banana
+        expect(result).assertEqual(-1); // apple comes before banana
 
       });
 
@@ -2020,7 +2020,7 @@ line2`;
     it('StringTest0149', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
         const result = 'zebra'.localeCompare('apple');
-        expect(result).assertLarger(0);
+        expect(result).assertEqual(1);
       });
 
     /**
@@ -2471,7 +2471,7 @@ line2`;
     it('StringTest0183', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
         const result = '10'.localeCompare('2', undefined, { numeric: true });
-        expect(result).assertLarger(0); // '10' > '2' when numeric
+        expect(result).assertEqual(1);
 
       });
     /**
