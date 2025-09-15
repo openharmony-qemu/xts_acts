@@ -54,7 +54,7 @@ export default function nfcTagTest() {
 
         it('SUB_COMMUNICATION_NFC_Tag_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             console.info('[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0100 MIFARE_CLASSIC is' + tag.NfcForumType.MIFARE_CLASSIC);
-            expect(tag.NfcForumType.MIFARE_CLASSIC).assertEqual(3);
+            expect(tag.NfcForumType.MIFARE_CLASSIC).assertEqual(101);
             console.info('[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0100 NFC_A is' + tag.NFC_A);
             expect(tag.NFC_A).assertEqual(1);
             console.info('[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0100 NFC_B is' + tag.NFC_B);
