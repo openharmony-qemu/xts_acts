@@ -18,8 +18,7 @@ project(capi_ipc)
 set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 
 include_directories(${NATIVERENDER_ROOT_PATH}
-                    ${NATIVERENDER_ROOT_PATH}/include
-                    ${NATIVERENDER_ROOT_PATH}/IpcProxy)
+                    ${NATIVERENDER_ROOT_PATH}/include)
 
-add_library(IPC20CApi SHARED IpcCapiTest.cpp IpcProxy/IpcProxy.cpp)
+add_library(IPC20CApi SHARED IpcCapiTest.cpp)
 target_link_libraries(IPC20CApi PUBLIC libace_napi.z.so libipc_capi.so)

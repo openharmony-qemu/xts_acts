@@ -15,21 +15,7 @@
 
 {
   "app": {
-    "signingConfigs": [
-      {
-        "name": "default",
-        "type": "HarmonyOS",
-        "material": {
-          "certpath": "C:\\Users\\lenovo\\.ohos\\config\\default_capi20_ipc_5OAjhfhfCU7NHoyMXbUOzyJ1c7zYMNCUt4P4U-dR_Jc=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001B2E410A022045D87EF7F709A7DFCB7F627DC9B2DD429659A6652686FACE253ED25DC4C038F8322D",
-          "profile": "C:\\Users\\lenovo\\.ohos\\config\\default_capi20_ipc_5OAjhfhfCU7NHoyMXbUOzyJ1c7zYMNCUt4P4U-dR_Jc=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\lenovo\\.ohos\\config\\default_capi20_ipc_5OAjhfhfCU7NHoyMXbUOzyJ1c7zYMNCUt4P4U-dR_Jc=.p12",
-          "storePassword": "0000001BDC4EC96BEED440A06B7247E98597ADCCA2EC7C50D8E04D87AB6A413C20F09F485B63276DF94AD3"
-        }
-      }
-    ],
+    "signingConfigs": [],
     "products": [
       {
         "name": "default",
