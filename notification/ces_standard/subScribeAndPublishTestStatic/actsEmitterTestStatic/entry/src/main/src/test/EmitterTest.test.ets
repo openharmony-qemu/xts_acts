@@ -1241,7 +1241,7 @@ export default function EmitterTest() {
     async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'SUB_NOTIFICATION_CES_EMITTER_TEST_STATIC_3000';
       console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_STATIC_3000 START`)
-      let options = {
+      let options : emitter.Options = {
         priority: emitter.EventPriority.HIGH
       }
       innerEvent.eventId = 31
