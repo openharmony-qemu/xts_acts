@@ -23,6 +23,8 @@ import { UIContext } from '@ohos.arkui.UIContext';
 import Utils from '../../test/Utils';
 import JSON from '@ohos.util.json';
 
+const EVENT_ID_SET_EMIT_KEY = 363000;
+
 interface AVPlayerListener {
     onPlaying() : void
     onPaused() : void
@@ -204,7 +206,7 @@ class NativeMediaPlayerImpl implements webview.NativeMediaPlayerBridge{
     
     updateRect(x: number, y: number, width: number, height: number): void {
         console.log('updateRect(${x}, ${y}, ${width}, ${height})');
-        Utils.emitEvent(true, 1291)
+        Utils.emitEvent(true, 363010)
         this.web.node_width = width;
         this.web.node_height = height;
     }
@@ -510,6 +512,8 @@ struct WebComponent {
   @State show_native_media_player: boolean = false;
   @State node_width : number = 300;
   @State node_height : number = 150;
+  @State isPageEnd:number = -1;
+  @State isReceive: number = -1;
   //@State node_offset : Position = {x: 0, y: 0};
   
   area?: Area
@@ -517,12 +521,15 @@ struct WebComponent {
   
   onPageShow() {
       let valueChangeEvent: events_emitter.InnerEvent = {
-          eventId: 10,
+          eventId: EVENT_ID_SET_EMIT_KEY,
           priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-  
+    onPageHide() {
+        events_emitter.off(EVENT_ID_SET_EMIT_KEY)
+    }
+
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
       if (eventData != null) {
           console.info("valueChangeCallBack:" + JSON.stringify(eventData));
@@ -536,16 +543,20 @@ struct WebComponent {
           Row() {
               Button("web click").key('webViewNativeMediaUpdateRect').onClick(async () => {
                   console.info("key==>" + this.emitKey)
-                    await Utils.sleep(2000)
+                  await Utils.waitForExist(()=>this.isReceive, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                  this.isReceive = -1;
                     if ( Utils.isPC( this.controller ) ) {
-                       Utils.emitEvent(true, 1291)
+                       Utils.emitEvent(true, 363010)
                        return
                     }
                     switch (this.emitKey) {
                         case "emitWebViewNativeMediaUpdateRect": {
                             try {
+                                this.isPageEnd = -1;
+                                this.controller.refresh();
+                                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                                 console.log('emitWebViewNativeMediaUpdateRect==>')
-                                await Utils.sleep(1000)
                                 this.controller.runJavaScript("buttonPlay()", (error, result) => {
                                     console.error('The play(0 return error is: ${error}');
                                     console.log('The play(0 return value is: ${result}');
@@ -555,9 +566,9 @@ struct WebComponent {
                                     console.log('The resize(0 return value is: ${result}');
                                 })
                                 await Utils.sleep(2000)
-                                Utils.emitEvent(true, 1291)
+                                Utils.emitEvent(true, 363010)
                             } catch (error) {
-                                Utils.emitEvent('error',1291)
+                                Utils.emitEvent('error',363010)
                             }
                             break;
                         }                    
@@ -585,6 +596,11 @@ struct WebComponent {
                 })
                 .width('100%')
                 .height('100%')
+                .onPageEnd((event) => {
+                      console.log('dwb onPageEnd url:' + event.url);
+                      console.info("dwb this.isPageEnd = 1");
+                      this.isPageEnd = 1;
+                })
                 .onAreaChange((oldValue: Area, newValue: Area) => {
                     oldValue;
                     this.area = newValue;
