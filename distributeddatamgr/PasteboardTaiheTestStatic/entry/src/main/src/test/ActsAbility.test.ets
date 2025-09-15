@@ -1738,14 +1738,12 @@ export default function abilityTest() {
                 progressIndicator: pasteboard.ProgressIndicator.NONE
             };
             try {
-                hilog.info(domain, tag, "000");
                 await systemPasteboard.getDataWithProgress(params);
-                hilog.info(domain, tag, "111");
+                hilog.info(domain, tag, "getDataWithProgress params assertFail");
                 expect().assertFail();
-                hilog.info(domain, tag, "222");
                 done();
             } catch (err: BusinessError) {
-                hilog.info(domain, tag, 'getDataWithProgress fail,err：' + err.code + ',message: ' + err.message);
+                hilog.info(domain, tag, 'getDataWithProgress fail,err:' + err.code + ',message: ' + err.message);
                 expect(err.code).assertEqual(12900010)
                 done();
             }
