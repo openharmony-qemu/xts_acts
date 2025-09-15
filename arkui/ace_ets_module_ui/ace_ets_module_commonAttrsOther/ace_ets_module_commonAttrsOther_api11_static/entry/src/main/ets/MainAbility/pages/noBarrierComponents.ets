@@ -509,7 +509,7 @@ struct noBarrierComponents {
         })
           .useMilitaryTime(this.isMilitaryTime)
           .onChange((value: TimePickerResult): void => {
-            this.selectedTime.setHours(value.hour, value.minute)
+            this.selectedTime.setHours(value.hour.toInt(), value.minute.toInt())
             console.info('select current date is: ' + JSON.stringify(value))
           })
           .key("TimePicker")
