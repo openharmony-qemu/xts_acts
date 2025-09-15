@@ -7,6 +7,8 @@ import pasteboard from '@ohos.pasteboard'
 import { BusinessError } from '@ohos.base';
 import image from '@ohos.multimedia.image';
 import Want from '@ohos.app.ability.Want';
+import unifiedDataChannel from '@ohos.data.unifiedDataChannel';
+import uniformTypeDescriptor from '@ohos.data.uniformTypeDescriptor';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -14,10 +16,12 @@ let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 let num = pasteboard.Pattern.NUMBER;
 let url = pasteboard.Pattern.URL;
 const ARRAY_BUFFER = new ArrayBuffer(256);
+const color = new ArrayBuffer(128);
 const WANT: Want = {
     bundleName: "com.acts.distributeddatamgr.pasteboardtest",
     abilityName: "com.acts.distributeddatamgr.pasteboardtest.MainAbility"
 };
+
 let HTML = "<!DOCTYPE html>\n" + "<html>\n" + "<head>\n" + "<meta charset=\"utf-8\">\n" + "<title>HTML-PASTEBOARD_HTML</title>\n" + "</head>\n" + "<body>\n" + "    <h1>HEAD</h1>\n" + "    <p></p>\n" + "</body>\n" + "</html>";
 let URI = 'dataability:///com.example.myapplication1/user.txt';
 
@@ -87,6 +91,173 @@ export default function abilityTest() {
             done();
         })
 
+        /**
+       * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0440
+       * @tc.number    : PasteBoard_SystemPasteboard_0440
+       * @tc.desc      : setUnifiedData getUnifiedData interface test
+       * @tc.size      : MediumTest
+       * @tc.type      : Function
+       * @tc.level     : Level 2
+       */
+      it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0440', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SystemPasteboard_Static_0440 start------");
+        let plainTextData = new unifiedDataChannel.UnifiedData();
+        let plainText = new unifiedDataChannel.PlainText();
+        let systemPasteboard = pasteboard.getSystemPasteboard();
+        hilog.info(domain, tag, "------111------");
+        plainText.details = {
+          "Key":'delayPlaintext',
+          "Value":'delayPlaintext'
+        };
+        plainText.textContent = 'textContent';
+        plainText.textAbstract = 'textAbstract';
+        hilog.info(domain, tag, "------222------");
+        plainTextData.addRecord(plainText);
+        systemPasteboard.clearDataSync();
+        hilog.info(domain, tag, "------333------");
+        let result = systemPasteboard.hasDataSync();
+        hilog.info(domain, tag, "------444------" + result);
+        expect(result).assertFalse();
+
+        let  result1: number = systemPasteboard.getChangeCount();
+        console.info(domain, tag, `Succeeded in getting the change count.Result0:${result1}`);
+        try {
+          await systemPasteboard.setUnifiedData(plainTextData);
+          let  result2: number = systemPasteboard.getChangeCount();
+          hilog.info(domain, tag, 'Succeeded in setting UnifiedData.');
+          expect(result2).assertEqual(result1 + 1);
+          console.info(domain, tag, 'Pasteboard change success.');
+          try {
+            let data:unifiedDataChannel.UnifiedData = await systemPasteboard.getUnifiedData();
+            hilog.info(domain, tag, "------555------" + data);
+            try {
+              let records = data.getRecords();
+              hilog.info(domain, tag, "------777------Get Plain Text records length :" + records.length);
+              expect(records[0].getType()).assertEqual(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT.valueOf());
+              let record = records[0] as unifiedDataChannel.PlainText;
+              expect(JSON.stringify(record.details)).assertEqual(JSON.stringify(plainText.details));
+              hilog.info(domain, tag, 'Get Plain Text Unified Data Success, type: ' + records[0].getType() + 'details:' + JSON.stringify(record.details));
+            } catch (err: BusinessError) {
+              hilog.info(domain, tag, '------888------Failed to set UnifiedData.Cause:' + err.message);
+              expect().assertFail();
+              done();
+            }
+          } catch (err: BusinessError) {
+            hilog.info(domain, tag, '------666------Failed to set UnifiedData.Cause:' + err.message);
+            expect().assertFail();
+            done();
+          }
+          done();
+          // expect(records.length).assertEqual(1);
+
+          // console.info(domain, tag, `Succeeded in getting the change count.Result1:${result2}`);
+        } catch (err: BusinessError) {
+          hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
+          expect().assertFail();
+          done();
+        }
+
+        hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SystemPasteboard_Static_0440 end------");
+      })
+      
+      /**
+       * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0441
+       * @tc.number    : SUB_PasteBoard_ETS_SystemPasteboard_Static_0441
+       * @tc.desc      : setUnifiedData getUnifiedData interface test
+       * @tc.size      : MediumTest
+       * @tc.type      : Function
+       * @tc.level     : Level 2
+       */
+      it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0441', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SystemPasteboard_Static_0441 start------");
+            let plainTextData = new unifiedDataChannel.UnifiedData();
+            let plainText = new unifiedDataChannel.PlainText();
+            let systemPasteboard = pasteboard.getSystemPasteboard();
+            hilog.info(domain, tag, "------111------");
+            plainText.details = {
+                "Key":'delayPlaintext',
+                "Value":'delayPlaintext'
+            };
+            plainText.textContent = 'textContent';
+            plainText.textAbstract = 'textAbstract';
+            hilog.info(domain, tag, "------222------");
+            plainTextData.addRecord(plainText);
+            systemPasteboard.clearDataSync();
+            hilog.info(domain, tag, "------333------");
+            let result = systemPasteboard.hasDataSync();
+            hilog.info(domain, tag, "------444------" + result);
+            expect(result).assertFalse();
+        
+            let  result1: number = systemPasteboard.getChangeCount();
+            console.info(domain, tag, `Succeeded in getting the change count.Result0:${result1}`);
+            try {
+                systemPasteboard.setUnifiedDataSync(plainTextData);
+                let  result2: number = systemPasteboard.getChangeCount();
+                hilog.info(domain, tag, 'Succeeded in setting UnifiedData.');
+                let data:unifiedDataChannel.UnifiedData = systemPasteboard.getUnifiedDataSync();
+                let records = data.getRecords();
+                hilog.info(domain, tag, "Get Plain Text records length :" + records.length);
+                expect(records.length).assertEqual(1);
+                expect(records[0].getType()).assertEqual(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT.valueOf());
+                let record = records[0] as unifiedDataChannel.PlainText;
+                expect(JSON.stringify(record.details)).assertEqual(JSON.stringify(plainText.details));
+                hilog.info(domain, tag, 'Get Plain Text Unified Data Success, type: ' + records[0].getType() + 'details:' + JSON.stringify(record.details));
+                console.info(domain, tag, `Succeeded in getting the change count.Result1:${result2}`);
+                expect(result2).assertEqual(result1 + 1);
+                console.info(domain, tag, 'Pasteboard change success.');
+                done();
+            } catch (err:BusinessError) {
+                hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
+                expect().assertFail();
+                done();
+            }
+        
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SystemPasteboard_Static_0441 end------");
+        })
+
+        /**
+         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0443
+         * @tc.number    : SUB_PasteBoard_ETS_SystemPasteboard_Static_0443
+         * @tc.desc      : setUnifiedData getUnifiedData interface test
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 2
+         */
+        it('SUB_PasteBoard_ETS_SystemPasteboard_Static_0443', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SystemPasteboard_Static_0443 start------");
+            let plainTextData = new unifiedDataChannel.UnifiedData();
+            let plainText = new unifiedDataChannel.PlainText();
+            let systemPasteboard = pasteboard.getSystemPasteboard();
+            plainText.details = {
+                "Key":'delayPlaintext',
+                "Value":'delayPlaintext'
+            };
+            plainText.textContent = 'textContent';
+            plainText.textAbstract = 'textAbstract';
+            plainTextData.addRecord(plainText);
+            systemPasteboard.clearDataSync();
+            let result = systemPasteboard.hasDataSync();
+            expect(result).assertFalse();
+            try {
+                await systemPasteboard.setUnifiedData(plainTextData);
+                hilog.info(domain, tag, 'Succeeded in setting UnifiedData.');
+                let data:unifiedDataChannel.UnifiedData = await systemPasteboard.getUnifiedData();
+                let records = data.getRecords();
+                hilog.info(domain, tag, "Get Plain Text records length :" + records.length);
+                expect(records.length).assertEqual(1);
+                expect(records[0].getType()).assertEqual(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT.valueOf());
+                let record = records[0] as unifiedDataChannel.PlainText;
+                expect(JSON.stringify(record.details)).assertEqual(JSON.stringify(plainText.details));
+                hilog.info(domain, tag, 'Get Plain Text Unified Data Success, type: ' + records[0].getType() + 'details:' + JSON.stringify(record.details));
+                done();
+            } catch (err:BusinessError) {
+                hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
+                expect().assertFail();
+                done();
+            }
+            
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SystemPasteboard_Static_0443 end------");
+        })
         /**
          * @tc.name      : SUB_PasteBoard_ETS_PasteDataRecord_Static_0030
          * @tc.number    : PasteBoard_PasteDataRecord_0030
