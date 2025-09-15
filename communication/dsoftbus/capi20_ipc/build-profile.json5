@@ -1,0 +1,57 @@
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\lenovo\\.ohos\\config\\default_capi20_ipc_5OAjhfhfCU7NHoyMXbUOzyJ1c7zYMNCUt4P4U-dR_Jc=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B2E410A022045D87EF7F709A7DFCB7F627DC9B2DD429659A6652686FACE253ED25DC4C038F8322D",
+          "profile": "C:\\Users\\lenovo\\.ohos\\config\\default_capi20_ipc_5OAjhfhfCU7NHoyMXbUOzyJ1c7zYMNCUt4P4U-dR_Jc=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\lenovo\\.ohos\\config\\default_capi20_ipc_5OAjhfhfCU7NHoyMXbUOzyJ1c7zYMNCUt4P4U-dR_Jc=.p12",
+          "storePassword": "0000001BDC4EC96BEED440A06B7247E98597ADCCA2EC7C50D8E04D87AB6A413C20F09F485B63276DF94AD3"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compileSdkVersion": 20,
+        "compatibleSdkVersion": 11,
+        "runtimeOS": "OpenHarmony",
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
