@@ -18,6 +18,7 @@ group("data") {
   if (is_standard_system) {
     deps = [
 "datatest:ActsDataHasCardNoNetTest",
+"ActsCellularDataAbnormalTestStatic:ActsCellularDataAbnormalStaticTest",
 "ActsCellularDataAbnormalNopTestStatic:ActsCellularDataAbnormalNopStaticTest",
 "ActsTelephonyDataHasCardTestStatic:ActsTelephonyDataHasCardStaticTest",
 "ActsTelephonyDataNoCardTestStatic:ActsTelephonyDataNoCardStaticTest"
