@@ -17,7 +17,11 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
+import { Driver, ON } from '@kit.TestKit';
 // @ts-nocheck
+const driver = Driver.create();
+const EVENT_ID_SET_EMIT_KEY = 362000;
+
 let emitKey = ""
 
 export default function webViewNativeMediaPlayerHandlerEnhancedSetMuted() {
@@ -27,49 +31,26 @@ export default function webViewNativeMediaPlayerHandlerEnhancedSetMuted() {
         let options : router.RouterOptions = {
             url: 'testability/pages/webViewNativeMediaPlayerHandlerEnhanced',
         }
-        
         try {
-            await Utils.sleep(1000)
             router.clear();
             let pages = router.getState();
             console.info("get webViewNativeMediaPlayerHandlerEnhanced state success " + JSON.stringify(pages));
             if (!("webViewNativeMediaPlayerHandlerEnhanced" == pages.name)) {
                 console.info("get webViewNativeMediaPlayerHandlerEnhanced state success " + JSON.stringify(pages.name));
                 let result = await router.pushUrl(options);
-                await Utils.sleep(1000);
                 console.info("push webViewNativeMediaPlayerHandlerEnhanced state success " + JSON.stringify(result));
             }
         } catch (err) {
             console.error("push webViewNativeMediaPlayerHandlerEnhanced page error:" + err);
         }
+        await driver.waitForComponent(ON.id("webViewNativeMediaPlayerHandlerEnhanced"), 10000);
+        console.log("waitForComponent webViewNativeMediaPlayerHandlerEnhanced");
         done()
     });
     
     beforeEach(async (done: Function) => {
-        await Utils.sleep(2000);
         done();
     })
-
-      afterEach(async (done: Function) => {
-        try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent : events_emitter.InnerEvent = {
-                eventId: 10,
-                priority: events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-        } catch (err) {
-            console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
-      done();
-    })
-
     /*
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_4400
      *@tc.name testWebViewNativeMediaPlayerSetMutedTrue
@@ -80,12 +61,10 @@ export default function webViewNativeMediaPlayerHandlerEnhancedSetMuted() {
      */
     it('testWebViewNativeMediaPlayerSetMutedTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerSetMutedTrue"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebViewNativeMediaPlayerSetMutedTrue", true, 1591,
-        done, (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
-      sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebViewNativeMediaPlayerSetMutedTrue", true, 362591, done);
+      let StartModel = await driver.findComponent(ON.id("webViewNativeMediaPlayerHandlerEnhanced"));
+      await StartModel.click();
     })
     /*
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_4600
@@ -97,11 +76,10 @@ export default function webViewNativeMediaPlayerHandlerEnhancedSetMuted() {
      */
     it('testWebViewNativeMediaPlayerSetMutedTrue_handleMutedChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerSetMutedTrue_handleMutedChange"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebViewNativeMediaPlayerSetMutedTrue_handleMutedChange", true, 1592,
-        done, (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebViewNativeMediaPlayerSetMutedTrue_handleMutedChange", true, 362592, done);
+      // let StartModel = await driver.findComponent(ON.id("webViewNativeMediaPlayerHandlerEnhanced"));
+      // await StartModel.click();
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
     /*
@@ -114,11 +92,10 @@ export default function webViewNativeMediaPlayerHandlerEnhancedSetMuted() {
      */
     it('testWebViewNativeMediaPlayerSetMutedFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerSetMutedFalse"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebViewNativeMediaPlayerSetMutedFalse", true, 1593,
-        done, (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebViewNativeMediaPlayerSetMutedFalse", true, 362593, done);
+      // let StartModel = await driver.findComponent(ON.id("webViewNativeMediaPlayerHandlerEnhanced"));
+      // await StartModel.click();
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
     /*
@@ -131,11 +108,10 @@ export default function webViewNativeMediaPlayerHandlerEnhancedSetMuted() {
      */
     it('testWebViewNativeMediaPlayerSetMutedFalse_handleMutedChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerSetMutedFalse_handleMutedChange"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebViewNativeMediaPlayerSetMutedFalse_handleMutedChange", true, 1594,
-        done, (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebViewNativeMediaPlayerSetMutedFalse_handleMutedChange", true, 362594, done);
+      // let StartModel = await driver.findComponent(ON.id("webViewNativeMediaPlayerHandlerEnhanced"));
+      // await StartModel.click();
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
   })
