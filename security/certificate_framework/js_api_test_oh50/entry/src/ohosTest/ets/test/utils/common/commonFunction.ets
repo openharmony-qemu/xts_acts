@@ -174,6 +174,34 @@ function compareString(a: string, b: string): boolean {
   }
 }
 
+function compareUint8Array(a: Uint8Array, b: Uint8Array): boolean {
+  let buf1 = buffer.from(a);
+  let buf2 = buffer.from(b);
+  if (buf1.compare(buf2, 0, b.length, 0, a.length) == 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function decToHexString(data: Uint8Array) {
+  let arr: string[] = [];
+  for (let i = 0; i < data.length; ++i) {
+    let tmp: string = "";
+    let num: number = data[i];
+    tmp = num.toString(16);
+    if(tmp.length == 1) {
+      tmp = "0" + tmp;
+    }
+    arr.push("0x" + tmp + ",");
+    if (arr.length == 16) {
+      console.log("##################### :" + arr);
+      arr = []
+    }
+  }
+  console.log("##################### :" + arr);
+}
+
 
 export {
   stringToArray,
@@ -185,5 +213,7 @@ export {
   genCcmParamsSpec,
   genKeyMaterialBlob,
   convertToUint8Array,
-  compareString
+  compareString,
+  compareUint8Array,
+  decToHexString
 };
