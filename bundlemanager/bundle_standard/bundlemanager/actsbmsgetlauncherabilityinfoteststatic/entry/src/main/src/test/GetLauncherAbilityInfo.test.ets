@@ -33,10 +33,10 @@ export default function actsGetLauncherAbilityInfoTest() {
         let data = launcherBundleManager.getLauncherAbilityInfoSync(BUNDLE_NAME2, 100);
         // hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+' getLauncherAbilityInfoSync success, result is: %{public}s', JSON.stringify(data));
         console.log('getLauncherAbilityInfoSync success');
-        expect(data[0].labelId).assertLarger(0.0);
-        expect(data[0].iconId).assertLarger(0.0);
+        expect(data[0].labelId as double).assertLarger(0.0);
+        expect(data[0].iconId as double).assertLarger(0.0);
         expect(data[0].userId).assertEqual(100);
-        expect(data[0].installTime).assertLarger(0.0);
+        expect(data[0].installTime as double).assertLarger(0.0);
         expect(data[0].elementName.deviceId).assertEqual("");
         expect(data[0].elementName.bundleName).assertEqual(BUNDLE_NAME2);
         expect(data[0].elementName.moduleName).assertEqual("entry");

@@ -17,9 +17,9 @@ export default function getAppCloneIdentity() {
       async (done: () => void): Promise<void> => {
       let dataInfo = bundleManager.getBundleInfoForSelfSync(bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION);
         try {
-          await bundleManager.getAppCloneIdentity(dataInfo.appInfo.uid).then((data: AppCloneIdentity) => {
+          await bundleManager.getAppCloneIdentity(dataInfo!.appInfo!.uid).then((data: AppCloneIdentity) => {
             console.info(TAG + 'getAppCloneIdentity_0100 successfully: ' + JSON.stringify(data));
-            expect(data.bundleName).assertEqual(dataInfo.appInfo.name);
+            expect(data?.bundleName).assertEqual(dataInfo?.appInfo?.name);
             expect(data.appIndex).assertEqual(0);
             done();
           }).catch((err: BusinessError): void => {

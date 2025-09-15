@@ -20,34 +20,52 @@ export default function getOverlayModuleInfo() {
   describe('getOverlayModuleInfo',  () =>{
 
     /*
-     * @tc.number: Sub_Bms_Framework_Overlay_Query_static_0100
-     * @tc.name: Sub_Bms_Framework_Overlay_Query_static_0100
-     * @tc.desc: The query fails when the incoming moduleName is empty
-     */
+         * @tc.number: Sub_Bms_Framework_Overlay_Query_static_0100
+         * @tc.name: Sub_Bms_Framework_Overlay_Query_static_0100
+         * @tc.desc: The query fails when the incoming moduleName is empty
+         */
     it("Sub_Bms_Framework_Overlay_Query_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        let op3 = overlay.getOverlayModuleInfo("");
-        op3.then((result: OverlayModuleInfo): OverlayModuleInfo => {
-          hilog.info(0x0000, 'testParamTag', 'o6 getOverlayModuleInfo Promise success');
-          expect().assertFail();
-          done();
-        }, (err: BusinessError<void>): void => {
-          hilog.error(0x0000, 'testParamTag', 'o6 getOverlayModuleInfo Promise then failed: %{public}s', JSON.stringify(err));
-          expect(err.code).assertEqual(401);
-          done();
-        });
-        await Utils.msSleep(1000);
-        overlay.getOverlayModuleInfo("", (err: BusinessError<void> | null, result: OverlayModuleInfo | undefined) => {
-          if (err && err.code != 0) {
-            hilog.error(0x0000, 'testParamTag', 'o5 getOverlayModuleInfo callback failed: %{public}s', JSON.stringify(err));
-            expect(err?.code).assertEqual(401);
-            done();
-          } else {
-            hilog.info(0x0000, 'testParamTag', 'o5 getOverlayModuleInfo success');
+        try {
+          let op3 = overlay.getOverlayModuleInfo("");
+          op3.then((result: OverlayModuleInfo): OverlayModuleInfo => {
+            hilog.info(0x0000, 'testParamTag', 'o6 getOverlayModuleInfo Promise success');
             expect().assertFail();
             done();
-          }
-        });
+          }, (err: BusinessError<void>): void => {
+            hilog.error(0x0000, 'testParamTag', 'o6 getOverlayModuleInfo Promise then failed: %{public}s',
+              JSON.stringify(err));
+            expect(err.code).assertEqual(401);
+            done();
+          });
+        } catch (error) {
+          let code = (error as BusinessError).code;
+          let message = (error as BusinessError).message;
+          hilog.error(0x0000, 'testParamTag', 'getOverlayModuleInfo failed ' + message + " " + code);
+          expect(code).assertEqual(401);
+          done();
+        }
+        await Utils.msSleep(1000);
+        try {
+          overlay.getOverlayModuleInfo("", (err: BusinessError<void> | null, result: OverlayModuleInfo | undefined) => {
+            if (err && err.code != 0) {
+              hilog.error(0x0000, 'testParamTag', 'o5 getOverlayModuleInfo callback failed: %{public}s',
+                JSON.stringify(err));
+              expect(err?.code).assertEqual(401);
+              done();
+            } else {
+              hilog.info(0x0000, 'testParamTag', 'o5 getOverlayModuleInfo success');
+              expect().assertFail();
+              done();
+            }
+          });
+        } catch (error) {
+          let code = (error as BusinessError).code;
+          let message = (error as BusinessError).message;
+          hilog.error(0x0000, 'testParamTag', 'getOverlayModuleInfo failed ' + message + " " + code);
+          expect(code).assertEqual(401);
+          done();
+        }
       })
 
     /*
