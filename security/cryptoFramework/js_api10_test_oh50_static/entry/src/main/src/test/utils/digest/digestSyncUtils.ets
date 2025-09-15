@@ -84,10 +84,10 @@ function doMdSyncSplit(algName: string, message: cryptoFramework.DataBlob, block
   try {
     let md: cryptoFramework.Md = cryptoFramework.createMd(algName);
     let msgLen: int = message.data.byteLength;
-    let iterate: int = (msgLen / blockSize).toInt();
+    let iterate: int = msgLen / blockSize;
     let rem: int = msgLen % blockSize;
     if (rem != 0) {
-      iterate = ((msgLen - rem) / blockSize).toInt();
+      iterate = (msgLen - rem) / blockSize;
     }
     for(let index = 0; index < iterate; index++) {
       let tmp = message.data.subarray(blockSize * index, blockSize * (index + 1));

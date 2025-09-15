@@ -34,7 +34,7 @@ export default function testsuite() {
   DigestAlgorithmSm3Jsunit();
   SecurityRandomSyncJsunit();
   SecurityKeyAgreementJsunit();
-  // AsyGetKeySpecBySpecJsunit();
+  // AsyGetKeySpecBySpecJsunit(); // arkts1.2 appfreeze
   // AsyKeyGeneratorBySpecJsunit();
   // AsyKeyGeneratorBySpecTwoJsunit();
 }
