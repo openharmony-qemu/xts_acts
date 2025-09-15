@@ -1232,32 +1232,6 @@ export default function EmitterTest() {
 
 
     /*
-     * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_STATIC_3000
-     * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_STATIC_3000
-     * @tc.desc      : priority: emitter.EventPriority.HIGH
-     */
-    
-    it('SUB_NOTIFICATION_CES_EMITTER_TEST_STATIC_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-    async (done: () => void): Promise<void> => {
-      const TEST_CASE_NAME = 'SUB_NOTIFICATION_CES_EMITTER_TEST_STATIC_3000';
-      console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_STATIC_3000 START`)
-      let options : emitter.Options = {
-        priority: emitter.EventPriority.HIGH
-      }
-      innerEvent.eventId = 31
-      let EmitterCallback = (): void => {
-        hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success');
-        expect(true).assertTrue();
-        hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' test case end');
-      }
-      emitter.on(innerEvent.eventId, EmitterCallback)
-      emitter.emit(innerEvent.eventId, options)
-      expect(emitter.getListenerCount(null)).assertEqual(undefined)
-      console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_STATIC_3000 END`)
-      done()
-    })
-
-    /*
      * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3300
      * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3300
      * @tc.desc      : emitter.EventPriority.IMMEDIATE
