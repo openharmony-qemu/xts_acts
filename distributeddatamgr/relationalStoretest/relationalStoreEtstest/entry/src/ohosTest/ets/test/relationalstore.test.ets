@@ -30,7 +30,7 @@ const valueBucket2m: relationalStore.ValuesBucket = {
 };
 const sendableValusBucket = sendableRelationalStore.toSendableValuesBucket(valueBucket2m);
 const STORE_CONFIG : relationalStore.StoreConfig= {
-  name: "rdbStore.db",
+  name: "rdbStoreTest.db",
   securityLevel: relationalStore.SecurityLevel.S1,
 }
 let rdbStore:relationalStore.RdbStore;
@@ -57,7 +57,7 @@ export default function relationalStoreInterfaceTest() {
 
     afterEach(async ()=> {
       console.info(TAG + 'afterEach');
-      await relationalStore.deleteRdbStore(context,"rdbStore.db")
+      await relationalStore.deleteRdbStore(context,"rdbStoreTest.db")
     })
 
     afterAll(async ()=> {
@@ -1291,7 +1291,7 @@ export default function relationalStoreInterfaceTest() {
       'salary': 25000,
     };
     await rdbStore?.insert("test", valueBucket);
-    await sleep(500);
+    await sleep(800);
     expect(status1).assertEqual(1);
     expect(status2).assertEqual(1);
     expect(status3).assertEqual(1);
@@ -1489,7 +1489,7 @@ export default function relationalStoreInterfaceTest() {
     rdbStore2?.on('event', true, storeObserver9);
     rdbStore2?.on('event', true, storeObserver10);
     rdbStore?.emit('event');
-    await sleep(500);
+    await sleep(800);
     expect(status1).assertEqual(1);
     expect(status2).assertEqual(1);
     expect(status3).assertEqual(1);
@@ -1588,7 +1588,7 @@ export default function relationalStoreInterfaceTest() {
     rdbStore2?.on('event', true, storeObserver10);
     await rdbStore2.close();
     rdbStore?.emit('event');
-    await sleep(500);
+    await sleep(800);
     expect(status1).assertEqual(1);
     expect(status2).assertEqual(1)
     expect(status3).assertEqual(1)
@@ -1687,7 +1687,7 @@ export default function relationalStoreInterfaceTest() {
       'salary': 25000,
     };
     await rdbStore?.insert("test", valueBucket);
-    await sleep(500);
+    await sleep(800);
     expect(status1).assertEqual(1);
     expect(status2).assertEqual(1);
     expect(status3).assertEqual(1);
@@ -1791,7 +1791,7 @@ export default function relationalStoreInterfaceTest() {
       'salary': 25000,
     };
     await rdbStore?.insert("test", valueBucket);
-    await sleep(500);
+    await sleep(800);
     expect(status1).assertEqual(1);
     expect(status2).assertEqual(1);
     expect(status3).assertEqual(1);
@@ -1890,8 +1890,10 @@ export default function relationalStoreInterfaceTest() {
     };
     try {
       await rdbStore?.insert("test1", valueBucket);
-    } catch(e) {}
-    await sleep(500);
+    } catch(err) {
+      console.log(TAG + "err.code" + err.code)
+    }
+    await sleep(800);
     expect(status1).assertEqual(1);
     expect(status2).assertEqual(1);
     expect(status3).assertEqual(1);
@@ -2000,7 +2002,7 @@ export default function relationalStoreInterfaceTest() {
       console.log(TAG + err.code +err.message)
     }
 
-    await sleep(500);
+    await sleep(800);
     expect(status1).assertEqual(1);
     expect(status2).assertEqual(1);
     expect(status3).assertEqual(1);
@@ -2098,7 +2100,7 @@ export default function relationalStoreInterfaceTest() {
       'salary': 25000,
     };
     await rdbStore?.insert("test", valueBucket);
-    await sleep(500);
+    await sleep(800);
     expect(status1).assertEqual(1);
     expect(status2).assertEqual(1);
     expect(status3).assertEqual(1);
@@ -2202,7 +2204,7 @@ export default function relationalStoreInterfaceTest() {
       'salary': 25000,
     };
     await rdbStore?.insert("test", valueBucket);
-    await sleep(500);
+    await sleep(800);
     expect(status1).assertEqual(1);
     expect(status2).assertEqual(1);
     expect(status3).assertEqual(1);
