@@ -1,0 +1,1400 @@
+/*
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import photoAccessHelper from '@ohos.file.photoAccessHelper'
+import { describe, it, expect, beforeAll, Level, afterAll } from '@ohos/hypium'
+import { driveFn, getPermission, sleep } from '../common'
+import common from '@ohos.app.ability.common'
+import { JSON } from '@kit.ArkTS';
+
+function getEnumMaxValue<T extends Record<string, number | string>>(enumeration: T): number {
+  const values = Object.values(enumeration);
+  const numberValues = values.filter(v => typeof v === 'number') as number[];
+  let maxValue = Math.max(...numberValues);
+  console.info('getEnumMaxValue : ' + maxValue);
+  return maxValue;
+}
+
+export default function AddResourceChangeRequestSuppTest() {
+  let TAG = 'AddResourceChangeRequestSuppTest';
+  describe('AddResourceChangeRequestSuppTest', () => {
+    let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+    let helper = photoAccessHelper.getPhotoAccessHelper(testContext);
+    beforeAll(async () => {
+      AppStorage.setOrCreate<number>('uriList1', 1);
+      AppStorage.setOrCreate<string>('uriList2', 'test');
+      console.info('beforeAll case');
+      await getPermission();
+      await driveFn();
+      await sleep(1000);
+    });
+    afterAll(async () => {
+      AppStorage.delete('uriList1');
+      AppStorage.delete('uriList2');
+    });
+    const testInvalidResourceDataIMAGE =
+      async (testNum: string, resourceType: photoAccessHelper.ResourceType, resourceData: ESObject, done: Function,
+        callback: (errCode: ESObject) => void) => {
+        try {
+          console.info(TAG, testNum, 'Start');
+          let photoType = photoAccessHelper.PhotoType.IMAGE;
+          let extension = 'jpg';
+          let assetChangeRequest =
+            photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+          assetChangeRequest.addResource(resourceType, resourceData);
+          console.info(TAG, testNum, 'Success testInvalidResourceDataIMAGE');
+          expect().assertFail();
+          done();
+        } catch (error) {
+          console.error(TAG, testNum, `Failed testInvalidResourceDataIMAGE`, error.code, JSON.stringify(error));
+          callback(error);
+          done();
+        }
+      }
+    const testInvalidResourceDataVIDEO =
+      async (testNum: string, resourceType: photoAccessHelper.ResourceType, resourceData: ArrayBuffer,
+        done: Function, callback: (errCode: ESObject) => void) => {
+        try {
+          console.info(TAG, testNum, 'Start');
+          let photoType = photoAccessHelper.PhotoType.VIDEO;
+          let extension = 'mp4';
+          let assetChangeRequest =
+            photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+          assetChangeRequest.addResource(resourceType, resourceData);
+          console.info(TAG, testNum, 'Success testInvalidResourceDataVIDEO');
+          expect().assertFail();
+          done();
+        } catch (error) {
+          console.error(TAG, testNum, `Failed testInvalidResourceDataVIDEO`, error.code, JSON.stringify(error));
+          callback(error);
+          done();
+        }
+      }
+    const testInvalidIMAGE =
+      async (testNum: string, resourceType: photoAccessHelper.ResourceType, resourceData: ArrayBuffer,
+        done: Function, resourceType1: photoAccessHelper.ResourceType, resourceData1: ArrayBuffer,
+        callback: (errCode: number) => void) => {
+        try {
+          console.info(TAG, testNum, 'Start');
+          let photoType = photoAccessHelper.PhotoType.IMAGE;
+          let extension = 'jpg';
+          let assetChangeRequest =
+            photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+          assetChangeRequest.addResource(resourceType, resourceData);
+          assetChangeRequest.addResource(resourceType1, resourceData1);
+          console.info(TAG, testNum, 'Success testInvalidIMAGE');
+          expect().assertFail();
+          done();
+        } catch (error) {
+          console.error(TAG, testNum, `Failed testInvalidIMAGE`, error.code, JSON.stringify(error));
+          callback(error);
+          done();
+        }
+      }
+    const testInvalidVIDEO =
+      async (testNum: string, resourceType: photoAccessHelper.ResourceType, resourceData: ArrayBuffer,
+        done: Function, resourceType1: photoAccessHelper.ResourceType, resourceData1: ArrayBuffer,
+        callback: (errCode: number) => void) => {
+        try {
+          console.info(TAG, testNum, 'Start');
+          let photoType = photoAccessHelper.PhotoType.VIDEO;
+          let extension = 'mp4';
+          let assetChangeRequest =
+            photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+          assetChangeRequest.addResource(resourceType, resourceData);
+          assetChangeRequest.addResource(resourceType1, resourceData1);
+          console.info(TAG, testNum, 'Success testInvalidIMAGE');
+          expect().assertFail();
+          done();
+        } catch (error) {
+          console.error(TAG, testNum, `Failed testInvalidIMAGE`, error.code, JSON.stringify(error));
+          callback(error);
+          done();
+        }
+      }
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0100
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0100
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0100', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0100', null as ESObject,
+        new ArrayBuffer(1024),
+        done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0200
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0200
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0200', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0200',
+        undefined as ESObject, new ArrayBuffer(1024), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0300
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0300
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0300', Level.LEVEL2, async (done: Function) => {
+      let maxEnum = getEnumMaxValue(photoAccessHelper.ResourceType) + 1;
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0300', maxEnum,
+        new ArrayBuffer(1024), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0400
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0400
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0400', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0400', 0,
+        new ArrayBuffer(1024), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0500
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0500
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0500', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0500', -1,
+        new ArrayBuffer(1024), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0600
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0600
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0600', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0600',
+        AppStorage.get('uriList2') as ESObject, new ArrayBuffer(1024),
+        done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0700
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0700
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0700', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0700', null as ESObject,
+        new ArrayBuffer(1024), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0800
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0800
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0800', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0800',
+        undefined as ESObject, new ArrayBuffer(1024), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0900
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0900
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0900', Level.LEVEL2, async (done: Function) => {
+      let maxEnum = getEnumMaxValue(photoAccessHelper.ResourceType) + 1;
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0900', maxEnum,
+        new ArrayBuffer(1024), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1000
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1000
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1000', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1000', 0,
+        new ArrayBuffer(1024), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1100
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1100
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1100', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1100', -1,
+        new ArrayBuffer(1024), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1200
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1200
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1200', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1200',
+        AppStorage.get('uriList2') as ESObject, new ArrayBuffer(1024), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1300
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1300
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1300', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1300',
+        photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(0), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1400
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1400
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1400', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1400',
+        photoAccessHelper.ResourceType.IMAGE_RESOURCE, undefined, done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000011');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1500
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1500
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1500', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1500',
+        photoAccessHelper.ResourceType.IMAGE_RESOURCE, null, done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000011');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1600
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1600
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1600', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1600',
+        photoAccessHelper.ResourceType.IMAGE_RESOURCE, AppStorage.get('uriList1'), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000011');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1700
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1700
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1700', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1700',
+        photoAccessHelper.ResourceType.VIDEO_RESOURCE, new ArrayBuffer(0), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1800
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1800
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1800', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1800',
+        photoAccessHelper.ResourceType.VIDEO_RESOURCE, undefined, done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1900
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1900
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1900', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_1900',
+        photoAccessHelper.ResourceType.VIDEO_RESOURCE, null, done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2000
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2000
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2000', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2000',
+        photoAccessHelper.ResourceType.VIDEO_RESOURCE, AppStorage.get('uriList1'), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2100
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2100
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2100', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2100',
+        photoAccessHelper.ResourceType.PHOTO_PROXY, new ArrayBuffer(0), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2200
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2200
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2200', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2200',
+        photoAccessHelper.ResourceType.PHOTO_PROXY, undefined, done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000011');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2300
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2300
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2300', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2300',
+        photoAccessHelper.ResourceType.PHOTO_PROXY, null, done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000011');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2400
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2400
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2400', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2400',
+        photoAccessHelper.ResourceType.PHOTO_PROXY, AppStorage.get('uriList1'), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000011');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2500
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2500
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2500', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2500',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, new ArrayBuffer(0), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2600
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2600
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2600', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2600',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, undefined, done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2700
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2700
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2700', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2700',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, null, done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2800
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2800
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2800', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2800',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, AppStorage.get('uriList1'), done,
+        (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2900
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2900
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2900', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_2900',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, new ArrayBuffer(0), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3000
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3000
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3000', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3000',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, undefined, done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3100
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3100
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3100', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3100',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, null, done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3200
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3200
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3200', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3200',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, AppStorage.get('uriList1'), done,
+        (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3300
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3300
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3300', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3300',
+        photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(0), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3400
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3400
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3400', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3400',
+        photoAccessHelper.ResourceType.IMAGE_RESOURCE, undefined as ESObject, done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3500
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3500
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3500', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3500',
+        photoAccessHelper.ResourceType.IMAGE_RESOURCE, null as ESObject, done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3600
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3600
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3600', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3600',
+        photoAccessHelper.ResourceType.IMAGE_RESOURCE, AppStorage.get('uriList1') as ESObject, done,
+        (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3700
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3700
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3700', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3700',
+        photoAccessHelper.ResourceType.VIDEO_RESOURCE, new ArrayBuffer(0), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3800
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3800
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3800', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3800',
+        photoAccessHelper.ResourceType.VIDEO_RESOURCE, undefined as ESObject, done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000011');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3900
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3900
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3900', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_3900',
+        photoAccessHelper.ResourceType.VIDEO_RESOURCE, null as ESObject, done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000011');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4000
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4000
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4000', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4000',
+        photoAccessHelper.ResourceType.VIDEO_RESOURCE, AppStorage.get('uriList1') as ESObject, done,
+        (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000011');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4100
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4100
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4100', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4100',
+        photoAccessHelper.ResourceType.PHOTO_PROXY, new ArrayBuffer(0), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4200
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4200
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4200', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4200',
+        photoAccessHelper.ResourceType.PHOTO_PROXY, undefined as ESObject, done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000011');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4300
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4300
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4300', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4300',
+        photoAccessHelper.ResourceType.PHOTO_PROXY, null as ESObject, done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000011');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4400
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4400
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4400', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4400',
+        photoAccessHelper.ResourceType.PHOTO_PROXY, AppStorage.get('uriList1') as ESObject, done,
+        (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000011');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4500
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4500
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4500', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4500',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, new ArrayBuffer(0), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4600
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4600
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4600', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4600',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, undefined as ESObject, done,
+        (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4700
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4700
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4700', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4700',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, null as ESObject, done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4800
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4800
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4800', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4800',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, AppStorage.get('uriList1') as ESObject, done,
+        (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4900
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4900
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4900', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_4900',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, new ArrayBuffer(0), done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5000
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5000
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5000', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5000',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, undefined as ESObject, done,
+        (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5100
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5100
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5100', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5100',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, null as ESObject, done, (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5200
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5200
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5200', Level.LEVEL2, async (done: Function) => {
+      await testInvalidResourceDataVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5200',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, AppStorage.get('uriList1') as ESObject, done,
+        (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        });
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5300
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5300
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5300', Level.LEVEL2, async (done: Function) => {
+      await testInvalidIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5300',
+        photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000016');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5400
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5400
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5400', Level.LEVEL2, async (done: Function) => {
+      await testInvalidIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5400',
+        photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.VIDEO_RESOURCE, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000016');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5500
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5500
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5500', Level.LEVEL2, async (done: Function) => {
+      await testInvalidIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5500',
+        photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PHOTO_PROXY, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000016');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5600
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5600
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5600', Level.LEVEL2, async (done: Function) => {
+      await testInvalidIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5600',
+        photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000016');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5700
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5700
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5700', Level.LEVEL2, async (done: Function) => {
+      await testInvalidIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5700',
+        photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000016');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5800
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5800
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5800', Level.LEVEL2, async (done: Function) => {
+      await testInvalidIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5800',
+        photoAccessHelper.ResourceType.VIDEO_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.VIDEO_RESOURCE, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5900
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5900
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5900', Level.LEVEL2, async (done: Function) => {
+      await testInvalidIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_5900',
+        photoAccessHelper.ResourceType.VIDEO_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PHOTO_PROXY, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6000
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6000
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6000', Level.LEVEL2, async (done: Function) => {
+      await testInvalidIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6000',
+        photoAccessHelper.ResourceType.VIDEO_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6100
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6100
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6100', Level.LEVEL2, async (done: Function) => {
+      await testInvalidIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6100',
+        photoAccessHelper.ResourceType.VIDEO_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6200
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6200
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6200', Level.LEVEL2, async (done: Function) => {
+      await testInvalidIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6200',
+        photoAccessHelper.ResourceType.PHOTO_PROXY, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PHOTO_PROXY, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000016');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6300
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6300
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6300', Level.LEVEL2, async (done: Function) => {
+      await testInvalidIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6300',
+        photoAccessHelper.ResourceType.PHOTO_PROXY, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000016');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6400
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6400
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6400', Level.LEVEL2, async (done: Function) => {
+      await testInvalidIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6400',
+        photoAccessHelper.ResourceType.PHOTO_PROXY, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000016');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6500
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6500
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6500', Level.LEVEL2, async (done: Function) => {
+      await testInvalidIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6500',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6600
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6600
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6600', Level.LEVEL2, async (done: Function) => {
+      await testInvalidIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6600',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6700
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6700
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6700', Level.LEVEL2, async (done: Function) => {
+      await testInvalidIMAGE('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6700',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6800
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6800
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6800', Level.LEVEL2, async (done: Function) => {
+      await testInvalidVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6800',
+        photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6900
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6900
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6900', Level.LEVEL2, async (done: Function) => {
+      await testInvalidVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_6900',
+        photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.VIDEO_RESOURCE, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7000
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7000
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7000', Level.LEVEL2, async (done: Function) => {
+      await testInvalidVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7000',
+        photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PHOTO_PROXY, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7100
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7100
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7100', Level.LEVEL2, async (done: Function) => {
+      await testInvalidVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7100',
+        photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7200
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7200
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7200', Level.LEVEL2, async (done: Function) => {
+      await testInvalidVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7200',
+        photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7300
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7300
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7300', Level.LEVEL2, async (done: Function) => {
+      await testInvalidVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7300',
+        photoAccessHelper.ResourceType.VIDEO_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.VIDEO_RESOURCE, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000016');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7400
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7400
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7400', Level.LEVEL2, async (done: Function) => {
+      await testInvalidVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7400',
+        photoAccessHelper.ResourceType.VIDEO_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PHOTO_PROXY, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000016');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7500
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7500
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7500', Level.LEVEL2, async (done: Function) => {
+      await testInvalidVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7500',
+        photoAccessHelper.ResourceType.VIDEO_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000016');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7600
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7600
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7600', Level.LEVEL2, async (done: Function) => {
+      await testInvalidVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7600',
+        photoAccessHelper.ResourceType.VIDEO_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000016');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7700
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7700
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7700', Level.LEVEL2, async (done: Function) => {
+      await testInvalidVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7700',
+        photoAccessHelper.ResourceType.PHOTO_PROXY, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PHOTO_PROXY, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000016');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7800
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7800
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7800', Level.LEVEL2, async (done: Function) => {
+      await testInvalidVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7800',
+        photoAccessHelper.ResourceType.PHOTO_PROXY, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000016');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7900
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7900
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7900', Level.LEVEL2, async (done: Function) => {
+      await testInvalidVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_7900',
+        photoAccessHelper.ResourceType.PHOTO_PROXY, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('14000016');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8000
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8000
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8000', Level.LEVEL2, async (done: Function) => {
+      await testInvalidVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8000',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8100
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8100
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8100', Level.LEVEL2, async (done: Function) => {
+      await testInvalidVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8100',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        })
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8200
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8200
+     * @tc.desc      : add resource by invalid fileUri
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8200', Level.LEVEL2, async (done: Function) => {
+      await testInvalidVIDEO('SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_8200',
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, new ArrayBuffer(1024), done,
+        photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, new ArrayBuffer(1024), (errCode: ESObject) => {
+          expect(errCode.code).assertEqual('401');
+        })
+    });
+  });
+}

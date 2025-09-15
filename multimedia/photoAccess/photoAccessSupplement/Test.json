@@ -17,7 +17,11 @@
                 "power-shell wakeup",
                 "power-shell timeout -o 2147483647",
                 "uinput -T -m 300 2700 280 200",
-                "power-shell setmode 602"
+                "power-shell setmode 602",
+                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.photoaccess/haps/entry_test/files/",
+                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.photoaccess/haps/entry_test/files/",
+                "mkdir -p /data/tmp/case",
+                "chmod -R 777 /data/tmp/case "
             ],
             "teardown-command": [
                 "power-shell setmode 600",
@@ -25,6 +29,24 @@
                 "kill -9 `pidof ohos.acts.multimedia.photoAccess.supp.xts`",
                 "scanner",
                 "sleep 5"
+            ]
+        },
+        {
+            "type": "PushKit",
+            "pre-push": [],
+            "push": [
+                "./resource/medialibrary/01.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.photoaccess/haps/entry_test/files/",
+                "./resource/medialibrary/01.mp4 ->/data/app/el2/100/base/ohos.acts.multimedia.photoaccess/haps/entry_test/files/",
+                "./resource/medialibrary/01.jpg ->/data/tmp/case"
+            ]
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [
+                "mediatool send /data/tmp/case/01.jpg"
+            ],
+            "teardown-command": [
+                "rm -rf /data/tmp/case/*"
             ]
         },
         {
