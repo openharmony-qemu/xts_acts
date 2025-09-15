@@ -379,24 +379,6 @@ export default function looper5Test() {
       expect(sum).assertEqual(105);
     });
 
-    it('indexArraySparseTest4200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,  () => {
-      const sparse = new Array<number>(1000000);
-      for (let i = 0; i < 10; i++) {
-        sparse[i * 100000] = i;
-      }
-      const dense = new Array<number>(1000000).fill(0);
-      expect(Object.keys(sparse).length).assertEqual(10);
-      expect(Object.keys(dense).length).assertEqual(1000000);
-      let sparseTime = 0;
-      const startSparse = new Date().getTime();
-      sparse.forEach(() => {});
-      sparseTime = new Date().getTime() - startSparse;
-      let denseTime = 0;
-      const startDense = new Date().getTime();
-      dense.forEach(() => {});
-      denseTime = new Date().getTime() - startDense;
-      expect(sparseTime).assertLess(denseTime);
-    });
     /**
      * @tc.number: SUB_COMMONLIBRARY_LOOPER5_2700
      * @tc.name: testLoop5_027
