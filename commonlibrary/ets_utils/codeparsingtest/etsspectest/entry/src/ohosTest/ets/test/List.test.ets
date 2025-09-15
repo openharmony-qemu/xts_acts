@@ -46,6 +46,8 @@ import looper3Test from './looper/Looper3.test';
 
 import typeArrayBigInt64ArrayTest from "./typearray/TypeArrayBigInt64Array.test";
 import typeArrayInt8ArrayTest from "./typearray/TypeArrayInt8Array.test";
+import typeArrayUint32ArrayTest from "./typearray/TypeArrayUint32Array.test";
+
 export default function testsuite() {
   builtinsStatementBlockTest();
   builtinsStatementForOfTest();
@@ -68,6 +70,7 @@ export default function testsuite() {
   functionTest3();
   typeArrayBigInt64ArrayTest();
   typeArrayInt8ArrayTest();
+  typeArrayUint32ArrayTest();
   expressionTest1();
   expressionTest2();
   expressionTest3();
