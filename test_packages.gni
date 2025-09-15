@@ -61,6 +61,7 @@ _all_test_packages = [
   "${ACTS_ROOT}/window:window",
   "${ACTS_ROOT}/print:print",
   "${ACTS_ROOT}/distributedhardware:distributedhardware",
+  "${ACTS_ROOT}/tee:tee",
 ]
 
 _all_test_packages_ivi = [
