@@ -40,7 +40,7 @@ class BasicDataSource implements IDataSource<string> {
   }
 
   unregisterDataChangeListener(listener: DataChangeListener): void {
-    const pos = this.listeners.indexOf(listener);
+    const pos = this.listeners.indexOf(listener).toInt();
     if (pos >= 0) {
       console.info('remove listener');
       this.listeners.splice(pos, 1);
@@ -97,7 +97,7 @@ export class MyDataSource extends BasicDataSource {
 
   
   public addData(index: number, data: string): void {
-    this.dataArray.splice(index, 0, data);
+    this.dataArray.splice(index.toInt(), 0, data);
     this.notifyDataAdd(index);
   }
 
@@ -109,7 +109,7 @@ export class MyDataSource extends BasicDataSource {
 
   
   public deleteData(index: number): void {
-    this.dataArray.splice(index, 1);
+    this.dataArray.splice(index.toInt(), 1);
     this.notifyDataDelete(index);
   }
 
@@ -134,7 +134,7 @@ export class MyDataSource extends BasicDataSource {
   }
 
   public datasetChangeAdd(index: number, key: string) {
-    this.dataArray.splice(index, 0, key, key);
+    this.dataArray.splice(index.toInt(), 0, key, key);
     this.notifyDatasetChange([{
       type: DataOperationType.ADD,
       index: index,
@@ -145,7 +145,7 @@ export class MyDataSource extends BasicDataSource {
   }
 
   public datasetChangeDelete(index: number) {
-    this.dataArray.splice(index, 2);
+    this.dataArray.splice(index.toInt(), 2);
     this.notifyDatasetChange([{
       type: DataOperationType.DELETE,
       index: index,

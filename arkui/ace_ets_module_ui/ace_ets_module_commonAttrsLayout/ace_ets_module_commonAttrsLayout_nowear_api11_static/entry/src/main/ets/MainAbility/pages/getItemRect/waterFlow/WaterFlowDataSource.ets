@@ -80,7 +80,7 @@ export class WaterFlowDataSource implements IDataSource<number> {
 
 
   unregisterDataChangeListener(listener: DataChangeListener): void {
-    const pos = this.listeners.indexOf(listener)
+    const pos = this.listeners.indexOf(listener).toInt()
     if (pos >= 0) {
       this.listeners.splice(pos, 1)
     }
