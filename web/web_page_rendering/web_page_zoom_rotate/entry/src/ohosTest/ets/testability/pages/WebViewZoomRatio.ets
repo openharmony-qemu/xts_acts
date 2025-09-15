@@ -16,7 +16,7 @@
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
-
+import { waitForExist } from '../../test/WaitTest.test';
 @Entry
 @Component
 struct WebViewZoomRatio {
@@ -25,19 +25,22 @@ struct WebViewZoomRatio {
   @State fontSize: number = 16
   @State zoom: number = 0
   @State zoomAtio: number = 0
+  @State isComplete: number = -1;
+  @State isReceive: number = -1;
+
   controller: webView.WebviewController = new webView.WebviewController();
   controllerText: TextInputController = new TextInputController()
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 153270,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(153270)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -46,6 +49,7 @@ struct WebViewZoomRatio {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -55,6 +59,9 @@ struct WebViewZoomRatio {
       Row() {
         Button("WebViewZoomRatioTestButton").key('WebViewZoomRatioTestButton').onClick(async () => {
           console.info("key==>" + this.str)
+          await waitForExist(() => this.isComplete, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitZoomRatio": {
               this.zoom = -1
@@ -62,17 +69,20 @@ struct WebViewZoomRatio {
               this.controller.runJavaScript('getFontSize()', (error, result) => {
                 console.log('getFontSize return error , result ', error, result)
                 if (this.fontSize.toString() == result.substring(1, result.length - 3)) {
-                  Utils.emitEvent(true, 3701)
+                  Utils.emitEvent(true, 153280)
                 }
               })
               break;
             }
             case "emitZoomAtio": {
               this.zoomAtio = -1
+              this.isComplete = -1;
+              this.controller.refresh();
+              await waitForExist(()=>this.isComplete, this.str, 0);
               this.controller.runJavaScript('getFontSize()', (error, result) => {
                 console.log('getFontSize return error , result ', error, result)
                 if (this.fontSize.toString() == result.substring(1, result.length - 3)) {
-                  Utils.emitEvent(true, 3702)
+                  Utils.emitEvent(true, 153290)
                 }
               })
               break;
@@ -97,9 +107,17 @@ struct WebViewZoomRatio {
       }
 
       Web({ src: $rawfile("indexJru.html"), controller: this.controller })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isComplete = 0;
+        })
         .textZoomRatio(this.zoom)
         .textZoomAtio(this.zoomAtio)
         .defaultFontSize(this.fontSize)
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isComplete = 0;
+        })
     }
   }
 }
