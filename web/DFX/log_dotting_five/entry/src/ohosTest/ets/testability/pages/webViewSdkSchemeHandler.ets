@@ -17,6 +17,7 @@ import webview from '@ohos.web.webview'
 import Utils from '../../test/Utils'
 import business_error from '@ohos.base'
 import buffer from '@ohos.buffer'
+import {waitForExist} from '../../test/WaitTest';
 @Entry
 @Component
 struct webViewSdkSchemeHandler {
@@ -36,13 +37,19 @@ struct webViewSdkSchemeHandler {
     schemeName: 'custom', isSupportCORS: true, isSupportFetch: true
   }
   htmlData: string = '{"test":1}';
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
   
   onPageShow() {
       let valueChangeEvent: events_emitter.InnerEvent = {
-          eventId: 10,
+          eventId: 120030,
           priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(120030)
   }
 
   aboutToAppear():void {
@@ -59,6 +66,7 @@ struct webViewSdkSchemeHandler {
           console.info('valueChangeCallBack:' + JSON.stringify(eventData));
           if (eventData.data != null && eventData.data.ACTION != null) {
               this.emitKey = eventData.data.ACTION;
+            this.isReceive = 0;
           }
       }
   }
@@ -66,7 +74,10 @@ struct webViewSdkSchemeHandler {
   build() {
       Column() {
           Button('web click').key('webViewSdkSchemeHandler').onClick(async () => {
-           console.info('key==>' + this.emitKey)
+            await waitForExist(()=>this.isReceive, 'webViewSdkSchemeHandlerIsReceive', 0);
+            await waitForExist(()=>this.isPageEnd, 'webViewSdkSchemeHandlerIsPageEnd', 0);
+            console.info('key==>' + this.emitKey);
+            this.isReceive = -1;
            switch (this.emitKey) {
               case 'emitWebViewSdkSchemeHandler_setNetErrorCode': {
                 this.controller.loadUrl('https://www.baidu.com');
@@ -112,8 +123,8 @@ struct webViewSdkSchemeHandler {
 
                     response.setNetErrorCode(-2)
                     if(response.getNetErrorCode() == -2){
-                      Utils.emitEvent(true,1516)
-                      Utils.emitEvent(true,1517)
+                      Utils.emitEvent(true,120040)
+                      Utils.emitEvent(true,120050)
                     }
                     return false;
                 })
@@ -132,6 +143,9 @@ struct webViewSdkSchemeHandler {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
               }
+            })
+            .onPageEnd(()=>{
+              this.isPageEnd = 0;
             })
       }
   }

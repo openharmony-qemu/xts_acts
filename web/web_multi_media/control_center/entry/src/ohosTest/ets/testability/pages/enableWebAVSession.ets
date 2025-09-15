@@ -14,8 +14,8 @@
  */
 import web_webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
-import { Driver, ON } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
+import { waitForExist } from '../../test/WaitTest.test';
 
 
 @Entry
@@ -24,19 +24,26 @@ struct WebComponent {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
   @State str: string = "enableWebAVSession01";
   @State options: WebMediaOptions = { resumeInterval: 10, audioExclusive: true }
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 132760,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(132760)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -45,17 +52,16 @@ struct WebComponent {
 
       Row() {
         Button("web test").key('enableWebAVSessionButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str)
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
           switch (this.str) {
             case "enableWebAVSession01": {
-              let driver = Driver.create();
-              await Utils.sleep(2000);
               let strJson = getInspectorByKey('textContent');
-              console.info("[textResize] component strJson:" + strJson);
+              console.info('[textResize] component strJson:' + strJson);
               let obj: ESObject = JSON.parse(strJson);
-              console.info("[testScrollBar001] textResize:" + obj.$attrs.content);
-              Utils.emitEvent(obj.$attrs.content, 20250207)
-              await Utils.sleep(1000);
+              console.info('[testScrollBar001] textResize:' + obj.$attrs.content);
+              Utils.emitEvent(obj.$attrs.content, 132770)
               break;
             }
 
@@ -77,6 +83,10 @@ struct WebComponent {
         .databaseAccess(true)
         .mediaPlayGestureAccess(true)
         .enableWebAVSession(true)
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
 
     }
   }

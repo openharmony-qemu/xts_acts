@@ -18,6 +18,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 import { JSON } from '@kit.ArkTS';
+import {waitForExist} from '../../test/WaitTest';
 
 
 @Entry
@@ -28,14 +29,17 @@ struct Index {
   @State str: string = ''
   @State incognitoMode: boolean = true
   @State src: string | Resource = $rawfile('index.html')
+  @State isReceive: number = -1;
+
 
   onPageShow(): void{
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 119010,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
   }
+
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     console.info('web page valueChangeCallBack');
@@ -43,6 +47,7 @@ struct Index {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -51,7 +56,10 @@ struct Index {
     Column() {
       Button('Options')
         .key('setBackForwardCacheOptions')
-        .onClick((event: ClickEvent) => {
+        .onClick(async () => {
+          await waitForExist(()=>this.isReceive, this.str, 0);
+          console.info('key==>' + this.str);
+          this.isReceive = -1;
             switch (this.str) {
               case 'SUB_ACE_WEB_BFCACHE_SDK_00015':
                 try {
@@ -61,7 +69,7 @@ struct Index {
                   this.controller1.setBackForwardCacheOptions(options)
                 } catch (e) {
                   console.log('err:' + e.code + e.message)
-                  Utils.emitEvent(e.code + e.message, 210)
+                  Utils.emitEvent(e.code + e.message, 119020)
                 }
                 break;
             }

@@ -61,9 +61,11 @@ struct ForEach003 {
           .height('3%')
           .fontSize(9)
           .onClick(() => {
-            let rect = this.scroller.getItemRect(this.swipeStartIndex) // Get child components size and position
-            this.scroller.scrollToIndex(0); // Slide to the specified index
-            this.scroller.scrollBy(0, -rect.y); // Slide a specified distance
+            if (this.swipeStartIndex != -1) {
+              let rect = this.scroller.getItemRect(this.swipeStartIndex) // Get child components size and position
+              this.scroller.scrollToIndex(0); // Slide to the specified index
+              this.scroller.scrollBy(0, -rect.y); // Slide a specified distance
+            }
           })
         Button('Swipe to index45')
           .id('btnForEach0105')
@@ -71,9 +73,11 @@ struct ForEach003 {
           .height('3%')
           .fontSize(9)
           .onClick(() => {
-            let rect = this.scroller.getItemRect(this.swipeStartIndex) // Get child components size and position
-            this.scroller.scrollToIndex(45); // Slide to the specified index
-            this.scroller.scrollBy(0, -rect.y); // Slide a specified distance
+            if (this.swipeStartIndex != -1) {
+              let rect = this.scroller.getItemRect(this.swipeStartIndex) // Get child components size and position
+              this.scroller.scrollToIndex(45); // Slide to the specified index
+              this.scroller.scrollBy(0, -rect.y); // Slide a specified distance
+            }
           })
         Button('Refresh')
           .id('btnForEach0106')

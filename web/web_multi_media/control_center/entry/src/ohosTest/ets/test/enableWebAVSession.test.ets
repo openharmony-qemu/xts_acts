@@ -16,12 +16,16 @@
 import { describe, beforeEach, afterEach, it, expect, beforeAll , TestType, Size, Level } from "@ohos/hypium";
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
-// import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponents } from './WaitTest.test';
+import { Driver } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-let emitKey = "enableWebAVSession01";
+
+const driver = Driver.create();
+
 export default function webenableSmoothDragResizeTestJsunit() {
   describe('enableWebAVSessionTest',  () =>{
     beforeAll(async  (done: Function) =>{
@@ -35,12 +39,12 @@ export default function webenableSmoothDragResizeTestJsunit() {
         if (!("enableWebAVSession" == pages.name)) {
           console.info("get enableWebAVSession state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
           console.info("push enableWebAVSession page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push enableWebAVSession page error: " + err);
       }
+      await waitForComponents('enableWebAVSessionButton');
       done()
     });
     beforeEach(async  (done: Function) =>{
@@ -49,28 +53,11 @@ export default function webenableSmoothDragResizeTestJsunit() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("enableWebAVSession beforeEach start");
       done();
     })
     afterEach(async  (done: Function) =>{
-      console.info("enableWebAVSession afterEach start:"+emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId:10,
-          priority:events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
+      console.info("enableWebAVSession afterEach start");
       done();
     })
     /*
@@ -79,9 +66,12 @@ export default function webenableSmoothDragResizeTestJsunit() {
      *tc.desic test enableSmoothDragResize01 interface when choose callback mode.
      */
     it('enableWebAVSession01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="enableWebAVSession01";
-      Utils.registerEvent("enableWebAVSession01",'enableWebAVSession',20250207,done);
-      sendEventByKey('enableWebAVSessionButton',10,'');
+      Utils.emitEvent("enableWebAVSession01", 132760)
+      Utils.registerBaseEvent("enableWebAVSession01", 'enableWebAVSession', 132770, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'enableWebAVSessionButton');
     })
 
 

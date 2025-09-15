@@ -28,7 +28,7 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
-import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
+
 
 export default function RepeatIfElseBoolean() {
   describe('RepeatIfElseBoolean', () => {
