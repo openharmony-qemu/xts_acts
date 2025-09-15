@@ -14,15 +14,16 @@
  */
 import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
-
+import { waitForComponent } from './WaitTest.test';
+const driver = Driver.create();
 export default function webDefaultTextEncodingFormat() {
 
   describe('webDefaultTextEncodingFormat', () => {
     beforeAll(async (done: Function) => {
-      await Utils.sleep(2000);
       console.info("web beforeAll start");
+      await waitForComponent("WebDefaultTextEncodingFormat");
       done();
     })
 
@@ -35,15 +36,12 @@ export default function webDefaultTextEncodingFormat() {
     * @tc.level      : Level 1
     */
     it('defaultTextEncodingFormat0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("defaultTextEncodingFormat0100", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("defaultTextEncodingFormat0100", "UTF-8", 7701, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebDefaultTextEncodingFormat"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("defaultTextEncodingFormat0100", 153320)
+      Utils.registerEvent("defaultTextEncodingFormat0100", "UTF-8", 153330, done);
+      sendEventByKey('WebDefaultTextEncodingFormat', 10, '');
     })
+
+
 
     /*
     * @tc.number     : SUB_WEB_WEBDEAULTTEXTENCODINGFORMAT_0200
@@ -54,14 +52,9 @@ export default function webDefaultTextEncodingFormat() {
     * @tc.level      : Level 1
     */
     it('defaultTextEncodingFormat0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("defaultTextEncodingFormat0200", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("defaultTextEncodingFormat0200", "gb18030", 7702, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebDefaultTextEncodingFormat"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("defaultTextEncodingFormat0200", 153320)
+      Utils.registerEvent("defaultTextEncodingFormat0200", "gb18030", 153340, done);
+      sendEventByKey('WebDefaultTextEncodingFormat', 10, '');
     })
 
     /*
@@ -73,14 +66,10 @@ export default function webDefaultTextEncodingFormat() {
     * @tc.level      : Level 1
     */
     it('defaultTextEncodingFormat0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("defaultTextEncodingFormat0300", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("defaultTextEncodingFormat0300", "GBK", 7703, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebDefaultTextEncodingFormat"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("defaultTextEncodingFormat0300", 153320)
+      Utils.registerEvent("defaultTextEncodingFormat0300", "GBK", 153350, done);
+      let component = await driver.findComponent(ON.id("WebDefaultTextEncodingFormat"));
+      await component.click();
     })
 
     /*
@@ -92,14 +81,9 @@ export default function webDefaultTextEncodingFormat() {
     * @tc.level      : Level 1
     */
     it('defaultTextEncodingFormat0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("defaultTextEncodingFormat0400", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("defaultTextEncodingFormat0400", "Big5", 7704, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebDefaultTextEncodingFormat"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("defaultTextEncodingFormat0400", 153320)
+      Utils.registerEvent("defaultTextEncodingFormat0400", "Big5", 153360, done);
+      sendEventByKey('WebDefaultTextEncodingFormat', 10, '');
     })
 
     /*
@@ -111,14 +95,9 @@ export default function webDefaultTextEncodingFormat() {
     * @tc.level      : Level 1
     */
     it('defaultTextEncodingFormat0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("defaultTextEncodingFormat0500", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("defaultTextEncodingFormat0500", "windows-1252", 7705, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebDefaultTextEncodingFormat"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("defaultTextEncodingFormat0500", 153320)
+      Utils.registerEvent("defaultTextEncodingFormat0500", "windows-1252", 153370, done);
+      sendEventByKey('WebDefaultTextEncodingFormat', 10, '');
     })
 
     /*
@@ -130,14 +109,9 @@ export default function webDefaultTextEncodingFormat() {
     * @tc.level      : Level 1
     */
     it('defaultTextEncodingFormat0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("defaultTextEncodingFormat0600", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("defaultTextEncodingFormat0200", "macintosh", 7706, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebDefaultTextEncodingFormat"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("defaultTextEncodingFormat0600", 153320)
+      Utils.registerEvent("defaultTextEncodingFormat0200", "macintosh", 153380, done);
+      sendEventByKey('WebDefaultTextEncodingFormat', 10, '');
     })
 
     /*
@@ -149,14 +123,9 @@ export default function webDefaultTextEncodingFormat() {
     * @tc.level      : Level 1
     */
     it('defaultTextEncodingFormat0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("defaultTextEncodingFormat0700", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("defaultTextEncodingFormat0700", "EUC-KR", 7707, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebDefaultTextEncodingFormat"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("defaultTextEncodingFormat0700", 153320)
+      Utils.registerEvent("defaultTextEncodingFormat0700", "EUC-KR", 153390, done);
+      sendEventByKey('WebDefaultTextEncodingFormat', 10, '');
     })
 
     /*
@@ -168,14 +137,9 @@ export default function webDefaultTextEncodingFormat() {
     * @tc.level      : Level 1
     */
     it('defaultTextEncodingFormat0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("defaultTextEncodingFormat0800", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("defaultTextEncodingFormat0800", "ISO-2022-JP", 7708, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebDefaultTextEncodingFormat"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("defaultTextEncodingFormat0800", 153320)
+      Utils.registerEvent("defaultTextEncodingFormat0800", "ISO-2022-JP", 153400, done);
+      sendEventByKey('WebDefaultTextEncodingFormat', 10, '');
     })
 
     /*
@@ -187,14 +151,9 @@ export default function webDefaultTextEncodingFormat() {
     * @tc.level      : Level 1
     */
     it('defaultTextEncodingFormat0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("defaultTextEncodingFormat0900", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("defaultTextEncodingFormat0900", "EUC-JP", 7709, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebDefaultTextEncodingFormat"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("defaultTextEncodingFormat0900", 153320)
+      Utils.registerEvent("defaultTextEncodingFormat0900", "EUC-JP", 153410, done);
+      sendEventByKey('WebDefaultTextEncodingFormat', 10, '');
     })
 
     /*
@@ -206,14 +165,9 @@ export default function webDefaultTextEncodingFormat() {
     * @tc.level      : Level 1
     */
     it('defaultTextEncodingFormat1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("defaultTextEncodingFormat1000", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("defaultTextEncodingFormat1000", "Shift_JIS", 7710, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebDefaultTextEncodingFormat"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("defaultTextEncodingFormat1000", 153320)
+      Utils.registerEvent("defaultTextEncodingFormat1000", "Shift_JIS", 153420, done);
+      sendEventByKey('WebDefaultTextEncodingFormat', 10, '');
     })
 
     /*
@@ -225,14 +179,9 @@ export default function webDefaultTextEncodingFormat() {
     * @tc.level      : Level 1
     */
     it('defaultTextEncodingFormat1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("defaultTextEncodingFormat1100", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("defaultTextEncodingFormat1100", "UTF-8", 7711, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebDefaultTextEncodingFormat"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("defaultTextEncodingFormat1100", 153320)
+      Utils.registerEvent("defaultTextEncodingFormat1100", "UTF-8", 153430, done);
+      sendEventByKey('WebDefaultTextEncodingFormat', 10, '');
     })
 
     /*
@@ -244,14 +193,9 @@ export default function webDefaultTextEncodingFormat() {
     * @tc.level      : Level 1
     */
     it('defaultTextEncodingFormat1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("defaultTextEncodingFormat1200", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("defaultTextEncodingFormat1200", "UTF-8", 7712, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebDefaultTextEncodingFormat"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("defaultTextEncodingFormat1200", 153320)
+      Utils.registerEvent("defaultTextEncodingFormat1200", "UTF-8", 153440, done);
+      sendEventByKey('WebDefaultTextEncodingFormat', 10, '');
     })
 
     /*
@@ -263,14 +207,9 @@ export default function webDefaultTextEncodingFormat() {
     * @tc.level      : Level 1
     */
     it('defaultTextEncodingFormat1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("defaultTextEncodingFormat1300", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("defaultTextEncodingFormat1300", "UTF-8", 7713, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebDefaultTextEncodingFormat"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("defaultTextEncodingFormat1300", 153320)
+      Utils.registerEvent("defaultTextEncodingFormat1300", "UTF-8", 153450, done);
+      sendEventByKey('WebDefaultTextEncodingFormat', 10, '');
     })
 
     /*
@@ -282,14 +221,9 @@ export default function webDefaultTextEncodingFormat() {
     * @tc.level      : Level 1
     */
     it('defaultTextEncodingFormat1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("defaultTextEncodingFormat1400", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("defaultTextEncodingFormat1400", "UTF-8", 7714, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebDefaultTextEncodingFormat"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("defaultTextEncodingFormat1400", 153320)
+      Utils.registerEvent("defaultTextEncodingFormat1400", "UTF-8", 153460, done);
+      sendEventByKey('WebDefaultTextEncodingFormat', 10, '');
     })
 
     /*
@@ -301,14 +235,9 @@ export default function webDefaultTextEncodingFormat() {
     * @tc.level      : Level 1
     */
     it('defaultTextEncodingFormat1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("defaultTextEncodingFormat1500", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("defaultTextEncodingFormat1500", "UTF-8", 7715, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebDefaultTextEncodingFormat"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("defaultTextEncodingFormat1500", 153320)
+      Utils.registerEvent("defaultTextEncodingFormat1500", "UTF-8", 153470, done);
+      sendEventByKey('WebDefaultTextEncodingFormat', 10, '');
     })
 
     /*
@@ -320,14 +249,9 @@ export default function webDefaultTextEncodingFormat() {
     * @tc.level      : Level 1
     */
     it('defaultTextEncodingFormat1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("defaultTextEncodingFormat1600", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("defaultTextEncodingFormat1600", "UTF-8", 7716, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebDefaultTextEncodingFormat"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("defaultTextEncodingFormat1600", 153320)
+      Utils.registerEvent("defaultTextEncodingFormat1600", "UTF-8", 153480, done);
+      sendEventByKey('WebDefaultTextEncodingFormat', 10, '');
     })
 
     /*
@@ -339,14 +263,9 @@ export default function webDefaultTextEncodingFormat() {
     * @tc.level      : Level 1
     */
     it('defaultTextEncodingFormat1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("defaultTextEncodingFormat1700", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("defaultTextEncodingFormat1700", "UTF-8", 7717, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebDefaultTextEncodingFormat"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("defaultTextEncodingFormat1700", 153320)
+      Utils.registerEvent("defaultTextEncodingFormat1700", "UTF-8", 153490, done);
+      sendEventByKey('WebDefaultTextEncodingFormat', 10, '');
     })
 
     /*
@@ -358,14 +277,10 @@ export default function webDefaultTextEncodingFormat() {
     * @tc.level      : Level 1
     */
     it('defaultTextEncodingFormat1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("defaultTextEncodingFormat1800", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("defaultTextEncodingFormat1800", "UTF-8", 7718, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebDefaultTextEncodingFormat"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("defaultTextEncodingFormat1800", 153320)
+      Utils.registerEvent("defaultTextEncodingFormat1800", "UTF-8", 153500, done);
+      sendEventByKey('WebDefaultTextEncodingFormat', 10, '');
     })
   })
 }
+

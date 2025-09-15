@@ -18,7 +18,7 @@ import Utils from '../../test/Utils';
 import business_error from '@ohos.base';
 import uiTest from '@ohos.UiTest'
 import { BuilderNode, FrameNode, NodeController, NodeRenderType } from '@ohos.arkui.node';
-
+import { waitForExist } from '../../test/WaitTest.test';
 declare class Params {
   public text : string
   public text1 : string
@@ -131,21 +131,25 @@ struct webViewObjectEmbedEnhance {
   @State objectType: string = 'object'
   @State objectValue: string = 'application/view'
   @State isEmbed: boolean = true
-
-
+  @State isComplete: number = -1;
+  @State str: string = ''
+  @State isReceive: number = -1;
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 153680,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-
+  onPageHide() {
+    events_emitter.off(153680)
+  }
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -157,7 +161,9 @@ struct webViewObjectEmbedEnhance {
           .key('webViewObjectEmbedEnhanceButton')
           .onClick(async () => {
             console.info('emitKey-->'+ this.emitKey)
-            await Utils.sleep(2000);
+            await waitForExist(() => this.isComplete, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
             switch (this.emitKey) {
               case 'emitWebViewObjectEmbedId':
               case 'emitWebViewObjectEmbedType':
@@ -172,9 +178,9 @@ struct webViewObjectEmbedEnhance {
                   this.isPrivacy = true;
                   this.objectType = 'object';
                   this.objectValue = 'application/view';
-                  await Utils.sleep(1000);
+                  this.isComplete = -1;
                   this.controller.loadUrl($rawfile('object1.html'));
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -187,9 +193,9 @@ struct webViewObjectEmbedEnhance {
                   this.isPrivacy = true;
                   this.objectType = 'embed';
                   this.objectValue = 'application/view';
-                  await Utils.sleep(1000);
+                  this.isComplete = -1;
                   this.controller.loadUrl($rawfile('embed1.html'));
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -202,9 +208,9 @@ struct webViewObjectEmbedEnhance {
                   this.isPrivacy = true;
                   this.objectType = 'embed';
                   this.objectValue = 'application/view';
-                  await Utils.sleep(1000);
+                  this.isComplete = -1;
                   this.controller.loadUrl($rawfile('embed1.html'));
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -216,9 +222,9 @@ struct webViewObjectEmbedEnhance {
                   this.isPrivacy = true;
                   this.objectType = 'object';
                   this.objectValue = 'application/view';
-                  await Utils.sleep(1000);
+                  this.isComplete = -1;
                   this.controller.loadUrl($rawfile('object5.html'));
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -230,9 +236,9 @@ struct webViewObjectEmbedEnhance {
                   this.isPrivacy = true;
                   this.objectType = 'object';
                   this.objectValue = 'application/test';
-                  await Utils.sleep(1000);
+                  this.isComplete = -1;
                   this.controller.loadUrl($rawfile('object2.html'));
-                  await Utils.sleep(2000);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -245,17 +251,17 @@ struct webViewObjectEmbedEnhance {
                   this.objectType = 'object'
                   this.objectValue = 'application/pdf'
                   this.isEmbed = false;
-                  await Utils.sleep(1000);
+                  this.isComplete = -1;
                   console.info('emitWebViewObjectEmbedPdf isEmbed before-->'+this.isEmbed)
                   this.controller.loadUrl($rawfile('object4.html'));
-                  await Utils.sleep(5000);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   console.info('emitWebViewObjectEmbedPdf isEmbed after-->'+this.isEmbed)
                   if(this.isEmbed){
                     console.info('emitWebViewObjectEmbedPdf isEmbed if-->'+this.isEmbed)
-                    Utils.emitEvent('fail', 1013);
+                    Utils.emitEvent('fail', 153820);
                   }else{
                     console.info('emitWebViewObjectEmbedPdf isEmbed if-->'+this.isEmbed)
-                    Utils.emitEvent('success', 1013);
+                    Utils.emitEvent('success', 153820);
                   }
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
@@ -269,17 +275,17 @@ struct webViewObjectEmbedEnhance {
                   this.objectType = 'abc';
                   this.objectValue = 'test';
                   this.isEmbed = false;
-                  await Utils.sleep(1000);
+                  this.isComplete = -1;
                   console.info('emitWebViewObjectEmbedAbc isEmbed before-->'+this.isEmbed)
                   this.controller.loadUrl($rawfile('object3.html'));
-                  await Utils.sleep(5000);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   console.info('emitWebViewObjectEmbedAbc isEmbed after-->'+this.isEmbed)
                   if(this.isEmbed){
                     console.info('emitWebViewObjectEmbedAbc isEmbed if-->'+this.isEmbed)
-                    Utils.emitEvent('fail', 1014);
+                    Utils.emitEvent('fail', 153690);
                   }else{
                     console.info('emitWebViewObjectEmbedAbc isEmbed if-->'+this.isEmbed)
-                    Utils.emitEvent('success', 1014);
+                    Utils.emitEvent('success', 153690);
                   }
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
@@ -297,7 +303,11 @@ struct webViewObjectEmbedEnhance {
           .backgroundColor(Color.Yellow)
         // 开启同层渲染 isPrivacy
         if (this.isPrivacy)   {
-          Web({ src: '', controller: this.controller })
+          Web({ src: 'www.example.com', controller: this.controller })
+            .onPageEnd((event) => {
+              console.log('web pageEnd==>' + event.url);
+              this.isComplete = 0;
+            })
             .javaScriptAccess(this.javaScriptAccess)
             .fileAccess(this.fileAccess)
             .imageAccess(this.imageAccess)
@@ -320,85 +330,85 @@ struct webViewObjectEmbedEnhance {
                 console.info('NativeEmbed create' + JSON.stringify(event.info));
                 if (this.emitKey == 'emitWebViewObjectEmbedId') {
                   if (event.info?.id) {
-                    Utils.emitEvent('success', 1001);
+                    Utils.emitEvent('success', 153700);
                   }else{
-                    Utils.emitEvent('fail', 1001);
+                    Utils.emitEvent('fail', 153700);
                   }
                 }
                 if (this.emitKey == 'emitWebViewObjectEmbedType') {
                   if (event.info?.type) {
-                    Utils.emitEvent('success', 1002);
+                    Utils.emitEvent('success', 153710);
                   }else{
-                    Utils.emitEvent('fail', 1002);
+                    Utils.emitEvent('fail', 153710);
                   }
                 }
                 if (this.emitKey == 'emitWebViewObjectEmbedSrc') {
                   if (event.info?.src) {
-                    Utils.emitEvent('success', 1003);
+                    Utils.emitEvent('success', 153720);
                   }else{
-                    Utils.emitEvent('fail', 1003);
+                    Utils.emitEvent('fail', 153720);
                   }
                 }
                 if (this.emitKey == 'emitWebViewObjectEmbedWidth') {
                   if (event.info?.width) {
-                    Utils.emitEvent('success', 1004);
+                    Utils.emitEvent('success', 153730);
                   }else{
-                    Utils.emitEvent('fail', 1004);
+                    Utils.emitEvent('fail', 153730);
                   }
                 }
                 if (this.emitKey == 'emitWebViewObjectEmbedHeight') {
                   if (event.info?.height) {
-                    Utils.emitEvent('success', 1005);
+                    Utils.emitEvent('success', 153740);
                   }else{
-                    Utils.emitEvent('fail', 1005);
+                    Utils.emitEvent('fail', 153740);
                   }
                 }
                 if (this.emitKey == 'emitWebViewObjectEmbedTagEmbed') {
                   let tag = event.info?.tag
                   if (tag && tag ==='EMBED') {
-                    Utils.emitEvent('success', 1006);
+                    Utils.emitEvent('success', 153750);
                   }else{
-                    Utils.emitEvent('fail', 1006);
+                    Utils.emitEvent('fail', 153750);
                   }
                 }
                 if (this.emitKey == 'emitWebViewObjectEmbedTagObject') {
                   let tag = event.info?.tag
                   if (tag && tag ==='OBJECT') {
-                    Utils.emitEvent('success', 1007);
+                    Utils.emitEvent('success', 153760);
                   }else{
-                    Utils.emitEvent('fail', 1007);
+                    Utils.emitEvent('fail', 153760);
                   }
                 }
                 if (this.emitKey == 'emitWebViewObjectEmbedPosition') {
                   let position = event.info?.position
                   if (position) {
-                    Utils.emitEvent('success', 1008);
+                    Utils.emitEvent('success', 153770);
                   }else{
-                    Utils.emitEvent('fail', 1008);
+                    Utils.emitEvent('fail', 153770);
                   }
                 }
                 if (this.emitKey == 'emitWebViewObjectEmbedUrl') {
                   let url = event.info?.url
                   if (url) {
-                    Utils.emitEvent('success', 1009);
+                    Utils.emitEvent('success', 153780);
                   }else{
-                    Utils.emitEvent('fail', 1009);
+                    Utils.emitEvent('fail', 153780);
                   }
                 }
                 if (this.emitKey == 'emitWebViewObjectEmbedParams') {
                   let params = event.info?.params
                   if (params) {
-                    Utils.emitEvent('success', 1010);
+                    Utils.emitEvent('success', 153790);
                   }else{
-                    Utils.emitEvent('fail', 1010);
+                    Utils.emitEvent('fail', 153790);
                   }
                 }
                 if (this.emitKey == 'emitWebViewObjectEmbedHasParams') {
                   let params = JSON.stringify(event.info?.params)
                   if (params && params ==='{"type":"video"}') {
-                    Utils.emitEvent('success', 1011);
+                    Utils.emitEvent('success', 153800);
                   }else{
-                    Utils.emitEvent('fail', 1011);
+                    Utils.emitEvent('fail', 153800);
                   }
                 }
                 if (this.emitKey == 'emitWebViewObjectEmbedTest') {
@@ -407,18 +417,18 @@ struct webViewObjectEmbedEnhance {
                   console.info('emitWebViewObjectEmbedTest tag='+ tag)
                   console.info('emitWebViewObjectEmbedTest type='+ type)
                   if(tag?.toLowerCase() === this.objectType && type === this.objectValue){
-                    Utils.emitEvent('success', 1012);
+                    Utils.emitEvent('success', 153810);
                   }else{
-                    Utils.emitEvent('fail', 1012);
+                    Utils.emitEvent('fail', 153810);
                   }
                 }
                 if (this.emitKey == 'emitWebViewObjectEmbedPdf') {
                   console.info('emitWebViewObjectEmbedPdf isEmbed if-->'+this.isEmbed)
-                  Utils.emitEvent('fail', 1013);
+                  Utils.emitEvent('fail', 153820);
                 }
                 if (this.emitKey == 'emitWebViewObjectEmbedAbc') {
                   console.info('emitWebViewObjectEmbedAbc isEmbed if-->'+this.isEmbed)
-                  Utils.emitEvent('fail', 1014);
+                  Utils.emitEvent('fail', 153690);
                 }
               }else if (event.status == NativeEmbedStatus.UPDATE) {
                 console.info('NativeEmbed update' + JSON.stringify(event.info));
@@ -431,7 +441,11 @@ struct webViewObjectEmbedEnhance {
 
             })
         } else {
-          Web({ src: '', controller: this.controller })
+          Web({ src: 'www.example.com', controller: this.controller })
+            .onPageEnd((event) => {
+              console.log('web pageEnd==>' + event.url);
+              this.isComplete = 0;
+            })
             .javaScriptAccess(this.javaScriptAccess)
             .fileAccess(this.fileAccess)
             .imageAccess(this.imageAccess)
