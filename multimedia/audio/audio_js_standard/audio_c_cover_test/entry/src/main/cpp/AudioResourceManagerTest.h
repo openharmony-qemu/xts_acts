@@ -33,14 +33,12 @@ class FileRecourceManager {
         static std::unique_ptr<uint8_t[]> dataCopy;
         static long len;
 
-        static constexpr size_t MAX_ALLOWED_SIZE = 1024;
+        static constexpr size_t maxAllowedSize = 1024;
     
     public:
         static napi_value CreateJsArrayValue(napi_env env, std::unique_ptr<uint8_t[]> &data, long length);
         static napi_value GetRawFileContent(napi_env env, napi_callback_info info);
         static napi_value GetFileList(napi_env env, napi_callback_info info);
 };
-
-
 
 #endif //MYAPPLICATION_AUDIO_RESOURCEMANAGER_H
