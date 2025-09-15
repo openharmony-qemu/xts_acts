@@ -635,10 +635,9 @@ export default function TreemapTest3() {
       try {
         let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
         let result = treeMap.getFirstKey();
-        expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -752,10 +751,9 @@ export default function TreemapTest3() {
       try {
         let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
         let result = treeMap.getLastKey();
-        expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -1353,10 +1351,9 @@ export default function TreemapTest3() {
       try {
         let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
         let result = treeMap.getLowerKey("");
-        expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -1413,10 +1410,9 @@ export default function TreemapTest3() {
       try {
         let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
         let result = treeMap.getLowerKey("key");
-        expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -1500,10 +1496,9 @@ export default function TreemapTest3() {
       try {
         let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
         let result = treeMap.getHigherKey("");
-        expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -1560,10 +1555,9 @@ export default function TreemapTest3() {
       try {
         let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
         let result = treeMap.getHigherKey('key');
-        expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 

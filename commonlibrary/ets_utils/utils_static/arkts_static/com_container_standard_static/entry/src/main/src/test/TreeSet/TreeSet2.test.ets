@@ -444,10 +444,9 @@ export default function TreeSetTest2() {
       try {
         let treeSet: TreeSet<string> = new TreeSet<string>();
         let result = treeSet.getFirstValue();
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -532,10 +531,9 @@ export default function TreeSetTest2() {
       try {
         let treeSet: TreeSet<string> = new TreeSet<string>();
         let result = treeSet.getLastValue();
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -949,10 +947,9 @@ export default function TreeSetTest2() {
       try {
         let treeSet: TreeSet<string> = new TreeSet<string>();
         let result = treeSet.getLowerValue("");
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     // /**
@@ -1006,10 +1003,9 @@ export default function TreeSetTest2() {
       try {
         let treeSet: TreeSet<number> = new TreeSet<number>();
         let result = treeSet.getLowerValue(123);
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     /**
@@ -1025,10 +1021,9 @@ export default function TreeSetTest2() {
       try {
         let treeSet: TreeSet<number> = new TreeSet<number>();
         let result = treeSet.getLowerValue(123);
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     /**
@@ -1090,10 +1085,9 @@ export default function TreeSetTest2() {
       try {
         let treeSet: TreeSet<string> = new TreeSet<string>();
         let result = treeSet.getHigherValue("");
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     // /**
@@ -1147,10 +1141,9 @@ export default function TreeSetTest2() {
       try {
         let treeSet: TreeSet<number> = new TreeSet<number>();
         let result = treeSet.getHigherValue(123);
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     /**
@@ -1166,10 +1159,9 @@ export default function TreeSetTest2() {
       try {
         let treeSet: TreeSet<number> = new TreeSet<number>();
         let result = treeSet.getHigherValue(123);
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     /**
@@ -1231,10 +1223,9 @@ export default function TreeSetTest2() {
       try {
         let treeSet: TreeSet<string> = new TreeSet<string>();
         let result = treeSet.popFirst();
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     /**
@@ -1320,12 +1311,12 @@ export default function TreeSetTest2() {
         let treeSet: TreeSet<string> = new TreeSet<string>();
         treeSet.add("squirrel");
         treeSet.remove("squirrel");
-        treeSet.popFirst();
         let result = treeSet.has("squirrel");
         expect(result).assertFalse();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        treeSet.popFirst();
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     /**
@@ -1343,15 +1334,14 @@ export default function TreeSetTest2() {
         treeSet.add("squirrel");
         treeSet.add("sparrow");
         treeSet.clear();
-        let result = treeSet.popFirst();
-        expect(result).assertEqual(undefined);
         let resultOne = treeSet.has("squirrel");
         expect(resultOne).assertFalse();
         let resultTwo = treeSet.has("sparrow");
         expect(resultTwo).assertFalse();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        let result = treeSet.popFirst();
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     /**
@@ -1367,10 +1357,9 @@ export default function TreeSetTest2() {
       try {
         let treeSet: TreeSet<string> = new TreeSet<string>();
         let result = treeSet.popLast();
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     /**
@@ -1456,12 +1445,12 @@ export default function TreeSetTest2() {
         let treeSet: TreeSet<string> = new TreeSet<string>();
         treeSet.add("squirrel");
         treeSet.remove("squirrel");
-        treeSet.popLast();
         let result = treeSet.has("squirrel");
         expect(result).assertFalse();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        treeSet.popLast();
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     /**
@@ -1479,15 +1468,14 @@ export default function TreeSetTest2() {
         treeSet.add("squirrel");
         treeSet.add("sparrow");
         treeSet.clear();
-        let result = treeSet.popLast();
-        expect(result).assertEqual(undefined);
         let resultOne = treeSet.has("squirrel");
         expect(resultOne).assertFalse();
         let resultTwo = treeSet.has("sparrow");
         expect(resultTwo).assertFalse();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        let result = treeSet.popLast();
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     /**
