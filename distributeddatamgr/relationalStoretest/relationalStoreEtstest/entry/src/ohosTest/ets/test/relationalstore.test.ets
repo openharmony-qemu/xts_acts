@@ -2222,6 +2222,7 @@ export default function relationalStoreInterfaceTest() {
     rdbStore?.off('perfStat', storeObserver5);
     rdbStore2 = await relationalStore.getRdbStore(context, STORE_CONFIG);
     rdbStore2?.off('perfStat');
+    await sleep(800);
     console.log(TAG + "************* testPerfStat002 end *************");
     done();
     })
