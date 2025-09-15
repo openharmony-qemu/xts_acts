@@ -38,6 +38,28 @@
 #define NUM_11 11
 
 #define NUM_1 1
+
+// 测试常量定义
+#define TEST_NEGATIVE_INT32_VALUE -12345
+#define TEST_LOOP_COUNT 10
+#define INT32_MAX_VALUE 2147483647
+#define INT32_MIN_VALUE -2147483648
+#define UINT32_MAX_VALUE 4294967295
+#define TEST_STRING_LENGTH 64
+#define TEST_BUFFER_SIZE 256
+#define TEST_OPERATION_COUNT 5
+#define TEST_STRING_COUNT 5
+#define TEST_SIMULATION_LOOP_COUNT 10
+#define TEST_LOOP_BUFFER_SIZE 64
+#define TEST_NULL_STRING_LENGTH 12
+#define TEST_NULL_STRING_INDEX 4
+#define TEST_ALPHABET_SIZE 26
+#define TEST_ALPHABET_START 'A'
+#define TEST_LONG_STRING_SIZE 512
+#define TEST_MIN_TRUNCATION_SIZE 5
+#define TEST_RANDOM_SLEEP_MAX_MS 10
+#define TEST_MEMORY_KB_PER_OPERATION 1
+#define TEST_MEMORY_DIVISOR 1000
 #define NUM_2 2
 #define NUM_3 3
 #define NUM_4 4
@@ -4360,7 +4382,7 @@ static napi_value NapiNumberTest001(napi_env env, napi_callback_info info)
     }
     
     // Test 2: napi_create_uint32 and napi_get_value_uint32
-    if (!TestUint32CreationAndRetrieval(env, 4294967295)) { // UINT32_MAX
+    if (!TestUint32CreationAndRetrieval(env, UINT32_MAX_VALUE)) {
         testResult = false;
     }
     
@@ -4399,7 +4421,7 @@ static bool TestInt32ToUint32Conversion(napi_env env) {
 // Helper function to test uint32 to int32 conversion
 static bool TestUint32ToInt32Conversion(napi_env env) {
     napi_status status;
-    uint32_t largeUint32 = 4294967295; // UINT32_MAX
+    uint32_t largeUint32 = UINT32_MAX_VALUE;
     napi_value uint32Val = nullptr;
     status = napi_create_uint32(env, largeUint32, &uint32Val);
     if (status != napi_ok) {
@@ -4531,17 +4553,20 @@ static napi_value NapiNumberTest002(napi_env env, napi_callback_info info)
 }
 
 // Helper function to test boundary values
-static bool TestBoundaryValues(napi_env env) {
+static bool TestBoundaryValues(napi_env env)
+{
     // Test INT32_MAX and INT32_MIN
-    if (!TestInt32CreationAndRetrieval(env, 2147483647)) { // INT32_MAX
+    if (!TestInt32CreationAndRetrieval(env, INT32_MAX_VALUE))
+    {
         return false;
     }
-    if (!TestInt32CreationAndRetrieval(env, -2147483648)) { // INT32_MIN
+    if (!TestInt32CreationAndRetrieval(env, INT32_MIN_VALUE))
+    {
         return false;
     }
     
     // Test UINT32_MAX and UINT32_MIN
-    if (!TestUint32CreationAndRetrieval(env, 4294967295)) { // UINT32_MAX
+    if (!TestUint32CreationAndRetrieval(env, UINT32_MAX_VALUE)) {
         return false;
     }
     if (!TestUint32CreationAndRetrieval(env, 0)) { // UINT32_MIN
@@ -4595,7 +4620,7 @@ static bool TestCombinedOperations(napi_env env) {
     
     // Test 2: Create uint32 and convert to double
     napi_value uint32Val = nullptr;
-    status = napi_create_uint32(env, 4294967295, &uint32Val);
+    status = napi_create_uint32(env, UINT32_MAX_VALUE, &uint32Val);
     if (status != napi_ok) {
         return false;
     }
@@ -4663,7 +4688,7 @@ static bool TestTypeConversionAndOverflow(napi_env env) {
     
     // Test 3: Create int32 with negative value and convert to uint32
     napi_value negativeInt32Val = nullptr;
-    status = napi_create_int32(env, -12345, &negativeInt32Val);
+    status = napi_create_int32(env, TEST_NEGATIVE_INT32_VALUE, &negativeInt32Val);
     if (status != napi_ok) {
         return false;
     }
@@ -4818,7 +4843,7 @@ static bool TestThreadSafetySimulation(napi_env env) {
     napi_status status;
     
     // Simulate multiple operations that would be thread-safe
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < TEST_LOOP_COUNT; i++) {
         // Test int32 operations
         napi_value int32Val = nullptr;
         status = napi_create_int32(env, i, &int32Val);
@@ -5294,7 +5319,7 @@ static bool TestObjectThreadSafetySimulation(napi_env env) {
     napi_status status;
     
     // Simulate multiple object operations that would be thread-safe
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < TEST_LOOP_COUNT; i++) {
         // Test object creation
         napi_value obj = nullptr;
         status = napi_create_object(env, &obj);
@@ -5336,7 +5361,7 @@ static bool TestExternalObjectThreadSafetySimulation(napi_env env) {
     napi_status status;
     
     // Simulate multiple external object operations that would be thread-safe
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < TEST_LOOP_COUNT; i++) {
         // Test external object creation
         struct CustomData {
             int value;
@@ -5374,7 +5399,7 @@ static bool TestSymbolThreadSafetySimulation(napi_env env) {
     napi_status status;
     
     // Simulate multiple Symbol operations that would be thread-safe
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < TEST_LOOP_COUNT; i++) {
         // Test Symbol creation
         napi_value symbol = nullptr;
         status = napi_create_symbol(env, nullptr, &symbol);
@@ -5493,7 +5518,7 @@ static bool TestCallThreadSafeFunctionWithPriority(napi_env env) {
                             napi_create_int32(env, a + b, &result);
                             return result;
                         }, nullptr, &callback_func);
-    
+
     if (status != napi_ok || callback_func == nullptr) {
         return false;
     }
@@ -5508,7 +5533,7 @@ static bool TestCallThreadSafeFunctionWithPriority(napi_env env) {
     
     // 创建线程安全函数
     status = napi_create_threadsafe_function(env, callback_func, nullptr, func_name, 0, 1,
-                                            nullptr, nullptr, nullptr, ThreadSafeCallback, &func);
+        nullptr, nullptr, nullptr, ThreadSafeCallback, &func);
     if (status != napi_ok) {
         return false;
     }
@@ -5566,7 +5591,7 @@ static bool TestHighPriorityCallToTail(napi_env env) {
                             napi_create_int32(env, a + b, &result);
                             return result;
                         }, nullptr, &callback_func);
-    
+
     if (status != napi_ok || callback_func == nullptr) {
         return false;
     }
@@ -5580,7 +5605,7 @@ static bool TestHighPriorityCallToTail(napi_env env) {
     }
     
     status = napi_create_threadsafe_function(env, callback_func, nullptr, func_name, 0, 1,
-                                            nullptr, nullptr, nullptr, ThreadSafeCallback, &func);
+        nullptr, nullptr, nullptr, ThreadSafeCallback, &func);
     if (status != napi_ok) {
         return false;
     }
@@ -5647,7 +5672,7 @@ static bool TestNormalPriorityCallToHead(napi_env env) {
                             napi_create_int32(env, a + b, &result);
                             return result;
                         }, nullptr, &callback_func);
-    
+
     if (status != napi_ok || callback_func == nullptr) {
         return false;
     }
@@ -5661,7 +5686,7 @@ static bool TestNormalPriorityCallToHead(napi_env env) {
     }
     
     status = napi_create_threadsafe_function(env, callback_func, nullptr, func_name, 0, 1,
-                                            nullptr, nullptr, nullptr, ThreadSafeCallback, &func);
+        nullptr, nullptr, nullptr, ThreadSafeCallback, &func);
     if (status != napi_ok) {
         return false;
     }
@@ -5728,7 +5753,7 @@ static bool TestLowPriorityCall(napi_env env) {
                             napi_create_int32(env, a + b, &result);
                             return result;
                         }, nullptr, &callback_func);
-    
+
     if (status != napi_ok || callback_func == nullptr) {
         return false;
     }
@@ -5742,7 +5767,7 @@ static bool TestLowPriorityCall(napi_env env) {
     }
     
     status = napi_create_threadsafe_function(env, callback_func, nullptr, func_name, 0, 1,
-                                            nullptr, nullptr, nullptr, ThreadSafeCallback, &func);
+        nullptr, nullptr, nullptr, ThreadSafeCallback, &func);
     if (status != napi_ok) {
         return false;
     }
@@ -5809,7 +5834,7 @@ static bool TestMixedPriorityExecutionOrder(napi_env env) {
                             napi_create_int32(env, a + b, &result);
                             return result;
                         }, nullptr, &callback_func);
-    
+
     if (status != napi_ok || callback_func == nullptr) {
         return false;
     }
@@ -5823,7 +5848,7 @@ static bool TestMixedPriorityExecutionOrder(napi_env env) {
     }
     
     status = napi_create_threadsafe_function(env, callback_func, nullptr, func_name, 0, 1,
-                                            nullptr, nullptr, nullptr, ThreadSafeCallback, &func);
+        nullptr, nullptr, nullptr, ThreadSafeCallback, &func);
     if (status != napi_ok) {
         return false;
     }
@@ -5923,7 +5948,7 @@ static bool TestSamePriorityIsTailEffect(napi_env env) {
         napi_create_int32(env, a + b, &result);
         return result;
     }, nullptr, &callback_func);
-    
+
     if (status != napi_ok || callback_func == nullptr) {
         return false;
     }
@@ -5937,13 +5962,14 @@ static bool TestSamePriorityIsTailEffect(napi_env env) {
     }
     
     status = napi_create_threadsafe_function(env, callback_func, nullptr, func_name, 0, 1,
-                                            nullptr, nullptr, nullptr, ThreadSafeCallback, &func);
+        nullptr, nullptr, nullptr, ThreadSafeCallback, &func);
     if (status != napi_ok) {
         return false;
     }
     
     // 创建测试数据
-    napi_value dataA = nullptr, dataB = nullptr;
+    napi_value dataA = nullptr;
+    napi_value dataB = nullptr;
     status = napi_create_string_utf8(env, "TaskA", NAPI_AUTO_LENGTH, &dataA);
     if (status != napi_ok) {
         napi_release_threadsafe_function(func, napi_tsfn_release);
@@ -6221,7 +6247,7 @@ static bool TestSerializeComplexNestedObject(napi_env env) {
         return false;
     }
     
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < CROSS_THREAD_COUNT; i++) {
         napi_value element = nullptr;
         status = napi_create_int32(env, i + 1, &element);
         if (status != napi_ok) {
@@ -6589,10 +6615,10 @@ static bool TestAsyncEventLoopRunAndStop(napi_env env) {
     }
     
     // 创建异步工作对象 - 使用同步方式，避免复杂的异步管理
-    status = napi_create_async_work(runtime_env, nullptr, work_name, 
-                                   [](napi_env env, void* data) {
-                                       // 执行函数 - 简单的同步操作
-                                       // 不执行复杂的异步操作，避免状态管理问题
+    status = napi_create_async_work(runtime_env, nullptr, work_name,
+        [](napi_env env, void* data) {
+            // 执行函数 - 简单的同步操作
+            // 不执行复杂的异步操作，避免状态管理问题
                                    },
                                    [](napi_env env, napi_status status, void* data) {
                                        // 完成函数 - 简单的清理操作
@@ -6709,10 +6735,10 @@ static bool TestAsyncWorkWithQoS(napi_env env) {
         return false;
     }
     
-    status = napi_create_async_work(runtime_env, nullptr, work_name, 
-                                   [](napi_env env, void* data) {
-                                       // 执行函数
-                                   },
+    status = napi_create_async_work(runtime_env, nullptr, work_name,
+        [](napi_env env, void* data) {
+            // 执行函数
+        },
                                    [](napi_env env, napi_status status, void* data) {
                                        // 完成函数
                                    },
@@ -7069,7 +7095,7 @@ static bool TestNAPIExceptionLoggingAndCrashAnalysis(napi_env env) {
     
     // 测试异常情况 - 内存不足
     // 这里我们模拟一个可能导致内存不足的操作
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < NUM_1000; i++) {
         napi_value temp_obj = nullptr;
         status = napi_create_object(env, &temp_obj);
         if (status != napi_ok) {
