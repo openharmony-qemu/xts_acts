@@ -2729,28 +2729,6 @@ export default function numberTest() {
       };
       expect(5).assertEqual(testArrowFunction());
     });
-    /**
-     @tc.number SUB_BUILDINS_NUMBER_TEST_0228
-     @tc.name NumberTest0228
-     @tc.desc Verify number with generator functions
-     @tc.size SmallTest
-     @tc.type Function
-     @tc.level Level 1
-     /
-     it('NumberTest0228', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
-     async (Done: Function) => {
-     const testGeneratorFunction = (): number => {
-     function numberGenerator() {
-     yield 1;
-     yield 2;
-     yield 3;
-     }
-     const generator = numberGenerator();
-     return generator.next().value;
-     };
-     expect(1).assertEqual(testGeneratorFunction());
-     Done();
-     });
      /**
      @tc.number SUB_BUILDINS_NUMBER_TEST_0229
      @tc.name NumberTest0229
@@ -3095,32 +3073,6 @@ export default function numberTest() {
       expect(123).assertEqual(result);
       Done();
     });
-    /**
-     @tc.number SUB_BUILDINS_NUMBER_TEST_0253
-     @tc.name NumberTest0253
-     @tc.desc Verify number with async iterators
-     @tc.size SmallTest
-     @tc.type Function
-     @tc.level Level 1
-     /
-     it('NumberTest0253', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
-     async (Done: Function) => {
-     const testAsyncIterator = async (): Promise<number> => {
-     async function numberGenerator() {
-     yield 1;
-     yield 2;
-     yield 3;
-     }
-     let sum = 0;
-     for await (const num of numberGenerator()) {
-     sum += num;
-     }
-     return sum;
-     };
-     const result = await testAsyncIterator();
-     expect(6).assertEqual(result);
-     Done();
-     });
      /**
      @tc.number SUB_BUILDINS_NUMBER_TEST_0254
      @tc.name NumberTest0254
@@ -3671,7 +3623,6 @@ export default function numberTest() {
       expect(9007199254740993).assertEqual(arr[0]);
       expect(1).assertEqual(arr[1]);
     });
-
 
     /**
      * @tc.number SUB_BUILDINS_NUMBER_TEST_0313
