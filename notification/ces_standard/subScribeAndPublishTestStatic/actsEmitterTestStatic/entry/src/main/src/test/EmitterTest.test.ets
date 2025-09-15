@@ -1239,6 +1239,7 @@ export default function EmitterTest() {
     
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_STATIC_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
     async (done: () => void): Promise<void> => {
+      const TEST_CASE_NAME = 'SUB_NOTIFICATION_CES_EMITTER_TEST_STATIC_3000';
       console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_STATIC_3000 START`)
       let options = {
         priority: emitter.EventPriority.HIGH
