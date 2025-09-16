@@ -16,6 +16,13 @@
 #include <thread>
 #include <chrono>
 #include "oh_audio_render_unit_test.h"
+#include "native_audio_routing_manager.h"
+#include "native_audio_device_base.h"
+#include "hilog/log.h"
+#include <vector>
+#define AUDIO_TEST_LOG_TAG "AUDIO_TEST_TAGLOG"
+#define AUDIO_TEST_LOG_DOMAIN 0xFFFF
+#define LOG(fmt, ...) (int)HiLogPrint(LOG_APP, LOG_INFO, AUDIO_TEST_LOG_DOMAIN, AUDIO_TEST_LOG_TAG, fmt, ##__VA_ARGS__)
 
 using namespace testing::ext;
 using namespace std::chrono;
@@ -150,6 +157,35 @@ static OH_AudioData_Callback_Result OnWriteDataCbWithInvalidDataMock(OH_AudioRen
     UserData *u = static_cast<UserData*>(userData);
     u->writeDataCallbackType = UserData::WRITE_DATA_CALLBACK_WITH_RESULT;
     return AUDIO_DATA_CALLBACK_RESULT_INVALID;
+}
+
+static bool GetCurrentDeviceIsTV()
+{
+    OH_AudioRoutingManager *OH_AudioRoutingManager = nullptr;
+    OH_AudioDevice_Flag deviceFlage = AUDIO_DEVICE_FLAG_ALL;
+    OH_AudioDeviceDescriptorArrary *audioDeviceDescriptorArray = nullptr;
+    OH_AudioManager_GetAudioStreamManager(&audioRoutingManager);
+
+    OH_AudioCommon_Result res = OH_AudioRoutingManager_GetDevices(audioRoutingManager, deviceFlage, &audioDeviceDescriptorArray);
+    EXPECT_EQ(res, OH_AudioCommon_Result::AUDIOCOMMON_RESULT_SUCCESS);
+
+    OH_AudioDevice_Type deviceType;
+    std::vector<uint8_t> deviceTypes;
+    for (size_t i = 0; i < audioDeviceDescriptorArray->size; i++) {
+        OH_AudioDeviceDescriptor_GetDevice_Type(audioDeviceDescriptorArray->descriptors[i], &deviceType);
+        LOG("OH_AudioRoutingManager_GetDevices: %{public}d", static_cast<int32_t>(deviceType));
+        deviceTypes.push_back(deviceType);
+    }
+
+    bool isTVDevice = false;
+    for (auto& device : deviceTypes) {
+        if(!isTVDevice && device == AUDIO_DEVICE_TYPE_DISPLAY_PORT) {
+            isTVDevice = true;
+            break;
+        }
+    }
+    LOG("isTVDevice: %{public}d", static_cast<int32_t>(isTVDevice));
+    return isTVDevice;
 }
 
 OH_AudioStreamBuilder* OHAudioRenderUnitTest::CreateRenderBuilder()
@@ -1099,7 +1135,13 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetUnderflowCount_001, TestSize.L
     uint32_t underFlowCount;
     result = OH_AudioRenderer_GetUnderflowCount(audioRenderer, &underFlowCount);
     EXPECT_EQ(result, AUDIOSTREAM_SUCCESS);
-    EXPECT_GE(underFlowCount, 0);
+    
+    if (GetCurrentDeviceIsTV()) {
+        EXPECT_GE(underFlowCount, 0);
+    }
+    else{
+        EXPECT_GE(underFlowCount, 1);
+    }
 
     OH_AudioRenderer_Stop(audioRenderer);
     OH_AudioRenderer_Release(audioRenderer);
@@ -1160,7 +1202,13 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetUnderflowCount_002, TestSize.L
     uint32_t underFlowCount;
     result = OH_AudioRenderer_GetUnderflowCount(audioRenderer, &underFlowCount);
     EXPECT_EQ(result, AUDIOSTREAM_SUCCESS);
-    EXPECT_GE(underFlowCount, 0);
+
+    if (GetCurrentDeviceIsTV()) {
+        EXPECT_GE(underFlowCount, 0);
+    }
+    else{
+        EXPECT_GT(underFlowCount, 0);
+    }
 
     OH_AudioRenderer_Stop(audioRenderer);
     OH_AudioRenderer_Release(audioRenderer);
@@ -1261,7 +1309,13 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetUnderflowCount_004, TestSize.L
         uint32_t underFlowCount = 0;
         result = OH_AudioRenderer_GetUnderflowCount(audioRenderer, &underFlowCount);
         EXPECT_EQ(result, AUDIOSTREAM_SUCCESS);
-        EXPECT_GE(underFlowCount, lastUnderFlowCount);
+        
+        if (GetCurrentDeviceIsTV()) {
+            EXPECT_GE(underFlowCount, lastUnderFlowCount);
+        }
+        else{
+            EXPECT_GT(underFlowCount, lastUnderFlowCount);
+        }
         lastUnderFlowCount = underFlowCount;
 
         OH_AudioRenderer_Stop(audioRenderer);
