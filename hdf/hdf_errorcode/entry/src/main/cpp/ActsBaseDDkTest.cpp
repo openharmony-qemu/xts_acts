@@ -29,7 +29,8 @@
 #define PORT_ILLEGAL 0x08
 
 
-void addBaseDDkErrorCodeTest(std::vector<napi_property_descriptor> &descData) {
+void addBaseDDkErrorCodeTest(std::vector<napi_property_descriptor> &descData)
+{
     descData.push_back(
         {"DdkMapAshmemAshmemFd", nullptr, DdkMapAshmemAshmemFd, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back(
@@ -52,7 +53,8 @@ void addBaseDDkErrorCodeTest(std::vector<napi_property_descriptor> &descData) {
         {"DdkMapAshmemNullPTR", nullptr, DdkMapAshmemNullPTR, nullptr, nullptr, nullptr, napi_default, nullptr});
 }
 
-napi_value DdkMapAshmemAshmemFd(napi_env env, napi_callback_info info) {
+napi_value DdkMapAshmemAshmemFd(napi_env env, napi_callback_info info)
+{
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;
     const uint8_t name[100] = "TestAshmem";
@@ -65,7 +67,8 @@ napi_value DdkMapAshmemAshmemFd(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value DdkMapAshmemAddress(napi_env env, napi_callback_info info) {
+napi_value DdkMapAshmemAddress(napi_env env, napi_callback_info info)
+{
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;
     const uint8_t name[100] = "TestAshmem";
@@ -78,7 +81,8 @@ napi_value DdkMapAshmemAddress(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value DdkMapAshmemSize(napi_env env, napi_callback_info info) {
+napi_value DdkMapAshmemSize(napi_env env, napi_callback_info info)
+{
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;
     const uint8_t name[100] = "TestAshmem";
@@ -91,7 +95,8 @@ napi_value DdkMapAshmemSize(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value DdkMapAshmemOffset(napi_env env, napi_callback_info info) {
+napi_value DdkMapAshmemOffset(napi_env env, napi_callback_info info)
+{
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;
     const uint8_t name[100] = "TestAshmem";
@@ -104,7 +109,8 @@ napi_value DdkMapAshmemOffset(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value DdkMapAshmemBufferLength(napi_env env, napi_callback_info info) {
+napi_value DdkMapAshmemBufferLength(napi_env env, napi_callback_info info)
+{
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;
     const uint8_t name[100] = "TestAshmem";
@@ -117,7 +123,8 @@ napi_value DdkMapAshmemBufferLength(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value DdkMapAshmemTransferredLength(napi_env env, napi_callback_info info) {
+napi_value DdkMapAshmemTransferredLength(napi_env env, napi_callback_info info)
+{
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;
     const uint8_t name[100] = "TestAshmem";
@@ -130,7 +137,8 @@ napi_value DdkMapAshmemTransferredLength(napi_env env, napi_callback_info info) 
     return result;
 }
 
-napi_value DdkMapAshmemFailure(napi_env env, napi_callback_info info) {
+napi_value DdkMapAshmemFailure(napi_env env, napi_callback_info info)
+{
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;
     const uint8_t name[100] = "TestAshmem";
@@ -143,7 +151,8 @@ napi_value DdkMapAshmemFailure(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value DdkMapAshmemInvalidParameter(napi_env env, napi_callback_info info) {
+napi_value DdkMapAshmemInvalidParameter(napi_env env, napi_callback_info info)
+{
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;
     const uint8_t name[100] = "TestAshmem";
@@ -153,7 +162,8 @@ napi_value DdkMapAshmemInvalidParameter(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value DdkMapAshmemInvalidOperation(napi_env env, napi_callback_info info) {
+napi_value DdkMapAshmemInvalidOperation(napi_env env, napi_callback_info info)
+{
     napi_value result;
     DDK_Ashmem *ashmem = nullptr;
     const uint8_t name[100] = "TestAshmem";
@@ -165,7 +175,8 @@ napi_value DdkMapAshmemInvalidOperation(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value DdkMapAshmemNullPTR(napi_env env, napi_callback_info info) {
+napi_value DdkMapAshmemNullPTR(napi_env env, napi_callback_info info)
+{
     napi_value result;
     const uint8_t ashmemMapType = PORT_READ | PORT_WRITE;
     int32_t returnValue = OH_DDK_MapAshmem(nullptr, ashmemMapType);
