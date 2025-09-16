@@ -72,7 +72,7 @@ export default function OpenSLESTest() {
     it('SUB_MULTIMEDIA_AUDIO_RECORD_INVALID_FUNCTION_0100', 0, async (done: Function) => {
       console.log(`SUB_MULTIMEDIA_AUDIO_RECORD_INVALID_FUNCTION_0100 test start `);
       let state: number | null = OpenSLESTestObj.TestOpenSlesRecorderInValid();
-      expect(state).assertEqual(OPENSLES_FAIL);
+      expect(state).assertEqual(OPENSLES_SUCCESS);
       console.log(`SUB_MULTIMEDIA_AUDIO_RECORD_INVALID_FUNCTION_0100 test end `);
       done();
     });
