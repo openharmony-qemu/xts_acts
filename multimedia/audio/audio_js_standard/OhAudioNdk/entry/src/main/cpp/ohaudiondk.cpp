@@ -29,6 +29,9 @@
 #include <utmp.h>
 #include <web/arkweb_net_error_list.h>
 #include <web/native_interface_arkweb.h>
+#include <SLES/OpenSLES.h>
+#include <SLES/OpenSLES_OpenHarmony.h>
+#include <SLES/OpenSLES_Platform.h>
 
 #define FAIL (-1)
 #define SUCCESS 1
@@ -86,6 +89,11 @@ FILE *g_file = nullptr;
 std::string g_filePath = "/data/storage/el2/base/files/S16LE.pcm";
 std::string g_filePath1 = "/resources/rawfile/Believer.wav";
 std::string g_filePath2 = "/data/storage/el2/base/files/Believer60s.wav";
+FILE *wavFile_ = nullptr;
+SLObjectItf engineObject = nullptr;
+SLRecordItf  recordItf;
+SLOHBufferQueueItf bufferQueueItf;
+SLObjectItf pcmCapturerObject = nullptr;
 
 std::string prePath = "/data/storage/el2/base/files/";
 
@@ -1504,6 +1512,344 @@ static napi_value OHAudioStreamBuilderSetRendererOutputDeviceChangeCallback(napi
     return result;
 }
 
+static void BufferQueueCallback(SLOHBufferQueueItf sBufferQueueItf, void *pContext, SLuint32 size)
+{
+    AUDIO_INFO_LOG("Enter BufferQueueCallback");
+    FILE *wavFile = (FILE *)pContext;
+    if (wavFile != nullptr) {
+        SLuint8 *buffer = nullptr;
+        SLuint32 pSize = 0;
+        SLresult result = (*bufferQueueItf)->GetBuffer(sBufferQueueItf, &buffer, &pSize);
+        if (SL_RESULT_SUCCESS != result) {
+            AUDIO_INFO_LOG("BufferQueueCallback GetBuffer result: %{public}lu", result);
+            return ;
+        }
+        if (buffer != nullptr) {
+            AUDIO_INFO_LOG("BufferQueueCallback, length, pSize:%{public}lu, size: %{public}lu.",
+                pSize, size);
+            fwrite(buffer, 1, pSize, wavFile);
+            result = (*bufferQueueItf)->Enqueue(sBufferQueueItf, buffer, size);
+            if (SL_RESULT_SUCCESS != result) {
+                AUDIO_INFO_LOG("BufferQueueCallback Enqueue result: %{public}lu", result);
+                return ;
+            }
+        } else {
+            AUDIO_INFO_LOG("BufferQueueCallback, buffer is null or pSize: %{public}lu, size: %{public}lu.",
+                pSize, size);
+        }
+    }
+    AUDIO_INFO_LOG("BufferQueueCallback end");
+    return;
+}
+
+static SLresult OpenSLESCaptureTest()
+{
+    AUDIO_INFO_LOG("Enter OpenSLESCaptureTest");
+    engineObject = nullptr;
+    SLEngineItf engineItf = nullptr;
+
+    SLresult result = slCreateEngine(&engineObject, 0, nullptr, 0, nullptr, nullptr);
+    if (SL_RESULT_SUCCESS != result) {
+        AUDIO_INFO_LOG("OpenSLESCaptureTest slCreateEngine result: %{public}lu", result);
+        return result;
+    }
+    result = (*engineObject)->Realize(engineObject, SL_BOOLEAN_FALSE);
+    if (SL_RESULT_SUCCESS != result) {
+        AUDIO_INFO_LOG("OpenSLESCaptureTest Realize result: %{public}lu", result);
+        return result;
+    }
+    result = (*engineObject)->GetInterface(engineObject, SL_IID_ENGINE, &engineItf);
+    if (SL_RESULT_SUCCESS != result) {
+        AUDIO_INFO_LOG("OpenSLESCaptureTest get engineItf result: %{public}lu", result);
+        return result;
+    }
+
+    SLDataLocator_IODevice io_device = {
+        SL_DATALOCATOR_IODEVICE,
+        SL_IODEVICE_AUDIOINPUT,
+        SL_DEFAULTDEVICEID_AUDIOINPUT,
+        NULL
+    };
+
+    SLDataSource audioSource = {
+        &io_device,
+        NULL
+    };
+
+    SLDataLocator_BufferQueue buffer_queue = {
+        SL_DATALOCATOR_BUFFERQUEUE,
+        3
+    };
+
+    SLDataFormat_PCM format_pcm = {
+        SL_DATAFORMAT_PCM,
+        OHOS::AudioStandard::AudioChannel::MONO,
+        OHOS::AudioStandard::AudioSamplingRate::SAMPLE_RATE_44100,
+        SL_PCMSAMPLEFORMAT_FIXED_16,
+        0,
+        0,
+        0
+    };
+    SLDataSink audioSink = {
+        &buffer_queue,
+        &format_pcm
+    };
+
+    result = (*engineItf)->CreateAudioRecorder(engineItf, &pcmCapturerObject,
+        &audioSource, &audioSink, 0, nullptr, nullptr);
+    if (SL_RESULT_SUCCESS != result) {
+        AUDIO_INFO_LOG("OpenSLESCaptureTest CreateAudioRecorder result: %{public}lu", result);
+        return result;
+    }
+    result = (*pcmCapturerObject)->Realize(pcmCapturerObject, SL_BOOLEAN_FALSE);
+    if (SL_RESULT_SUCCESS != result) {
+        AUDIO_INFO_LOG("OpenSLESCaptureTest Realize result: %{public}lu", result);
+        return result;
+    }
+    result = (*pcmCapturerObject)->GetInterface(pcmCapturerObject, SL_IID_RECORD, &recordItf);
+    if (SL_RESULT_SUCCESS != result) {
+        AUDIO_INFO_LOG("OpenSLESCaptureTest get recordItf result: %{public}lu", result);
+        return result;
+    }
+    result = (*pcmCapturerObject)->GetInterface(pcmCapturerObject, SL_IID_OH_BUFFERQUEUE, &bufferQueueItf);
+    if (SL_RESULT_SUCCESS != result) {
+        AUDIO_INFO_LOG("OpenSLESCaptureTest get bufferQueueItf result: %{public}lu", result);
+        return result;
+    }
+    result = (*bufferQueueItf)->RegisterCallback(bufferQueueItf, BufferQueueCallback, wavFile_);
+    if (SL_RESULT_SUCCESS != result) {
+        AUDIO_INFO_LOG("OpenSLESCaptureTest RegisterCallback result: %{public}lu", result);
+        return result;
+    }
+    AUDIO_INFO_LOG("OpenSLESCaptureTest end");
+    return result;
+}
+
+static void BufferQueueCallback(SLOHBufferQueueItf sBufferQueueItf, void *pContext, SLuint32 size)
+{
+    AUDIO_INFO_LOG("Enter BufferQueueCallback");
+    FILE *wavFile = (FILE *)pContext;
+    if (wavFile != nullptr) {
+        SLuint8 *buffer = nullptr;
+        SLuint32 pSize = 0;
+        SLresult result = (*bufferQueueItf)->GetBuffer(sBufferQueueItf, &buffer, &pSize);
+        if (SL_RESULT_SUCCESS != result) {
+            AUDIO_INFO_LOG("BufferQueueCallback GetBuffer result: %{public}lu", result);
+            return ;
+        }
+        if (buffer != nullptr) {
+            AUDIO_INFO_LOG("BufferQueueCallback, length, pSize:%{public}lu, size: %{public}lu.",
+                pSize, size);
+            fwrite(buffer, 1, pSize, wavFile);
+            result = (*bufferQueueItf)->Enqueue(sBufferQueueItf, buffer, size);
+            if (SL_RESULT_SUCCESS != result) {
+                AUDIO_INFO_LOG("BufferQueueCallback Enqueue result: %{public}lu", result);
+                return ;
+            }
+        } else {
+            AUDIO_INFO_LOG("BufferQueueCallback, buffer is null or pSize: %{public}lu, size: %{public}lu.",
+                pSize, size);
+        }
+    }
+    AUDIO_INFO_LOG("BufferQueueCallback end");
+    return;
+}
+
+static SLresult CaptureStart(SLRecordItf sRecordItf, SLOHBufferQueueItf sBufferQueueItf, FILE *wavFile)
+{
+    AUDIO_INFO_LOG("Enter CaptureStart");
+    SLresult result = (*recordItf)->SetRecordState(sRecordItf, SL_RECORDSTATE_RECORDING);
+    if (SL_RESULT_SUCCESS != result) {
+        AUDIO_INFO_LOG("CaptureStart SetRecordState result: %{public}lu", result);
+        return result;
+    }
+    SLuint32 state = SL_RECORDSTATE_RECORDING;
+    result = (*recordItf)->GetRecordState(sRecordItf, &state);
+    if (SL_RESULT_SUCCESS != result) {
+        AUDIO_INFO_LOG("CaptureStart GetRecordState result: %{public}lu", result);
+        return result;
+    }
+    if (wavFile != nullptr) {
+        SLuint8* buffer = nullptr;
+        SLuint32 pSize = 0;
+        result = (*bufferQueueItf)->GetBuffer(sBufferQueueItf, &buffer, &pSize);
+        if (SL_RESULT_SUCCESS != result) {
+            AUDIO_INFO_LOG("CaptureStart GetBuffer result: %{public}lu", result);
+            return result;
+        }
+        if (buffer != nullptr) {
+            AUDIO_INFO_LOG("CaptureStart, enqueue buffer length: %{public}lu.", pSize);
+            fwrite(buffer, 1, pSize, wavFile);
+            result = (*bufferQueueItf)->Enqueue(sBufferQueueItf, buffer, pSize);
+            if (SL_RESULT_SUCCESS != result) {
+                AUDIO_INFO_LOG("CaptureStart Enqueue result: %{public}lu", result);
+                return result;
+            }
+        } else {
+            AUDIO_INFO_LOG("CaptureStart, buffer is null or pSize: %{public}lu.", pSize);
+        }
+    }
+    AUDIO_INFO_LOG("CaptureStart return result: %{public}lu", result);
+    return result;
+}
+
+static SLresult CapturePause(SLRecordItf sRecordItf)
+{
+    AUDIO_INFO_LOG("Enter CapturePause");
+    SLresult result = (*recordItf)->SetRecordState(sRecordItf, SL_RECORDSTATE_PAUSED);
+    if (SL_RESULT_SUCCESS != result) {
+        AUDIO_INFO_LOG("CapturePause SetRecordState result: %{public}lu", result);
+        return result;
+    }
+    AUDIO_INFO_LOG("CapturePause return  result: %{public}lu", result);
+    return result;
+}
+
+static SLresult CaptureStop(SLRecordItf sRecordItf)
+{
+    AUDIO_INFO_LOG("Enter CaptureStop");
+    fflush(wavFile_);
+    SLresult result = (*recordItf)->SetRecordState(sRecordItf, SL_RECORDSTATE_STOPPED);
+    if (SL_RESULT_SUCCESS != result) {
+        AUDIO_INFO_LOG("CapturePause SetRecordState result: %{public}lu", result);
+        return result;
+    }
+    (*pcmCapturerObject)->Destroy(pcmCapturerObject);
+    fclose(wavFile_);
+    wavFile_ = nullptr;
+    AUDIO_INFO_LOG("CaptureStop return  result: %{public}lu", result);
+    return result;
+}
+
+/**
+ * @tc.number    : SUB_MULTIMEDIA_AUDIO_OPENSELES_RECODER_FUNCTION_0100
+ * @tc.name      : stop at end of stream
+ * @tc.desc      : Basic function test
+ */
+static napi_value TestOpenSlesRecorder(napi_env env, napi_callback_info info)
+{
+    napi_value sum;
+    std::string filePath = "/data/storage/el2/base/files/oh_test_audio.pcm"
+    wavFile_ = fopen(filePath.c_str(), "wb");
+    if (wavFile_ == nullptr) {
+        AUDIO_INFO_LOG("OpenSL ES capture: Unable to open file");
+        return ;
+    }
+    SLresult result = OpenSLESCaptureTest();
+    if (result != SL_RESULT_SUCCESS){
+        napi_create_int32(env,-1,sum);
+        return sum;
+    }
+    result = CaptureStart(recordItf, bufferQueueItf, wavFile_);
+    if (result != SL_RESULT_SUCCESS){
+        napi_create_int32(env,-1,sum);
+        return sum;
+    }
+    result = CapturePause(recordItf);
+    if (result != SL_RESULT_SUCCESS){
+        napi_create_int32(env,-1,sum);
+        return sum;
+    }
+    result = CaptureStop(recordItf);
+    if (result != SL_RESULT_SUCCESS){
+        napi_create_int32(env,-1,sum);
+        return sum;
+    }
+    napi_create_int32(env,0,&sum);
+    return sum;
+}
+
+static napi_value TestOpenSlesRecorderInValid(napi_env env, napi_callback_info info)
+{
+    napi_value sum;
+    SLresult result1 = (*recordItf)->SetDurationLimit(nullptr, 0);
+    if (result1 != SL_RESULT_FEATURE_UNSUPPORTED){
+        napi_create_int32(env,-1,&sum);
+        return sum;
+    }
+
+    SLresult result2 = (*recordItf)->GetPosition(nullptr, 0);
+    if (result2 != SL_RESULT_FEATURE_UNSUPPORTED){
+        napi_create_int32(env,-1,&sum);
+        return sum;
+    }
+
+    SLresult result3 = (*recordItf)->RegisterCallback(recordItf, nullptr, wavFile_);
+    if (result3 != SL_RESULT_FEATURE_UNSUPPORTED){
+        napi_create_int32(env,-1,&sum);
+        return sum;
+    }
+
+
+    SLresult result4 = (*recordItf)->SetCallbackEventsMask(nullptr, 0);
+   if (result4 != SL_RESULT_FEATURE_UNSUPPORTED){
+        napi_create_int32(env,-1,&sum);
+        return sum;
+    }
+
+    SLresult result5 = (*recordItf)->GetCallbackEventsMask(nullptr, nullptr);
+    if (result5 != SL_RESULT_FEATURE_UNSUPPORTED){
+        napi_create_int32(env,-1,&sum);
+        return sum;
+    }
+
+    SLresult result6 = (*recordItf)->SetMarkerPosition(nullptr, 0);
+    if (result6 != SL_RESULT_FEATURE_UNSUPPORTED){
+        napi_create_int32(env,-1,&sum);
+        return sum;
+    }
+
+    SLresult result7 = (*recordItf)->ClearMarkerPosition(nullptr);
+    if (result7 != SL_RESULT_FEATURE_UNSUPPORTED){
+        napi_create_int32(env,-1,&sum);
+        return sum;
+    }
+
+    SLresult result8 = (*recordItf)->GetMarkerPosition(nullptr, nullptr);
+    if (result8 != SL_RESULT_FEATURE_UNSUPPORTED){
+        napi_create_int32(env,-1,&sum);
+        return sum;
+    }
+
+    SLresult result9 = (*recordItf)->SetPositionUpdatePeriod(nullptr, 0);
+    if (result9 != SL_RESULT_FEATURE_UNSUPPORTED){
+        napi_create_int32(env,-1,&sum);
+        return sum;
+    }
+
+    SLresult result10 = (*recordItf)->GetPositionUpdatePeriod(nullptr, nullptr);
+    if (result10 != SL_RESULT_FEATURE_UNSUPPORTED){
+        napi_create_int32(env,-1,&sum);
+        return sum;
+    }
+    napi_create_int32(env,0,&sum);
+    return sum;
+}
+
+static napi_value InitOpenSlesTest(napi_env env, napi_callback_info info)
+{
+    napit_value sum;
+    SLresult result = OpenSLESCaptureTest();
+    if (result == SL_RESULT_SUCCESS){
+        napi_create_int32(env,0,&sum);
+    } else{
+        napi_create_int32(env,-1,&sum);
+    }
+    return sum;
+}
+
+static napi_value DeInitOpenSlesTest(napi_env env, napi_callback_info info)
+{
+    napi sum;
+    wavFile_ = nullptr;
+    engineObject = nullptr;
+    pcmCapturerObject = nullptr;
+    napi_create_int32(env,0,&sum);
+    return sum;
+}
+
+
+
 EXTERN_C_START
 
 napi_property_descriptor desc1[] = {
@@ -1608,7 +1954,15 @@ napi_property_descriptor desc3[] = {
      nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OHAudioRendererGetRendererInfo", nullptr, OHAudioRendererGetRendererInfo,
      nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"OHAudioRendererSetSpeed", nullptr, OHAudioRendererSetSpeed,
+    {"DeInitOpenSlesTest", nullptr, DeInitOpenSlesTest,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+     {"InitOpenSlesTest", nullptr, InitOpenSlesTest,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+     {"TestOpenSlesRecorder", nullptr, TestOpenSlesRecorder,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+     {"TestOpenSlesRecorderInValid", nullptr, TestOpenSlesRecorderInValid,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+     {"OHAudioRendererSetSpeed", nullptr, OHAudioRendererSetSpeed,
      nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OHAudioRendererGetSpeed", nullptr, OHAudioRendererGetSpeed,
      nullptr, nullptr, nullptr, napi_default, nullptr},
