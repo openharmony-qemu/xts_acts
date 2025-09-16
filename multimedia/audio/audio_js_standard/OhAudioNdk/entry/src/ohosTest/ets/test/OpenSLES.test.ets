@@ -33,8 +33,8 @@ export default function OpenSLESTest() {
   describe('OhRendererTest', () => {
     beforeAll(async () => {
       console.info('beforeAll case');
-      let context = abilityDelegator.getAppContext();
-      await Utils.sleep(sleep2000);
+      OpenSLESTestObj.InitOpenSlesTest();
+      await Utils.sleep(2000);
     });
     beforeEach(() => {
       console.info('beforeEach case');
