@@ -17,6 +17,7 @@ import events_emitter from '@ohos.events.emitter';
 import webView from '@ohos.web.webview';
 import business_error from '@ohos.base'
 import Utils from '../../test/Utils';
+import { waitForExist } from '../../test/WaitTest';
 
 @Entry
 @Component
@@ -38,17 +39,19 @@ struct WebViewControllerDownloadServerTest {
   @State savePath: string = Utils.getSandboxFileDir() + 'testDownloadServerFile.exe'
   @State responseCode: number = 200
   @State lastErrorCode: number = -1
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 131890,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(131890)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -58,6 +61,7 @@ struct WebViewControllerDownloadServerTest {
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
         this.lastErrorCode = -1
+        this.isReceive = 0;
       }
     }
   }
@@ -67,15 +71,21 @@ struct WebViewControllerDownloadServerTest {
       Row() {
         Button('WebViewControllerDownloadServerTestButton')
           .key('WebViewControllerDownloadServerTestButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str)
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "testDownloadServer001": {
               try {
                 this.responseCode = 400
-                await Utils.sleep(1000)
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
                 this.controller.startDownload(this.downloadUrl);
-                await Utils.sleep(3000)
-                Utils.emitEvent(this.lastErrorCode, 79000)
+                await waitForExist(() => this.lastErrorCode, this.str, webView.WebDownloadErrorCode.SERVER_FAILED);
+                console.log(this.str + 'lastErrorCode:' + this.lastErrorCode)
+                Utils.emitEvent(this.lastErrorCode, 131900)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -85,10 +95,13 @@ struct WebViewControllerDownloadServerTest {
             case "testDownloadServer002": {
               try {
                 this.responseCode = 404
-                await Utils.sleep(1000)
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
                 this.controller.startDownload(this.downloadUrl);
-                await Utils.sleep(3000)
-                Utils.emitEvent(this.lastErrorCode, 79002)
+                await waitForExist(() => this.lastErrorCode, this.str, webView.WebDownloadErrorCode.SERVER_BAD_CONTENT);
+                console.log(this.str + 'lastErrorCode:' + this.lastErrorCode)
+                Utils.emitEvent(this.lastErrorCode, 131910)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -98,10 +111,14 @@ struct WebViewControllerDownloadServerTest {
             case "testDownloadServer003": {
               try {
                 this.responseCode = 401
-                await Utils.sleep(1000)
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
                 this.controller.startDownload(this.downloadUrl);
-                await Utils.sleep(3000)
-                Utils.emitEvent(this.lastErrorCode, 79004)
+                await waitForExist(() => this.lastErrorCode, this.str, 
+                webView.WebDownloadErrorCode.SERVER_UNAUTHORIZED);
+                console.log(this.str + 'lastErrorCode:' + this.lastErrorCode)
+                Utils.emitEvent(this.lastErrorCode, 131920)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -111,10 +128,13 @@ struct WebViewControllerDownloadServerTest {
             case "testDownloadServer004": {
               try {
                 this.responseCode = 403
-                await Utils.sleep(1000)
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
                 this.controller.startDownload(this.downloadUrl);
-                await Utils.sleep(3000)
-                Utils.emitEvent(this.lastErrorCode, 79006)
+                await waitForExist(() => this.lastErrorCode, this.str, webView.WebDownloadErrorCode.SERVER_FORBIDDEN);
+                console.log(this.str + 'lastErrorCode:' + this.lastErrorCode)
+                Utils.emitEvent(this.lastErrorCode, 131930)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -143,7 +163,9 @@ struct WebViewControllerDownloadServerTest {
 
           return this.responseWeb
         })
-        .onPageEnd(() => {
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
           if (!this.hasSetDownloadDelegate) {
             try {
               this.delegate.onBeforeDownload((webDownloadItem: webView.WebDownloadItem) => {
