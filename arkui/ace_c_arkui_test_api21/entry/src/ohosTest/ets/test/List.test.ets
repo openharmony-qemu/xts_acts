@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 import TestInvalidateAttributes from './invalidate/TestInvalidateAttributes.test'
+import TestRegisterCommonEvent from './commonEvent/TestRegisterCommonEvent.test'
 
 export default function testsuite() {
-  TestInvalidateAttributes();}
+  TestInvalidateAttributes();
+  TestRegisterCommonEvent();
+}
