@@ -166,7 +166,8 @@ static bool GetCurrentDeviceIsTV()
     OH_AudioDeviceDescriptorArrary *audioDeviceDescriptorArray = nullptr;
     OH_AudioManager_GetAudioStreamManager(&audioRoutingManager);
 
-    OH_AudioCommon_Result res = OH_AudioRoutingManager_GetDevices(audioRoutingManager, deviceFlage, &audioDeviceDescriptorArray);
+    OH_AudioCommon_Result res = OH_AudioRoutingManager_GetDevices(
+        audioRoutingManager, deviceFlage, &audioDeviceDescriptorArray);
     EXPECT_EQ(res, OH_AudioCommon_Result::AUDIOCOMMON_RESULT_SUCCESS);
 
     OH_AudioDevice_Type deviceType;
@@ -179,7 +180,7 @@ static bool GetCurrentDeviceIsTV()
 
     bool isTVDevice = false;
     for (auto& device : deviceTypes) {
-        if(!isTVDevice && device == AUDIO_DEVICE_TYPE_DISPLAY_PORT) {
+        if (!isTVDevice && device == AUDIO_DEVICE_TYPE_DISPLAY_PORT) {
             isTVDevice = true;
             break;
         }
@@ -1206,7 +1207,7 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetUnderflowCount_002, TestSize.L
     if (GetCurrentDeviceIsTV()) {
         EXPECT_GE(underFlowCount, 0);
     }
-    else{
+    else {
         EXPECT_GT(underFlowCount, 0);
     }
 
