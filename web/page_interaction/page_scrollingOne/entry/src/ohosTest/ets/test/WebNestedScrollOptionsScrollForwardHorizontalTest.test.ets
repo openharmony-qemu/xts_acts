@@ -17,8 +17,15 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+let emitKey = ""
+let tcName = ""
+const EVENT_ID_SET_SUITE_KEY = 184301;
+let driver = Driver.create();
 
 export default function webNestedScrollOptionsScrollForwardHorizontalTest() {
 
@@ -34,7 +41,7 @@ export default function webNestedScrollOptionsScrollForwardHorizontalTest() {
         if (!("WebNestedScrollOptionsScrollForwardHorizontalTest" == pages.name)) {
           console.info("get WebNestedScrollOptionsScrollForwardHorizontalTest state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("NestedScrollOptionsScrollForwardHorizontalTestButton"),10000);
           console.info("push WebNestedScrollOptionsScrollForwardHorizontalTest page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -48,15 +55,7 @@ export default function webNestedScrollOptionsScrollForwardHorizontalTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebNestedScrollOptionsScrollForwardHorizontalTest afterEach start");
-      await Utils.sleep(1000);
-      console.info("WebNestedScrollOptionsScrollForwardHorizontalTest afterEach end");
       done();
     })
 
@@ -69,10 +68,14 @@ export default function webNestedScrollOptionsScrollForwardHorizontalTest() {
     * @tc.level       : Level 1
     */
     it('testNestedScrollOptionsScrollForwardHorizontal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollForwardHorizontal001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollForwardHorizontal001", true, 5001, done);
-      sendEventByKey('NestedScrollOptionsScrollForwardHorizontalTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollForwardHorizontal001';
+      tcName = 'testNestedScrollOptionsScrollForwardHorizontal001'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184310, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollForwardHorizontalTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -84,10 +87,14 @@ export default function webNestedScrollOptionsScrollForwardHorizontalTest() {
     * @tc.level       : Level 1
     */
     it('testNestedScrollOptionsScrollForwardHorizontal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollForwardHorizontal002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollForwardHorizontal002", true, 5002, done);
-      sendEventByKey('NestedScrollOptionsScrollForwardHorizontalTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollForwardHorizontal002';
+      tcName = 'testNestedScrollOptionsScrollForwardHorizontal002'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184320, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollForwardHorizontalTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -99,10 +106,14 @@ export default function webNestedScrollOptionsScrollForwardHorizontalTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollForwardHorizontal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollForwardHorizontal003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollForwardHorizontal003", true, 5003, done);
-      sendEventByKey('NestedScrollOptionsScrollForwardHorizontalTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollForwardHorizontal003';
+      tcName = 'testNestedScrollOptionsScrollForwardHorizontal003'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184330, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollForwardHorizontalTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -114,10 +125,14 @@ export default function webNestedScrollOptionsScrollForwardHorizontalTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollForwardHorizontal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollForwardHorizontal004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollForwardHorizontal004", true, 5004, done);
-      sendEventByKey('NestedScrollOptionsScrollForwardHorizontalTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollForwardHorizontal004';
+      tcName = 'testNestedScrollOptionsScrollForwardHorizontal004'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184340, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollForwardHorizontalTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -129,10 +144,14 @@ export default function webNestedScrollOptionsScrollForwardHorizontalTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollForwardHorizontal005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollForwardHorizontal005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollForwardHorizontal005", true, 5005, done);
-      sendEventByKey('NestedScrollOptionsScrollForwardHorizontalTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollForwardHorizontal005';
+      tcName = 'testNestedScrollOptionsScrollForwardHorizontal005'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184350, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollForwardHorizontalTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -144,10 +163,14 @@ export default function webNestedScrollOptionsScrollForwardHorizontalTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollForwardHorizontal006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollForwardHorizontal006", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollForwardHorizontal006", true, 5006, done);
-      sendEventByKey('NestedScrollOptionsScrollForwardHorizontalTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollForwardHorizontal006';
+      tcName = 'testNestedScrollOptionsScrollForwardHorizontal006'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184360, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollForwardHorizontalTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -159,10 +182,14 @@ export default function webNestedScrollOptionsScrollForwardHorizontalTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollForwardHorizontal007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollForwardHorizontal007", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollForwardHorizontal007", true, 5007, done);
-      sendEventByKey('NestedScrollOptionsScrollForwardHorizontalTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollForwardHorizontal007';
+      tcName = 'testNestedScrollOptionsScrollForwardHorizontal007'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184370, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollForwardHorizontalTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -174,10 +201,14 @@ export default function webNestedScrollOptionsScrollForwardHorizontalTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollForwardHorizontal008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollForwardHorizontal008", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollForwardHorizontal008", true, 5008, done);
-      sendEventByKey('NestedScrollOptionsScrollForwardHorizontalTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollForwardHorizontal008';
+      tcName = 'testNestedScrollOptionsScrollForwardHorizontal008'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184380, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollForwardHorizontalTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -189,10 +220,14 @@ export default function webNestedScrollOptionsScrollForwardHorizontalTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollForwardHorizontal009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollForwardHorizontal009", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollForwardHorizontal009", true, 5009, done);
-      sendEventByKey('NestedScrollOptionsScrollForwardHorizontalTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollForwardHorizontal009';
+      tcName = 'testNestedScrollOptionsScrollForwardHorizontal009'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184390, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollForwardHorizontalTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -204,10 +239,14 @@ export default function webNestedScrollOptionsScrollForwardHorizontalTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollForwardHorizontal010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollForwardHorizontal010", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollForwardHorizontal010", true, 5010, done);
-      sendEventByKey('NestedScrollOptionsScrollForwardHorizontalTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollForwardHorizontal010';
+      tcName = 'testNestedScrollOptionsScrollForwardHorizontal010'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184400, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollForwardHorizontalTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -219,10 +258,14 @@ export default function webNestedScrollOptionsScrollForwardHorizontalTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollForwardHorizontal011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollForwardHorizontal011", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollForwardHorizontal011", true, 5011, done);
-      sendEventByKey('NestedScrollOptionsScrollForwardHorizontalTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollForwardHorizontal011';
+      tcName = 'testNestedScrollOptionsScrollForwardHorizontal011'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184410, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollForwardHorizontalTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -234,10 +277,14 @@ export default function webNestedScrollOptionsScrollForwardHorizontalTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollForwardHorizontal012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollForwardHorizontal012", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollForwardHorizontal012", true, 5012, done);
-      sendEventByKey('NestedScrollOptionsScrollForwardHorizontalTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollForwardHorizontal012';
+      tcName = 'testNestedScrollOptionsScrollForwardHorizontal012'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184420, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollForwardHorizontalTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -249,10 +296,14 @@ export default function webNestedScrollOptionsScrollForwardHorizontalTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollForwardHorizontal013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollForwardHorizontal013", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollForwardHorizontal013", true, 5013, done);
-      sendEventByKey('NestedScrollOptionsScrollForwardHorizontalTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollForwardHorizontal013';
+      tcName = 'testNestedScrollOptionsScrollForwardHorizontal013'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184430, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollForwardHorizontalTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -264,10 +315,14 @@ export default function webNestedScrollOptionsScrollForwardHorizontalTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollForwardHorizontal014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollForwardHorizontal014", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollForwardHorizontal014", true, 5014, done);
-      sendEventByKey('NestedScrollOptionsScrollForwardHorizontalTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollForwardHorizontal014';
+      tcName = 'testNestedScrollOptionsScrollForwardHorizontal014'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184440, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollForwardHorizontalTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -279,10 +334,14 @@ export default function webNestedScrollOptionsScrollForwardHorizontalTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollForwardHorizontal015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollForwardHorizontal015", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollForwardHorizontal015", true, 5015, done);
-      sendEventByKey('NestedScrollOptionsScrollForwardHorizontalTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollForwardHorizontal015';
+      tcName = 'testNestedScrollOptionsScrollForwardHorizontal015'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184450, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollForwardHorizontalTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -294,10 +353,14 @@ export default function webNestedScrollOptionsScrollForwardHorizontalTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollForwardHorizontal016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollForwardHorizontal016", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollForwardHorizontal016", true, 5016, done);
-      sendEventByKey('NestedScrollOptionsScrollForwardHorizontalTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollForwardHorizontal016';
+      tcName = 'testNestedScrollOptionsScrollForwardHorizontal016'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184460, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollForwardHorizontalTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
   })

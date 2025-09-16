@@ -19,6 +19,12 @@ import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
+import { Driver } from '@kit.TestKit';
+import { window } from '@kit.ArkUI';
+import { BusinessError } from '@ohos.base';
+
+const EVENT_ID_SET_SUITE_KEY = 179901;
+let driver = Driver.create();
 
 @Entry
 @Component
@@ -28,8 +34,8 @@ struct webViewOnScroll {
   @State str: string = "emitOnscroll";
   @State textX: number = 100;
   @State textY: number = 100;
-  @State firstId: number = 312;
-  @State secondId: number = 314;
+  @State firstId: number = 179910;
+  @State secondId: number = 179920;
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
   @State domStorageAccess: boolean = false;
@@ -50,10 +56,12 @@ struct webViewOnScroll {
 
   @State userAgent: string = "Mozilla/5.0 (Window NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" +
     " CHrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.27";
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
@@ -65,6 +73,7 @@ struct webViewOnScroll {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -97,17 +106,23 @@ struct webViewOnScroll {
     }
   }
 
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
   build() {
     Column() {
       Row() {
         Button("web click").key('webViewOnScroll').onClick(async () => {
           console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
             case "emitOnscroll": {
               try {
                 this.flag = true
                 this.controller.scrollBy(this.textX, this.textY);
-                await Utils.sleep(1000)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 console.log("action of emitOnscroll is scrollBy" + this.textX + this.textY);
                 this.flag = false
               } catch (error) {
@@ -117,13 +132,21 @@ struct webViewOnScroll {
             }
             case "emitOnscrollAgain": {
               try {
-                this.flag = true
-                this.firstId = 316;
-                this.secondId = 318;
+                this.flag = false
+                this.firstId = 179930;
+                this.secondId = 179940;
                 this.textX = -50;
                 this.textY = -50;
+                this.controller.scrollTo(0,0)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                this.controller.scrollBy(100, 100);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                this.flag = true
                 this.controller.scrollBy(this.textX, this.textY);
-                await Utils.sleep(1000)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 console.log("action of emitOnscroll is scrollBy" + this.textX + this.textY);
                 this.flag = false
               } catch (error) {
@@ -133,19 +156,21 @@ struct webViewOnScroll {
             }
             case "emitpageDown": {
               try {
+                this.isPageEnd = -1
                 this.controller.loadUrl($rawfile('indexCopyTwo.html'))
-                await Utils.sleep(3000)
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("Tablet")) {
+                  this.isPageEnd = -1
                   this.controller.loadUrl($rawfile('indexCopyTwoTablet.html'))
-                  await Utils.sleep(3000)
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 }
                 this.controller.runJavaScript("checkVIsible()", (error, result) => {
                   this.checkEleResult = JSON.parse(result)
                   console.log(`The checkVIsible() return value is: ${result}`);
                 })
                 this.controller.pageDown(false);
-                await Utils.sleep(3000)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.controller.runJavaScript("checkVIsible()", (error, result) => {
                   this.checkEleResultAgain = JSON.parse(result)
                   console.log(`The checkVIsible() again return value is: ${result}`);
@@ -163,18 +188,31 @@ struct webViewOnScroll {
                 this.pageResult = false;
               }
               this.controller.runJavaScript("test()", (res) => {
-                Utils.emitEvent(this.pageResult, 106)
+                Utils.emitEvent(this.pageResult, 179950)
               })
               break;
             }
             case "emitpageUp": {
               try {
+                this.isPageEnd = -1
+                this.controller.loadUrl($rawfile('indexCopyTwo.html'))
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("Tablet")) {
+                  this.isPageEnd = -1
+                  this.controller.loadUrl($rawfile('indexCopyTwoTablet.html'))
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                }
                 this.controller.runJavaScript("checkVIsible()", (error, result) => {
                   this.checkEleResult = JSON.parse(result)
                   console.log(`The checkVIsible() return value is: ${result}`);
                 })
+                this.controller.pageUp(true);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                this.controller.pageDown(false);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.controller.pageUp(false);
-                await Utils.sleep(3000)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.controller.runJavaScript("checkVIsible()", (error, result) => {
                   this.checkEleResultAgain = JSON.parse(result)
                   console.log(`The checkVIsible() again return value is: ${result}`);
@@ -191,19 +229,34 @@ struct webViewOnScroll {
                 this.pageResult = false;
               }
               this.controller.runJavaScript("test()", (res) => {
-                Utils.emitEvent(this.pageResult, 108)
+                Utils.emitEvent(this.pageResult, 179960)
               })
               break;
             }
             case "emitpageDownAgain": {
               try {
+                this.isPageEnd = -1
+                this.controller.loadUrl($rawfile('indexCopyTwo.html'))
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("Tablet")) {
+                  this.isPageEnd = -1
+                  this.controller.loadUrl($rawfile('indexCopyTwoTablet.html'))
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                }
+                this.controller.pageUp(true);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                this.controller.pageDown(false);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                this.controller.pageUp(false);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.controller.pageDown(true);
-                await Utils.sleep(3000)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 if (this.isWebBottom) {
                   console.log("页面已经滑动到底部");
-                  Utils.emitEvent(true, 110)
+                  Utils.emitEvent(true, 179970)
                 } else {
-                  Utils.emitEvent(false, 110)
+                  Utils.emitEvent(false, 179970)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -212,14 +265,31 @@ struct webViewOnScroll {
             }
             case "emitpageUpAgain": {
               try {
-                  this.controller.pageUp(true);
-                  await Utils.sleep(3000)
-                  if (this.isWebTop) {
-                    console.log("页面已经滑动到顶部");
-                    Utils.emitEvent(true, 112);
-                  } else {
-                    Utils.emitEvent(false, 112);
-                  }
+                this.isPageEnd = -1
+                this.controller.loadUrl($rawfile('indexCopyTwo.html'))
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("Tablet")) {
+                  this.isPageEnd = -1
+                  this.controller.loadUrl($rawfile('indexCopyTwoTablet.html'))
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                }
+                this.controller.pageUp(true);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                this.controller.pageDown(false);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                this.controller.pageUp(false);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                this.controller.pageDown(true);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                this.controller.pageUp(true);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                if (this.isWebTop) {
+                  console.log("页面已经滑动到顶部");
+                  Utils.emitEvent(true, 179980);
+                } else {
+                  Utils.emitEvent(false, 179980);
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -237,10 +307,14 @@ struct webViewOnScroll {
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
         .userAgent(this.userAgent)
-        .onPageEnd(() => {
-           this.getWebHeight();
+        .onPageEnd((event) => {
+          this.getWebHeight();
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
         })
         .onScroll((event) => {
+          console.log('onScroll:', this.firstId,this.secondId)
+          console.log('onScroll xOffset:' + event.xOffset + ' yOffset:' + event.yOffset);
           this.checkScrollPosition();
           if(this.flag){
             console.info("x = " + event.xOffset + this.firstId)
