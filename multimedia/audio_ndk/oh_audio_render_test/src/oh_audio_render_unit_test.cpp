@@ -157,10 +157,10 @@ static OH_AudioData_Callback_Result OnWriteDataCbWithInvalidDataMock(OH_AudioRen
 
 static bool GetCurrentDeviceIsTV()
 {
-    OH_AudioRoutingManager *OH_AudioRoutingManager = nullptr;
+    OH_AudioRoutingManager *audioRoutingManager = nullptr;
     OH_AudioDevice_Flag deviceFlage = AUDIO_DEVICE_FLAG_ALL;
-    OH_AudioDeviceDescriptorArrary *audioDeviceDescriptorArray = nullptr;
-    OH_AudioManager_GetAudioStreamManager(&audioRoutingManager);
+    OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray = nullptr;
+    OH_AudioManager_GetAudioRoutingManager(&audioRoutingManager);
 
     OH_AudioCommon_Result res = OH_AudioRoutingManager_GetDevices(
         audioRoutingManager, deviceFlage, &audioDeviceDescriptorArray);
