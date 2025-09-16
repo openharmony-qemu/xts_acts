@@ -15,9 +15,14 @@
 import ClientAPITest1 from './ClientAPI1.test'
 import ClientAPITest2 from './ClientAPI2.test'
 import ClientAPITest3 from './ClientAPI3.test'
+import EmptyTest from './Empty.test';
 
 export default function testsuite() {
-  ClientAPITest1();
-  ClientAPITest2();
-  ClientAPITest3();
+  if (canIUse("SystemCapability.Tee.TeeClient")) {
+    ClientAPITest1();
+    ClientAPITest2();
+    ClientAPITest3();
+  } else {
+    EmptyTest();
+  }
 }
