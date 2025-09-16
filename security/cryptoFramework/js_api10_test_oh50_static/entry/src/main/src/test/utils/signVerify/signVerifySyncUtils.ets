@@ -162,10 +162,10 @@ function doSignWithUpdateSync(algName: string, priKey: cryptoFramework.PriKey, m
     let sign: cryptoFramework.Sign = cryptoFramework.createSign(algName);
     sign.initSync(priKey);
     let msgLen: int = msg.data.byteLength;
-    let iterate: int = (msgLen / blockSize).toInt();
+    let iterate: int = msgLen / blockSize;
     let rem: int = msgLen % blockSize;
     if (rem != 0) {
-      iterate = ((msgLen - rem) / blockSize).toInt();
+      iterate = (msgLen - rem) / blockSize;
     }
     for(let index = 0; index < iterate; index++) {
       let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));
@@ -192,10 +192,10 @@ async function doSignWithUpdatePromise(algName: string, priKey: cryptoFramework.
     let sign: cryptoFramework.Sign = cryptoFramework.createSign(algName);
     await sign.init(priKey);
     let msgLen: int = msg.data.byteLength;
-    let iterate: int = (msgLen / blockSize).toInt();
+    let iterate: int = msgLen / blockSize;
     let rem: int = msgLen % blockSize;
     if (rem != 0) {
-      iterate = ((msgLen - rem) / blockSize).toInt();
+      iterate = (msgLen - rem) / blockSize;
     }
     for(let index = 0; index < iterate; index++) {
       let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));
@@ -250,10 +250,10 @@ function doVerifyWithUpdateSync(algName: string, pubKey: cryptoFramework.PubKey,
     let verify: cryptoFramework.Verify = cryptoFramework.createVerify(algName);
     verify.initSync(pubKey);
     let msgLen: int = msg.data.byteLength;
-    let iterate: int = (msgLen / blockSize).toInt();
+    let iterate: int = msgLen / blockSize;
     let rem: int = msgLen % blockSize;
     if (rem != 0) {
-      iterate = ((msgLen - rem) / blockSize).toInt();
+      iterate = (msgLen - rem) / blockSize;
     }
     for(let index = 0; index < iterate; index++) {
       let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));
@@ -280,10 +280,10 @@ async function doVerifyWithUpdatePromise(algName: string, pubKey: cryptoFramewor
     let verify: cryptoFramework.Verify = cryptoFramework.createVerify(algName);
     await verify.init(pubKey);
     let msgLen: int = msg.data.byteLength;
-    let iterate: int = (msgLen / blockSize).toInt();
+    let iterate: int = msgLen / blockSize;
     let rem: int = msgLen % blockSize;
     if (rem != 0) {
-      iterate = ((msgLen - rem) / blockSize).toInt();
+      iterate = (msgLen - rem) / blockSize;
     }
     for(let index = 0; index < iterate; index++) {
       let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));

@@ -525,10 +525,10 @@ async function doSignUpdatePromise(algName: string, priKey: cryptoFramework.PriK
     let sign: cryptoFramework.Sign = cryptoFramework.createSign(algName);
     await sign.init(priKey);
     let msgLen: int = msg.data.byteLength;
-    let iterate: int = (msgLen / blockSize).toInt();
+    let iterate: int = msgLen / blockSize;
     let rem: int = msgLen % blockSize;
     if (rem != 0) {
-      iterate = ((msgLen - rem) / blockSize).toInt();
+      iterate = (msgLen - rem) / blockSize;
     }
     for(let index = 0; index < iterate; index++) {
       let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));
@@ -567,10 +567,10 @@ function doSignUpdateSync(algName: string, priKey: cryptoFramework.PriKey, msg: 
     let sign: cryptoFramework.Sign = cryptoFramework.createSign(algName);
     sign.initSync(priKey);
     let msgLen: int = msg.data.byteLength;
-    let iterate: int = (msgLen / blockSize).toInt();
+    let iterate: int = msgLen / blockSize;
     let rem: int = msgLen % blockSize;
     if (rem != 0) {
-      iterate = ((msgLen - rem) / blockSize).toInt();
+      iterate = (msgLen - rem) / blockSize;
     }
     for(let index = 0; index < iterate; index++) {
       let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));
