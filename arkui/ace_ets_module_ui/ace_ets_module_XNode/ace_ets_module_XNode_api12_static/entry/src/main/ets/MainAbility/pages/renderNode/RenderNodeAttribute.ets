@@ -39,13 +39,13 @@ renderNode.borderStyle = {
   bottom: BorderStyle.Solid
 }
 renderNode.borderRadius = { topLeft: 32, topRight: 32, bottomLeft: 32, bottomRight: 32 };
-const borderWidth = renderNode.borderWidth;
-const borderColor = renderNode.borderColor;
-const borderStyle = renderNode.borderStyle;
-const borderRadius = renderNode.borderRadius;
+const borderWidth = renderNode.borderWidth!;
+const borderColor = renderNode.borderColor!;
+const borderStyle = renderNode.borderStyle!;
+const borderRadius = renderNode.borderRadius!;
 
 renderNode.shapeMask = mask;
-const shapeMask = renderNode.shapeMask;
+const shapeMask = renderNode.shapeMask!;
 
 class MyNodeController extends NodeController {
   private rootNode: FrameNode | null = null;

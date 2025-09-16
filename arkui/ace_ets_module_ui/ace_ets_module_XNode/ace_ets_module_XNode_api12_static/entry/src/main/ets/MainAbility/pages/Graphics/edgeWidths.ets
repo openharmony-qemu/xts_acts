@@ -60,7 +60,7 @@ struct edgeWidthsExample {
         .onClick((e:ClickEvent) => {
           renderNode.borderWidth = edgeWidths(5)
           renderNode.invalidate()
-          this.edgeWidthsValue = renderNode.borderWidth.left
+          this.edgeWidthsValue = renderNode.borderWidth!.left
         })
     }
   }
