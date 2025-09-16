@@ -77,19 +77,23 @@ enum ARG_INDEX {
     ARG_INDEX_8 = ARG_INDEX_0 + 8,
     ARG_INDEX_9 = ARG_INDEX_0 + 9,
     ARG_INDEX_10 = ARG_INDEX_0 + 10,
+    ARG_INDEX_11 = ARG_INDEX_0 + 11,
+    ARG_INDEX_12 = ARG_INDEX_0 + 12,
+    ARG_INDEX_13 = ARG_INDEX_0 + 13,
 };
 
 static napi_value Asset_Add(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    std::string ar,sr;
+    std::string ar;
+    std::string sr;
     if (GetString(env, info, 0, ar) == false || GetString(env, info, 1, sr) == false) {
         return ReturnInt(env, INVALID_STATUS, &result);
     }
     Asset_Blob secret{static_cast<uint32_t>(sr.length()), reinterpret_cast<uint8_t *>(const_cast<char *>(sr.c_str()))};
     Asset_Attr attr[] = { {ASSET_TAG_SECRET, {.blob = secret}}, {ASSET_TAG_ALIAS, {.blob = secret}} };
-    int ret = ASSET_SUCCESS;
     int32_t rest = OH_Asset_Add(attr, sizeof(attr) / sizeof(attr[0]));
+    int32_t ret = rest;
     if (rest == ASSET_IPC_ERROR) {
         ret = ASSET_IPC_ERROR;
     } else if (rest == ASSET_SUCCESS) {
@@ -211,7 +215,8 @@ static napi_value Asset_Remove(napi_env env, napi_callback_info info)
 static napi_value Asset_Update(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    std::string ar, sr;
+    std::string ar;
+    std::string sr;
     if (GetString(env, info, 0, ar) == false) {
         return ReturnInt(env, INVALID_STATUS, &result);
     }
@@ -220,10 +225,11 @@ static napi_value Asset_Update(napi_env env, napi_callback_info info)
     }
     Asset_Blob alias{static_cast<uint32_t>(ar.length()), reinterpret_cast<uint8_t *>(const_cast<char *>(ar.c_str()))};
     Asset_Blob secret{static_cast<uint32_t>(sr.length()), reinterpret_cast<uint8_t *>(const_cast<char *>(sr.c_str()))};
-    Asset_Attr query[] = {{.tag = ASSET_TAG_ALIAS, .value = {.blob = alias}},};
-    Asset_Attr attributesToUpdate[] = {{.tag = ASSET_TAG_SECRET, .value = {.blob = secret}},};
-    int32_t rest = OH_Asset_Update(query, sizeof(query) / sizeof(query[0]), attributesToUpdate,
-                                  sizeof(attributesToUpdate) / sizeof(attributesToUpdate[0]));
+    Asset_Attr query[] = {
+        {.tag = ASSET_TAG_ALIAS, .value = {.blob = alias}}
+    };
+    Asset_Attr atup[] = {{.tag = ASSET_TAG_SECRET, .value = {.blob = secret}}};
+    int32_t rest = OH_Asset_Update(query, sizeof(query) / sizeof(query[0]), atup, sizeof(atup) / sizeof(atup[0]));
     int32_t ret = rest;
     if (rest == ASSET_SUCCESS) {
         ret = ASSET_SUCCESS;
@@ -301,7 +307,8 @@ static napi_value Asset_PreQuery(napi_env env, napi_callback_info info)
 
 static napi_value Asset_Query(napi_env env, napi_callback_info info)
 {
-    std::string ar, sr;
+    std::string ar;
+    std::string sr;
     napi_value result;
     if (GetString(env, info, 0, ar) == false || GetString(env, info, 1, sr) == false) {
         return ReturnInt(env, INVALID_STATUS, &result);
@@ -350,7 +357,8 @@ static napi_value Asset_Query(napi_env env, napi_callback_info info)
 
 static napi_value Asset_QuerySyncResult(napi_env env, napi_callback_info info)
 {
-    std::string ar, sr;
+    std::string ar;
+    std::string sr;
     napi_value result;
     if (GetString(env, info, 0, ar) == false || GetString(env, info, 1, sr) == false) {
         return ReturnInt(env, INVALID_STATUS, &result);
@@ -387,7 +395,8 @@ static napi_value Asset_QuerySyncResult(napi_env env, napi_callback_info info)
 static napi_value Asset_CoverTagType(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    std::string ar, sr;
+    std::string ar;
+    std::string sr;
     if (GetString(env, info, 0, ar) == false || GetString(env, info, 1, sr) == false) {
         return ReturnInt(env, INVALID_STATUS, &result);
     }
@@ -514,19 +523,12 @@ static napi_value Asset_CoverTag(napi_env env, napi_callback_info info)
     return ReturnInt(env, ret, &result);
 }
 
-static napi_value Asset_RstCode(napi_env env, napi_callback_info info)
+int32_t CheckRetCode(int32_t rest)
 {
-    std::string ar, sr;
-    napi_value result;
-    if (GetString(env, info, 0, ar) == false || GetString(env, info, 1, sr) == false) {
-        return ReturnInt(env, INVALID_STATUS, &result);
-    }
-    Asset_Blob secret{static_cast<uint32_t>(sr.length()), reinterpret_cast<uint8_t *>(const_cast<char *>(sr.c_str()))};
-    Asset_Blob alias{static_cast<uint32_t>(ar.length()), reinterpret_cast<uint8_t *>(const_cast<char *>(ar.c_str()))};
-    Asset_Attr attr[] = {{ASSET_TAG_SECRET, {.blob = secret}}, {ASSET_TAG_ALIAS, {.blob = alias}}};
-    int32_t rest = OH_Asset_Add(attr, sizeof(attr) / sizeof(attr[0]));
-    int32_t ret = rest;
-    if (rest == ASSET_PERMISSION_DENIED) {
+    int32_t ret = INVALID_STATUS;
+    if (rest == ASSET_SUCCESS) {
+        ret = ASSET_SUCCESS;
+    } else if (rest == ASSET_PERMISSION_DENIED) {
         ret = ASSET_PERMISSION_DENIED;
     } else if (rest == ASSET_SERVICE_UNAVAILABLE) {
         ret = ASSET_SERVICE_UNAVAILABLE;
@@ -562,6 +564,44 @@ static napi_value Asset_RstCode(napi_env env, napi_callback_info info)
         ret = ASSET_UNSUPPORTED;
     } else if (rest == ASSET_PARAM_VERIFICATION_FAILED) {
         ret = ASSET_PARAM_VERIFICATION_FAILED;
+    }
+    return ret;
+}
+
+static napi_value Asset_RstCode(napi_env env, napi_callback_info info)
+{
+    std::string sr;
+    napi_value result;
+    if (GetString(env, info, 0, sr) == false) {
+        return ReturnInt(env, INVALID_STATUS, &result);
+    }
+    Asset_Blob secret{static_cast<uint32_t>(sr.length()), reinterpret_cast<uint8_t *>(const_cast<char *>(sr.c_str()))};
+    Asset_Attr attr[] = {
+        {.tag = ASSET_TAG_SECRET, .value = {.blob = secret}},
+        {.tag = ASSET_TAG_ALIAS, .value = {.blob = secret}},
+    };
+    int32_t rest = OH_Asset_Add(attr, sizeof(attr) / sizeof(attr[0]));
+    if (rest != ASSET_SUCCESS) {
+        return ReturnInt(env, INVALID_STATUS, &result);
+    }
+    int32_t ret = CheckRetCode(rest);
+    Asset_Attr query_attr[] = {
+        {.tag = ASSET_TAG_ALIAS, .value = {.blob = secret}},
+        {.tag = ASSET_TAG_RETURN_TYPE, .value = {.u32 = ASSET_RETURN_ATTRIBUTES}},
+    };
+    Asset_ResultSet resultSet = {0};
+    rest = OH_Asset_Query(query_attr, sizeof(query_attr) / sizeof(query_attr[0]), &resultSet);
+    if (rest != ASSET_SUCCESS) {
+        return ReturnInt(env, INVALID_STATUS, &result);
+    }
+    for (uint32_t i = 0; i < resultSet.count; i++) {
+        Asset_Attr *label = OH_Asset_ParseAttr(resultSet.results + i, ASSET_TAG_DATA_LABEL_NORMAL_1);
+        if (label == nullptr) {
+            continue;
+        }
+        if (label->value.u32 == ASSET_RETURN_ATTRIBUTES) {
+            ret = ASSET_RETURN_ATTRIBUTES;
+        }
     }
     return ReturnInt(env, ret, &result);
 }
@@ -600,7 +640,8 @@ static napi_value Asset_Deny(napi_env env, napi_callback_info info)
     return ReturnInt(env, ret, &result);
 }
 
-static napi_value Asset_IPCErr(napi_env env, napi_callback_info info) {
+static napi_value Asset_IPCErr(napi_env env, napi_callback_info info)
+{
     std::string name = __FUNCTION__;
     Asset_Blob funcName = { .size = static_cast<uint32_t>(name.size()),
         .data = reinterpret_cast<uint8_t*>(const_cast<char*>(name.c_str()))};
@@ -610,13 +651,13 @@ static napi_value Asset_IPCErr(napi_env env, napi_callback_info info) {
     Asset_Blob alias{static_cast<uint32_t>(ar.length()), reinterpret_cast<uint8_t *>(const_cast<char *>(ar.c_str()))};
     
     Asset_Blob label{static_cast<uint32_t>(sr.length()), reinterpret_cast<uint8_t *>(const_cast<char *>(sr.c_str()))};
-    Asset_Blob group_id{static_cast<uint32_t>(ar.length()), reinterpret_cast<uint8_t *>(const_cast<char *>(ar.c_str()))};
+    Asset_Blob group{static_cast<uint32_t>(ar.length()), reinterpret_cast<uint8_t *>(const_cast<char *>(ar.c_str()))};
     Asset_Attr attr[] = {
         {.tag = ASSET_TYPE_NUMBER | 0x03, .value = {.u32 = ASSET_ACCESSIBILITY_DEVICE_FIRST_UNLOCKED}},
         {.tag = ASSET_TAG_SECRET, .value = {.blob = secret}},
         {.tag = ASSET_TAG_ALIAS, .value = {.blob = alias}},
         {.tag = ASSET_TAG_DATA_LABEL_NORMAL_1, .value = {.blob = label}},
-        {.tag = ASSET_TAG_GROUP_ID, .value = {.blob = group_id}},
+        {.tag = ASSET_TAG_GROUP_ID, .value = {.blob = group}},
     };
 
     int rest = OH_Asset_Add(attr, sizeof(attr) / sizeof(attr[0]));
@@ -630,44 +671,48 @@ static napi_value Asset_IPCErr(napi_env env, napi_callback_info info) {
     return ReturnInt(env, ret, &result);
 }
 
-static int32_t CheckAblity(Asset_ResultSet& resultSet) {
+static int32_t CheckTagValue(uint32_t tagVal)
+{
+    uint32_t ret = 0;
+    if (tagVal == ASSET_ACCESSIBILITY_DEVICE_FIRST_UNLOCKED) {
+        ret = ASSET_ACCESSIBILITY_DEVICE_FIRST_UNLOCKED;
+    } else if (tagVal == ASSET_ACCESSIBILITY_DEVICE_UNLOCKED) {
+        ret = ASSET_ACCESSIBILITY_DEVICE_UNLOCKED;
+    } else if (tagVal == ASSET_AUTH_TYPE_NONE) {
+        ret = ASSET_AUTH_TYPE_NONE;
+    } else if (tagVal == ASSET_SYNC_TYPE_NEVER) {
+        ret = ASSET_SYNC_TYPE_NEVER;
+    } else if (tagVal == ASSET_SYNC_TYPE_THIS_DEVICE) {
+        ret = ASSET_SYNC_TYPE_THIS_DEVICE;
+    } else if (tagVal == ASSET_SYNC_TYPE_TRUSTED_DEVICE) {
+        ret = ASSET_SYNC_TYPE_TRUSTED_DEVICE;
+    } else if (tagVal == ASSET_SYNC_TYPE_TRUSTED_ACCOUNT) {
+        ret = ASSET_SYNC_TYPE_TRUSTED_ACCOUNT;
+    } else if (tagVal == ASSET_WRAP_TYPE_NEVER) {
+        ret = ASSET_WRAP_TYPE_NEVER;
+    } else if (tagVal == ASSET_WRAP_TYPE_TRUSTED_ACCOUNT) {
+        ret = ASSET_WRAP_TYPE_TRUSTED_ACCOUNT;
+    } else if (tagVal == ASSET_CONFLICT_OVERWRITE) {
+        ret = ASSET_CONFLICT_OVERWRITE;
+    } else if (tagVal == ASSET_CONFLICT_THROW_ERROR) {
+        ret = ASSET_CONFLICT_THROW_ERROR;
+    } else if (tagVal == ASSET_RETURN_ATTRIBUTES) {
+        ret = ASSET_RETURN_ATTRIBUTES;
+    } else if (tagVal == ASSET_NEED_SYNC) {
+        ret = ASSET_NEED_SYNC;
+    } else if (tagVal == ASSET_NEED_LOGOUT) {
+        ret = ASSET_NEED_LOGOUT;
+    }
+    return ret;
+}
+
+static int32_t CheckAblity(Asset_ResultSet& resultSet)
+{
     int32_t ret = INVALID_STATUS;
     for (uint32_t i = 0 ;i < resultSet.count; i++) {
         for (uint32_t j = 0; j < resultSet.results[i].count; j++) {
             uint32_t vau32 = resultSet.results[i].attrs[j].value.u32;
-            if (vau32 == ASSET_ACCESSIBILITY_DEVICE_FIRST_UNLOCKED) {
-                ret = ASSET_ACCESSIBILITY_DEVICE_FIRST_UNLOCKED;
-                break;
-            } else if (vau32 == ASSET_ACCESSIBILITY_DEVICE_UNLOCKED) {
-                ret = ASSET_ACCESSIBILITY_DEVICE_UNLOCKED;
-                break;
-            } else if (vau32 == ASSET_AUTH_TYPE_NONE) {
-                ret = ASSET_AUTH_TYPE_NONE;
-                break;
-            } else if (vau32 == ASSET_SYNC_TYPE_NEVER) {
-                ret = ASSET_SYNC_TYPE_NEVER;
-                break;
-            } else if (vau32 == ASSET_SYNC_TYPE_THIS_DEVICE) {
-                ret = ASSET_SYNC_TYPE_THIS_DEVICE;
-                break;
-            } else if (vau32 == ASSET_SYNC_TYPE_TRUSTED_DEVICE) {
-                ret = ASSET_SYNC_TYPE_TRUSTED_DEVICE;
-                break;
-            } else if (vau32 == ASSET_SYNC_TYPE_TRUSTED_ACCOUNT) {
-                ret = ASSET_SYNC_TYPE_TRUSTED_ACCOUNT;
-                break;
-            } else if (vau32 == ASSET_WRAP_TYPE_NEVER) {
-                ret = ASSET_WRAP_TYPE_NEVER;
-            } else if (vau32 == ASSET_WRAP_TYPE_TRUSTED_ACCOUNT) {
-                ret = ASSET_WRAP_TYPE_TRUSTED_ACCOUNT;
-                break;
-            } else if (vau32 == ASSET_CONFLICT_OVERWRITE) {
-                ret = ASSET_CONFLICT_OVERWRITE;
-                break;
-            } else if (vau32 == ASSET_CONFLICT_THROW_ERROR) {
-                ret = ASSET_CONFLICT_THROW_ERROR;
-                break;
-            }
+            ret = CheckTagValue(vau32);
         }
     }
     if (ret != INVALID_STATUS) {
@@ -676,7 +721,29 @@ static int32_t CheckAblity(Asset_ResultSet& resultSet) {
     return ret;
 }
 
-static napi_value Asset_Ablity(napi_env env, napi_callback_info info) {
+static int32_t AddAndQuery(const std::vector<Asset_Attr>& attrs, const Asset_Blob& secret)
+{
+    int ret = OH_Asset_Add(attrs.data(), attrs.size());
+    if (ret != ASSET_SUCCESS) {
+        return ret;
+    }
+    Asset_Attr preQueryAttr[] = {};
+    Asset_Blob challenge = { 0 };
+    ret = OH_Asset_PreQuery(preQueryAttr, sizeof(preQueryAttr) / sizeof(Asset_Attr), &challenge);
+    Asset_ResultSet resultSet = { 0 };
+    Asset_Attr queryAttr[] = {
+        { .tag = ASSET_TAG_ALIAS, .value = {.blob = secret} },
+        { .tag = ASSET_TAG_RETURN_TYPE, .value = {.u32 = ASSET_RETURN_ALL} },
+    };
+    int32_t rest = OH_Asset_Query(queryAttr, sizeof(queryAttr) / sizeof(queryAttr[0]), &resultSet);
+    if (rest != ASSET_SUCCESS) {
+        return rest;
+    }
+    return CheckAblity(resultSet);
+}
+
+static napi_value Asset_Ablity(napi_env env, napi_callback_info info)
+{
     int32_t index;
     napi_value result;
     if (GetInt(env, info, 0, index) == false) {
@@ -685,8 +752,8 @@ static napi_value Asset_Ablity(napi_env env, napi_callback_info info) {
     std::string fn = __FUNCTION__;
     Asset_Blob secret{static_cast<uint32_t>(fn.length()), reinterpret_cast<uint8_t *>(const_cast<char *>(fn.c_str()))};
     std::vector<Asset_Attr> attrs;
-    attrs.push_back({.tag = ASSET_TAG_SECRET, .value.blob = secret});
-    attrs.push_back({.tag = ASSET_TAG_ALIAS, .value.blob = secret});
+    attrs.push_back({.tag = ASSET_TAG_SECRET, .value = {.blob = secret}});
+    attrs.push_back({.tag = ASSET_TAG_ALIAS, .value = {.blob = secret}});
     if (index == ARG_INDEX_0) {
         attrs.push_back({.tag = ASSET_TYPE_NUMBER | 0x03, .value = {.u32 = ASSET_ACCESSIBILITY_DEVICE_FIRST_UNLOCKED}});
     } else if (index == ARG_INDEX_1) {
@@ -709,24 +776,58 @@ static napi_value Asset_Ablity(napi_env env, napi_callback_info info) {
         attrs.push_back({.tag = ASSET_TAG_CONFLICT_RESOLUTION, .value = {.u32 = ASSET_CONFLICT_OVERWRITE}});
     } else if (index == ARG_INDEX_10) {
         attrs.push_back({.tag = ASSET_TAG_CONFLICT_RESOLUTION, .value = {.u32 = ASSET_CONFLICT_THROW_ERROR}});
+    } else if (index == ARG_INDEX_11) {
+        attrs.push_back({.tag = ASSET_TAG_SYNC_TYPE, .value = {.u32 = ASSET_NEED_SYNC}});
+    } else if (index == ARG_INDEX_12) {
+        attrs.push_back({.tag = ASSET_TAG_OPERATION_TYPE, .value = {.u32 = ASSET_NEED_LOGOUT}});
     }
-    int ret = OH_Asset_Add(attrs.data(), attrs.size());
+    Asset_ResultSet resultSet = { 0 };
+    int32_t ret = AddAndQuery(attrs, secret);
+    return ReturnInt(env, ret, &result);
+}
+
+static napi_value Asset_ResultMember(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t index;
+    std::string ar;
+    if (GetInt(env, info, 0, index) == false || GetString(env, info, 1, ar) == false) {
+        return ReturnInt(env, INVALID_STATUS, &result);
+    }
+    Asset_Blob alias{static_cast<uint32_t>(ar.length()), reinterpret_cast<uint8_t *>(const_cast<char *>(ar.c_str()))};
+    Asset_Blob secret{static_cast<uint32_t>(ar.length()), reinterpret_cast<uint8_t *>(const_cast<char *>(ar.c_str()))};
+    Asset_Attr attr[] = {
+        {.tag = ASSET_TAG_SECRET, .value = {.blob = secret}},
+        {.tag = ASSET_TAG_ALIAS, .value = {.blob = alias}},
+        {.tag = ASSET_TAG_REQUIRE_ATTR_ENCRYPTED, .value = {.boolean = true}},
+    };
+    OH_Asset_Add(attr, sizeof(attr) / sizeof(attr[0]));
+    Asset_Attr attr2[] = {
+        {.tag = ASSET_TAG_ALIAS, .value = {.blob = alias}},
+        {.tag = ASSET_TAG_RETURN_TYPE, .value = {.u32 = ASSET_RETURN_ALL}},
+        {.tag = ASSET_TAG_REQUIRE_ATTR_ENCRYPTED, .value = {.boolean = true}},
+    };
+    Asset_ResultSet resultSet = {0};
+    int32_t ret = OH_Asset_Query(attr2, sizeof(attr2) / sizeof(attr2[0]), &resultSet);
     if (ret != ASSET_SUCCESS) {
         return ReturnInt(env, ret, &result);
     }
-    Asset_Attr preQueryAttr[] = {};
-    Asset_Blob challenge = { 0 };
-    ret = OH_Asset_PreQuery(preQueryAttr, sizeof(preQueryAttr) / sizeof(Asset_Attr), &challenge);
-    Asset_ResultSet resultSet = { 0 };
-    Asset_Attr queryAttr[] = {
-        { .tag = ASSET_TAG_ALIAS, .value = {.blob = secret} },
-        { .tag = ASSET_TAG_RETURN_TYPE, .value = {.u32 = ASSET_RETURN_ALL} },
-    };
-    int rest = OH_Asset_Query(queryAttr, sizeof(queryAttr) / sizeof(queryAttr[0]), &resultSet);
-    if (rest != ASSET_SUCCESS) {
-        return ReturnInt(env, rest, &result);
+    Asset_Attr* attrs = nullptr;
+    int32_t cnt = INVALID_STATUS;
+    for (uint32_t i = 0; i < resultSet.count; i++) {
+        Asset_Result* results = resultSet.results + i;
+        if (results) {
+            attrs = results->attrs;
+            cnt = static_cast<int32_t>(results->count);
+            break;
+        }
     }
-    ret = CheckAblity(resultSet);
+    OH_Asset_FreeResultSet(&resultSet);
+    if (index == ARG_INDEX_0) {
+        ret = (cnt != INVALID_STATUS) ? 0 : INVALID_STATUS;
+    } else {
+        ret = attrs ? 0 : INVALID_STATUS;
+    }
     return ReturnInt(env, ret, &result);
 }
 
@@ -747,6 +848,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"Asset_Deny", nullptr, Asset_Deny, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Asset_IPCErr", nullptr, Asset_IPCErr, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Asset_Ablity", nullptr, Asset_Ablity, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Asset_ResultMember", nullptr, Asset_ResultMember, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

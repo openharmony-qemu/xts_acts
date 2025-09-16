@@ -12,16 +12,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export const Asset_Add: (alias:string,secret:string) => number;
+export const Asset_Add: (alias: string, secret: string) => number;
 export const Asset_RemoveAll: () => number;
-export const Asset_Remove: (index: number, alias:string) => number;
-export const Asset_Update: (alias:string,secret:string) => number;
-export const Asset_PreQuery: (index: number, alias:string) => number;
-export const Asset_Query: (alias:string,secret:string) => number;
-export const Asset_QuerySyncResult: (alias:string,secret:string) => number;
-export const Asset_CoverTagType: (alias:string,secret:string) => number;
+export const Asset_Remove: (index: number, alias: string) => number;
+export const Asset_Update: (alias: string, secret: string) => number;
+export const Asset_PreQuery: (index: number, alias: string) => number;
+export const Asset_Query: (alias:string, secret: string) => number;
+export const Asset_QuerySyncResult: (alias: string, secret: string) => number;
+export const Asset_CoverTagType: (alias: string, secret: string) => number;
 export const Asset_CoverTag: (index: number) => number;
-export const Asset_RstCode: (alias:string,secret:string) => number;
+export const Asset_RstCode: (alias: string) => number;
 export const Asset_Deny: () => number;
 export const Asset_IPCErr: () => number;
 export const Asset_Ablity: (index: number) => number;
+export const Asset_ResultMember: (index: number, alias:string) => number;
