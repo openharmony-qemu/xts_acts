@@ -1409,6 +1409,9 @@ export default function writeTest() {
      */
     it('testHiAppEventApi45', Level.LEVEL3, ():void => {
       console.info('testHiAppEventApi45 start');
+      hiAppEvent.configure({
+        disable: false
+      });
       hiAppEvent.write({
         domain: "test_domain",
         name: "test_name",
