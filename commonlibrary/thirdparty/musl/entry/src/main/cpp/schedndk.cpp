@@ -191,7 +191,7 @@ static napi_value SchedSetaffinity(napi_env env, napi_callback_info info)
 {
     cpu_set_t mask;
     CPU_ZERO(&mask);
-    CPU_SET(PARAM_0, &mask);
+    sched_getaffinity(PARAM_0, sizeof(mask), &mask);
     int schval = sched_setaffinity(PARAM_0, sizeof(mask), &mask);
     napi_value result;
     napi_create_int32(env, schval, &result);
