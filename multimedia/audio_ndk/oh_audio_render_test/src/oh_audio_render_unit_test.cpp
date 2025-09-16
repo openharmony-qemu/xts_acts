@@ -1140,7 +1140,7 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetUnderflowCount_001, TestSize.L
     if (GetCurrentDeviceIsTV()) {
         EXPECT_GE(underFlowCount, 0);
     }
-    else{
+    else {
         EXPECT_GE(underFlowCount, 1);
     }
 
@@ -1314,7 +1314,7 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetUnderflowCount_004, TestSize.L
         if (GetCurrentDeviceIsTV()) {
             EXPECT_GE(underFlowCount, lastUnderFlowCount);
         }
-        else{
+        else {
             EXPECT_GT(underFlowCount, lastUnderFlowCount);
         }
         lastUnderFlowCount = underFlowCount;
