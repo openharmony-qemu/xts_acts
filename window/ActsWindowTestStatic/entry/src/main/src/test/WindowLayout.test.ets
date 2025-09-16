@@ -447,7 +447,7 @@ export default function WindowLayoutTest() {
             let msgStr :string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window;
-            await windowStage.createSubWindow('testGetGlobalRectErrCode1300002_static_0100')
+            windowStage.createSubWindow('testGetGlobalRectErrCode1300002_static_0100')
                 .then((data:window.Window) => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
@@ -705,7 +705,7 @@ export default function WindowLayoutTest() {
                     expect(data!.rect.left).assertEqual(300);
                     expect(data!.rect.top).assertEqual(300);
                     subWindowClass.off('windowRectChange');
-                    await subWindowClass.destroyWindow();
+                    subWindowClass.destroyWindow();
                     done();
                 });
                 await subWindowClass.moveWindowTo(300, 300);
@@ -745,7 +745,7 @@ export default function WindowLayoutTest() {
                     expect(data.width).assertEqual(500);
                     expect(data.height).assertEqual(500);
                     subWindowClass.off('windowSizeChange');
-                    await subWindowClass.destroyWindow();
+                    subWindowClass.destroyWindow();
                     done();
                 });
                 await subWindowClass.resize(500, 500);
