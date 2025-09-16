@@ -18,11 +18,7 @@
 #include "oh_audio_render_unit_test.h"
 #include "native_audio_routing_manager.h"
 #include "native_audio_device_base.h"
-#include "hilog/log.h"
 #include <vector>
-#define AUDIO_TEST_LOG_TAG "AUDIO_TEST_TAGLOG"
-#define AUDIO_TEST_LOG_DOMAIN 0xFFFF
-#define LOG(fmt, ...) (int)HiLogPrint(LOG_APP, LOG_INFO, AUDIO_TEST_LOG_DOMAIN, AUDIO_TEST_LOG_TAG, fmt, ##__VA_ARGS__)
 
 using namespace testing::ext;
 using namespace std::chrono;
@@ -174,7 +170,6 @@ static bool GetCurrentDeviceIsTV()
     std::vector<uint8_t> deviceTypes;
     for (size_t i = 0; i < audioDeviceDescriptorArray->size; i++) {
         OH_AudioDeviceDescriptor_GetDevice_Type(audioDeviceDescriptorArray->descriptors[i], &deviceType);
-        LOG("OH_AudioRoutingManager_GetDevices: %{public}d", static_cast<int32_t>(deviceType));
         deviceTypes.push_back(deviceType);
     }
 
@@ -185,7 +180,6 @@ static bool GetCurrentDeviceIsTV()
             break;
         }
     }
-    LOG("isTVDevice: %{public}d", static_cast<int32_t>(isTVDevice));
     return isTVDevice;
 }
 
