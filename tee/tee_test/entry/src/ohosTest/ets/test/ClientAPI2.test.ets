@@ -52,29 +52,25 @@ export default function ClientAPITest2() {
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
-      console.info("test----------1");
       let ret: number = TEETEST.InitContext();
-      console.info("test-------------ret:--" + ret.toString(16));
+      console.info("in beforeAll:tee_test_client_api2-------------InitContext ret:" + ret.toString(16));
       expect(ret).assertEqual(TEEC_SUCCESS);
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      console.info("test-------------2");
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
-      console.info("test-------------3");
       TEETEST.CloseSession();
       TEETEST.ReleaseSharedMemory();
     })
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
-      console.info("test-------------4");
       TEETEST.FinalizeContext();
     })
 
@@ -85,8 +81,6 @@ export default function ClientAPITest2() {
      */
     it('Opensession_WithoutContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: Array<number> = TEETEST.Opensession_WithoutContext();
-      console.info("test-------------ret:--" + ret[0]);
-      console.info("test-------------ret2:--" + ret[1]);
       expect(ret[0]).assertEqual(TEEC_ERROR_BAD_PARAMETERS);
       expect(ret[1]).assertEqual(TEEC_ORIGIN_API);
       done();
@@ -99,8 +93,6 @@ export default function ClientAPITest2() {
      */
     it('Opensession_WithoutSession', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: Array<number> = TEETEST.Opensession_WithoutSession();
-      console.info("test-------------ret:--" + ret[0]);
-      console.info("test-------------ret2:--" + ret[1]);
       expect(ret[0]).assertEqual(TEEC_ERROR_BAD_PARAMETERS);
       expect(ret[1]).assertEqual(TEEC_ORIGIN_API);
       done();
@@ -112,8 +104,6 @@ export default function ClientAPITest2() {
      */
     it('Opensession_WithoutDestination', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: Array<number> = TEETEST.Opensession_WithoutDestination();
-      console.info("test-------------ret:--" + ret[0]);
-      console.info("test-------------ret2:--" + ret[1]);
       expect(ret[0]).assertEqual(TEEC_ERROR_BAD_PARAMETERS);
       expect(ret[1]).assertEqual(TEEC_ORIGIN_API);
       done();
@@ -126,8 +116,6 @@ export default function ClientAPITest2() {
     it('Opensession_WithoutConnectionMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let ret: Array<number> = TEETEST.Opensession_WithoutConnectionMethod();
-        console.info("test-------------ret:--" + ret[0]);
-        console.info("test-------------ret2:--" + ret[1]);
         expect(ret[0]).assertEqual(TEEC_ERROR_BAD_PARAMETERS);
         expect(ret[1]).assertEqual(TEEC_ORIGIN_API);
         done();
@@ -140,8 +128,6 @@ export default function ClientAPITest2() {
     it('Opensession_WithNotSupportConnectionMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let ret: Array<number> = TEETEST.Opensession_WithNotSupportConnectionMethod();
-        console.info("test-------------ret:--" + ret[0]);
-        console.info("test-------------ret2:--" + ret[1]);
         expect(ret[0]).assertEqual(TEEC_ERROR_BAD_PARAMETERS);
         expect(ret[1]).assertEqual(TEEC_ORIGIN_API);
         expect(ret[2]).assertEqual(TEEC_ERROR_BAD_PARAMETERS);
@@ -194,8 +180,6 @@ export default function ClientAPITest2() {
      */
     it('Opensession_WithoutOperation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: Array<number> = TEETEST.Opensession_WithoutOperation();
-      console.info("test-------------ret:--" + ret[0].toString(16));
-      console.info("test-------------ret2:--" + ret[1].toString(16));
       expect(ret[0]).assertEqual(TEEC_SUCCESS);
       expect(ret[1]).assertEqual(TEEC_ORIGIN_TRUSTED_APP);
       done();
@@ -220,8 +204,6 @@ export default function ClientAPITest2() {
     it('Opensession_WithOperationIsNone', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let ret: Array<number> = TEETEST.Opensession_WithOperationIsNone();
-        console.info("test-------------ret:--" + ret[0].toString(16));
-        console.info("test-------------ret2:--" + ret[1].toString(16));
         expect(ret[0]).assertEqual(TEEC_SUCCESS);
         expect(ret[1]).assertEqual(TEEC_ORIGIN_TRUSTED_APP);
         done();
@@ -254,14 +236,6 @@ export default function ClientAPITest2() {
     it('Opensession_WithOperationIsTempMem', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let ret: Array<number> = TEETEST.Opensession_WithOperationIsTempMem();
-        console.info("test-------------ret2:--" + ret[2].toString(16));
-        console.info("test-------------ret3:--" + ret[3].toString(16));
-        console.info("test-------------ret4:--" + ret[4].toString(16));
-        console.info("test-------------ret5:--" + ret[5].toString(16));
-        console.info("test-------------ret6:--" + ret[6].toString(16));
-        console.info("test-------------ret7:--" + ret[7].toString());
-        console.info("test-------------ret8:--" + ret[8].toString());
-        console.info("test-------------ret9:--" + ret[9].toString());
         expect(ret[0]).assertEqual(TEEC_SUCCESS);
         expect(ret[1]).assertEqual(TEEC_ORIGIN_TRUSTED_APP);
         expect(ret[2]).assertEqual(5);
@@ -282,8 +256,6 @@ export default function ClientAPITest2() {
     it('Opensession_WithNotExistUUID', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let ret: Array<number> = TEETEST.Opensession_WithNotExistUUID();
-        console.info("test-------------ret:--" + ret[0].toString(16));
-        console.info("test-------------ret2:--" + ret[1].toString(16));
         expect(ret[0]).assertEqual(TEEC_ERROR_GENERIC);
         expect(ret[1]).assertEqual(TEEC_ORIGIN_COMMS);
         done();

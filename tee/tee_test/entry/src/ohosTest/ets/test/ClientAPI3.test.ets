@@ -52,33 +52,29 @@ export default function ClientAPITest3() {
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
-      console.info("test----------1");
       let ret: number = TEETEST.InitContext();
-      console.info("test-------------ret:--" + ret.toString(16));
+      console.info("in beforeAll:tee_test_client_api3-------------InitContext ret:" + ret.toString(16));
       expect(ret).assertEqual(TEEC_SUCCESS);
       ret = TEETEST.OpenSession();
-      console.info("test--------opensession-----ret:--" + ret.toString(16));
+      console.info("in beforeAll:tee_test_client_api3-------------OpenSession ret:" + ret.toString(16));
       expect(ret).assertEqual(TEEC_SUCCESS);
       ret = TEETEST.AllocateSharedMemory();
-      console.info("test-------allocate------ret:--" + ret.toString(16));
+      console.info("in beforeAll:tee_test_client_api3-------------AllocateSharedMemory ret:" + ret.toString(16));
       expect(ret).assertEqual(TEEC_SUCCESS);
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      console.info("test-------------2");
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
-      console.info("test-------------3");
     })
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
-      console.info("test-------------4");
       TEETEST.ReleaseSharedMemory();
       TEETEST.CloseSession();
       TEETEST.FinalizeContext();
@@ -91,8 +87,6 @@ export default function ClientAPITest3() {
      */
     it('InvokeCommand_WithoutOperation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: Array<number> = TEETEST.InvokeCommand_WithoutOperation();
-      console.info("test-------------ret:--" + ret[0]);
-      console.info("test-------------ret2:--" + ret[1]);
       expect(ret[0]).assertEqual(TEEC_SUCCESS);
       expect(ret[1]).assertEqual(TEEC_ORIGIN_TRUSTED_APP);
       done();
@@ -106,8 +100,6 @@ export default function ClientAPITest3() {
     it('InvokeCommand_WithoutSession', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let ret: Array<number> = TEETEST.InvokeCommand_WithoutSession();
-        console.info("test-------------ret:--" + ret[0]);
-        console.info("test-------------ret2:--" + ret[1]);
         expect(ret[0]).assertEqual(TEEC_ERROR_BAD_PARAMETERS);
         expect(ret[1]).assertEqual(TEEC_ORIGIN_API);
         done();
@@ -140,14 +132,6 @@ export default function ClientAPITest3() {
     it('InvokeCommand_WithOperationIsTempMem', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let ret: Array<number> = TEETEST.InvokeCommand_WithOperationIsTempMem();
-        console.info("test-------------ret2:--" + ret[2].toString(16));
-        console.info("test-------------ret3:--" + ret[3].toString(16));
-        console.info("test-------------ret4:--" + ret[4].toString(16));
-        console.info("test-------------ret5:--" + ret[5].toString(16));
-        console.info("test-------------ret6:--" + ret[6].toString());
-        console.info("test-------------ret7:--" + ret[7].toString());
-        console.info("test-------------ret8:--" + ret[8].toString());
-        console.info("test-------------ret9:--" + ret[9].toString());
         expect(ret[0]).assertEqual(TEEC_SUCCESS);
         expect(ret[1]).assertEqual(TEEC_ORIGIN_TRUSTED_APP);
         expect(ret[2]).assertEqual(256);
@@ -169,14 +153,6 @@ export default function ClientAPITest3() {
     it('InvokeCommand_WithOperationIsPartialMem', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let ret: Array<number> = TEETEST.InvokeCommand_WithOperationIsPartialMem();
-        console.info("test-------------ret2:--" + ret[2].toString(16));
-        console.info("test-------------ret3:--" + ret[3].toString(16));
-        console.info("test-------------ret4:--" + ret[4].toString(16));
-        console.info("test-------------ret5:--" + ret[5].toString(16));
-        console.info("test-------------ret6:--" + ret[6].toString());
-        console.info("test-------------ret7:--" + ret[7].toString());
-        console.info("test-------------ret8:--" + ret[8].toString());
-        console.info("test-------------ret9:--" + ret[9].toString());
         expect(ret[0]).assertEqual(TEEC_SUCCESS);
         expect(ret[1]).assertEqual(TEEC_ORIGIN_TRUSTED_APP);
         expect(ret[2]).assertEqual(256);
@@ -198,8 +174,6 @@ export default function ClientAPITest3() {
     it('InvokeCommand_WithOperationIsTempMemIsNULL', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let ret: Array<number> = TEETEST.InvokeCommand_WithOperationIsTempMemIsNULL();
-        console.info("test-------------ret:--" + ret[0]);
-        console.info("test-------------ret2:--" + ret[1]);
         expect(ret[0]).assertEqual(TEEC_ERROR_BAD_PARAMETERS);
         expect(ret[1]).assertEqual(TEEC_ORIGIN_API);
         done();
@@ -212,8 +186,6 @@ export default function ClientAPITest3() {
     it('InvokeCommand_WithOperationNotStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let ret: Array<number> = TEETEST.InvokeCommand_WithOperationNotStart();
-        console.info("test-------------ret:--" + ret[0]);
-        console.info("test-------------ret2:--" + ret[1]);
         expect(ret[0]).assertEqual(TEEC_ERROR_NOT_IMPLEMENTED);
         expect(ret[1]).assertEqual(TEEC_ORIGIN_API);
         done();
@@ -226,8 +198,6 @@ export default function ClientAPITest3() {
     it('InvokeCommand_WithOperationTypePartialUseTemp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let ret: Array<number> = TEETEST.InvokeCommand_WithOperationTypePartialUseTemp();
-        console.info("test-------------ret:--" + ret[0]);
-        console.info("test-------------ret2:--" + ret[1]);
         expect(ret[0]).assertEqual(TEEC_ERROR_BAD_PARAMETERS);
         expect(ret[1]).assertEqual(TEEC_ORIGIN_API);
         done();
@@ -240,8 +210,6 @@ export default function ClientAPITest3() {
     it('InvokeCommand_WithOperationTypePartialSizeIsExceed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let ret: Array<number> = TEETEST.InvokeCommand_WithOperationTypePartialSizeIsExceed();
-        console.info("test-------------ret:--" + ret[0]);
-        console.info("test-------------ret2:--" + ret[1]);
         expect(ret[0]).assertEqual(TEEC_ERROR_BAD_PARAMETERS);
         expect(ret[1]).assertEqual(TEEC_ORIGIN_API);
         done();
@@ -254,8 +222,6 @@ export default function ClientAPITest3() {
     it('InvokeCommand_WithOperationTypePartialSizeIsZero', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let ret: Array<number> = TEETEST.InvokeCommand_WithOperationTypePartialSizeIsZero();
-        console.info("test-------------ret:--" + ret[0]);
-        console.info("test-------------ret2:--" + ret[1]);
         expect(ret[0]).assertEqual(TEEC_ERROR_BAD_PARAMETERS);
         expect(ret[1]).assertEqual(TEEC_ORIGIN_COMMS);
         done();
@@ -268,8 +234,6 @@ export default function ClientAPITest3() {
     it('InvokeCommand_WithMemrefTempInoutExceed1024k', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let ret: Array<number> = TEETEST.InvokeCommand_WithMemrefTempInoutExceed1024k();
-        console.info("test-------------ret:--" + ret[0]);
-        console.info("test-------------ret2:--" + ret[1]);
         expect(ret[0]).assertEqual(TEEC_ERROR_ACCESS_DENIED);
         expect(ret[1]).assertEqual(TEEC_ORIGIN_COMMS);
         done();
@@ -282,8 +246,6 @@ export default function ClientAPITest3() {
     it('InvokeCommand_WithMemrefWholeExceed2048k', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let ret: Array<number> = TEETEST.InvokeCommand_WithMemrefWholeExceed2048k();
-        console.info("test-------------ret:--" + ret[0]);
-        console.info("test-------------ret2:--" + ret[1]);
         expect(ret[0]).assertEqual(TEEC_ERROR_OUT_OF_MEMORY);
         expect(ret[1]).assertEqual(TEEC_ORIGIN_COMMS);
         done();

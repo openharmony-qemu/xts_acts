@@ -51,24 +51,20 @@ export default function ClientAPITest1() {
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
-      console.info("test----------1");
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      console.info("test-------------2");
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
-      console.info("test-------------3");
     })
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
-      console.info("test-------------4");
     })
 
     /**
@@ -78,7 +74,6 @@ export default function ClientAPITest1() {
      */
     it('InitContext_NameIsNotNULL', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = TEETEST.InitContext_NameIsNotNULL();
-      console.info("test-------------ret:--" + ret.toString(16));
       expect(ret).assertEqual(TEEC_SUCCESS);
       done();
     });
@@ -90,7 +85,6 @@ export default function ClientAPITest1() {
      */
     it('InitContext_ContextIsNULL', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = TEETEST.InitContext_ContextIsNULL();
-      console.info("test-------------ret:--" + ret.toString(16));
       expect(ret).assertEqual(TEEC_ERROR_BAD_PARAMETERS);
       done();
     });
@@ -103,7 +97,6 @@ export default function ClientAPITest1() {
     it('InitContext_AfterFinalizeContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let ret: number = TEETEST.InitContext_AfterFinalizeContext();
-        console.info("test-----------3--ret:--" + ret.toString(16));
         expect(ret).assertEqual(TEEC_SUCCESS);
         done();
       });
@@ -116,8 +109,6 @@ export default function ClientAPITest1() {
      */
     it('InitContext_Use17Context', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: Array<number> = TEETEST.InitContext_Use17Context();
-      console.info("test------------4-ret:--" + ret[0].toString(16));
-      console.info("test------------4-ret2:--" + ret[1].toString(16));
       expect(ret[0]).assertEqual(TEEC_SUCCESS);
       expect(ret[1]).assertEqual(TEEC_FAIL);
       done();
@@ -131,8 +122,6 @@ export default function ClientAPITest1() {
     it('Finalizecontext_WithCreatedContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let ret: Array<number> = TEETEST.Finalizecontext_WithCreatedContext();
-        console.info("test------------4-ret:--" + ret[0].toString(16));
-        console.info("test------------4-ret2:--" + ret[1].toString(16));
         expect(ret[0]).assertEqual(TEEC_SUCCESS);
         expect(ret[1]).assertEqual(-1);
         done();
@@ -146,7 +135,6 @@ export default function ClientAPITest1() {
     it('Finalizecontext_WithNotCreatedContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let ret: number = TEETEST.Finalizecontext_WithNotCreatedContext();
-        console.info("test-----------3--ret:--" + ret.toString(16));
         expect(ret).assertEqual(-1);
         done();
       });
@@ -159,8 +147,6 @@ export default function ClientAPITest1() {
     it('Finalizecontext_WithoutContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let ret: Array<number> = TEETEST.Finalizecontext_WithoutContext();
-        console.info("test------------4-ret:--" + ret[0].toString(16));
-        console.info("test------------4-ret2:" + ret[1].toString(16));
         expect(ret[0]).assertEqual(TEEC_SUCCESS);
         expect(ret[1]).assertEqual(TEEC_SUCCESS);
         done();
