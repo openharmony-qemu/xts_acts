@@ -25,16 +25,20 @@ struct ViewportAvoidTestPage {
   @State avoidHeight: number = 0;
   @State emitKey: string = '';
   @State isReceive: number = -1;
+  @State isComplete: number = -1;
   @State str:string = ''
+
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 153910,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-
+  onPageHide() {
+    events_emitter.off(153910)
+  }
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
@@ -55,21 +59,17 @@ struct ViewportAvoidTestPage {
               let driver: Driver = Driver.create();
               let AvoidHeightButton = await driver.findComponent(ON.id("WebAvoidHeightButton"));
               await AvoidHeightButton.click();
-              await Utils.sleep(1000)
-              Utils.emitEvent(this.controller.getScrollOffset().y, 20250713)
+              await Utils.sleep(1000);
+              Utils.emitEvent(this.controller.getScrollOffset().y, 153920)
               break;
             }
 
             case "emitAvoidVisibleViewportBottom002": {
-              this.controller.loadUrl('https://www.baidu.com')
-              await Utils.sleep(2000)
-              this.controller.loadUrl("resource://rawfile/index.html")
-              await Utils.sleep(1000)
               let driver: Driver = Driver.create();
-              let AvoidHeightButton = await driver.findComponent(ON.id("WebAvoidHeightTwoButton"));
+              let AvoidHeightButton = await driver.waitForComponent(ON.id("WebAvoidHeightTwoButton"),1000);
               await AvoidHeightButton.click();
-              await Utils.sleep(1000)
-              Utils.emitEvent(this.controller.getScrollOffset().y, 20250714)
+              await Utils.sleep(1000);
+              Utils.emitEvent(this.controller.getScrollOffset().y, 153930)
               break;
             }
           }
@@ -85,6 +85,7 @@ struct ViewportAvoidTestPage {
         Button('+100')
           .key('WebAvoidHeightTwoButton')
           .onClick(() => {
+            this.avoidHeight = 0;
             this.avoidHeight += 100;
             this.controller.avoidVisibleViewportBottom(this.avoidHeight);
           })
@@ -95,11 +96,15 @@ struct ViewportAvoidTestPage {
       Web({
         src: $rawfile("index.html"), controller: this.controller
       })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isComplete = 0;
+        })
         .javaScriptAccess(true)
         .domStorageAccess(true)
         .mixedMode(MixedMode.Compatible)
-        // .layoutMode(WebLayoutMode.FIT_CONTENT)
-        .height("90%")
+          // .layoutMode(WebLayoutMode.FIT_CONTENT)
+        .height("80%")
     }
     .width('100%')
     .justifyContent(FlexAlign.Start)
