@@ -152,7 +152,7 @@ napi_value TestOhPrivateCommandGetKeyNullPointer(napi_env env, napi_callback_inf
 
 napi_value TestOhPrivateCommandGetKeyOk(napi_env env, napi_callback_info info)
 {
-     std::string key = "key";
+    std::string key = "key";
     InputMethod_PrivateCommand *privateCommand =
         OH_PrivateCommand_Create(const_cast<char *>(key.c_str()), key.length());
 

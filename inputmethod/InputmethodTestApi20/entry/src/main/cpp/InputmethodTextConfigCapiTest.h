@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#ifndef InputmethodTestApi20_INPUTMETHODTEXTCONFIGCAPITEST_H
-#define InputmethodTestApi20_INPUTMETHODTEXTCONFIGCAPITEST_H
+#ifndef INPUTMETHODTESTApi20_INPUTMETHODTEXTCONFIGCAPITEST_H
+#define INPUTMETHODTESTApi20_INPUTMETHODTEXTCONFIGCAPITEST_H
 
 #include "napi/native_api.h"
 #include <js_native_api_types.h>

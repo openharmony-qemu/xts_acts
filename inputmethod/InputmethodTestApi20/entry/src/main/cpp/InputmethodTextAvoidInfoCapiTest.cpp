@@ -36,10 +36,10 @@ void AddInputmethodTextAvoidInfoCapiTest(std::vector<napi_property_descriptor> &
                         TestOhTextAvoidInfoGetPositionYNullPointer, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"testOhTextAvoidInfoGetPositionYOk", nullptr, TestOhTextAvoidInfoGetPositionYOk, nullptr,
                         nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"testOhTextAvoidInfoGetHeightNullPointer", nullptr, TestOhTextAvoidInfoGetHeightNullPointer, nullptr,
-                        nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"testOhTextAvoidInfoGetHeightOk", nullptr, TestOhTextAvoidInfoGetHeightOk, nullptr,
-                        nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"testOhTextAvoidInfoGetHeightNullPointer", nullptr, TestOhTextAvoidInfoGetHeightNullPointer,
+                        nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"testOhTextAvoidInfoGetHeightOk", nullptr, TestOhTextAvoidInfoGetHeightOk, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
 }
 
 napi_value TestOhTextAvoidInfoSetPositionYNullPointer(napi_env env, napi_callback_info info)

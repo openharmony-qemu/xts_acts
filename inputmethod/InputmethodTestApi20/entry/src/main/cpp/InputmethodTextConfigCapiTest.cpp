@@ -189,7 +189,7 @@ napi_value TestOhTextConfigSetPlaceholderNullPointer(napi_env env, napi_callback
 {
     InputMethod_TextConfig *config = OH_TextConfig_Create();
     const char16_t *placeholder = u"abcdef";
-    size_t length = sizeof(placeholder);
+    size_t length = 3;
     int ret = OH_TextConfig_SetPlaceholder(nullptr, placeholder, length);
     OH_TextConfig_Destroy(config);
     napi_value result;
@@ -201,7 +201,7 @@ napi_value TestOhTextConfigSetPlaceholderOk(napi_env env, napi_callback_info inf
 {
     InputMethod_TextConfig *config = OH_TextConfig_Create();
     const char16_t *placeholder = u"abcdef";
-    size_t length = sizeof(placeholder);
+    size_t length = 3;
     int ret = OH_TextConfig_SetPlaceholder(config, placeholder, length);
     OH_TextConfig_Destroy(config);
     napi_value result;

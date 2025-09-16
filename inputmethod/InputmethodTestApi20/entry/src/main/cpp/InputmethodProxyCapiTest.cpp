@@ -15,6 +15,7 @@
 #include "InputmethodProxyCapiTest.h"
 #include "string"
 #include "napi/native_api.h"
+#include <cstdint>
 #include <hilog/log.h>
 #include <js_native_api_types.h>
 #include <inputmethod/inputmethod_attach_options_capi.h>
@@ -139,13 +140,13 @@ void HandleExtendActionFunc1(InputMethod_TextEditorProxy *textEditorProxy, Input
 }
 
 void GetLeftTextOfCursorFunc1(InputMethod_TextEditorProxy *textEditorProxy, int32_t number, char16_t text[],
-                             size_t *length)
+                              size_t *length)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>GetLeftTextOfCursorFunc successful.");
 }
 
 void GetRightTextOfCursorFunc1(InputMethod_TextEditorProxy *textEditorProxy, int32_t number, char16_t text[],
-                              size_t *length)
+                               size_t *length)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>GetRightTextOfCursorFunc successful.");
 }
@@ -157,14 +158,14 @@ int32_t GetTextIndexAtCursorFunc1(InputMethod_TextEditorProxy *textEditorProxy)
 }
 
 int32_t ReceivePrivateCommandFunc1(InputMethod_TextEditorProxy *textEditorProxy,
-                                  InputMethod_PrivateCommand *privateCommand[], size_t size)
-                                  {
+                                   InputMethod_PrivateCommand *privateCommand[], size_t size)
+{
     OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>ReceivePrivateCommandFunc successful.");
     return 0;
 }
 
 int32_t SetPreviewTextFunc1(InputMethod_TextEditorProxy *textEditorProxy, const char16_t text[], size_t length,
-                           int32_t start, int32_t end)
+                            int32_t start, int32_t end)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>SetPreviewTextFunc successful.");
     return 0;
@@ -175,7 +176,7 @@ void FinishTextPreviewFunc1(InputMethod_TextEditorProxy *textEditorProxy)
     OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>FinishTextPreviewFunc successful.");
 }
 
-void TextEditorProxy_Create1()
+void TextEditorProxyCreate1()
 {
     if (g_txtEditProxy1 == nullptr) {
         g_txtEditProxy1 = OH_TextEditorProxy_Create();
@@ -198,15 +199,15 @@ void TextEditorProxy_Create1()
     }
 }
 
-void AttachOptions_Create1(bool showKeyboard)
+void AttachOptionsCreate1(bool showKeyboard)
 {
     g_options1 = OH_AttachOptions_Create(showKeyboard);
 }
 
 napi_value TestOhInputMethodProxyShowKeyboardNullPointer(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create1();
-    AttachOptions_Create1(false);
+    TextEditorProxyCreate1();
+    AttachOptionsCreate1(false);
     OH_InputMethodController_Attach(g_txtEditProxy1, g_options1, &g_inputMethodProxy1);
     OH_InputMethodController_Detach(g_inputMethodProxy1);
     int ret = OH_InputMethodProxy_ShowKeyboard(nullptr);
@@ -217,8 +218,8 @@ napi_value TestOhInputMethodProxyShowKeyboardNullPointer(napi_env env, napi_call
 
 napi_value TestOhInputMethodProxyShowKeyboardDetached(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create1();
-    AttachOptions_Create1(false);
+    TextEditorProxyCreate1();
+    AttachOptionsCreate1(false);
     OH_InputMethodController_Attach(g_txtEditProxy1, g_options1, &g_inputMethodProxy1);
     OH_InputMethodController_Detach(g_inputMethodProxy1);
     int ret = OH_InputMethodProxy_ShowKeyboard(g_inputMethodProxy1);
@@ -229,7 +230,7 @@ napi_value TestOhInputMethodProxyShowKeyboardDetached(napi_env env, napi_callbac
 
 napi_value TestOhInputMethodProxyShowTextInputNullPointer(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create1();
+    TextEditorProxyCreate1();
     InputMethod_AttachOptions *options = OH_AttachOptions_CreateWithRequestKeyboardReason(
         true, InputMethod_RequestKeyboardReason::IME_REQUEST_REASON_NONE);
     OH_InputMethodController_Attach(g_txtEditProxy1, options, &g_inputMethodProxy1);
@@ -241,7 +242,7 @@ napi_value TestOhInputMethodProxyShowTextInputNullPointer(napi_env env, napi_cal
 
 napi_value TestOhInputMethodProxyShowTextInputDetached(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create1();
+    TextEditorProxyCreate1();
     InputMethod_AttachOptions *options = OH_AttachOptions_CreateWithRequestKeyboardReason(
         true, InputMethod_RequestKeyboardReason::IME_REQUEST_REASON_NONE);
     OH_InputMethodController_Attach(g_txtEditProxy1, options, &g_inputMethodProxy1);
@@ -254,8 +255,8 @@ napi_value TestOhInputMethodProxyShowTextInputDetached(napi_env env, napi_callba
 
 napi_value TestOhInputMethodProxyHideKeyboardNullPointer(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create1();
-    AttachOptions_Create1(true);
+    TextEditorProxyCreate1();
+    AttachOptionsCreate1(true);
     OH_InputMethodController_Attach(g_txtEditProxy1, g_options1, &g_inputMethodProxy1);
     int ret = OH_InputMethodProxy_HideKeyboard(nullptr);
     napi_value result;
@@ -265,8 +266,8 @@ napi_value TestOhInputMethodProxyHideKeyboardNullPointer(napi_env env, napi_call
 
 napi_value TestOhInputMethodProxyHideKeyboardDetached(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create1();
-    AttachOptions_Create1(true);
+    TextEditorProxyCreate1();
+    AttachOptionsCreate1(true);
     OH_InputMethodController_Attach(g_txtEditProxy1, g_options1, &g_inputMethodProxy1);
     OH_InputMethodController_Detach(g_inputMethodProxy1);
     int ret = OH_InputMethodProxy_HideKeyboard(g_inputMethodProxy1);
@@ -278,8 +279,8 @@ napi_value TestOhInputMethodProxyHideKeyboardDetached(napi_env env, napi_callbac
 
 napi_value TestOhInputMethodProxyNotifySelectionChangeNullPointer(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create1();
-    AttachOptions_Create1(true);
+    TextEditorProxyCreate1();
+    AttachOptionsCreate1(true);
     OH_InputMethodController_Attach(g_txtEditProxy1, g_options1, &g_inputMethodProxy1);
     char16_t text[] = u"TestValue";
     int ret = OH_InputMethodProxy_NotifySelectionChange(nullptr, text, 9, 1, 3);
@@ -291,8 +292,8 @@ napi_value TestOhInputMethodProxyNotifySelectionChangeNullPointer(napi_env env, 
 
 napi_value TestOhInputMethodProxyNotifySelectionChangeDetached(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create1();
-    AttachOptions_Create1(true);
+    TextEditorProxyCreate1();
+    AttachOptionsCreate1(true);
     OH_InputMethodController_Attach(g_txtEditProxy1, g_options1, &g_inputMethodProxy1);
     OH_InputMethodController_Detach(g_inputMethodProxy1);
     char16_t text[] = u"TestValue";
@@ -305,8 +306,8 @@ napi_value TestOhInputMethodProxyNotifySelectionChangeDetached(napi_env env, nap
 
 napi_value TestOhInputMethodProxyNotifySelectionChangeParamCheckError(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create1();
-    AttachOptions_Create1(true);
+    TextEditorProxyCreate1();
+    AttachOptionsCreate1(true);
     OH_InputMethodController_Attach(g_txtEditProxy1, g_options1, &g_inputMethodProxy1);
     char16_t text[] = u"TestValue";
     int ret = OH_InputMethodProxy_NotifySelectionChange(g_inputMethodProxy1, text, 8193, 1, 3);
@@ -318,8 +319,8 @@ napi_value TestOhInputMethodProxyNotifySelectionChangeParamCheckError(napi_env e
 
 napi_value TestOhInputMethodProxyNotifyConfigurationChangeNullPointer(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create1();
-    AttachOptions_Create1(true);
+    TextEditorProxyCreate1();
+    AttachOptionsCreate1(true);
     OH_InputMethodController_Attach(g_txtEditProxy1, g_options1, &g_inputMethodProxy1);
     InputMethod_EnterKeyType enterKey = IME_ENTER_KEY_UNSPECIFIED;
     InputMethod_TextInputType textType = IME_TEXT_INPUT_TYPE_NONE;
@@ -332,8 +333,8 @@ napi_value TestOhInputMethodProxyNotifyConfigurationChangeNullPointer(napi_env e
 
 napi_value TestOhInputMethodProxyNotifyConfigurationChangeDetached(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create1();
-    AttachOptions_Create1(true);
+    TextEditorProxyCreate1();
+    AttachOptionsCreate1(true);
     OH_InputMethodController_Attach(g_txtEditProxy1, g_options1, &g_inputMethodProxy1);
     OH_InputMethodController_Detach(g_inputMethodProxy1);
     InputMethod_EnterKeyType enterKey = IME_ENTER_KEY_UNSPECIFIED;
@@ -347,11 +348,12 @@ napi_value TestOhInputMethodProxyNotifyConfigurationChangeDetached(napi_env env,
 
 napi_value TestOhInputMethodProxyNotifyConfigurationChangeParamCheckError(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create1();
-    AttachOptions_Create1(true);
+    TextEditorProxyCreate1();
+    AttachOptionsCreate1(true);
     OH_InputMethodController_Attach(g_txtEditProxy1, g_options1, &g_inputMethodProxy1);
+    int64_t dataLength = 64;
     InputMethod_InputMethodProxy *tempProxy =
-        static_cast<InputMethod_InputMethodProxy *>(malloc(sizeof(InputMethod_InputMethodProxy *)));
+        static_cast<InputMethod_InputMethodProxy *>(malloc(dataLength));
     InputMethod_EnterKeyType enterKey = IME_ENTER_KEY_UNSPECIFIED;
     InputMethod_TextInputType textType = IME_TEXT_INPUT_TYPE_NONE;
     int ret = OH_InputMethodProxy_NotifyConfigurationChange(tempProxy, enterKey, textType);
@@ -364,8 +366,8 @@ napi_value TestOhInputMethodProxyNotifyConfigurationChangeParamCheckError(napi_e
 
 napi_value TestOhInputMethodProxyNotifyCursorUpdateNullPointer(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create1();
-    AttachOptions_Create1(true);
+    TextEditorProxyCreate1();
+    AttachOptionsCreate1(true);
     OH_InputMethodController_Attach(g_txtEditProxy1, g_options1, &g_inputMethodProxy1);
     double left = 100;
     double top = 200;
@@ -380,8 +382,8 @@ napi_value TestOhInputMethodProxyNotifyCursorUpdateNullPointer(napi_env env, nap
 
 napi_value TestOhInputMethodProxyNotifyCursorUpdateDetached(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create1();
-    AttachOptions_Create1(true);
+    TextEditorProxyCreate1();
+    AttachOptionsCreate1(true);
     OH_InputMethodController_Attach(g_txtEditProxy1, g_options1, &g_inputMethodProxy1);
     OH_InputMethodController_Detach(g_inputMethodProxy1);
     double left = 100;
@@ -397,11 +399,12 @@ napi_value TestOhInputMethodProxyNotifyCursorUpdateDetached(napi_env env, napi_c
 
 napi_value TestOhInputMethodProxyNotifyCursorUpdateParamCheckError(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create1();
-    AttachOptions_Create1(true);
+    TextEditorProxyCreate1();
+    AttachOptionsCreate1(true);
     OH_InputMethodController_Attach(g_txtEditProxy1, g_options1, &g_inputMethodProxy1);
+    int64_t dataLength = 64;
     InputMethod_InputMethodProxy *tempProxy =
-        (InputMethod_InputMethodProxy *)malloc(sizeof(InputMethod_InputMethodProxy *));
+        static_cast<InputMethod_InputMethodProxy *>(malloc(dataLength));
     double left = 100;
     double top = 200;
     double width = 300;
@@ -416,8 +419,8 @@ napi_value TestOhInputMethodProxyNotifyCursorUpdateParamCheckError(napi_env env,
 
 napi_value TestOhInputMethodProxySendPrivateCommandNullPointer(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create1();
-    AttachOptions_Create1(true);
+    TextEditorProxyCreate1();
+    AttachOptionsCreate1(true);
     OH_InputMethodController_Attach(g_txtEditProxy1, g_options1, &g_inputMethodProxy1);
     std::string keyStr1 = "testKey_1";
     std::string valStr1 = "testValue_2";
@@ -445,8 +448,8 @@ napi_value TestOhInputMethodProxySendPrivateCommandNullPointer(napi_env env, nap
 
 napi_value TestOhInputMethodProxySendPrivateCommandDetached(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create1();
-    AttachOptions_Create1(true);
+    TextEditorProxyCreate1();
+    AttachOptionsCreate1(true);
     OH_InputMethodController_Attach(g_txtEditProxy1, g_options1, &g_inputMethodProxy1);
     OH_InputMethodController_Detach(g_inputMethodProxy1);
     std::string keyStr1 = "testKey_1";
@@ -475,8 +478,8 @@ napi_value TestOhInputMethodProxySendPrivateCommandDetached(napi_env env, napi_c
 
 napi_value TestOhInputMethodProxySendPrivateCommandParamCheckError(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create1();
-    AttachOptions_Create1(true);
+    TextEditorProxyCreate1();
+    AttachOptionsCreate1(true);
     OH_InputMethodController_Attach(g_txtEditProxy1, g_options1, &g_inputMethodProxy1);
     std::string keyStr1 = "testKey_1";
     std::string valStr1 = "testValue_2";

@@ -120,7 +120,7 @@ void FinishTextPreviewFunc(InputMethod_TextEditorProxy *textEditorProxy)
     OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>FinishTextPreviewFunc successful.");
 }
 
-void TextEditorProxy_Create()
+void TextEditorProxyCreate()
 {
     if (g_txtEditProxy == nullptr) {
         g_txtEditProxy = OH_TextEditorProxy_Create();
@@ -139,19 +139,19 @@ void TextEditorProxy_Create()
         OH_TextEditorProxy_SetReceivePrivateCommandFunc(g_txtEditProxy, ReceivePrivateCommandFunc);
         OH_TextEditorProxy_SetSetPreviewTextFunc(g_txtEditProxy, SetPreviewTextFunc);
         OH_TextEditorProxy_SetFinishTextPreviewFunc(g_txtEditProxy, FinishTextPreviewFunc);
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>TextEditorProxy_Create successful.");
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>TextEditorProxyCreate successful.");
     }
 }
 
-void AttachOptions_Create(bool showKeyboard)
+void AttachOptionsCreate(bool showKeyboard)
 {
     g_options = OH_AttachOptions_Create(showKeyboard);
 }
 
 napi_value TestOhInputMethodControllerAttachNullPointer(napi_env env, napi_callback_info info)
 {
-    TextEditorProxy_Create();
-    AttachOptions_Create(false);
+    TextEditorProxyCreate();
+    AttachOptionsCreate(false);
     int ret = OH_InputMethodController_Attach(nullptr, g_options, &g_inputMethodProxy);
     OH_AttachOptions_Destroy(g_options);
     OH_TextEditorProxy_Destroy(g_txtEditProxy);
