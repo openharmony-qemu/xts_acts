@@ -30,7 +30,7 @@ function getContext(): Context {
 
 export default function OpenSLESTest() {
 
-  describe('OhRendererTest', () => {
+  describe('OpenSLES', () => {
     beforeAll(async () => {
       console.info('beforeAll case');
       OpenSLESTestObj.InitOpenSlesTest();
