@@ -13,28 +13,30 @@
 * limitations under the License.
 */
 
-import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level } from '@ohos/hypium';
-import { Driver } from '@kit.TestKit';
 import { webview } from '@kit.ArkWeb';
-import { LocalContext } from './GloablConfig';
 import { router } from '@kit.ArkUI';
-import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import Utils from './Util';
+import { waitForComponents } from './WaitTest.test';
+import events_emitter from '@ohos.events.emitter';
+import { Driver } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
-let driver: Driver = Driver.create();
-let flg: boolean = false
+const driver = Driver.create();
 
 export default function SetConnectionTimeOut() {
   describe('SetConnectionTimeOut', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async (done: Function) => {
       webview.WebviewController.initializeWebEngine()
       webview.WebviewController.setConnectionTimeout(60)
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
+      await waitForComponents('001');
+      done();
     })
     beforeEach(() => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
@@ -42,21 +44,17 @@ export default function SetConnectionTimeOut() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      flg = false;
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     })
     afterEach(async () => {
-      flg = false;
-      await driver.delayMs(500)
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
     })
     afterAll(async () => {
       webview.WebviewController.setConnectionTimeout(60)
-      await driver.delayMs(500)
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
@@ -69,26 +67,16 @@ export default function SetConnectionTimeOut() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_pause0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_pause_0700 start')
-      console.info('SUB_ACE_WEB_pause_0700 start')
-      await driver.delayMs(500)
-      LocalContext.context.eventHub.on("setConnectionTimeOut1", (data: webview.WebDownloadState) => {
-        flg = true
-        expect(data).assertEqual(webview.WebDownloadState.PAUSED)
-        console.info('SUB_ACE_WEB_pause_0700 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_pause_0700 end')
-      })
+    it('testWebView_pause0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
         url: "testability/pages/SetConnectionTimeOut1"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
-      await driver.delayMs(10000)
-      expect(flg).assertTrue()
+      Utils.emitEvent("setConnectionTimeOut1", 131050);
+      Utils.registerBaseEvent("setConnectionTimeOut1", true, 131060, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
 
@@ -101,24 +89,15 @@ export default function SetConnectionTimeOut() {
      * @tc.level Level 2
      */
     it('testWebView_pause0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_pause_0800 start')
-      console.info('SUB_ACE_WEB_pause_0800 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("setConnectionTimeOut2", (data: webview.WebDownloadState) => {
-        expect(data).assertEqual(webview.WebDownloadState.COMPLETED)
-        console.info('SUB_ACE_WEB_pause_0800 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_pause_0800 end')
-        done()
-      })
       router.pushUrl({
         url: "testability/pages/SetConnectionTimeOut2"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
+      Utils.emitEvent("setConnectionTimeOut2", 131050);
+      Utils.registerBaseEvent("setConnectionTimeOut2", true, 131070, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
 
@@ -130,27 +109,16 @@ export default function SetConnectionTimeOut() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_resume0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_resume_0600 start')
-      console.info('SUB_ACE_WEB_resume_0600 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("setConnectionTimeOut3", (data: webview.WebDownloadState) => {
-        flg = true
-        expect(data).assertEqual(webview.WebDownloadState.CANCELED)
-        console.info('SUB_ACE_WEB_resume_0600 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_resume_0600 end')
-      })
+    it('testWebView_resume0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
         url: "testability/pages/SetConnectionTimeOut3"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
-      await driver.delayMs(10000)
-      expect(flg).assertTrue()
+      Utils.emitEvent("setConnectionTimeOut3", 131050);
+      Utils.registerBaseEvent("setConnectionTimeOut3", true, 131080, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
 
@@ -162,27 +130,16 @@ export default function SetConnectionTimeOut() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_resume0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_resume_0700 start')
-      console.info('SUB_ACE_WEB_resume_0700 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("setConnectionTimeOut4", (data: webview.WebDownloadState) => {
-        flg = true
-        expect(data).assertEqual(webview.WebDownloadState.PENDING)
-        console.info('SUB_ACE_WEB_resume_0700 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_resume_0700 end')
-      })
+    it('testWebView_resume0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
         url: "testability/pages/SetConnectionTimeOut4"
       })
-      await driver.delayMs(18000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(18000)
-      sendEventByKey('002', 10, '')
-      await driver.delayMs(10000)
-      expect(flg).assertTrue()
+      Utils.emitEvent("setConnectionTimeOut4", 131050);
+      Utils.registerBaseEvent("setConnectionTimeOut4", true, 131090, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
 

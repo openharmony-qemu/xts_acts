@@ -18,6 +18,9 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { URL } from '../../test/Config';
 import { LocalContext } from '../../test/GloablConfig';
 import Utils from '../../test/Util';
+import events_emitter from '@ohos.events.emitter';
+import JSON from '@ohos.util.json';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -32,12 +35,44 @@ struct WebComponent {
   webDownloadItem2: webview.WebDownloadItem = new webview.WebDownloadItem();
   webDownloadItem3: webview.WebDownloadItem = new webview.WebDownloadItem();
   isPause: boolean = false;
+  @State emitKey: string = '';
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+  @State flag1:boolean = false;
+  @State flag2:number = 0;
+  @State flag3:number = 0;
+
+  onPageShow() {
+    let valueChangeEvent: events_emitter.InnerEvent = {
+      eventId: 130960,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(130960);
+  }
+
+  private valueChangeCallBack = (eventData: events_emitter.EventData) => {
+    if (eventData != null) {
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+      if (eventData.data != null && eventData.data.ACTION != null) {
+        this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
+      }
+    }
+  }
 
   build(){
     Column() {
       Button('getGuid')
-        .key('003')
-        .onClick(() => {
+        .key('001')
+        .onClick(async () => {
+          console.info('key==>' + this.emitKey);
+          await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+          await waitForExist(()=>this.isReceive, this.emitKey, 0);
+          this.isReceive = -1;
           // 进行中
           try {
             console.log('ErrorCode download update speed guid');
@@ -46,10 +81,10 @@ struct WebComponent {
               webDownloadItem.start(LocalContext.context.cacheDir + '/31/' + webDownloadItem.getSuggestedFileName());
               this.webDownloadItem1 = webDownloadItem
             })
-            this.delegate1.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+            this.delegate1.onDownloadUpdated(async (webDownloadItem: webview.WebDownloadItem) => {
               console.log('download update speed guid1: ', webDownloadItem.getCurrentSpeed());
               if (webDownloadItem.getCurrentSpeed() > 0) {
-                LocalContext.context.eventHub.emit('DownloadGetCurrentSpeed31', webDownloadItem.getCurrentSpeed())
+                this.flag1 = true;
                 webDownloadItem.pause()
               }
             })
@@ -75,7 +110,7 @@ struct WebComponent {
               console.log('download update speed guid2: ' + webDownloadItem.getCurrentSpeed());
               if (webDownloadItem.getCurrentSpeed() > 0) {
                 webDownloadItem.pause()
-                LocalContext.context.eventHub.emit('DownloadGetCurrentSpeed32', this.webDownloadItem2.getCurrentSpeed())
+                this.flag2 = this.webDownloadItem2.getCurrentSpeed();
               }
             })
             this.delegate2.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
@@ -100,7 +135,7 @@ struct WebComponent {
               console.log('download update speed guid3: ' + webDownloadItem.getCurrentSpeed());
               if (webDownloadItem.getCurrentSpeed() > 0) {
                 webDownloadItem.cancel()
-                LocalContext.context.eventHub.emit('DownloadGetCurrentSpeed33', this.webDownloadItem3.getCurrentSpeed())
+                this.flag3 = this.webDownloadItem3.getCurrentSpeed();
               }
             })
             this.delegate3.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
@@ -113,26 +148,42 @@ struct WebComponent {
           } catch (error) {
             console.error(`ErrorCode4: ${(error as BusinessError).code},  Message4: ${(error as BusinessError).message}`);
           }
-        })
-      Button('startDownload')
-        .key('004')
-        .onClick(async () => {
           try {
             this.controller1.startDownload('https:' +
               '//npmmirror.com/mirrors/node/v20.17.0/node-v20.17.0-x64.msi');
-            await Utils.sleep(100)
             this.controller2.startDownload('https:' +
               '//npmmirror.com/mirrors/node/v20.17.0/node-v20.17.0-x64.msi');
-            await Utils.sleep(100)
             this.controller3.startDownload('https:' +
               '//npmmirror.com/mirrors/node/v20.17.0/node-v20.17.0-x64.msi');
           } catch (error) {
             console.error(`ErrorCode1: ${(error as BusinessError).code},  Message1: ${(error as BusinessError).message}`);
           }
+          try {
+            await waitForExist(() => ''+this.flag1, this.emitKey + ' flag1', 'true');
+            await waitForExist(() => this.flag2, this.emitKey + ' flag2', 0);
+            await waitForExist(() => this.flag3, this.emitKey + ' flag3', 0);
+            if(this.flag1 && this.flag2 == 0 && this.flag3 == 0) {
+              Utils.emitEvent(true, 131020);
+            }
+          } catch (error) {
+            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+          }
         })
       Web({ src: 'www1', controller: this.controller1 })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
       Web({ src: 'www2', controller: this.controller2 })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
       Web({ src: 'www3', controller: this.controller3 })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
     }
   }
 }

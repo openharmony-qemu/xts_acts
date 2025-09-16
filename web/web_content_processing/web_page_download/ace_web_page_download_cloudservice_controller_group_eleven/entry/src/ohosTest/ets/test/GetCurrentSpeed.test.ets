@@ -13,26 +13,29 @@
 * limitations under the License.
 */
 
-import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level } from '@ohos/hypium';
-import { Driver } from '@kit.TestKit';
 import { webview } from '@kit.ArkWeb';
-import { LocalContext } from './GloablConfig';
 import { router } from '@kit.ArkUI';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import Utils from './Util';
+import { waitForComponents } from './WaitTest.test';
+import events_emitter from '@ohos.events.emitter';
+import { Driver } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
-let driver: Driver = Driver.create();
-let flg: boolean = false
+const driver = Driver.create();
 
 export default function GetCurrentSpeed() {
   describe('GetCurrentSpeed', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async (done: Function) => {
       webview.WebviewController.initializeWebEngine()
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
+      await waitForComponents('001');
+      done();
     })
     beforeEach(() => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
@@ -40,20 +43,16 @@ export default function GetCurrentSpeed() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      flg = false;
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     })
     afterEach(async () => {
-      flg = false;
-      await driver.delayMs(500)
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
     })
     afterAll(async () => {
-      await driver.delayMs(500)
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
@@ -66,25 +65,16 @@ export default function GetCurrentSpeed() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('testWebView_getCurrentSpeed1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getCurrentSpeed_1001 start')
-      console.info('SUB_ACE_WEB_getCurrentSpeed_1001 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("DownloadGetCurrentSpeed", (data: number) => {
-        flg = true
-        expect(data).assertEqual(0)
-        console.info('SUB_ACE_WEB_getCurrentSpeed_1001 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getCurrentSpeed_1001 end')
-      })
+    it('testWebView_getCurrentSpeed1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       router.pushUrl({
         url: "testability/pages/GetCurrentSpeed1"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
-      await driver.delayMs(2000)
-      expect(flg).assertTrue()
+      Utils.emitEvent("DownloadGetCurrentSpeed", 130960);
+      Utils.registerBaseEvent("DownloadGetCurrentSpeed", 0, 130970, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
 
@@ -96,25 +86,16 @@ export default function GetCurrentSpeed() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_getCurrentSpeed1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getCurrentSpeed_1002 start')
-      console.info('SUB_ACE_WEB_getCurrentSpeed_1002 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("DownloadGetCurrentSpeed1", (data: number) => {
-        flg = true
-        expect(data).assertEqual(0)
-        console.info('SUB_ACE_WEB_getCurrentSpeed_1002 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getCurrentSpeed_1002 end')
-      })
+    it('testWebView_getCurrentSpeed1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
         url: "testability/pages/GetCurrentSpeed2"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
-      await driver.delayMs(2000)
-      expect(flg).assertTrue()
+      Utils.emitEvent("DownloadGetCurrentSpeed1", 130960);
+      Utils.registerBaseEvent("DownloadGetCurrentSpeed1", 0, 130980, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
 
@@ -126,44 +107,17 @@ export default function GetCurrentSpeed() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_getCurrentSpeed1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getCurrentSpeed_1003 start')
-      console.info('SUB_ACE_WEB_getCurrentSpeed_1003 start')
-      let callbackNum1: number = 0;
-      let callbackNum2: number = 0;
-      let callbackNum3: number = 0;
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("DownloadGetCurrentSpeed21", (data: number) => {
-        callbackNum1++
-        expect(data > 0).assertTrue()
-      })
-
-      LocalContext.context.eventHub.on("DownloadGetCurrentSpeed22", (data: number) => {
-        callbackNum2++
-        expect(data > 0).assertTrue()
-      })
-
-      LocalContext.context.eventHub.on("DownloadGetCurrentSpeed23", (data: number) => {
-        callbackNum3++
-        expect(data > 0).assertTrue()
-      })
+    it('testWebView_getCurrentSpeed1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
         url: "testability/pages/GetCurrentSpeed3"
       })
-
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
-      await driver.delayMs(10000)
-      expect(callbackNum1 > 0).assertTrue()
-      expect(callbackNum2 > 0).assertTrue()
-      expect(callbackNum3 > 0).assertTrue()
+      Utils.emitEvent("DownloadGetCurrentSpeed2", 130960);
+      Utils.registerBaseEvent("DownloadGetCurrentSpeed21", true, 130990, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
-      console.info('SUB_ACE_WEB_getCurrentSpeed_1003 end')
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getCurrentSpeed_1003 end')
     })
 
     /**
@@ -174,45 +128,17 @@ export default function GetCurrentSpeed() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_getCurrentSpeed1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getCurrentSpeed_1004 start')
-      console.info('SUB_ACE_WEB_getCurrentSpeed_1004 start')
-      await driver.delayMs(2000)
-      let callbackNum1: number = 0;
-      let callbackNum2: number = 0;
-      let callbackNum3: number = 0;
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("DownloadGetCurrentSpeed31", (data: number) => {
-        callbackNum1++
-        expect(data > 0).assertTrue()
-      })
-
-      LocalContext.context.eventHub.on("DownloadGetCurrentSpeed32", (data: number) => {
-        callbackNum2++
-        expect(data).assertEqual(0)
-      })
-
-      LocalContext.context.eventHub.on("DownloadGetCurrentSpeed33", (data: number) => {
-        callbackNum3++
-        expect(data).assertEqual(0)
-      })
+    it('testWebView_getCurrentSpeed1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
         url: "testability/pages/GetCurrentSpeed4"
       })
-
-      await driver.delayMs(2000)
-      sendEventByKey('003', 10, '')
-      await driver.delayMs(5000)
-      sendEventByKey('004', 10, '')
-      await driver.delayMs(20000)
-      expect(callbackNum1 > 0).assertTrue()
-      expect(callbackNum2 > 0).assertTrue()
-      expect(callbackNum3 > 0).assertTrue()
+      Utils.emitEvent("DownloadGetCurrentSpeed3", 130960);
+      Utils.registerBaseEvent("DownloadGetCurrentSpeed31", true, 131020, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
-      console.info('SUB_ACE_WEB_getCurrentSpeed_1004 end')
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getCurrentSpeed_1004 end')
     })
 
   })
