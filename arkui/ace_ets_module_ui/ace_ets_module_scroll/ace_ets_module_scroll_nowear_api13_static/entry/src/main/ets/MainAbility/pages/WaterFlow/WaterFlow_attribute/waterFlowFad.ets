@@ -15,7 +15,7 @@
 
 import { LengthMetrics } from '@ohos.arkui.node'
 import { WaterFlowDataSource } from './WaterFlowDataSource'
-import { Entry, Text, TextAttribute, Column, Component, Button,ColumnOptions, ButtonAttribute, ClickEvent, UserView,Image,ImageFit, Scroller,
+import { Entry, Text, TextAttribute, Column, Component, Button,ColumnOptions, ButtonAttribute, ClickEvent, Image,ImageFit, Scroller,
   Scroll,FontWeight,TextArea,CopyOptions,WaterFlow,
   ForEach,
   Search,

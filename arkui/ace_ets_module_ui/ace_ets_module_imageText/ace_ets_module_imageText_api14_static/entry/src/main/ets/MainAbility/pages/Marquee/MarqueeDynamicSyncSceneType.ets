@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { MarqueeDynamicSyncSceneType, MarqueeDynamicSyncScene ,DynamicSyncScene } from '@ohos.arkui.UIContext';
-import { Entry,FlexDirection,ItemAlign,TextClock,Margin,MarqueeUpdateStrategy,FlexAlign,Marquee,Flex,TextClockController,ExpectedFrameRateRange, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, UserView,Image,ImageFit } from '@ohos.arkui.component'
+import { Entry,FlexDirection,ItemAlign,TextClock,Margin,MarqueeUpdateStrategy,FlexAlign,Marquee,Flex,TextClockController,ExpectedFrameRateRange, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Image,ImageFit } from '@ohos.arkui.component'
 
 
 import {

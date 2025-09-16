@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, UserView,Image,ImageFit, Scroller,
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Image,ImageFit, Scroller,
   Scroll,FontWeight,TextArea,ScrollState,ScrollSource,
   ForEach,NodeContainer,Grid,GridItem,
   Search,Flex,ButtonType,
