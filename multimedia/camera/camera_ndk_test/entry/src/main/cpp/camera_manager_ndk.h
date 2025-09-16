@@ -119,6 +119,7 @@ public:
     bool isNormalVideo_;
     bool isSecurePhoto_;
     bool isMovingPhotoSupported_;
+    bool isPhotoQualityPrioritizationSupported_;
     OH_PhotoNative *photoNative_;
     OH_ImageNative *mainImage_;
     bool isTorchSupported_;
@@ -315,6 +316,8 @@ public:
     Camera_ErrorCode UnregisterPhotoAssetAvailableCallback(int useCaseCode);
     Camera_ErrorCode IsMovingPhotoSupported(int useCaseCode);
     Camera_ErrorCode EnableMovingPhoto(int useCaseCode, bool enable);
+    Camera_ErrorCode IsPhotoQualityPrioritizationSupported(int useCaseCode, int quality);
+    Camera_ErrorCode SetPhotoQualityPrioritization(int useCaseCode, int quality);
     Camera_ErrorCode GetMainImage(int useCaseCode);
     Camera_ErrorCode PhotoNativeRelease(int useCaseCode);
     Camera_ErrorCode CreatePhotoOutputWithoutSurface(int useCaseCode);

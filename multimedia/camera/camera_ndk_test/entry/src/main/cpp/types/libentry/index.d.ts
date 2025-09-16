@@ -94,6 +94,11 @@ interface movingPhoto {
   isMovingPhotoSupported: boolean;
 }
 
+interface photoQualityPrioritizationInstance {
+  errorCode: number;
+  isPhotoQualityPrioritizationSupported: boolean;
+}
+
 interface isTorchSupported {
   errorCode: number;
   isTorchSupported: boolean;
@@ -410,6 +415,10 @@ export const oHPhotoOutputUnregisterPhotoAssetAvailableCallback: (index:number) 
 export const oHPhotoOutputIsMovingPhotoSupported: (index:number) => movingPhoto;
 
 export const oHPhotoOutputEnableMovingPhoto: (index:number, enable:boolean) => number;
+
+export const oHPhotoOutputIsPhotoQualityPrioritizationSupported: (a:number, b:number) => photoQualityPrioritizationInstance;
+
+export const oHPhotoOutputSetPhotoQualityPrioritization: (a:number, b:number) => number;
 
 export const oHPhotoNativeGetMainImage: (index:number) => number;
 
