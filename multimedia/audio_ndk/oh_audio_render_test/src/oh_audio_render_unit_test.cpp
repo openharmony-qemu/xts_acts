@@ -169,7 +169,7 @@ static bool GetCurrentDeviceIsTV()
     OH_AudioDevice_Type deviceType;
     std::vector<uint8_t> deviceTypes;
     for (size_t i = 0; i < audioDeviceDescriptorArray->size; i++) {
-        OH_AudioDeviceDescriptor_GetDevice_Type(audioDeviceDescriptorArray->descriptors[i], &deviceType);
+        OH_AudioDeviceDescriptor_GetDeviceType(audioDeviceDescriptorArray->descriptors[i], &deviceType);
         deviceTypes.push_back(deviceType);
     }
 
