@@ -31,7 +31,6 @@
 #include <web/native_interface_arkweb.h>
 #include <SLES/OpenSLES.h>
 #include <SLES/OpenSLES_OpenHarmony.h>
-#include <SLES/OpenSLES_Platform.h>
 
 #define FAIL (-1)
 #define SUCCESS 1
@@ -1514,53 +1513,40 @@ static napi_value OHAudioStreamBuilderSetRendererOutputDeviceChangeCallback(napi
 
 static void BufferQueueCallback(SLOHBufferQueueItf sBufferQueueItf, void *pContext, SLuint32 size)
 {
-    AUDIO_INFO_LOG("Enter BufferQueueCallback");
     FILE *wavFile = (FILE *)pContext;
     if (wavFile != nullptr) {
         SLuint8 *buffer = nullptr;
         SLuint32 pSize = 0;
         SLresult result = (*bufferQueueItf)->GetBuffer(sBufferQueueItf, &buffer, &pSize);
         if (SL_RESULT_SUCCESS != result) {
-            AUDIO_INFO_LOG("BufferQueueCallback GetBuffer result: %{public}lu", result);
             return ;
         }
         if (buffer != nullptr) {
-            AUDIO_INFO_LOG("BufferQueueCallback, length, pSize:%{public}lu, size: %{public}lu.",
-                pSize, size);
             fwrite(buffer, 1, pSize, wavFile);
             result = (*bufferQueueItf)->Enqueue(sBufferQueueItf, buffer, size);
             if (SL_RESULT_SUCCESS != result) {
-                AUDIO_INFO_LOG("BufferQueueCallback Enqueue result: %{public}lu", result);
                 return ;
             }
-        } else {
-            AUDIO_INFO_LOG("BufferQueueCallback, buffer is null or pSize: %{public}lu, size: %{public}lu.",
-                pSize, size);
         }
     }
-    AUDIO_INFO_LOG("BufferQueueCallback end");
     return;
 }
 
 static SLresult OpenSLESCaptureTest()
 {
-    AUDIO_INFO_LOG("Enter OpenSLESCaptureTest");
     engineObject = nullptr;
     SLEngineItf engineItf = nullptr;
 
     SLresult result = slCreateEngine(&engineObject, 0, nullptr, 0, nullptr, nullptr);
     if (SL_RESULT_SUCCESS != result) {
-        AUDIO_INFO_LOG("OpenSLESCaptureTest slCreateEngine result: %{public}lu", result);
         return result;
     }
     result = (*engineObject)->Realize(engineObject, SL_BOOLEAN_FALSE);
     if (SL_RESULT_SUCCESS != result) {
-        AUDIO_INFO_LOG("OpenSLESCaptureTest Realize result: %{public}lu", result);
         return result;
     }
     result = (*engineObject)->GetInterface(engineObject, SL_IID_ENGINE, &engineItf);
     if (SL_RESULT_SUCCESS != result) {
-        AUDIO_INFO_LOG("OpenSLESCaptureTest get engineItf result: %{public}lu", result);
         return result;
     }
 
@@ -1598,75 +1584,37 @@ static SLresult OpenSLESCaptureTest()
     result = (*engineItf)->CreateAudioRecorder(engineItf, &pcmCapturerObject,
         &audioSource, &audioSink, 0, nullptr, nullptr);
     if (SL_RESULT_SUCCESS != result) {
-        AUDIO_INFO_LOG("OpenSLESCaptureTest CreateAudioRecorder result: %{public}lu", result);
         return result;
     }
     result = (*pcmCapturerObject)->Realize(pcmCapturerObject, SL_BOOLEAN_FALSE);
     if (SL_RESULT_SUCCESS != result) {
-        AUDIO_INFO_LOG("OpenSLESCaptureTest Realize result: %{public}lu", result);
         return result;
     }
     result = (*pcmCapturerObject)->GetInterface(pcmCapturerObject, SL_IID_RECORD, &recordItf);
     if (SL_RESULT_SUCCESS != result) {
-        AUDIO_INFO_LOG("OpenSLESCaptureTest get recordItf result: %{public}lu", result);
         return result;
     }
     result = (*pcmCapturerObject)->GetInterface(pcmCapturerObject, SL_IID_OH_BUFFERQUEUE, &bufferQueueItf);
     if (SL_RESULT_SUCCESS != result) {
-        AUDIO_INFO_LOG("OpenSLESCaptureTest get bufferQueueItf result: %{public}lu", result);
         return result;
     }
     result = (*bufferQueueItf)->RegisterCallback(bufferQueueItf, BufferQueueCallback, wavFile_);
     if (SL_RESULT_SUCCESS != result) {
-        AUDIO_INFO_LOG("OpenSLESCaptureTest RegisterCallback result: %{public}lu", result);
         return result;
     }
-    AUDIO_INFO_LOG("OpenSLESCaptureTest end");
     return result;
 }
 
-static void BufferQueueCallback(SLOHBufferQueueItf sBufferQueueItf, void *pContext, SLuint32 size)
-{
-    AUDIO_INFO_LOG("Enter BufferQueueCallback");
-    FILE *wavFile = (FILE *)pContext;
-    if (wavFile != nullptr) {
-        SLuint8 *buffer = nullptr;
-        SLuint32 pSize = 0;
-        SLresult result = (*bufferQueueItf)->GetBuffer(sBufferQueueItf, &buffer, &pSize);
-        if (SL_RESULT_SUCCESS != result) {
-            AUDIO_INFO_LOG("BufferQueueCallback GetBuffer result: %{public}lu", result);
-            return ;
-        }
-        if (buffer != nullptr) {
-            AUDIO_INFO_LOG("BufferQueueCallback, length, pSize:%{public}lu, size: %{public}lu.",
-                pSize, size);
-            fwrite(buffer, 1, pSize, wavFile);
-            result = (*bufferQueueItf)->Enqueue(sBufferQueueItf, buffer, size);
-            if (SL_RESULT_SUCCESS != result) {
-                AUDIO_INFO_LOG("BufferQueueCallback Enqueue result: %{public}lu", result);
-                return ;
-            }
-        } else {
-            AUDIO_INFO_LOG("BufferQueueCallback, buffer is null or pSize: %{public}lu, size: %{public}lu.",
-                pSize, size);
-        }
-    }
-    AUDIO_INFO_LOG("BufferQueueCallback end");
-    return;
-}
 
 static SLresult CaptureStart(SLRecordItf sRecordItf, SLOHBufferQueueItf sBufferQueueItf, FILE *wavFile)
 {
-    AUDIO_INFO_LOG("Enter CaptureStart");
     SLresult result = (*recordItf)->SetRecordState(sRecordItf, SL_RECORDSTATE_RECORDING);
     if (SL_RESULT_SUCCESS != result) {
-        AUDIO_INFO_LOG("CaptureStart SetRecordState result: %{public}lu", result);
         return result;
     }
     SLuint32 state = SL_RECORDSTATE_RECORDING;
     result = (*recordItf)->GetRecordState(sRecordItf, &state);
     if (SL_RESULT_SUCCESS != result) {
-        AUDIO_INFO_LOG("CaptureStart GetRecordState result: %{public}lu", result);
         return result;
     }
     if (wavFile != nullptr) {
@@ -1674,50 +1622,38 @@ static SLresult CaptureStart(SLRecordItf sRecordItf, SLOHBufferQueueItf sBufferQ
         SLuint32 pSize = 0;
         result = (*bufferQueueItf)->GetBuffer(sBufferQueueItf, &buffer, &pSize);
         if (SL_RESULT_SUCCESS != result) {
-            AUDIO_INFO_LOG("CaptureStart GetBuffer result: %{public}lu", result);
             return result;
         }
         if (buffer != nullptr) {
-            AUDIO_INFO_LOG("CaptureStart, enqueue buffer length: %{public}lu.", pSize);
             fwrite(buffer, 1, pSize, wavFile);
             result = (*bufferQueueItf)->Enqueue(sBufferQueueItf, buffer, pSize);
             if (SL_RESULT_SUCCESS != result) {
-                AUDIO_INFO_LOG("CaptureStart Enqueue result: %{public}lu", result);
                 return result;
             }
-        } else {
-            AUDIO_INFO_LOG("CaptureStart, buffer is null or pSize: %{public}lu.", pSize);
         }
     }
-    AUDIO_INFO_LOG("CaptureStart return result: %{public}lu", result);
     return result;
 }
 
 static SLresult CapturePause(SLRecordItf sRecordItf)
 {
-    AUDIO_INFO_LOG("Enter CapturePause");
     SLresult result = (*recordItf)->SetRecordState(sRecordItf, SL_RECORDSTATE_PAUSED);
     if (SL_RESULT_SUCCESS != result) {
-        AUDIO_INFO_LOG("CapturePause SetRecordState result: %{public}lu", result);
         return result;
     }
-    AUDIO_INFO_LOG("CapturePause return  result: %{public}lu", result);
     return result;
 }
 
 static SLresult CaptureStop(SLRecordItf sRecordItf)
 {
-    AUDIO_INFO_LOG("Enter CaptureStop");
     fflush(wavFile_);
     SLresult result = (*recordItf)->SetRecordState(sRecordItf, SL_RECORDSTATE_STOPPED);
     if (SL_RESULT_SUCCESS != result) {
-        AUDIO_INFO_LOG("CapturePause SetRecordState result: %{public}lu", result);
         return result;
     }
     (*pcmCapturerObject)->Destroy(pcmCapturerObject);
     fclose(wavFile_);
     wavFile_ = nullptr;
-    AUDIO_INFO_LOG("CaptureStop return  result: %{public}lu", result);
     return result;
 }
 
@@ -1732,7 +1668,6 @@ static napi_value TestOpenSlesRecorder(napi_env env, napi_callback_info info)
     std::string filePath = "/data/storage/el2/base/files/oh_test_audio.pcm"
     wavFile_ = fopen(filePath.c_str(), "wb");
     if (wavFile_ == nullptr) {
-        AUDIO_INFO_LOG("OpenSL ES capture: Unable to open file");
         return ;
     }
     SLresult result = OpenSLESCaptureTest();
