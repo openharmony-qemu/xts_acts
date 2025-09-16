@@ -1569,8 +1569,8 @@ static SLresult OpenSLESCaptureTest()
 
     SLDataFormat_PCM format_pcm = {
         SL_DATAFORMAT_PCM,
-        OHOS::AudioStandard::AudioChannel::MONO,
-        OHOS::AudioStandard::AudioSamplingRate::SAMPLE_RATE_44100,
+        1,
+        44100,
         SL_PCMSAMPLEFORMAT_FIXED_16,
         0,
         0,
@@ -1665,29 +1665,30 @@ static SLresult CaptureStop(SLRecordItf sRecordItf)
 static napi_value TestOpenSlesRecorder(napi_env env, napi_callback_info info)
 {
     napi_value sum;
-    std::string filePath = "/data/storage/el2/base/files/oh_test_audio.pcm"
+    std::string filePath = "/data/storage/el2/base/files/oh_test_audio.pcm";
     wavFile_ = fopen(filePath.c_str(), "wb");
     if (wavFile_ == nullptr) {
-        return ;
+        napi_create_int32(env,-1,&sum);
+        return sum;
     }
     SLresult result = OpenSLESCaptureTest();
     if (result != SL_RESULT_SUCCESS){
-        napi_create_int32(env,-1,sum);
+        napi_create_int32(env,-1,&sum);
         return sum;
     }
     result = CaptureStart(recordItf, bufferQueueItf, wavFile_);
     if (result != SL_RESULT_SUCCESS){
-        napi_create_int32(env,-1,sum);
+        napi_create_int32(env,-1,&sum);
         return sum;
     }
     result = CapturePause(recordItf);
     if (result != SL_RESULT_SUCCESS){
-        napi_create_int32(env,-1,sum);
+        napi_create_int32(env,-1,&sum);
         return sum;
     }
     result = CaptureStop(recordItf);
     if (result != SL_RESULT_SUCCESS){
-        napi_create_int32(env,-1,sum);
+        napi_create_int32(env,-1,&sum);
         return sum;
     }
     napi_create_int32(env,0,&sum);
@@ -1763,7 +1764,7 @@ static napi_value TestOpenSlesRecorderInValid(napi_env env, napi_callback_info i
 
 static napi_value InitOpenSlesTest(napi_env env, napi_callback_info info)
 {
-    napit_value sum;
+    napi_value sum;
     SLresult result = OpenSLESCaptureTest();
     if (result == SL_RESULT_SUCCESS){
         napi_create_int32(env,0,&sum);
@@ -1775,7 +1776,7 @@ static napi_value InitOpenSlesTest(napi_env env, napi_callback_info info)
 
 static napi_value DeInitOpenSlesTest(napi_env env, napi_callback_info info)
 {
-    napi sum;
+    napi_value sum;
     wavFile_ = nullptr;
     engineObject = nullptr;
     pcmCapturerObject = nullptr;
