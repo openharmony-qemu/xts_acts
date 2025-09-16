@@ -149,7 +149,8 @@
 #define TEST_ERROR_DESCRIPTION_SIZE (128)
 #define TEST_OPERATIONS_COUNT (1000)
 
-struct ThreadData {
+struct ThreadData
+{
     napi_env env;
     napi_value arraybuffer;
     int threadId;
@@ -163,7 +164,8 @@ struct ThreadData {
     napi_status getStatus;
 };
 
-struct BigIntThreadData {
+struct BigIntThreadData
+{
     napi_env env;
     napi_value bigint;
     int threadId;
@@ -3692,7 +3694,8 @@ static bool TestUtf8ToUtf16Conversion(napi_env env)
         return false;
     }
     size_t utf16ActualLength = 0;
-    napi_status status = napi_get_value_string_utf16(env, utf8Val, utf16Buffer, utf16RequiredLength + 1, &utf16ActualLength);
+    napi_status status = napi_get_value_string_utf16(env, utf8Val, utf16Buffer, 
+        utf16RequiredLength + 1, &utf16ActualLength);
     if (status != napi_ok || utf16ActualLength != utf16RequiredLength) {
         delete[] utf16Buffer;
         return false;
@@ -3729,7 +3732,8 @@ static bool TestLatin1ToUtf8Conversion(napi_env env)
         return false;
     }
     size_t utf8ActualLength = 0;
-    napi_status status = napi_get_value_string_utf8(env, latin1Val, utf8Buffer, utf8RequiredLength + 1, &utf8ActualLength);
+    napi_status status = napi_get_value_string_utf8(env, latin1Val, utf8Buffer, 
+        utf8RequiredLength + 1, &utf8ActualLength);
     if (status != napi_ok || utf8ActualLength != utf8RequiredLength) {
         delete[] utf8Buffer;
         return false;
@@ -3759,7 +3763,8 @@ static bool TestRoundTripConversion(napi_env env)
         return false;
     }
     size_t latin1ActualLength = 0;
-    napi_status status = napi_get_value_string_latin1(env, asciiVal, latin1Buffer, latin1RequiredLength + 1, &latin1ActualLength);
+    napi_status status = napi_get_value_string_latin1(env, asciiVal, latin1Buffer, 
+        latin1RequiredLength + 1, &latin1ActualLength);
     bool success = (status == napi_ok) && (latin1ActualLength == strlen(asciiOnlyString)) &&
                    (strncmp(asciiOnlyString, latin1Buffer, latin1ActualLength) == 0);
     delete[] latin1Buffer;
@@ -3867,7 +3872,8 @@ static bool TestUtf16EncodingOperations(napi_env env)
         return false;
     }
     size_t utf16ActualLength = 0;
-    napi_status status = napi_get_value_string_utf16(env, utf16Val, utf16Buffer, utf16RequiredLength + 1, &utf16ActualLength);
+    napi_status status = napi_get_value_string_utf16(env, utf16Val, utf16Buffer, 
+        utf16RequiredLength + 1, &utf16ActualLength);
     if (status != napi_ok || utf16ActualLength != utf16RequiredLength) {
         delete[] utf16Buffer;
         return false;
@@ -3904,7 +3910,8 @@ static bool TestLatin1EncodingOperations(napi_env env)
         return false;
     }
     size_t latin1ActualLength = 0;
-    napi_status status = napi_get_value_string_latin1(env, latin1Val, latin1Buffer, latin1RequiredLength + 1, &latin1ActualLength);
+    napi_status status = napi_get_value_string_latin1(env, latin1Val, latin1Buffer, 
+        latin1RequiredLength + 1, &latin1ActualLength);
     if (status != napi_ok || latin1ActualLength != latin1RequiredLength) {
         delete[] latin1Buffer;
         return false;
@@ -3934,7 +3941,8 @@ static bool TestUtf8EncodingOperations(napi_env env)
         return false;
     }
     size_t utf8ActualLength = 0;
-    napi_status status = napi_get_value_string_utf8(env, utf8Val, utf8Buffer, utf8RequiredLength + 1, &utf8ActualLength);
+    napi_status status = napi_get_value_string_utf8(env, utf8Val, utf8Buffer, 
+        utf8RequiredLength + 1, &utf8ActualLength);
     if (status != napi_ok || utf8ActualLength != utf8RequiredLength) {
         delete[] utf8Buffer;
         return false;
@@ -5464,14 +5472,15 @@ static bool TestAsyncTaskSchedulingPriority(napi_env env)
     // 创建异步工作对象（这里简化实现，实际需要完整的异步工作流程）
     // 由于异步工作的复杂性，这里主要测试API调用的正确性
     status = napi_create_async_work(env, nullptr, work_name, 
-                                   [](napi_env env, void* data) {
-                                       // 执行函数
-                                   },
-                                   [](napi_env env, napi_status status, void* data)
-    {
-                                       // 完成函数
-                                   },
-                                   nullptr, &work);
+        [](napi_env env, void* data)
+        {
+            // 执行函数
+        },
+        [](napi_env env, napi_status status, void* data)
+        {
+            // 完成函数
+        },
+        nullptr, &work);
     if (status != napi_ok) {
         return false;
     }
@@ -5494,7 +5503,8 @@ static napi_value NapiExtensionTest001(napi_env env, napi_callback_info info)
 }
 
 // Test 2: napi_call_threadsafe_function_with_priority线程安全函数调用
-static void ThreadSafeCallback(napi_env env, napi_value js_cb, void *context, void *data) {
+static void ThreadSafeCallback(napi_env env, napi_value js_cb, void *context, void *data)
+{
     if (env == nullptr || js_cb == nullptr) {
         return;
     }
@@ -5529,20 +5539,20 @@ static bool TestCallThreadSafeFunctionWithPriority(napi_env env)
     status = napi_create_function(env, "testCallback", NAPI_AUTO_LENGTH,
         [](napi_env env, napi_callback_info info) -> napi_value
         {
-                            // 获取参数
-                            size_t argc = 2;
-                            napi_value args[2];
-                            napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-                            
-                            // 计算两个数的和
-                            int32_t a = 0, b = 0;
-                            napi_get_value_int32(env, args[0], &a);
-                            napi_get_value_int32(env, args[1], &b);
-                            
-                            napi_value result = nullptr;
-                            napi_create_int32(env, a + b, &result);
-                            return result;
-                        }, nullptr, &callback_func);
+            // 获取参数
+            size_t argc = 2;
+            napi_value args[2];
+            napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+            // 计算两个数的和
+            int32_t a = 0;
+            int32_t b = 0;
+            napi_get_value_int32(env, args[0], &a);
+            napi_get_value_int32(env, args[1], &b);
+            
+            napi_value result = nullptr;
+            napi_create_int32(env, a + b, &result);
+            return result;
+        }, nullptr, &callback_func);
 
     if (status != napi_ok || callback_func == nullptr) {
         return false;
@@ -5600,7 +5610,8 @@ static bool CreateTestCallback(napi_env env, napi_value* callback_func)
 {
     napi_status status;
     status = napi_create_function(env, "testCallback", NAPI_AUTO_LENGTH, 
-        [](napi_env env, napi_callback_info info) -> napi_value {
+        [](napi_env env, napi_callback_info info) -> napi_value
+        {
             size_t argc = 2;
             napi_value args[2];
             napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -5621,8 +5632,7 @@ static bool CreateTestCallback(napi_env env, napi_value* callback_func)
 static bool CreateThreadSafeFunction(napi_env env, napi_value callback_func, 
     napi_value func_name, napi_threadsafe_function* func)
 {
-    napi_status status;
-    status = napi_create_threadsafe_function(env, callback_func, nullptr, func_name, 0, 1,
+    napi_status status = napi_create_threadsafe_function(env, callback_func, nullptr, func_name, 0, 1,
         nullptr, nullptr, nullptr, ThreadSafeCallback, func);
     return (status == napi_ok);
 }
@@ -5657,11 +5667,10 @@ static bool TestSamePriorityCalls(napi_threadsafe_function func, napi_value data
 // Helper function to verify test data
 static bool VerifySamePriorityTestData(napi_env env, napi_value dataA, napi_value dataB)
 {
-    napi_status status;
     napi_valuetype typeA;
     napi_valuetype typeB;
     
-    status = napi_typeof(env, dataA, &typeA);
+    napi_status status = napi_typeof(env, dataA, &typeA);
     if (status != napi_ok || typeA != napi_string) {
         return false;
     }
@@ -5845,18 +5854,19 @@ static bool TestNormalPriorityCallToHead(napi_env env)
     status = napi_create_function(env, "testCallback", NAPI_AUTO_LENGTH,
         [](napi_env env, napi_callback_info info) -> napi_value
         {
-                            size_t argc = 2;
-                            napi_value args[2];
-                            napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-                            
-                            int32_t a = 0, b = 0;
-                            napi_get_value_int32(env, args[0], &a);
-                            napi_get_value_int32(env, args[1], &b);
-                            
-                            napi_value result = nullptr;
-                            napi_create_int32(env, a + b, &result);
-                            return result;
-                        }, nullptr, &callback_func);
+            size_t argc = 2;
+            napi_value args[2];
+            napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+            
+            int32_t a = 0;
+            int32_t b = 0;
+            napi_get_value_int32(env, args[0], &a);
+            napi_get_value_int32(env, args[1], &b);
+            
+            napi_value result = nullptr;
+            napi_create_int32(env, a + b, &result);
+            return result;
+        }, nullptr, &callback_func);
 
     if (status != napi_ok || callback_func == nullptr) {
         return false;
@@ -5928,18 +5938,19 @@ static bool TestLowPriorityCall(napi_env env)
     status = napi_create_function(env, "testCallback", NAPI_AUTO_LENGTH,
         [](napi_env env, napi_callback_info info) -> napi_value
         {
-                            size_t argc = 2;
-                            napi_value args[2];
-                            napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-                            
-                            int32_t a = 0, b = 0;
-                            napi_get_value_int32(env, args[0], &a);
-                            napi_get_value_int32(env, args[1], &b);
-                            
-                            napi_value result = nullptr;
-                            napi_create_int32(env, a + b, &result);
-                            return result;
-                        }, nullptr, &callback_func);
+            size_t argc = 2;
+            napi_value args[2];
+            napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+            
+            int32_t a = 0;
+            int32_t b = 0;
+            napi_get_value_int32(env, args[0], &a);
+            napi_get_value_int32(env, args[1], &b);
+            
+            napi_value result = nullptr;
+            napi_create_int32(env, a + b, &result);
+            return result;
+        }, nullptr, &callback_func);
 
     if (status != napi_ok || callback_func == nullptr) {
         return false;
@@ -6355,7 +6366,6 @@ static bool CreateCloneList(napi_env env, napi_value sendable_obj, napi_value* c
 
 static bool TestSerializeWithCloneList(napi_env env)
 {
-    
     // 创建Sendable对象
     napi_value sendable_obj = nullptr;
     if (!CreateSendableObject(env, &sendable_obj)) {
@@ -6507,12 +6517,10 @@ static napi_value NapiExtensionTest012(napi_env env, napi_callback_info info)
 }
 
 // Test 13: napi_deserialize反序列化带有transfer数据的对象
-static bool TestDeserializeWithTransferData(napi_env env)
+// Helper function to create test object
+static bool CreateTestObject(napi_env env, napi_value* obj)
 {
-    // 简化实现 - 只测试基本的序列化/反序列化功能
-    // 创建简单对象
-    napi_value obj = nullptr;
-    napi_status status = napi_create_object(env, &obj);
+    napi_status status = napi_create_object(env, obj);
     if (status != napi_ok) {
         return false;
     }
@@ -6527,23 +6535,22 @@ static bool TestDeserializeWithTransferData(napi_env env)
     if (status != napi_ok) {
         return false;
     }
-    status = napi_set_property(env, obj, key, value);
-    if (status != napi_ok) {
-        return false;
-    }
-    
-    // 序列化对象
+    status = napi_set_property(env, *obj, key, value);
+    return (status == napi_ok);
+}
+
+// Helper function to serialize and deserialize object
+static bool SerializeAndDeserializeObject(napi_env env, napi_value obj, napi_value* deserialized)
+{
     napi_value undefined = nullptr;
     napi_get_undefined(env, &undefined);
     void* serialized = nullptr;
-    status = napi_serialize(env, obj, undefined, undefined, &serialized);
+    napi_status status = napi_serialize(env, obj, undefined, undefined, &serialized);
     if (status != napi_ok || serialized == nullptr) {
         return false;
     }
     
-    // 反序列化对象
-    napi_value deserialized = nullptr;
-    status = napi_deserialize(env, serialized, &deserialized);
+    status = napi_deserialize(env, serialized, deserialized);
     if (status != napi_ok) {
         if (serialized != nullptr) {
             napi_delete_serialization_data(env, serialized);
@@ -6551,25 +6558,30 @@ static bool TestDeserializeWithTransferData(napi_env env)
         return false;
     }
     
-    // 验证反序列化结果
-    napi_valuetype type;
-    status = napi_typeof(env, deserialized, &type);
-    if (status != napi_ok || type != napi_object) {
-        if (serialized != nullptr) {
-            napi_delete_serialization_data(env, serialized);
-        }
+    if (serialized != nullptr) {
+        napi_delete_serialization_data(env, serialized);
+    }
+    return true;
+}
+
+static bool TestDeserializeWithTransferData(napi_env env)
+{
+    // 创建测试对象
+    napi_value obj = nullptr;
+    if (!CreateTestObject(env, &obj)) {
         return false;
     }
     
-    // 清理序列化数据
-    if (serialized != nullptr) {
-        status = napi_delete_serialization_data(env, serialized);
-        if (status != napi_ok) {
-            return false;
-        }
+    // 序列化和反序列化
+    napi_value deserialized = nullptr;
+    if (!SerializeAndDeserializeObject(env, obj, &deserialized)) {
+        return false;
     }
     
-    return true;
+    // 验证结果
+    napi_valuetype type;
+    napi_status status = napi_typeof(env, deserialized, &type);
+    return (status == napi_ok && type == napi_object);
 }
 
 static napi_value NapiExtensionTest013(napi_env env, napi_callback_info info)
@@ -6722,9 +6734,6 @@ static napi_value NapiExtensionTest015(napi_env env, napi_callback_info info)
 }
 
 
-
-
-
 // Test 20: 在异步线程中运行和停止事件循环 - 修复版本
 static bool TestAsyncEventLoopRunAndStop(napi_env env)
 {
@@ -6748,16 +6757,17 @@ static bool TestAsyncEventLoopRunAndStop(napi_env env)
     
     // 创建异步工作对象 - 使用同步方式，避免复杂的异步管理
     status = napi_create_async_work(runtime_env, nullptr, work_name,
-        [](napi_env env, void* data) {
+        [](napi_env env, void* data)
+        {
             // 执行函数 - 简单的同步操作
             // 不执行复杂的异步操作，避免状态管理问题
-                                   },
-                                   [](napi_env env, napi_status status, void* data)
-    {
-                                       // 完成函数 - 简单的清理操作
-                                       // 不执行复杂的清理操作，避免状态管理问题
-                                   },
-                                   nullptr, &work);
+        },
+        [](napi_env env, napi_status status, void* data)
+        {
+            // 完成函数 - 简单的清理操作
+            // 不执行复杂的清理操作，避免状态管理问题
+        },
+        nullptr, &work);
     if (status != napi_ok) {
         napi_destroy_ark_runtime(&runtime_env);
         return false;
@@ -6840,11 +6850,6 @@ static napi_value NapiExtensionTest021(napi_env env, napi_callback_info info)
     napi_get_boolean(env, testResult, &result);
     return result;
 }
-
-
-
-
-
 
 // Test 27: napi_queue_async_work_with_qos验证异步任务按不同QoS级别正确执行
 static bool TestAsyncWorkWithQoS(napi_env env)
@@ -6929,9 +6934,6 @@ static napi_value NapiExtensionTest027(napi_env env, napi_callback_info info)
 
 
 
-
-
-
 // Test 36: 使用Node-API接口进行异步任务开发 (Promise方式)
 static bool TestAsyncTaskWithPromise(napi_env env)
 {
@@ -6977,11 +6979,12 @@ static bool TestAsyncTaskWithCallback(napi_env env)
     // 创建回调函数
     napi_value callback = nullptr;
     status = napi_create_function(env, "callback", NAPI_AUTO_LENGTH, 
-                                 [](napi_env env, napi_callback_info info) -> napi_value {
-                                     napi_value result = nullptr;
-                                     napi_get_undefined(env, &result);
-                                     return result;
-                                 }, nullptr, &callback);
+        [](napi_env env, napi_callback_info info) -> napi_value
+        {
+            napi_value result = nullptr;
+            napi_get_undefined(env, &result);
+            return result;
+        }, nullptr, &callback);
     if (status != napi_ok) {
         return false;
     }
@@ -7029,11 +7032,12 @@ static bool TestThreadSafetyDevelopment(napi_env env)
     // 创建JavaScript回调函数
     napi_value js_callback = nullptr;
     status = napi_create_function(env, "thread_safe_callback", NAPI_AUTO_LENGTH, 
-                                 [](napi_env env, napi_callback_info info) -> napi_value {
-                                     napi_value result = nullptr;
-                                     napi_get_undefined(env, &result);
-                                     return result;
-                                 }, nullptr, &js_callback);
+        [](napi_env env, napi_callback_info info) -> napi_value
+        {
+            napi_value result = nullptr;
+            napi_get_undefined(env, &result);
+            return result;
+        }, nullptr, &js_callback);
     if (status != napi_ok) {
         return false;
     }
@@ -7082,7 +7086,7 @@ static bool TestNativeArkTSObjectBinding(napi_env env)
     // 创建Native对象
     struct NativeData {
         int value;
-        NativeData(int v) : value(v) {}
+        explicit NativeData(int v) : value(v) {}
     };
     
     NativeData* native_data = new NativeData(100);
@@ -7097,29 +7101,30 @@ static bool TestNativeArkTSObjectBinding(napi_env env)
     
     // 绑定Native对象到ArkTS对象
     status = napi_wrap(env, js_obj, native_data, 
-                      [](napi_env env, void* data, void* hint) {
-                          delete static_cast<NativeData*>(data);
-                      }, nullptr, nullptr);
+        [](napi_env env, void* data, void* hint)
+        {
+            delete static_cast<NativeData*>(data);
+        }, nullptr, nullptr);
     if (status != napi_ok) {
         delete native_data;
         return false;
     }
     
     // 解绑Native对象
-    void* unwrapped_data = nullptr;
-    status = napi_unwrap(env, js_obj, &unwrapped_data);
+    void* unwrappedData = nullptr;
+    status = napi_unwrap(env, js_obj, &unwrappedData);
     if (status != napi_ok) {
         return false;
     }
     
     // 验证数据
-    NativeData* retrieved_data = static_cast<NativeData*>(unwrapped_data);
-    if (retrieved_data == nullptr || retrieved_data->value != TEST_VALUE_100) {
+    NativeData* retrievedData = static_cast<NativeData*>(unwrappedData);
+    if (retrievedData == nullptr || retrievedData->value != TEST_VALUE_100) {
         return false;
     }
     
     // 清理资源
-    delete retrieved_data;
+    delete retrievedData;
     
     return true;
 }
@@ -7141,7 +7146,7 @@ static bool TestNativeSendableArkTSObjectBinding(napi_env env)
     // 创建Native对象
     struct SendableData {
         int value;
-        SendableData(int v) : value(v) {}
+        explicit SendableData(int v) : value(v) {}
     };
     
     SendableData* sendable_data = new SendableData(200);
@@ -7158,8 +7163,8 @@ static bool TestNativeSendableArkTSObjectBinding(napi_env env)
     status = napi_wrap_sendable(env, js_obj, sendable_data,
         [](napi_env env, void* data, void* hint)
         {
-                                   delete static_cast<SendableData*>(data);
-                               }, nullptr);
+            delete static_cast<SendableData*>(data);
+        }, nullptr);
     if (status != napi_ok) {
         delete sendable_data;
         return false;
@@ -7192,10 +7197,6 @@ static napi_value NapiExtensionTest040(napi_env env, napi_callback_info info)
     napi_get_boolean(env, testResult, &result);
     return result;
 }
-
-
-
-
 
 // Test 45: 使用Node-API接口产生的异常日志/崩溃分析
 static bool TestNAPIExceptionLoggingAndCrashAnalysis(napi_env env)
@@ -7271,8 +7272,8 @@ static bool TestIsSendable(napi_env env)
         return false;
     }
     
-    bool is_sendable = false;
-    status = napi_is_sendable(env, obj, &is_sendable);
+    bool isSendable = false;
+    status = napi_is_sendable(env, obj, &isSendable);
     if (status != napi_ok) {
         return false;
     }
@@ -7305,7 +7306,8 @@ static bool TestIsSendable(napi_env env)
     return true;
 }
 
-static napi_value TestIsSendableWrapper(napi_env env, napi_callback_info info) {
+static napi_value TestIsSendableWrapper(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     bool testResult = TestIsSendable(env);
     
