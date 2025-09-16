@@ -64,7 +64,7 @@ static napi_value TestRegisterCommonEvent001(napi_env env, napi_callback_info in
     NAPI_END;
 }
 
-static napi_value TestSetForceDarkConfig002(napi_env env, napi_callback_info info)
+static napi_value TestRegisterCommonEvent002(napi_env env, napi_callback_info info)
 {
     NAPI_START(button, ARKUI_NODE_BUTTON);
     auto callback = [](ArkUI_NodeEvent *event) {
