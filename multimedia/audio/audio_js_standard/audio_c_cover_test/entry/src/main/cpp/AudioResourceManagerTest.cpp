@@ -58,7 +58,7 @@ napi_value FileRecourceManager::GetRawFileContent(napi_env env, napi_callback_in
     size_t strSize;
     napi_get_value_string_utf8(env, argv[1], NULL, 0, &strSize); // 不写内容进去
 
-    if (strSize == 0 || strSize > MAX_ALLOWED_SIZE) {
+    if (strSize == 0 || strSize > maxAllowedSize) {
         napi_throw_error(env, NULL, "字符串长度不合法");
         return NULL;
     }
