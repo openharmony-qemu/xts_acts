@@ -63,7 +63,7 @@ struct Demo {
             this.text1 = 'TextResponseType.RIGHT_CLICK'
           }
         })
-        .onTextSelectionChange((selectionStart: number, selectionEnd: number) => {
+        .onTextSelectionChange((selectionStart: int, selectionEnd: int) => {
           console.info(`文本选中区域变化回调, selectionStart: ${selectionStart}, selectionEnd: ${selectionEnd}`);
         })
         .borderWidth(1)
@@ -83,7 +83,7 @@ struct Demo {
               this.text2 = 'TextResponseType.LONG_PRESS'
             }
           })
-        .onTextSelectionChange((selectionStart: number, selectionEnd: number) => {
+        .onTextSelectionChange((selectionStart: int, selectionEnd: int) => {
           console.info(`文本选中区域变化回调, selectionStart: ${selectionStart}, selectionEnd: ${selectionEnd}`);
         })
         .borderWidth(1)
@@ -98,7 +98,7 @@ struct Demo {
         }
         .copyOption(CopyOptions.InApp)
         .bindSelectionMenu(TextSpanType.MIXED, this.SelectMixCustomMenu, TextResponseType.SELECT)
-        .onTextSelectionChange((selectionStart: number, selectionEnd: number) => {
+        .onTextSelectionChange((selectionStart: int, selectionEnd: int) => {
           console.info(`文本选中区域变化回调, selectionStart: ${selectionStart}, selectionEnd: ${selectionEnd}`);
         })
         .borderWidth(1)

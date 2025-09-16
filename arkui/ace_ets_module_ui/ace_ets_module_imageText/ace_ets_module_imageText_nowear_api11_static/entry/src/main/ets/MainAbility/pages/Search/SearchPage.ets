@@ -38,7 +38,7 @@ struct SearchPage {
   @State copyValue: string = ''
   @State cutValue: string = ''
   @State pasteValue: string = ''
-  @State positionValue: number = 1
+  @State positionValue: int = 1
   @State placeholder: string = 'Type to search...'
   @State icon: string = ''
   @State searchButton: string = 'SEARCH'
@@ -75,7 +75,7 @@ struct SearchPage {
         this.pasteValue = message.value as String
       }
       if (message.name == 'positionValue') {
-        this.positionValue = message.value as Number
+        this.positionValue = message.value as int
       }
       if (message.name == 'placeHolder') {
         this.placeholder = message.value as String

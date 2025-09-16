@@ -73,9 +73,9 @@ struct SearchExample {
         .enableKeyboardOnFocus(true)
         .selectionMenuHidden(this.isHidden)
         .placeholderFont({ size: 14, weight: 400 } as Font)
-        .onContentScroll((totalOffsetX: number, totalOffsetY: number): void => {
+        .onContentScroll((totalOffsetX: double, totalOffsetY: double): void => {
         })
-        .onTextSelectionChange((selectionStart: number, selectionEnd: number): void => {
+        .onTextSelectionChange((selectionStart: int, selectionEnd: int): void => {
           this.value1 = selectionStart + "";
           this.value2 = selectionEnd + "";
           this.controller.getTextContentLineCount();

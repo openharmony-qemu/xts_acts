@@ -142,7 +142,7 @@ struct Index {
                   console.info(i + '  paragraphStyledString5 textIndent:' + paraAttr.textIndent)
                   AppStorage.setOrCreate<undefined | Double>('StyledString5_textIndent', paraAttr.textIndent);
                   console.info(i + '  paragraphStyledString5 maxLines:' + paraAttr.maxLines)
-                  AppStorage.setOrCreate<undefined | Double>('StyledString5_maxLines', paraAttr.maxLines);
+                  AppStorage.setOrCreate<undefined | int>('StyledString5_maxLines', paraAttr.maxLines);
                   console.info(i + '  paragraphStyledString5 wordBreak:' + paraAttr.wordBreak)
                   AppStorage.setOrCreate<undefined | WordBreak>('StyledString5_wordBreak', paraAttr.wordBreak);
                   console.info(i + '  paragraphStyledString5 leadingMargin:' + paraAttr.leadingMargin)
@@ -167,7 +167,7 @@ struct Index {
                   console.info(i + '  paragraphStyledString6 textIndent:' + paraAttr.textIndent)
                   AppStorage.setOrCreate<undefined | Double>('StyledString6_textIndent', paraAttr.textIndent);
                   console.info(i + '  paragraphStyledString6 maxLines:' + paraAttr.maxLines)
-                  AppStorage.setOrCreate<undefined | Double>('StyledString6_maxLines', paraAttr.maxLines);
+                  AppStorage.setOrCreate<undefined | int>('StyledString6_maxLines', paraAttr.maxLines);
                   console.info(i + '  paragraphStyledString6 wordBreak:' + paraAttr.wordBreak)
                   AppStorage.setOrCreate<undefined | WordBreak>('StyledString6_wordBreak', paraAttr.wordBreak);
                   console.info(i + '  paragraphStyledString6 leadingMargin:' + paraAttr.leadingMargin,)

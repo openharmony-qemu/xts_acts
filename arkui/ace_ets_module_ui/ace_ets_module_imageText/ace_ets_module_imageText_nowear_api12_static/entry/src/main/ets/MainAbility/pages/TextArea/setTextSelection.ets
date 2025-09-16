@@ -97,10 +97,10 @@ struct setTextSelectionTest {
       
       
 
-      Button('setTextSelection 0.5 4.3')
+      Button('setTextSelection 0 4')
         .onClick((e:ClickEvent) => {
-          this.controller.setTextSelection(0.5, 4.3, {menuPolicy: MenuPolicy.HIDE})
-          this.controller2.setTextSelection(0.5, 4.3, {menuPolicy: MenuPolicy.HIDE})
+          this.controller.setTextSelection(0, 4, {menuPolicy: MenuPolicy.HIDE})
+          this.controller2.setTextSelection(0, 4, {menuPolicy: MenuPolicy.HIDE})
           AppStorage.setOrCreate('textAreaStart', this.controller.getSelection().start)
           AppStorage.setOrCreate('textAreaEnd', this.controller.getSelection().end)
           AppStorage.setOrCreate('textInputStart', this.controller2.getSelection().start)

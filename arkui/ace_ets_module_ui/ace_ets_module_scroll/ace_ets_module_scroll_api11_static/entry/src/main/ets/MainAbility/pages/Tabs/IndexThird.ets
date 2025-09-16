@@ -96,7 +96,7 @@ struct TabsExampleThird {
   @State bottomTabBarStyleLabelStyleFontSizeNumber: number = 0
   @State bottomTabBarStyleLabelStyleFontSizeString: string = '0.00vp'
   @State bottomTabBarStyleLabelStyleFontWeight: FontWeight = FontWeight.Normal
-  @State bottomTabBarStyleLabelStyleFontWeightNumber: number = 0
+  @State bottomTabBarStyleLabelStyleFontWeightNumber: int = 0
   @State bottomTabBarStyleLabelStyleFontWeightString: string = '0.00vp'
   @State bottomTabBarStyleLabelStyleFontFamilyString: string = '0.00vp'
   @State bottomTabBarStyleLabelStyleFontStyle: FontStyle = FontStyle.Normal

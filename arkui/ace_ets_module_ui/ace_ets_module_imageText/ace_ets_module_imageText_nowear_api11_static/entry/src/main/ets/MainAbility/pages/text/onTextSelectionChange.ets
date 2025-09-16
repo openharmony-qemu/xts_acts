@@ -41,7 +41,7 @@ struct OnTextSelectionChange1 {
         .copyOption(CopyOptions.InApp)
         .selection(3, 8)
         .textSelectable(TextSelectableMode.SELECTABLE_FOCUSABLE)
-        .onTextSelectionChange((selectionStart: number, selectionEnd: number) => {
+        .onTextSelectionChange((selectionStart: int, selectionEnd: int) => {
           console.info(`文本选中区域变化回调, selectionStart: ${selectionStart}, selectionEnd: ${selectionEnd}`);
           this.flag = `OnTextSelectionChange, selectionStart: ${selectionStart}, selectionEnd: ${selectionEnd}`
           AppStorage.setOrCreate('OnTextSelectionChange', `start:${selectionStart},end:${selectionEnd}`)

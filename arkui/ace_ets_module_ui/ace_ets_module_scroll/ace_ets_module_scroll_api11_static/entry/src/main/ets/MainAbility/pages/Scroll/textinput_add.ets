@@ -71,9 +71,9 @@ struct TextInputExample {
         .barState(BarState.On)
         .key('textInputAdd')
         .fontSize(14)
-        .onContentScroll((totalOffsetX: number, totalOffsetY: number): void => {
+        .onContentScroll((totalOffsetX: double, totalOffsetY: double): void => {
         })
-        .onTextSelectionChange((selectionStart: number, selectionEnd: number): void => {
+        .onTextSelectionChange((selectionStart: int, selectionEnd: int): void => {
           this.value1 = selectionStart + "";
           this.value2 = selectionEnd + "";
           this.controller.getTextContentLineCount();

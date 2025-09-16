@@ -19,7 +19,7 @@ import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos
 @Component
 struct BounceSymbolEffect_Scope {
   @State isActive: boolean = true;
-  @State triggerValueReplace: number = 0;
+  @State triggerValueReplace: int = 0;
   replaceFlag: boolean = true;
   @State BounceSymbolEffect_Scope: EffectScope = EffectScope.LAYER
   @State ReplaceSymbolEffect_Scope: EffectScope = EffectScope.WHOLE

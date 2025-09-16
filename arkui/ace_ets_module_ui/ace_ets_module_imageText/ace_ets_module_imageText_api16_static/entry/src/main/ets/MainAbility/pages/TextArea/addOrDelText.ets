@@ -116,8 +116,8 @@ struct addOrDelTextDemo {
         Button('del3')
           .id('del3')
           .onClick((e:ClickEvent) => {
-            this.controller1.deleteText({start: 1.1, end: 2.3})
-            this.controller2.deleteText({start: -1.1, end: -2.3})
+            this.controller1.deleteText({start: 1, end: 2})
+            this.controller2.deleteText({start: -1, end: -2})
             
           })
           .width('45%')

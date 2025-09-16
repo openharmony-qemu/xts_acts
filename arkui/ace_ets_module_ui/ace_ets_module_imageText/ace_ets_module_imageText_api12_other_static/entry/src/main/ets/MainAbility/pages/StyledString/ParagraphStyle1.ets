@@ -161,7 +161,7 @@ struct Index {
                   console.info(i + '  paragraphStyledString1 textIndent:' + paraAttr.textIndent)
                   AppStorage.setOrCreate<undefined | number>('StyledString1_' + i + '_textIndent', paraAttr.textIndent);
                   console.info(i + '  paragraphStyledString1 maxLines:' + paraAttr.maxLines)
-                  AppStorage.setOrCreate<undefined | number>('StyledString1_' + i + '_maxLines', paraAttr.maxLines);
+                  AppStorage.setOrCreate<undefined | int>('StyledString1_' + i + '_maxLines', paraAttr.maxLines);
                   console.info(i + '  paragraphStyledString1 wordBreak:' + paraAttr.wordBreak)
                   AppStorage.setOrCreate<undefined | WordBreak>('StyledString1_' + i + '_wordBreak',
                     paraAttr.wordBreak);

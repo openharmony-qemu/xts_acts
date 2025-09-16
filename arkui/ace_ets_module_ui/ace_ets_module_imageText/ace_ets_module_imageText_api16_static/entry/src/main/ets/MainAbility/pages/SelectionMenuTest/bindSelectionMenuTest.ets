@@ -47,7 +47,7 @@ struct bindSelectionMenuTest {
           this.onMenuHide = 'succ';
         }
       })
-      .onTextSelectionChange((selectionStart: number, selectionEnd: number) => {
+      .onTextSelectionChange((selectionStart: int, selectionEnd: int) => {
       })
       .height('15%')
       .textAlign(TextAlign.Center)
@@ -77,7 +77,7 @@ struct bindSelectionMenuTest {
           this.onMenuHide = 'succ';
         }
       })
-      .onTextSelectionChange((selectionStart: number, selectionEnd: number) => {
+      .onTextSelectionChange((selectionStart: int, selectionEnd: int) => {
         console.info(`文本选中区域变化回调, selectionStart: ${selectionStart}, selectionEnd: ${selectionEnd}`);
       })
       .height('15%')
@@ -107,7 +107,7 @@ struct bindSelectionMenuTest {
           this.onMenuHide = 'succ';
         }
       })
-      .onTextSelectionChange((selectionStart: number, selectionEnd: number) => {
+      .onTextSelectionChange((selectionStart: int, selectionEnd: int) => {
       })
       .height('15%')
       .textAlign(TextAlign.Center)

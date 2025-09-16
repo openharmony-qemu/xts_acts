@@ -24,14 +24,14 @@ import { State } from '@ohos.arkui.stateManagement'
 class Params {
   public text: string = ""
   public fontColor: ResourceColor = Color.Red
-  public fontSize: string | number = 16
-  public fontWeight: number | FontWeight | string = FontWeight.Normal
+  public fontSize: string | double = 16
+  public fontWeight: int | FontWeight | string = FontWeight.Normal
   public margin: Margin | Length | LocalizedMargin = 10
   public fontStyle: FontStyle | undefined = FontStyle.Normal
   public type: number
 
-  constructor(text: string, fontColor: ResourceColor, fontSize: string | number,
-    fontWeight: number | FontWeight | string, margin: Margin | Length | LocalizedMargin,
+  constructor(text: string, fontColor: ResourceColor, fontSize: string | double,
+    fontWeight: int | FontWeight | string, margin: Margin | Length | LocalizedMargin,
     fontStyle: FontStyle | undefined , type: number){
     this.text = text;
     this.fontColor = fontColor;

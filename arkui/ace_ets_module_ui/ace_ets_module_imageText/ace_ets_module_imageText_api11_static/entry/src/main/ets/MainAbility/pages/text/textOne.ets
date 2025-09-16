@@ -110,7 +110,7 @@ struct TextExample1 {
       Text('TextOverflow+maxLines').fontSize(9).fontColor(0xCCCCCC)
       Text('This is the setting of textOverflow to Clip text content This is the setting of textOverflow to None text content. This is the setting of textOverflow to Clip text content This is the setting of textOverflow to None text content.')
         .textOverflow({ overflow: this.textOverflow})
-        .maxLines(this.maxLines)
+        .maxLines(this.maxLines as int)
         .fontSize(12)
         .border({ width: 1 })
         .maxFontSize(18)
@@ -130,7 +130,7 @@ struct TextExample1 {
         .fontSize(12).border({ width: 1 }).padding(10)
       Text('This is the text with the line height set. This is the text with the line height set.')
         .fontSize(12).border({ width: 1 }).padding(10)
-        .lineHeight(this.lineHeight).key('text5')
+        .lineHeight(this.lineHeight as double).key('text5')
     }.height(600).width(350).padding({ left: 35, right: 35, top: 35 } as Padding)
   }
 }
