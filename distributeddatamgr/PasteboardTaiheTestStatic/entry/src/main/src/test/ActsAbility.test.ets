@@ -2130,6 +2130,7 @@ export default function abilityTest() {
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "pasteStart fail" + err.message);
                 expect().assertFail();
+                done();
             }
 
             try {
@@ -2137,6 +2138,7 @@ export default function abilityTest() {
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "pasteComplete fail" + err.message);
                 expect().assertFail();
+                done();
             }
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_PasteStart_Static_0010 end------");
             done();
@@ -2182,9 +2184,11 @@ export default function abilityTest() {
                 hilog.info(domain, tag, "htmlText:" + record.htmlText);
                 expect(String(htmlText)).assertEqual(record.htmlText);
                 expect(String(types)).assertEqual('text/plain,text/html,text/uri,text/want,pixelMap,app/xml');
+                done();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "message: " + err.message);
                 expect().assertFail()
+                done();
             }
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetValidTypes_Static_0010 end------");
             done();
@@ -2943,15 +2947,15 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name   : SUB_PasteBoard_ETS_SetDataSync_Static_0010
-         * @tc.number : SUB_PasteBoard_ETS_SetDataSync_Static_0010
+         * @tc.name   : SUB_PasteBoard_ETS_SetDataSync_Static_0020
+         * @tc.number : SUB_PasteBoard_ETS_SetDataSync_Static_0020
          * @tc.desc   : TgetDataWithProgress fail,err：401,message: Parameter error. mimeType cannot be empty.
          * @tc.size   : MediumTest
          * @tc.type   : Function
          * @tc.level  : Level 2
          */
-        it('SUB_PasteBoard_ETS_SetDataSync_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetDataSync_Static_0010 start------");
+        it('SUB_PasteBoard_ETS_SetDataSync_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SetDataSync_Static_0020 start------");
             let systemPasteBoard = pasteboard.getSystemPasteboard();
 
             console.info(tag + `${systemPasteBoard}`)
@@ -2967,7 +2971,7 @@ export default function abilityTest() {
                 expect(err.code == 401).assertTrue();
                 done();
             }
-            console.info(tag + "SUB_PasteBoard_ETS_SetDataSync_Static_0010 ---------end")
+            console.info(tag + "SUB_PasteBoard_ETS_SetDataSync_Static_0020 ---------end")
         })
 
         /**
