@@ -14,6 +14,7 @@
  */
 #include "common/common.h"
 #include "invalidate/InvalidateAttributesTest.cpp"
+#include "commonEvent/RegisterCommonEventTest.cpp"
 
 namespace ArkUICapiTest
 {
