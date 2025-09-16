@@ -20,10 +20,12 @@ import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
 import camera from '@ohos.multimedia.camera';
+import { Driver, ON, MatchPattern } from '@ohos.UiTest';
 
 
 const TAG = "CAMERA_XTS_TEST_TAG ";
 const TEST_OK = 0;
+const SLEEP_500 = 500;
 let receiver: image.ImageReceiver;
 let mPhotoSurface: string;
 
@@ -47,6 +49,18 @@ async function getPhotoReceiverSurface() {
   } else {
     console.log(TAG + '创建ImageReceiver实例 failed');
   }
+}
+
+function sleep(ms: number) {
+  return new Promise<number>(resolve => setTimeout(resolve, ms));
+}
+
+let driveFn = async () => {
+  let dr = Driver.create();
+  await sleep(SLEEP_500);
+  let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), SLEEP_500);
+  await sleep(SLEEP_500);
+  await power?.click();
 }
 
 function releaseCamera() {
@@ -77,6 +91,7 @@ export default function CameraXtsTest() {
   describe("CameraXtsTest", () => {
     beforeAll(async () => {
       await getPermissions()
+      await driveFn();
       await getPhotoReceiverSurface()
       getCameraManagerInstance()
       console.info("beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.")
