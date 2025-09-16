@@ -58,7 +58,7 @@ export default function MultimodalInputPointerTest() {
       let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyle_0100";
       let ifSetPointerStyleSuccess = 0;
       try {
-        pointer.setPointerStyle(100000, pointer.PointerStyle.CROSS, (err: Error | undefined): void => {
+        pointer.setPointerStyle(100000, pointer.PointerStyle.CROSS, err => {
           hilog.info(domain, tag, `${caseName} Set pointer style success`);
           ifSetPointerStyleSuccess++;
           ExpectTrue(ifSetPointerStyleSuccess == 1);
