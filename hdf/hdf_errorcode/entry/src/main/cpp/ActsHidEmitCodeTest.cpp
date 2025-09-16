@@ -15,7 +15,6 @@
 #include "ActsHidEmitCodeTest.h"
 #include "hilog/log.h"
 #include "napi/native_api.h"
-#include "native_common.h"
 #include "hid/hid_ddk_api.h"
 #include "hid/hid_ddk_types.h"
 #include "ddk/ddk_api.h"
@@ -27,17 +26,17 @@
 #include <cctype>
 #include <vector>
 
-struct Hid_DeviceHandle {
+struct HidDeviceHandle {
     int32_t fd = -1;
     int32_t nonBlock = 0;
 };
 
-Hid_DeviceHandle *NewHidDeviceHandle()
+HidDeviceHandle *NewHidDeviceHandle()
 {
-    return new Hid_DeviceHandle;
+    return new HidDeviceHandle;
 }
 
-void DeleteHidDeviceHandle(Hid_DeviceHandle **dev)
+void DeleteHidDeviceHandle(HidDeviceHandle **dev)
 {
     if (*dev != nullptr) {
         delete *dev;
@@ -113,8 +112,8 @@ void addHidEmitErrorCodeTest(std::vector<napi_property_descriptor>& descData)
         nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"HidCreateDeviceKeyCodeKEYK", nullptr, HidCreateDeviceKeyCodeKEYK,
             nullptr, nullptr, nullptr, napi_default, nullptr});
-    
 }
+
 uint64_t ConvertDeviceId(uint64_t deviceId64)
 {
     int32_t deviceId32 = static_cast<uint32_t>(deviceId64 >> THIRTYTWO_BIT);
@@ -149,7 +148,6 @@ napi_value IsHidDevice(napi_env env, napi_callback_info info)
     OH_Hid_Release();
     napi_value result = nullptr;
     napi_status status = napi_get_boolean(env, boolRet, &result);
-    NAPI_CALL(env, status);
     return result;
 }
 
@@ -202,7 +200,7 @@ napi_value HidCreateDevicePropDirect(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDevicePropDirect(DEVICE_NAME);
-    napi_create_int32(env, deviceId , &result);
+    napi_create_int32(env, deviceId, &result);
     return result;
 }
 
@@ -255,7 +253,7 @@ napi_value HidCreateDevicePropPointingStick(napi_env env, napi_callback_info inf
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDevicePropPointingStick(DEVICE_NAME);
-    napi_create_int32(env, deviceId , &result);
+    napi_create_int32(env, deviceId, &result);
     return result;
 }
 
@@ -308,7 +306,7 @@ napi_value HidCreateDevicePropButtonPad(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDevicePropButtonPad(DEVICE_NAME);
-    napi_create_int32(env, deviceId , &result);
+    napi_create_int32(env, deviceId, &result);
     return result;
 }
 
@@ -361,7 +359,7 @@ napi_value HidCreateDevicePropSemiMt(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDevicePropSemiMt(DEVICE_NAME);
-    napi_create_int32(env, deviceId , &result);
+    napi_create_int32(env, deviceId, &result);
     return result;
 }
 
@@ -414,7 +412,7 @@ napi_value HidCreateDevicePropTopButtonPad(napi_env env, napi_callback_info info
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDevicePropTopButtonPad(DEVICE_NAME);
-    napi_create_int32(env, deviceId , &result);
+    napi_create_int32(env, deviceId, &result);
     return result;
 }
 
@@ -467,7 +465,7 @@ napi_value HidCreateDevicePropAccelerometer(napi_env env, napi_callback_info inf
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDevicePropAccelerometer(DEVICE_NAME);
-    napi_create_int32(env, deviceId , &result);
+    napi_create_int32(env, deviceId, &result);
     return result;
 }
 
@@ -520,7 +518,7 @@ napi_value HidCreateDeviceEventTypeHidEVRel(napi_env env, napi_callback_info inf
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDeviceEventTypeHidEVRel(DEVICE_NAME);
-    napi_create_int32(env, deviceId , &result);
+    napi_create_int32(env, deviceId, &result);
     return result;
 }
 
@@ -529,7 +527,6 @@ napi_value HidSynEventReport(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDevicePropDirect(DEVICE_NAME);
-    NAPI_ASSERT(env, deviceId >= 0, "OH_Hid_CreateDevice failed");
     Hid_EmitItem event = {
         .type = HID_EV_MSC,
         .code = HID_SYN_REPORT,
@@ -538,7 +535,7 @@ napi_value HidSynEventReport(napi_env env, napi_callback_info info)
     std::vector<Hid_EmitItem> items;
     items.push_back(event);
     int32_t returnValue = OH_Hid_EmitEvent(deviceId, items.data(), (uint16_t)items.size());
-    napi_create_int32(env, returnValue , &result);
+    napi_create_int32(env, returnValue, &result);
     return result;
 }
 
@@ -547,7 +544,6 @@ napi_value HidSynEventConfig(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDevicePropDirect(DEVICE_NAME);
-    NAPI_ASSERT(env, deviceId >= 0, "OH_Hid_CreateDevice failed");
     Hid_EmitItem event = {
         .type = HID_EV_MSC,
         .code = HID_SYN_CONFIG,
@@ -556,7 +552,7 @@ napi_value HidSynEventConfig(napi_env env, napi_callback_info info)
     std::vector<Hid_EmitItem> items;
     items.push_back(event);
     int32_t returnValue = OH_Hid_EmitEvent(deviceId, items.data(), (uint16_t)items.size());
-    napi_create_int32(env, returnValue , &result);
+    napi_create_int32(env, returnValue, &result);
     return result;
 }
 
@@ -565,16 +561,15 @@ napi_value HidSynEventMtReport(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDevicePropDirect(DEVICE_NAME);
-    NAPI_ASSERT(env, deviceId >= 0, "OH_Hid_CreateDevice failed");
     Hid_EmitItem event = {
         .type = HID_EV_MSC,
-        .code = HID_SYN_MT_REPORT ,
+        .code = HID_SYN_MT_REPORT,
         .value = 0x000d0042
     };
     std::vector<Hid_EmitItem> items;
     items.push_back(event);
     int32_t returnValue = OH_Hid_EmitEvent(deviceId, items.data(), (uint16_t)items.size());
-    napi_create_int32(env, returnValue , &result);
+    napi_create_int32(env, returnValue, &result);
     return result;
 }
 
@@ -583,7 +578,6 @@ napi_value HidSynEventDropped(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDevicePropDirect(DEVICE_NAME);
-    NAPI_ASSERT(env, deviceId >= 0, "OH_Hid_CreateDevice failed");
     Hid_EmitItem event = {
         .type = HID_EV_MSC,
         .code = HID_SYN_DROPPED,
@@ -592,7 +586,7 @@ napi_value HidSynEventDropped(napi_env env, napi_callback_info info)
     std::vector<Hid_EmitItem> items;
     items.push_back(event);
     int32_t returnValue = OH_Hid_EmitEvent(deviceId, items.data(), (uint16_t)items.size());
-    napi_create_int32(env, returnValue , &result);
+    napi_create_int32(env, returnValue, &result);
     return result;
 }
 
@@ -645,7 +639,7 @@ napi_value HidCreateDeviceKeyCodeKEYA(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDeviceKeyCodeKEYA(DEVICE_NAME);
-    napi_create_int32(env, deviceId , &result);
+    napi_create_int32(env, deviceId, &result);
     return result;
 }
 
@@ -698,7 +692,7 @@ napi_value HidCreateDeviceKeyCodeKEYB(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDeviceKeyCodeKEYB(DEVICE_NAME);
-    napi_create_int32(env, deviceId , &result);
+    napi_create_int32(env, deviceId, &result);
     return result;
 }
 
@@ -751,7 +745,7 @@ napi_value HidCreateDeviceKeyCodeKEYC(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDeviceKeyCodeKEYC(DEVICE_NAME);
-    napi_create_int32(env, deviceId , &result);
+    napi_create_int32(env, deviceId, &result);
     return result;
 }
 
@@ -804,7 +798,7 @@ napi_value HidCreateDeviceKeyCodeKEYD(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDeviceKeyCodeKEYD(DEVICE_NAME);
-    napi_create_int32(env, deviceId , &result);
+    napi_create_int32(env, deviceId, &result);
     return result;
 }
 
@@ -857,7 +851,7 @@ napi_value HidCreateDeviceKeyCodeKEYE(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDeviceKeyCodeKEYE(DEVICE_NAME);
-    napi_create_int32(env, deviceId , &result);
+    napi_create_int32(env, deviceId, &result);
     return result;
 }
 
@@ -910,7 +904,7 @@ napi_value HidCreateDeviceKeyCodeKEYF(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDeviceKeyCodeKEYF(DEVICE_NAME);
-    napi_create_int32(env, deviceId , &result);
+    napi_create_int32(env, deviceId, &result);
     return result;
 }
 
@@ -963,7 +957,7 @@ napi_value HidCreateDeviceKeyCodeKEYG(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDeviceKeyCodeKEYG(DEVICE_NAME);
-    napi_create_int32(env, deviceId , &result);
+    napi_create_int32(env, deviceId, &result);
     return result;
 }
 
@@ -1016,7 +1010,7 @@ napi_value HidCreateDeviceKeyCodeKEYH(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDeviceKeyCodeKEYH(DEVICE_NAME);
-    napi_create_int32(env, deviceId , &result);
+    napi_create_int32(env, deviceId, &result);
     return result;
 }
 
@@ -1069,7 +1063,7 @@ napi_value HidCreateDeviceKeyCodeKEYI(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDeviceKeyCodeKEYI(DEVICE_NAME);
-    napi_create_int32(env, deviceId , &result);
+    napi_create_int32(env, deviceId, &result);
     return result;
 }
 
@@ -1122,7 +1116,7 @@ napi_value HidCreateDeviceKeyCodeKEYJ(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDeviceKeyCodeKEYJ(DEVICE_NAME);
-    napi_create_int32(env, deviceId , &result);
+    napi_create_int32(env, deviceId, &result);
     return result;
 }
 
@@ -1175,6 +1169,6 @@ napi_value HidCreateDeviceKeyCodeKEYK(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t deviceId = 0;
     deviceId = CreateTestDeviceKeyCodeKEYK(DEVICE_NAME);
-    napi_create_int32(env, deviceId , &result);
+    napi_create_int32(env, deviceId, &result);
     return result;
 }
