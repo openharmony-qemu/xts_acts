@@ -40,31 +40,49 @@
 #define NUM_1 1
 
 // 测试常量定义
-#define TEST_NEGATIVE_INT32_VALUE -12345
-#define TEST_LOOP_COUNT 10
-#define INT32_MAX_VALUE 2147483647
-#define INT32_MIN_VALUE -2147483648
-#define UINT32_MAX_VALUE 4294967295
-#define TEST_STRING_LENGTH 64
-#define TEST_BUFFER_SIZE 256
-#define TEST_OPERATION_COUNT 5
-#define TEST_STRING_COUNT 5
-#define TEST_SIMULATION_LOOP_COUNT 10
-#define TEST_LOOP_BUFFER_SIZE 64
-#define TEST_NULL_STRING_LENGTH 12
-#define TEST_NULL_STRING_INDEX 4
-#define TEST_ALPHABET_SIZE 26
-#define TEST_ALPHABET_START 'A'
-#define TEST_LONG_STRING_SIZE 512
-#define TEST_MIN_TRUNCATION_SIZE 5
-#define TEST_RANDOM_SLEEP_MAX_MS 10
-#define TEST_MEMORY_KB_PER_OPERATION 1
-#define TEST_MEMORY_DIVISOR 1000
-#define NUM_2 2
-#define NUM_3 3
-#define NUM_4 4
-#define THREAD_COUNT_2 2
-#define THREAD_COUNT_3 3
+#define TEST_NEGATIVE_INT32_VALUE (-12345)
+#define TEST_LOOP_COUNT (10)
+#define INT32_MAX_VALUE (2147483647)
+#define INT32_MIN_VALUE (-2147483648)
+#define UINT32_MAX_VALUE (4294967295)
+#define TEST_STRING_LENGTH (64)
+#define TEST_BUFFER_SIZE (256)
+#define TEST_OPERATION_COUNT (5)
+#define TEST_STRING_COUNT (5)
+#define TEST_SIMULATION_LOOP_COUNT (10)
+#define TEST_LOOP_BUFFER_SIZE (64)
+#define TEST_NULL_STRING_LENGTH (12)
+#define TEST_NULL_STRING_INDEX (4)
+#define TEST_ALPHABET_SIZE (26)
+#define TEST_ALPHABET_START ('A')
+#define TEST_LONG_STRING_SIZE (512)
+#define TEST_MIN_TRUNCATION_SIZE (5)
+#define TEST_RANDOM_SLEEP_MAX_MS (10)
+#define TEST_MEMORY_KB_PER_OPERATION (1)
+#define TEST_MEMORY_DIVISOR (1000)
+#define NUM_2 (2)
+#define NUM_3 (3)
+#define NUM_4 (4)
+#define THREAD_COUNT_2 (2)
+#define THREAD_COUNT_3 (3)
+
+// 更多测试常量
+#define TEST_NUMBER_15 (15)
+#define TEST_NUMBER_12 (12)
+#define TEST_NUMBER_100 (100)
+#define TEST_NUMBER_1000 (1000)
+#define TEST_NUMBER_512 (512)
+#define TEST_NUMBER_256 (256)
+#define TEST_NUMBER_128 (128)
+#define TEST_NUMBER_64 (64)
+#define TEST_NUMBER_32 (32)
+#define TEST_NUMBER_16 (16)
+#define TEST_NUMBER_8 (8)
+#define TEST_NUMBER_4 (4)
+#define TEST_NUMBER_3 (3)
+#define TEST_NUMBER_2 (2)
+#define TEST_NUMBER_1 (1)
+#define TEST_NUMBER_0 (0)
 #define THREAD_COUNT_4 4
 #define THREAD_COUNT_5 5
 #define TEST_VALUE_42 42
@@ -4304,7 +4322,8 @@ static napi_value NapiStringTest009(napi_env env, napi_callback_info info)
 // ==================== NAPI Number Test Functions ====================
 
 // Helper function to test int32 creation and retrieval
-static bool TestInt32CreationAndRetrieval(napi_env env, int32_t testValue) {
+static bool TestInt32CreationAndRetrieval(napi_env env, int32_t testValue)
+{
     napi_status status;
     napi_value int32Val = nullptr;
     status = napi_create_int32(env, testValue, &int32Val);
@@ -4321,7 +4340,8 @@ static bool TestInt32CreationAndRetrieval(napi_env env, int32_t testValue) {
 }
 
 // Helper function to test uint32 creation and retrieval
-static bool TestUint32CreationAndRetrieval(napi_env env, uint32_t testValue) {
+static bool TestUint32CreationAndRetrieval(napi_env env, uint32_t testValue)
+{
     napi_status status;
     napi_value uint32Val = nullptr;
     status = napi_create_uint32(env, testValue, &uint32Val);
@@ -4338,7 +4358,8 @@ static bool TestUint32CreationAndRetrieval(napi_env env, uint32_t testValue) {
 }
 
 // Helper function to test int64 creation and retrieval
-static bool TestInt64CreationAndRetrieval(napi_env env, int64_t testValue) {
+static bool TestInt64CreationAndRetrieval(napi_env env, int64_t testValue)
+{
     napi_status status;
     napi_value int64Val = nullptr;
     status = napi_create_int64(env, testValue, &int64Val);
@@ -4355,7 +4376,8 @@ static bool TestInt64CreationAndRetrieval(napi_env env, int64_t testValue) {
 }
 
 // Helper function to test double creation and retrieval
-static bool TestDoubleCreationAndRetrieval(napi_env env, double testValue) {
+static bool TestDoubleCreationAndRetrieval(napi_env env, double testValue)
+{
     napi_status status;
     napi_value doubleVal = nullptr;
     status = napi_create_double(env, testValue, &doubleVal);
@@ -4401,7 +4423,8 @@ static napi_value NapiNumberTest001(napi_env env, napi_callback_info info)
 }
 
 // Helper function to test int32 to uint32 conversion
-static bool TestInt32ToUint32Conversion(napi_env env) {
+static bool TestInt32ToUint32Conversion(napi_env env)
+{
     napi_status status;
     int32_t negativeInt32 = -12345;
     napi_value int32Val = nullptr;
@@ -4419,7 +4442,8 @@ static bool TestInt32ToUint32Conversion(napi_env env) {
 }
 
 // Helper function to test uint32 to int32 conversion
-static bool TestUint32ToInt32Conversion(napi_env env) {
+static bool TestUint32ToInt32Conversion(napi_env env)
+{
     napi_status status;
     uint32_t largeUint32 = UINT32_MAX_VALUE;
     napi_value uint32Val = nullptr;
@@ -4437,7 +4461,8 @@ static bool TestUint32ToInt32Conversion(napi_env env) {
 }
 
 // Helper function to test int32 to int64 conversion
-static bool TestInt32ToInt64Conversion(napi_env env) {
+static bool TestInt32ToInt64Conversion(napi_env env)
+{
     napi_status status;
     int32_t int32Value = 2147483647; // INT32_MAX
     napi_value int32Val = nullptr;
@@ -4455,7 +4480,8 @@ static bool TestInt32ToInt64Conversion(napi_env env) {
 }
 
 // Helper function to test int64 to int32 conversion (overflow case)
-static bool TestInt64ToInt32Conversion(napi_env env) {
+static bool TestInt64ToInt32Conversion(napi_env env)
+{
     napi_status status;
     int64_t largeInt64 = 2147483648; // INT32_MAX + 1
     napi_value int64Val = nullptr;
@@ -4473,7 +4499,8 @@ static bool TestInt64ToInt32Conversion(napi_env env) {
 }
 
 // Helper function to test int32 to double conversion
-static bool TestInt32ToDoubleConversion(napi_env env) {
+static bool TestInt32ToDoubleConversion(napi_env env)
+{
     napi_status status;
     int32_t int32ToDouble = 123456789;
     napi_value int32Val = nullptr;
@@ -4491,7 +4518,8 @@ static bool TestInt32ToDoubleConversion(napi_env env) {
 }
 
 // Helper function to test double to int32 conversion (truncation)
-static bool TestDoubleToInt32Conversion(napi_env env) {
+static bool TestDoubleToInt32Conversion(napi_env env)
+{
     napi_status status;
     double doubleToInt32 = 123.999;
     napi_value doubleVal = nullptr;
@@ -4509,7 +4537,8 @@ static bool TestDoubleToInt32Conversion(napi_env env) {
 }
 
 // Helper function to test cross-type conversion
-static bool TestCrossTypeConversion(napi_env env) {
+static bool TestCrossTypeConversion(napi_env env)
+{
     // Test 1: int32 to uint32 (negative number)
     if (!TestInt32ToUint32Conversion(env)) {
         return false;
@@ -4602,7 +4631,8 @@ static napi_value NapiNumberTest003(napi_env env, napi_callback_info info)
 }
 
 // Helper function to test combined operations
-static bool TestCombinedOperations(napi_env env) {
+static bool TestCombinedOperations(napi_env env)
+{
     napi_status status;
     
     // Test 1: Create double and convert to int32
@@ -4657,7 +4687,8 @@ static napi_value NapiNumberTest004(napi_env env, napi_callback_info info)
 }
 
 // Helper function to test type conversion and overflow
-static bool TestTypeConversionAndOverflow(napi_env env) {
+static bool TestTypeConversionAndOverflow(napi_env env)
+{
     napi_status status;
     
     // Test 1: Create int64 with value exceeding int32 range
@@ -5482,8 +5513,8 @@ static void ThreadSafeCallback(napi_env env, napi_value js_cb, void *context, vo
     // 创建测试数据
     napi_value number1 = nullptr;
     napi_value number2 = nullptr;
-    napi_create_int32(env, 12, &number1);
-    napi_create_int32(env, 15, &number2);
+    napi_create_int32(env, TEST_NUMBER_12, &number1);
+    napi_create_int32(env, TEST_NUMBER_15, &number2);
     
     napi_value argv[2] = {number1, number2};
     napi_value result = nullptr;
@@ -5570,29 +5601,46 @@ static napi_value NapiExtensionTest002(napi_env env, napi_callback_info info)
     return result;
 }
 
+// Helper function to create test callback
+static bool CreateTestCallback(napi_env env, napi_value* callback_func)
+{
+    napi_status status;
+    status = napi_create_function(env, "testCallback", NAPI_AUTO_LENGTH, 
+        [](napi_env env, napi_callback_info info) -> napi_value {
+            size_t argc = 2;
+            napi_value args[2];
+            napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+            
+            int32_t a = 0;
+            int32_t b = 0;
+            napi_get_value_int32(env, args[0], &a);
+            napi_get_value_int32(env, args[1], &b);
+            
+            napi_value result = nullptr;
+            napi_create_int32(env, a + b, &result);
+            return result;
+        }, nullptr, callback_func);
+    return (status == napi_ok && *callback_func != nullptr);
+}
+
+// Helper function to create thread safe function
+static bool CreateThreadSafeFunction(napi_env env, napi_value callback_func, napi_value func_name, napi_threadsafe_function* func)
+{
+    napi_status status;
+    status = napi_create_threadsafe_function(env, callback_func, nullptr, func_name, 0, 1,
+        nullptr, nullptr, nullptr, ThreadSafeCallback, func);
+    return (status == napi_ok);
+}
+
 // Test 3: 使用高优先级调用线程安全函数，添加到队列尾部
 // 测试高优先级调用到队列尾部
-static bool TestHighPriorityCallToTail(napi_env env) {
+static bool TestHighPriorityCallToTail(napi_env env)
+{
     napi_status status;
     
     // 创建回调函数
     napi_value callback_func = nullptr;
-    status = napi_create_function(env, "testCallback", NAPI_AUTO_LENGTH, 
-                        [](napi_env env, napi_callback_info info) -> napi_value {
-                            size_t argc = 2;
-                            napi_value args[2];
-                            napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-                            
-                            int32_t a = 0, b = 0;
-                            napi_get_value_int32(env, args[0], &a);
-                            napi_get_value_int32(env, args[1], &b);
-                            
-                            napi_value result = nullptr;
-                            napi_create_int32(env, a + b, &result);
-                            return result;
-                        }, nullptr, &callback_func);
-
-    if (status != napi_ok || callback_func == nullptr) {
+    if (!CreateTestCallback(env, &callback_func)) {
         return false;
     }
     
@@ -5604,9 +5652,7 @@ static bool TestHighPriorityCallToTail(napi_env env) {
         return false;
     }
     
-    status = napi_create_threadsafe_function(env, callback_func, nullptr, func_name, 0, 1,
-        nullptr, nullptr, nullptr, ThreadSafeCallback, &func);
-    if (status != napi_ok) {
+    if (!CreateThreadSafeFunction(env, callback_func, func_name, &func)) {
         return false;
     }
     
@@ -6155,17 +6201,17 @@ static napi_value NapiExtensionTest009(napi_env env, napi_callback_info info)
 }
 
 // Test 10: napi_serialize序列化带有clone_list的对象
-static bool TestSerializeWithCloneList(napi_env env) {
+// Helper function to create sendable object
+static bool CreateSendableObject(napi_env env, napi_value* sendable_obj)
+{
     napi_status status;
-    
-    // 创建Sendable对象
-    napi_value sendable_obj = nullptr;
-    status = napi_create_object(env, &sendable_obj);
+    status = napi_create_object(env, sendable_obj);
     if (status != napi_ok) {
         return false;
     }
     
-    napi_value key = nullptr, value = nullptr;
+    napi_value key = nullptr;
+    napi_value value = nullptr;
     status = napi_create_string_utf8(env, "data", NAPI_AUTO_LENGTH, &key);
     if (status != napi_ok) {
         return false;
@@ -6174,14 +6220,15 @@ static bool TestSerializeWithCloneList(napi_env env) {
     if (status != napi_ok) {
         return false;
     }
-    status = napi_set_property(env, sendable_obj, key, value);
-    if (status != napi_ok) {
-        return false;
-    }
-    
-    // 创建包含Sendable对象的主对象
-    napi_value obj = nullptr;
-    status = napi_create_object(env, &obj);
+    status = napi_set_property(env, *sendable_obj, key, value);
+    return (status == napi_ok);
+}
+
+// Helper function to create main object with sendable
+static bool CreateMainObjectWithSendable(napi_env env, napi_value sendable_obj, napi_value* obj)
+{
+    napi_status status;
+    status = napi_create_object(env, obj);
     if (status != napi_ok) {
         return false;
     }
@@ -6191,19 +6238,41 @@ static bool TestSerializeWithCloneList(napi_env env) {
     if (status != napi_ok) {
         return false;
     }
-    status = napi_set_property(env, obj, obj_key, sendable_obj);
+    status = napi_set_property(env, *obj, obj_key, sendable_obj);
+    return (status == napi_ok);
+}
+
+// Helper function to create clone list
+static bool CreateCloneList(napi_env env, napi_value sendable_obj, napi_value* clone_list)
+{
+    napi_status status;
+    status = napi_create_array_with_length(env, TEST_NUMBER_1, clone_list);
     if (status != napi_ok) {
+        return false;
+    }
+    status = napi_set_element(env, *clone_list, TEST_NUMBER_0, sendable_obj);
+    return (status == napi_ok);
+}
+
+static bool TestSerializeWithCloneList(napi_env env)
+{
+    napi_status status;
+    
+    // 创建Sendable对象
+    napi_value sendable_obj = nullptr;
+    if (!CreateSendableObject(env, &sendable_obj)) {
+        return false;
+    }
+    
+    // 创建包含Sendable对象的主对象
+    napi_value obj = nullptr;
+    if (!CreateMainObjectWithSendable(env, sendable_obj, &obj)) {
         return false;
     }
     
     // 创建clone_list
     napi_value clone_list = nullptr;
-    status = napi_create_array_with_length(env, 1, &clone_list);
-    if (status != napi_ok) {
-        return false;
-    }
-    status = napi_set_element(env, clone_list, 0, sendable_obj);
-    if (status != napi_ok) {
+    if (!CreateCloneList(env, sendable_obj, &clone_list)) {
         return false;
     }
     
@@ -6908,7 +6977,7 @@ static bool TestThreadSafetyDevelopment(napi_env env) {
     }
     
     status = napi_create_threadsafe_function(env, js_callback, nullptr, func_name, 0, 1,
-                                            nullptr, nullptr, nullptr, nullptr, &func);
+        nullptr, nullptr, nullptr, nullptr, &func);
     if (status != napi_ok) {
         return false;
     }
