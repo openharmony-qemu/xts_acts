@@ -13,13 +13,15 @@
 * limitations under the License.
 */
 
-import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level } from '@ohos/hypium';
 import { Driver } from '@kit.TestKit';
 import { webview } from '@kit.ArkWeb';
-import { LocalContext } from './GloablConfig';
 import { router } from '@kit.ArkUI';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import Utils from './Util';
+import events_emitter from '@ohos.events.emitter';
+import { waitForComponents } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -47,13 +49,11 @@ export default function GetPercentCompleteSecond() {
     })
     afterEach(async () => {
       flg = false;
-      await driver.delayMs(500)
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
     })
     afterAll(async () => {
-      await driver.delayMs(500)
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
@@ -66,25 +66,17 @@ export default function GetPercentCompleteSecond() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_getPercentComplete1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getPercentComplete_1001 start')
-      console.info('SUB_ACE_WEB_getPercentComplete_1001 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("DownloadGetPercentComplete1", (data: number) => {
-        flg = true
-        expect(data).assertEqual(0)
-        console.info('SUB_ACE_WEB_getPercentComplete_1001 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getPercentComplete_1001 end')
-      })
+    it('testWebView_getPercentComplete1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
         url: "testability/pages/GetPercentComplete1"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('0022', 10, '')
-      await driver.delayMs(1000)
-      expect(flg).assertTrue()
+      await waitForComponents('001');
+      Utils.emitEvent("DownloadGetPercentComplete1", 131470);
+      Utils.registerBaseEvent("DownloadGetPercentComplete1", 0, 131480, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
 
@@ -96,44 +88,18 @@ export default function GetPercentCompleteSecond() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_getPercentComplete1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getPercentComplete_1002 start')
-      console.info('SUB_ACE_WEB_getPercentComplete_1002 start')
-      let callbackNum1: number = 0;
-      let callbackNum2: number = 0;
-      let callbackNum3: number = 0;
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("DownloadGetPercentComplete21", (data: number) => {
-        callbackNum1++
-        expect(data > 0).assertTrue()
-      })
-
-      LocalContext.context.eventHub.on("DownloadGetPercentComplete22", (data: number) => {
-        callbackNum2++
-        expect(data > 0).assertTrue()
-      })
-
-      LocalContext.context.eventHub.on("DownloadGetPercentComplete23", (data: number) => {
-        callbackNum3++
-        expect(data > 0).assertTrue()
-      })
+    it('testWebView_getPercentComplete1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
         url: "testability/pages/GetPercentComplete2"
       })
-
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
-      await driver.delayMs(30000)
-      expect(callbackNum1 > 0).assertTrue()
-      expect(callbackNum2 > 0).assertTrue()
-      expect(callbackNum3 > 0).assertTrue()
+      await waitForComponents('001');
+      Utils.emitEvent("DownloadGetPercentComplete2", 131470);
+      Utils.registerBaseEvent("DownloadGetPercentComplete21", true, 131490, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
-      console.info('SUB_ACE_WEB_getPercentComplete_1002 end')
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getPercentComplete_1002 end')
     })
 
     /**
@@ -145,24 +111,16 @@ export default function GetPercentCompleteSecond() {
      * @tc.level Level 2
      */
     it('testWebView_getPercentComplete1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getPercentComplete_1003 start')
-      console.info('SUB_ACE_WEB_getPercentComplete_1003 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("DownloadGetPercentComplete3", (data: number) => {
-        expect(data).assertEqual(0)
-        console.info('SUB_ACE_WEB_getPercentComplete_1003 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getPercentComplete_1003 end')
-        done()
-      })
       router.pushUrl({
         url: "testability/pages/GetPercentComplete3"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
+      await waitForComponents('001');
+      Utils.emitEvent("DownloadGetPercentComplete3", 131470);
+      Utils.registerBaseEvent("DownloadGetPercentComplete3", 0, 131520, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
 
@@ -175,24 +133,16 @@ export default function GetPercentCompleteSecond() {
      * @tc.level Level 2
      */
     it('testWebView_getPercentComplete1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getPercentComplete_1004 start')
-      console.info('SUB_ACE_WEB_getPercentComplete_1004 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("DownloadGetPercentComplete4", (data: number) => {
-        expect(data).assertEqual(0)
-        console.info('SUB_ACE_WEB_getPercentComplete_1004 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getPercentComplete_1004 end')
-        done()
-      })
       router.pushUrl({
         url: "testability/pages/GetPercentComplete4"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
+      await waitForComponents('001');
+      Utils.emitEvent("DownloadGetPercentComplete4", 131470);
+      Utils.registerBaseEvent("DownloadGetPercentComplete4", 0, 131530, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
 
@@ -205,24 +155,16 @@ export default function GetPercentCompleteSecond() {
      * @tc.level Level 2
      */
     it('testWebView_getPercentComplete1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getPercentComplete_1005 start')
-      console.info('SUB_ACE_WEB_getPercentComplete_1005 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("DownloadGetPercentComplete5", (data: number) => {
-        expect(data).assertEqual(100)
-        console.info('SUB_ACE_WEB_getPercentComplete_1005 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getPercentComplete_1005 end')
-      })
       router.pushUrl({
         url: "testability/pages/GetPercentComplete5"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
-      done()
+      await waitForComponents('001');
+      Utils.emitEvent("DownloadGetPercentComplete5", 131470);
+      Utils.registerBaseEvent("DownloadGetPercentComplete5", 100, 131540, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
 
