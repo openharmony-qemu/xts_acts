@@ -676,23 +676,6 @@ export function classTaskFunction2(args: MyClass): MyClass {
   return args;
 }
 
-export type SendableFunction = (func: SendableFunction) => SendableFunction;
-
-export function sampleFunction(func: SendableFunction): SendableFunction {
-  console.log('Executing sampleFunction');
-  return func;
-}
-
-export function printSendableFunction1(arg: SendableFunction): SendableFunction {
-  console.info('printArgs: ' + arg);
-  return arg;
-}
-
-export function printSendableFunction2(arg: SendableFunction): SendableFunction {
-  console.info('printArgs: ' + arg);
-  return arg;
-}
-
 export function unitClampedArrayTaskFunction1(args: Uint8ClampedArray): Uint8ClampedArray {
   console.log(`Task 2 is running with input: ${args}`);
   return args;

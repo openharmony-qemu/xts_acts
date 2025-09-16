@@ -54,9 +54,6 @@ import {
   sendAbleClassTaskFunction1,
   sendAbleClassTaskFunction2,
   MyClassAble,
-  sampleFunction,
-  printSendableFunction1,
-  printSendableFunction2,
   unitClampedArrayTaskFunction1,
   unitClampedArrayTaskFunction2,
   unitClampedArrayTaskFunction3,
@@ -71,8 +68,7 @@ import {
   union2,
   union3,
   union4,
-  EnumTest,
-  SendableFunction,
+  EnumTest
 } from '../testability/pages/SequenceRunnerTaskMethodTest';
 import { AsyncLock1, BaseClass } from '../testability/pages/SequenceRunnerSendableTest';
 import { BusinessError } from '@ohos.base';
