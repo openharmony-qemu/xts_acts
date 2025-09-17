@@ -50,8 +50,8 @@
       {
         "name": "ohos.permission.POWER_MANAGER",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -59,8 +59,8 @@
       {
         "name": "ohos.permission.CAPTURE_SCREEN",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -68,8 +68,8 @@
       {
         "name": "ohos.permission.WRITE_MEDIA",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -77,8 +77,8 @@
       {
         "name": "ohos.permission.READ_MEDIA",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -86,8 +86,8 @@
       {
         "name": "ohos.permission.INTERNET",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -95,8 +95,8 @@
       {
         "name": "ohos.permission.MEDIA_LOCATION",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -104,8 +104,8 @@
       {
         "name": "ohos.permission.CAMERA",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -113,8 +113,8 @@
       {
         "name": "ohos.permission.MICROPHONE",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -122,8 +122,8 @@
       {
         "name": "ohos.permission.START_INVISIBLE_ABILITY",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -131,8 +131,8 @@
       {
         "name": "ohos.permission.SYSTEM_FLOAT_WINDOW",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -140,8 +140,8 @@
       {
         "name": "ohos.permission.GET_BUNDLE_INFO_PRIVILEGED",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -149,8 +149,8 @@
       {
         "name": "ohos.permission.ACCELEROMETER",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -158,8 +158,8 @@
       {
         "name": "ohos.permission.REMOVE_CACHE_FILES",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -167,8 +167,8 @@
       {
         "name": "ohos.permission.GET_INSTALLED_BUNDLE_LIST",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -176,8 +176,8 @@
       {
         "name": "ohos.permission.CHANGE_ABILITY_ENABLED_STATE",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -185,8 +185,8 @@
       {
         "name": "ohos.permission.GET_WIFI_INFO",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -194,8 +194,8 @@
       {
         "name": "ohos.permission.READ_IMAGEVIDEO",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -203,8 +203,8 @@
       {
         "name": "ohos.permission.WRITE_IMAGEVIDEO",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -212,8 +212,8 @@
       {
         "name": "ohos.permission.ACCESS_SCREEN_LOCK_INNER",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -221,8 +221,8 @@
       {
         "name": "ohos.permission.INPUT_MONITORING",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -230,8 +230,8 @@
       {
         "name": "ohos.permission.GET_WIFI_INFO_INTERNAL",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -239,8 +239,8 @@
       {
         "name": "ohos.permission.SET_WIFI_INFO",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -248,8 +248,8 @@
       {
         "name": "ohos.permission.GET_WIFI_PEERS_MAC",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -257,8 +257,8 @@
       {
         "name": "ohos.permission.GET_WIFI_LOCAL_MAC",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -266,8 +266,8 @@
       {
         "name": "ohos.permission.GET_WIFI_CONFIG",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -275,8 +275,8 @@
       {
         "name": "ohos.permission.SET_WIFI_CONFIG",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -284,8 +284,8 @@
       {
         "name": "ohos.permission.MANAGE_WIFI_CONNECTION",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -293,8 +293,8 @@
       {
         "name": "ohos.permission.MANAGE_WIFI_HOTSPOT",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -302,8 +302,8 @@
       {
         "name": "ohos.permission.LOCATION",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -311,8 +311,8 @@
       {
         "name": "ohos.permission.APPROXIMATELY_LOCATION",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -320,8 +320,8 @@
       {
         "name": "ohos.permission.USE_BLUETOOTH",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -329,8 +329,8 @@
       {
         "name": "ohos.permission.DISCOVER_BLUETOOTH",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -338,8 +338,8 @@
       {
         "name": "ohos.permission.MANAGE_BLUETOOTH",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -347,8 +347,8 @@
       {
         "name": "ohos.permission.ACCESS_BLUETOOTH",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -356,8 +356,8 @@
       {
         "name": "ohos.permission.ACTIVITY_MOTION",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -365,8 +365,8 @@
       {
         "name": "ohos.permission.REBOOT",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
@@ -374,8 +374,8 @@
       {
         "name": "ohos.permission.ACCESS_BIOMETRIC",
         "reason":"$string:test",
-        "usedScene":{
-          "abilities"[
+        "usedScene": {
+          "abilities": [
             "FormAbility"
           ]
         }
