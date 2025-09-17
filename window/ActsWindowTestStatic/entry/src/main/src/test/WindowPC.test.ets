@@ -307,13 +307,13 @@ export default function WindowPCTest() {
                     }).catch((err: BusinessError) :PromiseLike<void>|undefined => {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call maximize. Cause: ' + JSON.stringify(err));
                         await (win! as window.Window).destroyWindow();
-                        expect(false).assertTrue();
+                        expect(err!.code).assertEqual(1300004);
                         done()
                     });
                 } catch (exception: BusinessError) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call maximize. Cause:' + JSON.stringify(exception));
-                    expect(exception!.code).assertEqual(1300004);
                     await (win! as window.Window).destroyWindow();
+                    expect(false).assertTrue();
                     done()
                 }
             } catch (err: BusinessError) {
