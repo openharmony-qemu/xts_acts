@@ -19,7 +19,13 @@ import deviceManager from "@ohos.driver.deviceManager";
 
 const Success = 0
 const TAG: string = "[HidEmitEventTest]";
-
+const DEVICE_NOSUPPORT_ERRINFO: string = "The device does not support or cannot find hid_ddk_service;";
+function IsDevcieSupport(errCode: number, caseName: string) {
+  if (errCode == -3) {
+    console.info(TAG, `Test result ${caseName} : ${DEVICE_NOSUPPORT_ERRINFO}`);
+    expect('undefined').assertEqual(DEVICE_NOSUPPORT_ERRINFO);
+  }
+}
 export default function ActsHidEmitCodeTest() {
   let deviceId: number = -1;
   describe('ActsHidEmitCodeTest', () => {
@@ -209,6 +215,7 @@ export default function ActsHidEmitCodeTest() {
       try {
         console.info("====>SUB_Driver_Ext_HidSynEventReport_0800 start====");
         let result: number = baskddkerror.HidSynEventReport();
+        IsDevcieSupport(result, 'SUB_Driver_Ext_HidSynEventReport_0800');
         expect(result).assertEqual(0);
         console.info("====>SUB_Driver_Ext_HidSynEventReport_0800 result: " + result);
         done()
@@ -230,6 +237,7 @@ export default function ActsHidEmitCodeTest() {
       try {
         console.info("====>SUB_Driver_Ext_HidSynEventConfig_0900 start====");
         let result: number = baskddkerror.HidSynEventConfig();
+        IsDevcieSupport(result, 'SUB_Driver_Ext_HidSynEventConfig_0900');
         expect(result).assertEqual(0);
         console.info("====>SUB_Driver_Ext_HidSynEventConfig_0900 result: " + result);
         done()
@@ -251,6 +259,7 @@ export default function ActsHidEmitCodeTest() {
       try {
         console.info("====>SUB_Driver_Ext_HidSynEventMtReport_1000 start====");
         let result: number = baskddkerror.HidSynEventMtReport();
+        IsDevcieSupport(result, 'SUB_Driver_Ext_HidSynEventMtReport_1000');
         expect(result).assertEqual(0);
         console.info("====>SUB_Driver_Ext_HidSynEventMtReport_1000 result: " + result);
         done()
@@ -272,6 +281,7 @@ export default function ActsHidEmitCodeTest() {
       try {
         console.info("====>SUB_Driver_Ext_HidSynEventDropped_1100 start====");
         let result: number = baskddkerror.HidSynEventReport();
+        IsDevcieSupport(result, 'SUB_Driver_Ext_HidSynEventDropped_1100');
         expect(result).assertEqual(0);
         console.info("====>SUB_Driver_Ext_HidSynEventDropped_1100 result: " + result);
         done()
