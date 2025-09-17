@@ -3280,7 +3280,7 @@ export default function typeArrayInt8ArrayTest() {
       int8Arr.set(uint8Source);
       expect(int8Arr[0]).assertEqual(70);
       expect(int8Arr[1]).assertEqual(80);
-      expect(int8Arr.length).assertEqual(3);
+      expect(int8Arr.length).assertEqual(2);
     })
 
     /**
@@ -3402,7 +3402,7 @@ export default function typeArrayInt8ArrayTest() {
       expect(subArr[0]).assertEqual(30);
       expect(subArr[1]).assertEqual(undefined);
       expect(subArr[2]).assertEqual(undefined);
-      expect(subArr.length).assertEqual(4);
+      expect(subArr.length).assertEqual(1);
     })
 
     /**
@@ -3420,7 +3420,7 @@ export default function typeArrayInt8ArrayTest() {
       expect(subArr[0]).assertEqual(20);
       expect(subArr[1]).assertEqual(30);
       expect(subArr[2]).assertEqual(40);
-      expect(subArr.length).assertEqual(4);
+      expect(subArr.length).assertEqual(3);
     })
 
     /**
@@ -3665,7 +3665,7 @@ export default function typeArrayInt8ArrayTest() {
       expect(filteredArr[0]).assertEqual(5);
       expect(filteredArr[1]).assertEqual(10);
       expect(filteredArr instanceof Int8Array).assertEqual(true);
-      expect(filteredArr.length).assertEqual(5);
+      expect(filteredArr.length).assertEqual(2);
     })
 
     /**
