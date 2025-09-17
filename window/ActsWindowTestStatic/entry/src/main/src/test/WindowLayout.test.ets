@@ -593,13 +593,12 @@ export default function WindowLayoutTest() {
                             expect(false).assertTrue();
                         }).catch( (err: BusinessError) :PromiseLike<void>|undefined=> {
                             hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call startMoving. Cause: ' + JSON.stringify(err));
-                            expect(err!.code).assertEqual(1300002);
-                            
+                            expect(false).assertTrue();
                         });
                         done()
                     } catch (exception: BusinessError) {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call startMoving. Cause:' + JSON.stringify(exception));
-                        expect(false).assertTrue();
+                        expect(exception!.code).assertEqual(1300002);
                         done()
                     }
                 })
