@@ -64,16 +64,16 @@ export default function EnableShowHideWithContentCoverPage() {
       await btn1.click();
       console.log('[EnableShowHideWithContentCoverPage_0100] btn1 click');
       await driver.delayMs(3000);
-      let testValue: string = AppStorage.get('testValue') as string;
-      expect(testValue).assertEqual('0');
+      let testValue1: string = AppStorage.get('testValue') as string;
+      expect(testValue1).assertEqual('0');
       AppStorage.delete('testValue');
 
       let btn2: Component = await driver.findComponent(ON.text('back'));
       await btn2.click();
       console.log('[EnableShowHideWithContentCoverPage_0100] btn2 click');
       await driver.delayMs(3000);
-      let testValue: string = AppStorage.get('testValue') as string;
-      expect(testValue).assertEqual('0');
+      let testValue2: string = AppStorage.get('testValue') as string;
+      expect(testValue2).assertEqual('0');
       AppStorage.delete('testValue');
       console.info('EnableShowHideWithContentCoverPage_0100 END');
       done();
@@ -100,16 +100,16 @@ export default function EnableShowHideWithContentCoverPage() {
       await btn2.click();
       console.log('[EnableShowHideWithContentCoverPage_0200] btn2 click');
       await driver.delayMs(3000);
-      let testValue: string = AppStorage.get('testValue') as string;
-      expect(testValue).assertEqual('1');
+      let testValue1: string = AppStorage.get('testValue') as string;
+      expect(testValue1).assertEqual('1');
       AppStorage.delete('testValue');
 
       let btn3: Component = await driver.findComponent(ON.text('closeModal'));
       await btn3.click();
       console.log('[EnableShowHideWithContentCoverPage_0200] btn3 click');
       await driver.delayMs(3000);
-      let testValue: string = AppStorage.get('testValue') as string;
-      expect(testValue).assertEqual('1');
+      let testValue2: string = AppStorage.get('testValue') as string;
+      expect(testValue2).assertEqual('1');
       AppStorage.delete('testValue');
 
       console.info('EnableShowHideWithContentCoverPage_0200 END');
