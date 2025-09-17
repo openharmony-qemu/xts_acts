@@ -65,7 +65,7 @@ export default function EdgesPositionTest() {
       await Utils.sleep(1000);
 
       let strJson = getInspectorByKey('EdgesPositionPage_testFlex');
-      let obj = JSON.parse(strJson);
+      let obj: ESObject = JSON.parse(strJson);
       console.info("[EdgesPositionTest_0100] obj.$attrs.position is: " + obj.$attrs.position);
       let parentRect = Utils.getComponentRect("EdgesPositionPage_parentFlex");
       let rect = Utils.getComponentRect("EdgesPositionPage_testFlex");
