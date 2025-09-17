@@ -122,14 +122,14 @@ static napi_value GetGraphicMemSummaryC(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
     napi_value args[2] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args , nullptr, nullptr);
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     napi_valuetype valuetype0;
     napi_typeof(env, args[0], &valuetype0);
     int interval = 0;
     napi_get_value_int32(env, args[0], &interval);
     bool isUndefine = false;
     if (argc > 1) {
-       napi_get_value_bool(env, args[1], &isUndefine); 
+        napi_get_value_bool(env, args[1], &isUndefine);
     }
     HiDebug_GraphicsMemorySummary memorySummary{};
     HiDebug_ErrorCode retCode = HIDEBUG_SUCCESS;
