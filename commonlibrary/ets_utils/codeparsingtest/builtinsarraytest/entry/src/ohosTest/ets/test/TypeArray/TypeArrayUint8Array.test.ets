@@ -3677,4 +3677,2006 @@ export default function typeArrayUint8ArrayTest() {
         dataView.getUint8(3);
       } catch (error) {
         isRangeError = (error as Error).name === 'RangeError';
-     
+      }
+      expect(isRangeError).assertEqual(true);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0161
+     * @tc.name TypeArrayUint8ArrayBufferDv0161
+     * @tc.desc Verify DataView out-of-bounds write throws RangeError (SharedArrayBuffer)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0161', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(2);
+      const dataView: DataView = new DataView(sharedBuffer);
+      let isRangeError: boolean = false;
+
+      try {
+        dataView.setUint8(2, 100);
+      } catch (error) {
+        isRangeError = (error as Error).name === 'RangeError';
+      }
+      expect(isRangeError).assertEqual(true);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0162
+     * @tc.name TypeArrayUint8ArrayBufferDv0162
+     * @tc.desc Verify Uint8Array set method syncs with DataView in ArrayBuffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0162', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([20, 40, 60], 1);
+      expect(dataView.getUint8(1)).assertEqual(20);
+      expect(dataView.getUint8(2)).assertEqual(40);
+      expect(dataView.getUint8(3)).assertEqual(60);
+
+      dataView.setUint8(2, 50);
+      expect(uint8View[2]).assertEqual(50);
+
+      uint8View.set([70], 3);
+      expect(dataView.getUint8(3)).assertEqual(70);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0163
+     * @tc.name TypeArrayUint8ArrayBufferDv0163
+     * @tc.desc Verify SharedArrayBuffer sync for Uint8Array subarray and DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0163', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(6);
+      const parentUint8: Uint8Array = new Uint8Array(sharedBuffer);
+      const subUint8: Uint8Array = parentUint8.subarray(2, 5);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+      subUint8[0] = 100;
+      subUint8[2] = 200;
+      expect(dataView.getUint8(2)).assertEqual(100);
+      expect(dataView.getUint8(4)).assertEqual(200);
+
+      dataView.setUint8(3, 150);
+      expect(subUint8[1]).assertEqual(150);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0164
+     * @tc.name TypeArrayUint8ArrayBufferDv0164
+     * @tc.desc Verify DataView reads Uint8Array's initial zero values in ArrayBuffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('TypeArrayUint8ArrayBufferDv0164', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,()=> {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      const uint8View: Uint8Array = new Uint8Array(buffer, 1, 2);
+      const dataView: DataView = new DataView(buffer);
+
+      expect(dataView.getUint8(1)).assertEqual(0);
+      expect(dataView.getUint8(2)).assertEqual(0);
+
+      uint8View[0] = 50;
+      expect(dataView.getUint8(1)).assertEqual(50);
+      expect(dataView.getUint8(2)).assertEqual(0);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0165
+     * @tc.name TypeArrayUint8ArrayBufferDv0165
+     * @tc.desc Verify Uint8Array reads DataView's initial zero values in SharedArrayBuffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('TypeArrayUint8ArrayBufferDv0165', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,()=> {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(3);
+      const dataView: DataView = new DataView(sharedBuffer);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+
+
+      expect(uint8View[0]).assertEqual(0);
+      expect(uint8View[2]).assertEqual(0);
+
+      dataView.setUint8(1, 75);
+      expect(uint8View[1]).assertEqual(75);
+      expect(uint8View[0]).assertEqual(0);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0166
+     * @tc.name TypeArrayUint8ArrayBufferDv0166
+     * @tc.desc Verify Uint8Array and DataView sync for DataView's big-endian write
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0166', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+
+      dataView.setUint16(1, 0xABCD, false);
+      expect(uint8View[1]).assertEqual(0xAB);
+      expect(uint8View[2]).assertEqual(0xCD);
+
+      uint8View[2] = 0xEF;
+      expect(dataView.getUint16(1, false)).assertEqual(0xABEF);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0167
+     * @tc.name TypeArrayUint8ArrayBufferDv0167
+     * @tc.desc Verify Uint8Array fill operation syncs with DataView in ArrayBuffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0167', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.fill(255, 1, 3);
+      expect(dataView.getUint8(1)).assertEqual(255);
+      expect(dataView.getUint8(2)).assertEqual(255);
+      expect(dataView.getUint8(3)).assertEqual(0);
+
+      dataView.setUint8(2, 0);
+      expect(uint8View[2]).assertEqual(0);
+
+      uint8View.fill(100, 2, 4);
+      expect(dataView.getUint8(2)).assertEqual(100);
+      expect(dataView.getUint8(3)).assertEqual(100);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0168
+     * @tc.name TypeArrayUint8ArrayBufferDv0168
+     * @tc.desc Verify Uint8Array copyWithin sync with DataView in SharedArrayBuffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0168', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+      uint8View.set([10, 20, 30, 40, 50]);
+      uint8View.copyWithin(1, 3, 5);
+      expect(dataView.getUint8(1)).assertEqual(40);
+      expect(dataView.getUint8(2)).assertEqual(50);
+      expect(dataView.getUint8(3)).assertEqual(40);
+
+      dataView.setUint8(3, 35);
+      expect(uint8View[3]).assertEqual(35);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0169
+     * @tc.name TypeArrayUint8ArrayBufferDv0169
+     * @tc.desc Verify Uint8Array out-of-bounds index returns undefined (DataView still accessible)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0169', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(3);
+      const uint8View: Uint8Array = new Uint8Array(buffer, 0, 2);
+      const dataView: DataView = new DataView(buffer);
+
+      expect(uint8View[2]).assertEqual(undefined);
+
+      expect(dataView.getUint8(2)).assertEqual(0);
+
+
+      dataView.setUint8(2, 100);
+      expect(uint8View[2]).assertEqual(undefined);
+      expect(dataView.getUint8(2)).assertEqual(100);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0170
+     * @tc.name TypeArrayUint8ArrayBufferDv0170
+     * @tc.desc Verify DataView multi-byte read throws RangeError (insufficient bytes)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0170', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(3);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+      let isRangeError: boolean = false;
+
+      try {
+
+        dataView.getUint16(2, true);
+      } catch (error) {
+        isRangeError = (error as Error).name === 'RangeError';
+      }
+      expect(isRangeError).assertEqual(true);
+
+      uint8View[2] = 255;
+      expect(dataView.getUint8(2)).assertEqual(255);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0171
+     * @tc.name TypeArrayUint8ArrayBufferDv0171
+     * @tc.desc Verify ArrayBuffer slice (new buffer) sync with new Uint8Array/DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0171', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const originalBuffer: ArrayBuffer = new ArrayBuffer(5);
+      const originalUint8: Uint8Array = new Uint8Array(originalBuffer);
+      originalUint8.set([10, 20, 30, 40, 50]);
+
+
+      const slicedBuffer: ArrayBuffer = originalBuffer.slice(1, 4);
+      const slicedUint8: Uint8Array = new Uint8Array(slicedBuffer);
+      const slicedDv: DataView = new DataView(slicedBuffer);
+
+      slicedUint8[1] = 100;
+      expect(slicedDv.getUint8(1)).assertEqual(100);
+
+      slicedDv.setUint8(2, 200);
+      expect(slicedUint8[2]).assertEqual(200);
+
+      expect(originalUint8[2]).assertEqual(30);
+    })
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0173
+     * @tc.name TypeArrayUint8ArrayBufferDv0173
+     * @tc.desc Verify Uint8Array indexOf sync with DataView in ArrayBuffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0173', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([5, 15, 25, 15, 35]);
+      expect(uint8View.indexOf(15)).assertEqual(1);
+
+
+      dataView.setUint8(3, 0);
+      expect(uint8View.indexOf(15)).assertEqual(1);
+      expect(uint8View.indexOf(0)).assertEqual(3);
+
+
+      uint8View[1] = 0;
+      expect(dataView.getUint8(1)).assertEqual(0);
+      expect(uint8View.indexOf(15)).assertEqual(-1);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0174
+     * @tc.name TypeArrayUint8ArrayBufferDv0174
+     * @tc.desc Verify Uint8Array lastIndexOf sync with DataView in SharedArrayBuffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0174', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+      uint8View.set([5, 15, 25, 15, 35]);
+      expect(uint8View.lastIndexOf(15)).assertEqual(3);
+
+
+      dataView.setUint8(3, 0);
+      expect(uint8View.lastIndexOf(15)).assertEqual(1);
+
+      uint8View[1] = 0;
+      expect(dataView.getUint8(1)).assertEqual(0);
+      expect(uint8View.lastIndexOf(15)).assertEqual(-1);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0175
+     * @tc.name TypeArrayUint8ArrayBufferDv0175
+     * @tc.desc Verify DataView reads Uint8Array's fill value with negative range
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0175', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+
+      uint8View.fill(200, -3, -1);
+      expect(dataView.getUint8(1)).assertEqual(200);
+      expect(dataView.getUint8(2)).assertEqual(200);
+      expect(dataView.getUint8(0)).assertEqual(0);
+      expect(dataView.getUint8(3)).assertEqual(0);
+      dataView.setUint8(2, 100);
+      expect(uint8View[2]).assertEqual(100);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0176
+     * @tc.name TypeArrayUint8ArrayBufferDv0176
+     * @tc.desc Verify Uint8Array copyWithin with negative indices sync with DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0176', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([10, 20, 30, 40, 50]);
+
+      uint8View.copyWithin(-4, -2, -1);
+      expect(dataView.getUint8(1)).assertEqual(40);
+      expect(dataView.getUint8(3)).assertEqual(40);
+
+      dataView.setUint8(3, 35);
+      uint8View.copyWithin(2, 3, 5);
+      expect(dataView.getUint8(2)).assertEqual(35);
+      expect(dataView.getUint8(3)).assertEqual(50);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0179
+     * @tc.name TypeArrayUint8ArrayBufferDv0179
+     * @tc.desc Verify Uint8Array filter result (new buffer) does not sync with original DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0179', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([10, 20, 30, 40]);
+
+      const filteredUint8: Uint8Array = uint8View.filter(val => val > 20);
+
+
+      filteredUint8[0] = 100;
+      expect(dataView.getUint8(2)).assertEqual(30);
+
+
+      dataView.setUint8(3, 200);
+      expect(filteredUint8[1]).assertEqual(40);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0180
+     * @tc.name TypeArrayUint8ArrayBufferDv0180
+     * @tc.desc Verify Uint8Array map result (new buffer) does not sync with original DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0180', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(3);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([5, 15, 25]);
+
+      const mappedUint8: Uint8Array = uint8View.map(val => val * 2);
+
+      mappedUint8[1] = 100;
+      expect(dataView.getUint8(1)).assertEqual(15);
+      dataView.setUint8(2, 200);
+      expect(mappedUint8[2]).assertEqual(50);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0181
+     * @tc.name TypeArrayUint8ArrayBufferDv0181
+     * @tc.desc Verify DataView reads Uint8Array's subarray modifications
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0181', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(5);
+      const parentUint8: Uint8Array = new Uint8Array(buffer);
+
+      const subUint8: Uint8Array = parentUint8.subarray(1, 4);
+      const dataView: DataView = new DataView(buffer);
+
+      parentUint8[2] = 150;
+      expect(dataView.getUint8(2)).assertEqual(150);
+      expect(subUint8[1]).assertEqual(150);
+
+      subUint8[0] = 75;
+      expect(dataView.getUint8(1)).assertEqual(75);
+      expect(parentUint8[1]).assertEqual(75);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0182
+     * @tc.name TypeArrayUint8ArrayBufferDv0182
+     * @tc.desc Verify Uint8Array every method sync with DataView in ArrayBuffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0182', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(3);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([100, 150, 200]);
+      expect(uint8View.every(val => val < 255)).assertEqual(true);
+
+      dataView.setUint8(1, 255);
+      expect(uint8View.every(val => val < 255)).assertEqual(false);
+
+      uint8View[1] = 249;
+      expect(dataView.getUint8(1)).assertEqual(249);
+      expect(uint8View.every(val => val < 255)).assertEqual(true);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0183
+     * @tc.name TypeArrayUint8ArrayBufferDv0183
+     * @tc.desc Verify Uint8Array some method sync with DataView in SharedArrayBuffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0183', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(3);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+      uint8View.set([10, 20, 30]);
+      expect(uint8View.some(val => val === 255)).assertEqual(false);
+
+      dataView.setUint8(2, 255);
+      expect(uint8View.some(val => val === 255)).assertEqual(true);
+
+      uint8View[2] = 30;
+      expect(dataView.getUint8(2)).assertEqual(30);
+      expect(uint8View.some(val => val === 255)).assertEqual(false);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0184
+     * @tc.name TypeArrayUint8ArrayBufferDv0184
+     * @tc.desc Verify DataView reads overlapping Uint8Array views
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0184', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      const uint8View1: Uint8Array = new Uint8Array(buffer, 0, 3);
+      const uint8View2: Uint8Array = new Uint8Array(buffer, 1, 3);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View1[1] = 100;
+      expect(uint8View2[0]).assertEqual(100);
+      expect(dataView.getUint8(1)).assertEqual(100);
+
+      uint8View2[2] = 200;
+      expect(dataView.getUint8(3)).assertEqual(200);
+      expect(uint8View1[3]).assertEqual(undefined);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0185
+     * @tc.name TypeArrayUint8ArrayBufferDv0185
+     * @tc.desc Verify SharedArrayBuffer overlapping views sync with DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0185', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(4);
+      const uint8View1: Uint8Array = new Uint8Array(sharedBuffer, 0, 3);
+      const uint8View2: Uint8Array = new Uint8Array(sharedBuffer, 1, 3);
+      const dataView: DataView = new DataView(sharedBuffer);
+      uint8View1[2] = 150;
+      expect(uint8View2[1]).assertEqual(150);
+      expect(dataView.getUint8(2)).assertEqual(150);
+      dataView.setUint8(1, 75);
+      expect(uint8View1[1]).assertEqual(75);
+      expect(uint8View2[0]).assertEqual(75);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0186
+     * @tc.name TypeArrayUint8ArrayBufferDv0186
+     * @tc.desc Verify Uint8Array reduce result syncs with DataView modifications
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0186', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(3);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([10, 20, 30]);
+      let sum1: number = uint8View.reduce((acc, val) => acc + val, 0);
+      expect(sum1).assertEqual(60);
+
+      dataView.setUint8(1, 25);
+      let sum2: number = uint8View.reduce((acc, val) => acc + val, 0);
+      expect(sum2).assertEqual(65);
+      uint8View[2] = 35;
+      let sum3: number = uint8View.reduce((acc, val) => acc + val, 0);
+      expect(sum3).assertEqual(70);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0187
+     * @tc.name TypeArrayUint8ArrayBufferDv0187
+     * @tc.desc Verify Uint8Array includes method sync with DataView in ArrayBuffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0187', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([50, 100, 150, 200]);
+      expect(uint8View.includes(150)).assertEqual(true);
+
+      dataView.setUint8(2, 0);
+      expect(uint8View.includes(150)).assertEqual(false);
+      expect(uint8View.includes(0)).assertEqual(true);
+
+      uint8View[2] = 150;
+      expect(dataView.getUint8(2)).assertEqual(150);
+      expect(uint8View.includes(150)).assertEqual(true);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0188
+     * @tc.name TypeArrayUint8ArrayBufferDv0188
+     * @tc.desc Verify DataView multi-byte write syncs with overlapping Uint8Array views
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0188', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(5);
+
+      const uint8View1: Uint8Array = new Uint8Array(buffer, 0, 3);
+
+      const uint8View2: Uint8Array = new Uint8Array(buffer, 2, 3);
+      const dataView: DataView = new DataView(buffer);
+
+
+      dataView.setUint16(1, 0x1234, true);
+      expect(uint8View1[1]).assertEqual(0x34);
+      expect(uint8View1[2]).assertEqual(0x12);
+      expect(uint8View2[0]).assertEqual(0x12);
+
+
+      uint8View2[1] = 0x56;
+      expect(dataView.getUint8(3)).assertEqual(0x56);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0189
+     * @tc.name TypeArrayUint8ArrayBufferDv0189
+     * @tc.desc Verify SharedArrayBuffer multi-byte write syncs with overlapping views
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0189', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(5);
+
+      const uint8View1: Uint8Array = new Uint8Array(sharedBuffer, 0, 3);
+
+      const uint8View2: Uint8Array = new Uint8Array(sharedBuffer, 2, 3);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+
+      dataView.setUint32(1, 0x11223344, true);
+
+      expect(uint8View1[1]).assertEqual(0x44);
+      expect(uint8View1[2]).assertEqual(0x33);
+      expect(uint8View2[0]).assertEqual(0x33);
+      expect(uint8View2[1]).assertEqual(0x22);
+      expect(uint8View2[2]).assertEqual(0x11);
+
+
+      uint8View1[1] = 0x55;
+      expect(dataView.getUint32(1, true)).assertEqual(0x11223355);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0190
+     * @tc.name TypeArrayUint8ArrayBufferDv0190
+     * @tc.desc Verify Uint8Array empty view and DataView buffer consistency
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0190', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(3);
+
+      const emptyUint8: Uint8Array = new Uint8Array(buffer, 1, 0);
+      const dataView: DataView = new DataView(buffer);
+      expect(emptyUint8.length).assertEqual(0);
+      expect(emptyUint8.byteLength).assertEqual(0);
+
+
+      dataView.setUint8(1, 100);
+      expect(dataView.getUint8(1)).assertEqual(100);
+      expect(emptyUint8[0]).assertEqual(undefined);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0191
+     * @tc.name TypeArrayUint8ArrayBufferDv0191
+     * @tc.desc Verify SharedArrayBuffer empty view and DataView buffer consistency
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0191', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(4);
+
+      const emptyUint8: Uint8Array = new Uint8Array(sharedBuffer, 2, 0);
+      const dataView: DataView = new DataView(sharedBuffer);
+      expect(emptyUint8.length).assertEqual(0);
+      expect(emptyUint8.buffer).assertEqual(sharedBuffer);
+      expect(emptyUint8.buffer.byteLength).assertEqual(sharedBuffer.byteLength);
+
+
+      dataView.setUint8(3, 255);
+      expect(dataView.getUint8(3)).assertEqual(255);
+      expect(emptyUint8[1]).assertEqual(undefined);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0192
+     * @tc.name TypeArrayUint8ArrayBufferDv0192
+     * @tc.desc Verify Uint8Array partial set syncs with DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0192', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+
+      uint8View.set([10, 20], 1);
+      expect(dataView.getUint8(1)).assertEqual(10);
+      expect(dataView.getUint8(2)).assertEqual(20);
+
+
+      dataView.setUint8(2, 25);
+      expect(uint8View[2]).assertEqual(25);
+
+
+      uint8View.set([30], 3);
+      expect(dataView.getUint8(3)).assertEqual(30);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0193
+     * @tc.name TypeArrayUint8ArrayBufferDv0193
+     * @tc.desc Verify Uint8Array fill with overflow value syncs with DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0193', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(3);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+
+      uint8View.fill(300, 0, 2);
+      expect(dataView.getUint8(0)).assertEqual(44);
+      expect(dataView.getUint8(1)).assertEqual(44);
+
+
+      dataView.setUint8(2, 350);
+      expect(uint8View[2]).assertEqual(94);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0194
+     * @tc.name TypeArrayUint8ArrayBufferDv0194
+     * @tc.desc Verify SharedArrayBuffer fill with underflow value syncs with DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0194', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(3);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+
+      uint8View.fill(-50, 1, 3);
+      expect(dataView.getUint8(1)).assertEqual(206);
+      expect(dataView.getUint8(2)).assertEqual(206);
+
+
+      dataView.setUint8(0, -10);
+      expect(uint8View[0]).assertEqual(246);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0195
+     * @tc.name TypeArrayUint8ArrayBufferDv0195
+     * @tc.desc Verify Uint8Array and DataView sync for nested buffer operations
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0195', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([10, 20, 30, 40]);
+
+      dataView.setUint8(1, 25);
+
+      uint8View.set([uint8View[1]], 3);
+
+      expect(dataView.getUint8(1)).assertEqual(25);
+      expect(dataView.getUint8(3)).assertEqual(25);
+      expect(uint8View[1]).assertEqual(25);
+      expect(uint8View[3]).assertEqual(25);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0196
+     * @tc.name TypeArrayUint8ArrayBufferDv0196
+     * @tc.desc Verify Uint8Array subarray and DataView sync for fill operation
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0196', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(5);
+      const parentUint8: Uint8Array = new Uint8Array(buffer);
+      const subUint8: Uint8Array = parentUint8.subarray(1, 4);
+      const dataView: DataView = new DataView(buffer);
+
+      subUint8.fill(150, 0, 2);
+      expect(dataView.getUint8(1)).assertEqual(150);
+      expect(dataView.getUint8(2)).assertEqual(150);
+
+      dataView.setUint8(2, 175);
+      expect(subUint8[1]).assertEqual(175);
+      parentUint8.fill(200, 3, 4);
+      expect(dataView.getUint8(3)).assertEqual(200);
+      expect(subUint8[2]).assertEqual(200);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0197
+     * @tc.name TypeArrayUint8ArrayBufferDv0197
+     * @tc.desc Verify DataView reads Uint8Array's copyWithin result in SharedArrayBuffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0197', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+      uint8View.set([5, 10, 15, 20, 25]);
+
+      uint8View.copyWithin(0, 2, 4);
+      expect(dataView.getUint8(0)).assertEqual(15);
+      expect(dataView.getUint8(1)).assertEqual(20);
+      expect(dataView.getUint8(2)).assertEqual(15);
+      expect(dataView.getUint8(3)).assertEqual(20);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0198
+     * @tc.name TypeArrayUint8ArrayBufferDv0198
+     * @tc.desc Verify Uint8Array and DataView sync for includes with modified values
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0198', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([75, 125, 175, 225]);
+      expect(uint8View.includes(125)).assertEqual(true);
+
+
+      dataView.setUint8(1, 150);
+      expect(uint8View.includes(125)).assertEqual(false);
+      expect(uint8View.includes(150)).assertEqual(true);
+
+
+      uint8View[1] = 125;
+      expect(dataView.getUint8(1)).assertEqual(125);
+      expect(uint8View.includes(125)).assertEqual(true);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0199
+     * @tc.name TypeArrayUint8ArrayBufferDv0199
+     * @tc.desc Verify DataView multi-byte read syncs with Uint8Array modifications
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0199', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+
+      uint8View.set([0x03, 0x02, 0x01, 0x00]);
+      expect(dataView.getUint32(0, true)).assertEqual(0x00010203);
+
+
+      uint8View[1] = 0x05;
+      expect(dataView.getUint32(0, true)).assertEqual(0x00010503);
+
+
+      dataView.setUint8(2, 0)
+      expect(dataView.getUint8(2)).assertEqual(0);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0200
+     * @tc.name TypeArrayUint8ArrayBufferDv0200
+     * @tc.desc Verify DataView 32-bit read syncs with Uint8Array byte modifications
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([0x78, 0x56, 0x34, 0x12]);
+      expect(dataView.getUint32(0, true)).assertEqual(0x12345678);
+
+      uint8View[1] = 0x9A;
+      expect(dataView.getUint32(0, true)).assertEqual(0x12349A78);
+
+      dataView.setUint8(2, 0xBC);
+      expect(uint8View[2]).assertEqual(0xBC);
+      expect(dataView.getUint32(0, true)).assertEqual(0x12BC9A78);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0201
+     * @tc.name TypeArrayUint8ArrayBufferDv0201
+     * @tc.desc Verify SharedArrayBuffer sync for Uint8Array forEach and DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0201', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(4);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+      let sum: number = 0;
+
+
+      dataView.setUint8(0, 10);
+      dataView.setUint8(1, 20);
+      dataView.setUint8(2, 30);
+      dataView.setUint8(3, 40);
+
+
+      uint8View.forEach(val => sum += val);
+      expect(sum).assertEqual(100);
+
+
+      uint8View.forEach((val, idx) => uint8View[idx] = val * 2);
+      expect(dataView.getUint8(0)).assertEqual(20);
+      expect(dataView.getUint8(1)).assertEqual(40);
+      expect(dataView.getUint8(2)).assertEqual(60);
+      expect(dataView.getUint8(3)).assertEqual(80);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0202
+     * @tc.name TypeArrayUint8ArrayBufferDv0202
+     * @tc.desc Verify Uint8Array map result (new buffer) independence from DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0202', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(3);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([5, 15, 25]);
+
+      const mappedUint8: Uint8Array = uint8View.map(val => val + 10);
+
+
+      dataView.setUint8(1, 25);
+      expect(uint8View[1]).assertEqual(25);
+      expect(mappedUint8[1]).assertEqual(25);
+
+
+      mappedUint8[2] = 50;
+      expect(dataView.getUint8(2)).assertEqual(25);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0203
+     * @tc.name TypeArrayUint8ArrayBufferDv0203
+     * @tc.desc Verify DataView reads Uint8Array's copyWithin with overlapping ranges
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0203', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([1, 2, 3, 4, 5]);
+
+      uint8View.copyWithin(1, 3, 5);
+      expect(dataView.getUint8(0)).assertEqual(1);
+      expect(dataView.getUint8(1)).assertEqual(4);
+      expect(dataView.getUint8(2)).assertEqual(5);
+      expect(dataView.getUint8(3)).assertEqual(4);
+      expect(dataView.getUint8(4)).assertEqual(5);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0204
+     * @tc.name TypeArrayUint8ArrayBufferDv0204
+     * @tc.desc Verify SharedArrayBuffer copyWithin with non-overlapping ranges sync
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0204', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+      uint8View.set([10, 20, 30, 40, 50]);
+
+      uint8View.copyWithin(3, 0, 2);
+      expect(dataView.getUint8(3)).assertEqual(10);
+      expect(dataView.getUint8(4)).assertEqual(20);
+      expect(dataView.getUint8(0)).assertEqual(10);
+      expect(dataView.getUint8(1)).assertEqual(20);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0205
+     * @tc.name TypeArrayUint8ArrayBufferDv0205
+     * @tc.desc Verify Uint8Array fill with zero syncs with DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0205', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+
+      dataView.setUint8(0, 255);
+      dataView.setUint8(1, 127);
+      dataView.setUint8(2, 63);
+      dataView.setUint8(3, 31);
+
+      uint8View.fill(0);
+      expect(dataView.getUint8(0)).assertEqual(0);
+      expect(dataView.getUint8(1)).assertEqual(0);
+      expect(dataView.getUint8(2)).assertEqual(0);
+      expect(dataView.getUint8(3)).assertEqual(0);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0206
+     * @tc.name TypeArrayUint8ArrayBufferDv0206
+     * @tc.desc Verify DataView fill with max value (255) syncs with Uint8Array
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0206', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(3);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+
+      uint8View.fill(0);
+
+
+      for (let i = 0; i < sharedBuffer.byteLength; i++) {
+        dataView.setUint8(i, 255);
+      }
+      expect(uint8View[0]).assertEqual(255);
+      expect(uint8View[1]).assertEqual(255);
+      expect(uint8View[2]).assertEqual(255);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0207
+     * @tc.name TypeArrayUint8ArrayBufferDv0207
+     * @tc.desc Verify Uint8Array subarray fill syncs with parent and DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0207', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(5);
+      const parentUint8: Uint8Array = new Uint8Array(buffer);
+      const subUint8: Uint8Array = parentUint8.subarray(1, 4);
+      const dataView: DataView = new DataView(buffer);
+
+
+      parentUint8.fill(10);
+
+
+      subUint8.fill(100);
+      expect(parentUint8[1]).assertEqual(100);
+      expect(parentUint8[2]).assertEqual(100);
+      expect(parentUint8[3]).assertEqual(100);
+      expect(parentUint8[0]).assertEqual(10);
+      expect(parentUint8[4]).assertEqual(10);
+      expect(dataView.getUint8(1)).assertEqual(100);
+      expect(dataView.getUint8(2)).assertEqual(100);
+      expect(dataView.getUint8(3)).assertEqual(100);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0208
+     * @tc.name TypeArrayUint8ArrayBufferDv0208
+     * @tc.desc Verify SharedArrayBuffer subarray fill syncs with DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0208', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(6);
+      const parentUint8: Uint8Array = new Uint8Array(sharedBuffer);
+      const subUint8: Uint8Array = parentUint8.subarray(2, 5);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+
+      dataView.setUint8(2, 50);
+      dataView.setUint8(3, 50);
+      dataView.setUint8(4, 50);
+
+
+      subUint8.fill(200);
+      expect(dataView.getUint8(2)).assertEqual(200);
+      expect(dataView.getUint8(3)).assertEqual(200);
+      expect(dataView.getUint8(4)).assertEqual(200);
+      expect(dataView.getUint8(1)).assertEqual(0);
+      expect(dataView.getUint8(5)).assertEqual(0);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0209
+     * @tc.name TypeArrayUint8ArrayBufferDv0209
+     * @tc.desc Verify Uint8Array find syncs with DataView modifications
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0209', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([10, 20, 30, 40]);
+      let foundVal = uint8View.find(val => val > 25);
+      expect(foundVal).assertEqual(30);
+
+
+      dataView.setUint8(2, 20);
+
+      foundVal = uint8View.find(val => val > 25);
+      expect(foundVal).assertEqual(40);
+
+
+      dataView.setUint8(3, 25);
+
+      foundVal = uint8View.find(val => val > 25);
+      expect(foundVal).assertEqual(undefined);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0210
+     * @tc.name TypeArrayUint8ArrayBufferDv0210
+     * @tc.desc Verify Uint8Array findIndex syncs with DataView modifications
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0210', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(4);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+      uint8View.set([5, 15, 25, 35]);
+
+      let foundIdx = uint8View.findIndex(val => val > 20);
+      expect(foundIdx).assertEqual(2);
+
+
+      dataView.setUint8(2, 15);
+
+      foundIdx = uint8View.findIndex(val => val > 20);
+      expect(foundIdx).assertEqual(3);
+
+
+      dataView.setUint8(3, 15);
+
+      foundIdx = uint8View.findIndex(val => val > 20);
+      expect(foundIdx).assertEqual(-1);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0211
+     * @tc.name TypeArrayUint8ArrayBufferDv0211
+     * @tc.desc Verify DataView reads Uint8Array's filtered subarray (new buffer)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0211', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(5);
+      const parentUint8: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      parentUint8.set([10, 20, 30, 40, 50]);
+
+      const filteredUint8: Uint8Array = parentUint8.filter(val => val > 30);
+      const filteredDv: DataView = new DataView(filteredUint8.buffer);
+
+
+      filteredUint8[0] = 45;
+      expect(filteredDv.getUint8(0)).assertEqual(45);
+
+      filteredDv.setUint8(1, 55);
+      expect(filteredUint8[1]).assertEqual(55);
+
+      expect(dataView.getUint8(3)).assertEqual(40);
+      expect(dataView.getUint8(4)).assertEqual(50);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0212
+     * @tc.name TypeArrayUint8ArrayBufferDv0212
+     * @tc.desc Verify SharedArrayBuffer filtered subarray (new buffer) independence
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0212', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(5);
+      const parentUint8: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+      parentUint8.set([5, 15, 25, 35, 45]);
+
+      const filteredUint8: Uint8Array = parentUint8.filter(val => val < 25);
+
+
+      dataView.setUint8(0, 10);
+      dataView.setUint8(1, 20);
+      expect(parentUint8[0]).assertEqual(10);
+      expect(parentUint8[1]).assertEqual(20);
+      expect(filteredUint8[0]).assertEqual(5);
+      expect(filteredUint8[1]).assertEqual(15);
+      filteredUint8[0] = 15;
+      expect(dataView.getUint8(0)).assertEqual(10);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0213
+     * @tc.name TypeArrayUint8ArrayBufferDv0213
+     * @tc.desc Verify Uint8Array reduce with initial value syncs with DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0213', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(3);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      dataView.setUint8(0, 10);
+      dataView.setUint8(1, 20);
+      dataView.setUint8(2, 30);
+
+      let total = uint8View.reduce((acc, val) => acc + val, 5);
+      expect(total).assertEqual(65);
+      dataView.setUint8(1, 25);
+      total = uint8View.reduce((acc, val) => acc + val, 5);
+      expect(total).assertEqual(70);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0214
+     * @tc.name TypeArrayUint8ArrayBufferDv0214
+     * @tc.desc Verify SharedArrayBuffer reduce without initial value syncs with DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0214', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(3);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+      uint8View.set([5, 15, 25]);
+      let product = uint8View.reduce((acc, val) => acc * val);
+      expect(product).assertEqual(1875);
+      dataView.setUint8(1, 20);
+      product = uint8View.reduce((acc, val) => acc * val);
+      expect(product).assertEqual(2500);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0215
+     * @tc.name TypeArrayUint8ArrayBufferDv0215
+     * @tc.desc Verify Uint8Array includes with start index syncs with DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0215', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([10, 20, 30, 20, 40]);
+      let hasVal = uint8View.includes(20, 2);
+      expect(hasVal).assertEqual(true);
+
+      dataView.setUint8(3, 25);
+      hasVal = uint8View.includes(20, 2);
+      expect(hasVal).assertEqual(false);
+
+      dataView.setUint8(1, 20);
+      hasVal = uint8View.includes(20, 2);
+      expect(hasVal).assertEqual(false);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0216
+     * @tc.name TypeArrayUint8ArrayBufferDv0216
+     * @tc.desc Verify SharedArrayBuffer includes with negative start index syncs
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0216', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+      uint8View.set([5, 15, 25, 35, 45]);
+      let hasVal = uint8View.includes(25, -3);
+      expect(hasVal).assertEqual(true);
+
+      dataView.setUint8(2, 30);
+      hasVal = uint8View.includes(25, -3);
+      expect(hasVal).assertEqual(false);
+
+      dataView.setUint8(1, 25);
+      hasVal = uint8View.includes(25, -3);
+      expect(hasVal).assertEqual(false);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0217
+     * @tc.name TypeArrayUint8ArrayBufferDv0217
+     * @tc.desc Verify Uint8Array indexOf with negative start index syncs with DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0217', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([10, 20, 10, 30, 10]);
+      let idx = uint8View.indexOf(10, -3);
+      expect(idx).assertEqual(2);
+
+      dataView.setUint8(2, 15);
+      idx = uint8View.indexOf(10, -3);
+      expect(idx).assertEqual(4);
+      dataView.setUint8(4, 15);
+      idx = uint8View.indexOf(10, -3);
+      expect(idx).assertEqual(-1);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0218
+     * @tc.name TypeArrayUint8ArrayBufferDv0218
+     * @tc.desc Verify SharedArrayBuffer lastIndexOf with start index syncs
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0218', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+      uint8View.set([5, 15, 25, 15, 35]);
+      let idx = uint8View.lastIndexOf(15, 3);
+      expect(idx).assertEqual(3);
+
+      dataView.setUint8(3, 20);
+      idx = uint8View.lastIndexOf(15, 3);
+      expect(idx).assertEqual(1);
+
+      dataView.setUint8(1, 20);
+      idx = uint8View.lastIndexOf(15, 3);
+      expect(idx).assertEqual(-1);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0219
+     * @tc.name TypeArrayUint8ArrayBufferDv0219
+     * @tc.desc Verify Uint8Array slice with negative start index syncs with DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0219', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([10, 20, 30, 40, 50]);
+      const slicedUint8: Uint8Array = uint8View.slice(-3);
+      const slicedDv: DataView = new DataView(slicedUint8.buffer);
+
+      slicedUint8[0] = 35;
+      expect(slicedDv.getUint8(0)).assertEqual(35);
+
+      slicedDv.setUint8(1, 45);
+      expect(slicedUint8[1]).assertEqual(45);
+
+      expect(dataView.getUint8(2)).assertEqual(30);
+      expect(dataView.getUint8(3)).assertEqual(40);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0220
+     * @tc.name TypeArrayUint8ArrayBufferDv0220
+     * @tc.desc Verify SharedArrayBuffer slice with negative end index syncs
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0220', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+      uint8View.set([5, 15, 25, 35, 45]);
+      const slicedUint8: Uint8Array = uint8View.slice(1, -2);
+
+      dataView.setUint8(1, 20);
+      dataView.setUint8(2, 30);
+      expect(dataView.getUint8(1)).assertEqual(20);
+      expect(dataView.getUint8(2)).assertEqual(30);
+      expect(slicedUint8[0]).assertEqual(15);
+      expect(slicedUint8[1]).assertEqual(25);
+
+      slicedUint8[0] = 25;
+      expect(dataView.getUint8(1)).assertEqual(20);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0221
+     * @tc.name TypeArrayUint8ArrayBufferDv0221
+     * @tc.desc Verify Uint8Array and DataView sync for zero-length buffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0221', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(0);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+      expect(uint8View.length).assertEqual(0);
+      expect(uint8View.byteLength).assertEqual(0);
+      expect(dataView.buffer.byteLength).assertEqual(0);
+
+      uint8View[0] = 100;
+      expect(uint8View[0]).assertEqual(undefined);
+
+      let isRangeError = false;
+      try {
+        dataView.setUint8(0, 100);
+      } catch (error) {
+        isRangeError = (error as Error).name === 'RangeError';
+      }
+      expect(isRangeError).assertEqual(true);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0222
+     * @tc.name TypeArrayUint8ArrayBufferDv0222
+     * @tc.desc Verify SharedArrayBuffer zero-length buffer consistency
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0222', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(0);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+      expect(uint8View.length).assertEqual(0);
+      expect(uint8View.byteLength).assertEqual(0);
+      expect(dataView.buffer.byteLength).assertEqual(0);
+
+      expect(uint8View[0]).assertEqual(undefined);
+
+      let isRangeError = false;
+      try {
+        dataView.getUint8(0);
+      } catch (error) {
+        isRangeError = (error as Error).name === 'RangeError';
+      }
+      expect(isRangeError).assertEqual(true);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0223
+     * @tc.name TypeArrayUint8ArrayBufferDv0223
+     * @tc.desc Verify Uint8Array set with Uint8Array source syncs with DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0223', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+      const sourceUint8: Uint8Array = new Uint8Array([100, 200, 255]);
+
+
+      uint8View.set(sourceUint8, 1);
+      expect(dataView.getUint8(1)).assertEqual(100);
+      expect(dataView.getUint8(2)).assertEqual(200);
+      expect(dataView.getUint8(3)).assertEqual(255);
+      expect(dataView.getUint8(0)).assertEqual(0);
+      expect(dataView.getUint8(4)).assertEqual(0);
+      sourceUint8[0] = 150;
+      uint8View.set(sourceUint8, 1);
+      expect(dataView.getUint8(1)).assertEqual(150);
+      expect(dataView.getUint8(2)).assertEqual(200);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0224
+     * @tc.name TypeArrayUint8ArrayBufferDv0224
+     * @tc.desc Verify SharedArrayBuffer set with Int8Array source syncs with DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0224', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(4);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+      const sourceInt8: Int8Array = new Int8Array([-1, -10, 127]);
+      uint8View.set(sourceInt8);
+      expect(dataView.getUint8(0)).assertEqual(255);
+      expect(dataView.getUint8(1)).assertEqual(246);
+      expect(dataView.getUint8(2)).assertEqual(127);
+      expect(dataView.getUint8(3)).assertEqual(0);
+      sourceInt8[1] = -20;
+      uint8View.set(sourceInt8, 0);
+      expect(dataView.getUint8(1)).assertEqual(236);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0225
+     * @tc.name TypeArrayUint8ArrayBufferDv0225
+     * @tc.desc Verify Uint8Array set with Float32Array source (truncated) syncs
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0225', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(3);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+      const sourceFloat: Float32Array = new Float32Array([100.9, 200.1, 255.9]);
+      uint8View.set(sourceFloat);
+      expect(dataView.getUint8(0)).assertEqual(100);
+      expect(dataView.getUint8(1)).assertEqual(200);
+      expect(dataView.getUint8(2)).assertEqual(255);
+
+      sourceFloat[2] = 300.5;
+      uint8View.set(sourceFloat);
+      expect(dataView.getUint8(2)).assertEqual(44);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0226
+     * @tc.name TypeArrayUint8ArrayBufferDv0226
+     * @tc.desc Verify SharedArrayBuffer set with Float64Array source (truncated) syncs
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0226', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(3);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+      const sourceFloat: Float64Array = new Float64Array([-5.9, 150.5, 256.1]);
+      uint8View.set(sourceFloat);
+      expect(dataView.getUint8(0)).assertEqual(251);
+      expect(dataView.getUint8(1)).assertEqual(150);
+      expect(dataView.getUint8(2)).assertEqual(0);
+
+      sourceFloat[0] = -10.1;
+      uint8View.set(sourceFloat);
+      expect(dataView.getUint8(0)).assertEqual(246);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0227
+     * @tc.name TypeArrayUint8ArrayBufferDv0227
+     * @tc.desc Verify Uint8Array and DataView sync for single-byte modifications
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('TypeArrayUint8ArrayBufferDv0227', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,()=> {
+      const buffer: ArrayBuffer = new ArrayBuffer(1);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View[0] = 127;
+      expect(dataView.getUint8(0)).assertEqual(127);
+
+      dataView.setUint8(0, 255);
+      expect(uint8View[0]).assertEqual(255);
+
+      uint8View[0] = 256;
+      expect(dataView.getUint8(0)).assertEqual(0);
+
+
+      dataView.setUint8(0, -1);
+      expect(uint8View[0]).assertEqual(255);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0228
+     * @tc.name TypeArrayUint8ArrayBufferDv0228
+     * @tc.desc Verify SharedArrayBuffer single-byte sync between Uint8Array and DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('TypeArrayUint8ArrayBufferDv0228', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,()=> {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(1);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+      expect(uint8View[0]).assertEqual(0);
+      expect(dataView.getUint8(0)).assertEqual(0);
+
+
+      uint8View[0] = 63;
+      expect(dataView.getUint8(0)).assertEqual(63);
+
+
+      dataView.setUint8(0, 127);
+      expect(uint8View[0]).assertEqual(127);
+
+
+      dataView.setUint8(0, 300);
+      expect(uint8View[0]).assertEqual(44);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0229
+     * @tc.name TypeArrayUint8ArrayBufferDv0229
+     * @tc.desc Verify Uint8Array every method with DataView-modified values
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0229', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([50, 100, 150, 200]);
+
+      let allMatch = uint8View.every(val => val < 255);
+      expect(allMatch).assertEqual(true);
+
+
+      dataView.setUint8(2, 255);
+
+      allMatch = uint8View.every(val => val < 255);
+      expect(allMatch).assertEqual(false);
+
+
+      dataView.setUint8(2, 150);
+
+      allMatch = uint8View.every(val => val < 255);
+      expect(allMatch).assertEqual(true);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0230
+     * @tc.name TypeArrayUint8ArrayBufferDv0230
+     * @tc.desc Verify SharedArrayBuffer some method with DataView-modified values
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0230', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(4);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+      uint8View.set([10, 20, 30, 40]);
+
+      let hasMatch = uint8View.some(val => val === 50);
+      expect(hasMatch).assertEqual(false);
+
+
+      dataView.setUint8(1, 50);
+
+      hasMatch = uint8View.some(val => val === 50);
+      expect(hasMatch).assertEqual(true);
+
+
+      dataView.setUint8(1, 20);
+
+      hasMatch = uint8View.some(val => val === 50);
+      expect(hasMatch).assertEqual(false);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0231
+     * @tc.name TypeArrayUint8ArrayBufferDv0231
+     * @tc.desc Verify Uint8Array copyWithin with DataView-initialized values
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0231', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+
+      dataView.setUint8(0, 1);
+      dataView.setUint8(1, 2);
+      dataView.setUint8(2, 3);
+      dataView.setUint8(3, 4);
+      dataView.setUint8(4, 5);
+
+
+      uint8View.copyWithin(0, 2, 4);
+      expect(dataView.getUint8(0)).assertEqual(3);
+      expect(dataView.getUint8(1)).assertEqual(4);
+      expect(dataView.getUint8(2)).assertEqual(3);
+      expect(dataView.getUint8(3)).assertEqual(4);
+      expect(dataView.getUint8(4)).assertEqual(5);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0232
+     * @tc.name TypeArrayUint8ArrayBufferDv0232
+     * @tc.desc Verify SharedArrayBuffer copyWithin with DataView-modified source
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0232', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+      uint8View.set([10, 20, 30, 40, 50]);
+
+      dataView.setUint8(3, 45);
+      dataView.setUint8(4, 55);
+
+      uint8View.copyWithin(1, 3, 5);
+      expect(dataView.getUint8(1)).assertEqual(45);
+      expect(dataView.getUint8(2)).assertEqual(55);
+      expect(dataView.getUint8(3)).assertEqual(45);
+      expect(dataView.getUint8(4)).assertEqual(55);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0233
+     * @tc.name TypeArrayUint8ArrayBufferDv0233
+     * @tc.desc Verify Uint8Array fill with DataView-verified range
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0233', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+
+      uint8View.fill(10);
+
+
+      uint8View.fill(100, 1, 4);
+      expect(dataView.getUint8(0)).assertEqual(10);
+      expect(dataView.getUint8(1)).assertEqual(100);
+      expect(dataView.getUint8(2)).assertEqual(100);
+      expect(dataView.getUint8(3)).assertEqual(100);
+      expect(dataView.getUint8(4)).assertEqual(10);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0234
+     * @tc.name TypeArrayUint8ArrayBufferDv0234
+     * @tc.desc Verify SharedArrayBuffer fill with negative range (DataView-verified)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0234', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+      for (let i = 0; i < 5; i++) {
+        dataView.setUint8(i, 20);
+      }
+
+      uint8View.fill(200, -4, -1);
+      expect(dataView.getUint8(0)).assertEqual(20);
+      expect(dataView.getUint8(1)).assertEqual(200);
+      expect(dataView.getUint8(2)).assertEqual(200);
+      expect(dataView.getUint8(3)).assertEqual(200);
+      expect(dataView.getUint8(4)).assertEqual(20);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0235
+     * @tc.name TypeArrayUint8ArrayBufferDv0235
+     * @tc.desc Verify Uint8Array and DataView sync for multi-step modifications
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0235', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([10, 20, 30, 40]);
+
+      dataView.setUint8(1, 25);
+
+      uint8View.set([uint8View[1]], 3);
+
+      expect(dataView.getUint8(1)).assertEqual(25);
+      expect(dataView.getUint8(3)).assertEqual(25);
+
+      expect(uint8View[1]).assertEqual(25);
+      expect(uint8View[3]).assertEqual(25);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0236
+     * @tc.name TypeArrayUint8ArrayBufferDv0236
+     * @tc.desc Verify SharedArrayBuffer multi-step sync between Uint8Array and DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0236', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(4);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+
+      dataView.setUint8(0, 5);
+      dataView.setUint8(1, 15);
+      dataView.setUint8(2, 25);
+      dataView.setUint8(3, 35);
+
+      uint8View[2] = 30;
+
+      dataView.setUint8(0, dataView.getUint8(2));
+
+      expect(uint8View[0]).assertEqual(30);
+      expect(uint8View[2]).assertEqual(30);
+
+      expect(dataView.getUint8(0)).assertEqual(30);
+      expect(dataView.getUint8(2)).assertEqual(30);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0237
+     * @tc.name TypeArrayUint8ArrayBufferDv0237
+     * @tc.desc Verify Uint8Array slice with DataView-modified original buffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0237', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([10, 20, 30, 40, 50]);
+
+      const slicedUint8: Uint8Array = uint8View.slice(1, 3);
+
+
+      dataView.setUint8(1, 25);
+      dataView.setUint8(2, 35);
+      expect(uint8View[1]).assertEqual(25);
+      expect(uint8View[2]).assertEqual(35);
+      expect(slicedUint8[0]).assertEqual(20);
+      expect(slicedUint8[1]).assertEqual(30);
+
+      slicedUint8[0] = 30;
+      expect(dataView.getUint8(1)).assertEqual(25);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0238
+     * @tc.name TypeArrayUint8ArrayBufferDv0238
+     * @tc.desc Verify SharedArrayBuffer slice with Uint8Array-modified original buffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0238', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+      uint8View.set([5, 15, 25, 35, 45]);
+
+      const slicedUint8: Uint8Array = uint8View.slice(2, 4);
+
+      uint8View[2] = 30;
+      uint8View[3] = 40;
+      expect(dataView.getUint8(2)).assertEqual(30);
+      expect(dataView.getUint8(3)).assertEqual(40);
+      expect(slicedUint8[0]).assertEqual(25);
+      expect(slicedUint8[1]).assertEqual(35);
+
+      slicedUint8[1] = 45;
+      expect(dataView.getUint8(3)).assertEqual(40);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0239
+     * @tc.name TypeArrayUint8ArrayBufferDv0239
+     * @tc.desc Verify Uint8Array filter with DataView-modified original buffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0239', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([10, 20, 30, 40, 50]);
+
+      const filteredUint8: Uint8Array = uint8View.filter(val => val > 25);
+
+      dataView.setUint8(2, 20);
+      dataView.setUint8(3, 35);
+      expect(uint8View[2]).assertEqual(20);
+      expect(uint8View[3]).assertEqual(35);
+      expect(filteredUint8[0]).assertEqual(30);
+      expect(filteredUint8[1]).assertEqual(40);
+      const newFilteredUint8: Uint8Array = uint8View.filter(val => val > 25);
+      expect(newFilteredUint8.length).assertEqual(2);
+      expect(newFilteredUint8[0]).assertEqual(35);
+      expect(newFilteredUint8[1]).assertEqual(50);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0240
+     * @tc.name TypeArrayUint8ArrayBufferDv0240
+     * @tc.desc Verify SharedArrayBuffer filter with Uint8Array-modified original buffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0240', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+      uint8View.set([5, 15, 25, 35, 45]);
+
+      const filteredUint8: Uint8Array = uint8View.filter(val => val < 25);
+
+      uint8View[0] = 30;
+      uint8View[1] = 20;
+      expect(dataView.getUint8(0)).assertEqual(30);
+      expect(dataView.getUint8(1)).assertEqual(20);
+      expect(filteredUint8[0]).assertEqual(5);
+      expect(filteredUint8[1]).assertEqual(15);
+      const newFilteredUint8: Uint8Array = uint8View.filter(val => val <= 25);
+      expect(newFilteredUint8.length).assertEqual(2);
+      expect(newFilteredUint8[0]).assertEqual(20);
+      expect(newFilteredUint8[1]).assertEqual(25);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0241
+     * @tc.name TypeArrayUint8ArrayBufferDv0241
+     * @tc.desc Verify Uint8Array map with DataView-modified original buffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint8ArrayBufferDv0241', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(3);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([10, 20, 30]);
+      const mappedUint8: Uint8Array = uint8View.map(val => val * 2);
+
+
+      dataView.setUint8(1, 25);
+      expect(uint8View[1]).assertEqual(25);
+      expect(mappedUint8[1]).assertEqual(40);
+      const newMappedUint8: Uint8Array = uint8View.map(val => val * 2);
+      expect(newMappedUint8[1]).assertEqual(50);
+    })
+
+  })
+}
