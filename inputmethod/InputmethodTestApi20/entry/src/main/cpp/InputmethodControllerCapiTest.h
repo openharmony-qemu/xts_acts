@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#ifndef INPUTMETHODTESTApi20_INPUTMETHODCONTROLLERCAPITEST_H
-#define INPUTMETHODTESTApi20_INPUTMETHODCONTROLLERCAPITEST_H
+#ifndef INPUTMETHODTESTAPI20_INPUTMETHODCONTROLLERCAPITEST_H
+#define INPUTMETHODTESTAPI20_INPUTMETHODCONTROLLERCAPITEST_H
 
 #include "napi/native_api.h"
 #include <js_native_api_types.h>
@@ -26,4 +26,4 @@ void AddInputMethodControllerCapiTest(std::vector<napi_property_descriptor> &des
 napi_value TestOhInputMethodControllerAttachNullPointer(napi_env env, napi_callback_info info);
 napi_value TestOhInputMethodControllerDetachNullPointer(napi_env env, napi_callback_info info);
 
-#endif //INPUTMETHODTESTApi20_INPUTMETHODCONTROLLERCAPITEST_H
+#endif //INPUTMETHODTESTAPI20_INPUTMETHODCONTROLLERCAPITEST_H

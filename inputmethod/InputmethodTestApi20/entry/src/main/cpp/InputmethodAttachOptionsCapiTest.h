@@ -12,8 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef INPUTMETHODTESTApi20_INPUTMETHODATTACHOPTIONSCAPITEST_H
-#define INPUTMETHODTESTApi20_INPUTMETHODATTACHOPTIONSCAPITEST_H
+#ifndef INPUTMETHODTESTAPI20_INPUTMETHODATTACHOPTIONSCAPITEST_H
+#define INPUTMETHODTESTAPI20_INPUTMETHODATTACHOPTIONSCAPITEST_H
 
 #include "napi/native_api.h"
 #include <js_native_api_types.h>
@@ -25,4 +25,4 @@ void AddInputMethodAttachOptionsCapiTest(std::vector<napi_property_descriptor> &
 napi_value TestOhAttachOptionsIsShowKeyboardNullPointer(napi_env env, napi_callback_info info);
 napi_value TestOhAttachOptionsGetRequestKeyboardReasonNullPointer(napi_env env, napi_callback_info info);
 
-#endif //INPUTMETHODTESTApi20_INPUTMETHODATTACHOPTIONSCAPITEST_H
+#endif //INPUTMETHODTESTAPI20_INPUTMETHODATTACHOPTIONSCAPITEST_H

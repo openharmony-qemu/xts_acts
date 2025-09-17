@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#ifndef INPUTMETHODTESTApi20_INPUTMETHODTEXTAVOIDINFOCAPITEST_H
-#define INPUTMETHODTESTApi20_INPUTMETHODTEXTAVOIDINFOCAPITEST_H
+#ifndef INPUTMETHODTESTAPI20_INPUTMETHODTEXTAVOIDINFOCAPITEST_H
+#define INPUTMETHODTESTAPI20_INPUTMETHODTEXTAVOIDINFOCAPITEST_H
 
 #include "napi/native_api.h"
 #include <js_native_api_types.h>
@@ -32,4 +32,4 @@ napi_value TestOhTextAvoidInfoGetPositionYOk(napi_env env, napi_callback_info in
 napi_value TestOhTextAvoidInfoGetHeightNullPointer(napi_env env, napi_callback_info info);
 napi_value TestOhTextAvoidInfoGetHeightOk(napi_env env, napi_callback_info info);
 
-#endif //INPUTMETHODTESTApi20_INPUTMETHODTEXTAVOIDINFOCAPITEST_H
+#endif //INPUTMETHODTESTAPI20_INPUTMETHODTEXTAVOIDINFOCAPITEST_H

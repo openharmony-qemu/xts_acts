@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#ifndef INPUTMETHODTESTApi20_INPUTMETHODPRIVATECOMMANDCAPITEST_H
-#define INPUTMETHODTESTApi20_INPUTMETHODPRIVATECOMMANDCAPITEST_H
+#ifndef INPUTMETHODTESTAPI20_INPUTMETHODPRIVATECOMMANDCAPITEST_H
+#define INPUTMETHODTESTAPI20_INPUTMETHODPRIVATECOMMANDCAPITEST_H
 
 #include "napi/native_api.h"
 #include <js_native_api_types.h>
@@ -42,4 +42,4 @@ napi_value TestOhPrivateCommandGetStrValueNullPointer(napi_env env, napi_callbac
 napi_value TestOhPrivateCommandGetStrValueOk(napi_env env, napi_callback_info info);
 napi_value TestOhPrivateCommandGetStrValueQueryFailed(napi_env env, napi_callback_info info);
 
-#endif //INPUTMETHODTESTApi20_INPUTMETHODPRIVATECOMMANDCAPITEST_H
+#endif //INPUTMETHODTESTAPI20_INPUTMETHODPRIVATECOMMANDCAPITEST_H

@@ -12,8 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef INPUTMETHODTESTApi20_INPUTMETHODPROXYCAPITEST_H
-#define INPUTMETHODTESTApi20_INPUTMETHODPROXYCAPITEST_H
+#ifndef INPUTMETHODTESTAPI20_INPUTMETHODPROXYCAPITEST_H
+#define INPUTMETHODTESTAPI20_INPUTMETHODPROXYCAPITEST_H
 
 #include "napi/native_api.h"
 #include <js_native_api_types.h>
@@ -41,4 +41,4 @@ napi_value TestOhInputMethodProxySendPrivateCommandNullPointer(napi_env env, nap
 napi_value TestOhInputMethodProxySendPrivateCommandDetached(napi_env env, napi_callback_info info);
 napi_value TestOhInputMethodProxySendPrivateCommandParamCheckError(napi_env env, napi_callback_info info);
 
-#endif //INPUTMETHODTESTApi20_INPUTMETHODPROXYCAPITEST_H
+#endif //INPUTMETHODTESTAPI20_INPUTMETHODPROXYCAPITEST_H

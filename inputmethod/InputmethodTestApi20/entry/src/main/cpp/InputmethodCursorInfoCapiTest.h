@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#ifndef INPUTMETHODTESTApi20_INPUTMETHODCURSORINFOCAPITEST_H
-#define INPUTMETHODTESTApi20_INPUTMETHODCURSORINFOCAPITEST_H
+#ifndef INPUTMETHODTESTAPI20_INPUTMETHODCURSORINFOCAPITEST_H
+#define INPUTMETHODTESTAPI20_INPUTMETHODCURSORINFOCAPITEST_H
 
 #include "napi/native_api.h"
 #include <js_native_api_types.h>
@@ -28,4 +28,4 @@ napi_value TestOhCursorInfoSetRectOk(napi_env env, napi_callback_info info);
 napi_value TestOhCursorInfoGetRectNullPointer(napi_env env, napi_callback_info info);
 napi_value TestOhCursorInfoGetRectOk(napi_env env, napi_callback_info info);
 
-#endif //INPUTMETHODTESTApi20_INPUTMETHODCURSORINFOCAPITEST_H
+#endif //INPUTMETHODTESTAPI20_INPUTMETHODCURSORINFOCAPITEST_H
