@@ -1,0 +1,167 @@
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import { webview } from '@kit.ArkWeb';
+import business_error from '@ohos.base';
+import prompt from '@ohos.promptAction';
+import Utils from '../../test/Utils';
+import events_emitter from '@ohos.events.emitter';
+import { waitForExist} from '../../test/WaitTest.test';
+import { Driver, ON, MouseButton} from '@ohos.UiTest';
+import {inputMethod} from '@kit.IMEKit';
+
+@Entry
+@Component
+struct WebComponent {
+  webController: webview.WebviewController = new webview.WebviewController();
+  @State isRefreshing: boolean = false;
+  @State isForceZoomEnabled: boolean = false;
+  @State flag:number = 1;
+  @State ScaleChange: boolean = false;
+  @State str: string = "";
+  @State isReceive: number = -1;
+
+
+  aboutToAppear(): void {
+    try {
+      webview.WebviewController.setWebDebuggingAccess(true);
+    } catch (error) {
+      let e: business_error.BusinessError = error as business_error.BusinessError;
+      console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+    }
+  }
+
+  onPageShow() {
+    let valueChangeEvent: events_emitter.InnerEvent = {
+      eventId: 10,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  private valueChangeCallBack = (eventData: events_emitter.EventData) => {
+    if (eventData != null) {
+      if (eventData.data?.ACTION != null) {
+        this.str = eventData.data?.ACTION;
+        this.isReceive = 0;
+      }
+    }
+  }
+
+  build() {
+    Column() {
+
+      Row() {
+        Button("WebController click").key('WebForceEnableZoomButton').onClick(async () => {
+          console.info("key==>" + this.str)
+          await waitForExist(()=>this.isReceive, this.str, 0);
+          switch (this.str) {
+            case "emitWebForceEnableZoom001": {
+              try {
+                this.isForceZoomEnabled = true;
+                let driver = Driver.create();
+                let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
+                await Utils.sleep(2000);
+                await HtmlOne.pinchOut(1.5);
+                await Utils.sleep(2000);
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+              }
+              break;
+            }
+            case "emitWebForceEnableZoom002": {
+              try {
+                this.isForceZoomEnabled = true;
+                this.flag = 2;
+                let driver = Driver.create();
+                let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
+                await Utils.sleep(2000);
+                await HtmlOne.pinchIn(0.5);
+                await Utils.sleep(2000);
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case "emitWebForceEnableZoom003": {
+              try {
+                this.isForceZoomEnabled = false;
+                let driver = Driver.create();
+                let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
+                await Utils.sleep(2000);
+                await HtmlOne.pinchOut(1.5);
+                await Utils.sleep(2000);
+                //isForceZoomEnabled设置为false 应该是不触发 this.ScaleChange 应该为false
+                if(this.ScaleChange) {
+                  Utils.emitEvent(false, 20250915)
+                } else {
+                  Utils.emitEvent(true, 20250915)
+                }
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+              }
+              break;
+            }
+
+
+            case "emitWebForceEnableZoom004": {
+              try {
+                this.isForceZoomEnabled = false;
+                let driver = Driver.create();
+                let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
+                await Utils.sleep(2000);
+                await HtmlOne.pinchIn(0.5);
+                await Utils.sleep(2000);
+                //isForceZoomEnabled设置为false 应该是不触发 this.ScaleChange 应该为false
+                if(this.ScaleChange) {
+                  Utils.emitEvent(false, 20250916)
+                } else {
+                  Utils.emitEvent(true, 20250916)
+                }
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+              }
+              break;
+            }
+
+
+          }
+        })
+      }
+
+
+      Column() {
+        Web({ src: $rawfile("WebForceEnableZoom.html"), controller: this.webController })
+          .key('WebForceEnableZoomWeb')
+          .zoomAccess(true)
+          .metaViewport(true)
+          .onPageEnd(() => {
+            this.isRefreshing = false;
+          })
+          .onScaleChange((e) => {
+            this.ScaleChange = true;
+            console.info("scale changed new = " + e.newScale + ", old = " + e.oldScale)
+            if(this.flag == 1) {
+              Utils.emitEvent(true, 20250913)
+            } else if(this.flag == 2) {
+              Utils.emitEvent(true, 20250914)
+            }
+          })
+          .forceEnableZoom(this.isForceZoomEnabled)
+
+      }
+    }
+  }
+}
