@@ -12,3 +12,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+export const createPositionEdgesNativeRoot: (content: NodeContent, tag: string) => void;
+export const setPositionEdgesIllegal_1: () => void;
+export const setPositionEdgesIllegal_2: () => void;
+export const setPositionEdgesIllegal_3: () => void;
+export const setPositionEdges_top: () => void;
+export const setPositionEdges_left: () => void;
+export const setPositionEdges_bottom: () => void;
+export const setPositionEdges_right: () => void;
+export const setPositionEdges_top_negative: () => void;
+export const setPositionEdges_left_negative: () => void;
+export const setPositionEdges_bottom_negative: () => void;
+export const setPositionEdges_right_negative: () => void;
+export const setPositionEdges_top_left: () => void;
+export const setPositionEdges_top_right: () => void;
+export const setPositionEdges_top_bottom: () => void;
+export const setPositionEdges_left_bottom: () => void;
+export const setPositionEdges_left_right: () => void;
+export const setPositionEdges_bottom_right: () => void;
+export const setPositionEdges_top_left_bottom: () => void;
+export const setPositionEdges_top_left_right: () => void;
+export const setPositionEdges_top_bottom_right: () => void;
+export const setPositionEdges_left_bottom_right: () => void;
+export const setPositionEdges_top_left_bottom_right: () => void;
+export const getPositionEdges: ()=>string;
+export const reSetPositionEdges: () => void;
+export const copyPositionEdges: () => void;
