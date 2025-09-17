@@ -1367,7 +1367,7 @@ export default function abilityTest() {
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteboard.clearData();
-                systemPasteboard.on('update', contentChanges);
+                systemPasteboard.onUpdate(contentChanges);
                 let textData = 'Hello World!';
                 let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
                 await systemPasteboard.setData(pasteData);
@@ -1396,7 +1396,7 @@ export default function abilityTest() {
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteboard.clearData();
-                systemPasteboard.on('update', contentChanges);
+                systemPasteboard.onUpdate(contentChanges);
                 let htmlText = '<html><head></head><body>Hello World!</body></html>';
                 let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_HTML, htmlText);
                 await systemPasteboard.setData(pasteData);
@@ -1425,7 +1425,7 @@ export default function abilityTest() {
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteboard.clearData();
-                systemPasteboard.on('update', contentChanges);
+                systemPasteboard.onUpdate(contentChanges);
                 let uriText = 'https://www.baidu.com/';
                 let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, uriText);
                 await systemPasteboard.setData(pasteData);
@@ -1454,7 +1454,7 @@ export default function abilityTest() {
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteboard.clearData();
-                systemPasteboard.on('update', contentChanges);
+                systemPasteboard.onUpdate(contentChanges);
                 let record: Record<string, pasteboard.ValueType> = {};
                 let want = {
                     bundleName: "com.example.myapplication45",
@@ -1488,7 +1488,7 @@ export default function abilityTest() {
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteboard.clearData();
-                systemPasteboard.on('update', contentChanges);
+                systemPasteboard.onUpdate(contentChanges);
                 let textData = 'Hello World!';
                 let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
                 await systemPasteboard.setData(pasteData);
@@ -1518,7 +1518,7 @@ export default function abilityTest() {
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteboard.clearData();
-                systemPasteboard.off('update', contentChanges)
+                systemPasteboard.offUpdate(contentChanges)
                 let textData = 'Hello World!';
                 let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
                 await systemPasteboard.setData(pasteData);
@@ -1547,7 +1547,7 @@ export default function abilityTest() {
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteboard.clearData();
-                systemPasteboard.off('update', contentChanges);
+                systemPasteboard.offUpdate(contentChanges)
                 let htmlText = '<html><head></head><body>Hello World!</body></html>';
                 let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_HTML, htmlText);
                 await systemPasteboard.setData(pasteData);
@@ -1576,7 +1576,7 @@ export default function abilityTest() {
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteboard.clearData();
-                systemPasteboard.off('update', contentChanges);
+                systemPasteboard.offUpdate(contentChanges)
                 let uriText = 'https://www.baidu.com/';
                 let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, uriText);
                 await systemPasteboard.setData(pasteData);
@@ -1605,7 +1605,7 @@ export default function abilityTest() {
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteboard.clearData();
-                systemPasteboard.off('update', contentChanges)
+                systemPasteboard.offUpdate(contentChanges)
                 let record: Record<string, pasteboard.ValueType> = {};
                 let want = {
                     bundleName: "com.example.myapplication45",
@@ -1639,7 +1639,7 @@ export default function abilityTest() {
             let systemPasteboard = pasteboard.getSystemPasteboard();
             try {
                 await systemPasteboard.clearData();
-                systemPasteboard.off('update', contentChanges);
+                systemPasteboard.offUpdate(contentChanges)
                 let textData = 'Hello World!';
                 let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
                 await systemPasteboard.setData(pasteData);
