@@ -162,6 +162,7 @@
     "pages/ArkUI/CapiDragEvent",
     "pages/ArkUI/SliderTest",
     "pages/ArkUI/ModalTransition",
-    "pages/ArkUI/BindContentCoverOption"
+    "pages/ArkUI/BindContentCoverOption",
+    "pages/ArkUI/EnableShowHideWithContentCover"
   ]
 }
