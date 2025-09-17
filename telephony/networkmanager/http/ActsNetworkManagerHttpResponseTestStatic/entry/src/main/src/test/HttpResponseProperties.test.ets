@@ -189,7 +189,7 @@ export default function HttpResponsePropertiesTest() {
                             httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
                                 expectDataType,
                             }).then((res: http.HttpResponse) => {
-
+                                resultType = res.resultType;
                                 hilog.info(domain, tag, '%{public}s', caseName +': HttpResponse  ->'+JSON.stringify(res));
                                 const flag: boolean = [http.HttpDataType.OBJECT, http.HttpDataType.STRING].includes(resultType);
                                 ExpectTrue(flag);
