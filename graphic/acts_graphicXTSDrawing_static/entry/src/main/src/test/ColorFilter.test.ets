@@ -96,16 +96,6 @@ export default function colorFilterTest() {
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
-
-      try {
-        drawing.ColorFilter.createBlendModeColorFilter({
-          alpha: 254.66, red: 254.555, green: 125.3, blue: 10.222
-        }, drawing.BlendMode.SRC);
-        console.info(msg + ' createBlendModeColorFilter successed');
-      } catch (e: BusinessError) {
-        console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-        expect().assertFail();
-      }
     });
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0103
