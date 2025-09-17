@@ -66,7 +66,7 @@ struct onKeyEventExample4 {
     .onKeyEvent((event: KeyEvent) => {
 
       console.info("the keyEvent is " + JSON.stringify(event))
-
+      return false
     })
   }
 }

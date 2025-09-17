@@ -136,6 +136,7 @@ struct FunctionKeyTest {
           .onKeyEvent((event: KeyEvent) => {
             console.info("event.keyCode: " + JSON.stringify(event));
             this.message2 = "the key Button " + this.changeChar2;
+            return false
           })
         Text(this.message3).key("keyTest3")
         Button("Test short cut 3").onClick((event: ClickEvent) => {

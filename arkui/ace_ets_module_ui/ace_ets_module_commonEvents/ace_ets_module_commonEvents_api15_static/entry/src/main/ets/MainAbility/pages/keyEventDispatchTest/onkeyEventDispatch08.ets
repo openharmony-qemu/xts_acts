@@ -38,7 +38,7 @@ struct onKeyEventExample8 {
       Button('响应排派发的事件')
         .onKeyEvent((event: KeyEvent) => {
           this.keyText1 = "keyTrigger"
-
+          return false
         }).key('keyResponsex')
 
 

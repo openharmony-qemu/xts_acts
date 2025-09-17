@@ -144,6 +144,7 @@ struct onAppearExample {
           })
           .onKeyEvent((event: KeyEvent) => {
             console.log(`Key Text    : ${JSON.stringify(event)}`)
+            return false
           })
           .onMouse((event: MouseEvent) => {
             console.log(`Mouse Text : ${JSON.stringify(event)}`)
