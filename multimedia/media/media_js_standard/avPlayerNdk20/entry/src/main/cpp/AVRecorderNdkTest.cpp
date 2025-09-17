@@ -165,8 +165,8 @@ static napi_value OH_AVRecorder_Release0100(napi_env env, napi_callback_info inf
 
 static napi_value OH_AVRecorder_GetAvailableEncoder0100(napi_env env, napi_callback_info info)
 {
-    int32_t *length = 0;
-    OH_AVErrCode errcode = OH_AVRecorder_GetAvailableEncoder(nullptr, nullptr, length);
+    int32_t length = 0;
+    OH_AVErrCode errcode = OH_AVRecorder_GetAvailableEncoder(nullptr, nullptr, &length);
     int32_t res = 1;
     if (errcode == AV_ERR_INVALID_VAL) {
         res = 0;

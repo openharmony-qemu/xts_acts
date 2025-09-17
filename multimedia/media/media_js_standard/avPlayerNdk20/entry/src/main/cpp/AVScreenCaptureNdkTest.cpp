@@ -17,20 +17,20 @@
 #include "hilog/log.h"
 #include "js_native_api.h"
 #include "js_native_api_types.h"
-#include "napi/native_api.h"
 #include "multimedia/player_framework/native_avbuffer.h"
 #include "multimedia/player_framework/native_avcapability.h"
 #include "multimedia/player_framework/native_avcodec_base.h"
+#include "multimedia/player_framework/native_avcodec_videoencoder.h"
 #include "multimedia/player_framework/native_avformat.h"
 #include "multimedia/player_framework/native_avscreen_capture.h"
 #include "multimedia/player_framework/native_avscreen_capture_base.h"
 #include "multimedia/player_framework/native_avscreen_capture_errors.h"
-#include "multimedia/player_framework/native_avcodec_videoencoder.h"
-#include <native_buffer/native_buffer.h>
+#include "napi/native_api.h"
 #include <ace/xcomponent/native_interface_xcomponent.h>
 #include <arkui/native_node.h>
 #include <arkui/native_node_napi.h>
 #include <cstdint>
+#include <native_buffer/native_buffer.h>
 
 #define PARAM_1 1
 
@@ -305,22 +305,6 @@ static napi_value OH_AVScreenCapture_SetStateCallback0101(napi_env env, napi_cal
     napi_create_int32(env, res, &retValue);
     return retValue;
 }
-// delete
-// void OnBufferAvailable(OH_AVScreenCapture *capture, OH_AVBuffer *buffer, OH_AVScreenCaptureBufferType bufferType,
-//                       int64_t timestamp, void *userData){};
-// static napi_value OH_AVScreenCapture_SetDataCallback0100(napi_env env, napi_callback_info info)
-//{
-//    void *userData;
-//    OH_AVSCREEN_CAPTURE_ErrCode errcode =
-//        OH_AVScreenCapture_SetDataCallback(g_screenCapturee, OnBufferAvailable, userData);
-//    int32_t res = 1;
-//    if (errcode == AV_SCREEN_CAPTURE_ERR_OK) {
-//        res = 0;
-//    }
-//    napi_value retValue;
-//    napi_create_int32(env, res, &retValue);
-//    return retValue;
-//}
 
 static napi_value OH_AVScreenCapture_SetDataCallback0101(napi_env env, napi_callback_info info)
 {
@@ -402,12 +386,14 @@ static napi_value OH_AVScreenCapture_StartScreenCaptureWithSurface0100(napi_env 
 
     int32_t ret = OH_VideoEncoder_RegisterCallback(
         videoEnc, {OnErrorWithSurface, OnStreamChanged, OnNeedInputBuffer, OnNewOutputBuffer}, nullptr);
-
+    auto qaz = 23000;
+    auto wsx = 3000000;
+    auto edc = 30.0;
     OH_AVFormat *format = OH_AVFormat_Create();
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, DEFAULT_PIXELFORMAT);
-    OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, 30.0);
+    OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, edc);
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_RANGE_FLAG, false);
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_COLOR_PRIMARIES,
                             static_cast<int32_t>(OH_ColorPrimary::COLOR_PRIMARY_BT709));
@@ -415,11 +401,11 @@ static napi_value OH_AVScreenCapture_StartScreenCaptureWithSurface0100(napi_env 
                             static_cast<int32_t>(OH_TransferCharacteristic::TRANSFER_CHARACTERISTIC_BT709));
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_MATRIX_COEFFICIENTS,
                             static_cast<int32_t>(OH_MatrixCoefficient::MATRIX_COEFFICIENT_IDENTITY));
-    OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, 23000);
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, qaz);
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, static_cast<int32_t>(OH_AVCProfile::AVC_PROFILE_BASELINE));
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE,
                             static_cast<int32_t>(OH_VideoEncodeBitrateMode::CBR));
-    OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, 3000000);
+    OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, wsx);
 
     int result2 = OH_VideoEncoder_Configure(videoEnc, format);
     OH_AVFormat_Destroy(format); // 释放格式对象
@@ -765,11 +751,12 @@ static napi_value OH_AVScreenCapture_SetCaptureContentChangedCallback0101(napi_e
 static napi_value OH_AVScreenCapture_SetCaptureArea0100(napi_env env, napi_callback_info info)
 {
     uint64_t displayId = 0;
+    auto def = 20;
     OH_Rect *area = new OH_Rect;
-    area->x = 10;
-    area->y = 10;
-    area->width = 20;
-    area->height = 20;
+    area->x = 1;
+    area->y = 1;
+    area->width = def;
+    area->height = def;
     OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_SetCaptureArea(g_screenCapturee, displayId, area);
     int32_t res = 1;
     if (errcode == AV_SCREEN_CAPTURE_ERR_OK) {
@@ -930,132 +917,133 @@ static napi_value OH_AVScreenCapture_StrategyForFillMode0100(napi_env env, napi_
     return retValue;
 }
 
+napi_property_descriptor desc[] = {
+    {"OH_AVScreenCapture_Init0100", nullptr, OH_AVScreenCapture_Init0100, nullptr, nullptr, nullptr, napi_default,
+     nullptr},
+    {"OH_AVScreenCapture_StartScreenCapture0100", nullptr, OH_AVScreenCapture_StartScreenCapture0100, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_StartScreenCapture0101", nullptr, OH_AVScreenCapture_StartScreenCapture0101, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_StopScreenCapture0100", nullptr, OH_AVScreenCapture_StopScreenCapture0100, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_StopScreenCapture0101", nullptr, OH_AVScreenCapture_StopScreenCapture0101, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_StartScreenRecording0100", nullptr, OH_AVScreenCapture_StartScreenRecording0100, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_StartScreenRecording0101", nullptr, OH_AVScreenCapture_StartScreenRecording0101, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_StopScreenRecording0100", nullptr, OH_AVScreenCapture_StopScreenRecording0100, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_StopScreenRecording0101", nullptr, OH_AVScreenCapture_StopScreenRecording0101, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_AcquireAudioBuffer0100", nullptr, OH_AVScreenCapture_AcquireAudioBuffer0100, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_AcquireAudioBuffer0101", nullptr, OH_AVScreenCapture_AcquireAudioBuffer0101, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_ReleaseAudioBuffer0100", nullptr, OH_AVScreenCapture_ReleaseAudioBuffer0100, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_ReleaseAudioBuffer0101", nullptr, OH_AVScreenCapture_ReleaseAudioBuffer0101, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_ReleaseVideoBuffer0100", nullptr, OH_AVScreenCapture_ReleaseVideoBuffer0100, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_ReleaseVideoBuffer0101", nullptr, OH_AVScreenCapture_ReleaseVideoBuffer0101, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_SetCallback0100", nullptr, OH_AVScreenCapture_SetCallback0100, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVScreenCapture_SetCallback0101", nullptr, OH_AVScreenCapture_SetCallback0101, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVScreenCapture_SetMicrophoneEnabled0101", nullptr, OH_AVScreenCapture_SetMicrophoneEnabled0101, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_SetStateCallback0100", nullptr, OH_AVScreenCapture_SetStateCallback0100, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_SetStateCallback0101", nullptr, OH_AVScreenCapture_SetStateCallback0101, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_SetDataCallback0101", nullptr, OH_AVScreenCapture_SetDataCallback0101, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_SetErrorCallback0100", nullptr, OH_AVScreenCapture_SetErrorCallback0100, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_SetErrorCallback0101", nullptr, OH_AVScreenCapture_SetErrorCallback0101, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_StartScreenCaptureWithSurface0100", nullptr,
+     OH_AVScreenCapture_StartScreenCaptureWithSurface0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_StartScreenCaptureWithSurface0101", nullptr,
+     OH_AVScreenCapture_StartScreenCaptureWithSurface0101, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_SetCanvasRotation0100", nullptr, OH_AVScreenCapture_SetCanvasRotation0100, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_SetCanvasRotation0101", nullptr, OH_AVScreenCapture_SetCanvasRotation0101, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_ReleaseContentFilter0100", nullptr, OH_AVScreenCapture_ReleaseContentFilter0100, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_ReleaseContentFilter0101", nullptr, OH_AVScreenCapture_ReleaseContentFilter0101, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_ContentFilter_AddAudioContent0100", nullptr,
+     OH_AVScreenCapture_ContentFilter_AddAudioContent0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_ContentFilter_AddAudioContent0101", nullptr,
+     OH_AVScreenCapture_ContentFilter_AddAudioContent0101, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_ExcludeContent0100", nullptr, OH_AVScreenCapture_ExcludeContent0100, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVScreenCapture_ExcludeContent0101", nullptr, OH_AVScreenCapture_ExcludeContent0101, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVScreenCapture_ContentFilter_AddWindowContent0100", nullptr,
+     OH_AVScreenCapture_ContentFilter_AddWindowContent0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_ContentFilter_AddWindowContent0101", nullptr,
+     OH_AVScreenCapture_ContentFilter_AddWindowContent0101, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_ResizeCanvas0100", nullptr, OH_AVScreenCapture_ResizeCanvas0100, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVScreenCapture_ResizeCanvas0101", nullptr, OH_AVScreenCapture_ResizeCanvas0101, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVScreenCapture_SkipPrivacyMode0101", nullptr, OH_AVScreenCapture_SkipPrivacyMode0101, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_SetMaxVideoFrameRate0101", nullptr, OH_AVScreenCapture_SetMaxVideoFrameRate0101, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_ShowCursor0100", nullptr, OH_AVScreenCapture_ShowCursor0100, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVScreenCapture_SetDisplayCallback0100", nullptr, OH_AVScreenCapture_SetDisplayCallback0100, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_SetDisplayCallback0101", nullptr, OH_AVScreenCapture_SetDisplayCallback0101, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_ReleaseCaptureStrategy0100", nullptr, OH_AVScreenCapture_ReleaseCaptureStrategy0100, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_SetCaptureStrategy0100", nullptr, OH_AVScreenCapture_SetCaptureStrategy0100, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_SetCaptureStrategy0101", nullptr, OH_AVScreenCapture_SetCaptureStrategy0101, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_StrategyForKeepCaptureDuringCall0100", nullptr,
+     OH_AVScreenCapture_StrategyForKeepCaptureDuringCall0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_SetCaptureContentChangedCallback0100", nullptr,
+     OH_AVScreenCapture_SetCaptureContentChangedCallback0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_SetCaptureContentChangedCallback0101", nullptr,
+     OH_AVScreenCapture_SetCaptureContentChangedCallback0101, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_SetCaptureArea0100", nullptr, OH_AVScreenCapture_SetCaptureArea0100, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVScreenCapture_StrategyForPrivacyMaskMode0100", nullptr, OH_AVScreenCapture_StrategyForPrivacyMaskMode0100,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_StrategyForPrivacyMaskMode0101", nullptr, OH_AVScreenCapture_StrategyForPrivacyMaskMode0101,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_StrategyForCanvasFollowRotation0100", nullptr,
+     OH_AVScreenCapture_StrategyForCanvasFollowRotation0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_StrategyForCanvasFollowRotation0101", nullptr,
+     OH_AVScreenCapture_StrategyForCanvasFollowRotation0101, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_GetCaptureTypeSelected0100", nullptr, OH_AVScreenCapture_GetCaptureTypeSelected0100, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_GetCaptureTypeSelected0101", nullptr, OH_AVScreenCapture_GetCaptureTypeSelected0101, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_GetDisplayIdSelected0100", nullptr, OH_AVScreenCapture_GetDisplayIdSelected0100, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_GetDisplayIdSelected0101", nullptr, OH_AVScreenCapture_GetDisplayIdSelected0101, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_StrategyForBFramesEncoding0100", nullptr, OH_AVScreenCapture_StrategyForBFramesEncoding0100,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_StrategyForPickerPopUp0100", nullptr, OH_AVScreenCapture_StrategyForPickerPopUp0100, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_StrategyForFillMode0100", nullptr, OH_AVScreenCapture_StrategyForFillMode0100, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+
+};
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
-    napi_property_descriptor desc[] = {
-        {"OH_AVScreenCapture_Init0100", nullptr, OH_AVScreenCapture_Init0100, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
-        {"OH_AVScreenCapture_StartScreenCapture0100", nullptr, OH_AVScreenCapture_StartScreenCapture0100, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_StartScreenCapture0101", nullptr, OH_AVScreenCapture_StartScreenCapture0101, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_StopScreenCapture0100", nullptr, OH_AVScreenCapture_StopScreenCapture0100, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_StopScreenCapture0101", nullptr, OH_AVScreenCapture_StopScreenCapture0101, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_StartScreenRecording0100", nullptr, OH_AVScreenCapture_StartScreenRecording0100, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_StartScreenRecording0101", nullptr, OH_AVScreenCapture_StartScreenRecording0101, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_StopScreenRecording0100", nullptr, OH_AVScreenCapture_StopScreenRecording0100, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_StopScreenRecording0101", nullptr, OH_AVScreenCapture_StopScreenRecording0101, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_AcquireAudioBuffer0100", nullptr, OH_AVScreenCapture_AcquireAudioBuffer0100, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_AcquireAudioBuffer0101", nullptr, OH_AVScreenCapture_AcquireAudioBuffer0101, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_ReleaseAudioBuffer0100", nullptr, OH_AVScreenCapture_ReleaseAudioBuffer0100, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_ReleaseAudioBuffer0101", nullptr, OH_AVScreenCapture_ReleaseAudioBuffer0101, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_ReleaseVideoBuffer0100", nullptr, OH_AVScreenCapture_ReleaseVideoBuffer0100, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_ReleaseVideoBuffer0101", nullptr, OH_AVScreenCapture_ReleaseVideoBuffer0101, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_SetCallback0100", nullptr, OH_AVScreenCapture_SetCallback0100, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"OH_AVScreenCapture_SetCallback0101", nullptr, OH_AVScreenCapture_SetCallback0101, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"OH_AVScreenCapture_SetMicrophoneEnabled0101", nullptr, OH_AVScreenCapture_SetMicrophoneEnabled0101, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_SetStateCallback0100", nullptr, OH_AVScreenCapture_SetStateCallback0100, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_SetStateCallback0101", nullptr, OH_AVScreenCapture_SetStateCallback0101, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_SetDataCallback0101", nullptr, OH_AVScreenCapture_SetDataCallback0101, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_SetErrorCallback0100", nullptr, OH_AVScreenCapture_SetErrorCallback0100, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_SetErrorCallback0101", nullptr, OH_AVScreenCapture_SetErrorCallback0101, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_StartScreenCaptureWithSurface0100", nullptr,
-         OH_AVScreenCapture_StartScreenCaptureWithSurface0100, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_StartScreenCaptureWithSurface0101", nullptr,
-         OH_AVScreenCapture_StartScreenCaptureWithSurface0101, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_SetCanvasRotation0100", nullptr, OH_AVScreenCapture_SetCanvasRotation0100, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_SetCanvasRotation0101", nullptr, OH_AVScreenCapture_SetCanvasRotation0101, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_ReleaseContentFilter0100", nullptr, OH_AVScreenCapture_ReleaseContentFilter0100, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_ReleaseContentFilter0101", nullptr, OH_AVScreenCapture_ReleaseContentFilter0101, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_ContentFilter_AddAudioContent0100", nullptr,
-         OH_AVScreenCapture_ContentFilter_AddAudioContent0100, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_ContentFilter_AddAudioContent0101", nullptr,
-         OH_AVScreenCapture_ContentFilter_AddAudioContent0101, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_ExcludeContent0100", nullptr, OH_AVScreenCapture_ExcludeContent0100, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_ExcludeContent0101", nullptr, OH_AVScreenCapture_ExcludeContent0101, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_ContentFilter_AddWindowContent0100", nullptr,
-         OH_AVScreenCapture_ContentFilter_AddWindowContent0100, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_ContentFilter_AddWindowContent0101", nullptr,
-         OH_AVScreenCapture_ContentFilter_AddWindowContent0101, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_ResizeCanvas0100", nullptr, OH_AVScreenCapture_ResizeCanvas0100, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"OH_AVScreenCapture_ResizeCanvas0101", nullptr, OH_AVScreenCapture_ResizeCanvas0101, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"OH_AVScreenCapture_SkipPrivacyMode0101", nullptr, OH_AVScreenCapture_SkipPrivacyMode0101, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_SetMaxVideoFrameRate0101", nullptr, OH_AVScreenCapture_SetMaxVideoFrameRate0101, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_ShowCursor0100", nullptr, OH_AVScreenCapture_ShowCursor0100, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"OH_AVScreenCapture_SetDisplayCallback0100", nullptr, OH_AVScreenCapture_SetDisplayCallback0100, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_SetDisplayCallback0101", nullptr, OH_AVScreenCapture_SetDisplayCallback0101, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_ReleaseCaptureStrategy0100", nullptr, OH_AVScreenCapture_ReleaseCaptureStrategy0100,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_SetCaptureStrategy0100", nullptr, OH_AVScreenCapture_SetCaptureStrategy0100, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_SetCaptureStrategy0101", nullptr, OH_AVScreenCapture_SetCaptureStrategy0101, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_StrategyForKeepCaptureDuringCall0100", nullptr,
-         OH_AVScreenCapture_StrategyForKeepCaptureDuringCall0100, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_SetCaptureContentChangedCallback0100", nullptr,
-         OH_AVScreenCapture_SetCaptureContentChangedCallback0100, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_SetCaptureContentChangedCallback0101", nullptr,
-         OH_AVScreenCapture_SetCaptureContentChangedCallback0101, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_SetCaptureArea0100", nullptr, OH_AVScreenCapture_SetCaptureArea0100, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_StrategyForPrivacyMaskMode0100", nullptr,
-         OH_AVScreenCapture_StrategyForPrivacyMaskMode0100, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_StrategyForPrivacyMaskMode0101", nullptr,
-         OH_AVScreenCapture_StrategyForPrivacyMaskMode0101, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_StrategyForCanvasFollowRotation0100", nullptr,
-         OH_AVScreenCapture_StrategyForCanvasFollowRotation0100, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_StrategyForCanvasFollowRotation0101", nullptr,
-         OH_AVScreenCapture_StrategyForCanvasFollowRotation0101, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_GetCaptureTypeSelected0100", nullptr, OH_AVScreenCapture_GetCaptureTypeSelected0100,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_GetCaptureTypeSelected0101", nullptr, OH_AVScreenCapture_GetCaptureTypeSelected0101,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_GetDisplayIdSelected0100", nullptr, OH_AVScreenCapture_GetDisplayIdSelected0100, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_GetDisplayIdSelected0101", nullptr, OH_AVScreenCapture_GetDisplayIdSelected0101, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_StrategyForBFramesEncoding0100", nullptr,
-         OH_AVScreenCapture_StrategyForBFramesEncoding0100, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_StrategyForPickerPopUp0100", nullptr, OH_AVScreenCapture_StrategyForPickerPopUp0100,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_AVScreenCapture_StrategyForFillMode0100", nullptr, OH_AVScreenCapture_StrategyForFillMode0100, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-
-    };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
 }
