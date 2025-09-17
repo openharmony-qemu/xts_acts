@@ -9,3 +9,68 @@ include_directories(${NATIVERENDER_ROOT_PATH}
 
 add_library(avplayerndk SHARED AVPlayerNdkTest.cpp)
 target_link_libraries(avplayerndk PUBLIC libace_napi.z.so libhilog_ndk.z.so libnative_media_core.so libnative_media_codecbase.so libnative_media_venc.so libnative_window.so libavplayer.so libnative_image.so libGLESv3.so libEGL.so)
+
+add_library(avscreencapturendk SHARED AVScreenCaptureNdkTest.cpp)
+target_link_libraries(avscreencapturendk PUBLIC
+    libace_napi.z.so
+    libhilog_ndk.z.so
+    libnative_avscreen_capture.so
+    libGLESv3.so
+    libEGL.so
+    libohinput.so
+    libace_ndk.z.so
+    libnative_buffer.so
+    libnative_media_codecbase.so
+    libnative_media_core.so
+    libnative_media_venc.so
+    libnative_window.so
+    libnative_media_avdemuxer.so
+    libnative_media_avsource.so
+    libnative_image.so
+    librawfile.z.so
+    libnative_media_avmuxer.so
+    libnative_media_adec.so
+    libnative_media_aenc.so
+    libnative_media_vdec.so
+)
+
+add_library(avrecorderndk SHARED AVRecorderNdkTest.cpp)
+target_link_libraries(avrecorderndk PUBLIC
+    libace_napi.z.so
+    libavrecorder.so
+    libnative_media_core.so
+    libnative_media_codecbase.so
+    libnative_media_venc.so
+    libnative_window.so
+    libavplayer.so
+    libnative_image.so
+    libGLESv3.so
+    libEGL.so
+    libnative_buffer.so
+    libhilog_ndk.z.so
+    librawfile.z.so
+)
+
+add_library(avtranscoderconfigndk SHARED AVTranscoderConfig.cpp)
+target_link_libraries(avtranscoderconfigndk PUBLIC
+    libace_napi.z.so
+    libavrecorder.so
+    libnative_media_core.so
+    libnative_media_codecbase.so
+    libnative_media_venc.so
+    libnative_window.so
+    libavplayer.so
+    libnative_image.so
+    libGLESv3.so
+    libEGL.so
+    libnative_buffer.so
+    libhilog_ndk.z.so
+    librawfile.z.so
+    libavtranscoder.so
+    libnative_media_avsource.so
+    libnative_media_core.so
+    libnative_media_aenc.so
+    libnative_media_codecbase.so
+    libnative_media_adec.so
+)
+
