@@ -141,6 +141,7 @@ struct IndexPage {
     { title: 'SliderTest', uri: 'pages/ArkUI/SliderTest' },
     { title: 'ModalTransition', uri: 'pages/ArkUI/ModalTransition' },
     { title: 'BindContentCoverOption', uri: 'pages/ArkUI/BindContentCoverOption' },
+    { title: 'EnableShowHideWithContentCover', uri: 'pages/ArkUI/EnableShowHideWithContentCover' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];
