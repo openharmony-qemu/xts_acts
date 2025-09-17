@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 import webOnDataResubmitted from './WebOnDataResubmitted.test';
+import webOnFirstContentfulPaint from './WebOnFirstContentfulPaint.test';
+
 export default function testsuite() {
   webOnDataResubmitted()
+  webOnFirstContentfulPaint()
 }
