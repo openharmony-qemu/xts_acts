@@ -16,6 +16,7 @@
 #include "napi/native_api.h"
 #include "hidebug/hidebug.h"
 #include "hidebug/hidebug_type.h"
+#include <string>
 
 static napi_value Add(napi_env env, napi_callback_info info)
 {
@@ -117,6 +118,43 @@ static napi_value GetNativeMemInfoFalse(napi_env env, napi_callback_info info)
     return memInfo;
 }
 
+static napi_value GetGraphicMemSummaryC(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args , nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    int interval = 0;
+    napi_get_value_int32(env, args[0], &interval);
+    bool isUndefine = false;
+    if (argc > 1) {
+       napi_get_value_bool(env, args[1], &isUndefine); 
+    }
+    HiDebug_GraphicsMemorySummary memorySummary{};
+    HiDebug_ErrorCode retCode = HIDEBUG_SUCCESS;
+    if (isUndefine) {
+        retCode = OH_HiDebug_GetGraphicsMemorySummary(interval, nullptr);
+    } else {
+        retCode = OH_HiDebug_GetGraphicsMemorySummary(interval, &memorySummary);
+    }
+    if (retCode != HIDEBUG_SUCCESS) {
+        napi_throw_error(env, std::to_string(retCode).c_str(), "hidebug OH_HiDebug_GetGraphicsMemorySummary error");
+        return nullptr;
+    }
+    napi_value memInfo;
+    napi_create_object(env, &memInfo);
+    napi_value gl;
+    napi_create_bigint_uint64(env, memorySummary.gl, &gl);
+    napi_set_named_property(env, memInfo, "gl", gl);
+
+    napi_value graph;
+    napi_create_bigint_uint64(env, memorySummary.graph, &graph);
+    napi_set_named_property(env, memInfo, "graph", graph);
+
+    return memInfo;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -124,6 +162,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "add", nullptr, Add, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getNativeMemInfoTrue", nullptr, GetNativeMemInfoTrue, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getNativeMemInfoFalse", nullptr, GetNativeMemInfoFalse, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getGraphicMemSummaryC", nullptr, GetGraphicMemSummaryC, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

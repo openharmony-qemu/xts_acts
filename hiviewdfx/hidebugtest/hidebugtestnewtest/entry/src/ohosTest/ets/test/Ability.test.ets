@@ -1011,5 +1011,219 @@ export default function abilityTest() {
       }
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_5400 end");
     });
+
+    /**
+     * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_5500
+     * @tc.name testHiprofilerInterface55
+     * @tc.desc 验证OH_HiDebug_GetGraphicsMemorySummary入参interval为-5测试
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHiprofilerInterface55', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_5500 start");
+      try {
+        let graphicsMemorySummary = testNapi.getGraphicMemSummaryC(-5);
+        let gl = graphicsMemorySummary.gl
+        let graph = graphicsMemorySummary.graph
+        console.info("SUB_DFX_DFR_Hiprofiler_Interface_5500 graphicsMemorySummary gl: " + gl + " graph: " + graph);
+        expect(gl >= 0).assertTrue();
+        expect(graph >= 0).assertTrue();
+        console.info("SUB_DFX_DFR_Hiprofiler_Interface_5500 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_Hiprofiler_Interface_5500 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_5500 end");
+    });
+
+    /**
+     * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_5600
+     * @tc.name testHiprofilerInterface56
+     * @tc.desc 验证OH_HiDebug_GetGraphicsMemorySummary入参interval为0测试
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHiprofilerInterface56', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_5600 start");
+      try {
+        let graphicsMemorySummary = testNapi.getGraphicMemSummaryC(0);
+        let gl = graphicsMemorySummary.gl
+        let graph = graphicsMemorySummary.graph
+        console.info("SUB_DFX_DFR_Hiprofiler_Interface_5600 graphicsMemorySummary gl: " + gl + " graph: " + graph);
+        expect(gl >= 0).assertTrue();
+        expect(graph >= 0).assertTrue();
+        console.info("SUB_DFX_DFR_Hiprofiler_Interface_5600 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_Hiprofiler_Interface_5600 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_5600 end");
+    });
+
+    /**
+     * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_5700
+     * @tc.name testHiprofilerInterface57
+     * @tc.desc 验证OH_HiDebug_GetGraphicsMemorySummary入参interval为2测试
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHiprofilerInterface57', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_5700 start");
+      try {
+        let graphicsMemorySummary = testNapi.getGraphicMemSummaryC(2);
+        let gl = graphicsMemorySummary.gl
+        let graph = graphicsMemorySummary.graph
+        console.info("SUB_DFX_DFR_Hiprofiler_Interface_5700 graphicsMemorySummary gl: " + gl + " graph: " + graph);
+        expect(gl >= 0).assertTrue();
+        expect(graph >= 0).assertTrue();
+        console.info("SUB_DFX_DFR_Hiprofiler_Interface_5700 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_Hiprofiler_Interface_5700 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_5700 end");
+    });
+
+    /**
+     * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_5800
+     * @tc.name testHiprofilerInterface58
+     * @tc.desc 验证OH_HiDebug_GetGraphicsMemorySummary入参interval为5测试
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHiprofilerInterface58', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_5800 start");
+      try {
+        let graphicsMemorySummary = testNapi.getGraphicMemSummaryC(5);
+        let gl = graphicsMemorySummary.gl
+        let graph = graphicsMemorySummary.graph
+        console.info("SUB_DFX_DFR_Hiprofiler_Interface_5800 graphicsMemorySummary gl: " + gl + " graph: " + graph);
+        expect(gl >= 0).assertTrue();
+        expect(graph >= 0).assertTrue();
+        console.info("SUB_DFX_DFR_Hiprofiler_Interface_5800 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_Hiprofiler_Interface_5800 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_5800 end");
+    });
+
+    /**
+     * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_5900
+     * @tc.name testHiprofilerInterface59
+     * @tc.desc 验证OH_HiDebug_GetGraphicsMemorySummary入参interval为3600测试
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHiprofilerInterface59', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_5900 start");
+      try {
+        let graphicsMemorySummary = testNapi.getGraphicMemSummaryC(3600);
+        let gl = graphicsMemorySummary.gl
+        let graph = graphicsMemorySummary.graph
+        console.info("SUB_DFX_DFR_Hiprofiler_Interface_5900 graphicsMemorySummary gl: " + gl + " graph: " + graph);
+        expect(gl >= 0).assertTrue();
+        expect(graph >= 0).assertTrue();
+        console.info("SUB_DFX_DFR_Hiprofiler_Interface_5900 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_Hiprofiler_Interface_5900 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_5900 end");
+    });
+
+    /**
+     * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_6000
+     * @tc.name testHiprofilerInterface60
+     * @tc.desc 验证OH_HiDebug_GetGraphicsMemorySummary入参interval为4000测试
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHiprofilerInterface60', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_6000 start");
+      try {
+        let graphicsMemorySummary = testNapi.getGraphicMemSummaryC(4000);
+        let gl = graphicsMemorySummary.gl
+        let graph = graphicsMemorySummary.graph
+        console.info("SUB_DFX_DFR_Hiprofiler_Interface_6000 graphicsMemorySummary gl: " + gl + " graph: " + graph);
+        expect(gl >= 0).assertTrue();
+        expect(graph >= 0).assertTrue();
+        console.info("SUB_DFX_DFR_Hiprofiler_Interface_6000 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_Hiprofiler_Interface_6000 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_6000 end");
+    });
+
+    /**
+     * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_6100
+     * @tc.name testHiprofilerInterface61
+     * @tc.desc 验证OH_HiDebug_GetGraphicsMemorySummary入参interval为5，summary为nullptr测试
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHiprofilerInterface61', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_6100 start");
+      try {
+        let ret = testNapi.getGraphicMemSummaryC(5, true);
+        console.info("SUB_DFX_DFR_Hiprofiler_Interface_6100 ret: " + ret);
+        console.info("SUB_DFX_DFR_Hiprofiler_Interface_6100 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_Hiprofiler_Interface_6100 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_6100 end");
+    });
+
+    /**
+     * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_6200
+     * @tc.name testHiprofilerInterface62
+     * @tc.desc 验证OH_HiDebug_GetGraphicsMemorySummary接口调用稳定性测试
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it('testHiprofilerInterface62', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_6200 start");
+      try {
+        for (let i = 0; i < 100; i++) {
+          let graphicsMemorySummary = testNapi.getGraphicMemSummaryC(5);
+          let gl = graphicsMemorySummary.gl
+          let graph = graphicsMemorySummary.graph
+          console.info("SUB_DFX_DFR_Hiprofiler_Interface_6200 graphicsMemorySummary gl: " + gl + " graph: " + graph);
+          expect(gl >= 0).assertTrue();
+          expect(graph >= 0).assertTrue();
+        }
+        console.info("SUB_DFX_DFR_Hiprofiler_Interface_6200 100 times success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_Hiprofiler_Interface_6200 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_6200 end");
+    });
   })
 }
