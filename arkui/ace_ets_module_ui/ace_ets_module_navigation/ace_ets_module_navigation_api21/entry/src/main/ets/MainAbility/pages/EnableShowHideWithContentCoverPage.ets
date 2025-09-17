@@ -113,6 +113,7 @@ struct PageOne1 {
         console.log('EnableShowHideWithContentCoverPage show name: ', callback as VisibilityChangeReason == VisibilityChangeReason.TRANSITION);
       }
       console.log('EnableShowHideWithContentCoverPage show name: ', JSON.stringify(callback as VisibilityChangeReason))
+      AppStorage.setOrCreate('testValue', JSON.stringify(callback as VisibilityChangeReason));
     })
     .onHidden((callback) => {
       if (this.testModal) {
@@ -121,6 +122,7 @@ struct PageOne1 {
         console.log('EnableShowHideWithContentCoverPage hide name: ', callback as VisibilityChangeReason == VisibilityChangeReason.TRANSITION);
       }
       console.log('EnableShowHideWithContentCoverPage hide name: ', JSON.stringify(callback as VisibilityChangeReason))
+      AppStorage.setOrCreate('testValue', JSON.stringify(callback as VisibilityChangeReason));
     })
   }
 }
