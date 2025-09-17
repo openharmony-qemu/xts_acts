@@ -25,7 +25,7 @@ static napi_value Add(napi_env env, napi_callback_info info)
     
     if (argc != 2) {
         napi_throw_type_error(env, nullptr, "Expected 2 arguments");
-        return;
+        return nullptr;
     }
 
     napi_valuetype valuetype0;
@@ -65,7 +65,7 @@ napi_value test_ndk_setActiveWebEngineVersion(napi_env env, napi_callback_info i
     napi_status status = napi_get_value_int32(env, argv[0], &webEngineVersion);
     if(status != napi_ok) {
         napi_throw_type_error(env, nullptr, "Argument must be a number");
-        return;
+        return nullptr;
     }
     
     OH_NativeArkWeb_SetActiveWebEngineVersion(static_cast<ArkWebEngineVersion>(webEngineVersion));
