@@ -17,3 +17,4 @@ export const add: (a: number, b: number) => number;
 import hidebug from '@ohos.hidebug';
 export const getNativeMemInfoTrue: () => hidebug.NativeMemInfo;
 export const getNativeMemInfoFalse: () => hidebug.NativeMemInfo;
+export const getGraphicMemSummaryC: (interval: number, undefineTest?: boolean) => hidebug.GraphicsMemorySummary;
