@@ -568,11 +568,10 @@ void PhotoOutputOnFrameShutter(Camera_PhotoOutput* photoOutput, Camera_FrameShut
     NDKCamera::cameraCallbackCode_ = PHOTO_ON_FRAME_SHUTTER;
     Camera_FrameShutterInfo shutterInfo;
     shutterInfo.captureId = 0;
-    shutterInfo.timestamp = 1000;
+    shutterInfo.timestamp = 0;
     if (info->captureId == shutterInfo.captureId) {
-        LogD("PhotoOutputOnFrameShutter");    
+        LogD("PhotoOutputOnFrameShutter");
     }
-
     if (info->timestamp == shutterInfo.timestamp) {
         LogD("PhotoOutputOnFrameShutter");
     }
@@ -628,25 +627,20 @@ void OnMetadataObjectAvailable(Camera_MetadataOutput *metadataOutput, Camera_Met
     metaObject.boundingBox = &rect;
 
     if (metadataObject->type == metaObject.type) {
-        LogD("type = %d", metaObject.type);    
+        LogD("type = %d", metaObject.type);
     }
-
     if (metadataObject->timestamp == metaObject.timestamp) {
-        LogD("timestamp = %d", metaObject.timestamp);    
+        LogD("timestamp = %d", metaObject.timestamp);
     }
-
     if (metadataObject->boundingBox->width == metaObject.boundingBox->width) {
         LogD("width = %d", metaObject.boundingBox->width);
     }
-
     if (metadataObject->boundingBox->height == metaObject.boundingBox->height) {
         LogD("height = %d", metaObject.boundingBox->height);
     }
-
     if (metadataObject->boundingBox->topLeftX == metaObject.boundingBox->topLeftX) {
         LogD("topLeftX = %d", metaObject.boundingBox->topLeftX);
     }
-
     if (metadataObject->boundingBox->topLeftY == metaObject.boundingBox->topLeftY) {
         LogD("topLeftY = %d", metaObject.boundingBox->topLeftY);
     }
@@ -675,7 +669,6 @@ Camera_ErrorCode NDKCamera::MetadataOutputRegisterCallback(void)
     Camera_MetadataObjectType profile = FACE_DETECTION;
     Camera_MetadataOutput* metadataOutput_;
     Camera_ErrorCode ret = OH_CameraManager_CreateMetadataOutput(cameraManager_, &profile, &metadataOutput_);
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "ArkWeb", "=======chenbo  MetadataOutputRegisterCallback ret:%{public}d", ret);
     ret = OH_MetadataOutput_RegisterCallback(metadataOutput_, GetMetadataOutputListener());
     if (ret != CAMERA_OK) {
         LogE("OH_MetadataOutput_RegisterCallback failed.");

@@ -83,7 +83,6 @@ public:
     Camera_ErrorCode PhotoOutputRegisterCallback(void);
     MetadataOutput_Callbacks* GetMetadataOutputListener(void);
     Camera_ErrorCode MetadataOutputRegisterCallback(void);
-    
 
     static CameraCallbackCode cameraCallbackCode_;
     volatile bool valid_;
