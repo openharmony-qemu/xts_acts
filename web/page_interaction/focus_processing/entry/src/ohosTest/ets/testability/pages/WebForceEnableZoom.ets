@@ -74,7 +74,7 @@ struct WebComponent {
                 this.isForceZoomEnabled = true;
                 let driver = Driver.create();
                 let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
-                await HtmlOne.pinchOut(1.5);
+                await HtmlOne.pinchOut(1.05);
                 await Utils.sleep(2000);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
@@ -112,7 +112,7 @@ struct WebComponent {
                 this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
                 let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
-                await HtmlOne.pinchOut(1.5);
+                await HtmlOne.pinchOut(1.05);
                 await Utils.sleep(2000);
                 //isForceZoomEnabled设置为false 应该是不触发 this.ScaleChange 应该为false
                 if(this.ScaleChange) {
