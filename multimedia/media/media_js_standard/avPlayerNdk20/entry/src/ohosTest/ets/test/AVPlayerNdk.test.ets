@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -489,7 +489,8 @@ export default function AVPlayerNdkTest() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('SUB_MULTIMEIDA_OH_OH_AVPlayer_SetMediaKeySystemInfoCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('SUB_MULTIMEIDA_OH_OH_AVPlayer_SetMediaKeySystemInfoCallback0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
           console.info("====>SUB_MULTIMEIDA_OH_OH_AVPlayer_SetMediaKeySystemInfoCallback0100 start====");
@@ -612,5 +613,7 @@ export default function AVPlayerNdkTest() {
           done()
         }
       })
+
+
   })
 }
