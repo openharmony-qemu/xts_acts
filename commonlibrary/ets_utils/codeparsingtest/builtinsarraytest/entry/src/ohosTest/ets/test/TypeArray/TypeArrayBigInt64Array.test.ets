@@ -3667,5 +3667,517 @@ export default function typeArrayBigInt64ArrayTest() {
       dv.setBigInt64(16, 15n, true);
       expect(bigInt64Arr.indexOf(5n, 1.9)).assertEqual(-1);
       expect(bigInt64Arr.indexOf(5n, 0.0)).assertEqual(0);
-   
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0156
+     * @tc.name TypeArrayBigInt64ArrayBufferDv0156
+     * @tc.desc Verify BigInt64Array lastIndexOf with non-integer start (coerced to integer)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayBigInt64ArrayBufferDv0156', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buf: ArrayBuffer = new ArrayBuffer(24);
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(buf);
+      bigInt64Arr.set([5n, 10n, 5n]);
+      const dv: DataView = new DataView(buf);
+      expect(bigInt64Arr.lastIndexOf(5n, 1.9)).assertEqual(0);
+      expect(bigInt64Arr.lastIndexOf(5n, 2.1)).assertEqual(2);
+      expect(bigInt64Arr.lastIndexOf(5n, -1.5)).assertEqual(2);
+      dv.setBigInt64(0, 15n, true);
+      expect(bigInt64Arr.lastIndexOf(5n, 1.9)).assertEqual(-1);
+      expect(bigInt64Arr.lastIndexOf(5n, 0.0)).assertEqual(-1);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0157
+     * @tc.name TypeArrayBigInt64ArrayBufferDv0157
+     * @tc.desc Verify BigInt64Array includes with non-integer start (coerced to integer)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayBigInt64ArrayBufferDv0157', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sab: SharedArrayBuffer = new SharedArrayBuffer(24);
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(sab);
+      bigInt64Arr.set([20n, 30n, 40n]);
+      const dv: DataView = new DataView(sab);
+      expect(bigInt64Arr.includes(30n, 1.9)).assertEqual(true);
+      expect(bigInt64Arr.includes(20n, 1.9)).assertEqual(false);
+      expect(bigInt64Arr.includes(40n, 2.1)).assertEqual(true);
+      expect(bigInt64Arr.includes(30n, 2.1)).assertEqual(false);
+      expect(bigInt64Arr.includes(40n, -1.5)).assertEqual(true);
+      dv.setBigInt64(16, 45n, true);
+      expect(bigInt64Arr.includes(40n, 2.1)).assertEqual(false);
+      expect(bigInt64Arr.includes(45n, 2.1)).assertEqual(true);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0158
+     * @tc.name TypeArrayBigInt64ArrayBufferDv0158
+     * @tc.desc Verify BigInt64Array with DataView writing 8-bit unsigned values (partial byte)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayBigInt64ArrayBufferDv0158', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buf: ArrayBuffer = new ArrayBuffer(8);
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(buf);
+      const dv: DataView = new DataView(buf);
+      const initialVal: bigint = 0x0000000000000000n;
+      bigInt64Arr[0] = initialVal;
+      dv.setUint8(0, 0x12);
+      let expectedVal: bigint = 0x0000000000000012n;
+      expect(bigInt64Arr[0]).assertEqual(expectedVal);
+      dv.setUint8(3, 0x34);
+      expectedVal = 0x0000000034000012n;
+      expect(bigInt64Arr[0]).assertEqual(expectedVal);
+      dv.setUint8(7, 0x78);
+      expectedVal = 0x7800000034000012n;
+      expect(bigInt64Arr[0]).assertEqual(expectedVal);
+      expect(dv.getUint8(0)).assertEqual(0x12);
+      expect(dv.getUint8(3)).assertEqual(0x34);
+      expect(dv.getUint8(7)).assertEqual(0x78);
+      expect(dv.getUint8(1)).assertEqual(0);
+      expect(dv.getUint8(2)).assertEqual(0);
+      expect(dv.getUint8(4)).assertEqual(0);
+      expect(dv.getUint8(5)).assertEqual(0);
+      expect(dv.getUint8(6)).assertEqual(0);
+
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0159
+     * @tc.name TypeArrayBigInt64ArrayBufferDv0159
+     * @tc.desc Verify BigInt64Array with DataView writing 16-bit unsigned values (partial bytes)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayBigInt64ArrayBufferDv0159', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buf: ArrayBuffer = new ArrayBuffer(8);
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(buf);
+      const dv: DataView = new DataView(buf);
+      const initialVal: bigint = 0x0000000000000000n;
+      bigInt64Arr[0] = initialVal;
+      dv.setUint16(0, 0x1234, true);
+      let expectedVal: bigint = 0x0000000000001234n;
+      expect(bigInt64Arr[0]).assertEqual(expectedVal);
+      dv.setUint16(2, 0x5678, true);
+      expectedVal = 0x0000000000567834n;
+      expectedVal = 0x0000000056781234n;
+      expect(bigInt64Arr[0]).assertEqual(expectedVal);
+      dv.setUint16(4, 0x9ABC, true);
+      expectedVal = 0x00009ABC56781234n;
+      expect(bigInt64Arr[0]).assertEqual(expectedVal);
+      expect(dv.getUint16(0, true)).assertEqual(0x1234);
+      expect(dv.getUint16(2, true)).assertEqual(0x5678);
+      expect(dv.getUint16(4, true)).assertEqual(0x9ABC);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0162
+     * @tc.name TypeArrayBigInt64ArrayBufferDv0162
+     * @tc.desc Verify BigInt64Array with DataView reading 64-bit values in big-endian
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayBigInt64ArrayBufferDv0162', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buf: ArrayBuffer = new ArrayBuffer(8);
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(buf);
+      const dv: DataView = new DataView(buf);
+      const testVal: bigint = 0x0011223344556677n;
+      bigInt64Arr[0] = testVal;
+      const bigEndianRead: bigint = dv.getBigInt64(0, false);
+      const expectedBigEndian: bigint = 0x7766554433221100n;
+      expect(bigEndianRead).assertEqual(expectedBigEndian);
+      dv.setBigInt64(0, testVal, false);
+      const littleEndianRead: bigint = bigInt64Arr[0];
+      expect(littleEndianRead).assertEqual(expectedBigEndian);
+      expect(dv.getBigInt64(0, true)).assertEqual(littleEndianRead);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0163
+     * @tc.name TypeArrayBigInt64ArrayBufferDv0163
+     * @tc.desc Verify BigInt64Array copyWithin with non-integer target/start/end (coerced to integer)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayBigInt64ArrayBufferDv0163', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buf: ArrayBuffer = new ArrayBuffer(24);
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(buf);
+      bigInt64Arr.set([1n, 2n, 3n]);
+      const dv: DataView = new DataView(buf);
+      bigInt64Arr.copyWithin(0.9, 1.1, 2.9);
+      expect(bigInt64Arr.toString()).assertEqual([2n, 2n, 3n].toString());
+      bigInt64Arr.set([1n, 2n, 3n]);
+      bigInt64Arr.copyWithin(1.5, 0.2, 1.8);
+      expect(bigInt64Arr.toString()).assertEqual([1n, 1n, 3n].toString());
+      expect(dv.getBigInt64(8, true)).assertEqual(1n);
+      bigInt64Arr.set([1n, 2n, 3n]);
+      bigInt64Arr.copyWithin(-0.5, -1.2, -0.1);
+      expect(bigInt64Arr.toString()).assertEqual([1n, 2n, 3n].toString());
+      expect(bigInt64Arr.length).assertEqual(3)
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0164
+     * @tc.name TypeArrayBigInt64ArrayBufferDv0164
+     * @tc.desc Verify BigInt64Array fill with non-integer start/end (coerced to integer)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayBigInt64ArrayBufferDv0164', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buf: ArrayBuffer = new ArrayBuffer(24);
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(buf);
+      bigInt64Arr.set([10n, 20n, 30n]);
+      const fillVal: bigint = 5n;
+      const dv: DataView = new DataView(buf);
+      bigInt64Arr.fill(fillVal, 0.9, 2.1);
+      expect(bigInt64Arr.toString()).assertEqual([5n, 5n, 30n].toString());
+      bigInt64Arr.set([10n, 20n, 30n]);
+      bigInt64Arr.fill(fillVal, 1.2, -0.5);
+      expect(bigInt64Arr.toString()).assertEqual([10n, 20n, 30n].toString());
+      expect(dv.getBigInt64(8, true)).assertEqual(20n);
+      bigInt64Arr.set([10n, 20n, 30n]);
+      bigInt64Arr.fill(fillVal, -1.8, 3.5);
+      expect(bigInt64Arr.toString()).assertEqual([10n, 20n, 5n].toString());
+      expect(bigInt64Arr.length).assertEqual(3)
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0165
+     * @tc.name TypeArrayBigInt64ArrayBufferDv0165
+     * @tc.desc Verify BigInt64Array with SharedArrayBuffer (empty buffer, multi-view consistency)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayBigInt64ArrayBufferDv0165', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const emptySab: SharedArrayBuffer = new SharedArrayBuffer(0);
+      const view1: BigInt64Array = new BigInt64Array(emptySab);
+      const view2: BigInt64Array = new BigInt64Array(emptySab);
+      const dv: DataView = new DataView(emptySab);
+      expect(view1.length).assertEqual(0);
+      expect(view2.length).assertEqual(0);
+      expect(view1.byteLength).assertEqual(0);
+      expect(view2.byteLength).assertEqual(0);
+      expect(view1.buffer).assertEqual(emptySab);
+      expect(view2.buffer).assertEqual(emptySab);
+      expect(dv.buffer).assertEqual(emptySab);
+      let isRangeError = false;
+      try {
+        dv.getBigInt64(0, true);
+      } catch (e) {
+        isRangeError = (e as Error).name === 'RangeError';
+      }
+      expect(isRangeError).assertEqual(true);
+
+      try {
+        dv.setBigInt64(0, 1n, true);
+      } catch (e) {
+        isRangeError = (e as Error).name === 'RangeError';
+      }
+      expect(isRangeError).assertEqual(true);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0166
+     * @tc.name TypeArrayBigInt64ArrayBufferDv0166
+     * @tc.desc Verify BigInt64Array slice with non-integer start/end (coerced to integer)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayBigInt64ArrayBufferDv0166', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buf: ArrayBuffer = new ArrayBuffer(24);
+      const originalArr: BigInt64Array = new BigInt64Array(buf);
+      originalArr.set([5n, 15n, 25n]);
+      const dv: DataView = new DataView(buf);
+      const sliced1: BigInt64Array = originalArr.slice(0.9, 2.1);
+      expect(sliced1.length).assertEqual(2)
+      expect(sliced1.toString()).assertEqual([5n, 15n].toString());
+      const sliced2: BigInt64Array = originalArr.slice(1.2, -0.5);
+      expect(sliced2.toString()).assertEqual([].toString());
+      const sliced3: BigInt64Array = originalArr.slice(-1.8, 3.5);
+      expect(sliced3.toString()).assertEqual([25n].toString());
+      expect(sliced3.length).assertEqual(1)
+      dv.setBigInt64(8, 20n, true);
+      expect(sliced1.toString()).assertEqual([5n, 15n].toString());
+      expect(sliced2.toString()).assertEqual([].toString());
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0167
+     * @tc.name TypeArrayBigInt64ArrayBufferDv0167
+     * @tc.desc Verify BigInt64Array with DataView reading 64-bit values in mixed endianness
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayBigInt64ArrayBufferDv0167', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buf: ArrayBuffer = new ArrayBuffer(8);
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(buf);
+      const dv: DataView = new DataView(buf);
+      const littleEndianVal: bigint = 0x0011223344556677n;
+      const bigEndianVal: bigint = 0x7766554433221100n;
+      bigInt64Arr[0] = littleEndianVal;
+      expect(dv.getBigInt64(0, true)).assertEqual(littleEndianVal);
+      expect(dv.getBigInt64(0, false)).assertEqual(bigEndianVal);
+      dv.setBigInt64(0, littleEndianVal, false);
+      expect(bigInt64Arr[0]).assertEqual(bigEndianVal);
+      expect(dv.getBigInt64(0, false)).assertEqual(littleEndianVal);
+      const bytes: number[] = [];
+      for (let i = 0; i < 8; i++) {
+        bytes.push(dv.getUint8(i));
+      }
+      expect(bytes.toString()).assertEqual([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77].toString());
+    })
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0169
+     * @tc.name TypeArrayBigInt64ArrayBufferDv0169
+     * @tc.desc Verify BigInt64Array with DataView handling out-of-bounds 8-bit writes (clamped values)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayBigInt64ArrayBufferDv0169', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buf: ArrayBuffer = new ArrayBuffer(8);
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(buf);
+      const dv: DataView = new DataView(buf);
+      bigInt64Arr[0] = 0n;
+      dv.setUint8(0, 300);
+      expect(dv.getUint8(0)).assertEqual(44);
+      expect(bigInt64Arr[0]).assertEqual(44n);
+      expect(bigInt64Arr.length).assertEqual(1)
+      dv.setUint8(1, -50);
+      expect(dv.getUint8(1)).assertEqual(206);
+      expect(bigInt64Arr[0]).assertEqual(0x000000000000ce2cn);
+      dv.setUint8(7, 128);
+      const expectedVal: bigint = -0x7fffffffffff31d4n;
+      expect(bigInt64Arr[0]).assertEqual(expectedVal);
+      expect(dv.getUint8(7)).assertEqual(128);
+
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0170
+     * @tc.name TypeArrayBigInt64ArrayBufferDv0170
+     * @tc.desc Verify BigInt64Array entries() iterator returns [index, value] pairs consistently
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayBigInt64ArrayBufferDv0170', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buf: ArrayBuffer = new ArrayBuffer(24);
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(buf);
+      const dv: DataView = new DataView(buf);
+      dv.setBigInt64(0, 100n, true);
+      dv.setBigInt64(8, 200n, true);
+      dv.setBigInt64(16, 300n, true);
+      const entries: [number, bigint][] = [];
+      for (const entry of bigInt64Arr.entries()) {
+        entries.push(entry);
+      }
+      expect(entries.length).assertEqual(3);
+      expect(entries[0].toString()).assertEqual([0, 100n].toString());
+      expect(entries[1].toString()).assertEqual([1, 200n].toString());
+      expect(entries[2].toString()).assertEqual([2, 300n].toString());
+      expect(entries.length).assertEqual(3)
+      bigInt64Arr[1] = 250n;
+      const updatedEntries: [number, bigint][] = [];
+      for (const entry of bigInt64Arr.entries()) {
+        updatedEntries.push(entry);
+      }
+      expect(updatedEntries.toString()).assertEqual([[0, 100n], [1, 250n], [2, 300n]].toString());
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0171
+     * @tc.name TypeArrayBigInt64ArrayBufferDv0171
+     * @tc.desc Verify BigInt64Array keys() iterator returns correct indices
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayBigInt64ArrayBufferDv0171', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sab: SharedArrayBuffer = new SharedArrayBuffer(32);
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(sab);
+      const dv: DataView = new DataView(sab);
+      for (let i = 0; i < 4; i++) {
+        dv.setBigInt64(i * 8, BigInt(i * 50), true);
+      }
+      const keys: number[] = [];
+      for (const key of bigInt64Arr.keys()) {
+        keys.push(key);
+      }
+      expect(keys.toString()).assertEqual([0, 1, 2, 3].toString());
+      const subArr: BigInt64Array = bigInt64Arr.subarray(1, 3);
+      const subKeys: number[] = [];
+      for (const key of subArr.keys()) {
+        subKeys.push(key);
+      }
+      expect(subKeys.toString()).assertEqual([0, 1].toString());
+      expect(subKeys.length).assertEqual(2);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0172
+     * @tc.name TypeArrayBigInt64ArrayBufferDv0172
+     * @tc.desc Verify BigInt64Array values() iterator returns consistent values (buffer sync)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayBigInt64ArrayBufferDv0172', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(buf);
+      const dv: DataView = new DataView(buf);
+      bigInt64Arr.set([-500n, 750n]);
+      const values: bigint[] = [];
+      for (const val of bigInt64Arr.values()) {
+        values.push(val);
+      }
+      expect(values.toString()).assertEqual([-500n, 750n].toString());
+      dv.setBigInt64(0, -600n, true);
+      const updatedValues: bigint[] = [];
+      for (const val of bigInt64Arr.values()) {
+        updatedValues.push(val);
+      }
+      expect(updatedValues.toString()).assertEqual([-600n, 750n].toString());
+      bigInt64Arr[1] = 850n;
+      const finalValues: bigint[] = [];
+      for (const val of bigInt64Arr.values()) {
+        finalValues.push(val);
+      }
+      expect(finalValues.toString()).assertEqual([-600n, 850n].toString());
+      expect(finalValues.length).assertEqual(2);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0173
+     * @tc.name TypeArrayBigInt64ArrayBufferDv0173
+     * @tc.desc Verify BigInt64Array with DataView writing 16-bit signed values (negative values)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayBigInt64ArrayBufferDv0173', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buf: ArrayBuffer = new ArrayBuffer(8);
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(buf);
+      const dv: DataView = new DataView(buf);
+      bigInt64Arr[0] = 0n;
+
+      dv.setInt16(0, -100, true);
+      let expectedVal: bigint = 0x000000000000FF9Cn;
+      expect(bigInt64Arr[0]).assertEqual(expectedVal);
+      expect(dv.getInt16(0, true)).assertEqual(-100);
+      expect(bigInt64Arr.length).assertEqual(1);
+
+      dv.setInt16(2, 32000, true);
+      expectedVal = 0x000000007D00FF9Cn;
+      expect(bigInt64Arr[0]).assertEqual(expectedVal);
+      expect(dv.getInt16(2, true)).assertEqual(32000);
+      expect(bigInt64Arr.length).assertEqual(1);
+
+      dv.setInt16(6, -500, true);
+      expectedVal = -0x1f3ffff82ff0064n;
+      expect(bigInt64Arr[0]).assertEqual(expectedVal);
+      expect(dv.getInt16(6, true)).assertEqual(-500);
+      expect(bigInt64Arr.length).assertEqual(1);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0174
+     * @tc.name TypeArrayBigInt64ArrayBufferDv0174
+     * @tc.desc Verify BigInt64Array with SharedArrayBuffer (simulated concurrent write-read)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('TypeArrayBigInt64ArrayBufferDv0174', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (Done: Function) => {
+        const sab: SharedArrayBuffer = new SharedArrayBuffer(8);
+        const threadAArr: BigInt64Array = new BigInt64Array(sab);
+        const threadBArr: BigInt64Array = new BigInt64Array(sab);
+        const dv: DataView = new DataView(sab);
+
+        threadAArr[0] = 1000n;
+        expect(threadBArr[0]).assertEqual(1000n);
+        expect(threadAArr.length).assertEqual(1);
+        expect(threadBArr.length).assertEqual(1);
+
+        const writePromises = [
+          new Promise<void>((resolve) => {
+            setTimeout(() => {
+              threadAArr[0] = 2000n;
+              resolve();
+            }, 10);
+          }),
+          new Promise<void>((resolve) => {
+            setTimeout(() => {
+              threadBArr[0] = 3000n;
+              resolve();
+            }, 15);
+          })
+        ];
+
+        await Promise.all(writePromises);
+        expect(threadAArr[0]).assertEqual(3000n);
+        expect(dv.getBigInt64(0, true)).assertEqual(3000n);
+        expect(threadAArr.length).assertEqual(1);
+        expect(threadBArr.length).assertEqual(1);
+
+        setTimeout(() => {
+          threadAArr[0] = 4000n;
+        }, 20);
+        const readVal = await new Promise<bigint>((resolve) => {
+          setTimeout(() => {
+            resolve(dv.getBigInt64(0, true));
+          }, 25);
+        });
+        expect(readVal).assertEqual(4000n);
+        expect(threadAArr.length).assertEqual(1);
+        expect(threadBArr.length).assertEqual(1);
+        Done();
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0175
+     * @tc.name TypeArrayBigInt64ArrayBufferDv0175
+     * @tc.desc Verify BigInt64Array with DataView handling 32-bit unsigned overflow
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayBigInt64ArrayBufferDv0175', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buf: ArrayBuffer = new ArrayBuffer(8);
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(buf);
+      const dv: DataView = new DataView(buf);
+      bigInt64Arr[0] = 0n;
+
+      const uint32Max = 0xFFFFFFFF;
+      dv.setUint32(0, uint32Max + 1, true);
+      expect(dv.getUint32(0, true)).assertEqual(0);
+      expect(bigInt64Arr[0]).assertEqual(0x0000000000000000n);
+      expect(bigInt64Arr.length).assertEqual(1);
+
+      dv.setUint32(0, uint32Max, true);
+      let expectedVal: bigint = 0x00000000FFFFFFFFn;
+      expect(bigInt64Arr[0]).assertEqual(expectedVal);
+      expect(bigInt64Arr.length).assertEqual(1);
+
+      dv.setUint32(4, 1, true);
+      expectedVal = 0x00000001FFFFFFFFn;
+      expect(bigInt64Arr[0]).assertEqual(expectedVal);
+      expect(dv.getUint32(4, true)).assertEqual(1);
+      expect(bigInt64Arr.length).assertEqual(1);
+    })
+
+  })
 }
