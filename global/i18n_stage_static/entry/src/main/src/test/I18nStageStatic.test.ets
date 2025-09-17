@@ -32,7 +32,7 @@ import i18n from '@ohos.i18n'
 import deviceInfo from '@ohos.deviceInfo'
 import intl from '@ohos.intl'
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function i18nStageTest() {
@@ -1036,6 +1036,47 @@ export default function i18nStageTest() {
       console.log('numberFormatAdapt_test_static_0090' + numFmt.format(123456.789));
       expect(numFmt.format(123456.789)).assertEqual('123,456.789 m');
     })
+
+    /**
+     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0100
+     * @tc.name     : relativeTimeFormatAdapt_test_static_0100
+     * @tc.desc     : format timeStyle is long
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 1
+     */
+    it('relativeTimeFormatAdapt_test_static_0100', Level.LEVEL1, async (): Promise<void> => {
+      console.log('relativeTimeFormatAdapt_test_static_0100:' + 'start');
+      let relativeTimeFmt = new Intl.RelativeTimeFormat("en", {
+        style: 'long'
+      });
+      let value = relativeTimeFmt.format(100, 'second');
+      console.log('relativeTimeFormatAdapt_test_static_0100' + value);
+      expect(value).assertEqual('in 100 seconds');
+    })
+
+    /**
+     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0110
+     * @tc.name     : relativeTimeFormatAdapt_test_static_0110
+     * @tc.desc     : format the timeStyle is null
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 1
+     */
+    it('relativeTimeFormatAdapt_test_static_0110', Level.LEVEL1, async (): Promise<void> => {
+      console.log('relativeTimeFormatAdapt_test_static_0110:' + 'start');
+      let relativeTimeFmt = new Intl.RelativeTimeFormat("en");
+      let value = relativeTimeFmt.format(100, 'second');
+      console.log('relativeTimeFormatAdapt_test_static_0110' + value);
+      let devTyp = deviceInfo.deviceType;
+      console.log('relativeTimeFormatAdapt_test_static_0110 device' + devTyp);
+      if (devTyp == '2in1' || devTyp == 'tablet' || devTyp == 'phone' || devTyp == 'default') {
+        expect(value).assertEqual('in 100 seconds');
+      } else {
+        expect(value).assertEqual('in 100 sec.');
+      }
+    })
+
 
     /**
      * @tc.number   : SUB_GLOBAL_numberFormatTyping_static_0100

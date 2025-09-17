@@ -32,7 +32,7 @@ import i18n from '@ohos.i18n'
 import deviceInfo from '@ohos.deviceInfo'
 import intl from '@ohos.intl'
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function CollatorInIntlTest() {
@@ -199,6 +199,19 @@ export default function CollatorInIntlTest() {
       console.log('collator_test_static_4200 ' + value);
       expect(value).assertEqual(-1);
       expect(coll.resolvedOptions().usage).assertEqual('sort');
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_4300
+    * @tc.name    collator_test_static_4300
+    * @tc.desc    check the compare result
+    */
+    it('collator_test_static_4300', Level.LEVEL2, async (): Promise<void> => {
+      let coll = new intl.Collator('zh', {'localeMatcher': 'lookup'});
+      let value = coll.compare('a', 'b');
+      console.log('collator_test_static_4300 ' + value);
+      expect(value).assertEqual(-1);
+      expect(coll.resolvedOptions().localeMatcher).assertEqual('lookup');
     })
 
     console.log('*************end CollatorInIntlTest*************');
