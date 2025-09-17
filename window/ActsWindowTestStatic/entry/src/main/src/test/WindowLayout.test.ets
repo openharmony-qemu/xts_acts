@@ -522,12 +522,12 @@ export default function WindowLayoutTest() {
                     done();
                 }).catch((err:BusinessError):PromiseLike<void>|undefined=>{
                     hilog.error(0x0000, '[ANI]',CaseName + ' startMoving failed,casued: err.code '+err.code +' ,err.message: '+err.message);
-                    expect(false).assertTrue();
+                    expect(err!.code).assertEqual(1300002);
                     done();
                 })
             }catch (err:BusinessError) {
                 hilog.error(0x0000, '[ANI]',CaseName + ' failed,casued: err.code '+err.code +' ,err.message: '+err.message);
-                expect(err!.code).assertEqual(1300002);
+                expect(false).assertTrue();
                 done();
             }
         })
@@ -593,12 +593,13 @@ export default function WindowLayoutTest() {
                             expect(false).assertTrue();
                         }).catch( (err: BusinessError) :PromiseLike<void>|undefined=> {
                             hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call startMoving. Cause: ' + JSON.stringify(err));
-                            expect(false).assertTrue();
+                            expect(err!.code).assertEqual(1300002);
+                            
                         });
                         done()
                     } catch (exception: BusinessError) {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call startMoving. Cause:' + JSON.stringify(exception));
-                        expect(exception!.code).assertEqual(1300002);
+                        expect(false).assertTrue();
                         done()
                     }
                 })
