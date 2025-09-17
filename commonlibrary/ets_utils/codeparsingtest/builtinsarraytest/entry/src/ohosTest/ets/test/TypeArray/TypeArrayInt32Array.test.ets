@@ -1929,5 +1929,340 @@ export default function typeArrayInt32ArrayTest() {
       expect(transformed[2]).assertEqual(0);
       expect(transformed[3]).assertEqual(1);
       expect(transformed[4]).assertEqual(2);
+      expect(transformed.length).assertEqual(5);
+    })
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0051
+     * @tc.name TypeArrayInt32Array0051
+     * @tc.desc Verify Int32Array with data encryption using Vigenère cipher for 32-bit values
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('TypeArrayInt32Array0051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
 
-  
+      let vigenereCipher = (data: Int32Array, key: number[]): Int32Array => {
+        let min = -2147483648;
+        let max = 2147483647;
+
+        return new Int32Array(data.map((val, i) => {
+          let keyIndex = i % key.length;
+
+          let shifted = val + key[keyIndex];
+          if (shifted > max) {
+            shifted = min + (shifted - max - 1);
+          } else if (shifted < min) {
+            shifted = max - (min - shifted - 1);
+          }
+          return shifted;
+        }));
+      };
+
+      let original = new Int32Array([1000, 2000, 3000, 4000, 5000]);
+      let key = [1234, 5678, 9012];
+
+      let encrypted = vigenereCipher(original, key);
+      let decrypted = vigenereCipher(encrypted, key.map(k => -k));
+      expect(encrypted.toString()).assertEqual('2234,7678,12012,5234,10678');
+      expect(decrypted.toString()).assertEqual(original.toString());
+      expect(encrypted[0]).assertEqual(2234);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0052
+     * @tc.name TypeArrayInt32Array0052
+     * @tc.desc Verify Int32Array with data validation using cyclic redundancy check (CRC)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('TypeArrayInt32Array0052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
+      let calculateCRC32 = (data: Int32Array): number => {
+        let crc = 0xFFFFFFFF;
+        let polynomial = 0xEDB88320;
+
+        for (let val of data) {
+
+          for (let i = 0; i < 4; i++) {
+            let byte = (val >> (i * 8)) & 0xFF;
+            crc ^= byte;
+
+            for (let j = 0; j < 8; j++) {
+              crc = (crc >>> 1) ^ (polynomial * (crc & 1));
+            }
+          }
+        }
+
+        return crc ^ 0xFFFFFFFF;
+      };
+
+      let data1 = new Int32Array([0x12345678, 0x87654321]);
+      let crc1 = calculateCRC32(data1);
+
+      let data2 = new Int32Array([0x12345678, 0x87654321]);
+      let crc2 = calculateCRC32(data2);
+
+
+      expect(crc1).assertEqual(crc2);
+
+      data2[1] = 0x87654322;
+      let crc3 = calculateCRC32(data2);
+      expect(crc3.toString()).assertEqual('-857156139');
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0053
+     * @tc.name TypeArrayInt32Array0053
+     * @tc.desc Verify Int32Array with sliding window median calculation
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('TypeArrayInt32Array0053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
+      let slidingWindowMedian = (data: Int32Array, windowSize: number): Int32Array => {
+        let result = new Int32Array(data.length - windowSize + 1);
+
+        for (let i = 0; i < result.length; i++) {
+
+          let window = new Int32Array(data.subarray(i, i + windowSize));
+          window.sort();
+
+
+          let mid = Math.floor(windowSize / 2);
+          if (windowSize % 2 === 1) {
+            result[i] = window[mid];
+          } else {
+            result[i] = Math.round((window[mid - 1] + window[mid]) / 2);
+          }
+        }
+
+        return result;
+      };
+
+      let data = new Int32Array([5, 3, 8, 1, 9, 2, 7, 4, 6]);
+      let medians = slidingWindowMedian(data, 3);
+
+      expect(medians.toString()).assertEqual('5,3,8,2,7,4,6');
+      expect(medians[0]).assertEqual(5);
+      expect(medians[4]).assertEqual(7);
+      expect(medians.length).assertEqual(7);
+    })
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0054
+     * @tc.name TypeArrayInt32Array0054
+     * @tc.desc Verify Int32Array with data transformation using min-max scaling
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('TypeArrayInt32Array0054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
+      let minMaxScale = (data: Int32Array, newMin: number, newMax: number): Int32Array => {
+        let minVal = Math.min(...data);
+        let maxVal = Math.max(...data);
+        let range = maxVal - minVal || 1;
+
+        return new Int32Array(data.map(val =>
+        Math.round(newMin + ((val - minVal) * (newMax - newMin)) / range)
+        ));
+      };
+
+      let data = new Int32Array([10, 20, 30, 40, 50]);
+      let scaled = minMaxScale(data, 0, 100);
+
+      expect(scaled[0]).assertEqual(0);
+      expect(scaled[4]).assertEqual(100);
+      expect(scaled[2]).assertEqual(50);
+      expect(scaled[1]).assertEqual(25);
+      expect(scaled.length).assertEqual(5);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0055
+     * @tc.name TypeArrayInt32Array0055
+     * @tc.desc Verify Int32Array with bitwise parity calculation
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('TypeArrayInt32Array0055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
+      let calculateParity = (value: number): number => {
+        let parity = 0;
+        let val = value & 0xFFFFFFFF;
+
+        while (val) {
+          parity ^= val & 1;
+          val >>>= 1;
+        }
+
+        return parity;
+      };
+
+      let addParity = (value: number): [number, number] => {
+        let parity = calculateParity(value);
+        return [value, parity];
+      };
+
+      let verifyParity = (value: number, parity: number): boolean => {
+        return calculateParity(value) === parity;
+      };
+
+      let arr = new Int32Array([0x00000000, 0x00000001, 0x12345678, 0xFFFFFFFF]);
+
+      expect(calculateParity(arr[0])).assertEqual(0);
+      expect(calculateParity(arr[1])).assertEqual(1);
+      expect(calculateParity(arr[2])).assertEqual(1);
+      expect(calculateParity(arr[3])).assertEqual(0);
+
+      let ret = addParity(arr[2]);
+      expect(verifyParity(ret[0], ret[1])).assertEqual(true);
+      expect(verifyParity(ret[0] + 1, ret[1])).assertEqual(false);
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0056
+     * @tc.name TypeArrayInt32Array0056
+     * @tc.desc Verify Int32Array with data aggregation using moving average
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('TypeArrayInt32Array0056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
+      let cumulativeMovingAverage = (data: Int32Array): Int32Array => {
+        let averages = new Int32Array(data.length);
+        let sum = 0;
+
+        for (let i = 0; i < data.length; i++) {
+          sum += data[i];
+          averages[i] = Math.round(sum / (i + 1));
+        }
+
+        return averages;
+      };
+
+      let data = new Int32Array([10, 20, 30, 40, 50]);
+      let averages = cumulativeMovingAverage(data);
+
+      expect(averages.toString()).assertEqual('10,15,20,25,30');
+      expect(averages[0]).assertEqual(10);
+      expect(averages[2]).assertEqual(20);
+      expect(averages[4]).assertEqual(30);
+      expect(averages.length).assertEqual(5);
+    })
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0057
+     * @tc.name TypeArrayInt32Array0057
+     * @tc.desc Verify Int32Array with value clamping
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayInt32Array0057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      let clampValues = (data: Int32Array, min: number, max: number): Int32Array => {
+        return new Int32Array(data.map(val => Math.max(min, Math.min(max, val))));
+      };
+
+      let data = new Int32Array([-5, 10, 25, 40, 60]);
+      let clamped = clampValues(data, 10, 50);
+
+      expect(clamped.toString()).assertEqual('10,10,25,40,50');
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0058
+     * @tc.name TypeArrayInt32Array0058
+     * @tc.desc Verify Int32Array with element reversal
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayInt32Array0058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      let reverseArray = (data: Int32Array): Int32Array => {
+        let reversed = new Int32Array(data.length);
+        for (let i = 0; i < data.length; i++) {
+          reversed[i] = data[data.length - 1 - i];
+        }
+        return reversed;
+      };
+
+      let original = new Int32Array([1, 2, 3, 4, 5]);
+      let reversed = reverseArray(original);
+
+      expect(reversed.toString()).assertEqual('5,4,3,2,1');
+    })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0059
+     * @tc.name TypeArrayInt32Array0059
+     * @tc.desc Verify Int32Array with unique values extraction
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayInt32Array0059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      let getUniqueValues = (data: Int32Array): Int32Array => {
+        let unique = new Set<number>();
+        data.forEach(val => unique.add(val));
+        return new Int32Array(Array.from(unique));
+      };
+
+      let data = new Int32Array([2, 3, 2, 5, 3, 7, 5]);
+      let unique = getUniqueValues(data);
+
+      expect(unique.length).assertEqual(4);
+      expect(Array.from(unique).sort().toString()).assertEqual('2,3,5,7');
+    })
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0060
+     * @tc.name TypeArrayInt32Array0060
+     * @tc.desc Verify Int32Array with element frequency counting
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayInt32Array0060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      let countFrequencies = (data: Int32Array): Map<number, number> => {
+        let freq = new Map<number, number>();
+        data.forEach(val => freq.set(val, (freq.get(val) || 0) + 1));
+        return freq;
+      };
+
+      let data = new Int32Array([1, 2, 2, 3, 3, 3, 4, 4, 4, 4]);
+      let frequencies = countFrequencies(data);
+
+      expect(frequencies.get(1)).assertEqual(1);
+      expect(frequencies.get(2)).assertEqual(2);
+      expect(frequencies.get(3)).assertEqual(3);
+      expect(frequencies.get(4)).assertEqual(4);
+    })
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0061
+     * @tc.name TypeArrayInt32Array0061
+     * @tc.desc Verify Int32Array with multiple combined operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayInt32Array0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let base = new Int32Array([1, 2, 3, 4, 5]);
+      let reversed = new Int32Array([...base].reverse());
+      expect(reversed.toString()).assertEqual('5,4,3,2,1');
+      let squared = base.map(x => x * x);
+      expect(squared.toString()).assertEqual('1,4,9,16,25');
+
+      let evens = squared.filter(x => x % 2 === 0);
+      expect(evens.toString()).assertEqual('4,16');
+
+      let sum = evens.reduce((a, b) => a + b, 0);
+      expect(sum).assertEqual(20);
+
+      let buffer = new ArrayBuffer(20);
+      let view1 = new Int32Array(buffer);
+      view1.set(base);
+      let view2 = new Int32Array(buffer, 8, 3);
+
+      view2.fill(0);
+      expect(view1.toString()).assertEqual('1,2,0,0,0');
+    })
+
+  })
+}

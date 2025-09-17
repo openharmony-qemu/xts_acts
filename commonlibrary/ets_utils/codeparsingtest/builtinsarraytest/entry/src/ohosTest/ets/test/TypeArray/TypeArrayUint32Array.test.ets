@@ -1928,4 +1928,541 @@ export default function typeArrayUint32ArrayTest() {
      * @tc.level Level 2
      */
     it('TypeArrayUint32Array108', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
- 
+      () => {
+        const sab = new SharedArrayBuffer(12);
+        const uint32Arr = new Uint32Array(sab);
+        const uint16Arr = new Uint16Array(sab);
+        uint32Arr[0] = 0x12345678;
+        expect(uint16Arr[0]).assertEqual(0x5678);
+        expect(uint16Arr[1]).assertEqual(0x1234);
+        expect(uint16Arr.length).assertEqual(6);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_111
+     * @tc.name TypeArrayUint32Array111
+     * @tc.desc Create Uint32Array with maximum possible ArrayBuffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array111', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const buffer = new ArrayBuffer(1024 * 1024);
+        const arr = new Uint32Array(buffer);
+        expect(arr.length).assertEqual(262144);
+        expect(arr.byteLength).assertEqual(1024 * 1024);
+        expect(arr[0]).assertEqual(0);
+        expect(arr[262143]).assertEqual(0);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_112
+     * @tc.name TypeArrayUint32Array112
+     * @tc.desc Create subarray view from SharedArrayBuffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const sab = new SharedArrayBuffer(16);
+        const arr = new Uint32Array(sab);
+        arr.set([10, 20, 30, 40]);
+        const sub = arr.subarray(1, 3);
+        expect(sub.toString()).assertEqual('20,30');
+        expect(sub.buffer).assertEqual(sab);
+        expect(sub.length).assertEqual(2);
+        expect(sub[0]).assertEqual(20);
+        expect(sub[1]).assertEqual(30);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_113
+     * @tc.name TypeArrayUint32Array113
+     * @tc.desc Slice creates new ArrayBuffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array113', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const arr = new Uint32Array([1, 2, 3, 4]);
+        const sliced = arr.slice(1, 3);
+        expect(sliced.toString()).assertEqual('2,3');
+        expect(sliced.buffer === arr.buffer).assertFalse();
+        expect(sliced.buffer.byteLength).assertEqual(8);
+        expect(sliced.length).assertEqual(2);
+        expect(sliced[0]).assertEqual(2);
+        expect(sliced[1]).assertEqual(3);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_114
+     * @tc.name TypeArrayUint32Array114
+     * @tc.desc Modify sliced array doesn't affect original
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array114', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const arr = new Uint32Array([1, 2, 3, 4]);
+        const sliced = arr.slice(1, 3);
+
+        sliced[0] = 200;
+        expect(arr[1]).assertEqual(2);
+        expect(sliced[0]).assertEqual(200);
+        expect(arr.length).assertEqual(4);
+        expect(sliced.length).assertEqual(2);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_117
+     * @tc.name TypeArrayUint32Array117
+     * @tc.desc Use set method with different buffer source
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array117', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const source = new Uint32Array([1, 2, 3]);
+        const dest = new Uint32Array(5);
+
+        dest.set(source, 1);
+        expect(dest.toString()).assertEqual('0,1,2,3,0');
+        expect(source.buffer === dest.buffer).assertFalse();
+        expect(source.length).assertEqual(3);
+        expect(dest.length).assertEqual(5);
+        expect(dest[0]).assertEqual(0);
+        expect(dest[4]).assertEqual(0);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_118
+     * @tc.name TypeArrayUint32Array118
+     * @tc.desc Create Uint32Array with offset beyond buffer length
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array118', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const buffer = new ArrayBuffer(8);
+        expect(() => new Uint32Array(buffer, 10)).assertThrowError(RangeError);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_119
+     * @tc.name TypeArrayUint32Array119
+     * @tc.desc Create Uint32Array with length exceeding buffer capacity
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const buffer = new ArrayBuffer(8);
+        expect(() => new Uint32Array(buffer, 0, 3)).assertThrowError(RangeError);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_120
+     * @tc.name TypeArrayUint32Array120
+     * @tc.desc Verify buffer properties across views
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array120', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const buffer = new ArrayBuffer(16);
+        const uint32Arr = new Uint32Array(buffer, 4, 3);
+        expect(uint32Arr.buffer).assertEqual(buffer);
+        expect(uint32Arr.byteOffset).assertEqual(4);
+        expect(uint32Arr.byteLength).assertEqual(12);
+        expect(buffer.byteLength).assertEqual(16);
+        expect(uint32Arr.length).assertEqual(3);
+        expect(uint32Arr[0]).assertEqual(0);
+        expect(uint32Arr[1]).assertEqual(0);
+        expect(uint32Arr[2]).assertEqual(0);
+      })
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_121
+     * @tc.name TypeArrayUint32Array121
+     * @tc.desc Copy data between ArrayBuffer views
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array121', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const srcBuffer = new ArrayBuffer(12);
+        const srcArr = new Uint32Array(srcBuffer);
+        srcArr.set([10, 20, 30]);
+        const destBuffer = new ArrayBuffer(12);
+        const destArr = new Uint32Array(destBuffer);
+        destArr.set(srcArr);
+        expect(destArr.toString()).assertEqual('10,20,30');
+        expect(srcBuffer == destBuffer).assertFalse();
+        expect(destArr.length).assertEqual(3);
+        expect(destArr[0]).assertEqual(10);
+        expect(destArr[1]).assertEqual(20);
+        expect(destArr[2]).assertEqual(30);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_122
+     * @tc.name TypeArrayUint32Array122
+     * @tc.desc Create nested views from SharedArrayBuffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array122', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const sab = new SharedArrayBuffer(20);
+        const mainArr = new Uint32Array(sab);
+        mainArr.set([1, 2, 3, 4, 5]);
+        const view1 = new Uint32Array(sab, 0, 2);
+        const view2 = new Uint32Array(sab, 8, 3);
+        expect(view1.toString()).assertEqual('1,2');
+        expect(view2.toString()).assertEqual('3,4,5');
+        expect(view1.length).assertEqual(2);
+        expect(view2.length).assertEqual(3);
+        expect(view1[0]).assertEqual(1);
+        expect(view1[1]).assertEqual(2);
+        expect(view2[0]).assertEqual(3);
+        expect(view2[1]).assertEqual(4);
+        expect(view2[2]).assertEqual(5);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_123
+     * @tc.name TypeArrayUint32Array123
+     * @tc.desc Test buffer sharing with different element sizes
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array123', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const buffer = new ArrayBuffer(8);
+        const uint32Arr = new Uint32Array(buffer);
+        const uint16Arr = new Uint16Array(buffer);
+        uint32Arr[0] = 0x11223344;
+        uint32Arr[1] = 0x55667788;
+        expect(uint16Arr.length).assertEqual(4);
+        expect(uint16Arr[0]).assertEqual(0x3344);
+        expect(uint16Arr[1]).assertEqual(0x1122);
+        expect(uint16Arr[2]).assertEqual(0x7788);
+        expect(uint16Arr[3]).assertEqual(0x5566);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_124
+     * @tc.name TypeArrayUint32Array124
+     * @tc.desc Create Uint32Array from portion of larger buffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array124', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const buffer = new ArrayBuffer(32);
+        const fullView = new Uint32Array(buffer);
+        fullView.fill(0xDEADBEEF);
+        const partialView = new Uint32Array(buffer, 8, 4);
+        expect(partialView.length).assertEqual(4);
+        expect(partialView.byteOffset).assertEqual(8);
+        expect(partialView[0]).assertEqual(0xDEADBEEF);
+        expect(partialView[1]).assertEqual(0xDEADBEEF);
+        expect(partialView[2]).assertEqual(0xDEADBEEF);
+        expect(partialView[3]).assertEqual(0xDEADBEEF);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_125
+     * @tc.name TypeArrayUint32Array125
+     * @tc.desc Check buffer bounds when modifying through view
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array125', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const buffer = new ArrayBuffer(12);
+        const arr = new Uint32Array(buffer);
+
+        arr[0] = 1;
+        arr[1] = 2;
+        arr[2] = 3;
+        () => {
+          arr[3] = 4;
+        }
+        expect(arr.length).assertEqual(3);
+        expect(arr[0]).assertEqual(1);
+        expect(arr[1]).assertEqual(2);
+        expect(arr[2]).assertEqual(3);
+        expect(arr[3]).assertEqual(undefined);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_126
+     * @tc.name TypeArrayUint32Array126
+     * @tc.desc Create SharedArrayBuffer with maximum view size
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array126', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const sab = new SharedArrayBuffer(4 * 1024);
+        const arr = new Uint32Array(sab);
+        expect(arr.length).assertEqual(1024);
+        expect(arr.byteLength).assertEqual(4 * 1024);
+        expect(arr[0]).assertEqual(0);
+        expect(arr[1023]).assertEqual(0);
+      })
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_128
+     * @tc.name TypeArrayUint32Array128
+     * @tc.desc Share buffer between Uint32Array and DataView
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array128', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const buffer = new ArrayBuffer(8);
+        const uint32Arr = new Uint32Array(buffer);
+        const dataView = new DataView(buffer);
+
+        uint32Arr[0] = 0x12345678;
+        uint32Arr[1] = 0x87654321;
+        expect(dataView.getUint32(0, true)).assertEqual(0x12345678);
+        expect(dataView.getUint32(4, true)).assertEqual(0x87654321);
+        expect(uint32Arr.length).assertEqual(2);
+        expect(uint32Arr[0]).assertEqual(0x12345678);
+        expect(uint32Arr[1]).assertEqual(0x87654321);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_129
+     * @tc.name TypeArrayUint32Array129
+     * @tc.desc Modify buffer through DataView and check Uint32Array
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array129', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const buffer = new ArrayBuffer(8);
+        const uint32Arr = new Uint32Array(buffer);
+        const dataView = new DataView(buffer);
+
+        dataView.setUint32(0, 0xABCDEF12, true);
+        dataView.setUint32(4, 0x12EFCDAB, true);
+        expect(uint32Arr[0]).assertEqual(0xABCDEF12);
+        expect(uint32Arr[1]).assertEqual(0x12EFCDAB);
+        expect(uint32Arr.length).assertEqual(2);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_130
+     * @tc.name TypeArrayUint32Array130
+     * @tc.desc Create overlapping views with different element types
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array130', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const buffer = new ArrayBuffer(12);
+        const uint32Arr = new Uint32Array(buffer);
+        const uint8Arr = new Uint8Array(buffer, 2, 8);
+        uint32Arr.set([0x00010203, 0x04050607, 0x08090A0B]);
+        expect(uint8Arr.length).assertEqual(8);
+        expect(uint8Arr[0]).assertEqual(0x01);
+        expect(uint8Arr[7]).assertEqual(0x0a);
+        expect(uint8Arr[1]).assertEqual(0x00);
+        expect(uint8Arr[2]).assertEqual(0x07);
+        expect(uint8Arr[3]).assertEqual(0x06);
+        expect(uint8Arr[4]).assertEqual(0x05);
+        expect(uint8Arr[5]).assertEqual(0x04);
+        expect(uint8Arr[6]).assertEqual(0x0B);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_131
+     * @tc.name TypeArrayUint32Array131
+     * @tc.desc Test buffer equality across views
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array131', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const buffer = new ArrayBuffer(16);
+        const arr1 = new Uint32Array(buffer);
+        const arr2 = new Uint32Array(buffer, 4, 3);
+        const arr3 = new Uint32Array(new ArrayBuffer(16));
+        expect(arr1.buffer).assertEqual(arr2.buffer);
+        expect(arr1.buffer == arr3.buffer).assertFalse();
+        expect(arr1.length).assertEqual(4);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_132
+     * @tc.name TypeArrayUint32Array132
+     * @tc.desc Check byte alignment of views
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array132', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const buffer = new ArrayBuffer(16);
+        const arr1 = new Uint32Array(buffer, 0, 4);
+        expect(arr1.byteOffset % 4).assertEqual(0);
+        try {
+          const arr2 = new Uint32Array(buffer, 1, 3);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.message).assertContain('The offset cannot be an integral multiple of elementSize.');
+        }
+        expect(arr1.length).assertEqual(4);
+        expect(arr1[0]).assertEqual(0);
+        expect(arr1[1]).assertEqual(0);
+        expect(arr1[2]).assertEqual(0);
+        expect(arr1[3]).assertEqual(0);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_135
+     * @tc.name TypeArrayUint32Array135
+     * @tc.desc Create Uint32Array from sliced ArrayBuffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array135', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const originalBuffer = new ArrayBuffer(16);
+        const slicedBuffer = originalBuffer.slice(4, 12);
+
+        const arr = new Uint32Array(slicedBuffer);
+        expect(arr.length).assertEqual(2);
+        expect(arr.buffer.byteLength).assertEqual(8);
+        expect(arr[0]).assertEqual(0);
+        expect(arr[1]).assertEqual(0);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_136
+     * @tc.name TypeArrayUint32Array136
+     * @tc.desc Share sliced buffer between views
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array136', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const originalBuffer = new ArrayBuffer(20);
+        const slicedBuffer = originalBuffer.slice(4, 16);
+
+        const arr1 = new Uint32Array(slicedBuffer);
+        const arr2 = new Uint32Array(slicedBuffer, 4, 2);
+
+        arr1.set([10, 20, 30]);
+        expect(arr2.toString()).assertEqual('20,30');
+        expect(arr2.length).assertEqual(2);
+        expect(arr2[0]).assertEqual(20);
+        expect(arr2[1]).assertEqual(30);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_137
+     * @tc.name TypeArrayUint32Array137
+     * @tc.desc Check buffer slice doesn't affect original
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array137', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const originalBuffer = new ArrayBuffer(12);
+        const originalArr = new Uint32Array(originalBuffer);
+        originalArr.set([1, 2, 3]);
+
+        const slicedBuffer = originalBuffer.slice(0);
+        const slicedArr = new Uint32Array(slicedBuffer);
+        slicedArr[0] = 100;
+        expect(originalArr[0]).assertEqual(1);
+        expect(slicedArr[0]).assertEqual(100);
+        expect(originalArr.length).assertEqual(3);
+        expect(slicedArr.length).assertEqual(3);
+        expect(originalArr[1]).assertEqual(2);
+        expect(originalArr[2]).assertEqual(3);
+        expect(slicedArr[1]).assertEqual(2);
+        expect(slicedArr[2]).assertEqual(3);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_138
+     * @tc.name TypeArrayUint32Array138
+     * @tc.desc Create view with maximum possible offset
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array138', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const buffer = new ArrayBuffer(20);
+        const maxOffset = buffer.byteLength - 4;
+        const arr = new Uint32Array(buffer, maxOffset, 1);
+        arr[0] = 0xDEADBEEF;
+        expect(arr.byteOffset).assertEqual(16);
+        expect(arr[0]).assertEqual(0xDEADBEEF);
+        expect(arr.length).assertEqual(1);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_139
+     * @tc.name TypeArrayUint32Array139
+     * @tc.desc Test buffer sharing between workers (simulated)
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array139', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const sab = new SharedArrayBuffer(8);
+        const mainThreadArr = new Uint32Array(sab);
+        const workerArr = new Uint32Array(sab);
+        workerArr[0] = 0x11223344;
+        workerArr[1] = 0x55667788;
+        expect(mainThreadArr[0]).assertEqual(0x11223344);
+        expect(mainThreadArr[1]).assertEqual(0x55667788);
+        expect(mainThreadArr.length).assertEqual(2);
+      })
+
+    /**
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_140
+     * @tc.name TypeArrayUint32Array140
+     * @tc.desc Create zero-length view from buffer
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('TypeArrayUint32Array140', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      () => {
+        const buffer = new ArrayBuffer(16);
+        const arr = new Uint32Array(buffer, 0, 0);
+        expect(arr.length).assertEqual(0);
+        expect(arr.byteLength).assertEqual(0);
+        expect(arr.buffer).assertEqual(buffer);
+      })
+  })
+}
