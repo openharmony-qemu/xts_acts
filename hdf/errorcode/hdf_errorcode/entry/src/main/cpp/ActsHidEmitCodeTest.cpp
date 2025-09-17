@@ -169,8 +169,8 @@ int32_t CreateTestDevicePropDirect(const char* str)
         .hidEventType = eventType.data(),
         .length = (uint16_t)eventType.size()
     };
-    std::vector<Hid_KeyCode> keyCode = {
-         HID_BTN_TOOL_PEN, HID_BTN_TOOL_RUBBER, HID_BTN_TOUCH, HID_BTN_STYLUS, HID_BTN_RIGHT };
+    std::vector<Hid_KeyCode> keyCode = {HID_BTN_TOOL_PEN, HID_BTN_TOOL_RUBBER, HID_BTN_TOUCH, HID_BTN_STYLUS,
+                                        HID_BTN_RIGHT};
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -328,8 +328,8 @@ int32_t CreateTestDevicePropSemiMt(const char* str)
         .hidEventType = eventType.data(),
         .length = (uint16_t)eventType.size()
     };
-    std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_TOOL_PEN, HID_BTN_TOOL_RUBBER, HID_BTN_TOUCH, HID_BTN_STYLUS, HID_BTN_RIGHT };
+    std::vector<Hid_KeyCode> keyCode = {HID_BTN_TOOL_PEN, HID_BTN_TOOL_RUBBER, HID_BTN_TOUCH, HID_BTN_STYLUS,
+                                        HID_BTN_RIGHT};
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -381,8 +381,8 @@ int32_t CreateTestDevicePropTopButtonPad(const char* str)
         .hidEventType = eventType.data(),
         .length = (uint16_t)eventType.size()
     };
-    std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_TOOL_PEN, HID_BTN_TOOL_RUBBER, HID_BTN_TOUCH, HID_BTN_STYLUS, HID_BTN_RIGHT };
+    std::vector<Hid_KeyCode> keyCode = {HID_BTN_TOOL_PEN, HID_BTN_TOOL_RUBBER, HID_BTN_TOUCH, HID_BTN_STYLUS,
+                                        HID_BTN_RIGHT};
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -434,8 +434,8 @@ int32_t CreateTestDevicePropAccelerometer(const char* str)
         .hidEventType = eventType.data(),
         .length = (uint16_t)eventType.size()
     };
-    std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_TOOL_PEN, HID_BTN_TOOL_RUBBER, HID_BTN_TOUCH, HID_BTN_STYLUS, HID_BTN_RIGHT };
+    std::vector<Hid_KeyCode> keyCode = {HID_BTN_TOOL_PEN, HID_BTN_TOOL_RUBBER, HID_BTN_TOUCH, HID_BTN_STYLUS,
+                                        HID_BTN_RIGHT};
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
@@ -487,8 +487,8 @@ int32_t CreateTestDeviceEventTypeHidEVRel(const char* str)
         .hidEventType = eventType.data(),
         .length = (uint16_t)eventType.size()
     };
-    std::vector<Hid_KeyCode> keyCode = {
-        HID_BTN_TOOL_PEN, HID_BTN_TOOL_RUBBER, HID_BTN_TOUCH, HID_BTN_STYLUS, HID_BTN_RIGHT };
+    std::vector<Hid_KeyCode> keyCode = {HID_BTN_TOOL_PEN, HID_BTN_TOOL_RUBBER, HID_BTN_TOUCH, HID_BTN_STYLUS,
+                                        HID_BTN_RIGHT};
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()
