@@ -13,3 +13,9 @@
  * limitations under the License.
  */
 export const TestInvalidateAttributes: () => number;
+
+export const TestRegisterCommonEvent001: () => number;
+
+export const TestRegisterCommonEvent002: () => number;
+
+export const TestRegisterCommonEvent003: () => number;
