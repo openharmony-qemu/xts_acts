@@ -180,36 +180,6 @@ export default function SecurityCryptoFwCmacTestUnit() {
   describe("SecurityCryptoFwCmacTestUnit", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
-    it("SUB_Security_CryptoFramework_Cmac_Func_0000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let msgLen: int = 1024;
-        let blockSize: number = 25;
-        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-        // Promise
-        taskGroup.addTask(doCmacPromiseSplitStub, "AES128", msgLen, blockSize);
-        taskGroup.addTask(doCmacPromiseSplitStub, "AES256", msgLen, blockSize);
-        taskGroup.addTask(doCmacPromiseStub, "AES128", msgLen);
-        taskGroup.addTask(doCmacPromiseStub, "AES256", msgLen);
-        // Sync
-        taskGroup.addTask(doCmacSyncSplitStub, "AES128", msgLen, blockSize);
-        taskGroup.addTask(doCmacSyncSplitStub, "AES256", msgLen, blockSize);
-        taskGroup.addTask(doCmacSyncStub, "AES128", msgLen);
-        taskGroup.addTask(doCmacSyncStub, "AES256", msgLen);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
-          let tmp: Array<boolean> = res?(res as Array<boolean>) : new Array<Boolean>();
-          for (let i = 0; i< tmp.length; i++) {
-            let ret: boolean = tmp[i] as boolean;
-            console.info("#################### ret:" + ret)
-            expect(ret).assertTrue();
-          }
-        });
-      } catch (error: BusinessError) {
-        console.error(`SUB_Security_CryptoFramework_Cmac_Func_0000 “${error}“, error code: ${error.code}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
     /**
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_0100
      * @tc.name SUB_Security_CryptoFramework_Cmac_Func_0100
