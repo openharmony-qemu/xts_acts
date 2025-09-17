@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#ifndef PRINT_ERRORCODE_ACTSPRINTERRORCODETEST_H
-#define PRINT_ERRORCODE_ACTSPRINTERRORCODETEST_H
+#ifndef HDF_ERRORCODE_ACTSBASEDDKTEST_H
+#define HDF_ERRORCODE_ACTSBASEDDKTEST_H
 #include "napi/native_api.h"
 #include <js_native_api_types.h>
 #include <napi/native_api.h>
@@ -29,4 +29,4 @@ napi_value DdkMapAshmemFailure(napi_env env, napi_callback_info info);
 napi_value DdkMapAshmemInvalidParameter(napi_env env, napi_callback_info info);
 napi_value DdkMapAshmemInvalidOperation(napi_env env, napi_callback_info info);
 napi_value DdkMapAshmemNullPTR(napi_env env, napi_callback_info info);
-#endif //PRINT_ERRORCODE_ACTSPRINTERRORCODETEST_H
+#endif //HDF_ERRORCODE_ACTSBASEDDKTEST_H

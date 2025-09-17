@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#ifndef PRINT_ERRORCODE_ACTSSCANERRORCODETEST_H
-#define PRINT_ERRORCODE_ACTSSCANERRORCODETEST_H
+#ifndef HDF_ERRORCODE_ACTSHIDEMITCODETEST_H
+#define HDF_ERRORCODE_ACTSHIDEMITCODETEST_H
 #include "napi/native_api.h"
 #include <js_native_api_types.h>
 #include <napi/native_api.h>
@@ -43,4 +43,4 @@ napi_value HidCreateDeviceKeyCodeKEYH(napi_env env, napi_callback_info info);
 napi_value HidCreateDeviceKeyCodeKEYI(napi_env env, napi_callback_info info);
 napi_value HidCreateDeviceKeyCodeKEYJ(napi_env env, napi_callback_info info);
 napi_value HidCreateDeviceKeyCodeKEYK(napi_env env, napi_callback_info info);
-#endif //PRINT_ERRORCODE_ACTSSCANERRORCODETEST_H
+#endif //HDF_ERRORCODE_ACTSHIDEMITCODETEST_H
