@@ -1148,5 +1148,65 @@ export default function ActsWebErrorCodeTest() {
         expect(false).assertEqual(0);
       }
     })
+    /**
+     * @tc.number  : SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_SYSTEM_DEFAULT
+     * @tc.name    : testNativeArkWebSetActiveWebEngineVersion0100
+     * @tc.desc    : test SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_SYSTEM_DEFAULT
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('testNativeArkWebSetActiveWebEngineVersion0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_SYSTEM_DEFAULT start====");
+        let result: number = webCode.OH_ArkWebResourceHandler_DidFailWithErrorV20100();
+        console.info("====>SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_SYSTEM_DEFAULT result====", result);
+        expect(result).assertEqual(0);
+        done();
+      } catch (err) {
+        console.error("====>SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_SYSTEM_DEFAULT catch err: " + err);
+        expect(false).assertEqual(0);
+      }
+    })
+    /**
+     * @tc.number  : SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M114
+     * @tc.name    : testNativeArkWebSetActiveWebEngineVersion0200
+     * @tc.desc    : test SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M114
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('testNativeArkWebSetActiveWebEngineVersion0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M114 start====");
+        let result: number = webCode.OH_ArkWebResourceHandler_DidFailWithErrorV20100();
+        console.info("====>SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M114 result====", result);
+        expect(result).assertEqual(0);
+        done();
+      } catch (err) {
+        console.error("====>SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M114 catch err: " + err);
+        expect(false).assertEqual(0);
+      }
+    })
+    /**
+     * @tc.number  : SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M132
+     * @tc.name    : testNativeArkWebSetActiveWebEngineVersion0300
+     * @tc.desc    : test SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M132
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('testNativeArkWebSetActiveWebEngineVersion0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M132 start====");
+        let result: number = webCode.OH_ArkWebResourceHandler_DidFailWithErrorV20100();
+        console.info("====>SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M132 result====", result);
+        expect(result).assertEqual(0);
+        done();
+      } catch (err) {
+        console.error("====>SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M132 catch err: " + err);
+        expect(false).assertEqual(0);
+      }
+    })
   })
 }
