@@ -216,7 +216,7 @@ export default function EapErrorCodeTest() {
       console.info(`${caseName}---start`);
       try {
         eap.regCustomEapHandler(validNetType, validEapCode, validEapType, eapDataCallback);
-        eap.unregCustomEapHandler(2, validEapCode, errorEapType, eapDataCallback);
+        eap.unregCustomEapHandler(2, validEapCode, validEapType, eapDataCallback);
         console.info(`${caseName } unregCustomEapHandler success`);
         ExpectFail();
         console.info(`${caseName}---End`);
@@ -248,7 +248,7 @@ export default function EapErrorCodeTest() {
         done();
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 332000099);
+        ExpectTrue(error.code == 33200099);
         console.info(`${caseName}---End`);
         done();
       }
