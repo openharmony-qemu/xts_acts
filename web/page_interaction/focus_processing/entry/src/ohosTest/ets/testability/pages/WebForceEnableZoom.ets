@@ -31,6 +31,8 @@ struct WebComponent {
   @State ScaleChange: boolean = false;
   @State str: string = "";
   @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+  @State isEnd:number = -1;
 
 
   aboutToAppear(): void {
@@ -72,7 +74,6 @@ struct WebComponent {
                 this.isForceZoomEnabled = true;
                 let driver = Driver.create();
                 let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
-                await Utils.sleep(2000);
                 await HtmlOne.pinchOut(1.5);
                 await Utils.sleep(2000);
               } catch (error) {
@@ -85,8 +86,13 @@ struct WebComponent {
                 this.isForceZoomEnabled = true;
                 this.flag = 2;
                 let driver = Driver.create();
+                this.isPageEnd = -1
+                this.webController.loadUrl('www.example.com')
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
+                this.isPageEnd = -1;
+                this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
                 let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
-                await Utils.sleep(2000);
                 await HtmlOne.pinchIn(0.5);
                 await Utils.sleep(2000);
               } catch (error) {
@@ -99,8 +105,13 @@ struct WebComponent {
               try {
                 this.isForceZoomEnabled = false;
                 let driver = Driver.create();
+                this.isPageEnd = -1
+                this.webController.loadUrl('www.example.com')
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
+                this.isPageEnd = -1;
+                this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
                 let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
-                await Utils.sleep(2000);
                 await HtmlOne.pinchOut(1.5);
                 await Utils.sleep(2000);
                 //isForceZoomEnabled设置为false 应该是不触发 this.ScaleChange 应该为false
@@ -120,8 +131,13 @@ struct WebComponent {
               try {
                 this.isForceZoomEnabled = false;
                 let driver = Driver.create();
+                this.isPageEnd = -1
+                this.webController.loadUrl('www.example.com')
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
+                this.isPageEnd = -1;
+                this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
                 let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
-                await Utils.sleep(2000);
                 await HtmlOne.pinchIn(0.5);
                 await Utils.sleep(2000);
                 //isForceZoomEnabled设置为false 应该是不触发 this.ScaleChange 应该为false
@@ -149,6 +165,7 @@ struct WebComponent {
           .metaViewport(true)
           .onPageEnd(() => {
             this.isRefreshing = false;
+            this.isPageEnd = 0;
           })
           .onScaleChange((e) => {
             this.ScaleChange = true;
