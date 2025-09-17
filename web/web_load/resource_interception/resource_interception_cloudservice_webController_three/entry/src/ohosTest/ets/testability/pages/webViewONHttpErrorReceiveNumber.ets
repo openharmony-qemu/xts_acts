@@ -14,14 +14,12 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
-import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import web_webview from '@ohos.web.webview';
 import fs from '@ohos.file.fs';
 import fileio from '@ohos.fileio';
+
+const EVENT_ID_SET_EMIT_KEY = 202280;
 
 @Entry
 @Component
@@ -40,13 +38,20 @@ struct webViewONHttpErrorReceiveNumber {
   @State title: string = "test";
   @State webFilename: string = ' ';
   @State cachedir: string = '/data/storage/el2/base/cache'
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+  isReady: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -55,6 +60,7 @@ struct webViewONHttpErrorReceiveNumber {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -63,7 +69,9 @@ struct webViewONHttpErrorReceiveNumber {
     Column() {
       Row() {
         Button("onHttpErrorTest").key('webViewONHttpErrorReceiveNumber').onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, 'webViewONHttpErrorReceiveIframeIsReceive', 1, 1000);
           console.info("key==>" + this.str)
+          this.isReceive = -1;
           switch (this.str) {
             case "emitOnHttpErrorReceiveByNumber": {
               try {
@@ -86,16 +94,11 @@ struct webViewONHttpErrorReceiveNumber {
                     console.error('failed')
                   }
                 }
+                this.isReady = 1;
                 this.controller.refresh();
-                await Utils.sleep(1000);
-                this.title = this.controller.getTitle();
-                console.log("title of this page: " + this.title);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
-              this.controller.runJavaScript("test()", (res) => {
-                Utils.emitEvent(this.title, 402)
-              })
               break;
             }
           }
@@ -139,7 +142,7 @@ struct webViewONHttpErrorReceiveNumber {
           console.log('getResponseEncoding:' + event.response.getResponseEncoding());
           console.log('getResponseMimeType:' + event.response.getResponseMimeType());
           console.log('getResponseCode:' + event.response.getResponseCode());
-          Utils.emitEvent(event.response.getResponseCode(), 401);
+          Utils.emitEvent(event.response.getResponseCode(), 202290);
           console.log('getReasonMessage:' + event.response.getReasonMessage());
           let result = event.request.getRequestHeader()
           console.log('The request header result size is ' + result.length)
@@ -150,6 +153,13 @@ struct webViewONHttpErrorReceiveNumber {
           console.log('The response header result size is ' + resph.length)
           for (let i of resph) {
             console.log('The response header key is : ' + i.headerKey + ' , value is : ' + i.headerValue);
+          }
+        })
+        .onTitleReceive((event) => {
+          console.log('title:' + event.title);
+          this.title = event.title
+          if (this.isReady === 1) {
+            Utils.emitEvent(this.title, 202300);
           }
         })
     }

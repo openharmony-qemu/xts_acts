@@ -17,6 +17,10 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 201700;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function webAttribute() {
@@ -33,13 +37,14 @@ export default function webAttribute() {
         console.info("get webAttribute state success " + JSON.stringify(pages));
         if (!("webAttribute" == pages.name)) {
           console.info("get webAttribute state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push webAttribute page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info("push webAttribute page success");
         }
       } catch (err) {
         console.error("push webAttribute page error: " + err);
       }
+      await driver.waitForComponent(ON.id("WebAttributeButton"), 10000);
+      console.log("waitForComponent WebAttributeButton");
       done()
     });
 
@@ -49,7 +54,6 @@ export default function webAttribute() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webAttribute beforeEach start");
       done();
     })
@@ -63,10 +67,13 @@ export default function webAttribute() {
     * @tc.level      : Level 1
     */
     it('testGeolocationAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGeolocationAccess001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGeolocationAccess001", "\"位置服务被拒绝\"", 31020, done);
-      sendEventByKey('WebAttributeButton', 10, '');
+      Utils.emitEvent("testGeolocationAccess001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testGeolocationAccess001",  '\"位置服务被拒绝\"', 201710, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebAttributeButton");
+      if (await Utils.waitForExist(() => isReturn, 'testGeolocationAccess001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -78,10 +85,13 @@ export default function webAttribute() {
     * @tc.level      : Level 1
     */
     it('testOnResourceLoad001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testOnResourceLoad001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnResourceLoad001", "resource://rawfile/geolocation.html", 31021, done);
-      sendEventByKey('WebAttributeButton', 10, '');
+      Utils.emitEvent("testOnResourceLoad001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testOnResourceLoad001",  'resource://rawfile/geolocation.html', 201720, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebAttributeButton");
+      if (await Utils.waitForExist(() => isReturn, 'testOnResourceLoad001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -93,10 +103,13 @@ export default function webAttribute() {
     * @tc.level      : Level 1
     */
     it('testOnWindowNew001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testOnWindowNew001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnWindowNew001", true, 30071, done);
-      sendEventByKey('WebAttributeButton', 10, '');
+      Utils.emitEvent("testOnWindowNew001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testOnWindowNew001",  true, 201730, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebAttributeButton");
+      if (await Utils.waitForExist(() => isReturn, 'testOnWindowNew001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -108,10 +121,13 @@ export default function webAttribute() {
     * @tc.level      : Level 1
     */
     it('testOnWindowNew002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testOnWindowNew002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnWindowNew002", false, 30072, done);
-      sendEventByKey('WebAttributeButton', 10, '');
+      Utils.emitEvent("testOnWindowNew002", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testOnWindowNew002",  false, 201740, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebAttributeButton");
+      if (await Utils.waitForExist(() => isReturn, 'testOnWindowNew002' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -123,10 +139,13 @@ export default function webAttribute() {
     * @tc.level      : Level 1
     */
     it('testOnWindowNew003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testOnWindowNew003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnWindowNew003", false, 30073, done);
-      sendEventByKey('WebAttributeButton', 10, '');
+      Utils.emitEvent("testOnWindowNew003", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testOnWindowNew003",  false, 201750, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebAttributeButton");
+      if (await Utils.waitForExist(() => isReturn, 'testOnWindowNew003' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -138,10 +157,13 @@ export default function webAttribute() {
     * @tc.level      : Level 1
     */
     it('testMultiWindowAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testMultiWindowAccess001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testMultiWindowAccess001", false, 30074, done);
-      sendEventByKey('WebAttributeButton', 10, '');
+      Utils.emitEvent("testMultiWindowAccess001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testMultiWindowAccess001",  false, 201760, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebAttributeButton");
+      if (await Utils.waitForExist(() => isReturn, 'testMultiWindowAccess001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -153,11 +175,13 @@ export default function webAttribute() {
     * @tc.level      : Level 1
     */
     it('testJavaScriptAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testJavaScriptAccess001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJavaScriptAccess001", true, 32019, done);
-      sendEventByKey('WebAttributeButton', 10, '');
+      Utils.emitEvent("testJavaScriptAccess001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testJavaScriptAccess001",  true, 201770, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebAttributeButton");
+      if (await Utils.waitForExist(() => isReturn, 'testJavaScriptAccess001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
   })
-
 }

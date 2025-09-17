@@ -13,10 +13,14 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 201290;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -33,13 +37,14 @@ export default function webSecureDnsModeEnumTest() {
         console.info("get WebSecureDnsModeEnumTest state success " + JSON.stringify(pages));
         if (!("WebSecureDnsModeEnumTest" == pages.name)) {
           console.info("get WebSecureDnsModeEnumTest state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push WebSecureDnsModeEnumTest page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info("push WebSecureDnsModeEnumTest page success");
         }
       } catch (err) {
         console.error("push WebSecureDnsModeEnumTest page error: " + err);
       }
+      await driver.waitForComponent(ON.id("WebSecureDnsModeEnumTestButton"), 10000);
+      console.log("waitForComponent WebSecureDnsModeEnumTestButton");
       done()
     });
 
@@ -49,15 +54,7 @@ export default function webSecureDnsModeEnumTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebSecureDnsModeEnumTest afterEach start");
-      await Utils.sleep(1000);
-      console.info("WebSecureDnsModeEnumTest afterEach end");
       done();
     })
 
@@ -70,10 +67,13 @@ export default function webSecureDnsModeEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebSecureDnsModeEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebSecureDnsModeEnum001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebSecureDnsModeEnum001", 0, 70300, done);
-      sendEventByKey('WebSecureDnsModeEnumTestButton', 10, '');
+      Utils.emitEvent("testWebSecureDnsModeEnum001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebSecureDnsModeEnum001", 0, 201300, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebSecureDnsModeEnumTestButton");
+      if (await Utils.waitForExist(() => isReturn, 'testWebSecureDnsModeEnum001' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -85,10 +85,13 @@ export default function webSecureDnsModeEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebSecureDnsModeEnum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebSecureDnsModeEnum002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebSecureDnsModeEnum002", 1, 70301, done);
-      sendEventByKey('WebSecureDnsModeEnumTestButton', 10, '');
+      Utils.emitEvent("testWebSecureDnsModeEnum002", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebSecureDnsModeEnum002", 1, 201310, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebSecureDnsModeEnumTestButton");
+      if (await Utils.waitForExist(() => isReturn, 'testWebSecureDnsModeEnum002' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -100,11 +103,13 @@ export default function webSecureDnsModeEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebSecureDnsModeEnum003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebSecureDnsModeEnum003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebSecureDnsModeEnum003", 2, 70302, done);
-      sendEventByKey('WebSecureDnsModeEnumTestButton', 10, '');
+      Utils.emitEvent("testWebSecureDnsModeEnum003", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebSecureDnsModeEnum003", 2, 201320, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebSecureDnsModeEnumTestButton");
+      if (await Utils.waitForExist(() => isReturn, 'testWebSecureDnsModeEnum003' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
-
   })
 }

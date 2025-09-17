@@ -12,16 +12,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {describe, beforeEach, afterEach, it, expect, beforeAll, TestType, Size, Level } from "@ohos/hypium";
-import events_emitter from '@ohos.events.emitter';
+import {describe, beforeEach, it, beforeAll, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 202070;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-// import router from '@system.router';
-// @ts-nocheck
-let emitKey = "emitOnHttpErrorReceiveFixedUserAgent";
+
 export default function webViewONHttpErrorReceive() {
   describe('ActsAceWebDevWebViewONHttpErrorReceiveTest',  () =>{
     beforeAll(async  (done: Function) =>{
@@ -34,68 +35,50 @@ export default function webViewONHttpErrorReceive() {
         console.info("get webViewONHttpErrorReceive state success " + JSON.stringify(pages));
         if (!("webViewONHttpErrorReceive" == pages.name)) {
           console.info("get webViewONHttpErrorReceive state success " + JSON.stringify(pages.name));
-          let result = await router.push(options);
-          await Utils.sleep(2000);
-          console.info("push webViewONHttpErrorReceive page success " + JSON.stringify(result));
+          await router.push(options);
+          console.info("push webViewONHttpErrorReceive page success");
         }
       } catch (err) {
         console.error("push webViewONHttpErrorReceive page error: " + err);
       }
+      await driver.waitForComponent(ON.id("onErrorReceive03"), 10000);
+      console.log("waitForComponent onErrorReceive03");
       done()
     });
+
     beforeEach(async  (done: Function) =>{
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webViewONHttpErrorReceive beforeEach start");
       done();
     })
-    afterEach(async  (done: Function) =>{
-      console.info("webViewONHttpErrorReceive afterEach start:" + emitKey);
-      try {
-            let backData: events_emitter.EventData= {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent: events_emitter.InnerEvent = {
-                eventId:10,
-                priority:events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-      } catch (err) {
-            console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
-      done();
-    })
+
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORRECV_API_0100
      *tc.name testOnHttpErrorReceiveFixedUserAgent
      *tc.desc test interface of onHttpErrorReceive with parameter fixed userAgent
      */
     it('testOnHttpErrorReceiveFixedUserAgent',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitOnHttpErrorReceiveFixedUserAgent";
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","http://1.1.1.123/index.html",362,done);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",true,364,done);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",false,366,done);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",false,368,done);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","GET",370,done);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",'""',372,done);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","utf-8",374,done);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","text/html",376,done);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",403,378,done);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","Forbidden",380,done);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","User-Agent",382,done);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.88 Mobile Safari/537.36",384,done);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","X-Frame-Options",386,done);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","SAMEORIGIN",388,done);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","Direct IP access not allowed | Cloudflare",390,done);
-      sendEventByKey('webViewONHttpErrorReceive',10,'');
+      Utils.emitEvent("emitOnHttpErrorReceiveFixedUserAgent", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","http://1.1.1.123/index.html",202080,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",true,202090,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",false,202100,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",false,202110,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","GET",202120,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",'""',202130,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","utf-8",202140,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","text/html",202150,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",403,202160,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","Forbidden",202170,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","User-Agent",202180,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.88 Mobile Safari/537.36",202190,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","X-Frame-Options",202200,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","SAMEORIGIN",202210,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","Direct IP access not allowed | Cloudflare",202220,done);
+      await Utils.waitAndClickComponent(driver, "webViewONHttpErrorReceive");
     })
   })
 }

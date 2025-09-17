@@ -17,6 +17,10 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 201780;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function webController() {
@@ -33,23 +37,23 @@ export default function webController() {
         console.info("get webController state success " + JSON.stringify(pages));
         if (!("webController" == pages.name)) {
           console.info("get webController state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push webController page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info("push webController page success");
         }
       } catch (err) {
         console.error("push webController page error: " + err);
       }
+      await driver.waitForComponent(ON.id("WebControllerButton"), 10000);
+      console.log("waitForComponent WebControllerButton");
       done()
     });
 
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webController beforeEach start");
       done();
     })
@@ -65,10 +69,13 @@ export default function webController() {
     * @tc.level      : Level 0
     */
     it('testImageAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("testImageAccess001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testImageAccess001", "null", 33023, done);
-      sendEventByKey('WebControllerButton', 10, '');
+      Utils.emitEvent("testImageAccess001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testImageAccess001",  '"01"', 201790, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
+      if (await Utils.waitForExist(() => isReturn, 'testImageAccess001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -80,10 +87,13 @@ export default function webController() {
     * @tc.level      : Level 1
     */
     it('testImageAccess002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testImageAccess002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testImageAccess002", "\"load complete\"", 33024, done);
-      sendEventByKey('WebControllerButton', 10, '');
+      Utils.emitEvent("testImageAccess002", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testImageAccess002", "\"load complete02\"", 201800, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
+      if (await Utils.waitForExist(() => isReturn, 'testImageAccess002' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
 
@@ -97,10 +107,13 @@ export default function webController() {
     * @tc.level      : Level 1
     */
     it('testOnlineImageAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testOnlineImageAccess001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnlineImageAccess001", "null", 33027, done);
-      sendEventByKey('WebControllerButton', 10, '');
+      Utils.emitEvent("testOnlineImageAccess001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testOnlineImageAccess001", '""', 201810, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
+      if (await Utils.waitForExist(() => isReturn, 'testOnlineImageAccess001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -112,10 +125,13 @@ export default function webController() {
     * @tc.level      : Level 1
     */
     it('testOnlineImageAccess002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testOnlineImageAccess002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testImageAccess002", "\"load image complete\"", 33028, done);
-      sendEventByKey('WebControllerButton', 10, '');
+      Utils.emitEvent("testOnlineImageAccess002", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testImageAccess002", "\"load image complete\"", 201820, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
+      if (await Utils.waitForExist(() => isReturn, 'testOnlineImageAccess002' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -127,10 +143,13 @@ export default function webController() {
     * @tc.level      : Level 1
     */
     it('testFileAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFileAccess001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFileAccess001", "\"second\"", 33029, done);
-      sendEventByKey('WebControllerButton', 10, '');
+      Utils.emitEvent("testFileAccess001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testFileAccess001", "\"second\"", 201830, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
+      if (await Utils.waitForExist(() => isReturn, 'testFileAccess001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -142,12 +161,13 @@ export default function webController() {
     * @tc.level      : Level 1
     */
     it('testFileAccess002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFileAccess002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFileAccess002", "\"second\"", 100070, done);
-      sendEventByKey('WebControllerButton', 10, '');
+      Utils.emitEvent("testFileAccess002", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testFileAccess002", "\"second\"", 201840, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
+      if (await Utils.waitForExist(() => isReturn, 'testFileAccess002' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
-
-
   })
 }

@@ -17,6 +17,10 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 202720;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function WebViewJavaScriptProxyAndOnPageVisible() {
@@ -32,22 +36,23 @@ export default function WebViewJavaScriptProxyAndOnPageVisible() {
         console.info("get WebViewJavaScriptProxyAndOnPageVisible state success " + JSON.stringify(pages));
         if (!("WebViewJavaScriptProxyAndOnPageVisible" == pages.name)) {
           console.info("get WebViewJavaScriptProxyAndOnPageVisible state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push WebViewJavaScriptProxyAndOnPageVisible page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info("push WebViewJavaScriptProxyAndOnPageVisible page success");
         }
       } catch (err) {
         console.error("push WebViewJavaScriptProxyAndOnPageVisible page error: " + err);
       }
+      await driver.waitForComponent(ON.id('buttonJavaScriptProxyAndPageVisible'),10000);
+      console.log('waitForComponent buttonJavaScriptProxyAndPageVisible==>');
       done()
     });
+
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
@@ -61,10 +66,13 @@ export default function WebViewJavaScriptProxyAndOnPageVisible() {
     * @tc.level      : Level 0
     */
     it('testSslErrorHostMismatch001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitSslErrorHostMismatch", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testSslErrorHostMismatch001", SslError.HostMismatch, 891, done);
-      sendEventByKey('buttonJavaScriptProxyAndPageVisible', 10, '');
+      Utils.emitEvent("emitSslErrorHostMismatch", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testSslErrorHostMismatch001", SslError.HostMismatch, 202730, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "buttonJavaScriptProxyAndPageVisible");
+      if (await Utils.waitForExist(() => isReturn, 'testSslErrorHostMismatch001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
   })
 }

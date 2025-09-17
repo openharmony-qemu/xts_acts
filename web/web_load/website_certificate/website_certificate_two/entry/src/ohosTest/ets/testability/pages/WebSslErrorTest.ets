@@ -17,23 +17,27 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 
+const EVENT_ID_SET_EMIT_KEY = 202690;
+
 @Entry
 @Component
 struct WebSslErrorTest {
   controller: webView.WebviewController = new webView.WebviewController();
   @State str: string = ""
   @State sslErrorType: number = -1
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -42,6 +46,7 @@ struct WebSslErrorTest {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -50,21 +55,19 @@ struct WebSslErrorTest {
     Column() {
       Row() {
         Button("WebSslErrorTestButton").key('WebSslErrorTestButton').onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, 'certChainDataWebIsReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, 'certChainDataWebIsPageEnd', 1, 1000);
           console.info("key==>" + this.str)
+          this.isReceive = -1;
           switch (this.str) {
             case "emitSslErrorDateInvalid": {
               this.controller.clearClientAuthenticationCache();
               this.controller.clearSslCache();
-              await Utils.sleep(2000)
               this.controller.loadUrl('https://expired.badssl.com');
-              await Utils.sleep(15000);
-              Utils.emitEvent(Number(this.sslErrorType), 70892)
               break;
             }
             case "emitSslErrorUntrusted": {
               this.controller.loadUrl('https://untrusted-root.badssl.com/');
-              await Utils.sleep(15000);
-              Utils.emitEvent(Number(this.sslErrorType), 70893)
               break;
             }
           }
@@ -78,7 +81,18 @@ struct WebSslErrorTest {
         .onSslErrorEventReceive((event) => {
           if (event) {
             console.log('onSslErrorEventReceive =====> event.error:' + event.error)
-            this.sslErrorType = event.error
+            this.sslErrorType = event.error;
+            if (this.str === 'emitSslErrorDateInvalid') {
+              Utils.emitEvent(Number(this.sslErrorType), 202700);
+            } else if (this.str === 'emitSslErrorUntrusted') {
+              Utils.emitEvent(Number(this.sslErrorType), 202710)
+            }
+          }
+        })
+        .onPageEnd((event) => {
+          if (event) {
+            this.isPageEnd = 1;
+            console.log("onPageEnd==>")
           }
         })
     }

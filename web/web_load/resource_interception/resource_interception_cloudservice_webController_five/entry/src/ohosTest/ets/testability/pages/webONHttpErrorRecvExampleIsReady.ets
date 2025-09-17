@@ -14,11 +14,9 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
-import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
-import UIAbility from '@ohos.app.ability.UIAbility';
+
+const EVENT_ID_SET_EMIT_KEY = 201590;
 
 @Entry
 @Component
@@ -48,13 +46,18 @@ struct webONHttpErrorRecvExampleIsReady {
   @State databaseAccess: boolean = true;
   @State userAgent: string = "Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.88 Mobile Safari/537.36";
   @State title: string = "";
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: ESObject) => {
@@ -63,6 +66,7 @@ struct webONHttpErrorRecvExampleIsReady {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -71,18 +75,19 @@ struct webONHttpErrorRecvExampleIsReady {
     Column() {
       Row() {
         Button("onHttpErrorTest").key('webONHttpErrorRecvExampleIsReady').onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, 'webONHttpErrorRecvExampleIsReadyIsReceive', 1, 1000);
           console.info("key==>" + this.str)
+          this.isReceive = -1;
           switch (this.str) {
             case "emitOnHttpErrorRecvExampleIsReadyFalseWebc": {
               try {
                 this.controller.loadUrl({ url: 'http://1.1.1.123/index.html' });
-                await Utils.sleep(1000);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               this.controller.runJavaScript({
                 script: "test()", callback: (res) => {
-                  Utils.emitEvent(this.title, 494);
+                  Utils.emitEvent(this.title, 201610);
                 }
               })
               break;
@@ -130,7 +135,7 @@ struct webONHttpErrorRecvExampleIsReady {
           console.log('getResponseEncoding:' + event.response.getResponseEncoding());
           console.log('getResponseMimeType:' + event.response.getResponseMimeType());
           console.log('getResponseCode:' + event.response.getResponseCode());
-          Utils.emitEvent(event.response.getResponseCode(), 493)
+          Utils.emitEvent(event.response.getResponseCode(), 201600)
           console.log("this.title result is :" + this.title);
           console.log('getReasonMessage:' + event.response.getReasonMessage());
           let result = event.request.getRequestHeader();
@@ -147,7 +152,7 @@ struct webONHttpErrorRecvExampleIsReady {
         .onTitleReceive((event) => {
           console.log('title:' + event.title);
           this.title = event.title;
-          Utils.emitEvent(this.title, 494);
+          Utils.emitEvent(this.title, 201610);
         })
     }
   }

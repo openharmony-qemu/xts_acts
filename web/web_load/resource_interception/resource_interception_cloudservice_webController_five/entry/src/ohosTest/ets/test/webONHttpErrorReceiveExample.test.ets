@@ -12,15 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
-import events_emitter from '@ohos.events.emitter';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 201530;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-
-let emitKey = "emitOnHttpErrorReceiveByExampleWebc";
 
 export default function webONHttpErrorReceiveExample() {
   describe('ActsAceWebDevWebONHttpErrorReceiveExampleTest', () => {
@@ -35,44 +36,26 @@ export default function webONHttpErrorReceiveExample() {
         if (!("webONHttpErrorReceiveExample" == pages.name)) {
           console.info("get webONHttpErrorReceiveExample state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push webONHttpErrorReceiveExample page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webONHttpErrorReceiveExample page error: " + err);
       }
+      await driver.waitForComponent(ON.id("webONHttpErrorReceiveExample"), 10000);
+      console.log("waitForComponent webONHttpErrorReceiveExample");
       done();
     });
+
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webONHttpErrorReceiveExample beforeEach start");
       done();
     })
-    afterEach(async (done: Function) => {
-      console.info("webONHttpErrorReceiveExample afterEach start:" + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        };
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        };
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
-      done();
-    })
+
     /*
      * @tc.number     : SUB_ACE_BASIC_ETS_WEBERRORRECV_API_0200
      * @tc.name       : testOnHttpErrorReceiveByExampleWebc
@@ -82,10 +65,14 @@ export default function webONHttpErrorReceiveExample() {
      * @tc.level      : Level 0
      */
     it('testOnHttpErrorReceiveByExampleWebc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitOnHttpErrorReceiveByExampleWebc";
-      Utils.registerEvent("testOnHttpErrorReceiveByExampleWebc", 403, 491, done);
-      Utils.registerEvent("testOnHttpErrorReceiveByExampleWebc", "intercept test", 492, done);
-      sendEventByKey('webONHttpErrorReceiveExample', 10, '');
+      Utils.emitEvent("emitOnHttpErrorReceiveByExampleWebc", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testOnHttpErrorReceiveByExampleWebc", 403, 201540, () => { isReturn = 1 });
+      Utils.registerEvent("testOnHttpErrorReceiveByExampleWebc", "intercept test", 201550, () => { isReturn = 2 });
+      await Utils.waitAndClickComponent(driver, "webONHttpErrorReceiveExample");
+      if (await Utils.waitForExist(() => isReturn, 'testOnHttpErrorReceiveByExampleWebc' + '_returnCheck', 2, 1000)) {
+        done();
+      }
     })
   })
 }
