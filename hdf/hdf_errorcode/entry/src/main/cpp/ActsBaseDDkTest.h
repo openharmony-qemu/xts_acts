@@ -20,7 +20,6 @@
 #include <napi/native_api.h>
 #include <vector>
 void addBaseDDkErrorCodeTest(std::vector<napi_property_descriptor>& descData);
-napi_value DdkMapAshmemAshmemFd(napi_env env, napi_callback_info info);
 napi_value DdkMapAshmemAddress(napi_env env, napi_callback_info info);
 napi_value DdkMapAshmemSize(napi_env env, napi_callback_info info);
 napi_value DdkMapAshmemOffset(napi_env env, napi_callback_info info);

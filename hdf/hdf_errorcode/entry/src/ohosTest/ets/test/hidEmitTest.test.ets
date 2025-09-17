@@ -51,22 +51,22 @@ export default function ActsHidEmitCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDevicePropDirect_0100
-     * @tc.name    : SUB_Driver_Ext_HidCreateDevicePropDirect_0100
-     * @tc.desc    : Test HidCreateDevicePropDirect.
+     * @tc.number  : SUB_Driver_Ext_HidCreateDevicePropPointer_0100
+     * @tc.name    : SUB_Driver_Ext_HidCreateDevicePropPointer_0100
+     * @tc.desc    : Test HidCreateDevicePropPointer.
      * @tc.level   : Level1
      * @tc.size    : MediumTest
      * @tc.type    : Function
      */
-    it('SUB_Driver_Ext_HidCreateDevicePropDirect_0100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Driver_Ext_HidCreateDevicePropPointer_0100', Level.LEVEL0, async (done: Function) => {
       try {
-        console.info("====>SUB_Driver_Ext_HidCreateDevicePropDirect_0100 start====");
-        let result: number = baskddkerror.HidCreateDevicePropDirect();
+        console.info("====>SUB_Driver_Ext_HidCreateDevicePropPointer_0100 start====");
+        let result: number = baskddkerror.HidCreateDevicePropPointer();
         expect(result >= 0).assertTrue();
-        console.info("====>SUB_Driver_Ext_HidCreateDevicePropDirect_0100 result: " + result);
+        console.info("====>SUB_Driver_Ext_HidCreateDevicePropPointer_0100 result: " + result);
         done()
       } catch (err) {
-        console.error("====>SUB_Driver_Ext_HidCreateDevicePropDirect_0100 catch err: " + err);
+        console.error("====>SUB_Driver_Ext_HidCreateDevicePropPointer_0100 catch err: " + err);
         expect().assertFail();
       }
     })

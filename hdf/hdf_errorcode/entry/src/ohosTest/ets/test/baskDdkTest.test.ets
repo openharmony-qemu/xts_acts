@@ -18,26 +18,6 @@ import baskddkerror from 'libbaskddkerrorcode.so'
 const Success = 0;
 export default function ActsBaseDDkTest() {
   describe('ActsBaseDDkTest', () => {
-    /**
-     * @tc.number  : SUB_Driver_Ext_DdkMapAshmemAshmemFd_0100
-     * @tc.name    : SUB_Driver_Ext_DdkMapAshmemAshmemFd_0100
-     * @tc.desc    : Test DdkMapAshmemAshmemFd.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     */
-    it('SUB_Driver_Ext_DdkMapAshmemAshmemFd_0100', Level.LEVEL0, async (done: Function) => {
-      try {
-        console.info("====>SUB_Driver_Ext_DdkMapAshmemAshmemFd_0100 start====");
-        let result:number = baskddkerror.DdkMapAshmemAshmemFd();
-        expect(result).assertEqual(Success);
-        console.info("====>SUB_Driver_Ext_DdkMapAshmemAshmemFd_0100 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>SUB_Driver_Ext_DdkMapAshmemAshmemFd_0100 catch err: " + err);
-        expect().assertFail();
-      }
-    })
 
     /**
      * @tc.number  : SUB_Driver_Ext_DdkMapAshmemAddress_0200

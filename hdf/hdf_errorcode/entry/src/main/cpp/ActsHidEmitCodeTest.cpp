@@ -68,7 +68,7 @@ void addHidEmitErrorCodeTest(std::vector<napi_property_descriptor>& descData)
 {
     descData.push_back({"IsHidDevice", nullptr, IsHidDevice,
             nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"HidCreateDevicePropDirect", nullptr, HidCreateDevicePropDirect,
+    descData.push_back({"HidCreateDevicePropPointer", nullptr, HidCreateDevicePropPointer,
             nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"HidCreateDevicePropPointingStick", nullptr, HidCreateDevicePropPointingStick,
             nullptr, nullptr, nullptr, napi_default, nullptr});
@@ -153,7 +153,7 @@ napi_value IsHidDevice(napi_env env, napi_callback_info info)
 
 int32_t CreateTestDevicePropDirect(const char* str)
 {
-    std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_DIRECT };
+    std::vector<Hid_DeviceProp> deviceProp = { HID_PROP_POINTER };
     Hid_Device hidDevice = {
         .deviceName = str,
         .vendorId = 0x6006,
@@ -195,7 +195,7 @@ int32_t CreateTestDevicePropDirect(const char* str)
     return OH_Hid_CreateDevice(&hidDevice, &hidEventProp);
 }
 
-napi_value HidCreateDevicePropDirect(napi_env env, napi_callback_info info)
+napi_value HidCreateDevicePropPointer(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;

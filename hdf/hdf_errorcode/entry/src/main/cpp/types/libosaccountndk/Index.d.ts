@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export const DdkMapAshmemAshmemFd: () => number;
 export const DdkMapAshmemAddress: () => number;
 export const DdkMapAshmemSize: () => number;
 export const DdkMapAshmemOffset: () => number;
@@ -23,7 +22,7 @@ export const DdkMapAshmemInvalidParameter: () => number;
 export const DdkMapAshmemInvalidOperation: () => number;
 export const DdkMapAshmemNullPTR: () => number;
 export const IsHidDevice: (a: number) => number;
-export const HidCreateDevicePropDirect: () => number;
+export const HidCreateDevicePropPointer: () => number;
 export const HidCreateDevicePropPointingStick: () => number;
 export const HidCreateDevicePropButtonPad: () => number;
 export const HidCreateDevicePropSemiMt: () => number;

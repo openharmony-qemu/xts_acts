@@ -21,7 +21,7 @@
 #include <vector>
 void addHidEmitErrorCodeTest(std::vector<napi_property_descriptor>& descData);
 napi_value IsHidDevice(napi_env env, napi_callback_info info);
-napi_value HidCreateDevicePropDirect(napi_env env, napi_callback_info info);
+napi_value HidCreateDevicePropPointer(napi_env env, napi_callback_info info);
 napi_value HidCreateDevicePropPointingStick(napi_env env, napi_callback_info info);
 napi_value HidCreateDevicePropButtonPad(napi_env env, napi_callback_info info);
 napi_value HidCreateDevicePropSemiMt(napi_env env, napi_callback_info info);

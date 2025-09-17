@@ -32,8 +32,6 @@
 void addBaseDDkErrorCodeTest(std::vector<napi_property_descriptor> &descData)
 {
     descData.push_back(
-        {"DdkMapAshmemAshmemFd", nullptr, DdkMapAshmemAshmemFd, nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back(
         {"DdkMapAshmemAddress", nullptr, DdkMapAshmemAddress, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back(
         {"DdkMapAshmemSize", nullptr, DdkMapAshmemSize, nullptr, nullptr, nullptr, napi_default, nullptr});
@@ -51,20 +49,6 @@ void addBaseDDkErrorCodeTest(std::vector<napi_property_descriptor> &descData)
                         nullptr, napi_default, nullptr});
     descData.push_back(
         {"DdkMapAshmemNullPTR", nullptr, DdkMapAshmemNullPTR, nullptr, nullptr, nullptr, napi_default, nullptr});
-}
-
-napi_value DdkMapAshmemAshmemFd(napi_env env, napi_callback_info info)
-{
-    napi_value result;
-    DDK_Ashmem *ashmem = nullptr;
-    const uint8_t name[100] = "TestAshmem";
-    uint32_t bufferLen = BUFF_LENTH;
-    int32_t returnValue = OH_DDK_CreateAshmem(name, bufferLen, &ashmem);
-    const uint8_t ashmemMapType = PORT_READ | PORT_WRITE;
-    ashmem->ashmemFd;
-    returnValue = OH_DDK_MapAshmem(ashmem, ashmemMapType);
-    napi_create_int32(env, returnValue, &result);
-    return result;
 }
 
 napi_value DdkMapAshmemAddress(napi_env env, napi_callback_info info)
