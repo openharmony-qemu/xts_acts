@@ -93,35 +93,35 @@ export default function webForceEnableZoomJsunit() {
     })
 
 
-    // /*
-    // * @tc.number     : SUB_WEB_WEBFORCEENABLEZOOM_0200
-    // * @tc.name       : emitWebForceEnableZoom002
-    // * @tc.desc       : emitWebForceEnableZoom002
-    // * @tc.size       : MediumTest
-    // * @tc.type       : Function
-    // * @tc.level      : Level 1
-    // */
-    // it('emitWebForceEnableZoom002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async  (done: Function) =>{
-    //   emitKey="emitWebForceEnableZoom002";
-    //   Utils.emitEvent(emitKey, 10);
-    //   Utils.registerEvent("emitWebForceEnableZoom002",true,20250914,done);
-    //   sendEventByKey('WebForceEnableZoomButton',10,'');
-    // })
+    /*
+    * @tc.number     : SUB_WEB_WEBFORCEENABLEZOOM_0200
+    * @tc.name       : emitWebForceEnableZoom002
+    * @tc.desc       : emitWebForceEnableZoom002
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 1
+    */
+    it('emitWebForceEnableZoom002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async  (done: Function) =>{
+      emitKey="emitWebForceEnableZoom002";
+      Utils.emitEvent(emitKey, 10);
+      Utils.registerEvent("emitWebForceEnableZoom002",true,20250914,done);
+      sendEventByKey('WebForceEnableZoomButton',10,'');
+    })
 
-    // /*
-    // * @tc.number     : SUB_WEB_WEBFORCEENABLEZOOM_0300
-    // * @tc.name       : emitWebForceEnableZoom003
-    // * @tc.desc       : emitWebForceEnableZoom003
-    // * @tc.size       : MediumTest
-    // * @tc.type       : Function
-    // * @tc.level      : Level 1
-    // */
-    // it('emitWebForceEnableZoom003',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async  (done: Function) =>{
-    //   emitKey="emitWebForceEnableZoom003";
-    //   Utils.emitEvent(emitKey, 10);
-    //   Utils.registerEvent("emitWebForceEnableZoom003",true,20250915,done);
-    //   sendEventByKey('WebForceEnableZoomButton',10,'');
-    // })
+    /*
+    * @tc.number     : SUB_WEB_WEBFORCEENABLEZOOM_0300
+    * @tc.name       : emitWebForceEnableZoom003
+    * @tc.desc       : emitWebForceEnableZoom003
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 1
+    */
+    it('emitWebForceEnableZoom003',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async  (done: Function) =>{
+      emitKey="emitWebForceEnableZoom003";
+      Utils.emitEvent(emitKey, 10);
+      Utils.registerEvent("emitWebForceEnableZoom003",true,20250915,done);
+      sendEventByKey('WebForceEnableZoomButton',10,'');
+    })
 
     /*
     * @tc.number     : SUB_WEB_WEBFORCEENABLEZOOM_0400
