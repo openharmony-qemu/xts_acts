@@ -17,6 +17,7 @@
 #include <vector>
 #include <thread>
 #include <fstream>
+#include <unistd.h>
 
 #include "nnrt_utils.h"
 #include "model.h"
@@ -32,13 +33,11 @@ class CompileTest : public testing::Test {
 public:
     void SetUp()
     {
-        CreateFolder(CACHE_DIR);
     }
     void TearDown()
     {
-        DeleteFolder(CACHE_DIR);
     }
-    void GenCacheFile()
+    void GenCacheFile(const std::string& cachePath)
     {
         OH_NNModel *model = OH_NNModel_Construct();
         ASSERT_NE(nullptr, model);
@@ -46,23 +45,24 @@ public:
         OH_NNCompilation *compilation = OH_NNCompilation_Construct(model);
         ASSERT_NE(nullptr, compilation);
         OHNNCompileParam compileParam{
-            .cacheDir = "./cache",
+            .cacheDir = cachePath,
             .cacheVersion = 10,
         };
         ASSERT_EQ(OH_NN_SUCCESS, CompileGraphMock(compilation, compileParam));
         Free(model, compilation);
-        ASSERT_TRUE(CheckPath(CACHE_PATH) == PathType::FILE);
-        ASSERT_TRUE(CheckPath(CACHE_INFO_PATH) == PathType::FILE);
+        ASSERT_TRUE(CheckPath(cachePath + CACHE_FILE) == PathType::FILE);
+        ASSERT_TRUE(CheckPath(cachePath + CACHE_INFO_FILE) == PathType::FILE);
     }
-    void DestroyCache()
+    void DestroyCache(const std::string& cachePath)
     {
-        std::ifstream ifs(CACHE_PATH.c_str(), std::ios::in | std::ios::binary);
+        std::string cacheFile = cachePath + CACHE_FILE;
+        std::ifstream ifs(cacheFile.c_str(), std::ios::in | std::ios::binary);
         char* ptr{nullptr};
         int cacheSize = ifs.tellg();
         int invalidCacheSize = cacheSize * 0.9;
         ifs.read(ptr, cacheSize);
         ifs.close();
-        std::ofstream ofs(CACHE_PATH.c_str(), std::ios::out | std::ios::binary);
+        std::ofstream ofs(cacheFile.c_str(), std::ios::out | std::ios::binary);
         ofs.write(ptr, invalidCacheSize);
         ofs.close();
     }
@@ -251,12 +251,14 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0300, Function
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0400, Function | MediumTest | Level3)
 {
+    pid_t pid = getpid();
+    std::string cachePath = CACHE_DIR + "v1_setcache04_" + std::to_string(pid);
     OH_NNModel *model = OH_NNModel_Construct();
     ASSERT_NE(nullptr, model);
     ASSERT_EQ(OH_NN_SUCCESS, BuildSingleOpGraph(model, graphArgs));
     OH_NNCompilation *compilation = OH_NNCompilation_Construct(model);
     ASSERT_NE(nullptr, compilation);
-    OHNNCompileParam compileParam{.cacheDir = "./test"};
+    OHNNCompileParam compileParam{.cacheDir = cachePath};
     ASSERT_EQ(OH_NN_INVALID_PARAMETER, CompileGraphMock(compilation, compileParam));
     Free(model, compilation);
 }
@@ -269,20 +271,24 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0400, Function
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0500, Function | MediumTest | Level2)
 {
     // generate cache file in cache diretory
-    GenCacheFile();
+    pid_t pid = getpid();
+    std::string cachePath = CACHE_DIR + "v1_setcache05_" + std::to_string(pid);
+    CreateFolder(cachePath);
+    GenCacheFile(cachePath);
     // destroy cache file to invalid size
-    DestroyCache();
+    DestroyCache(cachePath);
     OH_NNModel *model = OH_NNModel_Construct();
     ASSERT_NE(nullptr, model);
     ASSERT_EQ(OH_NN_SUCCESS, BuildSingleOpGraph(model, graphArgs));
     OH_NNCompilation *compilation = OH_NNCompilation_Construct(model);
     ASSERT_NE(nullptr, compilation);
     OHNNCompileParam compileParam{
-        .cacheDir = "./cache",
+        .cacheDir = cachePath,
         .cacheVersion = 10,
     };
     ASSERT_EQ(OH_NN_SUCCESS, CompileGraphMock(compilation, compileParam));
     Free(model, compilation);
+    DeleteFolder(cachePath);
 }
 
 /**
@@ -292,18 +298,22 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0500, Function
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0600, Function | MediumTest | Level2)
 {
-    GenCacheFile();
+    pid_t pid = getpid();
+    std::string cachePath = CACHE_DIR + "v1_setcache06_" + std::to_string(pid);
+    CreateFolder(cachePath);
+    GenCacheFile(cachePath);
     OH_NNModel *model = OH_NNModel_Construct();
     ASSERT_NE(nullptr, model);
     ASSERT_EQ(OH_NN_SUCCESS, BuildSingleOpGraph(model, graphArgs));
     OH_NNCompilation *compilation = OH_NNCompilation_Construct(model);
     ASSERT_NE(nullptr, compilation);
     OHNNCompileParam compileParam{
-        .cacheDir = "./cache",
+        .cacheDir = cachePath,
         .cacheVersion = 9,
     };
     ASSERT_EQ(OH_NN_OPERATION_FORBIDDEN, CompileGraphMock(compilation, compileParam));
     Free(model, compilation);
+    DeleteFolder(cachePath);
 }
 
 /**
@@ -313,18 +323,22 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0600, Function
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0700, Function | MediumTest | Level2)
 {
-    GenCacheFile();
+    pid_t pid = getpid();
+    std::string cachePath = CACHE_DIR + "v1_setcache07_" + std::to_string(pid);
+    CreateFolder(cachePath);
+    GenCacheFile(cachePath);
     OH_NNModel *model = OH_NNModel_Construct();
     ASSERT_NE(nullptr, model);
     ASSERT_EQ(OH_NN_SUCCESS, BuildSingleOpGraph(model, graphArgs));
     OH_NNCompilation *compilation = OH_NNCompilation_Construct(model);
     ASSERT_NE(nullptr, compilation);
     OHNNCompileParam compileParam{
-        .cacheDir = "./cache",
+        .cacheDir = cachePath,
         .cacheVersion = 10,
     };
     ASSERT_EQ(OH_NN_SUCCESS, CompileGraphMock(compilation, compileParam));
     Free(model, compilation);
+    DeleteFolder(cachePath);
 }
 
 /**
@@ -334,18 +348,22 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0700, Function
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0800, Function | MediumTest | Level2)
 {
-    GenCacheFile();
+    pid_t pid = getpid();
+    std::string cachePath = CACHE_DIR + "v1_setcache08_" + std::to_string(pid);
+    CreateFolder(cachePath);
+    GenCacheFile(cachePath);
     OH_NNModel *model = OH_NNModel_Construct();
     ASSERT_NE(nullptr, model);
     ASSERT_EQ(OH_NN_SUCCESS, BuildSingleOpGraph(model, graphArgs));
     OH_NNCompilation *compilation = OH_NNCompilation_Construct(model);
     ASSERT_NE(nullptr, compilation);
     OHNNCompileParam compileParam{
-        .cacheDir = "./cache",
+        .cacheDir = cachePath,
         .cacheVersion = 11,
     };
     ASSERT_EQ(OH_NN_SUCCESS, CompileGraphMock(compilation, compileParam));
     Free(model, compilation);
+    DeleteFolder(cachePath);
 }
 
 /**
@@ -768,17 +786,21 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Build_0300, Function | 
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Build_0400, Function | MediumTest | Level2)
 {
+    pid_t pid = getpid();
+    std::string cachePath = CACHE_DIR + "v1_build04_" + std::to_string(pid);
+    CreateFolder(cachePath);
     OH_NNModel *model = OH_NNModel_Construct();
     ASSERT_NE(nullptr, model);
     ASSERT_EQ(OH_NN_SUCCESS, BuildSingleOpGraph(model, graphArgs));
     OH_NNCompilation *compilation = OH_NNCompilation_Construct(model);
     ASSERT_NE(nullptr, compilation);
     OHNNCompileParam compileParam{
-        .cacheDir = "./cache",
+        .cacheDir = cachePath,
         .cacheVersion = 10,
     };
     ASSERT_EQ(OH_NN_SUCCESS, CompileGraphMock(compilation, compileParam));
     Free(model, compilation);
+    DeleteFolder(cachePath);
 }
 
 /**

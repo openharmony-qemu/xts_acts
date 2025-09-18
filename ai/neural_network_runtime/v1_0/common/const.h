@@ -30,9 +30,9 @@ const std::vector<int32_t> INPUT_INDEX = {0, 1};
 const std::vector<int32_t> OUTPUT_INDEX = {3};
 const int32_t ELEMENT_COUNT = 4;
 
-const std::string CACHE_DIR = "./cache";
-const std::string CACHE_PATH = CACHE_DIR + "/0.nncache";
-const std::string CACHE_INFO_PATH = CACHE_DIR + "/cache_info.nncache";
+const std::string CACHE_DIR = "/data/local/tmp/";
+const std::string CACHE_FILE = "/0.nncache";
+const std::string CACHE_INFO_FILE = "/cache_info.nncache";
 const uint32_t NO_DEVICE_COUNT = 0;
 const int STRESS_COUNT = 100000;
 const int PRINT_FREQ = 500;
