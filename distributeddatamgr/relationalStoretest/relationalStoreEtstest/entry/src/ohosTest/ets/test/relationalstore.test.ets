@@ -2507,7 +2507,7 @@ export default function relationalStoreInterfaceTest() {
     })
 
     /**
-     * @tc.name relationalStoreTest044
+     * @tc.name relationalStoreTest043
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_3800
      * @tc.desc updateSync param equal 2MB
      * @tc.size MediumTest
