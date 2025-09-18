@@ -66,7 +66,6 @@ export default function ActsSubscriberTestUnorder() {
         done()
       } else {
         console.info(TAG + ': createSubscriber successed! Subscriber.Info ===> ' + CommonEventSubscriber)
-        expect(true).assertTrue()
       }
 
       CommonEventSubscriber.getSubscribeInfo((err: BusinessError | null, CommonEventSubscriberInfo:commonEventManager.CommonEventSubscribeInfo|undefined) => {
@@ -76,7 +75,6 @@ export default function ActsSubscriberTestUnorder() {
           done()
         } else {
           console.info(TAG + ': getSubscribeInfo successed! event.Info ===> ' + JSON.stringify(CommonEventSubscriberInfo))
-          expect(true).assertTrue()
           expect(CommonEventSubscriberInfo?.events[0]).assertEqual('event')
           expect(CommonEventSubscriberInfo?.publisherPermission == '').assertTrue()
           expect(CommonEventSubscriberInfo?.publisherDeviceId == '').assertTrue()
@@ -103,7 +101,6 @@ export default function ActsSubscriberTestUnorder() {
         done()
       } else {
         console.info(TAG + ': createSubscriber successed! Subscriber.Info ===> ' + CommonEventSubscriber)
-        expect(true).assertTrue()
       }
 
       await CommonEventSubscriber.getSubscribeInfo().then((CommonEventSubscriberInfo:commonEventManager.CommonEventSubscribeInfo) => {
@@ -138,7 +135,6 @@ export default function ActsSubscriberTestUnorder() {
         done()
       } else {
         console.info(TAG + ': createSubscriber successed! Subscriber.Info ===> ' + CommonEventSubscriber)
-        expect(true).assertTrue()
       }
 
       CommonEventSubscriber.getSubscribeInfo((err: BusinessError | null, CommonEventSubscriberInfo:commonEventManager.CommonEventSubscribeInfo|undefined) => {
@@ -176,7 +172,6 @@ export default function ActsSubscriberTestUnorder() {
         done()
       } else {
         console.info(TAG + ': createSubscriber successed! Subscriber.Info ===> ' + CommonEventSubscriber)
-        expect(true).assertTrue()
       }
 
       await CommonEventSubscriber.getSubscribeInfo().then((CommonEventSubscriberInfo:commonEventManager.CommonEventSubscribeInfo) => {
@@ -220,7 +215,6 @@ export default function ActsSubscriberTestUnorder() {
         done()
       } else {
         console.info(TAG + ': createSubscriber successed! Subscriber.Info ===> ' + CommonEventSubscriber)
-        expect(true).assertTrue()
       }
 
       commonEventManager.subscribe(CommonEventSubscriber, (err: BusinessError | null, CommonEventData: commonEventManager.CommonEventData|undefined) => {
@@ -230,7 +224,7 @@ export default function ActsSubscriberTestUnorder() {
           done()
         } else {
           console.info(TAG + ': subscribe successed! CommonEventData.Info ===> ' + CommonEventData)
-          expect(true).assertTrue()
+          expect(CommonEventData !== null).assertTrue()
         }
       })
 
@@ -241,7 +235,6 @@ export default function ActsSubscriberTestUnorder() {
           done()
         } else {
           console.info(TAG + ': isOrderedCommonEvent successed!')
-          expect(true).assertTrue()
           expect(CommonEventSubscriberInfo.events[0]).assertEqual('publish_event_0500')
           expect(CommonEventSubscriberInfo.publisherPermission == '').assertTrue()
           expect(CommonEventSubscriberInfo.publisherDeviceId).assertEqual('PublishDeviceId_0500')
@@ -295,7 +288,6 @@ export default function ActsSubscriberTestUnorder() {
         done()
       } else {
         console.info(TAG + ': createSubscriber successed! Subscriber.Info ===> ' + CommonEventSubscriber)
-        expect(true).assertTrue()
       }
 
       commonEventManager.subscribe(CommonEventSubscriber, (err: BusinessError | null, CommonEventData: commonEventManager.CommonEventData|undefined) => {
@@ -305,13 +297,12 @@ export default function ActsSubscriberTestUnorder() {
           done()
         } else {
           console.info(TAG + ': subscribe successed! CommonEventData.Info ===> ' + CommonEventData)
-          expect(true).assertTrue()
+          expect(CommonEventData !== null).assertTrue()
         }
       })
 
       await CommonEventSubscriber.isOrderedCommonEvent().then(() => {
         console.info(TAG + ': isOrderedCommonEvent successed!')
-        expect(true).assertTrue()
         expect(CommonEventSubscriberInfo.events[0]).assertEqual('publish_event_0600')
         expect(CommonEventSubscriberInfo.publisherPermission == '').assertTrue()
         expect(CommonEventSubscriberInfo.publisherDeviceId).assertEqual('PublishDeviceId_0600')
@@ -368,7 +359,6 @@ export default function ActsSubscriberTestUnorder() {
         done()
       } else {
         console.info(TAG + ': createSubscriber successed! Subscriber.Info ===> ' + CommonEventSubscriber)
-        expect(true).assertTrue()
       }
 
       commonEventManager.subscribe(CommonEventSubscriber, (err: BusinessError | null, CommonEventData: commonEventManager.CommonEventData|undefined) => {
@@ -378,7 +368,7 @@ export default function ActsSubscriberTestUnorder() {
           done()
         } else {
           console.info(TAG + ': subscribe successed! CommonEventData.Info ===> ' + JSON.stringify(CommonEventData))
-          expect(true).assertTrue()
+          expect(CommonEventData !== null).assertTrue()
         }
       })
 
@@ -389,7 +379,6 @@ export default function ActsSubscriberTestUnorder() {
           done()
         } else {
           console.info(TAG + ': isStickyCommonEvent successed!')
-          expect(true).assertTrue()
           expect(CommonEventSubscriberInfo.events[0]).assertEqual('publish_event_0700')
           expect(CommonEventSubscriberInfo.publisherPermission == '').assertTrue()
           expect(CommonEventSubscriberInfo.publisherDeviceId).assertEqual('PublishDeviceId_0700')
@@ -442,7 +431,6 @@ export default function ActsSubscriberTestUnorder() {
         done()
       } else {
         console.info(TAG + ': createSubscriber successed! Subscriber.Info ===> ' + JSON.stringify(CommonEventSubscriber))
-        expect(true).assertTrue()
       }
 
       commonEventManager.subscribe(CommonEventSubscriber, (err: BusinessError | null, CommonEventData: commonEventManager.CommonEventData|undefined) => {
@@ -452,13 +440,12 @@ export default function ActsSubscriberTestUnorder() {
           done()
         } else {
           console.info(TAG + ': subscribe successed! CommonEventData.Info ===> ' +CommonEventData)
-          expect(true).assertTrue()
+          expect(CommonEventData !== null).assertTrue()
         }
       })
 
       await CommonEventSubscriber.isStickyCommonEvent().then(() => {
         console.info(TAG + ': isStickyCommonEvent successed!')
-        expect(true).assertTrue()
         expect(CommonEventSubscriberInfo.events[0]).assertEqual('publish_event_0800')
         expect(CommonEventSubscriberInfo.publisherPermission == '').assertTrue()
         expect(CommonEventSubscriberInfo.publisherDeviceId).assertEqual('PublishDeviceId_0800')
@@ -544,7 +531,6 @@ export default function ActsSubscriberTestUnorder() {
                 expect(CommonEventData?.code).assertEqual(0)
                 expect(CommonEventData?.data).assertEqual("initial_data")
                 expect(CommonEventData?.parameters?.['key1']).assertEqual('parameters_0100')
-                expect(true).assertTrue()
                 done()
               }
             }

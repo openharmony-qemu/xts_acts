@@ -33,7 +33,7 @@ export default function ActsNotificationBadgeTest() {
           if (err) {
             console.info(`${TAG} Sub_Notification_Ans_Corner_SetNum_Static_0900 failed, error code: ${err.code}, message: ${err.message}`)
             if(err.code == 801){
-              expect(true).assertTrue()
+              expect(err.code == 801).assertTrue()
               done()
             }else{
               expect(false).assertTrue()
@@ -66,7 +66,7 @@ export default function ActsNotificationBadgeTest() {
         }).catch((err: BusinessError) :void => {
           console.info(`${TAG} Sub_Notification_Ans_Corner_SetNum_Static_1000 failed, error code: ${err.code}, message: ${err.message}`)
           if(err.code == 801){
-            expect(true).assertTrue()
+            expect(err.code == 801).assertTrue()
             done()
           }else{
             expect(false).assertTrue()

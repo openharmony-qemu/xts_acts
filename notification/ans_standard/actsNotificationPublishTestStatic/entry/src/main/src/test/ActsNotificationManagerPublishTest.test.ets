@@ -443,7 +443,7 @@ export default function ActsNotificationManagerPublishTest() {
               done()
             } else {
               console.info(`${TAG} getActiveNotificationCount AsyncCallback success ${JSON.stringify(data)}`)
-              expect(true).assertTrue()
+              expect(data !== null).assertTrue()
               done()
             }
           })
@@ -466,7 +466,7 @@ export default function ActsNotificationManagerPublishTest() {
         console.info(`Sub_Notification_Ans_Distributed_Search_Static_1400 START`)
         await notificationManager.getActiveNotificationCount().then((data: long) => {
           console.info(`${TAG} getActiveNotificationCount Promise success :${data}`)
-          expect(true).assertTrue()
+          expect(data !== null).assertTrue()
           done()
         }).catch((err: BusinessError): void => {
           console.info(`${TAG} getActiveNotificationCount Promise err: ${err.code}, errMes: ${err.message}`)
@@ -494,7 +494,7 @@ export default function ActsNotificationManagerPublishTest() {
               done()
             } else {
               console.info(`${TAG} getActiveNotifications AsyncCallback success ${JSON.stringify(data)}`)
-              expect(true).assertTrue()
+              expect(data !== null).assertTrue()
               done()
             }
           })
@@ -518,7 +518,7 @@ export default function ActsNotificationManagerPublishTest() {
         await notificationManager.getActiveNotifications()
           .then((data: Array<notificationManager.NotificationRequest>) => {
             console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
-            expect(true).assertTrue()
+            expect(data !== null).assertTrue()
             done()
           })
           .catch((err: BusinessError): void => {
@@ -541,7 +541,7 @@ export default function ActsNotificationManagerPublishTest() {
     //   console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_COUNT_TEST_Static_0500 START`)
     //   notificationManager.getActiveNotificationCount(undefined).then((data:number) => {
     //     console.info(`${TAG} getActiveNotificationCount Promise success :${JSON.stringify(data)}`)
-    //     expect(true).assertTrue()
+    //     expect(data !== null).assertTrue()
     //     done()
     //   }).catch((err: BusinessError): void => {
     //     console.info(`${TAG} getActiveNotificationCount Promise err: ${err.code}, errMes: ${err.message}`)
@@ -563,7 +563,7 @@ export default function ActsNotificationManagerPublishTest() {
     //   console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_COUNT_TEST_Static_0600 START`)
     //   notificationManager.getActiveNotifications(undefined).then((data:number) => {
     //     console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
-    //     expect(true).assertTrue()
+    //     expect(data !== null).assertTrue()
     //     done()
     //   }).catch((err: BusinessError): void => {
     //     console.info(`${TAG} getActiveNotifications Promise err: ${err.code}, errMes: ${err.message}`)
@@ -591,7 +591,7 @@ export default function ActsNotificationManagerPublishTest() {
               done()
             } else {
               console.info(`${TAG} isSupportTemplate AsyncCallback success:${JSON.stringify(data)} `)
-              expect(true).assertTrue()
+              expect(data !== null).assertTrue()
               done()
             }
           })
@@ -615,7 +615,7 @@ export default function ActsNotificationManagerPublishTest() {
         let templateName:string = 'test_templateName'
         await notificationManager.isSupportTemplate(templateName).then((data:boolean) => {
           console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(data !== null).assertTrue()
           done()
         }).catch((err: BusinessError):void => {
           console.info(`${TAG} isSupportTemplate Promise err: ${err.code}, errMes: ${err.message}`)
@@ -637,7 +637,7 @@ export default function ActsNotificationManagerPublishTest() {
         let num:string = '1'
         notificationManager.isSupportTemplate(num).then((data:boolean) => {
           console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(data !== null).assertTrue()
           done()
         }).catch((err: BusinessError):void => {
           console.info(`${TAG} isSupportTemplate Promise err: ${err.code}, errMes: ${err.message}`)
@@ -660,7 +660,7 @@ export default function ActsNotificationManagerPublishTest() {
     //   let templateName:string = 'test_templateName'
     //   notificationManager.isSupportTemplate(templateName, undefined).then((data:boolean) => {
     //     console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
-    //     expect(true).assertTrue()
+    //     expect(data !== null).assertTrue()
     //     done()
     //   }).catch((err: BusinessError):void => {
     //     console.info(`${TAG} isSupportTemplate Promise err: ${err.code}, errMes: ${err.message}`)

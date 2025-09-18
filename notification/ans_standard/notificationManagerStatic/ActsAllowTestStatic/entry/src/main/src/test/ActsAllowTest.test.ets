@@ -173,9 +173,9 @@ export default function ActsAllowTest() {
      * @tc.type       Function test
      * @tc.level      Level 2
      */
-    it('Sub_Notification_Ces_Subscriber_Subscribe_08086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('Sub_Notification_Ces_Subscriber_Subscribe_Static_08086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let TAG: string ='Sub_Notification_Ces_Subscriber_Subscribe_08086'
+        let TAG: string ='Sub_Notification_Ces_Subscriber_Subscribe_Static_08086'
         // 创建订阅者
         try {
           commonEventManager.createSubscriber(subscribeInfo,

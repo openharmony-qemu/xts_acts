@@ -635,7 +635,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
                   console.info(`${TAG} NotificationSlot[${i}].notificationType:` + NotificationSlot[i].notificationType)
                   let num = NotificationSlot[i].notificationType as notificationManager.SlotType
                   if (num == notificationManager.SlotType.SOCIAL_COMMUNICATION) {
-                    expect(true).assertTrue()
+                    expect(num == notificationManager.SlotType.SOCIAL_COMMUNICATION).assertTrue()
                     done()
                   }else{
                     expect(false).assertTrue()

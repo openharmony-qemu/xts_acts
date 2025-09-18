@@ -1059,7 +1059,7 @@ export default function ActsNotificationPublishTest() {
             done()
           } else {
             console.info(`${TAG} getActiveNotificationCount AsyncCallback success`)
-            expect(true).assertTrue()
+            expect(data !== null).assertTrue()
             done()
           }
         })
@@ -1077,7 +1077,7 @@ export default function ActsNotificationPublishTest() {
         console.info(`Sub_Notification_Ans_Distributed_Search_Static_0700 START`)
         await notificationManager.getActiveNotificationCount().then((data: long) => {
           console.info(`${TAG} getActiveNotificationCount Promise success :${data}`)
-          expect(true).assertTrue()
+          expect(data !== null).assertTrue()
           done()
         }).catch((err: BusinessError): void => {
           console.info(`${TAG} getActiveNotificationCount Promise err: ${err.code}`)
@@ -1105,7 +1105,7 @@ export default function ActsNotificationPublishTest() {
             done()
           } else {
             console.info(`${TAG} getActiveNotifications AsyncCallback success`)
-            expect(true).assertTrue()
+            expect(data !== null).assertTrue()
             done()
           }
         })
@@ -1124,7 +1124,7 @@ export default function ActsNotificationPublishTest() {
         await notificationManager.getActiveNotifications()
           .then((data: Array<notificationManager.NotificationRequest>) => {
             console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
-            expect(true).assertTrue()
+            expect(data !== null).assertTrue()
             done()
           })
           .catch((err: BusinessError): void => {
@@ -1169,7 +1169,7 @@ export default function ActsNotificationPublishTest() {
     //   console.info(`${TAG} SUB_NOTIFICATION_ANS_COUNT_TEST_Static_0600 START`)
     //   notificationManager.getActiveNotifications(undefined).then((data) => {
     //     console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
-    //     expect(true).assertTrue()
+    //     expect(data !== null).assertTrue()
     //     done()
     //   }).catch((err: BusinessError): void => {
     //     console.info(`${TAG} getActiveNotifications Promise err: ${err.code}`)
@@ -1196,7 +1196,7 @@ export default function ActsNotificationPublishTest() {
             done()
           } else {
             console.info(`${TAG} isSupportTemplate AsyncCallback success`)
-            expect(true).assertTrue()
+            expect(data !== null).assertTrue()
             done()
           }
         })
@@ -1215,7 +1215,7 @@ export default function ActsNotificationPublishTest() {
         let templateName:string = 'test_templateName'
         notificationManager.isSupportTemplate(templateName).then((data:Boolean) => {
           console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(data !== null).assertTrue()
           done()
         }).catch((err: BusinessError): void => {
           console.info(`${TAG} isSupportTemplate Promise err: ${err.code}`)
@@ -1237,7 +1237,7 @@ export default function ActsNotificationPublishTest() {
         let templateName:string = '2'
         notificationManager.isSupportTemplate(templateName).then((data:Boolean) => {
           console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(data !== null).assertTrue()
           done()
         }).catch((err: BusinessError): void => {
           console.info(`${TAG} isSupportTemplate Promise err: ${err.code}`)
@@ -1260,7 +1260,7 @@ export default function ActsNotificationPublishTest() {
     //   let templateName:string = 'test_templateName'
     //   notificationManager.isSupportTemplate(templateName, undefined).then((data) => {
     //     console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
-    //     expect(true).assertTrue()
+    //     expect(data !== null).assertTrue()
     //     done()
     //   }).catch((err: BusinessError): void => {
     //     console.info(`${TAG} isSupportTemplate Promise err: ${err.code}`)

@@ -69,7 +69,6 @@ export default function ActsSubscriberTestOrder() {
      * @tc.name    Sub_Notification_Ces_Publish_CommonEvent_Static_0950
      * @tc.desc    Check the subscriber can receive event "publish_event0100" type of the interface (by Promise)
      */
-    
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_0950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_0950'
       console.info(`${TAG} Sub_Notification_Ces_Publish_CommonEvent_Static_0950 START`)
@@ -184,8 +183,7 @@ export default function ActsSubscriberTestOrder() {
      * @tc.name    Sub_Notification_Ces_Subscriber_Unsubscribe_Static_2100
      * @tc.desc    Check the subscriber can receive event "publish_event0200" type of the interface (by Promise)
      */
-    
-    it ('Sub_Notification_Ces_Subscriber_Unsubscribe_Static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('Sub_Notification_Ces_Subscriber_Unsubscribe_Static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Subscriber_Unsubscribe_Static_2100'
       console.info(`${TAG} Sub_Notification_Ces_Subscriber_Unsubscribe_Static_2100 START`)
 
@@ -290,8 +288,7 @@ export default function ActsSubscriberTestOrder() {
      * @tc.name    Sub_Notification_Ces_Subscriber_Subscribe_Static_1000
      * @tc.desc    Check the subscriber can receive event "publish_event0301" type of the interface (by Promise)
      */
-    
-    it ('Sub_Notification_Ces_Subscriber_Subscribe_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('Sub_Notification_Ces_Subscriber_Subscribe_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Subscriber_Subscribe_Static_1000'
       console.info(`${TAG} Sub_Notification_Ces_Subscriber_Subscribe_Static_1000 START`)
 
@@ -400,8 +397,7 @@ export default function ActsSubscriberTestOrder() {
      * @tc.name    Sub_Notification_Ces_Subscriber_Subscribe_Static_1100
      * @tc.desc    Check the subscriber can receive event "publish_eventOrder0400" type of the interface by promise
      */
-    
-    it ('Sub_Notification_Ces_Subscriber_Subscribe_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('Sub_Notification_Ces_Subscriber_Subscribe_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Subscriber_Subscribe_Static_1100'
       console.info(`${TAG} Sub_Notification_Ces_Subscriber_Subscribe_Static_1100 START`)
 
@@ -485,8 +481,7 @@ export default function ActsSubscriberTestOrder() {
      * @tc.name    Sub_Notification_Ces_Subscriber_Subscribe_Static_1200
      * @tc.desc    Check the subscriber can receive event "publish_event0500" type of the interface (by promise)
      */
-    
-    it ('Sub_Notification_Ces_Subscriber_Subscribe_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('Sub_Notification_Ces_Subscriber_Subscribe_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Subscriber_Subscribe_Static_1200'
       console.info(`${TAG} Sub_Notification_Ces_Subscriber_Subscribe_Static_1200 START`)
 
@@ -603,7 +598,6 @@ export default function ActsSubscriberTestOrder() {
     //  * @tc.name  SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0700
     //  * @tc.desc  createSubscriber
     //  */
-    // 
     // it('SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   let TAG:string = 'SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0700'
     //   console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0700 START`)

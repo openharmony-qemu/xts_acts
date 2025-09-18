@@ -49,7 +49,7 @@ export default function ActsNotificationSlotTest() {
           done();
         } else {
           console.info(`${TAG} getSlot AsyncCallback success: ${NotificationSlot}`);
-          expect(true).assertTrue();
+          expect(NotificationSlot !== null).assertTrue();
           console.info(TAG + 'Acts_NotificationSlot_0100 END');
           done();
         }
@@ -83,7 +83,7 @@ export default function ActsNotificationSlotTest() {
           done();
         } else {
           console.info(`${TAG} getSlot AsyncCallback success: ${NotificationSlot}`);
-          expect(true).assertTrue();
+          expect(NotificationSlot !== null).assertTrue();
           console.info(TAG + 'Acts_NotificationSlot_0200 END');
           done();
         }
@@ -117,7 +117,7 @@ export default function ActsNotificationSlotTest() {
           done();
         } else {
           console.info(`${TAG} getSlot AsyncCallback success: ${NotificationSlot}`);
-          expect(true).assertTrue();
+          expect(NotificationSlot !== null).assertTrue();
           console.info(TAG + 'Acts_NotificationSlot_0300 END');
           done();
         }
@@ -151,7 +151,7 @@ export default function ActsNotificationSlotTest() {
           done();
         } else {
           console.info(`${TAG} getSlot AsyncCallback success: ${NotificationSlot}`);
-          expect(true).assertTrue();
+          expect(NotificationSlot !== null).assertTrue();
           console.info(TAG + 'Acts_NotificationSlot_0400 END');
           done();
         }

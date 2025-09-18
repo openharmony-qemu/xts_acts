@@ -144,7 +144,6 @@ export default function ActsNotificationEmitterPublishTest() {
       let callback03 = (): void => {
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' eventId03 on success');
         num++;
-        expect(true).assertTrue();
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
         done();
       }
@@ -193,7 +192,6 @@ export default function ActsNotificationEmitterPublishTest() {
       let callback04 = (): void => {
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' callback04 success');
         num++;
-        expect(true).assertTrue();
         done();
       }
       try{

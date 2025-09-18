@@ -816,7 +816,7 @@ export default function EmitterTest() {
         innerEvent.eventId = 19
         innerEvent.priority = emitter.EventPriority.IMMEDIATE
         emitter.emit(innerEvent, eventData)
-        await Utils.msSleep(1000)
+        await Utils.msSleep(2000)
         console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_1900 END`)
         done()
       })
@@ -847,7 +847,7 @@ export default function EmitterTest() {
         expect(emitter.getListenerCount(innerEvent.eventId)).assertEqual(1);
 
         emitter.emit('20', eventData)
-        await Utils.msSleep(1000)
+        await Utils.msSleep(2000)
         console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_2000 END`)
         done()
       })
@@ -935,6 +935,7 @@ export default function EmitterTest() {
         await Utils.msSleep(1000)
         expect(emitter.getListenerCount('24')).assertEqual(0)
         console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_2300 END`)
+        await Utils.msSleep(2000)
         done()
       })
 
@@ -1002,9 +1003,6 @@ export default function EmitterTest() {
         console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_2600 START`)
         let EmitterCallback = () => {
           console.info(`${TAG}` + ' on success');
-          expect(true).assertTrue();
-          console.info(`${TAG}` + ' test case end');
-          done();
         }
         emitter.on('27', EmitterCallback)
         emitter.on('27', EmitterCallback)
@@ -1031,9 +1029,6 @@ export default function EmitterTest() {
         console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_2700 START`)
         let EmitterCallback = () => {
           console.info(`${TAG}` + ' on success');
-          expect(true).assertTrue();
-          console.info(`${TAG}` + ' test case end');
-          done();
         }
         emitter.on('280', EmitterCallback)
         emitter.on('281', EmitterCallback)
@@ -1046,6 +1041,7 @@ export default function EmitterTest() {
         expect(emitter.getListenerCount('281')).assertEqual(1)
         expect(emitter.getListenerCount('282')).assertEqual(1)
         console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_2700 END`)
+        await Utils.msSleep(2000)
         done()
       })
 
@@ -1061,21 +1057,12 @@ export default function EmitterTest() {
         console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2800 START`)
         let EmitterCallback1 = () => {
           console.info(`${tag}` + ' on success');
-          expect(true).assertTrue();
-          console.info(`${tag}` + ' test case end');
-          done();
         }
         let EmitterCallback2 = (): void => {
           hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success');
-          expect(true).assertTrue();
-          hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' test case end');
-          done()
         }
         let EmitterCallback3 = (): void => {
           hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success');
-          expect(true).assertTrue();
-          hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' test case end');
-          done()
         }
         emitter.on('290', EmitterCallback1)
         emitter.on('291', EmitterCallback2)
@@ -1094,9 +1081,6 @@ export default function EmitterTest() {
           let eventData: emitter.EventData = { data: myDate }
           let EmitterCallback = (): void => {
             hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success');
-            expect(true).assertTrue();
-            hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' test case end');
-            done()
           }
           emitter.on(innerEvent, EmitterCallback)
           emitter.emit(innerEvent, eventData)
@@ -1108,6 +1092,7 @@ export default function EmitterTest() {
         for (let i: long = 290; i < 293; i++) {
           expect(emitter.getListenerCount(i)).assertEqual(1)
         }
+        await Utils.msSleep(2000)
         console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2800 END`)
         done()
       })
@@ -1123,27 +1108,15 @@ export default function EmitterTest() {
         const TEST_CASE_NAME = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2900';
         let EmitterCallback1 = (): void => {
           hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success');
-          expect(true).assertTrue();
-          hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' test case end');
-          done()
         }
         let EmitterCallback2 = (): void => {
           hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success');
-          expect(true).assertTrue();
-          hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' test case end');
-          done()
         }
         let EmitterCallback3 = (): void => {
           hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success');
-          expect(true).assertTrue();
-          hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' test case end');
-          done()
         }
         let EmitterCallback4 = (): void => {
           hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success');
-          expect(true).assertTrue();
-          hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' test case end');
-          done()
         }
         emitter.on('300', EmitterCallback1)
         emitter.on('301', EmitterCallback2)
@@ -1169,13 +1142,10 @@ export default function EmitterTest() {
           let eventData: emitter.EventData = { data: myDate }
           let EmitterCallback = (): void => {
             hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success');
-            expect(true).assertTrue();
-            hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' test case end');
-            done()
           }
           emitter.on(innerEvent, EmitterCallback)
           emitter.emit(innerEvent, eventData)
-          await Utils.msSleep(1000)
+          await Utils.msSleep(2000)
         }
         for (let i = 300; i < 302; i++) {
           emitter.off(i);
@@ -1185,6 +1155,7 @@ export default function EmitterTest() {
         expect(emitter.getListenerCount('300')).assertEqual(0)
         expect(emitter.getListenerCount('303')).assertEqual(1)
         console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2900 END`)
+        await Utils.msSleep(2000)
         done()
       })
 
@@ -1263,7 +1234,6 @@ export default function EmitterTest() {
           }
           let EmitterCallback = (): void => {
             hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success');
-            expect(true).assertTrue();
             hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' test case end');
           }
           emitter.on(innerEvent, EmitterCallback)
@@ -1272,7 +1242,7 @@ export default function EmitterTest() {
         for (let i: long = 33000; i < 34000; i++) {
           expect(emitter.getListenerCount(i)).assertEqual(1)
         }
-        await Utils.msSleep(1000)
+        await Utils.msSleep(2000)
         console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3300 END`)
         done()
       })
@@ -1289,15 +1259,12 @@ export default function EmitterTest() {
 
         let EmitterCallback = (): void => {
           hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success');
-          expect(true).assertTrue();
-          hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' test case end');
-          done()
         }
         emitter.on("340000", EmitterCallback)
         for (let i: number = 34000; i < 35000; i++) {
           emitter.emit("340000")
         }
-        await Utils.msSleep(1000)
+        await Utils.msSleep(2000)
         expect(emitter.getListenerCount("340000")).assertEqual(1)
         console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3400 END`)
         done()
@@ -1315,15 +1282,9 @@ export default function EmitterTest() {
 
         let EmitterCallback1 = (): void => {
           hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success');
-          expect(true).assertTrue();
-          hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' test case end');
-          done()
         }
         let EmitterCallback2 = (): void => {
           hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success');
-          expect(true).assertTrue();
-          hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' test case end');
-          done()
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 35,
@@ -1341,6 +1302,7 @@ export default function EmitterTest() {
         expect(emitter.getListenerCount(innerEvent.eventId)).assertEqual(1)
         expect(emitter.getListenerCount("35")).assertEqual(1)
         console.info(`${tag} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3500 END`)
+        await Utils.msSleep(2000)
         done()
       })
 
