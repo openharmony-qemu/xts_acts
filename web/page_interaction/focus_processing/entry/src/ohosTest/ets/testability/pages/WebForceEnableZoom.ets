@@ -71,9 +71,13 @@ struct WebComponent {
           switch (this.str) {
             case "emitWebForceEnableZoom001": {
               try {
+                this.webController.loadUrl('www.example.com')
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
+                this.isPageEnd = -1;
+                this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
                 this.isForceZoomEnabled = true;
-                let driver = Driver.create();
-                this.webController.zoom(1.5);
+                this.webController.zoom(1.05);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
@@ -81,15 +85,14 @@ struct WebComponent {
             }
             case "emitWebForceEnableZoom002": {
               try {
-                this.isForceZoomEnabled = true;
                 this.flag = 2;
-                let driver = Driver.create();
                 this.isPageEnd = -1
                 this.webController.loadUrl('www.example.com')
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
                 this.isPageEnd = -1;
                 this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
+                this.isForceZoomEnabled = true;
                 this.webController.zoom(0.5);
                 await Utils.sleep(2000);
               } catch (error) {
@@ -100,8 +103,7 @@ struct WebComponent {
 
             case "emitWebForceEnableZoom003": {
               try {
-                this.isForceZoomEnabled = false;
-                let driver = Driver.create();
+              
                 this.isPageEnd = -1;
                 this.ScaleChange = false;
                 this.webController.loadUrl('www.example.com')
@@ -109,7 +111,8 @@ struct WebComponent {
                 this.isPageEnd = -1;
                 this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.webController.zoom(1.5);
+                this.isForceZoomEnabled = false;
+                this.webController.zoom(1.05);
                 await Utils.sleep(2000);
                 //isForceZoomEnabled设置为false 应该是不触发 this.ScaleChange 应该为false
                 if(this.ScaleChange) {
@@ -126,8 +129,6 @@ struct WebComponent {
 
             case "emitWebForceEnableZoom004": {
               try {
-                this.isForceZoomEnabled = false;
-                let driver = Driver.create();
                 this.isPageEnd = -1;
                 this.flag = 2;
                 this.ScaleChange = false;
@@ -136,6 +137,7 @@ struct WebComponent {
                 this.isPageEnd = -1;
                 this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
+                this.isForceZoomEnabled = false;
                 this.webController.zoom(0.5);
                 await Utils.sleep(2000);
                 //isForceZoomEnabled设置为false 应该是不触发 this.ScaleChange 应该为false
