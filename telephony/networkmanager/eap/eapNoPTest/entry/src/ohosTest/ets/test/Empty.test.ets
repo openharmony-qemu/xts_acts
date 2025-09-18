@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 
 export default function EmptyTest() {
   describe('EmptyTest', () => {
-    /*
+    /**
       * @tc.number testTheDevicesNotSupportSyscap001
       * @tc.name   testTheDevicesNotSupportSyscap001
       * @tc.desc   The Devices not support this stsCap.
