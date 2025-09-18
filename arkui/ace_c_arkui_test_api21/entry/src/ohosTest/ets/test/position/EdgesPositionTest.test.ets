@@ -47,7 +47,7 @@ export default function EdgesPositionTest() {
       console.info("EdgesPosition after each called");
     });
 
-    /*
+    /**
      * @tc.number     : EdgesPositionTest_0100
      * @tc.name       : EdgesPositionTest_0100
      * @tc.desc       : Test EdgesPosition: set single value.
@@ -172,7 +172,7 @@ export default function EdgesPositionTest() {
       done();
     });
 
-    /*
+    /**
      * @tc.number     : EdgesPositionTest_0200
      * @tc.name       : EdgesPositionTest_0200
      * @tc.desc       : Test EdgesPosition: set single value, the value is negative.
