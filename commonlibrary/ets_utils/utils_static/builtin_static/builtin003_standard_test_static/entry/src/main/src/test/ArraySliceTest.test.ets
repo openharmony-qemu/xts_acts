@@ -426,8 +426,8 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_1700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [true, false, true, false];
-        const start = new Number(1);
-        const end = new Number(3);
+        const start = 1;
+        const end = 3;
         const result = slice(arr, start, end);
         const expected: FixedArray<boolean> = [false, true];
         expect(result.length).assertEqual(2);
@@ -451,8 +451,8 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_1800';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [true, false, true, false];
-        const start = new Number(1);
-        const end = new Number(1);
+        const start = 1;
+        const end = 1;
         const result = slice(arr, start, end);
         const expected: FixedArray<boolean> = [];
         expect(result.length).assertEqual(0);
@@ -474,7 +474,7 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_1900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [true, false, true];
-        const start = new Number(1);
+        const start = 1;
         const result = slice(arr, start);
         const expected: FixedArray<boolean> = [false, true];
         expect(result.length).assertEqual(2);
@@ -498,7 +498,7 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_2000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [true, false, true];
-        const start = new Number(3);
+        const start = 3;
         const result = slice(arr, start);
         const expected: FixedArray<boolean> = [];
         expect(result.length).assertEqual(0);
@@ -520,7 +520,7 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_2100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [true, false, true];
-        const start = new Number(6);
+        const start = 6;
         const result = slice(arr, start);
         const expected: FixedArray<boolean> = [];
         expect(result.length).assertEqual(0);
@@ -542,7 +542,7 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_2200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [true, false, true];
-        const start = new Number(-2);
+        const start = -2;
         const result = slice(arr, start);
         const expected: FixedArray<boolean> = [false, true];
         expect(result.length).assertEqual(2);
@@ -566,7 +566,7 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_2300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [true, false, true];
-        const start = new Number(0);
+        const start = 0;
         const result = slice(arr, start);
         const expected: FixedArray<boolean> = [true, false, true];
         expect(result.length).assertEqual(3);
@@ -591,7 +591,7 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_2400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [true, false, true, false, true];
-        const end = new Number(3)
+        const end = 3;
         const result = slice(arr, undefined, end);
         const expected: FixedArray<boolean> = [true, false, true];
         expect(result.length).assertEqual(3);
@@ -987,8 +987,8 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_4100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [50, 60, 70, 80, 90];
-        const start = new Number(0);
-        const end = new Number(3);
+        const start = 0;
+        const end = 3;
         const result = slice(arr, start, end);
         const expected: FixedArray<byte> = [50, 60, 70];
         expect(result.length).assertEqual(3);
@@ -1013,7 +1013,7 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_4200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [50, 60, 70, 80, 90];
-        const start = new Number(0);
+        const start = 0;
         const result = slice(arr, start);
         const expected: FixedArray<byte> = [50, 60, 70, 80, 90];
         expect(result.length).assertEqual(5);
@@ -1040,7 +1040,7 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_4300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [50, 60, 70, 80, 90];
-        const start = new Number(4);
+        const start = 4;
         const result = slice(arr, start);
         const expected: FixedArray<byte> = [90];
         expect(result.length).assertEqual(1);
@@ -1063,7 +1063,7 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_4400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [50, 60, 70, 80, 90];
-        const start = new Number(5);
+        const start = 5;
         const result = slice(arr, start);
         const expected: FixedArray<byte> = [];
         expect(result.length).assertEqual(0);
@@ -1085,8 +1085,8 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_4500';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [50, 60, 70, 80, 90];
-        const start = new Number(1);
-        const end = new Number(-2);
+        const start = 1;
+        const end = -2;
         const result = slice(arr, start, end);
         const expected: FixedArray<byte> = [60, 70];
         expect(result.length).assertEqual(2);
@@ -1136,8 +1136,8 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_4700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [50, 60, 70, 80, 90];
-        const start = new Number(3);
-        const end = new Number(3);
+        const start = 3;
+        const end = 3;
         const result = slice(arr, start, end);
         const expected: FixedArray<byte> = [];
         expect(result.length).assertEqual(0);
@@ -1159,7 +1159,7 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_4800';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [-128, 127, -128, 127];
-        const start = new Number(-1);
+        const start = -1;
         const result = slice(arr, start);
         const expected: FixedArray<byte> = [127];
         expect(result.length).assertEqual(1);
@@ -1556,8 +1556,8 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_6500';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [0x75, 0x71, 0x52, 0x74, 0x57, 0x73];
-        const start = new Number(1);
-        const end = new Number(5);
+        const start = 1;
+        const end = 5;
         const result = slice(arr, start, end);
         const expected: FixedArray<char> = [0x71, 0x52, 0x74, 0x57];
         expect(result.length).assertEqual(4);
@@ -1583,7 +1583,7 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_6600';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [0x75, 0x71, 0x52, 0x74, 0x57, 0x73];
-        const end = new Number(3);
+        const end = 3;
         const result = slice(arr, undefined, end);
         const expected: FixedArray<char> = [0x75, 0x71, 0x52];
         expect(result.length).assertEqual(3);
@@ -1608,7 +1608,7 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_6700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [0x75, 0x71, 0x52, 0x74, 0x57, 0x73];
-        const start = new Number(5);
+        const start = 5;
         const result = slice(arr, start);
         const expected: FixedArray<char> = [0x73];
         expect(result.length).assertEqual(1);
@@ -1631,7 +1631,7 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_6800';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [0x75, 0x71, 0x52, 0x74, 0x57, 0x73];
-        const start = new Number(6);
+        const start = 6;
         const result = slice(arr, start);
         const expected: FixedArray<char> = [];
         expect(result.length).assertEqual(0);
@@ -1653,7 +1653,7 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_6900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [0x75, 0x71, 0x52, 0x74, 0x57, 0x73];
-        const start = new Number(-2);
+        const start = -2;
         const result = slice(arr, start);
         const expected: FixedArray<char> = [0x57, 0x73];
         expect(result.length).assertEqual(2);
@@ -1677,8 +1677,8 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_7000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [0x31, 0x31, 0x32, 0x36, 0x32];
-        const start = new Number(2);
-        const end = new Number(-2);
+        const start = 2;
+        const end = -2;
         const result = slice(arr, start, end);
         const expected: FixedArray<char> = [0x32];
         expect(result.length).assertEqual(1);
@@ -1701,8 +1701,8 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_7100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [0x31, 0x31, 0x32, 0x36, 0x32];
-        const start = new Number(1);
-        const end = new Number(10);
+        const start = 1;
+        const end = 10;
         const result = slice(arr, start, end);
         const expected: FixedArray<char> = [0x31, 0x32, 0x36, 0x32];
         expect(result.length).assertEqual(4);
@@ -1728,8 +1728,8 @@ export default function Array_Slice_Test_static() {
         const caseName = 'Array_Slice_Test_static_7200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [0x31, 0x31, 0x32, 0x36, 0x32];
-        const start = new Number(10);
-        const end = new Number(10);
+        const start = 10;
+        const end = 10;
         const result = slice(arr, start, end);
         const expected: FixedArray<char> = [];
         expect(result.length).assertEqual(0);

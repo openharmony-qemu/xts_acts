@@ -876,7 +876,7 @@ export default function arrayTest() {
       const TAG = "testPrototypeFill0007";
       try {
         let arr = new Array<Number>(1, 2, 3);
-        let obj = arr.fill(4, NaN, NaN);
+        let obj = arr.fill(4, NaN.toInt(), NaN.toInt());
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[1,2,3]');
       } catch (err: Error) {

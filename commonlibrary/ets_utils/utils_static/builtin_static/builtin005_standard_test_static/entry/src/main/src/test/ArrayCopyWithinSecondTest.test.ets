@@ -503,7 +503,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest2500
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest2500
-     * @tc.desc copyWithin(self: FixedArray<double>, target: number, start: number, end?: Number): FixedArray<double> 正常区间复制
+     * @tc.desc copyWithin(self: FixedArray<double>, target: int, start: int, end?: int): FixedArray<double> 正常区间复制
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -513,7 +513,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest2500';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [1.1, 2.2, 3.3, 4.4];
-        const result = copyWithin(arr, 1.0.toDouble(), 0.0.toDouble(), 2.0.toDouble());
+        const result = copyWithin(arr, 1, 0, 2);
         expect([...result]).assertDeepEquals([1.1, 1.1, 2.2, 4.4]);
         console.info(`${caseName}, test end`);
         Done();
@@ -522,7 +522,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest2600
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest2600
-     * @tc.desc copyWithin(self: FixedArray<double>, target: number, start: number, end?: Number): FixedArray<double> end<=start无变化
+     * @tc.desc copyWithin(self: FixedArray<double>, target: int, start: int, end?: int): FixedArray<double> end<=start无变化
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -532,7 +532,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest2600';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [1.1, 2.2, 3.3];
-        const result = copyWithin(arr, 0.0.toDouble(), 2.0.toDouble(), 1.0.toDouble());
+        const result = copyWithin(arr, 0, 2, 1);
         expect([...result]).assertDeepEquals([1.1, 2.2, 3.3]);
         console.info(`${caseName}, test end`);
         Done();
@@ -541,7 +541,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest2700
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest2700
-     * @tc.desc copyWithin(self: FixedArray<double>, target: number, start: number, end?: Number): FixedArray<double> target>start反向复制
+     * @tc.desc copyWithin(self: FixedArray<double>, target: int, start: int, end?: int): FixedArray<double> target>start反向复制
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -551,7 +551,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest2700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [1.1, 2.2, 3.3, 4.4];
-        const result = copyWithin(arr, 2.0.toDouble(), 0.0.toDouble(), 3.0.toDouble());
+        const result = copyWithin(arr, 2, 0, 3);
         expect([...result]).assertDeepEquals([1.1, 2.2, 1.1, 2.2]);
         console.info(`${caseName}, test end`);
         Done();
@@ -560,7 +560,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest2800
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest2800
-     * @tc.desc copyWithin(self: FixedArray<double>, target: number, start: number, end?: Number): FixedArray<double> target超界
+     * @tc.desc copyWithin(self: FixedArray<double>, target: int, start: int, end?: int): FixedArray<double> target超界
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -570,7 +570,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest2800';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [2.2, 3.3, 4.4];
-        const result = copyWithin(arr, 5.0.toDouble(), 0.0.toDouble(), 2.0.toDouble());
+        const result = copyWithin(arr, 5, 0, 2);
         expect([...result]).assertDeepEquals([2.2, 3.3, 4.4]);
         console.info(`${caseName}, test end`);
         Done();
@@ -579,7 +579,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest2900
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest2900
-     * @tc.desc copyWithin(self: FixedArray<double>, target: number, start: number, end?: Number): FixedArray<double> 空数组
+     * @tc.desc copyWithin(self: FixedArray<double>, target: int, start: int, end?: int): FixedArray<double> 空数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -589,7 +589,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest2900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [];
-        const result = copyWithin(arr, 0.0.toDouble(), 0.0.toDouble(), 1.0.toDouble());
+        const result = copyWithin(arr, 0, 0, 1);
         expect(result.length).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
@@ -598,7 +598,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest3000
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest3000
-     * @tc.desc copyWithin(self: FixedArray<double>, target: number, start: number, end?: Number): FixedArray<double> 单元素数组
+     * @tc.desc copyWithin(self: FixedArray<double>, target: int, start: int, end?: int): FixedArray<double> 单元素数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -608,7 +608,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest3000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [5.5];
-        const result = copyWithin(arr, 0.0.toDouble(), 0.0.toDouble(), 1.0.toDouble());
+        const result = copyWithin(arr, 0, 0, 1);
         expect([...result]).assertDeepEquals([5.5]);
         console.info(`${caseName}, test end`);
         Done();
@@ -617,7 +617,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest3100
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest3100
-     * @tc.desc copyWithin(self: FixedArray<double>, target: number, start: number, end?: Number): FixedArray<double> start和end都超界
+     * @tc.desc copyWithin(self: FixedArray<double>, target: int, start: int, end?: int): FixedArray<double> start和end都超界
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -627,7 +627,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest3100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [1.1, 2.2, 3.3];
-        const result = copyWithin(arr, 0.0.toDouble(), 5.0.toDouble(), 10.0.toDouble());
+        const result = copyWithin(arr, 0, 5, 10);
         expect([...result]).assertDeepEquals([1.1, 2.2, 3.3]);
         console.info(`${caseName}, test end`);
         Done();
@@ -636,7 +636,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest3200
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest3200
-     * @tc.desc copyWithin(self: FixedArray<double>, target: number, start: number, end?: Number): FixedArray<double> 全部为同一数值
+     * @tc.desc copyWithin(self: FixedArray<double>, target: int, start: int, end?: int): FixedArray<double> 全部为同一数值
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -646,7 +646,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest3200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [9.9, 9.9, 9.9, 9.9];
-        const result = copyWithin(arr, 1.0.toDouble(), 0.0.toDouble(), 3.0.toDouble());
+        const result = copyWithin(arr, 1, 0, 3);
         expect([...result]).assertDeepEquals([9.9, 9.9, 9.9, 9.9]);
         console.info(`${caseName}, test end`);
         Done();
@@ -1112,7 +1112,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest5700
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest5700
-     * @tc.desc copyWithin(self: FixedArray<float>, target: number, start: number, end?: Number): FixedArray<float> 正常区间复制
+     * @tc.desc copyWithin(self: FixedArray<float>, target: int, start: int, end?: int): FixedArray<float> 正常区间复制
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1122,7 +1122,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest5700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat(), 4.4.toFloat()];
-        const result = copyWithin(arr, 1.0.toDouble(), 0.0.toDouble(), 2.0.toDouble());
+        const result = copyWithin(arr, 1, 0, 2);
         expect([...result]).assertDeepEquals([1.1.toFloat(), 1.1.toFloat(), 2.2.toFloat(), 4.4.toFloat()]);
         console.info(`${caseName}, test end`);
         Done();
@@ -1131,7 +1131,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest5800
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest5800
-     * @tc.desc copyWithin(self: FixedArray<float>, target: number, start: number, end?: Number): FixedArray<float> end<=start无变化
+     * @tc.desc copyWithin(self: FixedArray<float>, target: int, start: int, end?: int): FixedArray<float> end<=start无变化
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1141,7 +1141,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest5800';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()];
-        const result = copyWithin(arr, 0.0.toDouble(), 2.0.toDouble(), 1.0.toDouble());
+        const result = copyWithin(arr, 0, 2, 1);
         expect([...result]).assertDeepEquals([1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()]);
         console.info(`${caseName}, test end`);
         Done();
@@ -1150,7 +1150,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest5900
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest5900
-     * @tc.desc copyWithin(self: FixedArray<float>, target: number, start: number, end?: Number): FixedArray<float> target>start反向复制
+     * @tc.desc copyWithin(self: FixedArray<float>, target: int, start: int, end?: int): FixedArray<float> target>start反向复制
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1160,7 +1160,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest5900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat(), 4.4.toFloat()];
-        const result = copyWithin(arr, 2.0.toDouble(), 0.0.toDouble(), 3.0.toDouble());
+        const result = copyWithin(arr, 2, 0, 3);
         expect([...result]).assertDeepEquals([1.1.toFloat(), 2.2.toFloat(), 1.1.toFloat(), 2.2.toFloat()]);
         console.info(`${caseName}, test end`);
         Done();
@@ -1169,7 +1169,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest6000
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest6000
-     * @tc.desc copyWithin(self: FixedArray<float>, target: number, start: number, end?: Number): FixedArray<float> target超界
+     * @tc.desc copyWithin(self: FixedArray<float>, target: int, start: int, end?: int): FixedArray<float> target超界
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1179,7 +1179,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest6000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [2.2.toFloat(), 3.3.toFloat(), 4.4.toFloat()];
-        const result = copyWithin(arr, 5.0.toDouble(), 0.0.toDouble(), 2.0.toDouble());
+        const result = copyWithin(arr, 5, 0, 2);
         expect([...result]).assertDeepEquals([2.2.toFloat(), 3.3.toFloat(), 4.4.toFloat()]);
         console.info(`${caseName}, test end`);
         Done();
@@ -1188,7 +1188,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest6100
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest6100
-     * @tc.desc copyWithin(self: FixedArray<float>, target: number, start: number, end?: Number): FixedArray<float> 空数组
+     * @tc.desc copyWithin(self: FixedArray<float>, target: int, start: int, end?: int): FixedArray<float> 空数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1198,7 +1198,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest6100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [];
-        const result = copyWithin(arr, 0.0.toDouble(), 0.0.toDouble(), 1.0.toDouble());
+        const result = copyWithin(arr, 0, 0, 1);
         expect(result.length).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
@@ -1207,7 +1207,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest6200
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest6200
-     * @tc.desc copyWithin(self: FixedArray<float>, target: number, start: number, end?: Number): FixedArray<float> 单元素数组
+     * @tc.desc copyWithin(self: FixedArray<float>, target: int, start: int, end?: int): FixedArray<float> 单元素数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1217,7 +1217,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest6200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [5.5.toFloat()];
-        const result = copyWithin(arr, 0.0.toDouble(), 0.0.toDouble(), 1.0.toDouble());
+        const result = copyWithin(arr, 0, 0, 1);
         expect([...result]).assertDeepEquals([5.5.toFloat()]);
         console.info(`${caseName}, test end`);
         Done();
@@ -1226,7 +1226,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest6300
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest6300
-     * @tc.desc copyWithin(self: FixedArray<float>, target: number, start: number, end?: Number): FixedArray<float> start和end都超界
+     * @tc.desc copyWithin(self: FixedArray<float>, target: int, start: int, end?: int): FixedArray<float> start和end都超界
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1236,7 +1236,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest6300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()];
-        const result = copyWithin(arr, 0.0.toDouble(), 5.0.toDouble(), 10.0.toDouble());
+        const result = copyWithin(arr, 0, 5, 10);
         expect([...result]).assertDeepEquals([1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()]);
         console.info(`${caseName}, test end`);
         Done();
@@ -1245,7 +1245,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest6400
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest6400
-     * @tc.desc copyWithin(self: FixedArray<float>, target: number, start: number, end?: Number): FixedArray<float> 全部为同一数值
+     * @tc.desc copyWithin(self: FixedArray<float>, target: int, start: int, end?: int): FixedArray<float> 全部为同一数值
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1255,7 +1255,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest6400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [9.9.toFloat(), 9.9.toFloat(), 9.9.toFloat(), 9.9.toFloat()];
-        const result = copyWithin(arr, 1.0.toDouble(), 0.0.toDouble(), 3.0.toDouble());
+        const result = copyWithin(arr, 1, 0, 3);
         expect([...result]).assertDeepEquals([9.9.toFloat(), 9.9.toFloat(), 9.9.toFloat(), 9.9.toFloat()]);
         console.info(`${caseName}, test end`);
         Done();
@@ -1722,7 +1722,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest8900
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest8900
-     * @tc.desc copyWithin(self: FixedArray<int>, target: number, start: number, end?: Number): FixedArray<int> 正常区间复制
+     * @tc.desc copyWithin(self: FixedArray<int>, target: int, start: int, end?: int): FixedArray<int> 正常区间复制
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1732,7 +1732,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest8900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [1, 2, 3, 4];
-        const result = copyWithin(arr, 1.0.toDouble(), 0.0.toDouble(), 2.0.toDouble());
+        const result = copyWithin(arr, 1, 0, 2);
         expect([...result]).assertDeepEquals([1, 1, 2, 4]);
         console.info(`${caseName}, test end`);
         Done();
@@ -1741,7 +1741,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest9000
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest9000
-     * @tc.desc copyWithin(self: FixedArray<int>, target: number, start: number, end?: Number): FixedArray<int> end<=start无变化
+     * @tc.desc copyWithin(self: FixedArray<int>, target: int, start: int, end?: int): FixedArray<int> end<=start无变化
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1751,7 +1751,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest9000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [1, 2, 3];
-        const result = copyWithin(arr, 0.0.toDouble(), 2.0.toDouble(), 1.0.toDouble());
+        const result = copyWithin(arr, 0, 2, 1);
         expect([...result]).assertDeepEquals([1, 2, 3]);
         console.info(`${caseName}, test end`);
         Done();
@@ -1760,7 +1760,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest9100
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest9100
-     * @tc.desc copyWithin(self: FixedArray<int>, target: number, start: number, end?: Number): FixedArray<int> target>start反向复制
+     * @tc.desc copyWithin(self: FixedArray<int>, target: int, start: int, end?: int): FixedArray<int> target>start反向复制
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1770,7 +1770,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest9100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [1, 2, 3, 4];
-        const result = copyWithin(arr, 2.0.toDouble(), 0.0.toDouble(), 3.0.toDouble());
+        const result = copyWithin(arr, 2, 0, 3);
         expect([...result]).assertDeepEquals([1, 2, 1, 2]);
         console.info(`${caseName}, test end`);
         Done();
@@ -1779,7 +1779,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest9200
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest9200
-     * @tc.desc copyWithin(self: FixedArray<int>, target: number, start: number, end?: Number): FixedArray<int> target超界
+     * @tc.desc copyWithin(self: FixedArray<int>, target: int, start: int, end?: int): FixedArray<int> target超界
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1789,7 +1789,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest9200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [2, 3, 4];
-        const result = copyWithin(arr, 5.0.toDouble(), 0.0.toDouble(), 2.0.toDouble());
+        const result = copyWithin(arr, 5, 0, 2);
         expect([...result]).assertDeepEquals([2, 3, 4]);
         console.info(`${caseName}, test end`);
         Done();
@@ -1798,7 +1798,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest9300
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest9300
-     * @tc.desc copyWithin(self: FixedArray<int>, target: number, start: number, end?: Number): FixedArray<int> 空数组
+     * @tc.desc copyWithin(self: FixedArray<int>, target: int, start: int, end?: int): FixedArray<int> 空数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1808,7 +1808,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest9300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [];
-        const result = copyWithin(arr, 0.0.toDouble(), 0.0.toDouble(), 1.0.toDouble());
+        const result = copyWithin(arr, 0, 0, 1);
         expect(result.length).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
@@ -1817,7 +1817,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest9400
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest9400
-     * @tc.desc copyWithin(self: FixedArray<int>, target: number, start: number, end?: Number): FixedArray<int> 单元素数组
+     * @tc.desc copyWithin(self: FixedArray<int>, target: int, start: int, end?: int): FixedArray<int> 单元素数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1827,7 +1827,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest9400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [5];
-        const result = copyWithin(arr, 0.0.toDouble(), 0.0.toDouble(), 1.0.toDouble());
+        const result = copyWithin(arr, 0, 0, 1);
         expect([...result]).assertDeepEquals([5]);
         console.info(`${caseName}, test end`);
         Done();
@@ -1836,7 +1836,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest9500
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest9500
-     * @tc.desc copyWithin(self: FixedArray<int>, target: number, start: number, end?: Number): FixedArray<int> start和end都超界
+     * @tc.desc copyWithin(self: FixedArray<int>, target: int, start: int, end?: int): FixedArray<int> start和end都超界
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1846,7 +1846,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest9500';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [1, 2, 3];
-        const result = copyWithin(arr, 0.0.toDouble(), 5.0.toDouble(), 10.0.toDouble());
+        const result = copyWithin(arr, 0, 5, 10);
         expect([...result]).assertDeepEquals([1, 2, 3]);
         console.info(`${caseName}, test end`);
         Done();
@@ -1855,7 +1855,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
     /**
      * @tc.number builtinsArrayCopyWithinSecondPrototypebTest9600
      * @tc.name builtinsArrayCopyWithinSecondPrototypebTest9600
-     * @tc.desc copyWithin(self: FixedArray<int>, target: number, start: number, end?: Number): FixedArray<int> 全部为同一数值
+     * @tc.desc copyWithin(self: FixedArray<int>, target: int, start: int, end?: int): FixedArray<int> 全部为同一数值
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1865,7 +1865,7 @@ export default function builtinsArrayCopyWithinSecondPrototypebTest(){
         let caseName = 'builtinsArrayCopyWithinSecondPrototypebTest9600';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [9, 9, 9, 9];
-        const result = copyWithin(arr, 1.0.toDouble(), 0.0.toDouble(), 3.0.toDouble());
+        const result = copyWithin(arr, 1, 0, 3);
         expect([...result]).assertDeepEquals([9, 9, 9, 9]);
         console.info(`${caseName}, test end`);
         Done();
