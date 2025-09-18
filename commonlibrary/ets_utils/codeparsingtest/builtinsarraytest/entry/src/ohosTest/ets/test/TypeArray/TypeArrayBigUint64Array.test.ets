@@ -2007,8 +2007,9 @@ export default function typeArrayBigUint64ArrayTest() {
       expect(arr.indexOf(arr[0])).assertEqual(0);
       expect(arr.indexOf(BigInt(0))).assertEqual(-1);
       expect(arr.length).assertEqual(2);
-      expect(arr[0]).assertEqual(arr[0]);
-      expect(arr[1]).assertEqual(arr[1]);
+      expect(arr[0].toString()).assertEqual('9221120237041090560');
+      expect(arr[1].toString()).assertEqual('4638355772470722560');
+
     })
 
     /**

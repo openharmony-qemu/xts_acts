@@ -3079,7 +3079,7 @@ export default function typeArrayInt16ArrayTest() {
     /**
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT16ARRAY_0136
      * @tc.name TypeArrayInt16Array0136
-     * @desc Verify Int16Array with data filtering using moving median
+     * @tc.desc Verify Int16Array with data filtering using moving median
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 1
@@ -3112,7 +3112,7 @@ export default function typeArrayInt16ArrayTest() {
     /**
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT16ARRAY_0137
      * @tc.name TypeArrayInt16Array0137
-     * @desc Verify Int16Array with bitwise sign bit manipulation
+     * @tc.desc Verify Int16Array with bitwise sign bit manipulation
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 1
@@ -3135,7 +3135,7 @@ export default function typeArrayInt16ArrayTest() {
     /**
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT16ARRAY_0139
      * @tc.name TypeArrayInt16Array0139
-     * @desc Verify Int16Array with data validation using range checks
+     * @tc.desc Verify Int16Array with data validation using range checks
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 1
@@ -3167,7 +3167,7 @@ export default function typeArrayInt16ArrayTest() {
     /**
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT16ARRAY_0140
      * @tc.name TypeArrayInt16Array0140
-     * @desc Verify Int16Array with bitwise bit masking for packed data
+     * @tc.desc Verify Int16Array with bitwise bit masking for packed data
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 1
@@ -3223,7 +3223,7 @@ export default function typeArrayInt16ArrayTest() {
     /**
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT16ARRAY_0141
      * @tc.name TypeArrayInt16Array0141
-     * @desc Verify Int16Array with data transformation using logarithmic scaling
+     * @tc.desc Verify Int16Array with data transformation using logarithmic scaling
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 1
@@ -3258,7 +3258,7 @@ export default function typeArrayInt16ArrayTest() {
     /**
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT16ARRAY_0142
      * @tc.name TypeArrayInt16Array0142
-     * @desc Verify Int16Array with sliding window standard deviation
+     * @tc.desc Verify Int16Array with sliding window standard deviation
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 1
@@ -3296,7 +3296,7 @@ export default function typeArrayInt16ArrayTest() {
     /**
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT16ARRAY_0143
      * @tc.name TypeArrayInt16Array0143
-     * @desc Verify Int16Array with bitwise bit set/clear operations
+     * @tc.desc Verify Int16Array with bitwise bit set/clear operations
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 1

@@ -1927,7 +1927,6 @@ export default function typeArrayUint8ClampedArrayTest() {
      */
     it('TypeArrayUint8ClampedArray0112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       if (typeof SharedArrayBuffer !== 'function') {
-        expect(true).assertEqual(true);
         return;
       }
 

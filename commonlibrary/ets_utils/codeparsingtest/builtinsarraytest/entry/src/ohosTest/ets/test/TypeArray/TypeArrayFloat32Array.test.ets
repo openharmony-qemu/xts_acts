@@ -2397,7 +2397,6 @@ export default function typeArrayFloat32ArrayTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-
     it('TypeArrayFloat32ArrayBufferDv0155', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
       const arr1 = new Float32Array([2.0, 4.0, 6.0, 8.0])
       const arr2 = new Float32Array([2.0, 3.0, 6.0, 8.0])
