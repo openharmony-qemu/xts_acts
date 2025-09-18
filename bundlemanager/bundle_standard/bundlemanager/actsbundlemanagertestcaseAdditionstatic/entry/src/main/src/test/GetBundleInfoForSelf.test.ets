@@ -27,7 +27,7 @@ export default function getBundleInfoForSelf() {
           expect(data.reqPermissionDetails[0].name).assertEqual("ohos.permission.GET_BUNDLE_INFO_PRIVILEGED");
           expect(data.reqPermissionDetails[0].moduleName).assertEqual("entry");
           expect(data.reqPermissionDetails[0].reason).assertEqual("$string:module_desc");
-          expect(data.reqPermissionDetails[0].reasonId as double).assertLarger(0.0);
+          expect(data.reqPermissionDetails[0].reasonId ).assertLarger(0.0);
           expect(data.reqPermissionDetails[0].usedScene.abilities.length).assertEqual(1.0);
           expect(data.reqPermissionDetails[0].usedScene.abilities[0]).assertEqual("MainAbility");
           expect(data.reqPermissionDetails[0].usedScene.when).assertEqual("always");
