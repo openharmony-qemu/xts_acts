@@ -54,7 +54,7 @@ export default function ActsNotificationSlotTest() {
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle)}`)
       await Utils.msSleep(2000)
-      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
 
@@ -245,9 +245,9 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number: Sub_Notification_Ans_Slot_CreateSlot_Static_3150
-     * @tc.name: Sub_Notification_Ans_Slot_CreateSlot_Static_3150
-     * @tc.desc: NotificationSlot for content information
+     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_3150
+     * @tc.name  Sub_Notification_Ans_Slot_CreateSlot_Static_3150
+     * @tc.desc  NotificationSlot for content information
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_3150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1131,7 +1131,6 @@ export default function ActsNotificationSlotTest() {
     /**
      * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_5400
      * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_5400
-     *                 removeSlot(slotType: SlotType, callback: AsyncCallback<void>): void
      * @tc.desc    Get Remove the OTHER_TYPES type slot after add
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,

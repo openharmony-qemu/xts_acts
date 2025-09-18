@@ -358,7 +358,7 @@ export default function ActsNotificationManagerPublishTest() {
     it('Sub_Notification_Ans_Enable_Query_Static_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Enable_Query_Static_2500'
-        testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+        testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
         console.info(`Sub_Notification_Ans_Enable_Query_Static_2500 START`)
         try {
           console.info(`Sub_Notification_Ans_Enable_Query_Static_2500 AA11`)
@@ -390,7 +390,7 @@ export default function ActsNotificationManagerPublishTest() {
     it('Sub_Notification_Ans_Enable_Query_Static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Enable_Query_Static_2600'
-        testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+        testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
         console.info(`Sub_Notification_Ans_Enable_Query_Static_2600 START`)
         await notificationManager.requestEnableNotification(testAbilityContext).then(() => {
           console.info(`${TAG} requestEnableNotification Promise success`)
@@ -813,7 +813,7 @@ export default function ActsNotificationManagerPublishTest() {
       async (done: () => void): Promise<void> => {
         const TEST_SUITE_NAME:string = 'Sub_Notification_Ans_Publish_Publish_Static_0310'
         const TEST_CASE_NAME:string = 'testPublishadditionalTextForNull';
-        testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+        testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
         let requestEnableNotificationCallback = (err: BusinessError | null): void => {
           if (err) {
             console.error(`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
@@ -982,7 +982,7 @@ export default function ActsNotificationManagerPublishTest() {
       async (done: () => void): Promise<void> => {
         const TEST_SUITE_NAME:string = 'Sub_Notification_Ans_Publish_Publish_Static_0610'
         const TEST_CASE_NAME:string = 'testPublishLongtextadditionalTextForNull';
-        testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+        testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
 
         let requestEnableNotificationCallback = (err: BusinessError | null) => {
           if (err) {
@@ -1307,7 +1307,7 @@ export default function ActsNotificationManagerPublishTest() {
       async (done: () => void): Promise<void> => {
         const TEST_SUITE_NAME:string = 'Sub_Notification_Ans_Publish_Publish_Static_1210'
         const TEST_CASE_NAME:string = 'testPublishLongtextTitleForNull';
-        testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+        testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
         let requestEnableNotificationCallback = (err: BusinessError | null) => {
           if (err) {
             console.error(`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
@@ -1675,7 +1675,7 @@ export default function ActsNotificationManagerPublishTest() {
       async (done: () => void): Promise<void> => {
         const TEST_SUITE_NAME:string = 'Sub_Notification_Ans_Publish_Publish_Static_1810'
         const TEST_CASE_NAME:string = 'testPublishPictureadditionalTextForNull';
-        testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+        testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
         let requestEnableNotificationCallback = (err: BusinessError | null): void => {
           if (err) {
             console.error(`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);

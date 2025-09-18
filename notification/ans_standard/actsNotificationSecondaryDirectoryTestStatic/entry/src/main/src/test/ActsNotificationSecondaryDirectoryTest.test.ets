@@ -45,7 +45,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name)
       await Utils.msSleep(2000)
-      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
       let driver = Driver.create();
       await Utils.msSleep(1500);
       let button = await driver.findComponent(ON.type('Button').text('确定').within(ON.type('Dialog')));

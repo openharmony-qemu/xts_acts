@@ -37,7 +37,7 @@ export default function ActsNotificationContentTest() {
     it('Acts_NotificationContent_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME = 'Acts_NotificationContent_Static_0100';
-        ctx = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+        ctx = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
         notificationManager.requestEnableNotification(ctx, (err: BusinessError | null) => {
           if (err) {
             console.error(`Acts_NotificationContent_Static_0100 requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
