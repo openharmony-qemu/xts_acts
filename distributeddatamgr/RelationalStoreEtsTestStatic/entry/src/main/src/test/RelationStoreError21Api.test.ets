@@ -247,7 +247,7 @@ export default function ErrorCodeRdbStore21Test() {
 
     /**
      * @tc.name       : RelationStoreError21Test0005
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error21Test_500
+     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error21Test_0500
      * @tc.desc       : insert
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -407,7 +407,7 @@ export default function ErrorCodeRdbStore21Test() {
 
     /**
      * @tc.name       : RelationStoreError21Test0010
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error21Test_0900
+     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error21Test_1000
      * @tc.desc       : insert
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -532,7 +532,7 @@ export default function ErrorCodeRdbStore21Test() {
 
     /**
      * @tc.name       : RelationStoreError21Test0014
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error21Test_1300
+     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error21Test_1400
      * @tc.desc       : insert
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -693,7 +693,7 @@ export default function ErrorCodeRdbStore21Test() {
 
     /**
      * @tc.name       : RelationStoreError21Test0019
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error21Test_1800
+     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error21Test_1900
      * @tc.desc       : insert
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -760,7 +760,7 @@ export default function ErrorCodeRdbStore21Test() {
 
     /**
      * @tc.name       : RelationStoreError21Test0021
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error21Test_2000
+     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error21Test_2100
      * @tc.desc       : insert
      * @tc.size       : MediumTest
      * @tc.type       : Function
