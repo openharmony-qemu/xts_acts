@@ -16,6 +16,7 @@
 #include "CameraTest.h"
 #include "native_common.h"
 #include "napi/native_api.h"
+#include <cstdint>
 #include <hilog/log.h>
 #include <string>
 #include <vector>
@@ -29,15 +30,7 @@ using ArkCameraTestFunc = napi_value (*)(napi_env, napi_callback_info);
 
 static napi_value InitCamera(napi_env env, napi_callback_info info)
 {
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    size_t typeLen = 0;
-    char *surfaceId = nullptr;
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    napi_get_value_string_utf8(env, args[0], nullptr, 0, &typeLen);
-    surfaceId = new char[typeLen + 1];
-    napi_get_value_string_utf8(env, args[0], surfaceId, typeLen + 1, &typeLen);
-
+    char *surfaceId = CameraTestUtils::GetArgsOneParameterByStr(env, info).get();
     g_ndkCamera = new NDKCamera(surfaceId);
     napi_value result;
     if (g_ndkCamera->valid_) {
@@ -46,6 +39,19 @@ static napi_value InitCamera(napi_env env, napi_callback_info info)
         napi_create_int32(env, CAMERA_SERVICE_FATAL_ERROR, &result);
     }
 
+    return result;
+}
+
+static napi_value ReleaseCameraManger(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    if (g_ndkCamera->valid_) {
+        int ret = g_ndkCamera->ReleaseCameraManger();
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+
+    napi_create_int32(env, CAMERA_OK, &result);
     return result;
 }
 
@@ -171,14 +177,7 @@ const std::map<std::string, ArkCameraTestFunc> FunctionErroCodeMap = {
 
 static napi_value CameraErrorCode(napi_env env, napi_callback_info info)
 {
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    size_t typeLen = 0;
-
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    napi_get_value_string_utf8(env, args[0], nullptr, 0, &typeLen);
-    char *errcode = new char[typeLen + 1];
-    napi_get_value_string_utf8(env, args[0], errcode, typeLen + 1, &typeLen);
+    char *errcode = CameraTestUtils::GetArgsOneParameterByStr(env, info).get();
     std::string key(errcode);
 
     auto it = FunctionErroCodeMap.find(key);
@@ -194,15 +193,7 @@ static napi_value CameraErrorCode(napi_env env, napi_callback_info info)
 
 static napi_value CameraStatusInfo(napi_env env, napi_callback_info info)
 {
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    size_t typeLen = 0;
-
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    napi_get_value_string_utf8(env, args[0], nullptr, 0, &typeLen);
-    char *charStatus = new char[typeLen + 1];
-    napi_get_value_string_utf8(env, args[0], charStatus, typeLen + 1, &typeLen);
-
+    char *charStatus = CameraTestUtils::GetArgsOneParameterByStr(env, info).get();
     int ret = TEST_FAILED;
     if (g_ndkCamera->SetCameraStatus(std::string(charStatus)) == TEST_OK) {
         ret = TEST_OK;
@@ -215,36 +206,153 @@ static napi_value CameraStatusInfo(napi_env env, napi_callback_info info)
 
 static napi_value CameraFormat(napi_env env, napi_callback_info info)
 {
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    napi_value result;
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    int32_t index;
-    napi_get_value_int32(env, args[0], &index);
-    
+    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
     int ret = TEST_FAILED;
     if (g_ndkCamera->GetCameraFormat(index) == CAMERA_OK) {
         ret = TEST_OK;
     }
-    
+
+    napi_value result;
     napi_create_int32(env, ret, &result);
     return result;
 }
 
 static napi_value CameraFlashMode(napi_env env, napi_callback_info info)
 {
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    napi_value result;
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    int32_t index;
-    napi_get_value_int32(env, args[0], &index);
-    
+    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
     int ret = TEST_FAILED;
     if (g_ndkCamera->HasFlashMode(index) == CAMERA_OK) {
         ret = TEST_OK;
     }
-    
+
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value GetExposureMode(napi_env env, napi_callback_info info)
+{
+    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
+    int ret = TEST_FAILED;
+    if (g_ndkCamera->GetExposureMode(index) == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value GetCameraFocusMode(napi_env env, napi_callback_info info)
+{
+    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
+    int ret = TEST_FAILED;
+    if (g_ndkCamera->GetCameraFocusMode(index) == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value GetCameraFocusState(napi_env env, napi_callback_info info)
+{
+    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
+    int ret = TEST_FAILED;
+    if (g_ndkCamera->CreateSession() == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value SessionIsVideoStabilizationModeSupported(napi_env env, napi_callback_info info)
+{
+    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
+    int ret = TEST_FAILED;
+    if (g_ndkCamera->SessionIsVideoStabilizationModeSupported(index) == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value TakePictureWithPhotoSettings(napi_env env, napi_callback_info info)
+{
+    auto indexPair = CameraTestUtils::GetArgsTwoParametersByInit(env, info);
+    int ret = TEST_FAILED;
+    if (g_ndkCamera->TakePictureWithPhotoSettings(indexPair.first, indexPair.second) == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value GetCameraConcurrentInfo(napi_env env, napi_callback_info info)
+{
+    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
+    int ret = TEST_FAILED;
+    if (g_ndkCamera->GetCameraConcurrentInfo(index) == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value SessionCanPreconfig(napi_env env, napi_callback_info info)
+{
+    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
+    int ret = TEST_FAILED;
+    if (g_ndkCamera->SessionCanPreconfig(index) == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value SessionCanPreconfigWithRatio(napi_env env, napi_callback_info info)
+{
+    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
+    int ret = TEST_FAILED;
+    if (g_ndkCamera->SessionCanPreconfigWithRatio(index) == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value PhotoOutputRegisterCallback(napi_env env, napi_callback_info info)
+{
+    int ret = TEST_FAILED;
+    if (g_ndkCamera->PhotoOutputRegisterCallback() == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value MetadataOutputRegisterCallback(napi_env env, napi_callback_info info)
+{
+    int ret = TEST_FAILED;
+    if (g_ndkCamera->MetadataOutputRegisterCallback() == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+
+    napi_value result;
     napi_create_int32(env, ret, &result);
     return result;
 }
@@ -255,10 +363,21 @@ static napi_value Init(napi_env env, napi_value exports)
 {
     std::vector<napi_property_descriptor> desc = {
         DECLARE_NAPI_FUNCTION("initCamera", InitCamera),
+        DECLARE_NAPI_FUNCTION("releaseCameraManger", ReleaseCameraManger),
         DECLARE_NAPI_FUNCTION("cameraErrorCode", CameraErrorCode),
         DECLARE_NAPI_FUNCTION("cameraStatusInfo", CameraStatusInfo),
         DECLARE_NAPI_FUNCTION("cameraFormat", CameraFormat),
         DECLARE_NAPI_FUNCTION("cameraFlashMode", CameraFlashMode),
+        DECLARE_NAPI_FUNCTION("getExposureMode", GetExposureMode),
+        DECLARE_NAPI_FUNCTION("getCameraFocusMode", GetCameraFocusMode),
+        DECLARE_NAPI_FUNCTION("getCameraFocusState", GetCameraFocusState),
+        DECLARE_NAPI_FUNCTION("sessionIsVideoStabilizationModeSupported", SessionIsVideoStabilizationModeSupported),
+        DECLARE_NAPI_FUNCTION("takePictureWithPhotoSettings", TakePictureWithPhotoSettings),
+        DECLARE_NAPI_FUNCTION("getCameraConcurrentInfo", GetCameraConcurrentInfo),
+        DECLARE_NAPI_FUNCTION("sessionCanPreconfig", SessionCanPreconfig),
+        DECLARE_NAPI_FUNCTION("sessionCanPreconfigWithRatio", SessionCanPreconfigWithRatio),
+        DECLARE_NAPI_FUNCTION("photoOutputRegisterCallback", PhotoOutputRegisterCallback),
+        DECLARE_NAPI_FUNCTION("metadataOutputRegisterCallback", MetadataOutputRegisterCallback),
     };
 
     napi_define_properties(env, exports, desc.size(), desc.data());
