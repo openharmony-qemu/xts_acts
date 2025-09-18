@@ -933,7 +933,7 @@ struct WebViewControllerVideoMedia {
 
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(0, 8101)
+                  Utils.emitEvent(0, 350360)
                 }else{
                   let size = await driver.getDisplaySize();
                   console.log("size x:" + size.x)
