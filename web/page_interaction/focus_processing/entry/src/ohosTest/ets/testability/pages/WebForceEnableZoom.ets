@@ -93,7 +93,7 @@ struct WebComponent {
                 this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
                 let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
-                await HtmlOne.pinchIn(0.85);
+                await HtmlOne.pinchIn(0.5);
                 await Utils.sleep(2000);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
