@@ -73,9 +73,7 @@ struct WebComponent {
               try {
                 this.isForceZoomEnabled = true;
                 let driver = Driver.create();
-                let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
-                await HtmlOne.pinchOut(1.099);
-                await Utils.sleep(2000);
+                this.webController.zoom(1.5);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
@@ -92,8 +90,7 @@ struct WebComponent {
                 this.isPageEnd = -1;
                 this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
-                let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
-                await HtmlOne.pinchIn(0.7);
+                this.webController.zoom(0.5);
                 await Utils.sleep(2000);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
@@ -112,8 +109,7 @@ struct WebComponent {
                 this.isPageEnd = -1;
                 this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
-                let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
-                await HtmlOne.pinchOut(1.099);
+                this.webController.zoom(1.5);
                 await Utils.sleep(2000);
                 //isForceZoomEnabled设置为false 应该是不触发 this.ScaleChange 应该为false
                 if(this.ScaleChange) {
@@ -140,8 +136,7 @@ struct WebComponent {
                 this.isPageEnd = -1;
                 this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
-                let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
-                await HtmlOne.pinchIn(0.89);
+                this.webController.zoom(0.5);
                 await Utils.sleep(2000);
                 //isForceZoomEnabled设置为false 应该是不触发 this.ScaleChange 应该为false
                 if(this.ScaleChange) {
