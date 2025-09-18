@@ -25,8 +25,9 @@ import { BusinessError } from '@ohos.base'
 import Utils from './Util.test';
 import hilog from '@ohos.hilog';
 import { Component, Driver, ON } from '@ohos.UiTest'
+import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let testAbilityContext: common.UIAbilityContext;
 let bundle_name: string = 'com.example.secondaryDirectory.static'
@@ -39,30 +40,28 @@ export default function ActsNotificationSecondaryDirectoryTest() {
 
     beforeAll(() => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
+      
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName: "entry",
-        onAbilityCreate: (abilitys: UIAbility): void => {
-          testAbilityContext = abilitys.context
-          hilog.info(domain, tag, '%{public}s', 'onAbilityCreate end');
-
-        },
-      }, (err: BusinessError | null): void => {
-        if (err != null) {
-          hilog.info(domain, tag, '%{public}s', '-----' + err.code);
-        }
-        hilog.info(domain, tag, '%{public}s', 'BusinessError  end');
-      });
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name)
       await Utils.msSleep(2000)
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+      let driver = Driver.create();
+      await Utils.msSleep(1500);
+      let button = await driver.findComponent(ON.type('Button').text('确定').within(ON.type('Dialog')));
+      hilog.info(0x0000, 'testTag', `button is ${JSON.stringify(button)}`);
+      if (button !== null) {
+        await Utils.msSleep(1500);
+        await button.click()
+        await Utils.msSleep(500)
+      }
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
 
     beforeEach(() => {
       console.info(`${TAG} beforeEach START`)
       await notificationManager.cancelAll()
+      await notificationManager.removeAllSlots();
       await Utils.msSleep(1000);
       console.info(`${TAG} beforeEach END`)
     })
@@ -72,7 +71,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
      * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_3850
      * @tc.desc: use NotificationRequest type
      */
-    it('Sub_Notification_Ans_Publish_Publish_Static_3850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('Sub_Notification_Ans_Publish_Publish_Static_3850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_3850 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_3850 START`);
@@ -139,13 +138,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_3850 END`);
       });
 
-
     /*
      * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_3950
      * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_3950
      * @tc.desc: use NotificationLongTextContent type
      */
-    it('Sub_Notification_Ans_Publish_Publish_Static_3950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('Sub_Notification_Ans_Publish_Publish_Static_3950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_3950 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_3950 START`);
@@ -200,13 +198,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_3950 END`);
       });
 
-
-  /*
+    /*
      * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4050
      * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4050
      * @tc.desc: use NotificationBasicContent type
      */
-    it('Sub_Notification_Ans_Publish_Publish_Static_4050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('Sub_Notification_Ans_Publish_Publish_Static_4050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4050 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4050 START`);
@@ -258,12 +255,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4050 END`);
       });
 
-     /*
+    /*
      * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4150
      * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4150
      * @tc.desc: use NotificationMultiLineContent type
      */
-    it('Sub_Notification_Ans_Publish_Publish_Static_4150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('Sub_Notification_Ans_Publish_Publish_Static_4150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4150 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4150 START`);
@@ -317,12 +314,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4150 END`);
       });
 
-     /*
+    /*
      * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4250
      * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4250
      * @tc.desc: use NotificationActionButton type
      */
-    it('Sub_Notification_Ans_Publish_Publish_Static_4250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('Sub_Notification_Ans_Publish_Publish_Static_4250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4250 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4250 START`);
@@ -406,7 +403,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
      * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4350
      * @tc.desc: use NotificationTemplate type
      */
-    it('Sub_Notification_Ans_Publish_Publish_Static_4350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('Sub_Notification_Ans_Publish_Publish_Static_4350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4350 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4350 START`);
@@ -470,12 +467,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4350 END`);
       });
 
-     /*
+    /*
      * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4450
      * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4450
      * @tc.desc: use DistributedOptions type
      */
-    it('Sub_Notification_Ans_Publish_Publish_Static_4450', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('Sub_Notification_Ans_Publish_Publish_Static_4450', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4450 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4450 START`);
@@ -535,12 +532,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4450 END`);
       });
 
-     /*
+    /*
      * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4550
      * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4550
      * @tc.desc: use NotificationBasicContent type
      */
-    it('Sub_Notification_Ans_Publish_Publish_Static_4550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('Sub_Notification_Ans_Publish_Publish_Static_4550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4550 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4550 START`);
@@ -614,13 +611,59 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       })
 
 
+    /*
+         * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4650
+         * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4650
+         * @tc.desc: use NotificationMultiLineContent type
+         */
+    it('Sub_Notification_Ans_Publish_Publish_Static_4650', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4650 ===>'
+        console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4650 START`);
+        try {
+          notificationManager.addSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION, (err: BusinessError | null) => {
+            console.info(`${TAG} addSlot success:` + JSON.stringify(err))
+            if (err) {
+              console.info(`${TAG} addSlot err: ${err.code}, errMes: ${err.message}`)
+              expect(false).assertTrue()
+              done()
+            } else {
+              console.info(`${TAG} addSlot success 111`)
+              notificationManager.getSlots().then((NotificationSlot: Array<notificationManager.NotificationSlot>) => {
+                console.info(`${TAG} getSlots success:`)
+                for (let i = 0; i < NotificationSlot.length; ++i) {
+                  console.info(`${TAG} NotificationSlot[${i}].notificationType:` + NotificationSlot[i].notificationType)
+                  let num = NotificationSlot[i].notificationType as notificationManager.SlotType
+                  if (num == notificationManager.SlotType.SOCIAL_COMMUNICATION) {
+                    expect(true).assertTrue()
+                    done()
+                  }else{
+                    expect(false).assertTrue()
+                    done()
+                  }
+                }
+                done()
+              }).catch((err: BusinessError): void => {
+                console.info(`${TAG} getSlots failed err: + ${err.code}`)
+                expect(false).assertTrue()
+                done()
+              })
+            }
+          })
+        } catch (err:BusinessError) {
+          console.info(`${TAG} addSlot failed err: ${err.code}, errMes: ${err.message}`)
+          expect(false).assertTrue()
+          done()
+        }
+        console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4650 END`);
+      })
 
     /*
      * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4750
      * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4750
      * @tc.desc: use BundleOption type
      */
-    it('Sub_Notification_Ans_Publish_Publish_Static_4750', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('Sub_Notification_Ans_Publish_Publish_Static_4750', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'Sub_Notification_Ans_Publish_Publish_Static_4750'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4750 START`);
@@ -643,29 +686,31 @@ export default function ActsNotificationSecondaryDirectoryTest() {
      * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4850
      * @tc.desc: use NotificationFlags type
      */
-    it('Sub_Notification_Ans_Publish_Publish_Static_4850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('Sub_Notification_Ans_Publish_Publish_Static_4850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'Sub_Notification_Ans_Publish_Publish_Static_4850'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4850 START`);
 
-        //let flags: notificationManager.NotificationFlags = {
-        //  soundEnabled: notificationManager.NotificationFlagStatus.TYPE_OPEN,
-        //  vibrationEnabled: notificationManager.NotificationFlagStatus.TYPE_CLOSE,
-        // reminderFlags: undefined
-        //}
-        //console.info(`${TAG} NotificationFlags soundEnabled:vibrationEnabled
-        //    = ${flags.soundEnabled},${flags.vibrationEnabled}`);
-        //expect(typeof flags.soundEnabled == 'number').assertTrue()
-        //expect(typeof flags.vibrationEnabled == 'number').assertTrue()
-        //let num1 = flags.soundEnabled as notificationManager.NotificationFlagStatus
-        //let num2 = flags.vibrationEnabled as notificationManager.NotificationFlagStatus
-        //expect(num1 == 1).assertTrue()
-        //expect(num2 == 2).assertTrue()
-        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT as number).assertEqual(0)
-        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_LONG_TEXT as number).assertEqual(1)
-        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_PICTURE as number).assertEqual(2)
-        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_CONVERSATION as number).assertEqual(3)
-        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_MULTILINE as number).assertEqual(4)
+        let flags: notificationManager.NotificationFlags = {
+          soundEnabled: notificationManager.NotificationFlagStatus.TYPE_OPEN,
+          vibrationEnabled: notificationManager.NotificationFlagStatus.TYPE_CLOSE,
+          reminderFlags: undefined
+        }
+        console.info(`${TAG} NotificationFlags soundEnabled:vibrationEnabled
+            = ${flags.soundEnabled},${flags.vibrationEnabled}`);
+        console.info(`${TAG} NotificationFlags soundEnabled:vibrationEnabled1
+            = ${typeof flags.soundEnabled},${typeof flags.vibrationEnabled}`);
+        expect(typeof flags.soundEnabled == 'number').assertTrue()
+        expect(typeof flags.vibrationEnabled == 'number').assertTrue()
+        let num1 = flags.soundEnabled as notificationManager.NotificationFlagStatus
+        let num2 = flags.vibrationEnabled as notificationManager.NotificationFlagStatus
+        expect(num1 == 1).assertTrue()
+        expect(num2 == 2).assertTrue()
+        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT as int).assertEqual(0)
+        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_LONG_TEXT as int).assertEqual(1)
+        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_PICTURE as int).assertEqual(2)
+        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_CONVERSATION as int).assertEqual(3)
+        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_MULTILINE as int).assertEqual(4)
         done()
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4850 END`);
       })

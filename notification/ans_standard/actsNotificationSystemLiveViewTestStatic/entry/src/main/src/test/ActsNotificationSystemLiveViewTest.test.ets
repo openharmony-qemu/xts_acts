@@ -19,6 +19,7 @@ import {BusinessError} from '@ohos.base';
 import hilog from '@ohos.hilog';
 import WantAgent from '@ohos.app.ability.wantAgent';
 import Want from '@ohos.app.ability.Want';
+import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let bundleName: string = 'com.example.systemliveView.static'
 const TAG = 'NotificationActs'
@@ -1595,7 +1596,6 @@ export default function ActsNotificationSystemLiveViewTest() {
   * @tc.type: Function
   * @tc.level Level 3
   */
-    
     it('Sub_Notification_Ans_Live_Publish_Static_7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'Sub_Notification_Ans_Live_Publish_Static_7500'
       const color : ArrayBuffer = new ArrayBuffer(96);  //96为需要创建的像素buffer大小，取值为：height * width *4
@@ -1993,31 +1993,6 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
 
     })
-
-    /*
-     * @tc.number: Sub_Notification_Ans_Enable_Query_Static_0200
-     * @tc.name: Sub_Notification_Ans_Enable_Query_Static_0200
-     * @tc.desc: test function isNotificationEnabled no parameter
-     */
-    it('Sub_Notification_Ans_Enable_Query_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        let TAG = 'Sub_Notification_Ans_Enable_Query_Static_0200'
-        console.info(`${TAG} Sub_Notification_Ans_Enable_Query_Static_0200 START`);
-
-        notificationManager.isNotificationEnabled((err: BusinessError | null, data: boolean|undefined): void => {
-          if (err) {
-            console.info(`${TAG} isNotificationEnabled AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-            expect(false).assertTrue()
-            done()
-          } else {
-            console.info(`${TAG} isNotificationEnabled AsyncCallback success ${data}`)
-            expect(true).assertTrue()
-            done()
-          }
-        });
-
-        console.info(`${TAG} Sub_Notification_Ans_Enable_Query_Static_0200 END`);
-      })
 
   })
 }

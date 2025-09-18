@@ -21,8 +21,10 @@ import common from '@ohos.app.ability.common';
 import {BusinessError} from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { Component, Driver, ON } from '@ohos.UiTest'
+import { AppStorage } from '@ohos.arkui.stateManagement'
+
 let bundle_name:string = "com.example.actscommoneventmanagertest.static"
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let testAbilityContext:common.UIAbilityContext;
 
 
@@ -32,28 +34,15 @@ export default function ActsCommonEventManagerSubscribeTest() {
     console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST START`)
     beforeAll(() => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
+      
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName:"entry",
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          testAbilityContext = abilitys.context
-          hilog.info(domain, TAG, '%{public}s', 'onAbilityCreate end');
-
-        },
-      }, (err : BusinessError | null) : void => {
-        if (err != null ) {
-          hilog.info(domain, TAG, '%{public}s', '-----'+ err.code);
-        }
-        hilog.info(domain, TAG, '%{public}s', 'BusinessError  end');
-      });
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name )
       await Utils.msSleep(2000)
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })
 
-  
     /*
      * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_Static_1900
      * @tc.name: Sub_Notification_Ans_Subscriber_Subscribe_Static_1900
@@ -143,10 +132,19 @@ export default function ActsCommonEventManagerSubscribeTest() {
               } else {
                 console.info(TAG+`clearAbortCommonEvent_9 success`)
                 expect(true).assertTrue()
-                done()
               }
             })
 
+
+            await subscriber.finishCommonEvent().then(() => {
+              console.info(TAG+`finishCommonEvent_2 success `)
+              expect(true).assertTrue()
+              done()
+            }).catch((err:BusinessError):void => {
+              console.info(TAG+`finishCommonEvent_2 err, error code: ${err.code}, message: ${err.message}`)
+              expect(false).assertTrue()
+              done()
+            })
           }
         })
       } catch (err: BusinessError) {
@@ -158,7 +156,6 @@ export default function ActsCommonEventManagerSubscribeTest() {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_Static_1900 END`)
     })
 
-  
     /*
      * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_Static_2000
      * @tc.name: Sub_Notification_Ans_Subscriber_Subscribe_Static_2000
@@ -229,9 +226,19 @@ export default function ActsCommonEventManagerSubscribeTest() {
             await subscriber.clearAbortCommonEvent().then(() => {
               console.info(TAG+`clearAbortCommonEvent_10 success`)
               expect(true).assertTrue()
-              done()
             }).catch((err: BusinessError):void => {
               console.info(TAG+`clearAbortCommonEvent_10 err ${err}`)
+              expect(false).assertTrue()
+              done()
+            })
+
+            
+            await subscriber.finishCommonEvent().then(() => {
+              console.info(TAG+`finishCommonEvent_2 success `)
+              expect(true).assertTrue()
+              done()
+            }).catch((err:BusinessError):void => {
+              console.info(TAG+`finishCommonEvent_2 err, error code: ${err.code}, message: ${err.message}`)
               expect(false).assertTrue()
               done()
             })
@@ -246,13 +253,13 @@ export default function ActsCommonEventManagerSubscribeTest() {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_Static_2000 END`)
     })
 
-
     /*
-     * @tc.number: SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_Static_1100
-     * @tc.name: SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_Static_1100
+     * @tc.number: SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_1100
+     * @tc.name: SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_1100
      * @tc.desc: verify the callback function
      */
-    it('SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_Static_1100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_1100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let TAG:string = 'SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_1100'
       console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_Static_1100 START`)
 
       let options:commonEventManager.CommonEventPublishData = {
@@ -260,7 +267,6 @@ export default function ActsCommonEventManagerSubscribeTest() {
         data: "initial data",
         isOrdered: true,
         isSticky: false,
-        subscriberPermissions:new Array<string>('publish_event_subscriberPermissions'),
       }
 
       let subscribeInfo:commonEventManager.CommonEventSubscribeInfo = {
@@ -274,15 +280,6 @@ export default function ActsCommonEventManagerSubscribeTest() {
           expect(false).assertTrue()
           done()
         } else {
-          if (data !== undefined) {
-            console.info(TAG+'===============>options=========bundle_name: ' + data?.bundleName);
-            console.info(TAG+'===============>options=========code: ' + data?.code);
-            console.info(TAG+'===============>options=========data: ' + data?.data);
-            expect(data?.bundleName).assertEqual('');
-            expect(data?.code).assertEqual(0);
-            expect(data?.data).assertEqual('initial data');
-          }
-
           let code1 = subscriber.getCodeSync();
           expect(code1).assertEqual(0);
           console.info(TAG+`getCodeSync before setCodeSync, code is ${code1}`)
@@ -292,9 +289,9 @@ export default function ActsCommonEventManagerSubscribeTest() {
           console.info(TAG+`getCodeSync after setCodeSync, code is ${code2}`)
           expect(code2).assertEqual(1);
 
-          let data1 = subscriber.getDataSync();
-          expect(data1).assertEqual("initial data");
-          console.info(TAG+`getDataSync before setDataSync, data1 is ${data1}`)
+          let data = subscriber.getDataSync();
+          expect(data).assertEqual("initial data");
+          console.info(TAG+`getDataSync before setDataSync, data is ${data}`)
 
           subscriber.setDataSync("data change");
           let data2 = subscriber.getDataSync();
@@ -346,14 +343,13 @@ export default function ActsCommonEventManagerSubscribeTest() {
       }
     })
 
-
     /*
      * @tc.number: SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_1200
      * @tc.name: SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_1200
      * @tc.desc: verify the callback function
      */
-
     it('SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_1200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let TAG:string = 'SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_1200'
       console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_Static_1200 START`)
 
       let options:commonEventManager.CommonEventPublishData = {

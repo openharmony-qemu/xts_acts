@@ -21,8 +21,10 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import Utils from './Util.test';
-import { Component, Driver, ON} from '@ohos.UiTest'
-const DOMAIN_NUMBER: number = 0xFF00;
+import { Component, Driver, ON } from '@ohos.UiTest'
+import { AppStorage } from '@ohos.arkui.stateManagement'
+
+const DOMAIN_NUMBER: int = 0xFF00;
 let bundle_name:string = "com.example.actssubscribertestunorder.static"
 let testAbilityContext:common.UIAbilityContext;
 
@@ -32,24 +34,12 @@ export default function ActsSubscriberTestUnorder() {
     hilog.info(DOMAIN_NUMBER, TAG,`SUB_NOTIFICATION_CES_SUBSCRIBER_UNORDER_TEST START`)
     beforeAll(() => {
       hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'beforeAll start');
+      
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName:"entry",
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          testAbilityContext = abilitys.context
-          hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'onAbilityCreate end');
-
-        },
-      }, (err : BusinessError | null) : void => {
-        if (err != null ) {
-          hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', '-----'+ err.code);
-        }
-        hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'BusinessError  end');
-      });
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name )
       await Utils.msSleep(2000)
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'beforeAll end');
     })
 
@@ -213,7 +203,7 @@ export default function ActsSubscriberTestUnorder() {
     it('Sub_Notification_Ces_Subscriber_Subscribe_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Subscriber_Subscribe_Static_0900'
       console.info(`${TAG} Sub_Notification_Ces_Subscriber_Subscribe_Static_0900 START`)
-      await Utils.msSleep(2000);
+      await Utils.msSleep(5000);
       CommonEventSubscriberInfo.events[0] = 'publish_event_0500'
       CommonEventSubscriberInfo.publisherDeviceId = 'PublishDeviceId_0500'
       CommonEventSubscriberInfo.priority = 10
@@ -287,7 +277,7 @@ export default function ActsSubscriberTestUnorder() {
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_8350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_8350'
       console.info(`${TAG} Sub_Notification_Ces_Publish_CommonEvent_Static_8350 START`)
-      await Utils.msSleep(1000);
+      await Utils.msSleep(5000);
       CommonEventSubscriberInfo.events[0] = 'publish_event_0600'
       CommonEventSubscriberInfo.publisherDeviceId = 'PublishDeviceId_0600'
       CommonEventSubscriberInfo.priority = 10
@@ -361,7 +351,7 @@ export default function ActsSubscriberTestUnorder() {
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_8250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_8250'
       console.info(`${TAG} Sub_Notification_Ces_Publish_CommonEvent_Static_8250 START`)
-      await Utils.msSleep(1000);
+      await Utils.msSleep(5000);
       CommonEventSubscriberInfo.events[0] = 'publish_event_0700'
       CommonEventSubscriberInfo.publisherDeviceId = 'PublishDeviceId_0700'
       CommonEventSubscriberInfo.priority = 10
@@ -435,7 +425,7 @@ export default function ActsSubscriberTestUnorder() {
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_8300'
       console.info(`${TAG} Sub_Notification_Ces_Publish_CommonEvent_Static_8300 START`)
-      await Utils.msSleep(1000);
+      await Utils.msSleep(5000);
       CommonEventSubscriberInfo.events[0] = 'publish_event_0800'
       CommonEventSubscriberInfo.publisherDeviceId = 'PublishDeviceId_0800'
       CommonEventSubscriberInfo.priority = 10
@@ -497,6 +487,7 @@ export default function ActsSubscriberTestUnorder() {
       })
       console.info(`${TAG} Sub_Notification_Ces_Publish_CommonEvent_Static_8300 END`)
     })
+
 
     /*
      * @tc.number    : Sub_Notification_Ces_Subscriber_Subscribe_Static_0800

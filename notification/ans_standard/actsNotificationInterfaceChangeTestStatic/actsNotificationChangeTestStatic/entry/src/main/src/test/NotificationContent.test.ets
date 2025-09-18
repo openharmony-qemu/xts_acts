@@ -20,6 +20,7 @@ import image from '@ohos.multimedia.image';
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import common from '@ohos.app.ability.common';
+import { AppStorage } from '@ohos.arkui.stateManagement'
 
 export default function ActsNotificationContentTest() {
   describe('ActsNotificationContentTest', () => {
@@ -27,7 +28,6 @@ export default function ActsNotificationContentTest() {
     const TAG = 'ActsNotificationContentTest ===>';
     let ctx: common.UIAbilityContext;
 
-    
     /**
      * @tc.number: Acts_NotificationContent_Static_0100
      * @tc.name: Acts_NotificationContent_Static_0100
@@ -37,7 +37,7 @@ export default function ActsNotificationContentTest() {
     it('Acts_NotificationContent_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME = 'Acts_NotificationContent_Static_0100';
-
+        ctx = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
         notificationManager.requestEnableNotification(ctx, (err: BusinessError | null) => {
           if (err) {
             console.error(`Acts_NotificationContent_Static_0100 requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
@@ -207,7 +207,7 @@ export default function ActsNotificationContentTest() {
         }
       })
 
-    
+
     /**
      * @tc.number: Acts_NotificationContent_Static_0400
      * @tc.name: Acts_NotificationContent_Static_0400

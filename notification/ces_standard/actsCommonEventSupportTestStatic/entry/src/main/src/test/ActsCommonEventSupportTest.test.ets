@@ -21,34 +21,24 @@ import Utils from './Util.test';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { Component, Driver, ON} from '@ohos.UiTest'
+import { AppStorage } from '@ohos.arkui.stateManagement'
+
 let bundle_name:string = "com.example.actscommoneventsupporttest.static"
 let testAbilityContext:common.UIAbilityContext;
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let TAG:string = 'SUB_NOTIFICATION_CES_SUPPORT_ENUM_TEST ===>'
 export default function ActsCommonEventSupportTest() {
   describe('SUB_NOTIFICATION_CES_SUPPORT_ENUM_TEST', ():void => {
     hilog.info(domain,TAG, 'SUB_NOTIFICATION_CES_SUPPORT_ENUM_TEST START')
     beforeAll(() => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
+      
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName:"entry",
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          testAbilityContext = abilitys.context
-          hilog.info(domain, TAG, '%{public}s', 'onAbilityCreate end');
-
-        },
-      }, (err : BusinessError| null) : void => {
-        if (err != null ) {
-          hilog.info(domain, TAG, '%{public}s', '-----'+ err.code);
-        }
-        hilog.info(domain, TAG, '%{public}s', 'BusinessError  end');
-      });
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name )
       await Utils.msSleep(2000)
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })
 
@@ -230,7 +220,6 @@ export default function ActsCommonEventSupportTest() {
       hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_3000 END`)
       done()
     })
-
 
     /*
      * @tc.number    : Sub_Notification_Ces_Publish_Support_Static_3400

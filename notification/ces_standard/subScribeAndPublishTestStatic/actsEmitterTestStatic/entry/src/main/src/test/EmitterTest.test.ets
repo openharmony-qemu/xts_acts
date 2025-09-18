@@ -17,12 +17,13 @@ import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../..
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError, Callback } from '@ohos.base';
-import { Component, Driver, ON} from '@ohos.UiTest'
+import { Component, Driver, ON } from '@ohos.UiTest'
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import Utils from './Util.test';
+import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let bundle_name: string = "com.example.emittertest.static"
 let testAbilityContext: common.UIAbilityContext;
@@ -38,24 +39,12 @@ export default function EmitterTest() {
 
     beforeAll(() => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
+      
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName: "entry",
-        onAbilityCreate: (abilitys: UIAbility): void => {
-          testAbilityContext = abilitys.context
-          hilog.info(domain, tag, '%{public}s', 'onAbilityCreate end');
-
-        },
-      }, (err: BusinessError|null): void => {
-        if (err != null) {
-          hilog.info(domain, tag, '%{public}s', '-----' + err.code);
-        }
-        hilog.info(domain, tag, '%{public}s', 'BusinessError  end');
-      });
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name)
       await Utils.msSleep(2000)
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
     /*
@@ -904,7 +893,6 @@ export default function EmitterTest() {
      * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2200
      * @tc.desc      : emitter.getListenerCount('23')
      */
-     
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2200'
@@ -929,7 +917,6 @@ export default function EmitterTest() {
      * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2300
      * @tc.desc      : emitter.EventPriority.IMMEDIATE
      */
-     
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2300'
@@ -1009,7 +996,6 @@ export default function EmitterTest() {
      * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2600
      * @tc.desc      : Register three identical string ID
      */
-     
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2600'
@@ -1039,7 +1025,6 @@ export default function EmitterTest() {
      * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2700
      * @tc.desc      : Register three different string ID
      */
-     
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2700'
@@ -1069,7 +1054,6 @@ export default function EmitterTest() {
      * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2800
      * @tc.desc      : emitter.EventPriority.IMMEDIATE
      */
-     
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
 
@@ -1100,7 +1084,7 @@ export default function EmitterTest() {
         emitter.emit('291')
         emitter.emit('292')
         await Utils.msSleep(1000)
-        for (let i: number = 290; i < 293; i++) {
+        for (let i: long = 290; i < 293; i++) {
           innerEvent.eventId = i
           innerEvent.priority = emitter.EventPriority.IMMEDIATE
           let myDate: Record<String, Object> = {
@@ -1121,7 +1105,7 @@ export default function EmitterTest() {
         expect(emitter.getListenerCount('290')).assertEqual(1)
         expect(emitter.getListenerCount('291')).assertEqual(1)
         expect(emitter.getListenerCount('292')).assertEqual(1)
-        for (let i: number = 290; i < 293; i++) {
+        for (let i: long = 290; i < 293; i++) {
           expect(emitter.getListenerCount(i)).assertEqual(1)
         }
         console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2800 END`)
@@ -1133,7 +1117,6 @@ export default function EmitterTest() {
      * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2900
      * @tc.desc      : emitter.EventPriority.IMMEDIATE
      */
-     
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         console.info(` SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2900 START`)
@@ -1174,7 +1157,7 @@ export default function EmitterTest() {
         emitter.off('300');
         emitter.off('301');
 
-        for (let i: number = 300; i < 304; i++) {
+        for (let i: long = 300; i < 304; i++) {
           let innerEvent: emitter.InnerEvent = {
             eventId: i,
             priority: emitter.EventPriority.IMMEDIATE
@@ -1273,7 +1256,7 @@ export default function EmitterTest() {
         console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3300 START`)
         const TEST_CASE_NAME = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3300';
 
-        for (let i: number = 33000; i < 34000; i++) {
+        for (let i: long = 33000; i < 34000; i++) {
           let innerEvent: emitter.InnerEvent = {
             eventId: i,
             priority: emitter.EventPriority.IMMEDIATE
@@ -1286,7 +1269,7 @@ export default function EmitterTest() {
           emitter.on(innerEvent, EmitterCallback)
           emitter.emit(innerEvent)
         }
-        for (let i: number = 33000; i < 34000; i++) {
+        for (let i: long = 33000; i < 34000; i++) {
           expect(emitter.getListenerCount(i)).assertEqual(1)
         }
         await Utils.msSleep(1000)
@@ -1299,7 +1282,6 @@ export default function EmitterTest() {
      * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3400
      * @tc.desc      : Emit and GetListenerCount type is string
      */
-     
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3400 START`)
@@ -1326,7 +1308,6 @@ export default function EmitterTest() {
      * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3500
      * @tc.desc      : emitter.EventPriority.IMMEDIATE
      */
-     
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         console.info(`${tag} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3500 START`)

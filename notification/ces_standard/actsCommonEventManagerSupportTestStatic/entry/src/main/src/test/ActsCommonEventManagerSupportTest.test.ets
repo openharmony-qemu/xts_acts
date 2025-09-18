@@ -21,10 +21,11 @@ import Utils from './Util.test';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { Component, Driver, ON } from '@ohos.UiTest'
+import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let bundle_name: string = "com.example.actscommoneventmanagersupport"
+let bundle_name: string = "com.example.actscommoneventmanagersupport.static"
 let testAbilityContext: common.UIAbilityContext;
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let TAG: string = 'SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST ===>'
 
 export default function ActsCommonEventManagerSupportTest() {
@@ -32,24 +33,12 @@ export default function ActsCommonEventManagerSupportTest() {
     console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST START`)
     beforeAll(() => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
+      
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName: "entry",
-        onAbilityCreate: (abilitys: UIAbility): void => {
-          testAbilityContext = abilitys.context
-          hilog.info(domain, TAG, '%{public}s', 'onAbilityCreate end');
-
-        },
-      }, (err: BusinessError | null): void => {
-        if (err != null) {
-          hilog.info(domain, TAG, '%{public}s', '-----' + err.code);
-        }
-        hilog.info(domain, TAG, '%{public}s', 'BusinessError  end');
-      });
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name)
       await Utils.msSleep(2000)
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })
 
@@ -311,7 +300,6 @@ export default function ActsCommonEventManagerSupportTest() {
         hilog.info(domain, TAG, `Sub_Notification_Ces_Publish_Support_Static_1100 END`)
         done()
       })
-
 
     /*
      * @tc.number    : Sub_Notification_Ces_Publish_Support_Static_1500
@@ -625,7 +613,37 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-      /*
+    /*
+     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2800
+     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2800
+     * @tc.desc      : default application changed common event
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2800 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_DEFAULT_APPLICATION_CHANGED)
+        .assertEqual('usual.event.DEFAULT_APPLICATION_CHANGED')
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2800 END`)
+        done()
+    })
+
+    /*
+     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900
+     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900
+     * @tc.desc      : enter/exit kiosk mode common event
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900 START`)
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900` + JSON.stringify(commonEventManager.Support.COMMON_EVENT_KIOSK_MODE_ON))
+        expect(commonEventManager.Support.COMMON_EVENT_KIOSK_MODE_ON).assertEqual('usual.event.KIOSK_MODE_ON')
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900`+ JSON.stringify(commonEventManager.Support.COMMON_EVENT_KIOSK_MODE_OFF))
+        expect(commonEventManager.Support.COMMON_EVENT_KIOSK_MODE_OFF).assertEqual('usual.event.KIOSK_MODE_OFF')
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900 END`)
+        done()
+    })
+
+          /*
      * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3100
      * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3100
      * @tc.desc      : bluetooth handsfree ag connection state change common event
@@ -749,6 +767,7 @@ export default function ActsCommonEventManagerSupportTest() {
       console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4000 END`)
       done()
     })
+
 
   })
 }

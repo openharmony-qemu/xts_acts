@@ -22,9 +22,10 @@ import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../..
 import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
+import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let testAbilityContext: common.UIAbilityContext
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let TAG: string = 'testTEST_CASE_NAME'; //日志标识字符串,作为TEST_CASE_NAME标识当前runner类下的测试行为
 let bundle :string = 'com.example.actsnotificationrequesttest.static'
 export default function ActsNotificationRequestTest() {
@@ -32,23 +33,12 @@ export default function ActsNotificationRequestTest() {
     const TAG = 'SUB_NOTIFICATION_ANS_REQUEST_TEST ===>';
     beforeAll(() => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
+      
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName:"entry",
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          testAbilityContext = abilitys.context
-          hilog.info(domain, TAG, '%{public}s', 'onAbilityCreate end');
-        },
-      }, (err : BusinessError | null) : void => {
-        if (err != null ) {
-          hilog.info(domain, TAG, '%{public}s', '-----'+ err.code);
-        }
-        hilog.info(domain, TAG, '%{public}s', 'BusinessError  end');
-      });
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle)}`)
       await Utils.msSleep(2000)
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })
 

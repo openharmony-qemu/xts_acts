@@ -21,8 +21,10 @@ import common from '@ohos.app.ability.common';
 import {BusinessError} from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { Component, Driver, ON } from '@ohos.UiTest'
+import { AppStorage } from '@ohos.arkui.stateManagement'
+
 let bundle_name:string = "com.example.actscommoneventmanagertest.static"
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let testAbilityContext:common.UIAbilityContext;
 
 let subscriber: commonEventManager.CommonEventSubscriber
@@ -41,7 +43,7 @@ export default function ActsCommonEventManagerTest() {
      * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4700
      * @tc.desc: verify the callback function of publish
      */
-    it('Sub_Notification_Ans_Publish_Publish_Static_4700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('Sub_Notification_Ans_Publish_Publish_Static_4700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4700'
       try{
         hilog.info(domain, TAG, `Sub_Notification_Ans_Publish_Publish_Static_4700 START`)
@@ -71,7 +73,7 @@ export default function ActsCommonEventManagerTest() {
      * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4800
      * @tc.desc: publish options
      */
-    it('Sub_Notification_Ans_Publish_Publish_Static_4800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('Sub_Notification_Ans_Publish_Publish_Static_4800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4800'
       hilog.info(domain, TAG, `Sub_Notification_Ans_Publish_Publish_Static_4800 START`)
       let options: commonEventManager.CommonEventPublishData = {
@@ -105,7 +107,7 @@ export default function ActsCommonEventManagerTest() {
      * @tc.name: Sub_Notification_Ans_Subscriber_Subscribe_Static_1500
      * @tc.desc: createSubscriber
      */
-    it('Sub_Notification_Ans_Subscriber_Subscribe_Static_1500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('Sub_Notification_Ans_Subscriber_Subscribe_Static_1500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Subscribe_Static_1500'
       hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Subscribe_Static_1500 START`)
       let subscriber: commonEventManager.CommonEventSubscriber
@@ -143,7 +145,7 @@ export default function ActsCommonEventManagerTest() {
      * @tc.name: Sub_Notification_Ans_Subscriber_Subscribe_Static_1600
      * @tc.desc: createSubscriber
      */
-    it('Sub_Notification_Ans_Subscriber_Subscribe_Static_1600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('Sub_Notification_Ans_Subscriber_Subscribe_Static_1600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Subscribe_Static_1600'
       hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Subscribe_Static_1600 START`)
       let subscriber: commonEventManager.CommonEventSubscriber|undefined
@@ -167,7 +169,7 @@ export default function ActsCommonEventManagerTest() {
     * @tc.name: Sub_Notification_Ans_Subscriber_Subscribe_Static_0400
     * @tc.desc: subscribe
     */
-    it('Sub_Notification_Ans_Subscriber_Subscribe_Static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('Sub_Notification_Ans_Subscriber_Subscribe_Static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Subscribe_Static_0400'
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_Static_0400 START`)
 
@@ -220,13 +222,75 @@ export default function ActsCommonEventManagerTest() {
 
     })
 
+    /*
+    * @tc.number: Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401
+    * @tc.name: Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401
+    * @tc.desc: subscribe
+    */
+    it('Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let TAG:string = 'Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401'
+      console.info(`${TAG} Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401 START`)
+
+      let subscriber: commonEventManager.CommonEventSubscriber
+
+      let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: new Array<string>('event05')
+      }
+
+      try {
+          commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber: commonEventManager.CommonEventSubscriber|undefined) => {
+          if (err) {
+            console.error(`Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401 err, error code: ${err.code}, message: ${err.message}`)
+            expect(false).assertTrue()
+            done()
+          } else {
+            console.info(`Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401 success ${commonEventSubscriber}`)
+            if(commonEventSubscriber !== undefined){
+              subscriber = commonEventSubscriber as commonEventManager.CommonEventSubscriber
+
+              try {
+                commonEventManager.subscribeToEvent(subscriber, (data:commonEventManager.CommonEventData) => {
+                  console.info(`Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401 subscribe_1 OnReceive event success`)
+                  expect(true).assertTrue()
+                  done()
+                }).then(() => {
+                  console.info(`Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401 subscribe_1 success`)
+                  expect(true).assertTrue()
+                  done()
+                }).catch((err) => {
+                  console.error(`Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401 subscribe_1 err, code is ${err.code}, message is ${err.message}`)
+                  expect(false).assertTrue()
+                  done()
+                })
+              } catch (error) {
+                let err: BusinessError = error as BusinessError;
+                hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401 unsubscribe failed, code is ${err.code}, message is ${err.message}`)
+                expect(false).assertTrue()
+                done()
+              }
+            }else{
+              expect(false).assertTrue()
+              done()
+            }
+          }
+        })
+      } catch (error) {
+        let err: BusinessError = error as BusinessError;
+        hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401 unsubscribe failed, code is ${err.code}, message is ${err.message}`)
+        expect(false).assertTrue()
+        done()
+      }
+      console.info(`${TAG} Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401 END`)
+
+    })
+
 
     /*
       * @tc.number: Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200
       * @tc.name: Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200
       * @tc.desc: unsubscribe
      */
-    it('Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200'
       hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 START`)
       let subscriber: commonEventManager.CommonEventSubscriber
@@ -358,12 +422,12 @@ export default function ActsCommonEventManagerTest() {
 
     })
 
-    /*
+/*
      * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_Static_1700
      * @tc.name: Sub_Notification_Ans_Subscriber_Subscribe_Static_1700
      * @tc.desc: verify the callback function
      */
-    it('Sub_Notification_Ans_Subscriber_Subscribe_Static_1700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('Sub_Notification_Ans_Subscriber_Subscribe_Static_1700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Subscribe_Static_1700'
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_Static_1700 START`)
       let options:commonEventManager.CommonEventPublishData = {
@@ -407,7 +471,7 @@ export default function ActsCommonEventManagerTest() {
                   } else {
                     console.info(TAG+`setCode_1 success `)
                     expect(true).assertTrue()
-                    subscriber.getCode((err: BusinessError | null, Code:number|undefined) => {
+                    subscriber.getCode((err: BusinessError | null, Code:int|undefined) => {
                       if (err) {
                         console.info(TAG+`getCode_1 err, error code: ${err.code}, message: ${err.message}`)
                         expect(false).assertTrue()
@@ -520,7 +584,7 @@ export default function ActsCommonEventManagerTest() {
      * @tc.name: Sub_Notification_Ans_Subscriber_Subscribe_Static_1800
      * @tc.desc: verify the promise function
      */
-    it('Sub_Notification_Ans_Subscriber_Subscribe_Static_1800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('Sub_Notification_Ans_Subscriber_Subscribe_Static_1800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Subscribe_Static_1800'
       await Utils.msSleep(3000)
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_Static_1800 START`)
@@ -567,7 +631,7 @@ export default function ActsCommonEventManagerTest() {
                   done()
                 })
 
-                await subscriber.getCode().then((Code:number) => {
+                await subscriber.getCode().then((Code:int) => {
                   console.info(TAG+`getCode_2 success ${Code}`)
                   expect(Code).assertEqual(3)
                 }).catch((err:BusinessError):void => {
@@ -643,6 +707,7 @@ export default function ActsCommonEventManagerTest() {
       }
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_Static_1800 END`)
     })
+
 
     console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_TEST END`)
 
