@@ -132,7 +132,6 @@ struct webViewObjectEmbedEnhance {
   @State objectValue: string = 'application/view'
   @State isEmbed: boolean = true
   @State isComplete: number = -1;
-  @State str: string = ''
   @State isReceive: number = -1;
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -161,8 +160,7 @@ struct webViewObjectEmbedEnhance {
           .key('webViewObjectEmbedEnhanceButton')
           .onClick(async () => {
             console.info('emitKey-->'+ this.emitKey)
-            await waitForExist(() => this.isComplete, this.str, 0);
-            await waitForExist(() => this.isReceive, this.str, 0);
+            await waitForExist(() => this.isReceive, this.emitKey, 0);
             this.isReceive = -1;
             switch (this.emitKey) {
               case 'emitWebViewObjectEmbedId':
@@ -180,7 +178,7 @@ struct webViewObjectEmbedEnhance {
                   this.objectValue = 'application/view';
                   this.isComplete = -1;
                   this.controller.loadUrl($rawfile('object1.html'));
-                  await waitForExist(() => this.isComplete, this.str, 0);
+                  await waitForExist(() => this.isComplete, this.emitKey, 0);
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -194,8 +192,11 @@ struct webViewObjectEmbedEnhance {
                   this.objectType = 'embed';
                   this.objectValue = 'application/view';
                   this.isComplete = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isComplete, 'refresh' + this.emitKey, 0);
+                  this.isComplete = -1;
                   this.controller.loadUrl($rawfile('embed1.html'));
-                  await waitForExist(() => this.isComplete, this.str, 0);
+                  await waitForExist(() => this.isComplete, 'loadUrl' + this.emitKey, 0);
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -210,7 +211,7 @@ struct webViewObjectEmbedEnhance {
                   this.objectValue = 'application/view';
                   this.isComplete = -1;
                   this.controller.loadUrl($rawfile('embed1.html'));
-                  await waitForExist(() => this.isComplete, this.str, 0);
+                  await waitForExist(() => this.isComplete, this.emitKey, 0);
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -224,7 +225,7 @@ struct webViewObjectEmbedEnhance {
                   this.objectValue = 'application/view';
                   this.isComplete = -1;
                   this.controller.loadUrl($rawfile('object5.html'));
-                  await waitForExist(() => this.isComplete, this.str, 0);
+                  await waitForExist(() => this.isComplete, this.emitKey, 0);
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -237,8 +238,11 @@ struct webViewObjectEmbedEnhance {
                   this.objectType = 'object';
                   this.objectValue = 'application/test';
                   this.isComplete = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isComplete, 'refresh' + this.emitKey, 0);
+                  this.isComplete = -1;
                   this.controller.loadUrl($rawfile('object2.html'));
-                  await waitForExist(() => this.isComplete, this.str, 0);
+                  await waitForExist(() => this.isComplete, 'loadUrl' + this.emitKey, 0);
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -254,7 +258,7 @@ struct webViewObjectEmbedEnhance {
                   this.isComplete = -1;
                   console.info('emitWebViewObjectEmbedPdf isEmbed before-->'+this.isEmbed)
                   this.controller.loadUrl($rawfile('object4.html'));
-                  await waitForExist(() => this.isComplete, this.str, 0);
+                  await waitForExist(() => this.isComplete, this.emitKey, 0);
                   console.info('emitWebViewObjectEmbedPdf isEmbed after-->'+this.isEmbed)
                   if(this.isEmbed){
                     console.info('emitWebViewObjectEmbedPdf isEmbed if-->'+this.isEmbed)
@@ -278,7 +282,7 @@ struct webViewObjectEmbedEnhance {
                   this.isComplete = -1;
                   console.info('emitWebViewObjectEmbedAbc isEmbed before-->'+this.isEmbed)
                   this.controller.loadUrl($rawfile('object3.html'));
-                  await waitForExist(() => this.isComplete, this.str, 0);
+                  await waitForExist(() => this.isComplete, this.emitKey, 0);
                   console.info('emitWebViewObjectEmbedAbc isEmbed after-->'+this.isEmbed)
                   if(this.isEmbed){
                     console.info('emitWebViewObjectEmbedAbc isEmbed if-->'+this.isEmbed)
@@ -303,7 +307,7 @@ struct webViewObjectEmbedEnhance {
           .backgroundColor(Color.Yellow)
         // 开启同层渲染 isPrivacy
         if (this.isPrivacy)   {
-          Web({ src: 'www.example.com', controller: this.controller })
+          Web({ src: '', controller: this.controller })
             .onPageEnd((event) => {
               console.log('web pageEnd==>' + event.url);
               this.isComplete = 0;
@@ -317,13 +321,14 @@ struct webViewObjectEmbedEnhance {
             .enableNativeEmbedMode(true)
             .registerNativeEmbedRule(this.objectType, this.objectValue)
             .onNativeEmbedLifecycleChange((event) => {
-              console.info('current objectType' + this.objectType);
-              console.info('current objectValue' + this.objectValue);
-              console.info('NativeEmbed surfaceId' + event.surfaceId);
-              console.info('NativeEmbed tag' + event.info?.tag);
+              console.info(this.emitKey + ' current objectType' + this.objectType);
+              console.info(this.emitKey + ' current objectValue' + this.objectValue);
+              console.info(this.emitKey + ' NativeEmbed surfaceId' + event.surfaceId);
+              console.info(this.emitKey + ' NativeEmbed tag' + event.info?.tag);
               console.info('key==>' + this.emitKey)
               this.isEmbed = true
-              console.info('onNativeEmbedLifecycleChange==>' + this.isEmbed)
+              console.info(this.emitKey + ' onNativeEmbedLifecycleChange==>' + this.isEmbed)
+              console.info('key==>' + this.emitKey + ' ' + event.status)
               // 当加载页面中有Embed标签会触发Create
               if (event.status == NativeEmbedStatus.CREATE) {
                 this.isChange = true;
@@ -431,9 +436,9 @@ struct webViewObjectEmbedEnhance {
                   Utils.emitEvent('fail', 153690);
                 }
               }else if (event.status == NativeEmbedStatus.UPDATE) {
-                console.info('NativeEmbed update' + JSON.stringify(event.info));
+                console.info(this.emitKey + ' NativeEmbed update' + JSON.stringify(event.info));
               } else {
-                console.info('NativeEmbed destroy' + JSON.stringify(event.info));
+                console.info(this.emitKey + ' NativeEmbed destroy' + JSON.stringify(event.info));
               }
             })
             .onNativeEmbedGestureEvent((event) => {
@@ -441,7 +446,7 @@ struct webViewObjectEmbedEnhance {
 
             })
         } else {
-          Web({ src: 'www.example.com', controller: this.controller })
+          Web({ src: '', controller: this.controller })
             .onPageEnd((event) => {
               console.log('web pageEnd==>' + event.url);
               this.isComplete = 0;
