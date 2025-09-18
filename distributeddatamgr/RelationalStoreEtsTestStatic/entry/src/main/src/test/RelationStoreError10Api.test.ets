@@ -98,7 +98,7 @@ export default function RelationStoreError10Test() {
     })
     /**
      * @tc.name       : RelationStoreError10Test0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error00Test_2300
+     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error10Test_2300
      * @tc.desc       : Transaction goTo
      * @tc.size       : MediumTest
      * @tc.type       : Function
