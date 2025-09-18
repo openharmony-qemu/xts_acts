@@ -131,7 +131,8 @@ struct WebComponent {
               try {
                 this.isForceZoomEnabled = false;
                 let driver = Driver.create();
-                this.isPageEnd = -1
+                this.isPageEnd = -1;
+                this.flag = 2;
                 // this.webController.loadUrl('www.example.com')
                 // await waitForExist(()=>this.isPageEnd, this.str, 0);
                 // this.isPageEnd = -1;
@@ -168,12 +169,11 @@ struct WebComponent {
             this.isPageEnd = 0;
           })
           .onScaleChange((e) => {
-            this.ScaleChange = true;
             console.info("scale changed new = " + e.newScale + ", old = " + e.oldScale)
             if(this.flag == 1) {
               Utils.emitEvent(true, 20250913)
-            } else if(this.flag == 2) {
-              Utils.emitEvent(true, 20250914)
+            }  else {
+              this.ScaleChange = true;
             }
           })
           .forceEnableZoom(this.isForceZoomEnabled)
