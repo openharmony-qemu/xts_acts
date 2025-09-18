@@ -40,7 +40,7 @@ export default function abilityTest() {
   describe("abilityTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
-    /*
+    /**
      * @tc.number Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
      * @tc.name Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
      * @tc.desc Test getLauncherAbilityInfoSync with valid value.
