@@ -13,11 +13,12 @@
  * limitations under the License.
  */
 import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } from "../../../hypium/index"
-import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@ohos.UiTest'
+import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@kit.TestKit'
 import  hilog  from '@ohos.hilog'
+import display from '@ohos.display';
 import { Utils, startAbility, stopApplication } from './Util.test';
 import { BusinessError } from '@ohos.base';
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 const waitUiReadyMs: int = 1000;
 const DeviceErrorCode: string = "17000005";
@@ -348,6 +349,31 @@ export default function uitestDriverTest() {
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text == null).assertTrue();
       await stopApplication('com.uitestScene.acts');
+    })
+
+    /*
+     * @tc.number: uitestDriverTest_0037
+     * @tc.name: testPressHomeWithId_static
+     * @tc.desc: pressHome test
+     */
+    it('testPressHomeWithId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `testPressHomeWithId_static start`);
+      try {
+        let driver: Driver = Driver.create();
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let disPlay = display.getDefaultDisplaySync();
+        hilog.info(domain, tag, `testPressHomeWithId_static disPlay is: ${JSON.stringify(disPlay)}`);
+        await driver.pressHome(disPlay.id.toInt())
+        await driver.delayMs(1000)
+        let button = await driver.findComponent(ON.text('next page'))
+        expect(button == null).assertTrue()
+      } catch(error) {
+        hilog.info(domain, tag, `testPressHomeWithId_static error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      await stopApplication('com.uitestScene.acts')
+      hilog.info(domain, tag, `testPressHomeWithId_static end`);
     })
   })
 }
