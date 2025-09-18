@@ -14,8 +14,10 @@
  */
 import TestInvalidateAttributes from './invalidate/TestInvalidateAttributes.test'
 import TestRegisterCommonEvent from './commonEvent/TestRegisterCommonEvent.test'
+import EdgesPositionTest from './position/EdgesPositionTest.test'
 
 export default function testsuite() {
   TestInvalidateAttributes();
   TestRegisterCommonEvent();
+  EdgesPositionTest();
 }
