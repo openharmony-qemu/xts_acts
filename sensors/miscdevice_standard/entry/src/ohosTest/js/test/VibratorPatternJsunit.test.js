@@ -928,23 +928,9 @@ export default function VibratorJsTest_misc_9() {
                     usage:"alarm",
                     systemUsage:false
                 },(error) => {
-                    if (error && !isAvailable) {
-                        console.info(TAG + ` isAvailable is false error: error.code: ${error.code},error.message: ${error.message}`);
-                        expect(error.code).assertEqual(14600101);
-                        done();
-                    } else if (error && isAvailable) {
-                        console.info(TAG + ` startVibration error: error.code: ${error.code},error.message: ${error.message}`);
-                        expect(false).assertTrue();
-                        done();
-                    } else if (error == undefined && !isAvailable) {
-                        console.info(TAG + `isAvailable is false but startVibration success`);
-                        expect(false).assertTrue();
-                        done();
-                    } else {
-                        console.info(TAG + ' startVibration success' );
-                        expect(true).assertTrue();
-                        done();
-                    }
+                    console.info(TAG + ` startVibration error: error.code: ${error.code},error.message: ${error.message}`);
+                    expect(false).assertTrue();
+                    done();
                 })
             } catch (error) {
                 console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
@@ -1008,23 +994,9 @@ export default function VibratorJsTest_misc_9() {
                     usage:"alarm",
                     systemUsage:false
                 },(error) => {
-                    if (error && !isAvailable) {
-                        console.info(TAG + ` isAvailable is false error: error.code: ${error.code},error.message: ${error.message}`);
-                        expect(error.code).assertEqual(14600101);
-                        done();
-                    } else if (error && isAvailable) {
-                        console.info(TAG + ` startVibration error: error.code: ${error.code},error.message: ${error.message}`);
-                        expect(false).assertTrue();
-                        done();
-                    } else if (error == undefined && !isAvailable) {
-                        console.info(TAG + `isAvailable is false but startVibration success`);
-                        expect(false).assertTrue();
-                        done();
-                    } else {
-                        console.info(TAG + ' startVibration success' );
-                        expect(true).assertTrue();
-                        done();
-                    }
+                    console.info(TAG + ` startVibration error: error.code: ${error.code},error.message: ${error.message}`);
+                    expect(false).assertTrue();
+                    done();
                 })
             } catch (error) {
                 console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
@@ -1088,23 +1060,9 @@ export default function VibratorJsTest_misc_9() {
                     usage:"alarm",
                     systemUsage:false
                 },(error) => {
-                    if (error && !isAvailable) {
-                        console.info(TAG + ` isAvailable is false error: error.code: ${error.code},error.message: ${error.message}`);
-                        expect(error.code).assertEqual(14600101);
-                        done();
-                    } else if (error && isAvailable) {
-                        console.info(TAG + ` startVibration error: error.code: ${error.code},error.message: ${error.message}`);
-                        expect(false).assertTrue();
-                        done();
-                    } else if (error == undefined && !isAvailable) {
-                        console.info(TAG + `isAvailable is false but startVibration success`);
-                        expect(false).assertTrue();
-                        done();
-                    } else {
-                        console.info(TAG + ' startVibration success' );
-                        expect(true).assertTrue();
-                        done();
-                    }
+                    console.info(TAG + ` startVibration error: error.code: ${error.code},error.message: ${error.message}`);
+                    expect(false).assertTrue();
+                    done();
                 })
             } catch (error) {
                 console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
@@ -1168,23 +1126,9 @@ export default function VibratorJsTest_misc_9() {
                     usage:"alarm",
                     systemUsage:false
                 },(error) => {
-                    if (error && !isAvailable) {
-                        console.info(TAG + ` isAvailable is false error: error.code: ${error.code},error.message: ${error.message}`);
-                        expect(error.code).assertEqual(14600101);
-                        done();
-                    } else if (error && isAvailable) {
-                        console.info(TAG + ` startVibration error: error.code: ${error.code},error.message: ${error.message}`);
-                        expect(false).assertTrue();
-                        done();
-                    } else if (error == undefined && !isAvailable) {
-                        console.info(TAG + `isAvailable is false but startVibration success`);
-                        expect(false).assertTrue();
-                        done();
-                    } else {
-                        console.info(TAG + ' startVibration success' );
-                        expect(true).assertTrue();
-                        done();
-                    }
+                    console.info(TAG + ` startVibration error: error.code: ${error.code},error.message: ${error.message}`);
+                    expect(false).assertTrue();
+                    done();
                 })
             } catch (error) {
                 console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
@@ -1248,23 +1192,9 @@ export default function VibratorJsTest_misc_9() {
                     usage:"alarm",
                     systemUsage:false
                 },(error) => {
-                    if (error && !isAvailable) {
-                        console.info(TAG + ` isAvailable is false error: error.code: ${error.code},error.message: ${error.message}`);
-                        expect(error.code).assertEqual(14600101);
-                        done();
-                    } else if (error && isAvailable) {
-                        console.info(TAG + ` startVibration error: error.code: ${error.code},error.message: ${error.message}`);
-                        expect(false).assertTrue();
-                        done();
-                    } else if (error == undefined && !isAvailable) {
-                        console.info(TAG + `isAvailable is false but startVibration success`);
-                        expect(false).assertTrue();
-                        done();
-                    } else {
-                        console.info(TAG + ' startVibration success' );
-                        expect(true).assertTrue();
-                        done();
-                    }
+                    console.info(TAG + ` startVibration error: error.code: ${error.code},error.message: ${error.message}`);
+                    expect(false).assertTrue();
+                    done();
                 })
             } catch (error) {
                 console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
@@ -1313,7 +1243,7 @@ export default function VibratorJsTest_misc_9() {
                     points:pointsMe,
                     index:0
                 }
-                builder.addContinuousEvent(0, 6000, param);
+                builder.addContinuousEvent(0, 5001, param);
                 console.info(TAG + `  builder.build is : ${JSON.stringify(builder.build())}`);
             }catch (error){
                 console.info(TAG + `addContinuousEvent catch error ,error.code: ${error.code},error.message: ${error.message}`);
@@ -1328,23 +1258,9 @@ export default function VibratorJsTest_misc_9() {
                     usage:"alarm",
                     systemUsage:false
                 },(error) => {
-                    if (error && !isAvailable) {
-                        console.info(TAG + ` isAvailable is false error: error.code: ${error.code},error.message: ${error.message}`);
-                        expect(error.code).assertEqual(14600101);
-                        done();
-                    } else if (error && isAvailable) {
-                        console.info(TAG + ` startVibration error: error.code: ${error.code},error.message: ${error.message}`);
-                        expect(false).assertTrue();
-                        done();
-                    } else if (error == undefined && !isAvailable) {
-                        console.info(TAG + `isAvailable is false but startVibration success`);
-                        expect(false).assertTrue();
-                        done();
-                    } else {
-                        console.info(TAG + ' startVibration success' );
-                        expect(true).assertTrue();
-                        done();
-                    }
+                    console.info(TAG + ` startVibration error: error.code: ${error.code},error.message: ${error.message}`);
+                    expect(false).assertTrue();
+                    done();
                 })
             } catch (error) {
                 console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
