@@ -77,7 +77,7 @@ struct WebComponent {
                 this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
                 this.isForceZoomEnabled = true;
-                this.webController.zoom(1.05);
+                this.webController.zoom(1.25);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
@@ -112,7 +112,7 @@ struct WebComponent {
                 this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
                 this.isForceZoomEnabled = false;
-                this.webController.zoom(1.05);
+                this.webController.zoom(1.25);
                 await Utils.sleep(2000);
                 //isForceZoomEnabled设置为false 应该是不触发 this.ScaleChange 应该为false
                 if(this.ScaleChange) {
