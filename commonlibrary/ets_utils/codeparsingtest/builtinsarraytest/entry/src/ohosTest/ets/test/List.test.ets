@@ -91,9 +91,31 @@ import builtinsRegExpMatchArrayGroupsTest from "./RegExpArray/RegExpMatchArrayGr
 import builtinsRegExpMatchArrayIndexTest from "./RegExpArray/RegExpMatchArrayIndex.test";
 import builtinsRegExpMatchArrayInputTest from "./RegExpArray/RegExpMatchArrayInput.test";
 import builtinsRegExpMatchArrayStringTest from "./RegExpArray/RegExpMatchArrayString.test";
+import typeArrayBigInt64ArrayTest from './TypeArray/TypeArrayBigInt64Array.test';
+import typeArrayBigUint64ArrayTest from './TypeArray/TypeArrayBigUint64Array.test';
+import typeArrayFloat32ArrayTest from './TypeArray/TypeArrayFloat32Array.test';
+import typeArrayFloat64ArrayTest from './TypeArray/TypeArrayFloat64Array.test';
+import typeArrayInt16ArrayTest from './TypeArray/TypeArrayInt16Array.test';
+import typeArrayInt32ArrayTest from './TypeArray/TypeArrayInt32Array.test';
+import typeArrayInt8ArrayTest from './TypeArray/TypeArrayInt8Array.test';
+import typeArrayUint16ArrayTest from './TypeArray/TypeArrayUint16Array.test';
+import typeArrayUint32ArrayTest from './TypeArray/TypeArrayUint32Array.test';
+import typeArrayUint8ArrayTest from './TypeArray/TypeArrayUint8Array.test';
+import typeArrayUint8ClampedArrayTest from './TypeArray/TypeArrayUint8ClampedArray.test';
 
 
 export default function testsuite() {
+  typeArrayBigInt64ArrayTest();
+  typeArrayBigUint64ArrayTest();
+  typeArrayFloat32ArrayTest();
+  typeArrayFloat64ArrayTest();
+  typeArrayInt8ArrayTest();
+  typeArrayInt16ArrayTest();
+  typeArrayInt32ArrayTest();
+  typeArrayUint8ArrayTest();
+  typeArrayUint8ClampedArrayTest();
+  typeArrayUint16ArrayTest();
+  typeArrayUint32ArrayTest();
   builtinsArrayConcatTest();
   builtinsArrayEntriesTest();
   builtinsArrayCopyWithinTest();
