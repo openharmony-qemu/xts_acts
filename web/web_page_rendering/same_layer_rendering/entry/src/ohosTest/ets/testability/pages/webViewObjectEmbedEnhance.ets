@@ -176,6 +176,7 @@ struct webViewObjectEmbedEnhance {
                   this.isPrivacy = true;
                   this.objectType = 'object';
                   this.objectValue = 'application/view';
+                  await Utils.sleep(1000);
                   this.isComplete = -1;
                   this.controller.loadUrl($rawfile('object1.html'));
                   await waitForExist(() => this.isComplete, this.emitKey, 0);
@@ -191,6 +192,7 @@ struct webViewObjectEmbedEnhance {
                   this.isPrivacy = true;
                   this.objectType = 'embed';
                   this.objectValue = 'application/view';
+                  await Utils.sleep(1000);
                   this.isComplete = -1;
                   this.controller.loadUrl($rawfile('embed1.html'));
                   await waitForExist(() => this.isComplete, 'loadUrl' + this.emitKey, 0);
@@ -206,6 +208,7 @@ struct webViewObjectEmbedEnhance {
                   this.isPrivacy = true;
                   this.objectType = 'embed';
                   this.objectValue = 'application/view';
+                  await Utils.sleep(1000);
                   this.isComplete = -1;
                   this.controller.loadUrl($rawfile('embed1.html'));
                   await waitForExist(() => this.isComplete, this.emitKey, 0);
@@ -220,6 +223,7 @@ struct webViewObjectEmbedEnhance {
                   this.isPrivacy = true;
                   this.objectType = 'object';
                   this.objectValue = 'application/view';
+                  await Utils.sleep(1000);
                   this.isComplete = -1;
                   this.controller.loadUrl($rawfile('object5.html'));
                   await waitForExist(() => this.isComplete, this.emitKey, 0);
@@ -234,6 +238,7 @@ struct webViewObjectEmbedEnhance {
                   this.isPrivacy = true;
                   this.objectType = 'object';
                   this.objectValue = 'application/test';
+                  await Utils.sleep(1000);
                   this.isComplete = -1;
                   this.controller.loadUrl($rawfile('object2.html'));
                   await waitForExist(() => this.isComplete, 'loadUrl' + this.emitKey, 0);
@@ -249,6 +254,7 @@ struct webViewObjectEmbedEnhance {
                   this.objectType = 'object'
                   this.objectValue = 'application/pdf'
                   this.isEmbed = false;
+                  await Utils.sleep(1000);
                   this.isComplete = -1;
                   console.info('emitWebViewObjectEmbedPdf isEmbed before-->'+this.isEmbed)
                   this.controller.loadUrl($rawfile('object4.html'));
@@ -273,6 +279,7 @@ struct webViewObjectEmbedEnhance {
                   this.objectType = 'abc';
                   this.objectValue = 'test';
                   this.isEmbed = false;
+                  await Utils.sleep(1000);
                   this.isComplete = -1;
                   console.info('emitWebViewObjectEmbedAbc isEmbed before-->'+this.isEmbed)
                   this.controller.loadUrl($rawfile('object3.html'));
