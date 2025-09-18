@@ -98,7 +98,7 @@ export default function LifeCycleLinstenerStaticTest() {
         try {
           hilog.info(domain, tag, `${itName} on applicationStateChange`);
           const cb = new CustomApplicationStateChangeCallback();
-          applicationContext.on('applicationStateChange', cb);
+          applicationContext.onApplicationStateChange(cb);
 
           hilog.info(domain, tag, `${itName} EntryAbility moveAbilityToBackground`);
           await uiAbilityContext.moveAbilityToBackground()
@@ -113,7 +113,7 @@ export default function LifeCycleLinstenerStaticTest() {
           expect(cb.isForeground).assertTrue();
 
           hilog.info(domain, tag, `${itName} off applicationStateChange`);
-          applicationContext.off('applicationStateChange', cb);
+          applicationContext.offApplicationStateChange(cb);
         } catch (err: BusinessError) {
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
@@ -136,10 +136,10 @@ export default function LifeCycleLinstenerStaticTest() {
         try {
           hilog.info(domain, tag, `${itName} on applicationStateChange`);
           const cb = new CustomApplicationStateChangeCallback();
-          applicationContext.on('applicationStateChange', cb);
+          applicationContext.onApplicationStateChange(cb);
 
           hilog.info(domain, tag, `${itName} off applicationStateChange`);
-          applicationContext.off('applicationStateChange', cb);
+          applicationContext.offApplicationStateChange(cb);
 
           hilog.info(domain, tag, `${itName} start EntryAbility1 ability`);
           const want: Want = {
@@ -188,10 +188,10 @@ export default function LifeCycleLinstenerStaticTest() {
         try {
           hilog.info(domain, tag, `${itName} on applicationStateChange`);
           const cb = new CustomApplicationStateChangeCallback();
-          applicationContext.on('applicationStateChange', cb);
+          applicationContext.onApplicationStateChange(cb);
 
           hilog.info(domain, tag, `${itName} off applicationStateChange`);
-          applicationContext.off('applicationStateChange');
+          applicationContext.offApplicationStateChange();
 
           hilog.info(domain, tag, `${itName} start EntryAbility1 ability`);
           const want: Want = {

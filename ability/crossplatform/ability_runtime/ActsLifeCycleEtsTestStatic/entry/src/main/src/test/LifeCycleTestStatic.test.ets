@@ -87,10 +87,10 @@ export default function lifecycleStaticTest() {
           const abilityLifecycleCb = new CustomAbilityLifecycleCallback();
 
           hilog.info(domain, tag, `${itName} on abilityLifecycle1`);
-          const id1 = applicationContext.on("abilityLifecycle", abilityLifecycleCb);
+          const id1 = applicationContext.onAbilityLifecycle(abilityLifecycleCb);
           hilog.info(domain, tag, `${itName} on abilityLifecycle1 id: ${id1}`);
           hilog.info(domain, tag, `${itName} off abilityLifecycle1`);
-          applicationContext.off("abilityLifecycle", id1, (err: BusinessError<void> | null) => {
+          applicationContext.offAbilityLifecycle(id1, (err: BusinessError<void> | null) => {
             hilog.info(domain, tag, `${itName} off abilityLifecycle1 error code: ${err?.code}, msg: ${err?.message}`);
             if (err?.code) {
               hilog.info(domain, tag, `${itName} off abilityLifecycle1 fail`);
@@ -102,10 +102,10 @@ export default function lifecycleStaticTest() {
           await Utils.msSleep(2000);
 
           hilog.info(domain, tag, `${itName} on abilityLifecycle2`);
-          const id2 = applicationContext.on("abilityLifecycle", abilityLifecycleCb);
+          const id2 = applicationContext.onAbilityLifecycle(abilityLifecycleCb);
           hilog.info(domain, tag, `${itName} on abilityLifecycle2 id: ${id2}`);
           hilog.info(domain, tag, `${itName} off abilityLifecycle2`);
-          applicationContext.off("abilityLifecycle", id2, (err: BusinessError<void> | null) => {
+          applicationContext.offAbilityLifecycle(id2, (err: BusinessError<void> | null) => {
             hilog.info(domain, tag, `${itName} off abilityLifecycle2 error code: ${err?.code}, msg: ${err?.message}`);
             if (err?.code) {
               hilog.info(domain, tag, `${itName} off abilityLifecycle2 fail`);
@@ -117,10 +117,10 @@ export default function lifecycleStaticTest() {
           await Utils.msSleep(2000);
 
           hilog.info(domain, tag, `${itName} on abilityLifecycle3`);
-          const id3 = applicationContext.on("abilityLifecycle", abilityLifecycleCb);
+          const id3 = applicationContext.onAbilityLifecycle(abilityLifecycleCb);
           hilog.info(domain, tag, `${itName} on abilityLifecycle3 id: ${id3}`);
           hilog.info(domain, tag, `${itName} off abilityLifecycle3`);
-          applicationContext.off("abilityLifecycle", id3).then(() => {
+          applicationContext.offAbilityLifecycle(id3).then(() => {
             hilog.info(domain, tag, `${itName} off abilityLifecycle3 success`);
             expect(id1 >= 0).assertTrue();
             expect(`${id2}`).assertEqual(`${id1 + 1}`);
