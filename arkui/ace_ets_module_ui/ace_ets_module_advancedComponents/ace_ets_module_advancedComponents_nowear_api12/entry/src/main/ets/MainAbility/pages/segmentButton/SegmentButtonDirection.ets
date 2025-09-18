@@ -94,7 +94,7 @@ struct SegmentButtonDirection {
 
           }
 
-          Row() {
+          Column() {
             Button('LocalizedTextPadding').id('textPadding').onClick(() => {
               this.tabOptions.localizedTextPadding = {
                 start: LengthMetrics.vp(5), end: LengthMetrics.vp(15)
@@ -140,6 +140,8 @@ struct SegmentButtonDirection {
 
         }.width('90%')
       }.width('100%')
-    }.height('100%')
+    }
+    .height('90%')
+    .margin({top: '2%'})
   }
 }

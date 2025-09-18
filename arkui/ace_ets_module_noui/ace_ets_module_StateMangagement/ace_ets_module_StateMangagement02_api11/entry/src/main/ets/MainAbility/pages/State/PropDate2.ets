@@ -144,5 +144,7 @@ struct PropDate2 {
       }).id("Prop_Date2").width("100%").height('5%')
       ChildDate2({selectedDate2: this.selectedDate})
     }.width('100%')
+    .height('90%')
+    .margin({top: '2%'})
   }
 }
