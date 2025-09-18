@@ -36,12 +36,12 @@ export default function abilityTest() {
 
 
         /**
-         * @tc.number SUB_ABILITY_ABILITYRUNTIME_PHOTOEDITOREXTENSION_0100
-         * @tc.name ACTS_PhotoEditorExtension_static_0100
-         * @tc.desc Start the PhotoEditorExtensionAbility, and the test is successful.
-         * @tc.size MediumTest
-         * @tc.level Level0
-         * @tc.type Function
+         * @tc.number ACTS_PhotoEditorExtension_static_0100
+         * @tc.name   ACTS_PhotoEditorExtension_static_0100
+         * @tc.desc   Start the PhotoEditorExtensionAbility, and the test is successful.
+         * @tc.size   MediumTest
+         * @tc.level  Level0
+         * @tc.type   Function
         **/
         it("ACTS_PhotoEditorExtension_static_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
             const newTag = 'ACTS_PhotoEditorExtension_static_0100 == ';
