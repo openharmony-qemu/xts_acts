@@ -61,6 +61,7 @@ let netId = 100;
 
 export default function eapNoPTest() {
   describe('eapNoPTest', () => {
+    
     /**
      * @tc.number SUB_Communication_Eap_RegCustomEapHandler_Nop_0100
      * @tc.name  testCommunicationEapRegCustomEapHandlerNop0100
