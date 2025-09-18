@@ -192,9 +192,6 @@ struct webViewObjectEmbedEnhance {
                   this.objectType = 'embed';
                   this.objectValue = 'application/view';
                   this.isComplete = -1;
-                  this.controller.refresh();
-                  await waitForExist(() => this.isComplete, 'refresh' + this.emitKey, 0);
-                  this.isComplete = -1;
                   this.controller.loadUrl($rawfile('embed1.html'));
                   await waitForExist(() => this.isComplete, 'loadUrl' + this.emitKey, 0);
                 } catch (error) {
@@ -237,9 +234,6 @@ struct webViewObjectEmbedEnhance {
                   this.isPrivacy = true;
                   this.objectType = 'object';
                   this.objectValue = 'application/test';
-                  this.isComplete = -1;
-                  this.controller.refresh();
-                  await waitForExist(() => this.isComplete, 'refresh' + this.emitKey, 0);
                   this.isComplete = -1;
                   this.controller.loadUrl($rawfile('object2.html'));
                   await waitForExist(() => this.isComplete, 'loadUrl' + this.emitKey, 0);
@@ -329,6 +323,7 @@ struct webViewObjectEmbedEnhance {
               this.isEmbed = true
               console.info(this.emitKey + ' onNativeEmbedLifecycleChange==>' + this.isEmbed)
               console.info('key==>' + this.emitKey + ' ' + event.status)
+              console.info('key==>' + this.emitKey + ' ' + NativeEmbedStatus.CREATE)
               // 当加载页面中有Embed标签会触发Create
               if (event.status == NativeEmbedStatus.CREATE) {
                 this.isChange = true;
@@ -348,6 +343,7 @@ struct webViewObjectEmbedEnhance {
                   }
                 }
                 if (this.emitKey == 'emitWebViewObjectEmbedSrc') {
+                  console.log('key==>' + this.emitKey + ' ' + event.info?.src)
                   if (event.info?.src) {
                     Utils.emitEvent('success', 153720);
                   }else{
@@ -419,8 +415,8 @@ struct webViewObjectEmbedEnhance {
                 if (this.emitKey == 'emitWebViewObjectEmbedTest') {
                   let tag = event.info?.tag
                   let type = event.info?.type
-                  console.info('emitWebViewObjectEmbedTest tag='+ tag)
-                  console.info('emitWebViewObjectEmbedTest type='+ type)
+                  console.info('emitWebViewObjectEmbedTest tag='+ tag + ' ' + this.objectType)
+                  console.info('emitWebViewObjectEmbedTest type='+ type + ' ' + this.objectValue)
                   if(tag?.toLowerCase() === this.objectType && type === this.objectValue){
                     Utils.emitEvent('success', 153810);
                   }else{
