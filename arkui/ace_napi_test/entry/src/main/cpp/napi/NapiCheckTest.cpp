@@ -5493,14 +5493,17 @@ static void ThreadSafeCallback(napi_env env, napi_value js_cb, void *context, vo
     napi_get_undefined(env, &undefined);
     
     // 创建测试数据并调用回调函数
+    const int32_t testValue1 = 12;
+    const int32_t testValue2 = 15;
     napi_value number1 = nullptr;
     napi_value number2 = nullptr;
-    napi_create_int32(env, 12, &number1);
-    napi_create_int32(env, 15, &number2);
+    napi_create_int32(env, testValue1, &number1);
+    napi_create_int32(env, testValue2, &number2);
     
-    napi_value argv[2] = {number1, number2};
+    const size_t argc = 2;
+    napi_value argv[argc] = {number1, number2};
     napi_value result = nullptr;
-    napi_call_function(env, undefined, js_cb, 2, argv, &result);
+    napi_call_function(env, undefined, js_cb, argc, argv, &result);
     
     // 验证回调函数被正确调用
     if (result != nullptr) {
@@ -5904,8 +5907,6 @@ static napi_value NapiExtensionTest004(napi_env env, napi_callback_info info)
     napi_get_boolean(env, testResult, &result);
     return result;
 }
-
-
 
 // 创建低优先级测试回调函数
 static napi_value CreateLowPriorityCallback(napi_env env)
