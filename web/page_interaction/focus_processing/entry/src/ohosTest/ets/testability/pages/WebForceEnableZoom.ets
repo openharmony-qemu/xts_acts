@@ -87,9 +87,9 @@ struct WebComponent {
                 this.flag = 2;
                 let driver = Driver.create();
                 this.isPageEnd = -1
-                // this.webController.loadUrl('www.example.com')
-                // await waitForExist(()=>this.isPageEnd, this.str, 0);
-                // this.isPageEnd = -1;
+                this.webController.loadUrl('www.example.com')
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
+                this.isPageEnd = -1;
                 this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
                 let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
@@ -107,9 +107,9 @@ struct WebComponent {
                 let driver = Driver.create();
                 this.isPageEnd = -1;
                 this.ScaleChange = false;
-                // this.webController.loadUrl('www.example.com')
-                // await waitForExist(()=>this.isPageEnd, this.str, 0);
-                // this.isPageEnd = -1;
+                this.webController.loadUrl('www.example.com')
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
+                this.isPageEnd = -1;
                 this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
                 let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
@@ -135,9 +135,9 @@ struct WebComponent {
                 this.isPageEnd = -1;
                 this.flag = 2;
                 this.ScaleChange = false;
-                // this.webController.loadUrl('www.example.com')
-                // await waitForExist(()=>this.isPageEnd, this.str, 0);
-                // this.isPageEnd = -1;
+                this.webController.loadUrl('www.example.com')
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
+                this.isPageEnd = -1;
                 this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
                 let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
