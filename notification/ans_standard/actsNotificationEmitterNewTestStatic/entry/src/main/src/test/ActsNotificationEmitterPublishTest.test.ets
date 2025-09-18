@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,13 +29,13 @@ export default function ActsNotificationEmitterPublishTest() {
   describe("ActsNotificationEmitterPublishTest", (): void => {
     hilog.info(domain, TAG, '%{public}s', 'describe start');
 
-    /*
-      * @tc.number : Sub_Notification_Emitter_Publish_Emit_Static_0500
-      * @tc.name   : Sub_Notification_Emitter_Publish_Emit_Static_0500
-      * @tc.desc   : emitter.on 1   emitter.off 1   emitter.emit 1
-      * @tc.size   : MediumTest
-      * @tc.type   : Function
-      * @tc.level  : Level 2
+    /**
+      * @tc.number  Sub_Notification_Emitter_Publish_Emit_Static_0500
+      * @tc.name  Sub_Notification_Emitter_Publish_Emit_Static_0500
+      * @tc.desc  emitter.on 1   emitter.off 1   emitter.emit 1
+      * @tc.size  MediumTest
+      * @tc.type  Function
+      * @tc.level Level 2
       */
     it('Sub_Notification_Emitter_Publish_Emit_Static_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'Sub_Notification_Emitter_Publish_Emit_0500'
@@ -79,13 +79,13 @@ export default function ActsNotificationEmitterPublishTest() {
       }
     })
 
-    /*
-      * @tc.number : Sub_Notification_Emitter_Publish_Emit_Static_0600
-      * @tc.name   : Sub_Notification_Emitter_Publish_Emit_Static_0600
-      * @tc.desc   : emitter.once 1   emitter.off 1   emitter.emit 1
-      * @tc.size   : MediumTest
-      * @tc.type   : Function
-      * @tc.level  : Level 2
+    /**
+      * @tc.number  Sub_Notification_Emitter_Publish_Emit_Static_0600
+      * @tc.name  Sub_Notification_Emitter_Publish_Emit_Static_0600
+      * @tc.desc  emitter.once 1   emitter.off 1   emitter.emit 1
+      * @tc.size  MediumTest
+      * @tc.type  Function
+      * @tc.level Level 2
       */
     it('Sub_Notification_Emitter_Publish_Emit_Static_0600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'Sub_Notification_Emitter_Publish_Emit_0600'
@@ -129,13 +129,13 @@ export default function ActsNotificationEmitterPublishTest() {
       }
     })
 
-    /*
-      * @tc.number : Sub_Notification_Emitter_Publish_Emit_Static_0700
-      * @tc.name   : Sub_Notification_Emitter_Publish_Emit_Static_0700
-      * @tc.desc   : emitter.on 1   emitter.off 2   emitter.emit 1
-      * @tc.size   : MediumTest
-      * @tc.type   : Function
-      * @tc.level  : Level 2
+    /**
+      * @tc.number  Sub_Notification_Emitter_Publish_Emit_Static_0700
+      * @tc.name  Sub_Notification_Emitter_Publish_Emit_Static_0700
+      * @tc.desc  emitter.on 1   emitter.off 2   emitter.emit 1
+      * @tc.size  MediumTest
+      * @tc.type  Function
+      * @tc.level Level 2
       */
     it('Sub_Notification_Emitter_Publish_Emit_Static_0700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'Sub_Notification_Emitter_Publish_Emit_0700'
@@ -178,13 +178,13 @@ export default function ActsNotificationEmitterPublishTest() {
       }
     })
 
-    /*
-      * @tc.number : Sub_Notification_Emitter_Publish_Emit_Static_0800
-      * @tc.name   : Sub_Notification_Emitter_Publish_Emit_Static_0800
-      * @tc.desc   : emitter.once 1   emitter.off 1   emitter.emit 1
-      * @tc.size   : MediumTest
-      * @tc.type   : Function
-      * @tc.level  : Level 2
+    /**
+      * @tc.number  Sub_Notification_Emitter_Publish_Emit_Static_0800
+      * @tc.name  Sub_Notification_Emitter_Publish_Emit_Static_0800
+      * @tc.desc  emitter.once 1   emitter.off 1   emitter.emit 1
+      * @tc.size  MediumTest
+      * @tc.type  Function
+      * @tc.level Level 2
       */
     it('Sub_Notification_Emitter_Publish_Emit_Static_0800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'Sub_Notification_Emitter_Publish_Emit_0800'

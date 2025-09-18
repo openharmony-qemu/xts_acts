@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,10 +64,10 @@ export default function ActsCommonEventSystemAPITest() {
     })
 
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_5000
-     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_5000
-     * @tc.desc: test function publishAsBundle
+    /**
+     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_5000
+     * @tc.name  Sub_Notification_Ans_Publish_Publish_Static_5000
+     * @tc.desc  test function publishAsBundle
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -89,10 +89,10 @@ export default function ActsCommonEventSystemAPITest() {
         console.info(Tag +`Sub_Notification_Ans_Publish_Publish_Static_5000 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_5100
-     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_5100
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_5100
+     * @tc.name  Sub_Notification_Ans_Publish_Publish_Static_5100
+     * @tc.desc  test function publishAsUser
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -119,10 +119,10 @@ export default function ActsCommonEventSystemAPITest() {
         console.info(Tag +`Sub_Notification_Ans_Publish_Publish_5100 END`);
       })
 
-    /*
-    * @tc.number: Sub_Notification_Ces_StaticEvent_Config_Static_1200
-    * @tc.name: Sub_Notification_Ces_StaticEvent_Config_Static_1200
-    * @tc.desc: test function removeStickyCommonEvent
+    /**
+    * @tc.number  Sub_Notification_Ces_StaticEvent_Config_Static_1200
+    * @tc.name  Sub_Notification_Ces_StaticEvent_Config_Static_1200
+    * @tc.desc  test function removeStickyCommonEvent
     */
     it('Sub_Notification_Ces_StaticEvent_Config_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -144,10 +144,10 @@ export default function ActsCommonEventSystemAPITest() {
         console.info(`${Tag} Sub_Notification_Ces_StaticEvent_Config_1200 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ces_StaticEvent_Config_Static_1300
-     * @tc.name: Sub_Notification_Ces_StaticEvent_Config_Static_1300
-     * @tc.desc: test function removeStickyCommonEvent
+    /**
+     * @tc.number  Sub_Notification_Ces_StaticEvent_Config_Static_1300
+     * @tc.name  Sub_Notification_Ces_StaticEvent_Config_Static_1300
+     * @tc.desc  test function removeStickyCommonEvent
      */
     it('Sub_Notification_Ces_StaticEvent_Config_Static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -168,10 +168,10 @@ export default function ActsCommonEventSystemAPITest() {
       })
 
     
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278
+     * @tc.desc  test function publishAsUser
      */
     // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>  {
     //   let Tag :string ='Sub_Notification_Ces_StaticEvent_Config_Static_1300'
@@ -240,10 +240,10 @@ export default function ActsCommonEventSystemAPITest() {
     //   }
     // })
 
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_279
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_279
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_279
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_279
+     * @tc.desc  test function publishAsUser
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_279', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -413,10 +413,10 @@ export default function ActsCommonEventSystemAPITest() {
       })
 
     
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280
+     * @tc.desc  test function publishAsUser
      */
     // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   let TAG :string ='Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280'
@@ -473,10 +473,10 @@ export default function ActsCommonEventSystemAPITest() {
     // })
 
     
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281
+     * @tc.desc  test function publishAsUser
      */
     // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
     // let TAG :string ='Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281'
@@ -555,10 +555,10 @@ export default function ActsCommonEventSystemAPITest() {
     // })
 
     
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284
+     * @tc.desc  test function publishAsUser
      */
     // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284',  TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
     //   let Tag :string ='Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284'
@@ -725,10 +725,10 @@ export default function ActsCommonEventSystemAPITest() {
 
     
 
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
+     * @tc.desc  test function publishAsUser
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -844,10 +844,10 @@ export default function ActsCommonEventSystemAPITest() {
       })
 
 
-      /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283
-     * @tc.desc: test function publishAsUser
+      /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283
+     * @tc.desc  test function publishAsUser
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -887,10 +887,10 @@ export default function ActsCommonEventSystemAPITest() {
       })
 
 
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287
+     * @tc.desc  test function publishAsUser
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -927,10 +927,10 @@ export default function ActsCommonEventSystemAPITest() {
         notificationSubscribe.remove(bundle, notificationKey, reason, removeCallback);
       });
 
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288
-     * @tc.desc: test function publish
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288
+     * @tc.desc  test function publish
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

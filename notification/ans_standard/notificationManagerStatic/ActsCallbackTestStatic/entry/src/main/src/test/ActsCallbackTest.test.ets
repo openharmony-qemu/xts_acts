@@ -1,4 +1,4 @@
-/*
+/**
 * Copyright (c) 2023 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -43,10 +43,10 @@ export default function ActsCallbackTest() {
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100
-     * @tc.name      : Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100
-     * @tc.desc      : requestEnableNotification allowed button is clicked
+    /**
+     * @tc.number     Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100
+     * @tc.name       Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100
+     * @tc.desc       requestEnableNotification allowed button is clicked
      */
     it('Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,

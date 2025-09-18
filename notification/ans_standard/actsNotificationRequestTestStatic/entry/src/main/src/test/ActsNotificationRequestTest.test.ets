@@ -1,4 +1,4 @@
-/*
+/**
 * Copyright (c) 2023 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -42,10 +42,10 @@ export default function ActsNotificationRequestTest() {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Publish_Static_0900
-     * @tc.name      : Sub_Notification_Ans_Publish_Publish_Static_0900
-     * @tc.desc      : requestEnableNotification click allowed
+    /**
+     * @tc.number     Sub_Notification_Ans_Publish_Publish_Static_0900
+     * @tc.name       Sub_Notification_Ans_Publish_Publish_Static_0900
+     * @tc.desc       requestEnableNotification click allowed
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

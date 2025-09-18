@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2022 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -21,10 +21,10 @@ export default function ActsNotificationDistributedTest() {
     let TAG:string = 'SUB_NOTIFICATION_ANS_IS_DISTRIBUTED_ENABLED_TEST ===>'
     console.info(TAG + 'SUB_NOTIFICATION_ANS_IS_DISTRIBUTED_ENABLED_TEST START')
 
-    /*
-    * @tc.number    : Sub_Notification_Ans_Enable_SetEnable_Static_5000
-    * @tc.name      : Sub_Notification_Ans_Enable_SetEnable_Static_5000
-    * @tc.desc      : Obtains whether the device supports distributed notification
+    /**
+    * @tc.number  Sub_Notification_Ans_Enable_SetEnable_Static_5000
+    * @tc.name    Sub_Notification_Ans_Enable_SetEnable_Static_5000
+    * @tc.desc    Obtains whether the device supports distributed notification
     */
     it('Sub_Notification_Ans_Enable_SetEnable_Static_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>  {
       let TAG:string = "Sub_Notification_Ans_Enable_SetEnable_Static_5000"
@@ -44,10 +44,10 @@ export default function ActsNotificationDistributedTest() {
     })
 
 
-    /*
-    * @tc.number    : Sub_Notification_Ans_Enable_SetEnable_Static_5100
-    * @tc.name      : Sub_Notification_Ans_Enable_SetEnable_Static_5100
-    * @tc.desc      : Obtains whether the device supports distributed notification
+    /**
+    * @tc.number  Sub_Notification_Ans_Enable_SetEnable_Static_5100
+    * @tc.name    Sub_Notification_Ans_Enable_SetEnable_Static_5100
+    * @tc.desc    Obtains whether the device supports distributed notification
     */
     it('Sub_Notification_Ans_Enable_SetEnable_Static_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = "Sub_Notification_Ans_Enable_SetEnable_Static_5100"

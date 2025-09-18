@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ export default function ActsNotificationSlotTest() {
     const TAG:string = 'ActsNotificationSlotTest ===>';
 
     /**
-     * @tc.number: Acts_NotificationSlot_Static_0100
-     * @tc.name: Acts_NotificationSlot_Static_0100
-     * @tc.desc: Set NotificationSlot attribute parameters notificationManager.SlotType.SOCIAL_COMMUNICATION.
+     * @tc.number  Acts_NotificationSlot_Static_0100
+     * @tc.name  Acts_NotificationSlot_Static_0100
+     * @tc.desc  Set NotificationSlot attribute parameters notificationManager.SlotType.SOCIAL_COMMUNICATION.
      */
     it('Acts_NotificationSlot_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'Acts_NotificationSlot_Static_0100'
@@ -57,9 +57,9 @@ export default function ActsNotificationSlotTest() {
     })
 
     /**
-     * @tc.number: Acts_NotificationSlot_Static_0200
-     * @tc.name: Acts_NotificationSlot_Static_0200
-     * @tc.desc: Set NotificationSlot attribute parameters notificationManager.SlotType.SERVICE_INFORMATION.
+     * @tc.number  Acts_NotificationSlot_Static_0200
+     * @tc.name  Acts_NotificationSlot_Static_0200
+     * @tc.desc  Set NotificationSlot attribute parameters notificationManager.SlotType.SERVICE_INFORMATION.
      */
     it('Acts_NotificationSlot_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
       let TAG:string = 'Acts_NotificationSlot_Static_0200'
@@ -91,9 +91,9 @@ export default function ActsNotificationSlotTest() {
     })
 
     /**
-     * @tc.number: Acts_NotificationSlot_Static_0300
-     * @tc.name: Acts_NotificationSlot_Static_0300
-     * @tc.desc: Set NotificationSlot attribute parameters notificationManager.SlotType.CONTENT_INFORMATION.
+     * @tc.number  Acts_NotificationSlot_Static_0300
+     * @tc.name  Acts_NotificationSlot_Static_0300
+     * @tc.desc  Set NotificationSlot attribute parameters notificationManager.SlotType.CONTENT_INFORMATION.
      */
     it('Acts_NotificationSlot_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'Acts_NotificationSlot_Static_0300'
@@ -125,9 +125,9 @@ export default function ActsNotificationSlotTest() {
     })
 
     /**
-     * @tc.number: Acts_NotificationSlot_Static_0400
-     * @tc.name: Acts_NotificationSlot_Static_0400
-     * @tc.desc: Set NotificationSlot attribute parameters notificationManager.SlotType.OTHER_TYPES.
+     * @tc.number  Acts_NotificationSlot_Static_0400
+     * @tc.name  Acts_NotificationSlot_Static_0400
+     * @tc.desc  Set NotificationSlot attribute parameters notificationManager.SlotType.OTHER_TYPES.
      */
     it('Acts_NotificationSlot_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'Acts_NotificationSlot_Static_0400'

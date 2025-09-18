@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2022 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,10 +42,10 @@ export default function ActsCommonEventManagerSupportTest() {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_Static_0100
-     * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_0100
-     * @tc.desc      : This commonEvent means the device state
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_0100
+     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_0100
+     * @tc.desc    This commonEvent means the device state
      */
     it('Sub_Notification_Ces_Publish_Support_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -63,10 +63,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_Static_0200
-     * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_0200
-     * @tc.desc      : This commonEvent means the device battery state
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_0200
+     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_0200
+     * @tc.desc    This commonEvent means the device battery state
      */
     it('Sub_Notification_Ces_Publish_Support_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -83,10 +83,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_Static_0300
-     * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_0300
-     * @tc.desc      : This commonEvent means the screen,the thermal state level
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_0300
+     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_0300
+     * @tc.desc    This commonEvent means the screen,the thermal state level
      */
     it('Sub_Notification_Ces_Publish_Support_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -101,10 +101,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_Static_0400
-     * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_0400
-     * @tc.desc      : This commonEvent means the time changed , the dialog to dismiss
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_0400
+     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_0400
+     * @tc.desc    This commonEvent means the time changed , the dialog to dismiss
      */
     it('Sub_Notification_Ces_Publish_Support_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -120,10 +120,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_Static_0500
-     * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_0500
-     * @tc.desc      : This commonEvent means when a new version application package
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_0500
+     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_0500
+     * @tc.desc    This commonEvent means when a new version application package
      */
     it('Sub_Notification_Ces_Publish_Support_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -147,10 +147,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_Static_0600
-     * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_0600
-     * @tc.desc      : This commonEvent of package
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_0600
+     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_0600
+     * @tc.desc    This commonEvent of package
      */
     it('Sub_Notification_Ces_Publish_Support_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -176,10 +176,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_Static_0700
-     * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_0700
-     * @tc.desc      : Sent by system package verifier
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_0700
+     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_0700
+     * @tc.desc    Sent by system package verifier
      */
     it('Sub_Notification_Ces_Publish_Support_Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -198,10 +198,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_Static_0800
-     * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_0800
-     * @tc.desc      : Send by the smart function when the system in mode
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_0800
+     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_0800
+     * @tc.desc    Send by the smart function when the system in mode
      */
     it('Sub_Notification_Ces_Publish_Support_Static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -217,10 +217,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_Static_0900
-     * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_0900
-     * @tc.desc      : Remind previous user of that the service
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_0900
+     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_0900
+     * @tc.desc    Remind previous user of that the service
      */
     it('Sub_Notification_Ces_Publish_Support_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -239,10 +239,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_Static_1000
-     * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_1000
-     * @tc.desc      : Distributed account, privacy
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_1000
+     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_1000
+     * @tc.desc    Distributed account, privacy
      */
     it('Sub_Notification_Ces_Publish_Support_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -261,10 +261,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_Static_1100
-     * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_1100
-     * @tc.desc      : WIFI state
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_1100
+     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_1100
+     * @tc.desc    WIFI state
      */
     it('Sub_Notification_Ces_Publish_Support_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -301,10 +301,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_Static_1500
-     * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_1500
-     * @tc.desc      : Bluetooth.a2dp,Nfc
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_1500
+     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_1500
+     * @tc.desc    Bluetooth.a2dp,Nfc
      */
     it('Sub_Notification_Ces_Publish_Support_Static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -319,10 +319,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_Static_1600
-     * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_1600
-     * @tc.desc      : charging battery,device's ,User,ability,Gps
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_1600
+     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_1600
+     * @tc.desc    charging battery,device's ,User,ability,Gps
      */
     it('Sub_Notification_Ces_Publish_Support_Static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -351,10 +351,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_Static_1700
-     * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_1700
-     * @tc.desc      : ivi
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_1700
+     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_1700
+     * @tc.desc    ivi
      */
     it('Sub_Notification_Ces_Publish_Support_Static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -381,10 +381,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_Static_1800
-     * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_1800
-     * @tc.desc      : USB
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_1800
+     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_1800
+     * @tc.desc    USB
      */
     it('Sub_Notification_Ces_Publish_Support_Static_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -405,10 +405,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_Static_1900
-     * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_1900
-     * @tc.desc      : protected common event
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_1900
+     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_1900
+     * @tc.desc    protected common event
      */
     it('Sub_Notification_Ces_Publish_Support_Static_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -442,10 +442,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_Support_Static_2000
-     * @tc.name      : Sub_Notification_Ces_Publish_Support_Static_2000
-     * @tc.desc      : protected common event
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_2000
+     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_2000
+     * @tc.desc    protected common event
      */
     it('Sub_Notification_Ces_Publish_Support_Static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -472,10 +472,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2100
-     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2100
-     * @tc.desc      : SIM common event
+    /**
+     * @tc.number  SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2100
+     * @tc.name    SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2100
+     * @tc.desc    SIM common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -512,10 +512,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2200
-     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2200
-     * @tc.desc      : STK common event
+    /**
+     * @tc.number  SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2200
+     * @tc.name    SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2200
+     * @tc.desc    STK common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -536,10 +536,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2300
-     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2300
-     * @tc.desc      : HWID common event
+    /**
+     * @tc.number  SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2300
+     * @tc.name    SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2300
+     * @tc.desc    HWID common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -551,13 +551,13 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2400
-     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2400
-     * @tc.desc      : STK common event
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+    /**
+     * @tc.number  SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2400
+     * @tc.name    SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2400
+     * @tc.desc    STK common event
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -568,10 +568,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2500
-     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2500
-     * @tc.desc      : enter/exit force sleep common event
+    /**
+     * @tc.number  SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2500
+     * @tc.name    SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2500
+     * @tc.desc    enter/exit force sleep common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -584,10 +584,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2600
-     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2600
-     * @tc.desc      : start restore common event
+    /**
+     * @tc.number  SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2600
+     * @tc.name    SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2600
+     * @tc.desc    start restore common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -597,10 +597,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2700
-     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2700
-     * @tc.desc      : managed browser policy changed common event
+    /**
+     * @tc.number  SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2700
+     * @tc.name    SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2700
+     * @tc.desc    managed browser policy changed common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -613,10 +613,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2800
-     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2800
-     * @tc.desc      : default application changed common event
+    /**
+     * @tc.number  SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2800
+     * @tc.name    SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2800
+     * @tc.desc    default application changed common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -627,10 +627,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900
-     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900
-     * @tc.desc      : enter/exit kiosk mode common event
+    /**
+     * @tc.number  SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900
+     * @tc.name    SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900
+     * @tc.desc    enter/exit kiosk mode common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -643,10 +643,10 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
     })
 
-          /*
-     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3100
-     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3100
-     * @tc.desc      : bluetooth handsfree ag connection state change common event
+          /**
+     * @tc.number  SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3100
+     * @tc.name    SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3100
+     * @tc.desc    bluetooth handsfree ag connection state change common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -657,10 +657,10 @@ export default function ActsCommonEventManagerSupportTest() {
       done()
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3200
-     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3200
-     * @tc.desc      : bluetooth a2dp source connection state change common event
+    /**
+     * @tc.number  SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3200
+     * @tc.name    SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3200
+     * @tc.desc    bluetooth a2dp source connection state change common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -671,10 +671,10 @@ export default function ActsCommonEventManagerSupportTest() {
       done()
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3300
-     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3300
-     * @tc.desc      : bluetooth avrcp connection state change common event
+    /**
+     * @tc.number  SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3300
+     * @tc.name    SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3300
+     * @tc.desc    bluetooth avrcp connection state change common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -685,10 +685,10 @@ export default function ActsCommonEventManagerSupportTest() {
       done()
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3400
-     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3400
-     * @tc.desc      : bluetooth codec change common event
+    /**
+     * @tc.number  SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3400
+     * @tc.name    SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3400
+     * @tc.desc    bluetooth codec change common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -699,10 +699,10 @@ export default function ActsCommonEventManagerSupportTest() {
       done()
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3500
-     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3500
-     * @tc.desc      : bluetooth remote device acl state change common event
+    /**
+     * @tc.number  SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3500
+     * @tc.name    SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3500
+     * @tc.desc    bluetooth remote device acl state change common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -713,10 +713,10 @@ export default function ActsCommonEventManagerSupportTest() {
       done()
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3600
-     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3600
-     * @tc.desc      : bluetooth pair state change common event
+    /**
+     * @tc.number  SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3600
+     * @tc.name    SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3600
+     * @tc.desc    bluetooth pair state change common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -727,10 +727,10 @@ export default function ActsCommonEventManagerSupportTest() {
       done()
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3000
-     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3000
-     * @tc.desc      : start/stop screen capture
+    /**
+     * @tc.number  SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3000
+     * @tc.name    SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3000
+     * @tc.desc    start/stop screen capture
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -741,10 +741,10 @@ export default function ActsCommonEventManagerSupportTest() {
     })
 
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3800
-     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3800
-     * @tc.desc      : enter/exit force sleep common event
+    /**
+     * @tc.number  SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3800
+     * @tc.name    SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3800
+     * @tc.desc    enter/exit force sleep common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -755,10 +755,10 @@ export default function ActsCommonEventManagerSupportTest() {
       done()
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4000
-     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4000
-     * @tc.desc      : restore end common event
+    /**
+     * @tc.number  SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4000
+     * @tc.name    SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4000
+     * @tc.desc    restore end common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

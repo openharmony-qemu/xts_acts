@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,10 +21,11 @@ export default function ActsNotificationBadgeTest() {
   describe('ActsNotificationBadgeTest', () => {
     let TAG = 'SUB_NOTIFICATION_ANS_MANAGER_BADGE_test ===>'
     console.info(TAG + 'SUB_NOTIFICATION_ANS_MANAGER_BADGE_test START')
-    /*
-     * @tc.number: Sub_Notification_Ans_Corner_SetNum_Static_0900
-     * @tc.name: Sub_Notification_Ans_Corner_SetNum_Static_0900
-     * @tc.desc: verify the callback function of setBadgeNumber
+
+    /**
+     * @tc.number  Sub_Notification_Ans_Corner_SetNum_Static_0900
+     * @tc.name  Sub_Notification_Ans_Corner_SetNum_Static_0900
+     * @tc.desc  verify the callback function of setBadgeNumber
      */
     it('Sub_Notification_Ans_Corner_SetNum_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -51,10 +52,10 @@ export default function ActsNotificationBadgeTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Corner_SetNum_Static_1000
-     * @tc.name: Sub_Notification_Ans_Corner_SetNum_Static_1000
-     * @tc.desc: verify the promise function of setBadgeNumber
+    /**
+     * @tc.number Sub_Notification_Ans_Corner_SetNum_Static_1000
+     * @tc.name Sub_Notification_Ans_Corner_SetNum_Static_1000
+     * @tc.desc verify the promise function of setBadgeNumber
      */
     it('Sub_Notification_Ans_Corner_SetNum_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {

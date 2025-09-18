@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2022 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,12 +26,12 @@ const TAG = 'NotificationActs'
 const TEST_SUITE_NAME = 'testNotificationLiveNotification'
 export default function ActsNotificationSystemLiveViewTest() {
   describe('ActsNotificationSystemLiveViewTest', () => {
-    ///*
-    // * @tc.number: Sub_Notification_Ans_Live_Publish_Static_2200
-    // * @tc.name: Sub_Notification_Ans_Live_Publish_Static_2200
-    // * @tc.desc: test publish interface fail
-    // * @tc.size: LargeTest
-    // * @tc.type: Function
+    ///**
+    // * @tc.number  Sub_Notification_Ans_Live_Publish_Static_2200
+    // * @tc.name   Sub_Notification_Ans_Live_Publish_Static_2200
+    // * @tc.desc  test publish interface fail
+    // * @tc.size  LargeTest
+    // * @tc.type  Function
     // * @tc.level Level 3
     // */
     
@@ -114,12 +114,12 @@ export default function ActsNotificationSystemLiveViewTest() {
     //
     // })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Live_Publish_Static_2300
-     * @tc.name: Sub_Notification_Ans_Live_Publish_Static_2300
-     * @tc.desc: test publish interface fail
-     * @tc.size: LargeTest
-     * @tc.type: Function
+    /**
+     * @tc.number  Sub_Notification_Ans_Live_Publish_Static_2300
+     * @tc.name   Sub_Notification_Ans_Live_Publish_Static_2300
+     * @tc.desc  test publish interface fail
+     * @tc.size  LargeTest
+     * @tc.type  Function
      * @tc.level Level 2
      */
     
@@ -199,12 +199,12 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    ///*
-    // * @tc.number: Sub_Notification_Ans_Live_Publish_Static_2600
-    // * @tc.name: Sub_Notification_Ans_Live_Publish_Static_2600
-    // * @tc.desc: test publish interface fail
-    // * @tc.size: LargeTest
-    // * @tc.type: Function
+    ///**
+    // * @tc.number  Sub_Notification_Ans_Live_Publish_Static_2600
+    // * @tc.name   Sub_Notification_Ans_Live_Publish_Static_2600
+    // * @tc.desc  test publish interface fail
+    // * @tc.size  LargeTest
+    // * @tc.type  Function
     // * @tc.level Level 2
     // */
     
@@ -258,12 +258,12 @@ export default function ActsNotificationSystemLiveViewTest() {
     //   }
     // })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Live_Publish_Static_2700
-     * @tc.name: Sub_Notification_Ans_Live_Publish_Static_2700
-     * @tc.desc: test publish interface fail
-     * @tc.size: LargeTest
-     * @tc.type: Function
+    /**
+     * @tc.number  Sub_Notification_Ans_Live_Publish_Static_2700
+     * @tc.name   Sub_Notification_Ans_Live_Publish_Static_2700
+     * @tc.desc  test publish interface fail
+     * @tc.size  LargeTest
+     * @tc.type  Function
      * @tc.level Level 3
      */
     
@@ -318,12 +318,12 @@ export default function ActsNotificationSystemLiveViewTest() {
 
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Live_Publish_Static_3100
-     * @tc.name: Sub_Notification_Ans_Live_Publish_Static_3100
-     * @tc.desc: test publish interface fail
-     * @tc.size: LargeTest
-     * @tc.type: Function
+    /**
+     * @tc.number  Sub_Notification_Ans_Live_Publish_Static_3100
+     * @tc.name   Sub_Notification_Ans_Live_Publish_Static_3100
+     * @tc.desc  test publish interface fail
+     * @tc.size  LargeTest
+     * @tc.type  Function
      * @tc.level Level 3
      */
     
@@ -378,12 +378,12 @@ export default function ActsNotificationSystemLiveViewTest() {
     //
     // })
 
-    /*
-      * @tc.number: Sub_Notification_Ans_Live_Publish_Static_3200
-      * @tc.name: Sub_Notification_Ans_Live_Publish_Static_3200
-      * @tc.desc: test publish interface fail
-      * @tc.size: LargeTest
-      * @tc.type: Function
+    /**
+      * @tc.number  Sub_Notification_Ans_Live_Publish_Static_3200
+      * @tc.name   Sub_Notification_Ans_Live_Publish_Static_3200
+      * @tc.desc  test publish interface fail
+      * @tc.size  LargeTest
+      * @tc.type  Function
       * @tc.level Level 3
       */
     
@@ -438,12 +438,12 @@ export default function ActsNotificationSystemLiveViewTest() {
 
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_3900
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_3900
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_3900
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_3900
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
@@ -499,12 +499,12 @@ export default function ActsNotificationSystemLiveViewTest() {
     //   }
     // })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_4000
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_4000
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_4000
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_4000
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
@@ -561,12 +561,12 @@ export default function ActsNotificationSystemLiveViewTest() {
 
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_4300
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_4300
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_4300
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_4300
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
@@ -622,12 +622,12 @@ export default function ActsNotificationSystemLiveViewTest() {
     //   }
     // })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_4400
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_4400
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_4400
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_4400
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
@@ -683,12 +683,12 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    // /*
-    // * @tc.number: Sub_Notification_Ans_Live_Publish_Static_5000
-    // * @tc.name: Sub_Notification_Ans_Live_Publish_Static_5000
-    // * @tc.desc: test publish interface fail
-    // * @tc.size: LargeTest
-    // * @tc.type: Function
+    // /**
+    // * @tc.number  Sub_Notification_Ans_Live_Publish_Static_5000
+    // * @tc.name   Sub_Notification_Ans_Live_Publish_Static_5000
+    // * @tc.desc  test publish interface fail
+    // * @tc.size  LargeTest
+    // * @tc.type  Function
     // * @tc.level Level 3
     // */
     
@@ -747,12 +747,12 @@ export default function ActsNotificationSystemLiveViewTest() {
     //   }
     // })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_5100
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_5100
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_5100
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_5100
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
@@ -811,12 +811,12 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_5300
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_5300
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_5300
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_5300
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
@@ -875,12 +875,12 @@ export default function ActsNotificationSystemLiveViewTest() {
     //   }
     // })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_5400
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_5400
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_5400
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_5400
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
@@ -939,12 +939,12 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_5600
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_5600
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_5600
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_5600
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
@@ -1004,12 +1004,12 @@ export default function ActsNotificationSystemLiveViewTest() {
     //   }
     // })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_5700
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_5700
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_5700
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_5700
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
@@ -1069,12 +1069,12 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_5900
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_5900
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_5900
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_5900
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
@@ -1134,12 +1134,12 @@ export default function ActsNotificationSystemLiveViewTest() {
     //   }
     // })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_6000
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_6000
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_6000
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_6000
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
@@ -1199,12 +1199,12 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_6500
-    * @tc.name: Sub_Notification_Ans_Live_Publish_6500
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_6500
+    * @tc.name   Sub_Notification_Ans_Live_Publish_6500
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
@@ -1258,12 +1258,12 @@ export default function ActsNotificationSystemLiveViewTest() {
     //   }
     // })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_6600
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_6600
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_6600
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_6600
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
@@ -1327,14 +1327,14 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    ///*
-    //* @tc.number: Sub_Notification_Ans_Live_Publish_Static_6900
-    //* @tc.name: Sub_Notification_Ans_Live_Publish_Static_6900
-    //* @tc.desc: test publish interface fail
-    //* @tc.size: LargeTest
-    //* @tc.type: Function
-    //* @tc.level Level 3
-    //*/
+    ///**
+    //** @tc.number  Sub_Notification_Ans_Live_Publish_Static_6900
+    //** @tc.name   Sub_Notification_Ans_Live_Publish_Static_6900
+    //** @tc.desc  test publish interface fail
+    //** @tc.size  LargeTest
+    //** @tc.type  Function
+    //** @tc.level Level 3
+    //**/
     
     //  it('Sub_Notification_Ans_Live_Publish_Static_6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
     //    const TEST_CASE_NAME = 'testLiveNotificationProgressCurrentValueForNull'
@@ -1387,12 +1387,12 @@ export default function ActsNotificationSystemLiveViewTest() {
     //    }
     //  })
 
-    /*
-   * @tc.number: Sub_Notification_Ans_Live_Publish_Static_7000
-   * @tc.name: Sub_Notification_Ans_Live_Publish_Static_7000
-   * @tc.desc: test publish interface fail
-   * @tc.size: LargeTest
-   * @tc.type: Function
+    /**
+   * @tc.number  Sub_Notification_Ans_Live_Publish_Static_7000
+   * @tc.name   Sub_Notification_Ans_Live_Publish_Static_7000
+   * @tc.desc  test publish interface fail
+   * @tc.size  LargeTest
+   * @tc.type  Function
    * @tc.level Level 3
    */
     
@@ -1457,12 +1457,12 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-  * @tc.number: Sub_Notification_Ans_Live_Publish_Static_7300
-  * @tc.name: Sub_Notification_Ans_Live_Publish_Static_7300
-  * @tc.desc: test publish interface fail
-  * @tc.size: LargeTest
-  * @tc.type: Function
+    /**
+  * @tc.number  Sub_Notification_Ans_Live_Publish_Static_7300
+  * @tc.name   Sub_Notification_Ans_Live_Publish_Static_7300
+  * @tc.desc  test publish interface fail
+  * @tc.size  LargeTest
+  * @tc.type  Function
   * @tc.level Level 3
   */
     
@@ -1518,12 +1518,12 @@ export default function ActsNotificationSystemLiveViewTest() {
     //   })
 
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_7400
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_7400
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_7400
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_7400
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
@@ -1588,12 +1588,12 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-  * @tc.number: Sub_Notification_Ans_Live_Publish_Static_7500
-  * @tc.name: Sub_Notification_Ans_Live_Publish_Static_7500
-  * @tc.desc: test publish interface fail
-  * @tc.size: LargeTest
-  * @tc.type: Function
+    /**
+  * @tc.number  Sub_Notification_Ans_Live_Publish_Static_7500
+  * @tc.name   Sub_Notification_Ans_Live_Publish_Static_7500
+  * @tc.desc  test publish interface fail
+  * @tc.size  LargeTest
+  * @tc.type  Function
   * @tc.level Level 3
   */
     it('Sub_Notification_Ans_Live_Publish_Static_7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
@@ -1714,12 +1714,12 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
 
     })
-    /*
-      * @tc.number: Sub_Notification_Ans_Live_Publish_Static_7600
-      * @tc.name: Sub_Notification_Ans_Live_Publish_Static_7600
-      * @tc.desc: test publish interface fail
-      * @tc.size: LargeTest
-      * @tc.type: Function
+    /**
+      * @tc.number  Sub_Notification_Ans_Live_Publish_Static_7600
+      * @tc.name   Sub_Notification_Ans_Live_Publish_Static_7600
+      * @tc.desc  test publish interface fail
+      * @tc.size  LargeTest
+      * @tc.type  Function
       * @tc.level Level 3
       */
     
@@ -1853,12 +1853,12 @@ export default function ActsNotificationSystemLiveViewTest() {
     })
 
 
-    /*
- * @tc.number: Sub_Notification_Ans_Live_Publish_Static_7700
- * @tc.name: Sub_Notification_Ans_Live_Publish_Static_7700
- * @tc.desc: test publish interface success
- * @tc.size: LargeTest
- * @tc.type: Function
+    /**
+ * @tc.number  Sub_Notification_Ans_Live_Publish_Static_7700
+ * @tc.name   Sub_Notification_Ans_Live_Publish_Static_7700
+ * @tc.desc  test publish interface success
+ * @tc.size  LargeTest
+ * @tc.type  Function
  * @tc.level Level 3
  */
     

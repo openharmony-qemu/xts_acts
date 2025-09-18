@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
@@ -38,10 +38,10 @@ export default function ActsCommonEventManagerTest() {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4700
-     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4700
-     * @tc.desc: verify the callback function of publish
+    /**
+     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4700
+     * @tc.name  Sub_Notification_Ans_Publish_Publish_Static_4700
+     * @tc.desc  verify the callback function of publish
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4700'
@@ -68,10 +68,10 @@ export default function ActsCommonEventManagerTest() {
       hilog.info(domain, TAG, `Sub_Notification_Ans_Publish_Publish_Static_4700 END`);
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4800
-     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4800
-     * @tc.desc: publish options
+    /**
+     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4800
+     * @tc.name  Sub_Notification_Ans_Publish_Publish_Static_4800
+     * @tc.desc  publish options
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4800'
@@ -102,10 +102,10 @@ export default function ActsCommonEventManagerTest() {
       hilog.info(domain, TAG, `Sub_Notification_Ans_Publish_Publish_Static_4800 END`);
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_Static_1500
-     * @tc.name: Sub_Notification_Ans_Subscriber_Subscribe_Static_1500
-     * @tc.desc: createSubscriber
+    /**
+     * @tc.number  Sub_Notification_Ans_Subscriber_Subscribe_Static_1500
+     * @tc.name  Sub_Notification_Ans_Subscriber_Subscribe_Static_1500
+     * @tc.desc  createSubscriber
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_Static_1500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Subscribe_Static_1500'
@@ -140,10 +140,10 @@ export default function ActsCommonEventManagerTest() {
       hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Subscribe_Static_1500 END`)
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_Static_1600
-     * @tc.name: Sub_Notification_Ans_Subscriber_Subscribe_Static_1600
-     * @tc.desc: createSubscriber
+    /**
+     * @tc.number  Sub_Notification_Ans_Subscriber_Subscribe_Static_1600
+     * @tc.name  Sub_Notification_Ans_Subscriber_Subscribe_Static_1600
+     * @tc.desc  createSubscriber
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_Static_1600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Subscribe_Static_1600'
@@ -164,10 +164,10 @@ export default function ActsCommonEventManagerTest() {
       hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Subscribe_Static_1600 END`)
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_Static_0400
-    * @tc.name: Sub_Notification_Ans_Subscriber_Subscribe_Static_0400
-    * @tc.desc: subscribe
+    /**
+    * @tc.number  Sub_Notification_Ans_Subscriber_Subscribe_Static_0400
+    * @tc.name  Sub_Notification_Ans_Subscriber_Subscribe_Static_0400
+    * @tc.desc  subscribe
     */
     it('Sub_Notification_Ans_Subscriber_Subscribe_Static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Subscribe_Static_0400'
@@ -222,10 +222,10 @@ export default function ActsCommonEventManagerTest() {
 
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401
-    * @tc.name: Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401
-    * @tc.desc: subscribe
+    /**
+    * @tc.number  Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401
+    * @tc.name  Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401
+    * @tc.desc  subscribe
     */
     it('Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401'
@@ -285,10 +285,10 @@ export default function ActsCommonEventManagerTest() {
     })
 
 
-    /*
-      * @tc.number: Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200
-      * @tc.name: Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200
-      * @tc.desc: unsubscribe
+    /**
+      * @tc.number  Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200
+      * @tc.name  Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200
+      * @tc.desc  unsubscribe
      */
     it('Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200'
@@ -422,10 +422,10 @@ export default function ActsCommonEventManagerTest() {
 
     })
 
-/*
-     * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_Static_1700
-     * @tc.name: Sub_Notification_Ans_Subscriber_Subscribe_Static_1700
-     * @tc.desc: verify the callback function
+    /**
+     * @tc.number  Sub_Notification_Ans_Subscriber_Subscribe_Static_1700
+     * @tc.name  Sub_Notification_Ans_Subscriber_Subscribe_Static_1700
+     * @tc.desc  verify the callback function
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_Static_1700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Subscribe_Static_1700'
@@ -579,10 +579,10 @@ export default function ActsCommonEventManagerTest() {
     })
 
     
-    /*
-     * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_Static_1800
-     * @tc.name: Sub_Notification_Ans_Subscriber_Subscribe_Static_1800
-     * @tc.desc: verify the promise function
+    /**
+     * @tc.number  Sub_Notification_Ans_Subscriber_Subscribe_Static_1800
+     * @tc.name  Sub_Notification_Ans_Subscriber_Subscribe_Static_1800
+     * @tc.desc  verify the promise function
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_Static_1800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Subscribe_Static_1800'

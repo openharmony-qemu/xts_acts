@@ -1,4 +1,4 @@
-/*
+/**
 * Copyright (c) 2023 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -53,10 +53,10 @@ export default function ActsDenyTest() {
       testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
-    /*
-     * @tc.number    : Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Deny_Test_Static_0100
-     * @tc.name      : Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Deny_Test_Static_0100
-     * @tc.desc      : requestEnableNotification deny button is clicked
+    /**
+     * @tc.number     Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Deny_Test_Static_0100
+     * @tc.name       Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Deny_Test_Static_0100
+     * @tc.desc       requestEnableNotification deny button is clicked
      */
     it('Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Deny_Test_Static_0100', Level.LEVEL2,
       async (done: () => void) => {

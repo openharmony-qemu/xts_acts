@@ -1,4 +1,4 @@
-/*
+/**
 * Copyright (c) 2023 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -77,10 +77,10 @@ export default function ActsAllowTest() {
     })
 
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_Static_0100
-     * @tc.name      : Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_Static_0100
-     * @tc.desc      : requestEnableNotification allow button is clicked
+    /**
+     * @tc.number     Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_Static_0100
+     * @tc.name       Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_Static_0100
+     * @tc.desc       requestEnableNotification allow button is clicked
      */
     it('Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_Static_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -108,13 +108,13 @@ export default function ActsAllowTest() {
       })
 
 
-    /*
-    * @tc.number    : Sub_Notification_Ans_Publish_updateOnly_Static_0003
-    * @tc.name      : Sub_Notification_Ans_Publish_updateOnly_Static_0003
-    * @tc.desc      : updateOnly is true
-    * @tc.size      : Large-scaleTest
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
+    /**
+    * @tc.number     Sub_Notification_Ans_Publish_updateOnly_Static_0003
+    * @tc.name       Sub_Notification_Ans_Publish_updateOnly_Static_0003
+    * @tc.desc       updateOnly is true
+    * @tc.size       Large-scaleTest
+    * @tc.type       Function test
+    * @tc.level      Level 0
     */
     it('Sub_Notification_Ans_Publish_updateOnly_Static_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -165,13 +165,13 @@ export default function ActsAllowTest() {
       })
 
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Subscriber_Subscribe_Static_08086
-     * @tc.name      : Sub_Notification_Ces_Subscriber_Subscribe_Static_08086
-     * @tc.desc      : 调用 createSubscriber 接口，创建订阅者，调用 subscribe 接口，getSubscribeInfo获取订阅者信息，subscribeInfo.publisherBundleName为订阅者包名
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
+    /**
+     * @tc.number     Sub_Notification_Ces_Subscriber_Subscribe_Static_08086
+     * @tc.name       Sub_Notification_Ces_Subscriber_Subscribe_Static_08086
+     * @tc.desc       调用 createSubscriber 接口，创建订阅者，调用 subscribe 接口，getSubscribeInfo获取订阅者信息，subscribeInfo.publisherBundleName为订阅者包名
+     * @tc.size       Large-scaleTest
+     * @tc.type       Function test
+     * @tc.level      Level 2
      */
     it('Sub_Notification_Ces_Subscriber_Subscribe_08086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
