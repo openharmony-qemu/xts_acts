@@ -54,41 +54,26 @@ struct ViewportAvoidTestPage {
         Button("web click").key('voidVisibleViewportBottomWebClick').onClick(async () => {
           console.info("key==>" + this.str)
           await waitForExist(()=>this.isReceive, this.str, 0);
+          await waitForExist(()=>this.isComplete, this.str, 0);
           switch (this.str) {
             case "emitAvoidVisibleViewportBottom001": {
-              let driver: Driver = Driver.create();
-              let AvoidHeightButton = await driver.findComponent(ON.id("WebAvoidHeightButton"));
-              await AvoidHeightButton.click();
+              this.avoidHeight += 50;
+              this.controller.avoidVisibleViewportBottom(this.avoidHeight);
               await Utils.sleep(1000);
               Utils.emitEvent(this.controller.getScrollOffset().y, 153920)
               break;
             }
 
             case "emitAvoidVisibleViewportBottom002": {
-              let driver: Driver = Driver.create();
-              let AvoidHeightButton = await driver.waitForComponent(ON.id("WebAvoidHeightTwoButton"),1000);
-              await AvoidHeightButton.click();
+              this.avoidHeight = 0;
+              this.avoidHeight += 100;
+              this.controller.avoidVisibleViewportBottom(this.avoidHeight);
               await Utils.sleep(1000);
               Utils.emitEvent(this.controller.getScrollOffset().y, 153930)
               break;
             }
           }
         })
-      }
-      Row() {
-        Button('+50')
-          .key('WebAvoidHeightButton')
-          .onClick(() => {
-            this.avoidHeight += 50;
-            this.controller.avoidVisibleViewportBottom(this.avoidHeight);
-          })
-        Button('+100')
-          .key('WebAvoidHeightTwoButton')
-          .onClick(() => {
-            this.avoidHeight = 0;
-            this.avoidHeight += 100;
-            this.controller.avoidVisibleViewportBottom(this.avoidHeight);
-          })
       }
       .backgroundColor(Color.Gray)
       .height('10%')
