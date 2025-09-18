@@ -17,8 +17,13 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 175201;
+const driver = Driver.create();
 
 export default function webOnInterceptKeyEvent() {
   describe('WebOnInterceptKeyEventTest', () => {
@@ -33,7 +38,7 @@ export default function webOnInterceptKeyEvent() {
         if (!("WebOnInterceptKeyEvent" == pages.name)) {
           console.info("get WebOnInterceptKeyEvent state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("WebOnInterceptKeyEventTestButton"), 10000);
           console.info("push WebOnInterceptKeyEvent page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -52,13 +57,6 @@ export default function webOnInterceptKeyEvent() {
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("WebOnInterceptKeyEventTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebOnInterceptKeyEventTest afterEach end");
-      done();
-    })
-
     /*
     * @tc.number      : SUB_WEB_ONINTERCEPTKEYEVENT_0200
     * @tc.name        : testOnInterceptKeyEvent002
@@ -68,10 +66,9 @@ export default function webOnInterceptKeyEvent() {
     * @tc.level       : Level 1
     */
     it('testOnInterceptKeyEvent002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnInterceptKeyEvent002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnInterceptKeyEvent002", 2047, 70422, done);
-      sendEventByKey('WebOnInterceptKeyEventTestButton', 10, '');
+      Utils.emitEvent("emitOnInterceptKeyEvent002", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("emitOnInterceptKeyEvent002", 2047, 175210, done);
+      Utils.waitAndClickComponent(driver, "WebOnInterceptKeyEventTestButton");
     })
 
     /*
@@ -83,10 +80,9 @@ export default function webOnInterceptKeyEvent() {
     * @tc.level       : Level 1
     */
     it('testOnInterceptKeyEvent003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnInterceptKeyEvent003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnInterceptKeyEvent003", 2047, 70425, done);
-      sendEventByKey('WebOnInterceptKeyEventTestButton', 10, '');
+      Utils.emitEvent("emitOnInterceptKeyEvent003", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testOnInterceptKeyEvent003", 2047, 175220, done);
+      Utils.waitAndClickComponent(driver, "WebOnInterceptKeyEventTestButton");
     })
   })
 }

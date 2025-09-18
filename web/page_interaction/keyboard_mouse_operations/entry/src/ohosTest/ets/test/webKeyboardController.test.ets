@@ -17,8 +17,13 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 175101;
+const driver = Driver.create();
 
 export default function webHitTestTypeEnumTest() {
 
@@ -34,7 +39,7 @@ export default function webHitTestTypeEnumTest() {
         if (!("webKeyboardController" == pages.name)) {
           console.info("get webKeyboardController state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("WebKeyboardControllerButton"), 10000);
           console.info("push webKeyboardController page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -49,15 +54,7 @@ export default function webHitTestTypeEnumTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("webKeyboardController afterEach start");
-      await Utils.sleep(1000);
-      console.info("webKeyboardController afterEach end");
       done();
     })
 
@@ -70,10 +67,9 @@ export default function webHitTestTypeEnumTest() {
     * @tc.level       : Level 1
     */
     it('webKeyboardController001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testwebKeyboardController001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("webKeyboardController001", 0, 20250321, done);
-      sendEventByKey('WebwebKeyboardControllerButton', 10, '');
+      Utils.emitEvent("testwebKeyboardController001", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testwebKeyboardController001", 0, 175110, done);
+      Utils.waitAndClickComponent(driver, "WebKeyboardControllerButton");
     })
 
 

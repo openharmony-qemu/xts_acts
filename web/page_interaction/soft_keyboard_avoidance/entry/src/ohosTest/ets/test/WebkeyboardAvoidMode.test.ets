@@ -17,8 +17,15 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 180101;
+let driver = Driver.create();
+let emitKey = ""
+let tcName = ""
 
 export default function WebkeyboardAvoidMode() {
 
@@ -34,7 +41,7 @@ export default function WebkeyboardAvoidMode() {
         if (!("WebkeyboardAvoidMode" == pages.name)) {
           console.info("get WebkeyboardAvoidMode state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("keyboardAvoidMode"), 10000);
           console.info("push WebkeyboardAvoidMode page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -62,10 +69,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode0100", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode0100", 'true', 171701, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode0100';
+      tcName = 'testKeyboardAvoidMode0100'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'true', 180110, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -77,10 +88,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode0200", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode0200", 'true', 171702, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode0200';
+      tcName = 'testKeyboardAvoidMode0200'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'true', 180120, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -92,10 +107,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode0300", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode0300", 'true', 171703, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode0300';
+      tcName = 'testKeyboardAvoidMode0300'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'true', 180130, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -107,10 +126,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode0400", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode0400", 'true', 171704, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode0400';
+      tcName = 'testKeyboardAvoidMode0400'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'true', 180140, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -122,10 +145,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode0500", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode0500", 'true', 171705, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode0500';
+      tcName = 'testKeyboardAvoidMode0500'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'true', 180150, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -137,10 +164,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode0600", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode0600", 'true', 171706, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode0600';
+      tcName = 'testKeyboardAvoidMode0600'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'true', 180160, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -152,10 +183,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode0700", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode0700", 'false', 171707, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode0700';
+      tcName = 'testKeyboardAvoidMode0700'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'false', 180170, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -167,10 +202,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode0800", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode0800", 'false', 171708, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode0800';
+      tcName = 'testKeyboardAvoidMode0800'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'false', 180180, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -182,10 +221,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode0900", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode0900", 'false', 171709, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode0900';
+      tcName = 'testKeyboardAvoidMode0900'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'false', 180190, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -197,10 +240,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode1000", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode1000", 'false', 171710, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode1000';
+      tcName = 'testKeyboardAvoidMode1000'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'false', 180200, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -212,10 +259,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode1100", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode1100", 'false', 171711, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode1100';
+      tcName = 'testKeyboardAvoidMode1100'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'false', 180210, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -227,10 +278,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode1200", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode1200", 'false', 171712, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode1200';
+      tcName = 'testKeyboardAvoidMode1200'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'false', 180220, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -242,10 +297,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode1300", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode1300", 'true', 171713, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode1300';
+      tcName = 'testKeyboardAvoidMode1300'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'true', 180230, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -257,10 +316,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode1400", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode1400", 'true', 171714, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode1400';
+      tcName = 'testKeyboardAvoidMode1400'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'true', 180240, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -272,10 +335,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode1500", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode1500", 'true', 171715, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode1500';
+      tcName = 'testKeyboardAvoidMode1500'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'true', 180250, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -287,10 +354,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode1600", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode1600", 'true', 171716, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode1600';
+      tcName = 'testKeyboardAvoidMode1600'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'true', 180260, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -302,10 +373,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode1700", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode1700", 'true', 171717, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode1700';
+      tcName = 'testKeyboardAvoidMode1700'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'true', 180270, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -317,10 +392,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode1800", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode1800", 'true', 171718, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode1800';
+      tcName = 'testKeyboardAvoidMode1800'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'true', 180280, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -332,10 +411,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode1900", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode1900", 'true', 171719, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode1900';
+      tcName = 'testKeyboardAvoidMode1900'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'true', 180290, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -347,10 +430,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode2000", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode2000", 'true', 171720, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode2000';
+      tcName = 'testKeyboardAvoidMode2000'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'true', 180300, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -362,10 +449,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode2100", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode2100", 'true', 171721, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode2100';
+      tcName = 'testKeyboardAvoidMode2100'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'true', 180310, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -377,10 +468,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode2200", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode2200", 'true', 171722, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode2200';
+      tcName = 'testKeyboardAvoidMode2200'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'true', 180320, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -392,10 +487,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode2300", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode2300", 'true', 171723, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode2300';
+      tcName = 'testKeyboardAvoidMode2300'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'true', 180330, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -407,10 +506,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode2400", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode2400", 'true', 171724, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode2400';
+      tcName = 'testKeyboardAvoidMode2400'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'true', 180340, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -422,10 +525,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode2500", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode2500", 'false', 171725, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode2500';
+      tcName = 'testKeyboardAvoidMode2500'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'false', 180350, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -437,10 +544,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode2600", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode2600", 'false', 171726, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode2600';
+      tcName = 'testKeyboardAvoidMode2600'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'false', 180360, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -452,10 +563,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode2700", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode2700", 'false', 171727, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode2700';
+      tcName = 'testKeyboardAvoidMode2700'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'false', 180370, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -467,10 +582,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode2800", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode2800", 'false', 171728, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode2800';
+      tcName = 'testKeyboardAvoidMode2800'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'false', 180380, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -482,10 +601,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode2900", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode2900", 'false', 171729, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode2900';
+      tcName = 'testKeyboardAvoidMode2900'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'false', 180390, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -497,10 +620,14 @@ export default function WebkeyboardAvoidMode() {
     * @tc.level      : Level 1
     */
     it('emitKeyboardAvoidMode3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitKeyboardAvoidMode3000", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitKeyboardAvoidMode3000", 'false', 171730, done);
-      sendEventByKey('keyboardAvoidMode', 10, '');
+      emitKey = 'emitKeyboardAvoidMode3000';
+      tcName = 'testKeyboardAvoidMode3000'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'false', 180400, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "keyboardAvoidMode", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
 
