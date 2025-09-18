@@ -387,8 +387,8 @@ export default function graphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : testTextFontWidth
-     * @tc.name      : testTextFontWidth
+     * @tc.number    : testLineHeightStyle
+     * @tc.name      : testLineHeightStyle
      * @tc.desc      : To test the enum value of testLineHeightStyle.
      * @tc.size      : MediumTest
      * @tc.type      : Function

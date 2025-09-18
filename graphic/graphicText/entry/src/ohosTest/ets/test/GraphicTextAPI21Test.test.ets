@@ -24,14 +24,14 @@ export default function GraphicTextAPI21Test() {
     beforeEach(async (done: Function) => {});
 
     /**
-     * @tc.number    : graphicTextAPI21_0100
-     * @tc.name      : graphicTextAPI21_0100
+     * @tc.number    : graphicTextAPI21Test_0100
+     * @tc.name      : graphicTextAPI21Test_0100
      * @tc.desc      : runMetrics and LineMetrics
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level0
      */
-    it('graphicTextAPI21_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+    it('graphicTextAPI21Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====testLineMetricsTest_0100===="
       let fontCollection: text.FontCollection = new text.FontCollection();
       try {
