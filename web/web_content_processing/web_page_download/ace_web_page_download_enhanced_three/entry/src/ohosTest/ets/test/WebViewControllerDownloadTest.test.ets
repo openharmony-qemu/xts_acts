@@ -13,13 +13,19 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it, Level, Size, TestType } from '@ohos/hypium';
+import { afterEach, beforeAll, beforeEach, describe, it, Level, Size, TestType, expect } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import webView from '@ohos.web.webview';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponents } from './WaitTest';
+import events_emitter from '@ohos.events.emitter';
+import { Driver } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const driver = Driver.create();
 
 export default function webViewControllerDownloadTest() {
   describe('WebViewControllerDownloadTest', () => {
@@ -34,12 +40,13 @@ export default function webViewControllerDownloadTest() {
         if (!("WebViewControllerDownloadTest" == pages.name)) {
           console.info("get WebViewControllerDownloadTest state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
+
           console.info("push WebViewControllerDownloadTest page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebViewControllerDownloadTest page error: " + err);
       }
+      await waitForComponents('WebViewControllerDownloadTestButton');
       done()
     });
     beforeEach(async (done: Function) => {
@@ -49,14 +56,12 @@ export default function webViewControllerDownloadTest() {
         console.error(`failed to enable, ${err}`);
       })
       console.info("web beforeEach start");
-      await Utils.sleep(4000);
       done();
     })
 
     afterEach(async (done: Function) => {
       console.info("WebViewControllerDownloadTest afterEach start");
       Utils.emitEvent('', 11)
-      await Utils.sleep(4000);
       console.info("WebViewControllerDownloadTest afterEach end");
       done();
     })
@@ -70,10 +75,12 @@ export default function webViewControllerDownloadTest() {
     * @tc.level       : Level 0
     */
     it('testGetGuid001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("testGetGuid001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetGuid001", 1, 79650, done);
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      Utils.emitEvent("testGetGuid001", 131570)
+      Utils.registerBaseEvent("testGetGuid001", 1, 131580, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -85,10 +92,12 @@ export default function webViewControllerDownloadTest() {
     * @tc.level       : Level 1
     */
     it('testGetGuid002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetGuid002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetGuid002", 2, 79652, done);
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      Utils.emitEvent("testGetGuid002", 131570)
+      Utils.registerBaseEvent("testGetGuid002", 2, 131590, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -100,10 +109,12 @@ export default function webViewControllerDownloadTest() {
     * @tc.level       : Level 1
     */
     it('testGetCurrentSpeed001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetCurrentSpeed001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetCurrentSpeed001", true, 79654, done);
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      Utils.emitEvent("testGetCurrentSpeed001", 131570)
+      Utils.registerBaseEvent("testGetCurrentSpeed001", true, 131600, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -115,10 +126,12 @@ export default function webViewControllerDownloadTest() {
     * @tc.level       : Level 1
     */
     it('testGetPercentComplete001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetPercentComplete001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetCurrentSpeed001", true, 79656, done);
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      Utils.emitEvent("testGetPercentComplete001", 131570)
+      Utils.registerBaseEvent("testGetPercentComplete001", true, 131610, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -130,10 +143,12 @@ export default function webViewControllerDownloadTest() {
     * @tc.level       : Level 1
     */
     it('testGetPercentComplete002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetPercentComplete002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetPercentComplete002", true, 79658, done);
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      Utils.emitEvent("testGetPercentComplete002", 131570)
+      Utils.registerBaseEvent("testGetPercentComplete002", true, 131620, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -145,10 +160,12 @@ export default function webViewControllerDownloadTest() {
     * @tc.level       : Level 1
     */
     it('testGetTotalBytes001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetTotalBytes001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetTotalBytes001", 381400, 79660, done);
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      Utils.emitEvent("testGetTotalBytes001", 131570)
+      Utils.registerBaseEvent("testGetTotalBytes001", 381400, 131630, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -160,10 +177,12 @@ export default function webViewControllerDownloadTest() {
     * @tc.level       : Level 1
     */
     it('testGetMethod001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetMethod001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetMethod001", 1, 79662, done);
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      Utils.emitEvent("testGetMethod001", 131570)
+      Utils.registerBaseEvent("testGetMethod001", 1, 131640, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -175,10 +194,12 @@ export default function webViewControllerDownloadTest() {
     * @tc.level       : Level 1
     */
     it('testGetMimeType001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetMimeType001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetMimeType001", true, 79664, done);
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      Utils.emitEvent("testGetMimeType001", 131570)
+      Utils.registerBaseEvent("testGetMimeType001", true, 131650, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -190,10 +211,12 @@ export default function webViewControllerDownloadTest() {
     * @tc.level       : Level 1
     */
     it('testGetMimeType002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetMimeType002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetMimeType002", true, 79666, done);
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      Utils.emitEvent("testGetMimeType002", 131570)
+      Utils.registerBaseEvent("testGetMimeType002", true, 131660, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -205,10 +228,12 @@ export default function webViewControllerDownloadTest() {
     * @tc.level       : Level 1
     */
     it('testGetMimeType003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetMimeType003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetMimeType003", true, 79668, done);
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      Utils.emitEvent("testGetMimeType003", 131570)
+      Utils.registerBaseEvent("testGetMimeType003", true, 131670, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -220,10 +245,12 @@ export default function webViewControllerDownloadTest() {
     * @tc.level       : Level 1
     */
     it('testGetUrl001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetUrl001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetUrl001", true, 79670, done);
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      Utils.emitEvent("testGetUrl001", 131570)
+      Utils.registerBaseEvent("testGetUrl001", true, 131680, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -235,10 +262,12 @@ export default function webViewControllerDownloadTest() {
     * @tc.level       : Level 1
     */
     it('testGetSuggestedFileName001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetSuggestedFileName001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetSuggestedFileName001", true, 79672, done);
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      Utils.emitEvent("testGetSuggestedFileName001", 131570)
+      Utils.registerBaseEvent("testGetSuggestedFileName001", true, 131690, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -250,10 +279,12 @@ export default function webViewControllerDownloadTest() {
     * @tc.level       : Level 1
     */
     it('testGetReceivedBytes001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetReceivedBytes001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetReceivedBytes001", true, 79674, done);
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      Utils.emitEvent("testGetReceivedBytes001", 131570)
+      Utils.registerBaseEvent("testGetReceivedBytes001", true, 131700, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -265,10 +296,12 @@ export default function webViewControllerDownloadTest() {
     * @tc.level       : Level 1
     */
     it('testGetFullPath001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetFullPath001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetFullPath001", true, 79676, done);
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      Utils.emitEvent("testGetFullPath001", 131570)
+      Utils.registerBaseEvent("testGetFullPath001", true, 131710, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -280,10 +313,12 @@ export default function webViewControllerDownloadTest() {
     * @tc.level       : Level 1
     */
     it('testSerialize001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testSerialize001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testSerialize001", true, 79678, done);
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      Utils.emitEvent("testSerialize001", 131570)
+      Utils.registerBaseEvent("testSerialize001", true, 131720, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -295,10 +330,12 @@ export default function webViewControllerDownloadTest() {
     * @tc.level       : Level 1
     */
     it('testDeserialize001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testDeserialize001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testDeserialize001", true, 79680, done);
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      Utils.emitEvent("testDeserialize001", 131570)
+      Utils.registerBaseEvent("testDeserialize001", true, 131730, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
   })
