@@ -116,7 +116,7 @@ export default function CalendarIni18nTest() {
       console.log('i18n_calendar_test_static_0400 ' + name);
       expect(name).assertEqual('和历');
     })
-    
+
     /**
     * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_static_0500
     * @tc.name    i18n_calendar_test_static_0500
@@ -129,7 +129,7 @@ export default function CalendarIni18nTest() {
       console.log('i18n_calendar_test_static_0500 ' + value);
       expect(value).assertEqual('公历');
     })
-    
+
     /**
      * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_static_0600
      * @tc.name    i18n_calendar_test_static_0600
@@ -142,7 +142,7 @@ export default function CalendarIni18nTest() {
       console.log('i18n_calendar_test_static_0600 ' + value);
       expect(value).assertEqual('Gregorian Calendar');
     })
-    
+
     /**
      * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_static_0700
      * @tc.name    i18n_calendar_test_static_0700
@@ -153,9 +153,9 @@ export default function CalendarIni18nTest() {
       let calendar = i18n.getCalendar('zh');
       let value = calendar.get('year');
       console.log('i18n_calendar_test_static_0700 ' + value);
-      expect(value).assertLarger(0.0);
+      expect(value).assertLarger(0);
     })
- 
+
     /**
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_0800
      * @tc.name i18n_calendar_test_static_0800
@@ -170,7 +170,7 @@ export default function CalendarIni18nTest() {
       console.log('i18n_calendar_test_static_0800 ' + value);
       expect(value).assertEqual(8);
     })
-    
+
     /**
      * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_static_0900
      * @tc.name    i18n_calendar_test_static_0900
@@ -181,7 +181,7 @@ export default function CalendarIni18nTest() {
       let calendar = i18n.getCalendar('zh');
       let value = calendar.get('day_of_year');
       console.log('i18n_calendar_test_static_0900 ' + value);
-      expect(value).assertLarger(0.0);
+      expect(value).assertLarger(0);
     })
 
     /**
@@ -409,7 +409,7 @@ export default function CalendarIni18nTest() {
       console.log('i18n_calendar_test_static_2500 ' + value);
       expect(value).assertTrue();
     })
-    
+
     /**
      *@tc.number   :SUB_GLOBAL_I18N_SR000IFGNH_static_0010
      *@tc.name     :SUB_GLOBAL_I18N_SR000IFGNH_static_0010
