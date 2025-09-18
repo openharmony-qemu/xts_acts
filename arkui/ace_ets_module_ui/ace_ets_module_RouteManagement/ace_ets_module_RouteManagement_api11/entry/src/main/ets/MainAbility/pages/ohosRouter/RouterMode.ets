@@ -51,7 +51,9 @@ struct RouterMode {
                 recoverable: true,
               }, router.RouterMode.Single)
                 .catch((err: ESObject) => {
-                  console.error(`pushUrl failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError).message}`);
+                  if (err && err?.code) {
+                    console.error(`pushUrl failed, code is ${(err as BusinessError)?.code}, message is ${(err as BusinessError)?.message}`);
+                  }
                 })
             } catch (err) {
               if (err && err?.code) {
@@ -75,8 +77,8 @@ struct RouterMode {
             })
             .catch((err: ESObject) => {
               if (err && err?.code) {
-                console.error(`pushUrl failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError).message}`);
-                AppStorage.setOrCreate('100002Code', (err as BusinessError).code);
+                console.error(`pushUrl failed, code is ${(err as BusinessError)?.code}, message is ${(err as BusinessError)?.message}`);
+                AppStorage.setOrCreate('100002Code', (err as BusinessError)?.code);
                 } else {
                   console.error(`pushUrl1 failed, err is ${err}`)
               }
@@ -98,8 +100,8 @@ struct RouterMode {
               })
               .catch((err: ESObject) => {
                 if (err && err?.code) {
-                  console.error(`pushUrl failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError)?.message}`);
-                  AppStorage.setOrCreate('100003Code', (err as BusinessError).code);
+                  console.error(`pushUrl failed, code is ${(err as BusinessError)?.code}, message is ${(err as BusinessError)?.message}`);
+                  AppStorage.setOrCreate('100003Code', (err as BusinessError)?.code);
                 } else {
                   console.error(`pushUrl1 failed, err is ${err}`)
                 }
@@ -116,7 +118,7 @@ struct RouterMode {
               }, router.RouterMode.Standard, (err) => {
                 if (err && err?.code) {
                   console.error(`pushUrl failed, code is ${err?.code}, message is ${err?.message}`);
-                  AppStorage.setOrCreate('100003Code', err.code);
+                  AppStorage.setOrCreate('100003Code', err?.code);
                   return;
                 } else {
                   console.error(`pushUrl1 failed, err is ${err}`)
