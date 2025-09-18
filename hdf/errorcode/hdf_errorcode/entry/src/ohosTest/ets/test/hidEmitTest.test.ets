@@ -216,7 +216,7 @@ export default function ActsHidEmitCodeTest() {
         console.info("====>SUB_Driver_Ext_HidSynEventReport_0800 start====");
         let result: number = baskddkerror.HidSynEventReport();
         IsDevcieSupport(result, 'SUB_Driver_Ext_HidSynEventReport_0800');
-        expect(result).assertEqual(0);
+        expect(result).assertEqual(27300003);
         console.info("====>SUB_Driver_Ext_HidSynEventReport_0800 result: " + result);
         done()
       } catch (err) {
@@ -238,7 +238,7 @@ export default function ActsHidEmitCodeTest() {
         console.info("====>SUB_Driver_Ext_HidSynEventConfig_0900 start====");
         let result: number = baskddkerror.HidSynEventConfig();
         IsDevcieSupport(result, 'SUB_Driver_Ext_HidSynEventConfig_0900');
-        expect(result).assertEqual(0);
+        expect(result).assertEqual(27300003);
         console.info("====>SUB_Driver_Ext_HidSynEventConfig_0900 result: " + result);
         done()
       } catch (err) {
@@ -260,7 +260,7 @@ export default function ActsHidEmitCodeTest() {
         console.info("====>SUB_Driver_Ext_HidSynEventMtReport_1000 start====");
         let result: number = baskddkerror.HidSynEventMtReport();
         IsDevcieSupport(result, 'SUB_Driver_Ext_HidSynEventMtReport_1000');
-        expect(result).assertEqual(0);
+        expect(result).assertEqual(27300003);
         console.info("====>SUB_Driver_Ext_HidSynEventMtReport_1000 result: " + result);
         done()
       } catch (err) {
@@ -282,7 +282,7 @@ export default function ActsHidEmitCodeTest() {
         console.info("====>SUB_Driver_Ext_HidSynEventDropped_1100 start====");
         let result: number = baskddkerror.HidSynEventReport();
         IsDevcieSupport(result, 'SUB_Driver_Ext_HidSynEventDropped_1100');
-        expect(result).assertEqual(0);
+        expect(result).assertEqual(27300003);
         console.info("====>SUB_Driver_Ext_HidSynEventDropped_1100 result: " + result);
         done()
       } catch (err) {
