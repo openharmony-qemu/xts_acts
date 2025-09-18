@@ -632,7 +632,7 @@ export default function ErrormangerTest() {
 
     /**
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_1900
-     * @tc.name testErrorManger_1800
+     * @tc.name testErrorManger_1900
      * @tc.desc 验证errorManager.setDefaultErrorHandler()
      * @tc.size MediumTest
      * @tc.type Function
@@ -690,6 +690,7 @@ export default function ErrormangerTest() {
       console.info("testErrorManger_2100 start1");
       taskpool.execute(TaskPoolTest1).then((code:Object) => {
         console.log("testErrorManger_2100 TaskPoolTest begin");
+        expect(false).assertTrue();
         done();
       }).catch((error:Error)=>{
         console.error("testErrorManger_2100 TaskPoolTest throw" + (error as Error).message);
