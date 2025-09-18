@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import EmptyTest from './Empty.test';
-import EapErrorCodeTest from './eapErrorCode.test';
+import EapErrorCodeTest from './EapErrorCode.test';
 
 export default function testsuite() {
   if(canIUse('SystemCapability.Communication.NetManager.Eap')){
