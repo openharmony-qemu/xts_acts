@@ -1579,7 +1579,7 @@ export default function audioFramework() {
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_GETMAXVOLUME_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const PROMISE = audioManager.getMaxVolume(audioRingtone);
       PROMISE.then((data) => {
-        if MaxVloume.includes(data)) {
+        if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Ringtone getMaxVolume promise : PASS:${data}`);
           expect(true).assertTrue();
         } else {
