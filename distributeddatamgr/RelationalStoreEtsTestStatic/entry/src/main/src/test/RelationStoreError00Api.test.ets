@@ -119,7 +119,7 @@ export default function RelationStoreError00Test() {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0001 end *************');
     })
     /**
-     * @tc.name       : RelationStoreError00Test0001
+     * @tc.name       : RelationStoreError00Test0002
      * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error00Test_0200
      * @tc.desc       : RdbStore insert
      * @tc.size       : MediumTest
