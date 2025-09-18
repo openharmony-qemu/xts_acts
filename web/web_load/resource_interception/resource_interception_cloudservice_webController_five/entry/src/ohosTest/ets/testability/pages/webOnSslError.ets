@@ -14,17 +14,15 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
-import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
+
+const EVENT_ID_SET_EMIT_KEY = 201680;
 
 @Entry
 @Component
 struct webOnSslError {
   controller: WebController = new WebController();
-  @State str: string = "emitOnsslerroreventreceiveWebC";
-  @State firstId: number = 420;
+  @State str: string = "";
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
   @State domStorageAccess: boolean = false;
@@ -34,13 +32,19 @@ struct webOnSslError {
   @State sslerrorText: string = "no call error"
   @State userAgent: string = "Mozilla/5.0 (Window NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" +
     " CHrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.27";
+  @State isStart: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: ESObject) => {
@@ -49,6 +53,7 @@ struct webOnSslError {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -57,12 +62,13 @@ struct webOnSslError {
     Column() {
       Row() {
         Button("web click").key('webOnSslError').onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, 'webOnSslErrorIsReceive', 1, 1000);
           console.info("key==>" + this.str)
+          this.isReceive = -1;
           switch (this.str) {
             case "emitOnsslerroreventreceiveWebC": {
               try {
-                this.controller.refresh();
-                await Utils.sleep(2000);
+                this.isStart = 1;
                 this.controller.loadUrl({ url: 'https://wrong.host.badssl.com' });
                 console.log("action of emitOnsslerroreventreceiveWebC is loadUrl");
               } catch (error) {
@@ -85,7 +91,9 @@ struct webOnSslError {
         .onSslErrorEventReceive((event) => {
           console.log("event result is :" + JSON.stringify(event.handler) + event.error);
           this.sslerrorText = JSON.stringify(event.error);
-          Utils.emitEvent(this.sslerrorText, this.firstId);
+          if (this.isStart === 1) {
+            Utils.emitEvent(this.sslerrorText, 201690);
+          }
           return true;
         })
     }

@@ -16,18 +16,29 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import relationalStore from '@ohos.data.relationalStore';
 import { BusinessError } from '@kit.BasicServicesKit';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { sendableRelationalStore } from '@kit.ArkData';
 
 const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
 const context = delegator.getAppContext().getApplicationContext();
 const TAG = "[RelationalStore_JSKITS_TEST]";
 const CREATE_TABLE_EMPLOYEE = "CREATE TABLE IF NOT EXISTS employee (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " + "name TEXT NOT NULL, " + "age INTEGER)";
-
+const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " + "name TEXT NOT NULL, " + "age INTEGER, " + "salary REAL)";
+let num = 'a'.repeat(1024*1024*2);
+const valueBucket2m: relationalStore.ValuesBucket = {
+  'name': num,
+  'age': 122341465656,
+};
+const sendableValusBucket = sendableRelationalStore.toSendableValuesBucket(valueBucket2m);
 const STORE_CONFIG : relationalStore.StoreConfig= {
-  name: "rdbStore.db",
+  name: "rdbStoreTest.db",
   securityLevel: relationalStore.SecurityLevel.S1,
 }
 let rdbStore:relationalStore.RdbStore;
-
+function sleep(ms:number): Promise<void> {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  })
+}
 export default function relationalStoreInterfaceTest() {
   describe('relationalStoreInterfaceTest', ()=> {
     beforeAll(async ()=> {
@@ -41,11 +52,12 @@ export default function relationalStoreInterfaceTest() {
       rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
       console.info(TAG + "create rdb store success")
       await rdbStore.executeSql(CREATE_TABLE_EMPLOYEE, null);
+      await rdbStore.executeSql(CREATE_TABLE_TEST, null);
     })
 
     afterEach(async ()=> {
       console.info(TAG + 'afterEach');
-      await relationalStore.deleteRdbStore(context,"rdbStore.db")
+      await relationalStore.deleteRdbStore(context,"rdbStoreTest.db")
     })
 
     afterAll(async ()=> {
@@ -926,6 +938,1293 @@ export default function relationalStoreInterfaceTest() {
         done()
       }
       console.info(TAG + "************* relationalStoreTest026 end *************");
+    })
+    /**
+     * @tc.name relationalStoreTest027
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_1200
+     * @tc.desc insert para greater than 2MB
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('relationalStoreTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + "************* relationalStoreTest027 start *************");
+
+      let resultSet:relationalStore.ResultSet|undefined;
+      await rdbStore?.insert("employee",valueBucket2m);
+      let predicates = new relationalStore.RdbPredicates("employee")
+      resultSet = await rdbStore?.query(predicates);
+      resultSet.goToFirstRow();
+      try{
+        const name = resultSet?.getString(resultSet.getColumnIndex("name"))
+        console.log(TAG + "name:" + name);
+        expect(null).assertFail();
+        done();
+      } catch (err) {
+        console.log(TAG + "err" + err.code +err.message);
+        expect(err.code == 14800012).assertTrue();
+        done();
+      }
+      console.info(TAG + "************* relationalStoreTest027 end *************");
+    })
+
+    /**
+     * @tc.name relationalStoreTest028
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_1300
+     * @tc.desc insert para greater than 2MB
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('relationalStoreTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + "************* relationalStoreTest028 start *************");
+
+      let resultSet:relationalStore.ResultSet|undefined;
+      await rdbStore?.insert("employee",valueBucket2m,relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+      let predicates = new relationalStore.RdbPredicates("employee")
+      resultSet = await rdbStore?.query(predicates);
+      resultSet.goToFirstRow();
+      try{
+        const name = resultSet?.getString(resultSet.getColumnIndex("name"))
+        console.log(TAG + "name:" + name);
+        expect(null).assertFail();
+        done();
+      } catch (err) {
+        console.log(TAG + "err" + err.code +err.message);
+        expect(err.code == 14800012).assertTrue();
+        done();
+      }
+      console.info(TAG + "************* relationalStoreTest028 end *************");
+    })
+
+    /**
+     * @tc.name relationalStoreTest029
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_1400
+     * @tc.desc insertSync para greater than 2MB
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('relationalStoreTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + "************* relationalStoreTest029 start *************");
+
+      let resultSet:relationalStore.ResultSet|undefined;
+      rdbStore?.insertSync("employee",valueBucket2m,relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+      let predicates = new relationalStore.RdbPredicates("employee")
+      resultSet = await rdbStore?.query(predicates);
+      resultSet.goToFirstRow();
+      try{
+        const name = resultSet?.getString(resultSet.getColumnIndex("name"))
+        console.log(TAG + "name:" + name);
+        expect(null).assertFail();
+        done();
+      } catch (err) {
+        console.log(TAG + "err" + err.code +err.message);
+        expect(err.code == 14800012).assertTrue();
+        done();
+      }
+      console.info(TAG + "************* relationalStoreTest029 end *************");
+    })
+
+    /**
+     * @tc.name relationalStoreTest030
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_1500
+     * @tc.desc insertSync para greater than 2MB
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('relationalStoreTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + "************* relationalStoreTest030 start *************");
+
+      let resultSet:relationalStore.ResultSet|undefined;
+      rdbStore?.insertSync("employee",sendableValusBucket,relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+      let predicates = new relationalStore.RdbPredicates("employee")
+      resultSet = await rdbStore?.query(predicates);
+      resultSet.goToFirstRow();
+      try{
+        const name = resultSet?.getString(resultSet.getColumnIndex("name"))
+        console.log(TAG + "name:" + name);
+        expect(null).assertFail();
+        done();
+      } catch (err) {
+        console.log(TAG + "err" + err.code +err.message);
+        expect(err.code == 14800012).assertTrue();
+        done();
+      }
+      console.info(TAG + "************* relationalStoreTest030 end *************");
+    })
+
+    /**
+     * @tc.name relationalStoreTest031
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_1600
+     * @tc.desc insert para greater than 2MB queryLockedRow
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('relationalStoreTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + "************* relationalStoreTest031 start *************");
+
+      let resultSet:relationalStore.ResultSet|undefined;
+      await rdbStore?.insert("employee",valueBucket2m);
+      let predicates = new relationalStore.RdbPredicates("employee")
+      resultSet = await rdbStore?.queryLockedRow(predicates);
+      resultSet.goToFirstRow();
+      try{
+        const name = resultSet?.getString(resultSet.getColumnIndex("name"))
+        console.log(TAG + "name:" + name);
+        expect(null).assertFail();
+        done();
+      } catch (err) {
+        console.log(TAG + "err" + err.code +err.message);
+        expect(err.code == 14800012).assertTrue();
+        done();
+      }
+      console.info(TAG + "************* relationalStoreTest031 end *************");
+    })
+    /**
+     * @tc.name relationalStoreTest032
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_1700
+     * @tc.desc insert para greater than 2MB querySync
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('relationalStoreTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + "************* relationalStoreTest032 start *************");
+      let resultSet:relationalStore.ResultSet|undefined;
+      await rdbStore?.insert("employee",valueBucket2m);
+      let predicates = new relationalStore.RdbPredicates("employee")
+      resultSet = rdbStore?.querySync(predicates);
+      resultSet.goToFirstRow();
+      try{
+        const age = resultSet?.getLong(resultSet.getColumnIndex("age"))
+        console.log(TAG + "age:" + age);
+        expect(age == 122341465656).assertTrue();
+        done();
+      } catch (err) {
+        console.log(TAG + "err" + err.code +err.message);
+        expect().assertFail();
+        done();
+      }
+      console.info(TAG + "************* relationalStoreTest032 end *************");
+    })
+    /**
+     * @tc.name relationalStoreTest033
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_1800
+     * @tc.desc update param greater than 2MB
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('relationalStoreTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + "************* relationalStoreTest033 start *************");
+      const valueBucket:relationalStore.ValuesBucket = {
+         'name':'lisi',
+      }
+      let resultSet:relationalStore.ResultSet|undefined;
+      await rdbStore?.insert("employee",valueBucket);
+      let predicates = new relationalStore.RdbPredicates("employee")
+      predicates.equalTo("name","lisi")
+      await rdbStore?.update(valueBucket2m,predicates);
+      let predicates1 = new relationalStore.RdbPredicates("employee");
+      resultSet = await rdbStore.query(predicates1);
+      resultSet.goToFirstRow();
+      try{
+        const name = resultSet?.getString(resultSet.getColumnIndex("name"))
+        console.log(TAG + "name:" + name);
+        expect(null).assertFail();
+        done();
+      } catch (err) {
+        console.log(TAG + "err" + err.code +err.message);
+        expect(err.code == 14800012).assertTrue();
+        done();
+      }
+      console.info(TAG + "************* relationalStoreTest033 end *************");
+    })
+
+    /**
+     * @tc.name relationalStoreTest034
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_1900
+     * @tc.desc update param greater than 2MB
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('relationalStoreTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + "************* relationalStoreTest034 start *************");
+      const valueBucket:relationalStore.ValuesBucket = {
+        'name':'lisi',
+      }
+      let resultSet:relationalStore.ResultSet|undefined;
+      await rdbStore?.insert("employee",valueBucket);
+      let predicates = new relationalStore.RdbPredicates("employee")
+      predicates.equalTo("name","lisi")
+      await rdbStore?.update(valueBucket2m,predicates,relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+      let predicates1 = new relationalStore.RdbPredicates("employee");
+      resultSet = await rdbStore.query(predicates1);
+      resultSet.goToFirstRow();
+      try{
+        const name = resultSet?.getString(resultSet.getColumnIndex("name"))
+        console.log(TAG + "name:" + name);
+        expect(null).assertFail();
+        done();
+      } catch (err) {
+        console.log(TAG + "err" + err.code +err.message);
+        expect(err.code == 14800012).assertTrue();
+        done();
+      }
+      console.info(TAG + "************* relationalStoreTest034 end *************");
+    })
+
+    /**
+     * @tc.name relationalStoreTest035
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_2000
+     * @tc.desc updateSync param greater than 2MB
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('relationalStoreTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + "************* relationalStoreTest035 start *************");
+      const valueBucket:relationalStore.ValuesBucket = {
+        'name':'lisi',
+      }
+      let resultSet:relationalStore.ResultSet|undefined;
+      await rdbStore?.insert("employee",valueBucket);
+      let predicates = new relationalStore.RdbPredicates("employee")
+      predicates.equalTo("name","lisi")
+      rdbStore?.updateSync(valueBucket2m,predicates,relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+      let predicates1 = new relationalStore.RdbPredicates("employee");
+      resultSet = await rdbStore.query(predicates1);
+      resultSet.goToFirstRow();
+      try{
+        const name = resultSet?.getString(resultSet.getColumnIndex("name"))
+        console.log(TAG + "name:" + name);
+        expect(null).assertFail();
+        done();
+      } catch (err) {
+        console.log(TAG + "err" + err.code +err.message);
+        expect(err.code == 14800012).assertTrue();
+        done();
+      }
+      console.info(TAG + "************* relationalStoreTest035 end *************");
+    })
+   /**
+     * @tc.name testDataChange001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_2100
+     * @tc.desc Register callback for dataChange
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+   it('testDataChange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
+    console.log(TAG + "************* testDataChange001 start *************");
+    let status1 = 0;
+    let status2 = 0;
+    let status3 = 0;
+    let status4 = 0;
+    let status5 = 0;
+    let status6 = 0;
+    let status7 = 0;
+    let status8 = 0;
+    let status9 = 0;
+    let status10 = 0;
+    let storeObserver1 = (devices: Array<string>) => {
+      console.info(TAG + " dataChange storeObserver1 into");
+      status1 = 1;
+    };
+    let storeObserver2 = (devices: Array<string>) => {
+      console.info(TAG + " dataChange storeObserver2 into");
+      status2 = 1;
+    };
+    let storeObserver3 = (devices: Array<string>) => {
+      console.info(TAG + " dataChange storeObserver3 into");
+      status3 = 1;
+    };
+    let storeObserver4 = (devices: Array<string>) => {
+      console.info(TAG + " dataChange storeObserver4 into");
+      status4 = 1;
+    };
+    let storeObserver5 = (devices: Array<string>) => {
+      console.info(TAG + " dataChange storeObserver5 into");
+      status5 = 1;
+    };
+    let storeObserver6 = (devices: Array<string>) => {
+      console.info(TAG + " dataChange storeObserver6 into");
+      status6 = 1;
+    };
+    let storeObserver7 = (devices: Array<string>) => {
+      console.info(TAG + " dataChange storeObserver7 into");
+      status7 = 1;
+    };
+    let storeObserver8 = (devices: Array<string>) => {
+      console.info(TAG + " dataChange storeObserver8 into");
+      status8 = 1;
+    };
+    let storeObserver9 = (devices: Array<string>) => {
+      console.info(TAG + " dataChange storeObserver9 into");
+      status9 = 1;
+    };
+    let storeObserver10 = (devices: Array<string>) => {
+      console.info(TAG + " dataChange storeObserver10 into");
+      status10 = 1;
+    };
+    let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
+    expect(rdbStore2 != undefined).assertTrue();
+    rdbStore?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver1);
+    rdbStore?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver2);
+    rdbStore?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver3);
+    rdbStore?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver4);
+    rdbStore?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver5);
+
+    rdbStore2?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver6);
+    rdbStore2?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver7);
+    rdbStore2?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver8);
+    rdbStore2?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver9);
+    rdbStore2?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver10);
+
+    const valueBucket: relationalStore.ValuesBucket = {
+      'name': 'zhangsan',
+      'age': 18,
+      'salary': 25000,
+    };
+    await rdbStore?.insert("test", valueBucket);
+    await sleep(800);
+    expect(status1).assertEqual(1);
+    expect(status2).assertEqual(1);
+    expect(status3).assertEqual(1);
+    expect(status4).assertEqual(1);
+    expect(status5).assertEqual(1);
+    expect(status6).assertEqual(1);
+    expect(status7).assertEqual(1);
+    expect(status8).assertEqual(1);
+    expect(status9).assertEqual(1);
+    expect(status10).assertEqual(1);
+    rdbStore?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver1);
+    rdbStore?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver2);
+    rdbStore?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver3);
+    rdbStore?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver4);
+    rdbStore?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver5);
+    rdbStore2?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver6);
+    rdbStore2?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver7);
+    rdbStore2?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver8);
+    rdbStore2?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver9);
+    rdbStore2?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver10);
+    console.log(TAG + "************* testDataChange001 end *************");
+    done();
+  })
+
+  /**
+   * @tc.name testDataChange002
+   * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_2200
+   * @tc.desc Register callback for dataChange
+   * @tc.size MediumTest
+   * @tc.type Function
+   * @tc.level Level 2
+   */
+  it('testDataChange002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
+    console.log(TAG + "************* testDataChange002 start *************");
+    let status1 = 0;
+    let status2 = 0;
+    let status3 = 0;
+    let status4 = 0;
+    let status5 = 0;
+    let status6 = 0;
+    let status7 = 0;
+    let status8 = 0;
+    let status9 = 0;
+    let status10 = 0;
+    let storeObserver1 = (devices: Array<string>) => {
+      console.info(TAG + " dataChange1 storeObserver1 into");
+      status1 = 1;
+    };
+    let storeObserver2 = (devices: Array<string>) => {
+      console.info(TAG + " dataChange1 storeObserver2 into");
+      status2 = 1;
+    };
+    let storeObserver3 = (devices: Array<string>) => {
+      console.info(TAG + " dataChange1 storeObserver3 into");
+      status3 = 1;
+    };
+    let storeObserver4 = (devices: Array<string>) => {
+      console.info(TAG + " dataChange1 storeObserver4 into");
+      status4 = 1;
+    };
+    let storeObserver5 = (devices: Array<string>) => {
+      console.info(TAG + " dataChange1 storeObserver5 into");
+      status5 = 1;
+    };
+    let storeObserver6 = (devices: Array<string>) => {
+      console.info(TAG + " dataChange1 storeObserver6 into");
+      status6 = 1;
+    };
+    let storeObserver7 = (devices: Array<string>) => {
+      console.info(TAG + " dataChange1 storeObserver7 into");
+      status7 = 1;
+    };
+    let storeObserver8 = (devices: Array<string>) => {
+      console.info(TAG + " dataChange1 storeObserver8 into");
+      status8 = 1;
+    };
+    let storeObserver9 = (devices: Array<string>) => {
+      console.info(TAG + " dataChange1 storeObserver9 into");
+      status9 = 1;
+    };
+    let storeObserver10 = (devices: Array<string>) => {
+      console.info(TAG + " dataChange1 storeObserver10 into");
+      status10 = 1;
+    };
+    let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
+    expect(rdbStore2 != undefined).assertTrue();
+    rdbStore?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver1);
+    rdbStore?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver2);
+    rdbStore?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver3);
+    rdbStore?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver4);
+    rdbStore?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver5);
+
+    rdbStore2?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver6);
+    rdbStore2?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver7);
+    rdbStore2?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver8);
+    rdbStore2?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver9);
+    rdbStore2?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver10);
+    await rdbStore2.close();
+    const valueBucket: relationalStore.ValuesBucket = {
+      'name': 'zhangsan',
+      'age': 18,
+      'salary': 25000,
+    };
+    await rdbStore?.insert("test", valueBucket);
+    await sleep(500);
+    expect(status1).assertEqual(1);
+    expect(status2).assertEqual(1);
+    expect(status3).assertEqual(1);
+    expect(status4).assertEqual(1);
+    expect(status5).assertEqual(1);
+    expect(status6).assertEqual(0);
+    expect(status7).assertEqual(0);
+    expect(status8).assertEqual(0);
+    expect(status9).assertEqual(0);
+    expect(status10).assertEqual(0);
+    rdbStore?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver1);
+    rdbStore?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver2);
+    rdbStore?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver3);
+    rdbStore?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver4);
+    rdbStore?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver5);
+    console.log(TAG + "************* testDataChange002 end *************");
+    done();
+  })
+
+  /**
+   * @tc.name testEvent001
+   * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_2300
+   * @tc.desc Register callback for event
+   * @tc.size MediumTest
+   * @tc.type Function
+   * @tc.level Level 2
+   */
+  it('testEvent001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
+    console.log(TAG + "************* testEvent001 start *************");
+    let status1 = 0;
+    let status2 = 0;
+    let status3 = 0;
+    let status4 = 0;
+    let status5 = 0;
+    let status6 = 0;
+    let status7 = 0;
+    let status8 = 0;
+    let status9 = 0;
+    let status10 = 0;
+    let storeObserver1 = () => {
+      console.info(TAG + " event storeObserver1 into");
+      status1 = 1;
+    };
+    let storeObserver2 = () => {
+      console.info(TAG + " event storeObserver2 into");
+      status2 = 1;
+    };
+    let storeObserver3 = () => {
+      console.info(TAG + " event storeObserver3 into");
+      status3 = 1;
+    };
+    let storeObserver4 = () => {
+      console.info(TAG + " event storeObserver4 into");
+      status4 = 1;
+    };
+    let storeObserver5 = () => {
+      console.info(TAG + " event storeObserver5 into");
+      status5 = 1;
+    };
+    let storeObserver6 = () => {
+      console.info(TAG + " event storeObserver6 into");
+      status6 = 1;
+    };
+    let storeObserver7 = () => {
+      console.info(TAG + " event storeObserver7 into");
+      status7 = 1;
+    };
+    let storeObserver8 = () => {
+      console.info(TAG + " event storeObserver8 into");
+      status8 = 1;
+    };
+    let storeObserver9 = () => {
+      console.info(TAG + " event storeObserver9 into");
+      status9 = 1;
+    };
+    let storeObserver10 = () => {
+      console.info(TAG + " event storeObserver10 into");
+      status10 = 1;
+    };
+    let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
+    expect(rdbStore2 != undefined).assertTrue();
+    rdbStore?.on('event', true, storeObserver1);
+    rdbStore?.on('event', true, storeObserver2);
+    rdbStore?.on('event', true, storeObserver3);
+    rdbStore?.on('event', true, storeObserver4);
+    rdbStore?.on('event', true, storeObserver5);
+    rdbStore2?.on('event', true, storeObserver6);
+    rdbStore2?.on('event', true, storeObserver7);
+    rdbStore2?.on('event', true, storeObserver8);
+    rdbStore2?.on('event', true, storeObserver9);
+    rdbStore2?.on('event', true, storeObserver10);
+    rdbStore?.emit('event');
+    await sleep(800);
+    expect(status1).assertEqual(1);
+    expect(status2).assertEqual(1);
+    expect(status3).assertEqual(1);
+    expect(status4).assertEqual(1);
+    expect(status5).assertEqual(1);
+    expect(status6).assertEqual(1);
+    expect(status7).assertEqual(1);
+    expect(status8).assertEqual(1);
+    expect(status9).assertEqual(1);
+    expect(status10).assertEqual(1);
+    rdbStore?.off('event', true, storeObserver1);
+    rdbStore?.off('event', true, storeObserver2);
+    rdbStore?.off('event', true, storeObserver3);
+    rdbStore?.off('event', true, storeObserver4);
+    rdbStore?.off('event', true, storeObserver5);
+    rdbStore2?.off('event',true, storeObserver6);
+    rdbStore2?.off('event',true, storeObserver7);
+    rdbStore2?.off('event',true, storeObserver8);
+    rdbStore2?.off('event',true, storeObserver9);
+    rdbStore2?.off('event',true, storeObserver10);
+    console.log(TAG + "************* testEvent001 end *************");
+    done();
+  })
+
+  /**
+   * @tc.name testEvent002
+   * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_2400
+   * @tc.desc Register callback for event
+   * @tc.size MediumTest
+   * @tc.type Function
+   * @tc.level Level 2
+   */
+  it('testEvent002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
+    console.log(TAG + "************* testEvent002 start *************");
+    let status1 = 0;
+    let status2 = 0;
+    let status3 = 0;
+    let status4 = 0;
+    let status5 = 0;
+    let status6 = 0;
+    let status7 = 0;
+    let status8 = 0;
+    let status9 = 0;
+    let status10 = 0;
+    let storeObserver1 = () => {
+      console.info(TAG + " event1 storeObserver1 into");
+      status1 = 1;
+    };
+    let storeObserver2 = () => {
+      console.info(TAG + " event1 storeObserver2 into");
+      status2 = 1;
+    };
+    let storeObserver3 = () => {
+      console.info(TAG + " event1 storeObserver3 into");
+      status3 = 1;
+    };
+    let storeObserver4 = () => {
+      console.info(TAG + " event1 storeObserver4 into");
+      status4 = 1;
+    };
+    let storeObserver5 = () => {
+      console.info(TAG + " event1 storeObserver5 into");
+      status5 = 1;
+    };
+    let storeObserver6 = () => {
+      console.info(TAG + " event1 storeObserver6 into");
+      status6 = 1;
+    };
+    let storeObserver7 = () => {
+      console.info(TAG + " event1 storeObserver7 into");
+      status7 = 1;
+    };
+    let storeObserver8 = () => {
+      console.info(TAG + " event1 storeObserver8 into");
+      status8 = 1;
+    };
+    let storeObserver9 = () => {
+      console.info(TAG + " event1 storeObserver9 into");
+      status9 = 1;
+    };
+    let storeObserver10 = () => {
+      console.info(TAG + " event1 storeObserver10 into");
+      status10 = 1;
+    };
+    let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
+    expect(rdbStore2 != undefined).assertTrue();
+    rdbStore?.on('event', true, storeObserver1);
+    rdbStore?.on('event', true, storeObserver2);
+    rdbStore?.on('event', true, storeObserver3);
+    rdbStore?.on('event', true, storeObserver4);
+    rdbStore?.on('event', true, storeObserver5);
+    rdbStore2?.on('event', true, storeObserver6);
+    rdbStore2?.on('event', true, storeObserver7);
+    rdbStore2?.on('event', true, storeObserver8);
+    rdbStore2?.on('event', true, storeObserver9);
+    rdbStore2?.on('event', true, storeObserver10);
+    await rdbStore2.close();
+    rdbStore?.emit('event');
+    await sleep(800);
+    expect(status1).assertEqual(1);
+    expect(status2).assertEqual(1)
+    expect(status3).assertEqual(1)
+    expect(status4).assertEqual(1)
+    expect(status5).assertEqual(1)
+    expect(status6).assertEqual(0);
+    expect(status7).assertEqual(0);
+    expect(status8).assertEqual(0);
+    expect(status9).assertEqual(0);
+    expect(status10).assertEqual(0);
+    rdbStore?.off('event', true, storeObserver1);
+    rdbStore?.off('event', true, storeObserver2);
+    rdbStore?.off('event', true, storeObserver3);
+    rdbStore?.off('event', true, storeObserver4);
+    rdbStore?.off('event', true, storeObserver5);
+    console.log(TAG + "************* testEvent002 end *************");
+    done();
+  })
+
+  /**
+   * @tc.name testStatistics001
+   * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_2500
+   * @tc.desc Register callback for statistics
+   * @tc.size MediumTest
+   * @tc.type Function
+   * @tc.level Level 2
+   */
+  it('testStatistics001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
+    console.log(TAG + "************* testStatistics001 start *************");
+    let status1 = 0;
+    let status2 = 0;
+    let status3 = 0;
+    let status4 = 0;
+    let status5 = 0;
+    let status6 = 0;
+    let status7 = 0;
+    let status8 = 0;
+    let status9 = 0;
+    let status10 = 0;
+    let storeObserver1 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " statistics storeObserver1 into");
+      status1 = 1;
+    };
+    let storeObserver2 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " statistics storeObserver2 into");
+      status2 = 1;
+    };
+    let storeObserver3 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " statistics storeObserver3 into");
+      status3 = 1;
+    };
+    let storeObserver4 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " statistics storeObserver4 into");
+      status4 = 1;
+    };
+    let storeObserver5 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " statistics storeObserver5 into");
+      status5 = 1;
+    };
+    let storeObserver6 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " statistics storeObserver6 into");
+      status6 = 1;
+    };
+    let storeObserver7 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " statistics storeObserver7 into");
+      status7 = 1;
+    };
+    let storeObserver8 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " statistics storeObserver8 into");
+      status8 = 1;
+    };
+    let storeObserver9 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " statistics storeObserver9 into");
+      status9 = 1;
+    };
+    let storeObserver10 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " statistics storeObserver10 into");
+      status10 = 1;
+    };
+
+    let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
+    expect(rdbStore2 != undefined).assertTrue();
+    rdbStore?.on('statistics', storeObserver1);
+    rdbStore?.on('statistics', storeObserver2);
+    rdbStore?.on('statistics', storeObserver3);
+    rdbStore?.on('statistics', storeObserver4);
+    rdbStore?.on('statistics', storeObserver5);
+    rdbStore2?.on('statistics', storeObserver6);
+    rdbStore2?.on('statistics', storeObserver7);
+    rdbStore2?.on('statistics', storeObserver8);
+    rdbStore2?.on('statistics', storeObserver9);
+    rdbStore2?.on('statistics', storeObserver10);
+    const valueBucket: relationalStore.ValuesBucket = {
+      'name': 'zhangsan',
+      'age': 18,
+      'salary': 25000,
+    };
+    await rdbStore?.insert("test", valueBucket);
+    await sleep(800);
+    expect(status1).assertEqual(1);
+    expect(status2).assertEqual(1);
+    expect(status3).assertEqual(1);
+    expect(status4).assertEqual(1);
+    expect(status5).assertEqual(1);
+    expect(status6).assertEqual(1);
+    expect(status7).assertEqual(1);
+    expect(status8).assertEqual(1);
+    expect(status9).assertEqual(1);
+    expect(status10).assertEqual(1);
+    rdbStore?.off('statistics', storeObserver1);
+    rdbStore?.off('statistics', storeObserver2);
+    rdbStore?.off('statistics', storeObserver3);
+    rdbStore?.off('statistics', storeObserver4);
+    rdbStore?.off('statistics', storeObserver5);
+    rdbStore2?.off('statistics', storeObserver6);
+    rdbStore2?.off('statistics', storeObserver7);
+    rdbStore2?.off('statistics', storeObserver8);
+    rdbStore2?.off('statistics', storeObserver9);
+    rdbStore2?.off('statistics', storeObserver10);
+    console.log(TAG + "************* testStatistics001 end *************");
+    done();
+  })
+
+  /**
+   * @tc.name testStatistics002
+   * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_2600
+   * @tc.desc Register callback for statistics
+   * @tc.size MediumTest
+   * @tc.type Function
+   * @tc.level Level 2
+   */
+  it('testStatistics002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
+    console.log(TAG + "************* testStatistics002 start *************");
+    let status1 = 0;
+    let status2 = 0;
+    let status3 = 0;
+    let status4 = 0;
+    let status5 = 0;
+    let status6 = 0;
+    let status7 = 0;
+    let status8 = 0;
+    let status9 = 0;
+    let status10 = 0;
+    let storeObserver1 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " statistics1 storeObserver1 into");
+      status1 = 1;
+    };
+    let storeObserver2 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " statistics1 storeObserver2 into");
+      status2 = 1;
+    };
+    let storeObserver3 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " statistics1 storeObserver3 into");
+      status3 = 1;
+    };
+    let storeObserver4 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " statistics1 storeObserver4 into");
+      status4 = 1;
+    };
+    let storeObserver5 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " statistics1 storeObserver5 into");
+      status5 = 1;
+    };
+    let storeObserver6 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " statistics1 storeObserver6 into");
+      status6 = 1;
+    };
+    let storeObserver7 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " statistics1 storeObserver7 into");
+      status7 = 1;
+    };
+    let storeObserver8 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " statistics1 storeObserver8 into");
+      status8 = 1;
+    };
+    let storeObserver9 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " statistics1 storeObserver9 into");
+      status9 = 1;
+    };
+    let storeObserver10 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " statistics1 storeObserver10 into");
+      status10 = 1;
+    };
+    let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
+    expect(rdbStore2 != undefined).assertTrue();
+    rdbStore?.on('statistics', storeObserver1);
+    rdbStore?.on('statistics', storeObserver2);
+    rdbStore?.on('statistics', storeObserver3);
+    rdbStore?.on('statistics', storeObserver4);
+    rdbStore?.on('statistics', storeObserver5);
+    rdbStore2?.on('statistics', storeObserver6);
+    rdbStore2?.on('statistics', storeObserver7);
+    rdbStore2?.on('statistics', storeObserver8);
+    rdbStore2?.on('statistics', storeObserver9);
+    rdbStore2?.on('statistics', storeObserver10);
+    await rdbStore2.close();
+    const valueBucket: relationalStore.ValuesBucket = {
+      'name': 'zhangsan',
+      'age': 18,
+      'salary': 25000,
+    };
+    await rdbStore?.insert("test", valueBucket);
+    await sleep(800);
+    expect(status1).assertEqual(1);
+    expect(status2).assertEqual(1);
+    expect(status3).assertEqual(1);
+    expect(status4).assertEqual(1);
+    expect(status5).assertEqual(1);
+    expect(status6).assertEqual(0);
+    expect(status7).assertEqual(0);
+    expect(status8).assertEqual(0);
+    expect(status9).assertEqual(0);
+    expect(status10).assertEqual(0);
+    rdbStore?.off('statistics', storeObserver1);
+    rdbStore?.off('statistics', storeObserver2);
+    rdbStore?.off('statistics', storeObserver3);
+    rdbStore?.off('statistics', storeObserver4);
+    rdbStore?.off('statistics', storeObserver5);
+    console.log(TAG + "************* testStatistics002 end *************");
+    done();
+  })
+
+  /**
+   * @tc.name testSqliteErrorOccurred001
+   * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_2700
+   * @tc.desc Register callback for sqliteErrorOccurred
+   * @tc.size MediumTest
+   * @tc.type Function
+   * @tc.level Level 2
+   */
+  it('testSqliteErrorOccurred001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
+    console.log(TAG + "************* testSqliteErrorOccurred001 start *************");
+    let status1 = 0;
+    let status2 = 0;
+    let status3 = 0;
+    let status4 = 0;
+    let status5 = 0;
+    let status6 = 0;
+    let status7 = 0;
+    let status8 = 0;
+    let status9 = 0;
+    let status10 = 0;
+    let storeObserver1 = (exceptionMessage: relationalStore.ExceptionMessage) => {
+      console.info(TAG + " sqliteErrorOccurred storeObserver1 into");
+      status1 = 1;
+    };
+    let storeObserver2 = (exceptionMessage: relationalStore.ExceptionMessage) => {
+      console.info(TAG + " sqliteErrorOccurred storeObserver2 into");
+      status2 = 1;
+    };
+    let storeObserver3 = (exceptionMessage: relationalStore.ExceptionMessage) => {
+      console.info(TAG + " sqliteErrorOccurred storeObserver3 into");
+      status3 = 1;
+    };
+    let storeObserver4 = (exceptionMessage: relationalStore.ExceptionMessage) => {
+      console.info(TAG + " sqliteErrorOccurred storeObserver4 into");
+      status4 = 1;
+    };
+    let storeObserver5 = (exceptionMessage: relationalStore.ExceptionMessage) => {
+      console.info(TAG + " sqliteErrorOccurred storeObserver5 into");
+      status5 = 1;
+    };
+    let storeObserver6 = (exceptionMessage: relationalStore.ExceptionMessage) => {
+      console.info(TAG + " sqliteErrorOccurred storeObserver6 into");
+      status6 = 1;
+    };
+    let storeObserver7 = (exceptionMessage: relationalStore.ExceptionMessage) => {
+      console.info(TAG + " sqliteErrorOccurred storeObserver7 into");
+      status7 = 1;
+    };
+    let storeObserver8 = (exceptionMessage: relationalStore.ExceptionMessage) => {
+      console.info(TAG + " sqliteErrorOccurred storeObserver8 into");
+      status8 = 1;
+    };
+    let storeObserver9 = (exceptionMessage: relationalStore.ExceptionMessage) => {
+      console.info(TAG + " sqliteErrorOccurred storeObserver9 into");
+      status9 = 1;
+    };
+    let storeObserver10 = (exceptionMessage: relationalStore.ExceptionMessage) => {
+      console.info(TAG + " sqliteErrorOccurred storeObserver10 into");
+      status10 = 1;
+    };
+    let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
+    expect(rdbStore2 != undefined).assertTrue();
+    rdbStore?.on('sqliteErrorOccurred', storeObserver1);
+    rdbStore?.on('sqliteErrorOccurred', storeObserver2);
+    rdbStore?.on('sqliteErrorOccurred', storeObserver3);
+    rdbStore?.on('sqliteErrorOccurred', storeObserver4);
+    rdbStore?.on('sqliteErrorOccurred', storeObserver5);
+    rdbStore2?.on('sqliteErrorOccurred', storeObserver6);
+    rdbStore2?.on('sqliteErrorOccurred', storeObserver7);
+    rdbStore2?.on('sqliteErrorOccurred', storeObserver8);
+    rdbStore2?.on('sqliteErrorOccurred', storeObserver9);
+    rdbStore2?.on('sqliteErrorOccurred', storeObserver10);
+    const valueBucket: relationalStore.ValuesBucket = {
+      'name': 'zhangsan',
+      'age': 18,
+      'salary': 25000,
+    };
+    try {
+      await rdbStore?.insert("test1", valueBucket);
+    } catch(err) {
+      console.log(TAG + "err.code" + err.code)
+    }
+    await sleep(800);
+    expect(status1).assertEqual(1);
+    expect(status2).assertEqual(1);
+    expect(status3).assertEqual(1);
+    expect(status4).assertEqual(1);
+    expect(status5).assertEqual(1);
+    expect(status6).assertEqual(1);
+    expect(status7).assertEqual(1);
+    expect(status8).assertEqual(1);
+    expect(status9).assertEqual(1);
+    expect(status10).assertEqual(1);
+    rdbStore?.off('sqliteErrorOccurred', storeObserver1);
+    rdbStore?.off('sqliteErrorOccurred', storeObserver2);
+    rdbStore?.off('sqliteErrorOccurred', storeObserver3);
+    rdbStore?.off('sqliteErrorOccurred', storeObserver4);
+    rdbStore?.off('sqliteErrorOccurred', storeObserver5);
+    rdbStore2?.off('sqliteErrorOccurred',storeObserver6);
+    rdbStore2?.off('sqliteErrorOccurred',storeObserver7);
+    rdbStore2?.off('sqliteErrorOccurred',storeObserver8);
+    rdbStore2?.off('sqliteErrorOccurred',storeObserver9);
+    rdbStore2?.off('sqliteErrorOccurred',storeObserver10);
+    console.log(TAG + "************* testSqliteErrorOccurred001 end *************");
+    done();
+  })
+
+  /**
+   * @tc.name testSqliteErrorOccurred002
+   * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_2800
+   * @tc.desc Register callback for sqliteErrorOccurred
+   * @tc.size MediumTest
+   * @tc.type Function
+   * @tc.level Level 2
+   */
+  it('testSqliteErrorOccurred002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
+    console.log(TAG + "************* testSqliteErrorOccurred002 start *************");
+    let status1 = 0;
+    let status2 = 0;
+    let status3 = 0;
+    let status4 = 0;
+    let status5 = 0;
+    let status6 = 0;
+    let status7 = 0;
+    let status8 = 0;
+    let status9 = 0;
+    let status10 = 0;
+    let storeObserver1 = (exceptionMessage: relationalStore.ExceptionMessage) => {
+      console.info(TAG + " sqliteErrorOccurred1 storeObserver1 into");
+      status1 = 1;
+    };
+    let storeObserver2 = (exceptionMessage: relationalStore.ExceptionMessage) => {
+      console.info(TAG + " sqliteErrorOccurred1 storeObserver2 into");
+      status2 = 1;
+    };
+    let storeObserver3 = (exceptionMessage: relationalStore.ExceptionMessage) => {
+      console.info(TAG + " sqliteErrorOccurred1 storeObserver3 into");
+      status3 = 1;
+    };
+    let storeObserver4 = (exceptionMessage: relationalStore.ExceptionMessage) => {
+      console.info(TAG + " sqliteErrorOccurred1 storeObserver4 into");
+      status4 = 1;
+    };
+    let storeObserver5 = (exceptionMessage: relationalStore.ExceptionMessage) => {
+      console.info(TAG + " sqliteErrorOccurred1 storeObserver5 into");
+      status5 = 1;
+    };
+    let storeObserver6 = (exceptionMessage: relationalStore.ExceptionMessage) => {
+      console.info(TAG + " sqliteErrorOccurred1 storeObserver6 into");
+      status6 = 1;
+    };
+    let storeObserver7 = (exceptionMessage: relationalStore.ExceptionMessage) => {
+      console.info(TAG + " sqliteErrorOccurred1 storeObserver7 into");
+      status7 = 1;
+    };
+    let storeObserver8 = (exceptionMessage: relationalStore.ExceptionMessage) => {
+      console.info(TAG + " sqliteErrorOccurred1 storeObserver8 into");
+      status8 = 1;
+    };
+    let storeObserver9 = (exceptionMessage: relationalStore.ExceptionMessage) => {
+      console.info(TAG + " sqliteErrorOccurred1 storeObserver9 into");
+      status9 = 1;
+    };
+    let storeObserver10 = (exceptionMessage: relationalStore.ExceptionMessage) => {
+      console.info(TAG + " sqliteErrorOccurred1 storeObserver10 into");
+      status10 = 1;
+    };
+    let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
+    expect(rdbStore2 != undefined).assertTrue();
+    rdbStore?.on('sqliteErrorOccurred', storeObserver1);
+    rdbStore?.on('sqliteErrorOccurred', storeObserver2);
+    rdbStore?.on('sqliteErrorOccurred', storeObserver3);
+    rdbStore?.on('sqliteErrorOccurred', storeObserver4);
+    rdbStore?.on('sqliteErrorOccurred', storeObserver5);
+    rdbStore2?.on('sqliteErrorOccurred', storeObserver6);
+    rdbStore2?.on('sqliteErrorOccurred', storeObserver7);
+    rdbStore2?.on('sqliteErrorOccurred', storeObserver8);
+    rdbStore2?.on('sqliteErrorOccurred', storeObserver9);
+    rdbStore2?.on('sqliteErrorOccurred', storeObserver10);
+    await rdbStore2.close();
+    const valueBucket: relationalStore.ValuesBucket = {
+      'name': 'zhangsan',
+      'age': 18,
+      'salary': 25000,
+    };
+    try{
+      await rdbStore?.insert("test1", valueBucket);
+    }catch(err){
+      console.log(TAG + err.code +err.message)
+    }
+
+    await sleep(800);
+    expect(status1).assertEqual(1);
+    expect(status2).assertEqual(1);
+    expect(status3).assertEqual(1);
+    expect(status4).assertEqual(1);
+    expect(status5).assertEqual(1);
+    expect(status6).assertEqual(0);
+    expect(status7).assertEqual(0);
+    expect(status8).assertEqual(0);
+    expect(status9).assertEqual(0);
+    expect(status10).assertEqual(0);
+    rdbStore?.off('sqliteErrorOccurred', storeObserver1);
+    rdbStore?.off('sqliteErrorOccurred', storeObserver2);
+    rdbStore?.off('sqliteErrorOccurred', storeObserver3);
+    rdbStore?.off('sqliteErrorOccurred', storeObserver4);
+    rdbStore?.off('sqliteErrorOccurred', storeObserver5);
+    console.log(TAG + "************* testSqliteErrorOccurred002 end *************");
+    done();
+  })
+
+  /**
+   * @tc.name testPerfStat001
+   * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_2900
+   * @tc.desc 1. Register callback for perfStat
+   * @tc.size MediumTest
+   * @tc.type Function
+   * @tc.level Level 2
+   */
+  it('testPerfStat001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
+    console.log(TAG + "************* testPerfStat001 start *************");
+    let status1 = 0;
+    let status2 = 0;
+    let status3 = 0;
+    let status4 = 0;
+    let status5 = 0;
+    let status6 = 0;
+    let status7 = 0;
+    let status8 = 0;
+    let status9 = 0;
+    let status10 = 0;
+    let storeObserver1 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " perfStat storeObserver1 into");
+      status1 = 1;
+    };
+    let storeObserver2 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " perfStat storeObserver2 into");
+      status2 = 1;
+    };
+    let storeObserver3 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " perfStat storeObserver3 into");
+      status3 = 1;
+    };
+    let storeObserver4 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " perfStat storeObserver4 into");
+      status4 = 1;
+    };
+    let storeObserver5 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " perfStat storeObserver5 into");
+      status5 = 1;
+    };
+    let storeObserver6 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " perfStat storeObserver6 into");
+      status6 = 1;
+    };
+    let storeObserver7 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " perfStat storeObserver7 into");
+      status7 = 1;
+    };
+    let storeObserver8 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " perfStat storeObserver8 into");
+      status8 = 1;
+    };
+    let storeObserver9 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " perfStat storeObserver9 into");
+      status9 = 1;
+    };
+    let storeObserver10 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " perfStat storeObserver10 into");
+      status10 = 1;
+    };
+    let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
+    expect(rdbStore2 != undefined).assertTrue();
+    rdbStore?.on('perfStat', storeObserver1);
+    rdbStore?.on('perfStat', storeObserver2);
+    rdbStore?.on('perfStat', storeObserver3);
+    rdbStore?.on('perfStat', storeObserver4);
+    rdbStore?.on('perfStat', storeObserver5);
+    rdbStore2?.on('perfStat', storeObserver6);
+    rdbStore2?.on('perfStat', storeObserver7);
+    rdbStore2?.on('perfStat', storeObserver8);
+    rdbStore2?.on('perfStat', storeObserver9);
+    rdbStore2?.on('perfStat', storeObserver10);
+    const valueBucket: relationalStore.ValuesBucket = {
+      'name': 'zhangsan',
+      'age': 18,
+      'salary': 25000,
+    };
+    await rdbStore?.insert("test", valueBucket);
+    await sleep(800);
+    expect(status1).assertEqual(1);
+    expect(status2).assertEqual(1);
+    expect(status3).assertEqual(1);
+    expect(status4).assertEqual(1);
+    expect(status5).assertEqual(1);
+    expect(status6).assertEqual(1);
+    expect(status7).assertEqual(1);
+    expect(status8).assertEqual(1);
+    expect(status9).assertEqual(1);
+    expect(status10).assertEqual(1);
+    rdbStore?.off('perfStat', storeObserver1);
+    rdbStore?.off('perfStat', storeObserver2);
+    rdbStore?.off('perfStat', storeObserver3);
+    rdbStore?.off('perfStat', storeObserver4);
+    rdbStore?.off('perfStat', storeObserver5);
+    rdbStore2?.off('perfStat', storeObserver6);
+    rdbStore2?.off('perfStat', storeObserver7);
+    rdbStore2?.off('perfStat', storeObserver8);
+    rdbStore2?.off('perfStat', storeObserver9);
+    rdbStore2?.off('perfStat', storeObserver10);
+    console.log(TAG + "************* testPerfStat002 end *************");
+    done();
+  })
+
+  /**
+   * @tc.name testPerfStat002
+   * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_3000
+   * @tc.desc Register callback for perfStat
+   * @tc.size MediumTest
+   * @tc.type Function
+   * @tc.level Level 2
+   */
+  it('testPerfStat002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
+    console.log(TAG + "************* testPerfStat002 start *************");
+    let status1 = 0;
+    let status2 = 0;
+    let status3 = 0;
+    let status4 = 0;
+    let status5 = 0;
+    let status6 = 0;
+    let status7 = 0;
+    let status8 = 0;
+    let status9 = 0;
+    let status10 = 0;
+    let storeObserver1 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " perfStat1 storeObserver1 into");
+      status1 = 1;
+    };
+    let storeObserver2 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " perfStat1 storeObserver2 into");
+      status2 = 1;
+    };
+    let storeObserver3 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " perfStat1 storeObserver3 into");
+      status3 = 1;
+    };
+    let storeObserver4 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " perfStat1 storeObserver4 into");
+      status4 = 1;
+    };
+    let storeObserver5 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " perfStat1 storeObserver5 into");
+      status5 = 1;
+    };
+    let storeObserver6 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " perfStat1 storeObserver6 into");
+      status6 = 1;
+    };
+    let storeObserver7 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " perfStat1 storeObserver7 into");
+      status7 = 1;
+    };
+    let storeObserver8 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " perfStat1 storeObserver8 into");
+      status8 = 1;
+    };
+    let storeObserver9 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " perfStat1 storeObserver9 into");
+      status9 = 1;
+    };
+    let storeObserver10 = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + " perfStat1 storeObserver10 into");
+      status10 = 1;
+    };
+    let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
+    expect(rdbStore2 != undefined).assertTrue();
+    rdbStore?.on('perfStat', storeObserver1);
+    rdbStore?.on('perfStat', storeObserver2);
+    rdbStore?.on('perfStat', storeObserver3);
+    rdbStore?.on('perfStat', storeObserver4);
+    rdbStore?.on('perfStat', storeObserver5);
+    rdbStore2?.on('perfStat', storeObserver6);
+    rdbStore2?.on('perfStat', storeObserver7);
+    rdbStore2?.on('perfStat', storeObserver8);
+    rdbStore2?.on('perfStat', storeObserver9);
+    rdbStore2?.on('perfStat', storeObserver10);
+    await rdbStore2.close();
+    const valueBucket: relationalStore.ValuesBucket = {
+      'name': 'zhangsan',
+      'age': 18,
+      'salary': 25000,
+    };
+    await rdbStore?.insert("test", valueBucket);
+    await sleep(800);
+    expect(status1).assertEqual(1);
+    expect(status2).assertEqual(1);
+    expect(status3).assertEqual(1);
+    expect(status4).assertEqual(1);
+    expect(status5).assertEqual(1);
+    expect(status6).assertEqual(1);
+    expect(status7).assertEqual(1);
+    expect(status8).assertEqual(1);
+    expect(status9).assertEqual(1);
+    expect(status10).assertEqual(1);
+    rdbStore?.off('perfStat', storeObserver1);
+    rdbStore?.off('perfStat', storeObserver2);
+    rdbStore?.off('perfStat', storeObserver3);
+    rdbStore?.off('perfStat', storeObserver4);
+    rdbStore?.off('perfStat', storeObserver5);
+    rdbStore2 = await relationalStore.getRdbStore(context, STORE_CONFIG);
+    rdbStore2?.off('perfStat');
+    await sleep(800);
+    console.log(TAG + "************* testPerfStat002 end *************");
+    done();
     })
   })
 }

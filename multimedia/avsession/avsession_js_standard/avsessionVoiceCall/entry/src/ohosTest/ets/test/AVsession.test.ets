@@ -3726,7 +3726,7 @@ export default function abilityTest() {
 
     it('SUB_MULTIMEDIA_AVSESSION_ISAVTIVE_ERRORCODE_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
-      controller.destroy();
+      await controller.destroy();
       await controller.isActive().then((isActive: boolean) => {
         console.info(`IsActive : SUCCESS : isactive : ${isActive}`);
         expect(false).assertTrue();
@@ -3771,7 +3771,7 @@ export default function abilityTest() {
 
     it('SUB_MULTIMEDIA_AVSESSION_ISAVTIVE_ERRORCODE_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
-      controller.destroy();
+      await controller.destroy();
       await controller.isActive((err: BusinessError, isActive: boolean) => {
         if (err) {
           console.error(`IsActive BusinessError: code: ${err.code}, message: ${err.message}`);
@@ -3795,7 +3795,7 @@ export default function abilityTest() {
 
     it('SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATE_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
-      controller.destroy();
+      await controller.destroy();
       await controller.getAVPlaybackState((err: BusinessError, state: avSession.AVPlaybackState) => {
         if (err) {
           console.error(`getAVPlaybackState BusinessError: code: ${err.code}, message: ${err.message}`);
@@ -3819,7 +3819,7 @@ export default function abilityTest() {
 
     it('SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATE_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
-      controller.destroy();
+      await controller.destroy();
       await controller.getAVPlaybackState().then((state: avSession.AVPlaybackState) => {
         console.info(`getAVPlaybackState : SUCCESS `);
         expect(false).assertTrue();

@@ -18,7 +18,10 @@ import { componentUtils } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_SUITE_KEY = 179101;
+let driver: Driver = Driver.create();
 
 @Entry
 @Component
@@ -29,17 +32,19 @@ struct WebComponent {
   @State controllerY: number =-100;
   @State mode: OverScrollMode = OverScrollMode.ALWAYS;
   @State str: string = "scrollByTo01";
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -48,6 +53,7 @@ struct WebComponent {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -58,19 +64,20 @@ struct WebComponent {
       Row() {
         Button("web test").key('scrollByToButton').onClick(async () => {
           console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           let webRect = Utils.getComponentRect('webScrollByTo');
           let X = Utils.getRectHorizontalCenterX(webRect)
           let Y = Utils.getRectVerticalCenterY(webRect)
           switch (this.str) {
             case "scrollByTo01": {
-              let driver: Driver = await Driver.create()
               let button = await driver.findComponent(ON.id('setScrollableButton'));
               await button.click();
-              await Utils.sleep(1000);
+              await Utils.waitForReleaseDriver(this.str,driver)
               await driver.swipe(X, Y, X, Y + this.controllerY);
-              await Utils.sleep(2000);
-              Utils.emitEvent(webview.ScrollType.EVENT , 20250322)
-              await Utils.sleep(2000);
+              await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+              Utils.emitEvent(webview.ScrollType.EVENT , 179110)
+              await Utils.waitForReleaseDriver(this.str,driver)
               break;
             }
           }
@@ -89,8 +96,8 @@ struct WebComponent {
         .key("webScrollByTo")
         .overScrollMode(this.mode)
         .onTouch((event) => {
-          this.controllerX = this.controller.getScrollOffset().x;
-          this.controllerY = this.controller.getScrollOffset().y;
+          this.controllerX = this.controller.getPageOffset().x;
+          this.controllerY = this.controller.getPageOffset().y;
           let componentInfo = componentUtils.getRectangleById("webScrollByTogit");
           let webHeight = px2vp(componentInfo.size.height);
           let pageHeight = this.controller.getPageHeight();
@@ -106,6 +113,10 @@ struct WebComponent {
           }
         })
         .height(600)
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
     }
     .width('100%')
     .height('100%')

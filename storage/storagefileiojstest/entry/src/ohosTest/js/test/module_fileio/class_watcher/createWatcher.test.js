@@ -21,6 +21,7 @@ import { Level } from '@ohos/hypium';
 
 export default function fileioCreateWatcher() {
 describe('fileio_createWatcher', function () {
+  console.log('fileio_createWatcher test start');
 
   /**
    * @tc.number SUB_DF_FILEIO_CREATEWATCHER_0000
@@ -338,6 +339,7 @@ describe('fileio_createWatcher', function () {
    * @tc.require
    */
   it('fileio_test_createWatcher_async_008', Level.LEVEL0, async function (done) {
+    console.log('fileio_hash test fileio_test_hash_async_008 start');
     let fpath = await nextFileName('fileio_test_createWatcher_async_008');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
     try {
@@ -364,7 +366,10 @@ describe('fileio_createWatcher', function () {
     } catch (e) {
       console.log('fileio_test_createWatcher_async_008 has failed for ' + e);
       expect(null).assertFail();
+      done();
     }
+    console.log('fileio_hash test fileio_test_hash_async_008 end');
   });
+  console.log('fileio_createWatcher test end');
 });
 }

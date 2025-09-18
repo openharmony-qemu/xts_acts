@@ -28,6 +28,7 @@ import certFrameworkCertCsrTestUnit from './certCsr.test';
 import certFrameworkResultCodeTestUnit from './certResultCode.test';
 import certFrameworkCertResolutionTestUnit from './certResolution.test';
 import certFrameworkRootCaCertTestUnit from './RootCaCert.test';
+import certFrameworkCreateP12CertTestUnit from './CreatePkcs12.test';
 
 
 export default function testsuite() {
@@ -47,4 +48,5 @@ export default function testsuite() {
   certFrameworkCertResolutionTestUnit();
   /* The test suite can be executed only after the root certificate is preconfigured on the mobile phone */
   certFrameworkRootCaCertTestUnit();
+  certFrameworkCreateP12CertTestUnit();
 }

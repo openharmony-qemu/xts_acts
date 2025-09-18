@@ -14,11 +14,10 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
-import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
+
+const EVENT_ID_SET_EMIT_KEY = 200500;
 
 @Entry
 @Component
@@ -37,13 +36,19 @@ struct webViewOnInterceptReqTwo {
     "</body>\n" +
     "</html>"
   @State title: string = "test";
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -52,6 +57,7 @@ struct webViewOnInterceptReqTwo {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -59,8 +65,11 @@ struct webViewOnInterceptReqTwo {
   build() {
     Column() {
       Row() {
-        Button("web click").key('webViewOnInterceptReqTwo').onClick(() => {
-          console.info("key==>" + this.str)
+        Button("web click").key('webViewOnInterceptReqTwo').onClick(async () => {
+          await Utils.waitForExist(()=>this.isPageEnd, 'webViewOnInterceptReqTwoIsPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isReceive, 'webViewOnInterceptReqTwoIsReceive', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitOnInterceptRequestSecond": {
               try {
@@ -69,7 +78,7 @@ struct webViewOnInterceptReqTwo {
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
-              Utils.emitEvent(this.title, 308)
+              Utils.emitEvent(this.title, 200510)
               break;
             }
           }
@@ -99,6 +108,10 @@ struct webViewOnInterceptReqTwo {
           console.log("title of this page: " + this.title);
           return this.responseweb
           console.log("this.responseweb: " + this.responseweb);
+        })
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
         })
     }
   }

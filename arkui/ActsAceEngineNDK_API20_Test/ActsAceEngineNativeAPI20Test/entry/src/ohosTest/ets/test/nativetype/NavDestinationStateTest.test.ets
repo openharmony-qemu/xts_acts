@@ -23,7 +23,7 @@ const OS_ACCOUNT_ERR_INVALID_PARAMETER = 12300002;
 export default function NavDestinationStateTest() {
   describe('NavDestinationStateTest', () => {
     beforeEach(async (done: Function) => {
-      await Utils.pushPageNoClear("NativeType/NavDestination", done);
+      await Utils.replacePageStandard("NativeType/NavDestination", done);
     })
     /**
      * @tc.number  : SUB_ArkUI_ACE_NavDestinationState_0100
@@ -43,8 +43,6 @@ export default function NavDestinationStateTest() {
           await Utils.triggerKey(2);
           await Utils.sleep(900);
           let result: number = libnativetype.GetNavDestinationStateResult(0);
-          await Utils.triggerKey(2);
-          await Utils.sleep(900);
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0100 result: " + result);
           expect(result).assertEqual(1);
           done()
@@ -72,8 +70,6 @@ export default function NavDestinationStateTest() {
           await Utils.triggerKey(2);
           await Utils.sleep(900);
           let result: number = libnativetype.GetNavDestinationStateResult(1);
-          await Utils.triggerKey(2);
-          await Utils.sleep(900);
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0200 result: " + result);
           expect(result).assertEqual(1);
           done()
@@ -101,8 +97,6 @@ export default function NavDestinationStateTest() {
           await Utils.triggerKey(2);
           await Utils.sleep(900);
           let result: number = libnativetype.GetNavDestinationStateResult(2);
-          await Utils.triggerKey(2);
-          await Utils.sleep(900);
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0300 result: " + result);
           expect(result).assertEqual(1);
           done()
@@ -130,8 +124,6 @@ export default function NavDestinationStateTest() {
           await Utils.triggerKey(2);
           await Utils.sleep(900);
           let result: number = libnativetype.GetNavDestinationStateResult(4);
-          await Utils.triggerKey(2);
-          await Utils.sleep(900);
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0500 result: " + result);
           expect(result).assertEqual(1);
           done()
@@ -159,8 +151,6 @@ export default function NavDestinationStateTest() {
           await Utils.triggerKey(2);
           await Utils.sleep(900);
           let result: number = libnativetype.GetNavDestinationStateResult(100);
-          await Utils.triggerKey(2);
-          await Utils.sleep(900);
           console.info("====>SUB_ArkUI_ACE_NavDestinationState_0900 result: " + result);
           expect(result).assertEqual(1);
           done()

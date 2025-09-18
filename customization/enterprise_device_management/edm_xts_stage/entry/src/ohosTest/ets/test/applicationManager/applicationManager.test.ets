@@ -19,6 +19,9 @@ import {
   SELFWANT,
   SELFHAPNAME,
   APP_IDS_1,
+  APP_IDS_200,
+  APP_IDS_201,
+  APP_IDS_AND_IDENTIFIER_1,
   DEFAULT_USER_ID,
   INVALID_USER_ID,
   AUTOSTARTAPP1,
@@ -226,6 +229,71 @@ export default function applicationManagerTest() {
     })
 
     /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDRUNNINGBUNDLESSYNC_010
+     * @tc.name      : test_addDisallowedRunningBundlesSync_010
+     * @tc.desc      : test addDisallowedRunningBundlesSync method with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_addDisallowedRunningBundlesSync_010", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addDisallowedRunningBundlesSync(SELFWANT, APP_IDS_AND_IDENTIFIER_1, DEFAULT_USER_ID);
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDRUNNINGBUNDLESSYNC_011
+     * @tc.name      : test_addDisallowedRunningBundlesSync_011
+     * @tc.desc      : test addDisallowedRunningBundlesSync method with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_addDisallowedRunningBundlesSync_011", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addDisallowedRunningBundlesSync(SELFWANT, APP_IDS_200, DEFAULT_USER_ID);
+        let ret: Array<string> = applicationManager.getDisallowedRunningBundlesSync(SELFWANT, DEFAULT_USER_ID);
+        expect(ret.length == 200).assertTrue();
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDRUNNINGBUNDLESSYNC_012
+     * @tc.name      : test_addDisallowedRunningBundlesSync_012
+     * @tc.desc      : test addDisallowedRunningBundlesSync method with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_addDisallowedRunningBundlesSync_012", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addDisallowedRunningBundlesSync(SELFWANT, APP_IDS_201, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_addDisallowedRunningBundlesSync_012 error 401 is expected, actually catch: '
+          + error.code);
+        expect(error.code == 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
      * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDRUNNINGBUNDLESSYNC_001
      * @tc.name      : test_removeDisallowedRunningBundlesSync_001
      * @tc.desc      : test removeDisallowedRunningBundlesSync method with unActive admin
@@ -358,6 +426,69 @@ export default function applicationManagerTest() {
         applicationManager.removeDisallowedRunningBundlesSync(null, APP_IDS_1);
         expect(false).assertTrue();
       } catch (error) {
+        expect(error.code == 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDRUNNINGBUNDLESSYNC_008
+     * @tc.name      : test_removeDisallowedRunningBundlesSync_008
+     * @tc.desc      : test removeDisallowedRunningBundlesSync method with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_removeDisallowedRunningBundlesSync_008", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.removeDisallowedRunningBundlesSync(SELFWANT, APP_IDS_AND_IDENTIFIER_1, DEFAULT_USER_ID);
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDRUNNINGBUNDLESSYNC_009
+     * @tc.name      : test_removeDisallowedRunningBundlesSync_009
+     * @tc.desc      : test removeDisallowedRunningBundlesSync method with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_removeDisallowedRunningBundlesSync_009", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.removeDisallowedRunningBundlesSync(SELFWANT, APP_IDS_200, DEFAULT_USER_ID);
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDRUNNINGBUNDLESSYNC_010
+     * @tc.name      : test_removeDisallowedRunningBundlesSync_010
+     * @tc.desc      : test removeDisallowedRunningBundlesSync method with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_removeDisallowedRunningBundlesSync_010", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.removeDisallowedRunningBundlesSync(SELFWANT, APP_IDS_201, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_removeDisallowedRunningBundlesSync_010 error 401 is expected, actually catch: '
+          + error.code);
         expect(error.code == 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);

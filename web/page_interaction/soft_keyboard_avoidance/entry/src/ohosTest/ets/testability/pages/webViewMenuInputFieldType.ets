@@ -17,7 +17,6 @@
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
-import { Driver, MouseButton } from '@ohos.UiTest';
 import inputMethodEngine from '@ohos.inputMethodEngine'
 import { CustomKeyboard } from '../../test/CustomKeyboard';
 
@@ -30,7 +29,10 @@ import {
   specialKeyData,
   upperCaseKeyData
 } from '../../test/Constants';
+import { Driver, MouseButton } from '@kit.TestKit';
 
+const EVENT_ID_SET_SUITE_KEY = 180501;
+let driver = Driver.create();
 
 @Entry
 @Component
@@ -42,6 +44,9 @@ struct WebViewMenuInputFieldType {
   @State curKeyboardType: EKeyboardType = EKeyboardType.NUMERIC;
   @State userAgentPC: string = "";
   @State i: number = 0;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+  @State isOnInterceptKeyboardAttachEnd: number = -1;
   webKeyboardController: WebKeyboardController = new WebKeyboardController()
   inputAttributeMap: Map<string, number> = new Map([
       ['UNSPECIFIED', inputMethodEngine.ENTER_KEY_TYPE_UNSPECIFIED],
@@ -98,10 +103,14 @@ struct WebViewMenuInputFieldType {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -110,6 +119,7 @@ struct WebViewMenuInputFieldType {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -119,208 +129,182 @@ struct WebViewMenuInputFieldType {
       Row() {
         Button('WebViewMenuInputFieldTypeTestButton').key('WebViewMenuInputFieldTypeTestButton').onClick(async () => {
           console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
             case "onInterceptKeyboardAttach0100": {
               this.ResultKey = 1
               this.userAgentPC = this.controller.getUserAgent();
               if ((this.userAgentPC).includes("PC") || (this.userAgentPC).includes("Wearable")) {
-                Utils.emitEvent(true, 2893)
+                Utils.emitEvent(true, 180510)
                 break;
               } else {
+                this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach.html")
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               }
-              await Utils.sleep(2000);
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
-              let driver = Driver.create();
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
               await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT);
-              await Utils.sleep(2000);
-              await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT);
-              await Utils.sleep(2000);
-              
               break;
             }
             case "onInterceptKeyboardAttach0200": {
               this.ResultKey = 2
               this.userAgentPC = this.controller.getUserAgent();
               if ((this.userAgentPC).includes("PC") || (this.userAgentPC).includes("Wearable")) {
-                Utils.emitEvent(true, 2894)
+                Utils.emitEvent(true, 180520)
                 break;
               } else {
+                this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttachDefault.html")
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               }
-              await Utils.sleep(2000);
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
-              let driver = Driver.create();
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
+              this.isOnInterceptKeyboardAttachEnd = -1;
               await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT);
-              await Utils.sleep(2000);
-              await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT);
-              await Utils.sleep(2000);
               break;
             }
             case "onInterceptKeyboardAttach0300": {
               this.ResultKey = 3
               this.userAgentPC = this.controller.getUserAgent();
               if ((this.userAgentPC).includes("PC") || (this.userAgentPC).includes("Wearable")) {
-                Utils.emitEvent('6', 2895)
+                Utils.emitEvent('6', 180530)
                 break;
               } else {
+                this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach_DONE.html")
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               }
-              await Utils.sleep(2000);
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
-              let driver = Driver.create();
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
               await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT);
-              await Utils.sleep(2000);
-              await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT);
-              await Utils.sleep(2000);
               break;
             }
             case "onInterceptKeyboardAttach0400": {
               this.ResultKey = 4
               this.userAgentPC = this.controller.getUserAgent();
               if ((this.userAgentPC).includes("PC") || (this.userAgentPC).includes("Wearable")) {
-                Utils.emitEvent('2', 2896)
+                Utils.emitEvent('2', 180540)
                 break;
               } else {
+                this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach_GO.html")
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               }
-              await Utils.sleep(2000);
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
-              let driver = Driver.create();
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
               await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT);
-              await Utils.sleep(2000);
-              await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT);
-              await Utils.sleep(2000);
               break;
             }
             case "onInterceptKeyboardAttach0500": {
               this.ResultKey = 5
               this.userAgentPC = this.controller.getUserAgent();
               if ((this.userAgentPC).includes("PC") || (this.userAgentPC).includes("Wearable")) {
-                Utils.emitEvent('5', 2897)
+                Utils.emitEvent('5', 180550)
                 break;
               } else {
+                this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach_NEXT.html")
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               }
-              await Utils.sleep(2000);
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
-              let driver = Driver.create();
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
               await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT);
-              await Utils.sleep(2000);
-              await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT);
-              await Utils.sleep(2000);
-              
               break;
             }
             case "onInterceptKeyboardAttach0600": {
               this.ResultKey = 6
               this.userAgentPC = this.controller.getUserAgent();
               if ((this.userAgentPC).includes("PC") || (this.userAgentPC).includes("Wearable")) {
-                Utils.emitEvent('7', 2898)
+                Utils.emitEvent('7', 180560)
                 break;
               } else {
+                this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach_PREVIOUS.html")
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               }
-              await Utils.sleep(2000);
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
-              let driver = Driver.create();
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
               await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT);
-              await Utils.sleep(2000);
-              await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT);
-              await Utils.sleep(2000);
               break;
             }
             case "onInterceptKeyboardAttach0700": {
               this.ResultKey = 7
               this.userAgentPC = this.controller.getUserAgent();
               if ((this.userAgentPC).includes("PC") || (this.userAgentPC).includes("Wearable")) {
-                Utils.emitEvent('3', 2899)
+                Utils.emitEvent('3', 180570)
                 break;
               } else {
+                this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach_SEARCH.html")
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               }
-              await Utils.sleep(2000);
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
-              let driver = Driver.create();
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
               await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT);
-              await Utils.sleep(2000);
-              await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT);
-              await Utils.sleep(2000);
               break;
             }
             case "onInterceptKeyboardAttach0800": {
               this.ResultKey = 8
               this.userAgentPC = this.controller.getUserAgent();
               if ((this.userAgentPC).includes("PC") || (this.userAgentPC).includes("Wearable")) {
-                Utils.emitEvent('4', 2880)
+                Utils.emitEvent('4', 180580)
                 break;
               } else {
+                this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach_SEND.html")
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               }
-              await Utils.sleep(2000);
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
-              let driver = Driver.create();
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
               await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT);
-              await Utils.sleep(2000);
-              await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT);
-              await Utils.sleep(2000);
               break;
             }
             case "onInterceptKeyboardAttach0900": {
               this.ResultKey = 9
               this.userAgentPC = this.controller.getUserAgent();
               if ((this.userAgentPC).includes("PC") || (this.userAgentPC).includes("Wearable")) {
-                Utils.emitEvent('0', 2881)
+                Utils.emitEvent('0', 180590)
                 break;
               } else {
+                this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach_UNSPECIFIED.html")
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               }
-              await Utils.sleep(2000);
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
-              let driver = Driver.create();
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
               await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT);
-              await Utils.sleep(2000);
-              await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT);
-              await Utils.sleep(2000);
               break;
             }
             case "onInterceptKeyboardAttach1000": {
               this.ResultKey = 10
               this.userAgentPC = this.controller.getUserAgent();
               if ((this.userAgentPC).includes("PC") || (this.userAgentPC).includes("Wearable")) {
-                Utils.emitEvent(1, 2882)
+                Utils.emitEvent(1, 180600)
                 break;
               } else {
+                this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach.html")
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000)
               }
-              await Utils.sleep(2000);
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
-              let driver = Driver.create();
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
+              this.isOnInterceptKeyboardAttachEnd = -1
               await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT);
-              await Utils.sleep(2000);
-              await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT);
-              await Utils.sleep(10000);
-              Utils.emitEvent(this.i, 2882)
+              console.log("==>after first click")
+              await Utils.waitForExist(()=>this.isOnInterceptKeyboardAttachEnd, this.str+' isOnInterceptKeyboardAttachEnd', 1, 1000);
+              Utils.emitEvent(this.i, 180600)
               break;
             }
           }
@@ -329,6 +313,10 @@ struct WebViewMenuInputFieldType {
 
       Web({ src: $rawfile("second.html"), controller: this.controller })
         .key("WebViewMenuInputFieldTypeTestWebView")
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
         .onInterceptKeyboardAttach((KeyboardCallbackInfo) => {
         if(this.ResultKey == 10){
           this.i=this.i + 1;
@@ -338,6 +326,7 @@ struct WebViewMenuInputFieldType {
           useSystemKeyboard: true,
         };
         if (!KeyboardCallbackInfo) {
+          this.isOnInterceptKeyboardAttachEnd = 1
           return option;
         }
 
@@ -357,8 +346,9 @@ struct WebViewMenuInputFieldType {
               this.customKeyboardBuilder()
             }
             if(this.ResultKey == 1){
-              Utils.emitEvent(true, 2893)
+              Utils.emitEvent(true, 180510)
             }
+            this.isOnInterceptKeyboardAttachEnd = 1
             return option;
           }
 
@@ -370,32 +360,34 @@ struct WebViewMenuInputFieldType {
               option.enterKeyType = enterKeyType
             }
             if(this.ResultKey == 3){
-              Utils.emitEvent(enterKeyType+"", 2895)
+              Utils.emitEvent(enterKeyType+"", 180530)
             }
             if(this.ResultKey == 4){
-              Utils.emitEvent(enterKeyType+"", 2896)
+              Utils.emitEvent(enterKeyType+"", 180540)
             }
             if(this.ResultKey == 5){
-              Utils.emitEvent(enterKeyType+"", 2897)
+              Utils.emitEvent(enterKeyType+"", 180550)
             }
             if(this.ResultKey == 6){
-              Utils.emitEvent(enterKeyType+"", 2898)
+              Utils.emitEvent(enterKeyType+"", 180560)
             }
             if(this.ResultKey == 7){
-              Utils.emitEvent(enterKeyType+"", 2899)
+              Utils.emitEvent(enterKeyType+"", 180570)
             }
             if(this.ResultKey == 8){
-              Utils.emitEvent(enterKeyType+"", 2880)
+              Utils.emitEvent(enterKeyType+"", 180580)
             }
             if(this.ResultKey == 9){
-              Utils.emitEvent(enterKeyType+"", 2881)
+              Utils.emitEvent(enterKeyType+"", 180590)
             }
+            this.isOnInterceptKeyboardAttachEnd = 1
             return option;
           }
         }
         if(this.ResultKey == 2){
-          Utils.emitEvent(true, 2894)
+          Utils.emitEvent(true, 180520)
         }
+        this.isOnInterceptKeyboardAttachEnd = 1
         return option;
       })
     }

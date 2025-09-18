@@ -18,6 +18,11 @@ import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
 import business_error from '@ohos.base';
+import { Driver } from '@kit.TestKit';
+
+
+const EVENT_ID_SET_SUITE_KEY = 128001;
+const driver = Driver.create();
 
 @Entry
 @Component
@@ -29,14 +34,14 @@ struct SetWebDebugAccess {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 609,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(609)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -54,164 +59,163 @@ struct SetWebDebugAccess {
     Column() {
       Row() {
         Button('SetWebDebugAccess click')
-          .key('setWebDebuggingAccess')
+          .key('setWebDebuggingAccessButton')
           .onClick(async () => {
             await waitForExist(()=>this.isReceive, 'setWebDebuggingAccessIsReceive', 1, 1000)
-            await waitForExist(()=>this.isPageEnd, 'setWebDebuggingAccessIsPageEnd', 1, 1000)
             console.info('key==>' + this.emitKey)
             this.isReceive = -1
             switch (this.emitKey) {
               case 'emitSetWebDebugAccessEnableDebugPortAllowed': {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(true,8888)
-                  Utils.emitEvent(true, 2025060901)
+                  Utils.emitEvent(true, 128010)
                 } catch (error) {
                   let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`emitSetWebDebugAccessEnableDebugPortAllowed ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent(false, 2025060901)
+                  Utils.emitEvent(false, 128010)
                 }
                 break
               }
               case 'emitSetWebDebugAccessEnableDebugPortAllowedTwo': {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(true,99999999)
-                  Utils.emitEvent(true, 2025060902)
+                  Utils.emitEvent(true, 128020)
                 } catch (error) {
                   let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`emitSetWebDebugAccessEnableDebugPortAllowedTwo ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent(String(e.code), 2025060902)
+                  Utils.emitEvent(String(e.code), 128020)
                 }
                 break
               }
               case 'emitSetWebDebugAccessEnableDebugPortAllowedThree': {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(true,65535)
-                  Utils.emitEvent(true, 2025060903)
+                  Utils.emitEvent(true, 128030)
                 } catch (error) {
                   let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`emitSetWebDebugAccessEnableDebugPortAllowedThree ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent(false, 2025060903)
+                  Utils.emitEvent(false, 128030)
                 }
                 break
               }
               case 'emitSetWebDebugAccessEnableDebugPortNotAllowedOne': {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(true,0)
-                  Utils.emitEvent(true, 2025060904)
+                  Utils.emitEvent(true, 128040)
                 } catch (error) {
                   let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`emitSetWebDebugAccessEnableDebugPortNotAllowedOne ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent(String(e.code), 2025060904)
+                  Utils.emitEvent(String(e.code), 128040)
                 }
                 break
               }
               case 'emitSetWebDebugAccessEnableDebugPortNotAllowedTwo': {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(true,1024)
-                  Utils.emitEvent(true, 2025060905)
+                  Utils.emitEvent(true, 128050)
                 } catch (error) {
                   let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`emitSetWebDebugAccessEnableDebugPortNotAllowedTwo ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent(String(e.code), 2025060905)
+                  Utils.emitEvent(String(e.code), 128050)
                 }
                 break
               }
               case 'emitSetWebDebugAccessEnableDebugPortNotAllowedThree': {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(true,888)
-                  Utils.emitEvent(true, 2025060906)
+                  Utils.emitEvent(true, 128060)
                 } catch (error) {
                   let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`emitSetWebDebugAccessEnableDebugPortNotAllowedThree ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent(String(e.code), 2025060906)
+                  Utils.emitEvent(String(e.code), 128060)
                 }
                 break
               }
               case 'emitSetWebDebugAccessEnableDebugPortNegativeNumber': {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(true,-8888)
-                  Utils.emitEvent(true, 2025060907)
+                  Utils.emitEvent(true, 12807)
                 } catch (error) {
                   let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`emitSetWebDebugAccessEnableDebugPortNegativeNumber ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent(String(e.code), 2025060907)
+                  Utils.emitEvent(String(e.code), 128070)
                 }
                 break
               }
               case 'emitSetWebDebugAccessEnableDebugPortEmpty': {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(true,)
-                  Utils.emitEvent(true, 2025060908)
+                  Utils.emitEvent(true, 128080)
                 } catch (error) {
                   let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`emitSetWebDebugAccessEnableDebugPortEmpty ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent(false, 2025060908)
+                  Utils.emitEvent(false, 128080)
                 }
                 break
               }
               case 'emitSetWebDebugAccessEnableDebugPortNull': {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(true,null)
-                  Utils.emitEvent(true, 2025060909)
+                  Utils.emitEvent(true, 128090)
                 } catch (error) {
                   let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`emitSetWebDebugAccessEnableDebugPortNull ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent(false, 2025060909)
+                  Utils.emitEvent(false, 128090)
                 }
                 break
               }
               case 'emitSetWebDebugAccessEnableDebugPortUndefined': {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(true,undefined)
-                  Utils.emitEvent(true, 2025060910)
+                  Utils.emitEvent(true, 128100)
                 } catch (error) {
                   let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`emitSetWebDebugAccessEnableDebugPortUndefined ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent(false, 2025060910)
+                  Utils.emitEvent(false, 128100)
                 }
                 break
               }
               case 'emitSetWebDebugAccessEnableDebugPortNaN': {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(true,NaN)
-                  Utils.emitEvent(true, 2025060911)
+                  Utils.emitEvent(true, 128110)
                 } catch (error) {
                   let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`emitSetWebDebugAccessEnableDebugPortNaN ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent(String(e.code), 2025060911)
+                  Utils.emitEvent(String(e.code), 128110)
                 }
                 break
               }
               case 'emitSetWebDebugAccessNotEnableDebugPortAllowed': {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(false,8888)
-                  Utils.emitEvent(true, 2025060912)
+                  Utils.emitEvent(true, 128120)
                 } catch (error) {
                   let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`emitSetWebDebugAccessNotEnableDebugPortAllowed ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent(false, 2025060912)
+                  Utils.emitEvent(false, 128120)
                 }
                 break
               }
               case 'emitSetWebDebugAccessNotEnableDebugPortNotAllowed': {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(false,1024)
-                  Utils.emitEvent(true, 2025060913)
+                  Utils.emitEvent(true, 128130)
                 } catch (error) {
                   let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`emitSetWebDebugAccessNotEnableDebugPortNotAllowed ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent(String(e.code), 2025060913)
+                  Utils.emitEvent(String(e.code), 128130)
                 }
                 break
               }
               case 'emitSetWebDebugAccessErrorCode401': {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(null,8888)
-                  Utils.emitEvent(true, 2025060914)
+                  Utils.emitEvent(true, 128140)
                 } catch (error) {
                   let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`emitSetWebDebugAccessErrorCode401 ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent(String(e.code), 2025060914)
+                  Utils.emitEvent(String(e.code), 128140)
                 }
                 break
               }

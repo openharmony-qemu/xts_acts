@@ -13,12 +13,10 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
-import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
-import image from "@ohos.multimedia.image"
+
+const EVENT_ID_SET_EMIT_KEY = 200520;
 
 @Entry
 @Component
@@ -38,13 +36,20 @@ struct OnWindowNew {
   @State onlineImageAccess: boolean = true;
   @State databaseAccess: boolean = true;
   @State arr: boolean = true;
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+  sendEventId: number = 0;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -53,6 +58,7 @@ struct OnWindowNew {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -61,12 +67,17 @@ struct OnWindowNew {
     Column() {
       Row() {
         Button("web click").key('onWindowNew').onClick(async () => {
-          console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isPageEnd, 'onWindowNewIsPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isReceive, 'onWindowNewIsReceive', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitOnPageVisibleLoadUrl": {
               try {
-                this.eventId = 7108;
+                this.sendEventId = 200530;
+                this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('index.html'));
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -74,8 +85,10 @@ struct OnWindowNew {
             }
             case "emitOnPageVisibleRefresh": {
               try {
-                this.eventId = 7110;
+                this.sendEventId = 200540;
+                this.isPageEnd = -1;
                 this.controller.refresh();
+                await Utils.waitForExist(()=>this.isPageEnd, 'refreshIsPageEnd', 1, 1000);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -85,7 +98,7 @@ struct OnWindowNew {
         })
       }
 
-      Web({ src: $rawfile("onWindowNew.html"), controller: this.controller })
+      Web({ src: $rawfile("index.html"), controller: this.controller })
         .multiWindowAccess(this.testMultiWindowAccess)
         .javaScriptAccess(this.javaScriptAccess)
         .allowWindowOpenMethod(this.testAllowWindowOpenMethod)
@@ -98,10 +111,12 @@ struct OnWindowNew {
           }
         })
         .onPageVisible((event) => {
-          if (this.arr) {
-            if (event) {
-              console.log('onWindowNew onPageVisible url:' + event.url);
-              Utils.emitEvent(event.url, this.eventId);
+          if (event) {
+            console.log('onWindowNew onPageVisible url:' + event.url);
+            if (event.url.includes('index.html')) {
+              Utils.emitEvent('success', this.sendEventId);
+            } else {
+              Utils.emitEvent('fail', this.sendEventId);
             }
           }
         })
@@ -109,9 +124,8 @@ struct OnWindowNew {
         .onErrorReceive((event) => {
           console.log(`onWindowNew onErrorReceive start`);
           if (event) {
-            let Url = event.request.getRequestUrl()
-            console.log(`onWindowNew onErrorReceive Url is: ${Url}`);
-            Utils.emitEvent(Url, 7112);
+            const url = event.request.getRequestUrl()
+            console.log(`onWindowNew onErrorReceive Url is: ${url}`);
           }
         })
         .fileAccess(this.fileAccess)
@@ -120,6 +134,10 @@ struct OnWindowNew {
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
         .userAgent(this.userAgent)
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
     }
   }
 }

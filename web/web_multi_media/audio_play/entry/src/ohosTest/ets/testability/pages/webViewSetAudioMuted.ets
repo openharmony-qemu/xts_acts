@@ -20,6 +20,7 @@ import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import web_webview from '@ohos.web.webview';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -35,13 +36,19 @@ struct webViewSetAudioMuted {
   @State userAgent: string = "Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.88 Mobile Safari/537.36";
   @State mutedResult: string = "false";
   @State checkResult: string = "";
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 132620,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(132620)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -50,6 +57,7 @@ struct webViewSetAudioMuted {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -57,21 +65,25 @@ struct webViewSetAudioMuted {
   build() {
     Column() {
       Row() {
-        Button("setMutedTest").key('webViewSetAudioMuted').onClick(() => {
-          console.info("key==>" + this.str)
+        Button("setMutedTest").key('webViewSetAudioMuted').onClick(async () => {
+          console.info('key==>' + this.str)
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitSetAudioMuted": {
               try {
                 this.controller.runJavaScript("enableMute()", (error, result) => {
                   this.mutedResult = result
                   console.log(`The controller.enableMute() return value is: ${result}`);
-                  Utils.emitEvent(this.mutedResult, 405)
                 })
                 this.controller.runJavaScript("checkMute()", (error, result) => {
                   this.checkResult = result
                   console.log(`The controller.checkMute() return value is: ${result}`);
-                  Utils.emitEvent(this.checkResult, 406)
                 })
+                await waitForExist(() => this.mutedResult, this.str, 'true');
+                await waitForExist(() => this.checkResult, this.str, '"muted"');
+                Utils.emitEvent(this.mutedResult + '_' + this.checkResult, 132630)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -79,16 +91,18 @@ struct webViewSetAudioMuted {
             }
             case "emitSetAudioDisMuted": {
               try {
+                this.mutedResult = 'true';
                 this.controller.runJavaScript("disableMute()", (error, result) => {
                   this.mutedResult = result
                   console.log(`The controller.disableMute() return value is: ${result}`);
-                  Utils.emitEvent(this.mutedResult, 407)
                 })
                 this.controller.runJavaScript("checkMute()", (error, result) => {
                   this.checkResult = result
                   console.log(`The controller.checkMute() return value is: ${result}`);
-                  Utils.emitEvent(this.checkResult, 408)
                 })
+                await waitForExist(() => this.mutedResult, this.str, 'false');
+                await waitForExist(() => this.checkResult, this.str, '"unmuted"');
+                Utils.emitEvent(this.mutedResult + '_' + this.checkResult, 132640)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -106,6 +120,10 @@ struct webViewSetAudioMuted {
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
         .userAgent(this.userAgent)
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
     }
   }
 }

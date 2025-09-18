@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -43,7 +43,7 @@ export default class TestAbility extends UIAbility {
 
     onWindowStageCreate(windowStage: window.WindowStage) {
         hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility onWindowStageCreate');
-        windowStage.loadContent('testability/pages/Index', (err, data) => {
+        windowStage.loadContent('testability/pages/NodeHandle/NodeHandle', (err, data) => {
             if (err.code) {
                 hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
                 return;

@@ -12,19 +12,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {describe, beforeEach, afterEach, it, expect, beforeAll, TestType, Size, Level } from "@ohos/hypium";
-import events_emitter from '@ohos.events.emitter';
+import { describe, beforeEach, it, beforeAll, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
-// import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 200440;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-// @ts-nocheck
-let emitKey = "emitNoneOnfirstcontentfulpaint";
+
 export default function webViewOnFirstContTwo() {
-  describe('ActsAceWebDevWebViewOnFirstContTwoTest',  () => {
-    beforeAll(async  (done: Function) =>{
+  describe('ActsAceWebDevWebViewOnFirstContTwoTest', () => {
+    beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'testability/pages/webViewOnFirstContTwo',
       }
@@ -34,54 +35,38 @@ export default function webViewOnFirstContTwo() {
         console.info("get webViewOnFirstContTwo state success " + JSON.stringify(pages));
         if (!("webViewOnFirstContTwo" == pages.name)) {
           console.info("get webViewOnFirstContTwo state success " + JSON.stringify(pages.name));
-          let result = await router.push(options);
-          await Utils.sleep(2000);
-          console.info("push webViewOnFirstContTwo page success " + JSON.stringify(result));
+          await router.push(options);
+          console.info("push webViewOnFirstContTwo page success");
         }
       } catch (err) {
         console.error("push webViewOnFirstContTwo page error: " + err);
       }
+      await driver.waitForComponent(ON.id("webViewOnFirstContTwo"), 10000);
+      console.log("waitForComponent webViewOnFirstContTwo");
       done()
     });
+
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webViewOnFirstContTwo beforeEach start");
       done();
     })
-    afterEach(async (done: Function) =>{
-      console.info("webViewOnFirstContTwo afterEach start:" + emitKey);
-      try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent: events_emitter.InnerEvent = {
-                eventId:10,
-                priority:events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-      } catch (err) {
-            console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
-      done();
-    })
+
     /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR5_API_0200
-     *tc.name testOnfirstcontentfulpaintvisibilitynone
-     *tc.desc onfirstcontentfulpaint with web visibility none
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR5_API_0200
+     * @tc.name testOnfirstcontentfulpaintvisibilitynone
+     * @tc.desc onfirstcontentfulpaint with web visibility none
      */
-    it('testOnfirstcontentfulpaintvisibilitynone',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
-      emitKey="emitNoneOnfirstcontentfulpaint";
-      Utils.registerEvent("testOnfirstcontentfulpaintvisibilitynone","VisibilityNoneTest",324,done);
-      sendEventByKey('webViewOnFirstContTwo',10,'');
-    })
+    it('testOnfirstcontentfulpaintvisibilitynone', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        const emitKey = "emitNoneOnfirstcontentfulpaint";
+        Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+        Utils.registerEvent("testOnfirstcontentfulpaintvisibilitynone", -1, 200450, done);
+        await Utils.waitAndClickComponent(driver, "webViewOnFirstContTwo");
+      })
   })
 }

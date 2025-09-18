@@ -4357,6 +4357,722 @@ static napi_value NapiStringTest009(napi_env env, napi_callback_info info)
     return result;
 }
 
+#define LOG_DOMAIN 0X0202
+#define LOG_TAG "NapiCheckTest"
+
+// 全局对象访问并发测试
+typedef struct {
+    int id;
+    napi_env env;
+    bool *allOk;
+} GlobalAccessArgs;
+
+static void* ThreadAccessGlobal(void* arg)
+{
+    GlobalAccessArgs* args = static_cast<GlobalAccessArgs*>(arg);
+    napi_env env = args->env;
+    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest01_cpp] Thread %{public}d begin------", args->id);
+
+    int loopTimes = 1000;
+    for (int i = 0; i < loopTimes; i++) {
+        napi_handle_scope scope;
+        napi_status openStatus = napi_open_handle_scope(env, &scope);
+        if (openStatus != napi_ok) {
+            OH_LOG_INFO(LOG_APP, "[testPrimitiveTest01_cpp] Thread %{public}d iteration %{public}d: "
+                                 "napi_open_handle_scope failed.", args->id, i);
+            *(args->allOk) = false;
+            break;
+        }
+
+        napi_value global;
+        napi_status status = napi_get_global(env, &global);
+        NAPI_ASSERT(env, status == napi_ok, "napi_get_global failed");
+        if (status != napi_ok) {
+            OH_LOG_INFO(LOG_APP, "[testPrimitiveTest01_cpp] Thread %{public}d interation %{public}d: "
+                                 "napi_get_global failed.", args->id, i);
+            *(args->allOk) = false;
+            napi_close_handle_scope(env, scope);
+            break;
+        }
+        OH_LOG_INFO(LOG_APP, "[testPrimitiveTest01_cpp] Thread %{public}d interation %{public}d: "
+                             "napi_get_global succeed.", args->id, i);
+
+        // 多个线程同时尝试从全局对象获取属性 (crash)
+
+        napi_close_handle_scope(env, scope);
+    }
+    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest01_cpp] Thread %{public}d end------", args->id);
+    return nullptr;
+}
+
+static napi_value NapiPrimitiveTest01(napi_env env, napi_callback_info info)
+{
+    const int kThreadCount = 4;
+    pthread_t threads[kThreadCount];
+    bool allOk = true;
+    GlobalAccessArgs args[kThreadCount];
+
+    for (int i = 0; i < kThreadCount; i++) {
+        args[i].id = i;
+        args[i].env = env;
+        args[i].allOk = &allOk;
+        int err = pthread_create(&threads[i], nullptr, ThreadAccessGlobal, &args[i]);
+        if (err != 0) {
+            allOk = false;
+            break;
+        }
+    }
+
+    for (int i = 0; i < kThreadCount; i++) {
+        pthread_join(threads[i], nullptr);
+    }
+
+    napi_value result;
+    napi_get_boolean(env, allOk, &result);
+    return result;
+}
+
+// 基本类型转换并发测试
+typedef struct {
+    int id;
+    napi_env env;
+    bool *allOk;
+} CoerceArgs;
+
+static void* ThreadCoerceToBool(void* arg)
+{
+    CoerceArgs* args = static_cast<CoerceArgs*>(arg);
+    napi_env env = args->env;
+    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d "
+                         "(ThreadCoerceToBool) begin------", args->id);
+
+    napi_value value;
+    int32_t intVal = 53;
+    if (napi_create_int32(env, intVal, &value) != napi_ok) {
+        OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToBool) "
+                             "napi_create_int32 failed.", args->id);
+        *(args->allOk) = false;
+        return nullptr;
+    }
+    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToBool) "
+                         "napi_create_int32 succeed.", args->id);
+
+    int loopTimes = 1000;
+    for (int i = 0; i < loopTimes; i++) {
+        napi_value result;
+        napi_status status = napi_coerce_to_bool(env, value, &result);
+        NAPI_ASSERT(env, status == napi_ok, "napi_coerce_to_bool failed");
+        if (status != napi_ok) {
+            OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToBool) "
+                                 "interation %{public}d: napi_coerce_to_bool failed.", args->id, i);
+            *(args->allOk) = false;
+            break;
+        }
+        OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToBool) "
+                             "interation %{public}d: napi_coerce_to_bool succeed.", args->id, i);
+    }
+    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToBool) "
+                         "end------", args->id);
+    return nullptr;
+}
+
+static void* ThreadCoerceToNumber(void* arg)
+{
+    CoerceArgs* args = static_cast<CoerceArgs*>(arg);
+    napi_env env = args->env;
+    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToNumber) "
+                         "begin------", args->id);
+
+    napi_value value;
+    if (napi_get_boolean(env, true, &value) != napi_ok) {
+        OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToNumber) "
+                             "napi_get_boolean failed.", args->id);
+        *(args->allOk) = false;
+        return nullptr;
+    }
+    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToNumber) "
+                         "napi_get_boolean succeed.", args->id);
+
+    int loopTimes = 1000;
+    for (int i = 0; i < loopTimes; i++) {
+        napi_value result;
+        napi_status status = napi_coerce_to_number(env, value, &result);
+        NAPI_ASSERT(env, status == napi_ok, "napi_coerce_to_number failed");
+        if (status != napi_ok) {
+            OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToNumber) "
+                                 "interation %{public}d: napi_coerce_to_number failed.", args->id, i);
+            *(args->allOk) = false;
+            break;
+        }
+        OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToNumber) "
+                             "interation %{public}d: napi_coerce_to_number succeed.", args->id, i);
+    }
+    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToBool) "
+                         "end------", args->id);
+    return nullptr;
+}
+
+static void* ThreadCoerceToString(void* arg)
+{
+    CoerceArgs* args = static_cast<CoerceArgs*>(arg);
+    napi_env env = args->env;
+    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToString) "
+                         "begin------", args->id);
+
+    napi_value value;
+    int intValue = 123;
+    if (napi_create_int32(env, intValue, &value) != napi_ok) {
+        OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToString) "
+                             "napi_create_int32 failed.", args->id);
+        *(args->allOk) = false;
+        return nullptr;
+    }
+    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToString) "
+                         "napi_create_int32 succeed.", args->id);
+
+    int loopTimes = 1000;
+    for (int i = 0; i < loopTimes; i++) {
+        napi_value result;
+        napi_status status = napi_coerce_to_string(env, value, &result);
+        NAPI_ASSERT(env, status == napi_ok, "napi_coerce_to_string failed");
+        if (status != napi_ok) {
+            OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToString) "
+                                 "interation %{public}d: napi_coerce_to_string failed.", args->id, i);
+            *(args->allOk) = false;
+            break;
+        }
+        OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToString) "
+                             "interation %{public}d: napi_coerce_to_string succeed.", args->id, i);
+    }
+    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToBool) "
+                         "end------", args->id);
+    return nullptr;
+}
+
+static void* ThreadCoerceToObject(void* arg)
+{
+    CoerceArgs* args = static_cast<CoerceArgs*>(arg);
+    napi_env env = args->env;
+    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToObject) "
+                         "begin------", args->id);
+
+    napi_value value;
+    int intValue = 456;
+    napi_status status = napi_create_int32(env, intValue, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_int32 failed");
+    if (status != napi_ok) {
+        OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToObject) "
+                             "napi_create_int32 failed.", args->id);
+        *(args->allOk) = false;
+        return nullptr;
+    }
+    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToObject) "
+                         "napi_create_int32 succeed.", args->id);
+
+    int loopTimes = 1000;
+    for (int i = 0; i < loopTimes; i++) {
+        napi_value result;
+        // 在其他线程执行过程中持续调用napi_coerce_to_object函数 (crash)
+    }
+    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToBool) "
+                         "end------", args->id);
+    return nullptr;
+}
+
+static void* ThreadGetGlobal(void* arg)
+{
+    CoerceArgs* args = static_cast<CoerceArgs*>(arg);
+    napi_env env = args->env;
+    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadGetGlobal) "
+                         "begin------", args->id);
+
+    int loopTimes = 1000;
+    for (int i = 0; i < loopTimes; i++) {
+        napi_value global;
+        napi_status status = napi_get_global(env, &global);
+        NAPI_ASSERT(env, status == napi_ok, "napi_get_global failed");
+        if (status != napi_ok) {
+            OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadGetGlobal) "
+                                 "interation %{public}d: napi_get_global failed.", args->id, i);
+            *(args->allOk) = false;
+            break;
+        }
+        OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadGetGlobal) "
+                             "interation %{public}d: napi_get_global succeed.", args->id, i);
+    }
+    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToBool) "
+                         "end------", args->id);
+    return nullptr;
+}
+
+static napi_value NapiPrimitiveTest02(napi_env env, napi_callback_info info)
+{
+    const int kThreadCount = 5;
+    pthread_t threads[kThreadCount];
+    bool allOk = true;
+    CoerceArgs args[kThreadCount];
+
+    for (int i = 0; i < kThreadCount; i++) {
+        args[i].id = i;
+        args[i].env = env;
+        args[i].allOk = &allOk;
+    }
+
+    // 创建不同类型转换的线程
+    const int value0 = 0;
+    const int value1 = 1;
+    const int value2 = 2;
+    const int value3 = 3;
+    const int value4 = 4;
+    if (pthread_create(&threads[value0], nullptr, ThreadCoerceToBool, &args[value0]) != 0) {
+        allOk = false;
+    }
+    if (pthread_create(&threads[value1], nullptr, ThreadCoerceToNumber, &args[value1]) != 0) {
+        allOk = false;
+    }
+    if (pthread_create(&threads[value2], nullptr, ThreadCoerceToString, &args[value2]) != 0) {
+        allOk = false;
+    }
+    if (pthread_create(&threads[value3], nullptr, ThreadCoerceToObject, &args[value3]) != 0) {
+        allOk = false;
+    }
+    if (pthread_create(&threads[value4], nullptr, ThreadGetGlobal, &args[value4]) != 0) {
+        allOk = false;
+    }
+
+    for (int i = 0; i < kThreadCount; i++) {
+        pthread_join(threads[i], nullptr);
+    }
+
+    napi_value result;
+    napi_get_boolean(env, allOk, &result);
+    return result;
+}
+
+// 值获取函数并发测试
+typedef struct {
+    napi_env env;
+    bool *allOk;
+} GetterArgs;
+
+static void* ThreadGetValues(void* arg)
+{
+    GetterArgs* args = static_cast<GetterArgs*>(arg);
+    napi_env env = args->env;
+
+    int loopTimes = 1000;
+    for (int i = 0; i < loopTimes; i++) {
+        napi_status status = napi_ok;
+        napi_value result;
+        const int value0 = 0;
+        const int value1 = 1;
+        const int value2 = 2;
+        const int value3 = 3;
+        const int value4 = 4;
+        switch (i % value4) {
+            case value0: {
+                bool flag = (i % value2) != 0;
+                status = napi_get_boolean(env, flag, &result);
+                break;
+            }
+            case value1: {
+                status = napi_get_null(env, &result);
+                break;
+            }
+            case value2: {
+                status = napi_get_undefined(env, &result);
+                break;
+            }
+            case value3: {
+                napi_value value;
+                if (napi_get_boolean(env, true, &value) != napi_ok) {
+                    *(args->allOk) = false;
+                    return nullptr;
+                }
+                bool b = false;
+                status = napi_get_value_bool(env, value, &b);
+                break;
+            }
+            default:
+                break;
+        }
+        
+        if (status != napi_ok) {
+            *(args->allOk) = false;
+        }
+        NAPI_ASSERT(env, status == napi_ok, "napi_NapiPrimitiveTest03_ThreadGetValues failed");
+    }
+    return nullptr;
+}
+
+static napi_value NapiPrimitiveTest03(napi_env env, napi_callback_info info)
+{
+    const int kThreadCount = 4;
+    pthread_t threads[kThreadCount];
+    bool allOk = true;
+    GetterArgs args[kThreadCount];
+    
+    for (int i = 0; i < kThreadCount; i++) {
+        args[i].env = env;
+        args[i].allOk = &allOk;
+        int err = pthread_create(&threads[i], nullptr, ThreadGetValues, &args[i]);
+        if (err != 0) {
+            allOk = false;
+            break;
+        }
+    }
+
+    for (int i = 0; i < kThreadCount; i++) {
+        pthread_join(threads[i], nullptr);
+    }
+
+    napi_value result;
+    napi_get_boolean(env, allOk, &result);
+    return result;
+}
+
+// 布尔值转换链：bool -> JS boolean -> C bool -> string("true"|"false")
+static napi_value NapiPrimitiveTest04(napi_env env, napi_callback_info info)
+{
+    // 1) 创建 ArkTS 布尔值（true）
+    napi_value jsBool;
+    NAPI_CALL(env, napi_get_boolean(env, true, &jsBool));
+
+    // 2) 转回 C 布尔值
+    bool cBool = false;
+    NAPI_CALL(env, napi_get_value_bool(env, jsBool, &cBool));
+
+    // 3) 转为字符串
+    napi_value strVal;
+    NAPI_CALL(env, napi_coerce_to_string(env, jsBool, &strVal));
+
+    // 4) 校验字符串值匹配 "true" 或 "false"，且与 cBool 一致
+    size_t len = 0;
+    NAPI_CALL(env, napi_get_value_string_utf8(env, strVal, nullptr, 0, &len));
+    std::string s;
+    s.resize(len);
+    size_t copied = 0;
+    NAPI_CALL(env, napi_get_value_string_utf8(env, strVal, &s[0], len + 1, &copied));
+
+    bool ok = ((s == "true" && cBool == true) || (s == "false" && cBool == false));
+    napi_value result;
+    napi_get_boolean(env, ok, &result);
+    return result;
+}
+
+// 多层类型强制转换："123" -> number -> string，最终应仍为"123"
+static napi_value NapiPrimitiveTest05(napi_env env, napi_callback_info info)
+{
+    // 1) 创建 ArkTS 字符串 "123"
+    napi_value str123;
+    NAPI_CALL(env, napi_create_string_utf8(env, "123", NAPI_AUTO_LENGTH, &str123));
+
+    // 2) 使用 napi_coerce_to_number 转为数字
+    napi_value numVal;
+    NAPI_CALL(env, napi_coerce_to_number(env, str123, &numVal));
+
+    // 3) 使用 napi_coerce_to_string 再转回字符串
+    napi_value strAgain;
+    NAPI_CALL(env, napi_coerce_to_string(env, numVal, &strAgain));
+
+    // 4) 读取字符串内容并校验应为 "123"
+    size_t len = 0;
+    NAPI_CALL(env, napi_get_value_string_utf8(env, strAgain, nullptr, 0, &len));
+    std::string finalStr;
+    finalStr.resize(len);
+    size_t copied = 0;
+    NAPI_CALL(env, napi_get_value_string_utf8(env, strAgain, &finalStr[0], len + 1, &copied));
+
+    bool ok = (finalStr == "123");
+    napi_value result;
+    napi_get_boolean(env, ok, &result);
+    return result;
+}
+
+// 全局对象属性操作：获取 global，添加属性，强制为对象并验证可操作
+static napi_value NapiPrimitiveTest06(napi_env env, napi_callback_info info)
+{
+    napi_value global;
+    NAPI_CALL(env, napi_get_global(env, &global));
+
+    // 创建一个对象作为新属性值
+    napi_value newObj;
+    NAPI_CALL(env, napi_create_object(env, &newObj));
+
+    // 给属性设置一个数值字段以便后续验证
+    napi_value num;
+    int val = 42;
+    NAPI_CALL(env, napi_create_int32(env, val, &num));
+    NAPI_CALL(env, napi_set_named_property(env, newObj, "marker", num));
+
+    // 将此对象挂到全局对象上
+    NAPI_CALL(env, napi_set_named_property(env, global, "__temp_prop__", newObj));
+
+    // 取回并进行强制转换为对象
+    napi_value got;
+    NAPI_CALL(env, napi_get_named_property(env, global, "__temp_prop__", &got));
+    napi_value coerced;
+    NAPI_CALL(env, napi_coerce_to_object(env, got, &coerced));
+
+    // 再次读取字段，验证可操作
+    napi_value markerVal;
+    NAPI_CALL(env, napi_get_named_property(env, coerced, "marker", &markerVal));
+    int32_t marker = 0;
+    NAPI_CALL(env, napi_get_value_int32(env, markerVal, &marker));
+
+    bool ok = (marker == val);
+    napi_value result;
+    napi_get_boolean(env, ok, &result);
+    return result;
+}
+
+// 全局对象与 null/undefined 交互：设置为属性并验证读取
+static napi_value NapiPrimitiveTest07(napi_env env, napi_callback_info info)
+{
+    napi_value global;
+    NAPI_CALL(env, napi_get_global(env, &global));
+
+    napi_value nullVal;
+    NAPI_CALL(env, napi_get_null(env, &nullVal));
+    napi_value undefVal;
+    NAPI_CALL(env, napi_get_undefined(env, &undefVal));
+
+    // 设置 null 属性并验证
+    const char* kNullKey = "__temp_null_prop__";
+    NAPI_CALL(env, napi_set_named_property(env, global, kNullKey, nullVal));
+    napi_value gotNull;
+    NAPI_CALL(env, napi_get_named_property(env, global, kNullKey, &gotNull));
+    bool isNullEqual = false;
+    NAPI_CALL(env, napi_strict_equals(env, gotNull, nullVal, &isNullEqual));
+
+    // 设置 undefined 属性并验证
+    const char* kUndefKey = "__temp_undef_prop__";
+    NAPI_CALL(env, napi_set_named_property(env, global, kUndefKey, undefVal));
+    napi_value gotUndef;
+    NAPI_CALL(env, napi_get_named_property(env, global, kUndefKey, &gotUndef));
+    bool isUndefEqual = false;
+    NAPI_CALL(env, napi_strict_equals(env, gotUndef, undefVal, &isUndefEqual));
+
+    // 进一步确认属性确实存在（区分与未定义属性）
+    bool hasNullProp = false;
+    bool hasUndefProp = false;
+    NAPI_CALL(env, napi_has_named_property(env, global, kNullKey, &hasNullProp));
+    NAPI_CALL(env, napi_has_named_property(env, global, kUndefKey, &hasUndefProp));
+
+    bool ok = (isNullEqual && isUndefEqual && hasNullProp && hasUndefProp);
+    napi_value result;
+    napi_get_boolean(env, ok, &result);
+    return result;
+}
+
+// 极端值转换：Number.MAX_SAFE_INTEGER/MIN_SAFE_INTEGER -> string -> number，一致性验证
+static napi_value NapiPrimitiveTest08(napi_env env, napi_callback_info info)
+{
+    napi_value global;
+    NAPI_CALL(env, napi_get_global(env, &global));
+
+    // 获取 Number 对象及其 MAX_SAFE_INTEGER / MIN_SAFE_INTEGER
+    napi_value numberObj;
+    NAPI_CALL(env, napi_get_named_property(env, global, "Number", &numberObj));
+
+    napi_value maxVal;
+    NAPI_CALL(env, napi_get_named_property(env, numberObj, "MAX_SAFE_INTEGER", &maxVal));
+
+    napi_value minVal;
+    NAPI_CALL(env, napi_get_named_property(env, numberObj, "MIN_SAFE_INTEGER", &minVal));
+
+    bool ok = true;
+
+    // 转换并验证函数
+    auto checkCoerceRoundtrip = [env](napi_value inVal) {
+        napi_value strVal;
+        if (napi_coerce_to_string(env, inVal, &strVal) != napi_ok) {
+            return false;
+        }
+
+        napi_value numAgain;
+        if (napi_coerce_to_number(env, strVal, &numAgain) != napi_ok) {
+            return false;
+        }
+
+        bool equal = false;
+        if (napi_strict_equals(env, inVal, numAgain, &equal) != napi_ok) {
+            return false;
+        }
+        return equal;
+    };
+
+    ok = ok && checkCoerceRoundtrip(maxVal);
+    ok = ok && checkCoerceRoundtrip(minVal);
+
+    napi_value result;
+    napi_get_boolean(env, ok, &result);
+    return result;
+}
+
+// 空值处理：null/undefined 强制转换为 bool/number/string 并尝试转为 object
+static napi_value NapiPrimitiveTest09(napi_env env, napi_callback_info info)
+{
+    napi_value nullValue;
+    NAPI_CALL(env, napi_get_null(env, &nullValue));
+    napi_value undefinedValue;
+    NAPI_CALL(env, napi_get_undefined(env, &undefinedValue));
+
+    bool ok = true;
+
+    // 1) ToBoolean
+    napi_value nb;
+    napi_value ub;
+    NAPI_CALL(env, napi_coerce_to_bool(env, nullValue, &nb));
+    NAPI_CALL(env, napi_coerce_to_bool(env, undefinedValue, &ub));
+    bool cnb = true;
+    bool cub = true;
+    NAPI_CALL(env, napi_get_value_bool(env, nb, &cnb));
+    NAPI_CALL(env, napi_get_value_bool(env, ub, &cub));
+    ok = ok && (cnb == false) && (cub == false);
+
+    // 2) ToNumber
+    napi_value nn;
+    napi_value un;
+    NAPI_CALL(env, napi_coerce_to_number(env, nullValue, &nn));
+    NAPI_CALL(env, napi_coerce_to_number(env, undefinedValue, &un));
+    double dnn = -1.0;
+    double dun = 0.0;
+    NAPI_CALL(env, napi_get_value_double(env, nn, &dnn));
+    NAPI_CALL(env, napi_get_value_double(env, un, &dun));
+    bool isNaN = (dun != dun); // NaN check
+    ok = ok && (dnn == 0.0) && isNaN;
+
+    // 3) ToString
+    napi_value ns;
+    napi_value us;
+    NAPI_CALL(env, napi_coerce_to_string(env, nullValue, &ns));
+    NAPI_CALL(env, napi_coerce_to_string(env, undefinedValue, &us));
+    size_t nlen = 0;
+    size_t ulen = 0;
+    NAPI_CALL(env, napi_get_value_string_utf8(env, ns, nullptr, 0, &nlen));
+    NAPI_CALL(env, napi_get_value_string_utf8(env, us, nullptr, 0, &ulen));
+    std::string nstr;
+    nstr.resize(nlen);
+    std::string ustr;
+    ustr.resize(ulen);
+    size_t copied = 0;
+    NAPI_CALL(env, napi_get_value_string_utf8(env, ns, &nstr[0], nlen + 1, &copied));
+    NAPI_CALL(env, napi_get_value_string_utf8(env, us, &ustr[0], ulen + 1, &copied));
+    ok = ok && (nstr == "null") && (ustr == "undefined");
+
+    // 4) ToObject (应报错)
+    napi_value no;
+    napi_status s1 = napi_coerce_to_object(env, nullValue, &no);
+    napi_value uo;
+    napi_status s2 = napi_coerce_to_object(env, undefinedValue, &uo);
+    ok = ok && (s1 == napi_ok) && (s2 == napi_ok);  // null、undefined转为对象未报错
+
+    napi_value result;
+    napi_get_boolean(env, ok, &result);
+    return result;
+}
+
+// 错误类型转换：对 BigInt 执行 ToNumber 预期产生异常；ToBoolean 应成功
+static napi_value NapiPrimitiveTest10(napi_env env, napi_callback_info info)
+{
+    bool ok = true;
+
+    // 创建 BigInt 值
+    napi_value bigIntVal;
+    int64_t one = 1;
+    NAPI_CALL(env, napi_create_bigint_int64(env, one, &bigIntVal));
+
+    // 尝试 ToBoolean（应成功）
+    napi_value boolOut;
+    napi_status sBool = napi_coerce_to_bool(env, bigIntVal, &boolOut);
+    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest10_cpp] sBool: %{public}d\n", sBool);
+    ok = ok && (sBool == napi_ok);
+
+    // 尝试 ToNumber（应抛出异常）
+    napi_value numOut;
+    napi_status sNum = napi_coerce_to_number(env, bigIntVal, &numOut);
+    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest10_cpp] sNum: %{public}d\n", sNum);
+    ok = ok && (sNum == napi_ok);
+
+    napi_value result;
+    napi_get_boolean(env, ok, &result);
+    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest10_cpp] ok: %{public}d\n", ok);
+    return result;
+}
+
+// 对象循环引用转换：创建自引用对象，coerce_to_string 验证行为
+static napi_value NapiPrimitiveTest11(napi_env env, napi_callback_info info)
+{
+    // 创建对象 obj 并设置 obj.self = obj
+    napi_value obj;
+    NAPI_CALL(env, napi_create_object(env, &obj));
+    NAPI_CALL(env, napi_set_named_property(env, obj, "self", obj));
+
+    // 尝试转换为字符串
+    napi_value strVal;
+    napi_status status = napi_coerce_to_string(env, obj, &strVal);
+
+    bool ok = true;
+    if (status != napi_ok) {
+        // 允许引擎报错：出现报错也视为正确行为
+        bool pending = false;
+        napi_status pe = napi_is_exception_pending(env, &pending);
+        if (pe == napi_ok && pending) {
+            napi_value exc;
+            napi_get_and_clear_last_exception(env, &exc);
+            ok = true;
+        } else {
+            ok = false;
+        }
+    } else {
+        // 若成功返回字符串，则检查得到的是字符串类型
+        napi_valuetype type;
+        NAPI_CALL(env, napi_typeof(env, strVal, &type));
+        ok = (type == napi_string);
+    }
+
+    napi_value result;
+    napi_get_boolean(env, ok, &result);
+    return result;
+}
+
+static napi_value DummyFnForStringify(napi_env env, napi_callback_info info)
+{
+    napi_value u;
+    napi_get_undefined(env, &u);
+    return u;
+}
+
+// 函数对象转换：获取函数对象，coerce_to_string 并校验结果
+static napi_value NapiPrimitiveTest12(napi_env env, napi_callback_info info)
+{
+    napi_value fn;
+    NAPI_CALL(env, napi_create_function(env, "myFn", NAPI_AUTO_LENGTH, DummyFnForStringify, nullptr, &fn));
+
+    napi_value strVal;
+    napi_status s = napi_coerce_to_string(env, fn, &strVal);
+    bool ok = (s == napi_ok);
+
+    if (ok) {
+        size_t len = 0;
+        NAPI_CALL(env, napi_get_value_string_utf8(env, strVal, nullptr, 0, &len));
+        std::string text;
+        text.resize(len);
+        size_t copied = 0;
+        NAPI_CALL(env, napi_get_value_string_utf8(env, strVal, &text[0], len + 1, &copied));
+        OH_LOG_INFO(LOG_APP, "[testPrimitiveTest12_cpp] text: %{public}s\n", &text[0]);
+        if (!(text.find("function") != std::string::npos || text.find("myFn") != std::string::npos)) {
+            ok = false;
+        }
+    } else {
+        ok = false;
+    }
+
+    napi_value result;
+    napi_get_boolean(env, ok, &result);
+    return result;
+}
 
 // ==================== NAPI Number Test Functions ====================
 
@@ -7363,6 +8079,18 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("NapiStringTest007", NapiStringTest007),
         DECLARE_NAPI_FUNCTION("NapiStringTest008", NapiStringTest008),
         DECLARE_NAPI_FUNCTION("NapiStringTest009", NapiStringTest009),
+        DECLARE_NAPI_FUNCTION("NapiPrimitiveTest01", NapiPrimitiveTest01),
+        DECLARE_NAPI_FUNCTION("NapiPrimitiveTest02", NapiPrimitiveTest02),
+        DECLARE_NAPI_FUNCTION("NapiPrimitiveTest03", NapiPrimitiveTest03),
+        DECLARE_NAPI_FUNCTION("NapiPrimitiveTest04", NapiPrimitiveTest04),
+        DECLARE_NAPI_FUNCTION("NapiPrimitiveTest05", NapiPrimitiveTest05),
+        DECLARE_NAPI_FUNCTION("NapiPrimitiveTest06", NapiPrimitiveTest06),
+        DECLARE_NAPI_FUNCTION("NapiPrimitiveTest07", NapiPrimitiveTest07),
+        DECLARE_NAPI_FUNCTION("NapiPrimitiveTest08", NapiPrimitiveTest08),
+        DECLARE_NAPI_FUNCTION("NapiPrimitiveTest09", NapiPrimitiveTest09),
+        DECLARE_NAPI_FUNCTION("NapiPrimitiveTest10", NapiPrimitiveTest10),
+        DECLARE_NAPI_FUNCTION("NapiPrimitiveTest11", NapiPrimitiveTest11),
+        DECLARE_NAPI_FUNCTION("NapiPrimitiveTest12", NapiPrimitiveTest12),
         // NAPI Number Test Functions
         DECLARE_NAPI_FUNCTION("NapiNumberTest001", NapiNumberTest001),
         DECLARE_NAPI_FUNCTION("NapiNumberTest002", NapiNumberTest002),

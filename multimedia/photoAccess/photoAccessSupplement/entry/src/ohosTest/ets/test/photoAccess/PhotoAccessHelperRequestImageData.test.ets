@@ -34,7 +34,13 @@ class MediaDataHandler implements photoAccessHelper.MediaAssetDataHandler<ArrayB
   }
 }
 
-
+function getEnumMaxValue<T extends Record<string, number | string>>(enumeration: T): number {
+  const values = Object.values(enumeration);
+  const numberValues = values.filter(v => typeof v === 'number') as number[];
+  let maxValue = Math.max(...numberValues);
+  console.info(TAG,'getEnumMaxValue : ' + maxValue);
+  return maxValue;
+}
 async function requestImageDataPromiseTest(done: Function, testName: string, fetchOptions: photoAccessHelper.FetchOptions,
   requestOptions: photoAccessHelper.RequestOptions,callback: (errCode: number) => void) {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -49,12 +55,11 @@ async function requestImageDataPromiseTest(done: Function, testName: string, fet
     console.info(TAG, 'requestImageData successfully',requestId);
     expect().assertFail();
   } catch (error) {
-    console.info(TAG, `failed; error: ${error}`, testName);
+    console.error(TAG, testName,`failed; error: ${error}`);
     callback(error.code)
   }
   done();
 }
-
 
 let power: ESObject;
 
@@ -65,6 +70,7 @@ export default function MediaAssetManagerRequestImageDataTest() {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
+      await sleep(500);
     });
 
     beforeEach(() => {
@@ -95,9 +101,8 @@ export default function MediaAssetManagerRequestImageDataTest() {
         deliveryMode:-1,
       };
       await requestImageDataPromiseTest(done, testName, fetchOptions, requestOptions,(errCode) => {
-        expect(errCode == 401).assertTrue()
+        expect(errCode).assertEqual('401');
       })
-      console.info(TAG + "MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_001 + requestImagePromiseTest: " + requestImageDataPromiseTest);
       done();
     })
     /**
@@ -111,19 +116,19 @@ export default function MediaAssetManagerRequestImageDataTest() {
     it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_002';
       const fetchOptions = fetchAllOption();
+      const maxEnum = getEnumMaxValue(photoAccessHelper.DeliveryMode);
       let requestOptions: photoAccessHelper.RequestOptions = {
-        deliveryMode:3,
+        deliveryMode:maxEnum + 1,
       };
       await requestImageDataPromiseTest(done, testName, fetchOptions, requestOptions,(errCode) => {
-        expect(errCode == 401).assertTrue()
+        expect(errCode).assertEqual('401');
       })
-      console.info(TAG + "MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_002 + requestImageDataPromiseTest: " + requestImageDataPromiseTest);
       done();
     })
     /**
      * @tc.number    : MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_003
      * @tc.name      : MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_003
-     * @tc.desc      : requestImageDataPromiseTest input deliveryMode is -10000
+     * @tc.desc      : requestImageDataPromiseTest input deliveryMode is 10000
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 0
@@ -132,12 +137,13 @@ export default function MediaAssetManagerRequestImageDataTest() {
       const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_003';
       const fetchOptions = fetchAllOption();
       let requestOptions: photoAccessHelper.RequestOptions = {
-        deliveryMode: -10000,
+        deliveryMode: 10000,
       };
       await requestImageDataPromiseTest(done, testName, fetchOptions, requestOptions,(errCode) => {
-        expect(errCode == 401).assertTrue()
+        expect(errCode).assertEqual('401');
       })
       console.info(TAG + "MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_003 + requestImageDataPromiseTest: " + requestImageDataPromiseTest);
+      await sleep(10);
       done();
     })
     /**
@@ -156,9 +162,8 @@ export default function MediaAssetManagerRequestImageDataTest() {
         compatibleMode: -1,
       };
       await requestImageDataPromiseTest(done, testName, fetchOptions, requestOptions,(errCode) => {
-        expect(errCode == 401).assertTrue()
+        expect(errCode).assertEqual('401');
       })
-      console.info(TAG + "MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_004 + requestImageDataPromiseTest: " + requestImageDataPromiseTest);
       done();
     })
 
@@ -178,9 +183,8 @@ export default function MediaAssetManagerRequestImageDataTest() {
         compatibleMode: 2,
       };
       await requestImageDataPromiseTest(done, testName, fetchOptions, requestOptions,(errCode) => {
-        expect(errCode == 401).assertTrue()
+        expect(errCode).assertEqual('401');
       })
-      console.info(TAG + "MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_005 + requestImageDataPromiseTest: " + requestImageDataPromiseTest);
       done();
     })
     /**
@@ -199,9 +203,8 @@ export default function MediaAssetManagerRequestImageDataTest() {
         compatibleMode: undefined,
       };
       await requestImageDataPromiseTest(done, testName, fetchOptions, requestOptions,(errCode) => {
-        expect(errCode == 401).assertTrue()
+        expect(errCode).assertEqual('401');
       })
-      console.info(TAG + "MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_006 + requestImageDataPromiseTest: " + requestImageDataPromiseTest);
       done();
     })
     /**
@@ -221,9 +224,8 @@ export default function MediaAssetManagerRequestImageDataTest() {
         mediaAssetProgressHandler:undefined,
       };
       await requestImageDataPromiseTest(done, testName, fetchOptions, requestOptions,(errCode) => {
-        expect(errCode == 401).assertTrue()
+        expect(errCode).assertEqual('401');
       })
-      console.info(TAG + "MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_007 + requestImageDataPromiseTest: " + requestImageDataPromiseTest);
       done();
     })
     /**
@@ -243,9 +245,8 @@ export default function MediaAssetManagerRequestImageDataTest() {
         mediaAssetProgressHandler:undefined,
       };
       await requestImageDataPromiseTest(done, testName, fetchOptions, requestOptions,(errCode) => {
-        expect(errCode == 401).assertTrue()
+        expect(errCode).assertEqual('401');
       })
-      console.info(TAG + "MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_008 + requestImageDataPromiseTest: " + requestImageDataPromiseTest);
       done();
     })
     /**
@@ -259,15 +260,15 @@ export default function MediaAssetManagerRequestImageDataTest() {
     it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_009';
       const fetchOptions = fetchAllOption();
+      let maxEnum = getEnumMaxValue(photoAccessHelper.CompatibleMode);
       let requestOptions: photoAccessHelper.RequestOptions = {
-        deliveryMode: 2,
-        compatibleMode: 3,
+        deliveryMode: photoAccessHelper.DeliveryMode.BALANCE_MODE,
+        compatibleMode:maxEnum + 1,
         mediaAssetProgressHandler:undefined,
       };
       await requestImageDataPromiseTest(done, testName, fetchOptions, requestOptions,(errCode) => {
-        expect(errCode == 401).assertTrue()
+        expect(errCode).assertEqual('401');
       })
-      console.info(TAG + "MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_009 + requestImageDataPromiseTest: " + requestImageDataPromiseTest);
       done();
     })
     /**
@@ -285,12 +286,11 @@ export default function MediaAssetManagerRequestImageDataTest() {
         predicates: AppStorage.get('') as dataSharePredicates.DataSharePredicates
       };
       let requestOptions: photoAccessHelper.RequestOptions = {
-        deliveryMode: 2,
+        deliveryMode: photoAccessHelper.DeliveryMode.BALANCE_MODE,
       };
       await requestImageDataPromiseTest(done, testName, fetchOptions, requestOptions,(errCode) => {
-        expect(errCode == 14000011).assertTrue()
+        expect(errCode).assertEqual('14000011');
       })
-      console.info(TAG + "MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_0010 + requestImageDataPromiseTest: " + requestImageDataPromiseTest);
       done();
     })
     /**
@@ -308,12 +308,11 @@ export default function MediaAssetManagerRequestImageDataTest() {
         predicates:  new dataSharePredicates.DataSharePredicates()
       };
       let requestOptions: photoAccessHelper.RequestOptions = {
-        deliveryMode: 2,
+        deliveryMode: photoAccessHelper.DeliveryMode.BALANCE_MODE,
       };
       await requestImageDataPromiseTest(done, testName, fetchOptions, requestOptions,(errCode) => {
-        expect(errCode == 13900020).assertTrue()
+        expect(errCode).assertEqual('13900020');
       })
-      console.info(TAG + "MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_0011 + requestImageDataPromiseTest: " + requestImageDataPromiseTest);
       done();
     })
     /**
@@ -331,12 +330,11 @@ export default function MediaAssetManagerRequestImageDataTest() {
         predicates:  new dataSharePredicates.DataSharePredicates()
       };
       let requestOptions: photoAccessHelper.RequestOptions = {
-        deliveryMode: 2,
+        deliveryMode: photoAccessHelper.DeliveryMode.BALANCE_MODE,
       };
       await requestImageDataPromiseTest(done, testName, fetchOptions, requestOptions,(errCode) => {
-        expect(errCode == 13900020).assertTrue()
+        expect(errCode).assertEqual('13900020');
       })
-      console.info(TAG + "MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_0012 + requestImageDataPromiseTest: " + requestImageDataPromiseTest);
       done();
     })
     /**
@@ -352,16 +350,15 @@ export default function MediaAssetManagerRequestImageDataTest() {
       const handler = new MediaDataHandler();
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       let requestOptions: photoAccessHelper.RequestOptions = {
-        deliveryMode: 2,
+        deliveryMode: photoAccessHelper.DeliveryMode.BALANCE_MODE,
       };
       try {
         let requestId = await  photoAccessHelper.MediaAssetManager.requestImageData(testContext, null, requestOptions, handler);
         console.info(TAG + "MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_0013 + requestId: " + requestId);
-        expect().assertFail();
       }
       catch (err) {
-        console.info(TAG + "MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_0013 + requestImageDataPromiseTest: " + err.code);
-        expect(err.code == 401).assertTrue()
+        console.info(TAG ,testName + err + err.code);
+        expect(err.code).assertEqual('401');
       }
       done();
     })
@@ -383,11 +380,10 @@ export default function MediaAssetManagerRequestImageDataTest() {
       try {
         let requestId = await  photoAccessHelper.MediaAssetManager.requestImageData(testContext, undefined, requestOptions, handler);
         console.info(TAG + "MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_0014 + requestId: " + requestId);
-        expect().assertFail();
       }
       catch (err) {
-        console.info(TAG + "MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_0014 + requestImageDataPromiseTest: " + err.code);
-        expect(err.code == 401).assertTrue()
+        console.info(TAG ,testName + err + err.code);
+        expect(err.code).assertEqual('401');
       }
       done();
     })

@@ -31,12 +31,12 @@ export class OpenHarmonyTestRunner implements TestRunner {
   constructor() {
   }
 
-  onPrepare() {
+  public onPrepare: () => void = () => {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner OnPrepare');
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
     abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.pageInteraction.test.static')
   }
-  onRun() {
+  public onRun: () => void = () => {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun');
 
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();

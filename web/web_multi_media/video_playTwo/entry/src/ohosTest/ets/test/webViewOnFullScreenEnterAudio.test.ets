@@ -17,8 +17,12 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
+import { waitForComponents } from './WaitTest.test';
+import { Driver } from '@kit.TestKit';
+
 // @ts-nocheck
 let emitKey = ''
+const driver = Driver.create();
 
 export default function webViewOnFullScreenEnterInfoAudio() {
   describe('ActsAceDevWebViewOnFullScreenEnterInfoTestAudio', () => {
@@ -29,44 +33,27 @@ export default function webViewOnFullScreenEnterInfoAudio() {
         }
         
         try {
-            await Utils.sleep(1000)
             router.clear();
             let pages = router.getState();
             console.info("get webViewOnFullScreenEnterAudio state success " + JSON.stringify(pages));
             if (!("webViewOnFullScreenEnterAudio" == pages.name)) {
                 console.info("get webViewOnFullScreenEnterAudio state success " + JSON.stringify(pages.name));
                 let result = await router.pushUrl(options);
-                await Utils.sleep(1000);
                 console.info("push webViewOnFullScreenEnterAudio state success " + JSON.stringify(result));
             }
         } catch (err) {
             console.error("push webViewOnFullScreenEnterAudio page error:" + err);
         }
+        await waitForComponents('webViewOnFullScreenEnterInfoAudio');
         done()
     });
     
     beforeEach(async (done: Function) => {
-        await Utils.sleep(1000);
       done();
     })
     
     afterEach(async (done: Function) => {
-        try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent : events_emitter.InnerEvent = {
-                eventId: 10,
-                priority: events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-        } catch (err) {
-            console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
+      console.info(" webViewOnFullScreenEnterAudio afterEach start");
       done();
     })
     
@@ -81,11 +68,13 @@ export default function webViewOnFullScreenEnterInfoAudio() {
     */
     it('testOnFullScreenEnterVideoInfoAudio', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
 
-        await Utils.sleep(1000);
         let emitKey="emitOnfullscreenenterAudioInfo";
-        Utils.emitEvent(emitKey,10)
-        Utils.registerEvent("testOnFullScreenEnterVideoInfoAudio", true, 1540, done);
-        sendEventByKey('webViewOnFullScreenEnterInfoAudio', 10, '');
+        Utils.emitEvent(emitKey,300420)
+        Utils.registerBaseEvent("testOnFullScreenEnterVideoInfoAudio", true, 300430, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+        await Utils.waitAndClickComponent(driver,'webViewOnFullScreenEnterInfoAudio')
     })
   })
 }

@@ -13,10 +13,14 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 115670;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -35,12 +39,13 @@ export default function webViewControllerPostUrlErrorCode() {
         if (!(pageName == pages.name)) {
           console.info(`get ${pageName} state success ` + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info(`push ${pageName} page success ` + JSON.stringify(result));
         }
       } catch (err) {
         console.error(`push ${pageName} page error: ` + err);
       }
+      await driver.waitForComponent(ON.id("PostUrlErrorCodeButton"), 10000);
+      console.log("PostUrlErrorCodeButton webView");
       done()
     });
 
@@ -54,13 +59,6 @@ export default function webViewControllerPostUrlErrorCode() {
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info(`${pageName} afterEach start`);
-      await Utils.sleep(2000);
-      console.info(`${pageName} afterEach end`);
-      done();
-    })
-
     /*
      * @tc.number     : SUB_WEB_ERRORCODE_WEBVIEWCONTROLLER_POSTURL_0100
      * @tc.name       : testWebViewControllerPostUrl001
@@ -70,10 +68,9 @@ export default function webViewControllerPostUrlErrorCode() {
      * @tc.level      : Level 2
      */
     it('testWebViewControllerPostUrl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testWebViewControllerPostUrl001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebViewControllerPostUrl001", '17100001', 30001, done);
-      sendEventByKey('PostUrlErrorCodeButton', 10, '');
+      Utils.emitEvent("testWebViewControllerPostUrl001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebViewControllerPostUrl001", '17100001', 115680, done);
+      await Utils.waitAndClickComponent(driver, "PostUrlErrorCodeButton");
     })
 
     /*
@@ -85,11 +82,9 @@ export default function webViewControllerPostUrlErrorCode() {
      * @tc.level      : Level 2
      */
     it('testWebViewControllerPostUrl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testWebViewControllerPostUrl002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebViewControllerPostUrl002", '17100002', 30002, done);
-      sendEventByKey('PostUrlErrorCodeButton', 10, '');
+      Utils.emitEvent("testWebViewControllerPostUrl002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebViewControllerPostUrl002", '17100002', 115690, done);
+      await Utils.waitAndClickComponent(driver, "PostUrlErrorCodeButton");
     })
-
   })
 }

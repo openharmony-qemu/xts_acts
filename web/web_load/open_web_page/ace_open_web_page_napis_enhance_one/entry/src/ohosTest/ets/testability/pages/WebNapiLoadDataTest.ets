@@ -18,20 +18,28 @@ import web_webview from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 
+const EVENT_ID_SET_EMIT_KEY = 201230;
+
 @Entry
 @Component
 struct WebNapiLoadDataTest {
 
   @State emitKey: string = '';
   @State webTag: string = 'web1211';
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
   controller: web_webview.WebviewController = new web_webview.WebviewController(this.webTag);
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -40,6 +48,7 @@ struct WebNapiLoadDataTest {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.emitKey = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -56,11 +65,12 @@ struct WebNapiLoadDataTest {
         Button('webNapiLoadDataButton click')
           .key('webNapiLoadDataButton')
           .onClick(async () => {
-            await Utils.sleep(2000);
-            console.info('key==>' + this.emitKey)
+            await Utils.waitForExist(()=>this.isPageEnd, 'webNapiLoadDataButtonIsPageEnd', 1, 1000);
+            await Utils.waitForExist(()=>this.isReceive, 'webNapiLoadDataButtonIsReceive', 1, 1000);
+            console.info('key==>' + this.emitKey);
+            this.isReceive = -1;
             switch (this.emitKey) {
               case 'emitWebNapiLoadData001': {
-                await Utils.sleep(2000);
                 try {
                     const htmlPictureContent: string = `
                     <html>
@@ -82,19 +92,17 @@ struct WebNapiLoadDataTest {
                     `;
                     let resultData = testNapi.loadData(this.webTag, htmlPictureContent, 'text/html', 'UTF-8', 'resource://rawfile/', 'www');
                     console.log('emitWebNapiLoadData001 loadData result:'+resultData);
-                    await Utils.sleep(2000)
-                    Utils.emitEvent(resultData,2025022401)
+                    Utils.emitEvent(resultData,201240)
                 } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                    Utils.emitEvent(2025022401,2025022401)
+                    Utils.emitEvent(201240,201240)
                 }
                 break;
               }
             }
           })
       }
-      Web({ src: 'https' +
-      '://www.baidu.com', controller: this.controller })
+      Web({ src: 'www' + '.example.' + 'com', controller: this.controller })
         .domStorageAccess(true)
         .databaseAccess(true)
         .imageAccess(true)
@@ -104,7 +112,10 @@ struct WebNapiLoadDataTest {
         .overviewModeAccess(true)
         .pinchSmooth(true)
         .fileAccess(true)
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
     }
   }
-
 }

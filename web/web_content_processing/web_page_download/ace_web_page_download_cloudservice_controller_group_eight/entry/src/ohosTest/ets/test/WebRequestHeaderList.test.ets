@@ -21,19 +21,24 @@ import { LocalContext } from './GloablConfig';
 import { router } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponents } from './WaitTest.test';
+import events_emitter from '@ohos.events.emitter';
+import Utils from './Util';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
-let driver: Driver = Driver.create();
+const driver = Driver.create();
 let flg: boolean = false
 
 export default function webRequestHeaderList() {
   describe('WebRequestHeaderListTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async (done: Function) => {
       webview.WebviewController.initializeWebEngine()
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
+      await waitForComponents('01');
+      done();
     })
     beforeEach(() => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
@@ -65,26 +70,16 @@ export default function webRequestHeaderList() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_start0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_start_0100 start')
-      console.info('SUB_ACE_WEB_start_0100 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("StartTest-success", () => {
-        flg = true
-        console.info('SUB_ACE_WEB_start_0100 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_start_0100 end')
-      })
+    it('testWebView_start0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
         url: "testability/pages/StartDownloadTest"
       })
-      await driver.delayMs(2000)
-      sendEventByKey("01", 10, '')
-      await driver.delayMs(1000)
-      sendEventByKey("02", 10, '')
-      await driver.delayMs(1000)
-      expect(flg).assertTrue()
+      Utils.emitEvent("setDownloadDelegate01", 130730);
+      Utils.registerBaseEvent("setDownloadDelegate01", true, 130740, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "01");
       router.clear()
     })
 
@@ -96,27 +91,16 @@ export default function webRequestHeaderList() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_start0105',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_start_0105 start')
-      console.info('SUB_ACE_WEB_start_0105 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("WebDownloadState", (data: string) => {
-        flg = true
-        expect(data).assertEqual("4")
-        console.info('SUB_ACE_WEB_start_0105 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_start_0105 end')
-      })
+    it('testWebView_start0105',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
         url: "testability/pages/PendingTest"
       })
-      await driver.delayMs(2000)
-      sendEventByKey("05", 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey("06", 10, '')
-      await driver.delayMs(2000)
-      expect(flg).assertTrue()
+      Utils.emitEvent("setDownloadDelegate05", 130730);
+      Utils.registerBaseEvent("setDownloadDelegate05", '4', 130750, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "01");
       router.clear()
     })
 

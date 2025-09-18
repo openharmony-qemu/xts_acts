@@ -16,12 +16,9 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium';
 import { getPermission, driveFn, LOG_TAG, fetchAllOption, sleep, isEmpty, copyImageToSandbox } from '../common';
 import common from '@ohos.app.ability.common';
-import { image } from '@kit.ImageKit';
-import { dataSharePredicates } from '@kit.ArkData';
-import { JSON } from '@kit.ArkTS';
 import { Driver, MatchPattern, ON } from '@kit.TestKit';
 import { fileIo, fileUri } from '@kit.CoreFileKit';
-import { ErrorCode } from '@kit.AbilityKit';
+
 
 
 const TAG = LOG_TAG + 'GetAssetChange';
@@ -41,12 +38,24 @@ async function getWriteCacheHandlerPromiseTest(done: Function, testName: string,
     await phAccessHelper.applyChanges(assetChangeRequest)
     expect().assertFail();
   } catch (error) {
-    console.info(TAG, `failed; error: ${error},${error.code},${error.message}`, testName);
+    console.error(TAG, testName,`failed; error: ${error},${error.code},${error.message}`, testName);
     callback(error.code)
   }
   done();
 }
 let power: ESObject;
+
+let permission = ['ohos.permission.GRANT_SENSITIVE_PERMISSIONS',
+  'ohos.permission.REVOKE_SENSITIVE_PERMISSIONS',
+  'ohos.permission.CAMERA',
+  'ohos.permission.MICROPHONE',
+  'ohos.permission.MEDIA_LOCATION',
+  'ohos.permission.READ_MEDIA',
+  'ohos.permission.WRITE_MEDIA',
+  'ohos.permission.START_ABILIIES_FROM_BACKGROUND',
+  'ohos.permission.START_INVISIBLE_ABILITY',
+  'ohos.permission.ABILITY_BACKGROUND_COMMUNICATION',
+];
 
 export default function mediaAssetManagerGetAssetsTest() {
   describe('mediaAssetManagerGetAssetsTest', () => {
@@ -55,6 +64,7 @@ export default function mediaAssetManagerGetAssetsTest() {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
+      await sleep(500);
     });
 
     beforeEach(() => {
@@ -88,8 +98,8 @@ export default function mediaAssetManagerGetAssetsTest() {
         console.info(TAG,'create asset successfully with uri = ' + asset.uri);
         expect().assertFail();
       } catch (error) {
-        console.info(TAG, `failed; error: ${error},${error.code},${error.message}`, testName);
-        expect(error.code == 13900002).assertTrue();
+        console.error(TAG,testName, `failed; error: ${error},${error.code},${error.message}`);
+        expect(error.code ).assertEqual('13900002');
       }
       done();
     })
@@ -112,8 +122,8 @@ export default function mediaAssetManagerGetAssetsTest() {
         console.info(TAG,'create asset successfully with uri = ' + asset.uri);
         expect().assertFail();
       } catch (error) {
-        console.info(TAG, `failed; error: ${error},${error.code},${error.message}`, testName);
-        expect(error.code == 401).assertTrue();
+        console.error(TAG, testName, `failed; error: ${error},${error.code},${error.message}`);
+        expect(error.code ).assertEqual('401');
       }
       done();
     })
@@ -137,8 +147,8 @@ export default function mediaAssetManagerGetAssetsTest() {
         console.info(TAG,'create asset successfully with uri = ' + asset.uri);
         expect().assertFail();
       } catch (error) {
-        console.info(TAG, `failed; error: ${error},${error.code},${error.message}`, testName);
-        expect(error.code == 401).assertTrue();
+        console.error(TAG,testName, `failed; error: ${error},${error.code},${error.message}` );
+        expect(error.code ).assertEqual('401');
       }
       done();
     })
@@ -155,9 +165,8 @@ export default function mediaAssetManagerGetAssetsTest() {
       const testName = 'MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_001';
       const extension = 'mp4';
       await getWriteCacheHandlerPromiseTest(done, testName, undefined, extension,(errCode) => {
-        expect(errCode == 401).assertTrue()
+        expect(errCode ).assertEqual('401');
       })
-      console.info(TAG + "MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_001 + getWriteCacheHandlerPromiseTest: " + getWriteCacheHandlerPromiseTest);
       done();
     })
     /**
@@ -172,9 +181,8 @@ export default function mediaAssetManagerGetAssetsTest() {
       const testName = 'MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_002';
       const extension = 'webp';
       await getWriteCacheHandlerPromiseTest(done, testName, null, extension,(errCode) => {
-        expect(errCode == 401).assertTrue()
+        expect(errCode ).assertEqual('401');
       })
-      console.info(TAG + "MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_002 + getWriteCacheHandlerPromiseTest: " + getWriteCacheHandlerPromiseTest);
       done();
     })
     /**
@@ -189,9 +197,8 @@ export default function mediaAssetManagerGetAssetsTest() {
       const testName = 'MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_003';
       const extension = 'webp';
       await getWriteCacheHandlerPromiseTest(done, testName, 3, extension,(errCode) => {
-        expect(errCode == 401).assertTrue()
+        expect(errCode ).assertEqual('401');
       })
-      console.info(TAG + "MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_003 + getWriteCacheHandlerPromiseTest: " + getWriteCacheHandlerPromiseTest);
       done();
     })
     /**
@@ -206,9 +213,8 @@ export default function mediaAssetManagerGetAssetsTest() {
       const testName = 'MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_004';
       const extension = 'webp';
       await getWriteCacheHandlerPromiseTest(done, testName, 0, extension,(errCode) => {
-        expect(errCode == 401).assertTrue()
+        expect(errCode ).assertEqual('401');
       })
-      console.info(TAG + "MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_004 + getWriteCacheHandlerPromiseTest: " + getWriteCacheHandlerPromiseTest);
       done();
     })
 
@@ -225,9 +231,8 @@ export default function mediaAssetManagerGetAssetsTest() {
       let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
       const extension = null;
       await getWriteCacheHandlerPromiseTest(done, testName, photoType, extension,(errCode) => {
-        expect(errCode == 401).assertTrue()
+        expect(errCode ).assertEqual('401');
       })
-      console.info(TAG + "MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_005 + getWriteCacheHandlerPromiseTest: " + getWriteCacheHandlerPromiseTest);
       done();
     })
     /**
@@ -243,9 +248,8 @@ export default function mediaAssetManagerGetAssetsTest() {
       let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
       const extension = undefined;
       await getWriteCacheHandlerPromiseTest(done, testName, photoType, extension,(errCode) => {
-        expect(errCode == 401).assertTrue()
+        expect(errCode ).assertEqual('401');
       })
-      console.info(TAG + "MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_006 + getWriteCacheHandlerPromiseTest: " + getWriteCacheHandlerPromiseTest);
       done();
     })
     /**
@@ -261,9 +265,8 @@ export default function mediaAssetManagerGetAssetsTest() {
       let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
       const extension: string = '1234mp4'
       await getWriteCacheHandlerPromiseTest(done, testName, photoType, extension,(errCode) => {
-        expect(errCode == 401).assertTrue()
+        expect(errCode ).assertEqual('401');
       })
-      console.info(TAG + "MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_007 + getWriteCacheHandlerPromiseTest: " + getWriteCacheHandlerPromiseTest);
       done();
     })
     /**
@@ -279,13 +282,10 @@ export default function mediaAssetManagerGetAssetsTest() {
       let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
       const extension = '';
       await getWriteCacheHandlerPromiseTest(done, testName, photoType, extension,(errCode) => {
-        expect(errCode == 401).assertTrue()
+        expect(errCode ).assertEqual('401');
       })
-      console.info(TAG + "MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_008 + getWriteCacheHandlerPromiseTest: " + getWriteCacheHandlerPromiseTest);
       done();
     })
-
-
 
   })
 }

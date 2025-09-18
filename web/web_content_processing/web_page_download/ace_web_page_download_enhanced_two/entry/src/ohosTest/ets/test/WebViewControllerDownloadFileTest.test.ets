@@ -13,13 +13,19 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import webView from '@ohos.web.webview';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponents } from './WaitTest';
+import events_emitter from '@ohos.events.emitter';
+import { Driver } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const driver = Driver.create();
 
 export default function webViewControllerDownloadFileTest() {
   describe('WebViewControllerDownloadFileTest', () => {
@@ -34,12 +40,12 @@ export default function webViewControllerDownloadFileTest() {
         if (!("WebViewControllerDownloadFileTest" == pages.name)) {
           console.info("get WebViewControllerDownloadFileTest state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebViewControllerDownloadFileTest page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebViewControllerDownloadFileTest page error: " + err);
       }
+      await waitForComponents('WebViewControllerDownloadFileTestButton');
       done()
     });
     beforeEach(async (done: Function) => {
@@ -48,14 +54,12 @@ export default function webViewControllerDownloadFileTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
 
     afterEach(async (done: Function) => {
       console.info("WebViewControllerDownloadFileTest afterEach start");
-      await Utils.sleep(1000);
       console.info("WebViewControllerDownloadFileTest afterEach end");
       done();
     })
@@ -69,10 +73,12 @@ export default function webViewControllerDownloadFileTest() {
     * @tc.level       : Level 1
     */
     it('testDownloadFile001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testDownloadFile001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testDownloadFile001", webView.WebDownloadErrorCode.FILE_ACCESS_DENIED, 79300, done);
-      sendEventByKey('WebViewControllerDownloadFileTestButton', 10, '');
+      Utils.emitEvent("testDownloadFile001", 131940)
+      Utils.registerBaseEvent("testDownloadFile001", webView.WebDownloadErrorCode.FILE_ACCESS_DENIED, 131950, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadFileTestButton');
     })
 
     /*
@@ -84,10 +90,12 @@ export default function webViewControllerDownloadFileTest() {
     * @tc.level       : Level 1
     */
     it('testDownloadFile002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testDownloadFile002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testDownloadFile002", webView.WebDownloadErrorCode.USER_CANCELED, 79302, done);
-      sendEventByKey('WebViewControllerDownloadFileTestButton', 10, '');
+      Utils.emitEvent("testDownloadFile002", 131940)
+      Utils.registerBaseEvent("testDownloadFile002", webView.WebDownloadErrorCode.USER_CANCELED, 131960, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadFileTestButton');
     })
 
   })

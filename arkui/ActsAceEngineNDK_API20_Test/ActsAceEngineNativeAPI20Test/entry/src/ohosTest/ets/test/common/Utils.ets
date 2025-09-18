@@ -250,6 +250,20 @@ export default class Utils {
     }
   }
 
+  static async replacePageStandard(pageTag: string, done?: Function) {
+    let options: router.RouterOptions = {
+      url: `MainAbility/pages/${pageTag}`,
+    }
+    try {
+      await router.replaceUrl(options, router.RouterMode.Standard);
+    } catch (err) {
+      console.error(`push ${pageTag} page error: ` + err);
+    }
+    if (done) {
+      done();
+    }
+  }
+
   static getComponentRect(key: string): Rect {
     let strJson = getInspectorByKey(key);
     let obj: ComponentInfo = JSON.parse(strJson);

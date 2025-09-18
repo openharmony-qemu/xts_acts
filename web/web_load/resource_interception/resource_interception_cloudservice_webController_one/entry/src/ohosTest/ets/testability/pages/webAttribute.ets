@@ -17,6 +17,8 @@ import Utils from '../../test/Utils';
 import { JsProxyObject } from '../../test/Interfaces';
 import webView from '@ohos.web.webview';
 
+const EVENT_ID_SET_EMIT_KEY = 201700;
+
 @Entry
 @Component
 struct webAttribute {
@@ -28,7 +30,7 @@ struct webAttribute {
   @State newUrl: string = ""
   @State pageBegin: string = ""
   @State pageEnd: string = ""
-  @State console: string = ""
+  @State console: string | null = null
   @State confirm: string = ""
   @State alert: string = ""
   @State errorReceive: string = ""
@@ -61,17 +63,19 @@ struct webAttribute {
   @State testAllowWindowOpenMethod: boolean = true;
   @State OnWindowNewCallBack: boolean = false
   @State OnWindowExtCallBack: boolean = false
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -80,6 +84,7 @@ struct webAttribute {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -102,40 +107,29 @@ struct webAttribute {
     Column() {
       Row() {
         Button("WebAttribute click").key('WebAttributeButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, 'WebAttributeButtonIsReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, 'WebAttributeButtonIsPageEnd', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
-
-            case "testJavaScriptAccess001": {
-              try {
-                this.javaScriptAccess = false
-                await Utils.sleep(2000);
-                this.controller.runJavaScript({ script: "jsAccess()" })
-                await Utils.sleep(2000);
-                if (this.console !== "web111") {
-                  let javaScriptAccessCalled = true
-                  Utils.emitEvent(javaScriptAccessCalled, 32019)
-                }
-              } catch (error) {
-                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(String(error.code), 32019)
-              }
-              break;
-            }
-
             case "testGeolocationAccess001": {
               try {
                 this.javaScriptAccess = true
                 this.geolocationAccess = false
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await Utils.waitForExist(()=>this.isPageEnd, 'refreshIsPageEnd', 1, 1000);
+                this.isPageEnd = -1;
                 this.controller.loadUrl({ url: "resource://rawfile/geolocation.html" });
-                await Utils.sleep(2000)
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
                 this.controller.runJavaScript({ script: "getGeoResult()", callback: (res) => {
                   console.info("getGeoResult==>" + res)
-                  Utils.emitEvent(res, 31020)
+                  Utils.emitEvent(res, 201710)
                   this.geolocationAccess = true
                 } })
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(String(error.code), 31020)
+                Utils.emitEvent(String(error.code), 201710)
                 this.geolocationAccess = true
               }
               break;
@@ -143,12 +137,13 @@ struct webAttribute {
 
             case "testOnResourceLoad001": {
               try {
+                this.isPageEnd = -1;
                 this.controller.loadUrl({ url: "resource://rawfile/geolocation.html" });
-                await Utils.sleep(2000)
-                Utils.emitEvent(this.loadedResource, 31021)
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
+                Utils.emitEvent(this.loadedResource, 201720)
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(String(error.code), 31021)
+                Utils.emitEvent(String(error.code), 201720)
               }
               break;
             }
@@ -159,13 +154,13 @@ struct webAttribute {
                 this.javaScriptAccess = true;
                 this.testAllowWindowOpenMethod = true;
                 this.testMultiWindowAccess = true;
+                this.isPageEnd = -1;
                 this.controller.loadUrl({ url: "resource://rawfile/onWindowNew.html" });
-                await Utils.sleep(2000)
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
                 this.controller.runJavaScript({ script: "onWindowNew()", callback: (res) => {
                   console.log('OpenNewWindow: ' + JSON.stringify(res));
+                  Utils.emitEvent(this.OnWindowNewCallBack, 201730)
                 } })
-                await Utils.sleep(2000)
-                Utils.emitEvent(this.OnWindowNewCallBack, 30071)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -178,13 +173,13 @@ struct webAttribute {
                 this.javaScriptAccess = true;
                 this.testAllowWindowOpenMethod = false;
                 this.testMultiWindowAccess = true;
+                this.isPageEnd = -1;
                 this.controller.loadUrl({ url: "resource://rawfile/onWindowNew.html" });
-                await Utils.sleep(2000)
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
                 this.controller.runJavaScript({ script: "onWindowNew()", callback: (res) => {
                   console.log('OpenNewWindow: ' + JSON.stringify(res));
+                  Utils.emitEvent(this.OnWindowNewCallBack, 201740)
                 } })
-                await Utils.sleep(2000)
-                Utils.emitEvent(this.OnWindowNewCallBack, 30072)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -197,13 +192,13 @@ struct webAttribute {
                 this.javaScriptAccess = false;
                 this.testAllowWindowOpenMethod = false;
                 this.testMultiWindowAccess = true;
+                this.isPageEnd = -1;
                 this.controller.loadUrl({ url: "resource://rawfile/onWindowNew.html" });
-                await Utils.sleep(2000)
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
                 this.controller.runJavaScript({ script: "onWindowNew()", callback: (res) => {
                   console.log('OpenNewWindow: ' + JSON.stringify(res));
+                  Utils.emitEvent(this.OnWindowNewCallBack, 201750)
                 } })
-                await Utils.sleep(2000)
-                Utils.emitEvent(this.OnWindowNewCallBack, 30073)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -216,43 +211,42 @@ struct webAttribute {
                 this.javaScriptAccess = true;
                 this.testAllowWindowOpenMethod = false;
                 this.testMultiWindowAccess = false;
+                this.isPageEnd = -1;
                 this.controller.loadUrl({ url: "resource://rawfile/onWindowNew.html" });
-                await Utils.sleep(2000)
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
                 this.controller.runJavaScript({ script: "onWindowNew()", callback: (res) => {
                   console.log('OpenNewWindow: ' + JSON.stringify(res));
+                  Utils.emitEvent(this.OnWindowNewCallBack, 201760)
                 } })
-                await Utils.sleep(2000)
-                Utils.emitEvent(this.OnWindowNewCallBack, 30074)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
             }
 
-
-
+            case "testJavaScriptAccess001": {
+              try {
+                this.javaScriptAccess = false;
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await Utils.waitForExist(()=>this.isPageEnd, 'refreshIsPageEnd', 1, 1000);
+                this.controller.runJavaScript({ script: "jsAccess()" })
+                await Utils.waitForExist(()=>this.console, 'waitNull', null, 1000, 5);
+                if (this.console !== "web111") {
+                  Utils.emitEvent(true, 201770)
+                } else {
+                  Utils.emitEvent(false, 201770)
+                }
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(false, 201770)
+              }
+              break;
+            }
           }
         })
       }
 
-      TextInput({ placeholder: "inputs your words" })
-        .key('textInput')
-        .type(InputType.Normal)
-        .placeholderColor(Color.Blue)
-        .placeholderFont({ size: 20, weight: FontWeight.Normal, family: "sans-serif", style: FontStyle.Normal })
-        .enterKeyType(EnterKeyType.Next)
-        .caretColor(Color.Green)
-        .height(60)
-        .fontSize(30)
-        .fontWeight(FontWeight.Bold)
-        .fontFamily("cursive")
-        .fontStyle(FontStyle.Italic)
-        .fontColor(Color.Red)
-        .maxLength(20)
-        .border({ width: 1, color: 0x317AF7, radius: 10, style: BorderStyle.Solid })
-        .onClick(() => {
-          console.info("TextInput click")
-        })
       Web({ src: $rawfile('webPart1index.html'), controller: this.controller })
         .visibility(this.webVisibility)
         .javaScriptAccess(this.javaScriptAccess)
@@ -275,7 +269,10 @@ struct webAttribute {
         })
         .onConsole((event) => {
           if (event) {
-            this.console = event.message.getMessage()
+            if (this.str === 'testJavaScriptAccess001') {
+              this.console = event.message.getMessage();
+              console.log('this.console = ' + this.console);
+            }
           }
           return false
         })
@@ -286,6 +283,7 @@ struct webAttribute {
         })
         .onPageEnd((event) => {
           if (event) {
+            this.isPageEnd = 1;
             this.pageEnd = event.url
             console.log("onPageEnd==>")
           }

@@ -13,10 +13,14 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 202590;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -34,13 +38,14 @@ export default function webAttributeTest() {
         console.info("get WebAttributeTest state success " + JSON.stringify(pages));
         if (!("WebAttributeTest" == pages.name)) {
           console.info("get WebAttributeTest state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push WebAttributeTest page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info("push WebAttributeTest page success");
         }
       } catch (err) {
         console.error("push WebAttributeTest page error: " + err);
       }
+      await driver.waitForComponent(ON.id("WebAttributeTestButton"), 10000);
+      console.log("waitForComponent WebAttributeTestButton");
       done()
     });
 
@@ -54,13 +59,6 @@ export default function webAttributeTest() {
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("WebAttributeTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebAttributeTest afterEach end");
-      done();
-    })
-
     /*
     * @tc.number      : SUB_WEB_GETCERTIFICATE_0100
     * @tc.name        : testGetCertificate001
@@ -70,10 +68,13 @@ export default function webAttributeTest() {
     * @tc.level       : Level 0
     */
     it('testGetCertificate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitGetCertificate001", 10)
-      await Utils.sleep(2000);
-      Utils.registerContainEvent("testGetCertificate001", "getCertificate success: len = 1", 60423, done);
-      sendEventByKey('WebAttributeTestButton', 10, '');
+      Utils.emitEvent("emitGetCertificate001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testGetCertificate001", true, 202600, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebAttributeTestButton");
+      if (await Utils.waitForExist(() => isReturn, 'testGetCertificate001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -85,10 +86,13 @@ export default function webAttributeTest() {
     * @tc.level       : Level 1
     */
     it('testGetCertificate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitGetCertificate002", 10)
-      await Utils.sleep(2000);
-      Utils.registerContainEvent("testGetCertificate002", "getCertificate success: len = 1", 60424, done);
-      sendEventByKey('WebAttributeTestButton', 10, '');
+      Utils.emitEvent("emitGetCertificate002", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testGetCertificate002", true, 202610, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebAttributeTestButton");
+      if (await Utils.waitForExist(() => isReturn, 'testGetCertificate002' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
   })
 }

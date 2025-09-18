@@ -39,6 +39,7 @@
 #include "list/list_event_test.h"
 #include "list/list_scroll_offset_test.h"
 #include "list/list_scroll_page_test.h"
+#include "list/list_scroll_bar_color_test.h"
 #include "list/list_scroll_by_test.h"
 #include "list/list_close_all_action_test.h"
 #include "list/list_nested_scroll_event_test.h"
@@ -314,6 +315,12 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr },
         { "listGetScrollPageData", nullptr, ListScrollPageTest::GetScrollPageData, nullptr, nullptr, nullptr,
             napi_default, nullptr },
+        { "listScrollBarColor001Test", nullptr, ListScrollBarColorTest::TestListScrollBarColor001, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "listScrollBarColor002Test", nullptr, ListScrollBarColorTest::TestListScrollBarColor002, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "listScrollBarColor003Test", nullptr, ListScrollBarColorTest::TestListScrollBarColor003, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
         { "listScrollBy001Test", nullptr, ListScrollByTest::TestListScrollBy001, nullptr, nullptr, nullptr,
             napi_default, nullptr },
         { "listScrollBy002Test", nullptr, ListScrollByTest::TestListScrollBy002, nullptr, nullptr, nullptr,

@@ -12,18 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {describe, beforeEach, afterEach, it, expect, beforeAll, TestType, Size, Level } from "@ohos/hypium";
-import events_emitter from '@ohos.events.emitter';
+import { describe, beforeEach, it, beforeAll, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
-// import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 200380;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-// @ts-nocheck
-let emitKey = "emitOnfirstcontentfulpaint";
+
 export default function webViewOnFirstCont() {
-  describe('ActsAceWebDevWebViewOnFirstContTest',  () => {
+  describe('ActsAceWebDevWebViewOnFirstContTest', () => {
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'testability/pages/webViewOnFirstCont',
@@ -34,54 +35,37 @@ export default function webViewOnFirstCont() {
         console.info("get webViewOnFirstCont state success " + JSON.stringify(pages));
         if (!("webViewOnFirstCont" == pages.name)) {
           console.info("get webViewOnFirstCont state success " + JSON.stringify(pages.name));
-          let result = await router.push(options);
-          await Utils.sleep(2000);
-          console.info("push webViewOnFirstCont page success " + JSON.stringify(result));
+          await router.push(options);
+          console.info("push webViewOnFirstCont page success");
         }
       } catch (err) {
         console.error("push webViewOnFirstCont page error: " + err);
       }
+      await driver.waitForComponent(ON.id("webViewOnFirstCont"), 10000);
+      console.log("waitForComponent webViewOnFirstCont");
       done()
     });
+
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webViewOnFirstCont beforeEach start");
       done();
     })
-    afterEach(async  (done: Function) =>{
-      console.info("webViewOnFirstCont afterEach start:" + emitKey);
-      try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent: events_emitter.InnerEvent = {
-                eventId:10,
-                priority:events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-      } catch (err) {
-            console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
-      done();
-    })
+
     /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR5_API_0100
-     *tc.name testOnfirstcontentfulpaint
-     *tc.desc onfirstcontentfulpaint with web src null
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR5_API_0100
+     * @tc.name testOnfirstcontentfulpaint
+     * @tc.desc onfirstcontentfulpaint with web src null
      */
-    it('testOnfirstcontentfulpaint',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
-      emitKey="emitOnfirstcontentfulpaint";
-      Utils.registerEvent("testOnfirstcontentfulpaint","NoSrcTest",322,done);
-      sendEventByKey('webViewOnFirstCont',10,'');
+    it('testOnfirstcontentfulpaint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const emitKey = "emitOnfirstcontentfulpaint";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testOnfirstcontentfulpaint", -1, 200390, done);
+      await Utils.waitAndClickComponent(driver, "webViewOnFirstCont");
     })
   })
 }

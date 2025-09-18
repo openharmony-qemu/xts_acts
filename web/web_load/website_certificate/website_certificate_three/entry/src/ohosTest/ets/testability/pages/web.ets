@@ -18,10 +18,9 @@ import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
-import fileio from '@ohos.fileio';
-import prompt from '@system.prompt';
 import cert from '@ohos.security.cert';
 
+const EVENT_ID_SET_EMIT_KEY = 202670;
 let loadedUrl: string;
 
 function Uint8ArrayToString(dataArray: Uint8Array) {
@@ -75,22 +74,19 @@ struct Index {
   ports: web_webview.WebMessagePort[] | null = null;
   nativePort: web_webview.WebMessagePort | null = null;
   @State webMessResult: string = ""
-  testObj: ESObject = {
-    testOne: (data: ESObject): ESObject => {
-      Utils.emitEvent(data, 13)
-      return data;
-    },
-    toString: () => {
-      console.log('Web Component toString');
-    }
-  };
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 100,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: ESObject) => {
@@ -99,6 +95,7 @@ struct Index {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -124,7 +121,10 @@ struct Index {
     Column() {
       Row() {
         Button("web click").key('webcomponent').onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, 'webcomponentIsReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, 'webcomponentIsPageEnd', 1, 1000);
           console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitGetCertificateCallback": {
               try {
@@ -137,7 +137,7 @@ struct Index {
                     this.outputStr = ParseX509CertInfo(x509CertArray);
                     console.info("hahahha" + this.outputStr.length);
                     console.info("hahahha" + this.outputStr);
-                    Utils.emitEvent(this.outputStr.length, 520);
+                    Utils.emitEvent(this.outputStr.length, 202680);
                   }
                 })
               } catch (error) {
@@ -180,6 +180,10 @@ struct Index {
           event.response.setResponseIsReady(true);
         })
         .onPageEnd((event) => {
+          if (event) {
+            this.isPageEnd = 1;
+            console.log("onPageEnd==>")
+          }
           if (this.enterPageEnd) {
 
             this.enterPageEnd = false;

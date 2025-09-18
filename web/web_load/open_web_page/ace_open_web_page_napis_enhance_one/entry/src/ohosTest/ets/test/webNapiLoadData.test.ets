@@ -13,10 +13,14 @@
  * limitations under the License.
  */
 
-import { beforeAll, afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 201230;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function ActsWebNapiLoadDataTest() {
@@ -32,13 +36,14 @@ export default function ActsWebNapiLoadDataTest() {
         console.info("get WebNapiLoadDataTest state success " + JSON.stringify(pages));
         if (!("WebNapiLoadDataTest" == pages.name)) {
           console.info("get WebNapiLoadDataTest state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push WebNapiLoadDataTest page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info("push WebNapiLoadDataTest page success");
         }
       } catch (err) {
         console.error("push WebNapiLoadDataTest page error: " + err);
       }
+      await driver.waitForComponent(ON.id("webNapiLoadDataButton"), 10000);
+      console.log("waitForComponent webNapiLoadDataButton");
       done()
     });
 
@@ -48,15 +53,7 @@ export default function ActsWebNapiLoadDataTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("WebNapiLoadDataTest beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebNapiLoadDataTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebNapiLoadDataTest afterEach end");
       done();
     })
 
@@ -69,12 +66,13 @@ export default function ActsWebNapiLoadDataTest() {
     * @tc.level      : Level 0
     */
     it('testWebNapiLoadData001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done:Function)=>{
-      Utils.emitEvent("emitWebNapiLoadData001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebNapiLoadData001",0,2025022401,done);
-      sendEventByKey('webNapiLoadDataButton',10,'');
+      Utils.emitEvent("emitWebNapiLoadData001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebNapiLoadData001", 0, 201240, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webNapiLoadDataButton");
+      if (await Utils.waitForExist(() => isReturn, 'testWebNapiLoadData001' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
-
-
   })
 }

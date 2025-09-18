@@ -48,7 +48,7 @@ export default function writeTest() {
         done();
       } catch (error: BusinessError) {
         hilog.error(domain, tag, "failed to write event because: " + error.code);
-        assertEQ(error.code, 0, "The result should be 0");
+        expect(0).assertEqual(error.code);
         done();
       }
       hilog.info(domain, tag, 'testHiAppEvent001 end');
@@ -1408,6 +1408,9 @@ export default function writeTest() {
      */
     it('testHiAppEventApi45', Level.LEVEL3, ():void => {
       console.info('testHiAppEventApi45 start');
+      hiAppEvent.configure({
+        disable: false
+      });
       hiAppEvent.write({
         domain: "test_domain",
         name: "test_name",

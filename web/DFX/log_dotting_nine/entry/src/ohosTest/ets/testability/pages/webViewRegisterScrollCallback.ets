@@ -22,6 +22,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 
+const EVENT_ID_SET_SUITE_KEY = 124001;
 @Entry
 @Component
 struct testWebResponseSetErrorFailParamIsString {
@@ -29,6 +30,8 @@ struct testWebResponseSetErrorFailParamIsString {
   webTag: string = 'ArkWeb1';
   @State isRegister:number = -1;
   controller: web_webview.WebviewController = new web_webview.WebviewController(this.webTag);
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
 
   aboutToAppear() {
@@ -43,14 +46,14 @@ struct testWebResponseSetErrorFailParamIsString {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -59,6 +62,7 @@ struct testWebResponseSetErrorFailParamIsString {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -68,13 +72,15 @@ struct testWebResponseSetErrorFailParamIsString {
       Button('RegisterScrollCallback')
         .key('RegisterScrollCallbackButton')
         .onClick(async () => {
-          console.log('key==')
+          await Utils.waitForExist(()=>this.isPageEnd, 'RegisterScrollCallbackButtonIsPageEnd', 1, 1000);
+          this.isReceive = -1;
+          console.log('this.str==>' + this.str)
           switch (this.str) {
             case 'testRegisterScrollCallbackString': {
               console.log('ppbbRegister' + this.isRegister)
               try {
                 this.isRegister = testNapi.nativeWebInit(this.webTag);
-                Utils.emitEvent(this.isRegister, 20250421);
+                Utils.emitEvent(this.isRegister, 124010);
                 console.log('Pbbregister' + this.isRegister)
               } catch (error) {
                 console.error(`testRegisterScrollCallbackString ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -84,10 +90,14 @@ struct testWebResponseSetErrorFailParamIsString {
             }
           }
         })
-      Web({ src: "https://www.baidu.com", controller: this.controller })
+      Web({ src: "https://www.example.com", controller: this.controller })
         .javaScriptAccess(true)
         .fileAccess(true)
         .borderRadius(10)
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
     }
   }
 }

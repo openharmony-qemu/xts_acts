@@ -20,6 +20,10 @@ import { webview } from '@kit.ArkWeb';
 import { LocalContext } from './GloablConfig';
 import { router } from '@kit.ArkUI';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import Utils from './Util';
+import { waitForComponents } from './WaitTest.test';
+import events_emitter from '@ohos.events.emitter';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -29,10 +33,12 @@ let flg: boolean = false
 export default function WebDownloadItem() {
   describe('WebDownloadItem', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async (done: Function) => {
       webview.WebviewController.initializeWebEngine()
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
+      await waitForComponents('001');
+      done();
     })
     beforeEach(() => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
@@ -64,28 +70,16 @@ export default function WebDownloadItem() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_getGuid1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getGuid_1000 start')
-      console.info('SUB_ACE_WEB_getGuid_1000 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("BeforeDownloadGetGuid", (data: string) => {
-        flg = true
-        expect(data).assertEqual('')
-        console.info('SUB_ACE_WEB_getGuid_1000 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getGuid_1000 end')
-      })
+    it('testWebView_getGuid1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
         url: "testability/pages/GetGuidTest"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
-      await driver.delayMs(2000)
-      expect(flg).assertTrue()
-      router.clear()
+      Utils.emitEvent("BeforeDownloadGetGuid", 130760);
+      Utils.registerBaseEvent("BeforeDownloadGetGuid", '', 130770, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
     })
 
     /**
@@ -96,27 +90,16 @@ export default function WebDownloadItem() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_getGuid2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getGuid_2000 start')
-      console.info('SUB_ACE_WEB_getGuid_2000 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("DownloadGetGuid", (data: string) => {
-        flg = true
-        expect(data).assertEqual('')
-        console.info('SUB_ACE_WEB_getGuid_2000 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getGuid_2000 end')
-      })
+    it('testWebView_getGuid2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
         url: "testability/pages/GetGuidTest1"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
-      await driver.delayMs(2000)
-      expect(flg).assertTrue()
+      Utils.emitEvent("DownloadGetGuid", 130760);
+      Utils.registerBaseEvent("DownloadGetGuid", '', 130780, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
 
@@ -128,28 +111,16 @@ export default function WebDownloadItem() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_getGuid3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getGuid_3000 start')
-      console.info('SUB_ACE_WEB_getGuid_3000 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("DownloadGetGuidFailed", (data: string) => {
-        flg = true
-        expect(data.length > 0).assertTrue()
-        console.info('DownloadGetGuidFailed: ', data)
-        console.info('SUB_ACE_WEB_getGuid_3000 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getGuid_3000 end')
-      })
+    it('testWebView_getGuid3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
         url: "testability/pages/GetGuidTest2"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
-      await driver.delayMs(6000)
-      expect(flg).assertTrue()
+      Utils.emitEvent("DownloadGetGuidFailed", 130760);
+      Utils.registerBaseEvent("DownloadGetGuidFailed", true, 130790, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
 
@@ -161,27 +132,16 @@ export default function WebDownloadItem() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_getGuid4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getGuid_4000 start')
-      console.info('SUB_ACE_WEB_getGuid_4000 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("BeforeDownloadGetGuidUpdated", (data: string) => {
-        flg = true
-        expect(data.length > 0).assertTrue()
-        console.info('SUB_ACE_WEB_getGuid_4000 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getGuid_4000 end')
-      })
+    it('testWebView_getGuid4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
         url: "testability/pages/GetGuidTest3"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
-      await driver.delayMs(6000)
-      expect(flg).assertTrue()
+      Utils.emitEvent("BeforeDownloadGetGuidUpdated", 130760);
+      Utils.registerBaseEvent("BeforeDownloadGetGuidUpdated", true, 130800, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
 
@@ -193,27 +153,16 @@ export default function WebDownloadItem() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_getGuid5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getGuid_5000 start')
-      console.info('SUB_ACE_WEB_getGuid_5000 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("BeforeDownloadGetGuidUpdated30", (data: string) => {
-        flg = true
-        expect(data.length > 0).assertTrue()
-        console.info('SUB_ACE_WEB_getGuid_5000 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getGuid_5000 end')
-      })
+    it('testWebView_getGuid5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
         url: "testability/pages/GetGuidTest4"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
-      await driver.delayMs(40000)
-      expect(flg).assertTrue()
+      Utils.emitEvent("BeforeDownloadGetGuidUpdated30", 130760);
+      Utils.registerBaseEvent("BeforeDownloadGetGuidUpdated30", true, 130810, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
 
@@ -225,43 +174,17 @@ export default function WebDownloadItem() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_getGuid6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getGuid_6000 start')
-      console.info('SUB_ACE_WEB_getGuid_6000 start')
-      await driver.delayMs(500)
-      let callbackNum1: number = 0
-      let callbackNum2: number = 0
-      let callbackNum3: number = 0
-
-      LocalContext.context.eventHub.on("BeforeDownloadGetGuidUpdated100", (data: string) => {
-        callbackNum1++
-        expect(data.length > 0).assertTrue()
-      })
-
-      LocalContext.context.eventHub.on("BeforeDownloadGetGuidUpdatedPause", (data: string) => {
-        callbackNum2++
-        expect(data.length > 0).assertTrue()
-      })
-
-      LocalContext.context.eventHub.on("BeforeDownloadGetGuidUpdatedResume", (data: string) => {
-        callbackNum3++
-        expect(data.length > 0).assertTrue()
-      })
+    it('testWebView_getGuid6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
         url: "testability/pages/GetGuidTest5"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
-      await driver.delayMs(60000)
-      expect(callbackNum1 > 0).assertTrue()
-      expect(callbackNum2 > 0).assertTrue()
-      expect(callbackNum3 > 0).assertTrue()
+      Utils.emitEvent("BeforeDownloadGetGuidUpdated", 130760);
+      Utils.registerBaseEvent("BeforeDownloadGetGuidUpdated100", true, 130820, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
-      console.info('SUB_ACE_WEB_getGuid_6000 end')
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getGuid_6000 end')
     })
 
     /**
@@ -272,27 +195,16 @@ export default function WebDownloadItem() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_getGuid7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getGuid_7000 start')
-      console.info('SUB_ACE_WEB_getGuid_7000 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("BeforeDownloadGetGuidUpdatedTimeOut", (data: string) => {
-        flg = true
-        expect(data.length > 0).assertTrue()
-        console.info('SUB_ACE_WEB_getGuid_7000 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getGuid_7000 end')
-      })
+    it('testWebView_getGuid7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
         url: "testability/pages/GetGuidTest6"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
-      await driver.delayMs(40000)
-      expect(flg).assertTrue()
+      Utils.emitEvent("BeforeDownloadGetGuidUpdatedTimeOut", 130760);
+      Utils.registerBaseEvent("BeforeDownloadGetGuidUpdatedTimeOut", true, 130850, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "001");
       router.clear()
     })
   })

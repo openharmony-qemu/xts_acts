@@ -12,16 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
-import events_emitter from '@ohos.events.emitter';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import router from '@ohos.router';
-import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 201270;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-// @ts-nocheck
-let emitKey = ""
 
 export default function ActsAceWebViewWarmupServiceWorker() {
   describe('ActsAceWebViewWarmupServiceWorker', () => {
@@ -32,19 +32,19 @@ export default function ActsAceWebViewWarmupServiceWorker() {
         }
         
         try {
-            await Utils.sleep(1000)
             router.clear();
             let pages = router.getState();
             console.info("get webViewWarmupServiceWorker state success " + JSON.stringify(pages));
             if (!("webViewWarmupServiceWorker" == pages.name)) {
                 console.info("get webViewWarmupServiceWorker state success " + JSON.stringify(pages.name));
-                let result = await router.pushUrl(options);
-                await Utils.sleep(1000);
-                console.info("push webViewWarmupServiceWorker state success " + JSON.stringify(result));
+                await router.pushUrl(options);
+                console.info("push webViewWarmupServiceWorker state success");
             }
         } catch (err) {
             console.error("push webViewWarmupServiceWorker page error:" + err);
         }
+        await driver.waitForComponent(ON.id("webViewWarmupServiceWorker"), 10000);
+        console.log("waitForComponent webViewWarmupServiceWorker");
         done()
     });
     
@@ -54,28 +54,7 @@ export default function ActsAceWebViewWarmupServiceWorker() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
         })
-        await Utils.sleep(1000);
         done();
-    })
-
-      afterEach(async (done: Function) => {
-        try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent : events_emitter.InnerEvent = {
-                eventId: 10,
-                priority: events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-        } catch (err) {
-            console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
-      done();
     })
 
     /*
@@ -87,10 +66,13 @@ export default function ActsAceWebViewWarmupServiceWorker() {
      *@tc.level Level 0
      */
     it('testWebViewWarmupServiceWorker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        emitKey = "emitWebViewWarmupServiceWorker"
-        Utils.emitEvent(emitKey, 10);
-        Utils.registerEvent("testWebViewWarmupServiceWorker", true, 1342, done);
-        sendEventByKey('webViewWarmupServiceWorker', 10, '');
+      Utils.emitEvent("emitWebViewWarmupServiceWorker", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewWarmupServiceWorker", true, 201280, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewWarmupServiceWorker");
+      if (await Utils.waitForExist(() => isReturn, 'testWebViewWarmupServiceWorker' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
   })
 }

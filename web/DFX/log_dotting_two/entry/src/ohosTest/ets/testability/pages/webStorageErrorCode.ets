@@ -16,8 +16,9 @@
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
-import { JsProxyObject } from '../../test/Interfaces';
 import business_error from '@ohos.base';
+
+const EVENT_ID_SET_EMIT_KEY = 115070;
 
 @Entry
 @Component
@@ -31,18 +32,20 @@ struct Index {
   @State searchNumber: number = 2;
   @State ports: webView.WebMessagePort[] = [];
   @State message: string = "123";
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
   no_error: string = "no error happened"
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -51,19 +54,8 @@ struct Index {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
-    }
-  }
-  private jsObj: JsProxyObject = {
-    test: (res: object) => {
-      Utils.emitEvent(String(res), 102);
-    },
-    toString: (str: string) => {
-      console.info("ets toString:" + String(str));
-    },
-    register: (res: object) => {
-      Utils.emitEvent(String(res), 86);
-      return "web222"
     }
   }
 
@@ -71,17 +63,20 @@ struct Index {
     Column() {
       Row() {
         Button("WebStorageErrorCode click").key('WebStorageErrorCodeButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isPageEnd, 'WebStorageErrorCodeButtonIsPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isReceive, 'WebStorageErrorCodeButtonIsReceive', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
 
             case "testDeleteOriginError001": {
               try {
                 webView.WebStorage.deleteOrigin('');
-                Utils.emitEvent(this.no_error, 20030)
+                Utils.emitEvent(this.no_error, 115080)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20030)
+                Utils.emitEvent(String(e.code), 115080)
               }
               break;
             }
@@ -89,11 +84,11 @@ struct Index {
             case "testDeleteOriginError002": {
               try {
                 webView.WebStorage.deleteOrigin(',htt://');
-                Utils.emitEvent(this.no_error, 20031)
+                Utils.emitEvent(this.no_error, 115090)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20031)
+                Utils.emitEvent(String(e.code), 115090)
               }
               break;
             }
@@ -101,11 +96,11 @@ struct Index {
             case "testDeleteOriginError003": {
               try {
                 webView.WebStorage.deleteOrigin('ww.OpenHarmony.cn');
-                Utils.emitEvent(this.no_error, 20032)
+                Utils.emitEvent(this.no_error, 115100)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(error.code), 20032)
+                Utils.emitEvent(String(error.code), 115100)
               }
               break;
             }
@@ -113,11 +108,11 @@ struct Index {
             case "testDeleteOriginError004": {
               try {
                 webView.WebStorage.deleteOrigin('123');
-                Utils.emitEvent(this.no_error, 20033)
+                Utils.emitEvent(this.no_error, 115110)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(error.code), 20033)
+                Utils.emitEvent(String(error.code), 115110)
               }
               break;
             }
@@ -128,16 +123,16 @@ struct Index {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                    Utils.emitEvent(String(error.code), 20050)
+                    Utils.emitEvent(String(error.code), 115120)
                     return;
                   }
                   console.log('quota: ' + quota);
-                  Utils.emitEvent(this.no_error, 20050)
+                  Utils.emitEvent(this.no_error, 115120)
                 })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20050)
+                Utils.emitEvent(String(e.code), 115120)
               }
               break;
             }
@@ -148,16 +143,16 @@ struct Index {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                    Utils.emitEvent(String(error.code), 20051)
+                    Utils.emitEvent(String(error.code), 115130)
                     return;
                   }
                   console.log('quota: ' + quota);
-                  Utils.emitEvent(this.no_error, 20051)
+                  Utils.emitEvent(this.no_error, 115130)
                 })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20051)
+                Utils.emitEvent(String(e.code), 115130)
               }
               break;
             }
@@ -168,16 +163,16 @@ struct Index {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                    Utils.emitEvent(String(error.code), 20052)
+                    Utils.emitEvent(String(error.code), 115140)
                     return;
                   }
                   console.log('quota: ' + quota);
-                  Utils.emitEvent(this.no_error, 20052)
+                  Utils.emitEvent(this.no_error, 115140)
                 })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20052)
+                Utils.emitEvent(String(e.code), 115140)
               }
               break;
             }
@@ -188,16 +183,16 @@ struct Index {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                    Utils.emitEvent(String(error.code), 20053)
+                    Utils.emitEvent(String(error.code), 115150)
                     return;
                   }
                   console.log('quota: ' + quota);
-                  Utils.emitEvent(this.no_error, 20053)
+                  Utils.emitEvent(this.no_error, 115150)
                 })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20053)
+                Utils.emitEvent(String(e.code), 115150)
               }
               break;
             }
@@ -207,17 +202,17 @@ struct Index {
                 webView.WebStorage.getOriginQuota('')
                   .then(quota => {
                     console.log('quota: ' + quota);
-                    Utils.emitEvent(this.no_error, 20054)
+                    Utils.emitEvent(this.no_error, 115160)
                   })
                   .catch((e: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(e));
                     console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                    Utils.emitEvent(String(e.code), 20054)
+                    Utils.emitEvent(String(e.code), 115160)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20054)
+                Utils.emitEvent(String(e.code), 115160)
               }
               break;
             }
@@ -227,17 +222,17 @@ struct Index {
                 webView.WebStorage.getOriginQuota(',htt://')
                   .then(quota => {
                     console.log('quota: ' + quota);
-                    Utils.emitEvent(this.no_error, 20055)
+                    Utils.emitEvent(this.no_error, 115170)
                   })
                   .catch((e: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(e));
                     console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                    Utils.emitEvent(String(e.code), 20055)
+                    Utils.emitEvent(String(e.code), 115170)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20055)
+                Utils.emitEvent(String(e.code), 115170)
               }
               break;
             }
@@ -247,17 +242,17 @@ struct Index {
                 webView.WebStorage.getOriginQuota('ww.OpenHarmony.cn')
                   .then(quota => {
                     console.log('quota: ' + quota);
-                    Utils.emitEvent(this.no_error, 20056)
+                    Utils.emitEvent(this.no_error, 115180)
                   })
                   .catch((e: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(e));
                     console.error(`testGetOriginQuotaError007 -> ErrorCode: ${e.code},  Message: ${e.message}`);
-                    Utils.emitEvent(String(e.code), 20056)
+                    Utils.emitEvent(String(e.code), 115180)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20056)
+                Utils.emitEvent(String(e.code), 115180)
               }
               break;
             }
@@ -267,17 +262,17 @@ struct Index {
                 webView.WebStorage.getOriginQuota('123')
                   .then(quota => {
                     console.log('quota: ' + quota);
-                    Utils.emitEvent(this.no_error, 20057)
+                    Utils.emitEvent(this.no_error, 115190)
                   })
                   .catch((e: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(e));
                     console.error(`testGetOriginQuotaError008 -> ErrorCode: ${e.code},  Message: ${e.message}`);
-                    Utils.emitEvent(String(e.code), 20057)
+                    Utils.emitEvent(String(e.code), 115190)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20057)
+                Utils.emitEvent(String(e.code), 115190)
               }
               break;
             }
@@ -288,16 +283,16 @@ struct Index {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                    Utils.emitEvent(String(error.code), 20060)
+                    Utils.emitEvent(String(error.code), 115200)
                     return;
                   }
                   console.log('usage: ' + usage);
-                  Utils.emitEvent(this.no_error, 20060)
+                  Utils.emitEvent(this.no_error, 115200)
                 })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20060)
+                Utils.emitEvent(String(e.code), 115200)
               }
               break;
             }
@@ -308,16 +303,16 @@ struct Index {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                    Utils.emitEvent(String(error.code), 20061)
+                    Utils.emitEvent(String(error.code), 115210)
                     return;
                   }
                   console.log('usage: ' + usage);
-                  Utils.emitEvent(this.no_error, 20061)
+                  Utils.emitEvent(this.no_error, 115210)
                 })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20061)
+                Utils.emitEvent(String(e.code), 115210)
               }
               break;
             }
@@ -328,16 +323,16 @@ struct Index {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                    Utils.emitEvent(String(error.code), 20062)
+                    Utils.emitEvent(String(error.code), 115220)
                     return;
                   }
                   console.log('usage: ' + usage);
-                  Utils.emitEvent(this.no_error, 20062)
+                  Utils.emitEvent(this.no_error, 115220)
                 })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20062)
+                Utils.emitEvent(String(e.code), 115220)
               }
               break;
             }
@@ -348,16 +343,16 @@ struct Index {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                    Utils.emitEvent(String(error.code), 20063)
+                    Utils.emitEvent(String(error.code), 115230)
                     return;
                   }
                   console.log('usage: ' + usage);
-                  Utils.emitEvent(this.no_error, 20063)
+                  Utils.emitEvent(this.no_error, 115230)
                 })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20063)
+                Utils.emitEvent(String(e.code), 115230)
               }
               break;
             }
@@ -367,17 +362,17 @@ struct Index {
                 webView.WebStorage.getOriginUsage('')
                   .then(usage => {
                     console.log('usage: ' + usage);
-                    Utils.emitEvent(this.no_error, 20064)
+                    Utils.emitEvent(this.no_error, 115240)
                   })
                   .catch((e: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(e));
                     console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                    Utils.emitEvent(String(e.code), 20064)
+                    Utils.emitEvent(String(e.code), 115240)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20064)
+                Utils.emitEvent(String(e.code), 115240)
               }
               break;
             }
@@ -387,17 +382,17 @@ struct Index {
                 webView.WebStorage.getOriginUsage(',htt://')
                   .then(usage => {
                     console.log('usage: ' + usage);
-                    Utils.emitEvent(this.no_error, 20065)
+                    Utils.emitEvent(this.no_error, 115250)
                   })
                   .catch((e: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(e));
                     console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                    Utils.emitEvent(String(e.code), 20065)
+                    Utils.emitEvent(String(e.code), 115250)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20065)
+                Utils.emitEvent(String(e.code), 115250)
               }
               break;
             }
@@ -407,17 +402,17 @@ struct Index {
                 webView.WebStorage.getOriginUsage('ww.OpenHarmony.cn')
                   .then(usage => {
                     console.log('usage: ' + usage);
-                    Utils.emitEvent(this.no_error, 20066)
+                    Utils.emitEvent(this.no_error, 115260)
                   })
                   .catch((e: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(e));
                     console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                    Utils.emitEvent(String(e.code), 20066)
+                    Utils.emitEvent(String(e.code), 115260)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20066)
+                Utils.emitEvent(String(e.code), 115260)
               }
               break;
             }
@@ -427,17 +422,17 @@ struct Index {
                 webView.WebStorage.getOriginUsage('123')
                   .then(usage => {
                     console.log('usage: ' + usage);
-                    Utils.emitEvent(this.no_error, 20067)
+                    Utils.emitEvent(this.no_error, 115270)
                   })
                   .catch((e: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(e));
                     console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                    Utils.emitEvent(String(e.code), 20067)
+                    Utils.emitEvent(String(e.code), 115270)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20067)
+                Utils.emitEvent(String(e.code), 115270)
               }
               break;
             }
@@ -448,13 +443,11 @@ struct Index {
 
       Web({ src: $rawfile('index.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
-        .javaScriptProxy({
-          object: this.jsObj,
-          name: "backToEts",
-          methodList: ["test", "toString"],
-          controller: this.controller
-        })
         .databaseAccess(this.databaseAccess)
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
     }
   }
 }

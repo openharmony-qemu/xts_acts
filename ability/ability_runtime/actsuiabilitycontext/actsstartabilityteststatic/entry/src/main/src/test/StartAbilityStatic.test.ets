@@ -122,7 +122,7 @@ export default function startAbilityTestStatic() {
       let parameters: Record<String,Object>= {
         'key': 'parameters key'
       }
-      let fds: Record<String,Double> = {
+      let fds: Record<String,Int> = {
         'key': 1
       }
       let want: Want = {

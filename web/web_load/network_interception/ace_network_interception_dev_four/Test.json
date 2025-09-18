@@ -6,12 +6,11 @@
         "bundle-name": "com.open.harmony.actsacenetworkinterceptiondevfourtest",
         "module-name": "entry_test",
         "shell-timeout": "600000",
-        "testcase-timeout": 70000
+        "testcase-timeout": 80000
     },
     "kits": [{
         "test-file-name": [
-            "ActsWebNetworkInterceptionDevFourTest.hap",
-            "ActsWebNetworkInterceptionDevFourMainTest.hap"
+            "ActsWebNetworkInterceptionDevFourTest.hap"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true

@@ -1,6 +1,7 @@
 {
   "src": [
     "MainAbility/pages/index/index",
-    "MainAbility/pages/Invalidate/InvalidateAttributesTest"
+    "MainAbility/pages/Invalidate/InvalidateAttributesTest",
+    "MainAbility/pages/CacheMaxCount/CacheMaxCountForHSPTest"
   ]
 }

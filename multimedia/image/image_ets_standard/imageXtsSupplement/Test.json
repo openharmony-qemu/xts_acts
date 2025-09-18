@@ -1,0 +1,48 @@
+{
+    "description": "Configuration for camerastandard Tests",
+    "driver": {
+        "type": "OHJSUnitTest",
+        "test-timeout": "3000000",
+        "bundle-name": "ohos.acts.multimedia.image.supp.xts",
+        "shell-timeout": "600000",
+        "testcase-timeout": 300000,
+        "module-name": "entry_test"
+    },
+    "kits": [
+        {
+            "type": "ShellKit",
+            "run-command": [
+                "hilog -Q pidoff",
+                "rm -rf /storage/media/100/local/files/Videos/*",
+                "power-shell wakeup",
+                "power-shell timeout -o 2147483647",
+                "uinput -T -m 300 2700 280 200",
+                "power-shell setmode 602",
+                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files/",
+                "chmod -R 666 /data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files/*"
+            ],
+            "teardown-command": [
+                "power-shell setmode 600",
+                "rm -rf /data/app/el2/100/database/ohos.acts.multimedia.image.supp.xts/*",
+                "kill -9 `pidof ohos.acts.multimedia.image.supp.xts`",
+                "scanner",
+                "sleep 5"
+            ]
+        },
+        {
+            "type": "PushKit",
+            "pre-push": [],
+            "push": [
+                "./resource/image/test_exif_empty_2.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/test_exif_v2.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files"
+            ]
+        },
+        {
+            "test-file-name": [
+                "ActsImageXtsSuppTest.hap"
+            ],
+            "type": "AppInstallKit",
+            "cleanup-apps": true
+        }
+    ]
+}
