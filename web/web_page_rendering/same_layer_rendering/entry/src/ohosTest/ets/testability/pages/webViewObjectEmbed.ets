@@ -160,12 +160,9 @@ struct webViewObjectEmbed {
         Button('web click')
           .key('webViewObjectEmbedButton')
           .onClick(async () => {
-          //  await waitForExist(() => this.isComplete, this.emitKey, 0);
             await waitForExist(() => this.isReceive, this.emitKey, 0);
             this.isReceive = -1;
-        //    this.isComplete = -1;
             this.controller.refresh();
-        //    await waitForExist(() => this.isComplete, this.emitKey, 0);
             switch (this.emitKey) {
               case 'emitWebViewObjectEmbed01': {
                 try {
