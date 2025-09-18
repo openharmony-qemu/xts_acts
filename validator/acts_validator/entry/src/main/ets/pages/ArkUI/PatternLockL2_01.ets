@@ -171,7 +171,7 @@ struct PatternLockL2_01 {
 
         Button('确认')
           .width('30%')
-          .height('10%')
+          .height('6%')
           .onClick(() => {
             this.Vue = true;
           })
