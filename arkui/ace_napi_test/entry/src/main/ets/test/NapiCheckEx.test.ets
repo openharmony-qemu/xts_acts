@@ -1156,461 +1156,461 @@ export default function napiCheckExTest() {
 
     /**
      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0001
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0001
+     * @tc.name      : testExtension001
      * @tc.desc      : Testing async task scheduling priority.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0001 START');
+    it('testExtension001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension001 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest001();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0001 test result: ' + result);
+        console.info('testExtension001 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0001 err msg: ${err.message}`);
+        console.error(`testExtension001 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
     /**
      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0002
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0002
+     * @tc.name      : testExtension002
      * @tc.desc      : Testing thread safe function call with priority.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0002 START');
+    it('testExtension002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension002 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest002();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0002 test result: ' + result);
+        console.info('testExtension002 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0002 err msg: ${err.message}`);
+        console.error(`testExtension002 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
     /**
      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0003
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0003
+     * @tc.name      : testExtension003
      * @tc.desc      : Testing high priority call to tail.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0003 START');
+    it('testExtension003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension003 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest003();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0003 test result: ' + result);
+        console.info('testExtension003 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0003 err msg: ${err.message}`);
+        console.error(`testExtension003 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
     /**
      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0004
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0004
+     * @tc.name      : testExtension004
      * @tc.desc      : Testing normal priority call to head.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0004 START');
+    it('testExtension004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension004 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest004();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0004 test result: ' + result);
+        console.info('testExtension004 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0004 err msg: ${err.message}`);
+        console.error(`testExtension004 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
     /**
      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0005
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0005
+     * @tc.name      : testExtension005
      * @tc.desc      : Testing low priority call.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0005 START');
+    it('testExtension005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension005 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest005();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0005 test result: ' + result);
+        console.info('testExtension005 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0005 err msg: ${err.message}`);
+        console.error(`testExtension005 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0006
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0006
+     * @tc.number    : testExtension006
+     * @tc.name      : testExtension006
      * @tc.desc      : Testing mixed priority execution order.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0006 START');
+    it('testExtension006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension006 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest006();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0006 test result: ' + result);
+        console.info('testExtension006 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0006 err msg: ${err.message}`);
+        console.error(`testExtension006 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0007
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0007
+     * @tc.number    : testExtension007
+     * @tc.name      : testExtension007
      * @tc.desc      : Testing same priority isTail effect.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0007 START');
+    it('testExtension007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension007 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest007();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0007 test result: ' + result);
+        console.info('testExtension007 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0007 err msg: ${err.message}`);
+        console.error(`testExtension007 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0008
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0008
+     * @tc.number    : testExtension008
+     * @tc.name      : testExtension008
      * @tc.desc      : Testing serialize simple object.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0008 START');
+    it('testExtension008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension008 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest008();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0008 test result: ' + result);
+        console.info('testExtension008 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0008 err msg: ${err.message}`);
+        console.error(`testExtension008 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0009
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0009
+     * @tc.number    : testExtension009
+     * @tc.name      : testExtension009
      * @tc.desc      : Testing serialize with transfer list.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0009 START');
+    it('testExtension009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension009 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest009();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0009 test result: ' + result);
+        console.info('testExtension009 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0009 err msg: ${err.message}`);
+        console.error(`testExtension009 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0010
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0010
+     * @tc.number    : testExtension010
+     * @tc.name      : testExtension010
      * @tc.desc      : Testing serialize with clone list.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0010 START');
+    it('testExtension010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension010 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest010();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0010 test result: ' + result);
+        console.info('testExtension010 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0010 err msg: ${err.message}`);
+        console.error(`testExtension010 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0011
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0011
+     * @tc.number    : testExtension011
+     * @tc.name      : testExtension011
      * @tc.desc      : Testing serialize complex nested object.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0011 START');
+    it('testExtension011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension011 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest011();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0011 test result: ' + result);
+        console.info('testExtension011 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0011 err msg: ${err.message}`);
+        console.error(`testExtension011 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0012
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0012
+     * @tc.number    : testExtension012
+     * @tc.name      : testExtension012
      * @tc.desc      : Testing deserialize simple object.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0012 START');
+    it('testExtension012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension012 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest012();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0012 test result: ' + result);
+        console.info('testExtension012 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0012 err msg: ${err.message}`);
+        console.error(`testExtension012 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0013
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0013
+     * @tc.number    : testExtension013
+     * @tc.name      : testExtension013
      * @tc.desc      : Testing deserialize with transfer data.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0013 START');
+    it('testExtension013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension013 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest013();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0013 test result: ' + result);
+        console.info('testExtension013 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0013 err msg: ${err.message}`);
+        console.error(`testExtension013 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0014
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0014
+     * @tc.number    : testExtension014
+     * @tc.name      : testExtension014
      * @tc.desc      : Testing deserialize with clone data.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0014 START');
+    it('testExtension014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension014 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest014();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0014 test result: ' + result);
+        console.info('testExtension014 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0014 err msg: ${err.message}`);
+        console.error(`testExtension014 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0015
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0015
+     * @tc.number    : testExtension015
+     * @tc.name      : testExtension015
      * @tc.desc      : Testing delete valid serialization data.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0015 START');
+    it('testExtension015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension015 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest015();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0015 test result: ' + result);
+        console.info('testExtension015 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0015 err msg: ${err.message}`);
+        console.error(`testExtension015 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0020
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0020
+     * @tc.number    : testExtension020
+     * @tc.name      : testExtension020
      * @tc.desc      : Testing async event loop run and stop.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0020 START');
+    it('testExtension020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension020 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest020();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0020 test result: ' + result);
+        console.info('testExtension020 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0020 err msg: ${err.message}`);
+        console.error(`testExtension020 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0021
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0021
+     * @tc.number    : testExtension021
+     * @tc.name      : testExtension021
      * @tc.desc      : Testing create ArkTS runtime.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0021 START');
+    it('testExtension021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension021 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest021();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0021 test result: ' + result);
+        console.info('testExtension021 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0021 err msg: ${err.message}`);
+        console.error(`testExtension021 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0027
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0027
+     * @tc.number    : testExtension027
+     * @tc.name      : testExtension027
      * @tc.desc      : Testing async work with QoS.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0027 START');
+    it('testExtension027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension027 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest027();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0027 test result: ' + result);
+        console.info('testExtension027 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0027 err msg: ${err.message}`);
+        console.error(`testExtension027 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0036
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0036
+     * @tc.number    : testExtension036
+     * @tc.name      : testExtension036
      * @tc.desc      : Testing async task with promise.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0036 START');
+    it('testExtension036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension036 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest036();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0036 test result: ' + result);
+        console.info('testExtension036 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0036 err msg: ${err.message}`);
+        console.error(`testExtension036 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0037
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0037
+     * @tc.number    : testExtension037
+     * @tc.name      : testExtension037
      * @tc.desc      : Testing async task with callback.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0037 START');
+    it('testExtension037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension037 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest037();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0037 test result: ' + result);
+        console.info('testExtension037 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0037 err msg: ${err.message}`);
+        console.error(`testExtension037 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0038
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0038
+     * @tc.number    : testExtension038
+     * @tc.name      : testExtension038
      * @tc.desc      : Testing thread safety development.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0038 START');
+    it('testExtension038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension038 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest038();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0038 test result: ' + result);
+        console.info('testExtension038 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0038 err msg: ${err.message}`);
+        console.error(`testExtension038 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0039
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0039
+     * @tc.number    : testExtension039
+     * @tc.name      : testExtension039
      * @tc.desc      : Testing native ArkTS object binding.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0039 START');
+    it('testExtension039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension039 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest039();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0039 test result: ' + result);
+        console.info('testExtension039 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0039 err msg: ${err.message}`);
+        console.error(`testExtension039 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0045
-     * @tc.name      : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0045
+     * @tc.number    : testExtension045
+     * @tc.name      : testExtension045
      * @tc.desc      : Testing NAPI exception logging and crash analysis.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0045 START');
+    it('testExtension045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension045 START');
       try {
         let result: boolean = napitestex.NapiExtensionTest045();
-        console.info('SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0045 test result: ' + result);
+        console.info('testExtension045 test result: ' + result);
         expect(result).assertTrue();
       } catch (err) {
-        console.error(`SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0045 err msg: ${err.message}`);
+        console.error(`testExtension045 err msg: ${err.message}`);
         expect().assertFail();
       }
     });
