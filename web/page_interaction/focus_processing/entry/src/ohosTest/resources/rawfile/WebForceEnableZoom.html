@@ -6,7 +6,12 @@
     <title>测试网页</title>
 </head>
 <body>
-<h1>forceEnableZoom Demo</h1>
-<span>You can scale page when forceEnableZoom is true.</span>
+    <div id="test" style="width:100px;background-color:black">
+        test
+    </div>
+    <div id="container">首页</div>
+    <script>
+        document.getElementById("test").style.width = window.outerWidth * 10 + "px"
+    </script>
 </body>
 </html>
