@@ -55,7 +55,7 @@ struct AlphabetIndexerTestux {
   @State popupUnselectedColorNum: number = 0xC0FF3E
   @State popupItemBackgroundNum: number = 0x8470FF
   @State popupItemFontSizeNum: number = 30
-  @State popupItemFontWeightNum: number = FontWeight.Normal
+  @State popupItemFontWeightNum: int = FontWeight.Normal as int
   @State popupSpaceNum: number = 50
   @State popupSelectedColorRes: Resource = $r('app.color.popupSelectedColor')
   @State popupUnselectedColorRes: Resource = $r('app.color.popupUnselectedColor')
@@ -351,7 +351,7 @@ struct AlphabetIndexerTestux {
         .popupUnselectedColor(this.nullFlag2 ? undefined : this.popupUnselectedColorRes)
         .popupItemBackgroundColor(this.nullFlag3 ? undefined : this.popupItemBackgroundRes)
         .popupItemFont(this.nullFlag4 ? undefined :
-          { size: this.popupItemFontSizeRes, weight: this.popupItemFontWeightFont } as Font)
+          { size: this.popupItemFontSizeRes, weight: this.popupItemFontWeightFont as int } as Font)
 
       AlphabetIndexer({ arrayValue: this.value, selected: 0 })
         .key('alphabetIndexerTest5')

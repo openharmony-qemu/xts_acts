@@ -37,7 +37,7 @@ struct progressSecTest {
   @State progress_capsule_fontSize_number: number = 12
   @State progress_capsule_fontSize_string: string = '12vp'
   @State progress_capsule_fontSize_resource: Resource = $r('sys.float.ohos_id_text_margin_vertical')
-  @State progress_capsule_fontWeight_number: number = 400
+  @State progress_capsule_fontWeight_number: int = 400
   @State progress_capsule_fontWeight_string: string = '400'
   @State progress_capsule_fontWeight_fontWeight: FontWeight = FontWeight.Normal
   @State progress_capsule_fontStyle_fontStyle: FontStyle = FontStyle.Normal
@@ -97,7 +97,7 @@ struct progressSecTest {
     this.progress_capsule_fontSize_number = ((eventData.data) as ESObject).getProperty('progress_capsule_fontSize_number').toNumber();
     this.progress_capsule_fontSize_string = ((eventData.data) as ESObject).getProperty('progress_capsule_fontSize_string').toString();
     this.progress_capsule_fontSize_resource = ((eventData.data) as ESObject).getProperty('progress_capsule_fontSize_resource').toStaticObject() as Resource;
-    this.progress_capsule_fontWeight_number = ((eventData.data) as ESObject).getProperty('progress_capsule_fontWeight_number').toNumber();
+    this.progress_capsule_fontWeight_number = ((eventData.data) as ESObject).getProperty('progress_capsule_fontWeight_number').toNumber() as int;
     this.progress_capsule_fontWeight_string = ((eventData.data) as ESObject).getProperty('progress_capsule_fontWeight_string').toString();
     this.progress_capsule_fontWeight_fontWeight = ((eventData.data) as ESObject).getProperty('progress_capsule_fontWeight_fontWeight').toStaticObject() as FontWeight;
     this.progress_capsule_fontStyle_fontStyle = ((eventData.data) as ESObject).getProperty('progress_capsule_fontStyle_fontStyle').toStaticObject() as FontStyle;

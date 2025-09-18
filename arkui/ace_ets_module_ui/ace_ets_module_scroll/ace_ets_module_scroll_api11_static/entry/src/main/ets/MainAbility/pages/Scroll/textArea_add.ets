@@ -76,12 +76,12 @@ struct TextAreaExample {
         .style(TextContentStyle.INLINE)
         .key('textAreaAdd')
         .fontSize(16)
-        .onTextSelectionChange((selectionStart: number, selectionEnd: number) => {
+        .onTextSelectionChange((selectionStart: int, selectionEnd: int) => {
           this.value1 = selectionStart + "";
           this.value2 = selectionEnd + "";
           this.controller.getTextContentLineCount();
         })
-        .onContentScroll((totalOffsetX: number, totalOffsetY: number) => {
+        .onContentScroll((totalOffsetX: double, totalOffsetY: double) => {
         })
         .fontColor('#182431')
         .backgroundColor('#FFFFFF')

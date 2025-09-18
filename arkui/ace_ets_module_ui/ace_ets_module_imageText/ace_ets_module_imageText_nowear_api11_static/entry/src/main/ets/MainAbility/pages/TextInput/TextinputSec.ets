@@ -38,8 +38,8 @@ import {
 import hilog from '@ohos.hilog';
 import events_emitter from '@ohos.events.emitter';
 
-function asNumber(val: string | number | null | undefined) {
-  return val as number;
+function asNumber(val: string | int | null | undefined) {
+  return val as int;
 }
 function asBoolean(value: string | number | boolean | null | undefined) {
   return value as boolean;

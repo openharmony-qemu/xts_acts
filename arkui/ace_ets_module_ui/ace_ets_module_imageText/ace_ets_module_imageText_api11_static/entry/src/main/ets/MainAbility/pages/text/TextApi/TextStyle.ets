@@ -45,8 +45,8 @@ struct buttonExample {
   @State text: string = '3145897936@QQ.COM'
   @State onCopy: string = ''
   @State text1: string = 'This is set selection to Selection text content This is set selection to Selection text content.111111'
-  @State start: number = 0
-  @State end: number = 20
+  @State start: int = 0
+  @State end: int = 20
 
   build() {
     Column({space:5} as ColumnOptions) {

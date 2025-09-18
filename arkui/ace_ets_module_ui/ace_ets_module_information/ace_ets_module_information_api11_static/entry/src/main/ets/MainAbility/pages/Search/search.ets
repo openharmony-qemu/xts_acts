@@ -28,7 +28,7 @@ struct SearchExample {
           style: FontStyle.Normal
         } as Font
   @State searchButton:string = "10"
-  @State maxLength: number = 19
+  @State maxLength: int = 19
   @State copyOption:CopyOptions = CopyOptions.LocalDevice
   controller: SearchController= new SearchController()
   controller2: SearchController= new SearchController()
@@ -49,7 +49,7 @@ struct SearchExample {
         this.text = ((eventData.data) as ESObject ).getProperty('text').toString();
       }
       if (((eventData.data) as ESObject ).getProperty('maxLength') != null) {
-        this.maxLength = ((eventData.data) as ESObject ).getProperty('maxLength').toNumber();
+        this.maxLength = ((eventData.data) as ESObject ).getProperty('maxLength').toNumber() as int;
       }
       if (((eventData.data) as ESObject ).getProperty('copyOption') != null) {
         this.copyOption = ((eventData.data) as ESObject ).getProperty('copyOption').toStaticObject() as CopyOptions;

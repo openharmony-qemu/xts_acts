@@ -32,8 +32,8 @@ import {
 import hilog from '@ohos.hilog';
 import events_emitter from '@ohos.events.emitter';
 
-function asNumber(val: string | number | null | undefined) {
-  return val as number;
+function asNumber(val: string | int | null | undefined) {
+  return val as int;
 }
 function asBoolean(val: boolean | string | number | null | undefined) {
   return val as boolean;
@@ -57,7 +57,7 @@ struct textAreaUx {
       console.info("valueChangeCallBack TextNum:" + JSON.stringify(eventData));
       this.flag = true
       this.isNum = true
-      this.textNum = ((eventData.data) as ESObject).getProperty('text').toNumber()
+      this.textNum = ((eventData.data) as ESObject).getProperty('text').toNumber() as int
     }
     if (((eventData.data) as Record<string,Object>)?.['type'] == "TextStr") {
       console.info("valueChangeCallBack TextStr:" + JSON.stringify(eventData));
@@ -125,7 +125,7 @@ struct textAreaUx {
   @State isNum: boolean = false
   @State isNull: boolean = false
   @State errFlag: boolean = false
-  @State textNum: number = 2
+  @State textNum: int = 2
   @State textStr: string = ''
   @State boolFlag: boolean = false
   @State bool: boolean = false

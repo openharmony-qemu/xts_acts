@@ -30,9 +30,9 @@ import events_emitter from '@ohos.events.emitter';
 @Component
 struct TextStyle1 {
   @State fontColor: Color = Color.Red;
-  @State fontSize: number = 20;
+  @State fontSize: int = 20;
   @State fontStyle: FontStyle = FontStyle.Italic;
-  @State fontWeight: number = 700;
+  @State fontWeight: int = 700;
   @State fontFamily: string = 'sans-serif';
 
   build() {
@@ -118,9 +118,9 @@ struct TextStyle1 {
       if (((eventData.data) as ESObject).getProperty('fontColor')) {
         this.fontColor = ((eventData.data) as ESObject).getProperty('fontColor').toStaticObject() as Color;
       } else if (((eventData.data) as ESObject).getProperty('fontSize')) {
-        this.fontSize = ((eventData.data) as ESObject).getProperty('fontSize').toNumber();
+        this.fontSize = ((eventData.data) as ESObject).getProperty('fontSize').toNumber() as int;
       } else if (((eventData.data) as ESObject).getProperty('fontWeight')) {
-        this.fontWeight = ((eventData.data) as ESObject).getProperty('fontWeight').toNumber();
+        this.fontWeight = ((eventData.data) as ESObject).getProperty('fontWeight').toNumber() as int;
       } else if (((eventData.data) as ESObject).getProperty('fontFamily')) {
         this.fontFamily = ((eventData.data) as ESObject).getProperty('fontFamily').toString();
       } else {
