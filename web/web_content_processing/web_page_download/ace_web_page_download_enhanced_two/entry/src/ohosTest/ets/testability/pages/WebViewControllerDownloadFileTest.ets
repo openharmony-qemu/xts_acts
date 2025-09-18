@@ -38,17 +38,19 @@ struct WebViewControllerDownloadFileTest {
   @State savePath: string = Utils.getSandboxFileDir() + 'testDownloadFileFile.exe'
   @State lastErrorCode: number = -1
   cancelDownloadItem: webView.WebDownloadItem | null = null
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 131940,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(131940)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -59,6 +61,7 @@ struct WebViewControllerDownloadFileTest {
         this.str = eventData.data.ACTION;
         this.lastErrorCode = -1
         this.cancelDownloadItem = null
+        this.isReceive = 0;
       }
     }
   }
@@ -69,6 +72,9 @@ struct WebViewControllerDownloadFileTest {
         Button('WebViewControllerDownloadFileTestButton')
           .key('WebViewControllerDownloadFileTestButton').onClick(async () => {
           console.info('key==>' + this.str)
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case 'testDownloadFile001': {
               try {
@@ -79,7 +85,7 @@ struct WebViewControllerDownloadFileTest {
                   return v1 ? true:false;
                 };
                 await waitForAssert(() => this.lastErrorCode, check, webView.WebDownloadErrorCode.FILE_ACCESS_DENIED,
-                  79300, this.str)
+                  131950, this.str)
 
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -100,7 +106,7 @@ struct WebViewControllerDownloadFileTest {
                   return v1 ? true: false;
                 }
                 await waitForAssert(() => this.lastErrorCode, check, webView.WebDownloadErrorCode.USER_CANCELED,
-                  79302, this.str)
+                  131960, this.str)
 
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -119,7 +125,9 @@ struct WebViewControllerDownloadFileTest {
         .domStorageAccess(this.domStorageAccess)
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
-        .onPageEnd(() => {
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
           if (!this.hasSetDownloadDelegate) {
             try {
               this.delegate.onBeforeDownload((webDownloadItem: webView.WebDownloadItem) => {
