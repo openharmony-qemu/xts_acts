@@ -37,7 +37,7 @@ export default function abilityTest() {
 
         /*
          * @tc.number SUB_ABILITY_ABILITYRUNTIME_PHOTOEDITOREXTENSION_0100
-         * @tc.name test PhotoEditorExtension interface
+         * @tc.name ACTS_PhotoEditorExtension_static_0100
          * @tc.desc Start the PhotoEditorExtensionAbility, and the test is successful.
          * @tc.size MediumTest
          * @tc.level Level0
