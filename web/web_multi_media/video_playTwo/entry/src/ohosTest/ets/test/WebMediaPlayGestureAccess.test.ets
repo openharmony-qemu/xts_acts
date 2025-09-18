@@ -13,12 +13,19 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponents } from './WaitTest.test';
+import { Driver, ON } from '@kit.TestKit';
+import events_emitter from '@ohos.events.emitter';
+
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+let emitKey = ""
+
 export default function webMediaPlayGestureAccess() {
   describe('WebMediaPlayGestureAccessTest', () => {
     beforeAll(async (done: Function) => {
@@ -32,12 +39,12 @@ export default function webMediaPlayGestureAccess() {
         if (!("WebMediaPlayGestureAccess" == pages.name)) {
           console.info("get WebMediaPlayGestureAccess state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebMediaPlayGestureAccess page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebMediaPlayGestureAccess page error: " + err);
       }
+      await waitForComponents('WebMediaPlayGestureAccessTestButton');
       done()
     });
     beforeEach(async (done: Function) => {
@@ -46,14 +53,12 @@ export default function webMediaPlayGestureAccess() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
 
     afterEach(async (done: Function) => {
       console.info("WebMediaPlayGestureAccessTest afterEach start");
-      await Utils.sleep(1000);
       console.info("WebMediaPlayGestureAccessTest afterEach end");
       done();
     })
@@ -67,10 +72,13 @@ export default function webMediaPlayGestureAccess() {
     * @tc.level       : Level 2
     */
     it('testMediaPlayGestureAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitMediaPlayGestureAccessTrue", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testMediaPlayGestureAccess001", "false_", 60504, done);
-      sendEventByKey('WebMediaPlayGestureAccessTestButton', 10, '');
+      emitKey = "emitMediaPlayGestureAccessTrue"
+      Utils.emitEvent(emitKey, 300710)
+      Utils.registerBaseEvent("testMediaPlayGestureAccess001", "false_", 300720, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver,'WebMediaPlayGestureAccessTestButton')
     })
 
     /*
@@ -82,10 +90,13 @@ export default function webMediaPlayGestureAccess() {
     * @tc.level       : Level 2
     */
     it('testMediaPlayGestureAccess002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitMediaPlayGestureAccessFalsePlay", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testMediaPlayGestureAccess002", "true_true_", 60506, done);
-      sendEventByKey('WebMediaPlayGestureAccessTestButton', 10, '');
+      emitKey = "emitMediaPlayGestureAccessFalsePlay";
+      Utils.emitEvent(emitKey, 300710)
+      Utils.registerBaseEvent("testMediaPlayGestureAccess002", "true_true_", 300730, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver,'WebMediaPlayGestureAccessTestButton')
     })
 
     /*
@@ -97,10 +108,13 @@ export default function webMediaPlayGestureAccess() {
     * @tc.level       : Level 2
     */
     it('testMediaPlayGestureAccess003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitMediaPlayGestureAccessFalsePause", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testMediaPlayGestureAccess003", "true_false_false_", 60508, done);
-      sendEventByKey('WebMediaPlayGestureAccessTestButton', 10, '');
+      emitKey = "emitMediaPlayGestureAccessFalsePause";
+      Utils.emitEvent(emitKey, 300710)
+      Utils.registerBaseEvent("testMediaPlayGestureAccess003", "true_false_false_", 300740, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver,'WebMediaPlayGestureAccessTestButton')
     })
   })
 }
