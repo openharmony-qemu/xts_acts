@@ -14,7 +14,6 @@
  */
 
 #include "HuksApiTest.h"
-#include "common/memcpy_s.c"
 
 namespace HuksApiTest {
 napi_value GetSdkVersionTest_001(napi_env env, napi_callback_info info)
@@ -104,11 +103,10 @@ napi_value GenerateKeyItemTest_002(napi_env env, napi_callback_info info)
         }
     };
     struct OH_Huks_ParamSet *invalidParamSet = nullptr;
-    struct OH_Huks_Result ohResult;
-    ohResult = InitParamSet(&invalidParamSet, invalidParams, sizeof(invalidParams) / sizeof(OH_Huks_Param));
+    auto ohResult = InitParamSet(&invalidParamSet, invalidParams, sizeof(invalidParams) / sizeof(OH_Huks_Param));
     if (ohResult.errorCode != OH_HUKS_SUCCESS) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GenerateKeyItemTest_002", 
-                    "InitParamSet failed: %{public}d", ohResult.errorCode);
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GenerateKeyItemTest_002",
+                     "InitParamSet failed: %{public}d", ohResult.errorCode);
         napi_value retValue;
         napi_create_int32(env, 1, &retValue); // 初始化失败，测试不通过
         return retValue;
@@ -126,27 +124,27 @@ napi_value GenerateKeyItemTest_003(napi_env env, napi_callback_info info)
     const char *alias = "test_duplicate_key";
     struct OH_Huks_Blob aliasBlob = { .size = (uint32_t)strlen(alias), .data = (uint8_t *)alias };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    struct OH_Huks_Result ohResult;
-    ohResult = InitParamSet(&paramSet, g_testGenerateKeyParam, sizeof(g_testGenerateKeyParam) / sizeof(OH_Huks_Param));
+    auto ohResult = InitParamSet(&paramSet, g_testGenerateKeyParam,
+                                 sizeof(g_testGenerateKeyParam) / sizeof(OH_Huks_Param));
     if (ohResult.errorCode != OH_HUKS_SUCCESS) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111", 
-                    "InitParamSet failed: %{public}d", ohResult.errorCode);
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111",
+                     "InitParamSet failed: %{public}d", ohResult.errorCode);
         napi_value retValue;
         napi_create_int32(env, 1, &retValue);
         return retValue;
     }
     ohResult = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111", 
-                "First GenerateKey success: %{public}d", ohResult.errorCode);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111",
+                 "First GenerateKey success: %{public}d", ohResult.errorCode);
     struct OH_Huks_Result ohResult2 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111", 
-                "Second GenerateKey result: %{public}d", ohResult2.errorCode);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111",
+                 "Second GenerateKey result: %{public}d", ohResult2.errorCode);
     struct OH_Huks_Result existResult = OH_Huks_IsKeyItemExist(&aliasBlob, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111", 
-                "Key exist check: %{public}d", existResult.errorCode);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111",
+                 "Key exist check: %{public}d", existResult.errorCode);
     struct OH_Huks_Result deleteResult = OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111", 
-                "Delete key result: %{public}d", deleteResult.errorCode);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111",
+                 "Delete key result: %{public}d", deleteResult.errorCode);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
     napi_create_int32(env, ohResult2.errorCode == OH_HUKS_ERR_CODE_KEY_ALREADY_EXIST ? 0 : 1, &retValue);
@@ -159,8 +157,7 @@ napi_value GenerateKeyItemTest_004(napi_env env, napi_callback_info info)
     const char *alias = "test_key_insufficient_memory";
     struct OH_Huks_Blob aliasBlob = { .size = (uint32_t)strlen(alias), .data = (uint8_t *)alias };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    struct OH_Huks_Result ohResult;
-    ohResult = OH_Huks_InitParamSet(&paramSet);
+    struct OH_Huks_Result ohResult = OH_Huks_InitParamSet(&paramSet);
     if (ohResult.errorCode != OH_HUKS_SUCCESS) {
         napi_value retValue;
         napi_create_int32(env, 1, &retValue);
@@ -168,7 +165,7 @@ napi_value GenerateKeyItemTest_004(napi_env env, napi_callback_info info)
     }
     struct OH_Huks_Param hugeParam = {
         .tag = OH_HUKS_TAG_KEY_SIZE,
-        .uint32Param = 65536
+        .uint32Param = g_size1
     };
     ohResult = OH_Huks_AddParams(paramSet, &hugeParam, 1);
     if (ohResult.errorCode != OH_HUKS_SUCCESS) {
@@ -224,9 +221,8 @@ napi_value GenerateKeyItemTest_005(napi_env env, napi_callback_info info)
     ohResult = OH_Huks_AddParams(paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     ohResult = OH_Huks_BuildParamSet(&paramSet);
     ohResult = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111", 
-                "GenerateKeyItem result: %{public}d, expected: %{public}d", 
-                ohResult.errorCode, OH_HUKS_ERR_CODE_DEVICE_PASSWORD_UNSET);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111",
+                 "GenerateKeyItem result: %{public}d, expected: %{public}d", ohResult.errorCode);
     OH_Huks_FreeParamSet(&paramSet);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     napi_value retValue;
@@ -239,7 +235,6 @@ napi_value GenerateKeyItemTest_006(napi_env env, napi_callback_info info)
     const char *alias = "test_internal_error";
     struct OH_Huks_Blob aliasBlob = { .size = (uint32_t)strlen(alias), .data = (uint8_t *)alias };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    struct OH_Huks_Result ohResult;
     OH_Huks_Param internalErrorParams[] = {
         {
             .tag = OH_HUKS_TAG_ALGORITHM,
@@ -267,7 +262,7 @@ napi_value GenerateKeyItemTest_006(napi_env env, napi_callback_info info)
             .uint32Param = 2  // 无效的异步标志（0或1有效）
         }
     };
-    ohResult = OH_Huks_InitParamSet(&paramSet);
+    auto ohResult = OH_Huks_InitParamSet(&paramSet);
     ohResult = OH_Huks_AddParams(paramSet, internalErrorParams, sizeof(internalErrorParams) / sizeof(OH_Huks_Param));
     ohResult = OH_Huks_BuildParamSet(&paramSet);
     ohResult = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
@@ -310,9 +305,8 @@ napi_value ImportKeyItemTest_002(napi_env env, napi_callback_info info)
     const char *alias = "test_duplicate_key";
     struct OH_Huks_Blob keyAlias = { .size = (uint32_t)strlen(alias), .data = (uint8_t *)alias };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    struct OH_Huks_Result ohResult;
-    ohResult = InitParamSet(&paramSet, g_testGenerateKeyParam,
-                          sizeof(g_testGenerateKeyParam) / sizeof(OH_Huks_Param));
+    auto ohResult = InitParamSet(&paramSet, g_testGenerateKeyParam,
+                                 sizeof(g_testGenerateKeyParam) / sizeof(OH_Huks_Param));
     ohResult = OH_Huks_GenerateKeyItem(&keyAlias, paramSet, nullptr);
     uint8_t tmpPublicKey[OH_HUKS_RSA_KEY_SIZE_1024] = {0};
     struct OH_Huks_Blob publicKey = {OH_HUKS_RSA_KEY_SIZE_1024, (uint8_t *)tmpPublicKey};
@@ -355,9 +349,8 @@ napi_value ImportKeyItemTest_003(napi_env env, napi_callback_info info)
     const char *alias = "test_duplicate_key";
     struct OH_Huks_Blob keyAlias = { .size = (uint32_t)strlen(alias), .data = (uint8_t *)alias };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    struct OH_Huks_Result ohResult;
-    ohResult = InitParamSet(&paramSet, g_testGenerateKeyParam,
-                          sizeof(g_testGenerateKeyParam) / sizeof(OH_Huks_Param));
+    auto ohResult = InitParamSet(&paramSet, g_testGenerateKeyParam,
+                                 sizeof(g_testGenerateKeyParam) / sizeof(OH_Huks_Param));
     ohResult = OH_Huks_GenerateKeyItem(&keyAlias, paramSet, nullptr);
     uint8_t tmpPublicKey[OH_HUKS_RSA_KEY_SIZE_1024] = {0};
     struct OH_Huks_Blob publicKey = {OH_HUKS_RSA_KEY_SIZE_1024, (uint8_t *)tmpPublicKey};
@@ -403,19 +396,18 @@ napi_value ImportKeyItemTest_111(napi_env env, napi_callback_info info)
     const char *alias = "test_duplicate_key";
     struct OH_Huks_Blob keyAlias = { .size = (uint32_t)strlen(alias), .data = (uint8_t *)alias };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    struct OH_Huks_Result ohResult;
-    ohResult = InitParamSet(&paramSet, g_testGenerateKeyParam,
-                          sizeof(g_testGenerateKeyParam) / sizeof(OH_Huks_Param));
+    auto ohResult = InitParamSet(&paramSet, g_testGenerateKeyParam,
+                                 sizeof(g_testGenerateKeyParam) / sizeof(OH_Huks_Param));
     if (ohResult.errorCode != OH_HUKS_SUCCESS) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111", 
-                    "InitParamSet failed: %{public}d", ohResult.errorCode);
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111",
+                     "InitParamSet failed: %{public}d", ohResult.errorCode);
         napi_value retValue;
         napi_create_int32(env, 1, &retValue);
         return retValue;
     }
     ohResult = OH_Huks_GenerateKeyItem(&keyAlias, paramSet, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111", 
-                "First GenerateKey success: %{public}d", ohResult.errorCode);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111",
+                 "First GenerateKey success: %{public}d", ohResult.errorCode);
     uint8_t tmpPublicKey[OH_HUKS_RSA_KEY_SIZE_1024] = {0};
     struct OH_Huks_Blob publicKey = {OH_HUKS_RSA_KEY_SIZE_1024, (uint8_t *)tmpPublicKey};
     auto ret1 = OH_Huks_ExportPublicKeyItem(&keyAlias, paramSet, &publicKey);
@@ -439,26 +431,25 @@ napi_value ImportKeyItemTest_004(napi_env env, napi_callback_info info)
     const char *alias = "test_duplicate_key";
     struct OH_Huks_Blob keyAlias = { .size = (uint32_t)strlen(alias), .data = (uint8_t *)alias };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    struct OH_Huks_Result ohResult;
-    ohResult = InitParamSet(&paramSet, g_testGenerateKeyParam,
-                          sizeof(g_testGenerateKeyParam) / sizeof(OH_Huks_Param));
+    auto ohResult = InitParamSet(&paramSet, g_testGenerateKeyParam,
+                                 sizeof(g_testGenerateKeyParam) / sizeof(OH_Huks_Param));
     if (ohResult.errorCode != OH_HUKS_SUCCESS) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111", 
-                    "InitParamSet failed: %{public}d", ohResult.errorCode);
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111",
+                     "InitParamSet failed: %{public}d", ohResult.errorCode);
         napi_value retValue;
         napi_create_int32(env, 1, &retValue);
         return retValue;
     }
     ohResult = OH_Huks_GenerateKeyItem(&keyAlias, paramSet, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111", 
-                "First GenerateKey success: %{public}d", ohResult.errorCode);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111",
+                 "First GenerateKey success: %{public}d", ohResult.errorCode);
     uint8_t tmpPublicKey[OH_HUKS_RSA_KEY_SIZE_1024] = {0};
     struct OH_Huks_Blob publicKey = {OH_HUKS_RSA_KEY_SIZE_1024, (uint8_t *)tmpPublicKey};
     auto ret1 = OH_Huks_ExportPublicKeyItem(&keyAlias, paramSet, &publicKey);
     /* 5. Import Key */
     struct OH_Huks_ParamSet *verifyParamSet = nullptr;
     ret1 = InitParamSet(&verifyParamSet, g_testGenerateKeyParam,
-                       sizeof(g_testGenerateKeyParam) / sizeof(OH_Huks_Param));
+                        sizeof(g_testGenerateKeyParam) / sizeof(OH_Huks_Param));
     char tmpKey[] = "RSA_Encrypt_Decrypt_KeyAlias";
     struct OH_Huks_Blob newKeyAlias = {.size = (uint32_t)strlen(tmpKey), .data = (uint8_t *)tmpKey};
     auto ret = OH_Huks_ImportKeyItem(&newKeyAlias, verifyParamSet, &publicKey);
@@ -484,7 +475,12 @@ napi_value ImportWrappedKeyItemTest_001(napi_env env, napi_callback_info info)
     return retValue;
 }
 
-void *HksMalloc(size_t size) { return malloc(size); }
+void *HksMalloc(size_t size) {
+    if (size == 0 || size > SIZE_MAX) {
+        return NULL;
+    }
+    return malloc(size);
+}
 
 OH_Huks_Result MallocAndCheckBlobData(struct OH_Huks_Blob *blob, const uint32_t blobSize)
 {
@@ -496,44 +492,6 @@ OH_Huks_Result MallocAndCheckBlobData(struct OH_Huks_Blob *blob, const uint32_t 
         ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
     }
 
-    return ret;
-}
-
-static OH_Huks_Result BuildWrappedKeyData(struct OH_Huks_Blob **blobArray, uint32_t size, struct OH_Huks_Blob *outData)
-{
-    uint32_t totalLength = size * sizeof(uint32_t);
-    struct OH_Huks_Result ret;
-    ret.errorCode = OH_HUKS_SUCCESS;
-
-    /* counter size */
-    for (uint32_t i = 0; i < size; ++i) {
-        totalLength += blobArray[i]->size;
-    }
-
-    struct OH_Huks_Blob outBlob = {0, nullptr};
-    outBlob.size = totalLength;
-    (void)MallocAndCheckBlobData(&outBlob, outBlob.size);
-
-    uint32_t offset = 0;
-
-    /* copy data */
-    for (uint32_t i = 0; i < size; ++i) {
-        if (memcpy_s(outBlob.data + offset, totalLength - offset, reinterpret_cast<uint8_t *>(&blobArray[i]->size),
-                     sizeof(blobArray[i]->size)) != EOK) {
-            ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
-            return ret;
-        }
-        offset += sizeof(blobArray[i]->size);
-
-        if (memcpy_s(outBlob.data + offset, totalLength - offset, blobArray[i]->data, blobArray[i]->size) != EOK) {
-            ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
-            return ret;
-        }
-        offset += blobArray[i]->size;
-    }
-
-    outData->size = outBlob.size;
-    outData->data = outBlob.data;
     return ret;
 }
 
@@ -607,12 +565,11 @@ napi_value ExportPublicKeyItemTest_003(napi_env env, napi_callback_info info)
     const char *alias = "test_rsa_key";
     struct OH_Huks_Blob keyAlias = { .size = (uint32_t)strlen(alias), .data = (uint8_t *)alias };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    struct OH_Huks_Result ohResult;
-    ohResult = InitParamSet(&paramSet, g_testGenerateKeyParam,
-                          sizeof(g_testGenerateKeyParam) / sizeof(OH_Huks_Param));
+    auto ohResult = InitParamSet(&paramSet, g_testGenerateKeyParam,
+                                 sizeof(g_testGenerateKeyParam) / sizeof(OH_Huks_Param));
     ohResult = OH_Huks_GenerateKeyItem(&keyAlias, paramSet, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111", 
-                "GenerateKey success: %{public}d", ohResult.errorCode);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111",
+                 "GenerateKey success: %{public}d", ohResult.errorCode);
     struct OH_Huks_Param missingAlgParams[] = {
         {
             .tag = OH_HUKS_TAG_PURPOSE,
@@ -633,13 +590,12 @@ napi_value ExportPublicKeyItemTest_003(napi_env env, napi_callback_info info)
     };
     
     struct OH_Huks_ParamSet *missingAlgParamSet = nullptr;
-    ohResult = InitParamSet(&missingAlgParamSet, missingAlgParams,
-                          sizeof(missingAlgParams) / sizeof(OH_Huks_Param));
+    ohResult = InitParamSet(&missingAlgParamSet, missingAlgParams, sizeof(missingAlgParams) / sizeof(OH_Huks_Param));
     uint8_t tmpPublicKey[OH_HUKS_RSA_KEY_SIZE_1024] = {0};
     struct OH_Huks_Blob publicKey = {OH_HUKS_RSA_KEY_SIZE_1024, (uint8_t *)tmpPublicKey};
     auto ret = OH_Huks_ExportPublicKeyItem(&keyAlias, missingAlgParamSet, &publicKey);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111", 
-                "Export Public Key result: %{public}d, Expected: 12000002", ret.errorCode);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111",
+                 "Export Public Key result: %{public}d, Expected: 12000002", ret.errorCode);
     OH_Huks_DeleteKeyItem(&keyAlias, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     OH_Huks_FreeParamSet(&missingAlgParamSet);
@@ -653,11 +609,11 @@ napi_value ExportPublicKeyItemTest_004(napi_env env, napi_callback_info info)
     const char *alias = "test_rsa_key";
     struct OH_Huks_Blob keyAlias = { .size = (uint32_t)strlen(alias), .data = (uint8_t *)alias };
     struct OH_Huks_ParamSet *paramSet1 = nullptr;
-    struct OH_Huks_Result ohResult;
-    ohResult = InitParamSet(&paramSet1, g_testGenerateKeyParam, sizeof(g_testGenerateKeyParam) / sizeof(OH_Huks_Param));
+    auto ohResult = InitParamSet(&paramSet1, g_testGenerateKeyParam,
+                                 sizeof(g_testGenerateKeyParam) / sizeof(OH_Huks_Param));
     ohResult = OH_Huks_GenerateKeyItem(&keyAlias, paramSet1, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111", 
-                "GenerateKey success: %{public}d", ohResult.errorCode);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111",
+                 "GenerateKey success: %{public}d", ohResult.errorCode);
     struct OH_Huks_ParamSet *paramSet = nullptr;
     ohResult = OH_Huks_InitParamSet(&paramSet);
     if (ohResult.errorCode != OH_HUKS_SUCCESS) {
@@ -679,8 +635,8 @@ napi_value ExportPublicKeyItemTest_004(napi_env env, napi_callback_info info)
     uint8_t tmpPublicKey[OH_HUKS_RSA_KEY_SIZE_1024] = {0};
     struct OH_Huks_Blob publicKey = {OH_HUKS_RSA_KEY_SIZE_1024, (uint8_t *)tmpPublicKey};
     auto ret = OH_Huks_ExportPublicKeyItem(&keyAlias, paramSet, &publicKey);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111", 
-                "Export Public Key result: %{public}d, Expected: 12000002", ret.errorCode);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111",
+                 "Export Public Key result: %{public}d, Expected: 12000002", ret.errorCode);
     OH_Huks_DeleteKeyItem(&keyAlias, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     OH_Huks_FreeParamSet(&paramSet1);
@@ -899,7 +855,7 @@ int32_t ConstructDataToCertChain(struct OH_Huks_CertChain **certChain, const str
             (*certChain)->certs[i].size = certChainParam->certDataSize;
             (*certChain)->certs[i].data =
                 reinterpret_cast<uint8_t *>(static_cast<char *>(HksMalloc((*certChain)->certs[i].size)));
-            memset((*certChain)->certs[i].data, certChainParam->certDataSize, certChainParam->certDataSize);
+            memset((*certChain)->certs[i].data, 0, certChainParam->certDataSize);
         }
     }
     return PARAM_0;
@@ -943,7 +899,7 @@ napi_value AnonAttestKeyItemTest_001(napi_env env, napi_callback_info info)
 }
 
 napi_value AnonAttestKeyItemTest_002(napi_env env, napi_callback_info info)
-{    
+{
     char tmpKeyAlias[] = "AnonAttestKeyItemTest_002";
     OH_Huks_Blob keyAlias = {sizeof(tmpKeyAlias), reinterpret_cast<uint8_t *>(static_cast<char *>(tmpKeyAlias))};
     struct OH_Huks_ParamSet *paramSet = nullptr;
@@ -1014,7 +970,7 @@ static struct OH_Huks_Param g_signParamsTest001[] = {
 };
 
 napi_value InitSessionTest_002(napi_env env, napi_callback_info info)
-{    
+{
     char tmpKeyAlias[] = "HksRSACipherKeyAliasTest041";
     OH_Huks_Blob keyAlias = {sizeof(tmpKeyAlias), reinterpret_cast<uint8_t *>(static_cast<char *>(tmpKeyAlias))};
     struct OH_Huks_ParamSet *signParamSet = nullptr;
@@ -1032,7 +988,7 @@ napi_value InitSessionTest_002(napi_env env, napi_callback_info info)
 }
 
 napi_value InitSessionTest_003(napi_env env, napi_callback_info info)
-{    
+{
     char tmpKeyAlias[] = "HksRSACipherKeyAliasTest041";
     OH_Huks_Blob keyAlias = {sizeof(tmpKeyAlias), reinterpret_cast<uint8_t *>(static_cast<char *>(tmpKeyAlias))};
     struct OH_Huks_ParamSet *paramSet = nullptr;
@@ -1069,7 +1025,7 @@ napi_value UpdateSessionTest_001(napi_env env, napi_callback_info info)
 }
 
 napi_value UpdateSessionTest_002(napi_env env, napi_callback_info info)
-{    
+{
     char tmpKeyAlias[] = "HksPBKDF2DeriveKeyAliasTest001_1";
     OH_Huks_Blob keyAlias = {sizeof(tmpKeyAlias), reinterpret_cast<uint8_t *>(static_cast<char *>(tmpKeyAlias))};
     struct OH_Huks_ParamSet *signParamSet = nullptr;
@@ -1092,7 +1048,7 @@ napi_value UpdateSessionTest_002(napi_env env, napi_callback_info info)
 }
 
 napi_value UpdateSessionTest_003(napi_env env, napi_callback_info info)
-{    
+{
     char tmpKeyAlias[] = "HksPBKDF2DeriveKeyAliasTest001_1";
     OH_Huks_Blob keyAlias = {sizeof(tmpKeyAlias), reinterpret_cast<uint8_t *>(static_cast<char *>(tmpKeyAlias))};
     struct OH_Huks_ParamSet *signParamSet = nullptr;
@@ -1115,7 +1071,7 @@ napi_value UpdateSessionTest_003(napi_env env, napi_callback_info info)
 }
 
 napi_value UpdateSessionTest_004(napi_env env, napi_callback_info info)
-{    
+{
     char tmpKeyAlias[] = "HksPBKDF2DeriveKeyAliasTest001_1";
     OH_Huks_Blob keyAlias = {sizeof(tmpKeyAlias), reinterpret_cast<uint8_t *>(static_cast<char *>(tmpKeyAlias))};
     struct OH_Huks_ParamSet *paramSet = nullptr;
@@ -1124,8 +1080,8 @@ napi_value UpdateSessionTest_004(napi_env env, napi_callback_info info)
                              sizeof(g_testGenerateKeyParam) / sizeof(g_testGenerateKeyParam[0]));
     ret1 = OH_Huks_BuildParamSet(&paramSet);
     auto ohResult = OH_Huks_GenerateKeyItem(&keyAlias, paramSet, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111", 
-                "First GenerateKey success: %{public}d", ohResult.errorCode);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111",
+                 "First GenerateKey success: %{public}d", ohResult.errorCode);
     uint8_t tmpPublicKey[OH_HUKS_RSA_KEY_SIZE_1024] = {0};
     struct OH_Huks_Blob publicKey = {OH_HUKS_RSA_KEY_SIZE_1024, (uint8_t *)tmpPublicKey};
     auto ret2 = OH_Huks_ExportPublicKeyItem(&keyAlias, paramSet, &publicKey);
@@ -1158,7 +1114,7 @@ napi_value FinishSessionTest_001(napi_env env, napi_callback_info info)
 }
 
 napi_value FinishSessionTest_002(napi_env env, napi_callback_info info)
-{    
+{
     char tmpKeyAlias[] = "HksPBKDF2DeriveKeyAliasTest001_1";
     OH_Huks_Blob keyAlias = {sizeof(tmpKeyAlias), reinterpret_cast<uint8_t *>(static_cast<char *>(tmpKeyAlias))};
     struct OH_Huks_ParamSet *signParamSet = nullptr;
@@ -1181,7 +1137,7 @@ napi_value FinishSessionTest_002(napi_env env, napi_callback_info info)
 }
 
 napi_value FinishSessionTest_003(napi_env env, napi_callback_info info)
-{    
+{
     char tmpKeyAlias[] = "HksPBKDF2DeriveKeyAliasTest001_1";
     OH_Huks_Blob keyAlias = {sizeof(tmpKeyAlias), reinterpret_cast<uint8_t *>(static_cast<char *>(tmpKeyAlias))};
     struct OH_Huks_ParamSet *paramSet = nullptr;
@@ -1190,8 +1146,8 @@ napi_value FinishSessionTest_003(napi_env env, napi_callback_info info)
                              sizeof(g_testGenerateKeyParam) / sizeof(g_testGenerateKeyParam[0]));
     ret1 = OH_Huks_BuildParamSet(&paramSet);
     auto ohResult = OH_Huks_GenerateKeyItem(&keyAlias, paramSet, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111", 
-                "First GenerateKey success: %{public}d", ohResult.errorCode);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111",
+                 "First GenerateKey success: %{public}d", ohResult.errorCode);
     uint8_t tmpOut[COMMON_SIZE] = {0};
     struct OH_Huks_Blob outData = {COMMON_SIZE, tmpOut};
     uint8_t tmpHandle[sizeof(uint64_t)] = {0};
@@ -1216,7 +1172,7 @@ napi_value AbortSessionTest_001(napi_env env, napi_callback_info info)
 }
 
 napi_value AbortSessionTest_002(napi_env env, napi_callback_info info)
-{    
+{
     char tmpKeyAlias[] = "HksPBKDF2DeriveKeyAliasTest001_1";
     OH_Huks_Blob keyAlias = {sizeof(tmpKeyAlias), reinterpret_cast<uint8_t *>(static_cast<char *>(tmpKeyAlias))};
     struct OH_Huks_ParamSet *paramSet = nullptr;
@@ -1264,7 +1220,7 @@ napi_value WrapKeyTest_001(napi_env env, napi_callback_info info)
         {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_256},
         {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_ENCRYPT},
         {.tag = OH_HUKS_TAG_KEY_WRAP_TYPE, .uint32Param = OH_HUKS_KEY_WRAP_TYPE_HUK_BASED},
-    };   
+    };
     struct OH_Huks_ParamSet *wrapKeyParamSet = nullptr;
     ohResult = InitParamSet(&paramSet, g_wrapKeyParams, sizeof(g_wrapKeyParams) / sizeof(OH_Huks_Param));
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111111111111", "ret: %{public}d", ohResult.errorCode);
@@ -1298,7 +1254,7 @@ napi_value WrapKeyTest_003(napi_env env, napi_callback_info info)
                              sizeof(g_testGenerateKeyParam) / sizeof(g_testGenerateKeyParam[0]));
     ret1 = OH_Huks_BuildParamSet(&paramSet);
     auto ohResult = OH_Huks_GenerateKeyItem(&keyAlias, paramSet, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ohResult.errorCode);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111111111111", "ret: %{public}d", ohResult.errorCode);
     uint8_t tmpPublicKey[OH_HUKS_RSA_KEY_SIZE_1024] = {PARAM_0};
     struct OH_Huks_Blob outData = {OH_HUKS_RSA_KEY_SIZE_1024, static_cast<unsigned char *>(tmpPublicKey)};
     struct OH_Huks_Result ret = OH_Huks_WrapKey(&keyAlias, paramSet, &keyAlias);
@@ -1315,18 +1271,18 @@ napi_value UnwrapKeyTest_001(napi_env env, napi_callback_info info)
     char tmpKeyAlias[] = "HksPBKDF2DeriveKeyAliasTest001_1";
     OH_Huks_Blob keyAlias1 = {sizeof(tmpKeyAlias), reinterpret_cast<uint8_t *>(static_cast<char *>(tmpKeyAlias))};
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    struct OH_Huks_Result ohResult;
-    ohResult = InitParamSet(&paramSet, g_testGenerateKeyParam, sizeof(g_testGenerateKeyParam) / sizeof(OH_Huks_Param));
+    auto ohResult = InitParamSet(&paramSet, g_testGenerateKeyParam,
+                                 sizeof(g_testGenerateKeyParam) / sizeof(OH_Huks_Param));
     if (ohResult.errorCode != OH_HUKS_SUCCESS) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111", 
-                    "InitParamSet failed: %{public}d", ohResult.errorCode);
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111",
+                     "InitParamSet failed: %{public}d", ohResult.errorCode);
         napi_value retValue;
         napi_create_int32(env, 1, &retValue);
         return retValue;
     }
     ohResult = OH_Huks_GenerateKeyItem(&keyAlias, paramSet, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111", 
-                "First GenerateKey success: %{public}d", ohResult.errorCode);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "1111111111111111",
+                 "First GenerateKey success: %{public}d", ohResult.errorCode);
     uint8_t tmpPublicKey[OH_HUKS_RSA_KEY_SIZE_1024] = {0};
     struct OH_Huks_Blob publicKey = {OH_HUKS_RSA_KEY_SIZE_1024, (uint8_t *)tmpPublicKey};
     auto ret1 = OH_Huks_ExportPublicKeyItem(&keyAlias, paramSet, &publicKey);

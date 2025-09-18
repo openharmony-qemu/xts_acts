@@ -61,6 +61,7 @@ namespace HuksApiTest {
     static uint32_t INVALID_Param = 0xFFFFFFFF;
     static const uint32_t COMMON_SIZE = 2048;
     static uint32_t g_size = 4096;
+    static uint32_t g_size1 = 65536;
     napi_value GetSdkVersionTest_001(napi_env env, napi_callback_info info);
     napi_value GenerateKeyItemTest_001(napi_env env, napi_callback_info info);
     napi_value GenerateKeyItemTest_002(napi_env env, napi_callback_info info);
