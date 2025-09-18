@@ -251,7 +251,7 @@ struct webPrefetchPageEnhancedTest {
                   let options = new webview.PrefetchOptions();
                   options.ignoreCacheControlNoStore = true;
                   options.minTimeBetweenPrefetchesMs = 100;
-                  this.controller.prefetchPage('123', [{ headerKey: 'headerKey', headerValue: 'headerValue' }], options);
+                  this.controllerTwo.prefetchPage(URL, [{ headerKey: 'headerKey', headerValue: 'headerValue' }], options);
                 } catch (error) {
                   console.error(this.emitKey + ' ErrorCode：' + error.code + ' Message：' + error.message);
                   Utils.emitEvent(Number(error.code), 2025091615);
@@ -263,7 +263,7 @@ struct webPrefetchPageEnhancedTest {
                   let options = new webview.PrefetchOptions();
                   options.ignoreCacheControlNoStore = true;
                   options.minTimeBetweenPrefetchesMs = 100;
-                  this.controllerTwo.prefetchPage(URL, [{ headerKey: 'headerKey', headerValue: 'headerValue' }], options);
+                  this.controller.prefetchPage('123', [{ headerKey: 'headerKey', headerValue: 'headerValue' }], options);
                 } catch (error) {
                   console.error(this.emitKey + ' ErrorCode：' + error.code + ' Message：' + error.message);
                   Utils.emitEvent(Number(error.code), 2025091616);
