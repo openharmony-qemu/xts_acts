@@ -626,7 +626,7 @@ export default function RelationStoreError32Test() {
 
     /**
      * @tc.name       : RelationStoreError32Test0015
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error32Test_1400
+     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error32Test_1500
      * @tc.desc       : getColumnIndex normal test
      * @tc.size       : MediumTest
      * @tc.type       : Function
