@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -257,6 +257,14 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
 #define ASSERT_OBJ(result, expect)                                                                                     \
     do {                                                                                                               \
         if ((result) != (expect)) {                                                                                    \
+            napi_value errorResult = nullptr;                                                                          \
+            return errorResult;                                                                                        \
+        }                                                                                                              \
+    } while (0)
+
+#define ASSERT_NOTNULL(result)                                                                                     \
+    do {                                                                                                               \
+        if ((result) == nullptr) {                                                                                    \
             napi_value errorResult = nullptr;                                                                          \
             return errorResult;                                                                                        \
         }                                                                                                              \

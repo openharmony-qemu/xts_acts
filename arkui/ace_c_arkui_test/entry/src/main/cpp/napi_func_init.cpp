@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -5040,6 +5040,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testSliderBlockColor005", nullptr, TestSliderBlockColor005, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testSliderBlockColor006", nullptr, TestSliderBlockColor006, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testSliderBlockColor007", nullptr, TestSliderBlockColor007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testSliderBlockColor008", nullptr, TestSliderBlockColor008, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testSliderBlockStyle001", nullptr, TestSliderBlockStyle001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testSliderBlockStyle002", nullptr, TestSliderBlockStyle002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testSliderBlockStyle003", nullptr, TestSliderBlockStyle003, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -5084,6 +5085,8 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr},
         {"testSliderSelectedColor007", nullptr, TestSliderSelectedColor007, nullptr, nullptr, nullptr, napi_default,
          nullptr},
+        {"testSliderSelectedColor008", nullptr, TestSliderSelectedColor008, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
         {"testSliderShowSteps001", nullptr, TestSliderShowSteps001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testSliderShowSteps002", nullptr, TestSliderShowSteps002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testSliderShowSteps003", nullptr, TestSliderShowSteps003, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -5105,6 +5108,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testSliderTrackColor004", nullptr, TestSliderTrackColor004, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testSliderTrackColor005", nullptr, TestSliderTrackColor005, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testSliderTrackColor006", nullptr, TestSliderTrackColor006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testSliderTrackColor007", nullptr, TestSliderTrackColor007, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testSliderTrackThickness001", nullptr, TestSliderTrackThickness001, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"testSliderTrackThickness002", nullptr, TestSliderTrackThickness002, nullptr, nullptr, nullptr, napi_default,

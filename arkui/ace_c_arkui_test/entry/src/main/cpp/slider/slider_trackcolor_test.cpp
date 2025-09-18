@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -86,6 +86,29 @@ static napi_value TestSliderTrackColor006(napi_env env, napi_callback_info info)
     auto ret = nodeAPI->setAttribute(slider, NODE_SLIDER_TRACK_COLOR, &value_item);
     ASSERT_EQ(ret, SUCCESS);
     ASSERT_EQ(nodeAPI->getAttribute(slider, NODE_SLIDER_TRACK_COLOR)->value[PARAM_0].u32, trackColor);
+    NAPI_END;
+}
+
+static napi_value TestSliderTrackColor007(napi_env env, napi_callback_info info)
+{
+    NAPI_START(slider, ARKUI_NODE_SLIDER);
+    uint32_t colors[] = {0xFFFFFFFF, 0xFF0000FF, 0xFF000000};
+    float stops[] = {0.3, 0.5, 1};
+    int colorSize = sizeof(colors) / sizeof(colors[0]);
+    ArkUI_ColorStop colorStop[] = {{colors, stops, colorSize}};
+    ArkUI_AttributeItem value_item = {nullptr, 0, nullptr, colorStop};
+    auto ret = nodeAPI->setAttribute(slider, NODE_SLIDER_TRACK_LINEAR_GRADIENT_COLOR, &value_item);
+    ASSERT_EQ(ret, SUCCESS);
+    auto attrItem = nodeAPI->getAttribute(slider, NODE_SLIDER_TRACK_LINEAR_GRADIENT_COLOR);
+    ASSERT_NOTNULL(attrItem);
+    auto gradients = static_cast<ArkUI_ColorStop*>(attrItem->object);
+    ASSERT_NOTNULL(gradients);
+    auto size = gradients->size;
+    ASSERT_EQ(size, colorSize);
+    for (int i = 0; i < size; ++i) {
+        ASSERT_EQ(gradients->colors[i], colors[i]);
+        ASSERT_EQ(gradients->stops[i], stops[i]);
+    }
     NAPI_END;
 }
 } // namespace ArkUICapiTest

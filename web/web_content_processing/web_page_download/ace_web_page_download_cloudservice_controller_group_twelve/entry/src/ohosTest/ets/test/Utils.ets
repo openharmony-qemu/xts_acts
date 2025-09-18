@@ -18,6 +18,7 @@ import { Driver, ON, PointerMatrix } from '@ohos.UiTest';
 import systemDateTime from '@ohos.systemDateTime';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import fs from '@ohos.file.fs';
+import { waitForComponents } from './WaitTest.test';
 
 export default class Utils {
   static sleep(time: number) {
@@ -122,8 +123,7 @@ export default class Utils {
   }
 
   static async clickComponent(id: string) {
-    let driver = Driver.create();
-    let component = await driver.findComponent(ON.id(id));
+    let component = await waitForComponents(id);
     await component.click();
   }
 
