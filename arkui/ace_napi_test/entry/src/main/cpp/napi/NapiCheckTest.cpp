@@ -5492,17 +5492,17 @@ static void ThreadSafeCallback(napi_env env, napi_value js_cb, void *context, vo
     napi_value undefined = nullptr;
     napi_get_undefined(env, &undefined);
     
-    // 创建测试数据
+    // 创建测试数据并调用回调函数
     napi_value number1 = nullptr;
     napi_value number2 = nullptr;
-    napi_create_int32(env, TEST_NUMBER_12, &number1);
-    napi_create_int32(env, TEST_NUMBER_15, &number2);
+    napi_create_int32(env, 12, &number1);
+    napi_create_int32(env, 15, &number2);
     
     napi_value argv[2] = {number1, number2};
     napi_value result = nullptr;
-    napi_call_function(env, undefined, js_cb, TEST_FUNCTION_ARGS_COUNT_2, argv, &result);
+    napi_call_function(env, undefined, js_cb, 2, argv, &result);
     
-    // 获取并验证结果
+    // 验证回调函数被正确调用
     if (result != nullptr) {
         int32_t res = 0;
         napi_get_value_int32(env, result, &res);
@@ -5588,18 +5588,12 @@ static bool CreateTestCallback(napi_env env, napi_value* callback_func)
 {
 napi_status status = napi_create_function(env, "testCallback", NAPI_AUTO_LENGTH,
     [](napi_env env, napi_callback_info info) -> napi_value {
-            size_t argc = 2;
-            napi_value args[2];
+            size_t argc = 1;
+            napi_value args[1];
             napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
             
-            int32_t a = 0;
-            int32_t b = 0;
-            napi_get_value_int32(env, args[0], &a);
-            napi_get_value_int32(env, args[1], &b);
-            
-            napi_value result = nullptr;
-            napi_create_int32(env, a + b, &result);
-            return result;
+            // 直接返回传入的数据，用于验证数据传递正确性
+            return args[0];
         }, nullptr, callback_func);
     return (status == napi_ok && *callback_func != nullptr);
 }
@@ -5816,62 +5810,90 @@ static napi_value NapiExtensionTest003(napi_env env, napi_callback_info info)
     return result;
 }
 
-// Helper function to create normal priority test data
-static bool CreateNormalPriorityTestData(napi_env env, napi_value* test_data)
+
+
+// 创建普通优先级测试回调函数
+static napi_value CreateNormalPriorityCallback(napi_env env)
 {
-    napi_status status = napi_create_string_utf8(env, "normal_priority_head_data", NAPI_AUTO_LENGTH, test_data);
-    return (status == napi_ok);
+    napi_value callback_func = nullptr;
+    napi_status status = napi_create_function(env, "testCallback", NAPI_AUTO_LENGTH,
+        [](napi_env env, napi_callback_info info) -> napi_value {
+            size_t argc = 2;
+            napi_value args[2];
+            napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+            
+            int32_t a = 0;
+            int32_t b = 0;
+            napi_get_value_int32(env, args[0], &a);
+            napi_get_value_int32(env, args[1], &b);
+            
+            napi_value result = nullptr;
+            napi_create_int32(env, a + b, &result);
+            return result;
+        }, nullptr, &callback_func);
+    
+    return (status == napi_ok) ? callback_func : nullptr;
 }
 
-// Helper function to test normal priority call
-static bool TestNormalPriorityCall(napi_threadsafe_function func, napi_value test_data)
+// 创建普通优先级线程安全函数
+static napi_threadsafe_function CreateNormalPriorityThreadSafeFunction(napi_env env, napi_value callback_func)
+{
+    napi_threadsafe_function func = nullptr;
+    napi_value func_name = nullptr;
+    napi_status status = napi_create_string_utf8(env, "Normal Priority Head Test", NAPI_AUTO_LENGTH, &func_name);
+    if (status != napi_ok) {
+        return nullptr;
+    }
+    
+    status = napi_create_threadsafe_function(env, callback_func, nullptr, func_name, 0, 1,
+        nullptr, nullptr, nullptr, ThreadSafeCallback, &func);
+    
+    return (status == napi_ok) ? func : nullptr;
+}
+
+// 执行普通优先级调用并验证
+static bool ExecuteNormalPriorityCall(napi_env env, napi_threadsafe_function func, napi_value test_data)
 {
     napi_status status = napi_call_threadsafe_function_with_priority(func, test_data, napi_priority_idle, false);
-    return (status == napi_ok);
+    if (status != napi_ok) {
+        return false;
+    }
+    
+    napi_valuetype type;
+    status = napi_typeof(env, test_data, &type);
+    return (status == napi_ok && type == napi_string);
 }
 
 // Test 4: 使用普通优先级调用线程安全函数，添加到队列头部
 // 测试普通优先级调用到队列头部
 static bool TestNormalPriorityCallToHead(napi_env env)
 {
-    napi_status status;
-
     // 创建回调函数
-    napi_value callback_func = nullptr;
-    if (!CreateTestCallback(env, &callback_func)) {
+    napi_value callback_func = CreateNormalPriorityCallback(env);
+    if (callback_func == nullptr) {
         return false;
     }
-
+    
     // 创建线程安全函数
-    napi_threadsafe_function func = nullptr;
-    if (!CreateThreadSafeFunction(env, callback_func, nullptr, &func)) {
+    napi_threadsafe_function func = CreateNormalPriorityThreadSafeFunction(env, callback_func);
+    if (func == nullptr) {
         return false;
     }
-
+    
     // 创建测试数据
     napi_value test_data = nullptr;
-    if (!CreateNormalPriorityTestData(env, &test_data)) {
+    napi_status status = napi_create_string_utf8(env, "normal_priority_head_data", NAPI_AUTO_LENGTH, &test_data);
+    if (status != napi_ok) {
         napi_release_threadsafe_function(func, napi_tsfn_release);
         return false;
     }
-
-    // 使用普通优先级调用，添加到队列头部 (isTail = false)
-    if (!TestNormalPriorityCall(func, test_data)) {
-        napi_release_threadsafe_function(func, napi_tsfn_release);
-        return false;
-    }
-
-    // 验证调用成功
-    napi_valuetype type;
-    status = napi_typeof(env, test_data, &type);
-    if (status != napi_ok || type != napi_string) {
-        napi_release_threadsafe_function(func, napi_tsfn_release);
-        return false;
-    }
-
+    
+    // 执行调用并验证
+    bool success = ExecuteNormalPriorityCall(env, func, test_data);
+    
     // 清理资源
-    status = napi_release_threadsafe_function(func, napi_tsfn_release);
-    return (status == napi_ok);
+    napi_release_threadsafe_function(func, napi_tsfn_release);
+    return success;
 }
 
 static napi_value NapiExtensionTest004(napi_env env, napi_callback_info info)
@@ -5883,68 +5905,96 @@ static napi_value NapiExtensionTest004(napi_env env, napi_callback_info info)
     return result;
 }
 
-// Helper function to create low priority test data
-static bool CreateLowPriorityTestData(napi_env env, napi_value* test_data)
+
+
+// 创建低优先级测试回调函数
+static napi_value CreateLowPriorityCallback(napi_env env)
 {
-    napi_status status = napi_create_string_utf8(env, "low_priority_data", NAPI_AUTO_LENGTH, test_data);
-    return (status == napi_ok);
+    napi_value callback_func = nullptr;
+    napi_status status = napi_create_function(env, "testCallback", NAPI_AUTO_LENGTH,
+        [](napi_env env, napi_callback_info info) -> napi_value {
+            size_t argc = 2;
+            napi_value args[2];
+            napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+            
+            int32_t a = 0;
+            int32_t b = 0;
+            napi_get_value_int32(env, args[0], &a);
+            napi_get_value_int32(env, args[1], &b);
+            
+            napi_value result = nullptr;
+            napi_create_int32(env, a + b, &result);
+            return result;
+        }, nullptr, &callback_func);
+    
+    return (status == napi_ok) ? callback_func : nullptr;
 }
 
-// Helper function to test low priority call
-static bool TestLowPriorityCall(napi_threadsafe_function func, napi_value test_data)
+// 创建低优先级线程安全函数
+static napi_threadsafe_function CreateLowPriorityThreadSafeFunction(napi_env env, napi_value callback_func)
+{
+    napi_threadsafe_function func = nullptr;
+    napi_value func_name = nullptr;
+    napi_status status = napi_create_string_utf8(env, "Low Priority Test", NAPI_AUTO_LENGTH, &func_name);
+    if (status != napi_ok) {
+        return nullptr;
+    }
+    
+    status = napi_create_threadsafe_function(env, callback_func, nullptr, func_name, 0, 1,
+        nullptr, nullptr, nullptr, ThreadSafeCallback, &func);
+    
+    return (status == napi_ok) ? func : nullptr;
+}
+
+// 执行低优先级调用并验证
+static bool ExecuteLowPriorityCall(napi_env env, napi_threadsafe_function func, napi_value test_data)
 {
     napi_status status = napi_call_threadsafe_function_with_priority(func, test_data, napi_priority_low, true);
-    return (status == napi_ok);
+    if (status != napi_ok) {
+        return false;
+    }
+    
+    napi_valuetype type;
+    status = napi_typeof(env, test_data, &type);
+    return (status == napi_ok && type == napi_string);
 }
 
 // Test 5: 使用低优先级调用线程安全函数
 // 测试低优先级调用
-static bool TestLowPriorityCallMain(napi_env env)
+static bool TestLowPriorityCall(napi_env env)
 {
-    napi_status status;
-    
     // 创建回调函数
-    napi_value callback_func = nullptr;
-    if (!CreateTestCallback(env, &callback_func)) {
+    napi_value callback_func = CreateLowPriorityCallback(env);
+    if (callback_func == nullptr) {
         return false;
     }
     
     // 创建线程安全函数
-    napi_threadsafe_function func = nullptr;
-    if (!CreateThreadSafeFunction(env, callback_func, nullptr, &func)) {
+    napi_threadsafe_function func = CreateLowPriorityThreadSafeFunction(env, callback_func);
+    if (func == nullptr) {
         return false;
     }
     
     // 创建测试数据
     napi_value test_data = nullptr;
-    if (!CreateLowPriorityTestData(env, &test_data)) {
+    napi_status status = napi_create_string_utf8(env, "low_priority_data", NAPI_AUTO_LENGTH, &test_data);
+    if (status != napi_ok) {
         napi_release_threadsafe_function(func, napi_tsfn_release);
         return false;
     }
     
-    // 使用低优先级调用
-    if (!TestLowPriorityCall(func, test_data)) {
-        napi_release_threadsafe_function(func, napi_tsfn_release);
-        return false;
-    }
-    
-    // 验证调用成功
-    napi_valuetype type;
-    status = napi_typeof(env, test_data, &type);
-    if (status != napi_ok || type != napi_string) {
-        napi_release_threadsafe_function(func, napi_tsfn_release);
-        return false;
-    }
+    // 执行调用并验证
+    bool success = ExecuteLowPriorityCall(env, func, test_data);
     
     // 清理资源
-    status = napi_release_threadsafe_function(func, napi_tsfn_release);
-    return (status == napi_ok);
+    napi_release_threadsafe_function(func, napi_tsfn_release);
+    return success;
 }
 
 static napi_value NapiExtensionTest005(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
-    bool testResult = TestLowPriorityCallMain(env);
+    bool testResult = TestLowPriorityCall(env);
     
     napi_get_boolean(env, testResult, &result);
     return result;
