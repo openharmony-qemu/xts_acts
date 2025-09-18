@@ -77,8 +77,9 @@ struct Second {
                         }
                         case "emitOverviewModeAccessFalse":{
                             this.overviewModeAccess=false;
+                            this.overviewScale = "";
                             this.isComplete = -1;
-                            this.controller.loadUrl({url:"resource://rawfile/overview.html"})
+                            this.controller.refresh();
                             await waitForExist(() => this.isComplete, this.str, 0);
                             this.controller.runJavaScript({script:"getViewResult()",callback:(res)=>{
                                 console.info("getViewResult==>"+res);
