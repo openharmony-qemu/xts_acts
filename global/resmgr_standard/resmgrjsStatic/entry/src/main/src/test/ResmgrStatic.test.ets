@@ -449,12 +449,10 @@ export default function ResmgrTest() {
             done();
           })
             .catch(error =>{
-              console.log('getDeviceCapability_test_static_008 error0: ' + JSON.stringify(error));
               expect().assertFail();
               done();
             })
         } catch(error) {
-          console.log('getDeviceCapability_test_static_008 error1: ' + JSON.stringify(error));
           expect().assertFail();
           done();
         }
