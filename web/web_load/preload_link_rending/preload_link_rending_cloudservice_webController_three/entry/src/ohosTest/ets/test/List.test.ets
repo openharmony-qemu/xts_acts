@@ -15,8 +15,10 @@
 
 import webViewControllerPart3Test from './WebViewControllerPart3.test'
 import webSecureDnsModeEnumTest from './WebSecureDnsModeEnumTest.test'
+import webPrefetchPageEnhanced from './WebPrefetchPageEnhanced.test'
 
 export default function testsuite() {
   webViewControllerPart3Test()
   webSecureDnsModeEnumTest()
+  webPrefetchPageEnhanced()
 }
