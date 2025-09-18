@@ -127,13 +127,7 @@ bool PluginManager::Export(napi_env env, napi_value exports)
 
 void PluginManager::SetNativeXComponent(std::string& id, OH_NativeXComponent* nativeXComponent)
 {
-    if (nativeXComponentMap_.find(id) == nativeXComponentMap_.end()) {
-        nativeXComponentMap_[id] = nativeXComponent;
-    } else {
-        if (nativeXComponentMap_[id] != nativeXComponent) {
-            nativeXComponentMap_[id] = nativeXComponent;
-        }
-    }
+    nativeXComponentMap_[id] = nativeXComponent;
 }
 
 OH_NativeXComponent* PluginManager::GetNativeXComponent(std::string& id)

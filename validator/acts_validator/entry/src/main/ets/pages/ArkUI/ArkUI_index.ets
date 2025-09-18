@@ -406,7 +406,7 @@ struct IndexPage {
       let str1: string[] = report.split(";");
       let title: string[] = [];
       let result: string[] = [];
-      for (let i = 0; i < Math.floor(str1.length / 2); i++) {
+      for (let i = 0; i < Math.floor(str1.length / 2) && i < result.length; i++) {
         title[i] = str1[i*2];
         result[i] = str1[i * 2+1];
       }
