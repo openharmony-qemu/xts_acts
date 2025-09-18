@@ -25,7 +25,7 @@ async function onAbilityCreateCallback(): Promise<void> {
     hilog.info(0x0000, 'testTag', '%{public}s', 'onAbilityCreateCallback');
 }
 
-async function addAbilityMonitorCallback(err?: BusinessError) {
+async function addAbilityMonitorCallback(err?: any) {
     hilog.info(0x0000, 'testTag', 'addAbilityMonitorCallback : %{public}s', JSON.stringify(err) ?? '');
 }
 
