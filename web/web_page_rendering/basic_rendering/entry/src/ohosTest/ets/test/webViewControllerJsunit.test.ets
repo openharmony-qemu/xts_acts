@@ -66,7 +66,7 @@ export default function webViewControllerJsunit() {
      */
     it('testGetWebId',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey="emitFetchCookieSync"; 
-      Utils.registerEvent("testGetWebId",39,100,done);
+      Utils.registerEvent("testGetWebId",true,100,done);
       sendEventByKey('webcomponent',10,'');
     })
   })
