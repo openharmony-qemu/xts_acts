@@ -361,12 +361,12 @@ export default function graphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : testTextFontWidth
-     * @tc.name      : testTextFontWidth
-     * @tc.desc      : To test the enum value of testTextFontWidth.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.number    testTextFontWidth
+     * @tc.name      testTextFontWidth
+     * @tc.desc      To test the enum value of testTextFontWidth.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level3
      */
     it('testTextFontWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testTextFontWidth"
@@ -387,12 +387,12 @@ export default function graphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : testLineHeightStyle
-     * @tc.name      : testLineHeightStyle
-     * @tc.desc      : To test the enum value of testLineHeightStyle.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.number    testLineHeightStyle
+     * @tc.name      testLineHeightStyle
+     * @tc.desc      To test the enum value of testLineHeightStyle.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level1
      */
     it('testLineHeightStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testLineHeightStyle"
