@@ -17,8 +17,8 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { waitForComponent,waitAndClickComponent } from './WaitTest.test';
-import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver, ON } from '@kit.TestKit';
+import { accessibility, config } from '@kit.AccessibilityKit';
 const driver = Driver.create();
 // @ts-nocheck
 let emitKey = "emitSupportCssDisplayChange0100"
