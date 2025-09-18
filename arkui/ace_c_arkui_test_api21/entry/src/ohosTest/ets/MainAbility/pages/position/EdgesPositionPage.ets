@@ -27,108 +27,99 @@ struct EdgesPositionPage {
   }
 
   build() {
-    Column({space:5}) {
+    Column() {
       Row() {
-        Button('ReSetPosition').onClick(() => {
+        Button('ReSet').onClick(() => {
           nativeNode.reSetPositionEdges()
-        }).key('EdgesPositionPage_ReSetPosition_Btn')
-        Button('GetPosition').onClick(() => {
+        }).key('EdgesPositionPage_ReSetPosition_Btn').controlSize(ControlSize.SMALL).width('15%')
+        Button('Get').onClick(() => {
           this.content = nativeNode.getPositionEdges()
-        }).key('EdgesPositionPage_GetPosition_Btn')
-        Button('CopyPosition').onClick(() => {
+        }).key('EdgesPositionPage_GetPosition_Btn').controlSize(ControlSize.SMALL).width('15%')
+        Button('Copy').onClick(() => {
           nativeNode.copyPositionEdges()
-        }).key('EdgesPositionPage_CopyPosition_Btn')
-      }
-
-      Row() {
-        Button('空指针').onClick(() => {
+        }).key('EdgesPositionPage_CopyPosition_Btn').controlSize(ControlSize.SMALL).width('15%')
+        Button('nullptr').onClick(() => {
           nativeNode.setPositionEdgesIllegal_1()
-        }).key('EdgesPositionPage_nullptr_Btn')
-        Button('非Edges对象').onClick(() => {
+        }).key('EdgesPositionPage_nullptr_Btn').controlSize(ControlSize.SMALL).width('15%')
+        Button('notEdges').onClick(() => {
           nativeNode.setPositionEdgesIllegal_2()
-        }).key('EdgesPositionPage_notEdges_Btn')
-        Button('空Edges对象').onClick(() => {
+        }).key('EdgesPositionPage_notEdges_Btn').controlSize(ControlSize.SMALL).width('15%')
+        Button('nullEdges').onClick(() => {
           nativeNode.setPositionEdgesIllegal_3()
-        }).key('EdgesPositionPage_nullEdges_Btn')
-      }
+        }).key('EdgesPositionPage_nullEdges_Btn').controlSize(ControlSize.SMALL).width('15%')
+      }.height('5%')
 
       Row() {
         Button('top').onClick(() => {
           nativeNode.setPositionEdges_top()
-        }).key('EdgesPositionPage_top_Btn')
+        }).key('EdgesPositionPage_top_Btn').controlSize(ControlSize.SMALL).width('12%')
         Button('left').onClick(() => {
           nativeNode.setPositionEdges_left()
-        }).key('EdgesPositionPage_left_Btn')
+        }).key('EdgesPositionPage_left_Btn').controlSize(ControlSize.SMALL).width('12%')
         Button('bottom').onClick(() => {
           nativeNode.setPositionEdges_bottom()
-        }).key('EdgesPositionPage_bottom_Btn')
+        }).key('EdgesPositionPage_bottom_Btn').controlSize(ControlSize.SMALL).width('12%')
         Button('right').onClick(() => {
           nativeNode.setPositionEdges_right()
-        }).key('EdgesPositionPage_right_Btn')
-      }
-
-      Row() {
-        Button('负top').onClick(() => {
+        }).key('EdgesPositionPage_right_Btn').controlSize(ControlSize.SMALL).width('12%')
+        Button('-top').onClick(() => {
           nativeNode.setPositionEdges_top_negative()
-        }).key('EdgesPositionPage_top_negative_Btn')
-        Button('负left').onClick(() => {
+        }).key('EdgesPositionPage_top_negative_Btn').controlSize(ControlSize.SMALL).width('12%')
+        Button('-left').onClick(() => {
           nativeNode.setPositionEdges_left_negative()
-        }).key('EdgesPositionPage_left_negative_Btn')
-        Button('负bottom').onClick(() => {
+        }).key('EdgesPositionPage_left_negative_Btn').controlSize(ControlSize.SMALL).width('12%')
+        Button('-bottom').onClick(() => {
           nativeNode.setPositionEdges_bottom_negative()
-        }).key('EdgesPositionPage_bottom_negative_Btn')
-        Button('负right').onClick(() => {
+        }).key('EdgesPositionPage_bottom_negative_Btn').controlSize(ControlSize.SMALL).width('12%')
+        Button('-right').onClick(() => {
           nativeNode.setPositionEdges_right_negative()
-        }).key('EdgesPositionPage_right_negative_Btn')
-      }
+        }).key('EdgesPositionPage_right_negative_Btn').controlSize(ControlSize.SMALL).width('12%')
+      }.height('5%')
 
       Row() {
         Button('上&左').onClick(() => {
           nativeNode.setPositionEdges_top_left()
-        }).key('EdgesPositionPage_top_left_Btn')
+        }).key('EdgesPositionPage_top_left_Btn').controlSize(ControlSize.SMALL).width('15%')
         Button('上&右').onClick(() => {
           nativeNode.setPositionEdges_top_right()
-        }).key('EdgesPositionPage_top_right_Btn')
+        }).key('EdgesPositionPage_top_right_Btn').controlSize(ControlSize.SMALL).width('15%')
         Button('左&下').onClick(() => {
           nativeNode.setPositionEdges_left_bottom()
-        }).key('EdgesPositionPage_left_bottom_Btn')
+        }).key('EdgesPositionPage_left_bottom_Btn').controlSize(ControlSize.SMALL).width('15%')
         Button('下&右').onClick(() => {
           nativeNode.setPositionEdges_bottom_right()
-        }).key('EdgesPositionPage_bottom_right_Btn')
+        }).key('EdgesPositionPage_bottom_right_Btn').controlSize(ControlSize.SMALL).width('15%')
         Button('上&下').onClick(() => {
           nativeNode.setPositionEdges_top_bottom()
-        }).key('EdgesPositionPage_top_bottom_Btn')
+        }).key('EdgesPositionPage_top_bottom_Btn').controlSize(ControlSize.SMALL).width('15%')
         Button('左&右').onClick(() => {
           nativeNode.setPositionEdges_left_right()
-        }).key('EdgesPositionPage_left_right_Btn')
-      }
+        }).key('EdgesPositionPage_left_right_Btn').controlSize(ControlSize.SMALL).width('15%')
+      }.height('5%')
 
       Row() {
         Button('上&左&下').onClick(() => {
           nativeNode.setPositionEdges_top_left_bottom()
-        }).key('EdgesPositionPage_top_left_bottom_Btn')
+        }).key('EdgesPositionPage_top_left_bottom_Btn').controlSize(ControlSize.SMALL).width('20%')
         Button('上&左&右').onClick(() => {
           nativeNode.setPositionEdges_top_left_right()
-        }).key('EdgesPositionPage_top_left_right_Btn')
+        }).key('EdgesPositionPage_top_left_right_Btn').controlSize(ControlSize.SMALL).width('20%')
         Button('上&下&右').onClick(() => {
           nativeNode.setPositionEdges_top_bottom_right()
-        }).key('EdgesPositionPage_top_bottom_right_Btn')
+        }).key('EdgesPositionPage_top_bottom_right_Btn').controlSize(ControlSize.SMALL).width('20%')
         Button('左&下&右').onClick(() => {
           nativeNode.setPositionEdges_left_bottom_right()
-        }).key('EdgesPositionPage_left_bottom_right_Btn')
-      }
-
-      Row() {
+        }).key('EdgesPositionPage_left_bottom_right_Btn').controlSize(ControlSize.SMALL).width('20%')
         Button('上&左&下&右').onClick(() => {
           nativeNode.setPositionEdges_top_left_bottom_right()
-        }).key('EdgesPositionPage_top_left_bottom_right_Btn')
-      }
+        }).key('EdgesPositionPage_top_left_bottom_right_Btn').controlSize(ControlSize.SMALL).width('20%')
+      }.height('5%')
 
-      Text(this.content).key('EdgesPositionPage_position_content')
+      Text(this.content).key('EdgesPositionPage_position_content').height('10%').clip(true)
 
       Row() {
         ContentSlot(this.rootSlot)
-      }.layoutWeight(1)
+      }.height('50%')
     }
     .width('100%')
     .height('100%')

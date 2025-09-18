@@ -50,7 +50,7 @@ export default function EdgesPositionTest() {
     /*
      * @tc.number    EdgesPositionTest_0100
      * @tc.name      EdgesPositionTest_0100
-     * @tc.desc      Test EdgesPosition
+     * @tc.desc      Test EdgesPosition: set single value
      * @tc.level     Level 1
      */
     it('EdgesPositionTest_0100', Level.LEVEL1, async (done: Function) => {
@@ -66,17 +66,24 @@ export default function EdgesPositionTest() {
 
       let strJson = getInspectorByKey('EdgesPositionPage_testFlex');
       let obj: ESObject = JSON.parse(strJson);
-      console.info("[EdgesPositionTest_0100] obj.$attrs.position is: " + obj.$attrs.position);
+      console.info("[EdgesPositionTest_0100] obj.$attrs.position is: " + JSON.stringify(obj.$attrs.position));
       let parentRect = Utils.getComponentRect("EdgesPositionPage_parentFlex");
       let rect = Utils.getComponentRect("EdgesPositionPage_testFlex");
-      console.info("[EdgesPositionTest_0100] parentFlex top is: " + parentRect.top);
-      console.info("[EdgesPositionTest_0100] parentFlex left is: " + parentRect.left);
-      console.info("[EdgesPositionTest_0100] parentFlex bottom is: " + parentRect.bottom);
-      console.info("[EdgesPositionTest_0100] parentFlex right is: " + parentRect.right);
-      console.info("[EdgesPositionTest_0100] testFlex top is: " + rect.top);
-      console.info("[EdgesPositionTest_0100] testFlex left is: " + rect.left);
-      console.info("[EdgesPositionTest_0100] testFlex bottom is: " + rect.bottom);
-      console.info("[EdgesPositionTest_0100] testFlex right is: " + rect.right);
+      console.info("[EdgesPositionTest_0100] (rect.left - parentRect.left): " + (rect.left - parentRect.left));
+      console.info("[EdgesPositionTest_0100] (rect.top - parentRect.top - vp2px(20)): " + (rect.top - parentRect.top - vp2px(20)));
+      expect(Math.floor(Math.abs(rect.left - parentRect.left)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(rect.top - parentRect.top - vp2px(20))) <= 1).assertTrue();
+
+      // get top
+      button = await driver.findComponent(ON.id('EdgesPositionPage_GetPosition_Btn'));
+      await button.click();
+      console.info("[EdgesPositionTest_0100] click EdgesPositionPage_GetPosition_Btn.");
+      await Utils.sleep(1000);
+
+      strJson = getInspectorByKey('EdgesPositionPage_position_content');
+      obj = JSON.parse(strJson);
+      console.info("[EdgesPositionTest_0100] obj.$attrs.content is: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('top:20,left:NULL,bottom:NULL,right:NULL');
 
       // set left
       button = await driver.findComponent(ON.id('EdgesPositionPage_left_Btn'));
@@ -86,17 +93,24 @@ export default function EdgesPositionTest() {
 
       strJson = getInspectorByKey('EdgesPositionPage_testFlex');
       obj = JSON.parse(strJson);
-      console.info("[EdgesPositionTest_0100] obj.$attrs.position is: " + obj.$attrs.position);
+      console.info("[EdgesPositionTest_0100] obj.$attrs.position is: " + JSON.stringify(obj.$attrs.position));
       parentRect = Utils.getComponentRect("EdgesPositionPage_parentFlex");
       rect = Utils.getComponentRect("EdgesPositionPage_testFlex");
-      console.info("[EdgesPositionTest_0100] parentFlex top is: " + parentRect.top);
-      console.info("[EdgesPositionTest_0100] parentFlex left is: " + parentRect.left);
-      console.info("[EdgesPositionTest_0100] parentFlex bottom is: " + parentRect.bottom);
-      console.info("[EdgesPositionTest_0100] parentFlex right is: " + parentRect.right);
-      console.info("[EdgesPositionTest_0100] testFlex top is: " + rect.top);
-      console.info("[EdgesPositionTest_0100] testFlex left is: " + rect.left);
-      console.info("[EdgesPositionTest_0100] testFlex bottom is: " + rect.bottom);
-      console.info("[EdgesPositionTest_0100] testFlex right is: " + rect.right);
+      console.info("[EdgesPositionTest_0100] (rect.top - parentRect.top): " + (rect.top - parentRect.top));
+      console.info("[EdgesPositionTest_0100] (rect.left - parentRect.left - vp2px(20)): " + (rect.left - parentRect.left - vp2px(20)));
+      expect(Math.floor(Math.abs(rect.top - parentRect.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(rect.left - parentRect.left - vp2px(20))) <= 1).assertTrue();
+
+      // get left
+      button = await driver.findComponent(ON.id('EdgesPositionPage_GetPosition_Btn'));
+      await button.click();
+      console.info("[EdgesPositionTest_0100] click EdgesPositionPage_GetPosition_Btn.");
+      await Utils.sleep(1000);
+
+      strJson = getInspectorByKey('EdgesPositionPage_position_content');
+      obj = JSON.parse(strJson);
+      console.info("[EdgesPositionTest_0100] obj.$attrs.content is: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('top:NULL,left:20,bottom:NULL,right:NULL');
 
       // set bottom
       button = await driver.findComponent(ON.id('EdgesPositionPage_bottom_Btn'));
@@ -106,17 +120,24 @@ export default function EdgesPositionTest() {
 
       strJson = getInspectorByKey('EdgesPositionPage_testFlex');
       obj = JSON.parse(strJson);
-      console.info("[EdgesPositionTest_0100] obj.$attrs.position is: " + obj.$attrs.position);
+      console.info("[EdgesPositionTest_0100] obj.$attrs.position is: " + JSON.stringify(obj.$attrs.position));
       parentRect = Utils.getComponentRect("EdgesPositionPage_parentFlex");
       rect = Utils.getComponentRect("EdgesPositionPage_testFlex");
-      console.info("[EdgesPositionTest_0100] parentFlex top is: " + parentRect.top);
-      console.info("[EdgesPositionTest_0100] parentFlex left is: " + parentRect.left);
-      console.info("[EdgesPositionTest_0100] parentFlex bottom is: " + parentRect.bottom);
-      console.info("[EdgesPositionTest_0100] parentFlex right is: " + parentRect.right);
-      console.info("[EdgesPositionTest_0100] testFlex top is: " + rect.top);
-      console.info("[EdgesPositionTest_0100] testFlex left is: " + rect.left);
-      console.info("[EdgesPositionTest_0100] testFlex bottom is: " + rect.bottom);
-      console.info("[EdgesPositionTest_0100] testFlex right is: " + rect.right);
+      console.info("[EdgesPositionTest_0100] (rect.left - parentRect.left): " + (rect.left - parentRect.left));
+      console.info("[EdgesPositionTest_0100] (parentRect.bottom - rect.bottom - vp2px(20)): " + (parentRect.bottom - rect.bottom - vp2px(20)));
+      expect(Math.floor(Math.abs(rect.left - parentRect.left)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(parentRect.bottom - rect.bottom - vp2px(20))) <= 1).assertTrue();
+
+      // get bottom
+      button = await driver.findComponent(ON.id('EdgesPositionPage_GetPosition_Btn'));
+      await button.click();
+      console.info("[EdgesPositionTest_0100] click EdgesPositionPage_GetPosition_Btn.");
+      await Utils.sleep(1000);
+
+      strJson = getInspectorByKey('EdgesPositionPage_position_content');
+      obj = JSON.parse(strJson);
+      console.info("[EdgesPositionTest_0100] obj.$attrs.content is: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('top:NULL,left:NULL,bottom:20,right:NULL');
 
       // set right
       button = await driver.findComponent(ON.id('EdgesPositionPage_right_Btn'));
@@ -126,19 +147,149 @@ export default function EdgesPositionTest() {
 
       strJson = getInspectorByKey('EdgesPositionPage_testFlex');
       obj = JSON.parse(strJson);
-      console.info("[EdgesPositionTest_0100] obj.$attrs.position is: " + obj.$attrs.position);
+      console.info("[EdgesPositionTest_0100] obj.$attrs.position is: " + JSON.stringify(obj.$attrs.position));
       parentRect = Utils.getComponentRect("EdgesPositionPage_parentFlex");
       rect = Utils.getComponentRect("EdgesPositionPage_testFlex");
-      console.info("[EdgesPositionTest_0100] parentFlex top is: " + parentRect.top);
-      console.info("[EdgesPositionTest_0100] parentFlex left is: " + parentRect.left);
-      console.info("[EdgesPositionTest_0100] parentFlex bottom is: " + parentRect.bottom);
-      console.info("[EdgesPositionTest_0100] parentFlex right is: " + parentRect.right);
-      console.info("[EdgesPositionTest_0100] testFlex top is: " + rect.top);
-      console.info("[EdgesPositionTest_0100] testFlex left is: " + rect.left);
-      console.info("[EdgesPositionTest_0100] testFlex bottom is: " + rect.bottom);
-      console.info("[EdgesPositionTest_0100] testFlex right is: " + rect.right);
+      console.info("[EdgesPositionTest_0100] (rect.top - parentRect.top): " + (rect.top - parentRect.top));
+      console.info("[EdgesPositionTest_0100] (parentRect.right - rect.right - vp2px(20)): " + (parentRect.right - rect.right - vp2px(20)));
+      expect(Math.floor(Math.abs(rect.top - parentRect.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(parentRect.right - rect.right - vp2px(20))) <= 1).assertTrue();
+
+      // get right
+      button = await driver.findComponent(ON.id('EdgesPositionPage_GetPosition_Btn'));
+      await button.click();
+      console.info("[EdgesPositionTest_0100] click EdgesPositionPage_GetPosition_Btn.");
+      await Utils.sleep(1000);
+
+      strJson = getInspectorByKey('EdgesPositionPage_position_content');
+      obj = JSON.parse(strJson);
+      console.info("[EdgesPositionTest_0100] obj.$attrs.content is: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('top:NULL,left:NULL,bottom:NULL,right:20');
 
       console.info('[EdgesPositionTest_0100] END');
+      done();
+    });
+
+    /*
+     * @tc.number    EdgesPositionTest_0200
+     * @tc.name      EdgesPositionTest_0200
+     * @tc.desc      Test EdgesPosition: set single value, the value is negative
+     * @tc.level     Level 1
+     */
+    it('EdgesPositionTest_0200', Level.LEVEL1, async (done: Function) => {
+      console.info('[EdgesPositionTest_0200] START');
+      let driver = await Driver.create()
+      await Utils.sleep(1000);
+
+      // set top
+      let button = await driver.findComponent(ON.id('EdgesPositionPage_top_negative_Btn'));
+      await button.click();
+      console.info("[EdgesPositionTest_0200] click EdgesPositionPage_top_negative_Btn.");
+      await Utils.sleep(1000);
+
+      let strJson = getInspectorByKey('EdgesPositionPage_testFlex');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("[EdgesPositionTest_0200] obj.$attrs.position is: " + JSON.stringify(obj.$attrs.position));
+      let parentRect = Utils.getComponentRect("EdgesPositionPage_parentFlex");
+      let rect = Utils.getComponentRect("EdgesPositionPage_testFlex");
+      console.info("[EdgesPositionTest_0200] (parentRect.left - rect.left): " + (parentRect.left - rect.left));
+      console.info("[EdgesPositionTest_0200] (parentRect.top - rect.top - vp2px(20)): " + (parentRect.top - rect.top - vp2px(20)));
+      expect(Math.floor(Math.abs(parentRect.left - rect.left)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(parentRect.top - rect.top - vp2px(20))) <= 1).assertTrue();
+
+      // get top
+      button = await driver.findComponent(ON.id('EdgesPositionPage_GetPosition_Btn'));
+      await button.click();
+      console.info("[EdgesPositionTest_0200] click EdgesPositionPage_GetPosition_Btn.");
+      await Utils.sleep(1000);
+
+      strJson = getInspectorByKey('EdgesPositionPage_position_content');
+      obj = JSON.parse(strJson);
+      console.info("[EdgesPositionTest_0200] obj.$attrs.content is: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('top:-20,left:NULL,bottom:NULL,right:NULL');
+
+      // set left
+      button = await driver.findComponent(ON.id('EdgesPositionPage_left_negative_Btn'));
+      await button.click();
+      console.info("[EdgesPositionTest_0200] click EdgesPositionPage_left_negative_Btn.");
+      await Utils.sleep(1000);
+
+      strJson = getInspectorByKey('EdgesPositionPage_testFlex');
+      obj = JSON.parse(strJson);
+      console.info("[EdgesPositionTest_0200] obj.$attrs.position is: " + JSON.stringify(obj.$attrs.position));
+      parentRect = Utils.getComponentRect("EdgesPositionPage_parentFlex");
+      rect = Utils.getComponentRect("EdgesPositionPage_testFlex");
+      console.info("[EdgesPositionTest_0200] (parentRect.top - rect.top): " + (parentRect.top - rect.top));
+      console.info("[EdgesPositionTest_0200] (parentRect.left - rect.left - vp2px(20)): " + (parentRect.left - rect.left - vp2px(20)));
+      expect(Math.floor(Math.abs(parentRect.top - rect.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(parentRect.left - rect.left - vp2px(20))) <= 1).assertTrue();
+
+      // get left
+      button = await driver.findComponent(ON.id('EdgesPositionPage_GetPosition_Btn'));
+      await button.click();
+      console.info("[EdgesPositionTest_0800] click EdgesPositionPage_GetPosition_Btn.");
+      await Utils.sleep(1000);
+
+      strJson = getInspectorByKey('EdgesPositionPage_position_content');
+      obj = JSON.parse(strJson);
+      console.info("[EdgesPositionTest_0200] obj.$attrs.content is: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('top:NULL,left:-20,bottom:NULL,right:NULL');
+
+      // set bottom
+      button = await driver.findComponent(ON.id('EdgesPositionPage_bottom_negative_Btn'));
+      await button.click();
+      console.info("[EdgesPositionTest_0200] click EdgesPositionPage_bottom_negative_Btn.");
+      await Utils.sleep(1000);
+
+      strJson = getInspectorByKey('EdgesPositionPage_testFlex');
+      obj = JSON.parse(strJson);
+      console.info("[EdgesPositionTest_0200] obj.$attrs.position is: " + JSON.stringify(obj.$attrs.position));
+      parentRect = Utils.getComponentRect("EdgesPositionPage_parentFlex");
+      rect = Utils.getComponentRect("EdgesPositionPage_testFlex");
+      console.info("[EdgesPositionTest_0200] (parentRect.left - rect.left): " + (parentRect.left - rect.left));
+      console.info("[EdgesPositionTest_0200] (rect.bottom - parentRect.bottom - vp2px(20)): " + (rect.bottom - parentRect.bottom - vp2px(20)));
+      expect(Math.floor(Math.abs(parentRect.left - rect.left)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(rect.bottom - parentRect.bottom - vp2px(20))) <= 1).assertTrue();
+
+      // get bottom
+      button = await driver.findComponent(ON.id('EdgesPositionPage_GetPosition_Btn'));
+      await button.click();
+      console.info("[EdgesPositionTest_0200] click EdgesPositionPage_GetPosition_Btn.");
+      await Utils.sleep(1000);
+
+      strJson = getInspectorByKey('EdgesPositionPage_position_content');
+      obj = JSON.parse(strJson);
+      console.info("[EdgesPositionTest_0200] obj.$attrs.content is: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('top:NULL,left:NULL,bottom:-20,right:NULL');
+
+      // set right
+      button = await driver.findComponent(ON.id('EdgesPositionPage_right_negative_Btn'));
+      await button.click();
+      console.info("[EdgesPositionTest_0200] click EdgesPositionPage_right_negative_Btn.");
+      await Utils.sleep(1000);
+
+      strJson = getInspectorByKey('EdgesPositionPage_testFlex');
+      obj = JSON.parse(strJson);
+      console.info("[EdgesPositionTest_0200] obj.$attrs.position is: " + JSON.stringify(obj.$attrs.position));
+      parentRect = Utils.getComponentRect("EdgesPositionPage_parentFlex");
+      rect = Utils.getComponentRect("EdgesPositionPage_testFlex");
+      console.info("[EdgesPositionTest_0200] (parentRect.top - rect.top): " + (parentRect.top - rect.top));
+      console.info("[EdgesPositionTest_0200] (rect.right - parentRect.right - vp2px(20)): " + (rect.right - parentRect.right - vp2px(20)));
+      expect(Math.floor(Math.abs(parentRect.top - rect.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(rect.right - parentRect.right - vp2px(20))) <= 1).assertTrue();
+
+      // get right
+      button = await driver.findComponent(ON.id('EdgesPositionPage_GetPosition_Btn'));
+      await button.click();
+      console.info("[EdgesPositionTest_0200] click EdgesPositionPage_GetPosition_Btn.");
+      await Utils.sleep(1000);
+
+      strJson = getInspectorByKey('EdgesPositionPage_position_content');
+      obj = JSON.parse(strJson);
+      console.info("[EdgesPositionTest_0200] obj.$attrs.content is: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('top:NULL,left:NULL,bottom:NULL,right:-20');
+
+      console.info('[EdgesPositionTest_0200] END');
       done();
     });
   })

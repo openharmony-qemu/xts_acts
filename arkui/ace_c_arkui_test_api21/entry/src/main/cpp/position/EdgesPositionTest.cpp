@@ -51,7 +51,7 @@ ArkUI_NodeHandle CreatePositionEdgesNodeHandle(const std::string &tag)
     nodeAPI->setAttribute(column1, NODE_COLUMN_JUSTIFY_CONTENT, &item);
 
     // flex2
-    value[0].f32 = 200;
+    value[0].f32 = 100;
     nodeAPI->setAttribute(flex2, NODE_WIDTH, &item);
     value[0].f32 = 100;
     nodeAPI->setAttribute(flex2, NODE_HEIGHT, &item);
@@ -59,7 +59,7 @@ ArkUI_NodeHandle CreatePositionEdgesNodeHandle(const std::string &tag)
     nodeAPI->setAttribute(flex2, NODE_BACKGROUND_COLOR, &item);
 
     ArkUI_AttributeItem parentStringStyle = {.string = "EdgesPositionPage_parentFlex"};
-    nodeAPI->setAttribute(flex3, NODE_ID, &parentStringStyle);
+    nodeAPI->setAttribute(flex2, NODE_ID, &parentStringStyle);
 
     // flex3
     value[0].f32 = 10;
@@ -748,24 +748,24 @@ std::string getPositionEdges_content(ArkUI_NativeNodeAPI_1 * nodeAPI, ArkUI_Node
         float get_value;
     
         if (OH_ArkUI_PositionEdges_GetTop(edges, &get_value) == ARKUI_ERROR_CODE_PARAM_INVALID) {
-            topStr = "NULL"; //std::to_string(0.0f);
+            topStr = "NULL";
         } else {
-            topStr = std::to_string(get_value);
+            topStr = std::to_string(int(get_value));
         }
         if (OH_ArkUI_PositionEdges_GetLeft(edges, &get_value) == ARKUI_ERROR_CODE_PARAM_INVALID) {
-            leftStr = "NULL"; //std::to_string(0.0f);
+            leftStr = "NULL";
         } else {
-            leftStr = std::to_string(get_value);
+            leftStr = std::to_string(int(get_value));
         }
         if (OH_ArkUI_PositionEdges_GetBottom(edges, &get_value) == ARKUI_ERROR_CODE_PARAM_INVALID) {
-            bottomStr = "NULL"; //std::to_string(0.0f);
+            bottomStr = "NULL";
         } else {
-            bottomStr = std::to_string(get_value);
+            bottomStr = std::to_string(int(get_value));
         }
         if (OH_ArkUI_PositionEdges_GetRight(edges, &get_value) == ARKUI_ERROR_CODE_PARAM_INVALID) {
-            rightStr = "NULL"; //std::to_string(0.0f);
+            rightStr = "NULL";
         } else {
-            rightStr = std::to_string(get_value);
+            rightStr = std::to_string(int(get_value));
         }
         showStr = "top:" + topStr + ",left:" + leftStr + ",bottom:" + bottomStr + ",right:" + rightStr;
     }
