@@ -133,7 +133,7 @@ export default function RelationStoreError12Test() {
      * @tc.type       : Function
      * @tc.level      : Level 2
      */
-    it('RelationStoreError00Test0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('RelationStoreError12Test0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0002 start *************');
         rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
