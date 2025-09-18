@@ -96,13 +96,7 @@ describe("VibratorJsTest_misc_6", function () {
             vibrator.isSupportEffect(INVALID_EFFECT_ID, (error, state) => {
                 if (error) {
                     console.info(TAG + ` isSupportEffect error ,error.code: ${error.code},error.message: ${error.message}`);
-                    if (isAvailable) {
-                        console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
-                        expect(false).assertTrue();
-                    } else {
-                        console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
-                        expect(error.code).assertEqual(401);
-                    }
+                    expect(false).assertTrue();
                     done();
                 } else {
                     console.info(TAG + 'isSupportEffect success');
@@ -411,13 +405,7 @@ describe("VibratorJsTest_misc_6", function () {
             done();
         } catch (error) {
             console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
-            if (isAvailable) {
-                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
-                expect(false).assertTrue();
-            } else {
-                console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
-                expect(error.code).assertEqual(401);
-            }
+            expect(false).assertTrue();
             done();
         }
     })
