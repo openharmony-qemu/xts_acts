@@ -1801,17 +1801,7 @@ void Manager::SetNativeXComponent(std::string &id, OH_NativeXComponent *nativeXC
         return;
     }
 
-    if (nativeXComponentMap_.find(id) == nativeXComponentMap_.end()) {
-        nativeXComponentMap_[id] = nativeXComponent;
-        return;
-    }
-
-    if (nativeXComponentMap_[id] != nativeXComponent) {
-        OH_NativeXComponent *tmp = nativeXComponentMap_[id];
-        delete tmp;
-        tmp = nullptr;
-        nativeXComponentMap_[id] = nativeXComponent;
-    }
+    nativeXComponentMap_[id] = nativeXComponent;
 }
 
 OH_NativeXComponent *Manager::GetNativeXComponent(const std::string &id) { return nativeXComponentMap_[id]; }
