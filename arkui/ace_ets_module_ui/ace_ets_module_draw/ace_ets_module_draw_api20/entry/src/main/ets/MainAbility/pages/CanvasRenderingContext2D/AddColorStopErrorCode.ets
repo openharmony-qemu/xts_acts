@@ -46,8 +46,7 @@ struct AddColorStopErrorCode {
             this.context.fillRect(170, 10, 150, 150)
           } catch(e) {
             let error = e as BusinessError;
-            console.info(`Failed message: ${error.message}, code: ${error.code}`);
-            if(typeof(e === 'BusinessError')){
+            if(typeof(e as BusinessError)){
               this.str = error.code.toString()
             } else{
               console.info('error code is error');
