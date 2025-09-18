@@ -81,50 +81,51 @@ struct WebComponent {
               }
               break;
             }
-            // case "emitWebForceEnableZoom002": {
-            //   try {
-            //     this.isForceZoomEnabled = true;
-            //     this.flag = 2;
-            //     let driver = Driver.create();
-            //     this.isPageEnd = -1
-            //     // this.webController.loadUrl('www.example.com')
-            //     // await waitForExist(()=>this.isPageEnd, this.str, 0);
-            //     // this.isPageEnd = -1;
-            //     this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
-            //     await waitForExist(()=>this.isPageEnd, this.str, 0);
-            //     let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
-            //     await HtmlOne.pinchIn(0.5);
-            //     await Utils.sleep(2000);
-            //   } catch (error) {
-            //     console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-            //   }
-            //   break;
-            // }
+            case "emitWebForceEnableZoom002": {
+              try {
+                this.isForceZoomEnabled = true;
+                this.flag = 2;
+                let driver = Driver.create();
+                this.isPageEnd = -1
+                // this.webController.loadUrl('www.example.com')
+                // await waitForExist(()=>this.isPageEnd, this.str, 0);
+                // this.isPageEnd = -1;
+                this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
+                let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
+                await HtmlOne.pinchIn(0.7);
+                await Utils.sleep(2000);
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+              }
+              break;
+            }
 
-            // case "emitWebForceEnableZoom003": {
-            //   try {
-            //     this.isForceZoomEnabled = false;
-            //     let driver = Driver.create();
-            //     this.isPageEnd = -1
-            //     // this.webController.loadUrl('www.example.com')
-            //     // await waitForExist(()=>this.isPageEnd, this.str, 0);
-            //     // this.isPageEnd = -1;
-            //     this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
-            //     await waitForExist(()=>this.isPageEnd, this.str, 0);
-            //     let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
-            //     await HtmlOne.pinchOut(1.099);
-            //     await Utils.sleep(2000);
-            //     //isForceZoomEnabled设置为false 应该是不触发 this.ScaleChange 应该为false
-            //     if(this.ScaleChange) {
-            //       Utils.emitEvent(false, 20250915)
-            //     } else {
-            //       Utils.emitEvent(true, 20250915)
-            //     }
-            //   } catch (error) {
-            //     console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-            //   }
-            //   break;
-            // }
+            case "emitWebForceEnableZoom003": {
+              try {
+                this.isForceZoomEnabled = false;
+                let driver = Driver.create();
+                this.isPageEnd = -1;
+                this.ScaleChange = false;
+                // this.webController.loadUrl('www.example.com')
+                // await waitForExist(()=>this.isPageEnd, this.str, 0);
+                // this.isPageEnd = -1;
+                this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
+                let HtmlOne = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
+                await HtmlOne.pinchOut(1.099);
+                await Utils.sleep(2000);
+                //isForceZoomEnabled设置为false 应该是不触发 this.ScaleChange 应该为false
+                if(this.ScaleChange) {
+                  Utils.emitEvent(false, 20250915)
+                } else {
+                  Utils.emitEvent(true, 20250915)
+                }
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+              }
+              break;
+            }
 
 
             case "emitWebForceEnableZoom004": {
@@ -133,6 +134,7 @@ struct WebComponent {
                 let driver = Driver.create();
                 this.isPageEnd = -1;
                 this.flag = 2;
+                this.ScaleChange = false;
                 // this.webController.loadUrl('www.example.com')
                 // await waitForExist(()=>this.isPageEnd, this.str, 0);
                 // this.isPageEnd = -1;
@@ -170,10 +172,11 @@ struct WebComponent {
           })
           .onScaleChange((e) => {
             console.info("scale changed new = " + e.newScale + ", old = " + e.oldScale)
+            this.ScaleChange = true;
             if(this.flag == 1) {
               Utils.emitEvent(true, 20250913)
             }  else {
-              this.ScaleChange = true;
+              Utils.emitEvent(true, 20250914)
             }
           })
           .forceEnableZoom(this.isForceZoomEnabled)
