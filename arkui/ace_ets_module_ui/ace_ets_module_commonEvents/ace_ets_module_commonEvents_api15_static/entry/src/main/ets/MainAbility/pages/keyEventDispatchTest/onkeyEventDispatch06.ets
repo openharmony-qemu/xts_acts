@@ -42,14 +42,14 @@ struct onKeyEventExample6 {
 
         console.info("the keyEvent is " + JSON.stringify(event))
         this.keyText = "keyTrigger"
-
+        return false
       })
       Button('KeyEvent')
         .onKeyEvent((event: KeyEvent) => {
 
           console.info("the keyEvent is " + JSON.stringify(event))
           this.keyText = "keyTrigger"
-
+          return false
         })
 
 

@@ -69,6 +69,7 @@ struct KeyEventExample {
               this.label = true;
             }
           }
+          return false
         })
     }.height(300).width('100%').padding(35)
   }

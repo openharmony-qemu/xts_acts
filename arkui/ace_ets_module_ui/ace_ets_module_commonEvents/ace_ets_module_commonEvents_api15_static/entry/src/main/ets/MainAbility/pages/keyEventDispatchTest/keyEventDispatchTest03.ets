@@ -64,7 +64,7 @@ struct KeyEventExample3 {
             this.modifierStatePress = 'fn is press'
           }
           console.info("the child key is " + JSON.stringify(event))
-
+          return false
         })
 
     }.height('100%').width('100%').padding(35)
