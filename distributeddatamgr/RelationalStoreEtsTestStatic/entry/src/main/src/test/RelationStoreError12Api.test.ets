@@ -94,16 +94,16 @@ export default function RelationStoreError12Test() {
 
 
     /**
-     * @tc.name       : RelationStoreError00Test0029
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error00Test_2900
+     * @tc.name       : RelationStoreError12Test0001
+     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error12Test_0100
      * @tc.desc       : Transaction getBlob
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 2
      */
-    it('RelationStoreError00Test0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('RelationStoreError12Test0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0029 start *************');
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0001 start *************');
         rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
         await rdbStore.execute(DROP_TABLE_TEST);
         await rdbStore.execute(CREATE_TABLE_TEST);
@@ -111,23 +111,23 @@ export default function RelationStoreError12Test() {
         let resultSet = await rdbStore.querySql("");
         try {
           let res = resultSet.getBlob(resultSet.getColumnIndex("data4"));
-          hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0029 end *************' + res);
+          hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0001 end *************' + res);
           expect(JSON.stringify(res) == '{"0":1,"1":2,"2":3}').assertFail();
           await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch (err: BusinessError) {
           hilog.info(domain, tag, '%{public}s',
-            '************* RelationStoreError00Test0029 end *************' + err.code + err.message);
+            '************* RelationStoreError12Test0001 end *************' + err.code + err.message);
           expect(err.code == 14800012).assertEqual(true);
           await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         }
-        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0029 end *************');
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0001 end *************');
       })
 
     /**
-     * @tc.name       : RelationStoreError00Test0030
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error00Test_3000
+     * @tc.name       : RelationStoreError12Test0002
+     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error12Test_0200
      * @tc.desc       : Transaction getLong
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -135,7 +135,7 @@ export default function RelationStoreError12Test() {
      */
     it('RelationStoreError00Test0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0030 start *************');
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0002 start *************');
         rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
         await rdbStore.execute(DROP_TABLE_TEST);
         await rdbStore.execute(CREATE_TABLE_TEST);
@@ -143,31 +143,31 @@ export default function RelationStoreError12Test() {
         let resultSet = await rdbStore.querySql("");
         try {
           let res = resultSet.getLong(resultSet.getColumnIndex("data2"));
-          hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0030 end *************' + res);
+          hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0002 end *************' + res);
           expect(res == 10).assertFail();
           await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch (err: BusinessError) {
           hilog.info(domain, tag, '%{public}s',
-            '************* RelationStoreError00Test0030 end *************' + err.code + err.message);
+            '************* RelationStoreError12Test0002 end *************' + err.code + err.message);
           expect(err.code == 14800012).assertEqual(true);
           await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         }
-        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0030 end *************');
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0002 end *************');
       })
 
     /**
-     * @tc.name       : RelationStoreError00Test0031
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error00Test_3100
+     * @tc.name       : RelationStoreError12Test0003
+     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error12Test_0300
      * @tc.desc       : Transaction getLong
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 2
      */
-    it('RelationStoreError00Test0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('RelationStoreError12Test0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0031 start *************');
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0003 start *************');
         rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
         await rdbStore.execute(DROP_TABLE_TEST);
         await rdbStore.execute(CREATE_TABLE_TEST);
@@ -175,30 +175,30 @@ export default function RelationStoreError12Test() {
         let resultSet = await rdbStore.querySql("");
         try {
           let res = resultSet.getString(resultSet.getColumnIndex("data1"));
-          hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0031 end *************' + res);
+          hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0003 end *************' + res);
           expect(res == "hello").assertFail();
           await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch (err: BusinessError) {
           hilog.info(domain, tag, '%{public}s',
-            '************* RelationStoreError00Test0031 end *************' + err.code + err.message);
+            '************* RelationStoreError12Test0003 end *************' + err.code + err.message);
           expect(err.code == 14800012).assertEqual(true);
           await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         }
-        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0031 end *************');
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0003 end *************');
       })
     /**
-     * @tc.name       : RelationStoreError00Test0032
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error00Test_3200
+     * @tc.name       : RelationStoreError12Test0004
+     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error12Test_0400
      * @tc.desc       : Transaction getLong
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 2
      */
-    it('RelationStoreError00Test0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('RelationStoreError12Test0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0032 start *************');
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0004 start *************');
         rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
         await rdbStore.execute(DROP_TABLE_TEST);
         await rdbStore.execute(CREATE_TABLE_TEST);
@@ -206,31 +206,31 @@ export default function RelationStoreError12Test() {
         let resultSet = await rdbStore.querySql("");
         try {
           let res = resultSet.getDouble(resultSet.getColumnIndex("data3"));
-          hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0032 end *************' + res);
+          hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0004 end *************' + res);
           expect(res == 1).assertFail();
           await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch (err: BusinessError) {
           hilog.info(domain, tag, '%{public}s',
-            '************* RelationStoreError00Test0032 end *************' + err.code + err.message);
+            '************* RelationStoreError12Test0004 end *************' + err.code + err.message);
           expect(err.code == 14800012).assertEqual(true);
           await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         }
-        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0032 end *************');
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0004 end *************');
       })
 
     /**
-     * @tc.name       : RelationStoreError00Test0033
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error00Test_3300
+     * @tc.name       : RelationStoreError12Test0005
+     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error12Test_0500
      * @tc.desc       : Transaction getLong
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 2
      */
-    it('RelationStoreError00Test0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('RelationStoreError12Test0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0033 start *************');
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0005 start *************');
         rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
         await rdbStore.execute(DROP_TABLE_TEST);
         await rdbStore.execute(CREATE_TABLE_TEST);
@@ -238,84 +238,32 @@ export default function RelationStoreError12Test() {
         let resultSet = await rdbStore.querySql("");
         try {
           let res = resultSet.getAsset(resultSet.getColumnIndex("data5"));
-          hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0033 end *************' + res);
+          hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0005 end *************' + res);
           expect(JSON.stringify(res) == '{"size":"","uri":"","name":"","path":"","createTime":"","modifyTime":""}')
             .assertFail();
           await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch (err: BusinessError) {
           hilog.info(domain, tag, '%{public}s',
-            '************* RelationStoreError00Test0033 end *************' + err.code + err.message);
+            '************* RelationStoreError12Test0005 end *************' + err.code + err.message);
           expect(err.code == 14800012).assertEqual(true);
           await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         }
-        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0033 end *************');
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0005 end *************');
       })
-    /**
-     * @tc.name       : RelationStoreError00Test0034
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error00Test_3400
-     * @tc.desc       : Transaction getLong
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
-     */
-    // it('RelationStoreError00Test0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-    //   async (done: () => void): Promise<void> => {
-    //     hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0034 start *************');
-    //     rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
-    //     await rdbStore.execute(DROP_TABLE_TEST);
-    //     await rdbStore.execute(CREATE_TABLE_TEST);
-    //     let asset: data_relationalStore.Asset = {
-    //       name: "name1",
-    //       uri: "uri1",
-    //       createTime: "createTime1",
-    //       modifyTime: "modifyTime1",
-    //       size: "size1",
-    //       path: "path1",
-    //       status: data_relationalStore.AssetStatus.ASSET_NORMAL,
-    //     };
-    //     const assets = [asset];
-    //     const valueBucket: data_relationalStore.ValuesBucket = {
-    //       "data1": "hello world 1",
-    //       "data2": 3 as long,
-    //       "data3": 10.5,
-    //       "data4": new Uint8Array([1, 2, 3]),
-    //       "data5": asset,
-    //       "data6": assets,
-    //       "data7": new Float32Array([1.5, 2.5]),
-    //       "data8": 100n
-    //     };
-    //     let num = await (rdbStore as data_relationalStore.RdbStore).insert("test", valueBucket);
-    //     let resultSet = await rdbStore.querySql("");
-    //     try {
-    //       let res = resultSet.getAssets(-1);
-    //       hilog.info(domain, tag, '%{public}s',
-    //         '************* RelationStoreError00Test0034 end *************' + res.length);
-    //       expect(res.length == 0).assertFail();
-    //       await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-    //       done();
-    //     } catch (err: BusinessError) {
-    //       hilog.info(domain, tag, '%{public}s',
-    //         '************* RelationStoreError00Test0034 end *************' + err.code + err.message);
-    //       expect(err.code == 14800012).assertEqual(true);
-    //       await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-    //       done();
-    //     }
-    //     hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0034 end *************');
-    //   })
 
     /**
-     * @tc.name       : RelationStoreError00Test0035
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error00Test_3500
+     * @tc.name       : RelationStoreError12Test0006
+     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error12Test_0600
      * @tc.desc       : Transaction getLong
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 2
      */
-    it('RelationStoreError00Test0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('RelationStoreError12Test0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0035 start *************');
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0006 start *************');
         rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
         await rdbStore.execute(DROP_TABLE_TEST);
         await rdbStore.execute(CREATE_TABLE_TEST);
@@ -323,18 +271,18 @@ export default function RelationStoreError12Test() {
         let resultSet = await rdbStore.querySql("");
         try {
           let res = resultSet.getValue(resultSet.getColumnIndex("data6"));
-          hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0035 end *************' + res);
+          hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0006 end *************' + res);
           expect(res == null).assertFail();
           await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch (err: BusinessError) {
           hilog.info(domain, tag, '%{public}s',
-            '************* RelationStoreError00Test0035 end *************' + err.code + err.message);
+            '************* RelationStoreError12Test0006 end *************' + err.code + err.message);
           expect(err.code == 14800012).assertEqual(true);
           await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         }
-        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0035 end *************');
+        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0006 end *************');
       })
 
 
