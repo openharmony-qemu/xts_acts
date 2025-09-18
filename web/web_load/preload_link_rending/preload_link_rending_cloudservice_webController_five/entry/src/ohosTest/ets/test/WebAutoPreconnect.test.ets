@@ -40,7 +40,7 @@ export default function WebAutoPreconnectTest() {
       done();
     })
 
-    /*
+    /**
     * @tc.number    SUB_WEB_WEBVIEWCONTROLLER_ISAUTOPRECONNECTENABLED_0100
     * @tc.name  testIsAutoPreconnectEnabled
     * @tc.desc  test isAutoPreconnectEnabled return true
@@ -62,7 +62,7 @@ export default function WebAutoPreconnectTest() {
       done();
     })
 
-    /*
+    /**
     * @tc.number    SUB_WEB_WEBVIEWCONTROLLER_SETAUTOPRECONNECT_0100
     * @tc.name  testSetAutoPreconnectFalse
     * @tc.desc  test setAutoPreconnect  false
@@ -86,7 +86,7 @@ export default function WebAutoPreconnectTest() {
       done();
     })
 
-    /*
+    /**
     * @tc.number    SUB_WEB_WEBVIEWCONTROLLER_SETAUTOPRECONNECT_0200
     * @tc.name  testSetAutoPreconnectTrue
     * @tc.desc  test setAutoPreconnect  true
