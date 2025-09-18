@@ -72,8 +72,8 @@ export default function UIAbilityContextStatic() {
           expect(abilityInfo.icon == "$media:layered_image").assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.iconId: ` + abilityInfo.iconId);
           expect(typeof (abilityInfo.iconId) == 'number').assertTrue();
-          hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.applicationInfo: ` + abilityInfo.applicationInfo.name);
-          expect(abilityInfo.applicationInfo.name == "com.example.uiabilitycontexttest.static").assertTrue();
+          hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.applicationInfo: ` + abilityInfo?.applicationInfo?.name);
+          expect(abilityInfo?.applicationInfo?.name == "com.example.uiabilitycontexttest.static").assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.metadata: ` + abilityInfo.metadata.length);
           expect(abilityInfo.metadata.length >= 0).assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 success`);
