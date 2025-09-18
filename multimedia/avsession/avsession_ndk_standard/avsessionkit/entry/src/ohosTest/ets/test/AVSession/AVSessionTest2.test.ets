@@ -21,7 +21,7 @@ const OS_ACCOUNT_ERR_OK = 0;
 export default function AVSessionTest2() {
   describe('AVSessionTest2', () => {
     /**
-     * @tc.number  : testAVSessionRegisterForwardCallback001
+     * @tc.number  : SUB_AVSession_RegisterForwardCallback001
      * @tc.name    : testAVSessionRegisterForwardCallback001
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -41,7 +41,7 @@ export default function AVSessionTest2() {
       });
 
     /**
-     * @tc.number  : testAVSessionRegisterForwardCallback002
+     * @tc.number  : SUB_AVSession_RegisterForwardCallback002
      * @tc.name    : testAVSessionRegisterForwardCallback002
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -61,7 +61,7 @@ export default function AVSessionTest2() {
       });
 
     /**
-     * @tc.number  : testAVSessionUnregisterForwardCallback001
+     * @tc.number  : SUB_AVSession_UnregisterForwardCallback001
      * @tc.name    : testAVSessionUnregisterForwardCallback001
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -81,7 +81,7 @@ export default function AVSessionTest2() {
       });
 
     /**
-     * @tc.number  : testAVSessionUnregisterForwardCallback002
+     * @tc.number  : SUB_AVSession_UnregisterForwardCallback002
      * @tc.name    : testAVSessionUnregisterForwardCallback002
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -100,7 +100,7 @@ export default function AVSessionTest2() {
         }
       });
     /**
-     * @tc.number  : testAVSessionRegisterRewindCallback001
+     * @tc.number  : SUB_AVSession_RegisterRewindCallback001
      * @tc.name    : testAVSessionRegisterRewindCallback001
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -120,7 +120,7 @@ export default function AVSessionTest2() {
       });
 
     /**
-     * @tc.number  : testAVSessionRegisterRewindCallback002
+     * @tc.number  : SUB_AVSession_RegisterRewindCallback002
      * @tc.name    : testAVSessionRegisterRewindCallback002
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -140,7 +140,7 @@ export default function AVSessionTest2() {
       });
 
     /**
-     * @tc.number  : testAVSessionUnregisterRewindCallback001
+     * @tc.number  : SUB_AVSession_UnregisterRewindCallback001
      * @tc.name    : testAVSessionUnregisterRewindCallback001
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -160,7 +160,7 @@ export default function AVSessionTest2() {
       });
 
     /**
-     * @tc.number  : testAVSessionUnregisterRewindCallback002
+     * @tc.number  : SUB_AVSession_UnregisterRewindCallback002
      * @tc.name    : testAVSessionUnregisterRewindCallback002
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -180,7 +180,7 @@ export default function AVSessionTest2() {
       });
 
     /**
-     * @tc.number  : testAVSessionRegisterSeekCallback001
+     * @tc.number  : SUB_AVSession_RegisterSeekCallback001
      * @tc.name    : testAVSessionRegisterSeekCallback001
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -200,7 +200,7 @@ export default function AVSessionTest2() {
       });
 
     /**
-     * @tc.number  : testAVSessionRegisterSeekCallback002
+     * @tc.number  : SUB_AVSession_RegisterSeekCallback002
      * @tc.name    : testAVSessionRegisterSeekCallback002
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -220,7 +220,7 @@ export default function AVSessionTest2() {
       });
 
     /**
-     * @tc.number  : testAVSessionUnregisterSeekCallback001
+     * @tc.number  : SUB_AVSession_UnregisterSeekCallback001
      * @tc.name    : testAVSessionUnregisterSeekCallback001
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -240,7 +240,7 @@ export default function AVSessionTest2() {
       });
 
     /**
-     * @tc.number  : testAVSessionUnregisterSeekCallback002
+     * @tc.number  : SUB_AVSession_UnregisterSeekCallback002
      * @tc.name    : testAVSessionUnregisterSeekCallback002
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -260,7 +260,7 @@ export default function AVSessionTest2() {
       });
 
     /**
-     * @tc.number  : testAVSessionRegisterSetLoopModeCallback001
+     * @tc.number  : SUB_AVSession_RegisterSetLoopModeCallback001
      * @tc.name    : testAVSessionRegisterSetLoopModeCallback001
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -280,7 +280,7 @@ export default function AVSessionTest2() {
       });
 
     /**
-     * @tc.number  : testAVSessionRegisterSetLoopModeCallback002
+     * @tc.number  : SUB_AVSession_RegisterSetLoopModeCallback002
      * @tc.name    : testAVSessionRegisterSetLoopModeCallback002
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -300,7 +300,7 @@ export default function AVSessionTest2() {
       });
 
     /**
-     * @tc.number  : testAVSessionUnregisterSetLoopModeCallback001
+     * @tc.number  : SUB_AVSession_UnregisterSetLoopModeCallback001
      * @tc.name    : testAVSessionUnregisterSetLoopModeCallback001
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -320,7 +320,7 @@ export default function AVSessionTest2() {
       });
 
     /**
-     * @tc.number  : testAVSessionUnregisterSetLoopModeCallback002
+     * @tc.number  : SUB_AVSession_UnregisterSetLoopModeCallback002
      * @tc.name    : testAVSessionUnregisterSetLoopModeCallback002
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -340,7 +340,7 @@ export default function AVSessionTest2() {
       });
 
     /**
-     * @tc.number  : testAVSessionRegisterToggleFavoriteCallback001
+     * @tc.number  : SUB_AVSession_RegisterToggleFavoriteCallback001
      * @tc.name    : testAVSessionRegisterToggleFavoriteCallback001
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -360,7 +360,7 @@ export default function AVSessionTest2() {
       });
 
     /**
-     * @tc.number  : testAVSessionRegisterToggleFavoriteCallback002
+     * @tc.number  : SUB_AVSession_RegisterToggleFavoriteCallback002
      * @tc.name    : testAVSessionRegisterToggleFavoriteCallback002
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -380,7 +380,7 @@ export default function AVSessionTest2() {
       });
 
     /**
-     * @tc.number  : testAVSessionUnregisterToggleFavoriteCallback001
+     * @tc.number  : SUB_AVSession_UnregisterToggleFavoriteCallback001
      * @tc.name    : testAVSessionUnregisterToggleFavoriteCallback001
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -400,7 +400,7 @@ export default function AVSessionTest2() {
       });
 
     /**
-     * @tc.number  : testAVSessionUnregisterToggleFavoriteCallback002
+     * @tc.number  : SUB_AVSession_UnregisterToggleFavoriteCallback002
      * @tc.name    : testAVSessionUnregisterToggleFavoriteCallback002
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -420,7 +420,7 @@ export default function AVSessionTest2() {
       });
 
     /**
-     * @tc.number  : testAVSessionErrorCode001
+     * @tc.number  : SUB_AVSession_ErrorCode001
      * @tc.name    : testAVSessionErrorCode001
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -440,7 +440,7 @@ export default function AVSessionTest2() {
       });
 
     /**
-     * @tc.number  : testAVSessionErrorCode002
+     * @tc.number  : SUB_AVSession_ErrorCode002
      * @tc.name    : testAVSessionErrorCode002
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
@@ -460,7 +460,7 @@ export default function AVSessionTest2() {
       });
 
     /**
-     * @tc.number  : testAVSessionErrorCode003
+     * @tc.number  : SUB_AVSession_ErrorCode003
      * @tc.name    : testAVSessionErrorCode003
      * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level   : Level1
