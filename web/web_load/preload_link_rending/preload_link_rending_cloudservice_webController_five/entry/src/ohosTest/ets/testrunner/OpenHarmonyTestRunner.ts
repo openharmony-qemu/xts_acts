@@ -20,26 +20,26 @@ import Want from '@ohos.app.ability.Want';
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator | undefined = undefined;
 let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs | undefined = undefined;
 
-async function onAbilityCreateCallback(): void {
+async function onAbilityCreateCallback() {
   hilog.info(0x0000, 'testTag', '%{public}s', 'onAbilityCreateCallback');
-}
+};
 
-async function addAbilityMonitorCallback(err : Error): void {
+async function addAbilityMonitorCallback(err : Error) {
   hilog.info(0x0000, 'testTag', 'addAbilityMonitorCallback : %{public}s', JSON.stringify(err) ?? '');
-}
+};
 
 export default class OpenHarmonyTestRunner implements TestRunner {
   constructor() {
-  }
+  };
 
-  void onPrepare() {
+  onPrepare() {
     hilog.info(0x0000, 'testTag', '%{public}s', 'OpenHarmonyTestRunner OnPrepare ');
-  }
+  };
 
-  async onRun(): void {
+  async onRun() {
     hilog.info(0x0000, 'testTag', '%{public}s', 'OpenHarmonyTestRunner onRun run');
-    abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
-    abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments();
+    abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
     const bundleName = abilityDelegatorArguments.bundleName;
     const testAbilityName = 'TestAbility';
     const moduleName = abilityDelegatorArguments.parameters['-m'];
@@ -48,7 +48,7 @@ export default class OpenHarmonyTestRunner implements TestRunner {
       onAbilityCreate: onAbilityCreateCallback,
       moduleName: moduleName
     };
-    abilityDelegator.addAbilityMonitor(lMonitor, addAbilityMonitorCallback)
+    abilityDelegator.addAbilityMonitor(lMonitor, addAbilityMonitorCallback);
     const want: Want = {
       bundleName: bundleName,
       abilityName: testAbilityName,
@@ -60,5 +60,5 @@ export default class OpenHarmonyTestRunner implements TestRunner {
       hilog.info(0x0000, 'testTag', 'startAbility : data : %{public}s', JSON.stringify(data) ?? '');
     });
     hilog.info(0x0000, 'testTag', '%{public}s', 'OpenHarmonyTestRunner onRun end');
-  }
+  };
 }

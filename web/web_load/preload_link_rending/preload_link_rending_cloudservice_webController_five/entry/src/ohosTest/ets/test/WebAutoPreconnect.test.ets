@@ -41,12 +41,12 @@ export default function WebAutoPreconnectTest() {
     })
 
     /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_ISAUTOPRECONNECTENABLED_0100
-    * @tc.name       : testIsAutoPreconnectEnabled
-    * @tc.desc       : test isAutoPreconnectEnabled return true
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
+    * @tc.number    SUB_WEB_WEBVIEWCONTROLLER_ISAUTOPRECONNECTENABLED_0100
+    * @tc.name  testIsAutoPreconnectEnabled
+    * @tc.desc  test isAutoPreconnectEnabled return true
+    * @tc.size  MediumTest
+    * @tc.type  Function
+    * @tc.level Level 0
     */
     it('testIsAutoPreconnectEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info("testIsAutoPreconnectEnabled start");
@@ -63,12 +63,12 @@ export default function WebAutoPreconnectTest() {
     })
 
     /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SETAUTOPRECONNECT_0100
-    * @tc.name       : testSetAutoPreconnectFalse
-    * @tc.desc       : test setAutoPreconnect  false
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
+    * @tc.number    SUB_WEB_WEBVIEWCONTROLLER_SETAUTOPRECONNECT_0100
+    * @tc.name  testSetAutoPreconnectFalse
+    * @tc.desc  test setAutoPreconnect  false
+    * @tc.size  MediumTest
+    * @tc.type  Function
+    * @tc.level Level 0
     */
     it('testSetAutoPreconnectFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info("testSetAutoPreconnectFalse start");
@@ -87,12 +87,12 @@ export default function WebAutoPreconnectTest() {
     })
 
     /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SETAUTOPRECONNECT_0200
-    * @tc.name       : testSetAutoPreconnectTrue
-    * @tc.desc       : test setAutoPreconnect  true
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
+    * @tc.number    SUB_WEB_WEBVIEWCONTROLLER_SETAUTOPRECONNECT_0200
+    * @tc.name  testSetAutoPreconnectTrue
+    * @tc.desc  test setAutoPreconnect  true
+    * @tc.size  MediumTest
+    * @tc.type  Function
+    * @tc.level Level 0
     */
     it('testSetAutoPreconnectTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info("testSetAutoPreconnectTrue start");
