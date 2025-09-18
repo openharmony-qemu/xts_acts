@@ -16,8 +16,10 @@
 import { webview } from '@kit.ArkWeb';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { URL } from '../../test/Config';
-import { temp } from '../../test/Const';
-import { LocalContext } from '../../test/GloablConfig';
+import Utils from '../../test/Util';
+import events_emitter from '@ohos.events.emitter';
+import JSON from '@ohos.util.json';
+import { waitForExist } from '../../test/WaitTest.test';
 
 
 @Entry
@@ -27,18 +29,47 @@ struct WebComponent {
   delegate: webview.WebDownloadDelegate = new webview.WebDownloadDelegate();
   download: webview.WebDownloadItem = new webview.WebDownloadItem();
   failedData: Uint8Array = new Uint8Array();
+  @State emitKey: string = '';
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+
+  onPageShow() {
+    let valueChangeEvent: events_emitter.InnerEvent = {
+      eventId: 130730,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(130730);
+  }
+
+  private valueChangeCallBack = (eventData: events_emitter.EventData) => {
+    if (eventData != null) {
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+      if (eventData.data != null && eventData.data.ACTION != null) {
+        this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
+      }
+    }
+  }
 
   build(){
     Column() {
       Button('setDownloadDelegate')
-        .key('05')
-        .onClick(() => {
+        .key('01')
+        .onClick(async () => {
+          console.info('key==>' + this.emitKey);
+          await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+          await waitForExist(()=>this.isReceive, this.emitKey, 0);
+          this.isReceive = -1;
           try {
             this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
               console.log('will start a download.');
               let ret:webview.WebDownloadState = webDownloadItem.getState()
               console.log('download ret: ' + ret);
-              LocalContext.context.eventHub.emit('WebDownloadState', ret.toString())
+              Utils.emitEvent(ret.toString(), 130750);
             })
             this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download update percent complete: ' + webDownloadItem.getPercentComplete());
@@ -56,11 +87,6 @@ struct WebComponent {
           } catch (error) {
             console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
-        })
-
-      Button('startDownload')
-        .key('06')
-        .onClick(() => {
           try {
             console.log('will start a startDownload.');
             this.controller.startDownload(URL);
@@ -69,6 +95,10 @@ struct WebComponent {
           }
         })
       Web({ src: URL, controller: this.controller })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
     }
   }
 }
