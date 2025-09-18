@@ -5813,8 +5813,6 @@ static napi_value NapiExtensionTest003(napi_env env, napi_callback_info info)
     return result;
 }
 
-
-
 // 创建普通优先级测试回调函数
 static napi_value CreateNormalPriorityCallback(napi_env env)
 {
