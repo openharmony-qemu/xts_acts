@@ -224,27 +224,26 @@ struct MetaViewport {
                 this.controller.loadUrl($rawfile("viewport.html"))
                 await waitForExist(() => this.isComplete, this.str, 0);
                 this.isMetaViewport = null;
+                this.isComplete = -1;
                 this.controller.refresh();
-                this.controller.runJavaScript("getWidth()", (err, res) => {
-                  console.info("Initial viewport width ==> getWidth():" + res)
-                  this.initInnerWidth = res;
-                })
+                await waitForExist(() => this.isComplete, this.str, 0);
                 this.controller.runJavaScript("getWidth()", (err, res) => {
                   console.info("Modified viewport width ==> getWidth():" + res)
-                  if (res == this.initInnerWidth) {
+                  if (res != this.initInnerWidth) {
                     value = true;
                   }
                 })
-                await Utils.sleep(3000);
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
-              this.userAgentPC = this.controller.getUserAgent();
-              if ((this.userAgentPC).includes("PC")) {
-                Utils.emitEvent(true, 150350)
-              } else {
-                Utils.emitEvent(value, 150350)
-              }
+              setTimeout(() => {
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(true, 150350)
+                } else {
+                  Utils.emitEvent(value, 150350)
+                }
+              }, 3000)
               break;
             }
             case "metaViewport0700": {
