@@ -33,7 +33,6 @@ import {
   TextAttribute,
   TouchObject,
   TouchType,
-  UserView
 } from '@ohos.arkui.component' // TextAttribute should be insert by ui-plugins
 import inspector from '@ohos.arkui.inspector'
 import { sendTouchEvent } from '@internal.full.global';

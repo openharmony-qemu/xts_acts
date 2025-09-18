@@ -14,7 +14,7 @@
  */
 import RectValue from './Rect';
 import { memo, __memo_context_type, __memo_id_type } from '@ohos.arkui.stateManagement'
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, UserView, TouchObject, TouchType } from '@ohos.arkui.component'
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, TouchObject, TouchType } from '@ohos.arkui.component'
 import { State, MutableState, stateOf, observableProxy } from '@ohos.arkui.stateManagement'
 import inspector from '@ohos.arkui.inspector'
 import { sendTouchEvent } from "@internal.full.global";

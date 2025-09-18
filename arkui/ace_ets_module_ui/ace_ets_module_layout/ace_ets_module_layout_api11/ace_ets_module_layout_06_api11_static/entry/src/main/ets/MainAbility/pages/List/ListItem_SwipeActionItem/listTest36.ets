@@ -41,7 +41,6 @@ import {
   Text,
   TextAlign,
   TextAttribute,
-  UserView,
   Builder,
   Row,
   List,

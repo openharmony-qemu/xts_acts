@@ -19,7 +19,7 @@ import { MessageManager, Callback, Message } from '../../../../common/MessageMan
 import { Router } from '@ohos.arkui.UIContext';
 import GlobalContext from '../../../../common/GlobalContext';
 import { FaceValue } from '../../../../common/Value';
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, UserView,Image,ImageFit, Scroller,
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Image,ImageFit, Scroller,
   Scroll,
   ForEach,
   Search,

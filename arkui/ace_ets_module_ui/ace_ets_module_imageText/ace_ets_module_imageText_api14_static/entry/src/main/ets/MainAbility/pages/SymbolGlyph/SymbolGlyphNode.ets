@@ -14,7 +14,7 @@
  */
 
 
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, UserView,Image,ImageFit,ColumnOptions,HorizontalAlign } from '@ohos.arkui.component'
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Image,ImageFit,ColumnOptions,HorizontalAlign } from '@ohos.arkui.component'
 import {
   State,
   MutableState,

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent,
-  UserView,Image,ImageFit, CaretOffset, SearchController, TextAlign, Search, Row, Color } from '@ohos.arkui.component'  
+  Image,ImageFit, CaretOffset, SearchController, TextAlign, Search, Row, Color } from '@ohos.arkui.component'  
 import { State, MutableState, stateOf, observableProxy } from '@ohos.arkui.stateManagement' 
 
 @Entry

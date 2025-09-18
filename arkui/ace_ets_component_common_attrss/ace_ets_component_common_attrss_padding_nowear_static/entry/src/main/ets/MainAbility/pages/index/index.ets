@@ -22,7 +22,6 @@ import {
   Component,
   Button,
   ButtonAttribute,
-  UserView,
   Image,
   ImageFit,
   Scroller,

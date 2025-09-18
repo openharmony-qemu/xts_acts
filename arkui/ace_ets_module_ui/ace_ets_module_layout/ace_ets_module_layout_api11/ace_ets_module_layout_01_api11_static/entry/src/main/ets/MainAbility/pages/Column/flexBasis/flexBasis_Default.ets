@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { MessageManager, Callback, Message } from '../../../common/MessageManager';
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, UserView,Image,ImageFit, Scroller,
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Image,ImageFit, Scroller,
   Scroll,
   ForEach,
   Search,
