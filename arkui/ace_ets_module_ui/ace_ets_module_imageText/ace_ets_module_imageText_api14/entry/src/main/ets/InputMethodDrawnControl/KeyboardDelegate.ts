@@ -55,7 +55,11 @@ export class KeyboardDelegate {
         
         commoneventmanager.createSubscriber(commonEventSubscribeInfo).then(function (data) {
           subscriber = data;
-          commoneventmanager.subscribe(subscriber, subscriberCallback)
+          try{
+            commoneventmanager.subscribe(subscriber, subscriberCallback)
+          }catch(error){
+            console.error(TAG + '====>Failed to subscribe in KeyboardDelegate:', error);
+          }
           console.info(TAG + '====>scene subscribe finish====');
         }).catch((error)=>{
             console.error(TAG + '====>Failed to createSubscriber in KeyboardDelegate:', error);
