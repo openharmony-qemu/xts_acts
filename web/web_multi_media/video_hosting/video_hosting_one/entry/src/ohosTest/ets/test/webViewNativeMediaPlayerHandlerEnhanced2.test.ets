@@ -63,9 +63,7 @@ export default function webViewNativeMediaPlayerHandlerEnhanced2() {
       emitKey = "emitWebViewNativeMediaPlayerEnableTrueShouldOverlayTrue"
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testWebViewNativeMediaPlayerEnableTrueShouldOverlayTrue", true, 362070, done);
-      let driver = Driver.create();
-      let StartModel = await driver.findComponent(ON.id("webViewNativeMediaPlayerHandlerEnhanced"));
-      await StartModel.click();
+      sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
     /*
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0600
@@ -79,9 +77,7 @@ export default function webViewNativeMediaPlayerHandlerEnhanced2() {
       emitKey = "emitWebViewNativeMediaPlayerAudio"
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testWebViewNativeMediaPlayerAudio", true, 362080, done);
-      let driver = Driver.create();
-      let StartModel = await driver.findComponent(ON.id("webViewNativeMediaPlayerHandlerEnhanced"));
-      await StartModel.click();
+      sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
     /*
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0700
@@ -95,9 +91,7 @@ export default function webViewNativeMediaPlayerHandlerEnhanced2() {
       emitKey = "emitWebViewNativeMediaPlayerMediaSrcUrl"
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testWebViewNativeMediaPlayerMediaSrcUrl", true, 362090, done);
-      let driver = Driver.create();
-      let StartModel = await driver.findComponent(ON.id("webViewNativeMediaPlayerHandlerEnhanced"));
-      await StartModel.click();
+      sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
     /*
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_2600
@@ -111,9 +105,7 @@ export default function webViewNativeMediaPlayerHandlerEnhanced2() {
       emitKey = "emitWebViewNativeMediaPlayerHandleStatusChangedPause"
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testWebViewNativeMediaPlayerHandleStatusChangedPause", true, 362100, done);
-      let driver = Driver.create();
-      let StartModel = await driver.findComponent(ON.id("webViewNativeMediaPlayerHandlerEnhanced"));
-      await StartModel.click();
+      sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
     /*
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_2700
@@ -124,12 +116,10 @@ export default function webViewNativeMediaPlayerHandlerEnhanced2() {
      *@tc.level Level 1
      */
     it('testWebViewNativeMediaPlayerHandleStatusChangedPlaying', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      emitKey = "emitWebViewNativeMediaPlayerHandleStatusChangedPause"
+      emitKey = "emitWebViewNativeMediaPlayerHandleStatusChangedPlaying"
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testWebViewNativeMediaPlayerHandleStatusChangedPlaying", true, 362110, done);
-      let driver = Driver.create();
-      let StartModel = await driver.findComponent(ON.id("webViewNativeMediaPlayerHandlerEnhanced"));
-      await StartModel.click();
+      sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
   })
 }
