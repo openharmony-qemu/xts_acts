@@ -287,5 +287,7 @@ struct LazyForEach0470 {
         this.swipeStartIndex = start
       })
     }
+    .height('90%')
+    .margin({top: '2%'})
   }
 }

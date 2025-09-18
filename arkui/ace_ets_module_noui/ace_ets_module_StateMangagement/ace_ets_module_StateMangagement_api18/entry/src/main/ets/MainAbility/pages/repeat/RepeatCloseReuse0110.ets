@@ -46,6 +46,8 @@ struct RepeatCloseReuse0110 {
       }
       .layoutWeight(1)
     }
+    .height('90%')
+    .margin({top: '2%'})
   }
 }
 
