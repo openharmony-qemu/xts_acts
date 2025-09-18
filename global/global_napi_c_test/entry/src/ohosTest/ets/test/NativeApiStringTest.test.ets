@@ -30,12 +30,12 @@ export default function abilityTest() {
     })
 
     /* *
-    * @tc.number    : SUB_GLOBAL_OH_ResourceManager_GetMediaBase64_0100
-    * @tc.name      : TestGetMediaBase640100
-    * @tc.desc      : getResourceManager with folder
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 0
+    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetMediaBase64_0100
+    * @tc.name      TestGetMediaBase640100
+    * @tc.desc      getResourceManager with folder
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
     */
     it('TestGetMediaBase640100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
@@ -51,12 +51,12 @@ export default function abilityTest() {
       })
 
     /* *
-    * @tc.number    : SUB_GLOBAL_OH_ResourceManager_GetMediaBase64_0200
-    * @tc.name      : TestGetMediaBase640200
-    * @tc.desc      : getResourceManager with folder
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 0
+    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetMediaBase64_0200
+    * @tc.name      TestGetMediaBase640200
+    * @tc.desc      getResourceManager with folder
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
     */
     it('TestGetMediaBase640200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
@@ -72,12 +72,12 @@ export default function abilityTest() {
       })
 
     /* *
-    * @tc.number    : SUB_GLOBAL_OH_ResourceManager_GetMediaBase64_0300
-    * @tc.name      : TestGetMediaBase640300
-    * @tc.desc      : getResourceManager with folder
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 0
+    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetMediaBase64_0300
+    * @tc.name      TestGetMediaBase640300
+    * @tc.desc      getResourceManager with folder
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
     */
     it('TestGetMediaBase640300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
@@ -93,12 +93,12 @@ export default function abilityTest() {
       })
 
     /* *
-    * @tc.number    : SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATA_0100
-    * @tc.name      : TestGetMediaBase64Data0100
-    * @tc.desc      : getResourceManager with folder
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 0
+    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATA_0100
+    * @tc.name      TestGetMediaBase64Data0100
+    * @tc.desc      getResourceManager with folder
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
     */
     it('TestGetMediaBase64Data0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
@@ -114,12 +114,12 @@ export default function abilityTest() {
       })
 
     /* *
-    * @tc.number    : SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATA_0200
-    * @tc.name      : TestGetMediaBase64Data0200
-    * @tc.desc      : getResourceManager with folder
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 0
+    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATA_0200
+    * @tc.name      TestGetMediaBase64Data0200
+    * @tc.desc      getResourceManager with folder
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
     */
     it('TestGetMediaBase64Data0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
@@ -135,12 +135,12 @@ export default function abilityTest() {
       })
 
     /* *
-    * @tc.number    : SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATA_0300
-    * @tc.name      : TestGetMediaBase64Data0300
-    * @tc.desc      : getResourceManager with folder
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 0
+    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATA_0300
+    * @tc.name      TestGetMediaBase64Data0300
+    * @tc.desc      getResourceManager with folder
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
     */
     it('TestGetMediaBase64Data0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
