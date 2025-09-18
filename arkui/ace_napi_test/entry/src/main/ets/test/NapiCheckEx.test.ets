@@ -2085,5 +2085,256 @@ export default function napiCheckExTest() {
         expect().assertFail();
       }
     });    
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0001
+     * @tc.name      testPrimitiveTest01
+     * @tc.desc      Verify concurrent access to the global object and property read without errors
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testPrimitiveTest01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('[testPrimitiveTest01] START');
+      try {
+        let result: boolean = napitestex.NapiPrimitiveTest01();
+        expect(result).assertTrue();
+        console.info('[testPrimitiveTest01] PASS');
+      } catch (err) {
+        console.error('[testPrimitiveTest01] ERROR. err.message: ' + err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0002
+     * @tc.name      testPrimitiveTest02
+     * @tc.desc      Verify multi-threaded coercions (bool/number/string/object) and global access without errors
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testPrimitiveTest02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('[testPrimitiveTest02] START');
+      try {
+        let result: boolean = napitestex.NapiPrimitiveTest02();
+        expect(result).assertTrue();
+        console.info('[testPrimitiveTest02] PASS');
+      } catch (err) {
+        console.error('[testPrimitiveTest02] ERROR. err.message: ' + err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0003
+     * @tc.name      testPrimitiveTest03
+     * @tc.desc      Verify multiple threads concurrently call value getters (boolean/null/undefined/get_value_bool)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testPrimitiveTest03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('[testPrimitiveTest03] START');
+      try {
+        let result: boolean = napitestex.NapiPrimitiveTest03();
+        expect(result).assertTrue();
+        console.info('[testPrimitiveTest03] PASS');
+      } catch (err) {
+        console.error('[testPrimitiveTest03] ERROR. err.message: ' + err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0004
+     * @tc.name      testPrimitiveTest04
+     * @tc.desc      Boolean conversion chain
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testPrimitiveTest04', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('[testPrimitiveTest04] START');
+      try {
+        let result: boolean = napitestex.NapiPrimitiveTest04();
+        expect(result).assertTrue();
+        console.info('[testPrimitiveTest04] PASS');
+      } catch (err) {
+        console.error('[testPrimitiveTest04] ERROR. err.message: ' + err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0005
+     * @tc.name      testPrimitiveTest05
+     * @tc.desc      Multi-level type coercion
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testPrimitiveTest05', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('[testPrimitiveTest05] START');
+      try {
+        let result: boolean = napitestex.NapiPrimitiveTest05();
+        expect(result).assertTrue();
+        console.info('[testPrimitiveTest05] PASS');
+      } catch (err) {
+        console.error('[testPrimitiveTest05] ERROR. err.message: ' + err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0006
+     * @tc.name      testPrimitiveTest06
+     * @tc.desc      Global object property operations
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testPrimitiveTest06', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('[testPrimitiveTest06] START');
+      try {
+        let result: boolean = napitestex.NapiPrimitiveTest06();
+        expect(result).assertTrue();
+        console.info('[testPrimitiveTest06] PASS');
+      } catch (err) {
+        console.error('[testPrimitiveTest06] ERROR. err.message: ' + err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0007
+     * @tc.name      testPrimitiveTest07
+     * @tc.desc      Global object interactions with null and undefined
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testPrimitiveTest07', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('[testPrimitiveTest07] START');
+      try {
+        let result: boolean = napitestex.NapiPrimitiveTest07();
+        expect(result).assertTrue();
+        console.info('[testPrimitiveTest07] PASS');
+      } catch (err) {
+        console.error('[testPrimitiveTest07] ERROR. err.message: ' + err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0008
+     * @tc.name      testPrimitiveTest08
+     * @tc.desc      Extreme value conversion (MAX_VALUE/MIN_VALUE) round-trip
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testPrimitiveTest08', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('[testPrimitiveTest08] START');
+      try {
+        let result: boolean = napitestex.NapiPrimitiveTest08();
+        expect(result).assertTrue();
+        console.info('[testPrimitiveTest08] PASS');
+      } catch (err) {
+        console.error('[testPrimitiveTest08] ERROR. err.message: ' + err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0009
+     * @tc.name      testPrimitiveTest09
+     * @tc.desc      Null/undefined coercion to bool/number/string; ToObject should fail
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testPrimitiveTest09', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('[testPrimitiveTest09] START');
+      try {
+        let result: boolean = napitestex.NapiPrimitiveTest09();
+        expect(result).assertTrue();
+        console.info('[testPrimitiveTest09] PASS');
+      } catch (err) {
+        console.error('[testPrimitiveTest09] ERROR. err.message: ' + err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0010
+     * @tc.name      testPrimitiveTest10
+     * @tc.desc      Error conversion: BigInt to number should throw; bool coercion ok
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testPrimitiveTest10', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('[testPrimitiveTest10] START');
+      try {
+        let result: boolean = napitestex.NapiPrimitiveTest10();
+        expect(result).assertTrue();
+      } catch (err) {
+        console.info('[testPrimitiveTest10] throw error, err.message: ' + err.message);
+        expect(err.message).assertEqual('Cannot convert a BigInt value to a number');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0011
+     * @tc.name      testPrimitiveTest11
+     * @tc.desc      Object with circular reference; stringify coercion should return string or throw
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testPrimitiveTest11', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('[testPrimitiveTest11] START');
+      try {
+        let result: boolean = napitestex.NapiPrimitiveTest11();
+        expect(result).assertTrue();
+        console.info('[testPrimitiveTest11] PASS');
+      } catch (err) {
+        console.error('[testPrimitiveTest11] ERROR. err.message: ' + err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_PRIMITIVE_0012
+     * @tc.name      testPrimitiveTest12
+     * @tc.desc      Function object coercion to string (source or identifier)
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testPrimitiveTest12', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('[testPrimitiveTest12] START');
+      try {
+        let result: boolean = napitestex.NapiPrimitiveTest12();
+        expect(result).assertTrue();
+        console.info('[testPrimitiveTest12] PASS');
+      } catch (err) {
+        console.error('[testPrimitiveTest12] ERROR. err.message: ' + err.message);
+        expect().assertFail();
+      }
+      done();
+    });
   })
 }
