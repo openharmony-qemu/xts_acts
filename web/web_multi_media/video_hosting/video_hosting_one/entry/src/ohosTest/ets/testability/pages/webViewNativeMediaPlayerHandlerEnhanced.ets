@@ -1336,7 +1336,7 @@ struct WebComponent {
                           this.nativePlayer?.pause()
                           break;
                       }
-                      case 'emitWebViewNativeMediaPlayerHandleStatusChangedPause': {
+                      case 'emitWebViewNativeMediaPlayerHandleStatusChangedPlaying': {
                           this.isPageEnd = -1;
                           this.controller.loadUrl($rawfile('nativeMediaPlayerHandler.html'))
                           await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
@@ -1475,8 +1475,8 @@ struct WebComponent {
                       console.error('exit onPageBegin');
                   })
                   .onPageEnd((event) => {
-                      console.log('dwb onPageEnd url:' + event.url);
-                      console.info("dwb this.isPageEnd = 1");
+                      console.log('onPageEnd url:' + event.url);
+                      console.info("this.isPageEnd = 1");
                       this.isPageEnd = 1;
                   })
                   .width('100%')
