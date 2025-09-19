@@ -108,7 +108,7 @@ void AddInputMethodTextEditorProxyCapiTest2(std::vector<napi_property_descriptor
     descData.push_back({"testOhTextEditorProxySetSetPreviewTextFuncOk", nullptr,
                         TestOhTextEditorProxySetSetPreviewTextFuncOk, nullptr, nullptr, nullptr, napi_default,
                         nullptr});
-     descData.push_back({"testOhTextEditorProxySetFinishTextPreviewFuncNullPointer", nullptr,
+    descData.push_back({"testOhTextEditorProxySetFinishTextPreviewFuncNullPointer", nullptr,
                         TestOhTextEditorProxySetFinishTextPreviewFuncNullPointer, nullptr, nullptr, nullptr,
                         napi_default, nullptr});
     descData.push_back({"testOhTextEditorProxySetFinishTextPreviewFuncOk", nullptr,
@@ -188,13 +188,13 @@ void HandleExtendActionFunc2(InputMethod_TextEditorProxy *textEditorProxy, Input
 }
 
 void GetLeftTextOfCursorFunc2(InputMethod_TextEditorProxy *textEditorProxy, int32_t number, char16_t text[],
-                             size_t *length)
+                              size_t *length)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>GetLeftTextOfCursorFunc2 successful.");
 }
 
 void GetRightTextOfCursorFunc2(InputMethod_TextEditorProxy *textEditorProxy, int32_t number, char16_t text[],
-                              size_t *length)
+                               size_t *length)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>GetRightTextOfCursorFunc2 successful.");
 }
@@ -206,14 +206,14 @@ int32_t GetTextIndexAtCursorFunc2(InputMethod_TextEditorProxy *textEditorProxy)
 }
 
 int32_t ReceivePrivateCommandFunc2(InputMethod_TextEditorProxy *textEditorProxy,
-                                  InputMethod_PrivateCommand *privateCommand[], size_t size)
+                                   InputMethod_PrivateCommand *privateCommand[], size_t size)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>ReceivePrivateCommandFunc2 successful.");
     return 0;
 }
 
 int32_t SetPreviewTextFunc2(InputMethod_TextEditorProxy *textEditorProxy, const char16_t text[], size_t length,
-                           int32_t start, int32_t end)
+                            int32_t start, int32_t end)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>SetPreviewTextFunc2 successful.");
     return 0;
