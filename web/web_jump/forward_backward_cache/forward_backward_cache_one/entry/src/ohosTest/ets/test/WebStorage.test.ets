@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,16 +13,18 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { afterEach, beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+
 export default function webStorage() {
-
   describe('WebStorageTestSuite', () => {
-
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'testability/pages/webStorage',
@@ -30,34 +32,32 @@ export default function webStorage() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get webStorage state success " + JSON.stringify(pages));
-        if (!("webStorage" == pages.name)) {
-          console.info("get webStorage state success " + JSON.stringify(pages.name));
+        console.info('get webStorage state success ' + JSON.stringify(pages));
+        if (!('webStorage' == pages.name)) {
+          console.info('get webStorage state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push webStorage page success " + JSON.stringify(result));
+          console.info('push webStorage page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push webStorage page error: " + err);
+        console.error('push webStorage page error: ' + err);
       }
+      await waitForComponent('WebStorageButton');
       done()
     });
 
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
-      console.info("webStorage beforeEach start");
+      console.info('webStorage beforeEach start');
       done();
     })
 
     afterEach(async (done: Function) => {
-      console.info("webStorage afterEach start");
-      await Utils.sleep(1000);
-      console.info("webStorage afterEach end");
+      console.info('webStorage afterEach start');
+      console.info('webStorage afterEach end');
       done();
     })
 
@@ -70,9 +70,8 @@ export default function webStorage() {
     * @tc.level      : Level 0
     */
     it('testGetOrigins001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("testGetOrigins001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetOrigins001", "resource://rawfile/", 20340, done);
+      Utils.emitEvent('testGetOrigins001', 134900)
+      Utils.registerEvent('testGetOrigins001', 'resource://rawfile/', 134910, done);
       sendEventByKey('WebStorageButton', 10, '');
     })
 
@@ -85,9 +84,8 @@ export default function webStorage() {
     * @tc.level      : Level 1
     */
     it('testGetOrigins002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetOrigins002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetOrigins002", "resource://rawfile/", 20341, done);
+      Utils.emitEvent('testGetOrigins002', 134900)
+      Utils.registerEvent('testGetOrigins002', 'resource://rawfile/', 134920, done);
       sendEventByKey('WebStorageButton', 10, '');
     })
 
@@ -100,9 +98,8 @@ export default function webStorage() {
     * @tc.level      : Level 1
     */
     it('testWebStorageOriginOrigin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebStorageOriginOrigin001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebStorageOriginOrigin001", "resource://rawfile/", 20342, done);
+      Utils.emitEvent('testWebStorageOriginOrigin001', 134900)
+      Utils.registerEvent('testWebStorageOriginOrigin001', 'resource://rawfile/', 134930, done);
       sendEventByKey('WebStorageButton', 10, '');
     })
 
@@ -115,9 +112,8 @@ export default function webStorage() {
     * @tc.level      : Level 1
     */
     it('testWebStorageOriginUsage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebStorageOriginUsage001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebStorageOriginUsage001", true, 20343, done);
+      Utils.emitEvent('testWebStorageOriginUsage001', 134900)
+      Utils.registerEvent('testWebStorageOriginUsage001', true, 134940, done);
       sendEventByKey('WebStorageButton', 10, '');
     })
 
@@ -130,9 +126,8 @@ export default function webStorage() {
     * @tc.level      : Level 1
     */
     it('testWebStorageOriginQuota001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebStorageOriginQuota001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebStorageOriginQuota001", true, 20344, done);
+      Utils.emitEvent('testWebStorageOriginQuota001', 134900)
+      Utils.registerEvent('testWebStorageOriginQuota001', true, 134950, done);
       sendEventByKey('WebStorageButton', 10, '');
     })
 
@@ -144,12 +139,12 @@ export default function webStorage() {
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
-    it('testWebStorageOriginGetOrigins001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebStorageOriginGetOrigins001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebStorageOriginGetOrigins001", true, 100037, done);
-      sendEventByKey('WebStorageButton', 10, '');
-    })
+    it('testWebStorageOriginGetOrigins001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('testWebStorageOriginGetOrigins001', 134900)
+        Utils.registerEvent('testWebStorageOriginGetOrigins001', true, 134960, done);
+        sendEventByKey('WebStorageButton', 10, '');
+      })
 
     /*
     * @tc.number     : SUB_WEB_WEBSTORAGEORIGIN_GETORIGINQUOTA_0100
@@ -159,12 +154,12 @@ export default function webStorage() {
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
-    it('testWebStorageOriginGetOriginQuota001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebStorageOriginGetOriginQuota001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebStorageOriginGetOriginQuota001", true, 100038, done);
-      sendEventByKey('WebStorageButton', 10, '');
-    })
+    it('testWebStorageOriginGetOriginQuota001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('testWebStorageOriginGetOriginQuota001', 134900)
+        Utils.registerEvent('testWebStorageOriginGetOriginQuota001', true, 134970, done);
+        sendEventByKey('WebStorageButton', 10, '');
+      })
 
     /*
     * @tc.number     : SUB_WEB_WEBSTORAGEORIGIN_GETORIGINQUOTA_0200
@@ -174,12 +169,12 @@ export default function webStorage() {
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
-    it('testWebStorageOriginGetOriginQuota002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebStorageOriginGetOriginQuota002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebStorageOriginGetOriginQuota002", true, 100039, done);
-      sendEventByKey('WebStorageButton', 10, '');
-    })
+    it('testWebStorageOriginGetOriginQuota002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('testWebStorageOriginGetOriginQuota002', 134900)
+        Utils.registerEvent('testWebStorageOriginGetOriginQuota002', true, 134980, done);
+        sendEventByKey('WebStorageButton', 10, '');
+      })
 
     /*
     * @tc.number     : SUB_WEB_WEBSTORAGEORIGIN_GETORIGINUSAGE_0100
@@ -189,12 +184,12 @@ export default function webStorage() {
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
-    it('testWebStorageOriginGetOriginUsage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebStorageOriginGetOriginUsage001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebStorageOriginGetOriginUsage001", true, 100040, done);
-      sendEventByKey('WebStorageButton', 10, '');
-    })
+    it('testWebStorageOriginGetOriginUsage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('testWebStorageOriginGetOriginUsage001', 134900)
+        Utils.registerEvent('testWebStorageOriginGetOriginUsage001', true, 134990, done);
+        sendEventByKey('WebStorageButton', 10, '');
+      })
 
     /*
     * @tc.number     : SUB_WEB_WEBSTORAGEORIGIN_GETORIGINUSAGE_0200
@@ -204,12 +199,12 @@ export default function webStorage() {
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
-    it('testWebStorageOriginGetOriginUsage002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebStorageOriginGetOriginUsage002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebStorageOriginGetOriginUsage002", true, 100041, done);
-      sendEventByKey('WebStorageButton', 10, '');
-    })
+    it('testWebStorageOriginGetOriginUsage002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('testWebStorageOriginGetOriginUsage002', 134900)
+        Utils.registerEvent('testWebStorageOriginGetOriginUsage002', true, 135000, done);
+        sendEventByKey('WebStorageButton', 10, '');
+      })
 
     /*
     * @tc.number     : SUB_WEB_DELETEALLDATA_0100
@@ -220,9 +215,8 @@ export default function webStorage() {
     * @tc.level      : Level 1
     */
     it('testDeleteAllData001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testDeleteAllData001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testDeleteAllData001", 0, 20345, done);
+      Utils.emitEvent('testDeleteAllData001', 134900)
+      Utils.registerEvent('testDeleteAllData001', 0, 135010, done);
       sendEventByKey('WebStorageButton', 10, '');
     })
 
@@ -235,11 +229,9 @@ export default function webStorage() {
     * @tc.level      : Level 1
     */
     it('testDeleteOrigin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testDeleteOrigin001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testDeleteOrigin001", 0, 100067, done);
+      Utils.emitEvent('testDeleteOrigin001', 134900)
+      Utils.registerEvent('testDeleteOrigin001', 0, 135020, done);
       sendEventByKey('WebStorageButton', 10, '');
     })
-
   })
 }

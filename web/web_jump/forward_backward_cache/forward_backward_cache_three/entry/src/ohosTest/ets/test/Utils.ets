@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,12 +19,13 @@ import { ComponentInfo, RectInfo } from './Interfaces';
 import systemDateTime from '@ohos.systemDateTime';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import fs from '@ohos.file.fs';
+import { BusinessError } from '@ohos.base';
 
 export default class Utils {
   static sleep(time: number) {
     return new Promise<string>((resolve, reject) => {
       setTimeout(() => {
-        resolve("ok")
+        resolve('ok')
       }, time)
     }).then(() => {
       console.info(`sleep ${time} over...`)
@@ -34,7 +35,7 @@ export default class Utils {
   static copyRawFileToSandbox(rawFileName: string): string {
     let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
     let context = abilityDelegator.getAppContext();
-    let dir = context.filesDir + "/";
+    let dir = context.filesDir + '/';
     let rawFilePath = dir + rawFileName;
     try {
       let arrayBuffer = context.resourceManager.getRawFileContentSync(rawFileName);
@@ -43,9 +44,9 @@ export default class Utils {
       fs.closeSync(file);
       console.log(`[copyRawFileToSandbox] ${rawFileName} is copy success`);
     } catch (error) {
-      console.info("[copyRawFileToSandbox] getRawFileDescriptor api run failed" + error);
+      console.info('[copyRawFileToSandbox] getRawFileDescriptor api run failed' + error);
     }
-    console.info("[copyRawFileToSandbox] sandbox path:" + dir);
+    console.info('[copyRawFileToSandbox] sandbox path:' + dir);
     return rawFilePath
   }
 
@@ -54,13 +55,13 @@ export default class Utils {
   }
 
   static getSandboxFileDir() {
-    let sandboxFileDir = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext().filesDir + "/"
+    let sandboxFileDir = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext().filesDir + '/'
     console.log(`[getSandboxFileDir] return ${sandboxFileDir}`);
     return sandboxFileDir;
   }
 
   static getSandboxCacheDir() {
-    let sandboxCacheDir = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext().cacheDir + "/"
+    let sandboxCacheDir = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext().cacheDir + '/'
     console.log(`[getSandboxCacheDir] return ${sandboxCacheDir}`);
     return sandboxCacheDir;
   }
@@ -71,33 +72,33 @@ export default class Utils {
         fs.mkdirSync(filePath);
       }
       fs.openSync(filePath + fileName, mode);
-      console.log("[createFileToSandboxSync] success, sandbox path:" + filePath + fileName);
+      console.log('[createFileToSandboxSync] success, sandbox path:' + filePath + fileName);
     } catch (error) {
-      console.info("[createFileToSandboxSync] api run failed " + error);
-      console.info("[createFileToSandboxSync] api run failed path:" + filePath + fileName);
+      console.info('[createFileToSandboxSync] api run failed ' + error);
+      console.info('[createFileToSandboxSync] api run failed path:' + filePath + fileName);
     }
   }
 
   static deleteFile(filePath: string) {
-    console.info("[deleteFile] filePath:" + filePath);
+    console.info('[deleteFile] filePath:' + filePath);
     try {
       fs.unlinkSync(filePath)
     } catch (error) {
-      console.info("[deleteFile] error:" + error);
+      console.info('[deleteFile] error:' + error);
     }
   }
 
   static deleteDir(dirPath: string) {
-    console.info("[deleteDir] dirPath:" + dirPath);
+    console.info('[deleteDir] dirPath:' + dirPath);
     try {
       fs.rmdirSync(dirPath)
     } catch (error) {
-      console.info("[deleteDir] error:" + error);
+      console.info('[deleteDir] error:' + error);
     }
   }
 
   static listFile(dirPath: string): string[] {
-    console.info("[listFile] dirPath:" + dirPath);
+    console.info('[listFile] dirPath:' + dirPath);
     try {
       let files = fs.listFileSync(dirPath)
       for (let i = 0; i < files.length; i++) {
@@ -105,19 +106,19 @@ export default class Utils {
       }
       return files;
     } catch (error) {
-      console.info("[listFile] error:" + error);
+      console.info('[listFile] error:' + error);
       return [];
     }
   }
 
   static isFileExist(filePath: string): boolean {
-    console.info("[isFileExist] filePath:" + filePath);
+    console.info('[isFileExist] filePath:' + filePath);
     try {
       let fileExist = fs.accessSync(filePath)
-      console.info("[isFileExist] return:" + fileExist);
+      console.info('[isFileExist] return:' + fileExist);
       return fileExist
     } catch (error) {
-      console.info("[isFileExist] error:" + error);
+      console.info('[isFileExist] error:' + error);
       return false
     }
   }
@@ -142,28 +143,28 @@ export default class Utils {
     let driver: Driver = Driver.create();
     let pointers: PointerMatrix = PointerMatrix.create(2, 3);
     pointers.setPoint(0, 0, {
-      x: centerX, y: fingerUpCenterY - (isOut ? 40 : 120)
+      x: centerX, y: fingerUpCenterY - (isOut ? 40 : 120),
     });
     pointers.setPoint(0, 1, {
-      x: centerX, y: fingerUpCenterY - 80
+      x: centerX, y: fingerUpCenterY - 80,
     });
     pointers.setPoint(0, 2, {
-      x: centerX, y: fingerUpCenterY - (isOut ? 120 : 40)
+      x: centerX, y: fingerUpCenterY - (isOut ? 120 : 40),
     });
     pointers.setPoint(1, 0, {
-      x: centerX, y: fingerDownCenterY + (isOut ? 40 : 120)
+      x: centerX, y: fingerDownCenterY + (isOut ? 40 : 120),
     });
     pointers.setPoint(1, 1, {
-      x: centerX, y: fingerDownCenterY + 80
+      x: centerX, y: fingerDownCenterY + 80,
     });
     pointers.setPoint(1, 2, {
-      x: centerX, y: fingerDownCenterY + (isOut ? 120 : 40)
+      x: centerX, y: fingerDownCenterY + (isOut ? 120 : 40),
     });
     await driver.injectMultiPointerAction(pointers);
   }
 
   static registerBaseEvent(testCaseName: string, expected: Object, eventId: number,
-                           done: Function, expectFunction: Function) {
+    done: Function, expectFunction: Function) {
     console.info(`[${testCaseName}] START`);
     console.info(`[${testCaseName}] START`);
     try {
@@ -179,41 +180,43 @@ export default class Utils {
       }
       let innerEvent: events_emitter.InnerEvent = {
         eventId: eventId,
-        priority: events_emitter.EventPriority.LOW
+        priority: events_emitter.EventPriority.LOW,
       }
-      events_emitter.on(innerEvent, callBack)
+      events_emitter.once(innerEvent, callBack)
     } catch (err) {
       console.info(`[${testCaseName}] err:` + JSON.stringify(err));
     }
   }
 
   static registerEvent(testCaseName: string, expectedValue: Object, eventId: number, done: Function) {
-    Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
-      expect(backData?.data?.ACTION).assertEqual(expected);
-    });
+    Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done,
+      (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
   }
 
   static registerContainEvent(testCaseName: string, expectedValue: Object, eventId: number, done: Function) {
-    Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
-      expect(backData?.data?.ACTION).assertContain(expected);
-    });
+    Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done,
+      (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertContain(expected);
+      });
   }
 
   static emitEvent(actualValue: boolean | string | number | object, eventId: number) {
     try {
       let backData: events_emitter.EventData = {
         data: {
-          "ACTION": actualValue
-        }
+          'ACTION': actualValue,
+        },
       }
       let backEvent: events_emitter.InnerEvent = {
         eventId: eventId,
-        priority: events_emitter.EventPriority.LOW
+        priority: events_emitter.EventPriority.LOW,
       }
-      console.info("webFlag start to emit action state");
+      console.info('webFlag start to emit action state');
       events_emitter.emit(backEvent, backData);
     } catch (err) {
-      console.info("webFlag emit action state err: " + JSON.stringify(err));
+      console.info('webFlag emit action state err: ' + JSON.stringify(err));
     }
   }
 
@@ -231,7 +234,7 @@ export default class Utils {
       left: JSON.parse('[' + rectInfo[0] + ']')[0],
       top: JSON.parse('[' + rectInfo[0] + ']')[1],
       right: JSON.parse('[' + rectInfo[1] + ']')[0],
-      bottom: JSON.parse('[' + rectInfo[1] + ']')[1]
+      bottom: JSON.parse('[' + rectInfo[1] + ']')[1],
     };
     console.info(JSON.stringify(rect_value));
     return rect_value;
@@ -243,5 +246,33 @@ export default class Utils {
 
   static getRectVerticalCenterY(rect: RectInfo): number {
     return Number.parseInt(Number((rect.bottom - rect.top) / 2 + rect.top).toFixed(0));
+  }
+
+  static async waitAndClickComponent(driver: Driver, componentId: string, logFlag: string): Promise<void> {
+    let retryTimes: number = 0;
+    let retry: boolean = true;
+    while (retry && retryTimes <= 3) {
+      retry = false;
+      try {
+        const buttonComponent = await driver.waitForComponent(ON.id(componentId), 10000);
+        if (!buttonComponent) {
+          console.error(`${logFlag} error: buttonConmponent is null.`);
+          retry = true;
+          await Utils.sleep(1000);
+          retryTimes++;
+          console.log(logFlag + ' retryTimes = ' + retryTimes);
+        }
+        await buttonComponent.click();
+      } catch (e) {
+        const error = e as BusinessError;
+        console.error(`${logFlag} ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        if (error.code === 17000002) {
+          retry = true;
+          await Utils.sleep(1000);
+          retryTimes++;
+          console.log(logFlag + ' retryTimes = ' + retryTimes);
+        }
+      }
+    }
   }
 }

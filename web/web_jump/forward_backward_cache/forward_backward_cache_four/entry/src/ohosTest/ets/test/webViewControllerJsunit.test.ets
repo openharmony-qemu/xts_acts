@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2023-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,43 +13,50 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect , TestType, Size, Level } from "@ohos/hypium";
-import events_emitter from '@ohos.events.emitter';
+import { beforeAll, describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
+import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-let emitKey = "emitFetchCookieSync";
+
+
 export default function webViewControllerJsunit() {
-  describe('ActsAceWebDevWebViewControllerTest',  () => {
-    beforeEach(async  (done: Function) =>{
+  describe('ActsAceWebDevWebViewControllerTest', () => {
+    beforeAll(async (done: Function) => {
+      let options: router.RouterOptions = {
+        url: 'testability/pages/webViewController',
+      };
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info('get webViewController state success ' + JSON.stringify(pages));
+        if (!('webViewController' == pages.name)) {
+          console.info('get webViewController state success ' + JSON.stringify(pages.name));
+          let result = await router.pushUrl(options);
+          console.info('push webViewController page success ' + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error('push webViewController page error: ' + err);
+      }
+      await waitForComponent('webcomponent');
+      done();
+    });
+
+    beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
-      console.info("web beforeEach start");
+      console.info('web beforeEach start');
       done();
     })
-    afterEach(async  (done: Function) =>{
-      console.info("web afterEach start:"+emitKey);
-      try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent: events_emitter.InnerEvent = {
-                eventId:10,
-                priority:events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-      } catch (err) {
-            console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
+
+    afterEach(async (done: Function) => {
+      console.info('web afterEach start');
       done();
     })
 
@@ -58,121 +65,131 @@ export default function webViewControllerJsunit() {
      *tc.name testFetchCookieSync
      *tc.desc test for FetchCookieSync
      */
-    it('testFetchCookieSync',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitFetchCookieCallback";
-      Utils.registerEvent("testFetchCookieSync","a=b",126,done);
-      sendEventByKey('webcomponent',10,'');
+    it('testFetchCookieSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitFetchCookieSync', 137200);
+      Utils.registerEvent('testFetchCookieSync', 'a=b', 137210, done);
+      sendEventByKey('webcomponent', 10, '');
     })
+
     /*
      *tc.number SUB_ACE_BASIC_ETS_API_1400
      *tc.name testFetchCookieCallback
      *tc.desc test for FetchCookieCallback
      */
-    it('testFetchCookieCallback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitFetchCookiePromise";
-      Utils.registerEvent("testFetchCookieSync","a=c",128,done);
-      sendEventByKey('webcomponent',10,'');
+    it('testFetchCookieCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitFetchCookieCallback', 137200);
+      Utils.registerEvent('emitFetchCookieCallback', 'a=c', 137220, done);
+      sendEventByKey('webcomponent', 10, '');
     })
+
     /*
      *tc.number SUB_ACE_BASIC_ETS_API_1500
      *tc.name testFetchCookiePromise
      *tc.desc test for FetchCookiePromise
      */
-    it('testFetchCookiePromise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitConfigCookieSync";
-      Utils.registerEvent("testFetchCookiePromise","a=d",130,done);
-      sendEventByKey('webcomponent',10,'');
+    it('testFetchCookiePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitFetchCookiePromise', 137200);
+      Utils.registerEvent('emitFetchCookiePromise', 'a=d', 137230, done);
+      sendEventByKey('webcomponent', 10, '');
     })
+
     /*
      *tc.number SUB_ACE_BASIC_ETS_API_1600
      *tc.name testConfigCookieSync
      *tc.desc test for ConfigCookieSync
      */
-    it('testConfigCookieSync',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitConfigCookieCallback";
-      Utils.registerEvent("testConfigCookieSync","a=e",132,done);
-      sendEventByKey('webcomponent',10,'');
+    it('testConfigCookieSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitConfigCookieSync', 137200);
+      Utils.registerEvent('emitConfigCookieSync', 'a=e', 137240, done);
+      sendEventByKey('webcomponent', 10, '');
     })
+
     /*
      *tc.number SUB_ACE_BASIC_ETS_API_1700
      *tc.name testConfigCookieCallback
      *tc.desc test for ConfigCookieCallback
      */
-    it('testConfigCookieCallback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitConfigCookiePromise";
-      Utils.registerEvent("testConfigCookieCallback","a=f",134,done);
-      sendEventByKey('webcomponent',10,'');
+    it('testConfigCookieCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitConfigCookieCallback', 137200);
+      Utils.registerEvent('emitConfigCookieCallback', 'a=f', 137250, done);
+      sendEventByKey('webcomponent', 10, '');
     })
+
     /*
      *tc.number SUB_ACE_BASIC_ETS_API_1800
      *tc.name testConfigCookiePromise
      *tc.desc test for ConfigCookiePromise
      */
-    it('testConfigCookiePromise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitClearAllCookiesSync";
-      Utils.registerEvent("testConfigCookiePromise","a=g",136,done);
-      sendEventByKey('webcomponent',10,'');
+    it('testConfigCookiePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitConfigCookiePromise', 137200);
+      Utils.registerEvent('emitConfigCookiePromise', 'a=g', 137260, done);
+      sendEventByKey('webcomponent', 10, '');
     })
+
     /*
      *tc.number SUB_ACE_BASIC_ETS_API_1900
      *tc.name testClearAllCookiesSync
      *tc.desc test for ClearAllCookiesSync
      */
-    it('testClearAllCookiesSync',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitClearAllCookiesCallback";
-      Utils.registerEvent("testClearAllCookiesSync","",138,done);
-      sendEventByKey('webcomponent',10,'');
+    it('testClearAllCookiesSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitClearAllCookiesSync', 137200);
+      Utils.registerEvent('emitClearAllCookiesSync', true, 137270, done);
+      sendEventByKey('webcomponent', 10, '');
     })
+
     /*
      *tc.number SUB_ACE_BASIC_ETS_API_2000
      *tc.name testClearAllCookiesCallback
      *tc.desc test for ClearAllCookiesCallback
      */
-    it('testClearAllCookiesCallback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitClearAllCookiesPromise";
-      Utils.registerEvent("testClearAllCookiesCallback","",140,done);
-      sendEventByKey('webcomponent',10,'');
+    it('testClearAllCookiesCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitClearAllCookiesCallback', 137200);
+      Utils.registerEvent('emitClearAllCookiesCallback', true, 137280, done);
+      sendEventByKey('webcomponent', 10, '');
     })
+
     /*
      *tc.number SUB_ACE_BASIC_ETS_API_2100
      *tc.name testClearAllCookiesPromise
      *tc.desc test for ClearAllCookiesPromise
      */
-    it('testClearAllCookiesPromise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitClearSessionCookieSync";
-      Utils.registerEvent("testClearAllCookiesPromise","",142,done);
-      sendEventByKey('webcomponent',10,'');
+    it('testClearAllCookiesPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitClearAllCookiesPromise', 137200);
+      Utils.registerEvent('emitClearAllCookiesPromise', true, 137290, done);
+      sendEventByKey('webcomponent', 10, '');
     })
+
     /*
      *tc.number SUB_ACE_BASIC_ETS_API_2200
      *tc.name testClearSessionCookieSync
      *tc.desc test for ClearSessionCookieSync
      */
-    it('testClearSessionCookieSync',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitClearSessionCookieCallback";
-      Utils.registerEvent("testClearSessionCookieSync","",144,done);
-      sendEventByKey('webcomponent',10,'');
+    it('testClearSessionCookieSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitClearSessionCookieSync', 137200);
+      Utils.registerEvent('emitClearSessionCookieSync', true, 137300, done);
+      sendEventByKey('webcomponent', 10, '');
     })
+
     /*
      *tc.number SUB_ACE_BASIC_ETS_API_2300
      *tc.name testClearSessionCookieCallback
      *tc.desc test for ClearSessionCookieCallback
      */
-    it('testClearSessionCookieCallback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitClearSessionCookiePromise";
-      Utils.registerEvent("testClearSessionCookieCallback","",146,done);
-      sendEventByKey('webcomponent',10,'');
+    it('testClearSessionCookieCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitClearSessionCookieCallback', 137200);
+      Utils.registerEvent('emitClearSessionCookieCallback', true, 137310, done);
+      sendEventByKey('webcomponent', 10, '');
     })
+
     /*
      *tc.number SUB_ACE_BASIC_ETS_API_2400
      *tc.name testClearSessionCookiePromise
      *tc.desc test for ClearSessionCookiePromise
      */
-    it('testClearSessionCookiePromise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitPostUrl";
-      Utils.registerEvent("testClearSessionCookiePromise","",148,done);
-      sendEventByKey('webcomponent',10,'');
+    it('testClearSessionCookiePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitClearSessionCookiePromise', 137200);
+      Utils.registerEvent('emitClearSessionCookiePromise', true, 137320, done);
+      sendEventByKey('webcomponent', 10, '');
     })
-
   })
 }
