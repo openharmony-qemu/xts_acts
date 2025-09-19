@@ -26,12 +26,12 @@ let resProgressInfo: unifiedDataChannel.ProgressInfo;
 export default function UDMFApiTest() {
   describe("UDMFApiTest", (): void => {
     /**
-    * @tc.name       : SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0100
-    * @tc.number     : UnifiedDataTest01
-    * @tc.desc       : predicates orderByAsc normal test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    * @tc.name        SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0100
+    * @tc.number      UnifiedDataTest01
+    * @tc.desc        predicates orderByAsc normal test
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 1
     */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0100 start');
@@ -44,12 +44,12 @@ export default function UDMFApiTest() {
       done();
     })
     /**
-     * @tc.name       : SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0200
-     * @tc.number     : UnifiedDataTest02
-     * @tc.desc       : predicates orderByAsc normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name        SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0200
+     * @tc.number      UnifiedDataTest02
+     * @tc.desc        predicates orderByAsc normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 1
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0200 start');
@@ -60,12 +60,12 @@ export default function UDMFApiTest() {
       done();
     })
     /**
-     * @tc.name       : SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0300
-     * @tc.number     : UnifiedDataTest03
-     * @tc.desc       : predicates orderByAsc normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name        SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0300
+     * @tc.number      UnifiedDataTest03
+     * @tc.desc        predicates orderByAsc normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 1
      */
     it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0300 start');
@@ -78,12 +78,12 @@ export default function UDMFApiTest() {
       done();
     })
     /**
-     * @tc.number     : UDMFApiTest01
-     * @tc.name       : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_001
-     * @tc.desc       : getUniformDataTypeByFilenameExtension JPEG test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.number      UDMFApiTest01
+     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_001
+     * @tc.desc        getUniformDataTypeByFilenameExtension JPEG test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_001 start');
@@ -109,12 +109,12 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_001 end');
     })
     /**
-     * @tc.number     : UDMFApiTest02
-     * @tc.name       : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_002
-     * @tc.desc       : getUniformDataTypeByFilenameExtension HTML test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.number      UDMFApiTest02
+     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_002
+     * @tc.desc        getUniformDataTypeByFilenameExtension HTML test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_002 start');
@@ -136,12 +136,12 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_002 end');
     })
     /**
-     * @tc.number     : UDMFApiTest03
-     * @tc.name       : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_003
-     * @tc.desc       : getUniformDataTypeByFilenameExtension PLAIN_TEXT test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.number      UDMFApiTest03
+     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_003
+     * @tc.desc        getUniformDataTypeByFilenameExtension PLAIN_TEXT test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_003 start');
@@ -163,12 +163,12 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_003 end');
     })
     /**
-     * @tc.number     : UDMFApiTest04
-     * @tc.name       : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_004
-     * @tc.desc       : getUniformDataTypeByFilenameExtension PNG test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.number      UDMFApiTest04
+     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_004
+     * @tc.desc        getUniformDataTypeByFilenameExtension PNG test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_004 start');
@@ -186,12 +186,12 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_004 end');
     })
     /**
-     * @tc.number     : UDMFApiTest05
-     * @tc.name       : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_005
-     * @tc.desc       : getUniformDataTypeByFilenameExtension MPEG4 test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.number      UDMFApiTest05
+     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_005
+     * @tc.desc        getUniformDataTypeByFilenameExtension MPEG4 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_005 start');
@@ -217,12 +217,12 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_005 end');
     })
     /**
-     * @tc.number     : UDMFApiTest06
-     * @tc.name       : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_006
-     * @tc.desc       : getUniformDataTypeByFilenameExtension PDF test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.number      UDMFApiTest06
+     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_006
+     * @tc.desc        getUniformDataTypeByFilenameExtension PDF test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_006 start');
@@ -240,12 +240,12 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_006 end');
     })
     /**
-     * @tc.number     : UDMFApiTest07
-     * @tc.name       : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_007
-     * @tc.desc       : getUniformDataTypeByFilenameExtension "" test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.number      UDMFApiTest07
+     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_007
+     * @tc.desc        getUniformDataTypeByFilenameExtension "" test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_007 start');
@@ -261,12 +261,12 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_007 end');
     })
     /**
-     * @tc.number     : UDMFApiTest08
-     * @tc.name       : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_008
-     * @tc.desc       : getType test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.number      UDMFApiTest08
+     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_008
+     * @tc.desc        getType test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_008 start');
@@ -309,12 +309,12 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_008 end');
     })
     /**
-     * @tc.number     : UDMFApiTest09
-     * @tc.name       : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_009
-     * @tc.desc       : getRecords test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.number      UDMFApiTest09
+     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_009
+     * @tc.desc        getRecords test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_009 start');
@@ -416,12 +416,12 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_009 end');
     })
     /**
-     * @tc.number     : UDMFApiTest10
-     * @tc.name       : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_010
-     * @tc.desc       : getRecords test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.number      UDMFApiTest10
+     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_010
+     * @tc.desc        getRecords test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_010 start');
@@ -498,12 +498,12 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_010 end');
     })
     /**
-     * @tc.number     : UDMFApiTest11
-     * @tc.name       : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_011
-     * @tc.desc       : getRecords test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.number      UDMFApiTest11
+     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_011
+     * @tc.desc        getRecords test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_011 start');
@@ -593,12 +593,12 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_011 end');
     })
     /**
-     * @tc.number     : UDMFApiTest12
-     * @tc.name       : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_012
-     * @tc.desc       : getRecords test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.number      UDMFApiTest12
+     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_012
+     * @tc.desc        getRecords test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_012 start');
@@ -700,12 +700,12 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_012 end');
     })
     /**
-     * @tc.number     : UDMFApiTest13
-     * @tc.name       : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_013
-     * @tc.desc       : insertData queryData callback test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.number      UDMFApiTest13
+     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_013
+     * @tc.desc        insertData queryData callback test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_013 start');
@@ -748,12 +748,12 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.number     : UDMFApiTest14
-     * @tc.name       : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_014
-     * @tc.desc       : insertData queryData promise test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.number      UDMFApiTest14
+     * @tc.name        SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_014
+     * @tc.desc        insertData queryData promise test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
      */
     it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_013 start');
