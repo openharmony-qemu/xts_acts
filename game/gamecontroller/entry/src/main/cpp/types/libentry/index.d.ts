@@ -12,306 +12,306 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export const ACTS_GameDevice_GetAllDeviceInfos_01: () => number;
+export const ActsGameDeviceGetAllDeviceInfos01: () => number;
 
-export const ACTS_GameDevice_RegisterDeviceMonitor_01: () => number;
+export const ActsGameDeviceRegisterDeviceMonitor01: () => number;
 
-export const ACTS_GameDevice_RegisterDeviceMonitor_02: () => number;
+export const ActsGameDeviceRegisterDeviceMonitor02: () => number;
 
-export const ACTS_GameDevice_UnregisterDeviceMonitor_01: () => number;
+export const ActsGameDeviceUnregisterDeviceMonitor01: () => number;
 
-export const ACTS_GameDevice_DestroyAllDeviceInfos_01: () => number;
+export const ActsGameDeviceDestroyAllDeviceInfos01: () => number;
 
-export const ACTS_GameDevice_DestroyAllDeviceInfos_02: () => number;
+export const ActsGameDeviceDestroyAllDeviceInfos02: () => number;
 
-export const ACTS_GameDevice_AllDeviceInfos_GetCount_01: () => number;
+export const ActsGameDeviceAllDeviceInfosGetCount01: () => number;
 
-export const ACTS_GameDevice_AllDeviceInfos_GetCount_02: () => number;
+export const ActsGameDeviceAllDeviceInfosGetCount02: () => number;
 
-export const ACTS_GameDevice_AllDeviceInfos_GetDeviceInfo_01: () => number;
+export const ActsGameDeviceAllDeviceInfosGetDeviceInfo01: () => number;
 
-export const ACTS_GameDevice_AllDeviceInfos_GetDeviceInfo_02: () => number;
+export const ActsGameDeviceAllDeviceInfosGetDeviceInfo02: () => number;
 
-export const ACTS_GameDevice_AllDeviceInfos_GetDeviceInfo_03: () => number;
+export const ActsGameDeviceAllDeviceInfosGetDeviceInfo03: () => number;
 
-export const ACTS_GameDevice_AllDeviceInfos_GetDeviceInfo_04: () => number;
+export const ActsGameDeviceAllDeviceInfosGetDeviceInfo04: () => number;
 
-export const ACTS_GameDevice_AllDeviceInfos_GetDeviceInfo_05: () => number;
+export const ActsGameDeviceAllDeviceInfosGetDeviceInfo05: () => number;
 
-export const ACTS_GameDevice_DeviceEvent_GetChangedType_01: () => number;
+export const ActsGameDeviceDeviceEventGetChangedType01: () => number;
 
-export const ACTS_GameDevice_DeviceEvent_GetChangedType_02: () => number;
+export const ActsGameDeviceDeviceEventGetChangedType02: () => number;
 
-export const ACTS_GameDevice_DeviceEvent_GetDeviceInfo_01: () => number;
+export const ActsGameDeviceDeviceEventGetDeviceInfo01: () => number;
 
-export const ACTS_GameDevice_DeviceEvent_GetDeviceInfo_02: () => number;
+export const ActsGameDeviceDeviceEventGetDeviceInfo02: () => number;
 
-export const ACTS_GameDevice_DestroyDeviceInfo_01: () => number;
+export const ActsGameDeviceDestroyDeviceInfo01: () => number;
 
-export const ACTS_GameDevice_DestroyDeviceInfo_02: () => number;
+export const ActsGameDeviceDestroyDeviceInfo02: () => number;
 
-export const ACTS_GameDevice_DeviceInfo_GetDeviceId_01: () => number;
+export const ActsGameDeviceDeviceInfoGetDeviceId01: () => number;
 
-export const ACTS_GameDevice_DeviceInfo_GetDeviceId_02: () => number;
+export const ActsGameDeviceDeviceInfoGetDeviceId02: () => number;
 
-export const ACTS_GameDevice_DeviceInfo_GetDeviceId_03: () => number;
+export const ActsGameDeviceDeviceInfoGetDeviceId03: () => number;
 
-export const ACTS_GameDevice_DeviceInfo_GetName_01: () => number;
+export const ActsGameDeviceDeviceInfoGetName01: () => number;
 
-export const ACTS_GameDevice_DeviceInfo_GetName_02: () => number;
+export const ActsGameDeviceDeviceInfoGetName02: () => number;
 
-export const ACTS_GameDevice_DeviceInfo_GetName_03: () => number;
+export const ActsGameDeviceDeviceInfoGetName03: () => number;
 
-export const ACTS_GameDevice_DeviceInfo_GetProduct_01: () => number;
+export const ActsGameDeviceDeviceInfoGetProduct01: () => number;
 
-export const ACTS_GameDevice_DeviceInfo_GetProduct_02: () => number;
+export const ActsGameDeviceDeviceInfoGetProduct02: () => number;
 
-export const ACTS_GameDevice_DeviceInfo_GetVersion_01: () => number;
+export const ActsGameDeviceDeviceInfoGetVersion01: () => number;
 
-export const ACTS_GameDevice_DeviceInfo_GetVersion_02: () => number;
+export const ActsGameDeviceDeviceInfoGetVersion02: () => number;
 
-export const ACTS_GameDevice_DeviceInfo_GetPhys_01: () => number;
+export const ActsGameDeviceDeviceInfoGetPhys01: () => number;
 
-export const ACTS_GameDevice_DeviceInfo_GetPhys_02: () => number;
+export const ActsGameDeviceDeviceInfoGetPhys02: () => number;
 
-export const ACTS_GameDevice_DeviceInfo_GetPhys_03: () => number;
+export const ActsGameDeviceDeviceInfoGetPhys03: () => number;
 
-export const ACTS_GameDevice_DeviceInfo_GetDeviceType_01: () => number;
+export const ActsGameDeviceDeviceInfoGetDeviceType01: () => number;
 
-export const ACTS_GameDevice_DeviceInfo_GetDeviceType_02: () => number;
+export const ActsGameDeviceDeviceInfoGetDeviceType02: () => number;
 
-export const ACTS_GamePad_LeftShoulder_RegisterButtonInputMonitor_01: () => number;
+export const ActsGamePadLeftShoulderRegisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_LeftShoulder_RegisterButtonInputMonitor_02: () => number;
+export const ActsGamePadLeftShoulderRegisterButtonInputMonitor02: () => number;
 
-export const ACTS_GamePad_LeftShoulder_UnregisterButtonInputMonitor_01: () => number;
+export const ActsGamePadLeftShoulderUnregisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_RightShoulder_RegisterButtonInputMonitor_01: () => number;
+export const ActsGamePadRightShoulderRegisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_RightShoulder_RegisterButtonInputMonitor_02: () => number;
+export const ActsGamePadRightShoulderRegisterButtonInputMonitor02: () => number;
 
-export const ACTS_GamePad_RightShoulder_UnregisterButtonInputMonitor_01: () => number;
+export const ActsGamePadRightShoulderUnregisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_LeftTrigger_RegisterButtonInputMonitor_01: () => number;
+export const ActsGamePadLeftTriggerRegisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_LeftTrigger_RegisterButtonInputMonitor_02: () => number;
+export const ActsGamePadLeftTriggerRegisterButtonInputMonitor02: () => number;
 
-export const ACTS_GamePad_LeftTrigger_UnregisterButtonInputMonitor_01: () => number;
+export const ActsGamePadLeftTriggerUnregisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_LeftTrigger_RegisterAxisInputMonitor_01: () => number;
+export const ActsGamePadLeftTriggerRegisterAxisInputMonitor01: () => number;
 
-export const ACTS_GamePad_LeftTrigger_RegisterAxisInputMonitor_02: () => number;
+export const ActsGamePadLeftTriggerRegisterAxisInputMonitor02: () => number;
 
-export const ACTS_GamePad_LeftTrigger_UnregisterAxisInputMonitor_01: () => number;
+export const ActsGamePadLeftTriggerUnregisterAxisInputMonitor01: () => number;
 
-export const ACTS_GamePad_RightTrigger_RegisterButtonInputMonitor_01: () => number;
+export const ActsGamePadRightTriggerRegisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_RightTrigger_RegisterButtonInputMonitor_02: () => number;
+export const ActsGamePadRightTriggerRegisterButtonInputMonitor02: () => number;
 
-export const ACTS_GamePad_RightTrigger_UnregisterButtonInputMonitor_01: () => number;
+export const ActsGamePadRightTriggerUnregisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_RightTrigger_RegisterAxisInputMonitor_01: () => number;
+export const ActsGamePadRightTriggerRegisterAxisInputMonitor01: () => number;
 
-export const ACTS_GamePad_RightTrigger_RegisterAxisInputMonitor_02: () => number;
+export const ActsGamePadRightTriggerRegisterAxisInputMonitor02: () => number;
 
-export const ACTS_GamePad_RightTrigger_UnregisterAxisInputMonitor_01: () => number;
+export const ActsGamePadRightTriggerUnregisterAxisInputMonitor01: () => number;
 
-export const ACTS_GamePad_ButtonMenu_RegisterButtonInputMonitor_01: () => number;
+export const ActsGamePadButtonMenuRegisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_ButtonMenu_RegisterButtonInputMonitor_02: () => number;
+export const ActsGamePadButtonMenuRegisterButtonInputMonitor02: () => number;
 
-export const ACTS_GamePad_ButtonMenu_UnregisterButtonInputMonitor_01: () => number;
+export const ActsGamePadButtonMenuUnregisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_ButtonHome_RegisterButtonInputMonitor_01: () => number;
+export const ActsGamePadButtonHomeRegisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_ButtonHome_RegisterButtonInputMonitor_02: () => number;
+export const ActsGamePadButtonHomeRegisterButtonInputMonitor02: () => number;
 
-export const ACTS_GamePad_ButtonHome_UnregisterButtonInputMonitor_01: () => number;
+export const ActsGamePadButtonHomeUnregisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_ButtonA_RegisterButtonInputMonitor_01: () => number;
+export const ActsGamePadButtonARegisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_ButtonA_RegisterButtonInputMonitor_02: () => number;
+export const ActsGamePadButtonARegisterButtonInputMonitor02: () => number;
 
-export const ACTS_GamePad_ButtonA_UnregisterButtonInputMonitor_01: () => number;
+export const ActsGamePadButtonAUnregisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_ButtonB_RegisterButtonInputMonitor_01: () => number;
+export const ActsGamePadButtonBRegisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_ButtonB_RegisterButtonInputMonitor_02: () => number;
+export const ActsGamePadButtonBRegisterButtonInputMonitor02: () => number;
 
-export const ACTS_GamePad_ButtonB_UnregisterButtonInputMonitor_01: () => number;
+export const ActsGamePadButtonBUnregisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_ButtonX_RegisterButtonInputMonitor_01: () => number;
+export const ActsGamePadButtonXRegisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_ButtonX_RegisterButtonInputMonitor_02: () => number;
+export const ActsGamePadButtonXRegisterButtonInputMonitor02: () => number;
 
-export const ACTS_GamePad_ButtonX_UnregisterButtonInputMonitor_01: () => number;
+export const ActsGamePadButtonXUnregisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_ButtonY_RegisterButtonInputMonitor_01: () => number;
+export const ActsGamePadButtonYRegisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_ButtonY_RegisterButtonInputMonitor_02: () => number;
+export const ActsGamePadButtonYRegisterButtonInputMonitor02: () => number;
 
-export const ACTS_GamePad_ButtonY_UnregisterButtonInputMonitor_01: () => number;
+export const ActsGamePadButtonYUnregisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_ButtonC_RegisterButtonInputMonitor_01: () => number;
+export const ActsGamePadButtonCRegisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_ButtonC_RegisterButtonInputMonitor_02: () => number;
+export const ActsGamePadButtonCRegisterButtonInputMonitor02: () => number;
 
-export const ACTS_GamePad_ButtonC_UnregisterButtonInputMonitor_01: () => number;
+export const ActsGamePadButtonCUnregisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor_01: () => number;
+export const ActsGamePadDpadLeftButtonRegisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor_02: () => number;
+export const ActsGamePadDpadLeftButtonRegisterButtonInputMonitor02: () => number;
 
-export const ACTS_GamePad_Dpad_LeftButton_UnregisterButtonInputMonitor_01: () => number;
+export const ActsGamePadDpadLeftButtonUnregisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_Dpad_RightButton_RegisterButtonInputMonitor_01: () => number;
+export const ActsGamePadDpadRightButtonRegisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_Dpad_RightButton_RegisterButtonInputMonitor_02: () => number;
+export const ActsGamePadDpadRightButtonRegisterButtonInputMonitor02: () => number;
 
-export const ACTS_GamePad_Dpad_RightButton_UnregisterButtonInputMonitor_01: () => number;
+export const ActsGamePadDpadRightButtonUnregisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_Dpad_UpButton_RegisterButtonInputMonitor_01: () => number;
+export const ActsGamePadDpadUpButtonRegisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_Dpad_UpButton_RegisterButtonInputMonitor_02: () => number;
+export const ActsGamePadDpadUpButtonRegisterButtonInputMonitor02: () => number;
 
-export const ACTS_GamePad_Dpad_UpButton_UnregisterButtonInputMonitor_01: () => number;
+export const ActsGamePadDpadUpButtonUnregisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_Dpad_DownButton_RegisterButtonInputMonitor_01: () => number;
+export const ActsGamePadDpadDownButtonRegisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_Dpad_DownButton_RegisterButtonInputMonitor_02: () => number;
+export const ActsGamePadDpadDownButtonRegisterButtonInputMonitor02: () => number;
 
-export const ACTS_GamePad_Dpad_DownButton_UnregisterButtonInputMonitor_01: () => number;
+export const ActsGamePadDpadDownButtonUnregisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_Dpad_RegisterAxisInputMonitor_01: () => number;
+export const ActsGamePadDpadRegisterAxisInputMonitor01: () => number;
 
-export const ACTS_GamePad_Dpad_RegisterAxisInputMonitor_02: () => number;
+export const ActsGamePadDpadRegisterAxisInputMonitor02: () => number;
 
-export const ACTS_GamePad_Dpad_UnregisterAxisInputMonitor_01: () => number;
+export const ActsGamePadDpadUnregisterAxisInputMonitor01: () => number;
 
-export const ACTS_GamePad_LeftThumbstick_RegisterButtonInputMonitor_01: () => number;
+export const ActsGamePadLeftThumbstickRegisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_LeftThumbstick_RegisterButtonInputMonitor_02: () => number;
+export const ActsGamePadLeftThumbstickRegisterButtonInputMonitor02: () => number;
 
-export const ACTS_GamePad_LeftThumbstick_UnregisterButtonInputMonitor_01: () => number;
+export const ActsGamePadLeftThumbstickUnregisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_LeftThumbstick_RegisterAxisInputMonitor_01: () => number;
+export const ActsGamePadLeftThumbstickRegisterAxisInputMonitor01: () => number;
 
-export const ACTS_GamePad_LeftThumbstick_RegisterAxisInputMonitor_02: () => number;
+export const ActsGamePadLeftThumbstickRegisterAxisInputMonitor02: () => number;
 
-export const ACTS_GamePad_LeftThumbstick_UnregisterAxisInputMonitor_01: () => number;
+export const ActsGamePadLeftThumbstickUnregisterAxisInputMonitor01: () => number;
 
-export const ACTS_GamePad_RightThumbstick_RegisterButtonInputMonitor_01: () => number;
+export const ActsGamePadRightThumbstickRegisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_RightThumbstick_RegisterButtonInputMonitor_02: () => number;
+export const ActsGamePadRightThumbstickRegisterButtonInputMonitor02: () => number;
 
-export const ACTS_GamePad_RightThumbstick_UnregisterButtonInputMonitor_01: () => number;
+export const ActsGamePadRightThumbstickUnregisterButtonInputMonitor01: () => number;
 
-export const ACTS_GamePad_RightThumbstick_RegisterAxisInputMonitor_01: () => number;
+export const ActsGamePadRightThumbstickRegisterAxisInputMonitor01: () => number;
 
-export const ACTS_GamePad_RightThumbstick_RegisterAxisInputMonitor_02: () => number;
+export const ActsGamePadRightThumbstickRegisterAxisInputMonitor02: () => number;
 
-export const ACTS_GamePad_RightThumbstick_UnregisterAxisInputMonitor_01: () => number;
+export const ActsGamePadRightThumbstickUnregisterAxisInputMonitor01: () => number;
 
-export const ACTS_GameController_GamePad_ButtonEvent_GetDeviceId_01: () => number;
+export const ActsGameControllerGamePadButtonEventGetDeviceId01: () => number;
 
-export const ACTS_GameController_GamePad_ButtonEvent_GetDeviceId_02: () => number;
+export const ActsGameControllerGamePadButtonEventGetDeviceId02: () => number;
 
-export const ACTS_GameController_GamePad_ButtonEvent_GetDeviceId_03: () => number;
+export const ActsGameControllerGamePadButtonEventGetDeviceId_03: () => number;
 
-export const ACTS_GameController_GamePad_ButtonEvent_GetButtonAction_01: () => number;
+export const ActsGameControllerGamePadButtonEventGetButtonAction01: () => number;
 
-export const ACTS_GameController_GamePad_ButtonEvent_GetButtonAction_02: () => number;
+export const ActsGameControllerGamePadButtonEventGetButtonAction02: () => number;
 
-export const ACTS_GameController_GamePad_ButtonEvent_GetButtonCode_01: () => number;
+export const ActsGameControllerGamePadButtonEventGetButtonCode01: () => number;
 
-export const ACTS_GameController_GamePad_ButtonEvent_GetButtonCode_02: () => number;
+export const ActsGameControllerGamePadButtonEventGetButtonCode02: () => number;
 
-export const ACTS_GameController_GamePad_ButtonEvent_GetButtonCodeName_01: () => number;
+export const ActsGameControllerGamePadButtonEventGetButtonCodeName01: () => number;
 
-export const ACTS_GameController_GamePad_ButtonEvent_GetButtonCodeName_02: () => number;
+export const ActsGameControllerGamePadButtonEventGetButtonCodeName02: () => number;
 
-export const ACTS_GameController_GamePad_ButtonEvent_GetButtonCodeName_03: () => number;
+export const ActsGameControllerGamePadButtonEventGetButtonCodeName_03: () => number;
 
-export const ACTS_GameController_GamePad_PressedButtons_GetCount_01: () => number;
+export const ActsGameControllerGamePadPressedButtonsGetCount01: () => number;
 
-export const ACTS_GameController_GamePad_PressedButtons_GetCount_02: () => number;
+export const ActsGameControllerGamePadPressedButtonsGetCount02: () => number;
 
-export const ACTS_GameController_GamePad_PressedButtons_GetButtonInfo_01: () => number;
+export const ActsGameControllerGamePadPressedButtonsGetButtonInfo01: () => number;
 
-export const ACTS_GameController_GamePad_PressedButtons_GetButtonInfo_02: () => number;
+export const ActsGameControllerGamePadPressedButtonsGetButtonInfo02: () => number;
 
-export const ACTS_GameController_GamePad_PressedButtons_GetButtonInfo_03: () => number;
+export const ActsGameControllerGamePadPressedButtonsGetButtonInfo_03: () => number;
 
-export const ACTS_GameController_GamePad_PressedButtons_GetButtonInfo_04: () => number;
+export const ActsGameControllerGamePadPressedButtonsGetButtonInfo_04: () => number;
 
-export const ACTS_GameController_GamePad_DestroyPressedButton_01: () => number;
+export const ActsGameControllerGamePadDestroyPressedButton01: () => number;
 
-export const ACTS_GameController_GamePad_DestroyPressedButton_02: () => number;
+export const ActsGameControllerGamePadDestroyPressedButton02: () => number;
 
-export const ACTS_GameController_GamePad_PressedButton_GetButtonCode_01: () => number;
+export const ActsGameControllerGamePadPressedButtonGetButtonCode01: () => number;
 
-export const ACTS_GameController_GamePad_PressedButton_GetButtonCode_02: () => number;
+export const ActsGameControllerGamePadPressedButtonGetButtonCode02: () => number;
 
-export const ACTS_GameController_GamePad_PressedButton_GetButtonCodeName_01: () => number;
+export const ActsGameControllerGamePadPressedButtonGetButtonCodeName01: () => number;
 
-export const ACTS_GameController_GamePad_PressedButton_GetButtonCodeName_02: () => number;
+export const ActsGameControllerGamePadPressedButtonGetButtonCodeName02: () => number;
 
-export const ACTS_GameController_GamePad_PressedButton_GetButtonCodeName_03: () => number;
+export const ActsGameControllerGamePadPressedButtonGetButtonCodeName03: () => number;
 
-export const ACTS_GameController_GamePad_ButtonEvent_GetActionTime_01: () => number;
+export const ActsGameControllerGamePadButtonEventGetActionTime01: () => number;
 
-export const ACTS_GameController_GamePad_ButtonEvent_GetActionTime_02: () => number;
+export const ActsGameControllerGamePadButtonEventGetActionTime02: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetDeviceId_01: () => number;
+export const ActsGameControllerGamePadAxisEventGetDeviceId01: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetDeviceId_02: () => number;
+export const ActsGameControllerGamePadAxisEventGetDeviceId02: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetDeviceId_03: () => number;
+export const ActsGameControllerGamePadAxisEventGetDeviceId_03: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetAxisSourceType_01: () => number;
+export const ActsGameControllerGamePadAxisEventGetAxisSourceType01: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetAxisSourceType_02: () => number;
+export const ActsGameControllerGamePadAxisEventGetAxisSourceType02: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetXAxisValue_01: () => number;
+export const ActsGameControllerGamePadAxisEventGetXAxisValue01: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetXAxisValue_02: () => number;
+export const ActsGameControllerGamePadAxisEventGetXAxisValue02: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetYAxisValue_01: () => number;
+export const ActsGameControllerGamePadAxisEventGetYAxisValue01: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetYAxisValue_02: () => number;
+export const ActsGameControllerGamePadAxisEventGetYAxisValue02: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetZAxisValue_01: () => number;
+export const ActsGameControllerGamePadAxisEventGetZAxisValue01: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetZAxisValue_02: () => number;
+export const ActsGameControllerGamePadAxisEventGetZAxisValue02: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetRZAxisValue_01: () => number;
+export const ActsGameControllerGamePadAxisEventGetRZAxisValue01: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetRZAxisValue_02: () => number;
+export const ActsGameControllerGamePadAxisEventGetRZAxisValue02: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetHatXAxisValue_01: () => number;
+export const ActsGameControllerGamePadAxisEventGetHatXAxisValue01: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetHatXAxisValue_02: () => number;
+export const ActsGameControllerGamePadAxisEventGetHatXAxisValue02: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetHatYAxisValue_01: () => number;
+export const ActsGameControllerGamePadAxisEventGetHatYAxisValue01: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetHatYAxisValue_02: () => number;
+export const ActsGameControllerGamePadAxisEventGetHatYAxisValue02: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetBrakeAxisValue_01: () => number;
+export const ActsGameControllerGamePadAxisEventGetBrakeAxisValue01: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetBrakeAxisValue_02: () => number;
+export const ActsGameControllerGamePadAxisEventGetBrakeAxisValue02: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetGasAxisValue_01: () => number;
+export const ActsGameControllerGamePadAxisEventGetGasAxisValue01: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetGasAxisValue_02: () => number;
+export const ActsGameControllerGamePadAxisEventGetGasAxisValue02: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetActionTime_01: () => number;
+export const ActsGameControllerGamePadAxisEventGetActionTime01: () => number;
 
-export const ACTS_GameController_GamePad_AxisEvent_GetActionTime_02: () => number;
+export const ActsGameControllerGamePadAxisEventGetActionTime02: () => number;
 
-export const ACTS_RealDevice_GetAllDevices: () => number;
+export const ActsRealDeviceGetAllDevices: () => number;
 
-export const ACTS_RealDevice_HasRealDevice: () => number;
+export const ActsRealDeviceHasRealDevice: () => number;
 
-export const ACTS_RealDevice_CheckDeviceEvent: () => number;
+export const ActsRealDeviceCheckDeviceEvent: () => number;
 
-export const ACTS_RealDevice_CheckGamePadEvent: () => number;
+export const ActsRealDeviceCheckGamePadEvent: () => number;

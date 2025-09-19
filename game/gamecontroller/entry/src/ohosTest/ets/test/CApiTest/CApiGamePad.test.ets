@@ -19,1059 +19,1123 @@ import { SyscapChecker } from './SyscapChecker.test';
 export default function CApiGamePadTest() {
   describe('CApiGamePadTest', () => {
     /**
-     * @tc.number OH_GamePad_LeftShoulder_RegisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_LeftShoulder_RegisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_LeftShoulder_RegisterButtonInputMonitor01
+     * @tc.name OH_GamePad_LeftShoulder_RegisterButtonInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_LeftShoulder_RegisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_LeftShoulder_RegisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_LeftShoulder_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadLeftShoulderRegisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_LeftShoulder_RegisterButtonInputMonitor_02
-     * @tc.name OH_GamePad_LeftShoulder_RegisterButtonInputMonitor_02
+     * @tc.number OH_GamePad_LeftShoulder_RegisterButtonInputMonitor02
+     * @tc.name OH_GamePad_LeftShoulder_RegisterButtonInputMonitor02
      * @tc.desc register failed, callback null
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_LeftShoulder_RegisterButtonInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_LeftShoulder_RegisterButtonInputMonitor_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GamePad_LeftShoulder_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadLeftShoulderRegisterButtonInputMonitor02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
-     * @tc.number OH_GamePad_LeftShoulder_UnregisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_LeftShoulder_UnregisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_LeftShoulder_UnregisterButtonInputMonitor01
+     * @tc.name OH_GamePad_LeftShoulder_UnregisterButtonInputMonitor01
      * @tc.desc unregister success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_LeftShoulder_UnregisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_LeftShoulder_UnregisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_LeftShoulder_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadLeftShoulderUnregisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_RightShoulder_RegisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_RightShoulder_RegisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_RightShoulder_RegisterButtonInputMonitor01
+     * @tc.name OH_GamePad_RightShoulder_RegisterButtonInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_RightShoulder_RegisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_RightShoulder_RegisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_RightShoulder_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadRightShoulderRegisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_RightShoulder_RegisterButtonInputMonitor_02
-     * @tc.name OH_GamePad_RightShoulder_RegisterButtonInputMonitor_02
+     * @tc.number OH_GamePad_RightShoulder_RegisterButtonInputMonitor02
+     * @tc.name OH_GamePad_RightShoulder_RegisterButtonInputMonitor02
      * @tc.desc when callback is null, register failed
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_RightShoulder_RegisterButtonInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_RightShoulder_RegisterButtonInputMonitor_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GamePad_RightShoulder_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadRightShoulderRegisterButtonInputMonitor02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
-     * @tc.number OH_GamePad_RightShoulder_UnregisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_RightShoulder_UnregisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_RightShoulder_UnregisterButtonInputMonitor01
+     * @tc.name OH_GamePad_RightShoulder_UnregisterButtonInputMonitor01
      * @tc.desc unregister success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_RightShoulder_UnregisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_RightShoulder_UnregisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_RightShoulder_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadRightShoulderUnregisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_LeftTrigger_RegisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_LeftTrigger_RegisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_LeftTrigger_RegisterButtonInputMonitor01
+     * @tc.name OH_GamePad_LeftTrigger_RegisterButtonInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_LeftTrigger_RegisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_LeftTrigger_RegisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_LeftTrigger_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadLeftTriggerRegisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_LeftTrigger_RegisterButtonInputMonitor_02
-     * @tc.name OH_GamePad_LeftTrigger_RegisterButtonInputMonitor_02
+     * @tc.number OH_GamePad_LeftTrigger_RegisterButtonInputMonitor02
+     * @tc.name OH_GamePad_LeftTrigger_RegisterButtonInputMonitor02
      * @tc.desc when callback is null, register failed
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_LeftTrigger_RegisterButtonInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_LeftTrigger_RegisterButtonInputMonitor_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GamePad_LeftTrigger_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadLeftTriggerRegisterButtonInputMonitor02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
-     * @tc.number OH_GamePad_LeftTrigger_UnregisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_LeftTrigger_UnregisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_LeftTrigger_UnregisterButtonInputMonitor01
+     * @tc.name OH_GamePad_LeftTrigger_UnregisterButtonInputMonitor01
      * @tc.desc unregister success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_LeftTrigger_UnregisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_LeftTrigger_UnregisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_LeftTrigger_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadLeftTriggerUnregisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_LeftTrigger_RegisterAxisInputMonitor_01
-     * @tc.name OH_GamePad_LeftTrigger_RegisterAxisInputMonitor_01
+     * @tc.number OH_GamePad_LeftTrigger_RegisterAxisInputMonitor01
+     * @tc.name OH_GamePad_LeftTrigger_RegisterAxisInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_LeftTrigger_RegisterAxisInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_LeftTrigger_RegisterAxisInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_LeftTrigger_RegisterAxisInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadLeftTriggerRegisterAxisInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_LeftTrigger_RegisterAxisInputMonitor_02
-     * @tc.name OH_GamePad_LeftTrigger_RegisterAxisInputMonitor_02
+     * @tc.number OH_GamePad_LeftTrigger_RegisterAxisInputMonitor02
+     * @tc.name OH_GamePad_LeftTrigger_RegisterAxisInputMonitor02
      * @tc.desc when callback is null, register failed
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_LeftTrigger_RegisterAxisInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_LeftTrigger_RegisterAxisInputMonitor_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GamePad_LeftTrigger_RegisterAxisInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadLeftTriggerRegisterAxisInputMonitor02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
-     * @tc.number OH_GamePad_LeftTrigger_UnregisterAxisInputMonitor_01
-     * @tc.name OH_GamePad_LeftTrigger_UnregisterAxisInputMonitor_01
+     * @tc.number OH_GamePad_LeftTrigger_UnregisterAxisInputMonitor01
+     * @tc.name OH_GamePad_LeftTrigger_UnregisterAxisInputMonitor01
      * @tc.desc unregister success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_LeftTrigger_UnregisterAxisInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_LeftTrigger_UnregisterAxisInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_LeftTrigger_UnregisterAxisInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadLeftTriggerUnregisterAxisInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_RightTrigger_RegisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_RightTrigger_RegisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_RightTrigger_RegisterButtonInputMonitor01
+     * @tc.name OH_GamePad_RightTrigger_RegisterButtonInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_RightTrigger_RegisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_RightTrigger_RegisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_RightTrigger_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadRightTriggerRegisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_RightTrigger_RegisterButtonInputMonitor_02
-     * @tc.name OH_GamePad_RightTrigger_RegisterButtonInputMonitor_02
+     * @tc.number OH_GamePad_RightTrigger_RegisterButtonInputMonitor02
+     * @tc.name OH_GamePad_RightTrigger_RegisterButtonInputMonitor02
      * @tc.desc when callback is null, register failed
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_RightTrigger_RegisterButtonInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_RightTrigger_RegisterButtonInputMonitor_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GamePad_RightTrigger_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadRightTriggerRegisterButtonInputMonitor02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
-     * @tc.number OH_GamePad_RightTrigger_UnregisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_RightTrigger_UnregisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_RightTrigger_UnregisterButtonInputMonitor01
+     * @tc.name OH_GamePad_RightTrigger_UnregisterButtonInputMonitor01
      * @tc.desc unregister success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_RightTrigger_UnregisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_RightTrigger_UnregisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_RightTrigger_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadRightTriggerUnregisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_RightTrigger_RegisterAxisInputMonitor_01
-     * @tc.name OH_GamePad_RightTrigger_RegisterAxisInputMonitor_01
+     * @tc.number OH_GamePad_RightTrigger_RegisterAxisInputMonitor01
+     * @tc.name OH_GamePad_RightTrigger_RegisterAxisInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_RightTrigger_RegisterAxisInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_RightTrigger_RegisterAxisInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_RightTrigger_RegisterAxisInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadRightTriggerRegisterAxisInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_RightTrigger_RegisterAxisInputMonitor_02
-     * @tc.name OH_GamePad_RightTrigger_RegisterAxisInputMonitor_02
+     * @tc.number OH_GamePad_RightTrigger_RegisterAxisInputMonitor02
+     * @tc.name OH_GamePad_RightTrigger_RegisterAxisInputMonitor02
      * @tc.desc when callback is null, register failed
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_RightTrigger_RegisterAxisInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_RightTrigger_RegisterAxisInputMonitor_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GamePad_RightTrigger_RegisterAxisInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadRightTriggerRegisterAxisInputMonitor02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
-     * @tc.number OH_GamePad_RightTrigger_UnregisterAxisInputMonitor_01
-     * @tc.name OH_GamePad_RightTrigger_UnregisterAxisInputMonitor_01
+     * @tc.number OH_GamePad_RightTrigger_UnregisterAxisInputMonitor01
+     * @tc.name OH_GamePad_RightTrigger_UnregisterAxisInputMonitor01
      * @tc.desc unregister success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_RightTrigger_UnregisterAxisInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_RightTrigger_UnregisterAxisInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_RightTrigger_UnregisterAxisInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadRightTriggerUnregisterAxisInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_ButtonMenu_RegisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_ButtonMenu_RegisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_ButtonMenu_RegisterButtonInputMonitor01
+     * @tc.name OH_GamePad_ButtonMenu_RegisterButtonInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonMenu_RegisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_ButtonMenu_RegisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_ButtonMenu_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadButtonMenuRegisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_ButtonMenu_RegisterButtonInputMonitor_02
-     * @tc.name OH_GamePad_ButtonMenu_RegisterButtonInputMonitor_02
+     * @tc.number OH_GamePad_ButtonMenu_RegisterButtonInputMonitor02
+     * @tc.name OH_GamePad_ButtonMenu_RegisterButtonInputMonitor02
      * @tc.desc when callback is null, register failed
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonMenu_RegisterButtonInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_ButtonMenu_RegisterButtonInputMonitor_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GamePad_ButtonMenu_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadButtonMenuRegisterButtonInputMonitor02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
-     * @tc.number OH_GamePad_ButtonMenu_UnregisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_ButtonMenu_UnregisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_ButtonMenu_UnregisterButtonInputMonitor01
+     * @tc.name OH_GamePad_ButtonMenu_UnregisterButtonInputMonitor01
      * @tc.desc unregister success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonMenu_UnregisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_ButtonMenu_UnregisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_ButtonMenu_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadButtonMenuUnregisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_ButtonHome_RegisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_ButtonHome_RegisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_ButtonHome_RegisterButtonInputMonitor01
+     * @tc.name OH_GamePad_ButtonHome_RegisterButtonInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonHome_RegisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_ButtonHome_RegisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_ButtonHome_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadButtonHomeRegisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_ButtonHome_RegisterButtonInputMonitor_02
-     * @tc.name OH_GamePad_ButtonHome_RegisterButtonInputMonitor_02
+     * @tc.number OH_GamePad_ButtonHome_RegisterButtonInputMonitor02
+     * @tc.name OH_GamePad_ButtonHome_RegisterButtonInputMonitor02
      * @tc.desc when callback is null, register failed
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonHome_RegisterButtonInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_ButtonHome_RegisterButtonInputMonitor_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GamePad_ButtonHome_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadButtonHomeRegisterButtonInputMonitor02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
-     * @tc.number OH_GamePad_ButtonHome_UnregisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_ButtonHome_UnregisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_ButtonHome_UnregisterButtonInputMonitor01
+     * @tc.name OH_GamePad_ButtonHome_UnregisterButtonInputMonitor01
      * @tc.desc unregister success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonHome_UnregisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_ButtonHome_UnregisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_ButtonHome_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadButtonHomeUnregisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_ButtonA_RegisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_ButtonA_RegisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_ButtonA_RegisterButtonInputMonitor01
+     * @tc.name OH_GamePad_ButtonA_RegisterButtonInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonA_RegisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_ButtonA_RegisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_ButtonA_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadButtonARegisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_ButtonA_RegisterButtonInputMonitor_02
-     * @tc.name OH_GamePad_ButtonA_RegisterButtonInputMonitor_02
+     * @tc.number OH_GamePad_ButtonA_RegisterButtonInputMonitor02
+     * @tc.name OH_GamePad_ButtonA_RegisterButtonInputMonitor02
      * @tc.desc when callback is null, register failed
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonA_RegisterButtonInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_ButtonA_RegisterButtonInputMonitor_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GamePad_ButtonA_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadButtonARegisterButtonInputMonitor02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
-     * @tc.number OH_GamePad_ButtonA_UnregisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_ButtonA_UnregisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_ButtonA_UnregisterButtonInputMonitor01
+     * @tc.name OH_GamePad_ButtonA_UnregisterButtonInputMonitor01
      * @tc.desc unregister success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonA_UnregisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_ButtonA_UnregisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_ButtonA_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadButtonAUnregisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_ButtonB_RegisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_ButtonB_RegisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_ButtonB_RegisterButtonInputMonitor01
+     * @tc.name OH_GamePad_ButtonB_RegisterButtonInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonB_RegisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_ButtonB_RegisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_ButtonB_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadButtonBRegisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_ButtonB_RegisterButtonInputMonitor_02
-     * @tc.name OH_GamePad_ButtonB_RegisterButtonInputMonitor_02
+     * @tc.number OH_GamePad_ButtonB_RegisterButtonInputMonitor02
+     * @tc.name OH_GamePad_ButtonB_RegisterButtonInputMonitor02
      * @tc.desc when callback is null, register failed
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonB_RegisterButtonInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_ButtonB_RegisterButtonInputMonitor_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GamePad_ButtonB_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadButtonBRegisterButtonInputMonitor02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
-     * @tc.number OH_GamePad_ButtonB_UnregisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_ButtonB_UnregisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_ButtonB_UnregisterButtonInputMonitor01
+     * @tc.name OH_GamePad_ButtonB_UnregisterButtonInputMonitor01
      * @tc.desc unregister success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonB_UnregisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_ButtonB_UnregisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_ButtonB_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadButtonBUnregisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_ButtonX_RegisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_ButtonX_RegisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_ButtonX_RegisterButtonInputMonitor01
+     * @tc.name OH_GamePad_ButtonX_RegisterButtonInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonX_RegisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_ButtonX_RegisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_ButtonX_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadButtonXRegisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_ButtonX_RegisterButtonInputMonitor_02
-     * @tc.name OH_GamePad_ButtonX_RegisterButtonInputMonitor_02
+     * @tc.number OH_GamePad_ButtonX_RegisterButtonInputMonitor02
+     * @tc.name OH_GamePad_ButtonX_RegisterButtonInputMonitor02
      * @tc.desc when callback is null, register failed
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonX_RegisterButtonInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_ButtonX_RegisterButtonInputMonitor_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GamePad_ButtonX_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadButtonXRegisterButtonInputMonitor02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
-     * @tc.number OH_GamePad_ButtonX_UnregisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_ButtonX_UnregisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_ButtonX_UnregisterButtonInputMonitor01
+     * @tc.name OH_GamePad_ButtonX_UnregisterButtonInputMonitor01
      * @tc.desc unregister success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonX_UnregisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_ButtonX_UnregisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_ButtonX_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadButtonXUnregisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_ButtonY_RegisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_ButtonY_RegisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_ButtonY_RegisterButtonInputMonitor01
+     * @tc.name OH_GamePad_ButtonY_RegisterButtonInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonY_RegisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_ButtonY_RegisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_ButtonY_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadButtonYRegisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_ButtonY_RegisterButtonInputMonitor_02
-     * @tc.name OH_GamePad_ButtonY_RegisterButtonInputMonitor_02
+     * @tc.number OH_GamePad_ButtonY_RegisterButtonInputMonitor02
+     * @tc.name OH_GamePad_ButtonY_RegisterButtonInputMonitor02
      * @tc.desc when callback is null, register failed
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonY_RegisterButtonInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_ButtonY_RegisterButtonInputMonitor_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GamePad_ButtonY_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadButtonYRegisterButtonInputMonitor02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
-     * @tc.number OH_GamePad_ButtonY_UnregisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_ButtonY_UnregisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_ButtonY_UnregisterButtonInputMonitor01
+     * @tc.name OH_GamePad_ButtonY_UnregisterButtonInputMonitor01
      * @tc.desc unregister success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonY_UnregisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_ButtonY_UnregisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_ButtonY_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadButtonYUnregisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_ButtonC_RegisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_ButtonC_RegisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_ButtonC_RegisterButtonInputMonitor01
+     * @tc.name OH_GamePad_ButtonC_RegisterButtonInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonC_RegisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_ButtonC_RegisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_ButtonC_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadButtonCRegisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_ButtonC_RegisterButtonInputMonitor_02
-     * @tc.name OH_GamePad_ButtonC_RegisterButtonInputMonitor_02
+     * @tc.number OH_GamePad_ButtonC_RegisterButtonInputMonitor02
+     * @tc.name OH_GamePad_ButtonC_RegisterButtonInputMonitor02
      * @tc.desc when callback is null, register failed
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonC_RegisterButtonInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_ButtonC_RegisterButtonInputMonitor_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GamePad_ButtonC_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadButtonCRegisterButtonInputMonitor02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
-     * @tc.number OH_GamePad_ButtonC_UnregisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_ButtonC_UnregisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_ButtonC_UnregisterButtonInputMonitor01
+     * @tc.name OH_GamePad_ButtonC_UnregisterButtonInputMonitor01
      * @tc.desc unregister success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonC_UnregisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_ButtonC_UnregisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_ButtonC_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadButtonCUnregisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor01
+     * @tc.name OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadDpadLeftButtonRegisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor_02
-     * @tc.name OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor_02
+     * @tc.number OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor02
+     * @tc.name OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor02
      * @tc.desc when callback is null, register failed
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadDpadLeftButtonRegisterButtonInputMonitor02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
-     * @tc.number OH_GamePad_Dpad_LeftButton_UnregisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_Dpad_LeftButton_UnregisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_Dpad_LeftButton_UnregisterButtonInputMonitor01
+     * @tc.name OH_GamePad_Dpad_LeftButton_UnregisterButtonInputMonitor01
      * @tc.desc unregister success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_Dpad_LeftButton_UnregisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_Dpad_LeftButton_UnregisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_Dpad_LeftButton_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadDpadLeftButtonUnregisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor01
+     * @tc.name OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_Dpad_RightButton_RegisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadDpadRightButtonRegisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor_02
-     * @tc.name OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor_02
+     * @tc.number OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor02
+     * @tc.name OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor02
      * @tc.desc when callback is null, register failed
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_Dpad_RightButton_RegisterButtonInputMonitor_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadDpadRightButtonRegisterButtonInputMonitor02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
-     * @tc.number OH_GamePad_Dpad_RightButton_UnregisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_Dpad_RightButton_UnregisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_Dpad_RightButton_UnregisterButtonInputMonitor01
+     * @tc.name OH_GamePad_Dpad_RightButton_UnregisterButtonInputMonitor01
      * @tc.desc unregister success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_Dpad_RightButton_UnregisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_Dpad_RightButton_UnregisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_Dpad_RightButton_UnregisterButtonInputMonitor01',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadDpadRightButtonUnregisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor01
+     * @tc.name OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_Dpad_UpButton_RegisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadDpadUpButtonRegisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor_02
-     * @tc.name OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor_02
+     * @tc.number OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor02
+     * @tc.name OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor02
      * @tc.desc when callback is null, register failed
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_Dpad_UpButton_RegisterButtonInputMonitor_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadDpadUpButtonRegisterButtonInputMonitor02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
-     * @tc.number OH_GamePad_Dpad_UpButton_UnregisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_Dpad_UpButton_UnregisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_Dpad_UpButton_UnregisterButtonInputMonitor01
+     * @tc.name OH_GamePad_Dpad_UpButton_UnregisterButtonInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_Dpad_UpButton_UnregisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_Dpad_UpButton_UnregisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_Dpad_UpButton_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadDpadUpButtonUnregisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor01
+     * @tc.name OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_Dpad_DownButton_RegisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadDpadDownButtonRegisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor_02
-     * @tc.name OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor_02
+     * @tc.number OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor02
+     * @tc.name OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor02
      * @tc.desc when callback is null, register failed
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_Dpad_DownButton_RegisterButtonInputMonitor_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadDpadDownButtonRegisterButtonInputMonitor02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
-     * @tc.number OH_GamePad_Dpad_DownButton_UnregisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_Dpad_DownButton_UnregisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_Dpad_DownButton_UnregisterButtonInputMonitor01
+     * @tc.name OH_GamePad_Dpad_DownButton_UnregisterButtonInputMonitor01
      * @tc.desc unregister success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_Dpad_DownButton_UnregisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_Dpad_DownButton_UnregisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_Dpad_DownButton_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadDpadDownButtonUnregisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_Dpad_RegisterAxisInputMonitor_01
-     * @tc.name OH_GamePad_Dpad_RegisterAxisInputMonitor_01
+     * @tc.number OH_GamePad_Dpad_RegisterAxisInputMonitor01
+     * @tc.name OH_GamePad_Dpad_RegisterAxisInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_Dpad_RegisterAxisInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('OH_GamePad_Dpad_RegisterAxisInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
         return;
       }
-      let ret: number = GC.ACTS_GamePad_Dpad_RegisterAxisInputMonitor_01();
+      let ret: number = GC.ActsGamePadDpadRegisterAxisInputMonitor01();
       expect(ret).assertEqual(0);
     });
 
     /**
-     * @tc.number OH_GamePad_Dpad_RegisterAxisInputMonitor_02
-     * @tc.name OH_GamePad_Dpad_RegisterAxisInputMonitor_02
+     * @tc.number OH_GamePad_Dpad_RegisterAxisInputMonitor02
+     * @tc.name OH_GamePad_Dpad_RegisterAxisInputMonitor02
      * @tc.desc when callback is null, register failed
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_Dpad_RegisterAxisInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('OH_GamePad_Dpad_RegisterAxisInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
         return;
       }
-      let ret: number = GC.ACTS_GamePad_Dpad_RegisterAxisInputMonitor_02();
+      let ret: number = GC.ActsGamePadDpadRegisterAxisInputMonitor02();
       expect(ret).assertEqual(401);
     });
 
     /**
-     * @tc.number OH_GamePad_Dpad_UnregisterAxisInputMonitor_01
-     * @tc.name OH_GamePad_Dpad_UnregisterAxisInputMonitor_01
+     * @tc.number OH_GamePad_Dpad_UnregisterAxisInputMonitor01
+     * @tc.name OH_GamePad_Dpad_UnregisterAxisInputMonitor01
      * @tc.desc unregister success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_Dpad_UnregisterAxisInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_Dpad_UnregisterAxisInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_Dpad_UnregisterAxisInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadDpadUnregisterAxisInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor01
+     * @tc.name OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_LeftThumbstick_RegisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadLeftThumbstickRegisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor_02
-     * @tc.name OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor_02
+     * @tc.number OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor02
+     * @tc.name OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor02
      * @tc.desc when callback is null, register failed
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_LeftThumbstick_RegisterButtonInputMonitor_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadLeftThumbstickRegisterButtonInputMonitor02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
-     * @tc.number OH_GamePad_LeftThumbstick_UnregisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_LeftThumbstick_UnregisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_LeftThumbstick_UnregisterButtonInputMonitor01
+     * @tc.name OH_GamePad_LeftThumbstick_UnregisterButtonInputMonitor01
      * @tc.desc unregister success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_LeftThumbstick_UnregisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_LeftThumbstick_UnregisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_LeftThumbstick_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadLeftThumbstickUnregisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor_01
-     * @tc.name OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor_01
+     * @tc.number OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor01
+     * @tc.name OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_LeftThumbstick_RegisterAxisInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadLeftThumbstickRegisterAxisInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor_02
-     * @tc.name OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor_02
+     * @tc.number OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor02
+     * @tc.name OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor02
      * @tc.desc when callback is null, register failed
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_LeftThumbstick_RegisterAxisInputMonitor_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadLeftThumbstickRegisterAxisInputMonitor02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
-     * @tc.number OH_GamePad_LeftThumbstick_UnregisterAxisInputMonitor_01
-     * @tc.name OH_GamePad_LeftThumbstick_UnregisterAxisInputMonitor_01
+     * @tc.number OH_GamePad_LeftThumbstick_UnregisterAxisInputMonitor01
+     * @tc.name OH_GamePad_LeftThumbstick_UnregisterAxisInputMonitor01
      * @tc.desc unregister success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_LeftThumbstick_UnregisterAxisInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_LeftThumbstick_UnregisterAxisInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_LeftThumbstick_UnregisterAxisInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadLeftThumbstickUnregisterAxisInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_RightThumbstick_RegisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_RightThumbstick_RegisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_RightThumbstick_RegisterButtonInputMonitor01
+     * @tc.name OH_GamePad_RightThumbstick_RegisterButtonInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_RightThumbstick_RegisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_RightThumbstick_RegisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_RightThumbstick_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadRightThumbstickRegisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_RightThumbstick_RegisterButtonInputMonitor_02
-     * @tc.name OH_GamePad_RightThumbstick_RegisterButtonInputMonitor_02
+     * @tc.number OH_GamePad_RightThumbstick_RegisterButtonInputMonitor02
+     * @tc.name OH_GamePad_RightThumbstick_RegisterButtonInputMonitor02
      * @tc.desc when callback is null, register failed
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_RightThumbstick_RegisterButtonInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_RightThumbstick_RegisterButtonInputMonitor_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GamePad_RightThumbstick_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadRightThumbstickRegisterButtonInputMonitor02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
-     * @tc.number OH_GamePad_RightThumbstick_UnregisterButtonInputMonitor_01
-     * @tc.name OH_GamePad_RightThumbstick_UnregisterButtonInputMonitor_01
+     * @tc.number OH_GamePad_RightThumbstick_UnregisterButtonInputMonitor01
+     * @tc.name OH_GamePad_RightThumbstick_UnregisterButtonInputMonitor01
      * @tc.desc unregister success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_RightThumbstick_UnregisterButtonInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_RightThumbstick_UnregisterButtonInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_RightThumbstick_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadRightThumbstickUnregisterButtonInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_RightThumbstick_RegisterAxisInputMonitor_01
-     * @tc.name OH_GamePad_RightThumbstick_RegisterAxisInputMonitor_01
+     * @tc.number OH_GamePad_RightThumbstick_RegisterAxisInputMonitor01
+     * @tc.name OH_GamePad_RightThumbstick_RegisterAxisInputMonitor01
      * @tc.desc register success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_RightThumbstick_RegisterAxisInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_RightThumbstick_RegisterAxisInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_RightThumbstick_RegisterAxisInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadRightThumbstickRegisterAxisInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GamePad_RightThumbstick_RegisterAxisInputMonitor_02
-     * @tc.name OH_GamePad_RightThumbstick_RegisterAxisInputMonitor_02
+     * @tc.number OH_GamePad_RightThumbstick_RegisterAxisInputMonitor02
+     * @tc.name OH_GamePad_RightThumbstick_RegisterAxisInputMonitor02
      * @tc.desc when callback is null, register failed
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_RightThumbstick_RegisterAxisInputMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_RightThumbstick_RegisterAxisInputMonitor_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GamePad_RightThumbstick_RegisterAxisInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadRightThumbstickRegisterAxisInputMonitor02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
-     * @tc.number OH_GamePad_RightThumbstick_UnregisterAxisInputMonitor_01
-     * @tc.name OH_GamePad_RightThumbstick_UnregisterAxisInputMonitor_01
+     * @tc.number OH_GamePad_RightThumbstick_UnregisterAxisInputMonitor01
+     * @tc.name OH_GamePad_RightThumbstick_UnregisterAxisInputMonitor01
      * @tc.desc unregister success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_RightThumbstick_UnregisterAxisInputMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GamePad_RightThumbstick_UnregisterAxisInputMonitor_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GamePad_RightThumbstick_UnregisterAxisInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGamePadRightThumbstickUnregisterAxisInputMonitor01();
+        expect(ret).assertEqual(0);
+      });
   })
 }

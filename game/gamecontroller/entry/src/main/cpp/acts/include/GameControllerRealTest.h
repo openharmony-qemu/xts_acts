@@ -25,25 +25,25 @@ namespace GameController {
  * 连接设备进行真实测试
  * @return 测试结果，0表示成功，其他表示失败
  */
-int32_t ACTS_RealDevice_GetAllDevices();
+int32_t ActsRealDeviceGetAllDevices();
 
 /**
  * 是否有真实的设备
  * @return 0表示没有，1表示有
  */
-int32_t ACTS_RealDevice_HasRealDevice();
+int32_t ActsRealDeviceHasRealDevice();
 
 /**
  * 检查设备回调事件
  * @return 0表示检查成功；1表示检查失败
  */
-int32_t ACTS_RealDevice_CheckDeviceEvent();
+int32_t ActsRealDeviceCheckDeviceEvent();
 
 /**
  * 检查GamePad事件回调
  * @return 0表示检查成功；1表示检查失败
  */
-int32_t ACTS_RealDevice_CheckGamePadEvent();
+int32_t ActsRealDeviceCheckGamePadEvent();
 }
 }
 #endif //APP_GAMECONTROLLER_TEST_GAME_CONTROLLER_REAL_TEST_H

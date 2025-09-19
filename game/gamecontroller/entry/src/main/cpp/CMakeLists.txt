@@ -4,25 +4,13 @@ project(gamecontrollercapi)
 
 set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 
-
-## Treat compile warnings as errors
-#set(GAMECONTROLLER_COMPILE_OPTIONS
-#    -fno-exceptions
-#    -fno-rtti
-#    -Wall
-#    -Werror
-#    -Wextra
-#    -Wpedantic
-#    -Wshadow
-#)
-
 set(GAMECONTROLLER_SOURCES
-    acts/src/game_device_test.cpp
-    acts/src/game_device_event_test.cpp
-    acts/src/game_pad_test.cpp
-    acts/src/game_pad_event_test.cpp
-    acts/src/game_controller_real_test.cpp
-    main.cpp
+    acts/src/GameDeviceEventTest.cpp
+    acts/src/GameControllerRealTest.cpp
+    acts/src/GamePadEventTest.cpp
+    acts/src/GamePadTest.cpp
+    acts/src/GameDeviceTest.cpp
+    ExportsApiTest.cpp
 )
 
 set(FRAMEGENERATION_INCLUDE_DIRECTORIES

@@ -30,20 +30,20 @@ function wait(ms: number): Promise<void> {
 export default function CApiRealDeviceTest() {
   describe('CApiRealDeviceTest', () => {
     /**
-     * @tc.number ACTS_RealDevice_Test
-     * @tc.name ACTS_RealDevice_Test
+     * @tc.number ActsRealDevice_Test
+     * @tc.name ActsRealDevice_Test
      * @tc.desc test for real device
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('ACTS_RealDevice_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('ActsRealDevice_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
         return;
       }
-      let ret: number = GC.ACTS_RealDevice_GetAllDevices();
+      let ret: number = GC.ActsRealDeviceGetAllDevices();
       expect(ret).assertEqual(0);
-      if (GC.ACTS_RealDevice_HasRealDevice() == 0) {
+      if (GC.ActsRealDeviceHasRealDevice() == 0) {
         hilog.info(0x0000, "GameControllerXts", "There is no any real device.");
         return;
       }
@@ -54,11 +54,11 @@ export default function CApiRealDeviceTest() {
       await wait(SLEEP_WAIT);
 
       // 事件中肯定应该存在设备上线事件
-      ret = GC.ACTS_RealDevice_CheckDeviceEvent();
+      ret = GC.ActsRealDeviceCheckDeviceEvent();
       expect(ret).assertEqual(0);
 
       // 检查手柄的按键和轴事件，如果没有收到，则返回成功；收到则进行事件解析，检查解析结果是否正确
-      ret = GC.ACTS_RealDevice_CheckGamePadEvent();
+      ret = GC.ActsRealDeviceCheckGamePadEvent();
       expect(ret).assertEqual(0);
     });
   })

@@ -19,8 +19,8 @@ import { SyscapChecker } from './SyscapChecker.test';
 export default function CApiGameDeviceTest() {
   describe('CApiGameDeviceTest', () => {
     /**
-     * @tc.number OH_GameDevice_GetAllDeviceInfos_01
-     * @tc.name OH_GameDevice_GetAllDeviceInfos_01
+     * @tc.number OH_GameDevice_GetAllDeviceInfos
+     * @tc.name OH_GameDevice_GetAllDeviceInfos
      * @tc.desc get AllDeviceInfos success
      * @tc.level Level0
      * @tc.size MediumTest
@@ -30,153 +30,155 @@ export default function CApiGameDeviceTest() {
       if (SyscapChecker.canNotUse()) {
         return;
       }
-      let ret: number = GC.ACTS_GameDevice_GetAllDeviceInfos_01();
+      let ret: number = GC.ActsGameDeviceGetAllDeviceInfos01();
       expect(ret).assertEqual(0);
     });
 
     /**
-     * @tc.number OH_GameDevice_RegisterDeviceMonitor_01
-     * @tc.name OH_GameDevice_RegisterDeviceMonitor_01
+     * @tc.number OH_GameDevice_RegisterDeviceMonitor01
+     * @tc.name OH_GameDevice_RegisterDeviceMonitor01
      * @tc.desc registerDeviceMonitor success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GameDevice_RegisterDeviceMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('OH_GameDevice_RegisterDeviceMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
         return;
       }
-      let ret: number = GC.ACTS_GameDevice_RegisterDeviceMonitor_01();
+      let ret: number = GC.ActsGameDeviceRegisterDeviceMonitor01();
       expect(ret).assertEqual(0);
     });
 
     /**
-     * @tc.number OH_GameDevice_RegisterDeviceMonitor_02
-     * @tc.name OH_GameDevice_RegisterDeviceMonitor_02
+     * @tc.number OH_GameDevice_RegisterDeviceMonitor02
+     * @tc.name OH_GameDevice_RegisterDeviceMonitor02
      * @tc.desc registerDeviceMonitor failed when deviceMonitorCallback is null
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GameDevice_RegisterDeviceMonitor_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('OH_GameDevice_RegisterDeviceMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
         return;
       }
-      let ret: number = GC.ACTS_GameDevice_RegisterDeviceMonitor_02();
+      let ret: number = GC.ActsGameDeviceRegisterDeviceMonitor02();
       expect(ret).assertEqual(401);
     });
 
     /**
-     * @tc.number OH_GameDevice_UnregisterDeviceMonitor_01
-     * @tc.name OH_GameDevice_UnregisterDeviceMonitor_01
+     * @tc.number OH_GameDevice_UnregisterDeviceMonitor01
+     * @tc.name OH_GameDevice_UnregisterDeviceMonitor01
      * @tc.desc UnregisterDeviceMonitor success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GameDevice_UnregisterDeviceMonitor_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('OH_GameDevice_UnregisterDeviceMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
         return;
       }
-      let ret: number = GC.ACTS_GameDevice_UnregisterDeviceMonitor_01();
+      let ret: number = GC.ActsGameDeviceUnregisterDeviceMonitor01();
       expect(ret).assertEqual(0);
     });
 
     /**
-     * @tc.number OH_GameDevice_DestroyAllDeviceInfos_01
-     * @tc.name OH_GameDevice_DestroyAllDeviceInfos_01
+     * @tc.number OH_GameDevice_DestroyAllDeviceInfos01
+     * @tc.name OH_GameDevice_DestroyAllDeviceInfos01
      * @tc.desc destroy allDeviceInfos success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GameDevice_DestroyAllDeviceInfos_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('OH_GameDevice_DestroyAllDeviceInfos01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
         return;
       }
-      let ret: number = GC.ACTS_GameDevice_DestroyAllDeviceInfos_01();
+      let ret: number = GC.ActsGameDeviceDestroyAllDeviceInfos01();
       expect(ret).assertEqual(0);
     });
 
     /**
-     * @tc.number OH_GameDevice_DestroyAllDeviceInfos_02
-     * @tc.name OH_GameDevice_DestroyAllDeviceInfos_02
+     * @tc.number OH_GameDevice_DestroyAllDeviceInfos02
+     * @tc.name OH_GameDevice_DestroyAllDeviceInfos02
      * @tc.desc destroy allDeviceInfos failed when allDeviceInfos is null
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GameDevice_DestroyAllDeviceInfos_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('OH_GameDevice_DestroyAllDeviceInfos02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
         return;
       }
-      let ret: number = GC.ACTS_GameDevice_DestroyAllDeviceInfos_02();
+      let ret: number = GC.ActsGameDeviceDestroyAllDeviceInfos02();
       expect(ret).assertEqual(401);
     });
 
     /**
-     * @tc.number OH_GameDevice_AllDeviceInfos_GetCount_01
-     * @tc.name OH_GameDevice_AllDeviceInfos_GetCount_01
+     * @tc.number OH_GameDevice_AllDeviceInfos_GetCount01
+     * @tc.name OH_GameDevice_AllDeviceInfos_GetCount01
      * @tc.desc get count success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GameDevice_AllDeviceInfos_GetCount_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('OH_GameDevice_AllDeviceInfos_GetCount01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
         return;
       }
-      let ret: number = GC.ACTS_GameDevice_AllDeviceInfos_GetCount_01();
+      let ret: number = GC.ActsGameDeviceAllDeviceInfosGetCount01();
       expect(ret).assertEqual(0);
     });
 
     /**
-     * @tc.number OH_GameDevice_AllDeviceInfos_GetCount_02
-     * @tc.name OH_GameDevice_AllDeviceInfos_GetCount_02
+     * @tc.number OH_GameDevice_AllDeviceInfos_GetCount02
+     * @tc.name OH_GameDevice_AllDeviceInfos_GetCount02
      * @tc.desc get count failed when allDeviceInfos is null
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GameDevice_AllDeviceInfos_GetCount_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('OH_GameDevice_AllDeviceInfos_GetCount02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
         return;
       }
-      let ret: number = GC.ACTS_GameDevice_AllDeviceInfos_GetCount_02();
+      let ret: number = GC.ActsGameDeviceAllDeviceInfosGetCount02();
       expect(ret).assertEqual(401);
     });
 
     /**
-     * @tc.number OH_GameDevice_AllDeviceInfos_GetDeviceInfo_01
-     * @tc.name OH_GameDevice_AllDeviceInfos_GetDeviceInfo_01
+     * @tc.number OH_GameDevice_AllDeviceInfos_GetDeviceInfo01
+     * @tc.name OH_GameDevice_AllDeviceInfos_GetDeviceInfo01
      * @tc.desc get deviceInfo success
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GameDevice_AllDeviceInfos_GetDeviceInfo_01();
-      expect(ret).assertEqual(0);
-    });
+    it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGameDeviceAllDeviceInfosGetDeviceInfo01();
+        expect(ret).assertEqual(0);
+      });
 
     /**
-     * @tc.number OH_GameDevice_AllDeviceInfos_GetDeviceInfo_02
-     * @tc.name OH_GameDevice_AllDeviceInfos_GetDeviceInfo_02
+     * @tc.number OH_GameDevice_AllDeviceInfos_GetDeviceInfo02
+     * @tc.name OH_GameDevice_AllDeviceInfos_GetDeviceInfo02
      * @tc.desc get deviceInfo failed, when allDeviceInfos is null
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GameDevice_AllDeviceInfos_GetDeviceInfo_02();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGameDeviceAllDeviceInfosGetDeviceInfo02();
+        expect(ret).assertEqual(401);
+      });
 
     /**
      * @tc.number OH_GameDevice_AllDeviceInfos_GetDeviceInfo_03
@@ -186,13 +188,14 @@ export default function CApiGameDeviceTest() {
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo_03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GameDevice_AllDeviceInfos_GetDeviceInfo_03();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo_03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGameDeviceAllDeviceInfosGetDeviceInfo03();
+        expect(ret).assertEqual(401);
+      });
 
     /**
      * @tc.number OH_GameDevice_AllDeviceInfos_GetDeviceInfo_04
@@ -202,13 +205,14 @@ export default function CApiGameDeviceTest() {
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo_04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GameDevice_AllDeviceInfos_GetDeviceInfo_04();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo_04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGameDeviceAllDeviceInfosGetDeviceInfo04();
+        expect(ret).assertEqual(401);
+      });
 
     /**
      * @tc.number OH_GameDevice_AllDeviceInfos_GetDeviceInfo_05
@@ -218,12 +222,13 @@ export default function CApiGameDeviceTest() {
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo_05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (SyscapChecker.canNotUse()) {
-        return;
-      }
-      let ret: number = GC.ACTS_GameDevice_AllDeviceInfos_GetDeviceInfo_05();
-      expect(ret).assertEqual(401);
-    });
+    it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo_05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGameDeviceAllDeviceInfosGetDeviceInfo05();
+        expect(ret).assertEqual(401);
+      });
   })
 }

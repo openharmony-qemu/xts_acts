@@ -15,7 +15,7 @@
 
 #ifndef APP_GAMECONTROLLER_TEST_GAME_CONTROLLER_MODEL_H
 #define APP_GAMECONTROLLER_TEST_GAME_CONTROLLER_MODEL_H
-#include <stdint.h>
+#include <cstdint>
 #include <string>
 
 namespace OHOS {
@@ -116,6 +116,27 @@ struct KeyInfo {
     int64_t downTime;
 };
 
+enum GamePadButtonTypeEnum {
+    LeftShoulder = 2307,
+    RightShoulder = 2308,
+    LeftTrigger = 2309,
+    RightTrigger = 2310,
+    LeftThumbstickButton = 2314,
+    RightThumbstickButton = 2315,
+    ButtonHome = 2311,
+    ButtonMenu = 2312,
+    ButtonOptions = 2313,
+    ButtonA = 2301,
+    ButtonB = 2302,
+    ButtonC = 2303,
+    ButtonX = 2304,
+    ButtonY = 2305,
+    Dpad_UpButton = 2012,
+    Dpad_DownButton = 2013,
+    Dpad_LeftButton = 2014,
+    Dpad_RightButton = 2015
+};
+
 struct ButtonEvent {
     int32_t id;
     std::string uniq;
@@ -133,7 +154,7 @@ struct ButtonEvent {
 
 struct GamePadButtonEvent : ButtonEvent {
 };
-}// namespace GameController
-}// namespace OHOS
+}
+}
 
 #endif //APP_GAMECONTROLLER_TEST_GAME_CONTROLLER_MODEL_H
