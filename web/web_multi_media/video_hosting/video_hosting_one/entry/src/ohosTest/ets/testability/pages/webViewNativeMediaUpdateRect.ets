@@ -597,8 +597,7 @@ struct WebComponent {
                 .width('100%')
                 .height('100%')
                 .onPageEnd((event) => {
-                      console.log('dwb onPageEnd url:' + event.url);
-                      console.info("dwb this.isPageEnd = 1");
+                      console.log('onPageEnd url:' + event.url);
                       this.isPageEnd = 1;
                 })
                 .onAreaChange((oldValue: Area, newValue: Area) => {
