@@ -118,12 +118,12 @@ export default function ErrorCodeRdbStore24Test() {
     })
 
     /**
-     * @tc.name       : RelationStoreError24Test0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_0100
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0001
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_0100
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0001 start *************');
@@ -156,12 +156,12 @@ export default function ErrorCodeRdbStore24Test() {
     })
 
     /**
-     * @tc.name       : RelationStoreError24Test0002
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_0200
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0002
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_0200
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0002 start *************');
@@ -194,12 +194,12 @@ export default function ErrorCodeRdbStore24Test() {
     })
 
     /**
-     * @tc.name       : RelationStoreError24Test0003
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_0300
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0003
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_0300
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0003 start *************');
@@ -232,12 +232,12 @@ export default function ErrorCodeRdbStore24Test() {
     })
 
     /**
-     * @tc.name       : RelationStoreError24Test0004
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_0400
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0004
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_0400
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0004 start *************');
@@ -270,12 +270,12 @@ export default function ErrorCodeRdbStore24Test() {
     })
 
     /**
-     * @tc.name       : RelationStoreError24Test0005
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_0500
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0005
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_0500
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0005 start *************');
@@ -312,12 +312,12 @@ export default function ErrorCodeRdbStore24Test() {
 
 
     /**
-     * @tc.name       : RelationStoreError24Test0006
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_0600
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0006
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_0600
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0006 start *************');
@@ -352,12 +352,12 @@ export default function ErrorCodeRdbStore24Test() {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0006 end *************');
     })
     /**
-     * @tc.name       : RelationStoreError24Test0007
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_0700
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0007
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_0700
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0007 start *************');
@@ -392,12 +392,12 @@ export default function ErrorCodeRdbStore24Test() {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0007 end *************');
     })
     /**
-     * @tc.name       : RelationStoreError24Test0008
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_0800
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0008
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_0800
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0008 start *************');
@@ -432,12 +432,12 @@ export default function ErrorCodeRdbStore24Test() {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0008 end *************');
     })
     /**
-     * @tc.name       : RelationStoreError24Test0009
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_0900
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0009
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_0900
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0009 start *************');
@@ -472,12 +472,12 @@ export default function ErrorCodeRdbStore24Test() {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0009 end *************');
     })
     /**
-     * @tc.name       : RelationStoreError24Test0010
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_1000
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0010
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_1000
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0010 start *************');
@@ -512,12 +512,12 @@ export default function ErrorCodeRdbStore24Test() {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0010 end *************');
     })
     /**
-     * @tc.name       : RelationStoreError24Test0011
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_1100
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0011
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_1100
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0011 start *************');
@@ -551,12 +551,12 @@ export default function ErrorCodeRdbStore24Test() {
     })
 
     /**
-     * @tc.name       : RelationStoreError24Test0012
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_1200
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0012
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_1200
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0012 start *************');
@@ -592,12 +592,12 @@ export default function ErrorCodeRdbStore24Test() {
     })
 
     /**
-     * @tc.name       : RelationStoreError24Test0013
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_1300
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0013
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_1300
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0013 start *************');
@@ -633,12 +633,12 @@ export default function ErrorCodeRdbStore24Test() {
     })
 
     /**
-     * @tc.name       : RelationStoreError24Test0014
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_1400
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0014
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_1400
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0014 start *************');
@@ -673,12 +673,12 @@ export default function ErrorCodeRdbStore24Test() {
     })
 
     /**
-     * @tc.name       : RelationStoreError24Test0015
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_1500
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0015
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_1500
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0015 start *************');
@@ -714,12 +714,12 @@ export default function ErrorCodeRdbStore24Test() {
     })
 
     /**
-     * @tc.name       : RelationStoreError24Test0016
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_1600
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0016
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_1600
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0016 start *************');
@@ -759,12 +759,12 @@ export default function ErrorCodeRdbStore24Test() {
 
 
     /**
-     * @tc.name       : RelationStoreError24Test0017
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_1700
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0017
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_1700
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0017 start *************');
@@ -802,12 +802,12 @@ export default function ErrorCodeRdbStore24Test() {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0017 end *************');
     })
     /**
-     * @tc.name       : RelationStoreError24Test0018
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_1800
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0018
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_1800
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0018 start *************');
@@ -845,12 +845,12 @@ export default function ErrorCodeRdbStore24Test() {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0018 end *************');
     })
     /**
-     * @tc.name       : RelationStoreError24Test0019
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_1900
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0019
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_1900
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0019 start *************');
@@ -888,12 +888,12 @@ export default function ErrorCodeRdbStore24Test() {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0019 end *************');
     })
     /**
-     * @tc.name       : RelationStoreError24Test0020
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_2000
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0020
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_2000
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0020 start *************');
@@ -931,12 +931,12 @@ export default function ErrorCodeRdbStore24Test() {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0020 end *************');
     })
     /**
-     * @tc.name       : RelationStoreError24Test0021
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_2100
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0021
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_2100
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0021 start *************');
@@ -974,12 +974,12 @@ export default function ErrorCodeRdbStore24Test() {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0021 end *************');
     })
     /**
-     * @tc.name       : RelationStoreError24Test0022
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error24Test_2200
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError24Test0022
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error24Test_2200
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError24Test0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError24Test0022 start *************');
