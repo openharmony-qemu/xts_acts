@@ -309,7 +309,6 @@ export default function RelationStoreRdbStoreTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-
     it('testupdate0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testupdate0001 start *************');
       let num = await rdbStore.insert("test", valueBucket0);
@@ -335,7 +334,6 @@ export default function RelationStoreRdbStoreTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-
     it('testupdate0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testupdate0002 start *************');
       let num =await rdbStore.insert("test", valueBucket0);
@@ -363,7 +361,6 @@ export default function RelationStoreRdbStoreTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-
     it('testupdate0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testupdate0003 start *************');
       let num = await rdbStore.insert("test", valueBucket0);
@@ -391,7 +388,6 @@ export default function RelationStoreRdbStoreTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-
     it('testdelete0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testdelete0001 start *************');
       let num = await rdbStore.insert("test", valueBucket0);
@@ -419,7 +415,6 @@ export default function RelationStoreRdbStoreTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-
     it('testquery0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testquery0001 start *************');
       let num = await rdbStore.insert("test", valueBucket0);
@@ -446,7 +441,6 @@ export default function RelationStoreRdbStoreTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-
     it('testquery0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testquery0002 start *************');
       let num = await rdbStore.insert("test", valueBucket0);
@@ -474,7 +468,6 @@ export default function RelationStoreRdbStoreTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-
     it('tesquerySync0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* tesquerySync0001 start *************');
       let num = await rdbStore.insert("test", valueBucket0);
@@ -502,7 +495,6 @@ export default function RelationStoreRdbStoreTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-
     it('tesquerySync0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* tesquerySync0002 start *************');
       let num = await rdbStore.insert("test", valueBucket0);
@@ -530,7 +522,6 @@ export default function RelationStoreRdbStoreTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-
     it('testquerySql0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testquerySql0001 start *************');
       let num = await rdbStore.insert("test", valueBucket0);
@@ -558,7 +549,6 @@ export default function RelationStoreRdbStoreTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-
     it('testexecute0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testexecute0001 start *************');
       let num =await rdbStore.batchInsert("test", vbs);
@@ -607,7 +597,6 @@ export default function RelationStoreRdbStoreTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-
     it('testclose0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testclose0001 start *************');
       let num =await rdbStore.batchInsert("test", vbs);
