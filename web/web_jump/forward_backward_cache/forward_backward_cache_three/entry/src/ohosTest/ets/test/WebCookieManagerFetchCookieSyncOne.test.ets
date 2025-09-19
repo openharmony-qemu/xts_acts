@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,45 +13,46 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
+import events_emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver: Driver = Driver.create();
 
-export default function webCookieManagerFetchCookieSync() {
-
-  describe('WebCookieManagerFetchCookieSync', () => {
-
+export default function webCookieManagerFetchCookieSyncOne() {
+  describe('WebCookieManagerFetchCookieSyncOne', () => {
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
-        url: 'testability/pages/WebCookieManagerFetchCookieSync',
+        url: 'testability/pages/WebCookieManagerFetchCookieSyncOne',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get WebCookieManagerFetchCookieSync state success " + JSON.stringify(pages));
-        if (!("WebCookieManagerFetchCookieSync" == pages.name)) {
-          console.info("get WebCookieManagerFetchCookieSync state success " + JSON.stringify(pages.name));
+        console.info('get WebCookieManagerFetchCookieSyncOne state success ' + JSON.stringify(pages));
+        if (!('WebCookieManagerFetchCookieSyncOne' == pages.name)) {
+          console.info('get WebCookieManagerFetchCookieSyncOne state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push WebCookieManagerFetchCookieSync page success " + JSON.stringify(result));
+          console.info('push WebCookieManagerFetchCookieSyncOne page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push WebCookieManagerFetchCookieSync page error: " + err);
+        console.error('push WebCookieManagerFetchCookieSyncOne page error: ' + err);
       }
+      await driver.waitForComponent(ON.id('WebCookieManagerFetchCookieSyncTestButton'), 10000);
       done()
     });
 
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
-      console.info("WebCookieManagerFetchCookieSync beforeEach start");
+      console.info('WebCookieManagerFetchCookieSyncOne beforeEach start');
       done();
     })
 
@@ -64,10 +65,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 0
     */
     it('testFetchCookieSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync001", 'a=b', 100101, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync001', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync001', 'a=b', 136760, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync001');
     })
 
     /*
@@ -79,10 +82,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync002", 'a=c', 100102, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync002', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync002', 'a=c', 136770, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync002');
     })
 
     /*
@@ -94,10 +99,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync003", 'a=d', 100103, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync003', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync003', 'a=d', 136780, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync003');
     })
 
     /*
@@ -109,10 +116,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync004", 'a=e', 100104, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync004', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync004', 'a=e', 136790, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync004');
     })
 
     /*
@@ -124,10 +133,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync005", '', 100105, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync005', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync005', true, 136800, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync005');
     })
 
     /*
@@ -139,10 +150,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync006", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync006", '', 100106, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync006', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync006', true, 136810, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync006');
     })
 
     /*
@@ -154,10 +167,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync007", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync007", '', 100107, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync007', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync007', true, 136820, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync007');
     })
 
     /*
@@ -169,10 +184,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync008", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync008", '', 100108, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync008', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync008', true, 136830, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync008');
     })
 
     /*
@@ -184,10 +201,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync009", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync009", '', 100109, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync009', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync009', true, 136840, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync009');
     })
 
     /*
@@ -199,10 +218,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync010", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync010", '', 100110, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync010', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync010', true, 136850, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync010');
     })
 
     /*
@@ -214,10 +235,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync011", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync011", '', 100111, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync011', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync011', true, 136860, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync011');
     })
 
 
@@ -230,10 +253,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync012", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync012", '', 100112, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync012', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync012', true, 136870, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync012');
     })
 
     /*
@@ -245,10 +270,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync013", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync013", '', 100113, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync013', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync013', true, 136880, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync013');
     })
 
     /*
@@ -260,10 +287,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync014", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync014", '', 100114, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync014', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync014', true, 136890, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync014');
     })
 
     /*
@@ -275,10 +304,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync015", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync015", '', 100115, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync015', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync015', true, 136900, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync015');
     })
 
     /*
@@ -290,10 +321,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync016", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync016", '', 100116, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync016', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync016', true, 136910, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync016');
     })
 
     /*
@@ -305,10 +338,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync017", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync017", '', 100117, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync017', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync017', true, 136920, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync017');
     })
 
     /*
@@ -320,10 +355,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync018", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync018", '', 100118, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync018', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync018', true, 136930, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync018');
     })
 
     /*
@@ -335,10 +372,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync019", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync019", '', 100119, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync019', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync019', true, 136940, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync019');
     })
 
     /*
@@ -350,10 +389,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync020", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync020", '', 100120, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync020', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync020', true, 136950, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync020');
     })
 
     /*
@@ -365,10 +406,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync021", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync021", '', 100121, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync021', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync021', true, 136960, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync021');
     })
 
     /*
@@ -380,10 +423,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync022", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync022", '', 100122, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync022', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync022', true, 136970, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync022');
     })
 
     /*
@@ -395,10 +440,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync023", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync023", '', 100123, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync023', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync023', true, 136980, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync023');
     })
 
     /*
@@ -410,10 +457,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync024", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync024", '', 100124, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync024', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync024', true, 136990, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync024');
     })
 
     /*
@@ -425,10 +474,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync025", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync025", '', 100125, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync025', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync025', true, 137000, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync025');
     })
 
     /*
@@ -440,10 +491,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync026", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync026", '', 100126, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync026', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync026', true, 137010, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync026');
     })
 
     /*
@@ -455,10 +508,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync027", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync027", '', 100127, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync027', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync027', true, 137020, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync027');
     })
 
     /*
@@ -470,10 +525,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync028", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync028", '', 100128, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync028', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync028', true, 137030, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync028');
     })
 
     /*
@@ -485,10 +542,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync029", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync029", '', 100129, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync029', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync029', true, 137040, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync029');
     })
 
     /*
@@ -500,41 +559,12 @@ export default function webCookieManagerFetchCookieSync() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieSync030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync030", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync030", '', 100130, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieSync030', 136750)
+      Utils.registerBaseEvent('testFetchCookieSync030', true, 137050, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync030');
     })
-
-    /*
-    * @tc.number     : SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIESYNC_3100
-    * @tc.name       : testFetchCookieSync031
-    * @tc.desc       : test fetchCookieSync
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
-    it('testFetchCookieSync031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync031", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync031", '', 100131, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
-    })
-
-    /*
-    * @tc.number     : SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIESYNC_3200
-    * @tc.name       : testFetchCookieSync032
-    * @tc.desc       : test fetchCookieSync
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
-    it('testFetchCookieSync032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync032", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync032", '', 100132, done);
-      sendEventByKey('WebCookieManagerFetchCookieSyncTestButton', 10, '');
-    })
-
   })
 }

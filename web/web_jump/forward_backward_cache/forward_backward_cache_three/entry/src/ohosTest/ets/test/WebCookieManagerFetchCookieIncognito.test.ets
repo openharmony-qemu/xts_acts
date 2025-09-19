@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,17 +13,18 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver: Driver = Driver.create();
 
 export default function webCookieManagerFetchCookieIncognito() {
-
   describe('WebCookieManagerFetchCookieIncognito', () => {
-
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'testability/pages/WebCookieManagerFetchCookieIncognito',
@@ -31,27 +32,26 @@ export default function webCookieManagerFetchCookieIncognito() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get WebCookieManagerFetchCookieIncognito state success " + JSON.stringify(pages));
-        if (!("WebCookieManagerFetchCookieIncognito" == pages.name)) {
-          console.info("get WebCookieManagerFetchCookieIncognito state success " + JSON.stringify(pages.name));
+        console.info('get WebCookieManagerFetchCookieIncognito state success ' + JSON.stringify(pages));
+        if (!('WebCookieManagerFetchCookieIncognito' == pages.name)) {
+          console.info('get WebCookieManagerFetchCookieIncognito state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push WebCookieManagerFetchCookieIncognito page success " + JSON.stringify(result));
+          console.info('push WebCookieManagerFetchCookieIncognito page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push WebCookieManagerFetchCookieIncognito page error: " + err);
+        console.error('push WebCookieManagerFetchCookieIncognito page error: ' + err);
       }
+      await driver.waitForComponent(ON.id('WebCookieManagerFetchCookieTestButton'), 10000);
       done()
     });
 
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
-      console.info("WebCookieManagerFetchCookieIncognito beforeEach start");
+      console.info('WebCookieManagerFetchCookieIncognito beforeEach start');
       done();
     })
 
@@ -64,10 +64,9 @@ export default function webCookieManagerFetchCookieIncognito() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieIncognito001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieIncognito001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieIncognito001", 'a=b', 2025032101, done);
-      sendEventByKey('WebCookieManagerFetchCookieTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieIncognito001', 136700)
+      Utils.registerEvent('testFetchCookieIncognito001', 'a=b', 136710, done);
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieTestButton', 'testFetchCookieIncognito001');
     })
 
     /*
@@ -79,10 +78,9 @@ export default function webCookieManagerFetchCookieIncognito() {
     * @tc.level      : Level 1
     */
     it('testFetchCookieIncognito002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieIncognito002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieIncognito002", 'aa=cc', 2025032102, done);
-      sendEventByKey('WebCookieManagerFetchCookieTestButton', 10, '');
+      Utils.emitEvent('testFetchCookieIncognito002', 136700)
+      Utils.registerEvent('testFetchCookieIncognito002', 'aa=cc', 136720, done);
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieTestButton', 'testFetchCookieIncognito002');
     })
 
 
@@ -94,12 +92,11 @@ export default function webCookieManagerFetchCookieIncognito() {
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
-    it('testFetchCookieIncognitoErrorCode003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieIncognitoErrorCode003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieIncognitoErrorCode003", 17100002, 2025032103, done);
-      sendEventByKey('WebCookieManagerFetchCookieTestButton', 10, '');
-    })
-
+    it('testFetchCookieIncognitoErrorCode003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('testFetchCookieIncognitoErrorCode003', 136700)
+        Utils.registerEvent('testFetchCookieIncognitoErrorCode003', 17100002, 136730, done);
+      await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieTestButton', 'testFetchCookieIncognitoErrorCode003');
+      })
   })
 }
