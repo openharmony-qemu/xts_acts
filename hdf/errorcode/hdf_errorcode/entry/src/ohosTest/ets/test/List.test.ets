@@ -12,8 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import ActsBaseDDkTest from "./baskDdkTest.test";
-import ActsHidEmitCodeTest from "./hidEmitTest.test";
+import ActsBaseDDkTest from "./BaskDdkTest.test";
+import ActsHidEmitCodeTest from "./HidEmitTest.test";
 
 export default function testsuite() {
   ActsBaseDDkTest();
