@@ -20,6 +20,7 @@
 #include "InputmethodPrivateCommandCapiTest.h"
 #include "InputmethodTextAvoidInfoCapiTest.h"
 #include "InputmethodTextConfigCapiTest.h"
+#include "InputmethodTextEditorProxyCapiTest.h"
 #include <js_native_api.h>
 #include <vector>
 
@@ -35,6 +36,7 @@ static napi_value Init(napi_env env, napi_value exports)
     AddInputMethodPrivateCommandCapiTest(descData);
     AddInputmethodTextAvoidInfoCapiTest(descData);
     AddInputMethodTextConfigCapiTest(descData);
+    AddInputMethodTextEditorProxyCapiTest(descData);
     
     napi_define_properties(env, exports, descData.size(), descData.data());
     return exports;
