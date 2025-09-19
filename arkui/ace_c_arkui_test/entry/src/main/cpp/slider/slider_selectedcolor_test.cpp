@@ -107,7 +107,7 @@ static napi_value TestSliderSelectedColor008(napi_env env, napi_callback_info in
     ASSERT_EQ(size, colorSize);
     for (int i = 0; i < size; ++i) {
         ASSERT_EQ(gradients->colors[i], colors[i]);
-        ASSERT_EQ(gradients->stops[i], stops[i]);
+        ASSERT_FLOATEQ(gradients->stops[i], stops[i]);
     }
     NAPI_END;
 }
