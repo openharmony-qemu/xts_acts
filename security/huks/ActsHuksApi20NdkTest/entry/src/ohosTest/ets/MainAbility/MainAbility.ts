@@ -18,7 +18,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import { BusinessError } from '@ohos.base';
 
-const TAG: string = '[createWindow]'
+const TAG: string = '[createWindow]';
 
 export default class MainAbility extends Ability {
   onCreate(want, launchParam): void {
@@ -50,14 +50,14 @@ export default class MainAbility extends Ability {
       hilog.info(0x0000, 'testTag', 'Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
       try {
         let properties : window.WindowProperties = windowClass.getWindowProperties();
-        let wRect : window.Rect =  properties.windowRect;
+        let wRect : window.Rect = properties.windowRect;
         globalThis.winLeft = wRect.left;
         globalThis.winTop = wRect.top;
         hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + globalThis.winLeft + ',winTop:' + globalThis.winTop );
       } catch (exception) {
         hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
       }
-    })
+    });
   }
 
   onWindowStageDestroy(): void {
