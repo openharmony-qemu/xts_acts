@@ -154,6 +154,27 @@ static bool CheckButtonCode(int32_t buttonCode, char *buttonCodeName)
     return true;
 }
 
+static std::string GetPressedButtonInfo(const int32_t count, const struct GamePad_ButtonEvent *buttonEvent)
+{
+    std::string pressedButtonCodes;
+    for (int32_t idx = 0; idx < count; idx++) {
+        GamePad_PressedButton *pressedButton;
+        OH_GamePad_PressedButtons_GetButtonInfo(buttonEvent, idx, &pressedButton);
+        int32_t btnCode;
+        OH_GamePad_PressedButton_GetButtonCode(pressedButton, &btnCode);
+        char *name;
+        OH_GamePad_PressedButton_GetButtonCodeName(pressedButton, &name);
+        CheckButtonCode(btnCode, name);
+        if (idx != 0) {
+            pressedButtonCodes = pressedButtonCodes.append(";");
+        }
+        pressedButtonCodes = pressedButtonCodes.append(std::to_string(btnCode) + "|").append(name);
+        free(name);
+        OH_GamePad_DestroyPressedButton(&pressedButton);
+    }
+    return pressedButtonCodes;
+}
+
 static void OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent, const std::string &buttonName)
 {
     isReceiveButtonInputEvent = true;
@@ -196,23 +217,7 @@ static void OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent, const s
         isParseButtonEventSuccess = false;
     }
     temp.append(" ,count:").append(std::to_string(count));
-    std::string pressedButtonCodes;
-    for (int32_t idx = 0; idx < count; idx++) {
-        GamePad_PressedButton *pressedButton;
-        code = OH_GamePad_PressedButtons_GetButtonInfo(buttonEvent, idx, &pressedButton);
-        int32_t code;
-        OH_GamePad_PressedButton_GetButtonCode(pressedButton, &code);
-        char *name;
-        OH_GamePad_PressedButton_GetButtonCodeName(pressedButton, &name);
-        CheckButtonCode(code, name);
-        if (idx != 0) {
-            pressedButtonCodes = pressedButtonCodes.append(";");
-        }
-        pressedButtonCodes = pressedButtonCodes.append(std::to_string(code) + "|").append(name);
-        free(name);
-        OH_GamePad_DestroyPressedButton(&pressedButton);
-    }
-    temp.append(" ,pressedButtonCodes:").append(pressedButtonCodes);
+    temp.append(" ,pressedButtonCodes:").append(GetPressedButtonInfo(count, buttonEvent));
     OH_LOG_INFO(LOG_APP, "[ActsRealDeviceTest][buttonEvent]%{public}s", temp.c_str());
 }
 

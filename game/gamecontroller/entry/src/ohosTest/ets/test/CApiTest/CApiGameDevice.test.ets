@@ -181,14 +181,14 @@ export default function CApiGameDeviceTest() {
       });
 
     /**
-     * @tc.number OH_GameDevice_AllDeviceInfos_GetDeviceInfo_03
-     * @tc.name OH_GameDevice_AllDeviceInfos_GetDeviceInfo_03
+     * @tc.number OH_GameDevice_AllDeviceInfos_GetDeviceInfo03
+     * @tc.name OH_GameDevice_AllDeviceInfos_GetDeviceInfo03
      * @tc.desc get deviceInfo failed,  when index is more than count
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo_03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
         if (SyscapChecker.canNotUse()) {
           return;
@@ -198,14 +198,14 @@ export default function CApiGameDeviceTest() {
       });
 
     /**
-     * @tc.number OH_GameDevice_AllDeviceInfos_GetDeviceInfo_04
-     * @tc.name OH_GameDevice_AllDeviceInfos_GetDeviceInfo_04
+     * @tc.number OH_GameDevice_AllDeviceInfos_GetDeviceInfo04
+     * @tc.name OH_GameDevice_AllDeviceInfos_GetDeviceInfo04
      * @tc.desc get deviceInfo failed, when index is less than 0
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo_04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
         if (SyscapChecker.canNotUse()) {
           return;
@@ -215,14 +215,14 @@ export default function CApiGameDeviceTest() {
       });
 
     /**
-     * @tc.number OH_GameDevice_AllDeviceInfos_GetDeviceInfo_05
-     * @tc.name OH_GameDevice_AllDeviceInfos_GetDeviceInfo_05
+     * @tc.number OH_GameDevice_AllDeviceInfos_GetDeviceInfo05
+     * @tc.name OH_GameDevice_AllDeviceInfos_GetDeviceInfo05
      * @tc.desc get deviceInfo failed, when index is equal with count
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo_05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
         if (SyscapChecker.canNotUse()) {
           return;

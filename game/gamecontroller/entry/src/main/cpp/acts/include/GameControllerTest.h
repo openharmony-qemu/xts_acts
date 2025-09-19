@@ -224,7 +224,7 @@ int32_t ActsGameControllerGamePadButtonEventGetDeviceId01();
 
 int32_t ActsGameControllerGamePadButtonEventGetDeviceId02();
 
-int32_t ActsGameControllerGamePadButtonEventGetDeviceId_03();
+int32_t ActsGameControllerGamePadButtonEventGetDeviceId03();
 
 int32_t ActsGameControllerGamePadButtonEventGetButtonAction01();
 
@@ -238,7 +238,7 @@ int32_t ActsGameControllerGamePadButtonEventGetButtonCodeName01();
 
 int32_t ActsGameControllerGamePadButtonEventGetButtonCodeName02();
 
-int32_t ActsGameControllerGamePadButtonEventGetButtonCodeName_03();
+int32_t ActsGameControllerGamePadButtonEventGetButtonCodeName03();
 
 int32_t ActsGameControllerGamePadPressedButtonsGetCount01();
 
@@ -248,9 +248,9 @@ int32_t ActsGameControllerGamePadPressedButtonsGetButtonInfo01();
 
 int32_t ActsGameControllerGamePadPressedButtonsGetButtonInfo02();
 
-int32_t ActsGameControllerGamePadPressedButtonsGetButtonInfo_03();
+int32_t ActsGameControllerGamePadPressedButtonsGetButtonInfo03();
 
-int32_t ActsGameControllerGamePadPressedButtonsGetButtonInfo_04();
+int32_t ActsGameControllerGamePadPressedButtonsGetButtonInfo04();
 
 int32_t ActsGameControllerGamePadDestroyPressedButton01();
 
@@ -274,7 +274,7 @@ int32_t ActsGameControllerGamePadAxisEventGetDeviceId01();
 
 int32_t ActsGameControllerGamePadAxisEventGetDeviceId02();
 
-int32_t ActsGameControllerGamePadAxisEventGetDeviceId_03();
+int32_t ActsGameControllerGamePadAxisEventGetDeviceId03();
 
 int32_t ActsGameControllerGamePadAxisEventGetAxisSourceType01();
 

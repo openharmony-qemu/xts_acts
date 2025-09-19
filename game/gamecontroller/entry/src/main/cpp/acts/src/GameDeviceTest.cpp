@@ -22,23 +22,21 @@
 namespace OHOS {
 namespace GameController {
 
-static GameDevice_AllDeviceInfos* CreateAllDeviceInfos()
+static GameDevice_AllDeviceInfos *CreateAllDeviceInfos()
 {
-    AllDeviceInfos* allDeviceInfos = new AllDeviceInfos();
+    AllDeviceInfos *allDeviceInfos = new AllDeviceInfos();
     allDeviceInfos->count = 1;
     BasicDeviceInfo basicDeviceInfo;
     basicDeviceInfo.name = "name";
     allDeviceInfos->allDeviceInfos.push_back(basicDeviceInfo);
-    return (GameDevice_AllDeviceInfos*)allDeviceInfos;
+    return (GameDevice_AllDeviceInfos *)allDeviceInfos;
 }
 
-static void DeviceMonitorCallbackTest01(const struct GameDevice_DeviceEvent* deviceEvent)
-{
-}
+static void DeviceMonitorCallbackTest01(const struct GameDevice_DeviceEvent *deviceEvent) {}
 
 int32_t ActsGameDeviceGetAllDeviceInfos01()
 {
-    GameDevice_AllDeviceInfos* allDeviceInfos = nullptr;
+    GameDevice_AllDeviceInfos *allDeviceInfos = nullptr;
 
     GameController_ErrorCode code = OH_GameDevice_GetAllDeviceInfos(&allDeviceInfos);
 
@@ -60,7 +58,7 @@ int32_t ActsGameDeviceRegisterDeviceMonitor02()
     return static_cast<int32_t>(code);
 }
 
-int32_t ActsGameDeviceUnregisterDeviceMonitor01() 
+int32_t ActsGameDeviceUnregisterDeviceMonitor01()
 {
     OH_GameDevice_RegisterDeviceMonitor(DeviceMonitorCallbackTest01);
 
@@ -68,26 +66,26 @@ int32_t ActsGameDeviceUnregisterDeviceMonitor01()
     return static_cast<int32_t>(code);
 }
 
-int32_t ActsGameDeviceDestroyAllDeviceInfos01() 
+int32_t ActsGameDeviceDestroyAllDeviceInfos01()
 {
-    GameDevice_AllDeviceInfos* allDeviceInfos = nullptr;
+    GameDevice_AllDeviceInfos *allDeviceInfos = nullptr;
     OH_GameDevice_GetAllDeviceInfos(&allDeviceInfos);
 
     GameController_ErrorCode code = OH_GameDevice_DestroyAllDeviceInfos(&allDeviceInfos);
     return static_cast<int32_t>(code);
 }
 
-int32_t ActsGameDeviceDestroyAllDeviceInfos02() 
+int32_t ActsGameDeviceDestroyAllDeviceInfos02()
 {
-     GameController_ErrorCode code = OH_GameDevice_DestroyAllDeviceInfos(nullptr);
+    GameController_ErrorCode code = OH_GameDevice_DestroyAllDeviceInfos(nullptr);
     return static_cast<int32_t>(code);
 }
 
 int32_t ActsGameDeviceAllDeviceInfosGetCount01()
 {
     int count = 0;
-    GameDevice_AllDeviceInfos* allDeviceInfos = CreateAllDeviceInfos();
-    
+    GameDevice_AllDeviceInfos *allDeviceInfos = CreateAllDeviceInfos();
+
     GameController_ErrorCode code = OH_GameDevice_AllDeviceInfos_GetCount(allDeviceInfos, &count);
     if (count != 1) {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
@@ -96,7 +94,7 @@ int32_t ActsGameDeviceAllDeviceInfosGetCount01()
     return static_cast<int32_t>(code);
 }
 
-int32_t ActsGameDeviceAllDeviceInfosGetCount02() 
+int32_t ActsGameDeviceAllDeviceInfosGetCount02()
 {
     int count = 0;
     GameController_ErrorCode code = OH_GameDevice_AllDeviceInfos_GetCount(nullptr, &count);
@@ -105,39 +103,39 @@ int32_t ActsGameDeviceAllDeviceInfosGetCount02()
 
 int32_t ActsGameDeviceAllDeviceInfosGetDeviceInfo01()
 {
-    GameDevice_AllDeviceInfos* allDeviceInfos = CreateAllDeviceInfos();
-    GameDevice_DeviceInfo* deviceInfo;
-    
+    GameDevice_AllDeviceInfos *allDeviceInfos = CreateAllDeviceInfos();
+    GameDevice_DeviceInfo *deviceInfo;
+
     GameController_ErrorCode code = OH_GameDevice_AllDeviceInfos_GetDeviceInfo(allDeviceInfos, 0, &deviceInfo);
-    
+
     OH_GameDevice_DestroyAllDeviceInfos(&allDeviceInfos);
     return static_cast<int32_t>(code);
 }
 
 int32_t ActsGameDeviceAllDeviceInfosGetDeviceInfo02()
 {
-    GameDevice_DeviceInfo* deviceInfo;
-    
+    GameDevice_DeviceInfo *deviceInfo;
+
     GameController_ErrorCode code = OH_GameDevice_AllDeviceInfos_GetDeviceInfo(nullptr, 0, &deviceInfo);
-    
+
     return static_cast<int32_t>(code);
 }
 
 int32_t ActsGameDeviceAllDeviceInfosGetDeviceInfo03()
 {
-    GameDevice_AllDeviceInfos* allDeviceInfos = CreateAllDeviceInfos();
-    GameDevice_DeviceInfo* deviceInfo;
-    
+    GameDevice_AllDeviceInfos *allDeviceInfos = CreateAllDeviceInfos();
+    GameDevice_DeviceInfo *deviceInfo;
+
     GameController_ErrorCode code = OH_GameDevice_AllDeviceInfos_GetDeviceInfo(allDeviceInfos, 2, &deviceInfo);
     OH_GameDevice_DestroyAllDeviceInfos(&allDeviceInfos);
     return static_cast<int32_t>(code);
 }
 
-int32_t ActsGameDeviceAllDeviceInfosGetDeviceInfo04() 
+int32_t ActsGameDeviceAllDeviceInfosGetDeviceInfo04()
 {
-    GameDevice_AllDeviceInfos* allDeviceInfos = CreateAllDeviceInfos();
-    GameDevice_DeviceInfo* deviceInfo;
-    
+    GameDevice_AllDeviceInfos *allDeviceInfos = CreateAllDeviceInfos();
+    GameDevice_DeviceInfo *deviceInfo;
+
     GameController_ErrorCode code = OH_GameDevice_AllDeviceInfos_GetDeviceInfo(allDeviceInfos, -1, &deviceInfo);
     OH_GameDevice_DestroyAllDeviceInfos(&allDeviceInfos);
     return static_cast<int32_t>(code);
@@ -145,9 +143,9 @@ int32_t ActsGameDeviceAllDeviceInfosGetDeviceInfo04()
 
 int32_t ActsGameDeviceAllDeviceInfosGetDeviceInfo05()
 {
-    GameDevice_AllDeviceInfos* allDeviceInfos = CreateAllDeviceInfos();
-    GameDevice_DeviceInfo* deviceInfo;
-    
+    GameDevice_AllDeviceInfos *allDeviceInfos = CreateAllDeviceInfos();
+    GameDevice_DeviceInfo *deviceInfo;
+
     GameController_ErrorCode code = OH_GameDevice_AllDeviceInfos_GetDeviceInfo(allDeviceInfos, 1, &deviceInfo);
     OH_GameDevice_DestroyAllDeviceInfos(&allDeviceInfos);
     return static_cast<int32_t>(code);

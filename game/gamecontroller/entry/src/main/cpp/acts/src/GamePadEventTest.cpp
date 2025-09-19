@@ -101,7 +101,7 @@ int32_t ActsGameControllerGamePadButtonEventGetDeviceId02()
     return static_cast<int32_t>(code);
 }
 
-int32_t ActsGameControllerGamePadButtonEventGetDeviceId_03()
+int32_t ActsGameControllerGamePadButtonEventGetDeviceId03()
 {
     GamePad_ButtonEvent *buttonEvent = CreateButtonEvent();
 
@@ -178,7 +178,7 @@ int32_t ActsGameControllerGamePadButtonEventGetButtonCodeName02()
     return static_cast<int32_t>(code);
 }
 
-int32_t ActsGameControllerGamePadButtonEventGetButtonCodeName_03()
+int32_t ActsGameControllerGamePadButtonEventGetButtonCodeName03()
 {
     GamePad_ButtonEvent *buttonEvent = CreateButtonEvent();
 
@@ -231,7 +231,7 @@ int32_t ActsGameControllerGamePadPressedButtonsGetButtonInfo02()
     return static_cast<int32_t>(code);
 }
 
-int32_t ActsGameControllerGamePadPressedButtonsGetButtonInfo_03()
+int32_t ActsGameControllerGamePadPressedButtonsGetButtonInfo03()
 {
     GamePad_ButtonEvent *buttonEvent = CreateButtonEvent();
     GamePad_PressedButton *pressedButton;
@@ -241,7 +241,7 @@ int32_t ActsGameControllerGamePadPressedButtonsGetButtonInfo_03()
     return static_cast<int32_t>(code);
 }
 
-int32_t ActsGameControllerGamePadPressedButtonsGetButtonInfo_04()
+int32_t ActsGameControllerGamePadPressedButtonsGetButtonInfo04()
 {
     GamePad_ButtonEvent *buttonEvent = CreateButtonEvent();
     GamePad_PressedButton *pressedButton;
@@ -380,7 +380,7 @@ int32_t ActsGameControllerGamePadAxisEventGetDeviceId02()
     return static_cast<int32_t>(code);
 }
 
-int32_t ActsGameControllerGamePadAxisEventGetDeviceId_03()
+int32_t ActsGameControllerGamePadAxisEventGetDeviceId03()
 {
     GamePad_AxisEvent *axisEvent = CreateAxisEvent();
 

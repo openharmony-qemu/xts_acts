@@ -147,14 +147,14 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @tc.number OH_GameDevice_DeviceInfo_GetDeviceId_03
-     * @tc.name OH_GameDevice_DeviceInfo_GetDeviceId_03
+     * @tc.number OH_GameDevice_DeviceInfo_GetDeviceId03
+     * @tc.name OH_GameDevice_DeviceInfo_GetDeviceId03
      * @tc.desc get deviceId failed, when deviceId is null
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GameDevice_DeviceInfo_GetDeviceId_03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('OH_GameDevice_DeviceInfo_GetDeviceId03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
         return;
       }
@@ -195,14 +195,14 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @tc.number OH_GameDevice_DeviceInfo_GetName_03
-     * @tc.name OH_GameDevice_DeviceInfo_GetName_03
+     * @tc.number OH_GameDevice_DeviceInfo_GetName03
+     * @tc.name OH_GameDevice_DeviceInfo_GetName03
      * @tc.desc get name failed, when name is null
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GameDevice_DeviceInfo_GetName_03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('OH_GameDevice_DeviceInfo_GetName03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
         return;
       }
@@ -307,14 +307,14 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @tc.number OH_GameDevice_DeviceInfo_GetPhys_03
-     * @tc.name OH_GameDevice_DeviceInfo_GetPhys_03
+     * @tc.number OH_GameDevice_DeviceInfo_GetPhys03
+     * @tc.name OH_GameDevice_DeviceInfo_GetPhys03
      * @tc.desc GetPhys failed, when deviceEvent is null
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GameDevice_DeviceInfo_GetPhys_03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('OH_GameDevice_DeviceInfo_GetPhys03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
         return;
       }

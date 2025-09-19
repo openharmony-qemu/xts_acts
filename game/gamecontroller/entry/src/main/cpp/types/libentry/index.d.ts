@@ -216,7 +216,7 @@ export const ActsGameControllerGamePadButtonEventGetDeviceId01: () => number;
 
 export const ActsGameControllerGamePadButtonEventGetDeviceId02: () => number;
 
-export const ActsGameControllerGamePadButtonEventGetDeviceId_03: () => number;
+export const ActsGameControllerGamePadButtonEventGetDeviceId03: () => number;
 
 export const ActsGameControllerGamePadButtonEventGetButtonAction01: () => number;
 
@@ -230,7 +230,7 @@ export const ActsGameControllerGamePadButtonEventGetButtonCodeName01: () => numb
 
 export const ActsGameControllerGamePadButtonEventGetButtonCodeName02: () => number;
 
-export const ActsGameControllerGamePadButtonEventGetButtonCodeName_03: () => number;
+export const ActsGameControllerGamePadButtonEventGetButtonCodeName03: () => number;
 
 export const ActsGameControllerGamePadPressedButtonsGetCount01: () => number;
 
@@ -240,9 +240,9 @@ export const ActsGameControllerGamePadPressedButtonsGetButtonInfo01: () => numbe
 
 export const ActsGameControllerGamePadPressedButtonsGetButtonInfo02: () => number;
 
-export const ActsGameControllerGamePadPressedButtonsGetButtonInfo_03: () => number;
+export const ActsGameControllerGamePadPressedButtonsGetButtonInfo03: () => number;
 
-export const ActsGameControllerGamePadPressedButtonsGetButtonInfo_04: () => number;
+export const ActsGameControllerGamePadPressedButtonsGetButtonInfo04: () => number;
 
 export const ActsGameControllerGamePadDestroyPressedButton01: () => number;
 
@@ -266,7 +266,7 @@ export const ActsGameControllerGamePadAxisEventGetDeviceId01: () => number;
 
 export const ActsGameControllerGamePadAxisEventGetDeviceId02: () => number;
 
-export const ActsGameControllerGamePadAxisEventGetDeviceId_03: () => number;
+export const ActsGameControllerGamePadAxisEventGetDeviceId03: () => number;
 
 export const ActsGameControllerGamePadAxisEventGetAxisSourceType01: () => number;
 

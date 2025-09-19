@@ -50,18 +50,18 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @tc.number OH_GamePad_ButtonEvent_GetDeviceId_03
-     * @tc.name OH_GamePad_ButtonEvent_GetDeviceId_03
+     * @tc.number OH_GamePad_ButtonEvent_GetDeviceId03
+     * @tc.name OH_GamePad_ButtonEvent_GetDeviceId03
      * @tc.desc GetDeviceId failed when deviceId is nullptr
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonEvent_GetDeviceId_03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('OH_GamePad_ButtonEvent_GetDeviceId03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
         return;
       }
-      let ret: number = GC.ActsGameControllerGamePadButtonEventGetDeviceId_03();
+      let ret: number = GC.ActsGameControllerGamePadButtonEventGetDeviceId03();
       expect(ret).assertEqual(401);
     });
 
@@ -162,18 +162,18 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @tc.number OH_GamePad_ButtonEvent_GetButtonCodeName_03
-     * @tc.name OH_GamePad_ButtonEvent_GetButtonCodeName_03
+     * @tc.number OH_GamePad_ButtonEvent_GetButtonCodeName03
+     * @tc.name OH_GamePad_ButtonEvent_GetButtonCodeName03
      * @tc.desc GetButtonCodeName failed when codeName is null
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_ButtonEvent_GetButtonCodeName_03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('OH_GamePad_ButtonEvent_GetButtonCodeName03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
         return;
       }
-      let ret: number = GC.ActsGameControllerGamePadButtonEventGetButtonCodeName_03();
+      let ret: number = GC.ActsGameControllerGamePadButtonEventGetButtonCodeName03();
       expect(ret).assertEqual(401);
     });
 
@@ -242,34 +242,34 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @tc.number OH_GamePad_PressedButtons_GetButtonInfo_03
-     * @tc.name OH_GamePad_PressedButtons_GetButtonInfo_03
+     * @tc.number OH_GamePad_PressedButtons_GetButtonInfo03
+     * @tc.name OH_GamePad_PressedButtons_GetButtonInfo03
      * @tc.desc GetButtonInfo failed when index is more than count
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_PressedButtons_GetButtonInfo_03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('OH_GamePad_PressedButtons_GetButtonInfo03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
         return;
       }
-      let ret: number = GC.ActsGameControllerGamePadPressedButtonsGetButtonInfo_03();
+      let ret: number = GC.ActsGameControllerGamePadPressedButtonsGetButtonInfo03();
       expect(ret).assertEqual(401);
     });
 
     /**
-     * @tc.number OH_GamePad_PressedButtons_GetButtonInfo_04
-     * @tc.name OH_GamePad_PressedButtons_GetButtonInfo_04
+     * @tc.number OH_GamePad_PressedButtons_GetButtonInfo04
+     * @tc.name OH_GamePad_PressedButtons_GetButtonInfo04
      * @tc.desc GetButtonInfo failed when index is less than 0
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_PressedButtons_GetButtonInfo_04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('OH_GamePad_PressedButtons_GetButtonInfo04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
         return;
       }
-      let ret: number = GC.ActsGameControllerGamePadPressedButtonsGetButtonInfo_04();
+      let ret: number = GC.ActsGameControllerGamePadPressedButtonsGetButtonInfo04();
       expect(ret).assertEqual(401);
     });
 
@@ -372,14 +372,14 @@ export default function CApiGamePadEventTest() {
       });
 
     /**
-     * @tc.number OH_GamePad_PressedButton_GetButtonCodeName_03
-     * @tc.name OH_GamePad_PressedButton_GetButtonCodeName_03
+     * @tc.number OH_GamePad_PressedButton_GetButtonCodeName03
+     * @tc.name OH_GamePad_PressedButton_GetButtonCodeName03
      * @tc.desc PressedButton_GetButtonCodeName failed when codeName is null
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_PressedButton_GetButtonCodeName_03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('OH_GamePad_PressedButton_GetButtonCodeName03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
         if (SyscapChecker.canNotUse()) {
           return;
@@ -453,18 +453,18 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
-     * @tc.number OH_GamePad_AxisEvent_GetDeviceId_03
-     * @tc.name OH_GamePad_AxisEvent_GetDeviceId_03
+     * @tc.number OH_GamePad_AxisEvent_GetDeviceId03
+     * @tc.name OH_GamePad_AxisEvent_GetDeviceId03
      * @tc.desc GetDeviceId failed when deviceId is null
      * @tc.level Level0
      * @tc.size MediumTest
      * @tc.type Function
      */
-    it('OH_GamePad_AxisEvent_GetDeviceId_03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('OH_GamePad_AxisEvent_GetDeviceId03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
         return;
       }
-      let ret: number = GC.ActsGameControllerGamePadAxisEventGetDeviceId_03();
+      let ret: number = GC.ActsGameControllerGamePadAxisEventGetDeviceId03();
       expect(ret).assertEqual(401);
     });
 

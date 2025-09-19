@@ -16,7 +16,6 @@
 #ifndef APP_GAMECONTROLLER_TEST_GAME_CONTROLLER_REAL_TEST_H
 #define APP_GAMECONTROLLER_TEST_GAME_CONTROLLER_REAL_TEST_H
 
-#include "stdint.h"
 #include <cstdint>
 
 namespace OHOS {
