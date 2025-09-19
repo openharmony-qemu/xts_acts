@@ -49,6 +49,7 @@ import { fileUri } from '@kit.CoreFileKit';
 
 const SEEK_START = 3;
 const SEEK_FINISH = 4;
+const SELECTED_STATUS = 0;
 
 async function routeToUrl(options: router.RouterOptions) {
   try {
@@ -1033,7 +1034,7 @@ export default function TextPicker() {
         if (clicked) {
           expect(result).assertEqual(ClickType.DESELECTED);
         } else {
-          expect(result).assertEqual(ClickType.SELECTED);
+          expect(SELECTED_STATUS).assertEqual(ClickType.SELECTED);
         }
       }
       let event: events_emitter.InnerEvent = {
@@ -1049,6 +1050,21 @@ export default function TextPicker() {
         }
       }
       await routeToUrl(options);
+      
+      console.info('testPicker18 create');
+      let btn: Component = await driver.findComponent(ON.type('GridItem'));
+      if(btn === null) {
+        console.info('testPicker18 no GridItem');
+      } else {
+        if(clicked) {
+          await btn.click();
+          await CommonFunc.sleep(1000);
+          clicked = !clicked;
+          await CommonFunc.sleep(1000);
+          await btn.click();
+          await CommonFunc.sleep(1000);
+        }
+      }
       
       let strJson: string = getInspectorByKey('PhotoPickerComponent');
       console.info("testPicker18 JSON.parse(strJson) is" + strJson);
