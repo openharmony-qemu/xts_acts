@@ -24,20 +24,32 @@ namespace OHOS {
 namespace GameController {
 namespace {
 const int64_t ACTION_TIME = 2222;
+const int64_t BTN_ACTION_TIME = 1111;
+const double X_VALUE = 8.0;
+const double Y_VALUE = 1.0;
+const double Z_VALUE = 2.0;
+const double RZ_VALUE = 3.0;
+const double BREAK_VALUE = 4.0;
+const double GAS_VALUE = 5.0;
+const double HAT_X_VALUE = 6.0;
+const double HAT_Y_VALUE = 7.0;
+const char *KEY_NAME_A = "ButtonA";
+const char *KEY_NAME_B = "ButtonB";
+const char *UNIQ = "uniq";
 } // namespace
 
 static GamePad_ButtonEvent *CreateButtonEvent()
 {
     GamePadButtonEvent *gamePadButtonEvent = new GamePadButtonEvent();
     gamePadButtonEvent->id = 1;
-    gamePadButtonEvent->uniq = "uniq";
+    gamePadButtonEvent->uniq = UNIQ;
     gamePadButtonEvent->keyCode = GamePadButtonTypeEnum::ButtonA;
-    gamePadButtonEvent->keyCodeName = "ButtonA";
-    gamePadButtonEvent->actionTime = 1111;
+    gamePadButtonEvent->keyCodeName = KEY_NAME_A;
+    gamePadButtonEvent->actionTime = BTN_ACTION_TIME;
     gamePadButtonEvent->keyAction = 1;
     KeyInfo keyInfo;
     keyInfo.keyCode = GamePadButtonTypeEnum::ButtonB;
-    keyInfo.keyCodeName = "ButtonB";
+    keyInfo.keyCodeName = KEY_NAME_B;
     gamePadButtonEvent->keys.push_back(keyInfo);
     return (GamePad_ButtonEvent *)gamePadButtonEvent;
 }
@@ -45,16 +57,16 @@ static GamePad_ButtonEvent *CreateButtonEvent()
 static GamePad_AxisEvent *CreateAxisEvent()
 {
     GamePadAxisEvent *gamePadAxisEvent = new GamePadAxisEvent();
-    gamePadAxisEvent->uniq = "uniq";
+    gamePadAxisEvent->uniq = UNIQ;
     gamePadAxisEvent->axisSourceType = Dpad;
-    gamePadAxisEvent->xValue = 8.0;
-    gamePadAxisEvent->yValue = 1.0;
-    gamePadAxisEvent->zValue = 2.0;
-    gamePadAxisEvent->rzValue = 3.0;
-    gamePadAxisEvent->brakeValue = 4.0;
-    gamePadAxisEvent->gasValue = 5.0;
-    gamePadAxisEvent->hatxValue = 6.0;
-    gamePadAxisEvent->hatyValue = 7.0;
+    gamePadAxisEvent->xValue = X_VALUE;
+    gamePadAxisEvent->yValue = Y_VALUE;
+    gamePadAxisEvent->zValue = Z_VALUE;
+    gamePadAxisEvent->rzValue = RZ_VALUE;
+    gamePadAxisEvent->brakeValue = BREAK_VALUE;
+    gamePadAxisEvent->gasValue = GAS_VALUE;
+    gamePadAxisEvent->hatxValue = HAT_X_VALUE;
+    gamePadAxisEvent->hatyValue = HAT_Y_VALUE;
     gamePadAxisEvent->actionTime = ACTION_TIME;
 
     return (GamePad_AxisEvent *)gamePadAxisEvent;
@@ -84,7 +96,7 @@ int32_t ActsGameControllerGamePadButtonEventGetDeviceId01()
     char *deviceId;
 
     GameController_ErrorCode code = OH_GamePad_ButtonEvent_GetDeviceId(buttonEvent, &deviceId);
-    if (strcmp(deviceId, "uniq") != 0) {
+    if (strcmp(deviceId, UNIQ) != 0) {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
     }
     DestroyButtonEvent(buttonEvent);
@@ -161,7 +173,7 @@ int32_t ActsGameControllerGamePadButtonEventGetButtonCodeName01()
     char *buttonCodeName = nullptr;
 
     GameController_ErrorCode code = OH_GamePad_ButtonEvent_GetButtonCodeName(buttonEvent, &buttonCodeName);
-    if (strcmp(buttonCodeName, "ButtonA") != 0) {
+    if (strcmp(buttonCodeName, KEY_NAME_A) != 0) {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
     }
     DestroyButtonEvent(buttonEvent);
@@ -303,7 +315,7 @@ int32_t ActsGameControllerGamePadPressedButtonGetButtonCodeName01()
 
     char *buttonCodeName = nullptr;
     GameController_ErrorCode code = OH_GamePad_PressedButton_GetButtonCodeName(pressedButton, &buttonCodeName);
-    if (strcmp(buttonCodeName, "ButtonB") != 0) {
+    if (strcmp(buttonCodeName, KEY_NAME_B) != 0) {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
     }
     DestroyButtonEvent(buttonEvent);
@@ -340,7 +352,7 @@ int32_t ActsGameControllerGamePadButtonEventGetActionTime01()
     int64_t actionTime = 0;
 
     GameController_ErrorCode code = OH_GamePad_ButtonEvent_GetActionTime(buttonEvent, &actionTime);
-    if (actionTime != 1111) {
+    if (actionTime != BTN_ACTION_TIME) {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
     }
     DestroyButtonEvent(buttonEvent);
@@ -363,7 +375,7 @@ int32_t ActsGameControllerGamePadAxisEventGetDeviceId01()
     char *deviceId;
 
     GameController_ErrorCode code = OH_GamePad_AxisEvent_GetDeviceId(axisEvent, &deviceId);
-    if (strcmp(deviceId, "uniq") != 0) {
+    if (strcmp(deviceId, UNIQ) != 0) {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
     }
     DestroyAxisEvent(axisEvent);
@@ -417,7 +429,7 @@ int32_t ActsGameControllerGamePadAxisEventGetXAxisValue01()
     double axisValue;
 
     GameController_ErrorCode code = OH_GamePad_AxisEvent_GetXAxisValue(axisEvent, &axisValue);
-    if (IsNotSame(axisValue, 8.0)) {
+    if (IsNotSame(axisValue, X_VALUE)) {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
     }
     DestroyAxisEvent(axisEvent);
@@ -440,7 +452,7 @@ int32_t ActsGameControllerGamePadAxisEventGetYAxisValue01()
     double axisValue;
 
     GameController_ErrorCode code = OH_GamePad_AxisEvent_GetYAxisValue(axisEvent, &axisValue);
-    if (IsNotSame(axisValue, 1.0)) {
+    if (IsNotSame(axisValue, Y_VALUE)) {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
     }
     DestroyAxisEvent(axisEvent);
@@ -463,7 +475,7 @@ int32_t ActsGameControllerGamePadAxisEventGetZAxisValue01()
     double axisValue;
 
     GameController_ErrorCode code = OH_GamePad_AxisEvent_GetZAxisValue(axisEvent, &axisValue);
-    if (IsNotSame(axisValue, 2.0)) {
+    if (IsNotSame(axisValue, Z_VALUE)) {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
     }
     DestroyAxisEvent(axisEvent);
@@ -486,7 +498,7 @@ int32_t ActsGameControllerGamePadAxisEventGetRZAxisValue01()
     double axisValue;
 
     GameController_ErrorCode code = OH_GamePad_AxisEvent_GetRZAxisValue(axisEvent, &axisValue);
-    if (IsNotSame(axisValue, 3.0)) {
+    if (IsNotSame(axisValue, RZ_VALUE)) {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
     }
     DestroyAxisEvent(axisEvent);
@@ -509,7 +521,7 @@ int32_t ActsGameControllerGamePadAxisEventGetHatXAxisValue01()
     double axisValue;
 
     GameController_ErrorCode code = OH_GamePad_AxisEvent_GetHatXAxisValue(axisEvent, &axisValue);
-    if (IsNotSame(axisValue, 6.0)) {
+    if (IsNotSame(axisValue, HAT_X_VALUE)) {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
     }
     DestroyAxisEvent(axisEvent);
@@ -532,7 +544,7 @@ int32_t ActsGameControllerGamePadAxisEventGetHatYAxisValue01()
     double axisValue;
 
     GameController_ErrorCode code = OH_GamePad_AxisEvent_GetHatYAxisValue(axisEvent, &axisValue);
-    if (IsNotSame(axisValue, 7.0)) {
+    if (IsNotSame(axisValue, HAT_Y_VALUE)) {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
     }
     DestroyAxisEvent(axisEvent);
@@ -555,7 +567,7 @@ int32_t ActsGameControllerGamePadAxisEventGetBrakeAxisValue01()
     double axisValue;
 
     GameController_ErrorCode code = OH_GamePad_AxisEvent_GetBrakeAxisValue(axisEvent, &axisValue);
-    if (IsNotSame(axisValue, 4.0)) {
+    if (IsNotSame(axisValue, BREAK_VALUE)) {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
     }
     DestroyAxisEvent(axisEvent);
@@ -578,7 +590,7 @@ int32_t ActsGameControllerGamePadAxisEventGetGasAxisValue01()
     double axisValue = 0;
 
     GameController_ErrorCode code = OH_GamePad_AxisEvent_GetGasAxisValue(axisEvent, &axisValue);
-    if (IsNotSame(axisValue, 5.0)) {
+    if (IsNotSame(axisValue, GAS_VALUE)) {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
     }
     DestroyAxisEvent(axisEvent);

@@ -221,87 +221,87 @@ static void OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent, const s
     OH_LOG_INFO(LOG_APP, "[ActsRealDeviceTest][buttonEvent]%{public}s", temp.c_str());
 }
 
-static void LeftShoulder_OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
+static void LeftShoulderOnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
 {
     OnButtonEvent(buttonEvent, "LeftShoulder");
 }
 
-static void RightShoulder_OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
+static void RightShoulderOnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
 {
     OnButtonEvent(buttonEvent, "RightShoulder");
 }
 
-static void LeftTrigger_OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
+static void LeftTriggerOnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
 {
     OnButtonEvent(buttonEvent, "LeftTrigger");
 }
 
-static void RightTrigger_OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
+static void RightTriggerOnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
 {
     OnButtonEvent(buttonEvent, "RightTrigger");
 }
 
-static void ButtonMenu_OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
+static void ButtonMenuOnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
 {
     OnButtonEvent(buttonEvent, "ButtonMenu");
 }
 
-static void ButtonC_OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
+static void ButtonCOnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
 {
     OnButtonEvent(buttonEvent, "ButtonC");
 }
 
-static void ButtonHome_OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
+static void ButtonHomeOnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
 {
     OnButtonEvent(buttonEvent, "ButtonHome");
 }
 
-static void ButtonA_OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
+static void ButtonAOnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
 {
     OnButtonEvent(buttonEvent, "ButtonA");
 }
 
-static void ButtonB_OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
+static void ButtonBOnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
 {
     OnButtonEvent(buttonEvent, "ButtonB");
 }
 
-static void ButtonX_OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
+static void ButtonXOnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
 {
     OnButtonEvent(buttonEvent, "ButtonX");
 }
 
-static void ButtonY_OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
+static void ButtonYOnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
 {
     OnButtonEvent(buttonEvent, "ButtonY");
 }
 
-static void Dpad_LeftButton_OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
+static void DpadLeftButtonOnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
 {
     OnButtonEvent(buttonEvent, "Dpad_LeftButton");
 }
 
-static void Dpad_RightButton_OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
+static void DpadRightButtonOnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
 {
     OnButtonEvent(buttonEvent, "Dpad_RightButton");
 }
 
-static void Dpad_UpButton_OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
+static void DpadUpButtonOnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
 {
     OnButtonEvent(buttonEvent, "Dpad_UpButton");
 }
 
-static void Dpad_DownButton_OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
+static void DpadDownButtonOnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
 {
     OnButtonEvent(buttonEvent, "Dpad_DownButton");
 }
 
-static void LeftThumbstick_OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
+static void LeftThumbstickOnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
 {
     OnButtonEvent(buttonEvent, "LeftThumbstick");
 }
 
-static void RightThumbstick_OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
+static void RightThumbstickOnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
 {
     OnButtonEvent(buttonEvent, "RightThumbstick");
 }
@@ -335,7 +335,7 @@ static void OnAxisEvent(const struct GamePad_AxisEvent *axisEvent, const std::st
     OH_LOG_INFO(LOG_APP, "[OnAxisEvent]%{public}s", log.c_str());
 }
 
-static void LeftTrigger_OnAxisEvent(const struct GamePad_AxisEvent *axisEvent)
+static void LeftTriggerOnAxisEvent(const struct GamePad_AxisEvent *axisEvent)
 {
     std::string val = "Brake";
     double brakeAxisValue;
@@ -348,7 +348,7 @@ static void LeftTrigger_OnAxisEvent(const struct GamePad_AxisEvent *axisEvent)
     OnAxisEvent(axisEvent, "LeftTrigger_OnAxisEvent", val);
 }
 
-static void RightTrigger_OnAxisEvent(const struct GamePad_AxisEvent *axisEvent)
+static void RightTriggerOnAxisEvent(const struct GamePad_AxisEvent *axisEvent)
 {
     std::string val = "Gas";
     double gasAxisValue;
@@ -360,7 +360,7 @@ static void RightTrigger_OnAxisEvent(const struct GamePad_AxisEvent *axisEvent)
     OnAxisEvent(axisEvent, "RightTrigger_OnAxisEvent", val);
 }
 
-static void Dpad_OnAxisEvent(const struct GamePad_AxisEvent *axisEvent)
+static void DpadOnAxisEvent(const struct GamePad_AxisEvent *axisEvent)
 {
     std::string val = "HatX";
     double hatXAxisValue;
@@ -378,7 +378,7 @@ static void Dpad_OnAxisEvent(const struct GamePad_AxisEvent *axisEvent)
     OnAxisEvent(axisEvent, "Dpad_OnAxisEvent", val);
 }
 
-static void LeftThumbstick_OnAxisEvent(const struct GamePad_AxisEvent *axisEvent)
+static void LeftThumbstickOnAxisEvent(const struct GamePad_AxisEvent *axisEvent)
 {
     std::string val = "X";
     double xAxisValue;
@@ -396,7 +396,7 @@ static void LeftThumbstick_OnAxisEvent(const struct GamePad_AxisEvent *axisEvent
     OnAxisEvent(axisEvent, "LeftThumbstick_OnAxisEvent", val);
 }
 
-static void RightThumbstick_OnAxisEvent(const struct GamePad_AxisEvent *axisEvent)
+static void RightThumbstickOnAxisEvent(const struct GamePad_AxisEvent *axisEvent)
 {
     std::string val = "Z";
     double zAxisValue;
@@ -417,28 +417,28 @@ static void RightThumbstick_OnAxisEvent(const struct GamePad_AxisEvent *axisEven
 static void RegisterAllMonitor()
 {
     OH_GameDevice_RegisterDeviceMonitor(DeviceMonitorCallbackTest);
-    OH_GamePad_LeftShoulder_RegisterButtonInputMonitor(LeftShoulder_OnButtonEvent);
-    OH_GamePad_RightShoulder_RegisterButtonInputMonitor(RightShoulder_OnButtonEvent);
-    OH_GamePad_LeftTrigger_RegisterButtonInputMonitor(LeftTrigger_OnButtonEvent);
-    OH_GamePad_LeftTrigger_RegisterAxisInputMonitor(LeftTrigger_OnAxisEvent);
-    OH_GamePad_RightTrigger_RegisterButtonInputMonitor(RightTrigger_OnButtonEvent);
-    OH_GamePad_RightTrigger_RegisterAxisInputMonitor(RightTrigger_OnAxisEvent);
-    OH_GamePad_ButtonMenu_RegisterButtonInputMonitor(ButtonMenu_OnButtonEvent);
-    OH_GamePad_ButtonHome_RegisterButtonInputMonitor(ButtonHome_OnButtonEvent);
-    OH_GamePad_ButtonA_RegisterButtonInputMonitor(ButtonA_OnButtonEvent);
-    OH_GamePad_ButtonB_RegisterButtonInputMonitor(ButtonB_OnButtonEvent);
-    OH_GamePad_ButtonX_RegisterButtonInputMonitor(ButtonX_OnButtonEvent);
-    OH_GamePad_ButtonY_RegisterButtonInputMonitor(ButtonY_OnButtonEvent);
-    OH_GamePad_ButtonC_RegisterButtonInputMonitor(ButtonC_OnButtonEvent);
-    OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor(Dpad_LeftButton_OnButtonEvent);
-    OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor(Dpad_RightButton_OnButtonEvent);
-    OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor(Dpad_UpButton_OnButtonEvent);
-    OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor(Dpad_DownButton_OnButtonEvent);
-    OH_GamePad_Dpad_RegisterAxisInputMonitor(Dpad_OnAxisEvent);
-    OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor(LeftThumbstick_OnButtonEvent);
-    OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor(LeftThumbstick_OnAxisEvent);
-    OH_GamePad_RightThumbstick_RegisterButtonInputMonitor(RightThumbstick_OnButtonEvent);
-    OH_GamePad_RightThumbstick_RegisterAxisInputMonitor(RightThumbstick_OnAxisEvent);
+    OH_GamePad_LeftShoulder_RegisterButtonInputMonitor(LeftShoulderOnButtonEvent);
+    OH_GamePad_RightShoulder_RegisterButtonInputMonitor(RightShoulderOnButtonEvent);
+    OH_GamePad_LeftTrigger_RegisterButtonInputMonitor(LeftTriggerOnButtonEvent);
+    OH_GamePad_LeftTrigger_RegisterAxisInputMonitor(LeftTriggerOnAxisEvent);
+    OH_GamePad_RightTrigger_RegisterButtonInputMonitor(RightTriggerOnButtonEvent);
+    OH_GamePad_RightTrigger_RegisterAxisInputMonitor(RightTriggerOnAxisEvent);
+    OH_GamePad_ButtonMenu_RegisterButtonInputMonitor(ButtonMenuOnButtonEvent);
+    OH_GamePad_ButtonHome_RegisterButtonInputMonitor(ButtonHomeOnButtonEvent);
+    OH_GamePad_ButtonA_RegisterButtonInputMonitor(ButtonAOnButtonEvent);
+    OH_GamePad_ButtonB_RegisterButtonInputMonitor(ButtonBOnButtonEvent);
+    OH_GamePad_ButtonX_RegisterButtonInputMonitor(ButtonXOnButtonEvent);
+    OH_GamePad_ButtonY_RegisterButtonInputMonitor(ButtonYOnButtonEvent);
+    OH_GamePad_ButtonC_RegisterButtonInputMonitor(ButtonCOnButtonEvent);
+    OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor(DpadLeftButtonOnButtonEvent);
+    OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor(DpadRightButtonOnButtonEvent);
+    OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor(DpadUpButtonOnButtonEvent);
+    OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor(DpadDownButtonOnButtonEvent);
+    OH_GamePad_Dpad_RegisterAxisInputMonitor(DpadOnAxisEvent);
+    OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor(LeftThumbstickOnButtonEvent);
+    OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor(LeftThumbstickOnAxisEvent);
+    OH_GamePad_RightThumbstick_RegisterButtonInputMonitor(RightThumbstickOnButtonEvent);
+    OH_GamePad_RightThumbstick_RegisterAxisInputMonitor(RightThumbstickOnAxisEvent);
 }
 
 int32_t ActsRealDeviceHasRealDevice() { return isExistRealDevice ? 1 : 0; }
