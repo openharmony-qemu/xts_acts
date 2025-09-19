@@ -66,7 +66,7 @@ struct KeyEventExample {
           this.text6 = keyEvent.metaKey + "";
           this.text7 = keyEvent.timestamp + ""
           this.text8 = keyEvent.intentionCode + ""
-
+          return false
 
         })
     }.height('100%').width('100%').padding(35)

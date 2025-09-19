@@ -222,6 +222,9 @@ class TestWorker extends EAWorker {
   private joinCalled: boolean = false;
   private customData: string = 'Test';
 
+  override start(): void{
+    super.start();
+  }
   override join(): void {
     this.joinCalled = true;
     super.join();
@@ -847,7 +850,7 @@ export default function EAWorkerTest() {
               });
             });
           }).Await();
-        } catch (err: Exception) {
+        } catch (err: Error) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1645,6 +1648,9 @@ export default function EAWorkerTest() {
           const worker1 = new EAWorker();
           const worker2 = new EAWorker();
           const worker3 = new EAWorker();
+          worker1.start();
+          worker2.start();
+          worker3.start();
           worker1.join();
           worker2.join();
           worker3.join();
@@ -1672,6 +1678,9 @@ export default function EAWorkerTest() {
         const worker1 = new EAWorker();
         const worker2 = new EAWorker();
         const worker3 = new EAWorker();
+        worker1.start();
+        worker2.start();
+        worker3.start();
         try {
           const worker4 = new EAWorker();
         } catch (err: Error) {
@@ -2418,7 +2427,7 @@ export default function EAWorkerTest() {
           });
           workerPromise
             .then((res: Char[]) => {
-              expect(String(res[2])).assertEqual(c'4');
+              expect(res[2]).assertEqual(c'4');
             })
         } catch (err: Error) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -2445,6 +2454,7 @@ export default function EAWorkerTest() {
         console.info(`${TAG} test start`);
         const worker = new TestWorker();
         try {
+          worker.start();
           const toStringResult: string = worker.toString();
           expect(toStringResult).assertEqual('EAWorker[Test]');
           worker.join();

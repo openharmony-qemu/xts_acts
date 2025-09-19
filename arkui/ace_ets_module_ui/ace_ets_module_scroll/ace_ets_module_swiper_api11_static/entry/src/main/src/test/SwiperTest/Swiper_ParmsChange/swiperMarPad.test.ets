@@ -110,13 +110,13 @@ export default function swiperMarPad() {
       const uiContext = new UIContext();
       console.info("Before page turning , swiperMarPad01.left - swiperMarPad.left value is " +
       JSON.stringify(swiperMarPad01.left - swiperMarPad.left));
-      expect(Math.abs(Math.round(swiperMarPad01.left - swiperMarPad.left) - Math.round(uiContext.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperMarPad01.left - swiperMarPad.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(swiperMarPad.right - swiperMarPad01.right) - Math.round(uiContext.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperMarPad.right - swiperMarPad01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(swiperMarPad01.top - swiperMarPad.top) - Math.round(uiContext.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperMarPad01.top - swiperMarPad.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(swiperMarPad.bottom - swiperMarPad01.bottom) - Math.round(uiContext.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperMarPad.bottom - swiperMarPad01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
       
       let driver = Driver.create();
@@ -142,13 +142,13 @@ export default function swiperMarPad() {
       
       console.info("After page turning, swiperMarPad02.left - swiperMarPad.left value is " +
       JSON.stringify(swiperMarPad02.left - swiperMarPad.left));
-      expect(Math.abs(Math.round(swiperMarPad02.left - swiperMarPad.left) - Math.round(uiContext.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperMarPad02.left - swiperMarPad.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(swiperMarPad.right - swiperMarPad02.right) - Math.round(uiContext.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperMarPad.right - swiperMarPad02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(swiperMarPad02.top - swiperMarPad.top) - Math.round(uiContext.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperMarPad02.top - swiperMarPad.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(swiperMarPad.bottom - swiperMarPad02.bottom) - Math.round(uiContext.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperMarPad.bottom - swiperMarPad02.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
       console.info("The type value is " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$type')));

@@ -36,7 +36,7 @@ import common from '@ohos.app.ability.common';
 import deviceInfo from '@ohos.deviceInfo'
 import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
-import { Error, vp2px } from '@ohos.arkui.component'
+import { Error } from '@ohos.arkui.component'
 
 import { startAbility, stopApplication, UtilsTest } from '../Util.test';
 

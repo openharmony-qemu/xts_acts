@@ -3620,22 +3620,22 @@ export default function ConnectionPublicTest() {
       console.info(`${caseName} test start`);
       try {
         let netCon: connection.NetConnection = connection.createNetConnection();
-        netCon.on('netAvailable', (data: connection.NetHandle) => {
-          hilog.info(domain, tag, '%{public}s', caseName +' on netAvailable  success : '+JSON.stringify(data));
-        });
         netCon.register((error: BusinessError<void>|null) => {
-          hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(error));
-          if (error?.code != 0) {
-            ExpectFail();
-            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-            done();
-          } else {
-            hilog.info(domain, tag, '%{public}s', caseName +' register success ');
-            ExpectTrue(true);
-            console.info(`${caseName}---End`);
-            done();
-          }
+            hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(error));
+            if (error?.code != 0) {
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                done();
+            } else {
+                hilog.info(domain, tag, '%{public}s', caseName +' register success ');
+            }
         });
+        netCon.on('netAvailable', (data: connection.NetHandle) => {
+            hilog.info(domain, tag, '%{public}s', caseName +' on netAvailable  success : '+JSON.stringify(data));
+        });
+        ExpectTrue(true);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
       } catch (err: BusinessError) {
         hilog.info(domain, tag, '%{public}s', caseName +' catch: err-> '+JSON.stringify(err));
         ExpectFail();
@@ -3657,22 +3657,22 @@ export default function ConnectionPublicTest() {
       console.info(`${caseName} test start`);
       try {
         let netCon: connection.NetConnection = connection.createNetConnection();
-        netCon.on('netCapabilitiesChange', (data: connection.NetCapabilityInfo) => {
-          hilog.info(domain, tag, '%{public}s', caseName +' Succeeded to get data:  '+JSON.stringify(data));
-        });
         netCon.register((error: BusinessError<void>|null) => {
-          hilog.info(domain, tag, '%{public}s', caseName +'  register error is '+JSON.stringify(error));
-          if (error?.code != 0) {
-            ExpectFail();
-            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-            done();
-          } else {
-            console.info(`${caseName}register success`);
-            ExpectTrue(true);
-            console.info(`${caseName}---End`);
-            done();
-          }
+            hilog.info(domain, tag, '%{public}s', caseName +'  register error is '+JSON.stringify(error));
+            if (error?.code != 0) {
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                done();
+            } else {
+                console.info(`${caseName}register success`);
+            }
         });
+        netCon.on('netCapabilitiesChange', (data: connection.NetCapabilityInfo) => {
+            hilog.info(domain, tag, '%{public}s', caseName +' Succeeded to get data:  '+JSON.stringify(data));
+        });
+        ExpectTrue(true);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
       } catch (err: BusinessError) {
         hilog.info(domain, tag, '%{public}s', caseName +' catch: err-> '+JSON.stringify(err));
         ExpectFail();
@@ -3694,23 +3694,24 @@ export default function ConnectionPublicTest() {
       console.info(`${caseName} test start`);
       try {
         let netCon: connection.NetConnection = connection.createNetConnection();
-        netCon.on('netConnectionPropertiesChange', (data: connection.NetConnectionPropertyInfo) => {
-          hilog.info(domain, tag, '%{public}s', caseName +' Succeeded to get data: ');
-          console.info(`${caseName}  + ${JSON.stringify(data)}}`);
-        });
         netCon.register((error: BusinessError<void>|null) => {
-          hilog.info(domain, tag, '%{public}s', caseName +'  register error  '+JSON.stringify(error));
-          if (error?.code != 0) {
-            ExpectFail();
-            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-            done();
-          } else {
-            hilog.info(domain, tag, '%{public}s', caseName +' register success');
-            ExpectTrue(true);
-            console.info(`${caseName}---End`);
-            done();
-          }
+            hilog.info(domain, tag, '%{public}s', caseName +'  register error  '+JSON.stringify(error));
+            if (error?.code != 0) {
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                done();
+            } else {
+                hilog.info(domain, tag, '%{public}s', caseName +' register success');
+
+            }
         });
+        netCon.on('netConnectionPropertiesChange', (data: connection.NetConnectionPropertyInfo) => {
+            hilog.info(domain, tag, '%{public}s', caseName +' Succeeded to get data: ');
+            console.info(`${caseName}  + ${JSON.stringify(data)}}`);
+        });
+        ExpectTrue(true);
+        console.info(`${caseName}---End`);
+        done();
       } catch (err: BusinessError) {
         hilog.info(domain, tag, '%{public}s', caseName +' catch: err-> '+JSON.stringify(err));
         ExpectFail();

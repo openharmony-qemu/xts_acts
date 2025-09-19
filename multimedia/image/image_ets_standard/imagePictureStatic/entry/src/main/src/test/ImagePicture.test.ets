@@ -921,14 +921,14 @@ export default function imagePicture() {
     }
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_JPEG_STATIC_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_JPEG_STATIC_0100
-     * @tc.desc      : test ImageSource createPicture
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_JPEG_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_JPEG_STATIC_0100
+     * @tc.desc        test ImageSource createPicture
      *                 1.create picture object by decode image source
      *                 2.test auxiliaryPicture have gain map type
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_JPEG_STATIC_0100");
@@ -944,14 +944,14 @@ export default function imagePicture() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_JPEG_STATIC_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_JPEG_STATIC_0100
-     * @tc.desc      : test Image createPicture
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_JPEG_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_JPEG_STATIC_0100
+     * @tc.desc        test Image createPicture
      *                 1.create picture object by main pixelMap
      *                 2.test haven't auxiliaryPicture
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_JPEG_STATIC_0100");
@@ -1375,14 +1375,14 @@ export default function imagePicture() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_JPEG_ERROR_STATIC_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_JPEG_ERROR_STATIC_0100
-     * @tc.desc      : test picture getGainmapPixelmap error
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_JPEG_ERROR_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_JPEG_ERROR_STATIC_0100
+     * @tc.desc        test picture getGainmapPixelmap error
      *                 1.create picture object by decode image source
      *                 2.test get gainmap pixelMap info failed
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_JPEG_ERROR_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_JPEG_ERROR_STATIC_0100");
@@ -8428,15 +8428,15 @@ export default function imagePicture() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_HEIF_STATIC_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_HEIF_STATIC_0100
-     * @tc.desc      : test picture release 
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_HEIF_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_HEIF_STATIC_0100
+     * @tc.desc        test picture release 
      *                 1.create main pixelMap
      *                 2.create picture object by main pixelMap
      *                 3.test release picture 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_HEIF_STATIC_0100");

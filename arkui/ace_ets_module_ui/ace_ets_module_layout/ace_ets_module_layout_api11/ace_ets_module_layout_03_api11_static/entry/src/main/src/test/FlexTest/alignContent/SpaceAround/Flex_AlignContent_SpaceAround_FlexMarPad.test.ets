@@ -100,13 +100,13 @@ it('testFlexAlignContentSpaceAroundFlexMarPadOverflow_static', Level.LEVEL0, asy
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('warp')).assertEqual('FlexWrap.Wrap');
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual('FlexAlign.SpaceAround');
       const uiContext = new UIContext();
-      expect(Math.abs(firstText.bottom - firstText.top - uiContext.vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(secondText.bottom - secondText.top - uiContext.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(thirdText.bottom - thirdText.top - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(fourthText.bottom - fourthText.top - uiContext.vp2px(200)) <= 1).assertTrue();
-      expect(Math.abs(flexContainer.top - columnContainer.top - uiContext.vp2px(20)) <= 1).assertTrue(); 
-      expect(Math.abs(firstText.top - flexContainer.top - uiContext.vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(firstText.left - flexContainer.left - uiContext.vp2px(50)) <= 1).assertTrue(); 
+      expect(Math.abs(firstText.bottom - firstText.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
+      expect(Math.abs(secondText.bottom - secondText.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(thirdText.bottom - thirdText.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(fourthText.bottom - fourthText.top - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue();
+      expect(Math.abs(flexContainer.top - columnContainer.top - UIContext.getFocusedUIContext()!.vp2px(20)) <= 1).assertTrue(); 
+      expect(Math.abs(firstText.top - flexContainer.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
+      expect(Math.abs(firstText.left - flexContainer.left - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue(); 
       expect(Math.abs(firstText.left - secondText.left) <= 1).assertTrue();
       expect(Math.abs(secondText.left - thirdText.left) <= 1).assertTrue();
       expect(Math.abs(thirdText.left - fourthText.left) <= 1).assertTrue();
@@ -114,7 +114,7 @@ it('testFlexAlignContentSpaceAroundFlexMarPadOverflow_static', Level.LEVEL0, asy
       expect(Math.abs(firstText.bottom - secondText.top) <= 1).assertTrue();
       expect(Math.abs(secondText.bottom - thirdText.top) <= 1).assertTrue();
       expect(Math.abs(thirdText.bottom - fourthText.top) <= 1).assertTrue();
-      expect(Math.abs(fourthText.bottom - flexContainer.bottom - uiContext.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(fourthText.bottom - flexContainer.bottom - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
       console.info('[testFlexAlignContentSpaceAroundFlexMarPadOverflow] END');
 
     });
@@ -147,14 +147,14 @@ it('testFlexAlignContentSpaceAroundFlexMarPadMeet_static', Level.LEVEL0, async (
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('warp')).assertEqual('FlexWrap.Wrap');
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual('FlexAlign.SpaceAround');
       const uiContext = new UIContext();
-      expect(Math.abs(firstText.bottom - firstText.top) - uiContext.vp2px(50) <= 1).assertTrue();
-      expect(Math.abs(secondText.bottom - secondText.top) - uiContext.vp2px(100) <= 1).assertTrue();
+      expect(Math.abs(firstText.bottom - firstText.top) - UIContext.getFocusedUIContext()!.vp2px(50) <= 1).assertTrue();
+      expect(Math.abs(secondText.bottom - secondText.top) - UIContext.getFocusedUIContext()!.vp2px(100) <= 1).assertTrue();
       console.info("jyj testFlexAlignContentSpaceAroundFlexMarPadMeet 000 " + Math.abs(thirdText.bottom - thirdText.top));
-      expect(Math.abs(thirdText.bottom - thirdText.top) - uiContext.vp2px(150) <= 1).assertTrue();
-      expect(Math.abs(fourthText.bottom - fourthText.top) - uiContext.vp2px(200) <= 1).assertTrue();
+      expect(Math.abs(thirdText.bottom - thirdText.top) - UIContext.getFocusedUIContext()!.vp2px(150) <= 1).assertTrue();
+      expect(Math.abs(fourthText.bottom - fourthText.top) - UIContext.getFocusedUIContext()!.vp2px(200) <= 1).assertTrue();
 
-      expect(Math.abs(firstText.left - flexContainer.left) - uiContext.vp2px(10) <= 1).assertTrue();
-      expect(Math.abs(flexContainer.top - columnContainer.top) - uiContext.vp2px(30) <= 1).assertTrue();
+      expect(Math.abs(firstText.left - flexContainer.left) - UIContext.getFocusedUIContext()!.vp2px(10) <= 1).assertTrue();
+      expect(Math.abs(flexContainer.top - columnContainer.top) - UIContext.getFocusedUIContext()!.vp2px(30) <= 1).assertTrue();
 
       expect(Math.abs(firstText.left - secondText.left) <= 1).assertTrue();
       expect(Math.abs(secondText.left - thirdText.left) <= 1).assertTrue();
@@ -164,7 +164,7 @@ it('testFlexAlignContentSpaceAroundFlexMarPadMeet_static', Level.LEVEL0, async (
 
       expect(Math.abs(Math.round(secondText.top - firstText.bottom) - Math.round(thirdText.top - secondText.bottom)) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round((thirdText.top - secondText.bottom) / 2) - Math.round(firstText.top - flexContainer.top - uiContext.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round((thirdText.top - secondText.bottom) / 2) - Math.round(firstText.top - flexContainer.top - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignContentSpaceAroundFlexMarPadMeet] END');
 

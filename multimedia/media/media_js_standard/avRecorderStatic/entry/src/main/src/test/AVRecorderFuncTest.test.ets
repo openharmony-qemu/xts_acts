@@ -430,7 +430,7 @@ export default function avRecorderTest() {
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
       let length = execTimes.length;
-      let sum = execTimes.reduce((prev: number, curr: number, index: number, array: Array<number>) => {
+      let sum = execTimes.reduce((prev: number, curr: number) => {
         return prev + curr;
       }, 0);
       let avg = sum / length;

@@ -861,27 +861,6 @@ export function printSendableTestClass2(arg: SendableTestClass): SendableTestCla
   return arg;
 }
 
-type SendableFunction = (func: SendableFunction) => SendableFunction;
-
-// 定义一个示例的可发送函数
-
-export function sampleFunction(func: SendableFunction): SendableFunction {
-  console.log('Executing sampleFunction');
-  return func;
-}
-
-
-export function printSendableFunction1(arg: SendableFunction): SendableFunction {
-  console.info('printArgs: ' + arg);
-  return arg;
-}
-
-
-export function printSendableFunction2(arg: SendableFunction): SendableFunction {
-  console.info('printArgs: ' + arg);
-  return arg;
-}
-
 
 
 export function printAny1(arg1: Number, arg2: string): Number | string {

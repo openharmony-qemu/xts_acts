@@ -102,7 +102,7 @@ it('testFlexItemAlignCenterSetMarPad_static', Level.LEVEL0, async () : Promise<v
       let textExceed03: RectValue = CommonFunc.getComponentRect('ItemAlign_Center_textExceed03');
       let flexExceed01: RectValue = CommonFunc.getComponentRect('ItemAlign_Center_flexExceed01');
       const uiContext = new UIContext();
-      expect(Math.abs(textExceed01.left - flexExceed01.left - Math.round(uiContext.vp2px(10))) <= 1).assertTrue()
+      expect(Math.abs(textExceed01.left - flexExceed01.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue()
       expect(textExceed03.right).assertLess(flexExceed01.right)
       expect(Math.abs(textExceed01.top - flexExceed01.top - (flexExceed01.bottom - textExceed01.bottom)) <= 1)
         .assertTrue()
@@ -110,12 +110,12 @@ it('testFlexItemAlignCenterSetMarPad_static', Level.LEVEL0, async () : Promise<v
         .assertTrue()
       expect(Math.abs(textExceed03.top - flexExceed01.top - (flexExceed01.bottom - textExceed03.bottom)) <= 1)
         .assertTrue()
-      expect(Math.abs(textExceed01.bottom - textExceed01.top - Math.round(uiContext.vp2px(50))) <= 1).assertTrue()
-      expect(Math.abs(textExceed02.bottom - textExceed02.top - Math.round(uiContext.vp2px(100))) <= 1).assertTrue()
-      expect(Math.abs(textExceed03.bottom - textExceed03.top - Math.round(uiContext.vp2px(150))) <= 1).assertTrue()
-      expect(Math.abs(textExceed01.right - textExceed01.left - Math.round(uiContext.vp2px(150))) <= 1).assertTrue()
-      expect(Math.abs(textExceed02.right - textExceed02.left - Math.round(uiContext.vp2px(150))) <= 1).assertTrue()
-      expect(Math.abs(textExceed03.right - textExceed03.left - Math.round(uiContext.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(textExceed01.bottom - textExceed01.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(textExceed02.bottom - textExceed02.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue()
+      expect(Math.abs(textExceed03.bottom - textExceed03.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(textExceed01.right - textExceed01.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(textExceed02.right - textExceed02.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(textExceed03.right - textExceed03.left - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Center')
       console.info('new testFlexItemAlignCenterSetMarPad_static END');

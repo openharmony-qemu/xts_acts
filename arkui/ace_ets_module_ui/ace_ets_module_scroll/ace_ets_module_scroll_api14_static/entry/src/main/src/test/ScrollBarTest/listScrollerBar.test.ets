@@ -82,9 +82,9 @@ export default function listScrollerBar() {
       let widthBar = right - left;
       console.info("listScrollerBar_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
       const uiContext = new UIContext();
-      await (driver.swipe((Math.round(left + widthBar / 2)).toInt(), (Math.round(top + uiContext.vp2px(10))).toInt(),
+      await (driver.swipe((Math.round(left + widthBar / 2)).toInt(), (Math.round(top + UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
         (Math.round(left + widthBar / 2)).toInt(),
-        (Math.round(bottom - uiContext.vp2px(10))).toInt()) as Promise<void>);
+        (Math.round(bottom - UIContext.getFocusedUIContext()!.vp2px(10))).toInt()) as Promise<void>);
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('list_scrollBar_onText');
       console.info("[listScrollerBar_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));

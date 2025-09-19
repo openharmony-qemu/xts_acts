@@ -39,7 +39,7 @@
               "entity.system.home"
             ],
             "actions": [
-              "action.system.home"
+              "ohos.want.action.home"
             ]
           }
         ]
@@ -88,6 +88,14 @@
             "resource": "$profile:form_config"
           }
         ]
+      },
+      {
+        "name": "ServiceExt",
+        "srcEntry": "./ets/serviceext/ServiceExt.ets",
+        "icon": "$media:layered_image",
+        "description": "service",
+        "type": "service",
+        "exported": true
       }
     ],
     "requestPermissions": [

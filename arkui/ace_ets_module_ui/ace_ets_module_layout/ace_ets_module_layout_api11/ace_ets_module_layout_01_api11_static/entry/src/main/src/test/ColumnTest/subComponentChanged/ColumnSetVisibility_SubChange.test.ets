@@ -15,7 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium';
 import router from '@ohos.router';
-import {vp2px,Visibility} from '@ohos.arkui.component'
+import {Visibility} from '@ohos.arkui.component'
 
 import  RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
@@ -102,9 +102,9 @@ it('testColumnSetVisibilityNoneVisible_static', Level.LEVEL0, async () => {
         expect(Math.abs(columnSetVisibility_1.bottom - columnSetVisibility_1.top) <= 1).assertTrue()
         expect(Math.abs(columnSetVisibility_1.right - columnSetVisibility_1.left) <= 1).assertTrue()
         expect(Math.abs(columnSetVisibility_2.top - columnSetVisibility.top) <= 1).assertTrue()
-        expect(Math.abs(columnSetVisibility_3.top - columnSetVisibility_2.bottom - Math.round(vp2px(30))) <= 1)
+        expect(Math.abs(columnSetVisibility_3.top - columnSetVisibility_2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1)
           .assertTrue()
-        expect(Math.abs(columnSetVisibility.bottom - columnSetVisibility_3.bottom - Math.round(vp2px(120))) <= 1)
+        expect(Math.abs(columnSetVisibility.bottom - columnSetVisibility_3.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(120))) <= 1)
           .assertTrue()
 
       } catch (err) {
@@ -148,9 +148,9 @@ it('testColumnSetVisibilityHiddenVisible', Level.LEVEL0, async () => {
         let columnSetVisibility_3: RectValue = CommonFunc.getComponentRect('columnSetVisibility_3');
         let columnSetVisibility: RectValue = CommonFunc.getComponentRect('columnSetVisibility');
         expect(Math.abs(columnSetVisibility.top - columnSetVisibility_1.top) <= 1).assertTrue()
-        expect(Math.abs(columnSetVisibility_2.top - columnSetVisibility_1.bottom - Math.round(vp2px(30))) <= 1).assertTrue()
-        expect(Math.abs(columnSetVisibility_3.top - columnSetVisibility_2.bottom - Math.round(vp2px(30))) <= 1).assertTrue()
-        expect(Math.abs(columnSetVisibility.bottom - columnSetVisibility_3.bottom - Math.round(vp2px(40))) <= 1).assertTrue()
+        expect(Math.abs(columnSetVisibility_2.top - columnSetVisibility_1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+        expect(Math.abs(columnSetVisibility_3.top - columnSetVisibility_2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+        expect(Math.abs(columnSetVisibility.bottom - columnSetVisibility_3.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue()
       } catch (err) {
         console.error('[testColumnSetVisibilityHiddenVisible] failed');
         expect().assertFail();
@@ -192,9 +192,9 @@ it('testColumnSetVisibilityVisible', Level.LEVEL0, async () => {
         let columnSetVisibility_3: RectValue = CommonFunc.getComponentRect('columnSetVisibility_3');
         let columnSetVisibility: RectValue = CommonFunc.getComponentRect('columnSetVisibility');
         expect(Math.abs(columnSetVisibility.top - columnSetVisibility_1.top) <= 1).assertTrue()
-        expect(Math.abs(columnSetVisibility_2.top - columnSetVisibility_1.bottom - Math.round(vp2px(30))) <= 1).assertTrue()
-        expect(Math.abs(columnSetVisibility_3.top - columnSetVisibility_2.bottom - Math.round(vp2px(30))) <= 1).assertTrue()
-        expect(Math.abs(columnSetVisibility.bottom - columnSetVisibility_3.bottom - Math.round(vp2px(40))) <= 1).assertTrue()
+        expect(Math.abs(columnSetVisibility_2.top - columnSetVisibility_1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+        expect(Math.abs(columnSetVisibility_3.top - columnSetVisibility_2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+        expect(Math.abs(columnSetVisibility.bottom - columnSetVisibility_3.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue()
       } catch (err) {
         console.error('[testColumnSetVisibilityVisible] failed');
         expect().assertFail();
@@ -238,8 +238,8 @@ it('testColumnSetVisibilityVisibleNone_static', Level.LEVEL0, async () => {
         expect(Math.abs(columnSetVisibility_2.bottom - columnSetVisibility_2.top) <= 1).assertTrue()
         expect(Math.abs(columnSetVisibility_2.right - columnSetVisibility_2.left) <= 1).assertTrue()
         expect(Math.abs(columnSetVisibility_1.top - columnSetVisibility.top) <= 1).assertTrue()
-        expect(Math.abs(columnSetVisibility_3.top - columnSetVisibility_1.bottom - Math.round(vp2px(30))) <= 1).assertTrue()
-        expect(Math.abs(columnSetVisibility.bottom - columnSetVisibility_3.bottom - Math.round(vp2px(170))) <= 1).assertTrue()
+        expect(Math.abs(columnSetVisibility_3.top - columnSetVisibility_1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+        expect(Math.abs(columnSetVisibility.bottom - columnSetVisibility_3.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(170))) <= 1).assertTrue()
       } catch (err) {
         console.error('[testColumnSetVisibilityVisibleNone_static] failed');
         expect().assertFail();

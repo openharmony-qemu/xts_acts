@@ -39,8 +39,8 @@ import {
 struct RichEditorMenuPolicy {
   controller: RichEditorController = new RichEditorController();
   
-  @State start: int = -1;
-  @State end: int = -1;
+  @State start: number = -1;
+  @State end: number = -1;
   @State message: string = "[-1, -1]"
   @State radius: number = 0
   @State policy: MenuPolicy = MenuPolicy.DEFAULT
@@ -59,7 +59,7 @@ struct RichEditorMenuPolicy {
                 style:
                 {
                   fontColor: Color.Orange,
-                  fontSize: 60.0
+                  fontSize: 60
                 },
                 gesture:
                 {

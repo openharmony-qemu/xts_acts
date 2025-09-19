@@ -90,7 +90,7 @@ it('marqueeUIJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promis
       console.info('marqueeUIJsunit_static_0100 component obj is: ' + obj.getElement('$attrs').getElement('allowScale'));
       expect(obj.getElement('$attrs').getElement('start')).assertEqual('false');
       const uiContext = new UIContext();
-      expect(Math.abs(obj.getElement('$attrs').getDouble('step') - uiContext.vp2px(50)) <= 1).assertTrue();
+      expect(Math.abs(obj.getElement('$attrs').getDouble('step') - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
       expect(obj.getElement('$attrs').getString('loop')).assertEqual('2');
       expect(obj.getElement('$attrs').getString('fromStart')).assertEqual('true');
       expect(obj.getElement('$attrs').getString('src')).assertEqual('Running Marquee starts rolling');
@@ -176,7 +176,7 @@ it('marqueeUIJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promis
       let strJson = inspector.getInspectorByKey('marquee');
       const obj = JSON.parseJsonElement(strJson);
       const uiContext = new UIContext();
-      expect(Math.abs(obj.getElement('$attrs').getDouble('step') - uiContext.vp2px(50)) <= 1).assertTrue();
+      expect(Math.abs(obj.getElement('$attrs').getDouble('step') - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
       done();
     });
 
@@ -194,7 +194,7 @@ it('marqueeUIJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promis
       let strJson = inspector.getInspectorByKey('marquee');
       const obj = JSON.parseJsonElement(strJson);
       const uiContext = new UIContext();
-      expect(Math.abs(obj.getElement('$attrs').getDouble('step') - uiContext.vp2px(6)) <= 1).assertTrue();
+      expect(Math.abs(obj.getElement('$attrs').getDouble('step') - UIContext.getFocusedUIContext()!.vp2px(6)) <= 1).assertTrue();
       done();
     });
 

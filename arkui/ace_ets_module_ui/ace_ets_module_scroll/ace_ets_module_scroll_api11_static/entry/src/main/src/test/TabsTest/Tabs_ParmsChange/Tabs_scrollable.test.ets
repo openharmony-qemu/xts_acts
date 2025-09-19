@@ -170,11 +170,11 @@ export default function Tabs_scrollable() {
       console.info("[testTabsScrollableToTrue_static_01] heightParent is: " + heightParent);
 
       expect(Math.abs(Math.round(Tabs_scrollable_011.bottom - Tabs_scrollable_011.top) -
-      Math.round(heightParent - uiContext.vp2px(56))) <= 1).assertTrue();
+      Math.round(heightParent - UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_scrollable_012.bottom - Tabs_scrollable_012.top) -
-      Math.round(heightParent - uiContext.vp2px(56))) <= 1).assertTrue();
+      Math.round(heightParent - UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_scrollable_013.bottom - Tabs_scrollable_013.top) -
-      Math.round(heightParent - uiContext.vp2px(56))) <= 1).assertTrue();
+      Math.round(heightParent - UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
 
       expect(Math.abs(Tabs_scrollable_011.right - Tabs_scrollable_011.left - widthParent) <= 1).assertTrue();
       expect(Math.abs(Tabs_scrollable_012.right - Tabs_scrollable_012.left - widthParent) <= 1).assertTrue();
@@ -183,11 +183,11 @@ export default function Tabs_scrollable() {
       console.info(`[testTabsScrollableToTrue_static_01]Tabs_scrollable_001.bottom - Tabs_scrollable_001.top=
         ${Math.round(Tabs_scrollable_001.bottom - Tabs_scrollable_001.top)}`);
       expect(Math.abs(Math.round(Tabs_scrollable_001.bottom - Tabs_scrollable_001.top) -
-      Math.round(heightParent - uiContext.vp2px(56))) <= 1).assertTrue();
+      Math.round(heightParent - UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_scrollable_002.bottom - Tabs_scrollable_002.top) -
-      Math.round(heightParent - uiContext.vp2px(56))) <= 1).assertTrue();
+      Math.round(heightParent - UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_scrollable_003.bottom - Tabs_scrollable_003.top) -
-      Math.round(heightParent - uiContext.vp2px(56))) <= 1).assertTrue();
+      Math.round(heightParent - UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
 
       expect(Math.abs(Tabs_scrollable_001.right - Tabs_scrollable_001.left - widthParent) <= 1).assertTrue();
       expect(Math.abs(Tabs_scrollable_002.right - Tabs_scrollable_002.left - widthParent) <= 1).assertTrue();
@@ -195,9 +195,9 @@ export default function Tabs_scrollable() {
 
       console.info(`[testTabsScrollableToTrue_static_01]subGreen.bottom - subGreen.top=
         ${Math.round(subGreen.bottom - subGreen.top)}`);
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(widthParent / 3)) <= 1).assertTrue();
       expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(widthParent / 3)) <= 1).assertTrue();
@@ -295,11 +295,11 @@ export default function Tabs_scrollable() {
         ${Math.round(Tabs_scrollable_011.bottom - Tabs_scrollable_011.top)}`);
 
       expect(Math.abs(Math.round(Tabs_scrollable_011.bottom - Tabs_scrollable_011.top) -
-      Math.round(heightParent - uiContext.vp2px(56))) <= 1).assertTrue();
+      Math.round(heightParent - UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_scrollable_012.bottom - Tabs_scrollable_012.top) -
-      Math.round(heightParent - uiContext.vp2px(56))) <= 1).assertTrue();
+      Math.round(heightParent - UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_scrollable_013.bottom - Tabs_scrollable_013.top) -
-      Math.round(heightParent - uiContext.vp2px(56))) <= 1).assertTrue();
+      Math.round(heightParent - UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
 
       expect(Math.abs(Tabs_scrollable_011.right - Tabs_scrollable_011.left - widthParent) <= 1).assertTrue();
       expect(Math.abs(Tabs_scrollable_012.right - Tabs_scrollable_012.left - widthParent) <= 1).assertTrue();
@@ -309,11 +309,11 @@ export default function Tabs_scrollable() {
         ${Math.round(Tabs_scrollable_001.bottom - Tabs_scrollable_001.top)}`);
 
       expect(Math.abs(Math.round(Tabs_scrollable_001.bottom - Tabs_scrollable_001.top) -
-      Math.round(heightParent - uiContext.vp2px(56))) <= 1).assertTrue();
+      Math.round(heightParent - UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_scrollable_002.bottom - Tabs_scrollable_002.top) -
-      Math.round(heightParent - uiContext.vp2px(56))) <= 1).assertTrue();
+      Math.round(heightParent - UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Tabs_scrollable_003.bottom - Tabs_scrollable_003.top) -
-      Math.round(heightParent - uiContext.vp2px(56))) <= 1).assertTrue();
+      Math.round(heightParent - UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
 
       expect(Math.abs(Tabs_scrollable_001.right - Tabs_scrollable_001.left - widthParent) <= 1).assertTrue();
       expect(Math.abs(Tabs_scrollable_002.right - Tabs_scrollable_002.left - widthParent) <= 1).assertTrue();
@@ -322,9 +322,9 @@ export default function Tabs_scrollable() {
       console.info(`[testTabsScrollableToFalse_static_02]subGreen.bottom - subGreen.top=
         ${Math.round(subGreen.bottom - subGreen.top)}`);
 
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(56))) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(widthParent / 3)) <= 1).assertTrue();
       expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(widthParent / 3)) <= 1).assertTrue();

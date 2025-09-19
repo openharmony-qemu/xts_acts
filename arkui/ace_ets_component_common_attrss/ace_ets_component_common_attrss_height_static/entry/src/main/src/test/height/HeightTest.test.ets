@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import {vp2px,Color,$r} from '@ohos.arkui.component'
+import {Color,$r} from '@ohos.arkui.component'
 import Utils, {CurrentRatio, BasePageConfig, PageConfig, TestValue, RectValue,SetValue,StrJsonObj } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import { describe, expect,beforeAll } from '../../../../hypium/index';
@@ -132,7 +132,7 @@ export default function heightTest() {
     },
     expectValue: {
       heightCompare: '550.00vp',
-      // height: vp2px(550), ExceedParent: true
+      // height: UIContext.getFocusedUIContext()!.vp2px(550), ExceedParent: true
     }
   },
     {
@@ -142,7 +142,7 @@ export default function heightTest() {
       },
       expectValue: {
         heightCompare: '50.00%',
-        // height: vp2px(parentHeight) * 0.5
+        // height: UIContext.getFocusedUIContext()!.vp2px(parentHeight) * 0.5
       }
     }, {
       describe: 'Resource',
@@ -151,7 +151,7 @@ export default function heightTest() {
       },
       expectValue: {
         heightCompare: '200.00vp',
-        // height: vp2px(200)
+        // height: UIContext.getFocusedUIContext()!.vp2px(200)
       }
     }, {
       describe: 'StringPx',

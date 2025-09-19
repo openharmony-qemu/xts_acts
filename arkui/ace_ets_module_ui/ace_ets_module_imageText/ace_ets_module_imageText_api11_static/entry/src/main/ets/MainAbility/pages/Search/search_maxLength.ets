@@ -34,7 +34,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 struct SearchMaxLength {
   @State submitValue: string = ''
   @State text: string = ''
-  @State maxLength: number = 6
+  @State maxLength: int = 6
 
   build() {
     Column() {

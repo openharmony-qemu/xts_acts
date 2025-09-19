@@ -98,12 +98,12 @@ it('testFlexItemAlignAutoTextHeiCheck_static', Level.LEVEL0, async (): Promise<v
       expect(Math.abs(textHeightModify01.left - flexHeightModify.left) <= 1).assertTrue();
       expect(Math.abs(textHeightModify02.left - textHeightModify01.right) <= 1).assertTrue();
       const uiContext = new UIContext();
-      expect(Math.abs(textHeightModify01.bottom - textHeightModify01.top - uiContext.vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(textHeightModify02.bottom - textHeightModify02.top - uiContext.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(textHeightModify03.bottom - textHeightModify03.top - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(textHeightModify01.right - textHeightModify01.left - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(textHeightModify02.right - textHeightModify02.left - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(textHeightModify03.right - textHeightModify03.left - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify01.bottom - textHeightModify01.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify02.bottom - textHeightModify02.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify03.bottom - textHeightModify03.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify01.right - textHeightModify01.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify02.right - textHeightModify02.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify03.right - textHeightModify03.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row');
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Auto');
       console.info('new testFlexItemAlignAutoTextHeiCheck_static END');
@@ -143,12 +143,12 @@ it('testFlexItemAlignAutoTextHei_static', Level.LEVEL0, async (): Promise<void> 
       expect(Math.abs(textHeightModify01.left - flexHeightModify.left) <= 1).assertTrue();
       expect(Math.abs(textHeightModify02.left - textHeightModify01.right) <= 1).assertTrue();
 
-      expect(Math.abs(textHeightModify01.bottom - textHeightModify01.top - uiContext.vp2px(80)) <= 1).assertTrue();
-      expect(Math.abs(textHeightModify02.bottom - textHeightModify02.top - uiContext.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(textHeightModify03.bottom - textHeightModify03.top - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(textHeightModify01.right - textHeightModify01.left - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(textHeightModify02.right - textHeightModify02.left - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(textHeightModify03.right - textHeightModify03.left - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify01.bottom - textHeightModify01.top - UIContext.getFocusedUIContext()!.vp2px(80)) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify02.bottom - textHeightModify02.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify03.bottom - textHeightModify03.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify01.right - textHeightModify01.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify02.right - textHeightModify02.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify03.right - textHeightModify03.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row');
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Auto');
       console.info('new testFlexItemAlignAutoTextHei_static END');

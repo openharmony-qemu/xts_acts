@@ -130,7 +130,7 @@ struct TextInputPage {
         .placeholderFont(this.placeholderFont)
         .enterKeyType(this.enterKeyType)
         .caretColor(this.caretColor)
-        .maxLength(this.maxLength)
+        .maxLength(this.maxLength as int)
         .copyOption(this.copyOption)
         .showPasswordIcon(this.showPasswordIcon)
         .style(this.style)

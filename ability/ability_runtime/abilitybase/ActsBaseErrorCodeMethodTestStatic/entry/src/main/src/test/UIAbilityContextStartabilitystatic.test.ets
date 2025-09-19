@@ -1,3 +1,18 @@
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -11,7 +26,19 @@ import contextConstant from '@ohos.app.ability.contextConstant';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
-let context:common.UIAbilityContext;
+let context: common.UIAbilityContext;
+let g_code: number = 0;
+
+class AbilityStartCallbackExt implements common.AbilityStartCallback {
+  onError(code: number, name: string, message: string): void {
+    console.log(`startAbilityByType Error:` + "code:" + code + "name:" + name + "message:" + message);
+    g_code = code;
+  }
+
+  onResult?: (abilityResult: common.AbilityResult) => void = (parameter: common.AbilityResult) => {
+    console.log(`startAbilityByType resultCode:` + parameter.resultCode + `bundleName:` + parameter.want?.bundleName);
+  }
+}
 
 export default function UiAbilityContextStartAbilityStatic() {
   describe("ActsStartAbilityErrorTestStatic", (): void => {
@@ -640,6 +667,73 @@ export default function UiAbilityContextStartAbilityStatic() {
         });
       } catch (err: BusinessError) {
         hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /*
+     * @tc.number : ACTS_UIExtension_StartAbilityByTypeStatic001
+     * @tc.name   : ACTS_UIExtension_StartAbilityByTypeStatic001
+     * @tc.desc   : Call UIAbilityContext startAbilityByType failed.(callback), Expect: 16000050
+     * @tc.type   : Function
+     * @tc.size   : MediumTest
+     * @tc.level  : 3
+     */
+    it('ACTS_UIExtension_StartAbilityByTypeStatic001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let TAG = 'ACTS_UIExtension_StartAbilityByTypeStatic001 == ';
+      hilog.info(0x0000, tag, TAG + "begin");
+      try {
+        let abilityStartCallback: AbilityStartCallbackExt = new AbilityStartCallbackExt();
+        let wantParam: Record<String,RecordData> = {
+          "sceneType": 1,
+          'time': '2023-10-23 20:45'
+        };
+        context.startAbilityByType("shareerror", wantParam, abilityStartCallback, ((err: BusinessError<void> | null): void => {
+          if (err != null && err?.code != 0) {
+            hilog.info(0x0000, tag, TAG + "startAbilityByType001 err, err:" + JSON.stringify(err));
+            return;
+          } else {
+            hilog.info(0x0000, tag, TAG + "startAbilityByType001 success:");
+          }
+        }))
+        await Utils.msSleep(1000);
+        expect(g_code).assertEqual(16000050);
+        done();
+      } catch (Error: BusinessError) {
+        hilog.info(domain, tag, `startAbilityByType001 fail: ` + JSON.stringify(Error));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /*
+     * @tc.number : ACTS_UIExtension_StartAbilityByTypeStatic002
+     * @tc.name   : ACTS_UIExtension_StartAbilityByTypeStatic002
+     * @tc.desc   : Call UIAbilityContext startAbilityByType failed.(callback), Expect: 16000050
+     * @tc.type   : Function
+     * @tc.size   : MediumTest
+     * @tc.level  : 3
+     */
+    it('ACTS_UIExtension_StartAbilityByTypeStatic002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let TAG = 'ACTS_UIExtension_StartAbilityByTypeStatic002 == ';
+      hilog.info(0x0000, tag, TAG + "begin");
+      try {
+        let abilityStartCallback: AbilityStartCallbackExt = new AbilityStartCallbackExt();
+        let wantParam: Record<String,RecordData> = {
+          "sceneType": 1,
+          'time': '2023-10-23 20:45'
+        };
+        context.startAbilityByType("shareerror", wantParam, abilityStartCallback).then(() => {
+          hilog.info(0x0000, tag, TAG + "startAbilityByType002 success");
+        }).catch((error: BusinessError): void => {
+          hilog.info(0x0000, tag, TAG + "startAbilityByType002 fail, err:" + JSON.stringify(error));
+        })
+        await Utils.msSleep(1000);
+        expect(g_code).assertEqual(16000050);
+        done();
+      } catch (Error: BusinessError) {
+        hilog.info(domain, tag, `startAbilityByType002 fail: ` + JSON.stringify(Error));
         expect().assertFail();
         done();
       }

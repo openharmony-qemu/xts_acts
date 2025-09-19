@@ -90,9 +90,9 @@ it('testColumnSetFlexShink_static', Level.LEVEL0, async () => {
       let columnSetFlexShink: RectValue = CommonFunc.getComponentRect('columnSetFlexShink');
 
       expect(Math.abs(columnSetFlexShink.top - columnSetFlexShink_1.top) <= 1).assertTrue()
-      expect(Math.abs(columnSetFlexShink_2.top - columnSetFlexShink_1.bottom - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(columnSetFlexShink_3.top - columnSetFlexShink_2.bottom - Math.round(uiContext.vp2px(30))) <= 1).assertTrue()
-      expect(Math.abs(columnSetFlexShink.bottom - columnSetFlexShink_3.bottom - Math.round(uiContext.vp2px(40))) <= 1).assertTrue()
+      expect(Math.abs(columnSetFlexShink_2.top - columnSetFlexShink_1.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnSetFlexShink_3.top - columnSetFlexShink_2.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.abs(columnSetFlexShink.bottom - columnSetFlexShink_3.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue()
       console.info('new testColumnSetFlexShink END');
     });
   })

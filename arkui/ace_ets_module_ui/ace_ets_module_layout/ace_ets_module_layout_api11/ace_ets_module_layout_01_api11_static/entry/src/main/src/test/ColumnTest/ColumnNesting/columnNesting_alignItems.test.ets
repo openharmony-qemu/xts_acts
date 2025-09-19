@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium';
 import router from '@ohos.router';
-import {vp2px,FlexAlign} from '@ohos.arkui.component'
+import {FlexAlign} from '@ohos.arkui.component'
 
 import  RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
@@ -116,60 +116,60 @@ it('testColumnSpace_static', Level.LEVEL0, async () => {
       expect(Math.floor(Math.abs((columnNesting_alignItems_022.top - columnNesting_alignItems_021.bottom) - (columnNesting_alignItems_023.top - columnNesting_alignItems_022.bottom))) <= 2)
         .assertTrue();
 
-      expect(Math.floor(Math.abs((columnNesting_alignItems_012.top - columnNesting_alignItems_011.bottom) - vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((columnNesting_alignItems_012.top - columnNesting_alignItems_011.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((columnNesting_alignItems_013.top - columnNesting_alignItems_012.bottom) - vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((columnNesting_alignItems_013.top - columnNesting_alignItems_012.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((columnNesting_alignItems_022.top - columnNesting_alignItems_021.bottom) - vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((columnNesting_alignItems_022.top - columnNesting_alignItems_021.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((columnNesting_alignItems_023.top - columnNesting_alignItems_022.bottom) - vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((columnNesting_alignItems_023.top - columnNesting_alignItems_022.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
       console.log('[testColumnSpace_static] columnNesting_alignItems_02.top - columnNesting_alignItems_01.bottom', +(columnNesting_alignItems_02.top - columnNesting_alignItems_01.bottom))
-      expect(Math.floor(Math.abs((columnNesting_alignItems_02.top - columnNesting_alignItems_01.bottom) - vp2px(30))) <= 1)
+      expect(Math.floor(Math.abs((columnNesting_alignItems_02.top - columnNesting_alignItems_01.bottom) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1)
         .assertTrue();
 
       console.log('assert height')
       console.log('column_01 assert height')
-      expect(Math.floor(Math.abs(columnNesting_alignItems_011.bottom - columnNesting_alignItems_011.top - vp2px(50))) <= 1)
+      expect(Math.floor(Math.abs(columnNesting_alignItems_011.bottom - columnNesting_alignItems_011.top - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs(columnNesting_alignItems_012.bottom - columnNesting_alignItems_012.top - vp2px(100))) <= 1)
+      expect(Math.floor(Math.abs(columnNesting_alignItems_012.bottom - columnNesting_alignItems_012.top - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs(columnNesting_alignItems_013.bottom - columnNesting_alignItems_013.top - vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs(columnNesting_alignItems_013.bottom - columnNesting_alignItems_013.top - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
 
       console.log('column_02 assert height')
-      expect(Math.floor(Math.abs(columnNesting_alignItems_021.bottom - columnNesting_alignItems_021.top - vp2px(50))) <= 1)
+      expect(Math.floor(Math.abs(columnNesting_alignItems_021.bottom - columnNesting_alignItems_021.top - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs(columnNesting_alignItems_022.bottom - columnNesting_alignItems_022.top - vp2px(100))) <= 1)
+      expect(Math.floor(Math.abs(columnNesting_alignItems_022.bottom - columnNesting_alignItems_022.top - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs(columnNesting_alignItems_023.bottom - columnNesting_alignItems_023.top - vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs(columnNesting_alignItems_023.bottom - columnNesting_alignItems_023.top - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
         .assertTrue();
 
-      expect(Math.floor(Math.abs(columnNesting_alignItems_01.bottom - columnNesting_alignItems_01.top - vp2px(400))) <= 1)
+      expect(Math.floor(Math.abs(columnNesting_alignItems_01.bottom - columnNesting_alignItems_01.top - UIContext.getFocusedUIContext()!.vp2px(400))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs(columnNesting_alignItems_02.bottom - columnNesting_alignItems_02.top - vp2px(400))) <= 1)
+      expect(Math.floor(Math.abs(columnNesting_alignItems_02.bottom - columnNesting_alignItems_02.top - UIContext.getFocusedUIContext()!.vp2px(400))) <= 1)
         .assertTrue();
 
       console.log('assert weight')
       console.log('column_01 assert weight')
-      expect(Math.floor(Math.abs(columnNesting_alignItems_011.right - columnNesting_alignItems_011.left - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs(columnNesting_alignItems_011.right - columnNesting_alignItems_011.left - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs(columnNesting_alignItems_012.right - columnNesting_alignItems_012.left - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs(columnNesting_alignItems_012.right - columnNesting_alignItems_012.left - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs(columnNesting_alignItems_013.right - columnNesting_alignItems_013.left - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs(columnNesting_alignItems_013.right - columnNesting_alignItems_013.left - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
 
       console.log('column_02 assert weight')
-      expect(Math.floor(Math.abs(columnNesting_alignItems_021.right - columnNesting_alignItems_021.left - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs(columnNesting_alignItems_021.right - columnNesting_alignItems_021.left - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs(columnNesting_alignItems_022.right - columnNesting_alignItems_022.left - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs(columnNesting_alignItems_022.right - columnNesting_alignItems_022.left - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs(columnNesting_alignItems_023.right - columnNesting_alignItems_023.left - vp2px(300))) <= 1)
+      expect(Math.floor(Math.abs(columnNesting_alignItems_023.right - columnNesting_alignItems_023.left - UIContext.getFocusedUIContext()!.vp2px(300))) <= 1)
         .assertTrue();
 
-      expect(Math.floor(Math.abs(columnNesting_alignItems_01.right - columnNesting_alignItems_01.left - vp2px(350))) <= 1)
+      expect(Math.floor(Math.abs(columnNesting_alignItems_01.right - columnNesting_alignItems_01.left - UIContext.getFocusedUIContext()!.vp2px(350))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs(columnNesting_alignItems_02.right - columnNesting_alignItems_02.left - vp2px(350))) <= 1)
+      expect(Math.floor(Math.abs(columnNesting_alignItems_02.right - columnNesting_alignItems_02.left - UIContext.getFocusedUIContext()!.vp2px(350))) <= 1)
         .assertTrue();
 
       console.info('[testColumnSpace_static] END');

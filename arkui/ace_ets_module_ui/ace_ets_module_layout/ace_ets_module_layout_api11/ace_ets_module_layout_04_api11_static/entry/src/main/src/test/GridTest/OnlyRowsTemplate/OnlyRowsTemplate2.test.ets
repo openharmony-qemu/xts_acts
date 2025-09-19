@@ -84,9 +84,9 @@ it('SUB_ACE_GRID_OnlyRowsTemplate2_static_0100', Level.LEVEL0, async (done: () =
 
       console.log('assert size')
       const uiContext = new UIContext();
-      expect(Math.round(GridItem_01.right - GridItem_01.left)).assertEqual(Math.round(uiContext.vp2px(100)));
+      expect(Math.round(GridItem_01.right - GridItem_01.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(100)));
       console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
-      expect(Math.round(GridItem_01.bottom - GridItem_01.top)).assertEqual(Math.round(uiContext.vp2px(60)));
+      expect(Math.round(GridItem_01.bottom - GridItem_01.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(60)));
       console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
 
       console.info('[SUB_ACE_GRID_OnlyRowsTemplate2_static_0100] END');

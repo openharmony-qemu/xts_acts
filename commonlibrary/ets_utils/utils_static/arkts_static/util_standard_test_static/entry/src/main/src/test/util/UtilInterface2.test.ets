@@ -1144,7 +1144,7 @@ export default function Util2Test() {
      * @tc.level      : Level 1
      */
     it('testUtil_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let that = new util.LRUCache<number, number>(21.0);
+      let that = new util.LRUCache<number, number>(21);
       let res: number = that.getCapacity();
       expect(res).assertEqual(21);
     })

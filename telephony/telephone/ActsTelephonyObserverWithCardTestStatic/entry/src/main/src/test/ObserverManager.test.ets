@@ -1,14 +1,26 @@
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
-import hilog from '@ohos.hilog'
-import { BusinessError } from '@ohos.base';
+/**
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium/index'
 import observer from '@ohos.telephony.observer';
 import data from '@ohos.telephony.data';
+import sim from '@ohos.telephony.sim';
+import call from '@ohos.telephony.call';
 import radio from '@ohos.telephony.radio';
+import { BusinessError } from '@ohos.base';
+import hilog from '@ohos.hilog'
 
-class Value {
-  state: observer.DataConnectState = data.DataConnectState.DATA_STATE_UNKNOWN
-  network: observer.RatType = radio.RadioTechnology.RADIO_TECHNOLOGY_UNKNOWN
-};
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'ObserverTestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -170,6 +182,8 @@ export default function ObserverManagerTest() {
           slotId: 3
         }, (data: observer.DataConnectionStateInfo) => {
           hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
+          hilog.info(domain, tag, '%{public}s', caseName +': data.state ->'+JSON.stringify(data.state));
+          hilog.info(domain, tag, '%{public}s', caseName +': data.network ->'+JSON.stringify(data.network));
           ExpectTrue(false);
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
@@ -423,6 +437,117 @@ export default function ObserverManagerTest() {
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       }
+    });
+
+        /* *
+     * @tc.number: SUB_Telephony_Observer_SignalInfoChangeOnId_0100
+     * @tc.name  : testTelephonyObserverSignalInfoChangeOnId0100
+     * @tc.desc  : Subscribe signal status change event.
+     * @tc.size  : MediumTest
+     * @tc.type  : Function
+     * @tc.level : level 3
+     */
+    it('testTelephonyObserverSignalInfoChangeOnId0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverSignalInfoChangeOnId0100';
+      console.info(`${caseName} test start `);
+      try {
+        observer.on('signalInfoChange', {
+          slotId: 0
+        }, (data: Array<radio.SignalInformation>) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          ExpectTrue(true);
+        });
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /* *
+    * @tc.number: SUB_Telephony_Observer_SignalInfoChangeOff_0100
+    * @tc.name  : testTelephonyObserverSignalInfoChangeOff0100
+    * @tc.desc  : Unsubscribe signal status change event.
+    * @tc.size  : MediumTest
+    * @tc.type  : Function
+    * @tc.level : level 3
+    */
+    it('testTelephonyObserverSignalInfoChangeOff0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverSignalInfoChangeOff0100';
+      console.info(`${caseName} test start `);
+      try {
+        observer.on('signalInfoChange', (data: Array<radio.SignalInformation>) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          ExpectTrue(false);
+        });
+        observer.off('signalInfoChange');
+        ExpectTrue(true);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /* *
+     * @tc.number: SUB_Telephony_Observer_SignalInfoChangeOff_0200
+     * @tc.name  : testTelephonyObserverSignalInfoChangeOff0200
+     * @tc.desc  : Unsubscribe signal status change event
+     * @tc.size  : MediumTest
+     * @tc.type  : Function
+     * @tc.level : level 3
+     */
+    it('testTelephonyObserverSignalInfoChangeOff0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverSignalInfoChangeOff0200';
+      console.info(`${caseName} test start `);
+      try {
+        let callback: (data: Array<radio.SignalInformation>) => void = (data: Array<radio.SignalInformation>) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          ExpectTrue(data !== null);
+        }
+        observer.on('signalInfoChange', callback);
+        observer.off('signalInfoChange', callback);
+        ExpectTrue(true);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /* *
+    * @tc.number: SUB_Telephony_Observer_SignalInfoChangeOff_0400
+    * @tc.name  : testTelephonyObserverSignalInfoChangeOff0400
+    * @tc.desc  : Unsubscribe signal status change event
+    * @tc.size  : MediumTest
+    * @tc.type  : Function
+    * @tc.level : level 3
+    */
+    it('testTelephonyObserverSignalInfoChangeOff0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverSignalInfoChangeOff0400';
+      console.info(`${caseName} test start `);
+      try {
+        let callback: (data: Array<radio.SignalInformation>) => void = (data: Array<radio.SignalInformation>) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          ExpectTrue(data !== null);
+        }
+        observer.on('signalInfoChange', callback);
+        observer.off('signalInfoChange', callback);
+        observer.off('signalInfoChange', callback);
+        ExpectTrue(true);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
     });
 
   })

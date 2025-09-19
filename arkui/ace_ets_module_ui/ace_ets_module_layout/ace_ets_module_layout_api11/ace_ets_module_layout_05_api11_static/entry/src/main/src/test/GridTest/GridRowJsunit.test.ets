@@ -86,8 +86,8 @@ it('GridRowJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       expect(obj.getElement('$attrs').getString('direction')).assertEqual('Row');
       
       const uiContext = new UIContext();
-      let x = Number(uiContext.vp2px(5)).toFixed(6);
-      let y = Number(uiContext.vp2px(10)).toFixed(6);
+      let x = Number(UIContext.getFocusedUIContext()!.vp2px(5)).toFixed(6);
+      let y = Number(UIContext.getFocusedUIContext()!.vp2px(10)).toFixed(6);
       let str = '<' + x + ', '+y;
       expect(obj.getElement('$attrs').getString('gutter')).assertEqual(str);
       console.info('[GridRowJsunit_static_0100] END');
@@ -126,19 +126,19 @@ it('GridRowJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       console.info("[GridRowJsunit_static_0200] direction: " + JSON.stringify(obj.getElement('$attrs').getString('direction')));
       console.info("[GridRowJsunit_static_0200] gutter: " + JSON.stringify(obj.getElement('$attrs').getString('gutter')));
       const uiContext = new UIContext();
-      if (uiContext.px2vp(AppStorage.get<number>("winWidth")!) < 320) {
+      if (UIContext.getFocusedUIContext()!.px2vp(AppStorage.get<number>("winWidth")!) < 320) {
         expect(obj.getElement('$attrs').getString('columns')).assertEqual('2');
-      } else if (uiContext.px2vp(AppStorage.get<number>("winWidth")!) < 600) {
+      } else if (UIContext.getFocusedUIContext()!.px2vp(AppStorage.get<number>("winWidth")!) < 600) {
         expect(obj.getElement('$attrs').getString('columns')).assertEqual('4');
-      } else if (uiContext.px2vp(AppStorage.get<number>("winWidth")!) < 840) {
+      } else if (UIContext.getFocusedUIContext()!.px2vp(AppStorage.get<number>("winWidth")!) < 840) {
         expect(obj.getElement('$attrs').getString('columns')).assertEqual('8');
       } else {
         expect(obj.getElement('$attrs').getString('columns')).assertEqual('12');
       }
       expect(obj.getElement('$attrs').getString('breakpoints')).assertEqual('[320vp, 600vp, 840vp,]');
       expect(obj.getElement('$attrs').getString('direction')).assertEqual('Row');
-      let x = Number(uiContext.vp2px(0)).toFixed(6);
-      let y = Number(uiContext.vp2px(0)).toFixed(6);
+      let x = Number(UIContext.getFocusedUIContext()!.vp2px(0)).toFixed(6);
+      let y = Number(UIContext.getFocusedUIContext()!.vp2px(0)).toFixed(6);
       let str = '<' + x + ', '+y;
       expect(obj.getElement('$attrs').getString('gutter')).assertEqual(str);
       console.info('[GridRowJsunit_static_0200] END');
@@ -177,19 +177,19 @@ it('GridRowJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<
       console.info("[GridRowJsunit_static_0300] direction: " + JSON.stringify(obj.getElement('$attrs').getString('direction')));
       console.info("[GridRowJsunit_static_0300] gutter: " + JSON.stringify(obj.getElement('$attrs').getString('gutter')));
       const uiContext = new UIContext();
-      if (uiContext.px2vp(AppStorage.get<number>("winWidth")!) < 320) {
+      if (UIContext.getFocusedUIContext()!.px2vp(AppStorage.get<number>("winWidth")!) < 320) {
         expect(obj.getElement('$attrs').getString('columns')).assertEqual('2');
-      } else if (uiContext.px2vp(AppStorage.get<number>("winWidth")!) < 600) {
+      } else if (UIContext.getFocusedUIContext()!.px2vp(AppStorage.get<number>("winWidth")!) < 600) {
         expect(obj.getElement('$attrs').getString('columns')).assertEqual('4');
-      } else if (uiContext.px2vp(AppStorage.get<number>("winWidth")!) < 840) {
+      } else if (UIContext.getFocusedUIContext()!.px2vp(AppStorage.get<number>("winWidth")!) < 840) {
         expect(obj.getElement('$attrs').getString('columns')).assertEqual('8');
       } else {
         expect(obj.getElement('$attrs').getString('columns')).assertEqual('12');
       }
       expect(obj.getElement('$attrs').getString('breakpoints')).assertEqual('[320vp, 600vp, 840vp,]');
       expect(obj.getElement('$attrs').getString('direction')).assertEqual('Row');
-      let x = Number(uiContext.vp2px(-10)).toFixed(6);
-      let y = Number(uiContext.vp2px(-10)).toFixed(6);
+      let x = Number(UIContext.getFocusedUIContext()!.vp2px(-10)).toFixed(6);
+      let y = Number(UIContext.getFocusedUIContext()!.vp2px(-10)).toFixed(6);
       let str = '<' + x + ', '+y;
       expect(obj.getElement('$attrs').getString('gutter')).assertEqual(str);
       console.info('[GridRowJsunit_static_0300] END');
@@ -216,11 +216,11 @@ it('GridRowJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<
       console.info("[GridRowJsunit_static_0400] direction: " + JSON.stringify(obj.getElement('$attrs').getString('direction')));
       console.info("[GridRowJsunit_static_0400] gutter: " + JSON.stringify(obj.getElement('$attrs').getString('gutter')));
       const uiContext = new UIContext();
-      if (uiContext.px2vp(AppStorage.get<number>("winWidth")!) < 320) {
+      if (UIContext.getFocusedUIContext()!.px2vp(AppStorage.get<number>("winWidth")!) < 320) {
         expect(obj.getElement('$attrs').getString('columns')).assertEqual('2');
-      } else if (uiContext.px2vp(AppStorage.get<number>("winWidth")!) < 600) {
+      } else if (UIContext.getFocusedUIContext()!.px2vp(AppStorage.get<number>("winWidth")!) < 600) {
         expect(obj.getElement('$attrs').getString('columns')).assertEqual('4');
-      } else if (uiContext.px2vp(AppStorage.get<number>("winWidth")!) < 840) {
+      } else if (UIContext.getFocusedUIContext()!.px2vp(AppStorage.get<number>("winWidth")!) < 840) {
         expect(obj.getElement('$attrs').getString('columns')).assertEqual('8');
       } else {
         expect(obj.getElement('$attrs').getString('columns')).assertEqual('12');

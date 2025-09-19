@@ -114,7 +114,7 @@ export default function layoutWeightFlexTest() {
     },
     expectValue: {
       layoutWeight: 1,
-      // width: vp2px(200)
+      // width: UIContext.getFocusedUIContext()!.vp2px(200)
       width: 200
     }
   }]

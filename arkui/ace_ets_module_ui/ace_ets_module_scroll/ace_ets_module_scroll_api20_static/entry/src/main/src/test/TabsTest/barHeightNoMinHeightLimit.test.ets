@@ -38,8 +38,8 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility } from '../Util.test';
 
-const TAB_HEIGHT_PX = Math.round(uiContext.vp2px(13));
-const TAB_HEIGHT_DEFAULT_PX = Math.round(uiContext.vp2px(56));
+const TAB_HEIGHT_PX = Math.round(UIContext.getFocusedUIContext()!.vp2px(13));
+const TAB_HEIGHT_DEFAULT_PX = Math.round(UIContext.getFocusedUIContext()!.vp2px(56));
 const MULTI_DEVICE_DEVIATION = 1;
 const uiContext = new UIContext()
 
@@ -90,8 +90,8 @@ export default function barHeightNoMinHeightLimit() {
         JSON.parseJsonElement(inspector.getInspectorByKey('Tabs')).getElement('$attrs').getElement('height').asString();
       console.info('[barHeightNoMinHeightLimit_static_0100] value:' + tabContent);
       console.info('[barHeightNoMinHeightLimit_static_0100] value:' + tabs);
-      let num1: number = Math.abs(Math.round(uiContext.vp2px(parseFloat(tabContent.split('.')[0]))));
-      let num2: number = Math.abs(Math.round(uiContext.vp2px(parseFloat(tabs.split('.')[0]))));
+      let num1: number = Math.abs(Math.round(UIContext.getFocusedUIContext()!.vp2px(parseFloat(tabContent.split('.')[0]))));
+      let num2: number = Math.abs(Math.round(UIContext.getFocusedUIContext()!.vp2px(parseFloat(tabs.split('.')[0]))));
       console.info('[barHeightNoMinHeightLimit_static_0100] value:' + JSON.stringify(num2 - num1));
       expect((num2 - num1 - TAB_HEIGHT_PX) <= MULTI_DEVICE_DEVIATION).assertTrue();
       console.info('[barHeightNoMinHeightLimit_static_0100] END');
@@ -117,8 +117,8 @@ export default function barHeightNoMinHeightLimit() {
         .asString();
       console.info('[barHeightNoMinHeightLimit_static_0200] value:' + tabContent);
       console.info('[barHeightNoMinHeightLimit_static_0200] value:' + tabs);
-      let num1: number = Math.abs(Math.round(uiContext.vp2px(parseFloat(tabContent.split('.')[0]))));
-      let num2: number = Math.abs(Math.round(uiContext.vp2px(parseFloat(tabs.split('.')[0]))));
+      let num1: number = Math.abs(Math.round(UIContext.getFocusedUIContext()!.vp2px(parseFloat(tabContent.split('.')[0]))));
+      let num2: number = Math.abs(Math.round(UIContext.getFocusedUIContext()!.vp2px(parseFloat(tabs.split('.')[0]))));
       console.info('[barHeightNoMinHeightLimit_static_0200] value:' + JSON.stringify(num2 - num1));
       expect((num2 - num1 - TAB_HEIGHT_DEFAULT_PX) <= MULTI_DEVICE_DEVIATION).assertTrue();
       console.info('[barHeightNoMinHeightLimit_static_0200] END');
@@ -144,8 +144,8 @@ export default function barHeightNoMinHeightLimit() {
         .asString();
       console.info('[barHeightNoMinHeightLimit_static_0300] value:' + tabContent);
       console.info('[barHeightNoMinHeightLimit_static_0300] value:' + tabs);
-      let num1: number = Math.abs(Math.round(uiContext.vp2px(parseFloat(tabContent.split('.')[0]))));
-      let num2: number = Math.abs(Math.round(uiContext.vp2px(parseFloat(tabs.split('.')[0]))));
+      let num1: number = Math.abs(Math.round(UIContext.getFocusedUIContext()!.vp2px(parseFloat(tabContent.split('.')[0]))));
+      let num2: number = Math.abs(Math.round(UIContext.getFocusedUIContext()!.vp2px(parseFloat(tabs.split('.')[0]))));
       console.info('[barHeightNoMinHeightLimit_static_0300] value:' + JSON.stringify(num2 - num1));
       expect((num2 - num1 - TAB_HEIGHT_DEFAULT_PX) <= MULTI_DEVICE_DEVIATION).assertTrue();
       console.info('[barHeightNoMinHeightLimit_static_0300] END');
@@ -171,8 +171,8 @@ export default function barHeightNoMinHeightLimit() {
         .asString();
       console.info('[barHeightNoMinHeightLimit_static_0400] value:' + tabContent);
       console.info('[barHeightNoMinHeightLimit_static_0400] value:' + tabs);
-      let num1: number = Math.abs(Math.round(uiContext.vp2px(parseFloat(tabContent.split('.')[0]))));
-      let num2: number = Math.abs(Math.round(uiContext.vp2px(parseFloat(tabs.split('.')[0]))));
+      let num1: number = Math.abs(Math.round(UIContext.getFocusedUIContext()!.vp2px(parseFloat(tabContent.split('.')[0]))));
+      let num2: number = Math.abs(Math.round(UIContext.getFocusedUIContext()!.vp2px(parseFloat(tabs.split('.')[0]))));
       console.info('[barHeightNoMinHeightLimit_static_0400] value:' + JSON.stringify(num2 - num1));
       expect((num2 - num1 - TAB_HEIGHT_DEFAULT_PX) <= MULTI_DEVICE_DEVIATION).assertTrue();
       console.info('[barHeightNoMinHeightLimit_static_0400] END');

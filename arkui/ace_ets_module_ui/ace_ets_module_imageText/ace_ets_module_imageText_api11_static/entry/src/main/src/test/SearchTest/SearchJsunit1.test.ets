@@ -184,7 +184,7 @@ it('testSearchSearchIcon_static_05', Level.LEVEL0, async (done: () => void): Pro
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + JSON.stringifyJsonElement(objNew));
       expect(JSON.stringifyJsonElement(objNew.getElement('$attrs').getElement('searchIcon')))
-        .assertEqual(`{\"size\":\"${uiContext.vp2px(30)
+        .assertEqual(`{\"size\":\"${UIContext.getFocusedUIContext()!.vp2px(30)
           .toFixed(2)}px\",\"color\":\"#FFFF0000\",\"src\":\"resource:///ohos_search.svg\"}`);
       expect(objNew.getElement('$type')).assertEqual('Search');
 
@@ -419,7 +419,7 @@ it('testSearchCancelButton_static_11', Level.LEVEL0, async (done: () => void): P
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + JSON.stringifyJsonElement(objNew));
       expect(JSON.stringifyJsonElement(objNew.getElement('$attrs').getElement('cancelButton')))
-        .assertEqual(`{\"style\":\"CancelButtonStyle.CONSTANT\",\"icon\":{\"size\":\"${uiContext.vp2px(10)
+        .assertEqual(`{\"style\":\"CancelButtonStyle.CONSTANT\",\"icon\":{\"size\":\"${UIContext.getFocusedUIContext()!.vp2px(10)
           .toFixed(2)}px\",\"color\":\"#FF000000\",\"src\":\"resource:///ohos_close.svg\"}}`);
       expect(objNew.getElement('$type')).assertEqual('Search');
 

@@ -665,39 +665,39 @@ export default function EmitterTest() {
      * @tc.desc      : emitter.on(''),emitter.emit(''),emitter.off('')
      */
     
-    // it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-    //   async (done: () => void): Promise<void> => {
-    //     let TAG: string = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600'
-    //     console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_1600 START`)
-    //
-    //     let myDate: Record<String, Object> = {
-    //       "id": '',
-    //       "content": "message_16"
-    //     }
-    //     let eventData: emitter.EventData = { data: myDate }
-    //     let EmitterCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
-    //       console.info(`${TAG}` + ' on success');
-    //        let eventData_16: Record<String, Object> = eventData.data as Record<String, Object>
-    //           let testId16: String = eventData_16["id"] as String
-    //           if (testId16 == "") {
-    //             console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600 Test Success`);
-    //             expect(eventData_16["content"]).assertEqual('message_16');
-    //             done()
-    //           }else{
-    //             expect(false).assertTrue()
-    //             done()
-    //           }
-    //       console.info(`${TAG}` + ' test case end');
-    //
-    //     }
-    //     emitter.on('', EmitterCallback)
-    //     expect(emitter.getListenerCount('')).assertEqual(undefined);
-    //
-    //     emitter.emit('', eventData)
-    //     emitter.off('');
-    //     console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_1600 END`)
-    //     done()
-    //   })
+    it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600'
+        console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600 START`)
+    
+        let myDate: Record<String, Object> = {
+          "id": '',
+          "content": "message_16"
+        }
+        let eventData: emitter.EventData = { data: myDate }
+        let EmitterCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
+          console.info(`${TAG}` + ' on success');
+           let eventData_16: Record<String, Object> = eventData.data as Record<String, Object>
+              let testId16: String = eventData_16["id"] as String
+              if (testId16 == "") {
+                console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600 Test Success`);
+                expect(eventData_16["content"]).assertEqual('message_16');
+                done()
+              }else{
+                expect(false).assertTrue()
+                done()
+              }
+          console.info(`${TAG}` + ' test case end');
+    
+        }
+        emitter.on('', EmitterCallback)
+        expect(emitter.getListenerCount('')).assertEqual(undefined);
+    
+        emitter.emit('', eventData)
+        emitter.off('');
+        console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600 END`)
+        done()
+      })
 
     /*
      * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1700
@@ -1049,6 +1049,48 @@ export default function EmitterTest() {
         done()
       })
 
+        /*
+    * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600
+    * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600
+    * @tc.desc      : emitter.EventPriority.IMMEDIATE
+    */
+    it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: () => void): Promise<void> => {
+      let TEST_CASE_NAME: string = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600'
+      console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600 START`)
+      innerEvent.eventId = 36
+      innerEvent.priority = emitter.EventPriority.IMMEDIATE
+      let options: emitter.Options = {
+        priority: emitter.EventPriority.HIGH
+      }
+      let myDate: Record<String, Object> = {
+        "id": 36,
+        "content": 'c'
+      }
+      let eventData: emitter.EventData = { data: myDate }
+      let EmitterCallback = (): void => {
+        console.info(`${TEST_CASE_NAME}` + ' once success');
+        expect(false).assertTrue();
+        console.info(`${TEST_CASE_NAME}` + ' test case end');
+        done()
+      }
+      emitter.once(innerEvent, EmitterCallback)
+      await Utils.msSleep(1000)
+      emitter.emit("36", options, eventData)
+      await Utils.msSleep(1000)
+      console.info(`${TEST_CASE_NAME}  ` + emitter.getListenerCount(innerEvent.eventId));
+      let num: number = emitter.getListenerCount(innerEvent.eventId)
+      expect(num).assertEqual(1)
+      emitter.off(innerEvent.eventId, EmitterCallback)
+      await Utils.msSleep(1000)
+      emitter.emit("36", options, eventData)
+      console.info(`${TEST_CASE_NAME}  ` + emitter.getListenerCount(innerEvent.eventId));
+      let num2: number = emitter.getListenerCount(innerEvent.eventId)
+      expect(num2).assertEqual(0)
+      console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600 END`)
+      done()
+    })
+
     /*
      * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2800
      * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2800
@@ -1189,63 +1231,6 @@ export default function EmitterTest() {
       })
 
 
-    // /*
-    //  * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_3000
-    //  * @tc.name      : verify on : getListenerCount(eventId: number|string): number
-    //  * @tc.desc      : priority: emitter.EventPriority.HIGH
-    //  */
-    
-    // it('SUB_NOTIFICATION_CES_EMITTER_TEST_3000', Level.LEVEL2, async function (done) {
-    //   console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_3100 START`)
-    //   let options = {
-    //     priority: emitter.EventPriority.HIGH
-    //   }
-    //   innerEvent.eventId = 31
-    //   eventData.data.id = 31
-    //   emitter.on(innerEvent, EmitterCallback)
-    //   emitter.emit(innerEvent, options)
-    //   expect(emitter.getListenerCount(null)).assertEqual(undefined)
-    //   console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_3100 END`)
-    //   done()
-    // })
-
-    // /*
-    //  * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_3100
-    //  * @tc.name      : verify on : getListenerCount(eventId: number|string): number
-    //  * @tc.desc      : priority: emitter.EventPriority.HIGH
-    //  */
-    
-    // it('SUB_NOTIFICATION_CES_EMITTER_TEST_3100', Level.LEVEL2, async function (done) {
-    //   console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_3100 START`)
-    //   let options = {
-    //     priority: emitter.EventPriority.HIGH
-    //   }
-    //   innerEvent.eventId = 31
-    //   eventData.data.id = 31
-    //   emitter.on(innerEvent, EmitterCallback)
-    //   emitter.emit(innerEvent, options, null)
-    //   expect(emitter.getListenerCount(31)).assertEqual(1)
-    //   console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_3100 END`)
-    //   done()
-    // })
-
-    // /*
-    //  * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_3200
-    //  * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_3200
-    //  * @tc.desc      : The parameter op in Emit is empty
-    //  */
-    
-    // it('SUB_NOTIFICATION_CES_EMITTER_TEST_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>  {
-    //   console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_3200 START`)
-    //   eventData.data.id = '32'
-    //   eventData.data.content = 'message_32'
-    //   emitter.on('32', EmitterCallback)
-    //   emitter.emit('32', null, eventData)
-    //   expect(emitter.getListenerCount('32')).assertEqual(1)
-    //   console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_3200 END`)
-    //   done()
-    // })
-
     /*
      * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3300
      * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3300
@@ -1344,75 +1329,8 @@ export default function EmitterTest() {
         done()
       })
 
-    /*
-    * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600
-    * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600
-    * @tc.desc      : emitter.EventPriority.IMMEDIATE
-    */
-    it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        let TEST_CASE_NAME: string = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600'
-        console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600 START`)
-        innerEvent.eventId = 36
-        innerEvent.priority = emitter.EventPriority.IMMEDIATE
-        let options: emitter.Options = {
-          priority: emitter.EventPriority.HIGH
-        }
-        let myDate: Record<String, Object> = {
-          "id": 36,
-          "content": 'c'
-        }
-        let eventData: emitter.EventData = { data: myDate }
-        let EmitterCallback = (): void => {
-          console.info(`${TEST_CASE_NAME}` + ' once success');
-          expect(false).assertTrue();
-          console.info(`${TEST_CASE_NAME}` + ' test case end');
-          done()
-        }
-        emitter.once(innerEvent, EmitterCallback)
-        await Utils.msSleep(1000)
-        emitter.emit("36", options, eventData)
-        await Utils.msSleep(1000)
-        console.info(`${TEST_CASE_NAME}  ` + emitter.getListenerCount(innerEvent.eventId));
-        let num: number = emitter.getListenerCount(innerEvent.eventId)
-        expect(num).assertEqual(1)
-        emitter.off(innerEvent.eventId, EmitterCallback)
-        await Utils.msSleep(1000)
-        emitter.emit("36", options, eventData)
-        console.info(`${TEST_CASE_NAME}  ` + emitter.getListenerCount(innerEvent.eventId));
-        let num2: number = emitter.getListenerCount(innerEvent.eventId)
-        expect(num2).assertEqual(0)
-        console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600 END`)
-        done()
-      })
+  
 
-    // /*
-    //  * @tc.number    : SUB_NOTIFICATION_CES_EMITTER_TEST_3700
-    //  * @tc.name      : verify on : emit(eventId: string, options: Options, data?: EventData): void
-    //  * @tc.desc      : emitter.EventPriority.IMMEDIATE
-    //  */
-    
-    // it('SUB_NOTIFICATION_CES_EMITTER_TEST_3700', Level.LEVEL2, async function (done) {
-    //   console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_3700 START`)
-    //   innerEvent.eventId = 37
-    //   innerEvent.priority = emitter.EventPriority.IMMEDIATE
-    //   let options = {
-    //     priority: emitter.EventPriority.HIGH
-    //   }
-    //   let eventData = {
-    //     data: {
-    //       'content': 'c',
-    //       'id': 37,
-    //     }
-    //   }
-    //   emitter.on(null, null)
-    //   emitter.once('37', EmitterCallback)
-    //   emitter.off('37', EmitterCallback)
-    //   emitter.emit(innerEvent, options, eventData)
-    //   expect(emitter.getListenerCount('37')).assertEqual(0)
-    //   console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_3700 END`)
-    //   done()
-    // })
     hilog.info(domain, tag, '%{public}s', ` SUB_NOTIFICATION_CES_EMITTER_TEST END`)
   })
 }

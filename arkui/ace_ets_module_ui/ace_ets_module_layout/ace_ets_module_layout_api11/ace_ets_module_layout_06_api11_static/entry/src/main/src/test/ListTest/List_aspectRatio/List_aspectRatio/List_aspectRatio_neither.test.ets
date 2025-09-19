@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { vp2px } from '@ohos.arkui.component'
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../../ets/MainAbility/common/Rect';
@@ -106,7 +106,7 @@ it('SUB_ACE_List_aspectRatio_neither_static_0100', Level.LEVEL0, async (done: ()
       let itemheight: number = item01.bottom - item01.top;
 
       expect(Math.abs(Math.round(width * 0.8) - Math.round(itemwidth)) <= 1).assertTrue();
-      expect(Math.abs(Math.round((List01.bottom - List01.top) - (itemheight*4 + 3*vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round((List01.bottom - List01.top) - (itemheight*4 + 3*UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_List_aspectRatio_neither_0100] END');
       done();
@@ -196,7 +196,7 @@ it('SUB_ACE_List_aspectRatio_neither_static_0400', Level.LEVEL0, async (done: ()
       let itemheight: number = item01.bottom - item01.top;
 
       expect(Math.abs(Math.round(width * 0.8) - Math.round(itemwidth)) <= 1).assertTrue();
-      expect(Math.abs(Math.round((List01.bottom - List01.top) - (itemheight*4 + 3*vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round((List01.bottom - List01.top) - (itemheight*4 + 3*UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_List_aspectRatio_neither_0400] END');
       done();

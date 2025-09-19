@@ -92,11 +92,11 @@ it('onGetIrregular9Jsunit_static_0001', Level.LEVEL0, async (done: () => void): 
 
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.abs(uiContext.px2vp(GridItem0.right - GridItem0.left) - 80) <= 1).assertTrue();
-      expect(Math.abs(uiContext.px2vp(GridItem4.right - GridItem4.left) - 80) <= 1).assertTrue();
+      expect(Math.abs(UIContext.getFocusedUIContext()!.px2vp(GridItem0.right - GridItem0.left) - 80) <= 1).assertTrue();
+      expect(Math.abs(UIContext.getFocusedUIContext()!.px2vp(GridItem4.right - GridItem4.left) - 80) <= 1).assertTrue();
 
-      expect(Math.abs(uiContext.px2vp(GridItem0.bottom - GridItem0.top) - 260) <= 1).assertTrue();
-      expect(Math.abs(uiContext.px2vp(GridItem4.bottom - GridItem4.top) - 260) <= 1).assertTrue();
+      expect(Math.abs(UIContext.getFocusedUIContext()!.px2vp(GridItem0.bottom - GridItem0.top) - 260) <= 1).assertTrue();
+      expect(Math.abs(UIContext.getFocusedUIContext()!.px2vp(GridItem4.bottom - GridItem4.top) - 260) <= 1).assertTrue();
 
       console.info('[onGetIrregular9Jsunit_static_0001] END');
       done();

@@ -71,7 +71,7 @@ class BasicDataSource implements IDataSource<string> {
   }
 
   unregisterDataChangeListener(listener: DataChangeListener): void {
-    const pos = this.listeners.indexOf(listener);
+    const pos = this.listeners.indexOf(listener).toInt();
     if (pos >= 0) {
       console.info('remove listener')
       this.listeners.splice(pos, 1)
@@ -121,7 +121,7 @@ class MyDataSource extends BasicDataSource {
   }
 
   public addData(index: number, data: string): void {
-    this.dataArray.splice(index, 0, data)
+    this.dataArray.splice(index.toInt(), 0, data)
     let datatest = this.dataArray.length
     console.info('lenghth = ' + datatest)
     for (let i = 0; i < datatest; i++) {

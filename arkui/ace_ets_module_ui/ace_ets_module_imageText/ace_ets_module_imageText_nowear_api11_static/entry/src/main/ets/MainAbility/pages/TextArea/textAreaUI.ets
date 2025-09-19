@@ -117,7 +117,7 @@ struct TextAreaExample {
         controller: this.controller,
         text: this.text
       })
-        .placeholderFont({ size: this.sizeT, weight: this.weightT })
+        .placeholderFont({ size: this.sizeT, weight: this.weightT as int })
         .placeholderColor(this.placeholderColor)
         .width(336)
         .key('textArea')

@@ -28,7 +28,6 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
-  UserView,
   TouchObject,
   TouchType
 } from '@ohos.arkui.component' 

@@ -979,7 +979,7 @@ export default function uitestDriverTest() {
         }
         let observer = driver.createUIEventObserver();
         hilog.info(domain, tag, `testMonitor1_static observer, ${JSON.stringify(observer)}`);
-        observer.once('toastShow', callback);
+        observer.onceToastShow(callback);
         hilog.info(domain, tag, `testMonitor1_static once toastShow success`);
         // 点击toast按钮
         let btn = await driver.findComponent(ON.text('toast'));
@@ -1021,7 +1021,7 @@ export default function uitestDriverTest() {
         }
         let observer = driver.createUIEventObserver();
         hilog.info(domain, tag, `testMonitor2_static observer, ${JSON.stringify(observer)}`);
-        observer.once('dialogShow', callback);
+        observer.onceDialogShow(callback);
         hilog.info(domain, tag, `testMonitor2_static dialogShow success`);
         // 点击toast按钮
         let btn = await driver.findComponent(ON.text('dialog'));

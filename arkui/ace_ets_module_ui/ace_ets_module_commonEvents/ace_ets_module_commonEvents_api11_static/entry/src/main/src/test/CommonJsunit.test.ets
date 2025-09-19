@@ -115,7 +115,7 @@ export default function commonJsunit() {
       try {
         console.info('commonTest_0300 START');
         let a = '30';
-        let b: number = uiContext.vp2px(asNum(a));
+        let b: number = UIContext.getFocusedUIContext()!.vp2px(asNum(a));
         console.info('commonTest_0300 vp2px result:' + b);
 
         console.info('commonTest_0300 END');
@@ -171,7 +171,7 @@ export default function commonJsunit() {
       try {
         console.info('commonTest_0600 START');
         let a = '80';
-        let b = uiContext.px2vp(asNum(a));
+        let b = UIContext.getFocusedUIContext()!.px2vp(asNum(a));
         console.info('commonTest_0600 px2vp result:' + b);
 
         console.info('commonTest_0600 END');

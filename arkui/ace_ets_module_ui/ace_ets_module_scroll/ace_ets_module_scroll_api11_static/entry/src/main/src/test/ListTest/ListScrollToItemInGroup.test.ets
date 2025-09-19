@@ -132,7 +132,7 @@ export default function ListScrollToItemInGroup() {
       let center: RectValue = CommonFunc.getComponentRect('CenterLine');
       console.info("center.top: " + center.top);
       let ListItem: RectValue = CommonFunc.getComponentRect('ListItem_Group1_Index2');
-      let middle = (ListItem.top + ListItem.bottom) / 2 - (new UIContext).vp2px(0.5);
+      let middle = (ListItem.top + ListItem.bottom) / 2 - UIContext.getFocusedUIContext()!.vp2px(0.5);
       console.info("ListItem.top: " + ListItem.top + " " + "ListItem.bottom: " + ListItem.bottom);
       expect(Math.abs(center.top - middle) <= 1).assertEqual(true); 
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_static_0200] END');

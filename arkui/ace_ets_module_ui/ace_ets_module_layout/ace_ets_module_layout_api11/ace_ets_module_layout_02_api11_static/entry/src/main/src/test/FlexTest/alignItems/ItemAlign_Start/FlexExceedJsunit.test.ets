@@ -101,21 +101,21 @@ it('testFlexItemAlignStartSetMarPad_static', Level.LEVEL0, async () : Promise<vo
       let textExceed03: RectValue = CommonFunc.getComponentRect('ItemAlign_Start_textExceed03');
       let flexExceed01: RectValue = CommonFunc.getComponentRect('ItemAlign_Start_flexExceed01');
       const uiContext = new UIContext();
-      expect(Math.abs(textExceed01.left - flexExceed01.left - uiContext.vp2px(10)) <= 1).assertTrue()
+      expect(Math.abs(textExceed01.left - flexExceed01.left - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue()
       expect(Math.abs(textExceed01.right - textExceed02.left) <= 1).assertTrue()
       expect(Math.abs(textExceed02.right - textExceed03.left) <= 1).assertTrue()
-      expect(Math.abs(flexExceed01.right - textExceed03.right - uiContext.vp2px(40)) <= 1).assertTrue()
+      expect(Math.abs(flexExceed01.right - textExceed03.right - UIContext.getFocusedUIContext()!.vp2px(40)) <= 1).assertTrue()
 
-      expect(Math.abs(textExceed01.top - flexExceed01.top - uiContext.vp2px(10)) <= 1).assertTrue()
+      expect(Math.abs(textExceed01.top - flexExceed01.top - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue()
       expect(Math.abs(textExceed01.top - textExceed02.top) <= 1).assertTrue()
       expect(Math.abs(textExceed02.top - textExceed03.top) <= 1).assertTrue()
 
-      expect(Math.abs(textExceed01.bottom - textExceed01.top - uiContext.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(textExceed02.bottom - textExceed02.top - uiContext.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(textExceed03.bottom - textExceed03.top - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(textExceed01.right - textExceed01.left - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(textExceed02.right - textExceed02.left - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(textExceed03.right - textExceed03.left - uiContext.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(textExceed01.bottom - textExceed01.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
+      expect(Math.abs(textExceed02.bottom - textExceed02.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
+      expect(Math.abs(textExceed03.bottom - textExceed03.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(textExceed01.right - textExceed01.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(textExceed02.right - textExceed02.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(textExceed03.right - textExceed03.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Start')
       console.info('new testFlexItemAlignStartSetMarPad END');
@@ -150,21 +150,21 @@ it('testFlexItemAlignStartSetMarPadExceed_static', Level.LEVEL0, async () : Prom
       let textExceed03: RectValue = CommonFunc.getComponentRect('ItemAlign_Start_textExceed03');
       let flexExceed01: RectValue = CommonFunc.getComponentRect('ItemAlign_Start_flexExceed01');
       const uiContext = new UIContext();
-      expect(Math.abs(textExceed01.left - flexExceed01.left - uiContext.vp2px(30)) <= 1).assertTrue()
+      expect(Math.abs(textExceed01.left - flexExceed01.left - UIContext.getFocusedUIContext()!.vp2px(30)) <= 1).assertTrue()
       expect(Math.abs(textExceed01.right - textExceed02.left) <= 1).assertTrue()
       expect(Math.abs(textExceed02.right - textExceed03.left) <= 1).assertTrue()
-      expect(Math.abs(flexExceed01.right - textExceed03.right - uiContext.vp2px(30)) <= 1).assertTrue()
+      expect(Math.abs(flexExceed01.right - textExceed03.right - UIContext.getFocusedUIContext()!.vp2px(30)) <= 1).assertTrue()
 
-      expect(Math.abs(textExceed01.top - flexExceed01.top - uiContext.vp2px(30)) <= 1).assertTrue();
+      expect(Math.abs(textExceed01.top - flexExceed01.top - UIContext.getFocusedUIContext()!.vp2px(30)) <= 1).assertTrue();
       expect(Math.abs(textExceed01.top - textExceed02.top) <= 1).assertTrue();
       expect(Math.abs(textExceed02.top - textExceed03.top) <= 1).assertTrue();
 
-      expect(Math.abs(textExceed01.bottom - textExceed01.top - uiContext.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(textExceed02.bottom - textExceed02.top - uiContext.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(textExceed03.bottom - textExceed03.top - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(textExceed01.right - textExceed01.left - uiContext.vp2px(440 / 3)) <= 1).assertTrue()
-      expect(Math.abs(textExceed02.right - textExceed02.left - uiContext.vp2px(440 / 3)) <= 1).assertTrue()
-      expect(Math.abs(textExceed03.right - textExceed03.left - uiContext.vp2px(440 / 3)) <= 1).assertTrue()
+      expect(Math.abs(textExceed01.bottom - textExceed01.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
+      expect(Math.abs(textExceed02.bottom - textExceed02.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
+      expect(Math.abs(textExceed03.bottom - textExceed03.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(textExceed01.right - textExceed01.left - UIContext.getFocusedUIContext()!.vp2px(440 / 3)) <= 1).assertTrue()
+      expect(Math.abs(textExceed02.right - textExceed02.left - UIContext.getFocusedUIContext()!.vp2px(440 / 3)) <= 1).assertTrue()
+      expect(Math.abs(textExceed03.right - textExceed03.left - UIContext.getFocusedUIContext()!.vp2px(440 / 3)) <= 1).assertTrue()
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Start')
       console.info('new testFlexItemAlignStartSetMarPadExceed END');

@@ -19,7 +19,7 @@ import { Driver, MouseButton, ON } from '@ohos.UiTest';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { vp2px } from '@ohos.arkui.component';
+
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -73,8 +73,8 @@ export default function ChipOnClose2() {
       console.info('ChipOnClose2_static_001 START');
       let ChipActionCol = CommonFunc.getComponentRect('ChipOnClose2Col');
       await CommonFunc.sleep(200);
-      let right = ChipActionCol.right - vp2px(22);
-      let top = ChipActionCol.top + vp2px(18);
+      let right = ChipActionCol.right - UIContext.getFocusedUIContext()!.vp2px(22);
+      let top = ChipActionCol.top + UIContext.getFocusedUIContext()!.vp2px(18);
       await CommonFunc.sleep(200);
       console.info('ChipOnClose2_static_001 right：' + right + 'top:' + top);
       let driver = Driver.create();

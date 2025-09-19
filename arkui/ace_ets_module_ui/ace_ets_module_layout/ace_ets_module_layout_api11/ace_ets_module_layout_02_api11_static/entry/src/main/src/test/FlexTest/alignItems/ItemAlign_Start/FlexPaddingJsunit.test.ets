@@ -103,22 +103,22 @@ it('testFlexItemAlignStartParentSetPadding_static', Level.LEVEL0, async () : Pro
       let textFlexPadding03: RectValue = CommonFunc.getComponentRect('ItemAlign_Start_textFlexPadding03')
       let flexPadding01: RectValue = CommonFunc.getComponentRect('ItemAlign_Start_flexPadding01')
       const uiContext = new UIContext();
-      expect(Math.abs(textFlexPadding01.left - flexPadding01.left - uiContext.vp2px(10)) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding01.left - flexPadding01.left - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue()
       expect(Math.abs(textFlexPadding01.right - textFlexPadding02.left) <= 1).assertTrue()
       expect(Math.abs(textFlexPadding02.right - textFlexPadding03.left) <= 1).assertTrue()
 
       expect(Math.abs(textFlexPadding01.top - textFlexPadding02.top) <= 1).assertTrue()
       expect(Math.abs(textFlexPadding02.top - textFlexPadding03.top) <= 1).assertTrue()
-      expect(Math.abs(textFlexPadding01.top - flexPadding01.top - uiContext.vp2px(10)) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding01.top - flexPadding01.top - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue()
 
 
-      expect(Math.abs(textFlexPadding01.bottom - textFlexPadding01.top - uiContext.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(textFlexPadding02.bottom - textFlexPadding02.top - uiContext.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(textFlexPadding03.bottom - textFlexPadding03.top - uiContext.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding01.bottom - textFlexPadding01.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding02.bottom - textFlexPadding02.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding03.bottom - textFlexPadding03.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
 
-      expect(Math.abs(textFlexPadding01.right - textFlexPadding01.left - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(textFlexPadding02.right - textFlexPadding02.left - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(textFlexPadding03.right - textFlexPadding03.left - uiContext.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding01.right - textFlexPadding01.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding02.right - textFlexPadding02.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding03.right - textFlexPadding03.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Start')
       console.info('new testFlexItemAlignStartParentSetPadding END');
@@ -151,20 +151,20 @@ it('testFlexItemAlignStartParentSetPaddingExceed_static', Level.LEVEL0, async ()
       let textFlexPadding03: RectValue = CommonFunc.getComponentRect('ItemAlign_Start_textFlexPadding03');
       let flexPadding01: RectValue = CommonFunc.getComponentRect('ItemAlign_Start_flexPadding01');
       const uiContext = new UIContext();
-      expect(Math.abs(textFlexPadding01.left - flexPadding01.left - uiContext.vp2px(30)) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding01.left - flexPadding01.left - UIContext.getFocusedUIContext()!.vp2px(30)) <= 1).assertTrue()
       expect(Math.abs(textFlexPadding01.right - textFlexPadding02.left) <= 1).assertTrue()
       expect(Math.abs(textFlexPadding02.right - textFlexPadding03.left) <= 1).assertTrue()
 
       expect(Math.abs(textFlexPadding01.top - textFlexPadding02.top) <= 1).assertTrue()
       expect(Math.abs(textFlexPadding02.top - textFlexPadding03.top) <= 1).assertTrue()
-      expect(Math.abs(textFlexPadding01.top - flexPadding01.top - uiContext.vp2px(30)) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding01.top - flexPadding01.top - UIContext.getFocusedUIContext()!.vp2px(30)) <= 1).assertTrue()
 
-      expect(Math.abs(textFlexPadding01.bottom - textFlexPadding01.top - uiContext.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(textFlexPadding02.bottom - textFlexPadding02.top - uiContext.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(textFlexPadding03.bottom - textFlexPadding03.top - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(textFlexPadding01.right - textFlexPadding01.left - uiContext.vp2px(440 / 3)) <= 1).assertTrue()
-      expect(Math.abs(textFlexPadding02.right - textFlexPadding02.left - uiContext.vp2px(440 / 3)) <= 1).assertTrue()
-      expect(Math.abs(textFlexPadding03.right - textFlexPadding03.left - uiContext.vp2px(440 / 3)) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding01.bottom - textFlexPadding01.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding02.bottom - textFlexPadding02.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding03.bottom - textFlexPadding03.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding01.right - textFlexPadding01.left - UIContext.getFocusedUIContext()!.vp2px(440 / 3)) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding02.right - textFlexPadding02.left - UIContext.getFocusedUIContext()!.vp2px(440 / 3)) <= 1).assertTrue()
+      expect(Math.abs(textFlexPadding03.right - textFlexPadding03.left - UIContext.getFocusedUIContext()!.vp2px(440 / 3)) <= 1).assertTrue()
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Start')
       console.info('new testFlexItemAlignStartParentSetPaddingExceed END');

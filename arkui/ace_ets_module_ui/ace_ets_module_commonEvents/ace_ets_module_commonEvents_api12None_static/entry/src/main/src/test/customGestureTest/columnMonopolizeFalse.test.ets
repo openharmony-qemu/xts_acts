@@ -95,8 +95,8 @@ export default function columnMonopolizeFalse() {
       let column2 = await (scrollBar?.scrollSearch(ON.id('columnClick2')) as Promise<Component | null>);
 
       await CommonFunc.sleep(200);
-      await driver.longClick(Math.round(CommonFunc.rect_left + uiContext.vp2px(33.33)) as Int,
-        Math.round(CommonFunc.rect_top + uiContext.vp2px(26.66)) as Int);
+      await driver.longClick(Math.round(CommonFunc.rect_left + UIContext.getFocusedUIContext()!.vp2px(33.33)) as Int,
+        Math.round(CommonFunc.rect_top + UIContext.getFocusedUIContext()!.vp2px(26.66)) as Int);
       await CommonFunc.sleep(1000);
       await (column2?.click() as Promise<void>);
       await CommonFunc.sleep(500);
@@ -109,8 +109,8 @@ export default function columnMonopolizeFalse() {
 
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      await driver.longClick(Math.round(CommonFunc.rect_left + uiContext.vp2px(33.33)) as Int,
-        Math.round(CommonFunc.rect_top + uiContext.vp2px(26.66)) as Int);
+      await driver.longClick(Math.round(CommonFunc.rect_left + UIContext.getFocusedUIContext()!.vp2px(33.33)) as Int,
+        Math.round(CommonFunc.rect_top + UIContext.getFocusedUIContext()!.vp2px(26.66)) as Int);
       await CommonFunc.sleep(1000);
       await (column2?.click() as Promise<void>);
       let strJson2 = inspector.getInspectorByKey('columnTextFalse');

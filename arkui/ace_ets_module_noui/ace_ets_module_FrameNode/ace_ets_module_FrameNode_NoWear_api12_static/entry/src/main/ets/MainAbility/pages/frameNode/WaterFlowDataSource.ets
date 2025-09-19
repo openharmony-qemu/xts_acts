@@ -86,7 +86,7 @@ import { State } from '@ohos.arkui.stateManagement'
 
   // 注销改变数据的控制器
   unregisterDataChangeListener(listener: DataChangeListener): void {
-    const pos = this.listeners.indexOf(listener)
+    const pos = this.listeners.indexOf(listener).toInt()
     if (pos >= 0) {
       this.listeners.splice(pos, 1)
     }

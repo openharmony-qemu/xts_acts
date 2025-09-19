@@ -33,7 +33,6 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
-  UserView,
   Image,
   Search,
   Row,

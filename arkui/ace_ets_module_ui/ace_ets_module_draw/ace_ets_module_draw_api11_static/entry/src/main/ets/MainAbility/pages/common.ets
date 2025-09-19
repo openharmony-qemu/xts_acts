@@ -221,6 +221,7 @@ struct CommonBackgroundBlurStyle {
             Log.showInfo(TAG, `Up`)
           }
           Log.showInfo(TAG, 'KeyType:' + event.type + ';keyCode:' + event.keyCode + ';keyText:' + event.keyText)
+          return false
         })
 
       Text("common-TabIndex")

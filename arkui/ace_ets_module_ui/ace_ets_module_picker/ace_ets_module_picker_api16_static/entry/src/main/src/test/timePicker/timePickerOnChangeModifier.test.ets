@@ -21,14 +21,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { px2vp } from '@ohos.arkui.component'
+
 
 function getRectCenterVp(rect: string) {
   let regexp: RegExp = new RegExp('\\[', 'g');
   let rtn: string[] = rect.replace(regexp, '').replace(regexp, '').split(',')
   return [
-    px2vp(Number.parseFloat(rtn[0].trim()) + (Number.parseFloat(rtn[2].trim()) - Number.parseFloat(rtn[0].trim())) / 2),
-    px2vp(Number.parseFloat(rtn[1].trim()) + (Number.parseFloat(rtn[3].trim()) - Number.parseFloat(rtn[1].trim())) / 2),
+    UIContext.getFocusedUIContext()!.px2vp(Number.parseFloat(rtn[0].trim()) + (Number.parseFloat(rtn[2].trim()) - Number.parseFloat(rtn[0].trim())) / 2),
+    UIContext.getFocusedUIContext()!.px2vp(Number.parseFloat(rtn[1].trim()) + (Number.parseFloat(rtn[3].trim()) - Number.parseFloat(rtn[1].trim())) / 2),
   ]
 }
 

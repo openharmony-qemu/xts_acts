@@ -260,28 +260,28 @@ export default function alignSelfStretchTest() {
             //And control the alignment of the component
             expect(rect.left).assertEqual(parentRect.left);
             expect(rect.top).assertEqual(parentRect.top);
-            expect(rect.bottom - rect.top).assertEqual(uiContext.vp2px(parentHeight));
+            expect(rect.bottom - rect.top).assertEqual(UIContext.getFocusedUIContext()!.vp2px(parentHeight));
           } else if ((data.testValue.describe == 'SetStretchRowReverseWrap')
             || (data.testValue.describe == 'SetStretchRowWrapReverse')) {
             //Determine if alignSelf will override the alignItems setting of the parent container
             //And control the alignment of the component
             expect(rect.right).assertEqual(parentRect.right);
             expect(rect.top).assertEqual(parentRect.top);
-            expect(rect.bottom - rect.top).assertEqual(uiContext.vp2px(parentHeight));
+            expect(rect.bottom - rect.top).assertEqual(UIContext.getFocusedUIContext()!.vp2px(parentHeight));
           } else if ((data.testValue.describe == 'SetStretchColumnWrap')
             || (data.testValue.describe == 'SetStretchColumnReverseWrapReverse')) {
             //Determine if alignSelf will override the alignItems setting of the parent container
             //And control the alignment of the component
             expect(rect.left).assertEqual(parentRect.left);
             expect(rect.top).assertEqual(parentRect.top);
-            expect(rect.right - rect.left).assertEqual(uiContext.vp2px(parentWidth));
+            expect(rect.right - rect.left).assertEqual(UIContext.getFocusedUIContext()!.vp2px(parentWidth));
           } else if ((data.testValue.describe == 'SetStretchColumnReverseWrap')
             || (data.testValue.describe == 'SetStretchColumnWrapReverse')) {
             //Determine if alignSelf will override the alignItems setting of the parent container
             //And control the alignment of the component
             expect(rect.bottom).assertEqual(parentRect.bottom);
             expect(rect.left).assertEqual(parentRect.left);
-            expect(rect.right - rect.left).assertEqual(uiContext.vp2px(parentWidth));
+            expect(rect.right - rect.left).assertEqual(UIContext.getFocusedUIContext()!.vp2px(parentWidth));
           }
         }
       })

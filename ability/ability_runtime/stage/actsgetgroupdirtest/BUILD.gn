@@ -19,6 +19,7 @@ group("actsgetgroupdirtest") {
     deps = [
       "actsgetgroupdirhap:ActsGetgroupdirhap",
       "actsgetgroupdirtest:ActsGetgroupdirtest",
+      "actsgetgroupdirteststatic:ActsGetgroupdirstatictest"
     ]
   }
 }

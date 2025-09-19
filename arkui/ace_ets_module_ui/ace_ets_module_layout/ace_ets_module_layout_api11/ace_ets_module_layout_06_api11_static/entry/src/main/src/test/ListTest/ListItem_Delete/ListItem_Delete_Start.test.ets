@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { vp2px } from '@ohos.arkui.component'
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../ets/MainAbility/common/Rect';
@@ -98,9 +98,9 @@ it('SUB_ACE_ListItem_Delete_Start_static_0200', Level.LEVEL0, async (done: () =>
 
       let driver = Driver.create();
       driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + vp2px(10))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + right - vp2px(10))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + right - UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
       await CommonFunc.sleep(2000);
@@ -153,9 +153,9 @@ it('SUB_ACE_ListItem_Delete_Start_static_0300', Level.LEVEL0, async (done: () =>
       let height = bottom -top;
       console.info("SUB_ACE_ListItem_Delete_Start_0300 value is" + left + " --" + right + "--" + top + "--" + bottom);
       driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + vp2px(30))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(30))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + vp2px(80))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(80))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
       await CommonFunc.sleep(2000);
@@ -209,9 +209,9 @@ it('SUB_ACE_ListItem_Delete_Start_static_0400', Level.LEVEL0, async (done: () =>
       let height = bottom -top;
       console.info("SUB_ACE_ListItem_Delete_Start_0400 value is" + left + " --" + right + "--" + top + "--" + bottom);
       driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + vp2px(30))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(30))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + vp2px(80))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(80))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
       await CommonFunc.sleep(2000);
@@ -265,9 +265,9 @@ it('SUB_ACE_ListItem_Delete_Start_static_0500', Level.LEVEL0, async (done: () =>
       console.info("SUB_ACE_ListItem_Delete_Start_0500 value is" + left + " --" + right + "--" + top + "--" + bottom);
 
       driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + vp2px(30))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(30))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + vp2px(80))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(80))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
       await CommonFunc.sleep(2000);

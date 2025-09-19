@@ -98,7 +98,7 @@ export default function toIndexStartOffset() {
       console.info('[toIndexStartOffset_static_0100] listItem.bottom: ' + listItem.bottom);
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext()
-      expect(Math.abs(Math.round(list.bottom - listItem.bottom) - Math.round(uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(list.bottom - listItem.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       console.info('[toIndexStartOffset_static_0100] END');
       done();
     });

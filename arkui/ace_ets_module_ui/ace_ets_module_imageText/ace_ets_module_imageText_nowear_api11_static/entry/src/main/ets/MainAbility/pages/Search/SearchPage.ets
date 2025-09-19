@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute,
-  ClickEvent, UserView,Image,ImageFit,Color, TextAlign, CopyOptions, SearchController, Font, Search } from '@ohos.arkui.component'  
+  ClickEvent, Image,ImageFit,Color, TextAlign, CopyOptions, SearchController, Font, Search } from '@ohos.arkui.component'  
 import { State, MutableState, stateOf, observableProxy } from '@ohos.arkui.stateManagement' 
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
@@ -38,7 +38,7 @@ struct SearchPage {
   @State copyValue: string = ''
   @State cutValue: string = ''
   @State pasteValue: string = ''
-  @State positionValue: number = 1
+  @State positionValue: int = 1
   @State placeholder: string = 'Type to search...'
   @State icon: string = ''
   @State searchButton: string = 'SEARCH'
@@ -75,7 +75,7 @@ struct SearchPage {
         this.pasteValue = message.value as String
       }
       if (message.name == 'positionValue') {
-        this.positionValue = message.value as Number
+        this.positionValue = message.value as int
       }
       if (message.name == 'placeHolder') {
         this.placeholder = message.value as String

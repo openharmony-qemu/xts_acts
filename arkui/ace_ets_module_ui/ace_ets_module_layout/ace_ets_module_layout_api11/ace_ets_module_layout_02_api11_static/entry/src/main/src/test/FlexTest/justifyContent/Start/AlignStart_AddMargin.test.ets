@@ -111,14 +111,14 @@ it('testFlexAlignStartFlexMargin_static', Level.LEVEL0, async () : Promise<void>
       expect(Math.abs(Start_AddMargin_012.left - Start_AddMargin_011.right) <= 1).assertTrue()
       expect(Math.abs(Start_AddMargin_013.left - Start_AddMargin_012.right) <= 1).assertTrue()
       expect(Math.abs(Start_AddMargin_011.left - Start_AddMargin_01.left) <= 1).assertTrue()
-      expect(Math.abs(Start_AddMargin_01.top - Start_AddMargin_01_Box.top - uiContext.vp2px(20)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddMargin_01.left - Start_AddMargin_01_Box.left - uiContext.vp2px(20)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddMargin_011.bottom - Start_AddMargin_011.top - uiContext.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddMargin_012.bottom - Start_AddMargin_012.top - uiContext.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddMargin_013.bottom - Start_AddMargin_013.top - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddMargin_011.right - Start_AddMargin_011.left - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddMargin_012.right - Start_AddMargin_012.left - uiContext.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddMargin_013.right - Start_AddMargin_013.left - uiContext.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddMargin_01.top - Start_AddMargin_01_Box.top - UIContext.getFocusedUIContext()!.vp2px(20)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddMargin_01.left - Start_AddMargin_01_Box.left - UIContext.getFocusedUIContext()!.vp2px(20)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddMargin_011.bottom - Start_AddMargin_011.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddMargin_012.bottom - Start_AddMargin_012.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddMargin_013.bottom - Start_AddMargin_013.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddMargin_011.right - Start_AddMargin_011.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddMargin_012.right - Start_AddMargin_012.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddMargin_013.right - Start_AddMargin_013.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
       console.info('[testFlexAlignStartFlexMargin] END');
 
     });

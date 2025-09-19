@@ -755,7 +755,7 @@ export default function builtinsFloatSecondPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_SECOND_PROTOTYPEB_TEST_3600
      * @tc.name builtinsFloatSecondPrototypebTest3600
-     * @tc.desc test $_hashCode(): int
+     * @tc.desc test getHashCodeByValue(): int
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -765,7 +765,7 @@ export default function builtinsFloatSecondPrototypebTest() {
         const caseName = 'builtinsFloatSecondPrototypebTest3600';
         console.info(`${caseName}, test start`);
         const a = new Float(0.0);
-        expect(a.$_hashCode()).assertEqual(0);
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -773,7 +773,7 @@ export default function builtinsFloatSecondPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_SECOND_PROTOTYPEB_TEST_3700
      * @tc.name builtinsFloatSecondPrototypebTest3700
-     * @tc.desc test $_hashCode(): int
+     * @tc.desc test getHashCodeByValue(): int
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -783,7 +783,7 @@ export default function builtinsFloatSecondPrototypebTest() {
         const caseName = 'builtinsFloatSecondPrototypebTest3700';
         console.info(`${caseName}, test start`);
         const a = new Float(42.0);
-        expect(a.$_hashCode()).assertEqual(42);
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(42);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -791,7 +791,7 @@ export default function builtinsFloatSecondPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_SECOND_PROTOTYPEB_TEST_3800
      * @tc.name builtinsFloatSecondPrototypebTest3800
-     * @tc.desc test $_hashCode(): int
+     * @tc.desc test getHashCodeByValue(): int
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -801,7 +801,7 @@ export default function builtinsFloatSecondPrototypebTest() {
         const caseName = 'builtinsFloatSecondPrototypebTest3800';
         console.info(`${caseName}, test start`);
         const a = new Float(-42.0);
-        expect(a.$_hashCode()).assertEqual(-42);
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(-42);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -809,7 +809,7 @@ export default function builtinsFloatSecondPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_SECOND_PROTOTYPEB_TEST_3900
      * @tc.name builtinsFloatSecondPrototypebTest3900
-     * @tc.desc test $_hashCode(): int
+     * @tc.desc test getHashCodeByValue(): int
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -819,7 +819,7 @@ export default function builtinsFloatSecondPrototypebTest() {
         const caseName = 'builtinsFloatSecondPrototypebTest3900';
         console.info(`${caseName}, test start`);
         const a = new Float(Float.MAX_VALUE);
-        expect(a.$_hashCode()).assertEqual(2147483647);
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(2147483647);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -827,7 +827,7 @@ export default function builtinsFloatSecondPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_SECOND_PROTOTYPEB_TEST_4000
      * @tc.name builtinsFloatSecondPrototypebTest4000
-     * @tc.desc test $_hashCode(): int
+     * @tc.desc test getHashCodeByValue(): int
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -837,7 +837,7 @@ export default function builtinsFloatSecondPrototypebTest() {
         const caseName = 'builtinsFloatSecondPrototypebTest4000';
         console.info(`${caseName}, test start`);
         const a = new Float(Float.MIN_VALUE);
-        expect(a.$_hashCode()).assertEqual(0);
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -845,7 +845,7 @@ export default function builtinsFloatSecondPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_SECOND_PROTOTYPEB_TEST_4100
      * @tc.name builtinsFloatSecondPrototypebTest4100
-     * @tc.desc test $_hashCode(): int
+     * @tc.desc test getHashCodeByValue(): int
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -856,7 +856,7 @@ export default function builtinsFloatSecondPrototypebTest() {
         console.info(`${caseName}, test start`);
         const a = new Float(12345.0);
         const b = new Float(12345.0);
-        expect(a.$_hashCode()).assertEqual(b.$_hashCode());
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(Runtime.getHashCodeByValue(b));
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -864,7 +864,7 @@ export default function builtinsFloatSecondPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_SECOND_PROTOTYPEB_TEST_4200
      * @tc.name builtinsFloatSecondPrototypebTest4200
-     * @tc.desc test $_hashCode(): int
+     * @tc.desc test getHashCodeByValue(): int
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -874,7 +874,7 @@ export default function builtinsFloatSecondPrototypebTest() {
         const caseName = 'builtinsFloatSecondPrototypebTest4200';
         console.info(`${caseName}, test start`);
         const a = new Float(NaN);
-        expect(a.$_hashCode()).assertEqual(0);
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -882,7 +882,7 @@ export default function builtinsFloatSecondPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_FLOAT_SECOND_PROTOTYPEB_TEST_4300
      * @tc.name builtinsFloatSecondPrototypebTest4300
-     * @tc.desc test $_hashCode(): int
+     * @tc.desc test getHashCodeByValue(): int
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -892,7 +892,7 @@ export default function builtinsFloatSecondPrototypebTest() {
         const caseName = 'builtinsFloatSecondPrototypebTest4300';
         console.info(`${caseName}, test start`);
         const a = new Float(Number.POSITIVE_INFINITY);
-        expect(a.$_hashCode()).assertEqual(2147483647);
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(2147483647);
         console.info(`${caseName}, test end`);
         Done();
       })

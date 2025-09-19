@@ -387,7 +387,7 @@ export default function ImageReceiver() {
         let surfaceId2 = await receiver2!.getReceivingSurfaceId();
         console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100 surfaceId2[${surfaceId2}]`);
 
-        receiver1!.onImageRelease(() => {
+        receiver1!.onImageArrival(() => {
           console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100 on [ENTER]!");
           expect(true).assertTrue();
           done();
@@ -423,7 +423,7 @@ export default function ImageReceiver() {
       globalReceiver1 = receiver!;
 
       try {
-        receiver!.offImageRelease();
+        receiver!.offImageArrival();
         expect(true).assertTrue();
         done();
       } catch (error: BusinessError) {
@@ -464,7 +464,7 @@ export default function ImageReceiver() {
         let surfaceId2 = await receiver2!.getReceivingSurfaceId();
         console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 surfaceId2[${surfaceId2}]`);
 
-        receiver1!.onImageRelease(() => {
+        receiver1!.onImageArrival(() => {
           console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 on [ENTER]!");
           let latestImage: image.Image = await receiver1!.readLatestImage();
           globalImg = latestImage;
@@ -518,7 +518,7 @@ export default function ImageReceiver() {
         let surfaceId2 = await receiver2!.getReceivingSurfaceId();
         console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 surfaceId2[${surfaceId2}]`);
 
-        receiver1!.onImageRelease(() => {
+        receiver1!.onImageArrival(() => {
           console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 on [ENTER]!");
           receiver1.readLatestImage((err: BusinessError | null, latestImage: image.Image | undefined) => {
             globalImg = latestImage!;
@@ -574,7 +574,7 @@ export default function ImageReceiver() {
         let surfaceId2 = await receiver2!.getReceivingSurfaceId();
         console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 surfaceId2[${surfaceId2}]`);
 
-        receiver1!.onImageRelease(() => {
+        receiver1!.onImageArrival(() => {
           console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 on [ENTER]!");
           let nextImage: image.Image = await receiver1!.readNextImage();
           globalImg = nextImage;
@@ -628,7 +628,7 @@ export default function ImageReceiver() {
         let surfaceId2 = await receiver2!.getReceivingSurfaceId();
         console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 surfaceId2[${surfaceId2}]`);
 
-        receiver1!.onImageRelease(() => {
+        receiver1!.onImageArrival(() => {
           console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 on [ENTER]!");
           receiver1!.readNextImage((err: BusinessError | null, nextImage: image.Image | undefined) => {
             console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 readNextImage [ENTER]!");

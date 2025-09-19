@@ -41,7 +41,7 @@ struct textArea_top {
   private arr:Array<Number> = new Array<Number>(0,1,2,3,4,5)
   @State height1:number = 450
   @State fontSize1:number = 16
-  @State fontWeight1:number = 400
+  @State fontWeight1:int = 400
 
   scroll: Scroller = new Scroller()
   messageManager:MessageManager = new MessageManager()

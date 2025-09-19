@@ -120,7 +120,7 @@ export default function flexBasisTest() {
     },
     expectValue: {
       expectFlexBasis: '100.00vp',
-      // expectSize: uiContext.vp2px(100.00)
+      // expectSize: UIContext.getFocusedUIContext()!.vp2px(100.00)
     }
   }, {
     describe: 'SetStringPx',
@@ -137,7 +137,7 @@ export default function flexBasisTest() {
       flexBasis: '50%'
     },
     expectValue: {
-      // expectSize: uiContext.vp2px(120)
+      // expectSize: UIContext.getFocusedUIContext()!.vp2px(120)
     }
   }]
   console.info('333');

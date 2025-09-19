@@ -2725,11 +2725,14 @@ export default function EmojiString() {
         const str = '\ud83d\ude0a';
         const iterator = str.matchAll(regexp);
         const results = Array.from(iterator);
-        expect(results[0]).assertDeepEquals(undefined);
-        expect(results[1]).assertDeepEquals(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(results[0]).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
     /**
@@ -2747,11 +2750,14 @@ export default function EmojiString() {
         const str = '\ud83d\udc64';
         const iterator = str.matchAll(regexp);
         const results = Array.from(iterator);
-        expect(results[0]).assertDeepEquals(undefined);
-        console.info(`${TAG} passed.`);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(results[0]).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -2770,11 +2776,14 @@ export default function EmojiString() {
         const str = '\ud83d\udc6b';
         const iterator = str.matchAll(regexp);
         const results = Array.from(iterator);
-        expect(results[0]).assertDeepEquals(undefined);
-        console.info(`${TAG} passed.`);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(results[0]).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -2793,11 +2802,14 @@ export default function EmojiString() {
         const str = '\u260e';
         const iterator = str.matchAll(regexp);
         const results = Array.from(iterator);
-        expect(results[0]).assertDeepEquals(undefined);
-        console.info(`${TAG} passed.`);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(results[0]).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -2816,11 +2828,14 @@ export default function EmojiString() {
         const str = '\ud83d\udc79';
         const iterator = str.matchAll(regexp);
         const results = Array.from(iterator);
-        expect(results[0]).assertDeepEquals(undefined);
-        console.info(`${TAG} passed.`);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(results[0]).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -2839,11 +2854,14 @@ export default function EmojiString() {
         const str = '\ud83d\udd5b';
         const iterator = str.matchAll(regexp);
         const results = Array.from(iterator);
-        expect(results[0]).assertDeepEquals(undefined);
-        console.info(`${TAG} passed.`);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(results[0]).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -2862,11 +2880,14 @@ export default function EmojiString() {
         const str = '\ud83c\udf4f';
         const iterator = str.matchAll(regexp);
         const results = Array.from(iterator);
-        expect(results[0]).assertDeepEquals(undefined);
-        console.info(`${TAG} passed.`);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(results[0]).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -2885,11 +2906,14 @@ export default function EmojiString() {
         const str = '\ud83d\udd03';
         const iterator = str.matchAll(regexp);
         const results = Array.from(iterator);
-        expect(results[0]).assertDeepEquals(undefined);
-        console.info(`${TAG} passed.`);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(results[0]).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -2908,11 +2932,14 @@ export default function EmojiString() {
         const str = '\ud83c\udf41';
         const iterator = str.matchAll(regexp);
         const results = Array.from(iterator);
-        expect(results[0]).assertDeepEquals(undefined);
-        console.info(`${TAG} passed.`);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(results[0]).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -2931,11 +2958,14 @@ export default function EmojiString() {
         const str = '\u2666';
         const iterator = str.matchAll(regexp);
         const results = Array.from(iterator);
-        expect(results[0]).assertDeepEquals(undefined);
-        console.info(`${TAG} passed.`);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(results[0]).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -2954,11 +2984,14 @@ export default function EmojiString() {
         const str = '\ud83d\udc48';
         const iterator = str.matchAll(regexp);
         const results = Array.from(iterator);
-        expect(results[0]).assertDeepEquals(undefined);
-        console.info(`${TAG} passed.`);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(results[0]).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -2977,11 +3010,14 @@ export default function EmojiString() {
         const str = '\ud83e\udd3c\u200d\u2642\ufe0f';
         const iterator = str.matchAll(regexp);
         const results = Array.from(iterator);
-        expect(results[0]).assertDeepEquals(undefined);
-        console.info(`${TAG} passed.`);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(results[0]).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
     /**

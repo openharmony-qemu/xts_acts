@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { vp2px } from '@ohos.arkui.component'
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../ets/MainAbility/common/Rect';
@@ -162,11 +162,11 @@ it('testListInitialIndexToTwelveWithTwoLane_static', Level.LEVEL0, async (done: 
       expect(Math.abs(Math.round(tenthListItem.right - tenthListItem.left) - Math.round(listContainer_width*0.3)) <= 1).assertTrue();
       expect(Math.abs(Math.round(tenthListItem.bottom - tenthListItem.top) - Math.round(listContainer_height*0.12)) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(eleventhListItem.right - eleventhListItem.left) - vp2px(0)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(eleventhListItem.bottom - eleventhListItem.top) - vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(eleventhListItem.right - eleventhListItem.left) - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(eleventhListItem.bottom - eleventhListItem.top) - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(twelfthListItem.right - twelfthListItem.left) - vp2px(0)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(twelfthListItem.bottom - twelfthListItem.top) - vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(twelfthListItem.right - twelfthListItem.left) - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(twelfthListItem.bottom - twelfthListItem.top) - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
 
 
       let driver = Driver.create();

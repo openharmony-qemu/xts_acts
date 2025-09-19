@@ -108,26 +108,26 @@ it('testFlexAlignCenterTextOffset_static', Level.LEVEL0, async () : Promise<void
       let Center_AddOffset_013: RectValue = CommonFunc.getComponentRect('Center_AddOffset_013');
       let Center_AddOffset_01: RectValue = CommonFunc.getComponentRect('Center_AddOffset_01');
       const uiContext = new UIContext();
-      expect(Math.abs((Math.round((Center_AddOffset_011.top - Center_AddOffset_01.top) * 10) / 10) - (Math.round(uiContext.vp2px(15) * 10) / 10)) <= 1)
+      expect(Math.abs((Math.round((Center_AddOffset_011.top - Center_AddOffset_01.top) * 10) / 10) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(15) * 10) / 10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round((Center_AddOffset_011.left - Center_AddOffset_01.left) * 10) / 10) - (Math.round(uiContext.vp2px(35) * 10) / 10)) <= 1)
+      expect(Math.abs((Math.round((Center_AddOffset_011.left - Center_AddOffset_01.left) * 10) / 10) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(35) * 10) / 10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round((Center_AddOffset_01.right - Center_AddOffset_013.right) * 10) / 10) - (Math.round(uiContext.vp2px(25) * 10) / 10)) <= 1)
+      expect(Math.abs((Math.round((Center_AddOffset_01.right - Center_AddOffset_013.right) * 10) / 10) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(25) * 10) / 10)) <= 1)
         .assertTrue();
       expect(Math.abs((Center_AddOffset_012.top) - (Center_AddOffset_013.top)) <= 1).assertTrue();
       expect(Math.abs((Center_AddOffset_012.top) - (Center_AddOffset_01.top)) <= 1).assertTrue();
       expect(Math.abs((Center_AddOffset_013.left) - (Center_AddOffset_012.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Center_AddOffset_011.right - Center_AddOffset_011.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddOffset_011.right - Center_AddOffset_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddOffset_012.right - Center_AddOffset_012.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddOffset_012.right - Center_AddOffset_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddOffset_013.right - Center_AddOffset_013.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddOffset_013.right - Center_AddOffset_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddOffset_011.bottom - Center_AddOffset_011.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddOffset_011.bottom - Center_AddOffset_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddOffset_012.bottom - Center_AddOffset_012.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddOffset_012.bottom - Center_AddOffset_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddOffset_013.bottom - Center_AddOffset_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddOffset_013.bottom - Center_AddOffset_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignCenterTextOffset] END');
 

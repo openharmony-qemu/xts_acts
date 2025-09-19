@@ -14,8 +14,10 @@
  */
 
 import drawing from '@ohos.graphics.drawing'
-import {CustomSpan,DrawContext,CustomSpanDrawInfo,CustomSpanMeasureInfo,CustomSpanMetrics,vp2px} from '@ohos.arkui.component'
+import {CustomSpan,DrawContext,CustomSpanDrawInfo,CustomSpanMeasureInfo,CustomSpanMetrics} from '@ohos.arkui.component'
 import common2D from '@ohos.graphics.displaySync'
+import { UIContext } from '@ohos.arkui.UIContext';
+
 export class MyCustomSpan extends CustomSpan {
   constructor(word: string, width: number, height?: number) {
     super();
@@ -39,7 +41,7 @@ export class MyCustomSpan extends CustomSpan {
     
     canvas.drawRect({
       left: options.x + 10,
-      right: options.x + vp2px(this.width) - 10,
+      right: options.x + UIContext.getFocusedUIContext()!.vp2px(this.width) - 10,
       top: options.lineTop + 10,
       bottom: options.lineBottom - 10
     });

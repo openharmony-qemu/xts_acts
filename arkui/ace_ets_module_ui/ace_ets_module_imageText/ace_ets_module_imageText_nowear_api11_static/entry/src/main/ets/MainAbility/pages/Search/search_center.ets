@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent,
-  UserView,Image,ImageFit, Scroller, Row, Scroll, VerticalAlign, ForEach, Search, SafeAreaType, ScrollDirection,
+  Image, ImageFit, Scroller, Row, Scroll, VerticalAlign, ForEach, Search, SafeAreaType, ScrollDirection,
   BarState, Color, EdgeEffect, TextAlign, Margin, IconOptions, CancelButtonStyle, CancelButtonOptions, $r,
   CaretStyle, Font} from '@ohos.arkui.component'  
 import { State, MutableState, stateOf, observableProxy } from '@ohos.arkui.stateManagement' 

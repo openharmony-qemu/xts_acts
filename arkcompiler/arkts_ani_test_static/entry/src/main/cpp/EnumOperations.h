@@ -20,7 +20,7 @@
 ani_int test_Enum_GetEnumItemByName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_enum aniEnum{};
-    ASSERT_EQ(env->FindEnum("Lentry/src/main/src/ets/EnumOperations/Color;", &aniEnum), ANI_OK);
+    ASSERT_EQ(env->FindEnum("entry.src.main.src.ets.EnumOperations.Color", &aniEnum), ANI_OK);
     ASSERT_NE(aniEnum, nullptr);
 
     ani_enum_item red{};
@@ -51,7 +51,7 @@ ani_int test_Enum_GetEnumItemByIndex([[maybe_unused]] ani_env *env, [[maybe_unus
 {
     static constexpr int32_t loopCount = 3;
     ani_enum aniEnum{};
-    ASSERT_EQ(env->FindEnum("Lentry/src/main/src/ets/EnumOperations/Color;", &aniEnum), ANI_OK);
+    ASSERT_EQ(env->FindEnum("entry.src.main.src.ets.EnumOperations.Color", &aniEnum), ANI_OK);
     ASSERT_NE(aniEnum, nullptr);
 
     ani_enum_item red{};
@@ -69,7 +69,7 @@ ani_int test_Enum_GetEnumItemByIndex([[maybe_unused]] ani_env *env, [[maybe_unus
 ani_int test_EnumItem_GetEnum([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_enum aniEnum{};
-    ASSERT_EQ(env->FindEnum("Lentry/src/main/src/ets/EnumOperations/Color;", &aniEnum), ANI_OK);
+    ASSERT_EQ(env->FindEnum("entry.src.main.src.ets.EnumOperations.Color", &aniEnum), ANI_OK);
     ASSERT_NE(aniEnum, nullptr);
 
     ani_enum_item red{};
@@ -104,7 +104,7 @@ ani_int test_EnumItem_GetEnum([[maybe_unused]] ani_env *env, [[maybe_unused]] an
 ani_int test_EnumItem_GetValue_Int([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_enum aniEnum{};
-    ASSERT_EQ(env->FindEnum("Lentry/src/main/src/ets/EnumOperations/Color;", &aniEnum), ANI_OK);
+    ASSERT_EQ(env->FindEnum("entry.src.main.src.ets.EnumOperations.Color", &aniEnum), ANI_OK);
     ASSERT_NE(aniEnum, nullptr);
 
     ani_enum_item red{};
@@ -139,7 +139,7 @@ ani_int test_EnumItem_GetValue_String([[maybe_unused]] ani_env *env, [[maybe_unu
     std::string enumVal;
     ani_enum aniEnum{};
     ani_size sz{};
-    ASSERT_EQ(env->FindEnum("Lentry/src/main/src/ets/EnumOperations/Color;", &aniEnum), ANI_OK);
+    ASSERT_EQ(env->FindEnum("entry.src.main.src.ets.EnumOperations.Color", &aniEnum), ANI_OK);
     ASSERT_NE(aniEnum, nullptr);
     ani_enum_item red{};
     ASSERT_EQ(env->Enum_GetEnumItemByName(aniEnum, "RED", &red), ANI_OK);
@@ -182,7 +182,7 @@ ani_int test_EnumItem_GetName([[maybe_unused]] ani_env *env, [[maybe_unused]] an
     ani_enum aniEnum{};
     std::string enumVal;
     ani_size sz{};
-    ASSERT_EQ(env->FindEnum("Lentry/src/main/src/ets/EnumOperations/Color;", &aniEnum), ANI_OK);
+    ASSERT_EQ(env->FindEnum("entry.src.main.src.ets.EnumOperations.Color", &aniEnum), ANI_OK);
     ASSERT_NE(aniEnum, nullptr);
     ani_enum_item red{};
     ASSERT_EQ(env->Enum_GetEnumItemByName(aniEnum, "RED", &red), ANI_OK);
@@ -221,7 +221,7 @@ ani_int test_EnumItem_GetName([[maybe_unused]] ani_env *env, [[maybe_unused]] an
 ani_int test_EnumItem_GetIndex([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_enum aniEnum{};
-    ASSERT_EQ(env->FindEnum("Lentry/src/main/src/ets/EnumOperations/Color;", &aniEnum), ANI_OK);
+    ASSERT_EQ(env->FindEnum("entry.src.main.src.ets.EnumOperations.Color", &aniEnum), ANI_OK);
     ASSERT_NE(aniEnum, nullptr);
     ani_enum_item red{};
     ASSERT_EQ(env->Enum_GetEnumItemByName(aniEnum, "RED", &red), ANI_OK);

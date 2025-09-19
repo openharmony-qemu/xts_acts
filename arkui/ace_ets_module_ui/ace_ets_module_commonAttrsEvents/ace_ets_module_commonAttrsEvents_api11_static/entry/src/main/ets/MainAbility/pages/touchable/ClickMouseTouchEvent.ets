@@ -77,6 +77,7 @@ struct ClickExample {
           })
           .onKeyEvent((event: KeyEvent) => {
             this.intentionCode = "KeyEvent: " + event.intentionCode
+            return false
           })
 
         Button('Mouse').width(100).height(40).id("Mouse_click")

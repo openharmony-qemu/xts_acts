@@ -98,29 +98,29 @@ it('testAlignSpaceBetweenRowNoWrapMarginFirstInRange_static', Level.LEVEL0, asyn
       let locationText3: RectValue = CommonFunc.getComponentRect('AlignSpaceBetween42');
       let locationFlex: RectValue = CommonFunc.getComponentRect('FlexAlignSpaceBetween14');
       const uiContext = new UIContext();
-      expect(Math.abs((Math.round(locationText1.top - locationFlex.top)) - (Math.round(uiContext.vp2px(20)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(locationText1.left - locationFlex.left)) - (Math.round(uiContext.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(locationText1.top - locationFlex.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(locationText1.left - locationFlex.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
         .assertTrue();
       expect(Math.abs((locationText2.top) - (locationText3.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(locationText3.top - locationFlex.top)) - (uiContext.vp2px(0))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(locationText1.bottom - locationText1.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(locationText3.top - locationFlex.top)) - (UIContext.getFocusedUIContext()!.vp2px(0))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(locationText1.bottom - locationText1.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.bottom - locationText2.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(locationText2.bottom - locationText2.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText3.bottom - locationText3.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(locationText3.bottom - locationText3.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationFlex.bottom - locationText3.bottom)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(locationFlex.bottom - locationText3.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
       expect(Math.abs((locationText3.right) - (locationFlex.right)) <= 1).assertTrue();
       expect(Math.abs((Math.round(locationText1.right - locationText1.left)) - (Math.round(locationText2.right - locationText2.left))) <= 1)
         .assertTrue();
       expect(Math.abs((Math.round(locationText3.right - locationText3.left)) - (Math.round(locationText2.right - locationText2.left))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.right - locationText2.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(locationText2.right - locationText2.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round((locationText2.left - locationText1.right) * 10) / 10) - (Math.round(uiContext.vp2px(25) * 10) / 10)) <= 1)
+      expect(Math.abs((Math.round((locationText2.left - locationText1.right) * 10) / 10) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(25) * 10) / 10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round((locationText3.left - locationText2.right) * 10) / 10) - (Math.round(uiContext.vp2px(5) * 10) / 10)) <= 1)
+      expect(Math.abs((Math.round((locationText3.left - locationText2.right) * 10) / 10) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(5) * 10) / 10)) <= 1)
         .assertTrue();
       console.info('new testAlignSpaceBetweenRowNoWrapMarginFirstInRange END');
 
@@ -151,28 +151,28 @@ it('testAlignSpaceBetweenRowNoWrapMarginFirstOutRange_static', Level.LEVEL0, asy
       let locationText3: RectValue = CommonFunc.getComponentRect('AlignSpaceBetween42');
       let locationFlex: RectValue = CommonFunc.getComponentRect('FlexAlignSpaceBetween14');
       const uiContext = new UIContext();
-      expect(Math.abs((Math.round(locationText1.top - locationFlex.top)) - (Math.round(uiContext.vp2px(50)))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(locationText1.left - locationFlex.left)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(locationText1.top - locationFlex.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(locationText1.left - locationFlex.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
       expect(Math.abs((locationText2.top) - (locationText3.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(locationText3.top - locationFlex.top)) - (uiContext.vp2px(0))) <= 1).assertTrue();
-      expect(Math.abs((Math.round(locationText1.bottom - locationText1.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(locationText3.top - locationFlex.top)) - (UIContext.getFocusedUIContext()!.vp2px(0))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(locationText1.bottom - locationText1.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.bottom - locationText2.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(locationText2.bottom - locationText2.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText3.bottom - locationText3.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(locationText3.bottom - locationText3.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationFlex.bottom - locationText3.bottom)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(locationFlex.bottom - locationText3.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
       expect(Math.abs((locationText2.right) - (locationText3.left)) <= 1).assertTrue();
       expect(Math.abs((locationText3.right) - (locationFlex.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(locationText1.right - locationText1.left)) - (Math.round(uiContext.vp2px(400 / 3)))) <= 1)
+      expect(Math.abs((Math.round(locationText1.right - locationText1.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(400 / 3)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.right - locationText2.left)) - (Math.round(uiContext.vp2px(400 / 3)))) <= 1)
+      expect(Math.abs((Math.round(locationText2.right - locationText2.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(400 / 3)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText3.right - locationText3.left)) - (Math.round(uiContext.vp2px(400 / 3)))) <= 1)
+      expect(Math.abs((Math.round(locationText3.right - locationText3.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(400 / 3)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.left - locationText1.right)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(locationText2.left - locationText1.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
       console.info('new testAlignSpaceBetweenRowNoWrapMarginFirstOutRange END');
 

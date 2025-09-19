@@ -102,20 +102,20 @@ it('testFlexItemAlignAutoTextMarginMeet_static', Level.LEVEL0, async () : Promis
       let flexTextMargin01: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_flexTextMargin01');
 
       const uiContext = new UIContext();
-      expect(Math.floor(Math.abs(textMargin01.left - flexTextMargin01.left - uiContext.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(textMargin02.left - textMargin01.right - uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textMargin01.left - flexTextMargin01.left - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textMargin02.left - textMargin01.right - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(textMargin02.right - textMargin03.left)) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs(textMargin01.top - flexTextMargin01.top - uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textMargin01.top - flexTextMargin01.top - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(textMargin02.top - textMargin03.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(textMargin03.top - flexTextMargin01.top)) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs(textMargin01.bottom - textMargin01.top - uiContext.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(textMargin02.bottom - textMargin02.top - uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(textMargin03.bottom - textMargin03.top - uiContext.vp2px(150))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(textMargin01.right - textMargin01.left - uiContext.vp2px(150))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(textMargin02.right - textMargin02.left - uiContext.vp2px(150))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(textMargin03.right - textMargin03.left - uiContext.vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textMargin01.bottom - textMargin01.top - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textMargin02.bottom - textMargin02.top - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textMargin03.bottom - textMargin03.top - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textMargin01.right - textMargin01.left - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textMargin02.right - textMargin02.left - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textMargin03.right - textMargin03.left - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row');
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Auto');
       console.info('new testFlexItemAlignAutoTextMarginMeet_static END');
@@ -148,21 +148,21 @@ it('testFlexItemAlignAutoTextMarginOverflow_static', Level.LEVEL0, async () : Pr
       let textMargin03: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_textMargin03');
       let flexTextMargin01: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_flexTextMargin01');
       const uiContext = new UIContext();
-      expect(Math.floor(Math.abs(textMargin01.left - flexTextMargin01.left - uiContext.vp2px(30))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(textMargin02.left - textMargin01.right - uiContext.vp2px(30))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textMargin01.left - flexTextMargin01.left - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textMargin02.left - textMargin01.right - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(textMargin02.right - textMargin03.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(textMargin03.right - flexTextMargin01.right)) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs(textMargin01.top - flexTextMargin01.top - uiContext.vp2px(30))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textMargin01.top - flexTextMargin01.top - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(textMargin02.top - textMargin03.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(textMargin03.top - flexTextMargin01.top)) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs(textMargin01.bottom - textMargin01.top - uiContext.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(textMargin02.bottom - textMargin02.top - uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(textMargin03.bottom - textMargin03.top - uiContext.vp2px(150))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(textMargin01.right - textMargin01.left - uiContext.vp2px(440 / 3))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(textMargin02.right - textMargin02.left - uiContext.vp2px(440 / 3))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(textMargin03.right - textMargin03.left - uiContext.vp2px(440 / 3))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textMargin01.bottom - textMargin01.top - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textMargin02.bottom - textMargin02.top - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textMargin03.bottom - textMargin03.top - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textMargin01.right - textMargin01.left - UIContext.getFocusedUIContext()!.vp2px(440 / 3))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textMargin02.right - textMargin02.left - UIContext.getFocusedUIContext()!.vp2px(440 / 3))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textMargin03.right - textMargin03.left - UIContext.getFocusedUIContext()!.vp2px(440 / 3))) <= 1).assertTrue();
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row');
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Auto');
       console.info('new testFlexItemAlignAutoTextMarginOverflow_static END');

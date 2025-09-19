@@ -49,7 +49,7 @@ struct ListDelete {
     Row() {
       Button("Del").margin("4vp")
         .onClick((e: ClickEvent) => {
-          this.arr.splice(index, 1)
+          this.arr.splice(index.toInt(), 1)
         }
         )
         .key(which + '_ListItem' + index + '_Button_Del')
@@ -63,7 +63,7 @@ struct ListDelete {
     Row() {
       Button("Del").margin("4vp")
         .onClick((e: ClickEvent) => {
-          this.arr.splice(index, 1)
+          this.arr.splice(index.toInt(), 1)
         }
         )
         .key(which + '_ListItem' + index + '_Button_Del')
@@ -192,7 +192,7 @@ struct ListDelete {
               builder: (): void => this.itemEnd(index, 'MyList5'),
               onAction: () => {
                 console.info('MyList5_ListItem' + index + ' onAction')
-                this.arr2.splice(index, 1)
+                this.arr2.splice(index.toInt(), 1)
                 this.tSting = "action trigger";
 
               },

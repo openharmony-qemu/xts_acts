@@ -39,7 +39,8 @@ import { RenderNode, ShapeMask, FrameNode, NodeController  } from "@ohos.arkui.n
 const uiContext = new UIContext();
 const vp2px = uiContext.vp2px
 const mask = new ShapeMask();
-mask.setRectShape({ left: 0, right: vp2px(150), top: 0, bottom: vp2px(150) });
+mask.setRectShape({ left: 0,
+  right: UIContext.getFocusedUIContext()!.vp2px(150), top: 0, bottom: UIContext.getFocusedUIContext()!.vp2px(150) });
 mask.fillColor = 0X55FF0000;
 
 const renderNode = new RenderNode();

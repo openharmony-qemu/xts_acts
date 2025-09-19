@@ -17,7 +17,7 @@ group("update") {
   testonly = true
   if (is_standard_system) {
     deps = [ 
-        "update_system_hap_test:ActsUpdateSystemHapStaticTest",
+        "updateSystemHapTestStatic:ActsUpdateSystemHapStaticTest",
     ]
   }
 }

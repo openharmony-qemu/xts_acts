@@ -15,8 +15,22 @@
  
 import callJsunit from "./CallJsunit.test";
 import telSyncTest from "./TelSyncTest.test";
+import radioJsunit from './RadioJsunit.test';
+import radioSecondJsunit from './RadioSecondJsunit.test';
+import sim from '@ohos.telephony.sim';
 
 export default function testsuite() {
-  callJsunit();
-  telSyncTest();
+  let simState: sim.SimState = sim.getSimStateSync(0);
+  if (sim.getMaxSimCount() != 0 && simState != sim.SimState.SIM_STATE_UNKNOWN) {
+    radioJsunit();
+    radioSecondJsunit();
+    callJsunit();
+    telSyncTest();
+  }else{
+    radioJsunit();
+    radioSecondJsunit();
+    callJsunit();
+    telSyncTest();
+  }
+
 }

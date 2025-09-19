@@ -83,9 +83,9 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate3_static_0100', Level.LEVEL0, async (done: (
 
       console.log('assert size')
       const uiContext = new UIContext();
-      expect(Math.abs(GridItem_01.right - GridItem_01.left - uiContext.vp2px(114)) <= 1).assertTrue();
+      expect(Math.abs(GridItem_01.right - GridItem_01.left - UIContext.getFocusedUIContext()!.vp2px(114)) <= 1).assertTrue();
       console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
-      expect(Math.abs(GridItem_01.bottom - GridItem_01.top - uiContext.vp2px(50)) <= 1).assertTrue();
+      expect(Math.abs(GridItem_01.bottom - GridItem_01.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
       console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
 
       console.info('[SUB_ACE_GRID_OnlyColumnsTemplate3_static_0100] END');

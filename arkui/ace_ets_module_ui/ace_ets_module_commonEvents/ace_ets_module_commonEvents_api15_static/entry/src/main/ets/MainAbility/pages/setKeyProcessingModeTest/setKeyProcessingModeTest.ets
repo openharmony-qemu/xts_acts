@@ -61,7 +61,7 @@ struct setKeyProcessingModeTest {
               Button('Button1')
                 .id('Button1')
                 .onKeyEvent((event: KeyEvent) => {
-
+                  return false
                 })
                 .onFocus(() => {
                   console.log('focus Button1')
@@ -70,7 +70,7 @@ struct setKeyProcessingModeTest {
               Button('Button2')
                 .id('Button2')
                 .onKeyEvent((event: KeyEvent) => {
-
+                  return false
                 })
                 .onFocus(() => {
                   console.log('focus Button2')
@@ -79,18 +79,18 @@ struct setKeyProcessingModeTest {
               Button('Button3')
                 .id('Button3')
                 .onKeyEvent((event: KeyEvent) => {
-
+                  return false
                 })
                 .onFocus(() => {
                   console.log('focus Button3')
                   this.text = 'Button3'
                 })
             }.onKeyEvent((event: KeyEvent) => {
-
+                return false
             })
           }
           .onKeyEvent((event: KeyEvent) => {
-
+            return false
           })
           .id('ButtonRow2')
         }

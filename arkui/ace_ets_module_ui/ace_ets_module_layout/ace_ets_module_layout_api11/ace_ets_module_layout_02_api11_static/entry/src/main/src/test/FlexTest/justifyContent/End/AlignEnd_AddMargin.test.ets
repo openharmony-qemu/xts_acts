@@ -112,23 +112,23 @@ it('testFlexAlignEndFlexMargin_static', Level.LEVEL0, async () : Promise<void> =
       expect(Math.abs((End_AddMargin_012.left) - (End_AddMargin_011.right)) <= 1).assertTrue();
       expect(Math.abs((End_AddMargin_013.left) - (End_AddMargin_012.right)) <= 1).assertTrue();
       expect(Math.abs((End_AddMargin_013.right) - (End_AddMargin_01.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(End_AddMargin_01.left - End_AddMargin_01_Box.left)) - (Math.round(uiContext.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(End_AddMargin_01.left - End_AddMargin_01_Box.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddMargin_01.top - End_AddMargin_01_Box.top)) - (Math.round(uiContext.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(End_AddMargin_01.top - End_AddMargin_01_Box.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddMargin_011.left - End_AddMargin_01.left)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(End_AddMargin_011.left - End_AddMargin_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddMargin_011.bottom - End_AddMargin_011.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(End_AddMargin_011.bottom - End_AddMargin_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddMargin_012.bottom - End_AddMargin_012.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(End_AddMargin_012.bottom - End_AddMargin_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddMargin_013.bottom - End_AddMargin_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_AddMargin_013.bottom - End_AddMargin_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddMargin_011.right - End_AddMargin_011.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_AddMargin_011.right - End_AddMargin_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddMargin_012.right - End_AddMargin_012.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_AddMargin_012.right - End_AddMargin_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(End_AddMargin_013.right - End_AddMargin_013.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(End_AddMargin_013.right - End_AddMargin_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignEndFlexMargin] END');
 

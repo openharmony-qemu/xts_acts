@@ -38,7 +38,7 @@ export class Foo {
   native test_Reference_IsUndefined(): boolean;
   native test_Reference_IsNullishValue(): boolean;
   native test_Reference_Equals(): boolean;
-  native test_Array_New_Ref(): boolean;
+  native test_Array_New(): boolean;
   native test_Object_New_A(): boolean;
   native test_Object_New_V(): boolean;
   native test_Class_GetStaticField_Boolean(): boolean;
@@ -115,15 +115,6 @@ export class Foo {
   native test_Class_CallStaticMethod_Int_V(): boolean;
   native test_String_UTF8(): boolean;
   native test_String_UTF16(): boolean;
-  native test_array_region_byte(): boolean;
-  native test_array_region_char(): boolean;
-  native test_array_region_boolean(): boolean;
-  native test_array_region_double(): boolean;
-  native test_array_region_float(): boolean;
-  native test_array_region_int(): boolean;
-  native test_array_region_long(): boolean;
-  native test_array_region_short(): boolean;
-  native test_array_set_with_get_ref(): boolean;
   native test_array_getLength(): boolean;
   native test_array_CreateBuffer(): boolean;
   native test_create_local_scope(): boolean;

@@ -15,7 +15,7 @@
 
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium';
 import router from '@ohos.router';
-import {Alignment,vp2px} from '@ohos.arkui.component'
+import {Alignment} from '@ohos.arkui.component'
 import events_emitter from '@ohos.events.emitter'
 import { UtilsTest,startAbility } from '../../Util.test'
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -100,25 +100,25 @@ it('testStackAlignTopStartAlignmentTopStart_static_001', Level.LEVEL0, async (do
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.top - stackTopStartKey01.top) <= 1).assertTrue()
       expect(Math.abs(stackTopStartKey01.top - stackTopStartKey02.top) <= 1).assertTrue()
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
       expect(Math.abs((stackTopStartKey.left) - (stackTopStartKey01.left)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.left) - (stackTopStartKey02.left)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.TopStart")
@@ -159,25 +159,25 @@ it('testStackAlignTopStartAlignmentTop_static_001', Level.LEVEL0, async (done: (
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.top - stackTopStartKey01.top) <= 1).assertTrue()
       expect(Math.abs(stackTopStartKey01.top - stackTopStartKey02.top) <= 1).assertTrue()
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
       expect(Math.abs(stackTopStartKey.left - stackTopStartKey01.left) <= 1).assertTrue()
       expect(Math.abs(stackTopStartKey01.left - stackTopStartKey02.left) <= 1).assertTrue()
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.TopStart")
@@ -218,25 +218,25 @@ it('testStackAlignTopStartAlignmentEnd_static_001', Level.LEVEL0, async (done: (
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.top - stackTopStartKey01.top) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.top - stackTopStartKey02.top) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
       expect(Math.abs(stackTopStartKey.left - stackTopStartKey01.left) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.left - stackTopStartKey02.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.TopStart")
@@ -277,25 +277,25 @@ it('testStackAlignTopStartAlignmentStart_static_001', Level.LEVEL0, async (done:
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.top - stackTopStartKey01.top) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.top - stackTopStartKey02.top) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
       expect(Math.abs(stackTopStartKey.left - stackTopStartKey01.left) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.left - stackTopStartKey02.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.TopStart")
@@ -336,25 +336,25 @@ it('testStackAlignTopStartAlignmentCenter_static_001', Level.LEVEL0, async (done
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.top - stackTopStartKey01.top) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.top - stackTopStartKey02.top) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
       expect(Math.abs(stackTopStartKey.left - stackTopStartKey01.left) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.left - stackTopStartKey02.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.TopStart")
@@ -395,25 +395,25 @@ it('testStackAlignTopStartAlignmentEnd_static_002', Level.LEVEL0, async (done: (
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.top - stackTopStartKey01.top) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.top - stackTopStartKey02.top) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
       expect(Math.abs(stackTopStartKey.left - stackTopStartKey01.left) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.left - stackTopStartKey02.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.TopStart")
@@ -454,25 +454,25 @@ it('testStackAlignTopStartAlignmentBottomStart_static_001', Level.LEVEL0, async 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs((stackTopStartKey.top) - (stackTopStartKey01.top)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.top) - (stackTopStartKey02.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
       expect(Math.abs((stackTopStartKey.left) - (stackTopStartKey01.left)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.left) - (stackTopStartKey02.left)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.TopStart")
@@ -513,25 +513,25 @@ it('testStackAlignTopStartAlignmentBottom_static_001', Level.LEVEL0, async (done
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs((stackTopStartKey.top) - (stackTopStartKey01.top)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.top) - (stackTopStartKey02.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
       expect(Math.abs((stackTopStartKey.left) - (stackTopStartKey01.left)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.left) - (stackTopStartKey02.left)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.TopStart")
@@ -572,25 +572,25 @@ it('testStackAlignTopStartAlignmentBottomEnd_static_001', Level.LEVEL0, async (d
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs((stackTopStartKey.top) - (stackTopStartKey01.top)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.top) - (stackTopStartKey02.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
       expect(Math.abs((stackTopStartKey.left) - (stackTopStartKey01.left)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.left) - (stackTopStartKey02.left)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.TopStart")
@@ -631,27 +631,27 @@ it('testStackAlignTopAlignmentTopStart_static_001', Level.LEVEL0, async (done: (
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.top - stackTopStartKey01.top) <= 1).assertTrue()
       expect(Math.abs(stackTopStartKey01.top - stackTopStartKey02.top) <= 1).assertTrue()
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Top")
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
@@ -692,27 +692,27 @@ it('testStackAlignTopAlignmentTop_static_001', Level.LEVEL0, async (done: () => 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.top - stackTopStartKey01.top) <= 1).assertTrue()
       expect(Math.abs(stackTopStartKey01.top - stackTopStartKey02.top) <= 1).assertTrue()
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Top")
@@ -753,27 +753,27 @@ it('testStackAlignTopAlignmentTopEnd_static_001', Level.LEVEL0, async (done: () 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.top - stackTopStartKey01.top) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.top - stackTopStartKey02.top) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Top")
@@ -814,27 +814,27 @@ it('testStackAlignTopAlignmentStart_static_001', Level.LEVEL0, async (done: () =
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.top - stackTopStartKey01.top) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.top - stackTopStartKey02.top) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Top")
@@ -875,27 +875,27 @@ it('testStackAlignTopAlignmentCenter_static_001', Level.LEVEL0, async (done: () 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.top - stackTopStartKey01.top) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.top - stackTopStartKey02.top) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Top")
@@ -936,27 +936,27 @@ it('testStackAlignTopAlignmentEnd_static_001', Level.LEVEL0, async (done: () => 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.top - stackTopStartKey01.top) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.top - stackTopStartKey02.top) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Top")
@@ -997,27 +997,27 @@ it('testStackAlignTopAlignmentBottomStart_static_001', Level.LEVEL0, async (done
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.top - stackTopStartKey01.top) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.top - stackTopStartKey02.top) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Top")
@@ -1058,27 +1058,27 @@ it('testStackAlignTopAlignmentBottom_static_001', Level.LEVEL0, async (done: () 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.top - stackTopStartKey01.top) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.top - stackTopStartKey02.top) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Top")
@@ -1119,27 +1119,27 @@ it('testStackAlignTopAlignmentBottomEnd_static_001', Level.LEVEL0, async (done: 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.top - stackTopStartKey01.top) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.top - stackTopStartKey02.top) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Top")
@@ -1180,25 +1180,25 @@ it('testStackAlignTopEndAlignmentTopStart_static_001', Level.LEVEL0, async (done
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.top - stackTopStartKey01.top) <= 1).assertTrue()
       expect(Math.abs(stackTopStartKey01.top - stackTopStartKey02.top) <= 1).assertTrue()
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
       expect(Math.abs(stackTopStartKey.right - stackTopStartKey01.right) <= 1).assertTrue()
       expect(Math.abs(stackTopStartKey01.right - stackTopStartKey02.right) <= 1).assertTrue()
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.TopEnd")
@@ -1239,25 +1239,25 @@ it('testStackAlignTopEndAlignmentTop_static_001', Level.LEVEL0, async (done: () 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.top - stackTopStartKey01.top) <= 1).assertTrue()
       expect(Math.abs(stackTopStartKey01.top - stackTopStartKey02.top) <= 1).assertTrue()
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
       expect(Math.abs(stackTopStartKey.right - stackTopStartKey01.right) <= 1).assertTrue()
       expect(Math.abs(stackTopStartKey01.right - stackTopStartKey02.right) <= 1).assertTrue()
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.TopEnd")
@@ -1298,25 +1298,25 @@ it('testStackAlignTopEndAlignmentTopEnd_static_001', Level.LEVEL0, async (done: 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.top - stackTopStartKey01.top) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.top - stackTopStartKey02.top) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
       expect(Math.abs(stackTopStartKey.right - stackTopStartKey01.right) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.right - stackTopStartKey02.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.TopEnd")
@@ -1357,25 +1357,25 @@ it('testStackAlignTopEndAlignmentStart_static_001', Level.LEVEL0, async (done: (
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.top - stackTopStartKey01.top) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.top - stackTopStartKey02.top) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
       expect(Math.abs(stackTopStartKey.right - stackTopStartKey01.right) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.right - stackTopStartKey02.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.TopEnd")
@@ -1416,25 +1416,25 @@ it('testStackAlignTopEndAlignmentCenter_static_001', Level.LEVEL0, async (done: 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.top - stackTopStartKey01.top) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.top - stackTopStartKey02.top) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
       expect(Math.abs(stackTopStartKey.right - stackTopStartKey01.right) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.right - stackTopStartKey02.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.TopEnd")
@@ -1475,25 +1475,25 @@ it('testStackAlignTopEndAlignmentEnd_static_001', Level.LEVEL0, async (done: () 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.top - stackTopStartKey01.top) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.top - stackTopStartKey02.top) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
       expect(Math.abs(stackTopStartKey.right - stackTopStartKey01.right) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.right - stackTopStartKey02.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.TopEnd")
@@ -1534,25 +1534,25 @@ it('testStackAlignTopEndAlignmentBottomStart_static_001', Level.LEVEL0, async (d
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs((stackTopStartKey.top) - (stackTopStartKey01.top)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.top) - (stackTopStartKey02.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
       expect(Math.abs((stackTopStartKey.right) - (stackTopStartKey01.right)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.right) - (stackTopStartKey02.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.TopEnd")
@@ -1593,25 +1593,25 @@ it('testStackAlignTopEndAlignmentBottom_static_001', Level.LEVEL0, async (done: 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs((stackTopStartKey.top) - (stackTopStartKey01.top)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.top) - (stackTopStartKey02.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
       expect(Math.abs((stackTopStartKey.right) - (stackTopStartKey01.right)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.right) - (stackTopStartKey02.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.TopEnd")
@@ -1652,25 +1652,25 @@ it('testStackAlignTopEndAlignmentBottomEnd_static_001', Level.LEVEL0, async (don
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs((stackTopStartKey.top) - (stackTopStartKey01.top)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.top) - (stackTopStartKey02.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
       expect(Math.abs((stackTopStartKey.right) - (stackTopStartKey01.right)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.right) - (stackTopStartKey02.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.TopEnd")
@@ -1709,29 +1709,29 @@ it('testStackAlignStartAlignmentTopStart_static_001', Level.LEVEL0, async (done:
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
 
       expect(Math.abs(stackTopStartKey.left - stackTopStartKey01.left) <= 1).assertTrue()
       expect(Math.abs(stackTopStartKey01.left - stackTopStartKey02.left) <= 1).assertTrue()
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Start")
@@ -1770,29 +1770,29 @@ it('testStackAlignStartAlignmentTop_static_001', Level.LEVEL0, async (done: () =
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
 
       expect(Math.abs(stackTopStartKey.left - stackTopStartKey01.left) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.left - stackTopStartKey02.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Start")
@@ -1831,29 +1831,29 @@ it('testStackAlignStartAlignmentTopEnd_static_001', Level.LEVEL0, async (done: (
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
 
       expect(Math.abs(stackTopStartKey.left - stackTopStartKey01.left) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.left - stackTopStartKey02.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Start")
@@ -1892,29 +1892,29 @@ it('testStackAlignStartAlignmentStart_static_001', Level.LEVEL0, async (done: ()
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
 
       expect(Math.abs(stackTopStartKey.left - stackTopStartKey01.left) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.left - stackTopStartKey02.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Start")
@@ -1953,29 +1953,29 @@ it('testStackAlignStartAlignmentCenter_static_001', Level.LEVEL0, async (done: (
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
 
       expect(Math.abs(stackTopStartKey.left - stackTopStartKey01.left) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.left - stackTopStartKey02.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Start")
@@ -2014,29 +2014,29 @@ it('testStackAlignStartAlignmentEnd_static_001', Level.LEVEL0, async (done: () =
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
 
       expect(Math.abs(stackTopStartKey.left - stackTopStartKey01.left) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.left - stackTopStartKey02.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Start")
@@ -2075,29 +2075,29 @@ it('testStackAlignStartAlignmentBottomStart_static_001', Level.LEVEL0, async (do
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
 
       expect(Math.abs(stackTopStartKey.left - stackTopStartKey01.left) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.left - stackTopStartKey02.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Start")
@@ -2136,29 +2136,29 @@ it('testStackAlignStartAlignmentBottom_static_001', Level.LEVEL0, async (done: (
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
 
       expect(Math.abs(stackTopStartKey.left - stackTopStartKey01.left) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.left - stackTopStartKey02.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Start")
@@ -2197,29 +2197,29 @@ it('testStackAlignStartAlignmentBottomEnd_static_001', Level.LEVEL0, async (done
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
 
       expect(Math.abs(stackTopStartKey.left - stackTopStartKey01.left) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.left - stackTopStartKey02.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Start")
@@ -2258,31 +2258,31 @@ it('testStackAlignCenterAlignmentTopStart_static_001', Level.LEVEL0, async (done
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs(Math.round(stackTopStartKey01.top - stackTopStartKey.top) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.top - stackTopStartKey.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.top - stackTopStartKey01.top) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey02.top - stackTopStartKey01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs(Math.round(stackTopStartKey01.left - stackTopStartKey.left) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.left - stackTopStartKey01.left) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey.right - stackTopStartKey01.right) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey02.right) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey01.left) - Math.round(vp2px(200))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.left - stackTopStartKey.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top) - Math.round(vp2px(200))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey02.left - stackTopStartKey01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.right - stackTopStartKey02.left) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey.right - stackTopStartKey01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey02.right - stackTopStartKey02.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Center")
@@ -2321,31 +2321,31 @@ it('testStackAlignCenterAlignmentTop_static_001', Level.LEVEL0, async (done: () 
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs(Math.round(stackTopStartKey01.top - stackTopStartKey.top) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.top - stackTopStartKey.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.top - stackTopStartKey01.top) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey02.top - stackTopStartKey01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs(Math.round(stackTopStartKey01.left - stackTopStartKey.left) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.left - stackTopStartKey01.left) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey.right - stackTopStartKey01.right) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey02.right) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey01.left) - Math.round(vp2px(200))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.left - stackTopStartKey.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top) - Math.round(vp2px(200))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey02.left - stackTopStartKey01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.right - stackTopStartKey02.left) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey.right - stackTopStartKey01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey02.right - stackTopStartKey02.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Center")
@@ -2384,30 +2384,30 @@ it('testStackAlignCenterAlignmentTopEnd_static_001', Level.LEVEL0, async (done: 
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs(Math.round(stackTopStartKey01.top - stackTopStartKey.top) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.top - stackTopStartKey.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.top - stackTopStartKey01.top) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey02.top - stackTopStartKey01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(stackTopStartKey01.left - stackTopStartKey.left) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.left - stackTopStartKey.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.left - stackTopStartKey01.left) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey02.left - stackTopStartKey01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey.right - stackTopStartKey01.right) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey.right - stackTopStartKey01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey02.right) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey01.left) - Math.round(vp2px(200))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top) - Math.round(vp2px(200))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.right - stackTopStartKey02.left) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey02.right - stackTopStartKey02.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Center")
@@ -2446,31 +2446,31 @@ it('testStackAlignCenterAlignmentStart_static_001', Level.LEVEL0, async (done: (
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs(Math.round(stackTopStartKey01.top - stackTopStartKey.top) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.top - stackTopStartKey.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.top - stackTopStartKey01.top) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey02.top - stackTopStartKey01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs(Math.round(stackTopStartKey01.left - stackTopStartKey.left) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.left - stackTopStartKey01.left) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey.right - stackTopStartKey01.right) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey02.right) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey01.left) - Math.round(vp2px(200))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.left - stackTopStartKey.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top) - Math.round(vp2px(200))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey02.left - stackTopStartKey01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.right - stackTopStartKey02.left) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey.right - stackTopStartKey01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey02.right - stackTopStartKey02.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Center")
@@ -2509,31 +2509,31 @@ it('testStackAlignCenterAlignmentCenter_static_001', Level.LEVEL0, async (done: 
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs(Math.round(stackTopStartKey01.top - stackTopStartKey.top) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.top - stackTopStartKey.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.top - stackTopStartKey01.top) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey02.top - stackTopStartKey01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs(Math.round(stackTopStartKey01.left - stackTopStartKey.left) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.left - stackTopStartKey01.left) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey.right - stackTopStartKey01.right) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey02.right) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey01.left) - Math.round(vp2px(200))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.left - stackTopStartKey.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top) - Math.round(vp2px(200))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey02.left - stackTopStartKey01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.right - stackTopStartKey02.left) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey.right - stackTopStartKey01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey02.right - stackTopStartKey02.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Center")
@@ -2572,31 +2572,31 @@ it('testStackAlignCenterAlignmentEnd_static_001', Level.LEVEL0, async (done: () 
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs(Math.round(stackTopStartKey01.top - stackTopStartKey.top) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.top - stackTopStartKey.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.top - stackTopStartKey01.top) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey02.top - stackTopStartKey01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs(Math.round(stackTopStartKey01.left - stackTopStartKey.left) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.left - stackTopStartKey01.left) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey.right - stackTopStartKey01.right) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey02.right) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey01.left) - Math.round(vp2px(200))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.left - stackTopStartKey.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top) - Math.round(vp2px(200))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey02.left - stackTopStartKey01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.right - stackTopStartKey02.left) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey.right - stackTopStartKey01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey02.right - stackTopStartKey02.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Center")
@@ -2635,31 +2635,31 @@ it('testStackAlignCenterAlignmentBottomStart_static_001', Level.LEVEL0, async (d
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs(Math.round(stackTopStartKey01.top - stackTopStartKey.top) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.top - stackTopStartKey.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.top - stackTopStartKey01.top) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey02.top - stackTopStartKey01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs(Math.round(stackTopStartKey01.left - stackTopStartKey.left) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.left - stackTopStartKey01.left) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey.right - stackTopStartKey01.right) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey02.right) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey01.left) - Math.round(vp2px(200))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.left - stackTopStartKey.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top) - Math.round(vp2px(200))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey02.left - stackTopStartKey01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.right - stackTopStartKey02.left) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey.right - stackTopStartKey01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey02.right - stackTopStartKey02.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Center")
@@ -2698,31 +2698,31 @@ it('testStackAlignCenterAlignmentBottom_static_001', Level.LEVEL0, async (done: 
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs(Math.round(stackTopStartKey01.top - stackTopStartKey.top) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.top - stackTopStartKey.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.top - stackTopStartKey01.top) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey02.top - stackTopStartKey01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs(Math.round(stackTopStartKey01.left - stackTopStartKey.left) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.left - stackTopStartKey01.left) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey.right - stackTopStartKey01.right) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey02.right) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey01.left) - Math.round(vp2px(200))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.left - stackTopStartKey.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top) - Math.round(vp2px(200))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey02.left - stackTopStartKey01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.right - stackTopStartKey02.left) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey.right - stackTopStartKey01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey02.right - stackTopStartKey02.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Center")
@@ -2761,31 +2761,31 @@ it('testStackAlignCenterAlignmentBottomEnd_static_001', Level.LEVEL0, async (don
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs(Math.round(stackTopStartKey01.top - stackTopStartKey.top) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.top - stackTopStartKey.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.top - stackTopStartKey01.top) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey02.top - stackTopStartKey01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs(Math.round(stackTopStartKey01.left - stackTopStartKey.left) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.left - stackTopStartKey01.left) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey.right - stackTopStartKey01.right) - Math.round(vp2px(50))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey02.right) - Math.round(vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey01.left) - Math.round(vp2px(200))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.left - stackTopStartKey.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top) - Math.round(vp2px(200))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey02.left - stackTopStartKey01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.right - stackTopStartKey02.left) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey.right - stackTopStartKey01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top) - Math.round(vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs(Math.round(stackTopStartKey01.right - stackTopStartKey01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey02.right - stackTopStartKey02.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Center")
@@ -2826,27 +2826,27 @@ it('testStackAlignEndAlignmentTopStart_static_001', Level.LEVEL0, async (done: (
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.right - stackTopStartKey01.right) <= 1).assertTrue()
       expect(Math.abs(stackTopStartKey01.right - stackTopStartKey02.right) <= 1).assertTrue()
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.End")
@@ -2887,27 +2887,27 @@ it('testStackAlignEndAlignmentTop_static_001', Level.LEVEL0, async (done: () => 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.right - stackTopStartKey01.right) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.right - stackTopStartKey02.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.End")
@@ -2948,27 +2948,27 @@ it('testStackAlignEndAlignmentTopEnd_static_001', Level.LEVEL0, async (done: () 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.right - stackTopStartKey01.right) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.right - stackTopStartKey02.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.End")
@@ -3009,27 +3009,27 @@ it('testStackAlignEndAlignmentStart_static_001', Level.LEVEL0, async (done: () =
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.right - stackTopStartKey01.right) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.right - stackTopStartKey02.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.End")
@@ -3070,27 +3070,27 @@ it('testStackAlignEndAlignmentCenter_static_001', Level.LEVEL0, async (done: () 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.right - stackTopStartKey01.right) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.right - stackTopStartKey02.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.End")
@@ -3131,27 +3131,27 @@ it('testStackAlignEndAlignmentEnd_static_001', Level.LEVEL0, async (done: () => 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.right - stackTopStartKey01.right) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.right - stackTopStartKey02.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.End")
@@ -3192,27 +3192,27 @@ it('testStackAlignEndAlignmentBottomStart_static_001', Level.LEVEL0, async (done
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.right - stackTopStartKey01.right) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.right - stackTopStartKey02.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.End")
@@ -3253,27 +3253,27 @@ it('testStackAlignEndAlignmentBottom_static_001', Level.LEVEL0, async (done: () 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.right - stackTopStartKey01.right) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.right - stackTopStartKey02.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.End")
@@ -3314,27 +3314,27 @@ it('testStackAlignEndAlignmentBottomEnd_static_001', Level.LEVEL0, async (done: 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.right - stackTopStartKey01.right) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.right - stackTopStartKey02.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(vp2px(50)))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.bottom - stackTopStartKey01.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey02.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.End")
@@ -3375,25 +3375,25 @@ it('testStackAlignBottomStartAlignmentTopStart_static_001', Level.LEVEL0, async 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.left - stackTopStartKey01.left) <= 1).assertTrue()
       expect(Math.abs(stackTopStartKey01.left - stackTopStartKey02.left) <= 1).assertTrue()
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs(stackTopStartKey.bottom - stackTopStartKey01.bottom) <= 1).assertTrue()
       expect(Math.abs(stackTopStartKey01.bottom - stackTopStartKey02.bottom) <= 1).assertTrue()
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.BottomStart")
@@ -3434,25 +3434,25 @@ it('testStackAlignBottomStartAlignmentTop_static_001', Level.LEVEL0, async (done
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.left - stackTopStartKey01.left) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.left - stackTopStartKey02.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs(stackTopStartKey.bottom - stackTopStartKey01.bottom) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.bottom - stackTopStartKey02.bottom) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.BottomStart")
@@ -3493,25 +3493,25 @@ it('testStackAlignBottomStartAlignmentTopEnd_static_001', Level.LEVEL0, async (d
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.left - stackTopStartKey01.left) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.left - stackTopStartKey02.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackTopStartKey.bottom) - (stackTopStartKey01.bottom)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.bottom) - (stackTopStartKey02.bottom)) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.BottomStart")
@@ -3552,25 +3552,25 @@ it('testStackAlignBottomStartAlignmentStart_static_001', Level.LEVEL0, async (do
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.left - stackTopStartKey01.left) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.left - stackTopStartKey02.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs(stackTopStartKey.bottom - stackTopStartKey01.bottom) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.bottom - stackTopStartKey02.bottom) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.BottomStart")
@@ -3611,25 +3611,25 @@ it('testStackAlignBottomStartAlignmentCenter_static_001', Level.LEVEL0, async (d
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.left - stackTopStartKey01.left) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.left - stackTopStartKey02.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs(stackTopStartKey.bottom - stackTopStartKey01.bottom) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.bottom - stackTopStartKey02.bottom) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.BottomStart")
@@ -3670,25 +3670,25 @@ it('testStackAlignBottomStartAlignmentEnd_static_001', Level.LEVEL0, async (done
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.left - stackTopStartKey01.left) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.left - stackTopStartKey02.left) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs(stackTopStartKey.bottom - stackTopStartKey01.bottom) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.bottom - stackTopStartKey02.bottom) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.BottomStart")
@@ -3729,25 +3729,25 @@ it('testStackAlignBottomStartAlignmentBottomStart_static_001', Level.LEVEL0, asy
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs((stackTopStartKey.left) - (stackTopStartKey01.left)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.left) - (stackTopStartKey02.left)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackTopStartKey.bottom) - (stackTopStartKey01.bottom)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.bottom) - (stackTopStartKey02.bottom)) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.BottomStart")
@@ -3788,25 +3788,25 @@ it('testStackAlignBottomStartAlignmentBottom_static_001', Level.LEVEL0, async (d
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs((stackTopStartKey.left) - (stackTopStartKey01.left)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.left) - (stackTopStartKey02.left)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackTopStartKey.bottom) - (stackTopStartKey01.bottom)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.bottom) - (stackTopStartKey02.bottom)) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.BottomStart")
@@ -3847,25 +3847,25 @@ it('testStackAlignBottomStartAlignmentBottomEnd_static_001', Level.LEVEL0, async
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs((stackTopStartKey.left) - (stackTopStartKey01.left)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.left) - (stackTopStartKey02.left)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackTopStartKey.bottom) - (stackTopStartKey01.bottom)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.bottom) - (stackTopStartKey02.bottom)) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.BottomStart")
@@ -3904,29 +3904,29 @@ it('testStackAlignBottomAlignmentTopStart_static_001', Level.LEVEL0, async (done
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs(stackTopStartKey.bottom - stackTopStartKey01.bottom) <= 1).assertTrue()
       expect(Math.abs(stackTopStartKey01.bottom - stackTopStartKey02.bottom) <= 1).assertTrue()
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Bottom")
@@ -3965,29 +3965,29 @@ it('testStackAlignBottomAlignmentTop_static_001', Level.LEVEL0, async (done: () 
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs(stackTopStartKey.bottom - stackTopStartKey01.bottom) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.bottom - stackTopStartKey02.bottom) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Bottom")
@@ -4026,29 +4026,29 @@ it('testStackAlignBottomAlignmentTopEnd_static_001', Level.LEVEL0, async (done: 
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs(stackTopStartKey.bottom - stackTopStartKey01.bottom) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.bottom - stackTopStartKey02.bottom) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Bottom")
@@ -4087,29 +4087,29 @@ it('testStackAlignBottomAlignmentStart_static_001', Level.LEVEL0, async (done: (
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs(stackTopStartKey.bottom - stackTopStartKey01.bottom) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.bottom - stackTopStartKey02.bottom) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Bottom")
@@ -4148,29 +4148,29 @@ it('testStackAlignBottomAlignmentCenter_static_001', Level.LEVEL0, async (done: 
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs(stackTopStartKey.bottom - stackTopStartKey01.bottom) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.bottom - stackTopStartKey02.bottom) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Bottom")
@@ -4209,29 +4209,29 @@ it('testStackAlignBottomAlignmentEnd_static_001', Level.LEVEL0, async (done: () 
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs(stackTopStartKey.bottom - stackTopStartKey01.bottom) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.bottom - stackTopStartKey02.bottom) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Bottom")
@@ -4270,29 +4270,29 @@ it('testStackAlignBottomAlignmentBottomStart_static_001', Level.LEVEL0, async (d
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs(stackTopStartKey.bottom - stackTopStartKey01.bottom) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.bottom - stackTopStartKey02.bottom) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Bottom")
@@ -4331,29 +4331,29 @@ it('testStackAlignBottomAlignmentBottom_static_001', Level.LEVEL0, async (done: 
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs(stackTopStartKey.bottom - stackTopStartKey01.bottom) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.bottom - stackTopStartKey02.bottom) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Bottom")
@@ -4392,29 +4392,29 @@ it('testStackAlignBottomAlignmentBottomEnd_static_001', Level.LEVEL0, async (don
       let stackTopStartKey: RectValue = CommonFunc.getComponentRect('stackTopStartKey');
       let stackTopStartKey01: RectValue = CommonFunc.getComponentRect('stackTopStartKey01');
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey.right - stackTopStartKey01.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey02.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs(stackTopStartKey.bottom - stackTopStartKey01.bottom) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.bottom - stackTopStartKey02.bottom) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Bottom")
@@ -4455,25 +4455,25 @@ it('testStackAlignBottomEndAlignmentTopStart_static_001', Level.LEVEL0, async (d
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.right - stackTopStartKey01.right) <= 1).assertTrue()
       expect(Math.abs(stackTopStartKey01.right - stackTopStartKey02.right) <= 1).assertTrue()
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs(stackTopStartKey.bottom - stackTopStartKey01.bottom) <= 1).assertTrue()
       expect(Math.abs(stackTopStartKey01.bottom - stackTopStartKey02.bottom) <= 1).assertTrue()
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.BottomEnd")
@@ -4514,25 +4514,25 @@ it('testStackAlignBottomEndAlignmentTop_static_001', Level.LEVEL0, async (done: 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.right - stackTopStartKey01.right) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.right - stackTopStartKey02.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs(stackTopStartKey.bottom - stackTopStartKey01.bottom) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.bottom - stackTopStartKey02.bottom) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.BottomEnd")
@@ -4573,25 +4573,25 @@ it('testStackAlignBottomEndAlignmentTop_static_002', Level.LEVEL0, async (done: 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.right - stackTopStartKey01.right) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.right - stackTopStartKey02.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs(stackTopStartKey.bottom - stackTopStartKey01.bottom) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.bottom - stackTopStartKey02.bottom) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.BottomEnd")
@@ -4632,25 +4632,25 @@ it('testStackAlignBottomEndAlignmentStart_static_001', Level.LEVEL0, async (done
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.right - stackTopStartKey01.right) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.right - stackTopStartKey02.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs(stackTopStartKey.bottom - stackTopStartKey01.bottom) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.bottom - stackTopStartKey02.bottom) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.BottomEnd")
@@ -4691,25 +4691,25 @@ it('testStackAlignBottomEndAlignmentCenter_static_001', Level.LEVEL0, async (don
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.right - stackTopStartKey01.right) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.right - stackTopStartKey02.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs(stackTopStartKey.bottom - stackTopStartKey01.bottom) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.bottom - stackTopStartKey02.bottom) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.BottomEnd")
@@ -4750,25 +4750,25 @@ it('testStackAlignBottomEndAlignmentEnd_static_001', Level.LEVEL0, async (done: 
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs(stackTopStartKey.right - stackTopStartKey01.right) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.right - stackTopStartKey02.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs(stackTopStartKey.bottom - stackTopStartKey01.bottom) <= 1).assertTrue();
       expect(Math.abs(stackTopStartKey01.bottom - stackTopStartKey02.bottom) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.BottomEnd")
@@ -4809,25 +4809,25 @@ it('testStackAlignBottomEndAlignmentBottomStart_static_001', Level.LEVEL0, async
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs((stackTopStartKey.right) - (stackTopStartKey01.right)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.right) - (stackTopStartKey02.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackTopStartKey.bottom) - (stackTopStartKey01.bottom)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.bottom) - (stackTopStartKey02.bottom)) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.BottomEnd")
@@ -4868,25 +4868,25 @@ it('testStackAlignBottomEndAlignmentBottom_static_001', Level.LEVEL0, async (don
       let stackTopStartKey02: RectValue = CommonFunc.getComponentRect('stackTopStartKey02');
       expect(Math.abs((stackTopStartKey.right) - (stackTopStartKey01.right)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.right) - (stackTopStartKey02.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackTopStartKey.bottom) - (stackTopStartKey01.bottom)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.bottom) - (stackTopStartKey02.bottom)) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.BottomEnd")
@@ -4928,25 +4928,25 @@ it('testStackAlignBottomEndAlignmentBottomEnd_static_001', Level.LEVEL0, async (
 
       expect(Math.abs((stackTopStartKey.right) - (stackTopStartKey01.right)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.right) - (stackTopStartKey02.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.left - stackTopStartKey.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.left - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.top - stackTopStartKey.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.top - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(Math.abs((stackTopStartKey.bottom) - (stackTopStartKey01.bottom)) <= 1).assertTrue();
       expect(Math.abs((stackTopStartKey01.bottom) - (stackTopStartKey02.bottom)) <= 1).assertTrue();
 
-      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.right - stackTopStartKey01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey01.bottom - stackTopStartKey01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.right - stackTopStartKey02.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(stackTopStartKey02.bottom - stackTopStartKey02.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.BottomEnd")

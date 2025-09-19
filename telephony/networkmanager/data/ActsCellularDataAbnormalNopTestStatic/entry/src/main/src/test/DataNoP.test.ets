@@ -101,7 +101,7 @@ export default function dataNoPTest() {
         })
 
         /*
-          * @tc.number:SUB_Telephony_Data_QueryAllApns_NoP_static_0300
+          * @tc.number:SUB_Telephony_Data_QueryAllApns_NoP_0300
           * @tc.name: testTelephonyDataQueryAllApnsNoP_static_0300
           * @tc.desc:Using the queryAllApns (callback) method without permission
           * @tc.level:Level 0
@@ -132,7 +132,7 @@ export default function dataNoPTest() {
         })
 
         /*
-          * @tc.number:SUB_Telephony_Data_QueryApnIds_NoP_static_0400
+          * @tc.number:SUB_Telephony_Data_QueryApnIds_NoP_0400
           * @tc.name: testTelephonyDataQueryApnIdsNoP_static_0400
           * @tc.desc:Using the queryApnIds (callback) method without permission
           * @tc.level:Level 0
@@ -163,7 +163,7 @@ export default function dataNoPTest() {
         })
 
         /*
-          * @tc.number:SUB_Telephony_Data_SetPreferredApn_NoP_static_0500
+          * @tc.number:SUB_Telephony_Data_SetPreferredApn_NoP_0500
           * @tc.name: testTelephonyDataSetPreferredApnNoP_static_0500
           * @tc.desc:Using the setPreferredApn (callback) method without permission
           * @tc.level:Level 0

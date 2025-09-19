@@ -27,9 +27,9 @@ import {
   Scroll,
   ImageBitmap,
   CanvasPattern,
-  Canvas,
-  px2vp
+  Canvas
 } from '@ohos.arkui.component';
+import { UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -81,7 +81,8 @@ struct CanvasColor {
   fillStyle_CanvasPattern() {
     let pattern = this.context.createPattern(this.img, 'repeat')
     this.context.fillStyle = pattern as CanvasPattern
-    this.context.fillRect(0, 0, px2vp(276 * 2), px2vp(183))
+    this.context.fillRect(0, 0, UIContext.getFocusedUIContext()!.px2vp(276 * 2),
+      UIContext.getFocusedUIContext()!.px2vp(183))
   }
 
   strokeStyle_string() {
@@ -103,10 +104,11 @@ struct CanvasColor {
     this.context.strokeRect(50, 50, 200, 200)
   }
 
-  strokeStyle_CanvasPattern() {
+strokeStyle_CanvasPattern() {
     let pattern = this.context.createPattern(this.img, 'repeat')
     this.context.lineWidth = 5
     this.context.strokeStyle = pattern as CanvasPattern
-    this.context.strokeRect(0, 0, px2vp(276 * 2), px2vp(183))
+    this.context.strokeRect(0, 0, UIContext.getFocusedUIContext()!.px2vp(276 * 2),
+      UIContext.getFocusedUIContext()!.px2vp(183))
   }
 }

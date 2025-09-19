@@ -37,7 +37,7 @@ ani_int GetFunctionFromModule(ani_env *env, ani_namespace *ns, ani_function *fun
     ASSERT_NE(ns, nullptr);
     ASSERT_NE(func, nullptr);
 
-    ASSERT_EQ(env->FindNamespace("Lentry/src/main/src/ets/Exception/testing;", ns), ANI_OK);
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.Exception.testing", ns), ANI_OK);
     ASSERT_EQ(env->Namespace_FindFunction(*ns, functionName, signature, func), ANI_OK);
 
     return ANI_TRUE;
@@ -47,7 +47,7 @@ ani_function GetThrowErrorFunction(ani_env *env)
 {
     ani_namespace ns = nullptr;
     ani_function func = nullptr;
-    GetFunctionFromModule(env, &ns, &func, "throwError", "I:I");
+    GetFunctionFromModule(env, &ns, &func, "throwError", "i:i");
     return func;
 }
 

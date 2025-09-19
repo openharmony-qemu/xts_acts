@@ -102,14 +102,14 @@ it('testWrapReverseParentfixedDisplayPriority_static', Level.LEVEL0, async () =>
       let locationFlexParent: RectValue = CommonFunc.getComponentRect('FlexWrapReverseTest24');
       expect(Math.abs(locationText1.top - locationText2.top) <= 1).assertTrue();
       expect(Math.abs(locationText1.top - locationFlexParent.top) <= 1).assertTrue();
-      expect(Math.abs(Math.round(locationText1.right - locationText1.left) - uiContext.vp2px(250)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(locationText2.right - locationText2.left) - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(locationText3.right - locationText3.left) - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(locationText1.bottom - locationText1.top) - uiContext.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(locationText2.bottom - locationText2.top) - uiContext.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(locationText3.bottom - locationText3.top) - uiContext.vp2px(200)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(locationText2.left - locationFlexParent.left) - uiContext.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(locationFlexParent.bottom - locationText2.bottom) - uiContext.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(locationText1.right - locationText1.left) - UIContext.getFocusedUIContext()!.vp2px(250)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(locationText2.right - locationText2.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(locationText3.right - locationText3.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(locationText1.bottom - locationText1.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(locationText2.bottom - locationText2.top) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(locationText3.bottom - locationText3.top) - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(locationText2.left - locationFlexParent.left) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(locationFlexParent.bottom - locationText2.bottom) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
       console.info('new testWrapReverseParentfixedDisplayPriority END');
 
     });

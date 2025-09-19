@@ -90,10 +90,10 @@ export default function gestureParallelTest() {
         Number(Number(rectInfo[0][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
       console.info("rect_left = " + CommonFunc.rect_left + "CommonFunc.rect_top = " + CommonFunc.rect_top);
       let driver = Driver.create();
-      await driver.longClick(Math.round(CommonFunc.rect_left + uiContext.vp2px(66.66)) as Int,
-        Math.round(CommonFunc.rect_top + uiContext.vp2px(133.33)) as Int);
-      await driver.doubleClick(Math.round(CommonFunc.rect_left + uiContext.vp2px(66.66)) as Int,
-        Math.round(CommonFunc.rect_top + uiContext.vp2px(133.33)) as Int);
+      await driver.longClick(Math.round(CommonFunc.rect_left + UIContext.getFocusedUIContext()!.vp2px(66.66)) as Int,
+        Math.round(CommonFunc.rect_top + UIContext.getFocusedUIContext()!.vp2px(133.33)) as Int);
+      await driver.doubleClick(Math.round(CommonFunc.rect_left + UIContext.getFocusedUIContext()!.vp2px(66.66)) as Int,
+        Math.round(CommonFunc.rect_top + UIContext.getFocusedUIContext()!.vp2px(133.33)) as Int);
       let strJson1 = inspector.getInspectorByKey("longPressMsg");
       await CommonFunc.sleep(200);
       console.info("[gestureParallelTest_001] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson1)));

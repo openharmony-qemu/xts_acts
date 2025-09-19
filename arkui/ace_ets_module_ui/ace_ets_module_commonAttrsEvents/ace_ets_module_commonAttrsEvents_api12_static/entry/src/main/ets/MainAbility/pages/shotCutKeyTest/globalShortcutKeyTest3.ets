@@ -114,6 +114,7 @@ struct FunctionKeyTest3 {
         }).keyboardShortcut(this.changeChar, [ModifierKey.CTRL])
           .onKeyEvent((event: KeyEvent) => {
             console.info("event.keyCode: " + JSON.stringify(event));
+            return false
           })
       }
       .width('100%').height('100%')

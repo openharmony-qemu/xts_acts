@@ -36,13 +36,13 @@ struct KeyEventExample6 {
         .onKeyEvent((keyEvent: KeyEvent) => {
           this.childText = "childResponse"
           console.info("the child key is " + JSON.stringify(keyEvent))
-
+          return false
         })
 
     }.height('100%').width('100%').padding(35).onKeyEvent((keyEvent: KeyEvent) => {
       console.info("the parent key is " + JSON.stringify(keyEvent))
       this.parentText = "parentResponse"
-
+      return false
     })
   }
 }

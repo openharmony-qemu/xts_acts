@@ -87,7 +87,7 @@ export default function WindowTitleTest() {
                     expect(true).assertTrue()
                     done()
                 } else {
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done();
                 }
             }
@@ -105,34 +105,35 @@ export default function WindowTitleTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window;
-            await windowStage.createSubWindow('testSetWindowDecorVisibleErrCode1300002_static_0100')
+            windowStage.createSubWindow('testSetWindowDecorVisibleErrCode1300002_static_0100')
                 .then((data: window.Window) => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await (subWin! as window.Window).destroyWindow();
+                    try {
+                        subWin!.setWindowDecorVisible(true);
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowDecorVisible.');
+                        expect(false).assertTrue();
+                        done()
+                    } catch (e: BusinessError) {
+                        hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setWindowDecorVisible. Cause:' + JSON.stringify(e));
+                        if(e!.code == 1300002){
+                            done();
+                        }else if(e!.code == 801){
+                            done();
+                        }else {
+                            expect(false).assertTrue();
+                            done();
+                        }
+                    }
                 })
                 .catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done()
                 });
-            await (subWin! as window.Window).destroyWindow();
-            try {
-                subWin!.setWindowDecorVisible(true);
-                hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowDecorVisible.');
-                expect().assertFail();
-                done()
-            } catch (e: BusinessError) {
-                hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setWindowDecorVisible. Cause:' + JSON.stringify(e));
-                if(e!.code == 1300002){
-                    done();
-                }else if(e!.code == 801){
-                    done();
-                }else {
-                    expect().assertFail();
-                    done();
-                }
-            }
+            
         })
         /**
          * @tc.number     : testSetWindowDecorHeightErrCode1300002_0100
@@ -147,28 +148,29 @@ export default function WindowTitleTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window;
-            await windowStage.createSubWindow('testSetWindowDecorHeightErrCode1300002_static_0100')
+            windowStage.createSubWindow('testSetWindowDecorHeightErrCode1300002_static_0100')
                 .then((data:window.Window) => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await (subWin! as window.Window).destroyWindow();
+                    try {
+                        subWin!.setWindowDecorHeight(1);
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowDecorHeight.');
+                        expect(false).assertTrue();
+                        done()
+                    } catch (e: BusinessError) {
+                        hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setWindowDecorHeight. Cause:' + JSON.stringify(e));
+                        expect(e.code).assertEqual(1300002);
+                        done()
+                    }
                 })
                 .catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done()
                 });
-            await (subWin! as window.Window).destroyWindow();
-            try {
-                subWin!.setWindowDecorHeight(1);
-                hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowDecorHeight.');
-                expect().assertFail();
-                done()
-            } catch (e: BusinessError) {
-                hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setWindowDecorHeight. Cause:' + JSON.stringify(e));
-                expect(e.code).assertEqual(1300002);
-                done()
-            }
+            
         })
         /**
          * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3200
@@ -229,7 +231,7 @@ export default function WindowTitleTest() {
                     expect(true).assertTrue()
                     done()
                 } else {
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done();
                 }
             }
@@ -259,7 +261,7 @@ export default function WindowTitleTest() {
                     expect(true).assertTrue()
                     done()
                 } else {
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done();
                 }
             }
@@ -277,29 +279,30 @@ export default function WindowTitleTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window;
-            await windowStage.createSubWindow('testOnWindowTitleButtonRectChangeErrCode1300002_static_0300')
+            windowStage.createSubWindow('testOnWindowTitleButtonRectChangeErrCode1300002_static_0300')
                 .then((data: window.Window) => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await (subWin! as window.Window).destroyWindow();
+                    try {
+                        subWin!.on("windowTitleButtonRectChange", (res: window.TitleButtonRect) => {
+                        });
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on windowTitleButtonRectChange.');
+                        expect(false).assertTrue();
+                        done()
+                    } catch (e: BusinessError) {
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call on windowTitleButtonRectChange. Cause:' + JSON.stringify(e));
+                        expect(e!.code).assertEqual(1300002);
+                        done()
+                    }
                 })
                 .catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done()
                 });
-            await (subWin! as window.Window).destroyWindow();
-            try {
-                subWin!.on("windowTitleButtonRectChange", (res: window.TitleButtonRect) => {
-                });
-                hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on windowTitleButtonRectChange.');
-                expect().assertFail();
-                done()
-            } catch (e: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call on windowTitleButtonRectChange. Cause:' + JSON.stringify(e));
-                expect(e!.code).assertEqual(1300002);
-                done()
-            }
+            
         })
         /**
          * @tc.number     : testSetWindowTitleButtonVisibleErrCode1300002_0100
@@ -323,7 +326,7 @@ export default function WindowTitleTest() {
                     try {
                         subWin!.setWindowTitleButtonVisible(true, true, true);
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowTitleButtonVisible.');
-                        expect().assertFail();
+                        expect(false).assertTrue();
                         done()
                     } catch (e: BusinessError) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setWindowTitleButtonVisible. Cause:' + JSON.stringify(e));
@@ -333,7 +336,7 @@ export default function WindowTitleTest() {
                 })
                 .catch((err: BusinessError) :PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done()
                 });
 
@@ -352,37 +355,38 @@ export default function WindowTitleTest() {
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window;
-            await windowStage.createSubWindow('testSetWindowTitleButtonVisibleErrCode1300004_SubWindow_Promise')
+            windowStage.createSubWindow('testSetWindowTitleButtonVisibleErrCode1300004_SubWindow_Promise')
                 .then((data: window.Window) => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    expect(!!subWin).assertTrue();
+                    await (subWin! as window.Window).setUIContent("pages/index2");
+                    await (subWin! as window.Window).showWindow();
+                    try {
+                        (subWin! as window.Window).setWindowTitleButtonVisible(true, true, true);
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowTitleButtonVisible.');
+                        expect(false).assertTrue();
+                        await (subWin!! as window.Window).destroyWindow();
+                        done();
+                    } catch (exception: BusinessError) {
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call setWindowTitleButtonVisible. Cause:' +
+                        JSON.stringify(exception));
+                        await (subWin!! as window.Window).destroyWindow();
+                        if (exception!.code == 801) {
+                            hilog.info(0x0000, '[ANI]',msgStr + '此设备不支持getDecorButtonStyle能力.');
+                        } else {
+                            expect(exception!.code).assertEqual(1300004);
+                        }
+                        done();
+                    }
                 })
                 .catch((err: BusinessError) :PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done()
                 });
-            expect(!!subWin).assertTrue();
-            await (subWin! as window.Window).setUIContent("pages/index2");
-            await (subWin! as window.Window).showWindow();
-            try {
-                (subWin! as window.Window).setWindowTitleButtonVisible(true, true, true);
-                hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowTitleButtonVisible.');
-                expect().assertFail();
-                await (subWin!! as window.Window).destroyWindow();
-                done();
-            } catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call setWindowTitleButtonVisible. Cause:' +
-                JSON.stringify(exception));
-                await (subWin!! as window.Window).destroyWindow();
-                if (exception!.code == 801) {
-                    hilog.info(0x0000, '[ANI]',msgStr + '此设备不支持getDecorButtonStyle能力.');
-                } else {
-                    expect(exception!.code).assertEqual(1300004);
-                }
-                done();
-            }
+            
         })
         /**
          * @tc.number     : testSetDecorButtonStyleErrCode1300002_0100
@@ -409,7 +413,7 @@ export default function WindowTitleTest() {
                         }
                         subWin!.setDecorButtonStyle(param);
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setDecorButtonStyle.');
-                        expect().assertFail();
+                        expect(false).assertTrue();
                         done()
                     } catch (e: BusinessError) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setDecorButtonStyle. Cause:' + JSON.stringify(e));
@@ -419,7 +423,7 @@ export default function WindowTitleTest() {
                 })
                 .catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done()
                 });
 
@@ -460,7 +464,7 @@ export default function WindowTitleTest() {
                 (tempWnd as window.Window).setDecorButtonStyle(style);
                 hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setDecorButtonStyle.');
                 await (tempWnd! as window.Window).destroyWindow();
-                expect().assertFail();
+                expect(false).assertTrue();
                 done();
             } catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call setDecorButtonStyle. Cause:' + JSON.stringify(exception));

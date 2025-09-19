@@ -33,7 +33,6 @@ import {
   TextAttribute,
   TouchObject,
   TouchType,
-  UserView
 } from '@ohos.arkui.component'
 import inspector from '@ohos.arkui.inspector'
 import { sendTouchEvent } from '@internal.full.global';

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { vp2px } from '@ohos.arkui.component'
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../../ets/MainAbility/common/Rect';
@@ -98,27 +98,27 @@ it('testListDividerStrokeWidthToTen_static', Level.LEVEL0, async (done: () => vo
       let top:number = List_divider_01.top;
       let right:number = List_divider_01.right;
       let bottom:number = List_divider_01.bottom;
-	  expect(Math.abs(Math.round(List_divider_011.right - List_divider_011.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_divider_012.right - List_divider_012.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_divider_013.right - List_divider_013.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_divider_014.right - List_divider_014.left) - Math.round(vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_divider_011.right - List_divider_011.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_divider_012.right - List_divider_012.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_divider_013.right - List_divider_013.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_divider_014.right - List_divider_014.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
 
-	  expect(Math.abs(Math.round(List_divider_011.bottom - List_divider_011.top) - Math.round(vp2px(100))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_divider_012.bottom - List_divider_012.top) - Math.round(vp2px(100))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_divider_013.bottom - List_divider_013.top) - Math.round(vp2px(100))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_divider_014.bottom - List_divider_014.top) - Math.round(vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_divider_011.bottom - List_divider_011.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_divider_012.bottom - List_divider_012.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_divider_013.bottom - List_divider_013.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_divider_014.bottom - List_divider_014.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
 
       expect(Math.floor(Math.abs(List_divider_011.left - List_divider_01.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(List_divider_012.left - List_divider_01.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(List_divider_013.left - List_divider_01.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(List_divider_014.left - List_divider_01.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(List_divider_011.top - List_divider_01.top)) <= 1).assertTrue();
-	  expect(Math.floor(Math.abs((List_divider_012.top - List_divider_011.bottom) - vp2px(20))) <= 1).assertTrue();
-	  expect(Math.floor(Math.abs((List_divider_013.top - List_divider_012.bottom) - vp2px(20))) <= 1).assertTrue();
-	  expect(Math.floor(Math.abs((List_divider_014.top - List_divider_013.bottom) - vp2px(20))) <= 1).assertTrue();
-	  expect(Math.floor(Math.abs((List_divider_01.bottom - List_divider_014.bottom) - vp2px(40))) <= 1).assertTrue();
-	  expect(Math.floor(Math.abs((List_divider_01.bottom - List_divider_01.top) - vp2px(500))) <= 1).assertTrue();
-	  expect(Math.floor(Math.abs((List_divider_01.right - List_divider_01.left) - vp2px(350))) <= 1).assertTrue();
+	  expect(Math.floor(Math.abs((List_divider_012.top - List_divider_011.bottom) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.floor(Math.abs((List_divider_013.top - List_divider_012.bottom) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.floor(Math.abs((List_divider_014.top - List_divider_013.bottom) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.floor(Math.abs((List_divider_01.bottom - List_divider_014.bottom) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
+	  expect(Math.floor(Math.abs((List_divider_01.bottom - List_divider_01.top) - UIContext.getFocusedUIContext()!.vp2px(500))) <= 1).assertTrue();
+	  expect(Math.floor(Math.abs((List_divider_01.right - List_divider_01.left) - UIContext.getFocusedUIContext()!.vp2px(350))) <= 1).assertTrue();
       let driver = Driver.create();
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + (bottom-top)/2 + top)).toInt(),
@@ -159,27 +159,27 @@ it('testListDividerStrokeWidthToForty_static', Level.LEVEL0, async (done: () => 
       let top:number = List_divider_01.top;
       let right:number = List_divider_01.right;
       let bottom:number = List_divider_01.bottom;
-	  expect(Math.abs(Math.round(List_divider_011.right - List_divider_011.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_divider_012.right - List_divider_012.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_divider_013.right - List_divider_013.left) - Math.round(vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_divider_014.right - List_divider_014.left) - Math.round(vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_divider_011.right - List_divider_011.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_divider_012.right - List_divider_012.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_divider_013.right - List_divider_013.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_divider_014.right - List_divider_014.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
 
-	  expect(Math.abs(Math.round(List_divider_011.bottom - List_divider_011.top) - Math.round(vp2px(100))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_divider_012.bottom - List_divider_012.top) - Math.round(vp2px(100))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_divider_013.bottom - List_divider_013.top) - Math.round(vp2px(100))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_divider_014.bottom - List_divider_014.top) - Math.round(vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_divider_011.bottom - List_divider_011.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_divider_012.bottom - List_divider_012.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_divider_013.bottom - List_divider_013.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_divider_014.bottom - List_divider_014.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
 
       expect(Math.floor(Math.abs(List_divider_011.left - List_divider_01.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(List_divider_012.left - List_divider_01.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(List_divider_013.left - List_divider_01.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(List_divider_014.left - List_divider_01.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(List_divider_011.top - List_divider_01.top)) <= 1).assertTrue();
-	  expect(Math.floor(Math.abs((List_divider_014.bottom - List_divider_01.bottom) - vp2px(20))) <= 1).assertTrue();
-	  expect(Math.floor(Math.abs((List_divider_012.top - List_divider_011.bottom) - vp2px(40))) <= 1).assertTrue();
-	  expect(Math.floor(Math.abs((List_divider_013.top - List_divider_012.bottom) - vp2px(40))) <= 1).assertTrue();
-	  expect(Math.floor(Math.abs((List_divider_014.top - List_divider_013.bottom) - vp2px(40))) <= 1).assertTrue();
-	  expect(Math.floor(Math.abs((List_divider_01.bottom - List_divider_01.top) - vp2px(500))) <= 1).assertTrue();
-	  expect(Math.floor(Math.abs((List_divider_01.right - List_divider_01.left) - vp2px(350))) <= 1).assertTrue();
+	  expect(Math.floor(Math.abs((List_divider_014.bottom - List_divider_01.bottom) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.floor(Math.abs((List_divider_012.top - List_divider_011.bottom) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
+	  expect(Math.floor(Math.abs((List_divider_013.top - List_divider_012.bottom) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
+	  expect(Math.floor(Math.abs((List_divider_014.top - List_divider_013.bottom) - UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
+	  expect(Math.floor(Math.abs((List_divider_01.bottom - List_divider_01.top) - UIContext.getFocusedUIContext()!.vp2px(500))) <= 1).assertTrue();
+	  expect(Math.floor(Math.abs((List_divider_01.right - List_divider_01.left) - UIContext.getFocusedUIContext()!.vp2px(350))) <= 1).assertTrue();
       let driver = Driver.create();
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + (bottom-top)/2 + top)).toInt(),

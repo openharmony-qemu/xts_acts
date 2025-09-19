@@ -77,7 +77,6 @@ let videoSurfaceId: string | undefined;
 let metadataOutput: cameraObj.MetadataOutput;
 let mMetadataObjectTypeArray: Array<cameraObj.MetadataObjectType>;
 let receiver: image.ImageReceiver | undefined;
-let surfaceId: string = '';
 let isSessionCreated: boolean = false;
 let isCameraInputOpen: boolean = false;
 

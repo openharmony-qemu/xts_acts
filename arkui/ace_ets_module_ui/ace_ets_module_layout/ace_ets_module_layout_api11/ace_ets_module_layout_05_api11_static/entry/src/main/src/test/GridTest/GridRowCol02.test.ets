@@ -159,7 +159,7 @@ it('GridRowCol02_static_004', Level.LEVEL0, async (done: () => void): Promise<vo
       let GridRowCol02 = CommonFunc.getComponentRect('GridRowCol02');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(GridRowCol02.top - Column02.top) - Math.round(uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(GridRowCol02.top - Column02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       let strJson1 = inspector.getInspectorByKey('GridRowCol02');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[GridRowCol02_static_004] component obj is: " + JSON.stringify(obj1));
@@ -190,7 +190,7 @@ it('GridRowCol02_static_005', Level.LEVEL0, async (done: () => void): Promise<vo
       let Item00 = CommonFunc.getComponentRect('Item00');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(Item00.top - GridRowCol02.top) - Math.round(uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(Item00.top - GridRowCol02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       let strJson1 = inspector.getInspectorByKey('GridRowCol02');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[GridRowCol02_static_005] component obj is: " + JSON.stringify(obj1));
@@ -221,7 +221,7 @@ it('GridRowCol02_static_006', Level.LEVEL0, async (done: () => void): Promise<vo
       let Item03 = CommonFunc.getComponentRect('Item03');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.abs(Math.abs(Item03.top - Item00.bottom) - uiContext.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(Math.abs(Item03.top - Item00.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
       let strJson1 = inspector.getInspectorByKey('GridRowCol02');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[GridRowCol02_static_006] component obj is: " + JSON.stringify(obj1));

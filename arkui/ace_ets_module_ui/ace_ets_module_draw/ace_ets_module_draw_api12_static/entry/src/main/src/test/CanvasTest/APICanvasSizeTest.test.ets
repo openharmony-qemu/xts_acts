@@ -16,12 +16,12 @@ import { beforeAll, beforeEach, describe, expect, it, Level } from '../../../../
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { startAbility, UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { vp2px } from '@ohos.arkui.component';
+
 
 export default function APICanvasSizeTest() {
   describe('APICanvasSizeTest', () => {
@@ -81,8 +81,8 @@ it('APICanvasSizeTest_static_0100', Level.LEVEL0, async (done: () => void): Prom
       let strJson = inspector.getInspectorByKey('APICanvasSizeText1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[APICanvasSizeTest_static_0100] text1 content is: " + JSON.stringify(obj.getElement('$attrs').getDouble('content')));
-      console.info("[APICanvasSizeTest_static_0100] canvas width is: " + JSON.stringify(vp2px(Number(obj.getElement('$attrs').getDouble('content')))));
-      expect(Math.abs(Math.floor(vp2px(Number(obj.getElement('$attrs').getDouble('content'))) - widthParent * 0.8)) <= 1).assertTrue();
+      console.info("[APICanvasSizeTest_static_0100] canvas width is: " + JSON.stringify(UIContext.getFocusedUIContext()!.vp2px(Number(obj.getElement('$attrs').getDouble('content')))));
+      expect(Math.abs(Math.floor(UIContext.getFocusedUIContext()!.vp2px(Number(obj.getElement('$attrs').getDouble('content'))) - widthParent * 0.8)) <= 1).assertTrue();
       console.info('[APICanvasSizeTest_static_0100] END');
       done();
     });
@@ -112,8 +112,8 @@ it('APICanvasSizeTest_static_0200', Level.LEVEL0, async (done: () => void): Prom
       let strJson = inspector.getInspectorByKey('APICanvasSizeText2');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[APICanvasSizeTest_static_0200] text2 content is: " + JSON.stringify(obj.getElement('$attrs').getDouble('content')));
-      console.info("[APICanvasSizeTest_static_0200] canvas height is: " + JSON.stringify(vp2px(Number(obj.getElement('$attrs').getDouble('content')))));
-      expect(Math.abs(Math.floor(vp2px(Number(obj.getElement('$attrs').getDouble('content'))) - heightParent * 0.5)) <= 1).assertTrue();
+      console.info("[APICanvasSizeTest_static_0200] canvas height is: " + JSON.stringify(UIContext.getFocusedUIContext()!.vp2px(Number(obj.getElement('$attrs').getDouble('content')))));
+      expect(Math.abs(Math.floor(UIContext.getFocusedUIContext()!.vp2px(Number(obj.getElement('$attrs').getDouble('content'))) - heightParent * 0.5)) <= 1).assertTrue();
       console.info('[APICanvasSizeTest_static_0200] END');
       done();
     });

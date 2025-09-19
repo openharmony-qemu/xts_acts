@@ -160,27 +160,6 @@ export default function ActsNotificationPublishTest() {
         console.info(`Sub_Notification_Ans_Enable_Query_Static_2800 END`)
       })
 
-    // /*
-    //      * @tc.number    : SUB_NOTIFICATION_ANS_REQUEST_ENABLE_TEST_Static_0300
-    //      * @tc.name      : SUB_NOTIFICATION_ANS_REQUEST_ENABLE_TEST_Static_0300
-    //      * @tc.desc      : OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
-    //      */
-    //      
-    // it('SUB_NOTIFICATION_ANS_REQUEST_ENABLE_TEST_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-    //   async (done: () => void): Promise<void> => {
-    //   let TAG:string = 'SUB_NOTIFICATION_ANS_REQUEST_ENABLE_TEST_Static_0300'
-    //   console.info(`${TAG} SUB_NOTIFICATION_ANS_REQUEST_ENABLE_TEST_Static_0300 START`)
-    //   notificationManager.requestEnableNotification(undefined).then(() => {
-    //     console.info(`${TAG} SUB_NOTIFICATION_ANS_REQUEST_ENABLE_TEST_Static_0300 requestEnableNotification Promise success`)
-    //     expect(true).assertTrue()
-    //     done()
-    //   }).catch((err: BusinessError): void => {
-    //     console.info(`${TAG} SUB_NOTIFICATION_ANS_REQUEST_ENABLE_TEST_Static_0300 requestEnableNotification Promise err: ${err.code}`)
-    //     expect(false).assertTrue()
-    //     done()
-    //   })
-    //   console.info(`${TAG} SUB_NOTIFICATION_ANS_REQUEST_ENABLE_TEST_Static_0300 END`)
-    // })
 
     /*
      * @tc.number    : Sub_Notification_Ans_Publish_Publish_Static_8300
@@ -863,28 +842,6 @@ export default function ActsNotificationPublishTest() {
         console.info(`SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0600 END`)
       })
 
-    // /*
-    //      * @tc.number    : SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0700
-    //      * @tc.name      : SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0700
-    //      * @tc.desc      : Cancels a notification with the ID
-    //      */
-    
-    // it('SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-    //   async (done: () => void): Promise<void> => {
-    //   let TAG:string = 'SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0700'
-    //   console.info(`${TAG} SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0700 START`)
-    //   let id = 1
-    //   notificationManager.cancel(id, undefined).then(() => {
-    //   console.info(`${TAG} cancel Promise success`)
-    //   expect(false).assertTrue()
-    //   done()
-    // }).catch((err: BusinessError): void => {
-    //   console.info(`${TAG} cancel Promise err: ${err.code}`)
-    //   expect(true).assertTrue()
-    //   done()
-    // })
-    //   console.info(`${TAG} SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0700 END`)
-    // })
 
     /*
     * @tc.number    : Sub_Notification_Ans_Publish_Cancel_Static_3000
@@ -930,27 +887,7 @@ export default function ActsNotificationPublishTest() {
         console.info(`Sub_Notification_Ans_Publish_Cancel_Static_3050 END`)
       })
 
-    // /*
-    //      * @tc.number    : SUB_NOTIFICATION_ANS_CANCELAll_TEST_Static_0300
-    //      * @tc.name      : SUB_NOTIFICATION_ANS_CANCELAll_TEST_Static_0300
-    //      * @tc.desc      : Cancels all notifications of the current application
-    //      */
-    
-    // it('SUB_NOTIFICATION_ANS_CANCELAll_TEST_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-    //   async (done: () => void): Promise<void> => {
-    //   let TAG:string = 'SUB_NOTIFICATION_ANS_CANCELAll_TEST_Static_0300'
-    //   console.info(`${TAG} SUB_NOTIFICATION_ANS_CANCELAll_TEST_Static_0300 START`)
-    //   notificationManager.cancelAll(undefined).then(() => {
-    //     console.info(`${TAG} cancelAll Promise success`)
-    //     expect(true).assertTrue()
-    //     done()
-    //   }).catch((err: BusinessError): void => {
-    //     console.info(`${TAG} cancelAll Promise err: ${err.code}`)
-    //     expect(false).assertTrue()
-    //     done()
-    //   })
-    //   console.info(`${TAG} SUB_NOTIFICATION_ANS_CANCELAll_TEST_Static_0300 END`)
-    // })
+
 
     /*
      * @tc.number    : Sub_Notification_Ans_Publish_Cancel_Static_2650
@@ -1019,28 +956,6 @@ export default function ActsNotificationPublishTest() {
         console.info(`${TAG} SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_Static_0300 END`)
       })
 
-    // /*
-    //  * @tc.number    : SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_Static_0400
-    //  * @tc.name      : SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_Static_0400
-    //  * @tc.desc      : Cancel the notification of a specified group for this application
-    //  */
-    //  
-    // it('SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-    //   async (done: () => void): Promise<void> => {
-    //     let TAG:string = 'SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_Static_0400'
-    //   console.info(`${TAG} SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_Static_0400 START`)
-    //   let groupName:string = "groupName"
-    //   notificationManager.cancelGroup(groupName, undefined).then(() => {
-    //     console.info(`${TAG} cancelGroup Promise success`)
-    //     expect(true).assertTrue()
-    //     done()
-    //   }).catch((err: BusinessError): void => {
-    //     console.info(`${TAG} cancelGroup Promise err: ${err.code}`)
-    //     expect(false).assertTrue()
-    //     done()
-    //   })
-    //   console.info(`${TAG} SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_Static_0400 END`)
-    // })
 
     /*
      * @tc.number    : Sub_Notification_Ans_Distributed_Search_Static_0600
@@ -1134,49 +1049,7 @@ export default function ActsNotificationPublishTest() {
         console.info(`Sub_Notification_Ans_Distributed_Search_Static_0900 END`)
       })
 
-    // /*
-    //      * @tc.number    : SUB_NOTIFICATION_ANS_COUNT_TEST_Static_0500
-    //      * @tc.name      : SUB_NOTIFICATION_ANS_COUNT_TEST_Static_0500
-    //      * @tc.desc      : Obtains the number of all active notifications
-    //      */
-    
-    // it('SUB_NOTIFICATION_ANS_COUNT_TEST_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-    //   async (done: () => void): Promise<void> => {
-    //     let TAG:string = 'SUB_NOTIFICATION_ANS_COUNT_TEST_Static_0500'
-    //   console.info(`${TAG} SUB_NOTIFICATION_ANS_COUNT_TEST_Static_0500 START`)
-    //   notificationManager.getActiveNotificationCount(undefined).then((data) => {
-    //     console.info(`${TAG} getActiveNotificationCount Promise success :${JSON.stringify(data)}`)
-    //     expect(true).assertTrue()
-    //     done()
-    //   }).catch((err: BusinessError): void => {
-    //     console.info(`${TAG} getActiveNotificationCount Promise err: ${err.code}`)
-    //     expect(false).assertTrue()
-    //     done()
-    //   })
-    //   console.info(`${TAG} SUB_NOTIFICATION_ANS_COUNT_TEST_Static_0500 END`)
-    // })
-    //
-    // /*
-    //  * @tc.number    : SUB_NOTIFICATION_ANS_COUNT_TEST_Static_0600
-    //  * @tc.name      : SUB_NOTIFICATION_ANS_COUNT_TEST_Static_0600
-    //  * @tc.desc      : Obtains an array of active notifications
-    //  */
-    //  
-    // it('SUB_NOTIFICATION_ANS_COUNT_TEST_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-    //   async (done: () => void): Promise<void> => {
-    //     let TAG:string = 'SUB_NOTIFICATION_ANS_COUNT_TEST_Static_0600'
-    //   console.info(`${TAG} SUB_NOTIFICATION_ANS_COUNT_TEST_Static_0600 START`)
-    //   notificationManager.getActiveNotifications(undefined).then((data) => {
-    //     console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
-    //     expect(true).assertTrue()
-    //     done()
-    //   }).catch((err: BusinessError): void => {
-    //     console.info(`${TAG} getActiveNotifications Promise err: ${err.code}`)
-    //     expect(false).assertTrue()
-    //     done()
-    //   })
-    //   console.info(`${TAG} SUB_NOTIFICATION_ANS_COUNT_TEST_Static_0600 END`)
-    // })
+
 
     /*
      * @tc.number    : SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0100
@@ -1246,28 +1119,6 @@ export default function ActsNotificationPublishTest() {
         console.info(`${TAG} SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0300 END`)
       })
 
-    // /*
-    //  * @tc.number    : SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0400
-    //  * @tc.name      : SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0400
-    //  * @tc.desc      : Obtains whether the template is supported by the system
-    //  */
-    //  
-    // it('SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-    //   async (done: () => void): Promise<void> => {
-    //   let TAG:string = 'SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0400'
-    //   console.info(`${TAG} SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0400 START`)
-    //   let templateName:string = 'test_templateName'
-    //   notificationManager.isSupportTemplate(templateName, undefined).then((data) => {
-    //     console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
-    //     expect(true).assertTrue()
-    //     done()
-    //   }).catch((err: BusinessError): void => {
-    //     console.info(`${TAG} isSupportTemplate Promise err: ${err.code}`)
-    //     expect(false).assertTrue()
-    //     done()
-    //   })
-    //   console.info(`${TAG} SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0400 END`)
-    // })
 
     console.info(TAG + 'SUB_NOTIFICATION_ANS_Publish_TEST END')
   })

@@ -91,7 +91,7 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate1_static_0100', Level.LEVEL0, async (done: (
       const uiContext = new UIContext();
       console.log('assert space')
       expect(Math.abs(Math.round(GridItem_02.top - GridItem_01.bottom) -
-        Math.round(uiContext.vp2px(10))) <= 1).assertTrue();
+        Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       console.log('GridItem_02.top - GridItem_01.bottom' + (GridItem_02.top - GridItem_01.bottom))
 
       await CommonFunc.sleep(1000);
@@ -135,9 +135,9 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate1_static_0200', Level.LEVEL0, async (done: (
 
       const uiContext = new UIContext();
       console.log('assert size')
-      expect(Math.abs(Math.round(GridItem_01.right - GridItem_01.left) - Math.round(uiContext.vp2px(114))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(GridItem_01.right - GridItem_01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(114))) <= 1).assertTrue();
       console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
-      expect(Math.abs(Math.round(GridItem_01.bottom - GridItem_01.top) - Math.round(uiContext.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(GridItem_01.bottom - GridItem_01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
       console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
 
       await CommonFunc.sleep(1000);

@@ -101,30 +101,30 @@ it('SUB_ACE_layoutWeight_flexShrink_TEST_static_0100', Level.LEVEL0, async () =>
       expect(Math.abs((Math.round(Column_layoutWeight_012.top - Column_layoutWeight_011.bottom)) - (Math.round(Column_layoutWeight_013.top - Column_layoutWeight_012.bottom))) <= 1)
         .assertTrue();
       console.log('assert space')
-      expect(Math.abs((Math.round(Column_layoutWeight_012.top - Column_layoutWeight_011.bottom)) - (Math.round(uiContext.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_012.top - Column_layoutWeight_011.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Column_layoutWeight_013.top - Column_layoutWeight_012.bottom)) - (Math.round(uiContext.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_013.top - Column_layoutWeight_012.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
         .assertTrue();
       console.log('Column_layoutWeight_012.top - Column_layoutWeight_011.bottom', +(Column_layoutWeight_012.top - Column_layoutWeight_011.bottom))
       console.log('Column_layoutWeight_013.top - Column_layoutWeight_012.bottom', +(Column_layoutWeight_013.top - Column_layoutWeight_012.bottom))
       expect(Math.abs((Column_layoutWeight_01.top) - (Column_layoutWeight_011.top)) <= 1).assertTrue();
       expect(Math.abs((Column_layoutWeight_013.bottom) - (Column_layoutWeight_01.bottom)) <= 1).assertTrue();
       console.log('assert height')
-      expect(Math.abs((Math.round(Column_layoutWeight_011.bottom - Column_layoutWeight_011.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_011.bottom - Column_layoutWeight_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.log('Column_layoutWeight_011.bottom - Column_layoutWeight_011.top', +(Column_layoutWeight_011.bottom - Column_layoutWeight_011.top))
-      expect(Math.abs((Math.round(Column_layoutWeight_012.bottom - Column_layoutWeight_012.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_012.bottom - Column_layoutWeight_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.log('Column_layoutWeight_012.bottom - Column_layoutWeight_012.top', +(Column_layoutWeight_012.bottom - Column_layoutWeight_012.top))
-      expect(Math.abs((Math.round(Column_layoutWeight_013.bottom - Column_layoutWeight_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_013.bottom - Column_layoutWeight_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.log('Column_layoutWeight_013.bottom - Column_layoutWeight_013.top', +(Column_layoutWeight_013.bottom - Column_layoutWeight_013.top))
       console.log('assert weight')
-      expect(Math.abs((Math.round(Column_layoutWeight_011.right - Column_layoutWeight_011.left)) - (Math.round(uiContext.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_011.right - Column_layoutWeight_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Column_layoutWeight_012.right - Column_layoutWeight_012.left)) - (Math.round(uiContext.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_012.right - Column_layoutWeight_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Column_layoutWeight_013.right - Column_layoutWeight_013.left)) - (Math.round(uiContext.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_013.right - Column_layoutWeight_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
       console.info('[SUB_ACE_layoutWeight_flexShrink_TEST_static_0100] END');
     });
@@ -159,30 +159,30 @@ it('SUB_ACE_layoutWeight_flexShrink_TEST_static_0200', Level.LEVEL0, async () =>
       expect(Math.abs((Math.round(Column_layoutWeight_012.top - Column_layoutWeight_011.bottom)) - (Math.round(Column_layoutWeight_013.top - Column_layoutWeight_012.bottom))) <= 1)
         .assertTrue();
       console.log('assert space')
-      expect(Math.abs((Math.round(Column_layoutWeight_012.top - Column_layoutWeight_011.bottom)) - (Math.round(uiContext.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_012.top - Column_layoutWeight_011.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Column_layoutWeight_013.top - Column_layoutWeight_012.bottom)) - (Math.round(uiContext.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_013.top - Column_layoutWeight_012.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
         .assertTrue();
       console.log('Column_layoutWeight_012.top - Column_layoutWeight_011.bottom', +(Column_layoutWeight_012.top - Column_layoutWeight_011.bottom))
       console.log('Column_layoutWeight_013.top - Column_layoutWeight_012.bottom', +(Column_layoutWeight_013.top - Column_layoutWeight_012.bottom))
       expect(Math.abs((Column_layoutWeight_01.top) - (Column_layoutWeight_011.top)) <= 1).assertTrue();
       expect(Math.abs((Column_layoutWeight_013.bottom) - (Column_layoutWeight_01.bottom)) <= 1).assertTrue();
       console.log('assert height')
-      expect(Math.abs((Math.round(Column_layoutWeight_011.bottom - Column_layoutWeight_011.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_011.bottom - Column_layoutWeight_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.log('Column_layoutWeight_011.bottom - Column_layoutWeight_011.top', +(Column_layoutWeight_011.bottom - Column_layoutWeight_011.top))
-      expect(Math.abs((Math.round(Column_layoutWeight_012.bottom - Column_layoutWeight_012.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_012.bottom - Column_layoutWeight_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.log('Column_layoutWeight_012.bottom - Column_layoutWeight_012.top', +(Column_layoutWeight_012.bottom - Column_layoutWeight_012.top))
-      expect(Math.abs((Math.round(Column_layoutWeight_013.bottom - Column_layoutWeight_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_013.bottom - Column_layoutWeight_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.log('Column_layoutWeight_013.bottom - Column_layoutWeight_013.top', +(Column_layoutWeight_013.bottom - Column_layoutWeight_013.top))
       console.log('assert weight')
-      expect(Math.abs((Math.round(Column_layoutWeight_011.right - Column_layoutWeight_011.left)) - (Math.round(uiContext.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_011.right - Column_layoutWeight_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Column_layoutWeight_012.right - Column_layoutWeight_012.left)) - (Math.round(uiContext.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_012.right - Column_layoutWeight_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Column_layoutWeight_013.right - Column_layoutWeight_013.left)) - (Math.round(uiContext.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_013.right - Column_layoutWeight_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
       console.info('[SUB_ACE_layoutWeight_flexShrink_TEST_static_0200] END');
     });
@@ -217,30 +217,30 @@ it('SUB_ACE_layoutWeight_flexShrink_TEST_static_0300', Level.LEVEL0, async () =>
       expect(Math.abs((Math.round(Column_layoutWeight_012.top - Column_layoutWeight_011.bottom)) - (Math.round(Column_layoutWeight_013.top - Column_layoutWeight_012.bottom))) <= 1)
         .assertTrue();
       console.log('assert space')
-      expect(Math.abs((Math.round(Column_layoutWeight_012.top - Column_layoutWeight_011.bottom)) - (Math.round(uiContext.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_012.top - Column_layoutWeight_011.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Column_layoutWeight_013.top - Column_layoutWeight_012.bottom)) - (Math.round(uiContext.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_013.top - Column_layoutWeight_012.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
         .assertTrue();
       console.log('Column_layoutWeight_012.top - Column_layoutWeight_011.bottom', +(Column_layoutWeight_012.top - Column_layoutWeight_011.bottom))
       console.log('Column_layoutWeight_013.top - Column_layoutWeight_012.bottom', +(Column_layoutWeight_013.top - Column_layoutWeight_012.bottom))
       expect(Math.abs((Column_layoutWeight_01.top) - (Column_layoutWeight_011.top)) <= 1).assertTrue();
       expect(Math.abs((Column_layoutWeight_013.bottom) - (Column_layoutWeight_01.bottom)) <= 1).assertTrue();
       console.log('assert height')
-      expect(Math.abs((Math.round(Column_layoutWeight_011.bottom - Column_layoutWeight_011.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_011.bottom - Column_layoutWeight_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.log('Column_layoutWeight_011.bottom - Column_layoutWeight_011.top', +(Column_layoutWeight_011.bottom - Column_layoutWeight_011.top))
-      expect(Math.abs((Math.round(Column_layoutWeight_012.bottom - Column_layoutWeight_012.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_012.bottom - Column_layoutWeight_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.log('Column_layoutWeight_012.bottom - Column_layoutWeight_012.top', +(Column_layoutWeight_012.bottom - Column_layoutWeight_012.top))
-      expect(Math.abs((Math.round(Column_layoutWeight_013.bottom - Column_layoutWeight_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_013.bottom - Column_layoutWeight_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.log('Column_layoutWeight_013.bottom - Column_layoutWeight_013.top', +(Column_layoutWeight_013.bottom - Column_layoutWeight_013.top))
       console.log('assert weight')
-      expect(Math.abs((Math.round(Column_layoutWeight_011.right - Column_layoutWeight_011.left)) - (Math.round(uiContext.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_011.right - Column_layoutWeight_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Column_layoutWeight_012.right - Column_layoutWeight_012.left)) - (Math.round(uiContext.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_012.right - Column_layoutWeight_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Column_layoutWeight_013.right - Column_layoutWeight_013.left)) - (Math.round(uiContext.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(Column_layoutWeight_013.right - Column_layoutWeight_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
         .assertTrue();
       console.info('[SUB_ACE_layoutWeight_flexShrink_TEST_static_0300] END');
     });

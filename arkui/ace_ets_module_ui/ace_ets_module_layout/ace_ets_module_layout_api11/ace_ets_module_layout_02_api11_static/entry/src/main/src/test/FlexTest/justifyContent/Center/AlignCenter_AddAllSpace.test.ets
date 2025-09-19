@@ -110,27 +110,27 @@ it('testFlexAlignCenterFlexSpaceOverflow_static', Level.LEVEL0, async () : Promi
       expect(Math.abs(Center_AddAllSpace_012.top - Center_AddAllSpace_013.top) <= 1).assertTrue();
       expect(Math.abs(Center_AddAllSpace_012.left - Center_AddAllSpace_011.right) <= 1).assertTrue();
       expect(Math.abs(Center_AddAllSpace_013.left - Center_AddAllSpace_012.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_011.top - Center_AddAllSpace_01.top)) - (Math.round(uiContext.vp2px(30)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddAllSpace_011.top - Center_AddAllSpace_01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_011.left - Center_AddAllSpace_01.left)) - (Math.round(uiContext.vp2px(30)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddAllSpace_011.left - Center_AddAllSpace_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_01.right - Center_AddAllSpace_013.right)) - (Math.round(uiContext.vp2px(30)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddAllSpace_01.right - Center_AddAllSpace_013.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_01.top - Center_AddAllSpace_01_Box.top)) - (Math.round(uiContext.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddAllSpace_01.top - Center_AddAllSpace_01_Box.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_01.left - Center_AddAllSpace_01_Box.left)) - (Math.round(uiContext.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddAllSpace_01.left - Center_AddAllSpace_01_Box.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_011.bottom - Center_AddAllSpace_011.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddAllSpace_011.bottom - Center_AddAllSpace_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_012.bottom - Center_AddAllSpace_012.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddAllSpace_012.bottom - Center_AddAllSpace_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_013.bottom - Center_AddAllSpace_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddAllSpace_013.bottom - Center_AddAllSpace_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_011.right - Center_AddAllSpace_011.left)) - (Math.round(uiContext.vp2px(440 / 3)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddAllSpace_011.right - Center_AddAllSpace_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(440 / 3)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_012.right - Center_AddAllSpace_012.left)) - (Math.round(uiContext.vp2px(440 / 3)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddAllSpace_012.right - Center_AddAllSpace_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(440 / 3)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_013.right - Center_AddAllSpace_013.left)) - (Math.round(uiContext.vp2px(440 / 3)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddAllSpace_013.right - Center_AddAllSpace_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(440 / 3)))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignCenterFlexSpaceOverflow] END');
 
@@ -169,27 +169,27 @@ it('testFlexAlignCenterFlexSpaceMeet_static', Level.LEVEL0, async () : Promise<v
       expect(Math.abs(Center_AddAllSpace_012.top - Center_AddAllSpace_013.top) <= 1).assertTrue();
       expect(Math.abs(Center_AddAllSpace_012.left - Center_AddAllSpace_011.right) <= 1).assertTrue();
       expect(Math.abs(Center_AddAllSpace_013.left - Center_AddAllSpace_012.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_011.top - Center_AddAllSpace_01.top)) - (Math.round(uiContext.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddAllSpace_011.top - Center_AddAllSpace_01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round((Center_AddAllSpace_011.left - Center_AddAllSpace_01.left) * 10) / 10) - (Math.round(uiContext.vp2px(25) * 10) / 10)) <= 1)
+      expect(Math.abs((Math.round((Center_AddAllSpace_011.left - Center_AddAllSpace_01.left) * 10) / 10) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(25) * 10) / 10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round((Center_AddAllSpace_01.right - Center_AddAllSpace_013.right) * 10) / 10) - (Math.round(uiContext.vp2px(25) * 10) / 10)) <= 1)
+      expect(Math.abs((Math.round((Center_AddAllSpace_01.right - Center_AddAllSpace_013.right) * 10) / 10) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(25) * 10) / 10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_01.top - Center_AddAllSpace_01_Box.top)) - (Math.round(uiContext.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddAllSpace_01.top - Center_AddAllSpace_01_Box.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_01.left - Center_AddAllSpace_01_Box.left)) - (Math.round(uiContext.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddAllSpace_01.left - Center_AddAllSpace_01_Box.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_011.bottom - Center_AddAllSpace_011.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddAllSpace_011.bottom - Center_AddAllSpace_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_012.bottom - Center_AddAllSpace_012.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddAllSpace_012.bottom - Center_AddAllSpace_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_013.bottom - Center_AddAllSpace_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddAllSpace_013.bottom - Center_AddAllSpace_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_011.right - Center_AddAllSpace_011.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddAllSpace_011.right - Center_AddAllSpace_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_012.right - Center_AddAllSpace_012.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddAllSpace_012.right - Center_AddAllSpace_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_013.right - Center_AddAllSpace_013.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddAllSpace_013.right - Center_AddAllSpace_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignCenterFlexSpaceMeet] END');
 

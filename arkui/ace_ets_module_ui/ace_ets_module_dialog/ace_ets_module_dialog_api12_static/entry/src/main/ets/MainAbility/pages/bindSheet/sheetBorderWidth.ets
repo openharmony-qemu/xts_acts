@@ -31,7 +31,7 @@ import {
   Axis,
   Margin,
   PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,FlexAlign,
-  ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,px2vp,SheetSize,SheetType,
+  ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,SheetSize,SheetType,
 } from '@ohos.arkui.component';
 import { edgeWidths, LengthMetrics } from '@ohos.arkui.node';
 import {

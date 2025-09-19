@@ -18,7 +18,7 @@ import router from '@ohos.router';
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
-import { HorizontalAlign,vp2px } from '@ohos.arkui.component'
+import { HorizontalAlign } from '@ohos.arkui.component'
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -88,7 +88,7 @@ it('SUB_ACE_RelativeContainer_AnchorPoint_Margin_TEST_static_0100', Level.LEVEL0
       let RelativeContainer_AnchorPoint_Margin_row2: RectValue = CommonFunc.getComponentRect('row_marginTest');
 
       console.log('assert position')
-      expect(Math.abs(RelativeContainer_AnchorPoint_Margin_row1.left - RelativeContainer_AnchorPoint_Margin_row2.left - vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(RelativeContainer_AnchorPoint_Margin_row1.left - RelativeContainer_AnchorPoint_Margin_row2.left - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
       expect(Math.abs(RelativeContainer_AnchorPoint_Margin_r1.left - RelativeContainer_AnchorPoint_Margin_row1.left) <= 1)
         .assertTrue();
 

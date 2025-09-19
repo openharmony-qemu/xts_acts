@@ -111,10 +111,10 @@ export default function swiper1() {
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipe((winLeft + Math.round(btLeft) as Int + Math.round(uiContext.vp2px(27) as Int)) as Int,
-        (Math.round(winTop + btBottom - uiContext.vp2px(10))) as Int,
-        (winLeft + Math.round(btLeft) as Int + Math.round(uiContext.vp2px(27) as Int)) as Int,
-        Math.round(winTop + btTop + uiContext.vp2px(10)) as Int);
+      await driver.swipe((winLeft + Math.round(btLeft) as Int + Math.round(UIContext.getFocusedUIContext()!.vp2px(27) as Int)) as Int,
+        (Math.round(winTop + btBottom - UIContext.getFocusedUIContext()!.vp2px(10))) as Int,
+        (winLeft + Math.round(btLeft) as Int + Math.round(UIContext.getFocusedUIContext()!.vp2px(27) as Int)) as Int,
+        Math.round(winTop + btTop + UIContext.getFocusedUIContext()!.vp2px(10)) as Int);
       await CommonFunc.sleep(5000);
 
       let strJson = inspector.getInspectorByKey('swiperText1');

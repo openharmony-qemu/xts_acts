@@ -26,7 +26,6 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
-  UserView,
   Image,
   ImageFit,
   Scroller,
@@ -96,9 +95,9 @@ export default function stackFromEndList() {
       console.info('[stackFromEndList_static_0100] listItem1.top: ' + listItem1.top);
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext()
-      console.info(`[stackFromEndList_static_0100] listItem1.top - vp2px(2) - list1.top=
-      ${(listItem1.top - uiContext.vp2px(2) - list1.top)}`);
-      expect(Math.abs(Math.floor(listItem1.top - uiContext.vp2px(2) - list1.top)) <= 1).assertTrue();
+      console.info(`[stackFromEndList_static_0100] listItem1.top - UIContext.getFocusedUIContext()!.vp2px(2) - list1.top=
+      ${(listItem1.top - UIContext.getFocusedUIContext()!.vp2px(2) - list1.top)}`);
+      expect(Math.abs(Math.floor(listItem1.top - UIContext.getFocusedUIContext()!.vp2px(2) - list1.top)) <= 1).assertTrue();
       console.info('[stackFromEndList_static_0100] END');
       done();
     });
@@ -129,9 +128,9 @@ export default function stackFromEndList() {
       console.info('[stackFromEndList_static_0200] listItem5.bottom: ' + listItem5.bottom);
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext()
-      console.info(`[stackFromEndList_static_0200] list1.bottom - vp2px(2) - listItem5.bottom=
-      ${(list1.bottom - uiContext.vp2px(2) - listItem5.bottom)}`);
-      expect(Math.abs(Math.floor(list1.bottom - uiContext.vp2px(2) - listItem5.bottom)) <= 1).assertTrue();
+      console.info(`[stackFromEndList_static_0200] list1.bottom - UIContext.getFocusedUIContext()!.vp2px(2) - listItem5.bottom=
+      ${(list1.bottom - UIContext.getFocusedUIContext()!.vp2px(2) - listItem5.bottom)}`);
+      expect(Math.abs(Math.floor(list1.bottom - UIContext.getFocusedUIContext()!.vp2px(2) - listItem5.bottom)) <= 1).assertTrue();
       console.info('[stackFromEndList_static_0200] END');
       done();
     });

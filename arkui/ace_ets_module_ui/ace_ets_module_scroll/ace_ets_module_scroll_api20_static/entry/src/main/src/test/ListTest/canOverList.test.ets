@@ -87,12 +87,12 @@ export default function canOverList() {
 
       console.info(`[canOverList_static_0100] list.top=
         ${list.top}`);
-      console.info(`[canOverList_static_0100] vp2px(30)=
-        ${(new UIContext()).vp2px(30)}`);
+      console.info(`[canOverList_static_0100] UIContext.getFocusedUIContext()!.vp2px(30)=
+        ${UIContext.getFocusedUIContext()!.vp2px(30)}`);
       console.info(`[canOverList_static_0100] listItem0.top=
         ${listItem0.top}`);
       const uiContext = new UIContext()
-      expect(Math.floor(Math.abs(listItem0.top - uiContext.vp2px(30) - list.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(listItem0.top - UIContext.getFocusedUIContext()!.vp2px(30) - list.top)) <= 1).assertTrue();
       console.info('[canOverList_static_0100] END');
       done();
     });

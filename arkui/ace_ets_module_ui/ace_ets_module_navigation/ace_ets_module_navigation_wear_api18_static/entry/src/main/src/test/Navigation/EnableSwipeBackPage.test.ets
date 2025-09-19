@@ -27,7 +27,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import {UtilsTest, startAbility, stopApplication} from "../Util.test"
-import { vp2px } from '@ohos.arkui.component'
+
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -95,7 +95,7 @@ it('EnableSwipeBackPage_static_00100', Level.LEVEL0, async (done: () => void): P
         let bottom = navRect.bottom;
         console.info('[EnableSwipeBackPage_0100] right is ', right);
         console.info('[EnableSwipeBackPage_0100] bottom is ', bottom);
-        await driver.fling({x: Math.round(vp2px(11)) as int, y: Math.round(bottom/2) as int}, {x: Math.round(right/3) as int, y: Math.round(bottom/2) as int}, 2, 40000);
+        await driver.fling({x: Math.round(UIContext.getFocusedUIContext()!.vp2px(11)) as int, y: Math.round(bottom/2) as int}, {x: Math.round(right/3) as int, y: Math.round(bottom/2) as int}, 2, 40000);
         await driver.delayMs(1000)
 
         await driver.assertComponentExist(ON.id('pushId'));
@@ -137,7 +137,7 @@ it('EnableSwipeBackPage_static_00200', Level.LEVEL0, async (done: () => void): P
         let bottom = navRect.bottom;
         console.info('[EnableSwipeBackPage_0200] right is ', right);
         console.info('[EnableSwipeBackPage_0200] bottom is ', bottom);
-        await driver.fling({x: Math.round(vp2px(11)) as int, y: Math.round(bottom/2) as int}, {x: Math.round(right/3) as int, y: Math.round(bottom/2) as int}, 2, 40000);
+        await driver.fling({x: Math.round(UIContext.getFocusedUIContext()!.vp2px(11)) as int, y: Math.round(bottom/2) as int}, {x: Math.round(right/3) as int, y: Math.round(bottom/2) as int}, 2, 40000);
         await driver.delayMs(1000)
         await driver.assertComponentExist(ON.id('enableId'));
 

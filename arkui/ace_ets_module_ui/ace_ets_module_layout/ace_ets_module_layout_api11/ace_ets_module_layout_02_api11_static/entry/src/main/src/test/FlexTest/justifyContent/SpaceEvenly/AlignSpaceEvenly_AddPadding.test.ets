@@ -109,23 +109,23 @@ it('testAlignSpaceEvenlyFlexPadMeet_static', Level.LEVEL0, async () : Promise<vo
       expect(Math.abs(SpaceEvenly_AddPadding_012.top - SpaceEvenly_AddPadding_013.top) <= 1).assertTrue();
       expect(Math.abs(SpaceEvenly_AddPadding_012.left - SpaceEvenly_AddPadding_011.right) <= 1).assertTrue();
       expect(Math.abs(SpaceEvenly_AddPadding_013.left - SpaceEvenly_AddPadding_012.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_011.top - SpaceEvenly_AddPadding_01.top)) - (Math.round(uiContext.vp2px(30)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_011.top - SpaceEvenly_AddPadding_01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_011.bottom - SpaceEvenly_AddPadding_011.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_011.bottom - SpaceEvenly_AddPadding_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_012.bottom - SpaceEvenly_AddPadding_012.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_012.bottom - SpaceEvenly_AddPadding_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_013.bottom - SpaceEvenly_AddPadding_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_013.bottom - SpaceEvenly_AddPadding_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_011.right - SpaceEvenly_AddPadding_011.left)) - (Math.round(uiContext.vp2px(440 / 3)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_011.right - SpaceEvenly_AddPadding_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(440 / 3)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_012.right - SpaceEvenly_AddPadding_012.left)) - (Math.round(uiContext.vp2px(440 / 3)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_012.right - SpaceEvenly_AddPadding_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(440 / 3)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_013.right - SpaceEvenly_AddPadding_013.left)) - (Math.round(uiContext.vp2px(440 / 3)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_013.right - SpaceEvenly_AddPadding_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(440 / 3)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_011.left - SpaceEvenly_AddPadding_01.left)) - (Math.round(uiContext.vp2px(30)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_011.left - SpaceEvenly_AddPadding_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_01.right - SpaceEvenly_AddPadding_013.right)) - (Math.round(uiContext.vp2px(30)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_01.right - SpaceEvenly_AddPadding_013.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(30)))) <= 1)
         .assertTrue();
       console.info('[testAlignSpaceEvenlyFlexPadMeet] END');
 
@@ -163,27 +163,27 @@ it('testAlignSpaceEvenlyFlexPadOverflow_static', Level.LEVEL0, async () : Promis
         .assertTrue();
       expect(Math.abs(Math.round(SpaceEvenly_AddPadding_012.top) - Math.round(SpaceEvenly_AddPadding_013.top)) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_011.top - SpaceEvenly_AddPadding_01.top)) - (Math.round(uiContext.vp2px(20)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_011.top - SpaceEvenly_AddPadding_01.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_011.right - SpaceEvenly_AddPadding_011.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_011.right - SpaceEvenly_AddPadding_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_012.right - SpaceEvenly_AddPadding_012.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_012.right - SpaceEvenly_AddPadding_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_013.right - SpaceEvenly_AddPadding_013.left)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_013.right - SpaceEvenly_AddPadding_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_011.bottom - SpaceEvenly_AddPadding_011.top)) - (Math.round(uiContext.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_011.bottom - SpaceEvenly_AddPadding_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_012.bottom - SpaceEvenly_AddPadding_012.top)) - (Math.round(uiContext.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_012.bottom - SpaceEvenly_AddPadding_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_013.bottom - SpaceEvenly_AddPadding_013.top)) - (Math.round(uiContext.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_013.bottom - SpaceEvenly_AddPadding_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_013.left - SpaceEvenly_AddPadding_012.right)) - (Math.round(uiContext.vp2px(2.5)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_013.left - SpaceEvenly_AddPadding_012.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(2.5)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_012.left - SpaceEvenly_AddPadding_011.right)) - (Math.round(uiContext.vp2px(2.5)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_012.left - SpaceEvenly_AddPadding_011.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(2.5)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_011.left - SpaceEvenly_AddPadding_01.left)) - (Math.round(uiContext.vp2px(22.5)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_011.left - SpaceEvenly_AddPadding_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(22.5)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_01.right - SpaceEvenly_AddPadding_013.right)) - (Math.round(uiContext.vp2px(22.5)))) <= 1)
+      expect(Math.abs((Math.round(SpaceEvenly_AddPadding_01.right - SpaceEvenly_AddPadding_013.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(22.5)))) <= 1)
         .assertTrue();
       console.info('[testAlignSpaceEvenlyFlexPadOverflow] END');
 

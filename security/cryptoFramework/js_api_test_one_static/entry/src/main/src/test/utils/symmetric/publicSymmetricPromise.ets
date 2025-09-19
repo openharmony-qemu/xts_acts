@@ -484,7 +484,7 @@ async function encryptAndDecryptNormalProcessSuperdata(
   let decryptMode = cryptoFramework.CryptoMode.DECRYPT_MODE;
   let t: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz",n = t.length,s="";
   for (let i = 0; i < globalTextLen; i++) {
-    globalText += t.charAt(Math.floor(Math.random() * n));
+    globalText += t.charAt(Math.floor(Math.random() * n).toInt());
   }
 
   return new Promise<boolean>((resolve, reject) => {

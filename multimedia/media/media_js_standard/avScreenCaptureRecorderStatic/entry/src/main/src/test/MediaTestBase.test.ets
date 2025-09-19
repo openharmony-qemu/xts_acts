@@ -233,15 +233,14 @@ export default class MediaTestBase {
         break;
       case 'createAVPlayer':
         steps.shift();
-        let sampleRate: int = avConfig.audioSampleRate! as int;
-        this.AvPlayerMp4(this.outputName, sampleRate, done)
+        this.AvPlayerMp4(this.outputName, avConfig, done)
         break;
       default:
         break;
     }
   }
 
-  AvPlayerMp4(outputName: string, audioSampleRate: number, done: () => void) {
+  AvPlayerMp4(outputName: string, avConfig: media.AVScreenCaptureRecordConfig, done: () => void) {
     media.createAVPlayer((err: BusinessError<void> | null, video: media.AVPlayer | undefined) => {
       console.info(`case media err: ${err}`)
       if (typeof (video) != 'undefined') {
@@ -287,7 +286,7 @@ export default class MediaTestBase {
               break;
             case 'prepared':
               if (this.avPlayer != null) {
-                this.getTrackDescriptionTest(this.avPlayer!!, audioSampleRate, done)
+                this.getTrackDescriptionTest(this.avPlayer!!, avConfig, done)
               }
               this.avPlayer?.play().then(() => {
                 console.info('Succeeded in playing');
@@ -297,7 +296,7 @@ export default class MediaTestBase {
               break;
             case 'playing':
               if (this.avPlayer != null) {
-                this.getTrackDescriptionTest(this.avPlayer!!, audioSampleRate, done)
+                this.getTrackDescriptionTest(this.avPlayer!!, avConfig, done)
               }
 
               this.avPlayer?.stop().then(() => {
@@ -345,14 +344,15 @@ export default class MediaTestBase {
 
   }
 
-  getTrackDescriptionTest(avPlayer: media.AVPlayer, audioSampleRate: number, done: () => void) {
+  getTrackDescriptionTest(avPlayer: media.AVPlayer, avConfig: media.AVScreenCaptureRecordConfig, done: () => void) {
 
     avPlayer?.getTrackDescription((error: BusinessError | null, arrList: Array<media.MediaDescription> | undefined) => {
       if (arrList != null) {
         for (let i = 0; i < arrList.length; i++) {
           console.info(`case getTrackDescription is ${JSON.stringify(arrList[i])}`);
           if (arrList[i]!!['codec_mime']?.toString() == "audio/mp4a-latm") {
-            expect(arrList[i]['bitrate']).assertLess(audioSampleRate / 3)
+            expect(new Double(arrList[i]['bitrate']!.toString()) / 3).assertLess(avConfig.audioBitrate!);
+            expect(new Double(arrList[i]['sample_rate']!.toString())).assertEqual(avConfig.audioSampleRate);
           }
         }
         done();
