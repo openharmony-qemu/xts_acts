@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -190,6 +190,7 @@ namespace ArkUICapiTest {
 #define PARAM_255 255
 #define PARAM_3_POINT_25 3.25
 #define ON_ACCESSIBILITY_ACTIONS_EVENT_ID 6040
+#define EPSILON (1.0e-6)
 
 /**
  * Log print domain.
@@ -257,6 +258,22 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
 #define ASSERT_OBJ(result, expect)                                                                                     \
     do {                                                                                                               \
         if ((result) != (expect)) {                                                                                    \
+            napi_value errorResult = nullptr;                                                                          \
+            return errorResult;                                                                                        \
+        }                                                                                                              \
+    } while (0)
+
+#define ASSERT_NOTNULL(result)                                                                                     \
+    do {                                                                                                               \
+        if ((result) == nullptr) {                                                                                    \
+            napi_value errorResult = nullptr;                                                                          \
+            return errorResult;                                                                                        \
+        }                                                                                                              \
+    } while (0)
+
+#define ASSERT_FLOATEQ(result, expect)                                                                                 \
+    do {                                                                                                               \
+        if (abs((result) - (expect)) > EPSILON) {                                                                      \
             napi_value errorResult = nullptr;                                                                          \
             return errorResult;                                                                                        \
         }                                                                                                              \
