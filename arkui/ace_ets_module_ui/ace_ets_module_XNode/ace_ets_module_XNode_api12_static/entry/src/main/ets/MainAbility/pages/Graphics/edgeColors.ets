@@ -62,7 +62,7 @@ struct edgeColorsExample {
         .onClick((e:ClickEvent) => {
           renderNode.borderColor = edgeColors(0xFF0000FF)
           renderNode.invalidate()
-          this.edgeColorsValue = renderNode.borderColor.left
+          this.edgeColorsValue = renderNode.borderColor!.left
         })
     }
   }
