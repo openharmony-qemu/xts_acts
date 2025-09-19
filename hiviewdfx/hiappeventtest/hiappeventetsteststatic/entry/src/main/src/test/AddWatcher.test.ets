@@ -249,89 +249,89 @@ export default function addWatcherTest() {
       }
     })
 
-            /**
-         * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0100
-         * @tc.name testHiAppEventSetPam01
-         * @tc.desc 验证setEventParam接口可设置事件关联自定义参数,并通过onReceive回调获取
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
-         */
-        it('testHiAppEventSetPam01', Level.LEVEL3, async (done: () => void): Promise<void> => {
-            hilog.info(logDomain, tag, 'testHiAppEvent011 start');
-            try {
-                let holder: hiAppEvent.AppEventPackageHolder = hiAppEvent.addWatcher({
-                    name: "watcher2",
-                    appEventFilters: [
-                        {
-                            domain: hiAppEvent.domain.OS,
-                            names: [hiAppEvent.event.APP_CRASH]
-                        }
-                    ],
-                });
-                if (holder != null) {
-                    let eventPkg: hiAppEvent.AppEventPackage | null = null;
-                    while ((eventPkg = holder.takeNext()) != null) {
-                        if (eventPkg !== null) { //
-                            hilog.info(logDomain, tag, `eventPkg.packageId=${eventPkg.packageId}`);
-                            hilog.info(logDomain, tag, `eventPkg.row=${eventPkg.row}`);
-                            hilog.info(logDomain, tag, `eventPkg.size=${eventPkg.size}`);
-                            for (const eventInfo of eventPkg.data) {
-                                if (eventInfo !== null) {
-                                    hilog.info(logDomain, tag, `eventPkg.data=${eventInfo}`);
-                                }
+    /**
+     * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_2200
+     * @tc.name testHiAppEventSetPam22
+     * @tc.desc 验证setEventParam接口可设置事件关联自定义参数,并通过onReceive回调获取
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it('testHiAppEventSetPam22', Level.LEVEL3, async (done: () => void): Promise<void> => {
+        hilog.info(logDomain, tag, 'testHiAppEventSetPam22 start');
+        try {
+            let holder: hiAppEvent.AppEventPackageHolder = hiAppEvent.addWatcher({
+                name: "watcher2",
+                appEventFilters: [
+                    {
+                        domain: hiAppEvent.domain.OS,
+                        names: [hiAppEvent.event.APP_CRASH]
+                    }
+                ],
+            });
+            if (holder != null) {
+                let eventPkg: hiAppEvent.AppEventPackage | null = null;
+                while ((eventPkg = holder.takeNext()) != null) {
+                    if (eventPkg !== null) { //
+                        hilog.info(logDomain, tag, `eventPkg.packageId=${eventPkg.packageId}`);
+                        hilog.info(logDomain, tag, `eventPkg.row=${eventPkg.row}`);
+                        hilog.info(logDomain, tag, `eventPkg.size=${eventPkg.size}`);
+                        for (const eventInfo of eventPkg.data) {
+                            if (eventInfo !== null) {
+                                hilog.info(logDomain, tag, `eventPkg.data=${eventInfo}`);
                             }
                         }
                     }
                 }
-                hiAppEvent.removeWatcher({ name: "watcher2" })
-                expect(true).assertTrue();
-                done();
-            } catch (err: BusinessError) {
-                hilog.error(logDomain, tag, `testHiAppEventSetPam01 > error code: ${err.code}, error msg: ${err.message}`);
-                expect(false).assertTrue();
-                done();
             }
-        })
+            hiAppEvent.removeWatcher({ name: "watcher2" })
+            expect(true).assertTrue();
+            done();
+        } catch (err: BusinessError) {
+            hilog.error(logDomain, tag, `testHiAppEventSetPam22 > error code: ${err.code}, error msg: ${err.message}`);
+            expect(false).assertTrue();
+            done();
+        }
+    })
 
-        /**
-         * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0200
-         * @tc.name testHiAppEventSetPam01
-         * @tc.desc 验证setEventParam接口可设置事件关联自定义参数,并通过onReceive回调获取
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
-         */
-        it('testHiAppEventSetPam02', Level.LEVEL3, async (done: () => void): Promise<void> => {
-            hilog.info(logDomain, tag, 'testHiAppEventSetPam02 start');
-            try {
-                hiAppEvent.addWatcher({
-                    name: "watcher3",
-                    appEventFilters: [
-                        {
-                            domain: hiAppEvent.domain.OS,
-                            names: [hiAppEvent.event.APP_CRASH]
-                        }
-                    ],
-                    onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
-                        hilog.info(logDomain, tag, `domain=${domain}`);
-                        for (const eventGroup of appEventGroups) {
-                            hilog.info(logDomain, tag, `eventName=${eventGroup.name}`);
-                            for (const eventInfo of eventGroup.appEventInfos) {
-                                hilog.info(logDomain, tag, `event=${JSON.stringify(eventInfo)}`, );
-                            }
+    /**
+     * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_2300
+     * @tc.name testHiAppEventSetPam23
+     * @tc.desc 验证setEventParam接口可设置事件关联自定义参数,并通过onReceive回调获取
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it('testHiAppEventSetPam23', Level.LEVEL3, async (done: () => void): Promise<void> => {
+        hilog.info(logDomain, tag, 'testHiAppEventSetPam23 start');
+        try {
+            hiAppEvent.addWatcher({
+                name: "watcher3",
+                appEventFilters: [
+                    {
+                        domain: hiAppEvent.domain.OS,
+                        names: [hiAppEvent.event.APP_CRASH]
+                    }
+                ],
+                onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
+                    hilog.info(logDomain, tag, `domain=${domain}`);
+                    for (const eventGroup of appEventGroups) {
+                        hilog.info(logDomain, tag, `eventName=${eventGroup.name}`);
+                        for (const eventInfo of eventGroup.appEventInfos) {
+                            hilog.info(logDomain, tag, `event=${JSON.stringify(eventInfo)}`, );
                         }
                     }
-                });
-                hiAppEvent.removeWatcher({ name: "watcher3" })
-                expect(true).assertTrue();
-                done();
-            } catch (err: BusinessError) {
-                hilog.error(logDomain, tag, `testHiAppEventSetPam01 > error code: ${err.code}, error msg: ${err.message}`);
-                expect(false).assertTrue();
-                done();
-            }
-        })
+                }
+            });
+            hiAppEvent.removeWatcher({ name: "watcher3" })
+            expect(true).assertTrue();
+            done();
+        } catch (err: BusinessError) {
+            hilog.error(logDomain, tag, `testHiAppEventSetPam23 > error code: ${err.code}, error msg: ${err.message}`);
+            expect(false).assertTrue();
+            done();
+        }
+    })
 
     /**
      * @tc.number SUB_DFX_DFT_HiAppEvent_Sub_6700
