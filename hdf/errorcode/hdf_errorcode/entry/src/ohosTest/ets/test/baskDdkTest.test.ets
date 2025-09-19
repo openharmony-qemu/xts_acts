@@ -20,12 +20,12 @@ export default function ActsBaseDDkTest() {
   describe('ActsBaseDDkTest', () => {
 
     /**
-     * @tc.number  : SUB_Driver_Ext_DdkMapAshmemAddress_0200
-     * @tc.name    : SUB_Driver_Ext_DdkMapAshmemAddress_0200
-     * @tc.desc    : Test DdkMapAshmemAddress.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.number   SUB_Driver_Ext_DdkMapAshmemAddress_0200
+     * @tc.name     SUB_Driver_Ext_DdkMapAshmemAddress_0200
+     * @tc.desc     Test DdkMapAshmemAddress.
+     * @tc.level    Level1
+     * @tc.size     MediumTest
+     * @tc.type     Function
      */
     it('SUB_Driver_Ext_DdkMapAshmemAddress_0200', Level.LEVEL1, async (done: Function) => {
       try {
@@ -41,12 +41,12 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_DdkMapAshmemSize_0300
-     * @tc.name    : SUB_Driver_Ext_DdkMapAshmemSize_0300
-     * @tc.desc    : Test DdkMapAshmemSize.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.number   SUB_Driver_Ext_DdkMapAshmemSize_0300
+     * @tc.name     SUB_Driver_Ext_DdkMapAshmemSize_0300
+     * @tc.desc     Test DdkMapAshmemSize.
+     * @tc.level    Level1
+     * @tc.size     MediumTest
+     * @tc.type     Function
      */
     it('SUB_Driver_Ext_DdkMapAshmemSize_0300', Level.LEVEL1, async (done: Function) => {
       try {
@@ -62,12 +62,12 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_DdkMapAshmemOffset_0400
-     * @tc.name    : SUB_Driver_Ext_DdkMapAshmemOffset_0400
-     * @tc.desc    : Test DdkMapAshmemOffset.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.number   SUB_Driver_Ext_DdkMapAshmemOffset_0400
+     * @tc.name     SUB_Driver_Ext_DdkMapAshmemOffset_0400
+     * @tc.desc     Test DdkMapAshmemOffset.
+     * @tc.level    Level1
+     * @tc.size     MediumTest
+     * @tc.type     Function
      */
     it('SUB_Driver_Ext_DdkMapAshmemOffset_0400', Level.LEVEL1, async (done: Function) => {
       try {
@@ -83,12 +83,12 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_DdkMapAshmemBufferLength_0500
-     * @tc.name    : SUB_Driver_Ext_DdkMapAshmemBufferLength_0500
-     * @tc.desc    : Test DdkMapAshmemBufferLength.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.number   SUB_Driver_Ext_DdkMapAshmemBufferLength_0500
+     * @tc.name     SUB_Driver_Ext_DdkMapAshmemBufferLength_0500
+     * @tc.desc     Test DdkMapAshmemBufferLength.
+     * @tc.level    Level1
+     * @tc.size     MediumTest
+     * @tc.type     Function
      */
     it('SUB_Driver_Ext_DdkMapAshmemBufferLength_0500', Level.LEVEL1, async (done: Function) => {
       try {
@@ -104,12 +104,12 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_DdkMapAshmemTransferredLength_0600
-     * @tc.name    : SUB_Driver_Ext_DdkMapAshmemTransferredLength_0600
-     * @tc.desc    : Test DdkMapAshmemTransferredLength.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.number   SUB_Driver_Ext_DdkMapAshmemTransferredLength_0600
+     * @tc.name     SUB_Driver_Ext_DdkMapAshmemTransferredLength_0600
+     * @tc.desc     Test DdkMapAshmemTransferredLength.
+     * @tc.level    Level1
+     * @tc.size     MediumTest
+     * @tc.type     Function
      */
     it('SUB_Driver_Ext_DdkMapAshmemTransferredLength_0600', Level.LEVEL1, async (done: Function) => {
       try {
@@ -125,12 +125,12 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_DdkMapAshmemFailure_0700
-     * @tc.name    : SUB_Driver_Ext_DdkMapAshmemFailure_0700
-     * @tc.desc    : Test DdkMapAshmemFailure.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.number   SUB_Driver_Ext_DdkMapAshmemFailure_0700
+     * @tc.name     SUB_Driver_Ext_DdkMapAshmemFailure_0700
+     * @tc.desc     Test DdkMapAshmemFailure.
+     * @tc.level    Level1
+     * @tc.size     MediumTest
+     * @tc.type     Function
      */
     it('SUB_Driver_Ext_DdkMapAshmemFailure_0700', Level.LEVEL1, async (done: Function) => {
       try {
@@ -146,12 +146,12 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_DdkMapAshmemInvalidParameter_0800
-     * @tc.name    : SUB_Driver_Ext_DdkMapAshmemInvalidParameter_0800
-     * @tc.desc    : Test DdkMapAshmemInvalidParameter.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.number   SUB_Driver_Ext_DdkMapAshmemInvalidParameter_0800
+     * @tc.name     SUB_Driver_Ext_DdkMapAshmemInvalidParameter_0800
+     * @tc.desc     Test DdkMapAshmemInvalidParameter.
+     * @tc.level    Level1
+     * @tc.size     MediumTest
+     * @tc.type     Function
      */
     it('SUB_Driver_Ext_DdkMapAshmemInvalidParameter_0800', Level.LEVEL1, async (done: Function) => {
       try {
@@ -167,12 +167,12 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_DdkMapAshmemInvalidOperation_0900
-     * @tc.name    : SUB_Driver_Ext_DdkMapAshmemInvalidOperation_0900
-     * @tc.desc    : Test DdkMapAshmemInvalidOperation.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.number   SUB_Driver_Ext_DdkMapAshmemInvalidOperation_0900
+     * @tc.name     SUB_Driver_Ext_DdkMapAshmemInvalidOperation_0900
+     * @tc.desc     Test DdkMapAshmemInvalidOperation.
+     * @tc.level    Level1
+     * @tc.size     MediumTest
+     * @tc.type     Function
      */
     it('SUB_Driver_Ext_DdkMapAshmemInvalidOperation_0900', Level.LEVEL1, async (done: Function) => {
       try {
@@ -188,12 +188,12 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_DdkMapAshmemNullPTR_1000
-     * @tc.name    : SUB_Driver_Ext_DdkMapAshmemNullPTR_1000
-     * @tc.desc    : Test DdkMapAshmemNullPTR.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.number   SUB_Driver_Ext_DdkMapAshmemNullPTR_1000
+     * @tc.name     SUB_Driver_Ext_DdkMapAshmemNullPTR_1000
+     * @tc.desc     Test DdkMapAshmemNullPTR.
+     * @tc.level    Level1
+     * @tc.size     MediumTest
+     * @tc.type     Function
      */
     it('SUB_Driver_Ext_DdkMapAshmemNullPTR_1000', Level.LEVEL1, async (done: Function) => {
       try {
