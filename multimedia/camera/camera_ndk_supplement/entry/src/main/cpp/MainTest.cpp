@@ -333,7 +333,8 @@ static napi_value SessionCanPreconfigWithRatio(napi_env env, napi_callback_info 
     return result;
 }
 
-static napi_value PhotoOutputRegisterCallback(napi_env env, napi_callback_info info) {
+static napi_value PhotoOutputRegisterCallback(napi_env env, napi_callback_info info)
+{
     return ExecuteCameraFunction(env, info, [&]() { return g_ndkCamera->PhotoOutputRegisterCallback(); });
 }
 
