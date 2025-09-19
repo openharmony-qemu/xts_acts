@@ -856,7 +856,7 @@ int32_t ConstructDataToCertChain(struct OH_Huks_CertChain **certChain, const str
             (*certChain)->certs[i].size = certChainParam->certDataSize;
             (*certChain)->certs[i].data =
                 reinterpret_cast<uint8_t *>(static_cast<char *>(HksMalloc((*certChain)->certs[i].size)));
-            memset((*certChain)->certs[i].data, 0, certChainParam->certDataSize);
+            std::fill((*certChain)->certs[i].data, (*certChain)->certs[i].data + certChainParam->certDataSize, 0);
         }
     }
     return PARAM_0;
