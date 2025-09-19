@@ -68,13 +68,13 @@ export default function bluetoothBleTest() {
             }
         })
 
-        /*
-         * @tc.number: clientCloseTest
-         * @tc.name: clientCloseTest
-         * @tc.desc: Test clientCloseTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number clientCloseTest
+         * @tc.name clientCloseTest
+         * @tc.desc Test clientCloseTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("clientCloseTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let clientDevice: ble.GattClientDevice;
@@ -107,13 +107,13 @@ export default function bluetoothBleTest() {
             done();
         })
 
-        /*
-         * @tc.number: serverCloseTest
-         * @tc.name: serverCloseTest
-         * @tc.desc: Test serverCloseTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number serverCloseTest
+         * @tc.name serverCloseTest
+         * @tc.desc Test serverCloseTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("serverCloseTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let serverDevice:ble.GattServer;
@@ -141,13 +141,13 @@ export default function bluetoothBleTest() {
             done();
         })
 
-        /*
-         * @tc.number: setBLEMtuSizeTest
-         * @tc.name: setBLEMtuSizeTest
-         * @tc.desc: Test setBLEMtuSizeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number setBLEMtuSizeTest
+         * @tc.name setBLEMtuSizeTest
+         * @tc.desc Test setBLEMtuSizeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("setBLEMtuSizeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -167,13 +167,13 @@ export default function bluetoothBleTest() {
             done();
         })
 
-        /*
-         * @tc.number: clientConnectDisconnectTest
-         * @tc.name: clientConnectDisconnectTest
-         * @tc.desc: Test clientConnectDisconnectTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number clientConnectDisconnectTest
+         * @tc.name clientConnectDisconnectTest
+         * @tc.desc Test clientConnectDisconnectTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("clientConnectDisconnectTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -203,13 +203,13 @@ export default function bluetoothBleTest() {
             done();
         })
 
-        /*
-         * @tc.number: bleConstantTest
-         * @tc.name: bleConstantTest
-         * @tc.desc: Test bleConstantTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number bleConstantTest
+         * @tc.name bleConstantTest
+         * @tc.desc Test bleConstantTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("bleConstantTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -248,13 +248,13 @@ export default function bluetoothBleTest() {
             done();
         })
 
-        /*
-         * @tc.number: bleStopBLEScanTest
-         * @tc.name: bleStopBLEScanTest
-         * @tc.desc: Test bleStopBLEScanTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number bleStopBLEScanTest
+         * @tc.name bleStopBLEScanTest
+         * @tc.desc Test bleStopBLEScanTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("bleStopBLEScanTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
