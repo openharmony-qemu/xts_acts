@@ -71,7 +71,8 @@ export default function AtomicsTest() {
                   }
                 }
                 resolve('mixed operations success');
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 console.error(`${TAG} catch error: code =>  message => ${err.message}`);
                 reject(err);
               }
@@ -90,7 +91,8 @@ export default function AtomicsTest() {
             }
             expect(Atomics.load(array, i)).assertEqual(expectedValue);
           }
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -136,7 +138,8 @@ export default function AtomicsTest() {
                   Atomics.xor(localArray, index as int, 15n);
                 }
                 resolve('Worker1 (XOR) completed');
-              } catch (err: Error) {
+              } catch (err) {
+                 err = err as Error;
                 console.error(`${TAG} catch error: code =>  message => ${err.message}`);
                 reject(new Error(`Worker1 failed: ${err.message}`));
               }
@@ -153,7 +156,8 @@ export default function AtomicsTest() {
                   Atomics.store(localArray, index as int, BigInt(index * 3));
                 }
                 resolve('Worker2 (STORE) completed');
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 console.error(`${TAG} catch error: code =>  message => ${err.message}`);
                 reject(new Error(`Worker2 failed: ${err.message}`));
               }
@@ -168,7 +172,8 @@ export default function AtomicsTest() {
                 Atomics.and(localArray, index as int, 255n);
               }
               return 'Task1 (AND) completed';
-            } catch (err: Error) {
+            } catch (err) {
+              err = err as Error;
               console.error(`${TAG} catch error: code =>  message => ${err.message}`);
               throw new Error(`Task1 failed: ${err.message}`);
             }
@@ -182,7 +187,8 @@ export default function AtomicsTest() {
                 Atomics.exchange(localArray, index as int, BigInt(index + 100));
               }
               return 'Task2 (EXCHANGE) completed';
-            } catch (err: Error) {
+            } catch (err) {
+              err = err as Error;
               console.error(`${TAG} catch error: code =>  message => ${err.message}`);
               throw new Error(`Task2 failed: ${err.message}`);
             }
@@ -196,7 +202,8 @@ export default function AtomicsTest() {
                 Atomics.or(localArray, index as int, 1n);
               }
               return 'Task3 (OR) completed';
-            } catch (err: Error) {
+            } catch (err) {
+              err = err as Error;
               console.error(`${TAG} catch error: code =>  message => ${err.message}`);
               throw new Error(`Task3 failed: ${err.message}`);
             }
@@ -210,7 +217,8 @@ export default function AtomicsTest() {
                 Atomics.sub(localArray, index as int, 10n);
               }
               return 'Task4 (SUB) completed';
-            } catch (err: Error) {
+            } catch (err) {
+              err = err as Error;
               console.error(`${TAG} catch error: code =>  message => ${err.message}`);
               throw new Error(`Task4 failed: ${err.message}`);
             }
@@ -228,7 +236,8 @@ export default function AtomicsTest() {
             expect(Number(finalValue) >= -1000).assertTrue();
             expect(Number(finalValue) <= 1000).assertTrue();
           }
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -268,7 +277,8 @@ export default function AtomicsTest() {
           expect(result).assertEqual('ok');
           expect(array[0]).assertEqual(42);
           await task;
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -302,7 +312,8 @@ export default function AtomicsTest() {
               try {
                 Atomics.store(inputArray, 0, 2);
                 resolve(inputArray);
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 console.error(`${TAG} catch error: code =>  message => ${err.message}`);
                 reject(err);
               }
@@ -324,7 +335,8 @@ export default function AtomicsTest() {
           });
           await Promise.all([workerPromise, waitPromise]);
           expect(Atomics.load(array, 0)).assertEqual(2);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -358,7 +370,8 @@ export default function AtomicsTest() {
                 Atomics.exchange(inputArray, 0, 1n);
                 Atomics.notify(inputArray, 0);
                 resolve('exchange success');
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 console.error(`${TAG} catch error: code =>  message => ${err.message}`);
                 reject(err);
               }
@@ -381,7 +394,8 @@ export default function AtomicsTest() {
           await workerPromise;
           await waitPromise;
           expect(Atomics.load(array, 0)).assertEqual(1n)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -414,7 +428,8 @@ export default function AtomicsTest() {
           for (let i = 0; i < array.length; i++) {
             expect(array[i]).assertEqual(i);
           }
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -449,7 +464,8 @@ export default function AtomicsTest() {
                   Atomics.and(array, i, i);
                 }
                 resolve(undefined);
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 reject(err);
               }
             });
@@ -458,7 +474,8 @@ export default function AtomicsTest() {
           for (let i = 0; i < array.length; i++) {
             expect(array[i]).assertEqual(i);
           }
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -493,7 +510,8 @@ export default function AtomicsTest() {
         try {
           await taskpool.execute(compareExchangeTask, array);
           expect(array[0]).assertEqual(1);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -527,7 +545,8 @@ export default function AtomicsTest() {
                   Atomics.exchange(array, i, 1);
                 }
                 resolve('task success');
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 console.error(`${TAG} catch error: code =>  message => ${err.message}`);
                 reject(err);
               }
@@ -537,7 +556,8 @@ export default function AtomicsTest() {
           for (let i = 0; i < array.length; i++) {
             expect(Atomics.load(array, i)).assertEqual(1);
           }
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -574,7 +594,8 @@ export default function AtomicsTest() {
           for (let i = 0; i < array.length; i++) {
             expect(Atomics.load(array, i)).assertEqual(i);
           }
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -608,7 +629,8 @@ export default function AtomicsTest() {
                   Atomics.store(array, i, 1);
                 }
                 resolve('task success');
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 console.error(`${TAG} catch error: code =>  message => ${err.message}`);
                 reject(err);
               }
@@ -619,7 +641,8 @@ export default function AtomicsTest() {
           for (let i = 0; i < array.length; i++) {
             expect(Atomics.load(array, i)).assertEqual(1);
           }
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -656,7 +679,8 @@ export default function AtomicsTest() {
           for (let i = 0; i < array.length; i++) {
             expect(Atomics.load(array, i)).assertEqual(BigInt(0));
           }
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -692,7 +716,8 @@ export default function AtomicsTest() {
                   Atomics.sub(array, i, 1n);
                 }
                 resolve('task success');
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 reject(err);
               }
             });
@@ -701,7 +726,8 @@ export default function AtomicsTest() {
           for (let i = 0; i < array.length; i++) {
             expect(Atomics.load(array, i)).assertEqual(BigInt(i - 1));
           }
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -746,7 +772,8 @@ export default function AtomicsTest() {
             }
           });
           expect(Atomics.load(array, 0)).assertEqual(1)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -779,7 +806,8 @@ export default function AtomicsTest() {
                 Atomics.exchange(inputArray, 0, 1);
                 Atomics.notify(inputArray, 0);
                 resolve('exchange success');
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 console.error(`${TAG} catch error: code =>  message => ${err.message}`);
                 reject(err);
               }
@@ -802,7 +830,8 @@ export default function AtomicsTest() {
           await workerPromise;
           await waitPromise;
           expect(Atomics.load(array, 0)).assertEqual(1)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -847,7 +876,8 @@ export default function AtomicsTest() {
           });
 
           expect(Atomics.load(array, 0)).assertEqual(1)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -893,7 +923,8 @@ export default function AtomicsTest() {
           });
           expect(Atomics.load(array, 0)).assertEqual(1)
 
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -931,7 +962,8 @@ export default function AtomicsTest() {
                 }, 3000);
                 Atomics.exchange(inputArray, 0, 1n);
                 resolve('exchange success');
-              } catch (err: Error) {
+              } catch (err) {
+                err = err as Error;
                 console.error(`${TAG} catch error: code =>  message => ${err.message}`);
                 reject(err);
               }
@@ -949,7 +981,8 @@ export default function AtomicsTest() {
             }
           });
           expect(Atomics.load(array, 0)).assertEqual(1n)
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1019,7 +1052,8 @@ export default function AtomicsTest() {
           }
           await Promise.all([...waitTasks, ...notifyTasks]);
           expect(Atomics.load(sharedArray, 0)).assertEqual(0n);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1088,7 +1122,8 @@ export default function AtomicsTest() {
           }
           await Promise.all([...waitTasks, ...notifyTasks]);
           expect(Atomics.load(sharedArray, 0)).assertEqual(1n);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1152,7 +1187,8 @@ export default function AtomicsTest() {
             const finalValue = Atomics.load(sharedArray, i);
             expect(finalValue).assertEqual(BigInt(i + 1));
           }
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
