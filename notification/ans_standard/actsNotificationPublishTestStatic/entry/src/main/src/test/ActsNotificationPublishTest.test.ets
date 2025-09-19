@@ -833,6 +833,7 @@ export default function ActsNotificationPublishTest() {
     it('Sub_Notification_Ans_Publish_Cancel_Static_2950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         count = 0;
+        await Utils.msSleep(1000)
         let TAG:string = 'Sub_Notification_Ans_Publish_Cancel_Static_2950'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_Static_2950 START`)
         let id: int = 1

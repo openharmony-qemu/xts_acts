@@ -207,6 +207,7 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_8450', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_8450 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_8450 START')
       await notificationManager.addSlot(notificationManager.SlotType.UNKNOWN_TYPE).then(() => {
         console.info(`${TAG} addSlot_6 Promise success`)

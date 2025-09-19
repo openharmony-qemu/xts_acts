@@ -106,8 +106,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
                       done()
                     } else {
                       console.info(TAG+`abortCommonEvent_9 success`)
-                      count++;
-                      expect(count).assertEqual(1);
+                      expect(count).assertEqual(0);
                     }
                   })
                 }
@@ -137,16 +136,14 @@ export default function ActsCommonEventManagerSubscribeTest() {
                 done()
               } else {
                 console.info(TAG+`clearAbortCommonEvent_9 success`)
-                count++;
-                expect(count).assertEqual(1);
+                expect(count).assertEqual(0);
               }
             })
 
             count = 0;
             await subscriber.finishCommonEvent().then(() => {
               console.info(TAG+`finishCommonEvent_2 success `)
-              count++;
-              expect(count).assertEqual(1);
+              expect(count).assertEqual(0);
               done()
             }).catch((err:BusinessError):void => {
               console.info(TAG+`finishCommonEvent_2 err, error code: ${err.code}, message: ${err.message}`)
