@@ -1258,7 +1258,6 @@ export default function ErrorCodeRdbStore21Test() {
      * @tc.type        Function
      * @tc.level       Level 2
      */
-
     it('RelationStoreError21Test0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError21Test0038 start *************');
       const valueBucket:data_relationalStore.ValuesBucket = {
