@@ -26,7 +26,7 @@ export default function abilityTest() {
     /*
     * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0100
     * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0100
-    * @tc.desc    on(accessibilityStateChange)
+    * @tc.desc    onAccessibilityStateChange
     * @tc.size    MEDIUMTEST
     * @tc.type    User
     * @tc.level   Level 1
@@ -37,8 +37,8 @@ export default function abilityTest() {
         expect(data).assertEqual(false);
       }
       try {
-        accessibility.on('accessibilityStateChange', callbackdata);
-        accessibility.off('accessibilityStateChange', callbackdata);
+        accessibility.onAccessibilityStateChange(callbackdata);
+        accessibility.offAccessibilityStateChange(callbackdata);
         done();
       } catch (error) {
         hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0100 failed');
@@ -50,7 +50,7 @@ export default function abilityTest() {
     /*
     * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0200
     * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0200
-    * @tc.desc    on(touchGuideStateChange)
+    * @tc.desc    onTouchGuideStateChange
     * @tc.size    MEDIUMTEST
     * @tc.type    User
     * @tc.level   Level 1
@@ -61,8 +61,8 @@ export default function abilityTest() {
         expect(data).assertEqual(false);
       }
       try {
-        accessibility.on('touchGuideStateChange', callbackdata);
-        accessibility.off('touchGuideStateChange', callbackdata);
+        accessibility.onTouchGuideStateChange(callbackdata);
+        accessibility.offTouchGuideStateChange(callbackdata);
         done();
       } catch (error) {
         hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0200 failed');
@@ -74,7 +74,7 @@ export default function abilityTest() {
     /*
      * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0300
      * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0300
-     * @tc.desc    on(screenReaderStateChange)
+     * @tc.desc    onScreenReaderStateChange
      * @tc.size    MEDIUMTEST
      * @tc.type    User
      * @tc.level   Level 0
@@ -86,8 +86,8 @@ export default function abilityTest() {
         expect(data).assertEqual(false);
       }
       try {
-        accessibility.on('screenReaderStateChange', callbackdata);
-        accessibility.off('screenReaderStateChange', callbackdata);
+        accessibility.onScreenReaderStateChange(callbackdata);
+        accessibility.offScreenReaderStateChange(callbackdata);
         done();
       } catch (error) {
         hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0300 failed');
