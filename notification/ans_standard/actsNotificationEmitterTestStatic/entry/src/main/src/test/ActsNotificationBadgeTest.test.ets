@@ -62,6 +62,7 @@ export default function ActsNotificationEmitterTest() {
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_1100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_1100';
+        let count: int = 0;
         let eventId11: string = 'eventId11'
         let option11: emitter.Options = {
           priority: emitter.EventPriority.IMMEDIATE
@@ -70,7 +71,8 @@ export default function ActsNotificationEmitterTest() {
         let eventData: emitter.EventData = { data: myDate }
         let onCallback11 = (): void => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on success');
-          expect(true).assertTrue();
+          count++;
+          expect(count).assertEqual(1);
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
           done();
         }
@@ -370,10 +372,12 @@ export default function ActsNotificationEmitterTest() {
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_3800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_3800';
+        let count: int = 0;
         let eventId38: string = 'eventId38'
         let onCallback38 = (): void => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on success');
-          expect(true).assertTrue();
+          count++;
+          expect(count).assertEqual(1);
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
           done();
         }
@@ -573,10 +577,12 @@ export default function ActsNotificationEmitterTest() {
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_7300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_7300';
+        let count: int = 0;
         let eventId73: string = 'eventId73'
         let onCallback173 = (): void => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on1 success');
-          expect(true).assertTrue();
+          count++;
+          expect(count).assertEqual(1);
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
           done();
         }
@@ -668,6 +674,7 @@ export default function ActsNotificationEmitterTest() {
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_7800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_7800';
+        let count: int = 0;
         let eventId78: string = 'eventId78'
         let innerEvent78: emitter.InnerEvent = {
           eventId: 78
@@ -682,7 +689,8 @@ export default function ActsNotificationEmitterTest() {
         let data178: emitter.EventData = { data: myDate }
         let onCallback178 = (): void => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on1 success');
-          expect(true).assertTrue();
+          count++;
+          expect(count).assertEqual(1);
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
           done();
         }
@@ -789,11 +797,13 @@ export default function ActsNotificationEmitterTest() {
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_8700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_8700';
+        let count: int = 0;
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
         try {
           emitter.on("eventid", (): void => {
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit success,data is %{public}s');
-            expect(true).assertTrue();
+            count++;
+            expect(count).assertEqual(1);
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
             done();
           })

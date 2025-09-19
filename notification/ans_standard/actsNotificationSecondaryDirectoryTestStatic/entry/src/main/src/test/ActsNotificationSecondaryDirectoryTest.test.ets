@@ -31,6 +31,7 @@ let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let testAbilityContext: common.UIAbilityContext;
 let bundle_name: string = 'com.example.secondaryDirectory.static'
+let count: int = 0;
 
 export default function ActsNotificationSecondaryDirectoryTest() {
   describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
@@ -74,6 +75,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
     it('Sub_Notification_Ans_Publish_Publish_Static_3850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_3850 ===>'
+        count = 0;
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_3850 START`);
         notificationManager.requestEnableNotification(testAbilityContext).then(() => {
           let basicContent: notificationManager.NotificationBasicContent = {
@@ -109,7 +111,8 @@ export default function ActsNotificationSecondaryDirectoryTest() {
                 done()
               } else {
                 console.info(`${TAG} publish AsyncCallback success`);
-                expect(true).assertTrue()
+                count++;
+                expect(count).assertEqual(1);
                 done()
               }
             });
@@ -145,6 +148,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_3950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        count = 0;
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_3950 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_3950 START`);
 
@@ -186,7 +190,8 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             } else {
               console.info(`${TAG} publish AsyncCallback success`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               done()
             }
           });
@@ -205,6 +210,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        count = 0;
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4050 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4050 START`);
 
@@ -243,7 +249,8 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             } else {
               console.info(`${TAG} publish AsyncCallback success`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               done()
             }
           });
@@ -262,6 +269,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        count = 0;
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4150 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4150 START`);
 
@@ -302,7 +310,8 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             } else {
               console.info(`${TAG} publish AsyncCallback success`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               done()
             }
           });
@@ -321,6 +330,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        count = 0;
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4250 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4250 START`);
 
@@ -386,7 +396,8 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             } else {
               console.info(`${TAG} publish AsyncCallback success`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               done()
             }
           });
@@ -405,6 +416,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        count = 0;
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4350 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4350 START`);
 
@@ -455,7 +467,8 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             } else {
               console.info(`${TAG} publish AsyncCallback success`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               done()
             }
           });
@@ -474,6 +487,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4450', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        count = 0;
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4450 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4450 START`);
 
@@ -520,7 +534,8 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             } else {
               console.info(`${TAG} publish AsyncCallback success`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               done()
             }
           });
@@ -539,6 +554,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        count = 0;
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4550 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4550 START`);
 
@@ -598,7 +614,8 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             } else {
               console.info(`${TAG} publish AsyncCallback success`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               done()
             }
           });

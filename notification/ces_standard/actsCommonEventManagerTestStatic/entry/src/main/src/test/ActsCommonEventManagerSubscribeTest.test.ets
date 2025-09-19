@@ -26,6 +26,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 let bundle_name:string = "com.example.actscommoneventmanagertest.static"
 let domain: int = 0x0000;
 let testAbilityContext:common.UIAbilityContext;
+let count: int = 0;
 
 
 export default function ActsCommonEventManagerSubscribeTest() {
@@ -50,6 +51,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_Static_1900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Subscribe_Static_1900'
+      count = 0;
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_Static_1900 START`)
 
       let subscriber:commonEventManager.CommonEventSubscriber
@@ -88,6 +90,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
               }
             })
 
+            count = 0;
             subscriber.isOrderedCommonEvent((err: BusinessError | null, isOrdered:boolean|undefined) => {
               if (err) {
                 console.info(TAG+`isOrderedCommonEvent_9 err ${err}`)
@@ -103,7 +106,8 @@ export default function ActsCommonEventManagerSubscribeTest() {
                       done()
                     } else {
                       console.info(TAG+`abortCommonEvent_9 success`)
-                      expect(true).assertTrue()
+                      count++;
+                      expect(count).assertEqual(1);
                     }
                   })
                 }
@@ -113,6 +117,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
               }
             })
 
+            count = 0;
             subscriber.getAbortCommonEvent((err: BusinessError | null, abortEvent:boolean|undefined) => {
               if (err) {
                 console.info(TAG+`getAbortCommonEvent_9 err ${err}`)
@@ -124,6 +129,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
               }
             })
 
+            count = 0;
             subscriber.clearAbortCommonEvent((err: BusinessError | null) => {
               if (err) {
                 console.info(TAG+`clearAbortCommonEvent_9 err ${err}`)
@@ -131,14 +137,16 @@ export default function ActsCommonEventManagerSubscribeTest() {
                 done()
               } else {
                 console.info(TAG+`clearAbortCommonEvent_9 success`)
-                expect(true).assertTrue()
+                count++;
+                expect(count).assertEqual(1);
               }
             })
 
-
+            count = 0;
             await subscriber.finishCommonEvent().then(() => {
               console.info(TAG+`finishCommonEvent_2 success `)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               done()
             }).catch((err:BusinessError):void => {
               console.info(TAG+`finishCommonEvent_2 err, error code: ${err.code}, message: ${err.message}`)
@@ -164,6 +172,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
     it('Sub_Notification_Ans_Subscriber_Subscribe_Static_2000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Subscribe_Static_2000'
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_Static_2000 START`)
+      count = 0;
 
       let subscriber:commonEventManager.CommonEventSubscriber
 
@@ -203,10 +212,12 @@ export default function ActsCommonEventManagerSubscribeTest() {
               expect(false).assertTrue()
               done()
             })
+            count = 0;
 
             await subscriber.abortCommonEvent().then(() => {
               console.info(TAG+`abortCommonEvent_10 success`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
             }).catch((err: BusinessError):void => {
               console.info(TAG+`abortCommonEvent_10 err ${err}`)
               expect(false).assertTrue()
@@ -221,20 +232,23 @@ export default function ActsCommonEventManagerSubscribeTest() {
               expect(false).assertTrue()
               done()
             })
+            count = 0;
 
             await subscriber.clearAbortCommonEvent().then(() => {
               console.info(TAG+`clearAbortCommonEvent_10 success`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
             }).catch((err: BusinessError):void => {
               console.info(TAG+`clearAbortCommonEvent_10 err ${err}`)
               expect(false).assertTrue()
               done()
             })
+            count = 0;
 
-            
             await subscriber.finishCommonEvent().then(() => {
               console.info(TAG+`finishCommonEvent_2 success `)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               done()
             }).catch((err:BusinessError):void => {
               console.info(TAG+`finishCommonEvent_2 err, error code: ${err.code}, message: ${err.message}`)

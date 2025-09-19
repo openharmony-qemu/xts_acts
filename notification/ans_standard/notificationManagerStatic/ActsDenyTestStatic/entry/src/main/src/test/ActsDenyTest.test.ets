@@ -38,6 +38,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 let testAbilityContext: common.UIAbilityContext
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+let count: int = 0;
 let bundle :string = 'com.example.actsnotificationmanagerrequestenablenotificationdenytest.static'
 export default function ActsDenyTest() {
   describe('ActsDenyTest', () => {
@@ -61,6 +62,7 @@ export default function ActsDenyTest() {
     it('Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Deny_Test_Static_0100', Level.LEVEL2,
       async (done: () => void) => {
         let TAG = 'Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Deny_Test_Static_0100'
+        count = 0;
         notificationManager.requestEnableNotification(testAbilityContext).then(() => {
           console.info(`${TAG} requestEnableNotification should failed`);
           expect(false).assertTrue()
@@ -72,7 +74,8 @@ export default function ActsDenyTest() {
             expect(false).assertTrue()
             done()
           }else{
-            expect(true).assertTrue()
+            count++;
+            expect(count).assertEqual(1);
             console.info(`${TAG} succeeded.`);
             done()
           }

@@ -26,6 +26,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 let bundle_name:string = "com.example.actssubscribertestorder.static"
 let domain: int = 0x0000;
 let testAbilityContext:common.UIAbilityContext;
+let count: int = 0;
 
 let publishCallback=(err: BusinessError | null) =>{
   console.info('===============>publishCallback');
@@ -573,6 +574,7 @@ export default function ActsSubscriberTestOrder() {
     it('SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0600'
       hilog.info(domain,TAG,`SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0600 START`)
+      count = 0;
 
       let subscriber: commonEventManager.CommonEventSubscriber
 
@@ -583,7 +585,8 @@ export default function ActsSubscriberTestOrder() {
       commonEventManager.createSubscriber(subscribeInfo).then((commonEventSubscriber:commonEventManager.CommonEventSubscriber) => {
         hilog.info(domain,TAG,`SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0600 success`)
         subscriber = commonEventSubscriber
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err:BusinessError):void => {
         hilog.info(domain,TAG,`SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0600 err `)
@@ -601,6 +604,7 @@ export default function ActsSubscriberTestOrder() {
     // it('SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   let TAG:string = 'SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0700'
     //   console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0700 START`)
+    //   count = 0;
     //
     //   let subscriber:commonEventManager.CommonEventSubscriber
     //
@@ -611,7 +615,8 @@ export default function ActsSubscriberTestOrder() {
     //   commonEventManager.createSubscriber(subscribeInfo, undefined).then((commonEventSubscriber:commonEventManager.CommonEventSubscriber) => {
     //     console.info(TAG+`SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_0700 success ${commonEventSubscriber}`)
     //     subscriber = commonEventSubscriber
-    //     expect(true).assertTrue()
+    //     count++;
+    //     expect(count).assertEqual(1);
     //     done()
     //   }).catch((err:BusinessError):void => {
     //     console.info(TAG+

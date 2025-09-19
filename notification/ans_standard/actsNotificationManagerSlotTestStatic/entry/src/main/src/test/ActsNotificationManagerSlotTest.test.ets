@@ -58,6 +58,7 @@ export default function ActsNotificationManagerSlotTest() {
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_8200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_8200 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_8200 START')
+      let count: int = 0;
       try {
         notificationManager.addSlot(notificationManager.SlotType.UNKNOWN_TYPE, (err: BusinessError | null) => {
           if (err) {
@@ -66,7 +67,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           } else {
             console.info(`${TAG} addSlot_1 AsyncCallback success`)
-            expect(true).assertTrue()
+            count++;
+            expect(count).assertEqual(1);
             done()
           }
         })
@@ -85,6 +87,7 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_8250', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_8250 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_8250 START')
       try {
         notificationManager.addSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION, (err: BusinessError | null) => {
@@ -94,7 +97,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           } else {
             console.info(`${TAG} addSlot_2 AsyncCallback success`)
-            expect(true).assertTrue()
+            count++;
+            expect(count).assertEqual(1);
             done()
           }
         })
@@ -114,6 +118,7 @@ export default function ActsNotificationManagerSlotTest() {
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_8300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_8300 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_8300 START')
+      let count: int = 0;
       try {
         notificationManager.addSlot(notificationManager.SlotType.SERVICE_INFORMATION, (err: BusinessError | null) => {
           if (err) {
@@ -122,7 +127,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           } else {
             console.info(`${TAG} addSlot_3 AsyncCallback success`)
-            expect(true).assertTrue()
+            count++;
+            expect(count).assertEqual(1);
             done()
           }
         })
@@ -142,6 +148,7 @@ export default function ActsNotificationManagerSlotTest() {
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_8350', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_8350 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_8350 START')
+      let count: int = 0;
       try {
         notificationManager.addSlot(notificationManager.SlotType.CONTENT_INFORMATION, (err: BusinessError | null) => {
           if (err) {
@@ -150,7 +157,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           } else {
             console.info(`${TAG} addSlot_4 AsyncCallback success`)
-            expect(true).assertTrue()
+            count++;
+            expect(count).assertEqual(1);
             done()
           }
         })
@@ -169,6 +177,7 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_8400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_8400 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_8400 START')
       try {
         notificationManager.addSlot(notificationManager.SlotType.OTHER_TYPES, (err: BusinessError | null) => {
@@ -178,7 +187,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           } else {
             console.info(`${TAG} addSlot_5 AsyncCallback success`)
-            expect(true).assertTrue()
+            count++;
+            expect(count).assertEqual(1);
             done()
           }
         })
@@ -200,7 +210,8 @@ export default function ActsNotificationManagerSlotTest() {
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_8450 START')
       await notificationManager.addSlot(notificationManager.SlotType.UNKNOWN_TYPE).then(() => {
         console.info(`${TAG} addSlot_6 Promise success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot_6 Promise errCode: ${err.code}, errMes: ${err.message}`)
@@ -217,10 +228,12 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_8500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_8500 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_8500 START')
       await notificationManager.addSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION).then(() => {
         console.info(`${TAG} addSlot_7 Promise success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot_7 Promise errCode: ${err.code}, errMes: ${err.message}`)
@@ -237,10 +250,12 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_8550', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_8550 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_8550 START')
       await notificationManager.addSlot(notificationManager.SlotType.SERVICE_INFORMATION).then(() => {
         console.info(`${TAG} addSlot_8 Promise success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot_8 Promise errCode: ${err.code}, errMes: ${err.message}`)
@@ -257,10 +272,12 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_8600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_8600 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_8600 START')
       await notificationManager.addSlot(notificationManager.SlotType.CONTENT_INFORMATION).then(() => {
         console.info(`${TAG} addSlot_9 Promise success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot_9 Promise errCode: ${err.code}, errMes: ${err.message}`)
@@ -277,10 +294,12 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_8650', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_8650 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_8650 START')
       await notificationManager.addSlot(notificationManager.SlotType.OTHER_TYPES).then(() => {
         console.info(`${TAG} addSlot_10 Promise success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot_10 Promise errCode: ${err.code}, errMes: ${err.message}`)
@@ -542,6 +561,7 @@ export default function ActsNotificationManagerSlotTest() {
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_0700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_0700 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_DeleteSlot_Static_0700 START')
+      let count: int = 0;
       try {
         notificationManager.removeSlot(notificationManager.SlotType.UNKNOWN_TYPE, (err: BusinessError | null) => {
           if (err) {
@@ -550,7 +570,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           } else {
             console.info(`${TAG} removeSlot_1 success`)
-            expect(true).assertTrue()
+            count++;
+            expect(count).assertEqual(1);
             done()
           }
         })
@@ -570,6 +591,7 @@ export default function ActsNotificationManagerSlotTest() {
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_0800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_0800 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_DeleteSlot_Static_0800 START')
+      let count: int = 0;
       try {
         notificationManager.removeSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION, (err: BusinessError | null) => {
           if (err) {
@@ -578,7 +600,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           } else {
             console.info(`${TAG} removeSlot_2 success`)
-            expect(true).assertTrue()
+            count++;
+            expect(count).assertEqual(1);
             done()
           }
         })
@@ -598,6 +621,7 @@ export default function ActsNotificationManagerSlotTest() {
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_0900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_0900 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_DeleteSlot_Static_0900 START')
+      let count: int = 0;
       try {
         notificationManager.removeSlot(notificationManager.SlotType.SERVICE_INFORMATION, (err: BusinessError | null) => {
           if (err) {
@@ -606,7 +630,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           } else {
             console.info(`${TAG} removeSlot_3 success`)
-            expect(true).assertTrue()
+            count++;
+            expect(count).assertEqual(1);
             done()
           }
         })
@@ -626,6 +651,7 @@ export default function ActsNotificationManagerSlotTest() {
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_1000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1000 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1000 START')
+      let count: int = 0;
       try {
         notificationManager.removeSlot(notificationManager.SlotType.CONTENT_INFORMATION, (err: BusinessError | null) => {
           if (err) {
@@ -634,7 +660,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           } else {
             console.info(`${TAG} removeSlot_4 success`)
-            expect(true).assertTrue()
+            count++;
+            expect(count).assertEqual(1);
             done()
           }
         })
@@ -654,6 +681,7 @@ export default function ActsNotificationManagerSlotTest() {
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_1100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1100 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1100 START')
+      let count: int = 0;
       try {
         notificationManager.removeSlot(notificationManager.SlotType.OTHER_TYPES, (err: BusinessError | null) => {
           if (err) {
@@ -662,7 +690,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           } else {
             console.info(`${TAG} removeSlot_5 success`)
-            expect(true).assertTrue()
+            count++;
+            expect(count).assertEqual(1);
             done()
           }
         })
@@ -682,9 +711,11 @@ export default function ActsNotificationManagerSlotTest() {
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_1200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1200 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1200 START')
+      let count: int = 0;
       await notificationManager.removeSlot(notificationManager.SlotType.UNKNOWN_TYPE).then(() => {
         console.info(`${TAG} removeSlot_6 success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} removeSlot_6 errCode: ${err.code}, errMes: ${err.message}`)
@@ -702,9 +733,11 @@ export default function ActsNotificationManagerSlotTest() {
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_1300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1300 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1300 START')
+      let count: int = 0;
       await notificationManager.removeSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION).then(() => {
         console.info(`${TAG} removeSlot_7 success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} removeSlot_7 errCode: ${err.code}, errMes: ${err.message}`)
@@ -721,10 +754,12 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_1400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1400 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1400 START')
       await notificationManager.removeSlot(notificationManager.SlotType.SERVICE_INFORMATION).then(() => {
         console.info(`${TAG} removeSlot_8 success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} removeSlot_8 errCode: ${err.code}, errMes: ${err.message}`)
@@ -741,10 +776,12 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_1500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1500 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1500 START')
       await notificationManager.removeSlot(notificationManager.SlotType.CONTENT_INFORMATION).then(() => {
         console.info(`${TAG} removeSlot_9 success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} removeSlot_9 errCode: ${err.code}, errMes: ${err.message}`)
@@ -761,10 +798,12 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_1600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1600 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1600 START')
       await notificationManager.removeSlot(notificationManager.SlotType.OTHER_TYPES).then(() => {
         console.info(`${TAG} removeSlot_10 success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} removeSlot_10 errCode: ${err.code}, errMes: ${err.message}`)
@@ -781,10 +820,12 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_0200 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_0200 START')
       await notificationManager.addSlot(notificationManager.SlotType.UNKNOWN_TYPE).then(() => {
         console.info(`${TAG} addSlot_11 success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot_11 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
@@ -800,6 +841,7 @@ export default function ActsNotificationManagerSlotTest() {
           } else {
             console.info(`${TAG} getSlot UNKNOWN_TYPE `)
             expect(data !== null).assertTrue()
+            count = 0;
             notificationManager.removeSlot(notificationManager.SlotType.UNKNOWN_TYPE, (err: BusinessError | null) => {
               if (err) {
                 console.info(`${TAG} removeSlot UNKNOWN_TYPE errCode: ${err.code}, errMes: ${err.message}`)
@@ -807,7 +849,8 @@ export default function ActsNotificationManagerSlotTest() {
                 done()
               } else {
                 console.info(`${TAG} removeSlot UNKNOWN_TYPE success`)
-                expect(true).assertTrue()
+                count++;
+                expect(count).assertEqual(1);
                 done()
               }
             })
@@ -830,10 +873,12 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_0350', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_0350 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_0350 START')
       await notificationManager.addSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION).then(() => {
         console.info(`${TAG} addSlot_12 success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot_12 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
@@ -848,6 +893,7 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           } else {
             console.info(`${TAG} getSlot SOCIAL_COMMUNICATION ` )
+            count = 0;
             notificationManager.removeSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION, (err: BusinessError | null) => {
               if (err) {
                 console.info(`${TAG} removeSlot SOCIAL_COMMUNICATION errCode: ${err.code}, errMes: ${err.message}`)
@@ -855,7 +901,8 @@ export default function ActsNotificationManagerSlotTest() {
                 done()
               } else {
                 console.info(`${TAG} removeSlot SOCIAL_COMMUNICATION success`)
-                expect(true).assertTrue()
+                count++;
+                expect(count).assertEqual(1);
                 done()
               }
             })
@@ -878,10 +925,12 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_0500 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_0500 START')
       await notificationManager.addSlot(notificationManager.SlotType.SERVICE_INFORMATION).then(() => {
         console.info(`${TAG} addSlot_13 success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot_13 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
@@ -896,6 +945,7 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           } else {
             console.info(`${TAG} getSlot SERVICE_INFORMATION ` )
+            count = 0;
             notificationManager.removeSlot(notificationManager.SlotType.SERVICE_INFORMATION, (err: BusinessError | null) => {
               if (err) {
                 console.info(`${TAG} removeSlot SERVICE_INFORMATION errCode: ${err.code}, errMes: ${err.message}`)
@@ -903,7 +953,8 @@ export default function ActsNotificationManagerSlotTest() {
                 done()
               } else {
                 console.info(`${TAG} removeSlot SERVICE_INFORMATION success`)
-                expect(true).assertTrue()
+                count++;
+                expect(count).assertEqual(1);
                 done()
               }
             })
@@ -926,10 +977,12 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_0650', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_0650 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_0650 START')
       notificationManager.addSlot(notificationManager.SlotType.CONTENT_INFORMATION).then(() => {
         console.info(`${TAG} addSlot_14 success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot_14 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
@@ -944,6 +997,7 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           } else {
             console.info(`${TAG} getSlot CONTENT_INFORMATION ` )
+            count = 0;
             notificationManager.removeSlot(notificationManager.SlotType.CONTENT_INFORMATION, (err: BusinessError | null) => {
               if (err) {
                 console.info(`${TAG} removeSlot CONTENT_INFORMATION errCode: ${err.code}, errMes: ${err.message}`)
@@ -951,7 +1005,8 @@ export default function ActsNotificationManagerSlotTest() {
                 done()
               } else {
                 console.info(`${TAG} removeSlot CONTENT_INFORMATION success`)
-                expect(true).assertTrue()
+                count++;
+                expect(count).assertEqual(1);
                 done()
               }
             })
@@ -974,10 +1029,12 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_0800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_0800 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_0800 START')
       await notificationManager.addSlot(notificationManager.SlotType.OTHER_TYPES).then(() => {
         console.info(`${TAG} addSlot_15 success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot_15 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
@@ -992,6 +1049,7 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           } else {
             console.info(`${TAG} getSlot OTHER_TYPES ` )
+            count = 0;
             notificationManager.removeSlot(notificationManager.SlotType.OTHER_TYPES, (err: BusinessError | null) => {
               if (err) {
                 console.info(`${TAG} removeSlot OTHER_TYPES errCode: ${err.code}, errMes: ${err.message}`)
@@ -999,7 +1057,8 @@ export default function ActsNotificationManagerSlotTest() {
                 done()
               } else {
                 console.info(`${TAG} removeSlot OTHER_TYPES success`)
-                expect(true).assertTrue()
+                count++;
+                expect(count).assertEqual(1);
                 done()
               }
             })
@@ -1022,10 +1081,12 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_0950', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_0950 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_0950 START')
       await notificationManager.addSlot(notificationManager.SlotType.UNKNOWN_TYPE).then(() => {
         console.info(`${TAG} addSlot_16 success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot_16 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
@@ -1042,9 +1103,11 @@ export default function ActsNotificationManagerSlotTest() {
         done()
       })
 
+      count = 0;
       await notificationManager.removeSlot(notificationManager.SlotType.UNKNOWN_TYPE).then(() => {
         console.info(`${TAG} removeSlot UNKNOWN_TYPE success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} removeSlot UNKNOWN_TYPE err: ${err}, errMes: ${err.message}`)
@@ -1061,10 +1124,12 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_1100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_1100 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_1100 START')
       await notificationManager.addSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION).then(() => {
         console.info(`${TAG} addSlot_17 success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot_17 err: ${err}, errMes: ${err.message}`)
         expect(false).assertTrue()
@@ -1080,9 +1145,11 @@ export default function ActsNotificationManagerSlotTest() {
         done()
       })
 
+      count = 0;
       await notificationManager.removeSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION).then(() => {
         console.info(`${TAG} removeSlot SOCIAL_COMMUNICATION success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} removeSlot SOCIAL_COMMUNICATION err: ${err}, errMes: ${err.message}`)
@@ -1099,10 +1166,12 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_1250', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_1250 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_1250 START')
       await notificationManager.addSlot(notificationManager.SlotType.SERVICE_INFORMATION).then(() => {
         console.info(`${TAG} addSlot_18 success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot_18 err: ${err}, errMes: ${err.message}`)
         expect(false).assertTrue()
@@ -1118,9 +1187,11 @@ export default function ActsNotificationManagerSlotTest() {
         done()
       })
 
+      count = 0;
       await notificationManager.removeSlot(notificationManager.SlotType.SERVICE_INFORMATION).then(() => {
         console.info(`${TAG} removeSlot SERVICE_INFORMATION success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} removeSlot SERVICE_INFORMATION err: ${err}, errMes: ${err.message}`)
@@ -1137,10 +1208,12 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_1400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_1400 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_1400 START')
       await notificationManager.addSlot(notificationManager.SlotType.CONTENT_INFORMATION).then(() => {
         console.info(`${TAG} addSlot_19 success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot_19 err: ${err}, errMes: ${err.message}`)
         expect(false).assertTrue()
@@ -1155,10 +1228,11 @@ export default function ActsNotificationManagerSlotTest() {
         expect(false).assertTrue()
         done()
       })
-
+      count = 0;
       await notificationManager.removeSlot(notificationManager.SlotType.CONTENT_INFORMATION).then(() => {
         console.info(`${TAG} removeSlot CONTENT_INFORMATION success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} removeSlot CONTENT_INFORMATION err: ${err}, errMes: ${err.message}`)
@@ -1175,10 +1249,12 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_1550', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_1550 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_1550 START')
       await notificationManager.addSlot(notificationManager.SlotType.OTHER_TYPES).then(() => {
         console.info(`${TAG} addSlot_20 success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot_20 err: ${err}, errMes: ${err.message}`)
         expect(false).assertTrue()
@@ -1193,10 +1269,12 @@ export default function ActsNotificationManagerSlotTest() {
         expect(false).assertTrue()
         done()
       })
+      count = 0;
 
       await notificationManager.removeSlot(notificationManager.SlotType.OTHER_TYPES).then(() => {
         console.info(`${TAG} removeSlot OTHER_TYPES success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} removeSlot OTHER_TYPES err: ${err}, errMes: ${err.message}`)
@@ -1213,10 +1291,12 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_1700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_1700 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_1700 START')
       await notificationManager.addSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION).then(() => {
         console.info(`${TAG} addSlot_21 success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot_21 err: ${err}, errMes: ${err.message}`)
         expect(false).assertTrue()
@@ -1250,16 +1330,18 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_1850', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_1850 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_1850 START')
       await notificationManager.addSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION).then(() => {
         console.info(`${TAG} addSlot_22 success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot_22 err: ${err}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
       })
-
+      count = 0;
       try {
         notificationManager.removeSlot(notificationManager.SlotType.SERVICE_INFORMATION, (err: BusinessError | null) => {
           if (err) {
@@ -1268,7 +1350,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           } else {
             console.info(`${TAG} removeSlot success`)
-            expect(true).assertTrue()
+            count++;
+        expect(count).assertEqual(1);
             done()
           }
         })
@@ -1287,6 +1370,7 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_1700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1700 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1700 START')
       try {
         notificationManager.removeAllSlots((err: BusinessError | null) => {
@@ -1296,7 +1380,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           } else {
             console.info(`${TAG} removeAllSlots AsyncCallback success`)
-            expect(true).assertTrue()
+            count++;
+            expect(count).assertEqual(1);
             done()
           }
         })
@@ -1315,10 +1400,12 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_1800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1800 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1800 START')
       await notificationManager.removeAllSlots().then(() => {
         console.info(`${TAG} removeAllSlots Promise success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} removeAllSlots Promise err: ${err}, errMes: ${err.message}`)
@@ -1384,11 +1471,13 @@ export default function ActsNotificationManagerSlotTest() {
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_0100 '
+      let count: int = 0;
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_0100 START')
 
       await notificationManager.addSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION).then(() => {
         console.info(`${TAG} addSlot SOCIAL_COMMUNICATION success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot SOCIAL_COMMUNICATION err: ${err}, errMes: ${err.message}`)
         expect(false).assertTrue()
@@ -1396,10 +1485,12 @@ export default function ActsNotificationManagerSlotTest() {
       })
 
       await Utils.msSleep(1000);
+      count = 0;
 
       await notificationManager.addSlot(notificationManager.SlotType.SERVICE_INFORMATION).then(() => {
         console.info(`${TAG} addSlot SERVICE_INFORMATION success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot SERVICE_INFORMATION err: ${err}, errMes: ${err.message}`)
         expect(false).assertTrue()
@@ -1407,10 +1498,12 @@ export default function ActsNotificationManagerSlotTest() {
       })
 
       await Utils.msSleep(1000);
+      count = 0;
 
       await notificationManager.addSlot(notificationManager.SlotType.CONTENT_INFORMATION).then(() => {
         console.info(`${TAG} addSlot CONTENT_INFORMATION success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot CONTENT_INFORMATION err: ${err}, errMes: ${err.message}`)
         expect(false).assertTrue()
@@ -1418,10 +1511,12 @@ export default function ActsNotificationManagerSlotTest() {
       })
 
       await Utils.msSleep(1000);
+      count = 0;
 
       await notificationManager.addSlot(notificationManager.SlotType.OTHER_TYPES).then(() => {
         console.info(`${TAG} addSlot OTHER_TYPES success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot OTHER_TYPES err: ${err}, errMes: ${err.message}`)
         expect(false).assertTrue()
@@ -1477,10 +1572,12 @@ export default function ActsNotificationManagerSlotTest() {
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_0250', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_0250 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_0250 START')
+      let count: int = 0;
 
       await notificationManager.addSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION).then(() => {
         console.info(`${TAG} addSlot SOCIAL_COMMUNICATION success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot SOCIAL_COMMUNICATION err: ${err}, errMes: ${err.message}`)
         expect(false).assertTrue()
@@ -1488,10 +1585,12 @@ export default function ActsNotificationManagerSlotTest() {
       })
 
       await Utils.msSleep(1000);
+      count = 0;
 
       await notificationManager.addSlot(notificationManager.SlotType.SERVICE_INFORMATION).then(() => {
         console.info(`${TAG} addSlot SERVICE_INFORMATION success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot SERVICE_INFORMATION err: ${err}, errMes: ${err.message}`)
         expect(false).assertTrue()
@@ -1499,10 +1598,12 @@ export default function ActsNotificationManagerSlotTest() {
       })
 
       await Utils.msSleep(1000);
+      count = 0;
 
       await notificationManager.addSlot(notificationManager.SlotType.CONTENT_INFORMATION).then(() => {
         console.info(`${TAG} addSlot CONTENT_INFORMATION success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot CONTENT_INFORMATION err: ${err}, errMes: ${err.message}`)
         expect(false).assertTrue()
@@ -1510,10 +1611,12 @@ export default function ActsNotificationManagerSlotTest() {
       })
 
       await Utils.msSleep(1000);
+      count = 0;
 
       await notificationManager.addSlot(notificationManager.SlotType.OTHER_TYPES).then(() => {
         console.info(`${TAG} addSlot OTHER_TYPES success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} addSlot OTHER_TYPES err: ${err}, errMes: ${err.message}`)
         expect(false).assertTrue()
@@ -1555,10 +1658,12 @@ export default function ActsNotificationManagerSlotTest() {
      */
     // it('SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_4900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   let TAG:string = 'SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_4900 '
+    //   let count: int = 0;
     //   console.info(TAG + 'SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_4900 START')
     //   notificationManager.addSlot(notificationManager.SlotType.OTHER_TYPES, undefined).then(() => {
     //     console.info(`${TAG} addSlot_49 Promise success`)
-    //     expect(true).assertTrue()
+    //     count++;
+    //    expect(count).assertEqual(1);
     //     done()
     //   }).catch((err: BusinessError):void => {
     //     console.info(`${TAG} addSlot_49 Promise errCode: ${err.code}, errMes: ${err.message}`)
@@ -1618,10 +1723,12 @@ export default function ActsNotificationManagerSlotTest() {
      */
     // it('SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_5200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   let TAG:string = 'SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_5200 '
+    //   let count: int = 0;
     //   console.info(TAG + 'SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_5200 START')
     //   notificationManager.removeSlot(notificationManager.SlotType.UNKNOWN_TYPE, undefined).then(() => {
     //     console.info(`${TAG} removeSlot_52 success`)
-    //     expect(true).assertTrue()
+    //     count++;
+    //     expect(count).assertEqual(1);
     //     done()
     //   }).catch((err: BusinessError):void => {
     //     console.info(`${TAG} removeSlot_52 errCode: ${err.code}, errMes: ${err.message}`)
@@ -1640,9 +1747,11 @@ export default function ActsNotificationManagerSlotTest() {
     // it('SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_5300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   let TAG:string = 'SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_5300 '
     //   console.info(TAG + 'SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_5300 START')
+    //   let count: int = 0;
     //   notificationManager.removeAllSlots(undefined).then(() => {
     //     console.info(`${TAG} removeAllSlots_53 Promise success`)
-    //     expect(true).assertTrue()
+    //     count++;
+    //     expect(count).assertEqual(1);
     //     done()
     //   }).catch((err: BusinessError):void => {
     //     console.info(`${TAG} removeAllSlots_53 Promise err: ${err}, errMes: ${err.message}`)

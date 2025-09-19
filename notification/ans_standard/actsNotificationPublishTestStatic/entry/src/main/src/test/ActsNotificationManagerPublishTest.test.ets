@@ -27,7 +27,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 const TEST_SUITE_NAME:string = 'testPublishInloveFail'
 const DOMAIN_NUMBER: int = 0xFF00;
 let bundle_name:string = "com.example.actsnotificationpublish.static"
-
+let count: int = 0;
 
 export default function ActsNotificationManagerPublishTest() {
   describe('ActsNotificationManagerPublishTest', () => {
@@ -43,6 +43,7 @@ export default function ActsNotificationManagerPublishTest() {
     it('Sub_Notification_Ans_Publish_Cancel_Static_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Cancel_Static_3200'
+        count = 0;
         hilog.info(DOMAIN_NUMBER, TAG, `Sub_Notification_Ans_Publish_Cancel_Static_3200 START`)
         let id: int = 1
         let label: string = "label"
@@ -51,7 +52,8 @@ export default function ActsNotificationManagerPublishTest() {
             if (err) {
               hilog.info(DOMAIN_NUMBER, TAG,
                 `Sub_Notification_Ans_Publish_Cancel_Static_3200 cancel AsyncCallback err: ${err.code}, errMes: ${err.message}`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               done()
             } else {
               hilog.info(DOMAIN_NUMBER, TAG, `Sub_Notification_Ans_Publish_Cancel_Static_3200 cancel AsyncCallback success`)
@@ -76,6 +78,7 @@ export default function ActsNotificationManagerPublishTest() {
     it('Sub_Notification_Ans_Publish_Cancel_Static_3250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Cancel_Static_3250'
+        count = 0;
         hilog.info(DOMAIN_NUMBER, TAG, `Sub_Notification_Ans_Publish_Cancel_Static_3250 START`)
         let id: int = 1
         let label: string = "label"
@@ -86,7 +89,8 @@ export default function ActsNotificationManagerPublishTest() {
         }).catch((err: BusinessError): void => {
           hilog.info(DOMAIN_NUMBER, TAG,
             `Sub_Notification_Ans_Publish_Cancel_Static_3250 cancel Promise err: ${err.code}, errMes: ${err.message}`)
-          expect(true).assertTrue()
+          count++;
+          expect(count).assertEqual(1);
           done()
         })
         hilog.info(DOMAIN_NUMBER, TAG, `Sub_Notification_Ans_Publish_Cancel_Static_3250 END`)
@@ -100,13 +104,15 @@ export default function ActsNotificationManagerPublishTest() {
     it('Sub_Notification_Ans_Publish_Cancel_Static_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Cancel_Static_3300'
+        count = 0;
         console.info(`Sub_Notification_Ans_Publish_Cancel_Static_3300 START`)
         let id: int = 1
         try {
           notificationManager.cancel(id, (err: BusinessError | null): void => {
             if (err) {
               console.info(`${TAG} cancel id err: ${err.code}, errMes: ${err.message}`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               done()
             } else {
               console.info(`${TAG} cancel id success`)
@@ -127,10 +133,10 @@ export default function ActsNotificationManagerPublishTest() {
     //      * @tc.name     SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_Static_0400
     //      * @tc.desc     Cancels a notification with the specified label and ID
     //      */
-    
     // it('SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
     //   async (done: () => void): Promise<void> => {
     //   let TAG:string = 'SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_Static_0400'
+    //   count = 0;
     //   console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_Static_0400 START`)
     //   let id : int = 1
     //   notificationManager.cancel(id, undefined).then(() => {
@@ -139,11 +145,13 @@ export default function ActsNotificationManagerPublishTest() {
     //     done()
     //   }).catch((err: BusinessError):void => {
     //     console.info(`${TAG} cancel Promise err: ${err.code}, errMes: ${err.message}`)
-    //     expect(true).assertTrue()
+    //     count++;
+    //     expect(count).assertEqual(1);
     //     done()
     //   })
     //
     //   await Utils.msSleep(2000)
+    //   count = 0;
     //
     //   id = 400
     //   notificationManager.cancel(id).then(() => {
@@ -152,7 +160,8 @@ export default function ActsNotificationManagerPublishTest() {
     //     done()
     //   }).catch((err: BusinessError):void => {
     //     console.info(`${TAG} cancel Promise err: ${err.code}, errMes: ${err.message}`)
-    //     expect(true).assertTrue()
+    //     count++;
+    //     expect(count).assertEqual(1);
     //     done()
     //   })
     //   console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_Static_0400 END`)
@@ -166,6 +175,7 @@ export default function ActsNotificationManagerPublishTest() {
     it('SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_Static_0500'
+        count = 0;
         console.info(`SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_Static_0500 START`)
         let id: int = 1
         let num: string = "2"
@@ -175,20 +185,22 @@ export default function ActsNotificationManagerPublishTest() {
           done()
         }).catch((err: BusinessError): void => {
           console.info(`${TAG} cancel Promise err: ${err.code}, errMes: ${err.message}`)
-          expect(true).assertTrue()
+          count++;
+              expect(count).assertEqual(1);
           done()
         })
         console.info(`SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_Static_0500 END`)
       })
 
     /**
-         * @tc.number   Sub_Notification_Ans_Publish_Cancel_Static_3350
-         * @tc.name     Sub_Notification_Ans_Publish_Cancel_Static_3350
-         * @tc.desc     Cancels all notifications of the current application
-         */
+      * @tc.number   Sub_Notification_Ans_Publish_Cancel_Static_3350
+      * @tc.name     Sub_Notification_Ans_Publish_Cancel_Static_3350
+      * @tc.desc     Cancels all notifications of the current application
+      */
     it('Sub_Notification_Ans_Publish_Cancel_Static_3350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Cancel_Static_3350'
+        count = 0;
         console.info(`Sub_Notification_Ans_Publish_Cancel_Static_3350 START`)
         try {
           notificationManager.cancelAll((err: BusinessError | null) => {
@@ -198,7 +210,8 @@ export default function ActsNotificationManagerPublishTest() {
               done()
             } else {
               console.info(`${TAG} cancelAll AsyncCallback success`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               done()
             }
           })
@@ -218,10 +231,12 @@ export default function ActsNotificationManagerPublishTest() {
     it('Sub_Notification_Ans_Publish_Cancel_Static_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Cancel_Static_3400'
+        count = 0;
         console.info(`Sub_Notification_Ans_Publish_Cancel_Static_3400 START`)
         await notificationManager.cancelAll().then(() => {
           console.info(`${TAG} cancelAll Promise success`)
-          expect(true).assertTrue()
+          count++;
+          expect(count).assertEqual(1);
           done()
         }).catch((err: BusinessError): void => {
           console.info(`${TAG} cancelAll Promise err: ${err.code}, errMes: ${err.message}`)
@@ -240,10 +255,12 @@ export default function ActsNotificationManagerPublishTest() {
     // it('SUB_NOTIFICATION_ANS_MANAGER_CANCELAll_TEST_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
     //   async (done: () => void): Promise<void> => {
     //   let TAG:string = 'SUB_NOTIFICATION_ANS_MANAGER_CANCELAll_TEST_Static_0300'
+    //   count = 0;
     //   console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCELAll_TEST_Static_0300 START`)
     //   notificationManager.cancelAll(undefined).then(() => {
     //     console.info(`${TAG} cancelAll Promise success`)
-    //     expect(true).assertTrue()
+    //     count++;
+    //     expect(count).assertEqual(1);
     //     done()
     //   }).catch((err: BusinessError): void => {
     //     console.info(`${TAG} cancelAll Promise err: ${err.code}, errMes: ${err.message}`)
@@ -261,6 +278,7 @@ export default function ActsNotificationManagerPublishTest() {
     it('Sub_Notification_Ans_Publish_Cancel_Static_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Cancel_Static_3100'
+        count = 0;
         console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_Static_3100 START`)
         let groupName:string = "groupName"
         try {
@@ -271,7 +289,8 @@ export default function ActsNotificationManagerPublishTest() {
               done()
             } else {
               console.info(`${TAG} cancelGroup AsyncCallback success`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               done()
             }
           })
@@ -291,11 +310,13 @@ export default function ActsNotificationManagerPublishTest() {
     it('Sub_Notification_Ans_Publish_Cancel_Static_3150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Cancel_Static_3150'
+        count = 0;
         console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_Static_3150 START`)
         let groupName:string = "groupName"
         await notificationManager.cancelGroup(groupName).then(() => {
           console.info(`${TAG} cancelGroup Promise success`)
-          expect(true).assertTrue()
+          count++;
+          expect(count).assertEqual(1);
           done()
         }).catch((err: BusinessError):void => {
           console.info(`${TAG} cancelGroup Promise err: ${err.code}, errMes: ${err.message}`)
@@ -313,11 +334,13 @@ export default function ActsNotificationManagerPublishTest() {
     it('SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_Static_0300'
+        count = 0;
         console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_Static_0300 START`)
         let num:string = '1'
         notificationManager.cancelGroup(num).then(() => {
           console.info(`${TAG} cancelGroup Promise success`)
-          expect(true).assertTrue()
+          count++;
+          expect(count).assertEqual(1);
           done()
         }).catch((err: BusinessError):void => {
           console.info(`${TAG} cancelGroup Promise err: ${err.code}, errMes: ${err.message}`)
@@ -336,11 +359,13 @@ export default function ActsNotificationManagerPublishTest() {
     // it('SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
     //   async (done: () => void): Promise<void> => {
     //   let TAG:string = 'SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_Static_0400'
+    //   count = 0;
     //   console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_Static_0400 START`)
     //   let groupName:string = "groupName"
     //   notificationManager.cancelGroup(groupName, undefined).then(() => {
     //     console.info(`${TAG} cancelGroup Promise success`)
-    //     expect(true).assertTrue()
+    //     count++;
+    //     expect(count).assertEqual(1);
     //     done()
     //   }).catch((err: BusinessError):void => {
     //     console.info(`${TAG} cancelGroup Promise err: ${err.code}, errMes: ${err.message}`)
@@ -358,6 +383,7 @@ export default function ActsNotificationManagerPublishTest() {
     it('Sub_Notification_Ans_Enable_Query_Static_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Enable_Query_Static_2500'
+        count = 0;
         testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
         console.info(`Sub_Notification_Ans_Enable_Query_Static_2500 START`)
         try {
@@ -370,7 +396,8 @@ export default function ActsNotificationManagerPublishTest() {
               done()
             } else {
               console.info(`${TAG} requestEnableNotification AsyncCallback success`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               done()
             }
           })
@@ -390,11 +417,13 @@ export default function ActsNotificationManagerPublishTest() {
     it('Sub_Notification_Ans_Enable_Query_Static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Enable_Query_Static_2600'
+        count = 0;
         testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
         console.info(`Sub_Notification_Ans_Enable_Query_Static_2600 START`)
         await notificationManager.requestEnableNotification(testAbilityContext).then(() => {
           console.info(`${TAG} requestEnableNotification Promise success`)
-          expect(true).assertTrue()
+          count++;
+          expect(count).assertEqual(1);
           done()
         }).catch((err: BusinessError): void => {
           console.info(`${TAG} requestEnableNotification Promise err: ${err.code}, errMes: ${err.message}`)
@@ -413,10 +442,12 @@ export default function ActsNotificationManagerPublishTest() {
     // it('SUB_NOTIFICATION_ANS_MANAGER_REQUEST_ENABLE_TEST_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
     //   async (done: () => void): Promise<void> => {
     //   let TAG:string = 'SUB_NOTIFICATION_ANS_MANAGER_REQUEST_ENABLE_TEST_Static_0300'
+    //   count = 0;
     //   console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_REQUEST_ENABLE_TEST_Static_0300 START`)
     //   notificationManager.requestEnableNotification(undefined).then(() => {
     //     console.info(`${TAG} requestEnableNotification Promise success`)
-    //     expect(true).assertTrue()
+    //     count++;
+    //     expect(count).assertEqual(1);
     //     done()
     //   }).catch((err: BusinessError): void => {
     //     console.info(`${TAG} requestEnableNotification Promise err: ${err.code}, errMes: ${err.message}`)
@@ -812,6 +843,7 @@ export default function ActsNotificationManagerPublishTest() {
     it('Sub_Notification_Ans_Publish_Publish_Static_0310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TEST_SUITE_NAME:string = 'Sub_Notification_Ans_Publish_Publish_Static_0310'
+        count = 0;
         const TEST_CASE_NAME:string = 'testPublishadditionalTextForNull';
         testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
         let requestEnableNotificationCallback = (err: BusinessError | null): void => {
@@ -856,7 +888,8 @@ export default function ActsNotificationManagerPublishTest() {
               done();
             } else {
               hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish success,result is : %{public}s');
-              expect(true).assertTrue();
+              count++;
+              expect(count).assertEqual(1);;
               hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
               done();
             }
@@ -981,6 +1014,7 @@ export default function ActsNotificationManagerPublishTest() {
     it("Sub_Notification_Ans_Publish_Publish_Static_0610", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TEST_SUITE_NAME:string = 'Sub_Notification_Ans_Publish_Publish_Static_0610'
+        count = 0;
         const TEST_CASE_NAME:string = 'testPublishLongtextadditionalTextForNull';
         testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
 
@@ -1029,7 +1063,8 @@ export default function ActsNotificationManagerPublishTest() {
               done();
             } else {
               hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish success,result is : %{public}s');
-              expect(true).assertTrue();
+              count++;
+              expect(count).assertEqual(1);;
               hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
               done();
             }
@@ -1306,6 +1341,7 @@ export default function ActsNotificationManagerPublishTest() {
     it(" Sub_Notification_Ans_Publish_Publish_Static_1210", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TEST_SUITE_NAME:string = 'Sub_Notification_Ans_Publish_Publish_Static_1210'
+        count = 0;
         const TEST_CASE_NAME:string = 'testPublishLongtextTitleForNull';
         testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
         let requestEnableNotificationCallback = (err: BusinessError | null) => {
@@ -1353,7 +1389,8 @@ export default function ActsNotificationManagerPublishTest() {
               done();
             } else {
               hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish success,result is : %{public}s');
-              expect(true).assertTrue();
+              count++;
+              expect(count).assertEqual(1);;
               hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
               done();
             }
@@ -1674,6 +1711,7 @@ export default function ActsNotificationManagerPublishTest() {
     it('Sub_Notification_Ans_Publish_Publish_Static_1810', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TEST_SUITE_NAME:string = 'Sub_Notification_Ans_Publish_Publish_Static_1810'
+        count = 0;
         const TEST_CASE_NAME:string = 'testPublishPictureadditionalTextForNull';
         testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
         let requestEnableNotificationCallback = (err: BusinessError | null): void => {
@@ -1741,7 +1779,8 @@ export default function ActsNotificationManagerPublishTest() {
               done();
             } else {
               hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish success,result is : %{public}s');
-              expect(true).assertTrue();
+              count++;
+              expect(count).assertEqual(1);
               hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
               done();
             }

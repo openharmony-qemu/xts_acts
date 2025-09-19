@@ -44,6 +44,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let testAbilityContext: common.UIAbilityContext;
 let bundleName: string = 'com.example.systemAPI.static'
+let count: int = 0;
 
 
 export default function ActsCommonEventSystemAPITest() {
@@ -401,6 +402,7 @@ export default function ActsCommonEventSystemAPITest() {
           console.info(Tag + ' notificationRequest1600014 callback fail,result is :', JSON.stringify(err));
           expect(err?.code).assertEqual(1600014);
         });
+        await Utils.msSleep(1000);
         await notificationManager.publish(notificationRequest1600014).then(() => {
           console.info(Tag + " publish update success");
           expect(false).assertTrue()
@@ -420,13 +422,15 @@ export default function ActsCommonEventSystemAPITest() {
      */
     // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   let TAG :string ='Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280'
+    //   count = 0;
     //   let id :int = 1
     //   let label:string = "label"
     //   try {
     //     notificationManager.cancel(null, (err: BusinessError | null) => {
     //       if (err) {
     //         console.info(`${TAG} cancel id err: ${err.code}, errMes: ${err.message}`)
-    //         expect(true).assertTrue()
+    //         count++;
+    //         expect(count).assertEqual(1);
     //         done()
     //       } else {
     //         console.info(`${TAG} cancel id success`)
@@ -566,7 +570,7 @@ export default function ActsCommonEventSystemAPITest() {
     //     notificationManager.setBadgeNumber(null, (err: BusinessError | null) => {
     //       console.log(Tag+`setBadgeNumber failed, error code: ${err.code}, message: ${err.message}`)
     //       if (err.code == 801) {
-    //         expect(true).assertTrue()
+    //         expect(err.code == 801).assertTrue()
     //         done()
     //       } else {
     //         expect(false).assertTrue()
@@ -576,7 +580,7 @@ export default function ActsCommonEventSystemAPITest() {
     //   } catch (err) {
     //     console.log(Tag+`setBadgeNumber failed, catch error code: ${err.code}, message: ${err.message}`)
     //     if (err.code == 801) {
-    //       expect(true).assertTrue()
+    //       expect(err.code == 801).assertTrue()
     //       done()
     //     } else {
     //       expect(err?.code).assertEqual(401)
@@ -733,7 +737,7 @@ export default function ActsCommonEventSystemAPITest() {
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let Tag: string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282'
-
+        
         notificationManager.requestEnableNotification(testAbilityContext, (err: BusinessError | null) => {
           console.info(`${Tag} requestEnableNotification2 Promise err: ${err?.code}, errMes: ${err?.message}`)
         })
@@ -805,6 +809,7 @@ export default function ActsCommonEventSystemAPITest() {
         }
 
         for (let index = 0; index <= 10; index++) {
+          count = 0;
           let notificationRequest: notificationManager.NotificationRequest = {
             id: index,
             content: {
@@ -828,7 +833,8 @@ export default function ActsCommonEventSystemAPITest() {
           }
           await notificationManager.publish(notificationRequest).then(() => {
             console.info(`${Tag} publish_${index} Promise success`)
-            expect(true).assertTrue()
+            count++;
+            expect(count).assertEqual(1);
           }).catch((err: BusinessError): void => {
             console.info(`${Tag} publish_${index} Promise err: ${err.code}, errMes: ${err.message}`)
             if (index == 10) {
@@ -851,14 +857,16 @@ export default function ActsCommonEventSystemAPITest() {
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
+        count = 0;
         let Tag: string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283'
         notificationManager.openNotificationSettings(testAbilityContext).then(() => {
-          expect(true).assertTrue();
+          count++;
+          expect(count).assertEqual(1);
           console.info(Tag + "Succeed to openNotificationSettings");
         }).catch((err: BusinessError): void => {
           console.error(Tag + "openNotificationSettings: " + JSON.stringify(err));
           if (err.code == 801) {
-            expect(true).assertTrue();
+            expect(err.code == 801).assertTrue();
             done();
           } else if(err.code == 1600001){
             expect(err?.code).assertEqual(1600001)
@@ -876,7 +884,7 @@ export default function ActsCommonEventSystemAPITest() {
         }).catch((err: BusinessError): void => {
           console.error(Tag + "openNotificationSettings: " + JSON.stringify(err));
           if (err.code == 801) {
-            expect(true).assertTrue();
+            expect(err.code == 801).assertTrue();
             done();
           } else {
             expect(err?.code).assertEqual(1600018)

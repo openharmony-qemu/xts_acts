@@ -27,6 +27,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 const DOMAIN_NUMBER: int = 0xFF00;
 let bundle_name:string = "com.example.actssubscribertestunorder.static"
 let testAbilityContext:common.UIAbilityContext;
+let count: int = 0;
 
 export default function ActsSubscriberTestUnorder() {
   describe('SUB_NOTIFICATION_CES_SUBSCRIBER_UNORDER_TEST', () : void => {
@@ -105,7 +106,6 @@ export default function ActsSubscriberTestUnorder() {
 
       await CommonEventSubscriber.getSubscribeInfo().then((CommonEventSubscriberInfo:commonEventManager.CommonEventSubscribeInfo) => {
         console.info(TAG + ': getSubscribeInfo promise successed! event.Info ===> ' + JSON.stringify(CommonEventSubscriberInfo))
-        expect(true).assertTrue()
         expect(CommonEventSubscriberInfo.events[0]).assertEqual('event')
         expect(CommonEventSubscriberInfo.publisherPermission == '').assertTrue()
         expect(CommonEventSubscriberInfo.publisherDeviceId == '').assertTrue()
@@ -144,7 +144,6 @@ export default function ActsSubscriberTestUnorder() {
           done()
         } else {
           console.info(TAG + ': getSubscribeInfo successed! event.Info ===> ' + JSON.stringify(CommonEventSubscriberInfo))
-          expect(true).assertTrue()
           expect(CommonEventSubscriberInfo?.events[0]).assertEqual('@#￥#3243adsafdf_')
           expect(CommonEventSubscriberInfo?.publisherPermission == '').assertTrue()
           expect(CommonEventSubscriberInfo?.publisherDeviceId == '').assertTrue()
@@ -176,7 +175,6 @@ export default function ActsSubscriberTestUnorder() {
 
       await CommonEventSubscriber.getSubscribeInfo().then((CommonEventSubscriberInfo:commonEventManager.CommonEventSubscribeInfo) => {
         console.info(TAG + ': getSubscribeInfo promise successed! event.Info ===> ' + JSON.stringify(CommonEventSubscriberInfo))
-        expect(true).assertTrue()
         expect(CommonEventSubscriberInfo.events[0]).assertEqual('@#￥#3243adsafdf_')
         expect(CommonEventSubscriberInfo.publisherPermission == '').assertTrue()
         expect(CommonEventSubscriberInfo.publisherDeviceId == '').assertTrue()
@@ -246,7 +244,7 @@ export default function ActsSubscriberTestUnorder() {
           done()
         }
       })
-
+      count = 0;
       commonEventManager.publish('publish_event_0500', CommonEventPublishData, (err: BusinessError | null) => {
         if (err) {
           console.info(TAG + ': publish failed! event.Info ===> ' + JSON.stringify(err.code))
@@ -254,7 +252,8 @@ export default function ActsSubscriberTestUnorder() {
           done()
         } else {
           console.info(TAG + ': publish successed! event.Info ===> ' + CommonEventPublishData)
-          expect(true).assertTrue()
+          count++;
+          expect(count).assertEqual(1);
           done()
         }
       })
@@ -319,6 +318,7 @@ export default function ActsSubscriberTestUnorder() {
         done()
       })
 
+      count = 0;
       commonEventManager.publish('publish_event_0600', CommonEventPublishData, (err: BusinessError | null) => {
         if (err) {
           console.info(TAG + ': publish failed! event.Info ===> ' + JSON.stringify(err.code))
@@ -326,7 +326,8 @@ export default function ActsSubscriberTestUnorder() {
           done()
         } else {
           console.info(TAG + ': publish successed! event.Info ===> ' + JSON.stringify(CommonEventPublishData))
-          expect(true).assertTrue()
+          count++;
+          expect(count).assertEqual(1);
           done()
         }
       })
@@ -390,6 +391,7 @@ export default function ActsSubscriberTestUnorder() {
           done()
         }
       })
+      count = 0;
 
       commonEventManager.publish('publish_event_0700', CommonEventPublishData, (err: BusinessError | null) => {
         if (err) {
@@ -398,7 +400,8 @@ export default function ActsSubscriberTestUnorder() {
           done()
         } else {
           console.info(TAG + ': publish successed! event.Info ===> ' + JSON.stringify(CommonEventPublishData))
-          expect(true).assertTrue()
+          count++;
+          expect(count).assertEqual(1);
           done()
         }
       })
@@ -460,6 +463,7 @@ export default function ActsSubscriberTestUnorder() {
         expect(false).assertTrue()
         done()
       })
+      count = 0;
 
       commonEventManager.publish('publish_event_0800', CommonEventPublishData, (err: BusinessError | null) => {
         if (err) {
@@ -468,7 +472,8 @@ export default function ActsSubscriberTestUnorder() {
           done()
         } else {
           console.info(TAG + ': publish successed! event.Info ===> ' + CommonEventPublishData)
-          expect(true).assertTrue()
+          count++;
+          expect(count).assertEqual(1);
           done()
         }
       })
@@ -545,6 +550,7 @@ export default function ActsSubscriberTestUnorder() {
         expect(false).assertTrue()
         done()
       })
+      count = 0;
 
       await Utils.msSleep(1000)
       commonEventManager.publish('publish_event_0900', CommonEventPublishData, (err:BusinessError | null) => {
@@ -554,7 +560,8 @@ export default function ActsSubscriberTestUnorder() {
           done()
         } else {
           hilog.info(DOMAIN_NUMBER, TAG, `publish successed! event.Info ===>  +${CommonEventPublishData}`)
-          expect(true).assertTrue()
+          count++;
+          expect(count).assertEqual(1);
         }
       })
       await Utils.msSleep(2000)

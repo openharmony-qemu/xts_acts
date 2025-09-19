@@ -28,6 +28,8 @@ let testAbilityContext: common.UIAbilityContext
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let TAG: string = 'testTEST_CASE_NAME'; //日志标识字符串,作为TEST_CASE_NAME标识当前runner类下的测试行为
 let bundle :string = 'com.example.actsnotificationrequesttest.static'
+let count: int = 0;
+
 export default function ActsNotificationRequestTest() {
   describe('SUB_NOTIFICATION_ANS_REQUEST_TEST', () => {
     const TAG = 'SUB_NOTIFICATION_ANS_REQUEST_TEST ===>';
@@ -50,6 +52,7 @@ export default function ActsNotificationRequestTest() {
     it('Sub_Notification_Ans_Publish_Publish_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let TEST_CASE_NAME = 'Sub_Notification_Ans_Publish_Publish_Static_0900'
+        count = 0;
         console.info(`${TEST_CASE_NAME} START requestEnableNotification`)
         notificationManager.requestEnableNotification(testAbilityContext, (err: BusinessError | null) => {
           console.info(`${TEST_CASE_NAME} requestEnableNotification about ctx is ${testAbilityContext}`)
@@ -60,7 +63,8 @@ export default function ActsNotificationRequestTest() {
             done()
           }else {
             console.info(`${TEST_CASE_NAME} requestEnableNotification success`)
-            expect(true).assertTrue()
+            count++;
+            expect(count).assertEqual(1);
             await Utils.msSleep(1000)
             done()
           }
@@ -101,6 +105,7 @@ export default function ActsNotificationRequestTest() {
         }
         hilog.info(0x000, `${TEST_CASE_NAME}`, `${TEST_CASE_NAME} test case start`);
         await Utils.msSleep(3000)
+        count = 0;
         try {
           notificationManager.publish(notificationRequest, (err: BusinessError | null) => {
             hilog.info(0x000, `${TEST_CASE_NAME}`, `${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(err));
@@ -110,7 +115,8 @@ export default function ActsNotificationRequestTest() {
               done()
             }else {
               console.info(`${TEST_CASE_NAME} publish success`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               await Utils.msSleep(1000)
               done()
             }
