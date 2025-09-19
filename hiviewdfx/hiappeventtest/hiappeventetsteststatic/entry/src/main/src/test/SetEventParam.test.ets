@@ -16,7 +16,7 @@ import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll} from 
 import hilog from '@ohos.hilog'
 import hiAppEvent from '@ohos.hiviewdfx.hiAppEvent'
 import { BusinessError } from '@ohos.base'
-let logDomain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let logDomain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'hiAppEventSetEventParamTest'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 export default function setEventParamTest() {
@@ -195,17 +195,17 @@ export default function setEventParamTest() {
                 hiAppEvent.event.BATTERY_USAGE, hiAppEvent.event.RESOURCE_OVERLIMIT, hiAppEvent.event.ADDRESS_SANITIZER,
                 hiAppEvent.event.MAIN_THREAD_JANK]}
           ],
-          onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+          onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
             expect(holder != null).assertTrue();
 
             let eventPkg = holder.takeNext();
             if (eventPkg == null) {
               return;
             }
-            hilog.info(logDomain, tag, "testHiAppEventSetPam02 eventPkg.packageId=" + eventPkg.packageId);
-            hilog.info(logDomain, tag, "testHiAppEventSetPam02 eventPkg.row=" + eventPkg.row);
-            hilog.info(logDomain, tag, "testHiAppEventSetPam02 eventPkg.size=" + eventPkg.size);
-            for (const eventInfo of eventPkg.data) {
+            hilog.info(logDomain, tag, "testHiAppEventSetPam02 eventPkg.packageId=" + eventPkg?.packageId);
+            hilog.info(logDomain, tag, "testHiAppEventSetPam02 eventPkg.row=" + eventPkg?.row);
+            hilog.info(logDomain, tag, "testHiAppEventSetPam02 eventPkg.size=" + eventPkg?.size);
+            for (const eventInfo of eventPkg!.data) {
               hilog.info(logDomain, tag, "testHiAppEventSetPam02 eventPkg.data=" + eventInfo);
             }
             expect(eventPkg.row == 1).assertTrue()
