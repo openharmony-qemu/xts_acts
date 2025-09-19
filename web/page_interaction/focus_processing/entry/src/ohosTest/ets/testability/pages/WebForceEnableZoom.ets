@@ -71,12 +71,12 @@ struct WebComponent {
           switch (this.str) {
             case "emitWebForceEnableZoom001": {
               try {
+                this.isForceZoomEnabled = true;
                 this.webController.loadUrl('www.example.com')
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
                 this.isPageEnd = -1;
                 this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.isForceZoomEnabled = true;
                 this.webController.zoom(1.25);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
@@ -85,6 +85,7 @@ struct WebComponent {
             }
             case "emitWebForceEnableZoom002": {
               try {
+                this.isForceZoomEnabled = true;
                 this.flag = 2;
                 this.isPageEnd = -1
                 this.webController.loadUrl('www.example.com')
@@ -92,7 +93,6 @@ struct WebComponent {
                 this.isPageEnd = -1;
                 this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.isForceZoomEnabled = true;
                 this.webController.zoom(0.5);
                 await Utils.sleep(2000);
               } catch (error) {
