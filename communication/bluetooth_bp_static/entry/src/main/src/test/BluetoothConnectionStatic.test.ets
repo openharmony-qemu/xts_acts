@@ -64,13 +64,13 @@ export default function bluetoothConnectionTest() {
             }
         })
 
-        /*
-         * @tc.number: getRemoteDeviceNameTest
-         * @tc.name: getRemoteDeviceNameTest
-         * @tc.desc: Test getRemoteDeviceNameTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getRemoteDeviceNameTest
+         * @tc.name getRemoteDeviceNameTest
+         * @tc.desc Test getRemoteDeviceNameTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getRemoteDeviceNameTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -90,13 +90,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: getRemoteDeviceNameAliasTest
-         * @tc.name: getRemoteDeviceNameAliasTest
-         * @tc.desc: Test getRemoteDeviceNameAliasTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getRemoteDeviceNameAliasTest
+         * @tc.name getRemoteDeviceNameAliasTest
+         * @tc.desc Test getRemoteDeviceNameAliasTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getRemoteDeviceNameAliasTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -119,13 +119,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: getRemoteDeviceClassTest
-         * @tc.name: getRemoteDeviceClassTest
-         * @tc.desc: Test getRemoteDeviceClassTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getRemoteDeviceClassTest
+         * @tc.name getRemoteDeviceClassTest
+         * @tc.desc Test getRemoteDeviceClassTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getRemoteDeviceClassTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -147,13 +147,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: setBluetoothScanModeTest
-         * @tc.name: setBluetoothScanModeTest
-         * @tc.desc: Test setBluetoothScanModeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number setBluetoothScanModeTest
+         * @tc.name setBluetoothScanModeTest
+         * @tc.desc Test setBluetoothScanModeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("setBluetoothScanModeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -171,13 +171,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: getPairedDevicesTest
-         * @tc.name: getPairedDevicesTest
-         * @tc.desc: Test getPairedDevicesTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getPairedDevicesTest
+         * @tc.name getPairedDevicesTest
+         * @tc.desc Test getPairedDevicesTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getPairedDevicesTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -197,13 +197,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: connectionConstantTest
-         * @tc.name: connectionConstantTest
-         * @tc.desc: Test connectionConstantTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number connectionConstantTest
+         * @tc.name connectionConstantTest
+         * @tc.desc Test connectionConstantTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("connectionConstantTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -221,13 +221,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: bluetoothDeviceFindTest
-         * @tc.name: bluetoothDeviceFindTest
-         * @tc.desc: Test bluetoothDeviceFindTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number bluetoothDeviceFindTest
+         * @tc.name bluetoothDeviceFindTest
+         * @tc.desc Test bluetoothDeviceFindTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("bluetoothDeviceFindTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: Array<string>) => void = (changeInfo: Array<string>) => {
@@ -259,13 +259,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: bluetoothDeviceFindTest2
-         * @tc.name: bluetoothDeviceFindTest2
-         * @tc.desc: Test bluetoothDeviceFindTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number bluetoothDeviceFindTest2
+         * @tc.name bluetoothDeviceFindTest2
+         * @tc.desc Test bluetoothDeviceFindTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("bluetoothDeviceFindTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: Array<string>) => void = (changeInfo: Array<string>) => {
@@ -297,13 +297,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: discoveryResultTest
-         * @tc.name: discoveryResultTest
-         * @tc.desc: Test discoveryResultTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number discoveryResultTest
+         * @tc.name discoveryResultTest
+         * @tc.desc Test discoveryResultTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("discoveryResultTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: Array<connection.DiscoveryResult>) => void = (changeInfo: Array<connection.DiscoveryResult>) => {
@@ -336,13 +336,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: discoveryResultTest2
-         * @tc.name: discoveryResultTest2
-         * @tc.desc: Test discoveryResultTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number discoveryResultTest2
+         * @tc.name discoveryResultTest2
+         * @tc.desc Test discoveryResultTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("discoveryResultTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: Array<connection.DiscoveryResult>) => void = (changeInfo: Array<connection.DiscoveryResult>) => {
@@ -374,13 +374,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: bondStateChangeTest
-         * @tc.name: bondStateChangeTest
-         * @tc.desc: Test bondStateChangeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number bondStateChangeTest
+         * @tc.name bondStateChangeTest
+         * @tc.desc Test bondStateChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("bondStateChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: connection.BondStateParam) => void = (changeInfo: connection.BondStateParam) => {
@@ -414,13 +414,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: bondStateChangeTest2
-         * @tc.name: bondStateChangeTest2
-         * @tc.desc: Test bondStateChangeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number bondStateChangeTest2
+         * @tc.name bondStateChangeTest2
+         * @tc.desc Test bondStateChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("bondStateChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: connection.BondStateParam) => void = (changeInfo: connection.BondStateParam) => {
@@ -452,13 +452,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: pinRequiredTest
-         * @tc.name: pinRequiredTest
-         * @tc.desc: Test pinRequiredTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number pinRequiredTest
+         * @tc.name pinRequiredTest
+         * @tc.desc Test pinRequiredTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("pinRequiredTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: connection.PinRequiredParam) => void = (changeInfo: connection.PinRequiredParam) => {
@@ -491,13 +491,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: pinRequiredTest2
-         * @tc.name: pinRequiredTest2
-         * @tc.desc: Test pinRequiredTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number pinRequiredTest2
+         * @tc.name pinRequiredTest2
+         * @tc.desc Test pinRequiredTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("pinRequiredTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: connection.PinRequiredParam) => void = (changeInfo: connection.PinRequiredParam) => {
@@ -529,13 +529,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: batteryChangeTest
-         * @tc.name: batteryChangeTest
-         * @tc.desc: Test batteryChangeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number batteryChangeTest
+         * @tc.name batteryChangeTest
+         * @tc.desc Test batteryChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("batteryChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: connection.BatteryInfo) => void = (changeInfo: connection.BatteryInfo) => {
@@ -568,13 +568,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: batteryChangeTest2
-         * @tc.name: batteryChangeTest2
-         * @tc.desc: Test batteryChangeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number batteryChangeTest2
+         * @tc.name batteryChangeTest2
+         * @tc.desc Test batteryChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("batteryChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: connection.BatteryInfo) => void = (changeInfo: connection.BatteryInfo) => {
