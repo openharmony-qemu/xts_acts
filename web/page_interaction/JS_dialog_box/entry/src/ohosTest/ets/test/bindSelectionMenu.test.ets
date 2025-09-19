@@ -89,10 +89,10 @@ export default function webViewSrollableJsunit() {
       done();
     })
 
-    /*
+    /** 
      *tc.number SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_003
-     *tc.name bindSelectionMenuType03
-     *tc.desic test bindSelectionMenuType03 interface when choose callback mode.
+     *tc.name   bindSelectionMenuType03
+     *tc.desic  test bindSelectionMenuType03 interface when choose callback mode.
      */
     it('bindSelectionMenuType03',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       Utils.emitEvent("bindSelectionMenuType03", EVENT_ID_SET_SUITE_KEY)
