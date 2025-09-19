@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,7 +86,7 @@ struct webViewController {
     Column() {
       Row() {
         Button("WebViewController click").key('WebViewControllerButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str)
           await Utils.waitForExist(()=>this.isReceive, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
           await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
           this.isReceive = -1;
@@ -102,7 +102,7 @@ struct webViewController {
                 this.isPageEnd = -1;
                 this.controller.loadUrl("https://www.example.com/");
                 await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
-                console.log("title of this page: " + this.controller.getTitle());
+                console.log('title of this page: ' + this.controller.getTitle());
                 Utils.emitEvent(this.controller.getTitle(), 330010)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -161,15 +161,15 @@ struct webViewController {
         })
         .onScroll((event) => {
           if (event) {
-            console.info("onScroll x = " + event.xOffset)
-            console.info("onScroll y = " + event.yOffset)
+            console.info('onScroll x = ' + event.xOffset)
+            console.info('onScroll y = ' + event.yOffset)
             this.onScrollCallBack = true
           }
         })
         .onOverScroll((event) => {
           if (event) {
-            console.info("onOverScroll x = " + event.xOffset)
-            console.info("onOverScroll y = " + event.yOffset)
+            console.info('onOverScroll x = ' + event.xOffset)
+            console.info('onOverScroll y = ' + event.yOffset)
             this.onOverScrollCallBack = true
           }
         })

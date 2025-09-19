@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -52,9 +52,9 @@ struct webViewSetHttpDns {
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("webViewSetHttpDns page valueChangeCallBack");
+    console.info('webViewSetHttpDns page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
         this.isReceive = 1;
@@ -66,7 +66,7 @@ struct webViewSetHttpDns {
     Column() {
       Row() {
         Button("sethttpdnsTest").key('webViewSetHttpDns').onClick(async () => {
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str)
           await Utils.waitForExist(()=>this.isReceive, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
           await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
           this.isReceive = -1;
@@ -74,11 +74,10 @@ struct webViewSetHttpDns {
           switch (this.str) {
             case "emitSetHttpDnsSecureOnlyExample": {
               try {
-                console.log("receive emitSetHttpDnsSecureOnlyExample");
-                web_webview.WebviewController.setHttpDns(web_webview.SecureDnsMode.SECURE_ONLY, "https://example1.test")
+                web_webview.WebviewController.setHttpDns(web_webview.SecureDnsMode.SECURE_ONLY, "https://www.example1.test")
                 this.isPageEnd = -1;
                 await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
-                this.controller.loadUrl("https://example.com");
+                this.controller.loadUrl("https://www.example.com");
                 this.title = this.controller.getTitle();
                 this.isPageEnd = -1;
                 await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
@@ -92,22 +91,20 @@ struct webViewSetHttpDns {
             }
             case "emitSetHttpDnsSecureOnlyUserDefine": {
               try {
-                console.log("receive emitSetHttpDnsSecureOnlyUserDefine");
                 this.isPageEnd = -1;
-                web_webview.WebviewController.setHttpDns(web_webview.SecureDnsMode.SECURE_ONLY, "https://example2.test/dns-query{?dns}")
+                web_webview.WebviewController.setHttpDns(web_webview.SecureDnsMode.SECURE_ONLY, "https://www.example2.test/dns-query{?dns}")
                 await Utils.waitForExist(()=>this.isReceive, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.isPageEnd = -1;
                 this.controller.refresh()
                 await Utils.waitForExist(()=>this.isReceive, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.isPageEnd = -1;
-                this.controller.loadUrl("https://example.com");
+                this.controller.loadUrl("https://www.example.com");
                 await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.title = this.controller.getTitle();
-                console.log("title of this page: " + this.title);
-                if ((this.title).includes("example.com")) {
+                if ((this.title).includes("www.example.com")) {
                   this.title = 'success';
                 }
-                console.log("title of this page: " + this.title);
+                console.log('title of this page: ' + this.title);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -121,11 +118,11 @@ struct webViewSetHttpDns {
                 this.isPageEnd = -1;
                 web_webview.WebviewController.setHttpDns(web_webview.SecureDnsMode.AUTO, "https://example1.test")
                 await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
-                this.controller.loadUrl("https://example.com");
+                this.controller.loadUrl("https://www.example.com");
                 this.isPageEnd = -1;
                 await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.title = this.controller.getTitle();
-                console.log("title of this page: " + this.title);
+                console.log('title of this page: ' + this.title);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -137,13 +134,13 @@ struct webViewSetHttpDns {
             case "emitSetHttpDnsOffExample": {
               try {
                 this.isPageEnd = -1;
-                web_webview.WebviewController.setHttpDns(web_webview.SecureDnsMode.OFF, "https://example1.test")
+                web_webview.WebviewController.setHttpDns(web_webview.SecureDnsMode.OFF, "https://www.example1.test")
                 await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.isPageEnd = -1;
                 this.controller.loadUrl("https://www.openharmony.cn/mainPlay");
                 await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.title = this.controller.getTitle();
-                console.log("title of this page: " + this.title);
+                console.log('title of this page: ' + this.title);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }

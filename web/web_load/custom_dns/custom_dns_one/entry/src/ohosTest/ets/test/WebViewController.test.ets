@@ -1,5 +1,5 @@
-/*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+/**
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -58,13 +58,13 @@ export default function webViewController() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SECUREDNSMODE_OFF_0100
-    * @tc.name       : testSecureDnsModeOFF001
-    * @tc.desc       : test SecureDnsMode OFF
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_SECUREDNSMODE_OFF_0100
+    * @tc.name         testSecureDnsModeOFF001
+    * @tc.desc         test SecureDnsMode OFF
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testSecureDnsModeOFF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testSecureDnsModeOFF001";
@@ -76,13 +76,13 @@ export default function webViewController() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SECUREDNSMODE_AUTO_0100
-    * @tc.name       : testSecureDnsModeAUTO001
-    * @tc.desc       : test SecureDnsMode AUTO
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_SECUREDNSMODE_AUTO_0100
+    * @tc.name         testSecureDnsModeAUTO001
+    * @tc.desc         test SecureDnsMode AUTO
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testSecureDnsModeAUTO001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testSecureDnsModeAUTO001";
@@ -94,13 +94,13 @@ export default function webViewController() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SECUREDNSMODE_SECURE_ONLY_0100
-    * @tc.name       : testSecureDnsModeSECURE_ONLY001
-    * @tc.desc       : test SecureDnsMode SECURE_ONLY
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_SECUREDNSMODE_SECURE_ONLY_0100
+    * @tc.name         testSecureDnsModeSECURE_ONLY001
+    * @tc.desc         test SecureDnsMode SECURE_ONLY
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testSecureDnsModeSECURE_ONLY001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testSecureDnsModeSECURE_ONLY001";

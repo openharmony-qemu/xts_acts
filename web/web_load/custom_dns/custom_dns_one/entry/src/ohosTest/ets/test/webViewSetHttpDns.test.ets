@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,24 +35,24 @@ export default function webViewSetHttpDns() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get webViewSetHttpDns state success " + JSON.stringify(pages));
+        console.info('get webViewSetHttpDns state success ' + JSON.stringify(pages));
         if (!("webViewSetHttpDns" == pages.name)) {
-          console.info("get webViewSetHttpDns state success " + JSON.stringify(pages.name));
+          console.info('get webViewSetHttpDns state success ' + JSON.stringify(pages.name));
           let result = await router.push(options);
-          console.info("push webViewSetHttpDns page success " + JSON.stringify(result));
+          console.info('push webViewSetHttpDns page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push webViewSetHttpDns page error: " + err);
+        console.error('push webViewSetHttpDns page error: ' + err);
       }
       await driver.waitForComponent(ON.id("webViewSetHttpDns"), 10000);
-      console.log("webViewSetHttpDns");
+      console.log('webViewSetHttpDns');
       done()
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0100
-     *tc.name testSetHttpDnsSecureOnlyExample
-     *tc.desc test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+    /**
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0100
+     * @tc.name     testSetHttpDnsSecureOnlyExample
+     * @tc.desc     test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
      */
     it('testSetHttpDnsSecureOnlyExample',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
 
@@ -62,10 +62,10 @@ export default function webViewSetHttpDns() {
       let StartModel = await driver.findComponent(ON.id("webViewSetHttpDns"));
       await StartModel.click();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0200
-     *tc.name testSetHttpDnsSecureOnlyUserDefine
-     *tc.desc test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+    /**
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0200
+     * @tc.name     testSetHttpDnsSecureOnlyUserDefine
+     * @tc.desc     test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
      */
     it('SetHttpDnsSecureOnlyUserDefine',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
 
@@ -75,10 +75,10 @@ export default function webViewSetHttpDns() {
       let StartModel = await driver.findComponent(ON.id("webViewSetHttpDns"));
       await StartModel.click();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0300
-     *tc.name testSetHttpDnsAutoExample
-     *tc.desc test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+    /**
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0300
+     * @tc.name     testSetHttpDnsAutoExample
+     * @tc.desc     test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
      */
     it('SetHttpDnsAutoExample',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey="emitSetHttpDnsAutoExample";
@@ -88,10 +88,10 @@ export default function webViewSetHttpDns() {
       await StartModel.click();
 
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0400
-     *tc.name testSetHttpDnsOffExample
-     *tc.desc test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+    /**
+     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0400
+     * @tc.name     testSetHttpDnsOffExample
+     * @tc.desc     test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
      */
     it('SetHttpDnsOffExample',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey="emitSetHttpDnsOffExample";
