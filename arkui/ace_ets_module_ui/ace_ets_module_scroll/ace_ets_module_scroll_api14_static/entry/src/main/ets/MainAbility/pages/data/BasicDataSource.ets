@@ -38,7 +38,7 @@ abstract class BasicDataSource<T> implements IDataSource<T> {
   }
 
   unregisterDataChangeListener(listener: DataChangeListener): void {
-    const pos = this.listeners.indexOf(listener);
+    const pos = this.listeners.indexOf(listener).toInt();
     if (pos >= 0) {
       console.info('remove listener')
       this.listeners.splice(pos, 1)
@@ -98,7 +98,7 @@ export class MyDataSource<T> extends BasicDataSource<T> {
   }
 
   public addData(index: number, data: T): void {
-    this.dataArray.splice(index, 0, data) 
+    this.dataArray.splice(index.toInt(), 0, data) 
     
     this.notifyDatasetChange([
       { type: DataOperationType.ADD, index: index } as DataChangeOperation])
@@ -117,14 +117,14 @@ export class MyDataSource<T> extends BasicDataSource<T> {
   }
 
   public deleteIndex(index: number): void {
-    this.dataArray.splice(index, 1) 
+    this.dataArray.splice(index.toInt(), 1) 
     this.notifyDatasetChange([
       { type: DataOperationType.DELETE, index: index, count: 1 } as DataAddOperation])
   }
 
   public deleteData(data: T): void {
     let index = this.dataArray.indexOf(data)
-    this.dataArray.splice(index, 1) 
+    this.dataArray.splice(index.toInt(), 1) 
     this.notifyDatasetChange([
       { type: DataOperationType.DELETE, index: index, count: 1 } as DataAddOperation])
   }
@@ -143,13 +143,13 @@ export class MyDataSource<T> extends BasicDataSource<T> {
   }
 
   public addOperateData(items: T[]): void {
-    this.dataArray.splice(20.0, 0.0, ...items);
+    this.dataArray.splice(20, 0, ...items);
     this.notifyDatasetChange([
       { type: DataOperationType.ADD, index: 20, count: 100 } as DataAddOperation]);
   }
 
   public DeloperateData(): void {
-    this.dataArray.splice(20.0, 100.0);
+    this.dataArray.splice(20, 100);
     this.notifyDatasetChange([
       { type: DataOperationType.DELETE, index: 20, count: 100 } as DataAddOperation]);
   }

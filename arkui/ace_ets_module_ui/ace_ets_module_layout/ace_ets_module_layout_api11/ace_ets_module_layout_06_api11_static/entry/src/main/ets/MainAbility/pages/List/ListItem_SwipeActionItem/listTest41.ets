@@ -115,7 +115,7 @@ struct ListItemExample41 {
               onAction: () => {
                 animateTo({ duration: 1000 }, () => {
                   let index = this.arr.indexOf(item);
-                  this.arr.splice(index, 1);
+                  this.arr.splice(index.toInt(), 1);
                 })
               },
               actionAreaDistance: 56,
@@ -140,7 +140,7 @@ struct ListItemExample41 {
               onAction: () => {
                 animateTo({ duration: 1000 }, () => {
                   let index = this.arr.indexOf(item);
-                  this.arr.splice(index, 1);
+                  this.arr.splice(index.toInt(), 1);
                 })
               },
               actionAreaDistance: 56,

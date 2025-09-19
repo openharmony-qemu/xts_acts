@@ -142,13 +142,13 @@ struct ListExample11 {
           console.log('ItemDragInfo, itemIndex:' + itemIndex + 'insertIndex:' + insertIndex + 'isSuccess:' + isSuccess);
           if (isSuccess) {
             if (this.bool2) {
-              this.arr2.splice(itemIndex, 1)
-              this.arr1.splice(insertIndex, 0, this.text)
+              this.arr2.splice(itemIndex.toInt(), 1)
+              this.arr1.splice(insertIndex.toInt(), 0, this.text)
               this.bool1 = false
               this.bool2 = false
             } else if (this.bool1) {
-              this.arr2.splice(itemIndex, 1)
-              this.arr1.splice(insertIndex, 0, this.text)
+              this.arr2.splice(itemIndex.toInt(), 1)
+              this.arr1.splice(insertIndex.toInt(), 0, this.text)
               this.bool1 = false
               this.bool2 = false
             }

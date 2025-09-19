@@ -86,7 +86,7 @@ export class WaterFlowDataSource implements IDataSource<number> {
 
   
   unregisterDataChangeListener(listener: DataChangeListener): void {
-    const pos = this.listeners.indexOf(listener)
+    const pos = this.listeners.indexOf(listener).toInt()
     if (pos >= 0) {
       this.listeners.splice(pos, 1)
     }
@@ -106,7 +106,7 @@ export class WaterFlowDataSource implements IDataSource<number> {
 
   
   public addItem(index: number): void {
-    this.dataArray.splice(index, 0, this.dataArray.length)
+    this.dataArray.splice(index.toInt(), 0, this.dataArray.length)
     this.notifyDataAdd(index)
   }
 
@@ -130,7 +130,7 @@ export class WaterFlowDataSource implements IDataSource<number> {
 
   
   public deleteItem(index: number): void {
-    this.dataArray.splice(index, 1)
+    this.dataArray.splice(index.toInt(), 1)
     this.notifyDataDelete(index)
   }
 
