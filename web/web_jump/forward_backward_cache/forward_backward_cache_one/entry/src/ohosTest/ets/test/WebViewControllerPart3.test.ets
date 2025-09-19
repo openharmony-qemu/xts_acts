@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,13 +55,13 @@ export default function webViewControllerPart3Test() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_ACCESSFORWARD_0100
-    * @tc.name       : testAccessForward001
-    * @tc.desc       : test accessForward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_ACCESSFORWARD_0100
+    * @tc.name         testAccessForward001
+    * @tc.desc         test accessForward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessForward001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessForward001', 135050)
@@ -69,13 +69,13 @@ export default function webViewControllerPart3Test() {
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_ACCESSFORWARD_0200
-    * @tc.name       : testAccessForward002
-    * @tc.desc       : test accessForward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_ACCESSFORWARD_0200
+    * @tc.name         testAccessForward002
+    * @tc.desc         test accessForward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessForward002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessForward002', 135050)
@@ -83,13 +83,13 @@ export default function webViewControllerPart3Test() {
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_ACCESSFORWARD_0300
-    * @tc.name       : testAccessForward003
-    * @tc.desc       : test accessForward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_ACCESSFORWARD_0300
+    * @tc.name         testAccessForward003
+    * @tc.desc         test accessForward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessForward003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessForward003', 135050)
@@ -97,13 +97,13 @@ export default function webViewControllerPart3Test() {
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_ACCESSFORWARD_0400
-    * @tc.name       : testAccessForward004
-    * @tc.desc       : test accessForward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_ACCESSFORWARD_0400
+    * @tc.name         testAccessForward004
+    * @tc.desc         test accessForward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessForward004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessForward004', 135050)
@@ -111,13 +111,13 @@ export default function webViewControllerPart3Test() {
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_ACCESSBACKWARD_0100
-    * @tc.name       : testAccessBackward001
-    * @tc.desc       : test accessBackward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_ACCESSBACKWARD_0100
+    * @tc.name         testAccessBackward001
+    * @tc.desc         test accessBackward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessBackward001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessBackward001', 135050)
@@ -125,13 +125,13 @@ export default function webViewControllerPart3Test() {
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_ACCESSBACKWARD_0200
-    * @tc.name       : testAccessBackward002
-    * @tc.desc       : test accessBackward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_ACCESSBACKWARD_0200
+    * @tc.name         testAccessBackward002
+    * @tc.desc         test accessBackward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessBackward002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessBackward002', 135050)
@@ -139,13 +139,13 @@ export default function webViewControllerPart3Test() {
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_ACCESSBACKWARD_0300
-    * @tc.name       : testAccessBackward003
-    * @tc.desc       : test accessBackward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_ACCESSBACKWARD_0300
+    * @tc.name         testAccessBackward003
+    * @tc.desc         test accessBackward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessBackward003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessBackward003', 135050)
@@ -153,13 +153,13 @@ export default function webViewControllerPart3Test() {
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_ACCESSBACKWARD_0400
-    * @tc.name       : testAccessBackward004
-    * @tc.desc       : test accessBackward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_ACCESSBACKWARD_0400
+    * @tc.name         testAccessBackward004
+    * @tc.desc         test accessBackward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessBackward004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessBackward004', 135050)
@@ -167,13 +167,13 @@ export default function webViewControllerPart3Test() {
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_0100
-    * @tc.name       : testAccessStep001
-    * @tc.desc       : test accessStep(1) when has no forward history can return false
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_0100
+    * @tc.name         testAccessStep001
+    * @tc.desc         test accessStep(1) when has no forward history can return false
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessStep001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessStep001', 135050)
@@ -181,13 +181,13 @@ export default function webViewControllerPart3Test() {
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_0200
-    * @tc.name       : testAccessStep002
-    * @tc.desc       : test accessStep(1) when has forward history can return true
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_0200
+    * @tc.name         testAccessStep002
+    * @tc.desc         test accessStep(1) when has forward history can return true
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessStep002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessStep002', 135050)
@@ -195,13 +195,13 @@ export default function webViewControllerPart3Test() {
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_0300
-    * @tc.name       : testAccessStep003
-    * @tc.desc       : test accessStep(-1) when has no backward history can return false
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_0300
+    * @tc.name         testAccessStep003
+    * @tc.desc         test accessStep(-1) when has no backward history can return false
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessStep003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessStep003', 135050)
@@ -209,13 +209,13 @@ export default function webViewControllerPart3Test() {
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_0400
-    * @tc.name       : testAccessStep004
-    * @tc.desc       : test accessStep(-1) when has backward history can return true
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_0400
+    * @tc.name         testAccessStep004
+    * @tc.desc         test accessStep(-1) when has backward history can return true
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessStep004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessStep004', 135050)
@@ -223,13 +223,13 @@ export default function webViewControllerPart3Test() {
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_0500
-    * @tc.name       : testAccessStep005
-    * @tc.desc       : test accessStep(1) when has no forward history can return false
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_0500
+    * @tc.name         testAccessStep005
+    * @tc.desc         test accessStep(1) when has no forward history can return false
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessStep005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessStep005', 135050)
@@ -237,13 +237,13 @@ export default function webViewControllerPart3Test() {
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_0600
-    * @tc.name       : testAccessStep006
-    * @tc.desc       : test accessStep(1) when has forward history can return true
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_0600
+    * @tc.name         testAccessStep006
+    * @tc.desc         test accessStep(1) when has forward history can return true
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessStep006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessStep006', 135050)
@@ -251,13 +251,13 @@ export default function webViewControllerPart3Test() {
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_0700
-    * @tc.name       : testAccessStep007
-    * @tc.desc       : test accessStep(-1) when has no backward history can return false
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_0700
+    * @tc.name         testAccessStep007
+    * @tc.desc         test accessStep(-1) when has no backward history can return false
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessStep007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessStep007', 135050)
@@ -265,13 +265,13 @@ export default function webViewControllerPart3Test() {
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_0800
-    * @tc.name       : testAccessStep008
-    * @tc.desc       : test accessStep(-1) when has backward history can return true
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_0800
+    * @tc.name         testAccessStep008
+    * @tc.desc         test accessStep(-1) when has backward history can return true
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessStep008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessStep008', 135050)
@@ -280,13 +280,13 @@ export default function webViewControllerPart3Test() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BACKWARD_0100
-    * @tc.name       : testBackward001
-    * @tc.desc       : test backward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_BACKWARD_0100
+    * @tc.name         testBackward001
+    * @tc.desc         test backward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testBackward001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testBackward001', 135050)
@@ -294,13 +294,13 @@ export default function webViewControllerPart3Test() {
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BACKWARD_0200
-    * @tc.name       : testBackward002
-    * @tc.desc       : test backward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_BACKWARD_0200
+    * @tc.name         testBackward002
+    * @tc.desc         test backward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testBackward002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testBackward002', 135050)
@@ -308,13 +308,13 @@ export default function webViewControllerPart3Test() {
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BACKWARD_0300
-    * @tc.name       : testBackward003
-    * @tc.desc       : test backward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_BACKWARD_0300
+    * @tc.name         testBackward003
+    * @tc.desc         test backward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testBackward003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testBackward003', 135050)
@@ -322,13 +322,13 @@ export default function webViewControllerPart3Test() {
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_FORWARD_0100
-    * @tc.name       : testForward001
-    * @tc.desc       : test forward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_FORWARD_0100
+    * @tc.name         testForward001
+    * @tc.desc         test forward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testForward001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testForward001', 135050)
@@ -336,13 +336,13 @@ export default function webViewControllerPart3Test() {
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_FORWARD_0200
-    * @tc.name       : testForward002
-    * @tc.desc       : test forward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_FORWARD_0200
+    * @tc.name         testForward002
+    * @tc.desc         test forward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testForward002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testForward002', 135050)
@@ -350,13 +350,13 @@ export default function webViewControllerPart3Test() {
       sendEventByKey('WebViewControllerTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_FORWARD_0300
-    * @tc.name       : testForward003
-    * @tc.desc       : test forward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBVIEWCONTROLLER_FORWARD_0300
+    * @tc.name         testForward003
+    * @tc.desc         test forward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testForward003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testForward003', 135050)

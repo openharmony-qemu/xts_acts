@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2022~2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,10 +44,10 @@ export default function webJsunit() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_003
-     *tc.name Backward
-     *tc.desic back to the old page
+    /**
+     * @tc.number     SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_003
+     * @tc.name       Backward
+     * @tc.desic      back to the old page
      */
     it('Backward', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitBackward', 135300)
@@ -55,10 +55,10 @@ export default function webJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_004
-     *tc.name Forward
-     *tc.desic go to the new page
+    /**
+     * @tc.number     SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_004
+     * @tc.name       Forward
+     * @tc.desic      go to the new page
      */
     it('Forward', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitForward', 135300)
@@ -66,10 +66,10 @@ export default function webJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_005
-     *tc.name AccessBackward
-     *tc.desic return whether there is a old page
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_005
+     * @tc.name AccessBackward
+     * @tc.desic return whether there is a old page
      */
     it('AccessBackward', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitAccessBackward', 135300)
@@ -77,10 +77,10 @@ export default function webJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_006
-     *tc.name AccessForward
-     *tc.desic return whether there is a new page
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_006
+     * @tc.name AccessForward
+     * @tc.desic return whether there is a new page
      */
     it('AccessForward', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitAccessForward', 135300)
@@ -88,10 +88,10 @@ export default function webJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_010
-     *tc.name AccessStep
-     *tc.desic return whether steps can be operated
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_010
+     * @tc.name AccessStep
+     * @tc.desic return whether steps can be operated
      */
     it('AccessStep', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitAccessStep', 135300)
@@ -99,10 +99,10 @@ export default function webJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_011
-     *tc.name ClearHistory
-     *tc.desic clear the browsing history
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_011
+     * @tc.name ClearHistory
+     * @tc.desic clear the browsing history
      */
     it('ClearHistory', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitClearHistory', 135300)
@@ -110,20 +110,20 @@ export default function webJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_031
-     *tc.name Once
-     *tc.desic Save current page
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_031
+     * @tc.name Once
+     * @tc.desic Save current page
      */
     it('Once', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnce', 135300)
       Utils.registerContainEvent('emitOnce', 'a=b', 135370, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_032
-     *tc.name GetItemAtIndex
-     *tc.desic Save current page
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_032
+     * @tc.name GetItemAtIndex
+     * @tc.desic Save current page
      */
     it('GetItemAtIndex', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitGetItemAtIndex', 135300)

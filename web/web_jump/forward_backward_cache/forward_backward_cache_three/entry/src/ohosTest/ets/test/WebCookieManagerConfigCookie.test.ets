@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2023-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,13 @@ export default function webCookieManagerConfigCookie() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_CONFIGCOOKIESYNC_INCLUDEHTTPONLY_0100
-    * @tc.name       : testConfigCookieSyncIncludeHttpOnly001
-    * @tc.desc       : test configCookieSync param incognito true, includeHttpOnly false
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_CONFIGCOOKIESYNC_INCLUDEHTTPONLY_0100
+    * @tc.name         testConfigCookieSyncIncludeHttpOnly001
+    * @tc.desc         test configCookieSync param incognito true, includeHttpOnly false
+    * @tc.size         MEDIUM
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testConfigCookieSyncIncludeHttpOnly001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -76,13 +76,13 @@ export default function webCookieManagerConfigCookie() {
       await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieSyncIncludeHttpOnly001');
       })
 
-    /*
-    * @tc.number     : SUB_WEB_CONFIGCOOKIESYNC_INCLUDEHTTPONLY_0200
-    * @tc.name       : testConfigCookieSyncIncludeHttpOnly002
-    * @tc.desc       : test configCookieSync param incognito false, includeHttpOnly false
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_CONFIGCOOKIESYNC_INCLUDEHTTPONLY_0200
+    * @tc.name         testConfigCookieSyncIncludeHttpOnly002
+    * @tc.desc         test configCookieSync param incognito false, includeHttpOnly false
+    * @tc.size         MEDIUM
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testConfigCookieSyncIncludeHttpOnly002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -91,13 +91,13 @@ export default function webCookieManagerConfigCookie() {
         await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieSyncIncludeHttpOnly002');
       })
 
-    /*
-    * @tc.number     : SUB_WEB_CONFIGCOOKIESYNC_INCLUDEHTTPONLY_0300
-    * @tc.name       : testConfigCookieSyncIncludeHttpOnly003
-    * @tc.desc       : test configCookieSync param incognito true, includeHttpOnly true
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_CONFIGCOOKIESYNC_INCLUDEHTTPONLY_0300
+    * @tc.name         testConfigCookieSyncIncludeHttpOnly003
+    * @tc.desc         test configCookieSync param incognito true, includeHttpOnly true
+    * @tc.size         MEDIUM
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testConfigCookieSyncIncludeHttpOnly003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -106,13 +106,13 @@ export default function webCookieManagerConfigCookie() {
         await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieSyncIncludeHttpOnly003');
       })
 
-    /*
-    * @tc.number     : SUB_WEB_CONFIGCOOKIESYNC_INCLUDEHTTPONLY_0400
-    * @tc.name       : testConfigCookieSyncIncludeHttpOnly004
-    * @tc.desc       : test configCookieSync param incognito false, includeHttpOnly true
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_CONFIGCOOKIESYNC_INCLUDEHTTPONLY_0400
+    * @tc.name         testConfigCookieSyncIncludeHttpOnly004
+    * @tc.desc         test configCookieSync param incognito false, includeHttpOnly true
+    * @tc.size         MEDIUM
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testConfigCookieSyncIncludeHttpOnly004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -122,13 +122,13 @@ export default function webCookieManagerConfigCookie() {
       })
 
 
-    /*
-    * @tc.number     : SUB_WEB_CONFIGCOOKIESYNC_INCLUDEHTTPONLY_ERROR_CODE_0500
-    * @tc.name       : testConfigCookieSyncIncludeHttpOnlyErrorCode005
-    * @tc.desc       : test configCookieSync param incognito true, includeHttpOnly true, error code 17100002
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_CONFIGCOOKIESYNC_INCLUDEHTTPONLY_ERROR_CODE_0500
+    * @tc.name         testConfigCookieSyncIncludeHttpOnlyErrorCode005
+    * @tc.desc         test configCookieSync param incognito true, includeHttpOnly true, error code 17100002
+    * @tc.size         MEDIUM
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testConfigCookieSyncIncludeHttpOnlyErrorCode005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -138,13 +138,13 @@ export default function webCookieManagerConfigCookie() {
       })
 
 
-    /*
-    * @tc.number     : SUB_WEB_CONFIGCOOKIESYNC_INCLUDEHTTPONLY_ERROR_CODE_0600
-    * @tc.name       : testConfigCookieSyncIncludeHttpOnlyErrorCode006
-    * @tc.desc       : test configCookieSync param incognito true, includeHttpOnly true, error code 17100002
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_CONFIGCOOKIESYNC_INCLUDEHTTPONLY_ERROR_CODE_0600
+    * @tc.name         testConfigCookieSyncIncludeHttpOnlyErrorCode006
+    * @tc.desc         test configCookieSync param incognito true, includeHttpOnly true, error code 17100002
+    * @tc.size         MEDIUM
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testConfigCookieSyncIncludeHttpOnlyErrorCode006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -153,13 +153,13 @@ export default function webCookieManagerConfigCookie() {
         await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieSyncIncludeHttpOnlyErrorCode006');
       })
 
-    /*
-       * @tc.number     : SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_0100
-       * @tc.name       : testConfigCookieIncludeHttpOnly001
-       * @tc.desc       : test configCookie param incognito true, includeHttpOnly false
-       * @tc.size       : MEDIUM
-       * @tc.type       : Function
-       * @tc.level      : Level 1
+    /**
+       * @tc.number       SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_0100
+       * @tc.name         testConfigCookieIncludeHttpOnly001
+       * @tc.desc         test configCookie param incognito true, includeHttpOnly false
+       * @tc.size         MEDIUM
+       * @tc.type         Function
+       * @tc.level        Level 1
        */
     it('testConfigCookieIncludeHttpOnly001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -168,13 +168,13 @@ export default function webCookieManagerConfigCookie() {
         await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieIncludeHttpOnly001');
       })
 
-    /*
-    * @tc.number     : SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_0200
-    * @tc.name       : testConfigCookieIncludeHttpOnly002
-    * @tc.desc       : test configCookie param incognito false, includeHttpOnly false
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_0200
+    * @tc.name         testConfigCookieIncludeHttpOnly002
+    * @tc.desc         test configCookie param incognito false, includeHttpOnly false
+    * @tc.size         MEDIUM
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testConfigCookieIncludeHttpOnly002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -183,13 +183,13 @@ export default function webCookieManagerConfigCookie() {
         await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieIncludeHttpOnly002');
       })
 
-    /*
-    * @tc.number     : SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_0300
-    * @tc.name       : testConfigCookieIncludeHttpOnly003
-    * @tc.desc       : test configCookie param incognito true, includeHttpOnly true
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_0300
+    * @tc.name         testConfigCookieIncludeHttpOnly003
+    * @tc.desc         test configCookie param incognito true, includeHttpOnly true
+    * @tc.size         MEDIUM
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testConfigCookieIncludeHttpOnly003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -198,13 +198,13 @@ export default function webCookieManagerConfigCookie() {
         await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieIncludeHttpOnly003');
       })
 
-    /*
-    * @tc.number     : SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_0400
-    * @tc.name       : testConfigCookieIncludeHttpOnly004
-    * @tc.desc       : test configCookie param incognito false, includeHttpOnly true
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_0400
+    * @tc.name         testConfigCookieIncludeHttpOnly004
+    * @tc.desc         test configCookie param incognito false, includeHttpOnly true
+    * @tc.size         MEDIUM
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testConfigCookieIncludeHttpOnly004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -213,13 +213,13 @@ export default function webCookieManagerConfigCookie() {
         await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieIncludeHttpOnly004');
       })
 
-    /*
-    * @tc.number     : SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_ERROR_CODE_0500
-    * @tc.name       : testConfigCookieIncludeHttpOnlyErrorCode005
-    * @tc.desc       : test configCookie param incognito true, includeHttpOnly true,  errorCode 17100002
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_ERROR_CODE_0500
+    * @tc.name         testConfigCookieIncludeHttpOnlyErrorCode005
+    * @tc.desc         test configCookie param incognito true, includeHttpOnly true,  errorCode 17100002
+    * @tc.size         MEDIUM
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testConfigCookieIncludeHttpOnlyErrorCode005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -229,13 +229,13 @@ export default function webCookieManagerConfigCookie() {
       })
 
 
-    /*
-    * @tc.number     : SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_ERROR_CODE_0600
-    * @tc.name       : testConfigCookieIncludeHttpOnlyErrorCode006
-    * @tc.desc       : test configCookie param incognito true, includeHttpOnly true, errorCode 17100005
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_ERROR_CODE_0600
+    * @tc.name         testConfigCookieIncludeHttpOnlyErrorCode006
+    * @tc.desc         test configCookie param incognito true, includeHttpOnly true, errorCode 17100005
+    * @tc.size         MEDIUM
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testConfigCookieIncludeHttpOnlyErrorCode006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -244,13 +244,13 @@ export default function webCookieManagerConfigCookie() {
         await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieIncludeHttpOnlyErrorCode006');
       })
 
-    /*
-    * @tc.number     : SUB_WEB_CONFIGCOOKIE_ERROR_CODE_0100
-    * @tc.name       : testConfigCookieErrorCode001
-    * @tc.desc       : test configCookie errorCode 17100002
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_CONFIGCOOKIE_ERROR_CODE_0100
+    * @tc.name         testConfigCookieErrorCode001
+    * @tc.desc         test configCookie errorCode 17100002
+    * @tc.size         MEDIUM
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testConfigCookieErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testConfigCookieErrorCode001', 135400)
@@ -258,13 +258,13 @@ export default function webCookieManagerConfigCookie() {
       await Utils.waitAndClickComponent(driver, 'WebCookieManagerConfigCookieTestButton', 'testConfigCookieErrorCode001');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_CONFIGCOOKIE_ERROR_CODE_0200
-    * @tc.name       : testConfigCookieErrorCode002
-    * @tc.desc       : test configCookie errorCode 17100005
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_CONFIGCOOKIE_ERROR_CODE_0200
+    * @tc.name         testConfigCookieErrorCode002
+    * @tc.desc         test configCookie errorCode 17100005
+    * @tc.size         MEDIUM
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testConfigCookieErrorCode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testConfigCookieErrorCode002', 135400)

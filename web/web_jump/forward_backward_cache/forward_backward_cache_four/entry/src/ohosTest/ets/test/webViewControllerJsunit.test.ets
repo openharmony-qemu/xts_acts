@@ -60,10 +60,10 @@ export default function webViewControllerJsunit() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_1300
-     *tc.name testFetchCookieSync
-     *tc.desc test for FetchCookieSync
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_API_1300
+     * @tc.name testFetchCookieSync
+     * @tc.desc test for FetchCookieSync
      */
     it('testFetchCookieSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitFetchCookieSync', 137200);
@@ -71,10 +71,10 @@ export default function webViewControllerJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_1400
-     *tc.name testFetchCookieCallback
-     *tc.desc test for FetchCookieCallback
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_API_1400
+     * @tc.name testFetchCookieCallback
+     * @tc.desc test for FetchCookieCallback
      */
     it('testFetchCookieCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitFetchCookieCallback', 137200);
@@ -82,10 +82,10 @@ export default function webViewControllerJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_1500
-     *tc.name testFetchCookiePromise
-     *tc.desc test for FetchCookiePromise
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_API_1500
+     * @tc.name testFetchCookiePromise
+     * @tc.desc test for FetchCookiePromise
      */
     it('testFetchCookiePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitFetchCookiePromise', 137200);
@@ -93,10 +93,10 @@ export default function webViewControllerJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_1600
-     *tc.name testConfigCookieSync
-     *tc.desc test for ConfigCookieSync
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_API_1600
+     * @tc.name testConfigCookieSync
+     * @tc.desc test for ConfigCookieSync
      */
     it('testConfigCookieSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitConfigCookieSync', 137200);
@@ -104,10 +104,10 @@ export default function webViewControllerJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_1700
-     *tc.name testConfigCookieCallback
-     *tc.desc test for ConfigCookieCallback
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_API_1700
+     * @tc.name testConfigCookieCallback
+     * @tc.desc test for ConfigCookieCallback
      */
     it('testConfigCookieCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitConfigCookieCallback', 137200);
@@ -115,10 +115,10 @@ export default function webViewControllerJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_1800
-     *tc.name testConfigCookiePromise
-     *tc.desc test for ConfigCookiePromise
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_API_1800
+     * @tc.name testConfigCookiePromise
+     * @tc.desc test for ConfigCookiePromise
      */
     it('testConfigCookiePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitConfigCookiePromise', 137200);
@@ -126,10 +126,10 @@ export default function webViewControllerJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_1900
-     *tc.name testClearAllCookiesSync
-     *tc.desc test for ClearAllCookiesSync
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_API_1900
+     * @tc.name testClearAllCookiesSync
+     * @tc.desc test for ClearAllCookiesSync
      */
     it('testClearAllCookiesSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitClearAllCookiesSync', 137200);
@@ -137,10 +137,10 @@ export default function webViewControllerJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_2000
-     *tc.name testClearAllCookiesCallback
-     *tc.desc test for ClearAllCookiesCallback
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_API_2000
+     * @tc.name testClearAllCookiesCallback
+     * @tc.desc test for ClearAllCookiesCallback
      */
     it('testClearAllCookiesCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitClearAllCookiesCallback', 137200);
@@ -148,10 +148,10 @@ export default function webViewControllerJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_2100
-     *tc.name testClearAllCookiesPromise
-     *tc.desc test for ClearAllCookiesPromise
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_API_2100
+     * @tc.name testClearAllCookiesPromise
+     * @tc.desc test for ClearAllCookiesPromise
      */
     it('testClearAllCookiesPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitClearAllCookiesPromise', 137200);
@@ -159,10 +159,10 @@ export default function webViewControllerJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_2200
-     *tc.name testClearSessionCookieSync
-     *tc.desc test for ClearSessionCookieSync
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_API_2200
+     * @tc.name testClearSessionCookieSync
+     * @tc.desc test for ClearSessionCookieSync
      */
     it('testClearSessionCookieSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitClearSessionCookieSync', 137200);
@@ -170,10 +170,10 @@ export default function webViewControllerJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_2300
-     *tc.name testClearSessionCookieCallback
-     *tc.desc test for ClearSessionCookieCallback
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_API_2300
+     * @tc.name testClearSessionCookieCallback
+     * @tc.desc test for ClearSessionCookieCallback
      */
     it('testClearSessionCookieCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitClearSessionCookieCallback', 137200);
@@ -181,10 +181,10 @@ export default function webViewControllerJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_2400
-     *tc.name testClearSessionCookiePromise
-     *tc.desc test for ClearSessionCookiePromise
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_API_2400
+     * @tc.name testClearSessionCookiePromise
+     * @tc.desc test for ClearSessionCookiePromise
      */
     it('testClearSessionCookiePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitClearSessionCookiePromise', 137200);

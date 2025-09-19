@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,13 @@ export default function webStorage() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETORIGINS_0100
-    * @tc.name       : testGetOrigins001
-    * @tc.desc       : test getOrigins
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
+    /**
+    * @tc.number       SUB_WEB_GETORIGINS_0100
+    * @tc.name         testGetOrigins001
+    * @tc.desc         test getOrigins
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 0
     */
     it('testGetOrigins001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('testGetOrigins001', 134900)
@@ -75,13 +75,13 @@ export default function webStorage() {
       sendEventByKey('WebStorageButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETORIGINS_0200
-    * @tc.name       : testGetOrigins002
-    * @tc.desc       : test getOrigins
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_GETORIGINS_0200
+    * @tc.name         testGetOrigins002
+    * @tc.desc         test getOrigins
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testGetOrigins002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testGetOrigins002', 134900)
@@ -89,13 +89,13 @@ export default function webStorage() {
       sendEventByKey('WebStorageButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBSTORAGEORIGIN_ORIGIN_0100
-    * @tc.name       : testWebStorageOriginOrigin001
-    * @tc.desc       : test WebStorageOrigin origin
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBSTORAGEORIGIN_ORIGIN_0100
+    * @tc.name         testWebStorageOriginOrigin001
+    * @tc.desc         test WebStorageOrigin origin
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testWebStorageOriginOrigin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testWebStorageOriginOrigin001', 134900)
@@ -103,13 +103,13 @@ export default function webStorage() {
       sendEventByKey('WebStorageButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBSTORAGEORIGIN_USAGE_0100
-    * @tc.name       : testWebStorageOriginUsage001
-    * @tc.desc       : test WebStorageOrigin usage
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBSTORAGEORIGIN_USAGE_0100
+    * @tc.name         testWebStorageOriginUsage001
+    * @tc.desc         test WebStorageOrigin usage
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testWebStorageOriginUsage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testWebStorageOriginUsage001', 134900)
@@ -117,13 +117,13 @@ export default function webStorage() {
       sendEventByKey('WebStorageButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBSTORAGEORIGIN_QUOTA_0100
-    * @tc.name       : testWebStorageOriginQuota001
-    * @tc.desc       : test WebStorageOrigin quota
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBSTORAGEORIGIN_QUOTA_0100
+    * @tc.name         testWebStorageOriginQuota001
+    * @tc.desc         test WebStorageOrigin quota
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testWebStorageOriginQuota001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testWebStorageOriginQuota001', 134900)
@@ -131,13 +131,13 @@ export default function webStorage() {
       sendEventByKey('WebStorageButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBSTORAGEORIGIN_GETORIGINS_0100
-    * @tc.name       : testWebStorageOriginGetOrigins001
-    * @tc.desc       : test WebStorageOrigin GetOrigins
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBSTORAGEORIGIN_GETORIGINS_0100
+    * @tc.name         testWebStorageOriginGetOrigins001
+    * @tc.desc         test WebStorageOrigin GetOrigins
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testWebStorageOriginGetOrigins001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -146,13 +146,13 @@ export default function webStorage() {
         sendEventByKey('WebStorageButton', 10, '');
       })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBSTORAGEORIGIN_GETORIGINQUOTA_0100
-    * @tc.name       : testWebStorageOriginGetOriginQuota001
-    * @tc.desc       : test WebStorageOrigin getOriginQuota
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBSTORAGEORIGIN_GETORIGINQUOTA_0100
+    * @tc.name         testWebStorageOriginGetOriginQuota001
+    * @tc.desc         test WebStorageOrigin getOriginQuota
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testWebStorageOriginGetOriginQuota001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -161,13 +161,13 @@ export default function webStorage() {
         sendEventByKey('WebStorageButton', 10, '');
       })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBSTORAGEORIGIN_GETORIGINQUOTA_0200
-    * @tc.name       : testWebStorageOriginGetOriginQuota002
-    * @tc.desc       : test WebStorageOrigin getOriginQuota
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBSTORAGEORIGIN_GETORIGINQUOTA_0200
+    * @tc.name         testWebStorageOriginGetOriginQuota002
+    * @tc.desc         test WebStorageOrigin getOriginQuota
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testWebStorageOriginGetOriginQuota002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -176,13 +176,13 @@ export default function webStorage() {
         sendEventByKey('WebStorageButton', 10, '');
       })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBSTORAGEORIGIN_GETORIGINUSAGE_0100
-    * @tc.name       : testWebStorageOriginGetOriginUsage001
-    * @tc.desc       : test WebStorageOrigin getOriginUsage
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBSTORAGEORIGIN_GETORIGINUSAGE_0100
+    * @tc.name         testWebStorageOriginGetOriginUsage001
+    * @tc.desc         test WebStorageOrigin getOriginUsage
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testWebStorageOriginGetOriginUsage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -191,13 +191,13 @@ export default function webStorage() {
         sendEventByKey('WebStorageButton', 10, '');
       })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBSTORAGEORIGIN_GETORIGINUSAGE_0200
-    * @tc.name       : testWebStorageOriginGetOriginUsage002
-    * @tc.desc       : test WebStorageOrigin getOriginUsage
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBSTORAGEORIGIN_GETORIGINUSAGE_0200
+    * @tc.name         testWebStorageOriginGetOriginUsage002
+    * @tc.desc         test WebStorageOrigin getOriginUsage
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testWebStorageOriginGetOriginUsage002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -206,13 +206,13 @@ export default function webStorage() {
         sendEventByKey('WebStorageButton', 10, '');
       })
 
-    /*
-    * @tc.number     : SUB_WEB_DELETEALLDATA_0100
-    * @tc.name       : testDeleteAllData001
-    * @tc.desc       : test deleteAllData
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_DELETEALLDATA_0100
+    * @tc.name         testDeleteAllData001
+    * @tc.desc         test deleteAllData
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testDeleteAllData001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testDeleteAllData001', 134900)
@@ -220,13 +220,13 @@ export default function webStorage() {
       sendEventByKey('WebStorageButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_DELETEORIGIN_0100
-    * @tc.name       : testDeleteOrigin001
-    * @tc.desc       : test deleteOrigin
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_DELETEORIGIN_0100
+    * @tc.name         testDeleteOrigin001
+    * @tc.desc         test deleteOrigin
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testDeleteOrigin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testDeleteOrigin001', 134900)

@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,13 +55,13 @@ export default function webCookieManagerFetchCookieIncognito() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_INCOGNITO_0100
-    * @tc.name       : testFetchCookieIncognito001
-    * @tc.desc       : test fetchCookie param incognito false
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_INCOGNITO_0100
+    * @tc.name         testFetchCookieIncognito001
+    * @tc.desc         test fetchCookie param incognito false
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testFetchCookieIncognito001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testFetchCookieIncognito001', 136700)
@@ -69,13 +69,13 @@ export default function webCookieManagerFetchCookieIncognito() {
       await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieTestButton', 'testFetchCookieIncognito001');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_INCOGNITO_0200
-    * @tc.name       : testFetchCookieIncognito002
-    * @tc.desc       : test fetchCookie param incognito true
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_INCOGNITO_0200
+    * @tc.name         testFetchCookieIncognito002
+    * @tc.desc         test fetchCookie param incognito true
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testFetchCookieIncognito002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testFetchCookieIncognito002', 136700)
@@ -84,13 +84,13 @@ export default function webCookieManagerFetchCookieIncognito() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_INCOGNITO_ERRORCODE_0300
-    * @tc.name       : testFetchCookieIncognitoErrorCode003
-    * @tc.desc       : test fetchCookie param incognito true, error code 17100002
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_INCOGNITO_ERRORCODE_0300
+    * @tc.name         testFetchCookieIncognitoErrorCode003
+    * @tc.desc         test fetchCookie param incognito true, error code 17100002
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testFetchCookieIncognitoErrorCode003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

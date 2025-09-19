@@ -59,10 +59,10 @@ export default function webViewDeleteEntireCookie() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWCOOKIE_API_0200
-     *tc.name testDeleteEntireCookie
-     *tc.desc test interface of existCookie after deleteentirecookie
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWCOOKIE_API_0200
+     * @tc.name testDeleteEntireCookie
+     * @tc.desc test interface of existCookie after deleteentirecookie
      */
     it('testDeleteEntireCookie', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitDeleteEntireCookie', 137350);

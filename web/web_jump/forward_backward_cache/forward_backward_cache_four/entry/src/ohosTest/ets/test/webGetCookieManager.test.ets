@@ -60,10 +60,10 @@ export default function webGetCookieManager() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBGETCOOKIEMMANAGER_API_0100
-     *tc.name testGetCookieManagerWebc
-     *tc.desc test interface of onfullscreenexit with runjavascript exitFullscreen
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_WEBGETCOOKIEMMANAGER_API_0100
+     * @tc.name testGetCookieManagerWebc
+     * @tc.desc test interface of onfullscreenexit with runjavascript exitFullscreen
      */
     it('testGetCookieManagerWebc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitGetCookieManagerWebc', 137150);

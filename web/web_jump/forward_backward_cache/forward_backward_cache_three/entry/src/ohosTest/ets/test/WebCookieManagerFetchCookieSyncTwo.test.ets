@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,13 @@ export default function webCookieManagerFetchCookieSyncTwo() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIESYNC_3100
-    * @tc.name       : testFetchCookieSync031
-    * @tc.desc       : test fetchCookieSync
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIESYNC_3100
+    * @tc.name         testFetchCookieSync031
+    * @tc.desc         test fetchCookieSync
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testFetchCookieSync031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testFetchCookieSync031', 137100)
@@ -73,13 +73,13 @@ export default function webCookieManagerFetchCookieSyncTwo() {
       await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieSyncTestButton', 'testFetchCookieSync031');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIESYNC_3200
-    * @tc.name       : testFetchCookieSync032
-    * @tc.desc       : test fetchCookieSync
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIESYNC_3200
+    * @tc.name         testFetchCookieSync032
+    * @tc.desc         test fetchCookieSync
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testFetchCookieSync032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testFetchCookieSync032', 137100)

@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,13 @@ export default function webCookieManagerFetchCookieThree() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_6100
-    * @tc.name       : testFetchCookie061
-    * @tc.desc       : test fetchCookieSync
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_6100
+    * @tc.name         testFetchCookie061
+    * @tc.desc         test fetchCookieSync
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testFetchCookie061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testFetchCookie061', 136600)
@@ -73,13 +73,13 @@ export default function webCookieManagerFetchCookieThree() {
       await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieTestButton', 'testFetchCookie061');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_6200
-    * @tc.name       : testFetchCookie062
-    * @tc.desc       : test fetchCookieSync
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_6200
+    * @tc.name         testFetchCookie062
+    * @tc.desc         test fetchCookieSync
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testFetchCookie062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testFetchCookie062', 136600)
@@ -90,13 +90,13 @@ export default function webCookieManagerFetchCookieThree() {
       await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieTestButton', 'testFetchCookie062');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_6300
-    * @tc.name       : testFetchCookie063
-    * @tc.desc       : test fetchCookieSync
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_6300
+    * @tc.name         testFetchCookie063
+    * @tc.desc         test fetchCookieSync
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testFetchCookie063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testFetchCookie063', 136600)
@@ -107,13 +107,13 @@ export default function webCookieManagerFetchCookieThree() {
       await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieTestButton', 'testFetchCookie063');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_6400
-    * @tc.name       : testFetchCookie064
-    * @tc.desc       : test fetchCookieSync
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_6400
+    * @tc.name         testFetchCookie064
+    * @tc.desc         test fetchCookieSync
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testFetchCookie064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testFetchCookie064', 136600)

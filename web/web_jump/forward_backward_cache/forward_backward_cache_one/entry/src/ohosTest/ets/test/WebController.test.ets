@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,13 @@ export default function webController() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ACCESSSTEP_0100
-    * @tc.name       : testAccessStep001
-    * @tc.desc       : test accessStep
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_ACCESSSTEP_0100
+    * @tc.name         testAccessStep001
+    * @tc.desc         test accessStep
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessStep001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessStep001', 134500)
@@ -70,13 +70,13 @@ export default function webController() {
       sendEventByKey('WebControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ACCESSSTEP_0200
-    * @tc.name       : testAccessStep002
-    * @tc.desc       : test accessStep
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_ACCESSSTEP_0200
+    * @tc.name         testAccessStep002
+    * @tc.desc         test accessStep
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessStep002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessStep002', 134500)
@@ -85,13 +85,13 @@ export default function webController() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_ACCESSSTEP_0300
-    * @tc.name       : testAccessStep003
-    * @tc.desc       : test accessStep
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_ACCESSSTEP_0300
+    * @tc.name         testAccessStep003
+    * @tc.desc         test accessStep
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessStep003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessStep003', 134500)
@@ -99,13 +99,13 @@ export default function webController() {
       sendEventByKey('WebControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ACCESSSTEP_0400
-    * @tc.name       : testAccessStep004
-    * @tc.desc       : test accessStep
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_ACCESSSTEP_0400
+    * @tc.name         testAccessStep004
+    * @tc.desc         test accessStep
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessStep004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessStep004', 134500)
@@ -113,13 +113,13 @@ export default function webController() {
       sendEventByKey('WebControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ACCESSSTEP_0500
-    * @tc.name       : testAccessStep005
-    * @tc.desc       : test accessStep
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_ACCESSSTEP_0500
+    * @tc.name         testAccessStep005
+    * @tc.desc         test accessStep
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessStep005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessStep005', 134500)
@@ -127,13 +127,13 @@ export default function webController() {
       sendEventByKey('WebControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ACCESSSTEP_0600
-    * @tc.name       : testAccessStep006
-    * @tc.desc       : test accessStep
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_ACCESSSTEP_0600
+    * @tc.name         testAccessStep006
+    * @tc.desc         test accessStep
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessStep006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessStep006', 134500)
@@ -141,13 +141,13 @@ export default function webController() {
       sendEventByKey('WebControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ACCESSSTEP_0700
-    * @tc.name       : testAccessStep007
-    * @tc.desc       : test accessStep
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_ACCESSSTEP_0700
+    * @tc.name         testAccessStep007
+    * @tc.desc         test accessStep
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessStep007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessStep007', 134500)
@@ -155,13 +155,13 @@ export default function webController() {
       sendEventByKey('WebControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ACCESSSTEP_0800
-    * @tc.name       : testAccessStep008
-    * @tc.desc       : test accessStep
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_ACCESSSTEP_0800
+    * @tc.name         testAccessStep008
+    * @tc.desc         test accessStep
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessStep008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessStep008', 134500)
@@ -169,13 +169,13 @@ export default function webController() {
       sendEventByKey('WebControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ACCESSBACKWARD_0100
-    * @tc.name       : testAccessBackward001
-    * @tc.desc       : test accessBackward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_ACCESSBACKWARD_0100
+    * @tc.name         testAccessBackward001
+    * @tc.desc         test accessBackward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessBackward001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessBackward001', 134500)
@@ -183,13 +183,13 @@ export default function webController() {
       sendEventByKey('WebControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ACCESSBACKWARD_0200
-    * @tc.name       : testAccessBackward002
-    * @tc.desc       : test accessBackward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_ACCESSBACKWARD_0200
+    * @tc.name         testAccessBackward002
+    * @tc.desc         test accessBackward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessBackward002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessBackward002', 134500)
@@ -197,13 +197,13 @@ export default function webController() {
       sendEventByKey('WebControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ACCESSBACKWARD_0300
-    * @tc.name       : testAccessBackward003
-    * @tc.desc       : test accessBackward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_ACCESSBACKWARD_0300
+    * @tc.name         testAccessBackward003
+    * @tc.desc         test accessBackward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessBackward003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessBackward003', 134500)
@@ -211,13 +211,13 @@ export default function webController() {
       sendEventByKey('WebControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ACCESSBACKWARD_0400
-    * @tc.name       : testAccessBackward004
-    * @tc.desc       : test accessBackward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_ACCESSBACKWARD_0400
+    * @tc.name         testAccessBackward004
+    * @tc.desc         test accessBackward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessBackward004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessBackward004', 134500)
@@ -225,13 +225,13 @@ export default function webController() {
       sendEventByKey('WebControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ACCESSFORWARD_0100
-    * @tc.name       : testAccessForward001
-    * @tc.desc       : test accessForward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_ACCESSFORWARD_0100
+    * @tc.name         testAccessForward001
+    * @tc.desc         test accessForward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessForward001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessForward001', 134500)
@@ -239,13 +239,13 @@ export default function webController() {
       sendEventByKey('WebControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ACCESSFORWARD_0200
-    * @tc.name       : testAccessForward002
-    * @tc.desc       : test accessForward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_ACCESSFORWARD_0200
+    * @tc.name         testAccessForward002
+    * @tc.desc         test accessForward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessForward002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessForward002', 134500)
@@ -253,13 +253,13 @@ export default function webController() {
       sendEventByKey('WebControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ACCESSFORWARD_0300
-    * @tc.name       : testAccessForward003
-    * @tc.desc       : test accessForward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_ACCESSFORWARD_0300
+    * @tc.name         testAccessForward003
+    * @tc.desc         test accessForward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessForward003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessForward003', 134500)
@@ -267,13 +267,13 @@ export default function webController() {
       sendEventByKey('WebControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ACCESSFORWARD_0400
-    * @tc.name       : testAccessForward004
-    * @tc.desc       : test accessForward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_ACCESSFORWARD_0400
+    * @tc.name         testAccessForward004
+    * @tc.desc         test accessForward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testAccessForward004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testAccessForward004', 134500)
@@ -281,13 +281,13 @@ export default function webController() {
       sendEventByKey('WebControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_BACKWARD_0100
-    * @tc.name       : testBackward001
-    * @tc.desc       : test backward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_BACKWARD_0100
+    * @tc.name         testBackward001
+    * @tc.desc         test backward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testBackward001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testBackward001', 134500)
@@ -295,13 +295,13 @@ export default function webController() {
       sendEventByKey('WebControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_BACKWARD_0200
-    * @tc.name       : testBackward002
-    * @tc.desc       : test backward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_BACKWARD_0200
+    * @tc.name         testBackward002
+    * @tc.desc         test backward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testBackward002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testBackward002', 134500)
@@ -309,13 +309,13 @@ export default function webController() {
       sendEventByKey('WebControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_BACKWARD_0300
-    * @tc.name       : testBackward003
-    * @tc.desc       : test backward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_BACKWARD_0300
+    * @tc.name         testBackward003
+    * @tc.desc         test backward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testBackward003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testBackward003', 134500)
@@ -323,13 +323,13 @@ export default function webController() {
       sendEventByKey('WebControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_FORWARD_0100
-    * @tc.name       : testForward001
-    * @tc.desc       : test forward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_FORWARD_0100
+    * @tc.name         testForward001
+    * @tc.desc         test forward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testForward001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testForward001', 134500)
@@ -337,13 +337,13 @@ export default function webController() {
       sendEventByKey('WebControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_FORWARD_0200
-    * @tc.name       : testForward002
-    * @tc.desc       : test forward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_FORWARD_0200
+    * @tc.name         testForward002
+    * @tc.desc         test forward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testForward002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testForward002', 134500)
@@ -351,13 +351,13 @@ export default function webController() {
       sendEventByKey('WebControllerButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_FORWARD_0300
-    * @tc.name       : testForward003
-    * @tc.desc       : test forward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_WEB_FORWARD_0300
+    * @tc.name         testForward003
+    * @tc.desc         test forward
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testForward003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testForward003', 134500)

@@ -59,13 +59,13 @@ export default function ActsAceWebviewSetBackForwardCacheOptions() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_ACE_WEBVIEW_SETBACKFORWARDCHCHEOPTIONS_API_0001
-    * @tc.name        : testWebviewSetBackForwardCacheOptions
-    * @tc.desc        : test webviewSetBackForwardCacheOptions
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
+    /**
+    * @tc.number        SUB_ACE_WEBVIEW_SETBACKFORWARDCHCHEOPTIONS_API_0001
+    * @tc.name          testWebviewSetBackForwardCacheOptions
+    * @tc.desc          test webviewSetBackForwardCacheOptions
+    * @tc.size          MediumTest
+    * @tc.type          Function
+    * @tc.level         Level 0
     */
     it('testWebviewSetBackForwardCacheOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
