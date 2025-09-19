@@ -94,5 +94,87 @@ export default function HttpResponseCacheTest() {
       }
       hilog.info(domain, tag, `${caseName}---End `);
     });
+
+   /**
+    * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_0100
+    * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush_static_0100
+    * @tc.desc   Write cached data to the file system.Use callback as an asynchronous method.
+    * @tc.level  Level 3
+    * @tc.type   Function
+    * @tc.size   MediumTest
+    */
+    it("testNetworkMgrHttpHttpResponseCacheFlush_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush_static_0100';
+      hilog.info(domain, tag, `${caseName}---Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle | undefined) => {
+          if (data?.netId === 0) {
+            hilog.info(domain, tag, `${caseName} Please connect to the network`);
+            expect().assertFail();
+            done();
+          } else {
+            hilog.info(domain, tag, `${caseName} Network connected`);
+            let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache();
+            httpResponseCache.flush((err: BusinessError<void>|null, data: undefined) => {
+              if (err?.code != 0) {
+                hilog.error(domain, tag, `${caseName} flush failed ${JSON.stringify(err)}`);
+                expect().assertFail();
+                done();
+              } else {
+                hilog.info(domain, tag, `${caseName} failed err: ${JSON.stringify(data)}`);
+                expect(data == undefined).assertTrue();
+                done();
+              }
+            });
+          }
+        });
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} try...catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName}---End`);
+    });
+
+    /**
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_0200
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush_static_0200
+     * @tc.desc   Write cached data to the file system.Use Promise as an asynchronous method.
+     * @tc.level  Level 3
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     */
+    it("testNetworkMgrHttpHttpResponseCacheFlush_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush_static_0200';
+      hilog.info(domain, tag, `${caseName}---Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle | undefined) => {
+          if (data?.netId === 0) {
+            hilog.info(domain, tag, `${caseName} Please connect to the network`);
+            expect().assertFail();
+            done();
+          } else {
+            hilog.info(domain, tag, `${caseName} Network connected`);
+            let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache();
+            httpResponseCache.flush().then(() => {
+              expect(data !== undefined).assertTrue();
+              done();
+            }).catch((error: Error) => {
+              hilog.error(domain, tag, `${caseName} flush fail err:${JSON.stringify(error)}`);
+              expect().assertFail();
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} try...catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName}---End`);
+    });
+
+
+
   });
 }
