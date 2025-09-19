@@ -52,7 +52,7 @@ export default function CollatorInIntlTest() {
     afterAll(() => {
       console.info("afterAll case");
     });
-    /* *
+    /**
      * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_3500
      * @tc.name    collator_test_static_3500
      * @tc.desc    compare two different strings
@@ -63,7 +63,7 @@ export default function CollatorInIntlTest() {
       console.log('collator_test_static_3500 ' + value);
       expect(value).assertEqual(-1);
     })
-    /* *
+    /**
      * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_3510
      * @tc.name    collator_test_static_3510
      * @tc.desc    compare the same strings
@@ -75,7 +75,7 @@ export default function CollatorInIntlTest() {
       expect(value).assertEqual(0);
     })
 
-    /* *
+    /**
      * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_3520
      * @tc.name    collator_test_static_3520
      * @tc.desc    compare two different strings and return positive value
@@ -87,7 +87,7 @@ export default function CollatorInIntlTest() {
       expect(value).assertEqual(1);
     })
 
-    /* *
+    /**
    * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_3600
    * @tc.name    collator_test_static_3600
    * @tc.desc    compare two different strings with zh locale
@@ -99,7 +99,7 @@ export default function CollatorInIntlTest() {
       expect(value).assertEqual(-1);
     })
 
-    /* *
+    /**
      * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_3620
      * @tc.name    collator_test_static_3620
      * @tc.desc    compare two different strings with zh locale and undefined options
@@ -111,7 +111,7 @@ export default function CollatorInIntlTest() {
       expect(value).assertEqual(-1);
     })
 
-    /* *
+    /**
      * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_3640
      * @tc.name    collator_test_static_3640
      * @tc.desc    compare two different strings with zh locale and null options
@@ -123,7 +123,7 @@ export default function CollatorInIntlTest() {
       expect(value).assertEqual(-1);
     })
 
-    /* *
+    /**
     * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_3700
     * @tc.name    collator_test_static_3700
     * @tc.desc    compare two different strings with zh locale and eor collation
@@ -136,7 +136,7 @@ export default function CollatorInIntlTest() {
       expect(coll.resolvedOptions().collation).assertEqual('eor');
     })
 
-    /* *
+    /**
     * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_3800
     * @tc.name    collator_test_static_3800
     * @tc.desc    compare two different strings with zh locale and base sensitivity
@@ -149,7 +149,7 @@ export default function CollatorInIntlTest() {
       expect(coll.resolvedOptions().sensitivity).assertEqual('base');
     })
 
-    /* *
+    /**
      * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_3900
      * @tc.name    collator_test_static_3900
      * @tc.desc    compare two different strings with zh locale and upper caseFirst
@@ -162,7 +162,7 @@ export default function CollatorInIntlTest() {
       expect(coll.resolvedOptions().caseFirst).assertEqual('upper');
     })
 
-    /* *
+    /**
      * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_4000
      * @tc.name    collator_test_static_4000
      * @tc.desc    compare two different strings with zh locale and true numeric
@@ -175,7 +175,7 @@ export default function CollatorInIntlTest() {
       expect(coll.resolvedOptions().numeric).assertTrue();
     })
 
-    /* *
+    /**
     * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_4100
     * @tc.name    collator_test_static_4100
     * @tc.desc    compare two different strings with zh locale and true ignorePunctuation
@@ -188,7 +188,7 @@ export default function CollatorInIntlTest() {
       expect(coll.resolvedOptions().ignorePunctuation).assertTrue();
     })
 
-    /* *
+    /**
     * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_4200
     * @tc.name    collator_test_static_4200
     * @tc.desc        * @tc.name    collator_test_static_4200
@@ -201,7 +201,7 @@ export default function CollatorInIntlTest() {
       expect(coll.resolvedOptions().usage).assertEqual('sort');
     })
 
-    /* *
+    /**
     * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_4300
     * @tc.name    collator_test_static_4300
     * @tc.desc    check the compare result
