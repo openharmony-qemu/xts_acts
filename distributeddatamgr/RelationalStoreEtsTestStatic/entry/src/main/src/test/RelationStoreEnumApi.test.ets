@@ -86,12 +86,12 @@ export default function RelationalStoreEnumTest(){
       hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
     });
     /**
-     * @tc.name       : RelationalStoreEnumerateTest001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_0100
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_0100
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testGetColumnIndex0001 start *************');
@@ -114,12 +114,12 @@ export default function RelationalStoreEnumTest(){
     })
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest002
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_0200
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest002
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_0200
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest002 start *************');
@@ -142,12 +142,12 @@ export default function RelationalStoreEnumTest(){
     })
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest003
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_0300
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest003
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_0300
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest003 start *************');
@@ -171,12 +171,12 @@ export default function RelationalStoreEnumTest(){
     })
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest004
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_0400
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest004
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_0400
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest004 start *************');
@@ -201,12 +201,12 @@ export default function RelationalStoreEnumTest(){
     })
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest005
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_0500
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest005
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_0500
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest005 start *************');
@@ -230,12 +230,12 @@ export default function RelationalStoreEnumTest(){
     })
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest006
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_0600
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest006
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_0600
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest006 start *************');
@@ -261,12 +261,12 @@ export default function RelationalStoreEnumTest(){
     })
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest007
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_0700
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest007
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_0700
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest007 start *************');
@@ -291,12 +291,12 @@ export default function RelationalStoreEnumTest(){
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest007 end *************');
     })
     /**
-     * @tc.name       : RelationalStoreEnumerateTest008
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_0800
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest008
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_0800
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest008 start *************');
@@ -319,12 +319,12 @@ export default function RelationalStoreEnumTest(){
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest008 end *************');
     })
     /**
-     * @tc.name       : RelationalStoreEnumerateTest009
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_0900
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest009
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_0900
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest009 start *************');
@@ -369,12 +369,12 @@ export default function RelationalStoreEnumTest(){
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest009 end *************');
     })
     /**
-     * @tc.name       : RelationalStoreEnumerateTest010
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_1000
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest010
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_1000
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest010 start *************');
@@ -431,12 +431,12 @@ export default function RelationalStoreEnumTest(){
     })
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest0011
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_1100
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest0011
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_1100
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0011 start *************');
@@ -459,12 +459,12 @@ export default function RelationalStoreEnumTest(){
     })
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest0012
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_1200
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest0012
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_1200
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0012 start *************');
@@ -487,12 +487,12 @@ export default function RelationalStoreEnumTest(){
     })
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest0013
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_1300
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest0013
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_1300
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0013 start *************');
@@ -516,12 +516,12 @@ export default function RelationalStoreEnumTest(){
     })
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest0014
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_1400
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest0014
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_1400
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0014 start *************');
@@ -545,12 +545,12 @@ export default function RelationalStoreEnumTest(){
     })
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest0015
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_1500
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest0015
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_1500
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0015 start *************');
@@ -583,12 +583,12 @@ export default function RelationalStoreEnumTest(){
     })
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest0016
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_1600
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest0016
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_1600
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0016 start *************');
@@ -621,12 +621,12 @@ export default function RelationalStoreEnumTest(){
     })
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest0017
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_1700
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest0017
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_1700
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0017 start *************');
@@ -659,12 +659,12 @@ export default function RelationalStoreEnumTest(){
     })
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest0018
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_1800
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest0018
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_1800
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0018 start *************');
@@ -696,12 +696,12 @@ export default function RelationalStoreEnumTest(){
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0018 end *************');
     })
     /**
-     * @tc.name       : RelationalStoreEnumerateTest0019
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_1900
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest0019
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_1900
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0019 start *************');
@@ -734,12 +734,12 @@ export default function RelationalStoreEnumTest(){
     })
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest0020
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_2000
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest0020
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_2000
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0020 start *************');
@@ -773,12 +773,12 @@ export default function RelationalStoreEnumTest(){
 
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest0021
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_2100
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest0021
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_2100
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0021 start *************');
@@ -830,12 +830,12 @@ export default function RelationalStoreEnumTest(){
     })
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest0022
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_2200
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest0022
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_2200
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0022 start *************');
@@ -882,67 +882,67 @@ export default function RelationalStoreEnumTest(){
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0022 end *************');
     })
     /**
-     * @tc.name       : RelationalStoreEnumerateTest0023
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_2300
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest0023
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_2300
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
-      it('RelationalStoreEnumerateTest0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0023 start *************');
-        let STORE_CONFIG1: data_relationalStore.StoreConfig = {
-          name: "MyStore1.db",
-          securityLevel: data_relationalStore.SecurityLevel.S1,
-          allowRebuild: false,
-        };
-        let STORE_CONFIG: data_relationalStore.StoreConfig = {
-          name: "MyStore1.db",
-          securityLevel: data_relationalStore.SecurityLevel.S1,
-          allowRebuild: true,
-        };
-        let dbName = "MyStore1.db";
-        dbPath = context.databaseDir + "/rdb/" + dbName;
-        dbPathWal = context.databaseDir + "/rdb/" + dbName + "-wal";
-        dbPathShm = context.databaseDir + "/rdb/" + dbName + "-shm";
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
-        try {
-          let fileExist = fs.accessSync(dbPath);
-          console.info(tag + "fileExist:"+fileExist)
-          expect(fileExist).assertTrue();
-          fs.truncateSync(dbPathWal, 4)
-          fs.truncateSync(dbPathShm, 4)
-          let file = fs.openSync(dbPath, fs.OpenMode.READ_WRITE);
-          fs.truncateSync(file.fd, 4);
-          fs.fsyncSync(file.fd)
-          fs.closeSync(file)
-        } catch (err:BusinessError) {
-          console.info(tag, `CreateCorruptDb err.code ${err.code}, err.message ${err.message}`)
-        }
-        (store as data_relationalStore.RdbStore).close();
-        store = undefined;
-        try{
-          store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
-          console.error(`RelationalStoreEnumerateTest0023, (store as data_relationalStore.RdbStore).rebuilt` + (store as data_relationalStore.RdbStore).rebuilt);
-          expect((store as data_relationalStore.RdbStore).rebuilt == data_relationalStore.RebuildType.NONE).assertEqual(true);
-          await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1);
-          done();
-        } catch(err:BusinessError) {
-          console.error(`RelationalStoreEnumerateTest0023, code is ${err.code},message is ${err.message}`);
-          expect(err != null).assertFail();
-          await data_relationalStore.deleteRdbStore(context,STORE_CONFIG1);
-          done();
-        }
-        hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0023 end *************');
+    it('RelationalStoreEnumerateTest0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0023 start *************');
+      let STORE_CONFIG1: data_relationalStore.StoreConfig = {
+        name: "MyStore1.db",
+        securityLevel: data_relationalStore.SecurityLevel.S1,
+        allowRebuild: false,
+      };
+      let STORE_CONFIG: data_relationalStore.StoreConfig = {
+        name: "MyStore1.db",
+        securityLevel: data_relationalStore.SecurityLevel.S1,
+        allowRebuild: true,
+      };
+      let dbName = "MyStore1.db";
+      dbPath = context.databaseDir + "/rdb/" + dbName;
+      dbPathWal = context.databaseDir + "/rdb/" + dbName + "-wal";
+      dbPathShm = context.databaseDir + "/rdb/" + dbName + "-shm";
+      store = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+      try {
+        let fileExist = fs.accessSync(dbPath);
+        console.info(tag + "fileExist:"+fileExist)
+        expect(fileExist).assertTrue();
+        fs.truncateSync(dbPathWal, 4)
+        fs.truncateSync(dbPathShm, 4)
+        let file = fs.openSync(dbPath, fs.OpenMode.READ_WRITE);
+        fs.truncateSync(file.fd, 4);
+        fs.fsyncSync(file.fd)
+        fs.closeSync(file)
+      } catch (err:BusinessError) {
+        console.info(tag, `CreateCorruptDb err.code ${err.code}, err.message ${err.message}`)
+      }
+      (store as data_relationalStore.RdbStore).close();
+      store = undefined;
+      try{
+        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        console.error(`RelationalStoreEnumerateTest0023, (store as data_relationalStore.RdbStore).rebuilt` + (store as data_relationalStore.RdbStore).rebuilt);
+        expect((store as data_relationalStore.RdbStore).rebuilt == data_relationalStore.RebuildType.NONE).assertEqual(true);
+        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+        done();
+      } catch(err:BusinessError) {
+        console.error(`RelationalStoreEnumerateTest0023, code is ${err.code},message is ${err.message}`);
+        expect(err != null).assertFail();
+        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG1);
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0023 end *************');
     })
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest0024
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_2400
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest0024
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_2400
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0024 start *************');
@@ -966,14 +966,14 @@ export default function RelationalStoreEnumTest(){
       let rdbTrans = await rdbStore.createTransaction(options);
       console.error(`RelationalStoreEnumerateTest0024, (store as data_relationalStore.RdbStore).rebuilt 2222222222222`);
       try{
-          let resultSet: data_relationalStore.ResultSet = await rdbTrans.querySql("select * from test");
-          console.error(`RelationalStoreEnumerateTest0024, (store as data_relationalStore.RdbStore).rebuilt 333333333333333333333`);
-          console.error(`RelationalStoreEnumerateTest0024, (store as data_relationalStore.RdbStore).rebuilt resultSet.rowCount` + resultSet.rowCount);
-          expect(resultSet.rowCount == 1 ).assertTrue();
-          console.error(`RelationalStoreEnumerateTest0024, (store as data_relationalStore.RdbStore).rebuilt 444444444444444444444`);
-          rdbTrans.commit();
-          console.error(`RelationalStoreEnumerateTest0024, (store as data_relationalStore.RdbStore).rebuilt 5555555555555555555555`);
-          done();
+        let resultSet: data_relationalStore.ResultSet = await rdbTrans.querySql("select * from test");
+        console.error(`RelationalStoreEnumerateTest0024, (store as data_relationalStore.RdbStore).rebuilt 333333333333333333333`);
+        console.error(`RelationalStoreEnumerateTest0024, (store as data_relationalStore.RdbStore).rebuilt resultSet.rowCount` + resultSet.rowCount);
+        expect(resultSet.rowCount == 1 ).assertTrue();
+        console.error(`RelationalStoreEnumerateTest0024, (store as data_relationalStore.RdbStore).rebuilt 444444444444444444444`);
+        rdbTrans.commit();
+        console.error(`RelationalStoreEnumerateTest0024, (store as data_relationalStore.RdbStore).rebuilt 5555555555555555555555`);
+        done();
       }catch(err:BusinessError){
         hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0024 err *************' + err.code+err.message);
         expect(err != null ).assertFail();
@@ -984,13 +984,13 @@ export default function RelationalStoreEnumTest(){
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0024 end *************');
     })
 
-   /**
-     * @tc.name       : RelationalStoreEnumerateTest0025
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_2500
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name       RelationalStoreEnumerateTest0025
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_2500
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0025 start *************');
@@ -1032,12 +1032,12 @@ export default function RelationalStoreEnumTest(){
 
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest026
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_2600
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest026
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_2600
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest026 start *************');
@@ -1092,12 +1092,12 @@ export default function RelationalStoreEnumTest(){
       hilog.info(domain, tag, '%{public}s', '************* RelationaRelationalStoreEnumerateTest026lStoreEnumerateTest010 end *************');
     })
     /**
-     * @tc.name       : RelationalStoreEnumerateTest027
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_2700
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest027
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_2700
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest027 start *************');
@@ -1153,12 +1153,12 @@ export default function RelationalStoreEnumTest(){
     })
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest028
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_2800
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest028
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_2800
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest028 start *************');
@@ -1213,12 +1213,12 @@ export default function RelationalStoreEnumTest(){
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest028 end *************');
     })
     /**
-     * @tc.name       : RelationalStoreEnumerateTest029
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_2900
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest029
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_2900
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest029 start *************');
@@ -1274,12 +1274,12 @@ export default function RelationalStoreEnumTest(){
     })
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest030
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_3000
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest030
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_3000
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest030 start *************');
@@ -1335,12 +1335,12 @@ export default function RelationalStoreEnumTest(){
     })
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest031
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_3100
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest031
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_3100
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest031 start *************');
@@ -1396,12 +1396,12 @@ export default function RelationalStoreEnumTest(){
     })
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest032
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_3200
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest032
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_3200
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest032 start *************');
@@ -1459,12 +1459,12 @@ export default function RelationalStoreEnumTest(){
 
 
     /**
-     * @tc.name       : RelationalStoreEnumerateTest0033
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_3300
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationalStoreEnumerateTest0033
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreEnumerateTest_3300
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationalStoreEnumerateTest0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0033 start *************');
