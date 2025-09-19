@@ -67,13 +67,13 @@ export default function btManagerError003Test() {
             hilog.info(domain, tag, '%{public}s', 'afterAll end');
         })
 
-        /*
-         * @tc.number: getRemoteDeviceNameErrCode2900003Test
-         * @tc.name: getRemoteDeviceNameErrCode2900003Test
-         * @tc.desc: Test getRemoteDeviceNameErrCode2900003Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getRemoteDeviceNameErrCode2900003Test
+         * @tc.name getRemoteDeviceNameErrCode2900003Test
+         * @tc.desc Test getRemoteDeviceNameErrCode2900003Test API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getRemoteDeviceNameErrCode2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -93,13 +93,13 @@ export default function btManagerError003Test() {
             done();
         })
 
-        /*
-         * @tc.number: getRemoteDeviceNameAliasErrCode2900003Test
-         * @tc.name: getRemoteDeviceNameAliasErrCode2900003Test
-         * @tc.desc: Test getRemoteDeviceNameAliasErrCode2900003Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getRemoteDeviceNameAliasErrCode2900003Test
+         * @tc.name getRemoteDeviceNameAliasErrCode2900003Test
+         * @tc.desc Test getRemoteDeviceNameAliasErrCode2900003Test API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getRemoteDeviceNameAliasErrCode2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -119,13 +119,13 @@ export default function btManagerError003Test() {
             done();
         })
 
-        /*
-         * @tc.number: getRemoteDeviceClassErrCode2900003Test
-         * @tc.name: getRemoteDeviceClassErrCode2900003Test
-         * @tc.desc: Test getRemoteDeviceClassErrCode2900003Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getRemoteDeviceClassErrCode2900003Test
+         * @tc.name getRemoteDeviceClassErrCode2900003Test
+         * @tc.desc Test getRemoteDeviceClassErrCode2900003Test API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getRemoteDeviceClassErrCode2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -147,13 +147,13 @@ export default function btManagerError003Test() {
             done();
         })
 
-        /*
-         * @tc.number: setBluetoothScanModeErrCode2900003Test
-         * @tc.name: setBluetoothScanModeErrCode2900003Test
-         * @tc.desc: Test setBluetoothScanModeErrCode2900003Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number setBluetoothScanModeErrCode2900003Test
+         * @tc.name setBluetoothScanModeErrCode2900003Test
+         * @tc.desc Test setBluetoothScanModeErrCode2900003Test API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("setBluetoothScanModeErrCode2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -172,13 +172,13 @@ export default function btManagerError003Test() {
             done();
         })
 
-        /*
-         * @tc.number: getPairedDevicesErrCode2900003Test
-         * @tc.name: getPairedDevicesErrCode2900003Test
-         * @tc.desc: Test getPairedDevicesErrCode2900003Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getPairedDevicesErrCode2900003Test
+         * @tc.name getPairedDevicesErrCode2900003Test
+         * @tc.desc Test getPairedDevicesErrCode2900003Test API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getPairedDevicesErrCode2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -198,13 +198,13 @@ export default function btManagerError003Test() {
             done();
         })
 
-        /*
-         * @tc.number: clientCloseErrCode2900003Test
-         * @tc.name: clientCloseErrCode2900003Test
-         * @tc.desc: Test clientCloseErrCode2900003Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number clientCloseErrCode2900003Test
+         * @tc.name clientCloseErrCode2900003Test
+         * @tc.desc Test clientCloseErrCode2900003Test API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("clientCloseErrCode2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -224,13 +224,13 @@ export default function btManagerError003Test() {
             done();
         })
 
-        /*
-         * @tc.number: serverCloseErrCode2900003Test
-         * @tc.name: serverCloseErrCode2900003Test
-         * @tc.desc: Test serverCloseErrCode2900003Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number serverCloseErrCode2900003Test
+         * @tc.name serverCloseErrCode2900003Test
+         * @tc.desc Test serverCloseErrCode2900003Test API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("serverCloseErrCode2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -250,13 +250,13 @@ export default function btManagerError003Test() {
             done();
         })
 
-        /*
-         * @tc.number: clientConnectErrCode2900003Test
-         * @tc.name: clientConnectErrCode2900003Test
-         * @tc.desc: Test clientConnectErrCode2900003Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number clientConnectErrCode2900003Test
+         * @tc.name clientConnectErrCode2900003Test
+         * @tc.desc Test clientConnectErrCode2900003Test API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("clientConnectErrCode2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -276,13 +276,13 @@ export default function btManagerError003Test() {
             done();
         })
 
-        /*
-         * @tc.number: clientDisconnectErrCode2900003Test
-         * @tc.name: clientDisconnectErrCode2900003Test
-         * @tc.desc: Test clientDisconnectErrCode2900003Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number clientDisconnectErrCode2900003Test
+         * @tc.name clientDisconnectErrCode2900003Test
+         * @tc.desc Test clientDisconnectErrCode2900003Test API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("clientDisconnectErrCode2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -302,13 +302,13 @@ export default function btManagerError003Test() {
             done();
         })
 
-        /*
-         * @tc.number: stopAdvertisingErrCode2900003Test
-         * @tc.name: stopAdvertisingErrCode2900003Test
-         * @tc.desc: Test stopAdvertisingErrCode2900003Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number stopAdvertisingErrCode2900003Test
+         * @tc.name stopAdvertisingErrCode2900003Test
+         * @tc.desc Test stopAdvertisingErrCode2900003Test API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("stopAdvertisingErrCode2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -328,13 +328,13 @@ export default function btManagerError003Test() {
             done();
         })
 
-        /*
-         * @tc.number: stopBleScanErrCode2900003Test
-         * @tc.name: stopBleScanErrCode2900003Test
-         * @tc.desc: Test stopBleScanErrCode2900003Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number stopBleScanErrCode2900003Test
+         * @tc.name stopBleScanErrCode2900003Test
+         * @tc.desc Test stopBleScanErrCode2900003Test API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("stopBleScanErrCode2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
