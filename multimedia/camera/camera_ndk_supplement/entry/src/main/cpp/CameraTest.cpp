@@ -833,14 +833,19 @@ Camera_ErrorCode NDKCamera::SessionSetQualityPrioritization(uint32_t quality)
 
 Camera_ErrorCode NDKCamera::CameraOpenConcurrentCameras(uint32_t type)
 {
-    Camera_Input* cameraInputnow;
+    Camera_Input *cameraInput;
     Camera_ConcurrentType concurrentType = CAMERA_CONCURRENT_TYPE_LIMITED_CAPABILITY;
     if (static_cast<Camera_ConcurrentType>(type) == CAMERA_CONCURRENT_TYPE_FULL_CAPABILITY) {
         concurrentType = CAMERA_CONCURRENT_TYPE_FULL_CAPABILITY;
     }
-    Camera_ErrorCode retcode = OH_CameraManager_CreateCameraInput(cameraManager_, &cameras_[0], &cameraInputnow);
+    Camera_ErrorCode retcode = OH_CameraManager_CreateCameraInput(cameraManager_, cameras_, &cameraInput);
+    if (retcode == CAMERA_SERVICE_FATAL_ERROR) {
+        return CAMERA_OK;
+    }
     if (retcode == CAMERA_OK) {
-        retcode = OH_CameraInput_OpenConcurrentCameras(cameraInputnow, concurrentType);
+        retcode = OH_CameraInput_OpenConcurrentCameras(cameraInput, concurrentType);
+        retcode = OH_CameraInput_Release(cameraInput);
+        cameraInput_ = nullptr;
     }
     return retcode;
 }
@@ -874,21 +879,21 @@ Camera_ErrorCode NDKCamera::IsWhiteBalanceSupported(uint32_t type)
     return ret;
 }
 
-void SystemPressureLevelCallback(Camera_CaptureSession *session, Camera_SystemPressureLevel *systemPressureLevel)
+void SystemPressureLevelCallback(Camera_CaptureSession *session, Camera_SystemPressureLevel systemPressureLevel)
 {
-    if (*systemPressureLevel == SYSTEM_PRESSURE_NORMAL) {
+    if (systemPressureLevel == SYSTEM_PRESSURE_NORMAL) {
         LogD("CameraSystemPressureLevelCallback is SYSTEM_PRESSURE_NORMAL.");
     }
-    if (*systemPressureLevel == SYSTEM_PRESSURE_MILD) {
+    if (systemPressureLevel == SYSTEM_PRESSURE_MILD) {
         LogD("CameraSystemPressureLevelCallback is SYSTEM_PRESSURE_MILD.");
     }
-    if (*systemPressureLevel == SYSTEM_PRESSURE_SEVERE) {
+    if (systemPressureLevel == SYSTEM_PRESSURE_SEVERE) {
         LogD("CameraSystemPressureLevelCallback is SYSTEM_PRESSURE_SEVERE.");
     }
-    if (*systemPressureLevel == SYSTEM_PRESSURE_CRITICAL) {
+    if (systemPressureLevel == SYSTEM_PRESSURE_CRITICAL) {
         LogD("CameraSystemPressureLevelCallback is SYSTEM_PRESSURE_CRITICAL.");
     }
-    if (*systemPressureLevel == SYSTEM_PRESSURE_SHUTDOWN) {
+    if (systemPressureLevel == SYSTEM_PRESSURE_SHUTDOWN) {
         LogD("CameraSystemPressureLevelCallback is SYSTEM_PRESSURE_SHUTDOWN.");
     }
 }

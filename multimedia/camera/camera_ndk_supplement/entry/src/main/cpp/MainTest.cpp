@@ -21,12 +21,24 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <functional>
 
 #define TEST_OK 0
 #define TEST_FAILED (-1)
 
 static NDKCamera *g_ndkCamera = nullptr;
 using ArkCameraTestFunc = napi_value (*)(napi_env, napi_callback_info);
+
+static napi_value ExecuteCameraFunction(napi_env env, napi_callback_info info, std::function<int()> cameraFunc)
+{
+    int ret = TEST_FAILED;
+    if (cameraFunc() == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
 
 static napi_value InitCamera(napi_env env, napi_callback_info info)
 {
@@ -321,15 +333,8 @@ static napi_value SessionCanPreconfigWithRatio(napi_env env, napi_callback_info 
     return result;
 }
 
-static napi_value PhotoOutputRegisterCallback(napi_env env, napi_callback_info info)
-{
-    int ret = TEST_FAILED;
-    if (g_ndkCamera->PhotoOutputRegisterCallback() == CAMERA_OK) {
-        ret = TEST_OK;
-    }
-    napi_value result;
-    napi_create_int32(env, ret, &result);
-    return result;
+static napi_value PhotoOutputRegisterCallback(napi_env env, napi_callback_info info) {
+    return ExecuteCameraFunction(env, info, [&]() { return g_ndkCamera->PhotoOutputRegisterCallback(); });
 }
 
 static napi_value MetadataOutputRegisterCallback(napi_env env, napi_callback_info info)
