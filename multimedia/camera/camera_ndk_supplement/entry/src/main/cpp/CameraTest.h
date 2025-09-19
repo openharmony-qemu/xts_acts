@@ -55,7 +55,7 @@ public:
     Camera_ErrorCode CreateSession(void);
     Camera_ErrorCode ReleaseCameraManger(void);
     Camera_ErrorCode CameraManagerRegisterCallback();
-    CameraManager_Callbacks *GetCameraManagerListener(void); 
+    CameraManager_Callbacks *GetCameraManagerListener(void);
 
     Camera_ErrorCode CameraOperationNotAllowed();
     Camera_ErrorCode CameraSessionNotConfig();

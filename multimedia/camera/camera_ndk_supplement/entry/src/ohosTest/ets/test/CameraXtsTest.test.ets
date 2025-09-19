@@ -21,7 +21,7 @@ import { Driver, ON, MatchPattern } from '@ohos.UiTest';
 import { abilityAccessCtrl, PermissionRequestResult, Permissions} from '@kit.AbilityKit';
 
 
-const TAG = "CAMERA_XTS_TEST_TAG";
+const TAG = "CAMERA_XTS_TEST_TAG ";
 const TEST_OK = 0;
 const SLEEP_500 = 500;
 let receiver: image.ImageReceiver;

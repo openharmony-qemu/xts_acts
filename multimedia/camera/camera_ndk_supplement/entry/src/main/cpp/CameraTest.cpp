@@ -27,6 +27,7 @@ CameraCallbackCode NDKCamera::cameraCallbackCode_ = NO_RECEIVED;
 const int CAMERA_NUM = 2;
 const int CAMERA_SIZE = 100;
 const int CAMERA_DURATION = 1000;
+const float EPSILON = 1e-6f;
 
 NDKCamera::NDKCamera(char *str)
 {
@@ -366,19 +367,16 @@ Camera_ErrorCode NDKCamera::GetCameraFormat(int32_t index)
         profile.format = CAMERA_FORMAT_YCRCB_P010;
     }
 
-    Camera_OutputCapability* cameraOutputCapability_;
-    Camera_ErrorCode ret_ = OH_CameraManager_GetSupportedCameraOutputCapability(cameraManager_, cameras_, &cameraOutputCapability_);
-    
-    for (decltype(cameraOutputCapability_->previewProfilesSize) i = 0; i < cameraOutputCapability_->previewProfilesSize;
-         i++) {
-        if (cameraOutputCapability_->previewProfiles[i]->size.width == profile.size.width &&
-            cameraOutputCapability_->previewProfiles[i]->size.height == profile.size.height) {
-            profile.format = cameraOutputCapability_->previewProfiles[i]->format;
+    Camera_OutputCapability* capability;
+    Camera_ErrorCode ret = OH_CameraManager_GetSupportedCameraOutputCapability(cameraManager_, cameras_, &capability);
+    for (decltype(capability->previewProfilesSize) i = 0; i < capability->previewProfilesSize; i++) {
+        if (capability->previewProfiles[i]->size.width == profile.size.width &&
+            capability->previewProfiles[i]->size.height == profile.size.height) {
+            profile.format = capability->previewProfiles[i]->format;
             break;
         }
     }
-
-    return ret_;
+    return ret;
 }
 
 Camera_ErrorCode NDKCamera::HasFlashMode(int32_t index)
@@ -515,31 +513,30 @@ Camera_ErrorCode NDKCamera::GetCameraConcurrentInfo(int32_t index)
         return CAMERA_OK;
     }
 
-    Camera_ConcurrentInfo* concurrentInfo;
+    Camera_ConcurrentInfo* conInfo;
     uint32_t infoSize = 0;
-    Camera_ErrorCode ret = OH_CameraManager_GetCameraConcurrentInfos(cameraManager_, cameras_, deviceSize, &concurrentInfo, &infoSize);
-    if (concurrentInfo == nullptr) {
+    Camera_ErrorCode ret =
+        OH_CameraManager_GetCameraConcurrentInfos(cameraManager_, cameras_, deviceSize, &conInfo, &infoSize);
+    if (conInfo == nullptr) {
         return CAMERA_OK;
     }
 
     Camera_ConcurrentInfo checkInfo;
     checkInfo.camera = cameras_[0];
-    checkInfo.type = concurrentInfo->type;
-    checkInfo.sceneModes = concurrentInfo->sceneModes; 
-    checkInfo.outputCapabilities = concurrentInfo->outputCapabilities;
-    checkInfo.modeAndCapabilitySize = concurrentInfo->modeAndCapabilitySize;
-
+    checkInfo.type = conInfo->type;
+    checkInfo.sceneModes = conInfo->sceneModes;
+    checkInfo.outputCapabilities = conInfo->outputCapabilities;
+    checkInfo.modeAndCapabilitySize = conInfo->modeAndCapabilitySize;
     Camera_MetadataObjectType metaType;
     if (index == 0) {
         metaType = FACE_DETECTION;
     }
-    for (uint32_t i = 0; i < concurrentInfo->outputCapabilities->metadataProfilesSize; i++) {
-        Camera_MetadataObjectType *typeValue = concurrentInfo->outputCapabilities->supportedMetadataObjectTypes[i];
+    for (uint32_t i = 0; i < conInfo->outputCapabilities->metadataProfilesSize; i++) {
+        Camera_MetadataObjectType *typeValue = conInfo->outputCapabilities->supportedMetadataObjectTypes[i];
         if (typeValue != nullptr && metaType == *typeValue) {
             return CAMERA_OK;
         }
     }
-
     return CAMERA_OK;
 }
 
@@ -713,7 +710,6 @@ void CameraManagerTorchStatusCallback(Camera_Manager *cameraManager, Camera_Torc
     if (status->isTorchAvailable == torchInfo.isTorchAvailable) {
         LogD("isTorchAvailable is active");
     }
-    const float EPSILON = 1e-6f;
     if (std::fabs(status->torchLevel - torchInfo.torchLevel) < EPSILON) {
         LogD("isTorchAvailable is active");
     }
@@ -729,7 +725,7 @@ void CaptureSessionSmoothZoomInfoCallback(Camera_CaptureSession *session, Camera
     Camera_SmoothZoomInfo zoomInfo;
     zoomInfo.duration = CAMERA_DURATION;
     if (smoothZoomInfo->duration == zoomInfo.duration) {
-        LogD("CaptureSessionSmoothZoomInfoCallback..");    
+        LogD("CaptureSessionSmoothZoomInfoCallback..");
     }
 }
 
@@ -745,10 +741,10 @@ void PhotoOutputCaptureStartWithInfoCallback(Camera_PhotoOutput* photoOutput, Ca
     startInfo.captureId = 0;
     startInfo.time = 0;
     if (Info->captureId == startInfo.captureId) {
-        LogD("PhotoOutputCaptureStartWithInfoCallback captureId is same");    
+        LogD("PhotoOutputCaptureStartWithInfoCallback captureId is same");
     }
     if (Info->time == startInfo.time) {
-        LogD("PhotoOutputCaptureStartWithInfoCallback time is same");    
+        LogD("PhotoOutputCaptureStartWithInfoCallback time is same");
     }
 }
 
@@ -769,19 +765,20 @@ void CameraFoldStatusInfoCallback(Camera_Manager *cameraManager, Camera_FoldStat
 {
     Camera_FoldStatus foldStatus1 = NON_FOLDABLE;
     Camera_FoldStatus foldStatus2 = EXPANDED;
-    Camera_Device dev1 = {"001", CAMERA_POSITION_UNSPECIFIED, CAMERA_TYPE_WIDE_ANGLE, CAMERA_CONNECTION_REMOTE};
-    Camera_Device dev2 = {"002", CAMERA_POSITION_UNSPECIFIED, CAMERA_TYPE_WIDE_ANGLE, CAMERA_CONNECTION_REMOTE};
+    char* devName1 = "001";
+    char* devName2 = "002";
+    Camera_Device dev1 = {devName1, CAMERA_POSITION_UNSPECIFIED, CAMERA_TYPE_WIDE_ANGLE, CAMERA_CONNECTION_REMOTE};
+    Camera_Device dev2 = {devName2, CAMERA_POSITION_UNSPECIFIED, CAMERA_TYPE_WIDE_ANGLE, CAMERA_CONNECTION_REMOTE};
     Camera_Device* devicePtrs[CAMERA_NUM] = {&dev1, &dev2};
     Camera_FoldStatusInfo foldInfo;
     foldInfo.foldStatus = FOLDED;
     foldInfo.supportedCameras = devicePtrs;
     foldInfo.cameraSize = CAMERA_SIZE;
-    
     if (foldStatusInfo->foldStatus == foldStatus1) {
-        LogD("CameraFoldStatusInfoCallback NON_FOLDABLE.");        
+        LogD("CameraFoldStatusInfoCallback NON_FOLDABLE.");
     }
     if (foldStatusInfo->foldStatus == foldStatus2) {
-        LogD("CameraFoldStatusInfoCallback EXPANDED.");        
+        LogD("CameraFoldStatusInfoCallback EXPANDED.");
     }
 }
  
@@ -797,7 +794,7 @@ void CameraAutoDeviceSwitchStatusInfoCallback(Camera_CaptureSession *session,
     info.isDeviceSwitched = true;
     info.isDeviceCapabilityChanged = true;
     if (switchInfo->isDeviceSwitched == info.isDeviceSwitched) {
-        LogD("CameraAutoDeviceSwitchStatusInfoCallback is isDeviceSwitched.");    
+        LogD("CameraAutoDeviceSwitchStatusInfoCallback is isDeviceSwitched.");
     }
     if (switchInfo->isDeviceCapabilityChanged == info.isDeviceCapabilityChanged) {
         LogD("CameraAutoDeviceSwitchStatusInfoCallback is isDeviceCapabilityChanged.");
@@ -824,7 +821,7 @@ Camera_ErrorCode NDKCamera::SessionSetQualityPrioritization(uint32_t quality)
     }
     Camera_QualityPrioritization qualityCamera;
     if (static_cast<Camera_QualityPrioritization>(quality) == HIGH_QUALITY) {
-        qualityCamera = HIGH_QUALITY;         
+        qualityCamera = HIGH_QUALITY;
     } else {
         qualityCamera = POWER_BALANCE;
     }
