@@ -16,8 +16,55 @@
 #include "napi/native_api.h"
 #include <IPCKit/ipc_kit.h>
 #include <IPCKit/ipc_cparcel.h>
+#include <bits/alltypes.h>
+#include <fcntl.h>
+#include <future>
+#include <thread>
+#include <cinttypes>
+#include <cstring>
+#include <cstdlib>
+#include "AbilityKit/native_child_process.h"
+#include <hilog/log.h>
 
 static const char *TEST_STR = "STUB_DESCRIPTOR";
+
+int OnRemoteRequestStub(uint32_t code, const OHIPCParcel *data, OHIPCParcel *reply,
+    void *userData)
+{
+    (void)userData;
+    (void)code;
+    (void)data;
+    (void)reply;
+    return 0;
+}
+
+int OnRemoteRequestStub1(uint32_t code, const OHIPCParcel *data, OHIPCParcel *reply,
+    void *userData)
+{
+    (void)userData;
+    (void)code;
+    (void)data;
+    (void)reply;
+    return 2000000;
+}
+
+static void* MemAllocator(int32_t len)
+{
+    if (len <= 0) {
+        return nullptr;
+    }
+    void *buffer = malloc(len);
+    if (buffer == nullptr) {
+        return nullptr;
+    }
+    (void)memset(buffer, 0, len);
+    return buffer;
+}
+
+void OnRemoteDestroyCallback(void *userData)
+{
+    (void)userData;
+}
 
 static napi_value OHIPCParcelRewindReadPositionParamError(napi_env env, napi_callback_info info)
 {
