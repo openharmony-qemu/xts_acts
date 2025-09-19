@@ -983,8 +983,7 @@ struct WebComponent {
                         console.error('exit onPageBegin');
                     })
                     .onPageEnd((event) => {
-                        console.log('dwb onPageEnd url:' + event.url);
-                        console.info("dwb this.isPageEnd = 1");
+                        console.log('onPageEnd url:' + event.url);
                         this.isPageEnd = 1;
                     })
                     .width('100%')
