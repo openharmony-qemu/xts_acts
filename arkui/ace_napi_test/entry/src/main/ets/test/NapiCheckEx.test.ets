@@ -1155,12 +1155,12 @@ export default function napiCheckExTest() {
       });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0001
-     * @tc.name      : testExtension001
-     * @tc.desc      : Testing async task scheduling priority.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0001
+     * @tc.name    testExtension001
+     * @tc.desc    Testing async task scheduling priority.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension001 START');
@@ -1175,12 +1175,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0002
-     * @tc.name      : testExtension002
-     * @tc.desc      : Testing thread safe function call with priority.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0002
+     * @tc.name    testExtension002
+     * @tc.desc    Testing thread safe function call with priority.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension002 START');
@@ -1195,12 +1195,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0003
-     * @tc.name      : testExtension003
-     * @tc.desc      : Testing high priority call to tail.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0003
+     * @tc.name    testExtension003
+     * @tc.desc    Testing high priority call to tail.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension003 START');
@@ -1215,12 +1215,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0004
-     * @tc.name      : testExtension004
-     * @tc.desc      : Testing normal priority call to head.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0004
+     * @tc.name    testExtension004
+     * @tc.desc    Testing normal priority call to head.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension004 START');
@@ -1235,12 +1235,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0005
-     * @tc.name      : testExtension005
-     * @tc.desc      : Testing low priority call.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0005
+     * @tc.name    testExtension005
+     * @tc.desc    Testing low priority call.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension005 START');
@@ -1255,12 +1255,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : testExtension006
-     * @tc.name      : testExtension006
-     * @tc.desc      : Testing mixed priority execution order.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0006
+     * @tc.name    testExtension006
+     * @tc.desc    Testing mixed priority execution order.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension006 START');
@@ -1275,12 +1275,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : testExtension007
-     * @tc.name      : testExtension007
-     * @tc.desc      : Testing same priority isTail effect.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0007
+     * @tc.name    testExtension007
+     * @tc.desc    Testing same priority isTail effect.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension007 START');
@@ -1295,12 +1295,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : testExtension008
-     * @tc.name      : testExtension008
-     * @tc.desc      : Testing serialize simple object.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0008
+     * @tc.name    testExtension008
+     * @tc.desc    Testing serialize simple object.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension008 START');
@@ -1315,12 +1315,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : testExtension009
-     * @tc.name      : testExtension009
-     * @tc.desc      : Testing serialize with transfer list.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0009
+     * @tc.name    testExtension009
+     * @tc.desc    Testing serialize with transfer list.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension009 START');
@@ -1335,12 +1335,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : testExtension010
-     * @tc.name      : testExtension010
-     * @tc.desc      : Testing serialize with clone list.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0010
+     * @tc.name    testExtension010
+     * @tc.desc    Testing serialize with clone list.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension010 START');
@@ -1355,12 +1355,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : testExtension011
-     * @tc.name      : testExtension011
-     * @tc.desc      : Testing serialize complex nested object.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0011
+     * @tc.name    testExtension011
+     * @tc.desc    Testing serialize complex nested object.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension011 START');
@@ -1375,12 +1375,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : testExtension012
-     * @tc.name      : testExtension012
-     * @tc.desc      : Testing deserialize simple object.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0012
+     * @tc.name    testExtension012
+     * @tc.desc    Testing deserialize simple object.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension012 START');
@@ -1395,12 +1395,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : testExtension013
-     * @tc.name      : testExtension013
-     * @tc.desc      : Testing deserialize with transfer data.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0013
+     * @tc.name    testExtension013
+     * @tc.desc    Testing deserialize with transfer data.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension013 START');
@@ -1415,12 +1415,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : testExtension014
-     * @tc.name      : testExtension014
-     * @tc.desc      : Testing deserialize with clone data.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0014
+     * @tc.name    testExtension014
+     * @tc.desc    Testing deserialize with clone data.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension014 START');
@@ -1435,12 +1435,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : testExtension015
-     * @tc.name      : testExtension015
-     * @tc.desc      : Testing delete valid serialization data.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0015
+     * @tc.name    testExtension015
+     * @tc.desc    Testing delete valid serialization data.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension015 START');
@@ -1455,12 +1455,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : testExtension020
-     * @tc.name      : testExtension020
-     * @tc.desc      : Testing async event loop run and stop.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0020
+     * @tc.name    testExtension020
+     * @tc.desc    Testing async event loop run and stop.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension020 START');
@@ -1475,12 +1475,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : testExtension021
-     * @tc.name      : testExtension021
-     * @tc.desc      : Testing create ArkTS runtime.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0021
+     * @tc.name    testExtension021
+     * @tc.desc    Testing create ArkTS runtime.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension021 START');
@@ -1495,12 +1495,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : testExtension027
-     * @tc.name      : testExtension027
-     * @tc.desc      : Testing async work with QoS.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0027
+     * @tc.name    testExtension027
+     * @tc.desc    Testing async work with QoS.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension027 START');
@@ -1516,12 +1516,12 @@ export default function napiCheckExTest() {
 
 
     /**
-     * @tc.number    : testExtension036
-     * @tc.name      : testExtension036
-     * @tc.desc      : Testing async task with promise.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0036
+     * @tc.name    testExtension036
+     * @tc.desc    Testing async task with promise.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension036 START');
@@ -1536,12 +1536,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : testExtension037
-     * @tc.name      : testExtension037
-     * @tc.desc      : Testing async task with callback.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0037
+     * @tc.name    testExtension037
+     * @tc.desc    Testing async task with callback.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension037 START');
@@ -1556,12 +1556,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : testExtension038
-     * @tc.name      : testExtension038
-     * @tc.desc      : Testing thread safety development.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0038
+     * @tc.name    testExtension038
+     * @tc.desc    Testing thread safety development.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension038 START');
@@ -1576,12 +1576,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : testExtension039
-     * @tc.name      : testExtension039
-     * @tc.desc      : Testing native ArkTS object binding.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0039
+     * @tc.name    testExtension039
+     * @tc.desc    Testing native ArkTS object binding.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension039 START');
@@ -1596,12 +1596,12 @@ export default function napiCheckExTest() {
     });
 
     /**
-     * @tc.number    : testExtension045
-     * @tc.name      : testExtension045
-     * @tc.desc      : Testing NAPI exception logging and crash analysis.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0045
+     * @tc.name    testExtension045
+     * @tc.desc    Testing NAPI exception logging and crash analysis.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testExtension045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testExtension045 START');
