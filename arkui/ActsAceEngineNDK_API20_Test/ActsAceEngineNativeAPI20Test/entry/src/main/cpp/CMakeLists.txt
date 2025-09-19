@@ -19,6 +19,8 @@ add_library(nativexcomponent SHARED
     mouse/XComponentMouseTest.cpp
     node/NodeAttributeTest.cpp
     node/NodeDetachTest.cpp
+    dragdrog/XComponentDragAndDrogTest.cpp
+    dialog/DialogXComponentTest.cpp
     common/CommonTest.cpp
     componentapi/AnimateOptionFinishCallbackTest.cpp
     componentapi/CommonAttrsAccessibilityActionTest.cpp
@@ -65,7 +67,8 @@ find_library(
 )
 
 target_link_libraries(nativexcomponent PUBLIC
-    ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib} libudmf.so libace_napi.z.so libability_base_want.so)
+    ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib} libudmf.so libace_napi.z.so libability_base_want.so
+    libpixelmap.so librawfile.z.so)
 
 add_library(accessibilityndk SHARED accessibilitytest/AccessibilityTest.cpp
                                     accessibilitytest/Accessibility1Test.cpp

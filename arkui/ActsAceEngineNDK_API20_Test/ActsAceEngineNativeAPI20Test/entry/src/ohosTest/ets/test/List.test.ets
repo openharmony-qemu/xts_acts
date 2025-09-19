@@ -82,6 +82,8 @@ import ListItemSwipeActionStateTest from './componentapi/ListItemSwipeActionStat
 import ErrorCodeTest2 from './nativetype/ErrorCodeTest2.test'
 import ErrorCodeTest1 from './nativetype/ErrorCodeTest1.test'
 import NavigationErrorCodeTest from './nativetype/NavigationErrorCodeTest.test'
+import DragAndDrogXComponent from './nativexcomponent/DragAndDrogXComponent.test'
+import DialogXComponent from './nativexcomponent/DialogXComponent.test'
 
 export default function testsuite() {
   NavDestinationStateTest()
@@ -91,6 +93,8 @@ export default function testsuite() {
   TouchPointTest()
   XComponentMouseTest()
   NodeAttribute()
+  DragAndDrogXComponent()
+  DialogXComponent()
   AccessibilityNdkTest1()
   AccessibilityNdkTest2()
   AccessibilityNdkTest3()

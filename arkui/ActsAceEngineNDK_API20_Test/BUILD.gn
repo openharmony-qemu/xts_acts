@@ -22,3 +22,13 @@ group("ActsAceEngineNativeAPI20") {
     ]
   }
 }
+
+group("ActsAceEngineNativeWearAPI20") {
+  testonly = true
+  if (is_standard_system) {
+    deps = [
+      "ActsAceEngineNativeWearAPI20Test:ActsAceEngineNativeWearAPI20Test",
+      "ActsNativeXcomponentKeyCodeTest:ActsNativeXcomponentKeyCodeTest",
+    ]
+  }
+}
