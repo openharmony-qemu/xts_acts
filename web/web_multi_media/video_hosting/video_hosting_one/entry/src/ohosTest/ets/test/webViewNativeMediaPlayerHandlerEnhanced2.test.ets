@@ -51,7 +51,7 @@ export default function webViewNativeMediaPlayerHandlerEnhanced2() {
     beforeEach(async (done: Function) => {
         done();
     })
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0400
      *@tc.name testWebViewNativeMediaPlayerEnableTrueShouldOverlayTrue
      *@tc.desc test NativeMediaPlayerEnableTrueShouldOverlayTrue
@@ -65,7 +65,7 @@ export default function webViewNativeMediaPlayerHandlerEnhanced2() {
       Utils.registerEvent("testWebViewNativeMediaPlayerEnableTrueShouldOverlayTrue", true, 362070, done);
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0600
      *@tc.name testWebViewNativeMediaPlayerAudio
      *@tc.desc test NativeMediaPlayerAudio
@@ -79,7 +79,7 @@ export default function webViewNativeMediaPlayerHandlerEnhanced2() {
       Utils.registerEvent("testWebViewNativeMediaPlayerAudio", true, 362080, done);
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0700
      *@tc.name testWebViewNativeMediaPlayerMediaSrcUrl
      *@tc.desc test NativeMediaPlayerMediaSrcUrl
@@ -93,7 +93,7 @@ export default function webViewNativeMediaPlayerHandlerEnhanced2() {
       Utils.registerEvent("testWebViewNativeMediaPlayerMediaSrcUrl", true, 362090, done);
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_2600
      *@tc.name testWebViewNativeMediaPlayerHandleStatusChangedPause
      *@tc.desc test NativeMediaPlayerMediaSrcUrl
@@ -107,7 +107,7 @@ export default function webViewNativeMediaPlayerHandlerEnhanced2() {
       Utils.registerEvent("testWebViewNativeMediaPlayerHandleStatusChangedPause", true, 362100, done);
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_2700
      *@tc.name testWebViewNativeMediaPlayerHandleStatusChangedPlaying
      *@tc.desc test NativeMediaPlayerMediaSrcUrl

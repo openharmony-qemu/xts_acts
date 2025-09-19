@@ -51,7 +51,7 @@ export default function webViewNativeMediaPlayerEnableFalse() {
     beforeEach(async (done: Function) => {
         done();
     })
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0100
      *@tc.name testWebViewNativeMediaPlayerEnableFalse
      *@tc.desc test NativeMediaPlayerEnableFalse
@@ -66,7 +66,7 @@ export default function webViewNativeMediaPlayerEnableFalse() {
        let StartModel = await driver.findComponent(ON.id("webViewNativeMediaPlayerEnableFalse"));
        await StartModel.click();
     })
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0200
      *@tc.name testWebViewNativeMediaPlayerEnableFalseShouldOverlayFalse
      *@tc.desc test NativeMediaPlayerEnableFalseShouldOverlayFalse

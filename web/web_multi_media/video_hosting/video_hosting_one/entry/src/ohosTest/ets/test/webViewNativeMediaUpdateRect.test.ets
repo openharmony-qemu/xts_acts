@@ -51,13 +51,13 @@ export default function webViewNativeMediaUpdateRect() {
     })
 
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_UpdateRect_API_0001
-    * @tc.name       : testWebViewNativeMediaUpdateRect
-    * @tc.desc       : test UpdateRect
-    * @tc.size_t     : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number       SUB_ACE_WEB_UpdateRect_API_0001
+    * @tc.name         testWebViewNativeMediaUpdateRect
+    * @tc.desc         test UpdateRect
+    * @tc.size_t       MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 1
     */
     it('testWebViewNativeMediaUpdateRect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaUpdateRect"

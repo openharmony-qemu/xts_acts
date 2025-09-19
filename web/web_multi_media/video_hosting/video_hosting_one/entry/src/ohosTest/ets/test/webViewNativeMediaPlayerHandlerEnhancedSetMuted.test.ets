@@ -51,7 +51,7 @@ export default function webViewNativeMediaPlayerHandlerEnhancedSetMuted() {
     beforeEach(async (done: Function) => {
         done();
     })
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_4400
      *@tc.name testWebViewNativeMediaPlayerSetMutedTrue
      *@tc.desc test NativeMediaPlayerSetVolume0_SetMutedTrue
@@ -66,7 +66,7 @@ export default function webViewNativeMediaPlayerHandlerEnhancedSetMuted() {
       let StartModel = await driver.findComponent(ON.id("webViewNativeMediaPlayerHandlerEnhanced"));
       await StartModel.click();
     })
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_4600
      *@tc.name testWebViewNativeMediaPlayerSetMutedTrue_handleMutedChange
      *@tc.desc test NativeMediaPlayerSetMutedTrue_handleMutedChanged
@@ -82,7 +82,7 @@ export default function webViewNativeMediaPlayerHandlerEnhancedSetMuted() {
       // await StartModel.click();
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_4500
      *@tc.name testWebViewNativeMediaPlayerSetMutedFalse
      *@tc.desc test NativeMediaPlayerSetMutedFalse_handleVolumeChange
@@ -98,7 +98,7 @@ export default function webViewNativeMediaPlayerHandlerEnhancedSetMuted() {
       // await StartModel.click();
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_4700
      *@tc.name testWebViewNativeMediaPlayerSetMutedFalse_handleMutedChange
      *@tc.desc test NativeMediaPlayerSetMutedFalse_handleVolumeChange

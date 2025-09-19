@@ -52,7 +52,7 @@ export default function webViewNativeMediaPlayerHandlerEnhanced() {
       done();
     })
 
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_2150
      *@tc.name testWebViewNativeMediaPlayerVideoMultiSource
      *@tc.desc test NativeMediaPlayerVideoMultiSource
@@ -67,7 +67,7 @@ export default function webViewNativeMediaPlayerHandlerEnhanced() {
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
 
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_6600
      *@tc.name testWebViewNativeMediaPlayerEnterFullScreen
      *@tc.desc test NativeMediaPlayerEnterFullScreen
@@ -82,7 +82,7 @@ export default function webViewNativeMediaPlayerHandlerEnhanced() {
         sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
 
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_6800
      *@tc.name testWebViewNativeMediaPlayerExitFullScreen
      *@tc.desc test NativeMediaPlayerExitFullScreen
@@ -96,7 +96,7 @@ export default function webViewNativeMediaPlayerHandlerEnhanced() {
       Utils.registerEvent("testWebViewNativeMediaPlayerExitFullScreen", true, 362030, done);
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_7000
      *@tc.name testWebViewNativeMediaPlayerHandleErrorRelease
      *@tc.desc test NativeMediaPlayerHandleErrorRelease
@@ -111,7 +111,7 @@ export default function webViewNativeMediaPlayerHandlerEnhanced() {
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
 
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0300
      *@tc.name testWebViewNativeMediaPlayerShouldOverlayFalse
      *@tc.desc test NativeMediaPlayerShouldOverlay_false
@@ -126,7 +126,7 @@ export default function webViewNativeMediaPlayerHandlerEnhanced() {
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
 
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_7500
      *@tc.name testWebViewNativeMediaPlayerHandleNetworkStateChangedIDLE
      *@tc.desc test NativeMediaPlayerShouldOverlay_false
