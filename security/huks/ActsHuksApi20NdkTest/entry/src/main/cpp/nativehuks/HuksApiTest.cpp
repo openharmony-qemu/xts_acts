@@ -475,7 +475,8 @@ napi_value ImportWrappedKeyItemTest_001(napi_env env, napi_callback_info info)
     return retValue;
 }
 
-void *HksMalloc(size_t size) {
+void *HksMalloc(size_t size)
+{
     if (size == 0 || size > SIZE_MAX) {
         return NULL;
     }
@@ -758,7 +759,7 @@ napi_value GetKeyItemParamSetTest_003(napi_env env, napi_callback_info info)
     struct OH_Huks_ParamSet *paramSet = nullptr;
     OH_Huks_Result ret = OH_Huks_InitParamSet(&paramSet);
     OH_Huks_AddParams(paramSet, g_testGenerateKeyParam,
-                            sizeof(g_testGenerateKeyParam) / sizeof(g_testGenerateKeyParam[0]));
+                      sizeof(g_testGenerateKeyParam) / sizeof(g_testGenerateKeyParam[0]));
     OH_Huks_BuildParamSet(&paramSet);
     struct OH_Huks_Result resSt = OH_Huks_IsKeyItemExist(&keyAlias, paramSet);
     OH_Huks_GenerateKeyItem(&keyAlias, paramSet, nullptr);

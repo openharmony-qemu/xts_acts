@@ -21,19 +21,19 @@ import { BusinessError } from '@ohos.base';
 const TAG: string = '[createWindow]'
 
 export default class MainAbility extends Ability {
-  onCreate(want, launchParam) {
+  onCreate(want, launchParam): void {
     // Ability is creating, initialize resources for this ability
     console.log(`${TAG} MainAbility onCreate`);
     globalThis.abilityWant = want;
     globalThis.abilityLaunchParam = launchParam;
   }
 
-  onDestroy() {
+  onDestroy(): void {
     // Ability is destroying, release resources for this ability
     console.log(`${TAG} MainAbility onDestroy`);
   }
 
-  onWindowStageCreate(windowStage) {
+  onWindowStageCreate(windowStage): void {
     // Main window is created, set main page for this ability
     console.log(`${TAG} MainAbility onWindowStageCreate windowStage=` + windowStage);
     globalThis.windowStage = windowStage;
@@ -60,17 +60,17 @@ export default class MainAbility extends Ability {
     })
   }
 
-  onWindowStageDestroy() {
+  onWindowStageDestroy(): void {
     //Main window is destroyed, release UI related resources
     console.log(`${TAG} MainAbility onWindowStageDestroy`);
   }
 
-  onForeground() {
+  onForeground(): void {
     // Ability has brought to foreground
     console.log(`${TAG} MainAbility onForeground`);
   }
 
-  onBackground() {
+  onBackground(): void {
     // Ability has back to background
     console.log(`${TAG} MainAbility onBackground`);
   }

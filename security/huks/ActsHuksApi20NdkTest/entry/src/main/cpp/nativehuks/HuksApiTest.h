@@ -22,14 +22,14 @@
 
 
 namespace HuksApiTest {
-    static const uint32_t IV_SIZE = 16;
-    static uint8_t IV[IV_SIZE] = "bababababababab";
-    static const uint32_t AAD_SIZE = 16;
-    static uint8_t AAD[AAD_SIZE] = "abababababababa";
-    static const uint32_t NONCE_SIZE = 12;
-    static uint8_t NONCE[NONCE_SIZE] = "hahahahahah";
-    static const uint32_t AEAD_TAG_SIZE = 16;
-    static const uint32_t X25519_256_SIZE = 256;
+    const uint32_t IV_SIZE = 16;
+    uint8_t IV[IV_SIZE] = "bababababababab";
+    const uint32_t AAD_SIZE = 16;
+    uint8_t AAD[AAD_SIZE] = "abababababababa";
+    const uint32_t NONCE_SIZE = 12;
+    uint8_t NONCE[NONCE_SIZE] = "hahahahahah";
+    const uint32_t AEAD_TAG_SIZE = 16;
+    const uint32_t X25519_256_SIZE = 256;
     struct HksImportWrappedKeyTestParams {
         struct OH_Huks_Blob *wrappingKeyAlias;
         struct OH_Huks_Blob *agreeKeyAlgName;
@@ -57,11 +57,11 @@ namespace HuksApiTest {
         bool certDataExist;
         uint32_t certDataSize;
     };
-    static uint32_t CERT_COUNT = 4;
-    static uint32_t INVALID_Param = 0xFFFFFFFF;
-    static const uint32_t COMMON_SIZE = 2048;
-    static uint32_t g_size = 4096;
-    static uint32_t g_size1 = 65536;
+    uint32_t CERT_COUNT = 4;
+    uint32_t INVALID_Param = 0xFFFFFFFF;
+    const uint32_t COMMON_SIZE = 2048;
+    uint32_t g_size = 4096;
+    uint32_t g_size1 = 65536;
     napi_value GetSdkVersionTest_001(napi_env env, napi_callback_info info);
     napi_value GenerateKeyItemTest_001(napi_env env, napi_callback_info info);
     napi_value GenerateKeyItemTest_002(napi_env env, napi_callback_info info);
