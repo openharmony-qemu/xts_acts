@@ -874,21 +874,21 @@ Camera_ErrorCode NDKCamera::IsWhiteBalanceSupported(uint32_t type)
     return ret;
 }
 
-void SystemPressureLevelCallback(Camera_CaptureSession *session, Camera_SystemPressureLevel *systemPressureLevel)
+void SystemPressureLevelCallback(Camera_CaptureSession *session, Camera_SystemPressureLevel systemPressureLevel)
 {
-    if (*systemPressureLevel == SYSTEM_PRESSURE_NORMAL) {
+    if (systemPressureLevel == SYSTEM_PRESSURE_NORMAL) {
         LogD("CameraSystemPressureLevelCallback is SYSTEM_PRESSURE_NORMAL.");
     }
-    if (*systemPressureLevel == SYSTEM_PRESSURE_MILD) {
+    if (systemPressureLevel == SYSTEM_PRESSURE_MILD) {
         LogD("CameraSystemPressureLevelCallback is SYSTEM_PRESSURE_MILD.");
     }
-    if (*systemPressureLevel == SYSTEM_PRESSURE_SEVERE) {
+    if (systemPressureLevel == SYSTEM_PRESSURE_SEVERE) {
         LogD("CameraSystemPressureLevelCallback is SYSTEM_PRESSURE_SEVERE.");
     }
-    if (*systemPressureLevel == SYSTEM_PRESSURE_CRITICAL) {
+    if (systemPressureLevel == SYSTEM_PRESSURE_CRITICAL) {
         LogD("CameraSystemPressureLevelCallback is SYSTEM_PRESSURE_CRITICAL.");
     }
-    if (*systemPressureLevel == SYSTEM_PRESSURE_SHUTDOWN) {
+    if (systemPressureLevel == SYSTEM_PRESSURE_SHUTDOWN) {
         LogD("CameraSystemPressureLevelCallback is SYSTEM_PRESSURE_SHUTDOWN.");
     }
 }
