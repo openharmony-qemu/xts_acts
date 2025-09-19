@@ -76,7 +76,7 @@ struct WebViewControllerRemoveCacheTest {
                   console.log('buttonStart==>'+this.buttonStart);
                   this.removeRom = true
                   this.isPageEnd = -1;
-                  this.controller.loadUrl('https://'+'www.openharmony.cn/')
+                  this.controller.loadUrl('https://www.openharmony.cn/')
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                 } catch (error) {
                   console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
