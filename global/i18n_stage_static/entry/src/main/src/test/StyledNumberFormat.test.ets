@@ -34,13 +34,13 @@ export default function styledNumberFormatTest() {
             await UtilsTest.msSleep(4000);
         });
 
-        /*
-         * @tc.number: SUB_GLOBAL_I18N_StyledNumberFormat_static_02_00100
-         * @tc.name: SUB_GLOBAL_I18N_StyledNumberFormat_static_02_00100
-         * @tc.desc:  Check start ability by bundl
-         * @tc.level: LEVEL1
-         * @tc.size: MEDIUMTEST
-         * @tc.type: FUNCTION
+        /**
+         * @tc.number SUB_GLOBAL_I18N_StyledNumberFormat_static_02_00100
+         * @tc.name SUB_GLOBAL_I18N_StyledNumberFormat_static_02_00100
+         * @tc.desc  Check start ability by bundl
+         * @tc.level LEVEL1
+         * @tc.size MEDIUMTEST
+         * @tc.type FUNCTION
         */
         it("SUB_GLOBAL_I18N_StyledNumberFormat_static_02_00100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'SUB_GLOBAL_I18N_StyledNumberFormat_static_02_00100 start');
