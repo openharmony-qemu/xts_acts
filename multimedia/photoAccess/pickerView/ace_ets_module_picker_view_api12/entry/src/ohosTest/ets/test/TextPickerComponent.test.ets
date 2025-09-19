@@ -1056,12 +1056,14 @@ export default function TextPicker() {
       if(btn === null) {
         console.info('testPicker18 no GridItem');
       } else {
-        await btn.click();
-        await CommonFunc.sleep(1000);
-        clicked = !clicked;
-        await CommonFunc.sleep(1000);
-        await btn.click();
-        await CommonFunc.sleep(1000);
+        if(clicked) {
+          await btn.click();
+          await CommonFunc.sleep(1000);
+          clicked = !clicked;
+          await CommonFunc.sleep(1000);
+          await btn.click();
+          await CommonFunc.sleep(1000);
+        }
       }
       
       let strJson: string = getInspectorByKey('PhotoPickerComponent');
