@@ -112,7 +112,7 @@ napi_value CreateNode(napi_env env, napi_callback_info info)
 napi_value CreateGestureNode1(napi_env env, napi_callback_info info)
 {
     // 获取gestureApi接口
-    static ArkUI_NativeGestureAPI_1 *gestureApi=nullptr;
+    static ArkUI_NativeGestureAPI_1 *gestureApi = nullptr;
     // 接受ArkTs侧传的node节点  并将其存储为全局变量
     if ((env == nullptr) || (info == nullptr)) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "PluginManager", "CreateNativeNode env or info is null");
@@ -660,7 +660,7 @@ napi_value SetCustomSpanMetricsHeightSuccess(napi_env env, napi_callback_info in
     }
     ArkUI_CustomSpanMetrics *metrics = OH_ArkUI_CustomSpanMetrics_Create();
     if (metrics == nullptr) {
-        napi_create_int32(env, -1, &result);// -1表示参数获取失败
+        napi_create_int32(env, -1, &result);
         return result;
     }
     int32_t setResult = OH_ArkUI_CustomSpanMetrics_SetHeight(metrics, floatValue) == ARKUI_ERROR_CODE_NO_ERROR ?

@@ -81,8 +81,8 @@ static void InitPush2(std::vector<napi_property_descriptor>& desc)
     desc.push_back(XL("CreateGestureNode2", CreateGestureNode2));
     desc.push_back(XL("CreateNode", CreateNode));
     desc.push_back(XL("ErrorCodeRecognizerTypeNotSupported", ErrorCodeRecognizerTypeNotSupported));
-    desc.push_back(XL("ErrorCodeParamInvalid",ErrorCodeParamInvalid));
-    desc.push_back(XL("ErrorCodeInvalidStyledString",ErrorCodeInvalidStyledString));
+    desc.push_back(XL("ErrorCodeParamInvalid", ErrorCodeParamInvalid));
+    desc.push_back(XL("ErrorCodeInvalidStyledString", ErrorCodeInvalidStyledString));
     desc.push_back(XL("ErrorCodeNotClonedPointerEvent", ErrorCodeNotClonedPointerEvent));
     desc.push_back(XL("ErrorCodeBufferSizeNotEnough", ErrorCodeBufferSizeNotEnough));
     desc.push_back(XL("CreateUIInputEventNode", CreateUIInputEventNode));
