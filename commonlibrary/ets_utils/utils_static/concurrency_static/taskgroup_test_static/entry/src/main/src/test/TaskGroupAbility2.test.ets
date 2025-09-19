@@ -48,8 +48,7 @@ import {
   printUnion1,
   printUnion2,
   printUnion3,
-  printUnion4,
-  // sampleFunction
+  printUnion4
 } from '../testability/pages/TaskMethods';
 import {
   Count1,
