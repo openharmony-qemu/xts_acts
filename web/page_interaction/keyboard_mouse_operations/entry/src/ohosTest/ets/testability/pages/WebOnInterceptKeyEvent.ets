@@ -134,6 +134,14 @@ struct WebOnInterceptKeyEvent {
           console.log('onPageEnd url:' + event.url);
           this.isPageEnd = 1;
         })
+        .onInterceptKeyboardAttach((keyboardCallbackInfo) => {
+          // option初始化，默认使用系统默认键盘
+          let option: WebKeyboardOptions = {
+            useSystemKeyboard: true,
+          };
+          option.useSystemKeyboard = false;
+          return option;
+        })
     }
   }
 }
