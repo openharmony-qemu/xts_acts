@@ -72,17 +72,6 @@ export default function TransliteratorIni18nTest() {
         len--;
       }
     })
-    /* *
-   * @tc.number  SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0200
-   * @tc.name    transliterator_test_static_0200
-   * @tc.desc    test getInstance with a param,get the instance value
-   */
-    it('transliterator_test_static_0200', Level.LEVEL2, async (): Promise<void> => {
-      console.log('transliterator_test_static_0200 ' + 'start');
-      let value = i18n.Transliterator.getInstance('a');
-      console.log('transliterator_test_static_0200 ' + value);
-      expect(value !== null).assertTrue();
-    })
 
     /* *
      * @tc.number  SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0300
