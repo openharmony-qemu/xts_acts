@@ -98,12 +98,12 @@ export default function RelationStoreError17Test() {
     })
 
     /**
-     * @tc.name       : RelationStoreError17Test0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error17Test_0100
-     * @tc.desc       : Transaction goTo
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError17Test0001
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error17Test_0100
+     * @tc.desc        Transaction goTo
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError17Test0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -127,12 +127,12 @@ export default function RelationStoreError17Test() {
       })
 
     /**
-     * @tc.name       : RelationStoreError17Test0002
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error17Test_0200
-     * @tc.desc       : Transaction goTo
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError17Test0002
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error17Test_0200
+     * @tc.desc        Transaction goTo
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError17Test0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
