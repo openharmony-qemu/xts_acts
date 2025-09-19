@@ -16,7 +16,6 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium"
 import hilog from '@ohos.hilog'
 import napitestex from 'libnapitestex.so'
-import napitest from 'libnapitest.so'
 import worker, { MessageEvents } from '@ohos.worker';
 
 async function sleep(time: number) {
@@ -341,7 +340,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行数值创建和获取测试
-        let result = napitest.NapiNumberTest001();
+        let result: boolean = napitestex.NapiNumberTest001();
         expect(result).assertTrue();
 
         console.info('testNumberCreationAndRetrieval PASS');
@@ -364,7 +363,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行跨类型转换测试
-        let result = napitest.NapiNumberTest002();
+        let result: boolean = napitestex.NapiNumberTest002();
         expect(result).assertTrue();
 
         console.info('testCrossTypeConversion PASS');
@@ -387,7 +386,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行边界值测试
-        let result = napitest.NapiNumberTest003();
+        let result: boolean = napitestex.NapiNumberTest003();
         expect(result).assertTrue();
 
         console.info('testBoundaryValues PASS');
@@ -410,7 +409,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行组合操作测试
-        let result = napitest.NapiNumberTest004();
+        let result: boolean = napitestex.NapiNumberTest004();
         expect(result).assertTrue();
 
         console.info('testCombinedOperations PASS');
@@ -433,7 +432,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行类型转换和溢出测试
-        let result = napitest.NapiNumberTest005();
+        let result: boolean = napitestex.NapiNumberTest005();
         expect(result).assertTrue();
 
         console.info('testTypeConversionAndOverflow PASS');
@@ -456,7 +455,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行大数值和精度测试
-        let result = napitest.NapiNumberTest006();
+        let result: boolean = napitestex.NapiNumberTest006();
         expect(result).assertTrue();
 
         console.info('testLargeNumbersAndPrecision PASS');
@@ -476,10 +475,9 @@ export default function napiCheckExTest() {
      */
     it('testBooleanValueHandling', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testBooleanValueHandling START');
-
       try {
         // 调用C++测试函数进行布尔值处理测试
-        let result = napitest.NapiNumberTest007();
+        let result: boolean = napitestex.NapiNumberTest007();
         expect(result).assertTrue();
 
         console.info('testBooleanValueHandling PASS');
@@ -502,7 +500,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行线程安全性测试
-        let result = napitest.NapiNumberTest008();
+        let result: boolean = napitestex.NapiNumberTest008();
         expect(result).assertTrue();
 
         console.info('testThreadSafety PASS');
@@ -527,7 +525,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行对象创建、原型获取、冻结和类型检查测试
-        let result = napitest.NapiObjectTest001();
+        let result: boolean = napitestex.NapiObjectTest001();
         expect(result).assertTrue();
 
         console.info('testObjectCreationPrototypeFreezeAndTypeCheck PASS');
@@ -550,7 +548,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行对象类型标签创建和验证测试
-        let result = napitest.NapiObjectTest002();
+        let result: boolean = napitestex.NapiObjectTest002();
         expect(result).assertTrue();
 
         console.info('testObjectTypeTagCreationAndVerification PASS');
@@ -573,7 +571,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行外部对象创建和值获取测试
-        let result = napitest.NapiObjectTest003();
+        let result: boolean = napitestex.NapiObjectTest003();
         expect(result).assertTrue();
 
         console.info('testExternalObjectCreationAndValueRetrieval PASS');
@@ -597,7 +595,7 @@ export default function napiCheckExTest() {
 
         try {
           // 调用C++测试函数进行不同保护级别下的对象属性操作测试
-          let result = napitest.NapiObjectTest004();
+          let result: boolean = napitestex.NapiObjectTest004();
           expect(result).assertTrue();
 
           console.info('testObjectPropertyOperationsUnderDifferentProtectionLevels PASS');
@@ -620,7 +618,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行Symbol创建和类型检查测试
-        let result = napitest.NapiObjectTest005();
+        let result: boolean = napitestex.NapiObjectTest005();
         expect(result).assertTrue();
 
         console.info('testSymbolCreationAndTypeCheck PASS');
@@ -643,7 +641,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行类型标签与外部对象组合使用测试
-        let result = napitest.NapiObjectTest006();
+        let result: boolean = napitestex.NapiObjectTest006();
 
         if (result) {
           console.info('[TestTypeTagWithExternalObjectCombination] SUCCESS - Type tag and external object operations completed');
@@ -674,7 +672,7 @@ export default function napiCheckExTest() {
 
         try {
           // 调用C++测试函数进行Symbol作为对象属性键在不同保护级别下的行为测试
-          let result = napitest.NapiObjectTest007();
+          let result: boolean = napitestex.NapiObjectTest007();
           expect(result).assertTrue();
 
           console.info('testSymbolAsObjectPropertyKeyUnderDifferentProtectionLevels PASS');
@@ -697,7 +695,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行类型标签在原型链中的行为测试
-        let result = napitest.NapiObjectTest008();
+        let result: boolean = napitestex.NapiObjectTest008();
         expect(result).assertTrue();
 
         console.info('testTypeTagBehaviorInPrototypeChain PASS');
@@ -720,7 +718,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行外部对象与原型方法交互测试
-        let result = napitest.NapiObjectTest009();
+        let result: boolean = napitestex.NapiObjectTest009();
         expect(result).assertTrue();
 
         console.info('testExternalObjectWithPrototypeMethodInteraction PASS');
@@ -743,7 +741,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行对象相关函数的线程安全性测试
-        let result = napitest.NapiObjectTest010();
+        let result: boolean = napitestex.NapiObjectTest010();
         expect(result).assertTrue();
 
         console.info('testObjectThreadSafety PASS');
@@ -766,7 +764,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行外部对象函数的线程安全性测试
-        let result = napitest.NapiObjectTest011();
+        let result: boolean = napitestex.NapiObjectTest011();
         expect(result).assertTrue();
 
         console.info('testExternalObjectThreadSafety PASS');
@@ -789,7 +787,7 @@ export default function napiCheckExTest() {
 
       try {
         // 调用C++测试函数进行Symbol函数的线程安全性测试
-        let result = napitest.NapiObjectTest012();
+        let result: boolean = napitestex.NapiObjectTest012();
         expect(result).assertTrue();
 
         console.info('testSymbolThreadSafety PASS');
@@ -1135,25 +1133,486 @@ export default function napiCheckExTest() {
       done();
     });
 
+      /**
+      * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0017
+      * @tc.name      : testBigIntTest0017
+      * @tc.desc      : Testing BigInt thread safety with ArkTS exception interaction.
+      * @tc.size      : SmallTest
+      * @tc.type      : Function
+      * @tc.level     : Level 1
+      */
+      it('testBigIntTest0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+        console.info('testBigIntTest0017 START');
+        try {
+          const result: boolean = napitestex.NapiBigIntTest17();
+          console.info('testBigIntTest0017 test result: ' + result);
+          expect(result).assertEqual(true);
+        } catch (err) {
+          console.error(`testBigIntTest0017 err msg: ${err.message}`);
+          expect().assertFail();
+        }
+        done();
+      });
+
     /**
-    * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0017
-    * @tc.name      : testBigIntTest0017
-    * @tc.desc      : Testing BigInt thread safety with ArkTS exception interaction.
-    * @tc.size      : SmallTest
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
-    it('testBigIntTest0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('testBigIntTest0017 START');
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0001
+     * @tc.name    testExtension001
+     * @tc.desc    Testing async task scheduling priority.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension001 START');
       try {
-        const result: boolean = napitestex.NapiBigIntTest17();
-        console.info('testBigIntTest0017 test result: ' + result);
-        expect(result).assertEqual(true);
+        let result: boolean = napitestex.NapiExtensionTest001();
+        console.info('testExtension001 test result: ' + result);
+        expect(result).assertTrue();
       } catch (err) {
-        console.error(`testBigIntTest0017 err msg: ${err.message}`);
+        console.error(`testExtension001 err msg: ${err.message}`);
         expect().assertFail();
       }
-      done();
+    });
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0002
+     * @tc.name    testExtension002
+     * @tc.desc    Testing thread safe function call with priority.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension002 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest002();
+        console.info('testExtension002 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension002 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0003
+     * @tc.name    testExtension003
+     * @tc.desc    Testing high priority call to tail.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension003 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest003();
+        console.info('testExtension003 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension003 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0004
+     * @tc.name    testExtension004
+     * @tc.desc    Testing normal priority call to head.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension004 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest004();
+        console.info('testExtension004 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension004 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0005
+     * @tc.name    testExtension005
+     * @tc.desc    Testing low priority call.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension005 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest005();
+        console.info('testExtension005 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension005 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0006
+     * @tc.name    testExtension006
+     * @tc.desc    Testing mixed priority execution order.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension006 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest006();
+        console.info('testExtension006 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension006 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0007
+     * @tc.name    testExtension007
+     * @tc.desc    Testing same priority isTail effect.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension007 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest007();
+        console.info('testExtension007 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension007 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0008
+     * @tc.name    testExtension008
+     * @tc.desc    Testing serialize simple object.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension008 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest008();
+        console.info('testExtension008 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension008 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0009
+     * @tc.name    testExtension009
+     * @tc.desc    Testing serialize with transfer list.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension009 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest009();
+        console.info('testExtension009 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension009 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0010
+     * @tc.name    testExtension010
+     * @tc.desc    Testing serialize with clone list.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension010 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest010();
+        console.info('testExtension010 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension010 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0011
+     * @tc.name    testExtension011
+     * @tc.desc    Testing serialize complex nested object.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension011 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest011();
+        console.info('testExtension011 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension011 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0012
+     * @tc.name    testExtension012
+     * @tc.desc    Testing deserialize simple object.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension012 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest012();
+        console.info('testExtension012 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension012 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0013
+     * @tc.name    testExtension013
+     * @tc.desc    Testing deserialize with transfer data.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension013 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest013();
+        console.info('testExtension013 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension013 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0014
+     * @tc.name    testExtension014
+     * @tc.desc    Testing deserialize with clone data.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension014 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest014();
+        console.info('testExtension014 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension014 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0015
+     * @tc.name    testExtension015
+     * @tc.desc    Testing delete valid serialization data.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension015 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest015();
+        console.info('testExtension015 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension015 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0020
+     * @tc.name    testExtension020
+     * @tc.desc    Testing async event loop run and stop.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension020 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest020();
+        console.info('testExtension020 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension020 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0021
+     * @tc.name    testExtension021
+     * @tc.desc    Testing create ArkTS runtime.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension021 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest021();
+        console.info('testExtension021 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension021 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0027
+     * @tc.name    testExtension027
+     * @tc.desc    Testing async work with QoS.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension027 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest027();
+        console.info('testExtension027 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension027 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0036
+     * @tc.name    testExtension036
+     * @tc.desc    Testing async task with promise.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension036 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest036();
+        console.info('testExtension036 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension036 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0037
+     * @tc.name    testExtension037
+     * @tc.desc    Testing async task with callback.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension037 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest037();
+        console.info('testExtension037 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension037 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0038
+     * @tc.name    testExtension038
+     * @tc.desc    Testing thread safety development.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension038 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest038();
+        console.info('testExtension038 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension038 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0039
+     * @tc.name    testExtension039
+     * @tc.desc    Testing native ArkTS object binding.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension039 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest039();
+        console.info('testExtension039 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension039 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_RUNTIME_LANGUAGE_NAPI_EXTENSION_0045
+     * @tc.name    testExtension045
+     * @tc.desc    Testing NAPI exception logging and crash analysis.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testExtension045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      console.info('testExtension045 START');
+      try {
+        let result: boolean = napitestex.NapiExtensionTest045();
+        console.info('testExtension045 test result: ' + result);
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`testExtension045 err msg: ${err.message}`);
+        expect().assertFail();
+      }
     });
 
     /**
