@@ -61,7 +61,7 @@ export default function ActsAceWebviewBFCacheSuspendPlayer() {
 
     /**
     * @tc.number        SUB_ACE_WEBVIEW_BFCACHE_SUSPENDPLAYER_API_0002
-    * @tc.name          testWebviewBFCacheSuspendPlayer
+    * @tc.name          testWebviewBFCacheSuspendPlayerTwo
     * @tc.desc          test WebviewBFCacheSuspendPlayer
     * @tc.size          MediumTest
     * @tc.type          Function
@@ -79,7 +79,7 @@ export default function ActsAceWebviewBFCacheSuspendPlayer() {
 
     /**
     * @tc.number        SUB_ACE_WEBVIEW_BFCACHE_SUSPENDPLAYER_API_0001
-    * @tc.name          testWebviewBFCacheSuspendPlayer
+    * @tc.name          testWebviewBFCacheSuspendPlayerZero
     * @tc.desc          test WebviewBFCacheSuspendPlayer
     * @tc.size          MediumTest
     * @tc.type          Function
@@ -97,7 +97,7 @@ export default function ActsAceWebviewBFCacheSuspendPlayer() {
 
     /**
     * @tc.number        SUB_ACE_WEBVIEW_BFCACHE_SUSPENDPLAYER_API_0003
-    * @tc.name          testWebviewBFCacheSuspendPlayer
+    * @tc.name          testWebviewBFCacheSuspendPlayerOne
     * @tc.desc          test WebviewBFCacheSuspendPlayer
     * @tc.size          MediumTest
     * @tc.type          Function
