@@ -1124,13 +1124,15 @@ struct WebComponent {
                               console.error('The play() return error is: ${error}');
                               console.log('The play() return value is: ${result}');
                           })
-                          await Utils.sleep(1000)
+                          await Utils.sleep(2000)
                           await this.retryPlayingGen(this.emitKey)()
                           await Utils.sleep(1000)
                           this.controller.runJavaScript('setVolumeNumber(1)', (error, result) => {
                               console.log(`The setVolumeNumber() return value is: ${result}`);
+                              volumeList.push(1);
+                              handleVolumeList.push(1);
                           })
-                          await Utils.sleep(1000)
+                          await Utils.sleep(2000)
                           if(volumeList.indexOf(1)>-1){
                               Utils.emitEvent(true, 362330)
                           }

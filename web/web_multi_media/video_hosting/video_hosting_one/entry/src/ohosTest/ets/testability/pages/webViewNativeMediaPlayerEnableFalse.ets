@@ -706,7 +706,6 @@ struct WebComponent {
                     case 'emitWebViewNativeMediaPlayerEnableFalse': {
                         this.isNoCallback = true;
                         this.shouldOverlay = true;
-                        console.info("dwb isNoCallback is:" + this.isNoCallback);
                         this.isPageEnd = -1;
                         this.controller.refresh();
                         await Utils.waitForExist(()=>this.isPageEnd, 'webSetNetErrorCode2ButtonIsPageEnd', 1, 1000);
@@ -718,7 +717,6 @@ struct WebComponent {
                     case 'emitWebViewNativeMediaPlayerEnableFalseShouldOverlayFalse': {
                         this.isNoCallback = true
                         this.shouldOverlay = false
-                        console.info("dwb isNoCallback is:" + this.isNoCallback);
                         this.isPageEnd = -1;
                         this.controller.refresh();
                         if( this.isNoCallback ) {
@@ -747,8 +745,7 @@ struct WebComponent {
                     console.error('exit onPageBegin');
                 })
                 .onPageEnd((event) => {
-                  console.log('dwb onPageEnd url:' + event.url);
-                  console.info("dwb this.isPageEnd = 1");
+                  console.log('onPageEnd url:' + event.url);
                   this.isPageEnd = 1;
                })
                 .width('100%')
