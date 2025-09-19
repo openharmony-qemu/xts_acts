@@ -97,12 +97,12 @@ export default function RelationStoreError10Test() {
       await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
     })
     /**
-     * @tc.name       : RelationStoreError10Test0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error10Test_2300
-     * @tc.desc       : Transaction goTo
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       RelationStoreError10Test0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_Error10Test_2300
+     * @tc.desc       Transaction goTo
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('RelationStoreError10Test0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError10Test0001 start *************");
