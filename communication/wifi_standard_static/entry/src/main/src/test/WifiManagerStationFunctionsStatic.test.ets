@@ -32,13 +32,13 @@ export default function actsWifiManagerFunctionsTest() {
             hilog.info(domain, tag, '%{public}s', 'beforeAll end');
         })
 
-        /*
-         * @tc.number: constantTest
-         * @tc.name: constantTest
-         * @tc.desc: Test constantTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number constantTest
+         * @tc.name constantTest
+         * @tc.desc Test constantTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("constantTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -119,13 +119,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: wifiOnOffStateTest
-         * @tc.name: wifiOnOffStateTest
-         * @tc.desc: Test wifiOnOffStateTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number wifiOnOffStateTest
+         * @tc.name wifiOnOffStateTest
+         * @tc.desc Test wifiOnOffStateTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("wifiOnOffStateTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
@@ -207,13 +207,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: isConnectedTest
-         * @tc.name: isConnectedTest
-         * @tc.desc: Test isConnectedTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number isConnectedTest
+         * @tc.name isConnectedTest
+         * @tc.desc Test isConnectedTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("isConnectedTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -233,13 +233,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: getIpInfoTest
-         * @tc.name: getIpInfoTest
-         * @tc.desc: Test getIpInfoTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getIpInfoTest
+         * @tc.name getIpInfoTest
+         * @tc.desc Test getIpInfoTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getIpInfoTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -260,13 +260,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: getScanInfoListTest
-         * @tc.name: getScanInfoListTest
-         * @tc.desc: Test getScanInfoListTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getScanInfoListTest
+         * @tc.name getScanInfoListTest
+         * @tc.desc Test getScanInfoListTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getScanInfoListTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -295,13 +295,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: isMeteredHotspotTest
-         * @tc.name: isMeteredHotspotTest
-         * @tc.desc: Test isMeteredHotspotTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number isMeteredHotspotTest
+         * @tc.name isMeteredHotspotTest
+         * @tc.desc Test isMeteredHotspotTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("isMeteredHotspotTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -321,13 +321,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: getIpv6InfoTest
-         * @tc.name: getIpv6InfoTest
-         * @tc.desc: Test getIpv6InfoTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getIpv6InfoTest
+         * @tc.name getIpv6InfoTest
+         * @tc.desc Test getIpv6InfoTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getIpv6InfoTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -348,13 +348,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: getSignalLevelTest
-         * @tc.name: getSignalLevelTest
-         * @tc.desc: Test getSignalLevelTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getSignalLevelTest
+         * @tc.name getSignalLevelTest
+         * @tc.desc Test getSignalLevelTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getSignalLevelTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -374,13 +374,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: getLinkedInfoPromiseTest
-         * @tc.name: getLinkedInfoPromiseTest
-         * @tc.desc: Test getLinkedInfoPromiseTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getLinkedInfoPromiseTest
+         * @tc.name getLinkedInfoPromiseTest
+         * @tc.desc Test getLinkedInfoPromiseTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getLinkedInfoPromiseTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -408,13 +408,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: getLinkedInfoCallbackTest
-         * @tc.name: getLinkedInfoCallbackTest
-         * @tc.desc: Test getLinkedInfoCallbackTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getLinkedInfoCallbackTest
+         * @tc.name getLinkedInfoCallbackTest
+         * @tc.desc Test getLinkedInfoCallbackTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getLinkedInfoCallbackTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             wifiManager.getLinkedInfo((err: BusinessError | null, data: wifiManager.WifiLinkedInfo| undefined) => {
@@ -455,13 +455,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: getLinkedInfoSyncTest
-         * @tc.name: getLinkedInfoSyncTest
-         * @tc.desc: Test getLinkedInfoSyncTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getLinkedInfoSyncTest
+         * @tc.name getLinkedInfoSyncTest
+         * @tc.desc Test getLinkedInfoSyncTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getLinkedInfoSyncTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -495,13 +495,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: wifiStateChangeTest
-         * @tc.name: wifiStateChangeTest
-         * @tc.desc: Test wifiStateChangeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number wifiStateChangeTest
+         * @tc.name wifiStateChangeTest
+         * @tc.desc Test wifiStateChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("wifiStateChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
@@ -533,13 +533,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: p2pDiscoveryChangeTest
-         * @tc.name: p2pDiscoveryChangeTest
-         * @tc.desc: Test p2pDiscoveryChangeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number p2pDiscoveryChangeTest
+         * @tc.name p2pDiscoveryChangeTest
+         * @tc.desc Test p2pDiscoveryChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("p2pDiscoveryChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
@@ -571,13 +571,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: p2pDiscoveryChangeTest2
-         * @tc.name: p2pDiscoveryChangeTest2
-         * @tc.desc: Test p2pDiscoveryChangeTest2 API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number p2pDiscoveryChangeTest2
+         * @tc.name p2pDiscoveryChangeTest2
+         * @tc.desc Test p2pDiscoveryChangeTest2 API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("p2pDiscoveryChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
@@ -609,13 +609,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: p2pPersistentGroupChangeTest
-         * @tc.name: p2pPersistentGroupChangeTest
-         * @tc.desc: Test p2pPersistentGroupChangeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number p2pPersistentGroupChangeTest
+         * @tc.name p2pPersistentGroupChangeTest
+         * @tc.desc Test p2pPersistentGroupChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("p2pPersistentGroupChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent = () => {
@@ -647,13 +647,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: p2pPersistentGroupChangeTest2
-         * @tc.name: p2pPersistentGroupChangeTest2
-         * @tc.desc: Test p2pPersistentGroupChangeTest2 API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number p2pPersistentGroupChangeTest2
+         * @tc.name p2pPersistentGroupChangeTest2
+         * @tc.desc Test p2pPersistentGroupChangeTest2 API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("p2pPersistentGroupChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent = () => {
@@ -685,13 +685,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: p2pPeerDeviceChangeTest
-         * @tc.name: p2pPeerDeviceChangeTest
-         * @tc.desc: Test p2pPeerDeviceChangeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number p2pPeerDeviceChangeTest
+         * @tc.name p2pPeerDeviceChangeTest
+         * @tc.desc Test p2pPeerDeviceChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("p2pPeerDeviceChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: wifiManager.WifiP2pDevice[]) => void = (changeInfo: wifiManager.WifiP2pDevice[]) => {
@@ -723,13 +723,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: p2pPeerDeviceChangeTest2
-         * @tc.name: p2pPeerDeviceChangeTest2
-         * @tc.desc: Test p2pPeerDeviceChangeTest2 API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number p2pPeerDeviceChangeTest2
+         * @tc.name p2pPeerDeviceChangeTest2
+         * @tc.desc Test p2pPeerDeviceChangeTest2 API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("p2pPeerDeviceChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: wifiManager.WifiP2pDevice[]) => void = (changeInfo: wifiManager.WifiP2pDevice[]) => {
@@ -761,13 +761,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: wifiScanStateChangeTest
-         * @tc.name: wifiScanStateChangeTest
-         * @tc.desc: Test wifiScanStateChangeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number wifiScanStateChangeTest
+         * @tc.name wifiScanStateChangeTest
+         * @tc.desc Test wifiScanStateChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("wifiScanStateChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
@@ -799,13 +799,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: wifiScanStateChangeTest2
-         * @tc.name: wifiScanStateChangeTest2
-         * @tc.desc: Test wifiScanStateChangeTest2 API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number wifiScanStateChangeTest2
+         * @tc.name wifiScanStateChangeTest2
+         * @tc.desc Test wifiScanStateChangeTest2 API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("wifiScanStateChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
@@ -837,13 +837,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: wifiConnectionChangeTest
-         * @tc.name: wifiConnectionChangeTest
-         * @tc.desc: Test wifiConnectionChangeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number wifiConnectionChangeTest
+         * @tc.name wifiConnectionChangeTest
+         * @tc.desc Test wifiConnectionChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("wifiConnectionChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
@@ -875,13 +875,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: wifiConnectionChangeTest2
-         * @tc.name: wifiConnectionChangeTest2
-         * @tc.desc: Test wifiConnectionChangeTest2 API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number wifiConnectionChangeTest2
+         * @tc.name wifiConnectionChangeTest2
+         * @tc.desc Test wifiConnectionChangeTest2 API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("wifiConnectionChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
@@ -913,13 +913,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: p2pDeviceChangeTest
-         * @tc.name: p2pDeviceChangeTest
-         * @tc.desc: Test p2pDeviceChangeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number p2pDeviceChangeTest
+         * @tc.name p2pDeviceChangeTest
+         * @tc.desc Test p2pDeviceChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("p2pDeviceChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: wifiManager.WifiP2pDevice) => void = (changeInfo: wifiManager.WifiP2pDevice) => {
@@ -961,13 +961,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: p2pDeviceChangeTest2
-         * @tc.name: p2pDeviceChangeTest2
-         * @tc.desc: Test p2pDeviceChangeTest2 API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number p2pDeviceChangeTest2
+         * @tc.name p2pDeviceChangeTest2
+         * @tc.desc Test p2pDeviceChangeTest2 API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("p2pDeviceChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: wifiManager.WifiP2pDevice) => void = (changeInfo: wifiManager.WifiP2pDevice) => {
@@ -999,13 +999,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: p2pConnectionChangeTest
-         * @tc.name: p2pConnectionChangeTest
-         * @tc.desc: Test p2pConnectionChangeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number p2pConnectionChangeTest
+         * @tc.name p2pConnectionChangeTest
+         * @tc.desc Test p2pConnectionChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("p2pConnectionChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: wifiManager.WifiP2pLinkedInfo) => void = (changeInfo: wifiManager.WifiP2pLinkedInfo) => {
@@ -1040,13 +1040,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: p2pConnectionChangeTest2
-         * @tc.name: p2pConnectionChangeTest2
-         * @tc.desc: Test p2pConnectionChangeTest2 API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number p2pConnectionChangeTest2
+         * @tc.name p2pConnectionChangeTest2
+         * @tc.desc Test p2pConnectionChangeTest2 API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("p2pConnectionChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: wifiManager.WifiP2pLinkedInfo) => void = (changeInfo: wifiManager.WifiP2pLinkedInfo) => {
@@ -1078,13 +1078,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: p2pStateChangeTest
-         * @tc.name: p2pStateChangeTest
-         * @tc.desc: Test p2pStateChangeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number p2pStateChangeTest
+         * @tc.name p2pStateChangeTest
+         * @tc.desc Test p2pStateChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("p2pStateChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
@@ -1116,13 +1116,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: p2pStateChangeTest2
-         * @tc.name: p2pStateChangeTest2
-         * @tc.desc: Test p2pStateChangeTest2 API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number p2pStateChangeTest2
+         * @tc.name p2pStateChangeTest2
+         * @tc.desc Test p2pStateChangeTest2 API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("p2pStateChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
@@ -1154,13 +1154,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: hotspotStateChangeTest
-         * @tc.name: hotspotStateChangeTest
-         * @tc.desc: Test hotspotStateChangeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number hotspotStateChangeTest
+         * @tc.name hotspotStateChangeTest
+         * @tc.desc Test hotspotStateChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("hotspotStateChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
@@ -1192,13 +1192,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: hotspotStateChangeTest2
-         * @tc.name: hotspotStateChangeTest2
-         * @tc.desc: Test hotspotStateChangeTest2 API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number hotspotStateChangeTest2
+         * @tc.name hotspotStateChangeTest2
+         * @tc.desc Test hotspotStateChangeTest2 API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("hotspotStateChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
@@ -1230,13 +1230,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: wifiRssiChangeTest
-         * @tc.name: wifiRssiChangeTest
-         * @tc.desc: Test wifiRssiChangeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number wifiRssiChangeTest
+         * @tc.name wifiRssiChangeTest
+         * @tc.desc Test wifiRssiChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("wifiRssiChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
@@ -1268,13 +1268,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: wifiRssiChangeTest2
-         * @tc.name: wifiRssiChangeTest2
-         * @tc.desc: Test wifiRssiChangeTest2 API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number wifiRssiChangeTest2
+         * @tc.name wifiRssiChangeTest2
+         * @tc.desc Test wifiRssiChangeTest2 API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("wifiRssiChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
