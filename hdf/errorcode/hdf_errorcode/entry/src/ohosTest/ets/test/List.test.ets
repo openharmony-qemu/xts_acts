@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import ActsBaseDDkTest from "./BaseDdkTest.test";
-import ActsHidEmitCodeTest from "./HidEmitTest.test";
+import ActsHidEmitCodeTest from "./HidEmitTest1.test";
 
 export default function testsuite() {
   ActsBaseDDkTest();
