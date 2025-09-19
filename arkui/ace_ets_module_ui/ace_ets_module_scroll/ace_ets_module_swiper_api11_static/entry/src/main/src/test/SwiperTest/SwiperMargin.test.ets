@@ -46,7 +46,7 @@ import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 import { $r, Resource, ArrowStyle } from '@ohos.arkui.component';
 import events_emitter from '@ohos.events.emitter';
-import { sendEventByKey } from '@internal.full.global';
+import { sendEventByKey } from '@kit.ArkUI';
 import { UtilsTest, startAbility } from '../Util.test';
 
 let domain: Int = 0x0000;

@@ -37,7 +37,7 @@ import {
   observableProxy
 } from '@ohos.arkui.stateManagement' 
 import inspector from '@ohos.arkui.inspector'
-import { sendTouchEvent } from "@internal.full.global";
+import { sendTouchEvent } from "@kit.ArkUI";
 
 export default class Utils {
   static rect_left: number;

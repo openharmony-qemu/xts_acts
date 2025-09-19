@@ -38,7 +38,7 @@ import {
   observableProxy
 } from '@ohos.arkui.stateManagement' 
 import inspector from '@ohos.arkui.inspector'
-import { sendTouchEvent } from "@internal.full.global";
+import { sendTouchEvent } from "@kit.ArkUI";
 
 import { TouchObject, TouchType } from '@ohos.arkui.component';
 import events_emitter from '@ohos.events.emitter';

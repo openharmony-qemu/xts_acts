@@ -18,7 +18,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 import { memo, __memo_context_type, __memo_id_type } from '@ohos.arkui.stateManagement' 
 import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, TouchObject,TouchType } from '@ohos.arkui.component'  
 import { State, MutableState, stateOf, observableProxy } from '@ohos.arkui.stateManagement' 
-import { sendTouchEvent } from "@internal.full.global";
+import { sendTouchEvent } from "@kit.ArkUI";
 
 export default class Utils {
   static rect_left: number;

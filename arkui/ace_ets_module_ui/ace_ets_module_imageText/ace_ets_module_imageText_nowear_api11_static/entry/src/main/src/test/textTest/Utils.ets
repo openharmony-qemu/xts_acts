@@ -16,7 +16,7 @@ import RectValue from '../Rect.test';
 
 import inspector from '@ohos.arkui.inspector';
 import { TouchObject, TouchType } from '@ohos.arkui.component'
-import { sendTouchEvent } from "@internal.full.global";
+import { sendTouchEvent } from "@kit.ArkUI";
 
 export default class Utils {
   static rect_width: number;
