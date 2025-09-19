@@ -21,7 +21,7 @@ const ARKUI_ERROR_CODE_ERROR = 1;
 
 export default function TextInputContentTypeTest() {
   describe('TextInputContentTypeTest', () => {
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXTINPUT_CONTENT_TYPE_PASSPORT_NUMBER_0100
        * @tc.name         testARKUI_TEXTINPUT_CONTENT_TYPE_PASSPORT_NUMBER0100
        * @tc.desc         testing ARKUI_TEXTINPUT_CONTENT_TYPE_PASSPORT_NUMBER interface
@@ -44,7 +44,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXTINPUT_CONTENT_TYPE_VALIDITY_0100
        * @tc.name         testARKUI_TEXTINPUT_CONTENT_TYPE_VALIDITY0100
        * @tc.desc         testing ARKUI_TEXTINPUT_CONTENT_TYPE_VALIDITY interface
@@ -67,7 +67,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXTINPUT_CONTENT_TYPE_ISSUE_AT_0100
        * @tc.name         testARKUI_TEXTINPUT_CONTENT_TYPE_ISSUE_AT0100
        * @tc.desc         testing ARKUI_TEXTINPUT_CONTENT_TYPE_ISSUE_AT interface
@@ -90,7 +90,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXTINPUT_CONTENT_TYPE_ORGANIZATION_0100
        * @tc.name         testARKUI_TEXTINPUT_CONTENT_TYPE_ORGANIZATION0100
        * @tc.desc         testing ARKUI_TEXTINPUT_CONTENT_TYPE_ORGANIZATION interface
@@ -113,7 +113,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXTINPUT_CONTENT_TYPE_TAX_ID_0100
        * @tc.name         testARKUI_TEXTINPUT_CONTENT_TYPE_TAX_ID0100
        * @tc.desc         testing ARKUI_TEXTINPUT_CONTENT_TYPE_TAX_ID interface
@@ -136,7 +136,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXTINPUT_CONTENT_TYPE_ADDRESS_CITY_AND_STATE_0100
        * @tc.name         testARKUI_TEXTINPUT_CONTENT_TYPE_ADDRESS_CITY_AND_STATE0100
        * @tc.desc         testing ARKUI_TEXTINPUT_CONTENT_TYPE_ADDRESS_CITY_AND_STATE interface
@@ -159,7 +159,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXTINPUT_CONTENT_TYPE_FLIGHT_NUMBER_0100
        * @tc.name         testARKUI_TEXTINPUT_CONTENT_TYPE_FLIGHT_NUMBER0100
        * @tc.desc         testing ARKUI_TEXTINPUT_CONTENT_TYPE_FLIGHT_NUMBER interface
@@ -182,7 +182,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXTINPUT_CONTENT_TYPE_LICENSE_NUMBER_0100
        * @tc.name         testARKUI_TEXTINPUT_CONTENT_TYPE_LICENSE_NUMBER0100
        * @tc.desc         testing ARKUI_TEXTINPUT_CONTENT_TYPE_LICENSE_NUMBER interface
@@ -205,7 +205,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXTINPUT_CONTENT_TYPE_LICENSE_FILE_NUMBER_0100
        * @tc.name         testARKUI_TEXTINPUT_CONTENT_TYPE_LICENSE_FILE_NUMBER0100
        * @tc.desc         testing ARKUI_TEXTINPUT_CONTENT_TYPE_LICENSE_FILE_NUMBER interface
@@ -228,7 +228,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXTINPUT_CONTENT_TYPE_LICENSE_PLATE_0100
        * @tc.name         testARKUI_TEXTINPUT_CONTENT_TYPE_LICENSE_PLATE0100
        * @tc.desc         testing ARKUI_TEXTINPUT_CONTENT_TYPE_LICENSE_PLATE interface
@@ -251,7 +251,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXTINPUT_CONTENT_TYPE_ENGINE_NUMBER_0100
        * @tc.name         testARKUI_TEXTINPUT_CONTENT_TYPE_ENGINE_NUMBER0100
        * @tc.desc         testing ARKUI_TEXTINPUT_CONTENT_TYPE_ENGINE_NUMBER interface
@@ -274,7 +274,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXTINPUT_CONTENT_TYPE_LICENSE_CHASSIS_NUMBER_0100
        * @tc.name         testARKUI_TEXTINPUT_CONTENT_TYPE_LICENSE_CHASSIS_NUMBER0100
        * @tc.desc         testing ARKUI_TEXTINPUT_CONTENT_TYPE_LICENSE_CHASSIS_NUMBER interface
@@ -297,7 +297,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXT_VERTICAL_ALIGNMENT_BASELINE_0100
        * @tc.name         testARKUI_TEXT_VERTICAL_ALIGNMENT_BASELINE0100
        * @tc.desc         testing ARKUI_TEXT_VERTICAL_ALIGNMENT_BASELINE interface
@@ -319,7 +319,7 @@ export default function TextInputContentTypeTest() {
           done();
         }
       })
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXT_VERTICAL_ALIGNMENT_BOTTOM_0100
        * @tc.name         testARKUI_TEXT_VERTICAL_ALIGNMENT_BOTTOM0100
        * @tc.desc         testing ARKUI_TEXT_VERTICAL_ALIGNMENT_BOTTOM interface
@@ -342,7 +342,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXT_VERTICAL_ALIGNMENT_CENTER_0100
        * @tc.name         testARKUI_TEXT_VERTICAL_ALIGNMENT_CENTER0100
        * @tc.desc         testing ARKUI_TEXT_VERTICAL_ALIGNMENT_CENTER interface
@@ -364,7 +364,7 @@ export default function TextInputContentTypeTest() {
           done();
         }
       })
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXT_VERTICAL_ALIGNMENT_TOP_0100
        * @tc.name         testARKUI_TEXT_VERTICAL_ALIGNMENT_TOP0100
        * @tc.desc         testing ARKUI_TEXT_VERTICAL_ALIGNMENT_TOP interface
@@ -387,7 +387,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXTINPUT_TYPE_ONE_TIME_CODE_0100
        * @tc.name         testARKUI_TEXTINPUT_TYPE_ONE_TIME_CODE0100
        * @tc.desc         testing ARKUI_TEXTINPUT_TYPE_ONE_TIME_CODE interface
@@ -410,7 +410,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXTAREA_TYPE_ONE_TIME_CODE_0100
        * @tc.name         testARKUI_TEXTAREA_TYPE_ONE_TIME_CODE0100
        * @tc.desc         testing ARKUI_TEXTAREA_TYPE_ONE_TIME_CODE  interface
@@ -433,7 +433,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXT_COPY_OPTIONS_NONE_0100
        * @tc.name         testARKUI_TEXT_COPY_OPTIONS_NONE0100
        * @tc.desc         testing ARKUI_TEXT_COPY_OPTIONS_NONE interface
@@ -456,7 +456,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXT_COPY_OPTIONS_IN_APP_0100
        * @tc.name         testARKUI_TEXT_COPY_OPTIONS_IN_APP0100
        * @tc.desc         testing ARKUI_TEXT_COPY_OPTIONS_IN_APP interface
@@ -479,7 +479,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXT_COPY_OPTIONS_LOCAL_DEVICE_0100
        * @tc.name         testARKUI_TEXT_COPY_OPTIONS_LOCAL_DEVICE0100
        * @tc.desc         testing ARKUI_TEXT_COPY_OPTIONS_LOCAL_DEVICE interface
@@ -502,7 +502,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_TEXT_COPY_OPTIONS_CROSS_DEVICE_0100
        * @tc.name         testARKUI_TEXT_COPY_OPTIONS_CROSS_DEVICE0100
        * @tc.desc         testing ARKUI_TEXT_COPY_OPTIONS_CROSS_DEVICE interface
@@ -525,7 +525,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_FOCUS_WRAP_MODE_DEFAULT_0100
        * @tc.name         testARKUI_FOCUS_WRAP_MODE_DEFAULT0100
        * @tc.desc         testing ARKUI_FOCUS_WRAP_MODE_DEFAULT interface
@@ -548,7 +548,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_FOCUS_WRAP_WITH_ARROW_0100
        * @tc.name         testARKUI_FOCUS_WRAP_WITH_ARROW0100
        * @tc.desc         testing ARKUI_FOCUS_WRAP_WITH_ARROW interface
@@ -571,7 +571,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-   /*
+   /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_CONTENT_CLIP_MODE_CONTENT_ONLY_0100
        * @tc.name         testARKUI_CONTENT_CLIP_MODE_CONTENT_ONLY0100
        * @tc.desc         testing ARKUI_CONTENT_CLIP_MODE_CONTENT_ONLY interface
@@ -594,7 +594,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_CONTENT_CLIP_MODE_BOUNDARY_0100
        * @tc.name         testARKUI_CONTENT_CLIP_MODE_BOUNDARY0100
        * @tc.desc         testing ARKUI_CONTENT_CLIP_MODE_BOUNDARY interface
@@ -617,7 +617,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_CONTENT_CLIP_MODE_SAFE_AREA_0100
        * @tc.name         testARKUI_CONTENT_CLIP_MODE_SAFE_AREA0100
        * @tc.desc         testing ARKUI_CONTENT_CLIP_MODE_SAFE_AREA interface
@@ -640,7 +640,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_WATER_FLOW_LAYOUT_MODE_ALWAYS_TOP_DOWN_0100
        * @tc.name         testARKUI_WATER_FLOW_LAYOUT_MODE_ALWAYS_TOP_DOWN0100
        * @tc.desc         testing ARKUI_WATER_FLOW_LAYOUT_MODE_ALWAYS_TOP_DOWN interface
@@ -663,7 +663,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_WATER_FLOW_LAYOUT_MODE_SLIDING_WINDOW_0100
        * @tc.name         testARKUI_WATER_FLOW_LAYOUT_MODE_SLIDING_WINDOW0100
        * @tc.desc         testing ARKUI_WATER_FLOW_LAYOUT_MODE_SLIDING_WINDOW interface
@@ -686,7 +686,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_HIT_TEST_MODE_BLOCK_HIERARCHY_0100
        * @tc.name         testARKUI_HIT_TEST_MODE_BLOCK_HIERARCHY0100
        * @tc.desc         testing ARKUI_HIT_TEST_MODE_BLOCK_HIERARCHY interface
@@ -709,7 +709,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_HIT_TEST_MODE_BLOCK_DESCENDANTS_0100
        * @tc.name         testARKUI_HIT_TEST_MODE_BLOCK_DESCENDANTS0100
        * @tc.desc         testing ARKUI_HIT_TEST_MODE_BLOCK_DESCENDANTS interface
@@ -732,7 +732,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_PAGE_FLIP_MODE_CONTINUOUS_0100
        * @tc.name         testARKUI_PAGE_FLIP_MODE_CONTINUOUS0100
        * @tc.desc         testing ARKUI_PAGE_FLIP_MODE_CONTINUOUS interface
@@ -755,7 +755,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_PAGE_FLIP_MODE_SINGLE_0100
        * @tc.name         testARKUI_PAGE_FLIP_MODE_SINGLE0100
        * @tc.desc         testing ARKUI_PAGE_FLIP_MODE_SINGLE interface
@@ -778,7 +778,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_SWIPER_NO_ANIMATION_0100
        * @tc.name         testARKUI_SWIPER_NO_ANIMATION0100
        * @tc.desc         testing ARKUI_SWIPER_NO_ANIMATION interface
@@ -801,7 +801,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_SWIPER_DEFAULT_ANIMATION_0100
        * @tc.name         testARKUI_SWIPER_DEFAULT_ANIMATION0100
        * @tc.desc         testing ARKUI_SWIPER_DEFAULT_ANIMATION interface
@@ -824,7 +824,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_SWIPER_FAST_ANIMATION_0100
        * @tc.name         testARKUI_SWIPER_FAST_ANIMATION0100
        * @tc.desc         testing ARKUI_SWIPER_FAST_ANIMATION interface
@@ -847,7 +847,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_IMAGE_SPAN_ALIGNMENT_FOLLOW_PARAGRAPH_0100
        * @tc.name         testARKUI_IMAGE_SPAN_ALIGNMENT_FOLLOW_PARAGRAPH0100
        * @tc.desc         testing ARKUI_IMAGE_SPAN_ALIGNMENT_FOLLOW_PARAGRAPH interface
@@ -870,7 +870,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_BUTTON_ROUNDED_RECTANGLE_0100
        * @tc.name         testARKUI_BUTTON_ROUNDED_RECTANGLE0100
        * @tc.desc         testing ARKUI_BUTTON_ROUNDED_RECTANGLE interface
@@ -893,7 +893,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_KEYBOARD_APPEARANCE_NONE_IMMERSIVE_0100
        * @tc.name         testARKUI_KEYBOARD_APPEARANCE_NONE_IMMERSIVE0100
        * @tc.desc         testing ARKUI_KEYBOARD_APPEARANCE_NONE_IMMERSIVE interface
@@ -916,7 +916,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_KEYBOARD_APPEARANCE_IMMERSIVE_0100
        * @tc.name         testARKUI_KEYBOARD_APPEARANCE_IMMERSIVE0100
        * @tc.desc         testing ARKUI_KEYBOARD_APPEARANCE_IMMERSIVE interface
@@ -939,7 +939,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_KEYBOARD_APPEARANCE_LIGHT_IMMERSIVE_0100
        * @tc.name         testARKUI_KEYBOARD_APPEARANCE_LIGHT_IMMERSIVE0100
        * @tc.desc         testing ARKUI_KEYBOARD_APPEARANCE_LIGHT_IMMERSIVE interface
@@ -962,7 +962,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_KEYBOARD_APPEARANCE_DARK_IMMERSIVE_0100
        * @tc.name         testARKUI_KEYBOARD_APPEARANCE_DARK_IMMERSIVE0100
        * @tc.desc         testing ARKUI_KEYBOARD_APPEARANCE_DARK_IMMERSIVE interface
@@ -985,7 +985,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_SAFE_AREA_TYPE_KEYBOARD_0100
        * @tc.name         testARKUI_SAFE_AREA_TYPE_KEYBOARD0100
        * @tc.desc         testing ARKUI_SAFE_AREA_TYPE_KEYBOARD interface
@@ -1008,7 +1008,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_SAFE_AREA_EDGE_START_0100
        * @tc.name         testARKUI_SAFE_AREA_EDGE_START0100
        * @tc.desc         testing ARKUI_SAFE_AREA_EDGE_START interface
@@ -1031,7 +1031,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_SAFE_AREA_EDGE_END_0100
        * @tc.name         testARKUI_SAFE_AREA_EDGE_END0100
        * @tc.desc         testing ARKUI_SAFE_AREA_EDGE_END interface
@@ -1054,7 +1054,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_BLUR_STYLE_ACTIVE_POLICY_FOLLOWS_WINDOW_ACTIVE_STATE_0100
        * @tc.name         testARKUI_BLUR_STYLE_ACTIVE_POLICY_FOLLOWS_WINDOW_ACTIVE_STATE0100
        * @tc.desc         testing ARKUI_BLUR_STYLE_ACTIVE_POLICY_FOLLOWS_WINDOW_ACTIVE_STATE interface
@@ -1077,7 +1077,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_BLUR_STYLE_ACTIVE_POLICY_ALWAYS_INACTIVE_0100
        * @tc.name         testARKUI_BLUR_STYLE_ACTIVE_POLICY_ALWAYS_INACTIVE0100
        * @tc.desc         testing ARKUI_BLUR_STYLE_ACTIVE_POLICY_ALWAYS_INACTIVE interface
@@ -1100,7 +1100,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_SCROLL_ALIGNMENT_CENTER_0100
        * @tc.name         testARKUI_SCROLL_ALIGNMENT_CENTER0100
        * @tc.desc         testing ARKUI_SCROLL_ALIGNMENT_CENTER interface
@@ -1123,7 +1123,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_SCROLL_ALIGNMENT_END_0100
        * @tc.name         testARKUI_SCROLL_ALIGNMENT_END0100
        * @tc.desc         testing ARKUI_SCROLL_ALIGNMENT_END interface
@@ -1146,7 +1146,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_SCROLL_ALIGNMENT_AUTO_0100
        * @tc.name         testARKUI_SCROLL_ALIGNMENT_AUTO0100
        * @tc.desc         testing ARKUI_SCROLL_ALIGNMENT_AUTO interface
@@ -1169,7 +1169,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_EFFECT_EDGE_START_0100
        * @tc.name         testARKUI_EFFECT_EDGE_START0100
        * @tc.desc         testing ARKUI_EFFECT_EDGE_START interface
@@ -1192,7 +1192,7 @@ export default function TextInputContentTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_EFFECT_EDGE_END_0100
        * @tc.name         testARKUI_EFFECT_EDGE_END0100
        * @tc.desc         testing ARKUI_EFFECT_EDGE_END interface

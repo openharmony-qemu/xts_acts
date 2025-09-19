@@ -27,7 +27,7 @@ export default function KeyEventTest() {
       await Utils.pushPage(`KeyEventTest/KeyEventTest`, done);
     });
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUIKeyEventIsNumLockOn_0100
      * @tc.name         testOHArkUIKeyEventIsNumLockOn0100
      * @tc.desc         testing OH_ArkUI_KeyEvent_IsNumLockOn interface
@@ -51,7 +51,7 @@ export default function KeyEventTest() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUIKeyEventIsNumLockOn_0200
      * @tc.name         testOHArkUIKeyEventIsNumLockOn0200
      * @tc.desc         testing OH_ArkUI_KeyEvent_IsNumLockOn interface
@@ -74,7 +74,7 @@ export default function KeyEventTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUIKeyEventIsCapsLockOn_0100
        * @tc.name         testOHArkUIKeyEventIsCapsLockOn0100
        * @tc.desc         testing OH_ArkUI_KeyEvent_IsCapsLockOn interface
@@ -97,7 +97,7 @@ export default function KeyEventTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUIKeyEventIsCapsLockOn_0200
        * @tc.name         testOHArkUIKeyEventIsCapsLockOn0200
        * @tc.desc         testing OH_ArkUI_KeyEvent_IsCapsLockOn interface
@@ -120,7 +120,7 @@ export default function KeyEventTest() {
         }
       })
 
-    /*
+    /**
     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUIKeyEventIsScrollLockOn_0100
     * @tc.name         testOHArkUIKeyEventIsScrollLockOn0100
     * @tc.desc         testing OH_ArkUI_KeyEvent_IsScrollLockOn interface
@@ -144,7 +144,7 @@ export default function KeyEventTest() {
         }
       })
 
-    /*
+    /**
     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUIKeyEventIsScrollLockOn_0200
     * @tc.name         testOHArkUIKeyEventIsScrollLockOn0200
     * @tc.desc         testing OH_ArkUI_KeyEvent_IsScrollLockOn interface

@@ -30,7 +30,7 @@ export default function ScrollStateTest() {
       await Utils.pushPage(`scrollstateTest/ScrollStateTest`, done);
     });
 
-    /*
+    /**
       * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_SCROLL_STATE_IDLE_0100
       * @tc.name         testARKUI_SCROLL_STATE_IDLE0100
       * @tc.desc         testing ARKUI_SCROLL_STATE_IDLE interface
@@ -54,7 +54,7 @@ export default function ScrollStateTest() {
         }
       })
 
-    /*
+    /**
       * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_SCROLL_STATE_SCROLL_0100
       * @tc.name         testARKUI_SCROLL_STATE_SCROLL0100
       * @tc.desc         testing ARKUI_SCROLL_STATE_SCROLL interface
@@ -78,7 +78,7 @@ export default function ScrollStateTest() {
         }
       })
 
-    /*
+    /**
       * @tc.number       SUB_ArkUI_ACE_ENGINE_ARKUI_SCROLL_STATE_FLING_0100
       * @tc.name         testARKUI_SCROLL_STATE_FLING0100
       * @tc.desc         testing ARKUI_SCROLL_STATE_FLING interface

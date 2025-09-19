@@ -28,7 +28,7 @@ export default function RunTaskInscopeTest() {
     beforeAll(async (done: Function) => {
       await Utils.pushPage(`scopetest/runTaskInScopeTest`, done);
     });
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_RunTaskInScope_0100
        * @tc.name         testOHArkUIRunTaskInScope0100
        * @tc.desc         testing OH_ArkUI_RunTaskInScope interface
@@ -50,7 +50,7 @@ export default function RunTaskInscopeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_RunTaskInScope_0200
        * @tc.name         testOHArkUIRunTaskInScope0200
        * @tc.desc         testing OH_ArkUI_RunTaskInScope interface
@@ -72,7 +72,7 @@ export default function RunTaskInscopeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_RunTaskInScope_0400
        * @tc.name         testOHArkUIRunTaskInScope0400
        * @tc.desc         testing OH_ArkUI_RunTaskInScope interface

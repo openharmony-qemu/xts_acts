@@ -31,7 +31,7 @@ export default function NodeEventTypeTest2() {
       await Utils.pushPage(`nodeeventtypetest/NodeEventTypeTest2`, done);
     });
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_NODE_LIST_ON_SCROLL_VISIBLE_CONTENT_CHANGE_0100
        * @tc.name         testNODE_LIST_ON_SCROLL_VISIBLE_CONTENT_CHANGE0100
        * @tc.desc         testing NODE_LIST_ON_SCROLL_VISIBLE_CONTENT_CHANGE interface

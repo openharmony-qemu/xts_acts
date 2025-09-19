@@ -398,7 +398,7 @@ export default function ActsOsAccountNdkTest() {
         }
       })
 
-    /*
+    /**
   * @tc.number       SUB_ARKUI_SETNODEDRAGGABLE_0100
   * @tc.name         ArkUiSetNodeDraggable001
   * @tc.desc         test ArkUI_SETNODEDRAGGABLE
@@ -411,7 +411,7 @@ export default function ActsOsAccountNdkTest() {
       done()
     })
 
-    /*
+    /**
 * @tc.number       SUB_ARKUI_SETNODEDRAGGABLE_0200
 * @tc.name         ArkUiSetNodeDraggable002
 * @tc.desc         test ArkUI_SETNODEDRAGGABLE
@@ -425,7 +425,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_SETNODEDRAGPREVIEW_0100
 * @tc.name         ArkUiSetNodeDragPreview001
 * @tc.desc        testing ArkUI_SETNODEDRAGPREVIEW
@@ -438,7 +438,7 @@ export default function ActsOsAccountNdkTest() {
       done()
     })
 
-    /*
+    /**
 * @tc.number       SUB_ArkUI_SETNODEDRAGPREVIEW_0200
 * @tc.name         ArkUiSetNodeDragPreview002
 * @tc.desc         testing ArkUI_SETNODEDRAGPREVIEW
@@ -452,7 +452,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       testing ArkUI_DRAGPREVIEWOPTIONSETSCALEMODE_0100
 * @tc.name         ArkUiDragPreviewOptionSetScaleMode001
 * @tc.desc         testing ArkUI_DRAGPREVIEWOPTION_SETSCALEMODE
@@ -465,7 +465,7 @@ export default function ActsOsAccountNdkTest() {
       done()
     })
 
-    /*
+    /**
 * @tc.number       testing ArkUI_DRAGPREVIEWOPTIONSETSCALEMODE_0200
 * @tc.name         ArkUiDragPreviewOptionSetScaleMode002
 * @tc.desc         testing ArkUI_DRAGPREVIEWOPTION_SETSCALEMODE
@@ -479,7 +479,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ARKUI_DRAGPREVIEWOPTION_SETDEFAULTSHADOWENABLED_0100
 * @tc.name         ArkUiDragPreviewOptionSetDefaultShadowEnabled001
 * @tc.desc         testing ArkUI_DRAGPREVIEWOPTION_SETDEFAULTSHADOWENABLED
@@ -492,7 +492,7 @@ export default function ActsOsAccountNdkTest() {
       done()
     })
 
-    /*
+    /**
 * @tc.number       SUB_ARKUI_DRAGPREVIEWOPTION_SETDEFAULTSHADOWENABLED_0200
 * @tc.name         ArkUiDragPreviewOptionSetDefaultShadowEnabled002
 * @tc.desc         testing ArkUI_DRAGPREVIEWOPTION_SETDEFAULTSHADOWENABLED
@@ -506,7 +506,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ARKUI_DRAGPREVIEWOPTION_SETDEFAULTRADIUSENABLED_0100
 * @tc.name         ArkUiDragPreviewOptionSetDefaultRadiusEnabled001
 * @tc.desc         testing ArkUI_DRAGPREVIEWOPTION_SETDEFAULTRADIUSENABLED
@@ -519,7 +519,7 @@ export default function ActsOsAccountNdkTest() {
       done()
     })
 
-    /*
+    /**
 * @tc.number       SUB_ARKUI_DRAGPREVIEWOPTION_SETDEFAULTRADIUSENABLED_0200
 * @tc.name         ArkUiDragPreviewOptionSetDefaultRadiusEnabled002
 * @tc.desc         testing ArkUI_DRAGPREVIEWOPTION_SETDEFAULTRADIUSENABLED
@@ -533,7 +533,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ARKUI_DRAGPREVIEWOPTIONSETNUMBERBADGENABLED0100
 * @tc.name         ArkUiDragPreviewOptionSetNumberBadgeEnabled001
 * @tc.desc         testing ArkUI_DRAGPREVIEWOPTION_SETNUMBERBADGENABLED
@@ -546,7 +546,7 @@ export default function ActsOsAccountNdkTest() {
       done()
     })
 
-    /*
+    /**
 * @tc.number       SUB_ARKUI_DRAGPREVIEWOPTIONSETNUMBERBADGENABLED0200
 * @tc.name         ArkUiDragPreviewOptionSetNumberBadgeEnabled002
 * @tc.desc         testing ArkUI_DRAGPREVIEWOPTION_SETNUMBERBADGENABLED
@@ -560,7 +560,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_DRAGPREVIEWOPTIONSETBADGENUMBER_0100
 * @tc.name         ArkUiDragPreviewOptionSetBadgeNumber001
 * @tc.desc         testing ArkUI_DRAGPREVIEWOPTION_SETBADGENUMBER
@@ -573,7 +573,7 @@ export default function ActsOsAccountNdkTest() {
       done()
     })
 
-    /*
+    /**
 * @tc.number       SUB_ArkUI_DRAGPREVIEWOPTIONSETBADGENUMBER_0200
 * @tc.name         ArkUiDragPreviewOptionSetBadgeNumber002
 * @tc.desc         testing ArkUI_DRAGPREVIEWOPTION_SETBADGENUMBER
@@ -587,7 +587,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_DRAGPREVIEWOPTIONSETDEFAULTANIMATIONBEFORELIFTINGENABLED_0100
 * @tc.name         ArkUiDragPreviewOptionSetDefaultAnimationBeforeLiftingEnabled001
 * @tc.desc         test ArkUI_DRAGPREVIEWOPTION_EnabledSETDEFAULTANIMATIONBEFORELIFTING
@@ -600,7 +600,7 @@ export default function ActsOsAccountNdkTest() {
       done()
     })
 
-    /*
+    /**
 * @tc.number       SUB_ArkUI_DRAGPREVIEWOPTIONSETDEFAULTANIMATIONBEFORELIFTINGENABLED_0200
 * @tc.name         ArkUiDragPreviewOptionSetDefaultAnimationBeforeLiftingEnabled002
 * @tc.desc         test ArkUI_DRAGPREVIEWOPTION_SETDEFAULTANIMATIONBEFORELIFTINGENABLED
@@ -614,7 +614,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_SETNODEDRAGPREVIEWOPTION_0100
 * @tc.name         ArkUiSetNodeDragPreviewOption001
 * @tc.desc         test ArkUI_SETNODEDRAGPREVIEWOPTION
@@ -627,7 +627,7 @@ export default function ActsOsAccountNdkTest() {
       done()
     })
 
-    /*
+    /**
 * @tc.number       SUB_ArkUI_SETNODEDRAGPREVIEWOPTION_0200
 * @tc.name         ArkUiSetNodeDragPreviewOption002
 * @tc.desc         test ArkUI_SETNODEDRAGPREVIEWOPTION
@@ -641,7 +641,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_DRAGACTIONSETPOINTERID_0100
 * @tc.name         ArkUiDragActionSetPointerId001
 * @tc.desc         test ArkUI_DRAGACTION_SETPOINTERID
@@ -654,7 +654,7 @@ export default function ActsOsAccountNdkTest() {
       done()
     })
 
-    /*
+    /**
 * @tc.number       SUB_ArkUI_DRAGACTIONSETPOINTERID_0200
 * @tc.name         ArkUiDragActionSetPointerId002
 * @tc.desc         test ArkUI_DRAGACTION_SETPOINTERID
@@ -668,7 +668,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_DRAGACTIONSETPIXELMAPS_0100
 * @tc.name         ArkUiDragActionSetPixelMaps001
 * @tc.desc         test ArkUI_DRAGACTION_SETPIXELMAPS
@@ -681,7 +681,7 @@ export default function ActsOsAccountNdkTest() {
       done()
     })
 
-    /*
+    /**
 * @tc.number       SUB_ArkUI_DRAGACTIONSETPIXELMAPS_0200
 * @tc.name         ArkUiDragActionSetPixelMaps002
 * @tc.desc         test ArkUI_DRAGACTION_SETPIXELMAPS
@@ -695,7 +695,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_DRAGACTIONSETOUCHPOINTX_0100
 * @tc.name         ArkUiDragActionSetTouchPointX001
 * @tc.desc         test ArkUI_DRAGACTION_SETOUCHPOINTX
@@ -708,7 +708,7 @@ export default function ActsOsAccountNdkTest() {
       done()
     })
 
-    /*
+    /**
 * @tc.number       SUB_ArkUI_DRAGACTIONSETOUCHPOINTX_0200
 * @tc.name         ArkUiDragActionSetTouchPointX002
 * @tc.desc         test ArkUI_DRAGACTION_SETOUCHPOINTX
@@ -722,7 +722,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_DRAGACTIONSETOUCHPOINTY_0100
 * @tc.name         ArkUiDragActionSetTouchPointY001
 * @tc.desc         test ArkUI_DRAGACTION_SETOUCHPOINTY
@@ -735,7 +735,7 @@ export default function ActsOsAccountNdkTest() {
       done()
     })
 
-    /*
+    /**
 * @tc.number       SUB_ArkUI_DRAGACTIONSETOUCHPOINTY_0200
 * @tc.name         ArkUiDragActionSetTouchPointY002
 * @tc.desc         test ArkUI_DRAGACTION_SETOUCHPOINTY
@@ -749,7 +749,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_DRAGACTIONSETDATA_0100
 * @tc.name         ArkUiDragActionSetData001
 * @tc.desc         test ArkUI_DRAGACTION_SETDATA
@@ -762,7 +762,7 @@ export default function ActsOsAccountNdkTest() {
       done()
     })
 
-    /*
+    /**
 * @tc.number       SUB_ArkUI_DRAGACTIONSETDATA_0200
 * @tc.name         ArkUiDragActionSetData002
 * @tc.desc         test ArkUI_DRAGACTION_SETDATA
@@ -776,7 +776,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_DRAGACTIONSETDRAGPREVIEWOPTION_0100
 * @tc.name         ArkUiDragActionSetDragPreviewOption001
 * @tc.desc         test ArkUI_DRAGACTION_SETDRAGPREVIEWOPTION
@@ -788,7 +788,7 @@ export default function ActsOsAccountNdkTest() {
       expect(osAccountNdk.DragAndDropTest225()).assertEqual(ARKUI_ERROR_CODE_NO_ERROR)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_DRAGACTIONSETDRAGPREVIEWOPTION_0200
 * @tc.name         ArkUiDragActionSetDragPreviewOption002
 * @tc.desc         test ArkUI_DRAGACTION_SETDRAGPREVIEWOPTION
@@ -802,7 +802,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_DRAGACTIONREGISTERSTATUSLISTENER_0100
 * @tc.name         ArkUiDragActionRegisterStatusListener001
 * @tc.desc         test ArkUI_DRAGACTION_REGISTERSTATUSLISTENER
@@ -814,7 +814,7 @@ export default function ActsOsAccountNdkTest() {
       expect(osAccountNdk.DragAndDropTest227()).assertEqual(ARKUI_ERROR_CODE_NO_ERROR)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_DRAGACTIONREGISTERSTATUSLISTENER_0200
 * @tc.name         ArkUiDragActionRegisterStatusListener002
 * @tc.desc         test ArkUI_DRAGACTION_REGISTERSTATUSLISTENER
@@ -828,7 +828,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_STARTDRAG_0100
 * @tc.name         ArkUiStartDrag001
 * @tc.desc         test ArkUI_STARTDRAG
@@ -840,7 +840,7 @@ export default function ActsOsAccountNdkTest() {
       expect(osAccountNdk.DragAndDropTest229()).assertEqual(ARKUI_ERROR_CODE_NO_ERROR)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_STARTDRAG_0200
 * @tc.name         ArkUiStartDrag002
 * @tc.desc         test ArkUI_STARTDRAG
@@ -854,7 +854,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_SETDRAGEVENTSTRICTREPORTWITHNODE_0100
 * @tc.name         ArkUiSetDragEventStrictReportWithNode001
 * @tc.desc         test ArkUI_SETDRAGEVENTSTRICTREPORTWITHNODE
@@ -866,7 +866,7 @@ export default function ActsOsAccountNdkTest() {
       expect(osAccountNdk.DragAndDropTest231()).assertEqual(ARKUI_ERROR_CODE_NO_ERROR)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_SETDRAGEVENTSTRICTREPORTWITHNODE_0200
 * @tc.name         ArkUiSetDragEventStrictReportWithNode002
 * @tc.desc         test ArkUI_SETDRAGEVENTSTRICTREPORTWITHNODE
@@ -880,7 +880,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_SETDRAGEVENTSTRICTREPORTWITHCONTEXT_0100
 * @tc.name         ArkUiSetDragEventStrictReportWithContext001
 * @tc.desc         test ArkUI_SETDRAGEVENTSTRICTREPORTWITHCONTEXT
@@ -892,7 +892,7 @@ export default function ActsOsAccountNdkTest() {
       expect(osAccountNdk.DragAndDropTest233()).assertEqual(ARKUI_ERROR_CODE_NO_ERROR)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_SETDRAGEVENTSTRICTREPORTWITHCONTEXT_0200
 * @tc.name         ArkUiSetDragEventStrictReportWithContext002
 * @tc.desc         test ArkUI_SETDRAGEVENTSTRICTREPORTWITHCONTEXT
@@ -906,7 +906,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_SETNODEALLOWEDDROPDATATYPES_0100
 * @tc.name         ArkUiSetNodeAllowedDropDataTypes001
 * @tc.desc         test ArkUI_SETNODEALLOWEDDROPDATATYPES
@@ -918,7 +918,7 @@ export default function ActsOsAccountNdkTest() {
       expect(osAccountNdk.DragAndDropTest235()).assertEqual(ARKUI_ERROR_CODE_NO_ERROR)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_SETNODEALLOWEDDROPDATATYPES_0200
 * @tc.name         ArkUiSetNodeAllowedDropDataTypes002
 * @tc.desc         test ArkUI_SETNODEALLOWEDDROPDATATYPES
@@ -932,7 +932,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_DISALLOWNODEANYDROPDATATYPES_0100
 * @tc.name         ArkUiDisallowNodeAnyDropDataTypes001
 * @tc.desc         test ArkUI_DISALLOWNODEANYDROPDATATYPES
@@ -944,7 +944,7 @@ export default function ActsOsAccountNdkTest() {
       expect(osAccountNdk.DragAndDropTest237()).assertEqual(ARKUI_ERROR_CODE_NO_ERROR)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_DISALLOWNODEANYDROPDATATYPES_0200
 * @tc.name         ArkUiDisallowNodeAnyDropDataTypes002
 * @tc.desc         test ArkUI_DISALLOWNODEANYDROPDATATYPES
@@ -958,7 +958,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_ALLOWNODEALLDROPDATATYPES_0100
 * @tc.name         ArkUiAllowNodeAllDropDataTypes001
 * @tc.desc         test ArkUI_ALLOWNODEALLDROPDATATYPES
@@ -970,7 +970,7 @@ export default function ActsOsAccountNdkTest() {
       expect(osAccountNdk.DragAndDropTest239()).assertEqual(ARKUI_ERROR_CODE_NO_ERROR)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_ALLOWNODEALLDROPDATATYPES_0200
 * @tc.name         ArkUiAllowNodeAllDropDataTypes002
 * @tc.desc         test ArkUI_ALLOWNODEALLDROPDATATYPES
@@ -984,7 +984,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_CUSTOMDIALOGSETBACKGROUNGBLURSTYLEOPTIONS_0100
 * @tc.name         ArkUiCustomDialogSetBackgroundBlurStyleOptions001
 * @tc.desc         test ArkUI_CUSTOMDIALOG_SETBACKGROUNGBLURSTYLEOPTIONS
@@ -996,7 +996,7 @@ export default function ActsOsAccountNdkTest() {
       expect(osAccountNdk.DragAndDropTest241()).assertEqual(ARKUI_ERROR_CODE_NO_ERROR)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_CUSTOMDIALOGSETBACKGROUNGBLURSTYLEOPTIONS_0200
 * @tc.name         ArkUiCustomDialogSetBackgroundBlurStyleOptions002
 * @tc.desc         test ArkUI_CUSTOMDIALOG_SETBACKGROUNGBLURSTYLEOPTIONS
@@ -1010,7 +1010,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_CUSTOMDIALOGSETBACKGROUNGSETBACKGROUNGEFFECT_0100
 * @tc.name         ArkUiCustomDialogSetBackgroundEffect001
 * @tc.desc         test ArkUI_CUSTOMDIALOG_SETBACKGROUNGEFFECT
@@ -1022,7 +1022,7 @@ export default function ActsOsAccountNdkTest() {
       expect(osAccountNdk.DragAndDropTest243()).assertEqual(ARKUI_ERROR_CODE_NO_ERROR)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_CUSTOMDIALOGSETBACKGROUNGEFFECT_0200
 * @tc.name         ArkUiCustomDialogSetBackgroundEffect002
 * @tc.desc         test ArkUI_CUSTOMDIALOG_SETBACKGROUNGEFFECT
@@ -1036,7 +1036,7 @@ export default function ActsOsAccountNdkTest() {
       expect(ret).assertEqual(0)
       done()
     })
-    /*
+    /**
 * @tc.number       SUB_ArkUI_DRAGEVENTGETDATATYPES_0200
 * @tc.name         ArkUiDragEventGetDataTypes002
 * @tc.desc         test ArkUI_DRAGEVENT_GETDATATYPES

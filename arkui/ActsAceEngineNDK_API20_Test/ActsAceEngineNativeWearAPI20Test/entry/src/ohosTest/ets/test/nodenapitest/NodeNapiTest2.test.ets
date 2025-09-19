@@ -27,7 +27,7 @@ export default function NodeNapiTest2() {
       await Utils.pushPageNoClear(`nodenapitest/nodenapiTest2`, done);
     });
 
-    /*
+    /**
    * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeContentFromNapiValue_0100
    * @tc.name         testOHArkUIGetNodeContentFromNapiValue0100
    * @tc.desc         testing OH_ArkUI_GetNodeContentFromNapiValue interface
@@ -50,7 +50,7 @@ export default function NodeNapiTest2() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeContentFromNapiValue_0200
        * @tc.name         testOHArkUIGetNodeContentFromNapiValue0200
        * @tc.desc         testing OH_ArkUI_GetNodeContentFromNapiValue interface

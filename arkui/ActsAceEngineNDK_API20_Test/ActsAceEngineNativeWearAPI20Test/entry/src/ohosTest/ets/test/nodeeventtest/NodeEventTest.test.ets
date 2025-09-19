@@ -29,7 +29,7 @@ export default function NodeEventTest() {
     beforeEach(async (done: Function) => {
       await Utils.pushPage(`NodeEventTest/NodeEventTest`, done);
     });
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventGetNumberValue_0100
        * @tc.name         testOHArkUINodeEventGetNumberValue0100
        * @tc.desc         testing OH_ArkUI_NodeEvent_GetNumberValue interface
@@ -53,7 +53,7 @@ export default function NodeEventTest() {
           done();
         }
       })
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventGetNumberValue_0200
      * @tc.name         testOHArkUINodeEventGetNumberValue0200
      * @tc.desc         testing OH_ArkUI_NodeEvent_GetNumberValue interface
@@ -78,7 +78,7 @@ export default function NodeEventTest() {
           done();
         }
       })
-    /*
+    /**
         * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventGetNumberValue_0300
         * @tc.name         testOHArkUINodeEventGetNumberValue0300
         * @tc.desc         testing OH_ArkUI_NodeEvent_GetNumberValue interface
@@ -100,7 +100,7 @@ export default function NodeEventTest() {
           done();
         }
       })
-    /*
+    /**
         * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventGetStringValue_0200
         * @tc.name         testOHArkUINodeEventGetStringValue0200
         * @tc.desc         testing OH_ArkUI_NodeEvent_GetStringValue interface
@@ -124,7 +124,7 @@ export default function NodeEventTest() {
           done();
         }
       })
-    /*
+    /**
         * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventGetStringValue_0300
         * @tc.name         testOHArkUINodeEventGetStringValue0300
         * @tc.desc         testing OH_ArkUI_NodeEvent_GetStringValue interface
@@ -146,7 +146,7 @@ export default function NodeEventTest() {
           done();
         }
       })
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventSetReturnNumberValue_0100
      * @tc.name         testOHArkUINodeEventSetReturnNumberValue0100
      * @tc.desc         testing OH_ArkUI_NodeEvent_SetReturnNumberValue interface
@@ -171,7 +171,7 @@ export default function NodeEventTest() {
         }
       })
 
-    /*
+    /**
         * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeEventSetReturnNumberValue_0300
         * @tc.name         testOHArkUINodeEventSetReturnNumberValue0300
         * @tc.desc         testing OH_ArkUI_NodeEvent_SetReturnNumberValue interface

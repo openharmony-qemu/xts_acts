@@ -24,7 +24,7 @@ const ARKUI_ERROR_CODE_CAPI_INIT_ERROR = 500;
 
 export default function NodeUtilsTest() {
   describe('NodeUtilsTest', () => {
-    /*
+    /**
       * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutSize_0100
       * @tc.name         testOHArkUINodeUtilsGetLayoutSize0100
       * @tc.desc         testing OH_ArkUI_NodeUtils_GetLayoutSize interface
@@ -46,7 +46,7 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutSize_0200
        * @tc.name         testOHArkUINodeUtilsGetLayoutSize0200
        * @tc.desc         testing OH_ArkUI_NodeUtils_GetLayoutSize interface
@@ -68,7 +68,7 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
+    /**
       * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPosition_0100
       * @tc.name         testOHArkUINodeUtilsGetLayoutPosition0100
       * @tc.desc         testing OH_ArkUI_NodeUtils_GetLayoutPosition interface
@@ -90,7 +90,7 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPosition_0200
        * @tc.name         testOHArkUINodeUtilsGetLayoutPosition0200
        * @tc.desc         testing OH_ArkUI_NodeUtils_GetLayoutPosition interface
@@ -112,7 +112,7 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
+    /**
       * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPositionInWindow_0100
       * @tc.name         testOHArkUINodeUtilsGetLayoutPositionInWindow0100
       * @tc.desc         testing OH_ArkUI_NodeUtils_GetLayoutPositionInWindow interface
@@ -134,7 +134,7 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPositionInWindow_0200
        * @tc.name         testOHArkUINodeUtilsGetLayoutPositionInWindow0200
        * @tc.desc         testing OH_ArkUI_NodeUtils_GetLayoutPositionInWindow interface
@@ -156,7 +156,7 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
+    /**
       * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPositionInScreen_0100
       * @tc.name         testOHArkUINodeUtilsGetLayoutPositionInScreen0100
       * @tc.desc         testing OH_ArkUI_NodeUtils_GetLayoutPositionInScreen interface
@@ -178,7 +178,7 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPositionInScreen_0200
        * @tc.name         testOHArkUINodeUtilsGetLayoutPositionInScreen0200
        * @tc.desc         testing OH_ArkUI_NodeUtils_GetLayoutPositionInScreen interface
@@ -199,7 +199,7 @@ export default function NodeUtilsTest() {
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
         }
       })
-    /*
+    /**
       * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPositionInGlobalDisplay_0100
       * @tc.name         testOHArkUINodeUtilsGetLayoutPositionInGlobalDisplay0100
       * @tc.desc         testing OH_ArkUI_NodeUtils_GetLayoutPositionInGlobalDisplay interface
@@ -221,7 +221,7 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPositionInGlobalDisplay_0200
        * @tc.name         testOHArkUINodeUtilsGetLayoutPositionInGlobalDisplay0200
        * @tc.desc         testing OH_ArkUI_NodeUtils_GetLayoutPositionInGlobalDisplay interface
@@ -243,7 +243,7 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
+    /**
       * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetPositionWithTranslateInWindow_0100
       * @tc.name         testOHArkUINodeUtilsGetPositionWithTranslateInWindow0100
       * @tc.desc         testing OH_ArkUI_NodeUtils_GetPositionWithTranslateInWindow interface
@@ -265,7 +265,7 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetPositionWithTranslateInWindow_0200
        * @tc.name         testOHArkUINodeUtilsGetPositionWithTranslateInWindow0200
        * @tc.desc         testing OH_ArkUI_NodeUtils_GetPositionWithTranslateInWindow interface
@@ -287,7 +287,7 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
+    /**
       * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetPositionWithTranslateInScreen_0100
       * @tc.name         testOHArkUINodeUtilsGetPositionWithTranslateInScreen0100
       * @tc.desc         testing OH_ArkUI_NodeUtils_GetPositionWithTranslateInScreen interface
@@ -309,7 +309,7 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetPositionWithTranslateInScreen_0200
        * @tc.name         testOHArkUINodeUtilsGetPositionWithTranslateInScreen0200
        * @tc.desc         testing OH_ArkUI_NodeUtils_GetPositionWithTranslateInScreen interface
@@ -331,7 +331,7 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetCustomProperty_0100
        * @tc.name         testOHArkUINodeUtilsGetCustomProperty0100
        * @tc.desc         testing OH_ArkUI_NodeUtils_GetCustomProperty interface
@@ -353,7 +353,7 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetActiveChildrenInfo_0100
      * @tc.name         testOHArkUINodeUtilsGetActiveChildrenInfo0100
      * @tc.desc         testing OH_ArkUI_NodeUtils_GetActiveChildrenInfo interface
@@ -375,7 +375,7 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetActiveChildrenInfo_0200
        * @tc.name         testOHArkUINodeUtilsGetActiveChildrenInfo0200
        * @tc.desc         testing OH_ArkUI_NodeUtils_GetActiveChildrenInfo interface
@@ -396,7 +396,7 @@ export default function NodeUtilsTest() {
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
         }
       })
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeUtils_SetCrossLanguageOption_0100
        * @tc.name         testOHArkUINodeUtilsSetCrossLanguageOption0100
        * @tc.desc         testing OH_ArkUI_NodeUtils_SetCrossLanguageOption interface
@@ -417,7 +417,7 @@ export default function NodeUtilsTest() {
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
         }
       })
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeUtils_SetCrossLanguageOption_0200
        * @tc.name         testOHArkUINodeUtilsSetCrossLanguageOption0200
        * @tc.desc         testing OH_ArkUI_NodeUtils_SetCrossLanguageOption interface
@@ -439,7 +439,7 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeUtils_GetCrossLanguageOption_0100
        * @tc.name         testOHArkUINodeUtilsGetCrossLanguageOption0100
        * @tc.desc         testing OH_ArkUI_NodeUtils_GetCrossLanguageOption interface
@@ -461,7 +461,7 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeUtils_GetCrossLanguageOption_0200
        * @tc.name         testOHArkUINodeUtilsGetCrossLanguageOption0200
        * @tc.desc         testing OH_ArkUI_NodeUtils_GetCrossLanguageOption interface

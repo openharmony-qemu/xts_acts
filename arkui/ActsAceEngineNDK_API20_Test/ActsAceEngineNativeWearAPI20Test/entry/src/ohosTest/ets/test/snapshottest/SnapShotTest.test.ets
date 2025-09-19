@@ -28,7 +28,7 @@ export default function SnapShotTest() {
     beforeAll(async (done: Function) => {
       await Utils.pushPage(`snapshottest/snapShotTest`, done);
     });
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeSnapshot_0100
        * @tc.name         testOHArkUIGetNodeSnapshot0100
        * @tc.desc         testing OH_ArkUI_GetNodeSnapshot interface
@@ -50,7 +50,7 @@ export default function SnapShotTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeSnapshot_0200
        * @tc.name         testOHArkUIGetNodeSnapshot0200
        * @tc.desc         testing OH_ArkUI_GetNodeSnapshot interface
@@ -72,7 +72,7 @@ export default function SnapShotTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeSnapshot_0300
        * @tc.name         testOHArkUIGetNodeSnapshot0300
        * @tc.desc         testing OH_ArkUI_GetNodeSnapshot interface

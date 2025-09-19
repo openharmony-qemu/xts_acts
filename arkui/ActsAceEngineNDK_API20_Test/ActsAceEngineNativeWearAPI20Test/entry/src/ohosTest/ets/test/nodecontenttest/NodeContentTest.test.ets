@@ -26,7 +26,7 @@ export default function NodeContentTest() {
     beforeAll(async (done: Function) => {
       await Utils.pushPage(`nodecontent/nodecontentTest`, done);
     });
-    /*
+    /**
       * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeContentRegisterCallback_0100
       * @tc.name         testOHArkUINodeContentRegisterCallback0100
       * @tc.desc         testing OH_ArkUI_NodeContent_RegisterCallback  interface
@@ -48,7 +48,7 @@ export default function NodeContentTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeContentRegisterCallback_0200
        * @tc.name         testOHArkUINodeContentRegisterCallback0200
        * @tc.desc         testing OH_ArkUI_NodeContent_RegisterCallback  interface
@@ -69,7 +69,7 @@ export default function NodeContentTest() {
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
         }
       })
-    /*
+    /**
       * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeContentSetUserData_0100
       * @tc.name         testOHArkUINodeContentSetUserData0100
       * @tc.desc         testing OH_ArkUI_NodeContent_SetUserData  interface
@@ -91,7 +91,7 @@ export default function NodeContentTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeContentSetUserData_0200
        * @tc.name         testOHArkUINodeContentSetUserData0200
        * @tc.desc         testing OH_ArkUI_NodeContent_SetUserData  interface
@@ -112,7 +112,7 @@ export default function NodeContentTest() {
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
         }
       })
-    /*
+    /**
       * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeContentAddNode_0100
       * @tc.name         testOHArkUINodeContentAddNode0100
       * @tc.desc         testing OH_ArkUI_NodeContent_AddNode  interface
@@ -134,7 +134,7 @@ export default function NodeContentTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeContentAddNode_0200
        * @tc.name         testOHArkUINodeContentAddNode0200
        * @tc.desc         testing OH_ArkUI_NodeContent_AddNode  interface
@@ -155,7 +155,7 @@ export default function NodeContentTest() {
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
         }
       })
-    /*
+    /**
       * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeContentRemoveNode_0100
       * @tc.name         testOHArkUINodeContentRemoveNode0100
       * @tc.desc         testing OH_ArkUI_NodeContent_RemoveNode  interface
@@ -177,7 +177,7 @@ export default function NodeContentTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeContentRemoveNode_0200
        * @tc.name         testOHArkUINodeContentRemoveNode0200
        * @tc.desc         testing OH_ArkUI_NodeContent_RemoveNode  interface
@@ -198,7 +198,7 @@ export default function NodeContentTest() {
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
         }
       })
-    /*
+    /**
       * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeContentInsertNode_0100
       * @tc.name         testOHArkUINodeContentInsertNode0100
       * @tc.desc         testing OH_ArkUI_NodeContent_InsertNode  interface
@@ -220,7 +220,7 @@ export default function NodeContentTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeContentInsertNode_0200
        * @tc.name         testOHArkUINodeContentInsertNode0200
        * @tc.desc         testing OH_ArkUI_NodeContent_InsertNode  interface

@@ -32,7 +32,7 @@ export default function NodeUtilsTest2() {
       await Utils.pushPage(`nodeutils/nodeutilsTest`, done);
     });
 
-    /*
+    /**
     * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_SetForceDarkConfig_0100
     * @tc.name         testOHArkUISetForceDarkConfig0100
     * @tc.desc         testing OH_ArkUI_SetForceDarkConfig interface
@@ -54,7 +54,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
       * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_SetForceDarkConfig_0200
       * @tc.name         testOHArkUISetForceDarkConfig0200
       * @tc.desc         testing OH_ArkUI_SetForceDarkConfig interface
@@ -76,7 +76,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeCustomEvent_GetCustomSpanMeasureInfo_0100
      * @tc.name         testOHArkUINodeCustomEventGetCustomSpanMeasureInfo0100
      * @tc.desc         testing OH_ArkUI_NodeCustomEvent_GetCustomSpanMeasureInfo interface
@@ -98,7 +98,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeCustomEvent_GetCustomSpanMeasureInfo_0200
      * @tc.name         testOHArkUINodeCustomEventGetCustomSpanMeasureInfo0200
      * @tc.desc         testing OH_ArkUI_NodeCustomEvent_GetCustomSpanMeasureInfo interface
@@ -120,7 +120,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeCustomEvent_SetCustomSpanMetrics_0100
      * @tc.name         testOHArkUINodeCustomEventSetCustomSpanMetrics0100
      * @tc.desc         testing OH_ArkUI_NodeCustomEvent_SetCustomSpanMetrics interface
@@ -142,7 +142,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeCustomEvent_SetCustomSpanMetrics_0200
      * @tc.name         testOHArkUINodeCustomEventSetCustomSpanMetrics0200
      * @tc.desc         testing OH_ArkUI_NodeCustomEvent_SetCustomSpanMetrics interface
@@ -164,7 +164,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeCustomEvent_GetCustomSpanDrawInfo_0100
      * @tc.name         testOHArkUINodeCustomEventGetCustomSpanDrawInfo0100
      * @tc.desc         testing OH_ArkUI_NodeCustomEvent_GetCustomSpanDrawInfo interface
@@ -186,7 +186,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeCustomEvent_GetCustomSpanDrawInfo_0200
      * @tc.name         testOHArkUINodeCustomEventGetCustomSpanDrawInfo0200
      * @tc.desc         testing OH_ArkUI_NodeCustomEvent_GetCustomSpanDrawInfo interface
@@ -208,7 +208,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_List_CloseAllSwipeActions_0100
      * @tc.name         testOHArkUIListCloseAllSwipeActions0100
      * @tc.desc         testing OH_ArkUI_List_CloseAllSwipeActions interface
@@ -230,7 +230,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_List_CloseAllSwipeActions_0200
      * @tc.name         testOHArkUIListCloseAllSwipeActions0200
      * @tc.desc         testing OH_ArkUI_List_CloseAllSwipeActions interface
@@ -252,7 +252,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_List_CloseAllSwipeActions_0300
      * @tc.name         testOHArkUIListCloseAllSwipeActions0300
      * @tc.desc         testing OH_ArkUI_List_CloseAllSwipeActions interface
@@ -274,7 +274,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_RegisterSystemColorModeChangeEvent_0200
      * @tc.name         testOHArkUIRegisterSystemColorModeChangeEvent0200
      * @tc.desc         testing OH_ArkUI_RegisterSystemColorModeChangeEvent interface
@@ -296,7 +296,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_RegisterSystemFontStyleChangeEvent_0200
      * @tc.name         testOHArkUIRegisterSystemFontStyleChangeEvent0200
      * @tc.desc         testing OH_ArkUI_RegisterSystemFontStyleChangeEvent interface
@@ -319,7 +319,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_RegisterLayoutCallbackOnNodeHandle_0100
      * @tc.name         testOHArkUIRegisterLayoutCallbackOnNodeHandle0100
      * @tc.desc         testing OH_ArkUI_RegisterLayoutCallbackOnNodeHandle interface
@@ -341,7 +341,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_RegisterDrawCallbackOnNodeHandle_0100
      * @tc.name         testOHArkUIRegisterDrawCallbackOnNodeHandle0100
      * @tc.desc         testing OH_ArkUI_RegisterDrawCallbackOnNodeHandle interface
@@ -363,7 +363,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_UnregisterLayoutCallbackOnNodeHandle_0100
      * @tc.name         testOHArkUIUnregisterLayoutCallbackOnNodeHandle0100
      * @tc.desc         testing OH_ArkUI_UnregisterLayoutCallbackOnNodeHandle interface
@@ -385,7 +385,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_UnregisterDrawCallbackOnNodeHandle_0100
      * @tc.name         testOHArkUIUnregisterDrawCallbackOnNodeHandle0100
      * @tc.desc         testing OH_ArkUI_UnregisterDrawCallbackOnNodeHandle interface
@@ -407,7 +407,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeUtils_GetPositionToParent_0100
      * @tc.name         testOHArkUINodeUtilsGetPositionToParent0100
      * @tc.desc         testing OH_ArkUI_NodeUtils_GetPositionToParent interface
@@ -429,7 +429,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeUtils_GetPositionToParent_0200
      * @tc.name         testOHArkUINodeUtilsGetPositionToParent0200
      * @tc.desc         testing OH_ArkUI_NodeUtils_GetPositionToParent interface
@@ -451,7 +451,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeUtils_GetNodeHandleByUniqueId_0100
      * @tc.name         testOHArkUINodeUtilsGetNodeHandleByUniqueId0100
      * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeHandleByUniqueId interface
@@ -473,7 +473,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeUtils_GetNodeHandleByUniqueId_0200
      * @tc.name         testOHArkUINodeUtilsGetNodeHandleByUniqueId0200
      * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeHandleByUniqueId interface
@@ -495,7 +495,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeUtils_GetNodeUniqueId_0100
      * @tc.name         testOHArkUINodeUtilsGetNodeUniqueId0100
      * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeUniqueId interface
@@ -517,7 +517,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeUtils_GetNodeUniqueId_0200
      * @tc.name         testOHArkUINodeUtilsGetNodeUniqueId0200
      * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeUniqueId interface
@@ -539,7 +539,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_AddSupportedUIStates_0100
      * @tc.name         testOHArkUIAddSupportedUIStates0100
      * @tc.desc         testing OH_ArkUI_AddSupportedUIStates interface
@@ -561,7 +561,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_AddSupportedUIStates_0200
      * @tc.name         testOHArkUIAddSupportedUIStates0200
      * @tc.desc         testing OH_ArkUI_AddSupportedUIStates interface
@@ -583,7 +583,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_RemoveSupportedUIStates_0100
      * @tc.name         testOHArkUIRemoveSupportedUIStates0100
      * @tc.desc         testing OH_ArkUI_RemoveSupportedUIStates interface
@@ -605,7 +605,7 @@ export default function NodeUtilsTest2() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_RemoveSupportedUIStates_0200
      * @tc.name         testOHArkUIRemoveSupportedUIStates0200
      * @tc.desc         testing OH_ArkUI_RemoveSupportedUIStates interface

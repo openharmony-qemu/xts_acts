@@ -27,7 +27,7 @@ export default function NodeEventTypeTest() {
     beforeEach(async (done: Function) => {
       await Utils.pushPage(`nodeeventtypetest/NodeEventTypeTest`, done);
     });
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_NODE_EVENT_ON_ATTACH_0100
        * @tc.name         testNODE_EVENT_ON_ATTACH0100
        * @tc.desc         testing NODE_EVENT_ON_ATTACH interface
@@ -49,7 +49,7 @@ export default function NodeEventTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_NODE_TEXT_ON_DETECT_RESULT_UPDATE_0100
        * @tc.name         testNODE_TEXT_ON_DETECT_RESULT_UPDATE0100
        * @tc.desc         testing NODE_TEXT_ON_DETECT_RESULT_UPDATE interface
@@ -71,7 +71,7 @@ export default function NodeEventTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_NODE_TEXT_SPAN_ON_LONG_PRESS_0100
        * @tc.name         testNODE_TEXT_SPAN_ON_LONG_PRESS0100
        * @tc.desc         testing NODE_TEXT_SPAN_ON_LONG_PRESS interface
@@ -95,7 +95,7 @@ export default function NodeEventTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_NODE_IMAGE_ON_ERROR_0100
        * @tc.name         testNODE_IMAGE_ON_ERROR0100
        * @tc.desc         testing NODE_IMAGE_ON_ERROR interface
@@ -117,7 +117,7 @@ export default function NodeEventTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_NODE_TEXT_INPUT_ON_WILL_CHANGE_0100
        * @tc.name         testNODE_TEXT_INPUT_ON_WILL_CHANGE0100
        * @tc.desc         testing NODE_TEXT_INPUT_ON_WILL_CHANGE interface
@@ -141,7 +141,7 @@ export default function NodeEventTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_NODE_TEXT_AREA_ON_WILL_CHANGE_0100
        * @tc.name         testNODE_TEXT_AREA_ON_WILL_CHANGE0100
        * @tc.desc         testing NODE_TEXT_AREA_ON_WILL_CHANGE interface
@@ -166,7 +166,7 @@ export default function NodeEventTypeTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_NODE_TEXT_PICKER_EVENT_ON_SCROLL_STOP_0100
        * @tc.name         testNODE_TEXT_PICKER_EVENT_ON_SCROLL_STOP0100
        * @tc.desc         testing NODE_TEXT_PICKER_EVENT_ON_SCROLL_STOP interface
@@ -190,7 +190,7 @@ export default function NodeEventTypeTest() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_NODE_CHECKBOX_GROUP_EVENT_ON_CHANGE_0100
      * @tc.name         testNODE_CHECKBOX_GROUP_EVENT_ON_CHANGE0100
      * @tc.desc         testing NODE_CHECKBOX_GROUP_EVENT_ON_CHANGE interface

@@ -26,7 +26,7 @@ export default function NodeNapiTest4() {
     beforeAll(async (done: Function) => {
       await Utils.pushPageNoClear(`nodenapitest/nodenapiTest4`, done);
     });
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetDrawableDescriptorFromResourceNapiValue_0100
        * @tc.name         testOHArkUIGetDrawableDescriptorFromResourceNapiValue0100
        * @tc.desc         testing OH_ArkUI_GetDrawableDescriptorFromResourceNapiValue interface

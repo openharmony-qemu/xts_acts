@@ -23,7 +23,7 @@ const ARKUI_ERROR_CODE_FOCUS_NON_EXISTENT = 150003;
 export default function FocusControlTest() {
   describe('FocusControlTest', () => {
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUIFocusRequest_0100
        * @tc.name         testOHArkUIFocusRequest0100
        * @tc.desc         testing OH_ArkUI_FocusRequest interface
@@ -45,7 +45,7 @@ export default function FocusControlTest() {
         }
       })
 
-    /*
+    /**
      * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUIFocusRequest_0200
      * @tc.name         testOHArkUIFocusRequest0200
      * @tc.desc         testing OH_ArkUI_FocusRequest interface
@@ -67,7 +67,7 @@ export default function FocusControlTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUIFocusRequest_0300
        * @tc.name         testOHArkUIFocusRequest0300
        * @tc.desc         testing OH_ArkUI_FocusRequest interface
@@ -89,7 +89,7 @@ export default function FocusControlTest() {
         }
       })
 
-    /*
+    /**
     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUIFocusRequest_0400
     * @tc.name         testOHArkUIFocusRequest0400
     * @tc.desc         testing OH_ArkUI_FocusRequest interface

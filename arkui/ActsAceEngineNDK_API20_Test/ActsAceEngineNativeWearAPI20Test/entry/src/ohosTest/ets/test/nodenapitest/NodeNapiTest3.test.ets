@@ -27,7 +27,7 @@ export default function NodeNapiTest3() {
       await Utils.pushPageNoClear(`nodenapitest/nodenapiTest3`, done);
     });
 
-    /*
+    /**
    * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetDrawableDescriptorFromNapiValue_0100
    * @tc.name         testOH_ArkUI_GetDrawableDescriptorFromNapiValue0100
    * @tc.desc         testing OH_ArkUI_GetDrawableDescriptorFromNapiValue interface
@@ -50,7 +50,7 @@ export default function NodeNapiTest3() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetDrawableDescriptorFromNapiValue_0200
        * @tc.name         testOHArkUIGetDrawableDescriptorFromNapiValue0200
        * @tc.desc         testing OH_ArkUI_GetDrawableDescriptorFromNapiValue interface

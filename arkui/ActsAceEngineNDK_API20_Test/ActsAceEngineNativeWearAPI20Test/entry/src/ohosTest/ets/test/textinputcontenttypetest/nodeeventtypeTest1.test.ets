@@ -31,7 +31,7 @@ export default function NodeEventTypeTest1() {
       await Utils.pushPageNoClear(`nodeeventtypetest/NodeEventTypeTest1`, done);
     });
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_NODE_SWIPER_EVENT_ON_UNSELECTED_0100
        * @tc.name         testNODE_SWIPER_EVENT_ON_UNSELECTED0100
        * @tc.desc         testing NODE_SWIPER_EVENT_ON_UNSELECTED interface
@@ -54,7 +54,7 @@ export default function NodeEventTypeTest1() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_NODE_SWIPER_EVENT_ON_CONTENT_WILL_SCROLL_0100
        * @tc.name         testNODE_SWIPER_EVENT_ON_CONTENT_WILL_SCROLL0100
        * @tc.desc         testing NODE_SWIPER_EVENT_ON_CONTENT_WILL_SCROLL interface
@@ -77,7 +77,7 @@ export default function NodeEventTypeTest1() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_NODE_SWIPER_EVENT_ON_SCROLL_STATE_CHANGED_0100
        * @tc.name         testNODE_SWIPER_EVENT_ON_SCROLL_STATE_CHANGED0100
        * @tc.desc         testing NODE_SWIPER_EVENT_ON_SCROLL_STATE_CHANGED interface

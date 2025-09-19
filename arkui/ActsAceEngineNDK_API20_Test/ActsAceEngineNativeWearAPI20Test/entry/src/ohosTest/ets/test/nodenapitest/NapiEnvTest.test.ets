@@ -27,7 +27,7 @@ export default function NapiEnvTest() {
       await Utils.pushPage(`nodenapitest/napienvTest`, done);
     });
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_InitModuleForArkTSEnv_0200
        * @tc.name         testOH_ArkUI_InitModuleForArkTSEnv0200
        * @tc.desc         testing OH_ArkUI_InitModuleForArkTSEnv interface
@@ -49,7 +49,7 @@ export default function NapiEnvTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NotifyArkTSEnvDestroy_0100
        * @tc.name         testOH_ArkUI_NotifyArkTSEnvDestroy0100
        * @tc.desc         testing OH_ArkUI_NotifyArkTSEnvDestroy interface

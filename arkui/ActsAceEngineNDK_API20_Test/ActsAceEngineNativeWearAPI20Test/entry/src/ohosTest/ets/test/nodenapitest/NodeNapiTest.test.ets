@@ -26,7 +26,7 @@ export default function NodeNapiTest() {
     beforeAll(async (done: Function) => {
       await Utils.pushPage(`nodenapitest/nodenapiTest`, done);
     });
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeHandleFromNapiValue_0100
        * @tc.name         testOHArkUIGetNodeHandleFromNapiValue0100
        * @tc.desc         testing OH_ArkUI_GetNodeHandleFromNapiValue interface
@@ -48,7 +48,7 @@ export default function NodeNapiTest() {
         }
       })
 
-    /*
+    /**
        * @tc.number       SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeHandleFromNapiValue_0200
        * @tc.name         testOHArkUIGetNodeHandleFromNapiValue0200
        * @tc.desc         testing OH_ArkUI_GetNodeHandleFromNapiValue interface
