@@ -2348,12 +2348,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_SYSTEM_DEFAULT
-     * @tc.name    : testNativeArkWebSetActiveWebEngineVersion0100
-     * @tc.desc    : test SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_SYSTEM_DEFAULT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.number    SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_SYSTEM_DEFAULT
+     * @tc.name      testNativeArkWebSetActiveWebEngineVersion0100
+     * @tc.desc      test SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_SYSTEM_DEFAULT
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
      */
     it('testNativeArkWebSetActiveWebEngineVersion0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2368,12 +2368,12 @@ export default function NativeInterfaceTest() {
       }
     })
     /**
-     * @tc.number  : SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M114
-     * @tc.name    : testNativeArkWebSetActiveWebEngineVersion0200
-     * @tc.desc    : test SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M114
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.number    SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M114
+     * @tc.name      testNativeArkWebSetActiveWebEngineVersion0200
+     * @tc.desc      test SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M114
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
      */
     it('testNativeArkWebSetActiveWebEngineVersion0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2388,12 +2388,12 @@ export default function NativeInterfaceTest() {
       }
     })
     /**
-     * @tc.number  : SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M132
-     * @tc.name    : testNativeArkWebSetActiveWebEngineVersion0300
-     * @tc.desc    : test SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M132
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.number    SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M132
+     * @tc.name      testNativeArkWebSetActiveWebEngineVersion0300
+     * @tc.desc      test SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M132
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
      */
     it('testNativeArkWebSetActiveWebEngineVersion0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
