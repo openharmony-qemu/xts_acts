@@ -386,10 +386,10 @@ export default function SensorJsStaticTest() {
           sensorIndex: 0
         }
         try {
-          sensor.on('orientationChange', callback, {'interval': 100000000});
+          sensor.onOrientationChange(callback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------orientating_SensorJsTest_static_005 off in--------------');
-            sensor.off('orientationChange', InfoParam);
+            sensor.offOrientationChange(InfoParam);
             hilog.info(0x0000, 'testTag', '---------orientating_SensorJsTest_static_005 off end--------------');
             done();
           }, 500);
@@ -415,10 +415,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------orientating_SensorJsTest_static_006--------------');
         await isAvailable(sensor.SensorId.ORIENTATION);
         try {
-          sensor.on('orientationChange', onSensorCallback, {'interval': 100000000});
+          sensor.onOrientationChange(onSensorCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------orientating_SensorJsTest_static_006 off in--------------');
-            sensor.off('orientationChange');
+            sensor.offOrientationChange();
             hilog.info(0x0000, 'testTag', '---------orientating_SensorJsTest_static_006 off end--------------');
             done();
           }, 500);
@@ -444,7 +444,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------orientatingParamError_SensorJsTest_static_050--------------');
         await isAvailable(sensor.SensorId.ORIENTATION);
         try {
-          sensor.on('orientationChange', onSensorCallback, {'interval': -100000000});
+          sensor.onOrientationChange(onSensorCallback, {'interval': -100000000});
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -664,10 +664,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------hall_SensorJsTest_static_007--------------');
         await isAvailable(sensor.SensorId.HALL);
         try {
-          sensor.on('hallChange', onHallCallback, {'interval': 100000000});
+          sensor.onHallChange(onHallCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------hall_SensorJsTest_static_007 off in--------------');
-            sensor.off('hallChange');
+            sensor.offHallChange();
             hilog.info(0x0000, 'testTag', '---------hall_SensorJsTest_static_007 off end--------------');
             done();
           }, 500);
@@ -693,10 +693,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------ambientLight_SensorJsTest_static_008--------------');
         await isAvailable(sensor.SensorId.AMBIENT_LIGHT);
         try {
-          sensor.on('ambientLightChange', onAmbientLightCallback, {'interval': 100000000});
+          sensor.onAmbientLightChange(onAmbientLightCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------ambientLight_SensorJsTest_static_008 off in--------------');
-            sensor.off('ambientLightChange');
+            sensor.offAmbientLightChange();
             hilog.info(0x0000, 'testTag', '---------ambientLight_SensorJsTest_static_008 off end--------------');
             done();
           }, 500);
@@ -722,10 +722,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------proximity_SensorJsTest_static_009--------------');
         await isAvailable(sensor.SensorId.PROXIMITY);
         try {
-          sensor.on('proximityChange', onProximityCallback, {'interval': 100000000});
+          sensor.onProximityChange(onProximityCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------proximity_SensorJsTest_static_009 off in--------------');
-            sensor.off('proximityChange');
+            sensor.offProximityChange();
             hilog.info(0x0000, 'testTag', '---------proximity_SensorJsTest_static_009 off end--------------');
             done();
           }, 500);
@@ -751,10 +751,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------wearDetection_SensorJsTest_static_010--------------');
         await isAvailable(sensor.SensorId.WEAR_DETECTION);
         try {
-          sensor.on('wearDetectionChange', onWearDetectionCallback, {'interval': 100000000});
+          sensor.onWearDetectionChange(onWearDetectionCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------wearDetection_SensorJsTest_static_010 off in--------------');
-            sensor.off('wearDetectionChange');
+            sensor.offWearDetectionChange();
             hilog.info(0x0000, 'testTag', '---------wearDetection_SensorJsTest_static_010 off end--------------');
             done();
           }, 500);
@@ -780,10 +780,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------significantMotion_SensorJsTest_static_011--------------');
         await isAvailable(sensor.SensorId.SIGNIFICANT_MOTION);
         try {
-          sensor.on('significantMotionChange', onSignificantMotionCallback, {'interval': 100000000});
+          sensor.onSignificantMotionChange(onSignificantMotionCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------significantMotion_SensorJsTest_static_011 off in--------------');
-            sensor.off('significantMotionChange');
+            sensor.offSignificantMotionChange();
             hilog.info(0x0000, 'testTag', '---------significantMotion_SensorJsTest_static_011 off end--------------');
             done();
           }, 500);
@@ -809,10 +809,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------rotationVector_SensorJsTest_static_012--------------');
         await isAvailable(sensor.SensorId.ROTATION_VECTOR);
         try {
-          sensor.on('rotationVectorChange', onRotationVectorCallback, {'interval': 100000000});
+          sensor.onRotationVectorChange(onRotationVectorCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------rotationVector_SensorJsTest_static_012 off in--------------');
-            sensor.off('rotationVectorChange');
+            sensor.offRotationVectorChange();
             hilog.info(0x0000, 'testTag', '---------rotationVector_SensorJsTest_static_012 off end--------------');
             done();
           }, 500);
@@ -838,10 +838,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------pedometerDetection_SensorJsTest_static_013--------------');
         await isAvailable(sensor.SensorId.PEDOMETER_DETECTION);
         try {
-          sensor.on('pedometerDetectionChange', onPedometerDetectionCallback, {'interval': 100000000});
+          sensor.onPedometerDetectionChange(onPedometerDetectionCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------pedometerDetection_SensorJsTest_static_013 off in--------------');
-            sensor.off('pedometerDetectionChange');
+            sensor.offPedometerDetectionChange();
             hilog.info(0x0000, 'testTag', '---------pedometerDetection_SensorJsTest_static_013 off end--------------');
             expect(false).assertTrue();
             done();
@@ -868,10 +868,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------pedometer_SensorJsTest_static_014--------------');
         await isAvailable(sensor.SensorId.PEDOMETER);
         try {
-          sensor.on('pedometerChange', onPedometerCallback, {'interval': 100000000});
+          sensor.onPedometerChange(onPedometerCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------pedometer_SensorJsTest_static_014 off in--------------');
-            sensor.off('pedometerChange');
+            sensor.offPedometerChange();
             hilog.info(0x0000, 'testTag', '---------pedometer_SensorJsTest_static_014 off end--------------');
             expect(false).assertTrue();
             done();
@@ -898,10 +898,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------magneticFieldUncalibrated_SensorJsTest_static_015--------------');
         await isAvailable(sensor.SensorId.MAGNETIC_FIELD_UNCALIBRATED);
         try {
-          sensor.on('magneticFieldUncalibratedChange', onMagneticFieldUncalibratedCallback, {'interval': 100000000});
+          sensor.onMagneticFieldUncalibratedChange(onMagneticFieldUncalibratedCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------magneticFieldUncalibrated_SensorJsTest_static_015 off in--------------');
-            sensor.off('magneticFieldUncalibratedChange');
+            sensor.offMagneticFieldUncalibratedChange();
             hilog.info(0x0000, 'testTag', '---------magneticFieldUncalibrated_SensorJsTest_static_015 off end--------------');
             done();
           }, 500);
@@ -927,10 +927,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------magneticField_SensorJsTest_static_016--------------');
         await isAvailable(sensor.SensorId.MAGNETIC_FIELD);
         try {
-          sensor.on('magneticFieldChange', onMagneticFieldCallback, {'interval': 100000000});
+          sensor.onMagneticFieldChange(onMagneticFieldCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------magneticField_SensorJsTest_static_016 off in--------------');
-            sensor.off('magneticFieldChange');
+            sensor.offMagneticFieldChange();
             hilog.info(0x0000, 'testTag', '---------magneticField_SensorJsTest_static_016 off end--------------');
             done();
           }, 500);
@@ -956,10 +956,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------linearAccelerometer_SensorJsTest_static_017--------------');
         await isAvailable(sensor.SensorId.LINEAR_ACCELEROMETER);
         try {
-          sensor.on('linearAccelerometerChange', onLinearAccelerometerCallback, {'interval': 100000000});
+          sensor.onLinearAccelerometerChange(onLinearAccelerometerCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------linearAccelerometer_SensorJsTest_static_017 off in--------------');
-            sensor.off('linearAccelerometerChange');
+            sensor.offLinearAccelerometerChange();
             hilog.info(0x0000, 'testTag', '---------linearAccelerometer_SensorJsTest_static_017 off end--------------');
             expect(false).assertTrue();
             done();
@@ -986,10 +986,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------humidity_SensorJsTest_static_018--------------');
         await isAvailable(sensor.SensorId.HUMIDITY);
         try {
-          sensor.on('humidityChange', onHumidityCallback, {'interval': 100000000});
+          sensor.onHumidityChange(onHumidityCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------humidity_SensorJsTest_static_018 off in--------------');
-            sensor.off('humidityChange');
+            sensor.offHumidityChange();
             hilog.info(0x0000, 'testTag', '---------humidity_SensorJsTest_static_018 off end--------------');
             done();
           }, 500);
@@ -1015,10 +1015,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------heartRate_SensorJsTest_static_019--------------');
         await isAvailable(sensor.SensorId.HEART_RATE);
         try {
-          sensor.on('heartRateChange', onHeartRateCallback, {'interval': 100000000});
+          sensor.onHeartRateChange(onHeartRateCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------heartRate_SensorJsTest_static_019 off in--------------');
-            sensor.off('heartRateChange');
+            sensor.offHeartRateChange();
             hilog.info(0x0000, 'testTag', '---------heartRate_SensorJsTest_static_019 off end--------------');
             expect(false).assertTrue();
             done();
@@ -1045,10 +1045,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------gyroscopeUncalibrated_SensorJsTest_static_020--------------');
         await isAvailable(sensor.SensorId.GYROSCOPE_UNCALIBRATED);
         try {
-          sensor.on('gyroscopeUncalibratedChange', onGyroscopeUncalibratedCallback, {'interval': 100000000});
+          sensor.onGyroscopeUncalibratedChange(onGyroscopeUncalibratedCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------gyroscopeUncalibrated_SensorJsTest_static_020 off in--------------');
-            sensor.off('gyroscopeUncalibratedChange');
+            sensor.offGyroscopeUncalibratedChange();
             hilog.info(0x0000, 'testTag', '---------gyroscopeUncalibrated_SensorJsTest_static_020 off end--------------');
             expect(false).assertTrue();
             done();
@@ -1075,10 +1075,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------gyroscope_SensorJsTest_static_021--------------');
         await isAvailable(sensor.SensorId.GYROSCOPE);
         try {
-          sensor.on('gyroscopeChange', onGyroscopeCallback, {'interval': 100000000});
+          sensor.onGyroscopeChange(onGyroscopeCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------gyroscope_SensorJsTest_static_021 off in--------------');
-            sensor.off('gyroscopeChange');
+            sensor.offGyroscopeChange();
             hilog.info(0x0000, 'testTag', '---------gyroscope_SensorJsTest_static_021 off end--------------');
             expect(false).assertTrue();
             done();
@@ -1105,10 +1105,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------gravity_SensorJsTest_static_022--------------');
         await isAvailable(sensor.SensorId.GRAVITY);
         try {
-          sensor.on('gravityChange', onGravityCallback, {'interval': 100000000});
+          sensor.onGravityChange(onGravityCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------gravity_SensorJsTest_static_022 off in--------------');
-            sensor.off('gravityChange');
+            sensor.offGravityChange();
             hilog.info(0x0000, 'testTag', '---------gravity_SensorJsTest_static_022 off end--------------');
             done();
           }, 500);
@@ -1134,10 +1134,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------barometer_SensorJsTest_static_023--------------');
         await isAvailable(sensor.SensorId.BAROMETER);
         try {
-          sensor.on('barometerChange', onBarometerCallback, {'interval': 100000000});
+          sensor.onBarometerChange(onBarometerCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------barometer_SensorJsTest_static_023 off in--------------');
-            sensor.off('barometerChange');
+            sensor.offBarometerChange();
             hilog.info(0x0000, 'testTag', '---------barometer_SensorJsTest_static_023 off end--------------');
             done();
           }, 500);
@@ -1163,10 +1163,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------ambientTemperature_SensorJsTest_static_024--------------');
         await isAvailable(sensor.SensorId.AMBIENT_TEMPERATURE);
         try {
-          sensor.on('ambientTemperatureChange', onAmbientTemperatureCallback, {'interval': 100000000});
+          sensor.onAmbientTemperatureChange(onAmbientTemperatureCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------ambientTemperature_SensorJsTest_static_024 off in--------------');
-            sensor.off('ambientTemperatureChange');
+            sensor.offAmbientTemperatureChange();
             hilog.info(0x0000, 'testTag', '---------ambientTemperature_SensorJsTest_static_024 off end--------------');
             done();
           }, 500);
@@ -1192,10 +1192,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------accelerometerUncalibrated_SensorJsTest_static_025--------------');
         await isAvailable(sensor.SensorId.ACCELEROMETER_UNCALIBRATED);
         try {
-          sensor.on('accelerometerUncalibratedChange', onAccelerometerUncalibratedCallback, {'interval': 100000000});
+          sensor.onAccelerometerUncalibratedChange(onAccelerometerUncalibratedCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------accelerometerUncalibrated_SensorJsTest_static_025 off in--------------');
-            sensor.off('accelerometerUncalibratedChange');
+            sensor.offAccelerometerUncalibratedChange();
             hilog.info(0x0000, 'testTag', '---------accelerometerUncalibrated_SensorJsTest_static_025 off end--------------');
             expect(false).assertTrue();
             done();
@@ -1222,10 +1222,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------accelerometer_SensorJsTest_static_026--------------');
         await isAvailable(sensor.SensorId.ACCELEROMETER);
         try {
-          sensor.on('accelerometerChange', onAccelerometerCallback, {'interval': 100000000});
+          sensor.onAccelerometerChange(onAccelerometerCallback, {'interval': 100000000});
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------accelerometer_SensorJsTest_static_026 off in--------------');
-            sensor.off('accelerometerChange');
+            sensor.offAccelerometerChange();
             hilog.info(0x0000, 'testTag', '---------accelerometer_SensorJsTest_static_026 off end--------------');
             expect(false).assertTrue();
             done();
@@ -1252,7 +1252,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------orientatingOnce_SensorJsTest_static_029--------------');
         await isAvailable(sensor.SensorId.ORIENTATION);
         try {
-          sensor.once('orientationChange', onSensorCallback);
+          sensor.onceOrientationChange(onSensorCallback);
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;
@@ -1276,7 +1276,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------hallOnce_SensorJsTest_static_030--------------');
         await isAvailable(sensor.SensorId.HALL);
         try {
-          sensor.once('hallChange', onHallCallback);
+          sensor.onceHallChange(onHallCallback);
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;    
@@ -1300,7 +1300,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------ambientLightOnce_SensorJsTest_static_031--------------');
         await isAvailable(sensor.SensorId.AMBIENT_LIGHT);
         try {
-          sensor.once('ambientLightChange', onAmbientLightCallback);
+          sensor.onceAmbientLightChange(onAmbientLightCallback);
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;  
@@ -1324,7 +1324,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------proximityOnce_SensorJsTest_static_032--------------');
         await isAvailable(sensor.SensorId.PROXIMITY);
         try {
-          sensor.once('proximityChange', onProximityCallback);
+          sensor.onceProximityChange(onProximityCallback);
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;  
@@ -1348,7 +1348,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------wearDetectionOnce_SensorJsTest_static_033--------------');
         await isAvailable(sensor.SensorId.WEAR_DETECTION);
         try {
-          sensor.once('wearDetectionChange', onWearDetectionCallback);
+          sensor.onceWearDetectionChange(onWearDetectionCallback);
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;  
@@ -1372,7 +1372,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------significantMotionOnce_SensorJsTest_static_034--------------');
         await isAvailable(sensor.SensorId.SIGNIFICANT_MOTION);
         try {
-          sensor.once('significantMotionChange', onSignificantMotionCallback);
+          sensor.onceSignificantMotionChange(onSignificantMotionCallback);
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;  
@@ -1396,7 +1396,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------rotationVectorOnce_SensorJsTest_static_035--------------');
         await isAvailable(sensor.SensorId.ROTATION_VECTOR);
         try {
-          sensor.once('rotationVectorChange', onRotationVectorCallback);
+          sensor.onceRotationVectorChange(onRotationVectorCallback);
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;  
@@ -1420,7 +1420,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------pedometerDetectionOnce_SensorJsTest_static_036--------------');
         await isAvailable(sensor.SensorId.PEDOMETER_DETECTION);
         try {
-          sensor.once('pedometerDetectionChange', onPedometerDetectionCallback);
+          sensor.oncePedometerDetectionChange(onPedometerDetectionCallback);
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -1445,7 +1445,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------pedometerOnce_SensorJsTest_static_037--------------');
         await isAvailable(sensor.SensorId.PEDOMETER);
         try {
-          sensor.once('pedometerChange', onPedometerCallback);
+          sensor.oncePedometerChange(onPedometerCallback);
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -1470,7 +1470,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------magneticFieldUncalibratedOnce_SensorJsTest_static_038--------------');
         await isAvailable(sensor.SensorId.MAGNETIC_FIELD_UNCALIBRATED);
         try {
-          sensor.once('magneticFieldUncalibratedChange', onMagneticFieldUncalibratedCallback);
+          sensor.onceMagneticFieldUncalibratedChange(onMagneticFieldUncalibratedCallback);
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;  
@@ -1494,7 +1494,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------magneticFieldOnce_SensorJsTest_static_039--------------');
         await isAvailable(sensor.SensorId.MAGNETIC_FIELD);
         try {
-          sensor.once('magneticFieldChange', onMagneticFieldCallback);
+          sensor.onceMagneticFieldChange(onMagneticFieldCallback);
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;  
@@ -1518,7 +1518,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------linearAccelerometerOnce_SensorJsTest_static_040--------------');
         await isAvailable(sensor.SensorId.LINEAR_ACCELEROMETER);
         try {
-          sensor.once('linearAccelerometerChange', onLinearAccelerometerCallback);
+          sensor.onceLinearAccelerometerChange(onLinearAccelerometerCallback);
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -1543,7 +1543,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------humidityOnce_SensorJsTest_static_041--------------');
         await isAvailable(sensor.SensorId.HUMIDITY);
         try {
-          sensor.once('humidityChange', onHumidityCallback);
+          sensor.onceHumidityChange(onHumidityCallback);
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;  
@@ -1567,7 +1567,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------heartRateOnce_SensorJsTest_static_042--------------');
         await isAvailable(sensor.SensorId.HEART_RATE);
         try {
-          sensor.once('heartRateChange', onHeartRateCallback);
+          sensor.onceHeartRateChange(onHeartRateCallback);
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -1592,7 +1592,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------gyroscopeUncalibratedOnce_SensorJsTest_static_043--------------');
         await isAvailable(sensor.SensorId.GYROSCOPE_UNCALIBRATED);
         try {
-          sensor.once('gyroscopeUncalibratedChange', onGyroscopeUncalibratedCallback);
+          sensor.onceGyroscopeUncalibratedChange(onGyroscopeUncalibratedCallback);
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -1617,7 +1617,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------gyroscopeOnce_SensorJsTest_static_044--------------');
         await isAvailable(sensor.SensorId.GYROSCOPE);
         try {
-          sensor.once('gyroscopeChange', onGyroscopeCallback);
+          sensor.onceGyroscopeChange(onGyroscopeCallback);
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -1642,7 +1642,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------gravityOnce_SensorJsTest_static_045--------------');
         await isAvailable(sensor.SensorId.GRAVITY);
         try {
-          sensor.once('gravityChange', onGravityCallback);
+          sensor.onceGravityChange(onGravityCallback);
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;  
@@ -1666,7 +1666,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------barometerOnce_SensorJsTest_static_046--------------');
         await isAvailable(sensor.SensorId.BAROMETER);
         try {
-          sensor.once('barometerChange', onBarometerCallback);
+          sensor.onceBarometerChange(onBarometerCallback);
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;  
@@ -1690,7 +1690,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------ambientTemperatureOnce_SensorJsTest_static_047--------------');
         await isAvailable(sensor.SensorId.AMBIENT_TEMPERATURE);
         try {
-          sensor.once('ambientTemperatureChange', onAmbientTemperatureCallback);
+          sensor.onceAmbientTemperatureChange(onAmbientTemperatureCallback);
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;  
@@ -1714,7 +1714,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------accelerometerUncalibratedOnce_SensorJsTest_static_048--------------');
         await isAvailable(sensor.SensorId.ACCELEROMETER_UNCALIBRATED);
         try {
-          sensor.once('accelerometerUncalibratedChange', onAccelerometerUncalibratedCallback);
+          sensor.onceAccelerometerUncalibratedChange(onAccelerometerUncalibratedCallback);
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -1739,7 +1739,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------accelerometerOnce_SensorJsTest_static_049--------------');
         await isAvailable(sensor.SensorId.ACCELEROMETER);
         try {
-          sensor.once('accelerometerChange', onAccelerometerCallback);
+          sensor.onceAccelerometerChange(onAccelerometerCallback);
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -1764,7 +1764,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------hallParamError_SensorJsTest_static_051--------------');
         await isAvailable(sensor.SensorId.HALL);
         try {
-          sensor.on('hallChange', onHallCallback, {'interval': -100000000});
+          sensor.onHallChange(onHallCallback, {'interval': -100000000});
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -1790,7 +1790,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------ambientLightParamError_SensorJsTest_static_052--------------');
         await isAvailable(sensor.SensorId.AMBIENT_LIGHT);
         try {
-          sensor.on('ambientLightChange', onAmbientLightCallback, {'interval': -100000000});
+          sensor.onAmbientLightChange(onAmbientLightCallback, {'interval': -100000000});
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -1816,7 +1816,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------proximityParamError_SensorJsTest_static_053--------------');
         await isAvailable(sensor.SensorId.PROXIMITY);
         try {
-          sensor.on('proximityChange', onProximityCallback, {'interval': -100000000});
+          sensor.onProximityChange(onProximityCallback, {'interval': -100000000});
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -1842,7 +1842,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------wearDetectionParamError_SensorJsTest_static_054--------------');
         await isAvailable(sensor.SensorId.WEAR_DETECTION);
         try {
-          sensor.on('wearDetectionChange', onWearDetectionCallback, {'interval': -100000000});
+          sensor.onWearDetectionChange(onWearDetectionCallback, {'interval': -100000000});
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -1868,7 +1868,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------significantMotionParamError_SensorJsTest_static_055--------------');
         await isAvailable(sensor.SensorId.SIGNIFICANT_MOTION);
         try {
-          sensor.on('significantMotionChange', onSignificantMotionCallback, {'interval': -100000000});
+          sensor.onSignificantMotionChange(onSignificantMotionCallback, {'interval': -100000000});
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;  
@@ -1893,7 +1893,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------rotationVectorParamError_SensorJsTest_static_056--------------');
         await isAvailable(sensor.SensorId.ROTATION_VECTOR);
         try {
-          sensor.on('rotationVectorChange', onRotationVectorCallback, {'interval': -100000000});
+          sensor.onRotationVectorChange(onRotationVectorCallback, {'interval': -100000000});
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -1919,7 +1919,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------pedometerDetectionParamError_SensorJsTest_static_057--------------');
         await isAvailable(sensor.SensorId.PEDOMETER_DETECTION);
         try {
-          sensor.on('pedometerDetectionChange', onPedometerDetectionCallback, {'interval': -100000000});
+          sensor.onPedometerDetectionChange(onPedometerDetectionCallback, {'interval': -100000000});
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -1945,7 +1945,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------pedometerParamError_SensorJsTest_static_058--------------');
         await isAvailable(sensor.SensorId.PEDOMETER);
         try {
-          sensor.on('pedometerChange', onPedometerCallback, {'interval': -100000000});
+          sensor.onPedometerChange(onPedometerCallback, {'interval': -100000000});
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -1971,7 +1971,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------magneticFieldUncalibratedParamError_SensorJsTest_static_059--------------');
         await isAvailable(sensor.SensorId.MAGNETIC_FIELD_UNCALIBRATED);
         try {
-          sensor.on('magneticFieldUncalibratedChange', onMagneticFieldUncalibratedCallback, {'interval': -100000000});
+          sensor.onMagneticFieldUncalibratedChange(onMagneticFieldUncalibratedCallback, {'interval': -100000000});
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -1997,7 +1997,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------magneticFieldParamError_SensorJsTest_static_060--------------');
         await isAvailable(sensor.SensorId.MAGNETIC_FIELD);
         try {
-          sensor.on('magneticFieldChange', onMagneticFieldCallback, {'interval': -100000000});
+          sensor.onMagneticFieldChange(onMagneticFieldCallback, {'interval': -100000000});
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -2023,7 +2023,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------linearAccelerometerParamError_SensorJsTest_static_061--------------');
         await isAvailable(sensor.SensorId.LINEAR_ACCELEROMETER);
         try {
-          sensor.on('linearAccelerometerChange', onLinearAccelerometerCallback, {'interval': -100000000});
+          sensor.onLinearAccelerometerChange(onLinearAccelerometerCallback, {'interval': -100000000});
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -2049,7 +2049,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------humidityParamError_SensorJsTest_static_062--------------');
         await isAvailable(sensor.SensorId.HUMIDITY);
         try {
-          sensor.on('humidityChange', onHumidityCallback, {'interval': -100000000});
+          sensor.onHumidityChange(onHumidityCallback, {'interval': -100000000});
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;  
@@ -2074,7 +2074,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------heartRateParamError_SensorJsTest_static_063--------------');
         await isAvailable(sensor.SensorId.HEART_RATE);
         try {
-          sensor.on('heartRateChange', onHeartRateCallback, {'interval': -100000000});
+          sensor.onHeartRateChange(onHeartRateCallback, {'interval': -100000000});
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;  
@@ -2099,7 +2099,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------gyroscopeUncalibratedParamError_SensorJsTest_static_064--------------');
         await isAvailable(sensor.SensorId.GYROSCOPE_UNCALIBRATED);
         try {
-          sensor.on('gyroscopeUncalibratedChange', onGyroscopeUncalibratedCallback, {'interval': -100000000});
+          sensor.onGyroscopeUncalibratedChange(onGyroscopeUncalibratedCallback, {'interval': -100000000});
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -2125,7 +2125,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------gyroscopeParamError_SensorJsTest_static_065--------------');
         await isAvailable(sensor.SensorId.GYROSCOPE);
         try {
-          sensor.on('gyroscopeChange', onGyroscopeCallback, {'interval': -100000000});
+          sensor.onGyroscopeChange(onGyroscopeCallback, {'interval': -100000000});
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -2151,7 +2151,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------gravityParamError_SensorJsTest_static_066--------------');
         await isAvailable(sensor.SensorId.GRAVITY);
         try {
-          sensor.on('gravityChange', onGravityCallback, {'interval': -100000000});
+          sensor.onGravityChange(onGravityCallback, {'interval': -100000000});
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -2177,7 +2177,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------barometerParamError_SensorJsTest_static_067--------------');
         await isAvailable(sensor.SensorId.BAROMETER);
         try {
-          sensor.on('barometerChange', onBarometerCallback, {'interval': -100000000});
+          sensor.onBarometerChange(onBarometerCallback, {'interval': -100000000});
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -2203,7 +2203,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------ambientTemperatureParamError_SensorJsTest_static_068--------------');
         await isAvailable(sensor.SensorId.AMBIENT_TEMPERATURE);
         try {
-          sensor.on('ambientTemperatureChange', onAmbientTemperatureCallback, {'interval': -100000000});
+          sensor.onAmbientTemperatureChange(onAmbientTemperatureCallback, {'interval': -100000000});
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;  
@@ -2228,7 +2228,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------accelerometerUncalibratedParamError_SensorJsTest_static_069--------------');
         await isAvailable(sensor.SensorId.ACCELEROMETER_UNCALIBRATED);
         try {
-          sensor.on('accelerometerUncalibratedChange', onAccelerometerUncalibratedCallback, {'interval': -100000000});
+          sensor.onAccelerometerUncalibratedChange(onAccelerometerUncalibratedCallback, {'interval': -100000000});
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -2254,7 +2254,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------accelerometerParamError_SensorJsTest_static_070--------------');
         await isAvailable(sensor.SensorId.ACCELEROMETER);
         try {
-          sensor.on('accelerometerChange', onAccelerometerCallback, {'interval': -100000000});
+          sensor.onAccelerometerChange(onAccelerometerCallback, {'interval': -100000000});
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;  
