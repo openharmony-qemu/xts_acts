@@ -67,13 +67,13 @@ export default function bluetoothProfilesTest() {
             }
         })
 
-        /*
-         * @tc.number: createA2dpSrcProfileTest
-         * @tc.name: createA2dpSrcProfileTest
-         * @tc.desc: Test createA2dpSrcProfileTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number createA2dpSrcProfileTest
+         * @tc.name createA2dpSrcProfileTest
+         * @tc.desc Test createA2dpSrcProfileTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("createA2dpSrcProfileTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -92,13 +92,13 @@ export default function bluetoothProfilesTest() {
             done();
         })
 
-        /*
-         * @tc.number: createHfpAgProfileTest
-         * @tc.name: createHfpAgProfileTest
-         * @tc.desc: Test createHfpAgProfileTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number createHfpAgProfileTest
+         * @tc.name createHfpAgProfileTest
+         * @tc.desc Test createHfpAgProfileTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("createHfpAgProfileTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -117,13 +117,13 @@ export default function bluetoothProfilesTest() {
             done();
         })
 
-        /*
-         * @tc.number: createHidHostProfileTest
-         * @tc.name: createHidHostProfileTest
-         * @tc.desc: Test createHidHostProfileTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number createHidHostProfileTest
+         * @tc.name createHidHostProfileTest
+         * @tc.desc Test createHidHostProfileTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("createHidHostProfileTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -142,13 +142,13 @@ export default function bluetoothProfilesTest() {
             done();
         })
 
-        /*
-         * @tc.number: connectionStateChangeTest
-         * @tc.name: connectionStateChangeTest
-         * @tc.desc: Test connectionStateChangeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number connectionStateChangeTest
+         * @tc.name connectionStateChangeTest
+         * @tc.desc Test connectionStateChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("connectionStateChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: baseProfile.StateChangeParam) => void = (changeInfo: baseProfile.StateChangeParam) => {
@@ -187,13 +187,13 @@ export default function bluetoothProfilesTest() {
             done();
         })
 
-        /*
-         * @tc.number: connectionStateChangeTest2
-         * @tc.name: connectionStateChangeTest2
-         * @tc.desc: Test connectionStateChangeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number connectionStateChangeTest2
+         * @tc.name connectionStateChangeTest2
+         * @tc.desc Test connectionStateChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("connectionStateChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: baseProfile.StateChangeParam) => void = (changeInfo: baseProfile.StateChangeParam) => {
