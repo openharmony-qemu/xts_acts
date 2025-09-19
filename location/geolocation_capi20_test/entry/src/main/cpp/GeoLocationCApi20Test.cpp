@@ -83,7 +83,6 @@ static napi_value OH_Location_StartLocating3(napi_env env, napi_callback_info in
     OH_LocationRequestConfig_SetCallback(g_config, LocationInfoCallback, nullptr);
     OH_LocationRequestConfig_SetInterval(g_config, 1);
     Location_ResultCode startCode = OH_Location_StartLocating(g_config);
-    sleep(g_sleepTime);
     napi_value result = nullptr;
     napi_create_int32(env, startCode == LOCATION_SUCCESS ? 0 : -1, &result);
     return result;
@@ -102,7 +101,6 @@ static napi_value OH_Location_StartLocating4(napi_env env, napi_callback_info in
 }
 static napi_value OH_Location_StopLocating1(napi_env env, napi_callback_info info)
 {
-    sleep(g_sleepTime);
     Location_RequestConfig *config = OH_Location_CreateRequestConfig();
     OH_Location_StartLocating(config);
     sleep(g_sleepTime);
@@ -120,7 +118,6 @@ static napi_value OH_Location_StopLocating2(napi_env env, napi_callback_info inf
 }
 static napi_value OH_Location_StopLocating3(napi_env env, napi_callback_info info)
 {
-    sleep(g_sleepTime);
     Location_RequestConfig *config = OH_Location_CreateRequestConfig();
     OH_Location_StartLocating(config);
     sleep(g_sleepTime);
