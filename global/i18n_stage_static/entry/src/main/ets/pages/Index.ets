@@ -24,25 +24,25 @@ import hilog from '@ohos.hilog'
 struct MyStateSample {
   integerTextStyle = new TextStyle({
     fontColor: Color.Red,
-    fontFamily: "Arial",
+    fontFamily: 'Arial',
     fontWeight: FontWeight.Lighter,
     fontStyle: FontStyle.Italic
   });
   decimalTextStyle = new TextStyle({
     fontColor: Color.Black,
-    fontFamily: "Arial",
+    fontFamily: 'Arial',
     fontWeight: FontWeight.Normal,
     fontStyle: FontStyle.Normal
   });
   fractionTextStyle = new TextStyle({
     fontColor: Color.Green,
-    fontFamily: "Arial",
+    fontFamily: 'Arial',
     fontWeight: FontWeight.Regular,
     fontStyle: FontStyle.Normal
   });
   unitTextStyle = new TextStyle({
     fontColor: Color.Blue,
-    fontFamily: "Arial",
+    fontFamily: 'Arial',
     fontWeight: FontWeight.Medium,
     fontStyle: FontStyle.Italic
   });
