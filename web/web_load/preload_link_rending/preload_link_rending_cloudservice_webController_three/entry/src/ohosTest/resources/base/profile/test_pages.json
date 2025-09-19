@@ -2,6 +2,7 @@
   "src": [
     "testability/pages/Index",
     "testability/pages/WebViewControllerPart3",
-    "testability/pages/WebSecureDnsModeEnumTest"
+    "testability/pages/WebSecureDnsModeEnumTest",
+    "testability/pages/WebPrefetchPageEnhanced"
   ]
 }
