@@ -90,7 +90,6 @@ export default function displaySyncTest() {
                     }
                     backDisplaySync?.setExpectedFrameRateRange(range)
                     console.info(msg + 'Succeeded in setExpectedFrameRateRange.');
-                    expect(true).assertTrue()
                     done()
                 } catch (exception) {
                     console.error(msg + 'Failed to setExpectedFrameRateRange. Cause:' + JSON.stringify(exception));
@@ -119,7 +118,6 @@ export default function displaySyncTest() {
                     }
                     backDisplaySync?.on("frame", callback)
                     console.info(msg + 'Succeeded in on.');
-                    expect(true).assertTrue()
                     done()
                 } catch (exception) {
                     console.error(msg + 'Failed to on. Cause:' + JSON.stringify(exception));
@@ -148,7 +146,6 @@ export default function displaySyncTest() {
                     }
                     backDisplaySync?.off("frame", callback)
                     console.info(msg + 'Succeeded in off.');
-                    expect(true).assertTrue()
                     done()
                 } catch (exception) {
                     console.error(msg + 'Failed to off. Cause:' + JSON.stringify(exception));
@@ -178,7 +175,6 @@ export default function displaySyncTest() {
                     backDisplaySync?.on("frame", callback)
                     backDisplaySync?.off("frame", callback)
                     console.info(msg + 'Succeeded in onoff.');
-                    expect(true).assertTrue()
                     done()
                 } catch (exception) {
                     console.error(msg + 'Failed to onoff. Cause:' + JSON.stringify(exception));
@@ -207,7 +203,6 @@ export default function displaySyncTest() {
                         max:120
                     };
                     backDisplaySync?.setExpectedFrameRateRange(range);
-                    expect(true).assertTrue()
                     let callback = (frameInfo: displaySync.IntervalInfo) => {
                         console.info("DisplaySync", 'TimeStamp:' + frameInfo.timestamp +
                             ' TargetTimeStamp: ' + frameInfo.targetTimestamp);
@@ -216,7 +211,6 @@ export default function displaySyncTest() {
                     // 开始每帧回调
                     backDisplaySync?.start()
                     console.info(msg + 'Succeeded in onoff.');
-                    expect(true).assertTrue()
                     done()
                 } catch (exception) {
                     console.error(msg + 'Failed to onoff. Cause:' + JSON.stringify(exception));
@@ -245,7 +239,6 @@ export default function displaySyncTest() {
                         max:120
                     };
                     backDisplaySync?.setExpectedFrameRateRange(range)
-                    expect(true).assertTrue()
                     let callback = (frameInfo: displaySync.IntervalInfo) => {
                         console.info("DisplaySync", 'TimeStamp:' + frameInfo.timestamp +
                             ' TargetTimeStamp: ' + frameInfo.targetTimestamp);
@@ -254,7 +247,6 @@ export default function displaySyncTest() {
                     // 停止每帧回调
                     backDisplaySync?.stop()
                     console.info(msg + 'Succeeded in onoff.');
-                    expect(true).assertTrue()
                     done()
                 } catch (exception) {
                     console.error(msg + 'Failed to onoff. Cause:' + JSON.stringify(exception));
@@ -283,7 +275,6 @@ export default function displaySyncTest() {
                         max:120
                     };
                     backDisplaySync?.setExpectedFrameRateRange(range)
-                    expect(true).assertTrue()
                     let callback = (frameInfo: displaySync.IntervalInfo) => {
                         console.info("DisplaySync", 'TimeStamp:' + frameInfo.timestamp +
                             ' TargetTimeStamp: ' + frameInfo.targetTimestamp);
