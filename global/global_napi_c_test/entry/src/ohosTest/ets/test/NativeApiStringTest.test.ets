@@ -29,7 +29,7 @@ export default function abilityTest() {
       nativeTest.GetResourceManager(resManager.resourceManager);
     })
 
-    /* *
+    /**
     * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetMediaBase64_0100
     * @tc.name      TestGetMediaBase640100
     * @tc.desc      getResourceManager with folder
@@ -50,7 +50,7 @@ export default function abilityTest() {
         }
       })
 
-    /* *
+    /**
     * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetMediaBase64_0200
     * @tc.name      TestGetMediaBase640200
     * @tc.desc      getResourceManager with folder
@@ -71,7 +71,7 @@ export default function abilityTest() {
         }
       })
 
-    /* *
+    /**
     * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetMediaBase64_0300
     * @tc.name      TestGetMediaBase640300
     * @tc.desc      getResourceManager with folder
@@ -92,7 +92,7 @@ export default function abilityTest() {
         }
       })
 
-    /* *
+    /**
     * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATA_0100
     * @tc.name      TestGetMediaBase64Data0100
     * @tc.desc      getResourceManager with folder
@@ -113,7 +113,7 @@ export default function abilityTest() {
         }
       })
 
-    /* *
+    /**
     * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATA_0200
     * @tc.name      TestGetMediaBase64Data0200
     * @tc.desc      getResourceManager with folder
@@ -134,7 +134,7 @@ export default function abilityTest() {
         }
       })
 
-    /* *
+    /**
     * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATA_0300
     * @tc.name      TestGetMediaBase64Data0300
     * @tc.desc      getResourceManager with folder
