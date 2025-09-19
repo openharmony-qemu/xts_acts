@@ -571,7 +571,7 @@ export default function RelationStoreError00Test() {
     })
     /**
      * @tc.name       RelationStoreError00Test0017
-     * @tc.number     SUB_DistributedData_RelationalStore_SDK_Error00Test_1600
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_Error00Test_1700
      * @tc.desc       Transaction updateSync
      * @tc.size       MediumTest
      * @tc.type       Function
