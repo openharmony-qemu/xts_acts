@@ -61,7 +61,6 @@ export default function NodeEventTest() {
      * @tc.type         Function
      * @tc.level        Level 1
      */
-
     it('testOHArkUINodeEventGetNumberValue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

@@ -209,9 +209,9 @@ export default function ActsOsAccountNdkTest() {
         }
       })
     /**
-     * @tc.number     : SUB_ArkUI_NATIVEDISPLAYMANAGERROTATION_0100
-     * @tc.name       : NativeDisplayManagerRotation001
-     * @tc.desc       : testing ArkUI_NATIVEDISPLAYMANAGER_ROTATION
+     * @tc.number    SUB_ArkUI_NATIVEDISPLAYMANAGERROTATION_0100
+     * @tc.name      NativeDisplayManagerRotation001
+     * @tc.desc      testing ArkUI_NATIVEDISPLAYMANAGER_ROTATION
      * @tc.level     Level0
      * @tc.size      MediumTest
      * @tc.type      Function

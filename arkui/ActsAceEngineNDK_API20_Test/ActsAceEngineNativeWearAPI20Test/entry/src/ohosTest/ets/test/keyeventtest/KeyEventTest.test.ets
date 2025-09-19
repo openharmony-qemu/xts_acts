@@ -35,7 +35,6 @@ export default function KeyEventTest() {
      * @tc.type         Function
      * @tc.level        Level 1
      */
-
     it('testOHArkUIKeyEventIsNumLockOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
