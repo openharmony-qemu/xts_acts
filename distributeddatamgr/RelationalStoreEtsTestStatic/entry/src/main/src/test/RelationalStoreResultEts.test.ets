@@ -109,12 +109,12 @@ export default function RdbResultSetTest() {
     });
 
     /**
-     * @tc.name       : testGetColumnIndex0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0100
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        testGetColumnIndex0001
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0100
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('testGetColumnIndex0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testGetColumnIndex0001 start *************');
@@ -126,12 +126,12 @@ export default function RdbResultSetTest() {
     })
 
     /**
-     * @tc.name       : testGetColumnIndex0002
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0200
-     * @tc.desc       : getColumnIndex errcode test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        testGetColumnIndex0002
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0200
+     * @tc.desc        getColumnIndex errcode test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('testGetColumnIndex0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testGetColumnIndex0002 start *************');
@@ -148,12 +148,12 @@ export default function RdbResultSetTest() {
     })
 
     /**
-     * @tc.name       : testGetColumnIndex0003
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0300
-     * @tc.desc       : getColumnIndex errcode test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        testGetColumnIndex0003
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0300
+     * @tc.desc        getColumnIndex errcode test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('testGetColumnIndex0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testGetColumnIndex0003 start *************');
@@ -169,12 +169,12 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* testGetColumnIndex0003 end *************');
     })
     /**
-     * @tc.name       : testGetColumnIndex0004
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0400
-     * @tc.desc       : getColumnIndex errcode test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        testGetColumnIndex0004
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0400
+     * @tc.desc        getColumnIndex errcode test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('testGetColumnIndex0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testGetColumnIndex0004 start *************');
@@ -190,12 +190,12 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* testGetColumnIndex0004 end *************');
     })
     /**
-     * @tc.name       : testGetLong0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0500
-     * @tc.desc       : getLong normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        testGetLong0001
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0500
+     * @tc.desc        getLong normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('testGetLong0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testGetLong0001 start *************');
@@ -213,12 +213,12 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* testGetLong0001 end *************');
     })
     /**
-     * @tc.name       : testGetString0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0600
-     * @tc.desc       : getString normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        testGetString0001
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0600
+     * @tc.desc        getString normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('testGetString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testGetString0001 start *************');
@@ -230,12 +230,12 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* testGetString0001 end *************');
     })
     /**
-     * @tc.name       : testGetString0002
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0700
-     * @tc.desc       : getString normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        testGetString0002
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0700
+     * @tc.desc        getString normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('testGetString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testGetString0002 start *************');
@@ -247,12 +247,12 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* testGetString0002 end *************');
     })
     /**
-     * @tc.name       : testRdbTransactionInsert0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0800
-     * @tc.desc       : beginTransaction normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        testRdbTransactionInsert0001
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0800
+     * @tc.desc        beginTransaction normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('testRdbTransactionInsert0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRdbTransactionInsert0001 start *************');
@@ -284,12 +284,12 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* testRdbTransactionInsert0001 end *************');
     })
     /**
-     * @tc.name       : testRdbTransactionInsert0002
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0900
-     * @tc.desc       : beginTransaction normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        testRdbTransactionInsert0002
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0900
+     * @tc.desc        beginTransaction normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('testRdbTransactionInsert0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRdbTransactionInsert0002 start *************');
@@ -337,12 +337,12 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* testRdbTransactionInsert0002 end *************');
     })
     /**
-     * @tc.name       : testRdbTransactionRollBack0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1000
-     * @tc.desc       : rollBack normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        testRdbTransactionRollBack0001
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1000
+     * @tc.desc        rollBack normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('testRdbTransactionRollBack0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRdbTransactionRollBack0001 start *************');
@@ -370,12 +370,12 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* testRdbTransactionRollBack0001 end *************');
     })
     /**
-     * @tc.name       : testdeleteSync0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1100
-     * @tc.desc       : deleteSync success test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        testdeleteSync0001
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1100
+     * @tc.desc        deleteSync success test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('testdeleteSync0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testdeleteSync0001 start *************');
@@ -398,12 +398,12 @@ export default function RdbResultSetTest() {
     })
 
     /**
-     * @tc.name       : errcode002
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1200
-     * @tc.desc       : getlong 14800013 test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        errcode002
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1200
+     * @tc.desc        getlong 14800013 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('errcode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* errcode002 start *************');
@@ -424,12 +424,12 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* errcode002 end *************');
     })
     /**
-     * @tc.name       : errcode003
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1300
-     * @tc.desc       : getString 14800013 test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        errcode003
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1300
+     * @tc.desc        getString 14800013 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('errcode003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* errcode002 start *************');
@@ -450,12 +450,12 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* errcode003 end *************');
     })
     /**
-     * @tc.name       : errcode004
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1400
-     * @tc.desc       : getString 14800012 test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        errcode004
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1400
+     * @tc.desc        getString 14800012 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('errcode004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* errcode004 start *************');
@@ -475,12 +475,12 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* errcode004 end *************');
     })
     /**
-     * @tc.name       : errcode005
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1500
-     * @tc.desc       : getLong 14800012 test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        errcode005
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1500
+     * @tc.desc        getLong 14800012 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('errcode005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* errcode005 start *************');
@@ -500,12 +500,12 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* errcode005 end *************');
     })
     /**
-     * @tc.name       : errcode006
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1600
-     * @tc.desc       : goToFirstRow 14800021 test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        errcode006
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1600
+     * @tc.desc        goToFirstRow 14800021 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('errcode006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* errcode006 start *************');
@@ -523,12 +523,12 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* errcode006 end *************');
     })
     /**
-     * @tc.name       : errcode008
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1700
-     * @tc.desc       : getRdbStore promise 14800017 test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        errcode008
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1700
+     * @tc.desc        getRdbStore promise 14800017 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('errcode008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* errcode008 start *************');
@@ -552,12 +552,12 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* errcode008 end *************');
     })
     /**
-     * @tc.name       : errcode018
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1800
-     * @tc.desc       : delete、 deleteSync 14800021 test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        errcode018
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1800
+     * @tc.desc        delete、 deleteSync 14800021 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('errcode018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* errcode018 start *************');
@@ -581,12 +581,12 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* errcode018 end *************');
     })
     /**
-     * @tc.name       : errcode019
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1900
-     * @tc.desc       : delete callback 14800021 test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        errcode019
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1900
+     * @tc.desc        delete callback 14800021 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('errcode019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* errcode019 start *************');
@@ -606,20 +606,20 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* errcode019 end *************');
     })
     /**
-     * @tc.name       : errcode020
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_2000
-     * @tc.desc       : executeSql callback 14800021 test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        errcode020
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_2000
+     * @tc.desc        executeSql callback 14800021 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('errcode020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* errcode020 start *************');
       try {
-          await rdbStore2.execute("select * FROM employee");
-          hilog.info(domain, tag, '%{public}s', 'executeSql successfully');
-          expect().assertFail();
-          done();
+        await rdbStore2.execute("select * FROM employee");
+        hilog.info(domain, tag, '%{public}s', 'executeSql successfully');
+        expect().assertFail();
+        done();
       } catch (err:BusinessError) {
         hilog.info(domain, tag, '%{public}s', 'executeSql failed',err.code,err.message);
         expect(err?.code == 14800021).assertTrue();
@@ -628,12 +628,12 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* errcode020 end *************');
     })
     /**
-     * @tc.name       : errcode022
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_2100
-     * @tc.desc       : executeSql promise 14800021 test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        errcode022
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_2100
+     * @tc.desc        executeSql promise 14800021 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('errcode022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* errcode022 start *************');
@@ -649,12 +649,12 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* errcode022 end *************');
     })
     /**
-     * @tc.name       : errcode028
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_2200
-     * @tc.desc       : executeSql promise 14800032 test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        errcode028
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_2200
+     * @tc.desc        executeSql promise 14800032 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('errcode028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* errcode028 start *************');
@@ -672,12 +672,12 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* errcode028 end *************');
     })
     /**
-     * @tc.name       : errcode031
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_2300
-     * @tc.desc       : executeSql promise 14800033 test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        errcode031
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_2300
+     * @tc.desc        executeSql promise 14800033 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('errcode031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* errcode031 start *************');
