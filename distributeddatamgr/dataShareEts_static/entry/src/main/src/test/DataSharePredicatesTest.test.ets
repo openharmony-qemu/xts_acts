@@ -14,10 +14,8 @@
  */
 import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
-import common from "@ohos.app.ability.common";
 import data_dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { BusinessError } from '@ohos.base';
-import { AppStorage } from '@ohos.arkui.stateManagement'
 import { ValueType, ValuesBucket} from '@ohos.data.ValuesBucket'
 
 let domain: int = 0x0000;
@@ -27,7 +25,6 @@ const CREATE_TABLE_ALL_DATA_TYPE_SQL = "CREATE TABLE IF NOT EXISTS test "
   + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
   + "name TEXT NOT NULL  , age INTEGER , salary REAL , blobType BLOB ) ;";
 
-let context: common.UIAbilityContext;
 let str: ValueType = "zhangSan";
 let num: ValueType = 18;
 let bool: ValueType = true;
@@ -41,7 +38,6 @@ export default function dataSharePredicatesTest() {
   describe('dataSharePredicatesTest', (): void => {
     beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll')
-      context = AppStorage.get<common.UIAbilityContext>("TestAbilityContext") as common.UIAbilityContext
     })
 
     /**
