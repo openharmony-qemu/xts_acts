@@ -1,17 +1,17 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+* Copyright (C) 2025 Huawei Device Co., Ltd.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 
 
 import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll} from "../../../hypium/index";
@@ -137,12 +137,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testInsert0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_0100
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testInsert0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_0100
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testInsert0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testInsert0001 start *************');
@@ -158,12 +158,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testInsert0002
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_0200
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testInsert0002
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_0200
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testInsert0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testInsert0003 start *************');
@@ -178,12 +178,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testInsert0003 end *************');
     })
     /**
-     * @tc.name       : testInsert0003
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_0300
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testInsert0003
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_0300
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testInsert0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testInsert0005 start *************');
@@ -199,12 +199,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testInsert0004
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_0400
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testInsert0004
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_0400
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testInsert0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testInsert0004 start *************');
@@ -219,12 +219,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testInsert0004 end *************');
     })
     /**
-     * @tc.name       : testInsert0005
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_0500
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testInsert0005
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_0500
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testInsert0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testInsert0005 start *************');
@@ -239,12 +239,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testInsert0005 end *************');
     })
     /**
-     * @tc.name       : testInsert0006
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_0600
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testInsert0006
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_0600
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testInsert0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testInsert0006 start *************');
@@ -259,12 +259,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testInsert0006 end *************');
     })
     /**
-     * @tc.name       : testInsert0007
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_0700
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testInsert0007
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_0700
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testInsert0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testInsert0007 start *************');
@@ -280,12 +280,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testbatchInsert0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_0800
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testbatchInsert0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_0800
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testbatchInsert0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testbatchInsert0001 start *************');
@@ -302,12 +302,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testupdate0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_0900
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testupdate0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_0900
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
 
     it('testupdate0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
@@ -328,12 +328,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testupdate0001 end *************');
     })
     /**
-     * @tc.name       : testupdate0002
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_1000
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testupdate0002
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_1000
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
 
     it('testupdate0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
@@ -356,12 +356,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testupdate0003
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_1100
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testupdate0003
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_1100
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
 
     it('testupdate0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
@@ -384,12 +384,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testdelete0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_1200
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testdelete0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_1200
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
 
     it('testdelete0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
@@ -412,12 +412,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testquery0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_1300
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testquery0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_1300
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
 
     it('testquery0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
@@ -439,12 +439,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testquery0001 end *************');
     })
     /**
-     * @tc.name       : testquery0002
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_1400
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testquery0002
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_1400
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
 
     it('testquery0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
@@ -467,12 +467,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : tesquerySync0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_1500
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       tesquerySync0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_1500
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
 
     it('tesquerySync0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
@@ -495,12 +495,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : tesquerySync0002
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_1600
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       tesquerySync0002
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_1600
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
 
     it('tesquerySync0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
@@ -523,12 +523,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testquerySql0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_1700
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testquerySql0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_1700
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
 
     it('testquerySql0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
@@ -551,12 +551,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testexecute0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_1800
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testexecute0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_1800
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
 
     it('testexecute0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
@@ -576,12 +576,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testexecute0002
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_1900
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testexecute0002
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_1900
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testexecute0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testexecute0002 start *************');
@@ -600,12 +600,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testclose0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_2000
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testclose0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_2000
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
 
     it('testclose0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
@@ -634,12 +634,12 @@ export default function RelationStoreRdbStoreTest() {
 
 
     /**
-     * @tc.name       : testRsultSetgoTo0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_2100
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgoTo0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_2100
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgoTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoTo0001 start *************');
@@ -656,12 +656,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoTo0001 end *************');
     })
     /**
-     * @tc.name       : testRsultSetgoTo0002
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_2200
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgoTo0002
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_2200
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgoTo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoTo0002 start *************');
@@ -679,12 +679,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoTo0002 end *************');
     })
     /**
-     * @tc.name       : testRsultSetgoTo0003
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_2300
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgoTo0003
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_2300
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgoTo0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoTo0003 start *************');
@@ -702,12 +702,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoTo0003 end *************');
     })
     /**
-     * @tc.name       : testRsultSetgoTo0004
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_2400
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgoTo0004
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_2400
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgoTo0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoTo0004 start *************');
@@ -725,12 +725,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoTo0004 end *************');
     })
     /**
-     * @tc.name       : testRsultSetgoTo0005
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_2500
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgoTo0005
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_2500
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgoTo0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoTo0005 start *************');
@@ -751,12 +751,12 @@ export default function RelationStoreRdbStoreTest() {
 
 
     /**
-     * @tc.name       : testRsultSetgoToRow0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_2600
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgoToRow0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_2600
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgoToRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToRow0001 start *************');
@@ -775,12 +775,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToRow0001 end *************');
     })
     /**
-     * @tc.name       : testRsultSetgoToRow0002
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_2700
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgoToRow0002
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_2700
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgoToRow0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToRow0002 start *************');
@@ -799,12 +799,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToRow0002 end *************');
     })
     /**
-     * @tc.name       : testRsultSetgoToRow0003
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_2800
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgoToRow0003
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_2800
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgoToRow0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToRow0003 start *************');
@@ -823,12 +823,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToRow0003 end *************');
     })
     /**
-     * @tc.name       : testRsultSetgoToRow0004
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_2900
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgoToRow0004
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_2900
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgoToRow0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToRow0004 start *************');
@@ -847,12 +847,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToRow0004 end *************');
     })
     /**
-     * @tc.name       : testRsultSetgoToRow0005
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3000
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgoToRow0005
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3000
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgoToRow0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToRow0005 start *************');
@@ -872,12 +872,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testRsultSetgoToFirstRow0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3100
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgoToFirstRow0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3100
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgoToFirstRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToFirstRow0001 start *************');
@@ -896,12 +896,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToFirstRow0001 end *************');
     })
     /**
-     * @tc.name       : testRsultSetgoToLastRow0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3200
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgoToLastRow0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3200
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgoToLastRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToLastRow0001 start *************');
@@ -921,12 +921,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testRsultSetgoToNextRow0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3300
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgoToNextRow0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3300
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgoToNextRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToNextRow0001 start *************');
@@ -945,12 +945,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToNextRow0001 end *************');
     })
     /**
-     * @tc.name       : testRsultSetgoToPreviousRow0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3400
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgoToPreviousRow0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3400
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgoToPreviousRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToPreviousRow0001 start *************');
@@ -969,12 +969,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToPreviousRow0001  end *************');
     })
     /**
-     * @tc.name       : testRsultSetgoToPreviousRow0002
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3500
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgoToPreviousRow0002
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3500
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgoToPreviousRow0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToPreviousRow0002 start *************');
@@ -995,12 +995,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testRsultSetgetColumnIndex0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3600
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgetColumnIndex0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3600
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgetColumnIndex0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgetColumnIndex0001 start *************');
@@ -1019,12 +1019,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgetColumnIndex0001 end *************');
     })
     /**
-     * @tc.name       : testRsultSetgetColumnName0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3700
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgetColumnName0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3700
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgetColumnName0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgetColumnName0001 start *************');
@@ -1044,12 +1044,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testRsultSetgetString0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3800
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgetString0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3800
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgetString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgetString0001 start *************');
@@ -1070,12 +1070,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testRsultSetgetBlob0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3900
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgetBlob0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3900
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgetBlob0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgetBlob0001 start *************');
@@ -1096,12 +1096,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testRsultSetgetLong0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_4000
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgetLong0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_4000
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgetLong0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgetLong0001 start *************');
@@ -1121,12 +1121,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgetLong0001 end *************');
     })
     /**
-     * @tc.name       : testRsultSetgetDouble0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_4100
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgetDouble0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_4100
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgetDouble0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgetDouble0001 start *************');
@@ -1147,12 +1147,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testRsultSetgetAsset0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_4200
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgetAsset0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_4200
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgetAsset0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgetAsset0001 start *************');
@@ -1178,12 +1178,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testRsultSetgetAssets0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_4300
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgetAssets0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_4300
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgetAssets0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgetAssets0001 start *************');
@@ -1204,12 +1204,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testRsultSetgetValue0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_4400
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgetValue0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_4400
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgetValue0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgetValue0001 start *************');
@@ -1230,12 +1230,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testRsultSetgetRow0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_4500
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetgetRow0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_4500
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetgetRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgetRow0001 start *************');
@@ -1263,12 +1263,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testRsultSetisColumnNull001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_4600
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetisColumnNull001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_4600
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetisColumnNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetisColumnNull001 start *************');
@@ -1289,12 +1289,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testRsultSetclose001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_4800
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testRsultSetclose001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_4800
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testRsultSetclose001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetclose001 start *************');
@@ -1322,12 +1322,12 @@ export default function RelationStoreRdbStoreTest() {
 
 
     /**
-     * @tc.name       : testPredicates0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_4900
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_4900
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0001 start *************');
@@ -1345,12 +1345,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0001 end *************');
     })
     /**
-     * @tc.name       : testPredicates0002
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_5000
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0002
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_5000
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0002 start *************');
@@ -1376,12 +1376,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0002 end *************');
     })
     /**
-     * @tc.name       : testPredicates0003
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_5100
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0003
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_5100
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0003 start *************');
@@ -1408,12 +1408,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testPredicates0004
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_5200
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0004
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_5200
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0004 start *************');
@@ -1440,12 +1440,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testPredicates0005
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_5300
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0005
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_5300
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0005 start *************');
@@ -1473,12 +1473,12 @@ export default function RelationStoreRdbStoreTest() {
 
 
     /**
-     * @tc.name       : testPredicates0006
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_5400
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0006
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_5400
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0006 start *************');
@@ -1505,12 +1505,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testPredicates0007
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_5500
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0007
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_5500
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0007 start *************');
@@ -1537,12 +1537,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testPredicates0008
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_5600
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0008
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_5600
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0008 start *************');
@@ -1569,12 +1569,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testPredicates0009
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_5700
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0009
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_5700
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0009 start *************');
@@ -1600,12 +1600,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0009 end *************');
     })
     /**
-     * @tc.name       : testPredicates0010
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_5800
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0010
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_5800
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0010 start *************');
@@ -1633,12 +1633,12 @@ export default function RelationStoreRdbStoreTest() {
 
 
     /**
-     * @tc.name       : testPredicates0011
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_5900
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0011
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_5900
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0011 start *************');
@@ -1665,12 +1665,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testPredicates0012
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6000
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0012
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6000
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0012 start *************');
@@ -1696,12 +1696,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0012 end *************');
     })
     /**
-     * @tc.name       : testPredicates0013
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6100
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0013
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6100
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0013 start *************');
@@ -1727,12 +1727,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0013 end *************');
     })
     /**
-     * @tc.name       : testPredicates0019
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6150
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0019
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6150
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0019 start *************');
@@ -1759,12 +1759,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testPredicates0014
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6200
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0014
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6200
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0014 start *************');
@@ -1791,12 +1791,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testPredicates0015
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6300
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0015
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6300
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0015 start *************');
@@ -1823,12 +1823,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testPredicates0016
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6400
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0016
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6400
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0016 start *************');
@@ -1855,12 +1855,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testPredicates0017
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6500
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0017
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6500
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0017 start *************');
@@ -1887,12 +1887,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testPredicates0018
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6600
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0018
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6600
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0018 start *************');
@@ -1918,12 +1918,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0018 end *************');
     })
     /**
-     * @tc.name       : testPredicates0020
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6700
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0020
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6700
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0018 start *************');
@@ -1949,12 +1949,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0018 end *************');
     })
     /**
-     * @tc.name       : testPredicates0021
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6800
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0021
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6800
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0021 start *************');
@@ -1980,12 +1980,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0018 end *************');
     })
     /**
-     * @tc.name       : testPredicates0022
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6900
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0022
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_6900
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0022 start *************');
@@ -2011,12 +2011,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0018 end *************');
     })
     /**
-     * @tc.name       : testPredicates0023
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7000
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0023
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7000
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0023 start *************');
@@ -2043,12 +2043,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testPredicates0024
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7100
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0024
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7100
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0024 start *************');
@@ -2075,12 +2075,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testPredicates0025
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7200
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0025
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7200
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0025 start *************');
@@ -2106,12 +2106,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0025 end *************');
     })
     /**
-     * @tc.name       : testPredicates0026
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7300
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0026
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7300
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0026 start *************');
@@ -2138,12 +2138,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testPredicates0027
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7400
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0027
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7400
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0027 start *************');
@@ -2170,12 +2170,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testPredicates0028
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7500
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0028
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7500
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0028 start *************');
@@ -2202,12 +2202,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testPredicates0029
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7600
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0029
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7600
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0029 start *************');
@@ -2234,12 +2234,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testPredicates0030
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7700
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testPredicates0030
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7700
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testPredicates0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testPredicates0030 start *************');
@@ -2266,12 +2266,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testTransaction0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7800
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testTransaction0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7800
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testTransaction0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0001 start *************');
@@ -2301,12 +2301,12 @@ export default function RelationStoreRdbStoreTest() {
 
 
     /**
-     * @tc.name       : testTransaction0002
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7900
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testTransaction0002
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_7900
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testTransaction0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0002 start *************');
@@ -2335,12 +2335,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testTransaction0003
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_8000
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testTransaction0003
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_8000
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testTransaction0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0003 start *************');
@@ -2366,12 +2366,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testTransaction0004
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_8100
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testTransaction0004
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_8100
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testTransaction0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0004 start *************');
@@ -2399,12 +2399,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testTransaction0005
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_8200
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testTransaction0005
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_8200
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testTransaction0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0005 start *************');
@@ -2430,12 +2430,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testTransaction0006
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_8300
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testTransaction0006
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_8300
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testTransaction0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0006 start *************');
@@ -2463,12 +2463,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0006 end *************');
     })
     /**
-     * @tc.name       : testTransaction0007
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_8400
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testTransaction0007
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_8400
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testTransaction0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0007 start *************');
@@ -2497,12 +2497,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testTransaction0008
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_8500
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testTransaction0008
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_8500
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testTransaction0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0008 start *************');
@@ -2530,12 +2530,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testTransaction0009
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_8600
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testTransaction0009
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_8600
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testTransaction0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0009 start *************');
@@ -2559,12 +2559,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testTransaction0011
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_8700
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testTransaction0011
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_8700
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testTransaction0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0011 start *************');
@@ -2588,12 +2588,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0011 end *************');
     })
     /**
-     * @tc.name       : testTransaction0012
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_8800
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testTransaction0012
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_8800
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testTransaction0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0012 start *************');
@@ -2618,12 +2618,12 @@ export default function RelationStoreRdbStoreTest() {
     })
 
     /**
-     * @tc.name       : testTransaction0013
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_8900
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testTransaction0013
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_8900
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testTransaction0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0013 start *************');
@@ -2653,12 +2653,12 @@ export default function RelationStoreRdbStoreTest() {
 
 
     /**
-     * @tc.name       : testTransaction0015
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_9000
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testTransaction0015
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_9000
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testTransaction0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0013 start *************');
@@ -2686,12 +2686,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0013 end *************');
     })
     /**
-     * @tc.name       : testTransaction0014
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_9100
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name       testTransaction0014
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_9100
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('testTransaction0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0014 start *************');
