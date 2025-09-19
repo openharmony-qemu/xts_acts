@@ -91,12 +91,12 @@ export default function RelationStoreError30Test() {
     })
 
     /**
-     * @tc.name       : RelationStoreError30Test0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error30Test_0100
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError30Test0001
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error30Test_0100
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError30Test0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -119,12 +119,12 @@ export default function RelationStoreError30Test() {
       })
 
     /**
-     * @tc.name       : RelationStoreError30Test0002
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_Error30Test_0200
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name        RelationStoreError30Test0002
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_Error30Test_0200
+     * @tc.desc        getColumnIndex normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('RelationStoreError30Test0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
