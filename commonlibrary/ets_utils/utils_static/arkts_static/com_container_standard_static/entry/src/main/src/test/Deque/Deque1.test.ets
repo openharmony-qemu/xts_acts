@@ -367,12 +367,10 @@ export default function DequeTest() {
       const TAG = "tesPopFirst0013";
       try {
         let deque: Deque<number> = new Deque<number>();
-        deque.popFirst()
-        let result = deque.getFirst();
-        expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        let res = deque.popFirst();
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -413,12 +411,10 @@ export default function DequeTest() {
       const TAG = "tesGetFirst0015";
       try {
         let deque: Deque<number> = new Deque<number>();
-        deque.popLast();
         let result = deque.getFirst();
-        expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -459,10 +455,9 @@ export default function DequeTest() {
       try {
         let deque: Deque<number> = new Deque<number>();
         let result = deque.getLast();
-        expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 

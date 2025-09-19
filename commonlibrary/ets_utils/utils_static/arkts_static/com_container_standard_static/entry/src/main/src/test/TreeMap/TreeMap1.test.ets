@@ -361,8 +361,12 @@ export default function TreeMapTest1() {
      */
     it("testTreeMap019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
-      let res = treeMap.getFirstKey();
-      expect(String(res)).assertEqual('undefined');
+      try {
+        let res = treeMap.getFirstKey();
+        expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
+      }
     });
 
     /**
@@ -392,8 +396,12 @@ export default function TreeMapTest1() {
      */
     it("testTreeMap021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
-      let res = treeMap.getLastKey();
-      expect(String(res)).assertEqual('undefined');
+      try {
+        let res = treeMap.getLastKey();
+        expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
+      }
     });
 
     /**
@@ -521,8 +529,12 @@ export default function TreeMapTest1() {
      */
     it("testTreeMap028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
-      let res = treeMap.getLowerKey(2);
-      expect(String(res)).assertEqual('undefined');
+      try {
+        let res = treeMap.getLowerKey(2);
+        expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
+      }
     });
 
     /**
@@ -554,8 +566,12 @@ export default function TreeMapTest1() {
      */
     it("testTreeMap030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
-      let res = treeMap.getHigherKey(2);
-      expect(String(res)).assertEqual('undefined');
+      try {
+        let res = treeMap.getHigherKey(2);
+        expect(false).assertFail();
+      } catch (err: BusinessError) {
+        expect(err.message).assertEqual("Container is empty");
+      }
     });
 
     /**
