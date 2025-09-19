@@ -149,6 +149,10 @@
 #define TEST_ERROR_DESCRIPTION_SIZE (128)
 #define TEST_OPERATIONS_COUNT (1000)
 
+static napi_value basicCallback(napi_env env, napi_callback_info info);
+static napi_value namedCallback(napi_env env, napi_callback_info info);
+static napi_value dataCallback(napi_env env, napi_callback_info info);
+
 struct ThreadData {
     napi_env env;
     napi_value arraybuffer;
