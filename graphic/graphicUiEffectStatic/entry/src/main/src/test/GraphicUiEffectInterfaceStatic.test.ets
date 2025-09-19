@@ -86,12 +86,12 @@ export default function GraphicUiEffectInterfaceStatic() {
     })
 
     /**
-     * @tc.number    : uiEffectTest_static_0200
-     * @tc.name      : uiEffectTest_static_0200
-     * @tc.desc      : uiEffect for test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.number     uiEffectTest_static_0200
+     * @tc.name       uiEffectTest_static_0200
+     * @tc.desc       uiEffect for test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
      */
     it("uiEffectTest_static_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -111,12 +111,12 @@ export default function GraphicUiEffectInterfaceStatic() {
       })
 
     /**
-     * @tc.number    : uiEffectTest_static_0300
-     * @tc.name      : uiEffectTest_static_0300
-     * @tc.desc      : uiEffect for test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.number     uiEffectTest_static_0300
+     * @tc.name       uiEffectTest_static_0300
+     * @tc.desc       uiEffect for test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
      */
     it("uiEffectTest_static_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -135,12 +135,12 @@ export default function GraphicUiEffectInterfaceStatic() {
       })
 
     /**
-     * @tc.number    : uiEffectTest_static_0400
-     * @tc.name      : uiEffectTest_static_0400
-     * @tc.desc      : uiEffect for test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.number     uiEffectTest_static_0400
+     * @tc.name       uiEffectTest_static_0400
+     * @tc.desc       uiEffect for test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
      */
     it("uiEffectTest_static_0400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
       async (done: () => void): Promise<void> => {

@@ -293,7 +293,6 @@ export default function displaySyncTest() {
                     // 停止每帧回调
                     backDisplaySync?.stop()
                     console.info(msg + 'Succeeded in onoff.');
-                    expect(true).assertTrue()
                     done()
                 } catch (exception) {
                     console.error(msg + 'Failed to onoff. Cause:' + JSON.stringify(exception));
