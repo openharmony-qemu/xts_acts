@@ -596,12 +596,12 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number   : getRawFd_test_static_0100
-     * @tc.name     : getRawFd_test_static_0100
-     * @tc.desc     : errcode 9001005 in callback mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getRawFd_test_static_0100
+     * @tc.name    getRawFd_test_static_0100
+     * @tc.desc    errcode 9001005 in callback mode
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getRawFd_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       res.getRawFd('plural_name_loop', (error: BusinessError<void> | null) => {
@@ -611,12 +611,12 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number   : getRawFd_test_static_0200
-     * @tc.name     : getRawFd_test_static_0200
-     * @tc.desc     : errcode 9001005 in promise mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  getRawFd_test_static_0200
+     * @tc.name    getRawFd_test_static_0200
+     * @tc.desc    errcode 9001005 in promise mode
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('getRawFd_test_static_0200', Level.LEVEL3, async (): Promise<void> => {
       res.getRawFd('plural_name_loop').then(() => {
@@ -1647,9 +1647,9 @@ export default function ResmgrTest() {
       })
 
     /**
-     * @tc.number    : getIntPluralStringByNameSync_test_static_0100
-     * @tc.name      : getIntPluralStringByNameSync_test_static_0100
-     * @tc.desc      : test getMediaContent 9error code 9001004 by name
+     * @tc.number   getIntPluralStringByNameSync_test_static_0100
+     * @tc.name     getIntPluralStringByNameSync_test_static_0100
+     * @tc.desc     test getMediaContent 9error code 9001004 by name
      */
 
     it('getIntPluralStringByNameSync_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
@@ -1662,9 +1662,9 @@ export default function ResmgrTest() {
       }
     })
     /**
-     * @tc.number    : getDoublePluralStringByNameSync_test_static_0100
-     * @tc.name      : getDoublePluralStringByNameSync_test_static_0100
-     * @tc.desc      : test getDoublePluralStringByNameSync with error code 9001004
+     * @tc.number   getDoublePluralStringByNameSync_test_static_0100
+     * @tc.name     getDoublePluralStringByNameSync_test_static_0100
+     * @tc.desc     test getDoublePluralStringByNameSync with error code 9001004
      */
     it('getDoublePluralStringByNameSync_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -1695,9 +1695,9 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_test_static_0300
-     * @tc.name     : getMediaContent_test_static_0300
-     * @tc.desc     : test getMediaContent density callback err code 9001002
+     * @tc.number  getMediaContent_test_static_0300
+     * @tc.name    getMediaContent_test_static_0300
+     * @tc.desc    test getMediaContent density callback err code 9001002
      */
     it("getMediaContent_test_static_0300", Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'getMediaContent  density callback err code 9001002 start');
@@ -1718,9 +1718,9 @@ export default function ResmgrTest() {
 
 
     /**
-     * @tc.number   : getMediaContent_test_static_0400
-     * @tc.name     : getMediaContent_test_static_0400
-     * @tc.desc     : test getMediaContent density promise errcode 9001002
+     * @tc.number  getMediaContent_test_static_0400
+     * @tc.name    getMediaContent_test_static_0400
+     * @tc.desc    test getMediaContent density promise errcode 9001002
      */
     it('getMediaContent_test_static_0400', Level.LEVEL3, async (done: () => void): Promise<void> => {
       res?.getMediaContent(0x0100000a, 0).then(() => {
@@ -1736,9 +1736,9 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_test_static_0500
-     * @tc.name     : getMediaContent_test_static_0500
-     * @tc.desc     : test getMediaContent density promise errcode 9001001
+     * @tc.number  getMediaContent_test_static_0500
+     * @tc.name    getMediaContent_test_static_0500
+     * @tc.desc    test getMediaContent density promise errcode 9001001
      */
     it('getMediaContent_test_static_0500', Level.LEVEL3, async (done: () => void): Promise<void> => {
       res?.getMediaContentBase64(0x01234567).then(() => {
@@ -1755,9 +1755,9 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_test_static_0600
-     * @tc.name     : getMediaContent_test_static_0600
-     * @tc.desc     : test getMediaContent density promise errcode 9001001
+     * @tc.number  getMediaContent_test_static_0600
+     * @tc.name    getMediaContent_test_static_0600
+     * @tc.desc    test getMediaContent density promise errcode 9001001
      */
     it('getMediaContent_test_static_0600', Level.LEVEL3, async (done: () => void): Promise<void> => {
       res?.getMediaContent(0x01234567, 0).then(() => {
@@ -1792,9 +1792,9 @@ export default function ResmgrTest() {
     })
     
     /**
-     * @tc.number   : getMediaContentBase64_test_static_0300
-     * @tc.name     : getMediaContentBase64_test_static_0300
-     * @tc.desc     : test getMediaContentBase64 density promise errcode 9001002
+     * @tc.number  getMediaContentBase64_test_static_0300
+     * @tc.name    getMediaContentBase64_test_static_0300
+     * @tc.desc    test getMediaContentBase64 density promise errcode 9001002
      */
     it('getMediaContentBase64_test_static_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
       res?.getMediaContentBase64(0x01000007).then(() => {
@@ -1811,9 +1811,9 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_test_static_0400
-     * @tc.name     : getMediaContentBase64_test_static_0400
-     * @tc.desc     : test getMediaContentBase64 density callback errcode 9001001
+     * @tc.number  getMediaContentBase64_test_static_0400
+     * @tc.name    getMediaContentBase64_test_static_0400
+     * @tc.desc    test getMediaContentBase64 density callback errcode 9001001
      */
     it("getMediaContentBase64_test_static_0400", Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'getMediaContentBase64 resId callback err code 201 start');
@@ -1833,9 +1833,9 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_test_static_0500
-     * @tc.name     : getMediaContentBase64_test_static_0500
-     * @tc.desc     : test getMediaContentBase64 density callback errcode 9001002
+     * @tc.number  getMediaContentBase64_test_static_0500
+     * @tc.name    getMediaContentBase64_test_static_0500
+     * @tc.desc    test getMediaContentBase64 density callback errcode 9001002
      */
     it("getMediaContentBase64_test_static_0500", Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'getMediaContentBase64 resId callback err code 9001002 start');
@@ -1854,9 +1854,9 @@ export default function ResmgrTest() {
       hilog.info(domain, tag, 'getStringArrayValue callback 9001002 end');
     })
     /**
-     * @tc.number   : roundingIncrement_test_static_0100
-     * @tc.name     : roundingIncrement_test_static_0100
-     * @tc.desc     : test roundingIncrement success
+     * @tc.number  roundingIncrement_test_static_0100
+     * @tc.name    roundingIncrement_test_static_0100
+     * @tc.desc    test roundingIncrement success
      */
     it("roundingIncrement_test_static_0100", Level.LEVEL1, async (done: () => void): Promise<void> => {
       const TAG: string = "roundingIncrement";
@@ -1876,9 +1876,9 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number   : roundingMode_test_static_0100
-     * @tc.name     : roundingMode_test_static_0100
-     * @tc.desc     : test roundingIncrement success
+     * @tc.number  roundingMode_test_static_0100
+     * @tc.name    roundingMode_test_static_0100
+     * @tc.desc    test roundingIncrement success
      */
     it("roundingMode_test_static_0100", Level.LEVEL1, async (done: () => void): Promise<void> => {
       const TAG: string = "roundingMode";
@@ -1953,12 +1953,12 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number   : resourceManager_test_getStringByNameSync_static_0270
-     * @tc.name     : resourceManager_test_getStringByNameSync_static_0270
-     * @tc.desc     : errcode 9001006
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  resourceManager_test_getStringByNameSync_static_0270
+     * @tc.name    resourceManager_test_getStringByNameSync_static_0270
+     * @tc.desc    errcode 9001006
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('resourceManager_test_getStringByNameSync_static_0270', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -1972,12 +1972,12 @@ export default function ResmgrTest() {
     })
 
       /**
-       * @tc.number    : resourceManager_test_getStringByNameSync_static_0280
-       * @tc.name      : resourceManager_test_getStringByNameSync_static_0280
-       * @tc.desc      : Parameter out of index
-       * @tc.size      : Medium Test
-       * @tc.type      : Function
-       * @tc.level     : Level 2
+       * @tc.number   resourceManager_test_getStringByNameSync_static_0280
+       * @tc.name     resourceManager_test_getStringByNameSync_static_0280
+       * @tc.desc     Parameter out of index
+       * @tc.size     Medium Test
+       * @tc.type     Function
+       * @tc.level    Level 2
        */
       it('resourceManager_test_getStringByNameSync_static_0280', Level.LEVEL0,
         async (done: () => void): Promise<void> => {
