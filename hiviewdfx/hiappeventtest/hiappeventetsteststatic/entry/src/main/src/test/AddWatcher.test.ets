@@ -17,7 +17,7 @@ import hilog from '@ohos.hilog'
 import hiAppEvent from '@ohos.hiviewdfx.hiAppEvent'
 import { BusinessError } from '@ohos.base'
 import Utils from './Util.test';
-let logDomain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let logDomain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'hiappeventAddWatcherTest'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 export default function addWatcherTest() {
@@ -49,7 +49,7 @@ export default function addWatcherTest() {
             eventType: hiAppEvent.EventType.FAULT,
             params: {
               "key_int": 70
-            } as Record<string, number|string|boolean|(number|string|boolean)[]>
+            } as Record<string, int|string|boolean|(int|string|boolean)[]>
           }, (err: BusinessError<void> | null) => {
             hilog.info(logDomain, tag, `testHiAppEventSub70 write event: ${err?.code}`);
             hilog.info(logDomain, tag, `testHiAppEventSub70 write event: ${err?.message}`);
@@ -114,7 +114,7 @@ export default function addWatcherTest() {
             eventType: hiAppEvent.EventType.FAULT,
             params: {
               "key_int": 71
-            } as Record<string, number|string|boolean|(number|string|boolean)[]>
+            } as Record<string, int|string|boolean|(int|string|boolean)[]>
           }, (err: BusinessError<void> | null) => {
             hilog.info(logDomain, tag, `testHiAppEventSub71 write event: ${err?.code}`);
             hilog.info(logDomain, tag, `testHiAppEventSub71 write event: ${err?.message}`);
@@ -210,7 +210,7 @@ export default function addWatcherTest() {
             eventType: hiAppEvent.EventType.FAULT,
             params: {
               "key_int": 73
-            } as Record<string, number|string|boolean|(number|string|boolean)[]>
+            } as Record<string, int|string|boolean|(int|string|boolean)[]>
           }, (err: BusinessError<void> | null) => {
             hilog.info(logDomain, tag, `testHiAppEventSub73 write event: ${err?.code}`);
             hilog.info(logDomain, tag, `testHiAppEventSub73 write event: ${err?.message}`);
@@ -249,6 +249,90 @@ export default function addWatcherTest() {
       }
     })
 
+            /**
+         * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0100
+         * @tc.name testHiAppEventSetPam01
+         * @tc.desc 验证setEventParam接口可设置事件关联自定义参数,并通过onReceive回调获取
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level3
+         */
+        it('testHiAppEventSetPam01', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            hilog.info(logDomain, tag, 'testHiAppEvent011 start');
+            try {
+                let holder: hiAppEvent.AppEventPackageHolder = hiAppEvent.addWatcher({
+                    name: "watcher2",
+                    appEventFilters: [
+                        {
+                            domain: hiAppEvent.domain.OS,
+                            names: [hiAppEvent.event.APP_CRASH]
+                        }
+                    ],
+                });
+                if (holder != null) {
+                    let eventPkg: hiAppEvent.AppEventPackage | null = null;
+                    while ((eventPkg = holder.takeNext()) != null) {
+                        if (eventPkg !== null) { //
+                            hilog.info(logDomain, tag, `eventPkg.packageId=${eventPkg.packageId}`);
+                            hilog.info(logDomain, tag, `eventPkg.row=${eventPkg.row}`);
+                            hilog.info(logDomain, tag, `eventPkg.size=${eventPkg.size}`);
+                            for (const eventInfo of eventPkg.data) {
+                                if (eventInfo !== null) {
+                                    hilog.info(logDomain, tag, `eventPkg.data=${eventInfo}`);
+                                }
+                            }
+                        }
+                    }
+                }
+                hiAppEvent.removeWatcher({ name: "watcher2" })
+                expect(true).assertTrue();
+                done();
+            } catch (err: BusinessError) {
+                hilog.error(logDomain, tag, `testHiAppEventSetPam01 > error code: ${err.code}, error msg: ${err.message}`);
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0200
+         * @tc.name testHiAppEventSetPam01
+         * @tc.desc 验证setEventParam接口可设置事件关联自定义参数,并通过onReceive回调获取
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level3
+         */
+        it('testHiAppEventSetPam02', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            hilog.info(logDomain, tag, 'testHiAppEventSetPam02 start');
+            try {
+                hiAppEvent.addWatcher({
+                    name: "watcher3",
+                    appEventFilters: [
+                        {
+                            domain: hiAppEvent.domain.OS,
+                            names: [hiAppEvent.event.APP_CRASH]
+                        }
+                    ],
+                    onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
+                        hilog.info(logDomain, tag, `domain=${domain}`);
+                        for (const eventGroup of appEventGroups) {
+                            hilog.info(logDomain, tag, `eventName=${eventGroup.name}`);
+                            for (const eventInfo of eventGroup.appEventInfos) {
+                                hilog.info(logDomain, tag, `event=${JSON.stringify(eventInfo)}`, );
+                            }
+                        }
+                    }
+                });
+                hiAppEvent.removeWatcher({ name: "watcher3" })
+                expect(true).assertTrue();
+                done();
+            } catch (err: BusinessError) {
+                hilog.error(logDomain, tag, `testHiAppEventSetPam01 > error code: ${err.code}, error msg: ${err.message}`);
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
     /**
      * @tc.number SUB_DFX_DFT_HiAppEvent_Sub_6700
      * @tc.name HiAppEventSub67
@@ -284,7 +368,7 @@ export default function addWatcherTest() {
             eventType: hiAppEvent.EventType.FAULT,
             params: {
               "key_int": 100, "key_string": "appcrash",
-            } as Record<string, number|string|boolean|(number|string|boolean)[]>
+            } as Record<string, int|string|boolean|(int|string|boolean)[]>
           }, (err: BusinessError<void> | null) => {
               hilog.info(logDomain, tag, `HiAppEventSub67 write event: ${err?.code}`);
               hilog.info(logDomain, tag, `HiAppEventSub67 write event: ${err?.message}`);
@@ -298,7 +382,7 @@ export default function addWatcherTest() {
             eventType: hiAppEvent.EventType.STATISTIC,
             params: {
               "key_int": 100, "key_string": "appfreeze",
-            } as Record<string, number|string|boolean|(number|string|boolean)[]>
+            } as Record<string, int|string|boolean|(int|string|boolean)[]>
           }, (err: BusinessError<void> | null) => {
               hilog.info(logDomain, tag, `HiAppEventSub67 write event: ${err?.code}`);
               hilog.info(logDomain, tag, `HiAppEventSub67 write event: ${err?.message}`);
@@ -312,7 +396,7 @@ export default function addWatcherTest() {
             eventType: hiAppEvent.EventType.SECURITY,
             params: {
               "key_int": 100, "key_string": "userlogin",
-            } as Record<string, number|string|boolean|(number|string|boolean)[]>
+            } as Record<string, int|string|boolean|(int|string|boolean)[]>
           }, (err: BusinessError<void> | null) => {
             hilog.info(logDomain, tag, `HiAppEventSub67 write event: ${err?.code}`);
             hilog.info(logDomain, tag, `HiAppEventSub67 write event: ${err?.message}`);
@@ -326,7 +410,7 @@ export default function addWatcherTest() {
             eventType: hiAppEvent.EventType.BEHAVIOR,
             params: {
               "key_int": 100, "key_string": "userlogout",
-            } as Record<string, number|string|boolean|(number|string|boolean)[]>
+            } as Record<string, int|string|boolean|(int|string|boolean)[]>
           }, (err: BusinessError<void> | null) => {
             hilog.info(logDomain, tag, `HiAppEventSub67 write event: ${err?.code}`);
             hilog.info(logDomain, tag, `HiAppEventSub67 write event: ${err?.message}`);
@@ -363,13 +447,13 @@ export default function addWatcherTest() {
           name: "watcher68",
           appEventFilters: [{domain: "test_domain", names: [hiAppEvent.event.DISTRIBUTED_SERVICE_START]}],
           triggerCondition,
-          onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+          onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
             expect().assertFail()
             let eventPkg = holder.takeNext();
-            hilog.info(logDomain, tag, "HiAppEventSub68 eventPkg.packageId=" + eventPkg.packageId);
-            hilog.info(logDomain, tag, "HiAppEventSub68 eventPkg.row=" + eventPkg.row);
-            hilog.info(logDomain, tag, "HiAppEventSub68 eventPkg.size=" + eventPkg.size);
-            for (const eventInfo of eventPkg.data) {
+            hilog.info(logDomain, tag, "HiAppEventSub68 eventPkg.packageId=" + eventPkg?.packageId);
+            hilog.info(logDomain, tag, "HiAppEventSub68 eventPkg.row=" + eventPkg?.row);
+            hilog.info(logDomain, tag, "HiAppEventSub68 eventPkg.size=" + eventPkg?.size);
+            for (const eventInfo of eventPkg!.data) {
               hilog.info(logDomain, tag, "HiAppEventSub68 eventPkg.data=" + eventInfo);
             }
             done()
@@ -396,7 +480,7 @@ export default function addWatcherTest() {
             eventType: hiAppEvent.EventType.FAULT,
             params: {
               "key_int": 100, "key_string": "distributed_service_start",
-            } as Record<string, number|string|boolean|(number|string|boolean)[]>
+            } as Record<string, int|string|boolean|(int|string|boolean)[]>
           }, (err: BusinessError<void> | null) => {
             hilog.info(logDomain, tag, `HiAppEventSub68 write event: ${err?.code}`);
             hilog.info(logDomain, tag, `HiAppEventSub68 write event: ${err?.message}`);
@@ -453,7 +537,7 @@ export default function addWatcherTest() {
             eventType: hiAppEvent.EventType.FAULT,
             params: {
               "key_int": 100, "key_string": "appcrash",
-            } as Record<string, number|string|boolean|(number|string|boolean)[]>
+            } as Record<string, int|string|boolean|(int|string|boolean)[]>
           }, (err: BusinessError<void> | null) => {
             hilog.info(logDomain, tag, `HiAppEventSub69 write event: ${err?.code}`);
             hilog.info(logDomain, tag, `HiAppEventSub69 write event: ${err?.message}`);
@@ -467,7 +551,7 @@ export default function addWatcherTest() {
             eventType: hiAppEvent.EventType.STATISTIC,
             params: {
               "key_int": 100, "key_string": "appfreeze",
-            } as Record<string, number|string|boolean|(number|string|boolean)[]>
+            } as Record<string, int|string|boolean|(int|string|boolean)[]>
           }, (err: BusinessError<void> | null) => {
             hilog.info(logDomain, tag, `HiAppEventSub69 write event: ${err?.code}`);
             hilog.info(logDomain, tag, `HiAppEventSub69 write event: ${err?.message}`);
@@ -501,17 +585,17 @@ export default function addWatcherTest() {
       let result = hiAppEvent.addWatcher({
         name: "watcher1",
         triggerCondition,
-        onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+        onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
           expect(holder != null).assertTrue();
 
           let eventPkg = holder.takeNext();
           if (eventPkg == null) {
             expect().assertFail()
           }
-          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg.packageId);
-          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg.row);
-          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg.size);
-          for (const eventInfo of eventPkg.data) {
+          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+          for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
           expect(true).assertTrue()
@@ -527,7 +611,7 @@ export default function addWatcherTest() {
           eventType: hiAppEvent.EventType.FAULT,
           params: {
             "key_int": 100
-          } as Record<string, number|string|boolean|(number|string|boolean)[]>
+          } as Record<string, int|string|boolean|(int|string|boolean)[]>
         }, (err: BusinessError<void> | null) => {
             hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
             hilog.info(logDomain, tag, `HiAppEventSub01 write event: ${err?.code}`);
@@ -543,7 +627,7 @@ export default function addWatcherTest() {
           eventType: hiAppEvent.EventType.STATISTIC,
           params: {
             "key_int": 100
-          } as Record<string, number|string|boolean|(number|string|boolean)[]>
+          } as Record<string, int|string|boolean|(int|string|boolean)[]>
         }, (err: BusinessError<void> | null) => {
             hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
             hilog.info(logDomain, tag, `HiAppEventSub01 write event: ${err?.code}`);
@@ -559,7 +643,7 @@ export default function addWatcherTest() {
           eventType: hiAppEvent.EventType.SECURITY,
           params: {
             "key_int": 100
-          } as Record<string, number|string|boolean|(number|string|boolean)[]>
+          } as Record<string, int|string|boolean|(int|string|boolean)[]>
         }, (err: BusinessError<void> | null) => {
             hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
             hilog.info(logDomain, tag, `HiAppEventSub01 write event: ${err?.code}`);
@@ -574,7 +658,7 @@ export default function addWatcherTest() {
           eventType: hiAppEvent.EventType.BEHAVIOR,
           params: {
             "key_int": 100
-          } as Record<string, number|string|boolean|(number|string|boolean)[]>
+          } as Record<string, int|string|boolean|(int|string|boolean)[]>
         }, (err: BusinessError<void> | null) => {
             hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
             hilog.info(logDomain, tag, `HiAppEventSub01 write event: ${err?.code}`);
@@ -610,7 +694,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.FAULT,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
           hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
           hilog.info(logDomain, tag, `HiAppEventSub02 write event: ${err?.code}`);
@@ -623,7 +707,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.STATISTIC,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
           hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
           hilog.info(logDomain, tag, `HiAppEventSub02 write event: ${err?.code}`);
@@ -636,7 +720,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.SECURITY,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
           hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
           hilog.info(logDomain, tag, `HiAppEventSub02 write event: ${err?.code}`);
@@ -649,7 +733,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.BEHAVIOR,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
           hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
           hilog.info(logDomain, tag, `HiAppEventSub02 write event: ${err?.code}`);
@@ -662,10 +746,10 @@ export default function addWatcherTest() {
         if (eventPkg == null) {
           expect(true).assertTrue()
         }
-        hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg.packageId);
-        hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg.row);
-        hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg.size);
-        for (const eventInfo of eventPkg.data) {
+        hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+        hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+        hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+        for (const eventInfo of eventPkg!.data) {
           hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
         }
         expect(true).assertTrue()
@@ -697,16 +781,16 @@ export default function addWatcherTest() {
         ],
         triggerCondition,
 
-        onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+        onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
           let eventPkg = holder.takeNext();
           if (eventPkg == null) {
             hilog.info(logDomain, tag, "HiAppEventSub_result6:" + eventPkg)
             return
           }
-          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg.packageId);
-          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg.row);
-          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg.size);
-          for (const eventInfo of eventPkg.data) {
+          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+          for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
           expect(true).assertTrue()
@@ -719,7 +803,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.FAULT,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
           hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
           hilog.info(logDomain, tag, `HiAppEventSub06 write event: ${err?.code}`);
@@ -732,7 +816,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.STATISTIC,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
           hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
           hilog.info(logDomain, tag, `HiAppEventSub06 write event: ${err?.code}`);
@@ -745,7 +829,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.SECURITY,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
           hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
           hilog.info(logDomain, tag, `HiAppEventSub06 write event: ${err?.code}`);
@@ -758,7 +842,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.BEHAVIOR,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
           hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
           hilog.info(logDomain, tag, `HiAppEventSub06 write event: ${err?.code}`);
@@ -799,15 +883,15 @@ export default function addWatcherTest() {
           ],
           triggerCondition,
 
-          onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+          onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
             let eventPkg = holder.takeNext();
             if (eventPkg == null) {
               expect().assertFail()
             }
-            hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg.packageId);
-            hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg.row);
-            hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg.size);
-            for (const eventInfo of eventPkg.data) {
+            hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+            hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+            hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+            for (const eventInfo of eventPkg!.data) {
               hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
             }
             expect(true).assertTrue()
@@ -824,7 +908,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.FAULT,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
           hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
           hilog.info(logDomain, tag, `HiAppEventSub07 write event: ${err?.code}`);
@@ -863,15 +947,15 @@ export default function addWatcherTest() {
           }
         ],
         triggerCondition,
-        onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+        onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
           let eventPkg = holder.takeNext();
           if (eventPkg == null) {
             expect().assertFail()
           }
-          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg.packageId);
-          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg.row);
-          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg.size);
-          for (const eventInfo of eventPkg.data) {
+          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+          for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
           expect(true).assertTrue()
@@ -885,7 +969,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.FAULT,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
           hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
           hilog.info(logDomain, tag, `HiAppEventSub08 write event: ${err?.code}`);
@@ -922,15 +1006,15 @@ export default function addWatcherTest() {
         ],
         triggerCondition,
 
-        onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+        onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
           let eventPkg = holder.takeNext();
           if (eventPkg == null) {
             expect().assertFail()
           }
-          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg.packageId);
-          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg.row);
-          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg.size);
-          for (const eventInfo of eventPkg.data) {
+          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+          for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
           expect(true).assertTrue()
@@ -944,7 +1028,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.FAULT,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
           hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
           hilog.info(logDomain, tag, `HiAppEventSub09 write event: ${err?.code}`);
@@ -957,7 +1041,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.STATISTIC,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
           hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
           hilog.info(logDomain, tag, `HiAppEventSub09 write event: ${err?.code}`);
@@ -970,7 +1054,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.SECURITY,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
           hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
           hilog.info(logDomain, tag, `HiAppEventSub09 write event: ${err?.code}`);
@@ -983,7 +1067,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.BEHAVIOR,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
           hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
           hilog.info(logDomain, tag, `HiAppEventSub09 write event: ${err?.code}`);
@@ -1020,15 +1104,15 @@ export default function addWatcherTest() {
         ],
         triggerCondition,
 
-        onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+        onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
           let eventPkg = holder.takeNext();
           if (eventPkg == null) {
             expect().assertFail()
           }
-          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg.packageId);
-          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg.row);
-          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg.size);
-          for (const eventInfo of eventPkg.data) {
+          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+          for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
           expect(true).assertTrue()
@@ -1042,7 +1126,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.FAULT,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub10 write event: ${err?.code}`);
@@ -1055,7 +1139,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.STATISTIC,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub10 write event: ${err?.code}`);
@@ -1068,7 +1152,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.SECURITY,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub10 write event: ${err?.code}`);
@@ -1081,7 +1165,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.BEHAVIOR,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub10 write event: ${err?.code}`);
@@ -1118,15 +1202,15 @@ export default function addWatcherTest() {
         ],
         triggerCondition,
 
-        onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+        onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
           let eventPkg = holder.takeNext();
           if (eventPkg == null) {
             expect().assertFail()
           }
-          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg.packageId);
-          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg.row);
-          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg.size);
-          for (const eventInfo of eventPkg.data) {
+          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+          for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
           expect(true).assertTrue()
@@ -1140,7 +1224,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.FAULT,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub11 write event: ${err?.code}`);
@@ -1153,7 +1237,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.STATISTIC,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub11 write event: ${err?.code}`);
@@ -1166,7 +1250,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.SECURITY,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub11 write event: ${err?.code}`);
@@ -1179,7 +1263,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.BEHAVIOR,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub11 write event: ${err?.code}`);
@@ -1216,15 +1300,15 @@ export default function addWatcherTest() {
         ],
         triggerCondition,
 
-        onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+        onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
           let eventPkg = holder.takeNext();
           if (eventPkg == null) {
             expect().assertFail()
           }
-          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg.packageId);
-          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg.row);
-          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg.size);
-          for (const eventInfo of eventPkg.data) {
+          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+          for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
           expect(true).assertTrue()
@@ -1238,7 +1322,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.FAULT,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub12 write event: ${err?.code}`);
@@ -1251,7 +1335,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.STATISTIC,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub12 write event: ${err?.code}`);
@@ -1264,7 +1348,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.SECURITY,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub12 write event: ${err?.code}`);
@@ -1277,7 +1361,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.BEHAVIOR,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub12 write event: ${err?.code}`);
@@ -1314,15 +1398,15 @@ export default function addWatcherTest() {
           }
         ],
         triggerCondition,
-        onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+        onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
           let eventPkg = holder.takeNext();
           if (eventPkg == null) {
             return
           }
-          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg.packageId);
-          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg.row);
-          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg.size);
-          for (const eventInfo of eventPkg.data) {
+          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+          for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
           expect(true).assertTrue()
@@ -1336,7 +1420,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.FAULT,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub13 write event: ${err?.code}`);
@@ -1349,7 +1433,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.STATISTIC,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub13 write event: ${err?.code}`);
@@ -1362,7 +1446,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.SECURITY,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub13 write event: ${err?.code}`);
@@ -1375,7 +1459,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.BEHAVIOR,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub13 write event: ${err?.code}`);
@@ -1406,17 +1490,17 @@ export default function addWatcherTest() {
         name: "watcher1",
         triggerCondition,
 
-        onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+        onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
           expect(holder != null).assertTrue();
 
           let eventPkg = holder.takeNext();
           if (eventPkg == null) {
             return;
           }
-          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg.packageId);
-          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg.row);
-          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg.size);
-          for (const eventInfo of eventPkg.data) {
+          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+          for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
           expect(true).assertTrue()
@@ -1430,7 +1514,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.FAULT,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub16 write event: ${err?.code}`);
@@ -1443,7 +1527,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.STATISTIC,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub16 write event: ${err?.code}`);
@@ -1456,7 +1540,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.SECURITY,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub16 write event: ${err?.code}`);
@@ -1488,17 +1572,17 @@ export default function addWatcherTest() {
         name: "watcher1",
         triggerCondition,
 
-        onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+        onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
           expect(holder != null).assertTrue();
 
           let eventPkg = holder.takeNext();
           if (eventPkg == null) {
             return;
           }
-          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg.packageId);
-          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg.row);
-          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg.size);
-          for (const eventInfo of eventPkg.data) {
+          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+          for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
           expect(true).assertTrue()
@@ -1512,7 +1596,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.FAULT,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub17 write event: ${err?.code}`);
@@ -1525,7 +1609,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.STATISTIC,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub17 write event: ${err?.code}`);
@@ -1538,7 +1622,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.SECURITY,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub17 write event: ${err?.code}`);
@@ -1579,15 +1663,15 @@ export default function addWatcherTest() {
           }
         ],
         triggerCondition,
-        onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+        onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
           let eventPkg = holder.takeNext();
           if (eventPkg == null) {
             expect().assertFail()
           }
-          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg.packageId);
-          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg.row);
-          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg.size);
-          for (const eventInfo of eventPkg.data) {
+          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+          for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
           expect(true).assertTrue()
@@ -1600,7 +1684,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.FAULT,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub18 write event: ${err?.code}`);
@@ -1637,15 +1721,15 @@ export default function addWatcherTest() {
           }
         ],
         triggerCondition,
-        onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+        onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
           let eventPkg = holder.takeNext();
           if (eventPkg == null) {
             expect().assertFail()
           }
-          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg.packageId);
-          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg.row);
-          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg.size);
-          for (const eventInfo of eventPkg.data) {
+          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+          for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
           expect(true).assertTrue()
@@ -1658,7 +1742,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.FAULT,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub19 write event: ${err?.code}`);
@@ -1695,15 +1779,15 @@ export default function addWatcherTest() {
           }
         ],
         triggerCondition,
-        onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+        onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
           let eventPkg = holder.takeNext();
           if (eventPkg == null) {
             expect().assertFail()
           }
-          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg.packageId);
-          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg.row);
-          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg.size);
-          for (const eventInfo of eventPkg.data) {
+          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+          for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
           expect(true).assertTrue()
@@ -1716,7 +1800,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.FAULT,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub20 write event: ${err?.code}`);
@@ -1756,15 +1840,15 @@ export default function addWatcherTest() {
           }
         ],
         triggerCondition,
-        onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+        onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
           let eventPkg = holder.takeNext();
           if (eventPkg == null) {
             expect().assertFail()
           }
-          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg.packageId);
-          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg.row);
-          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg.size);
-          for (const eventInfo of eventPkg.data) {
+          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+          for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
           expect(true).assertTrue()
@@ -1777,7 +1861,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.FAULT,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub21 write event: ${err?.code}`);
@@ -1815,15 +1899,15 @@ export default function addWatcherTest() {
           }
         ],
         triggerCondition,
-        onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+        onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
           let eventPkg = holder.takeNext();
           if (eventPkg == null) {
             expect().assertFail()
           }
-          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg.packageId);
-          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg.row);
-          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg.size);
-          for (const eventInfo of eventPkg.data) {
+          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+          for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
           expect(true).assertTrue()
@@ -1836,7 +1920,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.FAULT,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub22 write event: ${err?.code}`);
@@ -1874,15 +1958,15 @@ export default function addWatcherTest() {
           }
         ],
         triggerCondition,
-        onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+        onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
           let eventPkg = holder.takeNext();
           if (eventPkg == null) {
             expect().assertFail()
           }
-          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg.packageId);
-          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg.row);
-          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg.size);
-          for (const eventInfo of eventPkg.data) {
+          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+          for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
           expect(true).assertTrue()
@@ -1895,7 +1979,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.FAULT,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub23 write event: ${err?.code}`);
@@ -1929,15 +2013,15 @@ export default function addWatcherTest() {
             eventTypes: [hiAppEvent.EventType.FAULT]
           }
         ],
-        onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+        onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
           let eventPkg = holder.takeNext();
           if (eventPkg == null) {
             expect().assertFail()
           }
-          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg.packageId);
-          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg.row);
-          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg.size);
-          for (const eventInfo of eventPkg.data) {
+          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+          for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
           expect(true).assertTrue()
@@ -1950,7 +2034,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.FAULT,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub24 write event: ${err?.code}`);
@@ -1990,15 +2074,15 @@ export default function addWatcherTest() {
           }
         ],
         triggerCondition,
-        onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+        onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
           let eventPkg = holder.takeNext();
           if (eventPkg == null) {
             expect().assertFail()
           }
-          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg.packageId);
-          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg.row);
-          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg.size);
-          for (const eventInfo of eventPkg.data) {
+          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+          for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
           expect(true).assertTrue()
@@ -2011,7 +2095,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.FAULT,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub28 write event: ${err?.code}`);
@@ -2048,15 +2132,15 @@ export default function addWatcherTest() {
           }
         ],
         triggerCondition,
-        onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+        onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
           let eventPkg = holder.takeNext();
           if (eventPkg == null) {
             expect().assertFail()
           }
-          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg.packageId);
-          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg.row);
-          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg.size);
-          for (const eventInfo of eventPkg.data) {
+          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+          for (const eventInfo of eventPkg!.data) {
             hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
           }
           expect(true).assertTrue()
@@ -2069,7 +2153,7 @@ export default function addWatcherTest() {
         eventType: hiAppEvent.EventType.FAULT,
         params: {
           "key_int": 100
-        } as Record<string, number|string|boolean|(number|string|boolean)[]>
+        } as Record<string, int|string|boolean|(int|string|boolean)[]>
       }, (err: BusinessError<void> | null) => {
         hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
         hilog.info(logDomain, tag, `HiAppEventSub29 write event: ${err?.code}`);
@@ -2105,7 +2189,7 @@ export default function addWatcherTest() {
           eventType: hiAppEvent.EventType.FAULT,
           params: {
             "key_int": 100
-          } as Record<string, number|string|boolean|(number|string|boolean)[]>
+          } as Record<string, int|string|boolean|(int|string|boolean)[]>
         }, (err: BusinessError<void> | null) => {
           hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
           hilog.info(logDomain, tag, `HiAppEventSub25 write event: ${err?.code}`);
@@ -2142,7 +2226,7 @@ export default function addWatcherTest() {
           eventType: hiAppEvent.EventType.FAULT,
           params: {
             "key_int": 100
-          } as Record<string, number|string|boolean|(number|string|boolean)[]>
+          } as Record<string, int|string|boolean|(int|string|boolean)[]>
         }, (err: BusinessError<void> | null) => {
           hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
           hilog.info(logDomain, tag, `HiAppEventSub26 write event: ${err?.code}`);
