@@ -230,7 +230,6 @@ export default function CameraVideoOutputSuppTest() {
         if (mVideoOutput.isMirrorSupported()) {
           mVideoOutput.enableMirror(false);
           console.info(TAG, testName, `success`);
-          expect(true).assertTrue();
         } else {
           console.error(TAG, testName, '不支持镜像录像')
         }
