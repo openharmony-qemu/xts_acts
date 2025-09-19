@@ -32,7 +32,7 @@ import i18n from '@ohos.i18n'
 import deviceInfo from '@ohos.deviceInfo'
 import intl from '@ohos.intl'
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function LangTest() {
