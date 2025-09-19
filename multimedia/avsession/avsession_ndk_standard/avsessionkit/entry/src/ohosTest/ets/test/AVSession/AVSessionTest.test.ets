@@ -661,8 +661,8 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetLyric_001
-     * @tc.name     testAVSessionAVMetadataBuilderSetLyric001
+     * @tc.number   SUB_AVSession_AVMetadataBuilderSetSkipIntervals_001
+     * @tc.name     testAVMetadataBuilderSetSkipIntervals001
      * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level    Level1
      * @tc.size     MediumTest
@@ -675,13 +675,13 @@ export default function AVSessionTest() {
           expect(result).assertEqual(1);
           done()
         } catch (err) {
-          console.error("====>testAVSessionAVMetadataBuilderSetLyric001 catch err: " + err);
+          console.error("====>testAVMetadataBuilderSetSkipIntervals001 catch err: " + err);
           expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
         }
       });
 
     /**
-     * @tc.number   testAVMetadataBuilderSetSkipIntervals_002
+     * @tc.number   SUB_AVSession_AVMetadataBuilderSetSkipIntervals_002
      * @tc.name     testAVMetadataBuilderSetSkipIntervals002
      * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
      * @tc.level    Level1
@@ -695,7 +695,7 @@ export default function AVSessionTest() {
           expect(result).assertEqual(1);
           done()
         } catch (err) {
-          console.error("====>testAVSessionAVMetadataBuilderSetLyric001 catch err: " + err);
+          console.error("====>testAVMetadataBuilderSetSkipIntervals002 catch err: " + err);
           expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
         }
       });
