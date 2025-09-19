@@ -49,7 +49,7 @@ export default function webViewControllerJsunit() {
           }
         }
         let backEvent: events_emitter.InnerEvent = {
-          eventId:10,
+          eventId:154060,
           priority:events_emitter.EventPriority.LOW
         }
         console.info("start send emitKey");
@@ -65,8 +65,8 @@ export default function webViewControllerJsunit() {
      *tc.desc Get the WebId
      */
     it('testGetWebId',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitFetchCookieSync";
-      Utils.registerEvent("testGetWebId",39,154070,done);
+      emitKey="emitGetWebId";
+      Utils.registerEvent("testGetWebId",true,154070,done);
       sendEventByKey('webcomponent',10,'');
     })
   })
