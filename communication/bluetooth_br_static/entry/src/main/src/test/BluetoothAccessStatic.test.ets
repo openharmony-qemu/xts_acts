@@ -65,13 +65,13 @@ export default function bluetoothAccessTest() {
             }
         })
 
-        /*
-         * @tc.number: constantTest
-         * @tc.name: constantTest
-         * @tc.desc: Test constantTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number constantTest
+         * @tc.name constantTest
+         * @tc.desc Test constantTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("constantTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -107,13 +107,13 @@ export default function bluetoothAccessTest() {
             done();
         })
 
-        /*
-         * @tc.number: bluetoothOnOffStateTest
-         * @tc.name: bluetoothOnOffStateTest
-         * @tc.desc: Test bluetoothOnOffStateTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number bluetoothOnOffStateTest
+         * @tc.name bluetoothOnOffStateTest
+         * @tc.desc Test bluetoothOnOffStateTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("bluetoothOnOffStateTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -175,13 +175,13 @@ export default function bluetoothAccessTest() {
             done();
         })
 
-        /*
-         * @tc.number: accessConstantTest
-         * @tc.name: accessConstantTest
-         * @tc.desc: Test accessConstantTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number accessConstantTest
+         * @tc.name accessConstantTest
+         * @tc.desc Test accessConstantTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("accessConstantTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -214,13 +214,13 @@ export default function bluetoothAccessTest() {
             done();
         })
 
-        /*
-         * @tc.number: stateChangeTest
-         * @tc.name: stateChangeTest
-         * @tc.desc: Test stateChangeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number stateChangeTest
+         * @tc.name stateChangeTest
+         * @tc.desc Test stateChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("stateChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: access.BluetoothState) => void = (changeInfo: access.BluetoothState) => {
@@ -252,13 +252,13 @@ export default function bluetoothAccessTest() {
             done();
         })
 
-        /*
-         * @tc.number: stateChangeTest2
-         * @tc.name: stateChangeTest2
-         * @tc.desc: Test stateChangeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number stateChangeTest2
+         * @tc.name stateChangeTest2
+         * @tc.desc Test stateChangeTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("stateChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: access.BluetoothState) => void = (changeInfo: access.BluetoothState) => {
