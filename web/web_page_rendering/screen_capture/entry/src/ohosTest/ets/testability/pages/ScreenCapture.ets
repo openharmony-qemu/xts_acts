@@ -20,24 +20,29 @@ import { Driver, ON, On } from '@ohos.UiTest';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
+import { BusinessError } from '@kit.BasicServicesKit';
 
+let driver: Driver = Driver.create();
 @Entry
 @Component
 struct ScreenCapture {
   @State str: string = ""
   @State text: string = ''
   controller: webView.WebviewController = new webView.WebviewController();
-
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+  @State isRunJSEnd: number = -1;
+  @State isGrantEnd: number = -1;
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 152500,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(152500)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -46,6 +51,7 @@ struct ScreenCapture {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1
       }
     }
   }
@@ -61,42 +67,59 @@ struct ScreenCapture {
     Column() {
       Row() {
         Button("ScreenCapture").key('ScreenCaptureConfig').onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           console.info("key==>" + this.str)
           switch (this.str) {
             case "emitScreenCaptureConfigDeny001": {
               this.text = 'deny'
+              this.isPageEnd = -1
               this.controller.loadUrl("resource://rawfile/screenCaptureTest.html");
-              await Utils.sleep(2000);
-              this.controller.runJavaScript('getScreenStream()')
-              await Utils.sleep(2000);
-              let driver: Driver = Driver.create();
-              let buttonOne = await driver.findComponent(ON.text('允许'));
-              await buttonOne.click()
-              await Utils.sleep(2000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              this.isRunJSEnd = -1
+              this.controller.runJavaScript('getScreenStream()').then((result) => {
+                console.log('wait for JS end, result: ' + result)
+                this.isRunJSEnd = 1
+                this.isGrantEnd = -1
+              }).catch((error: BusinessError) => {
+                console.error("error: " + error);
+              })
+              await Utils.waitForExist(()=>this.isRunJSEnd, this.str+' isRunJSEnd', 1, 1000);
               break;
             }
             case "emitScreenCaptureConfigGetOrigin001": {
               this.text = 'getOrigin'
+              this.isPageEnd = -1
               this.controller.loadUrl("resource://rawfile/screenCaptureTest.html");
-              await Utils.sleep(2000);
-              this.controller.runJavaScript('getScreenStream()')
-              await Utils.sleep(2000);
-              let driver: Driver = Driver.create();
-              let buttonOne = await driver.findComponent(ON.text('允许'));
-              await buttonOne.click()
-              await Utils.sleep(2000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              this.isRunJSEnd = -1
+              this.isGrantEnd = -1
+              this.controller.runJavaScript('getScreenStream()').then((result) => {
+                console.log('wait for JS end, result: ' + result)
+                this.isRunJSEnd = 1
+              }).catch((error: BusinessError) => {
+                console.error("error: " + error);
+              })
+              await Utils.waitForExist(()=>this.isRunJSEnd, this.str+' isRunJSEnd', 1, 1000);
               break;
             }
             case "emitScreenCaptureConfigGrant001": {
               this.text = 'grant'
+              this.isPageEnd = -1
               this.controller.loadUrl("resource://rawfile/screenCaptureTest.html");
-              await Utils.sleep(2000);
-              this.controller.runJavaScript('getScreenStream()')
-              await Utils.sleep(2000);
-              let driver: Driver = Driver.create();
-              let buttonOne = await driver.findComponent(ON.text('允许'));
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              this.isRunJSEnd = -1
+              this.isGrantEnd = -1
+              this.controller.runJavaScript('getScreenStream()').then((result) => {
+                console.log('wait for JS end, result: ' + result)
+                this.isRunJSEnd = 1
+              }).catch((error: BusinessError) => {
+                console.error("error: " + error);
+              })
+              await Utils.waitForExist(()=>this.isRunJSEnd, this.str+' isRunJSEnd', 1, 1000);
+              let buttonOne = await driver.waitForComponent(ON.text('允许'),10000)
+              this.isGrantEnd = 1
               await buttonOne.click()
-              await Utils.sleep(2000);
               break;
             }
           }
@@ -110,10 +133,12 @@ struct ScreenCapture {
             switch (this.text) {
               case 'deny': {
                 event.handler.deny()
+                this.isGrantEnd = 1
                 break
               }
               case 'getOrigin': {
                 event.handler.getOrigin()
+                this.isGrantEnd = 1
                 break
               }
               case 'grant': {
@@ -121,22 +146,27 @@ struct ScreenCapture {
                 break
               }
             }
-            await Utils.sleep(2000);
+            await Utils.waitForExist(()=>this.isGrantEnd, this.str+' isGrantEnd', 1, 1000);
             this.controller.runJavaScript('getResult()', async (error, result) => {
               console.log('result == > ' + result + ' ' + error)
               if (result == '"deny"') {
-                Utils.emitEvent(true, 4201)
+                Utils.emitEvent(true, 152510)
               }
               if (result == '""') {
-                Utils.emitEvent(true, 4202)
+                Utils.emitEvent(true, 152520)
               }
               if (result == '"grant"') {
-                Utils.emitEvent(true, 4203)
+                Utils.emitEvent(true, 152530)
               }
-              await Utils.sleep(2000);
+              this.isPageEnd = -1
               this.controller.loadUrl("resource://rawfile/indexJru.html");
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
             })
           }
+        })
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
         })
     }
   }
