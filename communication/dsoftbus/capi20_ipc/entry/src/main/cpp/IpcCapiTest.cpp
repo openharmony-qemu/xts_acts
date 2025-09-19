@@ -38,29 +38,6 @@ int OnRemoteRequestStub(uint32_t code, const OHIPCParcel *data, OHIPCParcel *rep
     return 0;
 }
 
-int OnRemoteRequestStub1(uint32_t code, const OHIPCParcel *data, OHIPCParcel *reply,
-    void *userData)
-{
-    (void)userData;
-    (void)code;
-    (void)data;
-    (void)reply;
-    return 2000000;
-}
-
-static void* MemAllocator(int32_t len)
-{
-    if (len <= 0) {
-        return nullptr;
-    }
-    void *buffer = malloc(len);
-    if (buffer == nullptr) {
-        return nullptr;
-    }
-    (void)memset(buffer, 0, len);
-    return buffer;
-}
-
 void OnRemoteDestroyCallback(void *userData)
 {
     (void)userData;
