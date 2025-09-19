@@ -1,0 +1,36 @@
+{
+  "description": "Configuration for hjunit demo Tests",
+  "driver": {
+    "type": "OHJSUnitTest",
+    "test-timeout": "180000",
+    "bundle-name": "ohos.acts.game.gamecontroller",
+    "module-name": "entry_test",
+    "shell-timeout": "600000",
+    "testcase-timeout": "180000",
+    "compile-mode": "esmodule"
+  },
+  "kits": [{
+    "test-file-name": [
+      "ActsGameControllerTest.hap"
+    ],
+    "type": "AppInstallKit",
+    "cleanup-apps": true
+  }, {
+    "type": "ShellKit",
+    "run-command": [
+      "param set persist.ace.testmode.enabled 1",
+      "param set persist.sys.suspend_manager_enabled 0",
+      "reboot",
+      "power-shell wakeup",
+      "sleep 5",
+      "hilog -Q pidoff",
+      "hilog -b DEBUG",
+      "uinput -T -m 500 2680 500 1000 200",
+      "sleep 2",
+      "power-shell display -s 10"
+    ],
+    "teardown-command": [
+      "param set persist.sys.suspend_manager_enabled 1"
+    ]
+  }]
+}
