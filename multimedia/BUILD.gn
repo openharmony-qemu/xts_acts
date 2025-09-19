@@ -1,4 +1,4 @@
-# Copyright (C) 2021 Huawei Device Co., Ltd.
+# Copyright (C) 2021-2025 Huawei Device Co., Ltd.
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -30,18 +30,29 @@ group("multimedia") {
       "audio/audio_cpp_standard:ActsOpenslesNdkTest",
       "audio/audio_js_standard/AudioCapturer:audio_capturer_js_hap",
       "audio/audio_js_standard/AudioCapturerChangeInfo:audio_capturerchangeInfo_js_hap",
+      "audio/audio_js_standard/AudioCapturerChangeInfoStatic:audio_capturerchangeInfo_js_static_hap",
+      "audio/audio_js_standard/AudioCapturerStatic:audio_capturer_js_static_hap",
       "audio/audio_js_standard/AudioCapturereEnhance:audio_capturer_enhance_ets_hap",
+      "audio/audio_js_standard/AudioCapturereEnhanceStatic:audio_capturer_enhance_ets_static_hap",
       "audio/audio_js_standard/AudioEventManagement:audio_eventmanagement_js_hap",
+      "audio/audio_js_standard/AudioEventManagementStatic:audio_eventmanagement_js_static_hap",
       "audio/audio_js_standard/AudioHaptic:audio_haptic_ets_hap",
       "audio/audio_js_standard/AudioManagerEnhance:audio_manager_enhance_ets_hap",
+      "audio/audio_js_standard/AudioManagerEnhanceStatic:audio_manager_enhance_ets_static_hap",
       "audio/audio_js_standard/AudioRendererChangeInfo:audio_rendererchangeInfo_js_hap",
+      "audio/audio_js_standard/AudioRendererChangeInfoStatic:audio_rendererchangeInfo_js_static_hap",
       "audio/audio_js_standard/AudioRendererEnhance:audio_render_enhance_ets_hap",
+      "audio/audio_js_standard/AudioRendererEnhanceStatic:audio_render_enhance_ets_static_hap",
       "audio/audio_js_standard/OhAudioNdk:OhAudioNdkTest",
       "audio/audio_js_standard/audioInterrupt:audio_interrupt_js_hap",
       "audio/audio_js_standard/audioInterruptRender:audioRenderInterrupt",
       "audio/audio_js_standard/audioManager:audio_manager_js_hap",
+      "audio/audio_js_standard/audioManagerStatic:audio_manager_js_static_hap",
       "audio/audio_js_standard/audioRenderer:audio_renderer_ets_hap",
+      "audio/audio_js_standard/audioRendererMoreStatic:audio_renderer_more_ets_static_hap",
+      "audio/audio_js_standard/audioRendererStatic:audio_renderer_ets_static_hap",
       "audio/audio_js_standard/audioVoip:audio_voip_js_hap",
+      "audio/audio_js_standard/audioVoipStatic:audio_voip_js_static_hap",
       "audio/audio_js_standard/audio_ndk_test:audioDemo_ndk_hap",
       "audio/audio_js_standard/audio_c_cover_test:ActsAudioCCoverTest",
       "audio/audio_ohndk_test:ActsAudioNdkTest",
