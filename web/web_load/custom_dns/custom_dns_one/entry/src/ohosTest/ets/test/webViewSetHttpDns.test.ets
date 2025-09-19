@@ -67,7 +67,7 @@ export default function webViewSetHttpDns() {
      * @tc.name     testSetHttpDnsSecureOnlyUserDefine
      * @tc.desc     test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
      */
-    it('SetHttpDnsSecureOnlyUserDefine',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
+    it('testSetHttpDnsSecureOnlyUserDefine',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
 
       emitKey="emitSetHttpDnsSecureOnlyUserDefine";
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
@@ -80,7 +80,7 @@ export default function webViewSetHttpDns() {
      * @tc.name     testSetHttpDnsAutoExample
      * @tc.desc     test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
      */
-    it('SetHttpDnsAutoExample',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
+    it('testSetHttpDnsAutoExample',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey="emitSetHttpDnsAutoExample";
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("SetHttpDnsAutoExample", "Example Domain",340030, done);
@@ -93,7 +93,7 @@ export default function webViewSetHttpDns() {
      * @tc.name     testSetHttpDnsOffExample
      * @tc.desc     test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
      */
-    it('SetHttpDnsOffExample',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
+    it('testSetHttpDnsOffExample',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey="emitSetHttpDnsOffExample";
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("SetHttpDnsOffExample", "OpenAtom OpenHarmony",340040, done);
