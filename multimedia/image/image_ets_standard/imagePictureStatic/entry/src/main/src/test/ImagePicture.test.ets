@@ -108,7 +108,7 @@ export default function imagePicture() {
       cacheDir = Hypium.get('cacheDir') as string | undefined;
       context = Hypium.get('context') as common.UIAbilityContext;
       isSupportHEIFDecode =
-        image.createImageSource(filesDir + '/' + "test.jpg").supportedFormats.includes("image/heic");
+        image.createImageSource(filesDir + '/' + "test.jpg")!.supportedFormats.includes("image/heic");
       isSupportHEICEncode =
         image.createImagePacker().supportedFormats.includes("image/heic");
 
@@ -134,8 +134,8 @@ export default function imagePicture() {
       return bufferRead;
     }
 
-    const getImageSource = async (fileName: string, type?: string): Promise<image.ImageSource> => {
-      let imageSourceApi: image.ImageSource;
+    const getImageSource = async (fileName: string, type?: string): Promise<image.ImageSource | undefined> => {
+      let imageSourceApi: image.ImageSource | undefined;
       if (type === "buffer") {
         const buffer = getBuffer(fileName);
         imageSourceApi = image.createImageSource(buffer);
@@ -148,7 +148,7 @@ export default function imagePicture() {
         imageSourceApi = image.createImageSource(rawFileDescriptor);
       } else if (type === "incremental") {
         const picBuffer = getBuffer(fileName);
-        imageSourceApi = image.CreateIncrementalSource(picBuffer);
+        imageSourceApi = image.createIncrementalSource(picBuffer);
       } else {
         const filePath = filesDir + "/" + fileName;
         const file = fs.openSync(filePath);
@@ -166,9 +166,13 @@ export default function imagePicture() {
       return auxiliaryPicture;
     }
 
-    const createPictureImageSourcePic = async (fileName: string, type: string, auxType?: image.AuxiliaryPictureType): Promise<image.Picture> => {
-      let imageSourceApi: image.ImageSource = await getImageSource(fileName, type);
-      let picture: image.Picture;
+    const createPictureImageSourcePic = async (fileName: string, type: string, auxType?: image.AuxiliaryPictureType): Promise<image.Picture | undefined> => {
+      let imageSourceApi = await getImageSource(fileName, type);
+      if (imageSourceApi == undefined) {
+        hilog.info(0x0000, "imagePicture", 'createPictureImageSourcePic failed! imageSourceApi is undefined!');
+        return undefined;
+      }
+      let picture: image.Picture | undefined;
       if (auxType) {
         let decodingOptForPicture: image.DecodingOptionsForPicture;
         decodingOptForPicture = {desiredAuxiliaryPictures: [auxType]};
@@ -183,8 +187,12 @@ export default function imagePicture() {
     const createPicImageSourceWithAuxPics = async (
       fileName: string,
       type: string
-    ): Promise<image.Picture> => {
-      let picture: image.Picture = await createPictureImageSourcePic(fileName, type);
+    ): Promise<image.Picture | undefined> => {
+      let picture = await createPictureImageSourcePic(fileName, type);
+      if (picture == undefined) {
+        hilog.info(0x0000, "imagePicture", 'createPicImageSourceWithAuxPics failed! picture is undefined!');
+        return undefined;
+      }
       let gainMapAuxiliaryPicture = await createAuxPicByType(GAINMAP);
       picture.setAuxiliaryPicture(GAINMAP, gainMapAuxiliaryPicture);
 
@@ -207,8 +215,12 @@ export default function imagePicture() {
       fileName: string,
       type: string,
       pixelFormat: image.PixelMapFormat
-    ): Promise<image.PixelMap> => {
-      let imageSourceApi: image.ImageSource = await getImageSource(fileName, type);
+    ): Promise<image.PixelMap | undefined> => {
+      let imageSourceApi = await getImageSource(fileName, type);
+      if (imageSourceApi == undefined) {
+        hilog.info(0x0000, "imagePicture", 'myGetPixelMap failed! imageSourceApi is undefined!');
+        return undefined;
+      }
       let DecodingOptions: image.DecodingOptions = {
         desiredPixelFormat: pixelFormat
       };
@@ -217,9 +229,13 @@ export default function imagePicture() {
       return pixelMap;
     }
 
-    const createPictureOnlyMainPic = async (fileName: string, type: string, pixelFormat?: image.PixelMapFormat): Promise<image.Picture> => {
-      let imageSourceApi: image.ImageSource = await getImageSource(fileName, type);
-      let pixelMap: image.PixelMap;
+    const createPictureOnlyMainPic = async (fileName: string, type: string, pixelFormat?: image.PixelMapFormat): Promise<image.Picture | undefined> => {
+      let imageSourceApi = await getImageSource(fileName, type);
+      if (imageSourceApi == undefined) {
+        hilog.info(0x0000, "imagePicture", 'createPictureOnlyMainPic failed! imageSourceApi is undefined!');
+        return undefined;
+      }
+      let pixelMap: image.PixelMap | undefined;
       if (pixelFormat != undefined) {
         let DecodingOptions: image.DecodingOptions = {
           desiredPixelFormat: pixelFormat
@@ -228,7 +244,11 @@ export default function imagePicture() {
       } else {
         pixelMap = await imageSourceApi.createPixelMap();
       }
-      let picture: image.Picture = image.createPicture(pixelMap);
+      if (pixelMap == undefined) {
+        hilog.info(0x0000, "imagePicture", 'createPictureOnlyMainPic failed! pixelMap is undefined!');
+        return undefined;
+      }
+      let picture = image.createPicture(pixelMap!);
       await imageSourceApi.release();
       await pixelMap.release();
       return picture;
@@ -337,31 +357,37 @@ export default function imagePicture() {
       typeList: Array<image.AuxiliaryPictureType>,
       undefinedTypeList: Array<image.AuxiliaryPictureType>
     ) => {
-      let picture: image.Picture;
+      let picture: image.Picture | undefined;
       let imageSource = await getImageSource(fileName, type);
-      let decodingOptForPicture: image.DecodingOptionsForPicture;
-      if (type == "buffer") {
-        picture = await imageSource.createPicture();
-      } else if (type == "uri") {
-        decodingOptForPicture = {desiredAuxiliaryPictures: [GAINMAP]};
-        picture = await imageSource.createPicture(decodingOptForPicture);
-      } else {
-        decodingOptForPicture = {desiredAuxiliaryPictures: [GAINMAP, DEPTH_MAP,
-          UNREFOCUS_MAP, LINEAR_MAP, FRAGMENT_MAP]};
-        picture = await imageSource.createPicture(decodingOptForPicture);
-      }
-
-      if (picture == undefined) {
-        logger.log("create Pictrue failed.");
+      if (imageSource == undefined) {
+        logger.log("testImageSourceCreatePicture failed. getImageSource failed. imageSource is undefined!");
         expect(false).assertTrue();
         done();
       } else {
-        let ret = checkPicture(picture, typeList, undefinedTypeList);
-        picture.release();
-        await imageSource.release();
-        logger.log("ret = " + ret)
-        expect(ret).assertTrue();
-        done();
+        let decodingOptForPicture: image.DecodingOptionsForPicture;
+        if (type == "buffer") {
+          picture = await imageSource.createPicture();
+        } else if (type == "uri") {
+          decodingOptForPicture = {desiredAuxiliaryPictures: [GAINMAP]};
+          picture = await imageSource.createPicture(decodingOptForPicture);
+        } else {
+          decodingOptForPicture = {desiredAuxiliaryPictures: [GAINMAP, DEPTH_MAP,
+            UNREFOCUS_MAP, LINEAR_MAP, FRAGMENT_MAP]};
+          picture = await imageSource.createPicture(decodingOptForPicture);
+        }
+  
+        if (picture == undefined) {
+          logger.log("create Pictrue failed.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let ret = checkPicture(picture!, typeList, undefinedTypeList);
+          picture.release();
+          await imageSource.release();
+          logger.log("ret = " + ret)
+          expect(ret).assertTrue();
+          done();
+        }
       }
     }
 
@@ -372,10 +398,9 @@ export default function imagePicture() {
       type: string,
       typeList: Array<image.AuxiliaryPictureType>
     ) => {
-      let picture: image.Picture;
+      let picture: image.Picture | undefined;
       let result = true;
       picture = await createPicImageSourceWithAuxPics(fileName, type);
-
       if (picture == undefined) {
         logger.log("create Pictrue failed.");
         expect(false).assertTrue();
@@ -397,31 +422,49 @@ export default function imagePicture() {
       fileName: string,
       type: string,
       apiName: String
-    ) => {
+    ): Promise<void> => {
       let imageInfo: image.ImageInfo|undefined;
-      let picture: image.Picture;
+      let picture: image.Picture | undefined;
       picture = await createPictureImageSourcePic(fileName, type);
-      let imageSourceApi: image.ImageSource = await getImageSource(fileName, type);
-      let pixelMap = await imageSourceApi.createPixelMap();
-      await imageSourceApi.release();
-
       if (picture == undefined) {
-        logger.log("create Pictrue failed.");
+        logger.log("testPictureApi failed. create Picture failed.");
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
+      let imageSourceApi = await getImageSource(fileName, type);
+      if (imageSourceApi == undefined) {
+        logger.log("testPictureApi failed. getImageSource failed. imageSourceApi is undefined!");
         expect(false).assertTrue();
         done();
       } else {
+        let pixelMap = await imageSourceApi.createPixelMap();
+        await imageSourceApi.release();
+        if (pixelMap == undefined) {
+          logger.log("testPictureApi failed. create PixelMap failed.");
+          picture.release();
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
+
+        let newPixelMap: image.PixelMap | undefined | null;
         if (apiName == "mainPixelMap") {
-          let mainPixelMap = picture.getMainPixelmap();
-          imageInfo = mainPixelMap.getImageInfoSync();
-          await mainPixelMap.release();
+          newPixelMap = picture.getMainPixelmap();
         } else if (apiName == "hdrComposedPixelmap") {
-          let hdrPixelMap = await picture.getHdrComposedPixelmap();
-          imageInfo = hdrPixelMap.getImageInfoSync();
-          await hdrPixelMap.release();
+          newPixelMap = await picture.getHdrComposedPixelmap();
         } else {
-          let gainMapPixelMap = picture.getGainmapPixelmap();
-          imageInfo = gainMapPixelMap?.getImageInfoSync();
-          await gainMapPixelMap!.release();
+          newPixelMap = picture.getGainmapPixelmap();
+        }
+        if (newPixelMap == undefined || newPixelMap == null) {
+          logger.log("newPixelMap is undefined. Because of apiName: " + apiName);
+          picture.release();
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        } else {
+          imageInfo = newPixelMap.getImageInfoSync();
+          await newPixelMap.release();
         }
         picture.release();
 
@@ -450,9 +493,8 @@ export default function imagePicture() {
       type: string,
       apiName: String
     ) => {
-      let picture: image.Picture;
+      let picture: image.Picture | undefined;
       picture = await createPictureImageSourcePic(fileName, type);
-
       if (picture == undefined) {
         logger.log("create Pictrue failed.");
         expect(false).assertTrue();
@@ -462,12 +504,13 @@ export default function imagePicture() {
           try {
             await picture.getHdrComposedPixelmap();
             expect(false).assertTrue();
-            picture.release();
             done();
           } catch (error: BusinessError) {
             logger.log(JSON.stringify(error) + ", error code: " + error.code);
             expect(error.code == Unsupported_operation_CODE).assertTrue();
             done();
+          } finally {
+            picture.release();
           }
         } else {
           let gainMapPixelMap = picture.getGainmapPixelmap();
@@ -510,27 +553,27 @@ export default function imagePicture() {
       } else if (type == "FRAGMENT_MAP" && metadataType != undefined) {
         let marshallingAuxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
         let unmarshallingAuxPicture = ret.picture_.getAuxiliaryPicture(FRAGMENT_MAP);
-        let marshallingMetadata: image.Metadata = await marshallingAuxPicture!.getMetadata(metadataType);
-        let unmarshallingMetadata: image.Metadata = await unmarshallingAuxPicture!.getMetadata(metadataType);
-        let marshallingProperties = await marshallingMetadata.getAllProperties();
-        let unmarshallingProperties = await unmarshallingMetadata.getAllProperties();
+        let marshallingMetadata = await marshallingAuxPicture!.getMetadata(metadataType);
+        let unmarshallingMetadata = await unmarshallingAuxPicture!.getMetadata(metadataType);
+        let marshallingProperties = await marshallingMetadata!.getAllProperties();
+        let unmarshallingProperties = await unmarshallingMetadata!.getAllProperties();
         logger.log(`marshalling properties: ` + JSON.stringify(marshallingProperties));
         logger.log(`unmarshalling properties: ` + JSON.stringify(unmarshallingProperties));
         expect(JSON.stringify(marshallingProperties) == JSON.stringify(unmarshallingProperties)).assertTrue();
         done();
       } else if (metadataType != undefined) {
-        let marshallingMainPixelMap: image.PixelMap = picture.getMainPixelmap();
-        let unmarshallingMainPixelMap: image.PixelMap = ret.picture_.getMainPixelmap();
-        let marshallingImageInfo = marshallingMainPixelMap.getImageInfoSync();
-        let unmarshallingImageInfo = unmarshallingMainPixelMap.getImageInfoSync()
+        let marshallingMainPixelMap = picture.getMainPixelmap();
+        let unmarshallingMainPixelMap = ret.picture_.getMainPixelmap();
+        let marshallingImageInfo = marshallingMainPixelMap!.getImageInfoSync();
+        let unmarshallingImageInfo = unmarshallingMainPixelMap!.getImageInfoSync()
         logger.log(`marshallingMain imageInfoSync: ` + JSON.stringify(marshallingImageInfo));
         logger.log(`unmarshallingMain imageInfoSync: ` + JSON.stringify(unmarshallingImageInfo));
         expect(JSON.stringify(marshallingImageInfo) == JSON.stringify(unmarshallingImageInfo)).assertTrue();
 
         let marshallingMetadata = await picture.getMetadata(metadataType);
         let unmarshallingMetadata = await ret.picture_.getMetadata(metadataType);
-        let marshallingProperties = await marshallingMetadata.getAllProperties();
-        let unmarshallingProperties = await unmarshallingMetadata.getAllProperties();
+        let marshallingProperties = await marshallingMetadata!.getAllProperties();
+        let unmarshallingProperties = await unmarshallingMetadata!.getAllProperties();
         logger.log(`marshalling properties: ` + JSON.stringify(marshallingProperties));
         logger.log(`unmarshalling properties: ` + JSON.stringify(unmarshallingProperties));
         expect(JSON.stringify(marshallingProperties) == JSON.stringify(unmarshallingProperties)).assertTrue();
@@ -545,15 +588,15 @@ export default function imagePicture() {
     ) => {
       //getAllProperties
       let properties = await metadata.getAllProperties();
-      logger.printRecord(properties, "properties, getAllProperties");
-      let propertiesGotKey = Object.keys(properties);
+      logger.printRecord(properties!, "properties, getAllProperties");
+      let propertiesGotKey = Object.keys(properties!);
       //clone Metadata
       let clonedData = await metadata.clone();
       logger.log("clone metadata success");
       //getAllProperties
-      let clonedProperties = await clonedData.getAllProperties();
-      logger.printRecord(properties, "clonedProperties, getAllProperties");
-      let propertiesClonedKey = Object.keys(clonedProperties);
+      let clonedProperties = await clonedData!.getAllProperties();
+      logger.printRecord(clonedProperties!, "clonedProperties, getAllProperties");
+      let propertiesClonedKey = Object.keys(clonedProperties!);
       if (propertiesGotKey.length !== propertiesClonedKey.length) {
         expect(false).assertTrue();
         done();
@@ -564,10 +607,10 @@ export default function imagePicture() {
           expect(false).assertTrue();
           done();
         }
-        if (properties[key] !== clonedProperties[key]) {
+        if (properties![key] !== clonedProperties![key]) {
           logger.log(
-            `cloned data has different value of: ${key}: ${properties[key]}
-              ${clonedProperties[key]}`
+            `cloned data has different value of: ${key}: ${properties![key]}
+              ${clonedProperties![key]}`
           );
           expect(false).assertTrue();
           done();
@@ -591,11 +634,11 @@ export default function imagePicture() {
           let metadata = await picture.getMetadata(metadataType);
           logger.log(`getMetadata success: ` + metadata);
           //setProperties
-          await metadata.setProperties(properties);
+          await metadata!.setProperties(properties);
           logger.log(`setProperties success `);
 
           //setMetadata
-          await picture.setMetadata(metadataType, metadata);
+          await picture.setMetadata(metadataType, metadata!);
           logger.log(`setMetadata success `);
           //getMetadata
           let dataAfterSet = await picture.getMetadata(metadataType);
@@ -605,14 +648,14 @@ export default function imagePicture() {
           for (const key of properties) {
             getProperties.push(key[0]);
           }
-          let data = await dataAfterSet.getProperties(getProperties);
+          let data = await dataAfterSet!.getProperties(getProperties);
           logger.log(`getProperties(data) success: ` + JSON.stringify(data));
           getProperties.forEach((key) => {
             logger.log(`getProperty of key: ` + key);
-            expect(properties[key] == data[key]).assertTrue();
+            expect(properties![key] == data![key]).assertTrue();
           });
           picture.release();
-          await testMetadataClone(done, logger, metadata);
+          await testMetadataClone(done, logger, metadata!);
           done();
         }
       } catch (error: BusinessError) {
@@ -636,11 +679,11 @@ export default function imagePicture() {
           let metadata = await picture.getMetadata(metadataType);
           logger.log(`getMetadata success: ` + metadata);
           //setProperties
-          await metadata.setProperties(properties);
+          await metadata!.setProperties(properties);
           logger.log(`setProperties success `);
 
           //setMetadata
-          await picture.setMetadata(metadataType, metadata);
+          await picture.setMetadata(metadataType, metadata!);
           logger.log(`setMetadata success `);
           //getMetadata
           let dataAfterSet = await picture.getMetadata(metadataType);
@@ -650,14 +693,14 @@ export default function imagePicture() {
           for (const key of properties) {
             getProperties.push(key[0]);
           }
-          let data = await dataAfterSet.getProperties(getProperties);
+          let data = await dataAfterSet!.getProperties(getProperties);
           logger.log(`getProperties(data) success: ` + JSON.stringify(data));
           getProperties.forEach((key) => {
             logger.log(`getProperty of key: ` + key);
-            expect(properties[key] == data[key]).assertTrue();
+            expect(properties![key] == data![key]).assertTrue();
           });
           picture.release();
-          await testMetadataClone(done, logger, metadata);
+          await testMetadataClone(done, logger, metadata!);
           done();
         }
       } catch (error: BusinessError) {
@@ -677,16 +720,16 @@ export default function imagePicture() {
 
       //readPixelsToBuffer
       let beforeArrayBuffer = await auxiliaryPicture!.readPixelsToBuffer();
-      logger.log(`read beforeArrayBuffer success: ` + beforeArrayBuffer.byteLength);
+      logger.log(`read beforeArrayBuffer success: ` + beforeArrayBuffer!.byteLength);
       //writePixelsFromBuffer
-      await auxiliaryPicture!.writePixelsFromBuffer(beforeArrayBuffer);
+      await auxiliaryPicture!.writePixelsFromBuffer(beforeArrayBuffer!);
       logger.log(`writePixelsFromBuffer success `);
       //readPixelsToBuffer
       let afterArrayBuffer = await auxiliaryPicture!.readPixelsToBuffer();
       auxiliaryPicture!.release();
       picture.release();
-      logger.log(`readPixelsToBuffer success: ` + afterArrayBuffer.byteLength);
-      expect(beforeArrayBuffer.byteLength == afterArrayBuffer.byteLength).assertTrue();
+      logger.log(`readPixelsToBuffer success: ` + afterArrayBuffer!.byteLength);
+      expect(beforeArrayBuffer!.byteLength == afterArrayBuffer!.byteLength).assertTrue();
       done();
     }
 
@@ -701,7 +744,7 @@ export default function imagePicture() {
       let beforeMetadata = await auxiliaryPicture!.getMetadata(FRAGMENT_METADATA);
       logger.log(`AuxiliaryPicture getMetadata success: ` + JSON.stringify(beforeMetadata));
 
-      await auxiliaryPicture!.setMetadata(FRAGMENT_METADATA, beforeMetadata);
+      await auxiliaryPicture!.setMetadata(FRAGMENT_METADATA, beforeMetadata!);
       logger.log(`AuxiliaryPicture setMetadata success `);
       let afterMetadata = await auxiliaryPicture!.getMetadata(FRAGMENT_METADATA);
       logger.log(`AuxiliaryPicture getMetadata success: ` + JSON.stringify(afterMetadata));
@@ -732,11 +775,11 @@ export default function imagePicture() {
         let afterAuxInfo = auxiliaryPicture!.getAuxiliaryPictureInfo();
         logger.log(`get AuxiliaryPictureInfo success: ` + JSON.stringify(afterAuxInfo));
 
-        expect(JSON.stringify(afterAuxInfo.auxiliaryPictureType) == JSON.stringify(originAuxInfo.auxiliaryPictureType)).assertTrue();
-        expect(JSON.stringify(afterAuxInfo.size.width) == JSON.stringify(originAuxInfo.size.width)).assertTrue();
-        expect(JSON.stringify(afterAuxInfo.size.height) == JSON.stringify(originAuxInfo.size.height)).assertTrue();
-        expect(JSON.stringify(afterAuxInfo.pixelFormat) == JSON.stringify(originAuxInfo.pixelFormat)).assertTrue();
-        expect(JSON.stringify(afterAuxInfo.rowStride) == JSON.stringify(originAuxInfo.rowStride)).assertTrue();
+        expect(JSON.stringify(afterAuxInfo!.auxiliaryPictureType) == JSON.stringify(originAuxInfo.auxiliaryPictureType)).assertTrue();
+        expect(JSON.stringify(afterAuxInfo!.size.width) == JSON.stringify(originAuxInfo.size.width)).assertTrue();
+        expect(JSON.stringify(afterAuxInfo!.size.height) == JSON.stringify(originAuxInfo.size.height)).assertTrue();
+        expect(JSON.stringify(afterAuxInfo!.pixelFormat) == JSON.stringify(originAuxInfo.pixelFormat)).assertTrue();
+        expect(JSON.stringify(afterAuxInfo!.rowStride) == JSON.stringify(originAuxInfo.rowStride)).assertTrue();
 
         //release
         auxiliaryPicture!.release();
@@ -760,15 +803,19 @@ export default function imagePicture() {
       originPicture: image.Picture,
       type?: image.AuxiliaryPictureType
     ): Promise<boolean> => {
-      let decodeProperties: Record<string, string | null>;
-      let originProperties: Record<string, string | null>;
+      let decodeProperties: Record<string, string | null> | undefined;
+      let originProperties: Record<string, string | null> | undefined;
       let picture = await imageSource.createPicture();
+      if (picture == undefined) {
+        logger.log("checkPackResult failed. createPicture failed. picture is undefined.");
+        return false;
+      }
       let metadata: image.Metadata | undefined = undefined;
       if(packOpts.needsPackProperties == true) {
         metadata = await picture.getMetadata(EXIF_METADATA);
-        decodeProperties = await metadata.getAllProperties();
+        decodeProperties = await metadata!.getAllProperties();
         let originMetadata = await originPicture.getMetadata(EXIF_METADATA);
-        originProperties = await originMetadata.getAllProperties();
+        originProperties = await originMetadata!.getAllProperties();
         logger.log(`originProperties: ${JSON.stringify(originProperties)}`);
       }
       let auxType: image.AuxiliaryPictureType | undefined;
@@ -777,6 +824,10 @@ export default function imagePicture() {
       }
 
       let imageInfo = imageSource.getImageInfoSync();
+      if (imageInfo == undefined) {
+        logger.log("checkPackResult failed. getImageInfoSync failed. imageInfo is undefined.");
+        return false;
+      }
       logger.log(`isHdr: ${imageInfo.isHdr}, mimeType: ${imageInfo.mimeType}, auxType: ${auxType}`);
       await imageSource.release();
       if (flag == "picture") {
@@ -823,12 +874,20 @@ export default function imagePicture() {
         if (packType === "packing") {
           try {
             let data: ArrayBuffer = await imagePackerApi.packing(picture, packOpts);
-            let imageSource: image.ImageSource = image.createImageSource(data);
-            let ret = await checkPackResult(logger, imageSource, flag, packOpts, picture, type);
-            picture.release();
-            await imagePackerApi.release();
-            expect(ret).assertTrue();
-            done();
+            let imageSource = image.createImageSource(data);
+            if (imageSource == undefined) {
+              logger.log("testPackPicture failed. createImageSource failed. imageSource is undefined.");
+              picture.release();
+              await imagePackerApi.release();
+              expect(false).assertTrue();
+              done();
+            } else {
+              let ret = await checkPackResult(logger, imageSource!, flag, packOpts, picture, type);
+              picture.release();
+              await imagePackerApi.release();
+              expect(ret).assertTrue();
+              done(); 
+            }
           } catch (error: BusinessError) {
             logger.log(`packing picture to buffer failed: ${error}, error code: ${JSON.stringify(error.code)}`);
             expect(false).assertTrue();
@@ -837,13 +896,21 @@ export default function imagePicture() {
         } else {
           try {
             await imagePackerApi.packToFile(picture, fdNum!!, packOpts);
-            let imageSource: image.ImageSource = image.createImageSource(fdNum!!);
-            let ret = await checkPackResult(logger, imageSource, flag, packOpts, picture, type);
-            picture.release();
-            await imagePackerApi.release();
-            fs.closeSync(fdNum!!);
-            expect(ret).assertTrue();
-            done();
+            let imageSource = image.createImageSource(fdNum!!);
+            if (imageSource == undefined) {
+              logger.log("testPackPicture failed. createImageSource failed. imageSource is undefined.");
+              picture.release();
+              await imagePackerApi.release();
+              expect(false).assertTrue();
+              done();
+            } else {
+              let ret = await checkPackResult(logger, imageSource, flag, packOpts, picture, type);
+              picture.release();
+              await imagePackerApi.release();
+              fs.closeSync(fdNum!!);
+              expect(ret).assertTrue();
+              done();
+            }
           } catch (error: BusinessError) {
             logger.log(`packToFile picture to buffer failed: ${error}, error code: ${JSON.stringify(error.code)}`);
             expect(false).assertTrue();
@@ -852,6 +919,57 @@ export default function imagePicture() {
         }
       }
     }
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_JPEG_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_JPEG_STATIC_0100
+     * @tc.desc        test ImageSource createPicture
+     *                 1.create picture object by decode image source
+     *                 2.test auxiliaryPicture have gain map type
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_JPEG_STATIC_0100");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        expect(true).assertTrue();
+        done();
+      } else {
+        let typeList = [GAINMAP]; 
+        let undefinedTypeList = [DEPTH_MAP, UNREFOCUS_MAP, LINEAR_MAP, FRAGMENT_MAP];
+        testImageSourceCreatePicture(done, logger, "JPEGISOSingle.jpg", "buffer", typeList, undefinedTypeList);
+      }
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_JPEG_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_JPEG_STATIC_0100
+     * @tc.desc        test Image createPicture
+     *                 1.create picture object by main pixelMap
+     *                 2.test haven't auxiliaryPicture
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_JPEG_STATIC_0100");
+      let undefinedTypeList = [GAINMAP, DEPTH_MAP, UNREFOCUS_MAP, LINEAR_MAP, FRAGMENT_MAP];
+      let picture = await createPictureOnlyMainPic("testExif.jpg", "fd");
+      if (picture == undefined) {
+        logger.log("createPictureImageSourcePic failed. picture is undefined.");
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
+      for (let i = 0; i < undefinedTypeList.length; i++) {
+        let ret = picture.getAuxiliaryPicture(undefinedTypeList[i]) == undefined;
+        logger.log("ret = " + ret)
+        expect(ret).assertTrue();
+      }
+      done();
+    })
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0100
@@ -876,8 +994,14 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("HEIFISOMultiChannelBaseColor0512V12.heic", "fd");
-        //readPixelsToBuffer && writePixelsFromBuffer
-        await testReadPixelsToBuffer(done, logger, picture, GAINMAP);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          //readPixelsToBuffer && writePixelsFromBuffer
+          await testReadPixelsToBuffer(done, logger, picture!, GAINMAP);
+        }
       };
     });
 
@@ -904,8 +1028,14 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
-        //readPixelsToBuffer && writePixelsFromBuffer
-        await testReadPixelsToBuffer(done, logger, picture, DEPTH_MAP);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          //readPixelsToBuffer && writePixelsFromBuffer
+          await testReadPixelsToBuffer(done, logger, picture, DEPTH_MAP);
+        }
       };
     });
 
@@ -932,8 +1062,14 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
-        //readPixelsToBuffer && writePixelsFromBuffer
-        await testReadPixelsToBuffer(done, logger, picture, UNREFOCUS_MAP);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          //readPixelsToBuffer && writePixelsFromBuffer
+          await testReadPixelsToBuffer(done, logger, picture, UNREFOCUS_MAP);
+        }
       };
     });
 
@@ -960,8 +1096,14 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
-        //readPixelsToBuffer && writePixelsFromBuffer
-        await testReadPixelsToBuffer(done, logger, picture, LINEAR_MAP);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          //readPixelsToBuffer && writePixelsFromBuffer
+          await testReadPixelsToBuffer(done, logger, picture, LINEAR_MAP);
+        }
       };
     });
 
@@ -988,8 +1130,14 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
-        //readPixelsToBuffer && writePixelsFromBuffer
-        await testReadPixelsToBuffer(done, logger, picture, FRAGMENT_MAP);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          //readPixelsToBuffer && writePixelsFromBuffer
+          await testReadPixelsToBuffer(done, logger, picture, FRAGMENT_MAP);
+        }
       };
     });
 
@@ -1016,8 +1164,14 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JPEGISOSingle.jpg", "fd");
-        //readPixelsToBuffer && writePixelsFromBuffer
-        await testReadPixelsToBuffer(done, logger, picture, GAINMAP);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          //readPixelsToBuffer && writePixelsFromBuffer
+          await testReadPixelsToBuffer(done, logger, picture, GAINMAP);
+        }
       }
     });
 
@@ -1042,9 +1196,15 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
-        //readPixelsToBuffer && writePixelsFromBuffer
-        await testReadPixelsToBuffer(done, logger, picture, DEPTH_MAP);
-        await sleep(500);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          //readPixelsToBuffer && writePixelsFromBuffer
+          await testReadPixelsToBuffer(done, logger, picture, DEPTH_MAP);
+          await sleep(500);
+        }
       }
     });
 
@@ -1069,9 +1229,15 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
-        //readPixelsToBuffer && writePixelsFromBuffer
-        await testReadPixelsToBuffer(done, logger, picture, UNREFOCUS_MAP);
-        await sleep(500);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          //readPixelsToBuffer && writePixelsFromBuffer
+          await testReadPixelsToBuffer(done, logger, picture, UNREFOCUS_MAP);
+          await sleep(500);
+        }
       }
     });
 
@@ -1096,9 +1262,15 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
-        //readPixelsToBuffer && writePixelsFromBuffer
-        await testReadPixelsToBuffer(done, logger, picture, LINEAR_MAP);
-        await sleep(500);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          //readPixelsToBuffer && writePixelsFromBuffer
+          await testReadPixelsToBuffer(done, logger, picture, LINEAR_MAP);
+          await sleep(500);
+        }
       }
     });
 
@@ -1123,8 +1295,14 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd");
-        //readPixelsToBuffer && writePixelsFromBuffer
-        await testReadPixelsToBuffer(done, logger, picture, FRAGMENT_MAP);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          //readPixelsToBuffer && writePixelsFromBuffer
+          await testReadPixelsToBuffer(done, logger, picture, FRAGMENT_MAP);
+        }
       }
     });
 
@@ -1197,6 +1375,21 @@ export default function imagePicture() {
     });
 
     /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_JPEG_ERROR_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_JPEG_ERROR_STATIC_0100
+     * @tc.desc        test picture getGainmapPixelmap error
+     *                 1.create picture object by decode image source
+     *                 2.test get gainmap pixelMap info failed
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_JPEG_ERROR_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_JPEG_ERROR_STATIC_0100");
+        testPictureApiError(done, logger, "testExif.jpg", "buffer", "gainMapPixelMap");
+    });
+
+    /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0100
      * @tc.name      : SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0100
      * @tc.desc      : test picture marshalling createPictureFromParcel
@@ -1215,7 +1408,13 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("testExif.jpg", "fd");
-        await testMarshalling(done, logger, picture, "picture", EXIF_METADATA);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          await testMarshalling(done, logger, picture, "picture", EXIF_METADATA);
+        }
       }
     });
 
@@ -1238,7 +1437,13 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JPEGISOSingle.jpg", "fd");
-        await testMarshalling(done, logger, picture, "GAINMAP");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          await testMarshalling(done, logger, picture, "GAINMAP");
+        }
       }
     });
 
@@ -1261,7 +1466,13 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd");
-        await testMarshalling(done, logger, picture, "FRAGMENT_MAP", FRAGMENT_METADATA);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          await testMarshalling(done, logger, picture, "FRAGMENT_MAP", FRAGMENT_METADATA);
+        }
       }
     });
 
@@ -1284,7 +1495,13 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("0801_sdr2.heic", "fd");
-        await testMarshalling(done, logger, picture, "picture", EXIF_METADATA);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          await testMarshalling(done, logger, picture, "picture", EXIF_METADATA);
+        }
       }
     });
 
@@ -1307,7 +1524,13 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("HEIFISOMultiChannelBaseColor0512V12.heic", "fd");
-        await testMarshalling(done, logger, picture, "GAINMAP");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          await testMarshalling(done, logger, picture, "GAINMAP");
+        }
       }
     });
 
@@ -1330,7 +1553,13 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
-        await testMarshalling(done, logger, picture, "FRAGMENT_MAP", FRAGMENT_METADATA);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          await testMarshalling(done, logger, picture, "FRAGMENT_MAP", FRAGMENT_METADATA);
+        }
       }
     });
 
@@ -1357,7 +1586,13 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd");
-        await testAuxMetadata(done, logger, picture, FRAGMENT_MAP);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          await testAuxMetadata(done, logger, picture, FRAGMENT_MAP);
+        }
       };
     });
 
@@ -1384,16 +1619,22 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JPEGISOSingle.jpg", "fd");
-        let size: image.Size ={ width: 1536, height: 2048 };
-        let auxiliaryPictureInfoOrigin: image.AuxiliaryPictureInfo = {
-          auxiliaryPictureType: GAINMAP,
-          size: size,
-          rowStride: 10,
-          pixelFormat: image.PixelMapFormat.RGB_565,
-          colorSpace: colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998)
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let size: image.Size ={ width: 1536, height: 2048 };
+          let auxiliaryPictureInfoOrigin: image.AuxiliaryPictureInfo = {
+            auxiliaryPictureType: GAINMAP,
+            size: size,
+            rowStride: 10,
+            pixelFormat: image.PixelMapFormat.RGB_565,
+            colorSpace: colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998)
+          }
+          let typeList = [GAINMAP] as Array<image.AuxiliaryPictureType>;
+          await testAuxiliaryPictureInfo(done, logger, picture, auxiliaryPictureInfoOrigin, typeList);
         }
-        let typeList = [GAINMAP] as Array<image.AuxiliaryPictureType>;
-        await testAuxiliaryPictureInfo(done, logger, picture, auxiliaryPictureInfoOrigin, typeList);
       }
     });
 
@@ -1420,7 +1661,13 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("testExif.jpg", "fd");
-        await testPictureMetadataProperty(done, logger, exifRecords, picture, EXIF_METADATA);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          await testPictureMetadataProperty(done, logger, exifRecords, picture, EXIF_METADATA);
+        }
       }
     });
 
@@ -1447,7 +1694,13 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("0801_sdr2.heic", "fd");
-        await testPictureMetadataProperty(done, logger, exifRecords, picture, EXIF_METADATA);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          await testPictureMetadataProperty(done, logger, exifRecords, picture, EXIF_METADATA);
+        }
       }
     });
 
@@ -1475,11 +1728,23 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd");
-        let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
-        let fragmentRecords: Record<string, string|null> = {
-          "XInOriginal" : "0", "YInOriginal" : "0", "FragmentImageWidth": "512", "FragmentImageHeight": "512"
-        };
-        await testAuxPictureMetadataProperty(done, logger, fragmentRecords, auxPicture, FRAGMENT_METADATA);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
+          if (auxPicture == null) {
+            logger.log("getAuxiliaryPicture failed. auxPicture is null.");
+            expect(false).assertTrue();
+            done();
+          } else {
+            let fragmentRecords: Record<string, string|null> = {
+              "XInOriginal" : "0", "YInOriginal" : "0", "FragmentImageWidth": "512", "FragmentImageHeight": "512"
+            };
+            await testAuxPictureMetadataProperty(done, logger, fragmentRecords, auxPicture, FRAGMENT_METADATA);
+          }
+        }
       }
     });
 
@@ -1507,19 +1772,25 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd");
-        let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
-        if (auxPicture != undefined) {
-          let metadata = await auxPicture.getMetadata(FRAGMENT_METADATA);
-          logger.log(`get metadata success: ` + metadata);
-          let fragmentkeys: string[] = [X_IN_ORIGINAL, Y_IN_ORIGINAL, WIDTH, HEIGHT];
-          let properties = await metadata.getProperties(fragmentkeys);
-          logger.log(`getProperties success: ` + JSON.stringify(properties));
-          expect(properties != undefined).assertTrue();
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
           done();
         } else {
-          logger.log("auxiliaryPicture is undefined");
-          expect(false).assertEqual(true);
-          done();
+          let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
+          if (auxPicture != undefined) {
+            let metadata = await auxPicture.getMetadata(FRAGMENT_METADATA);
+            logger.log(`get metadata success: ` + metadata);
+            let fragmentkeys: string[] = [X_IN_ORIGINAL, Y_IN_ORIGINAL, WIDTH, HEIGHT];
+            let properties = await metadata!.getProperties(fragmentkeys);
+            logger.log(`getProperties success: ` + JSON.stringify(properties!));
+            expect(properties != undefined).assertTrue();
+            done();
+          } else {
+            logger.log("auxiliaryPicture is undefined");
+            expect(false).assertEqual(true);
+            done();
+          }
         }
       }
     });
@@ -1544,13 +1815,19 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureOnlyMainPic("testExif.jpg", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/jpeg",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.AUTO,
-          needsPackProperties: true
-        };
-        await testPackPicture(done, logger, packOpts, "packing", picture, "picture");
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let packOpts: image.PackingOption = {
+            format: "image/jpeg",
+            quality: 98,
+            desiredDynamicRange: image.PackingDynamicRange.AUTO,
+            needsPackProperties: true
+          };
+          await testPackPicture(done, logger, packOpts, "packing", picture, "picture");
+        }
       }
     });
 
@@ -1574,13 +1851,19 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureOnlyMainPic("testExif.jpg", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/jpeg",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.SDR,
-          needsPackProperties: false
-        };
-        await testPackPicture(done, logger, packOpts, "packing", picture, "picture");
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let packOpts: image.PackingOption = {
+            format: "image/jpeg",
+            quality: 98,
+            desiredDynamicRange: image.PackingDynamicRange.SDR,
+            needsPackProperties: false
+          };
+          await testPackPicture(done, logger, packOpts, "packing", picture, "picture");
+        }
       }
     });
 
@@ -1604,13 +1887,19 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("testExif.jpg", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/jpeg",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.AUTO,
-          needsPackProperties: true
-        };
-        await testPackPicture(done, logger, packOpts, "packing", picture, "picture");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let packOpts: image.PackingOption = {
+            format: "image/jpeg",
+            quality: 98,
+            desiredDynamicRange: image.PackingDynamicRange.AUTO,
+            needsPackProperties: true
+          };
+          await testPackPicture(done, logger, packOpts, "packing", picture, "picture");
+        }
       }
     });
 
@@ -1634,13 +1923,19 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("testExif.jpg", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/jpeg",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.SDR,
-          needsPackProperties: false
-        };
-        await testPackPicture(done, logger, packOpts, "packing", picture, "picture");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let packOpts: image.PackingOption = {
+            format: "image/jpeg",
+            quality: 98,
+            desiredDynamicRange: image.PackingDynamicRange.SDR,
+            needsPackProperties: false
+          };
+          await testPackPicture(done, logger, packOpts, "packing", picture, "picture");
+        }
       }
     });
 
@@ -1664,11 +1959,17 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("testExif.jpg", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/jpeg",
-          quality: 98
-        };
-        await testPackPicture(done, logger, packOpts, "packing", picture, "picture");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let packOpts: image.PackingOption = {
+            format: "image/jpeg",
+            quality: 98
+          };
+          await testPackPicture(done, logger, packOpts, "packing", picture, "picture");
+        }
       }
     });
 
@@ -1691,15 +1992,21 @@ export default function imagePicture() {
         expect(true).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_picture_01.jpg");
         let picture = await createPictureOnlyMainPic("testExif.jpg", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/jpeg",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.AUTO,
-          needsPackProperties: true
-        };
-        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picture", writeFd);
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let writeFd = await getFdCacheDir("pack_picture_01.jpg");
+          let packOpts: image.PackingOption = {
+            format: "image/jpeg",
+            quality: 98,
+            desiredDynamicRange: image.PackingDynamicRange.AUTO,
+            needsPackProperties: true
+          };
+          await testPackPicture(done, logger, packOpts, "packToFile", picture, "picture", writeFd);
+        }
       }
     });
 
@@ -1722,15 +2029,21 @@ export default function imagePicture() {
         expect(true).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_picture_02.jpg");
         let picture = await createPictureOnlyMainPic("testExif.jpg", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/jpeg",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.SDR,
-          needsPackProperties: false
-        };
-        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picture", writeFd);
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let writeFd = await getFdCacheDir("pack_picture_02.jpg");
+          let packOpts: image.PackingOption = {
+            format: "image/jpeg",
+            quality: 98,
+            desiredDynamicRange: image.PackingDynamicRange.SDR,
+            needsPackProperties: false
+          };
+          await testPackPicture(done, logger, packOpts, "packToFile", picture, "picture", writeFd);
+        }
       }
     });
 
@@ -1753,15 +2066,21 @@ export default function imagePicture() {
         expect(true).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_picture_03.jpg");
         let picture = await createPictureImageSourcePic("testExif.jpg", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/jpeg",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.AUTO,
-          needsPackProperties: true
-        };
-        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picture", writeFd);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let writeFd = await getFdCacheDir("pack_picture_03.jpg");
+          let packOpts: image.PackingOption = {
+            format: "image/jpeg",
+            quality: 98,
+            desiredDynamicRange: image.PackingDynamicRange.AUTO,
+            needsPackProperties: true
+          };
+          await testPackPicture(done, logger, packOpts, "packToFile", picture, "picture", writeFd); 
+        }
       }
     });
 
@@ -1784,15 +2103,21 @@ export default function imagePicture() {
         expect(true).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_picture_04.jpg");
         let picture = await createPictureImageSourcePic("testExif.jpg", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/jpeg",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.SDR,
-          needsPackProperties: false
-        };
-        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picture", writeFd);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let writeFd = await getFdCacheDir("pack_picture_04.jpg");
+          let packOpts: image.PackingOption = {
+            format: "image/jpeg",
+            quality: 98,
+            desiredDynamicRange: image.PackingDynamicRange.SDR,
+            needsPackProperties: false
+          };
+          await testPackPicture(done, logger, packOpts, "packToFile", picture, "picture", writeFd);
+        }
       }
     });
 
@@ -1815,13 +2140,19 @@ export default function imagePicture() {
         expect(true).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_picture_05.jpg");
         let picture = await createPictureImageSourcePic("testExif.jpg", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/jpeg",
-          quality: 98
-        };
-        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picture", writeFd);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let writeFd = await getFdCacheDir("pack_picture_05.jpg");
+          let packOpts: image.PackingOption = {
+            format: "image/jpeg",
+            quality: 98
+          };
+          await testPackPicture(done, logger, packOpts, "packToFile", picture, "picture", writeFd);
+        }
       }
     })
 
@@ -1849,13 +2180,19 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureOnlyMainPic("0801_sdr2.heic", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/heic",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.AUTO,
-          needsPackProperties: true
-        };
-        await testPackPicture(done, logger, packOpts, "packing", picture, "picture");
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let packOpts: image.PackingOption = {
+            format: "image/heic",
+            quality: 98,
+            desiredDynamicRange: image.PackingDynamicRange.AUTO,
+            needsPackProperties: true
+          };
+          await testPackPicture(done, logger, packOpts, "packing", picture, "picture");
+        }
       }
     })
 
@@ -1883,13 +2220,19 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureOnlyMainPic("0801_sdr2.heic", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/heic",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.SDR,
-          needsPackProperties: false
-        };
-        await testPackPicture(done, logger, packOpts, "packing", picture, "picture");
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let packOpts: image.PackingOption = {
+            format: "image/heic",
+            quality: 98,
+            desiredDynamicRange: image.PackingDynamicRange.SDR,
+            needsPackProperties: false
+          };
+          await testPackPicture(done, logger, packOpts, "packing", picture, "picture");
+        }
       }
     });
 
@@ -1917,13 +2260,19 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("0801_sdr2.heic", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/heic",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.AUTO,
-          needsPackProperties: true
-        };
-        await testPackPicture(done, logger, packOpts, "packing", picture, "picture");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let packOpts: image.PackingOption = {
+            format: "image/heic",
+            quality: 98,
+            desiredDynamicRange: image.PackingDynamicRange.AUTO,
+            needsPackProperties: true
+          };
+          await testPackPicture(done, logger, packOpts, "packing", picture, "picture");
+        }
       }
     })
 
@@ -1951,13 +2300,19 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("0801_sdr2.heic", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/heic",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.SDR,
-          needsPackProperties: false
-        };
-        await testPackPicture(done, logger, packOpts, "packing", picture, "picture");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let packOpts: image.PackingOption = {
+            format: "image/heic",
+            quality: 98,
+            desiredDynamicRange: image.PackingDynamicRange.SDR,
+            needsPackProperties: false
+          };
+          await testPackPicture(done, logger, packOpts, "packing", picture, "picture");
+        }
       }
     })
 
@@ -1985,11 +2340,17 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("0801_sdr2.heic", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/heic",
-          quality: 98
-        };
-        await testPackPicture(done, logger, packOpts, "packing", picture, "picture");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let packOpts: image.PackingOption = {
+            format: "image/heic",
+            quality: 98
+          };
+          await testPackPicture(done, logger, packOpts, "packing", picture, "picture");
+        }
       }
     })
 
@@ -2007,7 +2368,6 @@ export default function imagePicture() {
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0100");
-      let writeFd = await getFdCacheDir("pack_picture_01.heic");
       if (!isSupportHEIFDecode || !isSupportHEICEncode) {
         if (!isSupportHEIFDecode) {
           logger.log("device is not support heif decode");
@@ -2018,13 +2378,20 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureOnlyMainPic("0801_sdr2.heic", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/heic",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.AUTO,
-          needsPackProperties: true
-        };
-        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picture", writeFd);
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let writeFd = await getFdCacheDir("pack_picture_01.heic");
+          let packOpts: image.PackingOption = {
+            format: "image/heic",
+            quality: 98,
+            desiredDynamicRange: image.PackingDynamicRange.AUTO,
+            needsPackProperties: true
+          };
+          await testPackPicture(done, logger, packOpts, "packToFile", picture, "picture", writeFd);
+        }
       }
     });
 
@@ -2042,7 +2409,6 @@ export default function imagePicture() {
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0200");
-      let writeFd = await getFdCacheDir("pack_picture_02.heic");
       if (!isSupportHEIFDecode || !isSupportHEICEncode) {
         if (!isSupportHEIFDecode) {
           logger.log("device is not support heif decode");
@@ -2053,13 +2419,20 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureOnlyMainPic("0801_sdr2.heic", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/heic",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.SDR,
-          needsPackProperties: false
-        };
-        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picture", writeFd);
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let writeFd = await getFdCacheDir("pack_picture_02.heic");
+          let packOpts: image.PackingOption = {
+            format: "image/heic",
+            quality: 98,
+            desiredDynamicRange: image.PackingDynamicRange.SDR,
+            needsPackProperties: false
+          };
+          await testPackPicture(done, logger, packOpts, "packToFile", picture, "picture", writeFd);
+        }
       }
     })
 
@@ -2077,7 +2450,6 @@ export default function imagePicture() {
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0300");
-      let writeFd = await getFdCacheDir("pack_picture_03.heic");
       if (!isSupportHEIFDecode || !isSupportHEICEncode) {
         if (!isSupportHEIFDecode) {
           logger.log("device is not support heif decode");
@@ -2088,13 +2460,20 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("0801_sdr2.heic", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/heic",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.AUTO,
-          needsPackProperties: true
-        };
-        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picture", writeFd);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let writeFd = await getFdCacheDir("pack_picture_03.heic");
+          let packOpts: image.PackingOption = {
+            format: "image/heic",
+            quality: 98,
+            desiredDynamicRange: image.PackingDynamicRange.AUTO,
+            needsPackProperties: true
+          };
+          await testPackPicture(done, logger, packOpts, "packToFile", picture, "picture", writeFd);
+        }
       }
     });
 
@@ -2112,7 +2491,6 @@ export default function imagePicture() {
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0400");
-      let writeFd = await getFdCacheDir("pack_picture_04.heic");
       if (!isSupportHEIFDecode || !isSupportHEICEncode) {
         if (!isSupportHEIFDecode) {
           logger.log("device is not support heif decode");
@@ -2123,13 +2501,20 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("0801_sdr2.heic", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/heic",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.SDR,
-          needsPackProperties: false
-        };
-        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picture", writeFd);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let writeFd = await getFdCacheDir("pack_picture_04.heic");
+          let packOpts: image.PackingOption = {
+            format: "image/heic",
+            quality: 98,
+            desiredDynamicRange: image.PackingDynamicRange.SDR,
+            needsPackProperties: false
+          };
+          await testPackPicture(done, logger, packOpts, "packToFile", picture, "picture", writeFd);
+        }
       }
     });
 
@@ -2147,7 +2532,6 @@ export default function imagePicture() {
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0500");
-      let writeFd = await getFdCacheDir("pack_picture_04.heic");
       if (!isSupportHEIFDecode || !isSupportHEICEncode) {
         if (!isSupportHEIFDecode) {
           logger.log("device is not support heif decode");
@@ -2158,11 +2542,18 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("0801_sdr2.heic", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/heic",
-          quality: 98
-        };
-        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picture", writeFd);
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+        } else {
+          let writeFd = await getFdCacheDir("pack_picture_05.heic");
+          let packOpts: image.PackingOption = {
+            format: "image/heic",
+            quality: 98
+          };
+          await testPackPicture(done, logger, packOpts, "packToFile", picture, "picture", writeFd);
+        }
       }
     });
 
@@ -2207,12 +2598,25 @@ export default function imagePicture() {
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0100");
       let picture = await createPictureOnlyMainPic("testExif.jpg", "fd", image.PixelMapFormat.RGBA_8888);
+      if (picture == undefined) {
+        logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
       let pixelMap = await myGetPixelMap("testExif.jpg", "fd", image.PixelMapFormat.RGBA_8888);
-      let mainPixelMapImageInfo = picture.getMainPixelmap().getImageInfoSync();
+      if (pixelMap == undefined) {
+        logger.log("myGetPixelMap failed. pixelMap is undefined.");
+        picture.release();
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
+      let mainPixelMapImageInfo = picture.getMainPixelmap()!.getImageInfoSync();
       let pixelMapImageInfo = pixelMap.getImageInfoSync();
       logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo));
-      logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo));
-      expect(mainPixelMapImageInfo.pixelFormat == pixelMapImageInfo.pixelFormat).assertTrue();
+      logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo!));
+      expect(mainPixelMapImageInfo!.pixelFormat == pixelMapImageInfo!.pixelFormat).assertTrue();
       picture.release();
       await pixelMap.release();
       done();
@@ -2231,12 +2635,25 @@ export default function imagePicture() {
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0200");
       let picture = await createPictureOnlyMainPic("testExif.jpg", "fd", image.PixelMapFormat.RGB_565);
+      if (picture == undefined) {
+        logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
       let pixelMap = await myGetPixelMap("testExif.jpg", "fd", image.PixelMapFormat.RGB_565);
-      let mainPixelMapImageInfo = picture.getMainPixelmap().getImageInfoSync();
+      if (pixelMap == undefined) {
+        logger.log("myGetPixelMap failed. pixelMap is undefined.");
+        picture.release();
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
+      let mainPixelMapImageInfo = picture.getMainPixelmap()!.getImageInfoSync();
       let pixelMapImageInfo = pixelMap.getImageInfoSync();
-      logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo));
-      logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo));
-      expect(mainPixelMapImageInfo.pixelFormat == pixelMapImageInfo.pixelFormat).assertTrue();
+      logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo!));
+      logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo!));
+      expect(mainPixelMapImageInfo!.pixelFormat == pixelMapImageInfo!.pixelFormat).assertTrue();
       picture.release();
       await pixelMap.release();
       done();
@@ -2255,12 +2672,25 @@ export default function imagePicture() {
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0300");
       let picture = await createPictureOnlyMainPic("testExif.jpg", "fd", image.PixelMapFormat.RGBA_8888);
+      if (picture == undefined) {
+        logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
       let pixelMap = await myGetPixelMap("testExif.jpg", "fd", image.PixelMapFormat.RGBA_8888);
-      let mainPixelMapImageInfo = picture.getMainPixelmap().getImageInfoSync();
+      if (pixelMap == undefined) {
+        logger.log("myGetPixelMap failed. pixelMap is undefined.");
+        picture.release();
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
+      let mainPixelMapImageInfo = picture.getMainPixelmap()!.getImageInfoSync();
       let pixelMapImageInfo = pixelMap.getImageInfoSync();
-      logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo));
-      logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo));
-      expect(mainPixelMapImageInfo.pixelFormat == pixelMapImageInfo.pixelFormat).assertTrue();
+      logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo!));
+      logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo!));
+      expect(mainPixelMapImageInfo!.pixelFormat == pixelMapImageInfo!.pixelFormat).assertTrue();
       picture.release();
       await pixelMap.release();
       done();
@@ -2279,12 +2709,25 @@ export default function imagePicture() {
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0400");
       let picture = await createPictureOnlyMainPic("testExif.jpg", "fd", image.PixelMapFormat.BGRA_8888);
+      if (picture == undefined) {
+        logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
       let pixelMap = await myGetPixelMap("testExif.jpg", "fd", image.PixelMapFormat.BGRA_8888);
-      let mainPixelMapImageInfo = picture.getMainPixelmap().getImageInfoSync();
+      if (pixelMap == undefined) {
+        logger.log("myGetPixelMap failed. pixelMap is undefined.");
+        picture.release();
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
+      let mainPixelMapImageInfo = picture.getMainPixelmap()!.getImageInfoSync();
       let pixelMapImageInfo = pixelMap.getImageInfoSync();
-      logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo));
-      logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo));
-      expect(mainPixelMapImageInfo.pixelFormat == pixelMapImageInfo.pixelFormat).assertTrue();
+      logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo!));
+      logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo!));
+      expect(mainPixelMapImageInfo!.pixelFormat == pixelMapImageInfo!.pixelFormat).assertTrue();
       picture.release();
       await pixelMap.release();
       done();
@@ -2303,12 +2746,25 @@ export default function imagePicture() {
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0600");
       let picture = await createPictureOnlyMainPic("testExif.jpg", "fd", image.PixelMapFormat.RGBA_F16);
+      if (picture == undefined) {
+        logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
       let pixelMap = await myGetPixelMap("testExif.jpg", "fd", image.PixelMapFormat.RGBA_F16);
-      let mainPixelMapImageInfo = picture.getMainPixelmap().getImageInfoSync();
+      if (pixelMap == undefined) {
+        logger.log("myGetPixelMap failed. pixelMap is undefined.");
+        picture.release();
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
+      let mainPixelMapImageInfo = picture.getMainPixelmap()!.getImageInfoSync();
       let pixelMapImageInfo = pixelMap.getImageInfoSync();
-      logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo));
-      logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo));
-      expect(mainPixelMapImageInfo.pixelFormat == pixelMapImageInfo.pixelFormat).assertTrue();
+      logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo!));
+      logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo!));
+      expect(mainPixelMapImageInfo!.pixelFormat == pixelMapImageInfo!.pixelFormat).assertTrue();
       picture.release();
       await pixelMap.release();
       done();
@@ -2327,12 +2783,25 @@ export default function imagePicture() {
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0700");
       let picture = await createPictureOnlyMainPic("testExif.jpg", "fd", image.PixelMapFormat.RGBA_1010102);
+      if (picture == undefined) {
+        logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
       let pixelMap = await myGetPixelMap("testExif.jpg", "fd", image.PixelMapFormat.RGBA_1010102);
-      let mainPixelMapImageInfo = picture.getMainPixelmap().getImageInfoSync();
+      if (pixelMap == undefined) {
+        logger.log("myGetPixelMap failed. pixelMap is undefined.");
+        picture.release();
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
+      let mainPixelMapImageInfo = picture.getMainPixelmap()!.getImageInfoSync();
       let pixelMapImageInfo = pixelMap.getImageInfoSync();
-      logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo));
-      logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo));
-      expect(mainPixelMapImageInfo.pixelFormat == pixelMapImageInfo.pixelFormat).assertTrue();
+      logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo!));
+      logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo!));
+      expect(mainPixelMapImageInfo!.pixelFormat == pixelMapImageInfo!.pixelFormat).assertTrue();
       picture.release();
       await pixelMap.release();
       done();
@@ -2351,12 +2820,25 @@ export default function imagePicture() {
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0800");
       let picture = await createPictureOnlyMainPic("testExif.jpg", "fd", image.PixelMapFormat.YCBCR_P010);
+      if (picture == undefined) {
+        logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
       let pixelMap = await myGetPixelMap("testExif.jpg", "fd", image.PixelMapFormat.YCBCR_P010);
-      let mainPixelMapImageInfo = picture.getMainPixelmap().getImageInfoSync();
+      if (pixelMap == undefined) {
+        logger.log("myGetPixelMap failed. pixelMap is undefined.");
+        picture.release();
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
+      let mainPixelMapImageInfo = picture.getMainPixelmap()!.getImageInfoSync();
       let pixelMapImageInfo = pixelMap.getImageInfoSync();
-      logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo));
-      logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo));
-      expect(mainPixelMapImageInfo.pixelFormat == pixelMapImageInfo.pixelFormat).assertTrue();
+      logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo!));
+      logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo!));
+      expect(mainPixelMapImageInfo!.pixelFormat == pixelMapImageInfo!.pixelFormat).assertTrue();
       picture.release();
       await pixelMap.release();
       done();
@@ -2375,12 +2857,25 @@ export default function imagePicture() {
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0900");
       let picture = await createPictureOnlyMainPic("testExif.jpg", "fd", image.PixelMapFormat.YCRCB_P010);
+      if (picture == undefined) {
+        logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
       let pixelMap = await myGetPixelMap("testExif.jpg", "fd", image.PixelMapFormat.YCRCB_P010);
-      let mainPixelMapImageInfo = picture.getMainPixelmap().getImageInfoSync();
+      if (pixelMap == undefined) {
+        logger.log("myGetPixelMap failed. pixelMap is undefined.");
+        picture.release();
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
+      let mainPixelMapImageInfo = picture.getMainPixelmap()!.getImageInfoSync();
       let pixelMapImageInfo = pixelMap.getImageInfoSync();
-      logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo));
-      logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo));
-      expect(mainPixelMapImageInfo.pixelFormat == pixelMapImageInfo.pixelFormat).assertTrue();
+      logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo!));
+      logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo!));
+      expect(mainPixelMapImageInfo!.pixelFormat == pixelMapImageInfo!.pixelFormat).assertTrue();
       picture.release();
       await pixelMap.release();
       done();
@@ -2399,12 +2894,25 @@ export default function imagePicture() {
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_1000");
       let picture = await createPictureOnlyMainPic("testExif.jpg", "fd", image.PixelMapFormat.NV21);
+      if (picture == undefined) {
+        logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
       let pixelMap = await myGetPixelMap("testExif.jpg", "fd", image.PixelMapFormat.NV21);
-      let mainPixelMapImageInfo = picture.getMainPixelmap().getImageInfoSync();
+      if (pixelMap == undefined) {
+        logger.log("myGetPixelMap failed. pixelMap is undefined.");
+        picture.release();
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
+      let mainPixelMapImageInfo = picture.getMainPixelmap()!.getImageInfoSync();
       let pixelMapImageInfo = pixelMap.getImageInfoSync();
-      logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo));
-      logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo));
-      expect(mainPixelMapImageInfo.pixelFormat == pixelMapImageInfo.pixelFormat).assertTrue();
+      logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo!));
+      logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo!));
+      expect(mainPixelMapImageInfo!.pixelFormat == pixelMapImageInfo!.pixelFormat).assertTrue();
       picture.release();
       await pixelMap.release();
       done();
@@ -2423,12 +2931,25 @@ export default function imagePicture() {
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_1100");
       let picture = await createPictureOnlyMainPic("testExif.jpg", "fd", image.PixelMapFormat.NV12);
+      if (picture == undefined) {
+        logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
       let pixelMap = await myGetPixelMap("testExif.jpg", "fd", image.PixelMapFormat.NV12);
-      let mainPixelMapImageInfo = picture.getMainPixelmap().getImageInfoSync();
+      if (pixelMap == undefined) {
+        logger.log("myGetPixelMap failed. pixelMap is undefined.");
+        picture.release();
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
+      let mainPixelMapImageInfo = picture.getMainPixelmap()!.getImageInfoSync();
       let pixelMapImageInfo = pixelMap.getImageInfoSync();
-      logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo));
-      logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo));
-      expect(mainPixelMapImageInfo.pixelFormat == pixelMapImageInfo.pixelFormat).assertTrue();
+      logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo!));
+      logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo!));
+      expect(mainPixelMapImageInfo!.pixelFormat == pixelMapImageInfo!.pixelFormat).assertTrue();
       picture.release();
       await pixelMap.release();
       done();
@@ -2455,6 +2976,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JPEGISOSingle.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(GAINMAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -2468,7 +2995,7 @@ export default function imagePicture() {
             colorSpace: colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998)
           }
           let typeList = [GAINMAP] as Array<image.AuxiliaryPictureType>;
-          await testAuxiliaryPictureInfo(done, logger, picture, auxiliaryPictureInfoOrigin, typeList);
+          await testAuxiliaryPictureInfo(done, logger, picture!, auxiliaryPictureInfoOrigin, typeList);
         } else {
           logger.log("get auxiliaryInfo is undefined");
           expect(false).assertTrue();
@@ -2498,6 +3025,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JPEGISOSingle.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(GAINMAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -2541,6 +3074,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JPEGISOSingle.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(GAINMAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -2584,6 +3123,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JPEGISOSingle.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(GAINMAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -2627,6 +3172,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JPEGISOSingle.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(GAINMAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -2670,6 +3221,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JPEGISOSingle.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(GAINMAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -2713,6 +3270,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JPEGISOSingle.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(GAINMAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -2756,6 +3319,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JPEGISOSingle.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(GAINMAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -2799,6 +3368,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JPEGISOSingle.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(GAINMAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -2842,6 +3417,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -2885,6 +3466,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -2928,6 +3515,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -2971,6 +3564,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3014,6 +3613,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3057,6 +3662,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         logger.log("auxinfo: " + JSON.stringify(auxInfo));
@@ -3101,6 +3712,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3144,6 +3761,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3187,6 +3810,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3230,6 +3859,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3273,6 +3908,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3316,6 +3957,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(UNREFOCUS_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3359,6 +4006,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(UNREFOCUS_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3402,6 +4055,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(UNREFOCUS_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3445,6 +4104,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(UNREFOCUS_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3488,6 +4153,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(UNREFOCUS_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3531,6 +4202,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(UNREFOCUS_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3574,6 +4251,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(UNREFOCUS_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3617,6 +4300,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(UNREFOCUS_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3660,6 +4349,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(UNREFOCUS_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3703,6 +4398,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(UNREFOCUS_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3746,6 +4447,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3789,6 +4496,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3832,6 +4545,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3875,6 +4594,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3918,6 +4643,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -3961,6 +4692,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         logger.log("auxinfo: " + JSON.stringify(auxInfo));
@@ -4005,6 +4742,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -4048,6 +4791,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -4091,6 +4840,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -4134,6 +4889,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -4177,6 +4938,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -4220,6 +4987,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -4263,6 +5036,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -4306,6 +5085,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -4349,6 +5134,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -4392,6 +5183,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -4435,6 +5232,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -4478,6 +5281,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -4521,6 +5330,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -4564,6 +5379,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -4607,6 +5428,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -4768,6 +5595,12 @@ export default function imagePicture() {
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_JPEG_ERROR_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_JPEG_ERROR_STATIC_0300");
       let picture = await createPictureImageSourcePic("testExif.jpg", "fd");
+      if (picture == undefined) {
+        logger.log("createPictureImageSourcePic failed. picture is undefined.");
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
       await testPictureGetMetadataError(done, logger, picture, FRAGMENT_METADATA);
     });
 
@@ -4787,6 +5620,12 @@ export default function imagePicture() {
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_PNG_ERROR_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_PNG_ERROR_STATIC_0100");
       let picture = await createPictureOnlyMainPic("testExif.jpg", "fd");
+      if (picture == undefined) {
+        logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
       let packOpts: image.PackingOption = {format: "image/png", quality: 98};
       await testPackPictureError(done, logger, packOpts, "packing", picture);
     })
@@ -4806,8 +5645,14 @@ export default function imagePicture() {
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_PNG_ERROR_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_PNG_ERROR_STATIC_0100");
-      let writeFd = await getFdCacheDir("pack_txt_01.jpg");
       let picture = await createPictureImageSourcePic("testExif.jpg", "fd");
+      if (picture == undefined) {
+        logger.log("createPictureImageSourcePic failed. picture is undefined.");
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
+      let writeFd = await getFdCacheDir("pack_txt_01.jpg");
       let packOpts: image.PackingOption = {format: "image/png", quality: 98};
       await testPackPictureError(done, logger, packOpts, "packToFile", picture, writeFd);
     })
@@ -4825,8 +5670,14 @@ export default function imagePicture() {
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DECODE_PNG_ERROR_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DECODE_PNG_ERROR_STATIC_0100");
       try {
-        let imageSourceApi: image.ImageSource = await getImageSource("test.png", "uri");
-        let picture: image.Picture = await imageSourceApi.createPicture();
+        let imageSourceApi = await getImageSource("test.png", "uri");
+        if (imageSourceApi == undefined) {
+          logger.log("getImageSource failed. imageSourceApi is undefined!");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
+        let picture: image.Picture | undefined = await imageSourceApi.createPicture();
         if (picture != undefined) {
           expect(false).assertEqual(true);
           done();
@@ -4947,6 +5798,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(GAINMAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -4992,6 +5849,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(GAINMAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5037,6 +5900,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(GAINMAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5082,6 +5951,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(GAINMAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5127,6 +6002,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(GAINMAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5172,6 +6053,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(GAINMAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5217,6 +6104,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(GAINMAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5262,6 +6155,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(GAINMAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5307,6 +6206,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(GAINMAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5352,6 +6257,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(GAINMAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5397,6 +6308,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5442,6 +6359,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5487,6 +6410,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5532,6 +6461,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5577,6 +6512,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5622,6 +6563,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5667,6 +6614,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5712,6 +6665,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5757,6 +6716,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5802,6 +6767,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5847,6 +6818,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(DEPTH_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5892,6 +6869,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(UNREFOCUS_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5937,6 +6920,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(UNREFOCUS_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -5982,6 +6971,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(UNREFOCUS_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6027,6 +7022,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(UNREFOCUS_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6072,6 +7073,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(UNREFOCUS_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6117,6 +7124,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(UNREFOCUS_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6162,6 +7175,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(UNREFOCUS_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6207,6 +7226,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(UNREFOCUS_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6252,6 +7277,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(UNREFOCUS_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6297,6 +7328,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(UNREFOCUS_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6342,6 +7379,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6387,6 +7430,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6432,6 +7481,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6477,6 +7532,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6522,6 +7583,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6567,6 +7634,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6612,6 +7685,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6657,6 +7736,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6702,6 +7787,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6747,6 +7838,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6792,6 +7889,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(LINEAR_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6837,6 +7940,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6882,6 +7991,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6927,6 +8042,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -6972,6 +8093,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -7017,6 +8144,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -7062,6 +8195,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -7107,6 +8246,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -7152,6 +8297,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -7197,6 +8348,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -7242,6 +8399,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let auxPicture = picture.getAuxiliaryPicture(FRAGMENT_MAP);
         let auxInfo = auxPicture!.getAuxiliaryPictureInfo();
         if (auxInfo) {
@@ -7265,6 +8428,37 @@ export default function imagePicture() {
     });
 
     /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_HEIF_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_HEIF_STATIC_0100
+     * @tc.desc        test picture release 
+     *                 1.create main pixelMap
+     *                 2.create picture object by main pixelMap
+     *                 3.test release picture 
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_HEIF_STATIC_0100");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        expect(true).assertTrue();
+        done();
+      } else {
+        let picture = await createPictureOnlyMainPic("0801_sdr2.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
+        picture.release();
+        expect(picture.getMainPixelmap() == undefined).assertTrue();
+        done();
+      }
+    });
+
+    /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0100
      * @tc.name      : SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0100
      * @tc.desc      : test picture getMainPixelMap
@@ -7282,12 +8476,25 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureOnlyMainPic("0801_sdr2.heic", "fd", image.PixelMapFormat.RGBA_8888);
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let pixelMap = await myGetPixelMap("0801_sdr2.heic", "fd", image.PixelMapFormat.RGBA_8888);
-        let mainPixelMapImageInfo = picture.getMainPixelmap().getImageInfoSync();
+        if (pixelMap == undefined) {
+          logger.log("myGetPixelMap failed. pixelMap is undefined.");
+          picture.release();
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
+        let mainPixelMapImageInfo = picture.getMainPixelmap()!.getImageInfoSync();
         let pixelMapImageInfo = pixelMap.getImageInfoSync();
-        logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo));
-        logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo));
-        expect(mainPixelMapImageInfo.pixelFormat == pixelMapImageInfo.pixelFormat).assertTrue();
+        logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo!));
+        logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo!));
+        expect(mainPixelMapImageInfo!.pixelFormat == pixelMapImageInfo!.pixelFormat).assertTrue();
         picture.release();
         await pixelMap.release();
         done();
@@ -7312,12 +8519,25 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureOnlyMainPic("0801_sdr2.heic", "fd", image.PixelMapFormat.RGB_565);
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let pixelMap = await myGetPixelMap("0801_sdr2.heic", "fd", image.PixelMapFormat.RGB_565);
-        let mainPixelMapImageInfo = picture.getMainPixelmap().getImageInfoSync();
+        if (pixelMap == undefined) {
+          logger.log("myGetPixelMap failed. pixelMap is undefined.");
+          picture.release();
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
+        let mainPixelMapImageInfo = picture.getMainPixelmap()!.getImageInfoSync();
         let pixelMapImageInfo = pixelMap.getImageInfoSync();
-        logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo));
-        logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo));
-        expect(mainPixelMapImageInfo.pixelFormat == pixelMapImageInfo.pixelFormat).assertTrue();
+        logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo!));
+        logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo!));
+        expect(mainPixelMapImageInfo!.pixelFormat == pixelMapImageInfo!.pixelFormat).assertTrue();
         picture.release();
         await pixelMap.release();
         done();
@@ -7342,12 +8562,25 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureOnlyMainPic("0801_sdr2.heic", "fd", image.PixelMapFormat.RGBA_8888);
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let pixelMap = await myGetPixelMap("0801_sdr2.heic", "fd", image.PixelMapFormat.RGBA_8888);
-        let mainPixelMapImageInfo = picture.getMainPixelmap().getImageInfoSync();
+        if (pixelMap == undefined) {
+          logger.log("myGetPixelMap failed. pixelMap is undefined.");
+          picture.release();
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
+        let mainPixelMapImageInfo = picture.getMainPixelmap()!.getImageInfoSync();
         let pixelMapImageInfo = pixelMap.getImageInfoSync();
-        logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo));
-        logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo));
-        expect(mainPixelMapImageInfo.pixelFormat == pixelMapImageInfo.pixelFormat).assertTrue();
+        logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo!));
+        logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo!));
+        expect(mainPixelMapImageInfo!.pixelFormat == pixelMapImageInfo!.pixelFormat).assertTrue();
         picture.release();
         await pixelMap.release();
         done();
@@ -7372,12 +8605,25 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureOnlyMainPic("0801_sdr2.heic", "fd", image.PixelMapFormat.BGRA_8888);
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let pixelMap = await myGetPixelMap("0801_sdr2.heic", "fd", image.PixelMapFormat.BGRA_8888);
-        let mainPixelMapImageInfo = picture.getMainPixelmap().getImageInfoSync();
+        if (pixelMap == undefined) {
+          logger.log("myGetPixelMap failed. pixelMap is undefined.");
+          picture.release();
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
+        let mainPixelMapImageInfo = picture.getMainPixelmap()!.getImageInfoSync();
         let pixelMapImageInfo = pixelMap.getImageInfoSync();
-        logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo));
-        logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo));
-        expect(mainPixelMapImageInfo.pixelFormat == pixelMapImageInfo.pixelFormat).assertTrue();
+        logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo!));
+        logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo!));
+        expect(mainPixelMapImageInfo!.pixelFormat == pixelMapImageInfo!.pixelFormat).assertTrue();
         picture.release();
         await pixelMap.release();
         done();
@@ -7402,12 +8648,25 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureOnlyMainPic("0801_sdr2.heic", "fd", image.PixelMapFormat.RGBA_F16);
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let pixelMap = await myGetPixelMap("0801_sdr2.heic", "fd", image.PixelMapFormat.RGBA_F16);
-        let mainPixelMapImageInfo = picture.getMainPixelmap().getImageInfoSync();
+        if (pixelMap == undefined) {
+          logger.log("myGetPixelMap failed. pixelMap is undefined.");
+          picture.release();
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
+        let mainPixelMapImageInfo = picture.getMainPixelmap()!.getImageInfoSync();
         let pixelMapImageInfo = pixelMap.getImageInfoSync();
-        logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo));
-        logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo));
-        expect(mainPixelMapImageInfo.pixelFormat == pixelMapImageInfo.pixelFormat).assertTrue();
+        logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo!));
+        logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo!));
+        expect(mainPixelMapImageInfo!.pixelFormat == pixelMapImageInfo!.pixelFormat).assertTrue();
         picture.release();
         await pixelMap.release();
         done();
@@ -7432,12 +8691,25 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureOnlyMainPic("0801_sdr2.heic", "fd", image.PixelMapFormat.RGBA_1010102);
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let pixelMap = await myGetPixelMap("0801_sdr2.heic", "fd", image.PixelMapFormat.RGBA_1010102);
-        let mainPixelMapImageInfo = picture.getMainPixelmap().getImageInfoSync();
+        if (pixelMap == undefined) {
+          logger.log("myGetPixelMap failed. pixelMap is undefined.");
+          picture.release();
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
+        let mainPixelMapImageInfo = picture.getMainPixelmap()!.getImageInfoSync();
         let pixelMapImageInfo = pixelMap.getImageInfoSync();
-        logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo));
-        logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo));
-        expect(mainPixelMapImageInfo.pixelFormat == pixelMapImageInfo.pixelFormat).assertTrue();
+        logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo!));
+        logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo!));
+        expect(mainPixelMapImageInfo!.pixelFormat == pixelMapImageInfo!.pixelFormat).assertTrue();
         picture.release();
         await pixelMap.release();
         done();
@@ -7462,12 +8734,25 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureOnlyMainPic("0801_sdr2.heic", "fd", image.PixelMapFormat.YCBCR_P010);
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let pixelMap = await myGetPixelMap("0801_sdr2.heic", "fd", image.PixelMapFormat.YCBCR_P010);
-        let mainPixelMapImageInfo = picture.getMainPixelmap().getImageInfoSync();
+        if (pixelMap == undefined) {
+          logger.log("myGetPixelMap failed. pixelMap is undefined.");
+          picture.release();
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
+        let mainPixelMapImageInfo = picture.getMainPixelmap()!.getImageInfoSync();
         let pixelMapImageInfo = pixelMap.getImageInfoSync();
-        logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo));
-        logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo));
-        expect(mainPixelMapImageInfo.pixelFormat == pixelMapImageInfo.pixelFormat).assertTrue();
+        logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo!));
+        logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo!));
+        expect(mainPixelMapImageInfo!.pixelFormat == pixelMapImageInfo!.pixelFormat).assertTrue();
         picture.release();
         await pixelMap.release();
         done();
@@ -7492,12 +8777,25 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureOnlyMainPic("0801_sdr2.heic", "fd", image.PixelMapFormat.YCRCB_P010);
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let pixelMap = await myGetPixelMap("0801_sdr2.heic", "fd", image.PixelMapFormat.YCRCB_P010);
-        let mainPixelMapImageInfo = picture.getMainPixelmap().getImageInfoSync();
+        if (pixelMap == undefined) {
+          logger.log("myGetPixelMap failed. pixelMap is undefined.");
+          picture.release();
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
+        let mainPixelMapImageInfo = picture.getMainPixelmap()!.getImageInfoSync();
         let pixelMapImageInfo = pixelMap.getImageInfoSync();
-        logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo));
-        logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo));
-        expect(mainPixelMapImageInfo.pixelFormat == pixelMapImageInfo.pixelFormat).assertTrue();
+        logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo!));
+        logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo!));
+        expect(mainPixelMapImageInfo!.pixelFormat == pixelMapImageInfo!.pixelFormat).assertTrue();
         picture.release();
         await pixelMap.release();
         done();
@@ -7522,12 +8820,25 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureOnlyMainPic("0801_sdr2.heic", "fd", image.PixelMapFormat.NV21);
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let pixelMap = await myGetPixelMap("0801_sdr2.heic", "fd", image.PixelMapFormat.NV21);
-        let mainPixelMapImageInfo = picture.getMainPixelmap().getImageInfoSync();
+        if (pixelMap == undefined) {
+          logger.log("myGetPixelMap failed. pixelMap is undefined.");
+          picture.release();
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
+        let mainPixelMapImageInfo = picture.getMainPixelmap()!.getImageInfoSync();
         let pixelMapImageInfo = pixelMap.getImageInfoSync();
-        logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo));
-        logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo));
-        expect(mainPixelMapImageInfo.pixelFormat == pixelMapImageInfo.pixelFormat).assertTrue();
+        logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo!));
+        logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo!));
+        expect(mainPixelMapImageInfo!.pixelFormat == pixelMapImageInfo!.pixelFormat).assertTrue();
         picture.release();
         await pixelMap.release();
         done();
@@ -7552,12 +8863,25 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureOnlyMainPic("0801_sdr2.heic", "fd", image.PixelMapFormat.NV12);
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let pixelMap = await myGetPixelMap("0801_sdr2.heic", "fd", image.PixelMapFormat.NV12);
-        let mainPixelMapImageInfo = picture.getMainPixelmap().getImageInfoSync();
+        if (pixelMap == undefined) {
+          logger.log("myGetPixelMap failed. pixelMap is undefined.");
+          picture.release();
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
+        let mainPixelMapImageInfo = picture.getMainPixelmap()!.getImageInfoSync();
         let pixelMapImageInfo = pixelMap.getImageInfoSync();
-        logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo));
-        logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo));
-        expect(mainPixelMapImageInfo.pixelFormat == pixelMapImageInfo.pixelFormat).assertTrue();
+        logger.log("mainPixelMapImageInfo: " + JSON.stringify(mainPixelMapImageInfo!));
+        logger.log("pixelMapImageInfo: " + JSON.stringify(pixelMapImageInfo!));
+        expect(mainPixelMapImageInfo!.pixelFormat == pixelMapImageInfo!.pixelFormat).assertTrue();
         picture.release();
         await pixelMap.release();
         done();
@@ -7605,6 +8929,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureImageSourcePic("0801_sdr2.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         await testPictureGetMetadataError(done, logger, picture, FRAGMENT_METADATA);
       }
     });
@@ -7630,6 +8960,12 @@ export default function imagePicture() {
         done();
       } else {
         let picture = await createPictureOnlyMainPic("0801_sdr2.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
         let packOpts: image.PackingOption = {format: "image/png", quality: 98};
         await testPackPictureError(done, logger, packOpts, "packing", picture);
       }
@@ -7655,8 +8991,14 @@ export default function imagePicture() {
         expect(true).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_txt_01.heic");
         let picture = await createPictureImageSourcePic("0801_sdr2.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureImageSourcePic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
+        let writeFd = await getFdCacheDir("pack_txt_01.heic");
         let packOpts: image.PackingOption = {format: "image/png", quality: 98};
         await testPackPictureError(done, logger, packOpts, "packToFile", picture, writeFd);
       }

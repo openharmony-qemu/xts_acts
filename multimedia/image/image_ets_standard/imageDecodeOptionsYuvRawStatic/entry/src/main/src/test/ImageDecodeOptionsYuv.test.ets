@@ -65,7 +65,7 @@ export default function imageDecodeOptionsYuvTest() {
     }
 
     const getImageSource = (fileName: string, type?: string) => {
-      let imageSourceApi: image.ImageSource
+      let imageSourceApi: image.ImageSource | undefined;
       if (type === "buffer") {
         const buffer = getBuffer(fileName)
         imageSourceApi = image.createImageSource(buffer)
@@ -78,14 +78,18 @@ export default function imageDecodeOptionsYuvTest() {
         imageSourceApi = image.createImageSource(rawFileDescriptor)
       } else if (type === "incremental") {
         const picBuffer = getBuffer(fileName)
-        imageSourceApi = image.CreateIncrementalSource(picBuffer)
+        imageSourceApi = image.createIncrementalSource(picBuffer)
       } else {
         const filePath = filesDir + "/" + fileName;
         const file = fs.openSync(filePath)
         imageSourceApi = image.createImageSource(file.fd as int);
       }
       await sleep(100);
-      return imageSourceApi
+      if (imageSourceApi == undefined) {
+        expect().assertFail();
+      }
+      let result: image.ImageSource = imageSourceApi as image.ImageSource;
+      return result;
     }
 
     const promiseCreate = async (
@@ -95,7 +99,13 @@ export default function imageDecodeOptionsYuvTest() {
       try{
         let pixelMap = await imageSourceApi.createPixelMap(decodingOptions);
         globalPixelMap = pixelMap;
+        if (pixelMap == undefined) {
+          return undefined;
+        }
         let imageInfo = await pixelMap.getImageInfo();
+        if (imageInfo == undefined) {
+          return undefined;
+        }
         g_callbackResult = true;
         hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
         hilog.info(0x0000, 'testTag', '%{public}s', TAG + ` decodingOptions:${JSON.stringify(decodingOptions)};`);
@@ -125,19 +135,21 @@ export default function imageDecodeOptionsYuvTest() {
         } else {
           globalPixelMap = pixelMap!;
           let imageInfo = await pixelMap!.getImageInfo();
-          g_callbackResult = true;
-          hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
-          hilog.info(0x0000, 'testTag', '%{public}s', TAG + ` decodingOptions:${JSON.stringify(decodingOptions)};`);
-          let colorSpaceManager = decodingOptions.desiredColorSpace as colorSpaceManager.ColorSpaceManager
-          let desiredPixelFormat = decodingOptions.desiredPixelFormat
-          let desiredSize = decodingOptions.desiredSize as image.Size
-          let fitDensity = decodingOptions.fitDensity
-          if (imageInfo.pixelFormat === desiredPixelFormat &&
-            imageInfo.size.width === desiredSize.width &&
-            imageInfo.size.height === desiredSize.height &&
-            imageInfo.density === fitDensity &&
-            pixelMap!.getColorSpace().getColorSpaceName() === colorSpaceManager.getColorSpaceName()) {
-            result = true
+          if (imageInfo != undefined) {
+            g_callbackResult = true;
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ` decodingOptions:${JSON.stringify(decodingOptions)};`);
+            let colorSpaceManager = decodingOptions.desiredColorSpace as colorSpaceManager.ColorSpaceManager
+            let desiredPixelFormat = decodingOptions.desiredPixelFormat
+            let desiredSize = decodingOptions.desiredSize as image.Size
+            let fitDensity = decodingOptions.fitDensity
+            if (imageInfo.pixelFormat === desiredPixelFormat &&
+              imageInfo.size.width === desiredSize.width &&
+              imageInfo.size.height === desiredSize.height &&
+              imageInfo.density === fitDensity &&
+              pixelMap!.getColorSpace().getColorSpaceName() === colorSpaceManager.getColorSpaceName()) {
+              result = true
+            }
           }
         }
       })
@@ -147,27 +159,27 @@ export default function imageDecodeOptionsYuvTest() {
       TAG: string, imageSourceApi: image.ImageSource,
       decodingOptions: image.DecodingOptions
     ) => {
-      let pixelMap = imageSourceApi.createPixelMapSync(decodingOptions);
-      if (pixelMap == undefined) {
-        console.info(TAG + " create pixelMap failed");
-        result = false;
-      } else {
-        globalPixelMap = pixelMap;
-        let imageInfo = await pixelMap.getImageInfo();
-        g_callbackResult = true;
-        hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
-        hilog.info(0x0000, 'testTag', '%{public}s', TAG + ` decodingOptions:${JSON.stringify(decodingOptions)};`);
-        let colorSpaceManager = decodingOptions.desiredColorSpace as colorSpaceManager.ColorSpaceManager
-        let desiredPixelFormat = decodingOptions.desiredPixelFormat
-        let desiredSize = decodingOptions.desiredSize as image.Size
-        let fitDensity = decodingOptions.fitDensity
-        if (imageInfo.pixelFormat === desiredPixelFormat &&
-          imageInfo.size.width === desiredSize.width &&
-          imageInfo.size.height === desiredSize.height &&
-          imageInfo.density === fitDensity &&
-          pixelMap.getColorSpace().getColorSpaceName() === colorSpaceManager.getColorSpaceName()) {
-          result = true
-        }
+      globalPixelMap = imageSourceApi.createPixelMapSync(decodingOptions);
+      if (globalPixelMap == undefined) {
+        return undefined;
+      }
+      let imageInfo = await globalPixelMap!.getImageInfo();
+      if (imageInfo == undefined) {
+        return undefined;
+      }
+      g_callbackResult = true;
+      hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
+      hilog.info(0x0000, 'testTag', '%{public}s', TAG + ` decodingOptions:${JSON.stringify(decodingOptions)};`);
+      let colorSpaceManager = decodingOptions.desiredColorSpace as colorSpaceManager.ColorSpaceManager
+      let desiredPixelFormat = decodingOptions.desiredPixelFormat
+      let desiredSize = decodingOptions.desiredSize as image.Size
+      let fitDensity = decodingOptions.fitDensity
+      if (imageInfo.pixelFormat === desiredPixelFormat &&
+        imageInfo.size.width === desiredSize.width &&
+        imageInfo.size.height === desiredSize.height &&
+        imageInfo.density === fitDensity &&
+        globalPixelMap!.getColorSpace().getColorSpaceName() === colorSpaceManager.getColorSpaceName()) {
+        result = true
       }
     }
 
@@ -257,27 +269,24 @@ export default function imageDecodeOptionsYuvTest() {
         TAG: string, imageSourceApi: image.ImageSource, width: int, height: int,
         decodingOptions: image.DecodingOptions
     ) => {
-      let pixelMap = imageSourceApi.createPixelMapSync(decodingOptions)
-      if (pixelMap == undefined) {
-        console.info(TAG + " create pixelMap failed");
-        result = false;
-      } else {
-        globalPixelMap = pixelMap;
-        let imageInfo = await pixelMap.getImageInfo()
-        g_callbackResult = true;
-        hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
-        let desiredPixelFormat = image.PixelMapFormat.RGBA_8888;
-        let fitDensity = 0;
-        let alphaType = image.AlphaType.PREMUL;
-        hilog.info(0x0000, 'testTag', '%{public}s', TAG + ` expectation desiredPixelFormat:${desiredPixelFormat},
-        fitDensity:${fitDensity}, alphaType:${alphaType}, width:${width}, height:${height}`);
-        if (imageInfo.pixelFormat === desiredPixelFormat &&
-            imageInfo.size.width === width &&
-            imageInfo.size.height === height &&
-            imageInfo.density === fitDensity &&
-            imageInfo.alphaType === alphaType) {
-            result = true
-        }
+      globalPixelMap = imageSourceApi.createPixelMapSync(decodingOptions)
+      if (globalPixelMap == undefined) {
+        return undefined;
+      }
+      let imageInfo = await globalPixelMap!.getImageInfo()
+      g_callbackResult = true;
+      hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
+      let desiredPixelFormat = image.PixelMapFormat.RGBA_8888;
+      let fitDensity = 0;
+      let alphaType = image.AlphaType.PREMUL;
+      hilog.info(0x0000, 'testTag', '%{public}s', TAG + ` expectation desiredPixelFormat:${desiredPixelFormat},
+      fitDensity:${fitDensity}, alphaType:${alphaType}, width:${width}, height:${height}`);
+      if (imageInfo.pixelFormat === desiredPixelFormat &&
+          imageInfo.size.width === width &&
+          imageInfo.size.height === height &&
+          imageInfo.density === fitDensity &&
+          imageInfo.alphaType === alphaType) {
+          result = true
       }
     }
 
@@ -313,7 +322,7 @@ export default function imageDecodeOptionsYuvTest() {
     })
 
     afterEach(() => {
-      if (globalPixelMap) {
+      if (globalPixelMap != undefined) {
         hilog.info(0x0000, 'testTag', '%{public}s', 'globalPixelMap release start');
         try {
           await globalPixelMap!.release();

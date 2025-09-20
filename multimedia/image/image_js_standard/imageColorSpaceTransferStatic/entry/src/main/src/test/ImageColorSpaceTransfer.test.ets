@@ -71,7 +71,7 @@ const createPixelmapTestPromise = async (
         csm = colorSpaceManager.create(colorSpace as colorSpaceManager.ColorSpace);
       }
       let decodingOptions: image.DecodingOptions = { desiredColorSpace: csm };
-      let pixelMap: image.PixelMap = await imageSource.createPixelMap(decodingOptions);
+      let pixelMap: image.PixelMap | undefined = await imageSource.createPixelMap(decodingOptions);
       logger.log("PixelMap " + pixelMap);
       if (pixelMap != undefined) {
         globalpixelmap = pixelMap;

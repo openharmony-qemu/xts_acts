@@ -35,7 +35,7 @@ let mPreviewOutput: camera.PreviewOutput;
 let mPhotoOutput: camera.PhotoOutput;
 let isSessionCreated: boolean = false;
 
-let receiver: image.ImageReceiver;
+let receiver: image.ImageReceiver | undefined;
 
 let getPreviewOutputSurface = () => {
   console.log(TAG + 'Entering getPreviewOutputSurface')
@@ -60,7 +60,7 @@ export default function cameraPhotoSessionTest() {
     console.log(TAG + 'before receiver check')
     if (receiver !== undefined) {
       console.log(TAG + 'Photo receiver is created successfully')
-      mPhotoSurface = await receiver.getReceivingSurfaceId()
+      mPhotoSurface = await receiver!.getReceivingSurfaceId()
       console.log(TAG + 'Photo received id: ' + mPhotoSurface)
     } else {
       console.log(TAG + 'Photo receiver is created failed')

@@ -189,7 +189,7 @@ export default function imageColorSpace() {
                 if (imageSource != undefined) {
                     globalImagesource = imageSource;
                     let pixelMap = await imageSource.createPixelMap();
-                    globalpixelmap = pixelMap;
+                    globalpixelmap = pixelMap!;
                     logger.log("PixelMap " + pixelMap);
                     logger.log("PixelMap " + (pixelMap != undefined));
                     expect(pixelMap != undefined).assertTrue();

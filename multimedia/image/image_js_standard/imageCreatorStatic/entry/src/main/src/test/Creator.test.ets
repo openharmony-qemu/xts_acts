@@ -330,7 +330,7 @@ export default function ImageCreator() {
         done();
       }
       globalCreator = creator;
-      creator.on('imageRelease', (err: BusinessError | null) => {
+      creator.onImageRelease((err: BusinessError | null) => {
         if (err && err.code) {
           console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_ON_STATIC_0100 on release faild' + err);
           expect(false).assertTrue();
@@ -397,7 +397,7 @@ export default function ImageCreator() {
       }
       globalCreator = creator;
       try {
-        creator.off('imageRelease');
+        creator.offImageRelease();
         expect(true).assertTrue();
         console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_SUCCESS_STATIC_0100 off success');
         done();

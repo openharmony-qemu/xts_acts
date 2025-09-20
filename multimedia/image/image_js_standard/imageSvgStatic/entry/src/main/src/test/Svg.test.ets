@@ -96,7 +96,7 @@ export default function imageSvg() {
     let createPixelMapPromise =
       async (done: () => void, testNum: string, picName: string, decodeOpts: image.DecodingOptions,
         packOpts: image.PackingOption): Promise<void> => {
-      let imageSourceApi: image.ImageSource;
+      let imageSourceApi: image.ImageSource | undefined;
       try {
         await getFd(picName)
         console.log(`fdNumber ${fdNumber}`)
@@ -129,7 +129,7 @@ export default function imageSvg() {
     let createPixelMapCallBack =
       async (done: () => void, testNum: string, picName: string, decodeOpts: image.DecodingOptions,
         packOpts: image.PackingOption): Promise<void> => {
-        let imageSourceApi: image.ImageSource;
+        let imageSourceApi: image.ImageSource | undefined;
         await getFd(picName);
         imageSourceApi = image.createImageSource(fdNumber);
         if (imageSourceApi == undefined) {
@@ -159,7 +159,7 @@ export default function imageSvg() {
       decodeOpts: image.DecodingOptions) => Promise<void> =
       async (done: () => void, testNum: string, picName: string,
         decodeOpts: image.DecodingOptions): Promise<void> => {
-        let imageSourceApi: image.ImageSource;
+        let imageSourceApi: image.ImageSource | undefined;
         await getFd(picName);
         imageSourceApi = image.createImageSource(fdNumber);
         if (imageSourceApi == undefined) {
@@ -179,7 +179,7 @@ export default function imageSvg() {
       decodeOpts: image.DecodingOptions) => Promise<void> =
       async (done: () => void, testNum: string, picName: string,
         decodeOpts: image.DecodingOptions): Promise<void> => {
-        let imageSourceApi: image.ImageSource;
+        let imageSourceApi: image.ImageSource | undefined;
         await getFd(picName);
         imageSourceApi = image.createImageSource(fdNumber);
         if (imageSourceApi == undefined) {
