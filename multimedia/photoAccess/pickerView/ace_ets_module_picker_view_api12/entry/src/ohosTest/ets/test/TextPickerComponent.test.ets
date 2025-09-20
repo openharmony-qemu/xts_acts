@@ -35,7 +35,7 @@ import {
   ClickType,
   BaseItemInfo,
   SaveMode,
-  ItemDisplayRatio，
+  ItemDisplayRatio,
   BadgeConfig,
   BadgeType
 } from '@ohos.file.PhotoPickerComponent';
@@ -68,19 +68,13 @@ async function routeToUrl(options: router.RouterOptions) {
   }
 }
 
-function getDefaultPickerOptions(): PickerOptions {
-  let pickerOptions: PickerOptions = new PickerOptions();
-  pickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
-  pickerOptions.isSearchSupported = false;
-  pickerOptions.isPhotoTakingSupported = false;
-  pickerOptions.isRepeatSelectSupported = false;
-  pickerOptions.maxSelectNumber = 500;
-  pickerOptions.maxSelectedReminderMode = ReminderMode.TOAST;
-  pickerOptions.maxPhotoSelectNumber = 500;
-  pickerOptions.maxVideoSelectNumber = 500;
-  pickerOptions.photoBrowserBackgroundColorMode = PickerColorMode.AUTO;
-  pickerOptions.orientation = PickerOrientation.HORIZONTAL;
-  return pickerOptions;
+
+function getSheetPickerOptions(): PhotoAccessHelper.PhotoSelectOptions {
+  let sheetPickerOptions = new PhotoAccessHelper.PhotoSelectOptions();
+  sheetPickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
+  sheetPickerOptions.isPhotoTakingSupported = false;
+  sheetPickerOptions.maxSelectNumber = 10;
+  return sheetPickerOptions;
 }
 
 function getDefaultPickerOptions(): PickerOptions {
