@@ -151,9 +151,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_0100
-     * @tc.name     : testHasAccessoryRight001
-     * @tc.desc     : verify function hasAccessoryRight
+     * @tc.number   SUB_USB_HostManager_Func_0100
+     * @tc.name     testHasAccessoryRight001
+     * @tc.desc     verify function hasAccessoryRight
      */
     it("testHasAccessoryRight001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.info(domain, tag, '----------------------testHasAccessoryRight001---------------------------');
@@ -175,9 +175,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_0400
-     * @tc.name     : testUsbControlTransfer001
-     * @tc.desc     : verify function usbControlTransfer
+     * @tc.number   SUB_USB_HostManager_Func_0400
+     * @tc.name     testUsbControlTransfer001
+     * @tc.desc     verify function usbControlTransfer
      */
     it("testUsbControlTransfer001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -220,9 +220,9 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_0700
-     * @tc.name     : testConnectDevice009
-     * @tc.desc     : verify function hasRight
+     * @tc.number   SUB_USB_HostManager_Func_0700
+     * @tc.name     testConnectDevice009
+     * @tc.desc     verify function hasRight
      */
     it("testConnectDevice009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -255,9 +255,9 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_0800
-     * @tc.name     : testConnectDevice010
-     * @tc.desc     : verify function hasRight
+     * @tc.number   SUB_USB_HostManager_Func_0800
+     * @tc.name     testConnectDevice010
+     * @tc.desc     verify function hasRight
      */
     it("testConnectDevice010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -290,9 +290,9 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_2900
-     * @tc.name     : testHasAccessoryRight031
-     * @tc.desc     : verify function hasAccessoryRight
+     * @tc.number   SUB_USB_HostManager_Func_2900
+     * @tc.name     testHasAccessoryRight031
+     * @tc.desc     verify function hasAccessoryRight
      */
     it("testHasAccessoryRight031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.info(domain, tag, '----------------------testHasAccessoryRight031---------------------------');
@@ -313,9 +313,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_3000
-     * @tc.name     : testHasAccessoryRight032
-     * @tc.desc     : verify function hasAccessoryRight
+     * @tc.number   SUB_USB_HostManager_Func_3000
+     * @tc.name     testHasAccessoryRight032
+     * @tc.desc     verify function hasAccessoryRight
      */
     it("testHasAccessoryRight032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.info(domain, tag, '----------------------testHasAccessoryRight032---------------------------');
@@ -336,9 +336,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_3100
-     * @tc.name     : testHasAccessoryRight033
-     * @tc.desc     : verify function hasAccessoryRight
+     * @tc.number   SUB_USB_HostManager_Func_3100
+     * @tc.name     testHasAccessoryRight033
+     * @tc.desc     verify function hasAccessoryRight
      */
     it("testHasAccessoryRight033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.info(domain, tag, '----------------------testHasAccessoryRight033---------------------------');
@@ -359,9 +359,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_3200
-     * @tc.name     : testRequestAccessoryRight034
-     * @tc.desc     : verify function hasAccessoryRight
+     * @tc.number   SUB_USB_HostManager_Func_3200
+     * @tc.name     testRequestAccessoryRight034
+     * @tc.desc     verify function hasAccessoryRight
      */
     it("testRequestAccessoryRight034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.info(domain, tag, '----------------------testRequestAccessoryRight034---------------------------');
@@ -380,9 +380,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_3300
-     * @tc.name     : testRequestAccessoryRight035
-     * @tc.desc     : verify function requestAccessoryRight
+     * @tc.number   SUB_USB_HostManager_Func_3300
+     * @tc.name     testRequestAccessoryRight035
+     * @tc.desc     verify function requestAccessoryRight
      */
     it("testRequestAccessoryRight035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.info(domain, tag, '----------------------testRequestAccessoryRight035---------------------------');
@@ -402,9 +402,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_3400
-     * @tc.name     : testRequestAccessoryRight036
-     * @tc.desc     : verify function requestAccessoryRight
+     * @tc.number   SUB_USB_HostManager_Func_3400
+     * @tc.name     testRequestAccessoryRight036
+     * @tc.desc     verify function requestAccessoryRight
      */
     it("testRequestAccessoryRight036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.info(domain, tag, '----------------------testRequestAccessoryRight036---------------------------');
@@ -424,9 +424,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_3500
-     * @tc.name     : testRequestAccessoryRight037
-     * @tc.desc     : verify function requestAccessoryRight
+     * @tc.number   SUB_USB_HostManager_Func_3500
+     * @tc.name     testRequestAccessoryRight037
+     * @tc.desc     verify function requestAccessoryRight
      */
     it("testRequestAccessoryRight037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.info(domain, tag, '----------------------testRequestAccessoryRight037---------------------------');
@@ -446,9 +446,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_3600
-     * @tc.name     : testRequestAccessoryRight038
-     * @tc.desc     : verify function requestAccessoryRight
+     * @tc.number   SUB_USB_HostManager_Func_3600
+     * @tc.name     testRequestAccessoryRight038
+     * @tc.desc     verify function requestAccessoryRight
      */
     it("testRequestAccessoryRight038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.info(domain, tag, '----------------------testRequestAccessoryRight038---------------------------');
@@ -468,9 +468,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_3900
-     * @tc.name     : testOpenAccessory039
-     * @tc.desc     : verify function openAccessory
+     * @tc.number   SUB_USB_HostManager_Func_3900
+     * @tc.name     testOpenAccessory039
+     * @tc.desc     verify function openAccessory
      */
     it("testOpenAccessory039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.info(domain, tag, '----------------------testOpenAccessory039---------------------------');
@@ -493,9 +493,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_4000
-     * @tc.name     : testOpenAccessory040
-     * @tc.desc     : verify function openAccessory
+     * @tc.number   SUB_USB_HostManager_Func_4000
+     * @tc.name     testOpenAccessory040
+     * @tc.desc     verify function openAccessory
      */
     it("testOpenAccessory040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,() => {
       hilog.info(domain, tag, '----------------------testOpenAccessory040---------------------------');
@@ -518,9 +518,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_4100
-     * @tc.name     : testOpenAccessory041
-     * @tc.desc     : verify function openAccessory
+     * @tc.number   SUB_USB_HostManager_Func_4100
+     * @tc.name     testOpenAccessory041
+     * @tc.desc     verify function openAccessory
      */
     it("testOpenAccessory041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.info(domain, tag, '----------------------testOpenAccessory041---------------------------');
@@ -543,9 +543,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_4200
-     * @tc.name     : testOpenAccessory042
-     * @tc.desc     : verify function openAccessory
+     * @tc.number   SUB_USB_HostManager_Func_4200
+     * @tc.name     testOpenAccessory042
+     * @tc.desc     verify function openAccessory
      */
     it("testOpenAccessory042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.info(domain, tag, '----------------------testOpenAccessory042---------------------------');
@@ -568,9 +568,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_4300
-     * @tc.name     : testOpenAccessory043
-     * @tc.desc     : verify function openAccessory
+     * @tc.number   SUB_USB_HostManager_Func_4300
+     * @tc.name     testOpenAccessory043
+     * @tc.desc     verify function openAccessory
      */
     it("testOpenAccessory043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.info(domain, tag, '----------------------testOpenAccessory043---------------------------');
@@ -593,9 +593,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_4400
-     * @tc.name     : testOpenAccessory044
-     * @tc.desc     : verify function openAccessory
+     * @tc.number   SUB_USB_HostManager_Func_4400
+     * @tc.name     testOpenAccessory044
+     * @tc.desc     verify function openAccessory
      */
     it("testOpenAccessory044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.info(domain, tag, '----------------------testOpenAccessory044---------------------------');
@@ -618,9 +618,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_4500
-     * @tc.name     : testOpenAccessory045
-     * @tc.desc     : verify function openAccessory
+     * @tc.number   SUB_USB_HostManager_Func_4500
+     * @tc.name     testOpenAccessory045
+     * @tc.desc     verify function openAccessory
      */
     it("testOpenAccessory045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.info(domain, tag, '----------------------testOpenAccessory045---------------------------');
@@ -643,9 +643,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_4600
-     * @tc.name     : testOpenAccessory048
-     * @tc.desc     : verify function openAccessory
+     * @tc.number   SUB_USB_HostManager_Func_4600
+     * @tc.name     testOpenAccessory048
+     * @tc.desc     verify function openAccessory
      */
     it("testOpenAccessory048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.info(domain, tag, '----------------------testOpenAccessory048---------------------------');
@@ -668,9 +668,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_4700
-     * @tc.name     : testOpenAccessory049
-     * @tc.desc     : verify function openAccessory
+     * @tc.number   SUB_USB_HostManager_Func_4700
+     * @tc.name     testOpenAccessory049
+     * @tc.desc     verify function openAccessory
      */
     it("testOpenAccessory049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.info(domain, tag, '----------------------testOpenAccessory049---------------------------');
@@ -693,9 +693,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_4800
-     * @tc.name     : testCloseAccessory050
-     * @tc.desc     : verify function closeAccessory
+     * @tc.number   SUB_USB_HostManager_Func_4800
+     * @tc.name     testCloseAccessory050
+     * @tc.desc     verify function closeAccessory
      */
     it("testCloseAccessory050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.info(domain, tag, '----------------------testCloseAccessory050---------------------------');
@@ -716,9 +716,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_4900
-     * @tc.name     : testCloseAccessory051
-     * @tc.desc     : verify function closeAccessory
+     * @tc.number   SUB_USB_HostManager_Func_4900
+     * @tc.name     testCloseAccessory051
+     * @tc.desc     verify function closeAccessory
      */
     it("testCloseAccessory051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.info(domain, tag, '----------------------testCloseAccessory051---------------------------');
@@ -739,9 +739,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_5000
-     * @tc.name     : testCloseAccessory052
-     * @tc.desc     : verify function closeAccessory
+     * @tc.number   SUB_USB_HostManager_Func_5000
+     * @tc.name     testCloseAccessory052
+     * @tc.desc     verify function closeAccessory
      */
     it("testCloseAccessory052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.info(domain, tag, '----------------------testCloseAccessory052---------------------------');
@@ -762,9 +762,9 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_5300
-     * @tc.name     : testConnectDevice055
-     * @tc.desc     : verify function connectDevice
+     * @tc.number   SUB_USB_HostManager_Func_5300
+     * @tc.name     testConnectDevice055
+     * @tc.desc     verify function connectDevice
      */
     it("testConnectDevice055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -796,9 +796,9 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_5600
-     * @tc.name     : testUsbSubmitTransfer058
-     * @tc.desc     : verify function usbSubmitTransfer
+     * @tc.number   SUB_USB_HostManager_Func_5600
+     * @tc.name     testUsbSubmitTransfer058
+     * @tc.desc     verify function usbSubmitTransfer
      */
     it("testUsbSubmitTransfer058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -843,9 +843,9 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_5700
-     * @tc.name     : testUsbSubmitTransfer059
-     * @tc.desc     : verify function usbSubmitTransfer
+     * @tc.number   SUB_USB_HostManager_Func_5700
+     * @tc.name     testUsbSubmitTransfer059
+     * @tc.desc     verify function usbSubmitTransfer
      */
     it("testUsbSubmitTransfer059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -890,9 +890,9 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_5800
-     * @tc.name     : testUsbSubmitTransfer060
-     * @tc.desc     : verify function usbSubmitTransfer
+     * @tc.number   SUB_USB_HostManager_Func_5800
+     * @tc.name     testUsbSubmitTransfer060
+     * @tc.desc     verify function usbSubmitTransfer
      */
     it("testUsbSubmitTransfer060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -937,9 +937,9 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_5900
-     * @tc.name     : testUsbSubmitTransfer061
-     * @tc.desc     : verify function usbSubmitTransfer
+     * @tc.number   SUB_USB_HostManager_Func_5900
+     * @tc.name     testUsbSubmitTransfer061
+     * @tc.desc     verify function usbSubmitTransfer
      */
     it("testUsbSubmitTransfer061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -984,9 +984,9 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_6000
-     * @tc.name     : testUsbSubmitTransfer062
-     * @tc.desc     : verify function usbSubmitTransfer
+     * @tc.number   SUB_USB_HostManager_Func_6000
+     * @tc.name     testUsbSubmitTransfer062
+     * @tc.desc     verify function usbSubmitTransfer
      */
     it("testUsbSubmitTransfer062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1031,9 +1031,9 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_6100
-     * @tc.name     : testUsbCancelTransfer063
-     * @tc.desc     : verify function usbCancelTransfer
+     * @tc.number   SUB_USB_HostManager_Func_6100
+     * @tc.name     testUsbCancelTransfer063
+     * @tc.desc     verify function usbCancelTransfer
      */
     it("testUsbCancelTransfer063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1068,9 +1068,9 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_6200
-     * @tc.name     : testUsbCancelTransfer064
-     * @tc.desc     : verify function usbCancelTransfer
+     * @tc.number   SUB_USB_HostManager_Func_6200
+     * @tc.name     testUsbCancelTransfer064
+     * @tc.desc     verify function usbCancelTransfer
      */
     it("testUsbCancelTransfer064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1105,9 +1105,9 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_6300
-     * @tc.name     : testUsbCancelTransfer065
-     * @tc.desc     : verify function usbCancelTransfer
+     * @tc.number   SUB_USB_HostManager_Func_6300
+     * @tc.name     testUsbCancelTransfer065
+     * @tc.desc     verify function usbCancelTransfer
      */
     it("testUsbCancelTransfer065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1142,9 +1142,9 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_6400
-     * @tc.name     : testUsbSubmitTransfer066
-     * @tc.desc     : verify function usbSubmitTransfer
+     * @tc.number   SUB_USB_HostManager_Func_6400
+     * @tc.name     testUsbSubmitTransfer066
+     * @tc.desc     verify function usbSubmitTransfer
      */
     it("testUsbSubmitTransfer066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1189,9 +1189,9 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_6600
-     * @tc.name     : testUsbControlTransfer68
-     * @tc.desc     : verify function usbControlTransfer
+     * @tc.number   SUB_USB_HostManager_Func_6600
+     * @tc.name     testUsbControlTransfer68
+     * @tc.desc     verify function usbControlTransfer
      */
     it("testUsbControlTransfer68", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1235,9 +1235,9 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_6700
-     * @tc.name     : testUsbControlTransfer69
-     * @tc.desc     : verify function usbControlTransfer
+     * @tc.number   SUB_USB_HostManager_Func_6700
+     * @tc.name     testUsbControlTransfer69
+     * @tc.desc     verify function usbControlTransfer
      */
     it("testUsbControlTransfer69", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1281,9 +1281,9 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_Func_6800
-     * @tc.name     : testUsbControlTransfer70
-     * @tc.desc     : verify function usbControlTransfer
+     * @tc.number   SUB_USB_HostManager_Func_6800
+     * @tc.name     testUsbControlTransfer70
+     * @tc.desc     verify function usbControlTransfer
      */
     it("testUsbControlTransfer70", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

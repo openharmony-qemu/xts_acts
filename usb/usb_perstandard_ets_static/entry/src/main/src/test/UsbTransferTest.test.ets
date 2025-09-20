@@ -108,9 +108,9 @@ export default function UsbTransferTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_UsbSubmitTransfer_Func_0100
-     * @tc.name     : testUsbSubmitTransfer001
-     * @tc.desc     : interrupt transfer Submit successfully.
+     * @tc.number   SUB_USB_Host_JS_UsbSubmitTransfer_Func_0100
+     * @tc.name     testUsbSubmitTransfer001
+     * @tc.desc     interrupt transfer Submit successfully.
      */
     it("testUsbSubmitTransfer001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -154,9 +154,9 @@ export default function UsbTransferTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_usbCancelTransfer_Func_0100
-     * @tc.name     : testUsbCancelTransfer001
-     * @tc.desc     : interrupt transfer cancel successfully.
+     * @tc.number   SUB_USB_Host_JS_usbCancelTransfer_Func_0100
+     * @tc.name     testUsbCancelTransfer001
+     * @tc.desc     interrupt transfer cancel successfully.
      */
     it("testUsbCancelTransfer001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -191,9 +191,9 @@ export default function UsbTransferTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_usbCancelTransfer_ErrCode_0100
-     * @tc.name     : testUsbCancelTransfer002
-     * @tc.desc     : interrupt transfer cancel failed.
+     * @tc.number   SUB_USB_Host_JS_usbCancelTransfer_ErrCode_0100
+     * @tc.name     testUsbCancelTransfer002
+     * @tc.desc     interrupt transfer cancel failed.
      */
     it("testUsbCancelTransfer002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -229,9 +229,9 @@ export default function UsbTransferTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_usbControlTransfer_ErrCode_0100
-     * @tc.name     : test_usbControlTransfer001
-     * @tc.desc     : interrupt transfer cancel failed.
+     * @tc.number   SUB_USB_Host_JS_usbControlTransfer_ErrCode_0100
+     * @tc.name     test_usbControlTransfer001
+     * @tc.desc     interrupt transfer cancel failed.
      */
     it("test_usbControlTransfer001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -277,9 +277,9 @@ export default function UsbTransferTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_bulkTransfer_0100
-     * @tc.name     : test_bulkTransfer02
-     * @tc.desc     : bulkTransfer transfer.
+     * @tc.number   SUB_USB_Host_JS_bulkTransfer_0100
+     * @tc.name     test_bulkTransfer02
+     * @tc.desc     bulkTransfer transfer.
      */
     it("test_bulkTransfer02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

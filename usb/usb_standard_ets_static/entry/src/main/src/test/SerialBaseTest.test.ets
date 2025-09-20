@@ -110,9 +110,9 @@ export default function SerialBaseTest() {
       }
     })
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_ANI_getPortList_Func_0100
-     * @tc.name     : testGetPortList001
-     * @tc.desc     : getportlist successfully.
+     * @tc.number   SUB_USB_HostMgr_Serial_ANI_getPortList_Func_0100
+     * @tc.name     testGetPortList001
+     * @tc.desc     getportlist successfully.
      */
     it('testGetPortList001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void): Promise<void> =>  {
       try {
@@ -137,9 +137,9 @@ export default function SerialBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_ANI_hasSerialRight_Func_0100
-     * @tc.name     : testHasSerialRight001
-     * @tc.desc     : hasSerialRight successfully.
+     * @tc.number   SUB_USB_HostMgr_Serial_ANI_hasSerialRight_Func_0100
+     * @tc.name     testHasSerialRight001
+     * @tc.desc     hasSerialRight successfully.
      */
     it('testHasSerialRight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -159,9 +159,9 @@ export default function SerialBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_ANI_hasSerialRight_ErrCode_0100
-     * @tc.name     : testHasSerialRight002
-     * @tc.desc     : invalidInput hasSerialRight failed.
+     * @tc.number   SUB_USB_HostMgr_Serial_ANI_hasSerialRight_ErrCode_0100
+     * @tc.name     testHasSerialRight002
+     * @tc.desc     invalidInput hasSerialRight failed.
      */
     it('testHasSerialRight002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -182,9 +182,9 @@ export default function SerialBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_ANI_hasSerialRight_ErrCode_0200
-     * @tc.name     : testHasSerialRight003
-     * @tc.desc     : invalidPort hasSerialRight failed.
+     * @tc.number   SUB_USB_HostMgr_Serial_ANI_hasSerialRight_ErrCode_0200
+     * @tc.name     testHasSerialRight003
+     * @tc.desc     invalidPort hasSerialRight failed.
      */
     it('testHasSerialRight003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -205,9 +205,9 @@ export default function SerialBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_ANI_requestSerialRight_Func_0100
-     * @tc.name     : testRequestSerialRight001
-     * @tc.desc     : requestSerialRight successfully.
+     * @tc.number   SUB_USB_HostMgr_Serial_ANI_requestSerialRight_Func_0100
+     * @tc.name     testRequestSerialRight001
+     * @tc.desc     requestSerialRight successfully.
      */
     it('testRequestSerialRight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -233,9 +233,9 @@ export default function SerialBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_ANI_requestSerialRight_ErrCode_0100
-     * @tc.name     : testRequestSerialRight002
-     * @tc.desc     : invalidInput requestSerialRight failed.
+     * @tc.number   SUB_USB_HostMgr_Serial_ANI_requestSerialRight_ErrCode_0100
+     * @tc.name     testRequestSerialRight002
+     * @tc.desc     invalidInput requestSerialRight failed.
      */
     it('testRequestSerialRight002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try{
@@ -262,9 +262,9 @@ export default function SerialBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_ANI_requestSerialRight_ErrCode_0200
-     * @tc.name     : testRequestSerialRight003
-     * @tc.desc     : not exist portId requestSerialRight failed.
+     * @tc.number   SUB_USB_HostMgr_Serial_ANI_requestSerialRight_ErrCode_0200
+     * @tc.name     testRequestSerialRight003
+     * @tc.desc     not exist portId requestSerialRight failed.
      */
     it('testRequestSerialRight003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -285,9 +285,9 @@ export default function SerialBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_ANI_open_Func_0100
-     * @tc.name     : testOpen001
-     * @tc.desc     : open successfully.
+     * @tc.number   SUB_USB_HostMgr_Serial_ANI_open_Func_0100
+     * @tc.name     testOpen001
+     * @tc.desc     open successfully.
      */
     it('testOpen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -307,9 +307,9 @@ export default function SerialBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_ANI_open_ErrCode_0100
-     * @tc.name     : testOpen002
-     * @tc.desc     : invalidPort open failed.
+     * @tc.number   SUB_USB_HostMgr_Serial_ANI_open_ErrCode_0100
+     * @tc.name     testOpen002
+     * @tc.desc     invalidPort open failed.
      */
     it('testOpen002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -330,9 +330,9 @@ export default function SerialBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_ANI_open_ErrCode_0200
-     * @tc.name     : testOpen003
-     * @tc.desc     : Repeated open.
+     * @tc.number   SUB_USB_HostMgr_Serial_ANI_open_ErrCode_0200
+     * @tc.name     testOpen003
+     * @tc.desc     Repeated open.
      */
     it('testOpen003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -354,9 +354,9 @@ export default function SerialBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_ANI_open_ErrCode_0300
-     * @tc.name     : testOpen004
-     * @tc.desc     : not exist port to open.
+     * @tc.number   SUB_USB_HostMgr_Serial_ANI_open_ErrCode_0300
+     * @tc.name     testOpen004
+     * @tc.desc     not exist port to open.
      */
     it('testOpen004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -377,9 +377,9 @@ export default function SerialBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_ANI_addSerialRight_ErrCode_0100
-     * @tc.name     : testAddSerialRight001
-     * @tc.desc     : not system app.
+     * @tc.number   SUB_USB_HostMgr_Serial_ANI_addSerialRight_ErrCode_0100
+     * @tc.name     testAddSerialRight001
+     * @tc.desc     not system app.
      */
     it('testAddSerialRight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -423,9 +423,9 @@ export default function SerialBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_ANI_close_Func_0100
-     * @tc.name     : testClose001
-     * @tc.desc     : close port successfully.
+     * @tc.number   SUB_USB_HostMgr_Serial_ANI_close_Func_0100
+     * @tc.name     testClose001
+     * @tc.desc     close port successfully.
      */
     it('testClose001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -452,9 +452,9 @@ export default function SerialBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_ANI_close_ErrCode_0100
-     * @tc.name     : testClose002
-     * @tc.desc     : Repeated close.
+     * @tc.number   SUB_USB_HostMgr_Serial_ANI_close_ErrCode_0100
+     * @tc.name     testClose002
+     * @tc.desc     Repeated close.
      */
     it('testClose002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -476,9 +476,9 @@ export default function SerialBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_ANI_close_ErrCode_0200
-     * @tc.name     : testClose003
-     * @tc.desc     : invalid Port to close.
+     * @tc.number   SUB_USB_HostMgr_Serial_ANI_close_ErrCode_0200
+     * @tc.name     testClose003
+     * @tc.desc     invalid Port to close.
      */
     it('testClose003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -501,9 +501,9 @@ export default function SerialBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_ANI_close_ErrCode_0300
-     * @tc.name     : testClose004
-     * @tc.desc     : not exist Port to close.
+     * @tc.number   SUB_USB_HostMgr_Serial_ANI_close_ErrCode_0300
+     * @tc.name     testClose004
+     * @tc.desc     not exist Port to close.
      */
     it('testClose004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -526,9 +526,9 @@ export default function SerialBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_ANI_open_Func_0400
-     * @tc.name     : testOpen005
-     * @tc.desc     : open failed.
+     * @tc.number   SUB_USB_HostMgr_Serial_ANI_open_Func_0400
+     * @tc.name     testOpen005
+     * @tc.desc     open failed.
      */
     it('testOpen005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -549,9 +549,9 @@ export default function SerialBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_ANI_cancelSerialRight_Func_0100
-     * @tc.name     : testCancelSerialRight001
-     * @tc.desc     : cancelSerialRight successfully.
+     * @tc.number   SUB_USB_HostMgr_Serial_ANI_cancelSerialRight_Func_0100
+     * @tc.name     testCancelSerialRight001
+     * @tc.desc     cancelSerialRight successfully.
      */
     it('testCancelSerialRight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -582,9 +582,9 @@ export default function SerialBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_ANI_cancelSerialRight_ErrCode_0100
-     * @tc.name     : testCancelSerialRight002
-     * @tc.desc     : invalid portId to cancelSerialRight.
+     * @tc.number   SUB_USB_HostMgr_Serial_ANI_cancelSerialRight_ErrCode_0100
+     * @tc.name     testCancelSerialRight002
+     * @tc.desc     invalid portId to cancelSerialRight.
      */
     it('testCancelSerialRight002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -605,9 +605,9 @@ export default function SerialBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_ANI_cancelSerialRight_ErrCode_0200
-     * @tc.name     : testCancelSerialRight003
-     * @tc.desc     : not exist portId to cancelSerialRight.
+     * @tc.number   SUB_USB_HostMgr_Serial_ANI_cancelSerialRight_ErrCode_0200
+     * @tc.name     testCancelSerialRight003
+     * @tc.desc     not exist portId to cancelSerialRight.
      */
     it('testCancelSerialRight003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -628,9 +628,9 @@ export default function SerialBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_ANI_cancelSerialRight_ErrCode_0300
-     * @tc.name     : testCancelSerialRight004
-     * @tc.desc     : no permission to cancelSerialRight.
+     * @tc.number   SUB_USB_HostMgr_Serial_ANI_cancelSerialRight_ErrCode_0300
+     * @tc.name     testCancelSerialRight004
+     * @tc.desc     no permission to cancelSerialRight.
      */
     it('testCancelSerialRight004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {

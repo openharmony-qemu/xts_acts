@@ -80,9 +80,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_0100
-     * @tc.name     : testSetAttribute001
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_0100
+     * @tc.name     testSetAttribute001
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute001 start');
@@ -108,9 +108,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_0200
-     * @tc.name     : testSetAttribute002
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_0200
+     * @tc.name     testSetAttribute002
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute002 start');
@@ -136,9 +136,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_0300
-     * @tc.name     : testSetAttribute003
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_0300
+     * @tc.name     testSetAttribute003
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute002 start');
@@ -164,9 +164,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_0400
-     * @tc.name     : testSetAttribute004
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_0400
+     * @tc.name     testSetAttribute004
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute002 start');
@@ -192,9 +192,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_0500
-     * @tc.name     : testSetAttribute005
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_0500
+     * @tc.name     testSetAttribute005
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute005 start');
@@ -220,9 +220,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_0600
-     * @tc.name     : testSetAttribute006
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_0600
+     * @tc.name     testSetAttribute006
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute006 start');
@@ -248,9 +248,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_0700
-     * @tc.name     : testSetAttribute007
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_0700
+     * @tc.name     testSetAttribute007
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute007 start');
@@ -276,9 +276,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_0800
-     * @tc.name     : testSetAttribute008
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_0800
+     * @tc.name     testSetAttribute008
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute008 start');
@@ -304,9 +304,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_0900
-     * @tc.name     : testSetAttribute009
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_0900
+     * @tc.name     testSetAttribute009
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute009 start');
@@ -332,9 +332,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_1000
-     * @tc.name     : testSetAttribute010
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_1000
+     * @tc.name     testSetAttribute010
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute010 start');
@@ -360,9 +360,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_1100
-     * @tc.name     : testSetAttribute011
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_1100
+     * @tc.name     testSetAttribute011
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute011 start');
@@ -388,9 +388,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_1200
-     * @tc.name     : testSetAttribute012
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_1200
+     * @tc.name     testSetAttribute012
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute012 start');
@@ -416,9 +416,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_1300
-     * @tc.name     : testSetAttribute013
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_1300
+     * @tc.name     testSetAttribute013
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute013 start');
@@ -444,9 +444,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_1400
-     * @tc.name     : testSetAttribute014
-     * @tc.desc     : not openPortId to setAttribute
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_1400
+     * @tc.name     testSetAttribute014
+     * @tc.desc     not openPortId to setAttribute
      */
     it('testSetAttribute014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute014 start');
@@ -472,9 +472,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_1500
-     * @tc.name     : testSetAttribute015
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_1500
+     * @tc.name     testSetAttribute015
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute015 start');
@@ -500,9 +500,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_1600
-     * @tc.name     : testSetAttribute016
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_1600
+     * @tc.name     testSetAttribute016
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute016 start');
@@ -528,9 +528,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_1700
-     * @tc.name     : testSetAttribute017
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_1700
+     * @tc.name     testSetAttribute017
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute017 start');
@@ -556,9 +556,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_1800
-     * @tc.name     : testSetAttribute018
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_1800
+     * @tc.name     testSetAttribute018
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute018 start');
@@ -584,9 +584,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_1900
-     * @tc.name     : testSetAttribute019
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_1900
+     * @tc.name     testSetAttribute019
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute019 start');
@@ -612,9 +612,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_2000
-     * @tc.name     : testSetAttribute020
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_2000
+     * @tc.name     testSetAttribute020
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute020 start');
@@ -640,9 +640,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_2100
-     * @tc.name     : testSetAttribute021
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_2100
+     * @tc.name     testSetAttribute021
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute021 start');
@@ -668,9 +668,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_2200
-     * @tc.name     : testSetAttribute022
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_2200
+     * @tc.name     testSetAttribute022
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute022 start');
@@ -696,9 +696,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_2300
-     * @tc.name     : testSetAttribute023
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_2300
+     * @tc.name     testSetAttribute023
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute023 start');
@@ -724,9 +724,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_2400
-     * @tc.name     : testSetAttribute024
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_2400
+     * @tc.name     testSetAttribute024
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute024 start');
@@ -752,9 +752,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_2500
-     * @tc.name     : testSetAttribute025
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_2500
+     * @tc.name     testSetAttribute025
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute025 start');
@@ -780,9 +780,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_2600
-     * @tc.name     : testSetAttribute026
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_2600
+     * @tc.name     testSetAttribute026
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute026 start');
@@ -808,9 +808,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_2700
-     * @tc.name     : testSetAttribute027
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_2700
+     * @tc.name     testSetAttribute027
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute027 start');
@@ -836,9 +836,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_2800
-     * @tc.name     : testSetAttribute028
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_2800
+     * @tc.name     testSetAttribute028
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute028 start');
@@ -864,9 +864,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_enum_2900
-     * @tc.name     : testSetAttribute029
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_enum_2900
+     * @tc.name     testSetAttribute029
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute029 start');
@@ -892,9 +892,9 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_writeSync_ErrCode_0100
-     * @tc.name     : testWriteSync001
-     * @tc.desc     : writeSync error code 31400006.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_writeSync_ErrCode_0100
+     * @tc.name     testWriteSync001
+     * @tc.desc     writeSync error code 31400006.
      */
     it('testWriteSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testWriteSync001 start');

@@ -82,9 +82,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_setAttribute_Func_0100
-     * @tc.name     : testSetAttribute001
-     * @tc.desc     : setAttribute successfully.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_setAttribute_Func_0100
+     * @tc.name     testSetAttribute001
+     * @tc.desc     setAttribute successfully.
      */
     it('testSetAttribute001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute001 start');
@@ -112,9 +112,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_setAttribute_ErrCode_0100
-     * @tc.name     : testSetAttribute002
-     * @tc.desc     : not openPortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_setAttribute_ErrCode_0100
+     * @tc.name     testSetAttribute002
+     * @tc.desc     not openPortId to setAttribute.
      */
     it('testSetAttribute002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute002 start');
@@ -140,9 +140,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_setAttribute_ErrCode_0200
-     * @tc.name     : testSetAttribute003
-     * @tc.desc     : invalid PortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_setAttribute_ErrCode_0200
+     * @tc.name     testSetAttribute003
+     * @tc.desc     invalid PortId to setAttribute.
      */
     it('testSetAttribute003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute003 start');
@@ -169,9 +169,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_setAttribute_ErrCode_0300
-     * @tc.name     : testSetAttribute004
-     * @tc.desc     : not exist PortId to setAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_setAttribute_ErrCode_0300
+     * @tc.name     testSetAttribute004
+     * @tc.desc     not exist PortId to setAttribute.
      */
     it('testSetAttribute004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testSetAttribute004 start');
@@ -198,9 +198,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_0100
-     * @tc.name     : testGetAttribute001
-     * @tc.desc     : getAttribute successfully.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_getAttribute_Func_0100
+     * @tc.name     testGetAttribute001
+     * @tc.desc     getAttribute successfully.
      */
     it('testGetAttribute001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testGetAttribute001 start');
@@ -228,9 +228,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_ErrCode_0100
-     * @tc.name     : testGetAttribute002
-     * @tc.desc     : not openPortId to getAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_getAttribute_ErrCode_0100
+     * @tc.name     testGetAttribute002
+     * @tc.desc     not openPortId to getAttribute.
      */
     it('testGetAttribute002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testGetAttribute002 start');
@@ -250,9 +250,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_ErrCode_0200
-     * @tc.name     : testGetAttribute003
-     * @tc.desc     : invalid openPortId to getAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_getAttribute_ErrCode_0200
+     * @tc.name     testGetAttribute003
+     * @tc.desc     invalid openPortId to getAttribute.
      */
     it('testGetAttribute003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testGetAttribute003 start');
@@ -273,9 +273,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_ErrCode_0300
-     * @tc.name     : testGetAttribute004
-     * @tc.desc     : not exist portId to getAttribute.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_getAttribute_ErrCode_0300
+     * @tc.name     testGetAttribute004
+     * @tc.desc     not exist portId to getAttribute.
      */
     it('testGetAttribute004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testGetAttribute004 start');
@@ -296,9 +296,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_writeSync_Func_0100
-     * @tc.name     : testWriteSync001
-     * @tc.desc     : writeSync successfully.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_writeSync_Func_0100
+     * @tc.name     testWriteSync001
+     * @tc.desc     writeSync successfully.
      */
     it('testWriteSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testWriteSync001 start');
@@ -321,9 +321,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_writeSync_ErrCode_0100
-     * @tc.name     : testWriteSync002
-     * @tc.desc     : not openPortId to writeSync.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_writeSync_ErrCode_0100
+     * @tc.name     testWriteSync002
+     * @tc.desc     not openPortId to writeSync.
      */
     it('testWriteSync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testWriteSync002 start');
@@ -344,9 +344,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_writeSync_ErrCode_0200
-     * @tc.name     : testWriteSync003
-     * @tc.desc     : invalidPortId to writeSync.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_writeSync_ErrCode_0200
+     * @tc.name     testWriteSync003
+     * @tc.desc     invalidPortId to writeSync.
      */
     it('testWriteSync003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testWriteSync003 start');
@@ -368,9 +368,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_writeSync_ErrCode_0300
-     * @tc.name     : testWriteSync004
-     * @tc.desc     : not exist PortId to writeSync.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_writeSync_ErrCode_0300
+     * @tc.name     testWriteSync004
+     * @tc.desc     not exist PortId to writeSync.
      */
     it('testWriteSync004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testWriteSync004 start');
@@ -392,9 +392,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_write_Func_0100
-     * @tc.name     : testWrite001
-     * @tc.desc     : write successfully.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_write_Func_0100
+     * @tc.name     testWrite001
+     * @tc.desc     write successfully.
      */
     it('testWrite001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testWrite001 start');
@@ -417,9 +417,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_write_ErrCode_0100
-     * @tc.name     : testWrite002
-     * @tc.desc     : invalid PortId to write.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_write_ErrCode_0100
+     * @tc.name     testWrite002
+     * @tc.desc     invalid PortId to write.
      */
     it('testWrite002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testWrite002 start');
@@ -440,9 +440,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_write_ErrCode_0200
-     * @tc.name     : testWrite003
-     * @tc.desc     : not openPortId to write.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_write_ErrCode_0200
+     * @tc.name     testWrite003
+     * @tc.desc     not openPortId to write.
      */
     it('testWrite003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testWrite003 start');
@@ -463,9 +463,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_write_ErrCode_0300
-     * @tc.name     : testWrite004
-     * @tc.desc     : not exist PortId to write.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_write_ErrCode_0300
+     * @tc.name     testWrite004
+     * @tc.desc     not exist PortId to write.
      */
     it('testWrite004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testWrite004 start');
@@ -487,9 +487,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_readSync_Func_0100
-     * @tc.name     : testReadSync002
-     * @tc.desc     : readsync successfully.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_readSync_Func_0100
+     * @tc.name     testReadSync002
+     * @tc.desc     readsync successfully.
      */
     it('testReadSync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000);
@@ -514,9 +514,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_readSync_ErrCode_0200
-     * @tc.name     : testReadSync003
-     * @tc.desc     : port not open.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_readSync_ErrCode_0200
+     * @tc.name     testReadSync003
+     * @tc.desc     port not open.
      */
     it('testReadSync003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000);
@@ -538,9 +538,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_readSync_ErrCode_0300
-     * @tc.name     : testReadSync004
-     * @tc.desc     : invalidport to open.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_readSync_ErrCode_0300
+     * @tc.name     testReadSync004
+     * @tc.desc     invalidport to open.
      */
     it('testReadSync004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testReadSync004 start');
@@ -562,9 +562,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_readSync_ErrCode_0400
-     * @tc.name     : testReadSync005
-     * @tc.desc     : invalidport to open.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_readSync_ErrCode_0400
+     * @tc.name     testReadSync005
+     * @tc.desc     invalidport to open.
      */
     it('testReadSync005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testReadSync005 start');
@@ -586,9 +586,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_read_Func_0100
-     * @tc.name     : testRead002
-     * @tc.desc     : read successfully.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_read_Func_0100
+     * @tc.name     testRead002
+     * @tc.desc     read successfully.
      */
     it('testRead002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testRead002 start');
@@ -612,9 +612,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_read_ErrCode_0200
-     * @tc.name     : testRead003
-     * @tc.desc     : port not open.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_read_ErrCode_0200
+     * @tc.name     testRead003
+     * @tc.desc     port not open.
      */
     it('testRead003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000);
@@ -636,9 +636,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_read_ErrCode_0300
-     * @tc.name     : testRead004
-     * @tc.desc     : invalidPort to read.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_read_ErrCode_0300
+     * @tc.name     testRead004
+     * @tc.desc     invalidPort to read.
      */
     it('testRead004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testRead004 start');
@@ -659,9 +659,9 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_read_ErrCode_0400
-     * @tc.name     : testRead005
-     * @tc.desc     : not exist to read.
+     * @tc.number   SUB_USB_HostMgr_Serial_JS_read_ErrCode_0400
+     * @tc.name     testRead005
+     * @tc.desc     not exist to read.
      */
     it('testRead005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, 'testRead005 start');

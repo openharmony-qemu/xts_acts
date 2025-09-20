@@ -102,10 +102,10 @@ export default function UsbBaseTest() {
       hilog.info(domain, tag, 'devices empty');
     })
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0100
-     * @tc.name     : testGetDevices001
-     * @tc.desc     : Positive test: Get device list
-     * @tc.desc     : 【C-ALL-HARDWARE-0502】必须支持连接标准 USB 外围设备
+     * @tc.number   SUB_USB_HostManager_JS_Func_0100
+     * @tc.name     testGetDevices001
+     * @tc.desc     Positive test: Get device list
+     * @tc.desc     【C-ALL-HARDWARE-0502】必须支持连接标准 USB 外围设备
      */
     it('testGetDevices001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -123,9 +123,9 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0200
-     * @tc.name     : testGetRawDescriptorRight001
-     * @tc.desc     : Positive test: getRawDescriptor
+     * @tc.number   SUB_USB_HostManager_JS_Func_0200
+     * @tc.name     testGetRawDescriptorRight001
+     * @tc.desc     Positive test: getRawDescriptor
      */
     it("testGetRawDescriptorRight001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -162,9 +162,9 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0300
-     * @tc.name     : testClaimInterface001
-     * @tc.desc     : Positive test: claimInterface
+     * @tc.number   SUB_USB_HostManager_JS_Func_0300
+     * @tc.name     testClaimInterface001
+     * @tc.desc     Positive test: claimInterface
      */
     it("testClaimInterface001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -197,9 +197,9 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0400
-     * @tc.name     : testReleaseInterface001
-     * @tc.desc     : Positive test: releaseInterface
+     * @tc.number   SUB_USB_HostManager_JS_Func_0400
+     * @tc.name     testReleaseInterface001
+     * @tc.desc     Positive test: releaseInterface
      */
     it("testReleaseInterface001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -233,9 +233,9 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0500
-     * @tc.name     : testSetInterface001
-     * @tc.desc     : Positive test: setInterface
+     * @tc.number   SUB_USB_HostManager_JS_Func_0500
+     * @tc.name     testSetInterface001
+     * @tc.desc     Positive test: setInterface
      */
     it("testSetInterface001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -268,9 +268,9 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0600
-     * @tc.name     : testSetConfiguration001
-     * @tc.desc     : Positive test: setConfiguration
+     * @tc.number   SUB_USB_HostManager_JS_Func_0600
+     * @tc.name     testSetConfiguration001
+     * @tc.desc     Positive test: setConfiguration
      */
     it("testSetConfiguration001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -301,9 +301,9 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0700
-     * @tc.name     : testGetFileDescriptor001
-     * @tc.desc     : Positive test: getFileDescriptor
+     * @tc.number   SUB_USB_HostManager_JS_Func_0700
+     * @tc.name     testGetFileDescriptor001
+     * @tc.desc     Positive test: getFileDescriptor
      */
     it("testGetFileDescriptor001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -330,9 +330,9 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0800
-     * @tc.name     : testRequestRight001
-     * @tc.desc     : Positive test: requestRight.
+     * @tc.number   SUB_USB_HostManager_JS_Func_0800
+     * @tc.name     testRequestRight001
+     * @tc.desc     Positive test: requestRight.
      */
     it("testRequestRight001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -357,9 +357,9 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_0900
-     * @tc.name     : testHasRight002
-     * @tc.desc     : Positive test: hasRight.
+     * @tc.number   SUB_USB_HostManager_JS_Func_0900
+     * @tc.name     testHasRight002
+     * @tc.desc     Positive test: hasRight.
      */
     it("testHasRight002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -387,9 +387,9 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_1000
-     * @tc.name     : testHasRight003
-     * @tc.desc     : Positive test: hasRight.
+     * @tc.number   SUB_USB_HostManager_JS_Func_1000
+     * @tc.name     testHasRight003
+     * @tc.desc     Positive test: hasRight.
      */
     it("testHasRight003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -416,9 +416,9 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_1100
-     * @tc.name     : testConnectDevice001
-     * @tc.desc     : Positive test: connectDevice.
+     * @tc.number   SUB_USB_HostManager_JS_Func_1100
+     * @tc.name     testConnectDevice001
+     * @tc.desc     Positive test: connectDevice.
      */
     it("testConnectDevice001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -454,9 +454,9 @@ export default function UsbBaseTest() {
       })
 
       /**
-      * @tc.number   : SUB_USB_HostManager_JS_Func_1300
-      * @tc.name     : testRemoveRight001
-      * @tc.desc     : Positive test: removeRight.
+      * @tc.number   SUB_USB_HostManager_JS_Func_1300
+      * @tc.name     testRemoveRight001
+      * @tc.desc     Positive test: removeRight.
       */
     it("testRemoveRight001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -481,9 +481,9 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_1200
-     * @tc.name     : testGetRawDescriptor001
-     * @tc.desc     : Positive test: Get the original USB descriptor
+     * @tc.number   SUB_USB_HostManager_JS_Func_1200
+     * @tc.name     testGetRawDescriptor001
+     * @tc.desc     Positive test: Get the original USB descriptor
      */
     it('testGetRawDescriptor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
@@ -507,9 +507,9 @@ export default function UsbBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Func_1400
-     * @tc.name     : USBRequestTargetType001
-     * @tc.desc     : Positive test: enum USBRequestTargetType
+     * @tc.number   SUB_USB_HostManager_JS_Func_1400
+     * @tc.name     USBRequestTargetType001
+     * @tc.desc     Positive test: enum USBRequestTargetType
      */
     it("USBRequestTargetType001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -527,9 +527,9 @@ export default function UsbBaseTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Reset_0100
-     * @tc.name     : testResetUsbDevice
-     * @tc.desc     : Negative test: Reset device
+     * @tc.number   SUB_USB_HostManager_JS_Reset_0100
+     * @tc.name     testResetUsbDevice
+     * @tc.desc     Negative test: Reset device
      */
     it('testResetUsbDevice', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -558,9 +558,9 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Reset_0200
-     * @tc.name     : testResetUsbDeviceErrorCode
-     * @tc.desc     : Negative test: resetUsbDevice error code 14400008 overwrite
+     * @tc.number   SUB_USB_HostManager_JS_Reset_0200
+     * @tc.name     testResetUsbDeviceErrorCode
+     * @tc.desc     Negative test: resetUsbDevice error code 14400008 overwrite
      */
     it('testResetUsbDeviceErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -594,9 +594,9 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Reset_0400
-     * @tc.name     : testResetUsbDeviceErrorCode002
-     * @tc.desc     : Negative test: resetUsbDevice error code 14400001 overwrite
+     * @tc.number   SUB_USB_HostManager_JS_Reset_0400
+     * @tc.name     testResetUsbDeviceErrorCode002
+     * @tc.desc     Negative test: resetUsbDevice error code 14400001 overwrite
      */
     it('testResetUsbDeviceErrorCode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -628,9 +628,9 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_Reset_0300
-     * @tc.name     : testResetUsbDeviceErrorCode001
-     * @tc.desc     : Negative test: resetUsbDevice error code 14400013 overwrite
+     * @tc.number   SUB_USB_HostManager_JS_Reset_0300
+     * @tc.name     testResetUsbDeviceErrorCode001
+     * @tc.desc     Negative test: resetUsbDevice error code 14400013 overwrite
      */
     it('testResetUsbDeviceErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
