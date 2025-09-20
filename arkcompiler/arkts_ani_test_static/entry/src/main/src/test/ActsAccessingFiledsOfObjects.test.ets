@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ export default function accessingFiledsOfObjectsTest() {
       console.log('loadFailed', e.message);
     }
 
-    /**
+    /*
      * @tc.number    : Object_SetProperty_Boolean_0100
      * @tc.name      : Object_SetProperty_Boolean_0100
      * @tc.desc      : MediumTest
@@ -49,7 +49,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetProperty_Boolean_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetProperty_Char_0100
      * @tc.name      : Object_SetProperty_Char_0100
      * @tc.desc      : MediumTest
@@ -68,7 +68,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetProperty_Char_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetProperty_Byte_0100
      * @tc.name      : Object_SetProperty_Byte_0100
      * @tc.desc      : MediumTest
@@ -87,7 +87,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetProperty_Byte_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetProperty_Short_0100
      * @tc.name      : Object_SetProperty_Short_0100
      * @tc.desc      : MediumTest
@@ -106,7 +106,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetProperty_Short_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetProperty_Int_0100
      * @tc.name      : Object_SetProperty_Int_0100
      * @tc.desc      : MediumTest
@@ -125,7 +125,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetProperty_Int_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetProperty_Long_0100
      * @tc.name      : Object_SetProperty_Long_0100
      * @tc.desc      : MediumTest
@@ -144,7 +144,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetProperty_Long_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetProperty_Float_0100
      * @tc.name      : Object_SetProperty_Float_0100
      * @tc.desc      : MediumTest
@@ -163,7 +163,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetProperty_Float_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetProperty_Double_0100
      * @tc.name      : Object_SetProperty_Double_0100
      * @tc.desc      : MediumTest
@@ -182,7 +182,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetProperty_Double_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetProperty_Ref_0100
      * @tc.name      : Object_SetProperty_Ref_0100
      * @tc.desc      : MediumTest
@@ -201,7 +201,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetProperty_Ref_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetPropertyByName_Boolean_0100
      * @tc.name      : Object_GetPropertyByName_Boolean_0100
      * @tc.desc      : MediumTest
@@ -220,7 +220,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetPropertyByName_Boolean_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetPropertyByName_Char_0100
      * @tc.name      : Object_GetPropertyByName_Char_0100
      * @tc.desc      : MediumTest
@@ -239,7 +239,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetPropertyByName_Char_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetPropertyByName_Byte_0100
      * @tc.name      : Object_GetPropertyByName_Byte_0100
      * @tc.desc      : MediumTest
@@ -258,7 +258,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetPropertyByName_Byte_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetPropertyByName_Short_0100
      * @tc.name      : Object_GetPropertyByName_Short_0100
      * @tc.desc      : MediumTest
@@ -277,7 +277,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetPropertyByName_Short_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetPropertyByName_Int_0100
      * @tc.name      : Object_GetPropertyByName_Int_0100
      * @tc.desc      : MediumTest
@@ -296,7 +296,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetPropertyByName_Int_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetPropertyByName_Long_0100
      * @tc.name      : Object_GetPropertyByName_Long_0100
      * @tc.desc      : MediumTest
@@ -315,7 +315,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetPropertyByName_Long_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetPropertyByName_Float_0100
      * @tc.name      : Object_GetPropertyByName_Float_0100
      * @tc.desc      : MediumTest
@@ -334,7 +334,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetPropertyByName_Float_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetPropertyByName_Double_0100
      * @tc.name      : Object_GetPropertyByName_Double_0100
      * @tc.desc      : MediumTest
@@ -353,7 +353,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetPropertyByName_Double_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetPropertyByName_Ref_0100
      * @tc.name      : Object_GetPropertyByName_Ref_0100
      * @tc.desc      : MediumTest
@@ -372,7 +372,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetPropertyByName_Ref_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Class_FindField_0100
      * @tc.name      : Class_FindField_0100
      * @tc.desc      : MediumTest
@@ -391,7 +391,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Class_FindField_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Class_FindSetter_0100
      * @tc.name      : Class_FindSetter_0100
      * @tc.desc      : MediumTest
@@ -410,7 +410,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Class_FindSetter_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Class_FindGetter_0100
      * @tc.name      : Class_FindGetter_0100
      * @tc.desc      : MediumTest
@@ -429,7 +429,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Class_FindGetter_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Class_FindIndexableGetter_0100
      * @tc.name      : Class_FindIndexableGetter_0100
      * @tc.desc      : MediumTest
@@ -448,7 +448,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Class_FindIndexableGetter_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Class_FindIndexableSetter_0100
      * @tc.name      : Class_FindIndexableSetter_0100
      * @tc.desc      : MediumTest
@@ -467,7 +467,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Class_FindIndexableSetter_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Class_FindIterator_0100
      * @tc.name      : Class_FindIterator_0100
      * @tc.desc      : MediumTest
@@ -486,7 +486,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Class_FindIterator_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetField_Boolean_0100
      * @tc.name      : Object_GetField_Boolean_0100
      * @tc.desc      : MediumTest
@@ -505,7 +505,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetField_Boolean_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetField_Char_0100
      * @tc.name      : Object_GetField_Char_0100
      * @tc.desc      : MediumTest
@@ -524,7 +524,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetField_Char_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetField_Byte_0100
      * @tc.name      : Object_GetField_Byte_0100
      * @tc.desc      : MediumTest
@@ -543,7 +543,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetField_Byte_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetField_Short_0100
      * @tc.name      : Object_GetField_Short_0100
      * @tc.desc      : MediumTest
@@ -562,7 +562,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetField_Short_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetField_Int_0100
      * @tc.name      : Object_GetField_Int_0100
      * @tc.desc      : MediumTest
@@ -581,7 +581,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetField_Int_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetField_Long_0100
      * @tc.name      : Object_GetField_Long_0100
      * @tc.desc      : MediumTest
@@ -600,7 +600,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetField_Long_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetField_Float_0100
      * @tc.name      : Object_GetField_Float_0100
      * @tc.desc      : MediumTest
@@ -619,7 +619,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetField_Float_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetField_Double_0100
      * @tc.name      : Object_GetField_Double_0100
      * @tc.desc      : MediumTest
@@ -638,7 +638,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetField_Double_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetField_Ref_0100
      * @tc.name      : Object_GetField_Ref_0100
      * @tc.desc      : MediumTest
@@ -657,7 +657,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetField_Ref_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetField_Boolean_0100
      * @tc.name      : Object_SetField_Boolean_0100
      * @tc.desc      : MediumTest
@@ -676,7 +676,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetField_Boolean_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetField_Char_0100
      * @tc.name      : Object_SetField_Char_0100
      * @tc.desc      : MediumTest
@@ -695,7 +695,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetField_Char_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetField_Byte_0100
      * @tc.name      : Object_SetField_Byte_0100
      * @tc.desc      : MediumTest
@@ -714,7 +714,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetField_Byte_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetField_Short_0100
      * @tc.name      : Object_SetField_Short_0100
      * @tc.desc      : MediumTest
@@ -733,7 +733,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetField_Short_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetField_Int_0100
      * @tc.name      : Object_SetField_Int_0100
      * @tc.desc      : MediumTest
@@ -752,7 +752,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetField_Int_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetField_Long_0100
      * @tc.name      : Object_SetField_Long_0100
      * @tc.desc      : MediumTest
@@ -771,7 +771,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetField_Long_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetField_Float_0100
      * @tc.name      : Object_SetField_Float_0100
      * @tc.desc      : MediumTest
@@ -790,7 +790,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetField_Float_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetField_Double_0100
      * @tc.name      : Object_SetField_Double_0100
      * @tc.desc      : MediumTest
@@ -809,7 +809,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetField_Double_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetField_Ref_0100
      * @tc.name      : Object_SetField_Ref_0100
      * @tc.desc      : MediumTest
@@ -828,7 +828,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetField_Ref_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetFieldByName_Boolean_0100
      * @tc.name      : Object_GetFieldByName_Boolean_0100
      * @tc.desc      : MediumTest
@@ -847,7 +847,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetFieldByName_Boolean_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetFieldByName_Char_0100
      * @tc.name      : Object_GetFieldByName_Char_0100
      * @tc.desc      : MediumTest
@@ -866,7 +866,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetFieldByName_Char_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetFieldByName_Byte_0100
      * @tc.name      : Object_GetFieldByName_Byte_0100
      * @tc.desc      : MediumTest
@@ -885,7 +885,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetFieldByName_Byte_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetFieldByName_Short_0100
      * @tc.name      : Object_GetFieldByName_Short_0100
      * @tc.desc      : MediumTest
@@ -904,7 +904,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetFieldByName_Short_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetFieldByName_Int_0100
      * @tc.name      : Object_GetFieldByName_Int_0100
      * @tc.desc      : MediumTest
@@ -923,7 +923,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetFieldByName_Int_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetFieldByName_Long_0100
      * @tc.name      : Object_GetFieldByName_Long_0100
      * @tc.desc      : MediumTest
@@ -942,7 +942,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetFieldByName_Long_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetFieldByName_Float_0100
      * @tc.name      : Object_GetFieldByName_Float_0100
      * @tc.desc      : MediumTest
@@ -961,7 +961,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetFieldByName_Float_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetFieldByName_Double_0100
      * @tc.name      : Object_GetFieldByName_Double_0100
      * @tc.desc      : MediumTest
@@ -980,7 +980,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetFieldByName_Double_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_GetFieldByName_Ref_0100
      * @tc.name      : Object_GetFieldByName_Ref_0100
      * @tc.desc      : MediumTest
@@ -999,7 +999,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_GetFieldByName_Ref_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetFieldByName_Boolean_0100
      * @tc.name      : Object_SetFieldByName_Boolean_0100
      * @tc.desc      : MediumTest
@@ -1018,7 +1018,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetFieldByName_Boolean_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetFieldByName_Char_0100
      * @tc.name      : Object_SetFieldByName_Char_0100
      * @tc.desc      : MediumTest
@@ -1037,7 +1037,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetFieldByName_Char_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetFieldByName_Byte_0100
      * @tc.name      : Object_SetFieldByName_Byte_0100
      * @tc.desc      : MediumTest
@@ -1056,7 +1056,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetFieldByName_Byte_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetFieldByName_Short_0100
      * @tc.name      : Object_SetFieldByName_Short_0100
      * @tc.desc      : MediumTest
@@ -1075,7 +1075,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetFieldByName_Short_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetFieldByName_Int_0100
      * @tc.name      : Object_SetFieldByName_Int_0100
      * @tc.desc      : MediumTest
@@ -1094,7 +1094,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetFieldByName_Int_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetFieldByName_Long_0100
      * @tc.name      : Object_SetFieldByName_Long_0100
      * @tc.desc      : MediumTest
@@ -1113,7 +1113,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetFieldByName_Long_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetFieldByName_Float_0100
      * @tc.name      : Object_SetFieldByName_Float_0100
      * @tc.desc      : MediumTest
@@ -1132,7 +1132,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetFieldByName_Float_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetFieldByName_Double_0100
      * @tc.name      : Object_SetFieldByName_Double_0100
      * @tc.desc      : MediumTest
@@ -1151,7 +1151,7 @@ export default function accessingFiledsOfObjectsTest() {
         console.log('Object_SetFieldByName_Double_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Object_SetFieldByName_Ref_0100
      * @tc.name      : Object_SetFieldByName_Ref_0100
      * @tc.desc      : MediumTest

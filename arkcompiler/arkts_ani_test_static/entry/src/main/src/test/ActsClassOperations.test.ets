@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ export default function classOperationsTest() {
       console.log('loadFailed', e.message);
     }
 
-    /**
+    /*
      * @tc.number    : findClass_static_0100
      * @tc.name      : findClass_static_0100
      * @tc.desc      : MediumTest
@@ -49,7 +49,7 @@ export default function classOperationsTest() {
       console.log('findClass_static_0100 end');
     })
 
-    /**
+    /*
      * @tc.number    : class_FindStaticMethodBoolean_0100
      * @tc.name      : class_FindStaticMethodBoolean_0100
      * @tc.desc      : MediumTest
@@ -68,7 +68,7 @@ export default function classOperationsTest() {
       console.log('class_FindStaticMethodBoolean_0100 end');
     })
 
-    /**
+    /*
      * @tc.number    : class_FindStaticMethodInt_0100
      * @tc.name      : class_FindStaticMethodInt_0100
      * @tc.desc      : MediumTest
@@ -87,7 +87,7 @@ export default function classOperationsTest() {
       console.log('class_FindStaticMethodInt_0100 end');
     })
 
-    /**
+    /*
      * @tc.number    : Class_BindNativeMethods_0100
      * @tc.name      : Class_BindNativeMethods_0100
      * @tc.desc      : MediumTest
@@ -106,7 +106,7 @@ export default function classOperationsTest() {
         console.log('Class_BindNativeMethods_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Type_GetSuperClass_0100
      * @tc.name      : Type_GetSuperClass_0100
      * @tc.desc      : MediumTest
@@ -125,7 +125,7 @@ export default function classOperationsTest() {
         console.log('Type_GetSuperClass_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : test_Type_IsAssignableFrom_0100
      * @tc.name      : test_Type_IsAssignableFrom_0100
      * @tc.desc      : MediumTest
@@ -144,7 +144,7 @@ export default function classOperationsTest() {
         console.log('test_Type_IsAssignableFrom_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : FindModule_0100
      * @tc.name      : FindModule_0100
      * @tc.desc      : MediumTest
@@ -163,7 +163,7 @@ export default function classOperationsTest() {
         console.log('FindModule_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : FindNamespace_0100
      * @tc.name      : FindNamespace_0100
      * @tc.desc      : MediumTest
@@ -182,7 +182,7 @@ export default function classOperationsTest() {
         console.log('FindNamespace_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : FindEnum_0100
      * @tc.name      : FindEnum_0100
      * @tc.desc      : MediumTest

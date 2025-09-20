@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ export default function vmOpsTest() {
       console.log("loadFailed" + e.message)
     }
 
-    /**
+    /*
      * @tc.number    : AttachCurrentThreadAndDetachCurrentThread_0100
      * @tc.name      : AttachCurrentThreadAndDetachCurrentThread_0100
      * @tc.desc      : MediumTest

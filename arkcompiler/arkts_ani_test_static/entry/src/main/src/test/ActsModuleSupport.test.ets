@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ export default function moduleSupportTest() {
       console.log('loadFailed', e.message);
     }
 
-    /**
+    /*
      * @tc.number    : Module_FindFunction_0100
      * @tc.name      : Module_FindFunction_0100
      * @tc.desc      : MediumTest
@@ -49,7 +49,7 @@ export default function moduleSupportTest() {
         console.log('Module_FindFunction_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Module_FindVariable_0100
      * @tc.name      : Module_FindVariable_0100
      * @tc.desc      : MediumTest

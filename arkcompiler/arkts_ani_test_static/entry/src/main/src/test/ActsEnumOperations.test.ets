@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ export default function enumOperationsTest() {
       console.log('loadFailed', e.message);
     }
 
-    /**
+    /*
      * @tc.number    : Enum_GetEnumItemByName_0100
      * @tc.name      : Enum_GetEnumItemByName_0100
      * @tc.desc      : MediumTest
@@ -49,7 +49,7 @@ export default function enumOperationsTest() {
         console.log('Enum_GetEnumItemByName_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : Enum_GetEnumItemByIndex_0100
      * @tc.name      : Enum_GetEnumItemByIndex_0100
      * @tc.desc      : MediumTest
@@ -68,7 +68,7 @@ export default function enumOperationsTest() {
         console.log('Enum_GetEnumItemByIndex_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : EnumItem_GetEnum_0100
      * @tc.name      : EnumItem_GetEnum_0100
      * @tc.desc      : MediumTest
@@ -87,7 +87,7 @@ export default function enumOperationsTest() {
         console.log('EnumItem_GetEnum_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : EnumItem_GetValue_Int_0100
      * @tc.name      : EnumItem_GetValue_Int_0100
      * @tc.desc      : MediumTest
@@ -106,7 +106,7 @@ export default function enumOperationsTest() {
         console.log('EnumItem_GetValue_Int_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : EnumItem_GetValue_String_0100
      * @tc.name      : EnumItem_GetValue_String_0100
      * @tc.desc      : MediumTest
@@ -125,7 +125,7 @@ export default function enumOperationsTest() {
         console.log('EnumItem_GetValue_String_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : EnumItem_GetName_0100
      * @tc.name      : EnumItem_GetName_0100
      * @tc.desc      : MediumTest
@@ -144,7 +144,7 @@ export default function enumOperationsTest() {
         console.log('EnumItem_GetName_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : EnumItem_GetIndex_0100
      * @tc.name      : EnumItem_GetIndex_0100
      * @tc.desc      : MediumTest

@@ -21,6 +21,9 @@
 #include <string>
 #include "ani/ani.h"
 #include "hilog/log.h"
+#include <iconv.h>
+#include <cstring>
+#include <string>
 
 const uint32_t ANI_RES_INVALID_ARGS = 2;
 const uint32_t ANI_RES_INVALID_TYPE = 3;
@@ -43,6 +46,15 @@ const ani_int TEST_INT_VAL2 = 6;
         if ((a) == (b)) { \
             return ANI_FALSE; \
         } \
+    } while (0)
+
+#define ASSERT_STREQ(lhs, rhs)                                    \
+    do {                                                          \
+        auto res1 = (lhs);                                        \
+        decltype(res1) res2 = (rhs);                              \
+        if (::strcmp(res1, res2) != 0) {                          \
+            return ANI_FALSE;                                     \
+        }                                                         \
     } while (0)
 
 ani_boolean GetClsData(ani_env *env, ani_object *objectResult, ani_class *outCls)

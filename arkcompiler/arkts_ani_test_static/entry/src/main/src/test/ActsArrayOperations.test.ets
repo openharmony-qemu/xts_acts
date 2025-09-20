@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -30,13 +30,13 @@ export default function ArrayOperationsTest() {
       console.log('loadFailed', e.message);
     }
 
-    /**
-     * @tc.number      test_array_getLength_0100
-     * @tc.name        test_array_getLength_0100
-     * @tc.desc        MediumTest
-     * @tc.size        Function
-     * @tc.size        Function test
-     * @tc.level       Level 0
+    /*
+     * @tc.number    : test_array_getLength_0100
+     * @tc.name      : test_array_getLength_0100
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 0
      */
     it("test_array_getLength_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -49,13 +49,13 @@ export default function ArrayOperationsTest() {
         console.log('test_array_getLength_0100 end');
       })
 
-    /**
-     * @tc.number      test_array_CreateBuffer_0100
-     * @tc.name        test_array_CreateBuffer_0100
-     * @tc.desc        MediumTest
-     * @tc.size        Function
-     * @tc.size        Function test
-     * @tc.level       Level 0
+    /*
+     * @tc.number    : test_array_CreateBuffer_0100
+     * @tc.name      : test_array_CreateBuffer_0100
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 0
      */
     it("test_array_CreateBuffer_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -68,13 +68,13 @@ export default function ArrayOperationsTest() {
         console.log('test_array_CreateBuffer_0100 end');
       })
 
-    /**
-     * @tc.number      test_Array_New_Set_Get_0100
-     * @tc.name        test_Array_New_Set_Get_0100
-     * @tc.desc        MediumTest
-     * @tc.size        Function
-     * @tc.size        Function test
-     * @tc.level       Level 0
+    /*
+     * @tc.number    : test_Array_New_Set_Get_0100
+     * @tc.name      : test_Array_New_Set_Get_0100
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 0
      */
     it("test_Array_New_Set_Get_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -87,13 +87,13 @@ export default function ArrayOperationsTest() {
         console.log('test_Array_New_Set_Get_0100 end');
       })
 
-    /**
-     * @tc.number      test_Array_Push_Pop_0100
-     * @tc.name        test_Array_Push_Pop_0100
-     * @tc.desc        MediumTest
-     * @tc.size        Function
-     * @tc.size        Function test
-     * @tc.level       Level 0
+    /*
+     * @tc.number    : test_Array_Push_Pop_0100
+     * @tc.name      : test_Array_Push_Pop_0100
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 0
      */
     it("test_Array_Push_Pop_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

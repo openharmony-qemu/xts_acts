@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -30,13 +30,13 @@ export default function anyOpsTest() {
       console.log('loadFailed', e.message);
     }
 
-    /**
-     * @tc.number      Any_CallMethod_0100
-     * @tc.name        Any_CallMethod_0100
-     * @tc.desc        MediumTest
-     * @tc.size        Function
-     * @tc.size        Function test
-     * @tc.level       Level 3
+    /*
+     * @tc.number    : Any_CallMethod_0100
+     * @tc.name      : Any_CallMethod_0100
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 3
      */
     it("Any_CallMethod_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -49,13 +49,13 @@ export default function anyOpsTest() {
         console.log('Any_CallMethod_0100 end');
       })
 
-    /**
-     * @tc.number      Any_GetByIndex_0100
-     * @tc.name        Any_GetByIndex_0100
-     * @tc.desc        MediumTest
-     * @tc.size        Function
-     * @tc.size        Function test
-     * @tc.level       Level 3
+    /*
+     * @tc.number    : Any_GetByIndex_0100
+     * @tc.name      : Any_GetByIndex_0100
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 3
      */
     it("Any_GetByIndex_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -68,13 +68,13 @@ export default function anyOpsTest() {
         console.log('Any_GetByIndex_0100 end');
       })
 
-    /**
-     * @tc.number      Any_GetByValue_0100
-     * @tc.name        Any_GetByValue_0100
-     * @tc.desc        MediumTest
-     * @tc.size        Function
-     * @tc.size        Function test
-     * @tc.level       Level 3
+    /*
+     * @tc.number    : Any_GetByValue_0100
+     * @tc.name      : Any_GetByValue_0100
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 3
      */
     it("Any_GetByValue_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -87,13 +87,13 @@ export default function anyOpsTest() {
         console.log('Any_GetByValue_0100 end');
       })
 
-    /**
-     * @tc.number      Any_GetProperty_0100
-     * @tc.name        Any_GetProperty_0100
-     * @tc.desc        MediumTest
-     * @tc.size        Function
-     * @tc.size        Function test
-     * @tc.level       Level 3
+    /*
+     * @tc.number    : Any_GetProperty_0100
+     * @tc.name      : Any_GetProperty_0100
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 3
      */
     it("Any_GetProperty_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -106,13 +106,13 @@ export default function anyOpsTest() {
         console.log('Any_GetProperty_0100 end');
       })
 
-    /**
-     * @tc.number      Any_InstanceOf_0100
-     * @tc.name        Any_InstanceOf_0100
-     * @tc.desc        MediumTest
-     * @tc.size        Function
-     * @tc.size        Function test
-     * @tc.level       Level 3
+    /*
+     * @tc.number    : Any_InstanceOf_0100
+     * @tc.name      : Any_InstanceOf_0100
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 3
      */
     it("Any_InstanceOf_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -125,13 +125,13 @@ export default function anyOpsTest() {
         console.log('Any_InstanceOf_0100 end');
       })
 
-    /**
-     * @tc.number      Any_New_0100
-     * @tc.name        Any_New_0100
-     * @tc.desc        MediumTest
-     * @tc.size        Function
-     * @tc.size        Function test
-     * @tc.level       Level 3
+    /*
+     * @tc.number    : Any_New_0100
+     * @tc.name      : Any_New_0100
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 3
      */
     it("Any_New_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -144,13 +144,13 @@ export default function anyOpsTest() {
         console.log('Any_New_0100 end');
       })
 
-    /**
-     * @tc.number      Any_SetByIndex_0100
-     * @tc.name        Any_SetByIndex_0100
-     * @tc.desc        MediumTest
-     * @tc.size        Function
-     * @tc.size        Function test
-     * @tc.level       Level 3
+    /*
+     * @tc.number    : Any_SetByIndex_0100
+     * @tc.name      : Any_SetByIndex_0100
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 3
      */
     it("Any_SetByIndex_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -163,13 +163,13 @@ export default function anyOpsTest() {
         console.log('Any_SetByIndex_0100 end');
       })
 
-    /**
-     * @tc.number      Any_SetByValue_0100
-     * @tc.name        Any_SetByValue_0100
-     * @tc.desc        MediumTest
-     * @tc.size        Function
-     * @tc.size        Function test
-     * @tc.level       Level 3
+    /*
+     * @tc.number    : Any_SetByValue_0100
+     * @tc.name      : Any_SetByValue_0100
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 3
      */
     it("Any_SetByValue_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -182,13 +182,13 @@ export default function anyOpsTest() {
         console.log('Any_SetByValue_0100 end');
       })
 
-    /**
-     * @tc.number      Any_SetProperty_0100
-     * @tc.name        Any_SetProperty_0100
-     * @tc.desc        MediumTest
-     * @tc.size        Function
-     * @tc.size        Function test
-     * @tc.level       Level 3
+    /*
+     * @tc.number    : Any_SetProperty_0100
+     * @tc.name      : Any_SetProperty_0100
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 3
      */
     it("Any_SetProperty_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ export default function promiseTest() {
       console.log('loadFailed', e.message);
     }
 
-    /**
+    /*
      * @tc.number    : Promise_New_0100
      * @tc.name      : Promise_New_0100
      * @tc.desc      : MediumTest
@@ -49,7 +49,7 @@ export default function promiseTest() {
         console.log('Promise_New_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : PromiseResolver_Reject_0100
      * @tc.name      : PromiseResolver_Reject_0100
      * @tc.desc      : MediumTest
@@ -68,7 +68,7 @@ export default function promiseTest() {
         console.log('PromiseResolver_Reject_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : PromiseResolver_Resolve_0100
      * @tc.name      : PromiseResolver_Resolve_0100
      * @tc.desc      : MediumTest

@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ export default function fixedArrayTest() {
       console.log('loadFailed', e.message);
     }
 
-    /**
+    /*
      * @tc.number    : FixedArray_GetLength_0100
      * @tc.name      : FixedArray_GetLength_0100
      * @tc.desc      : MediumTest
@@ -49,7 +49,7 @@ export default function fixedArrayTest() {
         console.log('FixedArray_GetLength_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : FixedArray_Boolean_0100
      * @tc.name      : FixedArray_Boolean_0100
      * @tc.desc      : MediumTest
@@ -68,7 +68,7 @@ export default function fixedArrayTest() {
         console.log('FixedArray_Boolean_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : FixedArray_Byte_0100
      * @tc.name      : FixedArray_Byte_0100
      * @tc.desc      : MediumTest
@@ -87,7 +87,7 @@ export default function fixedArrayTest() {
         console.log('FixedArray_Byte_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : FixedArray_Char_0100
      * @tc.name      : FixedArray_Char_0100
      * @tc.desc      : MediumTest
@@ -106,7 +106,7 @@ export default function fixedArrayTest() {
         console.log('FixedArray_Char_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : FixedArray_Short_0100
      * @tc.name      : FixedArray_Short_0100
      * @tc.desc      : MediumTest
@@ -125,7 +125,7 @@ export default function fixedArrayTest() {
         console.log('FixedArray_Short_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : FixedArray_Int_0100
      * @tc.name      : FixedArray_Int_0100
      * @tc.desc      : MediumTest
@@ -144,7 +144,7 @@ export default function fixedArrayTest() {
         console.log('FixedArray_Int_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : FixedArray_Long_0100
      * @tc.name      : FixedArray_Long_0100
      * @tc.desc      : MediumTest
@@ -163,7 +163,7 @@ export default function fixedArrayTest() {
         console.log('FixedArray_Long_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : FixedArray_Float_0100
      * @tc.name      : FixedArray_Float_0100
      * @tc.desc      : MediumTest
@@ -182,7 +182,7 @@ export default function fixedArrayTest() {
         console.log('FixedArray_Float_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : FixedArray_Double_0100
      * @tc.name      : FixedArray_Double_0100
      * @tc.desc      : MediumTest
@@ -201,7 +201,7 @@ export default function fixedArrayTest() {
         console.log('FixedArray_Double_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : FixedArray_Get_Ref_0100
      * @tc.name      : FixedArray_Get_Ref_0100
      * @tc.desc      : MediumTest
@@ -220,7 +220,7 @@ export default function fixedArrayTest() {
         console.log('FixedArray_Get_Ref_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : FixedArray_New_Ref_0100
      * @tc.name      : FixedArray_New_Ref_0100
      * @tc.desc      : MediumTest
@@ -239,7 +239,7 @@ export default function fixedArrayTest() {
         console.log('FixedArray_New_Ref_0100 end');
       })
 
-    /**
+    /*
      * @tc.number    : FixedArray_Set_Ref_0100
      * @tc.name      : FixedArray_Set_Ref_0100
      * @tc.desc      : MediumTest
