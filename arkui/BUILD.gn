@@ -27,7 +27,7 @@ group("arkui") {
       "ace_c_arkui_test_api19:ActsAceCArkUI19Test",
       "ace_c_arkui_test_api20:ActsAceCArkUI20Test",
       "ace_c_arkui_test_api21:ActsAceCArkUI21Test",
-      "ActsAceEngineNDK_API20_Test:ActsAceEngineNativeAPI20",
+      "ActsAceEngineNDK_API20_Test:ActsAceEngineNativeWearAPI20",
       "ace_c_scroll_crosslanguage:ActsAceCapiScrollCrossTest",
       "ace_ets_component_advanced:componentAdvancedTest",
       "ace_ets_component_apilack:ActsAceEtsApiLackTest",
