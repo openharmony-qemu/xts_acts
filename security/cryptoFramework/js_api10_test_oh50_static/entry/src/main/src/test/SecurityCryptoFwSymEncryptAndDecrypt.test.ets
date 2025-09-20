@@ -35,7 +35,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     
     /**
-     * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0002
+     * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0000
      * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0000
      * @tc.desc algorithm is AES128
      * @tc.size Medium

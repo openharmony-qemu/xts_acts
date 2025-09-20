@@ -1675,7 +1675,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
     });
 
     /**
-     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_2300
+     * @tc.number SUB_Security_CryptoFramework_Pkcs1ToPkcs8_Func_2300
      * @tc.name SUB_Security_CryptoFramework_Pkcs1ToPkcs8_Func_2300
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
@@ -1697,7 +1697,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
     });
 
     /**
-     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_2400
+     * @tc.number SUB_Security_CryptoFramework_Pkcs1ToPkcs8_Func_2400
      * @tc.name SUB_Security_CryptoFramework_Pkcs1ToPkcs8_Func_2400
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
@@ -1719,7 +1719,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
     });
 
     /**
-     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_2500
+     * @tc.number SUB_Security_CryptoFramework_Pkcs1ToPkcs8_Func_2500
      * @tc.name SUB_Security_CryptoFramework_Pkcs1ToPkcs8_Func_2500
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
@@ -1741,7 +1741,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
     });
 
     /**
-     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_2600
+     * @tc.number SUB_Security_CryptoFramework_Pkcs1ToPkcs8_Func_2600
      * @tc.name SUB_Security_CryptoFramework_Pkcs1ToPkcs8_Func_2600
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
@@ -1763,7 +1763,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
     });
 
     /**
-     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_2700
+     * @tc.number SUB_Security_CryptoFramework_Pkcs1ToPkcs8_Func_2700
      * @tc.name SUB_Security_CryptoFramework_Pkcs1ToPkcs8_Func_2700
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
@@ -1785,7 +1785,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
     });
 
     /**
-     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_2800
+     * @tc.number SUB_Security_CryptoFramework_Pkcs1ToPkcs8_Func_2800
      * @tc.name SUB_Security_CryptoFramework_Pkcs1ToPkcs8_Func_2800
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
@@ -1807,7 +1807,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
     });
 
     /**
-     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_2900
+     * @tc.number SUB_Security_CryptoFramework_Pkcs1ToPkcs8_Func_2900
      * @tc.name SUB_Security_CryptoFramework_Pkcs1ToPkcs8_Func_2900
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
