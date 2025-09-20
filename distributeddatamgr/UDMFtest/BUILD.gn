@@ -22,7 +22,7 @@ group("UDMFtest") {
       "UDMFwithOutPermissiontest:UDMF_drag_ets_test",
       "UDMFwithPermissiontest:UDMF_drag_test",
       "udmfTestApi20:ActsUdmfApi20Test",
-      "UDMFEts_static:ActsUDMFStaticTest"
+      "UDMFEts_static:ActsUDMFStaticTest",
     ]
   }
 }
