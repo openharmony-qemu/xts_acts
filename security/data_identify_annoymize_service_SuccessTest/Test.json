@@ -1,0 +1,20 @@
+{
+  "description": "Configuration for hjunit demo Tests",
+  "driver": {
+    "type": "OHJSUnitTest",
+    "test-timeout": "1200000",
+    "bundle-name": "com.openharmony.data_identify_annoymize_service_js",
+    "module-name": "phone",
+    "shell-timeout": "1200000",
+    "testcase-timeout": "6000"
+  },
+  "kits": [
+    {
+      "test-file-name": [
+        "ActsDiaTest.hap"
+      ],
+      "type": "AppInstallKit",
+      "cleanup-apps": true
+    }
+  ]
+}
