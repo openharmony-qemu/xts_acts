@@ -25,20 +25,7 @@
         "runtimeOS": "OpenHarmony"
       }
     ],
-    "signingConfigs": [
-      {
-        "name": "default",
-        "material": {
-          "storeFile": "D:/pr/xts_acts_arkui/arkui/ActsAceEngineNDK_API20_Test/ActsAceEngineNativeWearAPI20Test/signature/OpenHarmony.p12",
-          "storePassword": "00000016B39067BD64048BABDA5E7D6B0B4DDD0BEAA1A420F4CD6D531994BA659989AC02E810",
-          "keyAlias": "openharmony application release",
-          "keyPassword": "000000163710421495813D6693878F13A52B6105E89DDB5674BCEF5ABBD05ED5D6C19B92C1A6",
-          "signAlg": "SHA256withECDSA",
-          "profile": "D:/pr/xts_acts_arkui/arkui/ActsAceEngineNDK_API20_Test/ActsAceEngineNativeWearAPI20Test/signature/openharmony_sx.p7b",
-          "certpath": "D:/pr/xts_acts_arkui/arkui/ActsAceEngineNDK_API20_Test/ActsAceEngineNativeWearAPI20Test/signature/app-localuse.cer"
-        }
-      }
-    ]
+    "signingConfigs": []
   },
   "modules": [
     {
