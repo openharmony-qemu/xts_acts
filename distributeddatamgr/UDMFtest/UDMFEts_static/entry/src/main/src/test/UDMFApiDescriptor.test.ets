@@ -25,12 +25,12 @@ export default function UDMFApiDescriptorTest() {
   describe("UDMFApiDescriptorTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'UDMFApiDescriptorTest start');
     /**
-     * @tc.name       : SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9775
-     * @tc.number     : SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9775
-     * @tc.desc       : predicates orderByAsc normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name        SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9775
+     * @tc.number      SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9775
+     * @tc.desc        predicates orderByAsc normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 1
      */
     it('SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9775', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9775 start');
@@ -45,12 +45,12 @@ export default function UDMFApiDescriptorTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9775 end');
     });
     /**
-     * @tc.name       : SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9776
-     * @tc.number     : SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9776
-     * @tc.desc       : predicates orderByAsc normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name        SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9776
+     * @tc.number      SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9776
+     * @tc.desc        predicates orderByAsc normal test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 1
      */
     it('SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9776', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9776 start');
