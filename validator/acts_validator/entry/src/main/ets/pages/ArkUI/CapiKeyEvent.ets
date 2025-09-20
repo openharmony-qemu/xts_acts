@@ -26,7 +26,7 @@ struct CapiKeyEvent {
   @State FillColor: string = '#FF000000';
   @State name: string = 'CapiKeyEvent';
   @State StepTips: string = '设备支持CAPI键盘灯状态获取\n 操作步骤：连接键盘，使用键盘点击CapsLock、NumLock键' + '\n' + '预期结果：键盘指示灯亮起，页面显示CapsLock：ON,NumLock: ON'+ '\n' +'键盘指示灯关闭，页面显示CapsLock：OFF,NumLock: OFF';
-  @State Vue: boolean = false;
+  @State CapiKeyEventVue: boolean = false;
   @State active: boolean = false;
   @State intervalNum: number = 0;
   @State yesEnable: boolean = false
@@ -37,8 +37,8 @@ struct CapiKeyEvent {
 
   @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
-    if (this.Vue == false) {
-      Button({ stateEffect: this.Vue }) {
+    if (this.CapiKeyEventVue == false) {
+      Button({ stateEffect: this.CapiKeyEventVue }) {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
@@ -51,7 +51,7 @@ struct CapiKeyEvent {
 
       })
     } else {
-      Button({ stateEffect: this.Vue }) {
+      Button({ stateEffect: this.CapiKeyEventVue }) {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
@@ -102,7 +102,7 @@ struct CapiKeyEvent {
   onPageShow() {
     this.intervalNum = setInterval(() => {
       if (this.text1 === '0' && this.text2 === '0') {
-        this.Vue = true;
+        this.CapiKeyEventVue = true;
       }
     }, 500)
   }
@@ -160,6 +160,7 @@ struct CapiKeyEvent {
               .enabled(!this.yesEnable)
               .opacity(!this.yesEnable ? 1 : 0.4)
               .onClick(async () => {
+                this.CapiKeyEventVue = false
               })
           }
 
@@ -170,7 +171,7 @@ struct CapiKeyEvent {
               .width('30%')
               .onClick(async () => {
                 this.yesEnable = true
-                this.Vue = true
+                this.CapiKeyEventVue = true
               })
           }
         }
