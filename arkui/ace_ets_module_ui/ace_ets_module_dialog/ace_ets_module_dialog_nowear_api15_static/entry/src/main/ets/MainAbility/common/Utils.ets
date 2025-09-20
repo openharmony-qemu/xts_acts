@@ -35,7 +35,7 @@ import {
   TouchType,
 } from '@ohos.arkui.component' // TextAttribute should be insert by ui-plugins
 import inspector from '@ohos.arkui.inspector'
-import { sendTouchEvent } from '@internal.full.global';
+import { sendTouchEvent } from '@kit.ArkUI';
 
 export default class Utils {
   static rect_left: number = 0;

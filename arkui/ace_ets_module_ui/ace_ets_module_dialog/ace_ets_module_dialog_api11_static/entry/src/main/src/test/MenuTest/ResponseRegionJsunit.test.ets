@@ -51,7 +51,7 @@ import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { TouchObject, TouchType } from '@ohos.arkui.component';
-import { sendTouchEvent } from '@internal.full.global';
+import { sendTouchEvent } from '@kit.ArkUI';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';

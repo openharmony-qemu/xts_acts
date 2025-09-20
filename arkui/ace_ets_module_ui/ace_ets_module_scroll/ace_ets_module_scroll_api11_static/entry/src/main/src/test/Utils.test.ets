@@ -15,7 +15,7 @@
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { TouchObject, TouchType } from '@ohos.arkui.component'
-import { sendTouchEvent } from "@internal.full.global";
+import { sendTouchEvent } from "@kit.ArkUI";
 
 interface Rect {
   left: number,

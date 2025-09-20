@@ -22,7 +22,7 @@ import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { TouchObject, TouchType } from '@ohos.arkui.component'
-import { sendTouchEvent } from '@internal.full.global';
+import { sendTouchEvent } from '@kit.ArkUI';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';

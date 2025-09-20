@@ -17,7 +17,7 @@ import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { TouchObject, TouchType } from '@ohos.arkui.component';
-import { sendTouchEvent } from "@internal.full.global";
+import { sendTouchEvent } from "@kit.ArkUI";
 
 export class RectValue {
   left: number = 0;

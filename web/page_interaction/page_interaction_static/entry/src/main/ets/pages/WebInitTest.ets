@@ -24,7 +24,7 @@ import events_emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
 import image from '@ohos.multimedia.image';
-import { sendEventByKey } from '@internal.full.global';
+import { sendEventByKey } from '@kit.ArkUI';
 
 @Entry
 @Component

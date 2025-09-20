@@ -21,7 +21,7 @@ import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
-import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@internal.full.global";
+import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@kit.ArkUI";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
 import { jsonx } from "std/core"
 export class RectValue {

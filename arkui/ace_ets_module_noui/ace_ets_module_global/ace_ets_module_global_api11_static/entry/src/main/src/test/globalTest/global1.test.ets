@@ -27,7 +27,7 @@ import Utils from '../../../ets/MainAbility/common/Utils'
 import RectValue from '../../../ets/MainAbility/common/Rect';
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode'
 import { KeyEvent, MouseEvent, SourceTool, KeyType, KeySource , SourceType, MouseButton, MouseAction } from '@ohos.arkui.component'
-import { sendKeyEvent, sendMouseEvent } from "@internal.full.global";
+import { sendKeyEvent, sendMouseEvent } from "@kit.ArkUI";
 
 export default function globalJsunit1() {
   describe('globalJsunit1', () => {

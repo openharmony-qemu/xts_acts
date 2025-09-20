@@ -18,7 +18,7 @@ import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { TouchObject, TouchType } from '@ohos.arkui.component';
-import { sendTouchEvent } from "@internal.full.global";
+import { sendTouchEvent } from "@kit.ArkUI";
 import events_emitter from '@ohos.events.emitter';
 
 export default class Utils {
