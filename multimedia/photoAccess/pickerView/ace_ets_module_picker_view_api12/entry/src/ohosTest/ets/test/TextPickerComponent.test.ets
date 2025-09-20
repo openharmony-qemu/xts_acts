@@ -2402,11 +2402,11 @@ export default function TextPicker() {
           pickerOptions: sheetPickerOptions,
         }
       }
-      for (let index = 0; index < 3; index++){
-        await testCompleteButton(driver, options, index);
-      }
-      let testFinished: boolean = true;
-      expect(testFinished).assertTrue();
+      await routeToUrl(options);
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+      await CommonFunc.sleep(2000);
+      router.back();
       done();
     });
   })
