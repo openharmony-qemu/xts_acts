@@ -69,8 +69,8 @@ async function routeToUrl(options: router.RouterOptions) {
 }
 
 
-function getSheetPickerOptions(): PhotoAccessHelper.PhotoSelectOptions {
-  let sheetPickerOptions = new PhotoAccessHelper.PhotoSelectOptions();
+function getSheetPickerOptions(): photoAccessHelper.PhotoSelectOptions {
+  let sheetPickerOptions = new photoAccessHelper.PhotoSelectOptions();
   sheetPickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
   sheetPickerOptions.isPhotoTakingSupported = false;
   sheetPickerOptions.maxSelectNumber = 10;
