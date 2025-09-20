@@ -18,9 +18,13 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitAndClickComponent,waitForComponent } from './WaitTest.test';
+import { Driver } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-let emitKey = "emitTerminateRenderProcess0100";
+let emitKey = "";
+const  driver: Driver = Driver.create();
 
 export default function webviewTerminateRenderProcess() {
   describe('TerminateRenderProcess', () => {
@@ -35,12 +39,12 @@ export default function webviewTerminateRenderProcess() {
         if (!("webviewTerminateRenderProcess" == pages.name)) {
           console.info("get webviewTerminateRenderProcess state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push webviewTerminateRenderProcess page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webviewTerminateRenderProcess page error: " + err);
       }
+      await waitForComponent("TerminateRenderProcess");
       done();
     });
     beforeEach(async (done: Function) => {
@@ -49,28 +53,7 @@ export default function webviewTerminateRenderProcess() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webviewTerminateRenderProcess beforeEach start");
-      done();
-    })
-    afterEach(async (done: Function) => {
-      console.info("webviewTerminateRenderProcess afterEach start:" + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
       done();
     })
     /*
@@ -79,9 +62,9 @@ export default function webviewTerminateRenderProcess() {
      *tc.desc terminateRenderProcess
      */
     it('emitTerminateRenderProcess0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitTerminateRenderProcess0200";
-      Utils.registerEvent("emitTerminateRenderProcess0100", true, 5300, done);
-      sendEventByKey('TerminateRenderProcess', 10, '');
+      Utils.emitEvent("emitTerminateRenderProcess0100", 152130)
+      Utils.registerEvent("emitTerminateRenderProcess0100", true, 152140, done);
+      waitAndClickComponent('TerminateRenderProcess',driver)
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_TERMINATERENDERPROCESS_API_0200
@@ -89,9 +72,9 @@ export default function webviewTerminateRenderProcess() {
      *tc.desc terminateRenderProcess
      */
     it('emitTerminateRenderProcess0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitTerminateRenderProcess0300";
-      Utils.registerEvent("emitTerminateRenderProcess0200", true, 5302, done);
-      sendEventByKey('TerminateRenderProcess', 10, '');
+      Utils.emitEvent("emitTerminateRenderProcess0200", 152130)
+      Utils.registerEvent("emitTerminateRenderProcess0200", true, 152150, done);
+      waitAndClickComponent('TerminateRenderProcess',driver)
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_TERMINATERENDERPROCESS_API_0300
@@ -99,9 +82,9 @@ export default function webviewTerminateRenderProcess() {
      *tc.desc terminateRenderProcess
      */
     it('emitTerminateRenderProcess0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitTerminateRenderProcess0400";
-      Utils.registerEvent("emitTerminateRenderProcess0300", true, 5304, done);
-      sendEventByKey('TerminateRenderProcess', 10, '');
+      Utils.emitEvent("emitTerminateRenderProcess0300", 152130)
+      Utils.registerEvent("emitTerminateRenderProcess0300", true, 152160, done);
+      waitAndClickComponent('TerminateRenderProcess',driver)
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_TERMINATERENDERPROCESS_API_0400
@@ -109,9 +92,9 @@ export default function webviewTerminateRenderProcess() {
      *tc.desc terminateRenderProcess
      */
     it('emitTerminateRenderProcess0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitTerminateRenderProcess0400";
-      Utils.registerEvent("emitTerminateRenderProcess0400", true, 5306, done);
-      sendEventByKey('TerminateRenderProcess', 10, '');
+      Utils.emitEvent("emitTerminateRenderProcess0400", 152130)
+      Utils.registerEvent("emitTerminateRenderProcess0400", true, 152170, done);
+      waitAndClickComponent('TerminateRenderProcess',driver)
     })
   })
 }

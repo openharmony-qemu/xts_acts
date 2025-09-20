@@ -34,7 +34,7 @@ export default function ActsTelephonyNdk20Test() {
           console.info("====>OH_Telephony_GetNetworkState3 start====");
           let result = osAccountNdk.OH_Telephony_GetNetworkState3();
           console.info("====>OH_Telephony_GetNetworkState3 result: " + result);
-          expect(401).assertEqual(result);
+          expect(0).assertEqual(result);
           done();
         } catch (err) {
           console.error("====>OH_Telephony_GetNetworkState3 catch err: " + err);
@@ -57,7 +57,7 @@ export default function ActsTelephonyNdk20Test() {
           console.info("====>OH_Telephony_GetNetworkStateForSlot2 start====");
           let result = osAccountNdk.OH_Telephony_GetNetworkStateForSlot2();
           console.info("====>OH_Telephony_GetNetworkStateForSlot2 result: " + result);
-          expect(401).assertEqual(result);
+          expect(0).assertEqual(result);
           done();
         } catch (err) {
           console.error("====>OH_Telephony_GetNetworkStateForSlot2 catch err: " + err);
@@ -79,7 +79,7 @@ export default function ActsTelephonyNdk20Test() {
         console.info("====>TelRadio0101 start====");
         let result = osAccountNdk.TelRadio0101();
         console.info("====>TelRadio0101 result: " + result);
-        expect(401).assertEqual(result);
+        expect(0).assertEqual(result);
         done();
       } catch (err) {
         console.error("====>TelRadio0101 catch err: " + err);

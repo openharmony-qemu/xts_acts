@@ -24,7 +24,7 @@ import Utils from '../../test/Utils';
 struct webOnFirstContFour {
   controller: WebController = new WebController();
   @State str: string = "emitRefreshOnfirstcontentfulpaintWebc";
-  @State firstId: number = 428;
+  @State firstId: number = 151700;
   @State firstcontentfulpaint: boolean = false;
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
@@ -35,15 +35,17 @@ struct webOnFirstContFour {
   @State userAgent: string = "Mozilla/5.0 (Window NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" +
     " CHrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.27";
   @State firstBoo: boolean = false;
-
+  @State isComplete: number = -1;
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 151690,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-
+  onPageHide() {
+    events_emitter.off(151690)
+  }
   private valueChangeCallBack = (eventData: ESObject) => {
     console.info("webOnFirstContFour page valueChangeCallBack");
     if (eventData != null) {
@@ -91,6 +93,10 @@ struct webOnFirstContFour {
             Utils.emitEvent(this.firstcontentfulpaint, this.firstId)
             console.error("result of onFirstContentfulPaint is: " + this.firstcontentfulpaint + this.firstId);
           }
+        })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isComplete = 0;
         })
     }
   }

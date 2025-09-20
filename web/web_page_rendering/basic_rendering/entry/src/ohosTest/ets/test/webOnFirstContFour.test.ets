@@ -17,6 +17,7 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = "emitRefreshOnfirstcontentfulpaintWebc";
@@ -34,12 +35,12 @@ export default function webOnFirstContFour() {
         if (!("webOnFirstContFour" == pages.name)) {
           console.info("get webOnFirstContFour state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push webOnFirstContFour page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webOnFirstContFour page error: " + err);
       }
+      await waitForComponent("webOnFirstContFour");
       done();
     });
     beforeEach(async (done: Function) => {
@@ -47,29 +48,8 @@ export default function webOnFirstContFour() {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
-      })
-      await Utils.sleep(2000);
+      });
       console.info("webOnFirstContFour beforeEach start");
-      done();
-    })
-    afterEach(async (done: Function) => {
-      console.info("webOnFirstContFour afterEach start:" + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        };
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        };
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
       done();
     })
     /*
@@ -79,7 +59,7 @@ export default function webOnFirstContFour() {
      */
     it('testOnfirstcontentfulpaintrefreshWebc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitRefreshOnfirstcontentfulpaintWebc";
-      Utils.registerEvent("testOnfirstcontentfulpaintrefreshWebc", true, 428, done);
+      Utils.registerEvent("testOnfirstcontentfulpaintrefreshWebc", true, 151700, done);
       sendEventByKey('webOnFirstContFour', 10, '');
     })
   })

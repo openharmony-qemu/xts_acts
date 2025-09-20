@@ -17,7 +17,9 @@ group("ans_standard") {
   if (is_standard_system) {
     deps = [
       "actsNotificationBadgeTest:ActsNotificationBadgeTest",
+      "actsNotificationBadgeTestStatic:ActsNotificationBadgeStaticTest",
       "actsNotificationDistributedTest:ActsNotificationDistributedTest",
+      "actsNotificationDistributedTestStatic:ActsNotificationDistributedStaticTest",
       "actsNotificationEmitterNewTest:ActsNotificationEmitterNewTest",
       "actsNotificationEmitterNewTestStatic:ActsNotificationEmitterNewStaticTest",
       "actsNotificationEmitterTest:ActsNotificationEmitterTest",
@@ -36,10 +38,12 @@ group("ans_standard") {
       "actsNotificationShowTest:ActsNotificationShowTest",
       "actsNotificationSlotTest:ActsNotificationSlotTest",
       "actsNotificationSlotTestStatic:ActsNotificationSlotStaticTest",
-      "actsNotificationVibrationSoundTest:ActsNotificationVibrationSoundTest",
       "actsNotificationSystemAPITest:ActsNotificationSystemAPITest",
+      "actsNotificationSystemAPITestStatic:ActsNotificationSystemAPIStaticTest",
       "actsNotificationSystemLiveViewTest:ActsNotificationSystemLiveViewTest",
       "actsNotificationSystemLiveViewTestStatic:ActsNotificationSystemLiveViewStaticTest",
+      "actsNotificationVibrationSoundTest:ActsNotificationVibrationSoundTest",
+      "actsNotificationVibrationSoundTestStatic:ActsNotificationVibrationSoundStaticTest",
       "notificationManager:notificationManager",
       "notificationManagerStatic:NotificationManagerStaticTest",
     ]

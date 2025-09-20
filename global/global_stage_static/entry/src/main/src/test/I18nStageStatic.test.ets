@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import resourceManager from '@ohos.resourceManager';
 import Ability from '@ohos.app.ability.UIAbility'
 import {
   describe,
@@ -41,17 +40,12 @@ export default function FivePointOne_resMgrStageTest() {
 
   describe("i18nStageTest", (): void => {
     hilog.info(0x0000, 'testTag', '%{public}s', '*************start i18nStageTest*************');
-    let resContext: Context;
-    let res: resourceManager.ResourceManager;
 
     beforeAll(async () => {
       console.info("beforeAll case");
     });
     beforeEach(() => {
       console.info("beforeEach case");
-      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      resContext = abilityDelegator.getAppContext()
-      res = resContext.resourceManager
     });
     afterEach(async () => {
       console.info("afterEach case");
