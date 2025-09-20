@@ -43,7 +43,7 @@ export default function GraphicTextAPI21Test() {
           heightScale: 2.0,
           lineHeightMaximum: 20,
           lineHeightMinimum: 1,
-          lineHeightStyle: text.lineHeightStyle.FONT_SIZE,
+          lineHeightStyle: text.LineHeightStyle.FONT_SIZE,
         };
         let myParagraphStyle: text.ParagraphStyle = {
           textStyle: myTextStyle,
