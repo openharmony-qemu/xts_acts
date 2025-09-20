@@ -27,11 +27,9 @@ class EndToEndTest : public testing::Test {
 public:
     void SetUp()
     {
-        CreateFolder(CACHE_DIR);
     }
     void TearDown()
     {
-        DeleteFolder(CACHE_DIR);
     }
 };
 

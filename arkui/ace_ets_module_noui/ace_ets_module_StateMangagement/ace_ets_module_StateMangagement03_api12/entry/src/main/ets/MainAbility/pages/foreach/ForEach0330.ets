@@ -182,5 +182,7 @@ struct ForEach0330 {
         this.swipeStartIndex = start
       })
     }
+    .height('90%')
+    .margin({top: '2%'})
   }
 }

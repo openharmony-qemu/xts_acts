@@ -17,6 +17,9 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
+import { Driver, ON } from '@ohos.UiTest';
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -35,13 +38,13 @@ export default function WebViewOverviewModeAccess() {
         if (!("WebViewOverviewModeAccess" == pages.name)) {
           console.info("get WebViewOverviewModeAccess state success " + JSON.stringify(pages.name));
           let result = await router.replaceUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebViewOverviewModeAccess page success "
             + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebViewOverviewModeAccess page error: " + err);
       }
+      await waitForComponent("buttonOverviewModeAccessAndContextMenuMediaType");
       done()
     });
     beforeEach(async (done: Function) => {
@@ -50,7 +53,6 @@ export default function WebViewOverviewModeAccess() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
@@ -64,10 +66,11 @@ export default function WebViewOverviewModeAccess() {
     * @tc.level      : Level 1
     */
     it('testOverviewModeAccess002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOverviewModeAccessFalse", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOverviewModeAccess002", '1', 1292, done);
-      sendEventByKey('buttonOverviewModeAccessAndContextMenuMediaType', 10, '');
+      Utils.emitEvent("emitOverviewModeAccessFalse", 153300)
+      Utils.registerEvent("testOverviewModeAccess002", '1', 153310, done);
+     // sendEventByKey('buttonOverviewModeAccessAndContextMenuMediaType', 10, '');
+      let component = await driver.findComponent(ON.id("buttonOverviewModeAccessAndContextMenuMediaType"));
+      await component.click();
     })
   })
 }

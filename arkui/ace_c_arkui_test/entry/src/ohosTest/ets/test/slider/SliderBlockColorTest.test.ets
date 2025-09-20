@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -114,6 +114,19 @@ export default function sliderBlockColorTest() {
      */
     it('testSliderBlockColor007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderBlockColor007()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_BLOCKCOLOR_0800
+     * @tc.name testSliderBlockColor008
+     * @tc.desc testing blockColor for slider with gradient value
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 1
+     */
+    it('testSliderBlockColor008', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testSliderBlockColor008()).assertEqual(0)
       done()
     })
   })

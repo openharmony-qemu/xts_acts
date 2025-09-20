@@ -82,8 +82,8 @@ describe("VibratorJsTest_misc_8", function () {
      * @tc.size:MediumTest
      */
     it("UniversalVibratorJsTest01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "UniversalVibratorJsTest01"
-        if (isAvailable) {
+        TAG = "====>UniversalVibratorJsTest01"
+        try {
             let ret = vibrator.isSupportEffectSync(EFFECT_IDSUCCESS);
             console.info(TAG + "ret:" + ret);
             if(ret){
@@ -96,10 +96,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDSUCCESS error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDSUCCESS  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
-                        console.info(TAG + ' vibrator EFFECT_IDSUCCESS success');
+                        console.info(TAG + ' startVibration success' );
+                        expect(error == undefined).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -109,8 +110,14 @@ describe("VibratorJsTest_misc_8", function () {
                 console.log(TAG + ' is not supported.');
                 done();
             }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        } catch (error) {
+            if (isAvailable) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+            } else {
+                console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(14600101);
+            }
             done();
         }
     })
@@ -124,8 +131,8 @@ describe("VibratorJsTest_misc_8", function () {
      * @tc.size:MediumTest
      */
     it("UniversalVibratorJsTest02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "UniversalVibratorJsTest02"
-        if (isAvailable) {
+        TAG = "====>UniversalVibratorJsTest02"
+        try {
             let ret1 = vibrator.isSupportEffectSync(EFFECT_IDFAIL);
             console.info(TAG + "ret1:" + ret1);
             if(ret1){
@@ -138,10 +145,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDFAIL error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDFAIL  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDFAIL success');
+                        expect(error == undefined).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -151,8 +159,14 @@ describe("VibratorJsTest_misc_8", function () {
                 console.log(TAG + ' is not supported.');
                 done();
             }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        } catch (error) {
+            if (isAvailable) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+            } else {
+                console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(14600101);
+            }
             done();
         }
     })
@@ -166,8 +180,8 @@ describe("VibratorJsTest_misc_8", function () {
      * @tc.size:MediumTest
      */
     it("UniversalVibratorJsTest03", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "UniversalVibratorJsTest03"
-        if (isAvailable) {
+        TAG = "====>UniversalVibratorJsTest03"
+        try {
             let ret2 = vibrator.isSupportEffectSync(EFFECT_IDWARNING);
             console.info(TAG + "ret2:" + ret2);
             if(ret2){
@@ -180,10 +194,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDWARNING error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDWARNING  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDWARNING success');
+                        expect(error == undefined).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -193,8 +208,14 @@ describe("VibratorJsTest_misc_8", function () {
                 console.log(TAG + ' is not supported.');
                 done();
             }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        } catch (error) {
+            if (isAvailable) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+            } else {
+                console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(14600101);
+            }
             done();
         }
     })
@@ -208,8 +229,8 @@ describe("VibratorJsTest_misc_8", function () {
      * @tc.size:MediumTest
      */
     it("UniversalVibratorJsTest04", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "UniversalVibratorJsTest04"
-         if (isAvailable) {
+        TAG = "====>UniversalVibratorJsTest04"
+        try {
             let ret2 = vibrator.isSupportEffectSync(EFFECT_IDWARNING);
             let ret1 = vibrator.isSupportEffectSync(EFFECT_IDFAIL);
             console.info(TAG + "ret1:" + ret1 + "ret2:" + ret2);
@@ -223,10 +244,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDFAIL error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDFAIL  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDFAIL success');
+                        expect(error == undefined).assertTrue();
                     }
                 });
                 vibrator.startVibration({
@@ -238,10 +260,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDWARNING error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDWARNING  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDWARNING success');
+                        expect(error == undefined).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -251,8 +274,14 @@ describe("VibratorJsTest_misc_8", function () {
                 console.log(TAG + ' is not supported.');
                 done();
             }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        } catch (error) {
+            if (isAvailable) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+            } else {
+                console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(14600101);
+            }
             done();
         }
     })
@@ -266,8 +295,8 @@ describe("VibratorJsTest_misc_8", function () {
      * @tc.size:MediumTest
      */
     it("UniversalVibratorJsTest05", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "UniversalVibratorJsTest05"
-         if (isAvailable) {
+        TAG = "====>UniversalVibratorJsTest05"
+        try {
             let ret2 = vibrator.isSupportEffectSync(EFFECT_IDWARNING);
             let ret = vibrator.isSupportEffectSync(EFFECT_IDSUCCESS);
             console.info(TAG + "ret:" + ret + "ret2:" + ret2);
@@ -281,10 +310,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDSUCCESS error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDSUCCESS  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDSUCCESS success');
+                        expect(error == undefined).assertTrue();
                     }
                 });
                 vibrator.startVibration({
@@ -296,10 +326,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDWARNING error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDWARNING  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDWARNING success');
+                        expect(error == undefined).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -309,8 +340,14 @@ describe("VibratorJsTest_misc_8", function () {
                 console.log(TAG + ' is not supported.');
                 done();
             }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        } catch (error) {
+            if (isAvailable) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+            } else {
+                console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(14600101);
+            }
             done();
         }
     })
@@ -324,8 +361,8 @@ describe("VibratorJsTest_misc_8", function () {
      * @tc.size:MediumTest
      */
     it("UniversalVibratorJsTest06", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "UniversalVibratorJsTest06"
-         if (isAvailable) {
+        TAG = "====>UniversalVibratorJsTest06"
+        try {
             let ret2 = vibrator.isSupportEffectSync(EFFECT_IDWARNING);
             let ret1 = vibrator.isSupportEffectSync(EFFECT_IDFAIL);
             console.info(TAG + "ret1:" + ret1 + "ret2:" + ret2);
@@ -339,10 +376,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDWARNING error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDWARNING  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDWARNING success');
+                        expect(error == undefined).assertTrue();
                     }
                 });
                 vibrator.startVibration({
@@ -354,10 +392,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDFAIL error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDFAIL  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDFAIL success');
+                        expect(error == undefined).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -367,8 +406,14 @@ describe("VibratorJsTest_misc_8", function () {
                 console.log(TAG + ' is not supported.');
                 done();
             }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        } catch (error) {
+            if (isAvailable) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+            } else {
+                console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(14600101);
+            }
             done();
         }
     })
@@ -382,8 +427,8 @@ describe("VibratorJsTest_misc_8", function () {
      * @tc.size:MediumTest
      */
     it("UniversalVibratorJsTest07", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "UniversalVibratorJsTest07"
-         if (isAvailable) {
+        TAG = "====>UniversalVibratorJsTest07"
+        try {
             let ret = vibrator.isSupportEffectSync(EFFECT_IDSUCCESS);
             let ret1 = vibrator.isSupportEffectSync(EFFECT_IDFAIL);
             console.info(TAG + "ret:" + ret + "ret1:" + ret1);
@@ -397,10 +442,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDSUCCESS error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDSUCCESS  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDSUCCESS success');
+                        expect(error == undefined).assertTrue();
                     }
                 });
                 vibrator.startVibration({
@@ -412,10 +458,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDFAIL error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDFAIL  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDFAIL success');
+                        expect(error == undefined).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -425,8 +472,14 @@ describe("VibratorJsTest_misc_8", function () {
                 console.log(TAG + ' is not supported.');
                 done();
             }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        } catch (error) {
+            if (isAvailable) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+            } else {
+                console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(14600101);
+            }
             done();
         }
     })
@@ -440,8 +493,8 @@ describe("VibratorJsTest_misc_8", function () {
      * @tc.size:MediumTest
      */
     it("UniversalVibratorJsTest08", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "UniversalVibratorJsTest08"
-         if (isAvailable) {
+        TAG = "====>UniversalVibratorJsTest08"
+        try {
             let ret = vibrator.isSupportEffectSync(EFFECT_IDSUCCESS);
             let ret2 = vibrator.isSupportEffectSync(EFFECT_IDWARNING);
             console.info(TAG + "ret:" + ret + "ret2:" + ret2);
@@ -455,10 +508,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDWARNING error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDWARNING  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDWARNING success');
+                        expect(error == undefined).assertTrue();
                     }
                 });
                 vibrator.startVibration({
@@ -470,10 +524,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDSUCCESS error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDSUCCESS  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDSUCCESS success');
+                        expect(error == undefined).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -483,8 +538,14 @@ describe("VibratorJsTest_misc_8", function () {
                 console.log(TAG + ' is not supported.');
                 done();
             }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        } catch (error) {
+            if (isAvailable) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+            } else {
+                console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(14600101);
+            }
             done();
         }
     })
@@ -498,8 +559,8 @@ describe("VibratorJsTest_misc_8", function () {
      * @tc.size:MediumTest
      */
     it("UniversalVibratorJsTest09", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "UniversalVibratorJsTest09"
-         if (isAvailable) {
+        TAG = "====>UniversalVibratorJsTest09"
+        try {
             let ret = vibrator.isSupportEffectSync(EFFECT_IDSUCCESS);
             let ret2 = vibrator.isSupportEffectSync(EFFECT_IDWARNING);
             console.info(TAG + "ret:" + ret + "ret2:" + ret2);
@@ -513,10 +574,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDSUCCESS  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator success');
+                        expect(error == undefined).assertTrue();
                     }
                 });
                 vibrator.startVibration({
@@ -532,6 +594,7 @@ describe("VibratorJsTest_misc_8", function () {
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDWARNING success');
+                        expect(error == undefined).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -541,8 +604,14 @@ describe("VibratorJsTest_misc_8", function () {
                 console.log(TAG + ' is not supported.');
                 done();
             }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        } catch (error) {
+            if (isAvailable) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+            } else {
+                console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(14600101);
+            }
             done();
         }
     })
@@ -556,8 +625,8 @@ describe("VibratorJsTest_misc_8", function () {
      * @tc.size:MediumTest
      */
     it("UniversalVibratorJsTest10", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "UniversalVibratorJsTest10"
-         if (isAvailable) {
+        TAG = "====>UniversalVibratorJsTest10"
+        try {
             let ret = vibrator.isSupportEffectSync(EFFECT_IDSUCCESS);
             let ret1 = vibrator.isSupportEffectSync(EFFECT_IDFAIL);
             let ret2 = vibrator.isSupportEffectSync(EFFECT_IDWARNING);
@@ -572,10 +641,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDWARNING error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDWARNING  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDWARNING success');
+                        expect(error == undefined).assertTrue();
                     }
                 });
                 vibrator.startVibration({
@@ -587,10 +657,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDFAIL error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDFAIL  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDFAIL success');
+                        expect(error == undefined).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -605,10 +676,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDSUCCESS error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDSUCCESS  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDSUCCESS success');
+                        expect(error == undefined).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -618,8 +690,14 @@ describe("VibratorJsTest_misc_8", function () {
                 console.log(TAG + ' is not supported.');
                 done();
             }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        } catch (error) {
+            if (isAvailable) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+            } else {
+                console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(14600101);
+            }
             done();
         }
     })
@@ -633,8 +711,8 @@ describe("VibratorJsTest_misc_8", function () {
      * @tc.size:MediumTest
      */
     it("UniversalVibratorJsTest11", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "UniversalVibratorJsTest11"
-         if (isAvailable) {
+        TAG = "====>UniversalVibratorJsTest11"
+        try {
             let ret = vibrator.isSupportEffectSync(EFFECT_IDSUCCESS);
             let ret1 = vibrator.isSupportEffectSync(EFFECT_IDFAIL);
             let ret2 = vibrator.isSupportEffectSync(EFFECT_IDWARNING);
@@ -649,10 +727,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDWARNING error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDWARNING  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDWARNING success');
+                        expect(error == undefined).assertTrue();
                     }
                 });
                 vibrator.startVibration({
@@ -664,10 +743,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDSUCCESS error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDSUCCESS  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDSUCCESS success');
+                        expect(error == undefined).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -682,10 +762,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDFAIL error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDFAIL  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDFAIL success');
+                        expect(error == undefined).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -695,8 +776,14 @@ describe("VibratorJsTest_misc_8", function () {
                 console.log(TAG + ' is not supported.');
                 done();
             }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        } catch (error) {
+            if (isAvailable) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+            } else {
+                console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(14600101);
+            }
             done();
         }
     })
@@ -710,8 +797,8 @@ describe("VibratorJsTest_misc_8", function () {
      * @tc.size:MediumTest
      */
     it("UniversalVibratorJsTest12", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "UniversalVibratorJsTest12"
-         if (isAvailable) {
+        TAG = "====>UniversalVibratorJsTest12"
+        try {
             let ret = vibrator.isSupportEffectSync(EFFECT_IDSUCCESS);
             let ret1 = vibrator.isSupportEffectSync(EFFECT_IDFAIL);
             let ret2 = vibrator.isSupportEffectSync(EFFECT_IDWARNING);
@@ -726,10 +813,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDSUCCESS error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDSUCCESS  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDSUCCESS success');
+                        expect(error == undefined).assertTrue();
                     }
                 });
                 vibrator.startVibration({
@@ -741,10 +829,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDFAIL error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDFAIL  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDFAIL success');
+                        expect(error == undefined).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -759,10 +848,11 @@ describe("VibratorJsTest_misc_8", function () {
                     usage: "unknown"
                 }, (error) => {
                     if (error) {
-                        console.info(TAG + ' vibrator EFFECT_IDWARNING error:' + error);
+                        console.info(TAG + ` vibrator EFFECT_IDFAIL  error ,error.code: ${error.code},error.message: ${error.message}`);
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator EFFECT_IDWARNING success');
+                        expect(error == undefined).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -772,8 +862,14 @@ describe("VibratorJsTest_misc_8", function () {
                 console.log(TAG + ' is not supported.');
                 done();
             }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        } catch (error) {
+            if (isAvailable) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+            } else {
+                console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(14600101);
+            }
             done();
         }
     })
@@ -787,8 +883,8 @@ describe("VibratorJsTest_misc_8", function () {
      * @tc.size:MediumTest
      */
     it("ReliabilityVibratorJsTest13", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "ReliabilityVibratorJsTest13"
-         if (isAvailable) {
+        TAG = "====>ReliabilityVibratorJsTest13"
+        try {
             let ret = vibrator.isSupportEffectSync(EFFECT_IDSUCCESS);
             console.info(TAG + "ret:" + ret);
             if(ret){
@@ -802,10 +898,11 @@ describe("VibratorJsTest_misc_8", function () {
                         usage: "unknown"
                     }, (error) => {
                         if (error) {
-                            console.info(TAG + ' vibrator error:' + error);
+                            console.info(TAG + ` startVibration  error ,error.code: ${error.code},error.message: ${error.message}`);
                             expect(false).assertTrue();
                         } else {
                             console.info(TAG + ' vibrator success');
+                            expect(error == undefined).assertTrue();
                         }
                     });
                     console.info(TAG + ' vibrator times:' + times);
@@ -816,8 +913,14 @@ describe("VibratorJsTest_misc_8", function () {
                 console.log(TAG + ' is not supported.');
                 done();
             }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        } catch (error) {
+            if (isAvailable) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+            } else {
+                console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(14600101);
+            }
             done();
         }
     })
@@ -831,8 +934,8 @@ describe("VibratorJsTest_misc_8", function () {
      * @tc.size:MediumTest
      */
     it("ReliabilityVibratorJsTest14", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "ReliabilityVibratorJsTest14"
-         if (isAvailable) {
+        TAG = "====>ReliabilityVibratorJsTest14"
+        try {
             let ret1 = vibrator.isSupportEffectSync(EFFECT_IDFAIL);
             console.info(TAG + "ret1:" + ret1);
             if(ret1){
@@ -846,10 +949,11 @@ describe("VibratorJsTest_misc_8", function () {
                         usage: "unknown"
                     }, (error) => {
                         if (error) {
-                            console.info(TAG + ' vibrator error:' + error);
+                            console.info(TAG + ` startVibration  error ,error.code: ${error.code},error.message: ${error.message}`);
                             expect(false).assertTrue();
                         } else {
                             console.info(TAG + ' vibrator success');
+                            expect(error == undefined).assertTrue();
                         }
                     });
                     console.info(TAG + ' vibrator times:' + times);
@@ -860,8 +964,14 @@ describe("VibratorJsTest_misc_8", function () {
                 console.log(TAG + ' is not supported.');
                 done();
             }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        } catch (error) {
+            if (isAvailable) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+            } else {
+                console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(14600101);
+            }
             done();
         }
     })
@@ -875,8 +985,8 @@ describe("VibratorJsTest_misc_8", function () {
      * @tc.size:MediumTest
      */
     it("ReliabilityVibratorJsTest15", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        TAG = "ReliabilityVibratorJsTest15"
-         if (isAvailable) {
+        TAG = "====>ReliabilityVibratorJsTest15"
+        try {
             let ret2 = vibrator.isSupportEffectSync(EFFECT_IDWARNING);
             console.info(TAG + "ret2:" + ret2);
             if(ret2){
@@ -890,10 +1000,11 @@ describe("VibratorJsTest_misc_8", function () {
                         usage: "unknown"
                     }, (error) => {
                         if (error) {
-                            console.info(TAG + ' vibrator error:' + error);
+                            console.info(TAG + ` startVibration  error ,error.code: ${error.code},error.message: ${error.message}`);
                             expect(false).assertTrue();
                         } else {
                             console.info(TAG + ' vibrator success');
+                            expect(error == undefined).assertTrue();
                         }
                     });
                     console.info(TAG + ' vibrator times:' + times);
@@ -904,8 +1015,14 @@ describe("VibratorJsTest_misc_8", function () {
                 console.log(TAG + ' is not supported.');
                 done();
             }
-        } else {
-            console.log(TAG + ' is not supported on this device.');
+        } catch (error) {
+            if (isAvailable) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+            } else {
+                console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(14600101);
+            }
             done();
         }
     })

@@ -22,6 +22,8 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 
+const EVENT_ID_SET_SUITE_KEY = 175301;
+
 @Entry
 @Component
 struct WebViewControllerPart3 {
@@ -46,17 +48,19 @@ struct WebViewControllerPart3 {
   @State onMessageEventCallBack: boolean = false
   @State ports: webView.WebMessagePort[] = [];
   @State userAgentPC:string = "";
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -65,6 +69,7 @@ struct WebViewControllerPart3 {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -94,11 +99,13 @@ struct WebViewControllerPart3 {
     Column() {
       Row() {
         Button("WebViewController click").key('WebViewControllerTestButton').onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, this.str + ' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
           console.info("key==>" + this.str)
           switch (this.str) {
             case "emitGetHitTest": {
               let hitType = JSON.stringify(this.controller.getHitTest());
-              Utils.emitEvent(hitType, 118);
+              Utils.emitEvent(hitType, 175310);
               break;
             }
           }
@@ -121,6 +128,10 @@ struct WebViewControllerPart3 {
         .domStorageAccess(this.domStorageAccess)
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
     }
   }
 }

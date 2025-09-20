@@ -27,15 +27,15 @@ export default function getBundleInfoForSelf() {
           expect(data.reqPermissionDetails[0].name).assertEqual("ohos.permission.GET_BUNDLE_INFO_PRIVILEGED");
           expect(data.reqPermissionDetails[0].moduleName).assertEqual("entry");
           expect(data.reqPermissionDetails[0].reason).assertEqual("$string:module_desc");
-          expect(data.reqPermissionDetails[0].reasonId).assertLarger(0.0);
+          expect(data.reqPermissionDetails[0].reasonId ).assertLarger(0.0);
           expect(data.reqPermissionDetails[0].usedScene.abilities.length).assertEqual(1.0);
           expect(data.reqPermissionDetails[0].usedScene.abilities[0]).assertEqual("MainAbility");
           expect(data.reqPermissionDetails[0].usedScene.when).assertEqual("always");
 
-          expect(data.signatureInfo.appId).assertContain(BUNDLE_NAME);
-          expect(data.signatureInfo.fingerprint).not().assertNull();
-          expect(data.signatureInfo.certificate).assertContain(CERTIFICATE);
-          expect(data.signatureInfo.appIdentifier).assertEqual("");
+          expect(data?.signatureInfo?.appId).assertContain(BUNDLE_NAME);
+          expect(data?.signatureInfo?.fingerprint).not().assertNull();
+          expect(data?.signatureInfo?.certificate).assertContain(CERTIFICATE);
+          expect(data?.signatureInfo?.appIdentifier).assertEqual("");
 
           hilog.info(domain, tag, 'getBundleInfoForSelfWithREQUESTED_PERMISSION  ====> end');
           done();
@@ -82,11 +82,11 @@ export default function getBundleInfoForSelf() {
         await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION | bundle.BundleFlag.GET_BUNDLE_INFO_WITH_METADATA)
           .then((data : BundleInfo) => {
             hilog.info(domain, tag, 'getBundleInfoForSelfWithMETADATAandAPPLICATION  ====> start');
-            let metadataArray = data.appInfo.metadataArray;
-            expect(metadataArray.length).assertEqual(1.0);
-            let moduleMetadata = metadataArray[0];
-            expect(moduleMetadata.moduleName).assertEqual("entry");
-            expect(moduleMetadata.metadata.length).assertLarger(0.0);
+            let metadataArray = data?.appInfo?.metadataArray;
+            expect(metadataArray?.length).assertEqual(1.0);
+            let moduleMetadata = metadataArray?.[0];
+            expect(moduleMetadata?.moduleName).assertEqual("entry");
+            expect(moduleMetadata?.metadata?.length).assertLarger(0.0);
             hilog.info(domain, tag, 'getBundleInfoForSelfWithMETADATAandAPPLICATION  ====> end');
             done();
           }).catch(err => {
@@ -140,7 +140,7 @@ export default function getBundleInfoForSelf() {
           let skillUrl: bundle.SkillUrl = skill.uris[0];
           expect(data.hapModulesInfo[0].abilitiesInfo[0].skills.length).assertEqual(1);
           expect(skill.actions[0])
-            .assertEqual('action.system.home');
+            .assertEqual('ohos.want.action.home');
           expect(skill.entities[0])
             .assertEqual('entity.system.home');
           expect(skill.domainVerify).assertEqual(false);

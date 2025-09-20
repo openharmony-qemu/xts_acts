@@ -16,6 +16,8 @@
 import events_emitter from '@ohos.events.emitter';
 import webView from '@ohos.web.webview';
 import Utils from '../../test/Utils';
+import { ON,Driver } from '@kit.TestKit';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -31,10 +33,12 @@ struct WebOnFullScreenExit {
   @State databaseAccess: boolean = true;
   @State onFullScreenExitCalled: boolean = false;
   @State checkEleResult: string = "";
+  @State isReceive:number = -1;
+  @State isPageEnd:number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 300370,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
@@ -42,7 +46,7 @@ struct WebOnFullScreenExit {
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(300370)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -51,6 +55,7 @@ struct WebOnFullScreenExit {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -59,13 +64,18 @@ struct WebOnFullScreenExit {
     Column() {
       Row() {
         Button("web click").key('OnFullScreenExitTestButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str)
+          await waitForExist(()=>this.isReceive,  this.str + 'IsReceive', 0);
+          await waitForExist(()=>this.isPageEnd, this.str + 'IsPageEnd', 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitOnFullScreenExit001": {
               try {
-                await Utils.clickComponent('OnFullScreenExitTestWeb');
+                await Utils.sleep(1000)
+                const driver = Driver.create();
+                await Utils.waitAndClickComponent(driver,'OnFullScreenExitTestWeb')
                 await Utils.sleep(1000);
-                await Utils.clickComponent('OnFullScreenExitTestWeb');
+                await Utils.waitAndClickComponent(driver,'OnFullScreenExitTestWeb')
                 await Utils.sleep(1000);
                 this.controller.runJavaScript("checkIsFullScreen()", (error, result) => {
                   if (error) {
@@ -73,7 +83,7 @@ struct WebOnFullScreenExit {
                   }
                   this.checkEleResult = JSON.stringify(result)
                   console.log(`The checkIsFullScreen() return value is: ${result}`);
-                  Utils.emitEvent(this.onFullScreenExitCalled + '_' + this.checkEleResult, 444)
+                  Utils.emitEvent(this.onFullScreenExitCalled + '_' + this.checkEleResult, 300380)
                 })
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -82,19 +92,24 @@ struct WebOnFullScreenExit {
             }
             case "emitExitFullScreen001": {
               try {
-                await Utils.clickComponent('OnFullScreenExitTestWeb');
+                this.onFullScreenExitCalled = false;
+                await Utils.sleep(1000);
+                const driver = Driver.create();
+                await Utils.waitAndClickComponent(driver,'OnFullScreenExitTestWeb')
+                await Utils.sleep(1000);
+                await Utils.waitAndClickComponent(driver,'OnFullScreenExitTestWeb')
                 await Utils.sleep(1000);
                 if (this.handler) {
                   this.handler.exitFullScreen();
                 }
-                await Utils.sleep(1000);
+                await waitForExist(() => this.onFullScreenExitCalled ? 1 : 0, 'exit ' + this.str, 1);
                 this.controller.runJavaScript("checkIsFullScreen()", (error, result) => {
                   if (error) {
                     console.log(`The checkIsFullScreen() return error is: ${error}`);
                   }
                   this.checkEleResult = JSON.stringify(result)
                   console.log(`The checkIsFullScreen() return value is: ${result}`);
-                  Utils.emitEvent(this.onFullScreenExitCalled + '_' + this.checkEleResult, 446)
+                  Utils.emitEvent(this.onFullScreenExitCalled + '_' + this.checkEleResult, 300390)
                 })
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -114,11 +129,16 @@ struct WebOnFullScreenExit {
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
         .onFullScreenExit(() => {
-          console.log("onFullScreenExit...")
+          console.log("onFullScreenExit****...")
           this.onFullScreenExitCalled = true
         })
         .onFullScreenEnter((event) => {
+          console.log("onFullScreenEnter****....")
           this.handler = event.handler
+        })
+        .onPageEnd(()=>{
+          console.log("onPageEnd****")
+          this.isPageEnd = 0;
         })
     }
   }

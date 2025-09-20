@@ -1,3 +1,17 @@
+/**
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import commonEventManager from '@ohos.commonEventManager'
 import hilog from '@ohos.hilog'
@@ -25,10 +39,12 @@ import {
   DisplayRotation
 } from '@ohos.UiTest'
 import Utils from './Util.test';
+import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let testAbilityContext: common.UIAbilityContext;
 let bundleName: string = 'com.example.systemAPI.static'
+let count: int = 0;
 
 
 export default function ActsCommonEventSystemAPITest() {
@@ -39,31 +55,20 @@ export default function ActsCommonEventSystemAPITest() {
 
     beforeAll(() => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
+      
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName:"entry",
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          testAbilityContext = abilitys.context
-          hilog.info(domain, TAG, '%{public}s', 'onAbilityCreate end');
-
-        },
-      }, (err : BusinessError| null) : void => {
-        if (err != null ) {
-          hilog.info(domain, TAG, '%{public}s', '-----'+ err.code);
-        }
-        hilog.info(domain, TAG, '%{public}s', 'BusinessError  end');
-      });
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundleName )
       await Utils.msSleep(2000)
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_5000
-     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_5000
-     * @tc.desc: test function publishAsBundle
+
+    /**
+     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_5000
+     * @tc.name  Sub_Notification_Ans_Publish_Publish_Static_5000
+     * @tc.desc  test function publishAsBundle
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -85,10 +90,10 @@ export default function ActsCommonEventSystemAPITest() {
         console.info(Tag +`Sub_Notification_Ans_Publish_Publish_Static_5000 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_5100
-     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_5100
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_5100
+     * @tc.name  Sub_Notification_Ans_Publish_Publish_Static_5100
+     * @tc.desc  test function publishAsUser
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -115,15 +120,61 @@ export default function ActsCommonEventSystemAPITest() {
         console.info(Tag +`Sub_Notification_Ans_Publish_Publish_5100 END`);
       })
 
+    /**
+    * @tc.number  Sub_Notification_Ces_StaticEvent_Config_Static_1200
+    * @tc.name  Sub_Notification_Ces_StaticEvent_Config_Static_1200
+    * @tc.desc  test function removeStickyCommonEvent
+    */
+    it('Sub_Notification_Ces_StaticEvent_Config_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let Tag: string = 'Sub_Notification_Ces_StaticEvent_Config_Static_1200'
+        console.info(`${Tag} Sub_Notification_Ces_StaticEvent_Config_1200 START`);
 
+        commonEventManager.removeStickyCommonEvent("sticky_event", (err: BusinessError | null) => {
+          if (err) {
+            console.info(`${Tag} remove sticky event AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
+            expect(err?.code).assertEqual(202);
+            done()
+          } else {
+            console.info(`${Tag} remove sticky event AsyncCallback success`);
+            expect(false).assertTrue()
+            done()
+          }
+        })
+
+        console.info(`${Tag} Sub_Notification_Ces_StaticEvent_Config_1200 END`);
+      })
+
+    /**
+     * @tc.number  Sub_Notification_Ces_StaticEvent_Config_Static_1300
+     * @tc.name  Sub_Notification_Ces_StaticEvent_Config_Static_1300
+     * @tc.desc  test function removeStickyCommonEvent
+     */
+    it('Sub_Notification_Ces_StaticEvent_Config_Static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let Tag: string = 'Sub_Notification_Ces_StaticEvent_Config_Static_1300'
+        console.info(`${Tag} Sub_Notification_Ces_StaticEvent_Config_1300 START`);
+
+        commonEventManager.removeStickyCommonEvent("sticky_event").then(() => {
+          console.info("${TAG} remove sticky event AsyncCallback success");
+          expect(false).assertTrue()
+          done()
+        }).catch((err: BusinessError): void => {
+          console.info(`${Tag} remove sticky event AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
+          expect(err?.code).assertEqual(202);
+          done()
+        });
+
+        console.info(`${Tag} Sub_Notification_Ces_StaticEvent_Config_1300 END`);
+      })
 
     
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278
+     * @tc.desc  test function publishAsUser
      */
-    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> =>  {
+    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>  {
     //   let Tag :string ='Sub_Notification_Ces_StaticEvent_Config_Static_1300'
     //   //构造commonEventManager.publish401错误码
     //   try {
@@ -190,10 +241,10 @@ export default function ActsCommonEventSystemAPITest() {
     //   }
     // })
 
-     /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_279
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_279
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_279
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_279
+     * @tc.desc  test function publishAsUser
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_279', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -279,7 +330,7 @@ export default function ActsCommonEventSystemAPITest() {
           notificationSlotType: notificationManager.SlotType.LIVE_VIEW,
           isOngoing: true,
           isUnremovable: false,
-          extraInfo: {
+          extendInfo: {
             'testKey': 'testValue'
           } as Record<String, Object>,
         }
@@ -342,7 +393,7 @@ export default function ActsCommonEventSystemAPITest() {
           notificationSlotType: notificationManager.SlotType.LIVE_VIEW,
           isOngoing: true,
           isUnremovable: false,
-          extraInfo: {
+          extendInfo: {
             'testKey': 'testValue'
           } as Record<String, Object>
         }
@@ -351,6 +402,7 @@ export default function ActsCommonEventSystemAPITest() {
           console.info(Tag + ' notificationRequest1600014 callback fail,result is :', JSON.stringify(err));
           expect(err?.code).assertEqual(1600014);
         });
+        await Utils.msSleep(1000);
         await notificationManager.publish(notificationRequest1600014).then(() => {
           console.info(Tag + " publish update success");
           expect(false).assertTrue()
@@ -362,21 +414,23 @@ export default function ActsCommonEventSystemAPITest() {
         });
       })
 
-   
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280
-     * @tc.desc: test function publishAsUser
+    
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280
+     * @tc.desc  test function publishAsUser
      */
-    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   let TAG :string ='Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280'
-    //   let id :number = 1
+    //   count = 0;
+    //   let id :int = 1
     //   let label:string = "label"
     //   try {
     //     notificationManager.cancel(null, (err: BusinessError | null) => {
     //       if (err) {
     //         console.info(`${TAG} cancel id err: ${err.code}, errMes: ${err.message}`)
-    //         expect(true).assertTrue()
+    //         count++;
+    //         expect(count).assertEqual(1);
     //         done()
     //       } else {
     //         console.info(`${TAG} cancel id success`)
@@ -423,12 +477,12 @@ export default function ActsCommonEventSystemAPITest() {
     // })
 
     
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281
+     * @tc.desc  test function publishAsUser
      */
-    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> =>{
+    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
     // let TAG :string ='Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281'
     //   try {
     //     notificationManager.addSlot(null, (err: BusinessError | null) => {
@@ -505,18 +559,18 @@ export default function ActsCommonEventSystemAPITest() {
     // })
 
     
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284
+     * @tc.desc  test function publishAsUser
      */
-    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284',  TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> =>{
+    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284',  TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
     //   let Tag :string ='Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284'
     //   try {
     //     notificationManager.setBadgeNumber(null, (err: BusinessError | null) => {
     //       console.log(Tag+`setBadgeNumber failed, error code: ${err.code}, message: ${err.message}`)
     //       if (err.code == 801) {
-    //         expect(true).assertTrue()
+    //         expect(err.code == 801).assertTrue()
     //         done()
     //       } else {
     //         expect(false).assertTrue()
@@ -526,7 +580,7 @@ export default function ActsCommonEventSystemAPITest() {
     //   } catch (err) {
     //     console.log(Tag+`setBadgeNumber failed, catch error code: ${err.code}, message: ${err.message}`)
     //     if (err.code == 801) {
-    //       expect(true).assertTrue()
+    //       expect(err.code == 801).assertTrue()
     //       done()
     //     } else {
     //       expect(err?.code).assertEqual(401)
@@ -673,16 +727,17 @@ export default function ActsCommonEventSystemAPITest() {
     //   })
     // })
 
+    
 
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
+     * @tc.desc  test function publishAsUser
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let Tag: string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282'
-
+        
         notificationManager.requestEnableNotification(testAbilityContext, (err: BusinessError | null) => {
           console.info(`${Tag} requestEnableNotification2 Promise err: ${err?.code}, errMes: ${err?.message}`)
         })
@@ -727,7 +782,7 @@ export default function ActsCommonEventSystemAPITest() {
           }
         }
 
-        for (let index: number = 0; index <= 10; index++) {
+        for (let index: int = 0; index <= 10; index++) {
           let notificationRequest: notificationManager.NotificationRequest = {
             id: index,
             content: {
@@ -754,6 +809,7 @@ export default function ActsCommonEventSystemAPITest() {
         }
 
         for (let index = 0; index <= 10; index++) {
+          count = 0;
           let notificationRequest: notificationManager.NotificationRequest = {
             id: index,
             content: {
@@ -777,7 +833,8 @@ export default function ActsCommonEventSystemAPITest() {
           }
           await notificationManager.publish(notificationRequest).then(() => {
             console.info(`${Tag} publish_${index} Promise success`)
-            expect(true).assertTrue()
+            count++;
+            expect(count).assertEqual(1);
           }).catch((err: BusinessError): void => {
             console.info(`${Tag} publish_${index} Promise err: ${err.code}, errMes: ${err.message}`)
             if (index == 10) {
@@ -793,13 +850,57 @@ export default function ActsCommonEventSystemAPITest() {
       })
 
 
-   
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287
-     * @tc.desc: test function publishAsUser
+      /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283
+     * @tc.desc  test function publishAsUser
      */
-    it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        count = 0;
+        let Tag: string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283'
+        notificationManager.openNotificationSettings(testAbilityContext).then(() => {
+          count++;
+          expect(count).assertEqual(1);
+          console.info(Tag + "Succeed to openNotificationSettings");
+        }).catch((err: BusinessError): void => {
+          console.error(Tag + "openNotificationSettings: " + JSON.stringify(err));
+          if (err.code == 801) {
+            expect(err.code == 801).assertTrue();
+            done();
+          } else if(err.code == 1600001){
+            expect(err?.code).assertEqual(1600001)
+            done();
+          } else {
+            expect(err?.code).assertEqual(1011)
+            done();
+          }
+        })
+        await Utils.msSleep(2000)
+        await notificationManager.openNotificationSettings(testAbilityContext).then(() => {
+          console.info(Tag + "Succeed to openNotificationSettings");
+          expect(false).assertTrue();
+          done()
+        }).catch((err: BusinessError): void => {
+          console.error(Tag + "openNotificationSettings: " + JSON.stringify(err));
+          if (err.code == 801) {
+            expect(err.code == 801).assertTrue();
+            done();
+          } else {
+            expect(err?.code).assertEqual(1600018)
+            done()
+          }
+        });
+        await Utils.msSleep(2000)
+      })
+
+
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287
+     * @tc.desc  test function publishAsUser
+     */
+    it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let Tag: string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287'
         let BundleOption: notificationManager.BundleOption = {
@@ -834,13 +935,12 @@ export default function ActsCommonEventSystemAPITest() {
         notificationSubscribe.remove(bundle, notificationKey, reason, removeCallback);
       });
 
-
-   /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288
-     * @tc.desc: test function publish
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288
+     * @tc.desc  test function publish
      */
-    it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TEST_SUITE_NAME = 'Sub_Notification'
         const TEST_CASE_NAME = 'Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288'
@@ -861,6 +961,7 @@ export default function ActsCommonEventSystemAPITest() {
             }
           ],
           actionType: wantAgent.OperationType.START_ABILITY,
+          requestCode: 0,
           actionFlags: [wantAgent.WantAgentFlags.ONE_TIME_FLAG]
         }
         let wantAgentData = wantAgent.getWantAgent(wantagent);

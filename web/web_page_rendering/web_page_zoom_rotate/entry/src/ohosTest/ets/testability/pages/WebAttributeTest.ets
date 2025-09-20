@@ -16,7 +16,7 @@
 import webView from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
-
+import { waitForExist } from '../../test/WaitTest.test';
 @Entry
 @Component
 struct WebAttributeTest {
@@ -26,17 +26,19 @@ struct WebAttributeTest {
   @State newScale: number = 0
   @State oldScale: number = 0
   @State text: boolean = true;
-
+  @State isScaleEnd: number = -1
+  @State isPageEnd: number = -1
+  @State isReceive: number = -1
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 153860,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(153860)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -45,6 +47,7 @@ struct WebAttributeTest {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+       this.isReceive = 0;
         try {
           this.controller.loadUrl("resource://rawfile/index.html");
         } catch (error) {
@@ -67,15 +70,20 @@ struct WebAttributeTest {
             console.log("onBlur==>")
           })
           .onClick(async () => {
-            console.info("key==>" + this.str)
+            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
+            console.info('zbr111111111::' + this.str);
             switch (this.str) {
               case "emitInitialScale001": {
                 try {
+                 this.isScaleEnd = -1;
                   this.initialScale = 120
-                  await Utils.sleep(1000)
+                  await Utils.waitForExist(()=>this.isScaleEnd,'WebSetNetErrorCode2ButtonlsReceive',1,1000);
+                  this.isPageEnd =-1;
                   this.controller.loadUrl("resource://rawfile/index.html");
-                  await Utils.sleep(2000)
-                  Utils.emitEvent(`oldScale=${this.oldScale},newScale=${this.newScale}`, 70001)
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+                  Utils.emitEvent(`oldScale=${this.oldScale},newScale=${this.newScale}`, 153870);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -83,13 +91,16 @@ struct WebAttributeTest {
               }
               case "emitInitialScale002": {
                 try {
-                  this.initialScale = 100
-                  await Utils.sleep(1000)
+                  this.isScaleEnd = -1;
+                  this.initialScale = 100;
+                  await Utils.waitForExist(()=>this.isScaleEnd,'WebSetNetErrorCode2ButtonlsReceive',1,1000);
+                  this.isScaleEnd = -1;
                   this.initialScale = 90
-                  await Utils.sleep(1000)
+                  await Utils.waitForExist(()=>this.isScaleEnd,'WebSetNetErrorCode2ButtonlsReceive',1,1000);
+                  this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/index.html");
-                  await Utils.sleep(2000)
-                  Utils.emitEvent(`oldScale=${this.oldScale},newScale=${this.newScale}`, 70003)
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+                  Utils.emitEvent(`oldScale=${this.oldScale},newScale=${this.newScale}`, 153880)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -97,13 +108,20 @@ struct WebAttributeTest {
               }
               case "emitOnScaleChange": {
                 try {
+                  console.info('zbr22222::' + this.str);
+                  this.isScaleEnd = -1;
                   this.initialScale = 100
-                  await Utils.sleep(1000)
+                  await Utils.waitForExist(()=>this.isScaleEnd,'WebSetNetErrorCode2ButtonlsReceive',1,1000);
+                  console.info('zbr1' + this.initialScale);
+                  this.isScaleEnd = -1;
                   this.initialScale = 110
-                  await Utils.sleep(2000)
+                  await Utils.waitForExist(()=>this.isScaleEnd,'WebSetNetErrorCode2ButtonlsReceive',1,1000);
+                  console.info('zbr2' + this.initialScale);
+                  this.isPageEnd =-1;
                   this.controller.loadUrl("resource://rawfile/index.html")
-                  await Utils.sleep(2000)
-                  Utils.emitEvent(`oldScale=${this.oldScale},newScale=${this.newScale}`, 70005)
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+                  console.info('zbr3' + this.isPageEnd);
+                  Utils.emitEvent(`oldScale=${this.oldScale},newScale=${this.newScale}`, 153890)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -112,11 +130,13 @@ struct WebAttributeTest {
               case "emitZoomTwo": {
                 try {
                   this.text = false;
-                  await Utils.sleep(2000);
+                  this.isPageEnd =-1;
+                  this.controller.loadUrl("resource://rawfile/index.html")
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
                   this.controller.zoom(1);
                 } catch (error) {
                   console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                  Utils.emitEvent(`${error.code}`, 15);
+                  Utils.emitEvent(`${error.code}`, 153900);
                 }
                 break;
               }
@@ -134,11 +154,16 @@ struct WebAttributeTest {
           .verticalScrollBarAccess(true)
           .initialScale(this.initialScale)
           .userAgent('Mozilla/5.0 (Windows NT 10.0; WOW64)')
+          .onPageEnd((event) => {
+            console.info(' zbr web pageEnd==>' + event.url);
+            this.isPageEnd = 0;
+          })
           .onScaleChange((event) => {
-            console.log('onScaleChange called oldScale :' + event.oldScale)
-            console.log('onScaleChange called newScale :' + event.newScale)
+            console.info('zbr onScaleChange called oldScale :' + event.oldScale)
+            console.info('zbr onScaleChange called newScale :' + event.newScale)
             this.oldScale = event.oldScale
             this.newScale = event.newScale
+            this.isScaleEnd = 1;
           })
       }
       .width('100%')

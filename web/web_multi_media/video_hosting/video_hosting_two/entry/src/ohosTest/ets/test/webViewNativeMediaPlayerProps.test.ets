@@ -18,8 +18,11 @@ import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponents } from './WaitTest.test';
+import { Driver } from '@kit.TestKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 // @ts-nocheck
 export default function webViewNativeMediaPlayerProps() {
   describe('ActsAcewebViewNativeMediaPlayerProps', () => {
@@ -30,29 +33,27 @@ export default function webViewNativeMediaPlayerProps() {
       }
 
       try {
-        await Utils.sleep(1000)
         router.clear();
         let pages = router.getState();
         console.info("get webViewNativeMediaPlayerProps state success " + JSON.stringify(pages));
         if (!("webViewNativeMediaPlayerProps" == pages.name)) {
           console.info("get webViewNativeMediaPlayerProps state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(1000);
           console.info("push webViewNativeMediaPlayerProps state success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webViewNativeMediaPlayerProps page error:" + err);
       }
+      await waitForComponents("webViewNativeMediaPlayerProps");
       done()
     });
-      
+
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-        await Utils.sleep(2500);
       console.info("webViewNativeMediaPlayerProps beforeEach start");
       done();
     })
@@ -67,11 +68,14 @@ export default function webViewNativeMediaPlayerProps() {
      */
     it('testWebViewNativeMediaPlayerNetworkError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerNetworkError";
-      Utils.emitEvent(emitKey, 10)
-      Utils.registerEvent("testWebViewNativeMediaPlayerNetworkError", true, 1300, done);
-      sendEventByKey('webViewNativeMediaPlayerProps', 10, '');
+      Utils.emitEvent(emitKey, 300010)
+      Utils.registerBaseEvent("testWebViewNativeMediaPlayerNetworkError", true, 300020, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerProps');
     })
-    
+
     /*
      *@tc.number SUB_ACE_WEB_MediaError_FORMAT_ERROR_API_0003
      *@tc.name testWebViewNativeMediaPlayerFORMATERROR
@@ -82,11 +86,14 @@ export default function webViewNativeMediaPlayerProps() {
      */
     it('testWebViewNativeMediaPlayerFORMATERROR', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerFORMATERROR";
-      Utils.emitEvent(emitKey, 10)
-      Utils.registerEvent("testWebViewNativeMediaPlayerFORMATERROR", true, 1301, done);
-      sendEventByKey('webViewNativeMediaPlayerProps', 10, '');
+      Utils.emitEvent(emitKey, 300010)
+      Utils.registerBaseEvent("testWebViewNativeMediaPlayerFORMATERROR", true, 300030, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerProps');
     })
-    
+
     /*
      *@tc.number SUB_ACE_WEB_MediaError_DECODE_ERROR_API_0004
      *@tc.name testWebViewNativeMediaPlayerDECODEERROR
@@ -96,12 +103,15 @@ export default function webViewNativeMediaPlayerProps() {
      *@tc.level Level 1
      */
     it('testWebViewNativeMediaPlayerDECODEERROR', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let emitKey = "emitWebViewNativeMediaPlayerDECODEERROR";
-      Utils.emitEvent(emitKey, 10)
-      Utils.registerEvent("testWebViewNativeMediaPlayerDECODEERROR", true, 1302, done);
-      sendEventByKey('webViewNativeMediaPlayerProps', 10, '');
+      let emitKey = "emitWebViewNativeMediaPlayerDecodeERROR";
+      Utils.emitEvent(emitKey, 300010)
+      Utils.registerBaseEvent("testWebViewNativeMediaPlayerDECODEERROR", true, 300040, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerProps');
     })
-    
+
     /*
      *@tc.number SUB_ACE_WEB_CreateNativeMediaPlayerCallback_API_0005
      *@tc.name testWebViewNativeMediaPlayerCreateNativeMediaPlayerCallback
@@ -112,11 +122,14 @@ export default function webViewNativeMediaPlayerProps() {
      */
     it('testWebViewNativeMediaPlayerCreateNativeMediaPlayerCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerCreateNativeMediaPlayerCallback";
-      Utils.emitEvent(emitKey, 10)
-      Utils.registerEvent("testWebViewNativeMediaPlayerCreateNativeMediaPlayerCallback", true, 1303, done);
-      sendEventByKey('webViewNativeMediaPlayerProps', 10, '');
+      Utils.emitEvent(emitKey, 300010)
+      Utils.registerBaseEvent("testWebViewNativeMediaPlayerCreateNativeMediaPlayerCallback", true, 300050, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerProps');
     })
-    
+
     /*
      *@tc.number SUB_ACE_WEB_NetworkState_EMPTY_API_0006
      *@tc.name testWebViewNativeMediaPlayerNetworkStateEmpty
@@ -127,11 +140,14 @@ export default function webViewNativeMediaPlayerProps() {
      */
     it('testWebViewNativeMediaPlayerNetworkStateEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerNetworkStateEmpty";
-      Utils.emitEvent(emitKey, 10)
-      Utils.registerEvent("testWebViewNativeMediaPlayerNetworkStateEmpty", true, 1304, done);
-      sendEventByKey('webViewNativeMediaPlayerProps', 10, '');
+      Utils.emitEvent(emitKey, 300010)
+      Utils.registerBaseEvent("testWebViewNativeMediaPlayerNetworkStateEmpty", true, 300060, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerProps');
     })
-    
+
     /*
      *@tc.number SUB_ACE_WEB_NetworkState_IDLE_API_0007
      *@tc.name testWebViewNativeMediaPlayerNetworkStateIDLE
@@ -142,11 +158,14 @@ export default function webViewNativeMediaPlayerProps() {
      */
     it('testWebViewNativeMediaPlayerNetworkStateIDLE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerNetworkStateIDLE";
-      Utils.emitEvent(emitKey, 10)
-      Utils.registerEvent("testWebViewNativeMediaPlayerNetworkStateIDLE", true, 1305, done);
-      sendEventByKey('webViewNativeMediaPlayerProps', 10, '');
+      Utils.emitEvent(emitKey, 300010)
+      Utils.registerBaseEvent("testWebViewNativeMediaPlayerNetworkStateIDLE", true, 300070, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerProps');
     })
-    
+
     /*
      *@tc.number SUB_ACE_WEB_NetworkState_NETWORK_ERROR_API_0008
      *@tc.name testWebViewNativeMediaPlayerNetworkStateNETWORKERROR
@@ -157,11 +176,14 @@ export default function webViewNativeMediaPlayerProps() {
      */
     it('testWebViewNativeMediaPlayerNetworkStateNETWORKERROR', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerNetworkStateNETWORKERROR";
-      Utils.emitEvent(emitKey, 10)
-      Utils.registerEvent("testWebViewNativeMediaPlayerNetworkStateNETWORKERROR", true, 1305, done);
-      sendEventByKey('webViewNativeMediaPlayerProps', 10, '');
+      Utils.emitEvent(emitKey, 300010)
+      Utils.registerBaseEvent("testWebViewNativeMediaPlayerNetworkStateNETWORKERROR", true, 300070, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerProps');
     })
-    
+
     /*
      *@tc.number SUB_ACE_WEB_ReadyState_HAVE_NOTHING_API_0009
      *@tc.name testWebViewNativeMediaPlayerReadyStateHAVENOTHING
@@ -172,9 +194,12 @@ export default function webViewNativeMediaPlayerProps() {
      */
     it('testWebViewNativeMediaPlayerReadyStateHAVENOTHING', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerReadyStateHAVENOTHING";
-      Utils.emitEvent(emitKey, 10)
-      Utils.registerEvent("testWebViewNativeMediaPlayerReadyStateHAVENOTHING", true, 1308, done);
-      sendEventByKey('webViewNativeMediaPlayerProps', 10, '');
+      Utils.emitEvent(emitKey, 300010)
+      Utils.registerBaseEvent("testWebViewNativeMediaPlayerReadyStateHAVENOTHING", true, 300080, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerProps');
     })
 
     /*
@@ -187,9 +212,12 @@ export default function webViewNativeMediaPlayerProps() {
      */
     it('testWebViewNativeMediaPlayerPreload', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerProps2";
-      Utils.emitEvent(emitKey, 10)
-      Utils.registerEvent("testWebViewNativeMediaPlayerProps2", true, 1355, done);
-      sendEventByKey('webViewNativeMediaPlayerProps', 10, '');
+      Utils.emitEvent(emitKey, 300010)
+      Utils.registerBaseEvent("testWebViewNativeMediaPlayerProps2", true, 300090, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerProps');
     })
   })
 }

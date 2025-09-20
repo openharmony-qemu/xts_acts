@@ -15,6 +15,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
 import { DeleteParam, GenParam } from './utils/huks/HuksOptionsUtils';
+import { HuksMaxAliasLength } from './utils/huks/HuksCommonUtils';
 import { GetDataBySize } from './utils/CommonUtils';
 
 export default function SecurityHUKSKeyGenerateListAliasesTest() {
@@ -188,7 +189,7 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
      */
     it('SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0400";
-      let CEArr = ["C", "C" + GetDataBySize(63)];
+      let CEArr = ["C", "C" + GetDataBySize(HuksMaxAliasLength - 1)];
       try {
         DeleteParam(CEOption, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL);
         for (let arrElement of CEArr) {

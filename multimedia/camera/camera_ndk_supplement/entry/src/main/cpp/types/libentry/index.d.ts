@@ -15,8 +15,18 @@
 
 
 export const initCamera: (surfaceId: string) => number;
-// export const releaseCamera: () => number;
+export const releaseCameraManger: () => number;
 export const cameraErrorCode: (code: string) => number;
 export const cameraStatusInfo: (code: string) => number;
 export const cameraFormat: (format: number) => number;
 export const cameraFlashMode: (format: number) => number;
+export const getExposureMode: (format: number) => number;
+export const getCameraFocusMode: (format: number) => number;
+export const getCameraFocusState: (format: number) => number;
+export const sessionIsVideoStabilizationModeSupported: (format: number) => number;
+export const takePictureWithPhotoSettings: (ratation: number, qualitylevel: number) => number;
+export const getCameraConcurrentInfo: (type: number) => number;
+export const sessionCanPreconfig: (type: number) => number;
+export const sessionCanPreconfigWithRatio: (ratio: number) => number;
+export const photoOutputRegisterCallback: () => number;
+export const metadataOutputRegisterCallback: () => number;

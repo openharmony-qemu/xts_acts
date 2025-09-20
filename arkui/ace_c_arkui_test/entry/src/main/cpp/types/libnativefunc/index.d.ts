@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -5215,6 +5215,8 @@ export const testSliderBlockColor006: () => number;
 
 export const testSliderBlockColor007: () => number;
 
+export const testSliderBlockColor008: () => number;
+
 export const testSliderBlockStyle001: () => number;
 
 export const testSliderBlockStyle002: () => number;
@@ -5291,6 +5293,8 @@ export const testSliderSelectedColor006: () => number;
 
 export const testSliderSelectedColor007: () => number;
 
+export const testSliderSelectedColor008: () => number;
+
 export const testSliderShowSteps001: () => number;
 
 export const testSliderShowSteps002: () => number;
@@ -5332,6 +5336,8 @@ export const testSliderTrackColor004: () => number;
 export const testSliderTrackColor005: () => number;
 
 export const testSliderTrackColor006: () => number;
+
+export const testSliderTrackColor007: () => number;
 
 export const testSliderTrackThickness001: () => number;
 

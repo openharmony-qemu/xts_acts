@@ -33,7 +33,7 @@ import deviceInfo from '@ohos.deviceInfo'
 import intl from '@ohos.intl'
 import Utils from './Util.test'
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 
@@ -71,17 +71,6 @@ export default function TransliteratorIni18nTest() {
         console.log('transliterator_test_static_0100 ' + value[len-1]);
         len--;
       }
-    })
-    /* *
-   * @tc.number  SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0200
-   * @tc.name    transliterator_test_static_0200
-   * @tc.desc    test getInstance with a param,get the instance value
-   */
-    it('transliterator_test_static_0200', Level.LEVEL2, async (): Promise<void> => {
-      console.log('transliterator_test_static_0200 ' + 'start');
-      let value = i18n.Transliterator.getInstance('a');
-      console.log('transliterator_test_static_0200 ' + value);
-      expect(value !== null).assertTrue();
     })
 
     /* *

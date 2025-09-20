@@ -16,6 +16,8 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
+import { waitForExist } from '../../test/WaitTest.test';
+import { ON,Driver } from '@kit.TestKit';
 
 @Entry
 @Component
@@ -31,17 +33,20 @@ struct WebOnFullScreenEnter {
   @State databaseAccess: boolean = true;
   @State onFullScreenEnterCalled: boolean = false;
   @State checkEleResult: string = "";
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+  @State isGetComEnd:number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 300750,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(300750)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -50,6 +55,7 @@ struct WebOnFullScreenEnter {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -58,19 +64,24 @@ struct WebOnFullScreenEnter {
     Column() {
       Row() {
         Button("web click").key('OnFullScreenEnterTestButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str)
+          await waitForExist(()=>this.isReceive,  this.str + 'IsReceive', 0);
+          await waitForExist(()=>this.isPageEnd, this.str + 'IsPageEnd', 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitOnFullScreenEnter": {
               try {
-                await Utils.clickComponent('OnFullScreenEnterTestWeb');
                 await Utils.sleep(1000);
+                const driver = Driver.create();
+                await Utils.waitAndClickComponent(driver,'OnFullScreenEnterTestWeb')
+                await waitForExist(() => this.onFullScreenEnterCalled ? 1 : 0, this.str, 1);
                 this.controller.runJavaScript("checkIsFullScreen()", (error, result) => {
                   if (error) {
                     console.log(`The checkIsFullScreen() return error is: ${error}`);
                   }
                   this.checkEleResult = JSON.stringify(result)
                   console.log(`The checkIsFullScreen() return value is: ${result}`);
-                  Utils.emitEvent(this.onFullScreenEnterCalled + '_' + this.checkEleResult, 442)
+                  Utils.emitEvent(this.onFullScreenEnterCalled + '_' + this.checkEleResult, 300760)
                 })
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -89,6 +100,10 @@ struct WebOnFullScreenEnter {
         .domStorageAccess(this.domStorageAccess)
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
+        .onPageEnd(()=>{
+          console.log("onPageEnd******")
+          this.isPageEnd = 0;
+        })
         .onFullScreenEnter((event) => {
           console.log("onFullScreenEnter...")
           this.handler = event.handler

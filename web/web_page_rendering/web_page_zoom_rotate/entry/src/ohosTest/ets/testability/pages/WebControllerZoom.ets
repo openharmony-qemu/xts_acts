@@ -16,7 +16,7 @@
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 import webView from '@ohos.web.webview';
-
+import { waitForExist } from '../../test/WaitTest.test';
 @Entry
 @Component
 struct WebControllerZoom {
@@ -24,19 +24,21 @@ struct WebControllerZoom {
   @State zoom: number = 0
   @State zoomState: string = ''
   @State userAgentPC:string = "";
+  @State isComplete: number = -1;
+  @State isReceive: number = -1;
   webController: WebController = new WebController()
   controller: webView.WebviewController = new webView.WebviewController();
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 153040,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(153040)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -45,6 +47,7 @@ struct WebControllerZoom {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -54,18 +57,19 @@ struct WebControllerZoom {
       Row() {
         Button("WebControllerZoom").key('WebControllerZoom').onClick(async () => {
           console.info("key==>" + this.str)
+          await waitForExist(() => this.isComplete, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitWebControllerZoom001": {
               this.zoomState = 'WebControllerZoom'
               this.zoom = 1.5
-              await Utils.sleep(2000);
               this.webController.zoom(this.zoom)
               break;
             }
             case "emitWebControllerZoomMax001": {
               this.zoomState = 'WebControllerZoomMax'
               this.zoom = 10
-              await Utils.sleep(2000);
               try {
                 this.webController.zoom(this.zoom)
               } catch (error) {
@@ -75,15 +79,12 @@ struct WebControllerZoom {
             }
             case "emitWebControllerZoomMin001": {
               this.zoom = 1
-              await Utils.sleep(2000);
               try {
                 this.webController.zoom(this.zoom)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
-              setTimeout(() => {
-                Utils.emitEvent(true, 7802)
-              }, 3000)
+                Utils.emitEvent(true, 153070)
               break;
             }
           }
@@ -96,7 +97,7 @@ struct WebControllerZoom {
           switch (this.zoomState) {
             case 'WebControllerZoom': {
               if (this.zoom * 100 == event.newScale) {
-                Utils.emitEvent(true, 7705)
+                Utils.emitEvent(true, 153050)
               }
               break
             }
@@ -105,19 +106,23 @@ struct WebControllerZoom {
               if ((this.userAgentPC).includes("PC")) {
                 let zoomCount = this.zoom * 100 > 400 ? 400 : this.zoom
                 if (zoomCount == event.newScale) {
-                  Utils.emitEvent(true, 7801)
+                  Utils.emitEvent(true, 153060)
                 }
                 break
               }
               let zoomCount = this.zoom * 100 > 500 ? 500 : this.zoom
               if (zoomCount == event.newScale) {
-                Utils.emitEvent(true, 7801)
+                Utils.emitEvent(true, 153060)
               }
               break
             }
           }
         })
       Web({ src: 'www.example.com', controller: this.controller })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isComplete = 0;
+        })
     }
   }
 }

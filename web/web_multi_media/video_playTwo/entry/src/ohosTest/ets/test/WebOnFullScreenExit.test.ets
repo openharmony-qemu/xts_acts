@@ -13,12 +13,17 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponents } from './WaitTest.test';
+import { Driver } from '@kit.TestKit';
+import events_emitter from '@ohos.events.emitter';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 export default function webOnFullScreenExit() {
   describe('WebOnFullScreenExitTest', () => {
@@ -33,12 +38,12 @@ export default function webOnFullScreenExit() {
         if (!("WebOnFullScreenExit" == pages.name)) {
           console.info("get WebOnFullScreenExit state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebOnFullScreenExit page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebOnFullScreenExit page error: " + err);
       }
+      await waitForComponents('OnFullScreenExitTestButton');
       done()
     });
     beforeEach(async (done: Function) => {
@@ -47,15 +52,12 @@ export default function webOnFullScreenExit() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
 
     afterEach(async (done: Function) => {
       console.info("WebOnFullScreenExitTest afterEach start");
-      await Utils.sleep(1000);
-      console.info("WebOnFullScreenExitTest afterEach end");
       done();
     })
 
@@ -68,10 +70,12 @@ export default function webOnFullScreenExit() {
     * @tc.level       : Level 2
     */
     it('testOnFullScreenExit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitOnFullScreenExit001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnFullScreenExit001", "true_\"false\"", 444, done);
-      sendEventByKey('OnFullScreenExitTestButton', 10, '');
+      Utils.emitEvent("emitOnFullScreenExit001", 300370)
+      Utils.registerBaseEvent("testOnFullScreenExit001", "true_\"false\"", 300380, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver,'OnFullScreenExitTestButton')
     })
 
     /*
@@ -83,10 +87,12 @@ export default function webOnFullScreenExit() {
     * @tc.level       : Level 2
     */
     it('testExitFullScreen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitExitFullScreen001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testExitFullScreen001", "true_\"false\"", 446, done);
-      sendEventByKey('OnFullScreenExitTestButton', 10, '');
+      Utils.emitEvent("emitExitFullScreen001", 300370)
+      Utils.registerBaseEvent("testExitFullScreen001", "true_\"false\"", 300390, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver,'OnFullScreenExitTestButton')
     })
   })
 }
