@@ -104,7 +104,7 @@ export default function inputMethodAuthorityJSUnit() {
             });
         });
 
-        /*
+        /**
          * @tc.number  inputmethodNomal_test_hideSoftKeyboard_static_001
          * @tc.name    inputmethodNomal_test_hideSoftKeyboard_static_001
          * @tc.desc    Test Indicates the input method which will hide softboard with calback.
@@ -148,7 +148,7 @@ export default function inputMethodAuthorityJSUnit() {
             });
         });
 
-        /*
+        /**
          * @tc.number  inputmethodNomal_test_hideSoftKeyboard_static_002
          * @tc.name    inputmethodNomal_test_hideSoftKeyboard_static_002
          * @tc.desc    Test Indicates the input method which will hide softboard with Promise.
@@ -186,7 +186,7 @@ export default function inputMethodAuthorityJSUnit() {
             }
         });
 
-        /*
+        /**
          * @tc.number  inputMethod_test_switchCurrentInputMethodSubtype_static_001
          * @tc.name    inputMethod_test_switchCurrentInputMethodSubtype_static_001
          * @tc.desc    Switch current input method subtype.
@@ -215,7 +215,7 @@ export default function inputMethodAuthorityJSUnit() {
             hilog.info(domain, tag, "====>************* inputMethod_test_switchCurrentInputMethodSubtype_static_001 Test end*************");
         });
 
-        /*
+        /**
          * @tc.number  inputMethod_test_switchCurrentInputMethodSubtype_static_002
          * @tc.name    inputMethod_test_switchCurrentInputMethodSubtype_static_002
          * @tc.desc    Switch current input method subtype.
