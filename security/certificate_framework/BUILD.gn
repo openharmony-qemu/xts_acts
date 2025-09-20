@@ -17,9 +17,13 @@ group("certificate_framework") {
   if (is_standard_system) {
     deps = [
       "js_api_test_oh40:ActsCertFrameworkTwoJSNormalTest",
+      "js_api_test_oh40_static:ActsCertFrameworkTwoJSNormalStaticTest",
       "js_api_test_oh41:ActsCertFrameworkJSFuncTest",
+      "js_api_test_oh41_static:ActsCertFrameworkJSFuncStaticTest",
       "js_api_test_oh50:ActsCertFrameworkExtJSFuncTest",
+      "js_api_test_oh50_static:ActsCertFrameworkExtJSFuncStaticTest",
       "js_api_test_one:ActsCertificateFrameworkJSNormalTest",
+      "js_api_test_one_static:ActsCertificateFrameworkJSNormalStaticTest",
     ]
   }
 }

@@ -25,6 +25,7 @@ import LineMetricsTwoTest from './LineMetricsTwoTest.test'
 import FontDescriptorTest from './FontDescriptorTest.test'
 import FontDescriptorTest1 from './FontDescriptorTest1.test'
 import graphicTextNewAPI from './GraphicTextNewAPI.test'
+import GraphicTextAPI21Test from './GraphicTextAPI21Test.test'
 
 export default function testsuite() {
   graphicTextATest();
@@ -40,4 +41,5 @@ export default function testsuite() {
   FontDescriptorTest();
   FontDescriptorTest1();
   graphicTextNewAPI();
+  GraphicTextAPI21Test();
 }

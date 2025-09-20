@@ -2795,5 +2795,398 @@ export default function napiCheckExTest() {
       }
       done();
     });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0001
+     * @tc.name      napiFunctioncallTest001
+     * @tc.desc      Test napi_call_function basic function call
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('napiFunctioncallTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('napiFunctioncallTest001 START');
+      try {
+        // Test basic function call with simple JS function
+        let result: object = napitestex.callFunctionBasicTest();
+        hilog.info(0x0000, 'testTag', 'callFunctionBasicTest result: %{public}s', JSON.stringify(result));
+
+        expect(result['isSuccess']).assertTrue();
+        expect(result['status']).assertEqual(0); // napi_ok
+        console.info('napiFunctioncallTest001 PASS');
+      } catch (err) {
+        console.error('napiFunctioncallTest001 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0002
+     * @tc.name      napiFunctioncallTest002
+     * @tc.desc      Test napi_call_function with parameters
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('napiFunctioncallTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('napiFunctioncallTest002 START');
+      try {
+        // Test function call with parameters
+        let result: object = napitestex.callFunctionWithParamsTest();
+        hilog.info(0x0000, 'testTag', 'callFunctionWithParamsTest result: %{public}s', JSON.stringify(result));
+
+        expect(result['isSuccess']).assertTrue();
+        expect(result['status']).assertEqual(0); // napi_ok
+        expect(result['paramCount']).assertEqual(2);
+        console.info('napiFunctioncallTest002 PASS');
+      } catch (err) {
+        console.error('napiFunctioncallTest002 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0003
+     * @tc.name      napiFunctioncallTest003
+     * @tc.desc      Test napi_get_cb_info basic callback info
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('napiFunctioncallTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('napiFunctioncallTest003 START');
+      try {
+        // Test basic callback info retrieval
+        let result: object = napitestex.getCbInfoBasicTest();
+        hilog.info(0x0000, 'testTag', 'getCbInfoBasicTest result: %{public}s', JSON.stringify(result));
+
+        expect(result['hasThisArg']).assertTrue();
+        expect(result['argCount']).assertDeepEquals(0);
+        console.info('napiFunctioncallTest003 PASS');
+      } catch (err) {
+        console.error('napiFunctioncallTest003 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0004
+     * @tc.name      napiFunctioncallTest004
+     * @tc.desc      Test napi_get_cb_info dynamic argument count
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('napiFunctioncallTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('napiFunctioncallTest004 START');
+      try {
+        // Test dynamic argument count handling
+        let result: object = napitestex.getCbInfoDynamicTest();
+        hilog.info(0x0000, 'testTag', 'getCbInfoDynamicTest result: %{public}s', JSON.stringify(result));
+
+        expect(result['argCount']).assertDeepEquals(0);
+        expect(result['hasZeroArgs']).assertTrue();
+        console.info('napiFunctioncallTest004 PASS');
+      } catch (err) {
+        console.error('napiFunctioncallTest004 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0005
+     * @tc.name      napiFunctioncallTest005
+     * @tc.desc      Test napi_get_cb_info data pointer acquisition
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('napiFunctioncallTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('napiFunctioncallTest005 START');
+      try {
+        // Test data pointer acquisition from callback info
+        let result: object = napitestex.getCbInfoDataTest();
+        hilog.info(0x0000, 'testTag', 'getCbInfoDataTest result: %{public}s', JSON.stringify(result));
+
+        expect(result['hasData']).assertTrue();
+        expect(result['dataValue']).assertDeepEquals(42);
+        console.info('napiFunctioncallTest005 PASS');
+      } catch (err) {
+        console.error('napiFunctioncallTest005 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0006
+     * @tc.name      napiFunctioncallTest006
+     * @tc.desc      Test napi_get_cb_info partial information acquisition
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('napiFunctioncallTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('napiFunctioncallTest006 START');
+      try {
+        // Test partial information acquisition without this object or data
+        let result: object = napitestex.getCbInfoPartialTest();
+        hilog.info(0x0000, 'testTag', 'getCbInfoPartialTest result: %{public}s', JSON.stringify(result));
+
+        expect(result['argCount']).assertDeepEquals(0);
+        expect(result['retrievedArgs']).assertDeepEquals(0);
+        console.info('napiFunctioncallTest006 PASS');
+      } catch (err) {
+        console.error('napiFunctioncallTest006 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0007
+     * @tc.name      napiFunctioncallTest007
+     * @tc.desc      Test napi_get_cb_info getting various types from ETS
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('napiFunctioncallTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('napiFunctioncallTest007 START');
+      try {
+        // Test getting various types from ETS side
+        let result: object = napitestex.getCbInfoVariousTypesTest();
+        hilog.info(0x0000, 'testTag', 'getCbInfoVariousTypesTest result: %{public}s', JSON.stringify(result));
+
+        expect(result['argCount']).assertDeepEquals(0);
+        console.info('napiFunctioncallTest007 PASS');
+      } catch (err) {
+        console.error('napiFunctioncallTest007 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0008
+     * @tc.name      napiFunctioncallTest008
+     * @tc.desc      Test napi_create_function basic function creation
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('napiFunctioncallTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('napiFunctioncallTest008 START');
+      try {
+        // Test basic function creation and verification
+        let result: object = napitestex.createFunctionBasicTest();
+        hilog.info(0x0000, 'testTag', 'createFunctionBasicTest result: %{public}s', JSON.stringify(result));
+
+        expect(result['hasFunction']).assertTrue();
+        expect(result['callSuccess']).assertTrue();
+        expect(result['callResult']).assertEqual("basic callback executed");
+        console.info('napiFunctioncallTest008 PASS');
+      } catch (err) {
+        console.error('napiFunctioncallTest008 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0009
+     * @tc.name      napiFunctioncallTest009
+     * @tc.desc      Test napi_create_function named function
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('napiFunctioncallTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('napiFunctioncallTest009 START');
+      try {
+        // Test named function creation with different function names
+        let result: object = napitestex.createFunctionNamedTest();
+        hilog.info(0x0000, 'testTag', 'createFunctionNamedTest result: %{public}s', JSON.stringify(result));
+
+        expect(result['hasRegularName']).assertTrue();
+        expect(result['hasUtf8Name']).assertTrue();
+        console.info('napiFunctioncallTest009 PASS');
+      } catch (err) {
+        console.error('napiFunctioncallTest009 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0010
+     * @tc.name      napiFunctioncallTest010
+     * @tc.desc      Test napi_create_function with data
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('napiFunctioncallTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('napiFunctioncallTest010 START');
+      try {
+        // Test function creation with data pointer
+        let result: object = napitestex.createFunctionWithDataTest();
+        hilog.info(0x0000, 'testTag', 'createFunctionWithDataTest result: %{public}s', JSON.stringify(result));
+
+        expect(result['callSuccess']).assertTrue();
+        expect(result['dataValue']).assertDeepEquals(42);
+        console.info('napiFunctioncallTest010 PASS');
+      } catch (err) {
+        console.error('napiFunctioncallTest010 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0011
+     * @tc.name      napiFunctioncallTest011
+     * @tc.desc      Test napi_create_function different length names
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('napiFunctioncallTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('napiFunctioncallTest011 START');
+      try {
+        // Test function creation with different length names
+        let result: object = napitestex.createFunctionLengthTest();
+        hilog.info(0x0000, 'testTag', 'createFunctionLengthTest result: %{public}s', JSON.stringify(result));
+
+        expect(result['hasEmptyName']).assertTrue();
+        expect(result['hasNullName']).assertTrue();
+        expect(result['hasLongName']).assertTrue();
+        console.info('napiFunctioncallTest011 PASS');
+      } catch (err) {
+        console.error('napiFunctioncallTest011 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0012
+     * @tc.name      napiFunctioncallTest012
+     * @tc.desc      Test complete lifecycle test
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('napiFunctioncallTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('napiFunctioncallTest012 START');
+      try {
+        // Test complete lifecycle of function creation, calling, and callback info
+        let result: object = napitestex.completeLifecycleTest();
+        hilog.info(0x0000, 'testTag', 'completeLifecycleTest result: %{public}s', JSON.stringify(result));
+
+        expect(result['createSuccess']).assertTrue();
+        expect(result['callSuccess']).assertTrue();
+        expect(result['callbackResult']['receivedArgs']).assertDeepEquals(2);
+        expect(result['callbackResult']['message']).assertEqual("lifecycle test complete");
+        console.info('napiFunctioncallTest012 PASS');
+      } catch (err) {
+        console.error('napiFunctioncallTest012 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0013
+     * @tc.name      napiFunctioncallTest013
+     * @tc.desc      Test multi-thread napi_create_function
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('napiFunctioncallTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('napiFunctioncallTest013 START');
+      try {
+        // Test multi-thread function creation safety
+        let result: object = napitestex.multiThreadCreateFunctionTest();
+        hilog.info(0x0000, 'testTag', 'multiThreadCreateFunctionTest result: %{public}s', JSON.stringify(result));
+
+        expect(result['allCreated']).assertTrue();
+        expect(result['noConflicts']).assertTrue();
+        // Check status codes array - all should be napi_ok (0)
+        let statusCodes: number[] = result['statusCodes'] as number[];
+        statusCodes.forEach((status, index) => {
+          expect(status).assertEqual(0); // napi_ok
+        });
+        console.info('napiFunctioncallTest013 PASS');
+      } catch (err) {
+        console.error('napiFunctioncallTest013 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0014
+     * @tc.name      napiFunctioncallTest014
+     * @tc.desc      Test multi-thread napi_call_function
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('napiFunctioncallTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('napiFunctioncallTest014 START');
+      try {
+        // Test multi-thread function calling safety
+        let result: object = napitestex.multiThreadCallFunctionTest();
+        hilog.info(0x0000, 'testTag', 'multiThreadCallFunctionTest result: %{public}s', JSON.stringify(result));
+
+        expect(result['allSucceeded']).assertTrue();
+        expect(result['parameterIsolated']).assertTrue();
+        console.info('napiFunctioncallTest014 PASS');
+      } catch (err) {
+        console.error('napiFunctioncallTest014 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0015
+     * @tc.name      napiFunctioncallTest015
+     * @tc.desc      Test multi-thread napi_get_cb_info
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('napiFunctioncallTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('napiFunctioncallTest015 START');
+      try {
+        // Test multi-thread callback info retrieval safety
+        let result: object = napitestex.multiThreadGetCbInfoTest();
+        hilog.info(0x0000, 'testTag', 'multiThreadGetCbInfoTest result: %{public}s', JSON.stringify(result));
+
+        expect(result['infoCorrect']).assertTrue();
+        expect(result['argumentIsolated']).assertTrue();
+        console.info('napiFunctioncallTest015 PASS');
+      } catch (err) {
+        console.error('napiFunctioncallTest015 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_FUNCTION_0016
+     * @tc.name      napiFunctioncallTest016
+     * @tc.desc      Test multi-thread comprehensive test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('napiFunctioncallTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('napiFunctioncallTest016 START');
+      try {
+        // Test comprehensive multi-thread function creation and calling
+        let result: object = napitestex.multiThreadComprehensiveTest();
+        hilog.info(0x0000, 'testTag', 'multiThreadComprehensiveTest result: %{public}s', JSON.stringify(result));
+
+        expect(result['threadSafe']).assertTrue();
+        expect(result['functionIsolated']).assertTrue();
+        console.info('napiFunctioncallTest016 PASS');
+      } catch (err) {
+        console.error('napiFunctioncallTest016 err msg: ' + err.message);
+        expect().assertFail();
+      }
+    });
   })
 }

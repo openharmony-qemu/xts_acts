@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2022 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,18 +19,21 @@ import {BusinessError} from '@ohos.base';
 import hilog from '@ohos.hilog';
 import WantAgent from '@ohos.app.ability.wantAgent';
 import Want from '@ohos.app.ability.Want';
+import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let bundleName: string = 'com.example.systemliveView.static'
+let count: int = 0;
+
 const TAG = 'NotificationActs'
 const TEST_SUITE_NAME = 'testNotificationLiveNotification'
 export default function ActsNotificationSystemLiveViewTest() {
   describe('ActsNotificationSystemLiveViewTest', () => {
-    ///*
-    // * @tc.number: Sub_Notification_Ans_Live_Publish_Static_2200
-    // * @tc.name: Sub_Notification_Ans_Live_Publish_Static_2200
-    // * @tc.desc: test publish interface fail
-    // * @tc.size: LargeTest
-    // * @tc.type: Function
+    ///**
+    // * @tc.number  Sub_Notification_Ans_Live_Publish_Static_2200
+    // * @tc.name   Sub_Notification_Ans_Live_Publish_Static_2200
+    // * @tc.desc  test publish interface fail
+    // * @tc.size  LargeTest
+    // * @tc.type  Function
     // * @tc.level Level 3
     // */
     
@@ -38,7 +41,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     //   const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForNull'
     //   const color : ArrayBuffer = new ArrayBuffer(96);  //96为需要创建的像素buffer大小，取值为：height * width *4
     //   let opts : image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
-    //
+    //   count = 0;
     //   let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
     //
     //   await pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
@@ -94,7 +97,8 @@ export default function ActsNotificationSystemLiveViewTest() {
     //       notificationManager.publish(notificationRequest,(err: BusinessError | null) => {
     //         if (err) {
     //           hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,JSON.stringify(err));
-    //           expect(true).assertTrue();
+    //           count++;
+    //          expect(count).assertEqual(1);
     //           hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
     //           done();
     //         }else{
@@ -113,12 +117,12 @@ export default function ActsNotificationSystemLiveViewTest() {
     //
     // })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Live_Publish_Static_2300
-     * @tc.name: Sub_Notification_Ans_Live_Publish_Static_2300
-     * @tc.desc: test publish interface fail
-     * @tc.size: LargeTest
-     * @tc.type: Function
+    /**
+     * @tc.number  Sub_Notification_Ans_Live_Publish_Static_2300
+     * @tc.name   Sub_Notification_Ans_Live_Publish_Static_2300
+     * @tc.desc  test publish interface fail
+     * @tc.size  LargeTest
+     * @tc.type  Function
      * @tc.level Level 2
      */
     
@@ -127,6 +131,7 @@ export default function ActsNotificationSystemLiveViewTest() {
       const color : ArrayBuffer = new ArrayBuffer(96);  //96为需要创建的像素buffer大小，取值为：height * width *4
       let opts : image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
       let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+      count = 0;
 
       await pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) =>{
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4550 pixelMap: ${pixelMap}`);
@@ -180,7 +185,8 @@ export default function ActsNotificationSystemLiveViewTest() {
         notificationManager.publish(notificationRequest,(err: BusinessError | null) => {
           if (err) {
             hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`+JSON.stringify(err));
-            expect(true).assertTrue();
+            count++;
+            expect(count).assertEqual(1);
             hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
             done();
           }else{
@@ -198,17 +204,18 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    ///*
-    // * @tc.number: Sub_Notification_Ans_Live_Publish_Static_2600
-    // * @tc.name: Sub_Notification_Ans_Live_Publish_Static_2600
-    // * @tc.desc: test publish interface fail
-    // * @tc.size: LargeTest
-    // * @tc.type: Function
+    ///**
+    // * @tc.number  Sub_Notification_Ans_Live_Publish_Static_2600
+    // * @tc.name   Sub_Notification_Ans_Live_Publish_Static_2600
+    // * @tc.desc  test publish interface fail
+    // * @tc.size  LargeTest
+    // * @tc.type  Function
     // * @tc.level Level 2
     // */
     
     // it('Sub_Notification_Ans_Live_Publish_Static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
     //   const TEST_CASE_NAME = 'testLiveNotificationCapsuleIconForNull'
+    //   count = 0;
     //   let notificationRequest : notificationManager.NotificationRequest = {
     //     id : 1,
     //     content : {
@@ -251,23 +258,25 @@ export default function ActsNotificationSystemLiveViewTest() {
     //     })
     //   } catch (error) {
     //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     expect(true).assertTrue();
+    //     count++;
+    //     expect(count).assertEqual(1);
     //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
     //     done();
     //   }
     // })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Live_Publish_Static_2700
-     * @tc.name: Sub_Notification_Ans_Live_Publish_Static_2700
-     * @tc.desc: test publish interface fail
-     * @tc.size: LargeTest
-     * @tc.type: Function
+    /**
+     * @tc.number  Sub_Notification_Ans_Live_Publish_Static_2700
+     * @tc.name   Sub_Notification_Ans_Live_Publish_Static_2700
+     * @tc.desc  test publish interface fail
+     * @tc.size  LargeTest
+     * @tc.type  Function
      * @tc.level Level 3
      */
     
     it('Sub_Notification_Ans_Live_Publish_Static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleIconForUndefined'
+      count = 0;
       let notificationRequest : notificationManager.NotificationRequest = {
         id : 1,
         content : {
@@ -310,24 +319,26 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error:BusinessError) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(true).assertTrue();
+        count++;
+        expect(count).assertEqual(1);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
 
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Live_Publish_Static_3100
-     * @tc.name: Sub_Notification_Ans_Live_Publish_Static_3100
-     * @tc.desc: test publish interface fail
-     * @tc.size: LargeTest
-     * @tc.type: Function
+    /**
+     * @tc.number  Sub_Notification_Ans_Live_Publish_Static_3100
+     * @tc.name   Sub_Notification_Ans_Live_Publish_Static_3100
+     * @tc.desc  test publish interface fail
+     * @tc.size  LargeTest
+     * @tc.type  Function
      * @tc.level Level 3
      */
     
     // it('Sub_Notification_Ans_Live_Publish_Static_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   const TEST_CASE_NAME = 'testLiveNotificationCapsuleBackgroundColorForNull'
+    //   count = 0;
     //   let notificationRequest : notificationManager.NotificationRequest = {
     //     id : 1,
     //     content : {
@@ -370,24 +381,26 @@ export default function ActsNotificationSystemLiveViewTest() {
     //     })
     //   } catch (error) {
     //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     expect(true).assertTrue();
+    //     count++;
+    //     expect(count).assertEqual(1);
     //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
     //     done();
     //   }
     //
     // })
 
-    /*
-      * @tc.number: Sub_Notification_Ans_Live_Publish_Static_3200
-      * @tc.name: Sub_Notification_Ans_Live_Publish_Static_3200
-      * @tc.desc: test publish interface fail
-      * @tc.size: LargeTest
-      * @tc.type: Function
+    /**
+      * @tc.number  Sub_Notification_Ans_Live_Publish_Static_3200
+      * @tc.name   Sub_Notification_Ans_Live_Publish_Static_3200
+      * @tc.desc  test publish interface fail
+      * @tc.size  LargeTest
+      * @tc.type  Function
       * @tc.level Level 3
       */
     
     it('Sub_Notification_Ans_Live_Publish_Static_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleBackgroundColorForUndefined'
+      count = 0;
       let notificationRequest : notificationManager.NotificationRequest = {
         id : 1,
         content : {
@@ -430,24 +443,26 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(true).assertTrue();
+        count++;
+        expect(count).assertEqual(1);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
 
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_3900
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_3900
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_3900
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_3900
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
     // it('Sub_Notification_Ans_Live_Publish_Static_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   const TEST_CASE_NAME = 'testLiveNotificationButtonNamesForNull'
+    //   count = 0;
     //   let notificationRequest : notificationManager.NotificationRequest = {
     //     id : 1,
     //     content : {
@@ -492,23 +507,25 @@ export default function ActsNotificationSystemLiveViewTest() {
     //     })
     //   } catch (error) {
     //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,JSON.stringify(error));
-    //     expect(true).assertTrue();
+    //     count++;
+    //      expect(count).assertEqual(1);
     //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
     //     done();
     //   }
     // })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_4000
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_4000
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_4000
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_4000
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
     it('Sub_Notification_Ans_Live_Publish_Static_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleIconForUndefined'
+      count = 0;
       let notificationRequest : notificationManager.NotificationRequest = {
         id : 1,
         content : {
@@ -553,24 +570,26 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`+JSON.stringify(error));
-        expect(true).assertTrue();
+        count++;
+        expect(count).assertEqual(1);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
 
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_4300
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_4300
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_4300
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_4300
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
     // it('Sub_Notification_Ans_Live_Publish_Static_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   const TEST_CASE_NAME = 'testLiveNotificationButtonIconsForNull'
+    //   count = 0;
     //   let notificationRequest : notificationManager.NotificationRequest = {
     //     id : 1,
     //     content : {
@@ -615,23 +634,25 @@ export default function ActsNotificationSystemLiveViewTest() {
     //     })
     //   } catch (error) {
     //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     expect(true).assertTrue();
+    //     count++;
+    //      expect(count).assertEqual(1);
     //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
     //     done();
     //   }
     // })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_4400
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_4400
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_4400
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_4400
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
     it('Sub_Notification_Ans_Live_Publish_Static_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationButtonIconsForUndefined'
+      count = 0;
       let notificationRequest : notificationManager.NotificationRequest = {
         id : 1,
         content : {
@@ -676,23 +697,25 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(true).assertTrue();
+        count++;
+        expect(count).assertEqual(1);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
     })
 
-    // /*
-    // * @tc.number: Sub_Notification_Ans_Live_Publish_Static_5000
-    // * @tc.name: Sub_Notification_Ans_Live_Publish_Static_5000
-    // * @tc.desc: test publish interface fail
-    // * @tc.size: LargeTest
-    // * @tc.type: Function
+    // /**
+    // * @tc.number  Sub_Notification_Ans_Live_Publish_Static_5000
+    // * @tc.name   Sub_Notification_Ans_Live_Publish_Static_5000
+    // * @tc.desc  test publish interface fail
+    // * @tc.size  LargeTest
+    // * @tc.type  Function
     // * @tc.level Level 3
     // */
     
     // it('Sub_Notification_Ans_Live_Publish_Static_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   const TEST_CASE_NAME = 'testLiveNotificationTimeinitialTimeForNull'
+    //   count = 0;
     //   let notificationRequest : notificationManager.NotificationRequest = {
     //     id : 1,
     //     content : {
@@ -740,23 +763,25 @@ export default function ActsNotificationSystemLiveViewTest() {
     //     })
     //   } catch (error) {
     //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     expect(true).assertTrue();
+    //     count++;
+    //     expect(count).assertEqual(1);
     //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
     //     done();
     //   }
     // })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_5100
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_5100
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_5100
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_5100
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
     it('Sub_Notification_Ans_Live_Publish_Static_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
       const TEST_CASE_NAME = 'testLiveNotificationTimeinitialTimeForUndefined'
+      count = 0;
       let notificationRequest : notificationManager.NotificationRequest = {
         id : 1,
         content : {
@@ -804,23 +829,25 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(true).assertTrue();
+        count++;
+        expect(count).assertEqual(1);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_5300
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_5300
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_5300
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_5300
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
     // it('Sub_Notification_Ans_Live_Publish_Static_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   const TEST_CASE_NAME = 'testLiveNotificationTimeisCountdownForNull'
+    //   count = 0;
     //   let notificationRequest : notificationManager.NotificationRequest = {
     //     id : 1,
     //     content : {
@@ -868,23 +895,25 @@ export default function ActsNotificationSystemLiveViewTest() {
     //     })
     //   } catch (error) {
     //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     expect(true).assertTrue();
+    //     count++;
+    //     expect(count).assertEqual(1);
     //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
     //     done();
     //   }
     // })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_5400
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_5400
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_5400
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_5400
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
     it('Sub_Notification_Ans_Live_Publish_Static_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationTimeisCountdownForUndefined'
+      count = 0;
       let notificationRequest : notificationManager.NotificationRequest = {
         id : 1,
         content : {
@@ -932,23 +961,25 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(true).assertTrue();
+        count++;
+        expect(count).assertEqual(1);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_5600
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_5600
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_5600
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_5600
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
     // it('Sub_Notification_Ans_Live_Publish_Static_5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   const TEST_CASE_NAME = 'testLiveNotificationTimeisPausedForNull'
+    //   count = 0;
     //   let notificationRequest : notificationManager.NotificationRequest = {
     //     id : 1,
     //     content : {
@@ -997,23 +1028,25 @@ export default function ActsNotificationSystemLiveViewTest() {
     //     })
     //   } catch (error) {
     //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     expect(true).assertTrue();
+    //     count++;
+    //     expect(count).assertEqual(1);
     //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
     //     done();
     //   }
     // })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_5700
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_5700
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_5700
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_5700
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
     it('Sub_Notification_Ans_Live_Publish_Static_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationTimeisPausedForUndefined'
+      count = 0;
       let notificationRequest : notificationManager.NotificationRequest = {
         id : 1,
         content : {
@@ -1062,23 +1095,25 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(true).assertTrue();
+        count++;
+        expect(count).assertEqual(1);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_5900
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_5900
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_5900
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_5900
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
     // it('Sub_Notification_Ans_Live_Publish_Static_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>  {
     //   const TEST_CASE_NAME = 'testLiveNotificationTimeisInTitleForNull'
+    //   count = 0;
     //   let notificationRequest : notificationManager.NotificationRequest = {
     //     id : 1,
     //     content : {
@@ -1127,23 +1162,25 @@ export default function ActsNotificationSystemLiveViewTest() {
     //     })
     //   } catch (error) {
     //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     expect(true).assertTrue();
+    //     count++;
+    //     expect(count).assertEqual(1);
     //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
     //     done();
     //   }
     // })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_6000
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_6000
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_6000
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_6000
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
     it('Sub_Notification_Ans_Live_Publish_Static_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationTimeisInTitleForUndefined'
+      count = 0;
       let notificationRequest : notificationManager.NotificationRequest = {
         id : 1,
         content : {
@@ -1192,23 +1229,25 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(true).assertTrue();
+        count++;
+        expect(count).assertEqual(1);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_6500
-    * @tc.name: Sub_Notification_Ans_Live_Publish_6500
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_6500
+    * @tc.name   Sub_Notification_Ans_Live_Publish_6500
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
     // it('testLiveNotificationProgressMaxvalueForNull', Level.LEVEL2, async (done : Function) => {
     //   const TEST_CASE_NAME = 'testLiveNotificationProgressMaxvalueForNull'
+    //   count = 0;
     //   let notificationRequest : notificationManager.NotificationRequest = {
     //     id : 1,
     //     content : {
@@ -1251,23 +1290,25 @@ export default function ActsNotificationSystemLiveViewTest() {
     //     })
     //   } catch (error) {
     //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //     expect(true).assertTrue();
+    //     count++;
+    //     expect(count).assertEqual(1);
     //     hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
     //     done();
     //   }
     // })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_6600
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_6600
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_6600
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_6600
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
     it('Sub_Notification_Ans_Live_Publish_Static_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
       const TEST_CASE_NAME = 'testLiveNotificationProgressMaxvalueForUndefined'
+      count = 0;
       let notificationRequest : notificationManager.NotificationRequest = {
         id : 1,
         content : {
@@ -1320,23 +1361,25 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(true).assertTrue();
+        count++;
+        expect(count).assertEqual(1);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
     })
 
-    ///*
-    //* @tc.number: Sub_Notification_Ans_Live_Publish_Static_6900
-    //* @tc.name: Sub_Notification_Ans_Live_Publish_Static_6900
-    //* @tc.desc: test publish interface fail
-    //* @tc.size: LargeTest
-    //* @tc.type: Function
-    //* @tc.level Level 3
-    //*/
+    ///**
+    //** @tc.number  Sub_Notification_Ans_Live_Publish_Static_6900
+    //** @tc.name   Sub_Notification_Ans_Live_Publish_Static_6900
+    //** @tc.desc  test publish interface fail
+    //** @tc.size  LargeTest
+    //** @tc.type  Function
+    //** @tc.level Level 3
+    //**/
     
     //  it('Sub_Notification_Ans_Live_Publish_Static_6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
     //    const TEST_CASE_NAME = 'testLiveNotificationProgressCurrentValueForNull'
+    //    count = 0;
     //    let notificationRequest : notificationManager.NotificationRequest = {
     //      id : 1,
     //      content : {
@@ -1380,23 +1423,25 @@ export default function ActsNotificationSystemLiveViewTest() {
     //      })
     //    } catch (error) {
     //      hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-    //      expect(true).assertTrue();
+    //      count++;
+    //      expect(count).assertEqual(1);
     //      hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
     //      done();
     //    }
     //  })
 
-    /*
-   * @tc.number: Sub_Notification_Ans_Live_Publish_Static_7000
-   * @tc.name: Sub_Notification_Ans_Live_Publish_Static_7000
-   * @tc.desc: test publish interface fail
-   * @tc.size: LargeTest
-   * @tc.type: Function
+    /**
+   * @tc.number  Sub_Notification_Ans_Live_Publish_Static_7000
+   * @tc.name   Sub_Notification_Ans_Live_Publish_Static_7000
+   * @tc.desc  test publish interface fail
+   * @tc.size  LargeTest
+   * @tc.type  Function
    * @tc.level Level 3
    */
     
     it('Sub_Notification_Ans_Live_Publish_Static_7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
       const TEST_CASE_NAME = 'testLiveNotificationProgressCurrentValueForUndefined'
+      count = 0;
       let notificationRequest : notificationManager.NotificationRequest = {
         id : 1,
         content : {
@@ -1450,23 +1495,25 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(true).assertTrue();
+        count++;
+        expect(count).assertEqual(1);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
     })
 
-    /*
-  * @tc.number: Sub_Notification_Ans_Live_Publish_Static_7300
-  * @tc.name: Sub_Notification_Ans_Live_Publish_Static_7300
-  * @tc.desc: test publish interface fail
-  * @tc.size: LargeTest
-  * @tc.type: Function
+    /**
+  * @tc.number  Sub_Notification_Ans_Live_Publish_Static_7300
+  * @tc.name   Sub_Notification_Ans_Live_Publish_Static_7300
+  * @tc.desc  test publish interface fail
+  * @tc.size  LargeTest
+  * @tc.type  Function
   * @tc.level Level 3
   */
     
     //   it('testLiveNotificationProgressisPercentageForNull', Level.LEVEL2, async (done : Function) => {
     //     const TEST_CASE_NAME = 'testLiveNotificationProgressisPercentageForNull'
+    //     count = 0;
     //     let notificationRequest : notificationManager.NotificationRequest = {
     //       id : 1,
     //       content : {
@@ -1510,24 +1557,26 @@ export default function ActsNotificationSystemLiveViewTest() {
     //       })
     //     } catch (error) {
     //       hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
-    //       expect(true).assertTrue();
+    //       count++;
+    //       expect(count).assertEqual(1);
     //       hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
     //       done();
     //     }
     //   })
 
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_Static_7400
-    * @tc.name: Sub_Notification_Ans_Live_Publish_Static_7400
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number  Sub_Notification_Ans_Live_Publish_Static_7400
+    * @tc.name   Sub_Notification_Ans_Live_Publish_Static_7400
+    * @tc.desc  test publish interface fail
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level Level 3
     */
     
     it('Sub_Notification_Ans_Live_Publish_Static_7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationProgressisPercentageForUndefined'
+      count = 0;
       let notificationRequest : notificationManager.NotificationRequest = {
         id : 1,
         content : {
@@ -1581,23 +1630,24 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
       } catch (error) {
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
-        expect(true).assertTrue();
+        count++;
+        expect(count).assertEqual(1);
         hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `test case end`);
         done();
       }
     })
 
-    /*
-  * @tc.number: Sub_Notification_Ans_Live_Publish_Static_7500
-  * @tc.name: Sub_Notification_Ans_Live_Publish_Static_7500
-  * @tc.desc: test publish interface fail
-  * @tc.size: LargeTest
-  * @tc.type: Function
+    /**
+  * @tc.number  Sub_Notification_Ans_Live_Publish_Static_7500
+  * @tc.name   Sub_Notification_Ans_Live_Publish_Static_7500
+  * @tc.desc  test publish interface fail
+  * @tc.size  LargeTest
+  * @tc.type  Function
   * @tc.level Level 3
   */
-    
     it('Sub_Notification_Ans_Live_Publish_Static_7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'Sub_Notification_Ans_Live_Publish_Static_7500'
+      count = 0;
       const color : ArrayBuffer = new ArrayBuffer(96);  //96为需要创建的像素buffer大小，取值为：height * width *4
       let opts : image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
 
@@ -1696,7 +1746,8 @@ export default function ActsNotificationSystemLiveViewTest() {
         notificationManager.publish(notificationRequest,(err: BusinessError | null) => {
           if (err) {
             hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`+JSON.stringify(err));
-            expect(true).assertTrue();
+            count++;
+            expect(count).assertEqual(1);
             hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
             done();
           }else{
@@ -1714,17 +1765,18 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
 
     })
-    /*
-      * @tc.number: Sub_Notification_Ans_Live_Publish_Static_7600
-      * @tc.name: Sub_Notification_Ans_Live_Publish_Static_7600
-      * @tc.desc: test publish interface fail
-      * @tc.size: LargeTest
-      * @tc.type: Function
+    /**
+      * @tc.number  Sub_Notification_Ans_Live_Publish_Static_7600
+      * @tc.name   Sub_Notification_Ans_Live_Publish_Static_7600
+      * @tc.desc  test publish interface fail
+      * @tc.size  LargeTest
+      * @tc.type  Function
       * @tc.level Level 3
       */
     
     it('Sub_Notification_Ans_Live_Publish_Static_7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForUndefined'
+      count = 0;
       const color : ArrayBuffer = new ArrayBuffer(96);  //96为需要创建的像素buffer大小，取值为：height * width *4
       let opts : image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
 
@@ -1834,7 +1886,8 @@ export default function ActsNotificationSystemLiveViewTest() {
         notificationManager.publish(notificationRequest,(err: BusinessError | null) => {
           if (err) {
             hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`+`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`+JSON.stringify(err));
-            expect(true).assertTrue();
+            count++;
+            expect(count).assertEqual(1);
             hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
             done();
           }else{
@@ -1853,17 +1906,18 @@ export default function ActsNotificationSystemLiveViewTest() {
     })
 
 
-    /*
- * @tc.number: Sub_Notification_Ans_Live_Publish_Static_7700
- * @tc.name: Sub_Notification_Ans_Live_Publish_Static_7700
- * @tc.desc: test publish interface success
- * @tc.size: LargeTest
- * @tc.type: Function
+    /**
+ * @tc.number  Sub_Notification_Ans_Live_Publish_Static_7700
+ * @tc.name   Sub_Notification_Ans_Live_Publish_Static_7700
+ * @tc.desc  test publish interface success
+ * @tc.size  LargeTest
+ * @tc.type  Function
  * @tc.level Level 3
  */
     
     it('Sub_Notification_Ans_Live_Publish_Static_7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForUndefined'
+      count = 0;
       const color : ArrayBuffer = new ArrayBuffer(96);  //96为需要创建的像素buffer大小，取值为：height * width *4
       let opts : image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
 
@@ -1975,7 +2029,8 @@ export default function ActsNotificationSystemLiveViewTest() {
         notificationManager.publish(notificationRequest,(err: BusinessError | null) => {
           if (err) {
             hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,JSON.stringify(err));
-            expect(true).assertTrue();
+            count++;
+            expect(count).assertEqual(1);
             hilog.info(0x000,`${TAG}`,`${TEST_SUITE_NAME}`,`${TEST_CASE_NAME}` + `test case end`);
             done();
           }else{
@@ -1993,31 +2048,6 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
 
     })
-
-    /*
-     * @tc.number: Sub_Notification_Ans_Enable_Query_Static_0200
-     * @tc.name: Sub_Notification_Ans_Enable_Query_Static_0200
-     * @tc.desc: test function isNotificationEnabled no parameter
-     */
-    it('Sub_Notification_Ans_Enable_Query_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        let TAG = 'Sub_Notification_Ans_Enable_Query_Static_0200'
-        console.info(`${TAG} Sub_Notification_Ans_Enable_Query_Static_0200 START`);
-
-        notificationManager.isNotificationEnabled((err: BusinessError | null, data: boolean|undefined): void => {
-          if (err) {
-            console.info(`${TAG} isNotificationEnabled AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-            expect(false).assertTrue()
-            done()
-          } else {
-            console.info(`${TAG} isNotificationEnabled AsyncCallback success ${data}`)
-            expect(true).assertTrue()
-            done()
-          }
-        });
-
-        console.info(`${TAG} Sub_Notification_Ans_Enable_Query_Static_0200 END`);
-      })
 
   })
 }

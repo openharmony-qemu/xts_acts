@@ -18,6 +18,7 @@ import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview'
 import image from "@ohos.multimedia.image";
 import { BusinessError } from '@ohos.base';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -27,24 +28,27 @@ struct getSurfaceId {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
   controllerOne: web_webview.WebviewController = new web_webview.WebviewController();
   @State imagePixelMap: image.PixelMap | undefined = undefined;
-
-  
+  @State isReceive: number = -1;
+  @State isComplete: number = -1;
 
 
   onPageShow(){
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 150000,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-
+  onPageHide() {
+    events_emitter.off(150000)
+  }
   private valueChangeCallBack = (eventData: ESObject) => {
     console.info("webOnSslError page valueChangeCallBack");
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -54,19 +58,22 @@ struct getSurfaceId {
       Row() {
         Button("getSurfaceId").key('getSurfaceIdButton').onClick(async () => {
           console.info("key==>" + this.str)
+          await waitForExist(() => this.isComplete, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitGetSurfaceId0100": {
               try {
                 let surfaceId = this.controller.getSurfaceId();
                 console.log("surfaceId: " + surfaceId);
                 if(surfaceId.length != 0) {
-                  Utils.emitEvent(true, 28930)
+                  Utils.emitEvent(true, 150010)
                 } else{
-                  Utils.emitEvent(false, 28930)
+                  Utils.emitEvent(false, 150010)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(false, 28930)
+                Utils.emitEvent(false, 150010)
               }
               break;
             }
@@ -76,7 +83,7 @@ struct getSurfaceId {
                 console.log("surfaceId: " + surfaceId);
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code, 28938)
+                Utils.emitEvent(error.code, 150020)
               }
               break;
             }
@@ -86,7 +93,7 @@ struct getSurfaceId {
                 console.log("surfaceId: " + surfaceId);
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.message, 28939)
+                Utils.emitEvent(error.message, 150030)
               }
               break;
             }
@@ -97,6 +104,10 @@ struct getSurfaceId {
       }
 
       Web({src: 'www.example.com', controller: this.controller, renderMode: RenderMode.ASYNC_RENDER})
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isComplete = 0;
+        })
     }
   }
 }

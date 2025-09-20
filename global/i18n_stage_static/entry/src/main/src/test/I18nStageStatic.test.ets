@@ -32,7 +32,7 @@ import i18n from '@ohos.i18n'
 import deviceInfo from '@ohos.deviceInfo'
 import intl from '@ohos.intl'
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function i18nStageTest() {
@@ -53,12 +53,12 @@ export default function i18nStageTest() {
       console.info("afterAll case");
     });
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getTimeInMillis_static_0100
-     * @tc.name     : SUB_GLOBAL_I18N_SR000IFGMS_static_0100
-     * @tc.desc     : hour=[21,5],local="en-US",at night
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @tc.number  SUB_GLOBAL_I18N_getTimeInMillis_static_0100
+     * @tc.name    SUB_GLOBAL_I18N_SR000IFGMS_static_0100
+     * @tc.desc    hour=[21,5],local="en-US",at night
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('SUB_GLOBAL_I18N_SR000IFGMS_static_0100', Level.LEVEL0, async (): Promise<void> => {
       let value = i18n.I18NUtil.getTimePeriodName(5, "en-US");
@@ -67,12 +67,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getTimeInMillis_static_0200
-     * @tc.name     : SUB_GLOBAL_I18N_SR000IFGMS_static_0200
-     * @tc.desc     : hour=[6,11],local="en-US",in the morning
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_getTimeInMillis_static_0200
+     * @tc.name    SUB_GLOBAL_I18N_SR000IFGMS_static_0200
+     * @tc.desc    hour=[6,11],local="en-US",in the morning
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_SR000IFGMS_static_0200', Level.LEVEL2, async (): Promise<void> => {
       let value = i18n.I18NUtil.getTimePeriodName(11, "en-US");
@@ -81,12 +81,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getTimeInMillis_static_0300
-     * @tc.name     : SUB_GLOBAL_I18N_SR000IFGMS_static_0300
-     * @tc.desc     : hour=12,local="en-US",noon
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_getTimeInMillis_static_0300
+     * @tc.name    SUB_GLOBAL_I18N_SR000IFGMS_static_0300
+     * @tc.desc    hour=12,local="en-US",noon
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_SR000IFGMS_static_0300', Level.LEVEL2, async (): Promise<void> => {
       let value = i18n.I18NUtil.getTimePeriodName(12, "en-US");
@@ -95,12 +95,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getTimeInMillis_static_0400
-     * @tc.name     : SUB_GLOBAL_I18N_SR000IFGMS_static_0400
-     * @tc.desc     : hour=[13,17],local="en-US",in the afternoon
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_getTimeInMillis_static_0400
+     * @tc.name    SUB_GLOBAL_I18N_SR000IFGMS_static_0400
+     * @tc.desc    hour=[13,17],local="en-US",in the afternoon
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_SR000IFGMS_static_0400', Level.LEVEL2, async (): Promise<void> => {
       let value = i18n.I18NUtil.getTimePeriodName(41, "en-US"); //41%24=17
@@ -109,12 +109,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getTimeInMillis_static_0500
-     * @tc.name     : SUB_GLOBAL_I18N_SR000IFGMS_static_0500
-     * @tc.desc     : hour=[18,20],local="en-US",in the evening
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_getTimeInMillis_static_0500
+     * @tc.name    SUB_GLOBAL_I18N_SR000IFGMS_static_0500
+     * @tc.desc    hour=[18,20],local="en-US",in the evening
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_SR000IFGMS_static_0500', Level.LEVEL2, async (): Promise<void> => {
       let value = i18n.I18NUtil.getTimePeriodName(-4, "en-US"); //24+(-4)=20
@@ -123,12 +123,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getTimeInMillis_static_0600
-     * @tc.name     : SUB_GLOBAL_I18N_SR000IFGMS_static_0600
-     * @tc.desc     : hour=12,local=""
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_getTimeInMillis_static_0600
+     * @tc.name    SUB_GLOBAL_I18N_SR000IFGMS_static_0600
+     * @tc.desc    hour=12,local=""
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_SR000IFGMS_static_0600', Level.LEVEL2, async (): Promise<void> => {
       try {
@@ -141,12 +141,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_SR000IFGMS_static_0700
-     * @tc.name     : SUB_GLOBAL_I18N_SR000IFGMS_static_0700
-     * @tc.desc     : hour=12,local=invalid string
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_SR000IFGMS_static_0700
+     * @tc.name    SUB_GLOBAL_I18N_SR000IFGMS_static_0700
+     * @tc.desc    hour=12,local=invalid string
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_SR000IFGMS_static_0700', Level.LEVEL2, async (): Promise<void> => {
       try {
@@ -159,12 +159,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_i18n_HolidayManager_static_0010
-     * @tc.name     : SUB_GLOBAL_i18n_SR000IFGNH_static_0010
-     * @tc.desc     : HolidayManager-input .ics file
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @tc.number  SUB_GLOBAL_i18n_HolidayManager_static_0010
+     * @tc.name    SUB_GLOBAL_i18n_SR000IFGNH_static_0010
+     * @tc.desc    HolidayManager-input .ics file
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('SUB_GLOBAL_i18n_SR000IFGNH_static_0010', Level.LEVEL0, async (): Promise<void> => {
       try {
@@ -177,12 +177,12 @@ export default function i18nStageTest() {
     })
     
     /**
-     * @tc.number   : SUB_GLOBAL_i18n_HolidayManager_static_0020
-     * @tc.name     : SUB_GLOBAL_i18n_SR000IFGNH_static_0020
-     * @tc.desc     : HolidayManager-input .xml file
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @tc.number  SUB_GLOBAL_i18n_HolidayManager_static_0020
+     * @tc.name    SUB_GLOBAL_i18n_SR000IFGNH_static_0020
+     * @tc.desc    HolidayManager-input .xml file
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('SUB_GLOBAL_i18n_SR000IFGNH_static_0020', Level.LEVEL0, async (): Promise<void> => {
       try {
@@ -195,12 +195,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_isHoliday_static_0030
-     * @tc.name     : SUB_GLOBAL_I18N_SR000IFGNH_static_0030
-     * @tc.desc     : isHoliday-input null(The current date is used by default)
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_isHoliday_static_0030
+     * @tc.name    SUB_GLOBAL_I18N_SR000IFGNH_static_0030
+     * @tc.desc    isHoliday-input null(The current date is used by default)
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_SR000IFGNH_static_0030', Level.LEVEL2, async (): Promise<void> => {
       let holidayManager = new i18n.HolidayManager("/system/lib/TR.ics");
@@ -210,12 +210,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_isHoliday_static_0050
-     * @tc.name     : SUB_GLOBAL_I18N_SR000IFGNH_static_0050
-     * @tc.desc     : isHoliday-input correct date (is not holiday) parameter
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_isHoliday_static_0050
+     * @tc.name    SUB_GLOBAL_I18N_SR000IFGNH_static_0050
+     * @tc.desc    isHoliday-input correct date (is not holiday) parameter
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_SR000IFGNH_static_0050', Level.LEVEL2, async (): Promise<void> => {
       let holidayManager = new i18n.HolidayManager("/system/lib/TR.ics");
@@ -225,12 +225,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getHolidayInfoItemArray_static_0070
-     * @tc.name     : SUB_GLOBAL_I18N_SR000IFGNH_static_0070
-     * @tc.desc     : getHolidayInfoItemArray-input null(The current year is used by default)
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_getHolidayInfoItemArray_static_0070
+     * @tc.name    SUB_GLOBAL_I18N_SR000IFGNH_static_0070
+     * @tc.desc    getHolidayInfoItemArray-input null(The current year is used by default)
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_SR000IFGNH_static_0070', Level.LEVEL2, async (): Promise<void> => {
       let holidayManager = new i18n.HolidayManager("/system/lib/TR.ics");
@@ -240,12 +240,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getHolidayInfoItemArray_static_0080
-     * @tc.name     : SUB_GLOBAL_I18N_SR000IFGNH_static_0080
-     * @tc.desc     : getHolidayInfoItemArray-input correct year parameter (contain holidays)
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_getHolidayInfoItemArray_static_0080
+     * @tc.name    SUB_GLOBAL_I18N_SR000IFGNH_static_0080
+     * @tc.desc    getHolidayInfoItemArray-input correct year parameter (contain holidays)
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_SR000IFGNH_static_0080', Level.LEVEL2, async (): Promise<void> => {
       let holidayManager = new i18n.HolidayManager("/system/lib/TR.ics");
@@ -255,12 +255,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getHolidayInfoItemArray_static_0090
-     * @tc.name     : SUB_GLOBAL_I18N_SR000IFGNH_static_0090
-     * @tc.desc     : getHolidayInfoItemArray-input correct number parameter (don't contain holidays)
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_getHolidayInfoItemArray_static_0090
+     * @tc.name    SUB_GLOBAL_I18N_SR000IFGNH_static_0090
+     * @tc.desc    getHolidayInfoItemArray-input correct number parameter (don't contain holidays)
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_SR000IFGNH_static_0090', Level.LEVEL2, async (): Promise<void> => {
       let holidayManager = new i18n.HolidayManager("/system/lib/TR.ics");
@@ -270,12 +270,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_add_static_0100
-     * @tc.name     : SUB_GLOBAL_I18N_SR000IET4P_static_0100
-     * @tc.desc     : add - amount >= 0
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @tc.number  SUB_GLOBAL_I18N_add_static_0100
+     * @tc.name    SUB_GLOBAL_I18N_SR000IET4P_static_0100
+     * @tc.desc    add - amount >= 0
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('SUB_GLOBAL_I18N_SR000IET4P_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let calendar: i18n.Calendar = i18n.getCalendar("zh-Hans");
@@ -288,12 +288,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_add_static_0200
-     * @tc.name     : SUB_GLOBAL_I18N_SR000IET4P_static_0200
-     * @tc.desc     : add - amount parameter input 'week_of_year'
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_add_static_0200
+     * @tc.name    SUB_GLOBAL_I18N_SR000IET4P_static_0200
+     * @tc.desc    add - amount parameter input 'week_of_year'
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_SR000IET4P_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let calendar: i18n.Calendar = i18n.getCalendar("zh-Hans");
@@ -308,12 +308,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_add_static_0300
-     * @tc.name     : SUB_GLOBAL_I18N_SR000IET4P_static_0300
-     * @tc.desc     : add - amount < 0
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_add_static_0300
+     * @tc.name    SUB_GLOBAL_I18N_SR000IET4P_static_0300
+     * @tc.desc    add - amount < 0
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_SR000IET4P_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let calendar: i18n.Calendar = i18n.getCalendar("zh-Hans");
@@ -326,12 +326,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_add_static_0600
-     * @tc.name     : SUB_GLOBAL_I18N_SR000IET4P_static_0600
-     * @tc.desc     : add - filed parameter input invalid parameter
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_add_static_0600
+     * @tc.name    SUB_GLOBAL_I18N_SR000IET4P_static_0600
+     * @tc.desc    add - filed parameter input invalid parameter
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_SR000IET4P_static_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -349,12 +349,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getTimeInMillis_static_0700
-     * @tc.name     : SUB_GLOBAL_I18N_SR000IET4P_static_0700
-     * @tc.desc     : add - filed parameter input invalid parameter
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_getTimeInMillis_static_0700
+     * @tc.name    SUB_GLOBAL_I18N_SR000IET4P_static_0700
+     * @tc.desc    add - filed parameter input invalid parameter
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_SR000IET4P_static_0700', Level.LEVEL2, async (): Promise<void> => {
       let calendar: i18n.Calendar = i18n.getCalendar("zh-Hans");
@@ -365,12 +365,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_compareDays_static_0100
-     * @tc.name     : SUB_GLOBAL_I18N_CompareDays_static_0100
-     * @tc.desc     : CompareDays - Compare the Date
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @tc.number  SUB_GLOBAL_I18N_compareDays_static_0100
+     * @tc.name    SUB_GLOBAL_I18N_CompareDays_static_0100
+     * @tc.desc    CompareDays - Compare the Date
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('SUB_GLOBAL_I18N_CompareDays_static_0100', Level.LEVEL0, async (): Promise<void> => {
       let calendar: i18n.Calendar = i18n.getCalendar("zh-Hans");
@@ -382,12 +382,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_compareDays_static_0200
-     * @tc.name     : SUB_GLOBAL_I18N_CompareDays_static_0200
-     * @tc.desc     : CompareDays - Compare the Date
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_compareDays_static_0200
+     * @tc.name    SUB_GLOBAL_I18N_CompareDays_static_0200
+     * @tc.desc    CompareDays - Compare the Date
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_CompareDays_static_0200', Level.LEVEL2, async (): Promise<void> => {
       let calendar: i18n.Calendar = i18n.getCalendar("zh-Hans");
@@ -399,12 +399,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_compareDays_static_0300
-     * @tc.name     : SUB_GLOBAL_I18N_CompareDays_static_0300
-     * @tc.desc     : CompareDays - Compare the Date
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @tc.number  SUB_GLOBAL_I18N_compareDays_static_0300
+     * @tc.name    SUB_GLOBAL_I18N_CompareDays_static_0300
+     * @tc.desc    CompareDays - Compare the Date
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('SUB_GLOBAL_I18N_CompareDays_static_0300', Level.LEVEL2, async (): Promise<void> => {
       let calendar: i18n.Calendar = i18n.getCalendar("zh-Hans");
@@ -416,12 +416,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_EntityRecognizer_static_0100
-     * @tc.name     : SUB_GLOBAL_I18N_EntityRecognizer_static_0100
-     * @tc.desc     : findEntityInfo - Identifying Entity Information in Text
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @tc.number  SUB_GLOBAL_I18N_EntityRecognizer_static_0100
+     * @tc.name    SUB_GLOBAL_I18N_EntityRecognizer_static_0100
+     * @tc.desc    findEntityInfo - Identifying Entity Information in Text
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('SUB_GLOBAL_I18N_EntityRecognizer_static_0100', Level.LEVEL0, async (): Promise<void> => {
       let entityRecognizer: i18n.EntityRecognizer = new i18n.EntityRecognizer("zh-CN");
@@ -436,12 +436,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_EntityRecognizer_static_0200
-     * @tc.name     : SUB_GLOBAL_I18N_EntityRecognizer_static_0200
-     * @tc.desc     : findEntityInfo - Identifying Entity Information in Text
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_EntityRecognizer_static_0200
+     * @tc.name    SUB_GLOBAL_I18N_EntityRecognizer_static_0200
+     * @tc.desc    findEntityInfo - Identifying Entity Information in Text
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_EntityRecognizer_static_0200', Level.LEVEL2, async (): Promise<void> => {
       let entityRecognizer: i18n.EntityRecognizer = new i18n.EntityRecognizer("zh-CN");
@@ -456,12 +456,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_EntityRecognizer_static_0400
-     * @tc.name     : SUB_GLOBAL_I18N_EntityRecognizer_static_0400
-     * @tc.desc     : findEntityInfo - no recognizable entity information in Text
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_EntityRecognizer_static_0400
+     * @tc.name    SUB_GLOBAL_I18N_EntityRecognizer_static_0400
+     * @tc.desc    findEntityInfo - no recognizable entity information in Text
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_EntityRecognizer_static_0400', Level.LEVEL2, async (): Promise<void> => {
       let entityRecognizer: i18n.EntityRecognizer = new i18n.EntityRecognizer("zh-CN");
@@ -472,12 +472,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_EntityRecognizer_static_0600
-     * @tc.name     : SUB_GLOBAL_I18N_EntityRecognizer_static_0600
-     * @tc.desc     : findEntityInfo - Identifying Entity Information in Text
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_EntityRecognizer_static_0600
+     * @tc.name    SUB_GLOBAL_I18N_EntityRecognizer_static_0600
+     * @tc.desc    findEntityInfo - Identifying Entity Information in Text
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_EntityRecognizer_static_0600', Level.LEVEL2, async (): Promise<void> => {
       let entityRecognizer: i18n.EntityRecognizer = new i18n.EntityRecognizer("en-GB");
@@ -492,12 +492,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_EntityRecognizer_static_0800
-     * @tc.name     : SUB_GLOBAL_I18N_EntityRecognizer_static_0800
-     * @tc.desc     : findEntityInfo - Identifying Entity Date Information in Text(Chinese)
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_EntityRecognizer_static_0800
+     * @tc.name    SUB_GLOBAL_I18N_EntityRecognizer_static_0800
+     * @tc.desc    findEntityInfo - Identifying Entity Date Information in Text(Chinese)
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_EntityRecognizer_static_0800', Level.LEVEL2, async (): Promise<void> => {
       let entityRecognizer: i18n.EntityRecognizer = new i18n.EntityRecognizer("zh-CN");
@@ -512,12 +512,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_EntityRecognizer_static_0900
-     * @tc.name     : SUB_GLOBAL_I18N_EntityRecognizer_static_0900
-     * @tc.desc     : findEntityInfo - Identifying Entity Date Information in Text(Chinese)
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_EntityRecognizer_static_0900
+     * @tc.name    SUB_GLOBAL_I18N_EntityRecognizer_static_0900
+     * @tc.desc    findEntityInfo - Identifying Entity Date Information in Text(Chinese)
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_EntityRecognizer_static_0900', Level.LEVEL2, async (): Promise<void> => {
       let entityRecognizer: i18n.EntityRecognizer = new i18n.EntityRecognizer("zh-CN");
@@ -532,12 +532,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_EntityRecognizer_static_1000
-     * @tc.name     : SUB_GLOBAL_I18N_EntityRecognizer_static_1000
-     * @tc.desc     : findEntityInfo - Identifying Entity Date Information in Text(English)
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_EntityRecognizer_static_1000
+     * @tc.name    SUB_GLOBAL_I18N_EntityRecognizer_static_1000
+     * @tc.desc    findEntityInfo - Identifying Entity Date Information in Text(English)
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_EntityRecognizer_static_1000', Level.LEVEL2, async (): Promise<void> => {
       let entityRecognizer: i18n.EntityRecognizer = new i18n.EntityRecognizer("en-GB");
@@ -550,12 +550,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_EntityRecognizer_static_1100
-     * @tc.name     : SUB_GLOBAL_I18N_EntityRecognizer_static_1100
-     * @tc.desc     : findEntityInfo - Identifying Entity Date Information in Text(English)
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_EntityRecognizer_static_1100
+     * @tc.name    SUB_GLOBAL_I18N_EntityRecognizer_static_1100
+     * @tc.desc    findEntityInfo - Identifying Entity Date Information in Text(English)
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_EntityRecognizer_static_1100', Level.LEVEL2, async (): Promise<void> => {
       let entityRecognizer: i18n.EntityRecognizer = new i18n.EntityRecognizer("en-GB");
@@ -568,12 +568,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_i18n_AppPreferredLanguage_static_0100
-     * @tc.name     : SUB_GLOBAL_i18n_AppPreferredLanguage_static_0100
-     * @tc.desc     : setAppPreferredLanguage - Set App Preferred Language
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @tc.number  SUB_GLOBAL_i18n_AppPreferredLanguage_static_0100
+     * @tc.name    SUB_GLOBAL_i18n_AppPreferredLanguage_static_0100
+     * @tc.desc    setAppPreferredLanguage - Set App Preferred Language
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('SUB_GLOBAL_i18n_AppPreferredLanguage_static_0100', Level.LEVEL0, async (): Promise<void> => {
       try {
@@ -586,12 +586,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_AppPreferredLanguage_static_0200
-     * @tc.name     : SUB_GLOBAL_I18N_AppPreferredLanguage_static_0200
-     * @tc.desc     : setAppPreferredLanguage - Set App Preferred Language to invalid language
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  SUB_GLOBAL_I18N_AppPreferredLanguage_static_0200
+     * @tc.name    SUB_GLOBAL_I18N_AppPreferredLanguage_static_0200
+     * @tc.desc    setAppPreferredLanguage - Set App Preferred Language to invalid language
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('SUB_GLOBAL_I18N_AppPreferredLanguage_static_0200', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -604,12 +604,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_AppPreferredLanguage_static_0400
-     * @tc.name     : SUB_GLOBAL_I18N_AppPreferredLanguage_static_0400
-     * @tc.desc     : setAppPreferredLanguage - Set App Preferred Language to zh-CN
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_AppPreferredLanguage_static_0400
+     * @tc.name    SUB_GLOBAL_I18N_AppPreferredLanguage_static_0400
+     * @tc.desc    setAppPreferredLanguage - Set App Preferred Language to zh-CN
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_AppPreferredLanguage_static_0400', Level.LEVEL2, async (): Promise<void> => {
       i18n.System.setAppPreferredLanguage('zh-CN');
@@ -633,12 +633,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_getThreeLetterLanguage_static_0100
-     * @tc.name     : testGetThreeLetterLanguage_static_0100
-     * @tc.desc     : param value is en
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_getThreeLetterLanguage_static_0100
+     * @tc.name    testGetThreeLetterLanguage_static_0100
+     * @tc.desc    param value is en
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('testGetThreeLetterLanguage_static_0100', Level.LEVEL2, async (): Promise<void> => {
       let language: string = i18n.I18NUtil.getThreeLetterLanguage('en')
@@ -661,12 +661,12 @@ export default function i18nStageTest() {
     })
     
    /**
-     * @tc.number   : testGetThreeLetterLanguage_static_0040
-     * @tc.name     : testGetThreeLetterLanguage_static_0040
-     * @tc.desc     : param value not valid
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  testGetThreeLetterLanguage_static_0040
+     * @tc.name    testGetThreeLetterLanguage_static_0040
+     * @tc.desc    param value not valid
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('testGetThreeLetterLanguage_static_0040', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -678,12 +678,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : testGetThreeLetterRegion_static_0040
-     * @tc.name     : testGetThreeLetterRegion_static_0040
-     * @tc.desc     : param value not valid
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  testGetThreeLetterRegion_static_0040
+     * @tc.name    testGetThreeLetterRegion_static_0040
+     * @tc.desc    param value not valid
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('testGetThreeLetterRegion_static_0040', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -696,12 +696,12 @@ export default function i18nStageTest() {
 
 
     /**
-     * @tc.number   : SUB_GLOBAL_getThreeLetterRegion_static_0100
-     * @tc.name     : testGetThreeLetterRegion_static_0100
-     * @tc.desc     : transfer GB and return GBR
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_getThreeLetterRegion_static_0100
+     * @tc.name    testGetThreeLetterRegion_static_0100
+     * @tc.desc    transfer GB and return GBR
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('testGetThreeLetterRegion_static_0100', Level.LEVEL2, async (): Promise<void> => {
       let language: string = i18n.I18NUtil.getThreeLetterRegion('GB')
@@ -710,12 +710,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getDisplayLanguage_static_0200
-     * @tc.name     : SUB_GLOBAL_I18N_getDisplayLanguage_static_0200
-     * @tc.desc     : errcode 890001
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  SUB_GLOBAL_I18N_getDisplayLanguage_static_0200
+     * @tc.name    SUB_GLOBAL_I18N_getDisplayLanguage_static_0200
+     * @tc.desc    errcode 890001
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('SUB_GLOBAL_I18N_getDisplayLanguage_static_0200', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -728,12 +728,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getSystemCountries_static_0100
-     * @tc.name     : SUB_GLOBAL_I18N_getSystemCountries_static_0100
-     * @tc.desc     : errcode 890001
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  SUB_GLOBAL_I18N_getSystemCountries_static_0100
+     * @tc.name    SUB_GLOBAL_I18N_getSystemCountries_static_0100
+     * @tc.desc    errcode 890001
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('SUB_GLOBAL_I18N_getSystemCountries_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -747,12 +747,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_isSuggested_static_0200
-     * @tc.name     : SUB_GLOBAL_I18N_isSuggested_static_0200
-     * @tc.desc     : errcode 890001
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  SUB_GLOBAL_I18N_isSuggested_static_0200
+     * @tc.name    SUB_GLOBAL_I18N_isSuggested_static_0200
+     * @tc.desc    errcode 890001
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('SUB_GLOBAL_I18N_isSuggested_static_0200', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -766,12 +766,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getTimePeriodName_static_0200
-     * @tc.name     : SUB_GLOBAL_I18N_getTimePeriodName_static_0200
-     * @tc.desc     : getTimePeriodName errcode 890001
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  SUB_GLOBAL_I18N_getTimePeriodName_static_0200
+     * @tc.name    SUB_GLOBAL_I18N_getTimePeriodName_static_0200
+     * @tc.desc    getTimePeriodName errcode 890001
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('SUB_GLOBAL_I18N_getTimePeriodName_static_0200', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -783,12 +783,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_unitConvert_static_0100
-     * @tc.name     : SUB_GLOBAL_I18N_unitConvert_static_0100
-     * @tc.desc     : unitConvert
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_unitConvert_static_0100
+     * @tc.name    SUB_GLOBAL_I18N_unitConvert_static_0100
+     * @tc.desc    unitConvert
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_unitConvert_static_0100', Level.LEVEL2, async (): Promise<void> => {
       let value = i18n.I18NUtil.unitConvert({ unit: 'cup', measureSystem: 'US' },
@@ -800,12 +800,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : i18n_calendar_test_static_2600
-     * @tc.name     : i18n_calendar_test_static_2600
-     * @tc.desc     : getCalendar
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  i18n_calendar_test_static_2600
+     * @tc.name    i18n_calendar_test_static_2600
+     * @tc.desc    getCalendar
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('i18n_calendar_test_static_2600', Level.LEVEL2, async (): Promise<void> => {
       let calendar = i18n.getCalendar('zh');
@@ -816,12 +816,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getHolidayInfoItemArray_static_0100
-     * @tc.name     : SUB_GLOBAL_I18N_getHolidayInfoItemArray_static_0100
-     * @tc.desc     : getHolidayInfoItemArray error code 890001
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.number  SUB_GLOBAL_I18N_getHolidayInfoItemArray_static_0100
+     * @tc.name    SUB_GLOBAL_I18N_getHolidayInfoItemArray_static_0100
+     * @tc.desc    getHolidayInfoItemArray error code 890001
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
      */
     it('SUB_GLOBAL_I18N_getHolidayInfoItemArray_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -834,12 +834,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_SR000IFGMS_static_0800
-     * @tc.name     : SUB_GLOBAL_I18N_SR000IFGMS_static_0800
-     * @tc.desc     : hour=[21,5],at night
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_I18N_SR000IFGMS_static_0800
+     * @tc.name    SUB_GLOBAL_I18N_SR000IFGMS_static_0800
+     * @tc.desc    hour=[21,5],at night
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_I18N_SR000IFGMS_static_0800', Level.LEVEL2, async (): Promise<void> => {
       let value = i18n.I18NUtil.getTimePeriodName(5);
@@ -848,12 +848,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0010
-     * @tc.name     : dateTimeFormatAdapt_test_static_0010
-     * @tc.desc     : check the dateStyle is adapt to auto
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.number  SUB_GLOBAL_Localization_foramtAdapt_static_0010
+     * @tc.name    dateTimeFormatAdapt_test_static_0010
+     * @tc.desc    check the dateStyle is adapt to auto
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('dateTimeFormatAdapt_test_static_0010', Level.LEVEL1, async (): Promise<void> => {
       let data = new Date(2020, 11, 20, 14, 23, 16);
@@ -865,12 +865,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0020
-     * @tc.name     : dateTimeFormatAdapt_test_static_0020
-     * @tc.desc     : check the timeStyle is adapt to auto
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.number  SUB_GLOBAL_Localization_foramtAdapt_static_0020
+     * @tc.name    dateTimeFormatAdapt_test_static_0020
+     * @tc.desc    check the timeStyle is adapt to auto
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('dateTimeFormatAdapt_test_static_0020', Level.LEVEL1, async (): Promise<void> => {
       let data = new Date(2020, 11, 20, 14, 23, 16);
@@ -882,12 +882,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0030
-     * @tc.name     : dateTimeFormatAdapt_test_static_0030
-     * @tc.desc     : check the weekday is adapt to auto
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.number  SUB_GLOBAL_Localization_foramtAdapt_static_0030
+     * @tc.name    dateTimeFormatAdapt_test_static_0030
+     * @tc.desc    check the weekday is adapt to auto
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('dateTimeFormatAdapt_test_static_0030', Level.LEVEL1, async (): Promise<void> => {
       let data = new Date(2020, 11, 20, 14, 23, 16);
@@ -899,12 +899,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0040
-     * @tc.name     : dateTimeFormatAdapt_test_static_0040
-     * @tc.desc     : check the month is adapt to auto
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.number  SUB_GLOBAL_Localization_foramtAdapt_static_0040
+     * @tc.name    dateTimeFormatAdapt_test_static_0040
+     * @tc.desc    check the month is adapt to auto
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('dateTimeFormatAdapt_test_static_0040', Level.LEVEL1, async (): Promise<void> => {
       let data = new Date(2020, 11, 20, 14, 23, 16);
@@ -916,12 +916,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0050
-     * @tc.name     : dateTimeFormatAdapt_test_static_0050
-     * @tc.desc     : check the timeZoneName is adapt to auto
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.number  SUB_GLOBAL_Localization_foramtAdapt_static_0050
+     * @tc.name    dateTimeFormatAdapt_test_static_0050
+     * @tc.desc    check the timeZoneName is adapt to auto
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('dateTimeFormatAdapt_test_static_0050', Level.LEVEL1, async (): Promise<void> => {
       let data = new Date(2020, 11, 20, 14, 23, 16);
@@ -933,12 +933,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0060
-     * @tc.name     : dateTimeFormatAdapt_test_static_0060
-     * @tc.desc     : check the dayPeriod is adapt to auto
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.number  SUB_GLOBAL_Localization_foramtAdapt_static_0060
+     * @tc.name    dateTimeFormatAdapt_test_static_0060
+     * @tc.desc    check the dayPeriod is adapt to auto
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('dateTimeFormatAdapt_test_static_0060', Level.LEVEL1, async (): Promise<void> => {
       let data = new Date(2020, 11, 20, 14, 23, 16);
@@ -950,12 +950,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0070
-     * @tc.name     : dateTimeFormatAdapt_test_static_0070
-     * @tc.desc     : check the option is null
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.number  SUB_GLOBAL_Localization_foramtAdapt_static_0070
+     * @tc.name    dateTimeFormatAdapt_test_static_0070
+     * @tc.desc    check the option is null
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('dateTimeFormatAdapt_test_static_0070', Level.LEVEL1, async (): Promise<void> => {
       let data = new Date(2020, 11, 20, 14, 23, 16);
@@ -970,12 +970,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0080
-     * @tc.name     : numberFormatAdapt_test_static_0080
-     * @tc.desc     : format the datetime with currencyDisplay symbol
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.number  SUB_GLOBAL_Localization_foramtAdapt_static_0080
+     * @tc.name    numberFormatAdapt_test_static_0080
+     * @tc.desc    format the datetime with currencyDisplay symbol
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('numberFormatAdapt_test_static_0080', Level.LEVEL1, async (): Promise<void> => {
       let data = 123456.789;
@@ -987,12 +987,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0090
-     * @tc.name     : numberFormatAdapt_test_static_0090
-     * @tc.desc     : format the datetime with currencyDisplay short
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.number  SUB_GLOBAL_Localization_foramtAdapt_static_0090
+     * @tc.name    numberFormatAdapt_test_static_0090
+     * @tc.desc    format the datetime with currencyDisplay short
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('numberFormatAdapt_test_static_0090', Level.LEVEL1, async (): Promise<void> => {
       let data = 123456.789;
@@ -1004,12 +1004,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0150
-     * @tc.name     : numberFormatAdapt_test_static_0150
-     * @tc.desc     : format the datetime with unitDisplay long
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.number  SUB_GLOBAL_Localization_foramtAdapt_static_0150
+     * @tc.name    numberFormatAdapt_test_static_0150
+     * @tc.desc    format the datetime with unitDisplay long
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('numberFormatAdapt_test_static_0150', Level.LEVEL1, async (): Promise<void> => {
       console.log('numberFormatAdapt_test_static_0150:' + 'start');
@@ -1021,12 +1021,12 @@ export default function i18nStageTest() {
     })
     
     /**
-     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0160
-     * @tc.name     : numberFormatAdapt_test_static_0160
-     * @tc.desc     : format the datetime with unitDisplay long
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.number  SUB_GLOBAL_Localization_foramtAdapt_static_0160
+     * @tc.name    numberFormatAdapt_test_static_0160
+     * @tc.desc    format the datetime with unitDisplay long
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('numberFormatAdapt_test_static_0160', Level.LEVEL1, async (): Promise<void> => {
       console.log('numberFormatAdapt_test_static_0160:' + 'start');
@@ -1038,12 +1038,53 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_numberFormatTyping_static_0100
-     * @tc.name     : SUB_GLOBAL_numberFormatTyping_static_0100
-     * @tc.desc     : adapter in adding
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_Localization_foramtAdapt_static_0100
+     * @tc.name    relativeTimeFormatAdapt_test_static_0100
+     * @tc.desc    format timeStyle is long
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('relativeTimeFormatAdapt_test_static_0100', Level.LEVEL1, async (): Promise<void> => {
+      console.log('relativeTimeFormatAdapt_test_static_0100:' + 'start');
+      let relativeTimeFmt = new Intl.RelativeTimeFormat("en", {
+        style: 'long'
+      });
+      let value = relativeTimeFmt.format(100, 'second');
+      console.log('relativeTimeFormatAdapt_test_static_0100' + value);
+      expect(value).assertEqual('in 100 seconds');
+    })
+
+    /**
+     * @tc.number  SUB_GLOBAL_Localization_foramtAdapt_static_0110
+     * @tc.name    relativeTimeFormatAdapt_test_static_0110
+     * @tc.desc    format the timeStyle is null
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('relativeTimeFormatAdapt_test_static_0110', Level.LEVEL1, async (): Promise<void> => {
+      console.log('relativeTimeFormatAdapt_test_static_0110:' + 'start');
+      let relativeTimeFmt = new Intl.RelativeTimeFormat("en");
+      let value = relativeTimeFmt.format(100, 'second');
+      console.log('relativeTimeFormatAdapt_test_static_0110' + value);
+      let devTyp = deviceInfo.deviceType;
+      console.log('relativeTimeFormatAdapt_test_static_0110 device' + devTyp);
+      if (devTyp == '2in1' || devTyp == 'tablet' || devTyp == 'phone' || devTyp == 'default') {
+        expect(value).assertEqual('in 100 seconds');
+      } else {
+        expect(value).assertEqual('in 100 sec.');
+      }
+    })
+
+
+    /**
+     * @tc.number  SUB_GLOBAL_numberFormatTyping_static_0100
+     * @tc.name    SUB_GLOBAL_numberFormatTyping_static_0100
+     * @tc.desc    adapter in adding
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_numberFormatTyping_static_0100', Level.LEVEL2, async (): Promise<void> => {
       let option: i18n.PhoneNumberFormatOptions = {
@@ -1065,12 +1106,12 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_numberFormatTyping_static_0200
-     * @tc.name     : SUB_GLOBAL_numberFormatTyping_static_0200
-     * @tc.desc     : adapter in delete
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.number  SUB_GLOBAL_numberFormatTyping_static_0200
+     * @tc.name    SUB_GLOBAL_numberFormatTyping_static_0200
+     * @tc.desc    adapter in delete
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_GLOBAL_numberFormatTyping_static_0200', Level.LEVEL2, async (): Promise<void> => {
       let option: i18n.PhoneNumberFormatOptions = {
@@ -1084,12 +1125,12 @@ export default function i18nStageTest() {
 
 
     /**
-     * @tc.number   : SUB_GLOBAL_numberFormatTyping_static_0300
-     * @tc.name     : SUB_GLOBAL_numberFormatTyping_static_0300
-     * @tc.desc     : not CN phone number
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.number  SUB_GLOBAL_numberFormatTyping_static_0300
+     * @tc.name    SUB_GLOBAL_numberFormatTyping_static_0300
+     * @tc.desc    not CN phone number
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('SUB_GLOBAL_numberFormatTyping_static_0300', Level.LEVEL1, async (): Promise<void> => {
       let option: i18n.PhoneNumberFormatOptions = {

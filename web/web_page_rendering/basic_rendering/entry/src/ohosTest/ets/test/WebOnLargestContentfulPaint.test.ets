@@ -14,9 +14,11 @@
  */
 import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
-import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitAndClickComponent, waitForComponent } from './WaitTest.test';
+import { Driver, ON } from '@ohos.UiTest';
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function webOnLargestContentfulPaint() {
@@ -32,12 +34,12 @@ export default function webOnLargestContentfulPaint() {
         if (!("WebOnLargestContentfulPaint" == pages.name)) {
           console.info("get WebOnLargestContentfulPaint state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebOnLargestContentfulPaint page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebOnLargestContentfulPaint page error: " + err);
       }
+       await driver.waitForComponent(ON.id("WebFontTestButton"), 10000);
       done()
     });
     beforeEach(async (done: Function) => {
@@ -46,7 +48,6 @@ export default function webOnLargestContentfulPaint() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
@@ -60,14 +61,10 @@ export default function webOnLargestContentfulPaint() {
     * @tc.level      : Level 1
     */
     it('OnLargestContentfulPaint0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("OnLargestContentfulPaint0100", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("OnLargestContentfulPaint0100", true, 801, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebOnLargestContentfulPaint"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("OnLargestContentfulPaint0100", 152060)
+      Utils.registerEvent("OnLargestContentfulPaint0100", true, 152070, done);
+      let component = await driver.findComponent(ON.id("WebOnLargestContentfulPaint"));
+      await component.click();
     })
 
     /*
@@ -79,14 +76,9 @@ export default function webOnLargestContentfulPaint() {
     * @tc.level      : Level 1
     */
     it('OnLargestContentfulPaint0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("OnLargestContentfulPaint0200", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("OnLargestContentfulPaint0200", true, 802, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebOnLargestContentfulPaint"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("OnLargestContentfulPaint0200", 152060)
+      Utils.registerEvent("OnLargestContentfulPaint0200", true, 152080, done);
+      waitAndClickComponent('WebOnLargestContentfulPaint',driver);
     })
   })
 }

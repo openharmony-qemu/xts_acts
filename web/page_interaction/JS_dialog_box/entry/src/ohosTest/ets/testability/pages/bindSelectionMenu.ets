@@ -16,7 +16,8 @@ import web_webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import { BusinessError } from '@ohos.base';
 import events_emitter from '@ohos.events.emitter';
-import { Driver, ON } from '@kit.TestKit';
+import { Driver, MouseButton, UiWindow, ON, On } from '@kit.TestKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 interface PreviewBuilderParam {
   previewImage: Resource | string | undefined;
@@ -33,6 +34,7 @@ interface PreviewBuilderParam {
 }
 
 const EVENT_ID_SET_SUITE_KEY = 177001;
+const DOMAIN = 0x0000;
 let driver: Driver = Driver.create();
 
 @Entry
@@ -62,6 +64,27 @@ struct WebComponent {
         .onClick(() => {
           this.result?.selectAll();
           this.result?.closeContextMenu();
+        })
+    }
+  }
+
+  @Builder
+  TextMenuBuilder() {
+    Menu() {
+      MenuItem({ content: '复制', })
+        .onClick(() => {
+          this.result?.copy();
+          Utils.emitEvent(true, 20250919)
+        })
+      MenuItem({ content: '复制图片', })
+        .onClick(() => {
+          this.result?.copyImage();
+          // this.result?.closeContextMenu();
+        })
+      MenuItem({ content: '全选', })
+        .onClick(() => {
+          this.result?.selectAll();
+          // this.result?.closeContextMenu();
         })
     }
   }
@@ -122,7 +145,17 @@ struct WebComponent {
                 Utils.emitEvent(MenuType.PREVIEW_MENU, 177020)
                 break;
             }
-
+          case "bindSelectionMenuType03": {
+            this.isPageEnd = -1;
+            await Utils.waitForExist(()=>this.isPageEnd, this.str+'TextMenuBuilder', 1, 1000);
+            let buttonOne = await driver.findComponent(ON.text('这是一段文字'));
+            let point = await buttonOne.getBoundsCenter();
+            await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+            await Utils.sleep(2000);
+            let buttonTwo = await driver.findComponent(ON.text('复制'));
+            await buttonTwo.click()
+            break;
+          }
 
           }
         })
@@ -169,7 +202,25 @@ struct WebComponent {
           console.log('onPageEnd url:' + event.url);
           this.isPageEnd = 1;
         })
-
+        .bindSelectionMenu(WebElementType.TEXT, this.TextMenuBuilder, WebResponseType.RIGHT_CLICK,
+          {
+            onAppear: () => {
+              hilog.info(DOMAIN, 'testTag', '%{public}s', 'xj_test TEXT RIGHT_CLICK onAppear');
+            },
+            onDisappear: () => {
+              hilog.info(DOMAIN, 'testTag', '%{public}s', 'xj_test TEXT RIGHT_CLICK onDisappear');
+            },
+            onMenuShow: () => {
+              hilog.info(DOMAIN, 'testTag', '%{public}s', 'xj_test TEXT RIGHT_CLICK onMenuShow');
+            },
+            onMenuHide: () => {
+              hilog.info(DOMAIN, 'testTag', '%{public}s', 'xj_test TEXT RIGHT_CLICK onMenuHide');
+            }
+          })
+        .onContextMenuHide(() => {
+          hilog.info(DOMAIN, 'testTag', '%{public}s', 'xj_test app onContextMenuHide ');
+          this.result = undefined;
+        })
     }
   }
 }
