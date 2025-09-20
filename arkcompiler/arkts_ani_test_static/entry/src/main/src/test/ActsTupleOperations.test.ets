@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ export default function tupleOperationsTest() {
       console.log('loadFailed', e.message);
     }
 
-    /*
+    /**
      * @tc.number    : TupleValue_GetItem_Boolean_0100
      * @tc.name      : TupleValue_GetItem_Boolean_0100
      * @tc.desc      : MediumTest
@@ -49,7 +49,7 @@ export default function tupleOperationsTest() {
         console.log('TupleValue_GetItem_Boolean_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : TupleValue_GetItem_Char_0100
      * @tc.name      : TupleValue_GetItem_Char_0100
      * @tc.desc      : MediumTest
@@ -68,7 +68,7 @@ export default function tupleOperationsTest() {
         console.log('TupleValue_GetItem_Char_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : TupleValue_GetItem_Byte_0100
      * @tc.name      : TupleValue_GetItem_Byte_0100
      * @tc.desc      : MediumTest
@@ -87,7 +87,7 @@ export default function tupleOperationsTest() {
         console.log('TupleValue_GetItem_Byte_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : TupleValue_GetItem_Short_0100
      * @tc.name      : TupleValue_GetItem_Short_0100
      * @tc.desc      : MediumTest
@@ -106,7 +106,7 @@ export default function tupleOperationsTest() {
         console.log('TupleValue_GetItem_Short_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : TupleValue_GetItem_Int_0100
      * @tc.name      : TupleValue_GetItem_Int_0100
      * @tc.desc      : MediumTest
@@ -125,7 +125,7 @@ export default function tupleOperationsTest() {
         console.log('TupleValue_GetItem_Int_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : TupleValue_GetItem_Long_0100
      * @tc.name      : TupleValue_GetItem_Long_0100
      * @tc.desc      : MediumTest
@@ -144,7 +144,7 @@ export default function tupleOperationsTest() {
         console.log('TupleValue_GetItem_Long_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : TupleValue_GetItem_Float_0100
      * @tc.name      : TupleValue_GetItem_Float_0100
      * @tc.desc      : MediumTest
@@ -163,7 +163,7 @@ export default function tupleOperationsTest() {
         console.log('TupleValue_GetItem_Float_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : TupleValue_GetItem_Double_0100
      * @tc.name      : TupleValue_GetItem_Double_0100
      * @tc.desc      : MediumTest
@@ -182,7 +182,7 @@ export default function tupleOperationsTest() {
         console.log('TupleValue_GetItem_Double_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : TupleValue_GetItem_Ref_0100
      * @tc.name      : TupleValue_GetItem_Ref_0100
      * @tc.desc      : MediumTest
@@ -201,7 +201,7 @@ export default function tupleOperationsTest() {
         console.log('TupleValue_GetItem_Ref_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : TupleValue_SetItem_Boolean_0100
      * @tc.name      : TupleValue_SetItem_Boolean_0100
      * @tc.desc      : MediumTest
@@ -220,7 +220,7 @@ export default function tupleOperationsTest() {
         console.log('TupleValue_SetItem_Boolean_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : TupleValue_SetItem_Char_0100
      * @tc.name      : TupleValue_SetItem_Char_0100
      * @tc.desc      : MediumTest
@@ -239,7 +239,7 @@ export default function tupleOperationsTest() {
         console.log('TupleValue_SetItem_Char_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : TupleValue_SetItem_Byte_0100
      * @tc.name      : TupleValue_SetItem_Byte_0100
      * @tc.desc      : Medium极Test
@@ -258,7 +258,7 @@ export default function tupleOperationsTest() {
         console.log('TupleValue_SetItem_Byte_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : TupleValue_SetItem_Short_0100
      * @tc.name      : TupleValue_SetItem_Short_0100
      * @tc.desc      : MediumTest
@@ -277,7 +277,7 @@ export default function tupleOperationsTest() {
         console.log('TupleValue_SetItem_Short_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : TupleValue_SetItem_Int_0100
      * @tc.name      : TupleValue_SetItem_Int_0100
      * @tc.desc      : MediumTest
@@ -296,7 +296,7 @@ export default function tupleOperationsTest() {
         console.log('TupleValue_SetItem_Int_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : TupleValue_SetItem_Long_0100
      * @tc.name      : TupleValue_SetItem_Long_0100
      * @tc.desc      : MediumTest
@@ -315,7 +315,7 @@ export default function tupleOperationsTest() {
         console.log('TupleValue_SetItem_Long_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : TupleValue_SetItem_Float_0100
      * @tc.name      : TupleValue_SetItem_Float_0100
      * @tc.desc      : MediumTest
@@ -334,7 +334,7 @@ export default function tupleOperationsTest() {
         console.log('TupleValue_SetItem_Float_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : TupleValue_SetItem_Double_0100
      * @tc.name      : TupleValue_SetItem_Double_0100
      * @tc.desc      : MediumTest
@@ -353,7 +353,7 @@ export default function tupleOperationsTest() {
         console.log('TupleValue_SetItem_Double_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : TupleValue_SetItem_Ref_0100
      * @tc.name      : TupleValue_SetItem_Ref_0100
      * @tc.desc      : MediumTest
@@ -373,7 +373,7 @@ export default function tupleOperationsTest() {
       })
 
 
-    /*
+    /**
      * @tc.number    : TupleValue_GetNumberOfItems_0100
      * @tc.name      : TupleValue_GetNumberOfItems_0100
      * @tc.desc      : MediumTest

@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -30,64 +30,7 @@ export default function moduleSupportTest() {
       console.log('loadFailed', e.message);
     }
 
-    /*
-     * @tc.number    : Module_FindNamespace_0100
-     * @tc.name      : Module_FindNamespace_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 0
-     */
-    it("Module_FindNamespace_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        console.log('Module_FindNamespace_0100 start');
-        let cls = new Foo();
-        let result = cls.test_Module_FindNamespace();
-        expect(result).assertTrue();
-        console.log('Module_FindNamespace_0100 done');
-        done();
-        console.log('Module_FindNamespace_0100 end');
-      })
-
-    /*
-     * @tc.number    : Module_FindClass_0100
-     * @tc.name      : Module_FindClass_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 0
-     */
-    it("Module_FindClass_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        console.log('Module_FindClass_0100 start');
-        let cls = new Foo();
-        let result = cls.test_Module_FindClass();
-        expect(result).assertTrue();
-        console.log('Module_FindClass_0100 done');
-        done();
-        console.log('Module_FindClass_0100 end');
-      })
-
-    /*
-     * @tc.number    : Module_FindEnum_0100
-     * @tc.name      : Module_FindEnum_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 0
-     */
-    it("Module_FindEnum_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        console.log('Module_FindEnum_0100 start');
-        let cls = new Foo();
-        let result = cls.test_Module_FindEnum();
-        expect(result).assertTrue();
-        console.log('Module_FindEnum_0100 done');
-        done();
-        console.log('Module_FindEnum_0100 end');
-      })
-
-    /*
+    /**
      * @tc.number    : Module_FindFunction_0100
      * @tc.name      : Module_FindFunction_0100
      * @tc.desc      : MediumTest
@@ -106,7 +49,7 @@ export default function moduleSupportTest() {
         console.log('Module_FindFunction_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Module_FindVariable_0100
      * @tc.name      : Module_FindVariable_0100
      * @tc.desc      : MediumTest

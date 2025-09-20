@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ export default function objectOperationsTest() {
       console.log('loadFailed', e.message);
     }
 
-    /*
+    /**
       * @tc.number    : Object_InstanceOf_0100
       * @tc.name      : Object_InstanceOf_0100
       * @tc.desc      : MediumTest
@@ -49,7 +49,7 @@ export default function objectOperationsTest() {
         console.log('Object_InstanceOf_0100 end');
       })
 
-    /*
+    /**
       * @tc.number    : Object_GetType_0100
       * @tc.name      : Object_GetType_0100
       * @tc.desc      : MediumTest
@@ -68,7 +68,7 @@ export default function objectOperationsTest() {
         console.log('Object_GetType_0100 end');
       })
 
-    /*
+    /**
       * @tc.number    : Object_New_0100
       * @tc.name      : Object_New_0100
       * @tc.desc      : MediumTest
@@ -87,7 +87,7 @@ export default function objectOperationsTest() {
       console.log('Object_New_0100 end');
     })
 
-    /*
+    /**
       * @tc.number    : Reference_IsNull_0100
       * @tc.name      : Reference_IsNull_0100
       * @tc.desc      : MediumTest
@@ -106,7 +106,7 @@ export default function objectOperationsTest() {
         console.log('Reference_IsNull_0100 end');
       })
 
-    /*
+    /**
       * @tc.number    : Reference_IsUndefined_0100
       * @tc.name      : Reference_IsUndefined_0100
       * @tc.desc      : MediumTest
@@ -125,7 +125,7 @@ export default function objectOperationsTest() {
         console.log('Reference_IsUndefined_0100 end');
       })
 
-    /*
+    /**
       * @tc.number    : Reference_IsNullishValue_0100
       * @tc.name      : Reference_IsNullishValue_0100
       * @tc.desc      : MediumTest
@@ -144,7 +144,7 @@ export default function objectOperationsTest() {
         console.log('Reference_IsNullishValue_0100 end');
       })
 
-    /*
+    /**
       * @tc.number    : Reference_Equals_0100
       * @tc.name      : Reference_Equals_0100
       * @tc.desc      : MediumTest
@@ -163,26 +163,26 @@ export default function objectOperationsTest() {
         console.log('Reference_Equals_0100 end');
       })
 
-    /*
-      * @tc.number    : Array_New_Ref_0100
-      * @tc.name      : Array_New_Ref_0100
+    /**
+      * @tc.number    : Array_New_0100
+      * @tc.name      : Array_New_0100
       * @tc.desc      : MediumTest
       * @tc.size      : Function
       * @tc.type      : Function test
       * @tc.level     : Level 0
       */
-    it("Array_New_Ref_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("Array_New_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.log('Array_New_Ref_0100 start');
+        console.log('Array_New_0100 start');
         let cls = new Foo();
-        let result = cls.test_Array_New_Ref();
+        let result = cls.test_Array_New();
         expect(result).assertTrue();
-        console.log('Array_New_Ref_0100 done');
+        console.log('Array_New_0100 done');
         done();
-        console.log('Array_New_Ref_0100 end');
+        console.log('Array_New_0100 end');
       })
 
-    /*
+    /**
       * @tc.number    : Object_New_A_0100
       * @tc.name      : Object_New_A_0100
       * @tc.desc      : MediumTest
@@ -201,7 +201,7 @@ export default function objectOperationsTest() {
         console.log('Object_New_A_0100 end');
       })
 
-    /*
+    /**
       * @tc.number    : Object_New_V_0100
       * @tc.name      : Object_New_V_0100
       * @tc.desc      : MediumTest

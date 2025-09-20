@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,9 @@ import nameSpaceSupportTest from "./ActsNameSpaceSupport.test";
 import enumOperationsTest from "./ActsEnumOperations.test";
 import tupleOperationsTest from "./ActsTupleOperations.test";
 import vmOpsTest from "./ActsVmOps.test"
+import anyOpsTest from "./ActsAnyOps.test"
 import exceptionTest from "./ActsException.test"
+import fixedArrayTest from "./ActsFixedArray.test"
 import promiseTest from "./ActsPromise.test"
 import weakGlobalReferencesTest from "./ActsWeakGlobalReferences.test"
 
@@ -57,6 +59,8 @@ export default function testsuite() {
     enumOperationsTest();
     tupleOperationsTest();
     vmOpsTest();
+    anyOpsTest();
+    fixedArrayTest();
     promiseTest();
     exceptionTest();
     weakGlobalReferencesTest();

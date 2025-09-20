@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ export default function variableOperationsTest() {
       console.log('loadFailed', e.message);
     }
 
-    /*
+    /**
     * @tc.number    : Variable_SetValue_Long_0100
     * @tc.name      : Variable_SetValue_Long_0100
     * @tc.desc      : MediumTest
@@ -49,7 +49,7 @@ export default function variableOperationsTest() {
         console.log('Variable_SetValue_Long_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Variable_SetValue_Int_0100
     * @tc.name      : Variable_SetValue_Int_0100
     * @tc.desc      : MediumTest
@@ -68,7 +68,7 @@ export default function variableOperationsTest() {
         console.log('Variable_SetValue_Int_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Variable_SetValue_Double_0100
      * @tc.name      : Variable_SetValue_Double_0100
      * @tc.desc      : MediumTest
@@ -88,7 +88,7 @@ export default function variableOperationsTest() {
       })
 
 
-    /*
+    /**
      * @tc.number    : Variable_GetValue_Ref_0100
      * @tc.name      : Variable_GetValue_Ref_0100
      * @tc.desc      : MediumTest
@@ -107,7 +107,7 @@ export default function variableOperationsTest() {
         console.log('Variable_GetValue_Ref_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Variable_GetValue_Double_0100
      * @tc.name      : Variable_GetValue_Double_0100
      * @tc.desc      : MediumTest
@@ -126,7 +126,7 @@ export default function variableOperationsTest() {
         console.log('Variable_GetValue_Double_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Variable_GetValue_Boolean_0100
      * @tc.name      : Variable_GetValue_Boolean_0100
      * @tc.desc      : MediumTest
@@ -145,7 +145,7 @@ export default function variableOperationsTest() {
         console.log('Variable_GetValue_Boolean_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Variable_GetValue_Int_0100
      * @tc.name      : Variable_GetValue_Int_0100
      * @tc.desc      : MediumTest
@@ -164,7 +164,7 @@ export default function variableOperationsTest() {
         console.log('Variable_GetValue_Int_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Variable_GetValue_Long_0100
      * @tc.name      : Variable_GetValue_Long_0100
      * @tc.desc      : MediumTest
@@ -183,7 +183,7 @@ export default function variableOperationsTest() {
         console.log('Variable_GetValue_Long_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Namespace_FindVariable_0100
      * @tc.name      : Namespace_FindVariable_0100
      * @tc.desc      : MediumTest
@@ -202,7 +202,7 @@ export default function variableOperationsTest() {
         console.log('Namespace_FindVariable_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Variable_SetValue_Boolean_0100
      * @tc.name      : Variable_SetValue_Boolean_0100
      * @tc.desc      : MediumTest
@@ -221,7 +221,7 @@ export default function variableOperationsTest() {
         console.log('Variable_SetValue_Boolean_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Variable_SetValue_Char_0100
      * @tc.name      : Variable_SetValue_Char_0100
      * @tc.desc      : MediumTest
@@ -240,7 +240,7 @@ export default function variableOperationsTest() {
         console.log('Variable_SetValue_Char_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Variable_SetValue_Byte_0100
      * @tc.name      : Variable_SetValue_Byte_0100
      * @tc.desc      : MediumTest
@@ -259,7 +259,7 @@ export default function variableOperationsTest() {
         console.log('Variable_SetValue_Byte_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Variable_SetValue_Short_0100
      * @tc.name      : Variable_SetValue_Short_0100
      * @tc.desc      : MediumTest
@@ -278,7 +278,7 @@ export default function variableOperationsTest() {
         console.log('Variable_SetValue_Short_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Variable_SetValue_Float_0100
      * @tc.name      : Variable_SetValue_Float_0100
      * @tc.desc      : MediumTest
@@ -297,7 +297,7 @@ export default function variableOperationsTest() {
         console.log('Variable_SetValue_Float_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Variable_SetValue_Ref_0100
      * @tc.name      : Variable_SetValue_Ref_0100
      * @tc.desc      : MediumTest
@@ -316,7 +316,7 @@ export default function variableOperationsTest() {
         console.log('Variable_SetValue_Ref_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Variable_GetValue_Char_0100
      * @tc.name      : Variable_GetValue_Char_0100
      * @tc.desc      : MediumTest
@@ -335,7 +335,7 @@ export default function variableOperationsTest() {
         console.log('Variable_GetValue_Char_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Variable_GetValue_Byte_0100
      * @tc.name      : Variable_GetValue_Byte_0100
      * @tc.desc      : MediumTest
@@ -354,7 +354,7 @@ export default function variableOperationsTest() {
         console.log('Variable_GetValue_Byte_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Variable_GetValue_Short_0100
      * @tc.name      : Variable_GetValue_Short_0100
      * @tc.desc      : MediumTest
@@ -373,7 +373,7 @@ export default function variableOperationsTest() {
         console.log('Variable_GetValue_Short_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Variable_GetValue_Float_0100
      * @tc.name      : Variable_GetValue_Float_0100
      * @tc.desc      : MediumTest

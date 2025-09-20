@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ export default function JSFeatureTest() {
       console.log('loadFailed', e.message);
     }
 
-    /*
+    /**
      * @tc.number    : test_getNull_0100
      * @tc.name      : test_getNull_0100
      * @tc.desc      : MediumTest
@@ -49,7 +49,7 @@ export default function JSFeatureTest() {
         console.log('test_getNull_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : test_getUndefined_0100
      * @tc.name      : test_getUndefined_0100
      * @tc.desc      : MediumTest

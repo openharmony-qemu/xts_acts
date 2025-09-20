@@ -25,7 +25,7 @@ ani_int test_TupleValue_GetItem_Boolean([[maybe_unused]] ani_env *env, [[maybe_u
     ani_ref resultRef;
     ani_tuple_value tuple;
 
-    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/TupleOperations;", &module), ANI_OK);
+    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.TupleOperations", &module), ANI_OK);
     ASSERT_EQ(env->Module_FindFunction(module, function.c_str(), nullptr, &functionHandle), ANI_OK);
     ASSERT_EQ(env->Function_Call_Ref(functionHandle, &resultRef), ANI_OK);
 
@@ -48,7 +48,7 @@ ani_int test_TupleValue_GetItem_Char([[maybe_unused]] ani_env *env, [[maybe_unus
     ani_ref resultRef;
     ani_tuple_value tuple;
 
-    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/TupleOperations;", &module), ANI_OK);
+    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.TupleOperations", &module), ANI_OK);
     ASSERT_EQ(env->Module_FindFunction(module, function.c_str(), nullptr, &functionHandle), ANI_OK);
     ASSERT_EQ(env->Function_Call_Ref(functionHandle, &resultRef), ANI_OK);
 
@@ -77,7 +77,7 @@ ani_int test_TupleValue_GetItem_Byte([[maybe_unused]] ani_env *env, [[maybe_unus
     static constexpr ani_byte EXPECTED_RESULT_4 = 1;
     static constexpr ani_byte EXPECTED_RESULT_5 = 2;
 
-    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/TupleOperations;", &module), ANI_OK);
+    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.TupleOperations", &module), ANI_OK);
     ASSERT_EQ(env->Module_FindFunction(module, function.c_str(), nullptr, &functionHandle), ANI_OK);
     ASSERT_EQ(env->Function_Call_Ref(functionHandle, &resultRef), ANI_OK);
 
@@ -107,7 +107,7 @@ ani_int test_TupleValue_GetItem_Short([[maybe_unused]] ani_env *env, [[maybe_unu
     static constexpr ani_short EXPECTED_RESULT_4 = 100;
     static constexpr ani_short EXPECTED_RESULT_5 = 50;
 
-    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/TupleOperations;", &module), ANI_OK);
+    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.TupleOperations", &module), ANI_OK);
     ASSERT_EQ(env->Module_FindFunction(module, function.c_str(), nullptr, &functionHandle), ANI_OK);
     ASSERT_EQ(env->Function_Call_Ref(functionHandle, &resultRef), ANI_OK);
 
@@ -137,7 +137,7 @@ ani_int test_TupleValue_GetItem_Int([[maybe_unused]] ani_env *env, [[maybe_unuse
     static constexpr ani_int EXPECTED_RESULT_4 = 100U;
     static constexpr ani_int EXPECTED_RESULT_5 = 50U;
 
-    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/TupleOperations;", &module), ANI_OK);
+    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.TupleOperations", &module), ANI_OK);
     ASSERT_EQ(env->Module_FindFunction(module, function.c_str(), nullptr, &functionHandle), ANI_OK);
     ASSERT_EQ(env->Function_Call_Ref(functionHandle, &resultRef), ANI_OK);
 
@@ -167,7 +167,7 @@ ani_int test_TupleValue_GetItem_Long([[maybe_unused]] ani_env *env, [[maybe_unus
     static constexpr ani_long EXPECTED_RESULT_4 = 50L;
     static constexpr ani_long EXPECTED_RESULT_5 = 1000L;
 
-    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/TupleOperations;", &module), ANI_OK);
+    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.TupleOperations", &module), ANI_OK);
     ASSERT_EQ(env->Module_FindFunction(module, function.c_str(), nullptr, &functionHandle), ANI_OK);
     ASSERT_EQ(env->Function_Call_Ref(functionHandle, &resultRef), ANI_OK);
 
@@ -197,7 +197,7 @@ ani_int test_TupleValue_GetItem_Float([[maybe_unused]] ani_env *env, [[maybe_unu
     static constexpr ani_float EXPECTED_RESULT_4 = 0.59F;
     static constexpr ani_float EXPECTED_RESULT_5 = 10.0F;
 
-    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/TupleOperations;", &module), ANI_OK);
+    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.TupleOperations", &module), ANI_OK);
     ASSERT_EQ(env->Module_FindFunction(module, function.c_str(), nullptr, &functionHandle), ANI_OK);
     ASSERT_EQ(env->Function_Call_Ref(functionHandle, &resultRef), ANI_OK);
 
@@ -227,7 +227,7 @@ ani_int test_TupleValue_GetItem_Double([[maybe_unused]] ani_env *env, [[maybe_un
     static constexpr ani_double EXPECTED_RESULT_4 = 0.59;
     static constexpr ani_double EXPECTED_RESULT_5 = 10.0;
 
-    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/TupleOperations;", &module), ANI_OK);
+    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.TupleOperations", &module), ANI_OK);
     ASSERT_EQ(env->Module_FindFunction(module, function.c_str(), nullptr, &functionHandle), ANI_OK);
     ASSERT_EQ(env->Function_Call_Ref(functionHandle, &resultRef), ANI_OK);
 
@@ -259,7 +259,7 @@ ani_int test_TupleValue_GetItem_Ref([[maybe_unused]] ani_env *env, [[maybe_unuse
     static constexpr ani_double EXPECTED_RESULT_5 = 5.0;
     ani_size copiedSize = 0;
 
-    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/TupleOperations;", &module), ANI_OK);
+    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.TupleOperations", &module), ANI_OK);
     ASSERT_EQ(env->Module_FindFunction(module, function.c_str(), nullptr, &functionHandle), ANI_OK);
     ASSERT_EQ(env->Function_Call_Ref(functionHandle, &resultRef), ANI_OK);
 
@@ -269,10 +269,16 @@ ani_int test_TupleValue_GetItem_Ref([[maybe_unused]] ani_env *env, [[maybe_unuse
     ani_ref result{};
     ASSERT_EQ(env->TupleValue_GetItem_Ref(tuple, 1U, &result), ANI_OK);
 
-    auto internalArr = reinterpret_cast<ani_array_double>(result);
+    auto internalArr = reinterpret_cast<ani_array>(result);
     std::vector<double> elem(expectedArrayValues.size());
-    ASSERT_EQ(env->Array_GetRegion_Double(internalArr, 0, elem.size(), elem.data()), ANI_OK);
 
+    for (size_t i = 0; i < elem.size(); ++i) {
+        ani_ref doubleRef {};
+        ani_double doubleValue {};
+        ASSERT_EQ(env->Array_Get(internalArr, i, &doubleRef), ANI_OK);
+        ASSERT_EQ(unboxDouble(env, static_cast<ani_object>(doubleRef), &doubleValue), ANI_OK);
+        elem[i] = doubleValue;
+    }
     for (size_t idx = 0; idx < expectedArrayValues.size(); ++idx) {
         ASSERT_EQ(elem[idx], expectedArrayValues[idx]);
     }
@@ -305,7 +311,7 @@ ani_int test_TupleValue_SetItem_Boolean([[maybe_unused]] ani_env *env, [[maybe_u
     ani_ref resultRef;
     ani_tuple_value tuple;
 
-    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/TupleOperations;", &module), ANI_OK);
+    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.TupleOperations", &module), ANI_OK);
     ASSERT_EQ(env->Module_FindFunction(module, function.c_str(), nullptr, &functionHandle), ANI_OK);
     ASSERT_EQ(env->Function_Call_Ref(functionHandle, &resultRef), ANI_OK);
 
@@ -328,7 +334,7 @@ ani_int test_TupleValue_SetItem_Char([[maybe_unused]] ani_env *env, [[maybe_unus
     ani_ref resultRef;
     ani_tuple_value tuple;
 
-    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/TupleOperations;", &module), ANI_OK);
+    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.TupleOperations", &module), ANI_OK);
     ASSERT_EQ(env->Module_FindFunction(module, function.c_str(), nullptr, &functionHandle), ANI_OK);
     ASSERT_EQ(env->Function_Call_Ref(functionHandle, &resultRef), ANI_OK);
 
@@ -351,7 +357,7 @@ ani_int test_TupleValue_SetItem_Byte([[maybe_unused]] ani_env *env, [[maybe_unus
     ani_ref resultRef;
     ani_tuple_value tuple;
 
-    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/TupleOperations;", &module), ANI_OK);
+    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.TupleOperations", &module), ANI_OK);
     ASSERT_EQ(env->Module_FindFunction(module, function.c_str(), nullptr, &functionHandle), ANI_OK);
     ASSERT_EQ(env->Function_Call_Ref(functionHandle, &resultRef), ANI_OK);
 
@@ -374,7 +380,7 @@ ani_int test_TupleValue_SetItem_Short([[maybe_unused]] ani_env *env, [[maybe_unu
     ani_ref resultRef;
     ani_tuple_value tuple;
 
-    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/TupleOperations;", &module), ANI_OK);
+    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.TupleOperations", &module), ANI_OK);
     ASSERT_EQ(env->Module_FindFunction(module, function.c_str(), nullptr, &functionHandle), ANI_OK);
     ASSERT_EQ(env->Function_Call_Ref(functionHandle, &resultRef), ANI_OK);
 
@@ -397,7 +403,7 @@ ani_int test_TupleValue_SetItem_Int([[maybe_unused]] ani_env *env, [[maybe_unuse
     ani_ref resultRef;
     ani_tuple_value tuple;
 
-    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/TupleOperations;", &module), ANI_OK);
+    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.TupleOperations", &module), ANI_OK);
     ASSERT_EQ(env->Module_FindFunction(module, function.c_str(), nullptr, &functionHandle), ANI_OK);
     ASSERT_EQ(env->Function_Call_Ref(functionHandle, &resultRef), ANI_OK);
 
@@ -420,7 +426,7 @@ ani_int test_TupleValue_SetItem_Long([[maybe_unused]] ani_env *env, [[maybe_unus
     ani_ref resultRef;
     ani_tuple_value tuple;
 
-    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/TupleOperations;", &module), ANI_OK);
+    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.TupleOperations", &module), ANI_OK);
     ASSERT_EQ(env->Module_FindFunction(module, function.c_str(), nullptr, &functionHandle), ANI_OK);
     ASSERT_EQ(env->Function_Call_Ref(functionHandle, &resultRef), ANI_OK);
 
@@ -443,7 +449,7 @@ ani_int test_TupleValue_SetItem_Float([[maybe_unused]] ani_env *env, [[maybe_unu
     ani_ref resultRef;
     ani_tuple_value tuple;
 
-    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/TupleOperations;", &module), ANI_OK);
+    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.TupleOperations", &module), ANI_OK);
     ASSERT_EQ(env->Module_FindFunction(module, function.c_str(), nullptr, &functionHandle), ANI_OK);
     ASSERT_EQ(env->Function_Call_Ref(functionHandle, &resultRef), ANI_OK);
 
@@ -466,7 +472,7 @@ ani_int test_TupleValue_SetItem_Double([[maybe_unused]] ani_env *env, [[maybe_un
     ani_ref resultRef;
     ani_tuple_value tuple;
 
-    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/TupleOperations;", &module), ANI_OK);
+    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.TupleOperations", &module), ANI_OK);
     ASSERT_EQ(env->Module_FindFunction(module, function.c_str(), nullptr, &functionHandle), ANI_OK);
     ASSERT_EQ(env->Function_Call_Ref(functionHandle, &resultRef), ANI_OK);
 
@@ -491,7 +497,7 @@ ani_int test_TupleValue_SetItem_Ref([[maybe_unused]] ani_env *env, [[maybe_unuse
     ani_size copiedSize = 0;
     ani_ref result{};
 
-    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/TupleOperations;", &module), ANI_OK);
+    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.TupleOperations", &module), ANI_OK);
     ASSERT_EQ(env->Module_FindFunction(module, function.c_str(), nullptr, &functionHandle), ANI_OK);
     ASSERT_EQ(env->Function_Call_Ref(functionHandle, &resultRef), ANI_OK);
 
@@ -521,11 +527,10 @@ ani_int test_TupleValue_SetItem_Ref([[maybe_unused]] ani_env *env, [[maybe_unuse
 
 ani_int test_TupleValue_GetNumberOfItems([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    const char *moduleName = "entry/src/main/src/ets/TupleOperations";
+    const char *moduleName = "entry.src.main.src.ets.TupleOperations";
     const char *tupleGetterName = "getTestPrimitiveTuple";
-    std::string moduleDescriptor = "L" + std::string(moduleName) + ";";
     ani_module mod{};
-    ASSERT_EQ(env->FindModule(moduleDescriptor.c_str(), &mod), ANI_OK);
+    ASSERT_EQ(env->FindModule(moduleName, &mod), ANI_OK);
 
     ani_function fn{};
     ASSERT_EQ(env->Module_FindFunction(mod, tupleGetterName, nullptr, &fn), ANI_OK);

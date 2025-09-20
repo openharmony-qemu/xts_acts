@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ export default function globalAndLocalReferencesTest() {
       console.log('loadFailed', e.message);
     }
 
-    /*
+    /**
      * @tc.number    : GlobalReference_Create_0100
      * @tc.name      : GlobalReference_Create_0100
      * @tc.desc      : MediumTest
@@ -49,7 +49,7 @@ export default function globalAndLocalReferencesTest() {
         console.log('GlobalReference_Create_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Reference_StrictEquals_0100
      * @tc.name      : Reference_StrictEquals_0100
      * @tc.desc      : MediumTest
@@ -68,7 +68,7 @@ export default function globalAndLocalReferencesTest() {
         console.log('Reference_StrictEquals_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : GlobalReference_Delete_0100
      * @tc.name      : GlobalReference_Delete_0100
      * @tc.desc      : MediumTest
@@ -87,7 +87,7 @@ export default function globalAndLocalReferencesTest() {
         console.log('GlobalReference_Delete_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Reference_Delete_0100
      * @tc.name      : Reference_Delete_0100
      * @tc.desc      : MediumTest
@@ -106,7 +106,7 @@ export default function globalAndLocalReferencesTest() {
         console.log('Reference_Delete_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : EnsureEnoughReferences_0100
      * @tc.name      : EnsureEnoughReferences_0100
      * @tc.desc      : MediumTest

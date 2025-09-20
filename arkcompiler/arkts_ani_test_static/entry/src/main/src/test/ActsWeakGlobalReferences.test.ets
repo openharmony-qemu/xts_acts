@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -30,13 +30,13 @@ export default function weakGlobalReferencesTest() {
       console.log("loadFailed" + e.message)
     }
 
-    /*
-     * @tc.number    : WeakReference_Delete_0100
-     * @tc.name      : WeakReference_Delete_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 0
+    /**
+     * @tc.number      WeakReference_Delete_0100
+     * @tc.name        WeakReference_Delete_0100
+     * @tc.desc        MediumTest
+     * @tc.size        Function
+     * @tc.size        Function test
+     * @tc.level       Level 0
      */
     it("WeakReference_Delete_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

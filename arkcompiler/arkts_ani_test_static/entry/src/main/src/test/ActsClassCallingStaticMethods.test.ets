@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ export default function callingStaticMethodsTest() {
       console.log('loadFailed', e.message);
     }
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Boolean_0100
     * @tc.name      : Class_CallStaticMethodByName_Boolean_0100
     * @tc.desc      : MediumTest
@@ -49,7 +49,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Boolean_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Boolean_A_0100
     * @tc.name      : Class_CallStaticMethodByName_Boolean_A_0100
     * @tc.desc      : MediumTest
@@ -68,7 +68,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Boolean_A_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Boolean_V_0100
     * @tc.name      : Class_CallStaticMethodByName_Boolean_V_0100
     * @tc.desc      : MediumTest
@@ -87,7 +87,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Boolean_V_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Char_0100
     * @tc.name      : Class_CallStaticMethodByName_Char_0100
     * @tc.desc      : MediumTest
@@ -106,7 +106,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Char_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Char_A_0100
     * @tc.name      : Class_CallStaticMethodByName_Char_A_0100
     * @tc.desc      : MediumTest
@@ -125,7 +125,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Char_A_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Char_V_0100
     * @tc.name      : Class_CallStaticMethodByName_Char_V_0100
     * @tc.desc      : MediumTest
@@ -144,7 +144,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Char_V_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Byte_0100
     * @tc.name      : Class_CallStaticMethodByName_Byte_0100
     * @tc.desc      : MediumTest
@@ -163,7 +163,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Byte_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Byte_A_0100
     * @tc.name      : Class_CallStaticMethodByName_Byte_A_0100
     * @tc.desc      : MediumTest
@@ -182,7 +182,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Byte_A_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Byte_V_0100
     * @tc.name      : Class_CallStaticMethodByName_Byte_V_0100
     * @tc.desc      : MediumTest
@@ -201,7 +201,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Byte_V_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Short_0100
     * @tc.name      : Class_CallStaticMethodByName_Short_0100
     * @tc.desc      : MediumTest
@@ -220,7 +220,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Short_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Short_A_0100
     * @tc.name      : Class_CallStaticMethodByName_Short_A_0100
     * @tc.desc      : MediumTest
@@ -239,7 +239,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Short_A_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Short_V_0100
     * @tc.name      : Class_CallStaticMethodByName_Short_V_0100
     * @tc.desc      : MediumTest
@@ -258,7 +258,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Short_V_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Int_0100
     * @tc.name      : Class_CallStaticMethodByName_Int_0100
     * @tc.desc      : MediumTest
@@ -277,7 +277,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Int_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Int_A_0100
     * @tc.name      : Class_CallStaticMethodByName_Int_A_0100
     * @tc.desc      : MediumTest
@@ -296,7 +296,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Int_A_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Int_V_0100
     * @tc.name      : Class_CallStaticMethodByName_Int_V_0100
     * @tc.desc      : MediumTest
@@ -315,7 +315,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Int_V_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Long_0100
     * @tc.name      : Class_CallStaticMethodByName_Long_0100
     * @tc.desc      : MediumTest
@@ -334,7 +334,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Long_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Long_A_0100
     * @tc.name      : Class_CallStaticMethodByName_Long_A_0100
     * @tc.desc      : MediumTest
@@ -353,7 +353,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Long_A_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Long_V_0100
     * @tc.name      : Class_CallStaticMethodByName_Long_V_0100
     * @tc.desc      : MediumTest
@@ -372,7 +372,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Long_V_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Float_0100
     * @tc.name      : Class_CallStaticMethodByName_Float_0100
     * @tc.desc      : MediumTest
@@ -391,7 +391,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Float_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Float_A_0100
     * @tc.name      : Class_CallStaticMethodByName_Float_A_0100
     * @tc.desc      : MediumTest
@@ -410,7 +410,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Float_A_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Float_V_0100
     * @tc.name      : Class_CallStaticMethodByName_Float_V_0100
     * @tc.desc      : MediumTest
@@ -429,7 +429,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Float_V_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Double_0100
     * @tc.name      : Class_CallStaticMethodByName_Double_0100
     * @tc.desc      : MediumTest
@@ -448,7 +448,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Double_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Double_A_0100
     * @tc.name      : Class_CallStaticMethodByName_Double_A_0100
     * @tc.desc      : MediumTest
@@ -467,7 +467,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Double_A_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Double_V_0100
     * @tc.name      : Class_CallStaticMethodByName_Double_V_0100
     * @tc.desc      : MediumTest
@@ -486,7 +486,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Double_V_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Ref_0100
     * @tc.name      : Class_CallStaticMethodByName_Ref_0100
     * @tc.desc      : MediumTest
@@ -505,7 +505,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Ref_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Ref_A_0100
     * @tc.name      : Class_CallStaticMethodByName_Ref_A_0100
     * @tc.desc      : MediumTest
@@ -524,7 +524,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Ref_A_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Ref_V_0100
     * @tc.name      : Class_CallStaticMethodByName_Ref_V_0100
     * @tc.desc      : MediumTest
@@ -543,7 +543,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Ref_V_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Void_0100
     * @tc.name      : Class_CallStaticMethodByName_Void_0100
     * @tc.desc      : MediumTest
@@ -562,7 +562,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Void_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Void_A_0100
     * @tc.name      : Class_CallStaticMethodByName_Void_A_0100
     * @tc.desc      : MediumTest
@@ -581,7 +581,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Void_A_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethodByName_Void_V_0100
     * @tc.name      : Class_CallStaticMethodByName_Void_V_0100
     * @tc.desc      : MediumTest
@@ -600,7 +600,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethodByName_Void_V_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethod_Short_0100
     * @tc.name      : Class_CallStaticMethod_Short_0100
     * @tc.desc      : MediumTest
@@ -619,7 +619,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethod_Short_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethod_Short_A_0100
     * @tc.name      : Class_CallStaticMethod_Short_A_0100
     * @tc.desc      : MediumTest
@@ -638,7 +638,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethod_Short_A_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethod_Short_V_0100
     * @tc.name      : Class_CallStaticMethod_Short_V_0100
     * @tc.desc      : MediumTest
@@ -657,7 +657,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethod_Short_V_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethod_Int_0100
     * @tc.name      : Class_CallStaticMethod_Int_0100
     * @tc.desc      : MediumTest
@@ -676,7 +676,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethod_Int_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethod_Int_A_0100
     * @tc.name      : Class_CallStaticMethod_Int_A_0100
     * @tc.desc      : MediumTest
@@ -695,7 +695,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethod_Int_A_0100 end');
       })
 
-    /*
+    /**
     * @tc.number    : Class_CallStaticMethod_Int_V_0100
     * @tc.name      : Class_CallStaticMethod_Int_V_0100
     * @tc.desc      : MediumTest
@@ -714,7 +714,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethod_Int_V_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Class_CallStaticMethod_Double_0100
      * @tc.name      : Class_CallStaticMethod_Double_0100
      * @tc.desc      : MediumTest
@@ -733,7 +733,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethod_Double_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Class_CallStaticMethod_Double_A_0100
      * @tc.name      : Class_CallStaticMethod_Double_A_0100
      * @tc.desc      : MediumTest
@@ -752,7 +752,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethod_Double_A_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Class_CallStaticMethod_Double_V_0100
      * @tc.name      : Class_CallStaticMethod_Double_V_0100
      * @tc.desc      : MediumTest
@@ -771,7 +771,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethod_Double_V_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Class_CallStaticMethod_Void_0100
      * @tc.name      : Class_CallStaticMethod_Void_0100
      * @tc.desc      : MediumTest
@@ -790,7 +790,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethod_Void_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Class_CallStaticMethod_Void_A_0100
      * @tc.name      : Class_CallStaticMethod_Void_A_0100
      * @tc.desc      : MediumTest
@@ -809,7 +809,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethod_Void_A_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Class_CallStaticMethod_Void_V_0100
      * @tc.name      : Class_CallStaticMethod_Void_V_0100
      * @tc.desc      : MediumTest
@@ -828,7 +828,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethod_Void_V_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Class_CallStaticMethod_Long_0100
      * @tc.name      : Class_CallStaticMethod_Long_0100
      * @tc.desc      : MediumTest
@@ -847,7 +847,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethod_Long_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Class_CallStaticMethod_Float_0100
      * @tc.name      : Class_CallStaticMethod_Float_0100
      * @tc.desc      : MediumTest
@@ -866,7 +866,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethod_Float_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Class_CallStaticMethod_Ref_0100
      * @tc.name      : Class_CallStaticMethod_Ref_0100
      * @tc.desc      : MediumTest
@@ -885,7 +885,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethod_Ref_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Class_CallStaticMethod_Ref_V_0100
      * @tc.name      : Class_CallStaticMethod_Ref_V_0100
      * @tc.desc      : MediumTest
@@ -904,7 +904,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethod_Ref_V_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Class_CallStaticMethod_Ref_A_0100
      * @tc.name      : Class_CallStaticMethod_Ref_A_0100
      * @tc.desc      : MediumTest
@@ -923,7 +923,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethod_Ref_A_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Class_CallStaticMethod_Boolean_0100
      * @tc.name      : Class_CallStaticMethod_Boolean_0100
      * @tc.desc      : MediumTest
@@ -942,7 +942,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethod_Boolean_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Class_CallStaticMethod_Boolean_A_0100
      * @tc.name      : Class_CallStaticMethod_Boolean_A_0100
      * @tc.desc      : MediumTest
@@ -961,7 +961,7 @@ export default function callingStaticMethodsTest() {
         console.log('Class_CallStaticMethod_Boolean_A_0100 end');
       })
 
-    /*
+    /**
      * @tc.number    : Class_CallStaticMethod_Boolean_V_0100
      * @tc.name      : Class_CallStaticMethod_Boolean_V_0100
      * @tc.desc      : MediumTest
