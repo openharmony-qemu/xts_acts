@@ -35,7 +35,9 @@ import {
   ClickType,
   BaseItemInfo,
   SaveMode,
-  ItemDisplayRatio
+  ItemDisplayRatio，
+  BadgeConfig,
+  BadgeType
 } from '@ohos.file.PhotoPickerComponent';
 import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo,
   AlbumPickerController } from '@ohos.file.AlbumPickerComponent';
@@ -64,6 +66,21 @@ async function routeToUrl(options: router.RouterOptions) {
   } catch (err) {
     console.error("testPicker page error:" + err);
   }
+}
+
+function getDefaultPickerOptions(): PickerOptions {
+  let pickerOptions: PickerOptions = new PickerOptions();
+  pickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
+  pickerOptions.isSearchSupported = false;
+  pickerOptions.isPhotoTakingSupported = false;
+  pickerOptions.isRepeatSelectSupported = false;
+  pickerOptions.maxSelectNumber = 500;
+  pickerOptions.maxSelectedReminderMode = ReminderMode.TOAST;
+  pickerOptions.maxPhotoSelectNumber = 500;
+  pickerOptions.maxVideoSelectNumber = 500;
+  pickerOptions.photoBrowserBackgroundColorMode = PickerColorMode.AUTO;
+  pickerOptions.orientation = PickerOrientation.HORIZONTAL;
+  return pickerOptions;
 }
 
 function getDefaultPickerOptions(): PickerOptions {
@@ -2305,6 +2322,97 @@ export default function TextPicker() {
       await CommonFunc.sleep(2000);
       router.back();
       console.info("testPicker49 finish");
+      done();
+    });
+
+    /**
+     * @tc.number    : testPicker50
+     * @tc.name      : testPicker50
+     * @tc.desc      : Testing PhotoPicker BadgeConfig
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testPicker50', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let str1: string = 'file://media/Photo/64/IMG_1/IMG_1.gif';
+      let str2: string = 'file://media/Photo/64/IMG_2/IMG_2.gif';
+      let str3: string = 'file://media/Photo/64/IMG_3/IMG_3.gif';
+      const uris = Array(1000).fill(str1).map((item: string, index: number)=>{
+        return item + index;
+      })
+      uris.push(str1);
+      uris.push(str2);
+      uris.push(str3);
+
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      let pickerController: PickerController = new PickerController();
+      const badgeConfig = new BadgeConfig();
+      badgeConfig.badgeType = BadgeType.BADGE_UPLOADED;
+      badgeConfig.uris = uris;
+      pickerOptions.badgeConfig = badgeConfig;
+      setTimeout(()=>{
+        pickerController.setData(DataType.SET_BADGE_CONFIGS, uris);
+        setTimeout(()=>{
+          pickerController.addData(DataType.SET_BADGE_CONFIGS, uris);
+          setTimeout(()=>{
+            pickerController.deleteData(DataType.SET_BADGE_CONFIGS, uris);
+          }, 1000);
+        }, 1000);
+      }, 1000);
+      let code: number = EventType.PHOTO_PICKER_INFO;
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      }
+      await routeToUrl(options);
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+      await CommonFunc.sleep(2000);
+      router.back();
+      done();
+    });
+
+    /**
+     * @tc.number    : testPicker51
+     * @tc.name      : testPicker51
+     * @tc.desc      : Testing CompleteButtonText
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testPicker51', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let sheetPickerOptions: photoAccessHelper.PhotoSelectOptions = getSheetPickerOptions();
+      let contextRecoveryInfo = {
+        "albumUri" : "",
+        "displayName": "IMG_20240522_085513_3.jpg",
+        "recommendationType": 0,
+        "selectedRecommendationType": 0,
+        "time": 1756371999125,
+        "version": 1.0
+      } as photoAccessHelper.ContextRecoveryInfo;
+      sheetPickerOptions.contextRecoveryInfo = contextRecoveryInfo;
+      let options: router.RouterOptions = {
+        url: 'MainAbility/page/BindSheetPicker',
+        params: {
+          pickerOptions: sheetPickerOptions,
+        }
+      }
+      for (let index = 0; index < 3; index++){
+        await testCompleteButton(driver, options, index);
+      }
+      let testFinished: boolean = true;
+      expect(testFinished).assertTrue();
       done();
     });
   })
