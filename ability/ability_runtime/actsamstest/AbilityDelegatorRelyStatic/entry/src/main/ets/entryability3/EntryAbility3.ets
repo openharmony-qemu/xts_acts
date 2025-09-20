@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import UIAbility from '@ohos.app.ability.UIAbility';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
@@ -19,15 +20,33 @@ import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import CommonEventManager from '@ohos.commonEventManager';
+
 class EntryAbility3 extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag EntryAbility3', 'EntryAbility onCreate ' + want?.action);
+    if(want?.action == 'killAllProcess-callback'){
+      setTimeout(()=>{
+        this.context.getApplicationContext().killAllProcesses((err:BusinessError | null):void=>{
+          hilog.info(0x0000, 'testTag EntryAbility3', 'killAllProcesses result' + err?.code);
+        })
+      },1000)
+    }
     if(want?.action == 'killAllProcess-promise'){
       setTimeout(()=>{
+        this.context.getApplicationContext().killAllProcesses().then(():void=>{
+          hilog.info(0x0000, 'testTag EntryAbility3', 'killAllProcesses promiseresult');
+        }).catch((err:BusinessError):void=>{
+          hilog.info(0x0000, 'testTag EntryAbility3', 'killAllProcesses promise err' + err?.code);
+        })
       },1000)
     }
     if(want?.action == 'killAllProcess-clearPageStack'){
       setTimeout(()=>{
+        this.context.getApplicationContext().killAllProcesses(false).then(():void=>{
+          hilog.info(0x0000, 'testTag EntryAbility3', 'killAllProcesses clearPageStackresult');
+        }).catch((err:BusinessError):void=>{
+          hilog.info(0x0000, 'testTag EntryAbility3', 'killAllProcesses clearPageStack err' + err?.code);
+        })
       },1000)
     }
     if(want?.action == 'clearUpApplicationData-callback'){
