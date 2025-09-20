@@ -1710,12 +1710,12 @@ export default function graphicImagePixelMap() {
       })
 
     /**
-     * @tc.number: graphicImagePixelMap_static_8000
-     * @tc.name: graphicImagePixelMap_static_8000
-     * @tc.desc: image API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number     graphicImagePixelMap_static_8000
+     * @tc.name       graphicImagePixelMap_static_8000
+     * @tc.desc       image API ArkTS1.2
+     * @tc.size       SmallTest
+     * @tc.type       Function
+     * @tc.level      Level0
      */
     it('graphicImagePixelMap_static_8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
