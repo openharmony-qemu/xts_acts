@@ -56,7 +56,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_0100
-     * @tc.name parse cert, issuer chinese included, Promise style.
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_0100
      * @tc.desc The X509 Cert Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -92,7 +92,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_0200
-     * @tc.name parse cert, issuer chinese not included, Promise style.
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_0200
      * @tc.desc The X509 Cert Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -131,7 +131,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_0300
-     * @tc.name parse cert, issuer chinese not included, Promise style.
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_0300
      * @tc.desc The X509 Cert Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -164,7 +164,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_0400
-     * @tc.name parse cert, issuer chinese included, Promise style.
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_0400
      * @tc.desc The X509 Cert Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -197,7 +197,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_0500
-     * @tc.name parse cert, X500DistinguishedName issuer chinese included
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_0500
      * @tc.desc The X509 Cert Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -233,7 +233,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_0600
-     * @tc.name parse cert, X500DistinguishedName issuer chinese not included
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_0600
      * @tc.desc The X509 Cert Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -270,7 +270,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_0700
-     * @tc.name parse cert, X500DistinguishedName subject chinese not included
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_0700
      * @tc.desc The X509 Cert Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -307,7 +307,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_0800
-     * @tc.name parse cert, X500DistinguishedName subject chinese included
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_0800
      * @tc.desc The X509 Cert Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -343,7 +343,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_0900
-     * @tc.name parse cert, X500DistinguishedName subject chinese included
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_0900
      * @tc.desc The X509 Cert Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -383,7 +383,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_1000
-     * @tc.name parse cert, create X500DistinguishedName object with string, subject chinese included
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_1000
      * @tc.desc The X500DistinguishedName string
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -411,7 +411,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_1100
-     * @tc.name parse cert, create chain and get x509 cert, subject chinese included
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_1100
      * @tc.desc The chain string
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -459,7 +459,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_1200
-     * @tc.name parse cert, create collection\crl and get x509 cert, issuer chinese included
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_1200
      * @tc.desc The collection crl string
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -507,7 +507,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_1300
-     * @tc.name parse cert, issuer chinese not included
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_1300
      * @tc.desc The X509 Cert Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -532,7 +532,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_1400
-     * @tc.name parse cert, create collection\crl and get x509 cert, issuer chinese included
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_1400
      * @tc.desc The X509 Cert Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -594,7 +594,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_1500
-     * @tc.name parse pkcs12 cert and get x509 cert, issuer chinese included
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_1500
      * @tc.desc The PKCS12 Cert DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -650,7 +650,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_1600
-     * @tc.name parse cert, subject is empty
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_1600
      * @tc.desc The X509 Cert Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -695,7 +695,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_1700
-     * @tc.name parse cert, issuer is empty
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_1700
      * @tc.desc The X509 Cert Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -759,7 +759,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_1800
-     * @tc.name parse cert, issuer include chinese
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_1800
      * @tc.desc The X509 Cert CRL Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -794,7 +794,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_1900
-     * @tc.name parse cert, issuer not include chinese
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_1900
      * @tc.desc The X509 Cert CRL Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -829,7 +829,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_2000
-     * @tc.name parse cert, issuer not include chinese
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_2000
      * @tc.desc The X509 Cert CRL Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -862,7 +862,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_2100
-     * @tc.name parse cert, issuer include chinese
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_2100
      * @tc.desc The X509 Cert CRL Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -895,7 +895,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_2200
-     * @tc.name parse cert, issuer include chinese
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_2200
      * @tc.desc The X509 Cert CRL Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -930,7 +930,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_2300
-     * @tc.name parse cert, issuer include chinese
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_2300
      * @tc.desc The X509 Cert CRL Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -966,7 +966,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_2400
-     * @tc.name parse cert, issuer include chinese
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_2400
      * @tc.desc The X509 Cert CRL Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -1004,7 +1004,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_2500
-     * @tc.name parse cert, issuer include chinese
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_2500
      * @tc.desc The X509 Cert CRL Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -1052,7 +1052,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_2600
-     * @tc.name parse cert, issuer not include chinese
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_2600
      * @tc.desc The X509 Cert CRL Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -1095,7 +1095,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_2700
-     * @tc.name parse cert, issuer include chinese
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_2700
      * @tc.desc The X509 Cert CRL Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -1135,7 +1135,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_2800
-     * @tc.name parse cert, issuer not include chinese
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_2800
      * @tc.desc The X509 Cert CRL Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -1175,7 +1175,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_2900
-     * @tc.name parse cert, issuer include chinese
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_2900
      * @tc.desc The X509 Cert CRL Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
@@ -1215,7 +1215,7 @@ export default function certFrameworkCertResolutionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertResolution_Func_3000
-     * @tc.name parse cert, issuer not include chinese
+     * @tc.name SUB_Security_Cert_Framework_CertResolution_Func_3000
      * @tc.desc The X509 Cert CRL Format is PEM\DER
      * @tc.size Mediumtest
      * @tc.level Level0
