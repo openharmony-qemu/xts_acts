@@ -117,13 +117,13 @@ export default function abilityTest() {
             console.info('TestLog: End Testing avSession Interfaces');
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_READ_SESSION_ID_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_READ_SESSION_ID_STATIC_0100
-         * @tc.desc      : read property sessionId of AVSession & Controler
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_READ_SESSION_ID_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_READ_SESSION_ID_STATIC_0100
+         * @tc.desc        read property sessionId of AVSession & Controler
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_READ_SESSION_ID_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -137,13 +137,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0100
-         * @tc.desc      : Testing call setAVMetadata(promise) set assetId
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0100
+         * @tc.desc        Testing call setAVMetadata(promise) set assetId
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
@@ -176,13 +176,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0200
-         * @tc.desc      : Testing call setAVMetadata(promise) set artist
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0200
+         * @tc.desc        Testing call setAVMetadata(promise) set artist
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0200', Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -214,13 +214,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0300
-         * @tc.desc      : Testing call setAVMetadata(promise) set author
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0300
+         * @tc.desc        Testing call setAVMetadata(promise) set author
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -251,13 +251,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0400
-         * @tc.desc      : Testing call setAVMetadata(promise) set album
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0400
+         * @tc.desc        Testing call setAVMetadata(promise) set album
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -288,13 +288,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0500
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0500
-         * @tc.desc      : Testing call setAVMetadata(promise) set writer
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0500
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0500
+         * @tc.desc        Testing call setAVMetadata(promise) set writer
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -326,13 +326,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0600
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0600
-         * @tc.desc      : Testing call setAVMetadata(promise) set composer
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0600
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0600
+         * @tc.desc        Testing call setAVMetadata(promise) set composer
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -363,13 +363,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0700
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0700
-         * @tc.desc      : Testing call setAVMetadata(promise) set duration
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0700
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0700
+         * @tc.desc        Testing call setAVMetadata(promise) set duration
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -402,13 +402,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0800
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0800
-         * @tc.desc      : Testing call setAVMetadata(promise) set mediaImage(url)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0800
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0800
+         * @tc.desc        Testing call setAVMetadata(promise) set mediaImage(url)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -439,13 +439,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0900
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0900
-         * @tc.desc      : Testing call setAVMetadata(promise) set mediaImage(pixelMap)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0900
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0900
+         * @tc.desc        Testing call setAVMetadata(promise) set mediaImage(pixelMap)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -493,13 +493,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1100
-         * @tc.desc      : Testing call setAVMetadata(promise) set subtitle
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1100
+         * @tc.desc        Testing call setAVMetadata(promise) set subtitle
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -530,13 +530,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1200
-         * @tc.desc      : Testing call setAVMetadata(promise) set description
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1200
+         * @tc.desc        Testing call setAVMetadata(promise) set description
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -568,13 +568,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1300
-         * @tc.desc      : Testing call setAVMetadata(promise) set lyric
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1300
+         * @tc.desc        Testing call setAVMetadata(promise) set lyric
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -605,13 +605,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1400
-         * @tc.desc      : Testing call setAVMetadata(promise) set previousAssetId & nextAssetId
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1400
+         * @tc.desc        Testing call setAVMetadata(promise) set previousAssetId & nextAssetId
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -644,13 +644,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1500
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1500
-         * @tc.desc      : Testing call setAVMetadata(promise) set filter(TYPE_CAST_PLUS_STREAM)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1500
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1500
+         * @tc.desc        Testing call setAVMetadata(promise) set filter(TYPE_CAST_PLUS_STREAM)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -682,13 +682,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1600
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1600
-         * @tc.desc      : Testing call setAVMetadata(promise) set filter(TYPE_LOCAL)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1600
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1600
+         * @tc.desc        Testing call setAVMetadata(promise) set filter(TYPE_LOCAL)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -719,13 +719,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1700
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1700
-         * @tc.desc      : Testing call setAVMetadata(promise) set filter(TYPE_CAST_PLUS_MIRROR)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1700
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1700
+         * @tc.desc        Testing call setAVMetadata(promise) set filter(TYPE_CAST_PLUS_MIRROR)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let metadata: avSession.AVMetadata = {
@@ -755,13 +755,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1800
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1800
-         * @tc.desc      : Testing call setAVMetadata(promise) set skipIntervals
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1800
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1800
+         * @tc.desc        Testing call setAVMetadata(promise) set skipIntervals
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -792,13 +792,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2000
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2000
-         * @tc.desc      : Testing call setAVMetadata(promise) set avQueueName、avQueueId、avQueueImage(string)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2000
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2000
+         * @tc.desc        Testing call setAVMetadata(promise) set avQueueName、avQueueId、avQueueImage(string)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -834,13 +834,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2100
-         * @tc.desc      : Testing call setAVMetadata(promise) set displayTags
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2100
+         * @tc.desc        Testing call setAVMetadata(promise) set displayTags
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -872,13 +872,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0100
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set state & activeItemId
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0100
+         * @tc.desc        Testing call setAVPlaybackState(promise) set state & activeItemId
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
@@ -911,13 +911,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0200
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set speed
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0200
+         * @tc.desc        Testing call setAVPlaybackState(promise) set speed
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -949,13 +949,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0300
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set position
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0300
+         * @tc.desc        Testing call setAVPlaybackState(promise) set position
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -989,13 +989,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0400
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set bufferedTime
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0400
+         * @tc.desc        Testing call setAVPlaybackState(promise) set bufferedTime
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1027,13 +1027,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0500
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0500
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set loopMode(LOOP_MODE_SEQUENCE)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0500
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0500
+         * @tc.desc        Testing call setAVPlaybackState(promise) set loopMode(LOOP_MODE_SEQUENCE)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1065,13 +1065,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0600
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0600
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set loopMode(LOOP_MODE_SINGLE)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0600
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0600
+         * @tc.desc        Testing call setAVPlaybackState(promise) set loopMode(LOOP_MODE_SINGLE)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1103,13 +1103,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0700
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0700
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set loopMode(LOOP_MODE_LIST)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0700
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0700
+         * @tc.desc        Testing call setAVPlaybackState(promise) set loopMode(LOOP_MODE_LIST)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1141,13 +1141,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0800
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0800
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set loopMode(LOOP_MODE_SHUFFLE)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0800
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0800
+         * @tc.desc        Testing call setAVPlaybackState(promise) set loopMode(LOOP_MODE_SHUFFLE)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1179,13 +1179,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0900
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0900
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set isFavorite
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0900
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0900
+         * @tc.desc        Testing call setAVPlaybackState(promise) set isFavorite
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1217,13 +1217,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1000
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1000
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set state(PLAYBACK_STATE_INITIAL)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1000
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1000
+         * @tc.desc        Testing call setAVPlaybackState(promise) set state(PLAYBACK_STATE_INITIAL)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1255,13 +1255,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1100
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set state(PLAYBACK_STATE_PREPARE)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1100
+         * @tc.desc        Testing call setAVPlaybackState(promise) set state(PLAYBACK_STATE_PREPARE)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1293,13 +1293,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1200
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set state(PLAYBACK_STATE_PAUSE)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1200
+         * @tc.desc        Testing call setAVPlaybackState(promise) set state(PLAYBACK_STATE_PAUSE)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1331,13 +1331,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1300
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set state(PLAYBACK_STATE_FAST_FORWARD)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1300
+         * @tc.desc        Testing call setAVPlaybackState(promise) set state(PLAYBACK_STATE_FAST_FORWARD)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1369,13 +1369,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1400
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set state(PLAYBACK_STATE_REWIND)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1400
+         * @tc.desc        Testing call setAVPlaybackState(promise) set state(PLAYBACK_STATE_REWIND)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1407,13 +1407,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1500
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1500
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set state(PLAYBACK_STATE_STOP)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1500
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1500
+         * @tc.desc        Testing call setAVPlaybackState(promise) set state(PLAYBACK_STATE_STOP)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1445,13 +1445,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1600
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1600
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set state(PLAYBACK_STATE_IDLE)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1600
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1600
+         * @tc.desc        Testing call setAVPlaybackState(promise) set state(PLAYBACK_STATE_IDLE)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1483,13 +1483,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1700
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1700
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set state(PLAYBACK_STATE_BUFFERING)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1700
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1700
+         * @tc.desc        Testing call setAVPlaybackState(promise) set state(PLAYBACK_STATE_BUFFERING)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1521,13 +1521,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1800
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1800
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set loopMode(LOOP_MODE_CUSTOM)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1800
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1800
+         * @tc.desc        Testing call setAVPlaybackState(promise) set loopMode(LOOP_MODE_CUSTOM)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1559,13 +1559,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1900
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1900
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set maxVolume
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1900
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1900
+         * @tc.desc        Testing call setAVPlaybackState(promise) set maxVolume
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1597,13 +1597,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_2000
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_2000
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set muted
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_2000
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_2000
+         * @tc.desc        Testing call setAVPlaybackState(promise) set muted
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1635,13 +1635,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_2100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_2100
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set videoWidth & videoHeight
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_2100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_2100
+         * @tc.desc        Testing call setAVPlaybackState(promise) set videoWidth & videoHeight
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1675,13 +1675,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_2200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_2200
-         * @tc.desc      : Testing call setAVPlaybackState(promise) set duration
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_2200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_2200
+         * @tc.desc        Testing call setAVPlaybackState(promise) set duration
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1713,13 +1713,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_PROMISE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_PROMISE_STATIC_0100
-         * @tc.desc      : Testing set session active - promise
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level1
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_PROMISE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_PROMISE_STATIC_0100
+         * @tc.desc        Testing set session active - promise
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level1
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
             async (done: () => void): Promise<void> => {
@@ -1748,13 +1748,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_PROMISE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_PROMISE_STATIC_0100
-         * @tc.desc      : Testing set session deactivate - promise
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level1
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_PROMISE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_PROMISE_STATIC_0100
+         * @tc.desc        Testing set session deactivate - promise
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level1
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
             async (done: () => void): Promise<void> => {
@@ -1791,13 +1791,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_CALLBACK_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_CALLBACK_STATIC_0100
-         * @tc.desc      : Testing set session active - callback
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_CALLBACK_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_CALLBACK_STATIC_0100
+         * @tc.desc        Testing set session active - callback
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1834,13 +1834,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_CALLBACK_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_CALLBACK_STATIC_0100
-         * @tc.desc      : Testing set session deactivate - callback
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_CALLBACK_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_CALLBACK_STATIC_0100
+         * @tc.desc        Testing set session deactivate - callback
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1884,13 +1884,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAY_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPLAY_STATIC_0100
-         * @tc.desc      : bind callbacks on play events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONPLAY_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONPLAY_STATIC_0100
+         * @tc.desc        bind callbacks on play events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPLAY_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1911,13 +1911,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPAUSE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPAUSE_STATIC_0100
-         * @tc.desc      : bind callbacks on pause events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONPAUSE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONPAUSE_STATIC_0100
+         * @tc.desc        bind callbacks on pause events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPAUSE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1938,13 +1938,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSTOP_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONSTOP_STATIC_0100
-         * @tc.desc      : bind callbacks on stop events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONSTOP_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONSTOP_STATIC_0100
+         * @tc.desc        bind callbacks on stop events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSTOP_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1965,13 +1965,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_STATIC_0100
-         * @tc.desc      : bind callbacks on playNext events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_STATIC_0100
+         * @tc.desc        bind callbacks on playNext events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1992,13 +1992,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_STATIC_0100
-         * @tc.desc      : bind callbacks on playPrevious events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_STATIC_0100
+         * @tc.desc        bind callbacks on playPrevious events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2020,13 +2020,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0100
-         * @tc.desc      : bind callbacks on fastForward events(no args)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0100
+         * @tc.desc        bind callbacks on fastForward events(no args)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2048,13 +2048,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0200
-         * @tc.desc      : bind callbacks on fastForward events(10s)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0200
+         * @tc.desc        bind callbacks on fastForward events(10s)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2080,13 +2080,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0300
-         * @tc.desc      : bind callbacks on fastForward events(15s)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0300
+         * @tc.desc        bind callbacks on fastForward events(15s)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2112,13 +2112,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0400
-         * @tc.desc      : bind callbacks on fastForward events(30s)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0400
+         * @tc.desc        bind callbacks on fastForward events(30s)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             session!.on('fastForward', (time?: long) => {
@@ -2143,13 +2143,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0100
-         * @tc.desc      : bind callbacks on rewind events(no args)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0100
+         * @tc.desc        bind callbacks on rewind events(no args)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             session!.on('rewind', () => {
@@ -2170,13 +2170,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0200
-         * @tc.desc      : bind callbacks on rewind events(10s)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0200
+         * @tc.desc        bind callbacks on rewind events(10s)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             session!.on('rewind', (time?: long) => {
@@ -2201,13 +2201,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0300
-         * @tc.desc      : bind callbacks on rewind events(15s)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0300
+         * @tc.desc        bind callbacks on rewind events(15s)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             session!.on('rewind', (time?: long) => {
@@ -2232,13 +2232,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0400
-         * @tc.desc      : bind callbacks on rewind events(30s)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0400
+         * @tc.desc        bind callbacks on rewind events(30s)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             session!.on('rewind', (time?: long) => {
@@ -2263,13 +2263,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSEEK_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONSEEK_STATIC_0100
-         * @tc.desc      : bind callbacks on seek events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONSEEK_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONSEEK_STATIC_0100
+         * @tc.desc        bind callbacks on seek events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSEEK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2296,13 +2296,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_STATIC_0100
-         * @tc.desc      : bind callbacks on setSpeed events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_STATIC_0100
+         * @tc.desc        bind callbacks on setSpeed events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             session!.on('setSpeed', (callback) => {
@@ -2328,13 +2328,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_STATIC_0100
-         * @tc.desc      : bind callbacks on setLoopMode events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_STATIC_0100
+         * @tc.desc        bind callbacks on setLoopMode events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2362,13 +2362,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_STATIC_0100
-         * @tc.desc      : bind callbacks on toggleFavorite events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_STATIC_0100
+         * @tc.desc        bind callbacks on toggleFavorite events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2395,13 +2395,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAY_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAY_STATIC_0100
-         * @tc.desc      : unbind all callbacks on play events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFPLAY_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFPLAY_STATIC_0100
+         * @tc.desc        unbind all callbacks on play events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAY_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let callback1 = () => {
@@ -2433,13 +2433,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAY_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAY_STATIC_0200
-         * @tc.desc      : Unbind the specified callback on play events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFPLAY_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFPLAY_STATIC_0200
+         * @tc.desc        Unbind the specified callback on play events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAY_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let callback1 = () => {
@@ -2471,13 +2471,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_STATIC_0100
-         * @tc.desc      : unbind all callbacks on pause events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_STATIC_0100
+         * @tc.desc        unbind all callbacks on pause events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let callback1 = () => {
@@ -2509,13 +2509,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_STATIC_0200
-         * @tc.desc      : Unbind the specified callback on pause events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_STATIC_0200
+         * @tc.desc        Unbind the specified callback on pause events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let callback1 = () => {
@@ -2547,13 +2547,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSTOP_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFSTOP_STATIC_0100
-         * @tc.desc      : unbind all callbacks on stop events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFSTOP_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFSTOP_STATIC_0100
+         * @tc.desc        unbind all callbacks on stop events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSTOP_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let callback1 = () => {
@@ -2585,13 +2585,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSTOP_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFSTOP_STATIC_0200
-         * @tc.desc      : Unbind the specified callback on stop events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFSTOP_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFSTOP_STATIC_0200
+         * @tc.desc        Unbind the specified callback on stop events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSTOP_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let callback1 = () => {
@@ -2622,13 +2622,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_STATIC_0100
-         * @tc.desc      : unbind all callbacks on playNext events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_STATIC_0100
+         * @tc.desc        unbind all callbacks on playNext events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let callback1 = () => {
@@ -2659,13 +2659,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_STATIC_0200
-         * @tc.desc      : Unbind the specified callback on playNext events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_STATIC_0200
+         * @tc.desc        Unbind the specified callback on playNext events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2696,13 +2696,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_STATIC_0100
-         * @tc.desc      : unbind all callbacks on playPrevious events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_STATIC_0100
+         * @tc.desc        unbind all callbacks on playPrevious events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2733,13 +2733,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_STATIC_0200
-         * @tc.desc      : Unbind the specified callback on playPrevious events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_STATIC_0200
+         * @tc.desc        Unbind the specified callback on playPrevious events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2770,13 +2770,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_STATIC_0100
-         * @tc.desc      : unbind all callbacks on fastForward events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_STATIC_0100
+         * @tc.desc        unbind all callbacks on fastForward events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2807,13 +2807,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_STATIC_0200
-         * @tc.desc      : Unbind the specified callback on fastForward events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_STATIC_0200
+         * @tc.desc        Unbind the specified callback on fastForward events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2844,13 +2844,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFREWIND_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFREWIND_STATIC_0100
-         * @tc.desc      : unbind all callbacks on rewind events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFREWIND_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFREWIND_STATIC_0100
+         * @tc.desc        unbind all callbacks on rewind events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFREWIND_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let callback1 = () => {
@@ -2880,13 +2880,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFREWIND_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFREWIND_STATIC_0200
-         * @tc.desc      : Unbind the specified callback on rewind events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFREWIND_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFREWIND_STATIC_0200
+         * @tc.desc        Unbind the specified callback on rewind events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFREWIND_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let callback1 = () => {
@@ -2916,13 +2916,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSEEK_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFSEEK_STATIC_0100
-         * @tc.desc      : unbind all callbacks on seek events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFSEEK_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFSEEK_STATIC_0100
+         * @tc.desc        unbind all callbacks on seek events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSEEK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let callback1 = (data: long) => {
@@ -2956,13 +2956,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSEEK_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFSEEK_STATIC_0200
-         * @tc.desc      : Unbind the specified callback on seek events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFSEEK_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFSEEK_STATIC_0200
+         * @tc.desc        Unbind the specified callback on seek events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSEEK_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let callback1 = (data: long) => {
@@ -2996,13 +2996,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_STATIC_0100
-         * @tc.desc      : unbind all callbacks on setSpeed events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_STATIC_0100
+         * @tc.desc        unbind all callbacks on setSpeed events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3037,13 +3037,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_STATIC_0200
-         * @tc.desc      : Unbind the specified callback on setSpeed events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_STATIC_0200
+         * @tc.desc        Unbind the specified callback on setSpeed events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3078,13 +3078,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_STATIC_0100
-         * @tc.desc      : unbind all callbacks on setLoopMode events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_STATIC_0100
+         * @tc.desc        unbind all callbacks on setLoopMode events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3120,13 +3120,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_STATIC_0200
-         * @tc.desc      : Unbind the specified callback on setLoopMode events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_STATIC_0200
+         * @tc.desc        Unbind the specified callback on setLoopMode events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3162,13 +3162,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_STATIC_0100
-         * @tc.desc      : unbind all callbacks on toggleFavorite events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_STATIC_0100
+         * @tc.desc        unbind all callbacks on toggleFavorite events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3203,13 +3203,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_STATIC_0200
-         * @tc.desc      : Unbind the specified callback on toggleFavorite events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_STATIC_0200
+         * @tc.desc        Unbind the specified callback on toggleFavorite events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3244,13 +3244,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_STATIC_0100
-         * @tc.desc      : unbind all callbacks on handleKeyEvent events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_STATIC_0100
+         * @tc.desc        unbind all callbacks on handleKeyEvent events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3292,13 +3292,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_STATIC_0200
-         * @tc.desc      : Unbind the specified callback on handleKeyEvent events
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_STATIC_0200
+         * @tc.desc        Unbind the specified callback on handleKeyEvent events
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3331,13 +3331,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_CALLBACK_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_CALLBACK_STATIC_0100
-         * @tc.desc      : Testing call getOutputDevice(callback)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_CALLBACK_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_CALLBACK_STATIC_0100
+         * @tc.desc        Testing call getOutputDevice(callback)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             try {
@@ -3369,13 +3369,13 @@ export default function abilityTest() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_CALLBACK_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_CALLBACK_STATIC_0200
-         * @tc.desc      : Testing call getOutputDevice(callback)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_CALLBACK_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_CALLBACK_STATIC_0200
+         * @tc.desc        Testing call getOutputDevice(callback)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_CALLBACK_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             try {
@@ -3403,13 +3403,13 @@ export default function abilityTest() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_PROMISE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_PROMISE_STATIC_0100
-         * @tc.desc      : get session controller - promise
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_PROMISE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_PROMISE_STATIC_0100
+         * @tc.desc        get session controller - promise
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3425,13 +3425,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_CALLBACK_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_CALLBACK_STATIC_0100
-         * @tc.desc      : get session controller - callback
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_CALLBACK_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_CALLBACK_STATIC_0100
+         * @tc.desc        get session controller - callback
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3453,13 +3453,13 @@ export default function abilityTest() {
             }
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_CALLBACK_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_CALLBACK_STATIC_0100
-         * @tc.desc      : controller send AVKeyEvent - callback
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_CALLBACK_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_CALLBACK_STATIC_0100
+         * @tc.desc        controller send AVKeyEvent - callback
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3481,13 +3481,13 @@ export default function abilityTest() {
             }
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_PROMISE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_PROMISE_STATIC_0100
-         * @tc.desc      : controller send AVKeyEvent - promise
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_PROMISE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_PROMISE_STATIC_0100
+         * @tc.desc        controller send AVKeyEvent - promise
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3502,13 +3502,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETREALPLAYBACKPOSITIONSYNC_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETREALPLAYBACKPOSITIONSYNC_STATIC_0100
-         * @tc.desc      : get controller real playbackPosition - async
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETREALPLAYBACKPOSITIONSYNC_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETREALPLAYBACKPOSITIONSYNC_STATIC_0100
+         * @tc.desc        get controller real playbackPosition - async
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETREALPLAYBACKPOSITIONSYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3522,13 +3522,13 @@ export default function abilityTest() {
                 done();
             });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_PROMISE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_PROMISE_STATIC_0100
-         * @tc.desc      : get session support commands - promise
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_PROMISE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_PROMISE_STATIC_0100
+         * @tc.desc        get session support commands - promise
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3546,13 +3546,13 @@ export default function abilityTest() {
             done();
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_CALLBACK_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_CALLBACK_STATIC_0100
-         * @tc.desc      : get session support commands - callback
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_CALLBACK_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_CALLBACK_STATIC_0100
+         * @tc.desc        get session support commands - callback
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3578,13 +3578,13 @@ export default function abilityTest() {
                 }
             });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2200
-         * @tc.desc      : Testing call setAVMetadata(promise) set filter(ProtocolType.TYPE_DLN)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2200
+         * @tc.desc        Testing call setAVMetadata(promise) set filter(ProtocolType.TYPE_DLN)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2200', Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3616,13 +3616,13 @@ export default function abilityTest() {
             await Utils.msSleep(800);
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2300
-         * @tc.desc      : Testing call setAVMetadata(promise) set drmSchemes
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2300
+         * @tc.desc        Testing call setAVMetadata(promise) set drmSchemes
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2300', Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3656,13 +3656,13 @@ export default function abilityTest() {
         });
 
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2400
-         * @tc.desc      : Testing call setAVMetadata(promise) set singleLyricText
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2400
+         * @tc.desc        Testing call setAVMetadata(promise) set singleLyricText
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2400', Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3694,13 +3694,13 @@ export default function abilityTest() {
             await Utils.msSleep(800);
         });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_SUPPORTEDDRMCAPABILITIES_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_SUPPORTEDDRMCAPABILITIES_STATIC_0100
-         * @tc.desc      : Testing call getOutputDevice(supportedDrmCapabilities)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_SUPPORTEDDRMCAPABILITIES_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_SUPPORTEDDRMCAPABILITIES_STATIC_0100
+         * @tc.desc        Testing call getOutputDevice(supportedDrmCapabilities)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_SUPPORTEDDRMCAPABILITIES_STATIC_0100', Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3732,13 +3732,13 @@ export default function abilityTest() {
                 }
             });
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETALLCASTDISPLAYS_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETALLCASTDISPLAYS_STATIC_0100
-         * @tc.desc      : Testing call getAllCastDisplays(6600101)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETALLCASTDISPLAYS_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETALLCASTDISPLAYS_STATIC_0100
+         * @tc.desc        Testing call getAllCastDisplays(6600101)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETALLCASTDISPLAYS_STATIC_0100', Level.LEVEL2,
             async (done: () => void): Promise<void> => {

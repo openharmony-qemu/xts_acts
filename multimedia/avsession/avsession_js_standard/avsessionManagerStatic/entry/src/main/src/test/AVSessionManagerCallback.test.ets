@@ -46,13 +46,13 @@ export default function abilityTest() {
             console.info('TestLog: End Testing AVSessionManager Interfaces');
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_STATIC_0100
-         * @tc.desc      : Testing createAVSession with right parameter audio - callback
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_STATIC_0100
+         * @tc.desc        Testing createAVSession with right parameter audio - callback
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -83,13 +83,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_STATIC_0300
-         * @tc.desc      : createAVSession(callback) with invalid param(errcode 401) - empty string
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_STATIC_0300
+         * @tc.desc        createAVSession(callback) with invalid param(errcode 401) - empty string
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -105,13 +105,13 @@ export default function abilityTest() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_STATIC_0400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_STATIC_0400
-         * @tc.desc      : Testing createAVSession with right parameter video - callback
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_STATIC_0400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_STATIC_0400
+         * @tc.desc        Testing createAVSession with right parameter video - callback
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {

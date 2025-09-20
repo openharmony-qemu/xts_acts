@@ -159,13 +159,13 @@ export default function AVSessionErrorCode() {
             console.info('TestLog: End Testing avSession Interfaces');
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0100
-         * @tc.desc      : setAVMetadata(promise) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0100
+         * @tc.desc        setAVMetadata(promise) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -192,13 +192,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0300
-         * @tc.desc      : setAVMetadata(callback) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0300
+         * @tc.desc        setAVMetadata(callback) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -224,13 +224,13 @@ export default function AVSessionErrorCode() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0100
-         * @tc.desc      : setAVPlaybackState(promise) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0100
+         * @tc.desc        setAVPlaybackState(promise) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -246,13 +246,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0300
-         * @tc.desc      : setAVPlaybackState(callback) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0300
+         * @tc.desc        setAVPlaybackState(callback) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -283,13 +283,13 @@ export default function AVSessionErrorCode() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0400
-         * @tc.desc      : setAVPlaybackState(callback) with invalid params(errcode 401)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0400
+         * @tc.desc        setAVPlaybackState(callback) with invalid params(errcode 401)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -320,13 +320,13 @@ export default function AVSessionErrorCode() {
 
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_STATIC_0100
-         * @tc.desc      : test setLaunchAbility(promise) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level1
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_STATIC_0100
+         * @tc.desc        test setLaunchAbility(promise) errcode 6600102
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level1
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let wantAgentInfo: WantAgentInfo = {
@@ -356,13 +356,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_STATIC_0300
-         * @tc.desc      : setLaunchAbility(callback) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_STATIC_0300
+         * @tc.desc        setLaunchAbility(callback) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -401,13 +401,13 @@ export default function AVSessionErrorCode() {
             await Utils.msSleep(800);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_STATIC_0100
-         * @tc.desc      : session destroy(callback) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_STATIC_0100
+         * @tc.desc        session destroy(callback) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -430,13 +430,13 @@ export default function AVSessionErrorCode() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_STATIC_0200
-         * @tc.desc      : session destroy(promise) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_STATIC_0200
+         * @tc.desc        session destroy(promise) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -452,13 +452,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_STATIC_0100
-         * @tc.desc      : activate(promise) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level1
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_STATIC_0100
+         * @tc.desc        activate(promise) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level1
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
             async (done: () => void): Promise<void> => {
@@ -474,13 +474,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_STATIC_0200
-         * @tc.desc      : activate(callback) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_STATIC_0200
+         * @tc.desc        activate(callback) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -503,13 +503,13 @@ export default function AVSessionErrorCode() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_STATIC_0100
-         * @tc.desc      : deactivate(promise) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level1
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_STATIC_0100
+         * @tc.desc        deactivate(promise) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level1
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
             async (done: () => void): Promise<void> => {
@@ -525,13 +525,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_STATIC_0200
-         * @tc.desc      : deactivate(callback) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_STATIC_0200
+         * @tc.desc        deactivate(callback) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -554,13 +554,13 @@ export default function AVSessionErrorCode() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('play') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_STATIC_0100
+         * @tc.desc        on('play') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -574,13 +574,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSTOP_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONSTOP_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('stop') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONSTOP_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONSTOP_ERRORCODE_STATIC_0100
+         * @tc.desc        on('stop') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSTOP_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -594,13 +594,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPAUSE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPAUSE_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('pause') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONPAUSE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONPAUSE_ERRORCODE_STATIC_0100
+         * @tc.desc        on('pause') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPAUSE_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -614,13 +614,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('playNext') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_STATIC_0100
+         * @tc.desc        on('playNext') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -634,13 +634,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('playPrevious') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_STATIC_0100
+         * @tc.desc        on('playPrevious') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -654,13 +654,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('fastForward') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_STATIC_0100
+         * @tc.desc        on('fastForward') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -674,13 +674,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('rewind') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_STATIC_0100
+         * @tc.desc        on('rewind') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -694,13 +694,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSEEK_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONSEEK_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('seek') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONSEEK_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONSEEK_ERRORCODE_STATIC_0100
+         * @tc.desc        on('seek') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSEEK_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -714,13 +714,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('setSpeed') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_ERRORCODE_STATIC_0100
+         * @tc.desc        on('setSpeed') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -734,13 +734,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('setLoopMode') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_ERRORCODE_STATIC_0100
+         * @tc.desc        on('setLoopMode') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -754,13 +754,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('toggleFavorite') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_ERRORCODE_STATIC_0100
+         * @tc.desc        on('toggleFavorite') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -774,13 +774,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONHANDLEKEYEVENT_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONHANDLEKEYEVENT_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('handleKeyEvent') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONHANDLEKEYEVENT_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONHANDLEKEYEVENT_ERRORCODE_STATIC_0100
+         * @tc.desc        on('handleKeyEvent') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONHANDLEKEYEVENT_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -794,13 +794,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('play') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_STATIC_0100
+         * @tc.desc        off('play') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -813,13 +813,13 @@ export default function AVSessionErrorCode() {
             }
             done();
         })
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('pause') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_ERRORCODE_STATIC_0100
+         * @tc.desc        off('pause') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -832,13 +832,13 @@ export default function AVSessionErrorCode() {
             }
             done();
         })
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSTOP_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFSTOP_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('stop') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFSTOP_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFSTOP_ERRORCODE_STATIC_0100
+         * @tc.desc        off('stop') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSTOP_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -851,13 +851,13 @@ export default function AVSessionErrorCode() {
             }
             done();
         })
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('playNext') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_STATIC_0100
+         * @tc.desc        off('playNext') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -871,13 +871,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('playPrevious') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_STATIC_0100
+         * @tc.desc        off('playPrevious') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -891,13 +891,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('fastForward') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_STATIC_0100
+         * @tc.desc        off('fastForward') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -911,13 +911,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('rewind') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_STATIC_0100
+         * @tc.desc        off('rewind') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -931,13 +931,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSEEK_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFSEEK_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('seek') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFSEEK_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFSEEK_ERRORCODE_STATIC_0100
+         * @tc.desc        off('seek') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSEEK_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -950,13 +950,13 @@ export default function AVSessionErrorCode() {
             }
             done();
         })
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('setSpeed') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_ERRORCODE_STATIC_0100
+         * @tc.desc        off('setSpeed') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -970,13 +970,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('setLoopMode') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_ERRORCODE_STATIC_0100
+         * @tc.desc        off('setLoopMode') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -990,13 +990,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('toggleFavorite') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_ERRORCODE_STATIC_0100
+         * @tc.desc        off('toggleFavorite') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1009,13 +1009,14 @@ export default function AVSessionErrorCode() {
             }
             done();
         })
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('handleKeyEvent') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_ERRORCODE_STATIC_0100
+         * @tc.desc        off('handleKeyEvent') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1028,13 +1029,13 @@ export default function AVSessionErrorCode() {
             }
             done();
         })
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_STATIC_0100
-         * @tc.desc      : getOutputDevice(callback) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_STATIC_0100
+         * @tc.desc        getOutputDevice(callback) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1051,13 +1052,13 @@ export default function AVSessionErrorCode() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_STATIC_0200
-         * @tc.desc      : getOutputDevice(promise) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_STATIC_0200
+         * @tc.desc        getOutputDevice(promise) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1073,13 +1074,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_STATIC_0100
-         * @tc.desc      : getController(promise) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_STATIC_0100
+         * @tc.desc        getController(promise) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1095,13 +1096,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_STATIC_0200
-         * @tc.desc      : getController(callback) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_STATIC_0200
+         * @tc.desc        getController(callback) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1118,13 +1119,13 @@ export default function AVSessionErrorCode() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0300
-         * @tc.desc      : dispatchSessionEvent(promise) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0300
+         * @tc.desc        dispatchSessionEvent(promise) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1139,13 +1140,13 @@ export default function AVSessionErrorCode() {
             };
             done();
         })
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0600
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0600
-         * @tc.desc      : dispatchSessionEvent(callback) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0600
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0600
+         * @tc.desc        dispatchSessionEvent(callback) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1168,13 +1169,13 @@ export default function AVSessionErrorCode() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_STATIC_0300
-         * @tc.desc      : setExtras(promise) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_STATIC_0300
+         * @tc.desc        setExtras(promise) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1191,13 +1192,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_STATIC_0600
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_STATIC_0600
-         * @tc.desc      : setExtras(callback) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_STATIC_0600
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_STATIC_0600
+         * @tc.desc        setExtras(callback) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_STATIC_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1221,13 +1222,13 @@ export default function AVSessionErrorCode() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_STATIC_0400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_STATIC_0400
-         * @tc.desc      : on('commonCommand') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_STATIC_0400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_STATIC_0400
+         * @tc.desc        on('commonCommand') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1242,13 +1243,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_ERRORCODE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_ERRORCODE_STATIC_0200
-         * @tc.desc      : off('commonCommand') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_ERRORCODE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_ERRORCODE_STATIC_0200
+         * @tc.desc        off('commonCommand') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1263,13 +1264,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0100
-         * @tc.desc      : setAVQueueItems(promise) with invalid params(errcode 401)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0100
+         * @tc.desc        setAVQueueItems(promise) with invalid params(errcode 401)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1284,13 +1285,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0200
-         * @tc.desc      : setAVQueueItems(promise) with avsession does not exist(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0200
+         * @tc.desc        setAVQueueItems(promise) with avsession does not exist(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1307,13 +1308,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0300
-         * @tc.desc      : setAVQueueItems(callback) with invalid params(errcode 401)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0300
+         * @tc.desc        setAVQueueItems(callback) with invalid params(errcode 401)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1335,13 +1336,13 @@ export default function AVSessionErrorCode() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0400
-         * @tc.desc      : setAVQueueItems(callback) with avsession does not exist(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0400
+         * @tc.desc        setAVQueueItems(callback) with avsession does not exist(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1365,13 +1366,13 @@ export default function AVSessionErrorCode() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0100
-         * @tc.desc      : setAVQueueTitle(promise) with invalid params(errcode 401)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0100
+         * @tc.desc        setAVQueueTitle(promise) with invalid params(errcode 401)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1386,13 +1387,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0200
-         * @tc.desc      : setAVQueueTitle(promise) with avsession does not exist(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0200
+         * @tc.desc        setAVQueueTitle(promise) with avsession does not exist(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1409,13 +1410,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0300
-         * @tc.desc      : setAVQueueTitle(callback) with invalid params(errcode 401)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0300
+         * @tc.desc        setAVQueueTitle(callback) with invalid params(errcode 401)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1437,13 +1438,13 @@ export default function AVSessionErrorCode() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0400
-         * @tc.desc      : setAVQueueTitle(callback) with session does not exist(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0400
+         * @tc.desc        setAVQueueTitle(callback) with session does not exist(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1467,13 +1468,13 @@ export default function AVSessionErrorCode() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_STATIC_0300
-         * @tc.desc      : on('skipToQueueItem') with avsession does not exist(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_STATIC_0300
+         * @tc.desc        on('skipToQueueItem') with avsession does not exist(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {

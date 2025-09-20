@@ -35,13 +35,13 @@ export default function abilityTest() {
             console.info('TestLog: End Testing avSession Interfaces');
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_CONNECTION_STATE_ENUM_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_CONNECTION_STATE_ENUM_STATIC_0100
-         * @tc.desc      : compare all value in ConnectionState to number value
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_CONNECTION_STATE_ENUM_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_CONNECTION_STATE_ENUM_STATIC_0100
+         * @tc.desc        compare all value in ConnectionState to number value
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_CONNECTION_STATE_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -54,13 +54,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_AVCAST_CATEGORY_ENUM_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_AVCAST_CATEGORY_ENUM_STATIC_0100
-         * @tc.desc      : compare all value in AVCastCategory to number value
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_AVCAST_CATEGORY_ENUM_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_AVCAST_CATEGORY_ENUM_STATIC_0100
+         * @tc.desc        compare all value in AVCastCategory to number value
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_AVCAST_CATEGORY_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -71,13 +71,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_DEVICE_TYPE_ENUM_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_DEVICE_TYPE_ENUM_STATIC_0100
-         * @tc.desc      : compare all value in DeviceType to number value
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_DEVICE_TYPE_ENUM_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_DEVICE_TYPE_ENUM_STATIC_0100
+         * @tc.desc        compare all value in DeviceType to number value
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_DEVICE_TYPE_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -92,13 +92,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_PLAYBACKSTATE_ENUM_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_PLAYBACKSTATE_ENUM_STATIC_0100
-         * @tc.desc      : compare all value in PlaybackState to number value
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_PLAYBACKSTATE_ENUM_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_PLAYBACKSTATE_ENUM_STATIC_0100
+         * @tc.desc        compare all value in PlaybackState to number value
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_PLAYBACKSTATE_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -111,13 +111,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERROR_CODE_ENUM_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ERROR_CODE_ENUM_STATIC_0100
-         * @tc.desc      : compare all value in AVSessionErrorCode to number value
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ERROR_CODE_ENUM_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ERROR_CODE_ENUM_STATIC_0100
+         * @tc.desc        compare all value in AVSessionErrorCode to number value
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ERROR_CODE_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -150,13 +150,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERSTATE_ENUM_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERSTATE_ENUM_STATIC_0100
-         * @tc.desc      : compare all value in AVCastPickerState to number value
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERSTATE_ENUM_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERSTATE_ENUM_STATIC_0100
+         * @tc.desc        compare all value in AVCastPickerState to number value
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERSTATE_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -168,13 +168,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERSTYLE_ENUM_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERSTYLE_ENUM_STATIC_0100
-         * @tc.desc      : compare all value in AVCastPickerStyle to number value
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERSTYLE_ENUM_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERSTYLE_ENUM_STATIC_0100
+         * @tc.desc        compare all value in AVCastPickerStyle to number value
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERSTYLE_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -186,13 +186,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERCOLORMODE_ENUM_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERCOLORMODE_ENUM_STATIC_0100
-         * @tc.desc      : compare all value in AVCastPickerColorMode to number value
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERCOLORMODE_ENUM_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERCOLORMODE_ENUM_STATIC_0100
+         * @tc.desc        compare all value in AVCastPickerColorMode to number value
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERCOLORMODE_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {

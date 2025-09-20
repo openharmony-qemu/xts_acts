@@ -86,13 +86,13 @@ export default function abilityTest() {
             console.info(`${TAG}: afterAll in`)
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0200
-         * @tc.desc      : Testing getExtrasWithEvent
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0200
+         * @tc.desc        Testing getExtrasWithEvent
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -112,13 +112,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0300
-         * @tc.desc      : Testing getExtrasWithEvent
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0300
+         * @tc.desc        Testing getExtrasWithEvent
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -136,13 +136,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0400
-         * @tc.desc      : Testing getExtrasWithEvent
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0400
+         * @tc.desc        Testing getExtrasWithEvent
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -159,13 +159,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0500
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0500
-         * @tc.desc      : Testing getExtrasWithEvent
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0500
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0500
+         * @tc.desc        Testing getExtrasWithEvent
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {

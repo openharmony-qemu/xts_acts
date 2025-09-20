@@ -102,13 +102,13 @@ export default function abilityTest() {
             console.info('TestLog: End Testing avSession Interfaces');
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0100
-         * @tc.desc      : Testing call setAVMetadata(callback) set assetId
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0100
+         * @tc.desc        Testing call setAVMetadata(callback) set assetId
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -139,13 +139,13 @@ export default function abilityTest() {
             await Utils.msSleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0200
-         * @tc.desc      : Testing call setAVMetadata(callback) set artist
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0200
+         * @tc.desc        Testing call setAVMetadata(callback) set artist
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -176,13 +176,13 @@ export default function abilityTest() {
             await Utils.msSleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0300
-         * @tc.desc      : Testing call setAVMetadata(callback) set author
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0300
+         * @tc.desc        Testing call setAVMetadata(callback) set author
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -213,13 +213,13 @@ export default function abilityTest() {
             await Utils.msSleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0400
-         * @tc.desc      : Testing call setAVMetadata(callback) set album
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0400
+         * @tc.desc        Testing call setAVMetadata(callback) set album
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -250,13 +250,13 @@ export default function abilityTest() {
             await Utils.msSleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0500
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0500
-         * @tc.desc      : Testing call setAVMetadata(callback) set writer
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0500
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0500
+         * @tc.desc        Testing call setAVMetadata(callback) set writer
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -287,13 +287,13 @@ export default function abilityTest() {
             await Utils.msSleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0600
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0600
-         * @tc.desc      : Testing call setAVMetadata(callback) set composer
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0600
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0600
+         * @tc.desc        Testing call setAVMetadata(callback) set composer
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -324,13 +324,13 @@ export default function abilityTest() {
             await Utils.msSleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0700
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0700
-         * @tc.desc      : Testing call setAVMetadata(callback) set duration
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0700
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0700
+         * @tc.desc        Testing call setAVMetadata(callback) set duration
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -361,13 +361,13 @@ export default function abilityTest() {
             await Utils.msSleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0800
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0800
-         * @tc.desc      : Testing call setAVMetadata(callback) set mediaImage(url)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0800
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0800
+         * @tc.desc        Testing call setAVMetadata(callback) set mediaImage(url)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -399,13 +399,13 @@ export default function abilityTest() {
             await Utils.msSleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0900
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0900
-         * @tc.desc      : Testing call setAVMetadata(callback) set mediaImage(pixelMap)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0900
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0900
+         * @tc.desc        Testing call setAVMetadata(callback) set mediaImage(pixelMap)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -455,13 +455,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1100
-         * @tc.desc      : Testing call setAVMetadata(callback) set subtitle
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1100
+         * @tc.desc        Testing call setAVMetadata(callback) set subtitle
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -495,13 +495,13 @@ export default function abilityTest() {
             await Utils.msSleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1200
-         * @tc.desc      : Testing call setAVMetadata(callback) set description
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1200
+         * @tc.desc        Testing call setAVMetadata(callback) set description
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -533,13 +533,13 @@ export default function abilityTest() {
             await Utils.msSleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1300
-         * @tc.desc      : Testing call setAVMetadata(callback) set lyric
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1300
+         * @tc.desc        Testing call setAVMetadata(callback) set lyric
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -571,13 +571,13 @@ export default function abilityTest() {
             await Utils.msSleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1400
-         * @tc.desc      : Testing call setAVMetadata(callback) set previousAssetId & nextAssetId
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1400
+         * @tc.desc        Testing call setAVMetadata(callback) set previousAssetId & nextAssetId
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -611,13 +611,13 @@ export default function abilityTest() {
             await Utils.msSleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1500
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1500
-         * @tc.desc      : Testing call setAVMetadata(callback) set filter
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1500
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1500
+         * @tc.desc        Testing call setAVMetadata(callback) set filter
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -649,13 +649,13 @@ export default function abilityTest() {
             await Utils.msSleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1600
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1600
-         * @tc.desc      : Testing call setAVMetadata(callback) set skipIntervals
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1600
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1600
+         * @tc.desc        Testing call setAVMetadata(callback) set skipIntervals
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -687,13 +687,13 @@ export default function abilityTest() {
             await Utils.msSleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1800
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1800
-         * @tc.desc      : Testing call setAVMetadata(callback) set avQueueName、avQueueId、avQueueImage(string)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1800
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1800
+         * @tc.desc        Testing call setAVMetadata(callback) set avQueueName、avQueueId、avQueueImage(string)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -731,13 +731,13 @@ export default function abilityTest() {
             await Utils.msSleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1900
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1900
-         * @tc.desc      : Testing call setAVMetadata(callback) set displayTags
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1900
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1900
+         * @tc.desc        Testing call setAVMetadata(callback) set displayTags
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -775,13 +775,13 @@ export default function abilityTest() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_2000
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_2000
-         * @tc.desc      : Testing call setAVMetadata(callback) set singleLyricText
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_2000
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_2000
+         * @tc.desc        Testing call setAVMetadata(callback) set singleLyricText
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -818,13 +818,13 @@ export default function abilityTest() {
                 done();
             }
         })
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0100
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set state & activeItemId
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0100
+         * @tc.desc        Testing call setAVPlaybackState(callback) set state & activeItemId
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -856,13 +856,13 @@ export default function abilityTest() {
             await Utils.msSleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0200
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set speed
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0200
+         * @tc.desc        Testing call setAVPlaybackState(callback) set speed
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -895,13 +895,13 @@ export default function abilityTest() {
             await Utils.msSleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0300
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set position
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0300
+         * @tc.desc        Testing call setAVPlaybackState(callback) set position
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -934,13 +934,13 @@ export default function abilityTest() {
             await Utils.msSleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0400
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set bufferedTime
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0400
+         * @tc.desc        Testing call setAVPlaybackState(callback) set bufferedTime
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -973,13 +973,13 @@ export default function abilityTest() {
             await Utils.msSleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0500
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0500
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set loopMode(LOOP_MODE_SEQUENCE)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0500
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0500
+         * @tc.desc        Testing call setAVPlaybackState(callback) set loopMode(LOOP_MODE_SEQUENCE)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1012,13 +1012,13 @@ export default function abilityTest() {
             await Utils.msSleep(1000);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0600
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0600
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set loopMode(LOOP_MODE_SINGLE)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0600
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0600
+         * @tc.desc        Testing call setAVPlaybackState(callback) set loopMode(LOOP_MODE_SINGLE)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1051,13 +1051,13 @@ export default function abilityTest() {
             await Utils.msSleep(1000);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0700
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0700
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set loopMode(LOOP_MODE_LIST)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0700
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0700
+         * @tc.desc        Testing call setAVPlaybackState(callback) set loopMode(LOOP_MODE_LIST)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1090,13 +1090,13 @@ export default function abilityTest() {
             await Utils.msSleep(1000);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0800
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0800
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set loopMode(LOOP_MODE_SHUFFLE)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0800
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0800
+         * @tc.desc        Testing call setAVPlaybackState(callback) set loopMode(LOOP_MODE_SHUFFLE)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1129,13 +1129,13 @@ export default function abilityTest() {
             await Utils.msSleep(1000);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0900
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0900
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set isFavorite
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0900
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0900
+         * @tc.desc        Testing call setAVPlaybackState(callback) set isFavorite
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1168,13 +1168,13 @@ export default function abilityTest() {
             await Utils.msSleep(1000);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1000
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1000
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set state(PLAYBACK_STATE_IDLE)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1000
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1000
+         * @tc.desc        Testing call setAVPlaybackState(callback) set state(PLAYBACK_STATE_IDLE)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let PlaybackState10: avSession.AVPlaybackState = {
@@ -1206,13 +1206,13 @@ export default function abilityTest() {
             await Utils.msSleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1100
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set state(PLAYBACK_STATE_BUFFERING)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1100
+         * @tc.desc        Testing call setAVPlaybackState(callback) set state(PLAYBACK_STATE_BUFFERING)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1244,13 +1244,13 @@ export default function abilityTest() {
             await Utils.msSleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1200
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set loopMode(LOOP_MODE_CUSTOM)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1200
+         * @tc.desc        Testing call setAVPlaybackState(callback) set loopMode(LOOP_MODE_CUSTOM)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1286,13 +1286,13 @@ export default function abilityTest() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1300
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set maxVolume
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1300
+         * @tc.desc        Testing call setAVPlaybackState(callback) set maxVolume
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1328,13 +1328,13 @@ export default function abilityTest() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1400
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set muted
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1400
+         * @tc.desc        Testing call setAVPlaybackState(callback) set muted
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1370,13 +1370,13 @@ export default function abilityTest() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1500
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1500
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set videoWidth & videoHeight
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1500
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1500
+         * @tc.desc        Testing call setAVPlaybackState(callback) set videoWidth & videoHeight
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1413,13 +1413,13 @@ export default function abilityTest() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1600
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1600
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set duration
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1600
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1600
+         * @tc.desc        Testing call setAVPlaybackState(callback) set duration
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_STATIC_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1455,13 +1455,13 @@ export default function abilityTest() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_CALLBACK_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_CALLBACK_STATIC_0100
-         * @tc.desc      : Testing call setLaunchAbility(callback)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_CALLBACK_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_CALLBACK_STATIC_0100
+         * @tc.desc        Testing call setLaunchAbility(callback)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1514,13 +1514,13 @@ export default function abilityTest() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_CALLBACK_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_CALLBACK_STATIC_0100
-         * @tc.desc      : Testing destroy session(callback)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_CALLBACK_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_CALLBACK_STATIC_0100
+         * @tc.desc        Testing destroy session(callback)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
