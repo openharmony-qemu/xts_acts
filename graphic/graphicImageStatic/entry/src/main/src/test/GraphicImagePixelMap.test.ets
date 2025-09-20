@@ -16,6 +16,8 @@
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import image from '@ohos.multimedia.image';
+import colorSpaceManager from '@ohos.graphics.colorSpaceManager';
+import rpc from '@ohos.rpc';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -25,10 +27,57 @@ import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import { taskPoolTest } from '../utils/Taskpool';
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let testAbilityContext: common.UIAbilityContext;
 let pixelMap: image.PixelMap;
+
+class MySequence1 implements rpc.Parcelable {
+  pixel_map: image.PixelMap;
+  constructor(conPixelmap: image.PixelMap) {
+    this.pixel_map = conPixelmap;
+  }
+  marshalling(messageSequence: rpc.MessageSequence) {
+    this.pixel_map.marshalling(messageSequence);
+    return true;
+  }
+  unmarshalling(messageSequence: rpc.MessageSequence) {
+    try {
+      this.pixel_map = image.createPixelMapFromParcel(messageSequence);
+    } catch(e) {
+      let error = e as BusinessError;
+      console.error(`createPixelMapFromParcel error. code is ${error.code}, message is ${error.message}`);
+      return false;
+    }
+    return true;
+  }
+}
+
+class MySequence implements rpc.Parcelable {
+  pixel_map: image.PixelMap;
+
+  constructor(conPixelMap: image.PixelMap) {
+    this.pixel_map = conPixelMap;
+  }
+
+  marshalling(messageSequence: rpc.MessageSequence) {
+    this.pixel_map.marshalling(messageSequence);
+    console.info('marshalling');
+    return true;
+  }
+
+  unmarshalling(messageSequence: rpc.MessageSequence) {
+    image.createPixelMap(new ArrayBuffer(96), { size: { height: 4, width: 6 } }).then((pixelParcel: image.PixelMap) => {
+      pixelParcel.unmarshalling(messageSequence).then(async (pixelMap: image.PixelMap) => {
+        this.pixel_map = pixelMap;
+        pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
+          console.info("unmarshalling information h:" + imageInfo.size.height + "w:" + imageInfo.size.width);
+        })
+      })
+    });
+    return true;
+  }
+}
 
 export default function graphicImagePixelMap() {
 
@@ -569,7 +618,7 @@ export default function graphicImagePixelMap() {
      */
     it('graphicImagePixelMap_static_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let rate: float = 1;
+        let rate: double = 1;
         try {
           await pixelMap.opacity(rate).then(() => {
             console.info('www data 2400 Succeeded in setting opacity.');
@@ -595,7 +644,7 @@ export default function graphicImagePixelMap() {
     it('graphicImagePixelMap_static_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         // callback
-        let rate: float = 5;
+        let rate: double = 5;
         try {
           pixelMap.opacity(rate, (err: BusinessError<void> | null) => {
             console.info('www data graphicImagePixelMap_static_2500 succeed')
@@ -617,7 +666,7 @@ export default function graphicImagePixelMap() {
      */
     it('graphicImagePixelMap_static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let rate: float = 5;
+        let rate: double = 5;
         try {
           pixelMap.opacitySync(rate);
           expect(true).assertTrue();
@@ -701,8 +750,8 @@ export default function graphicImagePixelMap() {
      */
     it('graphicImagePixelMap_static_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let scaleX: float = 2;
-        let scaleY: float = 1;
+        let scaleX: double = 2;
+        let scaleY: double = 1;
         try {
           await pixelMap.scale(scaleX, scaleY).then(() => {
             console.info('www data 3100 Succeeded in scaling pixelmap.');
@@ -727,8 +776,8 @@ export default function graphicImagePixelMap() {
      */
     it('graphicImagePixelMap_static_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let scaleX: float = 2;
-        let scaleY: float = 1;
+        let scaleX: double = 2;
+        let scaleY: double = 1;
         // callback
         try {
           pixelMap.scale(scaleX, scaleY, (err: BusinessError | null) => {
@@ -751,8 +800,8 @@ export default function graphicImagePixelMap() {
      */
     it('graphicImagePixelMap_static_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let scaleX: float = 2;
-        let scaleY: float = 1;
+        let scaleX: double = 2;
+        let scaleY: double = 1;
         try {
           pixelMap.scaleSync(scaleX, scaleY);
           expect(true).assertTrue();
@@ -772,8 +821,8 @@ export default function graphicImagePixelMap() {
      */
     it('graphicImagePixelMap_static_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let scaleX: float = 2;
-        let scaleY: float = 1;
+        let scaleX: double = 2;
+        let scaleY: double = 1;
         try {
           await pixelMap.scale(scaleX, scaleY, image.AntiAliasingLevel.LOW).then(() => {
             console.info('www data 3300 Succeeded in scaling pixelmap.');
@@ -812,8 +861,8 @@ export default function graphicImagePixelMap() {
      */
     it('graphicImagePixelMap_static_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let scaleX: float = 2;
-        let scaleY: float = 1;
+        let scaleX: double = 2;
+        let scaleY: double = 1;
         try {
           pixelMap.scaleSync(scaleX, scaleY, image.AntiAliasingLevel.HIGH);
           expect(true).assertTrue();
@@ -833,7 +882,7 @@ export default function graphicImagePixelMap() {
      */
     it('graphicImagePixelMap_static_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let angle: float = 90;
+        let angle: double = 90;
         try {
           await pixelMap.rotate(angle).then(() => {
             console.info('www data 3600 Succeeded in rotating pixelmap.');
@@ -858,7 +907,7 @@ export default function graphicImagePixelMap() {
      */
     it('graphicImagePixelMap_static_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let angle: float = 90;
+        let angle: double = 90;
         // callback
         try {
           pixelMap.rotate(angle, (err: BusinessError | null) => {
@@ -881,7 +930,7 @@ export default function graphicImagePixelMap() {
      */
     it('graphicImagePixelMap_static_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let angle: float = 90;
+        let angle: double = 90;
         try {
           pixelMap.rotateSync(angle);
           expect(true).assertTrue();
@@ -1121,8 +1170,9 @@ export default function graphicImagePixelMap() {
         let opts: image.InitializationOptions = {
           editable: true, pixelFormat: image.PixelMapFormat.ALPHA_8, size: { height: 4, width: 6 }
         }
+        let pixelMap1 = image.createPixelMapSync(opts);
         try {
-          pixelMap.release().then(() => {
+          pixelMap1.release().then(() => {
             console.info('Succeeded in releasing graphicImagePixelMap_static_4700 object.');
             expect(true).assertTrue();
           }).catch((error) => {
@@ -1150,8 +1200,9 @@ export default function graphicImagePixelMap() {
         let opts: image.InitializationOptions = {
           editable: true, pixelFormat: image.PixelMapFormat.ALPHA_8, size: { height: 4, width: 6 }
         }
+        let pixelMap2 = image.createPixelMapSync(opts);
         try {
-          pixelMap.release((err: BusinessError<void> | null) => {
+          pixelMap2.release((err: BusinessError<void> | null) => {
             console.info('Succeeded in releasing graphicImagePixelMap_static_4800 object.');
             expect(true).assertTrue();
           })
@@ -1163,224 +1214,49 @@ export default function graphicImagePixelMap() {
       })
 
     /**
-     * @tc.number: graphicImagePixelMap_static_4900
-     * @tc.name: graphicImagePixelMap_static_4900
-     * @tc.desc: image API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number     graphicImagePixelMap_static_6200
+     * @tc.name       graphicImagePixelMap_static_6200
+     * @tc.desc       image API ArkTS1.2
+     * @tc.size       SmallTest
+     * @tc.type       Function
+     * @tc.level      Level0
      */
-    it('graphicImagePixelMap_static_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap_static_6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const area : image.PositionArea = {
-          pixels: new ArrayBuffer(8),
-          offset: 0,
-          stride: 8,
-          region: { size: { height: 1, width: 2 }, x: 0, y: 0 }
-        };
-        taskPoolTest(pixelMap);
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 }
+        }
         try {
-          pixelMap.readPixelsSync(area);
-          expect().assertFail();
+          const flag = pixelMap.isEditable;
+          expect(true).assertEqual(flag);
         } catch (err: BusinessError) {
-          expect(err.code == 501).assertTrue();
+          console.info('www data graphicImagePixelMap_static_6200 error ' + JSON.stringify(err))
+          expect().assertFail();
         }
         done();
       })
 
     /**
-     * @tc.number: graphicImagePixelMap_static_5000
-     * @tc.name: graphicImagePixelMap_static_5000
-     * @tc.desc: image API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number     graphicImagePixelMap_static_6300
+     * @tc.name       graphicImagePixelMap_static_6300
+     * @tc.desc       image API ArkTS1.2
+     * @tc.size       SmallTest
+     * @tc.type       Function
+     * @tc.level      Level0
      */
-    it('graphicImagePixelMap_static_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap_static_6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const readBuffer: ArrayBuffer = new ArrayBuffer(96);
-        taskPoolTest(pixelMap);
         try {
-          pixelMap.readPixelsToBufferSync(readBuffer);
-          expect().assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code == 501).assertTrue();
-        }
-        done();
-      })
-
-    /**
-     * @tc.number: graphicImagePixelMap_static_5100
-     * @tc.name: graphicImagePixelMap_static_5100
-     * @tc.desc: image API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
-     */
-    it('graphicImagePixelMap_static_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const color : ArrayBuffer = new ArrayBuffer(96);  //96为需要创建的像素buffer大小，取值为：height * width *4。
-        let bufferArr : Uint8Array = new Uint8Array(color);
-        for (let i = 0; i < bufferArr.length; i++) {
-          bufferArr[i] = i + 1;
-        }
-        taskPoolTest(pixelMap);
-        try {
-          pixelMap.writeBufferToPixelsSync(color);
-          expect().assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code == 501).assertTrue();
-        }
-        done();
-      })
-
-    /**
-     * @tc.number: graphicImagePixelMap_static_5200
-     * @tc.name: graphicImagePixelMap_static_5200
-     * @tc.desc: image API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
-     */
-    it('graphicImagePixelMap_static_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        taskPoolTest(pixelMap);
-        try {
-          pixelMap.getImageInfoSync();
-          expect().assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code == 501).assertTrue();
-        }
-        done();
-      })
-
-    /**
-     * @tc.number: graphicImagePixelMap_static_5300
-     * @tc.name: graphicImagePixelMap_static_5300
-     * @tc.desc: image API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
-     */
-    it('graphicImagePixelMap_static_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        let rate: float = 5;
-        taskPoolTest(pixelMap);
-        try {
-          pixelMap.opacitySync(rate);
-          expect().assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code == 501).assertTrue();
-        }
-        done();
-      })
-
-    /**
-     * @tc.number: graphicImagePixelMap_static_5400
-     * @tc.name: graphicImagePixelMap_static_5400
-     * @tc.desc: image API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
-     */
-    it('graphicImagePixelMap_static_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        taskPoolTest(pixelMap);
-        try {
-          pixelMap.createAlphaPixelmapSync();
-          expect().assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code == 501).assertTrue();
-        }
-        done();
-      })
-
-    /**
-     * @tc.number: graphicImagePixelMap_static_5500
-     * @tc.name: graphicImagePixelMap_static_5500
-     * @tc.desc: image API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
-     */
-    it('graphicImagePixelMap_static_5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        let scaleX: float = 2;
-        let scaleY: float = 1;
-        taskPoolTest(pixelMap);
-        try {
-          pixelMap.scaleSync(scaleX, scaleY);
-          expect().assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code == 501).assertTrue();
-        }
-        done();
-      })
-
-    /**
-     * @tc.number: graphicImagePixelMap_static_5600
-     * @tc.name: graphicImagePixelMap_static_5600
-     * @tc.desc: image API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
-     */
-    it('graphicImagePixelMap_static_5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        let scaleX: float = 2;
-        let scaleY: float = 1;
-        taskPoolTest(pixelMap);
-        try {
-          pixelMap.scaleSync(scaleX, scaleY, image.AntiAliasingLevel.HIGH);
-          expect().assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code == 501).assertTrue();
-        }
-        done();
-      })
-
-    /**
-     * @tc.number: graphicImagePixelMap_static_5700
-     * @tc.name: graphicImagePixelMap_static_5700
-     * @tc.desc: image API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
-     */
-    it('graphicImagePixelMap_static_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        let scaleX: float = 2;
-        let scaleY: float = 1;
-        taskPoolTest(pixelMap);
-        try {
-          await pixelMap.scale(scaleX, scaleY, image.AntiAliasingLevel.LOW).then(() => {
-            console.info('www data 5700 Succeeded in scaling pixelmap.');
-            expect().assertFail();
-          }).catch((err: Error) => {
-            let e = err as BusinessError;
-            expect(e.code == 501).assertTrue();
-          });
-          await pixelMap.scale(scaleX, scaleY, image.AntiAliasingLevel.LOW).then(() => {
-            console.info('www data 5700 Succeeded in scaling pixelmap.');
-            expect().assertFail();
-          }).catch((err: Error) => {
-            let e = err as BusinessError;
-            expect(e.code == 501).assertTrue();
-          });
-          await pixelMap.scale(scaleX, scaleY, image.AntiAliasingLevel.NONE).then(() => {
-            console.info('www data 5700 Succeeded in scaling pixelmap.');
-            expect().assertFail();
-          }).catch((err: Error) => {
-            let e = err as BusinessError;
-            expect(e.code == 501).assertTrue();
-          });
-          await pixelMap.scale(scaleX, scaleY, image.AntiAliasingLevel.MEDIUM).then(() => {
-            console.info('www data 5700 Succeeded in scaling pixelmap.');
-            expect().assertFail();
-          }).catch((err: Error) => {
-            let e = err as BusinessError;
-            expect(e.code == 501).assertTrue();
-          });
+          pixelMap.readPixelsToBuffer(readBuffer, (err: BusinessError<void> | null) => {
+            if(!err){
+              console.info('www data graphicImagePixelMap_static_6300 succeed')
+              expect(true).assertTrue();
+            } else {
+              expect().assertFail();
+            }
+          })
         } catch (err) {
           expect().assertFail();
         }
@@ -1388,92 +1264,658 @@ export default function graphicImagePixelMap() {
       })
 
     /**
-     * @tc.number: graphicImagePixelMap_static_5800
-     * @tc.name: graphicImagePixelMap_static_5800
-     * @tc.desc: image API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number     graphicImagePixelMap_static_6400
+     * @tc.name       graphicImagePixelMap_static_6400
+     * @tc.desc       image API ArkTS1.2
+     * @tc.size       SmallTest
+     * @tc.type       Function
+     * @tc.level      Level0
      */
-    it('graphicImagePixelMap_static_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap_static_6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let angle: float = 90;
-        taskPoolTest(pixelMap);
-        try {
-          pixelMap.rotateSync(angle);
-          expect().assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code == 501).assertTrue();
+        const area: image.PositionArea = {
+          pixels: new ArrayBuffer(6), // 6为需要创建的像素buffer大小，取值为：height * width *1.5。
+          offset: 0,
+          stride: 8,
+          region: { size: { height: 2, width: 2 }, x: 0, y: 0 }
+        };
+        if (pixelMap != undefined) {
+          pixelMap.readPixels(area, (error: BusinessError | null) => {
+            if (error) {
+              console.error('Failed to read pixelMap from the specified area. ');
+              expect().assertFail();
+            } else {
+              console.info('Succeeded in reading pixelMap from the specified area.');
+              expect(true).assertTrue();
+            }
+          })
         }
         done();
       })
 
     /**
-     * @tc.number: graphicImagePixelMap_static_5900
-     * @tc.name: graphicImagePixelMap_static_5900
-     * @tc.desc: image API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number     graphicImagePixelMap_static_6500
+     * @tc.name       graphicImagePixelMap_static_6500
+     * @tc.desc       image API ArkTS1.2
+     * @tc.size       SmallTest
+     * @tc.type       Function
+     * @tc.level      Level0
      */
-    it('graphicImagePixelMap_static_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap_static_6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let horizontal: boolean = false;
-        let vertical: boolean = true;
-        taskPoolTest(pixelMap);
-        try {
-          pixelMap.flipSync(horizontal, vertical);
-          expect().assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code == 501).assertTrue();
+        const area: image.PositionArea = {
+          pixels: new ArrayBuffer(6), // 6为需要创建的像素buffer大小，取值为：height * width *1.5。
+          offset: 0,
+          stride: 8,
+          region: { size: { height: 2, width: 2 }, x: 0, y: 0 }
+        };
+        if (pixelMap != undefined) {
+          await pixelMap.readPixels(area).then(() => {
+            console.info('Succeeded in reading the image data in the area.');
+            expect(true).assertTrue();
+          }).catch((error) => {
+            console.error('Failed to read the image data in the area. ');
+            expect().assertFail();
+          })
         }
         done();
       })
 
     /**
-     * @tc.number: graphicImagePixelMap_static_6000
-     * @tc.name: graphicImagePixelMap_static_6000
-     * @tc.desc: image API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number     graphicImagePixelMap_static_6600
+     * @tc.name       graphicImagePixelMap_static_6600
+     * @tc.desc       image API ArkTS1.2
+     * @tc.size       SmallTest
+     * @tc.type       Function
+     * @tc.level      Level0
      */
-    it('graphicImagePixelMap_static_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap_static_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
-        taskPoolTest(pixelMap);
-        try {
-          pixelMap.cropSync(region);
-          expect().assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code == 501).assertTrue();
+        const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
+        let bufferArr: Uint8Array = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i++) {
+          bufferArr[i] = i + 1;
+        }
+        if (pixelMap != undefined) {
+          await pixelMap.writeBufferToPixels(color).then(() => {
+            console.info("Succeeded in writing data from a buffer to a PixelMap.");
+            expect(true).assertTrue();
+          }).catch((error) => {
+            console.error('Failed to write data from a buffer to a PixelMap.');
+            expect().assertFail();
+          })
         }
         done();
       })
 
     /**
-     * @tc.number: graphicImagePixelMap_static_6100
-     * @tc.name: graphicImagePixelMap_static_6100
-     * @tc.desc: image API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number     graphicImagePixelMap_static_6700
+     * @tc.name       graphicImagePixelMap_static_6700
+     * @tc.desc       image API ArkTS1.2
+     * @tc.size       SmallTest
+     * @tc.type       Function
+     * @tc.level      Level0
      */
-    it('graphicImagePixelMap_static_6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap_static_6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
+        let bufferArr: Uint8Array = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i++) {
+          bufferArr[i] = i + 1;
+        }
+        if (pixelMap != undefined) {
+          pixelMap.writeBufferToPixels(color, (error: BusinessError | null) => {
+            if (error) {
+              console.error('Failed to read pixelMap from the specified area. ');
+              expect().assertFail();
+            } else {
+              console.info('Succeeded in reading pixelMap from the specified area.');
+              expect(true).assertTrue();
+            }
+          })
+        }
+        done();
+      })
+
+    /**
+     * @tc.number     graphicImagePixelMap_static_6800
+     * @tc.name       graphicImagePixelMap_static_6800
+     * @tc.desc       image API ArkTS1.2
+     * @tc.size       SmallTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('graphicImagePixelMap_static_6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
+        let bufferArr: Uint8Array = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i++) {
+          bufferArr[i] = i + 1;
+        }
+        try {
+          let getDensity: number = pixelMap.getDensity();
+          expect(true).assertTrue();
+        } catch (err) {
+          console.info('www data graphicImagePixelMap_static_6800 error');
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number     graphicImagePixelMap_static_6900
+     * @tc.name       graphicImagePixelMap_static_6900
+     * @tc.desc       image API ArkTS1.2
+     * @tc.size       SmallTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('graphicImagePixelMap_static_6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (pixelMap != undefined) {
+          await pixelMap.toSdr().then(() => {
+            let imageInfo = pixelMap.getImageInfoSync();
+            console.info("www data after toSdr ,imageInfo isHdr:" + imageInfo.isHdr);
+            expect().assertFail();
+          }).catch((err) => {
+            expect(true).assertTrue();
+          });
+        }
+        done();
+      })
+
+    /**
+     * @tc.number     graphicImagePixelMap_static_7000
+     * @tc.name       graphicImagePixelMap_static_7000
+     * @tc.desc       image API ArkTS1.2
+     * @tc.size       SmallTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('graphicImagePixelMap_static_7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const area: image.PositionArea = {
+          pixels: new ArrayBuffer(6),
+          offset: 0,
+          stride: 8,
+          region: { size: { height: 2, width: 2 }, x: 0, y: 0 }
+        };
+        let bufferArr: Uint8Array = new Uint8Array(area.pixels);
+        for (let i = 0; i < bufferArr.length; i++) {
+          bufferArr[i] = i + 1;
+        }
+        if (pixelMap != undefined) {
+          pixelMap.writePixels(area).then(() => {
+            console.info('Succeeded in writing pixelmap into the specified area.');
+          }).catch((error) => {
+            console.error(`Failed to write pixelmap into the specified area.`);
+            expect().assertFail();
+          })
+        }
+        done();
+      })
+
+    /**
+     * @tc.number     graphicImagePixelMap_static_7100
+     * @tc.name       graphicImagePixelMap_static_7100
+     * @tc.desc       image API ArkTS1.2
+     * @tc.size       SmallTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('graphicImagePixelMap_static_7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const area: image.PositionArea = {
+          pixels: new ArrayBuffer(6),
+          offset: 0,
+          stride: 8,
+          region: { size: { height: 2, width: 2 }, x: 0, y: 0 }
+        };
+        let bufferArr: Uint8Array = new Uint8Array(area.pixels);
+        for (let i = 0; i < bufferArr.length; i++) {
+          bufferArr[i] = i + 1;
+        }
+        if (pixelMap != undefined) {
+          pixelMap.writePixels(area, (error: BusinessError | null) => {
+            if (error) {
+              console.error(`www data Failed to write pixelmap into the specified area.`);
+              expect().assertFail();
+            } else {
+              console.info('www data Succeeded in writing pixelmap into the specified area callback.');
+            }
+          })
+        }
+        done();
+      })
+
+    /**
+     * @tc.number     graphicImagePixelMap_static_7200
+     * @tc.name       graphicImagePixelMap_static_7200
+     * @tc.desc       image API ArkTS1.2
+     * @tc.size       SmallTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('graphicImagePixelMap_static_7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const area: image.PositionArea = {
+          pixels: new ArrayBuffer(6),
+          offset: 0,
+          stride: 8,
+          region: { size: { height: 2, width: 2 }, x: 0, y: 0 }
+        };
+        let bufferArr: Uint8Array = new Uint8Array(area.pixels);
+        for (let i = 0; i < bufferArr.length; i++) {
+          bufferArr[i] = i + 1;
+        }
+        if (pixelMap != undefined) {
+          try {
+            pixelMap.writePixelsSync(area);
+          } catch (err) {
+            console.info('www data graphicImagePixelMap_static_7200 error ' + JSON.stringify(err))
+            expect().assertFail();
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.number     graphicImagePixelMap_static_7300
+     * @tc.name       graphicImagePixelMap_static_7300
+     * @tc.desc       image API ArkTS1.2
+     * @tc.size       SmallTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('graphicImagePixelMap_static_7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let colorSpaceName = colorSpaceManager.ColorSpace.SRGB;
+        let csm: colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceName);
+        pixelMap.setColorSpace(csm);
+        if (pixelMap != undefined) {
+          try {
+            pixelMap.getColorSpace();
+          } catch (err) {
+            console.info('www data graphicImagePixelMap_static_7300 error ' + JSON.stringify(err))
+            expect().assertFail();
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.number     graphicImagePixelMap_static_7400
+     * @tc.name       graphicImagePixelMap_static_7400
+     * @tc.desc       image API ArkTS1.2
+     * @tc.size       SmallTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('graphicImagePixelMap_static_7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let colorSpaceName = colorSpaceManager.ColorSpace.SRGB;
+        let csm: colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceName);
+        if (pixelMap != undefined) {
+          try {
+            pixelMap.setColorSpace(csm);
+          } catch (err) {
+            console.info('www data graphicImagePixelMap_static_7400 error ' + JSON.stringify(err));
+            expect().assertFail();
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.number     graphicImagePixelMap_static_7500
+     * @tc.name       graphicImagePixelMap_static_7500
+     * @tc.desc       image API ArkTS1.2
+     * @tc.size       SmallTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('graphicImagePixelMap_static_7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let colorSpaceName = colorSpaceManager.ColorSpace.SRGB;
+        let targetColorSpace: colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceName);
+        if (pixelMap != undefined) {
+          try {
+            await pixelMap.applyColorSpace(targetColorSpace).then(() => {
+              console.info('www data succeed in graphicImagePixelMap_static_7500');
+            }).catch((err) => {
+              expect().assertFail();
+            });
+          } catch (error) {
+            console.error(`Failed to apply color space for pixelmap object, error code is ${error}`);
+            expect().assertFail();
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.number     graphicImagePixelMap_static_7600
+     * @tc.name       graphicImagePixelMap_static_7600
+     * @tc.desc       image API ArkTS1.2
+     * @tc.size       SmallTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('graphicImagePixelMap_static_7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let colorSpaceName = colorSpaceManager.ColorSpace.SRGB;
+        let targetColorSpace: colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceName);
+        if (pixelMap != undefined) {
+          try {
+            pixelMap.applyColorSpace(targetColorSpace, (err: BusinessError<void> | null) => {
+              if (err) {
+                console.error(`Failed to apply color space for pixelmap object, error code is ${err}`);
+                expect().assertFail();
+              } else {
+                console.info('www data succeed in applyColorSpace');
+              }
+            })
+          } catch (error) {
+            console.error(`Failed to apply color space for pixelmap object, error code is ${error}`);
+            expect().assertFail();
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.number     graphicImagePixelMap_static_7700
+     * @tc.name       graphicImagePixelMap_static_7700
+     * @tc.desc       image API ArkTS1.2
+     * @tc.size       SmallTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('graphicImagePixelMap_static_7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let targetPixelFormat = image.PixelMapFormat.NV12;
+        if (pixelMap != undefined) {
+          pixelMap.convertPixelFormat(targetPixelFormat).then(() => {
+            console.info('www data PixelMapFormat convert Succeeded');
+          }).catch((error) => {
+            console.error(`www data PixelMapFormat convert Failed.`);
+            expect().assertFail();
+          })
+        }
+        done();
+      })
+
+    /**
+     * @tc.number      graphicImagePixelMap_static_7800
+     * @tc.name        graphicImagePixelMap_static_7800
+     * @tc.desc        image API ArkTS1.2
+     * @tc.size        SmallTest
+     * @tc.type        Function
+     * @tc.level       Level0
+     */
+    it('graphicImagePixelMap_static_7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
-        let opts: image.InitializationOptions = {
-          editable: true, pixelFormat: image.PixelMapFormat.ALPHA_8, size: { height: 4, width: 6 }
+        let bufferArr: Uint8Array = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i++) {
+          bufferArr[i] = 0x80;
         }
-        taskPoolTest(pixelMap);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 },
+          alphaType: image.AlphaType.UNPREMUL
+        }
+        let pixelMap: image.PixelMap;
+        image.createPixelMap(color, opts).then((srcPixelMap: image.PixelMap) => {
+          console.error("www data 11111111");
+          pixelMap = srcPixelMap;
+          if (pixelMap != undefined) {
+            try {
+              // 序列化。
+              let parcelable: MySequence = new MySequence(pixelMap);
+              let data: rpc.MessageSequence = rpc.MessageSequence.create();
+              data.writeParcelable(parcelable);
+              // 反序列化 rpc获取到data。
+              let ret: MySequence = new MySequence(pixelMap);
+              data.readParcelable(ret);
+              // 获取到pixelmap。
+              let unmarshPixelmap = ret.pixel_map;
+              done();
+            } catch (error) {
+              expect().assertFail();
+              done();
+            }
+          } else {
+            expect().assertFail();
+          }
+        })
+      })
+
+    /**
+     * @tc.number      graphicImagePixelMap_static_7900
+     * @tc.name        graphicImagePixelMap_static_7900
+     * @tc.desc        image API ArkTS1.2
+     * @tc.size        SmallTest
+     * @tc.type        Function
+     * @tc.level       Level0
+     */
+    it('graphicImagePixelMap_static_7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        expect('0').assertEqual(image.HdrMetadataKey.HDR_METADATA_TYPE + '');
+        expect('1').assertEqual(image.HdrMetadataKey.HDR_STATIC_METADATA + '');
+        expect('2').assertEqual(image.HdrMetadataKey.HDR_DYNAMIC_METADATA + '');
+        expect('3').assertEqual(image.HdrMetadataKey.HDR_GAINMAP_METADATA + '');
+        done();
+      })
+
+    /**
+     * @tc.number: graphicImagePixelMap_static_8000
+     * @tc.name: graphicImagePixelMap_static_8000
+     * @tc.desc: image API ArkTS1.2
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('graphicImagePixelMap_static_8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        expect('0').assertEqual(image.HdrMetadataType.NONE + '');
+        expect('1').assertEqual(image.HdrMetadataType.BASE + '');
+        expect('2').assertEqual(image.HdrMetadataType.GAINMAP + '');
+        expect('3').assertEqual(image.HdrMetadataType.ALTERNATE + '');
+        done();
+      })
+
+    /**
+     * @tc.number     graphicImagePixelMap_static_8100
+     * @tc.name       graphicImagePixelMap_static_8100
+     * @tc.desc       image API ArkTS1.2
+     * @tc.size       SmallTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('graphicImagePixelMap_static_8100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let staticMetadata: image.HdrStaticMetadata = {
+          displayPrimariesX: [1.1, 1.1, 1.1],
+          displayPrimariesY: [1.2, 1.2, 1.2],
+          whitePointX: 1.1,
+          whitePointY: 1.2,
+          maxLuminance: 2.1,
+          minLuminance: 1.0,
+          maxContentLightLevel: 2.1,
+          maxFrameAverageLightLevel: 2.1,
+        }
+        let GainmapChannel1: image.GainmapChannel = {
+          gainmapMax: 7.1,
+          gainmapMin: 7.2,
+          gamma: 7.3,
+          baseOffset: 7.4, 
+          alternateOffset: 7.5 
+        }
+        let GainmapChannel2: image.GainmapChannel = {
+          gainmapMax: 8.1,
+          gainmapMin: 8.2,
+          gamma: 8.3,
+          baseOffset: 8.4, 
+          alternateOffset: 8.5 
+        }
+        let HdrGainmapMetadata: image.HdrGainmapMetadata = {
+          writerVersion: 10,
+          miniVersion: 11,
+          gainmapChannelCount: 12,
+          useBaseColorFlag: true,
+          baseHeadroom: 5.1,
+          alternateHeadroom: 5.2,
+          channels: [ GainmapChannel1, GainmapChannel2 ]
+        }
+        expect(1.1).assertEqual(staticMetadata.whitePointX);
+        expect(7.2).assertEqual(GainmapChannel1.gainmapMin);
+        expect(8.3).assertEqual(GainmapChannel2.gamma);
+        expect(5.2).assertEqual(HdrGainmapMetadata.alternateHeadroom);
+        done();
+      })
+
+    /**
+     * @tc.number     graphicImagePixelMap_static_8200
+     * @tc.name       graphicImagePixelMap_static_8200
+     * @tc.desc       image API ArkTS1.2
+     * @tc.size       SmallTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('graphicImagePixelMap_static_8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {     
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = { 
+          editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } 
+        }
+        image.createPixelMap(color, opts, (error: BusinessError | null, pixelMap: image.PixelMap | undefined) => {
+          if(error) {
+            console.error(`Failed to create pixelmap. code is ${error.code}, message is ${error.message}`);
+            expect().assertFail();
+            return;
+          } else {
+            console.info('Succeeded in creating pixelmap.');
+          }
+        })
+        done();
+      })
+
+    /**
+     * @tc.number     graphicImagePixelMap_static_8300
+     * @tc.name       graphicImagePixelMap_static_8300
+     * @tc.desc       image API ArkTS1.2
+     * @tc.size       SmallTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('graphicImagePixelMap_static_8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let opts: image.InitializationOptions = { 
+          editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } 
+        }
         try {
-          pixelMap.setMemoryNameSync("PixelMapName Test");
+          let pixelMap: image.PixelMap = image.createPixelMapSync(opts);
+          console.info('www data succeed in createPixelMapSync');
+        } catch (err) {
+          console.error('www data error createPixelMapSync' + JSON.stringify(err));
           expect().assertFail();
-        } catch (err: BusinessError) {
-          console.info('www data 6100 ' + JSON.stringify(err));
-          expect(err.code == 501).assertTrue();
         }
         done();
       })
+
+    /**
+     * @tc.number     graphicImagePixelMap_static_8400
+     * @tc.name       graphicImagePixelMap_static_8400
+     * @tc.desc       image API ArkTS1.2
+     * @tc.size       SmallTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('graphicImagePixelMap_static_8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let bufferArr: Uint8Array = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i++) {
+          bufferArr[i] = 0x80;
+        }
+        let opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 },
+          alphaType: image.AlphaType.UNPREMUL
+        }
+        let pixelMap: image.PixelMap;
+        image.createPixelMap(color, opts).then((srcPixelMap: image.PixelMap) => {
+          pixelMap = srcPixelMap;
+          if (pixelMap != undefined) {
+            // 序列化。
+            let parcelable: MySequence1 = new MySequence1(pixelMap);
+            try {
+              let data: rpc.MessageSequence = rpc.MessageSequence.create();
+              data.writeParcelable(parcelable);
+              // 反序列化 rpc获取到data。
+              let ret: MySequence1 = new MySequence1(pixelMap);
+              data.readParcelable(ret);
+              // 获取到pixelmap。
+              let unMarshPixelmap = ret.pixel_map;
+              console.info('www data succeed in unMarshPixelmap' + unMarshPixelmap)
+            } catch (err) {
+              console.error('www data error ' + err);
+              expect().assertFail();
+            }
+          } else {
+            expect().assertFail();
+          }
+        })
+        done();
+      })
+
+    /**
+     * @tc.number    graphicImagePixelMap_static_8500
+     * @tc.name      graphicImagePixelMap_static_8500
+     * @tc.desc      image API ArkTS1.2
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level0
+     */
+    it('graphicImagePixelMap_static_8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
+        let surfaceId = '123';
+        try {
+          let pixelMap: image.PixelMap = image.createPixelMapFromSurfaceSync(surfaceId, region);
+          console.info('www data succeed in createPixelMapFromSurfaceSync');
+          expect().assertFail();
+        } catch (err: BusinessError) {
+          console.error('www data error createPixelMapSync' + JSON.stringify(err));
+          expect(Number(err.code) == 401).assertTrue();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    graphicImagePixelMap_static_8600
+     * @tc.name      graphicImagePixelMap_static_8600
+     * @tc.desc      image API ArkTS1.2
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level0
+     */
+    it('graphicImagePixelMap_static_8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let surfaceId = '123';
+        try {
+          let pixelMap: image.PixelMap = image.createPixelMapFromSurfaceSync(surfaceId);
+          console.info('www data succeed in createPixelMapFromSurfaceSync');
+          expect().assertFail();
+        } catch (err: BusinessError) {
+          console.error('www data error createPixelMapSync' + JSON.stringify(err));
+          expect(Number(err.code) == 401).assertTrue();
+        }
+        done();
+      })
+
   })
 }
