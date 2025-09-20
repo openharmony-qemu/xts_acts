@@ -30,7 +30,8 @@ struct WebSiteIsolationMode {
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
   @State url: string = '';
-
+  @State SiteIsolationModeArr: web_webview.SiteIsolationMode[] = [web_webview.SiteIsolationMode.PARTIAL,web_webview.SiteIsolationMode.STRICT]
+  @State RenderProcessModeArr: web_webview.RenderProcessMode[] = [web_webview.RenderProcessMode.MULTIPLE,web_webview.RenderProcessMode.SINGLE]
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 162001,
@@ -59,10 +60,12 @@ struct WebSiteIsolationMode {
             case "emitWebSiteIsolationMode001": {
               await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
               try {
-                  web_webview.WebviewController.setSiteIsolationMode(web_webview.SiteIsolationMode.PARTIAL);
-                  Utils.emitEvent(web_webview.WebviewController.getSiteIsolationMode(), 20250920)
+                web_webview
+                  .WebviewController
+                  .setSiteIsolationMode(web_webview.SiteIsolationMode.PARTIAL)
+                  Utils.emitEvent(this.SiteIsolationModeArr[web_webview.WebviewController.getSiteIsolationMode()], 20250920)
               } catch (error) {
-                Utils.emitEvent(web_webview.SiteIsolationMode.PARTIAL, 20250920);
+                Utils.emitEvent(this.SiteIsolationModeArr[web_webview.SiteIsolationMode.PARTIAL], 20250920);
                 let e:business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
               }
@@ -71,10 +74,12 @@ struct WebSiteIsolationMode {
             case "emitWebSiteIsolationMode002": {
               await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
               try {
-                web_webview.WebviewController.setSiteIsolationMode(web_webview.SiteIsolationMode.STRICT);
-                Utils.emitEvent(web_webview.WebviewController.getSiteIsolationMode(), 20250921)
+                web_webview
+                  .WebviewController
+                  .setSiteIsolationMode(web_webview.SiteIsolationMode.STRICT);
+                Utils.emitEvent(this.SiteIsolationModeArr[web_webview.WebviewController.getSiteIsolationMode()], 20250921)
               } catch (error) {
-                Utils.emitEvent(web_webview.SiteIsolationMode.STRICT, 20250921);
+                Utils.emitEvent(this.SiteIsolationModeArr[web_webview.SiteIsolationMode.STRICT], 20250921);
                 let e:business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
               }
@@ -83,10 +88,12 @@ struct WebSiteIsolationMode {
             case "emitWebSiteIsolationMode003": {
               await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
               try {
-                web_webview.WebviewController.setSiteIsolationMode(web_webview.RenderProcessMode.MULTIPLE);
-                Utils.emitEvent(web_webview.WebviewController.getSiteIsolationMode(), 20250922)
+                web_webview
+                  .WebviewController
+                  .setRenderProcessMode(web_webview.RenderProcessMode.MULTIPLE);
+                Utils.emitEvent(this.RenderProcessModeArr[web_webview.WebviewController.getRenderProcessMode()], 20250922)
               } catch (error) {
-                Utils.emitEvent(web_webview.RenderProcessMode.MULTIPLE, 20250922);
+                Utils.emitEvent(this.RenderProcessModeArr[web_webview.RenderProcessMode.MULTIPLE], 20250922);
                 let e:business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
               }
@@ -95,10 +102,10 @@ struct WebSiteIsolationMode {
             case "emitWebSiteIsolationMode004": {
               await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
               try {
-                web_webview.WebviewController.setSiteIsolationMode(web_webview.RenderProcessMode.SINGLE);
-                Utils.emitEvent(web_webview.WebviewController.getSiteIsolationMode(), 20250923)
+                web_webview.WebviewController.setRenderProcessMode(web_webview.RenderProcessMode.SINGLE);
+                Utils.emitEvent(this.RenderProcessModeArr[web_webview.WebviewController.getRenderProcessMode()], 20250923)
               } catch (error) {
-                Utils.emitEvent(web_webview.RenderProcessMode.SINGLE, 20250922);
+                Utils.emitEvent(this.RenderProcessModeArr[web_webview.RenderProcessMode.SINGLE], 20250922);
                 let e:business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
               }

@@ -19,6 +19,7 @@ import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver, ON } from '@kit.TestKit';
+import web_webview from '@ohos.web.webview';
 
 const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
@@ -58,58 +59,58 @@ export default function ActsWebSiteIsolationMode() {
 
 
     /**
-     * @tc.number      : SUB_ACE_WEB_WEBSITEISOLATIONMODE_API_0001
-     * @tc.name        : emitWebSiteIsolationMode001
-     * @tc.desc        : emitWebSiteIsolationMode001
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+     * @tc.number      SUB_ACE_WEB_WEBSITEISOLATIONMODE_API_0001
+     * @tc.name        emitWebSiteIsolationMode001
+     * @tc.desc        emitWebSiteIsolationMode001
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
      */
     it('emitWebSiteIsolationMode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebSiteIsolationMode001", 162001)
-      Utils.registerEvent("emitWebSiteIsolationMode001", 1, 20250920, done);
+      Utils.registerEvent("emitWebSiteIsolationMode001", web_webview.SiteIsolationMode.PARTIAL, 20250920, done);
       sendEventByKey('WebSiteIsolationModeButton', 10, '');
     })
 
     /**
-     * @tc.number      : SUB_ACE_WEB_WEBSITEISOLATIONMODE_API_0002
-     * @tc.name        : emitWebSiteIsolationMode002
-     * @tc.desc        : emitWebSiteIsolationMode002
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+     * @tc.number      SUB_ACE_WEB_WEBSITEISOLATIONMODE_API_0002
+     * @tc.name        emitWebSiteIsolationMode002
+     * @tc.desc        emitWebSiteIsolationMode002
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
      */
     it('emitWebSiteIsolationMode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebSiteIsolationMode002", 162001)
-      Utils.registerEvent("emitWebSiteIsolationMode002", 1, 20250921, done);
+      Utils.registerEvent("emitWebSiteIsolationMode002", web_webview.SiteIsolationMode.STRICT, 20250921, done);
       sendEventByKey('WebSiteIsolationModeButton', 10, '');
     })
 
     /**
-     * @tc.number      : SUB_ACE_WEB_WEBSITEISOLATIONMODE_API_0003
-     * @tc.name        : emitWebSiteIsolationMode003
-     * @tc.desc        : emitWebSiteIsolationMode003
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+     * @tc.number      SUB_ACE_WEB_WEBSITEISOLATIONMODE_API_0003
+     * @tc.name        emitWebSiteIsolationMode003
+     * @tc.desc        emitWebSiteIsolationMode003
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
      */
     it('emitWebSiteIsolationMode003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebSiteIsolationMode003", 162001)
-      Utils.registerEvent("emitWebSiteIsolationMode003", 1, 20250922, done);
+      Utils.registerEvent("emitWebSiteIsolationMode003",  web_webview.RenderProcessMode.SINGLE, 20250922, done);
       sendEventByKey('WebSiteIsolationModeButton', 10, '');
     })
 
     /**
-     * @tc.number      : SUB_ACE_WEB_WEBSITEISOLATIONMODE_API_0004
-     * @tc.name        : emitWebSiteIsolationMode004
-     * @tc.desc        : emitWebSiteIsolationMode004
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+     * @tc.number      SUB_ACE_WEB_WEBSITEISOLATIONMODE_API_0004
+     * @tc.name        emitWebSiteIsolationMode004
+     * @tc.desc        emitWebSiteIsolationMode004
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
      */
     it('emitWebSiteIsolationMode004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebSiteIsolationMode004", 162001)
-      Utils.registerEvent("emitWebSiteIsolationMode004", 1, 20250923, done);
+      Utils.registerEvent("emitWebSiteIsolationMode004", web_webview.RenderProcessMode.MULTIPLE, 20250923, done);
       sendEventByKey('WebSiteIsolationModeButton', 10, '');
     })
 
