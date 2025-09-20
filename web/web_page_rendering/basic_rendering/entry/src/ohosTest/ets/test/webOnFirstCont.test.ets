@@ -17,6 +17,7 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = "emitOnfirstcontentfulpaintWebc";
@@ -34,12 +35,12 @@ export default function webOnFirstCont() {
         if (!("webOnFirstCont" == pages.name)) {
           console.info("get webOnFirstCont state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push webOnFirstCont page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webOnFirstCont page error: " + err);
       }
+      await waitForComponent("webOnFirstCont");
       done()
     });
     beforeEach(async (done: Function) => {
@@ -48,28 +49,7 @@ export default function webOnFirstCont() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webOnFirstCont beforeEach start");
-      done();
-    })
-    afterEach(async (done: Function) => {
-      console.info("webOnFirstCont afterEach start:" + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
       done();
     })
     /*
@@ -78,8 +58,8 @@ export default function webOnFirstCont() {
      *tc.desc onfirstcontentfulpaint with web src null
      */
     it('testOnfirstcontentfulpaintWebc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitOnfirstcontentfulpaintWebc";
-      Utils.registerEvent("testOnfirstcontentfulpaintWebc", "NoSrcTest", 422, done);
+      Utils.emitEvent('emitOnfirstcontentfulpaintWebc', 151590);
+      Utils.registerEvent("testOnfirstcontentfulpaintWebc", "NoSrcTest", 151600, done);
       sendEventByKey('webOnFirstCont', 10, '');
     })
   })
