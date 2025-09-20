@@ -28,8 +28,8 @@ const TAG = '[Orientation]';
 struct Orientation {
   @State FillColor: string = '#FF000000';
   @State name: string = 'Orientation';
-  @State StepTips: string = '测试目的：用于测试本机传感器,确定是否有方向传感器' + '\n操作步骤：\n1.确定设备是否有方向传感器\n2.如果有该传感器，点击开启并将设备按X、Y、Z轴方向旋转，观察数值是否发生变化\n(若点击开启直接返回上一级，则表示设备无该传感器)\n'
-    + '\n预期结果：旋转角度值发生变化';
+  @State StepTips: string = '测试目的：用于测试本机传感器,确定是否有方向传感器' + '\n操作步骤：\n1.确定设备是否有方向传感器\n2.如果有该传感器，点击开启并将设备按X、Y、Z轴方向旋转，观察数值或触发次数是否发生变化\n(若点击开启直接返回上一级，则表示设备无该传感器)\n'
+    + '\n预期结果：旋转角度值或触发次数发生变化';
   @State Vue: boolean = false;
   @State isHave: boolean = true;
   @State sensorChange: boolean = false;
@@ -40,6 +40,7 @@ struct Orientation {
   @State nextY: string = '';
   @State nextZ: string = '';
   @State intervalNum: number = 0;
+  @State backCount: number = 0;
 
   async aboutToAppear() {
     await FirstDialog.ChooseDialog(this.StepTips, this.name)
@@ -52,6 +53,7 @@ struct Orientation {
       Logger.info(TAG, 'enter')
       try {
         sensor.on(sensor.SensorId.ORIENTATION, (data: sensor.OrientationResponse) => {
+          this.backCount += 1;
           Logger.info(TAG, 'Succeeded in getting the Orientation: ' + data.alpha);
           Logger.info(TAG, 'Succeeded in getting the Orientation: ' + data.beta);
           Logger.info(TAG, 'Succeeded in getting the Orientation: ' + data.gamma);
@@ -68,7 +70,8 @@ struct Orientation {
             Logger.info(TAG, 'Succeeded in this.intervalNum the Orientation: ' + this.nextX);
             Logger.info(TAG, 'Succeeded in this.intervalNum the Orientation: ' + this.nextY);
             Logger.info(TAG, 'Succeeded in this.intervalNum the Orientation: ' + this.nextZ);
-            if (this.nextX !== this.dataX || this.nextY !== this.dataY || this.nextZ !== this.dataZ) {
+            if ((this.nextX !== this.dataX || this.nextY !== this.dataY || this.nextZ !== this.dataZ) ||
+               this.backCount > 0) {
               this.Vue = true;
             }
           }, 100)
@@ -229,6 +232,12 @@ struct Orientation {
           .width('100%')
           .margin({ bottom: 24 })
         Text('设备围绕Z轴的旋转角度: ' + this.dataX)
+          .fontColor(Color.White)
+          .fontSize('18fp')
+          .textAlign(TextAlign.Start)
+          .width('100%')
+          .margin({ bottom: 24 })
+        Text('触发订阅的次数: ' + this.backCount)
           .fontColor(Color.White)
           .fontSize('18fp')
           .textAlign(TextAlign.Start)
