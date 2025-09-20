@@ -892,7 +892,7 @@ export default function SerialEnumTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostMgr_Serial_JS_writeSync_ErrCode_0100
+     * @tc.number   SUB_USB_HostMgr_writeSync_ErrCode_0100
      * @tc.name     testWriteSync001
      * @tc.desc     writeSync error code 31400006.
      */
