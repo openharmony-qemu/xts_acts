@@ -22,7 +22,7 @@ group("ActsAceEngineNativeAPI20") {
       ]
     } else  {
       deps = [
-        "ActsAceEngineNativeWearAPI20:ActsAceEngineNativeWearAPI20Test",
+        "ActsAceEngineNativeWearAPI20Test:ActsAceEngineNativeWearAPI20Test",
         "ActsNativeXcomponentKeyCodeTest:ActsNativeXcomponentKeyCodeTest",
       ]
     }
