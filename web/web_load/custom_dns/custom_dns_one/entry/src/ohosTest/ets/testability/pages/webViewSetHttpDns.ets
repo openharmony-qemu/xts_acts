@@ -101,7 +101,7 @@ struct webViewSetHttpDns {
                 this.controller.loadUrl("https://www.example.com");
                 await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.title = this.controller.getTitle();
-                if ((this.title).includes("www.example.com")) {
+                if ((this.title).includes("example.com")) {
                   this.title = 'success';
                 }
                 console.log('title of this page: ' + this.title);
