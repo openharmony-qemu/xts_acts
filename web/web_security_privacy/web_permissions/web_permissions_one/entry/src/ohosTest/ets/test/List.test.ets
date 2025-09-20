@@ -15,8 +15,9 @@
 
 import webOnPermissionRequest from './WebOnPermissionRequestTest.test'
 import WebDoubleInnerNucleus from './WebDoubleInnerNucleus.test'
-
+import WebSiteIsolationMode from './WebSiteIsolationMode.test'
 export default function testsuite() {
   webOnPermissionRequest()
   WebDoubleInnerNucleus()
+  WebSiteIsolationMode()
 }
