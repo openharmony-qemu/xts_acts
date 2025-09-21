@@ -27,6 +27,7 @@ let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testBtBleTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let gattClientDevice: ble.GattClientDevice;
 let gattServerDevice: ble.GattServer;
+let bleScanner: ble.BleScanner;
 let g_context: common.UIAbilityContext;
 
 export default function bluetoothBleTest() {
@@ -55,6 +56,7 @@ export default function bluetoothBleTest() {
             await Utils.clickRequestPermission('允许');
             gattClientDevice = ble.createGattClientDevice("00:11:22:33:44:55");
             gattServerDevice = ble.createGattServer();
+            bleScanner = ble.createBleScanner();
             hilog.info(domain, tag, '%{public}s', 'beforeAll end');
         })
 
@@ -68,15 +70,15 @@ export default function bluetoothBleTest() {
             }
         })
 
-        /*
-         * @tc.number: clientCloseTest
-         * @tc.name: clientCloseTest
-         * @tc.desc: Test clientCloseTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  clientCloseTest
+         * @tc.name    clientCloseTest
+         * @tc.desc    Test clientCloseTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
          */
-        it("clientCloseTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("clientCloseTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let clientDevice: ble.GattClientDevice;
             try {
                 clientDevice = ble.createGattClientDevice("00:00:00:00:00:00");
@@ -107,15 +109,15 @@ export default function bluetoothBleTest() {
             done();
         })
 
-        /*
-         * @tc.number: serverCloseTest
-         * @tc.name: serverCloseTest
-         * @tc.desc: Test serverCloseTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  serverCloseTest
+         * @tc.name    serverCloseTest
+         * @tc.desc    Test serverCloseTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
          */
-        it("serverCloseTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("serverCloseTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let serverDevice:ble.GattServer;
             try {
                 serverDevice = ble.createGattServer();
@@ -141,15 +143,15 @@ export default function bluetoothBleTest() {
             done();
         })
 
-        /*
-         * @tc.number: setBLEMtuSizeTest
-         * @tc.name: setBLEMtuSizeTest
-         * @tc.desc: Test setBLEMtuSizeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  setBLEMtuSizeTest
+         * @tc.name    setBLEMtuSizeTest
+         * @tc.desc    Test setBLEMtuSizeTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
          */
-        it("setBLEMtuSizeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("setBLEMtuSizeTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 gattClientDevice.setBLEMtuSize(500);
                 hilog.info(domain, tag, 'setBLEMtuSize success');
@@ -167,15 +169,15 @@ export default function bluetoothBleTest() {
             done();
         })
 
-        /*
-         * @tc.number: clientConnectDisconnectTest
-         * @tc.name: clientConnectDisconnectTest
-         * @tc.desc: Test clientConnectDisconnectTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  clientConnectDisconnectTest
+         * @tc.name    clientConnectDisconnectTest
+         * @tc.desc    Test clientConnectDisconnectTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
          */
-        it("clientConnectDisconnectTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("clientConnectDisconnectTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 gattClientDevice.connect();
             } catch (err: BusinessError) {
@@ -203,15 +205,15 @@ export default function bluetoothBleTest() {
             done();
         })
 
-        /*
-         * @tc.number: bleConstantTest
-         * @tc.name: bleConstantTest
-         * @tc.desc: Test bleConstantTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  bleConstantTest
+         * @tc.name    bleConstantTest
+         * @tc.desc    Test bleConstantTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
          */
-        it("bleConstantTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("bleConstantTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let MATCH_MODE_STICKY: ble.MatchMode = ble.MatchMode.MATCH_MODE_STICKY;
                 hilog.info(domain, tag, "MATCH_MODE_STICKY:" + MATCH_MODE_STICKY);
@@ -236,15 +238,15 @@ export default function bluetoothBleTest() {
             done();
         })
 
-        /*
-         * @tc.number: bleStopBLEScanTest
-         * @tc.name: bleStopBLEScanTest
-         * @tc.desc: Test bleStopBLEScanTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  bleStopBLEScanTest
+         * @tc.name    bleStopBLEScanTest
+         * @tc.desc    Test bleStopBLEScanTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
          */
-        it("bleStopBLEScanTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("bleStopBLEScanTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 ble.stopBLEScan();
             } catch (err: BusinessError) {
@@ -255,6 +257,287 @@ export default function bluetoothBleTest() {
                     expect(true).assertEqual(err.code == 801);
                 } else {
                     expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  createBleScannerTest
+         * @tc.name    createBleScannerTest
+         * @tc.desc    Test createBleScanner API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("createBleScannerTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let testBleScanner: ble.BleScanner = ble.createBleScanner();
+                hilog.info(domain, tag, 'createBleScanner result:' + JSON.stringify(testBleScanner));
+                expect(true).assertEqual(testBleScanner != null);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "createBleScanner get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  startAdvertisingTest
+         * @tc.name    startAdvertisingTest
+         * @tc.desc    startAdvertisingTest
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("startAdvertisingTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let manufactureValueBuffer = new Uint8Array(4);
+            manufactureValueBuffer[0] = 1;
+            manufactureValueBuffer[1] = 2;
+            manufactureValueBuffer[2] = 3;
+            manufactureValueBuffer[3] = 4;
+
+            let serviceValueBuffer = new Uint8Array(4);
+            serviceValueBuffer[0] = 4;
+            serviceValueBuffer[1] = 6;
+            serviceValueBuffer[2] = 7;
+            serviceValueBuffer[3] = 8;
+            hilog.info(domain, tag, 'manufactureValueBuffer = ' + JSON.stringify(manufactureValueBuffer));
+            hilog.info(domain, tag, 'serviceValueBuffer = ' + JSON.stringify(serviceValueBuffer));
+            try {
+                let setting: ble.AdvertiseSetting = {
+                    interval: 150,
+                    txPower: 0,
+                    connectable: true
+                };
+                let manufactureDataUnit: ble.ManufactureData = {
+                    manufactureId: 4567,
+                    manufactureValue: manufactureValueBuffer.buffer
+                };
+                let serviceDataUnit: ble.ServiceData = {
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+                    serviceValue: serviceValueBuffer.buffer
+                };
+                let advData: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: [serviceDataUnit]
+                };
+                let advResponse: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: [serviceDataUnit]
+                };
+                ble.startAdvertising(setting, advData, advResponse);
+                hilog.info(domain, tag, "startAdvertising successful");
+                ble.stopAdvertising();
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag, "startAdvertisingTest get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, "Capability not supported.");
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  getConnectedBLEDevicesTest
+         * @tc.name    getConnectedBLEDevicesTest
+         * @tc.desc    getConnectedBLEDevicesTest
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("getConnectedBLEDevicesTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let result: Array<string> = ble.getConnectedBLEDevices();
+                hilog.info(domain, tag, JSON.stringify(result));
+                expect(true).assertEqual(result !== null);
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  startBLEScanTest
+         * @tc.name    startBLEScanTest
+         * @tc.desc    startBLEScanTest
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("startBLEScanTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let scanFilter: ble.ScanFilter = {
+                    deviceId: "00:11:22:33:44:55",
+                    name: "test",
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb"
+                };
+                let scanOptions: ble.ScanOptions = {
+                    interval: 500,
+                    dutyMode: ble.ScanDuty.SCAN_MODE_LOW_POWER,
+                    matchMode: ble.MatchMode.MATCH_MODE_AGGRESSIVE
+                };
+                ble.startBLEScan([scanFilter], scanOptions);
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag, "startBLEScan errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  addServiceTest
+         * @tc.name    addServiceTest
+         * @tc.desc    addServiceTest
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("addServiceTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let descriptors: Array<ble.BLEDescriptor> = [];
+            let arrayBuffer = new ArrayBuffer(8);
+            let descV = new Uint8Array(arrayBuffer);
+            descV[0] = 11;
+            let descriptor: ble.BLEDescriptor = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                descriptorUuid: '00002902-0000-1000-8000-00805F9B34FB', descriptorValue: arrayBuffer
+            };
+            descriptors.push(descriptor);
+
+            let characteristics: Array<ble.BLECharacteristic> = [];
+            let arrayBufferC = new ArrayBuffer(8);
+            let cccV = new Uint8Array(arrayBufferC);
+            cccV[0] = 1;
+            let characteristic: ble.BLECharacteristic = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB', characteristicValue: arrayBufferC, descriptors: descriptors
+            };
+            characteristics.push(characteristic);
+
+            let gattService: ble.GattService = { serviceUuid: '00001810-0000-1000-8000-00805F9B34FB', isPrimary: true, characteristics: characteristics, includeServices: [] };
+            try {
+                gattServerDevice.addService(gattService);
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  removeServiceTest
+         * @tc.name    removeServiceTest
+         * @tc.desc    removeServiceTest
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("removeServiceTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                gattServerDevice.removeService('00001810-0000-1000-8000-00805F9B34FB');
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(true).assertEqual(Number(err.code) == 2900099 || Number(err.code) == 401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  sendResponseTest
+         * @tc.name    sendResponseTest
+         * @tc.desc    sendResponseTest
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("sendResponseTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let arrayBufferCCC = new ArrayBuffer(8);
+            let cccValue = new Uint8Array(arrayBufferCCC);
+            cccValue[0] = 1123;
+            let serverResponse: ble.ServerResponse = {
+                deviceId: '00:11:22:33:44:55',
+                transId: 1,
+                status: 0,
+                offset: 0,
+                value: arrayBufferCCC
+            };
+            try {
+                gattServerDevice.sendResponse(serverResponse);
+                expect(true).assertFalse();
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  sendResponseTest_001
+         * @tc.name    sendResponseTest_001
+         * @tc.desc    sendResponseTest_001
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("sendResponseTest_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let arrayBufferCCC = new ArrayBuffer(8);
+            let cccValue = new Uint8Array(arrayBufferCCC);
+            cccValue[0] = 1123;
+            let serverResponse: ble.ServerResponse = {
+                deviceId: '00:11:22:33:44:55',
+                transId: 1,
+                status: -1,
+                offset: 0,
+                value: arrayBufferCCC
+            };
+            try {
+                gattServerDevice.sendResponse(serverResponse);
+                expect(true).assertFalse();
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag, "sendResponseTest_001, errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
                 }
             }
             done();

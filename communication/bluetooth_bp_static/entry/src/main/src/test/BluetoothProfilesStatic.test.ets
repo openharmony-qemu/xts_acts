@@ -20,6 +20,7 @@ import Utils from './Util.test';
 import a2dp from '@ohos.bluetooth.a2dp';
 import hfp from '@ohos.bluetooth.hfp';
 import hid from '@ohos.bluetooth.hid';
+import baseProfile from '@ohos.bluetooth.baseProfile';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import common from '@ohos.app.ability.common';
 import { Permissions } from 'permissions';
@@ -27,7 +28,12 @@ import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testBtProfilesTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+let deviceId: string = "00:11:22:33:44:55";
 let g_context: common.UIAbilityContext;
+
+function onReceiveEvent(data: baseProfile.StateChangeParam) {
+    hilog.info(domain, tag, 'a2dp state = '+ JSON.stringify(data));
+}
 
 export default function bluetoothProfilesTest() {
 
@@ -66,15 +72,15 @@ export default function bluetoothProfilesTest() {
             }
         })
 
-        /*
-         * @tc.number: createA2dpSrcProfileTest
-         * @tc.name: createA2dpSrcProfileTest
-         * @tc.desc: Test createA2dpSrcProfileTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  createA2dpSrcProfileTest
+         * @tc.name    createA2dpSrcProfileTest
+         * @tc.desc    Test createA2dpSrcProfileTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
          */
-        it("createA2dpSrcProfileTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("createA2dpSrcProfileTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let a2dpProfile: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
                 expect(true).assertEqual(a2dpProfile != null);
@@ -91,15 +97,107 @@ export default function bluetoothProfilesTest() {
             done();
         })
 
-        /*
-         * @tc.number: createHfpAgProfileTest
-         * @tc.name: createHfpAgProfileTest
-         * @tc.desc: Test createHfpAgProfileTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  getConnectedDevicesTest
+         * @tc.name    getConnectedDevicesTest
+         * @tc.desc    Test getConnectedDevicesTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
          */
-        it("createHfpAgProfileTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("getConnectedDevicesTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let a2dpProfile: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
+            expect(true).assertEqual(a2dpProfile != null);
+            try {
+                let devices: Array<string> = a2dpProfile.getConnectedDevices();
+                hilog.info(domain, tag, "address of connected devices list:" + devices);
+                expect(true).assertEqual(devices != null);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "getConnectedDevices get errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  getConnectionStateTest
+         * @tc.name    getConnectionStateTest
+         * @tc.desc    Test getConnectionStateTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("getConnectionStateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let a2dpProfile: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
+            expect(true).assertEqual(a2dpProfile != null);
+            try {
+                let state : baseProfile.ProfileConnectionState = a2dpProfile.getConnectionState(deviceId);
+                hilog.info(domain, tag, "the connection state:" + state);
+                expect(true).assertEqual(state == 0 || state == 1 || state == 2);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "getConnectionState get errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  testOnConnectionStateChange
+         * @tc.name    testOnConnectionStateChange
+         * @tc.desc    Test testOnConnectionStateChange API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testOnConnectionStateChange", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let a2dpProfile: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
+            expect(true).assertEqual(a2dpProfile != null);
+            try {
+                a2dpProfile.on('connectionStateChange', onReceiveEvent);
+                hilog.info(domain, tag, "the connection state: on");
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "testOnConnectionStateChange get errCode:" + err.code + ",errMessage:" + err.message);
+                expect(true).assertFalse();
+            }
+            a2dpProfile.off('connectionStateChange', onReceiveEvent);
+            done();
+        })
+
+        /**
+         * @tc.number  testOffConnectionStateChange
+         * @tc.name    testOffConnectionStateChange
+         * @tc.desc    Test testOffConnectionStateChange API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testOffConnectionStateChange", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let a2dpProfile: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
+            expect(true).assertEqual(a2dpProfile != null);
+            a2dpProfile.on('connectionStateChange', onReceiveEvent);
+            try {
+                a2dpProfile.off('connectionStateChange', onReceiveEvent);
+                hilog.info(domain, tag, "the connection state: off");
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "testOffConnectionStateChange get errCode:" + err.code + ",errMessage:" + err.message);
+                expect(true).assertFalse();
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  createHfpAgProfileTest
+         * @tc.name    createHfpAgProfileTest
+         * @tc.desc    Test createHfpAgProfileTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("createHfpAgProfileTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let hfpProfile: hfp.HandsFreeAudioGatewayProfile = hfp.createHfpAgProfile();
                 expect(true).assertEqual(hfpProfile != null);
@@ -116,15 +214,107 @@ export default function bluetoothProfilesTest() {
             done();
         })
 
-        /*
-         * @tc.number: createHidHostProfileTest
-         * @tc.name: createHidHostProfileTest
-         * @tc.desc: Test createHidHostProfileTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  getConnectedDevicesTest_001
+         * @tc.name    getConnectedDevicesTest_001
+         * @tc.desc    Test getConnectedDevicesTest_001 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
          */
-        it("createHidHostProfileTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("getConnectedDevicesTest_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let hfpProfile: hfp.HandsFreeAudioGatewayProfile = hfp.createHfpAgProfile();
+            expect(true).assertEqual(hfpProfile != null);
+            try {
+                let devices : Array<string> = hfpProfile.getConnectedDevices();
+                hilog.info(domain, tag, "address of connected devices list:" + devices);
+                expect(true).assertEqual(devices != null);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "getConnectedDevices_001 get errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  getConnectionStateTest_001
+         * @tc.name    getConnectionStateTest_001
+         * @tc.desc    Test getConnectionStateTest_001 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("getConnectionStateTest_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let hfpProfile: hfp.HandsFreeAudioGatewayProfile = hfp.createHfpAgProfile();
+            expect(true).assertEqual(hfpProfile != null);
+            try {
+                let state : baseProfile.ProfileConnectionState = hfpProfile.getConnectionState(deviceId);
+                hilog.info(domain, tag, "the connection state:" + state);
+                expect(true).assertEqual(state == 0 || state == 1 || state == 2);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "getConnectionStateTest_001 get errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  testOnConnectionStateChange_001
+         * @tc.name    testOnConnectionStateChange_001
+         * @tc.desc    Test testOnConnectionStateChange_001 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testOnConnectionStateChange_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let hfpProfile: hfp.HandsFreeAudioGatewayProfile = hfp.createHfpAgProfile();
+            expect(true).assertEqual(hfpProfile != null);
+            try {
+                hfpProfile.on('connectionStateChange', onReceiveEvent);
+                hilog.info(domain, tag, "the connection state: on");
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "testOnConnectionStateChange_001 get errCode:" + err.code + ",errMessage:" + err.message);
+                expect(true).assertFalse();
+            }
+            hfpProfile.off('connectionStateChange', onReceiveEvent);
+            done();
+        })
+
+        /**
+         * @tc.number  testOffConnectionStateChange_001
+         * @tc.name    testOffConnectionStateChange_001
+         * @tc.desc    Test testOffConnectionStateChange_001 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testOffConnectionStateChange_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let hfpProfile: hfp.HandsFreeAudioGatewayProfile = hfp.createHfpAgProfile();
+            expect(true).assertEqual(hfpProfile != null);
+            hfpProfile.on('connectionStateChange', onReceiveEvent);
+            try {
+                hfpProfile.off('connectionStateChange', onReceiveEvent);
+                hilog.info(domain, tag, "the connection state: off");
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "testOffConnectionStateChange_001 get errCode:" + err.code + ",errMessage:" + err.message);
+                expect(true).assertFalse();
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  createHidHostProfileTest
+         * @tc.name    createHidHostProfileTest
+         * @tc.desc    Test createHidHostProfileTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("createHidHostProfileTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let hidProfile: hid.HidHostProfile = hid.createHidHostProfile();
                 expect(true).assertEqual(hidProfile != null);
@@ -137,6 +327,98 @@ export default function bluetoothProfilesTest() {
                 } else {
                     expect().assertFail();
                 }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  getConnectedDevicesTest_002
+         * @tc.name    getConnectedDevicesTest_002
+         * @tc.desc    Test getConnectedDevicesTest_002 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("getConnectedDevicesTest_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let hidProfile: hid.HidHostProfile = hid.createHidHostProfile();
+            expect(true).assertEqual(hidProfile != null);
+            try {
+                let devices : Array<string> = hidProfile.getConnectedDevices();
+                hilog.info(domain, tag, "address of connected devices list:" + devices);
+                expect(true).assertEqual(devices != null);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "getConnectedDevices_001 get errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  getConnectionStateTest_002
+         * @tc.name    getConnectionStateTest_002
+         * @tc.desc    Test getConnectionStateTest_002 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("getConnectionStateTest_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let hidProfile: hid.HidHostProfile = hid.createHidHostProfile();
+            expect(true).assertEqual(hidProfile != null);
+            try {
+                let state : baseProfile.ProfileConnectionState = hidProfile.getConnectionState(deviceId);
+                hilog.info(domain, tag, "the connection state:" + state);
+                expect(true).assertEqual(state == 0 || state == 1 || state == 2);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "getConnectionStateTest_002 get errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  testOnConnectionStateChange_002
+         * @tc.name    testOnConnectionStateChange_002
+         * @tc.desc    Test testOnConnectionStateChange_002 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testOnConnectionStateChange_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let hidProfile: hid.HidHostProfile = hid.createHidHostProfile();
+            expect(true).assertEqual(hidProfile != null);
+            try {
+                hidProfile.on('connectionStateChange', onReceiveEvent);
+                hilog.info(domain, tag, "the connection state: on");
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "testOnConnectionStateChange_002 get errCode:" + err.code + ",errMessage:" + err.message);
+                expect(true).assertFalse();
+            }
+            hidProfile.off('connectionStateChange', onReceiveEvent);
+            done();
+        })
+
+        /**
+         * @tc.number  testOffConnectionStateChange_002
+         * @tc.name    testOffConnectionStateChange_002
+         * @tc.desc    Test testOffConnectionStateChange_002 API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testOffConnectionStateChange_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let hidProfile: hid.HidHostProfile = hid.createHidHostProfile();
+            expect(true).assertEqual(hidProfile != null);
+            hidProfile.on('connectionStateChange', onReceiveEvent);
+            try {
+                hidProfile.off('connectionStateChange', onReceiveEvent);
+                hilog.info(domain, tag, "the connection state: off");
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "testOffConnectionStateChange_002 get errCode:" + err.code + ",errMessage:" + err.message);
+                expect(true).assertFalse();
             }
             done();
         })
