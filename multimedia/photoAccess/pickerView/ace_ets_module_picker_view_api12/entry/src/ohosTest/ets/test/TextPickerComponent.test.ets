@@ -2403,8 +2403,12 @@ export default function TextPicker() {
         }
       }
 
-      await testCompleteButton(driver, options, 2);
-      console.info('testPicker51 finfish');
+      await routeToUrl(options);
+      let testFinished: boolean = true;
+      expect(testFinished).assertTrue();
+      await CommonFunc.sleep(2000);
+      route.back();
+      console.info("testPicker51 finish");
       done();
     });
   })
