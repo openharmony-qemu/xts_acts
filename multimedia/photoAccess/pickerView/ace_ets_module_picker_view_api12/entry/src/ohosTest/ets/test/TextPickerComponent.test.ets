@@ -2407,7 +2407,7 @@ export default function TextPicker() {
       let testFinished: boolean = true;
       expect(testFinished).assertTrue();
       await CommonFunc.sleep(2000);
-      route.back();
+      router.back();
       console.info("testPicker51 finish");
       done();
     });
