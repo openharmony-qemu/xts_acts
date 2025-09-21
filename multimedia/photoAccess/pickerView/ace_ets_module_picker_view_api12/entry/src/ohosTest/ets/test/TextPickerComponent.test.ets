@@ -2402,11 +2402,9 @@ export default function TextPicker() {
           pickerOptions: sheetPickerOptions,
         }
       }
-      await routeToUrl(options);
-      let strJson: string = getInspectorByKey('PhotoPickerComponent');
-      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
-      await CommonFunc.sleep(2000);
-      router.back();
+
+      await testCompleteButton(driver, options, 2);
+      console.info('testPicker51 finfish');
       done();
     });
   })
