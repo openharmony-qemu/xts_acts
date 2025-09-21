@@ -71,19 +71,19 @@ enum GamePadAxisSourceTypeEnum {
     /*
      * directional pad
      */
-    Dpad = 0,
+    DPAD = 0,
 
     /**
      * Left and right thumbstick
      */
-    LeftThumbstick = 1,
-    RightThumbstick = 2,
+    LEFT_THUMBSTICK = 1,
+    RIGHT_THUMBSTICK = 2,
 
     /*
      * Left and right trigger
      */
-    LeftTriggerAxis = 3,
-    RightTriggerAxis = 4
+    LEFT_TRIGGER_AXIS = 3,
+    RIGHT_TRIGGER_AXIS = 4
 };
 /**
  * Axis Event

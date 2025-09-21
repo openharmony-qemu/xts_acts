@@ -58,7 +58,7 @@ static GamePad_AxisEvent *CreateAxisEvent()
 {
     GamePadAxisEvent *gamePadAxisEvent = new GamePadAxisEvent();
     gamePadAxisEvent->uniq = UNIQ;
-    gamePadAxisEvent->axisSourceType = Dpad;
+    gamePadAxisEvent->axisSourceType = DPAD;
     gamePadAxisEvent->xValue = X_VALUE;
     gamePadAxisEvent->yValue = Y_VALUE;
     gamePadAxisEvent->zValue = Z_VALUE;

@@ -18,11 +18,11 @@
 
 #define CAPI_TEST(func)  \
     static napi_value func(napi_env env, napi_callback_info /*info*/) \
-    {    \
-         napi_value retVal = nullptr;  \
-         int32_t ret = OHOS::GameController::func();  \
-         napi_create_int32(env, ret, &retVal);\
-         return retVal; \
+    {   \
+        napi_value retVal = nullptr;  \
+        int32_t ret = OHOS::GameController::func();  \
+        napi_create_int32(env, ret, &retVal); \
+        return retVal; \
     }
 
 // game_device_test begin
