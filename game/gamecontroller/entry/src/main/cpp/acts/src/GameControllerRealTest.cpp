@@ -28,36 +28,36 @@
 
 namespace OHOS {
 namespace GameController {
-static bool isExistRealDevice = false;
-static bool isReceiveDeviceMonitorEvent = false;
-static bool isReceiveButtonInputEvent = false;
-static bool isReceiveAxisInputEvent = false;
-static bool isHasOnlineDeviceEvent = false;
-static bool isParseDeviceEventSuccess = true;
-static bool isParseButtonEventSuccess = true;
-static bool isParseAxisEventSuccess = true;
+static bool g_isExistRealDevice = false;
+static bool g_isReceiveDeviceMonitorEvent = false;
+static bool g_isReceiveButtonInputEvent = false;
+static bool g_isReceiveAxisInputEvent = false;
+static bool g_isHasOnlineDeviceEvent = false;
+static bool g_isParseDeviceEventSuccess = true;
+static bool g_isParseButtonEventSuccess = true;
+static bool g_isParseAxisEventSuccess = true;
 
 static const std::unordered_map<int32_t, std::string> BUTTON_CODE_NAME_TRANSFORMATION = {
-    {GamePadButtonTypeEnum::LeftShoulder, "LeftShoulder"},
-    {GamePadButtonTypeEnum::RightShoulder, "RightShoulder"},
-    {GamePadButtonTypeEnum::LeftTrigger, "LeftTrigger"},
-    {GamePadButtonTypeEnum::RightTrigger, "RightTrigger"},
+    {GamePadButtonTypeEnum::LEFT_SHOULDER, "LeftShoulder"},
+    {GamePadButtonTypeEnum::RIGHT_SHOULDER, "RightShoulder"},
+    {GamePadButtonTypeEnum::LEFT_TRIGGER, "LeftTrigger"},
+    {GamePadButtonTypeEnum::RIGHT_TRIGGER, "RightTrigger"},
 
-    {GamePadButtonTypeEnum::LeftThumbstickButton, "LeftThumbstick"},
-    {GamePadButtonTypeEnum::RightThumbstickButton, "RightThumbstick"},
-    {GamePadButtonTypeEnum::ButtonHome, "ButtonHome"},
-    {GamePadButtonTypeEnum::ButtonMenu, "ButtonMenu"},
-    {GamePadButtonTypeEnum::ButtonOptions, "ButtonOptions"},
-    {GamePadButtonTypeEnum::ButtonA, "ButtonA"},
-    {GamePadButtonTypeEnum::ButtonB, "ButtonB"},
-    {GamePadButtonTypeEnum::ButtonC, "ButtonC"},
-    {GamePadButtonTypeEnum::ButtonX, "ButtonX"},
-    {GamePadButtonTypeEnum::ButtonY, "ButtonY"},
+    {GamePadButtonTypeEnum::LEFT_THUMBSTICK_BUTTON, "LeftThumbstick"},
+    {GamePadButtonTypeEnum::RIGHT_THUMBSTICK_BUTTON, "RightThumbstick"},
+    {GamePadButtonTypeEnum::BUTTON_HOME, "ButtonHome"},
+    {GamePadButtonTypeEnum::BUTTON_MENU, "ButtonMenu"},
+    {GamePadButtonTypeEnum::BUTTON_OPTIONS, "ButtonOptions"},
+    {GamePadButtonTypeEnum::BUTTON_A, "ButtonA"},
+    {GamePadButtonTypeEnum::BUTTON_B, "ButtonB"},
+    {GamePadButtonTypeEnum::BUTTON_C, "ButtonC"},
+    {GamePadButtonTypeEnum::BUTTON_X, "ButtonX"},
+    {GamePadButtonTypeEnum::BUTTON_Y, "ButtonY"},
 
-    {GamePadButtonTypeEnum::Dpad_UpButton, "Dpad_UpButton"},
-    {GamePadButtonTypeEnum::Dpad_DownButton, "Dpad_DownButton"},
-    {GamePadButtonTypeEnum::Dpad_LeftButton, "Dpad_LeftButton"},
-    {GamePadButtonTypeEnum::Dpad_RightButton, "Dpad_RightButton"}};
+    {GamePadButtonTypeEnum::DPAD_UP_BUTTON, "Dpad_UpButton"},
+    {GamePadButtonTypeEnum::DPAD_DOWN_BUTTON, "Dpad_DownButton"},
+    {GamePadButtonTypeEnum::DPAD_LEFT_BUTTON, "Dpad_LeftButton"},
+    {GamePadButtonTypeEnum::DPAD_RIGHT_BUTTON, "Dpad_RightButton"}};
 
 static bool ParseDeviceInfo(GameDevice_DeviceInfo *deviceInfo, int32_t oprType)
 {
@@ -117,21 +117,21 @@ static bool ParseDeviceInfo(GameDevice_DeviceInfo *deviceInfo, int32_t oprType)
 
 static void DeviceMonitorCallbackTest(const struct GameDevice_DeviceEvent *deviceEvent)
 {
-    isReceiveDeviceMonitorEvent = true;
+    g_isReceiveDeviceMonitorEvent = true;
     GameDevice_StatusChangedType type;
     OH_GameDevice_DeviceEvent_GetChangedType(deviceEvent, &type);
     if (type == ONLINE) {
-        isHasOnlineDeviceEvent = true;
+        g_isHasOnlineDeviceEvent = true;
     }
     if (type != ONLINE && type != OFFLINE) {
-        isParseDeviceEventSuccess = false;
+        g_isParseDeviceEventSuccess = false;
     } else {
         OH_LOG_INFO(LOG_APP, "[ActsRealDeviceTest]DeviceEvent eventType is %{public}d", static_cast<int32_t>(type));
     }
     GameDevice_DeviceInfo *deviceInfo;
     OH_GameDevice_DeviceEvent_GetDeviceInfo(deviceEvent, &deviceInfo);
     if (!ParseDeviceInfo(deviceInfo, 1)) {
-        isParseDeviceEventSuccess = false;
+        g_isParseDeviceEventSuccess = false;
         OH_LOG_ERROR(LOG_APP, "[ActsRealDeviceTest]ParseDeviceInfo failed when handle event");
     }
     OH_GameDevice_DestroyDeviceInfo(&deviceInfo);
@@ -140,13 +140,13 @@ static void DeviceMonitorCallbackTest(const struct GameDevice_DeviceEvent *devic
 static bool CheckButtonCode(int32_t buttonCode, char *buttonCodeName)
 {
     if (BUTTON_CODE_NAME_TRANSFORMATION.count(buttonCode) == 0) {
-        isParseButtonEventSuccess = false;
+        g_isParseButtonEventSuccess = false;
         OH_LOG_ERROR(LOG_APP, "[ActsRealDeviceCheckGamePadEvent] cannot find buttonCode's buttonName");
         return false;
     }
 
     if (BUTTON_CODE_NAME_TRANSFORMATION.at(buttonCode) != buttonCodeName) {
-        isParseButtonEventSuccess = false;
+        g_isParseButtonEventSuccess = false;
         OH_LOG_ERROR(LOG_APP,
                      "[ActsRealDeviceCheckGamePadEvent] buttonCodeName is not same with buttonCode’s buttonName");
         return false;
@@ -177,20 +177,20 @@ static std::string GetPressedButtonInfo(const int32_t count, const struct GamePa
 
 static void OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent, const std::string &buttonName)
 {
-    isReceiveButtonInputEvent = true;
+    g_isReceiveButtonInputEvent = true;
     std::string temp;
     temp.append("OnButtonEvent:").append(buttonName);
     char *deviceId;
     GameController_ErrorCode code = OH_GamePad_ButtonEvent_GetDeviceId(buttonEvent, &deviceId);
     if (code != GAME_CONTROLLER_SUCCESS) {
-        isParseButtonEventSuccess = false;
+        g_isParseButtonEventSuccess = false;
     }
     temp.append(" ,deviceId:").append(deviceId);
     free(deviceId);
     GamePad_Button_ActionType action;
     code = OH_GamePad_ButtonEvent_GetButtonAction(buttonEvent, &action);
     if (code != GAME_CONTROLLER_SUCCESS) {
-        isParseButtonEventSuccess = false;
+        g_isParseButtonEventSuccess = false;
     }
     temp.append(" ,action:").append(std::to_string(action));
     int32_t buttonCode;
@@ -200,7 +200,7 @@ static void OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent, const s
     OH_GamePad_ButtonEvent_GetButtonCodeName(buttonEvent, &buttonCodeName);
     temp.append(" ,codeName:").append(buttonCodeName);
     if (buttonName != buttonCodeName) {
-        isParseButtonEventSuccess = false;
+        g_isParseButtonEventSuccess = false;
         OH_LOG_ERROR(LOG_APP, "[ActsRealDeviceCheckGamePadEvent] buttonCodeName is not same with buttonName");
     }
     CheckButtonCode(buttonCode, buttonCodeName);
@@ -208,13 +208,13 @@ static void OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent, const s
     int64_t actionTime;
     code = OH_GamePad_ButtonEvent_GetActionTime(buttonEvent, &actionTime);
     if (code != GAME_CONTROLLER_SUCCESS) {
-        isParseButtonEventSuccess = false;
+        g_isParseButtonEventSuccess = false;
     }
     temp.append(" ,actionTime:").append(std::to_string(actionTime));
     int32_t count;
     code = OH_GamePad_PressedButtons_GetCount(buttonEvent, &count);
     if (code != GAME_CONTROLLER_SUCCESS) {
-        isParseButtonEventSuccess = false;
+        g_isParseButtonEventSuccess = false;
     }
     temp.append(" ,count:").append(std::to_string(count));
     temp.append(" ,pressedButtonCodes:").append(GetPressedButtonInfo(count, buttonEvent));
@@ -309,26 +309,26 @@ static void RightThumbstickOnButtonEvent(const struct GamePad_ButtonEvent *butto
 static void OnAxisEvent(const struct GamePad_AxisEvent *axisEvent, const std::string &axisName,
                         const std::string axisValue)
 {
-    isReceiveAxisInputEvent = true;
+    g_isReceiveAxisInputEvent = true;
     std::string log;
     log.append("OnAxisEvent:").append(axisName);
     char *deviceId;
     GameController_ErrorCode code = OH_GamePad_AxisEvent_GetDeviceId(axisEvent, &deviceId);
     if (code != GAME_CONTROLLER_SUCCESS) {
-        isParseAxisEventSuccess = false;
+        g_isParseAxisEventSuccess = false;
     }
     log.append(",deviceId:").append(deviceId);
     free(deviceId);
     GamePad_AxisSourceType axisSourceType;
     code = OH_GamePad_AxisEvent_GetAxisSourceType(axisEvent, &axisSourceType);
     if (code != GAME_CONTROLLER_SUCCESS) {
-        isParseAxisEventSuccess = false;
+        g_isParseAxisEventSuccess = false;
     }
     log.append(",axisSourceType:").append(std::to_string(axisSourceType));
     std::int64_t actionTime;
     code = OH_GamePad_AxisEvent_GetActionTime(axisEvent, &actionTime);
     if (code != GAME_CONTROLLER_SUCCESS) {
-        isParseAxisEventSuccess = false;
+        g_isParseAxisEventSuccess = false;
     }
     log.append(",actionTime:").append(std::to_string(actionTime));
     log.append(",axisValue:").append(axisValue);
@@ -341,7 +341,7 @@ static void LeftTriggerOnAxisEvent(const struct GamePad_AxisEvent *axisEvent)
     double brakeAxisValue;
     GameController_ErrorCode code = OH_GamePad_AxisEvent_GetBrakeAxisValue(axisEvent, &brakeAxisValue);
     if (code != GAME_CONTROLLER_SUCCESS) {
-        isParseAxisEventSuccess = false;
+        g_isParseAxisEventSuccess = false;
     }
     val.append(std::to_string(brakeAxisValue));
 
@@ -354,7 +354,7 @@ static void RightTriggerOnAxisEvent(const struct GamePad_AxisEvent *axisEvent)
     double gasAxisValue;
     GameController_ErrorCode code = OH_GamePad_AxisEvent_GetGasAxisValue(axisEvent, &gasAxisValue);
     if (code != GAME_CONTROLLER_SUCCESS) {
-        isParseAxisEventSuccess = false;
+        g_isParseAxisEventSuccess = false;
     }
     val.append(std::to_string(gasAxisValue));
     OnAxisEvent(axisEvent, "RightTrigger_OnAxisEvent", val);
@@ -366,13 +366,13 @@ static void DpadOnAxisEvent(const struct GamePad_AxisEvent *axisEvent)
     double hatXAxisValue;
     GameController_ErrorCode code = OH_GamePad_AxisEvent_GetHatXAxisValue(axisEvent, &hatXAxisValue);
     if (code != GAME_CONTROLLER_SUCCESS) {
-        isParseAxisEventSuccess = false;
+        g_isParseAxisEventSuccess = false;
     }
     val.append(std::to_string(hatXAxisValue)).append("_HatY");
     double hatYAxisValue;
     code = OH_GamePad_AxisEvent_GetHatYAxisValue(axisEvent, &hatYAxisValue);
     if (code != GAME_CONTROLLER_SUCCESS) {
-        isParseAxisEventSuccess = false;
+        g_isParseAxisEventSuccess = false;
     }
     val.append(std::to_string(hatYAxisValue));
     OnAxisEvent(axisEvent, "Dpad_OnAxisEvent", val);
@@ -384,13 +384,13 @@ static void LeftThumbstickOnAxisEvent(const struct GamePad_AxisEvent *axisEvent)
     double xAxisValue;
     GameController_ErrorCode code = OH_GamePad_AxisEvent_GetXAxisValue(axisEvent, &xAxisValue);
     if (code != GAME_CONTROLLER_SUCCESS) {
-        isParseAxisEventSuccess = false;
+        g_isParseAxisEventSuccess = false;
     }
     val.append(std::to_string(xAxisValue)).append("_Y");
     double yAxisValue;
     code = OH_GamePad_AxisEvent_GetYAxisValue(axisEvent, &yAxisValue);
     if (code != GAME_CONTROLLER_SUCCESS) {
-        isParseAxisEventSuccess = false;
+        g_isParseAxisEventSuccess = false;
     }
     val.append(std::to_string(yAxisValue));
     OnAxisEvent(axisEvent, "LeftThumbstick_OnAxisEvent", val);
@@ -402,13 +402,13 @@ static void RightThumbstickOnAxisEvent(const struct GamePad_AxisEvent *axisEvent
     double zAxisValue;
     GameController_ErrorCode code = OH_GamePad_AxisEvent_GetZAxisValue(axisEvent, &zAxisValue);
     if (code != GAME_CONTROLLER_SUCCESS) {
-        isParseAxisEventSuccess = false;
+        g_isParseAxisEventSuccess = false;
     }
     val.append(std::to_string(zAxisValue)).append("_RZ");
     double rzAxisValue;
     code = OH_GamePad_AxisEvent_GetRZAxisValue(axisEvent, &rzAxisValue);
     if (code != GAME_CONTROLLER_SUCCESS) {
-        isParseAxisEventSuccess = false;
+        g_isParseAxisEventSuccess = false;
     }
     val.append(std::to_string(rzAxisValue));
     OnAxisEvent(axisEvent, "RightThumbstick_OnAxisEvent", val);
@@ -441,7 +441,7 @@ static void RegisterAllMonitor()
     OH_GamePad_RightThumbstick_RegisterAxisInputMonitor(RightThumbstickOnAxisEvent);
 }
 
-int32_t ActsRealDeviceHasRealDevice() { return isExistRealDevice ? 1 : 0; }
+int32_t ActsRealDeviceHasRealDevice() { return g_isExistRealDevice ? 1 : 0; }
 
 int32_t ActsRealDeviceGetAllDevices()
 {
@@ -474,7 +474,7 @@ int32_t ActsRealDeviceGetAllDevices()
         }
         OH_GameDevice_DestroyDeviceInfo(&deviceInfo);
     }
-    isExistRealDevice = true;
+    g_isExistRealDevice = true;
     OH_GameDevice_DestroyAllDeviceInfos(&allDeviceInfos);
     OH_LOG_INFO(LOG_APP, "[ActsRealDeviceTest] get all devices test Success");
     return static_cast<int32_t>(code);
@@ -487,17 +487,17 @@ int32_t ActsRealDeviceCheckDeviceEvent()
      * 2. 必须有设备上线事件
      * 3. 必须解析事件成功
      */
-    if (!isReceiveDeviceMonitorEvent) {
+    if (!g_isReceiveDeviceMonitorEvent) {
         OH_LOG_ERROR(LOG_APP, "[ActsRealDeviceCheckDeviceEvent] isReceiveDeviceMonitorEvent is false");
         return -1;
     }
 
-    if (!isParseDeviceEventSuccess) {
+    if (!g_isParseDeviceEventSuccess) {
         OH_LOG_ERROR(LOG_APP, "[ActsRealDeviceCheckDeviceEvent] isParseDeviceEventSuccess is false");
         return -1;
     }
 
-    if (!isHasOnlineDeviceEvent) {
+    if (!g_isHasOnlineDeviceEvent) {
         OH_LOG_ERROR(LOG_APP, "[ActsRealDeviceCheckDeviceEvent] isHasOnlineDeviceEvent is false");
         return -1;
     }
@@ -507,8 +507,8 @@ int32_t ActsRealDeviceCheckDeviceEvent()
 
 int32_t ActsRealDeviceCheckGamePadEvent()
 {
-    if (isReceiveButtonInputEvent) {
-        if (!isParseButtonEventSuccess) {
+    if (g_isReceiveButtonInputEvent) {
+        if (!g_isParseButtonEventSuccess) {
             OH_LOG_ERROR(LOG_APP, "[ActsRealDeviceCheckGamePadEvent] isParseButtonEventSuccess is false");
             return -1;
         }
@@ -517,8 +517,8 @@ int32_t ActsRealDeviceCheckGamePadEvent()
         OH_LOG_INFO(LOG_APP, "[ActsRealDeviceCheckGamePadEvent] no button event");
     }
 
-    if (isReceiveAxisInputEvent) {
-        if (!isParseAxisEventSuccess) {
+    if (g_isReceiveAxisInputEvent) {
+        if (!g_isParseAxisEventSuccess) {
             OH_LOG_ERROR(LOG_APP, "[ActsRealDeviceCheckGamePadEvent] isParseAxisEventSuccess is false");
             return -1;
         }

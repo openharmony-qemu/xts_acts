@@ -117,24 +117,24 @@ struct KeyInfo {
 };
 
 enum GamePadButtonTypeEnum {
-    LeftShoulder = 2307,
-    RightShoulder = 2308,
-    LeftTrigger = 2309,
-    RightTrigger = 2310,
-    LeftThumbstickButton = 2314,
-    RightThumbstickButton = 2315,
-    ButtonHome = 2311,
-    ButtonMenu = 2312,
-    ButtonOptions = 2313,
-    ButtonA = 2301,
-    ButtonB = 2302,
-    ButtonC = 2303,
-    ButtonX = 2304,
-    ButtonY = 2305,
-    Dpad_UpButton = 2012,
-    Dpad_DownButton = 2013,
-    Dpad_LeftButton = 2014,
-    Dpad_RightButton = 2015
+    LEFT_SHOULDER = 2307,
+    RIGHT_SHOULDER = 2308,
+    LEFT_TRIGGER = 2309,
+    RIGHT_TRIGGER = 2310,
+    LEFT_THUMBSTICK_BUTTON = 2314,
+    RIGHT_THUMBSTICK_BUTTON = 2315,
+    BUTTON_HOME = 2311,
+    BUTTON_MENU = 2312,
+    BUTTON_OPTIONS = 2313,
+    BUTTON_A = 2301,
+    BUTTON_B = 2302,
+    BUTTON_C = 2303,
+    BUTTON_X = 2304,
+    BUTTON_Y = 2305,
+    DPAD_UP_BUTTON = 2012,
+    DPAD_DOWN_BUTTON = 2013,
+    DPAD_LEFT_BUTTON = 2014,
+    DPAD_RIGHT_BUTTON = 2015
 };
 
 struct ButtonEvent {

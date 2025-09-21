@@ -43,12 +43,12 @@ static GamePad_ButtonEvent *CreateButtonEvent()
     GamePadButtonEvent *gamePadButtonEvent = new GamePadButtonEvent();
     gamePadButtonEvent->id = 1;
     gamePadButtonEvent->uniq = UNIQ;
-    gamePadButtonEvent->keyCode = GamePadButtonTypeEnum::ButtonA;
+    gamePadButtonEvent->keyCode = GamePadButtonTypeEnum::BUTTON_A;
     gamePadButtonEvent->keyCodeName = KEY_NAME_A;
     gamePadButtonEvent->actionTime = BTN_ACTION_TIME;
     gamePadButtonEvent->keyAction = 1;
     KeyInfo keyInfo;
-    keyInfo.keyCode = GamePadButtonTypeEnum::ButtonB;
+    keyInfo.keyCode = GamePadButtonTypeEnum::BUTTON_B;
     keyInfo.keyCodeName = KEY_NAME_B;
     gamePadButtonEvent->keys.push_back(keyInfo);
     return (GamePad_ButtonEvent *)gamePadButtonEvent;
@@ -151,7 +151,7 @@ int32_t ActsGameControllerGamePadButtonEventGetButtonCode01()
     int32_t buttonCode;
 
     GameController_ErrorCode code = OH_GamePad_ButtonEvent_GetButtonCode(buttonEvent, &buttonCode);
-    if (buttonCode != GamePadButtonTypeEnum::ButtonA) {
+    if (buttonCode != GamePadButtonTypeEnum::BUTTON_A) {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
     }
     DestroyButtonEvent(buttonEvent);
@@ -289,7 +289,7 @@ int32_t ActsGameControllerGamePadPressedButtonGetButtonCode01()
     OH_GamePad_PressedButtons_GetButtonInfo(buttonEvent, 0, &pressedButton);
 
     GameController_ErrorCode code = OH_GamePad_PressedButton_GetButtonCode(pressedButton, &buttonCode);
-    if (buttonCode != GamePadButtonTypeEnum::ButtonB) {
+    if (buttonCode != GamePadButtonTypeEnum::BUTTON_B) {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
     }
     DestroyButtonEvent(buttonEvent);

@@ -21,6 +21,12 @@
 
 namespace OHOS {
 namespace GameController {
+;
+namespace {
+const int32_t PRODUCT = 1;
+const int32_t VENDOR = 2;
+const int32_t VERSION = 3;
+} // namespace
 static GameDevice_DeviceEvent *CreateDeviceEvent()
 {
     GameDeviceEvent *deviceEvent = new GameDeviceEvent();
@@ -35,9 +41,9 @@ static GameDevice_DeviceInfo *CreateDeviceInfo()
     BasicDeviceInfo *basicDeviceInfo = new BasicDeviceInfo();
     basicDeviceInfo->uniq = "uniq";
     basicDeviceInfo->name = "name";
-    basicDeviceInfo->product = 1;
-    basicDeviceInfo->vendor = 2;
-    basicDeviceInfo->version = 3;
+    basicDeviceInfo->product = PRODUCT;
+    basicDeviceInfo->vendor = VENDOR;
+    basicDeviceInfo->version = VERSION;
     basicDeviceInfo->phys = "PhysicalAddress";
     basicDeviceInfo->deviceType = DeviceTypeEnum::GAME_PAD;
     return (GameDevice_DeviceInfo *)basicDeviceInfo;
@@ -169,7 +175,7 @@ int32_t ActsGameDeviceDeviceInfoGetProduct01()
     GameDevice_DeviceInfo *deviceInfo = CreateDeviceInfo();
 
     GameController_ErrorCode code = OH_GameDevice_DeviceInfo_GetProduct(deviceInfo, &product);
-    if (product != 1) {
+    if (product != PRODUCT) {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
     }
     OH_GameDevice_DestroyDeviceInfo(&deviceInfo);
@@ -189,7 +195,7 @@ int32_t ActsGameDeviceDeviceInfoGetVersion01()
     GameDevice_DeviceInfo *deviceInfo = CreateDeviceInfo();
 
     GameController_ErrorCode code = OH_GameDevice_DeviceInfo_GetVersion(deviceInfo, &version);
-    if (version != 3) {
+    if (version != VERSION) {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
     }
     OH_GameDevice_DestroyDeviceInfo(&deviceInfo);
