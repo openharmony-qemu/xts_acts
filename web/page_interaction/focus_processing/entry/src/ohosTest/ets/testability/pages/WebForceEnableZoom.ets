@@ -77,7 +77,9 @@ struct WebComponent {
                 this.isPageEnd = -1;
                 this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.webController.zoom(1.25);
+                let driver: Driver = Driver.create();
+                let image = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
+                await image.pinchIn(0.5);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
@@ -93,65 +95,16 @@ struct WebComponent {
                 this.isPageEnd = -1;
                 this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.webController.zoom(0.5);
+
+                let driver: Driver = Driver.create();
+                let image = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
+                await image.pinchOut(1.25);
                 await Utils.sleep(2000);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
             }
-
-            // case "emitWebForceEnableZoom003": {
-            //   try {
-              
-            //     this.isPageEnd = -1;
-            //     this.ScaleChange = false;
-            //     this.webController.loadUrl('www.example.com')
-            //     await waitForExist(()=>this.isPageEnd, this.str, 0);
-            //     this.isPageEnd = -1;
-            //     this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
-            //     await waitForExist(()=>this.isPageEnd, this.str, 0);
-            //     this.isForceZoomEnabled = false;
-            //     this.webController.zoom(1.25);
-            //     await Utils.sleep(2000);
-            //     //isForceZoomEnabled设置为false 应该是不触发 this.ScaleChange 应该为false
-            //     if(this.ScaleChange) {
-            //       Utils.emitEvent(false, 20250915)
-            //     } else {
-            //       Utils.emitEvent(true, 20250915)
-            //     }
-            //   } catch (error) {
-            //     console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-            //   }
-            //   break;
-            // }
-
-
-            case "emitWebForceEnableZoom004": {
-              try {
-                this.isPageEnd = -1;
-                this.flag = 2;
-                this.isForceZoomEnabled = false;
-                this.ScaleChange = false;
-                this.webController.loadUrl('www.example.com')
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.isPageEnd = -1;
-                this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.webController.zoom(0.5);
-                await Utils.sleep(2000);
-                //isForceZoomEnabled设置为false 应该是不触发 this.ScaleChange 应该为false
-                if(this.ScaleChange) {
-                  Utils.emitEvent(false, 20250916)
-                } else {
-                  Utils.emitEvent(true, 20250916)
-                }
-              } catch (error) {
-                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-              }
-              break;
-            }
-
 
           }
         })
