@@ -19,6 +19,7 @@ import cryptoFramework from '@ohos.security.cryptoFramework';
 interface mdVectorSpec {
   index: number;
   vectorSource: string;
+  disableUpdate?: boolean;
   plainText: string;
   expectDigest: number[];
 }
@@ -77,6 +78,20 @@ interface hkdfVectorSpec {
 interface hkdfVectorData extends kdfSpec {
   algName: string;
   kdfVectorSpec: hkdfVectorSpec[];
+}
+
+interface x963VectorSpec {
+  index: number;
+  vectorSource: string;
+  z: string;
+  info: string;
+  keySize: number;
+  expectKdf: string;
+}
+
+interface x963VectorData extends kdfSpec {
+  algName: string;
+  kdfVectorSpec: x963VectorSpec[];
 }
 
 interface symAlgSpec {
@@ -181,6 +196,22 @@ function getHkdfSpec(key: number[], salt: number[], info: number[], keySize: num
       algName: "HKDF",
       key: new Uint8Array(key),
       salt: new Uint8Array(salt),
+      info: new Uint8Array(info),
+      keySize: keySize
+    };
+
+    return spec;
+  } catch (error) {
+    console.error(`“${error}“, error code: ${error.code}`);
+    throw error as Error;
+  }
+}
+
+function getX963Spec(key: number[], info: number[], keySize: number): cryptoFramework.X963KdfSpec {
+  try {
+    let spec: cryptoFramework.X963KdfSpec = {
+      algName: "X963KDF",
+      key: new Uint8Array(key),
       info: new Uint8Array(info),
       keySize: keySize
     };
@@ -2231,6 +2262,216 @@ let agreementVectors: agreementVectorData[] = [
       },
     ]
   },
+];
+
+let sha3Vectors: mdVectorData[] = [
+  {
+    algName: "SHA3-256",
+    mdVectorSpec: [
+      {
+        index: 0,
+        vectorSource: "https://csrc.nist.gov/Projects/Cryptographic-Algorithm-Validation-Program/Secure-Hashing#shavs",
+        plainText: "e6fd42037f80",
+        expectDigest: [
+          0x22, 0x94, 0xf8, 0xd3, 0x83, 0x4f, 0x24, 0xaa, 0x90, 0x37, 0xc4, 0x31, 0xf8, 0xc2, 0x33, 0xa6,
+          0x6a, 0x57, 0xb2, 0x3f, 0xa3, 0xde, 0x10, 0x53, 0x0b, 0xbb, 0x69, 0x11, 0xf6, 0xe1, 0x85, 0x0f
+        ]
+      },
+      {
+        index: 0,
+        vectorSource: "https://csrc.nist.gov/Projects/Cryptographic-Algorithm-Validation-Program/Secure-Hashing#shavs",
+        disableUpdate: true,
+        plainText: "",
+        expectDigest: [
+          0xa7, 0xff, 0xc6, 0xf8, 0xbf, 0x1e, 0xd7, 0x66, 0x51, 0xc1, 0x47, 0x56, 0xa0, 0x61, 0xd6, 0x62,
+          0xf5, 0x80, 0xff, 0x4d, 0xe4, 0x3b, 0x49, 0xfa, 0x82, 0xd8, 0x0a, 0x4b, 0x80, 0xf8, 0x43, 0x4a
+        ]
+      }
+    ]
+  },
+  {
+    algName: "SHA3-384",
+    mdVectorSpec: [
+      {
+        index: 0,
+        vectorSource: "https://csrc.nist.gov/Projects/Cryptographic-Algorithm-Validation-Program/Secure-Hashing#shavs",
+        plainText: "5a6659e9f0e7",
+        expectDigest: [
+          0x21, 0xb1, 0xf3, 0xf6, 0x3b, 0x90, 0x7f, 0x96, 0x88, 0x21, 0x18, 0x5a, 0x7f, 0xe3, 0x0b, 0x16,
+          0xd4, 0x7e, 0x1d, 0x6e, 0xe5, 0xb9, 0xc8, 0x0b, 0xe6, 0x89, 0x47, 0x85, 0x4d, 0xe7, 0xa8, 0xef,
+          0x4a, 0x03, 0xa6, 0xb2, 0xe4, 0xec, 0x96, 0xab, 0xdd, 0x4f, 0xa2, 0x9a, 0xb9, 0x79, 0x6f, 0x28
+        ]
+      },
+      {
+        index: 0,
+        vectorSource: "https://csrc.nist.gov/Projects/Cryptographic-Algorithm-Validation-Program/Secure-Hashing#shavs",
+        disableUpdate: true,
+        plainText: "",
+        expectDigest: [
+          0x0c, 0x63, 0xa7, 0x5b, 0x84, 0x5e, 0x4f, 0x7d, 0x01, 0x10, 0x7d, 0x85, 0x2e, 0x4c, 0x24, 0x85,
+          0xc5, 0x1a, 0x50, 0xaa, 0xaa, 0x94, 0xfc, 0x61, 0x99, 0x5e, 0x71, 0xbb, 0xee, 0x98, 0x3a, 0x2a,
+          0xc3, 0x71, 0x38, 0x31, 0x26, 0x4a, 0xdb, 0x47, 0xfb, 0x6b, 0xd1, 0xe0, 0x58, 0xd5, 0xf0, 0x04
+        ]
+      }
+    ]
+  },
+  {
+    algName: "SHA3-512",
+    mdVectorSpec: [
+      {
+        index: 0,
+        vectorSource: "https://csrc.nist.gov/Projects/Cryptographic-Algorithm-Validation-Program/Secure-Hashing#shavs",
+        plainText: "71a986d2f662",
+        expectDigest: [
+          0xde, 0xf6, 0xaa, 0xc2, 0xb0, 0x8c, 0x98, 0xd5, 0x6a, 0x05, 0x01, 0xa8, 0xcb, 0x93, 0xf5, 0xb4,
+          0x7d, 0x63, 0x22, 0xda, 0xf9, 0x9e, 0x03, 0x25, 0x54, 0x57, 0xc3, 0x03, 0x32, 0x63, 0x95, 0xf7,
+          0x65, 0x57, 0x69, 0x30, 0xf8, 0x57, 0x1d, 0x89, 0xc0, 0x1e, 0x72, 0x7c, 0xc7, 0x9c, 0x2d, 0x44,
+          0x97, 0xf8, 0x5c, 0x45, 0x69, 0x1b, 0x55, 0x4e, 0x20, 0xda, 0x81, 0x0c, 0x2b, 0xc8, 0x65, 0xef
+        ]
+      },
+      {
+        index: 0,
+        vectorSource: "https://csrc.nist.gov/Projects/Cryptographic-Algorithm-Validation-Program/Secure-Hashing#shavs",
+        disableUpdate: true,
+        plainText: "",
+        expectDigest: [
+          0xa6, 0x9f, 0x73, 0xcc, 0xa2, 0x3a, 0x9a, 0xc5, 0xc8, 0xb5, 0x67, 0xdc, 0x18, 0x5a, 0x75, 0x6e,
+          0x97, 0xc9, 0x82, 0x16, 0x4f, 0xe2, 0x58, 0x59, 0xe0, 0xd1, 0xdc, 0xc1, 0x47, 0x5c, 0x80, 0xa6,
+          0x15, 0xb2, 0x12, 0x3a, 0xf1, 0xf5, 0xf9, 0x4c, 0x11, 0xe3, 0xe9, 0x40, 0x2c, 0x3a, 0xc5, 0x58,
+          0xf5, 0x00, 0x19, 0x9d, 0x95, 0xb6, 0xd3, 0xe3, 0x01, 0x75, 0x85, 0x86, 0x28, 0x1d, 0xcd, 0x26
+        ]
+      }
+    ]
+  },
+]
+
+let x963Vectors: x963VectorData[] = [
+  {
+    kdfAlgName: "X963KDF",
+    algName: "SHA1",
+    kdfVectorSpec: [
+      {
+        index: 0,
+        vectorSource: "NIST",
+        z: "1c7d7b5f0597b03d06a018466ed1a93e30ed4b04dc64ccdd",
+        info: "",
+        keySize: 16,
+        expectKdf: "bf71dffd8f4d99223936beb46fee8ccc"
+      },
+      {
+        index: 1,
+        vectorSource: "NIST",
+        z: "fd17198b89ab39c4ab5d7cca363b82f9fd7e23c3984dc8a2",
+        info: "856a53f3e36a26bbc5792879f307cce2",
+        keySize: 128,
+        expectKdf: "6e5fad865cb4a51c95209b16df0cc490bc2c9064405c5bccd4ee4832a531fbe7f" +
+          "10cb79e2eab6ab1149fbd5a23cfdabc41242269c9df22f628c4424333855b64e95e2d4fb84" +
+          "69c669f17176c07d103376b10b384ec5763d8b8c610409f19aca8eb31f9d85cc61a8d6d4a0" +
+          "3d03e5a506b78d6847e93d295ee548c65afedd2efec"
+      }
+    ]
+  },
+  {
+    kdfAlgName: "X963KDF",
+    algName: "SHA224",
+    kdfVectorSpec: [
+      {
+        index: 0,
+        vectorSource: "NIST",
+        z: "9ba3226ba0fca6bd5ddaef5b8d763a4d3303bc258d90468c",
+        info: "",
+        keySize: 16,
+        expectKdf: "15ccbd7d6b8f918335799b3920e69c1f"
+      },
+      {
+        index: 1,
+        vectorSource: "NIST",
+        z: "da67a73072d521a8272c69023573012ddf9b46bff65b3900",
+        info: "727997aed53e78f74b1d66743a4ea4d2",
+        keySize: 128,
+        expectKdf: "dfc3126c5eebf9a58d89730e8d8ff7cc772592f28c10b349b437d9d068698a22e5" +
+          "32eae975dfaf9c5c6a9f2935eafb05353013c253444e61f07bc9ddd15948e614bdc7e445ba3" +
+          "b1893f42f87f18fb352d49956009a642c362d45410b43a9ab376e9261210739174759511d1f" +
+          "9e52f6ec73dfed446dbafaf7fd1a57113abc2e8d"
+      }
+    ]
+  },
+  {
+    kdfAlgName: "X963KDF",
+    algName: "SHA256",
+    kdfVectorSpec: [
+      {
+        index: 0,
+        vectorSource: "NIST",
+        z: "96c05619d56c328ab95fe84b18264b08725b85e33fd34f08",
+        info: "",
+        keySize: 16,
+        expectKdf: "443024c3dae66b95e6f5670601558f71"
+      },
+      {
+        index: 1,
+        vectorSource: "NIST",
+        z: "22518b10e70f2a3f243810ae3254139efbee04aa57c7af7d",
+        info: "75eef81aa3041e33b80971203d2c0c52",
+        keySize: 128,
+        expectKdf: "c498af77161cc59f2962b9a713e2b215152d139766ce34a776df11866a69bf2e52a1" +
+          "3d9c7c6fc878c50c5ea0bc7b00e0da2447cfd874f6cf92f30d0097111485500c90c3af8b48787" +
+          "2d04685d14c8d1dc8d7fa08beb0ce0ababc11f0bd496269142d43525a78e5bc79a17f59676a57" +
+          "06dc54d54d4d1f0bd7e386128ec26afc21"
+      }
+    ]
+  },
+  {
+    kdfAlgName: "X963KDF",
+    algName: "SHA384",
+    kdfVectorSpec: [
+      {
+        index: 0,
+        vectorSource: "NIST",
+        z: "d8554db1b392cd55c3fe957bed76af09c13ac2a9392f88f6",
+        info: "",
+        keySize: 16,
+        expectKdf: "671a46aada145162f8ddf1ca586a1cda"
+      },
+      {
+        index: 1,
+        vectorSource: "NIST",
+        z: "c051fd22539c9de791d6c43a854b8f80a6bf70190050854a",
+        info: "1317504aa34759bb4c931e3b78201945",
+        keySize: 128,
+        expectKdf: "cf6a84434734ac6949e1d7976743277be789906908ad3ca3a8923da7f476abbeb574" +
+          "306d7243031a85566914bfd247d2519c479953d9d55b6b831e56260806c39af21b74e3ecf470e" +
+          "3bd8332791c8a23c13352514fdef00c2d1a408ba31b2d3f9fdcb373895484649a645d1845eec9" +
+          "1b5bfdc5ad28c7824984482002dd4a8677"
+      }
+    ]
+  },
+  {
+    kdfAlgName: "X963KDF",
+    algName: "SHA512",
+    kdfVectorSpec: [
+      {
+        index: 0,
+        vectorSource: "NIST",
+        z: "87fc0d8c4477485bb574f5fcea264b30885dc8d90ad82782",
+        info: "",
+        keySize: 16,
+        expectKdf: "947665fbb9152153ef460238506a0245"
+      },
+      {
+        index: 1,
+        vectorSource: "NIST",
+        z: "00aa5bb79b33e389fa58ceadc047197f14e73712f452caa9fc4c9adb369348b81507392f1a86" +
+          "ddfdb7c4ff8231c4bd0f44e44a1b55b1404747a9e2e753f55ef05a2d",
+        info: "e3b5b4c1b0d5cf1d2b3a2f9937895d31",
+        keySize: 128,
+        expectKdf: "4463f869f3cc18769b52264b0112b5858f7ad32a5a2d96d8cffabf7fa733633d6e4d" +
+          "d2a599acceb3ea54a6217ce0b50eef4f6b40a5c30250a5a8eeee208002267089dbf351f3f5022" +
+          "aa9638bf1ee419dea9c4ff745a25ac27bda33ca08bd56dd1a59b4106cf2dbbc0ab2aa8e2efa7b" +
+          "17902d34276951ceccab87f9661c3e8816"
+      }
+    ]
+  }
 ]
 
 export {
@@ -2253,5 +2494,10 @@ export {
   symAeadVectors,
   agreementVectors,
   agreementVectorData,
-  agreementVectorSpec
+  agreementVectorSpec,
+  sha3Vectors,
+  getX963Spec,
+  x963VectorData,
+  x963VectorSpec,
+  x963Vectors
 }
