@@ -20,6 +20,8 @@ import { Driver, ON, MouseButton } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import { window } from '@kit.ArkUI';
 
+const EVENT_ID_SET_SUITE_KEY = 179001;
+let driver: Driver = Driver.create();
 
 @Entry
 @Component
@@ -47,10 +49,12 @@ struct WebComponent {
   @State windowHeight: number = 0
   @State uintX: number = 0
   @State uintY: number = 0
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
@@ -62,8 +66,12 @@ struct WebComponent {
       console.info("NestedScrollMode01:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 1;
       }
     }
+  }
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   aboutToAppear(): void {
@@ -111,31 +119,31 @@ struct WebComponent {
                   }).key('innerWidth1').width(Number(this.windowWidth / 6).toFixed() + 'px')
                 Button("web test").key('NestedScrollModeTest').onClick(async () => {
                   console.info("key==>" + this.str)
+                  await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let pointer = CommonFunc.getComponentRect('NestedScrollModeWeb')
                   console.log('NestedScrollModeTest04 pointer' + JSON.stringify(pointer))
                   let X = pointer.left + this.uintX * 5
                   let Y = pointer.top + this.uintY * 5
                   console.log('NestedScrollModeTest04 X' + X)
                   console.log('NestedScrollModeTest04 Y' + Y)
-                  let driver: Driver = await Driver.create()
                   let button1 = await driver.findComponent(ON.id('innerWidth1'));
                   await button1.click()
 
                   let button2 = await driver.findComponent(ON.id('innerHeight1'));
                   await button2.click()
-                  await Utils.sleep(500);
+                  await Utils.waitForReleaseDriver(this.str,driver)
                   switch (this.str) {
 
                     case "NestedScrollMode01": {
-                      let driver: Driver = await Driver.create()
                       console.log('swipe01' + this.offsetX)
                       this.controller2.scrollBy(this.text4, 0, 1)
-                      await Utils.sleep(500);
+                      await Utils.waitForScrollStop(()=>this.controller2.getPageOffset().x, this.str+' webYOffset');
                       await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT, 2072);
                       await driver.swipe(X, Y, X - this.uintX*3, Y);
-                      await Utils.sleep(1000);
+                      await Utils.waitForReleaseDriver(this.str,driver)
                       if (this.offsetX == 0 && this.HorizontalX > 10) {
-                        Utils.emitEvent(true, 20241129)
+                        Utils.emitEvent(true, 179010)
                       }
                       console.log('NestedScrollMode01' + this.offsetX)
                       console.log('NestedScrollMode0101' + this.HorizontalX)
@@ -143,16 +151,15 @@ struct WebComponent {
                       break;
                     }
                     case "NestedScrollMode02": {
-                      let driver: Driver = await Driver.create()
                       console.log('swipe03' + this.offsetX)
-                      await Utils.sleep(1000);
+
                       //web向右滚到头了,this.offsetX 等于0
                       this.controller2.scrollBy(-this.text4, 0, 1)
-                      await Utils.sleep(500);
+                      await Utils.waitForScrollStop(()=>this.controller2.getPageOffset().x, this.str+' webYOffset');
                       await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT, 2072);
                       await driver.swipe(X, Y, X + this.uintX * 5, Y);
                       if (this.offsetX == 0 && this.HorizontalX < 10) {
-                        Utils.emitEvent(true, 20241130)
+                        Utils.emitEvent(true, 179020)
                       }
                       console.log('swipe04' + this.offsetX)
                       console.log('X2' + X);
@@ -164,15 +171,14 @@ struct WebComponent {
                     }
 
                     case "NestedScrollMode03": {
-                      let driver: Driver = await Driver.create()
                       this.controller2.scrollBy(0, this.text5, 1);
-                      await Utils.sleep(500);
+                      await Utils.waitForScrollStop(()=>this.controller2.getPageOffset().y, this.str+' webYOffset');
                       await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+                      await Utils.waitForReleaseDriver(this.str,driver)
                       await driver.swipe(X, Y, X, Y - this.uintY);
-                      await Utils.sleep(2000);
                       //子组件向上滚到头了
                       if (this.offsetY == 0 && this.HorizontalY > 10) {
-                        Utils.emitEvent(true, 20241131)
+                        Utils.emitEvent(true, 179030)
                       }
 
                       console.log('swipe06' + this.offsetY)
@@ -184,16 +190,14 @@ struct WebComponent {
                     }
 
                     case "NestedScrollMode04": {
-                      let driver: Driver = Driver.create()
                       console.log('NestedScrollModeTest04 swipe07' + this.offsetY)
                       this.controller2.scrollBy(0, -this.text5, 1);
-                      await Utils.sleep(500);
+                      await Utils.waitForScrollStop(()=>this.controller2.getPageOffset().y, this.str+' webYOffset');
                       await driver.mouseClick({ x: X, y: Y }, MouseButton.MOUSE_BUTTON_LEFT, 2072);
                       await driver.swipe(X, Y, X, Y + this.uintY * 3);
-                      await Utils.sleep(1000);
                       //子组件滚到头为0
                       if (this.offsetY == 0 && this.HorizontalY < 10) {
-                        Utils.emitEvent(true, 20241132)
+                        Utils.emitEvent(true, 179040)
                       }
                       console.log('NestedScrollModeTest04 swipe08' + this.offsetY)
                       console.log('NestedScrollModeTest04 X4' + X);
@@ -257,6 +261,10 @@ struct WebComponent {
                   .onScroll((event) => {
                     console.info("xOffset = " + event.xOffset);
                     console.info("yOffset = " + event.yOffset);
+                  })
+                  .onPageEnd((event) => {
+                    console.log('onPageEnd url:' + event.url);
+                    this.isPageEnd = 1;
                   })
                 Text("Scroll Area")
                   .width("20%")

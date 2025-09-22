@@ -18,9 +18,15 @@ import Utils from './Utils';
 // import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from "@kit.TestKit";
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-let emitKey = "emitScrollByOne";
+
+let emitKey = ""
+let tcName = ""
+const EVENT_ID_SET_SUITE_KEY = 184501;
+let driver = Driver.create();
 export default function webViewSrollByJsunit() {
   describe('ActsAceWebViewScrollByTest',  () =>{
     beforeAll(async  (done: Function) => {
@@ -34,7 +40,7 @@ export default function webViewSrollByJsunit() {
         if (!("webViewScrollBy" == pages.name)) {
           console.info("get webViewScrollBy state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("webcomponentScrollBy"),10000);
           console.info("push webViewScrollBy page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -48,30 +54,10 @@ export default function webViewSrollByJsunit() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webViewScrollBy beforeEach start");
       done();
     })
-    afterEach(async  (done: Function) => {
-      console.info("webViewScrollBy afterEach start:"+emitKey);
-      try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent: events_emitter.InnerEvent = {
-                eventId:10,
-                priority:events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-      } catch (err) {
-            console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
-      done();
-    })
+
     /*
       * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0100
       * tc.name testScrollByOne
@@ -79,9 +65,14 @@ export default function webViewSrollByJsunit() {
       * which is half the page height
     */
     it('testScrollByOne',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
-      emitKey="emitScrollByTwo";
-      Utils.registerEvent("testScrollByOne",true,228,done);
-      sendEventByKey('webcomponentScrollBy',10,'');
+      emitKey = 'emitScrollByOne';
+      tcName = 'testScrollByOne'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184510, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webcomponentScrollBy", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /*
       * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0200
@@ -90,9 +81,14 @@ export default function webViewSrollByJsunit() {
       * which is greater than the content height
     */
     it('testScrollByTwo',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
-      emitKey="emitScrollByThree";
-      Utils.registerEvent("testScrollByTwo",true,230,done);
-      sendEventByKey('webcomponentScrollBy',10,'');
+      emitKey = 'emitScrollByTwo';
+      tcName = 'testScrollByTwo'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184520, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webcomponentScrollBy", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /*
       * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0300
@@ -101,9 +97,14 @@ export default function webViewSrollByJsunit() {
       * page height
     */
     it('testScrollByThree',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
-      emitKey="emitScrollByFour";
-      Utils.registerEvent("testScrollByThree","[0,0]",232,done);
-      sendEventByKey('webcomponentScrollBy',10,'');
+      emitKey = 'emitScrollByThree';
+      tcName = 'testScrollByThree'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, "[0,0]", 184530, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webcomponentScrollBy", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /*
       * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0400
@@ -112,9 +113,14 @@ export default function webViewSrollByJsunit() {
       * page height
     */
     it('testScrollByFour',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
-      emitKey="emitScrollByFive";
-      Utils.registerEvent("emitScrollByFour","[0,0]",234,done);
-      sendEventByKey('webcomponentScrollBy',10,'');
+      emitKey = 'emitScrollByFour';
+      tcName = 'testScrollByFour'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, "[0,0]", 184540, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webcomponentScrollBy", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /*
      * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0500
@@ -123,9 +129,14 @@ export default function webViewSrollByJsunit() {
      * half the page length
     */
     it('testScrollByFive',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
-      emitKey="emitScrollBySix";
-      Utils.registerEvent("testScrollByFive",true,236,done);
-      sendEventByKey('webcomponentScrollBy',10,'');
+      emitKey = 'emitScrollByFive';
+      tcName = 'testScrollByFive'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184550, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webcomponentScrollBy", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /*
      * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0600
@@ -134,9 +145,14 @@ export default function webViewSrollByJsunit() {
      * greater than the page length
     */
     it('testScrollBySix',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
-      emitKey="emitScrollBySeven";
-      Utils.registerEvent("testScrollBySix",true,238,done);
-      sendEventByKey('webcomponentScrollBy',10,'');
+      emitKey = 'emitScrollBySix';
+      tcName = 'testScrollBySix'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184560, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webcomponentScrollBy", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /*
      * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0700
@@ -145,9 +161,14 @@ export default function webViewSrollByJsunit() {
      * than the page length
     */
     it('testScrollBySeven',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
-      emitKey="emitScrollByEight";
-      Utils.registerEvent("testScrollBySeven","[0,0]",240,done);
-      sendEventByKey('webcomponentScrollBy',10,'');
+      emitKey = 'emitScrollBySeven';
+      tcName = 'testScrollBySeven'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, "[0,0]", 184570, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webcomponentScrollBy", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /*
      * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0800
@@ -156,9 +177,14 @@ export default function webViewSrollByJsunit() {
      * page length
     */
     it('testScrollByEight',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
-      emitKey="emitScrollByNine";
-      Utils.registerEvent("testScrollByEight","[0,0]",242,done);
-      sendEventByKey('webcomponentScrollBy',10,'');
+      emitKey = 'emitScrollByEight';
+      tcName = 'testScrollByEight'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, "[0,0]", 184580, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webcomponentScrollBy", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /*
      * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0900
@@ -167,9 +193,14 @@ export default function webViewSrollByJsunit() {
      * the width and height of the page
     */
     it('testScrollByNine',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
-      emitKey="emitScrollByTen";
-      Utils.registerEvent("testScrollByNine",true,244,done);
-      sendEventByKey('webcomponentScrollBy',10,'');
+      emitKey = 'emitScrollByNine';
+      tcName = 'testScrollByEight'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184590, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webcomponentScrollBy", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /*
      * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_1000
@@ -178,9 +209,14 @@ export default function webViewSrollByJsunit() {
      * the page width and height
     */
     it('testScrollByTen',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
-      emitKey="emitScrollByEleven";
-      Utils.registerEvent("testScrollByTen",true,246,done);
-      sendEventByKey('webcomponentScrollBy',10,'');
+      emitKey = 'emitScrollByTen';
+      tcName = 'testScrollByTen'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 184600, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webcomponentScrollBy", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /*
      * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_1100
@@ -189,9 +225,14 @@ export default function webViewSrollByJsunit() {
      * and height of the page
     */
     it('testScrollByEleven',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
-      emitKey="emitScrollByTwelve";
-      Utils.registerEvent("testScrollByEleven","[0,0]",248,done);
-      sendEventByKey('webcomponentScrollBy',10,'');
+      emitKey = 'emitScrollByEleven';
+      tcName = 'testScrollByEleven'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, "[0,0]", 184610, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webcomponentScrollBy", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /*
      * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_1200
@@ -200,9 +241,14 @@ export default function webViewSrollByJsunit() {
      * width and height
     */
     it('testScrollByTwelve',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
-      emitKey="emitScrollByTwelve";
-      Utils.registerEvent("testScrollByTwelve","[0,0]",250,done);
-      sendEventByKey('webcomponentScrollBy',10,'');
+      emitKey = 'emitScrollByTwelve';
+      tcName = 'testScrollByTwelve'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, "[0,0]", 184620, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webcomponentScrollBy", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
   })
 }

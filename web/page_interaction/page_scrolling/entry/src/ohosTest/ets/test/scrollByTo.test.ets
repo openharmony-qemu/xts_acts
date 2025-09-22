@@ -19,9 +19,15 @@ import Utils from './Utils';
 // import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from "@kit.TestKit";
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = "scroll01";
+
+const EVENT_ID_SET_SUITE_KEY = 179101;
+let driver: Driver = Driver.create();
+
 export default function webViewSrollableJsunit() {
   describe('scrollByToTest',  () =>{
     beforeAll(async  (done: Function) =>{
@@ -35,7 +41,7 @@ export default function webViewSrollableJsunit() {
         if (!("scrollByTo" == pages.name)) {
           console.info("get scroll state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("scrollByToButton"), 10000);
           console.info("push scroll page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -49,28 +55,7 @@ export default function webViewSrollableJsunit() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("scroll beforeEach start");
-      done();
-    })
-    afterEach(async  (done: Function) =>{
-      console.info("scroll afterEach start:"+emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId:10,
-          priority:events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
       done();
     })
 
@@ -80,9 +65,12 @@ export default function webViewSrollableJsunit() {
      *tc.desic test blurMode01 interface when choose callback mode.
      */
     it('scrollByTo01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
-      emitKey="scrollByTo01";
-      Utils.registerEvent("scrollByTo01",0,20250322,done);
-      sendEventByKey('scrollByToButton',10,'');
+      Utils.emitEvent("scrollByTo01", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("scrollByTo01", 0, 179110, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "scrollByToButton", "scrollByTo01");
+      await Utils.waitForExist(() => isReturn, "scrollByTo01" + '_returnCheck', true, 1000);
+      done();
     })
 
 

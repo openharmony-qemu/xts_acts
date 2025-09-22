@@ -16,9 +16,14 @@
 import { beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
+let emitKey = '';
+const EVENT_ID_SET_SUITE_KEY = 179701;
+let driver: Driver = Driver.create();
 
 export default function webResourceResponseGet() {
 
@@ -30,7 +35,11 @@ export default function webResourceResponseGet() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
+      try {
+        await driver.waitForComponent(ON.id("WebResourceResponseGetButton"), 10000);
+      } catch (err) {
+        console.error("push WebResourceResponseGetTestSuite page error: " + err);
+      }
       console.info("webResourceResponseGet beforeEach start");
       done();
     })
@@ -44,10 +53,13 @@ export default function webResourceResponseGet() {
     * @tc.level      : Level 1
     */
     it('testScrollType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testScrollType001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testScrollType001", 0, 37023, done);
-      sendEventByKey('WebResourceResponseGetButton', 10, '');
+      emitKey = 'testScrollType001';
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(emitKey, 0, 179710, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebResourceResponseGetButton", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 1000);
+      done();
     })
     /*
     * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SCROLLBYWITHRESULT_0100
@@ -58,10 +70,13 @@ export default function webResourceResponseGet() {
     * @tc.level      : Level 1
     */
     it('testscrollByWithResult001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testscrollByWithResult001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testscrollByWithResult001", "error", 37024, done);
-      sendEventByKey('WebResourceResponseGetButton', 10, '');
+      emitKey = 'testscrollByWithResult001';
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(emitKey, "error", 179720, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebResourceResponseGetButton", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 1000);
+      done();
     })
   })
 }
