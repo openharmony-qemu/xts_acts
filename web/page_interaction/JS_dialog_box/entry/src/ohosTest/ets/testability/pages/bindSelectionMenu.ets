@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 import web_webview from '@ohos.web.webview';
-import Utils from '../../test/UtilsTwo';
+import Utils from '../../test/Utils';
 import { BusinessError } from '@ohos.base';
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON } from '@kit.TestKit';
 import events_emitter from '@ohos.events.emitter';
 
 interface PreviewBuilderParam {
@@ -32,11 +32,14 @@ interface PreviewBuilderParam {
   }.width($$.width).height($$.height)
 }
 
+const EVENT_ID_SET_SUITE_KEY = 177001;
+const DOMAIN = 0x0000;
+let driver: Driver = Driver.create();
+
 @Entry
 @Component
 struct WebComponent {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
-  controller1: web_webview.WebviewController = new web_webview.WebviewController();
 
   private result: WebContextMenuResult | undefined = undefined;
   @State previewImage: Resource | string | undefined = undefined;
@@ -44,6 +47,9 @@ struct WebComponent {
   @State previewHeight: number = 0;
   @State str: string = "bindSelectionMenuType01";
   @State userAgentPC:string = "";
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+  @State isOnContextMenuShow: number = -1;
 
   @Builder
   MenuBuilder() {
@@ -63,10 +69,13 @@ struct WebComponent {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -75,6 +84,7 @@ struct WebComponent {
       console.info("bindSelectionMenuType01:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -84,29 +94,33 @@ struct WebComponent {
       Row() {
         Button("web test").key('webcomponentSelectionMenu').onClick(async () => {
           console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
-
-
             case "bindSelectionMenuType01": {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(true, 8301)
+                  Utils.emitEvent(true, 177010)
                   break;
                 }
-                let driver = Driver.create();
+                await Utils.waitForReleaseDriver(this.str, driver)
+                this.isOnContextMenuShow = -1;
                 let button = await driver.findComponent(ON.id('bindSelectionMenuType'));
                 await button.longClick();
-                await Utils.sleep(2000);
-                let buttonOne = await driver.findComponent(ON.text('复制'));
-                await buttonOne.click()
-                await Utils.sleep(1000);
+                await Utils.waitForExist(()=>this.isOnContextMenuShow, this.str+' isOnContextMenuShow', 1, 1000);
+                try{
+                  let buttonOne = await driver.findComponent(ON.text('复制'));
+                  await buttonOne.click()
+                }catch (err){
+                  this.result?.closeContextMenu();
+                }
                 break;
-
             }
-
             case "bindSelectionMenuType02": {
-                await Utils.sleep(1000);
-                Utils.emitEvent(MenuType.PREVIEW_MENU, 8302)
+                this.isPageEnd = -1;
+                this.controller.refresh()
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                Utils.emitEvent(MenuType.PREVIEW_MENU, 177020)
                 break;
             }
 
@@ -141,16 +155,21 @@ struct WebComponent {
 
               this.previewWidth = px2vp(event?.param?.getPreviewWidth());
               this.previewHeight = px2vp(event?.param.getPreviewHeight());
-            Utils.emitEvent(this.previewWidth > 0 && this.previewHeight > 0, 8301)
+            Utils.emitEvent(this.previewWidth > 0 && this.previewHeight > 0, 177010)
             if (event.param.getSourceUrl().indexOf("resource://rawfile/") == 0) {
               this.previewImage = $rawfile(event?.param.getSourceUrl().substr(19));
             } else {
               this.previewImage = event?.param.getSourceUrl();
             }
+            this.isOnContextMenuShow = 1
             return true;
           }
           return false;
         }).margin(80)
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
 
     }
   }

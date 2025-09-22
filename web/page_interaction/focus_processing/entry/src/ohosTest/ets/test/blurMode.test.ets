@@ -19,10 +19,16 @@ import Utils from './Utils';
 // import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from "@kit.TestKit";
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = "";
-export default function webViewSrollableJsunit() {
+
+const EVENT_ID_SET_SUITE_KEY = 178201;
+const driver = Driver.create();
+
+export default function blurModeTest() {
   describe('blurOnKeyboardHideModeTest',  () =>{
     beforeAll(async  (done: Function) =>{
       let options: router.RouterOptions = {
@@ -35,7 +41,6 @@ export default function webViewSrollableJsunit() {
         if (!("blurMode" == pages.name)) {
           console.info("get blurMode state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
           console.info("push blurMode page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -49,28 +54,8 @@ export default function webViewSrollableJsunit() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("blurMode beforeEach start");
-      done();
-    })
-    afterEach(async  (done: Function) =>{
-      console.info("blurMode afterEach start:"+emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId:10,
-          priority:events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
+      await driver.waitForComponent(ON.id("blurOnKeyboardHideMode01"), 10000);
       done();
     })
 
@@ -81,9 +66,12 @@ export default function webViewSrollableJsunit() {
      */
     it('blurMode01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       emitKey="blurMode01";
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("blurMode01",true,20241133,done);
-      sendEventByKey('blurOnKeyboardHideMode01',10,'');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("blurMode01", true, 178210, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "blurOnKeyboardHideMode01",emitKey);
+      await Utils.waitForExist(() => isReturn, "blurMode01" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -93,9 +81,12 @@ export default function webViewSrollableJsunit() {
    */
     it('blurMode02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       emitKey="blurMode02";
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("blurMode02",true,20241134,done);
-      sendEventByKey('blurOnKeyboardHideMode01',10,'');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("blurMode02", true, 178220, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "blurOnKeyboardHideMode01",emitKey);
+      await Utils.waitForExist(() => isReturn, "blurMode02" + '_returnCheck', true, 1000);
+      done();
     })
 
   })
