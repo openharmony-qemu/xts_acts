@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Content } from "@kit.ArkUI";
+import { Content } from '@kit.ArkUI';
 
 export const CreateUIInputEventNode: (note: Content) => void;
 
