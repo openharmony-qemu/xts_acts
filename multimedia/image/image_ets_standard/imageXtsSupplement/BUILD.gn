@@ -18,7 +18,7 @@ ohos_app_assist_suite("ActsImageXtsSuppTest") {
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsImageXtsSuppTest"
   subsystem_name = "multimedia"
-  part_name = "camera_framework"
+  part_name = "image_framework"
 }
 
 ohos_js_app_suite("imageXts_supp_ets_hap") {
@@ -26,7 +26,7 @@ ohos_js_app_suite("imageXts_supp_ets_hap") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsImageXtsSuppTest"
-  part_name = "camera_framework"
+  part_name = "image_framework"
 
   subsystem_name = "multimedia"
   deps = [ ":ActsImageXtsSuppTest" ]
