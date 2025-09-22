@@ -346,7 +346,6 @@ napi_value DRM_MediaKeyRequestTypeValue(napi_env env, napi_callback_info info)
 {
     napi_value result;
     DRM_MediaKeyRequest requestData;
-    memset(&requestData, 0, sizeof(DRM_MediaKeyRequest));
     Drm_ErrCode ret6 = OH_MediaKeySession_GenerateMediaKeyRequest(nullptr, nullptr, &requestData);
     napi_create_int32(env, requestData.type == MEDIA_KEY_REQUEST_TYPE_UNKNOWN, &result);
     return result;
@@ -355,7 +354,6 @@ napi_value DRM_MediaKeyRequestDefaultUrl(napi_env env, napi_callback_info info)
 {
     napi_value result;
     DRM_MediaKeyRequest requestData;
-    memset(&requestData, 0, sizeof(DRM_MediaKeyRequest));
     Drm_ErrCode ret6 = OH_MediaKeySession_GenerateMediaKeyRequest(nullptr, nullptr, &requestData);
     napi_create_int32(env, requestData.defaultUrl[0] == '\0', &result);
     return result;
@@ -392,7 +390,6 @@ napi_value DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UNKNOWN(napi_env env, n
 {
     napi_value result;
     DRM_MediaKeyRequest requestData;
-    memset(&requestData, 0, sizeof(DRM_MediaKeyRequest));
     Drm_ErrCode ret6 = OH_MediaKeySession_GenerateMediaKeyRequest(nullptr, nullptr, &requestData);
     napi_create_int32(env, requestData.type == MEDIA_KEY_REQUEST_TYPE_UNKNOWN, &result);
     return result;
@@ -402,7 +399,6 @@ napi_value DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_INITIAL(napi_env env, n
 {
     napi_value result;
     DRM_MediaKeyRequest requestData;
-    memset(&requestData, 0, sizeof(DRM_MediaKeyRequest));
     requestData.type = MEDIA_KEY_REQUEST_TYPE_INITIAL;
     Drm_ErrCode ret6 = OH_MediaKeySession_GenerateMediaKeyRequest(nullptr, nullptr, &requestData);
     napi_create_int32(env, requestData.type == MEDIA_KEY_REQUEST_TYPE_INITIAL, &result);
@@ -413,7 +409,6 @@ napi_value DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RENEWAL(napi_env env, n
 {
     napi_value result;
     DRM_MediaKeyRequest requestData;
-    memset(&requestData, 0, sizeof(DRM_MediaKeyRequest));
     requestData.type = MEDIA_KEY_REQUEST_TYPE_RENEWAL;
     Drm_ErrCode ret6 = OH_MediaKeySession_GenerateMediaKeyRequest(nullptr, nullptr, &requestData);
     napi_create_int32(env, requestData.type == MEDIA_KEY_REQUEST_TYPE_RENEWAL, &result);
@@ -424,7 +419,6 @@ napi_value DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RELEASE(napi_env env, n
 {
     napi_value result;
     DRM_MediaKeyRequest requestData;
-    memset(&requestData, 0, sizeof(DRM_MediaKeyRequest));    
     requestData.type = MEDIA_KEY_REQUEST_TYPE_RELEASE;
     Drm_ErrCode ret6 = OH_MediaKeySession_GenerateMediaKeyRequest(nullptr, nullptr, &requestData);
     napi_create_int32(env, requestData.type == MEDIA_KEY_REQUEST_TYPE_RELEASE, &result);
@@ -435,7 +429,6 @@ napi_value DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_NONE(napi_env env, napi
 {
     napi_value result;
     DRM_MediaKeyRequest requestData;
-    memset(&requestData, 0, sizeof(DRM_MediaKeyRequest));
     requestData.type = MEDIA_KEY_REQUEST_TYPE_NONE;
     Drm_ErrCode ret6 = OH_MediaKeySession_GenerateMediaKeyRequest(nullptr, nullptr, &requestData);
     napi_create_int32(env, requestData.type == MEDIA_KEY_REQUEST_TYPE_NONE, &result);
@@ -446,14 +439,13 @@ napi_value DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UPDATE(napi_env env, na
 {
     napi_value result;
     DRM_MediaKeyRequest requestData;
-    memset(&requestData, 0, sizeof(DRM_MediaKeyRequest));
     requestData.type = MEDIA_KEY_REQUEST_TYPE_UPDATE;
     Drm_ErrCode ret6 = OH_MediaKeySession_GenerateMediaKeyRequest(nullptr, nullptr, &requestData);
     napi_create_int32(env, requestData.type == MEDIA_KEY_REQUEST_TYPE_UPDATE, &result);
     return result;
 }
 
-static const char *judge_uuid(void) 
+static const char *judge_uuid(void)
 {
     bool isSupport = OH_MediaKeySystem_IsSupported(CLEAR_PLAY);
     if (isSupport == 1) {
@@ -475,10 +467,12 @@ napi_value DRM_OfflineMediaKeyStatusOFFLINE_MEDIA_KEY_STATUS_INACTIVE(napi_env e
     Drm_ErrCode ret3 = OH_MediaKeySystem_CreateMediaKeySession(system_ptr, &level, &drmKeySession);
     Drm_ErrCode ret4 = OH_MediaKeySystem_ClearOfflineMediaKeys(system_ptr, keyId_ptr, offlineMediaKeyIdLen);
     DRM_OfflineMediaKeyStatus status = OFFLINE_MEDIA_KEY_STATUS_USABLE;
-    if (ret3 == DRM_ERR_OK) {
-        Drm_ErrCode ret6 =
-            OH_MediaKeySystem_GetOfflineMediaKeyStatus(system_ptr, keyId_ptr, offlineMediaKeyIdLen, &status);
-        if (ret6 == DRM_ERR_OK) {
+    if (ret3 == DRM_ERR_OK)
+    {  
+        Drm_ErrCode ret6 = OH_MediaKeySystem_GetOfflineMediaKeyStatus(system_ptr, keyId_ptr,
+            offlineMediaKeyIdLen, &status);
+        if (ret6 == DRM_ERR_OK)
+        {
             ret3 = (status != OFFLINE_MEDIA_KEY_STATUS_USABLE) ? DRM_ERR_OK : DRM_ERR_INVALID_VAL;
         }
     }
@@ -536,7 +530,7 @@ Drm_ErrCode sessoinEventEvenType(MediaKeySession *mediaKeySessoin, DRM_EventType
 }
 
 Drm_ErrCode evenTypeEVENT_DRM_BASE(MediaKeySession *mediaKeySessoin, DRM_EventType eventType, uint8_t *info,
-    int32_t infoLen, char *extra) 
+    int32_t infoLen, char *extra)
 {
     eventType = EVENT_DRM_BASE;
     DRM_EventType eventType2 = EVENT_DRM_BASE;
@@ -602,26 +596,21 @@ napi_value DRM_KeysInfo_EvenType(napi_env env, napi_callback_info info)
     Drm_ErrCode ret5 = OH_MediaKeySystem_CreateMediaKeySession(drmKeySystem, &contentProtectionLevel, &session_ptr);
 
     OH_MediaKeySession_Callback testCallback;
-    memset(&testCallback, 0, sizeof(OH_MediaKeySession_Callback));
     testCallback.eventCallback = &sessoinEventEvenType;
     testCallback.keyChangeCallback = &sessoinKeyChangeCallBackTest2;
     Drm_ErrCode ret4 = OH_MediaKeySession_SetCallback(session_ptr, &testCallback);
 
     DRM_MediaKeyRequestInfo requestInfo;
-    memset(&requestInfo, 0, sizeof(DRM_MediaKeyRequestInfo));
     unsigned char testData[DATA_REQUESTINFO_LEN] = REQUESTINFODATA;
     requestInfo.type = MEDIA_KEY_TYPE_OFFLINE;
     requestInfo.initDataLen = sizeof(testData);
     requestInfo.optionsCount = 1;
     memcpy(requestInfo.mimeType, (char *)"video/mp4", sizeof("video/mp4"));
     memcpy(requestInfo.initData, testData, sizeof(testData));
-    memcpy(requestInfo.optionName[0], (char *)"optionalDataName",
-             sizeof("optionalDataName"));
-    memcpy(requestInfo.optionData[0], (char *)"optionalDataValue",
-             sizeof("optionalDataValue"));
+    memcpy(requestInfo.optionName[0], (char *)"optionalDataName", sizeof("optionalDataName"));
+    memcpy(requestInfo.optionData[0], (char *)"optionalDataValue", sizeof("optionalDataValue"));
     DRM_ContentProtectionLevel level;
     DRM_MediaKeyRequest requestData;
-    memset(&requestData, 0, sizeof(DRM_MediaKeyRequest));
     Drm_ErrCode ret6 = OH_MediaKeySession_GenerateMediaKeyRequest(session_ptr, &requestInfo, &requestData);
     DRM_MediaKeyStatus mediaKeyStatus;
     OH_MediaKeySession_CheckMediaKeyStatus(session_ptr, &mediaKeyStatus);
@@ -644,25 +633,20 @@ napi_value EvenType_EVENT_DRM_BASE(napi_env env, napi_callback_info info)
     Drm_ErrCode ret5 = OH_MediaKeySystem_CreateMediaKeySession(drmKeySystem, &contentProtectionLevel, &session_ptr);
 
     OH_MediaKeySession_Callback testCallback;
-    memset(&testCallback, 0, sizeof(OH_MediaKeySession_Callback));
     testCallback.eventCallback = &evenTypeEVENT_DRM_BASE;
     testCallback.keyChangeCallback = &sessoinKeyChangeCallBackTest2;
     Drm_ErrCode ret4 = OH_MediaKeySession_SetCallback(session_ptr, &testCallback);
 
     DRM_MediaKeyRequestInfo requestInfo;
-    memset(&requestInfo, 0, sizeof(DRM_MediaKeyRequestInfo));
     unsigned char testData[DATA_REQUESTINFO_LEN] = REQUESTINFODATA;
     requestInfo.type = MEDIA_KEY_TYPE_OFFLINE;
     requestInfo.initDataLen = sizeof(testData);
     requestInfo.optionsCount = 1;
     memcpy(requestInfo.mimeType, (char *)"video/mp4", sizeof("video/mp4"));
     memcpy(requestInfo.initData, testData, sizeof(testData));
-    memcpy(requestInfo.optionName[0], (char *)"optionalDataName",
-           sizeof("optionalDataName"));
-    memcpy(requestInfo.optionData[0], (char *)"optionalDataValue",
-           sizeof("optionalDataValue"));
+    memcpy(requestInfo.optionName[0], (char *)"optionalDataName", sizeof("optionalDataName"));
+    memcpy(requestInfo.optionData[0], (char *)"optionalDataValue", sizeof("optionalDataValue"));
     DRM_MediaKeyRequest requestData;
-    memset(&requestData, 0, sizeof(DRM_MediaKeyRequest));
     Drm_ErrCode ret6 = OH_MediaKeySession_GenerateMediaKeyRequest(session_ptr, &requestInfo, &requestData);
 
     napi_create_int32(env, ret6 == DRM_ERR_OK, &result);
@@ -679,25 +663,20 @@ napi_value EvenType_EVENT_PROVISION_REQUIRED(napi_env env, napi_callback_info in
     Drm_ErrCode ret5 = OH_MediaKeySystem_CreateMediaKeySession(drmKeySystem, &contentProtectionLevel, &session_ptr);
 
     OH_MediaKeySession_Callback testCallback;
-    memset(&testCallback, 0, sizeof(OH_MediaKeySession_Callback));
     testCallback.eventCallback = &evenTypeEVENT_PROVISION_REQUIRED;
     testCallback.keyChangeCallback = &sessoinKeyChangeCallBackTest2;
     Drm_ErrCode ret4 = OH_MediaKeySession_SetCallback(session_ptr, &testCallback);
 
     DRM_MediaKeyRequestInfo requestInfo;
-    memset(&requestInfo, 0, sizeof(DRM_MediaKeyRequestInfo));
     unsigned char testData[DATA_REQUESTINFO_LEN] = REQUESTINFODATA;
     requestInfo.type = MEDIA_KEY_TYPE_OFFLINE;
     requestInfo.initDataLen = sizeof(testData);
     requestInfo.optionsCount = 1;
     memcpy(requestInfo.mimeType, (char *)"video/mp4", sizeof("video/mp4"));
     memcpy(requestInfo.initData, testData, sizeof(testData));
-    memcpy(requestInfo.optionName[0], (char *)"optionalDataName",
-           sizeof("optionalDataName"));
-    memcpy(requestInfo.optionData[0], (char *)"optionalDataValue",
-           sizeof("optionalDataValue"));
+    memcpy(requestInfo.optionName[0], (char *)"optionalDataName", sizeof("optionalDataName"));
+    memcpy(requestInfo.optionData[0], (char *)"optionalDataValue", sizeof("optionalDataValue"));
     DRM_MediaKeyRequest requestData;
-    memset(&requestData, 0, sizeof(DRM_MediaKeyRequest));
     Drm_ErrCode ret6 = OH_MediaKeySession_GenerateMediaKeyRequest(session_ptr, &requestInfo, &requestData);
 
     napi_create_int32(env, ret6 == DRM_ERR_OK, &result);
@@ -714,25 +693,20 @@ napi_value EvenType_EVENT_VENDOR_DEFINED(napi_env env, napi_callback_info info)
     Drm_ErrCode ret5 = OH_MediaKeySystem_CreateMediaKeySession(drmKeySystem, &contentProtectionLevel, &session_ptr);
 
     OH_MediaKeySession_Callback testCallback;
-    memset(&testCallback, 0, sizeof(OH_MediaKeySession_Callback));
     testCallback.eventCallback = &evenTypeEVENT_VENDOR_DEFINED;
     testCallback.keyChangeCallback = &sessoinKeyChangeCallBackTest2;
     Drm_ErrCode ret4 = OH_MediaKeySession_SetCallback(session_ptr, &testCallback);
 
     DRM_MediaKeyRequestInfo requestInfo;
-    memset(&requestInfo, 0, sizeof(DRM_MediaKeyRequestInfo));
     unsigned char testData[DATA_REQUESTINFO_LEN] = REQUESTINFODATA;
     requestInfo.type = MEDIA_KEY_TYPE_OFFLINE;
     requestInfo.initDataLen = sizeof(testData);
     requestInfo.optionsCount = 1;
     memcpy(requestInfo.mimeType, (char *)"video/mp4", sizeof("video/mp4"));
     memcpy(requestInfo.initData, testData, sizeof(testData));
-    memcpy(requestInfo.optionName[0], (char *)"optionalDataName",
-             sizeof("optionalDataName"));
-    memcpy(requestInfo.optionData[0], (char *)"optionalDataValue",
-             sizeof("optionalDataValue"));
+    memcpy(requestInfo.optionName[0], (char *)"optionalDataName", sizeof("optionalDataName"));
+    memcpy(requestInfo.optionData[0], (char *)"optionalDataValue", sizeof("optionalDataValue"));
     DRM_MediaKeyRequest requestData;
-    memset(&requestData, 0, sizeof(DRM_MediaKeyRequest));
     Drm_ErrCode ret6 = OH_MediaKeySession_GenerateMediaKeyRequest(session_ptr, &requestInfo, &requestData);
 
     napi_create_int32(env, ret6 == DRM_ERR_OK, &result);
@@ -749,25 +723,20 @@ napi_value EvenType_EVENT_EXPIRATION_UPDATE(napi_env env, napi_callback_info inf
     Drm_ErrCode ret5 = OH_MediaKeySystem_CreateMediaKeySession(drmKeySystem, &contentProtectionLevel, &session_ptr);
 
     OH_MediaKeySession_Callback testCallback;
-    memset(&testCallback, 0, sizeof(OH_MediaKeySession_Callback));
     testCallback.eventCallback = &evenTypeEVENT_EXPIRATION_UPDATE;
     testCallback.keyChangeCallback = &sessoinKeyChangeCallBackTest2;
     Drm_ErrCode ret4 = OH_MediaKeySession_SetCallback(session_ptr, &testCallback);
 
     DRM_MediaKeyRequestInfo requestInfo;
-    memset(&requestInfo, 0, sizeof(DRM_MediaKeyRequestInfo));
     unsigned char testData[DATA_REQUESTINFO_LEN] = REQUESTINFODATA;
     requestInfo.type = MEDIA_KEY_TYPE_OFFLINE;
     requestInfo.initDataLen = sizeof(testData);
     requestInfo.optionsCount = 1;
     memcpy(requestInfo.mimeType, (char *)"video/mp4", sizeof("video/mp4"));
     memcpy(requestInfo.initData, testData, sizeof(testData));
-    memcpy(requestInfo.optionName[0], (char *)"optionalDataName",
-             sizeof("optionalDataName"));
-    memcpy(requestInfo.optionData[0], (char *)"optionalDataValue",
-             sizeof("optionalDataValue"));
+    memcpy(requestInfo.optionName[0], (char *)"optionalDataName", sizeof("optionalDataName"));
+    memcpy(requestInfo.optionData[0], (char *)"optionalDataValue", sizeof("optionalDataValue"));
     DRM_MediaKeyRequest requestData;
-    memset(&requestData, 0, sizeof(DRM_MediaKeyRequest));
     Drm_ErrCode ret6 = OH_MediaKeySession_GenerateMediaKeyRequest(session_ptr, &requestInfo, &requestData);
 
     napi_create_int32(env, ret6 == DRM_ERR_OK, &result);
@@ -785,13 +754,11 @@ napi_value DRM_KeysInfo_keyId(napi_env env, napi_callback_info info)
     Drm_ErrCode ret5 = OH_MediaKeySystem_CreateMediaKeySession(drmKeySystem, &contentProtectionLevel, &session_ptr);
 
     OH_MediaKeySession_Callback testCallback;
-    memset(&testCallback, 0, sizeof(OH_MediaKeySession_Callback));
     testCallback.eventCallback = &sessoinEventCallBackTest2;
     testCallback.keyChangeCallback = &sessoinKeyChangeCallBackTest2;
     Drm_ErrCode ret4 = OH_MediaKeySession_SetCallback(session_ptr, &testCallback);
 
     DRM_MediaKeyRequestInfo requestInfo;
-    memset(&requestInfo, 0, sizeof(DRM_MediaKeyRequestInfo));
     unsigned char testData[DATA_REQUESTINFO_LEN] = REQUESTINFODATA;
     requestInfo.type = MEDIA_KEY_TYPE_OFFLINE;
     requestInfo.initDataLen = sizeof(testData);
@@ -802,7 +769,6 @@ napi_value DRM_KeysInfo_keyId(napi_env env, napi_callback_info info)
     memcpy(requestInfo.optionData[0], (char *)"optionalDataValue", sizeof("optionalDataValue"));
     DRM_ContentProtectionLevel level;
     DRM_MediaKeyRequest requestData;
-    memset(&requestData, 0, sizeof(DRM_MediaKeyRequest));
     Drm_ErrCode ret6 = OH_MediaKeySession_GenerateMediaKeyRequest(session_ptr, &requestInfo, &requestData);
     napi_create_int32(env, ret6 == DRM_ERR_OK, &result);
     return result;
@@ -819,26 +785,21 @@ napi_value DRM_KeysInfo_keysInfoCount(napi_env env, napi_callback_info info)
     Drm_ErrCode ret5 = OH_MediaKeySystem_CreateMediaKeySession(drmKeySystem, &contentProtectionLevel, &session_ptr);
 
     OH_MediaKeySession_Callback testCallback;
-    memset(&testCallback, 0, sizeof(OH_MediaKeySession_Callback));
     testCallback.eventCallback = &sessoinEventCallBackTest2;
     testCallback.keyChangeCallback = &sessoinKeyChangeCallBackTest2;
     Drm_ErrCode ret4 = OH_MediaKeySession_SetCallback(session_ptr, &testCallback);
 
     DRM_MediaKeyRequestInfo requestInfo;
-    memset(&requestInfo, 0, sizeof(DRM_MediaKeyRequestInfo));
     unsigned char testData[DATA_REQUESTINFO_LEN] = REQUESTINFODATA;
     requestInfo.type = MEDIA_KEY_TYPE_OFFLINE;
     requestInfo.initDataLen = sizeof(testData);
     requestInfo.optionsCount = 1;
     memcpy(requestInfo.mimeType, (char *)"video/mp4", sizeof("video/mp4"));
     memcpy(requestInfo.initData, testData, sizeof(testData));
-    memcpy(requestInfo.optionName[0], (char *)"optionalDataName",
-             sizeof("optionalDataName"));
-    memcpy(requestInfo.optionData[0], (char *)"optionalDataValue",
-             sizeof("optionalDataValue"));
+    memcpy(requestInfo.optionName[0], (char *)"optionalDataName", sizeof("optionalDataName"));
+    memcpy(requestInfo.optionData[0], (char *)"optionalDataValue", sizeof("optionalDataValue"));
     DRM_ContentProtectionLevel level;
     DRM_MediaKeyRequest requestData;
-    memset(&requestData, 0, sizeof(DRM_MediaKeyRequest));
     Drm_ErrCode ret6 = OH_MediaKeySession_GenerateMediaKeyRequest(session_ptr, &requestInfo, &requestData);
     napi_create_int32(env, ret6 == DRM_ERR_OK, &result);
     return result;
@@ -855,26 +816,21 @@ napi_value DRM_KeysInfo_statusValue(napi_env env, napi_callback_info info)
     Drm_ErrCode ret5 = OH_MediaKeySystem_CreateMediaKeySession(drmKeySystem, &contentProtectionLevel, &session_ptr);
 
     OH_MediaKeySession_Callback testCallback;
-    memset(&testCallback, 0, sizeof(OH_MediaKeySession_Callback));
     testCallback.eventCallback = &sessoinEventCallBackTest2;
     testCallback.keyChangeCallback = &sessoinKeyChangeCallBackTest2;
     Drm_ErrCode ret4 = OH_MediaKeySession_SetCallback(session_ptr, &testCallback);
 
     DRM_MediaKeyRequestInfo requestInfo;
-    memset(&requestInfo, 0, sizeof(DRM_MediaKeyRequestInfo));
     unsigned char testData[DATA_REQUESTINFO_LEN] = REQUESTINFODATA;
     requestInfo.type = MEDIA_KEY_TYPE_OFFLINE;
     requestInfo.initDataLen = sizeof(testData);
     requestInfo.optionsCount = 1;
     memcpy(requestInfo.mimeType, (char *)"video/mp4", sizeof("video/mp4"));
     memcpy(requestInfo.initData, testData, sizeof(testData));
-    memcpy(requestInfo.optionName[0], (char *)"optionalDataName",
-             sizeof("optionalDataName"));
-    memcpy(requestInfo.optionData[0], (char *)"optionalDataValue",
-             sizeof("optionalDataValue"));
+    memcpy(requestInfo.optionName[0], (char *)"optionalDataName", sizeof("optionalDataName"));
+    memcpy(requestInfo.optionData[0], (char *)"optionalDataValue", sizeof("optionalDataValue"));
     DRM_ContentProtectionLevel level;
     DRM_MediaKeyRequest requestData;
-    memset(&requestData, 0, sizeof(DRM_MediaKeyRequest));
     Drm_ErrCode ret6 = OH_MediaKeySession_GenerateMediaKeyRequest(session_ptr, &requestInfo, &requestData);
     napi_create_int32(env, ret6 == DRM_ERR_OK, &result);
     return result;
