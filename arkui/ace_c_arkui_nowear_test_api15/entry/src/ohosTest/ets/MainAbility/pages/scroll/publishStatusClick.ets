@@ -32,6 +32,6 @@ export struct StatusClickComponent {
         let err: BusinessError = error as BusinessError;
         console.error(`publish failed, code is ${err.code}, message is ${err.message}`);
       }
-    }).width(100).height(25).margin(3).id('Top')
+    }).width(100).height('5%').id('Top')
   }
 }
