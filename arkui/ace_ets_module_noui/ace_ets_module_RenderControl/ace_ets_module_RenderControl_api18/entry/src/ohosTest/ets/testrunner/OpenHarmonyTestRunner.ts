@@ -17,8 +17,8 @@ import hilog from '@ohos.hilog';
 import TestRunner from '@ohos.application.testRunner';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
-var abilityDelegator = undefined
-var abilityDelegatorArguments = undefined
+let abilityDelegator = undefined
+let abilityDelegatorArguments = undefined
 
 async function onAbilityCreateCallback() {
     hilog.info(0x0000, 'testTag', '%{public}s', 'onAbilityCreateCallback');
@@ -58,7 +58,7 @@ export default class OpenHarmonyTestRunner implements TestRunner {
                 hilog.info(0x0000, 'testTag', 'executeShellCommand : err : %{public}s', JSON.stringify(err) ?? '');
                 hilog.info(0x0000, 'testTag', 'executeShellCommand : data : %{public}s', d.stdResult ?? '');
                 hilog.info(0x0000, 'testTag', 'executeShellCommand : data : %{public}s', d.exitCode ?? '');
-            })
+            });
         hilog.info(0x0000, 'testTag', '%{public}s', 'OpenHarmonyTestRunner onRun end');
     }
 }

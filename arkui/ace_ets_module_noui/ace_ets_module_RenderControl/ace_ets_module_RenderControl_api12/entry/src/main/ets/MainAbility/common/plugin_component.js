@@ -16,32 +16,32 @@
 import pluginComponentManager from '@ohos.pluginComponent'
 
 function onPushListener(source, template, data, extraData) {
-    console.log("onPushListener template.source=" + template.source)
+    console.log('onPushListener template.source=' + template.source)
     var jsonObject = JSON.parse(data.componentTemplate.source)
-    console.log("request_callback1:source json object" + jsonObject)
+    console.log('request_callback1:source json object' + jsonObject)
     var jsonArry = jsonObject.ExternalComponent
-    for (var i in jsonArry) {
+    for (let i in jsonArry) {
         console.log(jsonArry[i])
     }
-    console.log("onPushListener:source json object" + jsonObject)
-    console.log("onPushListener:source json string" + JSON.stringify(jsonObject))
-    console.log("onPushListener template.ability=" + template.ability)
-    console.log("onPushListener data=" + JSON.stringify(data))
-    console.log("onPushListener extraData=" + JSON.stringify(extraData))
+    console.log('onPushListener:source json object' + jsonObject);
+    console.log('onPushListener:source json string' + JSON.stringify(jsonObject));
+    console.log('onPushListener template.ability=' + template.ability);
+    console.log('onPushListener data=' + JSON.stringify(data));
+    console.log('onPushListener extraData=' + JSON.stringify(extraData));
 }
 
 function onRequestListener(source, name, data)
 {
-    console.log("onRequestListener name=" + name);
-    console.log("onRequestListener data=" + JSON.stringify(data));
-    return {template:"plugintemplate", data:data};
+    console.log('onRequestListener name=' + name);
+    console.log('onRequestListener data=' + JSON.stringify(data));
+    return {template:'plugintemplate', data:data};
 }
 
 export default {
     //register listener
     onListener() {
-        pluginComponentManager.on("push", onPushListener)
-        pluginComponentManager.on("request", onRequestListener)
+        pluginComponentManager.on('push', onPushListener);
+        pluginComponentManager.on('request', onRequestListener);
     },
     Push() {
         // 组件提供方主动发送事件
@@ -65,9 +65,9 @@ export default {
                 jsonPath: "",
             },
             (err, data) => {
-                console.log("push_callback: push ok!");
+                console.log('push_callback: push ok!');
             }
-        )
+        );
     },
     Request() {
         // 组件使用方主动发送事件
@@ -84,17 +84,17 @@ export default {
             jsonPath: "",
         },
             (err, data) => {
-                console.log("request_callback: componentTemplate.ability=" + data.componentTemplate.ability)
-                console.log("request_callback: componentTemplate.source=" + data.componentTemplate.source)
+                console.log('request_callback: componentTemplate.ability=' + data.componentTemplate.ability)
+                console.log('request_callback: componentTemplate.source=' + data.componentTemplate.source)
                 var jsonObject = JSON.parse(data.componentTemplate.source)
-                console.log("request_callback:source json object" + jsonObject)
+                console.log('request_callback:source json object' + jsonObject)
                 var jsonArry = jsonObject.ExternalComponent
-                for (var i in jsonArry) {
+                for (let i in jsonArry) {
                     console.log(jsonArry[i])
                 }
-                console.log("request_callback:source json string" + JSON.stringify(jsonObject))
-                console.log("request_callback: data=" + JSON.stringify(data.data))
-                console.log("request_callback: extraData=" + JSON.stringify(data.extraData))
+                console.log('request_callback:source json string' + JSON.stringify(jsonObject))
+                console.log('request_callback: data=' + JSON.stringify(data.data))
+                console.log('request_callback: extraData=' + JSON.stringify(data.extraData))
             }
         )
     }

@@ -20,6 +20,6 @@ group("ActsAceEtsModuleNoUITest") {
     "ace_ets_module_UIContext:ActsAceEtsModuleUIContextTest",
     "ace_ets_module_featureAbility:ActsAceEtsModuleFeatureAbilityTest",
     "ace_ets_module_global:ActsAceEtsModuleGlobalTest",
-	  "ace_ets_module_RenderControl:ActsAceEtsModuleRenderControlTest",
+    "ace_ets_module_RenderControl:ActsAceEtsModuleRenderControlTest",
   ]
 }

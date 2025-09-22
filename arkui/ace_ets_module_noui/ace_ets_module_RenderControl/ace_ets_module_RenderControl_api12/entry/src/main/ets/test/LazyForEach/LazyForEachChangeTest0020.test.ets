@@ -47,12 +47,12 @@ export default function LazyForEachChangeTest0020() {
     });
 
     /**
-    * @tc.number: LazyForEachChangeTest0020_0100
-    * @tc.name  : LazyForEachChangeTest0020_0100
-    * @tc.desc  : Data changes.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
+    * @tc.number LazyForEachChangeTest0020_0100
+    * @tc.name LazyForEachChangeTest0020_0100
+    * @tc.desc Data changes.
+    * @tc.level Level 2
+    * @tc.type
+    * @tc.size 
     */
     it('LazyForEachChangeTest0020_0100', Level.LEVEL2, async (done: Function) => {
       console.info('LazyForEachChangeTest0020_0100 START');
