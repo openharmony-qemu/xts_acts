@@ -120,7 +120,7 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Func_0500
+     * @tc.number   SUB_USB_HostManager_JSCore_Func_0500
      * @tc.name     testGetDevices001
      * @tc.desc     Positive test: Get device list
      * @tc.desc     【C-ALL-HARDWARE-0502】必须支持连接标准 USB 外围设备
@@ -177,7 +177,7 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Func_0800
+     * @tc.number   SUB_USB_HostManager_JSCore_Func_0800
      * @tc.name     testRequestRight001
      * @tc.desc     Positive test: Request permission
      */
@@ -221,7 +221,7 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Func_0100
+     * @tc.number   SUB_USB_HostManager_JSCore_Func_0100
      * @tc.name     testConnectDevice001
      * @tc.desc     Positive test: open device
      */
@@ -371,7 +371,7 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Func_0600
+     * @tc.number   SUB_USB_HostManager_JSCore_Func_0600
      * @tc.name     testGetFileDescriptor001
      * @tc.desc     Positive test: Get file descriptor
      */
@@ -414,7 +414,7 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_2900
+     * @tc.number   SUB_USB_HostManager_JSCore_Compatibility_2900
      * @tc.name     testGetFileDescriptor002
      * @tc.desc     Negative test: Get file descriptor, error busNum=255 devAddress=255
      */
@@ -435,7 +435,7 @@ export default function UsbCoreEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_3000
+     * @tc.number   SUB_USB_HostManager_JSCore_Compatibility_3000
      * @tc.name     testGetFileDescriptor003
      * @tc.desc     Negative test: Get file descriptor,error busNum=255
      */

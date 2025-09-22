@@ -265,7 +265,7 @@ export default function UsbApiDeprecatedEtsTest() {
     
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Func_0500
+     * @tc.number   SUB_USB_HostManager_JSDep_Func_0500
      * @tc.name     testGetDevices001
      * @tc.desc     Positive test: Get device list
      * @tc.desc     【C-ALL-HARDWARE-0502】必须支持连接标准 USB 外围设备
@@ -291,7 +291,7 @@ export default function UsbApiDeprecatedEtsTest() {
     it('testGetDevices002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       console.info(TAG, 'usb testGetDevices002 begin');
       if (!isDeviceConnected) {
-        let res = usbMgr.getDevices();
+        let res = usb.getDevices();
         console.info(TAG, 'usb case getDevices ret length: ' + res.length);
         expect(res.length).assertEqual(0);
         done();
@@ -302,7 +302,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Func_0900
+     * @tc.number   SUB_USB_HostManager_JSDep_Func_0900
      * @tc.name     testHasRight001
      * @tc.desc     Positive test: Permission query
      */
@@ -323,7 +323,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Func_0800
+     * @tc.number   SUB_USB_HostManager_JSDep_Func_0800
      * @tc.name     testRequestRight001
      * @tc.desc     Positive test: Request permission
      */
@@ -347,7 +347,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Func_0100
+     * @tc.number   SUB_USB_HostManager_JSDep_Func_0100
      * @tc.name     testConnectDevice001
      * @tc.desc     Positive test: open device
      */
@@ -365,7 +365,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Func_0300
+     * @tc.number   SUB_USB_HostManager_JSDep_Func_0300
      * @tc.name     testClosePipe001
      * @tc.desc     Positive test: close device
      */
@@ -383,7 +383,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_1300
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_1300
      * @tc.name     testClosePipe002
      * @tc.desc     Negative test: close device, busNum error -23
      */
@@ -405,7 +405,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_1400
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_1400
      * @tc.name     testClosePipe003
      * @tc.desc     Negative test: close device, devAddress error -23
      */
@@ -427,7 +427,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_1500
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_1500
      * @tc.name     testClosePipe004
      * @tc.desc     Negative test: close device, devAddress && busNum error -23
      */
@@ -450,7 +450,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Func_0700
+     * @tc.number   SUB_USB_HostManager_JSDep_Func_0700
      * @tc.name     testGetRawDescriptor001
      * @tc.desc     Positive test: Get the original USB descriptor
      */
@@ -469,7 +469,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Func_0600
+     * @tc.number   SUB_USB_HostManager_JSDep_Func_0600
      * @tc.name     testGetFileDescriptor001
      * @tc.desc     Positive test: Get file descriptor
      */
@@ -488,7 +488,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_2900
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_2900
      * @tc.name     testGetFileDescriptor002
      * @tc.desc     Negative test: Get file descriptor, error busNum=255 devAddress=255
      */
@@ -509,7 +509,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_3000
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_3000
      * @tc.name     testGetFileDescriptor003
      * @tc.desc     Negative test: Get file descriptor,error busNum=255
      */
@@ -530,7 +530,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_3100
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_3100
      * @tc.name     testGetFileDescriptor004
      * @tc.desc     Negative test: Get file descriptor,error devAddress=255
      */
@@ -552,7 +552,7 @@ export default function UsbApiDeprecatedEtsTest() {
     //****************************************************************
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_0100
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_0100
      * @tc.name     testConnectDevice002
      * @tc.desc     Negative test: open device, error devAddress 2+10000
      */
@@ -576,7 +576,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_0200
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_0200
      * @tc.name     testConnectDevice003
      * @tc.desc     Negative test: open device, error busNum 2+1000
      */
@@ -601,7 +601,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_0300
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_0300
      * @tc.name     testConnectDevice004
      * @tc.desc     Negative test: open device, error serial 'asdfsd'
      */
@@ -626,7 +626,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_0600
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_0600
      * @tc.name     testConnectDevice006
      * @tc.desc     Negative test: open device, error productName 'sdfsdfe'
      */
@@ -676,7 +676,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_0700
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_0700
      * @tc.name     testConnectDevice008
      * @tc.desc     Negative test: open device, error version 'gwefsdf'
      */
@@ -701,7 +701,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_0800
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_0800
      * @tc.name     testConnectDevice009
      * @tc.desc     Negative test: open device, error vendorId 2+10000
      */
@@ -726,7 +726,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_0900
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_0900
      * @tc.name     testConnectDevice010
      * @tc.desc     Negative test: open device, error productId 2+10000
      */
@@ -751,7 +751,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_1000
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_1000
      * @tc.name     testConnectDevice011
      * @tc.desc     Negative test: open device, error clazz 2+10000
      */
@@ -776,7 +776,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_1100
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_1100
      * @tc.name     testConnectDevice012
      * @tc.desc     Negative test: open device, error subClass 2+10000
      */
@@ -801,7 +801,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_1200
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_1200
      * @tc.name     testConnectDevice013
      * @tc.desc     Negative test: open device, error protocol 2+10000
      */
@@ -826,7 +826,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_3400
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_3400
      * @tc.name     testHasRight002
      * @tc.desc     Negative test: parameters exception, error deviceName add '$#'
      */
@@ -847,7 +847,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_3500
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_3500
      * @tc.name     testHasRight003
      * @tc.desc     Negative test: parameters exception, the device add 'abcdg'
      */
@@ -868,7 +868,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_3200
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_3200
      * @tc.name     testRequestRight002
      * @tc.desc     Negative test: Request permission, error deviceName add '@#'
      */
@@ -894,7 +894,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_3300
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_3300
      * @tc.name     testRequestRight003
      * @tc.desc     Negative test: Request permission, the device name is a number
      */
@@ -1229,7 +1229,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_2100
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_2100
      * @tc.name     testClaimInterface003
      * @tc.desc     Test the claimInterface() interface. Undefined option arguments, use default options.
      */
