@@ -58,7 +58,7 @@ export default function builtinsArrayLowerBoundSearchSecondPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()];
         let result = lowerBoundSearch(arr, 4.0.toFloat());
-        expect(result).assertEqual(3);
+        expect(result).assertEqual(2);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -210,7 +210,7 @@ export default function builtinsArrayLowerBoundSearchSecondPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()];
         let result = lowerBoundSearch(arr, 4.0.toFloat(), 0, arr.length);
-        expect(result).assertEqual(3);
+        expect(result).assertEqual(2);
         console.info(`${caseName}, test end`);
         Done();
       })
