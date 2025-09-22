@@ -29,6 +29,9 @@
     "testability/pages/shiftAppWindow/subWindow",
     "testability/pages/shiftAppWindow/mainWindow",
     "testability/pages/WindowTest/LoadContentByName",
-    "testability/pages/WindowTest/KeyBoradTest"
+    "testability/pages/WindowTest/KeyBoradTest",
+    "testability/pages/WindowTest/KeyBoradTest",
+    "testability/pages/Navdestination",
+    "testability/pages/Navdestination2"
   ]
 }
