@@ -213,7 +213,7 @@ export default function avRecorderTest() {
         console.info('setAVRecorderCallback failed and catch error is ' + error);
       }
     }
-    eventEmitter.on(SETONCALLBACK_EVENT, registerAvRecorderCallback);
+    eventEmitter.onEventData(SETONCALLBACK_EVENT, registerAvRecorderCallback);
 
     let registerCreateCallback = (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
@@ -235,7 +235,7 @@ export default function avRecorderTest() {
         }
       });
     }
-    eventEmitter.on(CREATE_EVENT, registerCreateCallback);
+    eventEmitter.onEventData(CREATE_EVENT, registerCreateCallback);
 
     let registerPrepareCallback = (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
@@ -262,9 +262,9 @@ export default function avRecorderTest() {
         console.info(`PREPARE_EVENT fail, error:${err}`);
       }
     }
-    eventEmitter.on(PREPARE_EVENT, registerPrepareCallback);
+    eventEmitter.onEventData(PREPARE_EVENT, registerPrepareCallback);
 
-    eventEmitter.on(STARTRECORDER_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(STARTRECORDER_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('STARTRECORDER_EVENT eventData = ', JSON.stringify(eventData))
       let data = eventData.data as Record<string, Object>;
       let steps: string[] = data?.get('steps') as string[];
@@ -296,7 +296,7 @@ export default function avRecorderTest() {
       })
     } as Callback<eventEmitter.EventData>);
 
-    eventEmitter.on(STOPRECORDER_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(STOPRECORDER_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
       let data = eventData.data as Record<string, Object>;
       let steps: string[] = data?.get('steps') as string[];
@@ -326,7 +326,7 @@ export default function avRecorderTest() {
       })
     } as Callback<eventEmitter.EventData>);
 
-    eventEmitter.on(PAUSERECORDER_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(PAUSERECORDER_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
       let data = eventData.data as Record<string, Object>;
       let steps: string[] = data?.get('steps') as string[];
@@ -356,7 +356,7 @@ export default function avRecorderTest() {
       })
     } as Callback<eventEmitter.EventData>);
 
-    eventEmitter.on(RESUMERECORDER_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(RESUMERECORDER_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
       let data = eventData.data as Record<string, Object>;
       let steps: string[] = data?.get('steps') as string[];
@@ -386,7 +386,7 @@ export default function avRecorderTest() {
       })
     } as Callback<eventEmitter.EventData>);
 
-    eventEmitter.on(RELEASECORDER_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(RELEASECORDER_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
       let data = eventData.data as Record<string, Object>;
       let steps: string[] = data?.get('steps') as string[];
@@ -407,7 +407,7 @@ export default function avRecorderTest() {
       })
     } as Callback<eventEmitter.EventData>);
 
-    eventEmitter.on(START_TIMETEST_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(START_TIMETEST_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('START_TIMETEST_EVENT eventData = ', JSON.stringify(eventData))
       let data = eventData.data as Record<string, Object>;
       let steps: string[] = data?.get('steps') as string[];
@@ -420,7 +420,7 @@ export default function avRecorderTest() {
       toNextStep(avRecorder, avConfig, recorderTime, steps, done);
     } as Callback<eventEmitter.EventData>);
 
-    eventEmitter.on(END_TIMETEST_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(END_TIMETEST_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
       let data = eventData.data as Record<string, Object>;
       let steps: string[] = data?.get('steps') as string[];
@@ -438,7 +438,7 @@ export default function avRecorderTest() {
       toNextStep(avRecorder, avConfig, recorderTime, steps, done);
     } as Callback<eventEmitter.EventData>);
 
-    eventEmitter.on(RELEASECORDER_TIMETEST_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(RELEASECORDER_TIMETEST_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
       let data = eventData.data as Record<string, Object>;
       let steps: string[] = data?.get('steps') as string[];

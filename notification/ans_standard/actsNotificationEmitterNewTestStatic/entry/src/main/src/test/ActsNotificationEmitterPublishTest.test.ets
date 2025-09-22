@@ -136,7 +136,7 @@ export default function ActsNotificationEmitterPublishTest() {
       }
       try{
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case begin');
-        emitter.on(eventId03, callback03);
+        emitter.onEventData(eventId03, callback03);
       }catch(err:BusinessError){
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on failed,data is: ', JSON.stringify(err));
         expect(false).assertTrue();
@@ -184,7 +184,7 @@ export default function ActsNotificationEmitterPublishTest() {
       }
       try{
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case begin');
-        emitter.once(eventId04, callback04);
+        emitter.onceEventData(eventId04, callback04);
       }catch(err:BusinessError){
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on failed,data is: ', JSON.stringify(err));
         expect(false).assertTrue();
