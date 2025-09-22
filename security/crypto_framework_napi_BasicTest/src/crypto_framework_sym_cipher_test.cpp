@@ -40,6 +40,12 @@ public:
     static void TearDownTestCase() {}
 };
 
+class SYMCIPHER_AES_WRAP_TEST : public testing::TestWithParam<SymCipherSpec> {
+public:
+    static void SetUpTestCase() {}
+    static void TearDownTestCase() {}
+};
+
 class OHCryptoFrameworkSymCipherIvErrorNapiTest : public testing::Test {
 public:
     static void SetUpTestCase() {};
@@ -159,6 +165,17 @@ SymCipherSpec g_symCipherData[] = {
     {(uint8_t *)"SM4_128", (uint8_t *)"SM4_128|CFB128|PKCS7", 16, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, true},
 };
 
+SymCipherSpec g_symAesWrapCipherData[] = {
+    /* aes wrap with iv */
+    {(uint8_t *)"AES128", (uint8_t *)"AES-128-WRAP", 8, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, false},
+    {(uint8_t *)"AES192", (uint8_t *)"AES-192-WRAP", 8, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, false},
+    {(uint8_t *)"AES256", (uint8_t *)"AES-256-WRAP", 8, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, false},
+    /* aes wrap without iv */
+    {(uint8_t *)"AES128", (uint8_t *)"AES-128-WRAP", 0, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, false},
+    {(uint8_t *)"AES192", (uint8_t *)"AES-192-WRAP", 0, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, false},
+    {(uint8_t *)"AES256", (uint8_t *)"AES-256-WRAP", 0, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, false},
+};
+
 SymCipherSpec g_symCipherGCMData[] = {
     {(uint8_t *)"AES128", (uint8_t *)"AES128|GCM|NoPadding", 12, 16, 16, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, true},
     {(uint8_t *)"AES192", (uint8_t *)"AES192|GCM|NoPadding", 12, 16, 16, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, true},
@@ -205,6 +222,7 @@ INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSymCipherNapiTest, SYMCIPHER_TEST, ::te
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSymCipherGcmNapiTest, SYMCIPHER_GCM_TEST, ::testing::ValuesIn(g_symCipherGCMData));
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSymCipherCcmNapiTest, SYMCIPHER_CCM_TEST, ::testing::ValuesIn(g_symCipherCCMData));
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSymCipherIvErrorNapiTest, SYMCIPHER_IV_ERROR_TEST, ::testing::ValuesIn(g_symCipherIvError));
+INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSymCipherNapiTest, SYMCIPHER_AES_WRAP_TEST, ::testing::ValuesIn(g_symAesWrapCipherData));
 
 /**
 * @tc.number SUB_Security_CryptoFramework_NAPI_SymCipher_Test_0100
@@ -1113,5 +1131,318 @@ HWTEST_F(OHCryptoFrameworkSymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_S
     HcfObjDestroy(randomObj);
 }
 
+/**
+* @tc.number SUB_Security_CryptoFramework_NAPI_SymCipher_Test_1800
+* @tc.name OHCryptoFrameworkSymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_SymCipher_Test_1800
+* @tc.desc algorithm is Sym Cipher
+* @tc.size Medium
+* @tc.type Func
+* @tc.level Level0
+*/
+HWTEST_F(OHCryptoFrameworkSymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_SymCipher_Test_1800, TestSize.Level0)
+{
+    OH_CryptoSymKeyGenerator *genCtx = nullptr;
+    OH_CryptoSymCipher *encCtx = nullptr;
+    OH_CryptoSymKey *keyCtx = nullptr;
+    OH_CryptoSymCipherParams *params = nullptr;
+    int32_t randomLen = 17; // 加密最小值16字节，且是8的倍数
+    int32_t ivLen = 8;
+    HcfRand *randomObj = nullptr;
+    HcfBlob msgBlob = {0};
+    HcfBlob ivBlob = {0};
+    Crypto_DataBlob outUpdate = {.data = nullptr, .len = 0};
+
+    HcfRandCreate(&randomObj);
+    EXPECT_TRUE(randomObj != nullptr);
+    ASSERT_EQ(randomObj->generateRandom(randomObj, randomLen, &msgBlob), HCF_SUCCESS);
+    ASSERT_EQ(randomObj->generateRandom(randomObj, ivLen, &ivBlob), HCF_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymKeyGenerator_Create((const char *)"AES256", &genCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymKeyGenerator_Generate(genCtx, &keyCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipherParams_Create(&params), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_IV_DATABLOB, (Crypto_DataBlob *)&ivBlob), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Create((const char *)"AES-256-WRAP", &encCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Init(encCtx, CRYPTO_ENCRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Final(encCtx, (Crypto_DataBlob *)&msgBlob, &outUpdate), CRYPTO_OPERTION_ERROR);
+
+    OH_CryptoSymCipherParams_Destroy(params);
+    OH_CryptoSymCipher_Destroy(encCtx);
+    OH_CryptoSymKeyGenerator_Destroy(genCtx);
+    OH_CryptoSymKey_Destroy(keyCtx);
+    HcfBlobDataClearAndFree((HcfBlob *)&outUpdate);
+    HcfBlobDataClearAndFree(&msgBlob);
+    HcfBlobDataClearAndFree(&ivBlob);
+    HcfObjDestroy(randomObj);
+}
+
+/**
+* @tc.number SUB_Security_CryptoFramework_NAPI_SymCipher_Test_1900
+* @tc.name OHCryptoFrameworkSymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_SymCipher_Test_1900
+* @tc.desc algorithm is Sym Cipher
+* @tc.size Medium
+* @tc.type Func
+* @tc.level Level0
+*/
+HWTEST_F(OHCryptoFrameworkSymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_SymCipher_Test_1900, TestSize.Level0)
+{
+    OH_CryptoSymKeyGenerator *genCtx = nullptr;
+    OH_CryptoSymCipher *encCtx = nullptr;
+    OH_CryptoSymKey *keyCtx = nullptr;
+    OH_CryptoSymCipherParams *params = nullptr;
+    int32_t randomLen = 8; // 加密最小值16字节，且是8的倍数
+    int32_t ivLen = 8;
+    HcfRand *randomObj = nullptr;
+    HcfBlob msgBlob = {0};
+    HcfBlob ivBlob = {0};
+    Crypto_DataBlob outUpdate = {.data = nullptr, .len = 0};
+
+    HcfRandCreate(&randomObj);
+    EXPECT_TRUE(randomObj != nullptr);
+    ASSERT_EQ(randomObj->generateRandom(randomObj, randomLen, &msgBlob), HCF_SUCCESS);
+    ASSERT_EQ(randomObj->generateRandom(randomObj, ivLen, &ivBlob), HCF_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymKeyGenerator_Create((const char *)"AES128", &genCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymKeyGenerator_Generate(genCtx, &keyCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipherParams_Create(&params), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_IV_DATABLOB, (Crypto_DataBlob *)&ivBlob), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Create((const char *)"AES-128-WRAP", &encCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Init(encCtx, CRYPTO_ENCRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Final(encCtx, (Crypto_DataBlob *)&msgBlob, &outUpdate), CRYPTO_OPERTION_ERROR);
+
+    OH_CryptoSymCipherParams_Destroy(params);
+    OH_CryptoSymCipher_Destroy(encCtx);
+    OH_CryptoSymKeyGenerator_Destroy(genCtx);
+    OH_CryptoSymKey_Destroy(keyCtx);
+    HcfBlobDataClearAndFree((HcfBlob *)&outUpdate);
+    HcfBlobDataClearAndFree(&msgBlob);
+    HcfBlobDataClearAndFree(&ivBlob);
+    HcfObjDestroy(randomObj);
+}
+
+/**
+* @tc.number SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2000
+* @tc.name OHCryptoFrameworkSymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2000
+* @tc.desc algorithm is Sym Cipher
+* @tc.size Medium
+* @tc.type Func
+* @tc.level Level0
+*/
+HWTEST_F(OHCryptoFrameworkSymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2000, TestSize.Level0)
+{
+    OH_CryptoSymKeyGenerator *genCtx = nullptr;
+    OH_CryptoSymCipher *decCtx = nullptr;
+    OH_CryptoSymKey *keyCtx = nullptr;
+    OH_CryptoSymCipherParams *params = nullptr;
+    int32_t randomLen = 16; // 解密最小值24字节，且是8的倍数
+    int32_t ivLen = 8;
+    HcfRand *randomObj = nullptr;
+    HcfBlob msgBlob = {0};
+    HcfBlob ivBlob = {0};
+    Crypto_DataBlob decUpdate = {.data = nullptr, .len = 0};
+
+    HcfRandCreate(&randomObj);
+    EXPECT_TRUE(randomObj != nullptr);
+    ASSERT_EQ(randomObj->generateRandom(randomObj, randomLen, &msgBlob), HCF_SUCCESS);
+    ASSERT_EQ(randomObj->generateRandom(randomObj, ivLen, &ivBlob), HCF_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymKeyGenerator_Create((const char *)"AES192", &genCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymKeyGenerator_Generate(genCtx, &keyCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipherParams_Create(&params), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_IV_DATABLOB, (Crypto_DataBlob *)&ivBlob), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Create((const char *)"AES-192-WRAP", &decCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Init(decCtx, CRYPTO_DECRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Final(decCtx, (Crypto_DataBlob *)&msgBlob, &decUpdate), CRYPTO_OPERTION_ERROR);
+
+    OH_CryptoSymCipherParams_Destroy(params);
+    OH_CryptoSymCipher_Destroy(decCtx);
+    OH_CryptoSymKeyGenerator_Destroy(genCtx);
+    OH_CryptoSymKey_Destroy(keyCtx);
+    HcfBlobDataClearAndFree((HcfBlob *)&decUpdate);
+    HcfBlobDataClearAndFree(&msgBlob);
+    HcfBlobDataClearAndFree(&ivBlob);
+    HcfObjDestroy(randomObj);
+}
+
+/**
+* @tc.number SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2100
+* @tc.name OHCryptoFrameworkSymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2100
+* @tc.desc algorithm is Sym Cipher
+* @tc.size Medium
+* @tc.type Func
+* @tc.level Level0
+*/
+HWTEST_F(OHCryptoFrameworkSymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2100, TestSize.Level0)
+{
+    OH_CryptoSymKeyGenerator *genCtx = nullptr;
+    OH_CryptoSymCipher *decCtx = nullptr;
+    OH_CryptoSymKey *keyCtx = nullptr;
+    OH_CryptoSymCipherParams *params = nullptr;
+    int32_t ivLen = 9; // 固定值8字节
+    HcfRand *randomObj = nullptr;
+    HcfBlob ivBlob = {0};
+
+    HcfRandCreate(&randomObj);
+    EXPECT_TRUE(randomObj != nullptr);
+    ASSERT_EQ(randomObj->generateRandom(randomObj, ivLen, &ivBlob), HCF_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymKeyGenerator_Create((const char *)"AES192", &genCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymKeyGenerator_Generate(genCtx, &keyCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipherParams_Create(&params), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_IV_DATABLOB, (Crypto_DataBlob *)&ivBlob), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Create((const char *)"AES-192-WRAP", &decCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Init(decCtx, CRYPTO_DECRYPT_MODE, keyCtx, params), CRYPTO_INVALID_PARAMS);
+
+    OH_CryptoSymCipherParams_Destroy(params);
+    OH_CryptoSymCipher_Destroy(decCtx);
+    OH_CryptoSymKeyGenerator_Destroy(genCtx);
+    OH_CryptoSymKey_Destroy(keyCtx);
+    HcfBlobDataClearAndFree(&ivBlob);
+    HcfObjDestroy(randomObj);
+}
+
+/**
+* @tc.number SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2200
+* @tc.name OHCryptoFrameworkSymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2200
+* @tc.desc algorithm is Sym Cipher
+* @tc.size Medium
+* @tc.type Func
+* @tc.level Level0
+*/
+HWTEST_F(OHCryptoFrameworkSymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2200, TestSize.Level0)
+{
+    OH_CryptoSymKeyGenerator *genCtx = nullptr;
+    OH_CryptoSymCipher *encCtx = nullptr;
+    OH_CryptoSymCipher *decCtx = nullptr;
+    OH_CryptoSymKey *keyCtx = nullptr;
+    OH_CryptoSymCipherParams *params = nullptr;
+    uint8_t ivData[] = {
+        0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f, 0x09, 0x08
+    };
+    uint8_t kekData[] = {
+        0x17, 0x94, 0x52, 0x19, 0x76, 0xff, 0xbe, 0x3f, 0xa9, 0xda, 0x73, 0x6c, 0xae, 0xc3, 0x02, 0x18
+    };
+    uint8_t keyData[] = {
+        0xb7, 0x8a, 0xc9, 0xec, 0xc3, 0xdc, 0xb9, 0xba, 0x31, 0xf3, 0x60, 0x29, 0x54, 0x13, 0x7c, 0x43
+    };
+
+    HcfBlob ivBlob = {.data = ivData, .len = sizeof(ivData)};
+    HcfBlob kekBlob = {.data = kekData, .len = sizeof(kekData)};
+    HcfBlob keyBlob = {.data = keyData, .len = sizeof(keyData)};
+    Crypto_DataBlob outUpdate = {.data = nullptr, .len = 0};
+    Crypto_DataBlob decUpdate = {.data = nullptr, .len = 0};
+
+    ASSERT_EQ(OH_CryptoSymKeyGenerator_Create((const char *)"AES128", &genCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymKeyGenerator_Convert(genCtx, (Crypto_DataBlob *)&kekBlob, &keyCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Create((const char *)"AES-128-WRAP", &encCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipherParams_Create(&params), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Init(encCtx, CRYPTO_ENCRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Final(encCtx, (Crypto_DataBlob *)&keyBlob, &outUpdate), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Create((const char *)"AES-128-WRAP", &decCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_IV_DATABLOB, (Crypto_DataBlob *)&ivBlob), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Init(decCtx, CRYPTO_DECRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Final(decCtx, &outUpdate, &decUpdate), CRYPTO_OPERTION_ERROR);
+
+    OH_CryptoSymCipherParams_Destroy(params);
+    OH_CryptoSymCipher_Destroy(encCtx);
+    OH_CryptoSymCipher_Destroy(decCtx);
+    OH_CryptoSymKeyGenerator_Destroy(genCtx);
+    OH_CryptoSymKey_Destroy(keyCtx);
+    HcfBlobDataClearAndFree((HcfBlob *)&outUpdate);
+    HcfBlobDataClearAndFree((HcfBlob *)&decUpdate);
+}
+
+/**
+* @tc.number SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2300
+* @tc.name OHCryptoFrameworkSymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2300
+* @tc.desc algorithm is Sym Cipher
+* @tc.size Medium
+* @tc.type Func
+* @tc.level Level0
+*/
+HWTEST_F(OHCryptoFrameworkSymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2300, TestSize.Level0)
+{
+    OH_CryptoSymKeyGenerator *genCtx = nullptr;
+    OH_CryptoSymCipher *encCtx = nullptr;
+    OH_CryptoSymKey *keyCtx = nullptr;
+    OH_CryptoSymCipherParams *params = nullptr;
+    uint8_t kekData[] = {
+        0x17, 0x94, 0x52, 0x19, 0x76, 0xff, 0xbe, 0x3f, 0xa9, 0xda, 0x73, 0x6c, 0xae, 0xc3, 0x02, 0x18
+    };
+    uint8_t keyData[] = {
+        0xb7, 0x8a, 0xc9, 0xec, 0xc3, 0xdc, 0xb9, 0xba, 0x31, 0xf3, 0x60, 0x29, 0x54, 0x13, 0x7c, 0x43
+    };
+    HcfBlob kekBlob = {.data = kekData, .len = sizeof(kekData)};
+    HcfBlob keyBlob = {.data = keyData, .len = sizeof(keyData)};
+    Crypto_DataBlob outUpdate = {.data = nullptr, .len = 0};
+
+    ASSERT_EQ(OH_CryptoSymKeyGenerator_Create((const char *)"AES128", &genCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymKeyGenerator_Convert(genCtx, (Crypto_DataBlob *)&kekBlob, &keyCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Create((const char *)"AES-128-WRAP", &encCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipherParams_Create(&params), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Init(encCtx, CRYPTO_ENCRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Update(encCtx, (Crypto_DataBlob *)&keyBlob, &outUpdate), CRYPTO_OPERTION_ERROR);
+
+    OH_CryptoSymCipher_Destroy(encCtx);
+    OH_CryptoSymKeyGenerator_Destroy(genCtx);
+    OH_CryptoSymKey_Destroy(keyCtx);
+    HcfBlobDataClearAndFree((HcfBlob *)&outUpdate);
+}
+
+/**
+* @tc.number SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2600
+* @tc.name OHCryptoFrameworkSymCipherNapiTest/SYMCIPHER_AES_WRAP_TEST.SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2600/x
+* @tc.desc algorithm is Sym Cipher
+* @tc.size Medium
+* @tc.type Func
+* @tc.level Level0
+*/
+HWTEST_P(SYMCIPHER_AES_WRAP_TEST, SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2600, TestSize.Level0)
+{
+    SymCipherSpec symCipherData = GetParam();
+    OH_CryptoSymKeyGenerator *genCtx = nullptr;
+    OH_CryptoSymCipher *encCtx = nullptr;
+    OH_CryptoSymCipher *decCtx = nullptr;
+    OH_CryptoSymKey *keyCtx = nullptr;
+    OH_CryptoSymCipherParams *params = nullptr;
+    int32_t randomLen = symCipherData.msgLen;
+    int32_t ivLen = symCipherData.ivLen;
+    
+    HcfRand *randomObj = nullptr;
+    HcfBlob msgBlob = {0};
+    HcfBlob ivBlob = {0};
+    Crypto_DataBlob outUpdate = {.data = nullptr, .len = 0};
+    Crypto_DataBlob decUpdate = {.data = nullptr, .len = 0};
+
+    HcfRandCreate(&randomObj);
+    EXPECT_TRUE(randomObj != nullptr);
+    EXPECT_EQ(randomObj->generateRandom(randomObj, randomLen, &msgBlob), HCF_SUCCESS);
+    if (ivLen != 0) {
+        EXPECT_EQ(randomObj->generateRandom(randomObj, ivLen, &ivBlob), HCF_SUCCESS);
+    }
+    // generater SymKey
+    EXPECT_EQ(OH_CryptoSymKeyGenerator_Create((const char *)symCipherData.algName, &genCtx), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymKeyGenerator_Generate(genCtx, &keyCtx), CRYPTO_SUCCESS);
+    // params
+    EXPECT_EQ(OH_CryptoSymCipherParams_Create(&params), CRYPTO_SUCCESS);
+    if (ivLen != 0) {
+        EXPECT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_IV_DATABLOB, (Crypto_DataBlob *)&ivBlob), CRYPTO_SUCCESS);
+    }
+    // encrypto
+    EXPECT_EQ(OH_CryptoSymCipher_Create((const char *)symCipherData.cipherAlgName, &encCtx), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipher_Init(encCtx, CRYPTO_ENCRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipher_Final(encCtx, (Crypto_DataBlob *)&msgBlob, &outUpdate), CRYPTO_SUCCESS);
+    // decrypto
+    EXPECT_EQ(OH_CryptoSymCipher_Create((const char *)symCipherData.cipherAlgName, &decCtx), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipher_Init(decCtx, CRYPTO_DECRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipher_Final(decCtx, &outUpdate, &decUpdate), CRYPTO_SUCCESS);
+    EXPECT_TRUE(memcmp(msgBlob.data, decUpdate.data, msgBlob.len) == 0);
+
+    OH_CryptoSymCipherParams_Destroy(params);
+    OH_CryptoSymCipher_Destroy(encCtx);
+    OH_CryptoSymCipher_Destroy(decCtx);
+    OH_CryptoSymKeyGenerator_Destroy(genCtx);
+    OH_CryptoSymKey_Destroy(keyCtx);
+    HcfBlobDataClearAndFree((HcfBlob *)&outUpdate);
+    HcfBlobDataClearAndFree(&msgBlob);
+    HcfBlobDataClearAndFree(&ivBlob);
+    HcfBlobDataClearAndFree((HcfBlob *)&decUpdate);
+    HcfObjDestroy(randomObj);
+}
 
 } // namespace Unittest::CryptoFrameworkSymCipherNapiTest

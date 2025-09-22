@@ -207,6 +207,42 @@ static OH_Crypto_ErrCode OHTEST_CreateScryptParams(paramsSpec paramInfo, OH_Cryp
     return ret;
 }
 
+static OH_Crypto_ErrCode OHTEST_CreateX963Params(paramsSpec paramInfo, OH_CryptoKdfParams **params)
+{
+    OH_Crypto_ErrCode ret = CRYPTO_SUCCESS;
+    Crypto_DataBlob key = {.data = paramInfo.x963Params.key, .len = 0};
+    Crypto_DataBlob info = {.data = paramInfo.x963Params.info, .len = 0};
+
+    ret = OH_CryptoKdfParams_Create("X963KDF", params);
+    if (ret != CRYPTO_SUCCESS) {
+        printf("OH_CryptoKdfParams_Create failed\n");
+        return ret;
+    }
+    if (paramInfo.x963Params.key) {
+        key.len = strlen((const char *)paramInfo.x963Params.key);
+        ret = OH_CryptoKdfParams_SetParam(*params, CRYPTO_KDF_KEY_DATABLOB, &key);
+        if (ret != CRYPTO_SUCCESS) {
+            printf("OH_CryptoKdfParams_SetParam key failed\n");
+            OH_CryptoKdfParams_Destroy(*params);
+            *params = nullptr;
+            return ret;
+        }
+    }
+    if (paramInfo.x963Params.info) {
+        info.len = strlen((const char *)paramInfo.x963Params.info);
+        ret = OH_CryptoKdfParams_SetParam(*params, CRYPTO_KDF_INFO_DATABLOB, &info);
+        if (ret != CRYPTO_SUCCESS) {
+            printf("OH_CryptoKdfParams_SetParam info failed\n");
+            OH_CryptoKdfParams_Destroy(*params);
+            *params = nullptr;
+            return ret;
+        }
+    }
+    printf("OH_CryptoKdfParams_SetParam success\n");
+
+    return ret;
+}
+
 KdfSpec g_kdfSpec[] = {
     /* PBKDF2 */
     {
@@ -328,6 +364,48 @@ KdfSpec g_kdfSpec[] = {
         // max_mem = p * 128 * r + 32 * r * (n + 2) * 4 + 1
         .params.scryptParams = {.passphrase = (uint8_t *)"0123456789", .salt = (uint8_t *)"abcdef", .n = 1024, .p = 1, .r = 8, .max_mem = 1051649}
     }, // 28
+    /* X963 with info*/
+    {
+        .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA1", .keySize = 64,
+        .params.x963Params = {.key = (uint8_t *)"0123456789", .info = (uint8_t *)"abcdef"}
+    },
+    {
+        .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA224", .keySize = 27,
+        .params.x963Params = {.key = (uint8_t *)"0123456789", .info = (uint8_t *)"abcdef"}
+    },
+    {
+        .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA256", .keySize = 33,
+        .params.x963Params = {.key = (uint8_t *)"0123456789", .info = (uint8_t *)"abcdef"}
+    },
+    {
+        .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA384", .keySize = 64,
+        .params.x963Params = {.key = (uint8_t *)"0123456789", .info = (uint8_t *)"abcdef"}
+    },
+    {
+        .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA512", .keySize = 16,
+        .params.x963Params = {.key = (uint8_t *)"0123456789", .info = (uint8_t *)"abcdef"}
+    },
+    /* X963 without info*/
+    {
+        .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA1", .keySize = 64,
+        .params.x963Params = {.key = (uint8_t *)"0123456789", .info = nullptr}
+    },
+    {
+        .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA224", .keySize = 27,
+        .params.x963Params = {.key = (uint8_t *)"0123456789", .info = nullptr}
+    },
+    {
+        .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA256", .keySize = 33,
+        .params.x963Params = {.key = (uint8_t *)"0123456789", .info = nullptr}
+    },
+    {
+        .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA384", .keySize = 64,
+        .params.x963Params = {.key = (uint8_t *)"0123456789", .info = nullptr}
+    },
+    {
+        .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA512", .keySize = 16,
+        .params.x963Params = {.key = (uint8_t *)"0123456789", .info = nullptr}
+    },
 };
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkKdfNapiTest, KDF_TEST, ::testing::ValuesIn(g_kdfSpec));
 
@@ -358,6 +436,9 @@ HWTEST_P(KDF_TEST, SUB_Security_CryptoFramework_NAPI_Kdf_Test_0100, TestSize.Lev
             break;
         case OHTEST_KDF_SCRYPT:
             EXPECT_EQ(OHTEST_CreateScryptParams(infoSpec.params, &params), CRYPTO_SUCCESS);
+            break;
+        case OHTEST_KDF_X963:
+            EXPECT_EQ(OHTEST_CreateX963Params(infoSpec.params, &params), CRYPTO_SUCCESS);
             break;
         default:
             break;
@@ -943,6 +1024,36 @@ static OH_Crypto_ErrCode OHTEST_CreateVectorHkdfParams(paramsVectorSpec paramInf
     return ret;
 }
 
+static OH_Crypto_ErrCode OHTEST_CreateVectorX963Params(paramsVectorSpec paramInfo, OH_CryptoKdfParams **params)
+{
+    OH_Crypto_ErrCode ret = CRYPTO_SUCCESS;
+    Crypto_DataBlob key = {.data = paramInfo.x963Params.key, .len = paramInfo.x963Params.keyLen};
+    Crypto_DataBlob info = {.data = paramInfo.x963Params.info, .len = paramInfo.x963Params.infoLen};
+
+    ret = OH_CryptoKdfParams_Create("X963KDF", params);
+    if (ret != CRYPTO_SUCCESS) {
+        return ret;
+    }
+    if (paramInfo.x963Params.key) {
+        ret = OH_CryptoKdfParams_SetParam(*params, CRYPTO_KDF_KEY_DATABLOB, &key);
+        if (ret != CRYPTO_SUCCESS) {
+            OH_CryptoKdfParams_Destroy(*params);
+            *params = nullptr;
+            return ret;
+        }
+    }
+    if (paramInfo.x963Params.info) {
+        ret = OH_CryptoKdfParams_SetParam(*params, CRYPTO_KDF_INFO_DATABLOB, &info);
+        if (ret != CRYPTO_SUCCESS) {
+            OH_CryptoKdfParams_Destroy(*params);
+            *params = nullptr;
+            return ret;
+        }
+    }
+
+    return ret;
+}
+
 KdfVectorSpec g_vectors[] = {
     {
         .kdfType = OHTEST_KDF_PBKDF2, .algoName = "PBKDF2|SHA1", .keySize = 20,
@@ -1052,6 +1163,87 @@ KdfVectorSpec g_vectors[] = {
         },
         .expectSecret = hkdf_sm3_expectSecret
     }, // 11
+    /* X963 */
+    {
+        .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA1", .keySize = 128,
+        .params.x963Params = {
+            .key = x963_sha1_key, .keyLen = sizeof(x963_sha1_key),
+            .info = x963_sha1_info, .infoLen = sizeof(x963_sha1_info),
+        },
+        .expectSecret = x963_sha1_expectSecret
+    },
+    {
+        .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA224", .keySize = 128,
+        .params.x963Params = {
+            .key = x963_sha224_key, .keyLen = sizeof(x963_sha224_key),
+            .info = x963_sha224_info, .infoLen = sizeof(x963_sha224_info),
+        },
+        .expectSecret = x963_sha224_expectSecret
+    },
+    {
+        .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA256", .keySize = 128,
+        .params.x963Params = {
+            .key = x963_sha256_key, .keyLen = sizeof(x963_sha256_key),
+            .info = x963_sha256_info, .infoLen = sizeof(x963_sha256_info),
+        },
+        .expectSecret = x963_sha256_expectSecret
+    },
+    {
+        .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA384", .keySize = 128,
+        .params.x963Params = {
+            .key = x963_sha384_key, .keyLen = sizeof(x963_sha384_key),
+            .info = x963_sha384_info, .infoLen = sizeof(x963_sha384_info),
+        },
+        .expectSecret = x963_sha384_expectSecret
+    },
+    {
+        .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA512", .keySize = 128,
+        .params.x963Params = {
+            .key = x963_sha512_key, .keyLen = sizeof(x963_sha512_key),
+            .info = x963_sha512_info, .infoLen = sizeof(x963_sha512_info),
+        },
+        .expectSecret = x963_sha512_expectSecret
+    },
+    {
+        .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA1", .keySize = 16,
+        .params.x963Params = {
+            .key = x963_sha1_key2, .keyLen = sizeof(x963_sha1_key2),
+            .info = nullptr, .infoLen = 0,
+        },
+        .expectSecret = x963_sha1_expectSecret2
+    },
+    {
+        .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA224", .keySize = 16,
+        .params.x963Params = {
+            .key = x963_sha224_key2, .keyLen = sizeof(x963_sha224_key2),
+            .info = nullptr, .infoLen = 0,
+        },
+        .expectSecret = x963_sha224_expectSecret2
+    },
+    {
+        .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA256", .keySize = 16,
+        .params.x963Params = {
+            .key = x963_sha256_key2, .keyLen = sizeof(x963_sha256_key2),
+            .info = nullptr, .infoLen = 0,
+        },
+        .expectSecret = x963_sha256_expectSecret2
+    },
+    {
+        .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA384", .keySize = 16,
+        .params.x963Params = {
+            .key = x963_sha384_key2, .keyLen = sizeof(x963_sha384_key2),
+            .info = nullptr, .infoLen = 0,
+        },
+        .expectSecret = x963_sha384_expectSecret2
+    },
+    {
+        .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA512", .keySize = 16,
+        .params.x963Params = {
+            .key = x963_sha512_key2, .keyLen = sizeof(x963_sha512_key2),
+            .info = nullptr, .infoLen = 0,
+        },
+        .expectSecret = x963_sha512_expectSecret2
+    },
 };
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkKdfNapiTest, KDF_VECTOR_TEST, ::testing::ValuesIn(g_vectors));
 
@@ -1080,6 +1272,9 @@ HWTEST_P(KDF_VECTOR_TEST, SUB_Security_CryptoFramework_NAPI_Kdf_Vector_Test_0100
         case OHTEST_KDF_HKDF:
             EXPECT_EQ(OHTEST_CreateVectorHkdfParams(infoSpec.params, &params), CRYPTO_SUCCESS);
             break;
+        case OHTEST_KDF_X963:
+            EXPECT_EQ(OHTEST_CreateVectorX963Params(infoSpec.params, &params), CRYPTO_SUCCESS);
+            break;
         default:
             break;
     }
@@ -1089,6 +1284,34 @@ HWTEST_P(KDF_VECTOR_TEST, SUB_Security_CryptoFramework_NAPI_Kdf_Vector_Test_0100
         EXPECT_TRUE(memcmp(key.data, infoSpec.expectSecret, keySize) == 0);
     }
     EXPECT_EQ(key.len, keySize);
+
+    OH_CryptoKdfParams_Destroy(params);
+    OH_CryptoKdf_Destroy(ctx);
+    OH_Crypto_FreeDataBlob(&key);
+}
+
+/**
+* @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_1300
+* @tc.name SUB_Security_CryptoFramework_NAPI_Kdf_Test_1300
+* @tc.desc algorithm is Kdf
+* @tc.size Medium
+* @tc.type Func
+* @tc.level Level0
+*/
+HWTEST_F(OHCryptoFrameworkKdfNapiTest, SUB_Security_CryptoFramework_NAPI_Kdf_Test_1300, TestSize.Level0)
+{
+    KdfSpec infoSpec ={
+        .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA256", .keySize = 64,
+        .params.x963Params = {.key = nullptr, .info = (uint8_t *)"abcdef"}
+    };
+    int keySize = infoSpec.keySize;
+    OH_CryptoKdfParams *params = nullptr;
+    OH_CryptoKdf *ctx = nullptr;
+    Crypto_DataBlob key = {.data = nullptr, .len = 0};
+
+    EXPECT_EQ(OHTEST_CreateX963Params(infoSpec.params, &params), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoKdf_Create(infoSpec.algoName, &ctx), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoKdf_Derive(ctx, params, keySize, &key), CRYPTO_PARAMETER_CHECK_FAILED);
 
     OH_CryptoKdfParams_Destroy(params);
     OH_CryptoKdf_Destroy(ctx);
