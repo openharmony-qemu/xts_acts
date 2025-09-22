@@ -464,12 +464,10 @@ napi_value DRM_OfflineMediaKeyStatusOFFLINE_MEDIA_KEY_STATUS_INACTIVE(napi_env e
     Drm_ErrCode ret3 = OH_MediaKeySystem_CreateMediaKeySession(system_ptr, &level, &drmKeySession);
     Drm_ErrCode ret4 = OH_MediaKeySystem_ClearOfflineMediaKeys(system_ptr, keyId_ptr, offlineMediaKeyIdLen);
     DRM_OfflineMediaKeyStatus status = OFFLINE_MEDIA_KEY_STATUS_USABLE;
-    if (ret3 == DRM_ERR_OK)
-    {
+    if (ret3 == DRM_ERR_OK) {
         Drm_ErrCode ret6 = OH_MediaKeySystem_GetOfflineMediaKeyStatus(system_ptr, keyId_ptr,
             offlineMediaKeyIdLen, &status);
-        if (ret6 == DRM_ERR_OK)
-        {
+        if (ret6 == DRM_ERR_OK) {
             ret3 = (status != OFFLINE_MEDIA_KEY_STATUS_USABLE) ? DRM_ERR_OK : DRM_ERR_INVALID_VAL;
         }
     }
@@ -505,20 +503,16 @@ Drm_ErrCode sessoinKeyChangeCallBackTest2(MediaKeySession *mediaKeySessoin, DRM_
 Drm_ErrCode sessoinEventEvenType(MediaKeySession *mediaKeySessoin, DRM_EventType eventType, uint8_t *info,
     int32_t infoLen, char *extra)
 {
-    if (eventType == EVENT_KEY_REQUIRED)
-    {
+    if (eventType == EVENT_KEY_REQUIRED) {
         return DRM_ERR_OK;
     }
-    if (eventType == EVENT_KEY_EXPIRED)
-    {
+    if (eventType == EVENT_KEY_EXPIRED) {
         return DRM_ERR_OK;
     }
-    if (eventType == EVENT_DRM_BASE)
-    {
+    if (eventType == EVENT_DRM_BASE) {
         return DRM_ERR_OK;
     }
-    if (eventType == EVENT_PROVISION_REQUIRED)
-    {
+    if (eventType == EVENT_PROVISION_REQUIRED) {
         return DRM_ERR_OK;
     }
     return DRM_ERR_UNKNOWN;
