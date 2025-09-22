@@ -99,8 +99,7 @@ struct webViewOnScroll {
     if (this.controller.getScrollOffset().y + this.webHeight >= this.controller.getPageHeight()) {
       this.isWebBottom = true;
       console.log('页面已经滑动到底部');
-    }
-    else if(this.controller.getScrollOffset().y == 0) {
+    } else if(this.controller.getScrollOffset().y == 0) {
       this.isWebTop = true;
       console.log('页面已经滑动到顶部');
     }
