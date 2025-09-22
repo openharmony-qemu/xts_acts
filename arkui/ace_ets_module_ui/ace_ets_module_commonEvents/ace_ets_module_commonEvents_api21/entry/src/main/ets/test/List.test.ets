@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import getPinchAxisScaleValue from './animatetest/getPinchAxisScaleValue.test'
+import getPinchAxisScaleValue from './AxisEvent/getPinchAxisScaleValue.test'
 export default function testsuite() {
   getPinchAxisScaleValue();
 }
