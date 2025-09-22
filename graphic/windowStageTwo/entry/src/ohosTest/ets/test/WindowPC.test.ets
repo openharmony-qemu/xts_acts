@@ -970,12 +970,11 @@ export default function windowPCTest() {
         let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
         await sleep(1000)
         let titlePoint = await title.getBounds()
-        await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 10, 5000)
+        await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top  + 200, 200)
         await sleep(1000)
         // 获取窗口状态 - 分屏
         windowStatus = windowClass.getWindowStatus()
         console.info(`${message} windowStatus: ${windowStatus}, expect 5`);
-        await driver.click(2340, 977);
         await sleep(1000)
         expect(windowStatus).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
         done();
@@ -1069,12 +1068,11 @@ export default function windowPCTest() {
         let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
         await sleep(1000)
         let titlePoint = await title.getBounds()
-        await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 10, 5000)
+        await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top  + 200, 200)
         await sleep(1000)
         // 获取窗口状态 - 自由窗口
         windowStatus = windowClass.getWindowStatus()
         console.info(`${message} windowStatus: ${windowStatus}, expect 5`);
-        await driver.click(2340, 977);
         await sleep(1000)
         expect(windowStatus).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
         done()
@@ -1125,7 +1123,6 @@ export default function windowPCTest() {
         // 获取窗口状态 - 自由窗口
         windowStatus = windowClass.getWindowStatus()
         console.info(`${message} windowStatus: ${windowStatus}, expect 4`);
-        await driver.click(2340, 977);
         await sleep(1000)
         expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
         done()
@@ -1232,7 +1229,6 @@ export default function windowPCTest() {
         // 获取窗口状态 - 分屏
         windowStatus = windowClass.getWindowStatus()
         console.info(`${message} windowStatus: ${windowStatus}, expect 5`);
-        await driver.click(2340, 977);
         await sleep(1000)
         expect(windowStatus).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
         done()
@@ -3448,6 +3444,7 @@ export default function windowPCTest() {
         expect().assertFail();
         done();
       } finally {
+        await sleep(1000);
         await subWindowClass.destroyWindow();
       }
     })
