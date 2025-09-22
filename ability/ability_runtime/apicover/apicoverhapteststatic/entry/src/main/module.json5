@@ -43,7 +43,7 @@
               "entity.system.home"
             ],
             "actions": [
-              "ohos.want.action.home"
+              "action.system.home"
             ]
           }
         ]
@@ -67,6 +67,16 @@
             ]
           }
         ]
+      }
+    ],
+    "extensionAbilities": [
+      {
+        "name": "ServiceExt",
+        "srcEntry": "./ets/serviceext/ServiceExt.ets",
+        "icon": "$media:layered_image",
+        "description": "service",
+        "type": "service",
+        "exported": true
       }
     ]
   }
