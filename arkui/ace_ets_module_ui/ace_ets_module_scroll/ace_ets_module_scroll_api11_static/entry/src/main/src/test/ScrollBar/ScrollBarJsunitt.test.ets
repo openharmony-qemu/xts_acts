@@ -21,6 +21,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { BarState } from '@ohos.arkui.component'
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 export default function scrollBarJsunitt() {
   describe('scrollBarJsunitt', () => {
@@ -88,7 +89,7 @@ export default function scrollBarJsunitt() {
         let eventData: events_emitter.EventData = {
           data: {
             "directionObject": JSON.stringify(objectT)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -137,7 +138,7 @@ export default function scrollBarJsunitt() {
         let eventData: events_emitter.EventData = {
           data: {
             "stateValue": BarState.On
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -169,7 +170,7 @@ export default function scrollBarJsunitt() {
         let eventData: events_emitter.EventData = {
           data: {
             "stateValue": BarState.Auto
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 184,

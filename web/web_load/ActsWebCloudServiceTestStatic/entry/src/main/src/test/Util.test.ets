@@ -19,7 +19,7 @@ import hilog from '@ohos.hilog';
 import HashMap from '@ohos.util.HashMap';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 
 const abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
@@ -81,7 +81,7 @@ class Utils{
 
   static emitEvent(actVal: boolean | string | number | object, eId: Long) {
     try {
-      let recordData: Record<string, object> = {
+      let recordData: Record<string, RecordData> = {
         "ACTION": actVal
       }
       let backData: emitter.EventData = {

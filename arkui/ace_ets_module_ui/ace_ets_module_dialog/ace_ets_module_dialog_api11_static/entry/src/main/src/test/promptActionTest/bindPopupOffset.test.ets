@@ -45,7 +45,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -118,7 +118,7 @@ export default function bindPopupOffsetTest() {
         }
         let callback = (indexEvent: events_emitter.EventData) => {
           console.info("bindPopupOffsetTest_static_0100 get state result is: " + JSON.stringify(indexEvent));
-          expect(((indexEvent.data) as Record<string, Object>)?.['offset']).assertEqual({
+          expect(((indexEvent.data) as Record<string, RecordData>)?.['offset']).assertEqual({
             x: 10, y: 10
           } as Position);
           done();
@@ -155,7 +155,7 @@ export default function bindPopupOffsetTest() {
         }
         let callback = (indexEvent: events_emitter.EventData) => {
           console.info("bindPopupOffsetTest_static_0200 get state result is: " + JSON.stringify(indexEvent));
-          expect(((indexEvent.data) as Record<string, Object>)?.['offset']).assertEqual({
+          expect(((indexEvent.data) as Record<string, RecordData>)?.['offset']).assertEqual({
             x: 10, y: 10
           } as Position);
           done();
@@ -192,7 +192,7 @@ export default function bindPopupOffsetTest() {
         }
         let callback = (indexEvent: events_emitter.EventData) => {
           console.info("bindPopupOffsetTest_static_0300 get state result is: " + JSON.stringify(indexEvent));
-          expect(((indexEvent.data) as Record<string, Object>)?.['offset']).assertEqual({
+          expect(((indexEvent.data) as Record<string, RecordData>)?.['offset']).assertEqual({
             x: 0, y: 0
           } as Position);
           done();
@@ -229,7 +229,7 @@ export default function bindPopupOffsetTest() {
         }
         let callback = (indexEvent: events_emitter.EventData) => {
           console.info("bindPopupOffsetTest_static_0400 get state result is: " + JSON.stringify(indexEvent));
-          expect(((indexEvent.data) as Record<string, Object>)?.['offset']).assertEqual({
+          expect(((indexEvent.data) as Record<string, RecordData>)?.['offset']).assertEqual({
             x: 0, y: 50
           } as Position);
           done();
@@ -266,7 +266,7 @@ export default function bindPopupOffsetTest() {
         }
         let callback = (indexEvent: events_emitter.EventData) => {
           console.info("bindPopupOffsetTest_static_0500 get state result is: " + JSON.stringify(indexEvent));
-          expect(((indexEvent.data) as Record<string, Object>)?.['offset']).assertEqual(null);
+          expect(((indexEvent.data) as Record<string, RecordData>)?.['offset']).assertEqual(null);
           done();
         }
         try {
@@ -300,7 +300,7 @@ export default function bindPopupOffsetTest() {
         }
         let callback = (indexEvent: events_emitter.EventData) => {
           console.info("bindPopupOffsetTest_static_0600 get state result is: " + JSON.stringify(indexEvent));
-          expect(((indexEvent.data) as Record<string, Object>)?.['offset']).assertEqual({
+          expect(((indexEvent.data) as Record<string, RecordData>)?.['offset']).assertEqual({
             x: -10, y: -10
           } as Position);
           done();
@@ -337,7 +337,7 @@ export default function bindPopupOffsetTest() {
         }
         let callback = (indexEvent: events_emitter.EventData) => {
           console.info("bindPopupOffsetTest_static_0700 get state result is: " + JSON.stringify(indexEvent));
-          expect(((indexEvent.data) as Record<string, Object>)?.['offset']).assertEqual({
+          expect(((indexEvent.data) as Record<string, RecordData>)?.['offset']).assertEqual({
             x: -10, y: -10
           } as Position);
           done();
@@ -374,7 +374,7 @@ export default function bindPopupOffsetTest() {
         }
         let callback = (indexEvent: events_emitter.EventData) => {
           console.info("bindPopupOffsetTest_static_0800 get state result is: " + JSON.stringify(indexEvent));
-          expect(((indexEvent.data) as Record<string, Object>)?.['offset']).assertEqual({
+          expect(((indexEvent.data) as Record<string, RecordData>)?.['offset']).assertEqual({
             x: 0, y: 0
           } as Position);
           done();
@@ -411,7 +411,7 @@ export default function bindPopupOffsetTest() {
         }
         let callback = (indexEvent: events_emitter.EventData) => {
           console.info("bindPopupOffsetTest_static_0900 get state result is: " + JSON.stringify(indexEvent));
-          expect(((indexEvent.data) as Record<string, Object>)?.['offset']).assertEqual({
+          expect(((indexEvent.data) as Record<string, RecordData>)?.['offset']).assertEqual({
             x: 0, y: 50
           } as Position);
           done();

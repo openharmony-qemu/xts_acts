@@ -15,6 +15,7 @@
 
 import events_emitter from '@ohos.events.emitter';
 import { expect } from "../../../hypium/index";
+import { RecordData } from '@ohos.base';
 
 export default class Utils{
   static async msSleep(count:int) : Promise<int> {
@@ -27,7 +28,7 @@ export default class Utils{
 
   static async emitEvent(actualValue: boolean | string | number | object, eventId: Long) {
     try {
-      let tempData: Record<string, Object> = {};
+      let tempData: Record<string, RecordData> = {};
       tempData['ACTION'] = actualValue;
       let backData: events_emitter.EventData = {
         data: tempData

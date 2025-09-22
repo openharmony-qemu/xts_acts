@@ -16,7 +16,7 @@ import { Entry,Column,Component,Button,Video,XComponentController,TextOverflow,T
 import { State } from '@ohos.arkui.stateManagement';
 import Log from '../../common/Log';
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
@@ -56,7 +56,7 @@ struct XcomponentGetXComponentContext {
             let backData: events_emitter.EventData = {
               data: {
                 "STATUS": "callBackSuccess"
-              } as Record<string , Object>
+              } as Record<string, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 60228,

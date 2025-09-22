@@ -42,6 +42,7 @@ import {
   Visibility
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -71,7 +72,7 @@ struct AppearExample {
             let backData: events_emitter.EventData = {
               data: {
                 "ACTION": this.isShow,
-              } as Record<string, Object>
+              } as Record<string, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 58,
@@ -97,7 +98,7 @@ struct AppearExample {
               let backData2: events_emitter.EventData = {
                 data: {
                   "APPEAR": this.appearFlag,
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let backEvent2: events_emitter.InnerEvent = {
                 eventId: 59,
@@ -119,7 +120,7 @@ struct AppearExample {
               let backData1: events_emitter.EventData = {
                 data: {
                   "ACTION": this.disAppearFlag,
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let backEvent1: events_emitter.InnerEvent = {
                 eventId: 60,

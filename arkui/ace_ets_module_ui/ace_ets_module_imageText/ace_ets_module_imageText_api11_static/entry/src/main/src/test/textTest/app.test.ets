@@ -25,7 +25,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -86,7 +86,7 @@ it('testappVersionCode_static_0011', Level.LEVEL1, async (done: ()=>void) => {
         }
         let callback = (eventData: events_emitter.EventData) => {
           console.info("testappVersionCode_0011 get event state result is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as Record<string,Object>)?.['Code']).assertEqual(1000000);
+          expect(((eventData.data) as Record<String, RecordData>)?.['Code']).assertEqual(1000000);
         }
         console.info("testappVersion click result is: " + JSON.stringify(inspector.sendEventByKey('versionCodeText', 10, "")));
         events_emitter.on(innerEvent, callback);

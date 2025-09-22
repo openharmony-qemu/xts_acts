@@ -39,6 +39,7 @@ import {
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -85,7 +86,7 @@ struct bindPopupOffset {
               let backData: events_emitter.EventData = {
                 data: {
                   "offset": this.offset1,
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 12065,
@@ -120,7 +121,7 @@ struct bindPopupOffset {
               let backData: events_emitter.EventData = {
                 data: {
                   "offset": this.offset00,
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 12067,
@@ -155,7 +156,7 @@ struct bindPopupOffset {
               let backData: events_emitter.EventData = {
                 data: {
                   "offset": this.offset050,
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 12068,
@@ -223,7 +224,7 @@ struct bindPopupOffset {
               let backData: events_emitter.EventData = {
                 data: {
                   "offset": this.offset10,
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 12070,
@@ -258,7 +259,7 @@ struct bindPopupOffset {
               let backData: events_emitter.EventData = {
                 data: {
                   "offset": this.offset1,
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 12066,
@@ -293,7 +294,7 @@ struct bindPopupOffset {
               let backData: events_emitter.EventData = {
                 data: {
                   "offset": this.offset10,
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 12071,
@@ -328,7 +329,7 @@ struct bindPopupOffset {
               let backData: events_emitter.EventData = {
                 data: {
                   "offset": this.offset00,
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 12072,
@@ -363,7 +364,7 @@ struct bindPopupOffset {
               let backData: events_emitter.EventData = {
                 data: {
                   "offset": this.offset050,
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 12073,

@@ -32,6 +32,7 @@ import {
   TextAlign
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base'; 
 
 @Entry
 @Component
@@ -158,7 +159,7 @@ struct scrollCode {
             let backData: events_emitter.EventData = {
               data: {
                 "scrollToIndex": 10,
-              } as Record<string, Object>
+              } as Record<String, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 189,

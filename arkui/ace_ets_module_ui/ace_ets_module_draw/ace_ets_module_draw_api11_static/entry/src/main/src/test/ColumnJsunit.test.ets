@@ -20,7 +20,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -98,7 +98,7 @@ export default function columnJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "alignItems": HorizontalAlign.Center
-          } as Record<string, Object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,

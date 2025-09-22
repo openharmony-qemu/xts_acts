@@ -32,7 +32,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
@@ -122,7 +122,7 @@ export default function listJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "listDirection": Axis.Horizontal
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 124,
@@ -156,7 +156,7 @@ export default function listJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "editMode": true
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 124,
@@ -189,7 +189,7 @@ export default function listJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "edgeEffect": EdgeEffect.Spring
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 124,
@@ -223,7 +223,7 @@ export default function listJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "chainAnimation": true
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 124,
@@ -256,7 +256,7 @@ export default function listJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "strokeWidth": "3.000000vp"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 125,
@@ -290,7 +290,7 @@ export default function listJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "color": "#FF0000FF"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 125,
@@ -324,7 +324,7 @@ export default function listJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "startMargin": "30.000000vp"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 125,
@@ -358,7 +358,7 @@ export default function listJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "endMargin": "30.000000vp"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 125,
@@ -392,7 +392,7 @@ export default function listJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "editMode": "true123"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 901,
@@ -425,7 +425,7 @@ export default function listJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "editMode": "39000000"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 902,
@@ -458,7 +458,7 @@ export default function listJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "chainAnimation": "true123"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 903,

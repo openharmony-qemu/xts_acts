@@ -16,6 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import RectValue from './Rect'
 import inspector from '@ohos.arkui.inspector'
+import { RecordData } from '@ohos.base';
 
 export default class Utils {
   static rect_left: number;
@@ -37,7 +38,7 @@ export default class Utils {
      let eventData: events_emitter.EventData = {
        data: {
          "msg": message
-       } as Record<string,Object>
+       } as Record<String, RecordData>
      }
      let event: events_emitter.InnerEvent = {
        eventId: eventId,

@@ -28,7 +28,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -104,7 +104,7 @@ it('textInputTest_static_02', Level.LEVEL1, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontSize": '16',
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 225,
@@ -152,7 +152,7 @@ it('textInputTest_static_04', Level.LEVEL1, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontColor": Color.Red
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 225,
@@ -200,7 +200,7 @@ it('textInputTest_static_06', Level.LEVEL1, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "type": 'InputType.Email',
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 225,
@@ -248,7 +248,7 @@ it('textInputTest_static_08', Level.LEVEL1, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "textAlign": 'TextAlign.Start'
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 225,
@@ -302,7 +302,7 @@ it('textInputTest_static_10', Level.LEVEL1, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "text2": '123456789'
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 225,
@@ -339,7 +339,7 @@ it('textInputTest_static_11', Level.LEVEL1, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "text2": '1234567890abc'
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 225,

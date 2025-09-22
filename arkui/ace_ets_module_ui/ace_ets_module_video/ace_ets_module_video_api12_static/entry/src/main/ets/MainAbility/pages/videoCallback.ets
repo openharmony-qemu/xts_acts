@@ -27,6 +27,7 @@ import {
   Link,
   PropRef,
 } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -54,7 +55,7 @@ struct videoCallbackTest {
           let eventData: emitter.EventData = {
             data: {
               "action": 'onStart'
-            } as Record<String,Object>
+            } as Record<String, RecordData>
           } as emitter.EventData
           let event: emitter.InnerEvent = {
             eventId: 50101,
@@ -75,7 +76,7 @@ struct videoCallbackTest {
           let eventData2: emitter.EventData = {
             data: {
               "action": 'onStop'
-            } as Record<String,Object>
+            } as Record<String, RecordData>
           } as emitter.EventData
           let event2: emitter.InnerEvent = {
             eventId: 50102,

@@ -24,7 +24,7 @@ import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -105,7 +105,7 @@ it('ArkUI_Stage_CalendarPicker_textStyle_static_0200', Level.LEVEL1, async (done
         let eventData: events_emitter.EventData = {
           data: {
             "textStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,
@@ -150,7 +150,7 @@ it('ArkUI_Stage_CalendarPicker_textStyle_static_0300', Level.LEVEL1, async (done
         let eventData: events_emitter.EventData = {
           data: {
             "textStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,
@@ -194,7 +194,7 @@ it('ArkUI_Stage_CalendarPicker_textStyle_static_0400', Level.LEVEL1, async (done
         let eventData: events_emitter.EventData = {
           data: {
             "textStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,
@@ -241,7 +241,7 @@ it('ArkUI_Stage_CalendarPicker_textStyle_static_0500', Level.LEVEL1, async (done
         let eventData: events_emitter.EventData = {
           data: {
             "textStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,
@@ -288,7 +288,7 @@ it('ArkUI_Stage_CalendarPicker_textStyle_static_0600', Level.LEVEL1, async (done
         let eventData: events_emitter.EventData = {
           data: {
             "textStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,
@@ -328,7 +328,7 @@ it('ArkUI_Stage_CalendarPicker_textStyle_static_0700', Level.LEVEL1, async (done
         let eventData: events_emitter.EventData = {
           data: {
             "textStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,
@@ -382,7 +382,7 @@ it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0200', Level.LEVEL1, async (done
         let eventData: events_emitter.EventData = {
           data: {
             "edgeAlign": CalendarAlign.CENTER
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,
@@ -419,7 +419,7 @@ it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0300', Level.LEVEL1, async (done
         let eventData: events_emitter.EventData = {
           data: {
             "edgeAlign": CalendarAlign.START
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,
@@ -454,7 +454,7 @@ it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0400', Level.LEVEL1, async (done
         let eventData: events_emitter.EventData = {
           data: {
             "edgeAlign": "edgeAlign"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,

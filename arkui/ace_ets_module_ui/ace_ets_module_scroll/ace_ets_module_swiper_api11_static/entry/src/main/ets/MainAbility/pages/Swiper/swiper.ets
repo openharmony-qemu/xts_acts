@@ -49,6 +49,7 @@ import {
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { MessageManager, Callback, Message, GlobalMessage } from '../../common/MessageManager1';
 import events_emitter from '@ohos.events.emitter'
+import { RecordData } from '@ohos.base';
 
 class MyDataSource implements IDataSource<string> {
   private list: string[] = []
@@ -143,7 +144,7 @@ struct SwiperExample {
           let backData: events_emitter.EventData = {
             data: {
               "ACTION": this.onActionCalledThree,
-            } as Record<string, Object>
+            } as Record<String, RecordData>
           }
           let backEvent: events_emitter.InnerEvent = {
             eventId: 204,
@@ -167,7 +168,7 @@ struct SwiperExample {
               let backData: events_emitter.EventData = {
                 data: {
                   "ACTION": this.onActionCalledOne,
-                } as Record<string, Object>
+                } as Record<String, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 205,
@@ -189,7 +190,7 @@ struct SwiperExample {
               let backData: events_emitter.EventData = {
                 data: {
                   "ACTION": this.onActionCalledTwo,
-                } as Record<string, Object>
+                } as Record<String, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 206,

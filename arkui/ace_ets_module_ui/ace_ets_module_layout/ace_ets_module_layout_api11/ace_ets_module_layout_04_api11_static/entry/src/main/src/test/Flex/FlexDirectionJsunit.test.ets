@@ -22,7 +22,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -209,7 +209,7 @@ it('flexDirection_static_0700', Level.LEVEL0, async (done: () => void): Promise<
             "width": "40%",
             "height": "70",
             "backgroundColor": 0xF5DEB3,
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 97,
@@ -248,7 +248,7 @@ it('flexDirection_static_0800', Level.LEVEL0, async (done: () => void): Promise<
             "width": "45%",
             "height": "60",
             "backgroundColor": 0xF5DEB3,
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 98,
@@ -287,7 +287,7 @@ it('flexDirection_static_0900', Level.LEVEL0, async (done: () => void): Promise<
             "width": "60%",
             "height": "55",
             "backgroundColor": "#FF000990",
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 99,

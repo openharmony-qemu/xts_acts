@@ -21,12 +21,11 @@ import { $r } from '@ohos.arkui.component';
 import Utils from './Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import common from "@ohos.app.ability.common";
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -87,7 +86,7 @@ it('testSearchCaretStyle_static_02', Level.LEVEL0, async (done: () => void): Pro
         let eventData: events_emitter.EventData = {
           data: {
             "typeValue": 2,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1501,
@@ -131,7 +130,7 @@ it('testSearchPlaceholderFont_static_04', Level.LEVEL0, async (done: () => void)
         let eventData: events_emitter.EventData = {
           data: {
             "typeValue": 4,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1701,
@@ -167,7 +166,7 @@ it('testSearchSearchIcon_static_05', Level.LEVEL0, async (done: () => void): Pro
         let eventData: events_emitter.EventData = {
           data: {
             "typeValue": 5,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1801,
@@ -212,7 +211,7 @@ it('testSearchSearchButton_static_06', Level.LEVEL0, async (done: () => void): P
         let eventData: events_emitter.EventData = {
           data: {
             "typeValue": 6,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1901,
@@ -247,7 +246,7 @@ it('testSearchFontColor_static_07', Level.LEVEL0, async (done: () => void): Prom
         let eventData: events_emitter.EventData = {
           data: {
             "typeValue": 7,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 2001,
@@ -289,7 +288,7 @@ it('testSearchCopyOption_static_08', Level.LEVEL0, async (done: () => void): Pro
         let eventData: events_emitter.EventData = {
           data: {
             "typeValue": 8,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 2101,
@@ -331,7 +330,7 @@ it('testSearchTextFont_static_09', Level.LEVEL0, async (done: () => void): Promi
         let eventData: events_emitter.EventData = {
           data: {
             "typeValue": 9,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 2201,
@@ -367,7 +366,7 @@ it('testSearchPlaceholderColor_static_10', Level.LEVEL0, async (done: () => void
         let eventData: events_emitter.EventData = {
           data: {
             "typeValue": 10,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 2301,
@@ -402,7 +401,7 @@ it('testSearchCancelButton_static_11', Level.LEVEL0, async (done: () => void): P
         let eventData: events_emitter.EventData = {
           data: {
             "typeValue": 11,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 2401,
@@ -447,7 +446,7 @@ it('testSearchTextAlign_static_12', Level.LEVEL0, async (done: () => void): Prom
         let eventData: events_emitter.EventData = {
           data: {
             "typeValue": 12,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 2501,

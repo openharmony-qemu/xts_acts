@@ -16,6 +16,7 @@ import { afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size,
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Util.test';
 import inspector from '@ohos.arkui.inspector';
+import { RecordData } from '@ohos.base';
 
 let emitKey = ''
 
@@ -32,7 +33,7 @@ export default function ActsAcewebViewSharedRenderProcessToken() {
 
     afterEach(async () => {
       try {
-        let tempData: Record<string, Object> = {};
+        let tempData: Record<string, RecordData> = {};
         tempData['ACTION'] = emitKey;
         let backData: events_emitter.EventData = {
           data: tempData

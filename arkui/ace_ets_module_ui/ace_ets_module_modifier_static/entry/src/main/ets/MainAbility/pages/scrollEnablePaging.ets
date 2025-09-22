@@ -18,7 +18,7 @@ import { Entry, Column, Component, ForEach, Scroll, Scroller, Flex, FlexDirectio
   ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent} from '@ohos.arkui.component'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-
+import { RecordData } from '@ohos.base';
 
 
 
@@ -48,7 +48,7 @@ struct ScrollEnablePaging {
                   let backData: events_emitter.EventData = {
                     data: {
                       "itemNumber": item,
-                    } as Record<string, Object>
+                    } as Record<String, RecordData>
                   }
                   let backEvent: events_emitter.InnerEvent = {
                     eventId: 79002,

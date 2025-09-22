@@ -20,7 +20,7 @@ import { UtilsTest,startAbility } from '../Util.test'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import {  Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -99,7 +99,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         let eventData : events_emitter.EventData = {
           data: {
             'alignContentValue': Alignment.Top
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }
         let innerEvent : events_emitter.InnerEvent = {
           eventId: 181,
@@ -122,7 +122,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         let eventData2 : events_emitter.EventData = {
           data: {
             "alignContentValue": Alignment.TopEnd
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }
         let innerEvent2 : events_emitter.InnerEvent = {
           eventId: 182,
@@ -144,7 +144,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         let eventData3 : events_emitter.EventData = {
           data: {
             "alignContentValue": Alignment.Start
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }
         let innerEvent3 : events_emitter.InnerEvent = {
           eventId: 183,
@@ -166,7 +166,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         let eventData4 : events_emitter.EventData = {
           data: {
             "alignContentValue": Alignment.Center
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }
         let innerEvent4 : events_emitter.InnerEvent = {
           eventId: 184,
@@ -188,7 +188,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         let eventData5 : events_emitter.EventData = {
           data: {
             "alignContentValue": Alignment.End
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }
         let innerEvent5 : events_emitter.InnerEvent = {
           eventId: 185,
@@ -210,7 +210,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         let eventData6 : events_emitter.EventData = {
           data: {
             "alignContentValue": Alignment.BottomStart
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }
         let innerEvent6 : events_emitter.InnerEvent = {
           eventId: 186,
@@ -232,7 +232,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         let eventData7 : events_emitter.EventData = {
           data: {
             "alignContentValue":Alignment.Bottom
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }
         let innerEvent7 : events_emitter.InnerEvent = {
           eventId: 187,
@@ -254,7 +254,7 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         let eventData8 : events_emitter.EventData = {
           data: {
             "alignContentValue":Alignment.BottomEnd
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }
         let innerEvent8 : events_emitter.InnerEvent = {
           eventId: 188,

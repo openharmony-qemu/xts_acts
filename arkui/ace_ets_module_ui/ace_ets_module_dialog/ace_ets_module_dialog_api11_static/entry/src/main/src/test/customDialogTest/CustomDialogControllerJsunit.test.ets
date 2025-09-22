@@ -31,7 +31,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -95,7 +95,7 @@ export default function customDialogControllerJsunit() {
       let driver = Driver.create()
       let callback = (eventData: events_emitter.EventData) => {
         console.info("[testClickEvent001] get event state result is: " + JSON.stringify(eventData));
-        expect(((eventData.data) as Record<string, Object>)?.['ACTION']).assertEqual(true)
+        expect(((eventData.data) as Record<string, RecordData>)?.['ACTION']).assertEqual(true)
         done();
       }
       let innerEvent: events_emitter.InnerEvent = {

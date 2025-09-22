@@ -43,6 +43,7 @@ import {
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { jsonx } from 'std/core'
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -85,7 +86,7 @@ struct DragExample {
               let backData: events_emitter.EventData = {
                 data: {
                   "ACTION": 'onDragStart onAction'
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 86,
@@ -214,7 +215,7 @@ struct DragExample {
           let backData: events_emitter.EventData = {
             data: {
               "ACTION": "onDragMove onAction"
-            } as Record<string, Object>
+            } as Record<string, RecordData>
           }
           let backEvent: events_emitter.InnerEvent = {
             eventId: 88,
@@ -232,7 +233,7 @@ struct DragExample {
           let backData: events_emitter.EventData = {
             data: {
               "ACTION": 'onDragLeave onAction'
-            } as Record<string, Object>
+            } as Record<string, RecordData>
           }
           let backEvent: events_emitter.InnerEvent = {
             eventId: 89,
@@ -250,7 +251,7 @@ struct DragExample {
           let backData: events_emitter.EventData = {
             data: {
               "ACTION": 'onDrop onAction'
-            } as Record<string, Object>
+            } as Record<string, RecordData>
           }
           let backEvent: events_emitter.InnerEvent = {
             eventId: 90,

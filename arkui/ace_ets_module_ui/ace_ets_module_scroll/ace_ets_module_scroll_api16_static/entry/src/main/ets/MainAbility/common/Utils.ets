@@ -42,6 +42,7 @@ import { sendTouchEvent } from "@kit.ArkUI";
 
 import { TouchObject, TouchType } from '@ohos.arkui.component';
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 export default class Utils {
   static rect_left: number = 0;
@@ -154,7 +155,7 @@ export default class Utils {
     let eventData: events_emitter.EventData = {
       data: {
         "msg": message
-      } as Record<string, Object>
+      } as Record<string, RecordData>
     }
     let event: events_emitter.InnerEvent = {
       eventId: eventId.toLong(),

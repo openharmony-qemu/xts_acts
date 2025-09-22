@@ -35,7 +35,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 
 let domain: Int = 0x0000;
@@ -106,7 +106,7 @@ export default function ellipseJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "width": '100px'
-          } as Record<string, object>
+          } as Record<string, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 92,
@@ -137,7 +137,7 @@ export default function ellipseJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "height": '500px'
-          } as Record<string, object>
+          } as Record<string, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 92,
@@ -168,7 +168,7 @@ export default function ellipseJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "width": '1111111111111.00px'
-          } as Record<string, object>
+          } as Record<string, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 907,
@@ -199,7 +199,7 @@ export default function ellipseJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "height": '12111111111111.00px'
-          } as Record<string, object>
+          } as Record<string, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 907,
@@ -231,7 +231,7 @@ export default function ellipseJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "height": '-40.00px'
-          } as Record<string, object>
+          } as Record<string, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 908,
@@ -262,7 +262,7 @@ export default function ellipseJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "width": '-10.00px'
-          } as Record<string, object>
+          } as Record<string, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 908,

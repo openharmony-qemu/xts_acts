@@ -51,6 +51,7 @@ import {
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 
 class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = []
@@ -273,7 +274,7 @@ struct LazyForEachOnDataAdd {
                     let backData2: events_emitter.EventData = {
                       data: {
                         "result2": this.result_102,
-                      } as Record<string, Object>
+                      } as Record<string, RecordData>
                     }
                     let backEvent2: events_emitter.InnerEvent = {
                       eventId: 60213,
@@ -325,7 +326,7 @@ struct LazyForEachOnDataAdd {
                     let backData3: events_emitter.EventData = {
                       data: {
                         "result3": this.result_103,
-                      } as Record<string, Object>
+                      } as Record<string, RecordData>
                     }
                     let backEvent3: events_emitter.InnerEvent = {
                       eventId: 60214,
@@ -378,7 +379,7 @@ struct LazyForEachOnDataAdd {
                     let backData4: events_emitter.EventData = {
                       data: {
                         "result4": this.result_104,
-                      } as Record<string, Object>
+                      } as Record<string, RecordData>
                     }
                     let backEvent4: events_emitter.InnerEvent = {
                       eventId: 60215,

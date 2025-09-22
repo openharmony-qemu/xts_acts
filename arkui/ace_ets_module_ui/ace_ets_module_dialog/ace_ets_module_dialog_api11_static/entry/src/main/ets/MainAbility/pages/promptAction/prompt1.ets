@@ -39,6 +39,7 @@ import {
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
@@ -74,7 +75,7 @@ struct PromptShowDialog {
             let backData: events_emitter.EventData = {
               data: {
                 "STATUS": true
-              } as Record<string, Object>
+              } as Record<string, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 60220,
@@ -105,7 +106,7 @@ struct PromptShowDialog {
             let backData1: events_emitter.EventData = {
               data: {
                 "STATUS": true
-              } as Record<string, Object>
+              } as Record<string, RecordData>
             }
             let backEvent1: events_emitter.InnerEvent = {
               eventId: 60221,

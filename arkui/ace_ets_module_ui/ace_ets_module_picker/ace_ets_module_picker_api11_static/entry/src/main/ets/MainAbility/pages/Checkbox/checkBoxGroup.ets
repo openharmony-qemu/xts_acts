@@ -40,6 +40,7 @@ import {
   SelectStatus
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
+import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
@@ -95,7 +96,7 @@ struct CheckBoxGroupPart {
             let backData: events_emitter.EventData = {
               data: {
                 "STATUS": itemName.status
-              } as Record<string, Object>
+              } as Record<String, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 60301,

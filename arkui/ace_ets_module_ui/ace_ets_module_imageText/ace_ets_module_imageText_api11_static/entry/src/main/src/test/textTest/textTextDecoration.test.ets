@@ -31,7 +31,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -96,7 +96,7 @@ it('textTextDecoration_static_0100', Level.LEVEL0, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "textDecoration": JSON.stringify( value )
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 610,
@@ -137,7 +137,7 @@ it('textTextDecoration_static_0200', Level.LEVEL0, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "textDecoration": JSON.stringify( value )
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 611,
@@ -178,7 +178,7 @@ it('textTextDecoration_static_0300', Level.LEVEL0, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "textDecoration": JSON.stringify( value )
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 612,
@@ -221,7 +221,7 @@ it('textTextDecoration_static_0400', Level.LEVEL0, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "textDecoration": JSON.stringify( value )
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 613,
@@ -264,7 +264,7 @@ it('textTextDecoration_static_0500', Level.LEVEL0, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "textDecoration": JSON.stringify( value )
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 613,

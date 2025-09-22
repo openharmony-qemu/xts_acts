@@ -31,6 +31,7 @@ import {
   State,
 } from '@ohos.arkui.stateManagement'
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -65,7 +66,7 @@ struct TextAreaCallback {
             let eventData: events_emitter.EventData = {
               data: {
                 "isEditing": isEditing
-              } as Record<String,Object>
+              } as Record<String, RecordData>
             } as events_emitter.EventData
             let event: events_emitter.InnerEvent = {
               eventId: event_id,

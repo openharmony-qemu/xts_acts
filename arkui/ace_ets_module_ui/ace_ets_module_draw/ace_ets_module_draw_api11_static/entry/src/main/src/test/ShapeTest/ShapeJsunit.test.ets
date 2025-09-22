@@ -35,7 +35,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import { LineCapStyle, LineJoinStyle } from '@ohos.arkui.component'
 
@@ -254,7 +254,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "antiAlias": "false",
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -289,7 +289,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "antiAlias": 'undefined',
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -323,7 +323,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "antiAlias": -0.1,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -357,7 +357,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "strokeLineCap": LineCapStyle.Round,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -393,7 +393,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "strokeLineCap": 'string'
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -429,7 +429,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "strokeLineCap": '-0.2'
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -465,7 +465,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "strokeLineJoin": LineJoinStyle.Round,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -501,7 +501,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "strokeLineJoin": 'nothing',
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -537,7 +537,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "strokeLineJoin": 0.11111,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -573,7 +573,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "strokeMiterLimit": "-0.11111",
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -609,7 +609,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "strokeMiterLimit": 1,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -645,7 +645,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "strokeMiterLimit": 0.5,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -681,7 +681,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "strokeMiterLimit": '11111',
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -717,7 +717,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "strokeMiterLimit": "5",
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -752,7 +752,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "strokeMiterLimit": "string",
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -788,7 +788,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "fillOpacity": "1",
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -823,7 +823,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "fillOpacity": "-1",
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -858,7 +858,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "fillOpacity": "aaaaaaa",
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -893,7 +893,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "fillOpacity": "aa12345",
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -928,7 +928,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "strokeDashArrayOne": "4",
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -963,7 +963,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "strokeDashArrayTwo": "4",
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -998,7 +998,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "strokeDashArrayThree": "4",
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,
@@ -1051,7 +1051,7 @@ export default function shapeJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "strokeLineJoin": LineJoinStyle.Bevel,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 192,

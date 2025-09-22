@@ -36,6 +36,7 @@ import {
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -99,7 +100,7 @@ struct ResponseRegionExample {
           data: {
             "ACTION": this.isTouched,
             "EVENT_TYPE": this.eventType
-          } as Record<string, Object>
+          } as Record<string, RecordData>
         }
         let backEvent: events_emitter.InnerEvent = {
           eventId: 31,

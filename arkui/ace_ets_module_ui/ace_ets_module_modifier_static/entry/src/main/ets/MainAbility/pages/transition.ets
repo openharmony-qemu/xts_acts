@@ -21,12 +21,7 @@ import {
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter'
 import {ButtonModifier} from "@ohos.arkui.modifier";
-
-
-
-
-
-
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -54,7 +49,7 @@ struct TransitionTest7Example {
             let backData: events_emitter.EventData = {
               data: {
                 "btn1": this.btn1,
-              } as Record<string,Object>
+              } as Record<String, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 233,

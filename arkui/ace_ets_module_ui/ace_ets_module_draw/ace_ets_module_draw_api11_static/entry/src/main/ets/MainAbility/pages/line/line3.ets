@@ -39,6 +39,7 @@ import {
 import { State, Link, PropRef, AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -57,17 +58,17 @@ struct LineExample {
     (eventData: events_emitter.EventData): void => {
       if (eventData != null) {
         console.info("line page state change called:" + JSON.stringify(eventData));
-        if (((eventData.data) as Record<string, Object>)?.['startPoint'] != null) {
-          this.startPoint[0] = ((eventData.data) as Record<string, Object>)?.['startPoint'] as string;
+        if (((eventData.data) as Record<string, RecordData>)?.['startPoint'] != null) {
+          this.startPoint[0] = ((eventData.data) as Record<string, RecordData>)?.['startPoint'] as string;
         }
-        if (((eventData.data) as Record<string, Object>)?.['startPointOne'] != null) {
-          this.startPoint[1] = ((eventData.data) as Record<string, Object>)?.['startPointOne'] as string;
+        if (((eventData.data) as Record<string, RecordData>)?.['startPointOne'] != null) {
+          this.startPoint[1] = ((eventData.data) as Record<string, RecordData>)?.['startPointOne'] as string;
         }
-        if (((eventData.data) as Record<string, Object>)?.['endPointOne'] != null) {
-          this.endPoint[1] = ((eventData.data) as Record<string, Object>)?.['endPointOne'] as string;
+        if (((eventData.data) as Record<string, RecordData>)?.['endPointOne'] != null) {
+          this.endPoint[1] = ((eventData.data) as Record<string, RecordData>)?.['endPointOne'] as string;
         }
-        if (((eventData.data) as Record<string, Object>)?.['endPoint'] != null) {
-          this.endPoint[0] = ((eventData.data) as Record<string, Object>)?.['endPoint'] as string;
+        if (((eventData.data) as Record<string, RecordData>)?.['endPoint'] != null) {
+          this.endPoint[0] = ((eventData.data) as Record<string, RecordData>)?.['endPoint'] as string;
         }
       }
     }

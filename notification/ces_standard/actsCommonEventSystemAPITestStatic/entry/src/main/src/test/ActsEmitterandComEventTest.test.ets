@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {BusinessError} from '@ohos.base';
+import {BusinessError, RecordData} from '@ohos.base';
 import commonEventManager from '@ohos.commonEventManager';
 import hilog from '@ohos.hilog';
 import emitter from '@ohos.events.emitter';
@@ -55,7 +55,7 @@ export default function ActsEmitterandComEventTest() {
       // 调用持续订阅指定事件接口
       let result : number = 0
       //调用发送指定事件接口
-      let myDate: Record<String, Object> = {
+      let myDate: Record<String, RecordData> = {
         "id": "1",
         "content": "c"
       }
@@ -92,7 +92,7 @@ export default function ActsEmitterandComEventTest() {
     it('Sub_NotificationAns_Emitter_Basic_Static_0002',  TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_NotificationAns_Emitter_Basic_Static_0002==>'
 
-      let myDate: Record<String, Object> = {
+      let myDate: Record<String, RecordData> = {
         "id": "1",
         "content": "c"
       }
@@ -418,7 +418,7 @@ export default function ActsEmitterandComEventTest() {
       emitter.off("eventId2");
       console.info(`${Tag}  emitterOff success`);
       await Utils.msSleep(100)
-      let myDate: Record<String, Object> = {
+      let myDate: Record<String, RecordData> = {
         "id": "1",
         "content": "c"
       }
@@ -456,7 +456,7 @@ export default function ActsEmitterandComEventTest() {
       emitter.off("eventId3");
       console.info(`${Tag} emitterOff success`);
       await Utils.msSleep(100)
-      let myDate: Record<String, Object> = {
+      let myDate: Record<String, RecordData> = {
         "id": "1",
         "content": "c"
       }
@@ -483,7 +483,7 @@ export default function ActsEmitterandComEventTest() {
      */
     it('Sub_Notification_Emitter_Publish_Emit_Static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Emit_Static_0300==>'
-      let myDate: Record<String, Object> = {
+      let myDate: Record<String, RecordData> = {
         "id": 1,
         "content": "c"
       }
@@ -527,7 +527,7 @@ export default function ActsEmitterandComEventTest() {
      */
     it('Sub_Notification_Emitter_Publish_Emit_Static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Emit_Static_0400==>'
-      let myDate: Record<String, Object> = {
+      let myDate: Record<String, RecordData> = {
         "id": 1,
         "content": "c"
       }

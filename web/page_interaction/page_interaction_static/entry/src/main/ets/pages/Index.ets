@@ -18,7 +18,7 @@
 import { Button, ClickEvent, Column, Component, Entry, Text } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
-
+import { RecordData } from '@ohos.base';
 import events_emitter from '@ohos.events.emitter';
 
 @Entry
@@ -36,7 +36,7 @@ struct MyStateSample {
     (eventData: events_emitter.EventData) => {
       if (eventData != null) {
         console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-        const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+        const data = eventData.data as Record<string, RecordData>;
         if (data != null && data['ACTION'] != null) {
           let strValue: string = String(data['ACTION']);
           this.str = strValue;

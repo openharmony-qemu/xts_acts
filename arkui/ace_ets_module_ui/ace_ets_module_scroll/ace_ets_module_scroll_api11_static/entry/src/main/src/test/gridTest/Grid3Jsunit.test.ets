@@ -20,6 +20,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { RecordData } from '@ohos.base'; 
 
 export default function gridJsunit() {
   describe('grid3Test', () => {
@@ -75,7 +76,7 @@ export default function gridJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "columnsGap": '3px'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 110,
@@ -117,7 +118,7 @@ export default function gridJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "rowsGap": '3px'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 111,
@@ -160,7 +161,7 @@ export default function gridJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "columnsTemplate": '1fr 1fr 1fr 1fr'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 112,
@@ -204,7 +205,7 @@ export default function gridJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "rowsTemplate": '1fr 1fr 1fr 1fr'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 113,

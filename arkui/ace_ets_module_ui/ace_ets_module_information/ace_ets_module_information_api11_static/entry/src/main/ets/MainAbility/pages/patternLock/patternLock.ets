@@ -17,6 +17,8 @@ import events_emitter from '@ohos.events.emitter';
 import { Entry, Component, Column, LoadingProgressStyle, FlexDirection, ItemAlign, FlexAlign, Flex, FlexOptions, Text,
   PatternLock, PatternLockController, Alignment, TextAlign, TextOverflow, LoadingProgress, Color, ClickEvent, Button} from '@ohos.arkui.component'
 import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { RecordData } from '@ohos.base';
+
 @Entry
 @Component
 struct PatternLockExample {
@@ -104,7 +106,7 @@ struct PatternLockExample {
           let backData: events_emitter.EventData = {
             data: {
               "ACTION": this.onActionCalled,
-            } as Record<String,Object>
+            } as Record<String, RecordData>
           } as events_emitter.EventData
           let backEvent: events_emitter.InnerEvent = {
             eventId: 153,

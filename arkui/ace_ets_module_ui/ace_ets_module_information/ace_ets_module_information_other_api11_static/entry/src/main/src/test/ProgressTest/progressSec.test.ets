@@ -22,7 +22,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router, Context } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -191,7 +191,7 @@ export default function progressSecTest() {
 
             'progress_scaleRing_enableSmoothEffect_boolean': progress_scaleRing_enableSmoothEffect_boolean,
             'progress_eclipse_enableSmoothEffect_boolean': progress_eclipse_enableSmoothEffect_boolean,
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -327,7 +327,7 @@ it('ArkUI_Stage_Progress_Capsule_BorderWidth_static_0200', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_borderWidth_number": progress_capsule_borderWidth_number
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -369,7 +369,7 @@ it('ArkUI_Stage_Progress_Capsule_BorderWidth_static_0300', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_borderWidth_string": progress_capsule_borderWidth_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -440,7 +440,7 @@ it('ArkUI_Stage_Progress_Capsule_BorderWidth_static_0500', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_borderWidth_string": progress_capsule_borderWidth_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -482,7 +482,7 @@ it('ArkUI_Stage_Progress_Capsule_BorderWidth_static_0600', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_borderWidth_string": progress_capsule_borderWidth_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -524,7 +524,7 @@ it('ArkUI_Stage_Progress_Capsule_BorderWidth_static_0700', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_borderWidth_string": progress_capsule_borderWidth_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -566,7 +566,7 @@ it('ArkUI_Stage_Progress_Capsule_BorderWidth_static_0800', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_borderWidth_string": progress_capsule_borderWidth_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -608,7 +608,7 @@ it('ArkUI_Stage_Progress_Capsule_BorderWidth_static_0900', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_borderWidth_number": progress_capsule_borderWidth_number
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -650,7 +650,7 @@ it('ArkUI_Stage_Progress_Capsule_BorderWidth_static_1000', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_borderWidth_number": progress_capsule_borderWidth_number
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -694,7 +694,7 @@ it('ArkUI_Stage_Progress_Capsule_BorderWidth_static_1100', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_borderWidth_number": progress_capsule_borderWidth_number
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -736,7 +736,7 @@ it('ArkUI_Stage_Progress_Capsule_BorderWidth_static_1200', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -780,7 +780,7 @@ it('ArkUI_Stage_Progress_Capsule_BorderWidth_static_1300', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -866,7 +866,7 @@ it('ArkUI_Stage_Progress_Capsule_BorderColor_static_0200', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_borderColor_number": progress_capsule_borderColor_number
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -908,7 +908,7 @@ it('ArkUI_Stage_Progress_Capsule_BorderColor_static_0300', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_borderColor_string": progress_capsule_borderColor_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -950,7 +950,7 @@ it('ArkUI_Stage_Progress_Capsule_BorderColor_static_0400', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_borderColor_color": progress_capsule_borderColor_color
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1021,7 +1021,7 @@ it('ArkUI_Stage_Progress_Capsule_BorderColor_static_0600', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_borderColor_string": progress_capsule_borderColor_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1084,7 +1084,7 @@ it('ArkUI_Stage_Progress_Capsule_BorderColor_static_0700', Level.LEVEL0, async (
       try {
         let eventData: events_emitter.EventData = {
           data: {
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1148,7 +1148,7 @@ it('ArkUI_Stage_Progress_Capsule_BorderColor_static_0800', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1236,7 +1236,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Size_static_0200', Level.LEVEL0, async (do
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontSize_number": progress_capsule_fontSize_number
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1279,7 +1279,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Size_static_0300', Level.LEVEL0, async (do
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontSize_string": progress_capsule_fontSize_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1353,7 +1353,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Size_static_0500', Level.LEVEL0, async (do
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontSize_string": progress_capsule_fontSize_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1396,7 +1396,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Size_static_0600', Level.LEVEL0, async (do
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontSize_string": progress_capsule_fontSize_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1439,7 +1439,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Size_static_0700', Level.LEVEL0, async (do
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontSize_string": progress_capsule_fontSize_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1482,7 +1482,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Size_static_0800', Level.LEVEL0, async (do
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontSize_string": progress_capsule_fontSize_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1525,7 +1525,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Size_static_0900', Level.LEVEL0, async (do
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontSize_number": progress_capsule_fontSize_number
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1568,7 +1568,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Size_static_1000', Level.LEVEL0, async (do
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontSize_number": progress_capsule_fontSize_number
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1613,7 +1613,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Size_static_1100', Level.LEVEL0, async (do
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontSize_number": progress_capsule_fontSize_number
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1655,7 +1655,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Size_static_1200', Level.LEVEL0, async (do
       try {
         let eventData: events_emitter.EventData = {
           data: {
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1699,7 +1699,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Size_static_1300', Level.LEVEL0, async (do
       try {
         let eventData: events_emitter.EventData = {
           data: {
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1766,7 +1766,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Weight_static_0200', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontWeight_number": progress_capsule_fontWeight_number
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1809,7 +1809,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Weight_static_0300', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontWeight_string": progress_capsule_fontWeight_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1852,7 +1852,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Weight_static_0400', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontWeight_fontWeight": progress_capsule_fontWeight_fontWeight
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1895,7 +1895,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Weight_static_0500', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontWeight_fontWeight": progress_capsule_fontWeight_fontWeight
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1938,7 +1938,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Weight_static_0600', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontWeight_fontWeight": progress_capsule_fontWeight_fontWeight
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1981,7 +1981,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Weight_static_0700', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontWeight_fontWeight": progress_capsule_fontWeight_fontWeight
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2024,7 +2024,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Weight_static_0800', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontWeight_fontWeight": progress_capsule_fontWeight_fontWeight
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2067,7 +2067,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Weight_static_0900', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontWeight_fontWeight": progress_capsule_fontWeight_fontWeight
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2110,7 +2110,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Weight_static_1000', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontWeight_number": progress_capsule_fontWeight_number
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2153,7 +2153,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Weight_static_1100', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontWeight_number": progress_capsule_fontWeight_number
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2196,7 +2196,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Weight_static_1200', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontWeight_number": progress_capsule_fontWeight_number
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2239,7 +2239,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Weight_static_1300', Level.LEVEL0, async (
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2285,7 +2285,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Weight_static_1400', Level.LEVEL0, async (
       try {
         let eventData: events_emitter.EventData = {
           data: {
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2350,7 +2350,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Style_static_0200', Level.LEVEL0, async (d
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontStyle_fontStyle": progress_capsule_fontStyle_fontStyle
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2393,7 +2393,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Style_static_0300', Level.LEVEL0, async (d
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontStyle_fontStyle": progress_capsule_fontStyle_fontStyle
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2436,7 +2436,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Style_static_0400', Level.LEVEL0, async (d
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2479,7 +2479,7 @@ it('ArkUI_Stage_Progress_Capsule_Font_Style_static_0500', Level.LEVEL0, async (d
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2545,7 +2545,7 @@ it('ArkUI_Stage_Progress_Capsule_FontColor_static_0200', Level.LEVEL0, async (do
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontColor_number": progress_capsule_fontColor_number
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2587,7 +2587,7 @@ it('ArkUI_Stage_Progress_Capsule_FontColor_static_0300', Level.LEVEL0, async (do
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontColor_string": progress_capsule_fontColor_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2629,7 +2629,7 @@ it('ArkUI_Stage_Progress_Capsule_FontColor_static_0400', Level.LEVEL0, async (do
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontColor_color": progress_capsule_fontColor_color
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2703,7 +2703,7 @@ it('ArkUI_Stage_Progress_Capsule_FontColor_static_0600', Level.LEVEL0, async (do
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_fontColor_string": progress_capsule_fontColor_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2746,7 +2746,7 @@ it('ArkUI_Stage_Progress_Capsule_FontColor_static_0700', Level.LEVEL0, async (do
       try {
         let eventData: events_emitter.EventData = {
           data: {
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2789,7 +2789,7 @@ it('ArkUI_Stage_Progress_Capsule_FontColor_static_0800', Level.LEVEL0, async (do
       try {
         let eventData: events_emitter.EventData = {
           data: {
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2853,7 +2853,7 @@ it('ArkUI_Stage_Progress_Capsule_Content_static_0200', Level.LEVEL0, async (done
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_content_string": progress_capsule_content_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2894,7 +2894,7 @@ it('ArkUI_Stage_Progress_Capsule_Content_static_0300', Level.LEVEL0, async (done
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_content_string": progress_capsule_content_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2935,7 +2935,7 @@ it('ArkUI_Stage_Progress_Capsule_Content_static_0400', Level.LEVEL0, async (done
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_content_string": progress_capsule_content_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2976,7 +2976,7 @@ it('ArkUI_Stage_Progress_Capsule_Content_static_0500', Level.LEVEL0, async (done
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_content_string": progress_capsule_content_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3017,7 +3017,7 @@ it('ArkUI_Stage_Progress_Capsule_Content_static_0600', Level.LEVEL0, async (done
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_content_string": progress_capsule_content_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3060,7 +3060,7 @@ it('ArkUI_Stage_Progress_Capsule_Content_static_0700', Level.LEVEL0, async (done
           data: {
             
             "progress_capsule_showDefaultPercentage_boolean": progress_capsule_showDefaultPercentage_boolean
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3103,7 +3103,7 @@ it('ArkUI_Stage_Progress_Capsule_Content_static_0800', Level.LEVEL0, async (done
           data: {
             
             "progress_capsule_showDefaultPercentage_boolean": progress_capsule_showDefaultPercentage_boolean
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3165,7 +3165,7 @@ it('ArkUI_Stage_Progress_Capsule_EnableScanEffect_static_0200', Level.LEVEL0, as
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_enableScanEffect_boolean": progress_capsule_enableScanEffect_boolean
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3207,7 +3207,7 @@ it('ArkUI_Stage_Progress_Capsule_EnableScanEffect_static_0300', Level.LEVEL0, as
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_enableScanEffect_boolean": progress_capsule_enableScanEffect_boolean
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3249,7 +3249,7 @@ it('ArkUI_Stage_Progress_Capsule_EnableScanEffect_static_0400', Level.LEVEL0, as
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3291,7 +3291,7 @@ it('ArkUI_Stage_Progress_Capsule_EnableScanEffect_static_0500', Level.LEVEL0, as
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3355,7 +3355,7 @@ it('ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_static_0200', Level.LEVEL
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_showDefaultPercentage_boolean": progress_capsule_showDefaultPercentage_boolean
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3398,7 +3398,7 @@ it('ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_static_0300', Level.LEVEL
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_showDefaultPercentage_boolean": progress_capsule_showDefaultPercentage_boolean
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3441,7 +3441,7 @@ it('ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_static_0400', Level.LEVEL
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3484,7 +3484,7 @@ it('ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_static_0500', Level.LEVEL
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }  as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3573,7 +3573,7 @@ it('ArkUI_Stage_Progress_Ring_StrokeWidth_static_0200', Level.LEVEL0, async (don
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_strokeWidth_number": progress_ring_strokeWidth_number
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3614,7 +3614,7 @@ it('ArkUI_Stage_Progress_Ring_StrokeWidth_static_0300', Level.LEVEL0, async (don
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_strokeWidth_string": progress_ring_strokeWidth_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3686,7 +3686,7 @@ it('ArkUI_Stage_Progress_Ring_StrokeWidth_static_0500', Level.LEVEL0, async (don
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_strokeWidth_string": progress_ring_strokeWidth_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3727,7 +3727,7 @@ it('ArkUI_Stage_Progress_Ring_StrokeWidth_static_0600', Level.LEVEL0, async (don
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_strokeWidth_string": progress_ring_strokeWidth_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3768,7 +3768,7 @@ it('ArkUI_Stage_Progress_Ring_StrokeWidth_static_0700', Level.LEVEL0, async (don
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_strokeWidth_string": progress_ring_strokeWidth_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3809,7 +3809,7 @@ it('ArkUI_Stage_Progress_Ring_StrokeWidth_static_0800', Level.LEVEL0, async (don
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_strokeWidth_string": progress_ring_strokeWidth_string
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3850,7 +3850,7 @@ it('ArkUI_Stage_Progress_Ring_StrokeWidth_static_0900', Level.LEVEL0, async (don
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_strokeWidth_number": progress_ring_strokeWidth_number
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3891,7 +3891,7 @@ it('ArkUI_Stage_Progress_Ring_StrokeWidth_static_1000', Level.LEVEL0, async (don
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_strokeWidth_number": progress_ring_strokeWidth_number
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3932,7 +3932,7 @@ it('ArkUI_Stage_Progress_Ring_StrokeWidth_static_1100', Level.LEVEL0, async (don
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_strokeWidth_number": progress_ring_strokeWidth_number
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3973,7 +3973,7 @@ it('ArkUI_Stage_Progress_Ring_StrokeWidth_static_1200', Level.LEVEL0, async (don
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4014,7 +4014,7 @@ it('ArkUI_Stage_Progress_Ring_StrokeWidth_static_1300', Level.LEVEL0, async (don
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4075,7 +4075,7 @@ it('ArkUI_Stage_Progress_Ring_Shadow_static_0200', Level.LEVEL0, async (done: ()
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_shadow_bool": progress_ring_shadow_bool
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4116,7 +4116,7 @@ it('ArkUI_Stage_Progress_Ring_Shadow_static_0300', Level.LEVEL0, async (done: ()
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_shadow_bool": progress_ring_shadow_bool
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4157,7 +4157,7 @@ it('ArkUI_Stage_Progress_Ring_Shadow_static_0400', Level.LEVEL0, async (done: ()
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4198,7 +4198,7 @@ it('ArkUI_Stage_Progress_Ring_Shadow_static_0500', Level.LEVEL0, async (done: ()
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4259,7 +4259,7 @@ it('ArkUI_Stage_Progress_Ring_Status_static_0200', Level.LEVEL0, async (done: ()
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_status_progressStatus": progress_ring_status_progressStatus
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4300,7 +4300,7 @@ it('ArkUI_Stage_Progress_Ring_Status_static_0300', Level.LEVEL0, async (done: ()
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_status_progressStatus": progress_ring_status_progressStatus
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4341,7 +4341,7 @@ it('ArkUI_Stage_Progress_Ring_Status_static_0400', Level.LEVEL0, async (done: ()
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4382,7 +4382,7 @@ it('ArkUI_Stage_Progress_Ring_Status_static_0500', Level.LEVEL0, async (done: ()
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4450,7 +4450,7 @@ it('ArkUI_Stage_Progress_Ring_Color_static_0200', Level.LEVEL0, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_color_purity": progress_ring_color_purity
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4624,7 +4624,7 @@ it('ArkUI_Stage_Progress_Ring_Color_static_0700', Level.LEVEL0, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4673,7 +4673,7 @@ it('ArkUI_Stage_Progress_Ring_Color_static_0800', Level.LEVEL0, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4749,7 +4749,7 @@ it('ArkUI_Stage_Progress_Ring_Color_static_1200', Level.LEVEL0, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_color_purity": progress_ring_color_purity
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4925,7 +4925,7 @@ it('ArkUI_Stage_Progress_Ring_Color_static_1700', Level.LEVEL0, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4974,7 +4974,7 @@ it('ArkUI_Stage_Progress_Ring_Color_static_1800', Level.LEVEL0, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5050,7 +5050,7 @@ it('ArkUI_Stage_Progress_Ring_Color_static_2200', Level.LEVEL0, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_color_purity": progress_ring_color_purity
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5226,7 +5226,7 @@ it('ArkUI_Stage_Progress_Ring_Color_static_2700', Level.LEVEL0, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5275,7 +5275,7 @@ it('ArkUI_Stage_Progress_Ring_Color_static_2800', Level.LEVEL0, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5351,7 +5351,7 @@ it('ArkUI_Stage_Progress_Ring_Color_static_3200', Level.LEVEL0, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_color_purity": progress_ring_color_purity
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5528,7 +5528,7 @@ it('ArkUI_Stage_Progress_Ring_Color_static_3700', Level.LEVEL0, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5577,7 +5577,7 @@ it('ArkUI_Stage_Progress_Ring_Color_static_3800', Level.LEVEL0, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5653,7 +5653,7 @@ it('ArkUI_Stage_Progress_Ring_Color_static_4200', Level.LEVEL0, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_color_purity": progress_ring_color_purity
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5827,7 +5827,7 @@ it('ArkUI_Stage_Progress_Ring_Color_static_4700', Level.LEVEL0, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5876,7 +5876,7 @@ it('ArkUI_Stage_Progress_Ring_Color_static_4800', Level.LEVEL0, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5946,7 +5946,7 @@ it('ArkUI_Stage_Progress_Ring_EnableScanEffect_static_0200', Level.LEVEL0, async
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_enableScanEffect_boolean": progress_ring_enableScanEffect_boolean
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5988,7 +5988,7 @@ it('ArkUI_Stage_Progress_Ring_EnableScanEffect_static_0300', Level.LEVEL0, async
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_enableScanEffect_boolean": progress_ring_enableScanEffect_boolean
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6030,7 +6030,7 @@ it('ArkUI_Stage_Progress_Ring_EnableScanEffect_static_0400', Level.LEVEL0, async
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6072,7 +6072,7 @@ it('ArkUI_Stage_Progress_Ring_EnableScanEffect_static_0500', Level.LEVEL0, async
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6135,7 +6135,7 @@ it('ArkUI_Stage_Progress_Linear_EnableScanEffect_static_0200', Level.LEVEL0, asy
         let eventData: events_emitter.EventData = {
           data: {
             "progress_linear_enableScanEffect_boolean": progress_linear_enableScanEffect_boolean
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6177,7 +6177,7 @@ it('ArkUI_Stage_Progress_Linear_EnableScanEffect_static_0300', Level.LEVEL0, asy
         let eventData: events_emitter.EventData = {
           data: {
             "progress_linear_enableScanEffect_boolean": progress_linear_enableScanEffect_boolean
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6219,7 +6219,7 @@ it('ArkUI_Stage_Progress_Linear_EnableScanEffect_static_0400', Level.LEVEL0, asy
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6261,7 +6261,7 @@ it('ArkUI_Stage_Progress_Linear_EnableScanEffect_static_0500', Level.LEVEL0, asy
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6323,7 +6323,7 @@ it('ArkUI_Stage_Progress_Ring_EnableSmoothEffect_static_0200', Level.LEVEL0, asy
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_enableSmoothEffect_boolean": progress_ring_enableSmoothEffect_boolean
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6364,7 +6364,7 @@ it('ArkUI_Stage_Progress_Ring_EnableSmoothEffect_static_0300', Level.LEVEL0, asy
         let eventData: events_emitter.EventData = {
           data: {
             "progress_ring_enableSmoothEffect_boolean": progress_ring_enableSmoothEffect_boolean
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6405,7 +6405,7 @@ it('ArkUI_Stage_Progress_Ring_EnableSmoothEffect_static_0400', Level.LEVEL0, asy
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6446,7 +6446,7 @@ it('ArkUI_Stage_Progress_Ring_EnableSmoothEffect_static_0500', Level.LEVEL0, asy
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6507,7 +6507,7 @@ it('ArkUI_Stage_Progress_Linear_EnableSmoothEffect_static_0200', Level.LEVEL0, a
         let eventData: events_emitter.EventData = {
           data: {
             "progress_linear_enableSmoothEffect_boolean": progress_linear_enableSmoothEffect_boolean
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6548,7 +6548,7 @@ it('ArkUI_Stage_Progress_Linear_EnableSmoothEffect_static_0300', Level.LEVEL0, a
         let eventData: events_emitter.EventData = {
           data: {
             "progress_linear_enableSmoothEffect_boolean": progress_linear_enableSmoothEffect_boolean
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6589,7 +6589,7 @@ it('ArkUI_Stage_Progress_Linear_EnableSmoothEffect_static_0400', Level.LEVEL0, a
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6630,7 +6630,7 @@ it('ArkUI_Stage_Progress_Linear_EnableSmoothEffect_static_0500', Level.LEVEL0, a
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6691,7 +6691,7 @@ it('ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_static_0200', Level.LEVEL0, 
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_enableSmoothEffect_boolean": progress_capsule_enableSmoothEffect_boolean
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6732,7 +6732,7 @@ it('ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_static_0300', Level.LEVEL0, 
         let eventData: events_emitter.EventData = {
           data: {
             "progress_capsule_enableSmoothEffect_boolean": progress_capsule_enableSmoothEffect_boolean
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6773,7 +6773,7 @@ it('ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_static_0400', Level.LEVEL0, 
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6813,7 +6813,7 @@ it('ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_static_0500', Level.LEVEL0, 
       try {
         let eventData: events_emitter.EventData = {
           data: {
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6874,7 +6874,7 @@ it('ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0200', Level.LEVEL0
         let eventData: events_emitter.EventData = {
           data: {
             "progress_scaleRing_enableSmoothEffect_boolean": progress_scaleRing_enableSmoothEffect_boolean
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6915,7 +6915,7 @@ it('ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0300', Level.LEVEL0
         let eventData: events_emitter.EventData = {
           data: {
             "progress_scaleRing_enableSmoothEffect_boolean": progress_scaleRing_enableSmoothEffect_boolean
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6956,7 +6956,7 @@ it('ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0400', Level.LEVEL0
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -6997,7 +6997,7 @@ it('ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0500', Level.LEVEL0
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7058,7 +7058,7 @@ it('ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0200', Level.LEVEL0, 
         let eventData: events_emitter.EventData = {
           data: {
             "progress_eclipse_enableSmoothEffect_boolean": progress_eclipse_enableSmoothEffect_boolean
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7099,7 +7099,7 @@ it('ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0300', Level.LEVEL0, 
         let eventData: events_emitter.EventData = {
           data: {
             "progress_eclipse_enableSmoothEffect_boolean": progress_eclipse_enableSmoothEffect_boolean
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7140,7 +7140,7 @@ it('ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0400', Level.LEVEL0, 
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -7181,7 +7181,7 @@ it('ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0500', Level.LEVEL0, 
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,

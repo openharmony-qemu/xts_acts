@@ -43,6 +43,7 @@ import {
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 class ButtonModifier1 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
@@ -68,7 +69,7 @@ struct KeyboardShortcutTest {
     let eventData: events_emitter.EventData = {
       data: {
         "msg": message
-      } as Record<string, Object>
+      } as Record<string, RecordData>
     } as events_emitter.EventData
     let event: events_emitter.InnerEvent = {
       eventId: eventId as Long,
