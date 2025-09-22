@@ -473,7 +473,8 @@ export default function abilityTest() {
           win.setWindowSystemBarProperties(systemBarProperties);
           expect(true).assertTrue();
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] setWindowSystemBarProperties sync Succeeded `);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(false).assertTrue();
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] setWindowSystemBarProperties sync Failed , Cause code: ${e}`);
         }

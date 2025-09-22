@@ -67,7 +67,8 @@ export default function taskPoolTest() {
             taskFlag = true;
           });
           expect(taskFlag).assertEqual(true);
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         }
@@ -93,7 +94,8 @@ export default function taskPoolTest() {
           await taskpool.execute(taskGroup).then((res:NullishType) => {
             expect((res as Array<Char>)[0]).assertEqual(2);
           });
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         }
@@ -121,7 +123,8 @@ export default function taskPoolTest() {
             console.error(`${TAG} catch: code =>  message => ${err.message}`);
           });
           expect(taskFlag1).assertEqual(true);
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         }
@@ -148,7 +151,8 @@ export default function taskPoolTest() {
           await taskpool.execute(taskGroup).then((res:NullishType) => {
             expect((res as Array<Double>)[0]).assertEqual(2);
           });
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         }
@@ -177,7 +181,8 @@ export default function taskPoolTest() {
           await taskpool.execute(taskGroup, taskpool.Priority.LOW).then((res:NullishType) => {
             expect((res as Array<string>)[0]).assertEqual('taskPoolName');
           });
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         }

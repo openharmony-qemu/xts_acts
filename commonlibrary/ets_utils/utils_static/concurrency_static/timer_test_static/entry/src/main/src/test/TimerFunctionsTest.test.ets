@@ -122,7 +122,8 @@ export default function functionsInTimerTest(): void {
           if (Math.random() < 1) {
             throw new Error('error1');
           }
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           expect(error.message).assertEqual('error1')
           flag = true;
         }

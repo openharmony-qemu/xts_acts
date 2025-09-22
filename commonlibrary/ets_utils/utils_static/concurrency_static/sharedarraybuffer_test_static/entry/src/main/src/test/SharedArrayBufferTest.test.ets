@@ -71,7 +71,8 @@ export default function SharedArrayBufferTest() {
 
           expect(int32Array[0]).assertEqual(999);
 
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${caseName} Test failed: ${error}`);
           expect(false).assertTrue();
         } finally {
@@ -127,7 +128,8 @@ export default function SharedArrayBufferTest() {
           uint8Array[16] = 1;
           expect(float64Array[2] !== initialValue).assertTrue();
 
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${caseName} Test failed: ${error}`);
           expect(false).assertTrue();
         } finally {
@@ -201,7 +203,8 @@ export default function SharedArrayBufferTest() {
             expect(uint8Array[3]).assertEqual(0x78);
           }
 
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           hilog.info(11, 'Sharedarray_buffer_static_', `${caseName} error:`+error)
           console.error(`${caseName} Test failed: ${error}`);
           expect(false).assertTrue();
@@ -249,7 +252,8 @@ export default function SharedArrayBufferTest() {
           console.info(`${caseName}: Memory leak detected: ${memoryLeakDetected}`);
 
           expect(memoryLeakDetected).assertFalse();
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${caseName} Test failed: ${error}`);
           expect(false).assertTrue();
         } finally {

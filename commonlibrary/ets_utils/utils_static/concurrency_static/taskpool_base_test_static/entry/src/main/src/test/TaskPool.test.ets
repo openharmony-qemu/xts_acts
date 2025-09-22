@@ -386,7 +386,8 @@ export default function taskPoolTest() {
         try {
           await taskpool.execute(voidFunction);
           expect(executedFlag).assertEqual(true);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -409,7 +410,8 @@ export default function taskPoolTest() {
           await taskpool.execute(taskPoolArgs).then((value: NullishType) => {
             expect(value as string).assertEqual('20');
           });
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -437,7 +439,8 @@ export default function taskPoolTest() {
             taskFlag = true;
           });
           expect(taskFlag).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -460,7 +463,8 @@ export default function taskPoolTest() {
           await taskpool.execute(taskPoolArgNumber, 20).then((value: NullishType) => {
             expect(value as int).assertEqual(21);
           });
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -485,7 +489,8 @@ export default function taskPoolTest() {
           await taskpool.execute(task).then((value: NullishType) => {
             expect(`[${value as [number, string]}]`).assertEqual('[20,Helloprocessed]');
           });
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -510,7 +515,8 @@ export default function taskPoolTest() {
             taskFlag = true;
           });
           expect(taskFlag).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -535,7 +541,8 @@ export default function taskPoolTest() {
           await taskpool.execute(task1).then((value: NullishType) => {
             expect(value as number).assertEqual(20);
           })
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         }
@@ -560,7 +567,8 @@ export default function taskPoolTest() {
           await taskpool.execute(task1).then((value: NullishType) => {
             expect(value as number).assertEqual(21);
           })
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
@@ -585,7 +593,8 @@ export default function taskPoolTest() {
           const task: taskpool.Task = new taskpool.Task(noParamNoReturnTask);
           await taskpool.execute(task);
           expect(false).assertFail();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(err.message).assertEqual("Intentionally thrown error from task");
         }
@@ -610,7 +619,8 @@ export default function taskPoolTest() {
           await taskpool.execute(task).then((value: NullishType) => {
             expect(value as undefined).assertEqual(undefined);
           })
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -634,7 +644,8 @@ export default function taskPoolTest() {
           const task = new taskpool.Task(nullParamNoReturnTask, null);
           await taskpool.execute(task)
           expect(nullParam).assertEqual(true);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -662,7 +673,8 @@ export default function taskPoolTest() {
           await taskpool.execute(task).then((value: NullishType) => {
             expect(value as long).assertEqual(expectedValue);
           })
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -696,7 +708,8 @@ export default function taskPoolTest() {
           expect(instance.getId()).assertEqual(testId);
           expect(instance.getName()).assertEqual(testName);
           expect(instance.getInfo()).assertEqual(`${testId}_${testName}`);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -727,7 +740,8 @@ export default function taskPoolTest() {
               console.info("Async task result: " + value);
               expect(value as string).assertEqual('success');
             })
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -760,7 +774,8 @@ export default function taskPoolTest() {
           await executePromise.Await();
           expect(true).assertTrue();
           worker.join();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -784,7 +799,8 @@ export default function taskPoolTest() {
           await taskpool.execute(createNoParamInstance).then((instance: NullishType) => {
             expect((instance as NoParamConstructor).getValue()).assertEqual(100);
           })
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -810,7 +826,8 @@ export default function taskPoolTest() {
               const instanceTask = (instance as ParamTestClass).getName();
               expect(instanceTask).assertEqual('TestName');
             })
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -835,7 +852,8 @@ export default function taskPoolTest() {
             console.info("Static method execution completed");
             expect(taskPool010).assertTrue();
           })
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -861,7 +879,8 @@ export default function taskPoolTest() {
           const result = await taskpool.execute(StaticClass11.staticMethodWithParamsAndReturn, inputValue) as string;
           console.info(`Static method returned: ${result}`);
           expect(result).assertEqual(expectedOutput);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -886,7 +905,8 @@ export default function taskPoolTest() {
           await taskpool.execute(testInstance.methodWithoutParams);
           console.info("methodWithoutParams executed successfully");
           expect(taskPool012).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -911,7 +931,8 @@ export default function taskPoolTest() {
           const result = await taskpool.execute(testInstance.methodWithParams, 50.0) as string;
           console.info("methodWithParams result: " + result);
           expect(result).assertEqual('50');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -937,7 +958,8 @@ export default function taskPoolTest() {
             console.info("Constructed task execution completed");
             expect(taskPool014).assertTrue();
           });
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -967,7 +989,8 @@ export default function taskPoolTest() {
           const result = await taskpool.execute(task, taskpool.Priority.MEDIUM) as Boolean;
           console.info("Single execution task completed");
           expect(result).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1004,7 +1027,8 @@ export default function taskPoolTest() {
           const result = await taskpool.execute(task, taskpool.Priority.MEDIUM) as [bigint, number];
           expect(result[0]).assertEqual(32767n);
           expect(result[1]).assertEqual(5);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1035,7 +1059,8 @@ export default function taskPoolTest() {
           console.info(`Byte task completed with result: ${numericResult}`);
           expect(numericResult).assertEqual(127);
 
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1062,7 +1087,8 @@ export default function taskPoolTest() {
         try {
           await taskpool.execute(voidFunction);
           expect(executedFlag).assertEqual(true);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1087,7 +1113,8 @@ export default function taskPoolTest() {
         try {
           const result = await taskpool.execute(bigIntFunction) as bigint;
           expect(result).assertEqual(BigInt(1234567890n));
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1119,7 +1146,8 @@ export default function taskPoolTest() {
           });
           expect(executedFlag).assertEqual(true);
           expect(receivedChar).assertEqual(testChar);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1145,7 +1173,8 @@ export default function taskPoolTest() {
         try {
           const result = await taskpool.execute(processLiteral, inputLiteral) as TestLiteral;
           expect(result).assertEqual('B');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1171,7 +1200,8 @@ export default function taskPoolTest() {
         try {
           const returnedFunc = await taskpool.execute(voidFunction);
           expect(executedFlag).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1209,7 +1239,8 @@ export default function taskPoolTest() {
           expect(executedFlag).assertTrue();
           expect(callbackExecuted).assertTrue();
           expect(executionResult).assertEqual('Task completed');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1244,7 +1275,8 @@ export default function taskPoolTest() {
             console.error(`${TAG} catch: code =>  message => ${err.message}`);
           });
           expect((defaultResult as MyClass).name).assertEqual('default');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1272,7 +1304,8 @@ export default function taskPoolTest() {
           const testTask = new Task(TaskStatus.RUNNING);
           const result = await taskpool.execute(statusFunction, testTask) as TaskStatus;
           expect(result).assertEqual(TaskStatus.RUNNING);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1313,7 +1346,8 @@ export default function taskPoolTest() {
           worker.join()
           expect(executedFlag1).assertEqual(true);
           expect(executedFlag2).assertEqual(true);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1345,7 +1379,8 @@ export default function taskPoolTest() {
           await taskpool.execute(task).then((value: NullishType) => {
             expect(value as int).assertEqual(20);
           });
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
@@ -1376,7 +1411,8 @@ export default function taskPoolTest() {
           }, undefined) as null;
           console.info("taskPoolValue result: " + result);
           expect(result).assertEqual(null);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1414,7 +1450,8 @@ export default function taskPoolTest() {
             }, 50);
           });
           expect(task1).assertEqual(true);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1452,7 +1489,8 @@ export default function taskPoolTest() {
             }, 150);
           });
           expect(task1).assertEqual(false);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1488,7 +1526,8 @@ export default function taskPoolTest() {
             task
           );
           expect(false).assertEqual(true);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(true).assertEqual(true);
         } finally {
@@ -1527,7 +1566,8 @@ export default function taskPoolTest() {
           console.log(`${TAG}: Got result ${result}`);
           expect(executedFlag).assertTrue();
           expect(result).assertEqual(expectedResult);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1556,7 +1596,8 @@ export default function taskPoolTest() {
           const task: taskpool.Task = new taskpool.Task(voidFunction);
           await taskpool.execute(task, taskpool.Priority.HIGH);
           expect(executedFlag).assertEqual(true);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1585,7 +1626,8 @@ export default function taskPoolTest() {
           const result = await taskpool.execute(task, taskpool.Priority.MEDIUM);
           console.info(`Task "${task.name}" execution completed`);
           expect(task.name).assertEqual('taskName');
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -1611,7 +1653,8 @@ export default function taskPoolTest() {
           await taskpool.execute(task, taskpool.Priority.HIGH).then((value: NullishType) => {
             expect(`[${value as [number, string]}]`).assertEqual('[20,processed]');
           })
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {

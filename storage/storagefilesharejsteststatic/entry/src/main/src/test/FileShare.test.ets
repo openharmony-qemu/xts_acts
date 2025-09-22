@@ -36,7 +36,8 @@ export default function FileShare_test() {
     beforeAll(() => {
       try {
         fs.mkdirSync("/data/storage/el2/base/haps/entry/files", true);
-      }catch(e: BusinessError) {
+      }catch(e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, `FileShare test has failed for ${JSON.stringify(e)}`);
       }
     })
@@ -71,7 +72,8 @@ export default function FileShare_test() {
           await fileShare.activatePermission(policies);
           hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_001: activatePermission success');
           done();
-        } catch (e : Error) {
+        } catch (e) {
+          e = e as Error;
           hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_001 has failed for ' + e);
           let err = e as BusinessError;
           if (err.code === 801) {
@@ -220,7 +222,8 @@ export default function FileShare_test() {
           await fileShare.deactivatePermission(policies);
           hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_001: deactivatePermission success');
           done();
-        } catch (e : Error) {
+        } catch (e) {
+          e = e as Error;
           hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_001 has failed for ' + e);
           let err = e as BusinessError;
           if (err.code === 801) {

@@ -189,11 +189,13 @@ export default function Util2Test() {
         let result = base64Helper.encodeSync(array, util.Type.MIME);
         let arrayResult = new Uint8Array([99, 122, 69, 122]);
         expect(result.toString()).assertEqual(arrayResult);
-      } catch (e : BusinessError) {
-        expect(e.code).assertEqual(401)
-      }
-      catch(e :Error){
-        expect().assertFail();
+      } catch (e) {
+        e = e as Error;
+        if (e instanceof BusinessError) {
+          expect(e.code).assertEqual(401)
+        } else {
+          expect().assertFail();
+        }
       }
     })
 
@@ -412,11 +414,13 @@ export default function Util2Test() {
         base64Helper.encode(array, util.Type.MIME).then((val) => {
           expect(val.toString()).assertEqual("99,122,69,122");
         })
-      } catch (e : BusinessError) {
-        expect(e.code).assertEqual(401)
-      }
-      catch(e :Error){
-        expect().assertFail();
+      } catch (e) {
+        e = e as Error;
+        if (e instanceof BusinessError) {
+          expect(e.code).assertEqual(401)
+        } else {
+          expect().assertFail();
+        }
       }
     })
 
