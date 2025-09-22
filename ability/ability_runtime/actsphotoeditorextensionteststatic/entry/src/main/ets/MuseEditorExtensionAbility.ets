@@ -34,8 +34,8 @@ export default class MuseEditorExtensionAbility extends PhotoEditorExtensionAbil
     hilog.info(0x0000, TAG, `MuseEditorExtensionAbility startContentEditing want ==> ${JSON.stringify(want)}`)
 
     const obj: Record<string, Any> = {
-      "session": session,
-      "uri": uri,
+      'session': session,
+      'uri': uri,
     };
     const storage : LocalStorage = new LocalStorage(obj);
     AppStorage.setOrCreate<string>('entry', 'entry');

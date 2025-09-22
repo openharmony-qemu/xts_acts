@@ -38,9 +38,9 @@ struct MyStateSample {
         abilityName: 'MuseEditorExtensionAbility',
         flags: wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION,
         parameters: {
-          "ability.params.stream":
-            "file://com.wh.photoeditorcaller/data/storage/el2/base/haps/entry/files/source-1722067686453.jpg",
-          "ability.want.params.uiExtensionType": "photoEditor"
+          'ability.params.stream':
+            'file://com.wh.photoeditorcaller/data/storage/el2/base/haps/entry/files/source-1722067686453.jpg',
+          'ability.want.params.uiExtensionType': 'photoEditor'
         } as Record<String, RecordData>
       }).width('100%').height('100%')
         .onRemoteReady((data : UIExtensionProxy): void => {
