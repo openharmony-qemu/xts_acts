@@ -65,6 +65,12 @@
 #define NUM_4 (4)
 #define THREAD_COUNT_2 (2)
 #define THREAD_COUNT_3 (3)
+#define SENDABLE_OBJECT_PROPERTY_COUNT 2
+#define SENDABLE_ARRAY_LENGTH_3 3
+#define SENDABLE_ARRAY_INDEX_2 2
+#define TEST_VALUE_25 25
+#define TYPEDARRAY_LENGTH_1024 1024
+#define TYPEDARRAY_OFFSET_0 0
 
 // 更多测试常量
 #define TEST_NUMBER_15 (15)
@@ -10658,6 +10664,517 @@ static napi_value PromiseAsyncWorkTest(napi_env env, napi_callback_info info)
     return promise;
 }
 
+// 测试napi_is_sendable检查普通对象是否可发送
+napi_value TestIsSendable(napi_env env, napi_callback_info info)
+{
+    // 步骤1: 创建普通对象
+    napi_value normalObject = nullptr;
+    napi_create_object(env, &normalObject);
+    
+    // 步骤2: 调用napi_is_sendable
+    bool isSendable = false;
+    napi_status status = napi_is_sendable(env, normalObject, &isSendable);
+    
+    // 步骤3: 预期返回false
+    NAPI_ASSERT(env, status == napi_ok, "napi_is_sendable should return napi_ok");
+    NAPI_ASSERT(env, isSendable == false, "Normal object should not be sendable");
+    
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+// 测试napi_is_sendable检查sendable对象是否可发送
+napi_value TestIsSendableTrue(napi_env env, napi_callback_info info)
+{
+    // 步骤1: 创建sendable对象
+    napi_property_descriptor desc[] = {
+        {"test", nullptr, nullptr, nullptr, nullptr, nullptr, napi_default_jsproperty, nullptr}
+    };
+    napi_value sendableObject = nullptr;
+    napi_create_sendable_object_with_properties(env, 1, desc, &sendableObject);
+    
+    // 步骤2: 调用napi_is_sendable
+    bool isSendable = false;
+    napi_status status = napi_is_sendable(env, sendableObject, &isSendable);
+    
+    // 步骤3: 预期返回true
+    NAPI_ASSERT(env, status == napi_ok, "napi_is_sendable should return napi_ok");
+    NAPI_ASSERT(env, isSendable == true, "Sendable object should be sendable");
+    
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+// 测试napi_is_sendable检查基本类型和非sendable对象
+napi_value TestIsSendableNull(napi_env env, napi_callback_info info)
+{
+    // 步骤1: 测试null值的sendable状态
+    napi_value nullValue = nullptr;
+    napi_get_null(env, &nullValue);
+    
+    bool isSendable = false;
+    napi_status status = napi_is_sendable(env, nullValue, &isSendable);
+    NAPI_ASSERT(env, status == napi_ok, "napi_is_sendable should return napi_ok for null");
+    
+    // 步骤2: 测试undefined值的sendable状态
+    napi_value undefinedValue = nullptr;
+    napi_get_undefined(env, &undefinedValue);
+    
+    status = napi_is_sendable(env, undefinedValue, &isSendable);
+    NAPI_ASSERT(env, status == napi_ok, "napi_is_sendable should return napi_ok for undefined");
+    
+    // 步骤3: 测试普通对象（非sendable）
+    napi_value normalObject = nullptr;
+    napi_create_object(env, &normalObject);
+    
+    status = napi_is_sendable(env, normalObject, &isSendable);
+    NAPI_ASSERT(env, status == napi_ok, "napi_is_sendable should return napi_ok for normal object");
+    NAPI_ASSERT(env, isSendable == false, "Normal object should not be sendable");
+    
+    // 步骤4: 测试字符串类型
+    napi_value stringValue = nullptr;
+    napi_create_string_utf8(env, "test string", NAPI_AUTO_LENGTH, &stringValue);
+    
+    status = napi_is_sendable(env, stringValue, &isSendable);
+    NAPI_ASSERT(env, status == napi_ok, "napi_is_sendable should return napi_ok for string");
+    
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+// 测试napi_define_sendable_class定义基本sendable类
+napi_value TestDefineSendableClass(napi_env env, napi_callback_info info)
+{
+    // 步骤1: 定义简单类
+    napi_value sendableClass = nullptr;
+    napi_define_sendable_class(env, "TestSendableClass", NAPI_AUTO_LENGTH,
+        [](napi_env env, napi_callback_info info) -> napi_value {
+            napi_value thisVar = nullptr;
+            napi_get_cb_info(env, info, nullptr, nullptr, &thisVar, nullptr);
+            return thisVar;
+        }, nullptr, 0, nullptr, nullptr, &sendableClass);
+    
+    NAPI_ASSERT(env, sendableClass != nullptr, "Sendable class should be created");
+    
+    // 步骤2: 创建实例
+    napi_value instance = nullptr;
+    napi_new_instance(env, sendableClass, 0, nullptr, &instance);
+    NAPI_ASSERT(env, instance != nullptr, "Instance should be created");
+    
+    // 步骤3: 检查是否可发送
+    bool isSendable = false;
+    napi_status status = napi_is_sendable(env, instance, &isSendable);
+    NAPI_ASSERT(env, status == napi_ok, "napi_is_sendable should return napi_ok");
+    NAPI_ASSERT(env, isSendable == true, "Sendable class instance should be sendable");
+    
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+// 测试napi_define_sendable_class继承sendable类
+napi_value TestDefineSendableClassInherit(napi_env env, napi_callback_info info)
+{
+    // 步骤1: 定义父类
+    napi_value parentClass = nullptr;
+    napi_define_sendable_class(env, "ParentClass", NAPI_AUTO_LENGTH,
+        [](napi_env env, napi_callback_info info) -> napi_value {
+            napi_value thisVar = nullptr;
+            napi_get_cb_info(env, info, nullptr, nullptr, &thisVar, nullptr);
+            return thisVar;
+        }, nullptr, 0, nullptr, nullptr, &parentClass);
+    
+    NAPI_ASSERT(env, parentClass != nullptr, "Parent class should be created");
+    
+    // 步骤2: 定义子类继承
+    napi_value childClass = nullptr;
+    napi_define_sendable_class(env, "ChildClass", NAPI_AUTO_LENGTH,
+        [](napi_env env, napi_callback_info info) -> napi_value {
+            napi_value thisVar = nullptr;
+            napi_get_cb_info(env, info, nullptr, nullptr, &thisVar, nullptr);
+            return thisVar;
+        }, parentClass, 0, nullptr, nullptr, &childClass);
+    
+    NAPI_ASSERT(env, childClass != nullptr, "Child class should be created");
+    
+    // 步骤3: 检查子类实例是否可发送
+    napi_value childInstance = nullptr;
+    napi_new_instance(env, childClass, 0, nullptr, &childInstance);
+    NAPI_ASSERT(env, childInstance != nullptr, "Child instance should be created");
+    
+    bool isSendable = false;
+    napi_status status = napi_is_sendable(env, childInstance, &isSendable);
+    NAPI_ASSERT(env, status == napi_ok, "napi_is_sendable should return napi_ok");
+    NAPI_ASSERT(env, isSendable == true, "Child class instance should be sendable");
+    
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+// 测试napi_create_sendable_*创建sendable对象
+napi_value TestCreateSendableObject(napi_env env, napi_callback_info info)
+{
+    // 步骤1: 创建带属性的sendable对象
+    napi_value nameValue = nullptr;
+    napi_create_string_utf8(env, "TestName", NAPI_AUTO_LENGTH, &nameValue);
+    
+    napi_value ageValue = nullptr;
+    napi_create_int32(env, TEST_VALUE_25, &ageValue);
+    
+    napi_property_descriptor desc[] = {
+        {"name", nullptr, nullptr, nullptr, nullptr, nameValue, napi_default_jsproperty, nullptr},
+        {"age", nullptr, nullptr, nullptr, nullptr, ageValue, napi_default_jsproperty, nullptr}
+    };
+    
+    napi_value sendableObject = nullptr;
+    napi_status status = napi_create_sendable_object_with_properties(env, 2, desc, &sendableObject);
+    NAPI_ASSERT(env, status == napi_ok, "Create sendable object should succeed");
+    NAPI_ASSERT(env, sendableObject != nullptr, "Sendable object should be created");
+    
+    // 步骤2: 检查属性和可发送性
+    napi_value nameProperty = nullptr;
+    napi_get_named_property(env, sendableObject, "name", &nameProperty);
+    NAPI_ASSERT(env, nameProperty != nullptr, "Name property should exist");
+    
+    napi_value ageProperty = nullptr;
+    napi_get_named_property(env, sendableObject, "age", &ageProperty);
+    NAPI_ASSERT(env, ageProperty != nullptr, "Age property should exist");
+    
+    bool isSendable = false;
+    status = napi_is_sendable(env, sendableObject, &isSendable);
+    NAPI_ASSERT(env, status == napi_ok, "napi_is_sendable should return napi_ok");
+    NAPI_ASSERT(env, isSendable == true, "Sendable object should be sendable");
+    
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+// 测试napi_create_sendable_*创建sendable数组
+napi_value TestCreateSendableArray(napi_env env, napi_callback_info info)
+{
+    // 步骤1: 创建数组
+    napi_value sendableArray = nullptr;
+    napi_status status = napi_create_sendable_array_with_length(env, SENDABLE_ARRAY_LENGTH_3, &sendableArray);
+    NAPI_ASSERT(env, status == napi_ok, "Create sendable array should succeed");
+    NAPI_ASSERT(env, sendableArray != nullptr, "Sendable array should be created");
+    
+    // 步骤2: 填充元素
+    napi_value element1 = nullptr;
+    napi_create_string_utf8(env, "First", NAPI_AUTO_LENGTH, &element1);
+    napi_set_element(env, sendableArray, 0, element1);
+    
+    napi_value element2 = nullptr;
+    napi_create_int32(env, TEST_VALUE_42, &element2);
+    napi_set_element(env, sendableArray, 1, element2);
+    
+    napi_value element3 = nullptr;
+    napi_get_boolean(env, true, &element3);
+    napi_set_element(env, sendableArray, SENDABLE_ARRAY_INDEX_2, element3);
+    
+    // 步骤3: 检查可发送性
+    bool isSendable = false;
+    status = napi_is_sendable(env, sendableArray, &isSendable);
+    NAPI_ASSERT(env, status == napi_ok, "napi_is_sendable should return napi_ok");
+    NAPI_ASSERT(env, isSendable == true, "Sendable array should be sendable");
+    
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+// 测试napi_create_sendable_*创建sendable typedarray
+napi_value TestCreateSendableTypedArray(napi_env env, napi_callback_info info)
+{
+    // 步骤1: 创建arraybuffer
+    void* data = nullptr;
+    napi_value arrayBuffer = nullptr;
+    napi_status status = napi_create_sendable_arraybuffer(env, 1024, &data, &arrayBuffer);
+    NAPI_ASSERT(env, status == napi_ok, "Create sendable arraybuffer should succeed");
+    NAPI_ASSERT(env, arrayBuffer != nullptr, "Sendable arraybuffer should be created");
+    
+    // 步骤2: 创建typedarray
+    napi_value typedArray = nullptr;
+    status = napi_create_sendable_typedarray(env, napi_uint8_array, TYPEDARRAY_LENGTH_1024,
+                                             arrayBuffer, TYPEDARRAY_OFFSET_0, &typedArray);
+    NAPI_ASSERT(env, status == napi_ok, "Create sendable typedarray should succeed");
+    NAPI_ASSERT(env, typedArray != nullptr, "Sendable typedarray should be created");
+    
+    // 步骤3: 检查可发送性
+    bool isSendable = false;
+    status = napi_is_sendable(env, typedArray, &isSendable);
+    NAPI_ASSERT(env, status == napi_ok, "napi_is_sendable should return napi_ok");
+    NAPI_ASSERT(env, isSendable == true, "Sendable typedarray should be sendable");
+    
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+// 测试napi_wrap_sendable基本包装测试
+napi_value TestWrapSendable(napi_env env, napi_callback_info info)
+{
+    // 步骤1: 创建sendable对象
+    napi_property_descriptor desc[] = {
+        {"test", nullptr, nullptr, nullptr, nullptr, nullptr, napi_default_jsproperty, nullptr}
+    };
+    napi_value sendableObject = nullptr;
+    napi_status status = napi_create_sendable_object_with_properties(env, 1, desc, &sendableObject);
+    NAPI_ASSERT(env, status == napi_ok, "Create sendable object should succeed");
+    NAPI_ASSERT(env, sendableObject != nullptr, "Sendable object should be created");
+    
+    // 步骤2: 包装原生对象
+    const char* testData = "TestNativeData";
+    status = napi_wrap_sendable(env, sendableObject, (void*)testData,
+        [](napi_env env, void* data, void* hint) {}, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "Wrap sendable should succeed");
+    
+    // 步骤3: 解包验证
+    void* unwrappedData = nullptr;
+    status = napi_unwrap_sendable(env, sendableObject, &unwrappedData);
+    NAPI_ASSERT(env, status == napi_ok, "Unwrap sendable should succeed");
+    NAPI_ASSERT(env, unwrappedData == testData, "Unwrapped data should match");
+    
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+// 测试napi_wrap_sendable_with_size带大小的包装
+napi_value TestWrapSendableWithSize(napi_env env, napi_callback_info info)
+{
+    // 步骤1: 创建sendable对象
+    napi_property_descriptor desc[] = {
+        {"test", nullptr, nullptr, nullptr, nullptr, nullptr, napi_default_jsproperty, nullptr}
+    };
+    napi_value sendableObject = nullptr;
+    napi_status status = napi_create_sendable_object_with_properties(env, 1, desc, &sendableObject);
+    NAPI_ASSERT(env, status == napi_ok, "Create sendable object should succeed");
+    NAPI_ASSERT(env, sendableObject != nullptr, "Sendable object should be created");
+    
+    // 步骤2: 使用napi_wrap_sendable_with_size
+    const char* testData = "TestDataWithSize";
+    size_t dataSize = strlen(testData) + 1;
+    status = napi_wrap_sendable_with_size(env, sendableObject, (void*)testData,
+        [](napi_env env, void* data, void* hint) {}, nullptr, dataSize);
+    NAPI_ASSERT(env, status == napi_ok, "Wrap sendable with size should succeed");
+    
+    // 步骤3: 验证内存管理
+    void* unwrappedData = nullptr;
+    status = napi_unwrap_sendable(env, sendableObject, &unwrappedData);
+    NAPI_ASSERT(env, status == napi_ok, "Unwrap sendable should succeed");
+    NAPI_ASSERT(env, unwrappedData == testData, "Unwrapped data should match");
+    NAPI_ASSERT(env, strcmp((char*)unwrappedData, testData) == 0, "Data content should match");
+    
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+// 测试napi_wrap_enhance增强版包装
+napi_value TestWrapEnhance(napi_env env, napi_callback_info info)
+{
+    // 步骤1: 创建对象
+    napi_value testClass = nullptr;
+    napi_define_class(env, "TestClass", NAPI_AUTO_LENGTH,
+        [](napi_env env, napi_callback_info info) -> napi_value {
+            napi_value thisVar = nullptr;
+            napi_get_cb_info(env, info, nullptr, nullptr, &thisVar, nullptr);
+            return thisVar;
+        }, nullptr, 0, nullptr, &testClass);
+    
+    napi_value obj = nullptr;
+    napi_new_instance(env, testClass, 0, nullptr, &obj);
+    NAPI_ASSERT(env, obj != nullptr, "Object should be created");
+    
+    // 步骤2: 使用napi_wrap_enhance
+    const char* testData = "TestEnhanceData";
+    napi_ref wrappedRef = nullptr;
+    napi_status status = napi_wrap_enhance(env, obj, (void*)testData,
+        [](napi_env env, void* data, void* hint) {}, false, nullptr, strlen(testData) + 1, &wrappedRef);
+    NAPI_ASSERT(env, status == napi_ok, "Wrap enhance should succeed");
+    
+    // 步骤3: 测试同步/异步终结器
+    void* unwrappedData = nullptr;
+    status = napi_unwrap(env, obj, &unwrappedData);
+    NAPI_ASSERT(env, status == napi_ok, "Unwrap should succeed");
+    NAPI_ASSERT(env, unwrappedData == testData, "Unwrapped data should match");
+    NAPI_ASSERT(env, strcmp((char*)unwrappedData, testData) == 0, "Data content should match");
+    
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+// 测试napi_unwrap_sendable解包测试
+napi_value TestUnwrapSendable(napi_env env, napi_callback_info info)
+{
+    // 步骤1: 创建sendable对象并包装
+    napi_property_descriptor desc[] = {
+        {"test", nullptr, nullptr, nullptr, nullptr, nullptr, napi_default_jsproperty, nullptr}
+    };
+    napi_value sendableObject = nullptr;
+    napi_status status = napi_create_sendable_object_with_properties(env, 1, desc, &sendableObject);
+    NAPI_ASSERT(env, status == napi_ok, "Create sendable object should succeed");
+    
+    const char* originalData = "UnwrapTestData";
+    status = napi_wrap_sendable(env, sendableObject, (void*)originalData,
+        [](napi_env env, void* data, void* hint) {}, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "Wrap sendable should succeed");
+    
+    // 步骤2: 包装后解包
+    void* unwrappedData = nullptr;
+    status = napi_unwrap_sendable(env, sendableObject, &unwrappedData);
+    NAPI_ASSERT(env, status == napi_ok, "Unwrap sendable should succeed");
+    
+    // 步骤3: 验证原生指针正确性
+    NAPI_ASSERT(env, unwrappedData != nullptr, "Unwrapped data should not be null");
+    NAPI_ASSERT(env, unwrappedData == originalData, "Pointer should match original");
+    NAPI_ASSERT(env, strcmp((char*)unwrappedData, originalData) == 0, "Content should match");
+    
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+// 测试napi_unwrap_sendable重复解包测试
+napi_value TestUnwrapSendableMultiple(napi_env env, napi_callback_info info)
+{
+    // 步骤1: 创建sendable对象并包装
+    napi_property_descriptor desc[] = {
+        {"test", nullptr, nullptr, nullptr, nullptr, nullptr, napi_default_jsproperty, nullptr}
+    };
+    napi_value sendableObject = nullptr;
+    napi_status status = napi_create_sendable_object_with_properties(env, 1, desc, &sendableObject);
+    NAPI_ASSERT(env, status == napi_ok, "Create sendable object should succeed");
+
+    const char* originalData = "MultipleUnwrapTest";
+    status = napi_wrap_sendable(env, sendableObject, (void*)originalData,
+        [](napi_env env, void* data, void* hint) {}, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "Wrap sendable should succeed");
+
+    // 步骤2: 多次解包同一对象
+    void* firstUnwrap = nullptr;
+    status = napi_unwrap_sendable(env, sendableObject, &firstUnwrap);
+    NAPI_ASSERT(env, status == napi_ok, "First unwrap should succeed");
+
+    void* secondUnwrap = nullptr;
+    status = napi_unwrap_sendable(env, sendableObject, &secondUnwrap);
+    NAPI_ASSERT(env, status == napi_ok, "Second unwrap should succeed");
+
+    void* thirdUnwrap = nullptr;
+    status = napi_unwrap_sendable(env, sendableObject, &thirdUnwrap);
+    NAPI_ASSERT(env, status == napi_ok, "Third unwrap should succeed");
+
+    // 步骤3: 验证行为一致性
+    NAPI_ASSERT(env, firstUnwrap == originalData, "First unwrap should match original");
+    NAPI_ASSERT(env, secondUnwrap == originalData, "Second unwrap should match original");
+    NAPI_ASSERT(env, thirdUnwrap == originalData, "Third unwrap should match original");
+    NAPI_ASSERT(env, firstUnwrap == secondUnwrap, "All unwraps should be identical");
+    NAPI_ASSERT(env, secondUnwrap == thirdUnwrap, "All unwraps should be identical");
+
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+// 测试napi_remove_wrap_sendable移除包装测试
+napi_value TestRemoveWrapSendable(napi_env env, napi_callback_info info)
+{
+    // 步骤1: 创建sendable对象并包装
+    napi_property_descriptor desc[] = {
+        {"test", nullptr, nullptr, nullptr, nullptr, nullptr, napi_default_jsproperty, nullptr}
+    };
+    napi_value sendableObject = nullptr;
+    napi_status status = napi_create_sendable_object_with_properties(env, 1, desc, &sendableObject);
+    NAPI_ASSERT(env, status == napi_ok, "Create sendable object should succeed");
+
+    const char* testData = "RemoveWrapTest";
+    status = napi_wrap_sendable(env, sendableObject, (void*)testData,
+        [](napi_env env, void* data, void* hint) {}, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "Wrap sendable should succeed");
+
+    // 步骤2: 验证包装前可以解包
+    void* beforeRemoveData = nullptr;
+    status = napi_unwrap_sendable(env, sendableObject, &beforeRemoveData);
+    NAPI_ASSERT(env, status == napi_ok, "Unwrap before remove should succeed");
+    NAPI_ASSERT(env, beforeRemoveData == testData, "Data before remove should match");
+
+    // 步骤3: 移除包装
+    void* removedData = nullptr;
+    status = napi_remove_wrap_sendable(env, sendableObject, &removedData);
+    NAPI_ASSERT(env, status == napi_ok, "Remove wrap sendable should succeed");
+    NAPI_ASSERT(env, removedData == testData, "Removed data should match original");
+
+    // 步骤4: 验证移除操作的效果（检查是否还能获取相同的数据）
+    void* afterRemoveData = nullptr;
+    status = napi_unwrap_sendable(env, sendableObject, &afterRemoveData);
+    if (status == napi_ok) {
+        NAPI_ASSERT(env, afterRemoveData == nullptr, "Data should be null after remove");
+    } else {
+        NAPI_ASSERT(env, status == napi_invalid_arg, "Expected invalid_arg after remove");
+    }
+
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+// 测试复杂sendable对象结构
+napi_value TestComplexSendableStructure(napi_env env, napi_callback_info info)
+{
+    // 步骤1: 定义sendable类
+    napi_property_descriptor classProperties[] = {
+        {"classProperty", nullptr, nullptr, nullptr, nullptr, nullptr, napi_default_jsproperty, nullptr}
+    };
+    napi_value sendableClass = nullptr;
+    napi_status status = napi_define_sendable_class(env, "ComplexSendableClass", NAPI_AUTO_LENGTH,
+        [](napi_env env, napi_callback_info info) -> napi_value {
+            napi_value thisArg = nullptr;
+            napi_get_cb_info(env, info, nullptr, nullptr, &thisArg, nullptr);
+            return thisArg;
+        }, nullptr, 1, classProperties, nullptr, &sendableClass);
+    NAPI_ASSERT(env, status == napi_ok, "Define sendable class should succeed");
+
+    // 步骤2: 创建类实例
+    napi_value instance = nullptr;
+    status = napi_new_instance(env, sendableClass, 0, nullptr, &instance);
+    NAPI_ASSERT(env, status == napi_ok, "Create class instance should succeed");
+
+    // 步骤3: 创建sendable数组
+    napi_value sendableArray = nullptr;
+    status = napi_create_sendable_array_with_length(env, SENDABLE_ARRAY_LENGTH_3, &sendableArray);
+    NAPI_ASSERT(env, status == napi_ok, "Create sendable array should succeed");
+
+    // 步骤4: 将实例放入数组
+    status = napi_set_element(env, sendableArray, 0, instance);
+    NAPI_ASSERT(env, status == napi_ok, "Set array element should succeed");
+
+    // 步骤5: 创建sendable对象
+    napi_property_descriptor objProperties[] = {
+        {"arrayProperty", nullptr, nullptr, nullptr, nullptr, sendableArray, napi_default_jsproperty, nullptr},
+        {"classProperty", nullptr, nullptr, nullptr, nullptr, sendableClass, napi_default_jsproperty, nullptr}
+    };
+    napi_value sendableObj = nullptr;
+    status = napi_create_sendable_object_with_properties(env, SENDABLE_OBJECT_PROPERTY_COUNT,
+                                                         objProperties, &sendableObj);
+    NAPI_ASSERT(env, status == napi_ok, "Create sendable object should succeed");
+
+    // 步骤6: 检查整个结构的sendable属性
+    bool isSendable = false;
+    status = napi_is_sendable(env, sendableObj, &isSendable);
+    NAPI_ASSERT(env, status == napi_ok, "Check sendable object should succeed");
+    NAPI_ASSERT(env, isSendable == true, "Complex object should be sendable");
+
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
@@ -10818,6 +11335,22 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("ConcurrentAsyncWorkTest", ConcurrentAsyncWorkTest),
         DECLARE_NAPI_FUNCTION("CallbackAsyncWorkTest", CallbackAsyncWorkTest),
         DECLARE_NAPI_FUNCTION("PromiseAsyncWorkTest", PromiseAsyncWorkTest),
+        DECLARE_NAPI_FUNCTION("TestIsSendable", TestIsSendable),
+        DECLARE_NAPI_FUNCTION("TestIsSendableTrue", TestIsSendableTrue),
+        DECLARE_NAPI_FUNCTION("TestIsSendableNull", TestIsSendableNull),
+        DECLARE_NAPI_FUNCTION("TestDefineSendableClass", TestDefineSendableClass),
+        DECLARE_NAPI_FUNCTION("TestDefineSendableClassInherit", TestDefineSendableClassInherit),
+        DECLARE_NAPI_FUNCTION("TestCreateSendableObject", TestCreateSendableObject),
+        DECLARE_NAPI_FUNCTION("TestCreateSendableArray", TestCreateSendableArray),
+        DECLARE_NAPI_FUNCTION("TestCreateSendableTypedArray", TestCreateSendableTypedArray),
+        DECLARE_NAPI_FUNCTION("TestWrapSendable", TestWrapSendable),
+        DECLARE_NAPI_FUNCTION("TestWrapSendableWithSize", TestWrapSendableWithSize),
+        DECLARE_NAPI_FUNCTION("TestWrapEnhance", TestWrapEnhance),
+        DECLARE_NAPI_FUNCTION("TestUnwrapSendable", TestUnwrapSendable),
+        DECLARE_NAPI_FUNCTION("TestUnwrapSendableMultiple", TestUnwrapSendableMultiple),
+        DECLARE_NAPI_FUNCTION("TestRemoveWrapSendable", TestRemoveWrapSendable),
+        DECLARE_NAPI_FUNCTION("TestComplexSendableStructure", TestComplexSendableStructure),
+        
     };
 
     NAPI_CALL(env, napi_define_properties(env, exports, sizeof(properties) / sizeof(*properties), properties));
