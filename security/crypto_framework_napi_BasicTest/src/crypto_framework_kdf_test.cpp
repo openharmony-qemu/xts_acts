@@ -1311,7 +1311,7 @@ HWTEST_F(OHCryptoFrameworkKdfNapiTest, SUB_Security_CryptoFramework_NAPI_Kdf_Tes
 
     EXPECT_EQ(OHTEST_CreateX963Params(infoSpec.params, &params), CRYPTO_SUCCESS);
     EXPECT_EQ(OH_CryptoKdf_Create(infoSpec.algoName, &ctx), CRYPTO_SUCCESS);
-    EXPECT_EQ(OH_CryptoKdf_Derive(ctx, params, keySize, &key), CRYPTO_PARAMETER_CHECK_FAILED);
+    EXPECT_EQ(OH_CryptoKdf_Derive(ctx, params, keySize, &key), CRYPTO_OPERTION_ERROR);
 
     OH_CryptoKdfParams_Destroy(params);
     OH_CryptoKdf_Destroy(ctx);
