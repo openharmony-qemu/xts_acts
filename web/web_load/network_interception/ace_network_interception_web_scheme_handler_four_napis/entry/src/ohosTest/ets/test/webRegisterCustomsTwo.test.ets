@@ -16,9 +16,12 @@ import { beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-
+const EVENT_ID_SET_EIMIT_KEY = 142600;
+const driver = Driver.create();
 
 
 export default function webviewApi() {
@@ -31,7 +34,6 @@ export default function webviewApi() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(1000);
       console.info("web beforeEach start");
       done();
     })
@@ -50,10 +52,9 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebSchemeHandler_SetOnRequestStart PASS');
         
-        Utils.emitEvent("emitWebSchemeHandler_SetOnRequestStart", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebSchemeHandler_SetOnRequestStart", true, 7757, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebSchemeHandler_SetOnRequestStart", EVENT_ID_SET_EIMIT_KEY)
+        Utils.registerEvent("testWebSchemeHandler_SetOnRequestStart", true, 142610, done);
+        Utils.waitAndClickComponent(driver, "webHostingButton");
     })
 
     /*
@@ -68,10 +69,9 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebSchemeHandler_SetOnRequestStop PASS');
         
-        Utils.emitEvent("emitWebSchemeHandler_SetOnRequestStop", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebSchemeHandler_SetOnRequestStop", true, 7758, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebSchemeHandler_SetOnRequestStop", EVENT_ID_SET_EIMIT_KEY)
+        Utils.registerEvent("testWebSchemeHandler_SetOnRequestStop", true, 142620, done);
+        Utils.waitAndClickComponent(driver, "webHostingButton");
     })
     
     /*
@@ -86,10 +86,9 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ReleaseByteArray PASS');
         
-        Utils.emitEvent("emitWeb_ReleaseByteArray", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWeb_ReleaseByteArray", true, 7759, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWeb_ReleaseByteArray", EVENT_ID_SET_EIMIT_KEY)
+        Utils.registerEvent("testWeb_ReleaseByteArray", true, 142630, done);
+        Utils.waitAndClickComponent(driver, "webHostingButton");
     })
     
     
@@ -105,10 +104,9 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ReleaseString PASS');
         
-        Utils.emitEvent("emitWeb_ReleaseString", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWeb_ReleaseString", true, 7760, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWeb_ReleaseString", EVENT_ID_SET_EIMIT_KEY)
+        Utils.registerEvent("testWeb_ReleaseString", true, 142640, done);
+        Utils.waitAndClickComponent(driver, "webHostingButton");
     })
     
     /*
@@ -123,10 +121,9 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_DestroyResponse PASS');
         
-        Utils.emitEvent("emitWeb_DestroyResponse", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWeb_DestroyResponse", true, 7761, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWeb_DestroyResponse", EVENT_ID_SET_EIMIT_KEY)
+        Utils.registerEvent("testWeb_DestroyResponse", true, 142650, done);
+        Utils.waitAndClickComponent(driver, "webHostingButton");
     })
     
     /*
@@ -141,10 +138,9 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_CreateSchemeHandler PASS');
         
-        Utils.emitEvent("emitWeb_CreateSchemeHandler", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWeb_CreateSchemeHandler", true, 7762, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWeb_CreateSchemeHandler", EVENT_ID_SET_EIMIT_KEY)
+        Utils.registerEvent("testWeb_CreateSchemeHandler", true, 142660, done);
+        Utils.waitAndClickComponent(driver, "webHostingButton");
     })
     
     /*
@@ -159,10 +155,9 @@ export default function webviewApi() {
         
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceRequest_GetRequestHeaders PASS');
         
-        Utils.emitEvent("emitWebResourceRequest_GetRequestHeaders", 10)
-        await Utils.sleep(1000);
-        Utils.registerEvent("testWebResourceRequest_GetRequestHeaders", true, 7763, done);
-        sendEventByKey('webHostingButton', 10, '');
+        Utils.emitEvent("emitWebResourceRequest_GetRequestHeaders", EVENT_ID_SET_EIMIT_KEY)
+        Utils.registerEvent("testWebResourceRequest_GetRequestHeaders", true, 142670, done);
+        Utils.waitAndClickComponent(driver, "webHostingButton");
     })    
   })
 }

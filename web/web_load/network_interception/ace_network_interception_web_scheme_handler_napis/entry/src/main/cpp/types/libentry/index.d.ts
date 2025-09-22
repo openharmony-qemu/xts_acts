@@ -54,3 +54,4 @@ export const responseSetHeaderByName: () => number;
 export const createResponse: () => number;
 export const getResourceType: () => number;
 export const getFrameUrl: () => number;
+export const getRequestValue: () => number;
