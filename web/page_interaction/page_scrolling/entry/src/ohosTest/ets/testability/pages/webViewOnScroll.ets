@@ -94,15 +94,15 @@ struct webViewOnScroll {
   }
 
   checkScrollPosition() {
-    console.log("y:" + this.controller.getScrollOffset().y + ",webHeight :" + this.webHeight + ",getPageHeight:" +
+    console.log('y:' + this.controller.getScrollOffset().y + ',webHeight :' + this.webHeight + ',getPageHeight:' +
     this.controller.getPageHeight());
     if (this.controller.getScrollOffset().y + this.webHeight >= this.controller.getPageHeight()) {
       this.isWebBottom = true;
-      console.log("页面已经滑动到底部");
+      console.log('页面已经滑动到底部');
     }
     else if(this.controller.getScrollOffset().y == 0) {
       this.isWebTop = true;
-      console.log("页面已经滑动到顶部");
+      console.log('页面已经滑动到顶部');
     }
   }
 
@@ -123,7 +123,7 @@ struct webViewOnScroll {
                 this.flag = true
                 this.controller.scrollBy(this.textX, this.textY);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
-                console.log("action of emitOnscroll is scrollBy" + this.textX + this.textY);
+                console.log('action of emitOnscroll is scrollBy' + this.textX + this.textY);
                 this.flag = false
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -147,7 +147,7 @@ struct webViewOnScroll {
                 this.controller.scrollBy(this.textX, this.textY);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
-                console.log("action of emitOnscroll is scrollBy" + this.textX + this.textY);
+                console.log('action of emitOnscroll is scrollBy' + this.textX + this.textY);
                 this.flag = false
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -253,7 +253,7 @@ struct webViewOnScroll {
                 this.controller.pageDown(true);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 if (this.isWebBottom) {
-                  console.log("页面已经滑动到底部");
+                  console.log('页面已经滑动到底部');
                   Utils.emitEvent(true, 179970)
                 } else {
                   Utils.emitEvent(false, 179970)
@@ -285,7 +285,7 @@ struct webViewOnScroll {
                 this.controller.pageUp(true);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 if (this.isWebTop) {
-                  console.log("页面已经滑动到顶部");
+                  console.log('页面已经滑动到顶部');
                   Utils.emitEvent(true, 179980);
                 } else {
                   Utils.emitEvent(false, 179980);
