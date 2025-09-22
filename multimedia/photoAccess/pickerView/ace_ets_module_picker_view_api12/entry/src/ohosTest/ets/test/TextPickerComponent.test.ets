@@ -2320,12 +2320,12 @@ export default function TextPicker() {
     });
 
     /**
-     * @tc.number    : testPicker50
-     * @tc.name      : testPicker50
-     * @tc.desc      : Testing PhotoPicker BadgeConfig
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number    testPicker50
+     * @tc.name      testPicker50
+     * @tc.desc      Testing PhotoPicker BadgeConfig
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it('testPicker50', Level.LEVEL0, async (done: Function) => {
       if (!isExecutePicker) {
@@ -2374,12 +2374,12 @@ export default function TextPicker() {
     });
 
     /**
-     * @tc.number    : testPicker51
-     * @tc.name      : testPicker51
-     * @tc.desc      : Testing CompleteButtonText
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number    testPicker51
+     * @tc.name      testPicker51
+     * @tc.desc      Testing CompleteButtonText
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it('testPicker51', Level.LEVEL0, async (done: Function) => {
       if (!isExecutePicker) {
