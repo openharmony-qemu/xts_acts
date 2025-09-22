@@ -63,17 +63,18 @@ export async function JsAesWrapCallback(algName: string, mode:cryptoFramework.Cr
   ivParamsSpec: cryptoFramework.IvParamsSpec|null, msg: cryptoFramework.DataBlob): Promise<cryptoFramework.DataBlob> {
   try {
     let cipher: cryptoFramework.Cipher = cryptoFramework.createCipher(algName);
-    cipher.init(mode, symKey, ivParamsSpec, (err) => {
-      if (err) {
-        throw new Error("init callback filed.");
-      }
-    });
     return new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
-      cipher.doFinal(msg, (err, cipherText) => {
+      cipher.init(mode, symKey, ivParamsSpec, (err) => {
         if (err) {
-          reject(err);
+          throw new Error("init callback filed.");
         } else {
-          resolve(cipherText);
+          cipher.doFinal(msg, (err, cipherText) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve(cipherText);
+            }
+          });
         }
       });
     });
