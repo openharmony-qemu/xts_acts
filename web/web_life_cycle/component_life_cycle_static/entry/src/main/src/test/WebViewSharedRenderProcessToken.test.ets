@@ -64,7 +64,7 @@ export default function ActsAcewebViewSharedRenderProcessToken() {
       await Utils.msSleep(2000);
       Utils.registerBaseEvent('testWebViewSharedRenderProcessToken', true, 1600, done,
         (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, boolean | string | Int | object>;
+          const data = backData?.data as Record<string, RecordData>;
           const action = data['ACTION'];
           console.info(`Begin to assert [` + action + `] Equal [` + expected + `]`);
           expect(action).assertEqual(expected);

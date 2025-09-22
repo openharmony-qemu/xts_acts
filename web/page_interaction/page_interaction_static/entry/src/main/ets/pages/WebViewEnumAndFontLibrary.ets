@@ -23,7 +23,7 @@ import hilog from '@ohos.hilog'
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { Web, Row, ContextMenuMediaType, ContextMenuInputFieldType, ContextMenuSourceType, OnContextMenuShowEvent, WebContextMenuResult } from '@ohos.arkui.component'
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
 import image from '@ohos.multimedia.image';
 import { Driver, ON } from '@ohos.UiTest';
@@ -53,7 +53,7 @@ struct WebViewEnumAndFontLibrary {
   private valueChangeCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data != null && data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
         this.str = strValue;

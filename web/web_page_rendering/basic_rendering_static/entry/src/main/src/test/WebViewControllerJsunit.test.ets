@@ -18,7 +18,7 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector';
 
@@ -49,7 +49,7 @@ export default function webViewControllerJsunit() {
     afterEach(async () => {
       console.info('web afterEach start:'+emitKey);
       try {
-            let tempData: Record<string, Object> = {};
+            let tempData: Record<string, RecordData> = {};
             tempData['ACTION'] = emitKey;
             let backData: events_emitter.EventData = {
               data: tempData

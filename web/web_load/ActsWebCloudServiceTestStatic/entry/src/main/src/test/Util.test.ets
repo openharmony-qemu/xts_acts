@@ -61,7 +61,7 @@ class Utils{
       let callBack = (backData: emitter.EventData) => {
         try {
           hilog.info(0x0000, 'testTag', "testCaseName=" + testCaseName + " get result is: " + JSON.stringify(backData));
-          const data = backData?.data as Record<string, boolean | string | Int | object>;
+          const data = backData?.data as Record<string, RecordData>;
           const action = data['ACTION'];
           expect(action).assertEqual(expectedValue);
           hilog.info(0x0000, 'testTag', "testCaseName=" + testCaseName + " END");
