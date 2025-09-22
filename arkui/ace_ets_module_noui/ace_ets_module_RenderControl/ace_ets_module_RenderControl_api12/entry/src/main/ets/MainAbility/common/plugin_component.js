@@ -16,12 +16,12 @@
 import pluginComponentManager from '@ohos.pluginComponent'
 
 function onPushListener(source, template, data, extraData) {
-    console.log('onPushListener template.source=' + template.source)
-    var jsonObject = JSON.parse(data.componentTemplate.source)
-    console.log('request_callback1:source json object' + jsonObject)
-    var jsonArry = jsonObject.ExternalComponent
+    console.log('onPushListener template.source=' + template.source);
+    let jsonObject = JSON.parse(data.componentTemplate.source);
+    console.log('request_callback1:source json object' + jsonObject);
+    let jsonArry = jsonObject.ExternalComponent;
     for (let i in jsonArry) {
-        console.log(jsonArry[i])
+        console.log(jsonArry[i]);
     }
     console.log('onPushListener:source json object' + jsonObject);
     console.log('onPushListener:source json string' + JSON.stringify(jsonObject));
@@ -62,7 +62,7 @@ export default {
                 extraData: {
                     "extra_str": "this is push event"
                 },
-                jsonPath: "",
+                jsonPath: '',
             },
             (err, data) => {
                 console.log('push_callback: push ok!');
@@ -81,20 +81,20 @@ export default {
                 "key_1": "plugin component test",
                 "key_2": 34234
             },
-            jsonPath: "",
+            jsonPath: '',
         },
             (err, data) => {
-                console.log('request_callback: componentTemplate.ability=' + data.componentTemplate.ability)
-                console.log('request_callback: componentTemplate.source=' + data.componentTemplate.source)
-                var jsonObject = JSON.parse(data.componentTemplate.source)
-                console.log('request_callback:source json object' + jsonObject)
-                var jsonArry = jsonObject.ExternalComponent
+                console.log('request_callback: componentTemplate.ability=' + data.componentTemplate.ability);
+                console.log('request_callback: componentTemplate.source=' + data.componentTemplate.source);
+                let jsonObject = JSON.parse(data.componentTemplate.source);
+                console.log('request_callback:source json object' + jsonObject);
+                let jsonArry = jsonObject.ExternalComponent
                 for (let i in jsonArry) {
-                    console.log(jsonArry[i])
+                    console.log(jsonArry[i]);
                 }
-                console.log('request_callback:source json string' + JSON.stringify(jsonObject))
-                console.log('request_callback: data=' + JSON.stringify(data.data))
-                console.log('request_callback: extraData=' + JSON.stringify(data.extraData))
+                console.log('request_callback:source json string' + JSON.stringify(jsonObject));
+                console.log('request_callback: data=' + JSON.stringify(data.data));
+                console.log('request_callback: extraData=' + JSON.stringify(data.extraData));
             }
         )
     }
