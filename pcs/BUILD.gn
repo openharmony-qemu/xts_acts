@@ -18,6 +18,7 @@ group("pcs") {
   if (is_standard_system) {
     deps = [
       "pcs_arkts:ActsPCSArktsTest",
+      "pcs_arkts_assist:ActsPCSArktsAssist",
       "pcs_js:ActsPCSJsTest",
       "pcs_ndk:ActsPCSNdkTest",
       "pcs_py:ActsPCSPyTest",

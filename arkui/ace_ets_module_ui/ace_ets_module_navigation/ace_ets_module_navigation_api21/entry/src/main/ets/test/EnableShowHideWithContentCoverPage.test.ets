@@ -112,7 +112,50 @@ export default function EnableShowHideWithContentCoverPage() {
       expect(testValue2).assertEqual('1');
       AppStorage.delete('testValue');
 
+      let backBtn: Component = await driver.findComponent(ON.text('back'));
+      await backBtn.click();
+      console.log('[EnableShowHideWithContentCoverPage_0200] backBtn click');
+      await driver.delayMs(1000);
       console.info('EnableShowHideWithContentCoverPage_0200 END');
+      done();
+    });
+
+    /**
+     * @tc.number    EnableShowHideWithContentCoverPage_0300
+     * @tc.name      EnableShowHideWithContentCoverPage_0300
+     * @tc.desc      Test EnableShowHideWithContentCover false and VisibilityChangeReason.CONTENT_COVER
+     * @tc.level     Level 0
+     */
+    it('EnableShowHideWithContentCoverPage_0300', Level.LEVEL0, async (done: Function) => {
+      console.info('EnableShowHideWithContentCoverPage_0300 START');
+      await CommonFunc.sleep(500);
+      let driver = Driver.create();
+      await driver.delayMs(1000);
+
+      let enbaleBtn: Component = await driver.findComponent(ON.text('changeEnableValue'));
+      await enbaleBtn.click();
+      console.log('[EnableShowHideWithContentCoverPage_0300] enbaleBtn click');
+      await driver.delayMs(1000);
+
+      let btn1: Component = await driver.findComponent(ON.text('pushOne'));
+      await btn1.click();
+      console.log('[EnableShowHideWithContentCoverPage_0300] btn1 click');
+      await driver.delayMs(1000);
+
+      let btn2: Component = await driver.findComponent(ON.text('openModal'));
+      await btn2.click();
+      console.log('[EnableShowHideWithContentCoverPage_0300] btn2 click');
+      await driver.delayMs(3000);
+      let testValue1: string | undefined = AppStorage.get('testValue')
+      expect(testValue1).assertEqual(undefined);
+
+      let btn3: Component = await driver.findComponent(ON.text('closeModal'));
+      await btn3.click();
+      console.log('[EnableShowHideWithContentCoverPage_0300] btn3 click');
+      await driver.delayMs(3000);
+      let testValue2: string | undefined = AppStorage.get('testValue');
+      expect(testValue2).assertEqual(undefined);
+      console.info('EnableShowHideWithContentCoverPage_0300 END');
       done();
     });
 

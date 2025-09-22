@@ -17,6 +17,8 @@ import Utils from './Utils';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitAndClickComponent, waitForComponent } from './WaitTest.test';
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -33,12 +35,12 @@ export default function webOnFirstMeaningfulPaint() {
         if (!("WebOnFirstMeaningfulPaint" == pages.name)) {
           console.info("get WebOnFirstMeaningfulPaint state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebOnFirstMeaningfulPaint page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebOnFirstMeaningfulPaint page error: " + err);
       }
+      await waitForComponent("getSurfaceIdButton");
       done()
     });
     beforeEach(async (done: Function) => {
@@ -47,7 +49,6 @@ export default function webOnFirstMeaningfulPaint() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
@@ -61,14 +62,9 @@ export default function webOnFirstMeaningfulPaint() {
     * @tc.level      : Level 1
     */
     it('OnFirstMeaningfulPaint0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("OnFirstMeaningfulPaint0100", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("OnFirstMeaningfulPaint0100", true, 701, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebOnFirstMeaningfulPaint"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("OnFirstMeaningfulPaint0100", 151990)
+      Utils.registerEvent("OnFirstMeaningfulPaint0100", true, 152000, done);
+      waitAndClickComponent('WebOnFirstMeaningfulPaint',driver);
     })
 
     /*
@@ -80,14 +76,9 @@ export default function webOnFirstMeaningfulPaint() {
     * @tc.level      : Level 1
     */
     it('OnFirstMeaningfulPaint0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("OnFirstMeaningfulPaint0200", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("OnFirstMeaningfulPaint0200", true, 702, done);
-      let driver = Driver.create();
-      await driver.delayMs(1000);
-      let StartModel = await driver.findComponent(ON.id("WebOnFirstMeaningfulPaint"));
-      await StartModel.click();
-      await driver.delayMs(1000);
+      Utils.emitEvent("OnFirstMeaningfulPaint0200", 151990)
+      Utils.registerEvent("OnFirstMeaningfulPaint0200", true, 152010, done);
+      waitAndClickComponent('WebOnFirstMeaningfulPaint',driver);
     })
   })
 }

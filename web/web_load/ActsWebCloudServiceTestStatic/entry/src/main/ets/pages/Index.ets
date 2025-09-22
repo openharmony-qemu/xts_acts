@@ -52,9 +52,10 @@ struct MyStateSample {
       hilog.info(0x0000, 'testTag', "web page valueChangeCallBack");
       if (eventData != null) {
         hilog.info(0x0000, 'testTag', "valueChangeCallBack=" + JSON.stringify(eventData));
-        if (eventData.data != null) {
+        const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+        if (data != null && data['ACTION'] != null) {
           try {
-            this.clickEvent = eventData?.data?.get("ACTION") as string;
+            this.clickEvent = String(data['ACTION']);
             hilog.info(0x0000, 'testTag', "valueChangeCallBack clickEvent=" + this.clickEvent);
             this.webviewController.loadUrl('resource://rawfile/first.html');
           } catch (error) {

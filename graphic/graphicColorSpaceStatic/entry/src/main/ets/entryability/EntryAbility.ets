@@ -19,7 +19,7 @@ import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
-import { MyCallback } from '../models/MyCallback'
+import { MyCallback } from '../models/MyCallback';
 
 
 class EntryAbility extends UIAbility {
@@ -31,7 +31,8 @@ class EntryAbility extends UIAbility {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onWindowStageCreate');
     windowStage.loadContent('pages/Index', (err: BusinessError<void> | null): void => {
       hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent entering');
-      if (err?.code) {
+      MyCallback.runCasesOfCallback();
+      if (err) {
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent error');
         return;
       }

@@ -18,13 +18,12 @@ import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
-
 @Entry
 @Component
 struct webOnFirstContTwo {
   controller: WebController = new WebController();
   @State str: string = "emitNoneOnfirstcontentfulpaintWebc";
-  @State firstId: number = 424;
+  @State firstId: number = 151900;
   @State firstcontentfulpaint: string = 'VisibilityNoneTest';
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
@@ -35,15 +34,17 @@ struct webOnFirstContTwo {
   @State userAgent: string = "Mozilla/5.0 (Window NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" +
     " CHrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.27";
   @State webVisibility: Visibility = Visibility.None
-
+  @State isComplete: number = -1;
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 151890,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-
+  onPageHide() {
+    events_emitter.off(151890)
+  }
   private valueChangeCallBack = (eventData: ESObject) => {
     console.info("webOnFirstContTwo page valueChangeCallBack");
     if (eventData != null) {

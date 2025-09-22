@@ -33,7 +33,7 @@ import deviceInfo from '@ohos.deviceInfo'
 import intl from '@ohos.intl'
 import Utils from './Util.test'
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function SystemIni18nTest() {

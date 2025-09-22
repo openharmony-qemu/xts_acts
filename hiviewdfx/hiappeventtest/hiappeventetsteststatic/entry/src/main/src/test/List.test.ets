@@ -13,21 +13,22 @@
  * limitations under the License.
  */
 import writeTest from "./Write.test"
-import addProcessorTest from "./AddProcessor.test"
+// import addProcessorTest from "./AddProcessor.test"
 import configureTest from "./Configure.test"
 import removeProcessorTest from "./RemoveProcessor.test"
 import SetGetUserIdTest from "./SetGetUserId.test"
 import SetGetUserPropertyTest from "./SetGetUserProperty.test"
 import setEventParamTest from "./SetEventParam.test"
 import addWatcherTest from "./AddWatcher.test"
+import addProcessorTest from "./AddProcessor.test";
 
 export default function testsuite() {
     writeTest();
-    addProcessorTest();
     configureTest();
     removeProcessorTest();
     SetGetUserIdTest();
     SetGetUserPropertyTest();
     setEventParamTest();
     addWatcherTest();
+    addProcessorTest();
 }

@@ -46,12 +46,14 @@ struct Index {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 154060,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-
+  onPageHide() {
+    events_emitter.off(154060)
+  }
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     console.info("web page valueChangeCallBack");
     if (eventData != null) {
@@ -73,12 +75,15 @@ struct Index {
                 this.webId = this.controller.getWebId();
                 this.webId2 = this.controllerTwo.getWebId();
                 this.webId3 = this.controllerThree.getWebId();
-                console.log("id: " + this.webId + this.webId2 + this.webId);
-                this.webIdTol = this.webId + this.webId2 + this.webId3;
+                console.log("id: " + this.webId + this.webId2 + this.webId3);
+                if(this.webId > 0 && this.webId2 > 0 && this.webId3 > 0) {
+                  Utils.emitEvent(true, 154070)
+                } else {
+                  Utils.emitEvent(false, 154070)
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
-              Utils.emitEvent(this.webIdTol, 100)
               break;
             }
           }
