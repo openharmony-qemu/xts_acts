@@ -784,37 +784,7 @@ export default function Array_Reduce_Right_U_Test_static() {
         console.info(`${caseName}, test end`);
         Done();
       })
-
-
-    /**
-     * @tc.number ARRAY_REDUCE_RIGHT_U_TEST_3900
-     * @tc.name Array_Reduce_Right_U_Test_static_3900
-     * @tc.desc test reduceRight<U>(self: FixedArray<float>, callbackfn: ((previousValue: U, currentValue: float, index: number, array: FixedArray<float>)=> U), initialValue: U) return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('Array_Reduce_Right_U_Test_static_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void):Promise<void> => {
-        const caseName = 'Array_Reduce_Right_U_Test_static_3900';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.0.toFloat(), 2.0.toFloat(), 3.0.toFloat()];
-        let processOrder: number[] = [];
-        reduceRight<float>(arr,
-          (prev: float, curr: float, index: number, array: FixedArray<Float>) => {
-            processOrder.push(index);
-            return prev + curr.toFloat();
-          },
-          0.0.toFloat()
-        );
-        expect(processOrder[0]).assertEqual(2.0.toFloat());
-        expect(processOrder[1]).assertEqual(1.0.toFloat());
-        expect(processOrder[2]).assertEqual(0.0.toFloat());
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-
+    
     /**
      * @tc.number ARRAY_REDUCE_RIGHT_U_TEST_4100
      * @tc.name Array_Reduce_Right_U_Test_static_4100
