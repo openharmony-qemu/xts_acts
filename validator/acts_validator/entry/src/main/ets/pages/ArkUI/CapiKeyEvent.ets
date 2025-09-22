@@ -1,15 +1,16 @@
 /**
-
- Copyright (c) 2025 Huawei Device Co., Ltd.
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
- http://www.apache.org/licenses/LICENSE-2.0
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 import router from '@ohos.router';
@@ -37,39 +38,24 @@ struct CapiKeyEvent {
 
   @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
-    if (this.CapiKeyEventVue == false) {
-      Button({ stateEffect: this.CapiKeyEventVue }) {
-        Image($r('app.media.ic_public_pass'))
-          .width('20vp')
-          .height('20vp')
-      }
-      .width('30%')
-      .height('30vp')
-      .backgroundColor(Color.Grey)
-      .opacity(0.4)
-      .onClick(() => {
-
+    Button({ stateEffect: this.CapiKeyEventVue }) {
+      Image($r('app.media.ic_public_pass'))
+        .width('20vp')
+        .height('20vp')
+    }.width('30%')
+    .height('30vp')
+    .backgroundColor(Color.Grey)
+    .onClick(() => {
+      router.back({
+        url: 'pages/ArkUI/ArkUI_index',
+        params: {
+          result: 'true ', title: this.name,
+        }
       })
-    } else {
-      Button({ stateEffect: this.CapiKeyEventVue }) {
-        Image($r('app.media.ic_public_pass'))
-          .width('20vp')
-          .height('20vp')
-      }.width('30%')
-      .height('30vp')
-      .backgroundColor(Color.Grey)
-      .onClick(() => {
-        router.back({
-          url: 'pages/ArkUI/ArkUI_index',
-          params: {
-            result: 'true ', title: this.name,
-          }
-        })
-        promptAction.showToast({
-          message: '通过', duration: 1000
-        });
-      })
-    }
+      promptAction.showToast({
+        message: '通过', duration: 1000
+      });
+    })
   }
 
   @Builder
@@ -151,31 +137,6 @@ struct CapiKeyEvent {
           Text(`设备支持CAPI键盘灯状态获取`).fontColor(Color.Green).fontSize('18fp').margin({ top: 20 })
         }
 
-        Row() {
-          Column() {
-            Button(`不支持`)
-              .borderRadius(8)
-              .backgroundColor(0x317aff)
-              .width('30%')
-              .enabled(!this.yesEnable)
-              .opacity(!this.yesEnable ? 1 : 0.4)
-              .onClick(async () => {
-                this.CapiKeyEventVue = false
-              })
-          }
-
-          Column() {
-            Button(`支持`)
-              .borderRadius(8)
-              .backgroundColor(0x317aff)
-              .width('30%')
-              .onClick(async () => {
-                this.yesEnable = true
-                this.CapiKeyEventVue = true
-              })
-          }
-        }
-
         // 业务代码
         Column() {
           XComponent({
@@ -185,6 +146,8 @@ struct CapiKeyEvent {
           })
             .onAppear(() => {
               nativeKeyEvent.createNativeNode("xcomponentId", this.getUIContext());
+              this.text1 = '0';
+              this.text2 = '0';
             })
             .id('xcomponent')
             .focusable(true)
