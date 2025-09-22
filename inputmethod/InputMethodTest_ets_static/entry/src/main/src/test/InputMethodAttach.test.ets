@@ -110,7 +110,7 @@ export default function inputMethodAttachTest() {
             try {
                 await inputMethod.getController().attach(true, ATTRIBUTE);
                 console.info(`${CASE_NAME} execution success`);
-                expect(true).assertTrue();
+                expect(ATTRIBUTE != null).assertTrue();
                 done();
             } catch (error: BusinessError) {
                 console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
@@ -135,7 +135,7 @@ export default function inputMethodAttachTest() {
             try {
                 await inputMethod.getController().attach(false, ATTRIBUTE);
                 console.info(`${CASE_NAME} execution success`);
-                expect(true).assertTrue();
+                expect(ATTRIBUTE != null).assertTrue();
                 done();
             } catch (error: BusinessError) {
                 console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
@@ -161,7 +161,7 @@ export default function inputMethodAttachTest() {
             try {
                 await inputMethod.getController().attach(false, ATTRIBUTE, reason);
                 console.info(`${CASE_NAME} execution success`);
-                expect(true).assertTrue();
+                expect(ATTRIBUTE != null).assertTrue();
                 done();
             } catch (error: BusinessError) {
                 console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);

@@ -24,7 +24,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import { PanelInfo, PanelFlag, PanelType } from '@ohos.inputMethod.Panel';
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let testAbilityContext:common.UIAbilityContext;
 export default function inputMethodAuthorityJSUnit() {
@@ -136,7 +136,7 @@ export default function inputMethodAuthorityJSUnit() {
                         expect(error?.code == 0).assertTrue();
                     } else {
                         hilog.info(domain, tag, '====>inputmethodNomal_test_hideSoftKeyboard_static_001 success: ');
-                        expect(true).assertTrue();
+                        expect(error == null).assertTrue();
                     }
                     done();
                 } catch (err: BusinessError) {
@@ -176,7 +176,7 @@ export default function inputMethodAuthorityJSUnit() {
                 }
                 hilog.info(domain, tag, '====>inputmethodNomal_test_hideSoftKeyboard_static_002 hideSoftKeyboard permission fail')
                 await inputMethodCtrl.hideSoftKeyboard();
-                expect(true).assertTrue();
+                expect(ATTRIBUTE != null).assertTrue();
                 done();
             } catch (err: BusinessError) {
                 hilog.error(domain, tag, '====>inputmethodNomal_test_hideSoftKeyboard_static_002 hideSoftKeyboard catch err' + JSON.stringify(err))

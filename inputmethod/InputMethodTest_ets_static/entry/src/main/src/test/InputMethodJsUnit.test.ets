@@ -666,7 +666,6 @@ export default function inputMethodTest() {
          * @tc.type    Function
          * @tc.level   2
          */
-
         it('inputMethod_test_listInputMethodSubtype_static_003', Level.LEVEL2, async (done: () => void)  => {
             console.info("====>-----------------inputMethod_test_listInputMethodSubtype_static_003 start---------------------");
             let inputM = inputMethod.getCurrentInputMethod()

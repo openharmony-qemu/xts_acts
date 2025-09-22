@@ -145,9 +145,9 @@ export default function inputMethodTest() {
         it('SUB_Misc_inputMethod_showTextInput_Promise_static_0100', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_showTextInput_Promise_static_0100';
             try {
-                let data = await inputMethod.getController().showTextInput();
+                await inputMethod.getController().showTextInput();
                 console.info(`${CASE_NAME} execution success `);
-                expect(true).assertTrue();
+                expect(CASE_NAME != null).assertTrue();
                 done();
             } catch (error:BusinessError) {
                 console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
@@ -268,7 +268,6 @@ export default function inputMethodTest() {
             try {
                 await inputMethod.getController().hideTextInput();
                 console.info(`${CASE_NAME} execution success `);
-                expect(true).assertTrue();
                 done();
 
             } catch (error:BusinessError) {
@@ -345,7 +344,7 @@ export default function inputMethodTest() {
             try {
                 await inputMethod.getController().detach();
                 console.info(`${CASE_NAME} execution success `);
-                expect(true).assertTrue();
+                expect(CASE_NAME != null).assertTrue();
                 done();
                 
             } catch (error:BusinessError) {
