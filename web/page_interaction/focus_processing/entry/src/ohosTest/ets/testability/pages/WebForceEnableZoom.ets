@@ -85,23 +85,23 @@ struct WebComponent {
               }
               break;
             }
-            // case "emitWebForceEnableZoom002": {
-            //   try {
-            //     this.isForceZoomEnabled = true;
-            //     this.flag = 2;
-            //     this.isPageEnd = -1
-            //     this.webController.loadUrl('www.example.com')
-            //     await waitForExist(()=>this.isPageEnd, this.str, 0);
-            //     this.isPageEnd = -1;
-            //     this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
-            //     await waitForExist(()=>this.isPageEnd, this.str, 0);
-            //     this.webController.zoomIn();
-            //     await Utils.sleep(2000);
-            //   } catch (error) {
-            //     console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-            //   }
-            //   break;
-            // }
+            case "emitWebForceEnableZoom002": {
+              try {
+                this.isForceZoomEnabled = true;
+                this.flag = 2;
+                this.isPageEnd = -1
+                this.webController.loadUrl('www.example.com')
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
+                this.isPageEnd = -1;
+                this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
+                this.webController.zoomOut();
+                await Utils.sleep(2000);
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+              }
+              break;
+            }
 
           }
         })
@@ -120,7 +120,12 @@ struct WebComponent {
           .onScaleChange((e) => {
             console.info("scale changed new = " + e.newScale + ", old = " + e.oldScale)
             this.ScaleChange = true;
-            Utils.emitEvent(true, 20250913)
+            if(this.flag == 1) {
+              Utils.emitEvent(true, 20250913)
+            } else {
+              Utils.emitEvent(true, 20250914)
+            }
+           
           })
           .forceEnableZoom(this.isForceZoomEnabled)
 
