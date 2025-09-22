@@ -3862,8 +3862,8 @@ export default function audioRendererTest() {
 
     /**
      * @tc.number      SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0300
-     * @tc.name:SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0300
-     * @tc.desc:SetInterruptMode mode 0 promise,is public share mode
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0300
+     * @tc.desc        SetInterruptMode mode 0 promise,is public share mode
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level2
@@ -3898,8 +3898,8 @@ export default function audioRendererTest() {
 
     /**
      * @tc.number      SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0400
-     * @tc.name:SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0400
-     * @tc.desc:SetInterruptMode mode 1 promise,is independent mode
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0400
+     * @tc.desc        SetInterruptMode mode 1 promise,is independent mode
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level2
