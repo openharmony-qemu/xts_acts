@@ -32,7 +32,7 @@ class EntryAbility extends UIAbility {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onWindowStageCreate');
     windowStage.loadContent('pages/webKeyboardController', (err: BusinessError<void> | null): void => {
       hilog.info(0x0000, 'testTag EntryAbility', 'loadContent entering');
-      if (err) {
+      if (err?.code) {
         hilog.info(0x0000, 'testTag EntryAbility', 'loadContent error');
         return;
       }
