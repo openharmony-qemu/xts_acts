@@ -333,7 +333,7 @@ export default function DeviceManagerTest() {
               (err: BusinessError<void>|null, data: long|undefined) => {
                 hilog.info(TAG, 'testTag', 'unbindDriverWithDeviceId callback success');
               });
-            expect(true).assertTrue();
+            expect(data !=null).assertTrue();
             hilog.info(0, 'testTag ui', 'bindDevice success:' + data.deviceId);
             hilog.info(0, 'testTag ui', 'bindDevice success:' + JSON.stringify(data.remote));
             done();
