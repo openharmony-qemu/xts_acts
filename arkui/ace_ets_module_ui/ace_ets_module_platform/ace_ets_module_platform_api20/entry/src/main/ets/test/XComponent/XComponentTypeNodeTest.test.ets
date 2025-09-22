@@ -112,5 +112,27 @@ export default function XComponentTypeNodeTest() {
       console.info('[XComponentTypeNodeTest_0100] END');
       done();
     });
+
+    /*
+     * @tc.number    XComponentTypeNodeTest_0200
+     * @tc.name      XComponentTypeNodeTest_0200
+     * @tc.desc      Test XComponentTypeNode
+     * @tc.level     Level 1
+     */
+    it('XComponentTypeNodeTest_0200', Level.LEVEL1, async (done: Function) => {
+      console.info('[XComponentTypeNodeTest_0200] START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
+
+      let button = await driver.findComponent(ON.id('XComponentTypeNodePage_Btn_undefined'));
+      await button.click();
+      console.info("[XComponentTypeNodeTest_0200] Click XComponentTypeNodePage_Btn_undefined.");
+      await CommonFunc.sleep(1000);
+      
+      AppStorage.get('XComponentTypeNodePage').assertEqual(undefined);
+
+      console.info('[XComponentTypeNodeTest_0200] END');
+      done();
+    });
   })
 }
