@@ -32,10 +32,14 @@ struct WebComponent {
   @State resultArr:PdfLoadResult[] = [PdfLoadResult.LOAD_SUCCESS,PdfLoadResult.PARSE_ERROR_FILE,PdfLoadResult.PARSE_ERROR_FORMAT ,PdfLoadResult.PARSE_ERROR_PASSWORD ,PdfLoadResult.PARSE_ERROR_HANDLER ]
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 300650,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide(): void {
+    events_emitter.off(300650)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -58,40 +62,54 @@ struct WebComponent {
             this.isReceive = -1;
             switch (this.emitKey) {
               case 'emitWebViewOnPdfLoadResult001': {
+                console.info("emitWebViewOnPdfLoadResult001************")
                 await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
                 console.log('emitWebViewOnPdfLoadResult001_result' + this.result)
-                Utils.emitEvent(this.resultArr[this.result],20250825)
+                if(canIUse('SystemCapability.Security.DiaService')) {
+                  Utils.emitEvent(this.resultArr[this.result],300660)
+                  console.log('6666')
+                } else {
+                  Utils.emitEvent(this.resultArr[0],300660)
+                  console.log('9999')
+                }
                 break;
               }
               case 'emitWebViewOnPdfLoadResult002': {
+                console.info('emitWebViewOnPdfLoadResult002********')
                 await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
                 console.log('result' + this.result)
-                Utils.emitEvent(this.resultArr[1],20250826)
+                Utils.emitEvent(this.resultArr[1],300670)
                 break;
               }
               case 'emitWebViewOnPdfLoadResult003': {
+                console.info('emitWebViewOnPdfLoadResult003********')
                 this.controller.loadUrl("resource://rawfile/error.pdf");
                 await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
                 console.log('emitWebViewOnPdfLoadResult003_result' + this.result)
-                Utils.emitEvent(this.resultArr[this.result],20250827)
+                if(canIUse('SystemCapability.Security.DiaService')) {
+                  Utils.emitEvent(this.resultArr[this.result],300680)
+                  console.log('congcong');
+                } else {
+                  Utils.emitEvent(this.resultArr[2],300680)
+                  console.log('longlong');
+                }
                 break;
               }
               case 'emitWebViewOnPdfLoadResult004': {
+                console.info('emitWebViewOnPdfLoadResult004********')
                 await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
                 console.log('result' + this.result)
-                Utils.emitEvent(this.resultArr[3],20250828)
+                Utils.emitEvent(this.resultArr[3],300690)
                 break;
               }
 
               case 'emitWebViewOnPdfLoadResult005': {
+                console.info('emitWebViewOnPdfLoadResult005********')
                 await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
                 console.log('result' + this.result)
-                Utils.emitEvent(this.resultArr[4],20250829)
+                Utils.emitEvent(this.resultArr[4],300700)
                 break;
               }
-
-
-
             }
           })
       }

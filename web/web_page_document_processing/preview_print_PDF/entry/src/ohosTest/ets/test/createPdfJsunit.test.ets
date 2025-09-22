@@ -18,6 +18,8 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -36,12 +38,12 @@ export default function webJsunit() {
         if (!("createPdf" == pages.name)) {
           console.info("get createPdf state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push createPdf page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push createPdf page error: " + err);
       }
+      await waitForComponent('webSavePDF');
       done();
     });
     beforeEach(async (done: Function) => {
@@ -50,28 +52,11 @@ export default function webJsunit() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
     afterEach(async (done: Function) => {
-      console.info("web afterEach start:" + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
+      console.info("WebInitTest afterEach start");
       done();
     })
 
@@ -81,20 +66,19 @@ export default function webJsunit() {
      *tc.desic get createPdf
      */
     it('SavePDF', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitSavePDF1";
-      Utils.registerEvent("emitSavePDF", true, 20241127, done);
+      Utils.emitEvent("emitSavePDF", 300500)
+      Utils.registerEvent("emitSavePDF", true, 300510, done);
       sendEventByKey('webSavePDF', 10, '');
     })
 
-
-        /*
+    /*
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_PDFARRAYBUFFER_002
      *tc.name pdfArrayBuffer
      *tc.desic get pdfArrayBuffer
      */
     it('SavePDF1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitSavePDF1";
-      Utils.registerEvent("emitSavePDF1", true, 20241128, done);
+      Utils.emitEvent("emitSavePDF1", 300500)
+      Utils.registerEvent("emitSavePDF1", true, 300520, done);
       sendEventByKey('webSavePDF', 10, '');
     })
 

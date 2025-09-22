@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
@@ -22,25 +22,24 @@ import { accessibility, config } from '@kit.AccessibilityKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 // @ts-nocheck
-let emitKey = ''
 
 export default function ActsAceWebViewOnPdfLoadEvent() {
   describe('ActsAcewebViewWebViewOnPdfLoadEvent', () => {
 
     beforeAll(async (done: Function) => {
+      console.info("ActsAceWebViewOnPdfLoadEvent beforeall start***********")
       let options : router.RouterOptions = {
         url: 'testability/pages/WebViewOnPdfLoadEvent',
       }
 
       try {
-        await Utils.sleep(1000)
         router.clear();
         let pages = router.getState();
         console.info("get WebViewOnPdfLoadEvent state success " + JSON.stringify(pages));
         if (!("WebViewOnPdfLoadEvent" == pages.name)) {
+          console.info("get WebViewOnPdfLoadEvent state************")
           console.info("get WebViewOnPdfLoadEvent state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(1000);
           console.info("push WebViewOnPdfLoadEvent state success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -48,39 +47,20 @@ export default function ActsAceWebViewOnPdfLoadEvent() {
       }
       let driver: Driver = Driver.create();
       await driver.waitForComponent(ON.id("WebViewOnPdfLoadEventKey"),10000);
+      console.log("ActsAceWebViewOnPdfLoadEvent beforeall end***********")
       done()
     });
 
     beforeEach(async (done: Function) => {
+      console.log("ActsAceWebViewOnPdfLoadEvent beforeEach start***********");
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
       }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       done();
+      console.log("ActsAceWebViewOnPdfLoadEvent beforeEach end***********");
     })
-
-    afterEach(async (done: Function) => {
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent : events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.error("emit emitKey error:" + JSON.stringify(err));
-      }
-      await Utils.sleep(1000);
-      done();
-    })
-
 
     /*
       * @tc.number      : SUB_ACE_WEB_WEBVIEWWEBVIEWONPDFLOADEVENT_API_0001
@@ -91,9 +71,8 @@ export default function ActsAceWebViewOnPdfLoadEvent() {
       * @tc.level       : Level 0
       */
     it('emitwebViewWebViewOnPdfLoadEvent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitwebViewWebViewOnPdfLoadEvent001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitwebViewWebViewOnPdfLoadEvent001", 'resource://rawfile/printTemplate.pdf', 20250822, done);
+      Utils.emitEvent("emitwebViewWebViewOnPdfLoadEvent001", 300620)
+      Utils.registerEvent("emitwebViewWebViewOnPdfLoadEvent001", 'resource://rawfile/printTemplate.pdf', 300630, done);
       sendEventByKey('WebViewOnPdfLoadEventKey', 10, '');
     })
 
@@ -106,9 +85,8 @@ export default function ActsAceWebViewOnPdfLoadEvent() {
        * @tc.level       : Level 0
        */
     it('emitwebViewWebViewOnPdfLoadEvent002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitwebViewWebViewOnPdfLoadEvent002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitwebViewWebViewOnPdfLoadEvent002", 0, 20250823, done);
+      Utils.emitEvent("emitwebViewWebViewOnPdfLoadEvent002", 300620)
+      Utils.registerEvent("emitwebViewWebViewOnPdfLoadEvent002", 0, 300640, done);
       sendEventByKey('WebViewOnPdfLoadEventKey', 10, '');
     })
 
@@ -121,7 +99,7 @@ export default function ActsAceWebViewOnPdfLoadEvent() {
    * @tc.level       : Level 0
    */
     it('emitwebViewWebViewOnPdfLoadEvent003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitwebViewWebViewOnPdfLoadEvent003", 10)
+      Utils.emitEvent("emitwebViewWebViewOnPdfLoadEvent003", 300620)
       await Utils.sleep(2000);
       Utils.registerEvent("emitwebViewWebViewOnPdfLoadEvent003", "resource://rawfile/small.pdf", 20250824, done);
       sendEventByKey('WebViewOnPdfLoadEventKey', 10, '');
