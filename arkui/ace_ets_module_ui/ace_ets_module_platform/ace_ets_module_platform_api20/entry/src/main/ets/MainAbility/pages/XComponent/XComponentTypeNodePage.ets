@@ -106,7 +106,7 @@ struct XComponentTypeNodePage {
 
       Button('undefined').onClick(() => {
         const attrs = typeNode.getAttribute(undefined, 'XComponent');
-        AppStorage.setOrCreate('XComponentTypeNodePage', attrs);
+        AppStorage.SetOrCreate('XComponentTypeNodePage', attrs);
       }).controlSize(ControlSize.SMALL).key('XComponentTypeNodePage_Btn_undefined')
 
       NodeContainer(this.myNodeController)
