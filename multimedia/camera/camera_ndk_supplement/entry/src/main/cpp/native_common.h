@@ -37,16 +37,17 @@ inline bool CheckArgs(napi_env env, napi_callback_info info, napi_value *args, s
            args[0] != nullptr && (required == 1 || args[1] != nullptr);
 }
 
-inline std::unique_ptr<char[]> GetArgsOneParameterByStr(napi_env env, napi_callback_info info)
+inline char* GetArgsOneParameterByStr(napi_env env, napi_callback_info info)
 {
-    napi_value args[1] = {nullptr};
+    size_t argc = 2;
+    napi_value args[PARAMETER_TWO] = {nullptr};
     if (!CheckArgs(env, info, args, 1)) {
         return nullptr;
     }
-
-    auto param = std::make_unique<char[]>(NAME_SIZE);
-    return napi_get_value_string_utf8(env, args[0], param.get(), NAME_SIZE, nullptr) == napi_ok ? std::move(param)
-                                                                                                : nullptr;
+    size_t typeLen = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &typeLen);
+    char* param = new char[typeLen + 1];
+    return napi_get_value_string_utf8(env, args[0], param, typeLen + 1, &typeLen) == napi_ok ? param : nullptr;
 }
 
 inline int32_t GetArgsOneParameterByInt(napi_env env, napi_callback_info info)

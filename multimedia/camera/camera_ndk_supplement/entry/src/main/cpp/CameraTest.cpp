@@ -513,11 +513,11 @@ Camera_ErrorCode NDKCamera::GetCameraConcurrentInfo(int32_t index)
         return CAMERA_OK;
     }
 
-    Camera_ConcurrentInfo* conInfo;
+    Camera_ConcurrentInfo* conInfo = nullptr;
     uint32_t infoSize = 0;
     Camera_ErrorCode ret =
         OH_CameraManager_GetCameraConcurrentInfos(cameraManager_, cameras_, deviceSize, &conInfo, &infoSize);
-    if (conInfo == nullptr) {
+    if (conInfo == nullptr || conInfo->outputCapabilities == nullptr) {
         return CAMERA_OK;
     }
 

@@ -18,7 +18,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import image from '@ohos.multimedia.image';
 import camera from '@ohos.multimedia.camera';
 import { Driver, ON, MatchPattern } from '@ohos.UiTest';
-import { abilityAccessCtrl, PermissionRequestResult, Permissions} from '@kit.AbilityKit';
+import { abilityAccessCtrl, PermissionRequestResult, Permissions, common} from '@kit.AbilityKit';
 
 
 const TAG = "CAMERA_XTS_TEST_TAG ";
@@ -73,7 +73,8 @@ function releaseCamera() {
 let getPermissions = () => {
   let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
   let permissions: Array<Permissions> = ['ohos.permission.CAMERA'];
-  atManager.requestPermissionsFromUser(getContext(), permissions).then((data: PermissionRequestResult) => {
+  let testContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext
+  atManager.requestPermissionsFromUser(testContext, permissions).then((data: PermissionRequestResult) => {
     console.info(TAG + 'data permissions:' + data.permissions)
   }).catch((err: BusinessError<number>) => {
     console.error(TAG + 'data:' + JSON.stringify(err))
