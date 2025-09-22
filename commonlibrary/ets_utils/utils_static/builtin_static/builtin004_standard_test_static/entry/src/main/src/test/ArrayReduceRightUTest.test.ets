@@ -801,7 +801,7 @@ export default function Array_Reduce_Right_U_Test_static() {
         const arr: FixedArray<float> = [1.0.toFloat(), 2.0.toFloat(), 3.0.toFloat()];
         let processOrder: number[] = [];
         reduceRight<float>(arr,
-          (prev: float, curr: float, index: number) => {
+          (prev: float, curr: float, index: number, array: FixedArray<Float>) => {
             processOrder.push(index);
             return prev + curr.toFloat();
           },
