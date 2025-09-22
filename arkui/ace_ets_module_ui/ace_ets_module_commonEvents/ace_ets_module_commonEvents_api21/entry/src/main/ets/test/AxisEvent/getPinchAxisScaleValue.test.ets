@@ -22,7 +22,7 @@ export default function getPinchAxisScaleValue() {
   describe('getPinchAxisScaleValueTest', () => {
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/AnimatorTest/getPinchAxisScaleValue',
+        url: 'MainAbility/pages/AxisEvent/getPinchAxisScaleValue',
       }
       try {
         router.clear();
