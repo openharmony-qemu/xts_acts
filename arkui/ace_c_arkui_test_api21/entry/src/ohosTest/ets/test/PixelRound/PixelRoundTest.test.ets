@@ -92,7 +92,7 @@ export default function PixelRoundTest() {
       let rect = Utils.getComponentRect("PixelRoundPage_testFlex");
       console.info("[PixelRoundTest_0200] (rect.right - rect.left - vp2px(111)): " + (rect.right - rect.left - vp2px(111)));
       console.info("[PixelRoundTest_0200] (rect.bottom - rect.top - vp2px(111)): " + (rect.bottom - rect.top - vp2px(111)));
-      expect(Math.floor(Math.abs(rect.right - rect.left - vp2px(111)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(rect.right - rect.left - vp2px(111))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(rect.bottom - rect.top - vp2px(111))) <= 1).assertTrue();
 
       // get
