@@ -51,6 +51,9 @@ export default function requestFocus16() {
      */
     it('requestFocus16_0100', Level.LEVEL0, async (done: Function) => {
       console.info('requestFocus16_0100 START');
+      let driver: Driver = Driver.create();
+      let button = await driver.findComponent(ON.id('requestFocus16_btn1'));
+      let center = await button.getBoundsCenter();
       await CommonFunc.sleep(1000);
 
       sendEventByKey('requestFocus16_btn1',10,"")
@@ -65,9 +68,7 @@ export default function requestFocus16() {
       expect(JSON.stringify(JSON.parse(textInput1).$attrs.text)).assertEqual('"TextInput_1"');
       await CommonFunc.sleep(1000);
 
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+      await driver.clickAt({ x: center.x, y: center.y});
       await CommonFunc.sleep(1000);
       console.info('requestFocus16_0100 END');
       done();
