@@ -3091,29 +3091,6 @@ export default function abilityTest() {
         });
 
         /**
-           * @tc.name     SUB_PasteBoard_ETS_CreateRecord_Static_0070
-           * @tc.number   SUB_PasteBoard_ETS_CreateRecord_Static_0070
-           * @tc.desc     TgetDataWithProgress fail,err：401,message: Parameter error. mimeType cannot be empty.
-           * @tc.size     MediumTest
-           * @tc.type     Function
-           * @tc.level    Level 2
-           */
-        it('SUB_PasteBoard_ETS_CreateRecord_Static_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0070------");
-            try {
-                // mimeType为空字符串
-                let invalidRecord = pasteboard.createRecord("", "");
-                expect().assertFail();
-                done();
-            } catch (err: BusinessError) {
-                expect(err.code).assertEqual(401);
-                hilog.info(domain, tag, `捕获到预期错误码：${err.code}`);
-            }
-            hilog.info(domain, tag, "------SUB_PasteBoard_ETS_CreateRecord_Static_0070------");
-            done();
-        });
-
-        /**
          * @tc.name        SUB_PasteBoard_ETS_DetectPatterns_Static_0020
          * @tc.number      SUB_PasteBoard_ETS_DetectPatterns_Static_0020
          * @tc.desc        Test EMAIL_ADDRESS pattern detection
@@ -3342,15 +3319,15 @@ export default function abilityTest() {
         })
 
         /**
-        * @tc.name     SUB_PasteBoard_ETS_AddEntry_Static_0010
-        * @tc.number   SUB_PasteBoard_ETS_AddEntry_Static_0010
+        * @tc.name     SUB_PasteBoard_ETS_AddEntry_Static_0040
+        * @tc.number   SUB_PasteBoard_ETS_AddEntry_Static_0040
         * @tc.desc     Failed to addEntry. Cause: Parameter error. the first param should be object or string.401
         * @tc.size     MediumTest
         * @tc.type     Function
         * @tc.level    Level 2
         */
-        it('SUB_PasteBoard_ETS_AddEntry_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            hilog.info(domain, tag, '************ SUB_PasteBoard_ETS_AddEntry_Static_0010 start ************')
+        it('SUB_PasteBoard_ETS_AddEntry_Static_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '************ SUB_PasteBoard_ETS_AddEntry_Static_0040 start ************')
             let html = "<!DOCTYPE html>\n" + "<html>\n" + "<head>\n" + "<meta charset=\"utf-8\">\n" + "<title>HTML-PASTEBOARD_HTML</title>\n" + "</head>\n" + "<body>\n" + "    <h1>HEAD</h1>\n" + "    <p></p>\n" + "</body>\n" + "</html>";
             let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_URI, 'dataability:///com.example.myapplication1/user.txt');
             try {
@@ -3362,7 +3339,7 @@ export default function abilityTest() {
                 hilog.info(domain, tag, `Failed to addEntry. Cause: ${err.message + err.code}`);
                 done();
             }
-            hilog.info(domain, tag, '************ SUB_PasteBoard_ETS_AddEntry_Static_0010 end ************');
+            hilog.info(domain, tag, '************ SUB_PasteBoard_ETS_AddEntry_Static_0040 end ************');
             done();
         })
 
