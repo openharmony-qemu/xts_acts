@@ -1206,19 +1206,16 @@ export default function ErrorCodeRdbStore14Test() {
       let trans = await rdbStore.createTransaction();
       let predicates = new data_relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "hello");
-      await rdbStore.close();
-      await trans.rollback();
+      await trans.commit();
       try{
         let rows =await trans.delete(predicates);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0045 rows *************' + rows);
         expect(rows == 1).assertFail();
-        await trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
       }catch(err:BusinessError){
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0045 err *************' + err);
         expect(err.code == 14800014).assertEqual(true);
-        await trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
       }
@@ -1241,19 +1238,16 @@ export default function ErrorCodeRdbStore14Test() {
       let trans = await rdbStore.createTransaction();
       let predicates = new data_relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "hello");
-      await rdbStore.close();
-      await trans.rollback();
+      await trans.commit();
       try{
         let rows =await trans.batchInsert("test",vbs);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0046 rows *************' + rows);
         expect(rows == 1).assertFail();
-        await trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
       }catch(err:BusinessError){
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0046 err *************' + err);
         expect(err.code == 14800014).assertEqual(true);
-        await trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
       }
@@ -1276,19 +1270,16 @@ export default function ErrorCodeRdbStore14Test() {
       let trans = await rdbStore.createTransaction();
       let predicates = new data_relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "hello");
-      await rdbStore.close();
-      await trans.rollback();
+      await trans.commit();
       try{
         let rows = trans.batchInsertSync("test",vbs);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0047 rows *************' + rows);
         expect(rows == 1).assertFail();
-        await trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
       }catch(err:BusinessError){
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0047  err *************' + err);
         expect(err.code == 14800014).assertEqual(true);
-        await trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
       }
@@ -1311,19 +1302,16 @@ export default function ErrorCodeRdbStore14Test() {
       let num =await rdbStore.insert("test", valueBucket0);
       let predicates = new data_relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "hello");
-      await rdbStore.close();
-      await trans.rollback();
+      await trans.commit();
       try{
         let rows = trans.deleteSync(predicates);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0048 rows *************' + rows);
         expect(rows == 1).assertFail();
-        await trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
       }catch(err:BusinessError){
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0048 err *************' + err);
         expect(err.code == 14800014).assertEqual(true);
-        await trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
       }
@@ -1347,19 +1335,16 @@ export default function ErrorCodeRdbStore14Test() {
       let trans = await rdbStore.createTransaction();
       let predicates = new data_relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "hello");
-      await rdbStore.close();
-      await trans.rollback();
+      await trans.commit();
       try{
         let rows:number = await trans.update(valueBucket3, predicates);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0049 rows *************' + rows);
         expect(rows == 1).assertFail();
-        await trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
       }catch(err:BusinessError){
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0049 err *************' + err);
         expect(err.code == 14800014).assertEqual(true);
-        await trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
       }
@@ -1381,19 +1366,16 @@ export default function ErrorCodeRdbStore14Test() {
       let trans = await rdbStore.createTransaction();
       let predicates = new data_relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "hello");
-      await rdbStore.close();
-      await trans.rollback();
+      await trans.commit();
       try{
         let rows:number = await trans.update(valueBucket3, predicates, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0050 rows *************' + rows);
         expect(rows == 1).assertFail();
-        await trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
       }catch(err:BusinessError){
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0050 err *************' + err);
         expect(err.code == 14800014).assertEqual(true);
-        await trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
       }
@@ -1416,19 +1398,16 @@ export default function ErrorCodeRdbStore14Test() {
       let trans = await rdbStore.createTransaction();
       let predicates = new data_relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "hello");
-      await rdbStore.close();
-      await trans.rollback();
+      await trans.commit();
       try{
         let rows:number = trans.updateSync(valueBucket3, predicates);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0051 rows *************' + rows);
         expect(rows == 1).assertFail();
-        await trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
       }catch(err:BusinessError){
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0051 err *************' + err);
         expect(err.code == 14800014).assertEqual(true);
-        await trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
       }
@@ -1451,24 +1430,81 @@ export default function ErrorCodeRdbStore14Test() {
       let trans = await rdbStore.createTransaction();
       let predicates = new data_relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "hello");
-      await rdbStore.close();
-      await trans.rollback();
+      await trans.commit();
       try{
         let rows:number = trans.updateSync(valueBucket3, predicates);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0052 rows *************' + rows);
         expect(rows == 1).assertFail();
-        await trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
       }catch(err:BusinessError){
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0052 err *************' + err);
         expect(err.code == 14800014).assertEqual(true);
-        await trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0052 end *************');
     })
 
+    /**
+     * @tc.name       RelationStoreError14Test0053
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_Error14Test_5300
+     * @tc.desc       Transaction commit and rollback
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('RelationStoreError14Test0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0053 start *************');
+      let trans = await rdbStore.createTransaction();
+        await rdbStore.close();
+        try {
+          await trans.commit();
+          expect().assertFail();
+        } catch (err: BusinessError) {
+          hilog.info(domain, tag, '%{public}s', 'commit err' + err);
+          expect(err.code == 14800014).assertEqual(true);
+        }
+        try {
+          await trans.rollback();
+          expect().assertFail();
+        } catch (err: BusinessError) {
+          hilog.info(domain, tag, '%{public}s', 'rollback err' + err);
+          expect(err.code == 14800014).assertEqual(true);
+        }
+        done();
+      hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0053 end *************');
+    })
+
+    /**
+     * @tc.name       RelationStoreError14Test0054
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_Error14Test_5400
+     * @tc.desc       test getAssets
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('RelationStoreError14Test0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0054 start *************');
+        const valueBucket2: data_relationalStore.ValuesBucket = {
+          "data1": "Lisi",
+          "data2": 10 as long,
+          "data3": 1.0,
+          "data4": new Uint8Array([1, 2, 3]),
+        }
+        await rdbStore.insert("test", valueBucket2);
+        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        resultSet.close();
+        await rdbStore.close();
+        try {
+          let res = resultSet.getAssets(resultSet.getColumnIndex("data1"));
+          expect().assertFail();
+        } catch (err: BusinessError) {
+          hilog.info(domain, tag, '%{public}s', 'getAssets err' + err.code);
+          expect(err.code == 14800014).assertEqual(true);
+        }
+        done();
+      hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0054 end *************');
+    })
   })
 }
