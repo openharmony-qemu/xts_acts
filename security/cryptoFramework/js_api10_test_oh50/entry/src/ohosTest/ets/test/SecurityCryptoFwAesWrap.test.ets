@@ -406,7 +406,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           let keyLen: number = 17;
-          let cipherAlgName: string = "AES-128-WRAP";
+          let cipherAlgName: string = "AES128-WRAP";
           let keyAlgName: string = "AES128";
           let ivParamsSpec: cryptoFramework.IvParamsSpec = JsSetIv();
           let symKey: cryptoFramework.SymKey = await JsGenSymKey(keyAlgName);
@@ -432,7 +432,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           let keyLen: number = 8;
-          let cipherAlgName: string = "AES-192-WRAP";
+          let cipherAlgName: string = "AES192-WRAP";
           let keyAlgName: string = "AES192";
           let ivParamsSpec: cryptoFramework.IvParamsSpec = JsSetIv();
           let symKey: cryptoFramework.SymKey = await JsGenSymKey(keyAlgName);
@@ -459,7 +459,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           let keyLen: number = 16;
-          let cipherAlgName: string = "AES-256-WRAP";
+          let cipherAlgName: string = "AES256-WRAP";
           let keyAlgName: string = "AES256";
           let ivParamsSpec: cryptoFramework.IvParamsSpec = JsSetIv();
           let symKey: cryptoFramework.SymKey = await JsGenSymKey(keyAlgName);
@@ -484,7 +484,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
     it("SUB_Security_CryptoFramework_AesWrap_Func_1300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
-          let cipherAlgName: string = "AES-256-WRAP";
+          let cipherAlgName: string = "AES256-WRAP";
           let keyAlgName: string = "AES256";
           let iv: number[] = [0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09];
           let ivParamsSpec: cryptoFramework.IvParamsSpec = JsSetIv(iv);
@@ -527,7 +527,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
             0xb7, 0x8a, 0xc9, 0xec, 0xc3, 0xdc, 0xb9, 0xba, 0x31, 0xf3, 0x60, 0x29, 0x54, 0x13, 0x7c, 0x43
           ];
           let keyAlgName: string = "AES128";
-          let cipherAlgName: string = "AES-128-WRAP";
+          let cipherAlgName: string = "AES128-WRAP";
           let encIvParamsSpec: cryptoFramework.IvParamsSpec = JsSetIv();
           let decIvParamsSpec: cryptoFramework.IvParamsSpec = JsSetIv(iv);
           let keyData: cryptoFramework.DataBlob = {data: new Uint8Array(key)};
@@ -556,7 +556,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
         try {
           let keyLen: number = 24;
           let keyAlgName: string = "AES128";
-          let cipherAlgName: string = "AES-128-WRAP|CBC";
+          let cipherAlgName: string = "AES128-WRAP|CBC";
           let ivParamsSpec: cryptoFramework.IvParamsSpec = JsSetIv([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
           let keyData: cryptoFramework.DataBlob = await createFullData(keyLen);
           let symKey: cryptoFramework.SymKey = await JsGenSymKey(keyAlgName);
@@ -586,7 +586,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
     /**
      * @tc.number SUB_Security_CryptoFramework_AesWrap_Func_1600
      * @tc.name SUB_Security_CryptoFramework_AesWrap_Func_1600
-     * @tc.desc algorithm is Aes-Wrap Promise, AES-128-WRAP 向量测试
+     * @tc.desc algorithm is Aes-Wrap Promise, AES128-WRAP 向量测试
      * @tc.size Medium
      * @tc.type Func
      * @tc.level Level1
@@ -609,7 +609,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
           let keyData: cryptoFramework.DataBlob = {data: new Uint8Array(key)};
           let keyAlgName: string = "AES128";
           let symKey: cryptoFramework.SymKey = await JsConvertSymKey(keyAlgName, kekData);
-          let cipherAlgName: string = "AES-128-WRAP";
+          let cipherAlgName: string = "AES128-WRAP";
           let cipherText: cryptoFramework.DataBlob =
             await JsAesWrapPromise(cipherAlgName, cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, ivParamsSpec, keyData);
           let ret: boolean = compareDataBlob(cipherText, {data: new Uint8Array(encKey)});
@@ -628,7 +628,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
     /**
      * @tc.number SUB_Security_CryptoFramework_AesWrap_Func_1700
      * @tc.name SUB_Security_CryptoFramework_AesWrap_Func_1700
-     * @tc.desc algorithm is Aes-Wrap Promise, AES-192-WRAP 向量测试
+     * @tc.desc algorithm is Aes-Wrap Promise, AES192-WRAP 向量测试
      * @tc.size Medium
      * @tc.type Func
      * @tc.level Level1
@@ -652,7 +652,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
           let keyData: cryptoFramework.DataBlob = {data: new Uint8Array(key)};
           let keyAlgName: string = "AES192";
           let symKey: cryptoFramework.SymKey = await JsConvertSymKey(keyAlgName, kekData);
-          let cipherAlgName: string = "AES-192-WRAP";
+          let cipherAlgName: string = "AES192-WRAP";
           let cipherText: cryptoFramework.DataBlob =
             await JsAesWrapPromise(cipherAlgName, cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, ivParamsSpec, keyData);
           let ret: boolean = compareDataBlob(cipherText, {data: new Uint8Array(encKey)});
@@ -671,7 +671,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
     /**
      * @tc.number SUB_Security_CryptoFramework_AesWrap_Func_1800
      * @tc.name SUB_Security_CryptoFramework_AesWrap_Func_1800
-     * @tc.desc algorithm is Aes-Wrap Promise, AES-256-WRAP 向量测试
+     * @tc.desc algorithm is Aes-Wrap Promise, AES256-WRAP 向量测试
      * @tc.size Medium
      * @tc.type Func
      * @tc.level Level1
@@ -695,7 +695,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
           let keyData: cryptoFramework.DataBlob = {data: new Uint8Array(key)};
           let keyAlgName: string = "AES256";
           let symKey: cryptoFramework.SymKey = await JsConvertSymKey(keyAlgName, kekData);
-          let cipherAlgName: string = "AES-256-WRAP";
+          let cipherAlgName: string = "AES256-WRAP";
           let cipherText: cryptoFramework.DataBlob =
             await JsAesWrapPromise(cipherAlgName, cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, ivParamsSpec, keyData);
           let ret: boolean = compareDataBlob(cipherText, {data: new Uint8Array(encKey)});
@@ -740,7 +740,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
           let keyAlgName: string = "AES256";
           let symKey1: cryptoFramework.SymKey = await JsConvertSymKey(keyAlgName, kekData1);
           let symKey2: cryptoFramework.SymKey = await JsConvertSymKey(keyAlgName, kekData2);
-          let cipherAlgName: string = "AES-256-WRAP";
+          let cipherAlgName: string = "AES256-WRAP";
           let cipherText: cryptoFramework.DataBlob =
             await JsAesWrapPromise(cipherAlgName, cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey1, ivParamsSpec, keyData);
           await JsAesWrapPromise(cipherAlgName, cryptoFramework.CryptoMode.DECRYPT_MODE, symKey2, ivParamsSpec, cipherText);

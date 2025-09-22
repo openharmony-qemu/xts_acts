@@ -15,7 +15,7 @@
 import { cryptoFramework } from '@kit.CryptoArchitectureKit'
 
 export let AES_WRAP_SPEC: string[] = [
-  "AES-128-WRAP:AES128", "AES-192-WRAP:AES192", "AES-256-WRAP:AES256",
+  "AES128-WRAP:AES128", "AES192-WRAP:AES192", "AES256-WRAP:AES256",
 ];
 
 export let IV_DEFAULT: number[] = [

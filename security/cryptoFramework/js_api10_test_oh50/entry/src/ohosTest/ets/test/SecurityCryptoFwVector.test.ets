@@ -373,7 +373,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_VectorTest_Func_0900
-     * @tc.name Test hkdf algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_VectorTest_Func_0900
      * @tc.desc algorithm is hkdf
      * @tc.size Medium
      * @tc.type Func

@@ -167,13 +167,13 @@ SymCipherSpec g_symCipherData[] = {
 
 SymCipherSpec g_symAesWrapCipherData[] = {
     /* aes wrap with iv */
-    {(uint8_t *)"AES128", (uint8_t *)"AES-128-WRAP", 8, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, false},
-    {(uint8_t *)"AES192", (uint8_t *)"AES-192-WRAP", 8, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, false},
-    {(uint8_t *)"AES256", (uint8_t *)"AES-256-WRAP", 8, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, false},
+    {(uint8_t *)"AES128", (uint8_t *)"AES128-WRAP", 8, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, false},
+    {(uint8_t *)"AES192", (uint8_t *)"AES192-WRAP", 8, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, false},
+    {(uint8_t *)"AES256", (uint8_t *)"AES256-WRAP", 8, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, false},
     /* aes wrap without iv */
-    {(uint8_t *)"AES128", (uint8_t *)"AES-128-WRAP", 0, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, false},
-    {(uint8_t *)"AES192", (uint8_t *)"AES-192-WRAP", 0, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, false},
-    {(uint8_t *)"AES256", (uint8_t *)"AES-256-WRAP", 0, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, false},
+    {(uint8_t *)"AES128", (uint8_t *)"AES128-WRAP", 0, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, false},
+    {(uint8_t *)"AES192", (uint8_t *)"AES192-WRAP", 0, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, false},
+    {(uint8_t *)"AES256", (uint8_t *)"AES256-WRAP", 0, 0, 0, OH_CRYPTO_SYM_CIPHER_TEST_DATA_SIZE, false},
 };
 
 SymCipherSpec g_symCipherGCMData[] = {
@@ -1160,7 +1160,7 @@ HWTEST_F(OHCryptoFrameworkSymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_S
     ASSERT_EQ(OH_CryptoSymKeyGenerator_Generate(genCtx, &keyCtx), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipherParams_Create(&params), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_IV_DATABLOB, (Crypto_DataBlob *)&ivBlob), CRYPTO_SUCCESS);
-    ASSERT_EQ(OH_CryptoSymCipher_Create((const char *)"AES-256-WRAP", &encCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Create((const char *)"AES256-WRAP", &encCtx), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipher_Init(encCtx, CRYPTO_ENCRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipher_Final(encCtx, (Crypto_DataBlob *)&msgBlob, &outUpdate), CRYPTO_OPERTION_ERROR);
 
@@ -1203,7 +1203,7 @@ HWTEST_F(OHCryptoFrameworkSymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_S
     ASSERT_EQ(OH_CryptoSymKeyGenerator_Generate(genCtx, &keyCtx), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipherParams_Create(&params), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_IV_DATABLOB, (Crypto_DataBlob *)&ivBlob), CRYPTO_SUCCESS);
-    ASSERT_EQ(OH_CryptoSymCipher_Create((const char *)"AES-128-WRAP", &encCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Create((const char *)"AES128-WRAP", &encCtx), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipher_Init(encCtx, CRYPTO_ENCRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipher_Final(encCtx, (Crypto_DataBlob *)&msgBlob, &outUpdate), CRYPTO_OPERTION_ERROR);
 
@@ -1246,7 +1246,7 @@ HWTEST_F(OHCryptoFrameworkSymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_S
     ASSERT_EQ(OH_CryptoSymKeyGenerator_Generate(genCtx, &keyCtx), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipherParams_Create(&params), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_IV_DATABLOB, (Crypto_DataBlob *)&ivBlob), CRYPTO_SUCCESS);
-    ASSERT_EQ(OH_CryptoSymCipher_Create((const char *)"AES-192-WRAP", &decCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Create((const char *)"AES192-WRAP", &decCtx), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipher_Init(decCtx, CRYPTO_DECRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipher_Final(decCtx, (Crypto_DataBlob *)&msgBlob, &decUpdate), CRYPTO_OPERTION_ERROR);
 
@@ -1285,7 +1285,7 @@ HWTEST_F(OHCryptoFrameworkSymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_S
     ASSERT_EQ(OH_CryptoSymKeyGenerator_Generate(genCtx, &keyCtx), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipherParams_Create(&params), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_IV_DATABLOB, (Crypto_DataBlob *)&ivBlob), CRYPTO_SUCCESS);
-    ASSERT_EQ(OH_CryptoSymCipher_Create((const char *)"AES-192-WRAP", &decCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Create((const char *)"AES192-WRAP", &decCtx), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipher_Init(decCtx, CRYPTO_DECRYPT_MODE, keyCtx, params), CRYPTO_INVALID_PARAMS);
 
     OH_CryptoSymCipherParams_Destroy(params);
@@ -1329,11 +1329,11 @@ HWTEST_F(OHCryptoFrameworkSymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_S
 
     ASSERT_EQ(OH_CryptoSymKeyGenerator_Create((const char *)"AES128", &genCtx), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymKeyGenerator_Convert(genCtx, (Crypto_DataBlob *)&kekBlob, &keyCtx), CRYPTO_SUCCESS);
-    ASSERT_EQ(OH_CryptoSymCipher_Create((const char *)"AES-128-WRAP", &encCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Create((const char *)"AES128-WRAP", &encCtx), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipherParams_Create(&params), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipher_Init(encCtx, CRYPTO_ENCRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipher_Final(encCtx, (Crypto_DataBlob *)&keyBlob, &outUpdate), CRYPTO_SUCCESS);
-    ASSERT_EQ(OH_CryptoSymCipher_Create((const char *)"AES-128-WRAP", &decCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Create((const char *)"AES128-WRAP", &decCtx), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_IV_DATABLOB, (Crypto_DataBlob *)&ivBlob), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipher_Init(decCtx, CRYPTO_DECRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipher_Final(decCtx, &outUpdate, &decUpdate), CRYPTO_OPERTION_ERROR);
@@ -1373,7 +1373,7 @@ HWTEST_F(OHCryptoFrameworkSymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_S
 
     ASSERT_EQ(OH_CryptoSymKeyGenerator_Create((const char *)"AES128", &genCtx), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymKeyGenerator_Convert(genCtx, (Crypto_DataBlob *)&kekBlob, &keyCtx), CRYPTO_SUCCESS);
-    ASSERT_EQ(OH_CryptoSymCipher_Create((const char *)"AES-128-WRAP", &encCtx), CRYPTO_SUCCESS);
+    ASSERT_EQ(OH_CryptoSymCipher_Create((const char *)"AES128-WRAP", &encCtx), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipherParams_Create(&params), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipher_Init(encCtx, CRYPTO_ENCRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipher_Update(encCtx, (Crypto_DataBlob *)&keyBlob, &outUpdate), CRYPTO_OPERTION_ERROR);
@@ -1386,7 +1386,7 @@ HWTEST_F(OHCryptoFrameworkSymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_S
 
 /**
 * @tc.number SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2600
-* @tc.name OHCryptoFrameworkSymCipherNapiTest/SYMCIPHER_AES_WRAP_TEST.SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2600/x
+* @tc.name SUB_Security_CryptoFramework_NAPI_SymCipher_Test_2600
 * @tc.desc algorithm is Sym Cipher
 * @tc.size Medium
 * @tc.type Func

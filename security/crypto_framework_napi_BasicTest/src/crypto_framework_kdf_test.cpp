@@ -1300,7 +1300,7 @@ HWTEST_P(KDF_VECTOR_TEST, SUB_Security_CryptoFramework_NAPI_Kdf_Vector_Test_0100
 */
 HWTEST_F(OHCryptoFrameworkKdfNapiTest, SUB_Security_CryptoFramework_NAPI_Kdf_Test_1300, TestSize.Level0)
 {
-    KdfSpec infoSpec ={
+    KdfSpec infoSpec = {
         .kdfType = OHTEST_KDF_X963, .algoName = "X963KDF|SHA256", .keySize = 64,
         .params.x963Params = {.key = nullptr, .info = (uint8_t *)"abcdef"}
     };
