@@ -76,10 +76,7 @@ struct WebComponent {
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
                 this.isPageEnd = -1;
                 this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
-                let driver: Driver = Driver.create();
-                let image = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
-                await image.pinchIn(0.5);
+                this.webController.zoomOut()
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
@@ -95,10 +92,7 @@ struct WebComponent {
                 this.isPageEnd = -1;
                 this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
-
-                let driver: Driver = Driver.create();
-                let image = await driver.findComponent(ON.id('WebForceEnableZoomWeb'));
-                await image.pinchOut(1.25);
+                this.webController.zoomIn();
                 await Utils.sleep(2000);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
