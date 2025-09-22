@@ -17,6 +17,7 @@ group("pageInteraction") {
     deps = [
       "JS_dialog_box:ActsWebJSDialogBoxTest",
       "focus_processing:ActsWebFocusProcessingTest",
+      "focus_processing_static:ActsWebFocusProcessingStaticTest",
       "gesture_operation:ActsWebGestureOperationTest",
       "keyboard_mouse_operations:ActsWebKeyboardMouseOperationsTest",
       "keyboard_mouse_operations_static:ActsWebKeyboardMouseOperationsStaticTest",
