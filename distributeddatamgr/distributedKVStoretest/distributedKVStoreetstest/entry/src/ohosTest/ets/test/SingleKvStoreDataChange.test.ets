@@ -29,7 +29,7 @@ const VALUE_TEST_STRING_11 = 'value_string_11';
 const KEY_TEST_STRING_2 = 'key_test_string_2';
 const VALUE_TEST_STRING_2 = 'value_string_2';
 
-const TEST_BUNDLE_NAME = 'ohos.acts.kv2';
+const TEST_BUNDLE_NAME = 'ohos.acts.distributedKvStore';
 const TEST_STORE_ID = 'DataChangeStoreId';
 let kvManager: factory.KVManager ;
 let kvStore : factory.SingleKVStore;
