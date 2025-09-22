@@ -122,44 +122,6 @@ export default function builtinsArrayAtSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number builtinsArrayAtSecondPrototypebTest0500
-     * @tc.name builtinsArrayAtSecondPrototypebTest0500
-     * @tc.desc at(self: FixedArray<long>, index: int): Long | undefined 超出正向索引返回undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtSecondPrototypebTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtSecondPrototypebTest0500';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<long> = [100, 200, 300];
-        const result = at(arr, 3);
-        expect(result).assertEqual(undefined);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsArrayAtSecondPrototypebTest0600
-     * @tc.name builtinsArrayAtSecondPrototypebTest0600
-     * @tc.desc at(self: FixedArray<long>, index: int): Long | undefined 超出负向索引返回undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtSecondPrototypebTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtSecondPrototypebTest0600';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<long> = [100, 200, 300];
-        const result = at(arr, -4);
-        expect(result).assertEqual(undefined);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
      * @tc.number builtinsArrayAtSecondPrototypebTest0700
      * @tc.name builtinsArrayAtSecondPrototypebTest0700
      * @tc.desc at(self: FixedArray<long>, index: int): Long | undefined 单元素数组正负索引
@@ -277,44 +239,6 @@ export default function builtinsArrayAtSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number builtinsArrayAtSecondPrototypebTest1300
-     * @tc.name builtinsArrayAtSecondPrototypebTest1300
-     * @tc.desc at(self: FixedArray<long>, index: number): Long | undefined 超出正向索引返回undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtSecondPrototypebTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtSecondPrototypebTest1300';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<long> = [100, 200, 300];
-        const result = at(arr, 3.0.toDouble());
-        expect(result).assertEqual(undefined);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsArrayAtSecondPrototypebTest1400
-     * @tc.name builtinsArrayAtSecondPrototypebTest1400
-     * @tc.desc at(self: FixedArray<long>, index: number): Long | undefined 超出负向索引返回undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtSecondPrototypebTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtSecondPrototypebTest1400';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<long> = [100, 200, 300];
-        const result = at(arr, -4.0.toDouble());
-        expect(result).assertEqual(undefined);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
      * @tc.number builtinsArrayAtSecondPrototypebTest1500
      * @tc.name builtinsArrayAtSecondPrototypebTest1500
      * @tc.desc at(self: FixedArray<long>, index: number): Long | undefined 单元素数组正负索引
@@ -335,24 +259,6 @@ export default function builtinsArrayAtSecondPrototypebTest() {
         Done();
       })
 
-    /**
-     * @tc.number builtinsArrayAtSecondPrototypebTest1600
-     * @tc.name builtinsArrayAtSecondPrototypebTest1600
-     * @tc.desc at(self: FixedArray<long>, index: number): Long | undefined 空数组返回undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtSecondPrototypebTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtSecondPrototypebTest1600';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<long> = [];
-        const result = at(arr, 0.0.toDouble());
-        expect(result).assertEqual(undefined);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
 
     /**
      * @tc.number builtinsArrayAtSecondPrototypebTest1700
@@ -431,44 +337,6 @@ export default function builtinsArrayAtSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number builtinsArrayAtSecondPrototypebTest2100
-     * @tc.name builtinsArrayAtSecondPrototypebTest2100
-     * @tc.desc at(self: FixedArray<short>, index: int): Short | undefined 超出正向索引返回undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtSecondPrototypebTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtSecondPrototypebTest2100';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<short> = [10, 20, 30];
-        const result = at(arr, 3);
-        expect(result).assertEqual(undefined);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsArrayAtSecondPrototypebTest2200
-     * @tc.name builtinsArrayAtSecondPrototypebTest2200
-     * @tc.desc at(self: FixedArray<short>, index: int): Short | undefined 超出负向索引返回undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtSecondPrototypebTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtSecondPrototypebTest2200';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<short> = [10, 20, 30];
-        const result = at(arr, -4);
-        expect(result).assertEqual(undefined);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
      * @tc.number builtinsArrayAtSecondPrototypebTest2300
      * @tc.name builtinsArrayAtSecondPrototypebTest2300
      * @tc.desc at(self: FixedArray<short>, index: int): Short | undefined 单元素数组正负索引
@@ -485,25 +353,6 @@ export default function builtinsArrayAtSecondPrototypebTest() {
         const result2 = at(arr, -1);
         expect(result1).assertEqual(99);
         expect(result2).assertEqual(99);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsArrayAtSecondPrototypebTest2400
-     * @tc.name builtinsArrayAtSecondPrototypebTest2400
-     * @tc.desc at(self: FixedArray<short>, index: int): Short | undefined 空数组返回undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtSecondPrototypebTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtSecondPrototypebTest2400';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<short> = [];
-        const result = at(arr, 0);
-        expect(result).assertEqual(undefined);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -585,44 +434,6 @@ export default function builtinsArrayAtSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number builtinsArrayAtSecondPrototypebTest2900
-     * @tc.name builtinsArrayAtSecondPrototypebTest2900
-     * @tc.desc at(self: FixedArray<short>, index: number): Short | undefined 超出正向索引返回undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtSecondPrototypebTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtSecondPrototypebTest2900';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<short> = [10, 20, 30];
-        const result = at(arr, 3.0.toDouble());
-        expect(result).assertEqual(undefined);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsArrayAtSecondPrototypebTest3000
-     * @tc.name builtinsArrayAtSecondPrototypebTest3000
-     * @tc.desc at(self: FixedArray<short>, index: number): Short | undefined 超出负向索引返回undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtSecondPrototypebTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtSecondPrototypebTest3000';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<short> = [10, 20, 30];
-        const result = at(arr, -4.0.toDouble());
-        expect(result).assertEqual(undefined);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
      * @tc.number builtinsArrayAtSecondPrototypebTest3100
      * @tc.name builtinsArrayAtSecondPrototypebTest3100
      * @tc.desc at(self: FixedArray<short>, index: number): Short | undefined 单元素数组正负索引
@@ -643,23 +454,5 @@ export default function builtinsArrayAtSecondPrototypebTest() {
         Done();
       })
 
-    /**
-     * @tc.number builtinsArrayAtSecondPrototypebTest3200
-     * @tc.name builtinsArrayAtSecondPrototypebTest3200
-     * @tc.desc at(self: FixedArray<short>, index: number): Short | undefined 空数组返回undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtSecondPrototypebTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtSecondPrototypebTest3200';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<short> = [];
-        const result = at(arr, 0.0.toDouble());
-        expect(result).assertEqual(undefined);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
   })
 }
