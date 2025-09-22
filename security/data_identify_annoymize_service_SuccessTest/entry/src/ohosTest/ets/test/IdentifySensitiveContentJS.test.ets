@@ -4,7 +4,7 @@ import identifySensitiveContent from '@ohos.security.identifySensitiveContent';
 import { dlpPermission } from '@kit.DataProtectionKit';
 let filePathTest = "/data/app/el1/bundle/public/";
 let notFile = "/data/storage/a.txt";
-let dataPath = "/data/app/el2/100/base/com.huawei.fileencryptionmanage/files/grs_files/ge_sys_commonUI/version.txt";
+let dataPath = "/data/app/el2/0/database/h.txt";
 export default function identifySensitiveContentTestUnit() {
   describe('identifySensitiveContentTestUnit', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -126,7 +126,10 @@ export default function identifySensitiveContentTestUnit() {
         try {
           let matchResult =  await identifySensitiveContent.scanFile(dataPath,policies);
           console.info("scanfileSandboxDirtxt:"+matchResult.length);
-          expect(0).assertEqual(matchResult.length);
+          expect(1).assertEqual(matchResult.length);
+          expect('Pornography').assertEqual(matchResult[0].sensitiveLabel);
+          expect(1).assertEqual(matchResult[0].matchNumber);
+          expect('h***o').assertEqual(matchResult[0].matchContent);
         }catch (error){
           expect().assertFail();
         }

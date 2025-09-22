@@ -15,6 +15,15 @@
       ],
       "type": "AppInstallKit",
       "cleanup-apps": true
+    },
+    {
+      "type": "ShellKit",
+      "run-command": [
+        "hdc shell \"echo 'my name hello aaa' > /data/app/el2/0/database/h.txt\""
+      ],
+      "teardown-command": [
+        "power-shell setmode 601"
+      ]
     }
   ]
 }
