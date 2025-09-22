@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import pluginComponentManager from '@ohos.pluginComponent'
+import pluginComponentManager from '@ohos.pluginComponent';
 
 function onPushListener(source, template, data, extraData) {
     console.log('onPushListener template.source=' + template.source);
