@@ -77,13 +77,13 @@ export default function webForceEnableZoomJsunit() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBFORCEENABLEZOOM_0100
-    * @tc.name       : emitWebForceEnableZoom001
-    * @tc.desc       : emitWebForceEnableZoom001
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
+    /** 
+    * @tc.number     SUB_WEB_WEBFORCEENABLEZOOM_0100
+    * @tc.name       emitWebForceEnableZoom001
+    * @tc.desc       emitWebForceEnableZoom001
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level 0
     */
     it('emitWebForceEnableZoom001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       emitKey="emitWebForceEnableZoom001";
@@ -93,13 +93,13 @@ export default function webForceEnableZoomJsunit() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_WEBFORCEENABLEZOOM_0200
-    * @tc.name       : emitWebForceEnableZoom002
-    * @tc.desc       : emitWebForceEnableZoom002
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /** 
+    * @tc.number     SUB_WEB_WEBFORCEENABLEZOOM_0200
+    * @tc.name       emitWebForceEnableZoom002
+    * @tc.desc       emitWebForceEnableZoom002
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level 1
     */
     it('emitWebForceEnableZoom002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async  (done: Function) =>{
       emitKey="emitWebForceEnableZoom002";
