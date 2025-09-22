@@ -41,6 +41,7 @@ import {
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import events_emitter from '@ohos.events.emitter'
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -96,7 +97,7 @@ struct TouchExample {
             let backData: events_emitter.EventData = {
               data: {
                 "ACTION": this.touchFlag,
-              } as Record<string, Object>
+              } as Record<string, RecordData>
             }
             console.log('fang--->C')
             let backEvent: events_emitter.InnerEvent = {

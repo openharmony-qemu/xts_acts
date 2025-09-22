@@ -28,7 +28,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -103,7 +103,7 @@ it('testTextStyle_static_007', Level.LEVEL1, async () => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontSize": 30
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 38,
@@ -138,7 +138,7 @@ it('testTextStyle_static_008', Level.LEVEL1, async () => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontSize": 0x80000000
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 38,
@@ -174,7 +174,7 @@ it('testTextStyle_static_009', Level.LEVEL1, async () => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontSize": 'error'
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 38,
@@ -211,7 +211,7 @@ it('testTextStyle_static_010', Level.LEVEL1, async () => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontSize": 0x7FFFFFFF
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 38,
@@ -266,7 +266,7 @@ it('testTextStyle_static_012', Level.LEVEL1, async () => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontStyle": FontStyle.Normal
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 39,
@@ -299,7 +299,7 @@ it('testTextStyle_static_013', Level.LEVEL1, async () => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontStyle": 0x7FFFFFFF
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 39,
@@ -332,7 +332,7 @@ it('testTextStyle_static_014', Level.LEVEL1, async () => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontStyle": 'error'
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 39,
@@ -365,7 +365,7 @@ it('testTextStyle_static_015', Level.LEVEL1, async () => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontStyle": 0x80000000
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 39,
@@ -416,7 +416,7 @@ it('testTextStyle_static_017', Level.LEVEL1, async () => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontWeight": 400
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 40,
@@ -449,7 +449,7 @@ it('testTextStyle_static_018', Level.LEVEL1, async () => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontWeight": 'error'
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 40,
@@ -482,7 +482,7 @@ it('testTextStyle_static_019', Level.LEVEL1, async () => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontWeight": 0x80000000
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 40,
@@ -515,7 +515,7 @@ it('testTextStyle_static_020', Level.LEVEL1, async () => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontWeight": 0x7FFFFFFF
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 40,
@@ -566,7 +566,7 @@ it('testTextStyle_static_022', Level.LEVEL1, async () => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontFamily": 'Arial'
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 41,
@@ -599,7 +599,7 @@ it('testTextStyle_static_023', Level.LEVEL1, async () => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontFamily": 'error'
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 41,

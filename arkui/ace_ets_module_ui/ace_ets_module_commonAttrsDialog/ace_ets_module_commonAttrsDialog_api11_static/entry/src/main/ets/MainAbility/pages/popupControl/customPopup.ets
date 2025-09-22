@@ -47,6 +47,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../hypium/index';
+import { RecordData } from '@ohos.base'
 
 interface CustomEventData {
   enableArrow?: boolean;
@@ -76,7 +77,7 @@ struct customPopupExample12 {
               data: {
                 "enableArrow": this.enableArrow,
                 "arrowPointPosition": this.arrowPointPosition,
-              } as Record<string, object>
+              } as Record<string, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 67,

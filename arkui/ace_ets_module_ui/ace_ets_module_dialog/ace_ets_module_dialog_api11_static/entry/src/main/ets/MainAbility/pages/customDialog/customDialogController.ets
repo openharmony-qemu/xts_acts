@@ -33,6 +33,7 @@ import {
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 @CustomDialog
 struct CustomDialogExample {
@@ -129,7 +130,7 @@ struct CustomDialogUser {
             let backData: events_emitter.EventData = {
               data: {
                 "ACTION": this.onClickValue
-              } as Record<string, Object>
+              } as Record<string, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 236,

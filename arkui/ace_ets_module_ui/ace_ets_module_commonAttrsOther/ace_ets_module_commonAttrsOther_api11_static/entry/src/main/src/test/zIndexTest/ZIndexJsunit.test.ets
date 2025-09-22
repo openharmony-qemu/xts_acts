@@ -32,7 +32,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Callback, MessageManager } from '../../../ets/MainAbility/utils/MessageManager';
 import window from '@ohos.window';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement'
@@ -111,7 +111,7 @@ export default function zIndexJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "zIndex": 4
-          } as Record<string, object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 236,
@@ -142,7 +142,7 @@ export default function zIndexJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "zIndex": -5
-          } as Record<string, object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 236,
@@ -173,7 +173,7 @@ export default function zIndexJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "zIndex": 889900444
-          } as Record<string, object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1113,

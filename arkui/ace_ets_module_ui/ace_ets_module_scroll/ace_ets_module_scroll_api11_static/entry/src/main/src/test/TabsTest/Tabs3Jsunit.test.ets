@@ -21,7 +21,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
@@ -203,7 +203,7 @@ export default function tabsJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "vertical": "false",
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 213,
@@ -235,7 +235,7 @@ export default function tabsJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "scrollable": "false",
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 213,
@@ -267,7 +267,7 @@ export default function tabsJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "scrollable": "false53",
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 213,
@@ -299,7 +299,7 @@ export default function tabsJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "vertical": "39284",
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 213,
@@ -331,7 +331,7 @@ export default function tabsJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "vertical": "abc123",
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 214,
@@ -363,7 +363,7 @@ export default function tabsJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "scrollable": "avc12321",
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 215,

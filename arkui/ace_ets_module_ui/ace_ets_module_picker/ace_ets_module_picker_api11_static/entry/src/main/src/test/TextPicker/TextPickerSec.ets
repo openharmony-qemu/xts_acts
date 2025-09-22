@@ -24,7 +24,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import Utils  from "../../../ets/MainAbility/common/Utils";
 let domain: int = 0x0000;
@@ -45,7 +45,7 @@ async function forKey(Key: string, text: string) {
       data: {
         "type": Key,
         "text": text,
-      } as Record<string, Object>
+      } as Record<String, RecordData>
     }
     let backEvent: events_emitter.InnerEvent = {
       eventId: 10,

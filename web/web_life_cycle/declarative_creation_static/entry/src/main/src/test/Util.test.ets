@@ -17,6 +17,7 @@ import events_emitter from '@ohos.events.emitter';
 import { expect } from '../../../hypium/index';
 import webview from '@ohos.web.webview';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { RecordData } from '@ohos.base';
 
 const abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 
@@ -34,7 +35,7 @@ class Utils{
   static async emitEvent(actualValue: boolean | string | number | object, eventId: Long) {
     try {
       console.info('Entry emitEvent, actualValue = ' + actualValue);
-      let tempData: Record<string, Object> = {};
+      let tempData: Record<string, RecordData> = {};
       tempData['ACTION'] = actualValue;
       let backData: events_emitter.EventData = {
         data: tempData
@@ -78,7 +79,7 @@ class Utils{
 
   static registerEvent(testCaseName: string, expectedValue: Object, eventId: Long, done: () => void) {
     Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
-      const data = backData?.data as Record<string, boolean | string | Int | object>;
+      const data = backData?.data as Record<string, RecordData>;
       const action = data['ACTION'];
       console.info(`Begin to assert [` + action + `] Equal [` + expected + `]`);
       expect(action).assertEqual(expected);

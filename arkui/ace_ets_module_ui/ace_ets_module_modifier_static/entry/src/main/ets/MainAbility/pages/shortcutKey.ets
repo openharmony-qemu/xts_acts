@@ -22,12 +22,7 @@ import {
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter';
 import {ButtonModifier} from "@ohos.arkui.modifier";
-
-
-
-
-
-
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -39,7 +34,7 @@ struct ShortcutKey7Test {
     let eventData: events_emitter.EventData = {
       data: {
         "msg": message
-      } as Record<string,Object>
+      } as Record<String, RecordData>
     }
     let event: events_emitter.InnerEvent = {
       eventId: eventId,

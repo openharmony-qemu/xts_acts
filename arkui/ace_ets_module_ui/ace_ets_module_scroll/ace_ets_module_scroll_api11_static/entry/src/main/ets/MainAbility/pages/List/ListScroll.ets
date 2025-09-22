@@ -38,6 +38,7 @@ import {
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base'; 
 
 @Entry
 @Component
@@ -104,7 +105,7 @@ struct ListScroll {
           data: {
             'start': start,
             'end': end
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         if (start === 14) {
           let event: events_emitter.InnerEvent = {

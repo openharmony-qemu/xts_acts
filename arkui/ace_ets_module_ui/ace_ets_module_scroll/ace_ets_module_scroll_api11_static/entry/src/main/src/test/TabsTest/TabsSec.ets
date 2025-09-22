@@ -23,7 +23,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError,RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
@@ -73,7 +73,7 @@ export default function tabsSec() {
             "barBackgroundColorNumber": 0,
             "barBackgroundColorString": "#00000000",
             "barBackgroundColorResource": $r("sys.color.ohos_toggle_bg"),
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -120,7 +120,7 @@ export default function tabsSec() {
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": true,
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -156,7 +156,7 @@ export default function tabsSec() {
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": false,
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -264,7 +264,7 @@ export default function tabsSec() {
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": true,
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -287,7 +287,7 @@ export default function tabsSec() {
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": false,
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -323,7 +323,7 @@ export default function tabsSec() {
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": true,
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -382,7 +382,7 @@ export default function tabsSec() {
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": true,
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -460,7 +460,7 @@ export default function tabsSec() {
         let eventData: events_emitter.EventData = {
           data: {
             "barBackgroundColorColor": Color.Blue,
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -496,7 +496,7 @@ export default function tabsSec() {
         let eventData: events_emitter.EventData = {
           data: {
             "barBackgroundColorNumber": 123,
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -532,7 +532,7 @@ export default function tabsSec() {
         let eventData: events_emitter.EventData = {
           data: {
             "barBackgroundColorString": "#0000FF",
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -568,7 +568,7 @@ export default function tabsSec() {
         let eventData: events_emitter.EventData = {
           data: {
             "barBackgroundColorResource": $r("sys.color.ohos_toggle_bg"),
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,

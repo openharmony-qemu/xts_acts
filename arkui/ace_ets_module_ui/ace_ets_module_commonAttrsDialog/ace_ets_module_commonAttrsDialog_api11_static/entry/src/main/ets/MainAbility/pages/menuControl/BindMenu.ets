@@ -42,6 +42,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../hypium/index';
+import { RecordData } from '@ohos.base'
 
 
 @Entry
@@ -79,7 +80,7 @@ struct BindMenu {
               let eventData: events_emitter.EventData = {
                 data: {
                   "action": 'onAppear'
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let event: events_emitter.InnerEvent = {
                 eventId: 50000,
@@ -91,7 +92,7 @@ struct BindMenu {
               let eventData: events_emitter.EventData = {
                 data: {
                   "action": 'onDisappear'
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let event: events_emitter.InnerEvent = {
                 eventId: 50001,

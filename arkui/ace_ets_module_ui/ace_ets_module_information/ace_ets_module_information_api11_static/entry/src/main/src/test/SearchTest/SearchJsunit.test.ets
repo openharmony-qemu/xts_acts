@@ -21,7 +21,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -94,7 +94,7 @@ it('testSearch_static_002', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: events_emitter.EventData = {
           data: {
             "searchButton": "5"
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 190,
@@ -144,7 +144,7 @@ it('testSearch_static_004', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: events_emitter.EventData = {
           data: {
             "maxLength": 0
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 190,
@@ -177,7 +177,7 @@ it('testSearch_static_005', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: events_emitter.EventData = {
           data: {
             "maxLength": 123
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 190,
@@ -210,7 +210,7 @@ it('testSearch_static_006', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: events_emitter.EventData = {
           data: {
             "maxLength": 1000000
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 190,
@@ -243,7 +243,7 @@ it('testSearch_static_007', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: events_emitter.EventData = {
           data: {
             "maxLength": -1
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 190,
@@ -276,7 +276,7 @@ it('testSearch_static_008', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: events_emitter.EventData = {
           data: {
             "maxLength": 1020300
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 190,
@@ -326,7 +326,7 @@ it('testSearch_static_0010', Level.LEVEL0, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "copyOption": CopyOptions.InApp
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 190,
@@ -359,7 +359,7 @@ it('testSearch_static_0011', Level.LEVEL0, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 190,
@@ -413,7 +413,7 @@ it('testSearch_static_100', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: events_emitter.EventData = {
           data: {
             "text": '123456789'
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 190,
@@ -450,7 +450,7 @@ it('testSearch_static_101', Level.LEVEL0, async (done: () => void): Promise<void
         let eventData: events_emitter.EventData = {
           data: {
             "text": '1234567890abc'
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 190,

@@ -31,6 +31,7 @@ import {
   FlexDirection,
   Margin
 } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -42,19 +43,19 @@ struct FlexExample {
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info("Flex page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as Record<string, Object>)?.['flexBasis'] != null) {
+      if (((eventData.data) as Record<string, RecordData>)?.['flexBasis'] != null) {
         
       }
-      if (((eventData.data) as Record<string, Object>)?.['flexGrow'] != null) {
+      if (((eventData.data) as Record<string, RecordData>)?.['flexGrow'] != null) {
         
       }
-      if (((eventData.data) as Record<string, Object>)?.['flexShrink'] != null) {
+      if (((eventData.data) as Record<string, RecordData>)?.['flexShrink'] != null) {
         
       }
-      if (((eventData.data) as Record<string, Object>)?.['alignSelf'] != null) {
-        this.theAlignSelf = ((eventData.data) as Record<string, Object>)?.['alignSelf'] as ItemAlign | null;
+      if (((eventData.data) as Record<string, RecordData>)?.['alignSelf'] != null) {
+        this.theAlignSelf = ((eventData.data) as Record<string, RecordData>)?.['alignSelf'] as ItemAlign | null;
       }
-      switch (((eventData.data) as Record<string, Object>)?.['alignSelf'] as string) {
+      switch (((eventData.data) as Record<string, RecordData>)?.['alignSelf'] as string) {
         case 'Auto':
           this.theAlignSelf = ItemAlign.Auto;
           break;

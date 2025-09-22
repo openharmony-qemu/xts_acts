@@ -32,7 +32,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
@@ -85,7 +85,7 @@ export default function refreshString() {
         let eventData: events_emitter.EventData = {
           data: {
             "promptText": "*&^%$#@!~..."
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 180,
@@ -119,7 +119,7 @@ export default function refreshString() {
         let eventData: events_emitter.EventData = {
           data: {
             "promptText": "*&#123swq..."
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 180,
@@ -153,7 +153,7 @@ export default function refreshString() {
         let eventData: events_emitter.EventData = {
           data: {
             "promptText": "下拉刷新。。。"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 180,
@@ -187,7 +187,7 @@ export default function refreshString() {
         let eventData: events_emitter.EventData = {
           data: {
             "promptText": "123123"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 180,
@@ -221,7 +221,7 @@ export default function refreshString() {
         let eventData: events_emitter.EventData = {
           data: {
             "promptText": "abcabc"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 180,
@@ -255,7 +255,7 @@ export default function refreshString() {
         let eventData: events_emitter.EventData = {
           data: {
             "promptText": "    "
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 180,

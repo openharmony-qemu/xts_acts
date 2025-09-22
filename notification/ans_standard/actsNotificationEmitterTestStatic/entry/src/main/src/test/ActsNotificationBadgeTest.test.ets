@@ -17,7 +17,7 @@ import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach } fr
 import hilog from '@ohos.hilog';
 import emitter from '@ohos.events.emitter';
 import Utils from './Util.test';
-import { BusinessError } from '@ohos.base'
+import { BusinessError, RecordData } from '@ohos.base'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -35,9 +35,9 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
       
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      await Utils.msSleep(1000)
+      await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name)
-      await Utils.msSleep(1000)
+      await Utils.msSleep(2000)
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })
 
@@ -64,7 +64,7 @@ export default function ActsNotificationEmitterTest() {
         let option11: emitter.Options = {
           priority: emitter.EventPriority.IMMEDIATE
         }
-        let myDate: Record<String, Object> = {}
+        let myDate: Record<String, RecordData> = {}
         let eventData: emitter.EventData = { data: myDate }
         let onCallback11 = (): void => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on success');
@@ -379,7 +379,7 @@ export default function ActsNotificationEmitterTest() {
         let option38: emitter.Options = {
           priority: emitter.EventPriority.IMMEDIATE
         }
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": "1",
           "content": "c"
         }
@@ -420,7 +420,7 @@ export default function ActsNotificationEmitterTest() {
           priority: emitter.EventPriority.IMMEDIATE
         }
 
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": "event4300",
         }
         let data143: emitter.EventData = { data: myDate }
@@ -470,7 +470,7 @@ export default function ActsNotificationEmitterTest() {
         let option44: emitter.Options = {
           priority: emitter.EventPriority.IMMEDIATE
         }
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "data": ['event4400']
         }
         let data144: emitter.EventData = { data: myDate }
@@ -612,7 +612,7 @@ export default function ActsNotificationEmitterTest() {
           priority: emitter.EventPriority.IMMEDIATE
         }
 
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": "event7600",
         }
         let data176: emitter.EventData = { data: myDate }
@@ -669,7 +669,7 @@ export default function ActsNotificationEmitterTest() {
           priority: emitter.EventPriority.IMMEDIATE
         }
 
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": "event7800",
         }
         let data178: emitter.EventData = { data: myDate }
@@ -728,7 +728,7 @@ export default function ActsNotificationEmitterTest() {
           priority: emitter.EventPriority.IMMEDIATE
         }
 
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "id": "event7800",
         }
         let data180: emitter.EventData = { data: myDate }
@@ -826,13 +826,13 @@ export default function ActsNotificationEmitterTest() {
           [1, 'one'], [2, 'two'], [3, 'three']
         ]);
 
-        let myDate1: Record<String, Object> = {
+        let myDate1: Record<String, RecordData> = {
           'test': 1
         }
 
         let testObject: emitter.EventData = { data: myDate1 }
 
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "number": 1,
           "string": "str",
           "boolean": false,
@@ -878,7 +878,7 @@ export default function ActsNotificationEmitterTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_8900';
         let count: number = 0;
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "eventid": "eventid",
         }
         let eventData: emitter.EventData = { data: myDate }
@@ -944,12 +944,12 @@ export default function ActsNotificationEmitterTest() {
         const bmaps: Map<Number, String> = new Map<Number, String>([
           [1, 'one'], [2, 'two'], [3, 'three']
         ]);
-        let myDate1: Record<String, Object> = {
+        let myDate1: Record<String, RecordData> = {
           'test': 1
         }
 
         let testObject: emitter.EventData = { data: myDate1 }
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "number": 1,
           "string": "str",
           "boolean": false,
@@ -994,7 +994,7 @@ export default function ActsNotificationEmitterTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_9100';
         let count: number = 0;
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "eventid": "eventid",
         }
         let eventData: emitter.EventData = { data: myDate }
@@ -1051,12 +1051,12 @@ export default function ActsNotificationEmitterTest() {
           count++;
         };
 
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           'string': 'string'
         }
         let data1: emitter.EventData = { data: myDate }
 
-        let myDate1: Record<String, Object> = {
+        let myDate1: Record<String, RecordData> = {
           'Array': [1, 2, 7, 8]
         }
         let data2: emitter.EventData = { data: myDate1 }
@@ -1103,11 +1103,11 @@ export default function ActsNotificationEmitterTest() {
           expect(true).assertTrue();
           count++;
         };
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           'number': 1
         }
         let data1: emitter.EventData = { data: myDate }
-        let myDate1: Record<String, Object> = {
+        let myDate1: Record<String, RecordData> = {
           'Boolean': true
         }
         let data2: emitter.EventData = { data: myDate1 }
@@ -1157,11 +1157,11 @@ export default function ActsNotificationEmitterTest() {
           count++;
         };
 
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           'Array': [1, 2, 7, 8]
         }
         const buffer1: ArrayBuffer = new ArrayBuffer(16);
-        let myDate1: Record<String, Object> = {
+        let myDate1: Record<String, RecordData> = {
           'Arraybuffer1': buffer1
         }
         let data1: emitter.EventData = { data: myDate1 }
@@ -1212,14 +1212,14 @@ export default function ActsNotificationEmitterTest() {
           count++;
         };
         let birthday: Date = new Date(2025, 2, 24, 15, 53);
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           'Date': birthday
         }
         let data1: emitter.EventData = { data: myDate }
         const buffer: ArrayBuffer = new ArrayBuffer(16);
         const view = new DataView(buffer);
 
-        let myDate1: Record<String, Object> = {
+        let myDate1: Record<String, RecordData> = {
           'Arraybuffer': view
         }
         let data2: emitter.EventData = { data: myDate1 }
@@ -1259,7 +1259,7 @@ export default function ActsNotificationEmitterTest() {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_9600';
         let count: number = 0;
         let oncallback1 = (data1: emitter.EventData) => {
-          let dataValue: Record<String, Object> = data1.data as Record<String, Object>
+          let dataValue: Record<String, RecordData> = data1.data as Record<String, RecordData>
           let setValue: Set<Number> = dataValue["Sets"] as Set<Number>
           hilog.info(0x000, `${TAG}`,
             `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ` on1 success,data1 is %{public}s ${setValue}`,);
@@ -1267,7 +1267,7 @@ export default function ActsNotificationEmitterTest() {
           count++;
         };
         let oncallback2 = (data2: emitter.EventData) => {
-          let dataValue: Record<String, Object> = data2.data as Record<String, Object>
+          let dataValue: Record<String, RecordData> = data2.data as Record<String, RecordData>
           let MapValue: Map<Number, String> = dataValue["Map"] as Map<Number, String>
           hilog.info(0x000, `${TAG}`,
             `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + `on2 success,data2 is %{public}s ${MapValue}`,);
@@ -1276,7 +1276,7 @@ export default function ActsNotificationEmitterTest() {
         };
         const Sets: Set<Number> = new Set<Number>([1, 2, 3]);
 
-        let RecordData: Record<String, Object> = {
+        let RecordData: Record<String, RecordData> = {
           'Sets': Sets
         }
         let data1: emitter.EventData = { data: RecordData }
@@ -1286,7 +1286,7 @@ export default function ActsNotificationEmitterTest() {
           [1, 'one'], [2, 'two'], [3, 'three']
         ]);
 
-        let myDate1: Record<String, Object> = {
+        let myDate1: Record<String, RecordData> = {
           'Map': Maps
         }
         let data2: emitter.EventData = { data: myDate1 }
@@ -1338,14 +1338,14 @@ export default function ActsNotificationEmitterTest() {
         };
         const errtypes = new Error('Whoops!');
 
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           'errtypes': errtypes
         }
         let data1: emitter.EventData = { data: myDate }
         const buffer = new ArrayBuffer(8);
         const view = new Int32Array(buffer);
 
-        let myDate1: Record<String, Object> = {
+        let myDate1: Record<String, RecordData> = {
           'TypeArray': view
         }
         let data2: emitter.EventData = { data: myDate1 }
@@ -1396,13 +1396,13 @@ export default function ActsNotificationEmitterTest() {
         };
         const re = new RegExp('\\w+');
 
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           'RegExp': re
         }
         let data1: emitter.EventData = { data: myDate }
         const Primitivetypes = 1;
 
-        let myDate1: Record<String, Object> = {
+        let myDate1: Record<String, RecordData> = {
           'Primitivetypes': Primitivetypes
         }
         let data2: emitter.EventData = { data: myDate1 }
@@ -1742,7 +1742,7 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' off success');
       let num: number = emitter.getListenerCount(eventId32)
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' getListenerCount success,data is %{public}s', JSON.stringify(num));
-      expect(num).assertEqual(undefined);
+      expect(num).assertEqual(0);
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
@@ -1878,7 +1878,7 @@ export default function ActsNotificationEmitterTest() {
         let option45: emitter.Options = {
           priority: emitter.EventPriority.IMMEDIATE
         }
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "content": "event4500"
         }
         let eventData145: emitter.EventData = { data: myDate }
@@ -1930,7 +1930,7 @@ export default function ActsNotificationEmitterTest() {
         let option46: emitter.Options = {
           priority: emitter.EventPriority.IMMEDIATE
         }
-        let myDate: Record<String, Object> = {
+        let myDate: Record<String, RecordData> = {
           "data": ['event4600']
         }
         let data146: emitter.EventData = { data: myDate }
@@ -2893,7 +2893,7 @@ export default function ActsNotificationEmitterTest() {
       }
       let num: number = emitter.getListenerCount(eventId67)
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' getListenerCount success,data is %{public}s', JSON.stringify(num));
-      expect(num).assertEqual(undefined);
+      expect(num).assertEqual(0);
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })

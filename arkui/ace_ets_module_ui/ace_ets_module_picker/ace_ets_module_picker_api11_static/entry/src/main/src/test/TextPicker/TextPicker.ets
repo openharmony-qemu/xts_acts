@@ -23,7 +23,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import Utils  from "../../../ets/MainAbility/common/Utils";
 import events_emitter from '@ohos.events.emitter'
@@ -107,7 +107,7 @@ export default function textpicker() {
             "disappearTextStyle": JSON.stringify(value1),
             "textStyle": JSON.stringify(value2),
             "selectedTextStyle": JSON.stringify(value3)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -156,7 +156,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "disappearTextStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -195,7 +195,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "disappearTextStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -234,7 +234,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "disappearTextStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -273,7 +273,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "disappearTextStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -312,7 +312,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "disappearTextStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -355,7 +355,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "disappearTextStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -398,7 +398,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "disappearTextStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -436,7 +436,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "disappearTextStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -492,7 +492,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "textStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -531,7 +531,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "textStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -570,7 +570,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "textStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -609,7 +609,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "textStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -648,7 +648,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "textStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -691,7 +691,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "textStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -734,7 +734,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "textStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -772,7 +772,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "textStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -828,7 +828,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "selectedTextStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -867,7 +867,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "selectedTextStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -906,7 +906,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "selectedTextStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -945,7 +945,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "selectedTextStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -984,7 +984,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "selectedTextStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1027,7 +1027,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "selectedTextStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1070,7 +1070,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "selectedTextStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1108,7 +1108,7 @@ export default function textpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "selectedTextStyle": JSON.stringify(value)
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,

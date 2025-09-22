@@ -31,6 +31,7 @@ import {
   State,
 } from '@ohos.arkui.stateManagement'
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -47,11 +48,11 @@ struct BackgroundExample {
     if (eventData != null) {
       console.info("gauge page state change called:" + JSON.stringify(eventData));
 
-      if (((eventData.data) as Record<string,Object>)?.['width'] != null) {
-        this.width1 = ((eventData.data) as Record<string,Object>)?.['width']  as number;
+      if (((eventData.data) as Record<String, RecordData>)?.['width'] != null) {
+        this.width1 = ((eventData.data) as Record<String, RecordData>)?.['width']  as number;
       }
-      if (((eventData.data) as Record<string,Object>)?.['height'] != null) {
-        this.height1 = ((eventData.data) as Record<string,Object>)?.['height'] as number;
+      if (((eventData.data) as Record<String, RecordData>)?.['height'] != null) {
+        this.height1 = ((eventData.data) as Record<String, RecordData>)?.['height'] as number;
       }
     }
   }
@@ -61,23 +62,23 @@ struct BackgroundExample {
   private stateChangCallBackOne:(eventData: events_emitter.EventData) =>void = (eventData: events_emitter.EventData):void => {
     console.info("size page stateChangCallBack" + JSON.stringify(eventData));
     if (eventData) {
-      this.width1 = ((eventData.data) as Record<string,Object>)?.['width']  as number;
-      this.height1 = ((eventData.data) as Record<string,Object>)?.['height']  as number;
-      this.padding1 = ((eventData.data) as Record<string,Object>)?.['padding']  as number;
-      this.margin1 = ((eventData.data) as Record<string,Object>)?.['margin']  as number;
+      this.width1 = ((eventData.data) as Record<String, RecordData>)?.['width']  as number;
+      this.height1 = ((eventData.data) as Record<String, RecordData>)?.['height']  as number;
+      this.padding1 = ((eventData.data) as Record<String, RecordData>)?.['padding']  as number;
+      this.margin1 = ((eventData.data) as Record<String, RecordData>)?.['margin']  as number;
     }
   }
   private sizeChangCallBack:(eventData: events_emitter.EventData) =>void = (eventData: events_emitter.EventData):void => {
     console.info("size page sizeChangCallBack" + JSON.stringify(eventData));
     if (eventData) {
-      this.sizeWidth = String(((eventData.data) as Record<string,Object>)?.['width']  as number);
-      this.sizeHeight = String(((eventData.data) as Record<string,Object>)?.['height']  as number);
+      this.sizeWidth = String(((eventData.data) as Record<String, RecordData>)?.['width']  as number);
+      this.sizeHeight = String(((eventData.data) as Record<String, RecordData>)?.['height']  as number);
     }
   }
   private weightChangCallBack:(eventData: events_emitter.EventData) =>void = (eventData: events_emitter.EventData):void => {
     console.info("size page weightChangCallBack" + JSON.stringify(eventData));
     if (eventData) {
-      this.layoutWeight1 = ((eventData.data) as Record<string,Object>)?.['weight']  as number;
+      this.layoutWeight1 = ((eventData.data) as Record<String, RecordData>)?.['weight']  as number;
     }
   }
 

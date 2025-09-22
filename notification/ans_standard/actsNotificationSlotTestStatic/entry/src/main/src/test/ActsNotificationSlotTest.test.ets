@@ -51,9 +51,9 @@ export default function ActsNotificationSlotTest() {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
 
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      await Utils.msSleep(1000)
+      await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle)}`)
-      await Utils.msSleep(2500)
+      await Utils.msSleep(2000)
       testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })

@@ -37,6 +37,7 @@ import {
 } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog';
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 function asNumber(val: string | int | null | undefined) {
   return val as int;
@@ -62,70 +63,70 @@ struct Index {
 
   private valueChangeCallBack :(eventData: events_emitter.EventData) => void  = (eventData: events_emitter.EventData) => {
     console.info("key==> page valueChangeCallBack");
-    if (((((eventData.data) as Record<string, Object>)) as Record<string, Object>)?.['type'] == "TextNum") {
+    if (((((eventData.data) as Record<String, RecordData>)) as Record<String, RecordData>)?.['type'] == "TextNum") {
       console.info("valueChangeCallBack TextNum:" + JSON.stringify(eventData));
       this.flag = true
       this.isNum = true
-      this.textNum = ((eventData.data) as Record<string, Object>)?.['text'] as number
+      this.textNum = ((eventData.data) as Record<String, RecordData>)?.['text'] as number
     }
-    if (((eventData.data) as Record<string, Object>)?.['type'] == "TextStr") {
+    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "TextStr") {
       console.info("valueChangeCallBack TextStr:" + JSON.stringify(eventData));
       this.flag = true
       this.isNum = false
-      this.textStr = ((eventData.data) as Record<string, Object>)?.['text'] as string
+      this.textStr = ((eventData.data) as Record<String, RecordData>)?.['text'] as string
     }
-    if (((eventData.data) as Record<string, Object>)?.['type'] == "TextErr" && ((eventData.data) as Record<string, Object>)?.['text'] == "null") {
+    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "TextErr" && ((eventData.data) as Record<String, RecordData>)?.['text'] == "null") {
       console.info("valueChangeCallBack TextNull:" + JSON.stringify(eventData));
       this.flag = false
       this.isNull = true
     }
-    if (((eventData.data) as Record<string, Object>)?.['type'] == "TextErr" && ((eventData.data) as Record<string, Object>)?.['text'] == "undefined") {
+    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "TextErr" && ((eventData.data) as Record<String, RecordData>)?.['text'] == "undefined") {
       console.info("valueChangeCallBack TextErr:" + JSON.stringify(eventData));
       this.flag = false
       this.isNull = false
     }
 
 
-    if (((eventData.data) as Record<string, Object>)?.['type'] == "BoolTrue") {
+    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolTrue") {
       console.info("valueChangeCallBack TextAreaShowCounterTrue:" + JSON.stringify(eventData));
       this.boolFlag = true
       this.bool = true
     }
-    if (((eventData.data) as Record<string, Object>)?.['type'] == "BoolFalse") {
+    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolFalse") {
       console.info("valueChangeCallBack TextAreaShowCounterTrue:" + JSON.stringify(eventData));
       this.boolFlag = true
       this.bool = false
     }
-    if (((eventData.data) as Record<string, Object>)?.['type'] == "BoolErrNum") {
+    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolErrNum") {
       console.info("valueChangeCallBack TextAreaMaxLengthStr:" + JSON.stringify(eventData));
       this.boolFlag = false
       this.boolIsNum = true
-      this.boolNum = ((eventData.data) as Record<string, Object>)?.['text'] as number
+      this.boolNum = ((eventData.data) as Record<String, RecordData>)?.['text'] as number
     }
-    if (((eventData.data) as Record<string, Object>)?.['type'] == "BoolErrStr") {
+    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolErrStr") {
       console.info("valueChangeCallBack TextAreaMaxLengthStr:" + JSON.stringify(eventData));
       this.boolFlag = false
       this.boolIsNum = false
       this.boolIsStr = true
-      this.boolStr = ((eventData.data) as Record<string, Object>)?.['text'] as string
+      this.boolStr = ((eventData.data) as Record<String, RecordData>)?.['text'] as string
     }
-    if (((eventData.data) as Record<string, Object>)?.['type'] == "BoolErrNull") {
+    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolErrNull") {
       console.info("valueChangeCallBack TextAreaMaxLengthStr:" + JSON.stringify(eventData));
       this.boolFlag = false
       this.boolIsNum = false
       this.boolIsStr = false
       this.boolIsNull = true
     }
-    if (((eventData.data) as Record<string, Object>)?.['type'] == "BoolErrUndefined") {
+    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolErrUndefined") {
       console.info("valueChangeCallBack TextAreaMaxLengthStr:" + JSON.stringify(eventData));
       this.boolFlag = false
       this.boolIsNum = false
       this.boolIsStr = false
       this.boolIsNull = false
     }
-    if (((eventData.data) as Record<string, Object>)?.['type'] == "passWordIcon") {
+    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "passWordIcon") {
       console.info("valueChangeCallBack ResourceIcon:" + JSON.stringify(eventData));
-      this.passwordIcon = JSON.parseJsonElement(((eventData.data) as Record<string, Object>)?.['icon'] as string) as PasswordIcon
+      this.passwordIcon = JSON.parseJsonElement(((eventData.data) as Record<String, RecordData>)?.['icon'] as string) as PasswordIcon
     }
 
   }

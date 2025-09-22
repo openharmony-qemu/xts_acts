@@ -36,6 +36,7 @@ import { UtilsTest } from '../Util.test';
 import events_emitter from '@ohos.events.emitter'
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Axis } from '@ohos.arkui.component'
+import { RecordData } from '@ohos.base';
 
 export default function calendarJsunit() {
   describe('appInfoTest_four_1', () => {
@@ -85,7 +86,7 @@ export default function calendarJsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "colSpace": 10,
-            } as Record<String, Object>
+            } as Record<String, RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -116,7 +117,7 @@ export default function calendarJsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "dailyFiveRowSpace": 11,
-            } as Record<String, Object>
+            } as Record<String, RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -148,7 +149,7 @@ export default function calendarJsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "dailySixRowSpace": 12,
-            } as Record<String, Object>
+            } as Record<String, RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -180,7 +181,7 @@ export default function calendarJsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "lunarHeight": 13,
-            } as Record<String, Object>
+            } as Record<String, RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -212,7 +213,7 @@ export default function calendarJsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "underscoreWidth": 14,
-            } as Record<String, Object>
+            } as Record<String, RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -244,7 +245,7 @@ export default function calendarJsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "underscoreLength": 15,
-            } as Record<String, Object>
+            } as Record<String, RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -276,7 +277,7 @@ export default function calendarJsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "scheduleMarkerRadius": 16,
-            } as Record<String, Object>
+            } as Record<String, RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -309,7 +310,7 @@ export default function calendarJsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "boundaryRowOffset": 17,
-            } as Record<String, Object>
+            } as Record<String, RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -340,7 +341,7 @@ export default function calendarJsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "weekAndDayRowSpace": 18,
-            } as Record<String, Object>
+            } as Record<String, RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,
@@ -372,7 +373,7 @@ export default function calendarJsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "direction": Axis.Vertical,
-            } as Record<String, Object>
+            } as Record<String, RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 74,

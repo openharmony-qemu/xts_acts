@@ -2,7 +2,7 @@ import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../..
 import commonEventManager from '@ohos.commonEventManager'
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import notificationManager from '@ohos.notificationManager'
 import notificationSubscribe from '@ohos.notificationSubscribe'
@@ -227,7 +227,7 @@ export default function ActsCommonEventSystemAPITest() {
                 "TimerCapsule.initialtime": 7349485944,
                 "TimerCapsule.isCountdown": false,
                 "TimerCapsule.isPause": true
-              } as Record<String, Object>
+              } as Record<String, RecordData>
             } as notificationManager.NotificationLiveViewContent,
           } as notificationManager.NotificationContent,
           creatorBundleName: "creatorBundleName",
@@ -245,7 +245,7 @@ export default function ActsCommonEventSystemAPITest() {
           isUnremovable: false,
           extendInfo: {
             'testKey': 'testValue'
-          } as Record<String, Object>,
+          } as Record<String, RecordData>,
         }
         notificationManager.publish(notificationRequest1600007, (err: BusinessError | null) => {
           console.info(Tag + ' publish3 fail,result is :', JSON.stringify(err));
@@ -290,7 +290,7 @@ export default function ActsCommonEventSystemAPITest() {
                 "TimerCapsule.initialtime": 7349485944,
                 "TimerCapsule.isCountdown": false,
                 "TimerCapsule.isPause": true
-              } as Record<String, Object>,
+              } as Record<String, RecordData>,
             } as notificationManager.NotificationLiveViewContent,
           } as notificationManager.NotificationContent,
           creatorBundleName: "creatorBundleName",
@@ -308,7 +308,7 @@ export default function ActsCommonEventSystemAPITest() {
           isUnremovable: false,
           extendInfo: {
             'testKey': 'testValue'
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         await Utils.msSleep(500);
         notificationManager.publish(notificationRequest1600014, (err: BusinessError | null) => {

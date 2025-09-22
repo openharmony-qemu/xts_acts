@@ -33,7 +33,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router, MeasureUtils } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -103,7 +103,7 @@ export default function alertDialogCenterStartJsunit() {
         }
         let callback = (eventData: events_emitter.EventData) => {
           console.info("testalertDialogCenterStart0001_static get event data is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as Record<string, Object>)?.['Result']).assertEqual(true);
+          expect(((eventData.data) as Record<string, RecordData>)?.['Result']).assertEqual(true);
           console.info('testalertDialogCenterStart0001_static END');
           done();
         }

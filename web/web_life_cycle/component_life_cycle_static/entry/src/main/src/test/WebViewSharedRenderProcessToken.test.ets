@@ -16,6 +16,7 @@ import { afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size,
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Util.test';
 import inspector from '@ohos.arkui.inspector';
+import { RecordData } from '@ohos.base';
 
 let emitKey = ''
 
@@ -32,7 +33,7 @@ export default function ActsAcewebViewSharedRenderProcessToken() {
 
     afterEach(async () => {
       try {
-        let tempData: Record<string, Object> = {};
+        let tempData: Record<string, RecordData> = {};
         tempData['ACTION'] = emitKey;
         let backData: events_emitter.EventData = {
           data: tempData
@@ -63,7 +64,7 @@ export default function ActsAcewebViewSharedRenderProcessToken() {
       await Utils.msSleep(2000);
       Utils.registerBaseEvent('testWebViewSharedRenderProcessToken', true, 1600, done,
         (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, boolean | string | Int | object>;
+          const data = backData?.data as Record<string, RecordData>;
           const action = data['ACTION'];
           console.info(`Begin to assert [` + action + `] Equal [` + expected + `]`);
           expect(action).assertEqual(expected);

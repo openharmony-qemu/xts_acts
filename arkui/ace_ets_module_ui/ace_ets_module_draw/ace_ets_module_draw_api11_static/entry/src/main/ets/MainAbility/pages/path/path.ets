@@ -38,6 +38,7 @@ import {
   Margin,
 } from '@ohos.arkui.component';
 import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -60,14 +61,14 @@ struct PathExample {
       console.info("[stateChangCallBack] stateChangCallBack ");
       if (eventData != null) {
         console.info("[stateChangCallBack] state change called: " + JSON.stringify(eventData));
-        if (((eventData.data) as Record<string, Object>)?.['commands'] != null) {
-          this.commandsOne = ((eventData.data) as Record<string, Object>)?.['commands'] as string;
+        if (((eventData.data) as Record<string, RecordData>)?.['commands'] != null) {
+          this.commandsOne = ((eventData.data) as Record<string, RecordData>)?.['commands'] as string;
         }
-        if (((eventData.data) as Record<string, Object>)?.['width'] != null) {
-          this.widthOne = ((eventData.data) as Record<string, Object>)?.['width'] as string;
+        if (((eventData.data) as Record<string, RecordData>)?.['width'] != null) {
+          this.widthOne = ((eventData.data) as Record<string, RecordData>)?.['width'] as string;
         }
-        if (((eventData.data) as Record<string, Object>)?.['height'] != null) {
-          this.heightOne = ((eventData.data) as Record<string, Object>)?.['height'] as string;
+        if (((eventData.data) as Record<string, RecordData>)?.['height'] != null) {
+          this.heightOne = ((eventData.data) as Record<string, RecordData>)?.['height'] as string;
         }
 
       }

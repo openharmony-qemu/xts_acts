@@ -29,6 +29,7 @@ import {
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -46,7 +47,7 @@ struct OhosPrompt {
               data: {
                 "matrix1": "[100, 10]",
                 "ACTION": this.onClickValue
-              } as Record<string, Object>
+              } as Record<string, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 142,

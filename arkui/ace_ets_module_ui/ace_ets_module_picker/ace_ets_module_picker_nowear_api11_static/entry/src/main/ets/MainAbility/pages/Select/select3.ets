@@ -32,6 +32,7 @@ import {
   FontStyle
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
@@ -83,7 +84,7 @@ struct SelectOnSelect {
               let backData: events_emitter.EventData = {
                 data: {
                   "selectIndex": this.selectIndex
-                } as Record<string, Object>
+                } as Record<String, RecordData>
               } as events_emitter.EventData
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 60222,

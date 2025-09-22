@@ -24,7 +24,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UtilsTest, startAbility } from './Util.test';
 import events_emitter from '@ohos.events.emitter';
 import { SharedTransitionEffectType} from '@ohos.arkui.component';
@@ -83,7 +83,7 @@ export default function sharedTransitionJsunit() {
             "duration": 2000,
             "delay": 5,
             "type": SharedTransitionEffectType.Exchange
-          } as Record<string,Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 194,

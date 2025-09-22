@@ -23,7 +23,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -100,7 +100,7 @@ it('directionTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<
         let eventData: events_emitter.EventData = {
           data: {
             "direction": FlexDirection.Row,
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 84,
@@ -135,7 +135,7 @@ it('directionTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<
         let eventData: events_emitter.EventData = {
           data: {
             "direction": 666,
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 84,

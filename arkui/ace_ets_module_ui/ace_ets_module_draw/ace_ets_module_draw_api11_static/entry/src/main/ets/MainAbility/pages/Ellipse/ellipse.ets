@@ -35,6 +35,7 @@ import {
 import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
 
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -68,11 +69,11 @@ struct EllipseExample {
       console.info("[ellipse] page stateChangCallBack");
       if (eventData != null) {
         console.info("[ellipse] page state change called:" + JSON.stringify(eventData));
-        if (((eventData.data) as Record<string, Object>)?.['width'] != null) {
-          this.theWidth = ((eventData.data) as Record<string, Object>)?.['width'] as string;
+        if (((eventData.data) as Record<string, RecordData>)?.['width'] != null) {
+          this.theWidth = ((eventData.data) as Record<string, RecordData>)?.['width'] as string;
         }
-        if (((eventData.data) as Record<string, Object>)?.['height'] != null) {
-          this.theHeight = ((eventData.data) as Record<string, Object>)?.['height'] as string;
+        if (((eventData.data) as Record<string, RecordData>)?.['height'] != null) {
+          this.theHeight = ((eventData.data) as Record<string, RecordData>)?.['height'] as string;
         }
       }
     }

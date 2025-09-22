@@ -21,6 +21,7 @@ import inspector from '@ohos.arkui.inspector'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { MessageManager } from '../../utils/MessageManager'
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -41,8 +42,8 @@ struct RichTextCreateComponent {
     console.info("[stateChangCallBack] stateChangCallBack");
     if (eventData != null) {
       console.info("[stateChangCallBack] state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as Record<string, Object>)?.['data'] != null && ((eventData.data) as Record<string, Object>)?.['data'] != undefined) {
-        this.data = ((eventData.data) as Record<string, Object>)?.['data'] as string;
+      if (((eventData.data) as Record<String, RecordData>)?.['data'] != null && ((eventData.data) as Record<String, RecordData>)?.['data'] != undefined) {
+        this.data = ((eventData.data) as Record<String, RecordData>)?.['data'] as string;
       }
     }
   }

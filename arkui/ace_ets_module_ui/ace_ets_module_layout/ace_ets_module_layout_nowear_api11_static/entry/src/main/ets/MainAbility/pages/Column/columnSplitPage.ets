@@ -25,15 +25,7 @@ import {
 } from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-
-
-
-
-
-
-
-
-
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -45,10 +37,10 @@ struct ColumnSplitExample {
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info("ColumnSplit page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as Record<string, Object>)?.['typeValue'] === 0) {
+      if (((eventData.data) as Record<string, RecordData>)?.['typeValue'] === 0) {
         console.info(`ColumnSplit.resizeable=>false`)
         
-      } else if (((eventData.data) as Record<string, Object>)?.['typeValue'] === 1) {
+      } else if (((eventData.data) as Record<string, RecordData>)?.['typeValue'] === 1) {
         console.info(`ColumnSplit.divider=>{startMargin:"10px", endMargin:"10px"}`)
         
       }

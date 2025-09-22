@@ -22,7 +22,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -121,7 +121,7 @@ it('ArkUI_Stage_Select_Layout_static_0200', Level.LEVEL1, async (done: () => voi
         let eventData: events_emitter.EventData = {
           data: {
             "arrowPosition": ArrowPosition.START
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -187,7 +187,7 @@ it('ArkUI_Stage_Select_Layout_static_0400', Level.LEVEL1, async (done: () => voi
         let eventData: events_emitter.EventData = {
           data: {
             "arrowPosition": -1
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -236,7 +236,7 @@ it('ArkUI_Stage_Select_Space_static_0200', Level.LEVEL1, async (done: () => void
         let eventData: events_emitter.EventData = {
           data: {
             "spaceValue": 20.00
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -268,7 +268,7 @@ it('ArkUI_Stage_Select_Space_static_0300', Level.LEVEL1, async (done: () => void
         let eventData: events_emitter.EventData = {
           data: {
             "spaceValueString": '40.00vp'
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -332,7 +332,7 @@ it('ArkUI_Stage_Select_Space_static_0500', Level.LEVEL1, async (done: () => void
         let eventData: events_emitter.EventData = {
           data: {
             "spaceValue": -1
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -364,7 +364,7 @@ it('ArkUI_Stage_Select_Space_static_0600', Level.LEVEL1, async (done: () => void
         let eventData: events_emitter.EventData = {
           data: {
             "spaceValueResource": $r('app.string.Test_Values')
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -396,7 +396,7 @@ it('ArkUI_Stage_Select_Space_static_0700', Level.LEVEL1, async (done: () => void
         let eventData: events_emitter.EventData = {
           data: {
             "spaceValueString": "40.00px"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -429,7 +429,7 @@ it('ArkUI_Stage_Select_Space_static_0800', Level.LEVEL1, async (done: () => void
         let eventData: events_emitter.EventData = {
           data: {
             "spaceValueString": "40.00lpx"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -461,7 +461,7 @@ it('ArkUI_Stage_Select_Space_static_0900', Level.LEVEL1, async (done: () => void
         let eventData: events_emitter.EventData = {
           data: {
             "spaceValueString": "40.00fp"
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,

@@ -20,7 +20,7 @@ import Utils from './Util.test';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import Want from '@ohos.app.ability.Want';
 import contextConstant from '@ohos.app.ability.contextConstant';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import commonEvent from '@ohos.commonEventManager';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -72,7 +72,7 @@ let onWindowStageFlag = false;
 let onForegroundFlag = false;
 let onDestroyFlag = false;
 let expectErrorCode = -1;
-let parametersObj: Record<String, Object> = {};
+let parametersObj: Record<String, RecordData> = {};
 let commonEventData: commonEvent.CommonEventPublishData = {
   parameters: parametersObj
 };
@@ -189,7 +189,7 @@ export default function abilitystaticTest() {
     })
     beforeEach( async (): Promise<void> => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_Static beforeEach]';
-      let paramsObj: Record<String, Object> = {}
+      let paramsObj: Record<String, RecordData> = {}
       hilog.info(domain, testTag, '%{public}s', `${tag} start`);
       onWindowStageFlag = false;
       onForegroundFlag = false;

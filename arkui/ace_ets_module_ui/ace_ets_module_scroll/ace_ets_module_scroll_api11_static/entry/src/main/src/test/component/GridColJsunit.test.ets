@@ -32,7 +32,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
@@ -98,7 +98,7 @@ export default function GridColJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "gridColOffsetNum": 1,
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -121,7 +121,7 @@ export default function GridColJsunit() {
         let eventData3: events_emitter.EventData = {
           data: {
             "gridColOffsetNum": 2,
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent3: events_emitter.InnerEvent = {
           eventId: 182,
@@ -165,7 +165,7 @@ export default function GridColJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "spanNum": 0,
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -188,7 +188,7 @@ export default function GridColJsunit() {
         let eventData3: events_emitter.EventData = {
           data: {
             "spanNum": 1,
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent3: events_emitter.InnerEvent = {
           eventId: 184,
@@ -238,7 +238,7 @@ export default function GridColJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "orderNum": 1,
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,

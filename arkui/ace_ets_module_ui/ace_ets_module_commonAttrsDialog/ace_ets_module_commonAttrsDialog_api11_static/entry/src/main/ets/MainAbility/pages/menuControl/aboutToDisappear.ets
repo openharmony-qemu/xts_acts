@@ -38,6 +38,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../hypium/index';
+import { RecordData } from '@ohos.base'
 
 @Entry
 @Component
@@ -94,7 +95,7 @@ struct TimerComponent {
         let backData: events_emitter.EventData = {
           data: {
             "ACTION": this.onActionCalled,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let backEvent: events_emitter.InnerEvent = {
           eventId: 49,

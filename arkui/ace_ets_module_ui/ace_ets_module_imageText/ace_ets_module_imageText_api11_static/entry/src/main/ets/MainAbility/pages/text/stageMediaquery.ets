@@ -31,6 +31,8 @@ import {
 import events_emitter from '@ohos.events.emitter';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import mediaquery from '@ohos.mediaquery'
+import { RecordData } from '@ohos.base';
+
 @Entry
 @Component
 struct stageMediaquery {
@@ -84,7 +86,7 @@ struct stageMediaquery {
             let backData: events_emitter.EventData = {
               data: {
                 "STATUS": result
-              } as Record<String,Object>
+              } as Record<String, RecordData>
             } as events_emitter.EventData
             let backEvent: events_emitter.InnerEvent = {
               eventId: 60219,

@@ -42,7 +42,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -113,14 +113,14 @@ export default function ResponseRegionJsunit() {
           let eventData: events_emitter.EventData = {
             data: {
               "touchable": true,
-            } as Record<string, Object>
+            } as Record<string, RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 30,
             priority: events_emitter.EventPriority.LOW
           }
           console.info("[testResponseRegion01_static] start to publish emit:" +
-          JSON.stringify(((eventData.data) as Record<string, Object>)));
+          JSON.stringify(((eventData.data) as Record<string, RecordData>)));
           events_emitter.emit(innerEvent, eventData);
         } catch (err: Error) {
           console.log("[testResponseRegion01_static] change component data error: " + err.message);
@@ -158,8 +158,8 @@ export default function ResponseRegionJsunit() {
       }
       let callbackTwo = (eventData: events_emitter.EventData) => {
         console.info("[testResponseRegion02_static] get event state result is: " + JSON.stringify(eventData));
-        expect(((eventData.data) as Record<string, Object>)?.['ACTION']).assertEqual(true)
-        expect(((eventData.data) as Record<string, Object>)?.['EVENT_TYPE']).assertEqual('Down')
+        expect(((eventData.data) as Record<string, RecordData>)?.['ACTION']).assertEqual(true)
+        expect(((eventData.data) as Record<string, RecordData>)?.['EVENT_TYPE']).assertEqual('Down')
         done();
       }
       let innerEventTwo: events_emitter.InnerEvent = {

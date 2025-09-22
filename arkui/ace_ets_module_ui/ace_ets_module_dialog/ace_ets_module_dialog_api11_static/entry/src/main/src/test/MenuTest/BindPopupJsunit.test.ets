@@ -42,7 +42,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -106,8 +106,8 @@ export default function bindPopupTest() {
       await CommonFunc.sleep(1500);
       let callback = (indexEvent: events_emitter.EventData) => {
         console.info("bindPopupTest_static_0100 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as Record<string, Object>)?.['enableArrow']).assertEqual(true);
-        expect(((indexEvent.data) as Record<string, Object>)?.['maskColor']).assertEqual(0x33000000);
+        expect(((indexEvent.data) as Record<string, RecordData>)?.['enableArrow']).assertEqual(true);
+        expect(((indexEvent.data) as Record<string, RecordData>)?.['maskColor']).assertEqual(0x33000000);
         done();
       }
       let indexEvent: events_emitter.InnerEvent = {
@@ -145,7 +145,7 @@ export default function bindPopupTest() {
           data: {
             "enableArrow": false,
             "maskColor": 0x33000009
-          } as Record<string, Object>
+          } as Record<string, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 68,
@@ -159,8 +159,8 @@ export default function bindPopupTest() {
       await CommonFunc.sleep(1500);
       let callbackOne = (indexEventOne: events_emitter.EventData) => {
         console.info("bindPopupTest_static_0200 get state result is: " + JSON.stringify(indexEventOne));
-        expect(((indexEventOne.data) as Record<string, Object>)?.['enableArrow']).assertEqual(false);
-        expect(((indexEventOne.data) as Record<string, Object>)?.['maskColor']).assertEqual(0x33000009);
+        expect(((indexEventOne.data) as Record<string, RecordData>)?.['enableArrow']).assertEqual(false);
+        expect(((indexEventOne.data) as Record<string, RecordData>)?.['maskColor']).assertEqual(0x33000009);
       }
       let indexEventOne: events_emitter.InnerEvent = {
         eventId: 66,
@@ -193,7 +193,7 @@ export default function bindPopupTest() {
       await CommonFunc.sleep(1500);
       let callback = (indexEvent: events_emitter.EventData) => {
         console.info("bindPopupTest_static_0300 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as Record<string, Object>)?.['placementOnTop']).assertEqual(false);
+        expect(((indexEvent.data) as Record<string, RecordData>)?.['placementOnTop']).assertEqual(false);
       }
       let indexEvent: events_emitter.InnerEvent = {
         eventId: 65,

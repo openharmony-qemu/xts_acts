@@ -16,7 +16,7 @@ import commonEventManager from '@ohos.commonEventManager';
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import Utils from './Util.test';
 import hilog from '@ohos.hilog';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -550,7 +550,7 @@ export default function ActsSubscriberTestUnorder() {
         isSticky:false,
         parameters:{
           'key1':'parameters_0100'
-        }as Record<string, Object>
+        }as Record<string, RecordData>
       }
       hilog.info(DOMAIN_NUMBER, TAG, ` CommonEventSubscriber ===> start`)
       await commonEventManager.createSubscriber(CommonEventSubscriberInfo).then((commonEventSubscriber): void => {

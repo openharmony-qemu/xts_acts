@@ -49,6 +49,7 @@ import {
 import { State } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 import Log from '../../common/Log';
+import { RecordData } from '@ohos.base'; 
 
 const TAG = 'ets_apiLack_add';
 
@@ -166,7 +167,7 @@ struct ListLanes {
               let backData: events_emitter.EventData = {
                 data: {
                   "result": "success"
-                } as Record<string, Object>
+                } as Record<String, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 60216,
