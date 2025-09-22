@@ -61,6 +61,11 @@ export default function PixelRoundTest() {
       await Utils.sleep(1000);
 
       // get
+      let button = await driver.findComponent(ON.id('PixelRoundPage_GetPixelRound_Btn'));
+      await button.click();
+      console.info("[PixelRoundTest_0100] click PixelRoundPage_GetPixelRound_Btn.");
+      await Utils.sleep(1000);
+
       let strJson = getInspectorByKey('PixelRoundPage_PixelRound_content');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[PixelRoundTest_0100] obj.$attrs.content is: " + obj.$attrs.content);
@@ -84,9 +89,9 @@ export default function PixelRoundTest() {
       await Utils.sleep(1000);
 
       // set
-      let button = await driver.findComponent(ON.id('PixelRoundPage_top_Btn'));
+      let button = await driver.findComponent(ON.id('PixelRoundPage_SetPixelRound_Btn'));
       await button.click();
-      console.info("[PixelRoundTest_0200] click PixelRoundPage_top_Btn.");
+      console.info("[PixelRoundTest_0200] click PixelRoundPage_SetPixelRound_Btn.");
       await Utils.sleep(1000);
 
       let rect = Utils.getComponentRect("PixelRoundPage_testFlex");
@@ -96,6 +101,11 @@ export default function PixelRoundTest() {
       expect(Math.floor(Math.abs(rect.bottom - rect.top - vp2px(111))) <= 1).assertTrue();
 
       // get
+      button = await driver.findComponent(ON.id('PixelRoundPage_GetPixelRound_Btn'));
+      await button.click();
+      console.info("[PixelRoundTest_0200] click PixelRoundPage_GetPixelRound_Btn.");
+      await Utils.sleep(1000);
+
       let strJson = getInspectorByKey('PixelRoundPage_PixelRound_content');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[PixelRoundTest_0200] obj.$attrs.content is: " + obj.$attrs.content);
