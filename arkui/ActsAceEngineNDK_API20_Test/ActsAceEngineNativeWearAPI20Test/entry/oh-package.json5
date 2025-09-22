@@ -15,17 +15,7 @@
 {
   "license": "",
   "devDependencies": {
-    "libnativexcomponent.so": "file:./src/main/cpp/types/libnativexcomponent",
-    "libaccessibilityndk.so": "file:./src/main/cpp/types/libaccessibilityndk",
-    "libanimatendk.so": "file:./src/main/cpp/types/libanimatendk",
-    "libnoderenderndk.so": "file:./src/main/cpp/types/libnoderenderndk",
-    "libkeyeventndk.so": "file:./src/main/cpp/types/libkeyeventndk",
-    "libnativedialog.so": "file:./src/main/cpp/types/libnativedialog",
-    "libnativegesturendk.so": "file:./src/main/cpp/types/libnativegesturendk",
-    "libuiinputeventndk.so": "file:./src/main/cpp/types/libuiinputeventndk",
-    "libnativetype.so": "file:./src/main/cpp/types/libnativetype",
-    "libosaccountndk.so": "file:./src/main/cpp/types/libosaccountndk",
-    "libdisplaymanager.so": "file:./src/main/cpp/types/libdisplaymanager"
+    "libnativexcomponent.so": "file:./src/main/cpp/types/libnativexcomponent"
   },
   "author": "",
   "name": "entry",
@@ -33,16 +23,6 @@
   "main": "",
   "version": "1.0.0",
   "dependencies": {
-    "libnativexcomponent.so": "file:./src/main/cpp/types/libnativexcomponent",
-    "libaccessibilityndk.so": "file:./src/main/cpp/types/libaccessibilityndk",
-    "libanimatendk.so": "file:./src/main/cpp/types/libanimatendk",
-    "libnoderenderndk.so": "file:./src/main/cpp/types/libnoderenderndk",
-    "libkeyeventndk.so": "file:./src/main/cpp/types/libkeyeventndk",
-    "libnativedialog.so": "file:./src/main/cpp/types/libnativedialog",
-    "libnativegesturendk.so": "file:./src/main/cpp/types/libnativegesturendk",
-    "libuiinputeventndk.so": "file:./src/main/cpp/types/libuiinputeventndk",
-    "libnativetype.so": "file:./src/main/cpp/types/libnativetype",
-    "libosaccountndk.so": "file:./src/main/cpp/types/libosaccountndk",
-    "libdisplaymanager.so": "file:./src/main/cpp/types/libdisplaymanager"
+    "libnativexcomponent.so": "file:./src/main/cpp/types/libnativexcomponent"
   }
 }

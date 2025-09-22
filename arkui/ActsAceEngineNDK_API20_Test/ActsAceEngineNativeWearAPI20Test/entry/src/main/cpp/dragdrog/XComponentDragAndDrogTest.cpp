@@ -120,7 +120,6 @@ void SetOnDrog(XC* Component)
         int32_t CountOk = PARAM_NEGATIVE_2;
         int32_t maxStrLenOk = PARAM_128;
         char* eventTypeArrayOk[] = {};
-        OH_UdmfData* UdmfData = OH_UdmfData_Create();
         g_setDropOperation = OH_ArkUI_DragEvent_SetSuggestedDropOperation(DragEvent, ARKUI_DROP_OPERATION_MOVE) ==
                              ARKUI_ERROR_CODE_NO_ERROR;
         ArkUI_DropOperation DragResult = ArkUI_DropOperation(PARAM_NEGATIVE_2);
@@ -129,16 +128,16 @@ void SetOnDrog(XC* Component)
             OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "[GetOnDragMove]", "GetDragResult Failed");
             return;
         }
-        g_getSetData = OH_ArkUI_DragEvent_SetData(DragEvent, UdmfData) == ARKUI_ERROR_CODE_NO_ERROR;
         g_getDataTypeCount = OH_ArkUI_DragEvent_GetDataTypeCount(DragEvent, &CountOk) == ARKUI_ERROR_CODE_NO_ERROR;
         g_getDataTypesOk = OH_ArkUI_DragEvent_GetDataTypes(DragEvent, eventTypeArrayOk, CountOk, maxStrLenOk);
         g_getDataTypesOk = g_getDataTypesOk == ARKUI_ERROR_CODE_NO_ERROR || CountOk >= PARAM_0;
-        g_getUdmfData = OH_ArkUI_DragEvent_GetUdmfData(DragEvent, UdmfData) == ARKUI_ERROR_CODE_NO_ERROR;
+        OH_UdmfData* UdmfData = OH_UdmfData_Create();
+        g_getSetData = OH_ArkUI_DragEvent_SetData(DragEvent, UdmfData) == ARKUI_ERROR_CODE_NO_ERROR;
+        OH_UdmfData_Destroy(UdmfData);
         int32_t Count = PARAM_NEGATIVE_2;
         int32_t maxStrLen = PARAM_NEGATIVE_2;
         char* eventTypeArray[] = {};
         g_getDataTypes = OH_ArkUI_DragEvent_GetDataTypes(DragEvent, eventTypeArray, Count, maxStrLen);
-        OH_UdmfData_Destroy(UdmfData);
         char key[] = "key_string1";
         OH_UdmfGetDataParams* options = OH_UdmfGetDataParams_Create();
         unsigned int keyLen = 513;
@@ -169,6 +168,9 @@ void SetOnDragEnd(XC* Component)
         OH_UdmfDataLoadParams* UdmfData = OH_UdmfDataLoadParams_Create();
         g_getSetDataLoadParams = OH_ArkUI_DragEvent_SetDataLoadParams(DragEvent, UdmfData) == ARKUI_ERROR_CODE_NO_ERROR;
         OH_UdmfDataLoadParams_Destroy(UdmfData);
+        OH_UdmfData* UdmfDataB = OH_UdmfData_Create();
+        g_getUdmfData = OH_ArkUI_DragEvent_GetUdmfData(DragEvent, UdmfDataB) == ARKUI_ERROR_CODE_NO_ERROR;
+        OH_UdmfData_Destroy(UdmfDataB);
         bool flag = true;
         OH_ArkUI_DragEvent_IsRemote(DragEvent, &flag) == ARKUI_ERROR_CODE_NO_ERROR;
         if (!g_getDragResult) {

@@ -15,15 +15,13 @@ import("//foundation/arkui/ace_engine/ace_config.gni")
 
 group("ActsAceEngineNativeAPI20") {
   testonly = true
+  deps = [
+    "ActsAceEngineNativeAPI20Test:ActsAceEngineNativeAPI20Test",
+    "ActsNativeXcomponentKeyCodeTest:ActsNativeXcomponentKeyCodeTest"
+  ]
   if (ace_engine_feature_wearable) {
-      deps = [
-        "ActsAceEngineNativeWearAPI20Test:ActsAceEngineNativeWearAPI20Test",
-        "ActsNativeXcomponentKeyCodeTest:ActsNativeXcomponentKeyCodeTest",
-      ]
-    } else  {
-      deps = [
-        "ActsAceEngineNativeAPI20Test:ActsAceEngineNativeAPI20Test",
-        "ActsNativeXcomponentKeyCodeTest:ActsNativeXcomponentKeyCodeTest",
+      deps += [
+        "ActsAceEngineNativeWearAPI20Test:ActsAceEngineNativeWearAPI20Test"
       ]
     }
 }

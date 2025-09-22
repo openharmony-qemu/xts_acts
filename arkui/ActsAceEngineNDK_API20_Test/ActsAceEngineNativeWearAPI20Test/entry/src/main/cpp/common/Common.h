@@ -26,22 +26,26 @@
 #include <string>
 #include <cstdint>
 #include <js_native_api_types.h>
-#include <multimodalinput/oh_input_manager.h>
 #include <random>
 #include <list>
 #include <cstddef>
 #include <ace/xcomponent/native_xcomponent_key_event.h>
-#include <AbilityKit/ability_base/want.h>
-#include <arkui/native_key_event.h>
+#include <arkui/drag_and_drop.h>
+#include <arkui/native_dialog.h>
 
 #define PARMA_0_POINT_0001 0.0001
+#define PARAM_0_POINT_2 0.2
+#define PARAM_0_POINT_3 0.3
 #define PARAM_0_POINT_5 0.5
 #define PARAM_1_POINT_5 1.5
 #define PARAM_0_POINT_6 0.6
 #define PARAM_0_POINT_7 0.7
+#define PARAM_0_POINT_8 0.8
 #define PARAM_0_POINT_9 0.9
-#define PARAM_1_POINT_1 1.1
 #define PARAM_1_POINT_0 1.0
+#define PARAM_1_POINT_1 1.1
+#define PARAM_15_POINT_0 15.0
+#define PARAM_90_POINT_0 90.0
 #define PARMA_NEGATIVE_0_POINT_0001 (-0.0001)
 #define PARAM_NEGATIVE_0_POINT_1 (-0.1)
 #define PARAM_NEGATIVE_0_POINT_8 (-0.8)
@@ -68,6 +72,7 @@
 #define PARAM_20 20
 #define PARAM_21 21
 #define PARAM_24 24
+#define PARAM_29 29
 #define PARAM_30 30
 #define PARAM_33 33
 #define PARAM_50 50
@@ -80,13 +85,17 @@
 #define PARAM_100 100
 #define PARAM_101 101
 #define PARAM_120 120
+#define PARAM_128 128
 #define PARAM_200 200
 #define PARAM_240 240
 #define PARAM_255 255
+#define PARAM_300 300
 #define PARAM_401 401
 #define PARAM_500 500
 #define PARAM_501 501
+#define PARAM_512 512
 #define PARAM_800 800
+#define PARAM_911 911
 #define PARAM_1000 1000
 #define PARAM_1001 1001
 #define PARAM_1024 1024

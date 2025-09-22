@@ -23,7 +23,6 @@ import nativexcomponent from 'libnativexcomponent.so';
 @Component
 struct XTSIndex {
   aboutToAppear() {
-    nativexcomponent.CheckNodeXComponentSurfaceRect();
     let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
     let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
     console.info('start run testcase!!!')
