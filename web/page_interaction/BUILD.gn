@@ -16,6 +16,7 @@ group("pageInteraction") {
   if (is_standard_system) {
     deps = [
       "JS_dialog_box:ActsWebJSDialogBoxTest",
+      "JS_dialog_box_static:ActsWebJSDialogBoxStaticTest",
       "focus_processing:ActsWebFocusProcessingTest",
       "gesture_operation:ActsWebGestureOperationTest",
       "keyboard_mouse_operations:ActsWebKeyboardMouseOperationsTest",
