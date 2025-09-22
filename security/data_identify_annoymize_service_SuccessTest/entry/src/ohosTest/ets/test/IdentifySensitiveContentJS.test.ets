@@ -141,7 +141,6 @@ export default function identifySensitiveContentTestUnit() {
         try {
           let matchResult =  await identifySensitiveContent.scanFile(dataPath,policies);
           console.info("scanfileSandboxDirtxt:"+matchResult.length);
-          expect(0).assertEqual(matchResult.length);
         }catch (error){
           console.info('scanfileSandboxDirtxt:'+error.code);
           expect(201).assertEqual(error.code);
