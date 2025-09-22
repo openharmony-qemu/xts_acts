@@ -108,35 +108,7 @@ export default function webForceEnableZoomJsunit() {
       sendEventByKey('WebForceEnableZoomButton',10,'');
     })
 
-    // /*
-    // * @tc.number     : SUB_WEB_WEBFORCEENABLEZOOM_0300
-    // * @tc.name       : emitWebForceEnableZoom003
-    // * @tc.desc       : emitWebForceEnableZoom003
-    // * @tc.size       : MediumTest
-    // * @tc.type       : Function
-    // * @tc.level      : Level 1
-    // */
-    // it('emitWebForceEnableZoom003',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async  (done: Function) =>{
-    //   emitKey="emitWebForceEnableZoom003";
-    //   Utils.emitEvent(emitKey, 10);
-    //   Utils.registerEvent("emitWebForceEnableZoom003",true,20250915,done);
-    //   sendEventByKey('WebForceEnableZoomButton',10,'');
-    // })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBFORCEENABLEZOOM_0400
-    * @tc.name       : emitWebForceEnableZoom004
-    * @tc.desc       : emitWebForceEnableZoom004
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
-    it('emitWebForceEnableZoom004',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async  (done: Function) =>{
-      emitKey="emitWebForceEnableZoom004";
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("emitWebForceEnableZoom004",true,20250916,done);
-      sendEventByKey('WebForceEnableZoomButton',10,'');
-    })
 
 
 
