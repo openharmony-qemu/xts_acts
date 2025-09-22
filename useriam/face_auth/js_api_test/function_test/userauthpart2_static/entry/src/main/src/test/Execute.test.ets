@@ -284,7 +284,7 @@ export default function signNormalAccessBiometricExecute() {
        hilog.info(domain, tag, format,"Security_IAM_getUserAuthInstance_Func_Static_0088 start");
        try {
          const userAuthInstance:userAuth.UserAuthInstance = userAuth.getUserAuthInstance(authParamDefault, widgetParamDefault);
-         userAuthInstance.off('result',{
+         userAuthInstance.offResult({
            onResult:(result:userAuth.UserAuthResult)=>{
            }
          });
