@@ -651,7 +651,7 @@ export default function UsbApiDeprecatedEtsTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_0600
+     * @tc.number   SUB_USB_HostManager_JSDep_Compatibility_0600
      * @tc.name     testConnectDevice007
      * @tc.desc     Negative test: open device, error manufacturerName 'sdfsdfe'
      */
