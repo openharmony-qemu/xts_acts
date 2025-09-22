@@ -20,8 +20,9 @@ group("ActsAceEngineNativeAPI20") {
     "ActsNativeXcomponentKeyCodeTest:ActsNativeXcomponentKeyCodeTest"
   ]
   if (ace_engine_feature_wearable) {
-      deps += [
-        "ActsAceEngineNativeWearAPI20Test:ActsAceEngineNativeWearAPI20Test"
-      ]
-    }
+  } else {
+    deps += [
+      "ActsAceEngineNativeWearAPI20Test:ActsAceEngineNativeWearAPI20Test"
+    ]
+  }
 }
