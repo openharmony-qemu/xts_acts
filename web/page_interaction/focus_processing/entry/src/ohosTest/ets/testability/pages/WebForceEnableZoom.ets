@@ -72,7 +72,6 @@ struct WebComponent {
             case "emitWebForceEnableZoom001": {
               try {
                 this.isForceZoomEnabled = true;
-                this.flag = 2;
                 this.isPageEnd = -1
                 this.webController.loadUrl('www.example.com')
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
@@ -121,11 +120,7 @@ struct WebComponent {
           .onScaleChange((e) => {
             console.info("scale changed new = " + e.newScale + ", old = " + e.oldScale)
             this.ScaleChange = true;
-            if(this.flag == 1) {
-              Utils.emitEvent(true, 20250913)
-            }  else {
-              Utils.emitEvent(true, 20250914)
-            }
+            Utils.emitEvent(true, 20250913)
           })
           .forceEnableZoom(this.isForceZoomEnabled)
 
