@@ -19,7 +19,7 @@ function onPushListener(source, template, data, extraData) {
     console.log('onPushListener template.source=' + template.source)
     let jsonObject = JSON.parse(data.componentTemplate.source)
     console.log('request_callback1:source json object' + jsonObject)
-    let jsonArry = jsonObject.ExternalComponent
+    let jsonArry = jsonObject.ExternalComponent;
     for (let i in jsonArry) {
         console.log(jsonArry[i]);
     }
@@ -98,4 +98,4 @@ export default {
             }
         );
     }
-}
+};

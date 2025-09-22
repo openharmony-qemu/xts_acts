@@ -48,19 +48,19 @@ export default {
         pluginComponentManager.push(
             {
                 want: {
-                    bundleName: "com.arkui.ace.RenderControl.api12",
-                    abilityName: "com.arkui.ace.RenderControl.api12.MainAbility",
-                    "parameters": {
+                    bundleName: 'com.arkui.ace.RenderControl.api12',
+                    abilityName: 'com.arkui.ace.RenderControl.api12.MainAbility',
+                    'parameters': {
                         DIMENSION_KEY: FormDimension.Dimension_1_2
                     }
                 },
-                name: "plugintemplate",
+                name: 'plugintemplate',
                 data: {
-                    "key_1": "plugin component test",
-                    "key_2": 34234
+                    'key_1': 'plugin component test',
+                    'key_2': 34234
                 },
                 extraData: {
-                    "extra_str": "this is push event"
+                    'extra_str': 'this is push event'
                 },
                 jsonPath: '',
             },
@@ -73,13 +73,13 @@ export default {
         // 组件使用方主动发送事件
         pluginComponentManager.request({
             want: {
-                bundleName: "com.arkui.ace.RenderControl.api12",
-                abilityName: "com.arkui.ace.RenderControl.api12.MainAbility",
+                bundleName: 'com.arkui.ace.RenderControl.api12',
+                abilityName: 'com.arkui.ace.RenderControl.api12.MainAbility',
             },
-            name: "plugintemplate",
+            name: 'plugintemplate',
             data: {
-                "key_1": "plugin component test",
-                "key_2": 34234
+                'key_1': 'plugin component test',
+                'key_2': 34234
             },
             jsonPath: '',
         },
@@ -88,7 +88,7 @@ export default {
                 console.log('request_callback: componentTemplate.source=' + data.componentTemplate.source);
                 let jsonObject = JSON.parse(data.componentTemplate.source);
                 console.log('request_callback:source json object' + jsonObject);
-                let jsonArry = jsonObject.ExternalComponent
+                let jsonArry = jsonObject.ExternalComponent;
                 for (let i in jsonArry) {
                     console.log(jsonArry[i]);
                 }
@@ -96,6 +96,6 @@ export default {
                 console.log('request_callback: data=' + JSON.stringify(data.data));
                 console.log('request_callback: extraData=' + JSON.stringify(data.extraData));
             }
-        )
+        );
     }
 }
