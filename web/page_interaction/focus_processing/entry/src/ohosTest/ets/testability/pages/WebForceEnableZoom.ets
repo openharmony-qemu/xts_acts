@@ -131,13 +131,13 @@ struct WebComponent {
               try {
                 this.isPageEnd = -1;
                 this.flag = 2;
+                this.isForceZoomEnabled = false;
                 this.ScaleChange = false;
                 this.webController.loadUrl('www.example.com')
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
                 this.isPageEnd = -1;
                 this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.isForceZoomEnabled = false;
                 this.webController.zoom(0.5);
                 await Utils.sleep(2000);
                 //isForceZoomEnabled设置为false 应该是不触发 this.ScaleChange 应该为false
