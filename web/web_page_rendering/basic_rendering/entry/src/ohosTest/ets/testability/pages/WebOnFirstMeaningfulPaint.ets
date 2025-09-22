@@ -16,24 +16,26 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
-
+import { waitForExist } from '../../test/WaitTest.test';
 @Entry
 @Component
 struct WebOnFirstMeaningfulPaint {
   @State str: string = ""
   @State text: number[] | undefined[] =[0, 0]
+  @State isReceive: number = -1;
+  @State isComplete: number = -1;
   controller: webView.WebviewController = new webView.WebviewController();
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 151990,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(151990)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -42,6 +44,7 @@ struct WebOnFirstMeaningfulPaint {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -50,26 +53,25 @@ struct WebOnFirstMeaningfulPaint {
     Column() {
       Row() {
         Button("WebOnFirstMeaningfulPaint").id('WebOnFirstMeaningfulPaint').onClick(async () => {
+          await waitForExist(() => this.isComplete, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           console.info("key==>" + this.str)
           switch (this.str) {
-
             case "OnFirstMeaningfulPaint0100": {
               let value: boolean = false;
               this.text = [0, 0]
               try {
+                this.isComplete = -1;
                 this.controller.loadUrl('www.example.com');
-                await Utils.sleep(5000);
+                await waitForExist(() => this.isComplete, this.str, 0);
                 if (this.text[0] != 0 && this.text[1] != 0) {
                   value = true;
-
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
-
-              setTimeout(() => {
-                Utils.emitEvent(value, 701)
-              }, 3000)
+              Utils.emitEvent(value, 152000)
               break;
             }
 
@@ -77,19 +79,17 @@ struct WebOnFirstMeaningfulPaint {
               let value: boolean = false;
               this.text = [0, 0]
               try {
+                this.isComplete = -1;
                 this.controller.loadUrl('https://www.iana.org/help/example-domains');
-                await Utils.sleep(5000);
+                await waitForExist(() => this.isComplete, this.str, 0);
                 if (this.text[0] != 0 && this.text[1] != 0) {
                   value = true;
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
-
-              setTimeout(() => {
+              Utils.emitEvent(value, 152010)
                 console.log("value: " + value);
-                Utils.emitEvent(value, 702)
-              }, 3000)
               break;
             }
           }
@@ -106,6 +106,10 @@ struct WebOnFirstMeaningfulPaint {
             this.text[0] = event.navigationStartTime
             this.text[1] = event.firstMeaningfulPaintTime
           }
+        })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isComplete = 0;
         })
     }
   }

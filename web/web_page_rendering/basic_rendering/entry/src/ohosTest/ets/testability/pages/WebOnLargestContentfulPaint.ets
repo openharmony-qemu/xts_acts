@@ -16,24 +16,26 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
-
+import { waitForExist } from '../../test/WaitTest.test';
 @Entry
 @Component
 struct WebOnLargestContentfulPaint {
   @State str: string = ""
   @State text: number[] | undefined[] = [0, 0, 0, 0, 0, 0]
+  @State isComplete: number = -1;
+  @State isReceive: number = -1;
   controller: webView.WebviewController = new webView.WebviewController();
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 152060,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(152060)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -42,6 +44,7 @@ struct WebOnLargestContentfulPaint {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -50,19 +53,22 @@ struct WebOnLargestContentfulPaint {
     Column() {
       Row() {
         Button("WebOnLargestContentfulPaint").id('WebOnLargestContentfulPaint').onClick(async () => {
+          await waitForExist(() => this.isComplete, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           console.info("key==>" + this.str)
           switch (this.str) {
-
             case "OnLargestContentfulPaint0100": {
               let value: boolean = false;
               this.text = [0, 0, 0, 0, 0, 0]
               try {
                 this.controller.loadUrl('www.example.com');
-                await Utils.sleep(2000);
+                this.isComplete = -1;
                 this.controller.removeCache(true);
-                await Utils.sleep(2000);
+                await waitForExist(() => this.isComplete, this.str, 0);
+                this.isComplete = -1;
                 this.controller.loadUrl('www.example.com');
-                await Utils.sleep(5000);
+                await waitForExist(() => this.isComplete, this.str, 0);
                 if (
                   this.text[0] != 0
                     && this.text[1] == 0
@@ -76,11 +82,8 @@ struct WebOnLargestContentfulPaint {
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
-
-              setTimeout(() => {
                 console.log("value: " + value);
-                Utils.emitEvent(value, 801)
-              }, 3000)
+                Utils.emitEvent(value, 152070)
               break;
             }
 
@@ -89,11 +92,12 @@ struct WebOnLargestContentfulPaint {
               this.text = [0, 0, 0, 0, 0, 0]
               try {
                 this.controller.loadUrl('https://www.iana.org/help/example-domains');
-                await Utils.sleep(2000);
+                this.isComplete = -1;
                 this.controller.removeCache(true);
-                await Utils.sleep(2000);
+                await waitForExist(() => this.isComplete, this.str, 0);
+                this.isComplete = -1;
                 this.controller.loadUrl('https://www.iana.org/help/example-domains');
-                await Utils.sleep(5000);
+                await waitForExist(() => this.isComplete, this.str, 0);
                 if (
                   this.text[0] != 0
                     && this.text[1] != 0
@@ -107,11 +111,8 @@ struct WebOnLargestContentfulPaint {
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
-
-              setTimeout(() => {
                 console.log("value: " + value);
-                Utils.emitEvent(value, 802)
-              }, 3000)
+                Utils.emitEvent(value, 152080)
               break;
             }
           }
@@ -119,6 +120,10 @@ struct WebOnLargestContentfulPaint {
       }
 
       Web({ src: 'www.example.com', controller: this.controller })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isComplete = 0;
+        })
         .onLargestContentfulPaint(event => {
           if (event) {
             console.log("onLargestContentfulPaint:" + "[NavigationStart]:" +
@@ -141,6 +146,7 @@ struct WebOnLargestContentfulPaint {
             this.text[5] = event.largestImageLoadEndTime
           }
         })
+
     }
   }
 }

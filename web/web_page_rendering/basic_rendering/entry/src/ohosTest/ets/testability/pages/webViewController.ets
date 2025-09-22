@@ -46,12 +46,14 @@ struct Index {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 154060,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-
+  onPageHide() {
+    events_emitter.off(154060)
+  }
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     console.info("web page valueChangeCallBack");
     if (eventData != null) {
@@ -78,7 +80,7 @@ struct Index {
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
-              Utils.emitEvent(this.webIdTol, 100)
+              Utils.emitEvent(this.webIdTol, 154070)
               break;
             }
           }
