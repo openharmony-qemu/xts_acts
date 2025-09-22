@@ -358,8 +358,8 @@ export default function DeviceManagerTest() {
           return done();
         } else {
           try {
-            await deviceManager.unbindDriverWithDeviceId(deviceId);
-            expect(true).assertTrue();
+            let data = await deviceManager.unbindDriverWithDeviceId(deviceId);
+            expect(data != null).assertTrue();
             await Utils.msSleep(2000);
             done();
           } catch (error: BusinessError) {
