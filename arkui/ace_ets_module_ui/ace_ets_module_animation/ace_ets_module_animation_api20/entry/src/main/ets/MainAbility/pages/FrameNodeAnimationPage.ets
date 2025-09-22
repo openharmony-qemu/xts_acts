@@ -38,6 +38,10 @@ class NodeControllerTest1 extends NodeController {
     let getButton = typeNode.createNode(uiContext, 'Button');
     getButton.initialize('get');
     getButton.attribute.id('get').height('10%');
+    let getNullButton = typeNode.createNode(uiContext, 'Button');
+    getNullButton.initialize('getEmpty');
+    getNullButton.attribute.id('getNullButton').height('10%');
+
     creatFailButton.commonEvent.setOnClick(()=>{
       if (!this.frameNode1) {
         console.warn('frameNode1 is destroyed');
@@ -93,10 +97,22 @@ class NodeControllerTest1 extends NodeController {
       console.log('FrameNodeAnimationPage value1: ', value1)
       AppStorage.setOrCreate('checkGetNodePropertyValue', value1);
     })
+
+    getNullButton.commonEvent.setOnClick(()=>{
+      if (!this.frameNode1) {
+        console.warn('frameNode1 is destroyed');
+        return;
+      }
+      let value1 = this.frameNode1.getNodePropertyValue(4);
+      console.log('FrameNodeAnimationPage value1: ', value1)
+      AppStorage.setOrCreate('checkNullNodePropertyValue', value1);
+    })
+
     row.appendChild(creatFailButton);
     row.appendChild(creatSuccButton);
     row.appendChild(cancelSuccButton);
     row.appendChild(cancelFailButton);
+    row.appendChild(getNullButton);
     row.appendChild(getButton);
     return row;
   }
