@@ -42,15 +42,15 @@ export default function DrmKitTest() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     });
-    /* *
-    * @tc.number    SUB_OH_MediaKeySession_GenerateMediaKeyRequestInvalue
-    * @tc.name      SUB_OH_MediaKeySession_GenerateMediaKeyRequestInvalue
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_OH_MediaKeySession_GenerateMediaKeyRequestInvalue', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_OH_MediaKeySession_GenerateMediaKeyRequestInvalue
+     * @tc.name      SUB_OH_MediaKeySession_GenerateMediaKeyRequestInvalue
+     * @tc.desc      test OH_MediaKeySession_GenerateMediaKeyRequest Null Pointer
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_OH_MediaKeySession_GenerateMediaKeyRequestInvalue', Level.LEVEL1, () => {
       try {
           let c: number = testNapi.mediaKeySession_GenerateMediaKeyRequestInvalue();
           expect(c).assertEqual(1);
@@ -59,15 +59,16 @@ export default function DrmKitTest() {
           expect(false).assertEqual(0);
         }
     });
-    /* *
-    * @tc.number    SUB_OH_MediaKeySession_ProcessMediaKeyResponseInvalue
-    * @tc.name      SUB_OH_MediaKeySession_ProcessMediaKeyResponseInvalue
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_OH_MediaKeySession_ProcessMediaKeyResponseInvalue', Level.LEVEL0, () => {
+
+    /**
+     * @tc.number    SUB_OH_MediaKeySession_ProcessMediaKeyResponseInvalue
+     * @tc.name      SUB_OH_MediaKeySession_ProcessMediaKeyResponseInvalue
+     * @tc.desc      test OH_MediaKeySession_ProcessMediaKeyResponse Null Pointer
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_OH_MediaKeySession_ProcessMediaKeyResponseInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySession_ProcessMediaKeyResponseInvalue();
         expect(c).assertEqual(1);
@@ -76,15 +77,16 @@ export default function DrmKitTest() {
         expect(false).assertEqual(0);
       }
     });
-    /* *
+
+    /**
      * @tc.number    SUB_OH_MediaKeySession_ClearMediaKeysInvalue
      * @tc.name      SUB_OH_MediaKeySession_ClearMediaKeysInvalue
-     * @tc.desc      插件是否支持drm方案；插件名称是正确的
+     * @tc.desc      test OH_MediaKeySession_ClearMediaKeys Null Pointer
+     * @tc.level     Level1
      * @tc.size      MediumTest
-     * @tc.type      Function test
-     * @tc.level     Level0
+     * @tc.type      Function
      */
-    it('SUB_OH_MediaKeySession_ClearMediaKeysInvalue', Level.LEVEL0, () => {
+    it('SUB_OH_MediaKeySession_ClearMediaKeysInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySession_ClearMediaKeysInvalue();
         expect(c).assertEqual(1);
@@ -94,15 +96,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
+    /**
      * @tc.number    SUB_OH_MediaKeySession_GenerateOfflineReleaseRequestInvalue
      * @tc.name      SUB_OH_MediaKeySession_GenerateOfflineReleaseRequestInvalue
-     * @tc.desc      插件是否支持drm方案；插件名称是正确的
+     * @tc.desc      test OH_MediaKeySession_GenerateOfflineReleaseRequest Null Pointer
+     * @tc.level     Level1
      * @tc.size      MediumTest
-     * @tc.type      Function test
-     * @tc.level     Level0
+     * @tc.type      Function
      */
-    it('SUB_OH_MediaKeySession_GenerateOfflineReleaseRequestInvalue', Level.LEVEL0, () => {
+    it('SUB_OH_MediaKeySession_GenerateOfflineReleaseRequestInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySession_GenerateOfflineReleaseRequestInvalue();
         expect(c).assertEqual(1);
@@ -112,15 +114,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
+    /**
      * @tc.number    SUB_OH_MediaKeySession_ProcessOfflineReleaseResponseInvalue
      * @tc.name      SUB_OH_MediaKeySession_ProcessOfflineReleaseResponseInvalue
-     * @tc.desc      插件是否支持drm方案；插件名称是正确的
+     * @tc.desc      test OH_MediaKeySession_ProcessOfflineReleaseResponse Null Pointer
+     * @tc.level     Level1
      * @tc.size      MediumTest
-     * @tc.type      Function test
-     * @tc.level     Level0
+     * @tc.type      Function
      */
-    it('SUB_OH_MediaKeySession_ProcessOfflineReleaseResponseInvalue', Level.LEVEL0, () => {
+    it('SUB_OH_MediaKeySession_ProcessOfflineReleaseResponseInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySession_ProcessOfflineReleaseResponseInvalue();
         expect(c).assertEqual(1);
@@ -130,15 +132,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
+    /**
      * @tc.number    SUB_OH_MediaKeySession_RestoreOfflineMediaKeysInvalue
      * @tc.name      SUB_OH_MediaKeySession_RestoreOfflineMediaKeysInvalue
-     * @tc.desc      插件是否支持drm方案；插件名称是正确的
+     * @tc.desc      test OH_MediaKeySession_RestoreOfflineMediaKeys Null Pointer
+     * @tc.level     Level1
      * @tc.size      MediumTest
-     * @tc.type      Function test
-     * @tc.level     Level0
+     * @tc.type      Function
      */
-    it('SUB_OH_MediaKeySession_RestoreOfflineMediaKeysInvalue', Level.LEVEL0, () => {
+    it('SUB_OH_MediaKeySession_RestoreOfflineMediaKeysInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySession_RestoreOfflineMediaKeysInvalue();
         expect(c).assertEqual(1);
@@ -149,15 +151,15 @@ export default function DrmKitTest() {
     });
 
 
-    /* *
+    /**
      * @tc.number    SUB_OH_MediaKeySession_GetContentProtectionLevelInvalue
      * @tc.name      SUB_OH_MediaKeySession_GetContentProtectionLevelInvalue
-     * @tc.desc      插件是否支持drm方案；插件名称是正确的
+     * @tc.desc      test OH_MediaKeySession_GetContentProtectionLevel Null Pointer
+     * @tc.level     Level1
      * @tc.size      MediumTest
-     * @tc.type      Function test
-     * @tc.level     Level0
+     * @tc.type      Function
      */
-    it('SUB_OH_MediaKeySession_GetContentProtectionLevelInvalue', Level.LEVEL0, () => {
+    it('SUB_OH_MediaKeySession_GetContentProtectionLevelInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySession_GetContentProtectionLevelInvalue();
         expect(c).assertEqual(1);
@@ -167,15 +169,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
+    /**
      * @tc.number    SUB_OH_MediaKeySession_RequireSecureDecoderModuleInvalue
      * @tc.name      SUB_OH_MediaKeySession_RequireSecureDecoderModuleInvalue
-     * @tc.desc      插件是否支持drm方案；插件名称是正确的
+     * @tc.desc      test OH_MediaKeySession_RequireSecureDecoderModule Null Pointer
+     * @tc.level     Level1
      * @tc.size      MediumTest
-     * @tc.type      Function test
-     * @tc.level     Level0
+     * @tc.type      Function
      */
-    it('SUB_OH_MediaKeySession_RequireSecureDecoderModuleInvalue', Level.LEVEL0, () => {
+    it('SUB_OH_MediaKeySession_RequireSecureDecoderModuleInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySession_RequireSecureDecoderModuleInvalue();
         expect(c).assertEqual(1);
@@ -185,15 +187,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
+    /**
      * @tc.number    SUB_OH_MediaKeySession_DestroyInvalue
      * @tc.name      SUB_OH_MediaKeySession_DestroyInvalue
-     * @tc.desc      插件是否支持drm方案；插件名称是正确的
+     * @tc.desc      test OH_MediaKeySession_Destroy Null Pointer
+     * @tc.level     Level1
      * @tc.size      MediumTest
-     * @tc.type      Function test
-     * @tc.level     Level0
+     * @tc.type      Function
      */
-    it('SUB_OH_MediaKeySession_DestroyInvalue', Level.LEVEL0, () => {
+    it('SUB_OH_MediaKeySession_DestroyInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySession_DestroyInvalue();
         expect(c).assertEqual(1);
@@ -203,15 +205,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
+    /**
      * @tc.number    SUB_OH_MediaKeySystem_GetMediaKeySystemsInvalue
      * @tc.name      SUB_OH_MediaKeySystem_GetMediaKeySystemsInvalue
-     * @tc.desc      插件是否支持drm方案；插件名称是正确的
+     * @tc.desc      test OH_MediaKeySystem_GetMediaKeySystems Null Pointer
+     * @tc.level     Level1
      * @tc.size      MediumTest
-     * @tc.type      Function test
-     * @tc.level     Level0
+     * @tc.type      Function
      */
-    it('SUB_OH_MediaKeySystem_GetMediaKeySystemsInvalue', Level.LEVEL0, () => {
+    it('SUB_OH_MediaKeySystem_GetMediaKeySystemsInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySystem_GetMediaKeySystemsInvalue();
         expect(c).assertEqual(1);
@@ -221,13 +223,13 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
+    /**
      * @tc.number    SUB_OH_MediaKeySystem_CreateInvalue
      * @tc.name      SUB_OH_MediaKeySystem_CreateInvalue
-     * @tc.desc      插件是否支持drm方案；插件名称是正确的
+     * @tc.desc      test OH_MediaKeySystem_Create Null Pointer
+     * @tc.level     Level1
      * @tc.size      MediumTest
-     * @tc.type      Function test
-     * @tc.level     Level0
+     * @tc.type      Function
      */
     it('SUB_OH_MediaKeySystem_CreateInvalue', Level.LEVEL0, () => {
       try {
@@ -239,15 +241,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
+    /**
      * @tc.number    SUB_OH_MediaKeySystem_SetConfigurationStringInvalue
      * @tc.name      SUB_OH_MediaKeySystem_SetConfigurationStringInvalue
-     * @tc.desc      插件是否支持drm方案；插件名称是正确的
+     * @tc.desc      test OH_MediaKeySystem_SetConfigurationString Null Pointer
+     * @tc.level     Level1
      * @tc.size      MediumTest
-     * @tc.type      Function test
-     * @tc.level     Level0
+     * @tc.type      Function
      */
-    it('SUB_OH_MediaKeySystem_SetConfigurationStringInvalue', Level.LEVEL0, () => {
+    it('SUB_OH_MediaKeySystem_SetConfigurationStringInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySystem_SetConfigurationStringInvalue();
         expect(c).assertEqual(1);
@@ -257,15 +259,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
+    /**
      * @tc.number    SUB_OH_MediaKeySystem_GetConfigurationStringInvalue
      * @tc.name      SUB_OH_MediaKeySystem_GetConfigurationStringInvalue
-     * @tc.desc      插件是否支持drm方案；插件名称是正确的
+     * @tc.desc      test OH_MediaKeySystem_GetConfigurationString Null Pointer
+     * @tc.level     Level1
      * @tc.size      MediumTest
-     * @tc.type      Function test
-     * @tc.level     Level0
+     * @tc.type      Function
      */
-    it('SUB_OH_MediaKeySystem_GetConfigurationStringInvalue', Level.LEVEL0, () => {
+    it('SUB_OH_MediaKeySystem_GetConfigurationStringInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySystem_GetConfigurationStringInvalue();
         expect(c).assertEqual(1);
@@ -275,15 +277,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
+    /**
      * @tc.number    SUB_OH_MediaKeySystem_SetConfigurationByteArrayInvalue
      * @tc.name      SUB_OH_MediaKeySystem_SetConfigurationByteArrayInvalue
-     * @tc.desc      插件是否支持drm方案；插件名称是正确的
+     * @tc.desc      test OH_MediaKeySystem_SetConfigurationByteArray Null Pointer
+     * @tc.level     Level1
      * @tc.size      MediumTest
-     * @tc.type      Function test
-     * @tc.level     Level0
+     * @tc.type      Function
      */
-    it('SUB_OH_MediaKeySystem_SetConfigurationByteArrayInvalue', Level.LEVEL0, () => {
+    it('SUB_OH_MediaKeySystem_SetConfigurationByteArrayInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySystem_SetConfigurationByteArrayInvalue();
         expect(c).assertEqual(1);
@@ -293,15 +295,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
+    /**
      * @tc.number    SUB_OH_MediaKeySystem_GetConfigurationByteArrayInvalue
      * @tc.name      SUB_OH_MediaKeySystem_GetConfigurationByteArrayInvalue
-     * @tc.desc      插件是否支持drm方案；插件名称是正确的
+     * @tc.desc      test OH_MediaKeySystem_GetConfigurationByteArray Null Pointer
+     * @tc.level     Level1
      * @tc.size      MediumTest
-     * @tc.type      Function test
-     * @tc.level     Level0
+     * @tc.type      Function
      */
-    it('SUB_OH_MediaKeySystem_GetConfigurationByteArrayInvalue', Level.LEVEL0, () => {
+    it('SUB_OH_MediaKeySystem_GetConfigurationByteArrayInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySystem_GetConfigurationByteArrayInvalue();
         expect(c).assertEqual(1);
@@ -311,14 +313,13 @@ export default function DrmKitTest() {
       }
     });
 
-
-    /* *
+    /**
      * @tc.number    SUB_OH_MediaKeySystem_GetStatisticsInvalue
      * @tc.name      SUB_OH_MediaKeySystem_GetStatisticsInvalue
-     * @tc.desc      插件是否支持drm方案；插件名称是正确的
+     * @tc.desc      test OH_MediaKeySystem_GetStatistics Null Pointer
+     * @tc.level     Level1
      * @tc.size      MediumTest
-     * @tc.type      Function test
-     * @tc.level     Level0
+     * @tc.type      Function
      */
     it('SUB_OH_MediaKeySystem_GetStatisticsInvalue', Level.LEVEL0, () => {
       try {
@@ -330,15 +331,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
+    /**
      * @tc.number    SUB_OH_MediaKeySystem_CreateMediaKeySessionInvalue
      * @tc.name      SUB_OH_MediaKeySystem_CreateMediaKeySessionInvalue
-     * @tc.desc      插件是否支持drm方案；插件名称是正确的
+     * @tc.desc      test OH_MediaKeySystem_CreateMediaKeySession Null Pointer
+     * @tc.level     Level1
      * @tc.size      MediumTest
-     * @tc.type      Function test
-     * @tc.level     Level0
+     * @tc.type      Function
      */
-    it('SUB_OH_MediaKeySystem_CreateMediaKeySessionInvalue', Level.LEVEL0, () => {
+    it('SUB_OH_MediaKeySystem_CreateMediaKeySessionInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySystem_CreateMediaKeySessionInvalue();
         expect(c).assertEqual(1);
@@ -348,15 +349,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
+    /**
      * @tc.number    SUB_OH_MediaKeySystem_GenerateKeySystemRequestInvalue
      * @tc.name      SUB_OH_MediaKeySystem_GenerateKeySystemRequestInvalue
-     * @tc.desc      插件是否支持drm方案；插件名称是正确的
+     * @tc.desc      test OH_MediaKeySystem_GenerateKeySystemRequest Null Pointer
+     * @tc.level     Level1
      * @tc.size      MediumTest
-     * @tc.type      Function test
-     * @tc.level     Level0
+     * @tc.type      Function
      */
-    it('SUB_OH_MediaKeySystem_GenerateKeySystemRequestInvalue', Level.LEVEL0, () => {
+    it('SUB_OH_MediaKeySystem_GenerateKeySystemRequestInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySystem_GenerateKeySystemRequestInvalue();
         expect(c).assertEqual(1);
@@ -366,15 +367,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_OH_MediaKeySystem_ProcessKeySystemResponseInvalue
-    * @tc.name      SUB_OH_MediaKeySystem_ProcessKeySystemResponseInvalue
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_OH_MediaKeySystem_ProcessKeySystemResponseInvalue', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_OH_MediaKeySystem_ProcessKeySystemResponseInvalue
+     * @tc.name      SUB_OH_MediaKeySystem_ProcessKeySystemResponseInvalue
+     * @tc.desc      test OH_MediaKeySystem_ProcessKeySystemResponse Null Pointer
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_OH_MediaKeySystem_ProcessKeySystemResponseInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySystem_ProcessKeySystemResponseInvalue();
         expect(c).assertEqual(1);
@@ -384,16 +385,15 @@ export default function DrmKitTest() {
       }
     });
 
-
-    /* *
-    * @tc.number    SUB_OH_MediaKeySystem_GetOfflineMediaKeyIdsInvalue
-    * @tc.name      SUB_OH_MediaKeySystem_GetOfflineMediaKeyIdsInvalue
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_OH_MediaKeySystem_GetOfflineMediaKeyIdsInvalue', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_OH_MediaKeySystem_GetOfflineMediaKeyIdsInvalue
+     * @tc.name      SUB_OH_MediaKeySystem_GetOfflineMediaKeyIdsInvalue
+     * @tc.desc      test OH_MediaKeySystem_GetOfflineMediaKeyIds Null Pointer
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_OH_MediaKeySystem_GetOfflineMediaKeyIdsInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySystem_GetOfflineMediaKeyIdsInvalue();
         expect(c).assertEqual(1);
@@ -403,15 +403,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_OH_MediaKeySystem_GetOfflineMediaKeyStatusInvalue
-    * @tc.name      SUB_OH_MediaKeySystem_GetOfflineMediaKeyStatusInvalue
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_OH_MediaKeySystem_GetOfflineMediaKeyStatusInvalue', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_OH_MediaKeySystem_GetOfflineMediaKeyStatusInvalue
+     * @tc.name      SUB_OH_MediaKeySystem_GetOfflineMediaKeyStatusInvalue
+     * @tc.desc      test OH_MediaKeySystem_GetOfflineMediaKeyStatus Null Pointer
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_OH_MediaKeySystem_GetOfflineMediaKeyStatusInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySystem_GetOfflineMediaKeyStatusInvalue();
         expect(c).assertEqual(1);
@@ -421,15 +421,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_OH_MediaKeySystem_ClearOfflineMediaKeysInvalue
-    * @tc.name      SUB_OH_MediaKeySystem_ClearOfflineMediaKeysInvalue
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_OH_MediaKeySystem_ClearOfflineMediaKeysInvalue', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_OH_MediaKeySystem_ClearOfflineMediaKeysInvalue
+     * @tc.name      SUB_OH_MediaKeySystem_ClearOfflineMediaKeysInvalue
+     * @tc.desc      test OH_MediaKeySystem_ClearOfflineMediaKeys Null Pointer
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_OH_MediaKeySystem_ClearOfflineMediaKeysInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySystem_ClearOfflineMediaKeysInvalue();
         expect(c).assertEqual(1);
@@ -439,15 +439,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_OH_MediaKeySystem_GetCertificateStatusInvalue
-    * @tc.name      SUB_OH_MediaKeySystem_GetCertificateStatusInvalue
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_OH_MediaKeySystem_GetCertificateStatusInvalue', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_OH_MediaKeySystem_GetCertificateStatusInvalue
+     * @tc.name      SUB_OH_MediaKeySystem_GetCertificateStatusInvalue
+     * @tc.desc      test OH_MediaKeySystem_GetCertificateStatus Null Pointer
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_OH_MediaKeySystem_GetCertificateStatusInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySystem_GetCertificateStatusInvalue();
         expect(c).assertEqual(1);
@@ -457,15 +457,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_OH_MediaKeySystem_DestroyInvalue
-    * @tc.name      SUB_OH_MediaKeySystem_DestroyInvalue
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_OH_MediaKeySystem_DestroyInvalue', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_OH_MediaKeySystem_DestroyInvalue
+     * @tc.name      SUB_OH_MediaKeySystem_DestroyInvalue
+     * @tc.desc      test OH_MediaKeySystem_Destroy Null Pointer
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_OH_MediaKeySystem_DestroyInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySystem_DestroyInvalue();
         expect(c).assertEqual(1);
@@ -474,15 +474,16 @@ export default function DrmKitTest() {
         expect(false).assertEqual(0);
       }
     });
-    /* *
-    * @tc.number    SUB_OH_MediaKeySession_CheckMediaKeyStatusInvalue
-    * @tc.name      SUB_OH_MediaKeySession_CheckMediaKeyStatusInvalue
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_OH_MediaKeySession_CheckMediaKeyStatusInvalue', Level.LEVEL0, () => {
+
+    /**
+     * @tc.number    SUB_OH_MediaKeySession_CheckMediaKeyStatusInvalue
+     * @tc.name      SUB_OH_MediaKeySession_CheckMediaKeyStatusInvalue
+     * @tc.desc      test OH_MediaKeySession_CheckMediaKeyStatus Null Pointer
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_OH_MediaKeySession_CheckMediaKeyStatusInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySession_CheckMediaKeyStatusInvalue();
         expect(c).assertEqual(1);
@@ -491,15 +492,16 @@ export default function DrmKitTest() {
         expect(false).assertEqual(0);
       }
     });
-    /* *
-    * @tc.number    SUB_OH_MediaKeySystem_GetMaxContentProtectionLevelInvalue
-    * @tc.name      SUB_OH_MediaKeySystem_GetMaxContentProtectionLevelInvalue
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_OH_MediaKeySystem_GetMaxContentProtectionLevelInvalue', Level.LEVEL0, () => {
+
+    /**
+     * @tc.number    SUB_OH_MediaKeySystem_GetMaxContentProtectionLevelInvalue
+     * @tc.name      SUB_OH_MediaKeySystem_GetMaxContentProtectionLevelInvalue
+     * @tc.desc      test OH_MediaKeySystem_GetMaxContentProtectionLevel Null Pointer
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_OH_MediaKeySystem_GetMaxContentProtectionLevelInvalue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeySystem_GetMaxContentProtectionLevelInvalue();
         expect(c).assertEqual(1);
@@ -509,15 +511,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_DRM_MediaKeyRequestType
-    * @tc.name      SUB_DRM_MediaKeyRequestType
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_DRM_MediaKeyRequestType', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_DRM_MediaKeyRequestType
+     * @tc.name      SUB_DRM_MediaKeyRequestType
+     * @tc.desc      test DRM_MediaKeyRequestType
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_DRM_MediaKeyRequestType', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeyRequestType();
         expect(c).assertEqual(1);
@@ -526,15 +528,16 @@ export default function DrmKitTest() {
         expect(false).assertEqual(0);
       }
     });
-    /* *
-    * @tc.number    SUB_DRM_MediaKeyRequestDefaultUrl
-    * @tc.name      SUB_DRM_MediaKeyRequestDefaultUrl
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_DRM_MediaKeyRequestDefaultUrl', Level.LEVEL0, () => {
+
+    /**
+     * @tc.number    SUB_DRM_MediaKeyRequestDefaultUrl
+     * @tc.name      SUB_DRM_MediaKeyRequestDefaultUrl
+     * @tc.desc      test DRM_MediaKeyRequestDefaultUrl
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_DRM_MediaKeyRequestDefaultUrl', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.mediaKeyRequestDefaultUrl();
         expect(c).assertEqual(1);
@@ -544,15 +547,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_DRM_CertificateStatusTest1
-    * @tc.name      SUB_DRM_CertificateStatusTest1
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_DRM_CertificateStatusTest1', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_DRM_CertificateStatusTest1
+     * @tc.name      SUB_DRM_CertificateStatusTest1
+     * @tc.desc      test DRM_CertificateStatus
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_DRM_CertificateStatusTest1', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.drmCertificateStatusTest1();
         expect(c).assertEqual(1);
@@ -562,14 +565,14 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_DRM_CertificateStatusTest2
-    * @tc.name      SUB_DRM_CertificateStatusTest2
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
+    /**
+     * @tc.number    SUB_DRM_CertificateStatusTest2
+     * @tc.name      SUB_DRM_CertificateStatusTest2
+     * @tc.desc      test DRM_CertificateStatus
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
     it('SUB_DRM_CertificateStatusTest2', Level.LEVEL0, () => {
       try {
         let c: number = testNapi.drmCertificateStatusTest2();
@@ -580,15 +583,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_DRM_CertificateStatusTest3
-    * @tc.name      SUB_DRM_CertificateStatusTest3
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_DRM_CertificateStatusTest3', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_DRM_CertificateStatusTest3
+     * @tc.name      SUB_DRM_CertificateStatusTest3
+     * @tc.desc      test DRM_CertificateStatus
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_DRM_CertificateStatusTest3', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.drmCertificateStatusTest3();
         expect(c).assertEqual(1);
@@ -598,15 +601,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UNKNOWN
-    * @tc.name      SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UNKNOWN
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UNKNOWN', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UNKNOWN
+     * @tc.name      SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UNKNOWN
+     * @tc.desc      test DRMMediaKeyRequestType MEDIA_KEY_REQUEST_TYPE_UNKNOWN
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UNKNOWN', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UNKNOWN();
         expect(c).assertEqual(1);
@@ -616,15 +619,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_INITIAL
-    * @tc.name      SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_INITIAL
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_INITIAL', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_INITIAL
+     * @tc.name      SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_INITIAL
+     * @tc.desc      test DRMMediaKeyRequestType MEDIA_KEY_REQUEST_TYPE_INITIAL
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_INITIAL', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_INITIAL();
         expect(c).assertEqual(1);
@@ -634,15 +637,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RENEWAL
-    * @tc.name      SUB_DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RENEWAL
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RENEWAL', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RENEWAL
+     * @tc.name      SUB_DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RENEWAL
+     * @tc.desc      test DRM_MediaKeyRequestType MEDIA_KEY_REQUEST_TYPE_RENEWAL
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RENEWAL', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RENEWAL();
         expect(c).assertEqual(1);
@@ -652,15 +655,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RELEASE
-    * @tc.name      SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RELEASE
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RELEASE', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RELEASE
+     * @tc.name      SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RELEASE
+     * @tc.desc      test DRMMediaKeyRequestType MEDIA_KEY_REQUEST_TYPE_RELEASE
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RELEASE', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RELEASE();
         expect(c).assertEqual(1);
@@ -670,15 +673,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_NONE
-    * @tc.name      SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_NONE
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_NONE', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_NONE
+     * @tc.name      SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_NONE
+     * @tc.desc      test DRMMediaKeyRequestType MEDIA_KEY_REQUEST_TYPE_NONE
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_NONE', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_NONE();
         expect(c).assertEqual(1);
@@ -687,15 +690,16 @@ export default function DrmKitTest() {
         expect(false).assertEqual(0);
       }
     });
-    /* *
-    * @tc.number    SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UPDATE
-    * @tc.name      SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UPDATE
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UPDATE', Level.LEVEL0, () => {
+
+    /**
+     * @tc.number    SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UPDATE
+     * @tc.name      SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UPDATE
+     * @tc.desc      test DRMMediaKeyRequestType MEDIA_KEY_REQUEST_TYPE_UPDATE
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UPDATE', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UPDATE();
         expect(c).assertEqual(1);
@@ -705,15 +709,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_DRMOfflineMediaKeyStatusOFFLINE_MEDIA_KEY_STATUS_INACTIVE
-    * @tc.name      SUB_DRMOfflineMediaKeyStatusOFFLINE_MEDIA_KEY_STATUS_INACTIVE
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_DRMOfflineMediaKeyStatusOFFLINE_MEDIA_KEY_STATUS_INACTIVE', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_DRMOfflineMediaKeyStatusOFFLINE_MEDIA_KEY_STATUS_INACTIVE
+     * @tc.name      SUB_DRMOfflineMediaKeyStatusOFFLINE_MEDIA_KEY_STATUS_INACTIVE
+     * @tc.desc      test DRMOfflineMediaKeyStatus OFFLINE_MEDIA_KEY_STATUS_INACTIVE
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_DRMOfflineMediaKeyStatusOFFLINE_MEDIA_KEY_STATUS_INACTIVE', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.DRMOfflineMediaKeyStatusOFFLINE_MEDIA_KEY_STATUS_INACTIVE();
         expect(c).assertEqual(1);
@@ -723,16 +727,15 @@ export default function DrmKitTest() {
       }
     });
 
-
-    /* *
-    * @tc.number    SUB_DRMKeysInfo_EvenType
-    * @tc.name      SUB_DRMKeysInfo_EvenType
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_DRMKeysInfo_EvenType', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_DRMKeysInfo_EvenType
+     * @tc.name      SUB_DRMKeysInfo_EvenType
+     * @tc.desc      test DRMKeysInfo_EvenType
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_DRMKeysInfo_EvenType', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.DRMKeysInfo_EvenType();
         expect(c).assertEqual(1);
@@ -742,15 +745,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_EvenType_EVENT_DRM_BASE
-    * @tc.name      SUB_EvenType_EVENT_DRM_BASE
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_EvenType_EVENT_DRM_BASE', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_EvenType_EVENT_DRM_BASE
+     * @tc.name      SUB_EvenType_EVENT_DRM_BASE
+     * @tc.desc      test EvenType EVENT_DRM_BASE
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_EvenType_EVENT_DRM_BASE', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.evenType_EVENT_DRM_BASE();
         expect(c).assertEqual(1);
@@ -760,15 +763,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_evenType_EVENT_PROVISION_REQUIRED
-    * @tc.name      SUB_evenType_EVENT_PROVISION_REQUIRED
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_evenType_EVENT_PROVISION_REQUIRED', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_evenType_EVENT_PROVISION_REQUIRED
+     * @tc.name      SUB_evenType_EVENT_PROVISION_REQUIRED
+     * @tc.desc      test EvenType EVENT_PROVISION_REQUIRED EVENT_DRM_BASE
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_evenType_EVENT_PROVISION_REQUIRED', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.evenType_EVENT_PROVISION_REQUIRED();
         expect(c).assertEqual(1);
@@ -778,15 +781,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_EvenType_EVENT_VENDOR_DEFINED
-    * @tc.name      SUB_EvenType_EVENT_VENDOR_DEFINED
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_EvenType_EVENT_VENDOR_DEFINED', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_EvenType_EVENT_VENDOR_DEFINED
+     * @tc.name      SUB_EvenType_EVENT_VENDOR_DEFINED
+     * @tc.desc      test EvenType EVENT_VENDOR_DEFINED
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_EvenType_EVENT_VENDOR_DEFINED', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.evenType_EVENT_VENDOR_DEFINED();
         expect(c).assertEqual(1);
@@ -796,15 +799,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_EvenType_EVENT_EXPIRATION_UPDATE
-    * @tc.name      SUB_EvenType_EVENT_EXPIRATION_UPDATE
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_EvenType_EVENT_EXPIRATION_UPDATE', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_EvenType_EVENT_EXPIRATION_UPDATE
+     * @tc.name      SUB_EvenType_EVENT_EXPIRATION_UPDATE
+     * @tc.desc      test EvenType EVENT_EXPIRATION_UPDATE
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_EvenType_EVENT_EXPIRATION_UPDATE', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.evenType_EVENT_EXPIRATION_UPDATE();
         expect(c).assertEqual(1);
@@ -814,15 +817,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_DRMKeysInfo_keyId
-    * @tc.name      SUB_DRMKeysInfo_keyId
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_DRMKeysInfo_keyId', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_DRMKeysInfo_keyId
+     * @tc.name      SUB_DRMKeysInfo_keyId
+     * @tc.desc      test DRMKeysInfo keyId
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_DRMKeysInfo_keyId', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.DRMKeysInfo_keyId();
         expect(c).assertEqual(1);
@@ -832,15 +835,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_DRMKeysInfo_keysInfoCount
-    * @tc.name      SUB_DRMKeysInfo_keysInfoCount
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_DRMKeysInfo_keysInfoCount', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_DRMKeysInfo_keysInfoCount
+     * @tc.name      SUB_DRMKeysInfo_keysInfoCount
+     * @tc.desc      test DRMKeysInfo_keysInfo Count
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_DRMKeysInfo_keysInfoCount', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.DRMKeysInfo_keysInfoCount();
         expect(c).assertEqual(1);
@@ -850,15 +853,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_DRMKeysInfo_statusValue
-    * @tc.name      SUB_DRMKeysInfo_statusValue
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_DRMKeysInfo_statusValue', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_DRMKeysInfo_statusValue
+     * @tc.name      SUB_DRMKeysInfo_statusValue
+     * @tc.desc      test DRMKeysInfo statusValue
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_DRMKeysInfo_statusValue', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.DRMKeysInfo_statusValue();
         expect(c).assertEqual(1);
@@ -868,15 +871,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_DrmErrCode_DRM_ERR_UNKNOWN
-    * @tc.name      SUB_DrmErrCode_DRM_ERR_UNKNOWN
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_DrmErrCode_DRM_ERR_UNKNOWN', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_DrmErrCode_DRM_ERR_UNKNOWN
+     * @tc.name      SUB_DrmErrCode_DRM_ERR_UNKNOWN
+     * @tc.desc      test DrmErrCode DRM_ERR_UNKNOWN
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_DrmErrCode_DRM_ERR_UNKNOWN', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.DrmErrCode_DRM_ERR_UNKNOWN();
         expect(c).assertEqual(1);
@@ -886,15 +889,15 @@ export default function DrmKitTest() {
       }
     });
 
-    /* *
-    * @tc.number    SUB_OHMediaKeySystem_Destroy_DRM_ERR_UNKNOWN
-    * @tc.name      SUB_OHMediaKeySystem_Destroy_DRM_ERR_UNKNOWN
-    * @tc.desc      插件是否支持drm方案；插件名称是正确的
-    * @tc.size      MediumTest
-    * @tc.type      Function test
-    * @tc.level     Level0
-    */
-    it('SUB_OHMediaKeySystem_Destroy_DRM_ERR_UNKNOWN', Level.LEVEL0, () => {
+    /**
+     * @tc.number    SUB_OHMediaKeySystem_Destroy_DRM_ERR_UNKNOWN
+     * @tc.name      SUB_OHMediaKeySystem_Destroy_DRM_ERR_UNKNOWN
+     * @tc.desc      test OHMediaKeySystem_Destroy DRM_ERR_UNKNOWN
+     * @tc.level     Level1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     */
+    it('SUB_OHMediaKeySystem_Destroy_DRM_ERR_UNKNOWN', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.OHMediaKeySystem_Destroy_DRM_ERR_UNKNOWN();
         expect(c).assertEqual(1);
