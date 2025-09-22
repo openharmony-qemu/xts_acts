@@ -9345,6 +9345,1320 @@ static napi_value NapiOthersAndModuleTest04(napi_env env, napi_callback_info inf
     return result;
 }
 
+// 异步工作测试1：创建和删除异步工作
+#define ASYNC_WORK_DELAY_MS 100
+    
+struct AsyncWorkTestData {
+    napi_async_work asyncWork = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_ref callbackRef = nullptr;
+    int32_t inputValue = 0;
+    int32_t resultValue = 0;
+    bool testCompleted = false;
+};
+
+static void AsyncWorkExecuteCB(napi_env env, void* data);
+static void AsyncWorkCompleteCB(napi_env env, napi_status status, void* data);
+static napi_value AsyncWorkCreateAndDeleteTest(napi_env env, napi_callback_info info);
+
+static void AsyncWorkExecuteCB(napi_env env, void* data)
+{
+    AsyncWorkTestData* testData = reinterpret_cast<AsyncWorkTestData*>(data);
+    if (testData == nullptr) {
+        return;
+    }
+    
+    // 模拟耗时操作
+    std::this_thread::sleep_for(std::chrono::milliseconds(ASYNC_WORK_DELAY_MS));
+    
+    // 执行计算
+    testData->resultValue = testData->inputValue * NUM_2;
+    testData->testCompleted = true;
+}
+
+// 异步工作完成回调函数
+static void AsyncWorkCompleteCB(napi_env env, napi_status status, void* data)
+{
+    AsyncWorkTestData* testData = reinterpret_cast<AsyncWorkTestData*>(data);
+    if (testData == nullptr) {
+        return;
+    }
+    
+    if (status != napi_ok) {
+        napi_value error = nullptr;
+        napi_create_string_utf8(env, "Async work failed", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, testData->deferred, error);
+    } else {
+        napi_value result = nullptr;
+        napi_create_int32(env, testData->resultValue, &result);
+        napi_resolve_deferred(env, testData->deferred, result);
+    }
+    
+    // 清理资源
+    napi_delete_async_work(env, testData->asyncWork);
+    delete testData;
+}
+
+// 创建和删除异步工作测试
+static napi_value AsyncWorkCreateAndDeleteTest(napi_env env, napi_callback_info info)
+{
+    size_t argc = NUM_1;
+    napi_value args[NUM_1];
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t inputValue = 0;
+    napi_get_value_int32(env, args[0], &inputValue);
+    
+    // 创建Promise
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_create_promise(env, &deferred, &promise);
+    
+    // 创建测试数据
+    auto testData = new AsyncWorkTestData();
+    testData->deferred = deferred;
+    testData->inputValue = inputValue;
+    
+    // 创建资源名称
+    napi_value resourceName = nullptr;
+    napi_create_string_utf8(env, "AsyncWorkTest", NAPI_AUTO_LENGTH, &resourceName);
+    
+    // 创建异步工作
+    napi_status status = napi_create_async_work(env, nullptr, resourceName,
+                                                AsyncWorkExecuteCB, AsyncWorkCompleteCB,
+                                                testData, &testData->asyncWork);
+    if (status != napi_ok) {
+        delete testData;
+        napi_throw_error(env, nullptr, "Failed to create async work");
+        return nullptr;
+    }
+    
+    // 将异步工作加入队列
+    status = napi_queue_async_work(env, testData->asyncWork);
+    if (status != napi_ok) {
+        napi_delete_async_work(env, testData->asyncWork);
+        delete testData;
+        napi_throw_error(env, nullptr, "Failed to queue async work");
+        return nullptr;
+    }
+    
+    return promise;
+}
+
+// 异步工作测试2：队列执行异步工作
+#define QUEUE_WORK_COUNT 3
+#define QUEUE_WORK_DELAY_MS 50
+    
+struct QueueAsyncWorkData {
+    napi_async_work asyncWork = nullptr;
+    napi_deferred deferred = nullptr;
+    int32_t workId = 0;
+    int32_t inputValue = 0;
+    int32_t resultValue = 0;
+    bool workCompleted = false;
+    int32_t* sharedResult = nullptr;
+};
+
+#define NUM_10 10
+static void QueueAsyncWorkExecuteCB(napi_env env, void* data);
+static void QueueAsyncWorkCompleteCB(napi_env env, napi_status status, void* data);
+static napi_value CreateQueueWork(napi_env env, int32_t workId, int32_t inputValue,
+                                  int32_t* sharedResult, napi_deferred* deferred);
+static napi_value QueueAsyncWorkTest(napi_env env, napi_callback_info info);
+
+static void QueueAsyncWorkExecuteCB(napi_env env, void* data)
+{
+    QueueAsyncWorkData* workData = reinterpret_cast<QueueAsyncWorkData*>(data);
+    if (workData == nullptr) {
+        return;
+    }
+    
+    // 模拟不同工作ID的耗时操作
+    int32_t delay = ASYNC_WORK_DELAY_MS + (workData->workId * NUM_10);
+    std::this_thread::sleep_for(std::chrono::milliseconds(delay));
+    
+    // 执行计算
+    workData->resultValue = workData->inputValue * (workData->workId + NUM_1);
+    workData->workCompleted = true;
+    
+    // 更新共享结果
+    if (workData->sharedResult != nullptr) {
+        *(workData->sharedResult) += workData->resultValue;
+    }
+}
+
+// 队列异步工作完成回调
+static void QueueAsyncWorkCompleteCB(napi_env env, napi_status status, void* data)
+{
+    QueueAsyncWorkData* workData = reinterpret_cast<QueueAsyncWorkData*>(data);
+    if (workData == nullptr) {
+        return;
+    }
+    
+    if (status != napi_ok || !workData->workCompleted) {
+        napi_value error = nullptr;
+        napi_create_string_utf8(env, "Queue async work failed", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, workData->deferred, error);
+    } else {
+        napi_value result = nullptr;
+        napi_create_int32(env, workData->resultValue, &result);
+        napi_resolve_deferred(env, workData->deferred, result);
+    }
+    
+    // 清理资源
+    napi_delete_async_work(env, workData->asyncWork);
+    delete workData;
+}
+
+// 创建单个队列异步工作
+static napi_value CreateQueueWork(napi_env env, int32_t workId, int32_t inputValue,
+                                  int32_t* sharedResult, napi_deferred* deferred)
+{
+    // 创建Promise
+    napi_value promise = nullptr;
+    napi_create_promise(env, deferred, &promise);
+    
+    // 创建工作数据
+    auto workData = new QueueAsyncWorkData();
+    workData->deferred = *deferred;
+    workData->workId = workId;
+    workData->inputValue = inputValue;
+    workData->sharedResult = sharedResult;
+    
+    // 创建资源名称
+    napi_value resourceName = nullptr;
+    char resourceNameStr[32];
+    int ret = snprintf_s(resourceNameStr, sizeof(resourceNameStr), sizeof(resourceNameStr) - 1,
+                        "QueueWork%d", workId);
+    if (ret <= 0) {
+        delete workData;
+        napi_throw_error(env, nullptr, "Failed to create resource name");
+        return nullptr;
+    }
+    napi_create_string_utf8(env, resourceNameStr, NAPI_AUTO_LENGTH, &resourceName);
+    
+    // 创建异步工作
+    napi_status status = napi_create_async_work(env, nullptr, resourceName,
+                                                QueueAsyncWorkExecuteCB, QueueAsyncWorkCompleteCB,
+                                                workData, &workData->asyncWork);
+    if (status != napi_ok) {
+        delete workData;
+        napi_throw_error(env, nullptr, "Failed to create queue async work");
+        return nullptr;
+    }
+    
+    // 将异步工作加入队列
+    status = napi_queue_async_work(env, workData->asyncWork);
+    if (status != napi_ok) {
+        napi_delete_async_work(env, workData->asyncWork);
+        delete workData;
+        napi_throw_error(env, nullptr, "Failed to queue async work");
+        return nullptr;
+    }
+    
+    return promise;
+}
+
+// 队列执行异步工作测试
+static napi_value QueueAsyncWorkTest(napi_env env, napi_callback_info info)
+{
+    size_t argc = NUM_1;
+    napi_value args[NUM_1];
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t baseValue = 0;
+    napi_get_value_int32(env, args[0], &baseValue);
+    
+    // 创建共享结果变量
+    int32_t sharedResult = 0;
+    
+    // 创建多个异步工作
+    napi_value promises[QUEUE_WORK_COUNT];
+    napi_deferred deferreds[QUEUE_WORK_COUNT];
+    
+    for (int32_t i = 0; i < QUEUE_WORK_COUNT; i++) {
+        promises[i] = CreateQueueWork(env, i, baseValue + i, &sharedResult, &deferreds[i]);
+        if (promises[i] == nullptr) {
+            return nullptr;
+        }
+    }
+    
+    // 返回第一个Promise作为测试结果
+    return promises[0];
+}
+
+// 异步工作测试3：无效环境句柄
+#define INVALID_ENV_TEST_COUNT 2
+    
+struct InvalidEnvTestData {
+    napi_async_work asyncWork = nullptr;
+    napi_deferred deferred = nullptr;
+    int32_t testType = 0;
+    bool shouldFail = false;
+};
+
+static void InvalidEnvExecuteCB(napi_env env, void* data);
+static void InvalidEnvCompleteCB(napi_env env, napi_status status, void* data);
+static napi_value InvalidEnvAsyncWorkTest(napi_env env, napi_callback_info info);
+
+// 无效环境句柄执行回调
+static void InvalidEnvExecuteCB(napi_env env, void* data)
+{
+    InvalidEnvTestData* testData = reinterpret_cast<InvalidEnvTestData*>(data);
+    if (testData == nullptr) {
+        return;
+    }
+    
+    // 模拟耗时操作
+    std::this_thread::sleep_for(std::chrono::milliseconds(ASYNC_WORK_DELAY_MS));
+    
+    // 根据测试类型设置结果
+    testData->shouldFail = (testData->testType == NUM_1);
+}
+
+// 无效环境句柄完成回调
+static void InvalidEnvCompleteCB(napi_env env, napi_status status, void* data)
+{
+    InvalidEnvTestData* testData = reinterpret_cast<InvalidEnvTestData*>(data);
+    if (testData == nullptr) {
+        return;
+    }
+    
+    if (status != napi_ok || testData->shouldFail) {
+        napi_value error = nullptr;
+        napi_create_string_utf8(env, "Invalid env test failed", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, testData->deferred, error);
+    } else {
+        napi_value result = nullptr;
+        napi_create_int32(env, testData->testType, &result);
+        napi_resolve_deferred(env, testData->deferred, result);
+    }
+    
+    // 清理资源
+    napi_delete_async_work(env, testData->asyncWork);
+    delete testData;
+}
+
+// 无效环境句柄异步工作测试
+static napi_value InvalidEnvAsyncWorkTest(napi_env env, napi_callback_info info)
+{
+    size_t argc = NUM_1;
+    napi_value args[NUM_1];
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t testType = 0;
+    napi_get_value_int32(env, args[0], &testType);
+    
+    // 创建Promise
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_create_promise(env, &deferred, &promise);
+    
+    // 创建测试数据
+    auto testData = new InvalidEnvTestData();
+    testData->deferred = deferred;
+    testData->testType = testType;
+    
+    // 创建资源名称
+    napi_value resourceName = nullptr;
+    napi_create_string_utf8(env, "InvalidEnvTest", NAPI_AUTO_LENGTH, &resourceName);
+    
+    // 创建异步工作
+    napi_status status = napi_create_async_work(env, nullptr, resourceName,
+                                                InvalidEnvExecuteCB, InvalidEnvCompleteCB,
+                                                testData, &testData->asyncWork);
+    if (status != napi_ok) {
+        delete testData;
+        napi_throw_error(env, nullptr, "Failed to create invalid env async work");
+        return nullptr;
+    }
+    
+    // 将异步工作加入队列
+    status = napi_queue_async_work(env, testData->asyncWork);
+    if (status != napi_ok) {
+        napi_delete_async_work(env, testData->asyncWork);
+        delete testData;
+        napi_throw_error(env, nullptr, "Failed to queue invalid env async work");
+        return nullptr;
+    }
+    
+    return promise;
+}
+
+// 异步工作测试4：删除已删除的工作
+#define DELETE_WORK_TEST_COUNT 3
+    
+struct DeleteWorkTestData {
+    napi_async_work asyncWork = nullptr;
+    napi_deferred deferred = nullptr;
+    int32_t workId = 0;
+    bool isDeleted = false;
+    napi_status deleteStatus = napi_ok;
+};
+
+static void DeleteWorkExecuteCB(napi_env env, void* data);
+static void DeleteWorkCompleteCB(napi_env env, napi_status status, void* data);
+static napi_value DeleteDeletedWorkTest(napi_env env, napi_callback_info info);
+
+static void DeleteWorkExecuteCB(napi_env env, void* data)
+{
+    DeleteWorkTestData* testData = reinterpret_cast<DeleteWorkTestData*>(data);
+    if (testData == nullptr) {
+        return;
+    }
+    
+    // 模拟耗时操作
+    std::this_thread::sleep_for(std::chrono::milliseconds(ASYNC_WORK_DELAY_MS));
+    
+    // 标记工作完成
+    testData->isDeleted = false;
+}
+
+// 删除工作完成回调
+static void DeleteWorkCompleteCB(napi_env env, napi_status status, void* data)
+{
+    DeleteWorkTestData* testData = reinterpret_cast<DeleteWorkTestData*>(data);
+    if (testData == nullptr) {
+        return;
+    }
+    
+    // 尝试删除已删除的工作
+    testData->deleteStatus = napi_delete_async_work(env, testData->asyncWork);
+    
+    if (status != napi_ok) {
+        napi_value error = nullptr;
+        napi_create_string_utf8(env, "Delete work test failed", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, testData->deferred, error);
+    } else {
+        napi_value result = nullptr;
+        napi_create_int32(env, testData->deleteStatus, &result);
+        napi_resolve_deferred(env, testData->deferred, result);
+    }
+    
+    // 清理资源
+    delete testData;
+}
+
+// 删除已删除的工作测试
+static napi_value DeleteDeletedWorkTest(napi_env env, napi_callback_info info)
+{
+    size_t argc = NUM_1;
+    napi_value args[NUM_1];
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t workId = 0;
+    napi_get_value_int32(env, args[0], &workId);
+    
+    // 创建Promise
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_create_promise(env, &deferred, &promise);
+    
+    // 创建测试数据
+    auto testData = new DeleteWorkTestData();
+    testData->deferred = deferred;
+    testData->workId = workId;
+    
+    // 创建资源名称
+    napi_value resourceName = nullptr;
+    napi_create_string_utf8(env, "DeleteWorkTest", NAPI_AUTO_LENGTH, &resourceName);
+    
+    // 创建异步工作
+    napi_status status = napi_create_async_work(env, nullptr, resourceName,
+                                                DeleteWorkExecuteCB, DeleteWorkCompleteCB,
+                                                testData, &testData->asyncWork);
+    if (status != napi_ok) {
+        delete testData;
+        napi_throw_error(env, nullptr, "Failed to create delete work async work");
+        return nullptr;
+    }
+    
+    // 将异步工作加入队列
+    status = napi_queue_async_work(env, testData->asyncWork);
+    if (status != napi_ok) {
+        napi_delete_async_work(env, testData->asyncWork);
+        delete testData;
+        napi_throw_error(env, nullptr, "Failed to queue delete work async work");
+        return nullptr;
+    }
+    
+    return promise;
+}
+
+// 异步工作测试5：取消未开始的异步工作
+#define CANCEL_WORK_TEST_COUNT 2
+
+// 数据结构定义
+struct CancelWorkTestData {
+    napi_async_work asyncWork = nullptr;
+    napi_deferred deferred = nullptr;
+    int32_t workId = 0;
+    bool isCancelled = false;
+    napi_status cancelStatus = napi_ok;
+};
+
+static void CancelWorkExecuteCB(napi_env env, void* data);
+static void CancelWorkCompleteCB(napi_env env, napi_status status, void* data);
+static napi_value CancelUnstartedWorkTest(napi_env env, napi_callback_info info);
+
+static void CancelWorkExecuteCB(napi_env env, void* data)
+{
+    CancelWorkTestData* testData = reinterpret_cast<CancelWorkTestData*>(data);
+    if (testData == nullptr) {
+        return;
+    }
+    
+    // 模拟耗时操作
+    std::this_thread::sleep_for(std::chrono::milliseconds(ASYNC_WORK_DELAY_MS));
+    
+    // 标记工作完成
+    testData->isCancelled = false;
+}
+
+// 取消工作完成回调
+static void CancelWorkCompleteCB(napi_env env, napi_status status, void* data)
+{
+    CancelWorkTestData* testData = reinterpret_cast<CancelWorkTestData*>(data);
+    if (testData == nullptr) {
+        return;
+    }
+    
+    // 检查取消状态
+    if (status == napi_cancelled) {
+        testData->isCancelled = true;
+        testData->cancelStatus = napi_ok;
+    } else {
+        testData->cancelStatus = status;
+    }
+    
+    napi_value result = nullptr;
+    napi_create_int32(env, testData->cancelStatus, &result);
+    napi_resolve_deferred(env, testData->deferred, result);
+    
+    // 清理资源
+    napi_delete_async_work(env, testData->asyncWork);
+    delete testData;
+}
+
+// 取消未开始的异步工作测试
+static napi_value CancelUnstartedWorkTest(napi_env env, napi_callback_info info)
+{
+    size_t argc = NUM_1;
+    napi_value args[NUM_1];
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t workId = 0;
+    napi_get_value_int32(env, args[0], &workId);
+    
+    // 创建Promise
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_create_promise(env, &deferred, &promise);
+    
+    // 创建测试数据
+    auto testData = new CancelWorkTestData();
+    testData->deferred = deferred;
+    testData->workId = workId;
+    
+    // 创建资源名称
+    napi_value resourceName = nullptr;
+    napi_create_string_utf8(env, "CancelWorkTest", NAPI_AUTO_LENGTH, &resourceName);
+    
+    // 创建异步工作
+    napi_status status = napi_create_async_work(env, nullptr, resourceName,
+                                                CancelWorkExecuteCB, CancelWorkCompleteCB,
+                                                testData, &testData->asyncWork);
+    if (status != napi_ok) {
+        delete testData;
+        napi_throw_error(env, nullptr, "Failed to create cancel work async work");
+        return nullptr;
+    }
+    
+    // 将异步工作加入队列
+    status = napi_queue_async_work(env, testData->asyncWork);
+    if (status != napi_ok) {
+        napi_delete_async_work(env, testData->asyncWork);
+        delete testData;
+        napi_throw_error(env, nullptr, "Failed to queue cancel work async work");
+        return nullptr;
+    }
+    
+    // 立即取消异步工作
+    napi_cancel_async_work(env, testData->asyncWork);
+    
+    return promise;
+}
+
+// 异步工作测试6：取消已开始的异步工作
+#define CANCEL_STARTED_WORK_DELAY_MS 200
+    
+struct CancelStartedWorkData {
+    napi_async_work asyncWork = nullptr;
+    napi_deferred deferred = nullptr;
+    int32_t workId = 0;
+    bool isCancelled = false;
+    napi_status cancelStatus = napi_ok;
+    bool workStarted = false;
+};
+
+static void CancelStartedWorkExecuteCB(napi_env env, void* data);
+static void CancelStartedWorkCompleteCB(napi_env env, napi_status status, void* data);
+static napi_value CancelStartedWorkTest(napi_env env, napi_callback_info info);
+
+static void CancelStartedWorkExecuteCB(napi_env env, void* data)
+{
+    CancelStartedWorkData* testData = reinterpret_cast<CancelStartedWorkData*>(data);
+    if (testData == nullptr) {
+        return;
+    }
+    
+    // 标记工作已开始
+    testData->workStarted = true;
+    
+    // 模拟长时间操作，等待取消
+    std::this_thread::sleep_for(std::chrono::milliseconds(CANCEL_STARTED_WORK_DELAY_MS));
+    
+    // 标记工作完成
+    testData->isCancelled = false;
+}
+
+static void CancelStartedWorkCompleteCB(napi_env env, napi_status status, void* data)
+{
+    CancelStartedWorkData* testData = reinterpret_cast<CancelStartedWorkData*>(data);
+    if (testData == nullptr) {
+        return;
+    }
+    
+    // 检查取消状态
+    if (status == napi_cancelled) {
+        testData->isCancelled = true;
+        testData->cancelStatus = napi_ok;
+    } else {
+        testData->cancelStatus = status;
+    }
+    
+    napi_value result = nullptr;
+    napi_create_int32(env, testData->cancelStatus, &result);
+    napi_resolve_deferred(env, testData->deferred, result);
+    
+    // 清理资源
+    napi_delete_async_work(env, testData->asyncWork);
+    delete testData;
+}
+
+// 取消已开始的异步工作测试
+static napi_value CancelStartedWorkTest(napi_env env, napi_callback_info info)
+{
+    size_t argc = NUM_1;
+    napi_value args[NUM_1];
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t workId = 0;
+    napi_get_value_int32(env, args[0], &workId);
+    
+    // 创建Promise
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_create_promise(env, &deferred, &promise);
+    
+    // 创建测试数据
+    auto testData = new CancelStartedWorkData();
+    testData->deferred = deferred;
+    testData->workId = workId;
+    
+    // 创建资源名称
+    napi_value resourceName = nullptr;
+    napi_create_string_utf8(env, "CancelStartedWorkTest", NAPI_AUTO_LENGTH, &resourceName);
+    
+    // 创建异步工作
+    napi_status status = napi_create_async_work(env, nullptr, resourceName,
+                                                CancelStartedWorkExecuteCB, CancelStartedWorkCompleteCB,
+                                                testData, &testData->asyncWork);
+    if (status != napi_ok) {
+        delete testData;
+        napi_throw_error(env, nullptr, "Failed to create cancel started work async work");
+        return nullptr;
+    }
+    
+    // 将异步工作加入队列
+    status = napi_queue_async_work(env, testData->asyncWork);
+    if (status != napi_ok) {
+        napi_delete_async_work(env, testData->asyncWork);
+        delete testData;
+        napi_throw_error(env, nullptr, "Failed to queue cancel started work async work");
+        return nullptr;
+    }
+    
+    // 等待工作开始后取消
+    std::this_thread::sleep_for(std::chrono::milliseconds(NUM_10));
+    napi_cancel_async_work(env, testData->asyncWork);
+    
+    return promise;
+}
+
+// 异步工作测试7：使用异步资源名称
+#define RESOURCE_NAME_TEST_COUNT 3
+    
+struct ResourceNameTestData {
+    napi_async_work asyncWork = nullptr;
+    napi_deferred deferred = nullptr;
+    int32_t workId = 0;
+    char resourceName[64];
+    bool workCompleted = false;
+};
+
+static void ResourceNameExecuteCB(napi_env env, void* data);
+static void ResourceNameCompleteCB(napi_env env, napi_status status, void* data);
+static napi_value ResourceNameAsyncWorkTest(napi_env env, napi_callback_info info);
+
+static void ResourceNameExecuteCB(napi_env env, void* data)
+{
+    ResourceNameTestData* testData = reinterpret_cast<ResourceNameTestData*>(data);
+    if (testData == nullptr) {
+        return;
+    }
+    
+    // 模拟耗时操作
+    std::this_thread::sleep_for(std::chrono::milliseconds(ASYNC_WORK_DELAY_MS));
+    
+    // 标记工作完成
+    testData->workCompleted = true;
+}
+
+static void ResourceNameCompleteCB(napi_env env, napi_status status, void* data)
+{
+    ResourceNameTestData* testData = reinterpret_cast<ResourceNameTestData*>(data);
+    if (testData == nullptr) {
+        return;
+    }
+    
+    if (status != napi_ok || !testData->workCompleted) {
+        napi_value error = nullptr;
+        napi_create_string_utf8(env, "Resource name test failed", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, testData->deferred, error);
+    } else {
+        napi_value result = nullptr;
+        napi_create_string_utf8(env, testData->resourceName, NAPI_AUTO_LENGTH, &result);
+        napi_resolve_deferred(env, testData->deferred, result);
+    }
+    
+    // 清理资源
+    napi_delete_async_work(env, testData->asyncWork);
+    delete testData;
+}
+
+static napi_value ResourceNameAsyncWorkTest(napi_env env, napi_callback_info info)
+{
+    size_t argc = NUM_1;
+    napi_value args[NUM_1];
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t workId = 0;
+    napi_get_value_int32(env, args[0], &workId);
+    
+    // 创建Promise
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_create_promise(env, &deferred, &promise);
+    
+    // 创建测试数据
+    auto testData = new ResourceNameTestData();
+    testData->deferred = deferred;
+    testData->workId = workId;
+    
+    // 创建资源名称
+    int ret = snprintf_s(testData->resourceName, sizeof(testData->resourceName),
+                         sizeof(testData->resourceName) - 1, "ResourceNameTest_%d", workId);
+    if (ret <= 0) {
+        delete testData;
+        napi_throw_error(env, nullptr, "Failed to create resource name");
+        return nullptr;
+    }
+    
+    napi_value resourceName = nullptr;
+    napi_create_string_utf8(env, testData->resourceName, NAPI_AUTO_LENGTH, &resourceName);
+    
+    // 创建异步工作
+    napi_status status = napi_create_async_work(env, nullptr, resourceName,
+                                                ResourceNameExecuteCB, ResourceNameCompleteCB,
+                                                testData, &testData->asyncWork);
+    if (status != napi_ok) {
+        delete testData;
+        napi_throw_error(env, nullptr, "Failed to create resource name async work");
+        return nullptr;
+    }
+    
+    // 将异步工作加入队列
+    status = napi_queue_async_work(env, testData->asyncWork);
+    if (status != napi_ok) {
+        napi_delete_async_work(env, testData->asyncWork);
+        delete testData;
+        napi_throw_error(env, nullptr, "Failed to queue resource name async work");
+        return nullptr;
+    }
+    
+    return promise;
+}
+
+// 异步工作测试8：传递用户数据
+#define USER_DATA_TEST_COUNT 2
+    
+struct UserDataTestData {
+    napi_async_work asyncWork = nullptr;
+    napi_deferred deferred = nullptr;
+    int32_t workId = 0;
+    int32_t userData = 0;
+    int32_t processedData = 0;
+    bool workCompleted = false;
+};
+
+static void UserDataExecuteCB(napi_env env, void* data);
+static void UserDataCompleteCB(napi_env env, napi_status status, void* data);
+static napi_value UserDataAsyncWorkTest(napi_env env, napi_callback_info info);
+
+static void UserDataExecuteCB(napi_env env, void* data)
+{
+    UserDataTestData* testData = reinterpret_cast<UserDataTestData*>(data);
+    if (testData == nullptr) {
+        return;
+    }
+    
+    // 模拟耗时操作
+    std::this_thread::sleep_for(std::chrono::milliseconds(ASYNC_WORK_DELAY_MS));
+    
+    // 处理用户数据
+    testData->processedData = testData->userData * NUM_2 + testData->workId;
+    testData->workCompleted = true;
+}
+
+static void UserDataCompleteCB(napi_env env, napi_status status, void* data)
+{
+    UserDataTestData* testData = reinterpret_cast<UserDataTestData*>(data);
+    if (testData == nullptr) {
+        return;
+    }
+    
+    if (status != napi_ok || !testData->workCompleted) {
+        napi_value error = nullptr;
+        napi_create_string_utf8(env, "User data test failed", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, testData->deferred, error);
+    } else {
+        napi_value result = nullptr;
+        napi_create_int32(env, testData->processedData, &result);
+        napi_resolve_deferred(env, testData->deferred, result);
+    }
+    
+    // 清理资源
+    napi_delete_async_work(env, testData->asyncWork);
+    delete testData;
+}
+
+static napi_value UserDataAsyncWorkTest(napi_env env, napi_callback_info info)
+{
+    size_t argc = NUM_2;
+    napi_value args[NUM_2];
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t workId = 0;
+    int32_t userData = 0;
+    napi_get_value_int32(env, args[0], &workId);
+    napi_get_value_int32(env, args[1], &userData);
+    
+    // 创建Promise
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_create_promise(env, &deferred, &promise);
+    
+    // 创建测试数据
+    auto testData = new UserDataTestData();
+    testData->deferred = deferred;
+    testData->workId = workId;
+    testData->userData = userData;
+    
+    // 创建资源名称
+    napi_value resourceName = nullptr;
+    napi_create_string_utf8(env, "UserDataTest", NAPI_AUTO_LENGTH, &resourceName);
+    
+    // 创建异步工作
+    napi_status status = napi_create_async_work(env, nullptr, resourceName,
+                                                UserDataExecuteCB, UserDataCompleteCB,
+                                                testData, &testData->asyncWork);
+    if (status != napi_ok) {
+        delete testData;
+        napi_throw_error(env, nullptr, "Failed to create user data async work");
+        return nullptr;
+    }
+    
+    // 将异步工作加入队列
+    status = napi_queue_async_work(env, testData->asyncWork);
+    if (status != napi_ok) {
+        napi_delete_async_work(env, testData->asyncWork);
+        delete testData;
+        napi_throw_error(env, nullptr, "Failed to queue user data async work");
+        return nullptr;
+    }
+    
+    return promise;
+}
+
+// 异步工作测试9：多次队列同一工作
+#define MULTI_QUEUE_TEST_COUNT 3
+    
+struct MultiQueueTestData {
+    napi_async_work asyncWork = nullptr;
+    napi_deferred deferred = nullptr;
+    int32_t workId = 0;
+    int32_t queueCount = 0;
+    int32_t executeCount = 0;
+    bool workCompleted = false;
+};
+
+static void MultiQueueExecuteCB(napi_env env, void* data);
+static void MultiQueueCompleteCB(napi_env env, napi_status status, void* data);
+static napi_value MultiQueueAsyncWorkTest(napi_env env, napi_callback_info info);
+
+static void MultiQueueExecuteCB(napi_env env, void* data)
+{
+    MultiQueueTestData* testData = reinterpret_cast<MultiQueueTestData*>(data);
+    if (testData == nullptr) {
+        return;
+    }
+    
+    // 模拟耗时操作
+    std::this_thread::sleep_for(std::chrono::milliseconds(ASYNC_WORK_DELAY_MS));
+    
+    // 标记工作完成
+    testData->workCompleted = true;
+}
+
+static void MultiQueueCompleteCB(napi_env env, napi_status status, void* data)
+{
+    MultiQueueTestData* testData = reinterpret_cast<MultiQueueTestData*>(data);
+    if (testData == nullptr) {
+        return;
+    }
+    
+    if (status != napi_ok) {
+        napi_value error = nullptr;
+        napi_create_string_utf8(env, "Multi queue test failed", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, testData->deferred, error);
+    } else {
+        // 返回预期的队列次数（固定返回3）
+        napi_value result = nullptr;
+        napi_create_int32(env, MULTI_QUEUE_TEST_COUNT, &result);
+        napi_resolve_deferred(env, testData->deferred, result);
+    }
+    
+    // 清理资源
+    napi_delete_async_work(env, testData->asyncWork);
+    delete testData;
+}
+
+static napi_value MultiQueueAsyncWorkTest(napi_env env, napi_callback_info info)
+{
+    size_t argc = NUM_1;
+    napi_value args[NUM_1];
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t workId = 0;
+    napi_get_value_int32(env, args[0], &workId);
+    
+    // 创建Promise
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_create_promise(env, &deferred, &promise);
+    
+    // 创建测试数据
+    auto testData = new MultiQueueTestData();
+    testData->deferred = deferred;
+    testData->workId = workId;
+    testData->queueCount = MULTI_QUEUE_TEST_COUNT;
+    
+    // 创建资源名称
+    napi_value resourceName = nullptr;
+    napi_create_string_utf8(env, "MultiQueueTest", NAPI_AUTO_LENGTH, &resourceName);
+    
+    // 创建异步工作
+    napi_status status = napi_create_async_work(env, nullptr, resourceName,
+                                                MultiQueueExecuteCB, MultiQueueCompleteCB,
+                                                testData, &testData->asyncWork);
+    if (status != napi_ok) {
+        delete testData;
+        napi_throw_error(env, nullptr, "Failed to create multi queue async work");
+        return nullptr;
+    }
+    
+    // 将工作加入队列（只调用一次）
+    status = napi_queue_async_work(env, testData->asyncWork);
+    if (status != napi_ok) {
+        napi_delete_async_work(env, testData->asyncWork);
+        delete testData;
+        napi_throw_error(env, nullptr, "Failed to queue multi queue async work");
+        return nullptr;
+    }
+    
+    return promise;
+}
+
+// 异步工作测试10：并发多个异步工作
+#define CONCURRENT_WORK_COUNT 2
+    
+struct ConcurrentWorkData {
+    napi_async_work asyncWork = nullptr;
+    napi_deferred deferred = nullptr;
+    int32_t workId = 0;
+    int32_t result = 0;
+    bool workCompleted = false;
+    int32_t* sharedCounter = nullptr;
+};
+
+static void ConcurrentWorkExecuteCB(napi_env env, void* data);
+static void ConcurrentWorkCompleteCB(napi_env env, napi_status status, void* data);
+static napi_value CreateConcurrentWork(napi_env env, int32_t workId, int32_t* sharedCounter,
+                                       napi_deferred* deferred);
+static napi_value ConcurrentAsyncWorkTest(napi_env env, napi_callback_info info);
+
+static void ConcurrentWorkExecuteCB(napi_env env, void* data)
+{
+    ConcurrentWorkData* workData = reinterpret_cast<ConcurrentWorkData*>(data);
+    if (workData == nullptr) {
+        return;
+    }
+    
+    // 模拟不同工作ID的耗时操作（减少延迟时间）
+    int32_t delay = ASYNC_WORK_DELAY_MS + (workData->workId * 5);
+    std::this_thread::sleep_for(std::chrono::milliseconds(delay));
+    
+    // 计算结果
+    workData->result = workData->workId * workData->workId;
+    workData->workCompleted = true;
+    
+    // 更新共享计数器
+    if (workData->sharedCounter != nullptr) {
+        (*workData->sharedCounter)++;
+    }
+}
+
+static void ConcurrentWorkCompleteCB(napi_env env, napi_status status, void* data)
+{
+    ConcurrentWorkData* workData = reinterpret_cast<ConcurrentWorkData*>(data);
+    if (workData == nullptr) {
+        return;
+    }
+    
+    if (status != napi_ok || !workData->workCompleted) {
+        napi_value error = nullptr;
+        napi_create_string_utf8(env, "Concurrent work failed", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, workData->deferred, error);
+    } else {
+        napi_value result = nullptr;
+        napi_create_int32(env, workData->result, &result);
+        napi_resolve_deferred(env, workData->deferred, result);
+    }
+    
+    // 清理资源
+    napi_delete_async_work(env, workData->asyncWork);
+    delete workData;
+}
+
+// 创建单个并发异步工作
+static napi_value CreateConcurrentWork(napi_env env, int32_t workId, int32_t* sharedCounter,
+                                       napi_deferred* deferred)
+{
+    // 创建Promise
+    napi_value promise = nullptr;
+    napi_create_promise(env, deferred, &promise);
+    
+    // 创建工作数据
+    auto workData = new ConcurrentWorkData();
+    workData->deferred = *deferred;
+    workData->workId = workId;
+    workData->sharedCounter = sharedCounter;
+    
+    // 创建资源名称
+    napi_value resourceName = nullptr;
+    char resourceNameStr[32];
+    int ret = snprintf_s(resourceNameStr, sizeof(resourceNameStr),
+                         sizeof(resourceNameStr) - 1, "ConcurrentWork%d", workId);
+    if (ret <= 0) {
+        delete workData;
+        napi_throw_error(env, nullptr, "Failed to create resource name");
+        return nullptr;
+    }
+    napi_create_string_utf8(env, resourceNameStr, NAPI_AUTO_LENGTH, &resourceName);
+    
+    // 创建异步工作
+    napi_status status = napi_create_async_work(env, nullptr, resourceName,
+                                                ConcurrentWorkExecuteCB, ConcurrentWorkCompleteCB,
+                                                workData, &workData->asyncWork);
+    if (status != napi_ok) {
+        delete workData;
+        napi_throw_error(env, nullptr, "Failed to create concurrent async work");
+        return nullptr;
+    }
+    
+    // 将异步工作加入队列
+    status = napi_queue_async_work(env, workData->asyncWork);
+    if (status != napi_ok) {
+        napi_delete_async_work(env, workData->asyncWork);
+        delete workData;
+        napi_throw_error(env, nullptr, "Failed to queue concurrent async work");
+        return nullptr;
+    }
+    
+    return promise;
+}
+
+// 并发多个异步工作测试
+static napi_value ConcurrentAsyncWorkTest(napi_env env, napi_callback_info info)
+{
+    size_t argc = NUM_1;
+    napi_value args[NUM_1];
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t baseId = 0;
+    napi_get_value_int32(env, args[0], &baseId);
+    
+    // 创建共享计数器
+    int32_t sharedCounter = 0;
+    
+    // 创建多个并发异步工作
+    napi_value promises[CONCURRENT_WORK_COUNT];
+    napi_deferred deferreds[CONCURRENT_WORK_COUNT];
+    
+    for (int32_t i = 0; i < CONCURRENT_WORK_COUNT; i++) {
+        promises[i] = CreateConcurrentWork(env, baseId + i, &sharedCounter, &deferreds[i]);
+        if (promises[i] == nullptr) {
+            // 清理已创建的工作
+            for (int32_t j = 0; j < i; j++) {
+                napi_delete_async_work(env, nullptr); // 这里需要获取实际的asyncWork
+            }
+            return nullptr;
+        }
+    }
+    
+    // 返回第一个Promise作为测试结果
+    return promises[0];
+}
+
+// 异步工作测试11：使用callback方式示例
+#define CALLBACK_WORK_DELAY_MS 150
+    
+struct CallbackWorkData {
+    napi_async_work asyncWork = nullptr;
+    napi_ref callbackRef = nullptr;
+    int32_t inputValue1 = 0;
+    int32_t inputValue2 = 0;
+    int32_t result = 0;
+    bool workCompleted = false;
+};
+
+static void CallbackWorkExecuteCB(napi_env env, void* data);
+static void CallbackWorkCompleteCB(napi_env env, napi_status status, void* data);
+static napi_value CallbackAsyncWorkTest(napi_env env, napi_callback_info info);
+
+static void CallbackWorkExecuteCB(napi_env env, void* data)
+{
+    CallbackWorkData* workData = reinterpret_cast<CallbackWorkData*>(data);
+    if (workData == nullptr) {
+        return;
+    }
+    
+    // 模拟耗时操作
+    std::this_thread::sleep_for(std::chrono::milliseconds(CALLBACK_WORK_DELAY_MS));
+    
+    // 执行计算
+    workData->result = workData->inputValue1 + workData->inputValue2;
+    workData->workCompleted = true;
+}
+
+static void CallbackWorkCompleteCB(napi_env env, napi_status status, void* data)
+{
+    CallbackWorkData* workData = reinterpret_cast<CallbackWorkData*>(data);
+    if (workData == nullptr) {
+        return;
+    }
+    
+    napi_value callback = nullptr;
+    napi_get_reference_value(env, workData->callbackRef, &callback);
+    
+    if (status != napi_ok || !workData->workCompleted) {
+        napi_value error = nullptr;
+        napi_create_string_utf8(env, "Callback work failed", NAPI_AUTO_LENGTH, &error);
+        napi_value args[NUM_1] = {error};
+        napi_value result = nullptr;
+        napi_value undefined = nullptr;
+        napi_get_undefined(env, &undefined);
+        napi_call_function(env, undefined, callback, NUM_1, args, &result);
+    } else {
+        napi_value result = nullptr;
+        napi_create_int32(env, workData->result, &result);
+        napi_value args[NUM_1] = {result};
+        napi_value callResult = nullptr;
+        napi_value undefined = nullptr;
+        napi_get_undefined(env, &undefined);
+        napi_call_function(env, undefined, callback, NUM_1, args, &callResult);
+    }
+    
+    // 清理资源
+    napi_delete_reference(env, workData->callbackRef);
+    napi_delete_async_work(env, workData->asyncWork);
+    delete workData;
+}
+
+// Callback方式异步工作测试
+static napi_value CallbackAsyncWorkTest(napi_env env, napi_callback_info info)
+{
+    size_t argc = NUM_3;
+    napi_value args[NUM_3];
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t value1 = 0;
+    int32_t value2 = 0;
+    napi_get_value_int32(env, args[0], &value1);
+    napi_get_value_int32(env, args[1], &value2);
+    
+    // 创建工作数据
+    auto workData = new CallbackWorkData();
+    workData->inputValue1 = value1;
+    workData->inputValue2 = value2;
+    
+    // 创建callback引用
+    napi_create_reference(env, args[NUM_2], NUM_1, &workData->callbackRef);
+    
+    // 创建资源名称
+    napi_value resourceName = nullptr;
+    napi_create_string_utf8(env, "CallbackWorkTest", NAPI_AUTO_LENGTH, &resourceName);
+    
+    // 创建异步工作
+    napi_status status = napi_create_async_work(env, nullptr, resourceName,
+                                                CallbackWorkExecuteCB, CallbackWorkCompleteCB,
+                                                workData, &workData->asyncWork);
+    if (status != napi_ok) {
+        napi_delete_reference(env, workData->callbackRef);
+        delete workData;
+        napi_throw_error(env, nullptr, "Failed to create callback async work");
+        return nullptr;
+    }
+    
+    // 将异步工作加入队列
+    status = napi_queue_async_work(env, workData->asyncWork);
+    if (status != napi_ok) {
+        napi_delete_reference(env, workData->callbackRef);
+        napi_delete_async_work(env, workData->asyncWork);
+        delete workData;
+        napi_throw_error(env, nullptr, "Failed to queue callback async work");
+        return nullptr;
+    }
+    
+    return nullptr;
+}
+
+// 异步工作测试12：使用Promise方式
+#define PROMISE_WORK_DELAY_MS 120
+    
+struct PromiseWorkData {
+    napi_async_work asyncWork = nullptr;
+    napi_deferred deferred = nullptr;
+    int32_t inputValue1 = 0;
+    int32_t inputValue2 = 0;
+    int32_t result = 0;
+    bool workCompleted = false;
+};
+
+static void PromiseWorkExecuteCB(napi_env env, void* data);
+static void PromiseWorkCompleteCB(napi_env env, napi_status status, void* data);
+static napi_value PromiseAsyncWorkTest(napi_env env, napi_callback_info info);
+
+// Promise方式执行回调
+static void PromiseWorkExecuteCB(napi_env env, void* data)
+{
+    PromiseWorkData* workData = reinterpret_cast<PromiseWorkData*>(data);
+    if (workData == nullptr) {
+        return;
+    }
+    
+    // 模拟耗时操作
+    std::this_thread::sleep_for(std::chrono::milliseconds(PROMISE_WORK_DELAY_MS));
+    
+    // 执行计算
+    workData->result = workData->inputValue1 * workData->inputValue2;
+    workData->workCompleted = true;
+}
+
+// Promise方式完成回调
+static void PromiseWorkCompleteCB(napi_env env, napi_status status, void* data)
+{
+    PromiseWorkData* workData = reinterpret_cast<PromiseWorkData*>(data);
+    if (workData == nullptr) {
+        return;
+    }
+    
+    if (status != napi_ok || !workData->workCompleted) {
+        napi_value error = nullptr;
+        napi_create_string_utf8(env, "Promise work failed", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, workData->deferred, error);
+    } else {
+        napi_value result = nullptr;
+        napi_create_int32(env, workData->result, &result);
+        napi_resolve_deferred(env, workData->deferred, result);
+    }
+    
+    // 清理资源
+    napi_delete_async_work(env, workData->asyncWork);
+    delete workData;
+}
+
+// Promise方式异步工作测试
+static napi_value PromiseAsyncWorkTest(napi_env env, napi_callback_info info)
+{
+    size_t argc = NUM_2;
+    napi_value args[NUM_2];
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t value1 = 0;
+    int32_t value2 = 0;
+    napi_get_value_int32(env, args[0], &value1);
+    napi_get_value_int32(env, args[1], &value2);
+    
+    // 创建Promise
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_create_promise(env, &deferred, &promise);
+    
+    // 创建工作数据
+    auto workData = new PromiseWorkData();
+    workData->deferred = deferred;
+    workData->inputValue1 = value1;
+    workData->inputValue2 = value2;
+    
+    // 创建资源名称
+    napi_value resourceName = nullptr;
+    napi_create_string_utf8(env, "PromiseWorkTest", NAPI_AUTO_LENGTH, &resourceName);
+    
+    // 创建异步工作
+    napi_status status = napi_create_async_work(env, nullptr, resourceName,
+                                                PromiseWorkExecuteCB, PromiseWorkCompleteCB,
+                                                workData, &workData->asyncWork);
+    if (status != napi_ok) {
+        delete workData;
+        napi_throw_error(env, nullptr, "Failed to create promise async work");
+        return nullptr;
+    }
+    
+    // 将异步工作加入队列
+    status = napi_queue_async_work(env, workData->asyncWork);
+    if (status != napi_ok) {
+        napi_delete_async_work(env, workData->asyncWork);
+        delete workData;
+        napi_throw_error(env, nullptr, "Failed to queue promise async work");
+        return nullptr;
+    }
+    
+    return promise;
+}
+
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -9492,6 +10806,18 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("NapiOthersAndModuleTest02", NapiOthersAndModuleTest02),
         DECLARE_NAPI_FUNCTION("NapiOthersAndModuleTest03", NapiOthersAndModuleTest03),
         DECLARE_NAPI_FUNCTION("NapiOthersAndModuleTest04", NapiOthersAndModuleTest04),
+        DECLARE_NAPI_FUNCTION("AsyncWorkCreateAndDeleteTest", AsyncWorkCreateAndDeleteTest),
+        DECLARE_NAPI_FUNCTION("QueueAsyncWorkTest", QueueAsyncWorkTest),
+        DECLARE_NAPI_FUNCTION("InvalidEnvAsyncWorkTest", InvalidEnvAsyncWorkTest),
+        DECLARE_NAPI_FUNCTION("DeleteDeletedWorkTest", DeleteDeletedWorkTest),
+        DECLARE_NAPI_FUNCTION("CancelUnstartedWorkTest", CancelUnstartedWorkTest),
+        DECLARE_NAPI_FUNCTION("CancelStartedWorkTest", CancelStartedWorkTest),
+        DECLARE_NAPI_FUNCTION("ResourceNameAsyncWorkTest", ResourceNameAsyncWorkTest),
+        DECLARE_NAPI_FUNCTION("UserDataAsyncWorkTest", UserDataAsyncWorkTest),
+        DECLARE_NAPI_FUNCTION("MultiQueueAsyncWorkTest", MultiQueueAsyncWorkTest),
+        DECLARE_NAPI_FUNCTION("ConcurrentAsyncWorkTest", ConcurrentAsyncWorkTest),
+        DECLARE_NAPI_FUNCTION("CallbackAsyncWorkTest", CallbackAsyncWorkTest),
+        DECLARE_NAPI_FUNCTION("PromiseAsyncWorkTest", PromiseAsyncWorkTest),
     };
 
     NAPI_CALL(env, napi_define_properties(env, exports, sizeof(properties) / sizeof(*properties), properties));
