@@ -21,12 +21,24 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <functional>
 
 #define TEST_OK 0
 #define TEST_FAILED (-1)
 
 static NDKCamera *g_ndkCamera = nullptr;
 using ArkCameraTestFunc = napi_value (*)(napi_env, napi_callback_info);
+
+static napi_value ExecuteCameraFunction(napi_env env, napi_callback_info info, std::function<int()> cameraFunc)
+{
+    int ret = TEST_FAILED;
+    if (cameraFunc() == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
 
 static napi_value InitCamera(napi_env env, napi_callback_info info)
 {
@@ -38,7 +50,6 @@ static napi_value InitCamera(napi_env env, napi_callback_info info)
     } else {
         napi_create_int32(env, CAMERA_SERVICE_FATAL_ERROR, &result);
     }
-
     return result;
 }
 
@@ -50,7 +61,6 @@ static napi_value ReleaseCameraManger(napi_env env, napi_callback_info info)
         napi_create_int32(env, ret, &result);
         return result;
     }
-
     napi_create_int32(env, CAMERA_OK, &result);
     return result;
 }
@@ -198,7 +208,6 @@ static napi_value CameraStatusInfo(napi_env env, napi_callback_info info)
     if (g_ndkCamera->SetCameraStatus(std::string(charStatus)) == TEST_OK) {
         ret = TEST_OK;
     }
-
     napi_value result;
     napi_create_int32(env, ret, &result);
     return result;
@@ -211,7 +220,6 @@ static napi_value CameraFormat(napi_env env, napi_callback_info info)
     if (g_ndkCamera->GetCameraFormat(index) == CAMERA_OK) {
         ret = TEST_OK;
     }
-
     napi_value result;
     napi_create_int32(env, ret, &result);
     return result;
@@ -224,7 +232,6 @@ static napi_value CameraFlashMode(napi_env env, napi_callback_info info)
     if (g_ndkCamera->HasFlashMode(index) == CAMERA_OK) {
         ret = TEST_OK;
     }
-
     napi_value result;
     napi_create_int32(env, ret, &result);
     return result;
@@ -237,7 +244,6 @@ static napi_value GetExposureMode(napi_env env, napi_callback_info info)
     if (g_ndkCamera->GetExposureMode(index) == CAMERA_OK) {
         ret = TEST_OK;
     }
-
     napi_value result;
     napi_create_int32(env, ret, &result);
     return result;
@@ -250,7 +256,6 @@ static napi_value GetCameraFocusMode(napi_env env, napi_callback_info info)
     if (g_ndkCamera->GetCameraFocusMode(index) == CAMERA_OK) {
         ret = TEST_OK;
     }
-
     napi_value result;
     napi_create_int32(env, ret, &result);
     return result;
@@ -275,7 +280,6 @@ static napi_value SessionIsVideoStabilizationModeSupported(napi_env env, napi_ca
     if (g_ndkCamera->SessionIsVideoStabilizationModeSupported(index) == CAMERA_OK) {
         ret = TEST_OK;
     }
-
     napi_value result;
     napi_create_int32(env, ret, &result);
     return result;
@@ -288,7 +292,6 @@ static napi_value TakePictureWithPhotoSettings(napi_env env, napi_callback_info 
     if (g_ndkCamera->TakePictureWithPhotoSettings(indexPair.first, indexPair.second) == CAMERA_OK) {
         ret = TEST_OK;
     }
-
     napi_value result;
     napi_create_int32(env, ret, &result);
     return result;
@@ -301,7 +304,6 @@ static napi_value GetCameraConcurrentInfo(napi_env env, napi_callback_info info)
     if (g_ndkCamera->GetCameraConcurrentInfo(index) == CAMERA_OK) {
         ret = TEST_OK;
     }
-
     napi_value result;
     napi_create_int32(env, ret, &result);
     return result;
@@ -314,7 +316,6 @@ static napi_value SessionCanPreconfig(napi_env env, napi_callback_info info)
     if (g_ndkCamera->SessionCanPreconfig(index) == CAMERA_OK) {
         ret = TEST_OK;
     }
-
     napi_value result;
     napi_create_int32(env, ret, &result);
     return result;
@@ -327,7 +328,6 @@ static napi_value SessionCanPreconfigWithRatio(napi_env env, napi_callback_info 
     if (g_ndkCamera->SessionCanPreconfigWithRatio(index) == CAMERA_OK) {
         ret = TEST_OK;
     }
-
     napi_value result;
     napi_create_int32(env, ret, &result);
     return result;
@@ -335,14 +335,7 @@ static napi_value SessionCanPreconfigWithRatio(napi_env env, napi_callback_info 
 
 static napi_value PhotoOutputRegisterCallback(napi_env env, napi_callback_info info)
 {
-    int ret = TEST_FAILED;
-    if (g_ndkCamera->PhotoOutputRegisterCallback() == CAMERA_OK) {
-        ret = TEST_OK;
-    }
-
-    napi_value result;
-    napi_create_int32(env, ret, &result);
-    return result;
+    return ExecuteCameraFunction(env, info, [&]() { return g_ndkCamera->PhotoOutputRegisterCallback(); });
 }
 
 static napi_value MetadataOutputRegisterCallback(napi_env env, napi_callback_info info)
@@ -351,7 +344,125 @@ static napi_value MetadataOutputRegisterCallback(napi_env env, napi_callback_inf
     if (g_ndkCamera->MetadataOutputRegisterCallback() == CAMERA_OK) {
         ret = TEST_OK;
     }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
 
+static napi_value CameraManagerRegisterTorchStatusCallback(napi_env env, napi_callback_info info)
+{
+    int ret = TEST_FAILED;
+    if (g_ndkCamera->CameraManagerRegisterTorchStatusCallback() == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value CaptureSessionRegisterSmoothZoomInfoCallback(napi_env env, napi_callback_info info)
+{
+    int ret = TEST_FAILED;
+    if (g_ndkCamera->CaptureSessionRegisterSmoothZoomInfoCallback() == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value PhotoOutputRegisterCaptureStartWithInfoCallback(napi_env env, napi_callback_info info)
+{
+    int ret = TEST_FAILED;
+    if (g_ndkCamera->PhotoOutputRegisterCaptureStartWithInfoCallback() == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value CameraManagerRegisterFoldStatusCallback(napi_env env, napi_callback_info info)
+{
+    int ret = TEST_FAILED;
+    if (g_ndkCamera->CameraManagerRegisterFoldStatusCallback() == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value RegisterAutoDeviceSwitchStatusCallback(napi_env env, napi_callback_info info)
+{
+    int ret = TEST_FAILED;
+    if (g_ndkCamera->RegisterAutoDeviceSwitchStatusCallback() == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value SessionSetQualityPrioritization(napi_env env, napi_callback_info info)
+{
+    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
+    int ret = TEST_FAILED;
+    if (g_ndkCamera->SessionSetQualityPrioritization(index) == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value CameraOpenConcurrentCameras(napi_env env, napi_callback_info info)
+{
+    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
+    int ret = TEST_FAILED;
+    if (g_ndkCamera->CameraOpenConcurrentCameras(index) == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value IsWhiteBalanceSupported(napi_env env, napi_callback_info info)
+{
+    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
+    int ret = TEST_FAILED;
+    if (g_ndkCamera->IsWhiteBalanceSupported(index) == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value RegisterSystemPressureLevel(napi_env env, napi_callback_info info)
+{
+    int ret = TEST_FAILED;
+    if (g_ndkCamera->RegisterSystemPressureLevel() == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value CameraManagerGetSupportedCameras(napi_env env, napi_callback_info info)
+{
+    auto ret = g_ndkCamera->CreateCameras();
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value SessionGetSupportedEffectTypes(napi_env env, napi_callback_info info)
+{
+    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
+    auto ret = g_ndkCamera->SessionGetSupportedEffectTypes(index);
     napi_value result;
     napi_create_int32(env, ret, &result);
     return result;
@@ -363,6 +474,7 @@ static napi_value Init(napi_env env, napi_value exports)
 {
     std::vector<napi_property_descriptor> desc = {
         DECLARE_NAPI_FUNCTION("initCamera", InitCamera),
+        DECLARE_NAPI_FUNCTION("cameraManagerGetSupportedCameras", CameraManagerGetSupportedCameras),
         DECLARE_NAPI_FUNCTION("releaseCameraManger", ReleaseCameraManger),
         DECLARE_NAPI_FUNCTION("cameraErrorCode", CameraErrorCode),
         DECLARE_NAPI_FUNCTION("cameraStatusInfo", CameraStatusInfo),
@@ -378,6 +490,18 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("sessionCanPreconfigWithRatio", SessionCanPreconfigWithRatio),
         DECLARE_NAPI_FUNCTION("photoOutputRegisterCallback", PhotoOutputRegisterCallback),
         DECLARE_NAPI_FUNCTION("metadataOutputRegisterCallback", MetadataOutputRegisterCallback),
+        DECLARE_NAPI_FUNCTION("cameraManagerRegisterTorchStatusCallback", CameraManagerRegisterTorchStatusCallback),
+        DECLARE_NAPI_FUNCTION("captureSessionRegisterSmoothZoomInfoCallback",
+                              CaptureSessionRegisterSmoothZoomInfoCallback),
+        DECLARE_NAPI_FUNCTION("photoOutputRegisterCaptureStartWithInfoCallback",
+                              PhotoOutputRegisterCaptureStartWithInfoCallback),
+        DECLARE_NAPI_FUNCTION("cameraManagerRegisterFoldStatusCallback", CameraManagerRegisterFoldStatusCallback),
+        DECLARE_NAPI_FUNCTION("registerAutoDeviceSwitchStatusCallback", RegisterAutoDeviceSwitchStatusCallback),
+        DECLARE_NAPI_FUNCTION("sessionSetQualityPrioritization", SessionSetQualityPrioritization),
+        DECLARE_NAPI_FUNCTION("cameraOpenConcurrentCameras", CameraOpenConcurrentCameras),
+        DECLARE_NAPI_FUNCTION("isWhiteBalanceSupported", IsWhiteBalanceSupported),
+        DECLARE_NAPI_FUNCTION("registerSystemPressureLevel", RegisterSystemPressureLevel),
+        DECLARE_NAPI_FUNCTION("sessionGetSupportedEffectTypes", SessionGetSupportedEffectTypes),
     };
 
     napi_define_properties(env, exports, desc.size(), desc.data());
