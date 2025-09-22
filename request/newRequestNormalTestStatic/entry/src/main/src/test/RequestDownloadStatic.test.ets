@@ -58,8 +58,8 @@ export default function RequestDownloadJSUnitStatic() {
      * @tc.name    SUB_Misc_REQUEST_Create_Promise_Download_Promise_Static_0010
      * @tc.desc      create a download task.
      * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it('SUB_Misc_REQUEST_Create_Promise_Download_Promise_Static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "====>------SUB_Misc_REQUEST_Create_Promise_Download_Promise_Static_0010 is starting---------");
@@ -85,8 +85,8 @@ export default function RequestDownloadJSUnitStatic() {
      * @tc.name    SUB_Misc_REQUEST_Create_Promise_Download_Callback_Static_0010
      * @tc.desc      create a download session.
      * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it('SUB_Misc_REQUEST_Create_Promise_Download_Callback_Static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "====>------SUB_Misc_REQUEST_Create_Promise_Download_Callback_Static_0010 is starting---------");

@@ -57,8 +57,8 @@ export default function RequestDownloadStaticTest() {
      * @tc.name      SUB_MISC_REQUEST_DOWNLOAD_state_Static_0010
      * @tc.desc      Test requestUploadTest API functionality.
      * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it('SUB_MISC_REQUEST_DOWNLOAD_state_Static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
      hilog.info(domain, tag, "====>-----------------------SUB_MISC_REQUEST_DOWNLOAD_state_Static_0010 is starting-----------------------");
@@ -94,8 +94,8 @@ export default function RequestDownloadStaticTest() {
      * @tc.name    SUB_Misc_REQUEST_Create_Download_Promise_Static_0010
      * @tc.desc      create a download task.
      * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it('SUB_Misc_REQUEST_Create_Download_Promise_Static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "-----------------------SUB_Misc_REQUEST_Create_Download_Promise_Static_0010 is starting-----------------------");
@@ -121,8 +121,8 @@ export default function RequestDownloadStaticTest() {
      * @tc.name SUB_Misc_REQUEST_Start_Download_Promise_Static_0010
      * @tc.desc Start the download task
      * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type      Function
+     * @tc.level     Level 2
      */
     it('SUB_Misc_REQUEST_Start_Download_Promise_Static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>-----------------------SUB_Misc_REQUEST_Start_Download_Promise_Static_0010 is starting-----------------------");
@@ -149,8 +149,8 @@ export default function RequestDownloadStaticTest() {
      * @tc.name    SUB_Misc_REQUEST_Create_Download_Callback_Static_0010
      * @tc.desc      create a download session.
      * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it('SUB_Misc_REQUEST_Create_Download_Callback_Static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "-----------------------SUB_Misc_REQUEST_Create_Download_Callback_Static_0010 is starting-----------------------");
@@ -164,7 +164,7 @@ export default function RequestDownloadStaticTest() {
       request.agent.create(baseContext, config, (err : BusinessError | null, task : request.agent.Task | undefined) : void => {
         hilog.info(domain, tag, '%{public}s', "====>SUB_Misc_REQUEST_Create_Download_Callback_Static_0010 downloadTask: " + task);
         try{
-          if (err?.code !== 0) {
+          if (err !== null) {
             hilog.info(domain, tag, '%{public}s', "====>SUB_Misc_REQUEST_Create_Download_Callback_Static_0010 create err: " + JSON.stringify(err));
             expect().assertFail();
           }
@@ -184,8 +184,8 @@ export default function RequestDownloadStaticTest() {
      * @tc.name SUB_Misc_REQUEST_Start_Upload_Promise_Static_0010
      * @tc.desc Start the download task
      * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type      Function
+     * @tc.level     Level 2
      */
     it('SUB_Misc_REQUEST_Start_Upload_Promise_Static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>-----------------------SUB_Misc_REQUEST_Start_Upload_Promise_Static_0010 is starting-----------------------");
@@ -216,13 +216,13 @@ export default function RequestDownloadStaticTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_Misc_REQUEST_On_Download_Completed_Static_0040
-     * @tc.name: SUB_Misc_REQUEST_On_Download_Completed_Static_0040
-     * @tc.desc: download task
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.number  SUB_Misc_REQUEST_On_Download_Completed_Static_0040
+     * @tc.name  SUB_Misc_REQUEST_On_Download_Completed_Static_0040
+     * @tc.desc  download task
+     * @tc.size  MediumTest
+     * @tc.type  Function
+     * @tc.level  Level 1
      */
     it('SUB_Misc_REQUEST_On_Download_Completed_Static_0040', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>-----SUB_Misc_REQUEST_On_Download_Completed_Static_0040 is starting--------------");
@@ -239,9 +239,11 @@ export default function RequestDownloadStaticTest() {
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Completed_Static_0040 pro.state: " + pro.state);
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Completed_Static_0040 pro.index: " + pro.index);
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Completed_Static_0040 pro.processed: " + pro.processed);
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Completed_Static_0040 pro.sizes[0]: " + pro.sizes[0]);
             expect(pro.state).assertEqual(64);
             expect(pro.index).assertEqual(0);
             expect(pro.processed).assertEqual(15444);
+            expect(pro.sizes[0]).assertEqual(15444);
             done();
           } catch (err) {
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Completed_Static_0040 err: " + JSON.stringify(err));
@@ -258,13 +260,13 @@ export default function RequestDownloadStaticTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_onResponse_Static_0100
-     * @tc.name: SUB_Request_Agent_onResponse_Static_0100
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.number  SUB_Request_Agent_onResponse_Static_0100
+     * @tc.name  SUB_Request_Agent_onResponse_Static_0100
+     * @tc.desc  request config saveas validate
+     * @tc.size  MediumTest
+     * @tc.type  Function
+     * @tc.level  Level 1
      */
     it('SUB_Request_Agent_onResponse_Static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>-------SUB_Request_Agent_onResponse_Static_0100 is starting-----------");
@@ -303,8 +305,8 @@ export default function RequestDownloadStaticTest() {
      * @tc.name SUB_Misc_REQUEST_Start_Download_Callback_Static_0010
      * @tc.desc Start the download task
      * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type      Function
+     * @tc.level     Level 2
      */
     it('SUB_Misc_REQUEST_Start_Download_Callback_Static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>----------SUB_Misc_REQUEST_Start_Download_Callback_Static_0010 is starting----------");
@@ -316,13 +318,13 @@ export default function RequestDownloadStaticTest() {
       try {
         let task: request.agent.Task = await request.agent.create(baseContext, config);
         task.start((err: BusinessError | null): void => {
-          if (err?.code !== 0) {
+          if (err !== null) {
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Start_Download_Callback_Static_0010 create err: " + err?.code + JSON.stringify(err));
             expect().assertFail();
             done();
           } else {
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Start_Download_Callback_Static_0010 create success: " + task);
-            expect(true).assertTrue();
+            expect(err == null).assertTrue();
             done();
           } 
         });
@@ -333,13 +335,13 @@ export default function RequestDownloadStaticTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_TaskSaveas_Static_1000
-     * @tc.name: SUB_Request_Agent_TaskSaveas_Static_1000
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.number  SUB_Request_Agent_TaskSaveas_Static_1000
+     * @tc.name  SUB_Request_Agent_TaskSaveas_Static_1000
+     * @tc.desc  request config saveas validate
+     * @tc.size  MediumTest
+     * @tc.type  Function
+     * @tc.level  Level 2
      */
     it('SUB_Request_Agent_TaskSaveas_Static_1000', Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>-----------------------SUB_Request_Agent_TaskSaveas_Static_1000 is starting-----------------------");
@@ -360,13 +362,13 @@ export default function RequestDownloadStaticTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_TaskSaveas_Static_1100
-     * @tc.name: SUB_Request_Agent_TaskSaveas_Static_1100
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.number  SUB_Request_Agent_TaskSaveas_Static_1100
+     * @tc.name  SUB_Request_Agent_TaskSaveas_Static_1100
+     * @tc.desc  request config saveas validate
+     * @tc.size  MediumTest
+     * @tc.type  Function
+     * @tc.level  Level 2
      */
     it('SUB_Request_Agent_TaskSaveas_Static_1100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>--------------SUB_Request_Agent_TaskSaveas_Static_1100 is starting-------------");
@@ -394,13 +396,13 @@ export default function RequestDownloadStaticTest() {
       });
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_TaskSaveas_Static_0500
-     * @tc.name: SUB_Request_Agent_TaskSaveas_Static_0500
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.number  SUB_Request_Agent_TaskSaveas_Static_0500
+     * @tc.name  SUB_Request_Agent_TaskSaveas_Static_0500
+     * @tc.desc  request config saveas validate
+     * @tc.size  MediumTest
+     * @tc.type  Function
+     * @tc.level  Level 2
      */
     it('SUB_Request_Agent_TaskSaveas_Static_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>-----------------------SUB_Request_Agent_TaskSaveas_Static_0500 is starting-----------------------");
@@ -421,13 +423,13 @@ export default function RequestDownloadStaticTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_TaskSaveas_Static_0600
-     * @tc.name: SUB_Request_Agent_TaskSaveas_Static_0600
-     * @tc.desc: request config saveas validate
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.number  SUB_Request_Agent_TaskSaveas_Static_0600
+     * @tc.name  SUB_Request_Agent_TaskSaveas_Static_0600
+     * @tc.desc  request config saveas validate
+     * @tc.size  MediumTest
+     * @tc.type  Function
+     * @tc.level  Level 2
      */
     it('SUB_Request_Agent_TaskSaveas_Static_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>--------------SUB_Request_Agent_TaskSaveas_Static_0600 is starting-------------");
@@ -453,6 +455,230 @@ export default function RequestDownloadStaticTest() {
           done();
         }
       });
+    });
+
+    /**
+     * @tc.number SUB_Misc_REQUEST_On_Download_Progress_Static_0040
+     * @tc.name SUB_Misc_REQUEST_On_Download_Progress_Static_0040
+     * @tc.desc  listening on progress
+     * @tc.size      MEDIUMTEST
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SUB_Misc_REQUEST_On_Download_Progress_Static_0040', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "====>-----------------------SUB_Misc_REQUEST_On_Download_Progress_Static_0040 is starting-----------------------");
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png',
+        saveas: './SUB_Misc_REQUEST_On_Download_Progress_Static_0040.txt',
+      };
+
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        hilog.info(domain, tag, '====>SUB_Misc_REQUEST_On_Download_Progress_Static_0040 create success');
+        let on_progressCallback = async (pro: request.agent.Progress): void => {
+          try {
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Progress_Static_0040 pro.state: " + pro.state);
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Progress_Static_0040 pro.index: " + pro.index);
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Progress_Static_0040 pro.processed: " + pro.processed);
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Progress_Static_0040 pro.sizes: " + pro.sizes);
+            expect(pro != null).assertTrue();
+            done();
+          } catch (err: BusinessError) {
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Progress_Static_0040 catch err: " + JSON.stringify(err));
+            done();
+          }
+        }
+        task.on('progress', on_progressCallback);
+        await task.start();
+        hilog.info(domain, tag, '====>SUB_Misc_REQUEST_On_Download_Progress_Static_0040 start success');
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Progress_Static_0040 create catch err: " + JSON.stringify(err));
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_Misc_REQUEST_On_Download_Progress_Static_0030
+     * @tc.name    SUB_Misc_REQUEST_On_Download_Progress_Static_0030
+     * @tc.desc      listening on progress inorder
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SUB_Misc_REQUEST_On_Download_Progress_Static_0030', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "====>-----------------------SUB_Misc_REQUEST_On_Download_Progress_Static_0030 is starting-----------------------");
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png',
+        saveas: './SUB_Misc_REQUEST_On_Download_Progress_Static_0030.txt',
+      };
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        hilog.info(domain, tag, '====>SUB_Misc_REQUEST_On_Download_Progress_Static_0030 create success');
+        let flag = false
+        let flag1 = false
+        let on_progressCallback = async (pro: request.agent.Progress): void => {
+          flag = true
+          hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Progress_Static_0030 pro.state: " + pro.state);
+        }
+        let on_progressCallback1 = async (pro: request.agent.Progress): void => {
+          try {
+            flag1 = true
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Progress_Static_0030 on_progressCallback1");
+            expect(flag && flag1).assertTrue();
+            done();
+          } catch (err: BusinessError) {
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Progress_Static_0030 catch err: " + JSON.stringify(err));
+            done();
+          }
+        }
+        task.on('progress', on_progressCallback);
+        task.on('progress', on_progressCallback1);
+        await task.start();
+        hilog.info(domain, tag, '====>SUB_Misc_REQUEST_On_Download_Progress_Static_0030 start success');
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Progress_Static_0030 create catch err: " + JSON.stringify(err));
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_Misc_REQUEST_Download_overwrite_Static_0100
+     * @tc.name  SUB_Misc_REQUEST_Download_overwrite_Static_0100
+     * @tc.desc  overwrite is true
+     * @tc.size  MediumTest
+     * @tc.type  Function
+     * @tc.level  Level 1
+     */
+    it('SUB_Misc_REQUEST_Download_overwrite_Static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "====>-----SUB_Misc_REQUEST_Download_overwrite_Static_0100 is starting--------------");
+      let config:request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png',
+        saveas: './SUB_Misc_REQUEST_Download_overwrite_Static_0100',
+        overwrite: true
+      };
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 create success");
+        let on_completedCallback = (pro: request.agent.Progress): void => {
+          try {
+            let task: request.agent.Task = await request.agent.create(baseContext, config);
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 task.start twice");
+            await task.start();
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 task.start success");
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 pro.state: " + pro.state);
+            expect(pro.state).assertEqual(64);
+            done();
+          } catch (err: BusinessError) {
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 err: " + JSON.stringify(err));
+            done();
+          }
+        }
+        task.on('completed', on_completedCallback);
+        await task.start();
+        hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 task.start");
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_Misc_REQUEST_Download_overwrite_Static_0200
+     * @tc.name  SUB_Misc_REQUEST_Download_overwrite_Static_0200
+     * @tc.desc  start a err status task
+     * @tc.size  MediumTest
+     * @tc.type  Function
+     * @tc.level  Level 1
+     */
+    it('SUB_Misc_REQUEST_Download_overwrite_Static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "====>-----SUB_Misc_REQUEST_Download_overwrite_Static_0200 is starting--------------");
+      let config:request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png',
+        saveas: './SUB_Misc_REQUEST_Download_overwrite_Static_0200',
+        overwrite: false
+      };
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0200 create success");
+        let on_completedCallback = async (pro: request.agent.Progress): void => {
+          try {
+            let task: request.agent.Task = await request.agent.create(baseContext, config);
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0200 task.start twice");
+            await task.start();
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0200 task start twice success");
+            expect().assertFail();
+            done();
+          } catch (err: BusinessError) {
+            try{
+              hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0200 second download err: " + JSON.stringify(err));
+              expect(err.code).assertEqual(13400001);
+              done();
+            } catch (err: BusinessError) {
+              hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0200 err: " + JSON.stringify(err));
+              done();
+            }
+          }
+        }
+        task.on('completed', on_completedCallback);
+        await task.start();
+        hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0200 task.start");
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0200 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_Misc_REQUEST_Download_overwrite_Static_0300
+     * @tc.name  SUB_Misc_REQUEST_Download_overwrite_Static_0300
+     * @tc.desc  overwrite is false throw err
+     * @tc.size  MediumTest
+     * @tc.type  Function
+     * @tc.level  Level 1
+     */
+    it('SUB_Misc_REQUEST_Download_overwrite_Static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "====>-----SUB_Misc_REQUEST_Download_overwrite_Static_0300 is starting--------------");
+      let config:request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png',
+        saveas: './SUB_Misc_REQUEST_Download_overwrite_Static_0300',
+        overwrite: false
+      };
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0300 create success");
+        let on_completedCallback = async (pro: request.agent.Progress): void => {
+          try {
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0300 task.start twice");
+            await task.start();
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0300 task start twice success");
+            expect().assertFail();
+            done();
+          } catch (err: BusinessError) {
+            try{
+              hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0300 second download err: " + JSON.stringify(err));
+              expect(err.code).assertEqual(21900007);
+              done();
+            } catch (err: BusinessError) {
+              hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0300 err: " + JSON.stringify(err));
+              done();
+            }
+          }
+        }
+        task.on('completed', on_completedCallback);
+        await task.start();
+        hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0300 task.start");
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0300 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
     });
     
 
