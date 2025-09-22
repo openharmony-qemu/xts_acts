@@ -48,7 +48,7 @@ export default function XComponentTypeNodeTest() {
       console.info("XComponentTypeNode after each called");
     });
 
-    /*
+    /**
      * @tc.number    XComponentTypeNodeTest_0100
      * @tc.name      XComponentTypeNodeTest_0100
      * @tc.desc      Test XComponentTypeNode
@@ -113,7 +113,7 @@ export default function XComponentTypeNodeTest() {
       done();
     });
 
-    /*
+    /**
      * @tc.number    XComponentTypeNodeTest_0200
      * @tc.name      XComponentTypeNodeTest_0200
      * @tc.desc      Test XComponentTypeNode
@@ -128,8 +128,10 @@ export default function XComponentTypeNodeTest() {
       await button.click();
       console.info("[XComponentTypeNodeTest_0200] Click XComponentTypeNodePage_Btn_undefined.");
       await CommonFunc.sleep(1000);
-      
-      AppStorage.get('XComponentTypeNodePage').assertEqual(undefined);
+
+      console.info("[XComponentTypeNodeTest_0200] AppStorage.get('XComponentTypeNodePage'): " + AppStorage.get('XComponentTypeNodePage'));
+      expect(AppStorage.get('XComponentTypeNodePage')).assertEqual(undefined);
+      AppStorage.delete('XComponentTypeNodePage')
 
       console.info('[XComponentTypeNodeTest_0200] END');
       done();
