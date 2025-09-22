@@ -94,7 +94,7 @@ export default function PixelRoundTest() {
       console.info("[PixelRoundTest_0200] click PixelRoundPage_SetPixelRound_Btn.");
       await Utils.sleep(1000);
 
-      let rect = Utils.getComponentRect("PixelRoundPage_testFlex");
+      let rect = Utils.getComponentRect("PixelRoundPage_testColumn");
       console.info("[PixelRoundTest_0200] (rect.right - rect.left - vp2px(111)): " + (rect.right - rect.left - vp2px(111)));
       console.info("[PixelRoundTest_0200] (rect.bottom - rect.top - vp2px(111)): " + (rect.bottom - rect.top - vp2px(111)));
       expect(Math.floor(Math.abs(rect.right - rect.left - vp2px(111))) <= 1).assertTrue();
