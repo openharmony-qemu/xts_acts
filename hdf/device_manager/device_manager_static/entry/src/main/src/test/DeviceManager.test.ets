@@ -154,9 +154,11 @@ export default function DeviceManagerTest() {
           expect(deviceUsb.description != null).assertEqual(true);
           expect(deviceUsb.vendorId != null).assertEqual(true);
           expect(deviceUsb.productId != null).assertEqual(true);
+          done();
         } catch (err: BusinessError) {
           hilog.info(TAG, 'testTag', 'Test case testQueryDevices001 catch err: ' + JSON.stringify(err));
           expect().assertFail();
+          done();
         }
       }
     })
@@ -178,9 +180,11 @@ export default function DeviceManagerTest() {
           hilog.info(TAG, 'testTag', 'Test case testQueryDevices002 ret : ' + JSON.stringify(devices));
           expect(devices != null).assertEqual(true);
           expect(devices[0].deviceId != null).assertTrue();
+          done();
         } catch (err: BusinessError) {
           hilog.info(TAG, 'testTag', 'Test case testQueryDevices002 catch err: ' + JSON.stringify(err));
           expect().assertFail();
+          done();
         }
       }
     })
@@ -201,9 +205,11 @@ export default function DeviceManagerTest() {
           let devices = deviceManager.queryDevices(12345);
           hilog.info(TAG, 'testTag', 'Test case testQueryDevices003 ret : ', JSON.stringify(devices));
           expect(devices.length == 0).assertTrue();
+          done();
         } catch (err: BusinessError) {
           hilog.info(TAG, 'testTag', 'Test case testQueryDevices003 catch err : ' + JSON.stringify(err));
           expect(err.code).assertEqual(SERVICE_EXCEPTION_CODE);
+          done();
         }
       }
     })
@@ -223,9 +229,11 @@ export default function DeviceManagerTest() {
         try {
           let devices = deviceManager.queryDevices();
           hilog.info(TAG, 'testTag', 'Test case testQueryDevices004 ret : ' + JSON.stringify(devices));
+          done();
         } catch (err: BusinessError) {
           hilog.info(TAG, 'testTag', 'Test case testQueryDevices004 catch err : ' + JSON.stringify(err));
           expect(err.code).assertEqual(SERVICE_EXCEPTION_CODE);
+          done();
         }
       }
     })
