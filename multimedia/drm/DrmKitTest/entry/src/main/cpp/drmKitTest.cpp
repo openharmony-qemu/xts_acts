@@ -14,9 +14,6 @@
  */
 
 #include "drmKitTest.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include <multimedia/drm_framework/native_mediakeysession.h>
 #include <multimedia/drm_framework/native_drm_err.h>
 #include <multimedia/drm_framework/native_mediakeysystem.h>
@@ -468,7 +465,7 @@ napi_value DRM_OfflineMediaKeyStatusOFFLINE_MEDIA_KEY_STATUS_INACTIVE(napi_env e
     Drm_ErrCode ret4 = OH_MediaKeySystem_ClearOfflineMediaKeys(system_ptr, keyId_ptr, offlineMediaKeyIdLen);
     DRM_OfflineMediaKeyStatus status = OFFLINE_MEDIA_KEY_STATUS_USABLE;
     if (ret3 == DRM_ERR_OK)
-    {  
+    {
         Drm_ErrCode ret6 = OH_MediaKeySystem_GetOfflineMediaKeyStatus(system_ptr, keyId_ptr,
             offlineMediaKeyIdLen, &status);
         if (ret6 == DRM_ERR_OK)
@@ -487,21 +484,20 @@ uint8_t Flag_SetSesChangeCallback2 = 0;
 Drm_ErrCode sessoinKeyChangeCallBackTest2(MediaKeySession *mediaKeySessoin, DRM_KeysInfo *keysInfo, bool hasNewGoodKeys)
 {
     keysInfo->keysInfoCount = MAX_KEY_INFO_COUNT * MAX_KEY_ID_LEN;
-    for(int i = 0;i < MAX_KEY_INFO_COUNT; i++)
+    for (int i = 0;i < MAX_KEY_INFO_COUNT; i++)
     {
-        for(int j = 0;j < MAX_KEY_ID_LEN; j++)
+        for (int j = 0;j < MAX_KEY_ID_LEN; j++)
         {
             keysInfo->keyId[i][j] = 0;
         }
     }
-    for(int i = 0;i < MAX_KEY_INFO_COUNT; i++)
+    for (int i = 0;i < MAX_KEY_INFO_COUNT; i++)
     {
-        for(int j = 0;j < MAX_KEY_STATUS_VALUE_LEN; j++)
+        for (int j = 0;j < MAX_KEY_STATUS_VALUE_LEN; j++)
         {
             keysInfo->statusValue[i][j] = '\0';
         }
     }
-
     Flag_SetSesChangeCallback2 = 1;
     return DRM_ERR_OK;
 }
@@ -509,23 +505,22 @@ Drm_ErrCode sessoinKeyChangeCallBackTest2(MediaKeySession *mediaKeySessoin, DRM_
 Drm_ErrCode sessoinEventEvenType(MediaKeySession *mediaKeySessoin, DRM_EventType eventType, uint8_t *info,
     int32_t infoLen, char *extra)
 {
-    if(eventType == EVENT_KEY_REQUIRED)
+    if (eventType == EVENT_KEY_REQUIRED)
     {
         return DRM_ERR_OK;
     }
-    if(eventType == EVENT_KEY_EXPIRED)
+    if (eventType == EVENT_KEY_EXPIRED)
     {
         return DRM_ERR_OK;
     }
-    if(eventType == EVENT_DRM_BASE)
+    if (eventType == EVENT_DRM_BASE)
     {
         return DRM_ERR_OK;
     }
-    if(eventType == EVENT_PROVISION_REQUIRED)
+    if (eventType == EVENT_PROVISION_REQUIRED)
     {
         return DRM_ERR_OK;
     }
-
     return DRM_ERR_UNKNOWN;
 }
 
@@ -534,7 +529,7 @@ Drm_ErrCode evenTypeEVENT_DRM_BASE(MediaKeySession *mediaKeySessoin, DRM_EventTy
 {
     eventType = EVENT_DRM_BASE;
     DRM_EventType eventType2 = EVENT_DRM_BASE;
-    return DRM_ERR_OK; 
+    return DRM_ERR_OK;
 }
 
 Drm_ErrCode evenTypeEVENT_PROVISION_REQUIRED(MediaKeySession *mediaKeySessoin, DRM_EventType eventType, uint8_t *info,
@@ -542,7 +537,7 @@ Drm_ErrCode evenTypeEVENT_PROVISION_REQUIRED(MediaKeySession *mediaKeySessoin, D
 {
     eventType = EVENT_PROVISION_REQUIRED;
     DRM_EventType eventType2 = EVENT_PROVISION_REQUIRED;
-    return DRM_ERR_OK; 
+    return DRM_ERR_OK;
 }
 
 Drm_ErrCode evenTypeEVENT_VENDOR_DEFINED(MediaKeySession *mediaKeySessoin, DRM_EventType eventType, uint8_t *info,
@@ -550,7 +545,7 @@ Drm_ErrCode evenTypeEVENT_VENDOR_DEFINED(MediaKeySession *mediaKeySessoin, DRM_E
 {
     eventType = EVENT_VENDOR_DEFINED;
     DRM_EventType eventType2 = EVENT_VENDOR_DEFINED;
-    return DRM_ERR_OK; 
+    return DRM_ERR_OK;
 }
 
 Drm_ErrCode evenTypeEVENT_EXPIRATION_UPDATE(MediaKeySession *mediaKeySessoin, DRM_EventType eventType, uint8_t *info,
@@ -558,7 +553,7 @@ Drm_ErrCode evenTypeEVENT_EXPIRATION_UPDATE(MediaKeySession *mediaKeySessoin, DR
 {
     eventType = EVENT_EXPIRATION_UPDATE;
     DRM_EventType eventType2 = EVENT_EXPIRATION_UPDATE;
-    return DRM_ERR_OK; 
+    return DRM_ERR_OK;
 }
 
 Drm_ErrCode sessoinEventCallBackTest2(MediaKeySession *mediaKeySessoin, DRM_EventType eventType, uint8_t *info,
@@ -618,7 +613,8 @@ napi_value DRM_KeysInfo_EvenType(napi_env env, napi_callback_info info)
     uint8_t offlineMediaKeyId[10];
     uint8_t releaseRequest[10];
     int32_t releaseRequestLen = 10;
-    OH_MediaKeySession_GenerateOfflineReleaseRequest(session_ptr,offlineMediaKeyId, 10, releaseRequest, &releaseRequestLen);
+    OH_MediaKeySession_GenerateOfflineReleaseRequest(session_ptr,offlineMediaKeyId, 10,
+        releaseRequest, &releaseRequestLen);
     napi_create_int32(env, ret6 == DRM_ERR_OK, &result);
     return result;
 }
@@ -631,7 +627,6 @@ napi_value EvenType_EVENT_DRM_BASE(napi_env env, napi_callback_info info)
     MediaKeySystem *drmKeySystem = nullptr;
     Drm_ErrCode ret3 = OH_MediaKeySystem_Create(judge_uuid(), &drmKeySystem);
     Drm_ErrCode ret5 = OH_MediaKeySystem_CreateMediaKeySession(drmKeySystem, &contentProtectionLevel, &session_ptr);
-
     OH_MediaKeySession_Callback testCallback;
     testCallback.eventCallback = &evenTypeEVENT_DRM_BASE;
     testCallback.keyChangeCallback = &sessoinKeyChangeCallBackTest2;
