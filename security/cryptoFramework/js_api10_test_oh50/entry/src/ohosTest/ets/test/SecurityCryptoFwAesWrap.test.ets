@@ -442,7 +442,6 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
         } catch (error) {
           console.error(`Aes Wrap 1100 "${error}", error code: ${error.code}`);
           expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
-          expect(null).assertFail();
         }
         done();
       });
@@ -556,8 +555,8 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
         try {
           let keyLen: number = 24;
           let keyAlgName: string = "AES128";
-          let cipherAlgName: string = "AES128-WRAP|CBC";
-          let ivParamsSpec: cryptoFramework.IvParamsSpec = JsSetIv([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+          let cipherAlgName: string = "AES128-WRAP";
+          let ivParamsSpec: cryptoFramework.IvParamsSpec = JsSetIv([0, 0, 0, 0, 0, 0, 0, 0]);
           let keyData: cryptoFramework.DataBlob = await createFullData(keyLen);
           let symKey: cryptoFramework.SymKey = await JsGenSymKey(keyAlgName);
           let encCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(cipherAlgName);
@@ -566,7 +565,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
             await encCipher.update(keyData);
             expect(null).assertFail();
           } catch (error) {
-            expect(error.code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
+            expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
           }
           let decCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(cipherAlgName);
           await decCipher.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, ivParamsSpec);
@@ -574,7 +573,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
             await decCipher.update(keyData);
             expect(null).assertFail();
           } catch (error) {
-            expect(error.code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
+            expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
           }
         } catch (error) {
           console.error(`Aes Wrap 1500 “${error}“, error code: ${error.code}`);

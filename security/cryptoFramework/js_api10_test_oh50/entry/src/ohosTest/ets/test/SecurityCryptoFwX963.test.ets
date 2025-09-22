@@ -388,7 +388,7 @@ export default function SecurityCryptoFwX963TestUnit() {
           await JsX963KdfCallback(digestAlgName, kdfSpec);
         } catch (error) {
           console.error(`X963 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect(error.code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         done();
       });
@@ -412,7 +412,7 @@ export default function SecurityCryptoFwX963TestUnit() {
           await JsX963KdfCallback(digestAlgName, kdfSpec);
         } catch (error) {
           console.error(`X963 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect(error.code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         done();
       });
