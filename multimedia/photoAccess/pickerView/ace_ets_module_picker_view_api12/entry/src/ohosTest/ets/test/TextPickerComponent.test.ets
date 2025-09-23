@@ -2348,15 +2348,9 @@ export default function TextPicker() {
       badgeConfig.badgeType = BadgeType.BADGE_UPLOADED;
       badgeConfig.uris = uris;
       pickerOptions.badgeConfig = badgeConfig;
-      setTimeout(()=>{
-        pickerController.setData(DataType.SET_BADGE_CONFIGS, uris);
-        setTimeout(()=>{
-          pickerController.addData(DataType.SET_BADGE_CONFIGS, uris);
-          setTimeout(()=>{
-            pickerController.deleteData(DataType.SET_BADGE_CONFIGS, uris);
-          }, 1000);
-        }, 1000);
-      }, 1000);
+      pickerController.setData(DataType.SET_BADGE_CONFIGS, uris);
+      pickerController.addData(DataType.SET_BADGE_CONFIGS, uris);
+      pickerController.deleteData(DataType.SET_BADGE_CONFIGS, uris);
       let code: number = EventType.PHOTO_PICKER_INFO;
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/PickerComponent',
