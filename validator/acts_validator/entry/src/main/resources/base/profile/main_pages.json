@@ -163,6 +163,7 @@
     "pages/ArkUI/SliderTest",
     "pages/ArkUI/ModalTransition",
     "pages/ArkUI/BindContentCoverOption",
-    "pages/ArkUI/EnableShowHideWithContentCover"
+    "pages/ArkUI/EnableShowHideWithContentCover",
+    "pages/ArkUI/ImageAnimationControllerPage"
   ]
 }

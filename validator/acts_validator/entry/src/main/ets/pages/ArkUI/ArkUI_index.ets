@@ -142,6 +142,7 @@ struct IndexPage {
     { title: 'ModalTransition', uri: 'pages/ArkUI/ModalTransition' },
     { title: 'BindContentCoverOption', uri: 'pages/ArkUI/BindContentCoverOption' },
     { title: 'EnableShowHideWithContentCover', uri: 'pages/ArkUI/EnableShowHideWithContentCover' },
+    { title: 'ImageAnimationControllerPage', uri: 'pages/ArkUI/ImageAnimationControllerPage' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];
