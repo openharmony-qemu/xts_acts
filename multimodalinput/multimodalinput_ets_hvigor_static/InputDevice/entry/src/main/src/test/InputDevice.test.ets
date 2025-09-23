@@ -41,5 +41,30 @@ export default function InputDeviceTest() {
         console.info("expectInfo", `test failed`);
       }
     }
+
+    /**
+     * @tc.number: SUB_MMI_Input_Api_IptDev_inputDeviceOn_0100
+     * @tc.name: SUB_MMI_Input_Api_IptDev_inputDeviceOn_0100
+     * @tc.desc: Test inputDevice on interface
+     * @tc.level 0
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it("SUB_MMI_Input_Api_IptDev_inputDeviceOn_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, `InputDevice_on_test enter`);
+      let isPhysicalKeyboardExist = 0;
+      try {
+        inputDevice.on("change", (data): void => {
+          hilog.info(domain, tag, `InputDevice_on_test type: ${data.type}, deviceId: ${data.deviceId}`);
+          isPhysicalKeyboardExist++;
+          ExpectTrue(isPhysicalKeyboardExist == 1);
+        });
+      } catch (error) {
+        hilog.info(domain, tag, `InputDevice_on_test error`);
+        ExpectFalse(true);
+      }
+      done();
+      hilog.info(domain, tag, `InputDevice_on_test exit`);
+    })
   })
 }
