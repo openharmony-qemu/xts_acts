@@ -334,7 +334,7 @@ export default function bluetoothAccessTest() {
                 access.disableBluetoothAsync().then(() => {
                     hilog.info(domain, tag, "disableBluetoothAsync success");
                     done();
-                }).catch((err) => {
+                }).catch((err: Error) => {
                     hilog.info(domain, tag, "disableBluetoothAsync get error:" + JSON.stringify(err));
                     if (Number(err.code) == 801) {
                         hilog.info(domain, tag, 'api is not support');
@@ -363,7 +363,7 @@ export default function bluetoothAccessTest() {
                 access.enableBluetoothAsync().then(() => {
                     hilog.info(domain, tag, "enableBluetoothAsync success");
                     done();
-                }).catch((err) => {
+                }).catch((err: Error) => {
                     hilog.info(domain, tag, "enableBluetoothAsync get error:" + JSON.stringify(err));
                     if (Number(err.code) == 801) {
                         hilog.info(domain, tag, 'api is not support');

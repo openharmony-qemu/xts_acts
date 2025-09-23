@@ -114,7 +114,7 @@ export default function ActsSubscriberTestUnorder() {
       }
       let CommonEventSubscriber:commonEventManager.CommonEventSubscriber = tempSubscriber as commonEventManager.CommonEventSubscriber;
 
-      await CommonEventSubscriber.getSubscribeInfo().then((CommonEventSubscriberInfo) => {
+      await CommonEventSubscriber.getSubscribeInfo().then((CommonEventSubscriberInfo: commonEventManager.CommonEventSubscribeInfo | null) => {
         console.info(TAG + ': getSubscribeInfo promise successed! event.Info ===> ' + JSON.stringify(CommonEventSubscriberInfo))
         if (CommonEventSubscriberInfo !== null) {
           let subscriberInfo: commonEventManager.CommonEventSubscribeInfo = CommonEventSubscriberInfo as commonEventManager.CommonEventSubscribeInfo;
@@ -200,7 +200,7 @@ export default function ActsSubscriberTestUnorder() {
       }
       let CommonEventSubscriber:commonEventManager.CommonEventSubscriber = tempSubscriber as commonEventManager.CommonEventSubscriber;
 
-      await CommonEventSubscriber.getSubscribeInfo().then((CommonEventSubscriberInfo) => {
+      await CommonEventSubscriber.getSubscribeInfo().then((CommonEventSubscriberInfo: commonEventManager.CommonEventSubscribeInfo | null) => {
         console.info(TAG + ': getSubscribeInfo promise successed! event.Info ===> ' + JSON.stringify(CommonEventSubscriberInfo))
         if (CommonEventSubscriberInfo !== null) {
           let subscriberInfo: commonEventManager.CommonEventSubscribeInfo = CommonEventSubscriberInfo as commonEventManager.CommonEventSubscribeInfo;

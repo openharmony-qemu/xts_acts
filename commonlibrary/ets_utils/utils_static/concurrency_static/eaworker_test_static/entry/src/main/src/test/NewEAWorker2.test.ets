@@ -608,7 +608,7 @@ export default function NewEAWorkerTes2() {
         ];
         try {
           const result: number[] = [];
-          const workers = list.map((p, idx) => {
+          const workers = list.map((p, idx: int): EAWorker => {
             const worker = new EAWorker(`${TAG} p-${idx}`);
             worker.start();
             worker.setPriority(p);

@@ -447,7 +447,7 @@ export default function ResmgrTest() {
             console.log('getDeviceCapability_test_static_008 ' + JSON.stringify(dc));
             done();
           })
-            .catch(error =>{
+            .catch((error: Error) => {
               console.log('getDeviceCapability_test_static_008 error0: ' + JSON.stringify(error));
               expect().assertFail();
               done();
