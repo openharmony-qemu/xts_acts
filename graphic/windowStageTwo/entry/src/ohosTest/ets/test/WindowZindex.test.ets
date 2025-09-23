@@ -1283,7 +1283,7 @@ export default function windowZindexTest() {
         await windowClass2.showWindow();
         console.info(`${caseName} Succeeded in showing the system sub window.`);
         await windowClass2.resizeAsync(minWidth+40, minHeight+40);
-        await windowClass2.moveWindowTo(150, 150);
+        await windowClass2.moveWindowTo(150, 180);
 
         let windowClass3 = await windowStage.createSubWindow('test_SubWindowZLevel_0100_3');
         await windowClass3.setSubWindowZLevel(11);
@@ -1294,7 +1294,7 @@ export default function windowZindexTest() {
         await windowClass3.showWindow();
         console.info(`${caseName} Succeeded in showing the system sub window.`);
         await windowClass3.resizeAsync(minWidth+40, minHeight+40);
-        await windowClass3.moveWindowTo(250, 250);
+        await windowClass3.moveWindowTo(250, 260);
 
         let window1 = await window.getLastWindow(context);
         let windowZLevel = window1.getSubWindowZLevel()
