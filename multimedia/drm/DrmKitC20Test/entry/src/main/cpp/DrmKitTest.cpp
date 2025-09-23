@@ -88,7 +88,7 @@ void addDrmKitTest(std::vector<napi_property_descriptor>& descData)
 {
     addDrmKitTwoTest(descData);
     descData.push_back({"mediaKeyRequestType", nullptr, DRM_MediaKeyRequestTypeValue,
-        nullptr, nullptr, nullptr, napi_default, nullptr});    
+        nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"mediaKeyRequestDefaultUrl", nullptr, DRM_MediaKeyRequestDefaultUrl,
         nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"drmCertificateStatusTest1", nullptr, DRM_CertificateStatusTest1,
