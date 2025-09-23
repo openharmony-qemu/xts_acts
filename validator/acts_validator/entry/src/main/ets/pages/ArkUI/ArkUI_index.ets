@@ -143,6 +143,7 @@ struct IndexPage {
     { title: 'BindContentCoverOption', uri: 'pages/ArkUI/BindContentCoverOption' },
     { title: 'EnableShowHideWithContentCover', uri: 'pages/ArkUI/EnableShowHideWithContentCover' },
     { title: 'ImageAnimationControllerPage', uri: 'pages/ArkUI/ImageAnimationControllerPage' },
+    { title: 'AnimatedDrawableDescriptorFrameDurations', uri: 'pages/ArkUI/AnimatedDrawableDescriptorFrameDurations' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];
