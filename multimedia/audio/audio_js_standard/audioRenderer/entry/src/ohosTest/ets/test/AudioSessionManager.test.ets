@@ -575,7 +575,7 @@ export default function audioSessionManagerTest() {
       let audioManager:audio.AudioManager = audio.getAudioManager();
       let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
       try {
-        let audioSession:ESObject = "1";
+        let audioSession:ESObject = 100;
         audioSessionManager.getAvailableDevices(audioSession);
         expect(false).assertTrue();
         done();
@@ -597,7 +597,7 @@ export default function audioSessionManagerTest() {
       let audioManager:audio.AudioManager = audio.getAudioManager();
       let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
       try {
-        let audioSession:ESObject = "1";
+        let audioSession:ESObject = 100;
         audioSessionManager.on('availableDeviceChange',audioSession,(deviceChanged: audio.DeviceChangeAction) =>{
           console.info(`${TAG}: availbleDeviceChange errors`);
           expect(false).assertTrue();
