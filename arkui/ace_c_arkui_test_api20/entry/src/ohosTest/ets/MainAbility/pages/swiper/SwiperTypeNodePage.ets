@@ -75,6 +75,11 @@ struct SwiperTypeNodePage {
         }
       }).id('SwiperTypeNodePage_Btn')
 
+      Button('undefined').onClick(() => {
+        const attrs1 = typeNode.getAttribute(undefined, 'Swiper');
+        AppStorage.SetOrCreate('SwiperTypeNodeUn', attrs1);
+      }).id('SwiperTypeNodePage_undefined')
+
       NodeContainer(this.myNodeController)
     }
     .width('100%')
