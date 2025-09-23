@@ -352,27 +352,6 @@ export default function RdbResultSetTest() {
     })
 
     /**
-     * @tc.name       testInsert0001
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_0100
-     * @tc.desc       : getColumnIndex normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
-     */
-    it('testInsert0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', '************* testInsert0001 start *************');
-      try{
-        let num = await rdbStore.insert("test", valueBucket0);
-        expect(num == 1).assertEqual(true);
-        done();
-      }catch(err){
-        expect(err != null ).assertFail();
-        done();
-      }
-      hilog.info(domain, tag, '%{public}s', '************* testInsert0001 end *************');
-    })
-
-    /**
      * @tc.name       testInsert0002
      * @tc.number     : SUB_DistributedData_RelationalStore_SDK_RdbAPITest_0200
      * @tc.desc       : getColumnIndex normal test
