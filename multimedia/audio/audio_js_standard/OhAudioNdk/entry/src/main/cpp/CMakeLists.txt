@@ -8,4 +8,4 @@ include_directories(${NATIVERENDER_ROOT_PATH}
                     ${NATIVERENDER_ROOT_PATH}/include)
 
 add_library(ohaudiondk SHARED ohaudiondk.cpp)
-target_link_libraries(ohaudiondk PUBLIC libace_napi.z.so libohaudio.so libhilog_ndk.z.so)
+target_link_libraries(ohaudiondk PUBLIC libace_napi.z.so libohaudio.so libhilog_ndk.z.so libOpenSLES.so)

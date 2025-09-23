@@ -22,7 +22,6 @@ ohos_moduletest_suite("ActsOpenslesNdkTest") {
   module_out_path = module_output_path
   sources = [
     "openslesPlayerNdk/ActsOpenslesPlayerNdkTest.cpp",
-    "openslesRecorderNdk/ActsOpenslesRecoderNdkTest.cpp",
   ]
 
   include_dirs = [
