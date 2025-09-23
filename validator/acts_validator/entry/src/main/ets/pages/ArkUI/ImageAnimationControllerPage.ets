@@ -255,32 +255,32 @@ struct AnimationControllerPage {
           Button('c2 start')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
-              if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
-                let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
+              if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
+                let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
                 drawable?.getAnimationController('Component2')?.start()
               }
             })
           Button('c2 stop')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
-              if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
-                let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
+              if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
+                let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
                 drawable?.getAnimationController('Component2')?.stop()
               }
             })
           Button('c2 pause')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
-              if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
-                let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
+              if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
+                let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
                 drawable?.getAnimationController('Component2')?.pause()
               }
             })
           Button('c2 resume')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
-              if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
-                let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
+              if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
+                let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
                 drawable?.getAnimationController('Component2')?.resume()
               }
             })
@@ -291,32 +291,32 @@ struct AnimationControllerPage {
           Button('c3 start')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
-              if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
-                let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
+              if (this.animatedDrawable3 instanceof AnimatedDrawableDescriptor) {
+                let drawable = this.animatedDrawable3 as AnimatedDrawableDescriptor
                 drawable?.getAnimationController()?.start()
               }
             })
           Button('c3 stop')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
-              if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
-                let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
+              if (this.animatedDrawable3 instanceof AnimatedDrawableDescriptor) {
+                let drawable = this.animatedDrawable3 as AnimatedDrawableDescriptor
                 drawable?.getAnimationController()?.stop()
               }
             })
           Button('c3 pause')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
-              if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
-                let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
+              if (this.animatedDrawable3 instanceof AnimatedDrawableDescriptor) {
+                let drawable = this.animatedDrawable3 as AnimatedDrawableDescriptor
                 drawable?.getAnimationController()?.pause()
               }
             })
           Button('c3 resume')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
-              if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
-                let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
+              if (this.animatedDrawable3 instanceof AnimatedDrawableDescriptor) {
+                let drawable = this.animatedDrawable3 as AnimatedDrawableDescriptor
                 drawable?.getAnimationController()?.resume()
               }
             })
@@ -343,8 +343,8 @@ struct AnimationControllerPage {
           Button('c2 status')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
-              if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
-                let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
+              if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
+                let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
                 let status = drawable?.getAnimationController('Component2')?.getStatus()
                 try {
                   this.getUIContext()
@@ -358,8 +358,8 @@ struct AnimationControllerPage {
           Button('c3 status')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
-              if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
-                let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
+              if (this.animatedDrawable3 instanceof AnimatedDrawableDescriptor) {
+                let drawable = this.animatedDrawable3 as AnimatedDrawableDescriptor
                 let status = drawable?.getAnimationController()?.getStatus()
                 try {
                   this.getUIContext()
