@@ -48,6 +48,18 @@ static napi_value ExecuteCameraIntArgFunction(napi_env env, napi_callback_info i
     return result;
 }
 
+static napi_value ExecuteCameraIntArgOp(napi_env env, napi_callback_info info,
+                                       std::function<Camera_ErrorCode(int32_t)> cameraOp) {
+    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
+    int ret = TEST_FAILED;
+    if (cameraOp(index) == CAMERA_OK) {
+        ret = TEST_OK;
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 static napi_value InitCamera(napi_env env, napi_callback_info info)
 {
     char *surfaceId = CameraTestUtils::GetArgsOneParameterByStr(env, info);
@@ -384,50 +396,30 @@ static napi_value CameraStatusInfo(napi_env env, napi_callback_info info)
 
 static napi_value CameraFormat(napi_env env, napi_callback_info info)
 {
-    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
-    int ret = TEST_FAILED;
-    if (g_ndkCamera->GetCameraFormat(index) == CAMERA_OK) {
-        ret = TEST_OK;
-    }
-    napi_value result;
-    napi_create_int32(env, ret, &result);
-    return result;
+    return ExecuteCameraIntArgOp(env, info, [](int32_t index) -> Camera_ErrorCode {
+        return g_ndkCamera->GetCameraFormat(index);
+    });
 }
 
 static napi_value CameraFlashMode(napi_env env, napi_callback_info info)
 {
-    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
-    int ret = TEST_FAILED;
-    if (g_ndkCamera->HasFlashMode(index) == CAMERA_OK) {
-        ret = TEST_OK;
-    }
-    napi_value result;
-    napi_create_int32(env, ret, &result);
-    return result;
+    return ExecuteCameraIntArgOp(env, info, [](int32_t index) -> Camera_ErrorCode {
+        return g_ndkCamera->HasFlashMode(index);
+    });
 }
 
 static napi_value GetExposureMode(napi_env env, napi_callback_info info)
 {
-    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
-    int ret = TEST_FAILED;
-    if (g_ndkCamera->GetExposureMode(index) == CAMERA_OK) {
-        ret = TEST_OK;
-    }
-    napi_value result;
-    napi_create_int32(env, ret, &result);
-    return result;
+    return ExecuteCameraIntArgOp(env, info, [](int32_t index) -> Camera_ErrorCode {
+        return g_ndkCamera->GetExposureMode(index);
+    });
 }
 
 static napi_value GetCameraFocusMode(napi_env env, napi_callback_info info)
 {
-    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
-    int ret = TEST_FAILED;
-    if (g_ndkCamera->GetCameraFocusMode(index) == CAMERA_OK) {
-        ret = TEST_OK;
-    }
-    napi_value result;
-    napi_create_int32(env, ret, &result);
-    return result;
+    return ExecuteCameraIntArgOp(env, info, [](int32_t index) -> Camera_ErrorCode {
+        return g_ndkCamera->GetCameraFocusMode(index);
+    });
 }
 
 static napi_value GetCameraFocusState(napi_env env, napi_callback_info info)
@@ -444,14 +436,9 @@ static napi_value GetCameraFocusState(napi_env env, napi_callback_info info)
 
 static napi_value SessionIsVideoStabilizationModeSupported(napi_env env, napi_callback_info info)
 {
-    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
-    int ret = TEST_FAILED;
-    if (g_ndkCamera->SessionIsVideoStabilizationModeSupported(index) == CAMERA_OK) {
-        ret = TEST_OK;
-    }
-    napi_value result;
-    napi_create_int32(env, ret, &result);
-    return result;
+    return ExecuteCameraIntArgOp(env, info, [](int32_t index) -> Camera_ErrorCode {
+        return g_ndkCamera->SessionIsVideoStabilizationModeSupported(index);
+    });
 }
 
 static napi_value TakePictureWithPhotoSettings(napi_env env, napi_callback_info info)
@@ -468,38 +455,23 @@ static napi_value TakePictureWithPhotoSettings(napi_env env, napi_callback_info 
 
 static napi_value GetCameraConcurrentInfo(napi_env env, napi_callback_info info)
 {
-    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
-    int ret = TEST_FAILED;
-    if (g_ndkCamera->GetCameraConcurrentInfo(index) == CAMERA_OK) {
-        ret = TEST_OK;
-    }
-    napi_value result;
-    napi_create_int32(env, ret, &result);
-    return result;
+    return ExecuteCameraIntArgOp(env, info, [](int32_t index) -> Camera_ErrorCode {
+        return g_ndkCamera->GetCameraConcurrentInfo(index);
+    });
 }
 
 static napi_value SessionCanPreconfig(napi_env env, napi_callback_info info)
 {
-    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
-    int ret = TEST_FAILED;
-    if (g_ndkCamera->SessionCanPreconfig(index) == CAMERA_OK) {
-        ret = TEST_OK;
-    }
-    napi_value result;
-    napi_create_int32(env, ret, &result);
-    return result;
+    return ExecuteCameraIntArgOp(env, info, [](int32_t index) -> Camera_ErrorCode {
+        return g_ndkCamera->SessionCanPreconfig(index);
+    });
 }
 
 static napi_value SessionCanPreconfigWithRatio(napi_env env, napi_callback_info info)
 {
-    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
-    int ret = TEST_FAILED;
-    if (g_ndkCamera->SessionCanPreconfigWithRatio(index) == CAMERA_OK) {
-        ret = TEST_OK;
-    }
-    napi_value result;
-    napi_create_int32(env, ret, &result);
-    return result;
+    return ExecuteCameraIntArgOp(env, info, [](int32_t index) -> Camera_ErrorCode {
+        return g_ndkCamera->SessionCanPreconfigWithRatio(index);
+    });
 }
 
 static napi_value PhotoOutputRegisterCallback(napi_env env, napi_callback_info info)
@@ -543,38 +515,23 @@ static napi_value RegisterAutoDeviceSwitchStatusCallback(napi_env env, napi_call
 
 static napi_value SessionSetQualityPrioritization(napi_env env, napi_callback_info info)
 {
-    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
-    int ret = TEST_FAILED;
-    if (g_ndkCamera->SessionSetQualityPrioritization(index) == CAMERA_OK) {
-        ret = TEST_OK;
-    }
-    napi_value result;
-    napi_create_int32(env, ret, &result);
-    return result;
+    return ExecuteCameraIntArgOp(env, info, [](int32_t index) -> Camera_ErrorCode {
+        return g_ndkCamera->SessionSetQualityPrioritization(index);
+    });
 }
 
 static napi_value CameraOpenConcurrentCameras(napi_env env, napi_callback_info info)
 {
-    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
-    int ret = TEST_FAILED;
-    if (g_ndkCamera->CameraOpenConcurrentCameras(index) == CAMERA_OK) {
-        ret = TEST_OK;
-    }
-    napi_value result;
-    napi_create_int32(env, ret, &result);
-    return result;
+    return ExecuteCameraIntArgOp(env, info, [](int32_t index) -> Camera_ErrorCode {
+        return g_ndkCamera->CameraOpenConcurrentCameras(index);
+    });
 }
 
 static napi_value IsWhiteBalanceSupported(napi_env env, napi_callback_info info)
 {
-    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
-    int ret = TEST_FAILED;
-    if (g_ndkCamera->IsWhiteBalanceSupported(index) == CAMERA_OK) {
-        ret = TEST_OK;
-    }
-    napi_value result;
-    napi_create_int32(env, ret, &result);
-    return result;
+    return ExecuteCameraIntArgOp(env, info, [](int32_t index) -> Camera_ErrorCode {
+        return g_ndkCamera->IsWhiteBalanceSupported(index);
+    });
 }
 
 static napi_value RegisterSystemPressureLevel(napi_env env, napi_callback_info info)
@@ -589,11 +546,14 @@ static napi_value CameraManagerGetSupportedCameras(napi_env env, napi_callback_i
 
 static napi_value SessionGetSupportedEffectTypes(napi_env env, napi_callback_info info)
 {
-    int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
-    auto ret = g_ndkCamera->SessionGetSupportedEffectTypes(index);
-    napi_value result;
-    napi_create_int32(env, ret, &result);
-    return result;
+    return ExecuteCameraIntArgOp(env, info, [](int32_t index) -> Camera_ErrorCode {
+        return g_ndkCamera->SessionGetSupportedEffectTypes(index);
+    });
+    // int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
+    // auto ret = g_ndkCamera->SessionGetSupportedEffectTypes(index);
+    // napi_value result;
+    // napi_create_int32(env, ret, &result);
+    // return result;
 }
 
 EXTERN_C_START

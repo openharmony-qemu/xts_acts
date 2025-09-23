@@ -65,7 +65,7 @@ inline std::pair<char*, int32_t> GetArgsTwoParameters(napi_env env, napi_callbac
 {
     napi_value args[PARAMETER_TWO] = {nullptr};
     if (!CheckArgs(env, info, args, PARAMETER_TWO)) {
-        return {"", 0};
+        return {nullptr, 0};
     }
 
     size_t typeLen = 0;
@@ -74,7 +74,7 @@ inline std::pair<char*, int32_t> GetArgsTwoParameters(napi_env env, napi_callbac
     int32_t index = 0;
     bool success = napi_get_value_string_utf8(env, args[0], param1, typeLen + 1, &typeLen) == napi_ok &&
                    napi_get_value_int32(env, args[1], &index) == napi_ok;
-    return success ? std::make_pair(param1, index) : std::make_pair("", 0);
+    return success ? std::make_pair(param1, index) : std::make_pair(nullptr, 0);
 }
 
 inline std::pair<int, int> GetArgsTwoParametersByInit(napi_env env, napi_callback_info info)
