@@ -22,7 +22,6 @@
 
 #include <vector>
 void addDrmKitTest(std::vector<napi_property_descriptor>& descData);
-
 napi_value OH_MediaKeySession_GenerateMediaKeyRequestInvalue(napi_env env, napi_callback_info info);
 napi_value OH_MediaKeySession_ProcessMediaKeyResponseInvalue(napi_env env, napi_callback_info info);
 napi_value OH_MediaKeySession_CheckMediaKeyStatusInvalue(napi_env env, napi_callback_info info);

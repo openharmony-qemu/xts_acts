@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include "drmKit.h"
+#include "DrmKitTest.h"
 #include <multimedia/drm_framework/native_mediakeysession.h>
 #include <multimedia/drm_framework/native_drm_err.h>
 #include <multimedia/drm_framework/native_mediakeysystem.h>
@@ -31,6 +31,11 @@ void addDrmKitOneTest(std::vector<napi_property_descriptor>& descData)
         OH_MediaKeySession_ProcessMediaKeyResponseInvalue, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"mediaKeySession_ClearMediaKeysInvalue", nullptr, OH_MediaKeySession_ClearMediaKeysInvalue,
         nullptr, nullptr, nullptr, napi_default, nullptr});
+}
+
+void addDrmKitTwoTest(std::vector<napi_property_descriptor>& descData)
+{
+    addDrmKitOneTest(descData);
     descData.push_back({"mediaKeySession_GenerateOfflineReleaseRequestInvalue", nullptr,
         OH_MediaKeySession_GenerateOfflineReleaseRequestInvalue, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"mediaKeySession_ProcessOfflineReleaseResponseInvalue", nullptr,
@@ -75,12 +80,13 @@ void addDrmKitOneTest(std::vector<napi_property_descriptor>& descData)
         nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"mediaKeySession_CheckMediaKeyStatusInvalue", nullptr,
         OH_MediaKeySession_CheckMediaKeyStatusInvalue, nullptr, nullptr, nullptr, napi_default, nullptr});
-}
-void addDrmKitTest(std::vector<napi_property_descriptor>& descData)
-{
-    addDrmKitOneTest(descData);
     descData.push_back({"mediaKeySystem_GetMaxContentProtectionLevelInvalue", nullptr,
         OH_MediaKeySystem_GetMaxContentProtectionLevelInvalue, nullptr, nullptr, nullptr, napi_default, nullptr});
+}
+
+void addDrmKitTest(std::vector<napi_property_descriptor>& descData)
+{
+    addDrmKitTwoTest(descData);
     descData.push_back({"mediaKeyRequestType", nullptr, DRM_MediaKeyRequestTypeValue,
         nullptr, nullptr, nullptr, napi_default, nullptr});    
     descData.push_back({"mediaKeyRequestDefaultUrl", nullptr, DRM_MediaKeyRequestDefaultUrl,
