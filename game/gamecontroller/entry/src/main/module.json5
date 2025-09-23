@@ -19,6 +19,11 @@
     "description": "$string:module_desc",
     "mainElement": "EntryAbility",
     "deviceTypes": [
+      "default",
+      "tablet",
+      "2in1",
+      "phone",
+      "tv"
     ],
     "deliveryWithInstall": true,
     "installationFree": false,

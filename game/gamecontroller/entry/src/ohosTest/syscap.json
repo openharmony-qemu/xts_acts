@@ -1,6 +1,12 @@
 {
   "devices": {
-    "general": [],
+    "general": [
+      "default",
+      "tablet",
+      "2in1",
+      "phone",
+      "tv"
+    ],
     "custom": [
       {
         "xts": [
