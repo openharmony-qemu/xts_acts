@@ -15,8 +15,8 @@
 import web_webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import { BusinessError } from '@ohos.base';
-import { Driver, ON } from '@kit.TestKit';
 import events_emitter from '@ohos.events.emitter';
+import { Driver, ON } from '@kit.TestKit';
 
 interface PreviewBuilderParam {
   previewImage: Resource | string | undefined;
@@ -33,7 +33,6 @@ interface PreviewBuilderParam {
 }
 
 const EVENT_ID_SET_SUITE_KEY = 177001;
-const DOMAIN = 0x0000;
 let driver: Driver = Driver.create();
 
 @Entry

@@ -88,9 +88,6 @@ export default function webViewSrollableJsunit() {
       await Utils.waitForExist(() => isReturn, "bindSelectionMenuType02" + '_returnCheck', true, 1000);
       done();
     })
-    })
-
-
 
   })
 }
