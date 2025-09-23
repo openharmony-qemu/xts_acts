@@ -14,7 +14,7 @@
  */
 
 import { beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
-import Utils from './Utils';
+import Utils from './Utils.test';
 import webview from '@ohos.web.webview'
 import { accessibility, config } from '@kit.AccessibilityKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
