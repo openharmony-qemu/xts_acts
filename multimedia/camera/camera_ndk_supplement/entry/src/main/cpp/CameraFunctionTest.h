@@ -41,6 +41,23 @@ public:
     int32_t OHCameraManagerGetSupportedCameraOutputCapabilityTest(int32_t caseCode);
     int32_t OHCameraManagerGetSupportedCameraOutputCapabilityWithSceneModeTest(int32_t caseCode);
     int32_t OHCameraManagerDeleteSupportedCameraOutputCapabilityTest(int32_t caseCode);
+    int32_t OHCameraManagerIsCameraMutedTest(int32_t caseCode);
+    int32_t OHCameraManagerCreateCaptureSessionTest(int32_t caseCode);
+    int32_t OHCameraManagerCreateCameraInputTest(int32_t caseCode);
+    int32_t OHCameraManagerCreateCameraInputWithPositionAndTypeTest(int32_t caseCode);
+    int32_t OHCameraManagerCreatePreviewOutputTest(int32_t caseCode);
+    int32_t OHCameraManagerCreatePreviewOutputUsedInPreconfigTest(int32_t caseCode);
+    int32_t OHCameraManagerCreatePhotoOutputTest(int32_t caseCode);
+    int32_t OHCameraManagerCreatePhotoOutputUsedInPreconfigTest(int32_t caseCode);
+    int32_t OHCameraManagerCreatePhotoOutputWithoutSurfaceTest(int32_t caseCode);
+    int32_t OHCameraManagerCreateVideoOutputTest(int32_t caseCode);
+    int32_t OHCameraManagerCreateVideoOutputUsedInPreconfigTest(int32_t caseCode);
+    int32_t OHCameraManagerCreateMetadataOutputTest(int32_t caseCode);
+    int32_t OHCameraManagerGetSupportedSceneModesTest(int32_t caseCode);
+    int32_t OHCameraManagerIsTorchSupportedByTorchModeTest(int32_t caseCode);
+    int32_t OHCameraManagerSetTorchModeTest(int32_t caseCode);
+    int32_t OHCameraManagerGetCameraDeviceTest(int32_t caseCode);
+    int32_t OHCameraManagerGetCameraConcurrentInfosTest(int32_t caseCode);
 };
 
 

@@ -209,6 +209,216 @@ export default function CameraNoPermissionTest() {
         done()
       })
 
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Camera_Manager_FUNCTION1200
+     * @tc.name       testOH_Camera_Manager_FUNCTION1200
+     * @tc.desc       Test OH_CameraManager_CreateCaptureSession return CAMERA_SERVICE_FATAL_ERROR
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Camera_Manager_FUNCTION1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CameraManager_CreateCaptureSession", camera.CameraErrorCode.SERVICE_FATAL_ERROR)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Camera_Manager_FUNCTION1300
+     * @tc.name       testOH_Camera_Manager_FUNCTION1300
+     * @tc.desc       Test OH_CameraManager_CreateCameraInput return CAMERA_SERVICE_FATAL_ERROR
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Camera_Manager_FUNCTION1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CameraManager_CreateCameraInput", camera.CameraErrorCode.SERVICE_FATAL_ERROR)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Camera_Manager_FUNCTION1600
+     * @tc.name       testOH_Camera_Manager_FUNCTION1600
+     * @tc.desc       Test OH_CameraManager_CreatePreviewOutput return CAMERA_SERVICE_FATAL_ERROR
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Camera_Manager_FUNCTION1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CameraManager_CreatePreviewOutput", camera.CameraErrorCode.SERVICE_FATAL_ERROR)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Camera_Manager_FUNCTION1700
+     * @tc.name       testOH_Camera_Manager_FUNCTION1700
+     * @tc.desc       Test OH_CameraManager_CreatePreviewOutputUsedInPreconfig return CAMERA_SERVICE_FATAL_ERROR
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Camera_Manager_FUNCTION1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CameraManager_CreatePreviewOutputUsedInPreconfig", camera.CameraErrorCode.SERVICE_FATAL_ERROR)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Camera_Manager_FUNCTION1900
+     * @tc.name       testOH_Camera_Manager_FUNCTION1900
+     * @tc.desc       Test OH_CameraManager_CreatePhotoOutput return CAMERA_SERVICE_FATAL_ERROR
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Camera_Manager_FUNCTION1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CameraManager_CreatePhotoOutput", camera.CameraErrorCode.SERVICE_FATAL_ERROR)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Camera_Manager_FUNCTION2000
+     * @tc.name       testOH_Camera_Manager_FUNCTION2000
+     * @tc.desc       Test OH_CameraManager_CreatePhotoOutputUsedInPreconfig return CAMERA_SERVICE_FATAL_ERROR
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Camera_Manager_FUNCTION2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CameraManager_CreatePhotoOutputUsedInPreconfig", camera.CameraErrorCode.SERVICE_FATAL_ERROR)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Camera_Manager_FUNCTION2300
+     * @tc.name       testOH_Camera_Manager_FUNCTION2300
+     * @tc.desc       Test OH_CameraManager_CreatePhotoOutputWithoutSurface return CAMERA_SERVICE_FATAL_ERROR
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Camera_Manager_FUNCTION2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CameraManager_CreatePhotoOutputWithoutSurface", camera.CameraErrorCode.SERVICE_FATAL_ERROR)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Camera_Manager_FUNCTION2500
+     * @tc.name       testOH_Camera_Manager_FUNCTION2500
+     * @tc.desc       Test OH_CameraManager_CreateVideoOutput return CAMERA_SERVICE_FATAL_ERROR
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Camera_Manager_FUNCTION2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CameraManager_CreateVideoOutput", camera.CameraErrorCode.SERVICE_FATAL_ERROR)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Camera_Manager_FUNCTION2600
+     * @tc.name       testOH_Camera_Manager_FUNCTION2600
+     * @tc.desc       Test OH_CameraManager_CreateVideoOutputUsedInPreconfig return CAMERA_SERVICE_FATAL_ERROR
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Camera_Manager_FUNCTION2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CameraManager_CreateVideoOutputUsedInPreconfig", camera.CameraErrorCode.SERVICE_FATAL_ERROR)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Camera_Manager_FUNCTION2900
+     * @tc.name       testOH_Camera_Manager_FUNCTION2900
+     * @tc.desc       Test OH_CameraManager_CreateMetadataOutput return CAMERA_SERVICE_FATAL_ERROR
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Camera_Manager_FUNCTION2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CameraManager_CreateMetadataOutput", camera.CameraErrorCode.SERVICE_FATAL_ERROR)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Camera_Manager_FUNCTION3100
+     * @tc.name       testOH_Camera_Manager_FUNCTION3100
+     * @tc.desc       Test OH_CameraManager_GetSupportedSceneModes return CAMERA_SERVICE_FATAL_ERROR
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Camera_Manager_FUNCTION3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CameraManager_GetSupportedSceneModes", camera.CameraErrorCode.SERVICE_FATAL_ERROR)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Camera_Manager_FUNCTION3200
+     * @tc.name       testOH_Camera_Manager_FUNCTION3200
+     * @tc.desc       Test OH_CameraManager_IsTorchSupportedByTorchMode return CAMERA_SERVICE_FATAL_ERROR
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Camera_Manager_FUNCTION3200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CameraManager_IsTorchSupportedByTorchMode", camera.CameraErrorCode.SERVICE_FATAL_ERROR)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Camera_Manager_FUNCTION3300
+     * @tc.name       testOH_Camera_Manager_FUNCTION3300
+     * @tc.desc       Test OH_CameraManager_SetTorchMode return CAMERA_SERVICE_FATAL_ERROR
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Camera_Manager_FUNCTION3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CameraManager_SetTorchMode", camera.CameraErrorCode.SERVICE_FATAL_ERROR)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Camera_Manager_FUNCTION3500
+     * @tc.name       testOH_Camera_Manager_FUNCTION3500
+     * @tc.desc       Test OH_CameraManager_GetCameraDevice return CAMERA_SERVICE_FATAL_ERROR
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Camera_Manager_FUNCTION3500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CameraManager_GetCameraDevice", camera.CameraErrorCode.SERVICE_FATAL_ERROR)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEIDA_OH_Camera_Manager_FUNCTION3800
+     * @tc.name       testOH_Camera_Manager_FUNCTION3800
+     * @tc.desc       Test OH_CameraManager_GetCameraConcurrentInfos return CAMERA_SERVICE_FATAL_ERROR
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it("testOH_Camera_Manager_FUNCTION3800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.OHCameraFunctionHandle("OH_CameraManager_GetCameraConcurrentInfos", camera.CameraErrorCode.SERVICE_FATAL_ERROR)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
 
   })
 }
