@@ -93,8 +93,9 @@ struct SegmentButtonDirection {
             }).backgroundColor(this.currentDirection == Direction.Ltr ? Color.Red : Color.Blue)
 
           }
+          .height('3%')
 
-          Column() {
+          Row() {
             Button('LocalizedTextPadding').id('textPadding').onClick(() => {
               this.tabOptions.localizedTextPadding = {
                 start: LengthMetrics.vp(5), end: LengthMetrics.vp(15)
@@ -111,6 +112,8 @@ struct SegmentButtonDirection {
                 { start: LengthMetrics.vp(15), end: LengthMetrics.vp(5) }
             })
           }
+          .height('3%')
+
 
 
           SegmentButton({
@@ -141,7 +144,7 @@ struct SegmentButtonDirection {
         }.width('90%')
       }.width('100%')
     }
-    .height('90%')
-    .margin({top: '2%'})
+    .height('80%')
+    .padding({top: '2%', bottom: '2%'})
   }
 }
