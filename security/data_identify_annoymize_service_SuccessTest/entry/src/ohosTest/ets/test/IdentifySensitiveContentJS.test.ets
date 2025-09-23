@@ -126,10 +126,10 @@ export default function identifySensitiveContentTestUnit() {
         try {
           let matchResult =  await identifySensitiveContent.scanFile(dataPath,policies);
           console.info("scanfileSandboxDirtxt:"+matchResult.length);
-          expect(1).assertEqual(matchResult.length);
-          expect('Pornography').assertEqual(matchResult[0].sensitiveLabel);
-          expect(1).assertEqual(matchResult[0].matchNumber);
-          expect('h***o').assertEqual(matchResult[0].matchContent);
+          expect(matchResult.length).assertEqual(1);
+          expect(matchResult[0].sensitiveLabel).assertEqual('Pornography');
+          expect(matchResult[0].matchNumber).assertEqual(1);
+          expect(matchResult[0].matchContent).assertEqual('h***o');
         }catch (error){
           expect().assertFail();
         }
@@ -143,6 +143,43 @@ export default function identifySensitiveContentTestUnit() {
           console.info("scanfileSandboxDirtxt:"+matchResult.length);
         }catch (error){
           console.info('scanfileSandboxDirtxt:'+error.code);
+          expect(201).assertEqual(error.code);
+        }
+      }
+
+    })
+
+    /**
+     * @tc.number PrivacyAssistant_JS_25.1_2_000
+     * @tc.name scanfileSandboxDirnull
+     * @tc.desc normal test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('scanfileSandboxDirnull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
+      if (await dlpPermission.isDLPFeatureProvided() === true) {
+        console.info('scanfileSandboxDirnull');
+        let policy:identifySensitiveContent.Policy = {sensitiveLabel:"Pornography",keywords:[],regex:"wwwwwww"};
+        let policies:identifySensitiveContent.Policy[] = [policy];
+        try {
+          let matchResult =  await identifySensitiveContent.scanFile(dataPath, policies);
+          console.info("scanfileSandboxDirnull:" + matchResult.length);
+          expect(matchResult.length).assertEqual(0);
+        }catch (error){
+          expect().assertFail();
+        }
+      }
+
+      if (await dlpPermission.isDLPFeatureProvided() === false) {
+        console.info('scanfileSandboxDirnull');
+        let policy:identifySensitiveContent.Policy = {sensitiveLabel:"Pornography", keywords:[], regex:"hello"};
+        let policies:identifySensitiveContent.Policy[] = [policy];
+        try {
+          let matchResult =  await identifySensitiveContent.scanFile(dataPath, policies);
+          console.info("scanfileSandboxDirnull:" + matchResult.length);
+        }catch (error){
+          console.info('scanfileSandboxDirnull:'+error.code);
           expect(201).assertEqual(error.code);
         }
       }
