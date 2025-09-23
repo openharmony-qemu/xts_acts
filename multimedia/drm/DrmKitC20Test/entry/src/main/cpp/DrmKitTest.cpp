@@ -124,7 +124,7 @@ void addDrmKitTest(std::vector<napi_property_descriptor>& descData)
     descData.push_back({"DRMKeysInfo_keyId", nullptr, DRM_KeysInfo_keyId,
         nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"DRMKeysInfo_keysInfoCount", nullptr, DRM_KeysInfo_keysInfoCount,
-        nullptr, nullptr, nullptr, napi_default, nullptr});    
+        nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"DRMKeysInfo_statusValue", nullptr, DRM_KeysInfo_statusValue,
         nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"DrmErrCode_DRM_ERR_UNKNOWN", nullptr, Drm_ErrCode_DRM_ERR_UNKNOWN,

@@ -19,13 +19,13 @@
         "name": "default",
         "type": "HarmonyOS",
         "material": {
-          "certpath": "C:\\Users\\lenovo\\.ohos\\config\\default_drm_ndk_test_FMAyxsHsUpJ4T_SD681tMKPrsd3BzoO5_AepGS6LokY=.cer",
+          "certpath": "C:\\Users\\lenovo\\.ohos\\config\\default_DrmKitTest_O8xDXrOPPV61SXITCaOreo0d_RsoL6cFtNBj5KuPpTo=.cer",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001BF3BC6735847DD20139A9988E9705CEEDC066AEA640C1CE0AABB136C6D75E58ADBE167D77201CFA",
-          "profile": "C:\\Users\\lenovo\\.ohos\\config\\default_drm_ndk_test_FMAyxsHsUpJ4T_SD681tMKPrsd3BzoO5_AepGS6LokY=.p7b",
+          "keyPassword": "0000001BD46601B01B68F724601E1BAD0CF1424462BBFF1BBC1CF68454DCF9C4E7ACE6F178326649ECA1A5",
+          "profile": "C:\\Users\\lenovo\\.ohos\\config\\default_DrmKitTest_O8xDXrOPPV61SXITCaOreo0d_RsoL6cFtNBj5KuPpTo=.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\lenovo\\.ohos\\config\\default_drm_ndk_test_FMAyxsHsUpJ4T_SD681tMKPrsd3BzoO5_AepGS6LokY=.p12",
-          "storePassword": "0000001BC4058DA383F64EB86493CCE1F04363FEE6C5410E959001D8EFD15E046FC108C3F880DA46D94196"
+          "storeFile": "C:\\Users\\lenovo\\.ohos\\config\\default_DrmKitTest_O8xDXrOPPV61SXITCaOreo0d_RsoL6cFtNBj5KuPpTo=.p12",
+          "storePassword": "0000001B5A525EE63238A5F2ABE67EA27108821545C5E01568FD492915DB1EF7DF41489E78B910C5E75AD2"
         }
       }
     ],

@@ -16,7 +16,7 @@ import("//test/xts/tools/build/suite.gni")
 ohos_app_assist_suite("Drm_Main_NDK_test") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsDrmMainNdkTest"
+  hap_name = "DrmKitMainC20Test"
   subsystem_name = "multimedia"
   part_name = "drm_framework"
 }
@@ -25,7 +25,7 @@ ohos_js_app_suite("Drm_Framework_NDK_test") {
   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsDrmNDKTest"
+  hap_name = "DrmKitC20Test"
   subsystem_name = "multimedia"
   part_name = "drm_framework"
   deps = [ ":Drm_Main_NDK_test" ]
