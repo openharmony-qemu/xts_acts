@@ -586,8 +586,8 @@ export default function audioSessionManagerTest() {
       }
     })
     /* *
-    * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_GETAVAILABLEDEVICE_0100
-    * @tc.name      : SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_GETAVAILABLEDEVICE_0100
+    * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ONAVAILABLEDEVICE_0100
+    * @tc.name      : SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ONAVAILABLEDEVICE_0100
     * @tc.desc      : setAudioSessionScene -6800101
     * @tc.size      : MEDIUMTEST
     * @tc.type      : FUNCTION
