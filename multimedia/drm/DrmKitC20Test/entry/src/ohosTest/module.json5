@@ -18,7 +18,7 @@
     "type": "feature",
     "description": "$string:module_test_desc",
     "mainElement": "TestAbility",
-    "deviceTypes": [git ],
+    "deviceTypes": [],
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:test_pages",

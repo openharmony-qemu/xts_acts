@@ -11,8 +11,8 @@
     "kits": [
         {
             "test-file-name": [
-                "DrmKitC20Test.hap",
-				"DrmKitMainC20Test.hap"
+                "drmkitc20test.hap",
+                "drmkitmainc20Test.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
