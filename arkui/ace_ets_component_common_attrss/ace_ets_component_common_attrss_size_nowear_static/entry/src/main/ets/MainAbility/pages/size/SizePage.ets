@@ -212,7 +212,7 @@ struct sizePage {
         Marquee({
           start: true,
           step: 50,
-          loop: Infinity,
+          loop: Infinity as int,
           fromStart: true,
           src: this.src
         })

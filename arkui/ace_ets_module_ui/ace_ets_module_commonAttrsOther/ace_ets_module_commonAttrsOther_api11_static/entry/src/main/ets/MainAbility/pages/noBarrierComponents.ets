@@ -134,7 +134,7 @@ struct noBarrierComponents {
   private selectedDate: Date = new Date('2021-08-08');
   private fromStart: boolean = true;
   private step: number = 50;
-  private loop: number = Infinity;
+  private loop: int = Infinity as int;
   private src: string = "Running Marquee starts rolling";
   private patternLockController: PatternLockController = new PatternLockController();
   private value1: string = 'hello world';

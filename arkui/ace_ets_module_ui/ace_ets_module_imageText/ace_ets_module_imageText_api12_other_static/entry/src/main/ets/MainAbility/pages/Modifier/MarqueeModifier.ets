@@ -56,7 +56,7 @@ struct MarqueeModifier1 {
       Marquee({
         start: this.start,
         step: 10,
-        loop: Number.POSITIVE_INFINITY,
+        loop: Number.POSITIVE_INFINITY as int,
         fromStart: true,
         src: 'MarqueeModifier MarqueeInstance'
       })

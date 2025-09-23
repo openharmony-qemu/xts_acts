@@ -36,7 +36,7 @@ struct Frame {
         .backgroundColor('#FFFFCC')
       Marquee({
         start: this.start,
-        loop: Number.POSITIVE_INFINITY,
+        loop: Number.POSITIVE_INFINITY as int,
         src: 'ABCDEFGHIJKLMNabcdefghijklmn',
       })
         .key('maquee_frame')
