@@ -91,14 +91,8 @@ export default function ActsMiscdeviceNdkTest() {
       console.info(TAG + ' isAvailable ' + isAvailable);
       let ret : number = vibrator.startVibrator(0, USAGE_ALARM);
       console.info(TAG + "Test MISC ret Result = " + ret);
-      if (isAvailable) {
-        expect(ret).assertEqual(PARAMETER_ERROR);
-        done()
-      } else {
-        console.info(TAG + ' is not supported on this device.');
-        expect(ret).assertEqual(PARAMETER_ERROR);
-        done()
-      }
+      expect(ret).assertEqual(PARAMETER_ERROR);
+      done()
     });
 
     /**
@@ -195,9 +189,7 @@ export default function ActsMiscdeviceNdkTest() {
       console.info(TAG + "Test MISC ret Result = " + ret);
       await globalThis.abilityContext.resourceManager.closeRawFdSync('test_invalid_type.json')
       if (isAvailable) {
-        if (ret == 0) {
-          expect(false).assertTrue();
-        }
+        expect(ret !== 0).assertTrue();
         done()
       } else {
         console.info(TAG + ' is not supported on this device.');
@@ -224,9 +216,7 @@ export default function ActsMiscdeviceNdkTest() {
       console.info(TAG + "Test MISC ret Result = " + ret);
       await globalThis.abilityContext.resourceManager.closeRawFdSync('test_invalid_startTime.json')
       if (isAvailable) {
-        if (ret == 0) {
-          expect(false).assertTrue();
-        }
+        expect(ret !== 0).assertTrue();
         done()
       } else {
         console.info(TAG + ' is not supported on this device.');
@@ -253,9 +243,7 @@ export default function ActsMiscdeviceNdkTest() {
       console.info(TAG + "Test MISC ret Result = " + ret);
       await globalThis.abilityContext.resourceManager.closeRawFdSync('test_invalid_duration.json')
       if (isAvailable) {
-        if (ret == 0) {
-          expect(false).assertTrue();
-        }
+        expect(ret !== 0).assertTrue();
         done()
       } else {
         console.info(TAG + ' is not supported on this device.');
@@ -282,9 +270,7 @@ export default function ActsMiscdeviceNdkTest() {
       console.info(TAG + "Test MISC ret Result = " + ret);
       await globalThis.abilityContext.resourceManager.closeRawFdSync('test_invalid_intensity.json')
       if (isAvailable) {
-        if (ret == 0) {
-          expect(false).assertTrue();
-        }
+        expect(ret !== 0).assertTrue();
         done()
       } else {
         console.info(TAG + ' is not supported on this device.');
@@ -311,9 +297,7 @@ export default function ActsMiscdeviceNdkTest() {
       console.info(TAG + "Test MISC ret Result = " + ret);
       await globalThis.abilityContext.resourceManager.closeRawFdSync('test_invalid_frequency.json')
       if (isAvailable) {
-        if (ret == 0) {
-          expect(false).assertTrue();
-        }
+        expect(ret !== 0).assertTrue();
         done()
       } else {
         console.info(TAG + ' is not supported on this device.');
@@ -340,9 +324,7 @@ export default function ActsMiscdeviceNdkTest() {
       console.info(TAG + "Test MISC ret Result = " + ret);
       await globalThis.abilityContext.resourceManager.closeRawFdSync('test_129_event.json')
       if (isAvailable) {
-        if (ret == 0) {
-          expect(false).assertTrue();
-        }
+        expect(ret !== 0).assertTrue();
         done()
       } else {
         console.info(TAG + ' is not supported on this device.');
@@ -369,9 +351,7 @@ export default function ActsMiscdeviceNdkTest() {
       console.info(TAG + "Test MISC ret Result = " + ret);
       await globalThis.abilityContext.resourceManager.closeRawFdSync('test_big_file_size.json')
       if (isAvailable) {
-        if (ret == 0) {
-          expect(false).assertTrue();
-        }
+        expect(ret !== 0).assertTrue();
         done()
       } else {
         console.info(TAG + ' is not supported on this device.');
