@@ -30,71 +30,374 @@ export default function variableOperationsTest() {
       console.log('loadFailed', e.message);
     }
 
-    /*
-    * @tc.number    : Variable_SetValue_Long_0100
-    * @tc.name      : Variable_SetValue_Long_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
+    /**
+    * @tc.number    VARIABLE_SETVALUE_LONG_0100
+    * @tc.name      test_Variable_SetValue_Long_0001
+    * @tc.desc      set long value normal
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
     */
-    it("Variable_SetValue_Long_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_Variable_SetValue_Long_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.log('Variable_SetValue_Long_0100 start');
+        console.log('test_Variable_SetValue_Long_0001 start');
         let cls = new Foo();
         let result = cls.test_Variable_SetValue_Long();
         expect(result).assertTrue();
-        console.log('Variable_SetValue_Long_0100 done');
+        console.log('test_Variable_SetValue_Long_0001 done');
         done();
-        console.log('Variable_SetValue_Long_0100 end');
-      })
+        console.log('test_Variable_SetValue_Long_0001 end');
+      });
 
-    /*
-    * @tc.number    : Variable_SetValue_Int_0100
-    * @tc.name      : Variable_SetValue_Int_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
+    /**
+    * @tc.number    VARIABLE_SETVALUE_LONG_0200
+    * @tc.name      test_Variable_SetValue_Long_0002
+    * @tc.desc      invalid env, return normal
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
     */
-    it("Variable_SetValue_Int_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_Variable_SetValue_Long_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.log('Variable_SetValue_Int_0100 start');
+        console.log('test_Variable_SetValue_Long_0002 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_SetValue_Long_02();
+        expect(result).assertTrue();
+        console.log('test_Variable_SetValue_Long_0002 done');
+        done();
+        console.log('test_Variable_SetValue_Long_0002 end');
+      });
+
+    /**
+    * @tc.number    VARIABLE_SETVALUE_LONG_0300
+    * @tc.name      test_Variable_SetValue_Long_0003
+    * @tc.desc      find variable float, return invalid type
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
+    */
+    it("test_Variable_SetValue_Long_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_SetValue_Long_0003 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_SetValue_Long_03();
+        expect(result).assertTrue();
+        console.log('test_Variable_SetValue_Long_0003 done');
+        done();
+        console.log('test_Variable_SetValue_Long_0003 end');
+      });
+
+    /**
+    * @tc.number    VARIABLE_SETVALUE_LONG_0400
+    * @tc.name      test_Variable_SetValue_Long_0004
+    * @tc.desc      find variable nullptr, return invalid args
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
+    */
+    it("test_Variable_SetValue_Long_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_SetValue_Long_0004 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_SetValue_Long_04();
+        expect(result).assertTrue();
+        console.log('test_Variable_SetValue_Long_0004 done');
+        done();
+        console.log('test_Variable_SetValue_Long_0004 end');
+      });
+
+    /**
+    * @tc.number    VARIABLE_SETVALUE_LONG_0500
+    * @tc.name      test_Variable_SetValue_Long_0005
+    * @tc.desc      find variable double type, get value false
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
+    */
+    it("test_Variable_SetValue_Long_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_SetValue_Long_0005 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_SetValue_Long_05();
+        expect(result).assertTrue();
+        console.log('test_Variable_SetValue_Long_0005 done');
+        done();
+        console.log('test_Variable_SetValue_Long_0005 end');
+      });
+
+    /**
+    * @tc.number    VARIABLE_SETVALUE_LONG_0700
+    * @tc.name      test_Variable_SetValue_Long_0007
+    * @tc.desc      find variable bool, set(3L, 0, -9) and get value composite test
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
+    */
+    it("test_Variable_SetValue_Long_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_SetValue_Long_0007 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_SetValue_Long_07();
+        expect(result).assertTrue();
+        console.log('test_Variable_SetValue_Long_0007 done');
+        done();
+        console.log('test_Variable_SetValue_Long_0007 end');
+      });
+
+    /**
+    * @tc.number    VARIABLE_SETVALUE_LONG_0900
+    * @tc.name      test_Variable_SetValue_Long_0009
+    * @tc.desc      find variable long, set long and testval and get value composite test
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
+    */
+    it("test_Variable_SetValue_Long_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_SetValue_Long_0009 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_SetValue_Long_09();
+        expect(result).assertTrue();
+        console.log('test_Variable_SetValue_Long_0009 done');
+        done();
+        console.log('test_Variable_SetValue_Long_0009 end');
+      });
+
+    /**
+    * @tc.number    VARIABLE_SETVALUE_INT_0100
+    * @tc.name      test_Variable_SetValue_Int_0001
+    * @tc.desc      set int value normal
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
+    */
+    it("test_Variable_SetValue_Int_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_SetValue_Int_0001 start');
         let cls = new Foo();
         let result = cls.test_Variable_SetValue_Int();
         expect(result).assertTrue();
-        console.log('Variable_SetValue_Int_0100 done');
+        console.log('test_Variable_SetValue_Int_0001 done');
         done();
-        console.log('Variable_SetValue_Int_0100 end');
-      })
+        console.log('test_Variable_SetValue_Int_0001 end');
+      });
 
-    /*
-     * @tc.number    : Variable_SetValue_Double_0100
-     * @tc.name      : Variable_SetValue_Double_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 0
-     */
-    it("Variable_SetValue_Double_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    /**
+    * @tc.number    VARIABLE_SETVALUE_INT_0200
+    * @tc.name      test_Variable_SetValue_Int_0002
+    * @tc.desc      invalid env, return normal
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
+    */
+    it("test_Variable_SetValue_Int_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.log('Variable_SetValue_Double_0100 start');
+        console.log('test_Variable_SetValue_Int_0002 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_SetValue_Int_02();
+        expect(result).assertTrue();
+        console.log('test_Variable_SetValue_Int_0002 done');
+        done();
+        console.log('test_Variable_SetValue_Int_0002 end');
+      });
+
+    /**
+    * @tc.number    VARIABLE_SETVALUE_INT_0300
+    * @tc.name      test_Variable_SetValue_Int_0003
+    * @tc.desc      find variable float, return invalid type
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
+    */
+    it("test_Variable_SetValue_Int_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_SetValue_Int_0003 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_SetValue_Int_03();
+        expect(result).assertTrue();
+        console.log('test_Variable_SetValue_Int_0003 done');
+        done();
+        console.log('test_Variable_SetValue_Int_0003 end');
+      });
+
+    /**
+    * @tc.number    VARIABLE_SETVALUE_INT_0400
+    * @tc.name      test_Variable_SetValue_Int_0004
+    * @tc.desc      find variable nullptr, return invalid args
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
+    */
+    it("test_Variable_SetValue_Int_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_SetValue_Int_0004 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_SetValue_Int_04();
+        expect(result).assertTrue();
+        console.log('test_Variable_SetValue_Int_0004 done');
+        done();
+        console.log('test_Variable_SetValue_Int_0004 end');
+      });
+
+    /**
+    * @tc.number    VARIABLE_SETVALUE_INT_0500
+    * @tc.name      test_Variable_SetValue_Int_0005
+    * @tc.desc      find variable long type, get value false
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
+    */
+    it("test_Variable_SetValue_Int_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_SetValue_Int_0005 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_SetValue_Int_05();
+        expect(result).assertTrue();
+        console.log('test_Variable_SetValue_Int_0005 done');
+        done();
+        console.log('test_Variable_SetValue_Int_0005 end');
+      });
+
+    /**
+    * @tc.number    VARIABLE_SETVALUE_INT_0700
+    * @tc.name      test_Variable_SetValue_Int_0007
+    * @tc.desc      find variable bool, set(3U, 0, -9) and get value composite test
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
+    */
+    it("test_Variable_SetValue_Int_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_SetValue_Int_0007 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_SetValue_Int_07();
+        expect(result).assertTrue();
+        console.log('test_Variable_SetValue_Int_0007 done');
+        done();
+        console.log('test_Variable_SetValue_Int_0007 end');
+      });
+
+    /**
+    * @tc.number    VARIABLE_SETVALUE_INT_0900
+    * @tc.name      test_Variable_SetValue_Int_0009
+    * @tc.desc      find variable int, set int and testval and get value composite test
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
+    */
+    it("test_Variable_SetValue_Int_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_SetValue_Int_0009 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_SetValue_Int_09();
+        expect(result).assertTrue();
+        console.log('test_Variable_SetValue_Int_0009 done');
+        done();
+        console.log('test_Variable_SetValue_Int_0009 end');
+      });
+
+    /**
+     * @tc.number    VARIABLE_SETVALUE_DOUBLE_0100
+     * @tc.name      test_Variable_SetValue_Double_0001
+     * @tc.desc      set double value normal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Variable_SetValue_Double_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_SetValue_Double_0001 start');
         let cls = new Foo();
         let result = cls.test_Variable_SetValue_Double();
         expect(result).assertTrue();
-        console.log('Variable_SetValue_Double_0100 done');
+        console.log('test_Variable_SetValue_Double_0001 done');
         done();
-        console.log('Variable_SetValue_Double_0100 end');
-      })
+        console.log('test_Variable_SetValue_Double_0001 end');
+      });
 
+    /**
+     * @tc.number    VARIABLE_SETVALUE_DOUBLE_0200
+     * @tc.name      test_Variable_SetValue_Double_0002
+     * @tc.desc      invalid env, return normal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Variable_SetValue_Double_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_SetValue_Double_0002 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_SetValue_Double_02();
+        expect(result).assertTrue();
+        console.log('test_Variable_SetValue_Double_0002 done');
+        done();
+        console.log('test_Variable_SetValue_Double_0002 end');
+      });
 
-    /*
-     * @tc.number    : Variable_GetValue_Ref_0100
-     * @tc.name      : Variable_GetValue_Ref_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 0
+    /**
+     * @tc.number    VARIABLE_SETVALUE_DOUBLE_0300
+     * @tc.name      test_Variable_SetValue_Double_0003
+     * @tc.desc      find variable int, return invalid type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Variable_SetValue_Double_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_SetValue_Double_0003 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_SetValue_Double_03();
+        expect(result).assertTrue();
+        console.log('test_Variable_SetValue_Double_0003 done');
+        done();
+        console.log('test_Variable_SetValue_Double_0003 end');
+      });
+
+     /**
+     * @tc.number    VARIABLE_SETVALUE_DOUBLE_0400
+     * @tc.name      test_Variable_SetValue_Double_0004
+     * @tc.desc      find variable nullptr, return invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Variable_SetValue_Double_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_SetValue_Double_0004 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_SetValue_Double_04();
+        expect(result).assertTrue();
+        console.log('test_Variable_SetValue_Double_0004 done');
+        done();
+        console.log('test_Variable_SetValue_Double_0004 end');
+      });
+
+    /**
+     * @tc.number    VARIABLE_SETVALUE_DOUBLE_0500
+     * @tc.name      test_Variable_SetValue_Double_0005
+     * @tc.desc      find variable bool type, get value false
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Variable_SetValue_Double_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_SetValue_Double_0005 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_SetValue_Double_05();
+        expect(result).assertTrue();
+        console.log('test_Variable_SetValue_Double_0005 done');
+        done();
+        console.log('test_Variable_SetValue_Double_0005 end');
+      });
+
+    /**
+     * @tc.number    VARIABLE_SETVALUE_DOUBLE_0700
+     * @tc.name      test_Variable_SetValue_Double_0007
+     * @tc.desc      find variable bool, set(3.14F, 0, -9.42F) and get value composite test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("Variable_GetValue_Ref_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
