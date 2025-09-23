@@ -13,20 +13,20 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_app_assist_suite("DrmKitMainErrorCodeTest") {
+ohos_app_assist_suite("ActsDrmKitMainErrorCodeTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "DrmKitMainErrorCodeTest"
+  hap_name = "ActsDrmKitMainErrorCodeTest"
   subsystem_name = "multimedia"
   part_name = "drm_framework"
 }
 
-ohos_js_app_suite("DrmKitErrorCodeTest") {
+ohos_js_app_suite("ActsDrmKitErrorCodeTest") {
   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "DrmKitErrorCodeTest"
+  hap_name = "ActsDrmKitErrorCodeTest"
   subsystem_name = "multimedia"
   part_name = "drm_framework"
-  deps = [ ":DrmKitMainErrorCodeTest" ]
+  deps = [ ":ActsDrmKitMainErrorCodeTest" ]
 }

@@ -3,7 +3,7 @@
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "360000",
-        "bundle-name": "com.example.myapplication",
+        "bundle-name": "com.example.actsdrmkiterrorcodetest",
         "module-name": "entry_test",
         "shell-timeout": "360000",
         "testcase-timeout": 70000
@@ -11,8 +11,8 @@
     "kits": [
         {
             "test-file-name": [
-                "DrmKitErrorCodeTest.hap",
-                "DrmKitMainErrorCodeTest.hap"
+                "ActsDrmKitErrorCodeTest.hap",
+                "ActsDrmKitMainErrorCodeTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
