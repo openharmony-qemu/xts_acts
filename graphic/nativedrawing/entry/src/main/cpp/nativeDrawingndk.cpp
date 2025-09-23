@@ -1728,7 +1728,7 @@ static double TypographyGetLongestLine(OH_Drawing_TypographyCreate *handler, int
     OH_Drawing_Typography *typography = OH_Drawing_CreateTypography(handler);
     if (typography == nullptr) {
         OH_Drawing_DestroyTypography(typography);
-        return;
+        return 0.0;
     }
     double maxWidth = 800;
     OH_Drawing_TypographyLayout(typography, maxWidth);
