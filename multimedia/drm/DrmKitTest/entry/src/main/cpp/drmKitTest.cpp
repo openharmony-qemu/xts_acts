@@ -23,7 +23,7 @@
 #define CLEAR_PLAY "com.clearplay.drm"
 #define WISE_PLAY "com.wiseplay.drm"
 
-void addDrmKitTest(std::vector<napi_property_descriptor>& descData)
+void addDrmKitOneTest(std::vector<napi_property_descriptor>& descData)
 {
     descData.push_back({"mediaKeySession_GenerateMediaKeyRequestInvalue", nullptr,
         OH_MediaKeySession_GenerateMediaKeyRequestInvalue, nullptr, nullptr, nullptr, napi_default, nullptr});
@@ -33,7 +33,7 @@ void addDrmKitTest(std::vector<napi_property_descriptor>& descData)
         nullptr, nullptr, nullptr, napi_default, nullptr});    
     descData.push_back({"mediaKeySession_GenerateOfflineReleaseRequestInvalue", nullptr,
         OH_MediaKeySession_GenerateOfflineReleaseRequestInvalue, nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"mediaKeySession_ProcessOfflineReleaseResponseInvalue", nullptr, 
+    descData.push_back({"mediaKeySession_ProcessOfflineReleaseResponseInvalue", nullptr,
         OH_MediaKeySession_ProcessOfflineReleaseResponseInvalue, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"mediaKeySession_RestoreOfflineMediaKeysInvalue", nullptr,
         OH_MediaKeySession_RestoreOfflineMediaKeysInvalue, nullptr, nullptr, nullptr, napi_default, nullptr});
@@ -72,7 +72,11 @@ void addDrmKitTest(std::vector<napi_property_descriptor>& descData)
     descData.push_back({"mediaKeySystem_GetCertificateStatusInvalue", nullptr,
         OH_MediaKeySystem_GetCertificateStatusInvalue, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"mediaKeySystem_DestroyInvalue", nullptr, OH_MediaKeySystem_DestroyInvalue,
-        nullptr, nullptr, nullptr, napi_default, nullptr});
+        nullptr, nullptr, nullptr, napi_default, nullptr});    
+}
+void addDrmKitTest(std::vector<napi_property_descriptor>& descData)
+{
+    addDrmKitOneTest(descData);
     descData.push_back({"mediaKeySession_CheckMediaKeyStatusInvalue", nullptr,
         OH_MediaKeySession_CheckMediaKeyStatusInvalue, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"mediaKeySystem_GetMaxContentProtectionLevelInvalue", nullptr,
@@ -89,15 +93,15 @@ void addDrmKitTest(std::vector<napi_property_descriptor>& descData)
         nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UNKNOWN", nullptr,
         DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UNKNOWN, nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_INITIAL", nullptr, 
+    descData.push_back({"DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_INITIAL", nullptr,
         DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_INITIAL, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RENEWAL", nullptr,
         DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RENEWAL, nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RELEASE", nullptr, 
+    descData.push_back({"DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RELEASE", nullptr,
         DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RELEASE, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_NONE", nullptr,
         DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_NONE, nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UPDATE", nullptr, 
+    descData.push_back({"DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UPDATE", nullptr,
         DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UPDATE, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"DRMOfflineMediaKeyStatusOFFLINE_MEDIA_KEY_STATUS_INACTIVE", nullptr,
         DRM_OfflineMediaKeyStatusOFFLINE_MEDIA_KEY_STATUS_INACTIVE, nullptr, nullptr, nullptr, napi_default, nullptr});
@@ -173,7 +177,7 @@ napi_value OH_MediaKeySession_ProcessOfflineReleaseResponseInvalue(napi_env env,
 {
     napi_value result;
     int ret = 0;
-    Drm_ErrCode errCode = OH_MediaKeySession_ProcessOfflineReleaseResponse(nullptr, nullptr, 0 , nullptr, 0);
+    Drm_ErrCode errCode = OH_MediaKeySession_ProcessOfflineReleaseResponse(nullptr, nullptr, 0, nullptr, 0);
     napi_create_int32(env, errCode == DRM_ERR_INVALID_VAL, &result);
     return result;
 }
