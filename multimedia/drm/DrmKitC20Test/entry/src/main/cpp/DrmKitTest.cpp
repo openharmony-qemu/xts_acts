@@ -120,7 +120,7 @@ void addDrmKitTest(std::vector<napi_property_descriptor>& descData)
     descData.push_back({"evenType_EVENT_VENDOR_DEFINED", nullptr, EvenType_EVENT_VENDOR_DEFINED,
         nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"evenType_EVENT_EXPIRATION_UPDATE", nullptr, EvenType_EVENT_EXPIRATION_UPDATE,
-        nullptr, nullptr, nullptr, napi_default, nullptr});    
+        nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"DRMKeysInfo_keyId", nullptr, DRM_KeysInfo_keyId,
         nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"DRMKeysInfo_keysInfoCount", nullptr, DRM_KeysInfo_keysInfoCount,
