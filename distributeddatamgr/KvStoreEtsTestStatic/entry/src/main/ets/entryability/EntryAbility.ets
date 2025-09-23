@@ -19,11 +19,12 @@ import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
-
+import common from '@ohos.app.ability.common';
 
 class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onCreate');
+    AppStorage.setOrCreate<common.UIAbilityContext>("abilityContextMainAbility2", this.context);
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
