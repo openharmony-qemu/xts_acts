@@ -30,14 +30,14 @@ namespace CameraTestUtils {
 const int NAME_SIZE = 256;
 const int PARAMETER_TWO = 2;
 
-inline bool CheckArgs(napi_env env, napi_callback_info info, napi_value *args, size_t required)
+static bool CheckArgs(napi_env env, napi_callback_info info, napi_value *args, size_t required)
 {
     size_t argc = required;
     return napi_get_cb_info(env, info, &argc, args, nullptr, nullptr) == napi_ok && argc >= required &&
            args[0] != nullptr && (required == 1 || args[1] != nullptr);
 }
 
-inline char* GetArgsOneParameterByStr(napi_env env, napi_callback_info info)
+static char* GetArgsOneParameterByStr(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
     napi_value args[PARAMETER_TWO] = {nullptr};
@@ -50,7 +50,7 @@ inline char* GetArgsOneParameterByStr(napi_env env, napi_callback_info info)
     return napi_get_value_string_utf8(env, args[0], param, typeLen + 1, &typeLen) == napi_ok ? param : nullptr;
 }
 
-inline int32_t GetArgsOneParameterByInt(napi_env env, napi_callback_info info)
+static int32_t GetArgsOneParameterByInt(napi_env env, napi_callback_info info)
 {
     napi_value args[1] = {nullptr};
     if (!CheckArgs(env, info, args, 1)) {
@@ -61,7 +61,7 @@ inline int32_t GetArgsOneParameterByInt(napi_env env, napi_callback_info info)
     return napi_get_value_int32(env, args[0], &index) == napi_ok ? index : 0;
 }
 
-inline std::pair<char*, int32_t> GetArgsTwoParameters(napi_env env, napi_callback_info info)
+static std::pair<char*, int32_t> GetArgsTwoParameters(napi_env env, napi_callback_info info)
 {
     napi_value args[PARAMETER_TWO] = {nullptr};
     if (!CheckArgs(env, info, args, PARAMETER_TWO)) {
@@ -77,7 +77,7 @@ inline std::pair<char*, int32_t> GetArgsTwoParameters(napi_env env, napi_callbac
     return success ? std::make_pair(param1, index) : std::make_pair(nullptr, 0);
 }
 
-inline std::pair<int, int> GetArgsTwoParametersByInit(napi_env env, napi_callback_info info)
+static std::pair<int, int> GetArgsTwoParametersByInit(napi_env env, napi_callback_info info)
 {
     int32_t index0 = 0;
     int32_t index1 = 0;

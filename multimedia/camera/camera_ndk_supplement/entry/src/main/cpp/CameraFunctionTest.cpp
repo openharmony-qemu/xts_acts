@@ -77,7 +77,7 @@ int32_t CameraFunctionTest::OHCameraDeviceGetCameraOrientationTest(int32_t caseC
     return ret;
 }
 
-int32_t CameraFunctionTest::OHCameraDeviceGetHostDeviceNameTest(int32_t caseCode) 
+int32_t CameraFunctionTest::OHCameraDeviceGetHostDeviceNameTest(int32_t caseCode)
 {
     int32_t ret = CAMERA_OK;
     if (caseCode == CAMERA_OK) {
@@ -403,7 +403,7 @@ int32_t CameraFunctionTest::OHCameraManagerCreateCaptureSessionTest(int32_t case
             ret = TEST_OK;
         }
     } else if (caseCode == CAMERA_SERVICE_FATAL_ERROR) {
-        Camera_CaptureSession * session = nullptr;
+        Camera_CaptureSession *session = nullptr;
         Camera_ErrorCode result = OH_CameraManager_CreateCaptureSession(cameraManager_, &session);
         if (result == CAMERA_SERVICE_FATAL_ERROR) {
             ret = TEST_OK;
@@ -447,7 +447,7 @@ int32_t CameraFunctionTest::OHCameraManagerCreatePreviewOutputTest(int32_t caseC
             ret = TEST_OK;
         }
     } else if (caseCode == CAMERA_SERVICE_FATAL_ERROR) {
-        Camera_OutputCapability* output = nullptr;
+        Camera_OutputCapability *output = nullptr;
         if (CAMERA_OK == OH_CameraManager_GetSupportedCameraOutputCapability(cameraManager_, cameras_, &output)) {
             Camera_Profile *profile = output->previewProfiles[0];
             Camera_PreviewOutput *previewOutput = nullptr;
@@ -553,11 +553,13 @@ int32_t CameraFunctionTest::OHCameraManagerCreateVideoOutputTest(int32_t caseCod
         Camera_VideoOutput *videoOutput = nullptr;
          Camera_OutputCapability* output = nullptr;
         if (OH_CameraManager_GetSupportedCameraOutputCapability(cameraManager_, cameras_, &output) == CAMERA_OK) {
-            Camera_VideoProfile *profile = output->videoProfiles[0];
-            result =
-                OH_CameraManager_CreateVideoOutput(cameraManager_, profile, previewSurfaceId_.c_str(), &videoOutput);
-            if (result == CAMERA_SERVICE_FATAL_ERROR) {
-                ret = TEST_OK;
+            if (output->videoProfilesSize > 0) {
+                Camera_VideoProfile *profile = output->videoProfiles[0];
+                result = OH_CameraManager_CreateVideoOutput(cameraManager_, profile, previewSurfaceId_.c_str(),
+                                                            &videoOutput);
+                if (result == CAMERA_SERVICE_FATAL_ERROR) {
+                    ret = TEST_OK;
+                }
             }
         }
     } else if (caseCode == CAMERA_INVALID_ARGUMENT) {
@@ -645,7 +647,7 @@ int32_t CameraFunctionTest::OHCameraManagerIsTorchSupportedByTorchModeTest(int32
     int32_t ret = CAMERA_OK;
     Camera_ErrorCode result;
     if (caseCode == CAMERA_SERVICE_FATAL_ERROR) {
-         bool isTorchSupported = false;
+        bool isTorchSupported = false;
         result = OH_CameraManager_IsTorchSupportedByTorchMode(nullptr, AUTO, &isTorchSupported);
         if (result == CAMERA_SERVICE_FATAL_ERROR) {
             ret = TEST_OK;
@@ -696,7 +698,7 @@ int32_t CameraFunctionTest::OHCameraManagerGetCameraConcurrentInfosTest(int32_t 
             ret = TEST_OK;
         }
     } else {
-         uint32_t deviceSize = 2;
+        uint32_t deviceSize = 2;
         if (size_ < deviceSize) {
             OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "Concurrent Camera devices < 2");
             return ret;
@@ -704,13 +706,12 @@ int32_t CameraFunctionTest::OHCameraManagerGetCameraConcurrentInfosTest(int32_t 
         Camera_ConcurrentInfo* info = nullptr;
         uint32_t infoSize = 0;
         if (caseCode == CAMERA_SERVICE_FATAL_ERROR) {
-            uint32_t deviceSize = 4;
+            deviceSize = 4;
             result = OH_CameraManager_GetCameraConcurrentInfos(cameraManager_, cameras_, deviceSize, &info, &infoSize);
             if (result == CAMERA_SERVICE_FATAL_ERROR) {
                 ret = TEST_OK;
             }
         } else if (caseCode == CAMERA_OK) {
-            uint32_t deviceSize = 2;
             result = OH_CameraManager_GetCameraConcurrentInfos(cameraManager_, cameras_, deviceSize, &info, &infoSize);
             if (result == CAMERA_OK) {
                 ret = TEST_OK;

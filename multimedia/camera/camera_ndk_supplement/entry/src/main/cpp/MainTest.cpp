@@ -49,7 +49,8 @@ static napi_value ExecuteCameraIntArgFunction(napi_env env, napi_callback_info i
 }
 
 static napi_value ExecuteCameraIntArgOp(napi_env env, napi_callback_info info,
-                                       std::function<Camera_ErrorCode(int32_t)> cameraOp) {
+                                        std::function<Camera_ErrorCode(int32_t)> cameraOp)
+{
     int32_t index = CameraTestUtils::GetArgsOneParameterByInt(env, info);
     int ret = TEST_FAILED;
     if (cameraOp(index) == CAMERA_OK) {
@@ -223,21 +224,21 @@ static napi_value CameraErrorCode(napi_env env, napi_callback_info info)
 
 static napi_value OHCameraGetCameraManagerTest(napi_env env, napi_callback_info info, int32_t caseCode)
 {
-    return ExecuteCameraIntArgFunction(env, info, caseCode,[](int32_t code) {
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
         return g_ndkCamera->OHGetCameraManagerInvalidTest(code);
     });
 }
 
 static napi_value OHCameraDeleteCameraManagerTest(napi_env env, napi_callback_info info, int32_t caseCode)
 {
-    return ExecuteCameraIntArgFunction(env, info, caseCode,[](int32_t code) {
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
         return g_ndkCamera->OHCameraDeleteCameraManagerTest(code);
     });
 }
 
 static napi_value OHCameraDeviceGetCameraOrientationTest(napi_env env, napi_callback_info info, int32_t caseCode)
 {
-    return ExecuteCameraIntArgFunction(env, info, caseCode,[](int32_t code) {
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
         return g_ndkCamera->OHCameraDeviceGetCameraOrientationTest(code);
     });
 }
