@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,25 +15,12 @@
 {
   "app": {
     "signingConfigs": [
-      {
-        "name": "default",
-        "type": "HarmonyOS",
-        "material": {
-          "certpath": "C:\\Users\\lenovo\\.ohos\\config\\default_DrmKitTest_O8xDXrOPPV61SXITCaOreo0d_RsoL6cFtNBj5KuPpTo=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001BD46601B01B68F724601E1BAD0CF1424462BBFF1BBC1CF68454DCF9C4E7ACE6F178326649ECA1A5",
-          "profile": "C:\\Users\\lenovo\\.ohos\\config\\default_DrmKitTest_O8xDXrOPPV61SXITCaOreo0d_RsoL6cFtNBj5KuPpTo=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\lenovo\\.ohos\\config\\default_DrmKitTest_O8xDXrOPPV61SXITCaOreo0d_RsoL6cFtNBj5KuPpTo=.p12",
-          "storePassword": "0000001B5A525EE63238A5F2ABE67EA27108821545C5E01568FD492915DB1EF7DF41489E78B910C5E75AD2"
-        }
-      }
     ],
     "products": [
       {
         "name": "default",
         "signingConfig": "default",
-        "compileSdkVersion": 20,
+        "compileSdkVersion": 21,
         "compatibleSdkVersion": 12,
         "targetSdkVersion": 18,
         "runtimeOS": "OpenHarmony",
