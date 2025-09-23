@@ -17,23 +17,28 @@ import business_error from '@ohos.base';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 
+const EVENT_ID_SET_SUITE_KEY = 176001;
+
 @Entry
 @Component
 struct WebControllerHitTest {
   controller: WebController = new WebController();
   @State str: string = ""
   @State hitType: number = -1
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+  @State isGetHitType: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -42,6 +47,7 @@ struct WebControllerHitTest {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -63,14 +69,18 @@ struct WebControllerHitTest {
         Button('WebControllerHitTestButton').key('WebControllerHitTestButton')
           .onClick(async () => {
             console.info("key==>" + this.str)
+            await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
             switch (this.str) {
               case "emitGetHitTest001": {
                 try {
+                  this.isPageEnd =-1
                   this.controller.loadUrl({ url: 'resource://rawfile/hitTypeEditText.html' })
-                  await Utils.sleep(3000)
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  this.isGetHitType = -1;
                   await Utils.clickComponent('WebControllerHitTestWebView')
-                  await Utils.sleep(3000)
-                  Utils.emitEvent(this.hitType, 70170)
+                  await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
+                  Utils.emitEvent(this.hitType, 176010)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -78,11 +88,13 @@ struct WebControllerHitTest {
               }
               case "emitGetHitTest002": {
                 try {
+                  this.isPageEnd =-1
                   this.controller.loadUrl({ url: 'resource://rawfile/hitTypeEmail.html' })
-                  await Utils.sleep(3000)
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  this.isGetHitType = -1;
                   await Utils.clickComponent('WebControllerHitTestWebView')
-                  await Utils.sleep(3000)
-                  Utils.emitEvent(this.hitType, 70172)
+                  await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
+                  Utils.emitEvent(this.hitType, 176020)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -90,11 +102,13 @@ struct WebControllerHitTest {
               }
               case "emitGetHitTest003": {
                 try {
+                  this.isPageEnd =-1
                   this.controller.loadUrl({ url: 'resource://rawfile/hitTypeHttpAnchor.html' })
-                  await Utils.sleep(3000)
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  this.isGetHitType = -1;
                   await Utils.clickComponent('WebControllerHitTestWebView')
-                  await Utils.sleep(3000)
-                  Utils.emitEvent(this.hitType, 70174)
+                  await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
+                  Utils.emitEvent(this.hitType, 176030)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -102,11 +116,13 @@ struct WebControllerHitTest {
               }
               case "emitGetHitTest004": {
                 try {
+                  this.isPageEnd =-1
                   this.controller.loadUrl({ url: 'resource://rawfile/hitTypeHttpAnchorImg.html' })
-                  await Utils.sleep(3000)
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  this.isGetHitType = -1;
                   await Utils.clickComponent('WebControllerHitTestWebView')
-                  await Utils.sleep(3000)
-                  Utils.emitEvent(this.hitType, 70176)
+                  await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
+                  Utils.emitEvent(this.hitType, 176040)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -114,11 +130,13 @@ struct WebControllerHitTest {
               }
               case "emitGetHitTest005": {
                 try {
+                  this.isPageEnd =-1
                   this.controller.loadUrl({ url: 'resource://rawfile/hitTypeImg.html' })
-                  await Utils.sleep(3000)
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  this.isGetHitType = -1;
                   await Utils.clickComponent('WebControllerHitTestWebView')
-                  await Utils.sleep(3000)
-                  Utils.emitEvent(this.hitType, 70178)
+                  await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
+                  Utils.emitEvent(this.hitType, 176050)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -126,11 +144,13 @@ struct WebControllerHitTest {
               }
               case "emitGetHitTest006": {
                 try {
+                  this.isPageEnd =-1
                   this.controller.loadUrl({ url: 'resource://rawfile/hitTypeMap.html' })
-                  await Utils.sleep(3000)
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  this.isGetHitType = -1;
                   await Utils.clickComponent('WebControllerHitTestWebView')
-                  await Utils.sleep(3000)
-                  Utils.emitEvent(this.hitType, 70180)
+                  await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
+                  Utils.emitEvent(this.hitType, 176060)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -138,11 +158,13 @@ struct WebControllerHitTest {
               }
               case "emitGetHitTest007": {
                 try {
+                  this.isPageEnd =-1
                   this.controller.loadUrl({ url: 'resource://rawfile/hitTypePhone.html' })
-                  await Utils.sleep(3000)
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  this.isGetHitType = -1;
                   await Utils.clickComponent('WebControllerHitTestWebView')
-                  await Utils.sleep(3000)
-                  Utils.emitEvent(this.hitType, 70182)
+                  await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
+                  Utils.emitEvent(this.hitType, 176070)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -150,11 +172,13 @@ struct WebControllerHitTest {
               }
               case "emitGetHitTest008": {
                 try {
+                  this.isPageEnd =-1
                   this.controller.loadUrl({ url: 'resource://rawfile/hitTypeUnknown.html' })
-                  await Utils.sleep(3000)
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  this.isGetHitType = -1;
                   await Utils.clickComponent('WebControllerHitTestWebView')
-                  await Utils.sleep(3000)
-                  Utils.emitEvent(this.hitType, 70184)
+                  await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
+                  Utils.emitEvent(this.hitType, 176080)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -171,12 +195,17 @@ struct WebControllerHitTest {
             try {
               this.hitType = this.controller.getHitTest()
               console.log("hitType: " + this.hitType)
+              this.isGetHitType = 1;
             } catch (error) {
               let e: business_error.BusinessError = error as business_error.BusinessError;
               console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
             }
           })
           .javaScriptAccess(true)
+          .onPageEnd((event) => {
+            console.log('onPageEnd url:' + event.url);
+            this.isPageEnd = 1;
+          })
       }
       .width('100%')
     }

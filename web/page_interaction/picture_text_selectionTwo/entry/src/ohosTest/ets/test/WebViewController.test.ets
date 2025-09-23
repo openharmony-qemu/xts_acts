@@ -17,8 +17,13 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 183101;
+const driver = Driver.create();
 
 export default function webViewController() {
 
@@ -35,8 +40,8 @@ export default function webViewController() {
         if (!("webViewController" == pages.name)) {
           console.info("get webViewController state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push webViewController page success " + JSON.stringify(result));
+          await driver.waitForComponent(ON.id("WebViewControllerButton"), 10000)
         }
       } catch (err) {
         console.error("push webViewController page error: " + err);
@@ -50,7 +55,6 @@ export default function webViewController() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webViewController beforeEach start");
       done();
     })
@@ -65,10 +69,12 @@ export default function webViewController() {
     * @tc.level      : Level 1
     */
     it('testOnShowFileSelector001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testOnShowFileSelector001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnShowFileSelector001", true, 31029, done);
-      sendEventByKey('WebViewControllerButton', 10, '');
+      let isReturn = false;
+      Utils.emitEvent("testOnShowFileSelector001", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testOnShowFileSelector001", true, 183110, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerButton","testOnShowFileSelector001");
+      await Utils.waitForExist(() => isReturn, "testOnShowFileSelector001" + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -80,10 +86,12 @@ export default function webViewController() {
     * @tc.level      : Level 1
     */
     it('testFileSelectorParamGetTitle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFileSelectorParamGetTitle001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFileSelectorParamGetTitle001", 'open file', 31030, done);
-      sendEventByKey('WebViewControllerButton', 10, '');
+      Utils.emitEvent("testFileSelectorParamGetTitle001", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testFileSelectorParamGetTitle001", 'open file', 183120, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerButton","testFileSelectorParamGetTitle001");
+      await Utils.waitForExist(() => isReturn, "testFileSelectorParamGetTitle001" + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -95,10 +103,12 @@ export default function webViewController() {
     * @tc.level      : Level 1
     */
     it('testFileSelectorParamGetMode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFileSelectorParamGetMode001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFileSelectorParamGetMode001", 0, 31031, done);
-      sendEventByKey('WebViewControllerButton', 10, '');
+      Utils.emitEvent("testFileSelectorParamGetMode001", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testFileSelectorParamGetMode001", 0, 183130, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerButton","testFileSelectorParamGetMode001");
+      await Utils.waitForExist(() => isReturn, "testFileSelectorParamGetMode001" + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -110,10 +120,12 @@ export default function webViewController() {
     * @tc.level      : Level 1
     */
     it('testFileSelectorParamGetAcceptType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFileSelectorParamGetAcceptType001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFileSelectorParamGetAcceptType001", '.json', 31032, done);
-      sendEventByKey('WebViewControllerButton', 10, '');
+      Utils.emitEvent("testFileSelectorParamGetAcceptType001", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testFileSelectorParamGetAcceptType001", '.json', 183140, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerButton","testFileSelectorParamGetAcceptType001");
+      await Utils.waitForExist(() => isReturn, "testFileSelectorParamGetAcceptType001" + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -125,10 +137,12 @@ export default function webViewController() {
    * @tc.level      : Level 1
    */
     it('testFileSelectorParamIsCapture001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFileSelectorParamIsCapture001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFileSelectorParamIsCapture001", false, 31033, done);
-      sendEventByKey('WebViewControllerButton', 10, '');
+      Utils.emitEvent("testFileSelectorParamIsCapture001", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testFileSelectorParamIsCapture001", false, 183150, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerButton","testFileSelectorParamIsCapture001");
+      await Utils.waitForExist(() => isReturn, "testFileSelectorParamIsCapture001" + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -140,10 +154,12 @@ export default function webViewController() {
     * @tc.level      : Level 1
     */
     it('testFileSelectorResultHandleFileList001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testFileSelectorResultHandleFileList001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFileSelectorResultHandleFileList001", "\"1.json\"", 31034, done);
-      sendEventByKey('WebViewControllerButton', 10, '');
+      Utils.emitEvent("testFileSelectorResultHandleFileList001", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testFileSelectorResultHandleFileList001", "\"1.json\"", 183160, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewControllerButton","testFileSelectorResultHandleFileList001");
+      await Utils.waitForExist(() => isReturn, "testFileSelectorResultHandleFileList001" + '_returnCheck', true, 500);
+      done();
     })
 
   })
