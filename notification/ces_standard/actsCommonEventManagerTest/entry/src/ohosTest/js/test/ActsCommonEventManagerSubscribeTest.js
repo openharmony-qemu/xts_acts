@@ -230,6 +230,93 @@ export default function ActsCommonEventManagerSubscribeTest() {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_2000 END`)
     })
 
+        /*
+      * @tc.number: SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1200
+      * @tc.name: SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1200
+      * @tc.desc: verify the promise function
+      */
+        it('SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1200', Level.LEVEL2, async function (done) {
+          console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1200 START`)
+    
+          let options = {
+            code: 0,
+            data: "initial data",
+            isOrdered: true,
+            isSticky: false,
+          }
+    
+          let subscribeInfo = {
+            events: ["eventname2"],
+            priority: 100
+          };
+    
+    
+          let subscriber = commonEventManager.createSubscriberSync(subscribeInfo)
+          commonEventManager.subscribe(subscriber, async (err, data) => {
+            if (err) {
+              console.error(`subscribe failed, code is ${err.code}, message is ${err.message}`)
+              expect(false).assertTrue()
+              done()
+            } else {
+              await subscriber.isOrderedCommonEvent().then((isOrdered) => {
+                console.info(`isOrderedCommonEvent_12 success ${isOrdered}`)
+                expect(isOrdered).assertTrue()
+              }).catch((err) => {
+                console.info(`isOrderedCommonEvent_12 err ${err}`)
+                expect(false).assertTrue()
+                done()
+              })
+    
+              await subscriber.isStickyCommonEvent().then((isSticky) => {
+                console.info(`isStickyCommonEvent_12 success ${isSticky}`)
+                expect(isSticky).assertFalse()
+              }).catch((err) => {
+                console.info(`isStickyCommonEvent_12 err ${err}`)
+                expect(false).assertTrue()
+                done()
+              })
+    
+              await subscriber.abortCommonEventSync();
+              await subscriber.getAbortCommonEvent().then((abortEvent) => {
+                console.info(`getAbortCommonEvent_12 success ${abortEvent}`)
+                expect(abortEvent).assertTrue()
+              }).catch((err) => {
+                console.info(`getAbortCommonEvent_12 err ${err}`)
+                expect(false).assertTrue()
+                done()
+              })
+              await subscriber.clearAbortCommonEventSync()
+    
+              let info = subscriber.getSubscribeInfoSync();
+              expect(info.priority).assertEqual(100)
+              expect(info.userId).assertEqual(-3)
+              done()
+            }
+          })
+    
+          function publishCB(err) {
+            if (err) {
+              console.error(`publish failed, code is ${err.code}, message is ${err.message}`)
+              expect(false).assertTrue()
+              done()
+            } else {
+              console.info(`publish success`)
+            }
+          }
+    
+          try {
+            setTimeout(() => {
+              commonEventManager.publish("eventname2", options, publishCB);
+            }, 1000);
+          } catch (err) {
+            console.error(`publish failed, code is ${err.code}, message is ${err.message}`)
+            expect(false).assertTrue()
+            done()
+          }
+    
+          console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1200 END`)
+        })
+
 
     /*
       * @tc.number: SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1100
@@ -356,94 +443,6 @@ export default function ActsCommonEventManagerSubscribeTest() {
       } catch (err) {
         console.error(`publish_11 failed, code is ${err.code}, message is ${err.message}`)
       }
-    })
-
-
-    /*
-      * @tc.number: SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1200
-      * @tc.name: SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1200
-      * @tc.desc: verify the promise function
-      */
-    it('SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1200', Level.LEVEL2, async function (done) {
-      console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1200 START`)
-
-      let options = {
-        code: 0,
-        data: "initial data",
-        isOrdered: true,
-        isSticky: false,
-      }
-
-      let subscribeInfo = {
-        events: ["eventname2"],
-        priority: 100
-      };
-
-
-      let subscriber = commonEventManager.createSubscriberSync(subscribeInfo)
-      commonEventManager.subscribe(subscriber, async (err, data) => {
-        if (err) {
-          console.error(`subscribe failed, code is ${err.code}, message is ${err.message}`)
-          expect(false).assertTrue()
-          done()
-        } else {
-          await subscriber.isOrderedCommonEvent().then((isOrdered) => {
-            console.info(`isOrderedCommonEvent_12 success ${isOrdered}`)
-            expect(isOrdered).assertTrue()
-          }).catch((err) => {
-            console.info(`isOrderedCommonEvent_12 err ${err}`)
-            expect(false).assertTrue()
-            done()
-          })
-
-          await subscriber.isStickyCommonEvent().then((isSticky) => {
-            console.info(`isStickyCommonEvent_12 success ${isSticky}`)
-            expect(isSticky).assertFalse()
-          }).catch((err) => {
-            console.info(`isStickyCommonEvent_12 err ${err}`)
-            expect(false).assertTrue()
-            done()
-          })
-
-          await subscriber.abortCommonEventSync();
-          await subscriber.getAbortCommonEvent().then((abortEvent) => {
-            console.info(`getAbortCommonEvent_12 success ${abortEvent}`)
-            expect(abortEvent).assertTrue()
-          }).catch((err) => {
-            console.info(`getAbortCommonEvent_12 err ${err}`)
-            expect(false).assertTrue()
-            done()
-          })
-          await subscriber.clearAbortCommonEventSync()
-
-          let info = subscriber.getSubscribeInfoSync();
-          expect(info.priority).assertEqual(100)
-          expect(info.userId).assertEqual(-3)
-          done()
-        }
-      })
-
-      function publishCB(err) {
-        if (err) {
-          console.error(`publish failed, code is ${err.code}, message is ${err.message}`)
-          expect(false).assertTrue()
-          done()
-        } else {
-          console.info(`publish success`)
-        }
-      }
-
-      try {
-        setTimeout(() => {
-          commonEventManager.publish("eventname2", options, publishCB);
-        }, 1000);
-      } catch (err) {
-        console.error(`publish failed, code is ${err.code}, message is ${err.message}`)
-        expect(false).assertTrue()
-        done()
-      }
-
-      console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1200 END`)
     })
 
     console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST END`)
