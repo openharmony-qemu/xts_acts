@@ -14,7 +14,7 @@
 */
 import { Entry, Component, Column, Gauge, Margin, Flex, Text, Builder, $r, Color, FlexOptions, LinearGradient, GaugeShadowOptions, Resource,
   GaugeIndicatorOptions, ColumnOptions, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow, ResourceColor} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 function fakeGaugeIndicatorOptions(val: GaugeIndicatorOptions | string | number): GaugeIndicatorOptions {
   return val as GaugeIndicatorOptions;

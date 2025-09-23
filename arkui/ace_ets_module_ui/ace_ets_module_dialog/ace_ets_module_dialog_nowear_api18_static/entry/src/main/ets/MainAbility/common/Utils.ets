@@ -14,13 +14,8 @@
  */
 import RectValue from './Rect';
 import {
-  __memo_context_type,
-  __memo_id_type,
   memo,
-  MutableState,
-  observableProxy,
   State,
-  stateOf
 } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins // should be insert by ui-plugins
 import {
   Button,

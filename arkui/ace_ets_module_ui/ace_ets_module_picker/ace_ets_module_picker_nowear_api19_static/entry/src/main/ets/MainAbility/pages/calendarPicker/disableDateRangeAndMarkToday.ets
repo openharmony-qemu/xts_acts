@@ -16,7 +16,7 @@
 import EnvironmentCallback from '@ohos.app.ability.EnvironmentCallback';
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, ClickEvent, ColumnOptions, Direction, Scroll, FontWeight, CalendarPicker,
   Row, RowOptions, DateRange, CalendarOptions } from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 let environmentCallback: EnvironmentCallback
 

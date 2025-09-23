@@ -14,7 +14,7 @@
  */
 import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent,
   Image,ImageFit, CaretOffset, SearchController, TextAlign, Search, Row, Color } from '@ohos.arkui.component'  
-import { State, MutableState, stateOf, observableProxy } from '@ohos.arkui.stateManagement' 
+import { State } from '@ohos.arkui.stateManagement' 
 
 @Entry
 @Component

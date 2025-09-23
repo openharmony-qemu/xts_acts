@@ -51,7 +51,7 @@ import {
   SwipeEdgeEffect,
   SwipeActionState
 } from '@ohos.arkui.component'
-import { AppStorage, MutableState, observableProxy, State, stateOf } from '@ohos.arkui.stateManagement'
+import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { UIContext} from '@ohos.arkui.UIContext';
 @Entry
 @Component
