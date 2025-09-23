@@ -121,13 +121,13 @@ export default function userauthTest_API9() {
 
 
 
-    /*
-        * @tc.number    : Security_IAM_PIN_Kit_Func_Static_0104
-        * @tc.name      : Security_IAM_PIN_Kit_Func_Static_0104
-        * @tc.desc      : Enumeration testing
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 0
+    /**
+        * @tc.number     Security_IAM_PIN_Kit_Func_Static_0104
+        * @tc.name       Security_IAM_PIN_Kit_Func_Static_0104
+        * @tc.desc       Enumeration testing
+        * @tc.size       MediumTest
+        * @tc.type       Function
+        * @tc.level      Level 0
     */
     it('Security_IAM_PIN_Kit_Func_Static_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,'testFace Security_IAM_PIN_Kit_Func_Static_0104 start');
@@ -141,13 +141,13 @@ export default function userauthTest_API9() {
 
 
 
-    /*
-        * @tc.number    : Security_IAM_PIN_Kit_Func_Static_0106
-        * @tc.name      : Security_IAM_PIN_Kit_Func_Static_0106
-        * @tc.desc      : Enumeration testing
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 0
+    /**
+        * @tc.number     Security_IAM_PIN_Kit_Func_Static_0106
+        * @tc.name       Security_IAM_PIN_Kit_Func_Static_0106
+        * @tc.desc       Enumeration testing
+        * @tc.size       MediumTest
+        * @tc.type       Function
+        * @tc.level      Level 0
     */
     it('Security_IAM_PIN_Kit_Func_Static_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,'testFace Security_IAM_PIN_Kit_Func_Static_0106 start');
@@ -157,13 +157,13 @@ export default function userauthTest_API9() {
       done();
     })
 
-    /*
-        * @tc.number    : Security_IAM_Func_Static_0107
-        * @tc.name      : Security_IAM_Func_Static_0107
-        * @tc.desc      : Enumeration testing
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 0
+    /**
+        * @tc.number     Security_IAM_Func_Static_0107
+        * @tc.name       Security_IAM_Func_Static_0107
+        * @tc.desc       Enumeration testing
+        * @tc.size       MediumTest
+        * @tc.type       Function
+        * @tc.level      Level 0
     */
     it('Security_IAM_Func_Static_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,'testFace Security_IAM_Func_Static_0107 start');

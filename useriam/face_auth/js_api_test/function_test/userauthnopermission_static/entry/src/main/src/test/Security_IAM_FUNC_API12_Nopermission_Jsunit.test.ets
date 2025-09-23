@@ -57,12 +57,12 @@ export default function userauthTest_Nopermission_API12() {
     })
 
     /**
-     * @tc.number    : SUB_Security_IAM_Func_API12_static_0110
-     * @tc.name      : SUB_Security_IAM_Func_API12_static_0110
-     * @tc.desc      : Unapplied permission call GetEnrolledState
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number     SUB_Security_IAM_Func_API12_static_0110
+     * @tc.name       SUB_Security_IAM_Func_API12_static_0110
+     * @tc.desc       Unapplied permission call GetEnrolledState
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
      */
     it('SUB_Security_IAM_Func_API12_static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format, 'testFace SUB_Security_IAM_Func_API12_static_0110 start');

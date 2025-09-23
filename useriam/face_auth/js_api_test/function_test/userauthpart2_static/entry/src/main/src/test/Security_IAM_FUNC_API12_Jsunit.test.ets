@@ -88,13 +88,13 @@ export default function userauthTest_API12() {
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
 
-    /*
-    * @tc.number    : SUB_Security_IAM_Func_API12_Static_0100
-    * @tc.name      : SUB_Security_IAM_Func_API12_Static_0100
-    * @tc.desc      : GetEnrolledState parameter validity check
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 1
+    /**
+    * @tc.number     SUB_Security_IAM_Func_API12_Static_0100
+    * @tc.name       SUB_Security_IAM_Func_API12_Static_0100
+    * @tc.desc       GetEnrolledState parameter validity check
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level 1
     */
     it('SUB_Security_IAM_Func_API12_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,'testFace SUB_Security_IAM_Func_API12_Static_0100 start');
@@ -130,13 +130,13 @@ export default function userauthTest_API12() {
       }
       done();
     })
-    /*
-    * @tc.number    : SUB_Security_IAM_authWidget_API_Static_0120
-    * @tc.name      : SUB_Security_IAM_authWidget_API_Static_0120
-    * @tc.desc      : ReuseUnlockResultDuration: 120000. ReuseUnlockResultMode: 2.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level.LEVEL3
+    /**
+    * @tc.number     SUB_Security_IAM_authWidget_API_Static_0120
+    * @tc.name       SUB_Security_IAM_authWidget_API_Static_0120
+    * @tc.desc       ReuseUnlockResultDuration: 120000. ReuseUnlockResultMode: 2.
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level.LEVEL3
     */
     it('SUB_Security_IAM_authWidget_API_Static_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,"SUB_Security_IAM_authWidget_API_Static_0120 start");
@@ -159,13 +159,13 @@ export default function userauthTest_API12() {
       done();
     });
 
-    /*
-    * @tc.number    : SUB_Security_IAM_authWidget_API_Static_0140
-    * @tc.name      : SUB_Security_IAM_authWidget_API_Static_0140
-    * @tc.desc      : reuseUnlockResultMode Parameter transmission test.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level.LEVEL3
+    /**
+    * @tc.number     SUB_Security_IAM_authWidget_API_Static_0140
+    * @tc.name       SUB_Security_IAM_authWidget_API_Static_0140
+    * @tc.desc       reuseUnlockResultMode Parameter transmission test.
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level.LEVEL3
     */
     it('SUB_Security_IAM_authWidget_API_Static_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,"SUB_Security_IAM_authWidget_API_Static_0140 start");
@@ -196,13 +196,13 @@ export default function userauthTest_API12() {
       done();
     });
 
-    /*
-    * @tc.number    : SUB_Security_IAM_authWidget_API_Static_0130
-    * @tc.name      : SUB_Security_IAM_authWidget_API_Static_0130
-    * @tc.desc      : reuseUnlockResultDuration Parameter transmission test.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level.LEVEL3
+    /**
+    * @tc.number     SUB_Security_IAM_authWidget_API_Static_0130
+    * @tc.name       SUB_Security_IAM_authWidget_API_Static_0130
+    * @tc.desc       reuseUnlockResultDuration Parameter transmission test.
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level.LEVEL3
     */
     it('SUB_Security_IAM_authWidget_API_Static_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format, "SUB_Security_IAM_authWidget_API_Static_0130 start");
