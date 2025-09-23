@@ -25,7 +25,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -292,7 +292,7 @@ it('testmediaQueryOff_static_0011', Level.LEVEL2, async (done: ()=>void) => {
         }
         let callback1 = (eventData: events_emitter.EventData) => {
           console.info("testmediaQueryOff_static_0011 get event state result is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as Record<string,Object>)?.['STATUS']).assertEqual(true);
+          expect(((eventData.data) as Record<String, RecordData>)?.['STATUS']).assertEqual(true);
         }
         console.info("testmediaQueryOff_static_0011 click result is: " + JSON.stringify(inspector.sendEventByKey('offText', 10, "")));
         events_emitter.on(innerEventOne, callback1);
@@ -319,7 +319,7 @@ it('testmediaQueryOff_static_0012', Level.LEVEL2, async (done: ()=>void) => {
         }
         let callback1 = (eventData: events_emitter.EventData) => {
           console.info("testmediaQueryOff_static_0012 get event state result is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as Record<string,Object>)?.['STATUS']).assertEqual(true);
+          expect(((eventData.data) as Record<String, RecordData>)?.['STATUS']).assertEqual(true);
         }
         console.info("testmediaQueryOff_static_0012 click result is: " + JSON.stringify(inspector.sendEventByKey('matchMediaSyncText', 10, "")));
         events_emitter.on(innerEventOne, callback1);

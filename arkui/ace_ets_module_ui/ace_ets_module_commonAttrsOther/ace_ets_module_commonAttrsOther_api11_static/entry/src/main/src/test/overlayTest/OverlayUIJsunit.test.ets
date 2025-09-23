@@ -32,7 +32,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Callback, MessageManager } from '../../../ets/MainAbility/utils/MessageManager';
 import window from '@ohos.window';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement'
@@ -126,7 +126,7 @@ export default function overLayJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "title": "new title"
-          } as Record<string, object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 143,
@@ -160,7 +160,7 @@ export default function overLayJsunit() {
             "align": "Alignment.TopStart",
             "x": 30,
             "y": -30
-          } as Record<string, object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 143,
@@ -204,7 +204,7 @@ export default function overLayJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "align": "Alignment.Center"
-          } as Record<string, object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 143,
@@ -237,7 +237,7 @@ export default function overLayJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "align": '-1'
-          } as Record<string, object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1110,
@@ -271,7 +271,7 @@ export default function overLayJsunit() {
           data: {
             "x": -30,
             "y": 30
-          } as Record<string, object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1110,
@@ -312,7 +312,7 @@ export default function overLayJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "x": 1111111111
-          } as Record<string, object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1110,
@@ -348,7 +348,7 @@ export default function overLayJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "y": 1111111111
-          } as Record<string, object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1110,
@@ -385,7 +385,7 @@ export default function overLayJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "align": "Alignment.Top"
-          } as Record<string, object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1110,
@@ -419,7 +419,7 @@ export default function overLayJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "align": "Alignment.TopEnd"
-          } as Record<string, object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 143,
@@ -453,7 +453,7 @@ export default function overLayJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "align": "Alignment.Start"
-          } as Record<string, object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 143,
@@ -487,7 +487,7 @@ export default function overLayJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "align": "Alignment.End"
-          } as Record<string, object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 143,
@@ -521,7 +521,7 @@ export default function overLayJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "align": "Alignment.BottomEnd"
-          } as Record<string, object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 143,
@@ -555,7 +555,7 @@ export default function overLayJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "align": "Alignment.BottomStart"
-          } as Record<string, object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 143,

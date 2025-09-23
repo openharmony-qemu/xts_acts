@@ -35,7 +35,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 
 let domain: Int = 0x0000;
@@ -108,7 +108,7 @@ export default function circleJsunit() {
           data: {
             "width": '500px',
             "height": '500px',
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         console.info('[circleTest_static_0200] START');
         let innerEvent: events_emitter.InnerEvent = {
@@ -142,7 +142,7 @@ export default function circleJsunit() {
           data: {
             "width": '-a',
             "height": '-b',
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         console.info('[circleTest_static_0300] START');
         let innerEvent: events_emitter.InnerEvent = {

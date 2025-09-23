@@ -24,7 +24,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import Utils  from "../../../ets/MainAbility/common/Utils";
 let domain: int = 0x0000;
@@ -137,7 +137,7 @@ export default function Toggle3Jsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "isOn": true,
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 231,
@@ -169,7 +169,7 @@ export default function Toggle3Jsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "selectedColor": '#330A59F8',
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 232,
@@ -201,7 +201,7 @@ export default function Toggle3Jsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "isOn": 'aaa',
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 1035,
@@ -233,7 +233,7 @@ export default function Toggle3Jsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "isOn": -1,
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 1036,

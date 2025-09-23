@@ -25,7 +25,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -137,7 +137,7 @@ it('testPositionSetting_static_003', Level.LEVEL1, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "textAlign": Alignment.BottomEnd
-          } as Record<string,Object>
+          } as Record<string, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 25,
@@ -177,7 +177,7 @@ it('testPositionSetting_static_004', Level.LEVEL1, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "direction": Direction.Ltr
-          } as Record<string,Object>
+          } as Record<string, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 26,
@@ -255,7 +255,7 @@ it('testPositionSetting_static_006', Level.LEVEL1, async (done: ()=>void) => {
           data: {
             "position1": JSON.stringify(data),
             "position2": JSON.stringify(data2)
-          }as Record<string,Object>
+          }as Record<string, RecordData>
         } as events_emitter.EventData
 
         let indexEvent: events_emitter.InnerEvent = {
@@ -332,7 +332,7 @@ it('testPositionSetting_static_008', Level.LEVEL1, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "markAnchor": JSON.stringify(data),
-          }as Record<string,Object>
+          }as Record<string, RecordData>
         } as events_emitter.EventData
 
         let indexEvent: events_emitter.InnerEvent = {
@@ -402,7 +402,7 @@ it('testPositionSetting_static_010', Level.LEVEL1, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "offset": JSON.stringify(data),
-          }as Record<string,Object>
+          }as Record<string, RecordData>
         } as events_emitter.EventData
 
         let indexEvent: events_emitter.InnerEvent = {
@@ -466,7 +466,7 @@ it('testPositionSetting_static_012', Level.LEVEL1, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "opacityValue": "0.7"
-          }as Record<string,Object>
+          }as Record<string, RecordData>
         } as events_emitter.EventData
 
         let innerEvent: events_emitter.InnerEvent = {

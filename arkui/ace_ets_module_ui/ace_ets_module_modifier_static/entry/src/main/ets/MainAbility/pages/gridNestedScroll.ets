@@ -21,7 +21,7 @@ import {
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../common/Utils';
 
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 
 
 
@@ -62,7 +62,7 @@ struct GridNestedScroll {
                   "ACTION": this.parentScrollTime > 0 && this.selfScrollTime > 0,
                   "parentScrollTime": this.parentScrollTime,
                   "selfScrollTime": this.selfScrollTime
-                } as Record<string,Object>
+                } as Record<String, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 77001,

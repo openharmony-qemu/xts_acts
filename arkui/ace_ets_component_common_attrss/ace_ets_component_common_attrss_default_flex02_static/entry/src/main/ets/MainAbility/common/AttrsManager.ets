@@ -16,6 +16,7 @@
 import { Constants } from '../../constants/Constants';
 import events_emitter from '@ohos.events.emitter';
 import { TextCase, TextDecorationType, Resource, AlignRuleOption } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 export interface Message {
   value: AlignRuleOption
@@ -36,7 +37,7 @@ export class AttrsManager {
     const eventData: events_emitter.EventData = {
       data: {
         'src': message
-      } as Record<String, Object>
+      } as Record<String, RecordData>
     };
     AttrsManager.emitEvent(caseName, Constants.EVENT_ID_CHANGE_DATA, eventData);
   }

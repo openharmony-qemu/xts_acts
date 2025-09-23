@@ -24,7 +24,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -43,7 +43,7 @@ async function forKey(Key: string, text: string) {
       data: {
         "type": Key,
         "text": text
-      }as Record<String,Object>
+      }as Record<String, RecordData>
     } as events_emitter.EventData
     let backEvent: events_emitter.InnerEvent = {
       eventId: 10,

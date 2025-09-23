@@ -25,7 +25,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -91,7 +91,7 @@ it('testunitsModuleName_static_0001', Level.LEVEL1, async (done: ()=>void) => {
         let callback = (eventData: events_emitter.EventData) => {
           console.info("testunitsModuleName0001 get event state result is: " + JSON.stringify(eventData));
           try {
-            expect(((eventData.data) as Record<string,Object>)?.['ModuleName']).assertFalse();
+            expect(((eventData.data) as Record<String, RecordData>)?.['ModuleName']).assertFalse();
           } catch (err) {
             console.info("testunitsModuleName0001 get event state result is: " + JSON.stringify(err));
           }
@@ -123,7 +123,7 @@ it('testunitsGlobalPosition_static_0001', Level.LEVEL1, async (done: ()=>void) =
         }
         let callback = (eventData: events_emitter.EventData) => {
           console.info("testunitsGlobalPosition0001 get event state result is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as Record<string,Object>)?.['Result']).assertEqual(true);
+          expect(((eventData.data) as Record<String, RecordData>)?.['Result']).assertEqual(true);
         }
         events_emitter.on(innerEvent, callback);
       } catch (err) {

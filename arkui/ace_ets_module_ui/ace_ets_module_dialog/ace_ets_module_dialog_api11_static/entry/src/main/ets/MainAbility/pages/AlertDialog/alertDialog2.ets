@@ -40,6 +40,7 @@ import {
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
@@ -110,7 +111,7 @@ struct AlertDialogCenterStart {
             let backData: events_emitter.EventData = {
               data: {
                 "Result": true
-              } as Record<string, Object>
+              } as Record<string, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 81601,
@@ -153,7 +154,7 @@ struct AlertDialogCenterStart {
             let backData: events_emitter.EventData = {
               data: {
                 "Result": true
-              } as Record<string, Object>
+              } as Record<string, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 81602,

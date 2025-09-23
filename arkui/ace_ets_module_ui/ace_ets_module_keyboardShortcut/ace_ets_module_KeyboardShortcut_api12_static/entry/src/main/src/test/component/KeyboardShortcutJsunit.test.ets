@@ -43,7 +43,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -102,8 +102,8 @@ export default function KeyboardShortcutJsunit() {
       console.info(`${SUITE} ${CASE} START`);
 
       let callback = (event: events_emitter.EventData) => {
-        expect(((event.data) as Record<string, Object>)?.['msg']).assertEqual('Ctrl_TAB');
-        console.info(`${SUITE} ${CASE} event.data.msg:` + ((event.data) as Record<string, Object>)?.['msg']);
+        expect(((event.data) as Record<String, RecordData>)?.['msg']).assertEqual('Ctrl_TAB');
+        console.info(`${SUITE} ${CASE} event.data.msg:` + ((event.data) as Record<String, RecordData>)?.['msg']);
         done();
       }
       let event: events_emitter.InnerEvent = {
@@ -128,9 +128,9 @@ export default function KeyboardShortcutJsunit() {
       console.info(`${SUITE} ${CASE} START`);
 
       let callback = (event: events_emitter.EventData) => {
-        expect(((event.data) as Record<string, Object>)?.['msg']).assertEqual('Shift_left');
-        console.info(`${SUITE} ${CASE} ((eventData.data) as  Record<string, Object>).msg:` +
-          ((event.data) as Record<string, Object>)?.['msg']);
+        expect(((event.data) as Record<String, RecordData>)?.['msg']).assertEqual('Shift_left');
+        console.info(`${SUITE} ${CASE} ((eventData.data) as  Record<String, RecordData>).msg:` +
+          ((event.data) as Record<String, RecordData>)?.['msg']);
         done();
       }
       let event: events_emitter.InnerEvent = {

@@ -47,6 +47,7 @@ import {
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
@@ -80,7 +81,7 @@ struct GestureSetDirection {
             let backData: events_emitter.EventData = {
               data: {
                 "STATUS": this.panDirection
-              } as Record<string, Object>
+              } as Record<string, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 60204,
@@ -114,7 +115,7 @@ struct GestureSetDirection {
             let backData: events_emitter.EventData = {
               data: {
                 "STATUS": this.numberDistance
-              } as Record<string, Object>
+              } as Record<string, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 60205,
@@ -147,7 +148,7 @@ struct GestureSetDirection {
             let backData: events_emitter.EventData = {
               data: {
                 "STATUS": this.numberFingers
-              } as Record<string, Object>
+              } as Record<string, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 60206,

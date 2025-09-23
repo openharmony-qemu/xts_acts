@@ -41,6 +41,7 @@ import {
   TouchEvent,
   TouchType
 } from '@ohos.arkui.component'
+import { RecordData } from '@ohos.base'
 
 @Entry
 @Component
@@ -80,7 +81,7 @@ struct ClickExample {
             let backData: events_emitter.EventData = {
               data: {
                 "event": JSON.stringify(event),
-              } as Record<string, Object>
+              } as Record<string, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 198,

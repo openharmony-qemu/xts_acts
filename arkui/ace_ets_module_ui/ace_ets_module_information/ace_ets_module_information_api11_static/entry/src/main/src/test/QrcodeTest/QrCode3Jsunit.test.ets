@@ -21,7 +21,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -97,7 +97,7 @@ it('test_qrCode_static_002', Level.LEVEL0, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "color": "#FFB6C1"
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 170,
@@ -129,7 +129,7 @@ it('test_qrCode_static_003', Level.LEVEL0, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "backgroundColor": "#FFB6C1"
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 171,
@@ -161,7 +161,7 @@ it('test_qrCode_static_004', Level.LEVEL0, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "color": 'a'
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1023,
@@ -199,7 +199,7 @@ it('test_qrCode_static_005', Level.LEVEL0, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "color": 332
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1024,
@@ -230,7 +230,7 @@ it('test_qrCode_static_006', Level.LEVEL0, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "backgroundColor": 'b'
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1025,
@@ -270,7 +270,7 @@ it('test_qrCode_static_007', Level.LEVEL0, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "backgroundColor": 333
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1026,

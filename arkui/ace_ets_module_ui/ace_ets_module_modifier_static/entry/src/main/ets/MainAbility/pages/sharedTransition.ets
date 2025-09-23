@@ -20,6 +20,8 @@ import {
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter'
+import { RecordData } from '@ohos.base';
+
 interface EventD {
   duration?: number
   delay?: number
@@ -53,7 +55,7 @@ struct SharedTransition7Example {
                   "duration": this.duration,
                   "delay": this.delay,
                   "type": this.type
-                } as Record<string,Object>
+                } as Record<String, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 193,

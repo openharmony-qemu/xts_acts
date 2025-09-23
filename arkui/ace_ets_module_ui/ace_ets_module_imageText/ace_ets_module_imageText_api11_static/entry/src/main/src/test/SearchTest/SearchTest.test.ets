@@ -25,7 +25,7 @@ import { MessageManager, Callback, Message } from '../../../ets/MainAbility/comm
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -152,7 +152,7 @@ export default function search() {
             'textColorNumber': textColorNumber,
             'textColorString': textColorString,
             'textColorResource': textColorResource
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -205,7 +205,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_0200', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "caretWidthNumber": caretWidthNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -247,7 +247,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_0300', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "caretWidthString": caretWidthString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -289,7 +289,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_0400', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "caretWidthString": caretWidthString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -331,7 +331,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_0500', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "caretWidthString": caretWidthString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -403,7 +403,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_0700', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "caretWidthNumber": caretWidthNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -445,7 +445,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_0800', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "caretWidthNumber": caretWidthNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -487,7 +487,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_0900', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "caretWidthNumber": caretWidthNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -529,7 +529,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_1000', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "caretWidthNumber": caretWidthNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -571,7 +571,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_1100', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "caretWidthNumber": caretWidthNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -638,7 +638,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_1300', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "caretColorNumber": caretColorNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -680,7 +680,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_1400', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "caretColorColor": caretColorColor
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -722,7 +722,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_1500', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "caretColorString": caretColorString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -798,7 +798,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_1700', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "caretColorString": caretColorString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -843,7 +843,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_1800', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "caretColorNumber": caretColorNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -888,7 +888,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_1900', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "caretColorNumber": caretColorNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -935,7 +935,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_2000', Level.LEVEL1, async (done: () =>
           data: {
             "caretWidthNumber": caretWidthNumber,
             "caretColorNumber": caretColorNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -982,7 +982,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_2100', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "caretColorString": caretColorString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1024,7 +1024,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_2200', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "caretColorString": caretColorString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1149,7 +1149,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_2700', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "textColorNumber": textColorNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1223,7 +1223,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_0200', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "leftSearchIconSizeNumber": leftSearchIconSizeNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1269,7 +1269,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_0300', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "leftSearchIconSizeString": leftSearchIconSizeString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1314,7 +1314,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_0400', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "leftSearchIconSizeString": leftSearchIconSizeString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1360,7 +1360,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_0500', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "leftSearchIconSizeString": leftSearchIconSizeString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1408,7 +1408,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_0600', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "leftSearchIconSizeResource": leftSearchIconSizeResource
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1454,7 +1454,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_0700', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "leftSearchIconSizeNumber": leftSearchIconSizeNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1500,7 +1500,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_0800', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "leftSearchIconSizeNumber": leftSearchIconSizeNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1546,7 +1546,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_0900', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "leftSearchIconSizeNumber": leftSearchIconSizeNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1591,7 +1591,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_1000', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "leftSearchIconSizeNumber": leftSearchIconSizeNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1637,7 +1637,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_1100', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "leftSearchIconSizeNumber": leftSearchIconSizeNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1682,7 +1682,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_1200', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "leftSearchIconSizeNumber": leftSearchIconSizeNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1752,7 +1752,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_1400', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "leftSearchIconColorNumber": leftSearchIconColorNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1794,7 +1794,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_1500', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "leftSearchIconColorColor": leftSearchIconColorColor
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1836,7 +1836,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_1600', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "leftSearchIconColorString": leftSearchIconColorString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1912,7 +1912,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_1800', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "leftSearchIconColorString": leftSearchIconColorString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1957,7 +1957,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_1900', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "leftSearchIconColorNumber": leftSearchIconColorNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2002,7 +2002,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_2000', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "leftSearchIconColorNumber": leftSearchIconColorNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2049,7 +2049,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_2100', Level.LEVEL1, async (done: () =>
           data: {
             "leftSearchIconSizeNumber": leftSearchIconSizeNumber,
             "leftSearchIconColorNumber": leftSearchIconColorNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2122,7 +2122,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_2300', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "searchSrcPath": searchSrcPath
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2164,7 +2164,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_2400', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "searchSrcPath": searchSrcPath
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2206,7 +2206,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_2500', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "searchSrcPath": searchSrcPath
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2280,7 +2280,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_2700', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "searchSrcPath": searchSrcPath
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2322,7 +2322,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_2800', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "searchSrcPath": searchSrcPath
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2365,7 +2365,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_2900', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "searchSrcPath": searchSrcPath
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2408,7 +2408,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_3000', Level.LEVEL1, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "searchSrcPath": searchSrcPath
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2474,7 +2474,7 @@ it('ArkUI_Stage_Search_CancelButton_static_0200', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightButtonStyleParam": rightButtonStyleParam
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2517,7 +2517,7 @@ it('ArkUI_Stage_Search_CancelButton_static_0300', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightButtonStyleParam": rightButtonStyleParam
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2560,7 +2560,7 @@ it('ArkUI_Stage_Search_CancelButton_static_0400', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightButtonStyleParam": rightButtonStyleParam
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2603,7 +2603,7 @@ it('ArkUI_Stage_Search_CancelButton_static_0500', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightButtonStyleParam": rightButtonStyleParam
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2673,7 +2673,7 @@ it('ArkUI_Stage_Search_CancelButton_static_0700', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightCancelIconSizeNumber": rightCancelIconSizeNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2721,7 +2721,7 @@ it('ArkUI_Stage_Search_CancelButton_static_0800', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightCancelIconSizeString": rightCancelIconSizeString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2769,7 +2769,7 @@ it('ArkUI_Stage_Search_CancelButton_static_0900', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightCancelIconSizeString": rightCancelIconSizeString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2817,7 +2817,7 @@ it('ArkUI_Stage_Search_CancelButton_static_1000', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightCancelIconSizeString": rightCancelIconSizeString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2870,7 +2870,7 @@ it('ArkUI_Stage_Search_CancelButton_static_1100', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightCancelIconSizeResource": rightCancelIconSizeResource
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2918,7 +2918,7 @@ it('ArkUI_Stage_Search_CancelButton_static_1200', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightCancelIconSizeNumber": rightCancelIconSizeNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2966,7 +2966,7 @@ it('ArkUI_Stage_Search_CancelButton_static_1300', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightCancelIconSizeNumber": rightCancelIconSizeNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3013,7 +3013,7 @@ it('ArkUI_Stage_Search_CancelButton_static_1400', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightCancelIconSizeNumber": rightCancelIconSizeNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3060,7 +3060,7 @@ it('ArkUI_Stage_Search_CancelButton_static_1500', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightCancelIconSizeNumber": rightCancelIconSizeNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3108,7 +3108,7 @@ it('ArkUI_Stage_Search_CancelButton_static_1600', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightCancelIconSizeNumber": rightCancelIconSizeNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3155,7 +3155,7 @@ it('ArkUI_Stage_Search_CancelButton_static_1700', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightCancelIconSizeNumber": rightCancelIconSizeNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3229,7 +3229,7 @@ it('ArkUI_Stage_Search_CancelButton_static_1900', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightCancelIconColorNumber": rightCancelIconColorNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3274,7 +3274,7 @@ it('ArkUI_Stage_Search_CancelButton_static_2000', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightCancelIconColorColor": rightCancelIconColorColor
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3319,7 +3319,7 @@ it('ArkUI_Stage_Search_CancelButton_static_2100', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightCancelIconColorString": rightCancelIconColorString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3400,7 +3400,7 @@ it('ArkUI_Stage_Search_CancelButton_static_2300', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightCancelIconColorString": rightCancelIconColorString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3447,7 +3447,7 @@ it('ArkUI_Stage_Search_CancelButton_static_2400', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightCancelIconColorNumber": rightCancelIconColorNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3494,7 +3494,7 @@ it('ArkUI_Stage_Search_CancelButton_static_2500', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightCancelIconColorNumber": rightCancelIconColorNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3543,7 +3543,7 @@ it('ArkUI_Stage_Search_CancelButton_static_2600', Level.LEVEL1, async (done: () 
           data: {
             "rightCancelIconSizeNumber": rightCancelIconSizeNumber,
             "rightCancelIconColorNumber": rightCancelIconColorNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3624,7 +3624,7 @@ it('ArkUI_Stage_Search_CancelButton_static_2800', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightIconSrcPath": rightIconSrcPath
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3669,7 +3669,7 @@ it('ArkUI_Stage_Search_CancelButton_static_2900', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightIconSrcPath": rightIconSrcPath
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3714,7 +3714,7 @@ it('ArkUI_Stage_Search_CancelButton_static_3000', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightIconSrcPath": rightIconSrcPath
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3793,7 +3793,7 @@ it('ArkUI_Stage_Search_CancelButton_static_3200', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightIconSrcPath": rightIconSrcPath
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3838,7 +3838,7 @@ it('ArkUI_Stage_Search_CancelButton_static_3300', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightIconSrcPath": rightIconSrcPath
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3883,7 +3883,7 @@ it('ArkUI_Stage_Search_CancelButton_static_3400', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightIconSrcPath": rightIconSrcPath
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3928,7 +3928,7 @@ it('ArkUI_Stage_Search_CancelButton_static_3500', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "rightIconSrcPath": rightIconSrcPath
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -3998,7 +3998,7 @@ it('ArkUI_Stage_Search_SearchButton_static_0200', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "searchButtonFontSizeString": searchButtonFontSizeString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4040,7 +4040,7 @@ it('ArkUI_Stage_Search_SearchButton_static_0300', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "searchButtonFontSizeString": searchButtonFontSizeString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4082,7 +4082,7 @@ it('ArkUI_Stage_Search_SearchButton_static_0400', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "searchButtonFontSizeNumber": searchButtonFontSizeNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4124,7 +4124,7 @@ it('ArkUI_Stage_Search_SearchButton_static_0500', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "searchButtonFontSizeString": searchButtonFontSizeString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4166,7 +4166,7 @@ it('ArkUI_Stage_Search_SearchButton_static_0600', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "searchButtonFontSizeString": searchButtonFontSizeString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4239,7 +4239,7 @@ it('ArkUI_Stage_Search_SearchButton_static_0800', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "searchButtonFontSizeString": searchButtonFontSizeString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4281,7 +4281,7 @@ it('ArkUI_Stage_Search_SearchButton_static_0900', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "searchButtonFontSizeString": searchButtonFontSizeString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4323,7 +4323,7 @@ it('ArkUI_Stage_Search_SearchButton_static_1000', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "searchButtonFontSizeString": searchButtonFontSizeString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4373,7 +4373,7 @@ it('ArkUI_Stage_Search_SearchButton_static_1100', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "searchButtonFontSizeString": searchButtonFontSizeString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4424,7 +4424,7 @@ it('ArkUI_Stage_Search_SearchButton_static_1200', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "searchButtonFontSizeString": searchButtonFontSizeString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4499,7 +4499,7 @@ it('ArkUI_Stage_Search_SearchButton_static_1400', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "searchButtonFontColorNumber": searchButtonFontColorNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4542,7 +4542,7 @@ it('ArkUI_Stage_Search_SearchButton_static_1500', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "searchButtonFontColorColor": searchButtonFontColorColor
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4585,7 +4585,7 @@ it('ArkUI_Stage_Search_SearchButton_static_1600', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "searchButtonFontColorString": searchButtonFontColorString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4662,7 +4662,7 @@ it('ArkUI_Stage_Search_SearchButton_static_1800', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "searchButtonFontColorString": searchButtonFontColorString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4707,7 +4707,7 @@ it('ArkUI_Stage_Search_SearchButton_static_1900', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "searchButtonFontColorNumber": searchButtonFontColorNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4752,7 +4752,7 @@ it('ArkUI_Stage_Search_SearchButton_static_2000', Level.LEVEL1, async (done: () 
         let eventData: events_emitter.EventData = {
           data: {
             "searchButtonFontColorNumber": searchButtonFontColorNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4799,7 +4799,7 @@ it('ArkUI_Stage_Search_SearchButton_static_2100', Level.LEVEL1, async (done: () 
           data: {
             "searchButtonFontSizeNumber": searchButtonFontSizeNumber,
             "searchButtonFontColorNumber": searchButtonFontColorNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4870,7 +4870,7 @@ it('ArkUI_Stage_Search_FontColor_static_0200', Level.LEVEL1, async (done: () => 
         let eventData: events_emitter.EventData = {
           data: {
             "textColorNumber": textColorNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4910,7 +4910,7 @@ it('ArkUI_Stage_Search_FontColor_static_0300', Level.LEVEL1, async (done: () => 
         let eventData: events_emitter.EventData = {
           data: {
             "textColorColor": textColorColor
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -4950,7 +4950,7 @@ it('ArkUI_Stage_Search_FontColor_static_0400', Level.LEVEL1, async (done: () => 
         let eventData: events_emitter.EventData = {
           data: {
             "textColorString": textColorString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5022,7 +5022,7 @@ it('ArkUI_Stage_Search_FontColor_static_0600', Level.LEVEL1, async (done: () => 
         let eventData: events_emitter.EventData = {
           data: {
             "textColorString": textColorString
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5065,7 +5065,7 @@ it('ArkUI_Stage_Search_FontColor_static_0700', Level.LEVEL1, async (done: () => 
         let eventData: events_emitter.EventData = {
           data: {
             "textColorNumber": textColorNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -5108,7 +5108,7 @@ it('ArkUI_Stage_Search_FontColor_static_0800', Level.LEVEL1, async (done: () => 
         let eventData: events_emitter.EventData = {
           data: {
             "textColorNumber": textColorNumber
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,

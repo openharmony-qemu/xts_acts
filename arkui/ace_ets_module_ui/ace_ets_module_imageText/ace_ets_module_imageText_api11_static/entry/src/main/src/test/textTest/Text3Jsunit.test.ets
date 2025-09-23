@@ -25,7 +25,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 
@@ -122,7 +122,7 @@ it('testText_static_0300', Level.LEVEL2, async (done: () => void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontSize": "10",
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 226,
@@ -174,7 +174,7 @@ it('testText_static_0500', Level.LEVEL2, async (done: () => void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontColor": "#330A59F7",
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 227,
@@ -226,7 +226,7 @@ it('testText_static_0700', Level.LEVEL2, async (done: () => void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "textAlign": TextAlign.Center,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 228,
@@ -279,7 +279,7 @@ it('testText_static_0900', Level.LEVEL2, async (done: () => void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "textOverflow": TextOverflow.None,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 229,
@@ -335,7 +335,7 @@ it('testText_static_1200', Level.LEVEL2, async (done: () => void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontColor": "#FFBC0229",
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 231,
@@ -370,7 +370,7 @@ it('testText_static_1300', Level.LEVEL2, async (done: () => void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontSize": "-a",
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 232,
@@ -405,7 +405,7 @@ it('testText_static_1400', Level.LEVEL2, async (done: () => void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontSize": "-20",
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 233,

@@ -33,7 +33,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
@@ -104,7 +104,7 @@ export default function refreshResource() {
         let eventData: events_emitter.EventData = {
           data: {
             "promptText": $r('app.string.Refresh_SpecialCharacters')
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 180,
@@ -138,7 +138,7 @@ export default function refreshResource() {
         let eventData: events_emitter.EventData = {
           data: {
             "promptText": $r('app.string.Refresh_ChineseCharacters')
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 180,
@@ -172,7 +172,7 @@ export default function refreshResource() {
         let eventData: events_emitter.EventData = {
           data: {
             "promptText": $r('app.string.Refresh_Alphabet')
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 180,
@@ -206,7 +206,7 @@ export default function refreshResource() {
         let eventData: events_emitter.EventData = {
           data: {
             "promptText": $r('app.string.Refresh_VeryLongText')
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 180,
@@ -241,7 +241,7 @@ export default function refreshResource() {
         let eventData: events_emitter.EventData = {
           data: {
             "promptText": $r('app.string.Refresh_MixedContent')
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 180,
@@ -275,7 +275,7 @@ export default function refreshResource() {
         let eventData: events_emitter.EventData = {
           data: {
             "promptText": $r('app.string.Refresh_Numbers')
-          } as Record<string, Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 180,

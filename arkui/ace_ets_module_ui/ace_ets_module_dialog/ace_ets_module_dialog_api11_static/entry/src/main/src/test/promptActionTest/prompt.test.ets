@@ -44,7 +44,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -113,7 +113,7 @@ export default function promptShowDialogJsunit() {
         }
         let callback1 = (eventData: events_emitter.EventData) => {
           console.info("testpromptShowDialog001 get event state result is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as Record<string, Object>)?.["STATUS"]).assertEqual(true);
+          expect(((eventData.data) as Record<string, RecordData>)?.["STATUS"]).assertEqual(true);
 
         }
         console.info("onSelect_001 click result is: " +
@@ -142,7 +142,7 @@ export default function promptShowDialogJsunit() {
         }
         let callback2 = (backData1: events_emitter.EventData) => {
           console.info("onRequestPopupData_0011 get event state result is: " + JSON.stringify(backData1));
-          expect(((backData1.data) as Record<string, Object>)?.["STATUS"]).assertEqual(true);
+          expect(((backData1.data) as Record<string, RecordData>)?.["STATUS"]).assertEqual(true);
 
         }
         console.info("onSelect_002 click result is: " +

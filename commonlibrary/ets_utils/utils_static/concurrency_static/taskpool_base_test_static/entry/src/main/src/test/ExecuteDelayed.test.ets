@@ -39,7 +39,8 @@ export default function executeDelayedTest() {
           );
           console.info("Delayed task completed");
           expect(task1).assertEqual(false);
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -71,7 +72,8 @@ export default function executeDelayedTest() {
         ).then((value: NullishType) => {
           expect(value as undefined).assertEqual(undefined);
         })
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         expectedErrorCaught = true;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(true).assertEqual(true);
@@ -109,7 +111,8 @@ export default function executeDelayedTest() {
           );
           expect(task1.name).assertEqual("taskName");
           expect(taskExecuted).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         }
@@ -147,7 +150,8 @@ export default function executeDelayedTest() {
             expect(value as undefined).assertEqual(undefined);
           })
           expect(taskExecuted).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
+          err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {

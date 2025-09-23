@@ -41,7 +41,7 @@ import { UIContext, Router } from "@ohos.arkui.UIContext";
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 import { $r, Resource, ArrowStyle } from '@ohos.arkui.component';
@@ -76,7 +76,7 @@ async function setArrowStyle(arrowStyle: ArrowStyle) {
     let backData: events_emitter.EventData = {
       data: {
         "arrowStyle": JSON.stringify(arrowStyle)
-      } as Record<string, Object>
+      } as Record<String, RecordData>
     } as events_emitter.EventData
     let backEvent: events_emitter.InnerEvent = {
       eventId: 10,

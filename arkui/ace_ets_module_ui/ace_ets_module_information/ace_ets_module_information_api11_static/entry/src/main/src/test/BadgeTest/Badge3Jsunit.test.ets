@@ -21,7 +21,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -100,7 +100,7 @@ it('testBadge_static_03', Level.LEVEL0, async (done: () => void): Promise<void> 
         let eventData: events_emitter.EventData = {
           data: {
             "fontSizeValue": -1,
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 63,
@@ -132,7 +132,7 @@ it('testBadge_static_02', Level.LEVEL0, async (done: () => void): Promise<void> 
         let eventData: events_emitter.EventData = {
           data: {
             "fontSizeValue": "30",
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 63,
@@ -164,7 +164,7 @@ it('testBadge_static_04', Level.LEVEL0, async (done: () => void): Promise<void> 
         let eventData: events_emitter.EventData = {
           data: {
             "fontSizeValue": "121212121",
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 63,
@@ -195,7 +195,7 @@ it('testBadge_static_05', Level.LEVEL0, async (done: () => void): Promise<void> 
         let eventData: events_emitter.EventData = {
           data: {
             "fontSizeValue": "121212121vaas",
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 63,
@@ -260,7 +260,7 @@ it('testBadge_static_08', Level.LEVEL0, async (done: () => void): Promise<void> 
         let eventData: events_emitter.EventData = {
           data: {
             "colorValue": Color.Blue,
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 63,
@@ -291,7 +291,7 @@ it('testBadge_static_09', Level.LEVEL0, async (done: () => void): Promise<void> 
         let eventData: events_emitter.EventData = {
           data: {
             "message": "test",
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 63,
@@ -321,7 +321,7 @@ it('testBadge_static_10', Level.LEVEL0, async (done: () => void): Promise<void> 
       try {
         let eventData: events_emitter.EventData = {
           data: {
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 64,
@@ -352,7 +352,7 @@ it('testBadge_static_11', Level.LEVEL0, async (done: () => void): Promise<void> 
         let eventData: events_emitter.EventData = {
           data: {
             "colorValue": -300,
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 65,

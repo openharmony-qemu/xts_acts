@@ -20,6 +20,7 @@ import {
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter'
+import { RecordData } from '@ohos.base';
 
 
 
@@ -56,7 +57,7 @@ struct MotionPath7Example {
             let backData: events_emitter.EventData = {
               data: {
                 "ACTION": this.rotatable,
-              } as Record<string,Object>
+              } as Record<String, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 132,
@@ -80,7 +81,7 @@ struct MotionPath7Example {
               data: {
                 "fromX": this.fromX,
                 "toY": this.toY
-              } as Record<string,Object>
+              } as Record<String, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 133,

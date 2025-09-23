@@ -22,7 +22,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
@@ -127,7 +127,7 @@ it('testTransForm002_static_02', Level.LEVEL0, async (done: () => void): Promise
         let eventData: events_emitter.EventData = {
           data: {
             "rotateValue": JSON.stringify(rotateValue)
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 45,
@@ -190,7 +190,7 @@ it('testTransForm004_staic_04', Level.LEVEL0, async (done: () => void): Promise<
         let eventData: events_emitter.EventData = {
           data: {
             "scaleValue": JSON.stringify(scaleValue)
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 46,

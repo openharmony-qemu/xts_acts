@@ -28,7 +28,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -88,7 +88,7 @@ it('textTextCase_static_0100', Level.LEVEL0, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "textCase": TextCase.Normal
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1030,
@@ -127,7 +127,7 @@ it('textTextCase_static_0200', Level.LEVEL0, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "textCase": TextCase.LowerCase
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1031,
@@ -166,7 +166,7 @@ it('textTextCase_static_0300', Level.LEVEL0, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "textCase": TextCase.UpperCase
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1032,

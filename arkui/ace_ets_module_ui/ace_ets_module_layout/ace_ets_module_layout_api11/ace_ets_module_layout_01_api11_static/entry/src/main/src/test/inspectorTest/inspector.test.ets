@@ -34,7 +34,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UtilsTest } from "../Util.test"
 
 let domain: Int = 0x0000;
@@ -181,7 +181,7 @@ export default function inspectorJsunit() {
     it('testInspectorTestAdd_static_0005', Level.LEVEL0, async (): Promise<void> => {
       console.info('testInspectorTestAdd0005 START');
       try {
-        let data: Record<string, object> = {
+        let data: Record<String, RecordData> = {
           "setColor": 'red'
         }
         let eventData: events_emitter.EventData = {

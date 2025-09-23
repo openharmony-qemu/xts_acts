@@ -42,6 +42,7 @@ import {
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -71,7 +72,7 @@ struct PopupExample {
             let backData: events_emitter.EventData = {
               data: {
                 "placementOnTop": this.placementOnTop,
-              } as Record<string, Object>
+              } as Record<string, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 65,
@@ -103,7 +104,7 @@ struct PopupExample {
               data: {
                 "maskColor": this.maskColor,
                 "enableArrow": this.enableArrow
-              } as Record<string, Object>
+              } as Record<string, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 66,
@@ -126,7 +127,7 @@ struct PopupExample {
               data: {
                 "maskColor": this.maskColor,
                 "enableArrow": this.enableArrow
-              } as Record<string, Object>
+              } as Record<string, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 67,

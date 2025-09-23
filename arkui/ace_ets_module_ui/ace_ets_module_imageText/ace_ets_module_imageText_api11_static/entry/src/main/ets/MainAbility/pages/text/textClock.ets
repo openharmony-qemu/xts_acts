@@ -31,6 +31,7 @@ import {
   State,
 } from '@ohos.arkui.stateManagement'
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -106,7 +107,7 @@ struct Second {
             let backData: events_emitter.EventData = {
               data: {
                 "ACTION": this.onActionCalled,
-              } as Record<string, object>
+              } as Record<string, RecordData>
             } as events_emitter.EventData
             let backEvent: events_emitter.InnerEvent = {
               eventId: 223,
@@ -135,7 +136,7 @@ struct Second {
             let backData: events_emitter.EventData = {
               data: {
                 "ACTION": this.onActionCalledOne,
-              }  as Record<string, object>
+              }  as Record<string, RecordData>
             } as events_emitter.EventData
             let backEvent: events_emitter.InnerEvent = {
               eventId: 224,

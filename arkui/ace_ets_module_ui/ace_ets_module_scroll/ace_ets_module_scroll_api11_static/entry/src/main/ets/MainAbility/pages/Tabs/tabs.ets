@@ -27,6 +27,7 @@ import {
   Color
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base'; 
 
 @Entry
 @Component
@@ -55,7 +56,7 @@ struct Tabs3Example {
             let backData: events_emitter.EventData = {
               data: {
                 "ACTION": this.onActionCalled,
-              } as Record<String, Object>
+              } as Record<String, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 212,

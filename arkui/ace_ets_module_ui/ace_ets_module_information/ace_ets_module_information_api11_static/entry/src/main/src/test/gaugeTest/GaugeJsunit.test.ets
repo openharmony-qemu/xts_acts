@@ -23,7 +23,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -99,7 +99,7 @@ it('testGauge_static_002', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "gaugeValue": 10
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 102,
@@ -131,7 +131,7 @@ it('testGauge_static_003', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "strokeWidthValue": "30",
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 102,
@@ -163,7 +163,7 @@ it('testGauge_static_004', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "startAngleValue": 200
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 102,
@@ -195,7 +195,7 @@ it('testGauge_static_005', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "endAngleValue": 200
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 102,
@@ -227,7 +227,7 @@ it('testGauge_static_006', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "colorValues": JSON.stringify([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1]])
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 103,
@@ -255,7 +255,7 @@ it('testGauge_static_007', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "gaugeValue": -10
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 904,
@@ -287,7 +287,7 @@ it('testGauge_static_008', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "strokeWidthValue": "-30",
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 904,
@@ -319,7 +319,7 @@ it('testGauge_static_009', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "startAngleValue": -10
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 905,
@@ -351,7 +351,7 @@ it('testGauge_static_010', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "endAngleValue": -10
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 906,
@@ -382,7 +382,7 @@ it('testGauge_static_011', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "strokeWidthValue": "121111111"
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 905,

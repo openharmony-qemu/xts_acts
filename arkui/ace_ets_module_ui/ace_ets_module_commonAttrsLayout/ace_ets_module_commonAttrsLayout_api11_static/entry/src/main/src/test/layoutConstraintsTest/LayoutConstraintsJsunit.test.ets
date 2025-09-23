@@ -21,7 +21,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -95,7 +95,7 @@ export default function layoutConstraintsJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "aspectRatio": 2
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 20,
@@ -144,7 +144,7 @@ export default function layoutConstraintsJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "displayPriority": 5
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 21,
@@ -176,7 +176,7 @@ export default function layoutConstraintsJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "aspectRatio": -4
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 1112,
@@ -208,7 +208,7 @@ export default function layoutConstraintsJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "aspectRatio": 9997077
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 1112,

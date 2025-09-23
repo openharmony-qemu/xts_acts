@@ -24,7 +24,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
 
 let domain: number = 0x0000;
@@ -96,7 +96,7 @@ export default function enableJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "enabled": -3
-          } as Record<string, Object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1111,
@@ -128,7 +128,7 @@ export default function enableJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "enabled": 33567444
-          } as Record<string, Object>
+          } as Record<string, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 1111,
@@ -160,7 +160,7 @@ export default function enableJsunit() {
           data: {
             "enabled": false,
             "text": "disable"
-          } as Record<string, Object>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 93,

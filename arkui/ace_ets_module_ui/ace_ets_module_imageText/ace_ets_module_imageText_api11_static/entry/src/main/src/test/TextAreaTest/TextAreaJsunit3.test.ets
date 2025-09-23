@@ -27,7 +27,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -103,7 +103,7 @@ it('textAreaTest_static_02', Level.LEVEL1, async (done: () => void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontSize": '50',
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 215,
@@ -156,7 +156,7 @@ it('textAreaTest_static_04', Level.LEVEL1, async (done: () => void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "fontColor": '#FFFF0000',
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 216,
@@ -210,7 +210,7 @@ it('textAreaTest_static_06', Level.LEVEL1, async (done: () => void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "textAlign": 'TextAlign.Start',
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 217,
@@ -267,7 +267,7 @@ it('textAreaTest_static_08', Level.LEVEL1, async (done: () => void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "text": 'TextArea_1',
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 218,
@@ -323,7 +323,7 @@ it('textAreaTest_static_10', Level.LEVEL1, async (done: () => void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "textAlign": TextAlign.Start,
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 218,
@@ -379,7 +379,7 @@ it('textAreaTest_static_12', Level.LEVEL1, async (done: () => void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "text2": '123456789'
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 218,
@@ -416,7 +416,7 @@ it('textAreaTest_static_13', Level.LEVEL1, async (done: () => void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "text2": '1234567890abc'
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 218,

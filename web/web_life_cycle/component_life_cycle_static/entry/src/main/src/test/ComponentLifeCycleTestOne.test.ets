@@ -18,7 +18,7 @@ import router from '@ohos.router';
 import Utils from './Util.test';
 import inspector from '@ohos.arkui.inspector';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import events_emitter from '@ohos.events.emitter';
@@ -92,14 +92,14 @@ export default function componentLifeCycleTestOne() {
       await Utils.msSleep(2000);
       Utils.registerBaseEvent('testOnActiveInitErr', '17100001', 638, done,
         (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, boolean | string | Int | object>;
+          const data = backData?.data as Record<string, RecordData>;
           const action = data['ACTION'];
           console.info(`Begin to assert [` + action + `] Equal [` + expected + `]`);
           expect(action).assertEqual(expected);
         });
       Utils.registerBaseEvent('testOnActiveInitErr', 'Init error. The WebviewController must be associated with a Web component', 639, done,
         (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, boolean | string | Int | object>;
+          const data = backData?.data as Record<string, RecordData>;
           const action = data['ACTION'];
           console.info(`Begin to assert [` + action + `] Equal [` + expected + `]`);
           expect(action).assertEqual(expected);
@@ -119,14 +119,14 @@ export default function componentLifeCycleTestOne() {
       await Utils.msSleep(2000);
       Utils.registerBaseEvent('testOnInactiveInitErr', '17100001', 640, done,
         (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, boolean | string | Int | object>;
+          const data = backData?.data as Record<string, RecordData>;
           const action = data['ACTION'];
           console.info(`Begin to assert [` + action + `] Equal [` + expected + `]`);
           expect(action).assertEqual(expected);
         });
       Utils.registerBaseEvent('testOnInactiveInitErr', 'Init error. The WebviewController must be associated with a Web component', 641, done,
         (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, boolean | string | Int | object>;
+          const data = backData?.data as Record<string, RecordData>;
           const action = data['ACTION'];
           console.info(`Begin to assert [` + action + `] Equal [` + expected + `]`);
           expect(action).assertEqual(expected);
@@ -146,14 +146,14 @@ export default function componentLifeCycleTestOne() {
       await Utils.msSleep(2000);
       Utils.registerBaseEvent('testGetWebIdInitErr', '17100001', 642, done,
         (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, boolean | string | Int | object>;
+          const data = backData?.data as Record<string, RecordData>;
           const action = data['ACTION'];
           console.info(`Begin to assert [` + action + `] Equal [` + expected + `]`);
           expect(action).assertEqual(expected);
         });
       Utils.registerBaseEvent('testGetWebIdInitErr', 'Init error. The WebviewController must be associated with a Web component', 643, done,
         (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, boolean | string | Int | object>;
+          const data = backData?.data as Record<string, RecordData>;
           const action = data['ACTION'];
           console.info(`Begin to assert [` + action + `] Equal [` + expected + `]`);
           expect(action).assertEqual(expected);

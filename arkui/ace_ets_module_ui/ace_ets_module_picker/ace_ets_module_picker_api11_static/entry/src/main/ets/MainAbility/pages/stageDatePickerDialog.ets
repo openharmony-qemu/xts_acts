@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { Entry, Component, Column, Text, Rating, Margin, Row, DatePickerResult, Alignment, TextAlign, TextOverflow, ClickEvent } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 @Entry
@@ -43,7 +43,7 @@ struct stageDatePickerDialog {
               let backData: events_emitter.EventData = {
                 data: {
                   "STATUS": true
-                } as Record<string, Object>
+                } as Record<string, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 60220,
@@ -76,7 +76,7 @@ struct stageDatePickerDialog {
               let backData1: events_emitter.EventData = {
                 data: {
                   "STATUS": 10
-                } as Record<string, Object>
+                } as Record<String, RecordData>
               }
               let backEvent1: events_emitter.InnerEvent = {
                 eventId: 60221,
@@ -109,7 +109,7 @@ struct stageDatePickerDialog {
               let backData2: events_emitter.EventData = {
                 data: {
                   "STATUS": "STATUS"
-                } as Record<string, Object>
+                } as Record<String, RecordData>
               }
               let backEvent2: events_emitter.InnerEvent = {
                 eventId: 60222,

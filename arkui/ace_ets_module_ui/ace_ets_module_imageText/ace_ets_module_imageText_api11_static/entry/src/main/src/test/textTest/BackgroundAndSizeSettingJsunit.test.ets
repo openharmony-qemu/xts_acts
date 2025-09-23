@@ -24,7 +24,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -99,7 +99,7 @@ it('testBackgroundAndSizeSetting_static_0200', Level.LEVEL1, async (done: ()=>vo
         let eventData: events_emitter.EventData = {
           data: {
             "color": '0xFF0000'
-          } as Record<String,Object>
+          } as Record<String, RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 2,
@@ -190,7 +190,7 @@ it('testBackgroundAndSizeSetting_static_0600', Level.LEVEL1, async (done: ()=>vo
             "height": '200',
             "padding": '10',
             "margin": '40'
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 34,
@@ -227,7 +227,7 @@ it('testBackgroundAndSizeSetting_static_0700', Level.LEVEL1, async (done: ()=>vo
           data: {
             "width": '80%',
             "height": '80%'
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 35,
@@ -278,7 +278,7 @@ it('testBackgroundAndSizeSetting_static_0900', Level.LEVEL1, async (done: ()=>vo
         let eventData: events_emitter.EventData = {
           data: {
             "weight": '3'
-          }as Record<String,Object>
+          }as Record<String, RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 36,

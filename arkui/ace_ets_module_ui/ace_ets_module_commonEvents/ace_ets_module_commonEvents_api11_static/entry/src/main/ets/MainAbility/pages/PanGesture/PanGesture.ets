@@ -43,6 +43,7 @@ import {
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -92,7 +93,7 @@ struct PanGestureExample {
           data: {
             "ACTION": this.isTouched,
             "EVENT_TYPE": this.eventType
-          } as Record<string, Object>
+          } as Record<string, RecordData>
         }
         let backEvent: events_emitter.InnerEvent = {
           eventId: 24,

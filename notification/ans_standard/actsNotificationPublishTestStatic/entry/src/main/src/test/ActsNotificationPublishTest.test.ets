@@ -68,9 +68,9 @@ export default function ActsNotificationPublishTest() {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
       
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      await Utils.msSleep(1000)
+      await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name )
-      await Utils.msSleep(1000)
+      await Utils.msSleep(2000)
       testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       wantAgent.getWantAgent(wantAgentInfo).then((data) => {
         wantAgentData = data;
@@ -170,7 +170,7 @@ export default function ActsNotificationPublishTest() {
       async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_8300'
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_8300 START`)
-      let extendInfo1:Record<String,Object>= {
+      let extendInfo1:Record<String,RecordData>= {
         'testKey': 'testValue'
       }
       let notificationRequest:notificationManager.NotificationRequest = {
@@ -226,7 +226,7 @@ export default function ActsNotificationPublishTest() {
     it('Sub_Notification_Ans_Publish_Publish_Static_8350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_8350'
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_8350 START`)
-      let extendInfo1:Record<String,Object>= {
+      let extendInfo1:Record<String,RecordData>= {
         'testKey': 'testValue'
       }
       let notificationRequest:notificationManager.NotificationRequest = {
@@ -280,7 +280,7 @@ export default function ActsNotificationPublishTest() {
     it('Sub_Notification_Ans_Publish_Publish_Static_8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_8400'
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_8400 START`)
-      let extendInfo1:Record<String,Object>= {
+      let extendInfo1:Record<String,RecordData>= {
         'testKey': 'testValue'
       }
       let notificationRequest:notificationManager.NotificationRequest = {
@@ -344,7 +344,7 @@ export default function ActsNotificationPublishTest() {
     it('Sub_Notification_Ans_Publish_Publish_Static_8450', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_8450'
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_8450 START`)
-      let extendInfo1:Record<String,Object>= {
+      let extendInfo1:Record<String,RecordData>= {
         'testKey': 'testValue'
       }
       let notificationRequest:notificationManager.NotificationRequest  = {
@@ -406,7 +406,7 @@ export default function ActsNotificationPublishTest() {
     it('Sub_Notification_Ans_Publish_Publish_Static_8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_8500'
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_8500 START`)
-      let extendInfo1:Record<String,Object>= {
+      let extendInfo1:Record<String,RecordData>= {
         'testKey': 'testValue'
       }
       let notificationRequest:notificationManager.NotificationRequest  = {
@@ -470,7 +470,7 @@ export default function ActsNotificationPublishTest() {
     it('Sub_Notification_Ans_Publish_Publish_Static_8550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_8550'
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_8550 START`)
-      let extendInfo1:Record<String,Object>= {
+      let extendInfo1:Record<String,RecordData>= {
         'testKey': 'testValue'
       }
       let notificationRequest:notificationManager.NotificationRequest  = {
@@ -532,7 +532,7 @@ export default function ActsNotificationPublishTest() {
     it('Sub_Notification_Ans_Publish_Publish_Static_8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_8600'
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_8600 START`)
-      let extendInfo1:Record<String,Object>= {
+      let extendInfo1:Record<String,RecordData>= {
         'testActionButtonKey': 'testActionButtonValue',
       }
       let notificationRequest:notificationManager.NotificationRequest  = {
@@ -599,7 +599,7 @@ export default function ActsNotificationPublishTest() {
     it('Sub_Notification_Ans_Publish_Publish_Static_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_0150'
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_0150 START`)
-      let extendInfo1:Record<String,Object>= {
+      let extendInfo1:Record<String,RecordData>= {
         'testActionButtonKey': 'testActionButtonValue',
       }
       let notificationRequest:notificationManager.NotificationRequest  = {
@@ -664,7 +664,7 @@ export default function ActsNotificationPublishTest() {
     it('SUB_NOTIFICATION_ANS_PUBLISH_TEST_Static_01300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'SUB_NOTIFICATION_ANS_PUBLISH_TEST_Static_01300'
       console.info(`${TAG} SUB_NOTIFICATION_ANS_PUBLISH_TEST_Static_01300 START`)
-      let extendInfo1:Record<String,Object>= {
+      let extendInfo1:Record<String,RecordData>= {
         'testActionButtonKey': 'testActionButtonValue',
       }
 
