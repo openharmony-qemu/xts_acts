@@ -85,38 +85,21 @@ export default function KvStoreEtsTestStatic() {
     }
 
     hilog.info(domain, tag, '%{public}s', '================ describe kvstoretest deviceOptions');
-
-
-    beforeAll (() => {
-      hilog.info(domain, tag, '%{public}s', '================ beforeAll start==========');
-      let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName:"entry",
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          context = abilitys.context
-          context.stageMode = true;
-          hilog.info(domain, tag, '%{public}s', '================ onAbilityCreate end');
-          hilog.info(domain, tag, '%{public}s', '================ onAbilityCreate context=' + context);
-
-        },
-      }, (err : BusinessError|null) : void => {
-        if(err?.code !== 0){
-          hilog.info(domain, tag, '%{public}s', '================ errcode='+ err?.code);
-        }
-        hilog.info(domain, tag, '%{public}s', ' ================ zyh BusinessError  end');
-      });
-
+    
+    beforeAll(async (): Promise<void> => {
       try {
-        hilog.info(domain, tag, '%{public}s', "============beforeAll msSleep");
+        hilog.info(domain, tag, '%{public}s', '================ beforeAll start==========');
         await Utils.msSleep(2000)
-        hilog.info(domain, tag, '%{public}s', "============beforeAll aa start");
         abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.kvstoreetstest.static")
         await Utils.msSleep(2000)
+        context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
+        hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', "============beforeAll e: " + e);
         hilog.info(domain, tag, '%{public}s', '================ beforeAll end==========');
       }
+      
+      
     })
 
     beforeEach(() => {
