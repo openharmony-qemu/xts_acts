@@ -23,15 +23,14 @@ import { AtomicServiceOptions,
   UIAbility, dialogRequest  } from '@kit.AbilityKit';
 import { BusinessError ,systemParameterEnhance} from '@kit.BasicServicesKit';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { image } from '@kit.ImageKit';
-import { rpc } from '@kit.IPCKit';
+import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 function sleep(ms: number) {
   return new Promise<string>(resolve => setTimeout(resolve, ms));
 }
 const DOMAIN = 0xeeee;
 const TAG: string = '[openLinkDemo]';
 let buffer = new ArrayBuffer(640 * 1024);
-
+let driver = Driver.create();
 const TWO_HUNDRED_KB = 200 * 1024;
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
 // 生成一个指定长度的字符串
@@ -71,7 +70,7 @@ export default function UIAbilityContext() {
       // This API supports only one parameter: clear action function.
       abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       await abilityDelegator.executeShellCommand("aa start -b com.acts.moveabilitytobgtest -a TestAbility");
-      await sleep(3000);
+      await driver.waitForComponent(ON.text('Hello World', MatchPattern.CONTAINS), 3000);
     })
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
@@ -565,7 +564,7 @@ export default function UIAbilityContext() {
           console.info("0100 StartupTest promise catch error, startParams = "
           );
         })
-        await sleep(2000);
+        await sleep(1000);
         let startWant: Want = {
           bundleName: 'com.test.actsabilityerrcodequerytest',
           abilityName: 'MainAbility2',
@@ -603,7 +602,7 @@ export default function UIAbilityContext() {
           console.info("StartupTest promise catch error, startParams = "
           );
         })
-        await sleep(2000);
+        await sleep(1000);
         let startWant: Want = {
           bundleName: 'com.test.actsabilityerrcodequerytest',
           abilityName: 'MainAbility2',
@@ -644,7 +643,7 @@ export default function UIAbilityContext() {
           console.info("StartupTest promise catch error, startParams = "
           );
         })
-        await sleep(2000);
+        await sleep(1000);
         let startWant: Want = {
           bundleName: 'com.test.actsabilityerrcodequerytest',
           abilityName: 'MainAbility2',
@@ -686,7 +685,7 @@ export default function UIAbilityContext() {
           console.info("StartupTest promise catch error, startParams = "
           );
         })
-        await sleep(2000);
+        await sleep(1000);
         let options: OpenLinkOptions  = {
           parameters: { demo_key: 'demo_value' }
         };
@@ -732,7 +731,7 @@ export default function UIAbilityContext() {
           console.info("StartupTest promise catch error, startParams = "
           );
         })
-        await sleep(2000);
+        await sleep(1000);
         let startWant: Want = {
           bundleName: 'com.test.actsabilityerrcodequerytest',
           abilityName: 'MainAbility2',
@@ -773,7 +772,7 @@ export default function UIAbilityContext() {
           console.info("StartupTest promise catch error, startParams = "
           );
         })
-        await sleep(2000);
+        await sleep(1000);
         let startWant: Want = {
           bundleName: 'com.test.actsabilityerrcodequerytest',
           abilityName: 'MainAbility2',
@@ -814,7 +813,7 @@ export default function UIAbilityContext() {
           console.info("StartupTest promise catch error, startParams = "
           );
         })
-        await sleep(2000);
+        await sleep(1000);
         let startWant: Want = {
           bundleName: 'com.test.actsabilityerrcodequerytest',
           abilityName: 'MainAbility2',

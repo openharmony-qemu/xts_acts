@@ -234,9 +234,7 @@ export default function sendableContextManagerTest() {
               })
             }
             if (data.event == 'ACTS_TEST_DESTROY') {
-              setTimeout(() => {
-                commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
-              }, 500);
+              commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
             }
           }
           commonEventManager.subscribe(subscriber, subscribeCallBack);
