@@ -15,13 +15,19 @@
 
 import { describe, beforeEach, afterEach, it, expect, beforeAll , TestType, Size, Level } from "@ohos/hypium";
 import events_emitter from '@ohos.events.emitter';
-import Utils from './UtilsTwo';
+import Utils from './Utils';
 // import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from "@kit.TestKit";
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = "bindSelectionMenuType01";
+
+const EVENT_ID_SET_SUITE_KEY = 177001;
+let driver = Driver.create();
+
 export default function webViewSrollableJsunit() {
   describe('bindSelectionMenuTest',  () =>{
     beforeAll(async  (done: Function) =>{
@@ -35,7 +41,6 @@ export default function webViewSrollableJsunit() {
         if (!("bindSelectionMenu" == pages.name)) {
           console.info("get bindSelectionMenu state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
           console.info("push bindSelectionMenu page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -49,28 +54,12 @@ export default function webViewSrollableJsunit() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("bindSelectionMenu beforeEach start");
-      done();
-    })
-    afterEach(async  (done: Function) =>{
-      console.info("bindSelectionMenu afterEach start:"+emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId:10,
-          priority:events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
+      try{
+        await driver.waitForComponent(ON.id("webcomponentSelectionMenu"), 10000);
+      }catch (err) {
+        console.error("push bindSelectionMenu page error: " + err);
       }
-      await Utils.sleep(2000);
       done();
     })
     /*
@@ -79,9 +68,12 @@ export default function webViewSrollableJsunit() {
      *tc.desic test bindSelectionMenuType01 interface when choose callback mode.
      */
     it('bindSelectionMenuType01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="bindSelectionMenuType02";
-      Utils.registerEvent("bindSelectionMenuType01",true,8301,done);
-      sendEventByKey('webcomponentSelectionMenu',10,'');
+      Utils.emitEvent("bindSelectionMenuType01", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("bindSelectionMenuType01", true, 177010, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webcomponentSelectionMenu", "bindSelectionMenuType01");
+      await Utils.waitForExist(() => isReturn, "bindSelectionMenuType01" + '_returnCheck', true, 1000);
+      done();
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_002
@@ -89,9 +81,12 @@ export default function webViewSrollableJsunit() {
      *tc.desic test bindSelectionMenuType02 interface when choose callback mode.
      */
     it('bindSelectionMenuType02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
-      emitKey="bindSelectionMenuType02";
-      Utils.registerEvent("bindSelectionMenuType02",1,8302,done);
-      sendEventByKey('webcomponentSelectionMenu',10,'');
+      Utils.emitEvent("bindSelectionMenuType02", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("bindSelectionMenuType02", 1, 177020, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webcomponentSelectionMenu", "bindSelectionMenuType02");
+      await Utils.waitForExist(() => isReturn, "bindSelectionMenuType02" + '_returnCheck', true, 1000);
+      done();
     })
 
   })

@@ -16,12 +16,16 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import { JsProxyObject } from '../../test/Interfaces';
 import business_error, { BusinessError } from '@ohos.base';
+import { Driver } from '@kit.TestKit';
+
+const EVENT_ID_SET_SUITE_KEY = 178501;
+const driver = Driver.create();
 
 @Entry
 @Component
 struct webController {
   controller: WebController = new WebController()
-  @State str: string = "emitUserAgent"
+  @State str: string = ""
   @State loadedResource: string = ""
   @State progress: string = ""
   @State newUrl: string = ""
@@ -59,16 +63,20 @@ struct webController {
   @State zoomAccess: boolean = false
   @State requestFocus: boolean = false
 
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+  @State isRequestFocus: number = -1;
+
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -77,7 +85,7 @@ struct webController {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
-        this.titleReceive = '';
+        this.isReceive = 1;
       }
     }
   }
@@ -101,19 +109,23 @@ struct webController {
       Row() {
         Button("WebController click").key('WebControllerButton').onClick(async () => {
           console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
 
             case "testRequestFocus001": {
                 try {
+                  this.isPageEnd = -1;
                   this.controller.loadUrl({ url: "resource://rawfile/second.html" });
-                  await Utils.sleep(2000)
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   this.requestFocus = false
+                  this.isRequestFocus = -1;
                   sendEventByKey('textInput', 10, '')
-                  await Utils.sleep(3000)
-                  Utils.emitEvent(this.requestFocus, 33030)
+                  await Utils.waitForExist(()=>this.isRequestFocus, this.str+' isRequestFocus', 1, 1000);
+                  Utils.emitEvent(this.requestFocus, 178510)
                 } catch (error) {
                   console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                  Utils.emitEvent(String(error.code), 33030)
+                  Utils.emitEvent(String(error.code), 178510)
                 }
                 break;
             }
@@ -167,6 +179,11 @@ struct webController {
         })
         .onFocus(() => {
           this.requestFocus = true
+          this.isRequestFocus = 1
+        })
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
         })
     }
   }

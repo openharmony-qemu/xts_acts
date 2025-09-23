@@ -17,8 +17,13 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 177401;
+let driver = Driver.create();
 
 export default function webOnPermissionRequest() {
 
@@ -34,7 +39,7 @@ export default function webOnPermissionRequest() {
         if (!("WebOnPermissionRequest" == pages.name)) {
           console.info("get WebOnPermissionRequest state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("WebOnPermissionRequestTestButton"), 10000);
           console.info("push WebOnPermissionRequest page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -48,15 +53,7 @@ export default function webOnPermissionRequest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebOnPermissionRequestTest afterEach start");
-      await Utils.sleep(1000);
-      console.info("WebOnPermissionRequestTest afterEach end");
       done();
     })
 
@@ -69,10 +66,12 @@ export default function webOnPermissionRequest() {
     * @tc.level       : Level 1
     */
     it('testPermissionRequestDeny001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitPermissionRequestDeny001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testPermissionRequestDeny001", '"deny"', 70320, done);
-      sendEventByKey('WebOnPermissionRequestTestButton', 10, '');
+      Utils.emitEvent("emitPermissionRequestDeny001", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testPermissionRequestDeny001", '"deny"', 177410, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebOnPermissionRequestTestButton", "testPermissionRequestDeny001");
+      await Utils.waitForExist(() => isReturn, "testPermissionRequestDeny001" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -84,10 +83,12 @@ export default function webOnPermissionRequest() {
     * @tc.level       : Level 1
     */
     it('testPermissionRequestGrant001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitPermissionRequestGrant001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testPermissionRequestGrant001", '"grant"', 70322, done);
-      sendEventByKey('WebOnPermissionRequestTestButton', 10, '');
+      Utils.emitEvent("emitPermissionRequestGrant001", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testPermissionRequestGrant001", '"grant"', 177420, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebOnPermissionRequestTestButton","testPermissionRequestGrant001");
+      await Utils.waitForExist(() => isReturn, "testPermissionRequestGrant001" + '_returnCheck', true, 2000);
+      done();
     })
   })
 }
