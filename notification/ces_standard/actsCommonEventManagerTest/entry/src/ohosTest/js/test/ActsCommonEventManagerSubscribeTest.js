@@ -243,7 +243,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
         code: 0,
         data: "initial data",
         isOrdered: true,
-        isSticky: true,
+        isSticky: false,
       }
 
       let subscribeInfo = {
@@ -258,62 +258,62 @@ export default function ActsCommonEventManagerSubscribeTest() {
         } else {
           subscriber.isOrderedCommonEvent((err, isOrdered) => {
             if (err) {
-              console.info(`isOrderedCommonEvent err ${err}`)
+              console.info(`isOrderedCommonEvent_11 err ${err}`)
               expect(false).assertTrue()
               done()
             } else {
-              console.info(`isOrderedCommonEvent success ${isOrdered}`)
+              console.info(`isOrderedCommonEvent_11 success ${isOrdered}`)
               expect(isOrdered).assertTrue()
             }
           })
 
           subscriber.isStickyCommonEvent((err, isSticky) => {
             if (err) {
-              console.info(`isStickyCommonEvent_9 err ${err}`)
+              console.info(`isStickyCommonEvent_11 err ${err}`)
               expect(false).assertTrue()
               done()
             } else {
-              console.info(`isStickyCommonEvent_9 success ${isSticky}`)
-              expect(isSticky).assertTrue()
+              console.info(`isStickyCommonEvent_11 success ${isSticky}`)
+              expect(isSticky).assertFalse()
             }
           })
 
 
           let code1 = subscriber.getCodeSync();
           expect(code1).assertEqual(0);
-          console.info(`getCodeSync before setCodeSync, code is ${code1}`)
+          console.info(`getCodeSync before setCodeSync_11, code is ${code1}`)
 
           subscriber.setCodeSync(1);
           let code2 = subscriber.getCodeSync();
-          console.info(`getCodeSync after setCodeSync, code is ${code2}`)
+          console.info(`getCodeSync after setCodeSync_11, code is ${code2}`)
           expect(code2).assertEqual(1);
 
           let data = subscriber.getDataSync();
           expect(data).assertEqual("initial data");
-          console.info(`getDataSync before setDataSync, data is ${data}`)
+          console.info(`getDataSync before setDataSync_11, data is ${data}`)
 
           subscriber.setDataSync("data change");
           let data2 = subscriber.getDataSync();
           expect(data2).assertEqual("data change");
-          console.info(`getDataSync after setDataSync, data is ${data2}`)
+          console.info(`getDataSync after setDataSync_11, data is ${data2}`)
 
           subscriber.setCodeAndDataSync(2, "setCodeAndDataSync")
           let code3 = subscriber.getCodeSync()
           expect(code3).assertEqual(2);
-          console.info(`getCodeSync after setCodeAndDataSync, code is ${code3}`)
+          console.info(`getCodeSync after setCodeAndDataSync_11, code is ${code3}`)
 
           let data3 = subscriber.getDataSync();
           expect(data3).assertEqual("setCodeAndDataSync");
-          console.info(`getDataSync after setCodeAndDataSync, data is ${data3}`)
+          console.info(`getDataSync after setCodeAndDataSync_11, data is ${data3}`)
 
           let isorder = subscriber.isOrderedCommonEventSync();
           expect(isorder).assertTrue()
-          console.info(`isOrderedCommonEventSync, isorder is ${isorder}`)
+          console.info(`isOrderedCommonEventSync_11, isorder is ${isorder}`)
 
 
           let isSticky = subscriber.isStickyCommonEventSync();
-          expect(isSticky).assertTrue()
-          console.info(`isStickyCommonEventSync, isStickyCommonEventSync is ${isSticky}`)
+          expect(isSticky).assertFalse()
+          console.info(`isStickyCommonEventSync_11, isStickyCommonEventSync is ${isSticky}`)
 
           subscriber.abortCommonEventSync();
           let isaborted = subscriber.getAbortCommonEventSync();
@@ -321,16 +321,16 @@ export default function ActsCommonEventManagerSubscribeTest() {
 
           subscriber.getAbortCommonEvent((err, abortEvent) => {
             if (err) {
-              console.info(`getAbortCommonEvent_9 err ${err}`)
+              console.info(`getAbortCommonEvent_11 err ${err}`)
               expect(false).assertTrue()
               done()
             } else {
-              console.info(`getAbortCommonEvent_9 success ${abortEvent}`)
+              console.info(`getAbortCommonEvent_11 success ${abortEvent}`)
               expect(abortEvent).assertTrue()
             }
           })
 
-          console.info(`getAbortCommonEventSync isaborted ${isaborted}`)
+          console.info(`getAbortCommonEventSync_11 isaborted ${isaborted}`)
           subscriber.clearAbortCommonEventSync()
           done()
         }
@@ -345,7 +345,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
           expect(false).assertTrue()
           done()
         } else {
-          console.info(`publish success`)
+          console.info(`publish success_11`)
         }
       }
 
@@ -354,7 +354,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
           commonEventManager.publish("eventname", options, publishCB);
         }, 1000);
       } catch (err) {
-        console.error(`publish failed, code is ${err.code}, message is ${err.message}`)
+        console.error(`publish_11 failed, code is ${err.code}, message is ${err.message}`)
       }
     })
 
@@ -371,7 +371,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
         code: 0,
         data: "initial data",
         isOrdered: true,
-        isSticky: true,
+        isSticky: false,
       }
 
       let subscribeInfo = {
@@ -398,7 +398,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
 
           await subscriber.isStickyCommonEvent().then((isSticky) => {
             console.info(`isStickyCommonEvent_12 success ${isSticky}`)
-            expect(isSticky).assertTrue()
+            expect(isSticky).assertFalse()
           }).catch((err) => {
             console.info(`isStickyCommonEvent_12 err ${err}`)
             expect(false).assertTrue()
