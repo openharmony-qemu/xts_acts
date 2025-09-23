@@ -132,7 +132,7 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name       : KvStoreTest001
+     * @tc.name         KvStoreTest001
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0010
      * @tc.desc       : //getKVStore<distributedKVStore.SingleKVStore>
      * @tc.size       : MediumTest
@@ -156,7 +156,7 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name       : KvStoreTest0011
+     * @tc.name         KvStoreTest0011
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0011
      * @tc.desc       : //getKVStore<distributedKVStore.SingleKVStore>
      * @tc.size       : MediumTest
@@ -180,7 +180,7 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name       : KvStoreTest002
+     * @tc.name         KvStoreTest002
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0020
      * @tc.desc       : //getKVStore<distributedKVStore.DeviceKVStore>
      * @tc.size       : MediumTest
@@ -203,7 +203,7 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name       : KvStoreTest003
+     * @tc.name         KvStoreTest003
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0030
      * @tc.desc       : //SingleKVStore put get string
      * @tc.size       : MediumTest
@@ -236,7 +236,7 @@ export default function KvStoreEtsTestStatic() {
 
 
     /**
-     * @tc.name       : KvStoreTest005
+     * @tc.name         KvStoreTest005
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0050
      * @tc.desc       ://SingleKVStore put get Boolean
      * @tc.size       : MediumTest
@@ -264,7 +264,7 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name       : KvStoreTest006
+     * @tc.name         KvStoreTest006
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0060
      * @tc.desc       ://SingleKVStore put get Uint8Array
      * @tc.size       : MediumTest
@@ -290,7 +290,7 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name       : KvStoreTest007
+     * @tc.name         KvStoreTest007
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0070
      * @tc.desc       : //SingleKVStore backup
      * @tc.size       : MediumTest
@@ -314,7 +314,7 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name       : KvStoreTest008
+     * @tc.name         KvStoreTest008
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0080
      * @tc.desc       : //DeviceKVStore backup
      * @tc.size       : MediumTest
@@ -338,7 +338,7 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name       : KvStoreTest009
+     * @tc.name         KvStoreTest009
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0090
      * @tc.desc       : //SingleKVStore backup  callback
      * @tc.size       : MediumTest
@@ -363,7 +363,7 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name       : KvStoreTest010
+     * @tc.name         KvStoreTest010
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0100
      * @tc.desc       : //DeviceKVStore put get Uint8Array
      * @tc.size       : MediumTest
@@ -389,7 +389,7 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name       : KvStoreTest011
+     * @tc.name         KvStoreTest011
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0110
      * @tc.desc       : //DeviceKVStore put get string
      * @tc.size       : MediumTest
@@ -417,7 +417,7 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name       : KvStoreTest012
+     * @tc.name         KvStoreTest012
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0120
      * @tc.desc       : //DeviceKVStore put get double
      * @tc.size       : MediumTest
@@ -444,7 +444,7 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name       : KvStoreTest013
+     * @tc.name         KvStoreTest013
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0130
      * @tc.desc       : //DeviceKVStore put get Boolean
      * @tc.size       : MediumTest
@@ -471,7 +471,7 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name       : KvStoreTest014
+     * @tc.name         KvStoreTest014
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0140
      * @tc.desc       : //DeviceKVStore put get callback Boolean
      * @tc.size       : MediumTest
@@ -503,7 +503,7 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name       : KvStoreTest015
+     * @tc.name         KvStoreTest015
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0150
      * @tc.desc       : //DeviceKVStore put get callback double
      * @tc.size       : MediumTest
@@ -536,7 +536,7 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name       : KvStoreTest016
+     * @tc.name         KvStoreTest016
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0160
      * @tc.desc       : //DeviceKVStore put get callback string
      * @tc.size       : MediumTest
@@ -567,7 +567,7 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name       : KvStoreTest017
+     * @tc.name         KvStoreTest017
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0170
      * @tc.desc       : //DeviceKVStore put get  callback string
      * @tc.size       : MediumTest
@@ -598,7 +598,7 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name       : KvStoreTest018
+     * @tc.name         KvStoreTest018
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0180
      * @tc.desc       : //SingleKVStore put get  callback string
      * @tc.size       : MediumTest
@@ -628,7 +628,7 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name       : KvStoreTest019
+     * @tc.name         KvStoreTest019
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0190
      * @tc.desc       : //DeviceKVStore get(did, key)
      * @tc.size       : MediumTest
@@ -659,7 +659,7 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name       : KvStoreTest0191
+     * @tc.name         KvStoreTest0191
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0191
      * @tc.desc       : //DeviceKVStore get(key)
      * @tc.size       : MediumTest
@@ -689,7 +689,7 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name       : KvStoreTest020
+     * @tc.name         KvStoreTest020
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0200
      * @tc.desc       : //DeviceKVStore get(did,key)  callback
      * @tc.size       : MediumTest
@@ -723,7 +723,7 @@ export default function KvStoreEtsTestStatic() {
 
 
     /**
-     * @tc.name       : KvStoreTest0201
+     * @tc.name         KvStoreTest0201
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0201
      * @tc.desc       : //DeviceKVStore get(key)  callback
      * @tc.size       : MediumTest
@@ -756,7 +756,7 @@ export default function KvStoreEtsTestStatic() {
 
 
     /**
-     * @tc.name       : KvStoreTest021
+     * @tc.name         KvStoreTest021
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0210
      * @tc.desc       : //Schema.constructor, FieldNode.constructor, Query.constructor
      * @tc.size       : MediumTest
@@ -777,7 +777,7 @@ export default function KvStoreEtsTestStatic() {
     })
     
   /**
-   * @tc.name       : KvStoreTest022
+   * @tc.name         KvStoreTest022
    * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0220
    * @tc.desc       : //SingleKVStore get(key)
    * @tc.size       : MediumTest
@@ -807,7 +807,7 @@ export default function KvStoreEtsTestStatic() {
     })
     
     /**
-     * @tc.name       : KvStoreTest023
+     * @tc.name         KvStoreTest023
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0230
      * @tc.desc       : //SingleKVStore get(key)  callback
      * @tc.size       : MediumTest
