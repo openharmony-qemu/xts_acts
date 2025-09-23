@@ -51,6 +51,7 @@ public:
     ~NDKCamera(void);
 
     Camera_ErrorCode CreateCameraInput(void);
+    Camera_ErrorCode CloseCameraInput(void);
     Camera_ErrorCode CreateCameras(void);
     Camera_ErrorCode CreateSession(void);
     Camera_ErrorCode ReleaseCameraManger(void);
@@ -90,11 +91,11 @@ public:
     Camera_ErrorCode PhotoOutputRegisterCaptureStartWithInfoCallback();
     Camera_ErrorCode CameraManagerRegisterFoldStatusCallback();
     Camera_ErrorCode RegisterAutoDeviceSwitchStatusCallback();
-    Camera_ErrorCode SessionSetQualityPrioritization(uint32_t quality);
-    Camera_ErrorCode CameraOpenConcurrentCameras(uint32_t type);
-    Camera_ErrorCode IsWhiteBalanceSupported(uint32_t type);
+    Camera_ErrorCode SessionSetQualityPrioritization(int32_t quality);
+    Camera_ErrorCode CameraOpenConcurrentCameras(int32_t type);
+    Camera_ErrorCode IsWhiteBalanceSupported(int32_t type);
     Camera_ErrorCode RegisterSystemPressureLevel();
-    Camera_ErrorCode SessionGetSupportedEffectTypes(uint32_t type);
+    Camera_ErrorCode SessionGetSupportedEffectTypes(int32_t type);
 
     static CameraCallbackCode cameraCallbackCode_;
     volatile bool valid_;
@@ -103,7 +104,7 @@ public:
     Camera_Input* cameraInput_;
     
     uint32_t size_;
-private:
+protected:
     Camera_Manager* cameraManager_;
     std::string previewSurfaceId_;
 };
