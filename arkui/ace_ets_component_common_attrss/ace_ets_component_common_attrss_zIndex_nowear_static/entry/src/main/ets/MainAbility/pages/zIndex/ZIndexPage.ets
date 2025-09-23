@@ -77,7 +77,7 @@ import {
   Polygon,
   Path,
   Rect,
-  
+
   ColumnSplit,
   RowSplit,
   Blank,
@@ -106,7 +106,7 @@ import {
   MenuItemOptions,
   VerticalAlign,
   AlignRuleOption,
-  
+
   GridColColumnOption,
   GridColOptions,
   ColumnOptions,
@@ -120,104 +120,105 @@ import {
   BreakpointsReference,
   ResourceColor,
   EdgeColors,
+  BadgeParamWithString,
+  BadgeStyle,
   AlignRuleOption,
+  CommonMethod,
+  applyStyles,
+  Shape,
+  Badge,
 } from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement';
+import { State, Link, StoragePropRef } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router'
-import { attrsManager } from '../../common/AttrsManager';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import inspector from '@ohos.arkui.inspector';
+import { RouterParams } from '../../common/Utils'
 
-class View {
-  targetView: string = '';
-  componentKey: string = '';
-  targetComponentWidth: number = 0;
-  targetComponentHeight: number = 0;
-  referenceComponentKey: string = '';
-}
-
-class RouterParams {
-  view: View = new View()
-}
 @Entry
 @Component
 struct ZIndexPage {
-  @State _zIndex: number = 0
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey
-  @State targetComponentWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetComponentWidth
-  @State targetComponentHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetComponentHeight
-  @State referenceComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.referenceComponentKey
+  @StoragePropRef("_zIndex") _zIndex: number = 0
+  @State targetView: string = ''
+  @State componentKey: string = ''
+  @State targetComponentWidth: number = 0
+  @State targetComponentHeight: number = 0
+  @State referenceComponentKey: string = ''
 
   onPageShow() {
     console.info('zIndex page show called ')
-    attrsManager.registerDataChange((value: number) => {
-      this._zIndex = value
-    })
+    try {
+      console.info('[TabIndexPage] start router ');
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      AppStorage.setOrCreate<number>('_zIndex', routerParamOptions.view.testValue.setValue)
+      this.targetView = routerParamOptions.view.targetView
+      this.componentKey = routerParamOptions.view.componentKey
+      this.targetComponentWidth = routerParamOptions.view.targetComponentWidth
+      this.targetComponentHeight = routerParamOptions.view.targetComponentHeight
+      this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
+      console.info('[TabIndexPage] end router ');
+    } catch (error: Error) {
+      console.log(' routerParamOptions error ' + error);
+    }
   }
 
-  
-  
-  
-  
-  
-  
-  
+  commonStyle(instance: CommonMethod) {
+    instance.zIndex(this._zIndex)
+    instance.width(this.targetComponentWidth)
+    instance.height(this.targetComponentHeight)
+    instance.key(this.componentKey)
+  }
 
   build() {
     Row() {
       Stack() {
         if (this.targetView == 'Button') {
-          Button('button1')/* .commonStyle() */
+          Button('button1').applyStyles(this.commonStyle)
         } else if (this.targetView == 'Text') {
-          Text('text1')/* .commonStyle() */
+          Text('text1').applyStyles(this.commonStyle)
         } else if (this.targetView == 'AlphabetIndexer') {
-          AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })/* .commonStyle() */
+          AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
+            .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Blank') {
           Row() {
-            Blank().backgroundColor(Color.Yellow)/* .commonStyle() */
+            Blank().backgroundColor(Color.Yellow).applyStyles(this.commonStyle)
           }.width('100%').height('100%')
         } else if (this.targetView == 'Checkbox') {
-          Checkbox()/* .commonStyle() */
+          Checkbox().applyStyles(this.commonStyle)
         } else if (this.targetView == 'CheckboxGroup') {
-          CheckboxGroup({ group: 'checkboxGroup' })/* .commonStyle() */
+          CheckboxGroup({ group: 'checkboxGroup' }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'DataPanel') {
-          DataPanel({ values: [5, 10, 10, 7, 9, 10, 10, 10, 10] })/* .commonStyle() */
+          DataPanel({ values: [5, 10, 10, 7, 9, 10, 10, 10, 10] }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'DatePicker') {
           DatePicker({
             start: new Date('1970-1-1'),
             end: new Date('2100-1-1'),
-          })/* .commonStyle() */
+          }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Divider') {
-          Divider()/* .commonStyle() */
+          Divider().applyStyles(this.commonStyle)
         } else if (this.targetView == 'Gauge') {
           Gauge({ value: 105 })
-            /* .commonStyle() */
+            .applyStyles(this.commonStyle)
             .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
         } else if (this.targetView == 'Image') {
-          Image($r('app.media.icon'))/* .commonStyle() */
+          Image($r('app.media.icon')).applyStyles(this.commonStyle)
         } else if (this.targetView == 'ImageAnimator') {
           ImageAnimator()
             .images([
               {
                 src: $r('app.media.icon')
               }
-            ])/* .commonStyle() */
+            ]).applyStyles(this.commonStyle)
         } else if (this.targetView == 'LoadingProgress') {
-          LoadingProgress()/* .commonStyle() */
+          LoadingProgress().applyStyles(this.commonStyle)
         } else if (this.targetView == 'Marquee') {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity,
+            loop: Infinity as Int,
             fromStart: true,
             src: 'Running Marquee starts rolling'
-          })/* .commonStyle() */
+          }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Navigation') {
           
           
@@ -225,7 +226,7 @@ struct ZIndexPage {
           
         } else if (this.targetView == 'Menu') {
           Menu() {
-          }.backgroundColor(Color.Yellow)/* .commonStyle() */
+          }.backgroundColor(Color.Yellow).applyStyles(this.commonStyle)
         } else if (this.targetView == 'NavRouter') {
           
           
@@ -237,13 +238,13 @@ struct ZIndexPage {
           
           
         } else if (this.targetView == 'Progress') {
-          Progress({ value: 10, type: ProgressType.Eclipse })/* .commonStyle() */
+          Progress({ value: 10, type: ProgressType.Eclipse }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'QRCode') {
-          QRCode('Running Marquee starts rolling')/* .commonStyle() */
+          QRCode('Running Marquee starts rolling').applyStyles(this.commonStyle)
         } else if (this.targetView == 'Radio') {
-          Radio({ value: 'Radio1', group: 'radioGroup' })/* .commonStyle() */
+          Radio({ value: 'Radio1', group: 'radioGroup' }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Rating') {
-          Rating({ rating: 3.5, indicator: false })/* .commonStyle() */
+          Rating({ rating: 3.5, indicator: false }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'ScrollBar') {
           ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
             Text()
@@ -251,14 +252,14 @@ struct ZIndexPage {
               .height(100)
               .borderRadius(10)
               .backgroundColor('#C0C0C0')
-          }/* .commonStyle() */
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Search') {
           Search({ placeholder: 'Type to search...' })
             .backgroundColor(Color.White)
-            .searchButton('SEARCH')/* .commonStyle() */
+            .searchButton('SEARCH').applyStyles(this.commonStyle)
         } else if (this.targetView == 'Select') {
           Select([{ value: 'aaa', icon: '/common/public_icon.svg' },
-            { value: 'bbb', icon: '/common/public_icon.svg' }])/* .commonStyle() */
+            { value: 'bbb', icon: '/common/public_icon.svg' }]).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Slider') {
           Slider({
             value: 50,
@@ -267,7 +268,7 @@ struct ZIndexPage {
             style: SliderStyle.OutSet
           })
             .showTips(true)
-            /* .commonStyle() */
+            .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Stepper') {
           Stepper() {
             StepperItem() {
@@ -275,69 +276,75 @@ struct ZIndexPage {
                 Text('Page One')
               }
             }
-          }/* .commonStyle() */
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
-          })/* .commonStyle() */
+          }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'TextClock') {
           TextClock({ timeZoneOffset: -8 })
             .format('hms')
-            /* .commonStyle() */
+            .applyStyles(this.commonStyle)
         } else if (this.targetView == 'TextInput') {
-          TextInput({ placeholder: 'input your word...' })/* .commonStyle() */
+          TextInput({ placeholder: 'input your word...' }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'TextPicker') {
-          TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] })/* .commonStyle() */
+          TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'TextTimer') {
           TextTimer({ isCountDown: true, count: 30000 })
             .format('mm:ss.SS')
             .fontColor(Color.Black)
-            /* .commonStyle() */
+            .applyStyles(this.commonStyle)
         } else if (this.targetView == 'TimePicker') {
           TimePicker({
             selected: new Date('2022-07-22T08:00:00'),
-          })/* .commonStyle() */
+          }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Toggle') {
-          Toggle({ type: ToggleType.Switch, isOn: false })/* .commonStyle() */
+          Toggle({ type: ToggleType.Switch, isOn: false }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Circle') {
-          Circle()/* .commonStyle() */
+          Circle().applyStyles(this.commonStyle)
         } else if (this.targetView == 'Ellipse') {
-          Ellipse()/* .commonStyle() */
+          Ellipse().applyStyles(this.commonStyle)
         } else if (this.targetView == 'Line') {
           Line()
-            /* .commonStyle() */
+            .applyStyles(this.commonStyle)
             .startPoint([0, 0])
             .endPoint([50, 100])
             .backgroundColor(Color.Black)
         } else if (this.targetView == 'Polyline') {
-          Polyline()/* .commonStyle() */
+          Polyline().applyStyles(this.commonStyle)
         } else if (this.targetView == 'Polygon') {
-          Polygon()/* .commonStyle() */
+          Polygon().applyStyles(this.commonStyle)
         } else if (this.targetView == 'Path') {
-          Path()/* .commonStyle() */
+          Path().applyStyles(this.commonStyle)
         } else if (this.targetView == 'Rect') {
-          Rect()/* .commonStyle() */
+          Rect().applyStyles(this.commonStyle)
         } else if (this.targetView == 'Shape') {
-          
-          
-          
+          Shape() {
+            Rect().width(100).height(50)
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Badge') {
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          Badge({
+            
+            value: '',
+            style: {
+              color: 0xFFFFFF,
+              fontSize: 16,
+              badgeSize: 20,
+              badgeColor: Color.Red
+            } as BadgeStyle
+          } as BadgeParamWithString) {
+            Button('message')
+              .width(100)
+              .height(50)
+              .backgroundColor(0x317aff)
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Column') {
           Column() {
             Column()
               .width('100%')
               .height(30)
               .backgroundColor(0xAFEEEE)
-          }/* .commonStyle() */
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'ColumnSplit') {
           ColumnSplit() {
             Text('1')
@@ -345,17 +352,17 @@ struct ZIndexPage {
               .height(50)
               .backgroundColor(0xF5DEB3)
               .textAlign(TextAlign.Center)
-          }/* .commonStyle() */
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Counter') {
           Counter() {
-          }/* .commonStyle() */
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Flex') {
           Flex() {
             Text('1')
               .width('20%')
               .height(50)
               .backgroundColor(0xF5DEB3)
-          }/* .commonStyle() */
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'GridRow') {
           GridRow({
             columns: 1,
@@ -363,7 +370,14 @@ struct ZIndexPage {
           }) {
             ForEach([Color.Red, Color.Orange, Color.Yellow, Color.Green,
               Color.Pink, Color.Grey, Color.Blue, Color.Brown], (color: ResourceColor | EdgeColors) => {
-              GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption } as GridColOptions) {
+              GridCol({
+                span: {
+                  xs: 1,
+                  sm: 2,
+                  md: 3,
+                  lg: 4
+                } as GridColColumnOption
+              } as GridColOptions) {
                 Row()
                   .width('100%')
                   .height('20vp')
@@ -371,7 +385,7 @@ struct ZIndexPage {
               .borderColor(color)
               .borderWidth(2)
             })
-          }/* .commonStyle() */
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Grid') {
           Grid() {
             ForEach(['0', '1', '2', '3', '4'], (item: string) => {
@@ -385,7 +399,7 @@ struct ZIndexPage {
           }
           .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
           .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
-          /* .commonStyle() */
+          .applyStyles(this.commonStyle)
           .backgroundColor(0xFAEEE0)
         } else if (this.targetView == 'GridItem') {
           Grid() {
@@ -398,13 +412,13 @@ struct ZIndexPage {
             }
             .rowStart(1)
             .rowEnd(4)
-            /* .commonStyle() */
+            .applyStyles(this.commonStyle)
           }
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'List') {
           List() {
-          }/* .commonStyle() */
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'ListItem') {
           List({ space: 0, initialIndex: 0 }) {
             ListItem() {
@@ -412,7 +426,7 @@ struct ZIndexPage {
                 .width('100%')
                 .textAlign(TextAlign.Center)
                 .backgroundColor(Color.White)
-            }/* .commonStyle() */
+            }.applyStyles(this.commonStyle)
           }
           .width('100%')
           .height('100%')
@@ -420,7 +434,7 @@ struct ZIndexPage {
           List({ space: 0, initialIndex: 0 }) {
             ListItemGroup()
               .backgroundColor(Color.Yellow)
-              /* .commonStyle() */
+              .applyStyles(this.commonStyle)
           }.backgroundColor(Color.Pink)
           .width('100%')
           .height('100%')
@@ -437,11 +451,11 @@ struct ZIndexPage {
           
           
           
-          /* .commonStyle() */
+          
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')
-          }/* .commonStyle() */
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'RelativeContainer') {
           RelativeContainer() {
             Row()
@@ -453,15 +467,15 @@ struct ZIndexPage {
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
               })
               .id('responseRegion')
-          }/* .commonStyle() */
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Row') {
           Row() {
             Text('Text')
-          }.backgroundColor(Color.Orange)/* .commonStyle() */
+          }.backgroundColor(Color.Orange).applyStyles(this.commonStyle)
         } else if (this.targetView == 'RowSplit') {
           RowSplit() {
             Text('Text')
-          }/* .commonStyle() */
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Scroll') {
           Scroll() {
             Column() {
@@ -473,7 +487,7 @@ struct ZIndexPage {
                   .textAlign(TextAlign.Center)
               }, (item: string) => item)
             }.width('100%')
-          }.scrollBar(BarState.On)/* .commonStyle() */
+          }.scrollBar(BarState.On).applyStyles(this.commonStyle)
         } else if (this.targetView == 'SideBarContainer') {
           SideBarContainer(SideBarContainerType.Embed) {
             Column() {
@@ -490,11 +504,11 @@ struct ZIndexPage {
               Text('SideBarContainer content')
                 .fontSize(25)
             }.backgroundColor(Color.Orange)
-          }/* .commonStyle() */
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'Stack') {
           Stack() {
             Text('Stack')
-          }.backgroundColor(Color.White)/* .commonStyle() */
+          }.backgroundColor(Color.White).applyStyles(this.commonStyle)
         } else if (this.targetView == 'Swiper') {
           Swiper() {
             Text('Swiper')
@@ -502,7 +516,7 @@ struct ZIndexPage {
               .height('100%')
           }.indicator(true)
           .backgroundColor(Color.White)
-          /* .commonStyle() */
+          .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Tabs') {
           Tabs() {
             TabContent() {
@@ -511,7 +525,7 @@ struct ZIndexPage {
                 .height('100%')
                 .backgroundColor('#00CB87')
             }
-          }/* .commonStyle() */
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'TabContent') {
           Tabs() {
             TabContent() {
@@ -521,7 +535,7 @@ struct ZIndexPage {
                 .backgroundColor(Color.White)
             }
             .tabBar('Tabs1')
-            /* .commonStyle() */
+            .applyStyles(this.commonStyle)
             .backgroundColor(Color.Yellow)
           }.backgroundColor(Color.Red)
           .width('100%')
@@ -539,7 +553,7 @@ struct ZIndexPage {
                   .objectFit(ImageFit.Fill)
               }
             }
-          }/* .commonStyle() */
+          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'StepperItem') {
           Stepper() {
             StepperItem() {
@@ -548,7 +562,7 @@ struct ZIndexPage {
               }
             }
             .backgroundColor(Color.Red)
-            /* .commonStyle() */
+            .applyStyles(this.commonStyle)
           }
           .backgroundColor(Color.Yellow)
           .width('100%')
@@ -561,7 +575,7 @@ struct ZIndexPage {
             GridCol() {
               Row().width('100%').height('20vp')
             }
-            /* .commonStyle() */
+            .applyStyles(this.commonStyle)
             .backgroundColor(Color.Yellow)
           }
           .backgroundColor(Color.Red)
@@ -580,7 +594,7 @@ struct ZIndexPage {
                   .objectFit(ImageFit.Fill)
               }
             }
-            /* .commonStyle() */
+            .applyStyles(this.commonStyle)
             .backgroundColor(Color.Yellow)
           }
           .backgroundColor(Color.Red)
@@ -589,14 +603,14 @@ struct ZIndexPage {
         } else if (this.targetView == 'MenuItem') {
           Menu() {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-              /* .commonStyle() */
+              .applyStyles(this.commonStyle)
           }.backgroundColor(Color.Yellow)
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'MenuItemGroup') {
           Menu() {
             MenuItemGroup({ header: 'MenuItemGroup' }) {
-            }/* .commonStyle() */
+            }.applyStyles(this.commonStyle)
           }.backgroundColor(Color.Yellow)
           .width('100%')
           .height('100%')
