@@ -17,7 +17,8 @@
 #include "drmKitTest.h"
 
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports)
+{
     std::vector<napi_property_descriptor> descData;
     addDrmKitTest(descData);
     napi_define_properties(env, exports, descData.size(), descData.data());
