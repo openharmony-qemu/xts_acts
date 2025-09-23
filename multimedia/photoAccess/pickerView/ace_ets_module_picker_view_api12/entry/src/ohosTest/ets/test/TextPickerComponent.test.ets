@@ -2376,7 +2376,7 @@ export default function TextPicker() {
     /**
      * @tc.number    testPicker51
      * @tc.name      testPicker51
-     * @tc.desc      Testing CompleteButtonText
+     * @tc.desc      Testing ContextRecoveryInfo
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
@@ -2387,6 +2387,7 @@ export default function TextPicker() {
         return;
       }
       let sheetPickerOptions: photoAccessHelper.PhotoSelectOptions = getSheetPickerOptions();
+      let testFinished: boolean = true;
       let contextRecoveryInfo = {
         "albumUri" : "",
         "displayName": "IMG_20240522_085513_3.jpg",
@@ -2404,7 +2405,7 @@ export default function TextPicker() {
       }
 
       await routeToUrl(options);
-      let testFinished: boolean = true;
+
       expect(testFinished).assertTrue();
       await CommonFunc.sleep(2000);
       router.back();
