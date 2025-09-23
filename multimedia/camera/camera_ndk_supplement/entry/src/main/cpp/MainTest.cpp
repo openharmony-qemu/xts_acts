@@ -42,7 +42,7 @@ static napi_value ExecuteCameraFunction(napi_env env, napi_callback_info info, s
 
 static napi_value InitCamera(napi_env env, napi_callback_info info)
 {
-    char *surfaceId = CameraTestUtils::GetArgsOneParameterByStr(env, info).get();
+    char *surfaceId = CameraTestUtils::GetArgsOneParameterByStr(env, info);
     g_ndkCamera = new NDKCamera(surfaceId);
     napi_value result;
     if (g_ndkCamera->valid_) {
@@ -187,7 +187,7 @@ const std::map<std::string, ArkCameraTestFunc> FunctionErroCodeMap = {
 
 static napi_value CameraErrorCode(napi_env env, napi_callback_info info)
 {
-    char *errcode = CameraTestUtils::GetArgsOneParameterByStr(env, info).get();
+    char *errcode = CameraTestUtils::GetArgsOneParameterByStr(env, info);
     std::string key(errcode);
 
     auto it = FunctionErroCodeMap.find(key);
@@ -203,7 +203,7 @@ static napi_value CameraErrorCode(napi_env env, napi_callback_info info)
 
 static napi_value CameraStatusInfo(napi_env env, napi_callback_info info)
 {
-    char *charStatus = CameraTestUtils::GetArgsOneParameterByStr(env, info).get();
+    char *charStatus = CameraTestUtils::GetArgsOneParameterByStr(env, info);
     int ret = TEST_FAILED;
     if (g_ndkCamera->SetCameraStatus(std::string(charStatus)) == TEST_OK) {
         ret = TEST_OK;
