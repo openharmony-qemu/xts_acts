@@ -22,7 +22,7 @@ import {
   Text,FlexDirection,ItemAlign,Divider,$r,$$,MenuItem,BlurStyleActivePolicy,AdaptiveColor,ThemeColorMode,MenuElement,SheetMode,SheetSize,Placement,
   Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,Builder,MenuItemOptions,ResourceStr,Menu,BackgroundBlurStyleOptions,BlurStyle,SheetType,
   Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,LevelMode,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
+  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
 } from '@ohos.arkui.component'
 import {
   State,
@@ -35,7 +35,7 @@ import { UIContext, Router,KeyboardAvoidMode,PromptAction } from '@ohos.arkui.UI
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import { BuilderNode,FrameNode } from '@ohos.arkui.node';
-import { ImmersiveMode } from '@ohos.promptAction';
+import { ImmersiveMode,LevelMode } from '@ohos.promptAction';
 import { LengthMetrics,ComponentContent } from '@ohos.arkui.node';
 import { Callback,BusinessError } from '@ohos.base';
 import { Router } from '@ohos.arkui.UIContext';
