@@ -410,7 +410,7 @@ export default function graphicTextNewAPI() {
           textDirection: text.TextDirection.RTL
         }
         let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        let textData = "سىناق تېكىستى";
         paragraphBuilder.addText(textData);
         let paragraph: text.Paragraph = paragraphBuilder.build();
         try {
@@ -431,7 +431,7 @@ export default function graphicTextNewAPI() {
             let font = runs[j].getFont();
             try {
               let textDirection = runs[0].getTextDirection();
-              expect(textDirection).assertEqual(text.TextDirection.LTR);
+              expect(textDirection).assertEqual(text.TextDirection.RTL);
             } catch (err) {
               console.info(msg + JSON.stringify(err));
               expect().assertFail();
