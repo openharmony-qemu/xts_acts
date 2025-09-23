@@ -598,7 +598,7 @@ export default function audioSessionManagerTest() {
       let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
       try {
         let audioSession:ESObject = "1";
-        audioSessionManager.on('availbleDeviceChange',audioSession,(deviceChanged: audio.DeviceChangeAction) =>{
+        audioSessionManager.on('availableDeviceChange',audioSession,(deviceChanged: audio.DeviceChangeAction) =>{
           console.info(`${TAG}: availbleDeviceChange errors`);
           expect(false).assertTrue();
         });
