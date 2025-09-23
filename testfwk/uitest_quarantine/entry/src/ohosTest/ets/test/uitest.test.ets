@@ -410,10 +410,10 @@ export default function UiTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /*
-     * @tc.number: uiTest_9060
-     * @tc.name: testGetDisplayRotationWithId
-     * @tc.desc: getDisplayRotation test
+    /**
+     * @tc.number uiTest_9060
+     * @tc.name testGetDisplayRotationWithId
+     * @tc.desc getDisplayRotation test
      */
     it('testGetDisplayRotationWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'testGetDisplayRotationWithId start');
