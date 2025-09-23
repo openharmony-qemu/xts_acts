@@ -188,7 +188,7 @@ export default function FrameNodeAnimationPage() {
       let getValue: Array<number> = AppStorage.get('checkGetNodePropertyValue') as Array<number>
       console.log('FrameNodeAnimationPage_005 getValue: ', getValue)
       expect(getValue?.length).assertEqual(3);
-      AppStorage.delete('checkCancelFail')
+      AppStorage.delete('checkGetNodePropertyValue')
       console.info('FrameNodeAnimationPage_005 END');
       done();
     });
@@ -214,7 +214,7 @@ export default function FrameNodeAnimationPage() {
       let getValue: Array<number> = AppStorage.get('checkNullNodePropertyValue') as Array<number>
       console.log('FrameNodeAnimationPage_006 getValue: ', getValue)
       expect(getValue?.length).assertEqual(0);
-      AppStorage.delete('checkCancelFail')
+      AppStorage.delete('checkNullNodePropertyValue')
       console.info('FrameNodeAnimationPage_006 END');
       done();
     });
