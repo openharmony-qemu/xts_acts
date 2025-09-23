@@ -85,5 +85,28 @@ export default function SwiperTypeNodeTest() {
       console.info('[SwiperTypeNodeTest_0100] END');
       done();
     });
+    /**
+     * @tc.number    SwiperTypeNodeTest_0200
+     * @tc.name      SwiperTypeNodeTest_0200
+     * @tc.desc      Test SwiperTypeNodePage undefined.
+     * @tc.level     Level 3
+     * @tc.type
+     * @tc.size
+     */
+    it('SwiperTypeNodeTest_0200', Level.LEVEL3, async (done: Function) => {
+      console.info('[SwiperTypeNodeTest_0200] START');
+      await Utils.sleep(1000);
+      let driver = Driver.create();
+      let btn = await driver.findComponent(ON.id('SwiperTypeNodePage_undefined'));
+      await btn.click();
+      console.info("[SwiperTypeNodeTest_0200] Click SwiperTypeNodePage_undefined.");
+      await Utils.sleep(1500);
+      console.info("[SwiperTypeNodeTest_0200] AppStorage.get('SwiperTypeNodeUn'): " + AppStorage.get('SwiperTypeNodeUn'));
+      expect(AppStorage.get('SwiperTypeNodeUn')).assertEqual(undefined);
+
+      AppStorage.delete('SwiperTypeNodeUn')
+      console.info('[SwiperTypeNodeTest_0200] END');
+      done();
+    });
   })
 }
