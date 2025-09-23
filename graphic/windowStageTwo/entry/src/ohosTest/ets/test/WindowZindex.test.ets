@@ -1271,7 +1271,7 @@ export default function windowZindexTest() {
         console.info(`${caseName} Succeeded in loading the system sub window content.`);
         await windowClass1.showWindow();
         console.info(`${caseName} Succeeded in showing the system sub window.`);
-        await windowClass1.resizeAsync(minWidth+20, minHeight+20);
+        await windowClass1.resizeAsync(minWidth+40, minHeight+40);
         await windowClass1.moveWindowTo(50, 100);
 
         let windowClass2 = await windowStage.createSubWindow('test_SubWindowZLevel_0100_2');
@@ -1282,7 +1282,7 @@ export default function windowZindexTest() {
         console.info(`${caseName} Succeeded in loading the system sub window content.`);
         await windowClass2.showWindow();
         console.info(`${caseName} Succeeded in showing the system sub window.`);
-        await windowClass2.resizeAsync(minWidth+20, minHeight+20);
+        await windowClass2.resizeAsync(minWidth+40, minHeight+40);
         await windowClass2.moveWindowTo(150, 150);
 
         let windowClass3 = await windowStage.createSubWindow('test_SubWindowZLevel_0100_3');
@@ -1293,7 +1293,7 @@ export default function windowZindexTest() {
         console.info(`${caseName} Succeeded in loading the system sub window content.`);
         await windowClass3.showWindow();
         console.info(`${caseName} Succeeded in showing the system sub window.`);
-        await windowClass3.resizeAsync(minWidth+20, minHeight+20);
+        await windowClass3.resizeAsync(minWidth+40, minHeight+40);
         await windowClass3.moveWindowTo(250, 250);
 
         let window1 = await window.getLastWindow(context);
