@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -99,21 +99,13 @@ export default function abilityTestSync() {
      * trigger onAbilityForeground (Callback).
      */
     it('ACTS_AddAbilityMonitorSync_0200', Level.LEVEL0, async (done: Function) => {
-      let CallbackFlag = 0
-      console.log('====>ACTS_AddAbilityMonitorSync_0200--addAbilityMonitorSync--Subscriber====>');
-      Subscriber.createSubscriber(commonEventSubscribeInfo, (err, sub) => {
-        console.log('====>ACTS_AddAbilityMonitorSync_0200--createSubscribe success, err is:' + JSON.stringify(err));
-        Subscriber.subscribe(sub, (err, msg) => {
-          console.log('====>ACTS_AddAbilityMonitorSync_0200--subscribe success, msg is:' + JSON.stringify(msg));
-          Subscriber.unsubscribe(sub);
-          expect(CallbackFlag).assertEqual(1)
-          done()
-        })
-      })
+      let CallbackFlag = 0;
 
       let onAbilityForeground = () => {
         console.log('====>ACTS_AddAbilityMonitorSync_0200--onAbilityForeground====>');
         CallbackFlag = 1;
+        expect(CallbackFlag).assertEqual(1);
+        done();
       }
 
       console.log('====>ACTS_AddAbilityMonitorSync_0200--addAbilityMonitorSync--start====>');
@@ -149,21 +141,13 @@ export default function abilityTestSync() {
      * onAbilityBackground (Callback).
      */
     it('ACTS_AddAbilityMonitorSync_0300', Level.LEVEL0, async (done: Function) => {
-      let CallbackFlag = 0
-      console.log('====>ACTS_AddAbilityMonitorSync_0300--addAbilityMonitorSync--Subscriber====>');
-      Subscriber.createSubscriber(commonEventSubscribeInfo, (err, sub) => {
-        console.log('====>ACTS_AddAbilityMonitorSync_0300--createSubscribe success, err is:' + JSON.stringify(err));
-        Subscriber.subscribe(sub, (err, msg) => {
-          console.log('====>ACTS_AddAbilityMonitorSync_0300--subscribe success, msg is:' + JSON.stringify(msg));
-          Subscriber.unsubscribe(sub);
-          expect(CallbackFlag).assertEqual(1)
-          done()
-        })
-      })
+      let CallbackFlag = 0;
 
       let onAbilityBackgroundPromise = () => {
         console.log('====>ACTS_AddAbilityMonitorSync_0300 onAbilityBackgroundPromise ====>');
         CallbackFlag = 1;
+        expect(CallbackFlag).assertEqual(1);
+        done();
       }
 
       console.log('====>ACTS_AddAbilityMonitorSync_0300--addAbilityMonitorSync--start====>');
@@ -196,30 +180,22 @@ export default function abilityTestSync() {
      * to trigger onAbilityDestroy (Callback).
      */
     it('ACTS_AddAbilityMonitorSync_0400', Level.LEVEL0, async (done: Function) => {
-      let CallbackFlag = 0
-      console.log('====>ACTS_AddAbilityMonitorSync_0400--addAbilityMonitorSync--Subscriber====>');
-      Subscriber.createSubscriber(commonEventSubscribeInfo, (err, sub) => {
-        console.log('====>ACTS_AddAbilityMonitorSync_0400--createSubscribe success, err is:' + JSON.stringify(err));
-        Subscriber.subscribe(sub, (err, msg) => {
-          console.log('====>ACTS_AddAbilityMonitorSync_0400--subscribe success, msg is:' + JSON.stringify(msg));
-          Subscriber.unsubscribe(sub);
-          expect(CallbackFlag).assertEqual(1)
-          done()
-        })
-      })
+      let CallbackFlag = 0;
 
       let onAbilityDestroy = () => {
         console.log('====>ACTS_AddAbilityMonitorSync_0400 onAbilityDestroy ====>');
         CallbackFlag = 1;
+        expect(CallbackFlag).assertEqual(1);
+        done();
       }
 
       console.log('====>ACTS_AddAbilityMonitorSync_0400--addAbilityMonitorSync--start====>');
+      monitor = {
+        abilityName: 'MainAbility5',
+        onAbilityDestroy: onAbilityDestroy
+      }
       try {
-        abilityDelegator.addAbilityMonitorSync(
-          {
-            abilityName: 'MainAbility5',
-            onAbilityDestroy: onAbilityDestroy
-          })
+        abilityDelegator.addAbilityMonitorSync(monitor)
       } catch (err) {
         console.log('====>ACTS_AddAbilityMonitorSync_0400--addAbilityMonitorSync--error====>' + JSON.stringify(err));
         expect().assertFail()
@@ -241,21 +217,13 @@ export default function abilityTestSync() {
      * to trigger onWindowStageCreate (Callback).
      */
     it('ACTS_AddAbilityMonitorSync_0500', Level.LEVEL0, async (done: Function) => {
-      let CallbackFlag = 0
-      console.log('====>ACTS_AddAbilityMonitorSync_0500--addAbilityMonitorSync--Subscriber====>');
-      Subscriber.createSubscriber(commonEventSubscribeInfo, (err, sub) => {
-        console.log('====>ACTS_AddAbilityMonitorSync_0500--createSubscribe success, err is:' + JSON.stringify(err));
-        Subscriber.subscribe(sub, (err, msg) => {
-          console.log('====>ACTS_AddAbilityMonitorSync_0500--subscribe success, msg is:' + JSON.stringify(msg));
-          Subscriber.unsubscribe(sub);
-          expect(CallbackFlag).assertEqual(1)
-          done()
-        })
-      })
+      let CallbackFlag = 0;
 
       let onWindowStageCreate = () => {
         console.log('====>ACTS_AddAbilityMonitorSync_0500 onWindowStageCreate ====>');
         CallbackFlag = 1;
+        expect(CallbackFlag).assertEqual(1);
+        done();
       }
 
       console.log('====>ACTS_AddAbilityMonitorSync_0500--addAbilityMonitorSync--start====>');
@@ -288,21 +256,13 @@ export default function abilityTestSync() {
      * to trigger onWindowStageDestroy (Callback).
      */
     it('ACTS_AddAbilityMonitorSync_0600', Level.LEVEL0, async (done: Function) => {
-      let CallbackFlag = 0
-      console.log('====>ACTS_AddAbilityMonitorSync_0600--addAbilityMonitorSync--Subscriber====>');
-      Subscriber.createSubscriber(commonEventSubscribeInfo, (err, sub) => {
-        console.log('====>ACTS_AddAbilityMonitorSync_0600--createSubscribe success, err is:' + JSON.stringify(err));
-        Subscriber.subscribe(sub, (err, msg) => {
-          console.log('====>ACTS_AddAbilityMonitorSync_0600--subscribe success, msg is:' + JSON.stringify(msg));
-          Subscriber.unsubscribe(sub);
-          expect(CallbackFlag).assertEqual(1)
-          done()
-        })
-      })
+      let CallbackFlag = 0;
 
       let onWindowStageDestroy = () => {
         console.log('====>ACTS_AddAbilityMonitorSync_0600 onWindowStageDestroy ====>');
         CallbackFlag = 1;
+        expect(CallbackFlag).assertEqual(1);
+        done();
       }
 
       console.log('====>ACTS_AddAbilityMonitorSync_0600--addAbilityMonitorSync--start====>');
@@ -337,17 +297,7 @@ export default function abilityTestSync() {
      *           onAbilityCreate (Callback).
      */
     it('ACTS_RemoveAbilityMonitorSync_0100', Level.LEVEL0, async (done: Function) => {
-      let CallbackFlag = 0
-      console.log('====>ACTS_RemoveAbilityMonitorSync_0100--addAbilityMonitorSync--Subscriber====>');
-      Subscriber.createSubscriber(commonEventSubscribeInfo, (err, sub) => {
-        console.log('====>ACTS_RemoveAbilityMonitorSync_0100--createSubscribe success, err is:' + JSON.stringify(err));
-        Subscriber.subscribe(sub, (err, msg) => {
-          console.log('====>ACTS_RemoveAbilityMonitorSync_0100--subscribe success, msg is:' + JSON.stringify(msg));
-          Subscriber.unsubscribe(sub);
-          expect(CallbackFlag).assertEqual(0)
-          done()
-        })
-      })
+      let CallbackFlag = 0;
 
       let onAbilityCreate = () => {
         CallbackFlag = -1
@@ -377,6 +327,9 @@ export default function abilityTestSync() {
           abilityName: 'MainAbility5'
         }).then(async () => {
         console.log('====>ACTS_RemoveAbilityMonitorSync_0100 startAbility end====>');
+        await sleep(100);
+        expect(CallbackFlag).assertEqual(0);
+        done();
       })
     })
 
@@ -427,6 +380,9 @@ export default function abilityTestSync() {
           abilityName: 'MainAbility5'
         }).then(async () => {
         console.log('====>ACTS_RemoveAbilityMonitorSync_0200 startAbility end====>');
+        await sleep(100);
+        expect(CallbackFlag).assertEqual(0);
+        done();
       })
     })
 
@@ -438,17 +394,7 @@ export default function abilityTestSync() {
      *           onAbilityBackground (Callback).
      */
     it('ACTS_RemoveAbilityMonitorSync_0300', Level.LEVEL0, async (done: Function) => {
-      let CallbackFlag = 0
-      console.log('====>ACTS_RemoveAbilityMonitorSync_0300--addAbilityMonitorSync--Subscriber====>');
-      Subscriber.createSubscriber(commonEventSubscribeInfo, (err, sub) => {
-        console.log('====>ACTS_RemoveAbilityMonitorSync_0300--createSubscribe success, err is:' + JSON.stringify(err));
-        Subscriber.subscribe(sub, (err, msg) => {
-          console.log('====>ACTS_RemoveAbilityMonitorSync_0300--subscribe success, msg is:' + JSON.stringify(msg));
-          Subscriber.unsubscribe(sub);
-          expect(CallbackFlag).assertEqual(0)
-          done()
-        })
-      })
+      let CallbackFlag = 0;
 
       let onAbilityBackground = () => {
         CallbackFlag = -1
@@ -477,6 +423,9 @@ export default function abilityTestSync() {
           abilityName: 'MainAbility5'
         }).then(async () => {
         console.log('====>ACTS_RemoveAbilityMonitorSync_0300 startAbility end====>');
+        await sleep(100);
+        expect(CallbackFlag).assertEqual(0);
+        done();
       })
     })
 
@@ -488,17 +437,7 @@ export default function abilityTestSync() {
      *           onAbilityDestroy (Callback).
      */
     it('ACTS_RemoveAbilityMonitorSync_0400', Level.LEVEL0, async (done: Function) => {
-      let CallbackFlag = 0
-      console.log('====>ACTS_RemoveAbilityMonitorSync_0400--addAbilityMonitorSync--Subscriber====>');
-      Subscriber.createSubscriber(commonEventSubscribeInfo, (err, sub) => {
-        console.log('====>ACTS_RemoveAbilityMonitorSync_0400--createSubscribe success, err is:' + JSON.stringify(err));
-        Subscriber.subscribe(sub, (err, msg) => {
-          console.log('====>ACTS_RemoveAbilityMonitorSync_0400--subscribe success, msg is:' + JSON.stringify(msg));
-          Subscriber.unsubscribe(sub);
-          expect(CallbackFlag).assertEqual(0)
-          done()
-        })
-      })
+      let CallbackFlag = 0;
 
       let onAbilityDestroy = () => {
         CallbackFlag = -1
@@ -527,6 +466,9 @@ export default function abilityTestSync() {
           abilityName: 'MainAbility5'
         }).then(async () => {
         console.log('====>ACTS_RemoveAbilityMonitorSync_0400 startAbility end====>');
+        await sleep(500);
+        expect(CallbackFlag).assertEqual(0);
+        done();
       })
     })
 
@@ -538,17 +480,7 @@ export default function abilityTestSync() {
      *           onWindowStageCreate (Callback).
      */
     it('ACTS_RemoveAbilityMonitorSync_0500', Level.LEVEL0, async (done: Function) => {
-      let CallbackFlag = 0
-      console.log('====>ACTS_RemoveAbilityMonitorSync_0500--addAbilityMonitorSync--Subscriber====>');
-      Subscriber.createSubscriber(commonEventSubscribeInfo, (err, sub) => {
-        console.log('====>ACTS_RemoveAbilityMonitorSync_0500--createSubscribe success, err is:' + JSON.stringify(err));
-        Subscriber.subscribe(sub, (err, msg) => {
-          console.log('====>ACTS_RemoveAbilityMonitorSync_0500--subscribe success, msg is:' + JSON.stringify(msg));
-          Subscriber.unsubscribe(sub);
-          expect(CallbackFlag).assertEqual(0)
-          done()
-        })
-      })
+      let CallbackFlag = 0;
 
       let onWindowStageCreate = () => {
         CallbackFlag = -1
@@ -577,6 +509,9 @@ export default function abilityTestSync() {
           abilityName: 'MainAbility5'
         }).then(async () => {
         console.log('====>ACTS_RemoveAbilityMonitorSync_0500 startAbility end====>');
+        await sleep(100);
+        expect(CallbackFlag).assertEqual(0);
+        done();
       })
     })
 
@@ -588,17 +523,7 @@ export default function abilityTestSync() {
      *           onWindowStageDestroy (Callback).
      */
     it('ACTS_RemoveAbilityMonitorSync_0600', Level.LEVEL0, async (done: Function) => {
-      let CallbackFlag = 0
-      console.log('====>ACTS_RemoveAbilityMonitorSync_0600--addAbilityMonitorSync--Subscriber====>');
-      Subscriber.createSubscriber(commonEventSubscribeInfo, (err, sub) => {
-        console.log('====>ACTS_RemoveAbilityMonitorSync_0600--createSubscribe success, err is:' + JSON.stringify(err));
-        Subscriber.subscribe(sub, (err, msg) => {
-          console.log('====>ACTS_RemoveAbilityMonitorSync_0600--subscribe success, msg is:' + JSON.stringify(msg));
-          Subscriber.unsubscribe(sub);
-          expect(CallbackFlag).assertEqual(0)
-          done()
-        })
-      })
+      let CallbackFlag = 0;
 
       let onWindowStageDestroy = () => {
         CallbackFlag = -1
@@ -627,6 +552,9 @@ export default function abilityTestSync() {
           abilityName: 'MainAbility5'
         }).then(async () => {
         console.log('====>ACTS_RemoveAbilityMonitorSync_0600 startAbility end====>');
+        await sleep(500);
+        expect(CallbackFlag).assertEqual(0);
+        done();
       })
     })
 
@@ -666,17 +594,7 @@ export default function abilityTestSync() {
      *           onAbilityCreate (Callback).
      */
     it('ACTS_RemoveAbilityMonitorSync_0800', Level.LEVEL0, async (done: Function) => {
-      let CallbackFlag = 0
-      console.log('====>ACTS_RemoveAbilityMonitorSync_0800--addAbilityMonitorSync--Subscriber====>');
-      Subscriber.createSubscriber(commonEventSubscribeInfo, (err, sub) => {
-        console.log('====>ACTS_RemoveAbilityMonitorSync_0800--createSubscribe success, err is:' + JSON.stringify(err));
-        Subscriber.subscribe(sub, (err, msg) => {
-          console.log('====>ACTS_RemoveAbilityMonitorSync_0800--subscribe success, msg is:' + JSON.stringify(msg));
-          Subscriber.unsubscribe(sub);
-          expect(CallbackFlag).assertEqual(0)
-          done()
-        })
-      })
+      let CallbackFlag = 0;
 
       let onAbilityCreate = () => {
         CallbackFlag = -1
@@ -705,6 +623,9 @@ export default function abilityTestSync() {
           abilityName: 'MainAbility5'
         }).then(async () => {
         console.log('====>ACTS_RemoveAbilityMonitorSync_0800 startAbility end====>');
+        await sleep(100);
+        expect(CallbackFlag).assertEqual(0);
+        done();
       })
     })
   })
