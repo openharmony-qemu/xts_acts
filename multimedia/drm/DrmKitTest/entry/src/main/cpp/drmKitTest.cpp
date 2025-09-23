@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include "drmKitTest.h"
+#include "DrmKitTest.h"
 #include <multimedia/drm_framework/native_mediakeysession.h>
 #include <multimedia/drm_framework/native_drm_err.h>
 #include <multimedia/drm_framework/native_mediakeysystem.h>
@@ -30,7 +30,7 @@ void addDrmKitOneTest(std::vector<napi_property_descriptor>& descData)
     descData.push_back({"mediaKeySession_ProcessMediaKeyResponseInvalue", nullptr,
         OH_MediaKeySession_ProcessMediaKeyResponseInvalue, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"mediaKeySession_ClearMediaKeysInvalue", nullptr, OH_MediaKeySession_ClearMediaKeysInvalue,
-        nullptr, nullptr, nullptr, napi_default, nullptr});    
+        nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"mediaKeySession_GenerateOfflineReleaseRequestInvalue", nullptr,
         OH_MediaKeySession_GenerateOfflineReleaseRequestInvalue, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"mediaKeySession_ProcessOfflineReleaseResponseInvalue", nullptr,
@@ -446,7 +446,7 @@ napi_value DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UPDATE(napi_env env, na
     return result;
 }
 
-static const char *judgeUuid(void)
+static const char *JudgeUuid(void)
 {
     bool isSupport = OH_MediaKeySystem_IsSupported(CLEAR_PLAY);
     if (isSupport == 1) {
@@ -461,7 +461,7 @@ napi_value DRM_OfflineMediaKeyStatusOFFLINE_MEDIA_KEY_STATUS_INACTIVE(napi_env e
     uint8_t *keyId_ptr = nullptr;
     uint8_t keyData[DATA_BUFF_LEN] = {0};
     int32_t keyDataLen = DATA_BUFF_LEN;
-    Drm_ErrCode ret1 = OH_MediaKeySystem_Create(judgeUuid(), &system_ptr);
+    Drm_ErrCode ret1 = OH_MediaKeySystem_Create(JudgeUuid(), &system_ptr);
     int32_t offlineMediaKeyIdLen = 0;
     DRM_ContentProtectionLevel level = CONTENT_PROTECTION_LEVEL_SW_CRYPTO;
     MediaKeySession *drmKeySession = nullptr;
@@ -486,17 +486,13 @@ uint8_t Flag_SetSesChangeCallback2 = 0;
 Drm_ErrCode sessoinKeyChangeCallBackTest2(MediaKeySession *mediaKeySessoin, DRM_KeysInfo *keysInfo, bool hasNewGoodKeys)
 {
     keysInfo->keysInfoCount = MAX_KEY_INFO_COUNT * MAX_KEY_ID_LEN;
-    for (int i = 0;i < MAX_KEY_INFO_COUNT; i++)
-    {
-        for (int j = 0;j < MAX_KEY_ID_LEN; j++)
-        {
+    for (int i = 0; i < MAX_KEY_INFO_COUNT; i++) {
+        for (int j = 0; j < MAX_KEY_ID_LEN; j++) {
             keysInfo->keyId[i][j] = 0;
         }
     }
-    for (int i = 0;i < MAX_KEY_INFO_COUNT; i++)
-    {
-        for (int j = 0;j < MAX_KEY_STATUS_VALUE_LEN; j++)
-        {
+    for (int i = 0; i < MAX_KEY_INFO_COUNT; i++) {
+        for (int j = 0; j < MAX_KEY_STATUS_VALUE_LEN; j++) {
             keysInfo->statusValue[i][j] = '\0';
         }
     }
@@ -585,7 +581,7 @@ napi_value DRM_KeysInfo_EvenType(napi_env env, napi_callback_info info)
     MediaKeySession *session_ptr = nullptr;
     DRM_ContentProtectionLevel contentProtectionLevel = CONTENT_PROTECTION_LEVEL_SW_CRYPTO;
     MediaKeySystem *drmKeySystem = nullptr;
-    Drm_ErrCode ret3 = OH_MediaKeySystem_Create(judgeUuid(), &drmKeySystem);
+    Drm_ErrCode ret3 = OH_MediaKeySystem_Create(JudgeUuid(), &drmKeySystem);
     Drm_ErrCode ret5 = OH_MediaKeySystem_CreateMediaKeySession(drmKeySystem, &contentProtectionLevel, &session_ptr);
 
     OH_MediaKeySession_Callback testCallback;
@@ -623,7 +619,7 @@ napi_value EvenType_EVENT_DRM_BASE(napi_env env, napi_callback_info info)
     MediaKeySession *session_ptr = nullptr;
     DRM_ContentProtectionLevel contentProtectionLevel = CONTENT_PROTECTION_LEVEL_SW_CRYPTO;
     MediaKeySystem *drmKeySystem = nullptr;
-    Drm_ErrCode ret3 = OH_MediaKeySystem_Create(judgeUuid(), &drmKeySystem);
+    Drm_ErrCode ret3 = OH_MediaKeySystem_Create(JudgeUuid(), &drmKeySystem);
     Drm_ErrCode ret5 = OH_MediaKeySystem_CreateMediaKeySession(drmKeySystem, &contentProtectionLevel, &session_ptr);
     OH_MediaKeySession_Callback testCallback;
     testCallback.eventCallback = &evenTypeEVENT_DRM_BASE;
@@ -652,7 +648,7 @@ napi_value EvenType_EVENT_PROVISION_REQUIRED(napi_env env, napi_callback_info in
     MediaKeySession *session_ptr = nullptr;
     DRM_ContentProtectionLevel contentProtectionLevel = CONTENT_PROTECTION_LEVEL_SW_CRYPTO;
     MediaKeySystem *drmKeySystem = nullptr;
-    Drm_ErrCode ret3 = OH_MediaKeySystem_Create(judgeUuid(), &drmKeySystem);
+    Drm_ErrCode ret3 = OH_MediaKeySystem_Create(JudgeUuid(), &drmKeySystem);
     Drm_ErrCode ret5 = OH_MediaKeySystem_CreateMediaKeySession(drmKeySystem, &contentProtectionLevel, &session_ptr);
 
     OH_MediaKeySession_Callback testCallback;
@@ -682,7 +678,7 @@ napi_value EvenType_EVENT_VENDOR_DEFINED(napi_env env, napi_callback_info info)
     MediaKeySession *session_ptr = nullptr;
     DRM_ContentProtectionLevel contentProtectionLevel = CONTENT_PROTECTION_LEVEL_SW_CRYPTO;
     MediaKeySystem *drmKeySystem = nullptr;
-    Drm_ErrCode ret3 = OH_MediaKeySystem_Create(judgeUuid(), &drmKeySystem);
+    Drm_ErrCode ret3 = OH_MediaKeySystem_Create(JudgeUuid(), &drmKeySystem);
     Drm_ErrCode ret5 = OH_MediaKeySystem_CreateMediaKeySession(drmKeySystem, &contentProtectionLevel, &session_ptr);
 
     OH_MediaKeySession_Callback testCallback;
@@ -712,7 +708,7 @@ napi_value EvenType_EVENT_EXPIRATION_UPDATE(napi_env env, napi_callback_info inf
     MediaKeySession *session_ptr = nullptr;
     DRM_ContentProtectionLevel contentProtectionLevel = CONTENT_PROTECTION_LEVEL_SW_CRYPTO;
     MediaKeySystem *drmKeySystem = nullptr;
-    Drm_ErrCode ret3 = OH_MediaKeySystem_Create(judgeUuid(), &drmKeySystem);
+    Drm_ErrCode ret3 = OH_MediaKeySystem_Create(JudgeUuid(), &drmKeySystem);
     Drm_ErrCode ret5 = OH_MediaKeySystem_CreateMediaKeySession(drmKeySystem, &contentProtectionLevel, &session_ptr);
 
     OH_MediaKeySession_Callback testCallback;
@@ -743,7 +739,7 @@ napi_value DRM_KeysInfo_keyId(napi_env env, napi_callback_info info)
     MediaKeySession *session_ptr = nullptr;
     DRM_ContentProtectionLevel contentProtectionLevel = CONTENT_PROTECTION_LEVEL_SW_CRYPTO;
     MediaKeySystem *drmKeySystem = nullptr;
-    Drm_ErrCode ret3 = OH_MediaKeySystem_Create(judgeUuid(), &drmKeySystem);
+    Drm_ErrCode ret3 = OH_MediaKeySystem_Create(JudgeUuid(), &drmKeySystem);
     Drm_ErrCode ret5 = OH_MediaKeySystem_CreateMediaKeySession(drmKeySystem, &contentProtectionLevel, &session_ptr);
 
     OH_MediaKeySession_Callback testCallback;
@@ -774,7 +770,7 @@ napi_value DRM_KeysInfo_keysInfoCount(napi_env env, napi_callback_info info)
     MediaKeySession *session_ptr = nullptr;
     DRM_ContentProtectionLevel contentProtectionLevel = CONTENT_PROTECTION_LEVEL_SW_CRYPTO;
     MediaKeySystem *drmKeySystem = nullptr;
-    Drm_ErrCode ret3 = OH_MediaKeySystem_Create(judgeUuid(), &drmKeySystem);
+    Drm_ErrCode ret3 = OH_MediaKeySystem_Create(JudgeUuid(), &drmKeySystem);
     Drm_ErrCode ret5 = OH_MediaKeySystem_CreateMediaKeySession(drmKeySystem, &contentProtectionLevel, &session_ptr);
 
     OH_MediaKeySession_Callback testCallback;
@@ -805,7 +801,7 @@ napi_value DRM_KeysInfo_statusValue(napi_env env, napi_callback_info info)
     MediaKeySession *session_ptr = nullptr;
     DRM_ContentProtectionLevel contentProtectionLevel = CONTENT_PROTECTION_LEVEL_SW_CRYPTO;
     MediaKeySystem *drmKeySystem = nullptr;
-    Drm_ErrCode ret3 = OH_MediaKeySystem_Create(judgeUuid(), &drmKeySystem);
+    Drm_ErrCode ret3 = OH_MediaKeySystem_Create(JudgeUuid(), &drmKeySystem);
     Drm_ErrCode ret5 = OH_MediaKeySystem_CreateMediaKeySession(drmKeySystem, &contentProtectionLevel, &session_ptr);
 
     OH_MediaKeySession_Callback testCallback;
@@ -835,7 +831,7 @@ napi_value Drm_ErrCode_DRM_ERR_UNKNOWN(napi_env env, napi_callback_info info)
     MediaKeySession *session_ptr = nullptr;
     DRM_ContentProtectionLevel contentProtectionLevel = CONTENT_PROTECTION_LEVEL_SW_CRYPTO;
     MediaKeySystem *drmKeySystem = nullptr;
-    Drm_ErrCode ret3 = OH_MediaKeySystem_Create(judgeUuid(), &drmKeySystem);
+    Drm_ErrCode ret3 = OH_MediaKeySystem_Create(JudgeUuid(), &drmKeySystem);
     Drm_ErrCode ret5 = OH_MediaKeySystem_CreateMediaKeySession(drmKeySystem, &contentProtectionLevel, &session_ptr);
     DRM_MediaKeyStatus mediaKeyStatus;
     ret5 = OH_MediaKeySession_CheckMediaKeyStatus(session_ptr, &mediaKeyStatus);
@@ -849,7 +845,7 @@ napi_value OH_MediaKeySystem_Destroy_DRM_ERR_UNKNOWN(napi_env env, napi_callback
     MediaKeySession *session_ptr = nullptr;
     DRM_ContentProtectionLevel contentProtectionLevel = CONTENT_PROTECTION_LEVEL_SW_CRYPTO;
     MediaKeySystem *drmKeySystem = nullptr;
-    Drm_ErrCode ret3 = OH_MediaKeySystem_Create(judgeUuid(), &drmKeySystem);
+    Drm_ErrCode ret3 = OH_MediaKeySystem_Create(JudgeUuid(), &drmKeySystem);
     Drm_ErrCode ret5 = OH_MediaKeySystem_CreateMediaKeySession(drmKeySystem, &contentProtectionLevel, &session_ptr);
     DRM_MediaKeyStatus mediaKeyStatus;
     ret5 = OH_MediaKeySystem_Destroy(drmKeySystem);
