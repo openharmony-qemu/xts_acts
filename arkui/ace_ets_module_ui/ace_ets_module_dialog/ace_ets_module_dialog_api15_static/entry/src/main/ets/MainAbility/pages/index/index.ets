@@ -26,7 +26,7 @@ import {
   Text,ItemAlign,
   Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,FlexDirection,FlexDirection,
   Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,LevelMode,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
+  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
 } from '@ohos.arkui.component'
 import {
   State,
