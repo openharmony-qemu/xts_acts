@@ -290,7 +290,16 @@ export default function ActsCommonEventManagerSubscribeTest() {
               let info = subscriber.getSubscribeInfoSync();
               expect(info.priority).assertEqual(100)
               expect(info.userId).assertEqual(-3)
-              done()
+
+              await subscriber.finishCommonEvent().then(() => {
+                console.info(`finishCommonEvent_12 success `)
+                expect(true).assertTrue()
+                done()
+              }).catch((err) => {
+                console.info(`finishCommonEvent_12 err, error code: ${err.code}, message: ${err.message}`)
+                expect(false).assertTrue()
+                done()
+              })
             }
           })
     
@@ -419,7 +428,17 @@ export default function ActsCommonEventManagerSubscribeTest() {
 
           console.info(`getAbortCommonEventSync_11 isaborted ${isaborted}`)
           subscriber.clearAbortCommonEventSync()
-          done()
+          subscriber.finishCommonEvent((err) => {
+            if (err) {
+              console.info(`finishCommonEvent_11 err, error code: ${err.code}, message: ${err.message}`)
+              expect(false).assertTrue()
+              done()
+            } else {
+              console.info(`finishCommonEvent_11 success `)
+              expect(true).assertTrue()
+              done()
+            }
+          })
         }
       }
 
