@@ -14,7 +14,7 @@
  */
 import events_emitter from '@ohos.events.emitter'
 import {Entry, Component, CopyOptions, SearchController, CaretOffset, FontStyle, Font, Column, Text, Search, SearchOptions, ClickEvent, Button, Color } from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component

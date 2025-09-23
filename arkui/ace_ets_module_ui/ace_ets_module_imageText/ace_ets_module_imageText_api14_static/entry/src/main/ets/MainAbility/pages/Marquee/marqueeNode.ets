@@ -17,7 +17,7 @@ import {
 
   NodeController, FrameNode } from '@ohos.arkui.node';
 import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Image, ImageFit, ColumnOptions, HorizontalAlign } from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext } from "@ohos.arkui.UIContext";
 
 interface Info {

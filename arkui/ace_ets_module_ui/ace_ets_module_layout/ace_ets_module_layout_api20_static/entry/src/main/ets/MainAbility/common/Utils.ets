@@ -14,11 +14,6 @@
  */
 import RectValue from './Rect';
 import {
-  memo,
-  __memo_context_type,
-  __memo_id_type
-} from '@ohos.arkui.stateManagement' 
-import {
   Entry,
   Text,
   TextAttribute,
@@ -32,9 +27,6 @@ import {
 } from '@ohos.arkui.component' 
 import {
   State,
-  MutableState,
-  stateOf,
-  observableProxy
 } from '@ohos.arkui.stateManagement' 
 import inspector from '@ohos.arkui.inspector'
 import { sendTouchEvent } from "@kit.ArkUI";

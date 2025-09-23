@@ -17,7 +17,7 @@ import uiObserver from '@ohos.arkui.observer';
 
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, TextAlign, ClickEvent, ColumnOptions, Scroller, Scroll,
   TabsController, ForEach, Margin, Row, TabContent, Tabs} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 function callbackFunc(info: uiObserver.TabContentInfo) {
   console.info('tabContentUpdate', JSON.stringify(info));

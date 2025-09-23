@@ -14,7 +14,7 @@
  */
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
 import { Entry, Text, Column, Component, Select, Font, Color } from '@ohos.arkui.component'  
-import { State, MutableState, stateOf, observableProxy } from '@ohos.arkui.stateManagement' 
+import { State } from '@ohos.arkui.stateManagement' 
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
 class MyClass {

@@ -16,7 +16,7 @@ import { image } from '@kit.ImageKit'
 import { LengthMetrics } from '@kit.ArkUI'
 import { Entry, Component, TextController, TextStyle, MutableStyledString, StyledString, StyledStringKey, Row, $r, Resource, Text, TextAlign,
   Column, Color, SubmitEvent, Search, Button, ClickEvent, TextArea, BackgroundColorStyle, ImageAttachment, ArrayBuffer} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct StyledStringDemo {

@@ -14,7 +14,7 @@
  */
 import observer  from '@ohos.arkui.observer';
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, ClickEvent, ColumnOptions, NavPathStack} from '@ohos.arkui.component'
-import { State, Link, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, Link, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct ObserverPageId {

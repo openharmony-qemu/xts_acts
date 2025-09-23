@@ -16,7 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import { Entry, Component, Column, LoadingProgressStyle, FlexDirection, ItemAlign, FlexAlign, Flex, FlexOptions, Text,
   PatternLock, PatternLockController, Alignment, TextAlign, TextOverflow, LoadingProgress, Color, ClickEvent, Button} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { RecordData } from '@ohos.base';
 
 @Entry

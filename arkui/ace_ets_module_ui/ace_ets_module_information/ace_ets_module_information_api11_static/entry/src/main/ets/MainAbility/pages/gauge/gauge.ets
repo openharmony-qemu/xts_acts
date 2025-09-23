@@ -15,7 +15,7 @@
 
 import events_emitter from '@ohos.events.emitter';
 import { Entry, Component, Column, Gauge, Margin} from '@ohos.arkui.component'
-import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct GaugeExample {

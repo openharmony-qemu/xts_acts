@@ -18,9 +18,6 @@ import { Entry,FlexDirection,ItemAlign,TextClock,Margin,MarqueeUpdateStrategy,Fl
 
 import {
   State,
-  MutableState,
-  stateOf,
-  observableProxy,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 @Entry
