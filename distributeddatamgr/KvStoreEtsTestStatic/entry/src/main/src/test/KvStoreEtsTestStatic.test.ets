@@ -22,7 +22,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
-
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function KvStoreEtsTestStatic() {
   let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
