@@ -1,13 +1,13 @@
 /*
 * Copyright (c) 2023 Hunan OpenValley Digital Industry Development Co., Ltd.
-* Licensed under the Apache License, Version 2.0 (the "License");
+* Licensed under the Apache License, Version 2.0 (the 'License');
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
 *
 *     http://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
+* distributed under the License is distributed on an 'AS IS' BASIS,
 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 * See the License for the specific language governing permissions and
 * limitations under the License.
@@ -21,7 +21,7 @@ import { BusinessError } from '@ohos.base';
 
 import { AnimatedDrawableDescriptor, PixelMapDrawableDescriptor } from '@kit.ArkUI'
 import image from '@ohos.multimedia.image'
-import { AnimationController } from "@ohos.arkui.drawableDescriptor"
+import { AnimationController } from '@ohos.arkui.drawableDescriptor'
 
 const TAG = '[AnimationControllerPage]';
 
@@ -80,15 +80,15 @@ struct AnimationControllerPage {
   convertToAnimationStatus(status: AnimationStatus): string {
     switch (status) {
       case AnimationStatus.Initial:
-        return "Initial";
+        return 'Initial';
       case AnimationStatus.Running:
-        return "Running";
+        return 'Running';
       case AnimationStatus.Stopped:
-        return "Stopped";
+        return 'Stopped';
       case AnimationStatus.Paused:
-        return "Paused";
+        return 'Paused';
     }
-    return "undefined"
+    return 'undefined'
   }
 
   @Builder
@@ -192,7 +192,7 @@ struct AnimationControllerPage {
             .height(this.componentSize)
             .renderMode(ImageRenderMode.Template)
             .visibility(this.visible)
-            .id("Component1")
+            .id('Component1')
 
           Image(this.animatedDrawable2)
             .borderColor(Color.Red)
@@ -202,7 +202,7 @@ struct AnimationControllerPage {
             .renderMode(ImageRenderMode.Template)
             .visibility(this.visible)
             .syncLoad(true)
-            .id("Component2")
+            .id('Component2')
 
           Image(this.animatedDrawable3)
             .borderColor(Color.Red)
@@ -216,79 +216,79 @@ struct AnimationControllerPage {
 
         Divider().width('100%').height(10)
         Row({ space: 4 }) {
-          Button("c1 start")
+          Button('c1 start')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
               if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
                 let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
-                drawable?.getAnimationController("Component1")?.start()
+                drawable?.getAnimationController('Component1')?.start()
               }
             })
-          Button("c1 stop")
+          Button('c1 stop')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
               if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
                 let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
-                drawable?.getAnimationController("Component1")?.stop()
+                drawable?.getAnimationController('Component1')?.stop()
               }
             })
-          Button("c1 pause")
+          Button('c1 pause')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
               if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
                 let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
-                drawable?.getAnimationController("Component1")?.pause()
+                drawable?.getAnimationController('Component1')?.pause()
               }
             })
-          Button("c1 resume")
+          Button('c1 resume')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
               if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
                 let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
-                drawable?.getAnimationController("Component1")?.resume()
-              }
-            })
-        }
-
-        Divider().width('100%').height(10)
-        Row({ space: 4 }) {
-          Button("c2 start")
-            .height('6%').fontSize(10).padding({ left: 5, right: 5 })
-            .onClick(() => {
-              if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
-                let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
-                drawable?.getAnimationController("Component2")?.start()
-              }
-            })
-          Button("c2 stop")
-            .height('6%').fontSize(10).padding({ left: 5, right: 5 })
-            .onClick(() => {
-              if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
-                let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
-                drawable?.getAnimationController("Component2")?.stop()
-              }
-            })
-          Button("c2 pause")
-            .height('6%').fontSize(10).padding({ left: 5, right: 5 })
-            .onClick(() => {
-              if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
-                let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
-                drawable?.getAnimationController("Component2")?.pause()
-              }
-            })
-          Button("c2 resume")
-            .height('6%').fontSize(10).padding({ left: 5, right: 5 })
-            .onClick(() => {
-              if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
-                let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
-                drawable?.getAnimationController("Component2")?.resume()
+                drawable?.getAnimationController('Component1')?.resume()
               }
             })
         }
 
         Divider().width('100%').height(10)
         Row({ space: 4 }) {
-          Button("c3 start")
+          Button('c2 start')
+            .height('6%').fontSize(10).padding({ left: 5, right: 5 })
+            .onClick(() => {
+              if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
+                let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
+                drawable?.getAnimationController('Component2')?.start()
+              }
+            })
+          Button('c2 stop')
+            .height('6%').fontSize(10).padding({ left: 5, right: 5 })
+            .onClick(() => {
+              if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
+                let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
+                drawable?.getAnimationController('Component2')?.stop()
+              }
+            })
+          Button('c2 pause')
+            .height('6%').fontSize(10).padding({ left: 5, right: 5 })
+            .onClick(() => {
+              if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
+                let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
+                drawable?.getAnimationController('Component2')?.pause()
+              }
+            })
+          Button('c2 resume')
+            .height('6%').fontSize(10).padding({ left: 5, right: 5 })
+            .onClick(() => {
+              if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
+                let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
+                drawable?.getAnimationController('Component2')?.resume()
+              }
+            })
+        }
+
+        Divider().width('100%').height(10)
+        Row({ space: 4 }) {
+          Button('c3 start')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
               if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
@@ -296,7 +296,7 @@ struct AnimationControllerPage {
                 drawable?.getAnimationController()?.start()
               }
             })
-          Button("c3 stop")
+          Button('c3 stop')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
               if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
@@ -304,7 +304,7 @@ struct AnimationControllerPage {
                 drawable?.getAnimationController()?.stop()
               }
             })
-          Button("c3 pause")
+          Button('c3 pause')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
               if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
@@ -312,7 +312,7 @@ struct AnimationControllerPage {
                 drawable?.getAnimationController()?.pause()
               }
             })
-          Button("c3 resume")
+          Button('c3 resume')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
               if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
@@ -324,12 +324,12 @@ struct AnimationControllerPage {
 
         Divider().width('100%').height(10)
         Row({ space: 4 }) {
-          Button("c1 status")
+          Button('c1 status')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
               if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
                 let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
-                let status = drawable?.getAnimationController("Component1")?.getStatus()
+                let status = drawable?.getAnimationController('Component1')?.getStatus()
                 try {
                   this.msetxt = 'status'
                   this.getUIContext()
@@ -340,12 +340,12 @@ struct AnimationControllerPage {
                 }
               }
             })
-          Button("c2 status")
+          Button('c2 status')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
               if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
                 let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
-                let status = drawable?.getAnimationController("Component2")?.getStatus()
+                let status = drawable?.getAnimationController('Component2')?.getStatus()
                 try {
                   this.getUIContext()
                     .getPromptAction()
@@ -355,7 +355,7 @@ struct AnimationControllerPage {
                 }
               }
             })
-          Button("c3 status")
+          Button('c3 status')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
               if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
