@@ -12,7 +12,7 @@
         {
             "test-file-name": [
                 "drmkitc20test.hap",
-                "drmkitmainc20Test.hap"
+                "drmkitmainc20test.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

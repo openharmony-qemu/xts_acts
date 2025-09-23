@@ -13,19 +13,19 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_app_assist_suite("drmkitmainc20Test") {
+ohos_app_assist_suite("drmkitmainc20test") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "drmkitmainc20Test"
+  hap_name = "drmkitmainc20test"
   subsystem_name = "multimedia"
   part_name = "drm_framework"
 }
 
-ohos_js_app_suite("drmKitc20test") {
+ohos_js_app_suite("drmkitc20test") {
   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "drmKitc20test"
+  hap_name = "drmkitc20test"
   subsystem_name = "multimedia"
   part_name = "drm_framework"
   deps = [ ":Drm_Main_NDK_test" ]
