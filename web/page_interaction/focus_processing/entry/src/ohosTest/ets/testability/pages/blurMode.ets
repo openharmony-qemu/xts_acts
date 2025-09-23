@@ -19,7 +19,10 @@ import { Driver, ON, UiDirection, BY, UiDriver } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import {inputMethod} from '@kit.IMEKit';
 import { waitForExist} from '../../test/WaitTest.test';
+import { Driver, ON } from '@kit.TestKit';
 
+const EVENT_ID_SET_SUITE_KEY = 178201;
+const driver = Driver.create();
 @Entry
 @Component
 struct WebComponent {
@@ -30,20 +33,27 @@ struct WebComponent {
   @State userAgentPC:string = "";
   @State isReceive: number = -1;
   inputMethodController = inputMethod.getController()
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+  @State isOnConsoleEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
-        this.isReceive = 0;
+        this.isReceive = 1;
       }
     }
   }
@@ -53,32 +63,28 @@ struct WebComponent {
 
       Row() {
         Button("web test").key('blurOnKeyboardHideMode01').onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           console.info("key==>" + this.str)
-          await waitForExist(()=>this.isReceive, this.str, 0);
           switch (this.str) {
             case "blurMode01": {
               this.userAgentPC = this.controller.getUserAgent();
               if ((this.userAgentPC).includes("PC")) {
-                Utils.emitEvent(true, 20241133)
+                Utils.emitEvent(true, 178210)
                 break;
               }
 
-              let driver = Driver.create();
-              await Utils.sleep(1000);
-              let buttonOne = await driver.findComponent(ON.text('input'));
-              await buttonOne.click()
-              await Utils.sleep(2000);
-
-              let buttonTwo = await driver.findComponent(ON.id('KeyHideKbd'));
-              if (buttonTwo) {
-                await buttonTwo.click()
-              } else {
-                this.inputMethodController.hideTextInput()
-              }
-
-              await Utils.sleep(1000);
+              this.isOnConsoleEnd = -1
+                await buttonOne.click();
+                let buttonTwo = await driver.findComponent(ON.id('KeyHideKbd'));
+                if (buttonTwo) {
+                  await buttonTwo.click()
+                } else {
+                  this.inputMethodController.hideTextInput()
+                }
+                await Utils.waitForExist(()=>this.isOnConsoleEnd, this.str+' isOnConsoleEnd', 1, 1000);
               if (this.text == 'focus') {
-                Utils.emitEvent(true, 20241133)
+                Utils.emitEvent(true, 178210)
 
               }
               break;
@@ -86,15 +92,15 @@ struct WebComponent {
             case "blurMode02": {
               this.userAgentPC = this.controller.getUserAgent();
               if ((this.userAgentPC).includes("PC")) {
-                Utils.emitEvent(true, 20241134)
+                Utils.emitEvent(true, 178220)
                 break;
               }
-              let driver = Driver.create();
-              await Utils.sleep(1000);
+
               this.blurMode = BlurOnKeyboardHideMode.BLUR;
+              this.isOnConsoleEnd = -1
               let buttonOne = await driver.findComponent(ON.text('input'));
-              await buttonOne.click()
-              await Utils.sleep(2000);
+
+              await buttonOne.click();
 
               let buttonTwo = await driver.findComponent(ON.id('KeyHideKbd'));
               if (buttonTwo) {
@@ -106,9 +112,9 @@ struct WebComponent {
                 console.log('my name is else' + buttonTwo)
                 this.controller.onInactive();
               }
-              await Utils.sleep(1000);
+               await Utils.waitForExist(()=>this.isOnConsoleEnd, this.str+' isOnConsoleEnd', 1, 1000);
               if (this.text == 'blur') {
-                Utils.emitEvent(true, 20241134)
+                 Utils.emitEvent(true, 178220)
               }
               break;
             }
@@ -128,8 +134,13 @@ struct WebComponent {
                 console.log('getMessage:' + event.message.getMessage());
                 this.text = event.message.getMessage()
               }
+               this.isOnConsoleEnd = 1;
               return false;
             })
+            .onPageEnd((event) => {
+            console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
 
     }
   }
