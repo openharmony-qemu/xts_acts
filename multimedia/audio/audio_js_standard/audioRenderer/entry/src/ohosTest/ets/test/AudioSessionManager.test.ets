@@ -564,6 +564,53 @@ export default function audioSessionManagerTest() {
     })
 
     /* *
+    * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_GETAVAILABLEDEVICE_0100
+    * @tc.name      : SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_GETAVAILABLEDEVICE_0100
+    * @tc.desc      : setAudioSessionScene -6800101
+    * @tc.size      : MEDIUMTEST
+    * @tc.type      : FUNCTION
+    * @tc.level     : LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_GETAVAILABLEDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        let audioSession:ESObject = "1";
+        audioSessionManager.getAvailableDevices(audioSession);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        expect(Number(err.code)).assertEqual(6800101);
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+    })
+    /* *
+    * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_GETAVAILABLEDEVICE_0100
+    * @tc.name      : SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_GETAVAILABLEDEVICE_0100
+    * @tc.desc      : setAudioSessionScene -6800101
+    * @tc.size      : MEDIUMTEST
+    * @tc.type      : FUNCTION
+    * @tc.level     : LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ONAVAILABLEDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        let audioSession:ESObject = "1";
+        audioSessionManager.on('availbleDeviceChange',audioSession,(deviceChanged: audio.DeviceChangeAction) =>{
+          console.info(`${TAG}: availbleDeviceChange errors`);
+          expect(false).assertTrue();
+        });
+        done();
+      } catch (err) {
+        expect(Number(err.code)).assertEqual(6800101);
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+    })
+
+    /* *
     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_0100
     * @tc.name      : SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_0100
     * @tc.desc      : setDefaultOutputDevice -6800101
