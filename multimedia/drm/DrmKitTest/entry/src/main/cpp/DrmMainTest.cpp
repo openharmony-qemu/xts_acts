@@ -14,7 +14,7 @@
  */
 #include "napi/native_api.h"
 #include <js_native_api_types.h>
-#include "drmKitTest.h"
+#include "drmKit.h"
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
