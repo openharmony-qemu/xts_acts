@@ -19,11 +19,12 @@ import { TestRunner } from '@kit.TestKit';
 import hilog from '@ohos.hilog';
 
 import { Hypium } from '../../../hypium/index';
+import CommonFunc from '../../ets/MainAbility/common/Common';
 import testsuite from '../test/List.test';
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
 
-let domain: Int = 0x0000; 
+let domain: int = 0x0000; 
 let tag: string = 'testTag'; 
 
 export class OpenHarmonyTestRunner implements TestRunner {
@@ -40,7 +41,6 @@ export class OpenHarmonyTestRunner implements TestRunner {
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
     hilog.info(domain, tag, '%{public}s', 'start run testcase!!!');
-
     Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
   }
