@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+
 import camera from '@ohos.multimedia.camera';
 import image from '@ohos.multimedia.image';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
@@ -52,6 +53,14 @@ let ability = async () => {
   await sleep(500)
 }
 
+function getEnumMaxValue<T extends Record<string, number | string>>(enumeration: T): number {
+  const values = Object.values(enumeration);
+  const numberValues = values.filter(v => typeof v === 'number') as number[];
+  let maxValue = Math.max(...numberValues);
+  console.info(TAG,'getEnumMaxValue : ' + maxValue);
+  return maxValue;
+}
+
 export function isSupportCameras() : boolean {
   const cameraAvailable = canIUse('SystemCapability.Multimedia.Camera.Core');
   let context = getContext();
@@ -87,7 +96,6 @@ export function isSupportCameras() : boolean {
 }
 
 export function CameraConcurrentTest() {
-
   let isEmpty = (data: ESObject) => {
     if (data == null || data == undefined) {
       return true;
@@ -134,10 +142,8 @@ export function CameraConcurrentTest() {
     return true;
   }
 
-
   describe('CameraConcurrentTest', () => {
     console.info(TAG + '----------CameraConcurrentTest--------------')
-
     beforeAll(async () => {
       let dr = Driver.create();
       sleep(1000);
@@ -163,20 +169,19 @@ export function CameraConcurrentTest() {
     afterAll(async () => {
       console.info('afterAll case');
     })
+
+
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0100
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0100
-     * @tc.desc      : check camerainput open by concurrent cameraPosition -1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_001
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_001
+     * @tc.desc       check camerainput open by concurrent cameraPosition -1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0100', Level.LEVEL0, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0100--------------");
+    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_001', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0100 FAILED with NoCamera");
-        done();
-        return;
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_001 FAILED with NoCamera");
       }
       console.log(TAG + "mCameraDevicesArray: " + JSON.stringify(mCameraDevicesArray))
       try {
@@ -184,78 +189,74 @@ export function CameraConcurrentTest() {
           { cameraId: "lcam001",
             cameraType: camera.CameraType.CAMERA_TYPE_DEFAULT,
             cameraPosition: -1,
-            cameraOrientation: 180,
+            cameraOrientation: 270,
             connectionType: camera.ConnectionType.CAMERA_CONNECTION_BUILT_IN,
             hostDeviceName: "",
             hostDeviceType: camera.HostDeviceType.UNKNOWN_TYPE
           }]
         let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = mCameraManager.getCameraConcurrentInfos(devicesArray);
-        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0100 camera concurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
+        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_001 camera concurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
         expect(cameraConcurrentInfos.length == 0 ).assertTrue();
       }
       catch(err) {
-        console.info(TAG + "The getCameraConcurrentInfos call failed: cameraId is empty: " + err.code);
+        console.info(TAG + "The getCameraConcurrentInfos call failed: cameraId is empty: "  ,err.message,  err.code);
         expect().assertFail();
       }
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0200
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0200
-     * @tc.desc      : check camerainput open by concurrent cameraPosition 4
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_002
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_002
+     * @tc.desc       check camerainput open by concurrent cameraPosition 4
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0200', Level.LEVEL0, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0200--------------");
+    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_002', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0200 FAILED with NoCamera");
-        done();
-        return;
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_002 FAILED with NoCamera");
       }
       console.log(TAG + "mCameraDevicesArray: " + JSON.stringify(mCameraDevicesArray))
       try {
+        let maxEnum = getEnumMaxValue(camera.CameraPosition);
         let devicesArray: camera.CameraDevice[] = [
           {
             cameraId: "lcam001",
             cameraType: camera.CameraType.CAMERA_TYPE_DEFAULT,
-            cameraPosition: 4,
+            cameraPosition: maxEnum + 1,
             cameraOrientation: 180,
             connectionType: camera.ConnectionType.CAMERA_CONNECTION_BUILT_IN,
             hostDeviceName: "",
             hostDeviceType: camera.HostDeviceType.UNKNOWN_TYPE
           }]
         let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = mCameraManager.getCameraConcurrentInfos(devicesArray);
-        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0200 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
+        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_002 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
         expect(cameraConcurrentInfos.length == 0 ).assertTrue();
       } catch (err) {
-        console.info(TAG + "The getCameraConcurrentInfos call failed: cameraPosition is max+1: " + err.code);
+        console.info(TAG + "The getCameraConcurrentInfos call failed: cameraPosition is max+1: "  ,err.message,  err.code);
         expect().assertFail();
       }
       done();
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0300
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0300
-     * @tc.desc      : check camerainput open by concurrent cameraType 5
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_003
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_003
+     * @tc.desc       check camerainput open by concurrent cameraType 5
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0300', Level.LEVEL0, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0300--------------");
+    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_003', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0300 FAILED with NoCamera");
-        done();
-        return;
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_003 FAILED with NoCamera");
       }
       console.log(TAG + "mCameraDevicesArray: " + JSON.stringify(mCameraDevicesArray))
       try {
+        let maxEnum = getEnumMaxValue(camera.CameraType);
         let devicesArray: camera.CameraDevice[] = [
           { cameraId: "lcam001",
-            cameraType: 5,
+            cameraType: maxEnum + 1,
             cameraPosition: camera.CameraPosition.CAMERA_POSITION_UNSPECIFIED,
             cameraOrientation: 180,
             connectionType: camera.ConnectionType.CAMERA_CONNECTION_BUILT_IN,
@@ -263,29 +264,26 @@ export function CameraConcurrentTest() {
             hostDeviceType: camera.HostDeviceType.UNKNOWN_TYPE
           }]
         let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = mCameraManager.getCameraConcurrentInfos(devicesArray);
-        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0300 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
+        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_003 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
         expect(cameraConcurrentInfos.length == 0 ).assertTrue();
       } catch (err) {
-        console.info(TAG + "The getCameraConcurrentInfos call failed: cameraPosition is max+1: " + err.code);
+        console.info(TAG + "The getCameraConcurrentInfos call failed: cameraPosition is max+1: "  ,err.message,  err.code);
         expect().assertFail();
       }
       done();
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0400
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0400
-     * @tc.desc      : check camerainput open by concurrent cameraType -1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_004
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_004
+     * @tc.desc       check camerainput open by concurrent cameraType -1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0400', Level.LEVEL0, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0400--------------");
+    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_004', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0400 FAILED with NoCamera");
-        done();
-        return;
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_004 FAILED with NoCamera");
       }
       console.log(TAG + "mCameraDevicesArray: " + JSON.stringify(mCameraDevicesArray))
       try {
@@ -300,29 +298,26 @@ export function CameraConcurrentTest() {
             hostDeviceType: camera.HostDeviceType.UNKNOWN_TYPE
           }]
         let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = mCameraManager.getCameraConcurrentInfos(devicesArray);
-        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0400 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
+        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_004 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
         expect(cameraConcurrentInfos.length == 0 ).assertTrue();
       } catch (err) {
-        console.info(TAG + "The getCameraConcurrentInfos call failed: cameraPosition is max+1: " + err.code);
+        console.info(TAG + "The getCameraConcurrentInfos call failed: cameraPosition is max+1: "  ,err.message,  err.code);
         expect().assertFail();
       }
       done();
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0500
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0500
-     * @tc.desc      : check camerainput open by concurrent cameraOrientation -1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_005
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_005
+     * @tc.desc       check camerainput open by concurrent cameraOrientation -1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0500', Level.LEVEL0, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0500--------------");
+    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_005', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0500 FAILED with NoCamera");
-        done();
-        return;
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_005 FAILED with NoCamera");
       }
       console.log(TAG + "mCameraDevicesArray: " + JSON.stringify(mCameraDevicesArray))
       try {
@@ -336,28 +331,25 @@ export function CameraConcurrentTest() {
             hostDeviceType: camera.HostDeviceType.UNKNOWN_TYPE
           }]
         let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = mCameraManager.getCameraConcurrentInfos(devicesArray);
-        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0500 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
+        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_005 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
         expect(cameraConcurrentInfos.length == 0 ).assertTrue();
       } catch (err) {
-        console.info(TAG + "The getCameraConcurrentInfos call failed: cameraPosition is max+1: " + err.code);
+        console.info(TAG + "The getCameraConcurrentInfos call failed: cameraPosition is max+1: "  ,err.message,  err.code);
         expect().assertFail();
       }
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0600
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0600
-     * @tc.desc      : check camerainput open by concurrent cameraOrientation 361
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_006
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_006
+     * @tc.desc       check camerainput open by concurrent cameraOrientation 361
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0600', Level.LEVEL0, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0600--------------");
+    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_006', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0600 FAILED with NoCamera");
-        done();
-        return;
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_006 FAILED with NoCamera");
       }
       console.log(TAG + "mCameraDevicesArray: " + JSON.stringify(mCameraDevicesArray))
       try {
@@ -372,65 +364,60 @@ export function CameraConcurrentTest() {
             hostDeviceType: camera.HostDeviceType.UNKNOWN_TYPE
           }]
         let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = mCameraManager.getCameraConcurrentInfos(devicesArray);
-        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0600 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
+        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_006 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
         expect(cameraConcurrentInfos.length == 0 ).assertTrue();
       } catch (err) {
-        console.info(TAG + "The getCameraConcurrentInfos call failed: cameraPosition is max+1: " + err.code);
+        console.info(TAG + "The getCameraConcurrentInfos call failed: cameraPosition is max+1: "  ,err.message,  err.code);
         expect().assertFail();
       }
       done();
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0700
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0700
-     * @tc.desc      : check camerainput open by concurrent ConnectionType 3
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_007
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_007
+     * @tc.desc       check camerainput open by concurrent ConnectionType 3
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0700', Level.LEVEL0, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0700--------------");
+    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_007', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0700 FAILED with NoCamera");
-        done();
-        return;
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_007 FAILED with NoCamera");
       }
       console.log(TAG + "mCameraDevicesArray: " + JSON.stringify(mCameraDevicesArray))
       try {
+        let maxEnum = getEnumMaxValue(camera.ConnectionType);
         let devicesArray: camera.CameraDevice[] = [
           { cameraId: "lcam001",
             cameraType: camera.CameraType.CAMERA_TYPE_DEFAULT,
             cameraPosition: camera.CameraPosition.CAMERA_POSITION_UNSPECIFIED,
             cameraOrientation:180,
-            connectionType: 3,
+            connectionType: maxEnum + 1,
             hostDeviceName: "",
             hostDeviceType: camera.HostDeviceType.UNKNOWN_TYPE
           }]
         let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = mCameraManager.getCameraConcurrentInfos(devicesArray);
-        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0700 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
+        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_007 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
         expect(cameraConcurrentInfos.length == 0 ).assertTrue();
       } catch (err) {
-        console.info(TAG + "The getCameraConcurrentInfos call failed: cameraPosition is max+1: " + err.code);
+        console.info(TAG + "The getCameraConcurrentInfos call failed: cameraPosition is max+1: "  ,err.message,  err.code);
         expect().assertFail();
       }
       done();
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0800
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0800
-     * @tc.desc      : check camerainput open by concurrent ConnectionType -1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_008
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_008
+     * @tc.desc       check camerainput open by concurrent ConnectionType -1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0800', Level.LEVEL0, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0800--------------");
+    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_008', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0800 FAILED with NoCamera");
-        done();
-        return;
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_008 FAILED with NoCamera");
       }
       console.log(TAG + "mCameraDevicesArray: " + JSON.stringify(mCameraDevicesArray))
       try {
@@ -444,28 +431,25 @@ export function CameraConcurrentTest() {
             hostDeviceType: camera.HostDeviceType.UNKNOWN_TYPE
           }]
         let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = mCameraManager.getCameraConcurrentInfos(devicesArray);
-        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0800 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
+        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_008 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
         expect(cameraConcurrentInfos.length == 0 ).assertTrue();
       } catch (err) {
-        console.info(TAG + "The getCameraConcurrentInfos call failed: cameraPosition is max+1: " + err.code);
+        console.info(TAG + "The getCameraConcurrentInfos call failed: cameraPosition is max+1: "  ,err.message,  err.code);
         expect().assertFail();
       }
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0900
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0900
-     * @tc.desc      : check camerainput open by concurrent hostDeviceName empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_009
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_009
+     * @tc.desc       check camerainput open by concurrent hostDeviceName empty
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0900', Level.LEVEL0, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0900--------------");
+    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_009', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0900 FAILED with NoCamera");
-        done();
-        return;
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_009 FAILED with NoCamera");
       }
       console.log(TAG + "mCameraDevicesArray: " + JSON.stringify(mCameraDevicesArray))
       try {
@@ -479,29 +463,26 @@ export function CameraConcurrentTest() {
             hostDeviceType: camera.HostDeviceType.UNKNOWN_TYPE
           }]
         let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = mCameraManager.getCameraConcurrentInfos(devicesArray);
-        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_0900 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
+        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_009 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
         expect(cameraConcurrentInfos.length == 0 ).assertTrue();
       }catch(err) {
-        console.info(TAG + "The getCameraConcurrentInfos call failed: hostDeviceName is Empty: " + err.code);
+        console.info(TAG + "The getCameraConcurrentInfos call failed: hostDeviceName is Empty: "  ,err.message,  err.code);
         expect().assertFail();
       }
       done();
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01000
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01000
-     * @tc.desc      : check camerainput open by concurrent hostDeviceType -1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_010
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_010
+     * @tc.desc       check camerainput open by concurrent hostDeviceType -1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01000', Level.LEVEL0, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01000--------------");
+    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_010', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01000 FAILED with NoCamera");
-        done();
-        return;
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_010 FAILED with NoCamera");
       }
       console.log(TAG + "mCameraDevicesArray: " + JSON.stringify(mCameraDevicesArray))
       try {
@@ -515,32 +496,30 @@ export function CameraConcurrentTest() {
             hostDeviceType:-1
           }]
         let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = mCameraManager.getCameraConcurrentInfos(devicesArray);
-        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01000 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
+        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_010 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
         expect(cameraConcurrentInfos.length == 0 ).assertTrue();
       }catch(err) {
-        console.info(TAG + "The getCameraConcurrentInfos call failed: hostDeviceType is -1: " + err.code);
+        console.info(TAG + "The getCameraConcurrentInfos call failed: hostDeviceType is -1: "  ,err.message,  err.code);
         expect().assertFail();
       }
       done();
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01100
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01100
-     * @tc.desc      : check camerainput open by concurrent hostDeviceType  0x12
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_011
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_011
+     * @tc.desc       check camerainput open by concurrent hostDeviceType  0x12
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01100', Level.LEVEL0, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01100--------------");
+    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_011', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01100 FAILED with NoCamera");
-        done();
-        return;
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_011 FAILED with NoCamera");
       }
       console.log(TAG + "mCameraDevicesArray: " + JSON.stringify(mCameraDevicesArray))
       try {
+        let maxEnum = getEnumMaxValue(camera.HostDeviceType);
         let devicesArray: camera.CameraDevice[] = [
           { cameraId: "lcam001",
             cameraType: camera.CameraType.CAMERA_TYPE_DEFAULT,
@@ -548,103 +527,93 @@ export function CameraConcurrentTest() {
             cameraOrientation:180,
             connectionType:camera.ConnectionType.CAMERA_CONNECTION_BUILT_IN,
             hostDeviceName: "",
-            hostDeviceType:	0x12
+            hostDeviceType:	maxEnum + 1
           }]
         let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = mCameraManager.getCameraConcurrentInfos(devicesArray);
-        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01100 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
+        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_011 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
         expect(cameraConcurrentInfos.length == 0 ).assertTrue();
       } catch(err) {
-        console.info(TAG + "The getCameraConcurrentInfos call failed: hostDeviceType is 0x12: " + err.code);
+        console.info(TAG + "The getCameraConcurrentInfos call failed: hostDeviceType is 0x12: " ,err.message,  err.code);
         expect().assertFail();
       }
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01200
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01200
-     * @tc.desc      : check camerainput open by concurrent CameraConcurrentInfos empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_012
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_012
+     * @tc.desc       check camerainput open by concurrent CameraConcurrentInfos empty
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01200', Level.LEVEL0, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01200--------------");
+    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_012', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01200 FAILED with NoCamera");
-        done();
-        return;
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_012 FAILED with NoCamera");
       }
+      console.log(TAG + "mCameraDevicesArray: " + JSON.stringify(mCameraDevicesArray))
       try {
-        console.log(TAG + "mCameraDevicesArray: " + JSON.stringify(mCameraDevicesArray))
         let devicesArray: camera.CameraDevice[] = []
         let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = mCameraManager.getCameraConcurrentInfos(devicesArray);
-        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01200 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
+        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_012 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
         expect(cameraConcurrentInfos.length == 0 ).assertTrue();
       }
       catch(err) {
-        console.info(TAG + "The getCameraConcurrentInfos call failed: CameraConcurrentInfos is empty: " + err.code);
+        console.info(TAG + "The getCameraConcurrentInfos call failed: CameraConcurrentInfos is empty: "  ,err.message,  err.code);
         expect().assertFail();
       }
       done();
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01300
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01300
-     * @tc.desc      : check camerainput open by concurrent CameraConcurrentInfos null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_013
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_013
+     * @tc.desc       check camerainput open by concurrent CameraConcurrentInfos null
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01300', Level.LEVEL0, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01300--------------");
+    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_013', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01300 FAILED with NoCamera");
-        done();
-        return;
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_013 FAILED with NoCamera");
       }
       console.log(TAG + "mCameraDevicesArray: " + JSON.stringify(mCameraDevicesArray))
       try {
         let devicesArray: camera.CameraDevice[] | null= null
         let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = mCameraManager.getCameraConcurrentInfos(devicesArray);
-        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01300 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
+        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_013 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
         expect(cameraConcurrentInfos.length == 0 ).assertTrue();
       }
       catch(err) {
-        console.info(TAG + "The getCameraConcurrentInfos call failed: CameraConcurrentInfos is null: " + err.code);
+        console.info(TAG + "The getCameraConcurrentInfos call failed: CameraConcurrentInfos is null: "  ,err.message,  err.code);
         expect(err.code == 401).assertTrue();
       }
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01400
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01400
-     * @tc.desc      : check camerainput open by concurrent CameraConcurrentInfos undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_014
+     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_014
+     * @tc.desc       check camerainput open by concurrent CameraConcurrentInfos undefined
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01400', Level.LEVEL0, async (done: Function) => {
-      console.info("--------------SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01400--------------");
+    it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_014', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01400 FAILED with NoCamera");
-        done();
-        return;
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_014 FAILED with NoCamera");
       }
       console.log(TAG + "mCameraDevicesArray: " + JSON.stringify(mCameraDevicesArray))
       try {
         let devicesArray: camera.CameraDevice[] | undefined= undefined
         let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = mCameraManager.getCameraConcurrentInfos(devicesArray);
-        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_01400 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
+        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_014 cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
         expect(cameraConcurrentInfos.length == 0 ).assertTrue();
       }
       catch(err) {
-        console.info(TAG + "The getCameraConcurrentInfos call failed: CameraConcurrentInfos is undefined: " + err.code);
+        console.info(TAG + "The getCameraConcurrentInfos call failed: CameraConcurrentInfos is undefined: "  ,err.message,  err.code);
         expect(err.code == 401).assertTrue();
       }
       done();
     })
-
 
   })
 }
