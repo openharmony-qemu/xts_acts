@@ -1017,7 +1017,7 @@ export default function bufferTest2() {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect(err.message)
     //       .assertEqual('The value of "length" is out of range. It must be >= 0 and <= 8. Received value is: 2147483647')
-    
+
     //   }
     // })
     // /**
@@ -3645,7 +3645,7 @@ export default function bufferTest2() {
       try {
         let buf = buffer.from('this is a buffer');
 	      buf.indexOf('this', Infinity.toInt());
-          
+
         buf.indexOf('is', Infinity.toInt());
         expect(String(buf.indexOf('this', Infinity.toInt()))).assertEqual('-1');
         expect(String(buf.indexOf('is', Infinity.toInt()))).assertEqual('-1');
@@ -6177,7 +6177,7 @@ export default function bufferTest2() {
       try {
         let buf = buffer.from([0x12, 0x34, 0x56, 0x78]);
         buf.writeUInt32LE(0x12345678, -1);
-        expect(false).assertFail(); 
+        expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
@@ -6591,7 +6591,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1800
      * @tc.name       : testSubarray0018
      * @tc.desc       : Test the function of the interface Subarray.
@@ -9172,7 +9172,7 @@ export default function bufferTest2() {
         expect(err.message).assertEqual('The number cannot be converted to a BigInt because it is not an integer');
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3700
      * @tc.name       : testWriteBigInt64BE0011
      * @tc.desc       : Test the function of the interface writeBigInt64BE.
@@ -9412,7 +9412,7 @@ export default function bufferTest2() {
         expect(err.message).assertEqual('The number cannot be converted to a BigInt because it is not an integer');
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_4900
      * @tc.name       : testWriteBigInt64LE0011
      * @tc.desc       : Test the function of the interface writeBigInt64LE.
@@ -9551,7 +9551,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5600
      * @tc.name       : testWriteBigUInt64BE0006
      * @tc.desc       : Test the function of the interface writeBigUInt64BE.
@@ -9771,7 +9771,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6700
      * @tc.name       : testWriteBigUInt64LE0006
      * @tc.desc       : Test the function of the interface writeBigUInt64LE.
@@ -9926,7 +9926,7 @@ export default function bufferTest2() {
         let result = buf.writeDoubleBE(0x0304, 0);
         console.info("result = " + result);
         expect(String(result)).assertEqual('8');
-        expect(String(buf.readDoubleBE(0))).assertEqual(String(0x0304));
+        expect(String(buf.readDoubleBE(0))).assertEqual(String((0x0304).toInt()));
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -10758,7 +10758,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11800
      * @tc.name       : testWriteInt80001
      * @tc.desc       : Test the function of the interface WriteInt8.
@@ -10816,7 +10816,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    // /** 
+    // /**
     //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12100
     //  * @tc.name       : testWriteInt80004
     //  * @tc.desc       : Test the function of the interface WriteInt8.
@@ -10837,7 +10837,7 @@ export default function bufferTest2() {
     //       .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 72623859790382850');
     //   }
     // })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12200
      * @tc.name       : testWriteInt80005
      * @tc.desc       : Test the function of the interface WriteInt8.
@@ -10875,7 +10875,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12400
      * @tc.name       : testWriteInt80007
      * @tc.desc       : Test the function of the interface WriteInt8.
@@ -10895,7 +10895,7 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 16053919793946753000');
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12500
      * @tc.name       : testWriteInt80008
      * @tc.desc       : Test the function of the interface WriteInt8.
@@ -10915,7 +10915,7 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 84281096');
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12600
      * @tc.name       : testWriteInt80009
      * @tc.desc       : Test the function of the interface WriteInt8.
@@ -10954,7 +10954,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12800
      * @tc.name       : testWriteInt80011
      * @tc.desc       : Test the function of the interface WriteInt8.
@@ -11010,7 +11010,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13100
      * @tc.name       : testWriteInt16BE0003
      * @tc.desc       : Test the function of the interface WriteInt16BE.
@@ -11048,7 +11048,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13300
      * @tc.name       : testWriteInt16BE0005
      * @tc.desc       : Test the function of the interface WriteInt16BE.
@@ -11104,7 +11104,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13600
      * @tc.name       : testWriteInt16BE0008
      * @tc.desc       : Test the function of the interface WriteInt16BE.
@@ -11142,7 +11142,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13800
      * @tc.name       : testWriteInt16BE0010
      * @tc.desc       : Test the function of the interface WriteInt16BE.
@@ -11162,7 +11162,7 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 16053919793946753000');
       }
     })
-    // /** 
+    // /**
     //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13900
     //  * @tc.name       : testWriteInt16BE0011
     //  * @tc.desc       : Test the function of the interface WriteInt16BE.
@@ -11200,7 +11200,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14100
      * @tc.name       : testWriteInt16LE0002
      * @tc.desc       : Test the function of the interface WriteInt16LE.
@@ -11220,7 +11220,7 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 84281096');
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14200
      * @tc.name       : testWriteInt16LE0003
      * @tc.desc       : Test the function of the interface WriteInt16LE.
@@ -11258,7 +11258,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14400
      * @tc.name       : testWriteInt16LE0005
      * @tc.desc       : Test the function of the interface WriteInt16LE.
@@ -11315,7 +11315,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14700
      * @tc.name       : testWriteInt16LE0008
      * @tc.desc       : Test the function of the interface WriteInt16LE.
@@ -11353,7 +11353,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14900
      * @tc.name       : testWriteInt16LE0010
      * @tc.desc       : Test the function of the interface WriteInt16LE.
@@ -11373,7 +11373,7 @@ export default function bufferTest2() {
           .assertEqual(String(10200001));
       }
     })
-    // /** 
+    // /**
     //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15000
     //  * @tc.name       : testWriteInt16LE0011
     //  * @tc.desc       : Test the function of the interface WriteInt16LE.
@@ -11493,7 +11493,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15600
      * @tc.name       : testWriteInt32BE0006
      * @tc.desc       : Test the function of the interface writeInt32BE.
@@ -11554,7 +11554,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15900
      * @tc.name       : testWriteInt32BE0009
      * @tc.desc       : Test the function of the interface writeInt32BE.
@@ -11595,7 +11595,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16100
      * @tc.name       : testWriteInt32BE0011
      * @tc.desc       : Test the function of the interface writeInt32BE.
@@ -11616,7 +11616,7 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: 16053919793946753000');
       }
     })
-    // /** 
+    // /**
     //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16200
     //  * @tc.name       : testWriteInt32BE0012
     //  * @tc.desc       : Test the function of the interface writeInt32BE.
@@ -11716,7 +11716,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16700
      * @tc.name       : testWriteInt32LE0005
      * @tc.desc       : Test the function of the interface writeInt32LE.
@@ -11727,7 +11727,7 @@ export default function bufferTest2() {
     it('testBufferWriteInt32LE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32LE0005';
       try {
-    
+
         let buf = buffer.allocUninitializedFromPool(4);
         let result = buf.writeInt32LE(0xfeedface, 0);
         console.info("result = " + result);
@@ -11778,7 +11778,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17000
      * @tc.name       : testWriteInt32LE0008
      * @tc.desc       : Test the function of the interface writeInt32LE.
@@ -11789,7 +11789,7 @@ export default function bufferTest2() {
     it('testBufferWriteInt32LE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32LE0008';
       try {
-    
+
         let buf = buffer.allocUninitializedFromPool(4);
         buf.writeInt32LE(0xcafebabe, 0);
         expect(false).assertFail();
@@ -11819,7 +11819,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17200
      * @tc.name       : testWriteInt32LE0010
      * @tc.desc       : Test the function of the interface writeInt32LE.
@@ -11837,10 +11837,10 @@ export default function bufferTest2() {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
           .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: 16053919793946753000')
-    
+
       }
     })
-    // /** 
+    // /**
     //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17300
     //  * @tc.name       : testWriteInt32LE0011
     //  * @tc.desc       : Test the function of the interface writeInt32LE.
@@ -11889,7 +11889,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17500
      * @tc.name       : testWriteUInt80002
      * @tc.desc       : Test the function of the interface writeUInt8.
@@ -11910,7 +11910,7 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 772');
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17600
      * @tc.name       : testWriteUInt80003
      * @tc.desc       : Test the function of the interface writeUInt8.
@@ -11931,7 +11931,7 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 84281096');
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17700
      * @tc.name       : testWriteUInt80004
      * @tc.desc       : Test the function of the interface writeUInt8.
@@ -11973,7 +11973,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17900
      * @tc.name       : testWriteUInt80006
      * @tc.desc       : Test the function of the interface writeUInt8.
@@ -11993,7 +11993,7 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 4277009102');
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18000
      * @tc.name       : testWriteUInt80007
      * @tc.desc       : Test the function of the interface writeUInt8.
@@ -12011,10 +12011,10 @@ export default function bufferTest2() {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
           .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: -2')
-    
+
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18100
      * @tc.name       : testWriteUInt80008
      * @tc.desc       : Test the function of the interface writeUInt8.
@@ -12032,7 +12032,7 @@ export default function bufferTest2() {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
           .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 3405691582')
-    
+
       }
     })
     /**
@@ -12058,7 +12058,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18300
      * @tc.name       : testWriteUInt80010
      * @tc.desc       : Test the function of the interface writeUInt8.
@@ -12078,7 +12078,7 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 16053919793946753000');
       }
     })
-    // /** 
+    // /**
     //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18400
     //  * @tc.name       : testWriteUInt80011
     //  * @tc.desc       : Test the function of the interface writeUInt8.
@@ -12089,7 +12089,7 @@ export default function bufferTest2() {
     // it('testBufferWriteUInt80011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testBufferWriteUInt80011';
     //   try {
-  
+
     //     let buf = buffer.allocUninitializedFromPool(4);
     //     let result = buf.writeUInt8(Number(BigInt(0x0102030405060708) as long), 2);
     //     expect(result).assertFail();
@@ -12165,7 +12165,7 @@ export default function bufferTest2() {
       }
     })
 
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18800
      * @tc.name       : testWriteUInt16BE0003
      * @tc.desc       : Test the function of the interface writeUInt16BE.
@@ -12225,7 +12225,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19100
      * @tc.name       : testWriteUInt16BE0006
      * @tc.desc       : Test the function of the interface writeUInt16BE.
@@ -12245,7 +12245,7 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 4277009102');
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19200
      * @tc.name       : testWriteUInt16BE0007
      * @tc.desc       : Test the function of the interface writeUInt16BE.
@@ -12285,7 +12285,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19400
      * @tc.name       : testWriteUInt16BE0009
      * @tc.desc       : Test the function of the interface writeUInt16BE.
@@ -12329,7 +12329,7 @@ export default function bufferTest2() {
       }
     })
 
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19600
      * @tc.name       : testWriteUInt16BE0011
      * @tc.desc       : Test the function of the interface writeUInt16BE.
@@ -12349,7 +12349,7 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 3735928559');
       }
     })
-    // /** 
+    // /**
     //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19700
     //  * @tc.name       : testWriteUInt16BE0012
     //  * @tc.desc       : Test the function of the interface writeUInt16BE.
@@ -12367,7 +12367,7 @@ export default function bufferTest2() {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect(err.message)
     //       .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 72623859790382850')
-  
+
     //   }
     // })
     /**
@@ -12390,7 +12390,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19900
      * @tc.name       : testWriteUInt16LE0002
      * @tc.desc       : Test the function of the interface writeUInt16LE.
@@ -12408,7 +12408,7 @@ export default function bufferTest2() {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
           .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 84281096')
-    
+
       }
     })
     /**
@@ -12449,7 +12449,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20200
      * @tc.name       : testWriteUInt16LE0005
      * @tc.desc       : Test the function of the interface writeUInt16LE.
@@ -12467,11 +12467,11 @@ export default function bufferTest2() {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
           .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 4277009102')
-    
+
       }
     })
 
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20300
      * @tc.name       : testWriteUInt16LE0006
      * @tc.desc       : Test the function of the interface writeUInt16LE.
@@ -12510,7 +12510,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20500
      * @tc.name       : testWriteUInt16LE0008
      * @tc.desc       : Test the function of the interface writeUInt16LE.
@@ -12550,7 +12550,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20700
      * @tc.name       : testWriteUInt16LE0010
      * @tc.desc       : Test the function of the interface writeUInt16LE.
@@ -12570,7 +12570,7 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 16053919793946753000');
       }
     })
-    // /** 
+    // /**
     //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20800
     //  * @tc.name       : testWriteUInt16LE0011
     //  * @tc.desc       : Test the function of the interface writeUInt16LE.
@@ -12687,7 +12687,7 @@ export default function bufferTest2() {
       }
     })
 
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21400
      * @tc.name       : testWriteUInt32BE0006
      * @tc.desc       : Test the function of the interface writeUInt32BE.
@@ -12786,7 +12786,7 @@ export default function bufferTest2() {
       }
     })
 
-    // /** 
+    // /**
     //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21900
     //  * @tc.name       : testWriteUInt32BE0011
     //  * @tc.desc       : Test the function of the interface writeUInt32BE.
@@ -12903,7 +12903,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22500
      * @tc.name       : testWriteUInt32LE0006
      * @tc.desc       : Test the function of the interface writeUInt32LE.
@@ -12914,7 +12914,7 @@ export default function bufferTest2() {
     it('testBufferWriteUInt32LE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt32LE0006';
       try {
-    
+
         let buf = buffer.allocUninitializedFromPool(4);
         buf.writeUInt32LE(-2, 0);
         expect(false).assertFail();
@@ -12922,7 +12922,7 @@ export default function bufferTest2() {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
           .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 4294967295. Received value is: -2')
-    
+
       }
     })
     /**
@@ -12982,7 +12982,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
+    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22900
      * @tc.name       : testWriteUInt32LE0010
      * @tc.desc       : Test the function of the interface writeUInt32LE.
@@ -13002,7 +13002,7 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 4294967295. Received value is: 16053919793946753000');
       }
     })
-    // /** 
+    // /**
     //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_23000
     //  * @tc.name       : testWriteUInt32LE0011
     //  * @tc.desc       : Test the function of the interface writeUInt32LE.

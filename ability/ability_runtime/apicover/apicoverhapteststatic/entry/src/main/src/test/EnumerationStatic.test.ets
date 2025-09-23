@@ -700,7 +700,7 @@ export default function EnumerationStaticTest() {
     it('SUB_Ability_AbilityBase_wantConstant_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'SUB_Ability_AbilityBase_wantConstant_Static_0100 START');
       hilog.info(domain, tag, 'SUB_Ability_AbilityBase_wantConstant_Static_0100 FLAG_INSTALL_ON_DEMAND: ' + wantConstant.Flags.FLAG_INSTALL_ON_DEMAND);
-      expect(String(0x00000800)).assertEqual(wantConstant.Flags.FLAG_INSTALL_ON_DEMAND + '');
+      expect(String((0x00000800).toInt())).assertEqual(wantConstant.Flags.FLAG_INSTALL_ON_DEMAND + '');
       done();
     })
 
@@ -908,7 +908,7 @@ export default function EnumerationStaticTest() {
      * @tc.level   3
      */
     it('SUB_Ability_AbilityBase_wantConstant_Static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      expect(String(0x00002000)).assertEqual(wantConstant.Flags.FLAG_ABILITY_ON_COLLABORATE + '');
+      expect(String((0x00002000).toInt())).assertEqual(wantConstant.Flags.FLAG_ABILITY_ON_COLLABORATE + '');
       done();
     })
 
