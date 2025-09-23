@@ -37,7 +37,7 @@ export default function KvStoreEtsTestStatic() {
   hilog.info(domain, tag, '%{public}s', '================ export kvstoretest 111');
   let kvManager : distributedKVStore.KVManager;
   let context: common.UIAbilityContext;
-
+  let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
   let deviceId : string = "000000000000000000";
 
   describe("KvStoreEtsTestStatic", (): void => {
