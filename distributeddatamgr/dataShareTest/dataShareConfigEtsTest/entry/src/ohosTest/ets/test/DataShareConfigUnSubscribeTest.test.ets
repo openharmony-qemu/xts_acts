@@ -111,6 +111,7 @@ export default function dataShareConfigUnSubscribeTest() {
       ]
       try {
         let results = g_handle!.off("dataChange", uris, g_config, undefined);
+        expect(results.length > 0).assertTrue();
         results.forEach((result) => {
           console.info(TAG + `[DataShareProvider] off URI: ${result.uri}, Result: ${result.result}`);
           expect(result.result).assertEqual(0);
@@ -136,6 +137,7 @@ export default function dataShareConfigUnSubscribeTest() {
       ]
       try {
         let results = g_handle!.off("dataChange", uris, g_config, null);
+        expect(results.length > 0).assertTrue();
         results.forEach((result) => {
           console.info(TAG + `[DataShareProvider] off URI: ${result.uri}, Result: ${result.result}`);
           expect(result.result).assertEqual(0);
@@ -249,6 +251,7 @@ export default function dataShareConfigUnSubscribeTest() {
       ]
       try {
         let results = g_handle!.off("dataChange", uris, g_config);
+        expect(results.length > 0).assertTrue();
         console.log(TAG + '[DataShareProvider] onProxyData success:' + JSON.stringify(results));
         results.forEach((result) => {
           console.info(TAG + `[DataShareProvider] URI: ${result.uri}, Result: ${result.result}`);
