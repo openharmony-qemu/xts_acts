@@ -65,7 +65,7 @@ struct WebComponent {
           await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           console.info("key==>" + this.str)
           switch (this.str) {
-           case "blurMode01": {
+          case "blurMode01": {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 178210)
@@ -87,7 +87,7 @@ struct WebComponent {
                 break;
             }
 
-            case "blurMode02": {
+          case "blurMode02": {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 178220)
@@ -110,7 +110,6 @@ struct WebComponent {
                   Utils.emitEvent(true, 178220)
                 }
                 break;
-              break;
             }
           }
         })
