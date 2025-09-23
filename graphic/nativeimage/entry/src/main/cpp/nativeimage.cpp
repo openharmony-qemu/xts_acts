@@ -182,8 +182,14 @@ static void InitEGLEnv()
 {
     eglDisplay_ = GetPlatformEglDisplay(EGL_PLATFORM_OHOS_KHR, EGL_DEFAULT_DISPLAY, nullptr);
     EGLint major, minor;
-    eglInitialize(eglDisplay_, &major, &minor);
-    eglBindAPI(EGL_OPENGL_ES_API);
+    EGLBoolean initResult = eglInitialize(eglDisplay_, &major, &minor);
+    if (initResult == EGL_FALSE) {
+        return;
+    }
+    EGLBoolean bindResult = eglBindAPI(EGL_OPENGL_ES_API);
+    if (bindResult == EGL_FALSE) {
+        return;
+    }
     unsigned int ret;
     EGLint count;
     EGLint config_attribs[] = {EGL_SURFACE_TYPE, EGL_WINDOW_BIT, EGL_RED_SIZE,        PARAM_8,
@@ -192,8 +198,14 @@ static void InitEGLEnv()
                                EGL_NONE};
 
     ret = eglChooseConfig(eglDisplay_, config_attribs, &config_, PARAM_1, &count);
+    if (ret == 0) {
+        return;
+    }
     static const EGLint context_attribs[] = {EGL_CONTEXT_CLIENT_VERSION, EGL_CONTEXT_CLIENT_VERSION_NUM, EGL_NONE};
     eglContext_ = eglCreateContext(eglDisplay_, config_, EGL_NO_CONTEXT, context_attribs);
+    if (eglContext_ == EGL_NO_CONTEXT) {
+        return;
+    }
     eglMakeCurrent(eglDisplay_, EGL_NO_SURFACE, EGL_NO_SURFACE, eglContext_);
 }
 

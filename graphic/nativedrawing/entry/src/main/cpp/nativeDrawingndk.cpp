@@ -1726,6 +1726,10 @@ static double TypographyGetLongestLine(OH_Drawing_TypographyCreate *handler, int
     const char *text = "test/n";
     OH_Drawing_TypographyHandlerAddText(handler, text);
     OH_Drawing_Typography *typography = OH_Drawing_CreateTypography(handler);
+    if (typography == nullptr) {
+        OH_Drawing_DestroyTypography(typography);
+        return;
+    }
     double maxWidth = 800;
     OH_Drawing_TypographyLayout(typography, maxWidth);
     double len = OH_Drawing_TypographyGetLongestLine(typography);
