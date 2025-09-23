@@ -70,7 +70,7 @@ async function getVolumeGroupManager() {
   }
 }
 
-function displayDeviceProp(value: audio.AudioDeviceDescriptor, index: int, array: audio.AudioDeviceDescriptors) {
+function displayDeviceProp(value: audio.AudioDeviceDescriptor, index: number, array: audio.AudioDeviceDescriptors) {
   let devRoleName: string;
   let devTypeName: string;
   if (value.deviceRole == 1) {
