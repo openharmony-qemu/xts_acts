@@ -12,12 +12,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
+import { Driver, ON } from '@kit.TestKit';
 // @ts-nocheck
+const driver = Driver.create();
+const EVENT_ID_SET_EMIT_KEY = 360000;
 let emitKey = ""
 
 export default function webViewNativeMediaPlayerEnableFalse() {
@@ -29,48 +32,26 @@ export default function webViewNativeMediaPlayerEnableFalse() {
         }
         
         try {
-            await Utils.sleep(1000)
             router.clear();
             let pages = router.getState();
             console.info("get webViewNativeMediaPlayerEnableFalse state success " + JSON.stringify(pages));
             if (!("webViewNativeMediaPlayerEnableFalse" == pages.name)) {
                 console.info("get webViewNativeMediaPlayerEnableFalse state success " + JSON.stringify(pages.name));
                 let result = await router.pushUrl(options);
-                await Utils.sleep(1000);
                 console.info("push webViewNativeMediaPlayerEnableFalse state success " + JSON.stringify(result));
             }
         } catch (err) {
             console.error("push webViewNativeMediaPlayerEnableFalse page error:" + err);
         }
+        await driver.waitForComponent(ON.id("webViewNativeMediaPlayerEnableFalse"), 10000);
+        console.log("webViewNativeMediaPlayerEnableFalse");
         done()
     });
     
     beforeEach(async (done: Function) => {
-        await Utils.sleep(2000);
         done();
     })
-
-      afterEach(async (done: Function) => {
-        try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent : events_emitter.InnerEvent = {
-                eventId: 10,
-                priority: events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-        } catch (err) {
-            console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
-      done();
-    })
-
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0100
      *@tc.name testWebViewNativeMediaPlayerEnableFalse
      *@tc.desc test NativeMediaPlayerEnableFalse
@@ -79,15 +60,13 @@ export default function webViewNativeMediaPlayerEnableFalse() {
      *@tc.level Level 0
      */
     it('testWebViewNativeMediaPlayerEnableFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        emitKey = "emitWebViewNativeMediaPlayerEnableFalse"
-        Utils.emitEvent(emitKey, 10);
-        Utils.registerBaseEvent("testWebViewNativeMediaPlayerEnableFalse", true, 1539,
-        done, (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
-        sendEventByKey('webViewNativeMediaPlayerEnableFalse', 10, '');
+       emitKey = "emitWebViewNativeMediaPlayerEnableFalse"
+       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+       Utils.registerEvent("testWebViewNativeMediaPlayerEnableFalse", true, 360010, done);
+       let StartModel = await driver.findComponent(ON.id("webViewNativeMediaPlayerEnableFalse"));
+       await StartModel.click();
     })
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0200
      *@tc.name testWebViewNativeMediaPlayerEnableFalseShouldOverlayFalse
      *@tc.desc test NativeMediaPlayerEnableFalseShouldOverlayFalse
@@ -96,13 +75,11 @@ export default function webViewNativeMediaPlayerEnableFalse() {
      *@tc.level Level 1
      */
     it('testWebViewNativeMediaPlayerEnableFalseShouldOverlayFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        emitKey = "emitWebViewNativeMediaPlayerEnableFalseShouldOverlayFalse"
-        Utils.emitEvent(emitKey, 10);
-        Utils.registerBaseEvent("testWebViewNativeMediaPlayerEnableFalseShouldOverlayFalse", true, 15392,
-        done, (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
-        sendEventByKey('webViewNativeMediaPlayerEnableFalse', 10, '');
+       emitKey = "emitWebViewNativeMediaPlayerEnableFalseShouldOverlayFalse";
+       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+       Utils.registerEvent("testWebViewNativeMediaPlayerEnableFalseShouldOverlayFalse", true, 360020, done);
+       let StartModel = await driver.findComponent(ON.id("webViewNativeMediaPlayerEnableFalse"));
+       await StartModel.click();
     })
   })
 }

@@ -87,10 +87,61 @@ export const testOhTextConfigSetAbilityNameNullPointer: () => number;
 export const testOhTextConfigSetAbilityNameOk: () => number;
 export const testOhTextConfigGetInputTypeNullPointer: () => number;
 export const testOhTextConfigGetInputTypeOk: () => number;
-
 export const testOhTextConfigGetEnterKeyTypeNullPointer: () => number;
 export const testOhTextConfigGetEnterKeyTypeOk: () => number;
-
+export const testOhTextConfigIsPreviewTextSupportedNullPointer: () => number;
+export const testOhTextConfigIsPreviewTextSupportedOk: () => number;
+export const testOhTextConfigGetCursorInfoNullPointer: () => number;
+export const testOhTextConfigGetCursorInfoOk: () => number;
+export const testOhTextConfigGetTextAvoidInfoNullPointer: () => number;
+export const testOhTextConfigGetTextAvoidInfoOk: () => number;
+export const testOhTextConfigGetSelectionNullPointer: () => number;
+export const testOhTextConfigGetSelectionOk: () => number;
+export const testOhTextConfigGetWindowIdNullPointer: () => number;
+export const testOhTextConfigGetWindowIdOk: () => number;
+export const testOhTextConfigGetPlaceholderNullPointer: () => number;
+export const testOhTextConfigGetPlaceholderOk: () => number;
+export const testOhTextConfigGetPlaceholderParamCheckError: () => number;
+export const testOhTextConfigGetAbilityNameNullPointer: () => number;
+export const testOhTextConfigGetAbilityNameOk: () => number;
+export const testOhTextConfigGetAbilityNameParamCheckError: () => number;
+//inputmethod/inputmethod_text_editor_proxy_capi.h
+export const testOhTextEditorProxySetGetTextConfigFuncNullPointer: () => number;
+export const testOhTextEditorProxySetGetTextConfigFuncOk: () => number;
+export const testOhTextEditorProxySetInsertTextFuncNullPointer: () => number;
+export const testOhTextEditorProxySetInsertTextFuncOk: () => number;
+export const testOhTextEditorProxySetDeleteForwardFuncNullPointer: () => number;
+export const testOhTextEditorProxySetDeleteForwardFuncOk: () => number;
+export const testOhTextEditorProxySetDeleteBackwardFuncNullPointer: () => number;
+export const testOhTextEditorProxySetDeleteBackwardFuncOk: () => number;
+export const testOhTextEditorProxySetSendKeyboardStatusFuncNullPointer: () => number;
+export const testOhTextEditorProxySetSendKeyboardStatusFuncOk: () => number;
+export const testOhTextEditorProxySetSendEnterKeyFuncNullPointer: () => number;
+export const testOhTextEditorProxySetSendEnterKeyFuncOk: () => number;
+export const testOhTextEditorProxySetMoveCursorFuncNullPointer: () => number;
+export const testOhTextEditorProxySetMoveCursorFuncOk: () => number;
+export const testOhTextEditorProxySetHandleSetSelectionFuncNullPointer: () => number;
+export const testOhTextEditorProxySetHandleSetSelectionFuncOk: () => number;
+export const testOhTextEditorProxySetHandleExtendActionFuncNullPointer: () => number;
+export const testOhTextEditorProxySetHandleExtendActionFuncOk: () => number;
+export const testOhTextEditorProxySetGetLeftTextOfCursorFuncNullPointer: () => number;
+export const testOhTextEditorProxySetGetLeftTextOfCursorFuncOk: () => number;
+export const testOhTextEditorProxySetGetRightTextOfCursorFuncNullPointer: () => number;
+export const testOhTextEditorProxySetGetRightTextOfCursorFuncOk: () => number;
+export const testOhTextEditorProxySetGetTextIndexAtCursorFuncNullPointer: () => number;
+export const testOhTextEditorProxySetGetTextIndexAtCursorFuncOk: () => number;
+export const testOhTextEditorProxySetReceivePrivateCommandFuncNullPointer: () => number;
+export const testOhTextEditorProxySetReceivePrivateCommandFuncOk: () => number;
+export const testOhTextEditorProxySetSetPreviewTextFuncNullPointer: () => number;
+export const testOhTextEditorProxySetSetPreviewTextFuncOk: () => number;
+export const testOhTextEditorProxySetFinishTextPreviewFuncNullPointer: () => number;
+export const testOhTextEditorProxySetFinishTextPreviewFuncOk: () => number;
+export const testOhTextEditorProxyGetGetTextConfigFuncNullPointer: () => number;
+export const testOhTextEditorProxyGetGetTextConfigFuncOk: () => number;
+export const testOhTextEditorProxyGetInsertTextFuncNullPointer: () => number;
+export const testOhTextEditorProxyGetInsertTextFuncOk: () => number;
+export const testOhTextEditorProxyGetDeleteForwardFuncNullPointer: () => number;
+export const testOhTextEditorProxyGetDeleteForwardFuncOk: () => number;
 
 
 

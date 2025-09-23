@@ -23,7 +23,7 @@ import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import StartOptions from '@ohos.app.ability.StartOptions'
 
-let domain: number = 0x0000;
+let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let context: common.UIAbilityContext
 
@@ -37,7 +37,6 @@ export default function startAbilityForResultTestStatic() {
       await Utils.msSleep(2000);
       hilog.info(domain, tag, 'start success');
       context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
-
       hilog.info(domain, tag, 'getcontext success, context: ' + context);
     })
 

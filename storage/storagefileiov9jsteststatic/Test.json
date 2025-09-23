@@ -2,11 +2,11 @@
     "description": "Configuration for storage filefs Tests",
     "driver": {
         "type": "OHJSUnitTest",
-        "test-timeout": "600000",
+        "test-timeout": "180000",
         "shell-timeout": "600000",
         "bundle-name": "ohos.acts.storage.fileiov9.static",
         "module-name": "entry",
-        "testcase-timeout": 60000
+        "testcase-timeout": "180000"
     },
     "kits": [
         {

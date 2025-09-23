@@ -16,7 +16,6 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import { Driver, Component, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
-import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
 
 export default function Consumer0130Test() {
   describe('Consumer0130Test', () => {

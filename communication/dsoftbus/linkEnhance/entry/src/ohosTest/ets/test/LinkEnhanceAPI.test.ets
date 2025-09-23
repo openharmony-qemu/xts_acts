@@ -1500,7 +1500,7 @@ export default function LinkEnhanceAPI() {
             deviceId = result.deviceId;
             });
           connection.connect();
-          await sleep(15000);
+          await sleep(25000);
           expect(success == false).assertTrue();
           expect(reason == 32390200||reason == 32390300).assertTrue();
           expect(deviceId == "00:11:22:33:44:55").assertTrue();

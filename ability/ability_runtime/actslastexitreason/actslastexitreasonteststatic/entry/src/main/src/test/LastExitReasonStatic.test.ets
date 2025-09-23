@@ -20,7 +20,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import Utils from './Util.test';
 
-let domain: number = 0x0000;
+let domain: Int = 0x0000;
 let tag: string = 'testTag';
 
 export default function lastExitReasonStaticTest() {
@@ -97,9 +97,9 @@ export default function lastExitReasonStaticTest() {
         expect(lastExitDetailInfo?.rss).assertEqual(0);
         expect(lastExitDetailInfo?.timestamp).assertEqual(0);
         expect(lastExitDetailInfo?.uid).assertEqual(-1);
-        // let launchReasonMessage = launchParam?.launchReasonMessage as string
-        // hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_FaultManagement_Static_7900 launchReasonMessage: ' + launchReasonMessage);
-        // expect(launchReasonMessage).assertEqual("");
+        let launchReasonMessage = launchParam?.launchReasonMessage as string
+        hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_FaultManagement_Static_7900 launchReasonMessage: ' + launchReasonMessage);
+        expect(launchReasonMessage).assertEqual("");
         done();
       } catch (err) {
         hilog.info(domain, tag, `error, errorCode: ${JSON.stringify(err)}`);

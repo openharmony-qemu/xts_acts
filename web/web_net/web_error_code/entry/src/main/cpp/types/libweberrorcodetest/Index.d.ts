@@ -102,3 +102,6 @@ export const initResourceManager: (resmgr: resourceManager.ResourceManager) => v
 export const registerCustomSchemes:() => void;
 export const requestStop: () => number;
 export const setAsyncReadCallback: () => number;
+export const SetActiveWebEngineVersionSystemDefault: () => number;
+export const SetActiveWebEngineVersionArkwebM114: () => number;
+export const SetActiveWebEngineVersionArkwebM132: () => number;

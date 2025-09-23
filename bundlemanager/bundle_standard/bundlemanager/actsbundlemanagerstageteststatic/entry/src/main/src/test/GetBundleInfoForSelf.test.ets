@@ -1,3 +1,18 @@
+/**
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import bundle from '@ohos.bundle.bundleManager';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
@@ -18,10 +33,10 @@ const VENDOR = "example";
 export default function getBundleInfoForSelf() {
   describe('getBundleInfoForSelf', (): void => {
 
-    /*
-     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_5580
-     * @tc.name getBundleInfoForSelfCallbackDefault
-     * @tc.desc Test getBundleInfoForSelf with default flag(by callback).
+    /**
+     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_5580
+     * @tc.name    getBundleInfoForSelfCallbackDefault
+     * @tc.desc    Test getBundleInfoForSelf with default flag(by callback).
      */
     it('getBundleInfoForSelfCallbackDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -37,7 +52,7 @@ export default function getBundleInfoForSelf() {
               expect(data!.versionCode + '').assertEqual('1000000');
               expect(data!.versionName).assertEqual("1.0.0");
               expect(data!.minCompatibleVersionCode + '').assertEqual('1000000');
-              expect(data!.targetVersion + '').assertEqual('20');
+              expect(data!.targetVersion + '').assertEqual('21');
               expect(data!.installTime).assertLarger(0.0);
               expect(data!.updateTime).assertLarger(0.0);
               expect(data!.firstInstallTime).assertLarger(0.0);
@@ -54,10 +69,10 @@ export default function getBundleInfoForSelf() {
           })
       })
 
-    /*
-     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_5560
-     * @tc.name getBundleInfoForSelfPromiseDefault
-     * @tc.desc Test getBundleInfoForSelf with default flag(by promise).
+    /**
+     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_5560
+     * @tc.name    getBundleInfoForSelfPromiseDefault
+     * @tc.desc    Test getBundleInfoForSelf with default flag(by promise).
      */
     it('getBundleInfoForSelfPromiseDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -69,7 +84,7 @@ export default function getBundleInfoForSelf() {
           expect(data.versionCode + '').assertEqual('1000000');
           expect(data.versionName).assertEqual("1.0.0");
           expect(data.minCompatibleVersionCode + '').assertEqual('1000000');
-          expect(data.targetVersion + '').assertEqual('20');
+          expect(data.targetVersion + '').assertEqual('21');
           expect(data.installTime).assertLarger(0.0);
           expect(data.updateTime).assertLarger(0.0);
           expect(data.firstInstallTime).assertLarger(0.0);
@@ -86,10 +101,10 @@ export default function getBundleInfoForSelf() {
         })
       })
 
-    /*
-     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_5570
-     * @tc.name getBundleInfoForSelfSyncDefault
-     * @tc.desc Test getBundleInfoForSelf with default flag(by sync).
+    /**
+     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_5570
+     * @tc.name    getBundleInfoForSelfSyncDefault
+     * @tc.desc    Test getBundleInfoForSelf with default flag(by sync).
      */
     it('getBundleInfoForSelfSyncDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -103,7 +118,7 @@ export default function getBundleInfoForSelf() {
         expect(data.versionCode + '').assertEqual('1000000');
         expect(data.versionName).assertEqual("1.0.0");
         expect(data.minCompatibleVersionCode + '').assertEqual('1000000');
-        expect(data.targetVersion + '').assertEqual('20');
+        expect(data.targetVersion + '').assertEqual('21');
         expect(data.installTime).assertLarger(0.0);
         expect(data.updateTime).assertLarger(0.0);
         expect(data.firstInstallTime).assertLarger(0.0);
@@ -115,10 +130,10 @@ export default function getBundleInfoForSelf() {
         hilog.info(domain, tag, 'getBundleInfoForSelfSyncDefault end');
       })
 
-    /*
-      * @tc.number Sub_Bms_Framework_Query_AppInfo_static_5620
-      * @tc.name getBundleInfoForSelfApplicationCallback
-      * @tc.desc Test getBundleInfoForSelf with application flag(by callback).
+    /**
+      * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_5620
+      * @tc.name    getBundleInfoForSelfApplicationCallback
+      * @tc.desc    Test getBundleInfoForSelf with application flag(by callback).
       */
     it('getBundleInfoForSelfApplicationCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -128,46 +143,45 @@ export default function getBundleInfoForSelf() {
             if (err) {
               hilog.info(domain, tag, 'getBundleInfoForSelfApplicationCallback  ====> err' + JSON.stringify(err));
               expect().assertFail();
-            }
-            if (data !== undefined) {
-              expect(data?.appInfo?.debug).assertTrue();
-              expect(data?.appInfo?.bundleType).assertEqual(bundle.BundleType.APP);
-              expect(data?.appInfo?.name).assertEqual(BUNDLE_NAME);
-              expect(data?.appInfo?.description).assertEqual("$string:module_desc");
-              expect(data?.appInfo?.descriptionId).assertLarger(0.0);
-              expect(data?.appInfo?.enabled).assertTrue();
-              expect(data?.appInfo?.label).assertEqual("$string:app_name");
-              expect(data?.appInfo?.labelId).assertLarger(0.0);
-              expect(data?.appInfo?.icon).assertEqual("$media:app_icon");
-              expect(data?.appInfo?.iconId).assertLarger(0.0);
-              expect(data?.appInfo?.process).assertEqual(BUNDLE_NAME);
-              expect(data?.appInfo?.codePath)
+            }  if (data !== undefined) {
+              expect(data.appInfo!.debug).assertTrue();
+              expect(data.appInfo!.bundleType).assertEqual(bundle.BundleType.APP);
+              expect(data.appInfo!.name).assertEqual(BUNDLE_NAME);
+              expect(data.appInfo!.description).assertEqual("$string:module_desc");
+              expect(data.appInfo!.descriptionId).assertLarger(0.0);
+              expect(data.appInfo!.enabled).assertTrue();
+              expect(data.appInfo!.label).assertEqual("$string:app_name");
+              expect(data.appInfo!.labelId).assertLarger(0.0);
+              expect(data.appInfo!.icon).assertEqual("$media:app_icon");
+              expect(data.appInfo!.iconId).assertLarger(0.0);
+              expect(data.appInfo!.process).assertEqual(BUNDLE_NAME);
+              expect(data.appInfo!.codePath)
                 .assertEqual("/data/app/el1/bundle/public/ohos.acts.bundle.stage.test.static");
-              expect(data?.appInfo?.removable).assertTrue();
-              expect(data?.appInfo?.accessTokenId).assertLarger(0.0);
-              expect(data?.appInfo?.uid).assertLarger(0.0);
-              expect(data?.appInfo?.iconResource.bundleName).assertEqual(BUNDLE_NAME);
-              expect(data?.appInfo?.iconResource.moduleName).assertEqual("entry");
-              expect(data?.appInfo?.iconResource.id).assertEqual(data!.appInfo!.iconId);
-              expect(data?.appInfo?.labelResource.bundleName).assertEqual(BUNDLE_NAME);
-              expect(data?.appInfo?.labelResource.moduleName).assertEqual("entry");
-              expect(data?.appInfo?.labelResource.id).assertLarger(0.0);
-              expect(data?.appInfo?.descriptionResource.bundleName).assertEqual(BUNDLE_NAME);
-              expect(data?.appInfo?.descriptionResource.moduleName).assertEqual("entry");
-              expect(data?.appInfo?.descriptionResource.id).assertLarger(0.0);
-              expect(data?.appInfo?.appDistributionType).assertEqual("os_integration");
-              expect(data?.appInfo?.appProvisionType).assertEqual("release");
-              expect(data?.appInfo?.permissions.length).assertEqual(0.0);
-              expect(data?.appInfo?.systemApp).assertEqual(false);
-              expect(data?.appInfo?.dataUnclearable).assertFalse();
-              expect(data?.hapModulesInfo?.length + '').assertEqual('0');
-              expect(data?.hapModulesInfo?.length + '').assertEqual('0');
-              expect(data?.reqPermissionDetails?.length + '').assertEqual('0');
-              expect(data?.permissionGrantStates?.length + '').assertEqual('0');
-              expect(data?.signatureInfo).assertEqual(null);
-              expect(data?.appInfo?.installSource).assertEqual("unknown");
-              expect(data?.appInfo?.releaseType.length).assertLarger(0.0);
-              expect(data?.appInfo?.cloudFileSyncEnabled).assertFalse();
+              expect(data.appInfo!.removable).assertTrue();
+              expect(data.appInfo!.accessTokenId).assertLarger(0.0);
+              expect(data.appInfo!.uid).assertLarger(0.0);
+              expect(data.appInfo!.iconResource.bundleName).assertEqual(BUNDLE_NAME);
+              expect(data.appInfo!.iconResource.moduleName).assertEqual("entry");
+              expect(data.appInfo!.iconResource.id).assertEqual(data!.appInfo!.iconId);
+              expect(data.appInfo!.labelResource.bundleName).assertEqual(BUNDLE_NAME);
+              expect(data.appInfo!.labelResource.moduleName).assertEqual("entry");
+              expect(data.appInfo!.labelResource.id).assertLarger(0.0);
+              expect(data.appInfo!.descriptionResource.bundleName).assertEqual(BUNDLE_NAME);
+              expect(data.appInfo!.descriptionResource.moduleName).assertEqual("entry");
+              expect(data.appInfo!.descriptionResource.id).assertLarger(0.0);
+              expect(data.appInfo!.appDistributionType).assertEqual("os_integration");
+              expect(data.appInfo!.appProvisionType).assertEqual("release");
+              expect(data.appInfo!.permissions.length).assertEqual(0.0);
+              expect(data.appInfo!.systemApp).assertEqual(false);
+              expect(data.appInfo!.dataUnclearable).assertFalse();
+              expect(data.hapModulesInfo.length + '').assertEqual('0');
+              expect(data.hapModulesInfo.length + '').assertEqual('0');
+              expect(data.reqPermissionDetails.length + '').assertEqual('0');
+              expect(data.permissionGrantStates.length + '').assertEqual('0');
+              expect(data.signatureInfo).assertEqual(null);
+              expect(data.appInfo!.installSource).assertEqual("unknown");
+              expect(data.appInfo!.releaseType.length).assertLarger(0.0);
+              expect(data.appInfo!.cloudFileSyncEnabled).assertFalse();
             } else {
               hilog.info(domain, tag, 'getBundleInfoForSelfApplicationCallback  ====> Fail');
               expect().assertFail();
@@ -177,55 +191,54 @@ export default function getBundleInfoForSelf() {
           })
       })
 
-    /*
-     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_5600
-     * @tc.name getBundleInfoForSelfApplicationPromise
-     * @tc.desc Test getBundleInfoForSelf with application flag(by promise).
+    /**
+     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_5600
+     * @tc.name    getBundleInfoForSelfApplicationPromise
+     * @tc.desc    Test getBundleInfoForSelf with application flag(by promise).
      */
     it('getBundleInfoForSelfApplicationPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION)
           .then((data: BundleInfo) => {
             hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise  ====> start');
-            if (data) {
-              expect(data?.appInfo?.debug).assertTrue();
-              expect(data?.appInfo?.bundleType).assertEqual(bundle.BundleType.APP);
-              expect(data?.appInfo?.name).assertEqual(BUNDLE_NAME);
-              expect(data?.appInfo?.description).assertEqual("$string:module_desc");
-              expect(data?.appInfo?.descriptionId).assertLarger(0.0);
-              expect(data?.appInfo?.enabled).assertTrue();
-              expect(data?.appInfo?.label).assertEqual("$string:app_name");
-              expect(data?.appInfo?.labelId).assertLarger(0.0);
-              expect(data?.appInfo?.icon).assertEqual("$media:app_icon");
-              expect(data?.appInfo?.iconId).assertLarger(0.0);
-              expect(data?.appInfo?.process).assertEqual(BUNDLE_NAME);
-              expect(data?.appInfo?.codePath)
-                .assertEqual("/data/app/el1/bundle/public/ohos.acts.bundle.stage.test.static");
-              expect(data?.appInfo?.removable).assertTrue();
-              expect(data?.appInfo?.accessTokenId).assertLarger(0.0);
-              expect(data?.appInfo?.uid).assertLarger(0.0);
-              expect(data?.appInfo?.iconResource.bundleName).assertEqual(BUNDLE_NAME);
-              expect(data?.appInfo?.iconResource.moduleName).assertEqual("entry");
-              expect(data?.appInfo?.iconResource.id).assertEqual(data?.appInfo?.iconId);
-              expect(data?.appInfo?.labelResource.bundleName).assertEqual(BUNDLE_NAME);
-              expect(data?.appInfo?.labelResource.moduleName).assertEqual("entry");
-              expect(data?.appInfo?.labelResource.id).assertLarger(0.0);
-              expect(data?.appInfo?.descriptionResource.bundleName).assertEqual(BUNDLE_NAME);
-              expect(data?.appInfo?.descriptionResource.moduleName).assertEqual("entry");
-              expect(data?.appInfo?.descriptionResource.id).assertLarger(0.0);
-              expect(data?.appInfo?.appDistributionType).assertEqual("os_integration");
-              expect(data?.appInfo?.appProvisionType).assertEqual("release");
-              expect(data?.appInfo?.permissions.length).assertEqual(0.0);
-              expect(data?.appInfo?.systemApp).assertEqual(false);
-              expect(data?.appInfo?.dataUnclearable).assertFalse();
+            if(data){
+              expect(data.appInfo!.debug).assertTrue();
+              expect(data.appInfo!.bundleType).assertEqual(bundle.BundleType.APP);
+              expect(data.appInfo!.name).assertEqual(BUNDLE_NAME);
+              expect(data.appInfo!.description).assertEqual("$string:module_desc");
+              expect(data.appInfo!.descriptionId).assertLarger(0.0);
+              expect(data.appInfo!.enabled).assertTrue();
+              expect(data.appInfo!.label).assertEqual("$string:app_name");
+              expect(data.appInfo!.labelId).assertLarger(0.0);
+              expect(data.appInfo!.icon).assertEqual("$media:app_icon");
+              expect(data.appInfo!.iconId).assertLarger(0.0);
+              expect(data.appInfo!.process).assertEqual(BUNDLE_NAME);
+              expect(data.appInfo!.codePath).assertEqual("/data/app/el1/bundle/public/ohos.acts.bundle.stage.test.static");
+              expect(data.appInfo!.removable).assertTrue();
+              expect(data.appInfo!.accessTokenId).assertLarger(0.0);
+              expect(data.appInfo!.uid).assertLarger(0.0);
+              expect(data.appInfo!.iconResource.bundleName).assertEqual(BUNDLE_NAME);
+              expect(data.appInfo!.iconResource.moduleName).assertEqual("entry");
+              expect(data.appInfo!.iconResource.id).assertEqual(data.appInfo!.iconId);
+              expect(data.appInfo!.labelResource.bundleName).assertEqual(BUNDLE_NAME);
+              expect(data.appInfo!.labelResource.moduleName).assertEqual("entry");
+              expect(data.appInfo!.labelResource.id).assertLarger(0.0);
+              expect(data.appInfo!.descriptionResource.bundleName).assertEqual(BUNDLE_NAME);
+              expect(data.appInfo!.descriptionResource.moduleName).assertEqual("entry");
+              expect(data.appInfo!.descriptionResource.id).assertLarger(0.0);
+              expect(data.appInfo!.appDistributionType).assertEqual("os_integration");
+              expect(data.appInfo!.appProvisionType).assertEqual("release");
+              expect(data.appInfo!.permissions.length).assertEqual(0.0);
+              expect(data.appInfo!.systemApp).assertEqual(false);
+              expect(data.appInfo!.dataUnclearable).assertFalse();
               expect(data.hapModulesInfo.length + '').assertEqual('0');
               expect(data.hapModulesInfo.length + '').assertEqual('0');
               expect(data.reqPermissionDetails.length + '').assertEqual('0');
               expect(data.permissionGrantStates.length + '').assertEqual('0');
               expect(data.signatureInfo).assertEqual(null);
-              expect(data?.appInfo?.installSource).assertEqual("unknown");
-              expect(data?.appInfo?.releaseType.length).assertLarger(0.0);
-              expect(data?.appInfo?.cloudFileSyncEnabled).assertFalse();
+              expect(data.appInfo!.installSource).assertEqual("unknown");
+              expect(data.appInfo!.releaseType.length).assertLarger(0.0);
+              expect(data.appInfo!.cloudFileSyncEnabled).assertFalse();
             } else {
               hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise  ====> Fail');
               expect().assertFail();
@@ -240,59 +253,59 @@ export default function getBundleInfoForSelf() {
           })
       })
 
-    /*
-     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_5610
-     * @tc.name getBundleInfoForSelfApplicationSync
-     * @tc.desc Test getBundleInfoForSelf with application flag(by sync).
+    /**
+     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_5610
+     * @tc.name    getBundleInfoForSelfApplicationSync
+     * @tc.desc    Test getBundleInfoForSelf with application flag(by sync).
      */
     it('getBundleInfoForSelfApplicationSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let data: bundle.BundleInfo =
           bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION);
         hilog.info(domain, tag, 'getBundleInfoForSelfApplicationSync  ====> start');
-        if (data) {
-          expect(data?.appInfo?.debug).assertTrue();
-          expect(data?.appInfo?.bundleType).assertEqual(bundle.BundleType.APP);
-          expect(data?.appInfo?.name).assertEqual(BUNDLE_NAME);
-          expect(data?.appInfo?.description).assertEqual("$string:module_desc");
-          expect(data?.appInfo?.descriptionId).assertLarger(0.0);
-          expect(data?.appInfo?.enabled).assertTrue();
-          expect(data?.appInfo?.label).assertEqual("$string:app_name");
-          expect(data?.appInfo?.labelId).assertLarger(0.0);
-          expect(data?.appInfo?.icon).assertEqual("$media:app_icon");
-          expect(data?.appInfo?.iconId).assertLarger(0.0);
-          expect(data?.appInfo?.process).assertEqual(BUNDLE_NAME);
-          expect(data?.appInfo?.codePath).assertEqual("/data/app/el1/bundle/public/ohos.acts.bundle.stage.test.static");
-          expect(data?.appInfo?.removable).assertTrue();
-          expect(data?.appInfo?.accessTokenId).assertLarger(0.0);
-          expect(data?.appInfo?.uid).assertLarger(0.0);
-          expect(data?.appInfo?.iconResource.bundleName).assertEqual(BUNDLE_NAME);
-          expect(data?.appInfo?.iconResource.moduleName).assertEqual("entry");
-          expect(data?.appInfo?.iconResource.id).assertEqual(data?.appInfo?.iconId);
-          expect(data?.appInfo?.labelResource.bundleName).assertEqual(BUNDLE_NAME);
-          expect(data?.appInfo?.labelResource.moduleName).assertEqual("entry");
-          expect(data?.appInfo?.labelResource.id).assertLarger(0.0);
-          expect(data?.appInfo?.descriptionResource.bundleName).assertEqual(BUNDLE_NAME);
-          expect(data?.appInfo?.descriptionResource.moduleName).assertEqual("entry");
-          expect(data?.appInfo?.descriptionResource.id).assertLarger(0.0);
-          expect(data?.appInfo?.appDistributionType).assertEqual("os_integration");
-          expect(data?.appInfo?.appProvisionType).assertEqual("release");
-          expect(data?.appInfo?.permissions.length).assertEqual(0.0);
-          expect(data?.appInfo?.systemApp).assertEqual(false);
-          expect(data?.appInfo?.dataUnclearable).assertFalse();
+        if(data){
+          expect(data.appInfo!.debug).assertTrue();
+          expect(data.appInfo!.bundleType).assertEqual(bundle.BundleType.APP);
+          expect(data.appInfo!.name).assertEqual(BUNDLE_NAME);
+          expect(data.appInfo!.description).assertEqual("$string:module_desc");
+          expect(data.appInfo!.descriptionId).assertLarger(0.0);
+          expect(data.appInfo!.enabled).assertTrue();
+          expect(data.appInfo!.label).assertEqual("$string:app_name");
+          expect(data.appInfo!.labelId).assertLarger(0.0);
+          expect(data.appInfo!.icon).assertEqual("$media:app_icon");
+          expect(data.appInfo!.iconId).assertLarger(0.0);
+          expect(data.appInfo!.process).assertEqual(BUNDLE_NAME);
+          expect(data.appInfo!.codePath).assertEqual("/data/app/el1/bundle/public/ohos.acts.bundle.stage.test.static");
+          expect(data.appInfo!.removable).assertTrue();
+          expect(data.appInfo!.accessTokenId).assertLarger(0.0);
+          expect(data.appInfo!.uid).assertLarger(0.0);
+          expect(data.appInfo!.iconResource.bundleName).assertEqual(BUNDLE_NAME);
+          expect(data.appInfo!.iconResource.moduleName).assertEqual("entry");
+          expect(data.appInfo!.iconResource.id).assertEqual(data.appInfo!.iconId);
+          expect(data.appInfo!.labelResource.bundleName).assertEqual(BUNDLE_NAME);
+          expect(data.appInfo!.labelResource.moduleName).assertEqual("entry");
+          expect(data.appInfo!.labelResource.id).assertLarger(0.0);
+          expect(data.appInfo!.descriptionResource.bundleName).assertEqual(BUNDLE_NAME);
+          expect(data.appInfo!.descriptionResource.moduleName).assertEqual("entry");
+          expect(data.appInfo!.descriptionResource.id).assertLarger(0.0);
+          expect(data.appInfo!.appDistributionType).assertEqual("os_integration");
+          expect(data.appInfo!.appProvisionType).assertEqual("release");
+          expect(data.appInfo!.permissions.length).assertEqual(0.0);
+          expect(data.appInfo!.systemApp).assertEqual(false);
+          expect(data.appInfo!.dataUnclearable).assertFalse();
           expect(data.hapModulesInfo.length + '').assertEqual('0');
           expect(data.hapModulesInfo.length + '').assertEqual('0');
           expect(data.reqPermissionDetails.length + '').assertEqual('0');
           expect(data.permissionGrantStates.length + '').assertEqual('0');
           expect(data.signatureInfo).assertEqual(null);
-          expect(data?.appInfo?.installSource).assertEqual("unknown");
-          expect(data?.appInfo?.releaseType.length).assertLarger(0.0);
-          expect(data?.appInfo?.cloudFileSyncEnabled).assertFalse();
-          expect(data?.appInfo?.metadataArray.length).assertEqual(0.0);
-          expect(data?.appInfo?.nativeLibraryPath).assertEqual("");
-          expect(data?.appInfo?.multiAppMode.multiAppModeType).assertEqual(bundle.MultiAppModeType.UNSPECIFIED);
-          expect(data?.appInfo?.multiAppMode.maxCount).assertEqual(0);
-          expect(data?.appInfo?.appIndex).assertEqual(0);
+          expect(data.appInfo!.installSource).assertEqual("unknown");
+          expect(data.appInfo!.releaseType.length).assertLarger(0.0);
+          expect(data.appInfo!.cloudFileSyncEnabled).assertFalse();
+          expect(data.appInfo!.metadataArray.length).assertEqual(0.0);
+          expect(data.appInfo!.nativeLibraryPath).assertEqual("");
+          expect(data.appInfo!.multiAppMode.multiAppModeType).assertEqual(bundle.MultiAppModeType.UNSPECIFIED);
+          expect(data.appInfo!.multiAppMode.maxCount).assertEqual(0);
+          expect(data.appInfo!.appIndex).assertEqual(0);
         } else {
           hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise  ====> Fail');
           expect().assertFail();
@@ -301,10 +314,10 @@ export default function getBundleInfoForSelf() {
         done();
       })
 
-    /*
-     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_5660
-     * @tc.name getBundleInfoForSelfCallbackHapModuleInfo
-     * @tc.desc Test getBundleInfoForSelf with hapModuleInfo flag(by callback).
+    /**
+     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_5660
+     * @tc.name    getBundleInfoForSelfCallbackHapModuleInfo
+     * @tc.desc    Test getBundleInfoForSelf with hapModuleInfo flag(by callback).
      */
     it('getBundleInfoForSelfCallbackHapModuleInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -349,10 +362,10 @@ export default function getBundleInfoForSelf() {
           })
       })
 
-    /*
-     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_5640
-     * @tc.name getBundleInfoForSelfHapModuleInfoPromise
-     * @tc.desc Test getBundleInfoForSelf with hapModuleInfo flag(by promise).
+    /**
+     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_5640
+     * @tc.name    getBundleInfoForSelfHapModuleInfoPromise
+     * @tc.desc    Test getBundleInfoForSelf with hapModuleInfo flag(by promise).
      */
     it('getBundleInfoForSelfHapModuleInfoPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -394,10 +407,10 @@ export default function getBundleInfoForSelf() {
           })
       })
 
-    /*
-     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_7060
-     * @tc.name getBundleInfoForSelfHapModuleInfoSync
-     * @tc.desc Test getBundleInfoForSelf with HapModuleInfo flag(by sync).
+    /**
+     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_7060
+     * @tc.name    getBundleInfoForSelfHapModuleInfoSync
+     * @tc.desc    Test getBundleInfoForSelf with HapModuleInfo flag(by sync).
      */
     it('getBundleInfoForSelfHapModuleInfoSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -433,10 +446,10 @@ export default function getBundleInfoForSelf() {
         done();
       })
 
-    /*
-     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_7080
-     * @tc.name getBundleInfoForSelfCallbackAbilitiesInfo
-     * @tc.desc Test getBundleInfoForSelf with ability flag(by callback).
+    /**
+     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_7080
+     * @tc.name    getBundleInfoForSelfCallbackAbilitiesInfo
+     * @tc.desc    Test getBundleInfoForSelf with ability flag(by callback).
      */
     it('getBundleInfoForSelfCallbackAbilitiesInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -487,10 +500,10 @@ export default function getBundleInfoForSelf() {
           })
       })
 
-    /*
-     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_7070
-     * @tc.name getBundleInfoForSelfAbilitiesInfoPromise
-     * @tc.desc Test getBundleInfoForSelf with AbilitiesInfo flag(by promise).
+    /**
+     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_7070
+     * @tc.name    getBundleInfoForSelfAbilitiesInfoPromise
+     * @tc.desc    Test getBundleInfoForSelf with AbilitiesInfo flag(by promise).
      */
     it('getBundleInfoForSelfAbilitiesInfoPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -536,10 +549,10 @@ export default function getBundleInfoForSelf() {
         })
       })
 
-    /*
-     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_7090
-     * @tc.name getBundleInfoForSelfAbilitiesInfoSync
-     * @tc.desc Test getBundleInfoForSelf with AbilitiesInfo flag(by sync).
+    /**
+     * @tc.number  Sub_Bms_Framework_Query_AppInfo_static_7090
+     * @tc.name    getBundleInfoForSelfAbilitiesInfoSync
+     * @tc.desc    Test getBundleInfoForSelf with AbilitiesInfo flag(by sync).
      */
     it('getBundleInfoForSelfAbilitiesInfoSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -581,22 +594,21 @@ export default function getBundleInfoForSelf() {
         done();
       })
 
-    /*
-     * @tc.number Sub_Bms_Framework_Query_AppInfo_7100
-     * @tc.name getBundleInfoForSelfSyncExtensionAbilitiesInfo
-     * @tc.desc Test getBundleInfoForSelfSync with extensionAbilitiesInfo flag.
+    /**
+     * @tc.number  Sub_Bms_Framework_Query_AppInfo_7100
+     * @tc.name    getBundleInfoForSelfSyncExtensionAbilitiesInfo
+     * @tc.desc    Test getBundleInfoForSelfSync with extensionAbilitiesInfo flag.
      */
-    it('getBundleInfoForSelfSyncExtensionAbilitiesInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('getBundleInfoForSelfSyncExtensionAbilitiesInfo', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let data = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE |
-        bundle.BundleFlag.GET_BUNDLE_INFO_WITH_EXTENSION_ABILITY);
+        let data = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE | bundle.BundleFlag.GET_BUNDLE_INFO_WITH_EXTENSION_ABILITY);
         hilog.info(domain, tag, "checkCommonBundleInfo start");
         expect(data.name).assertEqual(BUNDLE_NAME);
         expect(data.vendor).assertEqual(VENDOR);
         expect(data.versionCode + '').assertEqual('1000000');
         expect(data.versionName).assertEqual("1.0.0");
         expect(data.minCompatibleVersionCode + '').assertEqual('1000000');
-        expect(data.targetVersion + '').assertEqual('20');
+        expect(data.targetVersion  + '').assertEqual('21');
         expect(data.installTime).assertLarger(0.0);
         expect(data.updateTime).assertLarger(0.0);
         expect(data.firstInstallTime).assertLarger(0.0);
@@ -814,12 +826,12 @@ export default function getBundleInfoForSelf() {
         expect(data.permissionGrantStates.length).assertEqual(0);
         expect(data.signatureInfo).assertEqual(null);
         done();
-      })
+    })
 
-    /*
-    * @tc.number getBundleInfoForSelfApplicationPromiseBundleFlag01
-    * @tc.name getBundleInfoForSelfApplicationPromiseBundleFlag01
-    * @tc.desc Test getBundleInfoForSelf with BundleFlag.
+    /**
+    * @tc.number  getBundleInfoForSelfApplicationPromiseBundleFlag01
+    * @tc.name    getBundleInfoForSelfApplicationPromiseBundleFlag01
+    * @tc.desc    Test getBundleInfoForSelf with BundleFlag.
     */
     it('getBundleInfoForSelfApplicationPromiseBundleFlag01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -834,7 +846,7 @@ export default function getBundleInfoForSelf() {
             expect(data.versionName).assertEqual("1.0.0");
             expect(data.versionCode).assertEqual(1000000);
             expect(data.vendor).assertEqual("example");
-            expect(data.targetVersion).assertEqual(20);
+            expect(data.targetVersion).assertEqual(21);
             expect(data.appInfo).assertEqual(null);
             expect(data.installTime).assertLarger(0.0);
             expect(data.updateTime).assertLarger(0.0);
@@ -855,10 +867,10 @@ export default function getBundleInfoForSelf() {
           })
       })
 
-    /*
-    * @tc.number getBundleInfoForSelfApplicationPromiseBundleFlag02
-    * @tc.name getBundleInfoForSelfApplicationPromiseBundleFlag02
-    * @tc.desc Test getBundleInfoForSelf with BundleFlag.
+    /**
+    * @tc.number  getBundleInfoForSelfApplicationPromiseBundleFlag02
+    * @tc.name    getBundleInfoForSelfApplicationPromiseBundleFlag02
+    * @tc.desc    Test getBundleInfoForSelf with BundleFlag.
     */
     it('getBundleInfoForSelfApplicationPromiseBundleFlag02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -876,7 +888,7 @@ export default function getBundleInfoForSelf() {
               expect(data.versionName).assertEqual("1.0.0");
               expect(data.versionCode).assertEqual(1000000);
               expect(data.vendor).assertEqual("example");
-              expect(data.targetVersion).assertEqual(20);
+              expect(data.targetVersion).assertEqual(21);
               expect(data!.installTime).assertLarger(0.0);
               expect(data!.updateTime).assertLarger(0.0);
               expect(data!.firstInstallTime).assertLarger(0.0);
@@ -901,10 +913,10 @@ export default function getBundleInfoForSelf() {
         }
       })
 
-    /*
-    * @tc.number getBundleInfoForSelfApplicationPromiseBundleFlag03
-    * @tc.name getBundleInfoForSelfApplicationPromiseBundleFlag03
-    * @tc.desc Test getBundleInfoForSelf with BundleFlag.
+    /**
+    * @tc.number  getBundleInfoForSelfApplicationPromiseBundleFlag03
+    * @tc.name    getBundleInfoForSelfApplicationPromiseBundleFlag03
+    * @tc.desc    Test getBundleInfoForSelf with BundleFlag.
     */
     it('getBundleInfoForSelfApplicationPromiseBundleFlag03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -917,7 +929,7 @@ export default function getBundleInfoForSelf() {
             expect(data.versionName).assertEqual("1.0.0");
             expect(data.versionCode).assertEqual(1000000);
             expect(data.vendor).assertEqual("example");
-            expect(data.targetVersion).assertEqual(20);
+            expect(data.targetVersion).assertEqual(21);
             expect(data.appInfo).assertEqual(null);
             expect(data.installTime).assertLarger(0.0);
             expect(data.updateTime).assertLarger(0.0);
@@ -939,10 +951,10 @@ export default function getBundleInfoForSelf() {
           })
       })
 
-    /*
-    * @tc.number getBundleInfoForSelfApplicationPromiseBundleFlag04
-    * @tc.name getBundleInfoForSelfApplicationPromiseBundleFlag04
-    * @tc.desc Test getBundleInfoForSelf with BundleFlag.
+    /**
+    * @tc.number  getBundleInfoForSelfApplicationPromiseBundleFlag04
+    * @tc.name    getBundleInfoForSelfApplicationPromiseBundleFlag04
+    * @tc.desc    Test getBundleInfoForSelf with BundleFlag.
     */
     it('getBundleInfoForSelfApplicationPromiseBundleFlag04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -956,7 +968,7 @@ export default function getBundleInfoForSelf() {
             expect(data.name).assertEqual("ohos.acts.bundle.stage.test.static");
             expect(data.vendor).assertEqual("example");
             expect(data.versionCode).assertEqual(1000000);
-            expect(data.targetVersion).assertEqual(20);
+            expect(data.targetVersion).assertEqual(21);
             expect(data.versionName).assertEqual("1.0.0");
             expect(data.appInfo).assertEqual(null);
             expect(data.hapModulesInfo.length).assertEqual(0);
@@ -975,10 +987,10 @@ export default function getBundleInfoForSelf() {
           })
       })
 
-    /*
-    * @tc.number getBundleInfoForSelfApplicationPromiseBundleFlag05
-    * @tc.name getBundleInfoForSelfApplicationPromiseBundleFlag05
-    * @tc.desc Test getBundleInfoForSelf with BundleFlag.
+    /**
+    * @tc.number  getBundleInfoForSelfApplicationPromiseBundleFlag05
+    * @tc.name    getBundleInfoForSelfApplicationPromiseBundleFlag05
+    * @tc.desc    Test getBundleInfoForSelf with BundleFlag.
     */
     it('getBundleInfoForSelfApplicationPromiseBundleFlag05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -992,7 +1004,7 @@ export default function getBundleInfoForSelf() {
             expect(data.versionName).assertEqual("1.0.0");
             expect(data.versionCode).assertEqual(1000000);
             expect(data.vendor).assertEqual("example");
-            expect(data.targetVersion).assertEqual(20);
+            expect(data.targetVersion).assertEqual(21);
             expect(data.signatureInfo).assertEqual(null);
             expect(data.permissionGrantStates.length).assertEqual(0);
             expect(data.reqPermissionDetails.length).assertEqual(0);
@@ -1028,10 +1040,10 @@ export default function getBundleInfoForSelf() {
           })
       })
 
-    /*
-    * @tc.number getBundleInfoForSelfApplicationPromiseBundleFlag06
-    * @tc.name getBundleInfoForSelfApplicationPromiseBundleFlag06
-    * @tc.desc Test getBundleInfoForSelf with BundleFlag.
+    /**
+    * @tc.number  getBundleInfoForSelfApplicationPromiseBundleFlag06
+    * @tc.name    getBundleInfoForSelfApplicationPromiseBundleFlag06
+    * @tc.desc    Test getBundleInfoForSelf with BundleFlag.
     */
     it('getBundleInfoForSelfApplicationPromiseBundleFlag06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1045,7 +1057,7 @@ export default function getBundleInfoForSelf() {
             expect(data.versionName).assertEqual("1.0.0");
             expect(data.versionCode).assertEqual(1000000);
             expect(data.vendor).assertEqual("example");
-            expect(data.targetVersion).assertEqual(20);
+            expect(data.targetVersion).assertEqual(21);
             expect(data!.routerMap.length).assertEqual(0.0);
             expect(data.signatureInfo).assertEqual(null);
             expect(data!.hapModulesInfo.length).assertEqual(1.0);
@@ -1079,10 +1091,10 @@ export default function getBundleInfoForSelf() {
           })
       })
 
-    /*
-    * @tc.number getBundleInfoForSelfApplicationPromiseBundleFlag07
-    * @tc.name getBundleInfoForSelfApplicationPromiseBundleFlag07
-    * @tc.desc Test getBundleInfoForSelf with BundleFlag.
+    /**
+    * @tc.number  getBundleInfoForSelfApplicationPromiseBundleFlag07
+    * @tc.name    getBundleInfoForSelfApplicationPromiseBundleFlag07
+    * @tc.desc    Test getBundleInfoForSelf with BundleFlag.
     */
     it('getBundleInfoForSelfApplicationPromiseBundleFlag07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1099,7 +1111,7 @@ export default function getBundleInfoForSelf() {
             expect(data.versionName).assertEqual("1.0.0");
             expect(data.versionCode).assertEqual(1000000);
             expect(data.vendor).assertEqual("example");
-            expect(data.targetVersion).assertEqual(20);
+            expect(data.targetVersion).assertEqual(21);
             expect(data.hapModulesInfo[0].abilitiesInfo[0].skills.length).assertEqual(1);
             expect(data!.hapModulesInfo[0].abilitiesInfo[0].bundleName)
               .assertEqual("ohos.acts.bundle.stage.test.static");
@@ -1141,10 +1153,10 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
-     * @tc.number Sub_Bms_Framework_Query_AppInfo_5760
-     * @tc.name getBundleInfoForSelfPermissionPro
-     * @tc.desc Test getBundleInfoForSelf with permission flag(by promise).
-     */
+    * @tc.number  Sub_Bms_Framework_Query_AppInfo_5760
+    * @tc.name    getBundleInfoForSelfPermissionPro
+    * @tc.desc    Test getBundleInfoForSelf with permission flag(by promise).
+    */
     it('getBundleInfoForSelfPermissionPro', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_REQUESTED_PERMISSION)
@@ -1156,7 +1168,7 @@ export default function getBundleInfoForSelf() {
             expect(data.versionName).assertEqual("1.0.0");
             expect(data.versionCode).assertEqual(1000000);
             expect(data.vendor).assertEqual("example");
-            expect(data.targetVersion).assertEqual(20);
+            expect(data.targetVersion).assertEqual(21);
             expect(data.permissionGrantStates[2]).assertEqual(bundle.PermissionGrantState.PERMISSION_DENIED);
             expect(data.permissionGrantStates[0]).assertEqual(bundle.PermissionGrantState.PERMISSION_GRANTED);
             hilog.info(domain, tag, 'getBundleInfoForSelfPermissionPro  ====> end');
@@ -1169,65 +1181,64 @@ export default function getBundleInfoForSelf() {
           })
       })
 
-    /**
-     * @tc.number getBundleInfoForSelfApplicationPromiseBundleFlag08
-     * @tc.name getBundleInfoForSelfApplicationPromiseBundleFlag08
-     * @tc.desc Test getBundleInfoForSelf with BundleFlag.
+    /***
+     * @tc.number  getBundleInfoForSelfApplicationPromiseBundleFlag08
+     * @tc.name    getBundleInfoForSelfApplicationPromiseBundleFlag08
+     * @tc.desc    Test getBundleInfoForSelf with BundleFlag.
      */
-    it('getBundleInfoForSelfApplicationPromiseBundleFlag08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        try {
-          hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise  ====> start');
-          const data = await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE |
-          bundle.BundleFlag.GET_BUNDLE_INFO_WITH_ABILITY);
+    it('getBundleInfoForSelfApplicationPromiseBundleFlag08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise  ====> start');
+        const data = await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE |
+        bundle.BundleFlag.GET_BUNDLE_INFO_WITH_ABILITY);
 
-          expect(data.name).assertEqual("ohos.acts.bundle.stage.test.static");
-          expect(data.signatureInfo).assertEqual(null);
-          expect(data.minCompatibleVersionCode).assertEqual(1000000);
-          expect(data.versionName).assertEqual("1.0.0");
-          expect(data.versionCode).assertEqual(1000000);
-          expect(data.vendor).assertEqual("example");
-          expect(data.targetVersion).assertEqual(20);
+        expect(data.name).assertEqual("ohos.acts.bundle.stage.test.static");
+        expect(data.signatureInfo).assertEqual(null);
+        expect(data.minCompatibleVersionCode).assertEqual(1000000);
+        expect(data.versionName).assertEqual("1.0.0");
+        expect(data.versionCode).assertEqual(1000000);
+        expect(data.vendor).assertEqual("example");
+        expect(data.targetVersion).assertEqual(21);
 
-          expect(data!.hapModulesInfo[0].abilitiesInfo[1].bundleName)
-            .assertEqual("ohos.acts.bundle.stage.test.static");
-          expect(data!.hapModulesInfo[0].abilitiesInfo[1].moduleName).assertEqual("entry");
-          expect(data!.hapModulesInfo[0].abilitiesInfo[1].name).assertEqual("EntryAbility1");
-          expect(data!.hapModulesInfo[0].abilitiesInfo[1].label).assertEqual("$string:EntryAbility_label");
-          expect(data!.hapModulesInfo[0].abilitiesInfo[1].labelId).assertLarger(0.0);
-          expect(data!.hapModulesInfo[0].abilitiesInfo[1].description).assertEqual("$string:EntryAbility_desc");
-          expect(data!.hapModulesInfo[0].abilitiesInfo[1].descriptionId).assertLarger(0.0);
-          expect(data!.hapModulesInfo[0].abilitiesInfo[1].icon).assertEqual("$media:layered_image");
-          expect(data!.hapModulesInfo[0].abilitiesInfo[1].iconId).assertLarger(0.0);
-          expect(data!.hapModulesInfo[0].abilitiesInfo[1].process).assertEqual("");
-          expect(data!.hapModulesInfo[0].abilitiesInfo[1].exported).assertTrue();
-          expect(data!.hapModulesInfo[0].abilitiesInfo[1].excludeFromDock).assertFalse();
-          expect(data!.hapModulesInfo[0].abilitiesInfo[1].orientation).assertEqual(2);
-          expect(data!.hapModulesInfo[0].abilitiesInfo[1].orientationId).assertEqual(0.0);
-          expect(data!.hapModulesInfo[0].abilitiesInfo[1].launchType).assertEqual(bundle.LaunchType.MULTITON);
+        expect(data!.hapModulesInfo[0].abilitiesInfo[1].bundleName)
+          .assertEqual("ohos.acts.bundle.stage.test.static");
+        expect(data!.hapModulesInfo[0].abilitiesInfo[1].moduleName).assertEqual("entry");
+        expect(data!.hapModulesInfo[0].abilitiesInfo[1].name).assertEqual("EntryAbility1");
+        expect(data!.hapModulesInfo[0].abilitiesInfo[1].label).assertEqual("$string:EntryAbility_label");
+        expect(data!.hapModulesInfo[0].abilitiesInfo[1].labelId).assertLarger(0.0);
+        expect(data!.hapModulesInfo[0].abilitiesInfo[1].description).assertEqual("$string:EntryAbility_desc");
+        expect(data!.hapModulesInfo[0].abilitiesInfo[1].descriptionId).assertLarger(0.0);
+        expect(data!.hapModulesInfo[0].abilitiesInfo[1].icon).assertEqual("$media:layered_image");
+        expect(data!.hapModulesInfo[0].abilitiesInfo[1].iconId).assertLarger(0.0);
+        expect(data!.hapModulesInfo[0].abilitiesInfo[1].process).assertEqual("");
+        expect(data!.hapModulesInfo[0].abilitiesInfo[1].exported).assertTrue();
+        expect(data!.hapModulesInfo[0].abilitiesInfo[1].excludeFromDock).assertFalse();
+        expect(data!.hapModulesInfo[0].abilitiesInfo[1].orientation).assertEqual(2);
+        expect(data!.hapModulesInfo[0].abilitiesInfo[1].orientationId).assertEqual(0.0);
+        expect(data!.hapModulesInfo[0].abilitiesInfo[1].launchType).assertEqual(bundle.LaunchType.MULTITON);
 
-          expect(data!.hapModulesInfo[0].abilitiesInfo[2].bundleName)
-            .assertEqual("ohos.acts.bundle.stage.test.static");
-          expect(data!.hapModulesInfo[0].abilitiesInfo[2].moduleName).assertEqual("entry");
-          expect(data!.hapModulesInfo[0].abilitiesInfo[2].name).assertEqual("EntryAbility2");
-          expect(data!.hapModulesInfo[0].abilitiesInfo[2].label).assertEqual("$string:EntryAbility_label");
-          expect(data!.hapModulesInfo[0].abilitiesInfo[2].labelId).assertLarger(0.0);
-          expect(data!.hapModulesInfo[0].abilitiesInfo[2].description).assertEqual("$string:EntryAbility_desc");
-          expect(data!.hapModulesInfo[0].abilitiesInfo[2].descriptionId).assertLarger(0.0);
-          expect(data!.hapModulesInfo[0].abilitiesInfo[2].icon).assertEqual("$media:layered_image");
-          expect(data!.hapModulesInfo[0].abilitiesInfo[2].iconId).assertLarger(0.0);
-          expect(data!.hapModulesInfo[0].abilitiesInfo[2].process).assertEqual("");
-          expect(data!.hapModulesInfo[0].abilitiesInfo[2].exported).assertTrue();
-          expect(data!.hapModulesInfo[0].abilitiesInfo[2].excludeFromDock).assertFalse();
-          expect(data!.hapModulesInfo[0].abilitiesInfo[2].orientation).assertEqual(2);
-          expect(data!.hapModulesInfo[0].abilitiesInfo[2].orientationId).assertEqual(0.0);
-          expect(data!.hapModulesInfo[0].abilitiesInfo[2].launchType).assertEqual(bundle.LaunchType.SPECIFIED);
-          hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise  ====> end');
-        } catch (err: BusinessError) {
-          console.log('getBundleInfoForSelfApplicationPromise  ====> err', JSON.stringify(err));
-          expect(err).assertFail();
-        }
-        done();
-      })
+        expect(data!.hapModulesInfo[0].abilitiesInfo[2].bundleName)
+          .assertEqual("ohos.acts.bundle.stage.test.static");
+        expect(data!.hapModulesInfo[0].abilitiesInfo[2].moduleName).assertEqual("entry");
+        expect(data!.hapModulesInfo[0].abilitiesInfo[2].name).assertEqual("EntryAbility2");
+        expect(data!.hapModulesInfo[0].abilitiesInfo[2].label).assertEqual("$string:EntryAbility_label");
+        expect(data!.hapModulesInfo[0].abilitiesInfo[2].labelId).assertLarger(0.0);
+        expect(data!.hapModulesInfo[0].abilitiesInfo[2].description).assertEqual("$string:EntryAbility_desc");
+        expect(data!.hapModulesInfo[0].abilitiesInfo[2].descriptionId).assertLarger(0.0);
+        expect(data!.hapModulesInfo[0].abilitiesInfo[2].icon).assertEqual("$media:layered_image");
+        expect(data!.hapModulesInfo[0].abilitiesInfo[2].iconId).assertLarger(0.0);
+        expect(data!.hapModulesInfo[0].abilitiesInfo[2].process).assertEqual("");
+        expect(data!.hapModulesInfo[0].abilitiesInfo[2].exported).assertTrue();
+        expect(data!.hapModulesInfo[0].abilitiesInfo[2].excludeFromDock).assertFalse();
+        expect(data!.hapModulesInfo[0].abilitiesInfo[2].orientation).assertEqual(2);
+        expect(data!.hapModulesInfo[0].abilitiesInfo[2].orientationId).assertEqual(0.0);
+        expect(data!.hapModulesInfo[0].abilitiesInfo[2].launchType).assertEqual(bundle.LaunchType.SPECIFIED);
+        hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise  ====> end');
+      } catch (err: BusinessError) {
+        console.log('getBundleInfoForSelfApplicationPromise  ====> err', JSON.stringify(err));
+        expect(err).assertFail();
+      }
+      done();
+    })  
   })
 }

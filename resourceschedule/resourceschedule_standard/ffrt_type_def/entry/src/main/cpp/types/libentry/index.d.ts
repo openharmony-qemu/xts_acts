@@ -14,3 +14,5 @@
  */
 
 export const ffrt_fiber_initTest: () => number;
+
+export const ffrt_rwlockattr_tTest: () => number;

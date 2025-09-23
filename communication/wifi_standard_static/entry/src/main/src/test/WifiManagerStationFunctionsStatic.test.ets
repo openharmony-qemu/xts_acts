@@ -19,7 +19,7 @@ import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import wifiManager from '@ohos.wifiManager';
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testWifiTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 export default function actsWifiManagerFunctionsTest() {
@@ -32,13 +32,13 @@ export default function actsWifiManagerFunctionsTest() {
             hilog.info(domain, tag, '%{public}s', 'beforeAll end');
         })
 
-        /*
-         * @tc.number: constantTest
-         * @tc.name: constantTest
-         * @tc.desc: Test constantTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number constantTest
+         * @tc.name constantTest
+         * @tc.desc Test constantTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("constantTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -51,12 +51,48 @@ export default function actsWifiManagerFunctionsTest() {
                 let WIFI_SEC_TYPE_PSK: wifiManager.WifiSecurityType = wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK;
                 hilog.info(domain, tag, "WIFI_SEC_TYPE_PSK:" + WIFI_SEC_TYPE_PSK);
                 expect(true).assertEqual(WIFI_SEC_TYPE_PSK == 3);
+                let WIFI_SEC_TYPE_INVALID: wifiManager.WifiSecurityType = wifiManager.WifiSecurityType.WIFI_SEC_TYPE_INVALID;
+                hilog.info(domain, tag, "WIFI_SEC_TYPE_INVALID:" + WIFI_SEC_TYPE_INVALID);
+                expect(true).assertEqual(WIFI_SEC_TYPE_INVALID == 0);
+                let WIFI_SEC_TYPE_WEP: wifiManager.WifiSecurityType = wifiManager.WifiSecurityType.WIFI_SEC_TYPE_WEP;
+                hilog.info(domain, tag, "WIFI_SEC_TYPE_WEP:" + WIFI_SEC_TYPE_WEP);
+                expect(true).assertEqual(WIFI_SEC_TYPE_WEP == 2);
+                let WIFI_SEC_TYPE_EAP: wifiManager.WifiSecurityType = wifiManager.WifiSecurityType.WIFI_SEC_TYPE_EAP;
+                hilog.info(domain, tag, "WIFI_SEC_TYPE_EAP:" + WIFI_SEC_TYPE_EAP);
+                expect(true).assertEqual(WIFI_SEC_TYPE_EAP == 5);
+                let WIFI_SEC_TYPE_EAP_SUITE_B: wifiManager.WifiSecurityType = wifiManager.WifiSecurityType.WIFI_SEC_TYPE_EAP_SUITE_B;
+                hilog.info(domain, tag, "WIFI_SEC_TYPE_EAP_SUITE_B:" + WIFI_SEC_TYPE_EAP_SUITE_B);
+                expect(true).assertEqual(WIFI_SEC_TYPE_EAP_SUITE_B == 6);
+                let WIFI_SEC_TYPE_OWE: wifiManager.WifiSecurityType = wifiManager.WifiSecurityType.WIFI_SEC_TYPE_OWE;
+                hilog.info(domain, tag, "WIFI_SEC_TYPE_OWE:" + WIFI_SEC_TYPE_OWE);
+                expect(true).assertEqual(WIFI_SEC_TYPE_OWE == 7);
+                let WIFI_SEC_TYPE_WAPI_CERT: wifiManager.WifiSecurityType = wifiManager.WifiSecurityType.WIFI_SEC_TYPE_WAPI_CERT;
+                hilog.info(domain, tag, "WIFI_SEC_TYPE_WAPI_CERT:" + WIFI_SEC_TYPE_WAPI_CERT);
+                expect(true).assertEqual(WIFI_SEC_TYPE_WAPI_CERT == 8);
+                let WIFI_SEC_TYPE_WAPI_PSK: wifiManager.WifiSecurityType = wifiManager.WifiSecurityType.WIFI_SEC_TYPE_WAPI_PSK;
+                hilog.info(domain, tag, "WIFI_SEC_TYPE_WAPI_PSK:" + WIFI_SEC_TYPE_WAPI_PSK);
+                expect(true).assertEqual(WIFI_SEC_TYPE_WAPI_PSK == 9);
                 let DEVICE_CONNECTED: wifiManager.P2pDeviceStatus = wifiManager.P2pDeviceStatus.CONNECTED;
                 hilog.info(domain, tag, "DEVICE_CONNECTED:" + DEVICE_CONNECTED);
                 expect(true).assertEqual(DEVICE_CONNECTED == 0);
+                let DEVICE_INVITED: wifiManager.P2pDeviceStatus = wifiManager.P2pDeviceStatus.INVITED;
+                hilog.info(domain, tag, "DEVICE_INVITED:" + DEVICE_INVITED);
+                expect(true).assertEqual(DEVICE_INVITED == 1);
+                let DEVICE_FAILED: wifiManager.P2pDeviceStatus = wifiManager.P2pDeviceStatus.FAILED;
+                hilog.info(domain, tag, "DEVICE_FAILED:" + DEVICE_FAILED);
+                expect(true).assertEqual(DEVICE_FAILED == 2);
+                let DEVICE_AVAILABLE: wifiManager.P2pDeviceStatus = wifiManager.P2pDeviceStatus.AVAILABLE;
+                hilog.info(domain, tag, "DEVICE_AVAILABLE:" + DEVICE_AVAILABLE);
+                expect(true).assertEqual(DEVICE_AVAILABLE == 3);
+                let DEVICE_UNAVAILABLE: wifiManager.P2pDeviceStatus = wifiManager.P2pDeviceStatus.UNAVAILABLE;
+                hilog.info(domain, tag, "DEVICE_UNAVAILABLE:" + DEVICE_UNAVAILABLE);
+                expect(true).assertEqual(DEVICE_UNAVAILABLE == 4);
                 let P2PCONN_CONNECTED: wifiManager.P2pConnectState = wifiManager.P2pConnectState.CONNECTED;
                 hilog.info(domain, tag, "P2PCONN_CONNECTED:" + P2PCONN_CONNECTED);
                 expect(true).assertEqual(P2PCONN_CONNECTED == 1);
+                let P2PCONN_DISCONNECTED: wifiManager.P2pConnectState = wifiManager.P2pConnectState.DISCONNECTED;
+                hilog.info(domain, tag, "P2PCONN_DISCONNECTED:" + P2PCONN_DISCONNECTED);
+                expect(true).assertEqual(P2PCONN_DISCONNECTED == 0);
                 let CONN_CONNECTED: wifiManager.ConnState = wifiManager.ConnState.CONNECTED;
                 hilog.info(domain, tag, "CONN_CONNECTED:" + CONN_CONNECTED);
                 expect(true).assertEqual(CONN_CONNECTED == 4);
@@ -66,6 +102,15 @@ export default function actsWifiManagerFunctionsTest() {
                 let WIFI6_PLUS: wifiManager.WifiCategory = wifiManager.WifiCategory.WIFI6_PLUS;
                 hilog.info(domain, tag, "WIFI6_PLUS:" + WIFI6_PLUS);
                 expect(true).assertEqual(WIFI6_PLUS == 3);
+                let DEFAULT: wifiManager.WifiCategory = wifiManager.WifiCategory.DEFAULT;
+                hilog.info(domain, tag, "DEFAULT:" + DEFAULT);
+                expect(true).assertEqual(DEFAULT == 1);
+                let WIFI7: wifiManager.WifiCategory = wifiManager.WifiCategory.WIFI7;
+                hilog.info(domain, tag, "WIFI7:" + WIFI7);
+                expect(true).assertEqual(WIFI7 == 4);
+                let WIFI7_PLUS: wifiManager.WifiCategory = wifiManager.WifiCategory.WIFI7_PLUS;
+                hilog.info(domain, tag, "WIFI7_PLUS:" + WIFI7_PLUS);
+                expect(true).assertEqual(WIFI7_PLUS == 5);
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "constant get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "constant get errCode:" + err.code + ",errMessage:" + err.message);
@@ -74,19 +119,18 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: wifiOnOffStateTest
-         * @tc.name: wifiOnOffStateTest
-         * @tc.desc: Test wifiOnOffStateTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number wifiOnOffStateTest
+         * @tc.name wifiOnOffStateTest
+         * @tc.desc Test wifiOnOffStateTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("wifiOnOffStateTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
                 wifiManager.disableWifi();
             }catch(err: BusinessError){
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "disableWifi get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -95,13 +139,12 @@ export default function actsWifiManagerFunctionsTest() {
                     expect().assertFail();
                 }
             }
-            await Utils.msSleep(2000);
+            await Utils.msSleep(5000);
             try{
                 let state = wifiManager.isWifiActive();
                 hilog.info(domain, tag, "isWifiActive:" + state);
                 expect(state).assertFalse();
             }catch(err: BusinessError){
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "isWifiActive get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -113,7 +156,6 @@ export default function actsWifiManagerFunctionsTest() {
             try{
                 wifiManager.enableWifi();
             }catch(err: BusinessError){
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "enableWifi get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -122,13 +164,12 @@ export default function actsWifiManagerFunctionsTest() {
                     expect().assertFail();
                 }
             }
-            await Utils.msSleep(2000);
+            await Utils.msSleep(5000);
             try {
                 let states = wifiManager.isWifiActive();
                 hilog.info(domain, tag, "isWifiActive:" + states);
                 expect(states).assertTrue();
             } catch (err: BusinessError) {
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "isWifiActive get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -140,13 +181,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: isConnectedTest
-         * @tc.name: isConnectedTest
-         * @tc.desc: Test isConnectedTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number isConnectedTest
+         * @tc.name isConnectedTest
+         * @tc.desc Test isConnectedTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("isConnectedTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -166,18 +207,19 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: getIpInfoTest
-         * @tc.name: getIpInfoTest
-         * @tc.desc: Test getIpInfoTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getIpInfoTest
+         * @tc.name getIpInfoTest
+         * @tc.desc Test getIpInfoTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getIpInfoTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
                 let info: wifiManager.IpInfo = wifiManager.getIpInfo();
                 hilog.info(domain, tag, "getIpInfo:" + JSON.stringify(info));
+                hilog.info(domain, tag, "getIpInfo ipAddress:" + JSON.stringify(info.ipAddress));
                 expect(true).assertEqual(info != null);
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -192,13 +234,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: getScanInfoListTest
-         * @tc.name: getScanInfoListTest
-         * @tc.desc: Test getScanInfoListTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getScanInfoListTest
+         * @tc.name getScanInfoListTest
+         * @tc.desc Test getScanInfoListTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getScanInfoListTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -227,13 +269,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: isMeteredHotspotTest
-         * @tc.name: isMeteredHotspotTest
-         * @tc.desc: Test isMeteredHotspotTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number isMeteredHotspotTest
+         * @tc.name isMeteredHotspotTest
+         * @tc.desc Test isMeteredHotspotTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("isMeteredHotspotTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -253,18 +295,19 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: getIpv6InfoTest
-         * @tc.name: getIpv6InfoTest
-         * @tc.desc: Test getIpv6InfoTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getIpv6InfoTest
+         * @tc.name getIpv6InfoTest
+         * @tc.desc Test getIpv6InfoTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getIpv6InfoTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
                 let info: wifiManager.Ipv6Info = wifiManager.getIpv6Info();
                 hilog.info(domain, tag, "getIpv6Info:" + JSON.stringify(info));
+                hilog.info(domain, tag, "getIpv6Info linkIpv6Address:" + JSON.stringify(info.linkIpv6Address));
                 expect(true).assertEqual(info != null);
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -279,17 +322,17 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: getSignalLevelTest
-         * @tc.name: getSignalLevelTest
-         * @tc.desc: Test getSignalLevelTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getSignalLevelTest
+         * @tc.name getSignalLevelTest
+         * @tc.desc Test getSignalLevelTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getSignalLevelTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
-                let level: number = wifiManager.getSignalLevel(0 ,0);
+                let level: int = wifiManager.getSignalLevel(0 ,0);
                 hilog.info(domain, tag, 'getSignalLevel success result:' + level);
                 expect(true).assertEqual(level >= 0 && level <= 4);
             } catch (err: BusinessError) {
@@ -305,13 +348,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: getLinkedInfoPromiseTest
-         * @tc.name: getLinkedInfoPromiseTest
-         * @tc.desc: Test getLinkedInfoPromiseTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getLinkedInfoPromiseTest
+         * @tc.name getLinkedInfoPromiseTest
+         * @tc.desc Test getLinkedInfoPromiseTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getLinkedInfoPromiseTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -339,31 +382,25 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: getLinkedInfoCallbackTest
-         * @tc.name: getLinkedInfoCallbackTest
-         * @tc.desc: Test getLinkedInfoCallbackTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getLinkedInfoCallbackTest
+         * @tc.name getLinkedInfoCallbackTest
+         * @tc.desc Test getLinkedInfoCallbackTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getLinkedInfoCallbackTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             wifiManager.getLinkedInfo((err: BusinessError | null, data: wifiManager.WifiLinkedInfo| undefined) => {
                 try {
                     if (err != null) {
                         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                        hilog.info(domain, tag, "getLinkedInfo callback get errCode:" + err?.code + ",errMessage:" + err?.message);
+                        hilog.info(domain, tag, "getLinkedInfo promise get errCode:" + err?.code + ",errMessage:" + err?.message);
                         if (err?.code == 801) {
                             hilog.info(domain, tag, 'api is not support');
                             expect(true).assertEqual(err?.code == 801);
                             done();
-                        }
-                        if (err?.code == 0) {
-                            hilog.info(domain, tag, 'getLinkedInfo use success');
-                            expect(true).assertEqual(err?.code == 0);
-                            done();
-                        }
-                        else {
+                        } else {
                             expect().assertFail();
                             done();
                         }
@@ -392,13 +429,13 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /*
-         * @tc.number: getLinkedInfoSyncTest
-         * @tc.name: getLinkedInfoSyncTest
-         * @tc.desc: Test getLinkedInfoSyncTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number getLinkedInfoSyncTest
+         * @tc.name getLinkedInfoSyncTest
+         * @tc.desc Test getLinkedInfoSyncTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
          */
         it("getLinkedInfoSyncTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -408,6 +445,14 @@ export default function actsWifiManagerFunctionsTest() {
                 hilog.info(domain, tag, 'getLinkedInfoSync success result ssid:' + infoSync.ssid);
                 hilog.info(domain, tag, 'getLinkedInfoSync success result bssid:' + infoSync.bssid);
                 hilog.info(domain, tag, 'getLinkedInfoSync success result connState:' + infoSync.connState);
+                expect(true).assertEqual(infoSync.connState == wifiManager.ConnState.SCANNING ||
+                    infoSync.connState == wifiManager.ConnState.CONNECTING ||
+                    infoSync.connState == wifiManager.ConnState.AUTHENTICATING ||
+                    infoSync.connState == wifiManager.ConnState.OBTAINING_IPADDR ||
+                    infoSync.connState == wifiManager.ConnState.CONNECTED ||
+                    infoSync.connState == wifiManager.ConnState.DISCONNECTING ||
+                    infoSync.connState == wifiManager.ConnState.DISCONNECTED ||
+                    infoSync.connState == wifiManager.ConnState.UNKNOWN)
                 hilog.info(domain, tag, 'getLinkedInfoSync success result macAddress:' + infoSync.macAddress);
                 hilog.info(domain, tag, 'getLinkedInfoSync success result band:' + infoSync.band);
                 hilog.info(domain, tag, 'getLinkedInfoSync success result supportedWifiCategory:' + infoSync.supportedWifiCategory);

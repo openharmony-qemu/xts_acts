@@ -348,13 +348,18 @@ export default function graphicTextNewAPI() {
             let font = runs[j].getFont();
             try {
               let textDirection = runs[0].getTextDirection();
-              expect(textDirection).assertEqual(1);
+              expect(textDirection).assertEqual(text.TextDirection.LTR);
             } catch (err) {
               console.info(msg + JSON.stringify(err));
               expect().assertFail();
             }
             try {
-              let advancesRange = runs[0].getAdvances({start:1, end:2});
+              let advancesRange1 = runs[0].getAdvances({start:0, end:10});
+              expect(advancesRange1.length > 0).assertTrue();
+              let advancesRange2 = runs[0].getAdvances({start:10, end:10});
+              expect(advancesRange2.length == 0).assertTrue();
+              let advancesRange3 = runs[0].getAdvances({start:0, end:-10});
+              expect(advancesRange3).assertEqual(undefined);
             } catch (err) {
               console.info(msg + JSON.stringify(err));
               expect().assertFail();
@@ -402,9 +407,10 @@ export default function graphicTextNewAPI() {
         let myParagraphStyle: text.ParagraphStyle = {
           textStyle: myTextStyle,
           verticalAlign: text.TextVerticalAlign.BOTTOM,
+          textDirection: text.TextDirection.RTL
         }
         let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        let textData = "سىناق تېكىستى";
         paragraphBuilder.addText(textData);
         let paragraph: text.Paragraph = paragraphBuilder.build();
         try {
@@ -425,7 +431,7 @@ export default function graphicTextNewAPI() {
             let font = runs[j].getFont();
             try {
               let textDirection = runs[0].getTextDirection();
-              expect(textDirection).assertEqual(1);
+              expect(textDirection).assertEqual(text.TextDirection.RTL);
             } catch (err) {
               console.info(msg + JSON.stringify(err));
               expect().assertFail();

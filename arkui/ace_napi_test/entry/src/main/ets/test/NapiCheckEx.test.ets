@@ -3188,5 +3188,89 @@ export default function napiCheckExTest() {
         expect().assertFail();
       }
     });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_OTHERS_AND_MODULE_0001
+     * @tc.name      testOthersAndModuleTest01
+     * @tc.desc      napi_strict_equals different values comparison test
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testOthersAndModuleTest01', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('[testOthersAndModuleTest01] START');
+      try {
+        let result: boolean = napitestex.NapiOthersAndModuleTest01();
+        expect(result).assertTrue();
+        console.info('[testOthersAndModuleTest01] PASS');
+      } catch (err) {
+        console.error('[testOthersAndModuleTest01] ERROR. err.message: ' + err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_OTHERS_AND_MODULE_0002
+     * @tc.name      testOthersAndModuleTest02
+     * @tc.desc      napi_strict_equals same type different values comparison test
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testOthersAndModuleTest02', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('[testOthersAndModuleTest02] START');
+      try {
+        let result: boolean = napitestex.NapiOthersAndModuleTest02();
+        expect(result).assertTrue();
+        console.info('[testOthersAndModuleTest02] PASS');
+      } catch (err) {
+        console.error('[testOthersAndModuleTest02] ERROR. err.message: ' + err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_OTHERS_AND_MODULE_0003
+     * @tc.name      testOthersAndModuleTest03
+     * @tc.desc      Multi-thread node_api_get_module_file_name consistency and thread safety test
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testOthersAndModuleTest03', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('[testOthersAndModuleTest03] START');
+      try {
+        let result: boolean = napitestex.NapiOthersAndModuleTest03();
+        expect(result).assertTrue();
+        console.info('[testOthersAndModuleTest03] PASS');
+      } catch (err) {
+        console.error('[testOthersAndModuleTest03] ERROR. err.message: ' + err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_OTHERS_AND_MODULE_0004
+     * @tc.name      testOthersAndModuleTest04
+     * @tc.desc      Mixed multi-thread calls to napi_get_node_version and napi_get_version
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testOthersAndModuleTest04', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('[testOthersAndModuleTest04] START');
+      try {
+        let result: boolean = napitestex.NapiOthersAndModuleTest04();
+        expect(result).assertTrue();
+        console.info('[testOthersAndModuleTest04] PASS');
+      } catch (err) {
+        console.error('[testOthersAndModuleTest04] ERROR. err.message: ' + err.message);
+        expect().assertFail();
+      }
+      done();
+    });
   })
 }
