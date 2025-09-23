@@ -188,8 +188,34 @@ export default function FrameNodeAnimationPage() {
       let getValue: Array<number> = AppStorage.get('checkGetNodePropertyValue') as Array<number>
       console.log('FrameNodeAnimationPage_005 getValue: ', getValue)
       expect(getValue?.length).assertEqual(3);
-      AppStorage.delete('checkCancelFail')
+      AppStorage.delete('checkGetNodePropertyValue')
       console.info('FrameNodeAnimationPage_005 END');
+      done();
+    });
+
+    /**
+     * @tc.number FrameNodeAnimationPage_006
+     * @tc.name FrameNodeAnimationPage_006
+     * @tc.desc test getNodePropertyValue return Empty array
+     * @tc.level Level 0
+     * @tc.type
+     * @tc.size
+     */
+    it('FrameNodeAnimationPage_006', Level.LEVEL0, async (done: Function) => {
+      console.info('[FrameNodeAnimationPage_006] START');
+      await CommonFunc.sleep(1000);
+      let driver = Driver.create();
+      await driver.delayMs(1000);
+      let getEmptyBtn: Component = await driver.findComponent(ON.text('getEmpty'));
+      await getEmptyBtn.click()
+      console.info('[FrameNodeAnimationPage_006] getEmptyBtn click');
+      await driver.delayMs(1000);
+
+      let getValue: Array<number> = AppStorage.get('checkNullNodePropertyValue') as Array<number>
+      console.log('FrameNodeAnimationPage_006 getValue: ', getValue)
+      expect(getValue?.length).assertEqual(0);
+      AppStorage.delete('checkNullNodePropertyValue')
+      console.info('FrameNodeAnimationPage_006 END');
       done();
     });
   })
