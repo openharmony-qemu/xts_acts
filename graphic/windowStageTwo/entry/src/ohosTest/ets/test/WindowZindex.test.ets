@@ -1266,12 +1266,13 @@ export default function windowZindexTest() {
         await windowClass1.setSubWindowZLevel(10);
         minWidth = Number(windowClass1.getWindowLimits().minWidth);
         minHeight = Number(windowClass1.getWindowLimits().minHeight);
+        console.info(`${caseName} minWidth:`+ minWidth+',minHeight:'+minHeight);
         await windowClass1.setUIContent('testability/pages/First/index3');
         console.info(`${caseName} Succeeded in loading the system sub window content.`);
         await windowClass1.showWindow();
         console.info(`${caseName} Succeeded in showing the system sub window.`);
         await windowClass1.resizeAsync(minWidth+20, minHeight+20);
-        await windowClass1.moveWindowTo(50, 50);
+        await windowClass1.moveWindowTo(50, 100);
 
         let windowClass2 = await windowStage.createSubWindow('test_SubWindowZLevel_0100_2');
         await windowClass2.setSubWindowZLevel(10);
@@ -1297,9 +1298,11 @@ export default function windowZindexTest() {
 
         let window1 = await window.getLastWindow(context);
         let windowZLevel = window1.getSubWindowZLevel()
+        console.info(`${caseName} window1 windowZLevel :`+ windowZLevel);
         expect(windowZLevel).assertEqual(11);
         await windowClass1.setRaiseByClickEnabled(true);
         let subWinId = await driver.findComponent(ON.id('SubWinTestId'));
+        console.info(`${caseName} window1 subWinId :`+ JSON.stringify(subWinId));
         await subWinId.click();
         let window2 = await window.getLastWindow(context);
         let windowZLevel2 = window2.getSubWindowZLevel()
