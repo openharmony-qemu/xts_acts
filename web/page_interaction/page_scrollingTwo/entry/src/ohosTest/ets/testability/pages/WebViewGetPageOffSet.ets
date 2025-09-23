@@ -2,7 +2,10 @@ import { webview } from '@kit.ArkWeb';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import { waitForExist } from '../../test/WaitTest.test';
+import { Driver } from '@kit.TestKit';
 
+const EVENT_ID_SET_SUITE_KEY = 182201;
+let driver: Driver = Driver.create();
 
 @Entry
 @Component
@@ -11,13 +14,18 @@ struct WebComponent {
   @State emitKey: string = '';
   @State isReceive: number = -1;
   @State str:string = ''
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -25,7 +33,7 @@ struct WebComponent {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
-        this.isReceive = 0;
+        this.isReceive = 1;
       }
     }
   }
@@ -35,13 +43,14 @@ struct WebComponent {
       Row() {
         Button("web click").key('webgetPageOffsetButton').onClick(async () => {
           console.info("key==>" + this.str)
-          await waitForExist(()=>this.isReceive, this.str, 0);
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
             case "emitgetPageOffset001": {
               try {
                 this.controller.scrollTo(0, 150);
-                await Utils.sleep(1000);
-                Utils.emitEvent(this.controller.getPageOffset().y, 20250710)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                Utils.emitEvent(this.controller.getPageOffset().y, 182210)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -50,8 +59,8 @@ struct WebComponent {
             case "emitgetPageOffset002": {
               try {
                 this.controller.scrollTo(50, 0);
-                await Utils.sleep(1000);
-                Utils.emitEvent(this.controller.getPageOffset().x, 20250711)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                Utils.emitEvent(this.controller.getPageOffset().x, 182220)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -61,8 +70,8 @@ struct WebComponent {
             case "emitgetPageOffset003": {
               try {
                 this.controller.scrollBy(0, 200);
-                await Utils.sleep(1000);
-                Utils.emitEvent(this.controller.getPageOffset().y, 20250712)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                Utils.emitEvent(this.controller.getPageOffset().y, 182230)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -78,6 +87,10 @@ struct WebComponent {
           console.log("getPageOffset x:" + this.controller.getPageOffset().x + ",y:" +
           this.controller.getPageOffset().y);
 
+        })
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
         })
     }
   }
