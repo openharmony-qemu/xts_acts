@@ -58,7 +58,7 @@ export default function ActsAceWebViewSetConnectionAboutToAppearTimeout() {
       done();
     })
 
-    /*
+    /**
     *@tc.number SUB_ACE_WEB_SETCONNECTIONTIMEOUT_API_0006
     *@tc.name testWebViewSetConnectionAboutAppearTimeoutFiveSeconds
     *@tc.desc test setConnectionTimeout_aboutAppear_five_seconds
