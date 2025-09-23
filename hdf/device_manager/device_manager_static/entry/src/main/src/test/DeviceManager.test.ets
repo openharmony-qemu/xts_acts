@@ -341,6 +341,7 @@ export default function DeviceManagerTest() {
               (err: BusinessError<void>|null, data: long|undefined) => {
                 hilog.info(TAG, 'testTag', 'unbindDriverWithDeviceId callback success');
               });
+            expect(data != null).assertTrue();
             hilog.info(0, 'testTag ui', 'bindDevice success:' + data.deviceId);
             hilog.info(0, 'testTag ui', 'bindDevice success:' + JSON.stringify(data.remote));
             done();
@@ -365,8 +366,8 @@ export default function DeviceManagerTest() {
           return done();
         } else {
           try {
-            await deviceManager.unbindDriverWithDeviceId(deviceId);
-            expect(deviceId != 0).assertTrue();
+            let data = await deviceManager.unbindDriverWithDeviceId(deviceId);
+            expect(data != null).assertTrue();
             await Utils.msSleep(2000);
             done();
           } catch (error: BusinessError) {
