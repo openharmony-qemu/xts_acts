@@ -19,7 +19,6 @@ import { Driver, ON, UiDirection, BY, UiDriver } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import {inputMethod} from '@kit.IMEKit';
 import { waitForExist} from '../../test/WaitTest.test';
-import { Driver, ON } from '@kit.TestKit';
 
 const EVENT_ID_SET_SUITE_KEY = 178201;
 const driver = Driver.create();
@@ -31,7 +30,6 @@ struct WebComponent {
   @State blurMode:BlurOnKeyboardHideMode = BlurOnKeyboardHideMode.SILENT;
   @State text:string = ''
   @State userAgentPC:string = "";
-  @State isReceive: number = -1;
   inputMethodController = inputMethod.getController()
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
@@ -67,14 +65,14 @@ struct WebComponent {
           await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           console.info("key==>" + this.str)
           switch (this.str) {
-            case "blurMode01": {
-              this.userAgentPC = this.controller.getUserAgent();
-              if ((this.userAgentPC).includes("PC")) {
-                Utils.emitEvent(true, 178210)
-                break;
-              }
-
-              this.isOnConsoleEnd = -1
+           case "blurMode01": {
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(true, 178210)
+                  break;
+                }
+                let buttonOne = await driver.findComponent(ON.text('input'));
+                this.isOnConsoleEnd = -1
                 await buttonOne.click();
                 let buttonTwo = await driver.findComponent(ON.id('KeyHideKbd'));
                 if (buttonTwo) {
@@ -83,39 +81,35 @@ struct WebComponent {
                   this.inputMethodController.hideTextInput()
                 }
                 await Utils.waitForExist(()=>this.isOnConsoleEnd, this.str+' isOnConsoleEnd', 1, 1000);
-              if (this.text == 'focus') {
-                Utils.emitEvent(true, 178210)
-
-              }
-              break;
-            }
-            case "blurMode02": {
-              this.userAgentPC = this.controller.getUserAgent();
-              if ((this.userAgentPC).includes("PC")) {
-                Utils.emitEvent(true, 178220)
+                if (this.text == 'focus') {
+                  Utils.emitEvent(true, 178210)
+                }
                 break;
-              }
+            }
 
-              this.blurMode = BlurOnKeyboardHideMode.BLUR;
-              this.isOnConsoleEnd = -1
-              let buttonOne = await driver.findComponent(ON.text('input'));
+            case "blurMode02": {
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(true, 178220)
+                  break;
+                }
+                this.blurMode = BlurOnKeyboardHideMode.BLUR;
+                this.isOnConsoleEnd = -1
+                let buttonOne = await driver.findComponent(ON.text('input'));
+                await buttonOne.click();
+                let buttonTwo = await driver.findComponent(ON.id('KeyHideKbd'));
+                if (buttonTwo) {
+                  await buttonTwo.click()
 
-              await buttonOne.click();
-
-              let buttonTwo = await driver.findComponent(ON.id('KeyHideKbd'));
-              if (buttonTwo) {
-                await buttonTwo.click()
-                this.controller.onInactive();
-                console.log('my name is buttonTwo' + buttonTwo)
-              } else {
-                this.inputMethodController.hideTextInput()
-                console.log('my name is else' + buttonTwo)
-                this.controller.onInactive();
-              }
-               await Utils.waitForExist(()=>this.isOnConsoleEnd, this.str+' isOnConsoleEnd', 1, 1000);
-              if (this.text == 'blur') {
-                 Utils.emitEvent(true, 178220)
-              }
+                } else {
+                  this.inputMethodController.hideTextInput()
+                    this.controller.onInactive();
+                }
+                await Utils.waitForExist(()=>this.isOnConsoleEnd, this.str+' isOnConsoleEnd', 1, 1000);
+                if (this.text == 'blur') {
+                  Utils.emitEvent(true, 178220)
+                }
+                break;
               break;
             }
           }
