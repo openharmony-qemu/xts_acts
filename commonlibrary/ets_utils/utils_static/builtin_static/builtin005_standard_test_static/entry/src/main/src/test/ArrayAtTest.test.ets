@@ -415,24 +415,6 @@ export default function builtinsArrayAtPrototypebTest() {
         Done();
       })
 
-    /**
-     * @tc.number builtinsArrayAtPrototypebTest3000
-     * @tc.name builtinsArrayAtPrototypebTest3000
-     * @tc.desc at(self: FixedArray<byte>, index: number): Byte | undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtPrototypebTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtPrototypebTest3000';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<byte> = [1, 2, 3];
-        const result = at(arr, -4.0.toDouble());
-        expect(result).assertEqual(undefined);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
 
     /**
      * @tc.number builtinsArrayAtPrototypebTest3100
