@@ -1638,71 +1638,267 @@ ani_int test_Variable_SetValue_Ref([[maybe_unused]] ani_env *env, [[maybe_unused
     return ANI_TRUE;
 }
 
-ani_int test_Variable_GetValue_Char([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Variable_SetValue_Ref_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_namespace ns = nullptr;
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
+    ASSERT_NE(ns, nullptr);
+
+    ani_variable variable {};
+    ASSERT_EQ(env->Namespace_FindVariable(ns, "stringValue", &variable), ANI_OK);
+    ASSERT_NE(variable, nullptr);
+
+    ani_string string = {};
+    auto status = env->String_NewUTF8("abcdefg", 7U, &string);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(env->c_api->Variable_SetValue_Ref(nullptr, variable, string), ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_int test_Variable_SetValue_Ref_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_namespace ns = nullptr;
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
+    ASSERT_NE(ns, nullptr);
+
+    ani_variable variable {};
+    ASSERT_EQ(env->Namespace_FindVariable(ns, "shortValue", &variable), ANI_OK);
+    ASSERT_NE(variable, nullptr);
+
+    ani_string value = {};
+    auto status = env->String_NewUTF8("abcdefg", 7U, &value);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(env->Variable_SetValue_Ref(variable, value), ANI_INVALID_TYPE);
+
+    return ANI_TRUE;
+}
+
+ani_int test_Variable_SetValue_Ref_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_string value = {};
+    auto status = env->String_NewUTF8("abcdefg", 7U, &value);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_EQ(env->Variable_SetValue_Ref(nullptr, value), ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_int test_Variable_SetValue_Ref_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_namespace ns = nullptr;
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
+    ASSERT_NE(ns, nullptr);
+
+    ani_variable variable {};
+    ASSERT_EQ(env->Namespace_FindVariable(ns, "stringValue", &variable), ANI_OK);
+    ASSERT_NE(variable, nullptr);
+
+    ASSERT_EQ(env->Variable_SetValue_Ref(variable, nullptr), ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_int test_Variable_SetValue_Ref_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_namespace ns = nullptr;
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
+    ASSERT_NE(ns, nullptr);
+
+    ani_variable variable {};
+    ASSERT_EQ(env->Namespace_FindVariable(ns, "stringValue", &variable), ANI_OK);
+    ASSERT_NE(variable, nullptr);
+
+    ani_string string = {};
+    ASSERT_EQ(env->String_NewUTF8("abcdefg", 7U, &string), ANI_OK);
+    ASSERT_EQ(env->Variable_SetValue_Ref(variable, string), ANI_OK);
+
+    ASSERT_EQ(env->String_NewUTF8("xxxx", 4U, &string), ANI_OK);
+    ASSERT_EQ(env->Variable_SetValue_Ref(variable, string), ANI_OK);
+
+    ASSERT_EQ(env->String_NewUTF8("hello world", 11U, &string), ANI_OK);
+    ASSERT_EQ(env->Variable_SetValue_Ref(variable, string), ANI_OK);
+
+    ani_ref result = nullptr;
+    ASSERT_EQ(env->Variable_GetValue_Ref(variable, &result), ANI_OK);
+    auto str = static_cast<ani_string>(result);
+    std::array<char, 20U> buffer {};
+    ani_size strSize = 0U;
+    ASSERT_EQ(env->String_GetUTF8SubString(str, 0U, 11U, buffer.data(), buffer.size(), &strSize), ANI_OK);
+    ASSERT_EQ(strSize, 11U);
+    ASSERT_STREQ(buffer.data(), "hello world");
+
+    ASSERT_EQ(env->Variable_GetValue_Ref(variable, &result), ANI_OK);
+    str = static_cast<ani_string>(result);
+    ASSERT_EQ(env->String_GetUTF8SubString(str, 0U, 11U, buffer.data(), buffer.size(), &strSize), ANI_OK);
+    ASSERT_EQ(strSize, 11U);
+    ASSERT_STREQ(buffer.data(), "hello world");
+
+    return ANI_TRUE;
+}
+
+ani_int test_Variable_SetValue_Ref_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_namespace ns = nullptr;
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
+    ASSERT_NE(ns, nullptr);
+
+    ani_variable variable1 {};
+    ASSERT_EQ(env->Namespace_FindVariable(ns, "stringValue", &variable1), ANI_OK);
+    ASSERT_NE(variable1, nullptr);
+
+    ani_string string = {};
+    ASSERT_EQ(env->String_NewUTF8("XYZ", 3U, &string), ANI_OK);
+    ASSERT_EQ(env->Variable_SetValue_Ref(variable1, string), ANI_OK);
+    ani_ref getValue1 = nullptr;
+    ASSERT_EQ(env->Variable_GetValue_Ref(variable1, &getValue1), ANI_OK);
+    auto str = static_cast<ani_string>(getValue1);
+    std::array<char, 10U> buffer {};
+    ani_size strSize = 0U;
+    ASSERT_EQ(env->String_GetUTF8SubString(str, 0U, 3U, buffer.data(), buffer.size(), &strSize), ANI_OK);
+    ASSERT_EQ(strSize, 3U);
+    ASSERT_STREQ(buffer.data(), "XYZ");
+
+    ani_variable variable2 {};
+    ASSERT_EQ(env->Namespace_FindVariable(ns, "testValueRef", &variable2), ANI_OK);
+    ASSERT_NE(variable2, nullptr);
+
+    ASSERT_EQ(env->String_NewUTF8("UVW", 3U, &string), ANI_OK);
+    ASSERT_EQ(env->Variable_SetValue_Ref(variable2, string), ANI_OK);
+    ani_ref getValue2 = nullptr;
+    ASSERT_EQ(env->Variable_GetValue_Ref(variable2, &getValue2), ANI_OK);
+    str = static_cast<ani_string>(getValue2);
+    ASSERT_EQ(env->String_GetUTF8SubString(str, 0U, 3U, buffer.data(), buffer.size(), &strSize), ANI_OK);
+    ASSERT_EQ(strSize, 3U);
+    ASSERT_STREQ(buffer.data(), "UVW");
+
+    return ANI_TRUE;
+}
+
+ani_int test_Variable_SetValue_Short([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns = nullptr;
     ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_variable variable{};
-    ASSERT_EQ(env->Namespace_FindVariable(ns, "aCharValueB", &variable), ANI_OK);
+    ASSERT_EQ(env->Namespace_FindVariable(ns, "shortValue", &variable), ANI_OK);
     ASSERT_NE(variable, nullptr);
 
-    ani_char x = '\0';
-    ani_char expected = 'A';
-    ASSERT_EQ(env->Variable_GetValue_Char(variable, &x), ANI_OK);
-    ASSERT_EQ(x, expected);
+    ani_short result = 0U;
+    const ani_short value = 6U;
+    ASSERT_EQ(env->Variable_SetValue_Short(variable, value), ANI_OK);
+    ASSERT_EQ(env->Variable_GetValue_Short(variable, &result), ANI_OK);
+    ASSERT_EQ(result, value);
 
     return ANI_TRUE;
 }
 
-ani_int test_Variable_GetValue_Byte([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Variable_SetValue_Short_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns = nullptr;
     ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
-    ani_variable variable{};
-    ASSERT_EQ(env->Namespace_FindVariable(ns, "aByteValueB", &variable), ANI_OK);
+    ani_variable variable {};
+    ASSERT_EQ(env->Namespace_FindVariable(ns, "shortValue", &variable), ANI_OK);
     ASSERT_NE(variable, nullptr);
 
-    ani_byte x = 3;
-    ASSERT_EQ(env->Variable_GetValue_Byte(variable, &x), ANI_OK);
-    ASSERT_EQ(x, ani_byte{2});
+    const ani_short value = 6U;
+    ASSERT_EQ(env->c_api->Variable_SetValue_Short(nullptr, variable, value), ANI_INVALID_ARGS);
 
     return ANI_TRUE;
 }
 
-ani_int test_Variable_GetValue_Short([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Variable_SetValue_Short_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns = nullptr;
     ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
-    ani_variable variable{};
-    ASSERT_EQ(env->Namespace_FindVariable(ns, "shortValueB", &variable), ANI_OK);
+    ani_variable variable {};
+    ASSERT_EQ(env->Namespace_FindVariable(ns, "floatValue", &variable), ANI_OK);
     ASSERT_NE(variable, nullptr);
 
-    const ani_short EXPECTED_SHORT_VALUE = 3;
-    ani_short value = ani_short(0);
-    ASSERT_EQ(env->Variable_GetValue_Short(variable, &value), ANI_OK);
-    ASSERT_EQ(value, EXPECTED_SHORT_VALUE);
+    const ani_short value = 6U;
+    ASSERT_EQ(env->Variable_SetValue_Short(variable, value), ANI_INVALID_TYPE);
+
     return ANI_TRUE;
 }
 
-ani_int test_Variable_GetValue_Float([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Variable_SetValue_Short_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short value = 6U;
+    ASSERT_EQ(env->Variable_SetValue_Short(nullptr, value), ANI_INVALID_ARGS);
+
+    return ANI_TRUE;
+}
+
+ani_int test_Variable_SetValue_Short_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns = nullptr;
     ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
-    ani_variable var;
-    ASSERT_EQ(env->Namespace_FindVariable(ns, "floatValueB", &var), ANI_OK);
-    ASSERT_NE(var, nullptr);
+    ani_variable variable {};
+    ASSERT_EQ(env->Namespace_FindVariable(ns, "shortValue", &variable), ANI_OK);
+    ASSERT_NE(variable, nullptr);
 
-    ani_float value{3};
-    ASSERT_EQ(env->Variable_GetValue_Float(var, &value), ANI_OK);
-    ASSERT_EQ(value, ani_float{3});
+    ani_long maxValue = std::numeric_limits<int64_t>::max();
+    ASSERT_EQ(env->Variable_SetValue_Short(variable, maxValue), ANI_OK);
+    ani_short result = 0U;
+    ASSERT_EQ(env->Variable_GetValue_Short(variable, &result), ANI_OK);
+
+    return ANI_TRUE;
+}
+
+ani_int test_Variable_SetValue_Short_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_namespace ns = nullptr;
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
+    ASSERT_NE(ns, nullptr);
+
+    ani_variable variable {};
+    ASSERT_EQ(env->Namespace_FindVariable(ns, "shortValue", &variable), ANI_OK);
+    ASSERT_NE(variable, nullptr);
+
+    const ani_short values[] = {3U, 0, -9};
+    ani_short result = 0U;
+    for (ani_short value : values) {
+        ASSERT_EQ(env->Variable_SetValue_Short(variable, value), ANI_OK);
+        ASSERT_EQ(env->Variable_GetValue_Short(variable, &result), ANI_OK);
+        ASSERT_EQ(result, value);
+    }
+
+    return ANI_TRUE;
+}
+
+ani_int test_Variable_SetValue_Short_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_namespace ns = nullptr;
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.VariableOperations.anyns", &ns), ANI_OK);
+    ASSERT_NE(ns, nullptr);
+
+    ani_variable variable1 {};
+    ASSERT_EQ(env->Namespace_FindVariable(ns, "shortValue", &variable1), ANI_OK);
+    ASSERT_NE(variable1, nullptr);
+
+    ani_short getValue1 = 0U;
+    const ani_short val1 = 3U;
+    ASSERT_EQ(env->Variable_SetValue_Short(variable1, val1), ANI_OK);
+    ASSERT_EQ(env->Variable_GetValue_Short(variable1, &getValue1), ANI_OK);
+    ASSERT_EQ(getValue1, val1);
+
+    ani_variable variable2 {};
+    ASSERT_EQ(env->Namespace_FindVariable(ns, "testValueShort", &variable2), ANI_OK);
+    ASSERT_NE(variable2, nullptr);
+
+    ani_short getValue2 = 0U;
+    const ani_short val2 = 6U;
+    ASSERT_EQ(env->Variable_SetValue_Short(variable2, val2), ANI_OK);
+    ASSERT_EQ(env->Variable_GetValue_Short(variable2, &getValue2), ANI_OK);
+    ASSERT_EQ(getValue2, val2);
+
     return ANI_TRUE;
 }
 #endif // ARKTS_ANI_TEST_VARIABLEOPERATIONS_H
