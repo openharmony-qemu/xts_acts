@@ -374,17 +374,17 @@ export default function UiTest() {
         await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
         await driver.delayMs(waitUiReadyMs)
         let rotation1 = await driver.getDisplayRotation()
-        expect(rotation1 == DisplayRotation.ROTATION_0)
+        expect(rotation1 == DisplayRotation.ROTATION_0).assertTrue();
 
         await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
         await driver.delayMs(waitUiReadyMs)
         let rotation2 = await driver.getDisplayRotation()
-        expect(rotation2 == DisplayRotation.ROTATION_270)
+        expect(rotation2 == DisplayRotation.ROTATION_270).assertTrue();
 
         await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
         await driver.delayMs(waitUiReadyMs)
         let rotation3 = await driver.getDisplayRotation()
-        expect(rotation3 == DisplayRotation.ROTATION_180)
+        expect(rotation3 == DisplayRotation.ROTATION_180).assertTrue();
 
         await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
       } else if (rotation == DisplayRotation.ROTATION_0) {
@@ -392,17 +392,17 @@ export default function UiTest() {
         await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
         await driver.delayMs(waitUiReadyMs)
         let rotation1 = await driver.getDisplayRotation()
-        expect(rotation1 == DisplayRotation.ROTATION_90)
+        expect(rotation1 == DisplayRotation.ROTATION_90).assertTrue();
 
         await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
         await driver.delayMs(waitUiReadyMs)
         let rotation2 = await driver.getDisplayRotation()
-        expect(rotation2 == DisplayRotation.ROTATION_180)
+        expect(rotation2 == DisplayRotation.ROTATION_180).assertTrue();
 
         await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
         await driver.delayMs(waitUiReadyMs)
         let rotation3 = await driver.getDisplayRotation()
-        expect(rotation3 == DisplayRotation.ROTATION_270)
+        expect(rotation3 == DisplayRotation.ROTATION_270).assertTrue();
 
         await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
         await driver.delayMs(waitUiReadyMs)
