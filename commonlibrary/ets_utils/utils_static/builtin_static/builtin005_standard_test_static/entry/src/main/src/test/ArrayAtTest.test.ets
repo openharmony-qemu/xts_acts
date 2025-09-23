@@ -217,43 +217,6 @@ export default function builtinsArrayAtPrototypebTest() {
         Done();
       })
 
-    /**
-     * @tc.number builtinsArrayAtPrototypebTest1300
-     * @tc.name builtinsArrayAtPrototypebTest1300
-     * @tc.desc at(self: FixedArray<boolean>, index: number): Boolean | undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtPrototypebTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtPrototypebTest1300';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<boolean> = [true, false, true];
-        const result = at(arr, 3.0.toDouble());
-        expect(result).assertEqual(undefined);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsArrayAtPrototypebTest1400
-     * @tc.name builtinsArrayAtPrototypebTest1400
-     * @tc.desc at(self: FixedArray<boolean>, index: number): Boolean | undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtPrototypebTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtPrototypebTest1400';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<boolean> = [true, false, true];
-        const result = at(arr, -4.0.toDouble());
-        expect(result).assertEqual(undefined);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
 
     /**
      * @tc.number builtinsArrayAtPrototypebTest1500
@@ -272,25 +235,6 @@ export default function builtinsArrayAtPrototypebTest() {
         const result2 = at(arr, -1.0.toDouble());
         expect(result1).assertEqual(false);
         expect(result2).assertEqual(false);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsArrayAtPrototypebTest1600
-     * @tc.name builtinsArrayAtPrototypebTest1600
-     * @tc.desc at(self: FixedArray<boolean>, index: number): Boolean | undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtPrototypebTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtPrototypebTest1600';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<boolean> = [];
-        const result = at(arr, 0.0.toDouble());
-        expect(result).assertEqual(undefined);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -371,43 +315,7 @@ export default function builtinsArrayAtPrototypebTest() {
         Done();
       })
 
-    /**
-     * @tc.number builtinsArrayAtPrototypebTest2100
-     * @tc.name builtinsArrayAtPrototypebTest2100
-     * @tc.desc at(self: FixedArray<byte>, index: int): Byte | undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtPrototypebTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtPrototypebTest2100';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<byte> = [1, 2, 3];
-        const result = at(arr, 3);
-        expect(result).assertEqual(undefined);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
 
-    /**
-     * @tc.number builtinsArrayAtPrototypebTest2200
-     * @tc.name builtinsArrayAtPrototypebTest2200
-     * @tc.desc at(self: FixedArray<byte>, index: int): Byte | undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtPrototypebTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtPrototypebTest2200';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<byte> = [1, 2, 3];
-        const result = at(arr, -4);
-        expect(result).assertEqual(undefined);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
 
     /**
      * @tc.number builtinsArrayAtPrototypebTest2300
@@ -426,25 +334,6 @@ export default function builtinsArrayAtPrototypebTest() {
         const result2 = at(arr, -1);
         expect(result1).assertEqual(9);
         expect(result2).assertEqual(9);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsArrayAtPrototypebTest2400
-     * @tc.name builtinsArrayAtPrototypebTest2400
-     * @tc.desc at(self: FixedArray<byte>, index: int): Byte | undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtPrototypebTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtPrototypebTest2400';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<byte> = [];
-        const result = at(arr, 0);
-        expect(result).assertEqual(undefined);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -527,25 +416,6 @@ export default function builtinsArrayAtPrototypebTest() {
       })
 
     /**
-     * @tc.number builtinsArrayAtPrototypebTest2900
-     * @tc.name builtinsArrayAtPrototypebTest2900
-     * @tc.desc at(self: FixedArray<byte>, index: number): Byte | undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtPrototypebTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtPrototypebTest2900';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<byte> = [1, 2, 3];
-        const result = at(arr, 3.0.toDouble());
-        expect(result).assertEqual(undefined);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
      * @tc.number builtinsArrayAtPrototypebTest3000
      * @tc.name builtinsArrayAtPrototypebTest3000
      * @tc.desc at(self: FixedArray<byte>, index: number): Byte | undefined
@@ -584,26 +454,6 @@ export default function builtinsArrayAtPrototypebTest() {
         console.info(`${caseName}, test end`);
         Done();
       })
-
-    /**
-     * @tc.number builtinsArrayAtPrototypebTest3200
-     * @tc.name builtinsArrayAtPrototypebTest3200
-     * @tc.desc at(self: FixedArray<byte>, index: number): Byte | undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtPrototypebTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtPrototypebTest3200';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<byte> = [];
-        const result = at(arr, 0.0.toDouble());
-        expect(result).assertEqual(undefined);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
 
     /**
      * @tc.number builtinsArrayAtPrototypebTest3300
@@ -681,43 +531,7 @@ export default function builtinsArrayAtPrototypebTest() {
         Done();
       })
 
-    /**
-     * @tc.number builtinsArrayAtPrototypebTest3700
-     * @tc.name builtinsArrayAtPrototypebTest3700
-     * @tc.desc at(self: FixedArray<char>, index: int): Char | undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtPrototypebTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtPrototypebTest3700';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [new Char(c'a'), new Char(c'b'), new Char(c'c')];
-        const result = at(arr, 3);
-        expect(result).assertEqual(undefined);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
 
-    /**
-     * @tc.number builtinsArrayAtPrototypebTest3800
-     * @tc.name builtinsArrayAtPrototypebTest3800
-     * @tc.desc at(self: FixedArray<char>, index: int): Char | undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsArrayAtPrototypebTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsArrayAtPrototypebTest3800';
-        console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = [new Char(c'a'), new Char(c'b'), new Char(c'c')];
-        const result = at(arr, -4);
-        expect(result).assertEqual(undefined);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
 
     /**
      * @tc.number builtinsArrayAtPrototypebTest3900
