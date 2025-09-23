@@ -45,10 +45,6 @@ group("distributeddatamgr") {
       "relationalStoretest:relationalStoretest",
       "relationalstoredatagroupidtest:ActsRelationalstoreDataGroupIdTest",
       "RelationalStoreEtsTestStatic:ActsRelationalStoreEtsStaticTest",
-      "dataShareTest:dataShareTest",
-      "pasteboard_errorcode:ActsPasteboardErrorTest",
-      "preferencesTestApi20:ActsPreferencesTest",
-      "dataShareEts_static:ActsDataShareStaticTest",
     ]
   } else {
     deps = [
