@@ -38,6 +38,7 @@ group("distributeddatamgr") {
       "preferencesjstest:preferences_js_test",
       "relationalStoretest:relationalStoretest",
       "relationalstoredatagroupidtest:ActsRelationalstoreDataGroupIdTest",
+      "RelationalStoreEtsTestStatic:ActsRelationalStoreEtsStaticTest",
       "dataShareTest:dataShareTest",
       "pasteboard_errorcode:ActsPasteboardErrorTest",
       "preferencesTestApi20:ActsPreferencesTest",
