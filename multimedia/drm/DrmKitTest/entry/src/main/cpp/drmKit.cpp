@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include "DrmKitTest.h"
+#include "drmKit.h"
 #include <multimedia/drm_framework/native_mediakeysession.h>
 #include <multimedia/drm_framework/native_drm_err.h>
 #include <multimedia/drm_framework/native_mediakeysystem.h>
