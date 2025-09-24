@@ -19,6 +19,7 @@
 const int32_t INVALID_ARGUMENT = CAMERA_INVALID_ARGUMENT;
 const int32_t TEST_OK = 0;
 const int32_t DEVICES_NUM = 2;
+const int32_t DEVICES_MIN_NUM = 2;
 
 int32_t CameraFunctionTest::OHGetCameraManagerInvalidTest(int32_t caseCode)
 {
@@ -531,12 +532,12 @@ int32_t CameraFunctionTest::OHCameraManagerCreatePhotoOutputWithoutSurfaceTest(i
         }
         Camera_Profile *profile = output->photoProfiles[0];
         if (caseCode == CAMERA_SERVICE_FATAL_ERROR) {
-            result == OH_CameraManager_CreatePhotoOutputWithoutSurface(cameraManager_, profile, &photoOutput);
+            result = OH_CameraManager_CreatePhotoOutputWithoutSurface(cameraManager_, profile, &photoOutput);
             if (result == CAMERA_OK) {
                 ret = TEST_OK;
             }
         } else if (caseCode == CAMERA_OK) {
-            result == OH_CameraManager_CreatePhotoOutputWithoutSurface(cameraManager_, profile, &photoOutput);
+            result = OH_CameraManager_CreatePhotoOutputWithoutSurface(cameraManager_, profile, &photoOutput);
             if (result == CAMERA_OK) {
                 ret = TEST_OK;
             }
@@ -549,22 +550,27 @@ int32_t CameraFunctionTest::OHCameraManagerCreateVideoOutputTest(int32_t caseCod
 {
     int32_t ret = CAMERA_OK;
     Camera_ErrorCode result;
-    if (caseCode == CAMERA_SERVICE_FATAL_ERROR) {
-        Camera_VideoOutput *videoOutput = nullptr;
-         Camera_OutputCapability* output = nullptr;
-        if (OH_CameraManager_GetSupportedCameraOutputCapability(cameraManager_, cameras_, &output) == CAMERA_OK) {
-            if (output->videoProfilesSize > 0) {
-                Camera_VideoProfile *profile = output->videoProfiles[0];
-                result = OH_CameraManager_CreateVideoOutput(cameraManager_, profile, previewSurfaceId_.c_str(),
-                                                            &videoOutput);
-                if (result == CAMERA_SERVICE_FATAL_ERROR) {
-                    ret = TEST_OK;
-                }
-            }
-        }
-    } else if (caseCode == CAMERA_INVALID_ARGUMENT) {
+    if (caseCode == CAMERA_INVALID_ARGUMENT) {
         result = OH_CameraManager_CreateVideoOutput(nullptr, nullptr, nullptr, nullptr);
         if (result == CAMERA_INVALID_ARGUMENT) {
+            return TEST_OK;
+        }
+    }
+
+    if (caseCode == CAMERA_SERVICE_FATAL_ERROR) {
+        Camera_OutputCapability *output = nullptr;
+        if (OH_CameraManager_GetSupportedCameraOutputCapability(cameraManager_, cameras_, &output) != CAMERA_OK) {
+            return ret;
+        }
+
+        int index = 0;
+        if (output->videoProfilesSize <= index) {
+            return ret;
+        }
+        Camera_VideoOutput *videoOut = nullptr;
+        auto testProfile = output->videoProfiles[0];
+        result = OH_CameraManager_CreateVideoOutput(cameraManager_, testProfile, previewSurfaceId_.c_str(), &videoOut);
+        if (result == CAMERA_SERVICE_FATAL_ERROR) {
             ret = TEST_OK;
         }
     }
@@ -698,7 +704,7 @@ int32_t CameraFunctionTest::OHCameraManagerGetCameraConcurrentInfosTest(int32_t 
             ret = TEST_OK;
         }
     } else {
-        uint32_t deviceSize = 2;
+        uint32_t deviceSize = DEVICES_NUM;
         if (size_ < deviceSize) {
             OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "CameraKit", "Concurrent Camera devices < 2");
             return ret;
@@ -706,7 +712,7 @@ int32_t CameraFunctionTest::OHCameraManagerGetCameraConcurrentInfosTest(int32_t 
         Camera_ConcurrentInfo* info = nullptr;
         uint32_t infoSize = 0;
         if (caseCode == CAMERA_SERVICE_FATAL_ERROR) {
-            deviceSize = 4;
+            deviceSize = DEVICES_MIN_NUM;
             result = OH_CameraManager_GetCameraConcurrentInfos(cameraManager_, cameras_, deviceSize, &info, &infoSize);
             if (result == CAMERA_SERVICE_FATAL_ERROR) {
                 ret = TEST_OK;

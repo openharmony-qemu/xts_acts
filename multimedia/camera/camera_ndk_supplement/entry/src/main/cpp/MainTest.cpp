@@ -40,7 +40,7 @@ static napi_value ExecuteCameraFunction(napi_env env, napi_callback_info info, s
 }
 
 static napi_value ExecuteCameraIntArgFunction(napi_env env, napi_callback_info info, int32_t caseCode,
-                             const std::function<int32_t(int32_t)>& cameraFunc)
+                                              const std::function<int32_t(int32_t)> &cameraFunc)
 {
     int ret = cameraFunc(caseCode);
     napi_value result;
