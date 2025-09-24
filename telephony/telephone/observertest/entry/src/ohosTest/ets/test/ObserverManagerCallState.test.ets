@@ -32,12 +32,12 @@ export default function observerManagerCallStateTest() {
   describe('ObserverManagerCallStateTest', () => {
 
     /**
-     * @tc.number: SUB_Telephony_Observer_CallStateChangeOff_0100
-     * @tc.name  : testTelephonyObserverCallStateChangeOff0100
-     * @tc.desc  : Unsubscribe to call status change event.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+     * @tc.number  SUB_Telephony_Observer_CallStateChangeOff_0100
+     * @tc.name    testTelephonyObserverCallStateChangeOff0100
+     * @tc.desc    Unsubscribe to call status change event.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 0
      */
     it('testTelephonyObserverCallStateChangeOff0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeOff0100';
@@ -70,12 +70,12 @@ export default function observerManagerCallStateTest() {
     });
 
     /**
-     * @tc.number: SUB_Telephony_Observer_CallStateChangeOff_0200
-     * @tc.name  : testTelephonyObserverCallStateChangeOff0200
-     * @tc.desc  : Unsubscribe to call status change event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+     * @tc.number  SUB_Telephony_Observer_CallStateChangeOff_0200
+     * @tc.name    testTelephonyObserverCallStateChangeOff0200
+     * @tc.desc    Unsubscribe to call status change event
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 0
      */
     it('testTelephonyObserverCallStateChangeOff0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeOff0200';
@@ -109,12 +109,12 @@ export default function observerManagerCallStateTest() {
     });
 
     /**
-     * @tc.number: SUB_Telephony_Observer_CallStateChangeOff_0400
-     * @tc.name  : testTelephonyObserverCallStateChangeOff0400
-     * @tc.desc  : Unsubscribe to call status change event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+     * @tc.number  SUB_Telephony_Observer_CallStateChangeOff_0400
+     * @tc.name    testTelephonyObserverCallStateChangeOff0400
+     * @tc.desc    Unsubscribe to call status change event
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 0
      */
     it('testTelephonyObserverCallStateChangeOff0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeOff0400';
@@ -149,12 +149,12 @@ export default function observerManagerCallStateTest() {
     });
 
     /**
-     * @tc.number: SUB_Telephony_Observer_CallStateChangeOn_0500
-     * @tc.name  : testTelephonyObserverCallStateChangeOn0500
-     * @tc.desc  : Unsubscribe to call status change event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+     * @tc.number  SUB_Telephony_Observer_CallStateChangeOn_0500
+     * @tc.name    testTelephonyObserverCallStateChangeOn0500
+     * @tc.desc    Unsubscribe to call status change event
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 0
      */
     it('testTelephonyObserverCallStateChangeOn0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeOn0500';
@@ -173,12 +173,12 @@ export default function observerManagerCallStateTest() {
     });
 
     /**
-     * @tc.number: SUB_Telephony_Observer_CallStateChangeOn_0600
-     * @tc.name  : testTelephonyObserverCallStateChangeOn0600
-     * @tc.desc  : Unsubscribe to call status change event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+     * @tc.number  SUB_Telephony_Observer_CallStateChangeOn_0600
+     * @tc.name    testTelephonyObserverCallStateChangeOn0600
+     * @tc.desc    Unsubscribe to call status change event
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 0
      */
     it('testTelephonyObserverCallStateChangeOn0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeOn0600';
@@ -200,12 +200,12 @@ export default function observerManagerCallStateTest() {
     });
 
     /**
-     * @tc.number: SUB_Telephony_Observer_CallStateChangeOff_0700
-     * @tc.name  : testTelephonyObserverCallStateChangeOff0700
-     * @tc.desc  : Unsubscribe to call status change event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+     * @tc.number  SUB_Telephony_Observer_CallStateChangeOff_0700
+     * @tc.name    testTelephonyObserverCallStateChangeOff0700
+     * @tc.desc    Unsubscribe to call status change event
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 0
      */
     it('testTelephonyObserverCallStateChangeOff0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeOff0700';
@@ -224,12 +224,12 @@ export default function observerManagerCallStateTest() {
     });
 
     /**
-    * @tc.number: SUB_Telephony_Observer_CallStateChangeExOn_0100
-    * @tc.name  : testTelephonyObserverCallStateChangeExOn0100
-    * @tc.desc  : Subscribe to call status change event
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 0
+    * @tc.number  SUB_Telephony_Observer_CallStateChangeExOn_0100
+    * @tc.name    testTelephonyObserverCallStateChangeExOn0100
+    * @tc.desc    Subscribe to call status change event
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   level 0
     */
     it('testTelephonyObserverCallStateChangeExOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeExOn0100';
@@ -253,12 +253,12 @@ export default function observerManagerCallStateTest() {
     });
 
     /**
-    * @tc.number: SUB_Telephony_Observer_CallStateChangeExOn_0200
-    * @tc.name  : testTelephonyObserverCallStateChangeExOn0200
-    * @tc.desc  : Subscribe to call status change event
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 0
+    * @tc.number  SUB_Telephony_Observer_CallStateChangeExOn_0200
+    * @tc.name    testTelephonyObserverCallStateChangeExOn0200
+    * @tc.desc    Subscribe to call status change event
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   level 0
     */
     it('testTelephonyObserverCallStateChangeExOn0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeExOn0200';
@@ -282,12 +282,12 @@ export default function observerManagerCallStateTest() {
     });
 
     /**
-    * @tc.number: SUB_Telephony_Observer_CallStateChangeExOn_0300
-    * @tc.name  : testTelephonyObserverCallStateChangeExOn0300
-    * @tc.desc  : Subscribe to call status change event
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 0
+    * @tc.number  SUB_Telephony_Observer_CallStateChangeExOn_0300
+    * @tc.name    testTelephonyObserverCallStateChangeExOn0300
+    * @tc.desc    Subscribe to call status change event
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   level 0
     */
     it('testTelephonyObserverCallStateChangeExOn0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeExOn0300';
@@ -311,12 +311,12 @@ export default function observerManagerCallStateTest() {
     });
 
     /**
-    * @tc.number: SUB_Telephony_Observer_CallStateChangeExOn_0400
-    * @tc.name  : testTelephonyObserverCallStateChangeExOn0400
-    * @tc.desc  : Subscribe to call status change event
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 0
+    * @tc.number  SUB_Telephony_Observer_CallStateChangeExOn_0400
+    * @tc.name    testTelephonyObserverCallStateChangeExOn0400
+    * @tc.desc    Subscribe to call status change event
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   level 0
     */
     it('testTelephonyObserverCallStateChangeExOn0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeExOn0400';
@@ -340,12 +340,12 @@ export default function observerManagerCallStateTest() {
     });
 
     /**
-    * @tc.number: SUB_Telephony_Observer_CallStateChangeExOn_0500
-    * @tc.name  : testTelephonyObserverCallStateChangeExOn0500
-    * @tc.desc  : Subscribe to call status change event
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 0
+    * @tc.number  SUB_Telephony_Observer_CallStateChangeExOn_0500
+    * @tc.name    testTelephonyObserverCallStateChangeExOn0500
+    * @tc.desc    Subscribe to call status change event
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   level 0
     */
     it('testTelephonyObserverCallStateChangeExOn0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeExOn0500';
@@ -369,12 +369,12 @@ export default function observerManagerCallStateTest() {
     });
 
     /**
-    * @tc.number: SUB_Telephony_Observer_CallStateChangeExOn_0600
-    * @tc.name  : testTelephonyObserverCallStateChangeExOn0600
-    * @tc.desc  : Subscribe to call status change event
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 0
+    * @tc.number  SUB_Telephony_Observer_CallStateChangeExOn_0600
+    * @tc.name    testTelephonyObserverCallStateChangeExOn0600
+    * @tc.desc    Subscribe to call status change event
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   level 0
     */
     it('testTelephonyObserverCallStateChangeExOn0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeExOn0600';
@@ -398,12 +398,12 @@ export default function observerManagerCallStateTest() {
     });
 
     /**
-    * @tc.number: SUB_Telephony_Observer_CallStateChangeExOn_0700
-    * @tc.name  : testTelephonyObserverCallStateChangeExOn0700
-    * @tc.desc  : Subscribe to call status change event
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 0
+    * @tc.number  SUB_Telephony_Observer_CallStateChangeExOn_0700
+    * @tc.name    testTelephonyObserverCallStateChangeExOn0700
+    * @tc.desc    Subscribe to call status change event
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   level 0
     */
     it('testTelephonyObserverCallStateChangeExOn0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeExOn0700';
@@ -424,12 +424,12 @@ export default function observerManagerCallStateTest() {
     });
 
     /**
-    * @tc.number: SUB_Telephony_Observer_CallStateChangeExOn_0800
-    * @tc.name  : testTelephonyObserverCallStateChangeExOn0800
-    * @tc.desc  : Subscribe to call status change event
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 0
+    * @tc.number  SUB_Telephony_Observer_CallStateChangeExOn_0800
+    * @tc.name    testTelephonyObserverCallStateChangeExOn0800
+    * @tc.desc    Subscribe to call status change event
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   level 0
     */
     it('testTelephonyObserverCallStateChangeExOn0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeExOn0800';
@@ -450,12 +450,12 @@ export default function observerManagerCallStateTest() {
     });
 
     /**
-    * @tc.number: SUB_Telephony_Observer_CallStateChangeExOff_0100
-    * @tc.name  : testTelephonyObserverCallStateChangeExOff0100
-    * @tc.desc  : Unsubscribe to call status change event
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 0
+    * @tc.number  SUB_Telephony_Observer_CallStateChangeExOff_0100
+    * @tc.name    testTelephonyObserverCallStateChangeExOff0100
+    * @tc.desc    Unsubscribe to call status change event
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   level 0
     */
     it('testTelephonyObserverCallStateChangeExOff0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeExOff0100';
@@ -478,12 +478,12 @@ export default function observerManagerCallStateTest() {
     });
 
     /**
-    * @tc.number: SUB_Telephony_Observer_CallStateChangeExOff_0200
-    * @tc.name  : testTelephonyObserverCallStateChangeExOff0200
-    * @tc.desc  : Unsubscribe to call status change event
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 0
+    * @tc.number  SUB_Telephony_Observer_CallStateChangeExOff_0200
+    * @tc.name    testTelephonyObserverCallStateChangeExOff0200
+    * @tc.desc    Unsubscribe to call status change event
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   level 0
     */
     it('testTelephonyObserverCallStateChangeExOff0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeExOff0200';
@@ -507,12 +507,12 @@ export default function observerManagerCallStateTest() {
     });
 
     /**
-    * @tc.number: SUB_Telephony_Observer_CallStateChangeExOff_0300
-    * @tc.name  : testTelephonyObserverCallStateChangeExOff0300
-    * @tc.desc  : Unsubscribe to call status change event
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 0
+    * @tc.number  SUB_Telephony_Observer_CallStateChangeExOff_0300
+    * @tc.name    testTelephonyObserverCallStateChangeExOff0300
+    * @tc.desc    Unsubscribe to call status change event
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   level 0
     */
     it('testTelephonyObserverCallStateChangeExOff0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeExOff0300';
@@ -535,12 +535,12 @@ export default function observerManagerCallStateTest() {
     });
 
     /**
-    * @tc.number: SUB_Telephony_Observer_CallStateChangeExOff_0400
-    * @tc.name  : testTelephonyObserverCallStateChangeExOff0400
-    * @tc.desc  : Unsubscribe to call status change event
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 0
+    * @tc.number  SUB_Telephony_Observer_CallStateChangeExOff_0400
+    * @tc.name    testTelephonyObserverCallStateChangeExOff0400
+    * @tc.desc    Unsubscribe to call status change event
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   level 0
     */
     it('testTelephonyObserverCallStateChangeExOff0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeExOff0400';
