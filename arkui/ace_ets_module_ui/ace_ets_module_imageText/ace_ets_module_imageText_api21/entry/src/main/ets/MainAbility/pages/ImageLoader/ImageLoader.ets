@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -37,7 +37,7 @@ struct AnimatedDrawableDescriptorTestLoader {
         Text(String(this.imageHeight)).id('imageHeight')
       }
 
-      Button("同步加载drawable")
+      Button('同步加载drawable')
         .id('btnLoadSync')
         .onClick(() => {
           try {
@@ -48,7 +48,7 @@ struct AnimatedDrawableDescriptorTestLoader {
             console.info(`load failed`)
           }
         })
-      Button("异步加载drawable")
+      Button('异步加载drawable')
         .id('btnLoad')
         .onClick(() => {
           this.drawable3.load().then((result: DrawableDescriptorLoadedResult) => {
@@ -56,7 +56,7 @@ struct AnimatedDrawableDescriptorTestLoader {
               this.imageWidth = result.imageWidth
               this.imageHeight = result.imageHeight
             } catch (error) {
-              console.error("load failed")
+              console.error('load failed')
             }
           }).catch((error: BusinessError<void>) => {
             console.error(`load failed, error = ${JSON.stringify(error)}`)
