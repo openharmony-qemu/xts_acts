@@ -144,7 +144,7 @@ struct openCustomDialogLevelOrder {
                 this.customDialogComponent()
               },
               levelOrder: LevelOrder.clamp(undefined),
-              alignment: DialogAlignment.Bottom,
+              alignment: DialogAlignment.Center,
               onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
                 console.info('reason' + JSON.stringify(dismissDialogAction.reason))
                 console.log('dialog onWillDismiss')
