@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,6 +14,8 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
+import { Driver, ON } from '@ohos.UiTest';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function sleep(time: number) {
   return new Promise<string>((resolve, reject) => {
@@ -54,7 +56,6 @@ export async function waitForAssert<T,U>(
   let nums = 0;
   let isSuccess = false;
   while(nums < tryTime) {
-    await sleep(interval);
     const currentValue = await new Promise<T>((done) => {
       setTimeout(()=>done(stateGetter()), 0);
     });
@@ -68,6 +69,7 @@ export async function waitForAssert<T,U>(
       return currentValue;
     }
     nums++;
+    await sleep(interval);
   }
   if (!isSuccess) {
     console.log(testsuite + ' debug wait for failed');
@@ -90,7 +92,6 @@ export async function waitForExist<T> (
   let nums = 0;
   let isSuccess = false;
   while (nums < tryTime) {
-    await sleep(interval);
     const currentValue = await new Promise<T>((done) => {
       setTimeout(()=>done(stateGetter()), 0);
     })
@@ -111,6 +112,7 @@ export async function waitForExist<T> (
       }
     }
     nums++;
+    await sleep(interval);
   }
   if (!isSuccess) {
     console.log(testsuite + ' debug wait for failed')
@@ -120,4 +122,11 @@ export async function waitForExist<T> (
   });
   console.log(testsuite + ' debug wait for failed exist ' + currentValue);
   return currentValue;
+}
+
+export async function waitForComponents(componentName:string, interval=10000) {
+  let driver: Driver = Driver.create();
+  let component = await driver.waitForComponent(ON.id(componentName), interval);
+  console.info('waitForComponent', componentName, '==>');
+  return component;
 }
